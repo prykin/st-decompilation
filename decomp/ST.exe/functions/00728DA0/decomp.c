@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
@@ -409,9 +411,8 @@ LAB_007294f8:
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
                   (this,param_1,param_2,param_6);
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      else if (((local_9c < *(int *)((int)this + 0x30)) || (*(int *)((int)this + 0x38) <= local_44))
-              || ((local_a0 < *(int *)((int)this + 0x34) || (*(int *)((int)this + 0x3c) <= local_50)
+      else if (((local_9c < STField<int>(this,0x30)) || (STField<int>(this,0x38) <= local_44))
+              || ((local_a0 < STField<int>(this,0x34) || (STField<int>(this,0x3c) <= local_50)
                   ))) {
         FUN_007288a0(this,param_1,param_2,param_6);
       }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 5.
    Evidence: 0052AFE0 -> 006E6460 @ 0052B134; literal 0 at 0052B10F | 00580B60 -> 006E6460 @
@@ -19,11 +21,11 @@ FUN_006e6460(void *this,undefined4 param_1,int param_2,undefined2 param_3,undefi
   }
   puVar1[6] = param_1;
   *(byte *)(puVar1 + 3) = param_5;
-  *(undefined2 *)((int)puVar1 + 0xe) = param_3;
-  *(bool *)((int)puVar1 + 0xd) = param_6 != 0;
-  *(char *)((int)puVar1 + 0x17) = (char)param_2;
+  STField<undefined2>(puVar1,0xe) = param_3;
+  STField<bool>(puVar1,0xd) = param_6 != 0;
+  STField<char>(puVar1,0x17) = (char)param_2;
   *(undefined2 *)(puVar1 + 4) = param_4;
-  *(undefined2 *)((int)puVar1 + 0x12) = 0x7fff;
+  STField<undefined2>(puVar1,0x12) = 0x7fff;
   *(undefined2 *)(puVar1 + 5) = 0x7fff;
   if (param_6 != 0) {
     FUN_006b9910((undefined4 *)((int)this + 0x446),(int)puVar1);

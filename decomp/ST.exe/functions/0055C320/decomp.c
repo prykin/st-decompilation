@@ -90,21 +90,21 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
       param_1 = param_1 + ~uVar3;
     } while (iVar5 < param_4->field_0008);
   }
-  if (*(int *)((int)this + 0x644) != 0) {
+  if (STField<int>(this,0x644) != 0) {
     FreeAndNull((void **)((int)this + 0x644));
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = Library::DKW::LIB::MemAllocClear((uint)(param_1 + param_4->field_0008));
-  *(void **)((int)this + 0x644) = param_1;
+  STField<void *>(this,0x644) = param_1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
-    *(undefined1 *)((int)this + 10) = 1;
+    STField<undefined1>(this,10) = 1;
     return;
   }
   iVar5 = param_4->field_0008;
   iVar6 = 0;
   if (iVar5 < 1) {
-    *(undefined1 *)((int)this + 10) = 1;
+    STField<undefined1>(this,10) = 1;
     return;
   }
   if (iVar5 < 1) {
@@ -136,7 +136,7 @@ LAB_0055c414:
     iVar5 = param_4->field_0008;
     iVar6 = iVar6 + 1;
     if (iVar5 <= iVar6) {
-      *(undefined1 *)((int)this + 10) = 1;
+      STField<undefined1>(this,10) = 1;
       return;
     }
   } while( true );

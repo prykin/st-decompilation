@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0056ADC0 -> 006C2A80 @ 0056B28E
@@ -18,7 +20,7 @@ uint FUN_006c2a80(int *param_1,DDXContext *param_2)
   if (pvVar1 == nullptr) {
     return 0xfffffffe;
   }
-  *(DDXContext **)((int)pvVar1 + 4) = param_2;
+  STField<DDXContext *>(pvVar1,4) = param_2;
   *param_1 = (int)pvVar1;
   return 0;
 }

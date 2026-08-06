@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0070B630 returns return of Library::Ourlib::MFIMG::mfImgGetNumIms @ 0070B64C */

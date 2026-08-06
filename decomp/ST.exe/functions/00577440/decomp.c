@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00577440(int param_1)
 
@@ -39,30 +41,30 @@ void __fastcall FUN_00577440(int param_1)
       local_8 = 0x101;
       if (piVar5 != nullptr) {
         do {
-          if (*(uint *)((int)piVar5 + 7) <= DVar3 - *(int *)((int)piVar5 + 0xb)) {
+          if (STField<uint>(piVar5,7) <= DVar3 - STField<int>(piVar5,0xb)) {
             sVar6 = 0;
-            *(DWORD *)((int)piVar5 + 0xb) = DVar3;
-            if (*(char *)((int)piVar5 + 6) == '\0') {
-              *(short *)((int)piVar5 + 0xf) = *(short *)((int)piVar5 + 0xf) + 1;
+            STField<DWORD>(piVar5,0xb) = DVar3;
+            if (STField<char>(piVar5,6) == '\0') {
+              STField<short>(piVar5,0xf) = STField<short>(piVar5,0xf) + 1;
             }
             else {
-              *(short *)((int)piVar5 + 0xf) = *(short *)((int)piVar5 + 0xf) + -1;
+              STField<short>(piVar5,0xf) = STField<short>(piVar5,0xf) + -1;
             }
-            if (*(short *)((int)piVar5 + 0xf) < 0) {
-              if (*(char *)((int)piVar5 + 5) == '\0') {
-                *(undefined1 *)((int)piVar5 + 6) = 0;
-                *(undefined2 *)((int)piVar5 + 0xf) = 0;
+            if (STField<short>(piVar5,0xf) < 0) {
+              if (STField<char>(piVar5,5) == '\0') {
+                STField<undefined1>(piVar5,6) = 0;
+                STField<undefined2>(piVar5,0xf) = 0;
               }
               else {
-                *(short *)((int)piVar5 + 0xf) = *(short *)((int)piVar5 + 0x11) + -1;
+                STField<short>(piVar5,0xf) = STField<short>(piVar5,0x11) + -1;
               }
             }
-            if (*(short *)((int)piVar5 + 0x11) <= *(short *)((int)piVar5 + 0xf)) {
-              if (*(char *)((int)piVar5 + 5) == '\0') {
-                *(undefined1 *)((int)piVar5 + 6) = 1;
-                sVar6 = *(short *)((int)piVar5 + 0x11) + -1;
+            if (STField<short>(piVar5,0x11) <= STField<short>(piVar5,0xf)) {
+              if (STField<char>(piVar5,5) == '\0') {
+                STField<undefined1>(piVar5,6) = 1;
+                sVar6 = STField<short>(piVar5,0x11) + -1;
               }
-              *(short *)((int)piVar5 + 0xf) = sVar6;
+              STField<short>(piVar5,0xf) = sVar6;
             }
             uVar7 = (uint)*(byte *)(piVar5 + 1);
             if (uVar7 < local_8) {
@@ -72,11 +74,11 @@ void __fastcall FUN_00577440(int param_1)
               uVar2 = uVar7;
             }
             *(undefined1 *)(param_1 + 0x28 + uVar7 * 4) =
-                 *(undefined1 *)(*(short *)((int)piVar5 + 0xf) * 3 + 0x13 + (int)piVar5);
+                 *(undefined1 *)(STField<short>(piVar5,0xf) * 3 + 0x13 + (int)piVar5);
             *(undefined1 *)(param_1 + 0x29 + (uint)*(byte *)(piVar5 + 1) * 4) =
-                 *(undefined1 *)(*(short *)((int)piVar5 + 0xf) * 3 + 0x14 + (int)piVar5);
+                 *(undefined1 *)(STField<short>(piVar5,0xf) * 3 + 0x14 + (int)piVar5);
             *(undefined1 *)(param_1 + 0x2a + (uint)*(byte *)(piVar5 + 1) * 4) =
-                 *(undefined1 *)((int)piVar5 + (*(short *)((int)piVar5 + 0xf) + 7) * 3);
+                 *(undefined1 *)((int)piVar5 + (STField<short>(piVar5,0xf) + 7) * 3);
             bVar1 = true;
           }
           piVar5 = (int *)*piVar5;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_00711260(void *this,uint *param_1)
 
@@ -27,10 +29,10 @@ LAB_00711298:
     }
     else {
       iVar3 = FUN_0070cd90((char *)((int)this + 0x9e),param_1);
-      if ((iVar3 != 0) || (*(int *)((int)this + 0x7e) == 0)) goto LAB_00711298;
+      if ((iVar3 != 0) || (STField<int>(this,0x7e) == 0)) goto LAB_00711298;
       bVar2 = true;
     }
-    cVar1 = *(char *)((int)param_1 + 1);
+    cVar1 = STField<char>(param_1,1);
     param_1 = (uint *)((int)param_1 + 1);
   } while( true );
 }

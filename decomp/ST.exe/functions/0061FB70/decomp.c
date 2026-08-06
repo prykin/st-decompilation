@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint __thiscall
 FUN_0061fb70(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
@@ -16,12 +18,12 @@ FUN_0061fb70(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   local_10 = param_2;
   local_c = param_3;
   local_8 = param_4;
-  if (*(int *)((int)this + 0xb9) == 0) {
+  if (STField<int>(this,0xb9) == 0) {
     pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
-    *(DArrayTy **)((int)this + 0xb9) = pDVar1;
+    STField<DArrayTy *>(this,0xb9) = pDVar1;
   }
-  if (*(DArrayTy **)((int)this + 0xb9) != nullptr) {
-    uVar2 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0xb9),&local_18);
+  if (STField<DArrayTy *>(this,0xb9) != nullptr) {
+    uVar2 = Library::DKW::TBL::DArrayAppend(STField<DArrayTy *>(this,0xb9),&local_18);
     return uVar2;
   }
   return 0xffffffff;

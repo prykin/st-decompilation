@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 0.
@@ -268,15 +270,14 @@ LAB_0061eefe:
             local_44 = pSVar3->data;
             local_20 = (int *)((int)&local_44->field_0000 + dVar4 * local_8);
             if (local_20 != nullptr) {
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              if ((byte)*(undefined1 *)((int)local_20 + 0x2e) != uVar17) {
+              if ((byte)STField<undefined1>(local_20,0x2e) != uVar17) {
                 local_24 = 1;
                 piVar18 = local_20;
                 for (uVar8 = local_8; (int)uVar8 < (int)local_1c; uVar8 = uVar8 + 1) {
                   if (uVar8 < local_34) {
                     local_20 = piVar18;
                     if ((piVar18 != nullptr) &&
-                       ((byte)*(undefined1 *)((int)piVar18 + 0x2e) == uVar17)) {
+                       ((byte)STField<undefined1>(piVar18,0x2e) == uVar17)) {
                       local_24 = 0;
                       local_8 = uVar8;
                       break;
@@ -288,8 +289,7 @@ LAB_0061eefe:
                   piVar18 = (int *)((int)piVar18 + dVar4);
                 }
               }
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              if ((byte)*(undefined1 *)((int)local_20 + 0x2e) != uVar17) goto LAB_0061eb1a;
+              if ((byte)STField<undefined1>(local_20,0x2e) != uVar17) goto LAB_0061eb1a;
               if (local_8 < local_34) {
                 piVar18 = (int *)((int)&local_44->field_0000 + dVar4 * local_8);
               }
@@ -328,11 +328,11 @@ LAB_0061eefe:
               local_44 = (STLightC_field_00A3Element *)(local_68 + param_1->field_006B);
               piVar18[6] = (int)local_44;
               Library::Ourlib::ST3DSMAP::SprGlowLineMove
-                        (g_sT3DSMAPContext_00807598,*(uint *)((int)piVar18 + 0x26),piVar18[1],
+                        (g_sT3DSMAPContext_00807598,STField<uint>(piVar18,0x26),piVar18[1],
                          piVar18[2],piVar18[3],piVar18[4],piVar18[5],local_44);
               Library::Ourlib::ST3DSMAP::SprGlowLineSetColors
-                        (g_sT3DSMAPContext_00807598,*(uint *)((int)piVar18 + 0x26),
-                         *(undefined4 *)((int)piVar18 + 0x21),local_2c * 0x200 + DAT_008032d0);
+                        (g_sT3DSMAPContext_00807598,STField<uint>(piVar18,0x26),
+                         STField<undefined4>(piVar18,0x21),local_2c * 0x200 + DAT_008032d0);
               local_28 = local_28 + 1;
               local_8 = local_8 + 1;
             }

@@ -872,8 +872,7 @@ switchD_005ab66b_caseD_6:
         CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,local_46c);
       }
       thunk_FUN_00568bc0(&g_sound,0);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if ((DAT_00807300._1_1_ & 8) != 0) {
+      if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
         thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,nullptr);
       }
       thunk_FUN_005b6730(this_02,0xb,'\0',-1);

@@ -153,9 +153,9 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                 return 0;
               }
             }
-            LinkAct(this_00,*(int *)((int)piVar9 + 0x11),*(int *)((int)piVar9 + 0x15));
-            uVar16 = *(uint *)((int)piVar9 + 0x15);
-            pvVar6 = *(void **)((int)piVar9 + 0x11);
+            LinkAct(this_00,STField<int>(piVar9,0x11),STField<int>(piVar9,0x15));
+            uVar16 = STField<uint>(piVar9,0x15);
+            pvVar6 = STField<void *>(piVar9,0x11);
             switch((char)piVar9[4]) {
             case '\x01':
               RCProc(this_00,(int)pvVar6,uVar16,'\0');
@@ -317,8 +317,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         }
         uVar18 = (uint)(message->arg0).words.high;
         uVar16 = uVar18;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if ((int)uVar18 < (int)(uVar18 + *(int *)((int)local_10 + 0x1e0))) {
+        if ((int)uVar18 < (int)(uVar18 + STField<int>(local_10,0x1e0))) {
           do {
             if ((int)uVar16 < (int)this_00->field_01D3[2]) {
               local_1c = *(uint **)(this_00->field_01D3[5] + uVar16 * 4);
@@ -334,8 +333,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             }
             uVar18 = (uint)(message->arg0).words.high;
             uVar16 = uVar16 + 1;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          } while ((int)uVar16 < (int)(uVar18 + *(int *)((int)local_10 + 0x1e0)));
+          } while ((int)uVar16 < (int)(uVar18 + STField<int>(local_10,0x1e0)));
         }
         Library::DKW::WGR::FUN_006b5110
                   ((int)this_00->field_0068,0,0x21,0x16,(int)this_00->field_0218,0,0,0,0x19c,0x118,
@@ -544,7 +542,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         piVar9 = (int *)this_00->field_01EC;
         uVar16 = piVar9[5];
         if (uVar16 == 0) {
-          uVar16 = ((uint)*(ushort *)((int)piVar9 + 0xe) * piVar9[1] + 0x1f >> 3 & 0x1ffffffc) *
+          uVar16 = ((uint)STField<ushort>(piVar9,0xe) * piVar9[1] + 0x1f >> 3 & 0x1ffffffc) *
                    piVar9[2];
         }
         puVar10 = (undefined4 *)FUN_006b4fa0(piVar9);
@@ -579,25 +577,23 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           pUVar7 = local_8;
         }
         ccFntTy::WrStr(this_00->field_01E4,&DAT_0080f33a,
-                       (uint)*(byte *)((int)pUVar7 + 0x11) * 0x14 + 10,-1,(uint)local_1c & 0xff);
-        if ((this_00->field_01A1 == 0) && (*(byte *)((int)pUVar7 + 0x11) != 0)) {
+                       (uint)STField<byte>(pUVar7,0x11) * 0x14 + 10,-1,(uint)local_1c & 0xff);
+        if ((this_00->field_01A1 == 0) && (STField<byte>(pUVar7,0x11) != 0)) {
           if (DAT_0080874e == '\x03') {
             local_1c = (uint *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(0x29));
           }
           else {
             local_1c = (uint *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)((-(DAT_0080874e != '\x01') & 0x43U) + 0x10));
           }
-          iVar15 = (uint)*(byte *)((int)pUVar7 + 0x11) * 0x14;
+          iVar15 = (uint)STField<byte>(pUVar7,0x11) * 0x14;
           local_10 = (undefined4 *)((uint)local_1c & 0xff);
           iVar8 = (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC)->field_0008 / 2;
           FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar15,iVar8,iVar15 + 8,
                        iVar8,(byte)local_1c,0xd);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (*(char *)((int)local_8 + 0x13) == '\0') {
+          if (STField<char>(local_8,0x13) == '\0') {
             iVar8 = *(int *)(this_00->field_01EC + 8);
           }
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar15 = (uint)*(byte *)((int)local_8 + 0x11) * 0x14;
+          iVar15 = (uint)STField<byte>(local_8,0x11) * 0x14;
           FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar15,0,iVar15,iVar8,
                        (byte)local_10,0xd);
           local_14 = 0;
@@ -616,8 +612,7 @@ joined_r0x0051eec7:
             }
             if ((iVar8 == 0) || (bVar20 = *(byte *)(iVar8 + 0x11), bVar20 == 0)) goto LAB_0051ef61;
             uVar16 = local_c;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if (bVar20 < *(byte *)((int)local_8 + 0x11)) {
+            if (bVar20 < STField<byte>(local_8,0x11)) {
               do {
                 uVar16 = uVar16 - 1;
                 if ((int)uVar16 < 1) goto joined_r0x0051eec7;
@@ -689,9 +684,8 @@ LAB_0051ef61:
         return 0;
       }
       bVar22 = false;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar16 = *(uint *)((int)local_1c + 0xd);
-      pvVar6 = *(void **)((int)local_1c + 9);
+      uVar16 = STField<uint>(local_1c,0xd);
+      pvVar6 = STField<void *>(local_1c,9);
       switch((char)local_1c[2]) {
       default:
         goto switchD_0051ea9b_caseD_0;

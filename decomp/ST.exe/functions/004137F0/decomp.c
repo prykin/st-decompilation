@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint param_3,int param_4)
 
@@ -49,7 +51,7 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
     pvVar4 = Library::DKW::LIB::MemAlloc(iVar7 * 0x10 + 0xc);
     *(void **)&this->field_0x59 = pvVar4;
     piVar8 = (int *)((int)pvVar4 + 0xc);
-    *(int *)((int)pvVar4 + 4) = iVar3;
+    STField<int>(pvVar4,4) = iVar3;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
     *(uint *)(*(int *)&this->field_0x59 + 8) = uVar2;

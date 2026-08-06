@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079C3EC (store 005EC809)

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00692920 parameter used as this of cMf32::RecGet @ 00692946 | 00692920 parameter used

@@ -101,7 +101,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
               if (pvVar11 != nullptr) {
                 CFsgsConnection::PingPlayer
                           ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EAE,
-                           *(ulong *)((int)pvVar11 + 0x21));
+                           STField<ulong>(pvVar11,0x21));
               }
               pDVar14 = this_02->field_1EA6;
               uVar15 = uVar15 + 1;
@@ -249,10 +249,8 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
       local_18 = 1;
       local_1a = 1;
       local_20 = 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_24._2_2_ = 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_24._0_2_ = 1;
+      STPiece<2,2>(local_24) = 1;
+      STPiece<0,2>(local_24) = 1;
     }
     this_02->field_0065 = CASE_1;
     PaintFSGS(this_02,'\0');

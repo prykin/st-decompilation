@@ -171,7 +171,7 @@ LAB_0053287e:
             goto LAB_00532883;
           }
           if (bVar3 == 0) break;
-          bVar3 = *(byte *)((int)puVar13 + 1);
+          bVar3 = STField<byte>(puVar13,1);
           bVar16 = bVar3 < pbVar15[1];
           if (bVar3 != pbVar15[1]) goto LAB_0053287e;
           puVar13 = (uint *)((int)puVar13 + 2);

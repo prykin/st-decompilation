@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeRepairApplier] Propagated parameter 0.
@@ -127,8 +129,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
       local_88 = 0.0;
       local_84 = 0;
       local_80 = 0;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_68._0_4_ = temp_5f0ea6b32c;
+      STPiece<0,4>(local_68) = temp_5f0ea6b32c;
       local_1c = &stack0xfffffed4;
       local_cc = &stack0xfffffed4;
       for (pRVar16 = temp_5f0ea6b32c; pRVar16 != nullptr;
@@ -161,8 +162,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
           temp_103fe0eba8e3->next = pRVar17->next;
           pRVar17->next = nullptr;
           local_44->next = pRVar17;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          temp_5f0ea6b32c = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)local_68._0_4_;
+          temp_5f0ea6b32c = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)STPiece<0,4>(local_68);
           local_44 = pRVar17;
         }
       }

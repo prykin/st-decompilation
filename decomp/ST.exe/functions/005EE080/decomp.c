@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall
 FUN_005ee080(void *this,short param_1,short param_2,short param_3,short param_4,short param_5,
@@ -17,19 +19,19 @@ FUN_005ee080(void *this,short param_1,short param_2,short param_3,short param_4,
   int local_10;
   int local_c;
 
-  if (*(int *)((int)this + 0x236) == 0) {
-    uVar4 = *(byte *)((int)this + 0x251) + 0xc;
+  if (STField<int>(this,0x236) == 0) {
+    uVar4 = STField<byte>(this,0x251) + 0xc;
     if (0x18 < uVar4) {
-      uVar4 = *(byte *)((int)this + 0x251) - 0xc;
+      uVar4 = STField<byte>(this,0x251) - 0xc;
     }
     iVar8 = (int)param_1;
-    iVar7 = (iVar8 - *(int *)((int)this + 0x2be)) - DAT_007cdef4;
-    iVar6 = ((int)param_2 - *(int *)((int)this + 0x2c2)) - DAT_007cdef8;
+    iVar7 = (iVar8 - STField<int>(this,0x2be)) - DAT_007cdef4;
+    iVar6 = ((int)param_2 - STField<int>(this,0x2c2)) - DAT_007cdef8;
     iVar1 = (int)*(short *)(&DAT_007cde94 + uVar4 * 4);
     iVar5 = (int)*(short *)(&DAT_007cde96 + uVar4 * 4);
     iVar3 = (iVar5 * iVar6 + iVar1 * iVar7) / 10000;
     iVar6 = (iVar1 * iVar6 - iVar5 * iVar7) / 10000;
-    iVar7 = DAT_007cdefc - *(int *)((int)this + 0x2c6);
+    iVar7 = DAT_007cdefc - STField<int>(this,0x2c6);
     local_10 = (int)param_3;
     iVar2 = iVar7 + local_10;
     if ((((-1 < iVar3) && (iVar3 <= DAT_007cdef4 * 2)) && (-1 < iVar6)) &&
@@ -50,8 +52,8 @@ FUN_005ee080(void *this,short param_1,short param_2,short param_3,short param_4,
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_4 = iVar6;
       do {
-        iVar8 = (iVar2 - *(int *)((int)this + 0x2be)) - DAT_007cdef4;
-        iVar9 = (iVar3 - *(int *)((int)this + 0x2c2)) - DAT_007cdef8;
+        iVar8 = (iVar2 - STField<int>(this,0x2be)) - DAT_007cdef4;
+        iVar9 = (iVar3 - STField<int>(this,0x2c2)) - DAT_007cdef8;
         iVar6 = (iVar5 * iVar9 + iVar1 * iVar8) / 10000;
         iVar8 = (iVar1 * iVar9 - iVar5 * iVar8) / 10000;
         iVar9 = iVar7 + _param_6;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0070B650 returns used as parameter 4 of DibPut @ 004F1905 | 0070B650 returns used as

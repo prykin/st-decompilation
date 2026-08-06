@@ -19,11 +19,10 @@ int __cdecl FUN_0067bc80(DArrayTy *param_1,uint param_2)
   bVar6 = uVar2 != 0;
   if (0 < (int)uVar2) {
     do {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((((bVar6) &&
            (pvVar3 = DArrayAt<void>(param_1, uVar5),
-           pvVar3 != nullptr)) && ((*(uint *)((int)pvVar3 + 0x14) & param_2) != 0)) &&
-         ((sVar1 = *(short *)((int)pvVar3 + 0x1a), sVar1 < sVar4 &&
+           pvVar3 != nullptr)) && ((STField<uint>(pvVar3,0x14) & param_2) != 0)) &&
+         ((sVar1 = STField<short>(pvVar3,0x1a), sVar1 < sVar4 &&
           (sVar4 = sVar1, local_8 = pvVar3, sVar1 == 0)))) {
         return (int)pvVar3;
       }

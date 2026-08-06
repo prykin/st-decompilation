@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] boolean_return_domain.
    Evidence: all explicit return values are constants in {0,1}: [0, 1, 1, 0, 0]

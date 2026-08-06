@@ -120,9 +120,8 @@ int FUN_00497920(RecoveredRecord_STBoatC_0040AE40 *param_1,int param_2,int param
       }
       thunk_FUN_00416840(this,(undefined2 *)((int)&param_2 + 2),(undefined2 *)((int)&param_3 + 2),
                          (undefined2 *)((int)&param_4 + 2));
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if (((param_1->field_005B == param_2._2_2_) && (param_1->field_005D == param_3._2_2_)) &&
-         (param_1->field_005F == param_4._2_2_)) {
+      if (((param_1->field_005B == STPiece<2,2>(param_2)) && (param_1->field_005D == STPiece<2,2>(param_3))) &&
+         (param_1->field_005F == STPiece<2,2>(param_4))) {
         return 0;
       }
       return (uint)(*(short *)((int)&this[6].value_20 + 2) < 0x1e);

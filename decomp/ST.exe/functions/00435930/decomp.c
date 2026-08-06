@@ -76,10 +76,8 @@ STAllPlayersC::GetCursorType
       }
       do {
         DArrayGetElement(array,index,local_8);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        if (local_8._0_2_ != 0xffff) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar6 = GetObjPtr(this,g_packedRecords_A62x8[uVar4].field150_0x1b7,local_8._0_2_,CASE_1);
+        if (STPiece<0,2>(local_8) != 0xffff) {
+          pSVar6 = GetObjPtr(this,g_packedRecords_A62x8[uVar4].field150_0x1b7,STPiece<0,2>(local_8),CASE_1);
           uVar7 = (*pSVar6->vtable->vfunc_28)(param_1,param_2,param_3,param_4);
           return (short)uVar7;
         }

@@ -82,8 +82,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     iVar6 = 0;
     this->field_043C = param_4[4];
     this->field_043D = bVar3;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (0 < *(int *)((int)param_1 + 0x455)) {
+    if (0 < STField<int>(param_1,0x455)) {
       piVar10 = (int *)((int)param_1 + 0x459);
       do {
         pRVar1 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)*piVar10;
@@ -95,8 +94,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
         }
         iVar6 = iVar6 + 1;
         piVar10 = piVar10 + 1;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      } while (iVar6 < *(int *)((int)param_1 + 0x455));
+      } while (iVar6 < STField<int>(param_1,0x455));
     }
     local_24 = param_3 * param_3;
     local_1c = 0;

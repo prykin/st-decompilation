@@ -19,7 +19,7 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
   short sStack_6;
 
   local_14 = 0;
-  *(undefined4 *)((int)this + 0xa7) = 0;
+  STField<undefined4>(this,0xa7) = 0;
   sVar1 = (short)param_4;
   sVar3 = (short)param_5;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -77,8 +77,8 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
       sStack_6 = param_3;
     }
   }
-  if (((*(ushort *)((int)this + 0x7d) != 0xfffe) && (g_allPlayers_007FA174 != nullptr))
-     && (this_01 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x7d)),
+  if (((STField<ushort>(this,0x7d) != 0xfffe) && (g_allPlayers_007FA174 != nullptr))
+     && (this_01 = thunk_FUN_0042b760(STField<char>(this,0x24),STField<ushort>(this,0x7d)),
         this_01 != nullptr)) {
     this_01->sub_00498D20(0x10,(short)&local_14);
     return 0;

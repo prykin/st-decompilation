@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined1 __thiscall FUN_005f9310(void *this,int param_1)
 
@@ -7,7 +9,7 @@ undefined1 __thiscall FUN_005f9310(void *this,int param_1)
   int iVar3;
   int iVar4;
 
-  iVar3 = *(int *)((int)this + 0x2c1);
+  iVar3 = STField<int>(this,0x2c1);
   sVar1 = (short)(iVar3 >> 0x1f);
   if (iVar3 < 0) {
     iVar3 = (short)(((short)(iVar3 / 0xc9) + sVar1) - (short)((longlong)iVar3 * 0x28c1979 >> 0x3f))
@@ -17,7 +19,7 @@ undefined1 __thiscall FUN_005f9310(void *this,int param_1)
     iVar3 = (int)(short)(((short)(iVar3 / 0xc9) + sVar1) -
                         (short)((longlong)iVar3 * 0x28c1979 >> 0x3f));
   }
-  iVar4 = *(int *)((int)this + 0x2c5);
+  iVar4 = STField<int>(this,0x2c5);
   sVar1 = (short)(iVar4 >> 0x1f);
   if (iVar4 < 0) {
     iVar4 = (short)(((short)(iVar4 / 0xc9) + sVar1) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f))
@@ -27,7 +29,7 @@ undefined1 __thiscall FUN_005f9310(void *this,int param_1)
     iVar4 = (int)(short)(((short)(iVar4 / 0xc9) + sVar1) -
                         (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
   }
-  iVar2 = *(int *)((int)this + 0x2c9);
+  iVar2 = STField<int>(this,0x2c9);
   sVar1 = (short)(iVar2 >> 0x1f);
   if (iVar2 < 0) {
     iVar2 = (short)(((short)(iVar2 / 200) + sVar1) - (short)((longlong)iVar2 * 0x51eb851f >> 0x3f))
@@ -38,16 +40,16 @@ undefined1 __thiscall FUN_005f9310(void *this,int param_1)
                         (short)((longlong)iVar2 * 0x51eb851f >> 0x3f));
   }
   if (g_manRub3_008117A4 != nullptr) {
-    iVar3 = thunk_FUN_0062d2d0(g_manRub3_008117A4,*(int *)((int)this + 0x235),iVar3,iVar4,iVar2,
+    iVar3 = thunk_FUN_0062d2d0(g_manRub3_008117A4,STField<int>(this,0x235),iVar3,iVar4,iVar2,
                                (int *)((int)this + 0x27d),param_1);
     if (iVar3 != 0) {
-      *(undefined1 *)((int)this + 0x29e) = 1;
-      return *(undefined1 *)((int)this + 0x29e);
+      STField<undefined1>(this,0x29e) = 1;
+      return STField<undefined1>(this,0x29e);
     }
   }
-  if (*(char *)((int)this + 0x29e) != '\0') {
+  if (STField<char>(this,0x29e) != '\0') {
     STColl3C::sub_005F9450(this);
   }
-  return *(undefined1 *)((int)this + 0x29e);
+  return STField<undefined1>(this,0x29e);
 }
 

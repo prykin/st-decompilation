@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -1004,8 +1006,7 @@ cf_common_join_00707E36:
       }
     } while ((int)uVar3 < iVar6);
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  param_16._0_1_ = bVar1;
+  STPiece<0,1>(param_16) = bVar1;
   if (((byte)param_16 & 0xc0) == 0x80) {
     pbVar9 = pbVar9 + iVar6;
   }

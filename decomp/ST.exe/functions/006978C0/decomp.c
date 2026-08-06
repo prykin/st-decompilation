@@ -90,8 +90,8 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
                   else {
                     element_5853 = nullptr;
                   }
-                  if (*(byte *)((int)element_5853 + 1) == 0) {
-                    iVar3 = *(int *)((int)element_5853 + 2);
+                  if (STField<byte>(element_5853,1) == 0) {
+                    iVar3 = STField<int>(element_5853,2);
                     iVar4 = this->field_5833;
                     if (((element_5853->field_0000 & 2) != 0) &&
                        (uVar6 = Library::MSVCRT::FUN_0072e6c0(),

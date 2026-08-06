@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
@@ -69,10 +71,9 @@ ST3DSMAPContext::sub_006DBD20
   lVar4 = Library::MSVCRT::__ftol();
   param_1->field_02E4 = (int)lVar4;
   Library::Ourlib::STREND::FUN_006dd660(param_1,0,0,param_5,param_6);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   Library::Ourlib::STREND::FUN_006dd6e0
-            (param_1,param_7._0_4_,param_7._4_4_,param_8._0_4_,param_8._4_4_,param_9._0_4_,
-             param_9._4_4_,param_10._0_4_,param_10._4_4_);
+            (param_1,STPiece<0,4>(param_7),STPiece<4,4>(param_7),STPiece<0,4>(param_8),STPiece<4,4>(param_8),STPiece<0,4>(param_9),
+             STPiece<4,4>(param_9),STPiece<0,4>(param_10),STPiece<4,4>(param_10));
   sub_006DD610(param_1,(-(uint)(param_1->field_0124 != 1) & 0xfffffffc) + 4,param_1->field_0098,
                param_1->field_00A0);
   if ((param_1->field_0124 == 0) || (param_1->field_0124 == 10)) {

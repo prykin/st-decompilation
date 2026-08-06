@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
    Evidence: this_call_owners=[STParticleC]; agreed_this_calls=1; incoming_this_accesses=33;
@@ -88,8 +90,7 @@ int __thiscall STParticleC::sub_0062A370(STParticleC *this,int param_1)
       this->field_0052 = this->field_0046;
       this->field_0056 = this->field_004A;
       this->field_005A = this->field_004E;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      this->field_0046 = (int)param_1._2_2_;
+      this->field_0046 = (int)STPiece<2,2>(param_1);
       this->field_004A = (int)local_6;
       this->field_004E = (int)local_8;
       this->field_0076 = 2;

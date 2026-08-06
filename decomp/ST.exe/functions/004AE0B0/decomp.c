@@ -201,9 +201,8 @@ LAB_004ae41c:
           do {
             DArrayGetElement(pDVar12,uVar19,&local_10);
             STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            if ((((param_9._2_2_ != _param_1) || ((local_6 != param_2 || (local_8 != param_3)))) &&
-                (uVar10 = param_9._2_2_ - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+            if ((((STPiece<2,2>(param_9) != _param_1) || ((local_6 != param_2 || (local_8 != param_3)))) &&
+                (uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
                 (int)((uVar10 ^ uVar13) - uVar13) < 0x10)) &&
                (uVar10 = local_6 - param_2 >> 0x1f,
                (int)((local_6 - param_2 ^ uVar10) - uVar10) < 0x10)) goto cf_break_loop_004AEC96;
@@ -223,9 +222,8 @@ LAB_004ae41c:
             do {
               DArrayGetElement(pDVar12,uVar19,&local_10);
               STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              if ((((param_9._2_2_ != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar10 = param_9._2_2_ - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+              if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
+                 ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
                   (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
                   (uVar10 = local_6 - param_2 >> 0x1f,
                   (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
@@ -247,9 +245,8 @@ LAB_004ae41c:
             do {
               DArrayGetElement(pDVar12,uVar19,&local_10);
               STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              if ((((param_9._2_2_ != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar10 = param_9._2_2_ - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+              if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
+                 ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
                   (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
                   (uVar10 = local_6 - param_2 >> 0x1f,
                   (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
@@ -271,9 +268,8 @@ LAB_004ae41c:
             do {
               DArrayGetElement(pDVar12,uVar19,&local_10);
               STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              if ((((param_9._2_2_ != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar10 = param_9._2_2_ - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+              if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
+                 ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
                   (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
                   (uVar10 = local_6 - param_2 >> 0x1f,
                   (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
@@ -295,9 +291,8 @@ LAB_004ae41c:
             do {
               DArrayGetElement(pDVar12,uVar19,&local_10);
               STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              if ((((param_9._2_2_ != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar10 = param_9._2_2_ - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+              if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
+                 ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
                   (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
                   (uVar10 = local_6 - param_2 >> 0x1f,
                   (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))

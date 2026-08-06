@@ -54,18 +54,16 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   iVar7 = DAT_007f4d30 * DAT_007f4d2c;
   DAT_007f4d24 = 0;
   DAT_007f4cfc = &stack0xffffff84;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(ushort *)((int)param_1 + 0x27) != DAT_007f4d4c) {
+  if (STField<ushort>(param_1,0x27) != DAT_007f4d4c) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    DAT_007f4d4c = *(uint *)(*(int *)((int)param_1 + 0x29) + 0xc);
+    DAT_007f4d4c = *(uint *)(STField<int>(param_1,0x29) + 0xc);
     local_28 = 0;
     DAT_007f4cfc = &stack0xffffff84;
     puVar6 = &stack0xffffff84;
     if (0 < (int)DAT_007f4d4c) {
       do {
         DAT_007f4cfc = puVar6;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar11 = *(int *)((int)param_1 + 0x29);
+        iVar11 = STField<int>(param_1,0x29);
         if (local_28 < *(uint *)(iVar11 + 0xc)) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           puVar8 = (ushort *)(*(int *)(iVar11 + 8) * local_28 + *(int *)(iVar11 + 0x1c));
@@ -102,20 +100,17 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
       } while ((int)local_28 < (int)DAT_007f4d4c);
     }
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  DAT_007f4d04 = Library::DKW::LIB::MemAlloc((uint)*(ushort *)((int)param_1 + 0x27) * 0x1c);
+  DAT_007f4d04 = Library::DKW::LIB::MemAlloc((uint)STField<ushort>(param_1,0x27) * 0x1c);
   DAT_007f4d40 = 0;
   DAT_007f4cf8 = 0;
   local_30 = 0;
   local_34 = 0;
   local_40 = 0;
   DAT_007f4d48 = DAT_007f4d04;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(int *)((int)param_1 + 0x4d) == -2) || (*(int *)((int)param_1 + 0x4d) == -3)) {
+  if ((STField<int>(param_1,0x4d) == -2) || (STField<int>(param_1,0x4d) == -3)) {
     local_48 = 0;
     local_28 = 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(short *)((int)param_1 + 0x27) != 0) {
+    if (STField<short>(param_1,0x27) != 0) {
       do {
         if (local_28 < param_2->count) {
           puVar8 = DArrayAt<ushort>(param_2, local_28);
@@ -149,8 +144,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
               DAT_007f4d24 = DAT_007f4d24 + -1;
             }
           }
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          piVar5 = *(int **)((int)param_1 + 0x59);
+          piVar5 = STField<int *>(param_1,0x59);
           iVar11 = local_48;
           if ((uint)(ushort)pSVar9->field_0032 != piVar5[local_48 * 4 + 6]) {
             iVar10 = local_48;
@@ -171,26 +165,24 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
             *(int *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 8) = (int)pSVar9->field_004B;
             local_40 = local_40 + 2 + pSVar9->field_004B * 4;
             *(uint *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 0x18) = local_28;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if (*(int *)((int)param_1 + 0x4d) == -3) {
+            if (STField<int>(param_1,0x4d) == -3) {
               *(undefined4 *)(DAT_007f4d3c + DAT_007f4d40 * 0x14) =
-                   *(undefined4 *)(*(int *)((int)param_1 + 0x59) + 0xc + iVar11 * 0x10);
+                   *(undefined4 *)(STField<int>(param_1,0x59) + 0xc + iVar11 * 0x10);
               *(undefined4 *)(DAT_007f4d3c + DAT_007f4d40 * 0x14 + 4) =
-                   *(undefined4 *)((iVar11 + 1) * 0x10 + *(int *)((int)param_1 + 0x59));
+                   *(undefined4 *)((iVar11 + 1) * 0x10 + STField<int>(param_1,0x59));
               *(undefined4 *)(DAT_007f4d3c + DAT_007f4d40 * 0x14 + 8) =
-                   *(undefined4 *)(*(int *)((int)param_1 + 0x59) + 0x14 + iVar11 * 0x10);
+                   *(undefined4 *)(STField<int>(param_1,0x59) + 0x14 + iVar11 * 0x10);
             }
             else {
               *(undefined4 *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 0xc) =
-                   *(undefined4 *)(*(int *)((int)param_1 + 0x59) + 0xc + iVar11 * 0x10);
+                   *(undefined4 *)(STField<int>(param_1,0x59) + 0xc + iVar11 * 0x10);
               *(undefined4 *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 0x10) =
-                   *(undefined4 *)((iVar11 + 1) * 0x10 + *(int *)((int)param_1 + 0x59));
+                   *(undefined4 *)((iVar11 + 1) * 0x10 + STField<int>(param_1,0x59));
               *(undefined4 *)((int)DAT_007f4d04 + DAT_007f4d40 * 0x1c + 0x14) =
-                   *(undefined4 *)(*(int *)((int)param_1 + 0x59) + 0x14 + iVar11 * 0x10);
+                   *(undefined4 *)(STField<int>(param_1,0x59) + 0x14 + iVar11 * 0x10);
             }
             local_48 = iVar11 + 1;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if (**(int **)((int)param_1 + 0x59) <= local_48) {
+            if (*STField<int *>(param_1,0x59) <= local_48) {
               local_48 = 0;
             }
             DAT_007f4d40 = DAT_007f4d40 + 1;
@@ -198,32 +190,26 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
           else {
             DAT_007f4cf8 = DAT_007f4cf8 + 1;
             *(int *)((int)DAT_007f4d04 +
-                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                    ((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 0x1c) =
+                    ((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 0x1c) =
                  (int)pSVar9->field_0047;
             *(int *)((int)DAT_007f4d04 +
-                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                    ((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 0x1c + 4) =
+                    ((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 0x1c + 4) =
                  (int)pSVar9->field_0049;
             *(int *)((int)DAT_007f4d04 +
-                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                    ((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 0x1c + 8) =
+                    ((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 0x1c + 8) =
                  (int)pSVar9->field_004B;
             *(uint *)((int)DAT_007f4d04 +
-                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                     ((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 0x1c + 0x18) =
+                     ((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 0x1c + 0x18) =
                  local_28;
           }
         }
         local_28 = local_28 + 1;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      } while ((int)local_28 < (int)(uint)*(ushort *)((int)param_1 + 0x27));
+      } while ((int)local_28 < (int)(uint)STField<ushort>(param_1,0x27));
     }
   }
   else {
     local_28 = 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(short *)((int)param_1 + 0x27) != 0) {
+    if (STField<short>(param_1,0x27) != 0) {
       do {
         if (local_28 < param_2->count) {
           puVar8 = DArrayAt<ushort>(param_2, local_28);
@@ -267,8 +253,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
           DAT_007f4d40 = DAT_007f4d40 + 1;
         }
         local_28 = local_28 + 1;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      } while ((int)local_28 < (int)(uint)*(ushort *)((int)param_1 + 0x27));
+      } while ((int)local_28 < (int)(uint)STField<ushort>(param_1,0x27));
     }
   }
   if (DAT_007f4d24 < 0) {
@@ -285,50 +270,40 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
       DAT_007f4d08 = 0;
     }
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((*(int *)((int)param_1 + 0x4d) != 0) && ((*(byte *)((int)param_1 + 0x49) & 1) == 0)) &&
-     (DAT_007f4d4c == *(ushort *)((int)param_1 + 0x27))) {
+  if (((STField<int>(param_1,0x4d) != 0) && ((STField<byte>(param_1,0x49) & 1) == 0)) &&
+     (DAT_007f4d4c == STField<ushort>(param_1,0x27))) {
     iVar7 = FUN_006db910(DAT_007f4d0c,DAT_007f4d10,param_3 * 4 + 2,param_4 * 4 + 2);
     iVar7 = ((iVar7 * 4 + 0x2d) / 0x5a) * 0x5a;
     iVar7 = (int)(iVar7 + (iVar7 >> 0x1f & 3U)) >> 2;
-    *(int *)((int)param_1 + 0x55) = iVar7;
+    STField<int>(param_1,0x55) = iVar7;
     if (iVar7 == 0x168) {
-      *(undefined4 *)((int)param_1 + 0x55) = 0;
+      STField<undefined4>(param_1,0x55) = 0;
     }
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  DAT_007f4d28 = Library::DKW::STR::FUN_006db640(*(int *)((int)param_1 + 0x55));
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  DAT_007f4d38 = FUN_006db6d0(*(int *)((int)param_1 + 0x55));
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar7 = *(int *)((int)param_1 + 0x4d);
+  DAT_007f4d28 = Library::DKW::STR::FUN_006db640(STField<int>(param_1,0x55));
+  DAT_007f4d38 = FUN_006db6d0(STField<int>(param_1,0x55));
+  iVar7 = STField<int>(param_1,0x4d);
   switch(iVar7) {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 1:
-    thunk_FUN_0040e0f0(param_3,param_4,param_5,0,*(int *)((int)param_1 + 0x51));
+    thunk_FUN_0040e0f0(param_3,param_4,param_5,0,STField<int>(param_1,0x51));
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 2:
-    thunk_FUN_0040fc40(param_3,param_4,param_5,0,*(int *)((int)param_1 + 0x51),0);
+    thunk_FUN_0040fc40(param_3,param_4,param_5,0,STField<int>(param_1,0x51),0);
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 3:
-    thunk_FUN_00411260(param_3,param_4,param_5,0,*(int *)((int)param_1 + 0x51),
-                       *(uint *)((int)param_1 + 0x55));
+    thunk_FUN_00411260(param_3,param_4,param_5,0,STField<int>(param_1,0x51),
+                       STField<uint>(param_1,0x55));
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 4:
   case 5:
-    thunk_FUN_00411e50(param_3,param_4,param_5,0,*(int *)((int)param_1 + 0x51),
-                       *(uint *)((int)param_1 + 0x55),(uint)(iVar7 == 4));
+    thunk_FUN_00411e50(param_3,param_4,param_5,0,STField<int>(param_1,0x51),
+                       STField<uint>(param_1,0x55),(uint)(iVar7 == 4));
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case -10:
-    thunk_FUN_00410dc0(param_3,param_4,2,0,*(int *)((int)param_1 + 0x51));
+    thunk_FUN_00410dc0(param_3,param_4,2,0,STField<int>(param_1,0x51));
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   default:
-    iVar7 = *(int *)((int)param_1 + 0x51);
+    iVar7 = STField<int>(param_1,0x51);
     goto LAB_0041463f;
   case -3:
   case -2:
@@ -336,19 +311,16 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
       iVar7 = 0;
     }
     else {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar7 = thunk_FUN_00412960(param_3,param_4,param_5,0,*(int *)((int)param_1 + 0x55),
-                                 *(int *)((int)param_1 + 0x51),
-                                 *(AnonShape_00412960_B35D15BC **)((int)param_1 + 0x59),
+      iVar7 = thunk_FUN_00412960(param_3,param_4,param_5,0,STField<int>(param_1,0x55),
+                                 STField<int>(param_1,0x51),
+                                 STField<AnonShape_00412960_B35D15BC *>(param_1,0x59),
                                  (uint)(iVar7 == -2));
     }
     if ((iVar7 != 0) || (DAT_007f4cf8 < 1)) break;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     DAT_007f4d48 = (void *)((int)DAT_007f4d04 +
-                           ((uint)*(ushort *)((int)param_1 + 0x27) - DAT_007f4cf8) * 0x1c);
+                           ((uint)STField<ushort>(param_1,0x27) - DAT_007f4cf8) * 0x1c);
     DAT_007f4d20 = DAT_007f4cf8;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar7 = *(int *)((int)param_1 + 0x55);
+    iVar7 = STField<int>(param_1,0x55);
     if ((iVar7 < 0x152) && (0x17 < iVar7)) {
       if (iVar7 < 0x125) {
         if (iVar7 < 0xf8) {
@@ -390,7 +362,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
 LAB_0041463f:
     thunk_FUN_00413050(param_3,param_4,param_5,0,iVar7);
   }
-  *(uint *)((int)param_1 + 0x49) = *(uint *)((int)param_1 + 0x49) & 0xfffffffe;
+  STField<uint>(param_1,0x49) = STField<uint>(param_1,0x49) & 0xfffffffe;
   ExceptionList = local_14;
   return;
 }

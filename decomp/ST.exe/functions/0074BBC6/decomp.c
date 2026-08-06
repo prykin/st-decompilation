@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 00747D92 -> 0074BBC6 @ 00747DD6 */
@@ -73,11 +75,11 @@ LAB_0074bbef:
         pcVar4 = pcVar4 + 1;
         pcVar5 = pcVar5 + 1;
       } while (bVar6);
-      if ((!bVar6) || (iVar2 = *(int *)((int)this + 0x40), iVar2 != param_1->field_0040))
+      if ((!bVar6) || (iVar2 = STField<int>(this,0x40), iVar2 != param_1->field_0040))
       goto cf_common_exit_0074BC42;
       if (iVar2 != 0) {
         bVar6 = true;
-        pcVar4 = *(char **)((int)this + 0x44);
+        pcVar4 = STField<char *>(this,0x44);
         pcVar5 = param_1->field_0044;
         do {
           if (iVar2 == 0) break;

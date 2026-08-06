@@ -105,14 +105,12 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
     return 0;
   }
   switch(*param_1) {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 100:
     if (((local_c->field_007B != -0x8000) && (local_c->field_007B != 1)) &&
        ((local_c->field_0152 != '\0' &&
-        ((((uint)*(ushort *)((int)param_1 + 0xe) & local_c->field_0153) != 0 &&
+        ((((uint)STField<ushort>(param_1,0xe) & local_c->field_0153) != 0 &&
          (local_c->field_00B3 == 0)))))) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(ushort *)((int)param_1 + 0xe) == 1) {
+      if (STField<ushort>(param_1,0xe) == 1) {
         uVar23 = local_c->field_009B;
         if ((uVar23 < 0x8c) || (0x95 < uVar23)) {
           bVar24 = false;
@@ -192,14 +190,13 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
       if (((0 < local_c->field_0157) &&
           (uVar11 = sub_0065D9C0(local_c),
           (int)this_00->field_0157 <= CONCAT22(extraout_var_02,uVar11))) &&
-         (*(undefined1 *)(param_1 + 2) = 1, *(char *)((int)param_1 + 9) != '\0')) {
+         (*(undefined1 *)(param_1 + 2) = 1, STField<char>(param_1,9) != '\0')) {
         if (g_allPlayers_007FA174 == nullptr) {
           pSVar18 = nullptr;
         }
         else {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           pSVar18 = STAllPlayersC::GetObjPtr
-                              (g_allPlayers_007FA174,*(char *)((int)param_1 + 0x12),
+                              (g_allPlayers_007FA174,STField<char>(param_1,0x12),
                                (ushort)param_1[4],CASE_1);
         }
         if (pSVar18 != nullptr) {
@@ -233,11 +230,11 @@ LAB_00663af0:
        (uVar11 = sub_0065D9C0(local_c), (int)this_00->field_018C <= CONCAT22(extraout_var_01,uVar11)
        )) {
       *(undefined1 *)(param_1 + 2) = 1;
-      *(undefined2 *)((int)param_1 + 9) = uVar11;
+      STField<undefined2>(param_1,9) = uVar11;
       uVar9 = this_00->field_0188;
-      *(undefined4 *)((int)param_1 + 0xf) = uVar9;
+      STField<undefined4>(param_1,0xf) = uVar9;
       iVar12 = thunk_FUN_0065e3b0((AnonShape_0065DA10_8B0AA883 *)this_00,uVar9);
-      *(int *)((int)param_1 + 0xb) = iVar12;
+      STField<int>(param_1,0xb) = iVar12;
       g_currentExceptionFrame = local_74.previous;
       return 0;
     }
@@ -247,14 +244,12 @@ LAB_00663af0:
         (local_c->field_0187 != '\0')) && (local_c->field_00B3 == 0)) {
       this_01 = thunk_FUN_004357f0(*(char *)&local_c->field_0024);
       if ((char)param_1[2] == '\0') {
-        this_00->field_00FB = *(undefined4 *)((int)param_1 + 9);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        this_00->field_00F7 = *(undefined4 *)((int)param_1 + 0xd);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        this_00->field_00EF = (int)*(short *)((int)param_1 + 0x11);
-        *(undefined4 *)&this_00->field_0x195 = *(undefined4 *)((int)param_1 + 0x13);
-        *(undefined4 *)&this_00->field_0x199 = *(undefined4 *)((int)param_1 + 0x17);
-        *(undefined4 *)&this_00->field_0x19d = *(undefined4 *)((int)param_1 + 0x1b);
+        this_00->field_00FB = STField<undefined4>(param_1,9);
+        this_00->field_00F7 = STField<undefined4>(param_1,0xd);
+        this_00->field_00EF = (int)STField<short>(param_1,0x11);
+        *(undefined4 *)&this_00->field_0x195 = STField<undefined4>(param_1,0x13);
+        *(undefined4 *)&this_00->field_0x199 = STField<undefined4>(param_1,0x17);
+        *(undefined4 *)&this_00->field_0x19d = STField<undefined4>(param_1,0x1b);
         this_00->field_009B = 0x82;
         this_00->field_009F = 0;
         this_00->field_00A3 = 0;
@@ -279,14 +274,14 @@ LAB_00663af0:
       g_currentExceptionFrame = local_74.previous;
       return 0;
     }
-    GVar5 = **(uint **)((int)param_1 + 10);
+    GVar5 = *STField<uint *>(param_1,10);
     if ((0x53 < GVar5) && (GVar5 < 0x5b)) {
       pIVar13 = thunk_FUN_00674fb0(GVar5);
       if ((this_00->field_025F & (uint)pIVar13) == 0) {
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }
-      GVar6 = **(Global_sub_004E80F0_param_2Enum **)((int)param_1 + 10);
+      GVar6 = *STField<Global_sub_004E80F0_param_2Enum *>(param_1,10);
       if (((int)GVar6 < 1) || (0x28 < (int)GVar6)) {
         bVar24 = false;
       }
@@ -345,15 +340,15 @@ LAB_00663af0:
       }
       local_8 = (DArrayTy *)sub_0065E360(this_00,iVar12,0x53);
       if ((local_8 != nullptr) && (local_8->count != 0)) {
-        iVar12 = *(int *)((int)param_1 + 10);
+        iVar12 = STField<int>(param_1,10);
         if (*(char *)(iVar12 + 0x3e) == '\0') {
           if ((this_00->field_009B == 0xc) || (this_00->field_00B3 != 0)) goto LAB_0066263e;
         }
         else if ((((*(short *)(iVar12 + 0x16) < 0) || (*(short *)(iVar12 + 0x18) < 0)) ||
                  (*(short *)(iVar12 + 0x1a) < 0)) && (this_00->field_0284 != nullptr)) {
           *(ushort *)(iVar12 + 0x16) = this_00->field_0284[0x41];
-          *(ushort *)(*(int *)((int)param_1 + 10) + 0x18) = this_00->field_0284[0x42];
-          *(ushort *)(*(int *)((int)param_1 + 10) + 0x1a) = this_00->field_0284[0x43];
+          *(ushort *)(STField<int>(param_1,10) + 0x18) = this_00->field_0284[0x42];
+          *(ushort *)(STField<int>(param_1,10) + 0x1a) = this_00->field_0284[0x43];
         }
         local_10 = nullptr;
         if (0 < (int)local_8->count) {
@@ -377,9 +372,9 @@ LAB_00663af0:
             }
             if (local_14 != nullptr) {
               *(undefined1 *)(param_1 + 2) = 1;
-              *(ushort *)((int)param_1 + 0xe) = uVar3;
-              if (*(char *)((int)param_1 + 9) != '\0') {
-                puVar21 = (byte *)(*(undefined4 **)((int)param_1 + 10));
+              STField<ushort>(param_1,0xe) = uVar3;
+              if (STField<char>(param_1,9) != '\0') {
+                puVar21 = (byte *)(STField<undefined4 *>(param_1,10));
                 puVar22 = (byte *)(&this_00->field_01AD);
                 memmove(puVar22, puVar21, 0x4a); /* compiler REP MOVS byte copy */
                 iVar12 = 0;
@@ -397,7 +392,7 @@ LAB_00663af0:
                                               (int)local_14);
                   if (iVar12 == 0) {
                     *(undefined1 *)(param_1 + 2) = 0;
-                    *(undefined2 *)((int)param_1 + 0xe) = 0;
+                    STField<undefined2>(param_1,0xe) = 0;
                     pDVar16 = local_10;
                     goto LAB_006625c2;
                   }
@@ -415,7 +410,7 @@ LAB_00663af0:
                 this_00->field_00A3 = 0;
                 this_00->field_00A7 = 0;
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                if (*(char *)(*(int *)((int)param_1 + 10) + 0x3e) != '\0') {
+                if (*(char *)(STField<int>(param_1,10) + 0x3e) != '\0') {
                   this_00->field_00B3 = 0xc;
                 }
               }
@@ -448,7 +443,7 @@ LAB_0066263e:
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }
-      GVar6 = **(Global_sub_004E80F0_param_2Enum **)((int)param_1 + 10);
+      GVar6 = *STField<Global_sub_004E80F0_param_2Enum *>(param_1,10);
       if (((int)GVar6 < 1) || (0x28 < (int)GVar6)) {
         bVar24 = false;
       }
@@ -518,7 +513,7 @@ LAB_0066263e:
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }
-      iVar12 = *(int *)((int)param_1 + 10);
+      iVar12 = STField<int>(param_1,10);
       if (*(char *)(iVar12 + 0x3e) == '\0') {
         if (this_00->field_009B == 0x23) {
           g_currentExceptionFrame = local_74.previous;
@@ -534,8 +529,8 @@ LAB_0066263e:
         }
       }
       *(undefined1 *)(param_1 + 2) = 1;
-      *(undefined2 *)((int)param_1 + 0xe) = 0xffff;
-      if (*(char *)((int)param_1 + 9) == '\0') {
+      STField<undefined2>(param_1,0xe) = 0xffff;
+      if (STField<char>(param_1,9) == '\0') {
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }
@@ -543,10 +538,10 @@ LAB_0066263e:
           (((*(short *)(iVar12 + 0x16) < 0 || (*(short *)(iVar12 + 0x18) < 0)) ||
            (*(short *)(iVar12 + 0x1a) < 0)))) && (this_00->field_0284 != nullptr)) {
         *(ushort *)(iVar12 + 0x16) = this_00->field_0284[0x41];
-        *(ushort *)(*(int *)((int)param_1 + 10) + 0x18) = this_00->field_0284[0x42];
-        *(ushort *)(*(int *)((int)param_1 + 10) + 0x1a) = this_00->field_0284[0x43];
+        *(ushort *)(STField<int>(param_1,10) + 0x18) = this_00->field_0284[0x42];
+        *(ushort *)(STField<int>(param_1,10) + 0x1a) = this_00->field_0284[0x43];
       }
-      puVar21 = (byte *)(*(undefined4 **)((int)param_1 + 10));
+      puVar21 = (byte *)(STField<undefined4 *>(param_1,10));
       puVar22 = (byte *)(&this_00->field_01AD);
       memmove(puVar22, puVar21, 0x4a); /* compiler REP MOVS byte copy */
       iVar12 = 0;
@@ -563,7 +558,7 @@ LAB_0066263e:
                                     (int)this_00->field_01C5,(int)this_00->field_01C7,0);
         if (iVar12 == 0) {
           *(undefined1 *)(param_1 + 2) = 0;
-          *(undefined2 *)((int)param_1 + 0xe) = 0;
+          STField<undefined2>(param_1,0xe) = 0;
           g_currentExceptionFrame = local_74.previous;
           return 0;
         }
@@ -579,7 +574,7 @@ LAB_0066263e:
       this_00->field_00A3 = 0;
       this_00->field_00A7 = 0;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(char *)(*(int *)((int)param_1 + 10) + 0x3e) == '\0') {
+      if (*(char *)(STField<int>(param_1,10) + 0x3e) == '\0') {
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }
@@ -599,7 +594,7 @@ LAB_0066263e:
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }
-      GVar6 = **(Global_sub_004E80F0_param_2Enum **)((int)param_1 + 10);
+      GVar6 = *STField<Global_sub_004E80F0_param_2Enum *>(param_1,10);
       if (((int)GVar6 < 1) || (0x28 < (int)GVar6)) {
         bVar24 = false;
       }
@@ -658,12 +653,10 @@ LAB_0066263e:
       }
       sVar4 = this_00->field_0039;
       if (sVar4 == 1) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar19 = (-(uint)(**(int **)((int)param_1 + 10) != 9) & 0xfffffff2) + 0x40;
+        iVar19 = (-(uint)(*STField<int *>(param_1,10) != 9) & 0xfffffff2) + 0x40;
       }
       else if (sVar4 == 2) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar19 = (-(uint)(**(int **)((int)param_1 + 10) != 0x15) & 0xffffffe9) + 0x49;
+        iVar19 = (-(uint)(*STField<int *>(param_1,10) != 0x15) & 0xffffffe9) + 0x49;
       }
       else if (sVar4 == 3) {
         iVar19 = 0x5c;
@@ -674,7 +667,7 @@ LAB_0066263e:
       local_8 = (DArrayTy *)sub_0065E360(this_00,iVar12,iVar19);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((((local_8 != nullptr) && (uVar23 = local_8->count, uVar23 != 0)) &&
-          ((*(char *)(*(int *)((int)param_1 + 10) + 0x3e) != '\0' ||
+          ((*(char *)(STField<int>(param_1,10) + 0x3e) != '\0' ||
            ((this_00->field_009B != 0xe && (this_00->field_00B3 == 0)))))) &&
          (uVar20 = 0, 0 < (int)uVar23)) {
         do {
@@ -696,12 +689,12 @@ LAB_0066263e:
           if (((STGameObjC *)local_24 != nullptr) &&
              (iVar12 = thunk_FUN_004c93e0(local_24,1), iVar12 == 0)) {
             *(undefined1 *)(param_1 + 2) = 1;
-            *(ushort *)((int)param_1 + 0xe) = uVar3;
-            if (*(char *)((int)param_1 + 9) != '\0') {
-              puVar21 = (byte *)(*(undefined4 **)((int)param_1 + 10));
+            STField<ushort>(param_1,0xe) = uVar3;
+            if (STField<char>(param_1,9) != '\0') {
+              puVar21 = (byte *)(STField<undefined4 *>(param_1,10));
               puVar22 = (byte *)(&this_00->field_01AD);
               memmove(puVar22, puVar21, 0x4a); /* compiler REP MOVS byte copy */
-              puVar7 = *(uint **)((int)param_1 + 10);
+              puVar7 = STField<uint *>(param_1,10);
               TLOBaseTy::thunk_FUN_004c7cc0
                         (local_24,1,*puVar7,1,1,(uint)(ushort)puVar7[3],puVar7[2],
                          (int)(char)puVar7[7],(char *)((int)puVar7 + 0x1d));
@@ -713,7 +706,7 @@ LAB_0066263e:
               this_00->field_00A7 = 0;
               this_00->field_009B = 0xe;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              if (*(char *)(*(int *)((int)param_1 + 10) + 0x3e) != '\0') {
+              if (*(char *)(STField<int>(param_1,10) + 0x3e) != '\0') {
                 this_00->field_00B3 = 0xe;
               }
             }
@@ -820,7 +813,7 @@ LAB_00663076:
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((((local_8 != nullptr) &&
            (pSVar18 = (STGameObjC *)local_8->count, pSVar18 != nullptr)) &&
-          ((*(char *)(*(int *)((int)param_1 + 10) + 0x3e) != '\0' ||
+          ((*(char *)(STField<int>(param_1,10) + 0x3e) != '\0' ||
            ((this_00->field_009B != 0x10 && (this_00->field_00B3 == 0)))))) &&
          (local_14 = nullptr, 0 < (int)pSVar18)) {
         do {
@@ -842,9 +835,8 @@ LAB_00663076:
           local_24 = (TLOBaseTy *)pSVar14;
           if (pSVar14 != nullptr) {
             iVar12 = thunk_FUN_004e1490(pSVar14);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if ((iVar12 == 0) ||
-               (iVar12._0_2_ = pSVar14->field_05B8, iVar12._2_2_ = pSVar14->field_05BA,
+               (STPiece<0,2>(iVar12) = pSVar14->field_05B8, STPiece<2,2>(iVar12) = pSVar14->field_05BA,
                g_worldGrid.sizeZ + -1 <= iVar12)) {
               bVar24 = false;
             }
@@ -853,13 +845,13 @@ LAB_00663076:
             }
             if (bVar24) {
               *(undefined1 *)(param_1 + 2) = 1;
-              *(ushort *)((int)param_1 + 0xe) = uVar3;
-              if (*(char *)((int)param_1 + 9) != '\0') {
-                puVar21 = (byte *)(*(undefined4 **)((int)param_1 + 10));
+              STField<ushort>(param_1,0xe) = uVar3;
+              if (STField<char>(param_1,9) != '\0') {
+                puVar21 = (byte *)(STField<undefined4 *>(param_1,10));
                 puVar22 = (byte *)(&this_00->field_01AD);
                 memmove(puVar22, puVar21, 0x4a); /* compiler REP MOVS byte copy */
-                thunk_FUN_004ebab0(local_24,**(int **)((int)param_1 + 10),
-                                   (*(int **)((int)param_1 + 10))[0xb]);
+                thunk_FUN_004ebab0(local_24,*STField<int *>(param_1,10),
+                                   (STField<int *>(param_1,10))[0xb]);
                 if (this_00->field_00B3 != 0) {
                   sub_0065F980(this_00);
                 }
@@ -868,7 +860,7 @@ LAB_00663076:
                 this_00->field_00A7 = 0;
                 this_00->field_009B = 0x12;
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                if (*(char *)(*(int *)((int)param_1 + 10) + 0x3e) != '\0') {
+                if (*(char *)(STField<int>(param_1,10) + 0x3e) != '\0') {
                   this_00->field_00B3 = 0x12;
                 }
               }
@@ -942,7 +934,7 @@ LAB_00663076:
       g_currentExceptionFrame = local_74.previous;
       return 0;
     }
-    iVar12 = **(int **)((int)param_1 + 10);
+    iVar12 = *STField<int *>(param_1,10);
     if (iVar12 - 0xa3U < 0x1c) {
       uVar23 = (uint)*(byte *)(iVar12 + 0x663d51);
       switch(iVar12) {
@@ -968,7 +960,7 @@ switchD_00662d3e_caseD_a4:
     local_8 = (DArrayTy *)sub_0065E360(this_00,uVar23,iVar12);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((((local_8 != nullptr) && (dVar8 = local_8->count, dVar8 != 0)) &&
-        ((*(char *)(*(int *)((int)param_1 + 10) + 0x3e) != '\0' ||
+        ((*(char *)(STField<int>(param_1,10) + 0x3e) != '\0' ||
          ((this_00->field_009B != 0x12 && (this_00->field_00B3 == 0)))))) &&
        (local_24 = nullptr, 0 < (int)dVar8)) {
       bVar24 = dVar8 != 0;
@@ -989,7 +981,7 @@ LAB_00662dbb:
                              (g_allPlayers_007FA174,*(char *)&this_00->field_0024,uVar3,CASE_1);
       }
       if ((STGameObjC *)local_10 == nullptr) goto cf_continue_loop_00662E52;
-      switch(**(undefined4 **)((int)param_1 + 10)) {
+      switch(*STField<undefined4 *>(param_1,10)) {
       case 0xa3:
         iVar12 = TLOBaseTy::sub_004C7860((TLOBaseTy *)local_10,4,0,1,1,1);
         break;
@@ -1007,17 +999,17 @@ LAB_00662dbb:
       }
       if (iVar12 == 0) goto cf_continue_loop_00662E52;
       *(undefined1 *)(param_1 + 2) = 1;
-      *(ushort *)((int)param_1 + 0xe) = uVar3;
-      if (*(char *)((int)param_1 + 9) != '\0') {
-        puVar21 = (byte *)(*(undefined4 **)((int)param_1 + 10));
+      STField<ushort>(param_1,0xe) = uVar3;
+      if (STField<char>(param_1,9) != '\0') {
+        puVar21 = (byte *)(STField<undefined4 *>(param_1,10));
         puVar22 = (byte *)(&this_00->field_01AD);
         memmove(puVar22, puVar21, 0x4a); /* compiler REP MOVS byte copy */
-        iVar12 = **(int **)((int)param_1 + 10);
+        iVar12 = *STField<int *>(param_1,10);
         if (iVar12 == 0xa3) {
           iVar12 = 4;
 LAB_00662ee7:
           TLOBaseTy::thunk_FUN_004c7cc0
-                    ((TLOBaseTy *)local_10,iVar12,0,1,1,0xffffffff,(*(int **)((int)param_1 + 10))[2]
+                    ((TLOBaseTy *)local_10,iVar12,0,1,1,0xffffffff,(STField<int *>(param_1,10))[2]
                      ,0xff,nullptr);
         }
         else {
@@ -1038,7 +1030,7 @@ LAB_00662ee7:
         this_00->field_00A7 = 0;
         this_00->field_009B = 0x12;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (*(char *)(*(int *)((int)param_1 + 10) + 0x3e) != '\0') {
+        if (*(char *)(STField<int>(param_1,10) + 0x3e) != '\0') {
           this_00->field_00B3 = 0x12;
         }
       }
@@ -1051,7 +1043,7 @@ LAB_00662f34:
     }
     break;
   case 0x69:
-    puVar7 = *(uint **)((int)param_1 + 9);
+    puVar7 = STField<uint *>(param_1,9);
     uVar23 = *puVar7;
     if ((uVar23 < 0x32) || (0x73 < uVar23)) {
       bVar24 = false;
@@ -1061,9 +1053,9 @@ LAB_00662f34:
     }
     if (bVar24) {
       if (local_c->field_01B5 != puVar7[2]) {
-        sVar4 = *(short *)((int)puVar7 + 0x1a);
+        sVar4 = STField<short>(puVar7,0x1a);
         sVar1 = (short)puVar7[6];
-        sVar2 = *(short *)((int)puVar7 + 0x16);
+        sVar2 = STField<short>(puVar7,0x16);
         if ((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) || (sVar1 < 0)) ||
            (((g_worldGrid.sizeY <= sVar1 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)))) {
           this_02 = nullptr;
@@ -1074,7 +1066,7 @@ LAB_00662f34:
         if ((this_02 != nullptr) &&
            (this_02[1].vtable == (STWorldObjectVTable *)local_c->field_0024)) {
           iVar12 = this_02->GetObjectTypeId();
-          if (iVar12 == **(int **)((int)param_1 + 9)) {
+          if (iVar12 == *STField<int *>(param_1,9)) {
             *(undefined1 *)(param_1 + 2) = 1;
             g_currentExceptionFrame = local_74.previous;
             return 0;
@@ -1092,7 +1084,7 @@ LAB_00662f34:
           else {
             iVar12 = 0;
           }
-          if (iVar12 == **(int **)((int)param_1 + 9)) {
+          if (iVar12 == *STField<int *>(param_1,9)) {
             iVar12 = this_02->GetObjectTypeId();
             if (iVar12 == 0x78) {
               uVar23 = *(uint *)&this_02[0x11].field_0x5;
@@ -1101,7 +1093,7 @@ LAB_00662f34:
               uVar23 = 0xffffffff;
             }
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if (uVar23 == *(ushort *)(*(int *)((int)param_1 + 9) + 0xc)) {
+            if (uVar23 == *(ushort *)(STField<int>(param_1,9) + 0xc)) {
               g_currentExceptionFrame = local_74.previous;
               return 0;
             }
@@ -1130,7 +1122,7 @@ LAB_00663325:
                                (ushort)puVar7[0xe],CASE_1);
         }
         if (pSVar18 == nullptr) goto LAB_00663325;
-        iVar12 = thunk_FUN_004c9430(pSVar18,1,*(int *)(*(int *)((int)param_1 + 9) + 8));
+        iVar12 = thunk_FUN_004c9430(pSVar18,1,*(int *)(STField<int>(param_1,9) + 8));
         if (iVar12 == 0) {
           *(undefined1 *)(param_1 + 2) = 1;
           g_currentExceptionFrame = local_74.previous;
@@ -1156,8 +1148,7 @@ LAB_00663325:
         else {
           pvVar15 = nullptr;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (*(int *)(param_1[2] + 8) == *(int *)((int)pvVar15 + 0x24)) break;
+        if (*(int *)(param_1[2] + 8) == STField<int>(pvVar15,0x24)) break;
         uVar20 = uVar20 + 1;
         bVar24 = uVar20 < uVar23;
         if ((int)uVar23 <= (int)uVar20) {
@@ -1165,15 +1156,14 @@ LAB_00663325:
           return 0;
         }
       }
-      *(undefined4 *)((int)pvVar15 + 0x24) = 0;
+      STField<undefined4>(pvVar15,0x24) = 0;
       g_currentExceptionFrame = local_74.previous;
       return 0;
     }
     break;
   case 0x6d:
     if (local_c->field_0163 == '\x01') {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(char *)((int)param_1 + 0xd) == '\0') {
+      if (STField<char>(param_1,0xd) == '\0') {
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if ((local_c->field_007B == 0x10) &&
            (uVar11 = sub_0065D9C0(local_c), 4 < CONCAT22(extraout_var,uVar11))) {
@@ -1183,8 +1173,7 @@ LAB_00663325:
           param_1[2] = 0xffffffff;
         }
         if ((char)param_1[3] != '\0') {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          psVar25 = *(short **)((int)param_1 + 0xe);
+          psVar25 = STField<short *>(param_1,0xe);
 LAB_0066348c:
           AppendZone(this_00,psVar25);
         }
@@ -1199,15 +1188,13 @@ LAB_0066348c:
           param_1[2] = 0xffffffff;
         }
         if ((char)param_1[3] != '\0') {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          psVar25 = *(short **)((int)param_1 + 0xe);
+          psVar25 = STField<short *>(param_1,0xe);
           goto LAB_0066348c;
         }
       }
     }
     if ((this_00->field_0122 == '\x01') && ((char)param_1[3] != '\0')) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      AppendPoint(this_00,*(short **)((int)param_1 + 0xe),5);
+      AppendPoint(this_00,STField<short *>(param_1,0xe),5);
       g_currentExceptionFrame = local_74.previous;
       return 0;
     }
@@ -1229,9 +1216,8 @@ LAB_0066348c:
       }
     }
     uVar23 = 0;
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_00663504:
-    if (*(uint *)((int)param_1 + 0xb) != uVar23) {
+    if (STField<uint>(param_1,0xb) != uVar23) {
       iVar12 = local_c->field_0116;
       if (iVar12 == 0xdd) {
         uVar23 = (-(uint)(sVar4 != 3) & 0xffffffdb) + 0x5e;
@@ -1245,8 +1231,7 @@ LAB_00663504:
       else {
         uVar23 = 0;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(uint *)((int)param_1 + 0xb) != uVar23) {
+      if (STField<uint>(param_1,0xb) != uVar23) {
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }
@@ -1294,7 +1279,7 @@ LAB_00663504:
     g_currentExceptionFrame = local_74.previous;
     return 0;
   case 0x73:
-    iVar12 = (int)*(short *)(*(int *)((int)param_1 + 10) + 1);
+    iVar12 = (int)*(short *)(STField<int>(param_1,10) + 1);
     sVar4 = local_c->field_0039;
     if (sVar4 < 1) {
 LAB_006636da:
@@ -1329,14 +1314,14 @@ LAB_006636da:
                               (g_allPlayers_007FA174,*(char *)&local_c->field_0024,uVar3,CASE_1);
         }
         if ((pSVar18 != nullptr) &&
-           (iVar12 = thunk_FUN_004e3790(pSVar18,(int)*(short *)(*(int *)((int)param_1 + 10) + 1),
-                                        (int)*(short *)(*(int *)((int)param_1 + 10) + 3),1),
+           (iVar12 = thunk_FUN_004e3790(pSVar18,(int)*(short *)(STField<int>(param_1,10) + 1),
+                                        (int)*(short *)(STField<int>(param_1,10) + 3),1),
            iVar12 != 0)) {
           *(undefined1 *)(param_1 + 2) = 1;
-          *(ushort *)((int)param_1 + 0xe) = uVar3;
-          if (*(char *)((int)param_1 + 9) != '\0') {
+          STField<ushort>(param_1,0xe) = uVar3;
+          if (STField<char>(param_1,9) != '\0') {
             TLOBaseTy::thunk_FUN_004c7cc0
-                      ((TLOBaseTy *)pSVar18,2,(int)*(short *)(*(int *)((int)param_1 + 10) + 1),1,1,
+                      ((TLOBaseTy *)pSVar18,2,(int)*(short *)(STField<int>(param_1,10) + 1),1,1,
                        0xffffffff,0,0xff,nullptr);
           }
           break;
@@ -1390,19 +1375,19 @@ LAB_0066380d:
       }
     }
     if ((char)param_1[2] == '\x01') {
-      if (('\0' < *(char *)((int)param_1 + 9)) &&
-         (*(DArrayTy **)((int)param_1 + 10) != nullptr)) {
-        thunk_FUN_0065d940(this_00,*(DArrayTy **)((int)param_1 + 10),1);
+      if (('\0' < STField<char>(param_1,9)) &&
+         (STField<DArrayTy *>(param_1,10) != nullptr)) {
+        thunk_FUN_0065d940(this_00,STField<DArrayTy *>(param_1,10),1);
       }
       uVar11 = sub_0065D9C0(this_00);
-      *(undefined2 *)((int)param_1 + 0xe) = uVar11;
+      STField<undefined2>(param_1,0xe) = uVar11;
       g_currentExceptionFrame = local_74.previous;
       return 0;
     }
     break;
   case 0x76:
     if (local_c->field_007B == -0x8000) {
-      *(undefined2 *)((int)param_1 + 0xf) = 0;
+      STField<undefined2>(param_1,0xf) = 0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pDVar16 = (DArrayTy *)sub_0065DA10(local_c,extraout_EDX);
       if (pDVar16 != nullptr) {
@@ -1428,18 +1413,15 @@ LAB_0066380d:
               else {
                 bVar24 = true;
               }
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (((bVar24) &&
-                  ((*(short *)((int)param_1 + 9) == -2 ||
-                   (*(short *)((int)param_1 + 9) == pSVar18->field_081C)))) &&
-                 ((*(int *)((int)param_1 + 0xb) == 0 ||
-                  (iVar12 = (*pSVar18->vtable->vfunc_2C)(), *(int *)((int)param_1 + 0xb) == iVar12))
+                  ((STField<short>(param_1,9) == -2 ||
+                   (STField<short>(param_1,9) == pSVar18->field_081C)))) &&
+                 ((STField<int>(param_1,0xb) == 0 ||
+                  (iVar12 = (*pSVar18->vtable->vfunc_2C)(), STField<int>(param_1,0xb) == iVar12))
                  )) {
-                *(short *)((int)param_1 + 0xf) = *(short *)((int)param_1 + 0xf) + 1;
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                if (*(DArrayTy **)((int)param_1 + 0x11) != nullptr) {
-                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                  Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)param_1 + 0x11),&local_28);
+                STField<short>(param_1,0xf) = STField<short>(param_1,0xf) + 1;
+                if (STField<DArrayTy *>(param_1,0x11) != nullptr) {
+                  Library::DKW::TBL::DArrayAppend(STField<DArrayTy *>(param_1,0x11),&local_28);
                 }
               }
             }

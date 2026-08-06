@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00585890(void *this,int param_1,int param_2,uint param_3)
 
@@ -37,7 +39,7 @@ void __thiscall FUN_00585890(void *this,int param_1,int param_2,uint param_3)
       local_10.y = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
                                (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
     }
-    local_10.unknown = *(int *)((int)this + 0x18);
+    local_10.unknown = STField<int>(this,0x18);
     if (soundId != 0) {
       SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
     }

@@ -86,12 +86,10 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
     if (local_14 != 0) {
       do {
         DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,local_8);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        if (local_8._0_2_ != 0xffff) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (STPiece<0,2>(local_8) != 0xffff) {
           pSVar7 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar4->field_0024,local_8._0_2_,CASE_1);
+                             (g_allPlayers_007FA174,pSVar4->field_0024,STPiece<0,2>(local_8),CASE_1);
           if (pSVar7 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -161,12 +159,10 @@ LAB_0049cf10:
       uVar12 = 0;
       do {
         DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar12,local_8);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        if (local_8._0_2_ != 0xffff) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (STPiece<0,2>(local_8) != 0xffff) {
           pSVar7 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar4->field_0024,local_8._0_2_,CASE_1);
+                             (g_allPlayers_007FA174,pSVar4->field_0024,STPiece<0,2>(local_8),CASE_1);
           if (pSVar7 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,

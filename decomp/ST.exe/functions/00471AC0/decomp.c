@@ -417,9 +417,8 @@ cf_common_exit_00472CB0:
         if (local_20 != nullptr) {
           iVar7 = iVar7 + -1;
           STFishC::sub_004162B0((STFishC *)local_20,(short *)((int)&local_10 + 2),&local_c,&local_a);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_2c[0] = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,
-                                     (int)this->field_004B,(int)local_10._2_2_,(int)local_c,
+                                     (int)this->field_004B,(int)STPiece<2,2>(local_10),(int)local_c,
                                      (int)local_a);
           if ((local_2c[0] <= (int)this->field_080C / 0xc9 + 1) &&
              (iVar4 = STTorpC::IsDangerous(local_20,this->field_0018,&local_24), iVar4 != 2)) {
@@ -621,8 +620,7 @@ LAB_00471ec9:
     STFishC::sub_004162F0((STFishC *)pSVar5,&local_6,&local_8,(undefined2 *)((int)&param_1 + 2));
     this->field_0800 = local_6;
     this->field_0802 = local_8;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    this->field_0804 = param_1._2_2_;
+    this->field_0804 = STPiece<2,2>(param_1);
     iVar7 = thunk_FUN_00484020(this,(short)iVar7,(short *)&local_14,(short *)&local_18,
                                (short *)&local_1c);
     if (iVar7 == 0) {

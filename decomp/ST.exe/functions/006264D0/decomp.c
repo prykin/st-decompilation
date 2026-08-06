@@ -68,12 +68,12 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
     puVar13 = puVar13 + 1;
   }
   iVar5 = param_2 * 6;
-  sVar7 = *(short *)(&DAT_007d046c + iVar5) + *(short *)((int)this + 0x2c2);
+  sVar7 = *(short *)(&DAT_007d046c + iVar5) + STField<short>(this,0x2c2);
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   local_20 = STReplaceLowWord((uint32_t)(unaff_EBX), (uint16_t)(sVar7));
-  sVar12 = *(short *)(&DAT_007d046e + iVar5) + *(short *)((int)this + 0x2c6);
+  sVar12 = *(short *)(&DAT_007d046e + iVar5) + STField<short>(this,0x2c6);
   local_54 = STReplaceLowWord((uint32_t)(puVar13), (uint16_t)(sVar12));
-  sVar10 = *(short *)(&DAT_007d0470 + iVar5) + *(short *)((int)this + 0x2ca);
+  sVar10 = *(short *)(&DAT_007d0470 + iVar5) + STField<short>(this,0x2ca);
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   local_40 = STReplaceLowWord((uint32_t)(unaff_ESI), (uint16_t)(sVar10));
   if (param_1 == nullptr) {
@@ -233,7 +233,7 @@ LAB_0062687f:
   }
   local_bc[3] = 1;
   local_bc[2] = 1;
-  local_bc[1] = *(undefined4 *)((int)piVar8 + 0x262);
+  local_bc[1] = STField<undefined4>(piVar8,0x262);
   local_9e = (short)local_40;
   local_a2 = (short)local_20;
   local_98 = (undefined2)local_38;

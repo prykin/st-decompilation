@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
 
@@ -13,8 +15,7 @@ void FUN_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
   int local_c;
   int local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_8 = *(int *)((int)param_1 + 0x132) + 0x80;
+  local_8 = STField<int>(param_1,0x132) + 0x80;
   piVar4 = (int *)(param_3 + 0x60);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   piVar6 = (int *)(*(int *)(param_2 + 0x50) + 0x60);

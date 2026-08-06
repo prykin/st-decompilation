@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STVTableApplier] Virtual slot 0079DB3C+0x20
 

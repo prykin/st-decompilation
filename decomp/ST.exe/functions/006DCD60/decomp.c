@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -91,15 +93,14 @@ void __fastcall FUN_006dcd60(int param_1)
     fVar9 = Library::MSVCRT::FUN_00730450(SUB84(local_c,0),(uint)((ulonglong)local_c >> 0x20));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     dVar2 = (double)(fVar9 * (float10)*(double *)(param_1 + 0x368));
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c._0_4_ = SUB84(dVar2,0);
+    STPiece<0,4>(local_c) = SUB84(dVar2,0);
     dVar5 = dVar4 - dVar1;
     dVar1 = -dVar1;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     Library::Ourlib::STREND::FUN_006dd6e0
               (*(void **)(param_1 + 0x358),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),
                SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20),SUB84(-(dVar4 - dVar2),0),
-               (int)((ulonglong)-(dVar4 - dVar2) >> 0x20),local_c._0_4_,
+               (int)((ulonglong)-(dVar4 - dVar2) >> 0x20),STPiece<0,4>(local_c),
                (int)((ulonglong)dVar2 >> 0x20));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     Library::Ourlib::STREND::FUN_006dd660(*(void **)(param_1 + 0x358),0,0,iVar7,iVar7);

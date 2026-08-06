@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall
 FUN_00631c20(void *this,int param_1,int param_2,byte param_3,undefined4 param_4,undefined4 param_5,
@@ -13,12 +15,12 @@ FUN_00631c20(void *this,int param_1,int param_2,byte param_3,undefined4 param_4,
   uint uVar7;
   bool bVar8;
 
-  if (*(int *)((int)this + 0x6d) != 0) {
-    iVar3 = *(int *)(*(int *)((int)this + 0x6d) + 0xc);
+  if (STField<int>(this,0x6d) != 0) {
+    iVar3 = *(int *)(STField<int>(this,0x6d) + 0xc);
     uVar7 = 0;
     if (0 < iVar3) {
       do {
-        iVar5 = *(int *)((int)this + 0x6d);
+        iVar5 = STField<int>(this,0x6d);
         if (((((uVar7 < *(uint *)(iVar5 + 0xc)) &&
               (puVar6 = (uint *)(*(int *)(iVar5 + 8) * uVar7 + *(int *)(iVar5 + 0x1c)),
               puVar6 != nullptr)) &&
@@ -57,9 +59,9 @@ LAB_00631d60:
                     g_bulkInitializedRecords_008087C7[param_3].field_0023;
           }
           if (bVar8) {
-            *(undefined4 *)((int)puVar6 + 0x25) = param_5;
+            STField<undefined4>(puVar6,0x25) = param_5;
             *(byte *)(puVar6 + 8) = 1;
-            *(undefined4 *)((int)puVar6 + 0x21) = param_6;
+            STField<undefined4>(puVar6,0x21) = param_6;
           }
         }
         uVar7 = uVar7 + 1;

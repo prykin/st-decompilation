@@ -33,8 +33,7 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
     memset(&DAT_00801020, 0, 0x30c); /* compiler bulk-zero initialization */
     iVar5 = 0;
     memset(&DAT_00800bd0, 0, 0x30c); /* compiler bulk-zero initialization */
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_00800bd4._0_1_ = (undefined1)param_3;
+    STPiece<0,1>(DAT_00800bd4) = (undefined1)param_3;
     iVar5 = 0;
     DAT_00800bd0 = param_2;
     iVar10 = 1;

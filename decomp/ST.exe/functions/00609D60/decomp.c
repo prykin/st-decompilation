@@ -61,11 +61,11 @@ undefined4 __thiscall STFieldC::LoadImagSpr(STFieldC *this,uint param_1)
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                        (piVar8,CASE_1D,text,0xffffffff,0,1,0,nullptr);
     ST3DSMAPContext::sub_006E8660
-              (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar5 + 9),
-               *(uint *)((int)puVar5 + 0xd),*(int *)(&DAT_007cf6f0 + *puVar4 * 8) / 2,
+              (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,STField<uint>(puVar5,9),
+               STField<uint>(puVar5,0xd),*(int *)(&DAT_007cf6f0 + *puVar4 * 8) / 2,
                *(int *)(&DAT_007cf6f4 + *puVar4 * 8) / 2 - 0xe,0);
     ST3DSMAPContext::sub_006E98E0
-              (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar5,*(int *)((int)puVar5 + 0x21),1);
+              (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar5,STField<int>(puVar5,0x21),1);
     ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_8,0,0);
     ST3DSMAPContext::sub_006EA5E0(g_sT3DSMAPContext_00807598,local_8,0,0);
     Library::Ourlib::ST3DSMAP::SprMove

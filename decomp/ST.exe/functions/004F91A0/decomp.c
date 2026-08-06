@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_004f91a0(void *this,byte param_1,undefined1 *param_2,int *param_3)
 
@@ -12,7 +14,7 @@ void __thiscall FUN_004f91a0(void *this,byte param_1,undefined1 *param_2,int *pa
     if (param_3 != nullptr) {
       uVar1 = (uint)param_1;
       if (g_bulkInitializedRecords_008087C7[uVar1].field_0030 != 0) {
-        uVar2 = *(int *)((int)this + 0x9a0) -
+        uVar2 = STField<int>(this,0x9a0) -
                 *(int *)&g_bulkInitializedRecords_008087C7[uVar1].field_0x35;
         if (*(uint *)&g_bulkInitializedRecords_008087C7[uVar1].field_0x31 <= uVar2) {
           *param_3 = 0;
@@ -22,7 +24,7 @@ void __thiscall FUN_004f91a0(void *this,byte param_1,undefined1 *param_2,int *pa
         return;
       }
       *param_3 = *(int *)&g_bulkInitializedRecords_008087C7[uVar1].field_0x31 +
-                 *(int *)((int)this + 0x9a0);
+                 STField<int>(this,0x9a0);
     }
   }
   return;

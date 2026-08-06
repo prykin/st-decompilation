@@ -61,7 +61,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     puVar4 = (byte *)(puVar4 + 1);
   }
   *(undefined2 *)puVar4 = *(undefined2 *)puVar21;
-  *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar21 + 2);
+  STField<undefined1>(puVar4,2) = STField<undefined1>(puVar21,2);
   puVar21 = (byte *)&local_10->field_0x67;
   puVar4 = (byte *)&local_8->field_0x93;
   for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {

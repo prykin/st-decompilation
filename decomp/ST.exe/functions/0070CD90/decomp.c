@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __cdecl FUN_0070cd90(char *param_1,uint *param_2)
 

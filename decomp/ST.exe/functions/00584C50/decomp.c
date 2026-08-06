@@ -18,10 +18,10 @@ void __thiscall FUN_00584c50(void *this,undefined4 *param_1)
   if (param_1 != nullptr) {
     memset(local_20, 0, 0x1c); /* compiler bulk-zero initialization */
     iVar1 = 0;
-    local_14 = *(undefined2 *)((int)this + 0x284);
+    local_14 = STField<undefined2>(this,0x284);
     local_20[0] = DAT_007e656c;
-    local_12 = *(undefined2 *)((int)this + 0x280);
-    local_20[2] = *(undefined4 *)((int)this + 0x25c);
+    local_12 = STField<undefined2>(this,0x280);
+    local_20[2] = STField<undefined4>(this,0x25c);
     local_40[2] = (undefined4 *)param_1[2];
     ppuVar3 = local_40;
     for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {

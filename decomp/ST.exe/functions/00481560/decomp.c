@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint __thiscall
 FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,short param_5,
@@ -71,17 +73,15 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
   undefined4 local_c;
   ushort local_8;
 
-  local_90 = (uint)*(short *)((int)this + 0x237);
+  local_90 = (uint)STField<short>(this,0x237);
   iVar10 = (int)local_90 >> 0x1f;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c._0_2_ = 0;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c._2_2_ = 0;
+  STPiece<0,2>(local_c) = 0;
+  STPiece<2,2>(local_c) = 0;
   local_8 = 0;
-  if ((*(int *)((int)this + 0x455) != 1) && (*(int *)((int)this + 0x742) != 1)) {
+  if ((STField<int>(this,0x455) != 1) && (STField<int>(this,0x742) != 1)) {
     local_60 = this;
-    uVar2 = FUN_006acf0d((int)*(short *)((int)this + 0x41),(int)*(short *)((int)this + 0x43),
-                         (int)*(short *)((int)this + 0x45),(int)param_1,(int)param_2,(int)param_3);
+    uVar2 = FUN_006acf0d((int)STField<short>(this,0x41),(int)STField<short>(this,0x43),
+                         (int)STField<short>(this,0x45),(int)param_1,(int)param_2,(int)param_3);
     if ((uVar2 >> 0x1f < iVar10) || ((uVar2 >> 0x1f <= iVar10 && ((uint)uVar2 <= local_90)))) {
       uVar3 = (int)param_4 - (int)param_1;
       iVar10 = 0;
@@ -112,8 +112,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
         uVar3 = 1;
       }
       local_40 = 0;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(char *)((int)local_60 + 0x281) != '\0') {
+      if (STField<char>(local_60,0x281) != '\0') {
         local_a4 = (undefined2 *)((int)local_60 + 0x23b);
         do {
           local_28 = 0;
@@ -121,17 +120,13 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_2c = CONCAT22(*local_a4,local_a4[-1]);
           local_8c = (int)local_90 >> 0x1f;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           puVar5 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_104,local_a4[-1],0,*(short *)((int)local_60 + 0x6c));
+                   thunk_FUN_0041dc40(local_104,local_a4[-1],0,STField<short>(local_60,0x6c));
           local_2c = (short)*puVar5;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_2c = local_2c + *(short *)((int)local_60 + 0x41);
+          local_2c = local_2c + STField<short>(local_60,0x41);
           sStack_2a = (short)((uint)*puVar5 >> 0x10);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_28 = *(short *)(puVar5 + 1) + *(short *)((int)local_60 + 0x45);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          sStack_2a = *(short *)((int)local_60 + 0x43) - sStack_2a;
+          local_28 = *(short *)(puVar5 + 1) + STField<short>(local_60,0x45);
+          sStack_2a = STField<short>(local_60,0x43) - sStack_2a;
           if (uVar3 == 0 && local_20 == 0) {
             local_4c = (int)param_3 - (int)local_28;
             lVar12 = Library::MSVCRT::__allmul(local_4c,(int)local_4c >> 0x1f,uVar4,local_38);
@@ -142,9 +137,8 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
             local_b4 = (uint)param_2;
             local_b0 = (int)local_b4 >> 0x1f;
             local_78 = lVar13;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             lVar14 = Library::MSVCRT::__allmul
-                               (local_34,(int)local_34 >> 0x1f,(uint)local_68,local_68._4_4_);
+                               (local_34,(int)local_34 >> 0x1f,(uint)local_68,STPiece<4,4>(local_68));
             lVar12 = Library::MSVCRT::__allmul
                                (local_b4,local_b0,(uint)local_80,(int)((ulonglong)local_80 >> 0x20));
             lVar12 = (lVar13 - lVar14) - lVar12;
@@ -166,20 +160,17 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                                ((uint)lVar12,(int)((ulonglong)lVar12 >> 0x20),(uint)local_80,
                                 (int)((ulonglong)local_80 >> 0x20));
             lVar12 = lVar12 + (lVar13 - lVar14);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             lVar12 = Library::MSVCRT::__allmul
                                ((uint)lVar12,(int)((ulonglong)lVar12 >> 0x20),(uint)local_54,
-                                local_54._4_4_);
+                                STPiece<4,4>(local_54));
             lVar12 = Library::MSVCRT::__allmul((uint)lVar12,(int)((ulonglong)lVar12 >> 0x20),4,0);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             lVar13 = Library::MSVCRT::__allmul
-                               ((uint)local_5c,local_5c._4_4_,(uint)local_5c,local_5c._4_4_);
+                               ((uint)local_5c,STPiece<4,4>(local_5c),(uint)local_5c,STPiece<4,4>(local_5c));
             local_a0 = lVar13 - lVar12;
             uVar4 = local_3c;
             if (-1 < local_a0) {
               if (local_a0 == 0) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                lVar12 = Library::MSVCRT::__allmul((uint)local_54,local_54._4_4_,0xfffffffe,-1);
+                lVar12 = Library::MSVCRT::__allmul((uint)local_54,STPiece<4,4>(local_54),0xfffffffe,-1);
                 uVar15 = Library::MSVCRT::__alldiv
                                    ((uint)local_5c,(uint)((ulonglong)local_5c >> 0x20),(uint)lVar12,
                                     (uint)((ulonglong)lVar12 >> 0x20));
@@ -199,10 +190,8 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                         local_34 * local_34;
                 iVar6 = (int)uVar3 >> 0x1f;
                 if ((iVar6 <= iVar10) && ((iVar6 < iVar10 || (uVar3 < local_1c)))) {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._0_2_ = param_1;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._2_2_ = (short)local_30;
+                  STPiece<0,2>(local_c) = param_1;
+                  STPiece<2,2>(local_c) = (short)local_30;
                   local_8 = (ushort)iVar9;
                   local_44 = local_40;
                   iVar10 = iVar6;
@@ -212,8 +201,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
               }
               else {
                 local_98 = SQRT((double)local_a0);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_e4 = Library::MSVCRT::__allmul((uint)local_54,local_54._4_4_,2,0);
+                local_e4 = Library::MSVCRT::__allmul((uint)local_54,STPiece<4,4>(local_54),2,0);
                 local_ac = (double)local_e4;
                 lVar12 = Library::MSVCRT::__ftol();
                 uVar4 = local_3c;
@@ -230,10 +218,8 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                         iVar9 + ((int)param_6 - local_4c) * ((int)param_6 - local_4c);
                 iVar6 = (int)uVar3 >> 0x1f;
                 if ((iVar6 <= iVar10) && ((iVar6 < iVar10 || (uVar3 < local_1c)))) {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._0_2_ = param_1;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._2_2_ = (short)local_30;
+                  STPiece<0,2>(local_c) = param_1;
+                  STPiece<2,2>(local_c) = (short)local_30;
                   local_8 = (short)local_4c;
                   local_44 = local_40;
                   iVar10 = iVar6;
@@ -241,8 +227,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                   local_18 = iVar6;
                 }
                 local_ec = -(uint)local_5c;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iStack_e8 = -(local_5c._4_4_ + (uint)((uint)local_5c != 0));
+                iStack_e8 = -(STPiece<4,4>(local_5c) + (uint)((uint)local_5c != 0));
                 lVar12 = Library::MSVCRT::__ftol();
                 local_30 = (int)lVar12;
                 lVar12 = Library::MSVCRT::__allmul
@@ -255,10 +240,8 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                         iVar9 + ((int)param_6 - local_4c) * ((int)param_6 - local_4c);
                 iVar6 = (int)uVar3 >> 0x1f;
                 if ((iVar6 <= iVar10) && ((iVar6 < iVar10 || (uVar3 < local_1c)))) {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._0_2_ = param_1;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._2_2_ = (short)local_30;
+                  STPiece<0,2>(local_c) = param_1;
+                  STPiece<2,2>(local_c) = (short)local_30;
                   local_8 = (short)local_4c;
                   local_44 = local_40;
                   iVar10 = iVar6;
@@ -293,7 +276,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
             lVar16 = Library::MSVCRT::__allmul
                                (local_c4,local_c0,(uint)local_70,(int)((ulonglong)local_70 >> 0x20));
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            lVar12 = ((lVar13 + lVar12) - lVar16) - CONCAT44(local_bc._4_4_,(int)lVar14);
+            lVar12 = ((lVar13 + lVar12) - lVar16) - CONCAT44(STPiece<4,4>(local_bc),(int)lVar14);
             local_5c = Library::MSVCRT::__allmul((uint)lVar12,(int)((ulonglong)lVar12 >> 0x20),2,0);
             uVar3 = (uint)((ulonglong)local_5c >> 0x20);
             lVar12 = Library::MSVCRT::__allmul(local_c4,local_c0,local_c4,local_c0);
@@ -306,12 +289,10 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
             lVar14 = Library::MSVCRT::__allmul
                                ((uint)(local_bc - lVar12),
                                 (int)((ulonglong)(local_bc - lVar12) >> 0x20),local_dc,local_d8);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             lVar16 = Library::MSVCRT::__allmul
-                               ((uint)local_cc,local_cc._4_4_,(uint)local_cc,local_cc._4_4_);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                               ((uint)local_cc,STPiece<4,4>(local_cc),(uint)local_cc,STPiece<4,4>(local_cc));
             lVar12 = Library::MSVCRT::__allmul
-                               ((uint)local_78,local_78._4_4_,(uint)local_78,local_78._4_4_);
+                               ((uint)local_78,STPiece<4,4>(local_78),(uint)local_78,STPiece<4,4>(local_78));
             lVar12 = lVar14 + lVar13 + lVar16 + lVar12;
             lVar12 = Library::MSVCRT::__allmul
                                ((uint)lVar12,(int)((ulonglong)lVar12 >> 0x20),(uint)local_54,
@@ -323,8 +304,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
             iVar10 = local_18;
             if (-1 < local_a0) {
               if (local_a0 == 0) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                lVar12 = Library::MSVCRT::__allmul((uint)local_54,local_54._4_4_,0xfffffffe,-1);
+                lVar12 = Library::MSVCRT::__allmul((uint)local_54,STPiece<4,4>(local_54),0xfffffffe,-1);
                 uVar15 = Library::MSVCRT::__alldiv
                                    ((uint)local_5c,uVar3,(uint)lVar12,
                                     (uint)((ulonglong)lVar12 >> 0x20));
@@ -349,10 +329,8 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                 iVar9 = (int)uVar3 >> 0x1f;
                 iVar10 = local_18;
                 if ((iVar9 <= local_18) && ((iVar9 < local_18 || (uVar3 < local_1c)))) {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._0_2_ = (short)local_48;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._2_2_ = (short)iVar11;
+                  STPiece<0,2>(local_c) = (short)local_48;
+                  STPiece<2,2>(local_c) = (short)iVar11;
                   local_8 = (ushort)iVar6;
                   local_44 = local_40;
                   iVar10 = iVar9;
@@ -362,8 +340,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
               }
               else {
                 local_98 = SQRT((double)local_a0);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_f4 = Library::MSVCRT::__allmul((uint)local_54,local_54._4_4_,2,0);
+                local_f4 = Library::MSVCRT::__allmul((uint)local_54,STPiece<4,4>(local_54),2,0);
                 local_ac = (double)local_f4;
                 lVar12 = Library::MSVCRT::__ftol();
                 local_48 = (int)lVar12;
@@ -387,10 +364,8 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                 iVar10 = (int)uVar7 >> 0x1f;
                 if ((iVar10 <= local_18) && ((iVar10 < local_18 || (uVar7 < local_1c)))) {
                   local_8 = (ushort)iVar6;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._0_2_ = (short)local_48;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._2_2_ = (short)local_30;
+                  STPiece<0,2>(local_c) = (short)local_48;
+                  STPiece<2,2>(local_c) = (short)local_30;
                   local_44 = local_40;
                   local_1c = uVar7;
                   local_18 = iVar10;
@@ -417,10 +392,8 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                         (param_4 - local_48) * (param_4 - local_48) + local_34 * local_34;
                 iVar6 = (int)uVar3 >> 0x1f;
                 if ((iVar6 <= iVar10) && ((iVar6 < iVar10 || (uVar3 < local_1c)))) {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._0_2_ = (short)local_48;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c._2_2_ = (short)iVar9;
+                  STPiece<0,2>(local_c) = (short)local_48;
+                  STPiece<2,2>(local_c) = (short)iVar9;
                   local_8 = (short)local_4c;
                   local_44 = local_40;
                   iVar10 = iVar6;
@@ -434,19 +407,15 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
           local_40 = local_40 + 1;
           local_a4 = local_a4 + 4;
           uVar3 = local_24;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        } while ((int)local_40 < (int)(uint)*(byte *)((int)local_60 + 0x281));
+        } while ((int)local_40 < (int)(uint)STField<byte>(local_60,0x281));
         if (local_44 != 0xffffffff) {
+          STPiece<0,2>(local_c) = (short)local_c - STField<short>(local_60,0x41);
+          local_8 = local_8 - STField<short>(local_60,0x45);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c._0_2_ = (short)local_c - *(short *)((int)local_60 + 0x41);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_8 = local_8 - *(short *)((int)local_60 + 0x45);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c = CONCAT22(*(short *)((int)local_60 + 0x43) - local_c._2_2_,(short)local_c);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+          local_c = CONCAT22(STField<short>(local_60,0x43) - STPiece<2,2>(local_c),(short)local_c);
           puVar5 = (undefined4 *)
                    thunk_FUN_0041dc40(local_104,(short)local_c,local_8,
-                                      0x168 - *(short *)((int)local_60 + 0x6c));
+                                      0x168 - STField<short>(local_60,0x6c));
           uVar4 = local_44;
           local_c = *puVar5;
           local_8 = *(ushort *)(puVar5 + 1);

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 4.
    Evidence: 0074F3C0 -> EXTERNAL:00000019 @ 0074F48C */

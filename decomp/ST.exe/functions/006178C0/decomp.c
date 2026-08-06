@@ -33,19 +33,19 @@ void __thiscall JumpManagC::CheckSystrm(JumpManagC *this)
         if ((bVar7) &&
            (pvVar5 = DArrayAt<void>(pDVar2, uVar6),
            pvVar5 != nullptr)) {
-          if (*(int *)((int)pvVar5 + 0x18) == 0) {
+          if (STField<int>(pvVar5,0x18) == 0) {
             iVar4 = -2;
           }
           else {
             iVar3 = STPlaySystemC::sub_006E62D0
                               (g_playSystem_00802A38,
-                               *(AnonShape_005EFAE0_B406B78B **)((int)pvVar5 + 0x1c),&local_8);
+                               STField<AnonShape_005EFAE0_B406B78B *>(pvVar5,0x1c),&local_8);
             if (iVar3 == -4) {
               iVar4 = -3;
             }
-            else if (*(int *)((int)pvVar5 + 0x18) == local_8) {
+            else if (STField<int>(pvVar5,0x18) == local_8) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              if (*(int *)(local_8 + 0x8b) != *(int *)((int)pvVar5 + 0x20)) {
+              if (*(int *)(local_8 + 0x8b) != STField<int>(pvVar5,0x20)) {
                 iVar4 = -5;
               }
             }

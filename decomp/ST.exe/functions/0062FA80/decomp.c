@@ -24,27 +24,27 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
   if (param_1 == nullptr) {
     return 0;
   }
-  *(undefined4 *)((int)this + 0x1d5) = param_1->field_0014;
+  STField<undefined4>(this,0x1d5) = param_1->field_0014;
   uVar4 = param_1->field_0018;
-  *(undefined4 *)((int)this + 0x1d9) = uVar4;
+  STField<undefined4>(this,0x1d9) = uVar4;
   uVar5 = param_1->field_001C;
-  *(undefined4 *)((int)this + 0x1dd) = uVar5;
-  iVar7 = thunk_FUN_004961b0(*(short *)((int)this + 0x1d5),(short)uVar4,(short)uVar5);
+  STField<undefined4>(this,0x1dd) = uVar5;
+  iVar7 = thunk_FUN_004961b0(STField<short>(this,0x1d5),(short)uVar4,(short)uVar5);
   if (iVar7 != 0) {
-    sVar1 = *(short *)((int)this + 0x1d5);
-    sVar2 = *(short *)((int)this + 0x1dd);
-    sVar3 = *(short *)((int)this + 0x1d9);
+    sVar1 = STField<short>(this,0x1d5);
+    sVar2 = STField<short>(this,0x1dd);
+    sVar3 = STField<short>(this,0x1d9);
     if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
          ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar2 ||
          (STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[1] == nullptr)))) &&
        (iVar7 = DumpClassC::WritePtr
-                          ((short)*(undefined4 *)((int)this + 0x1d5),
-                           (short)*(undefined4 *)((int)this + 0x1d9),
-                           (short)*(undefined4 *)((int)this + 0x1dd),1,this), iVar7 == 0)) {
+                          ((short)STField<undefined4>(this,0x1d5),
+                           (short)STField<undefined4>(this,0x1d9),
+                           (short)STField<undefined4>(this,0x1dd),1,this), iVar7 == 0)) {
       piVar8 = (int *)&param_1->field_0x24;
-      *(undefined4 *)((int)this + 0x1e1) = param_1->field_0020;
-      *(undefined1 *)((int)this + 0x1f9) = param_1->field_0038;
+      STField<undefined4>(this,0x1e1) = param_1->field_0020;
+      STField<undefined1>(this,0x1f9) = param_1->field_0038;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0062FA80_0B91B2B9 *)0x5;
       do {
@@ -55,7 +55,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_0062FA80_0B91B2B9 *)&param_1[-1].field_0x3b;
       } while (param_1 != nullptr);
-      *(undefined4 *)((int)this + 0x1fa) = *(undefined4 *)&pAVar6->field_0x39;
+      STField<undefined4>(this,0x1fa) = *(undefined4 *)&pAVar6->field_0x39;
       if (local_c == 0) {
         return 0;
       }

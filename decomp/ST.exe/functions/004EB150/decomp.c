@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004eb150(void *this,int param_1)
 
@@ -12,8 +14,8 @@ undefined4 __thiscall FUN_004eb150(void *this,int param_1)
   int iVar8;
 
   iVar3 = param_1;
-  uVar5 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-  *(uint *)((int)this + 0x1c) = uVar5;
+  uVar5 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+  STField<uint>(this,0x1c) = uVar5;
   if ((uVar5 >> 0x10) % 0x385 + 0x834 + g_packedRecords_A62x8[param_1].field1963_0x9c2 <=
       g_playSystem_00802A38->field_00E4) {
     g_packedRecords_A62x8[param_1].field1963_0x9c2 = g_playSystem_00802A38->field_00E4;
@@ -44,8 +46,8 @@ undefined4 __thiscall FUN_004eb150(void *this,int param_1)
           iVar1 = iVar8 + (param_1 + g_packedRecords_A62x8[iVar3].field1964_0x9c6 * 2) * 2;
           iVar2 = (&DAT_007c15c4)[iVar1 * 2];
           iVar1 = *(int *)(&DAT_007c15c0 + iVar1 * 8);
-          uVar5 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-          *(uint *)((int)this + 0x1c) = uVar5;
+          uVar5 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+          STField<uint>(this,0x1c) = uVar5;
           iVar8 = iVar8 + 1;
           *piVar6 = (uVar5 >> 0x10) % ((iVar2 - iVar1) + 1U) + iVar1;
           piVar6 = piVar7;

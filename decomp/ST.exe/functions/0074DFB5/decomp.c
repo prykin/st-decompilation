@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0074dfb5(void *this,undefined4 param_1)
 
@@ -13,12 +15,12 @@ void __thiscall FUN_0074dfb5(void *this,undefined4 param_1)
   *puVar1 = 0;
   puVar1[1] = *(undefined4 *)this;
   if (*(undefined4 **)this == nullptr) {
-    *(undefined4 **)((int)this + 4) = puVar1;
+    STField<undefined4 *>(this,4) = puVar1;
   }
   else {
     **(undefined4 **)this = puVar1;
   }
-  *(int *)((int)this + 8) = *(int *)((int)this + 8) + 1;
+  STField<int>(this,8) = STField<int>(this,8) + 1;
   *(undefined4 **)this = puVar1;
   return;
 }

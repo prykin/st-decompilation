@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004DEEB0 @ 004CB08B
@@ -16,7 +18,7 @@ FUN_004deeb0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,u
             uint *param_4)
 
 {
-  switch(*(undefined4 *)((int)this + 0x4d0)) {
+  switch(STField<undefined4>(this,0x4d0)) {
   case 0:
     *param_3 = 0;
     *param_4 = 0xe;

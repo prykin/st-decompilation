@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4
 FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_5,short param_6,

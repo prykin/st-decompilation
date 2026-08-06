@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
@@ -18,7 +20,7 @@ FUN_006a0da0(void *this,uint param_1,int param_2,uint param_3,int param_4,int pa
     local_c[0] = (short)uVar1;
     uVar1 = thunk_FUN_006a2bf0(2,0,1,param_6,param_6);
     local_c[2] = (ushort)uVar1;
-    thunk_FUN_006a2700(*(int **)((int)this + 8),param_1,param_2,0,param_3,param_4,local_c,
+    thunk_FUN_006a2700(STField<int *>(this,8),param_1,param_2,0,param_3,param_4,local_c,
                        nullptr,0);
   }
   return;

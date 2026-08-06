@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,uint *param_4)
 
@@ -7,7 +9,7 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
   InternalExceptionFrame local_4c;
   void *local_8;
 
-  if (*(int *)((int)this + 0xf8b) == 0) {
+  if (STField<int>(this,0xf8b) == 0) {
     return;
   }
   local_4c.previous = g_currentExceptionFrame;
@@ -16,8 +18,7 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
     if (param_4 == nullptr) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      param_4 = FUN_0071a990(*(AnonShape_0071A990_7656000F **)((int)local_8 + 0xdf3),
+      param_4 = FUN_0071a990(STField<AnonShape_0071A990_7656000F *>(local_8,0xdf3),
                              (param_1 ^ (int)param_1 >> 0x1f) - ((int)param_1 >> 0x1f),-1,
                              nullptr);
     }

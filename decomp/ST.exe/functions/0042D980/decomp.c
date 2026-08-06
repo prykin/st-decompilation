@@ -53,12 +53,10 @@ STAllPlayersC::GetActiveCenter
       if (0 < (int)dVar2) {
         do {
           DArrayGetElement(pDVar1,local_18,local_14);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_14._0_2_ != 0xffff) {
+          if (STPiece<0,2>(local_14) != 0xffff) {
             local_1c = local_1c + 1;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar6 = GetObjPtr(g_allPlayers_007FA174,
-                               g_packedRecords_A62x8[DAT_0080874d].field97_0x167,local_14._0_2_,
+                               g_packedRecords_A62x8[DAT_0080874d].field97_0x167,STPiece<0,2>(local_14),
                                CASE_1);
             STFishC::sub_004162B0
                       ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
@@ -174,12 +172,10 @@ joined_r0x0042dc56:
       if (0 < (int)dVar2) {
         do {
           DArrayGetElement(pDVar1,local_18,local_14);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_14._0_2_ != 0xffff) {
+          if (STPiece<0,2>(local_14) != 0xffff) {
             local_1c = local_1c + 1;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar6 = GetObjPtr(g_allPlayers_007FA174,
-                               g_packedRecords_A62x8[DAT_0080874d].field150_0x1b7,local_14._0_2_,
+                               g_packedRecords_A62x8[DAT_0080874d].field150_0x1b7,STPiece<0,2>(local_14),
                                CASE_1);
             STFishC::sub_004162B0
                       ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,

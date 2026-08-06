@@ -1,10 +1,12 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0067bf60(void *this,char param_1,uint param_2)
 
 {
   ushort *puVar1;
 
-  puVar1 = thunk_FUN_0067bd00(*(DArrayTy **)((int)this + 0x6ad),param_2);
+  puVar1 = thunk_FUN_0067bd00(STField<DArrayTy *>(this,0x6ad),param_2);
   if (puVar1 != nullptr) {
     if (param_1 != -1) {
       if (param_1 == '\0') {

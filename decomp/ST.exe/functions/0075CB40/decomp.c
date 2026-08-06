@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_0075cb40(undefined4 *param_1)
 
@@ -11,7 +13,7 @@ void FUN_0075cb40(undefined4 *param_1)
   puVar1 = param_1;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar2 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x54);
-  *(undefined4 **)((int)param_1 + 0x1ae) = puVar2;
+  STField<undefined4 *>(param_1,0x1ae) = puVar2;
   *puVar2 = Library::DKW::JPG::FUN_0075cbc0;
   iVar4 = 0;
   if (0 < (int)param_1[7]) {

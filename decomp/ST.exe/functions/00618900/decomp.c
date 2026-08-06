@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_00618900(void *this,int param_1,int param_2)
 
@@ -8,7 +10,7 @@ undefined4 __thiscall FUN_00618900(void *this,int param_1,int param_2)
   uint index;
   bool bVar4;
 
-  iVar1 = *(int *)((int)this + 0x62);
+  iVar1 = STField<int>(this,0x62);
   if (((iVar1 != 0) && (uVar2 = *(uint *)(iVar1 + 0xc), 0 < (int)uVar2)) &&
      (index = 0, 0 < (int)uVar2)) {
     bVar4 = uVar2 != 0;
@@ -22,12 +24,12 @@ undefined4 __thiscall FUN_00618900(void *this,int param_1,int param_2)
       }
     }
     if (param_2 != 0) {
-      *(short *)((int)piVar3 + 6) = *(short *)((int)piVar3 + 6) + 1;
+      STField<short>(piVar3,6) = STField<short>(piVar3,6) + 1;
       return 1;
     }
-    *(short *)((int)piVar3 + 6) = *(short *)((int)piVar3 + 6) + -1;
-    if (*(short *)((int)piVar3 + 6) < 1) {
-      DArrayRemoveAt(*(DArrayTy **)((int)this + 0x62),index);
+    STField<short>(piVar3,6) = STField<short>(piVar3,6) + -1;
+    if (STField<short>(piVar3,6) < 1) {
+      DArrayRemoveAt(STField<DArrayTy *>(this,0x62),index);
     }
     return 1;
   }

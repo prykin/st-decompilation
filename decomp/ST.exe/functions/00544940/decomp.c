@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as CursorClassTy.
    Evidence: this_call_owners=[CursorClassTy]; agreed_this_calls=3; incoming_this_accesses=3;

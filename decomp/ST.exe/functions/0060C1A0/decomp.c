@@ -53,8 +53,7 @@ int __thiscall STFieldC::FUN_0060c1a0(STFieldC *this,undefined4 *param_1)
         }
       }
       iVar1 = 0x10a;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      piVar4 = (int *)((int)param_1 + *(int *)((int)param_1 + 0x83) + 0x8b);
+      piVar4 = (int *)((int)param_1 + STField<int>(param_1,0x83) + 0x8b);
     }
     if ((this->field_023C != 0) && (this->field_0244 != nullptr)) {
       iVar5 = sub_0060D660(this,piVar4);

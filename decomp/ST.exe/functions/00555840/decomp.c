@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 00555840 returns used as parameter 1 of Library::Ourlib::MFTSPR::mfTSprGetNumFas @

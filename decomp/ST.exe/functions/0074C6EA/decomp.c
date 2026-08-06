@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 HRESULT FUN_0074c6ea(int *param_1,char *param_2,undefined4 *param_3)
 

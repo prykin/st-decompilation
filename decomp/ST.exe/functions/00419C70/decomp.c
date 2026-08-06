@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOEmbryoTy.
    Evidence: this_call_owners=[TLOEmbryoTy]; agreed_this_calls=1; incoming_this_accesses=6;
@@ -15,13 +17,12 @@ undefined4 __fastcall TLOEmbryoTy::sub_00419C70(int *param_1,undefined4 param_2,
                     (g_allPlayers_007FA174,(char)param_1[9],
                      STReplaceLowWord((uint32_t)(param_1), (uint16_t)((short)param_1[0xc])),0xffff,param_1,
                      param_3,0);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   STAllPlayersC::_ChangeMD
             (g_allPlayers_007FA174,1,(int *)param_1[9],
-             STReplaceLowWord((uint32_t)(uVar1), (uint16_t)(*(undefined2 *)((int)param_1 + 0x32))));
-  /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
+             STReplaceLowWord((uint32_t)(uVar1), (uint16_t)(STField<undefined2>(param_1,0x32))));
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   STAllPlayersC::_ChangeDock
-            (1,(int *)param_1[9],CONCAT22(extraout_var,*(undefined2 *)((int)param_1 + 0x32)));
+            (1,(int *)param_1[9],CONCAT22(extraout_var,STField<undefined2>(param_1,0x32)));
   return uVar1;
 }
 

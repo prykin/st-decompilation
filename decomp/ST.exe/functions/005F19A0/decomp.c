@@ -107,7 +107,7 @@ joined_r0x005f19be:
   }
 LAB_005f1c4c:
   iVar7 = sub_005F14B0(local_14,*psVar6,psVar6[1],psVar6[2],*(byte *)(psVar6 + 3),
-                       *(short *)((int)psVar6 + 7));
+                       STField<short>(psVar6,7));
   pVVar4 = g_visibleClass_00802A88;
   if (-1 < iVar7) {
     DArrayRemoveAt(local_14->field_003C,local_c);

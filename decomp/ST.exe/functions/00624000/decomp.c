@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006239A0 -> 00624000 @ 00623A79; STMineSetC::sub_006239A0 this; stable alias ESI

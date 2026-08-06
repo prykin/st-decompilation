@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x00483caa) */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
@@ -128,8 +130,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
   }
   uVar4 = uVar7 - (uint)uVar25;
   iVar12 = (((int)uVar7 >> 0x1f) - (int)((ulonglong)uVar25 >> 0x20)) - (uint)(uVar7 < (uint)uVar25);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  iVar13 = (((int)uVar8 >> 0x1f) - local_48._4_4_) - (uint)(uVar8 < (uint)local_48);
+  iVar13 = (((int)uVar8 >> 0x1f) - STPiece<4,4>(local_48)) - (uint)(uVar8 < (uint)local_48);
   iVar14 = (((int)uVar9 >> 0x1f) - iVar14) - (uint)(uVar9 < uVar20);
   iVar10 = ((int)*(short *)&this->field_0x237 << 2) / 5;
   lVar24 = Library::MSVCRT::__allmul(uVar9 - uVar20,iVar14,uVar9 - uVar20,iVar14);

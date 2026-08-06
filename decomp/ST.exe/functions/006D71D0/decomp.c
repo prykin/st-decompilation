@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
 
@@ -8,7 +10,7 @@ undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
   int local_8;
 
   local_8 = 0;
-  if ((*(int *)((int)this + 0x8c) == 0) || (*(int *)((int)this + 0x90) == 0)) {
+  if ((STField<int>(this,0x8c) == 0) || (STField<int>(this,0x90) == 0)) {
     this_00 = (int *)Library::MSVCRT::FUN_0072e530(0xe8);
     if (this_00 == nullptr) {
       this_00 = nullptr;
@@ -20,7 +22,7 @@ undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
       this_00[4] = (int)&VTable_0079DE7C;
       this_00[0x26] = (int)&VTable_0079DE58;
     }
-    *(int **)((int)this + 0x8c) = this_00;
+    STField<int *>(this,0x8c) = this_00;
     if (local_8 < 0) {
       if (this_00 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -35,31 +37,31 @@ undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
       else {
         puVar1 = FUN_0074cfc0(this_01,0,(int)this,&local_8,(char *)"Output");
       }
-      *(undefined4 **)((int)this + 0x90) = puVar1;
+      STField<undefined4 *>(this,0x90) = puVar1;
       if ((local_8 < 0) || (puVar1 == nullptr)) {
-        if (*(int **)((int)this + 0x8c) != nullptr) {
+        if (STField<int *>(this,0x8c) != nullptr) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)(**(int **)((int)this + 0x8c) + 0xc))(1);
+          (**(code **)(*STField<int *>(this,0x8c) + 0xc))(1);
         }
-        *(undefined4 *)((int)this + 0x8c) = 0;
-        if (*(int **)((int)this + 0x90) != nullptr) {
+        STField<undefined4>(this,0x8c) = 0;
+        if (STField<int *>(this,0x90) != nullptr) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)(**(int **)((int)this + 0x90) + 0xc))(1);
+          (**(code **)(*STField<int *>(this,0x90) + 0xc))(1);
         }
-        *(undefined4 *)((int)this + 0x90) = 0;
+        STField<undefined4>(this,0x90) = 0;
         return 0;
       }
       goto LAB_006d728d;
     }
-    *(undefined4 *)((int)this + 0x8c) = 0;
+    STField<undefined4>(this,0x8c) = 0;
   }
   else {
 LAB_006d728d:
     if (param_1 == 0) {
-      return *(undefined4 *)((int)this + 0x8c);
+      return STField<undefined4>(this,0x8c);
     }
     if (param_1 == 1) {
-      return *(undefined4 *)((int)this + 0x90);
+      return STField<undefined4>(this,0x90);
     }
   }
   return 0;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 6.
    Evidence: raw retained-width parameter lifetime: width=1, reads=1, sites=006B022A MOV AL,byte ptr

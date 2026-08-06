@@ -345,11 +345,11 @@ cf_continue_loop_007525E9:
   }
   puVar5[1] = (uint)pAVar2;
   puVar5[2] = uVar3;
-  *(byte *)((int)puVar5 + 0xd) = (param_5 == 1) + 1U | (char)local_24 << 2;
-  *(undefined2 *)((int)puVar5 + 0x12) = (undefined2)local_c;
+  STField<byte>(puVar5,0xd) = (param_5 == 1) + 1U | (char)local_24 << 2;
+  STField<undefined2>(puVar5,0x12) = (undefined2)local_c;
   *puVar5 = (int)pbVar11 - (int)puVar5;
   *(undefined1 *)(puVar5 + 3) = 0x80;
-  *(undefined2 *)((int)puVar5 + 0xe) = local_28._0_2_;
+  STField<undefined2>(puVar5,0xe) = STPiece<0,2>(local_28);
   *(short *)(puVar5 + 4) = (short)local_1c;
   *(short *)(puVar5 + 5) = (short)local_30 - (short)local_1c;
   iVar9 = FUN_006bfb50(puVar5,(int)pbVar11 - (int)puVar5);

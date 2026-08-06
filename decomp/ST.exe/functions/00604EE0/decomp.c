@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_00604ee0(void *this,int *param_1)
 
@@ -22,14 +24,14 @@ int __thiscall FUN_00604ee0(void *this,int *param_1)
   local_2c.id = MESS_ID_CREATE;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = nullptr;
-  if (0 < *(int *)((int)this + 0x269)) {
+  if (0 < STField<int>(this,0x269)) {
     piVar3 = (int *)((int)this + 0x219);
     local_c = this;
     do {
       if (*piVar3 != 0) {
         puVar1 = thunk_FUN_00629010();
         *piVar3 = (int)puVar1;
-        *(void **)((int)puVar1 + 0xce) = this;
+        STField<void *>(puVar1,0xce) = this;
         *(int **)(*piVar3 + 0xd2) = param_1;
         iVar2 = *piVar5;
         local_8 = local_8 + 4 + iVar2;
@@ -42,7 +44,7 @@ int __thiscall FUN_00604ee0(void *this,int *param_1)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)((int)param_1 + 1);
       piVar3 = piVar3 + 1;
-    } while ((int)param_1 < *(int *)((int)this + 0x269));
+    } while ((int)param_1 < STField<int>(this,0x269));
     return iVar2;
   }
   return 0;

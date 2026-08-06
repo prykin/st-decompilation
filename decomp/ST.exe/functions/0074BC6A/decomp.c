@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0074BC6A returns return of OLE32.DLL::CoTaskMemAlloc @ 0074BC86 */

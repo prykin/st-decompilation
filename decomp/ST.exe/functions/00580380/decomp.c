@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00580D30 -> 00580380 @ 00580D86; STResourceC::sub_00580D30 this; stable alias ESI

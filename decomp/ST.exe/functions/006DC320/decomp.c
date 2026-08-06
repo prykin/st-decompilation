@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -176,8 +178,7 @@ void __fastcall FUN_006dc320(AnonShape_006DC320_0C876EFA *param_1)
     lVar6 = Library::MSVCRT::__ftol();
     local_20 = (double)(lVar6 << 0x20);
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_20 = (double)local_20._4_4_;
+  local_20 = (double)STPiece<4,4>(local_20);
   lVar6 = Library::MSVCRT::__ftol();
   param_1->field_03E8 = (int)lVar6;
   iStack_c = (int)lVar6;
@@ -216,21 +217,16 @@ LAB_006dc9b3:
       }
     }
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  iVar3 = local_20._4_4_;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if (local_20._4_4_ < local_8 + -1) {
+  iVar3 = STPiece<4,4>(local_20);
+  if (STPiece<4,4>(local_20) < local_8 + -1) {
     param_1->field_03F8 = iVar2;
     param_1->field_03FC = iVar1;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    if (iVar5 < local_20._4_4_) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar4 = (local_20._4_4_ - local_8) + iVar5;
+    if (iVar5 < STPiece<4,4>(local_20)) {
+      iVar4 = (STPiece<4,4>(local_20) - local_8) + iVar5;
       if (iVar2 <= iVar4 + 1) {
         param_1->field_03F8 = iVar4 + 2;
       }
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar4 = (local_8 - local_20._4_4_) + iVar5;
+      iVar4 = (local_8 - STPiece<4,4>(local_20)) + iVar5;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_20 = (double)CONCAT44(iVar4,(uint)local_20);
       if (iVar4 + -2 <= iVar1) {
@@ -239,15 +235,11 @@ LAB_006dc9b3:
       }
     }
     else {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if (iVar2 < iVar5 - local_20._4_4_) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        param_1->field_03F8 = iVar5 - local_20._4_4_;
+      if (iVar2 < iVar5 - STPiece<4,4>(local_20)) {
+        param_1->field_03F8 = iVar5 - STPiece<4,4>(local_20);
       }
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if (local_20._4_4_ + iVar5 <= iVar1) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        iVar4 = local_20._4_4_ + iVar5 + -1;
+      if (STPiece<4,4>(local_20) + iVar5 <= iVar1) {
+        iVar4 = STPiece<4,4>(local_20) + iVar5 + -1;
 LAB_006dca21:
         param_1->field_03FC = iVar4;
       }

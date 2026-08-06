@@ -19,15 +19,15 @@ FUN_005fa360(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,
   int local_8;
 
   local_14 = param_4;
-  iVar2 = FUN_006acf90(*(int *)((int)this + 0x27d),*(int *)((int)this + 0x281),param_2,param_3);
+  iVar2 = FUN_006acf90(STField<int>(this,0x27d),STField<int>(this,0x281),param_2,param_3);
   if (iVar2 < 7) {
-    *param_5 = *(int *)((int)this + 0x27d);
-    *param_6 = *(int *)((int)this + 0x281);
-    *param_7 = *(int *)((int)this + 0x285);
+    *param_5 = STField<int>(this,0x27d);
+    *param_6 = STField<int>(this,0x281);
+    *param_7 = STField<int>(this,0x285);
     *param_1 = 0;
     return 1;
   }
-  iVar3 = thunk_FUN_005fa5e0(param_2,param_3,*(int *)((int)this + 0x27d),*(int *)((int)this + 0x281)
+  iVar3 = thunk_FUN_005fa5e0(param_2,param_3,STField<int>(this,0x27d),STField<int>(this,0x281)
                             );
   local_8 = 0;
   bVar1 = false;

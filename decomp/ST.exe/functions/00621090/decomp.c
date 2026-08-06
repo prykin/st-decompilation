@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00620E40 -> 00621090 @ 00620E95; FUN_00620e40 parameter param_1 */
@@ -19,12 +21,12 @@ FUN_00621090(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefi
   local_10 = param_2;
   local_c = param_3;
   local_8 = param_4;
-  if (*(int *)((int)this + 0xf5) == 0) {
+  if (STField<int>(this,0xf5) == 0) {
     pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
-    *(DArrayTy **)((int)this + 0xf5) = pDVar1;
+    STField<DArrayTy *>(this,0xf5) = pDVar1;
   }
-  if (*(DArrayTy **)((int)this + 0xf5) != nullptr) {
-    uVar2 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0xf5),&local_18);
+  if (STField<DArrayTy *>(this,0xf5) != nullptr) {
+    uVar2 = Library::DKW::TBL::DArrayAppend(STField<DArrayTy *>(this,0xf5),&local_18);
     return uVar2;
   }
   return 0xffffffff;

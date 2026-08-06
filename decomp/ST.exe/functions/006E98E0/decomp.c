@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 00556170 -> 006E98E0 @ 00556296; MOVSX at 00556284 establishes signed source width 2 |

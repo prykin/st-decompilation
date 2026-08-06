@@ -304,8 +304,8 @@ LAB_0050eb47:
         puVar11[0x17] = 0x4202;
         *(undefined2 *)(puVar11 + 0x18) = 0;
         *(undefined2 *)(puVar11 + 0xd) = 0;
-        *(undefined2 *)((int)puVar11 + 0x62) = 2;
-        *(undefined2 *)((int)puVar11 + 0x36) = 2;
+        STField<undefined2>(puVar11,0x62) = 2;
+        STField<undefined2>(puVar11,0x36) = 2;
         if (iVar6 == 0) {
           uVar9 = 0x3aa9;
 LAB_0050edc5:

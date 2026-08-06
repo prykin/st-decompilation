@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
@@ -22,10 +24,10 @@ void __thiscall FUN_00550430(void *this,int param_1,int param_2)
     }
     DVar2 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
     puVar3[0x12] = DVar2;
-    if (((param_2 != 0) && (DAT_00808788 != 0)) && (*(int *)((int)this + 0xf4) == param_1)) {
-      *(undefined4 *)((int)this + 0xf4) = 0;
+    if (((param_2 != 0) && (DAT_00808788 != 0)) && (STField<int>(this,0xf4) == param_1)) {
+      STField<undefined4>(this,0xf4) = 0;
       DAT_00808788 = 0;
-      *(undefined4 *)((int)this + 0xd0) = 0xa106;
+      STField<undefined4>(this,0xd0) = 0xa106;
       AppClassTy::SendMessage((AppClassTy *)&DAT_00807620,3,0x101,(int)this + 0xc0);
     }
   }

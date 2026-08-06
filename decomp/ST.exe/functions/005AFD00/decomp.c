@@ -148,10 +148,8 @@ switchD_005afd30_caseD_c:
   pSVar4 = this_00->field_1A5B;
   if (pSVar4->field_02E6 != nullptr) {
     memset(&local_60, 0, 0x1a); /* compiler bulk-zero initialization */
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_60._2_2_ = 0xffff;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_60._0_2_ = 0xffff;
+    STPiece<2,2>(local_60) = 0xffff;
+    STPiece<0,2>(local_60) = 0xffff;
     MMsgTy::StatePanel(pSVar4->field_02E6,(int)&local_60);
   }
   pRVar5 = (RecoveredSourceFamily_dibcopy *)this_00->field_1C7B;

@@ -259,7 +259,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
                 *(int **)((int)local_34 + iVar5 * 4) = piVar12;
               }
               else {
-                *(undefined4 *)((int)local_34 + 0x24) = DAT_00806764;
+                STField<undefined4>(local_34,0x24) = DAT_00806764;
               }
               iVar5 = iVar5 + 1;
             } while (iVar5 < 0x11);

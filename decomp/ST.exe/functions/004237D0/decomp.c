@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004237d0(void *this,short param_1)
 
@@ -8,14 +10,13 @@ undefined4 __thiscall FUN_004237d0(void *this,short param_1)
   undefined4 uStack_8;
 
   uVar2 = 0;
-  uVar1 = *(uint *)(*(int *)((int)this + 0x29) + 0xc);
+  uVar1 = *(uint *)(STField<int>(this,0x29) + 0xc);
   if (uVar1 != 0) {
     index = 0;
     uStack_8 = this;
     do {
-      DArrayGetElement(*(DArrayTy **)((int)this + 0x29),index,(void *)((int)&uStack_8 + 2));
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if (uStack_8._2_2_ == param_1) {
+      DArrayGetElement(STField<DArrayTy *>(this,0x29),index,(void *)((int)&uStack_8 + 2));
+      if (STPiece<2,2>(uStack_8) == param_1) {
         return 1;
       }
       uVar2 = uVar2 + 1;

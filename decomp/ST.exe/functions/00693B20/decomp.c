@@ -48,7 +48,7 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
     pcVar9 = (char *)((int)param_1 + param_2 * 0x51 + 0x12);
     memmove(pcVar9, pcVar7, uVar4); /* compiler REP MOVS byte copy */
   }
-  *(char *)((int)param_1 + 0x10) = *(char *)((int)param_1 + 0x10) + '\x01';
+  STField<char>(param_1,0x10) = STField<char>(param_1,0x10) + '\x01';
   return puVar1;
 }
 

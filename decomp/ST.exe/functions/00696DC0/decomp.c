@@ -31,7 +31,7 @@ void __thiscall CGenerate::sub_00696DC0(CGenerate *this,int param_1,int param_2)
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
       if ((((bVar8) &&
            (piVar1 = (int *)((int)&pCVar3->data->field_0000 + pCVar3->elementSize * uVar5),
-           piVar1 != nullptr)) && (*(int *)((int)piVar1 + 0x11) <= param_2)) &&
+           piVar1 != nullptr)) && (STField<int>(piVar1,0x11) <= param_2)) &&
          (*piVar1 == param_1)) {
         iVar7 = iVar7 + 1;
       }

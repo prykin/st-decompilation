@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_006d7000(void *this,int *param_1)
 
@@ -10,10 +12,10 @@ undefined4 __thiscall FUN_006d7000(void *this,int *param_1)
   int *piVar6;
   bool bVar7;
 
-  iVar1 = *(int *)(*(int *)((int)this + 0xe0) + 0x90);
+  iVar1 = *(int *)(STField<int>(this,0xe0) + 0x90);
   piVar2 = *(int **)(iVar1 + 0x18);
   if (piVar2 == nullptr) {
-    uVar3 = FUN_006d4cf0(*(AnonShape_006D4CF0_8A8947BE **)(*(int *)((int)this + 0xe0) + 0xa0),
+    uVar3 = FUN_006d4cf0(*(AnonShape_006D4CF0_8A8947BE **)(STField<int>(this,0xe0) + 0xa0),
                          param_1);
     return uVar3;
   }

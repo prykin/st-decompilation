@@ -13,9 +13,9 @@ FUN_005f88d0(void *this,int param_1,int param_2,int *param_3,undefined4 *param_4
   int iVar4;
   undefined4 uVar5;
 
-  sVar1 = *(short *)((int)this + 0x285);
-  sVar2 = *(short *)((int)this + 0x281);
-  sVar3 = *(short *)((int)this + 0x27d);
+  sVar1 = STField<short>(this,0x285);
+  sVar2 = STField<short>(this,0x281);
+  sVar3 = STField<short>(this,0x27d);
   uVar5 = 0;
   if (((((-1 < sVar3) && (sVar3 < g_worldGrid.sizeX)) && (-1 < sVar2)) &&
       ((sVar2 < g_worldGrid.sizeY && (-1 < sVar1)))) && (sVar1 < g_worldGrid.sizeZ)) {

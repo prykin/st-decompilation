@@ -49,13 +49,13 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
     *(undefined4 *)(iVar6 + 0xc) = 0;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
-  if ((*(int *)((int)this + 0x5ac) == 0x32) || (*(int *)((int)this + 0x5ac) == 0x5c)) {
-    uVar3 = LookupRecordByte(*(char *)((int)this + 0x24));
+  if ((STField<int>(this,0x5ac) == 0x32) || (STField<int>(this,0x5ac) == 0x5c)) {
+    uVar3 = LookupRecordByte(STField<char>(this,0x24));
     uVar3 = (int)(byte)uVar3;
     local_10 = (undefined *)(uVar3 + -1);
     memset(local_fc, 0, 0xa0); /* compiler bulk-zero initialization */
-    if (((*(int *)((int)this + 0x5ac) == 0x5c) &&
-        (pDVar3 = g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field1970_0x9de,
+    if (((STField<int>(this,0x5ac) == 0x5c) &&
+        (pDVar3 = g_packedRecords_A62x8[STField<int>(this,0x24)].field1970_0x9de,
         pDVar3 != nullptr)) && (index = 0, 0 < (int)pDVar3->count)) {
       do {
         DArrayGetElement(pDVar3,index,&local_28);
@@ -70,7 +70,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
           iVar6 = iVar6 + -1;
         } while (iVar6 != 0);
         index = index + 1;
-        pDVar3 = g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field1970_0x9de;
+        pDVar3 = g_packedRecords_A62x8[STField<int>(this,0x24)].field1970_0x9de;
       } while ((int)index < (int)pDVar3->count);
     }
     local_2c = (int)local_10 << 4;
@@ -98,22 +98,22 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
         if ((local_10 == nullptr) || (iVar5 = FUN_006b0fd0((int)local_10), iVar5 != 0)) {
           iVar5 = FUN_006b0fd0((int)local_c);
           if ((iVar5 != 0) &&
-             (iVar5 = thunk_FUN_004e6010(*(int *)((int)this + 0x24),iVar6 + 0x41), iVar5 != 0)) {
+             (iVar5 = thunk_FUN_004e6010(STField<int>(this,0x24),iVar6 + 0x41), iVar5 != 0)) {
             memset(local_5c, 0, 0x30); /* compiler bulk-zero initialization */
             local_5c[0] = iVar6;
             local_5c[1] = TLOBaseTy::sub_004C9370(this,1,iVar6,-1);
-            if ((*(int *)((int)this + 0x361) == 1) && (*(int *)((int)this + 0x369) == iVar6)) {
-              local_5c[1] = local_5c[1] + *(int *)((int)this + 0x36d);
+            if ((STField<int>(this,0x361) == 1) && (STField<int>(this,0x369) == iVar6)) {
+              local_5c[1] = local_5c[1] + STField<int>(this,0x36d);
             }
-            iVar5 = thunk_FUN_004e6a80(*(byte **)((int)this + 0x24),iVar6);
+            iVar5 = thunk_FUN_004e6a80(STField<byte *>(this,0x24),iVar6);
             if ((iVar5 == 0) ||
-               (local_54 = '\x01', g_worldGrid.sizeZ + -1 <= *(int *)((int)this + 0x5b8))) {
+               (local_54 = '\x01', g_worldGrid.sizeZ + -1 <= STField<int>(this,0x5b8))) {
               local_54 = '\0';
             }
             thunk_FUN_004c7260(this,CASE_1,iVar6,&local_20,&local_18,&local_1c,&local_24);
             local_4e = (undefined2)local_20;
             local_52 = (undefined2)local_18;
-            bVar2 = LookupRecordByte(*(char *)((int)this + 0x24));
+            bVar2 = LookupRecordByte(STField<char>(this,0x24));
             if (bVar2 == 3) {
               local_50 = (undefined2)local_24;
             }
@@ -124,9 +124,9 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
             if (*local_14 != 0) {
               local_4c = (undefined2)*local_14;
             }
-            local_53 = LookupRecordByte(*(char *)((int)this + 0x24));
+            local_53 = LookupRecordByte(STField<char>(this,0x24));
             if (local_54 == '\0') {
-              thunk_FUN_004e6b40(*(byte **)((int)this + 0x24),iVar6,local_4a);
+              thunk_FUN_004e6b40(STField<byte *>(this,0x24),iVar6,local_4a);
             }
             Library::DKW::TBL::DArrayAppend((DArrayTy *)param_1[local_8],local_5c);
           }

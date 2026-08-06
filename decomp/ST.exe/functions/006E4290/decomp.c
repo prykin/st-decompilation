@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 006E4290 returns return of AppClassTy::AddDecodeMessage @ 006E42BA */

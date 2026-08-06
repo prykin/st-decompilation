@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (27), none consume AL/AX, and every RET path defines full EAX; sites=006DE9C0 @ 006DF0E3
@@ -36,11 +38,11 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   double local_10;
   int local_8;
 
-  local_1c = (float)(param_1 * 2) * (float)*(double *)((int)this + 200);
+  local_1c = (float)(param_1 * 2) * (float)STField<double>(this,200);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = -30000;
   local_8 = -30000;
-  local_18 = (float)(param_2 * 2) * (float)*(double *)((int)this + 200);
+  local_18 = (float)(param_2 * 2) * (float)STField<double>(this,200);
   local_14 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = 30000;
@@ -65,8 +67,8 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   if (-30000 < iVar2) {
     local_8 = iVar2;
   }
-  if ((((*(int *)((int)this + 0x30) <= iVar1) && (iVar1 < *(int *)((int)this + 0x38))) &&
-      (*(int *)((int)this + 0x34) <= iVar2)) && (iVar2 < *(int *)((int)this + 0x3c))) {
+  if ((((STField<int>(this,0x30) <= iVar1) && (iVar1 < STField<int>(this,0x38))) &&
+      (STField<int>(this,0x34) <= iVar2)) && (iVar2 < STField<int>(this,0x3c))) {
     return 1;
   }
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
@@ -89,11 +91,11 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   if (local_8 < iVar2) {
     local_8 = iVar2;
   }
-  if (((*(int *)((int)this + 0x30) <= iVar1) && (iVar1 < *(int *)((int)this + 0x38))) &&
-     ((*(int *)((int)this + 0x34) <= iVar2 && (iVar2 < *(int *)((int)this + 0x3c))))) {
+  if (((STField<int>(this,0x30) <= iVar1) && (iVar1 < STField<int>(this,0x38))) &&
+     ((STField<int>(this,0x34) <= iVar2 && (iVar2 < STField<int>(this,0x3c))))) {
     return 1;
   }
-  local_10 = *(double *)((int)this + 200) + *(double *)((int)this + 200);
+  local_10 = STField<double>(this,200) + STField<double>(this,200);
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   ST3DSMAPContext::sub_006E25D0
             (this,&local_2c,&local_1c,local_10,local_10,
@@ -114,11 +116,11 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   if (local_8 < iVar2) {
     local_8 = iVar2;
   }
-  if (((*(int *)((int)this + 0x30) <= iVar1) && (iVar1 < *(int *)((int)this + 0x38))) &&
-     ((*(int *)((int)this + 0x34) <= iVar2 && (iVar2 < *(int *)((int)this + 0x3c))))) {
+  if (((STField<int>(this,0x30) <= iVar1) && (iVar1 < STField<int>(this,0x38))) &&
+     ((STField<int>(this,0x34) <= iVar2 && (iVar2 < STField<int>(this,0x3c))))) {
     return 1;
   }
-  local_10 = *(double *)((int)this + 200) + *(double *)((int)this + 200);
+  local_10 = STField<double>(this,200) + STField<double>(this,200);
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   ST3DSMAPContext::sub_006E25D0
             (this,&local_2c,&local_1c,local_10,local_10,
@@ -139,13 +141,13 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   if (local_8 < iVar2) {
     local_8 = iVar2;
   }
-  if ((((*(int *)((int)this + 0x30) <= iVar1) && (iVar1 < *(int *)((int)this + 0x38))) &&
-      (*(int *)((int)this + 0x34) <= iVar2)) && (iVar2 < *(int *)((int)this + 0x3c))) {
+  if ((((STField<int>(this,0x30) <= iVar1) && (iVar1 < STField<int>(this,0x38))) &&
+      (STField<int>(this,0x34) <= iVar2)) && (iVar2 < STField<int>(this,0x3c))) {
     return 1;
   }
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   ST3DSMAPContext::sub_006E25D0
-            (this,&local_2c,&local_1c,*(double *)((int)this + 200) + *(double *)((int)this + 200),
+            (this,&local_2c,&local_1c,STField<double>(this,200) + STField<double>(this,200),
              0.0,(double)CONCAT44(in_stack_00000010,in_stack_0000000c),1);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
@@ -163,13 +165,13 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   if (local_8 < iVar2) {
     local_8 = iVar2;
   }
-  if (((*(int *)((int)this + 0x30) <= iVar1) && (iVar1 < *(int *)((int)this + 0x38))) &&
-     ((*(int *)((int)this + 0x34) <= iVar2 && (iVar2 < *(int *)((int)this + 0x3c))))) {
+  if (((STField<int>(this,0x30) <= iVar1) && (iVar1 < STField<int>(this,0x38))) &&
+     ((STField<int>(this,0x34) <= iVar2 && (iVar2 < STField<int>(this,0x3c))))) {
     return 1;
   }
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   ST3DSMAPContext::sub_006E25D0
-            (this,&local_2c,&local_1c,*(double *)((int)this + 200) + *(double *)((int)this + 200),
+            (this,&local_2c,&local_1c,STField<double>(this,200) + STField<double>(this,200),
              0.0,(double)CONCAT44(in_stack_00000018,in_stack_00000014),1);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
@@ -187,14 +189,14 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   if (local_8 < iVar2) {
     local_8 = iVar2;
   }
-  if (((*(int *)((int)this + 0x30) <= iVar1) && (iVar1 < *(int *)((int)this + 0x38))) &&
-     ((*(int *)((int)this + 0x34) <= iVar2 && (iVar2 < *(int *)((int)this + 0x3c))))) {
+  if (((STField<int>(this,0x30) <= iVar1) && (iVar1 < STField<int>(this,0x38))) &&
+     ((STField<int>(this,0x34) <= iVar2 && (iVar2 < STField<int>(this,0x3c))))) {
     return 1;
   }
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   ST3DSMAPContext::sub_006E25D0
             (this,&local_2c,&local_1c,0.0,
-             *(double *)((int)this + 200) + *(double *)((int)this + 200),
+             STField<double>(this,200) + STField<double>(this,200),
              (double)CONCAT44(in_stack_00000010,in_stack_0000000c),1);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
@@ -213,14 +215,14 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   if (local_8 < iVar2) {
     iVar3 = iVar2;
   }
-  if ((((*(int *)((int)this + 0x30) <= iVar1) && (iVar1 < *(int *)((int)this + 0x38))) &&
-      (*(int *)((int)this + 0x34) <= iVar2)) && (iVar2 < *(int *)((int)this + 0x3c))) {
+  if ((((STField<int>(this,0x30) <= iVar1) && (iVar1 < STField<int>(this,0x38))) &&
+      (STField<int>(this,0x34) <= iVar2)) && (iVar2 < STField<int>(this,0x3c))) {
     return 1;
   }
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   ST3DSMAPContext::sub_006E25D0
             (this,&local_2c,&local_1c,0.0,
-             *(double *)((int)this + 200) + *(double *)((int)this + 200),
+             STField<double>(this,200) + STField<double>(this,200),
              (double)CONCAT44(in_stack_00000018,in_stack_00000014),1);
   local_2c = local_2c >> 0x10;
   if (local_2c < iVar4) {
@@ -238,20 +240,19 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   if (iVar3 < local_28) {
     iVar3 = local_28;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((*(int *)((int)this + 0x30) <= local_2c) && (local_2c < *(int *)((int)this + 0x38))) &&
-     ((*(int *)((int)this + 0x34) <= local_28 && (local_28 < *(int *)((int)this + 0x3c))))) {
+  if (((STField<int>(this,0x30) <= local_2c) && (local_2c < STField<int>(this,0x38))) &&
+     ((STField<int>(this,0x34) <= local_28 && (local_28 < STField<int>(this,0x3c))))) {
     return 1;
   }
-  if (param_1 < *(int *)((int)this + 0x30)) {
+  if (param_1 < STField<int>(this,0x30)) {
     return 0;
   }
-  if (*(int *)((int)this + 0x38) <= iVar4) {
+  if (STField<int>(this,0x38) <= iVar4) {
     return 0;
   }
-  if (iVar3 < *(int *)((int)this + 0x34)) {
+  if (iVar3 < STField<int>(this,0x34)) {
     return 0;
   }
-  return (uint)(param_2 < *(int *)((int)this + 0x3c));
+  return (uint)(param_2 < STField<int>(this,0x3c));
 }
 

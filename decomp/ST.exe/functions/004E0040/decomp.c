@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_004e0040(AnonShape_004E0040_648F9827 *param_1)
 
@@ -34,7 +36,7 @@ LAB_004e00e5:
     }
   }
   if (param_1->field_04D4 != 0) {
-    param_1->field_04E0 = *(undefined4 *)((int)this + 0x259);
+    param_1->field_04E0 = STField<undefined4>(this,0x259);
     thunk_FUN_005804f0(this,param_1->field_0018,(ushort)param_1->field_0024,param_1->field_0032);
   }
 LAB_004e0119:

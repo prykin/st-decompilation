@@ -24,7 +24,7 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
   local_8 = 0x83;
   local_18 = this;
   allocation = Library::DKW::LIB::MemAlloc(0x83);
-  *(undefined4 *)((int)this + 0x1e1) = 2;
+  STField<undefined4>(this,0x1e1) = 2;
   if (this == nullptr) {
     puVar3 = nullptr;
   }
@@ -38,7 +38,7 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
     puVar5 = (byte *)(puVar5 + 1);
   }
   *(undefined2 *)puVar5 = *(undefined2 *)puVar3;
-  *(undefined1 *)((int)puVar5 + 2) = *(undefined1 *)((int)puVar3 + 2);
+  STField<undefined1>(puVar5,2) = STField<undefined1>(puVar3,2);
   if (local_18->field_0234 != nullptr) {
     local_14 = (undefined4 *)FUN_006b0020(local_18->field_0234,(int *)&local_c);
     uVar2 = local_c + 0x87;

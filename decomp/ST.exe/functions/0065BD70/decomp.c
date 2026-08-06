@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as AiEventClassTy.
    Evidence: this_call_owners=[AiEventClassTy]; agreed_this_calls=1; incoming_this_accesses=89;
@@ -181,10 +183,8 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
         STFishC::sub_004162B0
                   ((STFishC *)pSVar4,(short *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
                    &local_6);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        this->field_0543 = (int)message._2_2_;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        this->field_0547 = (int)param_2._2_2_;
+        this->field_0543 = (int)STPiece<2,2>(message);
+        this->field_0547 = (int)STPiece<2,2>(param_2);
         this->field_054B = (int)local_6;
         if (pSVar4->field_0030 == 0xffff) {
           uVar11 = 0xffffffff;
@@ -217,10 +217,8 @@ LAB_0065c021:
       STFishC::sub_004162F0
                 ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
                  (undefined2 *)((int)&param_2 + 2),&local_6);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      this->field_0543 = (int)message._2_2_;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      this->field_0547 = (int)param_2._2_2_;
+      this->field_0543 = (int)STPiece<2,2>(message);
+      this->field_0547 = (int)STPiece<2,2>(param_2);
       this->field_054B = (int)local_6;
       uVar5 = (*pSVar4->vtable->vfunc_138)();
       this->field_054F = uVar5;
@@ -253,10 +251,8 @@ LAB_0065c021:
       STFishC::sub_004162F0
                 ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
                  (undefined2 *)((int)&param_2 + 2),&local_6);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      this->field_0547 = (int)param_2._2_2_;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      this->field_0543 = (int)message._2_2_;
+      this->field_0547 = (int)STPiece<2,2>(param_2);
+      this->field_0543 = (int)STPiece<2,2>(message);
       this->field_054B = (int)local_6;
       (*pSVar4->vtable->vfunc_74)((short)local_1c);
       Library::DKW::TBL::FUN_006b6020(&this->field_05B3->flags,0,local_1c);
@@ -284,10 +280,8 @@ LAB_0065c021:
       this->field_053F = 0;
       STFishC::sub_004162B0
                 (this_00,(short *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),&local_6);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      this->field_0543 = (int)message._2_2_;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      this->field_0547 = (int)param_2._2_2_;
+      this->field_0543 = (int)STPiece<2,2>(message);
+      this->field_0547 = (int)STPiece<2,2>(param_2);
       this->field_054B = (int)local_6;
     }
     wVar7 = (pSVar2->arg1).words.low;
@@ -311,10 +305,8 @@ LAB_0065c021:
         STFishC::sub_004162B0
                   ((STFishC *)pSVar4,(short *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
                    &local_6);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        this->field_0543 = (int)message._2_2_;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        this->field_0547 = (int)param_2._2_2_;
+        this->field_0543 = (int)STPiece<2,2>(message);
+        this->field_0547 = (int)STPiece<2,2>(param_2);
         this->field_054B = (int)local_6;
         goto LAB_0065c021;
       }
@@ -387,10 +379,8 @@ LAB_0065c4bb:
     STFishC::sub_004162B0
               ((STFishC *)pSVar4,(short *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
                &local_6);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    this->field_056B = (int)message._2_2_;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    this->field_056F = (int)param_2._2_2_;
+    this->field_056B = (int)STPiece<2,2>(message);
+    this->field_056F = (int)STPiece<2,2>(param_2);
     this->field_0573 = (int)local_6;
     if (pSVar4->field_0030 == 0xffff) {
       uVar11 = 0xffffffff;

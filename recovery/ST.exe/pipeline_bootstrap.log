@@ -77,17 +77,16 @@ Computing semantic Program fingerprint...
 Evidence ledger verified: program modification=3, semantic_sha256=e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0, artifacts=92
 [18] STDecompExport.java <- <repo>/decomp
 Exporting ST.exe to <local-home>/st/decomp/ST.exe via transactional staging
-Ignored stale function-analysis cache rows: 5712
 Functions reused without decompilation: 10392/10392
-Function quality/idiom analyses reused: 0/5712
+Function quality/idiom analyses reused: 5712/5712
 STDecompExport complete: <local-home>/st/decomp/ST.exe
 [19] STExportRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe
 Export regression gate: status=passed, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/export_regression_report.tsv
 [20] STAbiRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe | <repo>/config | accepted-refresh | e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0
 ABI regression gate: phase=accepted-refresh, typed_vtable_slots=2729, class_vptrs=95, fixture_functions=9, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/abi_regression_report.tsv
 ST recovery pipeline complete.
-Total pipeline time: 00:06:09
+Total pipeline time: 00:06:18
 Pipeline report: <local-home>/st/recovery/ST.exe/pipeline_report.tsv
 Program changed after pipeline: false
-Latest archived run: 63f884ee37f1ba3033bbb57067b5d6cb29f97d70fedbfa31f8785d20e77c0541
+Latest archived run: 6db00d62db47c8e04b682e1ebfc531127d5bbaf2ac060cb19ddf556938f2bf2d
 ST recovery launcher completed.

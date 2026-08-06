@@ -358,7 +358,7 @@ LAB_005cee1a:
                   else {
                     pvVar17 = nullptr;
                   }
-                  if ((pvVar17 != nullptr) && (*(uint *)((int)pvVar17 + 0x90) == DAT_0080995c))
+                  if ((pvVar17 != nullptr) && (STField<uint>(pvVar17,0x90) == DAT_0080995c))
                   {
                     pbVar23 = (byte *)&DAT_00809960;
                     pbVar21 = (byte *)((int)pvVar17 + 0x4c);
@@ -765,8 +765,7 @@ LAB_005ce8db:
             }
 LAB_005ce8fe:
             if (!bVar27) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_9c._0_4_ = local_18;
+              STPiece<0,4>(local_9c) = local_18;
               local_9c.field_0008 = Library::DKW::LIB::MemAlloc(this_00->field_1A5B->field_06A6);
               PrepareAFT(this_00,&local_9c,(uint *)local_c);
               Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_2237,&local_9c);

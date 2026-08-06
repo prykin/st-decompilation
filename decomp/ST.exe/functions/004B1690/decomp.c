@@ -171,9 +171,8 @@ LAB_004b1a39:
           STFishC::sub_004162B0
                     (local_10,(short *)((int)&param_4 + 2),(undefined2 *)((int)&param_5 + 2),
                      (undefined2 *)((int)&local_8 + 2));
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (((param_4._2_2_ == param_1) && (param_5._2_2_ == param_2)) &&
-             (local_8._2_2_ == param_3)) {
+          if (((STPiece<2,2>(param_4) == param_1) && (STPiece<2,2>(param_5) == param_2)) &&
+             (STPiece<2,2>(local_8) == param_3)) {
             bVar1 = false;
           }
         }

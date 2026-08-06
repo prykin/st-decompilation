@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 005530E0 returns forwarded through return of FUN_005532f0 @ 0055334B */

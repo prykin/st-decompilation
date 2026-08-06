@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0074e079(void *this,int param_1,int param_2)
 
@@ -8,7 +10,7 @@ void __thiscall FUN_0074e079(void *this,int param_1,int param_2)
   if (param_1 == 0) {
     FUN_0074dfb5(this,param_2);
   }
-  else if (param_1 == *(int *)((int)this + 4)) {
+  else if (param_1 == STField<int>(this,4)) {
     FUN_0074df72(this,param_2);
   }
   else {
@@ -23,7 +25,7 @@ void __thiscall FUN_0074e079(void *this,int param_1,int param_2)
     piVar2[1] = (int)piVar1;
     *piVar1 = (int)piVar2;
     *(int **)(param_1 + 4) = piVar2;
-    *(int *)((int)this + 8) = *(int *)((int)this + 8) + 1;
+    STField<int>(this,8) = STField<int>(this,8) + 1;
   }
   return;
 }

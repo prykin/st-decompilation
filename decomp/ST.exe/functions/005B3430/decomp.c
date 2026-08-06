@@ -204,8 +204,8 @@ LAB_005b353c:
               FUN_006b3af0((int *)puVar8[0x11],*puVar8);
             }
             if ((*(char *)((int)puVar8 + -0x96) != '\0') &&
-               (*(uint *)((int)puVar8 + 0x91) != 0xffffffff)) {
-              FUN_006b3af0(*(int **)((int)puVar8 + 0xd5),*(uint *)((int)puVar8 + 0x91));
+               (STField<uint>(puVar8,0x91) != 0xffffffff)) {
+              FUN_006b3af0(STField<int *>(puVar8,0xd5),STField<uint>(puVar8,0x91));
             }
             *(undefined1 *)((int)puVar8 + -0xbd) = 0;
           }

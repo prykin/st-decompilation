@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
@@ -123,7 +125,7 @@ LAB_006db484:
             iVar4 = iVar5;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             uVar3 = CONCAT31(CONCAT21(*param_3,*(undefined1 *)param_3),uVar7);
-            uVar7 = *(undefined1 *)((int)param_3 + 1);
+            uVar7 = STField<undefined1>(param_3,1);
             param_3 = param_3 + 1;
             *puVar10 = uVar3;
             puVar10 = puVar10 + 1;
@@ -162,7 +164,7 @@ LAB_006db4e1:
             iVar4 = iVar5;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             uVar3 = CONCAT31(CONCAT21(*puVar8,*(undefined1 *)puVar8),uVar7);
-            uVar7 = *(undefined1 *)((int)puVar8 + 1);
+            uVar7 = STField<undefined1>(puVar8,1);
             puVar8 = puVar8 + 1;
             *puVar10 = uVar3;
             puVar10 = puVar10 + 1;

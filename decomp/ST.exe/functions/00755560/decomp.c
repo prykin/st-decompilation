@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0075575A CMP EAX,ESI classifies dword parameter loaded at 00755757 */

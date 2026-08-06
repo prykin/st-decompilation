@@ -49,7 +49,7 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
     puVar12 = (ulonglong *)((int)puVar12 + 4);
   }
   *(undefined2 *)puVar12 = *(undefined2 *)puVar9;
-  *(undefined1 *)((int)puVar12 + 2) = *(undefined1 *)((int)puVar9 + 2);
+  STField<undefined1>(puVar12,2) = STField<undefined1>(puVar9,2);
   puVar9 = (byte *)&local_10->field_0x1c7;
   puVar10 = (byte *)(&local_8->field_02C0);
   memmove(puVar10, puVar9, 0x195); /* compiler REP MOVS byte copy */

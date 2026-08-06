@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
@@ -37,8 +39,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
     if (param_1 == 1) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806774,CASE_1D,"rubb3",0xffffffff,0,1,0,nullptr);
-      uVar5 = *(uint *)((int)puVar3 + 0xd);
-      uVar4 = *(uint *)((int)puVar3 + 9);
+      uVar5 = STField<uint>(puVar3,0xd);
+      uVar4 = STField<uint>(puVar3,9);
       uVar7 = 8;
       uVar6 = 8;
     }
@@ -46,14 +48,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806774,CASE_1D,"bulb_tel",0xffffffff,0,1,0,
                           nullptr);
-      uVar5 = *(uint *)((int)puVar3 + 0xd);
-      uVar4 = *(uint *)((int)puVar3 + 9);
+      uVar5 = STField<uint>(puVar3,0xd);
+      uVar4 = STField<uint>(puVar3,9);
       uVar7 = 0x2f;
       uVar6 = 0x5a;
     }
     ST3DSMAPContext::sub_006E8660(pAVar1->field_0211,(int *)&local_8,1,0,uVar4,uVar5,uVar6,uVar7,0);
     ST3DSMAPContext::sub_006E98E0
-              (pAVar1->field_0211,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+              (pAVar1->field_0211,local_8,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
     ST3DSMAPContext::sub_006EA270(pAVar1->field_0211,local_8,0,0);
     iVar2 = pAVar1->field_02E6;
     Library::Ourlib::ST3DSMAP::SprMove

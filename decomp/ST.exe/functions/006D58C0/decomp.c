@@ -21,8 +21,8 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   local_58[2] = nullptr;
   local_58[3] = nullptr;
   local_58[5] = nullptr;
-  iVar1 = *(int *)(*(int *)((int)this + 0xe0) + 0x288);
-  local_8 = *(_RTL_CRITICAL_SECTION **)((int)this + 0xe4);
+  iVar1 = *(int *)(STField<int>(this,0xe0) + 0x288);
+  local_8 = STField<_RTL_CRITICAL_SECTION *>(this,0xe4);
   local_58[6] = nullptr;
   local_58[0xc] = nullptr;
   local_58[7] = nullptr;
@@ -42,7 +42,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   EnterCriticalSection(local_8);
   pAVar2 = local_c;
   if (((*(int *)(iVar1 + 0x90) == 0) || (*(int *)(iVar1 + 0x94) == 0)) ||
-     (*(int *)(*(int *)((int)this + 0xe0) + 0x30c) == 0)) {
+     (*(int *)(STField<int>(this,0xe0) + 0x30c) == 0)) {
     LeaveCriticalSection(local_8);
     return 0x8000ffff;
   }
@@ -88,7 +88,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
       _DAT_00856934 = *(int *)(pAVar2 + 1) / *(int *)&pAVar2->field_0x28;
       _DAT_00856938 = -*(int *)&pAVar2->field_0x1c;
       FUN_006bb980((AnonShape_006BB980_E41494A1 *)pAVar2);
-      *(undefined4 *)(*(int *)((int)local_10 + 0xe0) + 0x310) = 1;
+      *(undefined4 *)(STField<int>(local_10,0xe0) + 0x310) = 1;
     }
   }
   _DAT_00856944 = FUN_00749841((RecoveredSourceFamily_dibcopy *)&DAT_00856930);

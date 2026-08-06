@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_007603b0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *param_3,int *param_4,
                  int param_5)
@@ -28,8 +30,7 @@ void FUN_007603b0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *param_3
   int local_8;
 
   local_14 = param_2->field_0050;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar6 = *(int *)((int)param_1 + 0x132) + 0x80;
+  iVar6 = STField<int>(param_1,0x132) + 0x80;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = local_134;
   local_2c = iVar6;

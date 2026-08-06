@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 bool __cdecl FUN_00719b40(MCIDEVICEID *param_1,undefined4 param_2)
 

@@ -20,9 +20,9 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
   short local_6;
 
   local_10 = 0;
-  sVar1 = *(short *)((int)this + 0x2c5);
-  sVar2 = *(short *)((int)this + 0x2c9);
-  sVar3 = *(short *)((int)this + 0x2c7);
+  sVar1 = STField<short>(this,0x2c5);
+  sVar2 = STField<short>(this,0x2c9);
+  sVar3 = STField<short>(this,0x2c7);
   local_14 = 0;
   local_18 = 0;
   if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
@@ -30,46 +30,43 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
       ((g_worldGrid.sizeZ <= sVar2 ||
        ((this_00 = (STFishC *)
                    STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], this_00 == nullptr ||
-        (this_00->field_0018 != *(int *)((int)this + 0x2d1))))))) &&
+        (this_00->field_0018 != STField<int>(this,0x2d1))))))) &&
      (iVar4 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x2d1),
+                        (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x2d1),
                          (int *)&local_1c), this_00 = local_1c, iVar4 == -4)) {
     return -1;
   }
   thunk_FUN_00416270(this_00,(undefined2 *)&local_10,&local_14,&local_18);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((((short)local_10 == *(short *)((int)this + 0x2cb)) &&
-      ((short)local_14 == *(short *)((int)this + 0x2cd))) &&
-     ((short)local_18 == *(short *)((int)this + 0x2cf))) {
+  if ((((short)local_10 == STField<short>(this,0x2cb)) &&
+      ((short)local_14 == STField<short>(this,0x2cd))) &&
+     ((short)local_18 == STField<short>(this,0x2cf))) {
     return 0;
   }
-  iVar5 = (int)(short)local_18 - (int)*(short *)((int)this + 499);
-  iVar6 = (int)(short)local_14 - (int)*(short *)((int)this + 0x1f1);
-  iVar4 = (int)(short)local_10 - (int)*(short *)((int)this + 0x1ef);
+  iVar5 = (int)(short)local_18 - (int)STField<short>(this,499);
+  iVar6 = (int)(short)local_14 - (int)STField<short>(this,0x1f1);
+  iVar4 = (int)(short)local_10 - (int)STField<short>(this,0x1ef);
   if (iVar4 * iVar4 + iVar6 * iVar6 + iVar5 * iVar5 < 0x191) {
     iVar4 = 0;
   }
   else {
     STFishC::sub_004162B0(this_00,&local_a,&local_6,&local_8);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (((local_a == *(short *)((int)this + 0x2c5)) && (local_6 == *(short *)((int)this + 0x2c7)))
-       && (local_8 == *(short *)((int)this + 0x2c9))) {
+    if (((local_a == STField<short>(this,0x2c5)) && (local_6 == STField<short>(this,0x2c7)))
+       && (local_8 == STField<short>(this,0x2c9))) {
       iVar4 = 1;
     }
     else {
-      iVar4 = *(short *)((int)this + 0x2c5) - param_2;
-      iVar5 = *(short *)((int)this + 0x2c7) - param_3;
-      iVar6 = *(short *)((int)this + 0x2c9) - param_4;
+      iVar4 = STField<short>(this,0x2c5) - param_2;
+      iVar5 = STField<short>(this,0x2c7) - param_3;
+      iVar6 = STField<short>(this,0x2c9) - param_4;
       iVar4 = ((local_8 - param_4) * (local_8 - param_4) + (local_6 - param_3) * (local_6 - param_3)
                + (local_a - param_2) * (local_a - param_2) <
               iVar6 * iVar6 + iVar5 * iVar5 + iVar4 * iVar4) + 1;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (((param_1 == *(int *)((int)this + 0x2d5) + -3) && (iVar4 == 2)) ||
-       ((param_1 == *(int *)((int)this + 0x2d5) + -2 && (iVar4 != 0)))) {
-      *(undefined2 *)((int)this + 0x2cb) = (undefined2)local_10;
-      *(undefined2 *)((int)this + 0x2cd) = (undefined2)local_14;
-      *(undefined2 *)((int)this + 0x2cf) = (undefined2)local_18;
+    if (((param_1 == STField<int>(this,0x2d5) + -3) && (iVar4 == 2)) ||
+       ((param_1 == STField<int>(this,0x2d5) + -2 && (iVar4 != 0)))) {
+      STField<undefined2>(this,0x2cb) = (undefined2)local_10;
+      STField<undefined2>(this,0x2cd) = (undefined2)local_14;
+      STField<undefined2>(this,0x2cf) = (undefined2)local_18;
       return iVar4;
     }
   }

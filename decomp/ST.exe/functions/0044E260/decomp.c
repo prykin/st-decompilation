@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
 
@@ -40,8 +42,8 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
       if (0 < (int)param_2) {
         do {
           DArrayGetElement(pDVar5,uVar12,local_2c);
-          /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-          local_14 = STAllPlayersC::GetObjPtr(in_ECX,(char)param_1,local_2c._0_2_,CASE_1);
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+          local_14 = STAllPlayersC::GetObjPtr(in_ECX,(char)param_1,STPiece<0,2>(local_2c),CASE_1);
           if ((local_14 == nullptr) ||
              (iVar6 = local_14->vfunc_F8(), iVar6 == 0)) {
             DArrayRemoveAt(pDVar5,uVar12);
@@ -132,7 +134,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
                     param_4 = (int *)local_14;
                     do {
                       iVar9 = *param_4;
-                      iVar10 = (int)*(short *)((int)piVar2 + 0x5b) - (int)*(short *)(iVar9 + 0x5b);
+                      iVar10 = (int)STField<short>(piVar2,0x5b) - (int)*(short *)(iVar9 + 0x5b);
                       iVar3 = *(int *)(iVar9 + 0x101);
                       if (iVar10 < 1) {
                         if (iVar10 < -iVar3) goto LAB_0044e4d5;
@@ -149,7 +151,7 @@ joined_r0x0044e51a:
                       }
                       if (iVar10 <= iVar3) goto LAB_0044e508;
 LAB_0044e4d5:
-                      iVar9 = (int)*(short *)((int)piVar2 + 0x5d) - (int)*(short *)(iVar9 + 0x5d);
+                      iVar9 = (int)STField<short>(piVar2,0x5d) - (int)*(short *)(iVar9 + 0x5d);
                       if (iVar9 < 1) {
                         if (iVar9 < -iVar3) goto LAB_0044e4ef;
                         iVar9 = piVar4[piVar2[9]];

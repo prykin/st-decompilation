@@ -377,12 +377,11 @@ LAB_0047f1f7:
               sVar5 = 0;
               this->field_001C = local_1c;
               lVar17 = Library::MSVCRT::__ftol();
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
                          ((uint)local_1c >> 0x10) % 7 + (int)this->field_0041 + -3 +
                          (int)(short)local_24,
-                         (((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_) + -3
+                         (((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24)) + -3
                          ,(int)(short)lVar17 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                           (int)local_20,sVar5,sVar16,sVar14,sVar7,sVar18,sVar19,iVar8,sVar21,bVar22);
             }
@@ -393,12 +392,9 @@ LAB_0047f1f7:
               this->field_001C = uVar15;
               uVar10 = uVar15 * 0x41c64e6d + 0x3039;
               this->field_001C = uVar10;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_24._2_2_ = (short)((uint)uVar2 >> 0x10);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              iVar8 = (int)local_24._2_2_;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_24._0_2_ = (short)uVar2;
+              STPiece<2,2>(local_24) = (short)((uint)uVar2 >> 0x10);
+              iVar8 = (int)STPiece<2,2>(local_24);
+              STPiece<0,2>(local_24) = (short)uVar2;
               iVar9 = (int)(short)local_24;
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
@@ -518,8 +514,7 @@ LAB_0047edd5:
                     lVar17 = Library::MSVCRT::__ftol();
                     iVar8 = (int)(short)lVar17 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                             (int)local_20;
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    iVar9 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
+                    iVar9 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24);
                     pAVar13 = local_1c;
                   }
                   else {
@@ -539,10 +534,8 @@ LAB_0047edd5:
                     sVar16 = 0;
                     sVar5 = 0;
                     iVar8 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    local_24._2_2_ = (short)((uint)local_24 >> 0x10);
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    iVar9 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
+                    STPiece<2,2>(local_24) = (short)((uint)local_24 >> 0x10);
+                    iVar9 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24);
                   }
                   TraksClassTy::TraksCreate
                             (g_traksClass_00802A7C,1,2,7,
@@ -630,8 +623,7 @@ LAB_0047edd5:
              == this->field_06AF)) &&
            ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 == this->field_0024 &&
             (iVar8 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar8 != 0)))) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (*(int *)((int)param_1 + 0x245) == 6) {
+          if (STField<int>(param_1,0x245) == 6) {
             if (this->field_06B9 == 1) {
               this->field_06C3 = CASE_5;
               this->field_06C7 = 0;

@@ -218,8 +218,7 @@ STAllPlayersC::SelectObjects
       if (0 < (int)param_2) {
         do {
           DArrayGetElement(local_8,index,local_14);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar7 = GetObjPtr(this,objPtr,local_14._0_2_,CASE_1);
+          pSVar7 = GetObjPtr(this,objPtr,STPiece<0,2>(local_14),CASE_1);
           iVar8 = pSVar7->vfunc_EC();
           if (iVar8 == 0) {
             DArrayRemoveAt(local_8,index);

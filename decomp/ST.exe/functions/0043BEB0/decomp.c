@@ -99,14 +99,12 @@ STAllPlayersC::GetPanelInfo
       do {
         uVar14 = local_24;
         DArrayGetElement(local_1c,local_24,local_c);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        if (local_c._0_2_ != 0xffff) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,local_c._0_2_,
+        if (STPiece<0,2>(local_c) != 0xffff) {
+          pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,STPiece<0,2>(local_c),
                               CASE_1);
           STFishC::sub_004162B0
                     ((STFishC *)pSVar10,&local_6,&local_8,(undefined2 *)((int)&param_1 + 2));
-          *(undefined1 *)((int)pAVar17 + (0x2e - param_1._2_2_)) = 1;
+          *(undefined1 *)((int)pAVar17 + (0x2e - STPiece<2,2>(param_1))) = 1;
           (*pSVar10->vtable->vfunc_30)((short)local_6c);
           local_34 = local_64;
           local_30 = local_69;
@@ -126,8 +124,7 @@ STAllPlayersC::GetPanelInfo
     }
     while( true ) {
       DArrayGetElement(pDVar1,uVar14,local_c);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar4 = local_c._0_2_;
+      uVar4 = STPiece<0,2>(local_c);
       if (uVar4 != 0xffff) break;
       uVar14 = uVar14 + 1;
       if ((int)local_14 <= (int)uVar14) {
@@ -166,8 +163,7 @@ STAllPlayersC::GetPanelInfo
         }
         while( true ) {
           DArrayGetElement(pDVar1,uVar14,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          uVar4 = local_c._0_2_;
+          uVar4 = STPiece<0,2>(local_c);
           if (uVar4 != 0xffff) break;
           uVar14 = uVar14 + 1;
           if ((int)local_14 <= (int)uVar14) {
@@ -190,10 +186,8 @@ STAllPlayersC::GetPanelInfo
       if (0 < (int)local_14) {
         do {
           DArrayGetElement(local_1c,uVar16,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(this,DAT_0080874d,local_c._0_2_,CASE_1);
+          if (STPiece<0,2>(local_c) != 0xffff) {
+            pSVar10 = GetObjPtr(this,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             iVar5 = thunk_FUN_00493cd0(pSVar10);
             if (iVar5 == 0) break;
           }
@@ -217,10 +211,8 @@ LAB_0043c293:
         if (0 < (int)local_14) {
           do {
             DArrayGetElement(local_1c,uVar16,local_c);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            if (local_c._0_2_ != 0xffff) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              pSVar10 = GetObjPtr(this,DAT_0080874d,local_c._0_2_,CASE_1);
+            if (STPiece<0,2>(local_c) != 0xffff) {
+              pSVar10 = GetObjPtr(this,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
               pSVar6 = thunk_FUN_0042b760(DAT_0080874d,pSVar10->field_0030);
               if ((pSVar6 != nullptr) &&
                  (pAVar17->field_0x15 = 1, pSVar6->field_001C == 0)) break;
@@ -257,10 +249,8 @@ LAB_0043c293:
       if (0 < (int)local_14) {
         do {
           DArrayGetElement(local_1c,uVar16,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+          if (STPiece<0,2>(local_c) != 0xffff) {
+            pSVar10 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             *(undefined1 *)((int)&pAVar17[1].field_0018 + pSVar10->field_07EE + 2) = 3;
           }
           uVar16 = uVar16 + 1;
@@ -320,11 +310,9 @@ LAB_0043c293:
       if (0 < (int)local_14) {
         do {
           DArrayGetElement(local_1c,local_24,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
+          if (STPiece<0,2>(local_c) != 0xffff) {
             local_28 = local_28 + 1;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+            pSVar10 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             if (local_28 == 1) {
               uVar16 = (uint)(ushort)pSVar10->field_0030;
             }
@@ -778,8 +766,7 @@ LAB_0043ca5a:
       }
       while( true ) {
         DArrayGetElement(pDVar1,uVar14,local_c);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar4 = local_c._0_2_;
+        uVar4 = STPiece<0,2>(local_c);
         if (uVar4 != 0xffff) break;
         uVar14 = uVar14 + 1;
         if ((int)local_14 <= (int)uVar14) {
@@ -822,10 +809,8 @@ cf_common_exit_0043CA35:
         }
         do {
           DArrayGetElement(pDVar1,uVar14,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field150_0x1b7,local_c._0_2_,
+          if (STPiece<0,2>(local_c) != 0xffff) {
+            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field150_0x1b7,STPiece<0,2>(local_c),
                                 CASE_1);
             (*pSVar10->vtable->vfunc_38)((short)param_2);
             return;
@@ -862,10 +847,8 @@ cf_common_exit_0043CA35:
         }
         do {
           DArrayGetElement(pDVar1,uVar14,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field150_0x1b7,local_c._0_2_,
+          if (STPiece<0,2>(local_c) != 0xffff) {
+            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field150_0x1b7,STPiece<0,2>(local_c),
                                 CASE_1);
             (*pSVar10->vtable->vfunc_3C)((short)param_2);
             return;
@@ -903,10 +886,8 @@ cf_common_exit_0043CA35:
         }
         do {
           DArrayGetElement(local_1c,uVar14,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,local_c._0_2_,
+          if (STPiece<0,2>(local_c) != 0xffff) {
+            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,STPiece<0,2>(local_c),
                                 CASE_1);
             (*pSVar10->vtable->vfunc_40)((short)pAVar17);
             return;
@@ -939,10 +920,8 @@ cf_common_exit_0043CA35:
         }
         do {
           DArrayGetElement(pDVar1,uVar14,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field150_0x1b7,local_c._0_2_,
+          if (STPiece<0,2>(local_c) != 0xffff) {
+            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field150_0x1b7,STPiece<0,2>(local_c),
                                 CASE_1);
             (*pSVar10->vtable->vfunc_44)((short)param_2);
             return;
@@ -968,10 +947,8 @@ cf_common_exit_0043CA35:
         }
         do {
           DArrayGetElement(pDVar1,uVar16,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,*(char *)(local_28 + 4),local_c._0_2_,CASE_1);
+          if (STPiece<0,2>(local_c) != 0xffff) {
+            pSVar10 = GetObjPtr(local_10,*(char *)(local_28 + 4),STPiece<0,2>(local_c),CASE_1);
             (*pSVar10->vtable->vfunc_48)((short)param_2);
             return;
           }
@@ -1007,11 +984,9 @@ cf_common_exit_0043CA35:
           }
           do {
             DArrayGetElement(pDVar1,uVar14,local_c);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            if (local_c._0_2_ != 0xffff) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            if (STPiece<0,2>(local_c) != 0xffff) {
               pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field150_0x1b7,
-                                  local_c._0_2_,CASE_1);
+                                  STPiece<0,2>(local_c),CASE_1);
               (*pSVar10->vtable->vfunc_50)((short)param_2);
               return;
             }
@@ -1032,10 +1007,8 @@ LAB_0043d41d:
               *(undefined1 *)pAVar17 = 0;
             }
             else if (iVar5 == 0x3c) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              uVar4._0_1_ = pAVar12->field_0004;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              uVar4._1_1_ = pAVar12->field_0005;
+              STPiece<0,1>(uVar4) = pAVar12->field_0004;
+              STPiece<1,1>(uVar4) = pAVar12->field_0005;
               if (uVar4 == 1) {
                 uVar16 = 0;
                 pDVar1 = *(DArrayTy **)pAVar12;
@@ -1043,8 +1016,7 @@ LAB_0043d41d:
                 if (0 < (int)local_14) {
                   do {
                     DArrayGetElement(pDVar1,uVar16,local_c);
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    uVar4 = local_c._0_2_;
+                    uVar4 = STPiece<0,2>(local_c);
                     if (uVar4 != 0xffff) {
                       SVar19 = CASE_1;
                       cVar18 = param_2[-1].field_0x16;
@@ -1101,8 +1073,7 @@ LAB_0043d447:
                   if (0 < (int)local_14) {
                     do {
                       DArrayGetElement(local_1c,uVar16,local_c);
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      uVar4 = local_c._0_2_;
+                      uVar4 = STPiece<0,2>(local_c);
                       if (uVar4 != 0xffff) {
                         cVar18 = (char)puVar15[-2];
                         SVar19 = CASE_1;
@@ -1186,11 +1157,9 @@ LAB_0043d5c4:
             if (0 < (int)local_14) {
               do {
                 DArrayGetElement(pDVar1,uVar16,local_c);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                if (local_c._0_2_ != 0xffff) {
+                if (STPiece<0,2>(local_c) != 0xffff) {
                   iVar5 = iVar5 + 1;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  pSVar10 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+                  pSVar10 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
                   if (iVar5 == 1) {
                     local_20 = (uint)(ushort)pSVar10->field_0030;
                   }
@@ -1279,10 +1248,8 @@ LAB_0043d5c4:
         if (0 < (int)local_14) {
           do {
             DArrayGetElement(pDVar1,uVar14,local_c);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            if (local_c._0_2_ != 0xffff) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,local_c._0_2_
+            if (STPiece<0,2>(local_c) != 0xffff) {
+              pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,STPiece<0,2>(local_c)
                                   ,CASE_1);
               (*pSVar10->vtable->vfunc_60)((short)param_2);
               break;
@@ -1322,10 +1289,8 @@ LAB_0043d5c4:
         }
         do {
           DArrayGetElement(pDVar1,uVar14,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,local_c._0_2_,
+          if (STPiece<0,2>(local_c) != 0xffff) {
+            pSVar10 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar16].field97_0x167,STPiece<0,2>(local_c),
                                 CASE_1);
             (*pSVar10->vtable->vfunc_4C)((short)param_2);
             return;
@@ -1360,10 +1325,8 @@ LAB_0043d5c4:
       if (0 < (int)local_14) {
         do {
           DArrayGetElement(pDVar1,uVar16,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+          if (STPiece<0,2>(local_c) != 0xffff) {
+            pSVar10 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             if (pSVar10->field_07E6 == 0) {
               pAVar17->field_0011 = 3;
             }
@@ -1381,10 +1344,8 @@ LAB_0043d5c4:
       if (0 < (int)local_14) {
         do {
           DArrayGetElement(pDVar1,dVar9,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+          if (STPiece<0,2>(local_c) != 0xffff) {
+            pSVar10 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             uVar11 = (*pSVar10->vtable->vfunc_2C)();
             switch(uVar11) {
             case 7:
@@ -1419,11 +1380,9 @@ switchD_0043d1bf_caseD_a:
       if (0 < (int)local_14) {
         do {
           DArrayGetElement(local_1c,uVar16,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
+          if (STPiece<0,2>(local_c) != 0xffff) {
             iVar5 = iVar5 + 1;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar10 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+            pSVar10 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             if (iVar5 == 1) {
               local_20 = (uint)(ushort)pSVar10->field_0030;
             }
@@ -1512,8 +1471,7 @@ LAB_0043cb81:
     }
     while( true ) {
       DArrayGetElement(pDVar1,uVar14,local_c);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar4 = local_c._0_2_;
+      uVar4 = STPiece<0,2>(local_c);
       if (uVar4 != 0xffff) break;
       uVar14 = uVar14 + 1;
       if ((int)local_14 <= (int)uVar14) {

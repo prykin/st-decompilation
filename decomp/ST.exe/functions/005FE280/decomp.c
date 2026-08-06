@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 FUN_005fe280(short *param_1,int param_2,int *param_3,int *param_4,int *param_5)
 
@@ -18,7 +20,7 @@ undefined4 FUN_005fe280(short *param_1,int param_2,int *param_3,int *param_4,int
   if (iVar3 == 2) {
     *param_3 = (int)*psVar1;
     *param_4 = (int)psVar1[1];
-    *param_5 = (int)psVar1[2] - (iVar2 - *(int *)((int)psVar1 + 0x35)) * *(int *)(psVar1 + 0x12);
+    *param_5 = (int)psVar1[2] - (iVar2 - STField<int>(psVar1,0x35)) * *(int *)(psVar1 + 0x12);
     return 1;
   }
   return 0;

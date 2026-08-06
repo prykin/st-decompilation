@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00627170(AnonShape_00627170_DB470A34 *param_1)
 

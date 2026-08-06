@@ -27,8 +27,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
   local_1c = 0;
   puVar11 = (byte *)(param_2);
   memset(puVar11, 0, uVar10); /* compiler bulk-zero initialization */
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (0 < *(int *)((int)param_1 + 0x455)) {
+  if (0 < STField<int>(param_1,0x455)) {
     local_18 = (int *)((int)param_1 + 0x459);
     do {
       iVar13 = *local_18;
@@ -95,7 +94,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
       }
       local_1c = local_1c + 1;
       local_18 = local_18 + 1;
-    } while (local_1c < *(int *)((int)psVar2 + 0x455));
+    } while (local_1c < STField<int>(psVar2,0x455));
   }
   if (param_3 != nullptr) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

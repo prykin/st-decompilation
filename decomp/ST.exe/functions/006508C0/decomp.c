@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_006508c0(short *param_1)
 
@@ -16,8 +18,7 @@ undefined4 __cdecl FUN_006508c0(short *param_1)
     param_1[10] = 1;
     param_1[0xb] = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xd3) != '\b') {
+  else if (STField<char>(param_1,0xd3) != '\b') {
     return 0;
   }
   if (((*(uint *)(param_1 + 8) < 0x9b) && (0 < *(int *)(param_1 + 10))) &&

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target field_02DD uses
    /SubmarineTitans/Recovered/Enums/STColl3C_field_02DDState. Cases:

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 006ACF0D returns stored into /STOctopusC+0x239 @ 0058AFD0 */

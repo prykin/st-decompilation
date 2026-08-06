@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_006d54c0(AnonShape_006D54C0_FBA73A61 *param_1)
 
@@ -35,7 +37,7 @@ undefined4 __fastcall FUN_006d54c0(AnonShape_006D54C0_FBA73A61 *param_1)
   *(int *)(param_1->field_0288 + 0x10) = iVar3;
   *(int *)(param_1->field_0288 + 0x14) = iVar5;
   *(uint *)(param_1->field_0288 + 0x98) =
-       (uint)*(ushort *)(piVar1 + 0xf) * (uint)*(ushort *)((int)piVar1 + 0x3e);
+       (uint)*(ushort *)(piVar1 + 0xf) * (uint)STField<ushort>(piVar1,0x3e);
   iVar2 = param_1->field_0288;
   *(int *)(iVar2 + 0xb0) = piVar1[10];
   *(int *)(iVar2 + 0xb4) = piVar1[0xb];
@@ -74,10 +76,10 @@ LAB_006d5620:
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((((local_10 != 0) || (iVar2 = param_1->field_0288, *(int *)(iVar2 + 0x90) != iVar3)) ||
         (*(int *)(iVar2 + 0x94) != iVar5)) ||
-       (((piVar1[0xd] * (uint)*(ushort *)((int)piVar1 + 0x3e) + 0x1f >> 3 & 0x1ffffffc) != local_14
+       (((piVar1[0xd] * (uint)STField<ushort>(piVar1,0x3e) + 0x1f >> 3 & 0x1ffffffc) != local_14
         || (-1 < piVar1[0xe])))) ||
       (iVar2 = *(int *)(iVar2 + 0x28),
-      (uint)*(ushort *)((int)piVar1 + 0x3e) != *(uint *)(iVar2 + 0x20))) ||
+      (uint)STField<ushort>(piVar1,0x3e) != *(uint *)(iVar2 + 0x20))) ||
      ((piVar1[0x10] == 3 &&
       (((piVar1[0x16] != *(int *)(iVar2 + 0x4c4) || (piVar1[0x17] != *(int *)(iVar2 + 0x4c8))) ||
        (piVar1[0x18] != *(int *)(iVar2 + 0x4cc))))))) {

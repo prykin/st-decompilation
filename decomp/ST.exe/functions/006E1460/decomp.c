@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=124;
@@ -227,9 +229,9 @@ ST3DSMAPContext::sub_006E1460(ST3DSMAPContext *this,double param_2,double param_
         ;
         this->field_003C = local_cc;
         *(undefined4 *)&this->field_0060 = (undefined4)local_24;
-        *(undefined4 *)((int)&this->field_0060 + 4) = local_24._4_4_;
+        *(undefined4 *)((int)&this->field_0060 + 4) = STPiece<4,4>(local_24);
         *(undefined4 *)&this->field_0068 = (undefined4)local_3c;
-        *(undefined4 *)((int)&this->field_0068 + 4) = local_3c._4_4_;
+        *(undefined4 *)((int)&this->field_0068 + 4) = STPiece<4,4>(local_3c);
         *(undefined4 *)&this->field_0070 = local_8c;
         *(undefined4 *)((int)&this->field_0070 + 4) = local_88;
         *(undefined4 *)&this->field_0078 = local_a4;
@@ -278,9 +280,9 @@ ST3DSMAPContext::sub_006E1460(ST3DSMAPContext *this,double param_2,double param_
         *(undefined4 *)&this->field_0068 = local_2c;
         *(undefined4 *)((int)&this->field_0068 + 4) = local_28;
         *(undefined4 *)&this->field_0070 = (undefined4)local_74;
-        *(undefined4 *)((int)&this->field_0070 + 4) = local_74._4_4_;
+        *(undefined4 *)((int)&this->field_0070 + 4) = STPiece<4,4>(local_74);
         *(undefined4 *)&this->field_0078 = (undefined4)local_84;
-        *(undefined4 *)((int)&this->field_0078 + 4) = local_84._4_4_;
+        *(undefined4 *)((int)&this->field_0078 + 4) = STPiece<4,4>(local_84);
         if (0 < iVar6) {
           if (local_90 < local_68) {
             puVar4 = this->field_02B0 + (this->field_02BC - iVar6) * this->field_02B8;

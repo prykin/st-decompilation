@@ -12,10 +12,10 @@ undefined4 __thiscall FUN_00620b20(void *this,int param_1,int param_2,int param_
 
   uVar2 = 0xffffffff;
   local_8 = 0xffffffff;
-  if ((*(int *)((int)this + 0xe9) != 0) &&
-     (index = *(int *)(*(int *)((int)this + 0xe9) + 0xc) - 1, -1 < (int)index)) {
+  if ((STField<int>(this,0xe9) != 0) &&
+     (index = *(int *)(STField<int>(this,0xe9) + 0xc) - 1, -1 < (int)index)) {
     do {
-      array = *(DArrayTy **)((int)this + 0xe9);
+      array = STField<DArrayTy *>(this,0xe9);
       if ((index < array->count) &&
          (piVar1 = DArrayAt<int>(array, index), piVar1 != nullptr)) {
         if ((param_2 < piVar1[2] + -3) ||

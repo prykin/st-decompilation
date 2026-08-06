@@ -1042,9 +1042,8 @@ LAB_00534654:
         return 0;
       }
       break;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_6:
-      DAT_00807300._1_1_ = DAT_00807300._1_1_ ^ 1;
+      STPiece<1,1>(DAT_00807300) = STPiece<1,1>(DAT_00807300) ^ 1;
       thunk_FUN_00568010(&g_sound,CASE_1);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1052,16 +1051,13 @@ LAB_00534654:
       thunk_FUN_005713b0(0x807620);
       iVar10 = *(int *)(message->arg0).ptr;
       if (iVar10 == 1) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        DAT_00807300._0_1_ = '\x01';
+        STPiece<0,1>(DAT_00807300) = '\x01';
       }
       else if (iVar10 == 2) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        DAT_00807300._0_1_ = '\b';
+        STPiece<0,1>(DAT_00807300) = '\b';
       }
       else if (iVar10 == 3) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        DAT_00807300._0_1_ = '\x02';
+        STPiece<0,1>(DAT_00807300) = '\x02';
       }
       switch((char)DAT_00807300) {
       case '\x01':
@@ -1252,9 +1248,8 @@ switchD_00535190_caseD_3:
         return 0;
       }
       break;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_6:
-      DAT_00807300._1_1_ = DAT_00807300._1_1_ ^ 2;
+      STPiece<1,1>(DAT_00807300) = STPiece<1,1>(DAT_00807300) ^ 2;
       thunk_FUN_00568010(&g_sound,CASE_2);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1397,9 +1392,8 @@ switchD_00534835_caseD_1:
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_6:
-      DAT_00807300._1_1_ = DAT_00807300._1_1_ ^ 4;
+      STPiece<1,1>(DAT_00807300) = STPiece<1,1>(DAT_00807300) ^ 4;
       thunk_FUN_00568010(&g_sound,CASE_4);
       SoundClassTy::PlaySound
                 ((SoundClassTy *)&g_sound,SOUND_MODE_1,nullptr,0x4b7,nullptr,0);
@@ -1506,7 +1500,7 @@ switchD_00534835_caseD_1:
         local_14 = Library::DKW::LIB::MemAllocClear(2);
         if (local_14 != nullptr) {
           *(undefined1 *)local_14 = 0;
-          *(byte *)((int)local_14 + 1) = DAT_0080874d;
+          STField<byte>(local_14,1) = DAT_0080874d;
           thunk_FUN_0054edf0((undefined4 *)0x32,local_14,1,2);
           FreeAndNull(&local_14);
           local_1c = (uint *)0x1;
@@ -1579,9 +1573,8 @@ switchD_00534835_caseD_1:
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_6:
-      DAT_00807300._1_1_ = DAT_00807300._1_1_ ^ 8;
+      STPiece<1,1>(DAT_00807300) = STPiece<1,1>(DAT_00807300) ^ 8;
       thunk_FUN_00568010(&g_sound,CASE_8);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1656,8 +1649,7 @@ switchD_00534835_caseD_1:
             iVar10 = (g_sndContext_0080765C->field_0094 - g_sndContext_0080765C->field_0090) + 1;
           }
           local_8 = ((iVar10 + -1) * (message->arg0).u32) / 0x1e;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          DAT_00807300._2_2_ = (undefined2)local_8;
+          STPiece<2,2>(DAT_00807300) = (undefined2)local_8;
           uRam00807304 = (undefined2)(local_8 >> 0x10);
           local_158.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_158;

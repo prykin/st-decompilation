@@ -49,8 +49,7 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
   memmove(pRVar7, pCVar6, 0x5c); /* compiler REP MOVS byte copy */
   memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if (local_64._5_1_ != this_00->field_0B9E) {
+  if (STPiece<5,1>(local_64) != this_00->field_0B9E) {
 cf_common_exit_00502155:
     PaintCtrlBoat(this_00);
     SetControlBoat(this_00);
@@ -59,17 +58,15 @@ cf_common_exit_00502155:
     return;
   }
   switch(this_00->field_0B9E) {
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case CASE_1:
-    if ((local_64._0_4_ != this_00->field_0B99) || (local_64._4_1_ != this_00->field_0B9D))
+    if ((STPiece<0,4>(local_64) != this_00->field_0B99) || (STPiece<4,1>(local_64) != this_00->field_0B9D))
     goto cf_common_exit_00502155;
     thunk_FUN_00501d00(this_00,(AnonShape_00501D00_3942B646 *)&this_00->field_0B99,&local_64);
     switch(this_00->field_0B99) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_8:
     case CASE_14:
-      if (((this_00->field_0BB6 == local_64._29_1_) && (this_00->field_0BB5 == local_64._28_1_)) &&
-         (this_00->field_0BB7 == local_64._30_1_)) {
+      if (((this_00->field_0BB6 == STPiece<29,1>(local_64)) && (this_00->field_0BB5 == STPiece<28,1>(local_64))) &&
+         (this_00->field_0BB7 == STPiece<30,1>(local_64))) {
         g_currentExceptionFrame = local_a8.previous;
         return;
       }
@@ -78,11 +75,10 @@ cf_common_exit_00502155:
       break;
     default:
       goto switchD_0050207d_default;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_16:
     case CASE_17:
     case CASE_25:
-      if (this_00->field_0BCD == local_64._52_1_) {
+      if (this_00->field_0BCD == STPiece<52,1>(local_64)) {
         g_currentExceptionFrame = local_a8.previous;
         return;
       }
@@ -90,18 +86,16 @@ cf_common_exit_00502155:
       puVar2 = this_00->field_0148[3];
     }
     break;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case CASE_2:
   case CASE_3:
-    if (local_64._0_4_ == this_00->field_0B99) {
+    if (STPiece<0,4>(local_64) == this_00->field_0B99) {
       thunk_FUN_00501d00(this_00,(AnonShape_00501D00_3942B646 *)&this_00->field_0B99,&local_64);
       g_currentExceptionFrame = local_a8.previous;
       return;
     }
     goto cf_common_exit_00502155;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case CASE_4:
-    if (local_64._0_4_ != this_00->field_0B99) goto cf_common_exit_00502155;
+    if (STPiece<0,4>(local_64) != this_00->field_0B99) goto cf_common_exit_00502155;
     if (this_00->field_0B99 != CASE_AF) {
       g_currentExceptionFrame = local_a8.previous;
       return;

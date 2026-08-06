@@ -38,7 +38,7 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
       iVar6 = 0;
       piVar10 = piVar1;
       while ((puVar9 != param_2 || (*(byte *)(piVar10 + 1) != param_3))) {
-        puVar9 = *(undefined1 **)((int)piVar10 + 0x19);
+        puVar9 = STField<undefined1 *>(piVar10,0x19);
         piVar10 = (int *)((int)piVar10 + 0x19);
         iVar6 = iVar6 + 1;
         if (puVar9 == nullptr) {

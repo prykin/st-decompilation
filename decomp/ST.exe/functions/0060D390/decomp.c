@@ -33,9 +33,9 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
   puVar3 = (uint *)&stack0xffffff98;
   local_30 = 0;
   local_3c = nullptr;
-  if ((*(int *)((int)this + 0x240) == 0) && (*(int *)((int)this + 0x244) != 0)) {
+  if ((STField<int>(this,0x240) == 0) && (STField<int>(this,0x244) != 0)) {
     local_8 = 0;
-    iVar11 = *(int *)((int)this + 0x23c);
+    iVar11 = STField<int>(this,0x23c);
     ExceptionList = &local_14;
     Library::MSVCRT::FUN_0072da40();
     local_8 = 0xffffffff;
@@ -43,19 +43,19 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
     uVar1 = thunk_FUN_0062ca00();
     iVar11 = 0;
     local_30 = uVar7;
-    if (0 < *(int *)((int)this + 0x23c)) {
+    if (0 < STField<int>(this,0x23c)) {
       iVar6 = 0;
       do {
         *puVar3 = 0;
-        if (*(int *)(iVar6 + 0x40 + *(int *)((int)this + 0x244)) != 0) {
+        if (*(int *)(iVar6 + 0x40 + STField<int>(this,0x244)) != 0) {
           uVar7 = uVar7 + uVar1;
           *puVar3 = uVar1;
           local_30 = uVar7;
         }
-        iVar2 = *(int *)((int)this + 0x244) + iVar6;
+        iVar2 = STField<int>(this,0x244) + iVar6;
         if (*(int *)(iVar2 + 8) != 0) {
           *puVar3 = *puVar3 + *(int *)(iVar2 + 4) * 4;
-          uVar7 = uVar7 + *(int *)(iVar6 + 4 + *(int *)((int)this + 0x244)) * 4;
+          uVar7 = uVar7 + *(int *)(iVar6 + 4 + STField<int>(this,0x244)) * 4;
           local_30 = uVar7;
         }
         if (*puVar3 != 0) {
@@ -66,13 +66,13 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
         iVar11 = iVar11 + 1;
         iVar6 = iVar6 + 0x44;
         puVar3 = puVar3 + 1;
-      } while (iVar11 < *(int *)((int)this + 0x23c));
+      } while (iVar11 < STField<int>(this,0x23c));
     }
     if ((uVar7 != 0) &&
        (local_3c = Library::DKW::LIB::MemAlloc(local_30), local_3c != nullptr)) {
-      puVar10 = *(undefined4 **)((int)this + 0x244);
+      puVar10 = STField<undefined4 *>(this,0x244);
       puVar12 = local_3c;
-      for (uVar7 = *(int *)((int)this + 0x23c) * 0x11 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
+      for (uVar7 = STField<int>(this,0x23c) * 0x11 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
         *puVar12 = *puVar10;
         puVar10 = puVar10 + 1;
         puVar12 = puVar12 + 1;
@@ -82,22 +82,22 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
         puVar10 = (undefined4 *)((int)puVar10 + 1);
         puVar12 = (undefined4 *)((int)puVar12 + 1);
       }
-      piVar5 = local_3c + *(int *)((int)this + 0x23c) * 0x11;
+      piVar5 = local_3c + STField<int>(this,0x23c) * 0x11;
       local_34 = 0;
-      if (0 < *(int *)((int)this + 0x23c)) {
+      if (0 < STField<int>(this,0x23c)) {
         local_58 = 0;
         local_38 = piVar5;
         do {
           if (*piVar8 != 0) {
             *piVar5 = *piVar8;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            piVar9 = *(int **)(local_58 + 0x40 + *(int *)((int)this + 0x244));
+            piVar9 = *(int **)(local_58 + 0x40 + STField<int>(this,0x244));
             piVar4 = piVar5;
             if (piVar9 != nullptr) {
               piVar4 = piVar5 + 1;
               memmove(piVar4, piVar9, uVar1); /* compiler REP MOVS byte copy */
               uVar7 = 0;
-              iVar11 = *(int *)((int)this + 0x244) + local_58;
+              iVar11 = STField<int>(this,0x244) + local_58;
               puVar10 = *(undefined4 **)(iVar11 + 8);
               piVar4 = local_38;
               if (puVar10 != nullptr) {
@@ -120,7 +120,7 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
           local_34 = local_34 + 1;
           local_58 = local_58 + 0x44;
           piVar8 = piVar8 + 1;
-        } while (local_34 < *(int *)((int)this + 0x23c));
+        } while (local_34 < STField<int>(this,0x23c));
       }
     }
   }

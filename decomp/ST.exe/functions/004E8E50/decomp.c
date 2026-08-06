@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004E8E50 @ 004CB180
@@ -18,29 +20,28 @@ FUN_004e8e50(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,u
   int uVar2;
   int iVar4;
 
-  uVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
+  uVar2 = LookupRecordByte(STField<char>(this,0x23d));
   uVar2 = (int)(byte)uVar2;
-  iVar1 = *(int *)((int)this + 0x245);
+  iVar1 = STField<int>(this,0x245);
   iVar4 = uVar2 + -1;
   if (param_1 == CASE_C) {
-    if (*(int *)((int)this + 0x4f4) != 0) {
+    if (STField<int>(this,0x4f4) != 0) {
       *param_3 = *(uint *)((&PTR_DAT_007b8310)[iVar1] +
-                          (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+                          (param_2 + (iVar4 + STField<int>(this,0x235) * 3) * 4) * 8);
       *param_4 = *(uint *)((&PTR_DAT_007b8310)[iVar1] +
-                          (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+                          (param_2 + (iVar4 + STField<int>(this,0x235) * 3) * 4) * 8 + 4);
       return;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar3 = *(uint *)((&PTR_DAT_007b8310)[iVar1] +
-                     (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+                     (param_2 + (iVar4 + STField<int>(this,0x235) * 3) * 4) * 8);
     *param_4 = uVar3;
     *param_3 = uVar3;
   }
   else if ((0xc < (int)param_1) && ((int)param_1 < 0xf)) {
     *param_3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                        (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+                        (param_2 + (iVar4 + STField<int>(this,0x235) * 3) * 4) * 8);
     *param_4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                        (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+                        (param_2 + (iVar4 + STField<int>(this,0x235) * 3) * 4) * 8 + 4);
     return;
   }
   return;

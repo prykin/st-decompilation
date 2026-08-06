@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00488890(void *this,int param_1)
 
@@ -43,7 +45,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
   do {
     iVar8 = local_18;
     local_8 = nullptr;
-    local_EAX_38 = LookupRecordByte(*(char *)((int)this + 0x24));
+    local_EAX_38 = LookupRecordByte(STField<char>(this,0x24));
     local_EAX_38 = (int)(byte)local_EAX_38;
     local_1c = &DAT_00800fa0 + local_EAX_38 * 4;
     switch(iVar8) {
@@ -61,7 +63,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
       break;
     case 4:
       local_1c = nullptr;
-      uVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
+      uVar4 = LookupRecordByte(STField<char>(this,0x24));
       uVar4 = (int)(byte)uVar4;
       local_8 = &DAT_00801370 + uVar4 * 4;
     }
@@ -75,7 +77,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
       iVar7 = local_c;
       if (((((local_1c == nullptr) || (iVar6 = FUN_006b0fd0((int)local_1c), iVar6 != 0))
            && (iVar6 = FUN_006b0fd0((int)local_8), iVar6 != 0)) &&
-          (iVar6 = thunk_FUN_004e6010(*(int *)((int)this + 0x24),iVar7 + -0x32), iVar6 != 0)) &&
+          (iVar6 = thunk_FUN_004e6010(STField<int>(this,0x24),iVar7 + -0x32), iVar6 != 0)) &&
          ((iVar7 < 0x54 || (0x5a < iVar7)))) {
         piVar9 = local_4c;
         for (iVar7 = 0xc; iVar6 = local_c, iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -84,36 +86,36 @@ void __thiscall FUN_00488890(void *this,int param_1)
         }
         local_4c[0] = local_c;
         local_4c[1] = 0;
-        iVar7 = thunk_FUN_004e6c20(*(int *)((int)this + 0x24),local_c);
+        iVar7 = thunk_FUN_004e6c20(STField<int>(this,0x24),local_c);
         if ((iVar7 == 0) ||
-           (((bVar4 = LookupRecordByte(*(char *)((int)this + 0x24)), bVar4 == 3 && (iVar6 != 0x5c))
-            && (g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field1965_0x9ca == 0)))) {
+           (((bVar4 = LookupRecordByte(STField<char>(this,0x24)), bVar4 == 3 && (iVar6 != 0x5c))
+            && (g_packedRecords_A62x8[STField<int>(this,0x24)].field1965_0x9ca == 0)))) {
           local_44 = '\0';
         }
         else {
           local_44 = '\x01';
         }
-        local_EAX_393 = LookupRecordByte(*(char *)((int)this + 0x24));
+        local_EAX_393 = LookupRecordByte(STField<char>(this,0x24));
         iVar7 = local_10;
         local_EAX_393 = (int)(byte)local_EAX_393;
         local_3e = *(undefined2 *)(&DAT_008545a8 + (local_EAX_393 + local_10) * 4);
-        local_EAX_430 = LookupRecordByte(*(char *)((int)this + 0x24));
+        local_EAX_430 = LookupRecordByte(STField<char>(this,0x24));
         local_EAX_430 = (int)(byte)local_EAX_430;
         local_42 = *(undefined2 *)(&DAT_007e1c4c + (local_EAX_430 + iVar7) * 4);
-        bVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
+        bVar4 = LookupRecordByte(STField<char>(this,0x24));
         if (bVar4 == 3) {
-          local_EAX_483 = LookupRecordByte(*(char *)((int)this + 0x24));
+          local_EAX_483 = LookupRecordByte(STField<char>(this,0x24));
           local_EAX_483 = (int)(byte)local_EAX_483;
           local_40 = *(undefined2 *)(&DAT_007e315c + (local_EAX_483 + iVar7) * 4);
         }
         else {
-          local_EAX_519 = LookupRecordByte(*(char *)((int)this + 0x24));
+          local_EAX_519 = LookupRecordByte(STField<char>(this,0x24));
           local_EAX_519 = (int)(byte)local_EAX_519;
           local_40 = *(undefined2 *)(&DAT_007e24f8 + (local_EAX_519 + iVar7) * 4);
         }
         local_3c = 0xffff;
-        local_43 = LookupRecordByte(*(char *)((int)this + 0x24));
-        thunk_FUN_004e6d00(*(byte **)((int)this + 0x24),local_4c[0],local_3a);
+        local_43 = LookupRecordByte(STField<char>(this,0x24));
+        thunk_FUN_004e6d00(STField<byte *>(this,0x24),local_4c[0],local_3a);
         Library::DKW::TBL::DArrayAppend(*(DArrayTy **)(param_1 + iVar8 * 4),local_4c);
         iVar7 = local_c;
       }
@@ -134,11 +136,10 @@ void __thiscall FUN_00488890(void *this,int param_1)
         pvVar3 = local_14;
         if (local_44 == '\0') {
           if (local_74 == '\0') {
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_00488b5f:
-            local_EAX_732 = LookupRecordByte(*(char *)((int)local_14 + 0x24));
+            local_EAX_732 = LookupRecordByte(STField<char>(local_14,0x24));
             local_10 = (uint)(byte)local_EAX_732 + local_7c[0] * 3;
-            uVar7 = LookupRecordByte(*(char *)((int)pvVar3 + 0x24));
+            uVar7 = LookupRecordByte(STField<char>(pvVar3,0x24));
             iVar8 = local_18;
             if (*(int *)(&DAT_007e1dac + local_10 * 4) <=
                 *(int *)(&DAT_007e1dac + ((uint)(byte)uVar7 + local_4c[0] * 3) * 4))

@@ -51,7 +51,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
     else {
       pAVar8 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0188;
     }
-    uVar5 = thunk_FUN_00526ba0(*local_8,*(byte *)((int)local_8 + 9));
+    uVar5 = thunk_FUN_00526ba0(*local_8,STField<byte>(local_8,9));
     local_c = (ushort *)FUN_0070b3a0(pAVar8,uVar5);
   }
   local_5c.previous = g_currentExceptionFrame;

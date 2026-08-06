@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
    Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=1; incoming_this_accesses=3;
@@ -27,9 +29,9 @@ void __thiscall STPlaySystemC::sub_006E57B0(STPlaySystemC *this,int param_1)
         else {
           pvVar2 = pDVar1->data;
         }
-        if ((*(undefined4 **)((int)pvVar2 + 4))[1] == param_1) {
+        if ((STField<undefined4 *>(pvVar2,4))[1] == param_1) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)**(undefined4 **)((int)pvVar2 + 4))(local_24);
+          (**(code **)*STField<undefined4 *>(pvVar2,4))(local_24);
           DArrayRemoveAt(this->field_0010,index);
         }
         else {

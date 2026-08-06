@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00533b80(RecoveredRecord_STPlaySystemC_00533B80 *param_1)
 

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as HelpPanelTy.
    Evidence: this_call_owners=[HelpPanelTy]; agreed_this_calls=5; incoming_this_accesses=2;

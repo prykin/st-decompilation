@@ -625,8 +625,7 @@ LAB_006577ae:
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_60 = local_158._0_1_;
+                                              local_60 = STPiece<0,1>(local_158);
                                               iVar36 = (int)local_144 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
@@ -706,8 +705,7 @@ LAB_00657a41:
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_60 = local_158._0_1_;
+                                              local_60 = STPiece<0,1>(local_158);
                                               iVar36 = (int)local_148 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
@@ -777,8 +775,7 @@ LAB_006578fe:
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_60 = local_158._0_1_;
+                                              local_60 = STPiece<0,1>(local_158);
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
                                               uStack_5b = SUB41(local_150,0);
@@ -994,8 +991,7 @@ LAB_00657dd9:
                                                 puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_60 = local_158._0_1_;
+                                              local_60 = STPiece<0,1>(local_158);
                                               local_68[0] = 6;
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar32 = local_14;
@@ -1060,8 +1056,7 @@ LAB_00657f1c:
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_60 = local_158._0_1_;
+                                              local_60 = STPiece<0,1>(local_158);
                                               iVar36 = (int)local_148 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
@@ -1359,8 +1354,7 @@ LAB_00658d01:
                                               uStack_5c = 0;
                                               uStack_5a = 0;
                                               uStack_59 = 0;
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_3b = local_144._0_2_;
+                                              local_3b = STPiece<0,2>(local_144);
                                               local_39 = local_13c * 0x19;
                                               local_60 = (undefined1)local_140;
                                               uStack_5f = 0;
@@ -1433,8 +1427,7 @@ LAB_00658e8e:
                                               uStack_51 = (undefined1)((uint)local_14c >> 8);
                                               uStack_50 = SUB41(local_148,0);
                                               uStack_4f = (undefined1)((uint)local_148 >> 8);
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_4e = local_144._0_2_;
+                                              local_4e = STPiece<0,2>(local_144);
                                               uStack_4c = (undefined1)local_140;
                                               cStack_4b = (char)(local_140 >> 8);
                                               uStack_5b = (undefined1)((uint)local_13c >> 8);
@@ -1574,8 +1567,7 @@ LAB_006582b3:
                                                 puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_60 = local_158._0_1_;
+                                              local_60 = STPiece<0,1>(local_158);
                                               uStack_5f = SUB41(local_154,0);
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = SUB41(local_150,0);
@@ -1652,8 +1644,7 @@ LAB_00658416:
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5b = SUB41(local_14c,0);
                                               uStack_5a = (undefined1)((uint)local_14c >> 8);
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_60 = local_158._0_1_;
+                                              local_60 = STPiece<0,1>(local_158);
                                               iVar36 = (int)local_144 * 0x19;
                                               uStack_5d = SUB41(local_150,0);
                                               uStack_5c = (undefined1)((uint)local_150 >> 8);
@@ -1732,8 +1723,7 @@ LAB_00658543:
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_60 = local_158._0_1_;
+                                              local_60 = STPiece<0,1>(local_158);
                                               local_68[0] = 0xc;
                                               iVar36 = (int)local_150 * 0x19;
                                               uStack_5b = (undefined1)iVar36;
@@ -1801,8 +1791,7 @@ LAB_00658670:
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_60 = local_158._0_1_;
+                                              local_60 = STPiece<0,1>(local_158);
                                               local_68[0] = 0xd;
                                               iVar36 = (int)local_150 * 0x19;
                                               uStack_5b = (undefined1)iVar36;
@@ -2001,8 +1990,7 @@ LAB_006589fe:
                                                 puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_60 = local_158._0_1_;
+                                              local_60 = STPiece<0,1>(local_158);
                                               local_68[0] = 0x10;
                                               uStack_5f = SUB41(local_154,0);
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
@@ -2088,8 +2076,7 @@ LAB_00659143:
                                               local_68[0] = 0x36;
                                               uStack_4c = (undefined1)iVar36;
                                               cStack_4b = (char)((uint)iVar36 >> 8);
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_4a._0_2_ = (undefined2)((uint)iVar36 >> 0x10);
+                                              STPiece<0,2>(local_4a) = (undefined2)((uint)iVar36 >> 0x10);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar32 = local_14;
                                             }
@@ -2461,12 +2448,9 @@ LAB_0065937a:
                                                 local_200 = (undefined2)uVar31;
                                               }
                                               local_1fe = (int)local_138 * 0x19;
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_1f6 = local_154._0_2_;
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_1f4 = local_150._0_2_;
-                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                              local_1f2 = local_14c._0_2_;
+                                              local_1f6 = STPiece<0,2>(local_154);
+                                              local_1f4 = STPiece<0,2>(local_150);
+                                              local_1f2 = STPiece<0,2>(local_14c);
                                               if (((int)local_148 < 0) ||
                                                  (pcVar9 = local_148, 7 < (int)local_148)) {
                                                 bVar1 = local_10->field_0081;
@@ -4531,16 +4515,13 @@ LAB_006540b9:
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
                                       DAT_0080e302 = (char)local_15c;
                                       DAT_0080e429 = (char)local_154;
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      DAT_0080e428 = local_14c._0_1_;
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      DAT_0080e427 = local_150._0_1_;
+                                      DAT_0080e428 = STPiece<0,1>(local_14c);
+                                      DAT_0080e427 = STPiece<0,1>(local_150);
                                       _DAT_0080e432 = local_140;
                                       _DAT_0080e42a = local_148;
                                       _DAT_0080e42e = local_144;
                                       _DAT_0080e436 = local_13c;
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      DAT_0080e43a = local_138._0_1_;
+                                      DAT_0080e43a = STPiece<0,1>(local_138);
                                       if (DAT_008087a0 == '\x03') {
                                         Library::MSVCRT::FUN_0072e730
                                                   (&DAT_0080ef1e,nullptr,local_484,nullptr,

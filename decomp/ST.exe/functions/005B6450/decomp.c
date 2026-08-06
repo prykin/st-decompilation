@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00593040 -> 005B6450 @ 0059308C | 005A4350 -> 005B6450 @ 005A43A8 | 005B0BA0 ->
@@ -13,7 +15,7 @@ void __thiscall FUN_005b6450(void *this,STMessage *param_1)
 
 {
   if (param_1->id == MESS_ID_CREATE) {
-    *(StartSystemTy **)((int)this + 0x1a5b) = g_startSystem_0081176C;
+    STField<StartSystemTy *>(this,0x1a5b) = g_startSystem_0081176C;
   }
   return;
 }

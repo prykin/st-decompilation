@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 bool __cdecl
 FUN_006a1100(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort *param_6)
@@ -20,23 +22,19 @@ FUN_006a1100(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
     }
     iVar3 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(int)local_c);
     if (param_5 == 0xff) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      param_3._3_1_ = bStack_8;
+      STPiece<3,1>(param_3) = bStack_8;
     }
     else if (param_5 == 1) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      param_3._3_1_ = bStack_a;
+      STPiece<3,1>(param_3) = bStack_a;
     }
     else {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      param_3._3_1_ = local_c[0];
+      STPiece<3,1>(param_3) = local_c[0];
     }
     uVar2 = thunk_FUN_006a0ef0(param_1,param_2,iVar4,param_4,param_5,param_6);
     if (uVar2 == 0xffff) {
       return false;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    if (param_3._3_1_ == 0) {
+    if (STPiece<3,1>(param_3) == 0) {
       return uVar2 == 0;
     }
     if ((short)iVar3 != param_4) {

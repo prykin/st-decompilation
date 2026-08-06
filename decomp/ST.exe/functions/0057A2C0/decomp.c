@@ -406,16 +406,16 @@ LAB_0057a96b:
                          iVar15 * 0x324 <= iVar14 * local_c4 * 2)) {
                         puVar23 = (undefined4 *)(local_cc + local_d8 * 0x2c);
                         *puVar23 = this[1].vtable;
-                        *(undefined4 *)((int)puVar23 + 0x26) = *(undefined4 *)&this->field_0x18;
-                        *(undefined2 *)((int)puVar23 + 0x2a) = *(undefined2 *)&this[1].field_0xe;
-                        *(STWorldObject **)((int)puVar23 + 0x1a) = this;
+                        STField<undefined4>(puVar23,0x26) = *(undefined4 *)&this->field_0x18;
+                        STField<undefined2>(puVar23,0x2a) = *(undefined2 *)&this[1].field_0xe;
+                        STField<STWorldObject *>(puVar23,0x1a) = this;
                         *(short *)(puVar23 + 5) = sVar12;
-                        *(undefined2 *)((int)puVar23 + 0x16) = (undefined2)local_80;
+                        STField<undefined2>(puVar23,0x16) = (undefined2)local_80;
                         *(undefined2 *)(puVar23 + 6) = (undefined2)local_74;
                         puVar23[2] = (int)local_b4[0];
                         puVar23[3] = (int)local_e8[0];
                         puVar23[4] = (int)local_20[0];
-                        *(undefined4 *)((int)puVar23 + 0x1e) = 0;
+                        STField<undefined4>(puVar23,0x1e) = 0;
                         local_d8 = local_d8 + 1;
                       }
                     }

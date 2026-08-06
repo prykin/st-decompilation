@@ -145,14 +145,12 @@ LAB_005bbb22:
     }
     if (this_00->field_1A5B->field_02E6 != nullptr) {
       memset(&local_2c, 0, 0x1a); /* compiler bulk-zero initialization */
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_2c._2_2_ = (-(ushort)(local_544[6] != 0) & 2) - 1;
+      STPiece<2,2>(local_2c) = (-(ushort)(local_544[6] != 0) & 2) - 1;
       local_1e = 1;
       local_20 = 1;
       local_22 = 1;
       local_28 = 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_2c._0_2_ = 1;
+      STPiece<0,2>(local_2c) = 1;
       MMsgTy::StatePanel(this_00->field_1A5B->field_02E6,(int)&local_2c);
     }
   }

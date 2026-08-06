@@ -168,9 +168,9 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       local_14 = (byte *)&g_packedRecords_A62x8[0].field2_0x5;
       do {
         pbVar6 = local_14;
-        DArrayDestroy(*(DArrayTy **)((int)local_14 + 4));
+        DArrayDestroy(STField<DArrayTy *>(local_14,4));
         DArrayDestroy(*(DArrayTy **)pbVar6);
-        DArrayDestroy(*(DArrayTy **)((int)pbVar6 + 0x2e2));
+        DArrayDestroy(STField<DArrayTy *>(pbVar6,0x2e2));
         puVar12 = (undefined4 *)((int)pbVar6 + 10);
         iVar5 = 4;
         do {
@@ -190,7 +190,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
           if ((DArrayTy *)puVar12[0x14] != nullptr) {
             DArrayDestroy((DArrayTy *)puVar12[0x14]);
             puVar12[0x14] = 0;
-            *(undefined4 *)((int)puVar12 + 0x46) = 0;
+            STField<undefined4>(puVar12,0x46) = 0;
           }
           puVar12 = puVar12 + 4;
           iVar5 = iVar5 + -1;

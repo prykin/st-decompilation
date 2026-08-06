@@ -141,6 +141,12 @@ The same hints appear as idempotent `ST_PSEUDO[...]` comments immediately above
 the corresponding expressions in each `decomp.c`.
 The normalization contract and examples are documented in
 [`docs/pseudocode-normalization.md`](docs/pseudocode-normalization.md).
+`compile_readiness_summary.json` and `compile_readiness_issues.jsonl` separately
+inventory what prevents the exported bodies from becoming standalone C++:
+Ghidra-only syntax, compatibility-runtime uses, unresolved ABI values, missing
+declaration assembly, and semantic type debt. The current corpus statistics,
+implemented compatibility boundary, and ordered path to a real build are in
+[`docs/compile-readiness.md`](docs/compile-readiness.md).
 
 ABI-changing automation is guarded before the first Program mutation and again
 at dependency barriers by `STAbiRegressionGate`. Its durable sentinels and exact

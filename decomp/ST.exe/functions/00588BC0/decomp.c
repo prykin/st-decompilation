@@ -181,10 +181,9 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x263 = 0;
       if ((*(int *)&this_00->field_0x290 < (int)(short)(g_worldGrid.sizeX * 0xc9 + 100)) &&
          (-1 < *(int *)&this_00->field_0x290)) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((*(int *)&this_00->field_0x294 < (int)(short)(g_worldGrid.sizeY * 0xc9 + 100)) &&
            (((-1 < *(int *)&this_00->field_0x294 &&
-             (iVar8 = *(int *)&this_00->field_0x298, iVar8 < (short)(g_worldGrid._4_4_ * 200 + 100))
+             (iVar8 = *(int *)&this_00->field_0x298, iVar8 < (short)(STPiece<4,4>(g_worldGrid) * 200 + 100))
              ) && (-1 < iVar8)))) {
           sub_00416240(this_00,*(ushort *)&this_00->field_0x290,*(short *)&this_00->field_0x294,
                        (ushort)iVar8);
@@ -241,8 +240,8 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
           }
           else {
             this_00->field_0231 = CASE_0;
-            *(undefined2 *)&this_00->field_0x273 = *(undefined2 *)((int)local_24 + 0x32);
-            *(undefined4 *)&this_00->field_0x26f = *(undefined4 *)((int)local_24 + 0x24);
+            *(undefined2 *)&this_00->field_0x273 = STField<undefined2>(local_24,0x32);
+            *(undefined4 *)&this_00->field_0x26f = STField<undefined4>(local_24,0x24);
             thunk_FUN_00416270(local_24,&local_6,(int *)&local_8,(int *)&local_a);
             local_a = local_a - *(short *)&this_00->field_0x45;
             local_8 = local_8 - *(short *)&this_00->field_0x43;
@@ -289,44 +288,40 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     puVar12 = (byte *)(local_48);
     puVar14 = (byte *)&this_00->field_0x27c;
     memmove(puVar14, puVar12, 0x2a); /* compiler REP MOVS byte copy */
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_10 = *(uint *)((int)local_48 + 0x7f);
+    local_10 = STField<uint>(local_48,0x7f);
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(local_10 + 0x87 + (int)local_48));
     puVar12 = (byte *)(local_48);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    this_00->field_0231 = *(STSprGameObjC_field_0231State *)((int)local_48 + 0x2a);
-    *(undefined4 *)&this_00->field_0x235 = *(undefined4 *)((int)local_48 + 0x2e);
-    *(undefined4 *)&this_00->field_0x239 = *(undefined4 *)((int)local_48 + 0x32);
-    *(undefined4 *)&this_00->field_0x23d = *(undefined4 *)((int)local_48 + 0x36);
-    *(undefined2 *)((int)&this_00->field_023E + 3) = *(undefined2 *)((int)local_48 + 0x3a);
+    this_00->field_0231 = STField<STSprGameObjC_field_0231State>(local_48,0x2a);
+    *(undefined4 *)&this_00->field_0x235 = STField<undefined4>(local_48,0x2e);
+    *(undefined4 *)&this_00->field_0x239 = STField<undefined4>(local_48,0x32);
+    *(undefined4 *)&this_00->field_0x23d = STField<undefined4>(local_48,0x36);
+    *(undefined2 *)((int)&this_00->field_023E + 3) = STField<undefined2>(local_48,0x3a);
     *(undefined2 *)((int)&this_00->field_0242 + 1) = *(undefined2 *)(local_48 + 0xf);
-    *(undefined2 *)((int)&this_00->field_0244 + 1) = *(undefined2 *)((int)local_48 + 0x3e);
-    *(undefined4 *)&this_00->field_0x263 = *(undefined4 *)((int)local_48 + 0x62);
-    *(undefined4 *)&this_00->field_0x267 = *(undefined4 *)((int)local_48 + 0x66);
-    *(undefined4 *)&this_00->field_0x26b = *(undefined4 *)((int)local_48 + 0x6a);
+    *(undefined2 *)((int)&this_00->field_0244 + 1) = STField<undefined2>(local_48,0x3e);
+    *(undefined4 *)&this_00->field_0x263 = STField<undefined4>(local_48,0x62);
+    *(undefined4 *)&this_00->field_0x267 = STField<undefined4>(local_48,0x66);
+    *(undefined4 *)&this_00->field_0x26b = STField<undefined4>(local_48,0x6a);
     *(undefined2 *)((int)&this_00->field_0246 + 1) = *(undefined2 *)(local_48 + 0x10);
-    *(undefined2 *)&this_00->field_0x249 = *(undefined2 *)((int)local_48 + 0x42);
+    *(undefined2 *)&this_00->field_0x249 = STField<undefined2>(local_48,0x42);
     *(undefined2 *)&this_00->field_0x24b = *(undefined2 *)(local_48 + 0x11);
-    *(undefined2 *)&this_00->field_0x24d = *(undefined2 *)((int)local_48 + 0x46);
+    *(undefined2 *)&this_00->field_0x24d = STField<undefined2>(local_48,0x46);
     *(undefined2 *)&this_00->field_024F = *(undefined2 *)(local_48 + 0x12);
-    *(undefined2 *)&this_00->field_0x251 = *(undefined2 *)((int)local_48 + 0x4a);
+    *(undefined2 *)&this_00->field_0x251 = STField<undefined2>(local_48,0x4a);
     *(undefined4 *)&this_00->field_0x253 = local_48[0x13];
     *(undefined4 *)&this_00->field_0x257 = local_48[0x14];
     *(undefined4 *)((int)&this_00->field_0259 + 2) = local_48[0x15];
     *(undefined4 *)&this_00->field_0x25f = local_48[0x16];
     *(undefined4 *)&this_00->field_0x26f = local_48[0x17];
     *(undefined2 *)&this_00->field_0x273 = *(undefined2 *)(local_48 + 0x18);
-    *(undefined2 *)&this_00->field_0x41 = *(undefined2 *)((int)local_48 + 0x6e);
+    *(undefined2 *)&this_00->field_0x41 = STField<undefined2>(local_48,0x6e);
     *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)(local_48 + 0x1c);
-    *(undefined2 *)&this_00->field_0x45 = *(undefined2 *)((int)local_48 + 0x72);
+    *(undefined2 *)&this_00->field_0x45 = STField<undefined2>(local_48,0x72);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_0x275 = *(undefined1 *)(local_48 + 0x1e);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    this_00->field_0x276 = *(undefined1 *)((int)local_48 + 0x79);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    this_00->field_0x277 = *(undefined1 *)((int)local_48 + 0x7a);
-    *(undefined4 *)&this_00->field_0x278 = *(undefined4 *)((int)local_48 + 0x7b);
+    this_00->field_0x276 = STField<undefined1>(local_48,0x79);
+    this_00->field_0x277 = STField<undefined1>(local_48,0x7a);
+    *(undefined4 *)&this_00->field_0x278 = STField<undefined4>(local_48,0x7b);
     local_40 = Library::DKW::LIB::MemAlloc(0x44);
     if (local_40 == nullptr) {
       g_currentExceptionFrame = local_8c.previous;
@@ -337,7 +332,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
       *(int **)(iVar8 + (int)local_40) = DAT_00806774;
       iVar8 = iVar8 + 4;
     } while (iVar8 < 0x44);
-    *(undefined4 *)((int)local_40 + 0x24) = DAT_00806764;
+    STField<undefined4>(local_40,0x24) = DAT_00806764;
     local_3c = 0;
     local_38 = 0;
     local_34 = DAT_008073cc;

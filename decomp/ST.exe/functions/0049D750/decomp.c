@@ -76,10 +76,9 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       if (0 < (int)dVar9) {
         do {
           DArrayGetElement(this_00->field_0160,uVar11,local_8);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (((local_8._0_2_ != 0xffff) &&
+          if (((STPiece<0,2>(local_8) != 0xffff) &&
               (pSVar4 = STAllPlayersC::GetObjPtr
-                                  (g_allPlayers_007FA174,this_00->field_0024,local_8._0_2_,CASE_1),
+                                  (g_allPlayers_007FA174,this_00->field_0024,STPiece<0,2>(local_8),CASE_1),
               pSVar4 != nullptr)) &&
              (iVar2 = (*pSVar4->vtable->vfunc_2C)(), iVar2 == 0x33)) {
             Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&this_00->field_0x29f,local_8);
@@ -120,12 +119,10 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       if (0 < (int)uVar12) {
         do {
           DArrayGetElement((DArrayTy *)this_00->field_0029,uVar11,local_8);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_8._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (STPiece<0,2>(local_8) != 0xffff) {
             this_01 = (STBoatC *)
                       STAllPlayersC::GetObjPtr
-                                (g_allPlayers_007FA174,this_00->field_0024,local_8._0_2_,CASE_1);
+                                (g_allPlayers_007FA174,this_00->field_0024,STPiece<0,2>(local_8),CASE_1);
             iVar2 = thunk_FUN_0045ff10((STGameObjC *)this_01);
             uVar12 = local_c;
             if ((iVar2 == 4) ||

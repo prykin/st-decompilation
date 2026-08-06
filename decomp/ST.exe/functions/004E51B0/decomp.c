@@ -59,7 +59,7 @@ undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
   puVar14 = puVar14 + 0x26;
   puVar10 = puVar10 + 0x26;
   iVar7 = local_c * 0x10;
-  *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar10 + 2);
+  STField<undefined1>(puVar14,2) = STField<undefined1>(puVar10,2);
   local_30 = (&DAT_00800f30)[local_c * 4] | *(uint *)(&DAT_00800fb0 + iVar7);
   local_2c = (&DAT_00800f34)[local_c * 4] | *(uint *)(&DAT_00800fb4 + iVar7);
   local_28 = (&DAT_00800f38)[local_c * 4] | *(uint *)(&DAT_00800fb8 + iVar7);

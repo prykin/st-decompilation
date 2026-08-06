@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 FUN_00555880(RecoveredRecord_TraksClassTy_00555880 *param_1)
 

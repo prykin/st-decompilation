@@ -15,12 +15,12 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
   char *local_c;
   char *local_8;
 
-  iVar2 = *(int *)((int)this + 0x138);
+  iVar2 = STField<int>(this,0x138);
   if (iVar2 != 0) {
     local_c = *(char **)(iVar2 + 8);
     if (local_c != nullptr) {
-      local_8 = (char *)(*(int *)((int)this + 0x148) + param_1);
-      uVar6 = *(int *)((int)this + 0x144) + param_2;
+      local_8 = (char *)(STField<int>(this,0x148) + param_1);
+      uVar6 = STField<int>(this,0x144) + param_2;
       if ((int)uVar6 < (int)local_c) {
         local_10 = *(char **)(*(int *)(iVar2 + 0x14) + uVar6 * 4);
       }
@@ -38,7 +38,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
       if ((int)local_8 < 0) {
         if (0 < (int)uVar6) {
           if ((int)(uVar6 - 1) < (int)local_c) {
-            local_8 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + -4 + uVar6 * 4);
+            local_8 = *(char **)(*(int *)(STField<int>(this,0x138) + 0x14) + -4 + uVar6 * 4);
           }
           else {
             local_8 = nullptr;
@@ -95,8 +95,8 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
           pcVar7 = pcVar7 + -uVar4;
           pcVar8 = local_c + (~uVar3 - 1);
           memmove(pcVar8, pcVar7, uVar4); /* compiler REP MOVS byte copy */
-          FUN_006b7830(*(AnonShape_006B7830_769CA2DF **)((int)this + 0x138),uVar6);
-          Library::DKW::TBL::FUN_006b6020(*(uint **)((int)this + 0x138),uVar6 - 1,local_c);
+          FUN_006b7830(STField<AnonShape_006B7830_769CA2DF *>(this,0x138),uVar6);
+          Library::DKW::TBL::FUN_006b6020(STField<uint *>(this,0x138),uVar6 - 1,local_c);
           FreeAndNull(&local_c);
           FUN_00721080(this,~uVar3 - 1,uVar6 - 1);
           return;
@@ -105,7 +105,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
       else if (local_8 == (char *)(~uVar3 - 1)) {
         if ((int)uVar6 < (int)(local_c + -1)) {
           if ((int)(uVar6 + 1) < (int)local_c) {
-            local_8 = *(char **)(*(int *)(*(int *)((int)this + 0x138) + 0x14) + (uVar6 + 1) * 4);
+            local_8 = *(char **)(*(int *)(STField<int>(this,0x138) + 0x14) + (uVar6 + 1) * 4);
           }
           else {
             local_8 = nullptr;
@@ -162,8 +162,8 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
           pcVar7 = pcVar8 + -uVar4;
           pcVar8 = local_c + (~uVar3 - 1);
           memmove(pcVar8, pcVar7, uVar4); /* compiler REP MOVS byte copy */
-          FUN_006b7830(*(AnonShape_006B7830_769CA2DF **)((int)this + 0x138),uVar6 + 1);
-          Library::DKW::TBL::FUN_006b6020(*(uint **)((int)this + 0x138),uVar6,local_c);
+          FUN_006b7830(STField<AnonShape_006B7830_769CA2DF *>(this,0x138),uVar6 + 1);
+          Library::DKW::TBL::FUN_006b6020(STField<uint *>(this,0x138),uVar6,local_c);
           FreeAndNull(&local_c);
           FUN_00721080(this,param_1,param_2);
           return;

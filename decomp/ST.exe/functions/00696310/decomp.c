@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00696310(void *this,int param_1,int param_2,int *param_3,int *param_4)
 
@@ -12,18 +14,18 @@ void __thiscall FUN_00696310(void *this,int param_1,int param_2,int *param_3,int
       iVar1 = 0;
     }
     else {
-      iVar1 = (-(uint)(iVar1 != *(int *)((int)this + 0x5833) + -1) & 4) + 3;
+      iVar1 = (-(uint)(iVar1 != STField<int>(this,0x5833) + -1) & 4) + 3;
     }
   }
-  else if (param_1 % param_2 == *(int *)((int)this + 0x5833) + -1) {
+  else if (param_1 % param_2 == STField<int>(this,0x5833) + -1) {
     if (iVar1 == 0) {
       iVar1 = 1;
     }
     else {
-      iVar1 = (-(uint)(iVar1 != *(int *)((int)this + 0x5837) + -1) & 3) + 2;
+      iVar1 = (-(uint)(iVar1 != STField<int>(this,0x5837) + -1) & 3) + 2;
     }
   }
-  else if (iVar1 == *(int *)((int)this + 0x5837) + -1) {
+  else if (iVar1 == STField<int>(this,0x5837) + -1) {
     iVar1 = 6;
   }
   else {

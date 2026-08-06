@@ -17,7 +17,7 @@ void FUN_00553270(void)
       do {
         if (((bVar3) &&
             (pvVar1 = DArrayAt<void>(array, uVar2), pvVar1 != nullptr
-            )) && (*(int *)((int)pvVar1 + 2) != 0)) {
+            )) && (STField<int>(pvVar1,2) != 0)) {
           FreeAndNull((void **)((int)pvVar1 + 2));
           array = g_array_00802A4C;
         }

@@ -164,140 +164,140 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   puVar4[0x29] = *(undefined4 *)&local_14->field_0xdd;
   puVar4[0x2a] = *(undefined4 *)&local_14->field_0xe1;
   *(undefined2 *)(puVar4 + 0x2b) = local_14->field_00E5;
-  *(undefined4 *)((int)puVar4 + 0xae) = local_14->field_00E7;
-  *(short *)((int)puVar4 + 0xba) = local_14->field_00F3;
+  STField<undefined4>(puVar4,0xae) = local_14->field_00E7;
+  STField<short>(puVar4,0xba) = local_14->field_00F3;
   *(short *)(puVar4 + 0x2f) = local_14->field_00F5;
-  *(short *)((int)puVar4 + 0xbe) = local_14->field_00F7;
+  STField<short>(puVar4,0xbe) = local_14->field_00F7;
   *(short *)(puVar4 + 0x30) = local_14->field_00F9;
-  *(short *)((int)puVar4 + 0xc2) = local_14->field_00FB;
+  STField<short>(puVar4,0xc2) = local_14->field_00FB;
   *(short *)(puVar4 + 0x31) = local_14->field_00FD;
-  *(undefined4 *)((int)puVar4 + 0xc6) = local_14->field_00FF;
-  *(undefined4 *)((int)puVar4 + 0xd2) = local_14->field_0107;
-  *(undefined4 *)((int)puVar4 + 0xd6) = local_14->field_010B;
-  *(undefined2 *)((int)puVar4 + 0xe2) = local_14->field_0113;
+  STField<undefined4>(puVar4,0xc6) = local_14->field_00FF;
+  STField<undefined4>(puVar4,0xd2) = local_14->field_0107;
+  STField<undefined4>(puVar4,0xd6) = local_14->field_010B;
+  STField<undefined2>(puVar4,0xe2) = local_14->field_0113;
   *(undefined2 *)(puVar4 + 0x39) = local_14->field_0115;
-  *(undefined2 *)((int)puVar4 + 0xe6) = local_14->field_0117;
+  STField<undefined2>(puVar4,0xe6) = local_14->field_0117;
   *(undefined2 *)(puVar4 + 0x3a) = local_14->field_0119;
-  *(undefined2 *)((int)puVar4 + 0xea) = local_14->field_011B;
+  STField<undefined2>(puVar4,0xea) = local_14->field_011B;
   *(undefined2 *)(puVar4 + 0x3b) = local_14->field_011D;
-  *(undefined4 *)((int)puVar4 + 0xee) = local_14->field_011F;
-  *(undefined4 *)((int)puVar4 + 0xf2) = local_14->field_0123;
-  *(undefined2 *)((int)puVar4 + 0xfe) = local_14->field_012B;
+  STField<undefined4>(puVar4,0xee) = local_14->field_011F;
+  STField<undefined4>(puVar4,0xf2) = local_14->field_0123;
+  STField<undefined2>(puVar4,0xfe) = local_14->field_012B;
   *(undefined2 *)(puVar4 + 0x40) = local_14->field_012D;
-  *(undefined2 *)((int)puVar4 + 0x102) = local_14->field_012F;
+  STField<undefined2>(puVar4,0x102) = local_14->field_012F;
   *(undefined2 *)(puVar4 + 0x41) = local_14->field_0131;
-  *(undefined2 *)((int)puVar4 + 0x106) = local_14->field_0133;
+  STField<undefined2>(puVar4,0x106) = local_14->field_0133;
   *(undefined2 *)(puVar4 + 0x42) = local_14->field_0135;
   puVar6 = (byte *)&local_14->field_0137;
   puVar10 = (byte *)((int)puVar4 + 0x10a);
   memmove(puVar10, puVar6, 0x1f); /* compiler REP MOVS byte copy */
   iVar3 = 0;
-  *(undefined4 *)((int)puVar4 + 0x129) = *(undefined4 *)&local_14->field_0x156;
-  *(undefined2 *)((int)puVar4 + 0x12d) = local_14->field_015A;
+  STField<undefined4>(puVar4,0x129) = *(undefined4 *)&local_14->field_0x156;
+  STField<undefined2>(puVar4,0x12d) = local_14->field_015A;
   *(undefined1 *)(puVar4 + 0x69) = local_14->field_01C9;
-  *(undefined4 *)((int)puVar4 + 0x12f) = local_14->field_015C;
-  *(undefined4 *)((int)puVar4 + 0x13b) = local_14->field_0164;
-  *(undefined2 *)((int)puVar4 + 0x147) = local_14->field_016C;
-  *(undefined2 *)((int)puVar4 + 0x149) = *(undefined2 *)&local_14->field_0x16e;
-  *(undefined2 *)((int)puVar4 + 0x14b) = *(undefined2 *)&local_14->field_0x170;
-  *(undefined2 *)((int)puVar4 + 0x14d) = local_14->field_0172;
-  *(undefined2 *)((int)puVar4 + 0x14f) = local_14->field_0174;
-  *(undefined2 *)((int)puVar4 + 0x151) = local_14->field_0176;
-  *(AnonShape_005EFAE0_B406B78B **)((int)puVar4 + 0x153) = local_14->field_0178;
-  *(undefined2 *)((int)puVar4 + 0x157) = *(undefined2 *)&local_14->field_0x17c;
-  *(undefined2 *)((int)puVar4 + 0x159) = *(undefined2 *)&local_14->field_0x17e;
-  *(undefined2 *)((int)puVar4 + 0x15b) = local_14->field_0180;
-  *(undefined4 *)((int)puVar4 + 0x15d) = local_14->field_0182;
-  *(undefined4 *)((int)puVar4 + 0x161) = local_14->field_0186;
-  *(undefined2 *)((int)puVar4 + 0x165) = local_14->field_018A;
-  *(undefined4 *)((int)puVar4 + 0x167) = local_14->field_018C;
-  *(undefined2 *)((int)puVar4 + 0x16b) = local_14->field_0190;
-  *(undefined4 *)((int)puVar4 + 0x16d) = *(undefined4 *)&local_14->field_0x192;
-  *(undefined2 *)((int)puVar4 + 0x171) = local_14->field_0196;
-  *(undefined1 *)((int)puVar4 + 0x173) = local_14->field_0198;
+  STField<undefined4>(puVar4,0x12f) = local_14->field_015C;
+  STField<undefined4>(puVar4,0x13b) = local_14->field_0164;
+  STField<undefined2>(puVar4,0x147) = local_14->field_016C;
+  STField<undefined2>(puVar4,0x149) = *(undefined2 *)&local_14->field_0x16e;
+  STField<undefined2>(puVar4,0x14b) = *(undefined2 *)&local_14->field_0x170;
+  STField<undefined2>(puVar4,0x14d) = local_14->field_0172;
+  STField<undefined2>(puVar4,0x14f) = local_14->field_0174;
+  STField<undefined2>(puVar4,0x151) = local_14->field_0176;
+  STField<AnonShape_005EFAE0_B406B78B *>(puVar4,0x153) = local_14->field_0178;
+  STField<undefined2>(puVar4,0x157) = *(undefined2 *)&local_14->field_0x17c;
+  STField<undefined2>(puVar4,0x159) = *(undefined2 *)&local_14->field_0x17e;
+  STField<undefined2>(puVar4,0x15b) = local_14->field_0180;
+  STField<undefined4>(puVar4,0x15d) = local_14->field_0182;
+  STField<undefined4>(puVar4,0x161) = local_14->field_0186;
+  STField<undefined2>(puVar4,0x165) = local_14->field_018A;
+  STField<undefined4>(puVar4,0x167) = local_14->field_018C;
+  STField<undefined2>(puVar4,0x16b) = local_14->field_0190;
+  STField<undefined4>(puVar4,0x16d) = *(undefined4 *)&local_14->field_0x192;
+  STField<undefined2>(puVar4,0x171) = local_14->field_0196;
+  STField<undefined1>(puVar4,0x173) = local_14->field_0198;
   puVar4[0x5d] = local_14->field_0199;
   puVar4[0x5e] = local_14->field_019D;
   *(undefined2 *)(puVar4 + 0x5f) = local_14->field_01A1;
-  *(undefined4 *)((int)puVar4 + 0x17e) = local_14->field_01A3;
-  *(undefined4 *)((int)puVar4 + 0x182) = local_14->field_01A7;
-  *(undefined4 *)((int)puVar4 + 0x186) = local_14->field_01AB;
-  *(undefined4 *)((int)puVar4 + 0x18a) = local_14->field_01AF;
-  *(undefined4 *)((int)puVar4 + 0x18e) = local_14->field_01B3;
-  *(undefined2 *)((int)puVar4 + 0x192) = local_14->field_01B7;
+  STField<undefined4>(puVar4,0x17e) = local_14->field_01A3;
+  STField<undefined4>(puVar4,0x182) = local_14->field_01A7;
+  STField<undefined4>(puVar4,0x186) = local_14->field_01AB;
+  STField<undefined4>(puVar4,0x18a) = local_14->field_01AF;
+  STField<undefined4>(puVar4,0x18e) = local_14->field_01B3;
+  STField<undefined2>(puVar4,0x192) = local_14->field_01B7;
   puVar4[0x65] = *(undefined4 *)&local_14->field_0x1b9;
   *(undefined2 *)(puVar4 + 0x66) = local_14->field_01BD;
-  *(undefined4 *)((int)puVar4 + 0x19a) = *(undefined4 *)&local_14->field_0x1bf;
-  *(undefined2 *)((int)puVar4 + 0x19e) = local_14->field_01C3;
+  STField<undefined4>(puVar4,0x19a) = *(undefined4 *)&local_14->field_0x1bf;
+  STField<undefined2>(puVar4,0x19e) = local_14->field_01C3;
   puVar4[0x68] = local_14->field_01C5;
   puVar6 = (byte *)&local_14->field_0x1e2;
   puVar10 = (byte *)((int)puVar4 + 0x1d5);
   memmove(puVar10, puVar6, 0x28); /* compiler REP MOVS byte copy */
   iVar3 = 0;
-  *(undefined4 *)((int)puVar4 + 0x205) = local_14->field_0212;
-  *(undefined4 *)((int)puVar4 + 0x209) = local_14->field_0216;
-  *(int *)((int)puVar4 + 0x20d) = local_14->field_021A;
-  *(undefined4 *)((int)puVar4 + 0x219) = *(undefined4 *)&local_14->field_0x222;
-  *(int *)((int)puVar4 + 0x235) = local_14->field_0232;
-  *(undefined4 *)((int)puVar4 + 0x239) = local_14->field_0236;
-  *(undefined4 *)((int)puVar4 + 0x23d) = local_14->field_023A;
-  *(int *)((int)puVar4 + 0x241) = local_14->field_023E;
-  *(int *)((int)puVar4 + 0x245) = local_14->field_0242;
-  *(undefined4 *)((int)puVar4 + 0x249) = local_14->field_0246;
-  *(undefined4 *)((int)puVar4 + 0x24d) = local_14->field_024A;
-  *(undefined2 *)((int)puVar4 + 0x259) = local_14->field_0252;
-  *(undefined2 *)((int)puVar4 + 0x25b) = local_14->field_0254;
-  *(undefined2 *)((int)puVar4 + 0x25d) = local_14->field_0256;
-  *(short *)((int)puVar4 + 0x25f) = local_14->field_0258;
-  *(short *)((int)puVar4 + 0x261) = local_14->field_025A;
-  *(short *)((int)puVar4 + 0x263) = local_14->field_025C;
-  *(int *)((int)puVar4 + 0x265) = local_14->field_025E;
-  *(undefined4 *)((int)puVar4 + 0x269) = local_14->field_0262;
-  *(undefined2 *)((int)puVar4 + 0x275) = local_14->field_026A;
-  *(undefined2 *)((int)puVar4 + 0x277) = local_14->field_026C;
-  *(undefined2 *)((int)puVar4 + 0x279) = local_14->field_026E;
-  *(short *)((int)puVar4 + 0x27b) = local_14->field_0270;
-  *(short *)((int)puVar4 + 0x27d) = local_14->field_0272;
-  *(short *)((int)puVar4 + 0x27f) = local_14->field_0274;
+  STField<undefined4>(puVar4,0x205) = local_14->field_0212;
+  STField<undefined4>(puVar4,0x209) = local_14->field_0216;
+  STField<int>(puVar4,0x20d) = local_14->field_021A;
+  STField<undefined4>(puVar4,0x219) = *(undefined4 *)&local_14->field_0x222;
+  STField<int>(puVar4,0x235) = local_14->field_0232;
+  STField<undefined4>(puVar4,0x239) = local_14->field_0236;
+  STField<undefined4>(puVar4,0x23d) = local_14->field_023A;
+  STField<int>(puVar4,0x241) = local_14->field_023E;
+  STField<int>(puVar4,0x245) = local_14->field_0242;
+  STField<undefined4>(puVar4,0x249) = local_14->field_0246;
+  STField<undefined4>(puVar4,0x24d) = local_14->field_024A;
+  STField<undefined2>(puVar4,0x259) = local_14->field_0252;
+  STField<undefined2>(puVar4,0x25b) = local_14->field_0254;
+  STField<undefined2>(puVar4,0x25d) = local_14->field_0256;
+  STField<short>(puVar4,0x25f) = local_14->field_0258;
+  STField<short>(puVar4,0x261) = local_14->field_025A;
+  STField<short>(puVar4,0x263) = local_14->field_025C;
+  STField<int>(puVar4,0x265) = local_14->field_025E;
+  STField<undefined4>(puVar4,0x269) = local_14->field_0262;
+  STField<undefined2>(puVar4,0x275) = local_14->field_026A;
+  STField<undefined2>(puVar4,0x277) = local_14->field_026C;
+  STField<undefined2>(puVar4,0x279) = local_14->field_026E;
+  STField<short>(puVar4,0x27b) = local_14->field_0270;
+  STField<short>(puVar4,0x27d) = local_14->field_0272;
+  STField<short>(puVar4,0x27f) = local_14->field_0274;
   puVar6 = (byte *)&local_14->field_0276;
   puVar10 = (byte *)((int)puVar4 + 0x281);
   memmove(puVar10, puVar6, 0x1f); /* compiler REP MOVS byte copy */
   iVar3 = 0;
   puVar4[0xa8] = *(undefined4 *)&local_14->field_0x295;
   *(undefined2 *)(puVar4 + 0xa9) = local_14->field_0299;
-  *(undefined4 *)((int)puVar4 + 0x2a6) = local_14->field_029B;
-  *(undefined4 *)((int)puVar4 + 0x2b2) = *(undefined4 *)&local_14->field_0x2a3;
-  *(undefined4 *)((int)puVar4 + 0x2b6) = *(undefined4 *)&local_14->field_0x2a7;
-  *(undefined2 *)((int)puVar4 + 0x2ba) = local_14->field_02AB;
+  STField<undefined4>(puVar4,0x2a6) = local_14->field_029B;
+  STField<undefined4>(puVar4,0x2b2) = *(undefined4 *)&local_14->field_0x2a3;
+  STField<undefined4>(puVar4,0x2b6) = *(undefined4 *)&local_14->field_0x2a7;
+  STField<undefined2>(puVar4,0x2ba) = local_14->field_02AB;
   puVar4[0xaf] = *(undefined4 *)&local_14->field_0x2ad;
   *(undefined2 *)(puVar4 + 0xb0) = local_14->field_02B1;
-  *(undefined4 *)((int)puVar4 + 0x2c2) = *(undefined4 *)&local_14->field_0x2b3;
-  *(undefined4 *)((int)puVar4 + 0x2c6) = *(undefined4 *)&local_14->field_0x2b7;
-  *(undefined2 *)((int)puVar4 + 0x2ca) = *(undefined2 *)&local_14->field_0x2bb;
+  STField<undefined4>(puVar4,0x2c2) = *(undefined4 *)&local_14->field_0x2b3;
+  STField<undefined4>(puVar4,0x2c6) = *(undefined4 *)&local_14->field_0x2b7;
+  STField<undefined2>(puVar4,0x2ca) = *(undefined2 *)&local_14->field_0x2bb;
   puVar4[0xb3] = *(undefined4 *)&local_14->field_0x2bd;
   *(undefined2 *)(puVar4 + 0xb4) = local_14->field_02C1;
-  *(undefined4 *)((int)puVar4 + 0x2d2) = *(undefined4 *)&local_14->field_0x2c3;
-  *(undefined4 *)((int)puVar4 + 0x2d6) = *(undefined4 *)&local_14->field_0x2c7;
-  *(undefined2 *)((int)puVar4 + 0x2da) = local_14->field_02CB;
+  STField<undefined4>(puVar4,0x2d2) = *(undefined4 *)&local_14->field_0x2c3;
+  STField<undefined4>(puVar4,0x2d6) = *(undefined4 *)&local_14->field_0x2c7;
+  STField<undefined2>(puVar4,0x2da) = local_14->field_02CB;
   *(undefined1 *)(puVar4 + 0xb7) = local_14->field_02CD;
-  *(undefined4 *)((int)puVar4 + 0x2dd) = local_14->field_02CE;
-  *(undefined4 *)((int)puVar4 + 0x2e1) = *(undefined4 *)&local_14->field_0x2d2;
-  *(undefined2 *)((int)puVar4 + 0x2e5) = local_14->field_02D6;
-  *(undefined4 *)((int)puVar4 + 0x2e7) = local_14->field_02D8;
-  *(undefined4 *)((int)puVar4 + 0x2eb) = *(undefined4 *)&local_14->field_0x2dc;
-  *(undefined4 *)((int)puVar4 + 0x2ef) = *(undefined4 *)&local_14->field_0x2e0;
-  *(undefined4 *)((int)puVar4 + 0x2f3) = *(undefined4 *)&local_14->field_0x2e4;
-  *(undefined4 *)((int)puVar4 + 0x2f7) = *(undefined4 *)&local_14->field_0x2e8;
-  *(undefined2 *)((int)puVar4 + 0x2fb) = local_14->field_02EC;
-  *(undefined4 *)((int)puVar4 + 0x2fd) = *(undefined4 *)&local_14->field_0x2ee;
-  *(undefined4 *)((int)puVar4 + 0x301) = *(undefined4 *)&local_14->field_0x2f2;
-  *(undefined2 *)((int)puVar4 + 0x305) = local_14->field_02F6;
-  *(undefined4 *)((int)puVar4 + 0x307) = *(undefined4 *)&local_14->field_0x2f8;
-  *(undefined4 *)((int)puVar4 + 0x30b) = *(undefined4 *)&local_14->field_0x2fc;
-  *(undefined4 *)((int)puVar4 + 0x30f) = *(undefined4 *)&local_14->field_0x300;
-  *(undefined4 *)((int)puVar4 + 0x313) = *(undefined4 *)&local_14->field_0x304;
-  *(undefined4 *)((int)puVar4 + 0x317) = *(undefined4 *)&local_14->field_0x308;
-  *(undefined2 *)((int)puVar4 + 0x31b) = local_14->field_030C;
-  *(undefined4 *)((int)puVar4 + 0x31d) = local_14->field_030E;
+  STField<undefined4>(puVar4,0x2dd) = local_14->field_02CE;
+  STField<undefined4>(puVar4,0x2e1) = *(undefined4 *)&local_14->field_0x2d2;
+  STField<undefined2>(puVar4,0x2e5) = local_14->field_02D6;
+  STField<undefined4>(puVar4,0x2e7) = local_14->field_02D8;
+  STField<undefined4>(puVar4,0x2eb) = *(undefined4 *)&local_14->field_0x2dc;
+  STField<undefined4>(puVar4,0x2ef) = *(undefined4 *)&local_14->field_0x2e0;
+  STField<undefined4>(puVar4,0x2f3) = *(undefined4 *)&local_14->field_0x2e4;
+  STField<undefined4>(puVar4,0x2f7) = *(undefined4 *)&local_14->field_0x2e8;
+  STField<undefined2>(puVar4,0x2fb) = local_14->field_02EC;
+  STField<undefined4>(puVar4,0x2fd) = *(undefined4 *)&local_14->field_0x2ee;
+  STField<undefined4>(puVar4,0x301) = *(undefined4 *)&local_14->field_0x2f2;
+  STField<undefined2>(puVar4,0x305) = local_14->field_02F6;
+  STField<undefined4>(puVar4,0x307) = *(undefined4 *)&local_14->field_0x2f8;
+  STField<undefined4>(puVar4,0x30b) = *(undefined4 *)&local_14->field_0x2fc;
+  STField<undefined4>(puVar4,0x30f) = *(undefined4 *)&local_14->field_0x300;
+  STField<undefined4>(puVar4,0x313) = *(undefined4 *)&local_14->field_0x304;
+  STField<undefined4>(puVar4,0x317) = *(undefined4 *)&local_14->field_0x308;
+  STField<undefined2>(puVar4,0x31b) = local_14->field_030C;
+  STField<undefined4>(puVar4,0x31d) = local_14->field_030E;
   piVar8 = local_14->field_0059;
   if (piVar8 == nullptr) {
     local_8 = 0;
@@ -324,8 +324,8 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   local_18 = puVar4;
   if (local_14->field_00EF == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0xb2) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0xb6) = 0;
+    STField<undefined4>(puVar4,0xb2) = 0xffffffff;
+    STField<undefined4>(puVar4,0xb6) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_00EF->flags,(int *)&local_8);
@@ -341,15 +341,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0xb2) = local_10;
-    *(uint *)((int)puVar4 + 0xb6) = local_8;
+    STField<int>(puVar4,0xb2) = local_10;
+    STField<uint>(puVar4,0xb6) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_0103 == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0xca) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0xce) = 0;
+    STField<undefined4>(puVar4,0xca) = 0xffffffff;
+    STField<undefined4>(puVar4,0xce) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0103->flags,(int *)&local_8);
@@ -365,15 +365,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0xca) = local_10;
-    *(uint *)((int)puVar4 + 0xce) = local_8;
+    STField<int>(puVar4,0xca) = local_10;
+    STField<uint>(puVar4,0xce) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_010F == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0xda) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0xde) = 0;
+    STField<undefined4>(puVar4,0xda) = 0xffffffff;
+    STField<undefined4>(puVar4,0xde) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_010F->flags,(int *)&local_8);
@@ -389,15 +389,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0xda) = local_10;
-    *(uint *)((int)puVar4 + 0xde) = local_8;
+    STField<int>(puVar4,0xda) = local_10;
+    STField<uint>(puVar4,0xde) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_0127 == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0xf6) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0xfa) = 0;
+    STField<undefined4>(puVar4,0xf6) = 0xffffffff;
+    STField<undefined4>(puVar4,0xfa) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0127->flags,(int *)&local_8);
@@ -413,15 +413,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0xf6) = local_10;
-    *(uint *)((int)puVar4 + 0xfa) = local_8;
+    STField<int>(puVar4,0xf6) = local_10;
+    STField<uint>(puVar4,0xfa) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_0160 == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x133) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x137) = 0;
+    STField<undefined4>(puVar4,0x133) = 0xffffffff;
+    STField<undefined4>(puVar4,0x137) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0160->flags,(int *)&local_8);
@@ -437,15 +437,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x133) = local_10;
-    *(uint *)((int)puVar4 + 0x137) = local_8;
+    STField<int>(puVar4,0x133) = local_10;
+    STField<uint>(puVar4,0x137) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_0168 == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x13f) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x143) = 0;
+    STField<undefined4>(puVar4,0x13f) = 0xffffffff;
+    STField<undefined4>(puVar4,0x143) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0168->flags,(int *)&local_8);
@@ -461,15 +461,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x13f) = local_10;
-    *(uint *)((int)puVar4 + 0x143) = local_8;
+    STField<int>(puVar4,0x13f) = local_10;
+    STField<uint>(puVar4,0x143) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_01CA == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x1a5) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x1a9) = 0;
+    STField<undefined4>(puVar4,0x1a5) = 0xffffffff;
+    STField<undefined4>(puVar4,0x1a9) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_01CA->flags,(int *)&local_8);
@@ -485,15 +485,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x1a5) = local_10;
-    *(uint *)((int)puVar4 + 0x1a9) = local_8;
+    STField<int>(puVar4,0x1a5) = local_10;
+    STField<uint>(puVar4,0x1a9) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_01CE == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x1ad) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x1b1) = 0;
+    STField<undefined4>(puVar4,0x1ad) = 0xffffffff;
+    STField<undefined4>(puVar4,0x1b1) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_01CE->flags,(int *)&local_8);
@@ -509,15 +509,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x1ad) = local_10;
-    *(uint *)((int)puVar4 + 0x1b1) = local_8;
+    STField<int>(puVar4,0x1ad) = local_10;
+    STField<uint>(puVar4,0x1b1) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (*(uint **)&local_14->field_0x1d2 == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x1b5) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x1b9) = 0;
+    STField<undefined4>(puVar4,0x1b5) = 0xffffffff;
+    STField<undefined4>(puVar4,0x1b9) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(*(uint **)&local_14->field_0x1d2,(int *)&local_8);
@@ -533,15 +533,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x1b5) = local_10;
-    *(uint *)((int)puVar4 + 0x1b9) = local_8;
+    STField<int>(puVar4,0x1b5) = local_10;
+    STField<uint>(puVar4,0x1b9) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_01D6 == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x1bd) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x1c1) = 0;
+    STField<undefined4>(puVar4,0x1bd) = 0xffffffff;
+    STField<undefined4>(puVar4,0x1c1) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_01D6->flags,(int *)&local_8);
@@ -557,15 +557,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x1bd) = local_10;
-    *(uint *)((int)puVar4 + 0x1c1) = local_8;
+    STField<int>(puVar4,0x1bd) = local_10;
+    STField<uint>(puVar4,0x1c1) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_01DA == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x1c5) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x1c9) = 0;
+    STField<undefined4>(puVar4,0x1c5) = 0xffffffff;
+    STField<undefined4>(puVar4,0x1c9) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_01DA->flags,(int *)&local_8);
@@ -581,15 +581,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x1c5) = local_10;
-    *(uint *)((int)puVar4 + 0x1c9) = local_8;
+    STField<int>(puVar4,0x1c5) = local_10;
+    STField<uint>(puVar4,0x1c9) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if ((uint *)local_14->field_01DE == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x1cd) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x1d1) = 0;
+    STField<undefined4>(puVar4,0x1cd) = 0xffffffff;
+    STField<undefined4>(puVar4,0x1d1) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020((uint *)local_14->field_01DE,(int *)&local_8);
@@ -605,15 +605,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x1cd) = local_10;
-    *(uint *)((int)puVar4 + 0x1d1) = local_8;
+    STField<int>(puVar4,0x1cd) = local_10;
+    STField<uint>(puVar4,0x1d1) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_020E == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x1fd) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x201) = 0;
+    STField<undefined4>(puVar4,0x1fd) = 0xffffffff;
+    STField<undefined4>(puVar4,0x201) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_020E->flags,(int *)&local_8);
@@ -629,16 +629,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x1fd) = local_10;
-    *(uint *)((int)puVar4 + 0x201) = local_8;
+    STField<int>(puVar4,0x1fd) = local_10;
+    STField<uint>(puVar4,0x201) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   local_c = local_14->field_021E;
   if (local_c == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x211) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x215) = 0;
+    STField<undefined4>(puVar4,0x211) = 0xffffffff;
+    STField<undefined4>(puVar4,0x215) = 0;
   }
   else {
     local_8 = local_14->field_021A << 3;
@@ -654,14 +654,14 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x211) = local_10;
-    *(uint *)((int)puVar4 + 0x215) = local_8;
+    STField<int>(puVar4,0x211) = local_10;
+    STField<uint>(puVar4,0x215) = local_8;
   }
   local_10 = local_10 + local_8;
   if (local_14->field_0226 == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x21d) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x221) = 0;
+    STField<undefined4>(puVar4,0x21d) = 0xffffffff;
+    STField<undefined4>(puVar4,0x221) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0226->flags,(int *)&local_8);
@@ -677,15 +677,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x21d) = local_10;
-    *(uint *)((int)puVar4 + 0x221) = local_8;
+    STField<int>(puVar4,0x21d) = local_10;
+    STField<uint>(puVar4,0x221) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_022A == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x225) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x229) = 0;
+    STField<undefined4>(puVar4,0x225) = 0xffffffff;
+    STField<undefined4>(puVar4,0x229) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_022A->flags,(int *)&local_8);
@@ -701,15 +701,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x225) = local_10;
-    *(uint *)((int)puVar4 + 0x229) = local_8;
+    STField<int>(puVar4,0x225) = local_10;
+    STField<uint>(puVar4,0x229) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_022E == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x22d) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x231) = 0;
+    STField<undefined4>(puVar4,0x22d) = 0xffffffff;
+    STField<undefined4>(puVar4,0x231) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_022E->flags,(int *)&local_8);
@@ -725,15 +725,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x22d) = local_10;
-    *(uint *)((int)puVar4 + 0x231) = local_8;
+    STField<int>(puVar4,0x22d) = local_10;
+    STField<uint>(puVar4,0x231) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_024E == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x251) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x255) = 0;
+    STField<undefined4>(puVar4,0x251) = 0xffffffff;
+    STField<undefined4>(puVar4,0x255) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_024E->flags,(int *)&local_8);
@@ -749,15 +749,15 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x251) = local_10;
-    *(uint *)((int)puVar4 + 0x255) = local_8;
+    STField<int>(puVar4,0x251) = local_10;
+    STField<uint>(puVar4,0x255) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
   if (local_14->field_0266 == nullptr) {
     local_8 = 0;
-    *(undefined4 *)((int)puVar4 + 0x26d) = 0xffffffff;
-    *(undefined4 *)((int)puVar4 + 0x271) = 0;
+    STField<undefined4>(puVar4,0x26d) = 0xffffffff;
+    STField<undefined4>(puVar4,0x271) = 0;
   }
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0266->flags,(int *)&local_8);
@@ -773,8 +773,8 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x26d) = local_10;
-    *(uint *)((int)puVar4 + 0x271) = local_8;
+    STField<int>(puVar4,0x26d) = local_10;
+    STField<uint>(puVar4,0x271) = local_8;
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
@@ -792,14 +792,14 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
       puVar9 = (ushort *)((int)puVar9 + 1);
       puVar6 = (byte *)((int)puVar6 + 1);
     }
-    *(int *)((int)puVar4 + 0x2aa) = local_10;
-    *(uint *)((int)puVar4 + 0x2ae) = local_8;
+    STField<int>(puVar4,0x2aa) = local_10;
+    STField<uint>(puVar4,0x2ae) = local_8;
     FreeAndNull(&local_c);
     g_currentExceptionFrame = local_5c.previous;
     return puVar4;
   }
-  *(undefined4 *)((int)puVar4 + 0x2aa) = 0xffffffff;
-  *(undefined4 *)((int)puVar4 + 0x2ae) = 0;
+  STField<undefined4>(puVar4,0x2aa) = 0xffffffff;
+  STField<undefined4>(puVar4,0x2ae) = 0;
   g_currentExceptionFrame = local_5c.previous;
   return puVar4;
 }

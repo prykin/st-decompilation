@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall
 FUN_0055c0e0(void *this,char *param_1,undefined4 param_2,int param_3,uint param_4,
@@ -7,7 +9,7 @@ FUN_0055c0e0(void *this,char *param_1,undefined4 param_2,int param_3,uint param_
   int iVar1;
   InternalExceptionFrame local_48;
 
-  if (((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) &&
+  if (((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) &&
      (param_5 != nullptr)) {
     local_48.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_48;

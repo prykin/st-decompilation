@@ -11,19 +11,19 @@ undefined4 __thiscall FUN_00640170(void *this,int param_1,int param_2,undefined4
   undefined4 *puVar4;
 
   uVar2 = 0;
-  if (*(undefined4 **)((int)this + 0x37f) != nullptr) {
-    puVar4 = *(undefined4 **)((int)this + 0x37f);
+  if (STField<undefined4 *>(this,0x37f) != nullptr) {
+    puVar4 = STField<undefined4 *>(this,0x37f);
     memset(puVar4, 0, 0x1b); /* compiler bulk-zero initialization */
     puVar4 = (undefined4 *)((byte *)puVar4 + 0x18);
     fVar1 = (float)param_1 * _DAT_007904f8;
     fVar1 = fVar1 * _DAT_007904f0;
-    *(float *)(*(int *)((int)this + 0x37f) + 4) = fVar1;
-    *(float *)(*(int *)((int)this + 0x37f) + 8) = (float)param_2 * _DAT_007904f8 * _DAT_007904f0;
-    *(undefined4 *)(*(int *)((int)this + 0x37f) + 0xc) = param_3;
-    *(undefined4 *)(*(int *)((int)this + 0x37f) + 0x10) = 3;
-    *(undefined1 *)(*(int *)((int)this + 0x37f) + 0x15) = 0;
-    *(undefined1 *)(*(int *)((int)this + 0x37f) + 0x14) = 0;
-    *(uint *)(*(int *)((int)this + 0x37f) + 0x17) = g_playSystem_00802A38->field_00E4;
+    *(float *)(STField<int>(this,0x37f) + 4) = fVar1;
+    *(float *)(STField<int>(this,0x37f) + 8) = (float)param_2 * _DAT_007904f8 * _DAT_007904f0;
+    *(undefined4 *)(STField<int>(this,0x37f) + 0xc) = param_3;
+    *(undefined4 *)(STField<int>(this,0x37f) + 0x10) = 3;
+    *(undefined1 *)(STField<int>(this,0x37f) + 0x15) = 0;
+    *(undefined1 *)(STField<int>(this,0x37f) + 0x14) = 0;
+    *(uint *)(STField<int>(this,0x37f) + 0x17) = g_playSystem_00802A38->field_00E4;
     uVar2 = 1;
   }
   return uVar2;

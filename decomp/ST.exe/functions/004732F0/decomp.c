@@ -141,14 +141,12 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
       return 0;
     }
     sub_00492390(this);
-    /* ST_PSEUDO[return_width_artifact,packed_or_unaligned_piece]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected named packed member, bit extract/compose, or unaligned load */
-    pSVar11 = (STBoatC *)CONCAT22(extraout_var_01,param_1._2_2_);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    pSVar11 = (STBoatC *)CONCAT22(extraout_var_01,STPiece<2,2>(param_1));
     if (((this->field_005B != local_6) || (this->field_005D != local_8)) ||
-       (this->field_005F != param_1._2_2_)) {
+       (this->field_005F != STPiece<2,2>(param_1))) {
       this->field_0596 = 0;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      sVar15 = param_1._2_2_;
+      sVar15 = STPiece<2,2>(param_1);
       if (iVar10 == -1) {
         local_6 = (short)local_18;
         local_8 = (short)local_14;
@@ -199,17 +197,15 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                                  &local_8,(undefined2 *)((int)&param_1 + 2),(short *)&local_18,
                                  (short *)&local_14,(undefined2 *)&local_10);
       if (iVar10 == -2) goto cf_common_exit_004743A5;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if (((this->field_005B != local_6) || (this->field_005D != local_8)) ||
-         (this->field_005F != param_1._2_2_)) {
+         (this->field_005F != STPiece<2,2>(param_1))) {
         if (iVar10 == -1) {
           iVar5 = (int)(short)local_10;
           iVar10 = (int)(short)local_14;
           iVar21 = (int)(short)local_18;
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar5 = (int)param_1._2_2_;
+          iVar5 = (int)STPiece<2,2>(param_1);
           iVar10 = (int)local_8;
           iVar21 = (int)local_6;
         }
@@ -274,9 +270,8 @@ cf_common_exit_004743A5:
                                  &local_8,(undefined2 *)((int)&param_1 + 2),(short *)&local_18,
                                  (short *)&local_14,(undefined2 *)&local_10);
       if (iVar10 == -2) goto cf_common_exit_004743A5;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if (((this->field_005B != local_6) || (this->field_005D != local_8)) ||
-         (this->field_005F != param_1._2_2_)) {
+         (this->field_005F != STPiece<2,2>(param_1))) {
         this->field_0596 = 0;
         if (iVar10 == -1) {
           iVar5 = (int)(short)local_10;
@@ -284,8 +279,7 @@ cf_common_exit_004743A5:
           iVar21 = (int)(short)local_18;
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar5 = (int)param_1._2_2_;
+          iVar5 = (int)STPiece<2,2>(param_1);
           iVar10 = (int)local_8;
           iVar21 = (int)local_6;
         }
@@ -443,8 +437,7 @@ cf_common_exit_0047405D:
             lVar14 = Library::MSVCRT::__ftol();
             iVar10 = (int)(short)lVar14 + (uVar7 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                      (int)local_34;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar5 = ((uVar9 >> 0x10) % 7 + (int)this->field_0043) - (int)local_38._2_2_;
+            iVar5 = ((uVar9 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
             uVar7 = local_30;
           }
           else {
@@ -464,10 +457,8 @@ cf_common_exit_0047405D:
             sVar16 = 0;
             sVar15 = 0;
             iVar10 = (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_34;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_38._2_2_ = (short)((uint)local_38 >> 0x10);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar5 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_38._2_2_;
+            STPiece<2,2>(local_38) = (short)((uint)local_38 >> 0x10);
+            iVar5 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
           }
           TraksClassTy::TraksCreate
                     (g_traksClass_00802A7C,1,2,7,
@@ -595,8 +586,7 @@ switchD_004734db_caseD_2:
             lVar14 = Library::MSVCRT::__ftol();
             iVar10 = (int)(short)lVar14 + (uVar7 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                      (int)local_34;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar5 = ((uVar9 >> 0x10) % 7 + (int)this->field_0043) - (int)local_38._2_2_;
+            iVar5 = ((uVar9 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
             uVar7 = local_30;
           }
           else {
@@ -616,10 +606,8 @@ switchD_004734db_caseD_2:
             sVar16 = 0;
             sVar15 = 0;
             iVar10 = (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_34;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_38._2_2_ = (short)((uint)local_38 >> 0x10);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar5 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_38._2_2_;
+            STPiece<2,2>(local_38) = (short)((uint)local_38 >> 0x10);
+            iVar5 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
           }
           TraksClassTy::TraksCreate
                     (g_traksClass_00802A7C,1,2,7,

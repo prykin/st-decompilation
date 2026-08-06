@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005FA070 -> 005FA030 @ 005FA08A; STColl3C::sub_005FA070 this; stable alias ESI */

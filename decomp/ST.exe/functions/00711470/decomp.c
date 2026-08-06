@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_00711470(uint *param_1)
 
@@ -24,7 +26,7 @@ int FUN_00711470(uint *param_1)
     uVar2 = *puVar3;
     *(undefined1 *)puVar3 = 0;
     *(char *)puVar3 = (char)uVar2;
-    cVar1 = *(char *)((int)puVar3 + 1);
+    cVar1 = STField<char>(puVar3,1);
     param_1 = (uint *)((int)puVar3 + 1);
   }
   return iVar5;

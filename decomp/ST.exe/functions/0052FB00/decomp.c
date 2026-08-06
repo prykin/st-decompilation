@@ -1034,8 +1034,7 @@ cf_common_join_005305BC:
       pcVar8 = nullptr;
       uVar38 = 0;
       uVar30 = 0;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      bVar5 = '\x01' << ((char)iVar6 + 0x61U & 0x1f) & DAT_00807300._1_1_;
+      bVar5 = '\x01' << ((char)iVar6 + 0x61U & 0x1f) & STPiece<1,1>(DAT_00807300);
       iVar10 = iVar6 + 0x10;
       pOVar29 = nullptr;
       iVar26 = iVar6;

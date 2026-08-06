@@ -79,9 +79,9 @@ LAB_004e7823:
           puVar3 = puVar8;
           while( true ) {
             if ((iVar7 == 0) || (3 < iVar6)) goto LAB_004e789c;
-            if ((*(uint *)((int)puVar3 + 5) == *param_2) &&
-               (*(char *)((int)puVar3 + 9) == (char)param_2[1])) break;
-            iVar7 = *(int *)((int)puVar3 + 10);
+            if ((STField<uint>(puVar3,5) == *param_2) &&
+               (STField<char>(puVar3,9) == (char)param_2[1])) break;
+            iVar7 = STField<int>(puVar3,10);
             iVar6 = iVar6 + 1;
             puVar3 = (uint *)((int)puVar3 + 5);
           }

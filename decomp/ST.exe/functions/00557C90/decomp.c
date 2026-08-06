@@ -56,10 +56,9 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       bVar14 = 0x1c;
       pCVar5 = FUN_006f2c00(PTR_DAT_0079aec8,1,iVar11);
       local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar5,bVar14,bVar15,psVar16);
-      (&DAT_007c9290)[iVar11] = (int)*(short *)((int)local_8 + 9);
+      (&DAT_007c9290)[iVar11] = (int)STField<short>(local_8,9);
       puVar7 = puVar10 + -0x30;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      (&DAT_007c929c)[iVar11] = (int)*(short *)((int)local_8 + 0xb);
+      (&DAT_007c929c)[iVar11] = (int)STField<short>(local_8,0xb);
       puVar6 = (undefined4 *)((int)local_8 + 0x11);
       local_c = 0x10;
       do {

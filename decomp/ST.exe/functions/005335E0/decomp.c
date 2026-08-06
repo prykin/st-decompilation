@@ -41,10 +41,10 @@ void FUN_005335e0(void)
     local_c = puVar3;
     if (puVar3 != nullptr) {
       *(undefined1 *)puVar3 = 2;
-      *(uint *)((int)puVar3 + 1) = ~uVar5;
-      *(undefined4 *)((int)puVar3 + 5) = DAT_008087be;
+      STField<uint>(puVar3,1) = ~uVar5;
+      STField<undefined4>(puVar3,5) = DAT_008087be;
       DVar4 = timeGetTime();
-      *(DWORD *)((int)puVar3 + 9) = DVar4;
+      STField<DWORD>(puVar3,9) = DVar4;
       uVar5 = 0xffffffff;
       do {
         pcVar9 = pcVar7;

@@ -59,8 +59,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     _DAT_00807430 = 0x40200000;
     _DAT_00807434 = 0x3f800000;
     _DAT_00807438 = 0x3f800000;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_0080743c._0_1_ = 0;
+    STPiece<0,1>(DAT_0080743c) = 0;
     dVar1 = (double)(_DAT_007904f8 / (_DAT_007ac580 / (float)DAT_00807570) + (float)_DAT_007901c0);
     fVar8 = Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
     _DAT_00807428 = DAT_00807420;

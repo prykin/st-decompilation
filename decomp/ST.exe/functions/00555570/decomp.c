@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as cLoadingTy.
    Evidence: this_call_owners=[cLoadingTy]; agreed_this_calls=4; incoming_this_accesses=1;

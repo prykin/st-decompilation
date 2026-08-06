@@ -33,7 +33,7 @@ void __thiscall PanelTy::InitPanel(PanelTy *this)
     this_00->field_0068 = piVar3;
     uVar7 = piVar3[5];
     if (uVar7 == 0) {
-      uVar7 = ((uint)*(ushort *)((int)piVar3 + 0xe) * piVar3[1] + 0x1f >> 3 & 0x1ffffffc) *
+      uVar7 = ((uint)STField<ushort>(piVar3,0xe) * piVar3[1] + 0x1f >> 3 & 0x1ffffffc) *
               piVar3[2];
     }
     puVar4 = (undefined4 *)FUN_006b4fa0(piVar3);

@@ -15,108 +15,105 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
 
   memset(param_1, 0, 0x36); /* compiler bulk-zero initialization */
   *(undefined1 *)param_1 = 1;
-  *(undefined1 *)((int)param_1 + 1) = *(undefined1 *)((int)this + 0x21d);
-  bVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
-  *(byte *)((int)param_1 + 7) = bVar2;
-  if (((*(byte *)((int)this + 0x1d1) & 4) == 0) && (*(int *)((int)this + 0x420) == 0)) {
+  STField<undefined1>(param_1,1) = STField<undefined1>(this,0x21d);
+  bVar2 = LookupRecordByte(STField<char>(this,0x23d));
+  STField<byte>(param_1,7) = bVar2;
+  if (((STField<byte>(this,0x1d1) & 4) == 0) && (STField<int>(this,0x420) == 0)) {
     uVar3 = 1;
   }
   else {
     uVar3 = 0;
   }
-  *(undefined1 *)((int)param_1 + 0x1d) = uVar3;
-  switch(*(undefined4 *)((int)this + 0x245)) {
+  STField<undefined1>(param_1,0x1d) = uVar3;
+  switch(STField<undefined4>(this,0x245)) {
   case 0:
   case 1:
   case 2:
   case 5:
   case 6:
-    *(undefined1 *)((int)param_1 + 2) = 0;
+    STField<undefined1>(param_1,2) = 0;
     break;
   case 3:
   case 4:
-    *(undefined1 *)((int)param_1 + 2) = 1;
+    STField<undefined1>(param_1,2) = 1;
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar3 = (**(code **)(*(int *)this + 0x7c))();
-  *(undefined1 *)((int)param_1 + 0x1b) = uVar3;
+  STField<undefined1>(param_1,0x1b) = uVar3;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar3 = (**(code **)(*(int *)this + 0xc4))();
   *(undefined1 *)(param_1 + 7) = uVar3;
-  *(undefined4 *)((int)param_1 + 3) = *(undefined4 *)((int)this + 0x5ac);
-  param_1[2] = *(undefined4 *)((int)this + 0x18);
+  STField<undefined4>(param_1,3) = STField<undefined4>(this,0x5ac);
+  param_1[2] = STField<undefined4>(this,0x18);
   Library::MSVCRT::_strncpy((char *)(param_1 + 3),(char *)((int)this + 0x5c4),0xe);
-  if (*(int *)(&DAT_00792778 + *(int *)((int)this + 0x235) * 4) == 0) {
-    *(undefined2 *)((int)param_1 + 0x1e) = 0;
+  if (*(int *)(&DAT_00792778 + STField<int>(this,0x235) * 4) == 0) {
+    STField<undefined2>(param_1,0x1e) = 0;
     *(undefined2 *)(param_1 + 8) = 0;
-    *(undefined2 *)((int)param_1 + 0x26) = 0xffff;
+    STField<undefined2>(param_1,0x26) = 0xffff;
     goto LAB_004be96f;
   }
-  sVar1 = *(short *)(&DAT_00792ca0 + *(int *)((int)this + 0x235) * 6);
-  *(short *)((int)param_1 + 0x1e) = sVar1;
+  sVar1 = *(short *)(&DAT_00792ca0 + STField<int>(this,0x235) * 6);
+  STField<short>(param_1,0x1e) = sVar1;
   if (sVar1 == 0xa0) {
-    *(undefined2 *)((int)param_1 + 0x1e) = 0x9f;
+    STField<undefined2>(param_1,0x1e) = 0x9f;
   }
-  iVar6 = (&DAT_00792ca0)[*(int *)((int)this + 0x235) * 6];
+  iVar6 = (&DAT_00792ca0)[STField<int>(this,0x235) * 6];
   if (((iVar6 == 0x96) || (iVar6 == 0x97)) || (iVar6 == 0x98)) {
-    uVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
+    uVar4 = LookupRecordByte(STField<char>(this,0x24));
     uVar4 = (int)(byte)uVar4;
     if (uVar4 == 1) {
       iVar6 = 6;
       goto LAB_004be7f7;
     }
     if (uVar4 != 2) goto LAB_004be80a;
-    iVar8 = *(int *)((int)this + 0x24);
+    iVar8 = STField<int>(this,0x24);
     iVar6 = 0x83;
 LAB_004be7fb:
     uVar5 = thunk_FUN_004e60d0(iVar8,iVar6);
-    *(short *)((int)param_1 + 0x22) = (short)uVar5;
+    STField<short>(param_1,0x22) = (short)uVar5;
   }
   else if (iVar6 == 0xa0) {
     iVar6 = 0xb;
 LAB_004be7f7:
-    iVar8 = *(int *)((int)this + 0x24);
+    iVar8 = STField<int>(this,0x24);
     goto LAB_004be7fb;
   }
 LAB_004be80a:
-  if (*(int *)(&DAT_00793e28 + *(int *)((int)this + 0x235) * 8) == 0) {
-    *(undefined2 *)((int)param_1 + 0x26) = 0xffff;
+  if (*(int *)(&DAT_00793e28 + STField<int>(this,0x235) * 8) == 0) {
+    STField<undefined2>(param_1,0x26) = 0xffff;
   }
   else {
-    *(undefined2 *)((int)param_1 + 0x26) = *(undefined2 *)((int)this + 0x2c5);
+    STField<undefined2>(param_1,0x26) = STField<undefined2>(this,0x2c5);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((*(short *)((int)param_1 + 0x1e) == 0xa8) && (*(int *)((int)this + 0x5ac) == 0x45)) &&
-     (*(undefined2 *)((int)param_1 + 0x26) = 0xffff, *(int *)((int)this + 0x4d0) == 0)) {
-    *(undefined2 *)((int)param_1 + 0x1e) = 0;
+  if (((STField<short>(param_1,0x1e) == 0xa8) && (STField<int>(this,0x5ac) == 0x45)) &&
+     (STField<undefined2>(param_1,0x26) = 0xffff, STField<int>(this,0x4d0) == 0)) {
+    STField<undefined2>(param_1,0x1e) = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(short *)((int)param_1 + 0x1e) == 0xa3) && (*(int *)((int)this + 0x5ac) == 0x4e)) {
-    *(undefined2 *)((int)param_1 + 0x26) = 0xffff;
-    if ((*(int *)((int)this + 0x4d0) != 1) && (*(int *)((int)this + 0x4d0) != 4)) {
-      *(undefined2 *)((int)param_1 + 0x1e) = 0;
+  if ((STField<short>(param_1,0x1e) == 0xa3) && (STField<int>(this,0x5ac) == 0x4e)) {
+    STField<undefined2>(param_1,0x26) = 0xffff;
+    if ((STField<int>(this,0x4d0) != 1) && (STField<int>(this,0x4d0) != 4)) {
+      STField<undefined2>(param_1,0x1e) = 0;
     }
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((*(short *)((int)param_1 + 0x1e) == 0xb2) && (*(int *)((int)this + 0x5ac) == 0x70)) &&
-     (*(undefined2 *)((int)param_1 + 0x26) = 0xffff, *(int *)((int)this + 0x4f0) == 0)) {
-    *(undefined2 *)((int)param_1 + 0x1e) = 0;
+  if (((STField<short>(param_1,0x1e) == 0xb2) && (STField<int>(this,0x5ac) == 0x70)) &&
+     (STField<undefined2>(param_1,0x26) = 0xffff, STField<int>(this,0x4f0) == 0)) {
+    STField<undefined2>(param_1,0x1e) = 0;
   }
-  sVar1 = *(short *)(&DAT_00792cac + *(int *)((int)this + 0x235) * 6);
+  sVar1 = *(short *)(&DAT_00792cac + STField<int>(this,0x235) * 6);
   *(short *)(param_1 + 8) = sVar1;
   if (sVar1 == 0xa0) {
     *(undefined2 *)(param_1 + 8) = 0x9f;
   }
-  iVar6 = (&DAT_00792cac)[*(int *)((int)this + 0x235) * 6];
+  iVar6 = (&DAT_00792cac)[STField<int>(this,0x235) * 6];
   if (((iVar6 == 0x96) || (iVar6 == 0x97)) || (iVar6 == 0x98)) {
-    local_EAX_571 = LookupRecordByte(*(char *)((int)this + 0x24));
+    local_EAX_571 = LookupRecordByte(STField<char>(this,0x24));
     local_EAX_571 = (int)(byte)local_EAX_571;
     if (local_EAX_571 == 1) {
       iVar6 = 6;
       goto LAB_004be918;
     }
     if (local_EAX_571 != 2) goto LAB_004be92b;
-    iVar8 = *(int *)((int)this + 0x24);
+    iVar8 = STField<int>(this,0x24);
     iVar6 = 0x83;
 LAB_004be91c:
     uVar5 = thunk_FUN_004e60d0(iVar8,iVar6);
@@ -125,18 +122,18 @@ LAB_004be91c:
   else if (iVar6 == 0xa0) {
     iVar6 = 0xb;
 LAB_004be918:
-    iVar8 = *(int *)((int)this + 0x24);
+    iVar8 = STField<int>(this,0x24);
     goto LAB_004be91c;
   }
 LAB_004be92b:
-  if (*(int *)(&DAT_00793e2c + *(int *)((int)this + 0x235) * 8) != 0) {
-    *(undefined2 *)(param_1 + 10) = *(undefined2 *)((int)this + 0x345);
-    *(undefined1 *)((int)param_1 + (0x2e - *(int *)((int)this + 0x5b8))) = 1;
+  if (*(int *)(&DAT_00793e2c + STField<int>(this,0x235) * 8) != 0) {
+    *(undefined2 *)(param_1 + 10) = STField<undefined2>(this,0x345);
+    *(undefined1 *)((int)param_1 + (0x2e - STField<int>(this,0x5b8))) = 1;
     return;
   }
 LAB_004be96f:
   *(undefined2 *)(param_1 + 10) = 0xffff;
-  *(undefined1 *)((int)param_1 + (0x2e - *(int *)((int)this + 0x5b8))) = 1;
+  *(undefined1 *)((int)param_1 + (0x2e - STField<int>(this,0x5b8))) = 1;
   return;
 }
 

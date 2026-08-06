@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005148A0.
@@ -39,7 +41,7 @@ void __thiscall HelpPanelTy::sub_005148A0(HelpPanelTy *this,int param_1)
           piVar3 = (int *)(pAVar1->field_0008 * uVar4 + pAVar1->field_001C);
 LAB_0051490d:
           if ((*piVar3 == *piVar5) && (piVar3[1] == piVar5[1])) {
-            if (*(char *)((int)piVar3 + 0x12) != '\0') {
+            if (STField<char>(piVar3,0x12) != '\0') {
               return;
             }
             ChangeTree(this,piVar3,uVar4);

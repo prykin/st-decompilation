@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 006D10F0 returns return of Library::DKW::LIB::FUN_006aac70 @ 006D11BB | 006D10F0
@@ -39,7 +41,7 @@ int FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int param_5)
     puVar1[5] = iVar4;
     *puVar1 = 0x28;
     *(undefined2 *)(puVar1 + 3) = 1;
-    *(short *)((int)puVar1 + 0xe) = (short)param_3;
+    STField<short>(puVar1,0xe) = (short)param_3;
     puVar1[4] = 0;
     puVar1[8] = (0xf < param_3) - 1 & param_4;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

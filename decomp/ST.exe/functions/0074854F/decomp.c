@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] x87_double_parameter_slots target=function:-1: prototype=undefined4
    __thiscall FUN_0074854f(void * this, undefined4 param_1, undefined4 param_2, undefined4 param_3,
@@ -13,7 +15,7 @@ FUN_0074854f(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   int *piVar1;
   undefined4 uVar2;
 
-  piVar1 = *(int **)((int)this + 0x18);
+  piVar1 = STField<int *>(this,0x18);
   if (piVar1 == nullptr) {
     uVar2 = 0x80040209;
   }

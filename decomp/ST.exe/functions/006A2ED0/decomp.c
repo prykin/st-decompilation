@@ -55,8 +55,7 @@ LAB_006a2f2f:
   *(undefined4 *)((int)&local_14[0x15].field_0007 + 2) = 0xe6e4e2e0;
   *(undefined2 *)((int)&local_14[0x15].field_000B + 2) = 0xeae8;
   iVar6 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (0 < *(int *)((int)param_1 + 0x455)) {
+  if (0 < STField<int>(param_1,0x455)) {
     piVar9 = (int *)((int)param_1 + 0x459);
     do {
       puVar5 = (byte *)*piVar9;
@@ -68,8 +67,7 @@ LAB_006a2f2f:
       }
       iVar6 = iVar6 + 1;
       piVar9 = piVar9 + 1;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    } while (iVar6 < *(int *)((int)param_1 + 0x455));
+    } while (iVar6 < STField<int>(param_1,0x455));
   }
   ST3DSMAPContext::sub_006DD610
             ((ST3DSMAPContext *)local_14,8,(double)((float)(int)*param_1 * _DAT_007904f4),
@@ -92,7 +90,7 @@ LAB_006a2f2f:
     *(undefined2 *)puVar13 = *(undefined2 *)puVar5;
     iVar6 = iVar6 + 0x8b;
     iVar10 = iVar10 + 1;
-    *(undefined1 *)((int)puVar13 + 2) = *(undefined1 *)((int)puVar5 + 2);
+    STField<undefined1>(puVar13,2) = STField<undefined1>(puVar5,2);
   } while (iVar6 < 0x4b79);
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   puVar3 = cMf32::RecGet(in_stack_00000008,1,PTR_s_PALETTE_0079d848,nullptr,1);

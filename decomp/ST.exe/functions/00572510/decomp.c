@@ -143,8 +143,7 @@ LAB_005727ec:
           iVar4 = 0;
 LAB_005727f1:
           if ((iVar4 == 0) && ((char)DAT_00807300 == '\x02')) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            DAT_00807300._0_1_ = '\x01';
+            STPiece<0,1>(DAT_00807300) = '\x01';
           }
           thunk_FUN_00573240();
           cMf32::delete(this_00);

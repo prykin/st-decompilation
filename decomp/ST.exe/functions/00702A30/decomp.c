@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
@@ -467,8 +469,7 @@ cf_common_join_00702F3A:
       }
     } while ((int)uVar4 < iVar6);
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c._0_1_ = bVar1;
+  STPiece<0,1>(local_c) = bVar1;
   if (((byte)local_c & 0xc0) == 0x80) {
     pbVar9 = pbVar9 + iVar6;
   }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 006BFBF0 -> 006BFE70 @ 006BFD7F */
@@ -136,7 +138,7 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,
           *(undefined2 *)puVar12 = *(undefined2 *)&pAVar5->field_0xa8;
           uVar9 = *(undefined2 *)&pAVar5->field_0xb8;
 LAB_006c0125:
-          *(undefined2 *)((int)puVar12 + 2) = uVar9;
+          STField<undefined2>(puVar12,2) = uVar9;
           puVar12 = puVar12 + 1;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (AnonShape_006BFE70_9EDC24A5 *)&param_2->field_0004;
@@ -220,7 +222,7 @@ LAB_006c0125:
             uVar3 = *(undefined4 *)&pAVar5->field_0xb4;
             *(int *)&pAVar5->field_0xb4 = iVar6;
             *(undefined4 *)&pAVar5->field_0xb8 = uVar3;
-            *(short *)((int)param_1 + 2) = (short)iVar6;
+            STField<short>(param_1,2) = (short)iVar6;
             puVar12 = param_1 + 1;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = (AnonShape_006BFE70_9EDC24A5 *)&param_2->field_0004;

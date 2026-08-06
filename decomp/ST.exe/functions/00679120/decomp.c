@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00678E00.
@@ -62,8 +64,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00678E00::FUN_00679120
         STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x38e,local_24,&local_10,*value,0);
         FreeAndNull(value);
         *value = local_10;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        value[1] = *(void **)((int)local_10 + 0x18);
+        value[1] = STField<void *>(local_10,0x18);
       }
     }
     g_currentExceptionFrame = local_68.previous;

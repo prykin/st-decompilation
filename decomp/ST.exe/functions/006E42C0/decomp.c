@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_006e42c0(void *this,int *param_1)
 
@@ -9,9 +11,9 @@ undefined4 __thiscall FUN_006e42c0(void *this,int *param_1)
   bool bVar4;
   byte local_14 [16];
 
-  if (*(int *)((int)this + 0x14) != 0) {
-    *(undefined4 *)(*(int *)((int)this + 0x14) + 4) = 0;
-    index = DArrayGetNext(*(DArrayTy **)((int)this + 0x14),local_14);
+  if (STField<int>(this,0x14) != 0) {
+    *(undefined4 *)(STField<int>(this,0x14) + 4) = 0;
+    index = DArrayGetNext(STField<DArrayTy *>(this,0x14),local_14);
     while (-1 < (int)index) {
       iVar1 = 4;
       bVar4 = true;
@@ -25,13 +27,13 @@ undefined4 __thiscall FUN_006e42c0(void *this,int *param_1)
         pbVar3 = pbVar3 + 4;
       } while (bVar4);
       if (bVar4) {
-        DArrayRemoveAt(*(DArrayTy **)((int)this + 0x14),index);
+        DArrayRemoveAt(STField<DArrayTy *>(this,0x14),index);
       }
-      index = DArrayGetNext(*(DArrayTy **)((int)this + 0x14),local_14);
+      index = DArrayGetNext(STField<DArrayTy *>(this,0x14),local_14);
     }
-    if ((*(DArrayTy **)((int)this + 0x14))->count == 0) {
-      DArrayDestroy(*(DArrayTy **)((int)this + 0x14));
-      *(undefined4 *)((int)this + 0x14) = 0;
+    if ((STField<DArrayTy *>(this,0x14))->count == 0) {
+      DArrayDestroy(STField<DArrayTy *>(this,0x14));
+      STField<undefined4>(this,0x14) = 0;
     }
   }
   return 0;

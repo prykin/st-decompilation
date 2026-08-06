@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4
 FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int param_4,int param_5,

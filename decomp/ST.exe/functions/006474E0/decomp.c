@@ -33,10 +33,10 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
                          (DAT_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
                           nullptr);
       ST3DSMAPContext::sub_006E8660
-                (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
-                 *(uint *)((int)puVar3 + 0xd),0x5a,0x2f,0);
+                (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,STField<uint>(puVar3,9),
+                 STField<uint>(puVar3,0xd),0x5a,0x2f,0);
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+                (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_8,0,pSVar2->field_0071);
       Library::Ourlib::ST3DSMAP::SprSetDZ(g_sT3DSMAPContext_00807598,local_8,9.950249);
       Library::Ourlib::ST3DSMAP::SprMove
@@ -51,10 +51,10 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
                          (DAT_00806764,CASE_1D,"expl_vob",0xffffffff,0,1,0,
                           nullptr);
       ST3DSMAPContext::sub_006E8660
-                (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,*(uint *)((int)puVar3 + 9),
-                 *(uint *)((int)puVar3 + 0xd),0x40,0x6a,0);
+                (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,STField<uint>(puVar3,9),
+                 STField<uint>(puVar3,0xd),0x40,0x6a,0);
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,local_c,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+                (g_sT3DSMAPContext_00807598,local_c,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_c,0,pSVar2->field_008A);
       Library::Ourlib::ST3DSMAP::SprMove
                 (g_sT3DSMAPContext_00807598,local_c,
@@ -70,10 +70,10 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
                          (DAT_00806764,CASE_1D,"expl_vop",0xffffffff,0,1,0,
                           nullptr);
       ST3DSMAPContext::sub_006E8660
-                (g_sT3DSMAPContext_00807598,(int *)&local_10,1,0,*(uint *)((int)puVar3 + 9),
-                 *(uint *)((int)puVar3 + 0xd),0x4b,0x7e,0);
+                (g_sT3DSMAPContext_00807598,(int *)&local_10,1,0,STField<uint>(puVar3,9),
+                 STField<uint>(puVar3,0xd),0x4b,0x7e,0);
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,local_10,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1
+                (g_sT3DSMAPContext_00807598,local_10,0,*(int *)puVar3,STField<int>(puVar3,0x21),1
                 );
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_10,0,pSVar2->field_007E);
       Library::Ourlib::ST3DSMAP::SprMove

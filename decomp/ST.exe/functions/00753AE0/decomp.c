@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 00753AE0 returns return of Library::DKW::DB::FUN_00753920 @ 00753AF5 */

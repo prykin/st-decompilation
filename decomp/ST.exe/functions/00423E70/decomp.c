@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 00423E70 returns return of STAllPlayersC::GetObjPtr @ 00423E89
@@ -11,7 +13,7 @@ STGameObjC * __thiscall FUN_00423e70(void *this,ushort param_1)
   STGameObjC *pSVar1;
 
   pSVar1 = STAllPlayersC::GetObjPtr
-                     (g_allPlayers_007FA174,*(char *)((int)this + 0x24),param_1,CASE_1);
+                     (g_allPlayers_007FA174,STField<char>(this,0x24),param_1,CASE_1);
   return pSVar1;
 }
 

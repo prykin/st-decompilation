@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 006B84D0 -> 006D2820 @ 006B85C2
@@ -310,18 +312,15 @@ LAB_006d2b87:
                 else if ((uVar6 & 0x40) == 0) {
                   if (-1 < (int)(uVar4 - 1)) {
                     do {
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      if ((*param_3 & param_7._3_1_) != 0) {
+                      if ((*param_3 & STPiece<3,1>(param_7)) != 0) {
                         *param_1 = *param_12;
                       }
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       param_1 = param_1 + 1;
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       param_12 = param_12 + 1;
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      uVar8 = (uint)(param_7._3_1_ >> 1);
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      if (param_7._3_1_ >> 1 == 0) {
+                      uVar8 = (uint)(STPiece<3,1>(param_7) >> 1);
+                      if (STPiece<3,1>(param_7) >> 1 == 0) {
                         uVar8 = 0x80;
                         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                         param_3 = param_3 + 1;
@@ -338,16 +337,13 @@ LAB_006d2b87:
                   param_12 = param_12 + 1;
                   if (-1 < (int)(uVar4 - 1)) {
                     do {
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      if ((*param_3 & param_7._3_1_) != 0) {
+                      if ((*param_3 & STPiece<3,1>(param_7)) != 0) {
                         *param_1 = bVar2;
                       }
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       param_1 = param_1 + 1;
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      uVar8 = (uint)(param_7._3_1_ >> 1);
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      if (param_7._3_1_ >> 1 == 0) {
+                      uVar8 = (uint)(STPiece<3,1>(param_7) >> 1);
+                      if (STPiece<3,1>(param_7) >> 1 == 0) {
                         uVar8 = 0x80;
                         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                         param_3 = param_3 + 1;
@@ -383,18 +379,15 @@ LAB_006d2b87:
             else if ((uVar6 & 0x40) == 0) {
               if (-1 < (int)(uVar5 - 1)) {
                 do {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  if ((*param_3 & param_7._3_1_) != 0) {
+                  if ((*param_3 & STPiece<3,1>(param_7)) != 0) {
                     *param_1 = *param_12;
                   }
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_1 = param_1 + 1;
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_12 = param_12 + 1;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  uVar8 = (uint)(param_7._3_1_ >> 1);
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  if (param_7._3_1_ >> 1 == 0) {
+                  uVar8 = (uint)(STPiece<3,1>(param_7) >> 1);
+                  if (STPiece<3,1>(param_7) >> 1 == 0) {
                     uVar8 = 0x80;
                     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_3 = param_3 + 1;
@@ -411,16 +404,13 @@ LAB_006d2b87:
               param_12 = param_12 + 1;
               if (-1 < (int)(uVar5 - 1)) {
                 do {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  if ((*param_3 & param_7._3_1_) != 0) {
+                  if ((*param_3 & STPiece<3,1>(param_7)) != 0) {
                     *param_1 = bVar1;
                   }
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_1 = param_1 + 1;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  uVar8 = (uint)(param_7._3_1_ >> 1);
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  if (param_7._3_1_ >> 1 == 0) {
+                  uVar8 = (uint)(STPiece<3,1>(param_7) >> 1);
+                  if (STPiece<3,1>(param_7) >> 1 == 0) {
                     uVar8 = 0x80;
                     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_3 = param_3 + 1;
@@ -741,18 +731,15 @@ LAB_006d306f:
               else if ((uVar6 & 0x40) == 0) {
                 if (-1 < (int)(uVar4 - 1)) {
                   do {
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    if ((*param_3 & param_7._3_1_) != 0) {
+                    if ((*param_3 & STPiece<3,1>(param_7)) != 0) {
                       *param_1 = *(byte *)((uint)*param_12 + param_8);
                     }
                     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_1 = param_1 + 1;
                     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_12 = param_12 + 1;
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    uVar5 = (uint)(param_7._3_1_ >> 1);
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    if (param_7._3_1_ >> 1 == 0) {
+                    uVar5 = (uint)(STPiece<3,1>(param_7) >> 1);
+                    if (STPiece<3,1>(param_7) >> 1 == 0) {
                       uVar5 = 0x80;
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       param_3 = param_3 + 1;
@@ -770,16 +757,13 @@ LAB_006d306f:
                 bVar2 = *(byte *)((uint)bVar2 + param_8);
                 if (-1 < (int)(uVar4 - 1)) {
                   do {
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    if ((*param_3 & param_7._3_1_) != 0) {
+                    if ((*param_3 & STPiece<3,1>(param_7)) != 0) {
                       *param_1 = bVar2;
                     }
                     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_1 = param_1 + 1;
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    uVar5 = (uint)(param_7._3_1_ >> 1);
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    if (param_7._3_1_ >> 1 == 0) {
+                    uVar5 = (uint)(STPiece<3,1>(param_7) >> 1);
+                    if (STPiece<3,1>(param_7) >> 1 == 0) {
                       uVar5 = 0x80;
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       param_3 = param_3 + 1;
@@ -815,18 +799,15 @@ LAB_006d306f:
           else if ((uVar6 & 0x40) == 0) {
             if (-1 < (int)(param_5 - 1)) {
               do {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                if ((*param_3 & param_7._3_1_) != 0) {
+                if ((*param_3 & STPiece<3,1>(param_7)) != 0) {
                   *param_1 = *(byte *)((uint)*param_12 + param_8);
                 }
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = param_1 + 1;
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_12 = param_12 + 1;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                uVar5 = (uint)(param_7._3_1_ >> 1);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                if (param_7._3_1_ >> 1 == 0) {
+                uVar5 = (uint)(STPiece<3,1>(param_7) >> 1);
+                if (STPiece<3,1>(param_7) >> 1 == 0) {
                   uVar5 = 0x80;
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_3 = param_3 + 1;
@@ -845,16 +826,13 @@ LAB_006d306f:
             bVar1 = *(byte *)((uint)bVar1 + param_8);
             if (-1 < (int)(param_5 - 1)) {
               do {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                if ((*param_3 & param_7._3_1_) != 0) {
+                if ((*param_3 & STPiece<3,1>(param_7)) != 0) {
                   *param_1 = bVar1;
                 }
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = param_1 + 1;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                uVar5 = (uint)(param_7._3_1_ >> 1);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                if (param_7._3_1_ >> 1 == 0) {
+                uVar5 = (uint)(STPiece<3,1>(param_7) >> 1);
+                if (STPiece<3,1>(param_7) >> 1 == 0) {
                   uVar5 = 0x80;
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_3 = param_3 + 1;

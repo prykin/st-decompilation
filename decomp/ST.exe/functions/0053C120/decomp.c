@@ -108,8 +108,8 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
       puVar5[0x17] = 0x4202;
       *(undefined2 *)(puVar5 + 0x18) = 0;
       *(undefined2 *)(puVar5 + 0xd) = 0;
-      *(undefined2 *)((int)puVar5 + 0x62) = 2;
-      *(undefined2 *)((int)puVar5 + 0x36) = 2;
+      STField<undefined2>(puVar5,0x62) = 2;
+      STField<undefined2>(puVar5,0x36) = 2;
       if (iVar6 == 0) {
         uVar7 = 0x3aab;
 LAB_0053c30d:

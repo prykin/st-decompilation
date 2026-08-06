@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
    Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=2; incoming_this_accesses=14;
@@ -25,16 +27,14 @@ void __thiscall MoneyTy::sub_0052B990(MoneyTy *this)
                this->field_005C);
   if (this->field_00A4 == '\0') {
     uVar1 = (uint)bVar2;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8._0_1_ = 1;
+    STPiece<0,1>(local_8) = 1;
     if (0 < (int)(uVar1 - (byte)this->field_00A2)) {
       uVar7 = 1;
       do {
         pBVar3 = (BITMAPINFO *)
                  FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,0);
         PutDDX(this->field_0030 + -4 + uVar7 * 4,this->field_0034,'\x01',pBVar3);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8._0_1_ = (byte)local_8 + 1;
+        STPiece<0,1>(local_8) = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;
       } while ((int)uVar7 <= (int)(uVar1 - (byte)this->field_00A2));
     }

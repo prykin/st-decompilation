@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004c9430(void *this,int param_1,int param_2)
 
@@ -6,13 +8,12 @@ undefined4 __thiscall FUN_004c9430(void *this,int param_1,int param_2)
   int *piVar2;
   int iVar3;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(int *)((int)this + 0x361) != param_1) || (*(int *)((int)this + 0x375) != param_2)) {
-    iVar1 = *(int *)((int)this + 0x3d4);
+  if ((STField<int>(this,0x361) != param_1) || (STField<int>(this,0x375) != param_2)) {
+    iVar1 = STField<int>(this,0x3d4);
     if (iVar1 == 0) {
       return 0;
     }
-    piVar2 = *(int **)((int)this + 0x607);
+    piVar2 = STField<int *>(this,0x607);
     if (piVar2 == nullptr) {
       return 0;
     }

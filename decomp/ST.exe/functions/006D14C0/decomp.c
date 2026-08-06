@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
@@ -50,20 +52,16 @@ void FUN_006d14c0(ushort *param_1,int param_2,int param_3,uint *param_4)
     local_c = 0xb;
   }
   if (local_8 == -1) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8._0_1_ = 0;
+    STPiece<0,1>(local_8) = 0;
     for (uVar1 = local_18; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8._0_1_ = (byte)local_8 + 1;
+      STPiece<0,1>(local_8) = (byte)local_8 + 1;
     }
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == (uint *)0xffffffff) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    param_4._0_1_ = 0;
+    STPiece<0,1>(param_4) = 0;
     for (uVar1 = local_14; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      param_4._0_1_ = (byte)param_4 + 1;
+      STPiece<0,1>(param_4) = (byte)param_4 + 1;
     }
   }
   if (iVar2 == -1) {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0060a430(void *this,int param_1)
 
@@ -6,8 +8,8 @@ void __thiscall FUN_0060a430(void *this,int param_1)
 
   STFieldC::InitSprSistem(this,param_1);
   uVar1 = thunk_FUN_0060a4b0(this);
-  *(char *)((int)this + 0x225) = (char)uVar1;
-  *(undefined1 *)((int)this + 0x22e) = 1;
+  STField<char>(this,0x225) = (char)uVar1;
+  STField<undefined1>(this,0x22e) = 1;
   return;
 }
 

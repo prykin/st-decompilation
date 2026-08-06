@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_007115e0(void *this,AnonShape_007115E0_FC3147FF *param_1,int param_2,int param_3)
 
@@ -28,7 +30,7 @@ int __thiscall FUN_007115e0(void *this,AnonShape_007115E0_FC3147FF *param_1,int 
         iVar2 = FUN_007111c0(this,resourceString);
         local_8 = local_8 + iVar2;
       }
-      return *(int *)((int)this + 0x5c) * (param_3 + -1) + local_8;
+      return STField<int>(this,0x5c) * (param_3 + -1) + local_8;
     }
   }
   return 0;

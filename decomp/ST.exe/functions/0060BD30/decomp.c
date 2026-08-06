@@ -26,10 +26,10 @@ void __thiscall FUN_0060bd30(void *this,undefined4 *param_1,undefined4 param_2)
   local_c = 0;
   local_40[4] = (undefined4 *)0x110;
   local_40[2] = (undefined4 *)param_1[6];
-  local_20[2] = *(undefined4 *)((int)this + 0x1d9);
-  local_14 = *(undefined2 *)((int)this + 0x205);
-  local_12 = *(undefined2 *)((int)this + 0x201);
-  local_20[1] = *(undefined4 *)((int)this + 0x1f5);
+  local_20[2] = STField<undefined4>(this,0x1d9);
+  local_14 = STField<undefined2>(this,0x205);
+  local_12 = STField<undefined2>(this,0x201);
+  local_20[1] = STField<undefined4>(this,0x1f5);
   local_20[0] = param_2;
   local_40[5] = local_20;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as GameSystemC.
    Evidence: this_call_owners=[GameSystemC]; agreed_this_calls=2; incoming_this_accesses=4;

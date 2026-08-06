@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4)
@@ -11,17 +13,15 @@ FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4
   local_10[0] = 0;
   local_10[1] = 0;
   local_10[2] = 0;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  uStack_a._0_2_ = 0;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  uStack_a._2_2_ = 0;
-  *(undefined4 *)((int)this + 0xa7) = 0;
+  STPiece<0,2>(uStack_a) = 0;
+  STPiece<2,2>(uStack_a) = 0;
+  STField<undefined4>(this,0xa7) = 0;
   iVar1 = thunk_FUN_00675950(param_1,param_2,param_3,local_10,local_10 + 1,local_10 + 2,0);
   if (iVar1 != 0) {
-    if ((*(ushort *)((int)this + 0x7d) != 0xfffe) && (g_allPlayers_007FA174 != nullptr)
+    if ((STField<ushort>(this,0x7d) != 0xfffe) && (g_allPlayers_007FA174 != nullptr)
        ) {
       uStack_a = param_4;
-      this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x7d));
+      this_00 = thunk_FUN_0042b760(STField<char>(this,0x24),STField<ushort>(this,0x7d));
       if (this_00 != nullptr) {
         this_00->sub_00498D20(1,(short)local_10);
         return 0;

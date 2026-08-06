@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_004353b0(uint param_1,uint param_2,uint param_3)
 
@@ -15,8 +17,7 @@ void FUN_004353b0(uint param_1,uint param_2,uint param_3)
   {
     DArrayGetElement((DArrayTy *)g_packedRecords_A62x8[uVar2].field155_0x1bd,0,
                      (void *)((int)&param_1 + 2));
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    if (param_1._2_2_ == (ushort)param_2) {
+    if (STPiece<2,2>(param_1) == (ushort)param_2) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       pSVar1 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_2,CASE_1);
       pSVar1->vfunc_E8(0);

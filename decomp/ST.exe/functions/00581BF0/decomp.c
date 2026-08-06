@@ -236,7 +236,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
     puVar13 = (byte *)(puVar14);
     puVar15 = (byte *)&pSVar7->field_0x1d9;
     memmove(puVar15, puVar13, 0x2e); /* compiler REP MOVS byte copy */
-    *(undefined4 *)&pSVar7->field_0x1d5 = *(undefined4 *)((int)puVar14 + 0x2e);
+    *(undefined4 *)&pSVar7->field_0x1d5 = STField<undefined4>(puVar14,0x2e);
     *(undefined4 *)&pSVar7->field_0x20f = 0;
     pvVar9 = Library::DKW::LIB::MemAlloc(*(int *)&pSVar7->field_0x1fd << 2);
     *(void **)&pSVar7->field_0x207 = pvVar9;

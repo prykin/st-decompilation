@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 LONG FUN_00747948(int *param_1)
 

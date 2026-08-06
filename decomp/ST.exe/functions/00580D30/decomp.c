@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STResourceC.
    Evidence: this_call_owners=[STResourceC]; agreed_this_calls=1; incoming_this_accesses=2;

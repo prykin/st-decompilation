@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 7.
    Evidence: 00708650 -> 007297E0 @ 00708888; unproven partial register write at 00708865 | 007297E0
@@ -53,8 +55,7 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
   pbVar8 = param_2;
   local_60 = 1;
   local_58 = 1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar3 = *(int *)((int)this + 0x24) * (int)param_2 + *(int *)((int)this + 0x20);
+  iVar3 = STField<int>(this,0x24) * (int)param_2 + STField<int>(this,0x20);
   local_8 = 0x80000000;
   local_2c = (param_6 + -1 + param_8 * 2) / 2;
   param_3[1] = param_3[1] + 0x8000 & 0xffff0000;
@@ -119,7 +120,7 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
       if (local_14 < 1) {
         return 0;
       }
-      puVar6 = *(uint **)((int)this + 0x28);
+      puVar6 = STField<uint *>(this,0x28);
       local_1c = param_2;
     }
     else {
@@ -143,7 +144,7 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
         return 0;
       }
       local_1c = (byte *)-(int)param_2;
-      puVar6 = (uint *)-*(int *)((int)this + 0x28);
+      puVar6 = (uint *)-STField<int>(this,0x28);
     }
     local_10 = (int)local_4c >> 0x10;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -168,15 +169,15 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
           local_6c = *param_5;
           FUN_0072aa60(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
-                       (*(int *)((int)this + 0x14) +
-                       (*(int *)((int)this + 0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x14) +
+                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
                        ,param_3);
         }
         else {
           FUN_0072ab80(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
-                       (*(int *)((int)this + 0x14) +
-                       (*(int *)((int)this + 0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x14) +
+                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
                        ,param_3);
         }
         iVar11 = iVar11 + 1;
@@ -203,15 +204,15 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
           local_6c = *param_5;
           FUN_0072a8a0(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
-                       (*(int *)((int)this + 0x14) +
-                       (*(int *)((int)this + 0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x14) +
+                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
                        ,param_7);
         }
         else {
           FUN_0072a9d0(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
-                       (*(int *)((int)this + 0x14) +
-                       (*(int *)((int)this + 0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x14) +
+                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
                        ,param_7);
         }
         iVar11 = iVar11 + 1;
@@ -240,15 +241,15 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
           local_6c = *param_5;
           FUN_0072aa60(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
-                       (*(int *)((int)this + 0x14) +
-                       (*(int *)((int)this + 0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x14) +
+                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
                        ,param_3);
         }
         else {
           FUN_0072ab80(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
-                       (*(int *)((int)this + 0x14) +
-                       (*(int *)((int)this + 0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x14) +
+                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
                        ,param_3);
         }
         iVar11 = iVar11 + 1;
@@ -305,20 +306,18 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
               local_68 = param_5[3];
               local_70 = local_20;
               local_6c = param_5[1];
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a6f0(local_24,(int)param_2,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)local_20 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           *(int *)((int)this + 0x28),&local_74,param_3);
+                           (STField<int>(this,0x14) +
+                           ((int)local_20 * STField<int>(this,0x28) + iVar5) * 2),
+                           STField<int>(this,0x28),&local_74,param_3);
             }
             else {
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a810(local_24,(int)param_2,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)local_20 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           *(int *)((int)this + 0x28),&local_74,param_3);
+                           (STField<int>(this,0x14) +
+                           ((int)local_20 * STField<int>(this,0x28) + iVar5) * 2),
+                           STField<int>(this,0x28),&local_74,param_3);
             }
             local_24 = local_24 + (int)param_2;
             local_20 = local_20 + 1;
@@ -349,20 +348,18 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
               local_68 = param_5[3];
               local_70 = local_24;
               local_6c = param_5[1];
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a550(param_3,(int)pbVar8,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)local_24 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           *(int *)((int)this + 0x28),&local_74,param_7);
+                           (STField<int>(this,0x14) +
+                           ((int)local_24 * STField<int>(this,0x28) + iVar5) * 2),
+                           STField<int>(this,0x28),&local_74,param_7);
             }
             else {
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a660(param_3,(int)pbVar8,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)local_24 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           *(int *)((int)this + 0x28),&local_74,param_7);
+                           (STField<int>(this,0x14) +
+                           ((int)local_24 * STField<int>(this,0x28) + iVar5) * 2),
+                           STField<int>(this,0x28),&local_74,param_7);
             }
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_3 = (uint *)((int)param_3 + (int)pbVar8);
@@ -393,16 +390,16 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
               local_6c = param_5[1];
               FUN_0072a6f0(param_1,(int)pbVar8,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)pbVar10 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           *(int *)((int)this + 0x28),&local_74,param_3);
+                           (STField<int>(this,0x14) +
+                           ((int)pbVar10 * STField<int>(this,0x28) + iVar5) * 2),
+                           STField<int>(this,0x28),&local_74,param_3);
             }
             else {
               FUN_0072a810(param_1,(int)pbVar8,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)pbVar10 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           *(int *)((int)this + 0x28),&local_74,param_3);
+                           (STField<int>(this,0x14) +
+                           ((int)pbVar10 * STField<int>(this,0x28) + iVar5) * 2),
+                           STField<int>(this,0x28),&local_74,param_3);
             }
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = param_1 + (int)pbVar8;
@@ -431,23 +428,21 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
             local_64 = local_10;
             local_5c = local_34;
             if (((int)local_20 < param_5[3]) && (param_5[1] <= (int)(local_20 + iVar11))) {
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a810(local_24,-(int)param_2,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)local_20 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           -*(int *)((int)this + 0x28),&local_74,param_3);
+                           (STField<int>(this,0x14) +
+                           ((int)local_20 * STField<int>(this,0x28) + iVar5) * 2),
+                           -STField<int>(this,0x28),&local_74,param_3);
             }
             else {
               local_70 = local_28;
               local_6c = 1 - param_5[3];
               local_68 = 1 - param_5[1];
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a6f0(local_24,-(int)param_2,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)local_20 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           -*(int *)((int)this + 0x28),&local_74,param_3);
+                           (STField<int>(this,0x14) +
+                           ((int)local_20 * STField<int>(this,0x28) + iVar5) * 2),
+                           -STField<int>(this,0x28),&local_74,param_3);
             }
             local_28 = local_28 + -1;
             local_24 = local_24 + (int)param_2;
@@ -477,23 +472,21 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
             local_64 = local_10;
             local_5c = local_34;
             if (((int)local_24 < param_5[3]) && (param_5[1] <= (int)(local_24 + iVar11))) {
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a660(param_3,-(int)pbVar8,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)local_24 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           -*(int *)((int)this + 0x28),&local_74,param_7);
+                           (STField<int>(this,0x14) +
+                           ((int)local_24 * STField<int>(this,0x28) + iVar5) * 2),
+                           -STField<int>(this,0x28),&local_74,param_7);
             }
             else {
               local_70 = local_28;
               local_6c = 1 - param_5[3];
               local_68 = 1 - param_5[1];
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_0072a550(param_3,-(int)pbVar8,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)local_24 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           -*(int *)((int)this + 0x28),&local_74,param_7);
+                           (STField<int>(this,0x14) +
+                           ((int)local_24 * STField<int>(this,0x28) + iVar5) * 2),
+                           -STField<int>(this,0x28),&local_74,param_7);
             }
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_3 = (uint *)((int)param_3 + (int)pbVar8);
@@ -524,9 +517,9 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
             if (((int)pbVar10 < param_5[3]) && (param_5[1] <= (int)(pbVar10 + iVar3))) {
               FUN_0072a810(param_1,-(int)pbVar8,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)pbVar10 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           -*(int *)((int)this + 0x28),&local_74,param_3);
+                           (STField<int>(this,0x14) +
+                           ((int)pbVar10 * STField<int>(this,0x28) + iVar5) * 2),
+                           -STField<int>(this,0x28),&local_74,param_3);
             }
             else {
               local_70 = param_2;
@@ -534,9 +527,9 @@ FUN_007297e0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param_4,
               local_68 = 1 - param_5[1];
               FUN_0072a6f0(param_1,-(int)pbVar8,
                            (ushort *)
-                           (*(int *)((int)this + 0x14) +
-                           ((int)pbVar10 * *(int *)((int)this + 0x28) + iVar5) * 2),
-                           -*(int *)((int)this + 0x28),&local_74,param_3);
+                           (STField<int>(this,0x14) +
+                           ((int)pbVar10 * STField<int>(this,0x28) + iVar5) * 2),
+                           -STField<int>(this,0x28),&local_74,param_3);
             }
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 + -1;

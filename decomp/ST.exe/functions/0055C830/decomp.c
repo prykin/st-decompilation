@@ -32,11 +32,11 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
   undefined4 local_b;
 
   pbVar8 = param_4;
-  if (*(char *)((int)this + 8) != '\0') {
+  if (STField<char>(this,8) != '\0') {
     switch(param_1) {
     case CASE_1:
     case CASE_2:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
+      if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         Library::MSVCRT::FUN_0072ee80(param_5,(byte *)"%4s%d%d%d%d");
@@ -61,7 +61,7 @@ LAB_0055cf74:
       }
       break;
     case CASE_3:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
+      if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         FSGSTy::DelPlayer(g_fSGS_0081174C,local_34);
@@ -103,7 +103,7 @@ LAB_0055cf74:
       param_2 = Library::DKW::LIB::MemAlloc(~uVar6 + ~uVar7 + 4);
       if (param_2 != nullptr) {
         wsprintfA((LPSTR)param_2,"%s %s",pcVar3,param_4);
-        if (*(char *)((int)this + 9) != '\0') {
+        if (STField<char>(this,9) != '\0') {
           thunk_FUN_0055bdd0((char *)param_2,param_5);
           FreeAndNull(&param_2);
           return;
@@ -155,11 +155,11 @@ LAB_0055c9c0:
 LAB_0055c9c5:
       if (iVar5 != 0) {
         Library::MSVCRT::_strncpy((char *)((int)this + 0x2c),(char *)param_4,0x10);
-        *(undefined1 *)((int)this + 0x3b) = 0;
-        *(char *)((int)this + 0x2b) = (*(char *)((int)this + 0x2b) == '\a') + '\a';
+        STField<undefined1>(this,0x3b) = 0;
+        STField<char>(this,0x2b) = (STField<char>(this,0x2b) == '\a') + '\a';
       }
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
-        FSGSTy::AddMessage(g_fSGS_0081174C,*(byte *)((int)this + 0x2b),param_4,param_5,5);
+      if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
+        FSGSTy::AddMessage(g_fSGS_0081174C,STField<byte>(this,0x2b),param_4,param_5,5);
         return;
       }
       break;
@@ -186,7 +186,7 @@ LAB_0055c9c5:
       if (param_2 != nullptr) {
         pcVar4 = LoadResourceString(0x2576,g_module_00807618);
         wsprintfA((LPSTR)param_2,"%s %s",pcVar4,pbVar8);
-        if (*(char *)((int)this + 9) != '\0') {
+        if (STField<char>(this,9) != '\0') {
           thunk_FUN_0055bdd0((char *)param_2,param_5);
           FreeAndNull(&param_2);
           return;
@@ -217,14 +217,14 @@ LAB_0055c9c5:
       }
       break;
     case CASE_7:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
+      if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         FSGSTy::AddMessage(g_fSGS_0081174C,1,&DAT_008016a0,param_5,5);
         FSGSTy::JoinChannel(g_fSGS_0081174C);
         return;
       }
       break;
     case CASE_9:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
+      if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         local_f = param_2;
@@ -236,13 +236,13 @@ LAB_0055c9c5:
     case CASE_D:
     case CASE_F:
       if (g_fSGS_0081174C != nullptr) {
-        *(undefined4 *)((int)this + 0x1b) = 0x6156;
-        *(Global_sub_0055C830_param_1Enum *)((int)this + 0x1f) = param_1;
+        STField<undefined4>(this,0x1b) = 0x6156;
+        STField<Global_sub_0055C830_param_1Enum>(this,0x1f) = param_1;
         g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
       }
       break;
     case CASE_10:
-      if (*(char *)((int)this + 9) != '\0') {
+      if (STField<char>(this,9) != '\0') {
         thunk_FUN_0055bdd0((char *)param_4,param_5);
         return;
       }
@@ -269,7 +269,7 @@ LAB_0055c9c5:
       }
       break;
     case CASE_12:
-      if (*(char *)((int)this + 9) != '\0') {
+      if (STField<char>(this,9) != '\0') {
         thunk_FUN_0055bdd0((char *)param_4,param_5);
         return;
       }
@@ -296,7 +296,7 @@ LAB_0055c9c5:
       }
       break;
     case CASE_13:
-      if (*(char *)((int)this + 9) != '\0') {
+      if (STField<char>(this,9) != '\0') {
         thunk_FUN_0055bdd0(nullptr,param_5);
         return;
       }
@@ -335,13 +335,13 @@ LAB_0055c9c5:
       }
       break;
     case CASE_17:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
+      if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         FSGSTy::AddMessage(g_fSGS_0081174C,7,param_4,param_5,5);
         return;
       }
       break;
     case CASE_FF:
-      if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != nullptr)) {
+      if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         FSGSTy::AddMessage(g_fSGS_0081174C,4,param_4,param_5,5);
         return;
       }

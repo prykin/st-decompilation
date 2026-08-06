@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
@@ -7,7 +9,7 @@
 void __thiscall FUN_0041d900(void *this,short param_1,short param_2,short param_3)
 
 {
-  if (*(int *)((int)this + 0x2c) == 0) {
+  if (STField<int>(this,0x2c) == 0) {
     STT3DSprC::sub_004AD3C0
               ((STT3DSprC *)((int)this + 0x1d5),(float)(int)param_1 * _DAT_007904f8 + _DAT_007904f4,
                (float)(int)param_2 * _DAT_007904f8 + _DAT_007904f4,

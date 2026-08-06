@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
 
@@ -48,7 +50,7 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
                (iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x40)) ||
               ((iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x49 ||
                (iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x5c)))) &&
-             (((*(int *)((int)param_1 + 0x361) == 1 && (iVar2 = param_1[0x134], iVar2 != 0)) &&
+             (((STField<int>(param_1,0x361) == 1 && (iVar2 = param_1[0x134], iVar2 != 0)) &&
               (iVar2 != 1)))))) && (iVar2 != 2)) {
           iVar4 = iVar4 + 1;
         }

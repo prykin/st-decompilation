@@ -64,8 +64,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
     RaiseInternalException(iVar7,0,"E:\\__titans\\Andrey\\helppan.cpp",0x26d);
     return;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(char *)((int)local_14 + 0x12) == '\0') {
+  if (STField<char>(local_14,0x12) == '\0') {
     uVar9 = 0;
     memset(local_d0, 0, 0x50); /* compiler bulk-zero initialization */
     local_10 = local_10 & 0xffffff00;
@@ -115,8 +114,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
           local_34 = puVar15[2];
           local_30 = puVar15[3];
           local_2c = *(undefined1 *)(puVar15 + 4);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_2b = *(char *)((int)local_14 + 0x11) + '\x01';
+          local_2b = STField<char>(local_14,0x11) + '\x01';
           local_2a = 0;
           local_29 = 0;
           Library::DKW::TBL::FUN_006b11d0((uint *)this_00->field_01B3,uVar9 & 0xffff,&local_3c);
@@ -169,13 +167,13 @@ LAB_00513233:
     uVar13 = array->count;
     while (((uVar9 < uVar13 &&
             (pvVar8 = DArrayAt<void>(array, uVar9), pvVar8 != nullptr
-            )) && (*(byte *)((int)piVar12 + 0x11) < *(byte *)((int)pvVar8 + 0x11)))) {
+            )) && (STField<byte>(piVar12,0x11) < STField<byte>(pvVar8,0x11)))) {
       DArrayRemoveAt(array,uVar9);
       array = (DArrayTy *)this_00->field_01B3;
       uVar13 = array->count;
     }
   }
-  *(bool *)((int)piVar12 + 0x12) = *(char *)((int)piVar12 + 0x12) == '\0';
+  STField<bool>(piVar12,0x12) = STField<char>(piVar12,0x12) == '\0';
   if ((this_00->field_019C != 0) && (this_00->field_01A1 == 0)) {
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,

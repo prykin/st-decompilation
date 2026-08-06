@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall
 FUN_0069bc10(void *this,int param_1,int *param_2,int param_3,int param_4,int *param_5,int *param_6)
@@ -43,7 +45,7 @@ FUN_0069bc10(void *this,int param_1,int *param_2,int param_3,int param_4,int *pa
           local_14 = local_14 + -1;
         } while (local_14 != 0);
       }
-      iVar3 = FUN_006acf90(iVar5,iVar3,**(int **)((int)this + 8),(*(int **)((int)this + 8))[1]);
+      iVar3 = FUN_006acf90(iVar5,iVar3,*STField<int *>(this,8),(STField<int *>(this,8))[1]);
       local_10 = local_10 + iVar3;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + 1;

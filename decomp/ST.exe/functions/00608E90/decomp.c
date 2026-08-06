@@ -26,7 +26,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
       if (local_c == nullptr) {
         return 0;
       }
-      STPlaySystemC::SaveObjData(g_playSystem_00802A38,*(int **)((int)this + 0x18),local_c,local_8);
+      STPlaySystemC::SaveObjData(g_playSystem_00802A38,STField<int *>(this,0x18),local_c,local_8);
       FreeAndNull(&local_c);
       return 0;
     }
@@ -37,8 +37,8 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
     return 0;
   }
   if (uVar3 == 3) {
-    if (*(int *)((int)this + 0x1f5) == 0x4d) {
-      iVar2 = *(int *)((int)this + 0x1f9);
+    if (STField<int>(this,0x1f5) == 0x4d) {
+      iVar2 = STField<int>(this,0x1f9);
       sVar1 = (short)(iVar2 >> 0x1f);
       if (iVar2 < 0) {
         iVar2 = (short)(((short)(iVar2 / 0xc9) + sVar1) -
@@ -48,7 +48,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
         iVar2 = (int)(short)(((short)(iVar2 / 0xc9) + sVar1) -
                             (short)((longlong)iVar2 * 0x28c1979 >> 0x3f));
       }
-      iVar6 = *(int *)((int)this + 0x1ed);
+      iVar6 = STField<int>(this,0x1ed);
       sVar1 = (short)(iVar6 >> 0x1f);
       if (iVar6 < 0) {
         iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar1) -
@@ -58,7 +58,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
         iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar1) -
                             (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
       }
-      iVar5 = *(int *)((int)this + 0x1e9);
+      iVar5 = STField<int>(this,0x1e9);
       sVar1 = (short)(iVar5 >> 0x1f);
       if (iVar5 < 0) {
         iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar1) -
@@ -68,46 +68,46 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
         iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar1) -
                             (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
       }
-      thunk_FUN_00496e40(iVar5,iVar6,iVar2,*(int *)((int)this + 0x18));
+      thunk_FUN_00496e40(iVar5,iVar6,iVar2,STField<int>(this,0x18));
     }
-    if (*(int *)((int)this + 0x23c) != 0) {
+    if (STField<int>(this,0x23c) != 0) {
       thunk_FUN_0060d300((int)this);
     }
     thunk_FUN_0060a9d0(this);
     return 0;
   }
   if (uVar3 == 0) {
-    if ((*(int *)((int)this + 0x221) == 0) &&
-       (thunk_FUN_0060c2d0(this), *(int *)((int)this + 0x221) == 0)) {
+    if ((STField<int>(this,0x221) == 0) &&
+       (thunk_FUN_0060c2d0(this), STField<int>(this,0x221) == 0)) {
       thunk_FUN_006099a0(this);
       return 0;
     }
-    if (*(int *)((int)this + 0x248) == 1) {
-      if (*(uint *)((int)this + 0x250) <= g_playSystem_00802A38->field_00E4) {
-        if ((*(int *)((int)this + 0x20d) == 5) && (iVar2 = thunk_FUN_0060cef0(this), iVar2 == 0)) {
+    if (STField<int>(this,0x248) == 1) {
+      if (STField<uint>(this,0x250) <= g_playSystem_00802A38->field_00E4) {
+        if ((STField<int>(this,0x20d) == 5) && (iVar2 = thunk_FUN_0060cef0(this), iVar2 == 0)) {
           thunk_FUN_006099a0(this);
         }
-        *(undefined1 *)((int)this + 0x22f) = 0;
-        *(undefined4 *)((int)this + 0x248) = 2;
+        STField<undefined1>(this,0x22f) = 0;
+        STField<undefined4>(this,0x248) = 2;
       }
     }
-    else if (*(int *)((int)this + 0x248) == 2) {
-      switch(*(undefined4 *)((int)this + 0x20d)) {
+    else if (STField<int>(this,0x248) == 2) {
+      switch(STField<undefined4>(this,0x20d)) {
       case 0:
       case 1:
       case 2:
       case 3:
       case 4:
         thunk_FUN_0060aa00(this);
-        if ((*(int *)((int)this + 0x1f5) == 0x4d) && ((*(byte *)((int)this + 0x254) & 0x1f) == 0)) {
-          if (*(int *)((int)this + 0x209) == 0) {
+        if ((STField<int>(this,0x1f5) == 0x4d) && ((STField<byte>(this,0x254) & 0x1f) == 0)) {
+          if (STField<int>(this,0x209) == 0) {
             thunk_FUN_0060bcb0(this,0);
           }
           else {
             thunk_FUN_0060c320(this);
           }
         }
-        if ((*(int *)((int)this + 0x1f5) == 0x4c) && ((*(byte *)((int)this + 0x254) & 0x3f) == 0)) {
+        if ((STField<int>(this,0x1f5) == 0x4c) && ((STField<byte>(this,0x254) & 0x3f) == 0)) {
           thunk_FUN_0060aef0(this);
         }
         break;
@@ -116,8 +116,8 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
         if ((0 < iVar2) && (iVar2 == 2)) {
           thunk_FUN_0060d220((int)this);
           uVar3 = g_playSystem_00802A38->field_00E4;
-          *(undefined4 *)((int)this + 0x248) = 1;
-          *(uint *)((int)this + 0x250) = uVar3 + 200;
+          STField<undefined4>(this,0x248) = 1;
+          STField<uint>(this,0x250) = uVar3 + 200;
         }
         break;
       case 6:
@@ -127,23 +127,23 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
           thunk_FUN_006099a0(this);
         }
       }
-      if (*(char *)((int)this + 0x22e) != '\0') {
-        if (*(char *)((int)this + 0x225) != '\0') {
+      if (STField<char>(this,0x22e) != '\0') {
+        if (STField<char>(this,0x225) != '\0') {
           uVar4 = thunk_FUN_0060a4b0(this);
-          *(char *)((int)this + 0x225) = (char)uVar4;
-          *(int *)((int)this + 0x254) = *(int *)((int)this + 0x254) + 1;
+          STField<char>(this,0x225) = (char)uVar4;
+          STField<int>(this,0x254) = STField<int>(this,0x254) + 1;
           return 0;
         }
         iVar2 = thunk_FUN_0060dd70(this);
-        *(char *)((int)this + 0x225) = (char)iVar2;
+        STField<char>(this,0x225) = (char)iVar2;
         if ((char)iVar2 != '\0') {
           thunk_FUN_0060a430(this,0);
-          *(int *)((int)this + 0x254) = *(int *)((int)this + 0x254) + 1;
+          STField<int>(this,0x254) = STField<int>(this,0x254) + 1;
           return 0;
         }
       }
     }
-    *(int *)((int)this + 0x254) = *(int *)((int)this + 0x254) + 1;
+    STField<int>(this,0x254) = STField<int>(this,0x254) + 1;
     return 0;
   }
   if (uVar3 != 2) {
@@ -152,67 +152,67 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   puVar7 = (byte *)(param_1->field_0014);
   puVar8 = (byte *)((int)this + 0x1d5);
   memmove(puVar8, puVar7, 0x50); /* compiler REP MOVS byte copy */
-  if (*(int *)((int)this + 0x1e1) == 2) {
+  if (STField<int>(this,0x1e1) == 2) {
     STFieldC::thunk_FUN_0060c1a0(this,param_1->field_0014);
     return 0;
   }
-  iVar2 = *(int *)((int)this + 0x1f9) / 0xc9;
-  *(int *)((int)this + 0x24c) = iVar2;
-  switch(*(undefined4 *)((int)this + 0x1f5)) {
+  iVar2 = STField<int>(this,0x1f9) / 0xc9;
+  STField<int>(this,0x24c) = iVar2;
+  switch(STField<undefined4>(this,0x1f5)) {
   case 0x3d:
-    *(undefined4 *)((int)this + 0x20d) = 3;
-    *(undefined4 *)((int)this + 0x219) = 0x19;
-    *(undefined4 *)((int)this + 0x211) = 0;
-    *(undefined4 *)((int)this + 0x215) = 1;
-    *(undefined1 *)((int)this + 0x225) = 0;
+    STField<undefined4>(this,0x20d) = 3;
+    STField<undefined4>(this,0x219) = 0x19;
+    STField<undefined4>(this,0x211) = 0;
+    STField<undefined4>(this,0x215) = 1;
+    STField<undefined1>(this,0x225) = 0;
     break;
   case 0x41:
-    *(undefined4 *)((int)this + 0x20d) = 3;
-    *(undefined4 *)((int)this + 0x219) = 0x19;
-    *(undefined4 *)((int)this + 0x211) = 0;
-    *(undefined4 *)((int)this + 0x215) = 1;
-    *(undefined1 *)((int)this + 0x225) = 0;
-    *(undefined1 *)((int)this + 0x22e) = 0;
+    STField<undefined4>(this,0x20d) = 3;
+    STField<undefined4>(this,0x219) = 0x19;
+    STField<undefined4>(this,0x211) = 0;
+    STField<undefined4>(this,0x215) = 1;
+    STField<undefined1>(this,0x225) = 0;
+    STField<undefined1>(this,0x22e) = 0;
     break;
   case 0x42:
-    *(undefined4 *)((int)this + 0x20d) = 0;
-    *(undefined4 *)((int)this + 0x219) = 0x19;
-    *(undefined4 *)((int)this + 0x211) = 2;
-    *(undefined4 *)((int)this + 0x215) = 1;
+    STField<undefined4>(this,0x20d) = 0;
+    STField<undefined4>(this,0x219) = 0x19;
+    STField<undefined4>(this,0x211) = 2;
+    STField<undefined4>(this,0x215) = 1;
     goto LAB_006091f5;
   case 0x43:
-    *(undefined4 *)((int)this + 0x20d) = 0;
-    *(undefined4 *)((int)this + 0x211) = 1;
-    *(undefined4 *)((int)this + 0x215) = 1;
-    *(undefined4 *)((int)this + 0x219) = 0x19;
-    *(int *)((int)this + 0x1e9) = *(int *)((int)this + 0x1e9) + 100;
-    *(int *)((int)this + 0x1ed) = *(int *)((int)this + 0x1ed) + 100;
+    STField<undefined4>(this,0x20d) = 0;
+    STField<undefined4>(this,0x211) = 1;
+    STField<undefined4>(this,0x215) = 1;
+    STField<undefined4>(this,0x219) = 0x19;
+    STField<int>(this,0x1e9) = STField<int>(this,0x1e9) + 100;
+    STField<int>(this,0x1ed) = STField<int>(this,0x1ed) + 100;
     goto LAB_006091f5;
   case 0x4c:
-    *(undefined4 *)((int)this + 0x20d) = 3;
-    *(undefined4 *)((int)this + 0x219) = 0x4b;
-    *(undefined4 *)((int)this + 0x211) = 0;
-    *(undefined4 *)((int)this + 0x215) = 1;
-    *(undefined1 *)((int)this + 0x225) = 0;
+    STField<undefined4>(this,0x20d) = 3;
+    STField<undefined4>(this,0x219) = 0x4b;
+    STField<undefined4>(this,0x211) = 0;
+    STField<undefined4>(this,0x215) = 1;
+    STField<undefined1>(this,0x225) = 0;
     goto LAB_00609202;
   case 0x4d:
-    *(undefined4 *)((int)this + 0x20d) = 3;
-    *(undefined4 *)((int)this + 0x21d) = 2;
-    *(undefined4 *)((int)this + 0x219) = 0x6e;
-    *(undefined4 *)((int)this + 0x211) = 7;
-    *(undefined4 *)((int)this + 0x215) = 6;
-    *(undefined1 *)((int)this + 0x22e) = 1;
-    *(undefined1 *)((int)this + 0x225) = 0;
-    if (*(int *)((int)this + 0x209) == 0) {
+    STField<undefined4>(this,0x20d) = 3;
+    STField<undefined4>(this,0x21d) = 2;
+    STField<undefined4>(this,0x219) = 0x6e;
+    STField<undefined4>(this,0x211) = 7;
+    STField<undefined4>(this,0x215) = 6;
+    STField<undefined1>(this,0x22e) = 1;
+    STField<undefined1>(this,0x225) = 0;
+    if (STField<int>(this,0x209) == 0) {
 LAB_00609164:
       thunk_FUN_006099a0(this);
     }
     else {
       iVar2 = (int)(short)iVar2;
-      if (*(int *)((int)this + 0x1f9) < 0) {
+      if (STField<int>(this,0x1f9) < 0) {
         iVar2 = iVar2 + -1;
       }
-      iVar6 = *(int *)((int)this + 0x1ed);
+      iVar6 = STField<int>(this,0x1ed);
       sVar1 = (short)(iVar6 >> 0x1f);
       if (iVar6 < 0) {
         iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar1) -
@@ -222,7 +222,7 @@ LAB_00609164:
         iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar1) -
                             (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
       }
-      iVar5 = *(int *)((int)this + 0x1e9);
+      iVar5 = STField<int>(this,0x1e9);
       sVar1 = (short)(iVar5 >> 0x1f);
       if (iVar5 < 0) {
         iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar1) -
@@ -232,54 +232,54 @@ LAB_00609164:
         iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar1) -
                             (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
       }
-      thunk_FUN_00496cc0(iVar5,iVar6,*(uint *)((int)this + 0x1d9),iVar2,*(uint *)((int)this + 0x18),
+      thunk_FUN_00496cc0(iVar5,iVar6,STField<uint>(this,0x1d9),iVar2,STField<uint>(this,0x18),
                          this);
-      if (*(int *)((int)this + 0x209) != 0) {
-        if ((*(int *)((int)this + 0x221) == 0) &&
-           (thunk_FUN_0060c2d0(this), *(int *)((int)this + 0x221) == 0)) goto LAB_00609164;
+      if (STField<int>(this,0x209) != 0) {
+        if ((STField<int>(this,0x221) == 0) &&
+           (thunk_FUN_0060c2d0(this), STField<int>(this,0x221) == 0)) goto LAB_00609164;
         thunk_FUN_0060c320(this);
       }
     }
     break;
   case 0x58:
-    *(undefined4 *)((int)this + 0x20d) = 6;
-    *(undefined4 *)((int)this + 0x219) = 100;
-    *(undefined4 *)((int)this + 0x211) = 4;
-    *(undefined4 *)((int)this + 0x215) = 0;
+    STField<undefined4>(this,0x20d) = 6;
+    STField<undefined4>(this,0x219) = 100;
+    STField<undefined4>(this,0x211) = 4;
+    STField<undefined4>(this,0x215) = 0;
     goto LAB_006091f5;
   case 0x65:
-    *(undefined4 *)((int)this + 0x20d) = 5;
-    *(undefined4 *)((int)this + 0x219) = 1;
-    *(undefined4 *)((int)this + 0x211) = 2;
-    *(undefined4 *)((int)this + 0x215) = 1;
+    STField<undefined4>(this,0x20d) = 5;
+    STField<undefined4>(this,0x219) = 1;
+    STField<undefined4>(this,0x211) = 2;
+    STField<undefined4>(this,0x215) = 1;
 LAB_006091f5:
     iVar2 = thunk_FUN_0060dd70(this);
-    *(char *)((int)this + 0x225) = (char)iVar2;
+    STField<char>(this,0x225) = (char)iVar2;
 LAB_00609202:
-    *(undefined1 *)((int)this + 0x22e) = 1;
+    STField<undefined1>(this,0x22e) = 1;
     break;
   case 0x73:
-    *(undefined4 *)((int)this + 0x20d) = 3;
-    *(int *)((int)this + 0x1e9) = *(int *)((int)this + 0x1e9) + 100;
-    *(int *)((int)this + 0x1ed) = *(int *)((int)this + 0x1ed) + 100;
-    *(undefined4 *)((int)this + 0x219) = 0x24;
-    *(undefined4 *)((int)this + 0x211) = 4;
-    *(undefined4 *)((int)this + 0x215) = 1;
-    *(undefined1 *)((int)this + 0x225) = 0;
+    STField<undefined4>(this,0x20d) = 3;
+    STField<int>(this,0x1e9) = STField<int>(this,0x1e9) + 100;
+    STField<int>(this,0x1ed) = STField<int>(this,0x1ed) + 100;
+    STField<undefined4>(this,0x219) = 0x24;
+    STField<undefined4>(this,0x211) = 4;
+    STField<undefined4>(this,0x215) = 1;
+    STField<undefined1>(this,0x225) = 0;
     goto LAB_00609202;
   }
-  switch(*(undefined4 *)((int)this + 0x20d)) {
+  switch(STField<undefined4>(this,0x20d)) {
   case 2:
-    *(int *)((int)this + 0x219) = *(int *)((int)this + 0x219) << 1;
+    STField<int>(this,0x219) = STField<int>(this,0x219) << 1;
     break;
   case 4:
-    iVar2 = *(int *)((int)this + 0x219);
+    iVar2 = STField<int>(this,0x219);
     if (iVar2 != 0) {
-      *(float *)((int)this + 0x22a) =
-           (float)((*(int *)((int)this + 0x1f9) - *(int *)((int)this + 0x1fd)) / iVar2);
+      STField<float>(this,0x22a) =
+           (float)((STField<int>(this,0x1f9) - STField<int>(this,0x1fd)) / iVar2);
     }
-    *(undefined1 *)((int)this + 0x22e) = 1;
-    *(int *)((int)this + 0x219) = iVar2 * 2;
+    STField<undefined1>(this,0x22e) = 1;
+    STField<int>(this,0x219) = iVar2 * 2;
     break;
   case 5:
     iVar2 = thunk_FUN_0060cb60(this,6);
@@ -298,25 +298,25 @@ joined_r0x0060929e:
 LAB_006092a0:
     thunk_FUN_006099a0(this);
   }
-  uVar3 = STFieldC::CreateField(this,*(uint *)((int)this + 0x219));
+  uVar3 = STFieldC::CreateField(this,STField<uint>(this,0x219));
   if ((int)uVar3 < 1) {
     return 0xffff;
   }
-  switch(*(undefined4 *)((int)this + 0x20d)) {
+  switch(STField<undefined4>(this,0x20d)) {
   case 0:
   case 1:
   case 2:
   case 3:
   case 4:
     thunk_FUN_0060a000(this);
-    if (*(int *)((int)this + 0x1f5) == 0x4d) {
-      *(undefined4 *)((int)this + 0x248) = 2;
+    if (STField<int>(this,0x1f5) == 0x4d) {
+      STField<undefined4>(this,0x248) = 2;
       goto switchD_006092d2_default;
     }
     break;
   case 5:
     thunk_FUN_0060a000(this);
-    *(undefined4 *)((int)this + 0x248) = 2;
+    STField<undefined4>(this,0x248) = 2;
     goto switchD_006092d2_default;
   case 6:
     iVar2 = thunk_FUN_0060d940(this);
@@ -328,9 +328,9 @@ LAB_006092a0:
   default:
     goto switchD_006092d2_default;
   }
-  *(undefined4 *)((int)this + 0x248) = 1;
+  STField<undefined4>(this,0x248) = 1;
 switchD_006092d2_default:
-  if (*(char *)((int)this + 0x225) == '\0') {
+  if (STField<char>(this,0x225) == '\0') {
     return 0;
   }
   STFieldC::sub_00609CD0(this);

@@ -44,10 +44,10 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
     return 0;
   }
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
-  local_11 = *(undefined1 *)((int)this + 0x2b);
-  *(undefined1 *)((int)this + 0x2b) = 0;
+  local_11 = STField<undefined1>(this,0x2b);
+  STField<undefined1>(this,0x2b) = 0;
   UVar5 = GetDriveTypeA((LPCSTR)pBVar1);
-  *(undefined1 *)((int)this + 0x2b) = local_11;
+  STField<undefined1>(this,0x2b) = local_11;
   if (UVar5 != 3) {
     RegCloseKey(local_8);
     return 0;
@@ -199,7 +199,7 @@ LAB_005722ed:
         if (iVar8 != 0) {
           local_18 = 0;
           local_14 = 0;
-          _local_1c = STReplaceLowByte((uint32_t)(DAT_007ca690), (uint8_t)(*(undefined1 *)((int)this + 0x640)));
+          _local_1c = STReplaceLowByte((uint32_t)(DAT_007ca690), (uint8_t)(STField<undefined1>(this,0x640)));
           UVar5 = GetDriveTypeA(&local_1c);
           if (UVar5 == 5) {
             uVar6 = 0xffffffff;

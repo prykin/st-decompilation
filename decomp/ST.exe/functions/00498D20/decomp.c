@@ -367,7 +367,7 @@ STGroupBoatC::sub_00498D20
       pdVar6 = pdVar6 + 1;
     }
     *(short *)pdVar6 = (short)data->flags;
-    *(undefined1 *)((int)pdVar6 + 2) = *(undefined1 *)((int)&data->flags + 2);
+    STField<undefined1>(pdVar6,2) = *(undefined1 *)((int)&data->flags + 2);
     return;
   case CASE_A:
     this->field_0065 = 1;

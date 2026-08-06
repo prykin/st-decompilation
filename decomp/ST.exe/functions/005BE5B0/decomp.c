@@ -198,8 +198,7 @@ LAB_005bf156:
                                  );
     if (local_c != nullptr) {
       local_11 = '\x01';
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      DAT_0080f33a._0_1_ = 0;
+      STPiece<0,1>(DAT_0080f33a) = 0;
       local_18 = (RecoveredSourceFamily_dibcopy *)((uint)local_18 & 0xffffff00);
       if (DAT_00808aaf != 0) {
         do {
@@ -349,8 +348,7 @@ LAB_005bf156:
     else {
       uVar12 = (uint)*(ushort *)(&DAT_0080c8b5 + (uint)(byte)this_00->field_0069 * 0x10);
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    PaintObjScore(this_00,uVar12,(uint)DAT_0080c943._2_2_,0x225,0xcb);
+    PaintObjScore(this_00,uVar12,(uint)STPiece<2,2>(DAT_0080c943),0x225,0xcb);
     bVar3 = this_00->field_0069;
     if ((char)local_10 == '\x03') {
       uVar7 = DAT_0080c8bb;

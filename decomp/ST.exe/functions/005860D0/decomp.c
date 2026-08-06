@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 005860D0 -> 00568DD0 @ 00586156
@@ -30,7 +32,7 @@ void __thiscall FUN_005860d0(void *this,int param_1,int param_2,int soundId)
     local_10.y = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
                              (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
   }
-  local_10.unknown = *(int *)((int)this + 0x18);
+  local_10.unknown = STField<int>(this,0x18);
   SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,soundId,&local_10,0);
   return;
 }

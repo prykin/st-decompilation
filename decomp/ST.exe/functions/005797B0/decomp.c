@@ -23,7 +23,7 @@ FUN_005797b0(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *para
 
   iVar3 = 0;
   iVar9 = 0;
-  sVar4 = *(short *)((int)this + 0x41);
+  sVar4 = STField<short>(this,0x41);
   if (sVar4 < 0) {
     sVar4 = ((sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f)) +
             -1;
@@ -31,8 +31,8 @@ FUN_005797b0(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *para
   else {
     sVar4 = (sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f);
   }
-  sVar5 = *(short *)((int)this + 0x43);
-  *(short *)((int)this + 0x47) = sVar4;
+  sVar5 = STField<short>(this,0x43);
+  STField<short>(this,0x47) = sVar4;
   if (sVar5 < 0) {
     sVar5 = ((sVar5 / 0xc9 + (sVar5 >> 0xf)) - (short)((longlong)(int)sVar5 * 0x28c1979 >> 0x3f)) +
             -1;
@@ -42,7 +42,7 @@ FUN_005797b0(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *para
   }
   iVar6 = (int)sVar4;
   local_c = iVar6 + -1;
-  *(short *)((int)this + 0x49) = sVar5;
+  STField<short>(this,0x49) = sVar5;
   if (local_c < 0) {
     local_c = 0;
   }
@@ -59,150 +59,150 @@ FUN_005797b0(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *para
   if ((int)g_worldGrid.sizeY <= iVar8 + 1) {
     local_14 = iVar8;
   }
-  switch(*(undefined2 *)((int)this + 0x6c)) {
+  switch(STField<undefined2>(this,0x6c)) {
   case 0:
     if (iVar6 < 0) {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     else {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     uVar1 = iVar3 * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar1;
+    STField<uint>(this,0x1c) = uVar1;
     iVar3 = (uVar1 >> 0x10) % ((local_18 - iVar6) + 1U) + iVar6;
-    local_8 = iVar3 - *(short *)((int)this + 0x47);
-    iVar9 = *(short *)((int)this + 0x49) + local_8;
-    local_8 = *(short *)((int)this + 0x49) - local_8;
+    local_8 = iVar3 - STField<short>(this,0x47);
+    iVar9 = STField<short>(this,0x49) + local_8;
+    local_8 = STField<short>(this,0x49) - local_8;
     if (local_8 < 0) goto LAB_00579a6c;
 LAB_005798e8:
-    uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
+    uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
     goto LAB_00579a7a;
   case 1:
     if (local_8 < 0) {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     else {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     uVar1 = iVar3 * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar1;
-    local_c = (int)*(short *)((int)this + 0x47);
+    STField<uint>(this,0x1c) = uVar1;
+    local_c = (int)STField<short>(this,0x47);
     iVar9 = (uVar1 >> 0x10) % ((iVar8 - local_8) + 1U) + local_8;
     if (local_c < 0) {
-      uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
+      uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
     }
     else {
 LAB_00579baa:
-      uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
+      uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
     }
     goto LAB_00579bc9;
   case 2:
     if (local_8 < 0) {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     else {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     uVar1 = iVar3 * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar1;
+    STField<uint>(this,0x1c) = uVar1;
     iVar9 = (uVar1 >> 0x10) % ((iVar8 - local_8) + 1U) + local_8;
-    local_c = *(short *)((int)this + 0x49) - iVar9;
-    local_18 = *(short *)((int)this + 0x47) + local_c;
-    local_c = *(short *)((int)this + 0x47) - local_c;
+    local_c = STField<short>(this,0x49) - iVar9;
+    local_18 = STField<short>(this,0x47) + local_c;
+    local_c = STField<short>(this,0x47) - local_c;
     if (-1 < local_c) goto LAB_00579b56;
 LAB_005799a8:
-    uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar1;
+    uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+    STField<uint>(this,0x1c) = uVar1;
     break;
   case 3:
     if (local_c < 0) {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     else {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     uVar1 = iVar3 * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar1;
+    STField<uint>(this,0x1c) = uVar1;
     iVar3 = (uVar1 >> 0x10) % ((iVar6 - local_c) + 1U) + local_c;
-    iVar9 = (int)*(short *)((int)this + 0x49);
+    iVar9 = (int)STField<short>(this,0x49);
     if (local_8 < 0) {
-      uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
+      uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
       goto LAB_00579a7a;
     }
     goto LAB_00579a6c;
   case 4:
     if (local_c < 0) {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     else {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     uVar1 = iVar3 * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar1;
+    STField<uint>(this,0x1c) = uVar1;
     iVar3 = (uVar1 >> 0x10) % ((iVar6 - local_c) + 1U) + local_c;
-    local_8 = *(short *)((int)this + 0x47) - iVar3;
-    iVar9 = *(short *)((int)this + 0x49) + local_8;
-    local_8 = *(short *)((int)this + 0x49) - local_8;
+    local_8 = STField<short>(this,0x47) - iVar3;
+    iVar9 = STField<short>(this,0x49) + local_8;
+    local_8 = STField<short>(this,0x49) - local_8;
     if (-1 < local_8) goto LAB_005798e8;
 LAB_00579a6c:
-    uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
+    uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
 LAB_00579a7a:
-    *(uint *)((int)this + 0x1c) = uVar1;
+    STField<uint>(this,0x1c) = uVar1;
     iVar9 = (uVar1 >> 0x10) % ((iVar9 - local_8) + 1U) + local_8;
     goto LAB_00579bdd;
   case 5:
     if (iVar8 < 0) {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     else {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     uVar1 = iVar3 * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar1;
-    local_18 = (int)*(short *)((int)this + 0x47);
+    STField<uint>(this,0x1c) = uVar1;
+    local_18 = (int)STField<short>(this,0x47);
     iVar9 = (uVar1 >> 0x10) % ((local_14 - iVar8) + 1U) + iVar8;
     if (local_c < 0) {
-      uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-      *(uint *)((int)this + 0x1c) = uVar1;
+      uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+      STField<uint>(this,0x1c) = uVar1;
     }
     else {
-      uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-      *(uint *)((int)this + 0x1c) = uVar1;
+      uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+      STField<uint>(this,0x1c) = uVar1;
     }
     break;
   case 6:
     if (iVar8 < 0) {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     else {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     uVar1 = iVar3 * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar1;
+    STField<uint>(this,0x1c) = uVar1;
     iVar9 = (uVar1 >> 0x10) % ((local_14 - iVar8) + 1U) + iVar8;
-    local_c = iVar9 - *(short *)((int)this + 0x49);
-    local_18 = *(short *)((int)this + 0x47) + local_c;
-    local_c = *(short *)((int)this + 0x47) - local_c;
+    local_c = iVar9 - STField<short>(this,0x49);
+    local_18 = STField<short>(this,0x47) + local_c;
+    local_c = STField<short>(this,0x47) - local_c;
     if (-1 < local_c) goto LAB_005799a8;
 LAB_00579b56:
-    uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar1;
+    uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+    STField<uint>(this,0x1c) = uVar1;
     break;
   case 7:
     if (iVar8 < 0) {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     else {
-      iVar3 = *(int *)((int)this + 0x1c);
+      iVar3 = STField<int>(this,0x1c);
     }
     uVar1 = iVar3 * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar1;
+    STField<uint>(this,0x1c) = uVar1;
     iVar9 = (uVar1 >> 0x10) % ((local_14 - iVar8) + 1U) + iVar8;
-    local_c = (int)*(short *)((int)this + 0x47);
+    local_c = (int)STField<short>(this,0x47);
     if (local_c < 0) goto LAB_00579baa;
-    uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
+    uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
 LAB_00579bc9:
-    *(uint *)((int)this + 0x1c) = uVar1;
+    STField<uint>(this,0x1c) = uVar1;
     break;
   default:
     goto switchD_0057988b_default;
@@ -222,7 +222,7 @@ switchD_0057988b_default:
   if (g_worldGrid.sizeY <= iVar9) {
     iVar9 = g_worldGrid.sizeY + -1;
   }
-  sVar4 = *(short *)((int)this + 0x45);
+  sVar4 = STField<short>(this,0x45);
   if (sVar4 < 0) {
     local_10 = ((sVar4 / 200 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x51eb851f >> 0x3f))
                + -1;
@@ -237,7 +237,7 @@ switchD_0057988b_default:
     while( true ) {
       while( true ) {
         while( true ) {
-          uVar1 = thunk_FUN_00496250(local_14,local_18,(int)*(short *)((int)this + 0x45));
+          uVar1 = thunk_FUN_00496250(local_14,local_18,(int)STField<short>(this,0x45));
           sVar4 = (short)iVar3;
           if ((int)uVar1 < 0) {
             puVar2 = thunk_FUN_004d85e0((int)sVar4,(int)(short)local_8,(int)local_10);
@@ -247,26 +247,26 @@ switchD_0057988b_default:
                 ((g_worldGrid.sizeZ <= local_10 ||
                  (STGridAt3D(g_worldGrid, sVar4, local_8, local_10).objects[0] ==
                   nullptr)))))) {
-              if ((*(short *)((int)this + 0x47) != iVar3) ||
-                 (*(short *)((int)this + 0x49) != local_8)) {
+              if ((STField<short>(this,0x47) != iVar3) ||
+                 (STField<short>(this,0x49) != local_8)) {
                 *param_1 = (short)local_14;
                 *param_2 = (short)local_18;
-                iVar3 = local_14 - *(short *)((int)this + 0x41);
-                iVar9 = local_18 - *(short *)((int)this + 0x43);
-                *(int *)((int)this + 0x245) = iVar3;
-                *(int *)((int)this + 0x24d) = iVar9;
+                iVar3 = local_14 - STField<short>(this,0x41);
+                iVar9 = local_18 - STField<short>(this,0x43);
+                STField<int>(this,0x245) = iVar3;
+                STField<int>(this,0x24d) = iVar9;
                 iVar3 = FUN_006acf0d(0,0,0,iVar3,iVar9,0);
-                *(undefined4 *)((int)this + 0x249) = 0;
-                *(undefined4 *)((int)this + 0x241) = 0;
-                *(int *)((int)this + 0x245) = (*(int *)((int)this + 0x245) << 9) / iVar3;
-                iVar3 = (*(int *)((int)this + 0x24d) << 9) / iVar3;
-                *(int *)((int)this + 0x24d) = iVar3;
-                sVar4 = *(short *)((int)this + 0x41);
-                *(int *)((int)this + 0x251) = (int)sVar4;
-                sVar5 = *(short *)((int)this + 0x43);
-                *(int *)((int)this + 0x255) = (int)sVar5;
+                STField<undefined4>(this,0x249) = 0;
+                STField<undefined4>(this,0x241) = 0;
+                STField<int>(this,0x245) = (STField<int>(this,0x245) << 9) / iVar3;
+                iVar3 = (STField<int>(this,0x24d) << 9) / iVar3;
+                STField<int>(this,0x24d) = iVar3;
+                sVar4 = STField<short>(this,0x41);
+                STField<int>(this,0x251) = (int)sVar4;
+                sVar5 = STField<short>(this,0x43);
+                STField<int>(this,0x255) = (int)sVar5;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                uVar7 = CONCAT22(sVar5 >> 0xf,*(undefined2 *)((int)this + 0x45));
+                uVar7 = CONCAT22(sVar5 >> 0xf,STField<undefined2>(this,0x45));
                 /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
                 sVar4 = (**(code **)(*(int *)this + 0x10))
                                   (STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(sVar4)),
@@ -282,8 +282,8 @@ switchD_0057988b_default:
               goto cf_common_exit_00579E8F;
             }
           }
-          bVar10 = iVar3 - *(short *)((int)this + 0x47) < 0;
-          if (iVar3 == *(short *)((int)this + 0x47) || bVar10) break;
+          bVar10 = iVar3 - STField<short>(this,0x47) < 0;
+          if (iVar3 == STField<short>(this,0x47) || bVar10) break;
           iVar3 = iVar3 + -1;
           local_14 = (int)(short)(sVar4 + 99 + (short)iVar3 * 200);
           if (iVar3 < 0) goto cf_common_exit_00579E8F;
@@ -292,8 +292,8 @@ switchD_0057988b_default:
         iVar3 = iVar3 + 1;
         local_14 = (int)(short)(sVar4 + 0x65 + (short)iVar3 * 200);
       }
-      bVar10 = -1 < local_8 - *(short *)((int)this + 0x49);
-      if (local_8 != *(short *)((int)this + 0x49) && bVar10) break;
+      bVar10 = -1 < local_8 - STField<short>(this,0x49);
+      if (local_8 != STField<short>(this,0x49) && bVar10) break;
       if (bVar10) goto cf_common_exit_00579E8F;
       local_18 = (int)(short)((short)local_8 + 0x65 + (short)(local_8 + 1) * 200);
       local_8 = local_8 + 1;
@@ -303,7 +303,7 @@ switchD_0057988b_default:
     local_8 = iVar9;
   } while (-1 < iVar9);
 cf_common_exit_00579E8F:
-  uVar1 = (int)*(short *)((int)this + 0x6c) + 1U & 0x80000007;
+  uVar1 = (int)STField<short>(this,0x6c) + 1U & 0x80000007;
   if ((int)uVar1 < 0) {
     uVar1 = (uVar1 - 1 | 0xfffffff8) + 1;
   }

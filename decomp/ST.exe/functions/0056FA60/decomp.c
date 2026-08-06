@@ -575,9 +575,8 @@ LAB_00570645:
         }
       }
       iVar12 = local_10;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if ((DAT_0080350c._2_1_ == '\x01') ||
-         ((DAT_0080350c._2_1_ == '\x02' && (DAT_0080351f == '\x01')))) {
+      if ((STPiece<2,1>(DAT_0080350c) == '\x01') ||
+         ((STPiece<2,1>(DAT_0080350c) == '\x02' && (DAT_0080351f == '\x01')))) {
         local_8 = (byte *)((uint)local_8 | 4);
       }
       if (local_10 == 0) {
@@ -587,8 +586,7 @@ LAB_00570645:
       else {
         Library::DKW::DV::FUN_006c2ae0(g_int_008075A4,&DAT_00803408,(uint)local_8);
       }
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if (DAT_0080350c._2_1_ == '\x01') {
+      if (STPiece<2,1>(DAT_0080350c) == '\x01') {
         iVar20 = 0;
         iVar29 = 0;
         iVar30 = g_dDXContext_0080759C->field_0018;
@@ -601,8 +599,7 @@ LAB_00570645:
         }
       }
       else {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        if (DAT_0080350c._2_1_ != '\x02') goto cf_common_exit_0057073B;
+        if (STPiece<2,1>(DAT_0080350c) != '\x02') goto cf_common_exit_0057073B;
         iVar20 = ram0x0080350f;
         iVar29 = DAT_00803513;
         iVar30 = DAT_00803517;

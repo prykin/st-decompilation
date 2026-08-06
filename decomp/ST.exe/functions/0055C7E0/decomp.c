@@ -1,11 +1,13 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0055c7e0(void *this,undefined4 param_1)
 
 {
-  if (((*(char *)((int)this + 8) != '\0') && (*(char *)((int)this + 9) == '\0')) &&
+  if (((STField<char>(this,8) != '\0') && (STField<char>(this,9) == '\0')) &&
      (g_fSGS_0081174C != nullptr)) {
-    *(undefined4 *)((int)this + 0x1b) = 0x6155;
-    *(undefined4 *)((int)this + 0x1f) = param_1;
+    STField<undefined4>(this,0x1b) = 0x6155;
+    STField<undefined4>(this,0x1f) = param_1;
     g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
   }
   return;

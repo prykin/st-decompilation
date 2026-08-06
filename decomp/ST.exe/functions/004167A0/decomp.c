@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=16, used=0), and
@@ -15,12 +17,12 @@ void __thiscall sub_004167A0(void *this)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_8 = 0;
-  if (*(void **)((int)this + 0x97) != nullptr) {
+  if (STField<void *>(this,0x97) != nullptr) {
     ExceptionList = &local_14;
     FreeAndNull((void **)((int)this + 0x97));
-    *(undefined4 *)((int)this + 0x9b) = 0;
-    *(undefined4 *)((int)this + 0xd3) = 0;
-    *(undefined1 *)((int)this + 0xe3) = 0;
+    STField<undefined4>(this,0x9b) = 0;
+    STField<undefined4>(this,0xd3) = 0;
+    STField<undefined1>(this,0xe3) = 0;
   }
   ExceptionList = local_14;
   return;

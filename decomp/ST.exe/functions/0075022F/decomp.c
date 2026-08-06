@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_0075022f(void *this,int *param_1)
 
@@ -9,17 +11,17 @@ undefined4 __thiscall FUN_0075022f(void *this,int *param_1)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*param_1 + 4))(param_1);
   }
-  piVar1 = *(int **)((int)this + 0x60);
+  piVar1 = STField<int *>(this,0x60);
   if (piVar1 != nullptr) {
-    if (*(int *)((int)this + 0x54) != 0) {
+    if (STField<int>(this,0x54) != 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*piVar1 + 0x18))(piVar1,*(int *)((int)this + 0x54));
-      *(undefined4 *)((int)this + 0x54) = 0;
+      (**(code **)(*piVar1 + 0x18))(piVar1,STField<int>(this,0x54));
+      STField<undefined4>(this,0x54) = 0;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(**(int **)((int)this + 0x60) + 8))(*(int **)((int)this + 0x60));
+    (**(code **)(*STField<int *>(this,0x60) + 8))(STField<int *>(this,0x60));
   }
-  *(int **)((int)this + 0x60) = param_1;
+  STField<int *>(this,0x60) = param_1;
   FUN_00750287(this);
   LeaveCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
   return 0;

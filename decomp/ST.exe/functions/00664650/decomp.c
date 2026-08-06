@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_00664650(void *this,int param_1)
   uint index;
   bool bVar3;
 
-  array = *(DArrayTy **)((int)this + 0x217);
+  array = STField<DArrayTy *>(this,0x217);
   dVar1 = array->count;
   if (dVar1 != 0) {
     index = 0;
@@ -26,12 +26,12 @@ undefined4 __thiscall FUN_00664650(void *this,int param_1)
         if (*piVar2 == param_1) {
           DArrayRemoveAt(array,index);
         }
-        array = *(DArrayTy **)((int)this + 0x217);
+        array = STField<DArrayTy *>(this,0x217);
         index = index + 1;
         bVar3 = index < array->count;
       } while ((int)index < (int)array->count);
     }
-    return *(undefined4 *)(*(int *)((int)this + 0x217) + 0xc);
+    return *(undefined4 *)(STField<int>(this,0x217) + 0xc);
   }
   return 0xffffffff;
 }

@@ -14,7 +14,7 @@ FUN_00497850(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     if ((((int)param_7 < (int)g_array_007FB270->count) && (param_7 < g_array_007FB270->count)) &&
        (pvVar3 = DArrayAt<void>(g_array_007FB270, param_7),
        pvVar3 != nullptr)) {
-      iVar1 = *(int *)((int)pvVar3 + 0x14);
+      iVar1 = STField<int>(pvVar3,0x14);
       uVar2 = thunk_FUN_0060e470(param_1,param_2,param_3,param_4,param_5,param_6,
                                  *(int *)(iVar1 + 0x1e9) + 100,*(int *)(iVar1 + 0x1ed) + 100,
                                  *(undefined4 *)(iVar1 + 0x1f1),param_8,param_9,param_10);

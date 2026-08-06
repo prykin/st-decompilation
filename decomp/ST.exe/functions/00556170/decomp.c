@@ -78,7 +78,7 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
         element_0024->spriteHandle = local_8;
         ST3DSMAPContext::sub_006E98E0
                   (g_sT3DSMAPContext_00807598,local_8,0,(int)element_0024->field_0036,
-                   *(int *)((int)puVar5 + 0x21),1);
+                   STField<int>(puVar5,0x21),1);
         ST3DSMAPContext::sub_006EA270
                   (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,0,(int)element_0024->field_0022);
         iVar3 = element_0024->field_0016;

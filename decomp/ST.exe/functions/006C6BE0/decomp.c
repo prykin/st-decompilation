@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint FUN_006c6be0(AnonShape_006C6BE0_5C8BBC13 *param_1)
 
@@ -24,23 +26,19 @@ uint FUN_006c6be0(AnonShape_006C6BE0_5C8BBC13 *param_1)
       }
       return 0xfffffffb;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    param_1._3_1_ = (char)((uint)pAVar1 >> 0x18);
+    STPiece<3,1>(param_1) = (char)((uint)pAVar1 >> 0x18);
     param_1 = pAVar1;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    if (param_1._3_1_ == '!') {
+    if (STPiece<3,1>(param_1) == '!') {
       uVar3 = FUN_006c6c80((int)pAVar2);
       if (uVar3 != 0) {
         return uVar3;
       }
     }
     else {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if (param_1._3_1_ == ',') {
+      if (STPiece<3,1>(param_1) == ',') {
         return 0;
       }
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      bVar5 = param_1._3_1_ == ';';
+      bVar5 = STPiece<3,1>(param_1) == ';';
       if (bVar5) {
         uVar3 = *(uint *)&pAVar2->field_0x56;
         if ((uVar3 & 2) != 0) {

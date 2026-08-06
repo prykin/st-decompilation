@@ -264,23 +264,22 @@ LAB_0058dc72:
       puVar13 = (byte *)(local_1c);
       pbVar14 = (byte *)((int)&this_00->field_0259 + 2);
       memmove(pbVar14, puVar13, 0x34); /* compiler REP MOVS byte copy */
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_8 = *(uint *)((int)local_1c + 0x5e);
+      local_8 = STField<uint>(local_1c,0x5e);
       STAllPlayersC::RestoreGObjData
                 ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x66 + (int)local_1c));
       puVar13 = (byte *)(local_1c);
       *(undefined2 *)&this_00->field_0231 = *(undefined2 *)(local_1c + 0xd);
-      *(undefined2 *)((int)&this_00->field_0231 + 2) = *(undefined2 *)((int)local_1c + 0x36);
+      *(undefined2 *)((int)&this_00->field_0231 + 2) = STField<undefined2>(local_1c,0x36);
       *(undefined2 *)&this_00->field_0x235 = *(undefined2 *)(local_1c + 0xe);
-      *(undefined2 *)&this_00->field_0x237 = *(undefined2 *)((int)local_1c + 0x3a);
+      *(undefined2 *)&this_00->field_0x237 = STField<undefined2>(local_1c,0x3a);
       *(undefined4 *)&this_00->field_0x249 = local_1c[0xf];
       *(undefined2 *)&this_00->field_0x24d = *(undefined2 *)(local_1c + 0x10);
-      *(undefined4 *)&this_00->field_0x23d = *(undefined4 *)((int)local_1c + 0x42);
-      *(undefined4 *)&this_00->field_024F = *(undefined4 *)((int)local_1c + 0x46);
-      *(undefined4 *)&this_00->field_0x253 = *(undefined4 *)((int)local_1c + 0x4a);
-      *(undefined4 *)&this_00->field_0x257 = *(undefined4 *)((int)local_1c + 0x4e);
-      *(undefined4 *)((int)&this_00->field_023E + 3) = *(undefined4 *)((int)local_1c + 0x52);
-      *(undefined4 *)((int)&this_00->field_0244 + 1) = *(undefined4 *)((int)local_1c + 0x56);
+      *(undefined4 *)&this_00->field_0x23d = STField<undefined4>(local_1c,0x42);
+      *(undefined4 *)&this_00->field_024F = STField<undefined4>(local_1c,0x46);
+      *(undefined4 *)&this_00->field_0x253 = STField<undefined4>(local_1c,0x4a);
+      *(undefined4 *)&this_00->field_0x257 = STField<undefined4>(local_1c,0x4e);
+      *(undefined4 *)((int)&this_00->field_023E + 3) = STField<undefined4>(local_1c,0x52);
+      *(undefined4 *)((int)&this_00->field_0244 + 1) = STField<undefined4>(local_1c,0x56);
       local_3c = Library::DKW::LIB::MemAlloc(0x44);
       if (local_3c != nullptr) {
         iVar8 = 0;

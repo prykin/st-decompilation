@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004C7260_param_1Enum. Cases:
@@ -12,7 +14,7 @@ FUN_004c7260(void *this,Global_sub_004C7260_param_1Enum param_1,int param_2,unde
   byte bVar2;
   int iVar3;
 
-  bVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
+  bVar2 = LookupRecordByte(STField<char>(this,0x23d));
   *param_6 = 0;
   *param_5 = 0;
   *param_4 = 0;
@@ -25,7 +27,7 @@ FUN_004c7260(void *this,Global_sub_004C7260_param_1Enum param_1,int param_2,unde
     *param_6 = *(undefined4 *)(&DAT_007e09dc + param_2 * 4);
     return 0;
   case CASE_2:
-    iVar3 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),param_2);
+    iVar3 = thunk_FUN_004e60d0(STField<int>(this,0x24),param_2);
     *param_3 = *(undefined4 *)(&DAT_007e481c + (iVar3 + param_2 * 4) * 4);
     return 0;
   case CASE_4:
@@ -34,16 +36,16 @@ FUN_004c7260(void *this,Global_sub_004C7260_param_1Enum param_1,int param_2,unde
   case CASE_5:
     *param_3 = 0;
     *param_4 = 0;
-    iVar3 = *(int *)((int)this + 0x235) * 3;
-    iVar3 = *(int *)(&DAT_007e29f0 + (iVar3 + *(int *)((int)this + 0x239)) * 4) -
-            (*(int *)((int)this + 0x241) *
-            *(int *)(&DAT_007e29f0 + (iVar3 + *(int *)((int)this + 0x239)) * 4)) /
+    iVar3 = STField<int>(this,0x235) * 3;
+    iVar3 = *(int *)(&DAT_007e29f0 + (iVar3 + STField<int>(this,0x239)) * 4) -
+            (STField<int>(this,0x241) *
+            *(int *)(&DAT_007e29f0 + (iVar3 + STField<int>(this,0x239)) * 4)) /
             *(int *)(&DAT_007e417c + (iVar3 + (bVar2 - 1)) * 4);
     *param_5 = iVar3;
     if ((*(int *)(&DAT_007e29f0 +
-                 (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4) != 0) &&
+                 (STField<int>(this,0x235) * 3 + STField<int>(this,0x239)) * 4) != 0) &&
        (iVar1 = *(int *)(&DAT_007e29f0 +
-                        (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4) / 100,
+                        (STField<int>(this,0x235) * 3 + STField<int>(this,0x239)) * 4) / 100,
        iVar3 < iVar1)) {
       *param_5 = iVar1;
       return 0;

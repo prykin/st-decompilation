@@ -73,9 +73,8 @@ undefined4 FUN_006a5210(void)
       }
       bVar2 = false;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((puVar3[5] == 0) &&
-       (iVar4 = FUN_006a5130((char *)(puVar3 + 8),DAT_007ec184._1_1_,puVar3[4]), iVar4 == 0)) {
+       (iVar4 = FUN_006a5130((char *)(puVar3 + 8),STPiece<1,1>(DAT_007ec184),puVar3[4]), iVar4 == 0)) {
       iVar4 = Library::MSVCRT::FUN_00730fa0
                         (0,0,0,0,(byte *)"DAMAGE: on top of Free block at 0x%08X.\n");
       if (iVar4 == 1) {

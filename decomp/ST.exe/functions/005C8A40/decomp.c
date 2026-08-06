@@ -188,7 +188,7 @@ switchD_005c8bd0_caseD_611f:
         else {
           pvVar13 = nullptr;
         }
-        cVar10 = *(char *)((int)pvVar13 + 0x104);
+        cVar10 = STField<char>(pvVar13,0x104);
         local_c = (DArrayTy *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(cVar10));
         if (cVar10 != -1) {
           switch(cVar10) {
@@ -368,7 +368,7 @@ cf_common_join_005C8ECC:
           }
           else {
             this_00->field_1C5F = uVar19;
-            DAT_0080995c = *(undefined4 *)((int)pvVar13 + 0x90);
+            DAT_0080995c = STField<undefined4>(pvVar13,0x90);
             uVar19 = 0xffffffff;
             pcVar15 = (char *)((int)pvVar13 + 0x4c);
             do {
@@ -406,7 +406,7 @@ cf_common_join_005C8ECC:
           break;
         /* ST_PSEUDO[dynamic_array_indexing,packed_or_unaligned_piece]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array); expected named packed member, bit extract/compose, or unaligned load */
         case 3:
-          DAT_00808a90._0_2_ =
+          STPiece<0,2>(DAT_00808a90) =
                CONCAT11(*(undefined1 *)(pDVar21->elementSize * uVar19 + 0x104 + (int)pDVar21->data),
                         (char)DAT_00808a90);
           uVar19 = this_00->field_2125[3];
@@ -422,16 +422,14 @@ cf_common_join_005C8ECC:
           break;
         /* ST_PSEUDO[dynamic_array_indexing,packed_or_unaligned_piece]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array); expected named packed member, bit extract/compose, or unaligned load */
         case 5:
-          DAT_00808a90._0_3_ =
+          STPiece<0,3>(DAT_00808a90) =
                CONCAT12(*(undefined1 *)(pDVar21->elementSize * uVar19 + 0x104 + (int)pDVar21->data),
                         (undefined2)DAT_00808a90);
           uVar19 = this_00->field_2125[5];
           this_00->field_002D = 5;
           FUN_006e6080(this_00,2,uVar19,(undefined4 *)&this_00->field_0x1d);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          bVar9 = DAT_00808a90._2_1_;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (DAT_00808a90._3_1_ < DAT_00808a90._2_1_) {
+          bVar9 = STPiece<2,1>(DAT_00808a90);
+          if (STPiece<3,1>(DAT_00808a90) < STPiece<2,1>(DAT_00808a90)) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             DAT_00808a90 = CONCAT13(bVar9,(undefined3)DAT_00808a90);
             uVar19 = this_00->field_2125[6];
@@ -447,10 +445,9 @@ cf_common_join_005C8ECC:
           uVar19 = this_00->field_2125[6];
           this_00->field_002D = 5;
           FUN_006e6080(this_00,2,uVar19,(undefined4 *)&this_00->field_0x1d);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (DAT_00808a90._3_1_ < DAT_00808a90._2_1_) {
+          if (STPiece<3,1>(DAT_00808a90) < STPiece<2,1>(DAT_00808a90)) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            DAT_00808a90._0_3_ = CONCAT12(DAT_00808a90._3_1_,(undefined2)DAT_00808a90);
+            STPiece<0,3>(DAT_00808a90) = CONCAT12(STPiece<3,1>(DAT_00808a90),(undefined2)DAT_00808a90);
             uVar19 = this_00->field_2125[5];
             this_00->field_002D = 5;
             FUN_006e6080(this_00,2,uVar19,(undefined4 *)&this_00->field_0x1d);
@@ -580,9 +577,8 @@ cf_common_join_005C8ECC:
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
       this_00->field_21A9 = this_00->field_1E2F->count;
       switch(this_00->field_2179) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case CASE_3:
-        bVar9 = DAT_00808a90._1_1_;
+        bVar9 = STPiece<1,1>(DAT_00808a90);
         goto LAB_005c95d4;
       case CASE_4:
         this_00->field_21A1 = DAT_00808a90 & 0xff;
@@ -590,9 +586,8 @@ cf_common_join_005C8ECC:
       case CASE_5:
         this_00->field_21A1 = DAT_00808a90 >> 0x10 & 0xff;
         break;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case CASE_6:
-        bVar9 = DAT_00808a90._3_1_;
+        bVar9 = STPiece<3,1>(DAT_00808a90);
 LAB_005c95d4:
         this_00->field_21A1 = (uint)bVar9;
       }
@@ -1434,11 +1429,9 @@ cf_common_join_005CA971:
   case 0x6584:
   case 0x6585:
     switch(SVar4) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 0x6582:
-      cVar10 = DAT_00808a90._1_1_;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if (DAT_00808a90._1_1_ == '\0') {
+      cVar10 = STPiece<1,1>(DAT_00808a90);
+      if (STPiece<1,1>(DAT_00808a90) == '\0') {
         local_20 = 0x234e;
       }
       else {
@@ -1451,18 +1444,14 @@ LAB_005cab38:
       if ((char)DAT_00808a90 != '\0') goto LAB_005cab38;
       local_20 = 0x234e;
       break;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 0x6584:
-      cVar10 = DAT_00808a90._2_1_;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if (DAT_00808a90._2_1_ != '\0') goto LAB_005cab38;
+      cVar10 = STPiece<2,1>(DAT_00808a90);
+      if (STPiece<2,1>(DAT_00808a90) != '\0') goto LAB_005cab38;
       local_20 = 0x234e;
       break;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 0x6585:
-      cVar10 = DAT_00808a90._3_1_;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if (DAT_00808a90._3_1_ != '\0') goto LAB_005cab38;
+      cVar10 = STPiece<3,1>(DAT_00808a90);
+      if (STPiece<3,1>(DAT_00808a90) != '\0') goto LAB_005cab38;
       local_20 = 0x234e;
     }
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1E1E,0,local_1c,local_18,

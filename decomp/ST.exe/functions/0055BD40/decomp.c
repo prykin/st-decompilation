@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 CFsgsConnection * __thiscall FUN_0055bd40(void *this,byte param_1)
 

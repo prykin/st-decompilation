@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_006202b0(void *this,int param_1,int param_2,undefined4 param_3,uint param_4)
 
@@ -11,7 +13,7 @@ void __thiscall FUN_006202b0(void *this,int param_1,int param_2,undefined4 param
   if (DAT_0080874d == param_4) {
     return;
   }
-  if (uVar1 < *(uint *)((int)this + 0xcd)) {
+  if (uVar1 < STField<uint>(this,0xcd)) {
     return;
   }
   if (DAT_0080874e == '\x01') {
@@ -49,7 +51,7 @@ LAB_0062030e:
   local_10.y = -1;
   SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar3,&local_10,0);
   thunk_FUN_00620da0(this,param_1,param_2,0x28);
-  *(uint *)((int)this + 0xc1) = uVar1 + 0xfa;
+  STField<uint>(this,0xc1) = uVar1 + 0xfa;
   return;
 }
 

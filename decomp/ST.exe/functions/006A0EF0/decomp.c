@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x006a1015) */
 /* [STAbiConsistencyApplier] narrow_accumulator_return target=return:-1: return=/ushort Evidence:

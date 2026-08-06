@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *param_4)
@@ -12,7 +14,7 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
   InternalExceptionFrame local_4c;
   void *local_8;
 
-  if (((*(int *)((int)this + 0xf8b) != 0) && (param_2 != nullptr)) && (param_1 != nullptr))
+  if (((STField<int>(this,0xf8b) != 0) && (param_2 != nullptr)) && (param_1 != nullptr))
   {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
@@ -28,17 +30,16 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
       pvVar2 = local_8;
       if (puVar4 != nullptr) {
         if (param_3 < 1) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar3 = *(int *)((int)local_8 + 0xe07);
+          iVar3 = STField<int>(local_8,0xe07);
           uVar1 = param_1->field_0000;
           if (iVar3 < 0) {
             if ((*(uint *)(*(int *)(uVar1 + 4) + 8) & 0x100000) == 0) {
               iVar3 = FUN_006c1390(puVar4,0,0x48,DAT_0080730a,0,0,1);
-              *(int *)((int)pvVar2 + 0xe07) = iVar3;
+              STField<int>(pvVar2,0xe07) = iVar3;
             }
             else {
               iVar3 = Library::DKW::SND::FUN_006c2530(uVar1,(DWORD)puVar4,0,0x48,DAT_0080730a,0,0,1);
-              *(int *)((int)pvVar2 + 0xe07) = iVar3;
+              STField<int>(pvVar2,0xe07) = iVar3;
             }
           }
           else if ((*(uint *)(*(int *)(uVar1 + 4) + 8) & 0x100000) == 0) {
@@ -49,8 +50,8 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
           }
         }
         else {
-          *(int *)((int)local_8 + 0xdfb) = param_3;
-          *(undefined4 *)((int)local_8 + 0xe03) = *(undefined4 *)((int)local_8 + 0xe07);
+          STField<int>(local_8,0xdfb) = param_3;
+          STField<undefined4>(local_8,0xe03) = STField<undefined4>(local_8,0xe07);
           if ((*(uint *)(*(int *)(param_1->field_0000 + 4) + 8) & 0x100000) == 0) {
             iVar3 = FUN_006c1390(puVar4,0,0,DAT_0080730a,0,0,1);
           }
@@ -58,9 +59,9 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
             iVar3 = Library::DKW::SND::FUN_006c2530
                               (param_1->field_0000,(DWORD)puVar4,0,0,DAT_0080730a,0,0,1);
           }
-          *(int *)((int)pvVar2 + 0xe07) = iVar3;
+          STField<int>(pvVar2,0xe07) = iVar3;
           DVar5 = timeGetTime();
-          *(DWORD *)((int)pvVar2 + 0xdff) = DVar5;
+          STField<DWORD>(pvVar2,0xdff) = DVar5;
         }
         if (param_4 != nullptr) {
           uVar6 = FUN_006c23f0((short *)puVar4);

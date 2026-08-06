@@ -33,13 +33,13 @@ int __thiscall FUN_004908a0(void *this,STFishC *param_1,int param_2)
         ((g_worldGrid.sizeZ <= sVar3 ||
          (iVar5 = param_2,
          STGridAt3D(g_worldGrid, sVar1, sVar4, sVar3).objects[0] == nullptr)))))) {
-      iVar2 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
-                           (int)*(short *)((int)this + 0x4b),(short)param_1 + iVar5,
+      iVar2 = FUN_006aadd0((int)STField<short>(this,0x47),(int)STField<short>(this,0x49),
+                           (int)STField<short>(this,0x4b),(short)param_1 + iVar5,
                            local_8[0] + iVar6,local_c[0] + 1);
       if (iVar2 < local_10) {
-        *(short *)((int)this + 0x56c) = (short)iVar5 + (short)param_1;
-        *(short *)((int)this + 0x56e) = (short)iVar6 + local_8[0];
-        *(short *)((int)this + 0x570) = local_c[0] + 1;
+        STField<short>(this,0x56c) = (short)iVar5 + (short)param_1;
+        STField<short>(this,0x56e) = (short)iVar6 + local_8[0];
+        STField<short>(this,0x570) = local_c[0] + 1;
         local_10 = iVar2;
       }
     }

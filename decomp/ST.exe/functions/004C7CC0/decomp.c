@@ -132,7 +132,7 @@ LAB_004c7d8c:
             puVar14[1] = 0;
             puVar14[2] = 0;
             *(undefined2 *)(puVar14 + 3) = 0;
-            *(undefined1 *)((int)puVar14 + 0xe) = 0;
+            STField<undefined1>(puVar14,0xe) = 0;
             if (param_8 != nullptr) {
               Library::MSVCRT::_strncpy
                         ((char *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607),param_8,

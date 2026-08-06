@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 float10 FUN_00647b80(int param_1)
 

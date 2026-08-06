@@ -25,16 +25,16 @@ LAB_00696007:
     uVar3 = 0xffffffff;
   }
   else {
-    if (*(int *)((int)piVar4 + 0x15) == 0) {
+    if (STField<int>(piVar4,0x15) == 0) {
       pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,6,10);
-      *(DArrayTy **)((int)piVar4 + 0x15) = pDVar2;
+      STField<DArrayTy *>(piVar4,0x15) = pDVar2;
       if (pDVar2 == nullptr) goto LAB_00696007;
     }
     local_c = 0;
     iStack_a = param_2;
-    uVar3 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)piVar4 + 0x15),&local_c);
+    uVar3 = Library::DKW::TBL::DArrayAppend(STField<DArrayTy *>(piVar4,0x15),&local_c);
     if (-1 < (int)uVar3) {
-      *(uint *)((int)piVar4 + 0x11) = uVar3 + 1;
+      STField<uint>(piVar4,0x11) = uVar3 + 1;
       if (this->field_584F != nullptr) {
         this->field_584F[this->field_582F * param_3 + param_2] = (ushort)param_1;
         return uVar3;

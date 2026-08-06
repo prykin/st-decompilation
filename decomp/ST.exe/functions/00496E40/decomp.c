@@ -21,8 +21,8 @@ void FUN_00496e40(int param_1,int param_2,undefined4 param_3,int param_4)
     else {
       pvVar3 = nullptr;
     }
-    thunk_FUN_00496b30(index,*(int *)((int)pvVar3 + 8),0);
-    iVar1 = *(int *)((int)pvVar3 + 8);
+    thunk_FUN_00496b30(index,STField<int>(pvVar3,8),0);
+    iVar1 = STField<int>(pvVar3,8);
     DArrayRemoveAt(g_array_007FB270,index);
     iVar2 = thunk_FUN_00496f00(iVar1);
     if (iVar2 == 0) {

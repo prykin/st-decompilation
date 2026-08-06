@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005A1920 -> 006C7980 @ 005A1CCC
@@ -10,8 +12,7 @@ void FUN_006c7980(int *param_1)
 
 {
   if (param_1 != nullptr) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006a5e90(*(short **)((int)param_1 + 0x1e));
+    FUN_006a5e90(STField<short *>(param_1,0x1e));
     FUN_006a5e90((short *)param_1);
   }
   return;

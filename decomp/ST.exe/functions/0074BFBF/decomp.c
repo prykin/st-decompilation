@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_0074bfbf(void *this,int *param_1,undefined4 *param_2)
 
@@ -21,14 +23,14 @@ int __thiscall FUN_0074bfbf(void *this,int *param_1,undefined4 *param_2)
   int *local_c;
   int *local_8;
 
-  iVar5 = *(int *)((int)this + 0x8c);
-  bVar6 = *(int *)((int)this + 0x54) != 0;
+  iVar5 = STField<int>(this,0x8c);
+  bVar6 = STField<int>(this,0x54) != 0;
   uVar3 = *(uint *)(iVar5 + 0xb0);
   if ((uVar3 & 1) == 0) {
     bVar6 = bVar6 | 2;
   }
   puVar1 = (undefined4 *)(iVar5 + 0xc0);
-  local_c = *(int **)(*(int *)((int)this + 0x90) + 0x98);
+  local_c = *(int **)(STField<int>(this,0x90) + 0x98);
   puVar2 = (undefined4 *)(iVar5 + 0xb8);
   local_10 = this;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -51,7 +53,7 @@ int __thiscall FUN_0074bfbf(void *this,int *param_1,undefined4 *param_2)
       if ((*(byte *)(iVar5 + 0xb0) & 4) != 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*local_8 + 0x40))(local_8,1);
-        *(undefined4 *)((int)local_10 + 0x54) = 0;
+        STField<undefined4>(local_10,0x54) = 0;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar5 = (**(code **)(*param_1 + 0x44))(param_1,local_20,local_18);
@@ -73,7 +75,7 @@ int __thiscall FUN_0074bfbf(void *this,int *param_1,undefined4 *param_2)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*local_c + 0x50))(local_c,0x20,&local_50);
       if ((*(byte *)(iVar5 + 0xb0) & 4) != 0) {
-        *(undefined4 *)((int)local_10 + 0x54) = 0;
+        STField<undefined4>(local_10,0x54) = 0;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*local_c + 8))(local_c);

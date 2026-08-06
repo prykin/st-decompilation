@@ -142,13 +142,12 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
         if (0 < (int)uVar7) {
           bVar13 = uVar7 != 0;
           do {
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (((bVar13) &&
                 (pvVar5 = DArrayAt<void>(array, uVar8),
                 pvVar5 != nullptr)) &&
-               ((*(int *)((int)pvVar5 + 0x108) < 0 &&
-                ((puVar2 = *(uint **)((int)pvVar5 + 0x110), (int)local_c <= (int)puVar2 &&
-                 (piVar3 = *(int **)((int)pvVar5 + 0x10c), (int)piVar3 <= (int)local_c)))))) {
+               ((STField<int>(pvVar5,0x108) < 0 &&
+                ((puVar2 = STField<uint *>(pvVar5,0x110), (int)local_c <= (int)puVar2 &&
+                 (piVar3 = STField<int *>(pvVar5,0x10c), (int)piVar3 <= (int)local_c)))))) {
               if ((int)param_4 < (int)piVar3) {
                 uVar9 = uVar8;
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -183,7 +182,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
             memmove(pcVar12, pcVar4, uVar7); /* compiler REP MOVS byte copy */
             uVar7 = 0;
             if (param_2 != nullptr) {
-              *param_2 = *(undefined4 *)((int)pvVar5 + 0x218);
+              *param_2 = STField<undefined4>(pvVar5,0x218);
             }
             if (param_3 != nullptr) {
               *param_3 = 1;
@@ -200,13 +199,12 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
         if (0 < (int)uVar7) {
           bVar13 = uVar7 != 0;
           do {
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (((bVar13) &&
                 (pvVar5 = DArrayAt<void>(array, uVar8),
                 pvVar5 != nullptr)) &&
-               ((*(uint *)((int)pvVar5 + 0x108) == local_c &&
-                ((puVar2 = *(uint **)((int)pvVar5 + 0x110), (int)local_18 <= (int)puVar2 &&
-                 (piVar3 = *(int **)((int)pvVar5 + 0x10c), (int)piVar3 <= (int)local_18)))))) {
+               ((STField<uint>(pvVar5,0x108) == local_c &&
+                ((puVar2 = STField<uint *>(pvVar5,0x110), (int)local_18 <= (int)puVar2 &&
+                 (piVar3 = STField<int *>(pvVar5,0x10c), (int)piVar3 <= (int)local_18)))))) {
               if ((int)param_4 < (int)piVar3) {
                 uVar9 = uVar8;
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -240,7 +238,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
             pcVar12 = (char *)&DAT_008117c0;
             memmove(pcVar12, pcVar4, uVar7); /* compiler REP MOVS byte copy */
             if (param_2 != nullptr) {
-              *param_2 = *(undefined4 *)((int)pvVar5 + 0x218);
+              *param_2 = STField<undefined4>(pvVar5,0x218);
             }
             if (param_3 != nullptr) {
               *param_3 = 2;

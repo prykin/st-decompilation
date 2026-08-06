@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=14;
@@ -80,20 +82,16 @@ int __thiscall STBHEShellC::sub_005F5700(STBHEShellC *this,int param_1,int param
         thunk_FUN_00416270(this_00,(undefined2 *)((int)&local_8 + 2),(int *)((int)&param_1 + 2),
                            &local_8);
         if (*(int *)&this_00[1].field_0x8 == 1) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar5 = FUN_006aced8((int)local_8._2_2_,(int)param_1._2_2_,this->field_0111,
+          iVar5 = FUN_006aced8((int)STPiece<2,2>(local_8),(int)STPiece<2,2>(param_1),this->field_0111,
                                this->field_0115);
           if (param_2 <= iVar5) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar5 = FUN_006aced8(local_8._2_2_ + 100,(int)param_1._2_2_,this->field_0111,
+            iVar5 = FUN_006aced8(STPiece<2,2>(local_8) + 100,(int)STPiece<2,2>(param_1),this->field_0111,
                                  this->field_0115);
             if (param_2 <= iVar5) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              iVar5 = FUN_006aced8((int)local_8._2_2_,param_1._2_2_ + 100,this->field_0111,
+              iVar5 = FUN_006aced8((int)STPiece<2,2>(local_8),STPiece<2,2>(param_1) + 100,this->field_0111,
                                    this->field_0115);
               if (param_2 <= iVar5) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar5 = FUN_006aced8(local_8._2_2_ + 100,param_1._2_2_ + 100,this->field_0111,
+                iVar5 = FUN_006aced8(STPiece<2,2>(local_8) + 100,STPiece<2,2>(param_1) + 100,this->field_0111,
                                      this->field_0115);
                 if (param_2 <= iVar5) goto cf_continue_loop_005F5985;
               }
@@ -101,8 +99,7 @@ int __thiscall STBHEShellC::sub_005F5700(STBHEShellC *this,int param_1,int param
           }
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar5 = FUN_006aced8((int)local_8._2_2_,(int)param_1._2_2_,this->field_0111,
+          iVar5 = FUN_006aced8((int)STPiece<2,2>(local_8),(int)STPiece<2,2>(param_1),this->field_0111,
                                this->field_0115);
           if (param_2 <= iVar5) goto cf_continue_loop_005F5985;
         }

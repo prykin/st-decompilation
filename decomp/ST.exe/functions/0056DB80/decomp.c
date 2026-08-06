@@ -50,7 +50,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     puVar13 = puVar13 + 1;
   }
   *(undefined2 *)puVar13 = 0;
-  *(undefined1 *)((int)puVar13 + 2) = 0;
+  STField<undefined1>(puVar13,2) = 0;
   local_98.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_98;
   iVar11 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0);

@@ -62,7 +62,7 @@ STAllPlayersC::DelObjFromTmps
       do {
         puVar1 = (undefined4 *)(param_2 * 0x10 + iVar6);
         if ((*(int *)(param_2 * 0x10 + iVar6) == 0x3c) && (puVar1[1] == (int)param_3)) {
-          pDVar2 = *(DArrayTy **)((int)puVar1 + 10);
+          pDVar2 = STField<DArrayTy *>(puVar1,10);
           uVar9 = 0;
           dVar3 = pDVar2->count;
           if (0 < (int)dVar3) {
@@ -73,10 +73,10 @@ STAllPlayersC::DelObjFromTmps
                 pSVar5->vfunc_E8(0);
                 local_8 = 0xffff;
                 Library::DKW::TBL::DArrayPut(pDVar2,uVar9,&local_8);
-                *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;
-                if (*(short *)((int)puVar1 + 0xe) == 0) {
-                  DArrayDestroy(*(DArrayTy **)((int)puVar1 + 10));
-                  *(undefined4 *)((int)puVar1 + 10) = 0;
+                STField<short>(puVar1,0xe) = STField<short>(puVar1,0xe) + -1;
+                if (STField<short>(puVar1,0xe) == 0) {
+                  DArrayDestroy(STField<DArrayTy *>(puVar1,10));
+                  STField<undefined4>(puVar1,10) = 0;
                   *puVar1 = 0;
                 }
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -220,7 +220,7 @@ STAllPlayersC::DelObjFromTmps
     do {
       puVar1 = (undefined4 *)(param_2 * 0x10 + iVar6);
       if ((*(int *)(param_2 * 0x10 + iVar6) == 0x19a) && (puVar1[1] == (int)param_3)) {
-        pDVar2 = *(DArrayTy **)((int)puVar1 + 10);
+        pDVar2 = STField<DArrayTy *>(puVar1,10);
         uVar9 = 0;
         dVar3 = pDVar2->count;
         if (0 < (int)dVar3) {
@@ -231,10 +231,10 @@ STAllPlayersC::DelObjFromTmps
               pSVar5->vfunc_E8(0);
               local_8 = 0xffff;
               Library::DKW::TBL::DArrayPut(pDVar2,uVar9,&local_8);
-              *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;
-              if (*(short *)((int)puVar1 + 0xe) == 0) {
-                DArrayDestroy(*(DArrayTy **)((int)puVar1 + 10));
-                *(undefined4 *)((int)puVar1 + 10) = 0;
+              STField<short>(puVar1,0xe) = STField<short>(puVar1,0xe) + -1;
+              if (STField<short>(puVar1,0xe) == 0) {
+                DArrayDestroy(STField<DArrayTy *>(puVar1,10));
+                STField<undefined4>(puVar1,10) = 0;
                 *puVar1 = 0;
               }
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

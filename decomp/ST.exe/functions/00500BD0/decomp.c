@@ -107,8 +107,7 @@ LAB_00500d40:
           }
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = (uint)local_8._1_3_ << 8;
+          local_8 = (uint)STPiece<1,3>(local_8) << 8;
         }
       }
       if (bVar10 < 7) {

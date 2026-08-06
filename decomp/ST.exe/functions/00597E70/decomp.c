@@ -75,7 +75,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
     puVar5 = puVar5 + 1;
   }
   *(undefined2 *)puVar5 = 0;
-  *(undefined1 *)((int)puVar5 + 2) = 0;
+  STField<undefined1>(puVar5,2) = 0;
   local_8 = 0xffffffff;
   local_254.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_254;

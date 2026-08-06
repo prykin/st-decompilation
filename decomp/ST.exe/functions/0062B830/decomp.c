@@ -60,16 +60,14 @@ FUN_0062b830(int param_1,int param_2,int param_3,undefined4 param_4,int *param_5
   iVar1 = param_8;
   if ((param_9 == 0) && (g_manRuin_008117B0 != nullptr)) {
     if (this[0xb] == 0) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STManRuinC::sub_00631510
-                (g_manRuin_008117B0,this[8],1,(int)param_3._2_2_,(int)param_2._2_2_,
-                 (int)param_1._2_2_,param_8);
+                (g_manRuin_008117B0,this[8],1,(int)STPiece<2,2>(param_3),(int)STPiece<2,2>(param_2),
+                 (int)STPiece<2,2>(param_1),param_8);
     }
     if (this[0xb] == 1) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STManRuinC::sub_00631510
-                (g_manRuin_008117B0,this[8],4,(int)param_3._2_2_,(int)param_2._2_2_,
-                 (int)param_1._2_2_,iVar1);
+                (g_manRuin_008117B0,this[8],4,(int)STPiece<2,2>(param_3),(int)STPiece<2,2>(param_2),
+                 (int)STPiece<2,2>(param_1),iVar1);
     }
   }
   return;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
 
@@ -13,9 +15,9 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
   undefined4 *puVar9;
   uint local_8;
 
-  *(undefined4 *)((int)this + 0xc) = 0;
-  *(undefined4 *)((int)this + 4) = 0;
-  *(int *)((int)this + 8) = param_1;
+  STField<undefined4>(this,0xc) = 0;
+  STField<undefined4>(this,4) = 0;
+  STField<int>(this,8) = param_1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
     *(undefined4 *)this = 0;
@@ -24,7 +26,7 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
     uVar4 = Library::MSVCRT::FUN_0072e530(param_1 << 4);
     *(undefined4 *)this = uVar4;
     local_8 = 0;
-    if (*(int *)((int)this + 8) != 0) {
+    if (STField<int>(this,8) != 0) {
       piVar8 = (int *)(param_2 + 8);
       do {
         iVar3 = piVar8[-2];
@@ -82,7 +84,7 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
         }
         local_8 = local_8 + 1;
         piVar8 = piVar8 + 4;
-      } while (local_8 < *(uint *)((int)this + 8));
+      } while (local_8 < STField<uint>(this,8));
     }
   }
   return this;

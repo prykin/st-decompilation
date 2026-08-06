@@ -35,8 +35,8 @@ FUN_0062e240(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
     if (param_6 < 0x80000000) {
       iVar3 = 0;
       do {
-        uVar1 = *(int *)((int)this + 0xb4) * 0x41c64e6d + 0x3039;
-        *(uint *)((int)this + 0xb4) = uVar1;
+        uVar1 = STField<int>(this,0xb4) * 0x41c64e6d + 0x3039;
+        STField<uint>(this,0xb4) = uVar1;
         thunk_FUN_0062e170(param_1,param_2,param_3,param_4,param_5,(uVar1 >> 0x10) % 0x1f + iVar3,3);
         iVar3 = iVar3 + 0x1e;
         uVar6 = uVar6 - 1;

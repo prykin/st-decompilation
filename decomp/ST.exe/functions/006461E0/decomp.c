@@ -109,7 +109,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
             if (puVar6 != nullptr) {
               ST3DSMAPContext::sub_006E9000
                         (g_sT3DSMAPContext_00807598,
-                         *(undefined4 *)(*(int *)((int)puVar6 + 0x21) + 0xa0),0x5a,0x2f,
+                         *(undefined4 *)(STField<int>(puVar6,0x21) + 0xa0),0x5a,0x2f,
                          (float)this_00->field_0065 * _DAT_007904f8 * _DAT_007904f0,
                          (float)this_00->field_0069 * _DAT_007904f8 * _DAT_007904f0,
                          (float)this_00->field_006D * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc,

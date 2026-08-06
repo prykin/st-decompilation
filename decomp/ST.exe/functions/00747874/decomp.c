@@ -1,24 +1,26 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 * __thiscall FUN_00747874(void *this,AnonShape_00747874_535F3AAD *param_1)
 
 {
   undefined4 uVar1;
 
-  *(undefined4 *)((int)this + 4) = 0;
-  *(AnonShape_00747874_535F3AAD **)((int)this + 8) = param_1;
-  *(undefined4 *)((int)this + 0x10) = 1;
+  STField<undefined4>(this,4) = 0;
+  STField<AnonShape_00747874_535F3AAD *>(this,8) = param_1;
+  STField<undefined4>(this,0x10) = 1;
   *(VTable_007A1128 **)this = &VTable_007A1128;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(param_1->field_000C + 4))(&param_1->field_000C);
   if (param_1 == nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    uVar1 = (**(code **)(**(int **)((int)this + 8) + 0x10))();
+    uVar1 = (**(code **)(*STField<int *>(this,8) + 0x10))();
   }
   else {
-    *(undefined4 *)((int)this + 4) = param_1->field_0004;
+    STField<undefined4>(this,4) = param_1->field_0004;
     uVar1 = param_1->field_000C;
   }
-  *(undefined4 *)((int)this + 0xc) = uVar1;
+  STField<undefined4>(this,0xc) = uVar1;
   return this;
 }
 

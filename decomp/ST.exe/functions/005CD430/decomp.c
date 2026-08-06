@@ -115,32 +115,27 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
       bVar3 = local_c[1];
       if (bVar3 != 0xff) {
         memset(&local_74, 0, 0x60); /* compiler bulk-zero initialization */
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_74._0_1_ = 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_74._1_1_ = 1;
+        STPiece<0,1>(local_74) = 1;
+        STPiece<1,1>(local_74) = 1;
         if (((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) && (*pbVar13 == 3)) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_74._3_1_ = 1;
+          STPiece<3,1>(local_74) = 1;
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_74._3_1_ = *pbVar13;
+          STPiece<3,1>(local_74) = *pbVar13;
         }
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_74._2_1_ = bVar3;
+        STPiece<2,1>(local_74) = bVar3;
         switch(pSVar11->field_1E26) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         case CASE_5:
         case CASE_F:
           local_24 = CreateStrategList((int)local_8,
-                                       CONCAT12(uStack_70,CONCAT11(local_74._3_1_,bVar3)) & 0xff,
+                                       CONCAT12(uStack_70,CONCAT11(STPiece<3,1>(local_74),bVar3)) & 0xff,
                                        0xffffffff);
           break;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         default:
           local_24 = CreateOpponentList(local_8,CONCAT12(uStack_6f,
-                                                         CONCAT11(uStack_70,local_74._3_1_)) & 0xff,
+                                                         CONCAT11(uStack_70,STPiece<3,1>(local_74))) & 0xff,
                                         DAT_0080995c);
           break;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -148,7 +143,7 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
         case CASE_10:
           local_24 = CreateSaveStrategList
                                ((int)local_8,
-                                CONCAT12(uStack_70,CONCAT11(local_74._3_1_,bVar3)) & 0xff,0xffffffff
+                                CONCAT12(uStack_70,CONCAT11(STPiece<3,1>(local_74),bVar3)) & 0xff,0xffffffff
                                );
         }
         if (*(char *)(pbVar13 + -0x21) == '\x01') {

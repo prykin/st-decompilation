@@ -9,11 +9,11 @@ void __thiscall FUN_005800e0(void *this,int param_1)
   short sVar3;
   AnonShape_004E0250_5A3B9236 *pAVar4;
 
-  STResourceC::SetResource(this,*(int *)((int)this + 0x259) + param_1,1);
-  if (*(int *)((int)this + 0x25d) == 1) {
-    sVar1 = *(short *)((int)this + 0x245);
-    sVar2 = *(short *)((int)this + 0x24d);
-    sVar3 = *(short *)((int)this + 0x249);
+  STResourceC::SetResource(this,STField<int>(this,0x259) + param_1,1);
+  if (STField<int>(this,0x25d) == 1) {
+    sVar1 = STField<short>(this,0x245);
+    sVar2 = STField<short>(this,0x24d);
+    sVar3 = STField<short>(this,0x249);
     if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
        (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
       pAVar4 = nullptr;
@@ -22,7 +22,7 @@ void __thiscall FUN_005800e0(void *this,int param_1)
       pAVar4 = (AnonShape_004E0250_5A3B9236 *)
                STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
-    if (pAVar4->field_0018 == *(int *)((int)this + 0x269)) {
+    if (pAVar4->field_0018 == STField<int>(this,0x269)) {
       thunk_FUN_004e0250(pAVar4);
     }
   }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 8.
    Evidence: 0070CB20 -> EXTERNAL:000000B2 @ 0070CD54 */
@@ -45,7 +47,7 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
     if ((((-1 < iVar7) && (iVar7 < param_4)) && (-1 < iVar10)) && (iVar10 < param_5)) {
       iVar2 = FUN_006b4fa0(param_3);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      bVar1 = *(byte *)(((uint)*(ushort *)((int)param_3 + 0xe) * param_3[1] + 0x1f >> 3 & 0x1ffffffc
+      bVar1 = *(byte *)(((uint)STField<ushort>(param_3,0xe) * param_3[1] + 0x1f >> 3 & 0x1ffffffc
                         ) * ((param_3[2] - iVar10) + -1) + iVar7 + iVar2);
       if (bVar1 != param_7) {
         uVar3 = (uint)bVar1;

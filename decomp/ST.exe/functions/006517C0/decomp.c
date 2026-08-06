@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=00652810 @ 00657E02
@@ -29,8 +31,7 @@ int __cdecl FUN_006517c0(short *param_1)
     param_1[0xe] = 1;
     param_1[0xf] = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xd5) != '\b') {
+  else if (STField<char>(param_1,0xd5) != '\b') {
     return 0;
   }
   if (sVar1 < 7) {

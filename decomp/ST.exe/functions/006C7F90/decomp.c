@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Type propagation algorithm not settling */
 /* [STPrototypeApplier] Propagated parameter 0.
@@ -81,7 +83,7 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           UVar3 = GetNearestPaletteIndex
                             (param_3,(uint)CONCAT21(CONCAT11((char)*puVar10,
-                                                             *(undefined1 *)((int)puVar10 + 1)),
+                                                             STField<undefined1>(puVar10,1)),
                                                     (char)puVar10[1]));
           if (UVar3 == 0xffffffff) {
             UVar3 = 0;

@@ -41,19 +41,39 @@ have been checked.
 ## Latest accepted run
 
 The current authoritative headless export is run
-`63f884ee37f1ba3033bbb57067b5d6cb29f97d70fedbfa31f8785d20e77c0541`.
+`6db00d62db47c8e04b682e1ebfc531127d5bbaf2ac060cb19ddf556938f2bf2d`.
 Its receipt is `passed` with semantic hash
 `e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0`
 and manifest hash
-`84e7a598cb357e4707175011d14a997ef798a1933fe904acf7c577570fbad74d`.
+`508df8e96ce8daa7057d61db1600acb12cf18f8f9d8968811f20e37ccda45902`.
 It contains 10,392 function entries, 5,712 bodies, zero failed bodies, and 2,729
 typed physical-vtable slots. Both the broad export gate and the ABI gate pass;
 the latter verifies all 95 class vptrs and nine fixture functions with zero
 errors or warnings. The broad gate also has zero hard regressions and zero
-warnings. The final quality inventory has 4,151 anonymous-shape occurrences,
-16,278 undefined types, 2,813 raw pointer offsets, 1,885 raw indirect calls,
-1,047 packed/unaligned pieces, 1,062 return-width artifacts, and 472 unresolved
-register inputs.
+warnings. The final quality inventory has 4,166 anonymous-shape occurrences,
+18,595 undefined types, 2,240 raw pointer offsets, 1,885 raw indirect calls,
+558 consumed return-width artifacts, and 472 unresolved register inputs. The
+old declaration-plus-use return count was intentionally replaced by a use-only
+metric; declarations are not independent ABI failures.
+
+`STDecompExport` now emits a separate compile-readiness inventory. All 5,712
+bodies have zero residual Ghidra `._offset_width_` syntax. The generated C++17
+runtime makes 34,795 exact operations expressible through scalar/calling-
+convention aliases, opaque `code`, `STPiece`, `STLiteralPiece`, `STField`, and
+width-checked composition/carry helpers. This is not a source generator: every
+body still needs declaration/translation-unit assembly, 3,894 signatures retain
+undefined semantic types, 1,001 global `__thiscall` functions lack a proven
+owner, 773 bodies contain raw indirect calls, and 232 bodies retain unresolved
+register/high values. The detailed table is `docs/compile-readiness.md` and the
+machine-readable rows are `decomp/ST.exe/compile_readiness_*.json*`.
+
+The previously ugly call in global `__thiscall` function `00717910` now renders
+its proven member load as
+`STField<RecoveredSourceFamily_dibcopy *>(this, 0x28)`. The pointer depth is
+correct for callee `006D2820`; the missing fact is the receiver identity. A broad
+receiver-record database experiment cascaded into unrelated owners/vtables and
+was rejected after 22 hard ABI regressions. No part of that Ghidra mutation was
+retained.
 
 The refresh recovers the panel factory vptr stores as
 `BldBoatPanelTyVTable`, `BldObjPanelTyVTable`, `IntercomPanelTyVTable`, and
@@ -711,16 +731,20 @@ Expected next `full-export` results:
 
 ## Next automation boundary
 
-After a successful export, choose the next cluster from
-`decomp_quality_summary.json` and `decomp_quality_issues.jsonl`. The strongest
-remaining cross-cutting candidates are whole-CFG return-width recovery (1,077
-occurrences in 146 functions), unresolved physical callback/vtable prototypes
-(2,092 raw calls in 826 functions), and exact packed-member refinement (1,394
-occurrences in 293 functions). Generic field names are a later semantic layer;
-their count must not drive unsafe geometry-only merges. A true `Node **` cursor
-which shares one inseparable HighFunction group with `Node *` remains
-presentation debt until a distinct address-stable lifetime or an exact API
-boundary proves it.
+The next major boundary is deterministic source/declaration assembly from the
+exported type, global, function, import, and address-authoritative call graphs.
+All 5,712 bodies are now textually representable, but none is a standalone
+translation unit. Ownerless `__thiscall` functions must receive generated
+free-function ABI wrappers until a class is independently proven.
+
+Database-level recovery should then prioritize 1,885 raw indirect calls in 773
+bodies, 558 consumed return-width artifacts in 138 bodies, and 472 unresolved
+incoming-register uses in 132 bodies. The 18,595 undefined spellings need to be
+split by role before ranking; a parameter/return boundary is more valuable than
+an isolated local. Generic field names remain a later semantic layer and must
+not drive geometry-only merging. A true `Node **` cursor which shares one
+inseparable HighFunction group with `Node *` remains presentation debt until a
+distinct address-stable lifetime or an exact API boundary proves it.
 
 ## Historical suggested commit title
 

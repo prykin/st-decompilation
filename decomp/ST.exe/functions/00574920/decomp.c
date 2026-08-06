@@ -156,7 +156,7 @@ LAB_00574b4a:
                     pvVar5 = nullptr;
                   }
                   if (pvVar5 == nullptr) goto LAB_00574bcc;
-                } while (*(int *)(iVar3 + 0xc) != *(int *)((int)pvVar5 + 8));
+                } while (*(int *)(iVar3 + 0xc) != STField<int>(pvVar5,8));
                 if (pvVar5 == nullptr) {
 LAB_00574bcc:
                   FUN_006a5e90(*(short **)(iVar3 + 0xc));

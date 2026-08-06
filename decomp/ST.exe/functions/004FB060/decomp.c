@@ -433,9 +433,8 @@ LAB_004fd533:
       case 3:
         local_c = (int *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)((&local_44->field_0xc0f)[SVar1 - 0xb21a >> 1] != '\x03'));
         break;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case 2:
-        local_c = (int *)((uint)local_c._1_3_ << 8);
+        local_c = (int *)((uint)STPiece<1,3>(local_c) << 8);
       }
       iVar5 = piVar21[1];
       iVar11 = DAT_00806734;

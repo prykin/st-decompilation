@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_0074a05b(void *this,int param_1)
 
@@ -13,7 +15,7 @@ undefined4 __thiscall FUN_0074a05b(void *this,int param_1)
   EnterCriticalSection(lpCriticalSection);
   local_8 = nullptr;
   if (param_1 == 0) {
-    if (*(int *)((int)this + 0x78) == 0) {
+    if (STField<int>(this,0x78) == 0) {
       this_00 = (void *)Library::MSVCRT::FUN_0072e530(0xe0);
       if (this_00 == nullptr) {
         puVar2 = nullptr;
@@ -21,9 +23,9 @@ undefined4 __thiscall FUN_0074a05b(void *this,int param_1)
       else {
         puVar2 = FUN_0074a95f(this_00,(int)this,&local_8,(short *)&DAT_007ee298);
       }
-      *(undefined4 **)((int)this + 0x78) = puVar2;
+      STField<undefined4 *>(this,0x78) = puVar2;
     }
-    uVar1 = *(undefined4 *)((int)this + 0x78);
+    uVar1 = STField<undefined4>(this,0x78);
     LeaveCriticalSection(lpCriticalSection);
   }
   else {

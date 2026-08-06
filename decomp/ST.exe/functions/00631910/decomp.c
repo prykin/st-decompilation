@@ -26,12 +26,12 @@ FUN_00631910(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   local_14 = param_6;
   local_10 = param_7;
   local_8 = 0;
-  if (*(int *)((int)this + 0x69) == 0) {
+  if (STField<int>(this,0x69) == 0) {
     pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x24,10);
-    *(DArrayTy **)((int)this + 0x69) = pDVar1;
+    STField<DArrayTy *>(this,0x69) = pDVar1;
   }
-  if (*(DArrayTy **)((int)this + 0x69) != nullptr) {
-    iVar2 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0x69),local_28);
+  if (STField<DArrayTy *>(this,0x69) != nullptr) {
+    iVar2 = Library::DKW::TBL::DArrayAppend(STField<DArrayTy *>(this,0x69),local_28);
     if (iVar2 < 0) goto LAB_006319a2;
   }
   thunk_FUN_00631c20(this,param_5,param_6,(byte)param_2,param_1,param_3,iVar2);

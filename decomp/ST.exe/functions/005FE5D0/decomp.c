@@ -31,10 +31,10 @@ int __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int param
 
   local_c = 1;
   local_8 = 0;
-  if (*(int *)((int)this + 0x233) == 0) {
+  if (STField<int>(this,0x233) == 0) {
     return 0;
   }
-  psVar1 = (short *)(param_1 * 0x52 + *(int *)((int)this + 0x233));
+  psVar1 = (short *)(param_1 * 0x52 + STField<int>(this,0x233));
   if (*(int *)(psVar1 + 0x27) != 0) {
     FreeAndNull((void **)(psVar1 + 0x27));
   }
@@ -128,7 +128,7 @@ int __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int param
     if (local_c == 0) {
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 cf_common_exit_005FE866:
-      *(uint *)(param_1 * 0x52 + 0x35 + *(int *)((int)this + 0x233)) =
+      *(uint *)(param_1 * 0x52 + 0x35 + STField<int>(this,0x233)) =
            g_playSystem_00802A38->field_00E4;
       if (local_8 != 0) {
         *(int *)(psVar1 + 0x23) = local_8;

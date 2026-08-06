@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_006319e0(void *this,uint param_1,int param_2)
 
@@ -10,7 +12,7 @@ undefined4 __thiscall FUN_006319e0(void *this,uint param_1,int param_2)
   bool bVar6;
 
   uVar2 = 0;
-  iVar3 = *(int *)((int)this + 0x69);
+  iVar3 = STField<int>(this,0x69);
   if (iVar3 != 0) {
     uVar1 = *(uint *)(iVar3 + 0xc);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -36,7 +38,7 @@ undefined4 __thiscall FUN_006319e0(void *this,uint param_1,int param_2)
           }
           uVar2 = 1;
         }
-        iVar3 = *(int *)((int)this + 0x69);
+        iVar3 = STField<int>(this,0x69);
         uVar4 = uVar4 + 1;
         bVar6 = uVar4 < *(uint *)(iVar3 + 0xc);
       } while ((int)uVar4 < (int)*(uint *)(iVar3 + 0xc));

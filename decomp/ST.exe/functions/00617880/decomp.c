@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 00617880 returns return of sub_006E60A0 @ 006178A6 */
@@ -11,7 +13,7 @@ int __fastcall FUN_00617880(void *param_1)
   undefined4 local_14;
   undefined4 local_10;
 
-  local_10 = *(undefined4 *)((int)param_1 + 8);
+  local_10 = STField<undefined4>(param_1,8);
   local_18 = 0;
   local_14 = 10;
   iVar1 = sub_006E60A0(param_1,local_24);

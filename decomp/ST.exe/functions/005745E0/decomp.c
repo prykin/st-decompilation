@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param_2)
 
@@ -22,9 +24,8 @@ void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param
   int local_c;
   int local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((*(short *)(param_2 + 2) != 0) &&
-      (uVar2 = *(ushort *)((int)param_2 + 0x4e), (uVar2 & 0x4000) == 0)) &&
+      (uVar2 = STField<ushort>(param_2,0x4e), (uVar2 & 0x4000) == 0)) &&
      (((uVar2 & 0x2000) == 0 || ((uVar2 & 0x1000) == 0)))) {
     *(undefined4 *)(param_1->field_044D + 4) = 0;
     do {
@@ -37,11 +38,11 @@ void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param
     } while (param_2[10] != *piVar5);
     if (piVar5 == nullptr) {
 cf_break_loop_00574651:
-      local_14 = (int)*(short *)((int)param_2 + 6);
+      local_14 = (int)STField<short>(param_2,6);
       local_18 = (void *)(int)*(short *)(param_2 + 1);
       local_10 = (int)*(short *)(param_2 + 2);
       *(undefined2 *)(param_2 + 1) = 0;
-      *(undefined2 *)((int)param_2 + 6) = 0;
+      STField<undefined2>(param_2,6) = 0;
       *(undefined2 *)(param_2 + 2) = 0;
       pSVar3 = g_sT3DSMAPContext_0080760C;
       ppRVar1 = &g_sT3DSMAPContext_0080760C->field_0140;
@@ -56,8 +57,8 @@ cf_break_loop_00574651:
       pSVar3 = g_sT3DSMAPContext_0080760C;
       g_sT3DSMAPContext_0080760C->field_0140 = nullptr;
       pSVar3->field_013C = 0;
-      *(undefined2 *)(param_2 + 1) = local_18._0_2_;
-      *(undefined2 *)((int)param_2 + 6) = (undefined2)local_14;
+      *(undefined2 *)(param_2 + 1) = STPiece<0,2>(local_18);
+      STField<undefined2>(param_2,6) = (undefined2)local_14;
       *(undefined2 *)(param_2 + 2) = (undefined2)local_10;
       local_24 = Library::DKW::LIB::MemAllocClear
                            ((uint)param_1->field_0004 * (uint)param_1->field_0004);

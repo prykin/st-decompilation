@@ -23,7 +23,7 @@ void __thiscall JumpManagC::sub_006179D0(JumpManagC *this)
         if ((bVar4) &&
            (pvVar1 = DArrayAt<void>(pDVar2, uVar3),
            pvVar1 != nullptr)) {
-          *(undefined4 *)((int)pvVar1 + 0x18) = 0;
+          STField<undefined4>(pvVar1,0x18) = 0;
         }
         pDVar2 = this->field_005E;
         uVar3 = uVar3 + 1;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=0071F2F3 MOV AX,word ptr
@@ -20,10 +22,10 @@ int __thiscall FUN_0071f2f0(void *this,ushort param_1,ushort param_2,ushort para
 {
   int iVar1;
 
-  *(ushort *)((int)this + 0x174) = param_1;
-  *(ushort *)((int)this + 0x178) = param_3;
-  *(ushort *)((int)this + 0x176) = param_2;
-  *(ushort *)((int)this + 0x17a) = param_4;
+  STField<ushort>(this,0x174) = param_1;
+  STField<ushort>(this,0x178) = param_3;
+  STField<ushort>(this,0x176) = param_2;
+  STField<ushort>(this,0x17a) = param_4;
   iVar1 = FUN_006e5fe0(this,(undefined4 *)((int)this + 0x160));
   return -(uint)(iVar1 != 0);
 }

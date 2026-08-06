@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STVTableApplier] Virtual slot 0079DCBC+0x24
 
@@ -11,7 +13,7 @@ void __thiscall FUN_0074ab9e(void *param_1,undefined4 *param_2)
   uVar1 = FUN_00747f57(param_1,param_2);
   if (-1 < (int)uVar1) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(**(int **)((int)param_1 + 0xd8) + 0x90))(param_2);
+    (**(code **)(*STField<int *>(param_1,0xd8) + 0x90))(param_2);
   }
   return;
 }

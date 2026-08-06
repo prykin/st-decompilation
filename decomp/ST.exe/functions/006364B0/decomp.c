@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint FUN_006364b0(int param_1)
 
@@ -12,11 +14,11 @@ uint FUN_006364b0(int param_1)
                        (DAT_00806764,CASE_1D,"blast_p",0xffffffff,0,0,0,nullptr);
     if ((puVar1 != nullptr) && (g_sT3DSMAPContext_00807598 != nullptr)) {
       ST3DSMAPContext::sub_006E8660
-                (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar1 + 9),
-                 *(uint *)((int)puVar1 + 0xd),(int)*(uint *)((int)puVar1 + 9) / 2,
-                 (int)*(uint *)((int)puVar1 + 0xd) / 2,0);
+                (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,STField<uint>(puVar1,9),
+                 STField<uint>(puVar1,0xd),(int)STField<uint>(puVar1,9) / 2,
+                 (int)STField<uint>(puVar1,0xd) / 2,0);
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar1,*(int *)((int)puVar1 + 0x21),1);
+                (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar1,STField<int>(puVar1,0x21),1);
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_8,0,0);
     }
   }
@@ -31,11 +33,11 @@ uint FUN_006364b0(int param_1)
                        (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
     if ((puVar1 != nullptr) && (g_sT3DSMAPContext_00807598 != nullptr)) {
       ST3DSMAPContext::sub_006E8660
-                (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar1 + 9),
-                 *(uint *)((int)puVar1 + 0xd),(int)*(uint *)((int)puVar1 + 9) / 2,
-                 (int)*(uint *)((int)puVar1 + 0xd) / 2,0);
+                (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,STField<uint>(puVar1,9),
+                 STField<uint>(puVar1,0xd),(int)STField<uint>(puVar1,9) / 2,
+                 (int)STField<uint>(puVar1,0xd) / 2,0);
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar1,*(int *)((int)puVar1 + 0x21),1);
+                (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar1,STField<int>(puVar1,0x21),1);
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_8,0,0);
       if (param_1 == 1) {
         ST3DSMAPContext::sub_006EA8A0(g_sT3DSMAPContext_00807598,local_8,0,2,0);

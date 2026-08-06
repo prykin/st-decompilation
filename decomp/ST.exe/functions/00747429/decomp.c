@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_00747429(void *this,undefined4 param_1,undefined4 param_2)
 
@@ -7,7 +9,7 @@ undefined4 __thiscall FUN_00747429(void *this,undefined4 param_1,undefined4 para
   undefined4 uVar3;
   int *local_8;
 
-  puVar1 = *(undefined4 **)((int)this + 0x40);
+  puVar1 = STField<undefined4 *>(this,0x40);
   if (puVar1 == nullptr) {
     uVar3 = 0x80004002;
   }
@@ -17,8 +19,8 @@ undefined4 __thiscall FUN_00747429(void *this,undefined4 param_1,undefined4 para
     iVar2 = (**(code **)*puVar1)(puVar1,&DAT_007a1af0,&local_8);
     if (iVar2 < 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar3 = (**(code **)(**(int **)((int)this + 0x40) + 0x20))
-                        (*(int **)((int)this + 0x40),param_1);
+      uVar3 = (**(code **)(*STField<int *>(this,0x40) + 0x20))
+                        (STField<int *>(this,0x40),param_1);
     }
     else {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

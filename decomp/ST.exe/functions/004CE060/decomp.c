@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_004ce060(void *this,int param_1)
 
@@ -11,7 +13,7 @@ int __thiscall FUN_004ce060(void *this,int param_1)
   iVar3 = 0;
   local_8 = 0;
   iVar1 = 0;
-  if (0 < *(int *)((int)this + 0x524)) {
+  if (0 < STField<int>(this,0x524)) {
     puVar2 = (undefined4 *)((int)this + 0x4d0);
     do {
       iVar1 = STPlaySystemC::sub_006E62D0
@@ -25,7 +27,7 @@ int __thiscall FUN_004ce060(void *this,int param_1)
       iVar3 = iVar3 + 1;
       puVar2 = puVar2 + 1;
       iVar1 = local_8;
-    } while (iVar3 < *(int *)((int)this + 0x524));
+    } while (iVar3 < STField<int>(this,0x524));
   }
   return iVar1;
 }

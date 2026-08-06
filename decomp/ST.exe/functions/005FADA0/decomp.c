@@ -11,34 +11,34 @@ undefined4 __thiscall FUN_005fada0(void *this,int param_1,uint param_2,int param
   short local_6;
 
   uVar3 = 0;
-  if (*(int *)((int)this + 0x2e6) == 0) {
+  if (STField<int>(this,0x2e6) == 0) {
     STColl3C::CreateAddSpr(this);
   }
   else {
     thunk_FUN_005f9f70(this);
   }
-  if (*(int *)((int)this + 0x2e6) != 0) {
-    memset((void *)(*(int *)((int)this + 0x2e6) + 8), 0, 0x2a); /* compiler bulk-zero initialization */
+  if (STField<int>(this,0x2e6) != 0) {
+    memset((void *)(STField<int>(this,0x2e6) + 8), 0, 0x2a); /* compiler bulk-zero initialization */
     thunk_FUN_00416270(this,&local_6,(int *)&local_8,(int *)&local_a);
     if (param_3 == 1) {
       thunk_FUN_005fac40(this,0,1,param_1,local_6,local_8,(int)local_a);
     }
     else {
-      *(int *)(*(int *)((int)this + 0x2e6) + 0x14) = (int)local_6;
-      *(int *)(*(int *)((int)this + 0x2e6) + 0x18) = (int)local_8;
-      *(int *)(*(int *)((int)this + 0x2e6) + 0x1c) = (int)local_a;
+      *(int *)(STField<int>(this,0x2e6) + 0x14) = (int)local_6;
+      *(int *)(STField<int>(this,0x2e6) + 0x18) = (int)local_8;
+      *(int *)(STField<int>(this,0x2e6) + 0x1c) = (int)local_a;
     }
     uVar3 = 1;
-    if (*(char *)((int)this + 0x2b6) != '\0') {
+    if (STField<char>(this,0x2b6) != '\0') {
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::thunk_FUN_005faa10
                 (this,param_3);
-      uVar1 = *(uint *)(*(int *)((int)this + 0x2e6) + 4);
+      uVar1 = *(uint *)(STField<int>(this,0x2e6) + 4);
       if (-1 < (int)uVar1) {
         if (param_3 != 1) {
           param_2 = uVar1;
           uVar1 = thunk_FUN_004ad650((STT3DSprC *)((int)this + 0x1d5));
         }
-        Library::Ourlib::ST3DSMAP::SprSetLevBefore(*(void **)((int)this + 0x211),uVar1,param_2);
+        Library::Ourlib::ST3DSMAP::SprSetLevBefore(STField<void *>(this,0x211),uVar1,param_2);
       }
     }
   }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: D:0066C416>00401E8D | D:0066C5BE>00401E8D | D:0066C811>00401E8D */

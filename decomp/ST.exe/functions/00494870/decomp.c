@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 bool __thiscall FUN_00494870(void *this,uint param_1)
 
@@ -10,10 +12,10 @@ bool __thiscall FUN_00494870(void *this,uint param_1)
   bool bVar6;
 
   uVar3 = 1;
-  if (((*(int *)((int)this + 0x732) != 1) || (7 < param_1)) ||
+  if (((STField<int>(this,0x732) != 1) || (7 < param_1)) ||
      ((g_playSystem_00802A38 != nullptr &&
       (7 < g_bulkInitializedRecords_008087C7[param_1].field_0022)))) goto cf_common_exit_00494A35;
-  bVar1 = *(byte *)((int)this + 0x24);
+  bVar1 = STField<byte>(this,0x24);
   if (DAT_00808a8f == '\0') {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((byte)param_1 == bVar1) {
@@ -80,7 +82,7 @@ LAB_00494a19:
   iVar4 = thunk_FUN_0041d350(this,param_1);
   uVar3 = (undefined1)iVar4;
 cf_common_exit_00494A35:
-  if ((*(int *)((int)this + 0x45d) == 0x14) && (*(int *)((int)this + 0x5c0) == 3)) {
+  if ((STField<int>(this,0x45d) == 0x14) && (STField<int>(this,0x5c0) == 3)) {
     uVar3 = 0;
   }
   return (bool)uVar3;

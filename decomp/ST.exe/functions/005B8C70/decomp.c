@@ -60,8 +60,7 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
       }
       if (param_3 == 0) {
         bVar5 = 0;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = (uint)local_8._1_3_ << 8;
+        local_8 = (uint)STPiece<1,3>(local_8) << 8;
         if (this_00->field_009A != 0) {
           do {
             if (*(char *)((int)&this_00->field_1C9C + (local_8 & 0xff)) != '\0') {
@@ -79,8 +78,7 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
       else {
         bVar5 = 0;
         this_00->field_1C9C = 0x1010101;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = (uint)local_8._1_3_ << 8;
+        local_8 = (uint)STPiece<1,3>(local_8) << 8;
         this_00->field_1CA0 = 0x1010101;
         this_00->field_1CA4 = 0x1010101;
         this_00->field_1CA8 = 1;

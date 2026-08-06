@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] pointer_return_element_width target=return:-1: return=/uint *32
    Evidence: generic returned address is dereferenced with one consistent machine width across

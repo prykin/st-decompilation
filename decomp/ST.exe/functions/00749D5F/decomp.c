@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0074A143 -> 00749D5F @ 0074A16E; CBaseRenderer::BeginFlush this; stable alias ESI */

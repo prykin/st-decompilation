@@ -35,10 +35,10 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   local_1a8[0] = 0;
   local_10 = this;
   if (param_2 == 0) {
-    if (*(int *)((int)this + 0x1178) != 0) {
+    if (STField<int>(this,0x1178) != 0) {
       wsprintfA((LPSTR)local_1a8,"%s%s%s\\%s",(int)this + 0x60,PTR_s_SAVEGAME__0079b02c,
                 &DAT_00807ddd,PTR_s_SAVE_QUICKSAVE_0079b044);
-      *(undefined4 *)((int)this + 0x1178) = 0;
+      STField<undefined4>(this,0x1178) = 0;
       goto LAB_0056f325;
     }
     if (param_1 == '\x03') goto LAB_0056f325;
@@ -65,7 +65,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   uVar6 = 0;
 LAB_0056f325:
   if ((param_1 != '\0') || (local_1a8[0] != 0)) {
-    cVar14 = *(char *)((int)this + 0x1163);
+    cVar14 = STField<char>(this,0x1163);
     if (cVar14 == '\x01') {
       local_8 = local_8 | 0x100;
     }
@@ -86,9 +86,8 @@ LAB_0056f325:
       if ((param_1 == '\0') || (param_1 == '\x03')) {
         Library::Ourlib::MFSTMAP::mfTMapSave(DAT_00806750,(int)local_14,"3D_MAP",'\x01');
         pvVar2 = local_10;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::Ourlib::MFANY::mfAnySave
-                  (*(byte **)((int)local_10 + 0x7d12),*(uint *)((int)local_10 + 0x7d16),(int)pcVar8,
+                  (STField<byte *>(local_10,0x7d12),STField<uint>(local_10,0x7d16),(int)pcVar8,
                    PTR_s_TEXTURE_0079b07c,'\x01');
         STPlaySystemC::Save(g_playSystem_00802A38,pcVar8);
         cMf32::RecPut(pcVar8,0xc,PTR_s_RND_INIT_0079b05c,(byte *)((int)pvVar2 + 0x1134),4,
@@ -102,17 +101,15 @@ LAB_0056f325:
         iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
         pvVar2 = local_10;
         pcVar8 = local_14;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if ((iVar3 == 0) && (*(uint **)((int)local_10 + 0x4ea7) != nullptr)) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        if ((iVar3 == 0) && (STField<uint *>(local_10,0x4ea7) != nullptr)) {
           Library::Ourlib::MFSARR::mfSarSave
-                    (*(uint **)((int)local_10 + 0x4ea7),(int)local_14,PTR_s_DESCRIPTION_0079b074,
+                    (STField<uint *>(local_10,0x4ea7),(int)local_14,PTR_s_DESCRIPTION_0079b074,
                      '\x01');
         }
         g_currentExceptionFrame = local_60.previous;
-        if (*(uint **)((int)pvVar2 + 0x4eab) != nullptr) {
+        if (STField<uint *>(pvVar2,0x4eab) != nullptr) {
           Library::Ourlib::MFSARR::mfSarSave
-                    (*(uint **)((int)pvVar2 + 0x4eab),(int)pcVar8,PTR_s_OBJECTIVES_0079b078,'\x01');
+                    (STField<uint *>(pvVar2,0x4eab),(int)pcVar8,PTR_s_OBJECTIVES_0079b078,'\x01');
         }
         if (g_sT3DSMAPContext_00807598 != nullptr) {
           iVar3 = 1;
@@ -141,10 +138,10 @@ LAB_0056f325:
                       nullptr,'\0',nullptr);
         cMf32::RecPut(pcVar8,0,PTR_s_REPORT_0079b090,(byte *)((int)pvVar2 + 0x4f02),0x27f0,
                       nullptr,'\0',nullptr);
-        local_1b = *(undefined1 *)((int)pvVar2 + 0x112e);
-        local_1a = *(undefined1 *)((int)pvVar2 + 0x112f);
-        local_1c = *(byte *)((int)pvVar2 + 0x112d);
-        local_19 = *(undefined4 *)((int)pvVar2 + 0x1130);
+        local_1b = STField<undefined1>(pvVar2,0x112e);
+        local_1a = STField<undefined1>(pvVar2,0x112f);
+        local_1c = STField<byte>(pvVar2,0x112d);
+        local_19 = STField<undefined4>(pvVar2,0x1130);
         cMf32::RecPut(pcVar8,0x80,PTR_s_SAVE_PLAYER_0079b058,&local_1c,7,nullptr,'\0',
                       nullptr);
         cMf32::RecPut(pcVar8,0,PTR_s_RESTART_GAME_0079b060,(byte *)((int)pvVar2 + 0x2b2f),0x2274,
@@ -153,7 +150,7 @@ LAB_0056f325:
                       nullptr,'\0',nullptr);
         cMf32::RecPut(pcVar8,0xc,PTR_s_STATETIMER_GAME_0079b064,(byte *)((int)pvVar2 + 0x4eb3),4,
                       nullptr,'\0',nullptr);
-        if (*(short *)((int)pvVar2 + 0x4ed7) == 1) {
+        if (STField<short>(pvVar2,0x4ed7) == 1) {
           cMf32::RecPut(pcVar8,0xc,PTR_s_BRIEFING_GAME_0079b06c,(byte *)((int)pvVar2 + 0x4eb7),0x20,
                         nullptr,'\0',nullptr);
         }

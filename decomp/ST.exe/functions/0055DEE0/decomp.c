@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_0055dee0(byte *param_1)
 
@@ -352,8 +354,8 @@ LAB_0055eb08:
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
       if ((*local_10 & 7) != 0) {
-        *(byte *)((int)local_10 + 1) =
-             (byte)((int)(iVar9 + (uint)*(byte *)((int)local_10 + 1) * 4) / local_38);
+        STField<byte>(local_10,1) =
+             (byte)((int)(iVar9 + (uint)STField<byte>(local_10,1) * 4) / local_38);
         iVar5 = DAT_008033a4;
       }
       local_40 = (ushort *)local_34;
@@ -422,8 +424,8 @@ LAB_0055eb08:
           iVar4 = iVar4 + -1;
         } while (iVar4 != 0);
         if ((*local_10 & 7) != 0) {
-          iVar5 = iVar9 + (uint)*(byte *)((int)local_10 + 1) * 4;
-          *(char *)((int)local_10 + 1) =
+          iVar5 = iVar9 + (uint)STField<byte>(local_10,1) * 4;
+          STField<char>(local_10,1) =
                ((char)(iVar5 / 0xf) + (char)(iVar5 >> 0x1f)) -
                (char)((longlong)iVar5 * 0x88888889 >> 0x3f);
           iVar5 = DAT_008033a4;
@@ -492,8 +494,8 @@ LAB_0055eb08:
           iVar4 = iVar4 + -1;
         } while (iVar4 != 0);
         if ((*local_10 & 7) != 0) {
-          *(byte *)((int)local_10 + 1) =
-               (byte)((int)(iVar16 + (uint)*(byte *)((int)local_10 + 1) * 4) / (iVar9 * 3));
+          STField<byte>(local_10,1) =
+               (byte)((int)(iVar16 + (uint)STField<byte>(local_10,1) * 4) / (iVar9 * 3));
           iVar5 = DAT_008033a4;
         }
         int scalar_local_40 = iVar9 * 4; /* split integer lifetime from pointer-typed SSA storage */

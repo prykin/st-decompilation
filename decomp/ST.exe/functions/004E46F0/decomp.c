@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_004e46f0(int *param_1)
 
@@ -55,8 +57,7 @@ undefined4 __fastcall FUN_004e46f0(int *param_1)
         if ((pSVar4 != nullptr) &&
            ((undefined4 *)pSVar4->field_001C != nullptr)) {
           local_10 = param_1[6];
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_12 = *(undefined2 *)((int)param_1 + 0x32);
+          local_12 = STField<undefined2>(param_1,0x32);
           local_18 = 0x5d99;
           local_14 = 1;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

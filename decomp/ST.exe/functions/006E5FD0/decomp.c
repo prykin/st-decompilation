@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=;

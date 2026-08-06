@@ -36,8 +36,7 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
       this->field_0596 = 0;
       if (iVar2 != -1) {
         local_e = local_6;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c = param_1._2_2_;
+        local_c = STPiece<2,2>(param_1);
         local_a = local_8;
       }
       sub_00481520(this,(int)local_e,(int)local_c,(int)local_a);

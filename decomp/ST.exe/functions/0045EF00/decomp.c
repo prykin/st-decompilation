@@ -82,7 +82,7 @@ void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum par
     this->field_03E8 = *param_2;
     *(uint *)&this->field_0x3ec = param_2[1];
     this->field_03F0 = (short)param_2[2];
-    this->field_03F2 = *(undefined1 *)((int)param_2 + 10);
+    this->field_03F2 = STField<undefined1>(param_2,10);
     return;
   case CASE_A:
     this->field_02F0 = 1;

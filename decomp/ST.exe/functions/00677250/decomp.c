@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_00677250(undefined4 param_1,undefined4 param_2,int param_3,uint *param_4)
 

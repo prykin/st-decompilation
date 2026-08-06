@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00694100(void *param_1)
 
@@ -9,21 +11,18 @@ void __fastcall FUN_00694100(void *param_1)
   do {
     iVar1 = thunk_FUN_00694200(param_1,uVar2);
     if (iVar1 == 0) {
-      *(undefined4 *)((int)param_1 + 0x199d) = 0xffffffff;
+      STField<undefined4>(param_1,0x199d) = 0xffffffff;
       while( true ) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar1 = *(int *)((int)param_1 + 0x199d) + 1;
-        *(int *)((int)param_1 + 0x199d) = iVar1;
+        iVar1 = STField<int>(param_1,0x199d) + 1;
+        STField<int>(param_1,0x199d) = iVar1;
         while( true ) {
           if (7 < iVar1) goto LAB_0069417a;
           iVar1 = thunk_FUN_00693e60(param_1,iVar1);
           if (iVar1 != 0) break;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar1 = *(int *)((int)param_1 + 0x199d) + 1;
-          *(int *)((int)param_1 + 0x199d) = iVar1;
+          iVar1 = STField<int>(param_1,0x199d) + 1;
+          STField<int>(param_1,0x199d) = iVar1;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar1 = thunk_FUN_00693e60(param_1,*(int *)((int)param_1 + 0x199d));
+        iVar1 = thunk_FUN_00693e60(param_1,STField<int>(param_1,0x199d));
         if (iVar1 == 0) break;
         if ((int)uVar2 < (int)(uint)*(byte *)(iVar1 + 0x23)) {
           *(byte *)(iVar1 + 0x23) = *(byte *)(iVar1 + 0x23) - 1;

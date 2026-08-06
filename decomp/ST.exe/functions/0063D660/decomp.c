@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -38,22 +40,22 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
   uint local_8;
 
   uVar4 = 0;
-  if (*(int *)((int)this + 0x336) == 0) {
+  if (STField<int>(this,0x336) == 0) {
     return 0;
   }
-  iVar5 = *(int *)(*(int *)((int)this + 0x336) + 0xc);
+  iVar5 = *(int *)(STField<int>(this,0x336) + 0xc);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == '\n') {
     fVar3 = _DAT_007d2044 + _DAT_007d2044;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_1 = 0;
-    *(undefined4 *)((int)this + 0x2b8) = *(undefined4 *)((int)this + 0x2b4);
-    iVar1 = *(int *)((int)this + 700);
-    *(undefined4 *)((int)this + 0x29a) = 1;
+    STField<undefined4>(this,0x2b8) = STField<undefined4>(this,0x2b4);
+    iVar1 = STField<int>(this,700);
+    STField<undefined4>(this,0x29a) = 1;
     local_8 = 0;
     if (0 < iVar5) {
       do {
-        iVar2 = *(int *)((int)this + 0x336);
+        iVar2 = STField<int>(this,0x336);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((local_8 < *(uint *)(iVar2 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar2 + 8) * local_8 + *(int *)(iVar2 + 0x1c)),
@@ -64,16 +66,16 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           lVar9 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           fsin(extraout_ST0_06);
-          puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
+          puVar6[2] = (int)lVar9 + STField<int>(this,0x2a4);
           lVar9 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = uVar4 + 1;
-          puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
-          puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
-          puVar6[5] = *(undefined4 *)((int)this + 0x2a4);
-          puVar6[6] = *(undefined4 *)((int)this + 0x2a8);
-          puVar6[7] = *(undefined4 *)((int)this + 0x2ac);
-          iVar2 = *(int *)((int)this + 0x2b4);
+          puVar6[3] = (int)lVar9 + STField<int>(this,0x2a8);
+          puVar6[4] = (float)STField<int>(this,0x2ac) * _DAT_007904f8 * _DAT_007904f0;
+          puVar6[5] = STField<undefined4>(this,0x2a4);
+          puVar6[6] = STField<undefined4>(this,0x2a8);
+          puVar6[7] = STField<undefined4>(this,0x2ac);
+          iVar2 = STField<int>(this,0x2b4);
           puVar6[1] = 1;
           puVar6[9] = 10;
           puVar6[8] = 5;
@@ -96,11 +98,11 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
       fVar8 = (float10)_DAT_007d2044 * (float10)_DAT_0079d4a4;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = 0;
-      *(undefined4 *)((int)this + 0x2b8) = *(undefined4 *)((int)this + 0x2b4);
-      *(undefined4 *)((int)this + 0x29a) = 1;
+      STField<undefined4>(this,0x2b8) = STField<undefined4>(this,0x2b4);
+      STField<undefined4>(this,0x29a) = 1;
       fVar7 = fVar8 + fVar8;
       do {
-        iVar5 = *(int *)((int)this + 0x336);
+        iVar5 = STField<int>(this,0x336);
         if ((uVar4 < *(uint *)(iVar5 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar5 + 8) * uVar4 + *(int *)(iVar5 + 0x1c)),
            puVar6 != nullptr)) {
@@ -109,14 +111,14 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           lVar9 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           fsin(extraout_ST0_00);
-          puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
+          puVar6[2] = (int)lVar9 + STField<int>(this,0x2a4);
           lVar9 = Library::MSVCRT::__ftol();
-          puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
-          puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
-          puVar6[5] = *(undefined4 *)((int)this + 0x2a4);
-          puVar6[6] = *(undefined4 *)((int)this + 0x2a8);
-          puVar6[7] = *(undefined4 *)((int)this + 0x2ac);
-          iVar5 = *(int *)((int)this + 0x2b4);
+          puVar6[3] = (int)lVar9 + STField<int>(this,0x2a8);
+          puVar6[4] = (float)STField<int>(this,0x2ac) * _DAT_007904f8 * _DAT_007904f0;
+          puVar6[5] = STField<undefined4>(this,0x2a4);
+          puVar6[6] = STField<undefined4>(this,0x2a8);
+          puVar6[7] = STField<undefined4>(this,0x2ac);
+          iVar5 = STField<int>(this,0x2b4);
           puVar6[1] = 1;
           puVar6[9] = 1;
           *puVar6 = 1;
@@ -136,7 +138,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
       _param_1 = 0;
       uVar4 = 0x32;
       do {
-        iVar5 = *(int *)((int)this + 0x336);
+        iVar5 = STField<int>(this,0x336);
         if ((uVar4 < *(uint *)(iVar5 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar5 + 8) * uVar4 + *(int *)(iVar5 + 0x1c)),
            puVar6 != nullptr)) {
@@ -146,14 +148,14 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           lVar9 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           fsin(extraout_ST0_02);
-          puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
+          puVar6[2] = (int)lVar9 + STField<int>(this,0x2a4);
           lVar9 = Library::MSVCRT::__ftol();
-          puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
-          puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
-          puVar6[5] = *(undefined4 *)((int)this + 0x2a4);
-          puVar6[6] = *(undefined4 *)((int)this + 0x2a8);
-          puVar6[7] = *(undefined4 *)((int)this + 0x2ac);
-          iVar5 = *(int *)((int)this + 0x2b4);
+          puVar6[3] = (int)lVar9 + STField<int>(this,0x2a8);
+          puVar6[4] = (float)STField<int>(this,0x2ac) * _DAT_007904f8 * _DAT_007904f0;
+          puVar6[5] = STField<undefined4>(this,0x2a4);
+          puVar6[6] = STField<undefined4>(this,0x2a8);
+          puVar6[7] = STField<undefined4>(this,0x2ac);
+          iVar5 = STField<int>(this,0x2b4);
           puVar6[1] = 1;
           puVar6[9] = 1;
           puVar6[8] = 0;
@@ -175,7 +177,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
       _param_1 = 0;
       local_8 = 0x3c;
       do {
-        iVar1 = *(int *)((int)this + 0x336);
+        iVar1 = STField<int>(this,0x336);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((local_8 < *(uint *)(iVar1 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar1 + 8) * local_8 + *(int *)(iVar1 + 0x1c)),
@@ -186,16 +188,16 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           lVar9 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           fsin(extraout_ST0_04);
-          puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
+          puVar6[2] = (int)lVar9 + STField<int>(this,0x2a4);
           lVar9 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = iVar5 + 1;
-          puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
-          puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
-          puVar6[5] = *(undefined4 *)((int)this + 0x2a4);
-          puVar6[6] = *(undefined4 *)((int)this + 0x2a8);
-          puVar6[7] = *(undefined4 *)((int)this + 0x2ac);
-          iVar5 = *(int *)((int)this + 0x2b4);
+          puVar6[3] = (int)lVar9 + STField<int>(this,0x2a8);
+          puVar6[4] = (float)STField<int>(this,0x2ac) * _DAT_007904f8 * _DAT_007904f0;
+          puVar6[5] = STField<undefined4>(this,0x2a4);
+          puVar6[6] = STField<undefined4>(this,0x2a8);
+          puVar6[7] = STField<undefined4>(this,0x2ac);
+          iVar5 = STField<int>(this,0x2b4);
           puVar6[1] = 2;
           puVar6[9] = 0x19;
           puVar6[8] = 10;
@@ -216,34 +218,34 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         local_8 = local_8 + 1;
       } while (iVar1 < 300);
       puVar6 = Library::DKW::LIB::MemAlloc(0x1b);
-      *(undefined4 **)((int)this + 0x37f) = puVar6;
+      STField<undefined4 *>(this,0x37f) = puVar6;
       if (puVar6 != nullptr) {
         *puVar6 = 0xffffffff;
-        iVar5 = thunk_FUN_00640170(this,*(int *)((int)this + 0x2a4),*(int *)((int)this + 0x2a8),
-                                   *(undefined4 *)((int)this + 0x2b4));
+        iVar5 = thunk_FUN_00640170(this,STField<int>(this,0x2a4),STField<int>(this,0x2a8),
+                                   STField<undefined4>(this,0x2b4));
         if (iVar5 != 0) {
           thunk_FUN_00640240(this);
         }
       }
-      iVar5 = (*(ST3DSMAPContext **)((int)this + 0x211))->field_0380;
+      iVar5 = (STField<ST3DSMAPContext *>(this,0x211))->field_0380;
       fVar7 = ST3DSMAPContext::sub_006E3210
-                        (*(ST3DSMAPContext **)((int)this + 0x211),
-                         (*(int *)((int)this + 0x2a4) * iVar5) / 0xc9,
-                         (*(int *)((int)this + 0x2a8) * iVar5) / 0xc9);
-      *(float *)((int)this + 0x332) = (float)(fVar7 + (float10)_DAT_00790500);
+                        (STField<ST3DSMAPContext *>(this,0x211),
+                         (STField<int>(this,0x2a4) * iVar5) / 0xc9,
+                         (STField<int>(this,0x2a8) * iVar5) / 0xc9);
+      STField<float>(this,0x332) = (float)(fVar7 + (float10)_DAT_00790500);
       return 0;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if ((param_1 == '\f') && (iVar1 = *(int *)((int)this + 700), iVar1 != 0)) {
+    if ((param_1 == '\f') && (iVar1 = STField<int>(this,700), iVar1 != 0)) {
       fVar3 = _DAT_007d2044 + _DAT_007d2044;
-      *(undefined4 *)((int)this + 0x2b8) = *(undefined4 *)((int)this + 0x2b4);
+      STField<undefined4>(this,0x2b8) = STField<undefined4>(this,0x2b4);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = 0;
-      *(undefined4 *)((int)this + 0x29a) = 1;
+      STField<undefined4>(this,0x29a) = 1;
       local_8 = 0;
       if (0 < iVar5) {
         do {
-          iVar2 = *(int *)((int)this + 0x336);
+          iVar2 = STField<int>(this,0x336);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((local_8 < *(uint *)(iVar2 + 0xc)) &&
              (puVar6 = (undefined4 *)(*(int *)(iVar2 + 8) * local_8 + *(int *)(iVar2 + 0x1c)),
@@ -254,23 +256,23 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
             lVar9 = Library::MSVCRT::__ftol();
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             fsin(extraout_ST0);
-            puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
+            puVar6[2] = (int)lVar9 + STField<int>(this,0x2a4);
             lVar9 = Library::MSVCRT::__ftol();
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_1 = uVar4 + 1;
-            puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
-            puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
-            puVar6[5] = *(undefined4 *)((int)this + 0x2a4);
-            puVar6[6] = *(undefined4 *)((int)this + 0x2a8);
-            puVar6[7] = *(undefined4 *)((int)this + 0x2ac);
-            iVar2 = *(int *)((int)this + 0x2b4);
+            puVar6[3] = (int)lVar9 + STField<int>(this,0x2a8);
+            puVar6[4] = (float)STField<int>(this,0x2ac) * _DAT_007904f8 * _DAT_007904f0;
+            puVar6[5] = STField<undefined4>(this,0x2a4);
+            puVar6[6] = STField<undefined4>(this,0x2a8);
+            puVar6[7] = STField<undefined4>(this,0x2ac);
+            iVar2 = STField<int>(this,0x2b4);
             puVar6[1] = 1;
             puVar6[9] = 10;
             puVar6[8] = 5;
             *puVar6 = 0;
             puVar6[0xb] = (float)iVar2;
             uVar4 = _param_1;
-            if (*(int *)((int)this + 700) <= (int)_param_1) {
+            if (STField<int>(this,700) <= (int)_param_1) {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_1 = 0;
               uVar4 = _param_1;

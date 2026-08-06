@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall
 FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint param_5,
@@ -19,7 +21,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
   if (((g_allPlayers_007FA174 != nullptr) && (param_3 != nullptr)) && (0 < param_2)
      ) {
     if (((int)param_1 < 0) || (8 < (int)param_1)) {
-      param_1 = *(uint *)((int)this + 0x97);
+      param_1 = STField<uint>(this,0x97);
     }
     if (param_1 == 8) {
       param_1 = (uint)DAT_0080874d;
@@ -53,7 +55,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
               iVar2 = thunk_FUN_00423220((void *)((int)this + 0x1c),(int *)local_c,DAT_00811900);
               if (local_c[iVar2 * 0xb + 3] != 0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                param_2._0_2_ = CONCAT11(1,cVar5);
+                STPiece<0,2>(param_2) = CONCAT11(1,cVar5);
                 /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22((short)local_c[iVar2 * 0xb + 4],(undefined2)param_2);
                 Library::DKW::TBL::DArrayAppend((DArrayTy *)param_3,&param_2);
@@ -70,7 +72,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
             do {
               if (*(int *)(iVar2 + 0xc + (int)local_c) != 0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                param_2._0_2_ = CONCAT11(1,cVar5);
+                STPiece<0,2>(param_2) = CONCAT11(1,cVar5);
                 /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22(*(undefined2 *)(iVar2 + 0x10 + (int)local_c),(undefined2)param_2);
                 Library::DKW::TBL::DArrayAppend((DArrayTy *)param_3,&param_2);

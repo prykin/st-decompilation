@@ -52,11 +52,9 @@ STAllPlayersC::GetCamPoint
       if (0 < (int)dVar1) {
         do {
           DArrayGetElement(param_3,local_c,local_10);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_10._0_2_ != 0xffff) {
+          if (STPiece<0,2>(local_10) != 0xffff) {
             uVar6 = uVar6 + 1;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,local_10._0_2_,CASE_1);
+            pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,STPiece<0,2>(local_10),CASE_1);
             STFishC::sub_004162B0
                       ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,
                        (undefined2 *)((int)&param_4 + 2));
@@ -69,10 +67,8 @@ STAllPlayersC::GetCamPoint
           local_c = 0;
           do {
             DArrayGetElement(param_3,local_c,local_10);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            if (local_10._0_2_ != 0xffff) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,local_10._0_2_,CASE_1);
+            if (STPiece<0,2>(local_10) != 0xffff) {
+              pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,STPiece<0,2>(local_10),CASE_1);
               STFishC::sub_004162B0
                         ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,
                          (undefined2 *)((int)&param_4 + 2));
@@ -88,7 +84,7 @@ STAllPlayersC::GetCamPoint
                   *param_6 = (int)(short)local_8;
                 }
                 if (param_7 != nullptr) {
-                  *param_7 = (int)param_4._2_2_;
+                  *param_7 = (int)STPiece<2,2>(param_4);
                 }
                 local_14 = iVar3;
                 if (param_8 != nullptr) {
@@ -139,7 +135,7 @@ LAB_0043acdb:
     *param_6 = (int)(short)local_8;
   }
   if (param_7 != nullptr) {
-    *param_7 = (int)param_4._2_2_;
+    *param_7 = (int)STPiece<2,2>(param_4);
   }
   if (param_8 != nullptr) {
     *param_8 = pSVar5->field_01ED;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00495010(void *this,undefined4 param_1)
 
@@ -5,10 +7,10 @@ void __thiscall FUN_00495010(void *this,undefined4 param_1)
   int iVar1;
   uint local_8;
 
-  if (*(int *)((int)this + 0x73a) == 0) {
-    iVar1 = *(int *)((int)this + 0x45d);
+  if (STField<int>(this,0x73a) == 0) {
+    iVar1 = STField<int>(this,0x45d);
     if (iVar1 == 3) {
-      *(undefined4 *)((int)this + 0x73a) = param_1;
+      STField<undefined4>(this,0x73a) = param_1;
       return;
     }
     if (iVar1 != 0x14) {
@@ -16,11 +18,11 @@ void __thiscall FUN_00495010(void *this,undefined4 param_1)
       local_8 = g_playSystem_00802A38->field_00E4;
       STBoatC::CmdToObj(this,CASE_3,&local_8);
     }
-    *(undefined4 *)((int)this + 0x73a) = param_1;
+    STField<undefined4>(this,0x73a) = param_1;
     return;
   }
 LAB_00495071:
-  *(undefined4 *)((int)this + 0x73a) = param_1;
+  STField<undefined4>(this,0x73a) = param_1;
   return;
 }
 

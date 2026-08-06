@@ -347,7 +347,7 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
           local_30 = STReplaceLowByte((uint32_t)(local_30), (uint8_t)(1));
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         case CASE_5:
-          local_30._0_2_ = CONCAT11(1,(undefined1)local_30);
+          STPiece<0,2>(local_30) = CONCAT11(1,(undefined1)local_30);
         case CASE_4:
           local_2c = 0x10100;
           this_00->field_1A61 = 2;
@@ -833,8 +833,7 @@ LAB_005a6e50:
                 if (local_8 != nullptr) {
                   ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,0x23,0,
                                    pAVar43->field_002C + -0x46,0x11);
-                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                  if (*(undefined1 *)((int)local_8 + 0x2d) == '\0') {
+                  if (STField<undefined1>(local_8,0x2d) == '\0') {
                     local_c = (AnonShape_005A4350_59BACD18 *)
                               thunk_FUN_0055c050(&DAT_00802a90,(int)local_8);
                     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_1E8E,3,1,'\x01',
@@ -844,8 +843,7 @@ LAB_005a6e50:
                     }
                     ccFntTy::WrStr(this_00->field_1A73,local_8,0,-1,
                                    (-(uint)((message->arg0).words.high != 0) & 0xfffffffe) + 2);
-                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                    if ((*(undefined1 *)((int)local_8 + 0x25) & 0x10) != 0) {
+                    if ((STField<undefined1>(local_8,0x25) & 0x10) != 0) {
                       uVar35 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
                                             this_00->field_1A8B,3);
                       FUN_006b5440((ushort *)this_00->field_1E8E,0,pAVar43->field_002C + -0x1d,
@@ -1135,7 +1133,7 @@ LAB_005a6e50:
               ccFntTy::WrStr(this_00->field_1A73,puVar31,iVar21,iVar46,uVar35);
               if (*(char *)(puVar24 + 0x1f) != '\0') {
                 ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,10,0x55,0x14a,0x11);
-                iVar21 = (int)(char)*(undefined1 *)((int)puVar24 + 0x7e) << 1;
+                iVar21 = (int)(char)STField<undefined1>(puVar24,0x7e) << 1;
                 wsprintfA((LPSTR)&DAT_0080f33a,"%dx%d",iVar21,iVar21);
                 ccFntTy::WrStr(this_00->field_1A73,&DAT_0080f33a,0,-1,0);
               }
@@ -1149,7 +1147,7 @@ LAB_005a6e50:
                 ccFntTy::SetSurf(this_00->field_1A73,this_00->field_1E8E,0,10,0x77,0x14a,0x11);
                 pcVar39 = LoadResourceString(0x2574,g_module_00807618);
                 wsprintfA((LPSTR)&DAT_0080f33a,"%d %s",
-                          (int)(char)*(undefined1 *)((int)puVar24 + 0x7d),pcVar39);
+                          (int)(char)STField<undefined1>(puVar24,0x7d),pcVar39);
                 ccFntTy::WrStr(this_00->field_1A73,&DAT_0080f33a,0,-1,0);
               }
               Library::DKW::DDX::FUN_006b4680

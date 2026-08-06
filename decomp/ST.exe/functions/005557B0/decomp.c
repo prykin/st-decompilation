@@ -17,10 +17,10 @@ void __fastcall FUN_005557b0(AnonShape_005557B0_28260162 *param_1)
       pvVar3 = DArrayAt<void>(pDVar1, uVar2);
       pDVar1->iteratorIndex = uVar2 + 1;
       if (pvVar3 == nullptr) break;
-      if (-1 < (int)*(uint *)((int)pvVar3 + 0x32)) {
+      if (-1 < (int)STField<uint>(pvVar3,0x32)) {
         Library::Ourlib::ST3DSMAP::SprClose
-                  (g_sT3DSMAPContext_00807598,*(uint *)((int)pvVar3 + 0x32));
-        *(undefined4 *)((int)pvVar3 + 0x32) = 0xffffffff;
+                  (g_sT3DSMAPContext_00807598,STField<uint>(pvVar3,0x32));
+        STField<undefined4>(pvVar3,0x32) = 0xffffffff;
       }
     }
     DArrayDestroy(param_1->field_0024);

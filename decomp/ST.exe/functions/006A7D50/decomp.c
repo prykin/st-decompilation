@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_006a7d50(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7
                 ,int param_8,int param_9,int param_10,undefined4 *param_11,int param_12,
@@ -42,23 +44,23 @@ int FUN_006a7d50(int param_1,int param_2,int param_3,int param_4,int param_5,int
   puVar11 = param_11 + local_8 * 0x12;
   local_c = param_9;
   *(short *)puVar11 = (short)param_8;
-  *(short *)((int)puVar11 + 2) = (short)param_9;
+  STField<short>(puVar11,2) = (short)param_9;
   *(short *)(puVar11 + 1) = (short)param_10;
-  *(undefined2 *)((int)puVar11 + 6) = 0;
+  STField<undefined2>(puVar11,6) = 0;
   local_40 = 0;
   local_44 = 0;
   local_18 = 0;
-  *(undefined2 *)((int)puVar11 + 0xe) = 0x7fff;
+  STField<undefined2>(puVar11,0xe) = 0x7fff;
   uVar6 = FUN_006a6360(param_5,param_6,param_7,param_8,param_9,param_10);
   local_2c = FUN_006a6320(uVar6);
   if (((param_8 == param_5) && (param_9 == param_6)) && (param_10 == param_7)) {
     local_8 = local_8 + -1;
     puVar11 = param_11 + local_8 * 0x12;
     *(short *)puVar11 = (short)param_5;
-    *(undefined2 *)((int)puVar11 + 2) = (undefined2)param_6;
+    STField<undefined2>(puVar11,2) = (undefined2)param_6;
     *(undefined2 *)(puVar11 + 1) = (undefined2)param_7;
-    *(short *)((int)puVar11 + 6) = sVar2;
-    *(undefined2 *)((int)puVar11 + 0xe) = 0x7fff;
+    STField<short>(puVar11,6) = sVar2;
+    STField<undefined2>(puVar11,0xe) = 0x7fff;
 LAB_006a8234:
     if (0 < local_8) {
       puVar11 = param_11 + local_8 * 0x12;
@@ -181,7 +183,7 @@ joined_r0x006a8098:
       *(undefined2 *)(local_28 + -0x12) = (undefined2)local_30;
       *(undefined2 *)((int)local_28 + -0x46) = (undefined2)local_c;
       *(undefined2 *)(local_28 + -0x11) = (undefined2)local_10;
-      *(undefined2 *)((int)local_28 + -0x42) = *(undefined2 *)((int)local_28 + 6);
+      *(undefined2 *)((int)local_28 + -0x42) = STField<undefined2>(local_28,6);
       local_28 = local_28 + -0x12;
     }
     local_8 = local_8 + -1;

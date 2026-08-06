@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_0074df2b(void *this,int *param_1)
 
@@ -13,14 +15,14 @@ int __thiscall FUN_0074df2b(void *this,int *param_1)
       *(int *)(*param_1 + 4) = param_1[1];
     }
     if ((int *)param_1[1] == nullptr) {
-      *(int *)((int)this + 4) = *param_1;
+      STField<int>(this,4) = *param_1;
     }
     else {
       *(int *)param_1[1] = *param_1;
     }
     iVar1 = param_1[2];
     FUN_0074e2d9((void *)((int)this + 0xc),param_1);
-    *(int *)((int)this + 8) = *(int *)((int)this + 8) + -1;
+    STField<int>(this,8) = STField<int>(this,8) + -1;
   }
   return iVar1;
 }

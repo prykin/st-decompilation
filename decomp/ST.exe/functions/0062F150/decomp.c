@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_0062f150(RecoveredRecord_STRubbishC_0062F150 *param_1)
 

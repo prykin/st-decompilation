@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x00483eb6) */
 
@@ -13,11 +15,11 @@ undefined4 __thiscall FUN_00483e30(void *this,RecoveredRecord_STBoatC_00482DB0 *
   longlong lVar7;
   longlong lVar8;
 
-  uVar2 = (int)*(short *)((int)this + 0x41) - (int)param_1->field_0041;
-  uVar1 = *(uint *)((int)this + 0x80c);
-  uVar3 = (int)*(short *)((int)this + 0x43) - (int)param_1->field_0043;
-  uVar4 = (int)*(short *)((int)this + 0x41) - (int)param_1->field_0045;
-  uVar5 = (int)*(short *)((int)this + 0x45) - (int)param_1->field_0045;
+  uVar2 = (int)STField<short>(this,0x41) - (int)param_1->field_0041;
+  uVar1 = STField<uint>(this,0x80c);
+  uVar3 = (int)STField<short>(this,0x43) - (int)param_1->field_0043;
+  uVar4 = (int)STField<short>(this,0x41) - (int)param_1->field_0045;
+  uVar5 = (int)STField<short>(this,0x45) - (int)param_1->field_0045;
   lVar6 = Library::MSVCRT::__allmul
                     (uVar3 + uVar4,
                      ((int)uVar3 >> 0x1f) + ((int)uVar4 >> 0x1f) + (uint)CARRY4(uVar3,uVar4),uVar5,

@@ -2359,8 +2359,7 @@ cf_common_exit_0066DCED:
                   (g_fish_00811984,&local_60,&local_5e,(undefined2 *)((int)&local_28 + 2));
         (*this_00->vtable->slot_20)(iVar12,(int)local_60);
         (*this_00->vtable->slot_20)(local_8,(int)local_5e);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        (*this_00->vtable->slot_20)(local_c,(int)local_28._2_2_);
+        (*this_00->vtable->slot_20)(local_c,(int)STPiece<2,2>(local_28));
       }
       if (-1 < iVar16) {
         uVar22 = (*g_fish_00811984->vtable->vfunc_11C)();
@@ -2419,12 +2418,9 @@ cf_common_exit_0066DCED:
         STFishC::sub_004162B0
                   (g_fish_00811984,(short *)((int)&local_30 + 2),(undefined2 *)((int)&local_24 + 2),
                    (undefined2 *)((int)&local_1c + 2));
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        (*this_00->vtable->slot_20)(iVar12,(int)local_30._2_2_);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        (*this_00->vtable->slot_20)(local_8,(int)local_24._2_2_);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        (*this_00->vtable->slot_20)(local_c,(int)local_1c._2_2_);
+        (*this_00->vtable->slot_20)(iVar12,(int)STPiece<2,2>(local_30));
+        (*this_00->vtable->slot_20)(local_8,(int)STPiece<2,2>(local_24));
+        (*this_00->vtable->slot_20)(local_c,(int)STPiece<2,2>(local_1c));
       }
       if (-1 < iVar16) {
         uVar22 = (*g_fish_00811984->vtable->vfunc_11C)();
@@ -2501,12 +2497,9 @@ cf_common_exit_0066DCED:
           STFishC::sub_004162B0
                     (g_fish_00811984,(short *)((int)&local_2c + 2),
                      (undefined2 *)((int)&local_18 + 2),(undefined2 *)((int)&local_10 + 2));
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          (*this_00->vtable->slot_20)(iVar12,(int)local_2c._2_2_);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          (*this_00->vtable->slot_20)(local_8,(int)local_18._2_2_);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          (*this_00->vtable->slot_20)(local_c,(int)local_10._2_2_);
+          (*this_00->vtable->slot_20)(iVar12,(int)STPiece<2,2>(local_2c));
+          (*this_00->vtable->slot_20)(local_8,(int)STPiece<2,2>(local_18));
+          (*this_00->vtable->slot_20)(local_c,(int)STPiece<2,2>(local_10));
         }
         if (-1 < iVar16) {
           uVar22 = (*g_fish_00811984->vtable->vfunc_11C)();

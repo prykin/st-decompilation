@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
@@ -61,7 +63,7 @@ STManRuinC::sub_00630C50
   if (param_3 == 0) {
     if (param_2 == 1) {
       local_c = ST3DSMAPContext::sub_006E9000
-                          (g_sT3DSMAPContext_00807598,**(undefined4 **)((int)puVar4 + 0x21),0x5a,
+                          (g_sT3DSMAPContext_00807598,*STField<undefined4 *>(puVar4,0x21),0x5a,
                            0x45,(float)pSVar2->field_0054 * _DAT_007904f8 * _DAT_007904f0,
                            (float)pSVar2->field_0058 * _DAT_007904f8 * _DAT_007904f0,
                            (float)pSVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc
@@ -70,7 +72,7 @@ STManRuinC::sub_00630C50
     if (param_2 == 4) {
       local_14 = pSVar2->field_0054 + 100;
       local_c = ST3DSMAPContext::sub_006E9000
-                          (g_sT3DSMAPContext_00807598,**(undefined4 **)((int)puVar4 + 0x21),0x78,
+                          (g_sT3DSMAPContext_00807598,*STField<undefined4 *>(puVar4,0x21),0x78,
                            0x56,(float)local_14 * _DAT_007904f8 * _DAT_007904f0,
                            (float)(pSVar2->field_0058 + 100) * _DAT_007904f8 * _DAT_007904f0,
                            (float)pSVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 + _DAT_0079d1a0
@@ -81,20 +83,20 @@ STManRuinC::sub_00630C50
   }
   puVar1 = &pSVar2->field_0061;
   if (param_2 == 1) {
-    uVar7 = *(uint *)((int)puVar4 + 0xd);
-    uVar6 = *(uint *)((int)puVar4 + 9);
+    uVar7 = STField<uint>(puVar4,0xd);
+    uVar6 = STField<uint>(puVar4,9);
     uVar9 = 0x45;
     uVar8 = 0x5a;
   }
   else {
-    uVar7 = *(uint *)((int)puVar4 + 0xd);
-    uVar6 = *(uint *)((int)puVar4 + 9);
+    uVar7 = STField<uint>(puVar4,0xd);
+    uVar6 = STField<uint>(puVar4,9);
     uVar9 = 100;
     uVar8 = 0x78;
   }
   ST3DSMAPContext::sub_006E8660(g_sT3DSMAPContext_00807598,puVar1,1,0,uVar6,uVar7,uVar8,uVar9,0);
   ST3DSMAPContext::sub_006E98E0
-            (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
+            (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
   ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,0);
   Library::Ourlib::ST3DSMAP::SprSetLevAfter(g_sT3DSMAPContext_00807598,*puVar1,-1);
   Library::Ourlib::ST3DSMAP::SprSetSplit(g_sT3DSMAPContext_00807598,*puVar1);

@@ -241,10 +241,8 @@ LAB_00582958:
         *(undefined4 *)pAVar17 = 0;
         pAVar17 = (AnonShape_0041AF40_F59F8577 *)&pAVar17->field_0x4;
       }
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_4c._8_4_ = pSVar13->field_0008;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_4c._12_4_ = 2;
+      STPiece<8,4>(local_4c) = pSVar13->field_0008;
+      STPiece<12,4>(local_4c) = 2;
       local_4c.field_0010 = 0x110;
       local_4c.field_0014 = &DAT_008116c8;
       pSVar13->GetMessage(&local_4c);

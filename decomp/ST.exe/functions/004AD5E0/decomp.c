@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004C6210 -> 004AD5E0 @ 004C62EC; /TLOBldMark+0x2c */

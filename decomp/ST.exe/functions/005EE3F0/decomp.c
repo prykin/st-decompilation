@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x005ee599) */
 
@@ -33,7 +35,7 @@ FUN_005ee3f0(void *this,float param_1,short *param_2,short *param_3,short *param
     *param_3 = *(short *)((int)this + iVar4 * 6 + 0x2ec);
     *param_4 = *(short *)((int)this + (iVar4 * 3 + 0x177) * 2);
     ST3DSMAPContext::sub_006DD530
-              (*(ST3DSMAPContext **)((int)this + 0x211),&param_1,&local_8,&local_10);
+              (STField<ST3DSMAPContext *>(this,0x211),&param_1,&local_8,&local_10);
     lVar14 = Library::MSVCRT::__ftol();
     uVar5 = (uint)(short)lVar14;
     lVar14 = Library::MSVCRT::__ftol();
@@ -42,10 +44,10 @@ FUN_005ee3f0(void *this,float param_1,short *param_2,short *param_3,short *param
     local_c = uVar6;
     lVar14 = Library::MSVCRT::__ftol();
     uVar7 = (uint)(short)lVar14;
-    uVar1 = *(uint *)((int)this + 0x27f);
-    uVar2 = *(uint *)((int)this + 0x27b);
+    uVar1 = STField<uint>(this,0x27f);
+    uVar2 = STField<uint>(this,0x27b);
     iVar4 = (((int)uVar1 >> 0x1f) - ((int)uVar7 >> 0x1f)) - (uint)(uVar1 < uVar7);
-    uVar3 = *(uint *)((int)this + 0x277);
+    uVar3 = STField<uint>(this,0x277);
     iVar12 = (((int)uVar2 >> 0x1f) - (int)local_8) - (uint)(uVar2 < uVar6);
     iVar10 = (((int)uVar3 >> 0x1f) - ((int)uVar5 >> 0x1f)) - (uint)(uVar3 < uVar5);
     uVar8 = (uint)*param_2;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
@@ -26,7 +28,7 @@ joined_r0x006d1410:
             iVar3 = iVar4;
             while (bVar1 == param_8) {
               if (pbVar5[1] != param_8) {
-                *(ushort *)((int)puVar6 + 2) = *(ushort *)(param_7 + (uint)pbVar5[1] * 2);
+                STField<ushort>(puVar6,2) = *(ushort *)(param_7 + (uint)pbVar5[1] * 2);
                 pbVar5 = pbVar5 + 2;
                 puVar6 = puVar6 + 1;
                 goto joined_r0x006d1410;

@@ -54,8 +54,8 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
       local_8->field_01A1 = 0;
       local_8->field_01A7 = 0;
       local_8->field_01A3 = 0;
-      uVar7 = *(uint *)((int)piVar5 + 0xd);
-      pvVar3 = *(void **)((int)piVar5 + 9);
+      uVar7 = STField<uint>(piVar5,0xd);
+      pvVar3 = STField<void *>(piVar5,9);
       switch((char)piVar5[2]) {
       case '\x01':
         RCProc(local_8,(int)pvVar3,uVar7,'\0');
@@ -115,7 +115,7 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    if (*(char *)((int)piVar5 + 0x12) != '\0') goto LAB_005141e1;
+    if (STField<char>(piVar5,0x12) != '\0') goto LAB_005141e1;
   }
   else {
     if (uVar7 < uVar2) {
@@ -128,7 +128,7 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    if (*(char *)((int)piVar5 + 0x12) != '\0') {
+    if (STField<char>(piVar5,0x12) != '\0') {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

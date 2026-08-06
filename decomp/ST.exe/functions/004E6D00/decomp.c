@@ -28,7 +28,7 @@ void FUN_004e6d00(byte *param_1,int param_2,uint *param_3)
         bVar2 = LookupRecordByte((char)param_1);
         *(byte *)(param_3 + 1) = bVar2;
         bVar3 = thunk_FUN_004e5c40(param_1,*param_3);
-        *(bool *)((int)param_3 + 5) = bVar3;
+        STField<bool>(param_3,5) = bVar3;
         param_3 = (uint *)((int)param_3 + 6);
       }
       iVar7 = iVar7 + 1;

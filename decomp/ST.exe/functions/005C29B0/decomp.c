@@ -152,7 +152,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     pcVar24 = nullptr;
   }
   else {
-    DAT_0080995c = *(undefined4 *)((int)pvVar23 + 0x90);
+    DAT_0080995c = STField<undefined4>(pvVar23,0x90);
     uVar20 = 0xffffffff;
     pcVar24 = (char *)((int)pvVar23 + 0x4c);
     do {

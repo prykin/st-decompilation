@@ -150,9 +150,9 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       local_10 = (AnonShape_00443F30_9F0248D4 *)0x5;
       *(undefined4 *)(pbVar4 + -4) = *(undefined4 *)(piVar8[-1] + 0xc);
       *(undefined4 *)pbVar4 = *(undefined4 *)(*piVar8 + 0xc);
-      *(undefined4 *)(pbVar4 + 0x24) = *(undefined4 *)((int)piVar8 + 0x16);
-      *(undefined4 *)(pbVar4 + 0x28) = *(undefined4 *)((int)piVar8 + 0x1a);
-      *(undefined4 *)(pbVar4 + 0x2c) = *(undefined4 *)((int)piVar8 + 0x1e);
+      *(undefined4 *)(pbVar4 + 0x24) = STField<undefined4>(piVar8,0x16);
+      *(undefined4 *)(pbVar4 + 0x28) = STField<undefined4>(piVar8,0x1a);
+      *(undefined4 *)(pbVar4 + 0x2c) = STField<undefined4>(piVar8,0x1e);
       puVar6 = (byte *)((int)piVar8 + 0x22);
       pbVar9 = pbVar4 + 0x30;
       memmove(pbVar9, puVar6, 0x138); /* compiler REP MOVS byte copy */
@@ -263,44 +263,44 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
         *(undefined4 *)(pbVar9 + -4) = puVar6[-1];
         *(undefined4 *)pbVar9 = *puVar6;
         *(undefined2 *)(pbVar9 + 4) = *(undefined2 *)(puVar6 + 1);
-        *(undefined2 *)(pbVar9 + 0xe) = *(undefined2 *)((int)puVar6 + 10);
+        *(undefined2 *)(pbVar9 + 0xe) = STField<undefined2>(puVar6,10);
         *(undefined4 *)(pbVar9 + 0x60) = puVar6[0x13];
         *(undefined4 *)(pbVar9 + 100) = puVar6[0x14];
         *(undefined2 *)(pbVar9 + 0x68) = *(undefined2 *)(puVar6 + 0x15);
-        *(undefined2 *)(pbVar9 + 0x72) = *(undefined2 *)((int)puVar6 + 0x5a);
+        *(undefined2 *)(pbVar9 + 0x72) = STField<undefined2>(puVar6,0x5a);
         pbVar9 = pbVar9 + 0x14;
         local_10 = (AnonShape_00443F30_9F0248D4 *)((int)&local_10[-1].field_0008 + 3);
         puVar6 = (byte *)(puVar6 + 4);
       } while (local_10 != nullptr);
       pbVar9 = pbVar4 + 0x238;
-      *(undefined4 *)(pbVar4 + 0x230) = *(undefined4 *)((int)piVar8 + 0x1fa);
+      *(undefined4 *)(pbVar4 + 0x230) = STField<undefined4>(piVar8,0x1fa);
       local_10 = (AnonShape_00443F30_9F0248D4 *)0xa;
       puVar6 = (byte *)((int)piVar8 + 0x202);
       do {
         *(undefined4 *)(pbVar9 + -4) = puVar6[-1];
         *(undefined4 *)pbVar9 = *puVar6;
         *(undefined2 *)(pbVar9 + 4) = *(undefined2 *)(puVar6 + 1);
-        *(undefined2 *)(pbVar9 + 0xe) = *(undefined2 *)((int)puVar6 + 10);
+        *(undefined2 *)(pbVar9 + 0xe) = STField<undefined2>(puVar6,10);
         pbVar9 = pbVar9 + 0x14;
         local_10 = (AnonShape_00443F30_9F0248D4 *)((int)&local_10[-1].field_0008 + 3);
         puVar6 = (byte *)(puVar6 + 4);
       } while (local_10 != nullptr);
-      *(undefined4 *)(pbVar4 + 0x2fc) = *(undefined4 *)((int)piVar8 + 0x29e);
-      *(undefined4 *)(pbVar4 + 0x300) = *(undefined4 *)((int)piVar8 + 0x2a2);
-      *(undefined4 *)(pbVar4 + 0x304) = *(undefined4 *)((int)piVar8 + 0x2a6);
-      *(undefined4 *)(pbVar4 + 0x308) = *(undefined4 *)((int)piVar8 + 0x2aa);
-      *(undefined4 *)(pbVar4 + 0x30c) = *(undefined4 *)((int)piVar8 + 0x2ae);
-      *(undefined4 *)(pbVar4 + 0x310) = *(undefined4 *)((int)piVar8 + 0x2b2);
-      *(undefined4 *)(pbVar4 + 0x314) = *(undefined4 *)((int)piVar8 + 0x2b6);
-      *(undefined4 *)(pbVar4 + 0x318) = *(undefined4 *)((int)piVar8 + 0x2ba);
-      *(undefined4 *)(pbVar4 + 0x31c) = *(undefined4 *)((int)piVar8 + 0x2be);
-      *(undefined4 *)(pbVar4 + 800) = *(undefined4 *)((int)piVar8 + 0x2c2);
-      *(undefined4 *)(pbVar4 + 0x324) = *(undefined4 *)((int)piVar8 + 0x2c6);
-      *(undefined4 *)(pbVar4 + 0x328) = *(undefined4 *)((int)piVar8 + 0x2ca);
-      *(undefined4 *)(pbVar4 + 0x32c) = *(undefined4 *)((int)piVar8 + 0x2ce);
-      *(undefined4 *)(pbVar4 + 0x330) = *(undefined4 *)((int)piVar8 + 0x2d2);
-      *(undefined4 *)(pbVar4 + 0x334) = *(undefined4 *)((int)piVar8 + 0x2d6);
-      *(undefined4 *)(pbVar4 + 0x338) = *(undefined4 *)((int)piVar8 + 0x2da);
+      *(undefined4 *)(pbVar4 + 0x2fc) = STField<undefined4>(piVar8,0x29e);
+      *(undefined4 *)(pbVar4 + 0x300) = STField<undefined4>(piVar8,0x2a2);
+      *(undefined4 *)(pbVar4 + 0x304) = STField<undefined4>(piVar8,0x2a6);
+      *(undefined4 *)(pbVar4 + 0x308) = STField<undefined4>(piVar8,0x2aa);
+      *(undefined4 *)(pbVar4 + 0x30c) = STField<undefined4>(piVar8,0x2ae);
+      *(undefined4 *)(pbVar4 + 0x310) = STField<undefined4>(piVar8,0x2b2);
+      *(undefined4 *)(pbVar4 + 0x314) = STField<undefined4>(piVar8,0x2b6);
+      *(undefined4 *)(pbVar4 + 0x318) = STField<undefined4>(piVar8,0x2ba);
+      *(undefined4 *)(pbVar4 + 0x31c) = STField<undefined4>(piVar8,0x2be);
+      *(undefined4 *)(pbVar4 + 800) = STField<undefined4>(piVar8,0x2c2);
+      *(undefined4 *)(pbVar4 + 0x324) = STField<undefined4>(piVar8,0x2c6);
+      *(undefined4 *)(pbVar4 + 0x328) = STField<undefined4>(piVar8,0x2ca);
+      *(undefined4 *)(pbVar4 + 0x32c) = STField<undefined4>(piVar8,0x2ce);
+      *(undefined4 *)(pbVar4 + 0x330) = STField<undefined4>(piVar8,0x2d2);
+      *(undefined4 *)(pbVar4 + 0x334) = STField<undefined4>(piVar8,0x2d6);
+      *(undefined4 *)(pbVar4 + 0x338) = STField<undefined4>(piVar8,0x2da);
       puVar6 = (byte *)((int)piVar8 + 0x2e2);
       pbVar9 = pbVar4 + 0x33c;
       memmove(pbVar9, puVar6, 0x14); /* compiler REP MOVS byte copy */
@@ -325,20 +325,20 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       pbVar9 = pbVar4 + 0x78c;
       memmove(pbVar9, puVar6, 0x9b); /* compiler REP MOVS byte copy */
       iVar2 = 0;
-      *(undefined4 *)(pbVar4 + 0x827) = *(undefined4 *)((int)piVar8 + 0x7cd);
+      *(undefined4 *)(pbVar4 + 0x827) = STField<undefined4>(piVar8,0x7cd);
       puVar6 = (byte *)((int)piVar8 + 0x7d1);
       pbVar9 = pbVar4 + 0x82b;
       memmove(pbVar9, puVar6, 0x198); /* compiler REP MOVS byte copy */
       iVar2 = 0;
-      *(undefined4 *)(pbVar4 + 0x9c3) = *(undefined4 *)((int)piVar8 + 0x969);
-      *(undefined4 *)(pbVar4 + 0x9c7) = *(undefined4 *)((int)piVar8 + 0x96d);
+      *(undefined4 *)(pbVar4 + 0x9c3) = STField<undefined4>(piVar8,0x969);
+      *(undefined4 *)(pbVar4 + 0x9c7) = STField<undefined4>(piVar8,0x96d);
       puVar6 = (byte *)((int)piVar8 + 0x971);
       pbVar9 = pbVar4 + 0x9cb;
       memmove(pbVar9, puVar6, 0x18); /* compiler REP MOVS byte copy */
       iVar2 = 0;
-      *(undefined4 *)(pbVar4 + 0x9e3) = *(undefined4 *)((int)piVar8 + 0x98d);
-      *(undefined4 *)(pbVar4 + 0x9e7) = *(undefined4 *)((int)piVar8 + 0x991);
-      *(undefined4 *)(pbVar4 + 0x9eb) = *(undefined4 *)((int)piVar8 + 0x995);
+      *(undefined4 *)(pbVar4 + 0x9e3) = STField<undefined4>(piVar8,0x98d);
+      *(undefined4 *)(pbVar4 + 0x9e7) = STField<undefined4>(piVar8,0x991);
+      *(undefined4 *)(pbVar4 + 0x9eb) = STField<undefined4>(piVar8,0x995);
       puVar6 = (byte *)((int)piVar8 + 0x999);
       pbVar9 = pbVar4 + 0x9ef;
       memmove(pbVar9, puVar6, 0x28); /* compiler REP MOVS byte copy */

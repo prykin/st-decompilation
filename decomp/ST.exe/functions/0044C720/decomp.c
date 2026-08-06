@@ -126,7 +126,7 @@ LAB_0044ca10:
                   if (((bVar14) && (iVar6 = (**(code **)(*piVar3 + 0xf8))(), iVar6 != 0)) &&
                      (iVar6 = (**(code **)(*piVar3 + 0xf4))(DAT_0080874d), iVar6 != 0)) {
                     local_10 = (undefined1)piVar3[9];
-                    local_e = *(undefined2 *)((int)piVar3 + 0x32);
+                    local_e = STField<undefined2>(piVar3,0x32);
                     Library::DKW::TBL::DArrayAppend(pDVar7,&local_10);
                     bVar5 = true;
                   }

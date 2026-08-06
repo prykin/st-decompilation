@@ -32,11 +32,9 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
     if (0 < (int)local_14) {
       do {
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,local_8);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        if (local_8._0_2_ != 0xffff) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (STPiece<0,2>(local_8) != 0xffff) {
           pSVar4 = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1);
+                             (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
           if (pSVar4 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,

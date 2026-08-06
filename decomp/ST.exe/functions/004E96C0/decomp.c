@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
 
@@ -7,17 +9,17 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
   int local_EAX_378;
   undefined4 uVar3;
 
-  if (*(int **)((int)this + 0x4d8) != param_1) {
+  if (STField<int *>(this,0x4d8) != param_1) {
     return 0;
   }
-  if (*(int *)((int)this + 0x4e0) == 0) {
+  if (STField<int>(this,0x4e0) == 0) {
     return 0;
   }
-  thunk_FUN_004d0a80(DAT_00800bcc,*(int *)((int)this + 0x4e4),*(int *)((int)this + 0x4e8),
-                     *(int *)((int)this + 0x4ec));
-  *(undefined4 *)((int)this + 0x4e0) = 0;
+  thunk_FUN_004d0a80(DAT_00800bcc,STField<int>(this,0x4e4),STField<int>(this,0x4e8),
+                     STField<int>(this,0x4ec));
+  STField<undefined4>(this,0x4e0) = 0;
   iVar1 = STPlaySystemC::sub_006E62D0
-                    (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4d8),
+                    (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x4d8),
                      (int *)&param_1);
   if (iVar1 == 0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -42,16 +44,16 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
       iVar1 = (**(code **)(*param_1 + 0x2c))();
       iVar1 = *(int *)(&DAT_007e0d9c + iVar1 * 4);
     }
-    iVar1 = *(int *)((int)this + 0x4d0) + (iVar1 * -100) / 100;
-    *(int *)((int)this + 0x4d0) = iVar1;
+    iVar1 = STField<int>(this,0x4d0) + (iVar1 * -100) / 100;
+    STField<int>(this,0x4d0) = iVar1;
     if (iVar1 < 0) {
-      *(undefined4 *)((int)this + 0x4d0) = 0;
+      STField<undefined4>(this,0x4d0) = 0;
     }
   }
-  if (*(int *)((int)this + 0x4f0) != 0) {
+  if (STField<int>(this,0x4f0) != 0) {
     if (DAT_00811798 == nullptr) {
-      if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
-        local_EAX_378 = LookupRecordByte(*(char *)((int)this + 0x23d));
+      if (STField<uint>(this,0x24) == (uint)*(byte *)(STField<int>(this,0x10) + 0x112d)) {
+        local_EAX_378 = LookupRecordByte(STField<char>(this,0x23d));
         local_EAX_378 = (int)(byte)local_EAX_378;
         if (local_EAX_378 == 1) {
           iVar1 = *(int *)this;
@@ -72,13 +74,13 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
       }
     }
     else {
-      thunk_FUN_00620670(DAT_00811798,*(int *)((int)this + 0x5b0),*(int *)((int)this + 0x5b4),
-                         *(uint *)((int)this + 0x24));
+      thunk_FUN_00620670(DAT_00811798,STField<int>(this,0x5b0),STField<int>(this,0x5b4),
+                         STField<uint>(this,0x24));
     }
   }
 cf_common_exit_004E987A:
-  thunk_FUN_004ea6e0(*(uint *)((int)this + 0x24),*(int *)((int)this + 0x4e4),
-                     *(int *)((int)this + 0x4e8),*(undefined4 *)((int)this + 0x4ec));
+  thunk_FUN_004ea6e0(STField<uint>(this,0x24),STField<int>(this,0x4e4),
+                     STField<int>(this,0x4e8),STField<undefined4>(this,0x4ec));
   return 0;
 }
 

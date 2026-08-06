@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\to_allpl.cpp
@@ -60,7 +62,7 @@ undefined4 FUN_0042c300(char param_1,uint param_2,int param_3,char param_4,uint 
 LAB_0042c3a0:
   piVar2 = (int *)(iVar1 * 0x10 + iVar3);
   if (((*piVar2 == 0x3c) || (*piVar2 == 0x19a)) && (piVar2[1] == (int)param_4)) {
-    array = *(DArrayTy **)((int)piVar2 + 10);
+    array = STField<DArrayTy *>(piVar2,10);
     index = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = array->count;
@@ -73,10 +75,10 @@ LAB_0042c3a0:
           this->vfunc_E8(0);
           _param_1 = 0xffff;
           Library::DKW::TBL::DArrayPut(array,index,&param_1);
-          *(short *)((int)piVar2 + 0xe) = *(short *)((int)piVar2 + 0xe) + -1;
-          if (*(short *)((int)piVar2 + 0xe) == 0) {
-            DArrayDestroy(*(DArrayTy **)((int)piVar2 + 10));
-            *(undefined4 *)((int)piVar2 + 10) = 0;
+          STField<short>(piVar2,0xe) = STField<short>(piVar2,0xe) + -1;
+          if (STField<short>(piVar2,0xe) == 0) {
+            DArrayDestroy(STField<DArrayTy *>(piVar2,10));
+            STField<undefined4>(piVar2,10) = 0;
             *piVar2 = 0;
           }
           return 0;

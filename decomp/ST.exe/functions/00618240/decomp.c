@@ -142,7 +142,7 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
                      (g_bulkInitializedRecords_008087C7[(int)this_00[1].vtable].field_0022 < 8))))))
                 {
                   bVar1 = *(byte *)&this_00[1].vtable;
-                  bVar2 = *(byte *)((int)this + 0x20);
+                  bVar2 = STField<byte>(this,0x20);
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == bVar2) {
 LAB_0061856a:
@@ -180,17 +180,17 @@ LAB_0061856a:
                     *puVar13 = this_00[1].vtable;
                     iVar8 = this_00->GetObjectTypeId();
                     puVar13[1] = iVar8;
-                    *(undefined4 *)((int)puVar13 + 0x26) = *(undefined4 *)&this_00->field_0x18;
-                    *(undefined2 *)((int)puVar13 + 0x2a) = *(undefined2 *)&this_00[1].field_0xe;
-                    *(STWorldObject **)((int)puVar13 + 0x1a) = this_00;
+                    STField<undefined4>(puVar13,0x26) = *(undefined4 *)&this_00->field_0x18;
+                    STField<undefined2>(puVar13,0x2a) = *(undefined2 *)&this_00[1].field_0xe;
+                    STField<STWorldObject *>(puVar13,0x1a) = this_00;
                     *(undefined2 *)(puVar13 + 5) = (undefined2)local_80;
-                    *(undefined2 *)((int)puVar13 + 0x16) = (undefined2)local_38;
+                    STField<undefined2>(puVar13,0x16) = (undefined2)local_38;
                     *(undefined2 *)(puVar13 + 6) = (undefined2)local_34;
                     puVar13[2] = (int)local_50[0];
                     puVar13[3] = (int)local_84[0];
                     puVar13[4] = (int)local_20[0];
                     iVar8 = FUN_006aced8(param_1,param_2,(int)local_50[0],(int)local_84[0]);
-                    *(int *)((int)puVar13 + 0x1e) = iVar8;
+                    STField<int>(puVar13,0x1e) = iVar8;
                     iVar14 = iVar14 + 1;
                     iVar4 = local_38;
                     iVar8 = local_34;
@@ -232,11 +232,11 @@ LAB_0061856a:
               local_48 = *(undefined4 *)(local_60 + piVar15[iVar8] * 0x2c + 0x26);
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_44 = (uint)*(ushort *)(local_60 + piVar15[iVar8] * 0x2c + 0x2a);
-              if (*(int *)((int)this + 0x62) == 0) {
+              if (STField<int>(this,0x62) == 0) {
                 pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,7,8,10);
-                *(DArrayTy **)((int)this + 0x62) = pDVar6;
+                STField<DArrayTy *>(this,0x62) = pDVar6;
               }
-              iVar4 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0x62),&local_48);
+              iVar4 = Library::DKW::TBL::DArrayAppend(STField<DArrayTy *>(this,0x62),&local_48);
               local_58[0] = 0;
               if (-1 < iVar4) goto LAB_0061871c;
             }

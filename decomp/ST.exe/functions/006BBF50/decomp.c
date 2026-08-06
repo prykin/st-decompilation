@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_006bbf50(int *param_1,undefined4 param_2)
 

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00553990 -> 00553910 @ 00553A23; FUN_00553990 parameter param_3 | 00553A70 -> 00553910

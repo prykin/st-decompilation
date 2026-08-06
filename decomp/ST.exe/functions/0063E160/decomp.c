@@ -61,18 +61,18 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
     uVar2 = *(uint *)(pcVar5 + 0x38);
     if ((int)uVar2 < 0) {
       ST3DSMAPContext::sub_006E8660
-                (local_10->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar6 + 9),
-                 *(uint *)((int)puVar6 + 0xd),*(int *)((int)puVar6 + 9) / 2,
-                 (int)*(uint *)((int)puVar6 + 0xd) / 2 - 0xe,0);
+                (local_10->field_0211,(int *)&local_8,1,0,STField<uint>(puVar6,9),
+                 STField<uint>(puVar6,0xd),STField<int>(puVar6,9) / 2,
+                 (int)STField<uint>(puVar6,0xd) / 2 - 0xe,0);
     }
     else {
       local_8 = uVar2;
       Library::Ourlib::ST3DSMAP::SprSetHotSpot
-                (local_10->field_0211,uVar2,*(int *)((int)puVar6 + 9) / 2,
-                 *(int *)((int)puVar6 + 0xd) / 2 - 0xe);
+                (local_10->field_0211,uVar2,STField<int>(puVar6,9) / 2,
+                 STField<int>(puVar6,0xd) / 2 - 0xe);
     }
     ppSVar9 = &pSVar4->field_0211;
-    ST3DSMAPContext::sub_006E98E0(*ppSVar9,local_8,0,*(int *)puVar6,*(int *)((int)puVar6 + 0x21),1);
+    ST3DSMAPContext::sub_006E98E0(*ppSVar9,local_8,0,*(int *)puVar6,STField<int>(puVar6,0x21),1);
     ST3DSMAPContext::sub_006EA270(*ppSVar9,local_8,0,*(uint *)(pcVar5 + 0x20));
     ST3DSMAPContext::sub_006EA5E0(*ppSVar9,local_8,0,0);
     Library::Ourlib::ST3DSMAP::SprMove

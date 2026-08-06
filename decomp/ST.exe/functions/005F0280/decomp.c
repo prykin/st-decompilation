@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_005f0280(void *this,undefined1 *param_1)
 
@@ -13,7 +15,7 @@ void __thiscall FUN_005f0280(void *this,undefined1 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar1 = (**(code **)(*(int *)this + 0xc))();
   param_1[6] = uVar1;
-  *(undefined4 *)(param_1 + 7) = *(undefined4 *)((int)this + 0x18);
+  *(undefined4 *)(param_1 + 7) = STField<undefined4>(this,0x18);
   return;
 }
 

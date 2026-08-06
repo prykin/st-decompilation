@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00476CE0 -> 00492F30 @ 00477659; STBoatC::Capture this; stable alias EBX | 00476CE0 ->

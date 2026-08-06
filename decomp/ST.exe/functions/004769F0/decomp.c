@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004769F0 returns return of STBoatC::sub_00460360 @ 004769FD */

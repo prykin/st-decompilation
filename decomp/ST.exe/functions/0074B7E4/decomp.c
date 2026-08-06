@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_0074b7e4(void *this,undefined4 param_1,int param_2)
 
@@ -6,8 +8,8 @@ int __thiscall FUN_0074b7e4(void *this,undefined4 param_1,int param_2)
   if (param_2 == 0) {
     param_2 = (int)this;
   }
-  *(undefined4 *)((int)this + 4) = param_2;
-  *(undefined4 *)((int)this + 8) = 0;
+  STField<undefined4>(this,4) = param_2;
+  STField<undefined4>(this,8) = 0;
   return (int)this;
 }
 

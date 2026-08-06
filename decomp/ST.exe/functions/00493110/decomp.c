@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00493110(void *this,AnonShape_00493110_B173055C *param_1)
 
@@ -11,26 +13,26 @@ void __thiscall FUN_00493110(void *this,AnonShape_00493110_B173055C *param_1)
   if (iVar2 != -4) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (**(code **)(*(int *)param_1 + 0x2c))();
-    iVar2 = *(int *)((int)this + 0x6f7);
+    iVar2 = STField<int>(this,0x6f7);
     if (((iVar2 == 7) || (iVar2 == 0x13)) || (iVar2 == 0x1b)) {
-      if ((*(int *)((int)this + 0x7ca) == 0) &&
+      if ((STField<int>(this,0x7ca) == 0) &&
          (((iVar3 == 0xfd || (iVar3 == 0xfe)) ||
           ((((0 < iVar3 && ((iVar3 < 0x29 && (iVar3 != 7)))) && (iVar3 != 0x13)) && (iVar3 != 0x1b))
           )))) {
-        *(undefined4 *)((int)this + 0x7ca) = param_1->field_0018;
+        STField<undefined4>(this,0x7ca) = param_1->field_0018;
         Library::Ourlib::ST3DSMAP::SprSetLevAfter
-                  (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),param_1->field_01ED);
+                  (STField<void *>(this,0x211),STField<uint>(this,0x1ed),param_1->field_01ED);
       }
     }
     else if (((iVar3 == 7) || (iVar3 == 0x13)) || (iVar3 == 0x1b)) {
-      *(undefined2 *)((int)this + 0x5a0) = *(undefined2 *)((int)this + 0x30);
-      *(undefined4 *)((int)this + 0x45d) = 0x14;
-      *(undefined4 *)((int)this + 0x7c2) = 1;
+      STField<undefined2>(this,0x5a0) = STField<undefined2>(this,0x30);
+      STField<undefined4>(this,0x45d) = 0x14;
+      STField<undefined4>(this,0x7c2) = 1;
       uVar1 = param_1->field_0018;
-      *(undefined4 *)((int)this + 0x5a6) = 0;
-      *(undefined4 *)((int)this + 0x76) = 0;
-      *(undefined4 *)((int)this + 0x5a2) = uVar1;
-      *(undefined4 *)((int)this + 0x5c4) = 7;
+      STField<undefined4>(this,0x5a6) = 0;
+      STField<undefined4>(this,0x76) = 0;
+      STField<undefined4>(this,0x5a2) = uVar1;
+      STField<undefined4>(this,0x5c4) = 7;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xb4))();
       return;

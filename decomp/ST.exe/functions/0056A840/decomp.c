@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0056a840(void *this,byte param_1)
 
@@ -15,7 +17,7 @@ void __thiscall FUN_0056a840(void *this,byte param_1)
     *puVar2 = 0;
     *puVar3 = 0;
     if ((g_visibleClass_00802A88 != nullptr) &&
-       (param_1 == *(byte *)((int)this + 0x112d))) {
+       (param_1 == STField<byte>(this,0x112d))) {
       VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar1);
     }
     puVar1 = puVar1 + 1;

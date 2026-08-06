@@ -25,11 +25,9 @@ void FUN_005c2760(void)
     DVar1 = DVar2;
     if ((DAT_00811750 != '\0') && (DAT_0080877e != '\0')) {
       memset(&local_2c, 0, 0x26); /* compiler bulk-zero initialization */
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_2c._0_2_ = (undefined2)((uint)DAT_00807dd5 >> 0x10);
+      STPiece<0,2>(local_2c) = (undefined2)((uint)DAT_00807dd5 >> 0x10);
       local_20 = DAT_0080733b;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_2c._2_1_ = 0;
+      STPiece<2,1>(local_2c) = 0;
       local_1e = DAT_00808754;
       FUN_00715360(g_int_00811764,0,'\x1a',(char *)&local_2c,0x26,1,0xffffffff);
     }

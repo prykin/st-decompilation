@@ -89,7 +89,7 @@ public class STDecompExport extends GhidraScript {
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
-        "st-function-analysis-v10-source-family-scalar-lifetime-bulk-tail-dead-synthetics";
+        "st-function-analysis-v13-complete-ghidra-scalar-runtime";
     private static final Pattern NARROW_RETURN_PIECE_ASSIGNMENT = Pattern.compile(
         "(?<variable>[A-Za-z_$][A-Za-z0-9_$]*)\\._0_(?<width>[12])_\\s*=\\s*" +
         "(?<callee>[A-Za-z_$][A-Za-z0-9_$]*(?:::[A-Za-z_$][A-Za-z0-9_$]*)*)" +
@@ -205,6 +205,17 @@ public class STDecompExport extends GhidraScript {
         "\\((?:const\\s+)?(?:struct\\s+|class\\s+)?" +
         "[A-Za-z_$][A-Za-z0-9_$:<>]*(?:\\s+[A-Za-z_$][A-Za-z0-9_$:<>]*)*" +
         "\\s*\\*+\\s*\\)\\s*0x0\\b");
+    private static final Pattern SIMPLE_PARTIAL_PIECE = Pattern.compile(
+        "(?<![A-Za-z0-9_$])(?<base>[A-Za-z_$][A-Za-z0-9_$]*" +
+        "(?:(?:->|\\.)[A-Za-z_$][A-Za-z0-9_$]*|\\[[^]\\r\\n]+\\])*)" +
+        "\\._(?<offset>[0-9]+)_(?<width>[0-9]+)_");
+    private static final Pattern STRING_LITERAL_PARTIAL_PIECE = Pattern.compile(
+        "(?<literal>\"(?:\\\\.|[^\"\\\\])*\")" +
+        "\\._(?<offset>[0-9]+)_(?<width>[0-9]+)_");
+    private static final Pattern EXPLICIT_BYTE_OFFSET_FIELD = Pattern.compile(
+        "\\*\\s*\\(\\s*(?<cast>[A-Za-z_$][A-Za-z0-9_$:<> ]*(?:\\s*\\*\\s*)+)\\)" +
+        "\\s*\\(\\s*\\(int\\)\\s*(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*" +
+        "\\+\\s*(?<offset>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
     private static final Pattern RAW_INDIRECT_CALL = Pattern.compile(
         "\\(\\*\\*?\\(code \\*\\*?\\)|\\(\\*\\(code \\*\\)");
     private static final Pattern RAW_OFFSET_DEREFERENCE = Pattern.compile(
@@ -256,7 +267,7 @@ public class STDecompExport extends GhidraScript {
         "(?:\\bs_[A-Za-z0-9_$]*_[0-9A-Fa-f]{8}\\b\\s*[+-]|" +
         "[+-]\\s*\\bs_[A-Za-z0-9_$]*_[0-9A-Fa-f]{8}\\b)");
     private static final Pattern RESIDUAL_CASTED_FIELD = Pattern.compile(
-        "\\*\\s*\\(\\s*(?:undefined(?:[1248])?|u?int|u?long|u?short|char|byte|" +
+        "\\*\\s*\\(\\s*(?:undefined(?:[0-9]+)?|u?int|u?long|u?short|char|byte|" +
         "float|double|void)[^()\\r\\n]{0,48}?\\*\\s*\\)\\s*&?[^;\\r\\n]*?" +
         "(?:->|\\.)field_(?:0x)?[0-9A-Fa-f]+\\b");
     private static final Pattern RESIDUAL_GENERIC_FIELD = Pattern.compile(
@@ -268,7 +279,7 @@ public class STDecompExport extends GhidraScript {
     private static final Pattern RESIDUAL_GENERIC_DATA = Pattern.compile(
         "(?<![A-Za-z0-9_$])_?(?:DAT|PTR|UNK)_[0-9A-Fa-f]{8}\\b");
     private static final Pattern RESIDUAL_UNDEFINED_TYPE = Pattern.compile(
-        "\\bundefined(?:[1248])?\\b");
+        "\\bundefined(?:[0-9]+)?\\b");
     private static final Pattern RESIDUAL_CONTROL_FLOW = Pattern.compile(
         "\\b(?:goto|LAB_[0-9A-Fa-f]+)\\b");
     private static final Pattern GENERATED_ENUM_COMPOSITION = Pattern.compile(
@@ -873,6 +884,7 @@ public class STDecompExport extends GhidraScript {
             }
         });
         writePseudocodeArtifacts();
+        writeCompileReadinessArtifacts(liveFunctionIds);
         writeFunctionAnalysisCache(currentFunctionAnalysis);
         pruneStaleFunctionDirectories(liveFunctionIds);
         println("Functions reused without decompilation: " + reused + "/" + total);
@@ -1086,7 +1098,11 @@ public class STDecompExport extends GhidraScript {
             normalizeNarrowReturnPieceAssignments(recordAddresses.code);
         NormalizedCode lowPieces =
             normalizeLowPieceCompositions(narrowReturns.code);
-        code = lowPieces.code;
+        NormalizedCode partialPieces =
+            normalizePartialPieceSyntax(lowPieces.code);
+        NormalizedCode typedFields =
+            normalizeExplicitByteOffsetFields(partialPieces.code);
+        code = typedFields.code;
         String[] lines = code.split("\\R", -1);
         List<String> output = new ArrayList<>();
         int replacements = legacyBulkCopy.replacements +
@@ -1094,7 +1110,8 @@ public class STDecompExport extends GhidraScript {
             darrayAliases.replacements + darrayAddresses.replacements +
             virtualCalls.replacements + affineCancellation.replacements +
             gridIndexing.replacements + recordAddresses.replacements +
-            narrowReturns.replacements + lowPieces.replacements;
+            narrowReturns.replacements + lowPieces.replacements +
+            partialPieces.replacements + typedFields.replacements;
         for (int index = 0; index < lines.length; index++) {
             Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
             if (!assignment.matches() || index + 1 >= lines.length) {
@@ -1140,6 +1157,72 @@ public class STDecompExport extends GhidraScript {
             replacements + nullPointers.replacements + semicolons.replacements +
                 scalarLifetimes.replacements + deadCodePointers.replacements +
                 narrowPromotions.replacements + deadSynthetics.replacements);
+    }
+
+    /**
+     * Ghidra's value._OFFSET_WIDTH_ spelling is not C or C++. Keep the exact
+     * byte-level operation, but render simple lvalue bases through the generated
+     * runtime proxy. Complex expressions remain visible for the readiness audit.
+     */
+    private NormalizedCode normalizePartialPieceSyntax(String code) {
+        if (code == null || code.isEmpty() || !code.contains("._"))
+            return new NormalizedCode(code, 0);
+        Matcher literalMatcher = STRING_LITERAL_PARTIAL_PIECE.matcher(code);
+        StringBuffer literalOutput = new StringBuffer();
+        int replacements = 0;
+        while (literalMatcher.find()) {
+            int width;
+            try { width = Integer.parseInt(literalMatcher.group("width")); }
+            catch (NumberFormatException ignored) { continue; }
+            if (width < 1 || width > 8) continue;
+            String replacement = "STLiteralPiece<" + literalMatcher.group("offset") + "," +
+                literalMatcher.group("width") + ">(" + literalMatcher.group("literal") + ")";
+            literalMatcher.appendReplacement(literalOutput,
+                Matcher.quoteReplacement(replacement));
+            replacements++;
+        }
+        literalMatcher.appendTail(literalOutput);
+        String literalNormalized = replacements == 0 ? code : literalOutput.toString();
+        Matcher matcher = SIMPLE_PARTIAL_PIECE.matcher(literalNormalized);
+        StringBuffer output = new StringBuffer();
+        while (matcher.find()) {
+            int width;
+            try { width = Integer.parseInt(matcher.group("width")); }
+            catch (NumberFormatException ignored) { continue; }
+            if (width < 1 || width > 8) continue;
+            String replacement = "STPiece<" + matcher.group("offset") + "," +
+                matcher.group("width") + ">(" + matcher.group("base") + ")";
+            matcher.appendReplacement(output, Matcher.quoteReplacement(replacement));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(replacements == 0 ? code : output.toString(), replacements);
+    }
+
+    /**
+     * Preserve a proven byte-relative load/store without the target-specific `(int)`
+     * pointer truncation emitted by the 32-bit decompiler. This is a presentation
+     * helper, not a claim that the receiver has a recovered semantic class.
+     */
+    private NormalizedCode normalizeExplicitByteOffsetFields(String code) {
+        if (code == null || code.isEmpty() || !code.contains("(int)"))
+            return new NormalizedCode(code, 0);
+        Matcher matcher = EXPLICIT_BYTE_OFFSET_FIELD.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            String cast = matcher.group("cast").trim();
+            int star = cast.lastIndexOf('*');
+            if (star < 0) continue;
+            String fieldType = cast.substring(0, star).trim();
+            if (fieldType.isBlank()) continue;
+            String replacement = "STField<" + fieldType + ">(" +
+                matcher.group("base") + "," + matcher.group("offset") + ")";
+            matcher.appendReplacement(output, Matcher.quoteReplacement(replacement));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(replacements == 0 ? code : output.toString(), replacements);
     }
 
     /**
@@ -4119,10 +4202,7 @@ public class STDecompExport extends GhidraScript {
         Set<String> reusedParameters = reusedParameterNames(function);
         String[] lines = code.split("\\R", -1);
         List<String> clean = new ArrayList<>();
-        boolean needsRuntime = code.contains("STDebugBreak()") ||
-            code.contains(BULK_ZERO_MARKER) ||
-            code.contains(BULK_COPY_MARKER) || code.contains("DArrayAt<") ||
-            code.contains("STGridAt3D(");
+        boolean needsRuntime = needsPseudocodeRuntime(code);
         boolean hasRuntimeInclude = false;
         for (String line : lines) {
             if (line.contains(PSEUDOCODE_COMMENT_MARKER)) continue;
@@ -4167,6 +4247,20 @@ public class STDecompExport extends GhidraScript {
             output.add(0, PSEUDOCODE_RUNTIME_INCLUDE);
         }
         return String.join(System.lineSeparator(), output);
+    }
+
+    private boolean needsPseudocodeRuntime(String code) {
+        if (code == null || code.isEmpty()) return false;
+        return code.contains("STDebugBreak()") || code.contains(BULK_ZERO_MARKER) ||
+            code.contains(BULK_COPY_MARKER) || code.contains("DArrayAt<") ||
+            code.contains("STGridAt3D(") || code.contains("STPiece<") ||
+            code.contains("STLiteralPiece<") ||
+            code.contains("STField<") ||
+            code.matches("(?s).*\\b(?:undefined(?:[0-9]+)?|int3|uint3|float10|" +
+                "unkbyte10|longlong|ulonglong|code)\\b.*") ||
+            code.matches("(?s).*\\b(?:CONCAT|SUB|CARRY|SCARRY|SBORROW|SEXT)[0-9]+\\s*\\(.*") ||
+            code.matches("(?s).*\\b(?:fsin|fcos|fpatan)\\s*\\(.*") ||
+            code.matches("(?s).*\\b__(?:thiscall|stdcall|cdecl|fastcall)\\b.*");
     }
 
     private void catalogPseudocodeIdioms(Function function, String code) {
@@ -4288,7 +4382,12 @@ public class STDecompExport extends GhidraScript {
                 RAW_OFFSET_DEREFERENCE, line, index + 1);
             if (line.matches(".*\\b(?:unaff_|in_)[A-Za-z0-9_]+.*"))
                 addQuality(evidence, "unresolved_register_input", 1, index + 1, line);
-            if (line.matches(".*\\bextraout_[A-Za-z0-9_]+.*"))
+            // A declaration and its use are not two independent ABI failures.
+            // Count the value consumption; unused declarations are presentation
+            // noise handled by removeDeadSyntheticDeclarations.
+            if (line.matches(".*\\bextraout_[A-Za-z0-9_]+.*") &&
+                    !stripped.matches("[A-Za-z_$][A-Za-z0-9_$:<>]*" +
+                        "(?:\\s*\\*+)?\\s+extraout_[A-Za-z0-9_$]+\\s*;"))
                 addQuality(evidence, "return_width_artifact", 1, index + 1, line);
             if ((line.contains("->elementSize") || line.contains(".elementSize")) &&
                     (line.contains("->data") || line.contains(".data")))
@@ -4849,6 +4948,52 @@ public class STDecompExport extends GhidraScript {
             "#include <stdint.h>\n" +
             "#include <stdlib.h>\n" +
             "#include <string.h>\n" +
+            "#if defined(__cplusplus)\n" +
+            "#include <cmath>\n" +
+            "#include <type_traits>\n" +
+            "template <size_t Bytes>\n" +
+            "struct STUnsignedBytes {\n" +
+            "    uint8_t bytes[Bytes]{};\n" +
+            "    STUnsignedBytes() = default;\n" +
+            "    template <typename Value> STUnsignedBytes(Value value) {\n" +
+            "        uint64_t raw = static_cast<uint64_t>(value);\n" +
+            "        for (size_t index = 0; index < Bytes; ++index)\n" +
+            "            bytes[index] = static_cast<uint8_t>(raw >> (index * 8));\n" +
+            "    }\n" +
+            "    operator uint64_t() const {\n" +
+            "        uint64_t raw = 0;\n" +
+            "        for (size_t index = 0; index < Bytes; ++index)\n" +
+            "            raw |= uint64_t(bytes[index]) << (index * 8);\n" +
+            "        return raw;\n" +
+            "    }\n" +
+            "};\n" +
+            "using undefined = uint8_t;\n" +
+            "using undefined1 = uint8_t;\n" +
+            "using undefined2 = uint16_t;\n" +
+            "using undefined3 = STUnsignedBytes<3>;\n" +
+            "using undefined4 = uint32_t;\n" +
+            "using undefined6 = STUnsignedBytes<6>;\n" +
+            "using undefined8 = uint64_t;\n" +
+            "static_assert(sizeof(undefined3) == 3);\n" +
+            "static_assert(sizeof(undefined6) == 6);\n" +
+            "using byte = uint8_t;\n" +
+            "using ushort = uint16_t;\n" +
+            "using uint = uint32_t;\n" +
+            "using ulong = uint32_t;\n" +
+            "using int3 = int32_t;   /* logical signed 24-bit value */\n" +
+            "using uint3 = uint32_t; /* logical unsigned 24-bit value */\n" +
+            "using float10 = long double;\n" +
+            "using unkbyte10 = long double; /* unresolved x87 register value */\n" +
+            "using longlong = int64_t;\n" +
+            "using ulonglong = uint64_t;\n" +
+            "using code = uintptr_t(...);\n" +
+            "#endif\n" +
+            "#if !defined(_MSC_VER)\n" +
+            "#ifndef __thiscall\n#define __thiscall\n#endif\n" +
+            "#ifndef __stdcall\n#define __stdcall\n#endif\n" +
+            "#ifndef __cdecl\n#define __cdecl\n#endif\n" +
+            "#ifndef __fastcall\n#define __fastcall\n#endif\n" +
+            "#endif\n" +
             "static inline uint32_t STPackTagged24(uint32_t tag, uint32_t value) {\n" +
             "    return (value & 0x00ffffffu) | ((tag & 0xffu) << 24);\n" +
             "}\n" +
@@ -4862,6 +5007,132 @@ public class STDecompExport extends GhidraScript {
             "    return (uint16_t)((original & 0xff00u) | (uint16_t)low);\n" +
             "}\n" +
             "#if defined(__cplusplus)\n" +
+            "template <size_t Bytes>\n" +
+            "using STUnsigned = std::conditional_t<(Bytes <= 1), uint8_t,\n" +
+            "    std::conditional_t<(Bytes <= 2), uint16_t,\n" +
+            "    std::conditional_t<(Bytes <= 4), uint32_t, uint64_t>>>;\n" +
+            "template <typename Value>\n" +
+            "static inline uint64_t STRawWord(Value value) {\n" +
+            "    using Plain = std::remove_cv_t<std::remove_reference_t<Value>>;\n" +
+            "    if constexpr (std::is_pointer_v<Plain>)\n" +
+            "        return static_cast<uint64_t>(reinterpret_cast<uintptr_t>(value));\n" +
+            "    else return static_cast<uint64_t>(value);\n" +
+            "}\n" +
+            "template <size_t Bytes>\n" +
+            "static constexpr uint64_t STByteMask() {\n" +
+            "    if constexpr (Bytes >= 8) return UINT64_MAX;\n" +
+            "    else return (uint64_t{1} << (Bytes * 8)) - 1;\n" +
+            "}\n" +
+            "template <size_t HighBytes, size_t LowBytes, typename High, typename Low>\n" +
+            "static inline STUnsigned<HighBytes + LowBytes> STConcat(High high, Low low) {\n" +
+            "    uint64_t value = ((STRawWord(high) & STByteMask<HighBytes>()) <<\n" +
+            "        (LowBytes * 8)) | (STRawWord(low) & STByteMask<LowBytes>());\n" +
+            "    return static_cast<STUnsigned<HighBytes + LowBytes>>(value);\n" +
+            "}\n" +
+            "template <size_t ResultBytes, typename Value, typename Offset>\n" +
+            "static inline STUnsigned<ResultBytes> STSubpiece(Value value, Offset offset) {\n" +
+            "    return static_cast<STUnsigned<ResultBytes>>(\n" +
+            "        (STRawWord(value) >> (static_cast<unsigned>(offset) * 8)) &\n" +
+            "        STByteMask<ResultBytes>());\n" +
+            "}\n" +
+            "template <typename Value>\n" +
+            "static inline int32_t STSignExtend24(Value value) {\n" +
+            "    uint32_t raw = static_cast<uint32_t>(STRawWord(value)) & 0x00ffffffu;\n" +
+            "    return static_cast<int32_t>(raw << 8) >> 8;\n" +
+            "}\n" +
+            "template <typename Value>\n" +
+            "static inline long double fsin(Value value) {\n" +
+            "    return std::sin(static_cast<long double>(value));\n" +
+            "}\n" +
+            "template <typename Value>\n" +
+            "static inline long double fcos(Value value) {\n" +
+            "    return std::cos(static_cast<long double>(value));\n" +
+            "}\n" +
+            "template <typename Left, typename Right>\n" +
+            "static inline long double fpatan(Left left, Right right) {\n" +
+            "    return std::atan2(static_cast<long double>(left),\n" +
+            "        static_cast<long double>(right));\n" +
+            "}\n" +
+            "template <typename Word, typename Left, typename Right>\n" +
+            "static inline bool STCarry(Left left, Right right) {\n" +
+            "    Word a = static_cast<Word>(left), b = static_cast<Word>(right);\n" +
+            "    return static_cast<Word>(a + b) < a;\n" +
+            "}\n" +
+            "template <typename Word, typename Left, typename Right>\n" +
+            "static inline bool STSignedCarry(Left left, Right right) {\n" +
+            "    using Unsigned = std::make_unsigned_t<Word>;\n" +
+            "    Unsigned a = static_cast<Unsigned>(static_cast<Word>(left));\n" +
+            "    Unsigned b = static_cast<Unsigned>(static_cast<Word>(right));\n" +
+            "    Unsigned result = a + b, sign = Unsigned{1} << (sizeof(Word) * 8 - 1);\n" +
+            "    return ((~(a ^ b) & (a ^ result)) & sign) != 0;\n" +
+            "}\n" +
+            "template <typename Word, typename Left, typename Right>\n" +
+            "static inline bool STSignedBorrow(Left left, Right right) {\n" +
+            "    using Unsigned = std::make_unsigned_t<Word>;\n" +
+            "    Unsigned a = static_cast<Unsigned>(static_cast<Word>(left));\n" +
+            "    Unsigned b = static_cast<Unsigned>(static_cast<Word>(right));\n" +
+            "    Unsigned result = a - b, sign = Unsigned{1} << (sizeof(Word) * 8 - 1);\n" +
+            "    return (((a ^ b) & (a ^ result)) & sign) != 0;\n" +
+            "}\n" +
+            "template <size_t Offset, size_t Width, typename Value>\n" +
+            "class STPieceProxy {\n" +
+            "public:\n" +
+            "    explicit STPieceProxy(Value &value) : value_(&value) {}\n" +
+            "    operator STUnsigned<Width>() const {\n" +
+            "        const volatile uint8_t *bytes = reinterpret_cast<const volatile uint8_t *>(value_);\n" +
+            "        uint64_t result = 0;\n" +
+            "        for (size_t index = 0; index < Width; ++index)\n" +
+            "            result |= uint64_t(bytes[Offset + index]) << (index * 8);\n" +
+            "        return static_cast<STUnsigned<Width>>(result);\n" +
+            "    }\n" +
+            "    template <typename Source> STPieceProxy &operator=(Source source) {\n" +
+            "        volatile uint8_t *bytes = reinterpret_cast<volatile uint8_t *>(value_);\n" +
+            "        uint64_t raw = STRawWord(source);\n" +
+            "        for (size_t index = 0; index < Width; ++index)\n" +
+            "            bytes[Offset + index] = static_cast<uint8_t>(raw >> (index * 8));\n" +
+            "        return *this;\n" +
+            "    }\n" +
+            "private:\n" +
+            "    Value *value_;\n" +
+            "};\n" +
+            "template <size_t Offset, size_t Width, typename Value>\n" +
+            "static inline STPieceProxy<Offset, Width, Value> STPiece(Value &value) {\n" +
+            "    return STPieceProxy<Offset, Width, Value>(value);\n" +
+            "}\n" +
+            "template <size_t Offset, size_t Width, size_t Count>\n" +
+            "static inline STUnsigned<Width> STLiteralPiece(const char (&literal)[Count]) {\n" +
+            "    static_assert(Offset + Width <= Count, \"literal piece exceeds storage\");\n" +
+            "    uint64_t result = 0;\n" +
+            "    for (size_t index = 0; index < Width; ++index)\n" +
+            "        result |= uint64_t(uint8_t(literal[Offset + index])) << (index * 8);\n" +
+            "    return static_cast<STUnsigned<Width>>(result);\n" +
+            "}\n" +
+            "template <typename Field, typename Base>\n" +
+            "static inline Field &STField(Base base, size_t byteOffset) {\n" +
+            "    uintptr_t address;\n" +
+            "    using Plain = std::remove_cv_t<std::remove_reference_t<Base>>;\n" +
+            "    if constexpr (std::is_pointer_v<Plain>)\n" +
+            "        address = reinterpret_cast<uintptr_t>(base);\n" +
+            "    else address = static_cast<uintptr_t>(base);\n" +
+            "    return *reinterpret_cast<Field *>(address + byteOffset);\n" +
+            "}\n" +
+            "#define CONCAT11(high, low) STConcat<1, 1>((high), (low))\n" +
+            "#define CONCAT12(high, low) STConcat<1, 2>((high), (low))\n" +
+            "#define CONCAT13(high, low) STConcat<1, 3>((high), (low))\n" +
+            "#define CONCAT21(high, low) STConcat<2, 1>((high), (low))\n" +
+            "#define CONCAT22(high, low) STConcat<2, 2>((high), (low))\n" +
+            "#define CONCAT26(high, low) STConcat<2, 6>((high), (low))\n" +
+            "#define CONCAT31(high, low) STConcat<3, 1>((high), (low))\n" +
+            "#define CONCAT44(high, low) STConcat<4, 4>((high), (low))\n" +
+            "#define SUB21(value, offset) STSubpiece<1>((value), (offset))\n" +
+            "#define SUB41(value, offset) STSubpiece<1>((value), (offset))\n" +
+            "#define SUB42(value, offset) STSubpiece<2>((value), (offset))\n" +
+            "#define SUB43(value, offset) STSubpiece<3>((value), (offset))\n" +
+            "#define SUB84(value, offset) STSubpiece<4>((value), (offset))\n" +
+            "#define SEXT24(value) STSignExtend24((value))\n" +
+            "#define CARRY4(left, right) STCarry<uint32_t>((left), (right))\n" +
+            "#define SCARRY4(left, right) STSignedCarry<int32_t>((left), (right))\n" +
+            "#define SBORROW4(left, right) STSignedBorrow<int32_t>((left), (right))\n" +
             "template <typename Element, typename Array>\n" +
             "static inline Element *DArrayAt(Array *array, uint32_t index) {\n" +
             "    return reinterpret_cast<Element *>(\n" +
@@ -4886,6 +5157,194 @@ public class STDecompExport extends GhidraScript {
             "static inline __attribute__((noreturn)) void STDebugBreak(void) { abort(); }\n" +
             "#endif\n\n" +
             "#endif\n");
+    }
+
+    /**
+     * Quality debt and compile readiness are deliberately separate. A generic
+     * field name is valid C++, while a residual ._0_2_ token is not; conversely a
+     * runtime-covered undefined4 is syntactically harmless but still semantic
+     * reconstruction debt. This pass scans the final promoted body spelling and
+     * records both the compatibility surface and the still-hard blockers.
+     */
+    private void writeCompileReadinessArtifacts(Set<String> liveFunctionIds)
+            throws IOException {
+        List<CompileRule> rules = List.of(
+            new CompileRule("runtime_piece_access", "compatibility_shim", "implemented",
+                Pattern.compile("\\bSTPiece\\s*<"),
+                "replace the proxy with a named field, union facet, or explicit packed helper"),
+            new CompileRule("runtime_literal_piece_access", "compatibility_shim", "implemented",
+                Pattern.compile("\\bSTLiteralPiece\\s*<"),
+                "replace the exact literal-storage read with the intended aggregate initializer"),
+            new CompileRule("runtime_typed_byte_offset_field", "compatibility_shim",
+                "implemented", Pattern.compile("\\bSTField\\s*<"),
+                "replace the typed byte-offset view with a named member after owner/layout proof"),
+            new CompileRule("residual_partial_piece_syntax", "hard_blocker", "unresolved",
+                Pattern.compile("(?:\\._[0-9]+_[0-9]+_|\\.\\*[0-9]+_[0-9]+\\*)"),
+                "extend the exact lvalue piece rewrite or recover the containing aggregate"),
+            new CompileRule("runtime_concat_intrinsic", "compatibility_shim", "implemented",
+                Pattern.compile("\\bCONCAT[0-9]+\\s*\\("),
+                "replace byte composition with the recovered packed field or bit expression"),
+            new CompileRule("runtime_subpiece_intrinsic", "compatibility_shim", "implemented",
+                Pattern.compile("\\bSUB[0-9]+\\s*\\("),
+                "replace byte extraction with a named field or explicit mask/shift"),
+            new CompileRule("runtime_carry_intrinsic", "compatibility_shim", "implemented",
+                Pattern.compile("\\b(?:CARRY|SCARRY|SBORROW)[0-9]+\\s*\\("),
+                "retain the checked arithmetic helper or recover the source comparison"),
+            new CompileRule("runtime_undefined_scalar", "compatibility_shim", "implemented",
+                Pattern.compile("\\bundefined(?:[0-9]+)?\\b"),
+                "infer signedness, enum, pointer target, field, parameter, or return type"),
+            new CompileRule("runtime_nonstandard_width", "compatibility_shim", "implemented",
+                Pattern.compile("\\b(?:int3|uint3|float10|unkbyte10|longlong|ulonglong)\\b"),
+                "recover the 24-bit piece operation or preserve x87 extended precision explicitly"),
+            new CompileRule("runtime_sign_extend_intrinsic", "compatibility_shim", "implemented",
+                Pattern.compile("\\bSEXT24\\s*\\("),
+                "replace the exact 24-bit sign extension with the recovered scalar expression"),
+            new CompileRule("runtime_x87_math_intrinsic", "compatibility_shim", "implemented",
+                Pattern.compile("\\b(?:fsin|fcos|fpatan)\\s*\\("),
+                "retain the long-double helper until x87 stack semantics are fully reconstructed"),
+            new CompileRule("runtime_opaque_code_type", "compatibility_shim", "implemented",
+                Pattern.compile("\\bcode\\s*\\*"),
+                "install the exact callback or vtable-slot FunctionDefinition"),
+            new CompileRule("unresolved_register_value", "semantic_debt", "unresolved",
+                Pattern.compile("\\b(?:unaff_|in_stack_|extraout_)[A-Za-z0-9_$]*"),
+                "repair the function boundary, calling convention, return width, or SSA lifetime"),
+            new CompileRule("raw_indirect_call", "semantic_debt", "unresolved",
+                RAW_INDIRECT_CALL,
+                "recover the callback, COM, or virtual slot prototype before source extraction")
+        );
+        Map<String, CompileAggregate> aggregates = new LinkedHashMap<>();
+        for (CompileRule rule : rules) aggregates.put(rule.kind, new CompileAggregate(rule));
+        List<String> rows = new ArrayList<>();
+        Set<String> hardFunctions = new HashSet<>();
+        int bodyCount = 0;
+        int defaultNames = 0;
+        int undefinedSignatures = 0;
+        int ownerlessThiscalls = 0;
+
+        for (String id : new TreeSet<>(liveFunctionIds)) {
+            Path body = programRoot.resolve("functions").resolve(id).resolve("decomp.c");
+            if (!Files.isRegularFile(body)) continue;
+            bodyCount++;
+            Function function = functionAt(id);
+            String functionName = function == null ? "" : function.getName(true);
+            if (function != null && function.getSymbol().getSource() ==
+                    ghidra.program.model.symbol.SourceType.DEFAULT) defaultNames++;
+            if (function != null && RESIDUAL_UNDEFINED_TYPE.matcher(
+                    function.getSignature().getPrototypeString(true)).find())
+                undefinedSignatures++;
+            if (function != null && "__thiscall".equals(function.getCallingConventionName()) &&
+                    function.getParentNamespace().isGlobal()) {
+                ownerlessThiscalls++;
+                rows.add(compileIssue(id, functionName, 0, "ownerless_thiscall",
+                    "source_assembly", "generator_required", "",
+                    "attach a proven receiver class/record or emit a free-function ABI wrapper"));
+            }
+            List<String> lines = Files.readAllLines(body, StandardCharsets.UTF_8);
+            boolean runtime = lines.stream().anyMatch(line ->
+                line.strip().equals(PSEUDOCODE_RUNTIME_INCLUDE));
+            boolean requiresRuntime = false;
+            for (int lineNumber = 0; lineNumber < lines.size(); lineNumber++) {
+                String line = lines.get(lineNumber);
+                String stripped = line.stripLeading();
+                if (stripped.startsWith("#") || stripped.startsWith("/*") ||
+                        stripped.startsWith("*") || stripped.startsWith("//")) continue;
+                for (CompileRule rule : rules) {
+                    Matcher matcher = rule.pattern.matcher(line);
+                    int count = 0;
+                    while (matcher.find()) count++;
+                    if (count == 0) continue;
+                    CompileAggregate aggregate = aggregates.get(rule.kind);
+                    aggregate.occurrences += count;
+                    if (aggregate.functionIds.add(id)) aggregate.functions++;
+                    if (rule.impact.equals("hard_blocker")) hardFunctions.add(id);
+                    if (rule.impact.equals("compatibility_shim")) requiresRuntime = true;
+                    rows.add(compileIssue(id, functionName, lineNumber + 1, rule.kind,
+                        rule.impact, rule.status, oneLine(line), rule.resolution));
+                }
+            }
+            if (requiresRuntime && !runtime) {
+                hardFunctions.add(id);
+                rows.add(compileIssue(id, functionName, 0, "runtime_include_missing",
+                    "hard_blocker", "unresolved", "",
+                    "include ../../pseudocode_runtime.h before the function body"));
+                CompileRule missing = new CompileRule("runtime_include_missing",
+                    "hard_blocker", "unresolved", Pattern.compile("$^"),
+                    "include ../../pseudocode_runtime.h before the function body");
+                CompileAggregate aggregate = aggregates.computeIfAbsent(missing.kind,
+                    ignored -> new CompileAggregate(missing));
+                aggregate.occurrences++;
+                if (aggregate.functionIds.add(id)) aggregate.functions++;
+            }
+        }
+
+        List<String> categories = new ArrayList<>();
+        addCompileCategory(categories, "missing_declaration_assembly", "source_assembly",
+            "generator_required", bodyCount, bodyCount,
+            "generate address-stable declarations, namespaces, class declarations, globals, and dependency-ordered headers from types.jsonl, globals.jsonl, functions.json, imports.json, and call_relations.jsonl");
+        addCompileCategory(categories, "default_function_name", "semantic_debt",
+            "unresolved", defaultNames, defaultNames,
+            "recover semantic names where evidence exists; FUN_ADDRESS remains a compilable stable fallback");
+        addCompileCategory(categories, "undefined_function_signature", "semantic_debt",
+            "unresolved", undefinedSignatures, undefinedSignatures,
+            "repair return and parameter ABI types before exposing a public source declaration");
+        addCompileCategory(categories, "ownerless_thiscall", "source_assembly",
+            "partially_automated", ownerlessThiscalls, ownerlessThiscalls,
+            "materialize a deterministic receiver record from complete fields or emit a free-function ABI wrapper");
+        for (CompileAggregate aggregate : aggregates.values())
+            addCompileCategory(categories, aggregate.rule.kind, aggregate.rule.impact,
+                aggregate.rule.status, aggregate.functions, aggregate.occurrences,
+                aggregate.rule.resolution);
+
+        rows.sort(Comparator.naturalOrder());
+        atomicWrite(programRoot.resolve("compile_readiness_issues.jsonl"), writer -> {
+            for (String row : rows) { writer.write(row); writer.newLine(); }
+        });
+        long runtimeOccurrences = aggregates.values().stream()
+            .filter(value -> value.rule.impact.equals("compatibility_shim"))
+            .mapToLong(value -> value.occurrences).sum();
+        long hardOccurrences = aggregates.values().stream()
+            .filter(value -> value.rule.impact.equals("hard_blocker"))
+            .mapToLong(value -> value.occurrences).sum();
+        writeJson(programRoot.resolve("compile_readiness_summary.json"), jsonObject(
+            field("schema", "st-compile-readiness-summary"),
+            rawField("schema_version", "1"),
+            field("scope", "all exported functions/**/decomp.c bodies"),
+            rawField("body_function_count", Integer.toString(bodyCount)),
+            rawField("body_functions_without_hard_text_blockers",
+                Integer.toString(Math.max(0, bodyCount - hardFunctions.size()))),
+            rawField("hard_text_blocker_functions", Integer.toString(hardFunctions.size())),
+            rawField("hard_text_blocker_occurrences", Long.toString(hardOccurrences)),
+            rawField("runtime_compatibility_occurrences", Long.toString(runtimeOccurrences)),
+            rawField("source_assembly_required", "true"),
+            field("reconstruction_quality_summary", "decomp_quality_summary.json"),
+            rawField("categories", "[" + String.join(",", categories) + "]")
+        ));
+    }
+
+    private Function functionAt(String id) {
+        try {
+            Address address = currentProgram.getAddressFactory().getAddress(id);
+            return address == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(address);
+        }
+        catch (Exception ignored) { return null; }
+    }
+
+    private String compileIssue(String address, String name, int line, String kind,
+            String impact, String status, String excerpt, String resolution) {
+        return jsonObject(field("function_address", address), field("function_name", name),
+            field("source_file", "functions/" + address + "/decomp.c"),
+            rawField("line", Integer.toString(line)), field("kind", kind),
+            field("compile_impact", impact), field("automation_status", status),
+            field("excerpt", excerpt), field("recommended_resolution", resolution));
+    }
+
+    private void addCompileCategory(List<String> categories, String kind, String impact,
+            String status, long functions, long occurrences, String resolution) {
+        categories.add(jsonObject(field("kind", kind), field("compile_impact", impact),
+            field("automation_status", status), rawField("functions", Long.toString(functions)),
+            rawField("occurrences", Long.toString(occurrences)),
+            field("recommended_resolution", resolution)));
     }
 
     private String functionFingerprint(Function function, List<String> tags, List<String> callers,
@@ -6707,6 +7166,16 @@ public class STDecompExport extends GhidraScript {
     private record GridCoordinates(String x, String y, String z) { }
     private record X87Memory(String base, long offset) { }
     private record X87SavedValue(int savedOffset, int destinationOffset) { }
+    private record CompileRule(String kind, String impact, String status,
+        Pattern pattern, String resolution) { }
+
+    private static class CompileAggregate {
+        final CompileRule rule;
+        final Set<String> functionIds = new HashSet<>();
+        int functions;
+        long occurrences;
+        CompileAggregate(CompileRule rule) { this.rule = rule; }
+    }
 
     private static class StackSlotLifetime {
         final String parameterName;

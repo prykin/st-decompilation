@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004d6c90(void *this,undefined4 param_1,int *param_2)
 
@@ -7,7 +9,7 @@ undefined4 __thiscall FUN_004d6c90(void *this,undefined4 param_1,int *param_2)
   if (param_2 == this) {
     return 4;
   }
-  if ((param_2 != nullptr) && (param_2[9] == *(int *)((int)this + 0x24))) {
+  if ((param_2 != nullptr) && (param_2[9] == STField<int>(this,0x24))) {
     this = (void *)param_2[8];
     if (this == (void *)0x14) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004b7e30(void *this,int param_1,int param_2,int param_3)
 
@@ -28,7 +30,7 @@ undefined4 __thiscall FUN_004b7e30(void *this,int param_1,int param_2,int param_
     iVar2 = *(int *)(&DAT_007e055c + param_1 * 4);
     iVar5 = *(int *)(&DAT_007e079c + param_1 * 4);
   }
-  thunk_FUN_004e4230(*(int *)((int)this + 0x24),iVar2 * 3 + iVar3 + iVar5 * 2);
+  thunk_FUN_004e4230(STField<int>(this,0x24),iVar2 * 3 + iVar3 + iVar5 * 2);
   return 0;
 }
 

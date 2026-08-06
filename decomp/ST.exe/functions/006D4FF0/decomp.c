@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 * __thiscall
 FUN_006d4ff0(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int param_4)
@@ -7,19 +9,19 @@ FUN_006d4ff0(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int p
   FUN_006d5720((void *)((int)this + 0x150),0,(int)this,(int)this + 0x7c,param_3,
                (char *)"Input");
   FUN_0074b91d((undefined4 *)((int)this + 0x240));
-  *(int *)((int)this + 0x288) = param_4;
+  STField<int>(this,0x288) = param_4;
   FUN_006d5cd0((void *)((int)this + 0x294),this,0,param_3);
   *(VTable_0079DB78 **)this = &VTable_0079DB78;
-  *(VTable_0079DB3C **)((int)this + 0xc) = &VTable_0079DB3C;
-  *(VTable_0079DB28 **)((int)this + 0x10) = &VTable_0079DB28;
-  *(VTable_0079DB04 **)((int)this + 200) = &VTable_0079DB04;
-  *(VTable_0079DAF0 **)((int)this + 0xcc) = &VTable_0079DAF0;
+  STField<VTable_0079DB3C *>(this,0xc) = &VTable_0079DB3C;
+  STField<VTable_0079DB28 *>(this,0x10) = &VTable_0079DB28;
+  STField<VTable_0079DB04 *>(this,200) = &VTable_0079DB04;
+  STField<VTable_0079DAF0 *>(this,0xcc) = &VTable_0079DAF0;
   FUN_0074bb83((undefined4 *)((int)this + 0x240));
-  *(undefined4 *)((int)this + 0x28c) = 0;
-  *(undefined4 *)((int)this + 0x290) = 0;
-  *(undefined4 *)((int)this + 0x308) = 0;
-  *(undefined4 *)((int)this + 0x310) = 0;
-  *(undefined4 *)((int)this + 0x30c) = 1;
+  STField<undefined4>(this,0x28c) = 0;
+  STField<undefined4>(this,0x290) = 0;
+  STField<undefined4>(this,0x308) = 0;
+  STField<undefined4>(this,0x310) = 0;
+  STField<undefined4>(this,0x30c) = 1;
   if (DAT_007ee240 < 8) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     MessageBoxA(*(HWND *)(param_4 + 0x78),"Need compile \"vidrend.cpp\" with /Zp8 option.",

@@ -82,7 +82,7 @@ STAllPlayersC::GetTOBJImage
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
                           nullptr);
-      local_1c = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
+      local_1c = *(undefined4 *)(STField<int>(puVar3,0x21) + param_2 * 4);
     }
     local_c = nullptr;
     local_154[0] = '\0';
@@ -94,7 +94,7 @@ STAllPlayersC::GetTOBJImage
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
                           nullptr);
-      local_20 = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
+      local_20 = *(undefined4 *)(STField<int>(puVar3,0x21) + param_2 * 4);
     }
     local_c = nullptr;
     local_154[0] = '\0';
@@ -106,7 +106,7 @@ STAllPlayersC::GetTOBJImage
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
                           nullptr);
-      local_24 = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
+      local_24 = *(undefined4 *)(STField<int>(puVar3,0x21) + param_2 * 4);
     }
     uVar4 = ST3DSMAPContext::sub_00709470(g_sT3DSMAPContext_00807598,local_54,0x11,1,10,0xff);
     return uVar4;
@@ -201,7 +201,7 @@ STAllPlayersC::GetTOBJImage
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = *(int *)puVar3 - CASE_1;
         }
-        *local_10 = *(int *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
+        *local_10 = *(int *)(STField<int>(puVar3,0x21) + param_2 * 4);
       }
       GVar7 = GVar7 + 1;
       local_10 = local_10 + 1;
@@ -267,7 +267,7 @@ LAB_0044c44d:
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                        (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
                         nullptr);
-    local_1c = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
+    local_1c = *(undefined4 *)(STField<int>(puVar3,0x21) + param_2 * 4);
   }
 cf_common_exit_0044C477:
   uVar4 = ST3DSMAPContext::sub_00709470(g_sT3DSMAPContext_00807598,local_54,0x11,1,10,0xff);

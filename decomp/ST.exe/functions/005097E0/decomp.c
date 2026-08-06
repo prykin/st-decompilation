@@ -242,7 +242,7 @@ LAB_00509b60:
       local_8 = (uint *)0x2;
       puVar14 = local_18;
       do {
-        if (*(int *)((int)puVar14 + 0x8fe) != 0) {
+        if (STField<int>(puVar14,0x8fe) != 0) {
           uVar22 = 0;
           uVar17 = 0;
           iVar21 = 0;
@@ -294,8 +294,8 @@ LAB_00509b60:
         puVar9[0x17] = 0x4202;
         *(undefined2 *)(puVar9 + 0x18) = 0;
         *(undefined2 *)(puVar9 + 0xd) = 0;
-        *(undefined2 *)((int)puVar9 + 0x62) = 2;
-        *(undefined2 *)((int)puVar9 + 0x36) = 2;
+        STField<undefined2>(puVar9,0x62) = 2;
+        STField<undefined2>(puVar9,0x36) = 2;
         if (iVar5 == 0) {
           uVar16 = 0x3aa6;
 LAB_00509ddd:

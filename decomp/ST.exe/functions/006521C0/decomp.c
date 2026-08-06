@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=00652810 @ 00658FF1
@@ -29,8 +31,7 @@ int __cdecl FUN_006521c0(short *param_1)
     param_1[0xe] = 0;
     param_1[0xf] = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xd5) != '\b') {
+  else if (STField<char>(param_1,0xd5) != '\b') {
     return 0;
   }
   if (sVar1 < 7) {
@@ -44,8 +45,7 @@ int __cdecl FUN_006521c0(short *param_1)
     param_1[0x12] = -1;
     param_1[0x13] = -1;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xd7) != '\b') {
+  else if (STField<char>(param_1,0xd7) != '\b') {
     return 0;
   }
   if (sVar1 < 9) {
@@ -59,8 +59,7 @@ int __cdecl FUN_006521c0(short *param_1)
     param_1[0x16] = -1;
     param_1[0x17] = -1;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xd9) != '\b') {
+  else if (STField<char>(param_1,0xd9) != '\b') {
     return 0;
   }
   if (sVar1 < 0xb) {
@@ -74,8 +73,7 @@ int __cdecl FUN_006521c0(short *param_1)
     param_1[0x1a] = 0;
     param_1[0x1b] = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xdb) != '\b') {
+  else if (STField<char>(param_1,0xdb) != '\b') {
     return 0;
   }
   if (-1 < *(int *)(param_1 + 8)) {

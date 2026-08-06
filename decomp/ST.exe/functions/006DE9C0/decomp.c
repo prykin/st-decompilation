@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 0.
@@ -849,7 +851,7 @@ LAB_006defd4:
         sub_006E25D0(param_1,&local_48,&local_94,0.0,0.0,0.0,0);
         if (param_1->field_02F0 == 100) {
           local_54 = (local_48 >> 0x10) - (int)*(short *)(pfVar11 + 5);
-          local_5c = (local_44 >> 0x10) - (int)*(short *)((int)pfVar11 + 0x16);
+          local_5c = (local_44 >> 0x10) - (int)STField<short>(pfVar11,0x16);
           local_b4 = *(short *)(pbVar4 + 0xe) + local_54;
           local_b0 = *(short *)(pbVar4 + 0x10) + local_5c;
           local_ac = (int)*(short *)(pbVar4 + 0x12);
@@ -865,9 +867,8 @@ LAB_006defd4:
                          ((longlong)((int)*(short *)(pfVar11 + 5) * param_1->field_02F0) *
                          -0x51eb851f) >> 0x20);
           local_54 = (local_48 >> 0x10) + ((iVar12 >> 5) - (iVar12 >> 0x1f));
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar12 = (int)((ulonglong)
-                         ((longlong)((int)*(short *)((int)pfVar11 + 0x16) * param_1->field_02F4) *
+                         ((longlong)((int)STField<short>(pfVar11,0x16) * param_1->field_02F4) *
                          -0x51eb851f) >> 0x20);
           local_5c = (local_44 >> 0x10) + ((iVar12 >> 5) - (iVar12 >> 0x1f));
           local_b4 = (local_ac / 2 + *(short *)(pbVar4 + 0xe) * local_a4) / local_ac + local_54;
@@ -896,7 +897,7 @@ LAB_006defd4:
       sub_006E25D0(param_1,&local_48,&local_94,0.0,0.0,0.0,0);
       if (param_1->field_02F0 == 100) {
         local_54 = (local_48 >> 0x10) - (int)*(short *)(puVar13 + 7);
-        local_5c = (local_44 >> 0x10) - (int)*(short *)((int)puVar13 + 0x1e);
+        local_5c = (local_44 >> 0x10) - (int)STField<short>(puVar13,0x1e);
         local_b4 = *(short *)(pbVar4 + 0xe) + local_54;
         local_b0 = *(short *)(pbVar4 + 0x10) + local_5c;
         local_ac = (int)*(short *)(pbVar4 + 0x12);
@@ -912,9 +913,8 @@ LAB_006defd4:
                        ((longlong)((int)*(short *)(puVar13 + 7) * param_1->field_02F0) * -0x51eb851f
                        ) >> 0x20);
         local_54 = (local_48 >> 0x10) + ((iVar12 >> 5) - (iVar12 >> 0x1f));
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar12 = (int)((ulonglong)
-                       ((longlong)((int)*(short *)((int)puVar13 + 0x1e) * param_1->field_02F4) *
+                       ((longlong)((int)STField<short>(puVar13,0x1e) * param_1->field_02F4) *
                        -0x51eb851f) >> 0x20);
         local_5c = (local_44 >> 0x10) + ((iVar12 >> 5) - (iVar12 >> 0x1f));
         local_b4 = (local_ac / 2 + *(short *)(pbVar4 + 0xe) * local_a4) / local_ac + local_54;
@@ -941,7 +941,7 @@ LAB_006defd4:
       sub_006E25D0(param_1,&local_48,&local_94,0.0,0.0,0.0,0);
       if (param_1->field_02F0 == 100) {
         local_54 = (local_48 >> 0x10) - (int)*(short *)(pfVar11 + 5);
-        local_5c = (local_44 >> 0x10) - (int)*(short *)((int)pfVar11 + 0x16);
+        local_5c = (local_44 >> 0x10) - (int)STField<short>(pfVar11,0x16);
         local_b4 = *(short *)(pbVar4 + 0xe) + local_54;
         local_b0 = *(short *)(pbVar4 + 0x10) + local_5c;
         local_ac = (int)*(short *)(pbVar4 + 0x12);
@@ -957,9 +957,8 @@ LAB_006defd4:
                        ((longlong)((int)*(short *)(pfVar11 + 5) * param_1->field_02F0) * -0x51eb851f
                        ) >> 0x20);
         local_54 = (local_48 >> 0x10) + ((iVar12 >> 5) - (iVar12 >> 0x1f));
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar12 = (int)((ulonglong)
-                       ((longlong)((int)*(short *)((int)pfVar11 + 0x16) * param_1->field_02F4) *
+                       ((longlong)((int)STField<short>(pfVar11,0x16) * param_1->field_02F4) *
                        -0x51eb851f) >> 0x20);
         local_5c = (local_44 >> 0x10) + ((iVar12 >> 5) - (iVar12 >> 0x1f));
         local_b4 = (local_ac / 2 + *(short *)(pbVar4 + 0xe) * local_a4) / local_ac + local_54;
@@ -986,7 +985,7 @@ LAB_006defd4:
     sub_006E25D0(param_1,&local_48,&local_94,0.0,0.0,0.0,0);
     if (param_1->field_02F0 == 100) {
       local_54 = (local_48 >> 0x10) - (int)*(short *)(puVar13 + 7);
-      local_5c = (local_44 >> 0x10) - (int)*(short *)((int)puVar13 + 0x1e);
+      local_5c = (local_44 >> 0x10) - (int)STField<short>(puVar13,0x1e);
       local_b4 = *(short *)(pbVar4 + 0xe) + local_54;
       local_b0 = *(short *)(pbVar4 + 0x10) + local_5c;
       local_ac = (int)*(short *)(pbVar4 + 0x12);
@@ -1002,9 +1001,8 @@ LAB_006defd4:
                      ((longlong)((int)*(short *)(puVar13 + 7) * param_1->field_02F0) * -0x51eb851f)
                     >> 0x20);
       local_54 = (local_48 >> 0x10) + ((iVar12 >> 5) - (iVar12 >> 0x1f));
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar12 = (int)((ulonglong)
-                     ((longlong)((int)*(short *)((int)puVar13 + 0x1e) * param_1->field_02F4) *
+                     ((longlong)((int)STField<short>(puVar13,0x1e) * param_1->field_02F4) *
                      -0x51eb851f) >> 0x20);
       local_5c = (local_44 >> 0x10) + ((iVar12 >> 5) - (iVar12 >> 0x1f));
       local_b4 = (local_ac / 2 + *(short *)(pbVar4 + 0xe) * local_a4) / local_ac + local_54;

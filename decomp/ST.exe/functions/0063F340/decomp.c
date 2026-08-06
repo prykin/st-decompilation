@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_0063f340(AnonShape_0063F340_151E9E14 *param_1)
 
@@ -18,10 +20,10 @@ void __fastcall FUN_0063f340(AnonShape_0063F340_151E9E14 *param_1)
   }
   iVar1 = param_1->field_033E;
   if (iVar1 < 1) {
-    param_1->field_0342 = **(undefined4 **)(*(int *)((int)puVar3 + 0x21) + iVar1 * 4);
+    param_1->field_0342 = **(undefined4 **)(STField<int>(puVar3,0x21) + iVar1 * 4);
     return;
   }
-  uVar2 = **(undefined4 **)(*(int *)((int)puVar3 + 0x21) + 4 + (iVar1 + -1) * 4);
+  uVar2 = **(undefined4 **)(STField<int>(puVar3,0x21) + 4 + (iVar1 + -1) * 4);
   param_1->field_033E = iVar1 + -1;
   param_1->field_0342 = uVar2;
   return;

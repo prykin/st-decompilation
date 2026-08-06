@@ -18,43 +18,43 @@ FUN_0063d460(void *this,undefined4 param_1,undefined4 param_2,int param_3,int pa
   if (param_4 == 10) {
     memset((void *)((int)this + 0x2a4), 0, 0x92); /* compiler bulk-zero initialization */
     iVar2 = 0;
-    *(undefined4 *)((int)this + 0x2a8) = param_2;
-    *(undefined4 *)((int)this + 0x2a4) = param_1;
-    *(int *)((int)this + 0x2ac) = param_3;
-    *(undefined4 *)((int)this + 0x2b0) = 0x6ac;
-    *(undefined4 *)((int)this + 0x2b4) = 0x109;
-    *(undefined1 *)((int)this + 0x328) = 4;
-    *(undefined4 *)((int)this + 700) = 0x32;
-    *(undefined4 *)((int)this + 0x2c0) = 0;
+    STField<undefined4>(this,0x2a8) = param_2;
+    STField<undefined4>(this,0x2a4) = param_1;
+    STField<int>(this,0x2ac) = param_3;
+    STField<undefined4>(this,0x2b0) = 0x6ac;
+    STField<undefined4>(this,0x2b4) = 0x109;
+    STField<undefined1>(this,0x328) = 4;
+    STField<undefined4>(this,700) = 0x32;
+    STField<undefined4>(this,0x2c0) = 0;
   }
   else {
     if (param_4 == 0xb) {
       memset((void *)((int)this + 0x2a4), 0, 0x92); /* compiler bulk-zero initialization */
-      *(undefined4 *)((int)this + 0x2a8) = param_2;
-      *(undefined4 *)((int)this + 0x2a4) = param_1;
-      *(undefined4 *)((int)this + 0x2b4) = 0x32;
-      *(undefined4 *)((int)this + 700) = 0x32;
-      *(int *)((int)this + 0x2ac) = param_3;
-      *(undefined4 *)((int)this + 0x2b0) = 0x3ed;
-      *(undefined1 *)((int)this + 0x328) = 4;
-      *(undefined4 *)((int)this + 0x2c0) = 0;
+      STField<undefined4>(this,0x2a8) = param_2;
+      STField<undefined4>(this,0x2a4) = param_1;
+      STField<undefined4>(this,0x2b4) = 0x32;
+      STField<undefined4>(this,700) = 0x32;
+      STField<int>(this,0x2ac) = param_3;
+      STField<undefined4>(this,0x2b0) = 0x3ed;
+      STField<undefined1>(this,0x328) = 4;
+      STField<undefined4>(this,0x2c0) = 0;
       uVar1 = g_playSystem_00802A38->field_00E4;
-      *(undefined4 *)((int)this + 0x33e) = 0;
-      *(uint *)((int)this + 0x32e) = uVar1;
+      STField<undefined4>(this,0x33e) = 0;
+      STField<uint>(this,0x32e) = uVar1;
       return;
     }
     if (param_4 == 0xc) {
-      *(undefined4 *)((int)this + 0x2a8) = param_2;
-      iVar2 = *(int *)((int)this + 0x2c0);
-      *(undefined4 *)((int)this + 0x2a4) = param_1;
-      *(int *)((int)this + 0x2ac) = param_3;
-      *(undefined4 *)((int)this + 0x2b4) = *(undefined4 *)((int)this + 0x2b8);
-      *(undefined4 *)((int)this + 0x2b0) = 0x50;
-      *(undefined4 *)((int)this + 0x2c0) = 0;
-      *(undefined1 *)((int)this + 0x328) = 4;
-      *(undefined4 *)((int)this + 700) = 0x24;
-      *(int *)((int)this + 0x32a) = (iVar2 * 0x23) / 5;
-      *(uint *)((int)this + 0x32e) = g_playSystem_00802A38->field_00E4;
+      STField<undefined4>(this,0x2a8) = param_2;
+      iVar2 = STField<int>(this,0x2c0);
+      STField<undefined4>(this,0x2a4) = param_1;
+      STField<int>(this,0x2ac) = param_3;
+      STField<undefined4>(this,0x2b4) = STField<undefined4>(this,0x2b8);
+      STField<undefined4>(this,0x2b0) = 0x50;
+      STField<undefined4>(this,0x2c0) = 0;
+      STField<undefined1>(this,0x328) = 4;
+      STField<undefined4>(this,700) = 0x24;
+      STField<int>(this,0x32a) = (iVar2 * 0x23) / 5;
+      STField<uint>(this,0x32e) = g_playSystem_00802A38->field_00E4;
       return;
     }
   }

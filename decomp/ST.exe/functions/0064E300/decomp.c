@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Type propagation algorithm not settling */
 /* [STSourceProvenanceApplier begin]
@@ -68,8 +70,7 @@ uint FUN_0064e300(int param_1,char *param_2,ushort param_3,char param_4,ushort p
     uVar2 = local_20[2];
   }
   else {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar2 = (uint)*(ushort *)((int)local_14 + 0x7d);
+    uVar2 = (uint)STField<ushort>(local_14,0x7d);
     local_20[2] = uVar2;
     array = (DArrayTy *)_GetStaffGrpExch(param_1);
     if (array != nullptr) {

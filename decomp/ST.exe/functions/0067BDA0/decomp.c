@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 0067BDA0 parameter used as this of STFishC::sub_004162B0 @ 0067BDB6

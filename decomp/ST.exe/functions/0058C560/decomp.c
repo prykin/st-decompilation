@@ -13,35 +13,35 @@ void __thiscall FUN_0058c560(void *this,int param_1,int param_2)
   int iVar3;
   short sVar4;
 
-  iVar2 = *(int *)((int)this + 0x231);
-  *(int *)((int)this + 0x249) = param_1;
-  *(int *)((int)this + 0x24d) = param_2;
+  iVar2 = STField<int>(this,0x231);
+  STField<int>(this,0x249) = param_1;
+  STField<int>(this,0x24d) = param_2;
   if (iVar2 == 1) {
-    *(undefined4 *)((int)this + 0x231) = 2;
-    *(int *)((int)this + 0x239) = PTR_00806724->entryCount + -1;
-    *(undefined4 *)((int)this + 0x235) = 1;
-    *(undefined4 *)((int)this + 0x23d) = 0x4b6;
-    iVar2 = FUN_006aced8(*(int *)((int)this + 0x251) << 7,*(int *)((int)this + 0x255) << 7,
+    STField<undefined4>(this,0x231) = 2;
+    STField<int>(this,0x239) = PTR_00806724->entryCount + -1;
+    STField<undefined4>(this,0x235) = 1;
+    STField<undefined4>(this,0x23d) = 0x4b6;
+    iVar2 = FUN_006aced8(STField<int>(this,0x251) << 7,STField<int>(this,0x255) << 7,
                          param_1 << 7,param_2 << 7);
     if (iVar2 != 0) {
-      *(undefined4 *)((int)this + 0x271) = 0x3e2;
-      iVar3 = ((*(int *)((int)this + 0x251) - *(int *)((int)this + 0x249)) * 0x8000) / iVar2;
-      *(undefined4 *)((int)this + 0x265) = 0;
-      *(undefined4 *)((int)this + 0x261) = 0;
-      *(int *)((int)this + 0x259) = iVar3;
-      iVar2 = ((*(int *)((int)this + 0x255) - *(int *)((int)this + 0x24d)) * 0x8000) / iVar2;
-      sVar4 = (short)((uint)(iVar3 * 0x4b6) >> 8) + 100 + *(short *)((int)this + 0x249) * 0xc9;
-      *(short *)((int)this + 0x41) = sVar4;
-      *(int *)((int)this + 0x25d) = iVar2;
-      *(int *)((int)this + 0x269) = (int)sVar4;
-      sVar4 = (short)((uint)(iVar2 * 0x4b6) >> 8) + 100 + *(short *)((int)this + 0x24d) * 0xc9;
-      *(short *)((int)this + 0x43) = sVar4;
-      *(int *)((int)this + 0x26d) = (int)sVar4;
+      STField<undefined4>(this,0x271) = 0x3e2;
+      iVar3 = ((STField<int>(this,0x251) - STField<int>(this,0x249)) * 0x8000) / iVar2;
+      STField<undefined4>(this,0x265) = 0;
+      STField<undefined4>(this,0x261) = 0;
+      STField<int>(this,0x259) = iVar3;
+      iVar2 = ((STField<int>(this,0x255) - STField<int>(this,0x24d)) * 0x8000) / iVar2;
+      sVar4 = (short)((uint)(iVar3 * 0x4b6) >> 8) + 100 + STField<short>(this,0x249) * 0xc9;
+      STField<short>(this,0x41) = sVar4;
+      STField<int>(this,0x25d) = iVar2;
+      STField<int>(this,0x269) = (int)sVar4;
+      sVar4 = (short)((uint)(iVar2 * 0x4b6) >> 8) + 100 + STField<short>(this,0x24d) * 0xc9;
+      STField<short>(this,0x43) = sVar4;
+      STField<int>(this,0x26d) = (int)sVar4;
     }
   }
   else {
     if (iVar2 == 0) {
-      *(undefined4 *)((int)this + 0x231) = 3;
+      STField<undefined4>(this,0x231) = 3;
       return;
     }
     if (iVar2 == 2) {

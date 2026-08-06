@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_0075a670(int *param_1,undefined4 *param_2)
 
@@ -15,7 +17,7 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
   piVar7 = param_1;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar3 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x74);
-  *(undefined4 **)((int)param_1 + 0x19a) = puVar3;
+  STField<undefined4 *>(param_1,0x19a) = puVar3;
   *puVar3 = FUN_0075a780;
   puVar3[2] = FUN_0075a800;
   puVar3[0x1c] = 0;

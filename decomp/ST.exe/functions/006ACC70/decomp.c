@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STUtilityFunctionApplier] darray_get_element: copies the indexed dynamic-array element and
    returns index or -4

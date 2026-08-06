@@ -48,7 +48,7 @@ STAllPlayersC::ResetActivityFromTmp
       goto LAB_0042d5e8;
     }
 LAB_0042d599:
-    pDVar4 = *(DArrayTy **)((int)piVar3 + 10);
+    pDVar4 = STField<DArrayTy *>(piVar3,10);
     uVar5 = 0xffff;
   }
   else {

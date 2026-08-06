@@ -128,8 +128,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     pMVar7 = (MTaskTy_field_0074DArray *)Library::DKW::TBL::DArrayCreate(nullptr,1,0x50,1);
     memset(local_a4, 0, 0x50); /* compiler bulk-zero initialization */
     pMVar3->field_0074 = pMVar7;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_a4[0]._0_1_ = 8;
+    STPiece<0,1>(local_a4[0]) = 8;
     Library::DKW::TBL::DArrayAppend((DArrayTy *)pMVar7,local_a4);
   }
   Library::DKW::TBL::FUN_006afe40((int *)&pMVar3->field_0078,&pMVar3->field_0074->flags);

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 BOOL __cdecl FUN_006a5620(int param_1)
 

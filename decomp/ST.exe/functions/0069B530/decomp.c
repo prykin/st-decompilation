@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall
 FUN_0069b530(void *this,undefined4 param_1,int param_2,int param_3,int param_4,int param_5,
@@ -34,7 +36,7 @@ FUN_0069b530(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
   iVar9 = (param_5 - param_3) + 1;
   iVar5 = iVar9 * iVar2;
   local_8 = 0;
-  iVar8 = *(int *)((int)this + 0x5847);
+  iVar8 = STField<int>(this,0x5847);
   ExceptionList = &local_14;
   Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
@@ -42,18 +44,18 @@ FUN_0069b530(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
   if (0 < iVar8) {
     local_90 = 0;
     do {
-      iVar8 = *(int *)((int)this + 0x582f);
+      iVar8 = STField<int>(this,0x582f);
       if (param_5 < iVar9) {
         local_94 = (int *)(&stack0xffffff5c + (iVar5 * param_5 + local_90) * 4);
         iVar7 = param_5;
         do {
           if (0 < iVar2) {
-            iVar3 = ((iVar7 + param_3) * *(int *)((int)this + 0x5833) + local_34 * iVar8 + param_2)
+            iVar3 = ((iVar7 + param_3) * STField<int>(this,0x5833) + local_34 * iVar8 + param_2)
                     * 2;
             piVar4 = local_94;
             iVar6 = iVar2;
             do {
-              *piVar4 = (int)*(short *)(iVar3 + *(int *)((int)this + 0x584f));
+              *piVar4 = (int)*(short *)(iVar3 + STField<int>(this,0x584f));
               iVar3 = iVar3 + 2;
               piVar4 = piVar4 + 1;
               iVar6 = iVar6 + -1;
@@ -65,9 +67,9 @@ FUN_0069b530(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
       }
       local_34 = local_34 + 1;
       local_90 = local_90 + iVar5;
-    } while (local_34 < *(int *)((int)this + 0x5847));
+    } while (local_34 < STField<int>(this,0x5847));
   }
-  if (local_34 < *(int *)((int)this + 0x5847)) {
+  if (local_34 < STField<int>(this,0x5847)) {
     do {
       iVar8 = local_34 * iVar5;
       local_24 = iVar8;
@@ -81,7 +83,7 @@ FUN_0069b530(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
           local_98 = (int *)(&stack0xffffff5c + iVar8 * 4);
           iVar7 = param_2;
           do {
-            iVar3 = *(int *)((int)this + 0x5833);
+            iVar3 = STField<int>(this,0x5833);
             if ((((iVar7 < iVar3) && (iVar7 + 1 < iVar3)) && (iVar9 < iVar3)) && (iVar9 + 1 < iVar3)
                ) {
               iVar1 = iVar6 + 1 + iVar8;
@@ -118,7 +120,7 @@ FUN_0069b530(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
         param_7[local_34] = local_80 - param_7[local_34 + -1];
       }
       local_34 = local_34 + 1;
-    } while (local_34 < *(int *)((int)this + 0x5847));
+    } while (local_34 < STField<int>(this,0x5847));
   }
   ExceptionList = local_14;
   return local_80 + local_2c;

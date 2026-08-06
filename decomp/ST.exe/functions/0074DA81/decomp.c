@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x0074dc1c) */
 
@@ -63,10 +65,8 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
     }
     bVar9 = CARRY4((uint)local_14,param_5);
     uVar3 = (uint)local_14 + param_5;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    bVar10 = CARRY4(local_14._4_4_,uVar6);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar6 = local_14._4_4_ + uVar6;
+    bVar10 = CARRY4(STPiece<4,4>(local_14),uVar6);
+    uVar6 = STPiece<4,4>(local_14) + uVar6;
     uVar7 = bVar9 + uVar6;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_14 = CONCAT44(uVar7,uVar3);
@@ -85,17 +85,16 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
     bVar11 = !bVar11;
   }
   if (uVar5 < uVar2) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    if ((uVar5 == 0) && (local_14._4_4_ < uVar2)) {
+    if ((uVar5 == 0) && (STPiece<4,4>(local_14) < uVar2)) {
       iVar4 = 0;
     }
     else {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar4 = (int)(CONCAT44(uVar5,local_14._4_4_) / (ulonglong)uVar2);
+      iVar4 = (int)(CONCAT44(uVar5,STPiece<4,4>(local_14)) / (ulonglong)uVar2);
       if (&stack0x00000000 != (undefined1 *)0x10) {
                     /* WARNING: Ignoring partial resolution of indirect */
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_14._4_4_ = (int)(CONCAT44(uVar5,local_14._4_4_) % (ulonglong)uVar2);
+        STPiece<4,4>(local_14) = (int)(CONCAT44(uVar5,STPiece<4,4>(local_14)) % (ulonglong)uVar2);
       }
     }
     iVar8 = (int)((ulonglong)local_14 / (ulonglong)uVar2);

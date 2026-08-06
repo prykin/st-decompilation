@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00465C60 -> 004E15F0 @ 004667FA; /STBoatC+0x18 | 00465C60 -> 004E15F0 @ 0046695D;
@@ -12,18 +14,18 @@ undefined4 __thiscall FUN_004e15f0(void *this,uint param_1)
   byte bVar2;
   byte bVar3;
 
-  if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-    bVar2 = LookupRecordByte((char)*(int *)((int)this + 0x23d));
-    iVar1 = *(int *)((int)this + 0x235);
-    bVar3 = LookupRecordByte(*(char *)((int)this + 0x24));
+  if (STField<int>(this,0x24) != STField<int>(this,0x23d)) {
+    bVar2 = LookupRecordByte((char)STField<int>(this,0x23d));
+    iVar1 = STField<int>(this,0x235);
+    bVar3 = LookupRecordByte(STField<char>(this,0x24));
     if ((&DAT_007e1984)[(uint)bVar3 + (iVar1 * 3 + (uint)bVar2) * 3] == '\0') {
       return 0;
     }
   }
-  if (*(int *)((int)this + 0x4d8) != -1) {
+  if (STField<int>(this,0x4d8) != -1) {
     return 0;
   }
-  *(uint *)((int)this + 0x4d8) = param_1;
+  STField<uint>(this,0x4d8) = param_1;
   return 1;
 }
 

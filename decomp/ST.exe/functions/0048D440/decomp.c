@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (17), none consume AL/AX, and every RET path defines full EAX; sites=00465C60 @ 00465E15

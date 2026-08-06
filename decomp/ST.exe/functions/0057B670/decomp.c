@@ -47,16 +47,14 @@ FUN_0057b670(int *param_1,uint param_2,uint param_3,short *param_4,short *param_
     thunk_FUN_0057b350(param_1,param_3,(int *)&local_8);
     goto LAB_0057b6ff;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)((int)param_1 + 0x259) == 0x99) {
+  if (STField<int>(param_1,0x259) == 0x99) {
     iVar3 = 0x15e;
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0057b6da:
     param_1 = (int *)0x3fc00000;
   }
   else {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)((int)param_1 + 0x259) != 0xb7) {
+    if (STField<int>(param_1,0x259) != 0xb7) {
       iVar3 = 400;
       goto LAB_0057b6da;
     }
@@ -69,11 +67,11 @@ LAB_0057b6da:
 LAB_0057b6ff:
   if (local_8 != nullptr) {
     thunk_FUN_00416270(this,(undefined2 *)&param_2,(int *)&param_5,(int *)&param_4);
-    if (*(int *)((int)this + 0x259) == 0x99) {
+    if (STField<int>(this,0x259) == 0x99) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)0xb4;
     }
-    else if (*(int *)((int)this + 0x259) == 0xb7) {
+    else if (STField<int>(this,0x259) == 0xb7) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)0xb9;
     }
@@ -84,38 +82,36 @@ LAB_0057b6ff:
     if (0 < (int)(param_3 + 1)) {
       do {
         uVar2 = param_3;
-        uVar1 = *(undefined2 *)((int)this + 0x247);
+        uVar1 = STField<undefined2>(this,0x247);
         memset(local_60, 0, 0x58); /* compiler bulk-zero initialization */
-        local_4c = *(undefined2 *)((int)this + 0x245);
+        local_4c = STField<undefined2>(this,0x245);
         local_60[3] = 1;
         local_60[2] = 1;
         local_60[1] = this[9];
-        local_48 = *(undefined2 *)((int)this + 0x249);
-        local_2f = *(undefined2 *)((int)this + 0x262);
-        local_33 = *(undefined4 *)((int)this + 0x25e);
-        local_34 = *(undefined1 *)((int)this + 0x25d);
+        local_48 = STField<undefined2>(this,0x249);
+        local_2f = STField<undefined2>(this,0x262);
+        local_33 = STField<undefined4>(this,0x25e);
+        local_34 = STField<undefined1>(this,0x25d);
         local_60[0] = 0x28;
         local_46 = (undefined2)param_2;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_44 = param_5._0_2_;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_42 = param_4._0_2_;
+        local_44 = STPiece<0,2>(param_5);
+        local_42 = STPiece<0,2>(param_4);
         local_4a = uVar1;
         if (uVar4 == param_3) {
-          iVar3 = FUN_006acf0d((int)*(short *)((int)this + 0x3a),(int)(short)this[0xf],
-                               (int)*(short *)((int)this + 0x3e),(int)(short)this[0xd],
-                               (int)*(short *)((int)this + 0x36),(int)(short)this[0xe]);
+          iVar3 = FUN_006acf0d((int)STField<short>(this,0x3a),(int)(short)this[0xf],
+                               (int)STField<short>(this,0x3e),(int)(short)this[0xd],
+                               (int)STField<short>(this,0x36),(int)(short)this[0xe]);
           if (iVar3 == 0) {
             local_40 = *(short *)((int)local_8 + uVar4 * 8 + -8);
             local_3e = *(short *)((int)local_8 + uVar4 * 8 + -6);
             local_3c = *(short *)((int)local_8 + uVar4 * 8 + -4);
           }
           else {
-            local_40 = (short)((((int)*(short *)((int)this + 0x3a) - (int)(short)this[0xd]) * 100) /
+            local_40 = (short)((((int)STField<short>(this,0x3a) - (int)(short)this[0xd]) * 100) /
                               iVar3) + (short)param_2;
-            local_3e = (short)((((int)(short)this[0xf] - (int)*(short *)((int)this + 0x36)) * 100) /
+            local_3e = (short)((((int)(short)this[0xf] - (int)STField<short>(this,0x36)) * 100) /
                               iVar3) + (short)param_5;
-            local_3c = (short)((((int)*(short *)((int)this + 0x3e) - (int)(short)this[0xe]) * 100) /
+            local_3c = (short)((((int)STField<short>(this,0x3e) - (int)(short)this[0xe]) * 100) /
                               iVar3) + (short)param_4;
           }
         }

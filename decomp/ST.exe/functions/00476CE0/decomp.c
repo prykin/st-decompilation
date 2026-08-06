@@ -266,11 +266,10 @@ cf_common_exit_00476DBA:
             sVar17 = 0;
             this->field_001C = local_14;
             lVar18 = Library::MSVCRT::__ftol();
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
                        (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_1c,
-                       (((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)local_1c._2_2_) + -3,
+                       (((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_1c)) + -3,
                        (int)(short)lVar18 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                        (int)local_18,sVar17,sVar19,sVar20,sVar4,sVar21,sVar22,iVar6,sVar23,bVar24);
           }
@@ -281,12 +280,9 @@ cf_common_exit_00476DBA:
             this->field_001C = uVar14;
             uVar9 = uVar14 * 0x41c64e6d + 0x3039;
             this->field_001C = uVar9;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_1c._2_2_ = (short)((uint)uVar15 >> 0x10);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar6 = (int)local_1c._2_2_;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_1c._0_2_ = (short)uVar15;
+            STPiece<2,2>(local_1c) = (short)((uint)uVar15 >> 0x10);
+            iVar6 = (int)STPiece<2,2>(local_1c);
+            STPiece<0,2>(local_1c) = (short)uVar15;
             iVar16 = (int)(short)local_1c;
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
@@ -437,11 +433,10 @@ cf_common_exit_00477B2E:
               sVar17 = 0;
               this->field_001C = local_14;
               lVar18 = Library::MSVCRT::__ftol();
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
                          (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_1c,
-                         (((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)local_1c._2_2_) + -3
+                         (((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_1c)) + -3
                          ,(int)(short)lVar18 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                           (int)local_18,sVar17,sVar19,sVar20,sVar4,sVar21,sVar22,iVar6,sVar23,bVar24
                         );
@@ -455,12 +450,9 @@ cf_common_exit_00477B2E:
               this->field_001C = uVar14;
               uVar9 = uVar14 * 0x41c64e6d + 0x3039;
               this->field_001C = uVar9;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_1c._2_2_ = (short)((uint)uVar15 >> 0x10);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              iVar6 = (int)local_1c._2_2_;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_1c._0_2_ = (short)uVar15;
+              STPiece<2,2>(local_1c) = (short)((uint)uVar15 >> 0x10);
+              iVar6 = (int)STPiece<2,2>(local_1c);
+              STPiece<0,2>(local_1c) = (short)uVar15;
               iVar16 = (int)(short)local_1c;
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,

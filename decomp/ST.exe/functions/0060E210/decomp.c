@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 3.
@@ -27,7 +29,7 @@ undefined4 FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4
   if (pdVar2 != nullptr) {
     iVar6 = param_3 + -1;
     *(undefined4 *)pdVar2 = 0;
-    *(undefined4 *)((int)pdVar2 + 4) = 0x3ff00000;
+    STField<undefined4>(pdVar2,4) = 0x3ff00000;
     *(undefined4 *)(pdVar2 + iVar6) = 0;
     *(undefined4 *)((int)pdVar2 + iVar6 * 8 + 4) = 0x3ff00000;
     iVar4 = param_3 + -3;

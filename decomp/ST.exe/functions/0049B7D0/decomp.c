@@ -131,8 +131,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
         STFishC::sub_004162F0
                   ((STFishC *)pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
                    (undefined2 *)&local_14);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        iVar8 = (int)param_1._2_2_;
+        iVar8 = (int)STPiece<2,2>(param_1);
         if (iVar8 < local_c) {
           local_c = iVar8;
         }
@@ -247,10 +246,9 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
                   ((STFishC *)pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
                    (undefined2 *)&local_14);
         GVar13 = local_20;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (g_pathingScratchGrid.cells
             [(((short)local_10 - local_8) * (int)g_pathingGrid.sizeX +
-              (int)g_pathingGrid.planeStride * (int)(short)local_14 + (int)param_1._2_2_) - iVar8]
+              (int)g_pathingGrid.planeStride * (int)(short)local_14 + (int)STPiece<2,2>(param_1)) - iVar8]
             == 0) goto joined_r0x0049bc58;
       }
       local_20 = GVar13 + 1;
@@ -291,10 +289,9 @@ joined_r0x0049bc58:
             STFishC::sub_004162F0
                       ((STFishC *)pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
                        (undefined2 *)&local_14);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if (g_pathingScratchGrid.cells
                 [(int)g_pathingGrid.planeStride * (int)(short)local_14 +
-                 (int)g_pathingGrid.sizeX * (int)(short)local_10 + (int)param_1._2_2_] == 0) {
+                 (int)g_pathingGrid.sizeX * (int)(short)local_10 + (int)STPiece<2,2>(param_1)] == 0) {
               DArrayRemoveAt(this->field_0103,local_28);
               break;
             }

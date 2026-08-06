@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] stack_parameter_width target=parameter:0: parameter=/byte Evidence:
    entry-use width=/byte; unmasked_dword_reads=0; evidence=005293C3 MOV EAX,dword ptr [EBP + 0x8];

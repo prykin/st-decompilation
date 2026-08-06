@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 bool __fastcall FUN_0074ba06(char *param_1)
 

@@ -13,12 +13,12 @@ undefined4 __thiscall FUN_005f89f0(void *this,int param_1)
   short sVar7;
   short sVar8;
 
-  uVar2 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-  *(uint *)((int)this + 0x1c) = uVar2;
-  uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-  *(uint *)((int)this + 0x1c) = uVar1;
-  iVar4 = ((uVar2 >> 0x10) % 5 + *(int *)((int)this + 0x27d)) - param_1;
-  iVar5 = ((uVar1 >> 0x10) % 5 + *(int *)((int)this + 0x281)) - param_1;
+  uVar2 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+  STField<uint>(this,0x1c) = uVar2;
+  uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+  STField<uint>(this,0x1c) = uVar1;
+  iVar4 = ((uVar2 >> 0x10) % 5 + STField<int>(this,0x27d)) - param_1;
+  iVar5 = ((uVar1 >> 0x10) % 5 + STField<int>(this,0x281)) - param_1;
   if (iVar4 < 0) {
     iVar4 = 0;
   }
@@ -32,7 +32,7 @@ undefined4 __thiscall FUN_005f89f0(void *this,int param_1)
     iVar5 = g_worldGrid.sizeY + -1;
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = *(int *)((int)this + 0x285);
+  param_1 = STField<int>(this,0x285);
   while( true ) {
     sVar6 = (short)iVar4;
     sVar7 = (short)iVar5;
@@ -45,12 +45,12 @@ undefined4 __thiscall FUN_005f89f0(void *this,int param_1)
          (STGridAt3D(g_worldGrid, sVar6, sVar7, sVar8).objects[0] == nullptr)))))) break;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + 1;
-    if ((4 < param_1) || (*(int *)((int)this + 0x285) + 2 < param_1)) break;
+    if ((4 < param_1) || (STField<int>(this,0x285) + 2 < param_1)) break;
   }
   if ((-1 < param_1) && (param_1 < 5)) {
-    *(int *)((int)this + 0x295) = iVar5;
-    *(int *)((int)this + 0x291) = iVar4;
-    *(int *)((int)this + 0x299) = param_1;
+    STField<int>(this,0x295) = iVar5;
+    STField<int>(this,0x291) = iVar4;
+    STField<int>(this,0x299) = param_1;
     return 1;
   }
   return 0;

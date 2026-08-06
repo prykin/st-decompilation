@@ -55,8 +55,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
     bVar7 = 3;
   }
   else {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_20 = (uint)local_20._1_3_ << 8;
+    local_20 = (uint)STPiece<1,3>(local_20) << 8;
     bVar7 = 4;
   }
   local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar7));

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0042F2B0 -> 00440820 @ 0042FF76; STAllPlayersC::UnRegisterObject parameter param_1 */

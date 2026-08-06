@@ -32,10 +32,10 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
                          (DAT_00806774,CASE_1D,"expl_vc0",0xffffffff,0,1,0,
                           nullptr);
       ST3DSMAPContext::sub_006E8660
-                (pSVar3->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar4 + 9),
-                 *(uint *)((int)puVar4 + 0xd),(int)*(uint *)((int)puVar4 + 9) / 2,0xa9,0);
+                (pSVar3->field_0211,(int *)&local_8,1,0,STField<uint>(puVar4,9),
+                 STField<uint>(puVar4,0xd),(int)STField<uint>(puVar4,9) / 2,0xa9,0);
       ST3DSMAPContext::sub_006E98E0
-                (pSVar3->field_0211,local_8,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
+                (pSVar3->field_0211,local_8,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
       ST3DSMAPContext::sub_006EA270(pSVar3->field_0211,local_8,0,pSVar3->field_033E);
       Library::Ourlib::ST3DSMAP::SprMove
                 (pSVar3->field_0211,local_8,
@@ -61,10 +61,10 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
                           nullptr);
       pSVar3->field_035F = puVar4;
       ST3DSMAPContext::sub_006E8660
-                (pSVar3->field_0211,(int *)puVar1,1,0,*(uint *)((int)puVar4 + 9),
-                 *(uint *)((int)puVar4 + 0xd),0xa8,0x43,0);
+                (pSVar3->field_0211,(int *)puVar1,1,0,STField<uint>(puVar4,9),
+                 STField<uint>(puVar4,0xd),0xa8,0x43,0);
       ST3DSMAPContext::sub_006E98E0
-                (pSVar3->field_0211,*puVar1,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
+                (pSVar3->field_0211,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
       ST3DSMAPContext::sub_006EA270(pSVar3->field_0211,*puVar1,0,pSVar3->field_0367);
       Library::Ourlib::ST3DSMAP::SprMove
                 (pSVar3->field_0211,*puVar1,

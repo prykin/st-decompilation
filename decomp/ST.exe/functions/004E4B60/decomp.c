@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target field_0245 uses
    /SubmarineTitans/Recovered/Enums/STMineSetC_field_0245State. Cases:

@@ -32,11 +32,11 @@ void __thiscall CGenerate::sub_00696940(CGenerate *this,int param_1)
         if (((local_c < pCVar2->count) &&
             (piVar7 = (int *)((int)&pCVar2->data->field_0000 + pCVar2->elementSize * local_c),
             piVar7 != nullptr)) && (*piVar7 != param_1)) {
-          if (*(int *)((int)piVar7 + 0x15) != 0) {
+          if (STField<int>(piVar7,0x15) != 0) {
             uVar3 = Library::MSVCRT::FUN_0072e6c0();
             local_14 = (int)uVar3 % 6 + 1;
           }
-          iVar4 = *(int *)((int)piVar7 + 0x15);
+          iVar4 = STField<int>(piVar7,0x15);
           local_8 = 0;
           uVar3 = *(uint *)(iVar4 + 0xc);
           if (0 < (int)uVar3) {
@@ -60,7 +60,7 @@ void __thiscall CGenerate::sub_00696940(CGenerate *this,int param_1)
                 thunk_FUN_006a0c90(uVar6,iVar5,0,1,0,1,local_14);
               }
               local_8 = local_8 + 1;
-              iVar4 = *(int *)((int)piVar7 + 0x15);
+              iVar4 = STField<int>(piVar7,0x15);
               uVar3 = *(uint *)(iVar4 + 0xc);
             } while ((int)local_8 < (int)uVar3);
           }
@@ -76,7 +76,7 @@ void __thiscall CGenerate::sub_00696940(CGenerate *this,int param_1)
         if ((((local_c < pCVar2->count) &&
              (piVar7 = (int *)((int)&pCVar2->data->field_0000 + pCVar2->elementSize * local_c),
              piVar7 != nullptr)) && (*piVar7 == param_1)) &&
-           (iVar4 = *(int *)((int)piVar7 + 0x15), iVar4 != 0)) {
+           (iVar4 = STField<int>(piVar7,0x15), iVar4 != 0)) {
           uVar3 = *(uint *)(iVar4 + 0xc);
           local_8 = 0;
           if (0 < (int)uVar3) {
@@ -91,15 +91,15 @@ void __thiscall CGenerate::sub_00696940(CGenerate *this,int param_1)
               iVar4 = *(int *)(iVar4 + 2);
               iVar5 = this->field_5833;
               local_14 = 0;
-              if ((((int)*(uint *)((int)piVar7 + 5) < 1) || (2 < (int)*(uint *)((int)piVar7 + 5)))
+              if ((((int)STField<uint>(piVar7,5) < 1) || (2 < (int)STField<uint>(piVar7,5)))
                  || (uVar3 = Library::MSVCRT::FUN_0072e6c0(), (int)uVar3 % 3 != 0)) {
-                if (*(uint *)((int)piVar7 + 5) != 1) goto LAB_00696b1f;
+                if (STField<uint>(piVar7,5) != 1) goto LAB_00696b1f;
                 uVar3 = Library::MSVCRT::FUN_0072e6c0();
                 uVar3 = uVar3 & 0x80000007;
                 if ((int)uVar3 < 0) {
                   uVar3 = (uVar3 - 1 | 0xfffffff8) + 1;
                 }
-                uVar6 = *(uint *)((int)piVar7 + 5);
+                uVar6 = STField<uint>(piVar7,5);
                 uVar3 = uVar3 + 1;
                 iVar8 = 1;
                 local_14 = 0;
@@ -107,12 +107,12 @@ void __thiscall CGenerate::sub_00696940(CGenerate *this,int param_1)
               else {
                 local_14 = 1;
 LAB_00696b1f:
-                uVar6 = *(uint *)((int)piVar7 + 5);
+                uVar6 = STField<uint>(piVar7,5);
                 uVar3 = 1;
                 iVar8 = 0xff;
               }
               thunk_FUN_006a0c90(iVar4 % iVar5 + 1,iVar4 / iVar5 + 1,local_14,uVar6,iVar8,1,uVar3);
-              iVar4 = *(int *)((int)piVar7 + 0x15);
+              iVar4 = STField<int>(piVar7,0x15);
               local_8 = local_8 + 1;
               uVar3 = *(uint *)(iVar4 + 0xc);
             } while ((int)local_8 < (int)uVar3);

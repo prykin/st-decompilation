@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004EC700_param_1Enum. Cases:
@@ -20,19 +22,19 @@ FUN_004ec700(void *this,Global_sub_004EC700_param_1Enum param_1,int param_2,uint
   int uVar3;
   int iVar5;
 
-  uVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
+  uVar3 = LookupRecordByte(STField<char>(this,0x23d));
   uVar3 = (int)(byte)uVar3;
-  iVar1 = *(int *)((int)this + 0x245);
+  iVar1 = STField<int>(this,0x245);
   iVar5 = uVar3 + -1;
   switch(param_1) {
   case CASE_7:
   case CASE_D:
   case CASE_E:
-    iVar2 = *(int *)((int)this + 0x4d0);
+    iVar2 = STField<int>(this,0x4d0);
     break;
   case CASE_8:
   case CASE_9:
-    iVar2 = *(int *)((int)this + 0x4d0);
+    iVar2 = STField<int>(this,0x4d0);
     break;
   default:
     goto switchD_004ec735_caseD_a;
@@ -41,31 +43,28 @@ FUN_004ec700(void *this,Global_sub_004EC700_param_1Enum param_1,int param_2,uint
     if ((iVar2 != 4) && (iVar2 != 6)) {
       if (iVar2 == 5) {
         *param_4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                            (param_2 + (iVar5 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+                            (param_2 + (iVar5 + STField<int>(this,0x235) * 3) * 4) * 8);
         *param_3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                            (param_2 + (iVar5 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+                            (param_2 + (iVar5 + STField<int>(this,0x235) * 3) * 4) * 8 + 4);
         return;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                       (param_2 + (iVar5 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+                       (param_2 + (iVar5 + STField<int>(this,0x235) * 3) * 4) * 8);
       *param_4 = uVar4;
       *param_3 = uVar4;
       return;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                     (param_2 + (iVar5 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+                     (param_2 + (iVar5 + STField<int>(this,0x235) * 3) * 4) * 8 + 4);
     *param_4 = uVar4;
     *param_3 = uVar4;
     return;
   }
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 switchD_004ec735_caseD_a:
   *param_3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                      (param_2 + (iVar5 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+                      (param_2 + (iVar5 + STField<int>(this,0x235) * 3) * 4) * 8);
   *param_4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                      (param_2 + (iVar5 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+                      (param_2 + (iVar5 + STField<int>(this,0x235) * 3) * 4) * 8 + 4);
   return;
 }
 

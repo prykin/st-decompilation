@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_004e0250(AnonShape_004E0250_5A3B9236 *param_1)
 
@@ -36,7 +38,7 @@ joined_r0x004e02dc:
   param_1->field_04D4 = 1;
 cf_common_exit_004E02E4:
   if (param_1->field_04D4 != 0) {
-    param_1->field_04E0 = *(undefined4 *)((int)this + 0x259);
+    param_1->field_04E0 = STField<undefined4>(this,0x259);
     thunk_FUN_005804f0(this,param_1->field_0018,(ushort)param_1->field_0024,param_1->field_0032);
     if (param_1->field_05AC == 0x61) {
       param_1->field_0520 = param_1->field_04E0;

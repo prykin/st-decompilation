@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 006ACED8 returns stored into /STBHEShellC+0xef @ 005F3D78 */

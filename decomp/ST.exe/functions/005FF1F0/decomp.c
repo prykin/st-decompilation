@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_005ff1f0(void *this,undefined4 param_1,int param_2,int param_3)
 
@@ -17,12 +19,12 @@ int __thiscall FUN_005ff1f0(void *this,undefined4 param_1,int param_2,int param_
   local_10 = -1;
   if ((param_3 != 0) &&
      (((param_3 < 1 || (4 < param_3)) ||
-      (uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039, *(uint *)((int)this + 0x1c) = uVar1
+      (uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039, STField<uint>(this,0x1c) = uVar1
       , (uVar1 >> 0x10) % (param_3 + 1U) == 0)))) {
     return 30000;
   }
-  iVar3 = *(int *)((int)this + 0x237);
-  iVar2 = *(int *)((int)this + 0x226) * 2;
+  iVar3 = STField<int>(this,0x237);
+  iVar2 = STField<int>(this,0x226) * 2;
   if (iVar2 < iVar3) {
     iVar3 = iVar2;
   }
@@ -33,12 +35,12 @@ int __thiscall FUN_005ff1f0(void *this,undefined4 param_1,int param_2,int param_
     return -1;
   }
   if (0 < iVar3) {
-    piVar5 = *(int **)((int)this + 0x23f);
+    piVar5 = STField<int *>(this,0x23f);
     iVar2 = iVar3;
     do {
       iVar7 = *piVar5;
       piVar5 = piVar5 + 1;
-      iVar7 = *(int *)((int)this + 0x23b) + iVar7 * 0x18;
+      iVar7 = STField<int>(this,0x23b) + iVar7 * 0x18;
       uVar6 = uVar6 + *(int *)(iVar7 + 0x10) + *(int *)(iVar7 + 0xc);
       iVar2 = iVar2 + -1;
       local_8 = uVar6;
@@ -49,13 +51,13 @@ int __thiscall FUN_005ff1f0(void *this,undefined4 param_1,int param_2,int param_
       return local_10;
     }
     iVar7 = 0;
-    uVar6 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar6;
+    uVar6 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+    STField<uint>(this,0x1c) = uVar6;
     iVar2 = 0;
     if (0 < iVar3) {
-      piVar5 = *(int **)((int)this + 0x23f);
+      piVar5 = STField<int *>(this,0x23f);
       do {
-        iVar4 = *(int *)((int)this + 0x23b) + *piVar5 * 0x18;
+        iVar4 = STField<int>(this,0x23b) + *piVar5 * 0x18;
         iVar4 = *(int *)(iVar4 + 0x10) + *(int *)(iVar4 + 0xc);
         iVar7 = iVar7 + iVar4;
         if ((int)((uVar6 >> 0x10) % local_8) <= iVar7) goto LAB_005ff2fa;

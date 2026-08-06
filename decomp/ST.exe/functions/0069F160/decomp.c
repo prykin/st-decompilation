@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -118,8 +120,8 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
   _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
   local_74 = 0;
   local_78 = 0;
-  iVar9 = (*(int **)((int)this + 8))[1];
-  iVar13 = **(int **)((int)this + 8);
+  iVar9 = (STField<int *>(this,8))[1];
+  iVar13 = *STField<int *>(this,8);
   if (0 < param_4) {
     do {
       if (param_4 * 100 <= local_74) break;
@@ -138,7 +140,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
           if (((*(short *)(&stack0xffffff40 + iVar12 * 2) == 0) &&
               (*(short *)(DAT_00853dd4 +
                          (uVar4 + uVar6 * iVar9 * iVar13 * 4 +
-                         **(int **)((int)this + 8) * local_2c * 2) * 2) == 0)) &&
+                         *STField<int *>(this,8) * local_2c * 2) * 2) == 0)) &&
              (uVar3 = Library::MSVCRT::FUN_0072e6c0(),
              1 < (int)uVar3 % (*(short *)(&stack0xffffff40 + iVar12 * 2) + 3))) {
             thunk_FUN_0069f5c0(this,uVar4,local_2c,uVar6);

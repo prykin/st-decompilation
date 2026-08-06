@@ -84,9 +84,9 @@ STManRub3C::AddNewDock
         if ((piVar6 != nullptr) && (*piVar6 == param_5)) {
           piVar6[3] = 0;
           *(ushort *)(piVar6 + 1) = param_6;
-          *(ushort *)((int)piVar6 + 6) = param_2;
+          STField<ushort>(piVar6,6) = param_2;
           *(ushort *)(piVar6 + 2) = param_3;
-          *(ushort *)((int)piVar6 + 10) = param_4;
+          STField<ushort>(piVar6,10) = param_4;
           piVar6[8] = 0;
           *param_7 = 1;
         }

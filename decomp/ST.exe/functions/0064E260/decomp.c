@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0064E260 parameter used as this of STResourceC::sub_00580D30 @ 0064E274

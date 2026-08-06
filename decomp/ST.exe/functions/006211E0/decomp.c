@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_006211e0(void *this,int param_1,int param_2,uint param_3)
 
@@ -11,7 +13,7 @@ void __thiscall FUN_006211e0(void *this,int param_1,int param_2,uint param_3)
   if (DAT_0080874d != param_3) {
     return;
   }
-  if (*(uint *)((int)this + 0xfd) <= uVar1) {
+  if (STField<uint>(this,0xfd) <= uVar1) {
     uVar2 = thunk_FUN_00621300(this,uVar1,param_1,param_2);
     if (((-1 < (int)uVar2) ||
         (uVar2 = thunk_FUN_00621430(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) &&
@@ -35,7 +37,7 @@ void __thiscall FUN_006211e0(void *this,int param_1,int param_2,uint param_3)
     local_10.unknown = 0;
     SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
     thunk_FUN_00620da0(this,param_1,param_2,0x8e);
-    *(uint *)((int)this + 0xfd) = uVar1 + 0xfa;
+    STField<uint>(this,0xfd) = uVar1 + 0xfa;
     return;
   }
   return;

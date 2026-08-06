@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_00651010(short *param_1)
 
@@ -35,8 +37,7 @@ undefined4 __cdecl FUN_00651010(short *param_1)
       param_1[0xe] = 10;
       param_1[0xf] = 0;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    else if (*(char *)((int)param_1 + 0xd5) != '\b') {
+    else if (STField<char>(param_1,0xd5) != '\b') {
       return 0;
     }
     if (sVar1 < 7) {
@@ -50,8 +51,7 @@ undefined4 __cdecl FUN_00651010(short *param_1)
       param_1[0x12] = -1;
       param_1[0x13] = -1;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    else if (*(char *)((int)param_1 + 0xd7) != '\b') {
+    else if (STField<char>(param_1,0xd7) != '\b') {
       return 0;
     }
     if ((0 < *(int *)(param_1 + 10)) && (*(int *)(param_1 + 10) < 4)) {

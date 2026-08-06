@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -192,7 +194,7 @@ LAB_00632f7e:
             puVar6 = nullptr;
           }
           *(undefined1 *)(puVar6 + 3) = 0;
-          *(undefined4 *)((int)puVar6 + 0x21) = 0;
+          STField<undefined4>(puVar6,0x21) = 0;
           if ((int)uVar11 < param_1->field_001D * 2) {
             uVar9 = param_1->field_0025;
           }

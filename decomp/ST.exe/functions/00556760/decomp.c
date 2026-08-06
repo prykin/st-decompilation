@@ -201,7 +201,7 @@ LAB_0055693a:
              *(uint *)(&DAT_007c8ffc + iVar3),0);
   local_26 = local_c;
   ST3DSMAPContext::sub_006E98E0
-            (g_sT3DSMAPContext_00807598,local_c,0,(int)(short)local_22,*(int *)((int)puVar4 + 0x21),
+            (g_sT3DSMAPContext_00807598,local_c,0,(int)(short)local_22,STField<int>(puVar4,0x21),
              1);
   if (iVar7 == 0) {
     Library::Ourlib::ST3DSMAP::SprSetSeqAnim

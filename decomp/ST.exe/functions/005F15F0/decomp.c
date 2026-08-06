@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=005F162F MOV AX,word ptr
@@ -26,11 +28,11 @@ FUN_005f15f0(void *this,ushort param_1,short param_2,undefined2 param_3,undefine
   char local_d;
   undefined4 local_c;
 
-  if (*(int *)((int)this + 0x3c) == 0) {
+  if (STField<int>(this,0x3c) == 0) {
     pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x20,10);
-    *(DArrayTy **)((int)this + 0x3c) = pDVar1;
+    STField<DArrayTy *>(this,0x3c) = pDVar1;
   }
-  pDVar1 = *(DArrayTy **)((int)this + 0x3c);
+  pDVar1 = STField<DArrayTy *>(this,0x3c);
   if (pDVar1 == nullptr) {
     return -1;
   }

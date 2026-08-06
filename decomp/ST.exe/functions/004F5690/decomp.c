@@ -87,7 +87,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       piVar23[0x46] = (int)piVar4;
       uVar14 = piVar4[5];
       if (uVar14 == 0) {
-        uVar14 = ((uint)*(ushort *)((int)piVar4 + 0xe) * piVar4[1] + 0x1f >> 3 & 0x1ffffffc) *
+        uVar14 = ((uint)STField<ushort>(piVar4,0xe) * piVar4[1] + 0x1f >> 3 & 0x1ffffffc) *
                  piVar4[2];
       }
       puVar5 = (undefined4 *)FUN_006b4fa0(piVar4);

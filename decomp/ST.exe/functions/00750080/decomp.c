@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] x87_double_parameter_slots target=function:-1: prototype=int *
    __thiscall FUN_00750080(void * this, undefined4 * param_1, int param_2, double param_3, int

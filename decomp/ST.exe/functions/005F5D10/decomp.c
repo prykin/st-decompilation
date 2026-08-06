@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=11;
@@ -29,10 +31,8 @@ LAB_005f5d4b:
         iVar1 = (**(code **)(*(int *)this->field_0034 + 0xe0))
                           (this->field_0038,(int)&param_1 + 2,&local_6,&local_8,&local_c);
         if (iVar1 == 0) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          this->field_0040 = (int)param_1._2_2_;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          this->field_0093 = (int)param_1._2_2_;
+          this->field_0040 = (int)STPiece<2,2>(param_1);
+          this->field_0093 = (int)STPiece<2,2>(param_1);
           this->field_0044 = (int)local_6;
           this->field_0048 = (int)local_8;
           this->field_0097 = (int)local_6;

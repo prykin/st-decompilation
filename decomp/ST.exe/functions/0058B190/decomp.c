@@ -34,13 +34,11 @@ STOctopusC::sub_0058B190
   iVar4 = g_worldGrid.sizeY + -1;
   sVar9 = this->field_0041;
   if (sVar9 < 0) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_14._0_2_ =
+    STPiece<0,2>(local_14) =
          ((sVar9 / 0xc9 + (sVar9 >> 0xf)) - (short)((longlong)(int)sVar9 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_14._0_2_ =
+    STPiece<0,2>(local_14) =
          (sVar9 / 0xc9 + (sVar9 >> 0xf)) - (short)((longlong)(int)sVar9 * 0x28c1979 >> 0x3f);
   }
   sVar9 = this->field_0043;

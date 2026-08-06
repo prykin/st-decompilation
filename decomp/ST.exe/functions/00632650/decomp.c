@@ -83,70 +83,93 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
       }
       Library::DKW::TBL::DArrayPut(pDVar1,uVar5,local_40);
       uVar5 = *(uint *)(*(int *)this + 0xc);
-      *(undefined4 *)((int)this + 0xd) = param_3;
-      *(undefined1 *)((int)this + 4) = 1;
-      *(uint *)((int)this + 0x19) = param_1;
-      *(int *)((int)this + 0x1d) = param_2;
-      *(Global_sub_00632650_param_4Enum *)((int)this + 0x11) = param_4;
-      *(undefined4 *)((int)this + 0xa1) = *(undefined4 *)(param_5 + 0x10);
-      *(undefined4 *)((int)this + 0xa5) = *(undefined4 *)(param_5 + 0x14);
-      *(undefined4 *)((int)this + 0xa9) = *(undefined4 *)(param_5 + 0x18);
-      *(undefined4 *)((int)this + 0x15) = *(undefined4 *)(param_5 + 0x48);
+      STField<undefined4>(this,0xd) = param_3;
+      STField<undefined1>(this,4) = 1;
+      STField<uint>(this,0x19) = param_1;
+      STField<int>(this,0x1d) = param_2;
+      STField<Global_sub_00632650_param_4Enum>(this,0x11) = param_4;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xa1) = *(undefined4 *)(param_5 + 0x10);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xa5) = *(undefined4 *)(param_5 + 0x14);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xa9) = *(undefined4 *)(param_5 + 0x18);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0x15) = *(undefined4 *)(param_5 + 0x48);
       break;
     case CASE_2:
       Library::DKW::TBL::DArrayPut(pDVar1,param_1 * param_2 - 1,local_40);
       uVar5 = *(uint *)(*(int *)this + 0xc);
-      *(int *)((int)this + 0x1d) = param_2;
-      *(undefined1 *)((int)this + 4) = 1;
-      *(uint *)((int)this + 0x19) = param_1;
-      *(undefined4 *)((int)this + 0x11) = 2;
-      *(undefined4 *)((int)this + 0xd) = param_3;
-      *(undefined4 *)((int)this + 0xa1) = *(undefined4 *)(param_5 + 0x10);
-      *(undefined4 *)((int)this + 0xa5) = *(undefined4 *)(param_5 + 0x14);
-      *(undefined4 *)((int)this + 0xa9) = *(undefined4 *)(param_5 + 0x18);
-      *(undefined4 *)((int)this + 0xad) = *(undefined4 *)(param_5 + 0x4c);
-      *(undefined4 *)((int)this + 0x15) = *(undefined4 *)(param_5 + 0x48);
+      STField<int>(this,0x1d) = param_2;
+      STField<undefined1>(this,4) = 1;
+      STField<uint>(this,0x19) = param_1;
+      STField<undefined4>(this,0x11) = 2;
+      STField<undefined4>(this,0xd) = param_3;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xa1) = *(undefined4 *)(param_5 + 0x10);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xa5) = *(undefined4 *)(param_5 + 0x14);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xa9) = *(undefined4 *)(param_5 + 0x18);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xad) = *(undefined4 *)(param_5 + 0x4c);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0x15) = *(undefined4 *)(param_5 + 0x48);
       break;
     case CASE_3:
       uVar5 = (param_1 + 4) * param_2 + 1;
-      *(uint *)((int)this + 0x21) = uVar5;
-      *(undefined4 *)((int)this + 0x11) = 3;
+      STField<uint>(this,0x21) = uVar5;
+      STField<undefined4>(this,0x11) = 3;
       Library::DKW::TBL::DArrayPut(pDVar1,uVar5,local_40);
-      *(undefined1 *)((int)this + 4) = 1;
-      *(undefined4 *)((int)this + 0x19) = *(undefined4 *)param_5;
-      *(undefined4 *)((int)this + 0x1d) = *(undefined4 *)(param_5 + 4);
-      *(undefined4 *)((int)this + 0x9d) = *(undefined4 *)(param_5 + 0x10);
-      *(undefined4 *)((int)this + 0xa1) = *(undefined4 *)(param_5 + 0x14);
-      *(undefined4 *)((int)this + 0xa5) = *(undefined4 *)(param_5 + 0x18);
-      *(undefined4 *)((int)this + 0x25) = *(undefined4 *)(param_5 + 8);
-      *(undefined4 *)((int)this + 0x29) = *(undefined4 *)(param_5 + 0xc);
-      *(undefined4 *)((int)this + 0x41) = 0;
-      *(undefined4 *)((int)this + 0x45) = 0x3f490fdb;
-      *(float *)((int)this + 0x6d) = *(float *)(param_5 + 0x30) * _DAT_0079d1a4;
-      *(float *)((int)this + 0x69) = *(float *)(param_5 + 0x2c) * _DAT_0079d1a4;
-      *(undefined4 *)((int)this + 0x81) = *(undefined4 *)(param_5 + 0x24);
-      *(undefined4 *)((int)this + 0x85) = *(undefined4 *)(param_5 + 0x28);
-      *(undefined4 *)((int)this + 0x89) = 0x3f860a92;
-      *(undefined4 *)((int)this + 0x61) = *(undefined4 *)(param_5 + 0x1c);
-      *(undefined4 *)((int)this + 0x65) = *(undefined4 *)(param_5 + 0x20);
+      STField<undefined1>(this,4) = 1;
+      STField<undefined4>(this,0x19) = *(undefined4 *)param_5;
+      STField<undefined4>(this,0x1d) = *(undefined4 *)(param_5 + 4);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0x9d) = *(undefined4 *)(param_5 + 0x10);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xa1) = *(undefined4 *)(param_5 + 0x14);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xa5) = *(undefined4 *)(param_5 + 0x18);
+      STField<undefined4>(this,0x25) = *(undefined4 *)(param_5 + 8);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0x29) = *(undefined4 *)(param_5 + 0xc);
+      STField<undefined4>(this,0x41) = 0;
+      STField<undefined4>(this,0x45) = 0x3f490fdb;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<float>(this,0x6d) = *(float *)(param_5 + 0x30) * _DAT_0079d1a4;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<float>(this,0x69) = *(float *)(param_5 + 0x2c) * _DAT_0079d1a4;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0x81) = *(undefined4 *)(param_5 + 0x24);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0x85) = *(undefined4 *)(param_5 + 0x28);
+      STField<undefined4>(this,0x89) = 0x3f860a92;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0x61) = *(undefined4 *)(param_5 + 0x1c);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0x65) = *(undefined4 *)(param_5 + 0x20);
       break;
     case CASE_4:
       Library::DKW::TBL::DArrayPut(pDVar1,param_1 * param_2 - 1,local_40);
       uVar5 = *(uint *)(*(int *)this + 0xc);
-      *(int *)((int)this + 0x1d) = param_2;
-      *(undefined1 *)((int)this + 4) = 1;
-      *(uint *)((int)this + 0x19) = param_1;
-      *(undefined4 *)((int)this + 0x11) = 4;
-      *(undefined4 *)((int)this + 0xd) = param_3;
-      *(undefined4 *)((int)this + 0xa1) = *(undefined4 *)(param_5 + 0x10);
-      *(undefined4 *)((int)this + 0xa5) = *(undefined4 *)(param_5 + 0x14);
-      *(undefined4 *)((int)this + 0xa9) = *(undefined4 *)(param_5 + 0x18);
-      *(undefined4 *)((int)this + 0x15) = *(undefined4 *)(param_5 + 0x48);
+      STField<int>(this,0x1d) = param_2;
+      STField<undefined1>(this,4) = 1;
+      STField<uint>(this,0x19) = param_1;
+      STField<undefined4>(this,0x11) = 4;
+      STField<undefined4>(this,0xd) = param_3;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xa1) = *(undefined4 *)(param_5 + 0x10);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xa5) = *(undefined4 *)(param_5 + 0x14);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0xa9) = *(undefined4 *)(param_5 + 0x18);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STField<undefined4>(this,0x15) = *(undefined4 *)(param_5 + 0x48);
     }
     thunk_FUN_00632e30(this);
     STTeamLissagC::InitVisibelSystem(this);
     uVar2 = 1;
-    if (*(char *)((int)this + 4) == '\0') {
+    if (STField<char>(this,4) == '\0') {
       uVar4 = 0;
       if (0 < (int)uVar5) {
         do {

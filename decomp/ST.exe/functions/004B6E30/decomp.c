@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004B6E30_param_2Enum. Cases:
@@ -39,10 +41,10 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
   }
   iVar4 = iVar4 * 4;
   /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-  iVar3 = *(int *)((int)this + 0x24) * 0xa62;
+  iVar3 = STField<int>(this,0x24) * 0xa62;
   if (*(int *)(iVar4 + 0x7f579a + iVar3) == 0) {
     iVar2 = 0;
-    piVar5 = &g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field1942_0x97a;
+    piVar5 = &g_packedRecords_A62x8[STField<int>(this,0x24)].field1942_0x97a;
     iVar1 = 6;
     do {
       if (iVar2 < *piVar5) {
@@ -60,17 +62,17 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
     iVar3 = 0;
     do {
       /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-      iVar1 = *(int *)((int)this + 0x24) * 0xa62;
+      iVar1 = STField<int>(this,0x24) * 0xa62;
       iVar2 = *(int *)(iVar3 + 0x7f579a + iVar1);
       if (*(int *)(iVar4 + 0x7f579a + iVar1) < iVar2) {
         *(int *)(iVar3 + 0x7f579a + iVar1) = iVar2 + -1;
       }
       iVar3 = iVar3 + 4;
     } while (iVar3 < 0x18);
-    iVar2 = *(int *)((int)this + 0x24);
+    iVar2 = STField<int>(this,0x24);
     *(undefined4 *)(iVar4 + STRecordByteAddress(g_packedRecords_A62x8, iVar2, 0x97A)) = 0;
   }
-  thunk_FUN_004b7750(STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(*(undefined1 *)((int)this + 0x24))));
+  thunk_FUN_004b7750(STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(STField<undefined1>(this,0x24))));
   return 0;
 }
 

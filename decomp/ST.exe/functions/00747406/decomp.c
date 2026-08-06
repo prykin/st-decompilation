@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0074B719 -> 00747406 @ 0074B744 */
@@ -8,7 +10,7 @@ undefined4 __thiscall FUN_00747406(void *this,undefined4 param_1,int *param_2,un
   int *piVar1;
   undefined4 uVar2;
 
-  piVar1 = *(int **)((int)this + 0x44);
+  piVar1 = STField<int *>(this,0x44);
   if (piVar1 == nullptr) {
     uVar2 = 0x80004001;
   }

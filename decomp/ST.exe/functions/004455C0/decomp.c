@@ -58,10 +58,9 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
               (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x27c3);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((*(short *)(param_1 + 7) < 0) || (g_worldGrid.sizeX <= *(short *)(param_1 + 7))) ||
-      (*(short *)((int)param_1 + 0x1e) < 0)) ||
-     (((g_worldGrid.sizeY <= *(short *)((int)param_1 + 0x1e) || (*(short *)(param_1 + 8) < 0)) ||
+      (STField<short>(param_1,0x1e) < 0)) ||
+     (((g_worldGrid.sizeY <= STField<short>(param_1,0x1e) || (*(short *)(param_1 + 8) < 0)) ||
       (g_worldGrid.sizeZ <= *(short *)(param_1 + 8))))) {
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27c8,0,0,"%s",
                                "STAllPlayersC::CreateBoat - incorrect position");

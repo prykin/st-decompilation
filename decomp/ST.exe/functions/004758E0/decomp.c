@@ -195,8 +195,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
           lVar12 = Library::MSVCRT::__ftol();
           iVar5 = (int)(short)lVar12 + (uVar6 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                   (int)local_24;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar9 = ((uVar8 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
+          iVar9 = ((uVar8 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_28);
           uVar6 = local_1c;
         }
         else {
@@ -216,10 +215,8 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
           sVar13 = 0;
           sVar4 = 0;
           iVar5 = (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_24;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_28._2_2_ = (short)((uint)local_28 >> 0x10);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar9 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
+          STPiece<2,2>(local_28) = (short)((uint)local_28 >> 0x10);
+          iVar9 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_28);
         }
         TraksClassTy::TraksCreate
                   (g_traksClass_00802A7C,1,2,7,

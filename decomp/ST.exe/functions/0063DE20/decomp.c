@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0063DE20 -> 00568DD0 @ 0063DEAC */
@@ -9,7 +11,7 @@ void __thiscall FUN_0063de20(void *this,int soundId)
   short sVar2;
   SoundPosition local_10;
 
-  iVar1 = *(int *)((int)this + 0x266);
+  iVar1 = STField<int>(this,0x266);
   sVar2 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
     local_10.x = (short)(((short)(iVar1 / 0xc9) + sVar2) -
@@ -19,7 +21,7 @@ void __thiscall FUN_0063de20(void *this,int soundId)
     local_10.x = (int)(short)(((short)(iVar1 / 0xc9) + sVar2) -
                              (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
   }
-  iVar1 = *(int *)((int)this + 0x26a);
+  iVar1 = STField<int>(this,0x26a);
   sVar2 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
     local_10.y = (short)(((short)(iVar1 / 0xc9) + sVar2) -
@@ -29,7 +31,7 @@ void __thiscall FUN_0063de20(void *this,int soundId)
     local_10.y = (int)(short)(((short)(iVar1 / 0xc9) + sVar2) -
                              (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
   }
-  local_10.unknown = *(int *)((int)this + 0x18);
+  local_10.unknown = STField<int>(this,0x18);
   SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,soundId,&local_10,0);
   return;
 }

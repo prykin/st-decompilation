@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
@@ -16,7 +18,7 @@ void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
   CFsgsConnection *local_c;
   tagBITMAPINFO *local_8;
 
-  *(undefined4 *)((int)this + 0x3c) = param_1;
+  STField<undefined4>(this,0x3c) = param_1;
   local_8 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;

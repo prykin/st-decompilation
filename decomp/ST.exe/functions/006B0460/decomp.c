@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_006b0460(int *param_1,int *param_2,int *param_3)
 

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param_3,int param_4)
 
@@ -58,8 +60,7 @@ void FUN_00760100(AnonShape_00760100_BE153D7B *param_1,int param_2,int *param_3,
           iVar7 = *(int *)(*(int *)(iVar2 + 0x10) + param_4 * 4);
           iVar8 = 0;
           local_c = 0;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c._0_2_ = 0;
+          STPiece<0,2>(local_c) = 0;
           local_18 = 0;
           for (pAVar14 = pAVar4; pAVar14 != nullptr;
               pAVar14 = (AnonShape_0075FEE0_E0ABA202 *)&pAVar14[-1].field_0x1bf) {

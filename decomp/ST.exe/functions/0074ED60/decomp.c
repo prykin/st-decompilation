@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] x87_double_parameter_slots target=function:-1: prototype=int __stdcall
    FUN_0074ed60(int * param_1, double param_2) Evidence: x87 double-width accesses or exact split

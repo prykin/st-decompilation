@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
 
@@ -21,9 +23,8 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
   if (0 < (int)dVar1) {
     do {
       DArrayGetElement(array,index,local_c);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if ((local_c._0_2_ != 0xffff) &&
-         (pSVar3 = STAllPlayersC::GetObjPtr(local_8,DAT_0080874d,local_c._0_2_,CASE_1),
+      if ((STPiece<0,2>(local_c) != 0xffff) &&
+         (pSVar3 = STAllPlayersC::GetObjPtr(local_8,DAT_0080874d,STPiece<0,2>(local_c),CASE_1),
          pSVar3 != nullptr)) {
         uVar4 = (*pSVar3->vtable->vfunc_2C)();
         switch(uVar4) {

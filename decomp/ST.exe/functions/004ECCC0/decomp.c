@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004ECCC0 returns zeroed full register at 004ECCD0 @ 004ECCD2 */

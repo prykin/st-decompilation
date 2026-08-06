@@ -1,10 +1,12 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_006e6830(void *this,int param_1)
 
 {
   int *piVar1;
 
-  piVar1 = *(int **)((int)this + 0x452);
+  piVar1 = STField<int *>(this,0x452);
   if (piVar1 != nullptr) {
     while (piVar1[1] != param_1) {
       piVar1 = (int *)*piVar1;

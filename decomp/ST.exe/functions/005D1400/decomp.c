@@ -630,7 +630,7 @@ LAB_005d24b8:
                         }
                         local_1ec = *(int *)(pcVar28 + 6);
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_1e8._0_2_ = CONCAT11(*pcVar28,pcVar28[2]);
+                        STPiece<0,2>(local_1e8) = CONCAT11(*pcVar28,pcVar28[2]);
                         local_1e4 = this_00->field_0061;
                         if (cVar2 == '\x02') {
                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -673,10 +673,8 @@ LAB_005d24b8:
                 memset((void *)local_70, 0, 0x26); /* compiler bulk-zero initialization */
                 iVar16 = 0;
                 local_64 = DAT_0080733b;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_70._3_4_ = DAT_008087be;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_70._0_2_ = (undefined2)((uint)DAT_00807dd5 >> 0x10);
+                STPiece<3,4>(local_70) = DAT_008087be;
+                STPiece<0,2>(local_70) = (undefined2)((uint)DAT_00807dd5 >> 0x10);
                 local_63 = DAT_00807361;
                 local_62 = DAT_00808754;
                 local_56 = this_00->field_2121;
@@ -805,7 +803,7 @@ LAB_005d22dd:
                         }
                         local_150 = local_c->field_0006;
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_14c._0_2_ = CONCAT11(*(undefined1 *)local_c,local_c->field_0x2);
+                        STPiece<0,2>(local_14c) = CONCAT11(*(undefined1 *)local_c,local_c->field_0x2);
                         local_148 = this_00->field_0061;
                         if (cVar2 == '\x02') {
                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

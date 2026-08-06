@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
 

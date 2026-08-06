@@ -310,17 +310,16 @@ cf_error_exit_0058A005:
     puVar11 = (byte *)(local_1c);
     puVar13 = (byte *)&this_00->field_0x285;
     memmove(puVar13, puVar11, 0x28); /* compiler REP MOVS byte copy */
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_8 = *(uint *)((int)local_1c + 0x8e);
+    local_8 = STField<uint>(local_1c,0x8e);
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x96 + (int)local_1c));
     puVar11 = (byte *)(local_1c);
     *(undefined4 *)&this_00->field_0x249 = local_1c[0xb];
     *(undefined4 *)((int)&this_00->field_0244 + 1) = local_1c[10];
     *(undefined2 *)&this_00->field_0x41 = *(undefined2 *)(local_1c + 0x1e);
-    *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)((int)local_1c + 0x7a);
+    *(undefined2 *)&this_00->field_0x43 = STField<undefined2>(local_1c,0x7a);
     *(undefined2 *)&this_00->field_0x45 = *(undefined2 *)(local_1c + 0x1f);
-    *(undefined4 *)&this_00->field_0x281 = *(undefined4 *)((int)local_1c + 0x86);
+    *(undefined4 *)&this_00->field_0x281 = STField<undefined4>(local_1c,0x86);
     this_00->field_0231 = local_1c[0x10];
     *(undefined4 *)((int)&this_00->field_023E + 3) = local_1c[0x11];
     *(undefined4 *)&this_00->field_0x251 = local_1c[0x12];
@@ -338,9 +337,9 @@ cf_error_exit_0058A005:
     *(undefined4 *)&this_00->field_0x239 = local_1c[0xe];
     *(undefined4 *)&this_00->field_0x23d = local_1c[0xf];
     *(undefined4 *)&this_00->field_0x235 = local_1c[0xd];
-    *(undefined2 *)&this_00->field_0x4e = *(undefined2 *)((int)local_1c + 0x7e);
+    *(undefined2 *)&this_00->field_0x4e = STField<undefined2>(local_1c,0x7e);
     *(undefined2 *)&this_00->field_0x50 = *(undefined2 *)(local_1c + 0x20);
-    *(undefined2 *)&this_00->field_0x52 = *(undefined2 *)((int)local_1c + 0x82);
+    *(undefined2 *)&this_00->field_0x52 = STField<undefined2>(local_1c,0x82);
     *(undefined2 *)&this_00->field_0x6c = *(undefined2 *)(local_1c + 0x21);
     *(undefined4 *)&this_00->field_0x24d = local_1c[0xc];
     local_44 = Library::DKW::LIB::MemAlloc(0x44);
@@ -348,7 +347,7 @@ cf_error_exit_0058A005:
       iVar7 = 0;
       do {
         if (iVar7 == 8) {
-          *(undefined4 *)((int)local_44 + 0x20) = DAT_00806774;
+          STField<undefined4>(local_44,0x20) = DAT_00806774;
         }
         else {
           *(int **)((int)local_44 + iVar7 * 4) = DAT_0080676c;

@@ -333,7 +333,7 @@ LAB_00592b82:
           *(undefined1 *)(piVar9 + 5) = 0;
         }
         piVar9[4] = local_8->field_0061;
-        switch(*(undefined2 *)((int)piVar9 + 0x15)) {
+        switch(STField<undefined2>(piVar9,0x15)) {
         case 0:
           pAVar1->field_0029 = pAVar1->field_0029 + 1;
           if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
@@ -353,7 +353,7 @@ LAB_00592b82:
           if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
             pAVar1->field_0029 = pAVar1->field_0023 + -1;
             *(undefined1 *)(piVar9 + 5) = 1;
-            *(undefined2 *)((int)piVar9 + 0x15) = 3;
+            STField<undefined2>(piVar9,0x15) = 3;
           }
           break;
         case 3:
@@ -361,7 +361,7 @@ LAB_00592b82:
           if ((short)pAVar1->field_0029 < 0) {
             pAVar1->field_0029 = 0;
             *(undefined1 *)(piVar9 + 5) = 1;
-            *(undefined2 *)((int)piVar9 + 0x15) = 2;
+            STField<undefined2>(piVar9,0x15) = 2;
           }
         }
       }

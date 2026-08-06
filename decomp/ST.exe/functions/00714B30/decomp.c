@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_00714b30(void *this,int param_1)
 
@@ -15,23 +17,23 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
   iVar5 = 0;
   local_8 = nullptr;
   local_c = 0;
-  if (((*(int *)((int)this + 0x58) == 0) || (*(ccFntTy **)this == nullptr)) ||
-     (*(int *)((int)this + 8) <= param_1)) {
+  if (((STField<int>(this,0x58) == 0) || (*(ccFntTy **)this == nullptr)) ||
+     (STField<int>(this,8) <= param_1)) {
     return 0xffffffcc;
   }
   ccFntTy::Save(*(ccFntTy **)this,(undefined4 *)&local_54);
   FUN_007109f0(*(void **)this,(AnonShape_007109F0_BD33A2FF *)((int)this + 0x10));
-  *(undefined4 *)((int)this + 0x90) = *(undefined4 *)((int)this + 0x58);
-  *(undefined4 *)((int)this + 0x8c) = *(undefined4 *)((int)this + 0x58);
+  STField<undefined4>(this,0x90) = STField<undefined4>(this,0x58);
+  STField<undefined4>(this,0x8c) = STField<undefined4>(this,0x58);
   iVar1 = *(int *)this;
-  *(undefined4 *)((int)this + 0xc) = 0;
-  *(undefined4 *)((int)this + 4) = 0;
-  *(undefined4 *)((int)this + 0x7c) = 0xffffffff;
-  *(undefined4 *)((int)this + 0x84) = 0;
-  *(undefined4 *)((int)this + 0x80) = 0;
-  *(undefined4 *)((int)this + 0xb0) = 0;
-  *(undefined4 *)((int)this + 0xac) = 0;
-  *(undefined4 *)((int)this + 0xa4) = *(undefined4 *)((int)this + 0x70);
+  STField<undefined4>(this,0xc) = 0;
+  STField<undefined4>(this,4) = 0;
+  STField<undefined4>(this,0x7c) = 0xffffffff;
+  STField<undefined4>(this,0x84) = 0;
+  STField<undefined4>(this,0x80) = 0;
+  STField<undefined4>(this,0xb0) = 0;
+  STField<undefined4>(this,0xac) = 0;
+  STField<undefined4>(this,0xa4) = STField<undefined4>(this,0x70);
   pRVar4 = local_8;
   if (&stack0x00000000 != (undefined1 *)0x8) {
     pRVar4 = *(RecoveredSourceFamily_dibcopy **)(iVar1 + 0x72);
@@ -55,8 +57,8 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
     }
   }
   else {
-    FUN_006b4170(pRVar4,iVar3,0,0,*(int *)((int)this + 0x5c),*(int *)((int)this + 0x60),
-                 (byte)*(undefined4 *)((int)this + 0xa0));
+    FUN_006b4170(pRVar4,iVar3,0,0,STField<int>(this,0x5c),STField<int>(this,0x60),
+                 (byte)STField<undefined4>(this,0xa0));
     if (0 < param_1) {
       if (0 < param_1 + -1) {
         do {

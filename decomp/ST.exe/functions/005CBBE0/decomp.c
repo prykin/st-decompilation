@@ -13,7 +13,7 @@ int __thiscall FUN_005cbbe0(void *this,AnonShape_005CBBE0_2D1CAA09 *param_1)
   if (param_1 != nullptr) {
     switch(param_1->field_0x4) {
     case 1:
-      if (((*(char *)((int)this + 0x1e26) != '\f') && (*(char *)((int)this + 0x1e26) != '\x10')) ||
+      if (((STField<char>(this,0x1e26) != '\f') && (STField<char>(this,0x1e26) != '\x10')) ||
          (resourceId = 0x1f5a, *(char *)param_1 == '\0')) {
         resourceId = 0x1f41;
       }

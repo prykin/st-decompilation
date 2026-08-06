@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
@@ -99,13 +101,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
   } while ((int)piVar13 < 0x8570dc);
   if ((int)pAVar8 < (int)pAVar10) {
     DAT_00857098 = (int)pAVar8 >> 0x10;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_34._0_4_ = 0xffffffff;
+    STPiece<0,4>(local_34) = 0xffffffff;
     local_8 = this;
     iVar4 = FUN_00727c80((int *)&local_34,param_2);
     if (iVar4 != 0) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_60._0_4_ = 1;
+      STPiece<0,4>(local_60) = 1;
       iVar4 = FUN_00727c80((int *)&local_60,param_2);
       if (iVar4 != 0) {
         if (*(int *)&this->field_0x124 == 6) {
@@ -170,35 +170,27 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
                   }
                 }
               }
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_34._4_4_ = local_34._4_4_ + -1;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              if (local_34._4_4_ == 0) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar4 = FUN_00727c80((int *)&local_34,local_34._8_4_);
+              STPiece<4,4>(local_34) = STPiece<4,4>(local_34) + -1;
+              if (STPiece<4,4>(local_34) == 0) {
+                iVar4 = FUN_00727c80((int *)&local_34,STPiece<8,4>(local_34));
                 if (iVar4 == 0) {
                   return;
                 }
               }
               else {
                 local_34.field_0024 = local_34.field_0024 + local_c;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_34.field_001C = local_34.field_001C + local_34._32_4_;
+                local_34.field_001C = local_34.field_001C + STPiece<32,4>(local_34);
               }
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_60._4_4_ = local_60._4_4_ + -1;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              if (local_60._4_4_ == 0) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar4 = FUN_00727c80((int *)&local_60,local_60._8_4_);
+              STPiece<4,4>(local_60) = STPiece<4,4>(local_60) + -1;
+              if (STPiece<4,4>(local_60) == 0) {
+                iVar4 = FUN_00727c80((int *)&local_60,STPiece<8,4>(local_60));
                 if (iVar4 == 0) {
                   return;
                 }
               }
               else {
                 local_60.field_0024 = local_60.field_0024 + local_38;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_60.field_001C = local_60.field_001C + local_60._32_4_;
+                local_60.field_001C = local_60.field_001C + STPiece<32,4>(local_60);
               }
               DAT_00857098 = DAT_00857098 + 1;
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

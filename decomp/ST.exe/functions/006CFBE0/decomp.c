@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_006cfbe0(uint *param_1)
 
@@ -29,13 +31,13 @@ void FUN_006cfbe0(uint *param_1)
                 uVar4 = param_1[0x30];
                 if (0 < (int)param_1[0x30]) {
                   do {
-                    if ((-1 < (short)piVar2[1]) && (iVar5 = *(int *)((int)piVar2 + 6), iVar5 != 0))
+                    if ((-1 < (short)piVar2[1]) && (iVar5 = STField<int>(piVar2,6), iVar5 != 0))
                     {
                       uVar3 = (int)(short)*piVar2 + *(int *)(iVar5 + 4);
                       if ((int)local_c < (int)uVar3) {
                         local_c = uVar3;
                       }
-                      uVar3 = *(int *)(iVar5 + 8) + (int)*(short *)((int)piVar2 + 2);
+                      uVar3 = *(int *)(iVar5 + 8) + (int)STField<short>(piVar2,2);
                       if ((int)local_8 < (int)uVar3) {
                         local_8 = uVar3;
                       }

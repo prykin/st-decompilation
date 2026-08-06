@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0071F2B0 returns zeroed full register at 0071F2E9 @ 0071F2ED
@@ -15,11 +17,11 @@ uint __thiscall FUN_0071f2b0(void *this,ushort param_1,ushort param_2)
 {
   int iVar1;
 
-  *(ushort *)((int)this + 0x156) = param_2;
-  *(ushort *)((int)this + 0x154) = param_1;
+  STField<ushort>(this,0x156) = param_2;
+  STField<ushort>(this,0x154) = param_1;
   iVar1 = FUN_006e5fe0(this,(undefined4 *)((int)this + 0x140));
   if (iVar1 == 0) {
-    return *(uint *)((int)this + 0x158);
+    return STField<uint>(this,0x158);
   }
   return 0;
 }

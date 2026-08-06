@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Library Function - Multiple Matches With Same Base Name
     public: __thiscall CBaseOutputPin::CBaseOutputPin(char const *,class CBaseFilter *,class
@@ -13,8 +15,8 @@ CBaseOutputPin(void *this,undefined4 param_1,undefined4 param_2,undefined4 param
 
 {
   FUN_00747b12(this,param_1,param_2,param_3,param_4,param_5,1);
-  *(undefined4 *)((int)this + 0x98) = 0;
-  *(undefined4 *)((int)this + 0x9c) = 0;
+  STField<undefined4>(this,0x98) = 0;
+  STField<undefined4>(this,0x9c) = 0;
   return this;
 }
 

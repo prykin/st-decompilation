@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Library Function - Single Match
     public: virtual long __thiscall CBaseRenderer::BeginFlush(void)

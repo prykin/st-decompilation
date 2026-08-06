@@ -127,8 +127,7 @@ LAB_005a3b63:
             }
             BVar7 = FileTimeToSystemTime(&local_c,&local_24);
             if (BVar7 != 0) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              wsprintfA((LPSTR)local_88,"%2d/%2d/%4d",local_24._6_4_ & 0xffff,
+              wsprintfA((LPSTR)local_88,"%2d/%2d/%4d",STPiece<6,4>(local_24) & 0xffff,
                         local_24.wMonth,local_24.wYear);
               FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1AC0,0,0xe2,0x11b,0xb2,
                            0x17,0xff);

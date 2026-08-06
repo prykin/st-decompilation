@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target field_04D0 uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_04D0State. Cases:

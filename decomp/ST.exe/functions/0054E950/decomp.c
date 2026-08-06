@@ -30,7 +30,7 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
     if (iVar3 == 0) {
       pvVar4 = Library::DKW::LIB::MemAllocClear(param_2 + 8);
       pSVar2 = local_c;
-      *(uint *)((int)pvVar4 + 4) = param_2;
+      STField<uint>(pvVar4,4) = param_2;
       puVar7 = (byte *)((int)pvVar4 + 8);
       memmove(puVar7, param_1, param_2); /* compiler REP MOVS byte copy */
       puVar7 = (byte *)(&local_c->field_0065);

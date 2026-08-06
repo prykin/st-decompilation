@@ -23,11 +23,11 @@ int FUN_006e4540(DArrayTy *param_1,int param_2)
     if (pvVar3 == nullptr) {
       return iVar2;
     }
-    if (*(int *)(*(int *)((int)pvVar3 + 4) + 0x14) == param_2) {
+    if (*(int *)(STField<int>(pvVar3,4) + 0x14) == param_2) {
       return (int)pvVar3;
     }
-  } while ((*(DArrayTy **)((int)pvVar3 + 8) == nullptr) ||
-          (iVar2 = FUN_006e4540(*(DArrayTy **)((int)pvVar3 + 8),param_2), iVar2 == 0));
+  } while ((STField<DArrayTy *>(pvVar3,8) == nullptr) ||
+          (iVar2 = FUN_006e4540(STField<DArrayTy *>(pvVar3,8),param_2), iVar2 == 0));
   return iVar2;
 }
 

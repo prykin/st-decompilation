@@ -11,24 +11,24 @@ void __thiscall FUN_00494160(void *this,int param_1)
   int iVar5;
   bool bVar7;
 
-  iVar5 = *(int *)((int)this + 0x6f7);
+  iVar5 = STField<int>(this,0x6f7);
   if (iVar5 != 0x16) {
     if (iVar5 == 0x23) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      if (param_1 == *(int *)((int)this + 0x72e)) {
+      if (param_1 == STField<int>(this,0x72e)) {
         return;
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 1) {
-        if (*(int *)((int)this + 0x722) < 1) {
+        if (STField<int>(this,0x722) < 1) {
           return;
         }
-        *(undefined4 *)((int)this + 0x72e) = 1;
+        STField<undefined4>(this,0x72e) = 1;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(3,0x16c);
         return;
       }
-      *(undefined4 *)((int)this + 0x72e) = 0;
+      STField<undefined4>(this,0x72e) = 0;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0x90))(3,0x16d);
       return;
@@ -38,22 +38,22 @@ void __thiscall FUN_00494160(void *this,int param_1)
     }
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (param_1 == *(int *)((int)this + 0x732)) {
+  if (param_1 == STField<int>(this,0x732)) {
     return;
   }
   if (param_1 != 1) {
-    *(undefined4 *)((int)this + 0x732) = 0;
+    STField<undefined4>(this,0x732) = 0;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0x90))(3,0x16d);
     return;
   }
-  if (*(int *)((int)this + 0x726) < 1) {
+  if (STField<int>(this,0x726) < 1) {
     return;
   }
-  *(undefined4 *)((int)this + 0x732) = 1;
+  STField<undefined4>(this,0x732) = 1;
   memset((void *)((int)this + 0x74e), 0, 0x20); /* compiler bulk-zero initialization */
   thunk_FUN_004945c0(this);
-  bVar2 = *(byte *)((int)this + 0x24);
+  bVar2 = STField<byte>(this,0x24);
   if (DAT_00808a8f == '\0') {
     if (DAT_0080874d == bVar2) {
 LAB_004942e7:
@@ -124,7 +124,7 @@ LAB_004943a0:
       thunk_FUN_004aceb0(pSVar1,'\n');
       thunk_FUN_004aceb0(pSVar1,'\t');
       thunk_FUN_004aceb0(pSVar1,'\b');
-      *(undefined4 *)((int)this + 0x746) = 0;
+      STField<undefined4>(this,0x746) = 0;
       goto LAB_00494498;
     }
   }
@@ -140,7 +140,7 @@ LAB_004943a0:
   STT3DSprC::sub_004ACE60(pSVar1,'\n');
   STT3DSprC::sub_004ACE60(pSVar1,'\t');
   STT3DSprC::sub_004ACE60(pSVar1,'\b');
-  *(undefined4 *)((int)this + 0x746) = 1;
+  STField<undefined4>(this,0x746) = 1;
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00494498:
   (**(code **)(*(int *)this + 0x90))(3,0x16c);

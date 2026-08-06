@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 byte __thiscall FUN_006e6870(void *this,int param_1,int param_2)
 
@@ -7,9 +9,9 @@ byte __thiscall FUN_006e6870(void *this,int param_1,int param_2)
   byte bVar3;
 
   bVar3 = 0;
-  if (param_1 < *(int *)((int)this + 0x41c)) {
-    bVar2 = *(byte *)(*(int *)((int)this + 0x420) + 3 + param_1 * 4);
-    pbVar1 = (byte *)(*(int *)((int)this + 0x420) + 3 + param_1 * 4);
+  if (param_1 < STField<int>(this,0x41c)) {
+    bVar2 = *(byte *)(STField<int>(this,0x420) + 3 + param_1 * 4);
+    pbVar1 = (byte *)(STField<int>(this,0x420) + 3 + param_1 * 4);
     bVar3 = bVar2 & 1;
     if (param_2 != 0) {
       *pbVar1 = bVar2 | 1;

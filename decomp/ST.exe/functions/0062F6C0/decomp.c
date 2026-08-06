@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_0062f6c0(void *this,int param_1)
 
@@ -24,12 +26,12 @@ undefined4 __thiscall FUN_0062f6c0(void *this,int param_1)
         *(undefined4 *)((int)*value + 0x10) = 0;
       }
       uVar3 = 1;
-      *(int *)((int)this + 0x1e1) = *(int *)((int)this + 0x1e1) + -1;
+      STField<int>(this,0x1e1) = STField<int>(this,0x1e1) + -1;
       FreeAndNull(value);
       *value = nullptr;
     }
-    if (*(int *)((int)this + 0x1e1) == 0) {
-      *(undefined4 *)((int)this + 0x1fa) = 2;
+    if (STField<int>(this,0x1e1) == 0) {
+      STField<undefined4>(this,0x1fa) = 2;
     }
     return uVar3;
   }

@@ -15,13 +15,13 @@ FUN_005ecfe0(void *this,int param_1,int param_2,int param_3,int param_4,int para
        (((param_3 != -1 && (param_4 != -1)) &&
         (iVar3 = thunk_FUN_005ecd70(this,param_2,param_3,param_4,param_5,'\0',0x1e), iVar3 != 0))))
     {
-      *(undefined4 *)((int)this + 0x23a) = 2;
+      STField<undefined4>(this,0x23a) = 2;
       return 1;
     }
   }
   else {
-    iVar3 = (int)*(short *)((int)this + 0x246);
-    if ((param_1 == iVar3) && (*(int *)((int)this + 0x2ba) == param_5)) {
+    iVar3 = (int)STField<short>(this,0x246);
+    if ((param_1 == iVar3) && (STField<int>(this,0x2ba) == param_5)) {
       return 0;
     }
     if (param_1 - iVar3 < 1) {
@@ -30,9 +30,9 @@ FUN_005ecfe0(void *this,int param_1,int param_2,int param_3,int param_4,int para
     else {
       sVar4 = 1;
     }
-    sVar1 = *(short *)((int)this + 0x244);
-    sVar4 = *(short *)((int)this + 0x246) + sVar4;
-    sVar2 = *(short *)((int)this + 0x242);
+    sVar1 = STField<short>(this,0x244);
+    sVar4 = STField<short>(this,0x246) + sVar4;
+    sVar2 = STField<short>(this,0x242);
     if ((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) ||
         ((sVar1 < 0 ||
          ((((g_worldGrid.sizeY <= sVar1 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)) ||
@@ -42,7 +42,7 @@ FUN_005ecfe0(void *this,int param_1,int param_2,int param_3,int param_4,int para
                                    (int)(short)(sVar1 * 0xc9 + 100),
                                    (int)(short)((short)param_1 * 200 + 100),param_5,'\0',0x1e),
        iVar3 != 0)) {
-      *(undefined4 *)((int)this + 0x23a) = 2;
+      STField<undefined4>(this,0x23a) = 2;
       return 1;
     }
   }

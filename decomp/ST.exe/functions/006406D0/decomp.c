@@ -259,9 +259,8 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
     local_16c = (float)(int)*(short *)&this_00->field_0x253 * _DAT_007904f8 * _DAT_007904f0;
     local_168 = (float)local_14 * _DAT_007904f8 * _DAT_007904f0;
     ST3DSMAPContext::sub_006E25D0(this_00->field_0211,&local_1c8,&local_170,0.0,0.0,0.0,1);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     sVar9 = (*this_00->vtable->vfunc_14)
-                      (local_1b8._2_2_,sStack_1b2,(int)sStack_1ae,local_1c8._2_2_,sStack_1c2,
+                      (STPiece<2,2>(local_1b8),sStack_1b2,(int)sStack_1ae,STPiece<2,2>(local_1c8),sStack_1c2,
                        local_1c0 >> 0x10);
     thunk_FUN_004abce0(&this_00->field_01D5,0,*(int *)(&DAT_007d2138 + sVar9 * 4),
                        *(int *)(&DAT_007d2138 + sVar9 * 4),'\0');
@@ -295,7 +294,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
         *(int **)(iVar11 + (int)local_158) = DAT_00806774;
         iVar11 = iVar11 + 4;
       } while (iVar11 < 0x44);
-      *(int **)((int)local_158 + 8) = DAT_00806764;
+      STField<int *>(local_158,8) = DAT_00806764;
       local_148 = DAT_008032b8;
       local_154 = 0;
       local_150 = 0;
@@ -622,9 +621,8 @@ switchD_00640c2d_caseD_a2:
       local_184 = (float)(int)*(short *)&this_00->field_0x253 * _DAT_007904f8 * _DAT_007904f0;
       local_180 = (float)local_10 * _DAT_007904f8 * _DAT_007904f0;
       ST3DSMAPContext::sub_006E25D0(this_00->field_0211,&local_1a8,&local_188,0.0,0.0,0.0,1);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       sVar9 = (*this_00->vtable->vfunc_14)
-                        (local_198._2_2_,sStack_192,(int)sStack_18e,local_1a8._2_2_,sStack_1a2,
+                        (STPiece<2,2>(local_198),sStack_192,(int)sStack_18e,STPiece<2,2>(local_1a8),sStack_1a2,
                          local_1a0 >> 0x10);
       uVar15 = *(undefined4 *)(&DAT_007d2138 + sVar9 * 4);
       uVar27 = (undefined1)uVar15;
@@ -826,8 +824,7 @@ switchD_00640c2d_caseD_a2:
           local_220[1] = local_30[9];
           local_208 = *(undefined2 *)&this_00->field_0x249;
           local_20a = *(undefined2 *)((int)&this_00->field_0246 + 1);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_1ef = *(undefined2 *)((int)local_30 + 0x32);
+          local_1ef = STField<undefined2>(local_30,0x32);
           local_1f3 = local_30[6];
           local_1f4 = this_00->field_0x25d;
           local_20c = uVar8;

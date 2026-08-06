@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00624570_param_1Enum. Cases:
@@ -15,34 +17,34 @@ FUN_00624570(void *this,Global_sub_00624570_param_1Enum param_1,int param_2,int 
   uVar1 = 0;
   switch(param_1) {
   case CASE_0:
-    *(undefined1 *)((int)this + 0x61) = 0;
-    *(undefined1 *)((int)this + 0x62) = 0;
-    *(uint *)((int)this + 0x30f) = g_playSystem_00802A38->field_00E4;
+    STField<undefined1>(this,0x61) = 0;
+    STField<undefined1>(this,0x62) = 0;
+    STField<uint>(this,0x30f) = g_playSystem_00802A38->field_00E4;
     return 1;
   case CASE_1:
     break;
   case CASE_2:
-    iVar2 = FUN_006acf0d(*(int *)((int)this + 0x2c2),*(int *)((int)this + 0x2c6),
-                         *(int *)((int)this + 0x2ca),param_2,param_3,param_4);
-    *(undefined4 *)((int)this + 0x306) = 3;
+    iVar2 = FUN_006acf0d(STField<int>(this,0x2c2),STField<int>(this,0x2c6),
+                         STField<int>(this,0x2ca),param_2,param_3,param_4);
+    STField<undefined4>(this,0x306) = 3;
     if (iVar2 < 1) {
       uVar1 = 2;
     }
     else {
-      *(int *)((int)this + 0x2f6) = iVar2;
-      *(undefined2 *)((int)this + 0x3c) = (undefined2)param_3;
-      *(short *)((int)this + 0x3e) = (short)param_4;
-      *(int *)((int)this + 0x2fa) = ((param_2 - *(int *)((int)this + 0x2c2)) * 10000) / iVar2;
-      *(int *)((int)this + 0x2fe) = ((param_3 - *(int *)((int)this + 0x2c6)) * 10000) / iVar2;
-      *(undefined2 *)((int)this + 0x34) = *(undefined2 *)((int)this + 0x2c2);
-      *(undefined2 *)((int)this + 0x38) = *(undefined2 *)((int)this + 0x2ca);
-      *(undefined2 *)((int)this + 0x3a) = (undefined2)param_2;
-      *(int *)((int)this + 0x302) = ((param_4 - *(int *)((int)this + 0x2ca)) * 10000) / iVar2;
-      *(undefined2 *)((int)this + 0x36) = *(undefined2 *)((int)this + 0x2c6);
+      STField<int>(this,0x2f6) = iVar2;
+      STField<undefined2>(this,0x3c) = (undefined2)param_3;
+      STField<short>(this,0x3e) = (short)param_4;
+      STField<int>(this,0x2fa) = ((param_2 - STField<int>(this,0x2c2)) * 10000) / iVar2;
+      STField<int>(this,0x2fe) = ((param_3 - STField<int>(this,0x2c6)) * 10000) / iVar2;
+      STField<undefined2>(this,0x34) = STField<undefined2>(this,0x2c2);
+      STField<undefined2>(this,0x38) = STField<undefined2>(this,0x2ca);
+      STField<undefined2>(this,0x3a) = (undefined2)param_2;
+      STField<int>(this,0x302) = ((param_4 - STField<int>(this,0x2ca)) * 10000) / iVar2;
+      STField<undefined2>(this,0x36) = STField<undefined2>(this,0x2c6);
       uVar1 = 1;
-      *(uint *)((int)this + 0x30f) = g_playSystem_00802A38->field_00E4;
+      STField<uint>(this,0x30f) = g_playSystem_00802A38->field_00E4;
     }
-    *(uint *)((int)this + 0x30f) = g_playSystem_00802A38->field_00E4;
+    STField<uint>(this,0x30f) = g_playSystem_00802A38->field_00E4;
     return uVar1;
   case CASE_3:
     if (param_4 < 0) {
@@ -51,50 +53,50 @@ FUN_00624570(void *this,Global_sub_00624570_param_1Enum param_1,int param_2,int 
     else {
       iVar2 = (int)(short)(param_4 / 200);
     }
-    if (iVar2 == *(short *)((int)this + 0x4b)) {
+    if (iVar2 == STField<short>(this,0x4b)) {
       uVar1 = 2;
     }
     else {
-      *(short *)((int)this + 0x3e) = (short)param_4;
-      uVar3 = *(int *)((int)this + 0x2ca) - param_4;
-      *(undefined2 *)((int)this + 0x36) = *(undefined2 *)((int)this + 0x2c6);
-      *(undefined4 *)((int)this + 0x2fa) = 0;
+      STField<short>(this,0x3e) = (short)param_4;
+      uVar3 = STField<int>(this,0x2ca) - param_4;
+      STField<undefined2>(this,0x36) = STField<undefined2>(this,0x2c6);
+      STField<undefined4>(this,0x2fa) = 0;
       uVar4 = (int)uVar3 >> 0x1f;
-      *(undefined4 *)((int)this + 0x2fe) = 0;
-      *(uint *)((int)this + 0x2f6) = (uVar3 ^ uVar4) - uVar4;
-      *(undefined2 *)((int)this + 0x3a) = (undefined2)param_2;
-      *(undefined2 *)((int)this + 0x3c) = (undefined2)param_3;
-      *(undefined2 *)((int)this + 0x34) = *(undefined2 *)((int)this + 0x2c2);
-      *(undefined2 *)((int)this + 0x38) = *(undefined2 *)((int)this + 0x2ca);
-      *(uint *)((int)this + 0x302) = ((*(short *)((int)this + 0x4b) <= iVar2) - 1 & 0xfffffffe) + 1;
-      *(undefined4 *)((int)this + 0x306) = 3;
+      STField<undefined4>(this,0x2fe) = 0;
+      STField<uint>(this,0x2f6) = (uVar3 ^ uVar4) - uVar4;
+      STField<undefined2>(this,0x3a) = (undefined2)param_2;
+      STField<undefined2>(this,0x3c) = (undefined2)param_3;
+      STField<undefined2>(this,0x34) = STField<undefined2>(this,0x2c2);
+      STField<undefined2>(this,0x38) = STField<undefined2>(this,0x2ca);
+      STField<uint>(this,0x302) = ((STField<short>(this,0x4b) <= iVar2) - 1 & 0xfffffffe) + 1;
+      STField<undefined4>(this,0x306) = 3;
       uVar1 = 1;
     }
-    *(uint *)((int)this + 0x30f) = g_playSystem_00802A38->field_00E4;
+    STField<uint>(this,0x30f) = g_playSystem_00802A38->field_00E4;
   default:
     return uVar1;
   }
-  iVar2 = (uint)*(byte *)((int)this + 0x2ad) * 4;
+  iVar2 = (uint)STField<byte>(this,0x2ad) * 4;
   if (*(int *)(&DAT_007d0398 + iVar2) == 0) {
-    *(undefined1 *)((int)this + 0x62) = 0;
-    *(uint *)((int)this + 0x30f) = g_playSystem_00802A38->field_00E4;
+    STField<undefined1>(this,0x62) = 0;
+    STField<uint>(this,0x30f) = g_playSystem_00802A38->field_00E4;
     return 1;
   }
-  if (*(int *)((int)this + 0x302) == 0) {
-    *(undefined4 *)((int)this + 0x302) = 1;
+  if (STField<int>(this,0x302) == 0) {
+    STField<undefined4>(this,0x302) = 1;
   }
   else {
-    *(uint *)((int)this + 0x302) = -(((*(int *)((int)this + 0x302) < 1) - 1 & 2) - 1);
+    STField<uint>(this,0x302) = -(((STField<int>(this,0x302) < 1) - 1 & 2) - 1);
   }
   iVar2 = *(int *)(&DAT_007d0388 + iVar2);
-  uVar3 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-  *(uint *)((int)this + 0x1c) = uVar3;
-  *(char *)((int)this + 0x62) =
-       (&DAT_007d0388)[(uint)*(byte *)((int)this + 0x2ad) * 4] -
+  uVar3 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+  STField<uint>(this,0x1c) = uVar3;
+  STField<char>(this,0x62) =
+       (&DAT_007d0388)[(uint)STField<byte>(this,0x2ad) * 4] -
        (char)((uVar3 >> 0x10) % (iVar2 / 3 + 1U));
   uVar3 = g_playSystem_00802A38->field_00E4;
-  *(undefined2 *)((int)this + 0x34) = *(undefined2 *)((int)this + 0x2ca);
-  *(uint *)((int)this + 0x30f) = uVar3;
+  STField<undefined2>(this,0x34) = STField<undefined2>(this,0x2ca);
+  STField<uint>(this,0x30f) = uVar3;
   return 1;
 }
 

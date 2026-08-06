@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint __thiscall FUN_0055b9f0(void *this,RecoveredRecord_VisibleClassTy_0055B9F0 *param_1)
 
@@ -8,7 +10,7 @@ uint __thiscall FUN_0055b9f0(void *this,RecoveredRecord_VisibleClassTy_0055B9F0 
   uint uVar4;
   bool bVar5;
 
-  iVar1 = *(int *)((int)this + 0x110);
+  iVar1 = STField<int>(this,0x110);
   uVar4 = 0;
   uVar2 = *(uint *)(iVar1 + 0xc);
   if (0 < (int)uVar2) {

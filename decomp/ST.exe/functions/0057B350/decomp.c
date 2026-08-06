@@ -51,17 +51,17 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
           do {
             if ((int)param_1 + iVar8 + local_c != 0) {
               psVar1 = (short *)*piVar11;
-              *psVar1 = *(short *)((int)piVar5 + 0x41) + (short)local_c;
+              *psVar1 = STField<short>(piVar5,0x41) + (short)local_c;
               uVar10 = (undefined2)((uint)psVar1 >> 0x10);
-              *(short *)(*piVar11 + 2) = *(short *)((int)piVar5 + 0x43) + (short)param_1;
-              *(short *)(*piVar11 + 4) = (short)iVar8 + *(short *)((int)piVar5 + 0x45);
+              *(short *)(*piVar11 + 2) = STField<short>(piVar5,0x43) + (short)param_1;
+              *(short *)(*piVar11 + 4) = (short)iVar8 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
               /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
               uVar6 = (**(code **)(*piVar5 + 0x10))
-                                (CONCAT22(uVar10,*(undefined2 *)((int)piVar5 + 0x41)),
-                                 CONCAT22(uVar6,*(undefined2 *)((int)piVar5 + 0x43)),
-                                 CONCAT22(uVar10,*(undefined2 *)((int)piVar5 + 0x45)),
+                                (CONCAT22(uVar10,STField<undefined2>(piVar5,0x41)),
+                                 CONCAT22(uVar6,STField<undefined2>(piVar5,0x43)),
+                                 CONCAT22(uVar10,STField<undefined2>(piVar5,0x45)),
                                  CONCAT22(uVar6,*puVar2),CONCAT22(uVar10,puVar2[1]),
                                  CONCAT22(uVar10,puVar2[2]));
               iVar3 = *piVar11;
@@ -96,17 +96,17 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
             if (param_2 <= local_8) break;
             if ((int)param_1 + local_c + iVar8 != 0) {
               psVar1 = (short *)*piVar11;
-              *psVar1 = *(short *)((int)piVar5 + 0x41) + (short)local_c;
+              *psVar1 = STField<short>(piVar5,0x41) + (short)local_c;
               uVar10 = (undefined2)((uint)psVar1 >> 0x10);
-              *(short *)(*piVar11 + 2) = *(short *)((int)piVar5 + 0x43) + (short)param_1;
-              *(short *)(*piVar11 + 4) = (short)iVar8 + *(short *)((int)piVar5 + 0x45);
+              *(short *)(*piVar11 + 2) = STField<short>(piVar5,0x43) + (short)param_1;
+              *(short *)(*piVar11 + 4) = (short)iVar8 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
               /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
               uVar6 = (**(code **)(*piVar5 + 0x10))
-                                (CONCAT22(uVar10,*(undefined2 *)((int)piVar5 + 0x41)),
-                                 CONCAT22(uVar6,*(undefined2 *)((int)piVar5 + 0x43)),
-                                 CONCAT22(uVar10,*(undefined2 *)((int)piVar5 + 0x45)),
+                                (CONCAT22(uVar10,STField<undefined2>(piVar5,0x41)),
+                                 CONCAT22(uVar6,STField<undefined2>(piVar5,0x43)),
+                                 CONCAT22(uVar10,STField<undefined2>(piVar5,0x45)),
                                  CONCAT22(uVar6,*puVar2),CONCAT22(uVar10,puVar2[1]),
                                  CONCAT22(uVar10,puVar2[2]));
               iVar3 = *piVar11;

@@ -19,7 +19,7 @@ void __thiscall FUN_005fccb0(void *this,char *param_1)
   } while (cVar1 != '\0');
   if (0xe < ~uVar2 - 1) {
     Library::MSVCRT::_strncpy((char *)((int)this + 0x35c),param_1,0xe);
-    *(undefined1 *)((int)this + 0x36a) = 0;
+    STField<undefined1>(this,0x36a) = 0;
     return;
   }
   uVar2 = 0xffffffff;

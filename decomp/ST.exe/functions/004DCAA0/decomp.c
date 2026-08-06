@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004DCAA0 @ 004CB0AE
@@ -17,9 +19,9 @@ FUN_004dcaa0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,u
   int iVar2;
   byte bVar3;
 
-  bVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
-  iVar1 = *(int *)((int)this + 0x245);
-  iVar2 = *(int *)((int)this + 0x4d0);
+  bVar3 = LookupRecordByte(STField<char>(this,0x23d));
+  iVar1 = STField<int>(this,0x245);
+  iVar2 = STField<int>(this,0x4d0);
   if (iVar2 != 0) {
     if (iVar2 == 1) {
       *param_3 = 0;
@@ -31,9 +33,9 @@ FUN_004dcaa0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,u
     }
   }
   *param_3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                      (param_2 + ((bVar3 - 1) + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+                      (param_2 + ((bVar3 - 1) + STField<int>(this,0x235) * 3) * 4) * 8);
   *param_4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                      (param_2 + ((bVar3 - 1) + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+                      (param_2 + ((bVar3 - 1) + STField<int>(this,0x235) * 3) * 4) * 8 + 4);
   return;
 }
 

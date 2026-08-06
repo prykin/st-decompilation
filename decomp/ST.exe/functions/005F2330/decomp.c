@@ -30,10 +30,10 @@ void __thiscall STManBasisC::sub_005F2330(STManBasisC *this)
         else {
           pvVar3 = nullptr;
         }
-        if (-1 < (int)*(uint *)((int)pvVar3 + 0x18)) {
+        if (-1 < (int)STField<uint>(pvVar3,0x18)) {
           Library::Ourlib::ST3DSMAP::SprClose
-                    (g_sT3DSMAPContext_00807598,*(uint *)((int)pvVar3 + 0x18));
-          *(undefined4 *)((int)pvVar3 + 0x18) = 0xffffffff;
+                    (g_sT3DSMAPContext_00807598,STField<uint>(pvVar3,0x18));
+          STField<undefined4>(pvVar3,0x18) = 0xffffffff;
         }
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < (int)dVar1);

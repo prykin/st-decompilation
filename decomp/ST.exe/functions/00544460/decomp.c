@@ -35,20 +35,15 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
       *(undefined4 *)pAVar5 = 0;
       pAVar5 = (AnonShape_00544100_1A02F945 *)&pAVar5->field_0004;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74._20_4_ = this_00->field_0008;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74._24_4_ = 2;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74._56_4_ = 2;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74._0_4_ = 8;
+    STPiece<20,4>(local_74) = this_00->field_0008;
+    STPiece<24,4>(local_74) = 2;
+    STPiece<56,4>(local_74) = 2;
+    STPiece<0,4>(local_74) = 8;
     local_18 = 0x11;
     local_74.field_0004 = 0x8000000;
     local_74.field_001C = 0xa110;
     local_74.field_003C = 0xa111;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74._52_4_ = local_74._20_4_;
+    STPiece<52,4>(local_74) = STPiece<20,4>(local_74);
     local_14 = &local_74;
     FUN_006e6000(this_00,3,1,local_28);
     local_74.field_0004 = 0x1000000;

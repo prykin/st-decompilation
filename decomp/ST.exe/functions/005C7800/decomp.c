@@ -156,8 +156,7 @@ LAB_005c7ae0:
   _DAT_0085400e = thunk_FUN_005c2760;
   wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s");
   PTR_00853ff8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  DAT_00853ffc._1_3_ = SUB43(PTR_00853ff8,0);
+  STPiece<1,3>(DAT_00853ffc) = SUB43(PTR_00853ff8,0);
   uRam00854000 = (undefined1)((uint)PTR_00853ff8 >> 0x18);
   if (PTR_00853ff8 != nullptr) {
     thunk_FUN_0069ffb0(&local_5a80);

@@ -154,14 +154,14 @@ LAB_00629242:
   local_1c->field_00CA = puVar10;
   puVar1 = &local_1c->field_00C6;
   ST3DSMAPContext::sub_006E8660
-            (g_sT3DSMAPContext_00807598,puVar1,2,0,*(uint *)((int)puVar10 + 9),
-             *(uint *)((int)puVar10 + 0xd),local_10,local_c,0);
+            (g_sT3DSMAPContext_00807598,puVar1,2,0,STField<uint>(puVar10,9),
+             STField<uint>(puVar10,0xd),local_10,local_c,0);
   if (DAT_00807326 != '\0') {
     Library::Ourlib::ST3DSMAP::SprSetShadow
               (g_sT3DSMAPContext_00807598,*puVar1,0,0x4049f8,(uint)pSVar8);
   }
   ST3DSMAPContext::sub_006E98E0
-            (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar10,*(int *)((int)puVar10 + 0x21),1);
+            (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar10,STField<int>(puVar10,0x21),1);
   ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,0);
   uVar3 = *puVar1;
   local_20 = (float)pSVar8->field_0046 * _DAT_007904f8 * _DAT_007904f0;

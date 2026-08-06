@@ -168,8 +168,7 @@ switchD_005b2a8d_default:
       }
       SetMode(this_01,param_1,1);
       thunk_FUN_00568bc0(&g_sound,0);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if ((DAT_00807300._1_1_ & 8) != 0) {
+      if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
         thunk_FUN_0056a130(&g_sound,0x10,'\x02',0,nullptr);
       }
       if (DAT_00808446 == '\0') {

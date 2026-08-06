@@ -27,14 +27,10 @@ int __cdecl FUN_0057ba30(void *param_1,int param_2)
   }
   thunk_FUN_00416270(param_1,(undefined2 *)((int)&param_1 + 2),(int *)((int)&param_2 + 2),
                      (int *)&local_6);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_18 = param_2._2_2_ + 1 + local_1c;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_14 = param_2._2_2_ - local_1c;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c = param_1._2_2_ - local_1c;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_10 = param_1._2_2_ + 1 + local_1c;
+  local_18 = STPiece<2,2>(param_2) + 1 + local_1c;
+  local_14 = STPiece<2,2>(param_2) - local_1c;
+  local_c = STPiece<2,2>(param_1) - local_1c;
+  local_10 = STPiece<2,2>(param_1) + 1 + local_1c;
   iVar4 = local_6 - local_1c;
   local_1c = local_6 + 1 + local_1c;
   if (local_14 < 0) {
@@ -64,10 +60,10 @@ int __cdecl FUN_0057ba30(void *param_1,int param_2)
             ((sVar5 < g_worldGrid.sizeZ &&
              (STGridAt3D(g_worldGrid, sVar7, sVar6, sVar5).objects[0] != nullptr)))))) {
           local_24 = local_24 + 1;
-          thunk_FUN_0057b990(*(undefined4 *)((int)pvVar3 + 0x24),DAT_007e6620,
+          thunk_FUN_0057b990(STField<undefined4>(pvVar3,0x24),DAT_007e6620,
                              (int)STGridAt3D(g_worldGrid, sVar7, sVar6, sVar5).objects[0],
-                             (ushort)*(undefined4 *)((int)pvVar3 + 0x25e),
-                             *(undefined2 *)((int)pvVar3 + 0x262),0xac,0x110);
+                             (ushort)STField<undefined4>(pvVar3,0x25e),
+                             STField<undefined2>(pvVar3,0x262),0xac,0x110);
         }
       }
     }

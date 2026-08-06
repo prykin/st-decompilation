@@ -31,10 +31,10 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
                          (DAT_00806774,CASE_1D,"expl_nb0",0xffffffff,0,1,0,
                           nullptr);
       ST3DSMAPContext::sub_006E8660
-                (pSVar2->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
-                 *(uint *)((int)puVar3 + 0xd),0x6f,0xf0,0);
+                (pSVar2->field_0211,(int *)&local_8,1,0,STField<uint>(puVar3,9),
+                 STField<uint>(puVar3,0xd),0x6f,0xf0,0);
       ST3DSMAPContext::sub_006E98E0
-                (pSVar2->field_0211,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+                (pSVar2->field_0211,local_8,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
       ST3DSMAPContext::sub_006EA270(pSVar2->field_0211,local_8,0,pSVar2->field_033E);
       Library::Ourlib::ST3DSMAP::SprMove
                 (pSVar2->field_0211,local_8,

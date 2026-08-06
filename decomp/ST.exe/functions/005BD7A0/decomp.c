@@ -375,8 +375,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     this_00->field_04DF = -1;
   }
   thunk_FUN_00568bc0(&g_sound,0);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if ((DAT_00807300._1_1_ & 8) != 0) {
+  if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
     thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,nullptr);
   }
   g_currentExceptionFrame = local_5c.previous;

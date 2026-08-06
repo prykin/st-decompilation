@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_00568780(void *this,int param_1,int param_2)
 
@@ -8,7 +10,7 @@ undefined4 __thiscall FUN_00568780(void *this,int param_1,int param_2)
   undefined4 local_8;
 
   local_8 = 0;
-  if (*(int *)((int)this + 0xf8b) == 0) {
+  if (STField<int>(this,0xf8b) == 0) {
     return 0;
   }
   local_50.previous = g_currentExceptionFrame;

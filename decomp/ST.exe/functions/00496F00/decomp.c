@@ -22,7 +22,7 @@ undefined4 FUN_00496f00(int param_1)
       else {
         pvVar3 = nullptr;
       }
-      if (*(int *)((int)pvVar3 + 8) == param_1) break;
+      if (STField<int>(pvVar3,8) == param_1) break;
       uVar4 = uVar4 + 1;
       bVar5 = uVar4 < uVar1;
       if ((int)uVar1 <= (int)uVar4) {

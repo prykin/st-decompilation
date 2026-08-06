@@ -104,7 +104,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
         else {
           pvVar14 = nullptr;
         }
-        cVar25 = *(char *)((int)pvVar14 + 0x104);
+        cVar25 = STField<char>(pvVar14,0x104);
         if ((message->arg1).u32 < pDVar17->count) {
           pvVar14 = DArrayAt<void>(pDVar17, (message->arg1).u32);
         }
@@ -112,7 +112,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
           pvVar14 = nullptr;
         }
         if (pvVar14 != nullptr) {
-          *(char *)((int)pvVar14 + 3) = cVar25;
+          STField<char>(pvVar14,3) = cVar25;
         }
         pDVar17 = this_00->field_1F84;
         uVar28 = (message->arg1).u32 + 1;
@@ -145,7 +145,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
         else {
           pvVar14 = nullptr;
         }
-        cVar25 = *(char *)((int)pvVar14 + 0x104);
+        cVar25 = STField<char>(pvVar14,0x104);
         if ((message->arg1).u32 < pDVar17->count) {
           pvVar14 = DArrayAt<void>(pDVar17, (message->arg1).u32);
         }
@@ -153,7 +153,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
           pvVar14 = nullptr;
         }
         if (pvVar14 != nullptr) {
-          *(char *)((int)pvVar14 + 0x4a) = cVar25;
+          STField<char>(pvVar14,0x4a) = cVar25;
         }
         pDVar17 = this_00->field_1F84;
         uVar28 = (message->arg1).u32 + 1;
@@ -186,7 +186,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
       else {
         pvVar14 = nullptr;
       }
-      local_d = *(byte *)((int)pvVar14 + 0x104);
+      local_d = STField<byte>(pvVar14,0x104);
       if ((message->arg1).u32 < pDVar17->count) {
         pvVar14 = DArrayAt<void>(pDVar17, (message->arg1).u32);
       }
@@ -194,11 +194,11 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
         pvVar14 = nullptr;
       }
       if (pvVar14 != nullptr) {
-        if (*(byte *)((int)pvVar14 + 2) != 0xff) {
-          thunk_FUN_0056a840(&DAT_00807620,*(byte *)((int)pvVar14 + 2));
+        if (STField<byte>(pvVar14,2) != 0xff) {
+          thunk_FUN_0056a840(&DAT_00807620,STField<byte>(pvVar14,2));
         }
-        *(byte *)((int)pvVar14 + 2) = local_d;
-        if (*(char *)((int)pvVar14 + 4) == '\x02') {
+        STField<byte>(pvVar14,2) = local_d;
+        if (STField<char>(pvVar14,4) == '\x02') {
           DAT_0080874d = local_d;
         }
         pDVar17 = this_00->field_1F84;
@@ -242,7 +242,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
         pvVar18 = nullptr;
       }
       if (pvVar18 != nullptr) {
-        if ((*(int *)((int)pvVar14 + 0x104) == 2) && (uVar27 = 0, 0 < (int)uVar28)) {
+        if ((STField<int>(pvVar14,0x104) == 2) && (uVar27 = 0, 0 < (int)uVar28)) {
           bVar35 = uVar28 != 0;
           do {
             if (bVar35) {
@@ -251,14 +251,14 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
             else {
               pvVar18 = nullptr;
             }
-            if ((pvVar18 != nullptr) && (*(char *)((int)pvVar18 + 4) == '\x02')) {
+            if ((pvVar18 != nullptr) && (STField<char>(pvVar18,4) == '\x02')) {
               SVar1 = this_00->field_1E26;
               if ((SVar1 == CASE_6) || ((SVar1 == CASE_1 || (SVar1 == CASE_2)))) {
-                *(undefined1 *)((int)pvVar18 + 4) = 4;
-                *(undefined1 *)((int)pvVar18 + 5) = 0;
+                STField<undefined1>(pvVar18,4) = 4;
+                STField<undefined1>(pvVar18,5) = 0;
               }
               else {
-                *(undefined1 *)((int)pvVar18 + 4) = 1;
+                STField<undefined1>(pvVar18,4) = 1;
               }
               break;
             }
@@ -273,14 +273,14 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
         else {
           pvVar18 = nullptr;
         }
-        cVar25 = *(char *)((int)pvVar14 + 0x104);
-        *(char *)((int)pvVar18 + 4) = cVar25;
-        *(undefined1 *)((int)pvVar18 + 5) = *(undefined1 *)((int)pvVar14 + 0x108);
+        cVar25 = STField<char>(pvVar14,0x104);
+        STField<char>(pvVar18,4) = cVar25;
+        STField<undefined1>(pvVar18,5) = STField<undefined1>(pvVar14,0x108);
         if (cVar25 == '\0') {
-          if (*(byte *)((int)pvVar18 + 2) != 0xff) {
-            thunk_FUN_0056a840(&DAT_00807620,*(byte *)((int)pvVar18 + 2));
+          if (STField<byte>(pvVar18,2) != 0xff) {
+            thunk_FUN_0056a840(&DAT_00807620,STField<byte>(pvVar18,2));
           }
-          *(undefined1 *)((int)pvVar18 + 2) = 0xff;
+          STField<undefined1>(pvVar18,2) = 0xff;
         }
         DAT_0080874d = 0xff;
         pDVar17 = this_00->field_1F84;
@@ -295,9 +295,9 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
             else {
               pvVar14 = nullptr;
             }
-            if (((pvVar14 != nullptr) && (*(char *)((int)pvVar14 + 4) == '\x02')) &&
-               (*(int *)((int)pvVar14 + 6) == DAT_0080877f)) {
-              DAT_0080874d = *(byte *)((int)pvVar14 + 2);
+            if (((pvVar14 != nullptr) && (STField<char>(pvVar14,4) == '\x02')) &&
+               (STField<int>(pvVar14,6) == DAT_0080877f)) {
+              DAT_0080874d = STField<byte>(pvVar14,2);
               break;
             }
             uVar27 = uVar27 + 1;
@@ -473,12 +473,12 @@ LAB_005d5ff8:
             pvVar14 = nullptr;
           }
           if (pvVar14 != nullptr) {
-            local_d = *(byte *)((int)pvVar14 + 4);
+            local_d = STField<byte>(pvVar14,4);
             if ((local_d != 1) && (local_d != 0)) {
               if (local_d == 4) {
-                iVar13 = *(int *)((int)pvVar14 + 0x50);
-                if ((uint)*(byte *)((int)pvVar14 + 5) < *(uint *)(iVar13 + 0xc)) {
-                  pcVar15 = (char *)(*(int *)(iVar13 + 8) * (uint)*(byte *)((int)pvVar14 + 5) +
+                iVar13 = STField<int>(pvVar14,0x50);
+                if ((uint)STField<byte>(pvVar14,5) < *(uint *)(iVar13 + 0xc)) {
+                  pcVar15 = (char *)(*(int *)(iVar13 + 8) * (uint)STField<byte>(pvVar14,5) +
                                     *(int *)(iVar13 + 0x1c));
                 }
                 else {
@@ -528,7 +528,7 @@ LAB_005d5b7e:
                   pcVar15 = pcVar15 + 1;
                 }
               }
-              bVar22 = *(byte *)((int)pvVar14 + 2);
+              bVar22 = STField<byte>(pvVar14,2);
               puVar29 = (byte *)&stack0xfffffe9c;
               puVar33 = (byte *)(&DAT_00808ab0 + (uint)DAT_00808aaf * 0x27);
               memmove(puVar33, puVar29, 0x9c); /* compiler REP MOVS byte copy */
@@ -971,9 +971,8 @@ LAB_005d6676:
             else {
               pvVar14 = nullptr;
             }
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if ((*(uint *)((int)pvVar14 + 0x104) == local_28) &&
-               (*(uint *)((int)pvVar14 + 0x108) == (uint)(byte)local_14->field_0x5)) {
+            if ((STField<uint>(pvVar14,0x104) == local_28) &&
+               (STField<uint>(pvVar14,0x108) == (uint)(byte)local_14->field_0x5)) {
               this_00->field_21A1 = uVar28;
               break;
             }
@@ -1008,8 +1007,8 @@ LAB_005d6676:
               else {
                 pvVar14 = nullptr;
               }
-              if ((pvVar14 != nullptr) && (*(byte *)((int)pvVar14 + 0x4a) < 8)) {
-                *(undefined1 *)((int)&local_38 + (uint)*(byte *)((int)pvVar14 + 0x4a)) = 1;
+              if ((pvVar14 != nullptr) && (STField<byte>(pvVar14,0x4a) < 8)) {
+                *(undefined1 *)((int)&local_38 + (uint)STField<byte>(pvVar14,0x4a)) = 1;
               }
               uVar28 = uVar28 + 1;
               bVar35 = uVar28 < uVar27;

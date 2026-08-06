@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint * __thiscall FUN_006e9490(void *this,uint *param_1,int param_2,int param_3)
 
@@ -7,9 +9,9 @@ uint * __thiscall FUN_006e9490(void *this,uint *param_1,int param_2,int param_3)
   uint uVar3;
   uint *puVar4;
 
-  puVar4 = *(uint **)((int)this + 0x310);
+  puVar4 = STField<uint *>(this,0x310);
   if ((puVar4 <= param_1) ||
-     (puVar4 = (uint *)(*(int *)((int)this + 0x31c) + (int)param_1 * 0x114), (*puVar4 & 0x8000) == 0
+     (puVar4 = (uint *)(STField<int>(this,0x31c) + (int)param_1 * 0x114), (*puVar4 & 0x8000) == 0
      )) {
     if (param_1 != (uint *)0xffffffff) {
       puVar4 = (uint *)FUN_006e8c50();

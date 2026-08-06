@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_0074ef87(void *this,int *param_1)
 
@@ -17,11 +19,11 @@ int __thiscall FUN_0074ef87(void *this,int *param_1)
     LeaveCriticalSection(lpCriticalSection);
   }
   else {
-    *(undefined4 *)((int)this + 0x48) = 0;
-    *(undefined4 *)((int)this + 0x38) = local_c;
-    *(undefined4 *)((int)this + 0x3c) = local_8;
-    *(undefined4 *)((int)this + 0x40) = local_14;
-    *(undefined4 *)((int)this + 0x44) = local_10;
+    STField<undefined4>(this,0x48) = 0;
+    STField<undefined4>(this,0x38) = local_c;
+    STField<undefined4>(this,0x3c) = local_8;
+    STField<undefined4>(this,0x40) = local_14;
+    STField<undefined4>(this,0x44) = local_10;
     LeaveCriticalSection(lpCriticalSection);
     iVar1 = 0;
   }

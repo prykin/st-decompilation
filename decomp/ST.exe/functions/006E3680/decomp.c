@@ -23,10 +23,10 @@ void FUN_006e3680(DArrayTy *param_1)
     pvVar2 = DArrayAt<void>(param_1, uVar1);
     param_1->iteratorIndex = uVar1 + 1;
     if (pvVar2 == nullptr) break;
-    if (*(DArrayTy **)((int)pvVar2 + 8) != nullptr) {
-      FUN_006e3680(*(DArrayTy **)((int)pvVar2 + 8));
-      DArrayDestroy(*(DArrayTy **)((int)pvVar2 + 8));
-      *(undefined4 *)((int)pvVar2 + 8) = 0;
+    if (STField<DArrayTy *>(pvVar2,8) != nullptr) {
+      FUN_006e3680(STField<DArrayTy *>(pvVar2,8));
+      DArrayDestroy(STField<DArrayTy *>(pvVar2,8));
+      STField<undefined4>(pvVar2,8) = 0;
     }
   }
   return;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0046CF20 -> 0048FA80 @ 0046D0D1; STBoatC::CreateGame this; stable alias ESI */

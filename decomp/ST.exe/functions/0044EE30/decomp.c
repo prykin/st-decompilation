@@ -539,7 +539,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
     if ((0 < iVar13) && (iVar13 < 0x65)) {
       *(int *)pSVar20 = *(int *)pSVar20 - (iVar13 * *(int *)pSVar20) / 100;
     }
-    iVar13 = *(int *)((int)pSVar20 + 4);
+    iVar13 = STField<int>(pSVar20,4);
     local_1c = pSVar20;
     if (iVar13 == 0x65) goto LAB_00459f59;
     if (iVar13 != 0x42) {
@@ -622,8 +622,8 @@ LAB_00459eaa:
         }
       }
       *(int *)pSVar20 = *(int *)pSVar20 - iVar13;
-      if (*(int *)((int)pSVar20 + 4) == 0x9a) {
-        iVar13 = *(int *)((int)pSVar20 + 8);
+      if (STField<int>(pSVar20,4) == 0x9a) {
+        iVar13 = STField<int>(pSVar20,8);
         this_00->field_0772 = iVar13;
         if ((this_00->field_0776 < 2) && (iVar13 = thunk_FUN_004e60d0(iVar13,0x93), 0 < iVar13)) {
           this_00->field_0776 = 2;
@@ -636,7 +636,7 @@ LAB_00459eaa:
           this_00->vfunc_C8(0);
         }
       }
-      if ((*(int *)((int)pSVar20 + 4) == 0xad) || (*(int *)((int)pSVar20 + 4) == 0xa1)) {
+      if ((STField<int>(pSVar20,4) == 0xad) || (STField<int>(pSVar20,4) == 0xa1)) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar13 = *(int *)((int)this_00->field_06CB + 0x2c);
         if (iVar13 == 9) {
@@ -647,7 +647,7 @@ LAB_00459eaa:
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
-        thunk_FUN_00495010(this_00,*(int *)((int)pSVar20 + 0x10));
+        thunk_FUN_00495010(this_00,STField<int>(pSVar20,0x10));
       }
       goto LAB_00459f59;
     }
@@ -696,9 +696,9 @@ LAB_00459f59:
     }
     this_00->field_0716 = this_00->field_0716 - *(int *)pSVar20;
     pvVar23 = DAT_00811798;
-    if ((((DAT_00811798 != nullptr) && (*(int *)((int)pSVar20 + 8) != 0xff)) &&
+    if ((((DAT_00811798 != nullptr) && (STField<int>(pSVar20,8) != 0xff)) &&
         (pvVar23 = (void *)thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)this_00),
-        pvVar23 != nullptr)) && (*(int *)((int)pSVar20 + 0x14) == 0)) {
+        pvVar23 != nullptr)) && (STField<int>(pSVar20,0x14) == 0)) {
       thunk_FUN_0061f8b0(DAT_00811798,(int)this_00->field_005B,(int)this_00->field_005D,
                          this_00->field_0024);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -709,8 +709,8 @@ LAB_00459f59:
       local_9c.id = MESS_SHARED_5DD5;
       local_9c.arg0.words.high = this_00->field_0032;
       local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
-      local_9c.arg1.words.high = (short)*(int *)((int)pSVar20 + 0xc);
-      local_9c.arg1.words.low = (short)*(int *)((int)pSVar20 + 8);
+      local_9c.arg1.words.high = (short)STField<int>(pSVar20,0xc);
+      local_9c.arg1.words.low = (short)STField<int>(pSVar20,8);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)*DAT_008117bc)(&local_9c);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -722,8 +722,8 @@ LAB_00459f59:
         local_9c.id = 0x5dd1;
         local_9c.arg0.words.high = this_00->field_0032;
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
-        local_9c.arg1.words.high = (short)*(int *)((int)pSVar20 + 0xc);
-        local_9c.arg1.words.low = (short)*(int *)((int)pSVar20 + 8);
+        local_9c.arg1.words.high = (short)STField<int>(pSVar20,0xc);
+        local_9c.arg1.words.low = (short)STField<int>(pSVar20,8);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)*DAT_008117bc)(&local_9c);
       }
@@ -946,7 +946,7 @@ LAB_00459f59:
                 (this_00->field_0211,
                  CONCAT22(CONCAT11(2,(char)((uint)this_00->field_0018 >> 0x10)),
                           (short)this_00->field_0018));
-      this_00->field_0826 = *(int *)((int)pSVar20 + 8);
+      this_00->field_0826 = STField<int>(pSVar20,8);
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
@@ -971,14 +971,14 @@ LAB_00459f59:
         return 0;
       }
     }
-    if (*(int *)((int)pSVar20 + 8) == 0xff) {
+    if (STField<int>(pSVar20,8) == 0xff) {
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     local_10 = (STFishC *)
                STAllPlayersC::GetObjPtr
-                         (g_allPlayers_007FA174,(char)*(int *)((int)pSVar20 + 8),
-                          *(ushort *)((int)pSVar20 + 0xc),CASE_1);
+                         (g_allPlayers_007FA174,(char)STField<int>(pSVar20,8),
+                          STField<ushort>(pSVar20,0xc),CASE_1);
     if ((STGameObjC *)local_10 == nullptr) {
       g_currentExceptionFrame = local_184.previous;
       return 0;
@@ -1006,7 +1006,7 @@ LAB_00459f59:
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    _AddDefenceShots(this_00,(char)*(int *)((int)pSVar20 + 8),(short)*(int *)((int)pSVar20 + 0xc),
+    _AddDefenceShots(this_00,(char)STField<int>(pSVar20,8),(short)STField<int>(pSVar20,0xc),
                      *(int *)pSVar20);
     g_currentExceptionFrame = local_184.previous;
     return 0;

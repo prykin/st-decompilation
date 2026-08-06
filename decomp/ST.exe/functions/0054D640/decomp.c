@@ -383,7 +383,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
       do {
         if (((piVar10 != (int *)0x40) && (*piVar10 != 0)) &&
            ((*piVar10 != DAT_0080877f &&
-            (((*(char *)((int)piVar10 + 6) != '\0' &&
+            (((STField<char>(piVar10,6) != '\0' &&
               ((&DAT_00809950)[*(byte *)(piVar10 + 1)] == '\0')) &&
              (DVar6 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620),
              30000 < (int)(DVar6 - piVar10[2]))))))) {

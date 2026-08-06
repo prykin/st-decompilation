@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x006611f2) */
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
@@ -107,14 +109,13 @@ void __thiscall AiFltClassTy::sub_00660F70(AiFltClassTy *this,uint *param_1,unde
         if (iVar8 != 0) {
 switchD_0066104e_caseD_9:
           if ((0x31 < *local_8) && (*local_8 < 0x74)) {
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            sVar10 = *(short *)((int)param_1 + 0xe);
+            sVar10 = STField<short>(param_1,0xe);
             uVar11 = STReplaceLowWord((uint32_t)(local_8), (uint16_t)(sVar10));
-            /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             if ((sVar10 < 0) ||
-               ((((short)param_1[4] < 0 || (*(short *)((int)param_1 + 0x12) < 0)) ||
+               ((((short)param_1[4] < 0 || (STField<short>(param_1,0x12) < 0)) ||
                 (iVar8 = thunk_FUN_004ae0b0(sVar10,(int)(short)param_1[4],
-                                            (int)*(short *)((int)param_1 + 0x12),*local_8,
+                                            (int)STField<short>(param_1,0x12),*local_8,
                                             this->field_0024,nullptr,nullptr,nullptr
                                             ,0,nullptr), uVar11 = extraout_EDX, iVar8 == 0)))) {
               local_10 = nullptr;
@@ -129,21 +130,19 @@ switchD_0066104e_caseD_9:
                 }
                 DArrayDestroy(array);
               }
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_14 = (int)*(short *)((int)param_1 + 0xe);
+              local_14 = (int)STField<short>(param_1,0xe);
               puVar2 = this->field_0284;
               local_18 = (int)(short)param_1[4];
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_1c = (int)*(short *)((int)param_1 + 0x12);
+              local_1c = (int)STField<short>(param_1,0x12);
               iVar8 = thunk_FUN_004b0d10(this->field_0024,*local_8,&local_14,&local_18,&local_1c,
                                          (int)(short)puVar2[0x41],(int)(short)puVar2[0x42],
                                          (int)(short)puVar2[0x43],(int)local_10);
               if (iVar8 == 0) {
                 return;
               }
-              *(undefined2 *)((int)param_1 + 0xe) = (undefined2)local_14;
+              STField<undefined2>(param_1,0xe) = (undefined2)local_14;
               *(undefined2 *)(param_1 + 4) = (undefined2)local_18;
-              *(undefined2 *)((int)param_1 + 0x12) = (undefined2)local_1c;
+              STField<undefined2>(param_1,0x12) = (undefined2)local_1c;
             }
             iVar8 = _GetEmbrGrpTobjGrpExch(this->field_0024,*local_8,(uint)(ushort)this->field_007D);
             if (0 < iVar8) {
@@ -158,38 +157,25 @@ switchD_0066104e_caseD_9:
           }
           uVar5 = param_1[3];
           *(undefined2 *)pAVar12 = 0;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_6c._0_4_ = *pGVar6;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_6c._4_2_ = param_2;
+          STPiece<0,4>(local_6c) = *pGVar6;
+          STPiece<4,2>(local_6c) = param_2;
           if (local_20 == nullptr) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_6c._8_4_ = 0;
+            STPiece<8,4>(local_6c) = 0;
           }
           else {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_6c._8_4_ = local_20->field_065C;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_20->field_065C = local_6c._8_4_ + 1;
+            STPiece<8,4>(local_6c) = local_20->field_065C;
+            local_20->field_065C = STPiece<8,4>(local_6c) + 1;
           }
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_6c._12_2_ = this->field_007D;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_6c._22_2_ = *(undefined2 *)((int)param_1 + 0xe);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_6c._24_2_ = *(undefined2 *)(param_1 + 4);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_6c._26_2_ = *(undefined2 *)((int)param_1 + 0x12);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_6c._28_1_ = SUB41(param_1[5],0);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_6c._14_4_ = 0;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if ((((char)local_6c._28_1_ < '\0') || ('\a' < (char)local_6c._28_1_)) &&
-             ((local_6c._28_1_ = this->field_0081, (char)local_6c._28_1_ < '\0' ||
-              ('\a' < (char)local_6c._28_1_)))) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_6c._28_1_ = *(undefined1 *)&this->field_0024;
+          STPiece<12,2>(local_6c) = this->field_007D;
+          STPiece<22,2>(local_6c) = STField<undefined2>(param_1,0xe);
+          STPiece<24,2>(local_6c) = *(undefined2 *)(param_1 + 4);
+          STPiece<26,2>(local_6c) = STField<undefined2>(param_1,0x12);
+          STPiece<28,1>(local_6c) = SUB41(param_1[5],0);
+          STPiece<14,4>(local_6c) = 0;
+          if ((((char)STPiece<28,1>(local_6c) < '\0') || ('\a' < (char)STPiece<28,1>(local_6c))) &&
+             ((STPiece<28,1>(local_6c) = this->field_0081, (char)STPiece<28,1>(local_6c) < '\0' ||
+              ('\a' < (char)STPiece<28,1>(local_6c))))) {
+            STPiece<28,1>(local_6c) = *(undefined1 *)&this->field_0024;
           }
           local_6c.field_0006 = (short)uVar5;
           Library::MSVCRT::_strncpy(&local_6c.field_0x1d,(char *)((int)param_1 + 0x15),0xe);
@@ -197,8 +183,7 @@ switchD_0066104e_caseD_9:
                             ((AiTactClassTy *)this->field_0284,&local_6c,this->field_007F);
           pSVar7 = g_allPlayers_007FA174;
           if (iVar8 == 0) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            param_1[9] = local_6c._8_4_;
+            param_1[9] = STPiece<8,4>(local_6c);
             return;
           }
         }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl
 FUN_006a21f0(int *param_1,uint param_2,int param_3,int param_4,ushort *param_5,undefined *param_6,
@@ -18,7 +20,7 @@ FUN_006a21f0(int *param_1,uint param_2,int param_3,int param_4,ushort *param_5,u
         local_8 = 1;
       }
     }
-    if ((((*(byte *)((int)param_5 + 5) & 0x20) == 0) &&
+    if ((((STField<byte>(param_5,5) & 0x20) == 0) &&
         (((param_5[1] & 0x1000) == 0 || ((param_5[1] & 0x2000) == 0)))) &&
        (((*param_5 & 0x1000) == 0 || ((*param_5 & 0x2000) == 0)))) {
       iVar1 = thunk_FUN_006a23a0(param_1,param_2,param_3,param_4,(short *)param_5,param_6,param_7);

@@ -139,7 +139,7 @@ LAB_0042b01f:
         else if (uVar1 == 0x5a) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if (((param_14 != nullptr) &&
-              (*(int *)(iVar3 + (int)local_c) == *(int *)((int)piVar7 + 0x1ed))) &&
+              (*(int *)(iVar3 + (int)local_c) == STField<int>(piVar7,0x1ed))) &&
              (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
             piVar7 = (int *)((int)piVar7 + 0x32);
             pDVar4 = (DArrayTy *)*param_14;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_00756e50(int *param_1)
 
@@ -6,7 +8,7 @@ void FUN_00756e50(int *param_1)
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x1c);
-  *(undefined4 **)((int)param_1 + 0x192) = puVar1;
+  STField<undefined4 *>(param_1,0x192) = puVar1;
   *puVar1 = Library::DKW::JPG::FUN_007570f0;
   puVar1[1] = FUN_00757250;
   puVar1[2] = 0;

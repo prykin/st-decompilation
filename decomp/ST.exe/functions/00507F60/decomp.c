@@ -554,8 +554,7 @@ cf_common_exit_005091B9:
     if (0x28 < this_00->field_0C29) {
       this_00->field_0C29 = 0x28;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (byte *)((uint)local_8._1_3_ << 8);
+    local_8 = (byte *)((uint)STPiece<1,3>(local_8) << 8);
     if (this_00->field_0C29 != 0) {
       do {
         pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
@@ -596,8 +595,7 @@ cf_common_exit_0050918D:
   case CASE_3A:
     iVar8 = (*(int *)(this_00->field_0194 + 4) - *(int *)(this_00->field_09D9[5] + 4)) / 2;
     if (this_00->field_0C3A != local_37) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = (byte *)((uint)local_8._1_3_ << 8);
+      local_8 = (byte *)((uint)STPiece<1,3>(local_8) << 8);
       if (this_00->field_0C3A != '\0') {
         do {
           pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3

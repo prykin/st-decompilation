@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 006E4D40 returns literal 65535 at 006E4D59 @ 006E4D5F */

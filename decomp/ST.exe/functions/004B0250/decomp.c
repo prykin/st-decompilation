@@ -64,8 +64,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   do {
     int scalar_local_34 = g_worldGrid.planeStride * local_18; /* split integer lifetime from pointer-typed SSA storage */
     local_14 = 0;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar10 = g_worldGrid._0_4_;
+    uVar10 = STPiece<0,4>(g_worldGrid);
     if (0 < g_worldGrid.sizeY) {
       do {
         iVar15 = 0;
@@ -164,8 +163,7 @@ LAB_004b04c9:
 LAB_004b057d:
             iVar15 = iVar15 + 1;
             local_1c = local_1c + 4;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            uVar10 = g_worldGrid._0_4_;
+            uVar10 = STPiece<0,4>(g_worldGrid);
           } while (iVar15 < g_worldGrid.sizeX);
         }
         local_14 = local_14 + 1;
@@ -180,18 +178,16 @@ LAB_004b057d:
       if (local_c != nullptr) {
         STFishC::sub_004162B0(local_c,&local_22,(undefined2 *)((int)&param_2 + 2),&local_2e);
         *(undefined1 *)
-         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
          ((int)local_10 +
          (int)local_22 +
-         (int)local_2e * (int)g_worldGrid.planeStride + (int)param_2._2_2_ * (int)g_worldGrid.sizeX)
+         (int)local_2e * (int)g_worldGrid.planeStride + (int)STPiece<2,2>(param_2) * (int)g_worldGrid.sizeX)
              = 2;
       }
       iVar15 = DArrayGetNext(g_array_007FA150,(byte *)&local_c);
     }
   }
   local_18 = 0;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  uVar10 = g_worldGrid._0_4_;
+  uVar10 = STPiece<0,4>(g_worldGrid);
   sVar14 = g_worldGrid.sizeY;
   do {
     local_14 = 0;
@@ -331,8 +327,7 @@ LAB_004b057d:
                   do {
                     STFishC::sub_004162B0
                               (local_c,&local_22,(undefined2 *)((int)&param_2 + 2),&local_2e);
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    iVar12 = FUN_006aced8((int)local_22,(int)param_2._2_2_,iVar15,local_14);
+                    iVar12 = FUN_006aced8((int)local_22,(int)STPiece<2,2>(param_2),iVar15,local_14);
                     if ((iVar12 <= iVar6) && ((iVar9 < 0 || (iVar12 < iVar9)))) {
                       iVar9 = iVar12;
                     }
@@ -374,8 +369,7 @@ LAB_004b0a54:
 LAB_004b0a79:
             iVar15 = iVar15 + 1;
             local_8 = (short *)(int)g_worldGrid.sizeX;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            uVar10 = g_worldGrid._0_4_;
+            uVar10 = STPiece<0,4>(g_worldGrid);
           } while (iVar15 < (int)local_8);
         }
         local_14 = local_14 + 1;

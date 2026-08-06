@@ -31,8 +31,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
             if (0 < iVar2) {
               do {
                 DArrayGetElement(*(DArrayTy **)(iVar4 + 10),uVar6,local_c);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                pSVar5 = GetObjPtr(this,*(char *)(iVar4 + 4),local_c._0_2_,CASE_1);
+                pSVar5 = GetObjPtr(this,*(char *)(iVar4 + 4),STPiece<0,2>(local_c),CASE_1);
                 if (pSVar5 != nullptr) {
                   if (local_8 == 0) {
                     STGameObjC::SetSelfCheckFlag(pSVar5);
@@ -81,8 +80,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
             if (0 < iVar2) {
               do {
                 DArrayGetElement(*(DArrayTy **)(iVar4 + 10),uVar6,local_c);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                pSVar5 = GetObjPtr(this,*(char *)(iVar4 + 4),local_c._0_2_,CASE_1);
+                pSVar5 = GetObjPtr(this,*(char *)(iVar4 + 4),STPiece<0,2>(local_c),CASE_1);
                 if (pSVar5 != nullptr) {
                   if (local_8 == 0) {
                     STGameObjC::SetSelfCheckFlag(pSVar5);

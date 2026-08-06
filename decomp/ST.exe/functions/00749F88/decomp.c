@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 00749F88 -> EXTERNAL:00000019 @ 00749FFB | 00749F88 -> EXTERNAL:00000019 @ 0074A048 */

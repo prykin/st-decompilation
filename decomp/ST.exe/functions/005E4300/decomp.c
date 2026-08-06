@@ -42,7 +42,7 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
     if (param_3 <= local_10) {
       local_10 = param_3;
     }
-    if (*(char *)((int)param_1 + 10) == '\x01') {
+    if (STField<char>(param_1,10) == '\x01') {
       cVar7 = ((param_5 != 3) - 1U & 0xfe) + 0x2c;
     }
     else {
@@ -58,7 +58,7 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
       piVar1 = (int *)*param_1;
       uVar9 = piVar1[5];
       if (uVar9 == 0) {
-        uVar9 = ((uint)*(ushort *)((int)piVar1 + 0xe) * piVar1[1] + 0x1f >> 3 & 0x1ffffffc) *
+        uVar9 = ((uint)STField<ushort>(piVar1,0xe) * piVar1[1] + 0x1f >> 3 & 0x1ffffffc) *
                 piVar1[2];
       }
       puVar6 = (undefined4 *)FUN_006b4fa0(piVar1);

@@ -191,10 +191,10 @@ LAB_005761b9:
             }
             local_5c = *(undefined4 *)puVar11;
             puVar26 = &pAVar5->field_0x46;
-            local_58 = *(undefined4 *)((int)puVar11 + 0x21);
+            local_58 = STField<undefined4>(puVar11,0x21);
             local_4c = 0x5a;
             local_48 = 0x4b;
-            local_44 = *(undefined4 *)((int)puVar11 + 0x31);
+            local_44 = STField<undefined4>(puVar11,0x31);
             if (*puVar26 == '\0') {
               local_54 = 0;
               local_50 = 0;
@@ -208,7 +208,7 @@ LAB_005761b9:
                            0xa3);
               }
               local_54 = *(undefined4 *)puVar11;
-              local_50 = *(undefined4 *)((int)puVar11 + 0x21);
+              local_50 = STField<undefined4>(puVar11,0x21);
             }
             pSVar17 = local_2c;
             g_currentExceptionFrame = local_e8.previous;
@@ -320,7 +320,7 @@ LAB_00576308:
             }
             puVar18[9] = uVar16;
             puVar18[10] = local_10->field_0086;
-            *(short *)((int)puVar18 + 0x1e) = (short)piVar20[6] + -0xe;
+            STField<short>(puVar18,0x1e) = (short)piVar20[6] + -0xe;
             iVar8 = ((int)*(short *)(puVar18[8] + 0x14) + (int)*(short *)(puVar18[8] + 0x10)) -
                     piVar20[6];
             if (iVar8 < 0xe) {

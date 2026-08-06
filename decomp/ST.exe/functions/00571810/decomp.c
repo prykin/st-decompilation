@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 bool FUN_00571810(char *param_1)
 
@@ -22,7 +24,7 @@ bool FUN_00571810(char *param_1)
     if (bVar1 == 0) {
       return true;
     }
-    bVar1 = *(byte *)((int)ppcVar2 + 1);
+    bVar1 = STField<byte>(ppcVar2,1);
     bVar4 = bVar1 < pbVar3[1];
     if (bVar1 != pbVar3[1]) break;
     ppcVar2 = (char **)((int)ppcVar2 + 2);

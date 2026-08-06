@@ -78,8 +78,8 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   ppTVar15 = &local_60->vtable + param_1 * 0x20;
-  *(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x28d) = nullptr;
-  *(AnonPointee_TLOBaseTy_0291 **)((int)ppTVar15 + 0x291) = nullptr;
+  STField<AnonShape_005EFAE0_B406B78B *>(ppTVar15,0x28d) = nullptr;
+  STField<AnonPointee_TLOBaseTy_0291 *>(ppTVar15,0x291) = nullptr;
   if (&stack0x00000000 != (undefined1 *)0x2c) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_2c = CONCAT22(uStack_2a,local_60->field_0041);
@@ -109,8 +109,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                  (local_28 = iVar16, iVar8 = FUN_006aced8(iVar16,iVar7,iVar8,this_00->field_05B4),
                  iVar8 <= local_58)) {
                 local_24 = iVar8 / 3;
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                if (3 < *(int *)((int)local_10 + 0x281)) {
+                if (3 < STField<int>(local_10,0x281)) {
                   local_24 = 5;
                 }
                 local_3c = (this_00->field_05B8 - local_24) + -1;
@@ -147,10 +146,9 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                         uVar13 = (int)uVar10 >> 0x1f;
                         iVar7 = local_18;
                         iVar16 = local_28;
-                        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         if ((int)(((uVar10 ^ uVar13) - uVar13) * 10) / iVar8 <=
-                            *(int *)((int)local_10 + 0x281)) {
-                          *(uint *)((int)local_10 + 0x295) = g_playSystem_00802A38->field_00E4;
+                            STField<int>(local_10,0x281)) {
+                          STField<uint>(local_10,0x295) = g_playSystem_00802A38->field_00E4;
                           if ((param_2 == 0) || (this_00->field_0255 == 0)) goto LAB_004c4080;
                           sVar6 = (*this_00->vtable->vfunc_10)
                                             (*(short *)&local_8->field_0x41,
@@ -163,28 +161,25 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                                    0x1f;
                           iVar7 = local_18;
                           iVar16 = local_28;
-                          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                           if ((int)((*(uint *)(&DAT_007be8c8 +
                                               (this_00->field_0259 / 0xf + iVar8 * 0x18) * 4) ^
-                                    uVar10) - uVar10) <= *(int *)((int)local_10 + 0x279)) {
+                                    uVar10) - uVar10) <= STField<int>(local_10,0x279)) {
                             iVar12 = param_1 + this_00->field_0235 * 2;
                             if ((&DAT_00792ca0)[iVar12 * 3] == 0xb0) {
                               if (iVar8 % 3 == 0) {
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004c4080:
-                                if (((*(uint *)((int)local_10 + 0x265) & 2) != 0) &&
-                                   (local_8->field_0018 == *(int *)((int)local_10 + 0x26d))) {
-                                  *(int *)((int)local_10 + 0x2d5) = (int)local_12;
-                                  *(int *)((int)local_10 + 0x2d9) = (int)local_14;
+                                if (((STField<uint>(local_10,0x265) & 2) != 0) &&
+                                   (local_8->field_0018 == STField<int>(local_10,0x26d))) {
+                                  STField<int>(local_10,0x2d5) = (int)local_12;
+                                  STField<int>(local_10,0x2d9) = (int)local_14;
                                   local_20 = local_8;
-                                  *(int *)((int)local_10 + 0x2dd) = (int)local_a;
+                                  STField<int>(local_10,0x2dd) = (int)local_a;
                                   ppTVar15 = local_10;
                                   goto LAB_004c42b5;
                                 }
                                 iVar7 = local_18;
                                 iVar16 = local_28;
-                                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                                if ((*(uint *)((int)local_10 + 0x265) & 1) != 0) {
+                                if ((STField<uint>(local_10,0x265) & 1) != 0) {
                                   if (this_00->field_0420 == 0) {
                                     if (((uint)local_8->field_0024 < 8) &&
                                        ((g_playSystem_00802A38 == nullptr ||
@@ -242,8 +237,7 @@ LAB_004c41a5:
                                                            this_00->field_05B8,local_28,local_18,
                                                            local_3c);
                                       ppTVar15 = local_10;
-                                      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                                      if (*(int *)((int)local_10 + 0x269) == 0) {
+                                      if (STField<int>(local_10,0x269) == 0) {
                                         iVar12 = *(int *)&local_8->field_0x215;
                                       }
                                       else {
@@ -255,9 +249,9 @@ LAB_004c41a5:
                                          ((iVar12 == local_6c &&
                                           (ppTVar15 = local_10, iVar8 < local_5c)))) {
                                         local_20 = local_8;
-                                        *(int *)((int)ppTVar15 + 0x2d5) = (int)local_12;
-                                        *(int *)((int)ppTVar15 + 0x2d9) = (int)local_14;
-                                        *(int *)((int)ppTVar15 + 0x2dd) = (int)local_a;
+                                        STField<int>(ppTVar15,0x2d5) = (int)local_12;
+                                        STField<int>(ppTVar15,0x2d9) = (int)local_14;
+                                        STField<int>(ppTVar15,0x2dd) = (int)local_a;
                                         local_6c = iVar12;
                                         local_5c = iVar8;
                                       }
@@ -295,9 +289,9 @@ LAB_004c41a5:
                                                       &local_44,this_00->field_0420);
                                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                   if ((iVar16 != 0) ||
-                                     ((((*(byte *)((int)local_10 + 0x265) & 2) != 0 &&
+                                     ((((STField<byte>(local_10,0x265) & 2) != 0 &&
                                        (local_44 != 0)) &&
-                                      (*(int *)(local_44 + 0x18) == *(int *)((int)local_10 + 0x26d))
+                                      (*(int *)(local_44 + 0x18) == STField<int>(local_10,0x26d))
                                       ))) {
                                     local_48 = 1;
                                   }
@@ -332,18 +326,18 @@ LAB_004c41a5:
   }
 LAB_004c42b5:
   if (local_20 != nullptr) {
-    *(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x28d) =
+    STField<AnonShape_005EFAE0_B406B78B *>(ppTVar15,0x28d) =
          (AnonShape_005EFAE0_B406B78B *)local_20->field_0018;
-    *(STFishC **)((int)ppTVar15 + 0x291) = local_20;
-    if ((((*(byte *)((int)ppTVar15 + 0x265) & 2) != 0) &&
-        (*(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x28d) !=
-         *(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x26d))) &&
+    STField<STFishC *>(ppTVar15,0x291) = local_20;
+    if ((((STField<byte>(ppTVar15,0x265) & 2) != 0) &&
+        (STField<AnonShape_005EFAE0_B406B78B *>(ppTVar15,0x28d) !=
+         STField<AnonShape_005EFAE0_B406B78B *>(ppTVar15,0x26d))) &&
        (iVar7 = STPlaySystemC::sub_006E62D0
                           (g_playSystem_00802A38,
-                           *(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x26d),(int *)&local_8)
+                           STField<AnonShape_005EFAE0_B406B78B *>(ppTVar15,0x26d),(int *)&local_8)
        , iVar7 != 0)) {
-      *(uint *)((int)ppTVar15 + 0x265) = *(uint *)((int)ppTVar15 + 0x265) & 0xfffffffd;
-      *(undefined4 *)((int)ppTVar15 + 0x26d) = 0;
+      STField<uint>(ppTVar15,0x265) = STField<uint>(ppTVar15,0x265) & 0xfffffffd;
+      STField<undefined4>(ppTVar15,0x26d) = 0;
     }
   }
   g_currentExceptionFrame = local_b8.previous;

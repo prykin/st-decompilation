@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 00691650 returns used as parameter 1 of Library::Ourlib::MFSPR::mfSSprLoad @ 00691741 |

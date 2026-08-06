@@ -65,15 +65,15 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this)
           else {
             pvVar10 = nullptr;
           }
-          switch(*(undefined1 *)((int)pvVar10 + 7)) {
+          switch(STField<undefined1>(pvVar10,7)) {
           case 0:
-            sVar1 = *(short *)((int)pvVar10 + 3);
-            iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)*(short *)((int)pvVar10 + 1));
+            sVar1 = STField<short>(pvVar10,3);
+            iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)STField<short>(pvVar10,1));
             if (iVar4 < sVar1) {
-              iVar4 = thunk_FUN_004e5f90(this_00->field_05D7,(int)*(short *)((int)pvVar10 + 1));
+              iVar4 = thunk_FUN_004e5f90(this_00->field_05D7,(int)STField<short>(pvVar10,1));
               if (iVar4 == 0) {
-                pSVar11 = (STGameObjC *)(int)*(short *)((int)pvVar10 + 1);
-                local_14 = (int)*(short *)((int)pvVar10 + 3);
+                pSVar11 = (STGameObjC *)(int)STField<short>(pvVar10,1);
+                local_14 = (int)STField<short>(pvVar10,3);
                 local_8 = pSVar11;
                 iVar4 = thunk_FUN_004e5910(this_00->field_05D7,(uint)pSVar11);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -123,20 +123,17 @@ LAB_0067b724:
                           *(undefined4 *)pAVar12 = 0;
                           pAVar12 = (AnonShape_0068FD00_A5257008 *)&pAVar12->field_0x4;
                         }
-                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_4c[0]._4_4_ = this_00->field_06FE;
-                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_4c[0]._0_4_ = 0x73;
+                        STPiece<4,4>(local_4c[0]) = this_00->field_06FE;
+                        STPiece<0,4>(local_4c[0]) = 0x73;
                         local_4c[0].field_0009 = 1;
                         local_4c[0].field_000A = pvVar10;
                         if (&stack0x00000000 != (undefined1 *)0x4c) {
                           AiTactClassTy::GetAiMess((AiTactClassTy *)local_8,local_4c);
                           uVar9 = local_c;
                         }
-                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        if ('\0' < (char)local_4c[0]._8_1_) {
-                          *(undefined1 *)((int)pvVar10 + 7) = 1;
-                          *(undefined2 *)((int)pvVar10 + 8) = local_4c[0]._14_2_;
+                        if ('\0' < (char)STPiece<8,1>(local_4c[0])) {
+                          STField<undefined1>(pvVar10,7) = 1;
+                          STField<undefined2>(pvVar10,8) = STPiece<14,2>(local_4c[0]);
                           break;
                         }
                       }
@@ -149,7 +146,7 @@ LAB_0067b724:
               }
             }
             else {
-              *(undefined1 *)((int)pvVar10 + 7) = 2;
+              STField<undefined1>(pvVar10,7) = 2;
             }
             break;
           case 1:
@@ -159,25 +156,25 @@ LAB_0067b724:
             else {
               local_8 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,*(char *)&this_00->field_05D7,
-                                   *(ushort *)((int)pvVar10 + 8),CASE_1);
+                                   STField<ushort>(pvVar10,8),CASE_1);
             }
             if (local_8 == nullptr) {
-              *(undefined1 *)((int)pvVar10 + 7) = 0;
-              *(undefined2 *)((int)pvVar10 + 8) = 0;
+              STField<undefined1>(pvVar10,7) = 0;
+              STField<undefined2>(pvVar10,8) = 0;
             }
             else {
-              sVar1 = *(short *)((int)pvVar10 + 3);
-              iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)*(short *)((int)pvVar10 + 1));
+              sVar1 = STField<short>(pvVar10,3);
+              iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)STField<short>(pvVar10,1));
               if (iVar4 < sVar1) {
-                iVar4 = thunk_FUN_004e3800(local_8,(int)*(short *)((int)pvVar10 + 1),
-                                           (int)*(short *)((int)pvVar10 + 3));
+                iVar4 = thunk_FUN_004e3800(local_8,(int)STField<short>(pvVar10,1),
+                                           (int)STField<short>(pvVar10,3));
                 if (iVar4 == 0) {
-                  *(undefined1 *)((int)pvVar10 + 7) = 0;
-                  *(undefined2 *)((int)pvVar10 + 8) = 0;
+                  STField<undefined1>(pvVar10,7) = 0;
+                  STField<undefined2>(pvVar10,8) = 0;
                 }
               }
               else {
-                *(undefined1 *)((int)pvVar10 + 7) = 2;
+                STField<undefined1>(pvVar10,7) = 2;
               }
             }
             break;

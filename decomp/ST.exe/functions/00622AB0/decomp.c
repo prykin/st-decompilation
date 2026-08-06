@@ -21,15 +21,14 @@ int __thiscall STAllPlayersC::FUN_00622ab0(STAllPlayersC *this,undefined4 *param
   puVar5 = (byte *)&this->field_0x25e;
   memmove(puVar5, puVar3, 0x109); /* compiler REP MOVS byte copy */
   this->field_02BA = 0xffffffff;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)((int)param_1 + 0x109);
+  iVar2 = STField<int>(param_1,0x109);
   local_20 = Library::DKW::LIB::MemAlloc(0x44);
   iVar1 = 0;
   do {
     *(undefined4 *)(iVar1 + (int)local_20) = DAT_00806774;
     iVar1 = iVar1 + 4;
   } while (iVar1 < 0x44);
-  *(undefined4 *)((int)local_20 + 0x24) = DAT_00806764;
+  STField<undefined4>(local_20,0x24) = DAT_00806764;
   local_1c = 0;
   local_18 = 0;
   local_14 = 0;

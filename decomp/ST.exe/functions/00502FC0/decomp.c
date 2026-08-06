@@ -53,12 +53,10 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
   memmove(pRVar9, pCVar8, 0x5c); /* compiler REP MOVS byte copy */
   memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if (local_68._5_1_ == this_00->field_0B9E) {
+  if (STPiece<5,1>(local_68) == this_00->field_0B9E) {
     switch(this_00->field_0B9E) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_1:
-      if ((local_68._0_4_ == this_00->field_0B99) && (local_68._4_1_ == this_00->field_0B9D)) {
+      if ((STPiece<0,4>(local_68) == this_00->field_0B99) && (STPiece<4,1>(local_68) == this_00->field_0B9D)) {
         thunk_FUN_00501d00(this_00,(AnonShape_00501D00_3942B646 *)&this_00->field_0B99,&local_68);
         switch(this_00->field_0B99) {
         case CASE_1A:
@@ -68,13 +66,11 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
         case CASE_23:
         case CASE_24:
           cVar2 = this_00->field_0BCD;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (cVar2 == local_68._52_1_) {
+          if (cVar2 == STPiece<52,1>(local_68)) {
             g_currentExceptionFrame = local_ac.previous;
             return;
           }
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if ((cVar2 != -1) && (local_8 = (uint)local_8._1_3_ << 8, cVar2 != '\0')) {
+          if ((cVar2 != -1) && (local_8 = (uint)STPiece<1,3>(local_8) << 8, cVar2 != '\0')) {
             do {
               pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
                                             this_00->field_02B6,1);
@@ -109,18 +105,16 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
         }
       }
       break;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_2:
     case CASE_3:
-      if ((local_68._0_4_ == this_00->field_0B99) && (local_68._4_1_ == this_00->field_0B9D)) {
+      if ((STPiece<0,4>(local_68) == this_00->field_0B99) && (STPiece<4,1>(local_68) == this_00->field_0B9D)) {
         thunk_FUN_00501d00(this_00,(AnonShape_00501D00_3942B646 *)&this_00->field_0B99,&local_68);
         g_currentExceptionFrame = local_ac.previous;
         return;
       }
       break;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case CASE_4:
-      if (local_68._0_4_ == this_00->field_0B99) {
+      if (STPiece<0,4>(local_68) == this_00->field_0B99) {
         g_currentExceptionFrame = local_ac.previous;
         return;
       }
@@ -135,14 +129,12 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
 switchD_00503051_default:
   g_currentExceptionFrame = local_ac.previous;
   return;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 switchD_005030a2_caseD_1a:
-  if (this_00->field_0BB6 == local_68._29_1_) {
+  if (this_00->field_0BB6 == STPiece<29,1>(local_68)) {
     g_currentExceptionFrame = local_ac.previous;
     return;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_8 = (uint)local_8._1_3_ << 8;
+  local_8 = (uint)STPiece<1,3>(local_8) << 8;
   if ((this_00->field_0BB6 & 0xfe) != 0) {
     do {
       pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);

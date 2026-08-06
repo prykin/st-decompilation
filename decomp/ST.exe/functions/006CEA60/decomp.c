@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STUtilityFunctionApplier] copy_rows: copies rowCount rows of rowBytes bytes between
    independently pitched byte buffers

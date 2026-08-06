@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 DWORD FUN_0074dcf0(undefined4 param_1,DWORD param_2,HWND param_3,UINT param_4)
 

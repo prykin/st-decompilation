@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_004e3910(int *param_1)
 
@@ -40,8 +42,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
             local_10 = 1;
             local_8 = Library::DKW::TBL::DArrayCreate(nullptr,10000,0xc,10);
             iVar9 = 0;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            uVar8 = g_worldGrid._0_4_;
+            uVar8 = STPiece<0,4>(g_worldGrid);
             if (0 < g_worldGrid.sizeY) {
               do {
                 iVar3 = 0;
@@ -91,8 +92,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                       }
                     }
                     iVar3 = iVar3 + 1;
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    uVar8 = g_worldGrid._0_4_;
+                    uVar8 = STPiece<0,4>(g_worldGrid);
                     param_1 = local_14;
                   } while (iVar3 < g_worldGrid.sizeZ);
                 }
@@ -152,8 +152,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                       }
                     }
                     iVar9 = iVar9 + 1;
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    uVar8 = g_worldGrid._0_4_;
+                    uVar8 = STPiece<0,4>(g_worldGrid);
                     param_1 = local_14;
                     sVar1 = g_worldGrid.sizeZ;
                   } while (iVar9 < g_worldGrid.sizeZ);

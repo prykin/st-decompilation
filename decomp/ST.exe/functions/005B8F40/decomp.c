@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall MMsgTy::FUN_005b8f40(MMsgTy *this,undefined4 *param_1)
 

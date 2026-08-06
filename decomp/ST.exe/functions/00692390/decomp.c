@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 00692390 returns used as parameter 2 of cMf32::RecChk @ 00691857 */

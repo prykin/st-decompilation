@@ -86,7 +86,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   memmove(puVar15, pRVar12, 0x6e); /* compiler REP MOVS byte copy */
   puVar15 = (byte *)(puVar15 + 0x1b);
   pRVar12 = (RecoveredRecord_TLOEmbryoTy_004D11D0 *)((byte *)pRVar12 + 0x6c);
-  *(undefined1 *)((int)puVar15 + 2) = pRVar12->field_0x2;
+  STField<undefined1>(puVar15,2) = pRVar12->field_0x2;
   local_3c->field_0368 = local_3c->field_0259 + -0x32;
   local_EAX_120 = LookupRecordByte(*(char *)&local_3c->field_0024);
   local_EAX_120 = (int)(byte)local_EAX_120;

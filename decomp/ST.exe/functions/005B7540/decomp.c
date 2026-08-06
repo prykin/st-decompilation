@@ -114,20 +114,20 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
               }
             }
             else {
-              if (*(int *)((int)puVar12 + 0x81) + -3 <= *(int *)((int)puVar12 + 0x7d))
+              if (STField<int>(puVar12,0x81) + -3 <= STField<int>(puVar12,0x7d))
               goto LAB_005b7ad9;
-              if ((*(int *)((int)puVar12 + 0x7d) == 0) &&
-                 (*(uint *)((int)puVar12 + 0x79) != 0xffffffff)) {
+              if ((STField<int>(puVar12,0x7d) == 0) &&
+                 (STField<uint>(puVar12,0x79) != 0xffffffff)) {
                 Library::DKW::DDX::FUN_006b34d0
-                          (*(uint **)((int)puVar12 + 0xbd),*(uint *)((int)puVar12 + 0x79),0xfffffffe
-                           ,*(uint *)((int)puVar12 + 0x91),*(uint *)((int)puVar12 + 0x95));
+                          (STField<uint *>(puVar12,0xbd),STField<uint>(puVar12,0x79),0xfffffffe
+                           ,STField<uint>(puVar12,0x91),STField<uint>(puVar12,0x95));
               }
-              uVar7 = *(int *)((int)puVar12 + 0x7d) + 1;
-              *(uint *)((int)puVar12 + 0x7d) = uVar7;
-              if (*(uint *)((int)puVar12 + 0x79) != 0xffffffff) {
+              uVar7 = STField<int>(puVar12,0x7d) + 1;
+              STField<uint>(puVar12,0x7d) = uVar7;
+              if (STField<uint>(puVar12,0x79) != 0xffffffff) {
                 Library::DKW::DDX::FUN_006b3730
-                          (*(uint **)((int)puVar12 + 0xbd),*(uint *)((int)puVar12 + 0x79),uVar7,
-                           *(uint *)((int)puVar12 + 0x91),*(uint *)((int)puVar12 + 0x95));
+                          (STField<uint *>(puVar12,0xbd),STField<uint>(puVar12,0x79),uVar7,
+                           STField<uint>(puVar12,0x91),STField<uint>(puVar12,0x95));
               }
               thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
             }
@@ -147,7 +147,7 @@ LAB_005b7ad9:
         puVar8 = (byte *)&this_00->field_0xa7;
         iVar6 = 0x68ff;
         do {
-          if ((*(int *)((int)puVar8 + 0x15) != 0) && (*local_8 == 0)) {
+          if ((STField<int>(puVar8,0x15) != 0) && (*local_8 == 0)) {
             if (this_00->field_1CA9 == '\0') {
               uVar7 = (uint)(-1 < (short)*local_10);
             }

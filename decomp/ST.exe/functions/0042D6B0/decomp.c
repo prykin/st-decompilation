@@ -32,9 +32,9 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
   }
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   ResetActivityFromTmp(in_ECX,param_1,iVar2,0,1);
-  if (*(DArrayTy **)((int)puVar4 + 10) != nullptr) {
-    DArrayDestroy(*(DArrayTy **)((int)puVar4 + 10));
-    *(undefined4 *)((int)puVar4 + 10) = 0;
+  if (STField<DArrayTy *>(puVar4,10) != nullptr) {
+    DArrayDestroy(STField<DArrayTy *>(puVar4,10));
+    STField<undefined4>(puVar4,10) = 0;
   }
   *puVar4 = 0;
   return;

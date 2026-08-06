@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00568bc0(void *this,int param_1)
 
@@ -6,7 +8,7 @@ void __thiscall FUN_00568bc0(void *this,int param_1)
   InternalExceptionFrame local_4c;
   uint local_8;
 
-  if (*(int *)((int)this + 0xf8b) != 0) {
+  if (STField<int>(this,0xf8b) != 0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);

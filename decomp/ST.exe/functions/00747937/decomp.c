@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
 /* [STVTableApplier] Virtual slot 007A1128+0x4

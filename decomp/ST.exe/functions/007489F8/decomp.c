@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_007489f8(void *this,undefined4 *param_1)
 
@@ -16,10 +18,10 @@ undefined4 __thiscall FUN_007489f8(void *this,undefined4 *param_1)
   int **ppiStack_18;
   int *local_8;
 
-  apiStack_38[1] = *(int **)((int)this + 0x74);
+  apiStack_38[1] = STField<int *>(this,0x74);
   local_8 = this;
   if (apiStack_38[1] == nullptr) {
-    apuStack_2c[3] = *(undefined4 **)((int)this + 0x18);
+    apuStack_2c[3] = STField<undefined4 *>(this,0x18);
     uVar2 = 0x80040216;
     if (apuStack_2c[3] != nullptr) {
       ppiStack_18 = &local_8;
@@ -29,11 +31,11 @@ undefined4 __thiscall FUN_007489f8(void *this,undefined4 *param_1)
       (**(code **)*apuStack_2c[3])();
       piVar1 = local_8;
       if (local_8 != nullptr) {
-        if (*(int *)((int)this + 0x70) == 0) {
+        if (STField<int>(this,0x70) == 0) {
           iVar3 = 0;
         }
         else {
-          iVar3 = *(int *)((int)this + 0x70) + 0xc;
+          iVar3 = STField<int>(this,0x70) + 0xc;
         }
         iVar4 = *local_8;
         ppiVar7 = apiStack_38;
@@ -50,11 +52,11 @@ undefined4 __thiscall FUN_007489f8(void *this,undefined4 *param_1)
     }
   }
   else {
-    if (*(int *)((int)this + 0x70) == 0) {
+    if (STField<int>(this,0x70) == 0) {
       iStack_30 = 0;
     }
     else {
-      iStack_30 = *(int *)((int)this + 0x70) + 0xc;
+      iStack_30 = STField<int>(this,0x70) + 0xc;
     }
     iVar3 = *apiStack_38[1];
     ppuVar6 = apuStack_2c;

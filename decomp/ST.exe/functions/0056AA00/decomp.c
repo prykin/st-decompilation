@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0056aa00(void *this,byte param_1,char param_2)
 
@@ -9,12 +11,12 @@ void __thiscall FUN_0056aa00(void *this,byte param_1,char param_2)
   undefined *puVar4;
   undefined *local_8;
 
-  if (*(char *)((int)this + 0x146f) != '\0') {
+  if (STField<char>(this,0x146f) != '\0') {
     puVar4 = (undefined *)(uint)param_1;
     pcVar1 = (char *)((int)puVar4 * 0x51 + 0x11ca + (int)this);
     if (*pcVar1 != param_2) {
       if (g_visibleClass_00802A88 != nullptr) {
-        if (param_1 == *(byte *)((int)this + 0x112d)) {
+        if (param_1 == STField<byte>(this,0x112d)) {
           bVar2 = 0;
           local_8 = nullptr;
           pcVar3 = (char *)((int)this + 0x11ca);
@@ -28,14 +30,14 @@ void __thiscall FUN_0056aa00(void *this,byte param_1,char param_2)
           } while (bVar2 < 8);
         }
         else if (*pcVar1 ==
-                 *(char *)((uint)*(byte *)((int)this + 0x112d) * 0x51 + 0x11ca + (int)this)) {
+                 *(char *)((uint)STField<byte>(this,0x112d) * 0x51 + 0x11ca + (int)this)) {
           VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar4);
         }
       }
       *pcVar1 = param_2;
       if ((g_visibleClass_00802A88 != nullptr) &&
-         (*(char *)((int)this + 0x1474) != '\0')) {
-        if (param_1 == *(byte *)((int)this + 0x112d)) {
+         (STField<char>(this,0x1474) != '\0')) {
+        if (param_1 == STField<byte>(this,0x112d)) {
           bVar2 = 0;
           puVar4 = nullptr;
           pcVar3 = (char *)((int)this + 0x11ca);
@@ -51,7 +53,7 @@ void __thiscall FUN_0056aa00(void *this,byte param_1,char param_2)
           } while (bVar2 < 8);
           return;
         }
-        if (param_2 == *(char *)((uint)*(byte *)((int)this + 0x112d) * 0x51 + 0x11ca + (int)this)) {
+        if (param_2 == *(char *)((uint)STField<byte>(this,0x112d) * 0x51 + 0x11ca + (int)this)) {
           VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,1,puVar4);
         }
       }

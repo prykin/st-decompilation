@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 007905A0

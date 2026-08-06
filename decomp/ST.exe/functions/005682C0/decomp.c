@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_005682c0(void *this,int param_1)
 
@@ -25,7 +27,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
   int local_c;
   int local_8;
 
-  if (*(int *)((int)this + 0xf8b) != 0) {
+  if (STField<int>(this,0xf8b) != 0) {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
     local_1c = this;
@@ -46,13 +48,13 @@ void __thiscall FUN_005682c0(void *this,int param_1)
               Library::DKW::SND::FUN_006c1ce0(iVar4,param_1);
             }
             else {
-              iVar9 = *(int *)((int)pvVar2 + 0x10e1) * 0x10;
+              iVar9 = STField<int>(pvVar2,0x10e1) * 0x10;
               local_28 = piVar12[-1];
               local_10 = *piVar12;
               local_8 = (*(int *)(&DAT_007c9794 + iVar9) * (param_1 + 4000)) / 100 + -4000;
-              uVar5 = *(int *)((int)pvVar2 + 0x10dd) - local_10;
+              uVar5 = STField<int>(pvVar2,0x10dd) - local_10;
               uVar10 = (int)uVar5 >> 0x1f;
-              uVar6 = *(int *)((int)pvVar2 + 0x10d9) - local_28;
+              uVar6 = STField<int>(pvVar2,0x10d9) - local_28;
               iVar4 = (uVar5 ^ uVar10) - uVar10;
               uVar5 = (int)uVar6 >> 0x1f;
               iVar7 = (uVar6 ^ uVar5) - uVar5;
@@ -61,7 +63,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
                 iVar11 = iVar4;
               }
               iVar11 = iVar11 + 1;
-              *(int *)((int)pvVar2 + 0x10f1) = iVar11;
+              STField<int>(pvVar2,0x10f1) = iVar11;
               if (*(int *)(&DAT_007c9788 + iVar9) < iVar11) {
                 iVar11 = *(int *)(&DAT_007c9788 + iVar9);
               }
@@ -72,7 +74,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
                   iVar11 = iVar4;
                 }
                 iVar11 = iVar11 + 1;
-                *(int *)((int)pvVar2 + 0x10f1) = iVar11;
+                STField<int>(pvVar2,0x10f1) = iVar11;
                 if (*(int *)(&DAT_007c9788 + iVar9) < iVar11) {
                   iVar11 = *(int *)(&DAT_007c9788 + iVar9);
                 }
@@ -86,7 +88,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
                     iVar4 = iVar7;
                   }
                   iVar4 = iVar4 + 1;
-                  *(int *)((int)pvVar2 + 0x10f1) = iVar4;
+                  STField<int>(pvVar2,0x10f1) = iVar4;
                   local_c = *(int *)(&DAT_007c9788 + iVar9);
                   if (iVar4 <= *(int *)(&DAT_007c9788 + iVar9)) {
                     local_c = iVar4;
@@ -103,18 +105,17 @@ void __thiscall FUN_005682c0(void *this,int param_1)
                 iVar8 = uVar6 + uVar5;
               }
               Library::DKW::SND::FUN_006c1ce0(local_14,iVar8);
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              iVar11 = *(int *)((int)pvVar2 + 0x10e9) * local_28 + *(int *)((int)pvVar2 + 0x10ed);
+              iVar11 = STField<int>(pvVar2,0x10e9) * local_28 + STField<int>(pvVar2,0x10ed);
               uVar5 = iVar11 - local_10 >> 0x1f;
               iVar4 = (int)(((iVar11 - local_10 ^ uVar5) - uVar5) * 7) / 10;
-              iVar9 = *(int *)((int)pvVar2 + 0x10e1) * 0x10;
-              *(int *)((int)pvVar2 + 0x10f1) = iVar4;
+              iVar9 = STField<int>(pvVar2,0x10e1) * 0x10;
+              STField<int>(pvVar2,0x10f1) = iVar4;
               iVar7 = *(int *)(&DAT_007c9788 + iVar9);
               if (iVar4 <= *(int *)(&DAT_007c9788 + iVar9)) {
                 iVar7 = iVar4;
               }
               if (iVar7 < *(int *)(&DAT_007c9790 + iVar9)) {
-                *(int *)((int)pvVar2 + 0x10f1) = iVar4;
+                STField<int>(pvVar2,0x10f1) = iVar4;
                 local_c = *(int *)(&DAT_007c9788 + iVar9);
                 if (iVar4 <= *(int *)(&DAT_007c9788 + iVar9)) {
                   local_c = iVar4;
@@ -124,14 +125,14 @@ void __thiscall FUN_005682c0(void *this,int param_1)
               else {
                 iVar7 = 1000;
               }
-              *(int *)((int)pvVar2 + 0x10f1) = iVar11;
+              STField<int>(pvVar2,0x10f1) = iVar11;
               iVar4 = iVar3;
               if (iVar11 == local_10) {
                 Library::DKW::SND::FUN_006c1d80(iVar3,0);
                 piVar12 = local_18;
               }
               else {
-                if ((*(int *)((int)pvVar2 + 0x10e5) == 0) || (*(int *)((int)pvVar2 + 0x10e5) == 3))
+                if ((STField<int>(pvVar2,0x10e5) == 0) || (STField<int>(pvVar2,0x10e5) == 3))
                 {
                   bVar1 = iVar11 <= local_10;
                 }

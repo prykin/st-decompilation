@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
 
@@ -12,11 +14,11 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
   undefined2 local_8;
   undefined2 local_6;
 
-  if (*(int *)((int)this + 0x66) == 0) {
+  if (STField<int>(this,0x66) == 0) {
     pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
-    *(DArrayTy **)((int)this + 0x66) = pDVar2;
+    STField<DArrayTy *>(this,0x66) = pDVar2;
   }
-  iVar3 = *(int *)((int)this + 0x66);
+  iVar3 = STField<int>(this,0x66);
   if (iVar3 != 0) {
     if (*(int *)(iVar3 + 0xc) != 0) {
       *(undefined4 *)(iVar3 + 0xc) = 0;
@@ -31,7 +33,7 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
           STFishC::sub_004162B0(local_10,&local_a,&local_8,&local_6);
           local_18 = pSVar1->field_0018;
           local_14 = (uint)*(ushort *)&pSVar1->field_0x32;
-          Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0x66),&local_18);
+          Library::DKW::TBL::DArrayAppend(STField<DArrayTy *>(this,0x66),&local_18);
         }
         param_2 = param_2 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

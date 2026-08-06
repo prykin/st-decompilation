@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_006042d0(void *this,STMessageId param_1)
 
@@ -15,7 +17,7 @@ void __thiscall FUN_006042d0(void *this,STMessageId param_1)
     pSVar3 = (STMessage *)&pSVar3->unknown_04;
   }
   local_24.id = param_1;
-  if (0 < *(int *)((int)this + 0x269)) {
+  if (0 < STField<int>(this,0x269)) {
     puVar4 = (undefined4 *)((int)this + 0x219);
     do {
       if ((STParticleC *)*puVar4 != nullptr) {
@@ -23,7 +25,7 @@ void __thiscall FUN_006042d0(void *this,STMessageId param_1)
       }
       iVar2 = iVar2 + 1;
       puVar4 = puVar4 + 1;
-    } while (iVar2 < *(int *)((int)this + 0x269));
+    } while (iVar2 < STField<int>(this,0x269));
   }
   return;
 }

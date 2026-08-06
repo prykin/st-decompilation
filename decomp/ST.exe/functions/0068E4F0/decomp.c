@@ -25,7 +25,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
   uint local_8;
 
   array = Library::DKW::TBL::DArrayCreate(nullptr,0x14,2,0x14);
-  iVar2 = *(int *)((int)this + 0xa5);
+  iVar2 = STField<int>(this,0xa5);
   local_8 = 0;
   if (0 < *(int *)(iVar2 + 0xc)) {
     bVar7 = *(int *)(iVar2 + 0xc) != 0;
@@ -71,7 +71,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
         iVar4 = extraout_EDX_02;
       }
       local_8 = uVar6 + 1;
-      iVar2 = *(int *)((int)this + 0xa5);
+      iVar2 = STField<int>(this,0xa5);
       bVar7 = local_8 < *(uint *)(iVar2 + 0xc);
     } while ((int)local_8 < (int)*(uint *)(iVar2 + 0xc));
   }

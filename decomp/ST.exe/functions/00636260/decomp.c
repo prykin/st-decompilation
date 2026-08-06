@@ -89,20 +89,20 @@ LAB_006362c5:
               uVar2 = thunk_FUN_006364b0(*(int *)&local_8->field_0x4);
               piVar3[1] = uVar2;
             }
-            *(undefined4 *)((int)piVar3 + 0x12) = local_14;
-            *(undefined4 *)((int)piVar3 + 0xe) = local_10;
-            *(undefined4 *)((int)piVar3 + 0x26) = local_18;
-            *(int *)((int)piVar3 + 0x22) = param_6;
-            *(int *)((int)piVar3 + 0x16) = param_3;
+            STField<undefined4>(piVar3,0x12) = local_14;
+            STField<undefined4>(piVar3,0xe) = local_10;
+            STField<undefined4>(piVar3,0x26) = local_18;
+            STField<int>(piVar3,0x22) = param_6;
+            STField<int>(piVar3,0x16) = param_3;
             uVar5 = uVar5 + param_5;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_4 = param_4 + -1;
             piVar3[2] = 0;
-            *(undefined1 *)((int)piVar3 + 0xd) = 0;
-            *(undefined4 *)((int)piVar3 + 0x1a) = 0;
-            *(undefined4 *)((int)piVar3 + 0x1e) = 0;
-            *(undefined4 *)((int)piVar3 + 0x2a) = local_1c;
-            *(undefined4 *)((int)piVar3 + 0x2e) = 0;
+            STField<undefined1>(piVar3,0xd) = 0;
+            STField<undefined4>(piVar3,0x1a) = 0;
+            STField<undefined4>(piVar3,0x1e) = 0;
+            STField<undefined4>(piVar3,0x2a) = local_1c;
+            STField<undefined4>(piVar3,0x2e) = 0;
             this = local_8;
           } while (param_4 != 0);
         }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall
 FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
@@ -57,8 +59,8 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
   } while (bVar10);
   if (bVar10) {
     if (*(int *)param_1 != *(int *)param_2) {
-      *(undefined4 *)((int)this + 0x28) = 5;
-      FUN_006e6080(this,2,*(undefined4 *)((int)this + 0x2fe),(undefined4 *)((int)this + 0x18));
+      STField<undefined4>(this,0x28) = 5;
+      FUN_006e6080(this,2,STField<undefined4>(this,0x2fe),(undefined4 *)((int)this + 0x18));
       bVar1 = 0;
       pcVar4 = &param_1->field_0x9;
       do {
@@ -76,8 +78,8 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
     }
   }
   else {
-    *(undefined4 *)((int)this + 0x28) = 5;
-    FUN_006e6080(this,2,*(undefined4 *)((int)this + 0x2fe),(undefined4 *)((int)this + 0x18));
+    STField<undefined4>(this,0x28) = 5;
+    FUN_006e6080(this,2,STField<undefined4>(this,0x2fe),(undefined4 *)((int)this + 0x18));
     bVar1 = 0;
     pcVar4 = &param_1->field_0x9;
     do {
@@ -105,16 +107,16 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
     CPanelTy::sub_004F4570(this,'\x01',(int)param_1,(int)param_2);
   }
   if (((param_1->field_0015 != param_2->field_0015) || (param_1->field_0007 != param_2->field_0007))
-     && (*(int *)((int)this + 0x9c0) != 0)) {
-    *(undefined4 *)((int)this + 0x28) = 0x20;
+     && (STField<int>(this,0x9c0) != 0)) {
+    STField<undefined4>(this,0x28) = 0x20;
     if (param_1->field_0007 == '\0') {
       uVar2 = 0;
     }
     else {
       uVar2 = (uint)(byte)param_1->field_0015;
     }
-    *(uint *)((int)this + 0x2c) = uVar2;
-    FUN_006e6080(this,2,*(int *)((int)this + 0x9c0),(undefined4 *)((int)this + 0x18));
+    STField<uint>(this,0x2c) = uVar2;
+    FUN_006e6080(this,2,STField<int>(this,0x9c0),(undefined4 *)((int)this + 0x18));
   }
   piVar9 = &param_1->field_0036;
   if ((param_1->field_0036 != param_2->field_0036) || (param_1->field_0007 != param_2->field_0007))
@@ -124,14 +126,14 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
     param_2 = (RecoveredRecord_CPanelTy_00501D00 *)0x4;
     do {
       if (*piVar6 != 0) {
-        *(undefined4 *)((int)this + 0x28) = 0x20;
+        STField<undefined4>(this,0x28) = 0x20;
         if (param_1->field_0007 == '\0') {
           uVar2 = 0;
         }
         else {
           uVar2 = (uint)(byte)*piVar9;
         }
-        *(uint *)((int)this + 0x2c) = uVar2;
+        STField<uint>(this,0x2c) = uVar2;
         FUN_006e6080(this,2,*piVar6,(undefined4 *)((int)this + 0x18));
       }
       piVar6 = piVar6 + 1;

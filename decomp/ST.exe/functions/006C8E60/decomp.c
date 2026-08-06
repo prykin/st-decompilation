@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_006c8e60(int *param_1,byte param_2,byte param_3)
 
@@ -9,8 +11,7 @@ void FUN_006c8e60(int *param_1,byte param_2,byte param_3)
   uint uVar5;
 
   iVar2 = *param_1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  pbVar4 = (byte *)((*(byte *)((int)param_1 + 0xd) >> 1 & 0xe) + 0x16 + (int)param_1);
+  pbVar4 = (byte *)((STField<byte>(param_1,0xd) >> 1 & 0xe) + 0x16 + (int)param_1);
   while (pbVar3 = pbVar4, pbVar3 < (byte *)(iVar2 + (int)param_1)) {
     bVar1 = *pbVar3;
     pbVar4 = pbVar3 + 1;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 short FUN_0043f130(char param_1,byte *param_2)
 

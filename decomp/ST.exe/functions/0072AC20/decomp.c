@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 7.
    Evidence: 00708650 -> 0072AC20 @ 0070897B; unproven partial register write at 00708958 | 0072AC20

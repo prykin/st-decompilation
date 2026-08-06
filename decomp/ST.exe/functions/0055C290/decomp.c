@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0055c290(void *this,char *param_1)
 
@@ -8,7 +10,7 @@ void __thiscall FUN_0055c290(void *this,char *param_1)
   if (param_1 != nullptr) {
     uVar1 = CFsgsConnection::InitConnection(this,param_1);
     if (uVar1 == 1) {
-      *(undefined1 *)((int)this + 8) = 1;
+      STField<undefined1>(this,8) = 1;
       return;
     }
   }

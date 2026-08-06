@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
@@ -9,22 +11,22 @@ void __thiscall FUN_00636060(void *this,int param_1,int param_2,int param_3,int 
   char cVar1;
   undefined4 uVar2;
 
-  cVar1 = *(char *)((int)this + 4);
+  cVar1 = STField<char>(this,4);
   uVar2 = thunk_FUN_00635bf0(param_1,param_2,param_3);
-  *(char *)((int)this + 4) = (char)uVar2;
-  switch(*(undefined4 *)((int)this + 0x11)) {
+  STField<char>(this,4) = (char)uVar2;
+  switch(STField<undefined4>(this,0x11)) {
   case 0:
   case 1:
   case 2:
   case 4:
-    *(int *)((int)this + 0x95) = param_1;
-    *(int *)((int)this + 0x99) = param_2;
-    *(int *)((int)this + 0x9d) = *(int *)((int)this + 0xad) + param_3;
+    STField<int>(this,0x95) = param_1;
+    STField<int>(this,0x99) = param_2;
+    STField<int>(this,0x9d) = STField<int>(this,0xad) + param_3;
     break;
   case 3:
-    *(int *)((int)this + 0x91) = param_2;
-    *(int *)((int)this + 0x8d) = param_1;
-    *(int *)((int)this + 0x95) = param_3;
+    STField<int>(this,0x91) = param_2;
+    STField<int>(this,0x8d) = param_1;
+    STField<int>(this,0x95) = param_3;
   }
   if ((char)uVar2 == '\0') {
     if (cVar1 != '\0') {

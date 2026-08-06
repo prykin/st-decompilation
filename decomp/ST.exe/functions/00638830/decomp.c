@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -11,11 +13,11 @@ void __cdecl FUN_00638830(undefined4 param_1,int param_2,int param_3,int param_4
                      (DAT_00806774,CASE_1D,"rippleB",0xffffffff,0,1,0,nullptr);
   if ((puVar1 != nullptr) && (g_sT3DSMAPContext_00807598 != nullptr)) {
     ST3DSMAPContext::sub_006E8660
-              (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar1 + 9),
-               *(uint *)((int)puVar1 + 0xd),(int)*(uint *)((int)puVar1 + 9) / 2,
-               (int)*(uint *)((int)puVar1 + 0xd) / 2 - 0x17,0);
+              (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,STField<uint>(puVar1,9),
+               STField<uint>(puVar1,0xd),(int)STField<uint>(puVar1,9) / 2,
+               (int)STField<uint>(puVar1,0xd) / 2 - 0x17,0);
     ST3DSMAPContext::sub_006E98E0
-              (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar1,*(int *)((int)puVar1 + 0x21),1);
+              (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar1,STField<int>(puVar1,0x21),1);
     ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_8,0,0);
     ST3DSMAPContext::sub_006EA8A0(g_sT3DSMAPContext_00807598,local_8,0,2,DAT_008032bc);
     Library::Ourlib::ST3DSMAP::SprMove
@@ -23,8 +25,8 @@ void __cdecl FUN_00638830(undefined4 param_1,int param_2,int param_3,int param_4
                (float)param_4 * _DAT_007904f8 * _DAT_007904f0,
                (float)param_5 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
-              (g_sT3DSMAPContext_00807598,local_8,1,*(int *)((int)puVar1 + 9) / 2,
-               *(int *)((int)puVar1 + 0xd) / 2 + -0x17);
+              (g_sT3DSMAPContext_00807598,local_8,1,STField<int>(puVar1,9) / 2,
+               STField<int>(puVar1,0xd) / 2 + -0x17);
     Library::Ourlib::ST3DSMAP::SprSetSeqAnim
               (g_sT3DSMAPContext_00807598,local_8,2,0xffffffff,param_2);
     Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_8,0);

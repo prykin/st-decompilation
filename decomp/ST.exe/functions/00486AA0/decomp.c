@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00486aa0(void *this,int param_1)
 
@@ -8,7 +10,7 @@ void __thiscall FUN_00486aa0(void *this,int param_1)
   else if (100 < param_1) {
     param_1 = 100;
   }
-  *(int *)((int)this + 0x716) = (*(int *)((int)this + 0x712) * param_1) / 100;
+  STField<int>(this,0x716) = (STField<int>(this,0x712) * param_1) / 100;
   return;
 }
 

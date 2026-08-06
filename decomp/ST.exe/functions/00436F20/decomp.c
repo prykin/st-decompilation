@@ -209,11 +209,11 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
   STGameObjC *local_8;
   char bVar1;
 
-  bVar1 = *(char *)((int)command + 8);
-  uVar24 = *(ushort *)((int)command + 10);
+  bVar1 = STField<char>(command,8);
+  uVar24 = STField<ushort>(command,10);
   local_38 = STReplaceLowWord((uint32_t)(this), (uint16_t)(uVar24));
   local_8 = nullptr;
-  uVar14 = *(uint *)((int)command + 10) >> 0x10;
+  uVar14 = STField<uint>(command,10) >> 0x10;
   pDVar16 = (DArrayTy *)g_packedRecords_A62x8[(byte)bVar1].field1_0x1;
   local_30 = pDVar16;
   local_20 = this;
@@ -229,14 +229,14 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
       if (pSVar15 == nullptr) {
         return;
       }
-      if (*(char *)((int)command + 0xe) != '\x15') {
-        if (*(char *)((int)command + 0xe) != '*') {
+      if (STField<char>(command,0xe) != '\x15') {
+        if (STField<char>(command,0xe) != '*') {
           return;
         }
         thunk_FUN_006270e0(pSVar15,0x2a,command);
         return;
       }
-      local_24 = 4 - (uint)**(byte **)((int)command + 0x17);
+      local_24 = 4 - (uint)*STField<byte *>(command,0x17);
       thunk_FUN_006270e0(pSVar15,0x15,(undefined1 *)&local_24);
       return;
     }
@@ -248,7 +248,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
       return;
     }
     local_8c.field_0010 = 0x4401;
-    switch(*(undefined1 *)((int)command + 0xe)) {
+    switch(STField<undefined1>(command,0xe)) {
     case 8:
     case 9:
     case 0x15:
@@ -267,7 +267,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
     default:
       return;
     case 0x14:
-      local_68 = *(ushort **)((int)command + 0x17);
+      local_68 = STField<ushort *>(command,0x17);
       uVar24 = local_68[2];
       uVar2 = *local_68;
       local_34 = (DArrayTy *)(uint)uVar2;
@@ -301,14 +301,13 @@ cf_common_exit_00437191:
       local_8->GetMessage(&local_8c);
       return;
     case 0x29:
-      if (**(char **)((int)command + 0x17) == '\0') {
+      if (*STField<char *>(command,0x17) == '\0') {
         if (pDVar16 == nullptr) {
           return;
         }
         pDVar18 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
         Library::DKW::TBL::DArrayAppend(pDVar18,&local_38);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8c.field_0014 = (undefined4 *)((uint)local_8c.field_0014._2_2_ << 0x10);
+        local_8c.field_0014 = (undefined4 *)((uint)STPiece<2,2>(local_8c.field_0014) << 0x10);
       }
       else {
         if (pDVar16 == nullptr) {
@@ -330,11 +329,11 @@ cf_common_exit_00437191:
     return;
   }
   local_1c = local_38;
-  if (*(char *)((int)command + 0xe) == '\x17') {
-    puVar6 = *(undefined1 **)((int)command + 0x17);
+  if (STField<char>(command,0xe) == '\x17') {
+    puVar6 = STField<undefined1 *>(command,0x17);
     switch(*puVar6) {
     case 0x11:
-      if (*(int *)((int)command + 0x13) == 0) {
+      if (STField<int>(command,0x13) == 0) {
         pSVar17 = thunk_FUN_0042b760(bVar1,uVar24);
         if (pSVar17 == nullptr) {
           return;
@@ -344,27 +343,26 @@ cf_common_exit_00437191:
         uVar14 = extraout_ECX_04;
       }
       else {
-        iVar25 = *(int *)((int)command + 0xf);
+        iVar25 = STField<int>(command,0xf);
         local_c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
         sVar13 = 0;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar14 = extraout_ECX_03;
-        if (0 < (short)(*(uint *)((int)command + 0x13) >> 1)) {
+        if (0 < (short)(STField<uint>(command,0x13) >> 1)) {
           do {
             Library::DKW::TBL::DArrayAppend(local_c,puVar6 + sVar13 * 2 + iVar25);
             sVar13 = sVar13 + 1;
-            uVar14 = *(uint *)((int)command + 0x13) >> 1;
+            uVar14 = STField<uint>(command,0x13) >> 1;
           } while (sVar13 < (short)uVar14);
         }
       }
       pDVar16 = local_c;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_0044cdb0(STReplaceLowByte((uint32_t)(uVar14), (uint8_t)(*(undefined1 *)((int)command + 8))),local_c,
-                         *(int *)(*(int *)((int)command + 0x17) + 0x1d));
+      thunk_FUN_0044cdb0(STReplaceLowByte((uint32_t)(uVar14), (uint8_t)(STField<undefined1>(command,8))),local_c,
+                         *(int *)(STField<int>(command,0x17) + 0x1d));
       DArrayDestroy(pDVar16);
       return;
     case 0x15:
-      if (*(int *)((int)command + 0x13) == 0) {
+      if (STField<int>(command,0x13) == 0) {
         pSVar17 = thunk_FUN_0042b760(bVar1,uVar24);
         if (pSVar17 == nullptr) {
           return;
@@ -374,29 +372,29 @@ cf_common_exit_00437191:
         uVar22 = extraout_ECX_01;
       }
       else {
-        iVar25 = *(int *)((int)command + 0xf);
+        iVar25 = STField<int>(command,0xf);
         pDVar16 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
         sVar13 = 0;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar22 = extraout_ECX;
-        if (0 < (short)(*(uint *)((int)command + 0x13) >> 1)) {
+        if (0 < (short)(STField<uint>(command,0x13) >> 1)) {
           do {
             Library::DKW::TBL::DArrayAppend(pDVar16,puVar6 + sVar13 * 2 + iVar25);
             sVar13 = sVar13 + 1;
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar22 = extraout_ECX_00;
-          } while (sVar13 < (short)(*(uint *)((int)command + 0x13) >> 1));
+          } while (sVar13 < (short)(STField<uint>(command,0x13) >> 1));
         }
       }
-      thunk_FUN_0044cc90(STReplaceLowByte((uint32_t)(uVar22), (uint8_t)(*(undefined1 *)((int)command + 8))),
+      thunk_FUN_0044cc90(STReplaceLowByte((uint32_t)(uVar22), (uint8_t)(STField<undefined1>(command,8))),
                          &pDVar16->flags,1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      thunk_FUN_0044cd20(STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(*(undefined1 *)((int)command + 8)))
+      thunk_FUN_0044cd20(STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(STField<undefined1>(command,8)))
                          ,&pDVar16->flags,0);
       DArrayDestroy(pDVar16);
       return;
     case 0x16:
-      if (*(int *)((int)command + 0x13) == 0) {
+      if (STField<int>(command,0x13) == 0) {
         pSVar17 = thunk_FUN_0042b760(bVar1,uVar24);
         if (pSVar17 == nullptr) {
           return;
@@ -406,27 +404,27 @@ cf_common_exit_00437191:
         uVar22 = extraout_EDX_02;
       }
       else {
-        iVar25 = *(int *)((int)command + 0xf);
+        iVar25 = STField<int>(command,0xf);
         local_c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
         sVar13 = 0;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar22 = extraout_EDX_00;
-        if (0 < (short)(*(uint *)((int)command + 0x13) >> 1)) {
+        if (0 < (short)(STField<uint>(command,0x13) >> 1)) {
           do {
             Library::DKW::TBL::DArrayAppend(local_c,puVar6 + sVar13 * 2 + iVar25);
             sVar13 = sVar13 + 1;
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar22 = extraout_EDX_01;
-          } while (sVar13 < (short)(*(uint *)((int)command + 0x13) >> 1));
+          } while (sVar13 < (short)(STField<uint>(command,0x13) >> 1));
         }
       }
       pDVar16 = local_c;
-      thunk_FUN_0044cc90(STReplaceLowByte((uint32_t)(uVar22), (uint8_t)(*(undefined1 *)((int)command + 8))),
+      thunk_FUN_0044cc90(STReplaceLowByte((uint32_t)(uVar22), (uint8_t)(STField<undefined1>(command,8))),
                          &local_c->flags,0);
       DArrayDestroy(pDVar16);
       return;
     case 0x17:
-      if (*(int *)((int)command + 0x13) == 0) {
+      if (STField<int>(command,0x13) == 0) {
         pSVar17 = thunk_FUN_0042b760(bVar1,uVar24);
         if (pSVar17 == nullptr) {
           return;
@@ -434,72 +432,72 @@ cf_common_exit_00437191:
         pDVar16 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar17);
       }
       else {
-        iVar25 = *(int *)((int)command + 0xf);
+        iVar25 = STField<int>(command,0xf);
         pDVar16 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
         sVar13 = 0;
-        if (0 < (short)(*(uint *)((int)command + 0x13) >> 1)) {
+        if (0 < (short)(STField<uint>(command,0x13) >> 1)) {
           do {
             Library::DKW::TBL::DArrayAppend(pDVar16,puVar6 + sVar13 * 2 + iVar25);
             sVar13 = sVar13 + 1;
-          } while (sVar13 < (short)(*(uint *)((int)command + 0x13) >> 1));
+          } while (sVar13 < (short)(STField<uint>(command,0x13) >> 1));
         }
       }
-      if (*(int *)(*(int *)((int)command + 0x17) + 0x1d) != 0) {
+      if (*(int *)(STField<int>(command,0x17) + 0x1d) != 0) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        thunk_FUN_0044cd20(CONCAT31((int3)((uint)*(int *)((int)command + 0x17) >> 8),
-                                    *(undefined1 *)((int)command + 8)),&pDVar16->flags,0);
+        thunk_FUN_0044cd20(CONCAT31((int3)((uint)STField<int>(command,0x17) >> 8),
+                                    STField<undefined1>(command,8)),&pDVar16->flags,0);
         DArrayDestroy(pDVar16);
         return;
       }
-      thunk_FUN_0044cd20((uint)*(byte *)((int)command + 8),&pDVar16->flags,1);
+      thunk_FUN_0044cd20((uint)STField<byte>(command,8),&pDVar16->flags,1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      thunk_FUN_0044cc90(STReplaceLowByte((uint32_t)(extraout_ECX_02), (uint8_t)(*(undefined1 *)((int)command + 8))),&pDVar16->flags,0);
+      thunk_FUN_0044cc90(STReplaceLowByte((uint32_t)(extraout_ECX_02), (uint8_t)(STField<undefined1>(command,8))),&pDVar16->flags,0);
       DArrayDestroy(pDVar16);
       return;
     }
   }
-  if (*(int *)((int)command + 0x13) != 0) {
-    iVar25 = *(int *)((int)command + 0x17);
-    iVar7 = *(int *)((int)command + 0xf);
+  if (STField<int>(command,0x13) != 0) {
+    iVar25 = STField<int>(command,0x17);
+    iVar7 = STField<int>(command,0xf);
     local_c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
     sVar13 = 0;
-    if (0 < (short)(*(uint *)((int)command + 0x13) >> 1)) {
+    if (0 < (short)(STField<uint>(command,0x13) >> 1)) {
       do {
         Library::DKW::TBL::DArrayAppend(local_c,(void *)(iVar25 + iVar7 + sVar13 * 2));
         sVar13 = sVar13 + 1;
-      } while (sVar13 < (short)(*(uint *)((int)command + 0x13) >> 1));
+      } while (sVar13 < (short)(STField<uint>(command,0x13) >> 1));
     }
     pDVar16 = local_c;
-    AddObjsToGroup(local_20,*(char *)((int)command + 8),0xfffe,&local_c->flags,
+    AddObjsToGroup(local_20,STField<char>(command,8),0xfffe,&local_c->flags,
                    (undefined2 *)&local_1c);
     DArrayDestroy(pDVar16);
   }
   pDVar16 = local_30;
   if (((local_30 != nullptr) &&
-      (pSVar17 = thunk_FUN_0042b760(*(char *)((int)command + 8),(ushort)local_1c),
+      (pSVar17 = thunk_FUN_0042b760(STField<char>(command,8),(ushort)local_1c),
       pSVar17 != nullptr)) && (pSVar17->field_001C != 0)) {
-    if ((*(char *)((int)command + 0xe) == ')') && (**(char **)((int)command + 0x17) == '\x01')) {
+    if ((STField<char>(command,0xe) == ')') && (*STField<char *>(command,0x17) == '\x01')) {
       return;
     }
     pDVar18 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar17);
-    AddObjsToGroup(local_20,*(char *)((int)command + 8),0xfffe,(uint *)pDVar18,
+    AddObjsToGroup(local_20,STField<char>(command,8),0xfffe,(uint *)pDVar18,
                    (undefined2 *)&local_1c);
     DArrayDestroy(pDVar18);
   }
-  pSVar17 = thunk_FUN_0042b760(*(char *)((int)command + 8),(ushort)local_1c);
+  pSVar17 = thunk_FUN_0042b760(STField<char>(command,8),(ushort)local_1c);
   if (pSVar17 == nullptr) {
     return;
   }
   STGroupBoatC::StartReceiveOrderSound(pSVar17);
-  switch(*(undefined1 *)((int)command + 0xe)) {
+  switch(STField<undefined1>(command,0xe)) {
   case 10:
     goto cf_common_exit_0043824D;
   case 0x14:
     iVar25 = STGroupBoatC::IsAgAtt(pSVar17);
     if (iVar25 != 0) {
       pDVar16 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
-      uStack_14 = **(undefined2 **)((int)command + 0x17);
-      uStack_12 = (*(undefined2 **)((int)command + 0x17))[2];
+      uStack_14 = *STField<undefined2 *>(command,0x17);
+      uStack_12 = (STField<undefined2 *>(command,0x17))[2];
       STGroupBoatC::sub_0049A500(pSVar17,nullptr,nullptr,auStack_10);
       Library::DKW::TBL::DArrayAppend(pDVar16,&uStack_14);
       uStack_d8 = 1;
@@ -508,17 +506,17 @@ cf_common_exit_00437191:
       DArrayDestroy(pDVar16);
       return;
     }
-    uStack_4c = **(undefined2 **)((int)command + 0x17);
-    uStack_4a = (*(undefined2 **)((int)command + 0x17))[2];
+    uStack_4c = *STField<undefined2 *>(command,0x17);
+    uStack_4a = (STField<undefined2 *>(command,0x17))[2];
     STGroupBoatC::sub_0049A500(pSVar17,nullptr,nullptr,auStack_48);
     pSVar17->sub_00498D20(1,(short)&uStack_4c);
     return;
   case 0x15:
-    local_24 = 4 - (uint)**(byte **)((int)command + 0x17);
+    local_24 = 4 - (uint)*STField<byte *>(command,0x17);
     pSVar17->sub_00498D20(7,(short)&local_24);
     return;
   case 0x16:
-    puVar6 = *(undefined1 **)((int)command + 0x17);
+    puVar6 = STField<undefined1 *>(command,0x17);
     switch(*puVar6) {
     case 0:
     case 5:
@@ -552,7 +550,7 @@ cf_common_exit_00437191:
       local_17 = 1;
 LAB_00437842:
       Library::DKW::TBL::DArrayAppend(pDVar16,&local_18);
-      local_14c = (uint)(**(char **)((int)command + 0x17) != '\0');
+      local_14c = (uint)(*STField<char *>(command,0x17) != '\0');
       local_150 = 0;
       local_148 = pDVar16;
       pSVar17->sub_00498D20(2,(short)&local_150);
@@ -579,7 +577,7 @@ LAB_00437842:
     }
     break;
   case 0x17:
-    puVar6 = *(undefined1 **)((int)command + 0x17);
+    puVar6 = STField<undefined1 *>(command,0x17);
     switch(*puVar6) {
     case 1:
       STPlaySystemC::sub_006E62D0
@@ -597,8 +595,8 @@ LAB_00437842:
       break;
     case 2:
       pDVar16 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
-      uStack_14 = *(undefined2 *)(*(int *)((int)command + 0x17) + 1);
-      uStack_12 = *(undefined2 *)(*(int *)((int)command + 0x17) + 5);
+      uStack_14 = *(undefined2 *)(STField<int>(command,0x17) + 1);
+      uStack_12 = *(undefined2 *)(STField<int>(command,0x17) + 5);
       STGroupBoatC::sub_0049A500(pSVar17,nullptr,nullptr,auStack_10);
       Library::DKW::TBL::DArrayAppend(pDVar16,&uStack_14);
       STGroupBoatC::sub_0049A500(pSVar17,&uStack_14,&uStack_12,nullptr);
@@ -669,7 +667,7 @@ LAB_00437842:
     }
     break;
   case 0x18:
-    puVar6 = *(undefined1 **)((int)command + 0x17);
+    puVar6 = STField<undefined1 *>(command,0x17);
     arg_1 = SUB42(pSVar17,0);
     switch(*puVar6) {
     case 1:
@@ -750,7 +748,7 @@ LAB_00437842:
     }
     (*pSVar23->vfunc_18)(arg_1,arg_2,uVar24,uVar12);
 switchD_004384bc_default:
-    puVar6 = *(undefined1 **)((int)command + 0x17);
+    puVar6 = STField<undefined1 *>(command,0x17);
     switch(*puVar6) {
     case 1:
     case 2:
@@ -776,7 +774,7 @@ cf_common_exit_0043824D:
     }
     break;
   case 0x19:
-    puVar9 = *(undefined2 **)((int)command + 0x17);
+    puVar9 = STField<undefined2 *>(command,0x17);
     uStack_124 = *puVar9;
     uStack_122 = puVar9[2];
     uStack_120 = puVar9[4];
@@ -784,7 +782,7 @@ cf_common_exit_0043824D:
     pSVar17->sub_00498D20(0xd,(short)&uStack_124);
     return;
   case 0x1a:
-    pcVar8 = *(char **)((int)command + 0x17);
+    pcVar8 = STField<char *>(command,0x17);
     if (*pcVar8 == '\x01') {
       uStack_5c = 2;
       sStack_58 = 0;
@@ -830,7 +828,7 @@ cf_common_exit_0043824D:
     }
     break;
   case 0x1f:
-    pcVar8 = *(char **)((int)command + 0x17);
+    pcVar8 = STField<char *>(command,0x17);
     sStack_a0 = *(short *)(pcVar8 + 1);
     sVar13 = *(short *)(pcVar8 + 5);
     sVar4 = *(short *)(pcVar8 + 3);
@@ -900,7 +898,7 @@ cf_common_exit_0043824D:
     local_28 = nullptr;
     if ((int)dVar21 < 1) {
 cf_common_exit_00437E03:
-      iVar25 = *(int *)((int)command + 0x17);
+      iVar25 = STField<int>(command,0x17);
       uStack_c0 = *(undefined2 *)(iVar25 + 1);
       uStack_be = *(undefined2 *)(iVar25 + 3);
       uStack_bc = *(undefined2 *)(iVar25 + 5);
@@ -911,8 +909,7 @@ cf_common_exit_00437E03:
       uVar14 = 0;
       do {
         DArrayGetElement(local_c,uVar14,local_118);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar15 = GetObjPtr(g_allPlayers_007FA174,pSVar17->field_0024,local_118._0_2_,CASE_1);
+        pSVar15 = GetObjPtr(g_allPlayers_007FA174,pSVar17->field_0024,STPiece<0,2>(local_118),CASE_1);
         iVar25 = (*pSVar15->vtable->vfunc_2C)();
         if ((((iVar25 == 8) || (iVar25 = (*pSVar15->vtable->vfunc_2C)(), iVar25 == 0x14)) ||
             (iVar25 = (*pSVar15->vtable->vfunc_2C)(), iVar25 == 0x1a)) &&
@@ -983,7 +980,7 @@ LAB_00437cb5:
       pDVar16 = local_30;
       local_102 = 0xffff;
       local_104 = 0xffff;
-      iVar25 = *(int *)((int)command + 0x17);
+      iVar25 = STField<int>(command,0x17);
       local_106 = 0xffff;
       local_108 = 0xffff;
       local_10a = 0xffff;
@@ -1016,7 +1013,7 @@ LAB_00437cb5:
     DArrayDestroy(pDVar16);
     return;
   case 0x21:
-    pcVar8 = *(char **)((int)command + 0x17);
+    pcVar8 = STField<char *>(command,0x17);
     cVar1 = *pcVar8;
     if (cVar1 == '\x01') {
       local_64 = *(undefined4 *)(pcVar8 + 1);
@@ -1037,27 +1034,27 @@ LAB_00437cb5:
     }
     break;
   case 0x23:
-    puVar19 = (byte *)(*(undefined4 **)((int)command + 0x17));
+    puVar19 = (byte *)(STField<undefined4 *>(command,0x17));
     uStack_174 = *(undefined2 *)(puVar19 + 1);
     uStack_172 = *(undefined2 *)(puVar19 + 2);
     uStack_170 = *(undefined2 *)(puVar19 + 3);
     uStack_16e = *puVar19;
-    uStack_16a = (uint)*(byte *)((int)command + 8);
+    uStack_16a = (uint)STField<byte>(command,8);
     uStack_166 = 0;
     uStack_157 = 0xffff;
     pSVar17->sub_00498D20(9,(short)&uStack_174);
     return;
   case 0x28:
-    if (**(char **)((int)command + 0x17) == '\0') {
+    if (*STField<char *>(command,0x17) == '\0') {
       STGroupBoatC::GenSwitch(pSVar17,0);
     }
-    else if (**(char **)((int)command + 0x17) == '\x01') {
+    else if (*STField<char *>(command,0x17) == '\x01') {
       STGroupBoatC::GenSwitch(pSVar17,1);
       return;
     }
     break;
   case 0x29:
-    if (**(char **)((int)command + 0x17) != '\0') {
+    if (*STField<char *>(command,0x17) != '\0') {
       if (pDVar16 == nullptr) {
         return;
       }
@@ -1070,7 +1067,7 @@ LAB_00437cb5:
     }
     goto cf_common_exit_0043824D;
   case 0x31:
-    puVar6 = *(undefined1 **)((int)command + 0x17);
+    puVar6 = STField<undefined1 *>(command,0x17);
     switch(*puVar6) {
     case 1:
     case 2:

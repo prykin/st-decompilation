@@ -250,13 +250,13 @@ LAB_006b4ef4:
     cVar8 = (char)local_10;
   }
   puVar5[1] = (uint)pAVar3;
-  *(char *)((int)puVar5 + 0xd) = cVar8 << 2;
+  STField<char>(puVar5,0xd) = cVar8 << 2;
   puVar5[2] = uVar4;
-  *(undefined2 *)((int)puVar5 + 0xe) = local_2c._0_2_;
+  STField<undefined2>(puVar5,0xe) = STPiece<0,2>(local_2c);
   *puVar5 = (int)pbVar13 - (int)puVar5;
   *(undefined1 *)(puVar5 + 3) = 0x80;
   *(short *)(puVar5 + 4) = (short)local_1c;
-  *(undefined2 *)((int)puVar5 + 0x12) = (undefined2)local_c;
+  STField<undefined2>(puVar5,0x12) = (undefined2)local_c;
   *(short *)(puVar5 + 5) = (short)iVar11 - (short)local_1c;
   iVar11 = FUN_006bfb50(puVar5,(int)pbVar13 - (int)puVar5);
   *param_1 = iVar11;

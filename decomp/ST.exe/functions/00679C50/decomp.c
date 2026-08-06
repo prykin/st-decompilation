@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint __thiscall FUN_00679c50(void *this,byte *param_1,byte *param_2)
 
@@ -17,14 +19,14 @@ LAB_00679d08:
     uVar6 = 0xffffffff;
   }
   else {
-    uVar2 = *(uint *)(*(int *)((int)this + 0x695) + 0xc);
+    uVar2 = *(uint *)(STField<int>(this,0x695) + 0xc);
 joined_r0x00679c7c:
     do {
       do {
         do {
           uVar2 = uVar2 - 1;
           if ((int)uVar2 < 0) goto LAB_00679d08;
-          iVar5 = *(int *)((int)this + 0x695);
+          iVar5 = STField<int>(this,0x695);
         } while (((iVar5 == 0) || ((int)uVar2 < 0)) || ((int)*(uint *)(iVar5 + 0xc) <= (int)uVar2));
         if (uVar2 < *(uint *)(iVar5 + 0xc)) {
           puVar3 = (undefined4 *)(*(int *)(iVar5 + 8) * uVar2 + *(int *)(iVar5 + 0x1c));

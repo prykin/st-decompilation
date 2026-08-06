@@ -151,7 +151,7 @@ AnonShape_004F4F90_2D6E0DDA * __fastcall FUN_004f4f90(AnonShape_004F4F90_2D6E0DD
   param_1->field_0B5F = 0;
   puVar2 = (undefined4 *)&param_1->field_0x2fe;
   do {
-    *(undefined4 *)((int)puVar2 + 10) = 0;
+    STField<undefined4>(puVar2,10) = 0;
     *puVar2 = 0;
     (&param_1->field_0x306)[iVar3] = 1;
     iVar3 = iVar3 + 1;

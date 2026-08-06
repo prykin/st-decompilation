@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STObjectFactoryApplier] Central object factory for 0x0002 (ST_OBJECT_TYPE_0002).
    Evidence: exact registry pointer; create function first */

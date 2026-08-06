@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 5.
    Evidence: 0044C130 -> 00709470 @ 0044C2AB; literal 255 at 0044C29C | 0044C130 -> 00709470 @

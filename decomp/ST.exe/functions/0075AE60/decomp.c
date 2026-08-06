@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 FUN_0075ae60(undefined4 *param_1)
 
@@ -14,8 +16,7 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
   undefined4 *local_8;
 
   puVar2 = param_1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar7 = *(int *)((int)param_1 + 0x19a);
+  iVar7 = STField<int>(param_1,0x19a);
   local_10 = 0;
   if ((param_1[0x35] == 0) || (param_1[0x26] == 0)) {
     return 0;

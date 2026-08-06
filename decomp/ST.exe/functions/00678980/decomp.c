@@ -42,7 +42,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
       puVar12 = (byte *)(puVar12 + 1);
     }
     *(undefined2 *)puVar12 = *(undefined2 *)puVar6;
-    *(undefined1 *)((int)puVar12 + 2) = *(undefined1 *)((int)puVar6 + 2);
+    STField<undefined1>(puVar12,2) = STField<undefined1>(puVar6,2);
     local_c->field_05D3 = 0x398;
     local_c->field_05EB = 1;
     AiEventClassTy::InitData

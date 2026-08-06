@@ -108,7 +108,7 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
     puVar4 = (ulonglong *)((int)puVar4 + 4);
   }
   *(undefined2 *)puVar4 = 0;
-  *(undefined1 *)((int)puVar4 + 2) = 0;
+  STField<undefined1>(puVar4,2) = 0;
   this->field_0716 = 100;
   this->field_0712 = 100;
   this->field_071A = 100;

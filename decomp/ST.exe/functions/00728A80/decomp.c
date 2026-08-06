@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
@@ -145,9 +147,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
                 *(undefined1 *)puVar13 = *(undefined1 *)(param_3 + uVar11);
                 if (iVar8 != 1) {
                   bVar3 = pbVar16[2];
-                  *(undefined1 *)((int)puVar13 + 1) = *(undefined1 *)(param_3 + (uint)bVar4);
+                  STField<undefined1>(puVar13,1) = *(undefined1 *)(param_3 + (uint)bVar4);
                   if (iVar8 != 2) {
-                    *(undefined1 *)((int)puVar13 + 2) = *(undefined1 *)(param_3 + (uint)bVar3);
+                    STField<undefined1>(puVar13,2) = *(undefined1 *)(param_3 + (uint)bVar3);
                   }
                 }
               }

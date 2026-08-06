@@ -131,7 +131,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       param_1->field_0139 = (undefined1)local_3c;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_013A =
-           CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
+           CONCAT13(uStack_38,CONCAT12(STPiece<3,1>(local_3c),CONCAT11(STPiece<2,1>(local_3c),STPiece<1,1>(local_3c))));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_013E = CONCAT11(uStack_36,uStack_37);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -146,7 +146,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       param_1->field_0187 = (undefined1)local_3c;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0188 =
-           CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
+           CONCAT13(uStack_38,CONCAT12(STPiece<3,1>(local_3c),CONCAT11(STPiece<2,1>(local_3c),STPiece<1,1>(local_3c))));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_018C = CONCAT11(uStack_36,uStack_37);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -158,7 +158,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       param_1->field_0152 = (undefined1)local_3c;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0153 =
-           CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
+           CONCAT13(uStack_38,CONCAT12(STPiece<3,1>(local_3c),CONCAT11(STPiece<2,1>(local_3c),STPiece<1,1>(local_3c))));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0157 = CONCAT11(uStack_36,uStack_37);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -185,7 +185,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       param_1->field_0163 = (undefined1)local_3c;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0164 =
-           CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
+           CONCAT13(uStack_38,CONCAT12(STPiece<3,1>(local_3c),CONCAT11(STPiece<2,1>(local_3c),STPiece<1,1>(local_3c))));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0168 = CONCAT11(uStack_36,uStack_37);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -214,7 +214,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
           iVar9 = (int)*psVar10;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_48 = (STGameObjC *)
-                     (CONCAT11(local_3c._3_1_,local_3c._2_1_) + -1 +
+                     (CONCAT11(STPiece<3,1>(local_3c),STPiece<2,1>(local_3c)) + -1 +
                      (int)CONCAT11(uStack_33,uStack_34));
           iVar11 = (int)STReplaceLowByte16((uint32_t)(local_3c), (uint8_t)((undefined1)local_3c));
           local_10 = (DArrayTy *)(int)psVar10[3];
@@ -222,14 +222,14 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
           local_54 = iVar16 + -1 + local_58;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (((iVar9 <= iVar11) && (iVar11 <= iVar9 + -1 + (int)local_10)) &&
-             (((iVar16 <= CONCAT11(local_3c._3_1_,local_3c._2_1_) &&
-               (((CONCAT11(local_3c._3_1_,local_3c._2_1_) <= local_54 && (iVar9 <= local_50)) &&
+             (((iVar16 <= CONCAT11(STPiece<3,1>(local_3c),STPiece<2,1>(local_3c)) &&
+               (((CONCAT11(STPiece<3,1>(local_3c),STPiece<2,1>(local_3c)) <= local_54 && (iVar9 <= local_50)) &&
                 (local_50 <= iVar9 + -1 + (int)local_10)))) &&
               ((iVar16 <= (int)local_48 && ((int)local_48 <= iVar16 + -1 + local_58))))))
           goto LAB_00665047;
           local_50 = iVar9 + -1 + (int)local_10;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar18 = (int)CONCAT11(local_3c._3_1_,local_3c._2_1_);
+          iVar18 = (int)CONCAT11(STPiece<3,1>(local_3c),STPiece<2,1>(local_3c));
           local_54 = iVar16 + -1 + local_58;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_48 = (STGameObjC *)(iVar18 + -1 + (int)CONCAT11(uStack_33,uStack_34));
@@ -260,9 +260,9 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
     case 10:
       param_1->field_0176 = (undefined1)local_3c;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      param_1->field_0177 = CONCAT11(local_3c._2_1_,local_3c._1_1_);
+      param_1->field_0177 = CONCAT11(STPiece<2,1>(local_3c),STPiece<1,1>(local_3c));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      param_1->field_0179 = CONCAT11(uStack_38,local_3c._3_1_);
+      param_1->field_0179 = CONCAT11(uStack_38,STPiece<3,1>(local_3c));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_017B = CONCAT13(uStack_34,CONCAT12(uStack_35,CONCAT11(uStack_36,uStack_37)));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -273,9 +273,9 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
     case 0xb:
       param_1->field_0100 = (undefined1)local_3c;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      param_1->field_0101 = CONCAT11(local_3c._2_1_,local_3c._1_1_);
+      param_1->field_0101 = CONCAT11(STPiece<2,1>(local_3c),STPiece<1,1>(local_3c));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      param_1->field_0103 = CONCAT11(uStack_38,local_3c._3_1_);
+      param_1->field_0103 = CONCAT11(uStack_38,STPiece<3,1>(local_3c));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0105 = CONCAT11(uStack_36,uStack_37);
       param_1->field_0111 = local_2b;
@@ -292,7 +292,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       param_1->field_0115 = (undefined1)local_3c;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0116 =
-           CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
+           CONCAT13(uStack_38,CONCAT12(STPiece<3,1>(local_3c),CONCAT11(STPiece<2,1>(local_3c),STPiece<1,1>(local_3c))));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_011A = CONCAT13(uStack_34,CONCAT12(uStack_35,CONCAT11(uStack_36,uStack_37)));
       break;
@@ -300,17 +300,17 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       param_1->field_0122 = (undefined1)local_3c;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0129 =
-           CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
+           CONCAT13(uStack_38,CONCAT12(STPiece<3,1>(local_3c),CONCAT11(STPiece<2,1>(local_3c),STPiece<1,1>(local_3c))));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0123 = CONCAT13(uStack_34,CONCAT12(uStack_35,CONCAT11(uStack_36,uStack_37)));
       break;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 0xe:
-      thunk_FUN_00675950(CONCAT13(local_3c._3_1_,
-                                  CONCAT12(local_3c._2_1_,
+      thunk_FUN_00675950(CONCAT13(STPiece<3,1>(local_3c),
+                                  CONCAT12(STPiece<2,1>(local_3c),
                                            STReplaceLowByte16((uint32_t)(local_3c), (uint8_t)((undefined1)local_3c)))),
                          CONCAT13(uStack_37,
-                                  CONCAT12(uStack_38,CONCAT11(local_3c._3_1_,local_3c._2_1_))),
+                                  CONCAT12(uStack_38,CONCAT11(STPiece<3,1>(local_3c),STPiece<2,1>(local_3c)))),
                          CONCAT11(uStack_37,uStack_38),(short *)&local_3c,
                          (short *)((int)&local_3c + 2),(short *)&uStack_38,0);
       pAVar5 = param_1->field_0223;
@@ -327,7 +327,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
           }
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if ((((STReplaceLowByte16((uint32_t)(local_3c), (uint8_t)((undefined1)local_3c)) == *psVar10) &&
-               (CONCAT11(local_3c._3_1_,local_3c._2_1_) == psVar10[1])) &&
+               (CONCAT11(STPiece<3,1>(local_3c),STPiece<2,1>(local_3c)) == psVar10[1])) &&
               (CONCAT11(uStack_37,uStack_38) == psVar10[2])) &&
              (((CONCAT11(uStack_31,uStack_32) == psVar10[5] &&
                (CONCAT11(uStack_2f,uStack_30) == psVar10[6])) &&

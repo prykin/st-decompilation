@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_0042a9f0(char param_1)
 
@@ -25,7 +27,7 @@ void FUN_0042a9f0(char param_1)
       DArrayDestroy((DArrayTy *)puVar2[0x14]);
       puVar2[0x14] = 0;
     }
-    *(undefined4 *)((int)puVar2 + 0x46) = 0;
+    STField<undefined4>(puVar2,0x46) = 0;
     puVar2 = puVar2 + 4;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_1 = _param_1 + -1;

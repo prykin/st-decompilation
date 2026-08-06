@@ -36,8 +36,8 @@ FSGSTy::ChangePlayerPing(FSGSTy *this,undefined4 param_1,int param_2,undefined4 
         do {
           pvVar4 = DArrayAt<void>(pDVar1, uVar6);
 LAB_005a2c91:
-          if ((pvVar4 != nullptr) && (*(int *)((int)pvVar4 + 0x21) == param_2)) {
-            *(undefined4 *)((int)pvVar4 + 0x29) = param_3;
+          if ((pvVar4 != nullptr) && (STField<int>(pvVar4,0x21) == param_2)) {
+            STField<undefined4>(pvVar4,0x29) = param_3;
             break;
           }
           uVar6 = uVar6 + 1;

@@ -156,8 +156,7 @@ LAB_0054b366:
           *(undefined1 *)puVar8 = 0x20;
           puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n');
         }
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        if (local_28._1_1_ == '\0') {
+        if (STPiece<1,1>(local_28) == '\0') {
           wsprintfA((LPSTR)local_d8,"%s",local_d8);
         }
         else {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_00694780(void *this,int param_1,uint param_2,uint param_3,int param_4,undefined4 param_5,
@@ -15,14 +17,14 @@ FUN_00694780(void *this,int param_1,uint param_2,uint param_3,int param_4,undefi
       uVar3 = 0;
       uVar2 = param_2;
       do {
-        if ((((*(uint *)this <= local_c + param_1) || (*(uint *)((int)this + 4) <= uVar2)) ||
-            (*(uint *)((int)this + 8) <= param_3)) || ((param_4 < 0 || (1 < param_4)))) {
+        if ((((*(uint *)this <= local_c + param_1) || (STField<uint>(this,4) <= uVar2)) ||
+            (STField<uint>(this,8) <= param_3)) || ((param_4 < 0 || (1 < param_4)))) {
           return 0;
         }
-        iVar1 = (*(uint *)((int)this + 8) * param_4 + param_3) * *(uint *)((int)this + 4) + uVar2;
+        iVar1 = (STField<uint>(this,8) * param_4 + param_3) * STField<uint>(this,4) + uVar2;
         uVar3 = uVar3 + 1;
         uVar2 = uVar2 + 1;
-        *(undefined4 *)(*(int *)((int)this + 0x10) + (iVar1 * *(int *)this + local_c + param_1) * 4)
+        *(undefined4 *)(STField<int>(this,0x10) + (iVar1 * *(int *)this + local_c + param_1) * 4)
              = param_5;
       } while (uVar3 < param_6);
       local_c = local_c + 1;

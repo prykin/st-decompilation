@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
@@ -35,8 +37,8 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
   iVar10 = (int)*(short *)(DAT_00857110 + 2 + DAT_00857114 * 8);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = param_1 + iVar10 * param_2;
-  local_14 = *(int *)((int)this + 0x28);
-  iVar12 = iVar10 * local_14 + *(int *)((int)this + 0xc);
+  local_14 = STField<int>(this,0x28);
+  iVar12 = iVar10 * local_14 + STField<int>(this,0xc);
   local_30 = 1;
   local_10 = iVar10;
   local_c = this;
@@ -45,7 +47,7 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
   if (iVar5 != 0) {
     local_4c = -1;
     iVar5 = FUN_007287e0(&local_4c,DAT_00857114);
-    if ((iVar5 != 0) && (iVar10 < *(int *)((int)this + 0x3c))) {
+    if ((iVar5 != 0) && (iVar10 < STField<int>(this,0x3c))) {
       do {
         if (*(int *)&((AnonShape_007288A0_88D3FF06 *)this)->field_0x34 <= iVar10) {
           iVar5 = local_40 >> 0x10;
@@ -106,9 +108,9 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
             *(undefined1 *)puVar13 = *(undefined1 *)(param_3 + uVar8);
             if (iVar7 != 1) {
               bVar4 = pbVar11[2];
-              *(undefined1 *)((int)puVar13 + 1) = *(undefined1 *)(param_3 + (uint)bVar3);
+              STField<undefined1>(puVar13,1) = *(undefined1 *)(param_3 + (uint)bVar3);
               if (iVar7 != 2) {
-                *(undefined1 *)((int)puVar13 + 2) = *(undefined1 *)(param_3 + (uint)bVar4);
+                STField<undefined1>(puVar13,2) = *(undefined1 *)(param_3 + (uint)bVar4);
               }
             }
           }
@@ -140,7 +142,7 @@ LAB_00728a04:
         iVar12 = iVar12 + local_14;
         local_10 = iVar10;
         local_8 = iVar12;
-      } while (iVar10 < *(int *)((int)this + 0x3c));
+      } while (iVar10 < STField<int>(this,0x3c));
     }
   }
   return;

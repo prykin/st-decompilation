@@ -125,8 +125,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
           if (0 < (int)local_48) {
             do {
               DArrayGetElement(local_c,local_18,local_1c);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              pSVar5 = GetObjPtr(pSVar2,param_1,local_1c._0_2_,CASE_1);
+              pSVar5 = GetObjPtr(pSVar2,param_1,STPiece<0,2>(local_1c),CASE_1);
               local_44 = pSVar5;
               iVar6 = (*pSVar5->vtable->vfunc_88)(local_54);
               if (0 < iVar6) {
@@ -216,8 +215,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
             if (0 < (int)local_48) {
               do {
                 DArrayGetElement(local_c,local_18,local_1c);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                pSVar5 = GetObjPtr(pSVar2,param_1,local_1c._0_2_,CASE_1);
+                pSVar5 = GetObjPtr(pSVar2,param_1,STPiece<0,2>(local_1c),CASE_1);
                 local_44 = pSVar5;
                 STFishC::sub_004162B0((STFishC *)pSVar5,&local_38,&local_36,&local_34);
                 local_32 = pSVar5->field_0032;

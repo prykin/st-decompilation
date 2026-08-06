@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
@@ -34,9 +36,9 @@ ST3DSMAPContext::sub_006E1320
   Library::Ourlib::STREND::FUN_006dd050(this,this->field_00A8,*param_1,*param_2);
   dVar1 = local_14;
   *(undefined4 *)param_1 = *(undefined4 *)&this->field_0098;
-  *(undefined4 *)((int)param_1 + 4) = *(undefined4 *)((int)&this->field_0098 + 4);
+  STField<undefined4>(param_1,4) = *(undefined4 *)((int)&this->field_0098 + 4);
   *(undefined4 *)param_2 = *(undefined4 *)&this->field_00A0;
-  *(undefined4 *)((int)param_2 + 4) = *(undefined4 *)((int)&this->field_00A0 + 4);
+  STField<undefined4>(param_2,4) = *(undefined4 *)((int)&this->field_00A0 + 4);
   sub_006E25D0(this,&local_30,local_20,local_c,local_14,0.0,0);
   *param_3 = (local_30 - local_40) + 0x8000 >> 0x10;
   *param_4 = (local_2c - local_3c) + 0x8000 >> 0x10;

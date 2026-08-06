@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00679600(AnonShape_00679600_B8E418A8 *param_1)
 
@@ -138,12 +140,9 @@ cf_common_exit_0067989B:
       *(undefined4 *)pAVar9 = 0;
       pAVar9 = (AnonShape_0068FD00_A5257008 *)&pAVar9->field_0x4;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_48[0]._4_4_ = param_1->field_06FE;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_48[0]._0_4_ = 0x6a;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_48[0]._8_4_ = uVar4;
+    STPiece<4,4>(local_48[0]) = param_1->field_06FE;
+    STPiece<0,4>(local_48[0]) = 0x6a;
+    STPiece<8,4>(local_48[0]) = uVar4;
     AiPlrClassTy::sub_0067A020((AiPlrClassTy *)param_1,local_48,-1);
     AiPlrClassTy::sub_0067C110((AiPlrClassTy *)param_1);
   }

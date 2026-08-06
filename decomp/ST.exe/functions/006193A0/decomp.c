@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_006193a0(void *this,undefined4 *param_1)
 
   puVar2 = (byte *)((int)this + 0x4d);
   memmove(puVar2, param_1, 0x104); /* compiler REP MOVS byte copy */
-  *(undefined4 *)((int)this + 0x97) = 0xffffffff;
+  STField<undefined4>(this,0x97) = 0xffffffff;
   return 0x104;
 }
 

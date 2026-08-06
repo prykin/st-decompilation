@@ -105,8 +105,7 @@ LAB_0052d7d4:
         bVar4 = (byte)this_00->field_0098[2];
       }
       this_00->field_009C = bVar4;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = (uint)local_8._1_3_ << 8;
+      local_8 = (uint)STPiece<1,3>(local_8) << 8;
       if (DAT_00807346 != 0) {
         do {
           if ((int)(local_8 & 0xff) < (int)this_00->field_0098[2]) {

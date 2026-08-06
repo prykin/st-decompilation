@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_0074b99c(void *this,AnonShape_0074B99C_A57FB945 *param_1)
 
@@ -43,10 +45,10 @@ undefined4 __thiscall FUN_0074b99c(void *this,AnonShape_0074B99C_A57FB945 *param
         pcVar2 = pcVar2 + 1;
         pcVar4 = pcVar4 + 1;
       } while (bVar5);
-      if ((bVar5) && (iVar1 = *(int *)((int)this + 0x40), iVar1 == param_1->field_0040)) {
+      if ((bVar5) && (iVar1 = STField<int>(this,0x40), iVar1 == param_1->field_0040)) {
         if (iVar1 != 0) {
           bVar5 = true;
-          pcVar2 = *(char **)((int)this + 0x44);
+          pcVar2 = STField<char *>(this,0x44);
           pcVar4 = param_1->field_0044;
           do {
             if (iVar1 == 0) break;

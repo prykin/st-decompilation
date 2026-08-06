@@ -258,7 +258,7 @@ LAB_0060f230:
     if (1 < local_68[0]) {
       **(undefined2 **)value = (short)local_20;
       *(short *)(*(int *)value + 2) = (short)local_2c;
-      *(undefined2 *)(*(int *)value + 4) = local_40._0_2_;
+      *(undefined2 *)(*(int *)value + 4) = STPiece<0,2>(local_40);
       *(undefined2 *)(*(int *)value + 6) =
            *(undefined2 *)
             (PTR_DAT_007ed56c + (((local_48 - local_2c) * 3 - local_20) + local_3c) * 4);

@@ -31,7 +31,7 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
   iVar5 = 0;
   pAVar11 = (AnonShape_00444E70_E59ECBC3 *)(param_1 + 4);
   local_c = 0;
-  *(undefined4 *)((int)this + 0x1c) = *(undefined4 *)param_1;
+  STField<undefined4>(this,0x1c) = *(undefined4 *)param_1;
   do {
     iVar6 = *(int *)((int)&pAVar11[-1].field_0A73 + 1);
     local_8 = pAVar11;
@@ -111,13 +111,13 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
       puVar10[-1] = *(undefined4 *)&local_14[-1].field_0xc;
       *puVar10 = *(undefined4 *)local_14;
       *(undefined2 *)(puVar10 + 1) = *(undefined2 *)&local_14->field_0x4;
-      *(undefined2 *)((int)puVar10 + 10) = local_14->field_000E;
+      STField<undefined2>(puVar10,10) = local_14->field_000E;
       if (local_14->field_0006 == -1) {
-        *(undefined4 *)((int)puVar10 + 6) = 0;
+        STField<undefined4>(puVar10,6) = 0;
       }
       else {
         uVar2 = FUN_006b0060(nullptr,(uint *)(local_14->field_0006 + (int)param_1));
-        *(undefined4 *)((int)puVar10 + 6) = uVar2;
+        STField<undefined4>(puVar10,6) = uVar2;
       }
       local_14 = (AnonShape_00444E70_8EFB8E54 *)&local_14[1].field_0x4;
       puVar10 = (byte *)(puVar10 + 4);
@@ -198,7 +198,7 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
       puVar14 = (byte *)(puVar14 + 1);
     }
     *(undefined2 *)puVar14 = *(undefined2 *)puVar10;
-    *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar10 + 2);
+    STField<undefined1>(puVar14,2) = STField<undefined1>(puVar10,2);
     *(undefined4 *)((int)&g_packedRecords_A62x8[0].field1600_0x7d6 + iVar5) = local_8->field_0827;
     puVar10 = (byte *)&local_8->field_0x82b;
     puVar14 = (byte *)((int)&g_packedRecords_A62x8[0].field1601_0x7da + iVar5);

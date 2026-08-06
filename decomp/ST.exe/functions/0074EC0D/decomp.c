@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_0074ec0d(int *param_1,undefined4 param_2)
 

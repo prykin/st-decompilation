@@ -57,7 +57,7 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
     if (puVar4 == nullptr) goto cf_common_exit_005DB1E1;
   }
   bVar2 = false;
-  if ((local_1e18 != 0) && (local_1e10 == *(int *)((int)piVar11 + 1))) {
+  if ((local_1e18 != 0) && (local_1e10 == STField<int>(piVar11,1))) {
     switch((char)*piVar11) {
     case '\x02':
       if (local_1e14 != iVar3) goto joined_r0x005db18e;
@@ -73,7 +73,7 @@ joined_r0x005db18e:
       break;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case '\x05':
-      if (*(int *)((int)piVar11 + 5) == CONCAT31((int3)uVar10,uVar9)) goto cf_common_exit_005DB1AB;
+      if (STField<int>(piVar11,5) == CONCAT31((int3)uVar10,uVar9)) goto cf_common_exit_005DB1AB;
     }
   }
   if (bVar2) {

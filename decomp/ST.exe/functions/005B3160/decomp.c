@@ -75,11 +75,11 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
           Library::DKW::DDX::FUN_006b3730
                     ((uint *)puVar3[0xb],puVar3[-6],puVar3[-5],*puVar3,puVar3[1]);
         }
-        if ((pMVar2->field_0065 == '\x01') && (*(uint *)((int)puVar3 + 0x79) != 0xffffffff)) {
+        if ((pMVar2->field_0065 == '\x01') && (STField<uint>(puVar3,0x79) != 0xffffffff)) {
           Library::DKW::DDX::FUN_006b3730
-                    (*(uint **)((int)puVar3 + 0xbd),*(uint *)((int)puVar3 + 0x79),
-                     *(uint *)((int)puVar3 + 0x7d),*(uint *)((int)puVar3 + 0x91),
-                     *(uint *)((int)puVar3 + 0x95));
+                    (STField<uint *>(puVar3,0xbd),STField<uint>(puVar3,0x79),
+                     STField<uint>(puVar3,0x7d),STField<uint>(puVar3,0x91),
+                     STField<uint>(puVar3,0x95));
         }
         iVar4 = iVar4 + 1;
         puVar3 = (uint *)((int)puVar3 + 0x1fb);

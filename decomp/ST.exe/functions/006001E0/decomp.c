@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint __thiscall FUN_006001e0(void *this,int param_1)
 
@@ -16,28 +18,28 @@ uint __thiscall FUN_006001e0(void *this,int param_1)
 
   uVar4 = 0;
   iVar5 = param_1 * 0x52;
-  *(undefined2 *)(iVar5 + *(int *)((int)this + 0x233) + 0x12) =
-       *(undefined2 *)(iVar5 + 6 + *(int *)((int)this + 0x233));
-  *(undefined2 *)(iVar5 + *(int *)((int)this + 0x233) + 0x14) =
-       *(undefined2 *)(iVar5 + 8 + *(int *)((int)this + 0x233));
-  *(undefined2 *)(iVar5 + *(int *)((int)this + 0x233) + 0x16) =
-       *(undefined2 *)(iVar5 + 10 + *(int *)((int)this + 0x233));
+  *(undefined2 *)(iVar5 + STField<int>(this,0x233) + 0x12) =
+       *(undefined2 *)(iVar5 + 6 + STField<int>(this,0x233));
+  *(undefined2 *)(iVar5 + STField<int>(this,0x233) + 0x14) =
+       *(undefined2 *)(iVar5 + 8 + STField<int>(this,0x233));
+  *(undefined2 *)(iVar5 + STField<int>(this,0x233) + 0x16) =
+       *(undefined2 *)(iVar5 + 10 + STField<int>(this,0x233));
   if (((g_playSystem_00802A38->field_00E4 & 1) == 0) &&
-     (iVar3 = *(int *)((int)this + 0x233) + iVar5,
+     (iVar3 = STField<int>(this,0x233) + iVar5,
      0x31 < (int)*(short *)(iVar3 + 4) - (int)*(short *)(iVar3 + 10))) {
     TraksClassTy::TraksCreate
               (g_traksClass_00802A7C,1,1,0,(int)*(short *)(iVar3 + 0x12),
                (int)*(short *)(iVar3 + 0x14),(int)*(short *)(iVar3 + 0x16),0,0,0,0,0,0,-1,0,0);
   }
-  iVar3 = *(int *)((int)this + 0x233);
+  iVar3 = STField<int>(this,0x233);
   psVar1 = (short *)(iVar5 + iVar3);
   iVar2 = *(int *)(iVar5 + 0x4a + iVar3);
   if (iVar2 < *(int *)(iVar5 + 0x46 + iVar3)) {
     psVar1[3] = *(short *)(*(int *)(psVar1 + 0x27) + iVar2 * 6);
-    iVar3 = *(int *)((int)this + 0x233) + iVar5;
+    iVar3 = STField<int>(this,0x233) + iVar5;
     *(undefined2 *)(iVar3 + 8) =
          *(undefined2 *)(*(int *)(iVar3 + 0x4e) + 2 + *(int *)(iVar3 + 0x4a) * 6);
-    iVar3 = *(int *)((int)this + 0x233);
+    iVar3 = STField<int>(this,0x233);
     *(undefined2 *)(iVar5 + iVar3 + 10) =
          *(undefined2 *)(*(int *)(iVar5 + 0x4e + iVar3) + 4 + *(int *)(iVar5 + 0x4a + iVar3) * 6);
   }
@@ -45,27 +47,27 @@ uint __thiscall FUN_006001e0(void *this,int param_1)
     iVar3 = thunk_FUN_005fe280(psVar1,g_playSystem_00802A38->field_00E4,(int *)local_c,
                                (int *)local_10,(int *)local_14);
     if (iVar3 == 0) goto LAB_0060033c;
-    *(undefined2 *)(iVar5 + 6 + *(int *)((int)this + 0x233)) = local_c[0];
-    *(undefined2 *)(iVar5 + 8 + *(int *)((int)this + 0x233)) = local_10[0];
-    *(undefined2 *)(iVar5 + 10 + *(int *)((int)this + 0x233)) = local_14[0];
+    *(undefined2 *)(iVar5 + 6 + STField<int>(this,0x233)) = local_c[0];
+    *(undefined2 *)(iVar5 + 8 + STField<int>(this,0x233)) = local_10[0];
+    *(undefined2 *)(iVar5 + 10 + STField<int>(this,0x233)) = local_14[0];
   }
-  *(int *)(iVar5 + 0x4a + *(int *)((int)this + 0x233)) =
-       *(int *)(iVar5 + 0x4a + *(int *)((int)this + 0x233)) + 1;
+  *(int *)(iVar5 + 0x4a + STField<int>(this,0x233)) =
+       *(int *)(iVar5 + 0x4a + STField<int>(this,0x233)) + 1;
 LAB_0060033c:
-  iVar3 = *(int *)((int)this + 0x233) + iVar5;
+  iVar3 = STField<int>(this,0x233) + iVar5;
   if ((99 < (int)*(short *)(iVar3 + 4) - (int)*(short *)(iVar3 + 10)) &&
      (uVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
                         ((AnonReceiver_00601500 *)((int)this + 0x1d5),(int)*(short *)(iVar3 + 6),
                          (int)*(short *)(iVar3 + 8),(int)*(short *)(iVar3 + 10),
                          (int)*(short *)(iVar3 + 0x12),(int)*(short *)(iVar3 + 0x14),
-                         (int)*(short *)(iVar3 + 0x16),*(int *)((int)this + 0x20a),
-                         *(int *)((int)this + 0x22a),*(int *)((int)this + 0x220),
-                         *(ushort *)((int)this + 0x224),0xa9,0,0), uVar4 != 0)) {
+                         (int)*(short *)(iVar3 + 0x16),STField<int>(this,0x20a),
+                         STField<int>(this,0x22a),STField<int>(this,0x220),
+                         STField<ushort>(this,0x224),0xa9,0,0), uVar4 != 0)) {
     if (uVar4 == 1) {
-      *(undefined2 *)(iVar5 + 6 + *(int *)((int)this + 0x233)) = *(undefined2 *)((int)this + 0x1f5);
-      *(undefined2 *)(iVar5 + 8 + *(int *)((int)this + 0x233)) = *(undefined2 *)((int)this + 0x1f9);
-      *(undefined2 *)(iVar5 + 10 + *(int *)((int)this + 0x233)) = *(undefined2 *)((int)this + 0x1fd);
-      *(undefined4 *)((int)this + 0x1e9) = 0;
+      *(undefined2 *)(iVar5 + 6 + STField<int>(this,0x233)) = STField<undefined2>(this,0x1f5);
+      *(undefined2 *)(iVar5 + 8 + STField<int>(this,0x233)) = STField<undefined2>(this,0x1f9);
+      *(undefined2 *)(iVar5 + 10 + STField<int>(this,0x233)) = STField<undefined2>(this,0x1fd);
+      STField<undefined4>(this,0x1e9) = 0;
       return 1;
     }
     if (uVar4 != 5) {
@@ -73,20 +75,20 @@ LAB_0060033c:
         return uVar4;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      if ((*(int **)((int)this + 0x1e9) != nullptr) &&
-         (iVar3 = (**(code **)(**(int **)((int)this + 0x1e9) + 0xe0))
-                            (*(undefined4 *)((int)this + 0x1ed),(int)&param_1 + 2,&local_6,&local_8,
+      if ((STField<int *>(this,0x1e9) != nullptr) &&
+         (iVar3 = (**(code **)(*STField<int *>(this,0x1e9) + 0xe0))
+                            (STField<undefined4>(this,0x1ed),(int)&param_1 + 2,&local_6,&local_8,
                              &local_18), iVar3 == 0)) {
-        *(int *)((int)this + 0x1f5) = (int)param_1._2_2_;
-        *(int *)((int)this + 0x1f9) = (int)local_6;
-        *(int *)((int)this + 0x1fd) = (int)local_8;
-        *(undefined2 *)(iVar5 + 6 + *(int *)((int)this + 0x233)) =
-             *(undefined2 *)((int)this + 0x1f5);
-        *(undefined2 *)(iVar5 + 8 + *(int *)((int)this + 0x233)) =
-             *(undefined2 *)((int)this + 0x1f9);
-        *(undefined2 *)(iVar5 + 10 + *(int *)((int)this + 0x233)) =
-             *(undefined2 *)((int)this + 0x1fd);
-        *(undefined4 *)((int)this + 0x1f1) = local_18;
+        STField<int>(this,0x1f5) = (int)STPiece<2,2>(param_1);
+        STField<int>(this,0x1f9) = (int)local_6;
+        STField<int>(this,0x1fd) = (int)local_8;
+        *(undefined2 *)(iVar5 + 6 + STField<int>(this,0x233)) =
+             STField<undefined2>(this,0x1f5);
+        *(undefined2 *)(iVar5 + 8 + STField<int>(this,0x233)) =
+             STField<undefined2>(this,0x1f9);
+        *(undefined2 *)(iVar5 + 10 + STField<int>(this,0x233)) =
+             STField<undefined2>(this,0x1fd);
+        STField<undefined4>(this,0x1f1) = local_18;
         return 2;
       }
     }

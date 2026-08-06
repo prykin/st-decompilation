@@ -64,7 +64,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
             *(undefined1 *)(piVar1 + 5) = 0;
           }
           piVar1[4] = local_8->field_0061;
-          switch(*(undefined2 *)((int)piVar1 + 0x15)) {
+          switch(STField<undefined2>(piVar1,0x15)) {
           case 0:
             pAVar2->field_0029 = pAVar2->field_0029 + 1;
             if (pAVar2->field_0023 <= (short)pAVar2->field_0029) {
@@ -84,7 +84,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
             if (pAVar2->field_0023 <= (short)pAVar2->field_0029) {
               pAVar2->field_0029 = pAVar2->field_0023 + -1;
               *(undefined1 *)(piVar1 + 5) = 1;
-              *(undefined2 *)((int)piVar1 + 0x15) = 3;
+              STField<undefined2>(piVar1,0x15) = 3;
             }
             break;
           case 3:
@@ -92,7 +92,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
             if ((short)pAVar2->field_0029 < 0) {
               pAVar2->field_0029 = 0;
               *(undefined1 *)(piVar1 + 5) = 1;
-              *(undefined2 *)((int)piVar1 + 0x15) = 2;
+              STField<undefined2>(piVar1,0x15) = 2;
             }
           }
         }

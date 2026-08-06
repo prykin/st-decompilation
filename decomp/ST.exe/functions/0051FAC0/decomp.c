@@ -14,7 +14,7 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
   char *pcVar6;
   char *pcVar7;
 
-  if (*(byte *)((int)this + 0x11c) <= param_2) {
+  if (STField<byte>(this,0x11c) <= param_2) {
     if (param_1 != nullptr) {
       uVar3 = 0xffffffff;
       do {
@@ -29,20 +29,20 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
       pcVar6 = pcVar6 + -uVar3;
       pcVar7 = (char *)((int)this + 0x18);
       memmove(pcVar7, pcVar6, uVar3); /* compiler REP MOVS byte copy */
-      *(byte *)((int)this + 0x11c) = param_2;
-      *(byte *)((int)this + 0x11d) = param_3 - 1U;
+      STField<byte>(this,0x11c) = param_2;
+      STField<byte>(this,0x11d) = param_3 - 1U;
       if (1 < (byte)(param_3 - 1U)) {
-        *(undefined1 *)((int)this + 0x11d) = 0;
+        STField<undefined1>(this,0x11d) = 0;
       }
-      *(undefined4 *)((int)this + 0x126) = param_4;
-      DVar2 = STAppC::sub_006E51B0(*(STAppC **)((int)this + 0x10));
-      *(DWORD *)((int)this + 0x122) = DVar2;
-      *(undefined4 *)((int)this + 0x12e) = 1;
+      STField<undefined4>(this,0x126) = param_4;
+      DVar2 = STAppC::sub_006E51B0(STField<STAppC *>(this,0x10));
+      STField<DWORD>(this,0x122) = DVar2;
+      STField<undefined4>(this,0x12e) = 1;
       HelpStringTy::OutStr(this);
       return;
     }
     memset((void *)((int)this + 0x18), 0, 0x104); /* compiler bulk-zero initialization */
-    *(undefined4 *)((int)this + 0x12e) = 0;
+    STField<undefined4>(this,0x12e) = 0;
     HelpStringTy::OutStr(this);
   }
   return;

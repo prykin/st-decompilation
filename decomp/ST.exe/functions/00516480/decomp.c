@@ -77,8 +77,7 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
             ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
              (byte *)this_00->field_01DC,0,0x21,0x16,0x1b8,0x118);
   if (param_1 == 1) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (byte *)((uint)local_8._1_3_ << 8);
+    local_8 = (byte *)((uint)STPiece<1,3>(local_8) << 8);
     resourceId = 0x5604;
     local_10 = (undefined4 *)&DAT_007c2b58;
     local_c = 0x33;

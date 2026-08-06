@@ -214,8 +214,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
         memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
         local_1c = 1;
         local_1e = 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_28._2_2_ = 1;
+        STPiece<2,2>(local_28) = 1;
         MMsgTy::StatePanel(*(MMsgTy **)(iVar6 + 0x2e6),(int)&local_28);
       }
       this_00->field_0065 = 1;
@@ -239,8 +238,8 @@ LAB_00591d08:
               FUN_006b3af0((int *)puVar12[0x11],*puVar12);
             }
             if ((*(char *)((int)puVar12 + -0x96) != '\0') &&
-               (*(uint *)((int)puVar12 + 0x91) != 0xffffffff)) {
-              FUN_006b3af0(*(int **)((int)puVar12 + 0xd5),*(uint *)((int)puVar12 + 0x91));
+               (STField<uint>(puVar12,0x91) != 0xffffffff)) {
+              FUN_006b3af0(STField<int *>(puVar12,0xd5),STField<uint>(puVar12,0x91));
             }
             *(undefined1 *)((int)puVar12 + -0xbd) = 0;
           }

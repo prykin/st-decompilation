@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 4.
    Evidence: 00479600 -> 004B2520 @ 0047B46E; /STBoatC+0x647; MOVSX at 0047B452 establishes signed
@@ -62,17 +64,15 @@ FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,int param_5,undefi
       goto LAB_004b266b;
     }
     local_2c = 0;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar11 = g_worldGrid._0_4_;
+    uVar11 = STPiece<0,4>(g_worldGrid);
     this = local_30;
   }
   else {
     uVar7 = LookupRecordByte((byte)param_1);
     uVar7 = (int)(byte)uVar7;
     local_2c = *(int *)(&DAT_007e3f20 + (uVar7 + param_2 * 3) * 4);
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004b266b:
-    uVar11 = g_worldGrid._0_4_;
+    uVar11 = STPiece<0,4>(g_worldGrid);
     for (iVar6 = param_3 + -8; this = local_30, iVar6 <= param_3 + 8; iVar6 = iVar6 + 1) {
       if ((-1 < iVar6) && (iVar6 < (short)uVar11)) {
         for (iVar8 = param_4 + -8; iVar8 <= param_4 + 8; iVar8 = iVar8 + 1) {
@@ -91,11 +91,10 @@ LAB_004b266b:
                        [(int)sVar5 * (int)(short)uVar11 + (int)sVar12 * (int)g_worldGrid.planeStride
                         + (int)sVar4].objects[0];
               }
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if (((this != nullptr) && (this[1].vtable < (STWorldObjectVTable *)0x8))
                  && (((g_playSystem_00802A38 == nullptr ||
                       (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)) &&
-                     (iVar7 = this->GetObjectTypeId(), uVar11 = g_worldGrid._0_4_,
+                     (iVar7 = this->GetObjectTypeId(), uVar11 = STPiece<0,4>(g_worldGrid),
                      iVar7 == 0x6f)))) {
                 bVar2 = *(byte *)&this[1].vtable;
                 if (DAT_00808a8f == '\0') {
@@ -153,8 +152,7 @@ LAB_004b288e:
       *(undefined4 *)&local_30[0x22].field_0x8 = 0;
     }
     *(uint *)&local_30[0x22].field_0xc = g_playSystem_00802A38->field_00E4;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar11 = g_worldGrid._0_4_;
+    uVar11 = STPiece<0,4>(g_worldGrid);
   }
   local_28 = 1;
   iVar6 = param_4 - param_3;
@@ -176,11 +174,10 @@ LAB_004b288e:
           do {
             if ((-1 < iVar13) && (iVar13 < (short)uVar11)) {
               iVar7 = local_68 + iVar6;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((-1 < iVar7) &&
                  ((iVar7 < g_worldGrid.sizeY &&
                   (iVar9 = thunk_FUN_004b2390(param_1,iVar13,iVar7,iVar8,param_10,local_48),
-                  uVar11 = g_worldGrid._0_4_, iVar9 != 0)))) {
+                  uVar11 = STPiece<0,4>(g_worldGrid), iVar9 != 0)))) {
                 *piVar14 = iVar13;
                 piVar14[1] = iVar7;
                 piVar14[2] = iVar8;
@@ -189,10 +186,9 @@ LAB_004b288e:
                 if (0xe < local_34) goto cf_common_exit_004B2601;
               }
               iVar7 = local_64 + iVar6;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if (((-1 < iVar7) && (iVar7 < g_worldGrid.sizeY)) &&
                  (iVar9 = thunk_FUN_004b2390(param_1,iVar13,iVar7,iVar8,param_10,local_48),
-                 uVar11 = g_worldGrid._0_4_, iVar9 != 0)) {
+                 uVar11 = STPiece<0,4>(g_worldGrid), iVar9 != 0)) {
                 *piVar14 = iVar13;
                 piVar14[1] = iVar7;
                 piVar14[2] = iVar8;
@@ -210,11 +206,10 @@ LAB_004b288e:
           piVar14 = (int *)(&stack0xffffff7c + local_34 * 0xc);
           do {
             if ((-1 < iVar13) && (iVar13 < g_worldGrid.sizeY)) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((-1 < local_68) &&
                  ((local_68 < (short)uVar11 &&
                   (iVar9 = thunk_FUN_004b2390(param_1,local_68,iVar13,iVar8,param_10,local_48),
-                  uVar11 = g_worldGrid._0_4_, iVar9 != 0)))) {
+                  uVar11 = STPiece<0,4>(g_worldGrid), iVar9 != 0)))) {
                 *piVar14 = local_68;
                 piVar14[1] = iVar13;
                 piVar14[2] = iVar8;
@@ -222,10 +217,9 @@ LAB_004b288e:
                 piVar14 = piVar14 + 3;
                 if (0xe < local_34) goto cf_common_exit_004B2601;
               }
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if (((-1 < local_64) && (local_64 < (short)uVar11)) &&
                  (iVar9 = thunk_FUN_004b2390(param_1,local_64,iVar13,iVar8,param_10,local_48),
-                 uVar11 = g_worldGrid._0_4_, iVar9 != 0)) {
+                 uVar11 = STPiece<0,4>(g_worldGrid), iVar9 != 0)) {
                 *piVar14 = local_64;
                 piVar14[1] = iVar13;
                 piVar14[2] = iVar8;

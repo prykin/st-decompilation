@@ -101,7 +101,7 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     this_00->field_0100 = piVar7;
     uVar11 = piVar7[5];
     if (uVar11 == 0) {
-      uVar11 = ((uint)*(ushort *)((int)piVar7 + 0xe) * piVar7[1] + 0x1f >> 3 & 0x1ffffffc) *
+      uVar11 = ((uint)STField<ushort>(piVar7,0xe) * piVar7[1] + 0x1f >> 3 & 0x1ffffffc) *
                piVar7[2];
     }
     local_5 = this_00->field_00E0;

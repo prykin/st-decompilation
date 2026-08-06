@@ -288,7 +288,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         this_00 = (void *)thunk_FUN_0058bab0(this->field_04E0[0],this->field_04E0[1],
                                              this->field_04E0[2],this->field_0024,this->field_0018,
                                              this->field_0032);
-        this->field_04E0[4] = *(uint *)((int)this_00 + 0x18);
+        this->field_04E0[4] = STField<uint>(this_00,0x18);
         if ((-1 < *(int *)(&this->field_0x2a5 + (int)piVar2 * 0x80)) &&
            (-1 < (int)(&this->field_02A9)[(int)piVar2 * 0x20])) {
           thunk_FUN_0058c560(this_00,*(int *)(&this->field_0x2a5 + (int)piVar2 * 0x80),

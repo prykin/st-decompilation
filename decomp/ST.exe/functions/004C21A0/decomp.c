@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -23,7 +25,7 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
   sVar4 = 0;
   local_8 = this;
   ST3DSMAPContext::sub_006E1C20
-            (*(ST3DSMAPContext **)((int)this + 0x211),param_3,param_4,0.0,&param_3,&local_c);
+            (STField<ST3DSMAPContext *>(this,0x211),param_3,param_4,0.0,&param_3,&local_c);
   if (param_3 < _DAT_0079034c) {
     lVar6 = Library::MSVCRT::__ftol();
     iVar5 = (short)lVar6 + -1;
@@ -43,7 +45,7 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
     param_4 = (int)(short)lVar6;
   }
   pAVar1 = local_8;
-  if ((*(byte *)((int)this + 0x1d1) & 4) != 0) {
+  if ((STField<byte>(this,0x1d1) & 4) != 0) {
     sVar4 = 0;
     if (param_2 == this) {
       sVar4 = 4;

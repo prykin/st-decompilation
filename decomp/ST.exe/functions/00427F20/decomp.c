@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -66,7 +68,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   ExceptionList = &local_14;
   puVar2 = &stack0xffffff3c;
   if (param_4 - param_5 < 100) goto cf_common_join_004286D0;
-  local_5c = (float)param_4 * (float)*(double *)((int)this + 0x368);
+  local_5c = (float)param_4 * (float)STField<double>(this,0x368);
   local_60 = param_1 - local_5c;
   local_5c = param_2 - local_5c;
   local_58 = 0;
@@ -74,34 +76,34 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
   iVar5 = 1;
   if (iVar3 != 1) {
-    local_60 = (float)iVar4 * (float)*(double *)((int)this + 0x368) + local_60;
+    local_60 = (float)iVar4 * (float)STField<double>(this,0x368) + local_60;
     iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
     iVar5 = 1;
     if (iVar3 != 1) {
-      local_5c = (float)iVar4 * (float)*(double *)((int)this + 0x368) + local_5c;
+      local_5c = (float)iVar4 * (float)STField<double>(this,0x368) + local_5c;
       iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
       iVar5 = 1;
       if (iVar3 != 1) {
-        local_60 = param_1 - (float)param_4 * (float)*(double *)((int)this + 0x368);
+        local_60 = param_1 - (float)param_4 * (float)STField<double>(this,0x368);
         iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
         iVar5 = 1;
         if (iVar3 != 1) {
-          local_5c = (float)param_4 * (float)*(double *)((int)this + 0x368);
+          local_5c = (float)param_4 * (float)STField<double>(this,0x368);
           local_60 = param_1 - local_5c;
           local_5c = param_2 - local_5c;
           local_58 = 0x424751eb;
           iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
           iVar5 = 1;
           if (iVar3 != 1) {
-            local_60 = (float)iVar4 * (float)*(double *)((int)this + 0x368) + local_60;
+            local_60 = (float)iVar4 * (float)STField<double>(this,0x368) + local_60;
             iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
             iVar5 = 1;
             if (iVar3 != 1) {
-              local_5c = (float)iVar4 * (float)*(double *)((int)this + 0x368) + local_5c;
+              local_5c = (float)iVar4 * (float)STField<double>(this,0x368) + local_5c;
               iVar4 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
               iVar5 = 1;
               if (iVar4 != 1) {
-                local_60 = param_1 - (float)param_4 * (float)*(double *)((int)this + 0x368);
+                local_60 = param_1 - (float)param_4 * (float)STField<double>(this,0x368);
                 iVar5 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
               }
             }
@@ -112,26 +114,26 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   }
   puVar2 = local_1c;
   if (iVar5 == 0) goto cf_common_join_004286D0;
-  dVar1 = (double)(param_1 / (float)*(double *)((int)this + 0x368));
+  dVar1 = (double)(param_1 / (float)STField<double>(this,0x368));
   Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
   lVar12 = Library::MSVCRT::__ftol();
   DAT_007f4d7c = (int)lVar12;
   iVar4 = -param_4;
   local_34 = param_4;
-  if (*(int *)((int)this + 0x370) <= DAT_007f4d7c + param_4) {
-    local_34 = (*(int *)((int)this + 0x370) - DAT_007f4d7c) + -1;
+  if (STField<int>(this,0x370) <= DAT_007f4d7c + param_4) {
+    local_34 = (STField<int>(this,0x370) - DAT_007f4d7c) + -1;
   }
   local_2c = iVar4;
   if (DAT_007f4d7c + iVar4 < 0) {
     local_2c = -DAT_007f4d7c;
   }
-  dVar1 = (double)(param_2 / (float)*(double *)((int)this + 0x368));
+  dVar1 = (double)(param_2 / (float)STField<double>(this,0x368));
   Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
   lVar12 = Library::MSVCRT::__ftol();
   DAT_007f4d80 = (int)lVar12;
   iVar5 = param_4;
-  if (*(int *)((int)this + 0x370) <= DAT_007f4d80 + param_4) {
-    iVar5 = (*(int *)((int)this + 0x370) - DAT_007f4d80) + -1;
+  if (STField<int>(this,0x370) <= DAT_007f4d80 + param_4) {
+    iVar5 = (STField<int>(this,0x370) - DAT_007f4d80) + -1;
   }
   if (DAT_007f4d80 + iVar4 < 0) {
     iVar4 = -DAT_007f4d80;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefined4 param_2)
 
@@ -140,14 +142,12 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
         param_1->field_0045 = (undefined2)local_18;
         param_1->field_0043 = (undefined2)local_14;
         if (local_24 == 0) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           Library::Ourlib::ST3DSMAP::SprSetLevBefore
-                    (param_1->field_0211,param_1->field_01ED,*(int *)((int)local_8 + 0x1ed));
+                    (param_1->field_0211,param_1->field_01ED,STField<int>(local_8,0x1ed));
         }
         else {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           Library::Ourlib::ST3DSMAP::SprSetLevAfter
-                    (param_1->field_0211,param_1->field_01ED,*(int *)((int)local_8 + 0x1ed));
+                    (param_1->field_0211,param_1->field_01ED,STField<int>(local_8,0x1ed));
         }
         bVar7 = param_1->field_027C;
       }

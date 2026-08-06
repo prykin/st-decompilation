@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x00483fc6) */
 /* [STPrototypeApplier] Propagated parameter 0.
@@ -22,9 +24,9 @@ undefined4 __fastcall FUN_00483f10(STBoatC *param_1)
                     (g_allPlayers_007FA174,param_1->field_046F,(int)param_1->field_0471);
   if (iVar3 != 0) {
     puVar1 = param_1->field_046B;
-    uVar4 = (int)param_1->field_0045 - (int)*(short *)((int)puVar1 + 0x45);
-    uVar5 = (int)param_1->field_0043 - (int)*(short *)((int)puVar1 + 0x43);
-    uVar6 = (int)param_1->field_0041 - (int)*(short *)((int)puVar1 + 0x41);
+    uVar4 = (int)param_1->field_0045 - (int)STField<short>(puVar1,0x45);
+    uVar5 = (int)param_1->field_0043 - (int)STField<short>(puVar1,0x43);
+    uVar6 = (int)param_1->field_0041 - (int)STField<short>(puVar1,0x41);
     uVar2 = param_1->field_0810;
     lVar7 = Library::MSVCRT::__allmul(uVar6,(int)uVar6 >> 0x1f,uVar6,(int)uVar6 >> 0x1f);
     lVar8 = Library::MSVCRT::__allmul(uVar5,(int)uVar5 >> 0x1f,uVar5,(int)uVar5 >> 0x1f);

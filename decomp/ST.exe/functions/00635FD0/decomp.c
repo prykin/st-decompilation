@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
@@ -16,8 +18,7 @@ void __fastcall FUN_00635fd0(int *param_1)
   int iVar3;
   uint uVar4;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(int *)((int)param_1 + 0x11) == 3) && (*(int *)((int)param_1 + 0x39) != 0)) {
+  if ((STField<int>(param_1,0x11) == 3) && (STField<int>(param_1,0x39) != 0)) {
     FreeAndNull((void **)((int)param_1 + 0x39));
   }
   if (*param_1 != 0) {

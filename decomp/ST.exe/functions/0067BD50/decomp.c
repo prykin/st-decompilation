@@ -19,7 +19,7 @@ int __cdecl FUN_0067bd50(DArrayTy *param_1)
       if ((bVar5) &&
          (pvVar3 = DArrayAt<void>(param_1, uVar4),
          pvVar3 != nullptr)) {
-        iVar2 = iVar2 + *(short *)((int)pvVar3 + 0x1a);
+        iVar2 = iVar2 + STField<short>(pvVar3,0x1a);
       }
       uVar4 = uVar4 + 1;
       bVar5 = uVar4 < uVar1;

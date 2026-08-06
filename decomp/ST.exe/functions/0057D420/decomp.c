@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0057D5F0 -> 0057D420 @ 0057D677; STFishC::sub_0057D5F0 this; stable alias ESI */

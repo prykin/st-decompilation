@@ -33,7 +33,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     local_8 = Library::DKW::LIB::MemAlloc(0x7a);
     thunk_FUN_00639bf0(this,(undefined4 *)local_8);
     STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,*(int **)((int)this + 0x18),local_8,
+              (g_playSystem_00802A38,STField<int *>(this,0x18),local_8,
                (AnonShape_0060EA30_DCEB68AD *)0x7a);
     FreeAndNull(&local_8);
     return 0;
@@ -53,8 +53,8 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
       memset(puVar9, 0, 0x2d); /* compiler bulk-zero initialization */
       puVar9 = (byte *)((byte *)puVar9 + 0x2c);
       iVar5 = 0;
-      if (*(char *)((int)this + 0x26f) == '\x02') {
-        *(undefined1 *)((int)this + 0x26f) = 3;
+      if (STField<char>(this,0x26f) == '\x02') {
+        STField<undefined1>(this,0x26f) = 3;
       }
     }
     else {
@@ -62,32 +62,32 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
       memmove(puVar10, puVar9, 0x2e); /* compiler REP MOVS byte copy */
       thunk_FUN_00639500(this,g_playSystem_00802A38->field_00E4);
     }
-    if (*(char *)((int)this + 0x270) == '\0') {
+    if (STField<char>(this,0x270) == '\0') {
       return 0;
     }
-    if (*(char *)((int)this + 0x26f) == '\x01') {
+    if (STField<char>(this,0x26f) == '\x01') {
       return 0;
     }
     thunk_FUN_00639990(this);
     return 0;
   }
-  switch(*(undefined1 *)((int)this + 0x26f)) {
+  switch(STField<undefined1>(this,0x26f)) {
   case 0:
-    if (*(char *)((int)this + 0x270) == '\0') {
+    if (STField<char>(this,0x270) == '\0') {
       thunk_FUN_00639990(this);
     }
     uVar6 = thunk_FUN_00639670(this,g_playSystem_00802A38->field_00E4);
     if (0 < (int)uVar6) {
-      iVar5 = *(int *)((int)this + 0x2bf);
+      iVar5 = STField<int>(this,0x2bf);
       if (iVar5 != 0) {
-        if (*(int *)((int)this + 0x2c7) == 0) {
+        if (STField<int>(this,0x2c7) == 0) {
           Library::Ourlib::ST3DSMAP::SprSetLevBefore
-                    (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
+                    (STField<void *>(this,0x211),STField<uint>(this,0x1ed),
                      *(int *)(iVar5 + 0x1ed));
         }
         else {
           Library::Ourlib::ST3DSMAP::SprSetLevAfter
-                    (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
+                    (STField<void *>(this,0x211),STField<uint>(this,0x1ed),
                      *(int *)(iVar5 + 0x1ed));
         }
       }
@@ -96,23 +96,23 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
       iVar5 = 1;
       uVar6 = thunk_FUN_004ad650((STT3DSprC *)((int)this + 0x1d5));
       Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
-                (*(void **)((int)this + 0x211),uVar6,iVar5,uVar11,uVar12);
-      *(undefined1 *)((int)this + 0x26f) = 2;
+                (STField<void *>(this,0x211),uVar6,iVar5,uVar11,uVar12);
+      STField<undefined1>(this,0x26f) = 2;
       thunk_FUN_00639990(this);
       return 0;
     }
-    if (*(char *)((int)this + 0x270) == '\0') {
+    if (STField<char>(this,0x270) == '\0') {
       return 0;
     }
-    sub_00416240(this,*(ushort *)((int)this + 0x27a),*(short *)((int)this + 0x27e),
-                 *(ushort *)((int)this + 0x282));
+    sub_00416240(this,STField<ushort>(this,0x27a),STField<short>(this,0x27e),
+                 STField<ushort>(this,0x282));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar4 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == nullptr) {
       return 0;
     }
-    iVar5 = *(int *)((int)this + 0x282);
+    iVar5 = STField<int>(this,0x282);
     sVar3 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -126,7 +126,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
                 (int)(short)(((short)(iVar5 / 200) + sVar3) -
                             (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
     }
-    iVar5 = *(int *)((int)this + 0x27e);
+    iVar5 = STField<int>(this,0x27e);
     sVar3 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
       iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar3) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
@@ -136,7 +136,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
       iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar3) -
                           (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
     }
-    iVar7 = *(int *)((int)this + 0x27a);
+    iVar7 = STField<int>(this,0x27a);
     sVar3 = (short)(iVar7 >> 0x1f);
     if (iVar7 < 0) {
       iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar3) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)
@@ -157,44 +157,44 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
       bVar1 = pVVar4->field_004C[local_c + local_10 * pVVar4->field_0030];
 joined_r0x00639236:
       if (bVar1 == 0) {
-        if (*(char *)((int)this + 0x271) == '\0') {
+        if (STField<char>(this,0x271) == '\0') {
           return 0;
         }
         thunk_FUN_004ad430((STT3DSprC *)((int)this + 0x1d5));
-        *(undefined1 *)((int)this + 0x271) = 0;
+        STField<undefined1>(this,0x271) = 0;
         return 0;
       }
     }
     break;
   case 1:
-    if (g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 0x2a3) <
-        *(uint *)((int)this + 0x251)) {
+    if (g_playSystem_00802A38->field_00E4 - STField<int>(this,0x2a3) <
+        STField<uint>(this,0x251)) {
       return 0;
     }
-    *(undefined1 *)((int)this + 0x26f) = 0;
+    STField<undefined1>(this,0x26f) = 0;
     uVar6 = g_playSystem_00802A38->field_00E4;
-    *(undefined4 *)((int)this + 0x251) = 0;
-    *(uint *)((int)this + 0x2a3) = uVar6;
-    if (*(char *)((int)this + 0x270) == '\0') {
+    STField<undefined4>(this,0x251) = 0;
+    STField<uint>(this,0x2a3) = uVar6;
+    if (STField<char>(this,0x270) == '\0') {
       return 0;
     }
     thunk_FUN_00639990(this);
     return 0;
   case 2:
-    if (*(char *)((int)this + 0x270) == '\0') {
-      *(undefined1 *)((int)this + 0x26f) = 3;
+    if (STField<char>(this,0x270) == '\0') {
+      STField<undefined1>(this,0x26f) = 3;
       return 0;
     }
     this_00 = (STT3DSprC *)((int)this + 0x1d5);
     iVar5 = thunk_FUN_004ac910(this_00,'\r');
-    if (*(char *)((int)this + 0x2a2) != '\0') {
+    if (STField<char>(this,0x2a2) != '\0') {
       iVar7 = STT3DSprC::sub_004ACD30(this_00,'\x0e');
       iVar8 = thunk_FUN_004ac910(this_00,'\x0e');
-      if ((iVar7 + -1 <= iVar8) && (*(char *)((int)this + 0x270) != '\0')) {
+      if ((iVar7 + -1 <= iVar8) && (STField<char>(this,0x270) != '\0')) {
         STT3DSprC::StopShow(this_00,0xe);
       }
     }
-    if ((iVar5 == 0x17) && (*(char *)((int)this + 0x270) != '\0')) {
+    if ((iVar5 == 0x17) && (STField<char>(this,0x270) != '\0')) {
       STT3DSprC::StartShow(this_00,0xf,g_playSystem_00802A38->field_00E4);
     }
     iVar5 = STT3DSprC::sub_004ACD30(this_00,'\r');
@@ -205,7 +205,7 @@ joined_r0x00639236:
     iVar5 = STT3DSprC::sub_004ACD30(this_00,'\x0f');
     iVar7 = thunk_FUN_004ac910(this_00,'\x0f');
     if (iVar5 + -1 == iVar7) {
-      *(undefined1 *)((int)this + 0x26f) = 3;
+      STField<undefined1>(this,0x26f) = 3;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
@@ -213,7 +213,7 @@ joined_r0x00639236:
     if (g_visibleClass_00802A88 == nullptr) {
       return 0;
     }
-    iVar5 = *(int *)((int)this + 0x282);
+    iVar5 = STField<int>(this,0x282);
     sVar3 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -227,7 +227,7 @@ joined_r0x00639236:
                 (int)(short)(((short)(iVar5 / 200) + sVar3) -
                             (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
     }
-    iVar5 = *(int *)((int)this + 0x27e);
+    iVar5 = STField<int>(this,0x27e);
     sVar3 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
       iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar3) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
@@ -237,7 +237,7 @@ joined_r0x00639236:
       iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar3) -
                           (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
     }
-    iVar7 = *(int *)((int)this + 0x27a);
+    iVar7 = STField<int>(this,0x27a);
     sVar3 = (short)(iVar7 >> 0x1f);
     if (iVar7 < 0) {
       iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar3) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)
@@ -265,9 +265,9 @@ joined_r0x00639236:
   default:
     goto switchD_00638d7a_default;
   }
-  if (*(char *)((int)this + 0x271) == '\0') {
+  if (STField<char>(this,0x271) == '\0') {
     thunk_FUN_004ad460((void *)((int)this + 0x1d5),0);
-    *(undefined1 *)((int)this + 0x271) = 1;
+    STField<undefined1>(this,0x271) = 1;
     return 0;
   }
 switchD_00638d7a_default:

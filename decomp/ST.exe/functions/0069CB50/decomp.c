@@ -92,8 +92,8 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   ExceptionList = &local_14;
   thunk_FUN_006a0a70(param_1);
   iVar8 = *(int *)param_1[2] << 1;
-  *(int *)((int)param_1 + 0x5833) = iVar8;
-  *(int *)((int)param_1 + 0x5837) = ((int *)param_1[2])[1] << 1;
+  STField<int>(param_1,0x5833) = iVar8;
+  STField<int>(param_1,0x5837) = ((int *)param_1[2])[1] << 1;
   sub_006948E0((CGenerate *)param_1,iVar8);
   iVar8 = ((int *)param_1[2])[1] * *(int *)param_1[2];
   uVar14 = iVar8 * 4;
@@ -148,8 +148,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
         } while ((int)uVar9 < (int)uVar14);
       }
       if ((0 < iVar13) && (0 < iVar8)) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar8 = *(int *)((int)param_1 + 0x5833);
+        iVar8 = STField<int>(param_1,0x5833);
         local_140 = iVar8 * 8;
         local_6c = 0;
         local_7c = (int)(iVar8 + (iVar8 >> 0x1f & 3U)) >> 2;
@@ -670,11 +669,9 @@ LAB_0069d7b2:
         } while ((int)uVar14 < (int)local_13c);
       }
       if ((0 < iVar13) && (0 < iVar8)) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        local_140 = *(int *)((int)param_1 + 0x5833) * 8;
+        local_140 = STField<int>(param_1,0x5833) * 8;
         local_b0 = 0;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        local_170 = (*(int *)((int)param_1 + 0x5833) * 3) / 2;
+        local_170 = (STField<int>(param_1,0x5833) * 3) / 2;
         pDVar3 = local_138;
         while ((0 < local_140 && (local_b0 < local_170))) {
           uVar14 = Library::MSVCRT::FUN_0072e6c0();
@@ -827,8 +824,8 @@ LAB_0069d7b2:
         else {
           pvVar7 = nullptr;
         }
-        if ((pvVar7 != nullptr) && (*(DArrayTy **)((int)pvVar7 + 0xc) != nullptr)) {
-          DArrayDestroy(*(DArrayTy **)((int)pvVar7 + 0xc));
+        if ((pvVar7 != nullptr) && (STField<DArrayTy *>(pvVar7,0xc) != nullptr)) {
+          DArrayDestroy(STField<DArrayTy *>(pvVar7,0xc));
         }
         uVar14 = uVar14 + 1;
         bVar18 = uVar14 < pDVar3->count;

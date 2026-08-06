@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006DBCF0 -> 006DBAB0 @ 006DBCF3; ST3DSMAPContext::sub_006DBCF0 this

@@ -414,8 +414,7 @@ LAB_005c69ed:
     memset(&local_38, 0, 0x1a); /* compiler bulk-zero initialization */
     local_2c = 1;
     local_2e = 1;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_38._2_2_ = 1;
+    STPiece<2,2>(local_38) = 1;
     MMsgTy::StatePanel(*(MMsgTy **)(pMVar3 + 0x2e6),(int)&local_38);
   }
   g_currentExceptionFrame = local_7c.previous;

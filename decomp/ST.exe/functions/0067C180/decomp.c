@@ -139,15 +139,12 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
                   if ((pSVar1 != nullptr) &&
                      (iVar7 = (*pSVar1->vtable->vfunc_F8)(), iVar7 != 0)) {
                     memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    local_3c._0_2_ = (undefined2)local_8;
+                    STPiece<0,2>(local_3c) = (undefined2)local_8;
                     dVar10 = pSVar1->slot_2C();
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    local_3c._2_2_ = (short)dVar10;
+                    STPiece<2,2>(local_3c) = (short)dVar10;
                     thunk_FUN_0067bda0(local_38,pSVar1);
                     local_2c = pSVar1->vfunc_D4();
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
+                    local_28 = thunk_FUN_00674fb0((int)STPiece<2,2>(local_3c));
                     local_24 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
                     Library::DKW::TBL::DArrayAppend(this_00->field_06AD,&local_3c);
                     iVar4 = local_18;
@@ -214,15 +211,12 @@ LAB_0067c61b:
                          , puVar12 == nullptr)) {
                         uVar3 = (undefined2)local_8;
                         memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
-                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_3c._0_2_ = uVar3;
+                        STPiece<0,2>(local_3c) = uVar3;
                         dVar10 = pSVar1->slot_2C();
-                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_3c._2_2_ = (short)dVar10;
+                        STPiece<2,2>(local_3c) = (short)dVar10;
                         thunk_FUN_0067bda0(local_38,pSVar1);
                         local_2c = pSVar1->vfunc_D4();
-                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
+                        local_28 = thunk_FUN_00674fb0((int)STPiece<2,2>(local_3c));
                         local_24 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
                         Library::DKW::TBL::DArrayAppend(this_00->field_06AD,&local_3c);
                         iVar4 = local_18;

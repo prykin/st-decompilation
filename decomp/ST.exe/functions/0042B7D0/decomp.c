@@ -48,8 +48,7 @@ STAllPlayersC::AddObjsToGroup
   if (0 < (int)uVar7) {
     do {
       DArrayGetElement((DArrayTy *)groupContent,uVar6,local_18);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar3 = thunk_FUN_0042b5b0(param_1,local_18._0_2_);
+      iVar3 = thunk_FUN_0042b5b0(param_1,STPiece<0,2>(local_18));
       if (iVar3 == 0) {
         return 0xaffe0002;
       }

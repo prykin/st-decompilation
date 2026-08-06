@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 00679F00 -> 0068FC70 @ 00679F51 | 00679F90 -> 0068FC70 @ 00679FBC
@@ -14,7 +16,7 @@ int __thiscall FUN_0068fc70(void *this,int aiMess,short param_2)
   bool bVar3;
 
   uVar2 = 0;
-  iVar1 = *(int *)((int)this + 0xa5);
+  iVar1 = STField<int>(this,0xa5);
   if (0 < *(int *)(iVar1 + 0xc)) {
     bVar3 = *(int *)(iVar1 + 0xc) != 0;
     do {
@@ -23,7 +25,7 @@ int __thiscall FUN_0068fc70(void *this,int aiMess,short param_2)
          ((uint)(ushort)this_00->field_007D == (int)param_2)) {
         AiFltClassTy::GetAiMess(this_00,(uint *)aiMess);
       }
-      iVar1 = *(int *)((int)this + 0xa5);
+      iVar1 = STField<int>(this,0xa5);
       uVar2 = uVar2 + 1;
       bVar3 = uVar2 < *(uint *)(iVar1 + 0xc);
     } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));

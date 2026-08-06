@@ -13,7 +13,7 @@ uint __thiscall FUN_006960d0(void *this,uint param_1,int param_2)
   int iVar6;
   bool bVar7;
 
-  iVar6 = *(int *)((int)this + 0x5853);
+  iVar6 = STField<int>(this,0x5853);
   if (iVar6 != 0) {
     if (param_1 < *(uint *)(iVar6 + 0xc)) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

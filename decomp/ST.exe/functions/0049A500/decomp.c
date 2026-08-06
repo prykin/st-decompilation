@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STGroupBoatC.
    Evidence: this_call_owners=[STGroupBoatC]; agreed_this_calls=1; incoming_this_accesses=7;
@@ -40,11 +42,9 @@ STGroupBoatC::sub_0049A500
     if (uVar1 != 0) {
       do {
         DArrayGetElement((DArrayTy *)this->field_0029,index,local_10);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        if (local_10._0_2_ != 0xffff) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (STPiece<0,2>(local_10) != 0xffff) {
           this_00 = STAllPlayersC::GetObjPtr
-                              (g_allPlayers_007FA174,this->field_0024,local_10._0_2_,CASE_1);
+                              (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_10),CASE_1);
           STFishC::sub_004162B0
                     ((STFishC *)this_00,(short *)&local_14,(undefined2 *)&local_18,
                      (undefined2 *)&local_1c);

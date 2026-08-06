@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_005f0150(void *this,AnonShape_005F0150_6EC63067 *param_1)
 
@@ -14,11 +16,11 @@ void __thiscall FUN_005f0150(void *this,AnonShape_005F0150_6EC63067 *param_1)
   param_1->field_0x4 = uVar2;
   param_1->field_0005 = 4;
   param_1->field_0006 = 1;
-  iVar1 = *(int *)((int)this + 0x23a);
+  iVar1 = STField<int>(this,0x23a);
   if (((iVar1 != 5) && (iVar1 != 6)) && (iVar1 != 7)) {
     param_1->field_0007 = 1;
   }
-  iVar1 = *(int *)((int)this + 0x2b1);
+  iVar1 = STField<int>(this,0x2b1);
   if (((iVar1 != 0) && (iVar1 != 1)) && (iVar1 != 2)) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar2 = (**(code **)(*(int *)this + 0x134))();

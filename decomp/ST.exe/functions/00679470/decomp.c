@@ -44,8 +44,7 @@ int __thiscall AiPlrClassTy::CloseAllTact(AiPlrClassTy *this)
     *(undefined4 *)pAVar7 = 0;
     pAVar7 = (AnonShape_0068FD00_A5257008 *)&pAVar7->field_0x4;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_3c[0]._0_4_ = 0x71;
+  STPiece<0,4>(local_3c[0]) = 0x71;
   index = pAVar3->field_0695->count;
   do {
     index = index - 1;

@@ -128,8 +128,7 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
                     (g_bulkInitializedRecords_008087C7[(int)this_00[1].vtable].field_0022 < 8)))))))
                  ) {
                 bVar1 = *(byte *)&this_00[1].vtable;
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                bVar2 = *(byte *)((int)local_44 + 0x51);
+                bVar2 = STField<byte>(local_44,0x51);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 _local_30 = CONCAT31(uStack_2f,bVar1);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -169,31 +168,29 @@ LAB_0061cd61:
                   uVar5 = *(undefined4 *)&this_00->field_0x18;
                   *piVar17 = (int)this_00[1].vtable;
                   uVar7 = (undefined2)local_28;
-                  *(undefined4 *)((int)piVar17 + 0x26) = uVar5;
+                  STField<undefined4>(piVar17,0x26) = uVar5;
                   uVar8 = (undefined2)local_10;
-                  *(undefined2 *)((int)piVar17 + 0x2a) = uVar4;
+                  STField<undefined2>(piVar17,0x2a) = uVar4;
                   uVar4 = (undefined2)local_14;
-                  *(STWorldObject **)((int)piVar17 + 0x1a) = this_00;
+                  STField<STWorldObject *>(piVar17,0x1a) = this_00;
                   *(undefined2 *)(piVar17 + 5) = uVar7;
                   iVar16 = (int)local_6;
-                  *(undefined2 *)((int)piVar17 + 0x16) = uVar8;
+                  STField<undefined2>(piVar17,0x16) = uVar8;
                   *(undefined2 *)(piVar17 + 6) = uVar4;
                   iVar12 = (int)local_22;
                   piVar17[2] = iVar16;
                   pSVar6 = this_00->vtable;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  piVar17[3] = (int)param_3._2_2_;
+                  piVar17[3] = (int)STPiece<2,2>(param_3);
                   piVar17[4] = iVar12;
                   iVar16 = (*pSVar6->GetObjectTypeId)(this_00);
                   iVar12 = (int)local_6;
                   piVar17[1] = iVar16;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  iVar12 = FUN_006aced8(param_1,param_2,iVar12,(int)param_3._2_2_);
+                  iVar12 = FUN_006aced8(param_1,param_2,iVar12,(int)STPiece<2,2>(param_3));
                   iVar16 = local_3c;
-                  *(int *)((int)piVar17 + 0x1e) = iVar12;
-                  *(int *)((int)piVar17 + 0x22) = iVar12;
-                  if (*(int *)((int)piVar17 + 0x1e) < iVar16) {
-                    local_3c = *(int *)((int)piVar17 + 0x1e);
+                  STField<int>(piVar17,0x1e) = iVar12;
+                  STField<int>(piVar17,0x22) = iVar12;
+                  if (STField<int>(piVar17,0x1e) < iVar16) {
+                    local_3c = STField<int>(piVar17,0x1e);
                     local_34 = local_c;
                   }
                   piVar17 = piVar17 + 0xb;

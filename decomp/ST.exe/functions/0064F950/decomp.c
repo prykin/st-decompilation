@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_0064f950(RecoveredRecord_AiEventClassTy_0064F950 *param_1)
 

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0067a1b0(void *this,int param_1)
 
@@ -7,7 +9,7 @@ void __thiscall FUN_0067a1b0(void *this,int param_1)
   int iVar3;
   uint uVar4;
 
-  iVar3 = *(int *)((int)this + 0x695);
+  iVar3 = STField<int>(this,0x695);
   if (iVar3 != 0) {
     uVar1 = *(uint *)(iVar3 + 0xc);
     uVar4 = 0;
@@ -26,7 +28,7 @@ void __thiscall FUN_0067a1b0(void *this,int param_1)
             (*(code *)**(undefined4 **)*piVar2)(param_1);
           }
         }
-        iVar3 = *(int *)((int)this + 0x695);
+        iVar3 = STField<int>(this,0x695);
         uVar4 = uVar4 + 1;
         uVar1 = *(uint *)(iVar3 + 0xc);
       } while ((int)uVar4 < (int)uVar1);

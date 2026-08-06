@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004C5350 -> 006ACF90 @ 004C552D | 0065E450 -> 004C5350 @ 0065E520; FUN_0065e450
@@ -33,11 +35,11 @@ FUN_004c5350(void *this,int param_1,int *param_2,int param_3,int param_4,undefin
 
   this_00 = param_2;
   local_c = 0;
-  if (*(int *)(&DAT_00792778 + *(int *)((int)this + 0x235) * 4) == 0) {
+  if (*(int *)(&DAT_00792778 + STField<int>(this,0x235) * 4) == 0) {
     return 0;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(int *)((int)this + param_1 * 0x80 + 0x261) == 0) && (*(int *)((int)this + 0x245) != 5)) {
+  if ((*(int *)((int)this + param_1 * 0x80 + 0x261) == 0) && (STField<int>(this,0x245) != 5)) {
     return 0;
   }
   if (param_2 == nullptr) {
@@ -50,15 +52,13 @@ FUN_004c5350(void *this,int param_1,int *param_2,int param_3,int param_4,undefin
               ((STFishC *)param_2,(short *)&local_18,(undefined2 *)&local_14,(undefined2 *)&local_1c
               );
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(&DAT_00792a90 + (param_1 + *(int *)((int)this + 0x235) * 2) * 4) == 1) {
+  if (*(int *)(&DAT_00792a90 + (param_1 + STField<int>(this,0x235) * 2) * 4) == 1) {
     if (this_00 == nullptr) {
       return local_c;
     }
   }
   else {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)(&DAT_00792a90 + (param_1 + *(int *)((int)this + 0x235) * 2) * 4) != 2) {
+    if (*(int *)(&DAT_00792a90 + (param_1 + STField<int>(this,0x235) * 2) * 4) != 2) {
       return local_c;
     }
     if (this_00 == nullptr) goto LAB_004c5515;
@@ -74,14 +74,14 @@ FUN_004c5350(void *this,int param_1,int *param_2,int param_3,int param_4,undefin
     return local_c;
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar4 = (**(code **)(*this_00 + 0xf4))(*(undefined4 *)((int)this + 0x24));
+  iVar4 = (**(code **)(*this_00 + 0xf4))(STField<undefined4>(this,0x24));
   if (iVar4 == 0) {
     return local_c;
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_7 == 0) goto LAB_004c5515;
   bVar1 = *(byte *)(this_00 + 9);
-  bVar2 = *(byte *)((int)this + 0x24);
+  bVar2 = STField<byte>(this,0x24);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(bVar1));
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -117,23 +117,20 @@ LAB_004c5502:
     return local_c;
   }
 LAB_004c5515:
-  iVar4 = FUN_006acf90((int)(short)local_18,(int)(short)local_14,*(int *)((int)this + 0x5b0),
-                       *(int *)((int)this + 0x5b4));
-  iVar5 = thunk_FUN_004e81b0(*(int *)((int)this + 0x24),*(int *)((int)this + 0x235),param_1);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  iVar4 = FUN_006acf90((int)(short)local_18,(int)(short)local_14,STField<int>(this,0x5b0),
+                       STField<int>(this,0x5b4));
+  iVar5 = thunk_FUN_004e81b0(STField<int>(this,0x24),STField<int>(this,0x235),param_1);
   if ((((iVar4 <= iVar5) || (uVar6 = local_c, param_6 == 0)) &&
-      (uVar6 = 1, *(int *)(&DAT_00792a90 + (param_1 + *(int *)((int)this + 0x235) * 2) * 4) == 1))
+      (uVar6 = 1, *(int *)(&DAT_00792a90 + (param_1 + STField<int>(this,0x235) * 2) * 4) == 1))
      && (param_6 != 0)) {
     thunk_FUN_00416270(this_00,&local_8,(int *)&local_6,(int *)((int)&param_3 + 2));
     thunk_FUN_00416270(this,(undefined2 *)((int)&param_5 + 2),(int *)((int)&param_4 + 2),
                        (int *)((int)&param_2 + 2));
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    iVar4 = FUN_006acf0d((int)local_8,(int)local_6,(int)param_3._2_2_,(int)param_5._2_2_,
-                         (int)param_4._2_2_,(int)param_2._2_2_);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar6 = (int)param_3._2_2_ - (int)param_2._2_2_ >> 0x1f;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar6 = (uint)((int)((((int)param_3._2_2_ - (int)param_2._2_2_ ^ uVar6) - uVar6) * 10) / iVar4
+    iVar4 = FUN_006acf0d((int)local_8,(int)local_6,(int)STPiece<2,2>(param_3),(int)STPiece<2,2>(param_5),
+                         (int)STPiece<2,2>(param_4),(int)STPiece<2,2>(param_2));
+    uVar6 = (int)STPiece<2,2>(param_3) - (int)STPiece<2,2>(param_2) >> 0x1f;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    uVar6 = (uint)((int)((((int)STPiece<2,2>(param_3) - (int)STPiece<2,2>(param_2) ^ uVar6) - uVar6) * 10) / iVar4
                   <= *(int *)((int)this + param_1 * 0x80 + 0x281));
   }
   local_c = uVar6;

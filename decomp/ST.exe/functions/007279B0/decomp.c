@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -97,24 +99,24 @@ void __thiscall FUN_007279b0(void *this,int param_1,int param_2,int param_3)
     iVar5 = DAT_008570c8;
   }
   iVar6 = iVar6 >> 0x10;
-  iVar1 = *(int *)((int)this + 0x30);
+  iVar1 = STField<int>(this,0x30);
   DAT_00857060 = iVar6;
   if (iVar6 < iVar1) {
     DAT_00857060 = iVar1;
   }
   local_20 = (uint)(iVar6 < iVar1);
   DAT_008570e8 = iVar5 >> 0x10;
-  if (*(int *)((int)this + 0x38) < iVar5 >> 0x10) {
+  if (STField<int>(this,0x38) < iVar5 >> 0x10) {
     local_20 = 1;
-    DAT_008570e8 = *(int *)((int)this + 0x38);
+    DAT_008570e8 = STField<int>(this,0x38);
   }
   DAT_00857064 = iVar2 >> 0x10;
-  if (iVar2 >> 0x10 < *(int *)((int)this + 0x34)) {
-    DAT_00857064 = *(int *)((int)this + 0x34);
+  if (iVar2 >> 0x10 < STField<int>(this,0x34)) {
+    DAT_00857064 = STField<int>(this,0x34);
   }
   DAT_008570ec = iVar4 >> 0x10;
-  if (*(int *)((int)this + 0x3c) < iVar4 >> 0x10) {
-    DAT_008570ec = *(int *)((int)this + 0x3c);
+  if (STField<int>(this,0x3c) < iVar4 >> 0x10) {
+    DAT_008570ec = STField<int>(this,0x3c);
   }
   if ((DAT_00857064 < DAT_008570ec) && (DAT_00857060 < DAT_008570e8)) {
     local_8 = 0;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 char * FUN_007499dc(char *param_1)
 

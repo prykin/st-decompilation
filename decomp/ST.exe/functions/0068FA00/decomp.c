@@ -17,7 +17,7 @@ void __thiscall FUN_0068fa00(void *this,uint *param_1)
   uint *local_2e;
 
   uVar2 = 0;
-  iVar1 = *(int *)((int)this + 0xa5);
+  iVar1 = STField<int>(this,0xa5);
   if (0 < *(int *)(iVar1 + 0xc)) {
     bVar4 = *(int *)(iVar1 + 0xc) != 0;
     do {
@@ -30,7 +30,7 @@ void __thiscall FUN_0068fa00(void *this,uint *param_1)
       this_00 = *(AiFltClassTy **)(iVar1 + 4);
       if ((this_00 != nullptr) && (this_00->field_007B == -0x8000)) {
         memset(local_38, 0, 0x34); /* compiler bulk-zero initialization */
-        local_38[1] = *(undefined4 *)((int)this + 300);
+        local_38[1] = STField<undefined4>(this,300);
         local_2e = param_1;
         local_38[0] = 0x75;
         local_2f = 1;
@@ -39,7 +39,7 @@ void __thiscall FUN_0068fa00(void *this,uint *param_1)
           return;
         }
       }
-      iVar1 = *(int *)((int)this + 0xa5);
+      iVar1 = STField<int>(this,0xa5);
       uVar2 = uVar2 + 1;
       bVar4 = uVar2 < *(uint *)(iVar1 + 0xc);
     } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));

@@ -54,10 +54,8 @@ STBoatC::GetExplosionInfo
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  iVar3 = local_20._4_4_;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if ((local_20 < 0) || ((int)((byte)local_24->field_0281 - 1) < local_20._4_4_)) {
+  iVar3 = STPiece<4,4>(local_20);
+  if ((local_20 < 0) || ((int)((byte)local_24->field_0281 - 1) < STPiece<4,4>(local_20))) {
     RaiseInternalException
               (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d4f);
@@ -72,9 +70,8 @@ STBoatC::GetExplosionInfo
   uVar9 = *puVar4;
   local_30 = *(ushort *)(puVar4 + 1);
   *param_2 = pSVar2->field_0041 + (short)uVar9;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_34._2_2_ = (short)((uint)uVar9 >> 0x10);
-  *param_3 = pSVar2->field_0043 - local_34._2_2_;
+  STPiece<2,2>(local_34) = (short)((uint)uVar9 >> 0x10);
+  *param_3 = pSVar2->field_0043 - STPiece<2,2>(local_34);
   *param_4 = pSVar2->field_0045 + local_30;
   local_34 = uVar9;
   ST3DSMAPContext::sub_006DD530(pSVar2->field_0211,local_14,&local_c,&local_8);

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004abce0(void *this,byte param_1,int param_2,int param_3,char param_4)
 
@@ -10,11 +12,11 @@ undefined4 __thiscall FUN_004abce0(void *this,byte param_1,int param_2,int param
   int iVar6;
   int iVar7;
 
-  if (*(int *)((int)this + 0x18) != -1) {
-    if ((-1 < (char)param_1) && ((int)(char)param_1 <= *(int *)((int)this + 0x14) + -1)) {
+  if (STField<int>(this,0x18) != -1) {
+    if ((-1 < (char)param_1) && ((int)(char)param_1 <= STField<int>(this,0x14) + -1)) {
       iVar7 = (char)param_1 * 0x24;
-      iVar6 = iVar7 + *(int *)((int)this + 0x20);
-      piVar4 = *(int **)(iVar7 + *(int *)((int)this + 0x20));
+      iVar6 = iVar7 + STField<int>(this,0x20);
+      piVar4 = *(int **)(iVar7 + STField<int>(this,0x20));
       if (piVar4 != nullptr) {
         if ((((-1 < param_2) && (iVar5 = *piVar4 + -1, param_2 <= iVar5)) && (-1 < param_3)) &&
            (param_3 <= iVar5)) {
@@ -27,25 +29,25 @@ undefined4 __thiscall FUN_004abce0(void *this,byte param_1,int param_2,int param
             *pbVar2 = *pbVar2 | 2;
           }
           STT3DSprC::StopShow(this,param_1);
-          iVar6 = iVar7 + *(int *)((int)this + 0x20);
-          if ((*(byte *)(iVar7 + 0xe + *(int *)((int)this + 0x20)) & 2) == 0) {
+          iVar6 = iVar7 + STField<int>(this,0x20);
+          if ((*(byte *)(iVar7 + 0xe + STField<int>(this,0x20)) & 2) == 0) {
             *(int *)(iVar6 + 0x10) = param_2;
-            *(int *)(iVar7 + 0x14 + *(int *)((int)this + 0x20)) = param_3;
+            *(int *)(iVar7 + 0x14 + STField<int>(this,0x20)) = param_3;
           }
           else {
             *(int *)(iVar6 + 0x10) = param_3;
-            *(int *)(iVar7 + 0x14 + *(int *)((int)this + 0x20)) = param_2;
+            *(int *)(iVar7 + 0x14 + STField<int>(this,0x20)) = param_2;
           }
-          puVar3 = (undefined4 *)(iVar7 + *(int *)((int)this + 0x20));
-          iVar6 = *(int *)(iVar7 + 0x18 + *(int *)((int)this + 0x20));
+          puVar3 = (undefined4 *)(iVar7 + STField<int>(this,0x20));
+          iVar6 = *(int *)(iVar7 + 0x18 + STField<int>(this,0x20));
           if ((-1 < iVar6) && (piVar4 = (int *)*puVar3, iVar6 < *piVar4)) {
             *(undefined4 *)(puVar3[1] + iVar6 * 4) = *(undefined4 *)((int)piVar4 + iVar6 * 4 + 0x31);
           }
-          iVar6 = *(int *)((int)this + 0x20) + iVar7;
+          iVar6 = STField<int>(this,0x20) + iVar7;
           *(undefined4 *)(iVar6 + 0x18) = *(undefined4 *)(iVar6 + 0x10);
-          if (param_1 == *(byte *)((int)this + 0x13)) {
-            *(undefined4 *)((int)this + 0x30) =
-                 *(undefined4 *)(iVar7 + 0x18 + *(int *)((int)this + 0x20));
+          if (param_1 == STField<byte>(this,0x13)) {
+            STField<undefined4>(this,0x30) =
+                 *(undefined4 *)(iVar7 + 0x18 + STField<int>(this,0x20));
           }
           return 0;
         }

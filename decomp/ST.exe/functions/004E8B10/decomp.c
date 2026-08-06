@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
 
@@ -17,7 +19,7 @@ undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
   iVar2 = (**(code **)(*(int *)this + 0x2c))();
   if (iVar2 == 0x37) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if (param_1 == *(uint *)((int)this + 0x24)) {
+    if (param_1 == STField<uint>(this,0x24)) {
       return 1;
     }
     return 0;
@@ -31,18 +33,18 @@ undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
   if (iVar2 == 0) {
     return 0;
   }
-  iVar2 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),0x62);
+  iVar2 = thunk_FUN_004e60d0(STField<int>(this,0x24),0x62);
   if (iVar2 == 0) {
     return 1;
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = (uint)*(byte *)((int)this + 0x24);
+  param_1 = (uint)STField<byte>(this,0x24);
   if (DAT_00808a8f != '\0') {
     bVar4 = g_bulkInitializedRecords_008087C7[param_1].field_0023 !=
             g_bulkInitializedRecords_008087C7[uVar3 & 0xff].field_0023;
     goto LAB_004e8c3b;
   }
-  if ((byte)uVar3 == *(byte *)((int)this + 0x24)) {
+  if ((byte)uVar3 == STField<byte>(this,0x24)) {
 LAB_004e8c30:
     iVar2 = 0;
   }

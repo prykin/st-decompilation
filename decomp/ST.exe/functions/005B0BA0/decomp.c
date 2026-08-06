@@ -329,7 +329,7 @@ LAB_005b1d83:
               goto LAB_005b1da4;
             }
             if (bVar4 == 0) break;
-            bVar4 = *(byte *)((int)puVar14 + 1);
+            bVar4 = STField<byte>(puVar14,1);
             bVar11 = bVar4 < pbVar20[1];
             if (bVar4 != pbVar20[1]) goto LAB_005b1d83;
             puVar14 = (uint *)((int)puVar14 + 2);

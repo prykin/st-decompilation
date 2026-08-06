@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
@@ -28,10 +30,10 @@ void __thiscall FUN_00728640(void *this,int param_1,int param_2,int param_3)
   int local_8;
 
   iVar5 = (int)*(short *)(DAT_00857110 + 2 + DAT_00857114 * 8);
-  local_c = *(int *)((int)this + 0x28);
+  local_c = STField<int>(this,0x28);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = param_1 + iVar5 * param_2;
-  local_8 = iVar5 * local_c + *(int *)((int)this + 0xc);
+  local_8 = iVar5 * local_c + STField<int>(this,0xc);
   local_28 = 1;
   iVar5 = FUN_007287e0(&local_28,DAT_00857114);
   if (iVar5 != 0) {
@@ -86,9 +88,9 @@ void __thiscall FUN_00728640(void *this,int param_1,int param_2,int param_3)
           *(undefined1 *)puVar10 = *(undefined1 *)(param_3 + uVar7);
           if (iVar5 != 1) {
             bVar4 = pbVar9[2];
-            *(undefined1 *)((int)puVar10 + 1) = *(undefined1 *)(param_3 + (uint)bVar3);
+            STField<undefined1>(puVar10,1) = *(undefined1 *)(param_3 + (uint)bVar3);
             if (iVar5 != 2) {
-              *(undefined1 *)((int)puVar10 + 2) = *(undefined1 *)(param_3 + (uint)bVar4);
+              STField<undefined1>(puVar10,2) = *(undefined1 *)(param_3 + (uint)bVar4);
             }
           }
         }

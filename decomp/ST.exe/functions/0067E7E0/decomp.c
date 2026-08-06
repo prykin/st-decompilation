@@ -222,8 +222,8 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
             else {
               pvVar6 = nullptr;
             }
-            if ((pvVar6 != nullptr) && ((*(uint *)((int)pvVar6 + 0x90) & local_a8) != 0)) {
-              iVar8 = *(int *)((int)pvVar6 + 0x94);
+            if ((pvVar6 != nullptr) && ((STField<uint>(pvVar6,0x90) & local_a8) != 0)) {
+              iVar8 = STField<int>(pvVar6,0x94);
               if (iVar8 == 1) {
                 bVar4 = true;
               }

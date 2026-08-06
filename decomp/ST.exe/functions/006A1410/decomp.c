@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
@@ -64,8 +66,7 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
   else {
     local_c = local_14;
     if (param_5 == 0) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c._2_2_ = (undefined2)(local_14 >> 0x10);
+      STPiece<2,2>(local_c) = (undefined2)(local_14 >> 0x10);
       local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(1));
     }
     else if (param_5 == 1) {

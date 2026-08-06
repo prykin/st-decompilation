@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] stack_parameter_scalar_role target=parameter:6: parameter=/int
    Evidence: generic pointer has a scalar-only incoming lifetime before its first slot overwrite:

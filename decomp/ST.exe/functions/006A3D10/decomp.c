@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 006A3D10 returns return of Library::MSVCRT::FUN_006a3d40 @ 006A3D26 */

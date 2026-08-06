@@ -193,12 +193,12 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       return 0;
     }
     pvVar2 = (message->arg0).ptr;
-    if (1 < *(uint *)((int)pvVar2 + 0xc)) {
-      if (*(uint *)((int)pvVar2 + 0xc) != 2) {
+    if (1 < STField<uint>(pvVar2,0xc)) {
+      if (STField<uint>(pvVar2,0xc) != 2) {
         g_currentExceptionFrame = local_84.previous;
         return 0;
       }
-      RestoreGrpBData(this_00,(undefined4 *)(*(int *)((int)pvVar2 + 0x38) + (int)pvVar2));
+      RestoreGrpBData(this_00,(undefined4 *)(STField<int>(pvVar2,0x38) + (int)pvVar2));
       g_currentExceptionFrame = local_84.previous;
       return 0;
     }

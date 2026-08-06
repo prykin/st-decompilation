@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint FUN_006c6f10(AnonShape_006C6F10_68E82598 *param_1,undefined *param_2,undefined *param_3)
 

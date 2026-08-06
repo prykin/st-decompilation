@@ -210,10 +210,8 @@ LAB_005dc430:
     this_00 = this_01->field_02E6;
     if (this_00 != nullptr) {
       memset(&local_58, 0, 0x1a); /* compiler bulk-zero initialization */
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_58._0_2_ = 1;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_58._2_2_ = 1;
+      STPiece<0,2>(local_58) = 1;
+      STPiece<2,2>(local_58) = 1;
       MMsgTy::StatePanel(this_00,(int)&local_58);
     }
   }

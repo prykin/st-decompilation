@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00568940_param_1Enum. Cases:
@@ -11,7 +13,7 @@ void __thiscall FUN_00568940(void *this,Global_sub_00568940_param_1Enum param_1)
   InternalExceptionFrame local_4c;
   void *local_8;
 
-  if (*(int *)((int)this + 0xf8b) != 0) {
+  if (STField<int>(this,0xf8b) != 0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
@@ -82,8 +84,8 @@ void __thiscall FUN_00568940(void *this,Global_sub_00568940_param_1Enum param_1)
           thunk_FUN_00568bc0(this_00,iVar1);
           iVar1 = iVar1 + 1;
         } while (iVar1 < 2);
-        *(undefined4 *)((int)this_00 + 0xe03) = 0xffffffff;
-        *(undefined4 *)((int)this_00 + 0xe07) = 0xffffffff;
+        STField<undefined4>(this_00,0xe03) = 0xffffffff;
+        STField<undefined4>(this_00,0xe07) = 0xffffffff;
         g_currentExceptionFrame = local_4c.previous;
         return;
       case CASE_C:

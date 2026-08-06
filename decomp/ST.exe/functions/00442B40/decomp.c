@@ -69,8 +69,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
           if (uVar1 != 0) {
             do {
               DArrayGetElement(pDVar2,uVar4,&local_50);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              if ((((local_4a != -1) && (local_42 != -1)) && (local_50 == param_2._2_2_)) &&
+              if ((((local_4a != -1) && (local_42 != -1)) && (local_50 == STPiece<2,2>(param_2))) &&
                  (((local_4e == local_6 && (local_4c == local_8)) && (local_4a == local_1c)))) {
                 local_42 = -1;
                 local_4a = -1;
@@ -101,8 +100,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
       if (uVar1 != 0) {
         do {
           DArrayGetElement(pDVar2,uVar4,&local_50);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (((((local_4a != -1) && (local_42 != -1)) && (local_48 == param_2._2_2_)) &&
+          if (((((local_4a != -1) && (local_42 != -1)) && (local_48 == STPiece<2,2>(param_2))) &&
               ((local_46 == local_6 && (local_44 == local_8)))) && (local_42 == local_1c)) {
             local_42 = -1;
             local_4a = -1;

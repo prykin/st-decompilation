@@ -89,17 +89,17 @@ STPlaySystemC::SetCtrlCmd
     iVar3 = local_c + param_7;
     local_10 = iVar3;
     pvVar4 = Library::DKW::LIB::MemAllocClear(iVar3 + 0x1b);
-    *(uint *)((int)pvVar4 + 4) = local_8->field_00E4;
-    *(undefined1 *)((int)pvVar4 + 8) = param_1;
-    *(char *)((int)pvVar4 + 9) = (char)g_cursorClass_00802A30->field_04AE;
-    *(uint *)((int)pvVar4 + 10) = param_2;
-    *(char *)((int)pvVar4 + 0xe) = param_3;
-    *(uint *)((int)pvVar4 + 0xf) = uVar7;
-    *(uint *)((int)pvVar4 + 0x13) = param_7;
+    STField<uint>(pvVar4,4) = local_8->field_00E4;
+    STField<undefined1>(pvVar4,8) = param_1;
+    STField<char>(pvVar4,9) = (char)g_cursorClass_00802A30->field_04AE;
+    STField<uint>(pvVar4,10) = param_2;
+    STField<char>(pvVar4,0xe) = param_3;
+    STField<uint>(pvVar4,0xf) = uVar7;
+    STField<uint>(pvVar4,0x13) = param_7;
     local_c = iVar3;
     if (param_4 != nullptr) {
       uVar6 = uVar7 >> 2;
-      *(uint **)((int)pvVar4 + 0x17) = (uint *)((int)pvVar4 + 0x1b);
+      STField<uint *>(pvVar4,0x17) = (uint *)((int)pvVar4 + 0x1b);
       puVar8 = (uint *)((int)pvVar4 + 0x1b);
       for (; uVar6 != 0; uVar6 = uVar6 - 1) {
         *puVar8 = *param_4;
@@ -113,7 +113,7 @@ STPlaySystemC::SetCtrlCmd
       }
     }
     if ((param_6 != nullptr) && (param_7 != 0)) {
-      puVar9 = (byte *)(*(int *)((int)pvVar4 + 0x17) + *(int *)((int)pvVar4 + 0xf));
+      puVar9 = (byte *)(STField<int>(pvVar4,0x17) + STField<int>(pvVar4,0xf));
       memmove(puVar9, param_6, param_7); /* compiler REP MOVS byte copy */
     }
     if (DAT_0080877e == '\0') {

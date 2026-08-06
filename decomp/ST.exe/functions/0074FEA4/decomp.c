@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_0074fea4(void *this,uint param_1,int param_2,int param_3)
 
@@ -7,17 +9,17 @@ undefined4 __thiscall FUN_0074fea4(void *this,uint param_1,int param_2,int param
   uint local_c;
   int local_8;
 
-  piVar1 = *(int **)((int)this + 0x60);
+  piVar1 = STField<int *>(this,0x60);
   if (piVar1 != nullptr) {
     if (param_3 != 0) {
-      if (*(int *)((int)this + 100) == 0) {
+      if (STField<int>(this,100) == 0) {
         return 0;
       }
-      bVar2 = CARRY4(param_1,*(uint *)((int)this + 0x68));
+      bVar2 = CARRY4(param_1,STField<uint>(this,0x68));
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = param_1 + *(uint *)((int)this + 0x68);
+      param_1 = param_1 + STField<uint>(this,0x68);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_2 = param_2 + *(int *)((int)this + 0x6c) + (uint)bVar2;
+      param_2 = param_2 + STField<int>(this,0x6c) + (uint)bVar2;
     }
     local_c = 0;
     local_8 = 0;

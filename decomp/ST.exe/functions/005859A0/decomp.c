@@ -181,7 +181,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
               *(int **)(iVar7 + (int)local_3c) = DAT_00806774;
               iVar7 = iVar7 + 4;
             } while (iVar7 < 0x44);
-            *(undefined4 *)((int)local_3c + 0x24) = DAT_00806764;
+            STField<undefined4>(local_3c,0x24) = DAT_00806764;
             iVar7 = *(int *)((int)&this_00->field_023E + 3);
             if (((iVar7 < 1) || (PTR_00806724 == nullptr)) ||
                (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {

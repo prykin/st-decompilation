@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0065E9A0 -> 004162B0 @ 0065EAAE */
@@ -23,7 +25,7 @@ FUN_0065e9a0(void *this,short *param_1,short *param_2,uint param_3,uint param_4,
     return 0xffffffff;
   }
   if (((int)param_1 < 0) || (psVar4 = param_1, 8 < (int)param_1)) {
-    psVar4 = *(short **)((int)this + 0x97);
+    psVar4 = STField<short *>(this,0x97);
   }
   if (psVar4 == (short *)0x8) {
     psVar4 = (short *)(uint)DAT_0080874d;

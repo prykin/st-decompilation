@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_0074caa4(void *this,int *param_1,int *param_2)
 
@@ -12,14 +14,14 @@ int __thiscall FUN_0074caa4(void *this,int *param_1,int *param_2)
   int local_c;
   undefined4 uStack_8;
 
-  if (*(int *)(*(int *)((int)this + 0x8c) + 0x18) == 0) {
+  if (*(int *)(STField<int>(this,0x8c) + 0x18) == 0) {
     local_c = 0;
     uStack_8 = 0;
     local_14 = 1;
     local_10 = 1;
   }
   else {
-    piVar1 = *(int **)(*(int *)((int)this + 0x8c) + 0x9c);
+    piVar1 = *(int **)(STField<int>(this,0x8c) + 0x9c);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar2 = (**(code **)(*piVar1 + 0x10))(piVar1,&local_14);
     if (iVar2 < 0) {

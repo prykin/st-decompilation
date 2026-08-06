@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00568010_param_1Enum. Cases:
@@ -13,7 +15,7 @@ void __thiscall FUN_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
   SoundClassTy *local_c;
   uint local_8;
 
-  if (*(int *)((int)this + 0xf8b) != 0) {
+  if (STField<int>(this,0xf8b) != 0) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;

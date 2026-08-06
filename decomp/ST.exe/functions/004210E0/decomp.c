@@ -212,7 +212,7 @@ LAB_004212f3:
     puVar22 = (byte *)(puVar22 + 1);
   }
   *(undefined2 *)puVar22 = *(undefined2 *)puVar17;
-  *(undefined1 *)((int)puVar22 + 2) = *(undefined1 *)((int)puVar17 + 2);
+  STField<undefined1>(puVar22,2) = STField<undefined1>(puVar17,2);
   puVar17 = (byte *)&pSVar15->field_0x93;
   puVar22 = (byte *)&local_18->field_0x67;
   for (iVar16 = 0x1b; iVar16 != 0; iVar16 = iVar16 + -1) {
@@ -345,7 +345,7 @@ LAB_004212f3:
       puVar17[2] = pAVar10->field_0008;
       puVar17[3] = pAVar10->field_000C;
       *(undefined2 *)(puVar17 + 4) = pAVar10->field_0010;
-      *(undefined1 *)((int)puVar17 + 0x12) = pAVar10->field_0012;
+      STField<undefined1>(puVar17,0x12) = pAVar10->field_0012;
       local_18->field_0201 = iVar18;
       local_18->field_0205 = 0x13;
       pAVar11 = local_14->field_0199;
@@ -355,7 +355,7 @@ LAB_004212f3:
       puVar17[2] = pAVar11->field_0008;
       puVar17[3] = pAVar11->field_000C;
       *(undefined2 *)(puVar17 + 4) = pAVar11->field_0010;
-      *(undefined1 *)((int)puVar17 + 0x12) = pAVar11->field_0012;
+      STField<undefined1>(puVar17,0x12) = pAVar11->field_0012;
       local_18->field_0209 = iVar18 + 0x13;
       local_18->field_020D = 0x13;
       pAVar7 = local_14->field_01AD;
@@ -363,7 +363,7 @@ LAB_004212f3:
       *puVar17 = pAVar7->field_0000;
       puVar17[1] = pAVar7->field_0004;
       *(undefined2 *)(puVar17 + 2) = pAVar7->field_0008;
-      *(undefined1 *)((int)puVar17 + 10) = pAVar7->field_000A;
+      STField<undefined1>(puVar17,10) = pAVar7->field_000A;
       local_18->field_0231 = iVar18 + 0x26;
       local_18->field_0235 = 0xb;
       pAVar8 = local_14->field_01B1;
@@ -371,7 +371,7 @@ LAB_004212f3:
       *puVar17 = pAVar8->field_0000;
       puVar17[1] = pAVar8->field_0004;
       *(undefined2 *)(puVar17 + 2) = pAVar8->field_0008;
-      *(undefined1 *)((int)puVar17 + 10) = pAVar8->field_000A;
+      STField<undefined1>(puVar17,10) = pAVar8->field_000A;
       local_18->field_0239 = iVar18 + 0x31;
       local_18->field_023D = 0xb;
       puVar17 = (byte *)(local_14->field_01BD);
@@ -400,7 +400,7 @@ LAB_004212f3:
         *puVar17 = pAVar7->field_0000;
         puVar17[1] = pAVar7->field_0004;
         *(undefined2 *)(puVar17 + 2) = pAVar7->field_0008;
-        *(undefined1 *)((int)puVar17 + 10) = pAVar7->field_000A;
+        STField<undefined1>(puVar17,10) = pAVar7->field_000A;
         local_18->field_0231 = iVar18 + 0x124;
         local_18->field_0235 = 0xb;
         pAVar8 = local_14->field_01B1;
@@ -408,7 +408,7 @@ LAB_004212f3:
         *puVar17 = pAVar8->field_0000;
         puVar17[1] = pAVar8->field_0004;
         *(undefined2 *)(puVar17 + 2) = pAVar8->field_0008;
-        *(undefined1 *)((int)puVar17 + 10) = pAVar8->field_000A;
+        STField<undefined1>(puVar17,10) = pAVar8->field_000A;
         local_18->field_0239 = iVar18 + 0x12f;
         local_18->field_023D = 0xb;
         puVar9 = local_14->field_01C5;
@@ -552,7 +552,7 @@ LAB_004212f3:
         *puVar17 = pAVar5->field_0000;
         puVar17[1] = pAVar5->field_0004;
         *(undefined2 *)(puVar17 + 2) = pAVar5->field_0008;
-        *(undefined1 *)((int)puVar17 + 10) = pAVar5->field_000A;
+        STField<undefined1>(puVar17,10) = pAVar5->field_000A;
         pAVar14->field_0241 = iVar16 + 0x18;
         pAVar14->field_0245 = 0xb;
         pAVar6 = local_14->field_01B9;
@@ -560,7 +560,7 @@ LAB_004212f3:
         *puVar17 = pAVar6->field_0000;
         puVar17[1] = pAVar6->field_0004;
         *(undefined2 *)(puVar17 + 2) = pAVar6->field_0008;
-        *(undefined1 *)((int)puVar17 + 10) = pAVar6->field_000A;
+        STField<undefined1>(puVar17,10) = pAVar6->field_000A;
         pAVar14->field_0249 = iVar16 + 0x23;
         pAVar14->field_024D = 0xb;
         g_currentExceptionFrame = local_6c.previous;

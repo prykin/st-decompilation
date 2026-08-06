@@ -55,8 +55,7 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
   sub_00416240(this,*(ushort *)&this->field_02C1,*(short *)&this->field_02C5,
                *(ushort *)&this->field_02C9);
   FreeAndNull(&local_28);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar3 = *(int *)((int)param_1 + 0xc2);
+  iVar3 = STField<int>(param_1,0xc2);
   piVar7 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0xc6))->field_0x0 + iVar3);
   STAllPlayersC::RestoreGObjData((STAllPlayersC *)this,piVar7 + 1);
   puVar8 = (byte *)((int)(piVar7 + 1) + *piVar7);

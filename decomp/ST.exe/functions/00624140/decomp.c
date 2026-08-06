@@ -46,7 +46,7 @@ FUN_00624140(void *this,int param_1,int param_2,Global_sub_0061BDB0_param_1Enum 
           *param_7 = iVar4;
           return 2;
         }
-        sVar7 = *(short *)((int)this + 0x34);
+        sVar7 = STField<short>(this,0x34);
         if (sVar7 < 0) {
           iVar4 = (short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
                          (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f)) + -1;
@@ -55,8 +55,8 @@ FUN_00624140(void *this,int param_1,int param_2,Global_sub_0061BDB0_param_1Enum 
           iVar4 = (int)(short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
                               (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f));
         }
-        if (iVar4 == *(short *)((int)this + 0x47)) {
-          sVar7 = *(short *)((int)this + 0x36);
+        if (iVar4 == STField<short>(this,0x47)) {
+          sVar7 = STField<short>(this,0x36);
           if (sVar7 < 0) {
             iVar4 = (short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
                            (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f)) + -1;
@@ -65,8 +65,8 @@ FUN_00624140(void *this,int param_1,int param_2,Global_sub_0061BDB0_param_1Enum 
             iVar4 = (int)(short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
                                 (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f));
           }
-          if (iVar4 == *(short *)((int)this + 0x49)) {
-            sVar7 = *(short *)((int)this + 0x38);
+          if (iVar4 == STField<short>(this,0x49)) {
+            sVar7 = STField<short>(this,0x38);
             if (sVar7 < 0) {
               iVar4 = (short)((sVar7 / 200 + (sVar7 >> 0xf)) -
                              (short)((longlong)(int)sVar7 * 0x51eb851f >> 0x3f)) + -1;
@@ -75,7 +75,7 @@ FUN_00624140(void *this,int param_1,int param_2,Global_sub_0061BDB0_param_1Enum 
               iVar4 = (int)(short)((sVar7 / 200 + (sVar7 >> 0xf)) -
                                   (short)((longlong)(int)sVar7 * 0x51eb851f >> 0x3f));
             }
-            if (iVar4 == *(short *)((int)this + 0x4b)) {
+            if (iVar4 == STField<short>(this,0x4b)) {
               return 0;
             }
           }
@@ -87,9 +87,9 @@ FUN_00624140(void *this,int param_1,int param_2,Global_sub_0061BDB0_param_1Enum 
         *param_7 = iVar4;
         return 2;
       }
-      iVar4 = (*(ST3DSMAPContext **)((int)this + 0x211))->field_0380;
+      iVar4 = (STField<ST3DSMAPContext *>(this,0x211))->field_0380;
       ST3DSMAPContext::sub_006E3310
-                (*(ST3DSMAPContext **)((int)this + 0x211),(iVar4 * param_4) / 0xc9,
+                (STField<ST3DSMAPContext *>(this,0x211),(iVar4 * param_4) / 0xc9,
                  (int *)((iVar4 * param_5) / 0xc9),(int)pGVar3,(int *)&param_3);
       lVar6 = Library::MSVCRT::__ftol();
       iVar4 = (int)(short)lVar6;

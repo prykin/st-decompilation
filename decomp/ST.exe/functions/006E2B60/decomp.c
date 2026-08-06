@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall
 FUN_006e2b60(void *this,AnonShape_006E2B60_E36B924C *param_1,int param_2,int param_3,int *param_4)
@@ -14,7 +16,7 @@ FUN_006e2b60(void *this,AnonShape_006E2B60_E36B924C *param_1,int param_2,int par
   local_c = 0;
   if (0 < param_1->field_0024) {
     do {
-      if ((*(byte *)((int)this + 0xac) & *pbVar2) != 0) {
+      if ((STField<byte>(this,0xac) & *pbVar2) != 0) {
         FUN_006e2c30(this,(int *)((uint)pbVar2[1] * 0x10 + param_2));
         FUN_006e2c30(this,(int *)((uint)pbVar2[2] * 0x10 + param_2));
         FUN_006e2c30(this,(int *)((uint)pbVar2[3] * 0x10 + param_2));

@@ -224,14 +224,39 @@ The accepted corpus contains the following concrete debt:
 
 | Issue | Occurrences | Functions | Next evidence source |
 | --- | ---: | ---: | --- |
-| `undefined_type` | 16,278 | 3,574 | definitions, consumers, ABI-width families |
-| `raw_pointer_offset` | 2,813 | 1,094 | cross-function pointer families and complete records |
+| `undefined_type` | 18,595 | 3,658 | definitions, consumers, ABI-width families; compatibility spelling is now available |
+| `raw_pointer_offset` | 2,240 | 1,024 | cross-function pointer families and complete records |
 | `raw_indirect_call` | 1,885 | 773 | stored callback targets and physical vtable slots |
-| `packed_or_unaligned_piece` | 1,047 | 214 | exact packed members or explicit unaligned helpers |
-| `return_width_artifact` | 1,062 | 142 | whole-CFG EAX and caller-consumer evidence |
+| `packed_or_unaligned_piece` | 0 raw partial tokens | 0 | exact exported pieces now use audited runtime helpers; semantic packed-member refinement remains |
+| `return_width_artifact` | 558 uses | 138 | whole-CFG EAX/x87 and caller-consumer evidence; declarations are no longer double-counted |
 | `unresolved_register_input` | 472 | 132 | boundary ABI, SEH/setjmp, and true live-ins |
 | `dynamic_array_indexing` | 76 | 39 | per-owner DArray element descriptors |
 | `flattened_global_record_array` | 36 | 17 | exact member identity inside proven record arrays |
+
+### Q-044 Build a measurable C++ extraction boundary
+
+Status: implemented and accepted. `STDecompExport` now emits
+`compile_readiness_summary.json` and address-stable
+`compile_readiness_issues.jsonl`, independently of the semantic quality audit.
+The generated `pseudocode_runtime.h` supplies exact-width decompiler scalar and
+calling-convention compatibility, opaque unresolved callable values, byte-safe
+`CONCAT`/`SUB`/carry helpers, read/write lvalue pieces, read-only literal pieces,
+and typed byte-offset fields. The final three `"literal"._offset_width_` forms
+are gone; the corpus has zero residual Ghidra partial-piece syntax.
+
+The compatibility layer covers 34,795 occurrences and compiles as a C++17
+header. It deliberately leaves every use in the readiness inventory and does
+not promote a byte offset to a class field. The example ownerless receiver at
+`00717910` now uses `STField<RecoveredSourceFamily_dibcopy *>(this, 0x28)`:
+the member value type is proven, while the receiver identity is not. A broad
+database receiver-record experiment was rejected after the ABI gate reported
+22 hard downstream regressions; no part of that mutation was retained.
+
+The accepted headless export keeps semantic Program hash
+`e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0`,
+contains 10,392 function records and 5,712 bodies, and passes both export and
+ABI gates. The next major boundary is a deterministic declaration/translation-
+unit generator; see `docs/compile-readiness.md`.
 
 ### Q-041 Closed narrow returns and exact address/piece presentation
 

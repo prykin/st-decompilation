@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 * __cdecl FUN_0070c9e0(AnonShape_0070C9E0_7137F001 *param_1,char param_2,uint *param_3)
 

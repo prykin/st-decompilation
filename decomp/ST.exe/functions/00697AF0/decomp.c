@@ -35,10 +35,10 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
         if (uVar7 < uVar2) {
           pvVar5 = DArrayAt<void>(pDVar1, uVar7);
         }
-        if (*(char *)((int)pvVar5 + 1) == '\0') {
-          iVar6 = *(int *)((int)pvVar5 + 2) / *(int *)((int)this + 0x5833);
+        if (STField<char>(pvVar5,1) == '\0') {
+          iVar6 = STField<int>(pvVar5,2) / STField<int>(this,0x5833);
           pAVar8 = (AnonShape_00697AF0_A94F4D28 *)
-                   (*(int *)((int)pvVar5 + 2) % *(int *)((int)this + 0x5833));
+                   (STField<int>(pvVar5,2) % STField<int>(this,0x5833));
           local_14 = local_14 + 1;
           pAVar3 = pAVar8;
           iVar4 = iVar6;

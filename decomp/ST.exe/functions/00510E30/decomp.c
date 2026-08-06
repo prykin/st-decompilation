@@ -122,9 +122,9 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
           do {
             pvVar6 = DArrayAt<void>(pDVar5, uVar18);
 LAB_00510f80:
-            if (((*(char *)((int)pvVar6 + 8) == *(char *)(puVar14 + 2)) &&
-                (*(int *)((int)pvVar6 + 9) == *(int *)((int)puVar14 + 9))) &&
-               (*(int *)((int)pvVar6 + 0xd) == *(int *)((int)puVar14 + 0xd))) {
+            if (((STField<char>(pvVar6,8) == *(char *)(puVar14 + 2)) &&
+                (STField<int>(pvVar6,9) == STField<int>(puVar14,9))) &&
+               (STField<int>(pvVar6,0xd) == STField<int>(puVar14,0xd))) {
               bVar3 = false;
               goto LAB_00510fa9;
             }

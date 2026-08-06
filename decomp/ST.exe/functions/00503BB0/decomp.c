@@ -121,8 +121,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
     return;
   case 4:
     memset(local_78, 0, 0x21); /* compiler bulk-zero initialization */
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_78[0]._0_1_ = 10;
+    STPiece<0,1>(local_78[0]) = 10;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_78,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
@@ -152,8 +151,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
     break;
   case 0x48:
     memset(local_9c, 0, 0x21); /* compiler bulk-zero initialization */
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_9c[0]._0_1_ = 0x14;
+    STPiece<0,1>(local_9c[0]) = 0x14;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_9c,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;

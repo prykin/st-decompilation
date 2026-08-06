@@ -14,20 +14,23 @@ boundary and concrete before/after forms.
 ## Current post-ABI snapshot
 
 The last completed corpus contains 5,712 function bodies.
-`pseudocode_idioms.jsonl` records 5,146 function/kind rows across 3,144 bodies
-(55.0%); kinds overlap:
+`pseudocode_idioms.jsonl` records 4,563 function/kind rows across 2,987 bodies
+(52.3%); kinds overlap. The table below uses the narrowest current inventory
+for each row (`pseudocode_idioms`, `decomp_quality`, or `compile_readiness`), so
+it should not be summed. For the complete compilation-facing view, see
+[`compile-readiness.md`](compile-readiness.md).
 
 | Remaining presentation class | Functions | Occurrences | Main next step |
 | --- | ---: | ---: | --- |
-| Stack-slot lifetime reuse | 469 | 4,312 | Split only address-stable HighFunction merge groups; inseparable groups remain presentation debt. |
-| Raw pointer + constant offset | 959 | 2,384 | Recover compatible pointer families; retain real byte-buffer arithmetic. |
-| Packed/piece/CONCAT value | 477 | 2,059 | Use discriminator-local union facets, bit extraction, or explicit unaligned access. |
-| Raw indirect call | 826 | 2,053 | Recover callback/COM/vtable slot prototypes; audit likely unclassified runtime code separately. |
-| Residual return-width artifact | 146 | 1,052 | Distinguish return width, register clobbers, x87 stack outputs, and merged high variables. |
+| Stack-slot lifetime reuse | 467 | 4,291 | Split only address-stable HighFunction merge groups; inseparable groups remain presentation debt. |
+| Raw pointer + constant offset | 1,024 | 2,240 | Recover compatible pointer families; retain real byte-buffer arithmetic. |
+| Packed/piece compatibility view | 222 | 1,071 | Replace `STPiece` only with a discriminator-local union facet, named field, or equally exact packed helper. |
+| Raw indirect call | 773 | 1,885 | Recover callback/COM/vtable slot prototypes; audit likely unclassified runtime code separately. |
+| Residual return-width use | 138 | 558 | Distinguish return width, register clobbers, x87 stack outputs, and merged high variables. |
 | Terminal debug trap | 968 | 1,277 | Already normalized to standalone noreturn `STDebugBreak()`. |
-| Residual live-in register | 183 | 758 | Verify function boundaries, SEH/setjmp state, and calling conventions. |
-| Runtime-stride DArray indexing | 230 | 434 | Present through a typed `DArrayAt<T>` source helper; a static datatype cannot fold it. |
-| Flattened player record array | 55 | 92 | Recompose only after exact base, stride, field, and index proof. |
+| Residual live-in register | 132 | 472 | Verify function boundaries, SEH/setjmp state, and calling conventions. |
+| Runtime-stride DArray indexing | 39 | 76 | Present through a typed `DArrayAt<T>` source helper; a static datatype cannot fold it. |
+| Flattened global record array | 17 | 36 | Recompose only after exact base, stride, field, and index proof. |
 
 ## Broad recursive textual audit
 
@@ -38,16 +41,16 @@ numbers of unique recovered objects:
 
 | Residual class | Functions | Matches | Interpretation |
 | --- | ---: | ---: | --- |
-| Scalar cast over a generic structure field | 809 | 4,873 | Usually a wrong receiver/pointer family or a field-width overlap; prioritize this structural cluster. |
-| Any generic `field_XXXX` name | 2,450 | 60,514 | Mostly semantic naming debt; a generic name alone does not mean the width/layout is wrong. |
-| Generic global aggregate | 36 | 154 | Singleton/aggregate layout is present but its global and/or member semantics are unnamed. |
-| Anonymous recovered type | 1,326 | 4,830 | Cross-function shape-family consolidation remains incomplete. |
-| Explicit `undefined*` type | 3,590 | 16,305 | Mixed prototype, local, field, and return-type debt; not all instances are independently actionable. |
-| Generic `DAT/PTR/UNK` symbol | 1,577 | 15,890 | Requires scalar/string/table/singleton/array classification before naming. |
-| `goto` or `LAB_*` control-flow label | 917 | 11,723 | Includes legitimate optimized shared tails as well as still-unstructured CFGs. |
-| Raw indirect call spelling | 826 | 2,092 | Callback/vtable/function-pointer prototype debt. |
-| Unresolved register input | 183 | 766 | ABI, boundary, or SEH/setjmp live-in debt. |
-| Packed/unaligned or partial-piece spelling | 293 | 1,394 | Packed access, missing stack aggregate, or SSA merge. |
+| Scalar cast over a generic structure field | 768 | 4,720 | Usually a wrong receiver/pointer family or a field-width overlap; prioritize this structural cluster. |
+| Any generic `field_XXXX` name | 2,434 | 60,749 | Mostly semantic naming debt; a generic name alone does not mean the width/layout is wrong. |
+| Generic global aggregate | 37 | 155 | Singleton/aggregate layout is present but its global and/or member semantics are unnamed. |
+| Anonymous recovered type | 1,261 | 4,166 | Cross-function shape-family consolidation remains incomplete. |
+| Explicit `undefined*` type | 3,658 | 18,595 | Mixed prototype, local, field, and return-type debt; aliases now make it syntactically expressible, not semantically resolved. |
+| Generic `DAT/PTR/UNK` symbol | 1,583 | 15,894 | Requires scalar/string/table/singleton/array classification before naming. |
+| `goto` or `LAB_*` control-flow label | 915 | 11,738 | Includes legitimate optimized shared tails as well as still-unstructured CFGs. |
+| Raw indirect call spelling | 773 | 1,885 | Callback/vtable/function-pointer prototype debt. |
+| Unresolved register input | 132 | 472 | ABI, boundary, or SEH/setjmp live-in debt. |
+| Raw pointer offset | 1,024 | 2,240 | Missing complete pointer family or intentional byte-buffer arithmetic. |
 
 `STDecompExport` now regenerates `decomp_quality_summary.json` and
 `decomp_quality_issues.jsonl` from this recursive pass. The JSONL rows carry the

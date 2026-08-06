@@ -20,11 +20,11 @@ int * __thiscall FUN_0074cb34(void *this,int *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar2 = (**(code **)(*param_1 + 0x14))(param_1,local_20,local_18);
   bVar5 = iVar2 == 0;
-  local_c = *(int **)(*(int *)((int)this + 0x90) + 0x98);
+  local_c = *(int **)(STField<int>(this,0x90) + 0x98);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar2 = (**(code **)(*local_c + 0x1c))
                     (local_c,&param_1,-(uint)bVar5 & (uint)local_20,-(uint)bVar5 & (uint)local_18,
-                     *(int *)((int)this + 0x54) != 0);
+                     STField<int>(this,0x54) != 0);
   if (iVar2 < 0) {
 LAB_0074cbe0:
     param_1 = nullptr;
@@ -45,7 +45,7 @@ LAB_0074cbe0:
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar2 = (**(code **)(*piVar1 + 0x3c))(piVar1);
-      if ((iVar2 == 0) || (*(int *)((int)this + 0x54) != 0)) {
+      if ((iVar2 == 0) || (STField<int>(this,0x54) != 0)) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*param_1 + 0x40))(param_1,1);
       }
@@ -65,7 +65,7 @@ LAB_0074cbe0:
     }
     else {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar2 = (**(code **)(*local_8 + 0x50))(local_8,0x28,*(int *)((int)this + 0x8c) + 0xa8);
+      iVar2 = (**(code **)(*local_8 + 0x50))(local_8,0x28,STField<int>(this,0x8c) + 0xa8);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*local_8 + 8))(local_8);
       if (iVar2 < 0) {
@@ -74,7 +74,7 @@ LAB_0074cbe0:
         goto LAB_0074cbe0;
       }
     }
-    *(undefined4 *)((int)this + 0x54) = 0;
+    STField<undefined4>(this,0x54) = 0;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar2 = (**(code **)(*piVar1 + 0x44))(piVar1,local_30,local_28);
     if (iVar2 == 0) {

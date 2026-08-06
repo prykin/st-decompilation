@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_004a0ee0(void *this,ushort param_1)
 
@@ -8,17 +10,17 @@ void __thiscall FUN_004a0ee0(void *this,ushort param_1)
   ushort local_18;
 
   thunk_FUN_0040cdb0(this,(uint)param_1);
-  if (((*(int *)((int)this + 0x1e6) == 6) &&
-      (array = *(DArrayTy **)((int)this + 0x22e), array != nullptr)) &&
+  if (((STField<int>(this,0x1e6) == 6) &&
+      (array = STField<DArrayTy *>(this,0x22e), array != nullptr)) &&
      (index = 0, 0 < (int)array->count)) {
     do {
       DArrayGetElement(array,index,&local_1c);
       if (local_18 == param_1) {
         local_18 = 0xffff;
         local_1c = 0;
-        Library::DKW::TBL::DArrayPut(*(DArrayTy **)((int)this + 0x22e),index,&local_1c);
+        Library::DKW::TBL::DArrayPut(STField<DArrayTy *>(this,0x22e),index,&local_1c);
       }
-      array = *(DArrayTy **)((int)this + 0x22e);
+      array = STField<DArrayTy *>(this,0x22e);
       index = index + 1;
     } while ((int)index < (int)array->count);
   }

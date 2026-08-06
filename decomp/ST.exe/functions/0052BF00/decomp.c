@@ -506,16 +506,14 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
       }
       if (local_10->field_0068 != MVar11) {
         if (local_10->field_0068 != 0) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_78._16_4_ = 0x4202;
+          STPiece<16,4>(local_78) = 0x4202;
           sub_0052B760(local_10,&local_78);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_78);
         }
         this_00->field_0068 = MVar11;
         if (MVar11 != 0) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_78._16_4_ = 0x4201;
+          STPiece<16,4>(local_78) = 0x4201;
           sub_0052B760(this_00,&local_78);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_78);

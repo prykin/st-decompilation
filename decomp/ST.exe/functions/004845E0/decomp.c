@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004845E0_param_1Enum. Cases:
@@ -30,8 +32,7 @@ STGameObjC::FUN_004845e0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum pa
     if (param_2[0x12d] != 0) {
       return 0;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)((int)param_2 + 0x245) == 6) {
+    if (STField<int>(param_2,0x245) == 6) {
       return 0;
     }
   }
@@ -102,11 +103,11 @@ STGameObjC::FUN_004845e0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum pa
     iVar4 = (**(code **)(*this_00 + 0x2c))();
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if (((iVar4 == 0x16) || (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 == 0x25)) &&
-       (*(int *)((int)this_00 + 0x732) == 1)) {
+       (STField<int>(this_00,0x732) == 1)) {
       bVar7 = *(byte *)(this_00 + 9);
       bVar1 = *(byte *)&this->field_0024;
       /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-      param_2 = (int *)CONCAT13(bVar1,param_2._0_3_);
+      param_2 = (int *)CONCAT13(bVar1,STPiece<0,3>(param_2));
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
       if (DAT_00808a8f == '\0') {
         if (bVar7 == bVar1) {
@@ -651,7 +652,7 @@ LAB_00485b29:
       iVar4 = (**(code **)(*this_00 + 0x2c))();
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if (((iVar4 != 0x16) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x25)) ||
-         (*(int *)((int)this_00 + 0x732) != 1)) {
+         (STField<int>(this_00,0x732) != 1)) {
         int scalar_param_2 = uint)*(byte *)(this_00 + 9; /* split integer lifetime from pointer-typed SSA storage */
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (STGameObjC_sub_004845E0_param_1Enum)*(byte *)&this->field_0024;
@@ -691,7 +692,7 @@ cf_common_exit_00484B10:
       bVar7 = *(byte *)(this_00 + 9);
       bVar1 = *(byte *)&this->field_0024;
       /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-      param_2 = (int *)CONCAT13(bVar1,param_2._0_3_);
+      param_2 = (int *)CONCAT13(bVar1,STPiece<0,3>(param_2));
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
       if (DAT_00808a8f == '\0') {
         if (bVar7 == bVar1) {
@@ -928,7 +929,7 @@ LAB_004847df:
     if ((iVar4 != 0x16) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x25)) {
       return 0xc;
     }
-    if (*(int *)((int)this_00 + 0x732) != 1) {
+    if (STField<int>(this_00,0x732) != 1) {
       return 0xc;
     }
     bVar7 = *(byte *)(this_00 + 9);
@@ -1084,8 +1085,7 @@ LAB_00485002:
     STFishC::sub_004162F0
               ((STFishC *)this_00,(undefined2 *)((int)&local_8 + 2),
                (undefined2 *)((int)&param_1 + 2),(undefined2 *)((int)&param_2 + 2));
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    return (((int)param_2._2_2_ <= g_worldGrid.sizeZ + -2) - 1 & 0xffeb) + 0x16;
+    return (((int)STPiece<2,2>(param_2) <= g_worldGrid.sizeZ + -2) - 1 & 0xffeb) + 0x16;
   case CASE_11:
     iVar4 = thunk_FUN_00493cd0(this);
     if (iVar4 == 0) {

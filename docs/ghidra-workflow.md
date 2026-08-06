@@ -1722,6 +1722,16 @@ string labels, and CFG labels. Every issue and summary category records its
 `nonincreasing`, stage-transition, or informational. The export gate therefore
 blocks exact structural loss and critical ABI debt while reporting expected debt
 movement between recovery stages as a warning.
+Compilation readiness is intentionally a separate inventory.
+`compile_readiness_summary.json` distinguishes missing source/declaration
+assembly, compatibility-runtime uses, semantic debt, and truly residual
+Ghidra-only syntax; `compile_readiness_issues.jsonl` records every exact site by
+function address. `pseudocode_runtime.h` supplies C++17-compatible exact-width
+aliases, calling-convention macros, opaque unresolved callable values,
+`STPiece`/`STLiteralPiece`/`STField`, and only the observed byte-composition and
+carry helpers. These make the operation expressible without claiming a class or
+field name. The complete contract and current counts are in
+[`compile-readiness.md`](compile-readiness.md).
 Each unresolved expression also receives an idempotent `ST_PSEUDO[...]` comment
 immediately above it in `decomp.c`; reused bodies have old exporter comments
 removed and regenerated before the JSONL line numbers are recorded.
@@ -1833,7 +1843,7 @@ a new conflict is what requires another iteration.
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
 | `STExportRegressionGate` | Compare a fresh corpus with the prior central-index snapshot, report per-function quality deltas, reject exact structural/critical regressions, and write a reproducible export receipt. |
-| `STDecompExport` | Transactionally stage and promote the address-stable, dependency-fingerprinted LLM corpus so a failed long export cannot partially overwrite the accepted tree; export resolved thunk/call relations and executable coverage gaps; inline proven immutable strings; normalize terminal traps, compiler bulk-zero and `REP MOVS` loops (including exact structural field-based pointer advances and trailing byte stores), split integer-only lifetimes from pointer-typed SSA names, remove dead opaque-code-pointer declarations, reproduce observable live-out state, exact recovered row-major three-dimensional grid indexing through `STGridAt3D`, exact same-base affine cancellation, ABI-proven narrow-return piece assignments, exact low-byte/word composition, exact generated global-record interior addresses, exact C++ virtual-call sugar, and exact recovered DArray element lifetimes/addresses without persistently typing reused SSA storage; fingerprint only composite members actually rendered by each cached body and catalogue stage-aware pseudocode/quality debt. |
+| `STDecompExport` | Transactionally stage and promote the address-stable, dependency-fingerprinted LLM corpus so a failed long export cannot partially overwrite the accepted tree; export resolved thunk/call relations and executable coverage gaps; inline proven immutable strings; normalize terminal traps, compiler bulk-zero and `REP MOVS` loops (including exact structural field-based pointer advances and trailing byte stores), split integer-only lifetimes from pointer-typed SSA names, remove dead opaque-code-pointer declarations, reproduce observable live-out state, exact recovered row-major three-dimensional grid indexing through `STGridAt3D`, exact same-base affine cancellation, ABI-proven narrow-return piece assignments, exact low-byte/word composition, exact generated global-record interior addresses, exact C++ virtual-call sugar, and exact recovered DArray element lifetimes/addresses without persistently typing reused SSA storage; emit the C++17 compatibility boundary plus address-stable compile-readiness summary/sites; fingerprint only composite members actually rendered by each cached body and catalogue stage-aware pseudocode/quality debt. |
 
 ## Git and Ghidra database hygiene
 

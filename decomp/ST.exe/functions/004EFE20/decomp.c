@@ -62,8 +62,8 @@ LAB_004eff2c:
           memmove(puVar8, pbVar6, 0x1e); /* compiler REP MOVS byte copy */
         }
         else {
-          *local_c = *(undefined4 *)((int)pGVar5 + 10);
-          local_c[1] = *(undefined4 *)((int)pGVar5 + 0xe);
+          *local_c = STField<undefined4>(pGVar5,10);
+          local_c[1] = STField<undefined4>(pGVar5,0xe);
         }
       }
       local_8 = local_8 + 1;

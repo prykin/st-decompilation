@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0052AFE0 -> 006E65C0 @ 0052B250; MOVSX at 0052B244 establishes signed source width 2 |
@@ -34,13 +36,13 @@ FUN_006e65c0(void *this,undefined4 param_1,char param_2,float param_3,float para
   if (pvVar1 == nullptr) {
     return 0xfffffffe;
   }
-  *(undefined4 *)((int)pvVar1 + 0x18) = param_1;
-  *(char *)((int)pvVar1 + 0x17) = param_2;
-  *(float *)((int)pvVar1 + 4) = param_3;
-  *(float *)((int)pvVar1 + 8) = param_4;
-  *(ushort *)((int)pvVar1 + 0xe) = param_5;
-  *(ushort *)((int)pvVar1 + 0x10) = param_6;
-  *(ushort *)((int)pvVar1 + 0x12) = param_7;
+  STField<undefined4>(pvVar1,0x18) = param_1;
+  STField<char>(pvVar1,0x17) = param_2;
+  STField<float>(pvVar1,4) = param_3;
+  STField<float>(pvVar1,8) = param_4;
+  STField<ushort>(pvVar1,0xe) = param_5;
+  STField<ushort>(pvVar1,0x10) = param_6;
+  STField<ushort>(pvVar1,0x12) = param_7;
   FUN_006b9910((undefined4 *)((int)this + 0x442),(int)pvVar1);
   return 0;
 }

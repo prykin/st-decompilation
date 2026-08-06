@@ -39,6 +39,10 @@ Original binaries are local under ignored `bin/` and must not be committed.
   recursive quality audit. Use the stable function address and issue kind when
   selecting the next automation cluster; do not infer corpus quality from one
   large `decomp.c` example.
+- `compile_readiness_summary.json` and `compile_readiness_issues.jsonl` separate
+  syntactic/runtime compatibility, missing source/declaration assembly, and
+  semantic recovery debt. Compatibility helpers make exact pseudocode
+  expressible; they are not evidence for a recovered field, class, or callback.
 - `call_relations.jsonl` is the address-authoritative call identity: keep the
   direct entry, thunk chain, and resolved target together, especially for
   overloads. `coverage_summary.json`/`unclaimed_ranges.jsonl` are the source of

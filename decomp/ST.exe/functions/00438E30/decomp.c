@@ -59,9 +59,9 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
   piVar3 = local_8;
   if (*local_8 != 0) {
     local_c = (undefined4 *)(param_1 * 0x10 + 0x7f5027 + iVar4);
-    if (*(DArrayTy **)((int)local_c + 10) != nullptr) {
-      DArrayDestroy(*(DArrayTy **)((int)local_c + 10));
-      *(undefined4 *)((int)local_c + 10) = 0;
+    if (STField<DArrayTy *>(local_c,10) != nullptr) {
+      DArrayDestroy(STField<DArrayTy *>(local_c,10));
+      STField<undefined4>(local_c,10) = 0;
       *local_c = 0;
     }
   }
@@ -75,8 +75,8 @@ LAB_00438f65:
     piVar1 = (int *)(param_1 * 0x10 + 0x7f5027 + iVar4);
     *piVar1 = iVar6;
     piVar1[1] = piVar3[1];
-    *(undefined2 *)((int)piVar1 + 0xe) = *(undefined2 *)((int)piVar3 + 0xe);
-    Library::DKW::TBL::FUN_006afe40((int *)((int)piVar1 + 10),*(uint **)((int)piVar3 + 10));
+    STField<undefined2>(piVar1,0xe) = STField<undefined2>(piVar3,0xe);
+    Library::DKW::TBL::FUN_006afe40((int *)((int)piVar1 + 10),STField<uint *>(piVar3,10));
     g_currentExceptionFrame = local_50.previous;
     return;
   }

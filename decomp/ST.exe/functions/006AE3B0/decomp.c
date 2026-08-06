@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7
                 ,uint param_8,int param_9,int param_10,undefined4 *param_11,int param_12)
@@ -137,7 +139,7 @@ joined_r0x006ae66d:
       *(short *)((int)local_2c + -10) = (short)local_20;
       *(short *)puVar10 = (short)local_24;
       uVar5 = FUN_006a6320(local_3c);
-      *(short *)((int)local_2c + 2) = (short)uVar5;
+      STField<short>(local_2c,2) = (short)uVar5;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_9 = local_20;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

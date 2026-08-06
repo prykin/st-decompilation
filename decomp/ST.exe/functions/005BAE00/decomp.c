@@ -123,7 +123,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
               case '\x03':
                 wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c0bc);
                 local_2c = *pcVar11;
-                local_2b = *(undefined4 *)((int)psVar6 + 3);
+                local_2b = STField<undefined4>(psVar6,3);
                 local_27 = 0;
                 iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_2c,0
                                     );
@@ -134,8 +134,8 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\",&DAT_00807680,
                           PTR_s_SAVEGAME__0079c0b8,&DAT_00807ddd);
                 local_38 = *pcVar11;
-                local_37 = *(undefined4 *)((int)psVar6 + 3);
-                local_33 = *(undefined4 *)((int)psVar6 + 7);
+                local_37 = STField<undefined4>(psVar6,3);
+                local_33 = STField<undefined4>(psVar6,7);
                 iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_38,0
                                     );
                 local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(iVar8 == -0x70));
@@ -156,9 +156,8 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 this_00 = this_01->field_1A5B->field_02E6;
                 goto joined_r0x005bb4e0;
               }
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              if ((*(char *)((int)psVar6 + 0xd) == '\0') ||
-                 (((char)*local_18 == '\x01' && (*(char *)((int)psVar6 + 0xb) == '\x05')))) {
+              if ((STField<char>(psVar6,0xd) == '\0') ||
+                 (((char)*local_18 == '\x01' && (STField<char>(psVar6,0xb) == '\x05')))) {
                 if (g_cursorClass_00802A30 != nullptr) {
                   iVar8 = g_cursorClass_00802A30->field_00C9;
                   iVar9 = g_cursorClass_00802A30->field_00C5;
@@ -178,7 +177,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
             }
             thunk_FUN_005b6350(this_01,0x6121,local_14,0x11);
             DAT_0080877e = 0;
-            if (*(char *)((int)psVar6 + 0xb) == '\x01') {
+            if (STField<char>(psVar6,0xb) == '\x01') {
               DAT_008087be = 0;
             }
             CloseButtons(this_01,'\x01');

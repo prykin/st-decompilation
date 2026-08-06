@@ -55,7 +55,7 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     }
     *(undefined2 *)puVar5 = 0;
     this_00->field_1A5F = param_1;
-    *(undefined1 *)((int)puVar5 + 2) = 0;
+    STField<undefined1>(puVar5,2) = 0;
     if (param_1 == '\x01') {
       local_1a1 = 0x2340;
       if ((this_00->field_0065 != CASE_5) || (local_19d = 0, this_00->field_1A72 != '\0')) {
@@ -110,8 +110,7 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     PaintPrivider(this_00,param_2);
     this_00->field_0065 = CASE_3;
     thunk_FUN_00568bc0(&g_sound,0);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    if ((DAT_00807300._1_1_ & 8) != 0) {
+    if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
       thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,nullptr);
     }
     thunk_FUN_005b6730(this_00,0xb,'\0',-1);

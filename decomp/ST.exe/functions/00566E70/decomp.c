@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00566e70(void *this,DWORD_PTR param_1)
 
@@ -9,7 +11,7 @@ void __thiscall FUN_00566e70(void *this,DWORD_PTR param_1)
   FUN_007193f0();
   if ((DAT_00807300 & 0xff) == 2) {
     dwParam2 = (MCIDEVICEID *)((int)this + 0xf8f);
-    if (*(int *)((int)this + 0xf8f) != 0) {
+    if (STField<int>(this,0xf8f) != 0) {
       FUN_00719560((DWORD_PTR)dwParam2);
       FUN_00719c60((DWORD_PTR)dwParam2);
     }

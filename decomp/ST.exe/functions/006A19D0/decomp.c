@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl
 FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort *param_6,
@@ -44,28 +46,22 @@ FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
                                    '\x01') * '\x10' ^ (byte)local_8) & 0xf0;
       }
       else {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c._0_2_ = (ushort)uVar1;
+        STPiece<0,2>(local_c) = (ushort)uVar1;
         uVar2 = (ushort)local_c;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_c._2_2_ = (ushort)((uint)uVar1 >> 0x10);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar3 = local_c._2_2_;
+        STPiece<2,2>(local_c) = (ushort)((uint)uVar1 >> 0x10);
+        uVar3 = STPiece<2,2>(local_c);
         if (param_5 == 1) {
+          STPiece<2,1>(local_c) = (byte)((uint)uVar1 >> 0x10);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c._2_1_ = (byte)((uint)uVar1 >> 0x10);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c = CONCAT22(uVar3 ^ (local_c._2_1_ ^ bVar8) & 0xf,(ushort)local_c);
+          local_c = CONCAT22(uVar3 ^ (STPiece<2,1>(local_c) ^ bVar8) & 0xf,(ushort)local_c);
           uVar7 = Library::MSVCRT::FUN_0072e6c0();
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           bVar8 = ((char)((int)uVar7 % (int)*(short *)(&DAT_007df9c8 + (short)uVar5 * 2)) + '\x01')
-                  * '\x10' ^ local_c._2_1_;
+                  * '\x10' ^ STPiece<2,1>(local_c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c = CONCAT22(local_c._2_2_ ^ bVar8 & 0xf0,(ushort)local_c);
+          local_c = CONCAT22(STPiece<2,2>(local_c) ^ bVar8 & 0xf0,(ushort)local_c);
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c._0_1_ = (byte)uVar1;
+          STPiece<0,1>(local_c) = (byte)uVar1;
           local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(uVar2 ^ ((byte)local_c ^ bVar8) & 0xf));
           uVar7 = Library::MSVCRT::FUN_0072e6c0();
           bVar8 = ((char)((int)uVar7 % (int)*(short *)(&DAT_007df9c8 + (short)uVar5 * 2)) + '\x01')

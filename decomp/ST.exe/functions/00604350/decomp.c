@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STExplosion.
    Evidence: this_call_owners=[STExplosion]; agreed_this_calls=1; incoming_this_accesses=3;

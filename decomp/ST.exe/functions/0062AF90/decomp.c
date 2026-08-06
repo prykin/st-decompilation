@@ -63,15 +63,11 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
       *(undefined4 *)pAVar8 = 0;
       pAVar8 = (AnonShape_0062FCA0_22A9EE35 *)&pAVar8->field_0x4;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_38._28_4_ = param_3;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_38._20_4_ = param_1;
+    STPiece<28,4>(local_38) = param_3;
+    STPiece<20,4>(local_38) = param_1;
     local_c = local_8->field_0018;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_38._24_4_ = param_2;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_38._36_4_ = local_8->field_0004;
+    STPiece<24,4>(local_38) = param_2;
+    STPiece<36,4>(local_38) = local_8->field_0004;
     local_38.field_0020 = 1000;
     switch(local_8->field_0015) {
     case 1:
@@ -97,14 +93,10 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
       iVar5 = 6;
     }
     local_38.field_0028 = iVar5 << 0x10 | (uint)local_8->field_0014;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_38._0_4_ = 0xbe;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_38._4_4_ = 0xff;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_38._8_4_ = 0;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_38._12_4_ = 1;
+    STPiece<0,4>(local_38) = 0xbe;
+    STPiece<4,4>(local_38) = 0xff;
+    STPiece<8,4>(local_38) = 0;
+    STPiece<12,4>(local_38) = 1;
     if ((this_00 != nullptr) && (this_00->value_20 == 0xbe)) {
       thunk_FUN_006301b0(this_00,&local_38);
       return;

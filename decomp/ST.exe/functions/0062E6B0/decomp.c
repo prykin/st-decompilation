@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_0062e6b0(void *this,int param_1,int param_2)
 
@@ -16,8 +18,8 @@ undefined4 __thiscall FUN_0062e6b0(void *this,int param_1,int param_2)
     else {
       piVar3 = nullptr;
     }
-    thunk_FUN_0062e240(this,param_1,(int)*(short *)((int)piVar3 + 6),(int)(short)piVar3[2],
-                       (int)*(short *)((int)piVar3 + 10),*piVar3,1);
+    thunk_FUN_0062e240(this,param_1,(int)STField<short>(piVar3,6),(int)(short)piVar3[2],
+                       (int)STField<short>(piVar3,10),*piVar3,1);
     return 1;
   }
   return 0;

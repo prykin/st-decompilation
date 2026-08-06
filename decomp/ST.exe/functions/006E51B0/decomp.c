@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 006E51B0 returns stored into /CampaignTy+0x61 @ 00593058 | 006E51B0 returns stored into

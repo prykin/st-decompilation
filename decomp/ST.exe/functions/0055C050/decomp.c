@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0055C050 returns used as parameter 4 of DibPut @ 005A8830 */
@@ -10,9 +12,9 @@ byte * __thiscall FUN_0055c050(void *this,int param_1)
   int iVar3;
   int iVar4;
 
-  if (*(int *)((int)this + 0x40) == 0) {
-    thunk_FUN_0055bf20(this,*(undefined4 *)((int)this + 0x3c));
-    if (*(int *)((int)this + 0x40) == 0) {
+  if (STField<int>(this,0x40) == 0) {
+    thunk_FUN_0055bf20(this,STField<undefined4>(this,0x3c));
+    if (STField<int>(this,0x40) == 0) {
       return nullptr;
     }
   }
@@ -23,7 +25,7 @@ byte * __thiscall FUN_0055c050(void *this,int param_1)
                     (this,(char *)(param_1 + 0x10),*(ulong *)(param_1 + 0x25));
   pbVar2 = (byte *)Library::DKW::WGR::FUN_006b55f0
                              (nullptr,0,0,0,
-                              *(byte **)((int)this + 0x40),0,0,iVar1 * 0xe,iVar3,iVar4);
+                              STField<byte *>(this,0x40),0,0,iVar1 * 0xe,iVar3,iVar4);
   return pbVar2;
 }
 

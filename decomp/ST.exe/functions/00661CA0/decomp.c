@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=29;
@@ -77,9 +79,9 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
                 if (*puVar13 == local_c) {
                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   puVar5[10] = *(uint *)(param_3 + 0x18);
-                  *(short *)((int)puVar5 + 0xe) = local_18[0];
+                  STField<short>(puVar5,0xe) = local_18[0];
                   *(short *)(puVar5 + 4) = local_1c[0];
-                  *(undefined2 *)((int)puVar5 + 0x12) = local_6;
+                  STField<undefined2>(puVar5,0x12) = local_6;
                   puVar5[9] = 0;
                   goto LAB_00661e5f;
                 }
@@ -240,10 +242,9 @@ LAB_00661e5f:
       local_5c = *(undefined1 *)(param_3 + 0x14);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_5b = (undefined1)*(undefined2 *)(param_3 + 0x16);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      psStack_5a._0_1_ = (undefined1)((ushort)*(undefined2 *)(param_3 + 0x16) >> 8);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      psStack_5a._1_3_ = (undefined3)local_c;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STPiece<0,1>(psStack_5a) = (undefined1)((ushort)*(undefined2 *)(param_3 + 0x16) >> 8);
+      STPiece<1,3>(psStack_5a) = (undefined3)local_c;
       uStack_56 = (undefined1)(local_c >> 0x18);
       local_64 = (AnonShape_0068FD00_A5257008 *)0x6e;
       AiTactClassTy::GetAiMess(pAVar2,(AnonShape_0068FD00_A5257008 *)&local_64);
@@ -261,10 +262,9 @@ LAB_00661e5f:
       local_5c = *(undefined1 *)(param_3 + 0x14);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_5b = (undefined1)*(undefined2 *)(param_3 + 0x16);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      psStack_5a._0_1_ = (undefined1)((ushort)*(undefined2 *)(param_3 + 0x16) >> 8);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      psStack_5a._1_3_ = (undefined3)local_c;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      STPiece<0,1>(psStack_5a) = (undefined1)((ushort)*(undefined2 *)(param_3 + 0x16) >> 8);
+      STPiece<1,3>(psStack_5a) = (undefined3)local_c;
       uStack_56 = (undefined1)(local_c >> 0x18);
       local_64 = (AnonShape_0068FD00_A5257008 *)0x74;
       AiTactClassTy::GetAiMess(pAVar2,(AnonShape_0068FD00_A5257008 *)&local_64);

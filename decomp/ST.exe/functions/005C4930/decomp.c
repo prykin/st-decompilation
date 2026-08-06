@@ -111,8 +111,8 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
           else {
             pvVar4 = nullptr;
           }
-          if ((pvVar4 != nullptr) && (*(DArrayTy **)((int)pvVar4 + 0x50) != nullptr)) {
-            DArrayDestroy(*(DArrayTy **)((int)pvVar4 + 0x50));
+          if ((pvVar4 != nullptr) && (STField<DArrayTy *>(pvVar4,0x50) != nullptr)) {
+            DArrayDestroy(STField<DArrayTy *>(pvVar4,0x50));
           }
           pDVar6 = pSVar2->field_1F84;
           uVar7 = uVar7 + 1;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] typed_pointer_return.
    Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed

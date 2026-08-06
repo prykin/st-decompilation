@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined1 * __cdecl FUN_006ef3e0(LPCSTR param_1,undefined4 param_2)
 

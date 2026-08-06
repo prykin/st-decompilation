@@ -178,23 +178,22 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
       puVar8 = (byte *)(local_20);
       puVar10 = (byte *)((int)&this_00->field_0242 + 1);
       memmove(puVar10, puVar8, 0x28); /* compiler REP MOVS byte copy */
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_8 = *(uint *)((int)local_20 + 0x3e);
+      local_8 = STField<uint>(local_20,0x3e);
       STAllPlayersC::RestoreGObjData
                 ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x46 + (int)local_20));
       puVar8 = (byte *)(local_20);
       *(undefined4 *)&this_00->field_0x23b = local_20[0xb];
       this_00->field_0231 = local_20[10];
-      *(undefined4 *)((int)&this_00->field_023E + 1) = *(undefined4 *)((int)local_20 + 0x36);
+      *(undefined4 *)((int)&this_00->field_023E + 1) = STField<undefined4>(local_20,0x36);
       *(undefined2 *)&this_00->field_0x235 = *(undefined2 *)(local_20 + 0xc);
-      *(undefined2 *)&this_00->field_0x237 = *(undefined2 *)((int)local_20 + 0x32);
+      *(undefined2 *)&this_00->field_0x237 = STField<undefined2>(local_20,0x32);
       *(undefined2 *)&this_00->field_0x239 = *(undefined2 *)(local_20 + 0xd);
       local_3c = Library::DKW::LIB::MemAlloc(0x44);
       if (local_3c != nullptr) {
         iVar4 = 0;
         do {
           if (iVar4 == 8) {
-            *(int **)((int)local_3c + 0x20) = DAT_00806774;
+            STField<int *>(local_3c,0x20) = DAT_00806774;
           }
           else {
             *(int **)((int)local_3c + iVar4 * 4) = DAT_0080676c;

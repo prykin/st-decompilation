@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint FUN_006c6c80(int param_1)
 
@@ -20,8 +22,7 @@ uint FUN_006c6c80(int param_1)
     return 0xfffffffb;
   }
   bVar1 = false;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if (param_1._3_1_ == -1) {
+  if (STPiece<3,1>(param_1) == -1) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_8,1);
     if (uVar3 != 1) {
@@ -66,11 +67,10 @@ uint FUN_006c6c80(int param_1)
       *(uint *)(iVar2 + 0x56) = *(uint *)(iVar2 + 0x56) | 2;
       *(uint *)(iVar2 + 0x5a) = local_107 & 0xffff;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    if ((param_1._3_1_ == -7) && (3 < (byte)local_8)) {
+    if ((STPiece<3,1>(param_1) == -7) && (3 < (byte)local_8)) {
       *(byte *)(iVar2 + 0x5e) = local_108;
       *(short *)(iVar2 + 0x5f) = (short)local_107;
-      *(undefined1 *)(iVar2 + 0x61) = local_107._2_1_;
+      *(undefined1 *)(iVar2 + 0x61) = STPiece<2,1>(local_107);
       if ((short)local_107 != 0) {
         *(uint *)(iVar2 + 0x56) = *(uint *)(iVar2 + 0x56) | 2;
       }

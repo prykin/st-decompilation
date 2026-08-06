@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
    Evidence: this_call_owners=[STParticleC]; agreed_this_calls=2; incoming_this_accesses=3;

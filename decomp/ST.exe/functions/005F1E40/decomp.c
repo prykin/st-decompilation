@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -12,14 +14,14 @@ undefined4 * FUN_005f1e40(int param_1,int param_2,int param_3,int param_4,int pa
   }
   if (param_1 == 0) {
     puVar1 = ST3DSMAPContext::sub_006E9000
-                       (g_sT3DSMAPContext_00807598,**(undefined4 **)((int)puVar1 + 0x21),0x5a,0x35,
+                       (g_sT3DSMAPContext_00807598,*STField<undefined4 *>(puVar1,0x21),0x5a,0x35,
                         (float)param_3 * _DAT_007904f8 * _DAT_007904f0,
                         (float)param_4 * _DAT_007904f8 * _DAT_007904f0,
                         (float)param_5 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc,0);
     return (undefined4 *)puVar1;
   }
   puVar1 = ST3DSMAPContext::sub_006E9000
-                     (g_sT3DSMAPContext_00807598,**(undefined4 **)((int)puVar1 + 0x21),0x78,0x56,
+                     (g_sT3DSMAPContext_00807598,*STField<undefined4 *>(puVar1,0x21),0x78,0x56,
                       (float)(param_3 + 100) * _DAT_007904f8 * _DAT_007904f0,
                       (float)(param_4 + 100) * _DAT_007904f8 * _DAT_007904f0,
                       (float)param_5 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc,0);

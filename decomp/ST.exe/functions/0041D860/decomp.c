@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_0041d860(RecoveredRecord_DumpClassC_00495EC0 *param_1)
 

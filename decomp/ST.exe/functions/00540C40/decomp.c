@@ -45,8 +45,8 @@ undefined4 * __cdecl FUN_00540c40(void *param_1,uint *param_2,uint *param_3,int 
       while (iVar2 < param_4) {
         uVar3 = FUN_00710fb0(param_1,(byte *)puVar8);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar5 = iVar5 + *(int *)((int)param_1 + 0x58) +
-                        (int)*(short *)(*(int *)((int)param_1 + 0x9a) + 0x6a + (uVar3 & 0xffff) * 10
+        iVar5 = iVar5 + STField<int>(param_1,0x58) +
+                        (int)*(short *)(STField<int>(param_1,0x9a) + 0x6a + (uVar3 & 0xffff) * 10
                                        );
         local_c = local_c + 1;
         puVar8 = (uint *)((int)puVar8 + 1);

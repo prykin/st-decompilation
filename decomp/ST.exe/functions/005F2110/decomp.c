@@ -42,7 +42,7 @@ undefined4 __thiscall STManBasisC::sub_005F2110(STManBasisC *this,undefined4 *pa
         if ((uVar5 < pDVar2->count) &&
            (pvVar3 = DArrayAt<void>(pDVar2, uVar5),
            pvVar3 != nullptr)) {
-          *(undefined4 *)((int)pvVar3 + 0x18) = 0xffffffff;
+          STField<undefined4>(pvVar3,0x18) = 0xffffffff;
         }
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < (int)this->field_003C->count);

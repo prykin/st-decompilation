@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0056CBD0 -> 00566F30 @ 0056CEF3 | 0056CBD0 -> 00566F30 @ 0056CF15
@@ -16,7 +18,7 @@ void __thiscall FUN_00566f30(void *this,HWND param_1)
   FUN_007193f0();
   if ((DAT_00807300 & 0xff) == 2) {
     dwParam2 = (MCIDEVICEID *)((int)this + 0xf8f);
-    if (*(int *)((int)this + 0xf8f) != 0) {
+    if (STField<int>(this,0xf8f) != 0) {
       FUN_00719560((DWORD_PTR)dwParam2);
       FUN_00719c60((DWORD_PTR)dwParam2);
     }

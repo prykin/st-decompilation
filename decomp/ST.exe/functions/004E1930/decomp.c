@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
 
@@ -14,39 +16,39 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
   undefined2 local_e;
   undefined4 local_c;
 
-  if (*(int *)((int)this + 0x4d4) == 0) {
+  if (STField<int>(this,0x4d4) == 0) {
     param_2 = 0;
     *param_1 = 0;
   }
   else {
-    *param_1 = *(int *)((int)this + 0x4dc);
-    iVar1 = *(int *)((int)this + 0x4e0);
+    *param_1 = STField<int>(this,0x4dc);
+    iVar1 = STField<int>(this,0x4e0);
     if (iVar1 < param_2) {
       param_2 = iVar1;
     }
-    *(int *)((int)this + 0x4e0) = iVar1 - param_2;
+    STField<int>(this,0x4e0) = iVar1 - param_2;
     this_00 = (STResourceC *)
-              thunk_FUN_004d85e0(*(int *)((int)this + 0x5b0),*(int *)((int)this + 0x5b4),
-                                 *(int *)((int)this + 0x5b8));
+              thunk_FUN_004d85e0(STField<int>(this,0x5b0),STField<int>(this,0x5b4),
+                                 STField<int>(this,0x5b8));
     if (this_00 != nullptr) {
-      STResourceC::SetResource(this_00,*(int *)((int)this + 0x4e0),1);
+      STResourceC::SetResource(this_00,STField<int>(this,0x4e0),1);
     }
-    if ((*(int *)((int)this + 0x4e0) == 0) && (param_2 != 0)) {
-      *(undefined4 *)((int)this + 0x4d4) = 0;
-      pSVar3 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x30));
+    if ((STField<int>(this,0x4e0) == 0) && (param_2 != 0)) {
+      STField<undefined4>(this,0x4d4) = 0;
+      pSVar3 = thunk_FUN_0042b760(STField<char>(this,0x24),STField<ushort>(this,0x30));
       if ((pSVar3 != nullptr) && ((undefined4 *)pSVar3->field_001C != nullptr)
          ) {
-        local_c = *(undefined4 *)((int)this + 0x18);
-        local_e = *(undefined2 *)((int)this + 0x32);
+        local_c = STField<undefined4>(this,0x18);
+        local_e = STField<undefined2>(this,0x32);
         local_14 = 0x5d99;
         local_10 = 1;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)**(undefined4 **)pSVar3->field_001C)(local_24);
       }
-      if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
-        iVar1 = *(int *)((int)this + 0x5ac);
+      if (STField<uint>(this,0x24) == (uint)*(byte *)(STField<int>(this,0x10) + 0x112d)) {
+        iVar1 = STField<int>(this,0x5ac);
         if ((iVar1 == 0x39) || (iVar1 == 0x5e)) {
-          uVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
+          uVar3 = LookupRecordByte(STField<char>(this,0x23d));
           uVar3 = (int)(byte)uVar3;
           if (uVar3 == 1) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -65,7 +67,7 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
           }
         }
         else if (iVar1 == 0x4f) {
-          local_EAX_269 = LookupRecordByte(*(char *)((int)this + 0x23d));
+          local_EAX_269 = LookupRecordByte(STField<char>(this,0x23d));
           local_EAX_269 = (int)(byte)local_EAX_269;
           if (local_EAX_269 == 1) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -81,28 +83,28 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
       }
     }
     else {
-      switch(*(undefined4 *)((int)this + 0x5ac)) {
+      switch(STField<undefined4>(this,0x5ac)) {
       case 0x39:
         iVar1 = *(int *)this;
-        bVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
+        bVar2 = LookupRecordByte(STField<char>(this,0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)(bVar2 != 2) & 0xffffff3a) + 0x2ea);
         return param_2;
       case 0x3b:
         iVar1 = *(int *)this;
-        bVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
+        bVar2 = LookupRecordByte(STField<char>(this,0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)(bVar2 != 2) & 0xffffff3a) + 0x2f7);
         return param_2;
       case 0x4f:
         iVar1 = *(int *)this;
-        bVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
+        bVar2 = LookupRecordByte(STField<char>(this,0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)(bVar2 != 2) & 0xffffff32) + 0x350);
         return param_2;
       case 0x52:
         iVar1 = *(int *)this;
-        bVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
+        bVar2 = LookupRecordByte(STField<char>(this,0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)(bVar2 != 2) & 0xffffff3b) + 0x35d);
         return param_2;

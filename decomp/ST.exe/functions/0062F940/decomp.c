@@ -25,11 +25,11 @@ void __thiscall FUN_0062f940(void *this,uint *param_1)
     puVar1[2] = 0;
     puVar1[3] = 2;
     iVar7 = 5;
-    puVar1[5] = *(undefined4 *)((int)this + 0x1d5);
-    puVar1[6] = *(undefined4 *)((int)this + 0x1d9);
-    puVar1[7] = *(undefined4 *)((int)this + 0x1dd);
+    puVar1[5] = STField<undefined4>(this,0x1d5);
+    puVar1[6] = STField<undefined4>(this,0x1d9);
+    puVar1[7] = STField<undefined4>(this,0x1dd);
     piVar5 = (int *)((int)this + 0x1e5);
-    puVar1[8] = *(undefined4 *)((int)this + 0x1e1);
+    puVar1[8] = STField<undefined4>(this,0x1e1);
     piVar4 = puVar1 + 9;
     piVar3 = piVar5;
     do {
@@ -41,8 +41,8 @@ void __thiscall FUN_0062f940(void *this,uint *param_1)
       piVar3 = piVar3 + 1;
       iVar7 = iVar7 + -1;
     } while (iVar7 != 0);
-    *(undefined1 *)(puVar1 + 0xe) = *(undefined1 *)((int)this + 0x1f9);
-    *(undefined4 *)((int)puVar1 + 0x39) = *(undefined4 *)((int)this + 0x1fa);
+    *(undefined1 *)(puVar1 + 0xe) = STField<undefined1>(this,0x1f9);
+    STField<undefined4>(puVar1,0x39) = STField<undefined4>(this,0x1fa);
     if (local_8 != 0) {
       local_c = local_8 * 0x3e + 0x3d;
       pvVar2 = Library::DKW::LIB::MemRealloc(puVar1,local_c);

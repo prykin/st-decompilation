@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint __thiscall FUN_00678d20(void *this,int param_1)
 
@@ -8,7 +10,7 @@ uint __thiscall FUN_00678d20(void *this,int param_1)
   int *piVar4;
   bool bVar5;
 
-  iVar1 = *(int *)((int)this + 0x695);
+  iVar1 = STField<int>(this,0x695);
   uVar3 = 0;
   uVar2 = *(uint *)(iVar1 + 0xc);
   if (0 < (int)uVar2) {

@@ -143,7 +143,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   *(undefined4 *)(&this_00->field_0020->field_0x20 + local_8) = 0;
   piVar10 = *(int **)(&this_00->field_0020->field_0x0 + local_8);
   ST3DSMAPContext::sub_006E98E0
-            (this_00->field_003C,this_00->field_0018,local_14,*piVar10,*(int *)((int)piVar10 + 0x21)
+            (this_00->field_003C,this_00->field_0018,local_14,*piVar10,STField<int>(piVar10,0x21)
              ,0);
   puVar6 = (ushort *)(&this_00->field_0020->field_0xe + local_8);
   *puVar6 = *puVar6 & 0xfe37;

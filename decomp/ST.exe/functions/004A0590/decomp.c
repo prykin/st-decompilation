@@ -88,12 +88,10 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
           DArrayGetElement(local_10,uVar11,&local_24);
           DArrayGetElement(array,uVar11,&local_2c);
           DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (STPiece<0,2>(local_c) != 0xffff) {
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar4->field_0024,local_c._0_2_,CASE_1);
+                               (g_allPlayers_007FA174,pSVar4->field_0024,STPiece<0,2>(local_c),CASE_1);
             if (pSVar6 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -119,12 +117,10 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
       if (0 < (int)local_8) {
         do {
           DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,local_c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (local_c._0_2_ != 0xffff) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (STPiece<0,2>(local_c) != 0xffff) {
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar4->field_0024,local_c._0_2_,CASE_1);
+                               (g_allPlayers_007FA174,pSVar4->field_0024,STPiece<0,2>(local_c),CASE_1);
             if (pSVar6 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,

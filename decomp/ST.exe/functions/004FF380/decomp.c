@@ -335,10 +335,9 @@ LAB_004ff87a:
     puVar2 = this_00->field_0148[1];
   }
   else {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((((((short)local_2a == *(short *)&this_00->field_0xb81) &&
           (local_26 == *(short *)&this_00->field_0xb85)) && (local_22 == this_00->field_0B89)) &&
-        ((local_2a._2_2_ == *(short *)&this_00->field_0xb83 && (local_24 == this_00->field_0B87))))
+        ((STPiece<2,2>(local_2a) == *(short *)&this_00->field_0xb83 && (local_24 == this_00->field_0B87))))
        && (local_20 == this_00->field_0B8B)) goto cf_common_exit_004FFB91;
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0x2f,

@@ -115,13 +115,11 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
     SVar2 = message->id;
     memset(local_2c, 0, 0x21); /* compiler bulk-zero initialization */
     if (SVar2 == MESS_SHARED_C09F) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_2c[0]._0_1_ = '\x15';
+      STPiece<0,1>(local_2c[0]) = '\x15';
       cVar3 = this_00->field_0x1bb;
     }
     else {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_2c[0]._0_1_ = (SVar2 != MESS_BEHPANELTY_C0A0) + '\x16';
+      STPiece<0,1>(local_2c[0]) = (SVar2 != MESS_BEHPANELTY_C0A0) + '\x16';
       if (SVar2 == MESS_BEHPANELTY_C0A0) {
         cVar3 = this_00->field_0x1bc;
       }

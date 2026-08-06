@@ -94,10 +94,10 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
         else {
           pvVar13 = nullptr;
         }
-        if (*(int *)((int)pvVar13 + 0xf) != 0) {
+        if (STField<int>(pvVar13,0xf) != 0) {
           uVar7 = FUN_006b0060(nullptr,
-                               (uint *)(*(int *)((int)pvVar13 + 0x13) + 0x49e + (int)param_1));
-          *(undefined4 *)((int)pvVar13 + 0xf) = uVar7;
+                               (uint *)(STField<int>(pvVar13,0x13) + 0x49e + (int)param_1));
+          STField<undefined4>(pvVar13,0xf) = uVar7;
         }
         pDVar4 = pAVar2->field_04EE;
         uVar11 = uVar11 + 1;

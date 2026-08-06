@@ -13,19 +13,19 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
   void *local_8;
 
   local_8 = nullptr;
-  if ((*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x5d3) != nullptr)
-     && (*(int *)((int)this + 0x4d4) == 0)) {
+  if ((STField<AnonShape_005EFAE0_B406B78B *>(this,0x5d3) != nullptr)
+     && (STField<int>(this,0x4d4) == 0)) {
     iVar4 = STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x5d3),
+                      (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x5d3),
                        (int *)&local_8);
     if (iVar4 == 0) {
-      thunk_FUN_004cdeb0(local_8,*(undefined4 *)((int)this + 0x18));
-      uVar5 = thunk_FUN_004cdf80(local_8,*(int *)((int)this + 0x18));
-      *(undefined4 *)((int)this + 0x4d4) = uVar5;
+      thunk_FUN_004cdeb0(local_8,STField<undefined4>(this,0x18));
+      uVar5 = thunk_FUN_004cdf80(local_8,STField<int>(this,0x18));
+      STField<undefined4>(this,0x4d4) = uVar5;
       if (param_1 != 0) {
-        iVar4 = *(int *)((int)this + 0x5b4) + -1;
-        sVar6 = (short)*(undefined4 *)((int)this + 0x5b0);
-        if (((((-1 < iVar4) && (sVar1 = *(short *)((int)this + 0x5b8), -1 < sVar6)) &&
+        iVar4 = STField<int>(this,0x5b4) + -1;
+        sVar6 = (short)STField<undefined4>(this,0x5b0);
+        if (((((-1 < iVar4) && (sVar1 = STField<short>(this,0x5b8), -1 < sVar6)) &&
              (sVar6 < g_worldGrid.sizeX)) &&
             ((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < g_worldGrid.sizeY)))) &&
            ((-1 < sVar1 &&
@@ -36,13 +36,13 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
           if (0x53 < iVar4) {
             iVar4 = pSVar2->GetObjectTypeId();
             if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
-              *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
+              *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);
               thunk_FUN_004ce250(pSVar2,1);
             }
           }
         }
-        iVar4 = *(int *)((int)this + 0x5b4) + 1;
-        if ((((iVar4 < g_worldGrid.sizeY) && (sVar1 = *(short *)((int)this + 0x5b8), -1 < sVar6)) &&
+        iVar4 = STField<int>(this,0x5b4) + 1;
+        if ((((iVar4 < g_worldGrid.sizeY) && (sVar1 = STField<short>(this,0x5b8), -1 < sVar6)) &&
             (sVar6 < g_worldGrid.sizeX)) &&
            (((sVar3 = (short)iVar4, -1 < sVar3 && (sVar3 < g_worldGrid.sizeY)) &&
             ((-1 < sVar1 &&
@@ -53,15 +53,15 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
           if (0x53 < iVar4) {
             iVar4 = pSVar2->GetObjectTypeId();
             if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
-              *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
+              *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);
               thunk_FUN_004ce250(pSVar2,1);
             }
           }
         }
-        iVar4 = *(int *)((int)this + 0x5b0) + -1;
-        sVar6 = (short)*(undefined4 *)((int)this + 0x5b4);
+        iVar4 = STField<int>(this,0x5b0) + -1;
+        sVar6 = (short)STField<undefined4>(this,0x5b4);
         if (-1 < iVar4) {
-          sVar1 = *(short *)((int)this + 0x5b8);
+          sVar1 = STField<short>(this,0x5b8);
           sVar3 = (short)iVar4;
           if ((((-1 < sVar3) && (sVar3 < g_worldGrid.sizeX)) && (-1 < sVar6)) &&
              (((sVar6 < g_worldGrid.sizeY && (-1 < sVar1)) &&
@@ -72,15 +72,15 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
             if (0x53 < iVar4) {
               iVar4 = pSVar2->GetObjectTypeId();
               if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
-                *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
+                *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);
                 thunk_FUN_004ce250(pSVar2,1);
               }
             }
           }
         }
-        iVar4 = *(int *)((int)this + 0x5b0) + 1;
+        iVar4 = STField<int>(this,0x5b0) + 1;
         if (iVar4 < g_worldGrid.sizeX) {
-          sVar1 = *(short *)((int)this + 0x5b8);
+          sVar1 = STField<short>(this,0x5b8);
           sVar3 = (short)iVar4;
           if (((((-1 < sVar3) && (sVar3 < g_worldGrid.sizeX)) && (-1 < sVar6)) &&
               ((sVar6 < g_worldGrid.sizeY && (-1 < sVar1)))) &&
@@ -91,7 +91,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
             if (0x53 < iVar4) {
               iVar4 = pSVar2->GetObjectTypeId();
               if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
-                *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
+                *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);
                 thunk_FUN_004ce250(pSVar2,1);
               }
             }

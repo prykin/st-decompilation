@@ -42,18 +42,18 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   int local_8;
 
   piVar1 = param_1;
-  local_8 = *(int *)((int)this + 0x24);
+  local_8 = STField<int>(this,0x24);
   thunk_FUN_00423180();
   recordIndex = (char)param_1;
-  if ((*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) &&
-     (*(int *)(&DAT_007e1218 + (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4)
+  if ((STField<int>(this,0x24) == STField<int>(this,0x23d)) &&
+     (*(int *)(&DAT_007e1218 + (STField<int>(this,0x235) * 3 + STField<int>(this,0x239)) * 4)
       != 0)) {
     memset(local_294, 0, 0x26c); /* compiler bulk-zero initialization */
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = local_294;
     iVar4 = 0;
     do {
-      local_EAX_120 = LookupRecordByte(*(char *)((int)this + 0x24));
+      local_EAX_120 = LookupRecordByte(STField<char>(this,0x24));
       local_EAX_120 = (int)(byte)local_EAX_120;
       if (*(char *)(*(int *)(&DAT_007bfc00 + local_EAX_120 * 4) + iVar4) == '\0') {
         iVar2 = thunk_FUN_004e60d0((int)piVar1,iVar4);
@@ -66,9 +66,9 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 1;
     } while (iVar4 < 0x9b);
-    thunk_FUN_004e7eb0((int)piVar1,*(int *)((int)this + 0x24),
+    thunk_FUN_004e7eb0((int)piVar1,STField<int>(this,0x24),
                        *(int *)(&DAT_007e1218 +
-                               (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4));
+                               (STField<int>(this,0x235) * 3 + STField<int>(this,0x239)) * 4));
     if (piVar1 == (int *)(uint)DAT_0080874d) {
       uVar2 = LookupRecordByte(recordIndex);
       uVar2 = (int)(byte)uVar2;
@@ -97,7 +97,7 @@ LAB_004ccd43:
       local_14 = SUB42(piVar1,0);
       iVar4 = 0;
       do {
-        local_EAX_374 = LookupRecordByte(*(char *)((int)this + 0x24));
+        local_EAX_374 = LookupRecordByte(STField<char>(this,0x24));
         local_EAX_374 = (int)(byte)local_EAX_374;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((*(char *)(*(int *)(&DAT_007bfc00 + local_EAX_374 * 4) + iVar4) == '\0') &&
@@ -118,75 +118,75 @@ LAB_004ccd43:
       } while (iVar4 < 0x9b);
     }
   }
-  *(int **)((int)this + 0x24) = piVar1;
-  *(int **)((int)this + 0x5c0) = param_2;
+  STField<int *>(this,0x24) = piVar1;
+  STField<int *>(this,0x5c0) = param_2;
   local_EAX_512 = LookupRecordByte(recordIndex);
   local_EAX_512 = (int)(byte)local_EAX_512;
-  *(int *)((int)this + 0x239) = local_EAX_512 + -1;
+  STField<int>(this,0x239) = local_EAX_512 + -1;
   thunk_FUN_004b9920(this);
   iVar4 = 0;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   TLOEmbryoTy::sub_00419C70(this,extraout_EDX,0);
   thunk_FUN_0041f630(this);
-  if ((*(int *)(&DAT_00792778 + *(int *)((int)this + 0x235) * 4) == 0) ||
-     (iVar2 = thunk_FUN_004e81b0(*(int *)((int)this + 0x24),*(int *)((int)this + 0x235),0),
+  if ((*(int *)(&DAT_00792778 + STField<int>(this,0x235) * 4) == 0) ||
+     (iVar2 = thunk_FUN_004e81b0(STField<int>(this,0x24),STField<int>(this,0x235),0),
      iVar2 == 0)) {
     puVar3 = (undefined *)0x5;
   }
   else {
     puVar3 = (undefined *)
-             thunk_FUN_004e81b0(*(int *)((int)this + 0x24),*(int *)((int)this + 0x235),0);
+             thunk_FUN_004e81b0(STField<int>(this,0x24),STField<int>(this,0x235),0);
   }
   TLOEmbryoTy::sub_0041C3F0(this,puVar3);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uVar7 = extraout_EDX_00;
-  if (*(int *)((int)this + 0x5ac) == 0x34) {
+  if (STField<int>(this,0x5ac) == 0x34) {
     thunk_FUN_004dd880(this);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar7 = extraout_EDX_01;
   }
-  if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+  if (STField<int>(this,0x24) == STField<int>(this,0x23d)) {
 LAB_004ccedc:
-    if (*(int *)((int)this + 0x5ac) == 0x50) {
-      thunk_FUN_004b7080(STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)((int)this + 0x24))),0x28);
+    if (STField<int>(this,0x5ac) == 0x50) {
+      thunk_FUN_004b7080(STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(STField<undefined1>(this,0x24))),0x28);
     }
-    if ((*(int *)((int)this + 0x5ac) == 0x6f) || (*(int *)((int)this + 0x5ac) == 0x73)) {
+    if ((STField<int>(this,0x5ac) == 0x6f) || (STField<int>(this,0x5ac) == 0x73)) {
       thunk_FUN_004ecc70(this);
     }
-    if ((*(int *)((int)this + 0x5ac) == 0x36) || (*(int *)((int)this + 0x5ac) == 0x5d)) {
-      iVar2 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),
-                                 *(int *)(&DAT_00798fb0 + *(int *)((int)this + 0x239) * 4));
-      iVar2 = *(int *)(&DAT_00798f98 + (iVar2 + *(int *)((int)this + 0x239) * 2) * 4);
-      *(int *)((int)this + 0x4d0) = iVar2;
+    if ((STField<int>(this,0x5ac) == 0x36) || (STField<int>(this,0x5ac) == 0x5d)) {
+      iVar2 = thunk_FUN_004e60d0(STField<int>(this,0x24),
+                                 *(int *)(&DAT_00798fb0 + STField<int>(this,0x239) * 4));
+      iVar2 = *(int *)(&DAT_00798f98 + (iVar2 + STField<int>(this,0x239) * 2) * 4);
+      STField<int>(this,0x4d0) = iVar2;
       thunk_FUN_0041ce40(this,iVar2);
-      *(undefined4 *)((int)this + 0x4dc) = 1;
+      STField<undefined4>(this,0x4dc) = 1;
     }
-    if ((*(int *)((int)this + 0x5ac) == 0x3d) || (*(int *)((int)this + 0x5ac) == 0x5d)) {
+    if ((STField<int>(this,0x5ac) == 0x3d) || (STField<int>(this,0x5ac) == 0x5d)) {
       thunk_FUN_004e4f30(this);
     }
   }
   else {
-    local_EAX_654 = LookupRecordByte((char)*(int *)((int)this + 0x23d));
-    iVar2 = *(int *)((int)this + 0x235);
-    local_EAX_691 = LookupRecordByte(*(char *)((int)this + 0x24));
+    local_EAX_654 = LookupRecordByte((char)STField<int>(this,0x23d));
+    iVar2 = STField<int>(this,0x235);
+    local_EAX_691 = LookupRecordByte(STField<char>(this,0x24));
     local_EAX_691 = (int)(byte)local_EAX_691;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar7 = extraout_EDX_02;
     if ((&DAT_007e1984)[local_EAX_691 + (iVar2 * 3 + (uint)(byte)local_EAX_654) * 3] != '\0')
     goto LAB_004ccedc;
-    *(undefined4 *)((int)this + 0x261) = 0;
-    *(undefined4 *)((int)this + 0x2e1) = 0;
-    if (*(int *)((int)this + 0x5ac) == 0x3c) {
+    STField<undefined4>(this,0x261) = 0;
+    STField<undefined4>(this,0x2e1) = 0;
+    if (STField<int>(this,0x5ac) == 0x3c) {
       thunk_FUN_004db0a0(local_8);
     }
   }
-  if (*(int *)((int)this + 0x408) != 0) {
+  if (STField<int>(this,0x408) != 0) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = nullptr;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      local_EAX_948 = LookupRecordByte((char)*(int *)((int)this + 0x23d));
-      iVar2 = *(int *)((int)this + 0x235);
-      uVar5 = LookupRecordByte(*(char *)((int)this + 0x24));
+    if (STField<int>(this,0x24) != STField<int>(this,0x23d)) {
+      local_EAX_948 = LookupRecordByte((char)STField<int>(this,0x23d));
+      iVar2 = STField<int>(this,0x235);
+      uVar5 = LookupRecordByte(STField<char>(this,0x24));
       uVar5 = (int)(byte)uVar5;
       if ((&DAT_007e1984)[uVar5 + ((uint)(byte)local_EAX_948 + iVar2 * 3) * 3] == '\0') {
         thunk_FUN_004c2d40(this);
@@ -194,69 +194,68 @@ LAB_004ccedc:
       }
     }
     iVar2 = STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x40c),
+                      (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x40c),
                        (int *)&param_2);
     if ((iVar2 == 0) && (param_2 != nullptr)) {
-      thunk_FUN_0060bc80(param_2,*(undefined4 *)((int)this + 0x24),*(ushort *)((int)this + 0x32));
+      thunk_FUN_0060bc80(param_2,STField<undefined4>(this,0x24),STField<ushort>(this,0x32));
     }
   }
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004cd038:
-  if (((*(int *)((int)this + 0x5ac) == 0x6a) &&
-      (*(uint *)((int)this + 0x4d4) <= g_playSystem_00802A38->field_00E4)) &&
+  if (((STField<int>(this,0x5ac) == 0x6a) &&
+      (STField<uint>(this,0x4d4) <= g_playSystem_00802A38->field_00E4)) &&
      (iVar2 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4d0),
+                        (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x4d0),
                          (int *)&param_2), iVar2 == 0)) {
-    thunk_FUN_005822b0(param_2,*(undefined4 *)((int)this + 0x24),*(ushort *)((int)this + 0x32));
+    thunk_FUN_005822b0(param_2,STField<undefined4>(this,0x24),STField<ushort>(this,0x32));
   }
-  if ((*(int *)((int)this + 0x5ac) == 0x41) && (0 < *(int *)((int)this + 0x4e4))) {
+  if ((STField<int>(this,0x5ac) == 0x41) && (0 < STField<int>(this,0x4e4))) {
     puVar6 = (undefined4 *)((int)this + 0x4d0);
     do {
       if (((AnonShape_005EFAE0_B406B78B *)*puVar6 != nullptr) &&
          (iVar2 = STPlaySystemC::sub_006E62D0
                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar6,
                              (int *)&param_2), iVar2 == 0)) {
-        thunk_FUN_00590130(param_2,*(undefined4 *)((int)this + 0x24));
+        thunk_FUN_00590130(param_2,STField<undefined4>(this,0x24));
       }
       iVar4 = iVar4 + 1;
       puVar6 = puVar6 + 1;
-    } while (iVar4 < *(int *)((int)this + 0x4e4));
+    } while (iVar4 < STField<int>(this,0x4e4));
   }
-  if ((*(int *)((int)this + 0x5ac) == 0x69) &&
+  if ((STField<int>(this,0x5ac) == 0x69) &&
      (iVar4 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4ec),
+                        (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x4ec),
                          (int *)&param_2), iVar4 == 0)) {
-    thunk_FUN_00618b40(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
+    thunk_FUN_00618b40(param_2,STField<undefined4>(this,0x24),STField<undefined2>(this,0x32));
   }
-  if (((*(int *)((int)this + 0x5ac) == 0x70) &&
-      (*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4f0) != nullptr))
+  if (((STField<int>(this,0x5ac) == 0x70) &&
+      (STField<AnonShape_005EFAE0_B406B78B *>(this,0x4f0) != nullptr))
      && (iVar4 = STPlaySystemC::sub_006E62D0
                            (g_playSystem_00802A38,
-                            *(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4f0),(int *)&param_2),
+                            STField<AnonShape_005EFAE0_B406B78B *>(this,0x4f0),(int *)&param_2),
         iVar4 == 0)) {
-    thunk_FUN_0058cf90(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
+    thunk_FUN_0058cf90(param_2,STField<undefined4>(this,0x24),STField<undefined2>(this,0x32));
   }
-  if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-    local_EAX_1346 = LookupRecordByte((char)*(int *)((int)this + 0x23d));
-    iVar4 = *(int *)((int)this + 0x235);
-    local_EAX_1385 = LookupRecordByte(*(char *)((int)this + 0x24));
+  if (STField<int>(this,0x24) != STField<int>(this,0x23d)) {
+    local_EAX_1346 = LookupRecordByte((char)STField<int>(this,0x23d));
+    iVar4 = STField<int>(this,0x235);
+    local_EAX_1385 = LookupRecordByte(STField<char>(this,0x24));
     local_EAX_1385 = (int)(byte)local_EAX_1385;
     if ((&DAT_007e1984)[local_EAX_1385 + ((uint)(byte)local_EAX_1346 + iVar4 * 3) * 3] == '\0')
     goto LAB_004cd1d7;
   }
-  iVar4 = *(int *)((int)this + 0x5ac);
-  if ((((iVar4 != 0x4d) || (*(int *)((int)this + 0x4d0) == 2)) &&
-      ((iVar4 != 0x4c || (*(int *)((int)this + 0x4d0) == 2)))) &&
-     ((iVar4 != 0x43 || (*(int *)((int)this + 0x4d0) == 2)))) {
+  iVar4 = STField<int>(this,0x5ac);
+  if ((((iVar4 != 0x4d) || (STField<int>(this,0x4d0) == 2)) &&
+      ((iVar4 != 0x4c || (STField<int>(this,0x4d0) == 2)))) &&
+     ((iVar4 != 0x43 || (STField<int>(this,0x4d0) == 2)))) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar4 = (**(code **)(*(int *)this + 0x2c))();
-    thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(iVar4), (uint8_t)(*(undefined1 *)((int)this + 0x24))),iVar4);
+    thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(iVar4), (uint8_t)(STField<undefined1>(this,0x24))),iVar4);
   }
 LAB_004cd1d7:
   TLOBaseTy::ReloadLogoPlane(this);
   TLOBaseTy::RotateSpr(this,1);
-  if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
-    thunk_FUN_004d8b70((char)*(uint *)((int)this + 0x24));
+  if (STField<uint>(this,0x24) == (uint)*(byte *)(STField<int>(this,0x10) + 0x112d)) {
+    thunk_FUN_004d8b70((char)STField<uint>(this,0x24));
   }
   return;
 }

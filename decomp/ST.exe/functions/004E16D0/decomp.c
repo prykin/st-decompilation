@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004e16d0(void *this,int param_1)
 
@@ -6,35 +8,34 @@ undefined4 __thiscall FUN_004e16d0(void *this,int param_1)
   int iVar2;
   int iVar3;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(int *)((int)this + 0x4d8) != param_1) || (*(int *)((int)this + 0x4d0) != 0)) {
+  if ((STField<int>(this,0x4d8) != param_1) || (STField<int>(this,0x4d0) != 0)) {
     return 0;
   }
-  *(undefined4 *)((int)this + 0x4d0) = 1;
-  *(undefined4 *)((int)this + 0x4e4) = 1;
+  STField<undefined4>(this,0x4d0) = 1;
+  STField<undefined4>(this,0x4e4) = 1;
   TLOBaseTy::RotateSpr(this,1);
-  *(undefined4 *)((int)this + 0x4e8) = 1;
-  switch(*(undefined4 *)((int)this + 0x5ac)) {
+  STField<undefined4>(this,0x4e8) = 1;
+  switch(STField<undefined4>(this,0x5ac)) {
   case 0x39:
     iVar3 = *(int *)this;
-    bVar1 = LookupRecordByte(*(char *)((int)this + 0x23d));
+    bVar1 = LookupRecordByte(STField<char>(this,0x23d));
     iVar2 = (-(uint)(bVar1 != 2) & 0xffffff3a) + 0x2e8;
     break;
   default:
     goto switchD_004e172f_caseD_3a;
   case 0x3b:
     iVar3 = *(int *)this;
-    bVar1 = LookupRecordByte(*(char *)((int)this + 0x23d));
+    bVar1 = LookupRecordByte(STField<char>(this,0x23d));
     iVar2 = (-(uint)(bVar1 != 2) & 0xffffff3a) + 0x2f5;
     break;
   case 0x4f:
     iVar3 = *(int *)this;
-    bVar1 = LookupRecordByte(*(char *)((int)this + 0x23d));
+    bVar1 = LookupRecordByte(STField<char>(this,0x23d));
     iVar2 = (-(uint)(bVar1 != 2) & 0xffffff32) + 0x34e;
     break;
   case 0x52:
     iVar3 = *(int *)this;
-    bVar1 = LookupRecordByte(*(char *)((int)this + 0x23d));
+    bVar1 = LookupRecordByte(STField<char>(this,0x23d));
     iVar2 = (-(uint)(bVar1 != 2) & 0xffffff3b) + 0x35b;
     break;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 006C2A00 -> EXTERNAL:0000004F @ 006C2A3F */
@@ -16,9 +18,8 @@ undefined4 FUN_006c2a00(LPVOID lpBuffer)
     return 0;
   }
   BVar1 = ReadFile(hFile,&lpBuffer,4,&local_8,(LPOVERLAPPED)0x0);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if ((((BVar1 != 0) && (local_8 == 4)) && ((char)lpBuffer == 'B')) &&
-     (((char)((uint)lpBuffer >> 8) == 'I' && (lpBuffer._2_1_ == 'K')))) {
+     (((char)((uint)lpBuffer >> 8) == 'I' && (STPiece<2,1>(lpBuffer) == 'K')))) {
     uVar2 = 1;
   }
   CloseHandle(hFile);

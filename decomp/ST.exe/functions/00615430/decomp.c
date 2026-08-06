@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_00615430(void *this,int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
@@ -37,23 +39,23 @@ FUN_00615430(void *this,int param_1,int param_2,int param_3,int param_4,int para
   iVar3 = (local_10 * param_7 + (param_9 - param_3) * param_6 + local_c * param_5) / local_28;
   local_14 = FUN_006c8334(10000 - (iVar3 * iVar3) / 10000);
   iVar6 = param_1 * 0x1c;
-  *(int *)(*(int *)((int)this + 0x2dd) + 0xc + iVar6) = (local_c * iVar3) / local_28;
-  *(int *)(*(int *)((int)this + 0x2dd) + 0x10 + iVar6) = ((param_9 - param_3) * iVar3) / local_28;
-  *(int *)(*(int *)((int)this + 0x2dd) + 0x14 + iVar6) = (local_10 * iVar3) / local_28;
-  iVar4 = *(int *)((int)this + 0x2dd) + iVar6;
+  *(int *)(STField<int>(this,0x2dd) + 0xc + iVar6) = (local_c * iVar3) / local_28;
+  *(int *)(STField<int>(this,0x2dd) + 0x10 + iVar6) = ((param_9 - param_3) * iVar3) / local_28;
+  *(int *)(STField<int>(this,0x2dd) + 0x14 + iVar6) = (local_10 * iVar3) / local_28;
+  iVar4 = STField<int>(this,0x2dd) + iVar6;
   iVar4 = FUN_006acf0d(*(int *)(iVar4 + 0xc),*(int *)(iVar4 + 0x10),*(int *)(iVar4 + 0x14),param_5,
                        param_6,param_7);
-  piVar1 = (int *)(*(int *)((int)this + 0x2dd) + 0xc + iVar6);
+  piVar1 = (int *)(STField<int>(this,0x2dd) + 0xc + iVar6);
   *piVar1 = ((param_5 - *piVar1) * 10000) / iVar4;
-  piVar1 = (int *)(*(int *)((int)this + 0x2dd) + 0x10 + iVar6);
+  piVar1 = (int *)(STField<int>(this,0x2dd) + 0x10 + iVar6);
   *piVar1 = ((param_6 - *piVar1) * 10000) / iVar4;
-  piVar1 = (int *)(*(int *)((int)this + 0x2dd) + 0x14 + iVar6);
+  piVar1 = (int *)(STField<int>(this,0x2dd) + 0x14 + iVar6);
   *piVar1 = ((param_7 - *piVar1) * 10000) / iVar4;
-  *(undefined4 *)(*(int *)((int)this + 0x2dd) + 0x18 + iVar6) = 8;
-  *(int *)(*(int *)((int)this + 0x2dd) + 8 + iVar6) = local_28;
-  *(undefined2 *)(*(int *)((int)this + 0x2dd) + iVar6) = (undefined2)param_2;
-  *(undefined2 *)(*(int *)((int)this + 0x2dd) + 2 + iVar6) = (undefined2)param_3;
-  *(undefined2 *)(*(int *)((int)this + 0x2dd) + 4 + iVar6) = (undefined2)param_4;
+  *(undefined4 *)(STField<int>(this,0x2dd) + 0x18 + iVar6) = 8;
+  *(int *)(STField<int>(this,0x2dd) + 8 + iVar6) = local_28;
+  *(undefined2 *)(STField<int>(this,0x2dd) + iVar6) = (undefined2)param_2;
+  *(undefined2 *)(STField<int>(this,0x2dd) + 2 + iVar6) = (undefined2)param_3;
+  *(undefined2 *)(STField<int>(this,0x2dd) + 4 + iVar6) = (undefined2)param_4;
   local_34 = 0;
   local_24 = 0;
   local_30 = (iVar3 * local_28 * 0x1e) / 600000;
@@ -75,14 +77,14 @@ FUN_00615430(void *this,int param_1,int param_2,int param_3,int param_4,int para
     return local_8;
   }
   value = (void **)((int)this + 0x2e5);
-  if (*(undefined4 **)((int)this + 0x2e5) == nullptr) {
-    *(uint *)((int)this + 0x2e1) = uVar2;
+  if (STField<undefined4 *>(this,0x2e5) == nullptr) {
+    STField<uint>(this,0x2e1) = uVar2;
     *value = param_10;
     return 1;
   }
-  if ((int)uVar2 <= *(int *)((int)this + 0x2e1)) {
+  if ((int)uVar2 <= STField<int>(this,0x2e1)) {
     puVar7 = param_10;
-    puVar8 = *(undefined4 **)((int)this + 0x2e5);
+    puVar8 = STField<undefined4 *>(this,0x2e5);
     for (uVar5 = uVar2 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
       *puVar8 = *puVar7;
       puVar7 = puVar7 + 1;
@@ -93,12 +95,12 @@ FUN_00615430(void *this,int param_1,int param_2,int param_3,int param_4,int para
       puVar7 = (undefined4 *)((int)puVar7 + 1);
       puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
-    *(uint *)((int)this + 0x2e1) = uVar2;
+    STField<uint>(this,0x2e1) = uVar2;
     FreeAndNull(&param_10);
     return 1;
   }
   FreeAndNull(value);
-  *(uint *)((int)this + 0x2e1) = uVar2;
+  STField<uint>(this,0x2e1) = uVar2;
   *value = param_10;
   return 1;
 }

@@ -59,7 +59,7 @@ LAB_004ef270:
                    (*(int *)(iVar3 + 8) * uVar2 + *(int *)(iVar3 + 0x1c)),
          pGVar4 != nullptr)) {
         *(char *)((int)local_c + -1) = ((char)pGVar4[2] == 0) + '\x03';
-        UVar1 = thunk_FUN_00523410(*pGVar4,*(byte *)((int)pGVar4 + 9),0);
+        UVar1 = thunk_FUN_00523410(*pGVar4,STField<byte>(pGVar4,9),0);
         *local_c = UVar1;
         local_c[1] = 0;
         if ((char)pGVar4[2] == 0) {
@@ -68,8 +68,8 @@ LAB_004ef270:
           memmove(pUVar7, pUVar5, 0x1e); /* compiler REP MOVS byte copy */
         }
         else {
-          local_c[2] = *(UINT *)((int)pGVar4 + 10);
-          local_c[3] = *(UINT *)((int)pGVar4 + 0xe);
+          local_c[2] = STField<UINT>(pGVar4,10);
+          local_c[3] = STField<UINT>(pGVar4,0xe);
         }
       }
       local_8 = local_8 + 1;

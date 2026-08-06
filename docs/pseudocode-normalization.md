@@ -471,6 +471,30 @@ machine-code guard, partial-register clear, and return path are required.
 
 ## Safety rule for future normalization
 
+### Standalone compatibility boundary
+
+The exporter now removes the last C-inexpressible Ghidra partial-piece tokens
+without pretending to recover their semantic field:
+
+```c
+value._2_2_                         -> STPiece<2,2>(value)
+"Program: "._8_2_                 -> STLiteralPiece<8,2>("Program: ")
+*(T *)((int)base + byteOffset)     -> STField<T>(base, byteOffset)
+```
+
+`STPiece` is a read/write proxy over the exact lvalue bytes. `STLiteralPiece`
+is read-only and reconstructs the same little-endian value from literal
+storage. `STField` preserves the exact access width and byte offset while
+removing the host-invalid 32-bit pointer-to-`int` spelling. These helpers do not
+assert a containing class, alignment, or original field name.
+
+The same generated header defines only the observed `CONCAT*`, `SUB*`, carry,
+calling-convention, decompiler-scalar, and opaque `code` compatibility surface.
+Every use is retained in `compile_readiness_issues.jsonl`; source extraction can
+therefore replace shims incrementally and prove that no occurrence silently
+disappeared. See [`compile-readiness.md`](compile-readiness.md) for current
+whole-corpus counts.
+
 A rewrite may be automatic only when it preserves the exact byte address,
 access width, signedness, evaluation order, and call ABI. Otherwise it remains
 a catalogued suggestion. The original `listing.asm`, stable function address,

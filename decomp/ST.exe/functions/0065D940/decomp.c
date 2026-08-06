@@ -28,7 +28,7 @@ void __thiscall FUN_0065d940(void *this,DArrayTy *param_1,int param_2)
           puVar1 = nullptr;
         }
         objPtr = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,*(char *)((int)this + 0x24),*puVar1,CASE_1);
+                           (g_allPlayers_007FA174,STField<char>(this,0x24),*puVar1,CASE_1);
         if (objPtr != nullptr) {
           AiFltClassTy::_AddObjFlt(this,(uint)objPtr,param_2);
         }

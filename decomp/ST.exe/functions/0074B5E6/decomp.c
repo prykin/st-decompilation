@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 0074B5E6 -> EXTERNAL:00000019 @ 0074B659 */
@@ -17,7 +19,7 @@ FUN_0074b5e6(void *this,uint param_1,LPCRITICAL_SECTION lpCriticalSection,uint p
   }
   else {
     EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 0x7c));
-    if ((*(int *)((int)this + 0x18) == 0) || ((int)param_1 < 2)) {
+    if ((STField<int>(this,0x18) == 0) || ((int)param_1 < 2)) {
       lpCriticalSection->DebugInfo = (PRTL_CRITICAL_SECTION_DEBUG)0x0;
     }
     else {

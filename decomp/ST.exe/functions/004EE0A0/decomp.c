@@ -94,8 +94,7 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
     this_00->field_0028 = 0x20;
     FUN_006e6080(this_00,2,this_00->field_01C2,(undefined4 *)&this_00->field_0x18);
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if (this_00->field_0x1bc != local_18._1_1_) {
+  if (this_00->field_0x1bc != STPiece<1,1>(local_18)) {
     *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_0x1bc;
     this_00->field_0028 = 0x20;
     FUN_006e6080(this_00,2,this_00->field_01C6,(undefined4 *)&this_00->field_0x18);

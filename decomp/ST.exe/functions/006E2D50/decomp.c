@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_006e2d50(int *param_1,int *param_2,int param_3,int param_4,int param_5,int param_6)
 
@@ -34,7 +36,7 @@ void FUN_006e2d50(int *param_1,int *param_2,int param_3,int param_4,int param_5,
           piVar5 = piVar5 + -1;
         }
         if (iVar3 == -1) {
-          *(short *)((int)piVar5 + 2) = *(short *)((int)piVar4 + 2) + (short)param_6;
+          STField<short>(piVar5,2) = STField<short>(piVar4,2) + (short)param_6;
         }
       }
       else {
@@ -57,7 +59,7 @@ void FUN_006e2d50(int *param_1,int *param_2,int param_3,int param_4,int param_5,
           piVar5 = piVar5 + -1;
         }
         if (iVar3 == -1) {
-          *(short *)((int)piVar5 + 2) = *(short *)((int)piVar4 + 2) + (short)param_6;
+          STField<short>(piVar5,2) = STField<short>(piVar4,2) + (short)param_6;
         }
       }
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

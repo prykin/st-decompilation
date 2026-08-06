@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] x87_double_parameter_slots target=function:-1: prototype=undefined1
    __stdcall FUN_0074c613(AnonShape_0074C613_A217E84A * param_1, undefined4 param_2, undefined4

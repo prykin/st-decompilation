@@ -1193,8 +1193,7 @@ LAB_00468493:
                       lVar15 = Library::MSVCRT::__ftol();
                       iVar5 = (int)(short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3
                               + (int)local_20;
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      iVar7 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
+                      iVar7 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24);
                       uVar8 = local_1c;
                     }
                     else {
@@ -1214,10 +1213,8 @@ LAB_00468493:
                       this->field_001C = uVar12;
                       this->field_001C = uVar8;
                       iVar5 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      local_24._2_2_ = (short)((uint)local_24 >> 0x10);
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      iVar7 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
+                      STPiece<2,2>(local_24) = (short)((uint)local_24 >> 0x10);
+                      iVar7 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24);
                     }
                     TraksClassTy::TraksCreate
                               (g_traksClass_00802A7C,1,2,7,
@@ -1320,9 +1317,8 @@ LAB_00468493:
                           lVar15 = Library::MSVCRT::__ftol();
                           iVar5 = (int)(short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 +
                                   -3 + (int)local_20;
-                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                           iVar7 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) -
-                                  (int)local_24._2_2_;
+                                  (int)STPiece<2,2>(local_24);
                           uVar8 = local_1c;
                         }
                         else {
@@ -1342,11 +1338,9 @@ LAB_00468493:
                           this->field_001C = uVar12;
                           this->field_001C = uVar8;
                           iVar5 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
-                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                          local_24._2_2_ = (short)((uint)local_24 >> 0x10);
-                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                          STPiece<2,2>(local_24) = (short)((uint)local_24 >> 0x10);
                           iVar7 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) -
-                                  (int)local_24._2_2_;
+                                  (int)STPiece<2,2>(local_24);
                         }
                         TraksClassTy::TraksCreate
                                   (g_traksClass_00802A7C,1,2,7,

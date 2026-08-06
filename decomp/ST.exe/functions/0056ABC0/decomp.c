@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0056abc0(void *this,char *param_1)
 
@@ -13,13 +15,13 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
-    if (*(char *)((int)this + 0x1474) != '\0') {
+    if (STField<char>(this,0x1474) != '\0') {
       if (g_visibleClass_00802A88 != nullptr) {
         bVar4 = 0;
         puVar5 = nullptr;
         pcVar7 = (char *)((int)this + 0x11c9);
         do {
-          if ((*pcVar7 != -1) && (bVar4 != *(byte *)((int)this + 0x112d))) {
+          if ((*pcVar7 != -1) && (bVar4 != STField<byte>(this,0x112d))) {
             VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar5);
           }
           bVar4 = bVar4 + 1;
@@ -27,11 +29,11 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
           pcVar7 = pcVar7 + 0x51;
         } while (bVar4 < 8);
       }
-      *(undefined1 *)((int)this + 0x1474) = 0;
+      STField<undefined1>(this,0x1474) = 0;
     }
   }
-  else if ((*(char *)((int)this + 0x1474) == '\0') &&
-          (*(undefined1 *)((int)this + 0x1474) = 1, g_visibleClass_00802A88 != nullptr
+  else if ((STField<char>(this,0x1474) == '\0') &&
+          (STField<undefined1>(this,0x1474) = 1, g_visibleClass_00802A88 != nullptr
           )) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (char *)((int)this + 0x11c9);
@@ -40,7 +42,7 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
     pbVar6 = &g_bulkInitializedRecords_008087C7[0].field_0023;
     bVar4 = DAT_0080874d;
     do {
-      if ((*param_1 != -1) && (bVar3 != *(byte *)((int)this + 0x112d))) {
+      if ((*param_1 != -1) && (bVar3 != STField<byte>(this,0x112d))) {
         if (DAT_00808a8f == '\0') {
           if (bVar4 == bVar3) {
 LAB_0056acb1:

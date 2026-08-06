@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 1.
@@ -514,16 +516,16 @@ switchD_006e74ad_default:
               dVar1 = (double)((float)puVar14[0x1e] / (float)this->field_00C8);
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
               lVar18 = Library::MSVCRT::__ftol();
-              *(byte *)((int)puVar14 + 0x111) = (byte)lVar18;
+              STField<byte>(puVar14,0x111) = (byte)lVar18;
               if (*(short *)&this->field_0280->field_0x2 <= (short)(ushort)(byte)lVar18) {
-                *(char *)((int)puVar14 + 0x111) = this->field_0280->field_0x2 + -1;
+                STField<char>(puVar14,0x111) = this->field_0280->field_0x2 + -1;
               }
               dVar1 = (double)((float)puVar14[0x1f] / (float)this->field_00D0);
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
               lVar18 = Library::MSVCRT::__ftol();
-              *(byte *)((int)puVar14 + 0x112) = (byte)lVar18;
+              STField<byte>(puVar14,0x112) = (byte)lVar18;
               if (4 < (byte)lVar18) {
-                *(undefined1 *)((int)puVar14 + 0x112) = 4;
+                STField<undefined1>(puVar14,0x112) = 4;
               }
               switch(this->field_00A8) {
               case CASE_0:
@@ -618,39 +620,38 @@ LAB_006e7ff9:
       pvVar5 = (&this->field_0456)[uVar15];
       if (pvVar5 != nullptr) {
         FUN_006d25e0((byte *)((DAT_00856d84 -
-                              (DAT_00856d8c + 1) * ((int)*(short *)((int)pvVar5 + 0x12) / 2)) +
+                              (DAT_00856d8c + 1) * ((int)STField<short>(pvVar5,0x12) / 2)) +
                              DAT_00856d88),-DAT_00856d8c,
-                     (byte *)((*(byte *)((int)pvVar5 + 0xd) >> 1 & 0xe) + 0x16 + (int)pvVar5),
-                     (int)*(short *)((int)pvVar5 + 0x12),(int)*(short *)((int)pvVar5 + 0x14));
+                     (byte *)((STField<byte>(pvVar5,0xd) >> 1 & 0xe) + 0x16 + (int)pvVar5),
+                     (int)STField<short>(pvVar5,0x12),(int)STField<short>(pvVar5,0x14));
       }
       uVar15 = uVar15 + 1 & 3;
       pvVar5 = (&this->field_0456)[uVar15];
       if (pvVar5 != nullptr) {
-        iVar8 = (int)*(short *)((int)pvVar5 + 0x14) / 2;
+        iVar8 = (int)STField<short>(pvVar5,0x14) / 2;
         FUN_006d25e0((byte *)((DAT_00856d88 - (DAT_00856d84 - iVar8) * DAT_00856d8c) + iVar8),
                      -DAT_00856d8c,
-                     (byte *)((*(byte *)((int)pvVar5 + 0xd) >> 1 & 0xe) + 0x16 + (int)pvVar5),
-                     (int)*(short *)((int)pvVar5 + 0x12),(int)*(short *)((int)pvVar5 + 0x14));
+                     (byte *)((STField<byte>(pvVar5,0xd) >> 1 & 0xe) + 0x16 + (int)pvVar5),
+                     (int)STField<short>(pvVar5,0x12),(int)STField<short>(pvVar5,0x14));
       }
       uVar15 = uVar15 + 1 & 3;
       pvVar5 = (&this->field_0456)[uVar15];
       if (pvVar5 != nullptr) {
-        iVar8 = (int)*(short *)((int)pvVar5 + 0x12);
+        iVar8 = (int)STField<short>(pvVar5,0x12);
         FUN_006d25e0((byte *)((-(((this->field_03DC - iVar8 / 2) -
-                                 (int)*(short *)((int)pvVar5 + 0x14)) * DAT_00856d8c) - iVar8 / 2) +
+                                 (int)STField<short>(pvVar5,0x14)) * DAT_00856d8c) - iVar8 / 2) +
                               DAT_00856d84 + DAT_00856d88),-DAT_00856d8c,
-                     (byte *)((*(byte *)((int)pvVar5 + 0xd) >> 1 & 0xe) + 0x16 + (int)pvVar5),iVar8,
-                     (int)*(short *)((int)pvVar5 + 0x14));
+                     (byte *)((STField<byte>(pvVar5,0xd) >> 1 & 0xe) + 0x16 + (int)pvVar5),iVar8,
+                     (int)STField<short>(pvVar5,0x14));
       }
       pvVar5 = (&this->field_0456)[uVar15 + 1 & 3];
       if (pvVar5 != nullptr) {
-        iVar8 = (int)*(short *)((int)pvVar5 + 0x14);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        iVar8 = (int)STField<short>(pvVar5,0x14);
         FUN_006d25e0((byte *)(((-((DAT_00856d84 - iVar8 / 2) * DAT_00856d8c) - iVar8 / 2) -
-                              (int)*(short *)((int)pvVar5 + 0x12)) + DAT_00856d88 + this->field_03DC
+                              (int)STField<short>(pvVar5,0x12)) + DAT_00856d88 + this->field_03DC
                              ),-DAT_00856d8c,
-                     (byte *)((*(byte *)((int)pvVar5 + 0xd) >> 1 & 0xe) + 0x16 + (int)pvVar5),
-                     (int)*(short *)((int)pvVar5 + 0x12),iVar8);
+                     (byte *)((STField<byte>(pvVar5,0xd) >> 1 & 0xe) + 0x16 + (int)pvVar5),
+                     (int)STField<short>(pvVar5,0x12),iVar8);
       }
     }
     pAVar2 = (AnonShape_006E6AF0_D2F012A7 *)this->field_0442;

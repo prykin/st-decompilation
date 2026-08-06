@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_006d6a10(void *this,int *param_1)
 
@@ -25,8 +27,8 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   int local_c;
   int local_8;
 
-  piVar2 = *(int **)((int)this + 0x2f8);
-  if ((*(uint *)(*(int *)((int)this + 0x288) + 4) & 0x20000000) == 0) {
+  piVar2 = STField<int *>(this,0x2f8);
+  if ((*(uint *)(STField<int>(this,0x288) + 4) & 0x20000000) == 0) {
     return 0;
   }
   iVar9 = 0;
@@ -34,20 +36,20 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   local_44 = piVar2;
   local_10 = this;
   DVar6 = timeGetTime();
-  *(int *)(*(int *)((int)this + 0x288) + 0xe8) = *(int *)(*(int *)((int)this + 0x288) + 0xe8) + 1;
-  iVar3 = *(int *)((int)this + 0x288);
+  *(int *)(STField<int>(this,0x288) + 0xe8) = *(int *)(STField<int>(this,0x288) + 0xe8) + 1;
+  iVar3 = STField<int>(this,0x288);
   if (3 < *(uint *)(iVar3 + 0xe8)) {
     uVar8 = DVar6 - *(int *)(iVar3 + 0xec);
     *(int *)(iVar3 + 0xf0) = *(int *)(iVar3 + 0xf0) + uVar8;
-    if (uVar8 < *(uint *)(*(int *)((int)this + 0x288) + 0xf4)) {
-      *(uint *)(*(int *)((int)this + 0x288) + 0xf4) = uVar8;
+    if (uVar8 < *(uint *)(STField<int>(this,0x288) + 0xf4)) {
+      *(uint *)(STField<int>(this,0x288) + 0xf4) = uVar8;
     }
-    if (*(uint *)(*(int *)((int)this + 0x288) + 0xf8) < uVar8) {
-      *(uint *)(*(int *)((int)this + 0x288) + 0xf8) = uVar8;
+    if (*(uint *)(STField<int>(this,0x288) + 0xf8) < uVar8) {
+      *(uint *)(STField<int>(this,0x288) + 0xf8) = uVar8;
     }
   }
-  *(DWORD *)(*(int *)((int)this + 0x288) + 0xec) = DVar6;
-  if (*(int *)((int)this + 0x30c) == 0) {
+  *(DWORD *)(STField<int>(this,0x288) + 0xec) = DVar6;
+  if (STField<int>(this,0x30c) == 0) {
     local_98.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_98;
     iVar9 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0);
@@ -67,20 +69,20 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
     }
   }
   else {
-    uVar8 = *(uint *)(*(int *)((int)this + 0x288) + 4);
+    uVar8 = *(uint *)(STField<int>(this,0x288) + 4);
     if ((uVar8 & 1) == 0) {
-      if (*(int *)((int)this + 0x310) == 0) {
-        if (*(int *)((int)this + 0x300) != 0) {
+      if (STField<int>(this,0x310) == 0) {
+        if (STField<int>(this,0x300) != 0) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*piVar2 + 0x80))(piVar2,0);
-          *(undefined4 *)((int)this + 0x300) = 0;
-          *(undefined4 *)((int)this + 0x2fc) = 0;
+          STField<undefined4>(this,0x300) = 0;
+          STField<undefined4>(this,0x2fc) = 0;
         }
-        iVar3 = *(int *)(*(int *)((int)this + 0x288) + 0x28);
+        iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
         if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
           EnterCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
         }
-        iVar3 = *(int *)((int)this + 0x288);
+        iVar3 = STField<int>(this,0x288);
         local_30 = *(undefined4 *)(iVar3 + 8);
         local_2c = *(undefined4 *)(iVar3 + 0xc);
         local_28 = *(int *)(iVar3 + 0x10) + *(int *)(iVar3 + 8);
@@ -95,7 +97,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         local_20.bottom = *(int *)(iVar3 + 0x24) + local_20.top;
         BVar7 = IntersectRect(&local_54,&local_20,&local_40);
         if (BVar7 != 0) {
-          iVar3 = *(int *)(*(int *)((int)this + 0x288) + 0x28);
+          iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
           pcVar5 = *(code **)(iVar3 + 0x4e4);
           if (pcVar5 != nullptr) {
             (*pcVar5)(*(undefined4 *)(iVar3 + 0x4ec),local_54.left,local_54.top,
@@ -104,7 +106,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
           piVar2 = local_44;
           local_c = 0;
           while( true ) {
-            piVar4 = *(int **)(*(int *)(*(int *)((int)this + 0x288) + 0x28) + 0x40);
+            piVar4 = *(int **)(*(int *)(STField<int>(this,0x288) + 0x28) + 0x40);
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             iVar9 = (**(code **)(*piVar4 + 0x14))(piVar4,&local_54,piVar2,&local_30,0x1000000,0);
             local_8 = iVar9;
@@ -112,7 +114,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
             if (iVar9 == -0x7789fe3e) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(*piVar2 + 0x6c))(piVar2);
-              FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
+              FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(STField<int>(this,0x288) + 0x28));
             }
             else {
               if (((iVar9 != -0x7789ff60) && (iVar9 != -0x7789fe52)) || (local_c != 0)) break;
@@ -126,22 +128,22 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
             local_8 = 0;
           }
         }
-        iVar3 = *(int *)(*(int *)((int)this + 0x288) + 0x28);
+        iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
         if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
           LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
         }
-        Library::DKW::DDX::FUN_006bb370(*(DDXContext **)(*(int *)((int)this + 0x288) + 0x28),0,0);
+        Library::DKW::DDX::FUN_006bb370(*(DDXContext **)(STField<int>(this,0x288) + 0x28),0,0);
       }
       else {
-        if (*(int *)((int)this + 0x300) != 0) {
+        if (STField<int>(this,0x300) != 0) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*piVar2 + 0x80))(piVar2,0);
-          iVar3 = *(int *)(*(int *)((int)this + 0x288) + 0x28);
+          iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
           if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
             LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
           }
-          *(undefined4 *)((int)this + 0x300) = 0;
-          *(undefined4 *)((int)this + 0x2fc) = 0;
+          STField<undefined4>(this,0x300) = 0;
+          STField<undefined4>(this,0x2fc) = 0;
         }
         local_dc.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_dc;
@@ -160,18 +162,18 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         }
       }
     }
-    else if ((*(int *)((int)this + 0x304) == 0) || ((uVar8 & 0x2000000) != 0)) {
-      if (*(int *)((int)this + 0x300) != 0) {
+    else if ((STField<int>(this,0x304) == 0) || ((uVar8 & 0x2000000) != 0)) {
+      if (STField<int>(this,0x300) != 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar2 + 0x80))(piVar2,0);
-        *(undefined4 *)((int)this + 0x300) = 0;
-        *(undefined4 *)((int)this + 0x2fc) = 0;
+        STField<undefined4>(this,0x300) = 0;
+        STField<undefined4>(this,0x2fc) = 0;
       }
-      iVar3 = *(int *)(*(int *)((int)this + 0x288) + 0x28);
+      iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
       if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
         EnterCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
       }
-      iVar3 = *(int *)((int)this + 0x288);
+      iVar3 = STField<int>(this,0x288);
       local_30 = *(undefined4 *)(iVar3 + 8);
       local_2c = *(undefined4 *)(iVar3 + 0xc);
       local_28 = *(int *)(iVar3 + 0x10) + *(int *)(iVar3 + 8);
@@ -184,11 +186,11 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
       local_20.top = *(int *)(*(int *)(iVar3 + 0x28) + 0x14) + *(int *)(iVar3 + 0x1c);
       ClientToScreen(*(HWND *)(*(int *)(iVar3 + 0x28) + 4),(LPPOINT)&local_20);
       local_c = 0;
-      local_20.right = *(int *)(*(int *)((int)this + 0x288) + 0x20) + local_20.left;
-      local_20.bottom = *(int *)(*(int *)((int)this + 0x288) + 0x24) + local_20.top;
+      local_20.right = *(int *)(STField<int>(this,0x288) + 0x20) + local_20.left;
+      local_20.bottom = *(int *)(STField<int>(this,0x288) + 0x24) + local_20.top;
       do {
-        if (*(int *)((int)this + 0x304) == 0) {
-          piVar4 = *(int **)(*(int *)(*(int *)((int)this + 0x288) + 0x28) + 0x34);
+        if (STField<int>(this,0x304) == 0) {
+          piVar4 = *(int **)(*(int *)(STField<int>(this,0x288) + 0x28) + 0x34);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar9 = (**(code **)(*piVar4 + 0x14))(piVar4,&local_20,piVar2,&local_30,0x1000000,0);
         }
@@ -196,7 +198,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar9 = (**(code **)(*piVar2 + 0x84))
                             (piVar2,&local_30,
-                             *(undefined4 *)(*(int *)(*(int *)((int)this + 0x288) + 0x28) + 0x34),
+                             *(undefined4 *)(*(int *)(STField<int>(this,0x288) + 0x28) + 0x34),
                              &local_20,0x4000,0);
         }
         local_8 = iVar9;
@@ -204,7 +206,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         if (iVar9 == -0x7789fe3e) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*piVar2 + 0x6c))(piVar2);
-          FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
+          FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(STField<int>(this,0x288) + 0x28));
         }
         else {
           if (((iVar9 != -0x7789ff60) && (iVar9 != -0x7789fe52)) || (local_c != 0)) break;
@@ -217,10 +219,10 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         local_8 = 0;
       }
       if (iVar9 == 0) {
-        puVar1 = (uint *)(*(int *)((int)this + 0x288) + 4);
+        puVar1 = (uint *)(STField<int>(this,0x288) + 4);
         *puVar1 = *puVar1 & 0xfdffffff;
       }
-      iVar3 = *(int *)(*(int *)((int)this + 0x288) + 0x28);
+      iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
       if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
         LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
       }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as
    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260.

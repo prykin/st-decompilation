@@ -8,6 +8,6 @@ bool __thiscall FUN_00417f30(void *this,short param_1,short param_2,short param_
     return false;
   }
   return STGridAt3D(g_worldGrid, param_1, param_2, param_3).objects
-         [*(byte *)((int)this + 0x8e)] == nullptr;
+         [STField<byte>(this,0x8e)] == nullptr;
 }
 

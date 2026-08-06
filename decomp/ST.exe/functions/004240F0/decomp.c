@@ -41,19 +41,19 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
     }
     pvVar3 = Library::DKW::LIB::MemAlloc(*param_1);
     local_8 = 0;
-    *(int *)((int)pvVar3 + 4) = (int)pSVar6->field_0024;
-    *(undefined4 *)((int)pvVar3 + 0xc) = 2;
-    *(undefined4 *)((int)pvVar3 + 0x14) = pSVar6->field_0020;
-    *(undefined2 *)((int)pvVar3 + 0x18) = pSVar6->field_0025;
-    *(undefined2 *)((int)pvVar3 + 0x1a) = pSVar6->field_0027;
-    *(undefined4 *)((int)pvVar3 + 0x2c) = pSVar6->field_0031;
-    *(undefined4 *)((int)pvVar3 + 0x30) = pSVar6->field_0035;
-    *(undefined4 *)((int)pvVar3 + 0x34) = pSVar6->field_0039;
+    STField<int>(pvVar3,4) = (int)pSVar6->field_0024;
+    STField<undefined4>(pvVar3,0xc) = 2;
+    STField<undefined4>(pvVar3,0x14) = pSVar6->field_0020;
+    STField<undefined2>(pvVar3,0x18) = pSVar6->field_0025;
+    STField<undefined2>(pvVar3,0x1a) = pSVar6->field_0027;
+    STField<undefined4>(pvVar3,0x2c) = pSVar6->field_0031;
+    STField<undefined4>(pvVar3,0x30) = pSVar6->field_0035;
+    STField<undefined4>(pvVar3,0x34) = pSVar6->field_0039;
     local_18 = pvVar3;
     if (pSVar6->field_0029 == nullptr) {
       local_8 = 0;
-      *(undefined4 *)((int)pvVar3 + 0x1c) = 0xffffffff;
-      *(undefined4 *)((int)pvVar3 + 0x20) = 0;
+      STField<undefined4>(pvVar3,0x1c) = 0xffffffff;
+      STField<undefined4>(pvVar3,0x20) = 0;
     }
     else {
       local_c = (undefined4 *)FUN_006b0020(pSVar6->field_0029,(int *)&local_8);
@@ -61,15 +61,15 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
       puVar8 = (byte *)((int)pvVar3 + 0x40);
       memmove(puVar8, puVar7, local_8); /* compiler REP MOVS byte copy */
       uVar5 = 0;
-      *(undefined4 *)((int)pvVar3 + 0x1c) = 0x40;
-      *(uint *)((int)pvVar3 + 0x20) = local_8;
+      STField<undefined4>(pvVar3,0x1c) = 0x40;
+      STField<uint>(pvVar3,0x20) = local_8;
       FreeAndNull(&local_c);
       pSVar6 = local_10;
     }
     iVar2 = local_8 + 0x40;
     if (pSVar6->field_002D == nullptr) {
-      *(undefined4 *)((int)pvVar3 + 0x24) = 0xffffffff;
-      *(uint *)((int)pvVar3 + 0x28) = local_8;
+      STField<undefined4>(pvVar3,0x24) = 0xffffffff;
+      STField<uint>(pvVar3,0x28) = local_8;
     }
     else {
       local_14 = iVar2;
@@ -77,12 +77,12 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
       puVar7 = (byte *)(local_c);
       puVar8 = (byte *)(iVar2 + (int)pvVar3);
       memmove(puVar8, puVar7, local_8); /* compiler REP MOVS byte copy */
-      *(int *)((int)pvVar3 + 0x24) = local_14;
-      *(uint *)((int)pvVar3 + 0x28) = local_8;
+      STField<int>(pvVar3,0x24) = local_14;
+      STField<uint>(pvVar3,0x28) = local_8;
       FreeAndNull(&local_c);
     }
-    *(undefined4 *)((int)pvVar3 + 0x38) = 0xffffffff;
-    *(undefined4 *)((int)pvVar3 + 0x3c) = 0;
+    STField<undefined4>(pvVar3,0x38) = 0xffffffff;
+    STField<undefined4>(pvVar3,0x3c) = 0;
     g_currentExceptionFrame = local_5c.previous;
     return (int)pvVar3;
   }

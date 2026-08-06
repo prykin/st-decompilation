@@ -17,7 +17,7 @@ void __thiscall STParticleC::sub_0062AEF0(STParticleC *this,undefined4 *param_1)
   memmove(pSVar3, param_1, 0xd6); /* compiler REP MOVS byte copy */
   pSVar3 = (STParticleC *)((byte *)pSVar3 + 0xd4);
   param_1 = param_1 + 0x35;
-  pSVar3->field_0x2 = *(undefined1 *)((int)param_1 + 2);
+  pSVar3->field_0x2 = STField<undefined1>(param_1,2);
   this->field_00CE = uVar1;
   this->field_00CA = nullptr;
   this->field_00C6 = 0xffffffff;

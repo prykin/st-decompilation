@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] leaf_void.
    Evidence: leaf function has RET and never writes EAX/AX/AL/AH

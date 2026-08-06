@@ -161,8 +161,7 @@ LAB_006375fd:
                    (iVar10 = (*this->vtable[5].slots_00_28[2])(), uVar7 = param_9, iVar10 != 0)) {
                   thunk_FUN_00416270(this,(undefined2 *)((int)&param_4 + 2),
                                      (int *)((int)&param_3 + 2),(int *)&stack0x0000001e);
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  iVar10 = FUN_006aced8((int)param_4._2_2_,(int)param_3._2_2_,param_1,param_2);
+                  iVar10 = FUN_006aced8((int)STPiece<2,2>(param_4),(int)STPiece<2,2>(param_3),param_1,param_2);
                   uVar7 = param_9;
                   if (iVar10 < 0x28b) {
                     memset(local_58, 0, 0x20); /* compiler bulk-zero initialization */

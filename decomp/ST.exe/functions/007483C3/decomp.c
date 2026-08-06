@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_007483c3(void *this,int *param_1,int *param_2)
 

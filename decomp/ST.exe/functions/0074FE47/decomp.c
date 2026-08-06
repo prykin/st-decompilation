@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] machine_stack_arity_expansion target=function:-1: prototype=int
    __stdcall FUN_0074fe47(AnonShape_0074FE47_5517BCCF * param_1, double param_2)

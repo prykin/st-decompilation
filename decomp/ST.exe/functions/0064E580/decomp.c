@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0064E580 returns zero-filled partial register load at 0064E592 @ 0064E597 */

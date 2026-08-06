@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006BC3E0 -> 006BC360 @ 006BC40C */
@@ -16,8 +18,7 @@ undefined2 * FUN_006bc3e0(ushort *param_1,undefined2 *param_2,undefined4 *param_
   }
   FUN_006bc360(param_1,(undefined4 *)(puVar1 + 2),(int *)&param_2);
   *puVar1 = 0x300;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  puVar1[1] = param_2._0_2_;
+  puVar1[1] = STPiece<0,2>(param_2);
   if (param_3 != nullptr) {
     *param_3 = param_2;
   }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00619C70 -> 0061C910 @ 0061A76B; /STJumpMineC+0x93
@@ -31,31 +33,31 @@ FUN_0061c910(void *this,int param_1,STJumpMineC_field_0093State param_2,undefine
     iVar3 = STJumpMineC::sub_0061B340
                       (this,(short)param_3,(short)param_4,param_5,param_6,param_7,param_8,&param_7);
     if (iVar3 != 0) {
-      *(undefined4 *)((int)this + 0x9f) = *(undefined4 *)((int)this + 0x40);
-      *(undefined4 *)((int)this + 0xa3) = *(undefined4 *)((int)this + 0x44);
-      *(int *)((int)this + 0xa7) = param_7;
-      *(undefined4 *)((int)this + 0x34) = 0;
+      STField<undefined4>(this,0x9f) = STField<undefined4>(this,0x40);
+      STField<undefined4>(this,0xa3) = STField<undefined4>(this,0x44);
+      STField<int>(this,0xa7) = param_7;
+      STField<undefined4>(this,0x34) = 0;
       return CASE_1;
     }
-    *(int *)((int)this + 0x9f) = param_6;
-    *(int *)((int)this + 0xa3) = iVar2;
-    *(int *)((int)this + 0xa7) = param_7;
-    *(undefined4 *)((int)this + 0x34) = 0;
+    STField<int>(this,0x9f) = param_6;
+    STField<int>(this,0xa3) = iVar2;
+    STField<int>(this,0xa7) = param_7;
+    STField<undefined4>(this,0x34) = 0;
   }
   else if ((1 < param_1) && (param_1 < 4)) {
-    if (*(int **)((int)this + 0x34) != nullptr) {
+    if (STField<int *>(this,0x34) != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar2 = (**(code **)(**(int **)((int)this + 0x34) + 0xe0))
-                        (*(undefined4 *)((int)this + 0x38),(byte *)((int)&param_2 + 2),
+      iVar2 = (**(code **)(*STField<int *>(this,0x34) + 0xe0))
+                        (STField<undefined4>(this,0x38),(byte *)((int)&param_2 + 2),
                          (int)&param_1 + 2,(int)&param_8 + 2,&local_8);
       if (iVar2 == 0) {
-        *(int *)((int)this + 0x44) = (int)param_1._2_2_;
-        *(int *)((int)this + 0xa3) = (int)param_1._2_2_;
-        *(int *)((int)this + 0x40) = (int)(short)param_2._2_2_;
-        *(int *)((int)this + 0x48) = param_8._2_2_ + 0x28;
-        *(undefined4 *)((int)this + 0x3c) = local_8;
-        *(int *)((int)this + 0x9f) = (int)(short)param_2._2_2_;
-        *(int *)((int)this + 0xa7) = param_8._2_2_ + 0x28;
+        STField<int>(this,0x44) = (int)STPiece<2,2>(param_1);
+        STField<int>(this,0xa3) = (int)STPiece<2,2>(param_1);
+        STField<int>(this,0x40) = (int)(short)STPiece<2,2>(param_2);
+        STField<int>(this,0x48) = STPiece<2,2>(param_8) + 0x28;
+        STField<undefined4>(this,0x3c) = local_8;
+        STField<int>(this,0x9f) = (int)(short)STPiece<2,2>(param_2);
+        STField<int>(this,0xa7) = STPiece<2,2>(param_8) + 0x28;
         iVar2 = STJumpMineC::LoadImagJMine(this,2);
         return CASE_6 - (iVar2 != 0);
       }

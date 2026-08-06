@@ -23,12 +23,12 @@ FUN_00631aa0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   local_18 = param_7;
   local_1c = param_6;
   local_14 = param_8;
-  if (*(int *)((int)this + 0x6d) == 0) {
+  if (STField<int>(this,0x6d) == 0) {
     pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x29,10);
-    *(DArrayTy **)((int)this + 0x6d) = pDVar1;
+    STField<DArrayTy *>(this,0x6d) = pDVar1;
   }
-  if (*(DArrayTy **)((int)this + 0x6d) != nullptr) {
-    iVar2 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0x6d),local_30);
+  if (STField<DArrayTy *>(this,0x6d) != nullptr) {
+    iVar2 = Library::DKW::TBL::DArrayAppend(STField<DArrayTy *>(this,0x6d),local_30);
     return iVar2 + 1;
   }
   return 1;

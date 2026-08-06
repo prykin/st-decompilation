@@ -32,28 +32,28 @@ void __thiscall FUN_0063e9c0(void *this,int param_1)
   int local_10;
   int local_c;
 
-  uVar9 = (*(int *)((int)this + 0x2c0) % 10) * *(int *)((int)this + 700);
-  if (*(uint *)((int)this + 0x245) < 2) {
+  uVar9 = (STField<int>(this,0x2c0) % 10) * STField<int>(this,700);
+  if (STField<uint>(this,0x245) < 2) {
     local_18 = 10;
-    cVar2 = *(char *)((int)this + 0x329);
-    if ((cVar2 == '\0') && ((*(int *)((int)this + 0x2b0) - *(int *)((int)this + 0x2b8)) / 10 == 1))
+    cVar2 = STField<char>(this,0x329);
+    if ((cVar2 == '\0') && ((STField<int>(this,0x2b0) - STField<int>(this,0x2b8)) / 10 == 1))
     {
-      *(undefined1 *)((int)this + 0x329) = 5;
+      STField<undefined1>(this,0x329) = 5;
       goto cf_common_join_0063EACD;
     }
     if (cVar2 == '\0') goto cf_common_join_0063EACD;
     uVar7 = g_playSystem_00802A38->field_00E4;
   }
   else {
-    if (*(uint *)((int)this + 0x245) == 2) {
+    if (STField<uint>(this,0x245) == 2) {
       local_18 = 5;
       goto cf_common_join_0063EACD;
     }
     local_18 = 10;
-    cVar2 = *(char *)((int)this + 0x329);
-    if ((cVar2 == '\0') && ((*(int *)((int)this + 0x2b0) - *(int *)((int)this + 0x2b8)) / 10 == 1))
+    cVar2 = STField<char>(this,0x329);
+    if ((cVar2 == '\0') && ((STField<int>(this,0x2b0) - STField<int>(this,0x2b8)) / 10 == 1))
     {
-      *(undefined1 *)((int)this + 0x329) = 5;
+      STField<undefined1>(this,0x329) = 5;
       goto cf_common_join_0063EACD;
     }
     if (cVar2 == '\0') goto cf_common_join_0063EACD;
@@ -62,23 +62,23 @@ void __thiscall FUN_0063e9c0(void *this,int param_1)
   local_18 = 10;
   if (uVar7 % 10 == 0) {
     local_18 = 10;
-    *(char *)((int)this + 0x329) = cVar2 + '\x01';
+    STField<char>(this,0x329) = cVar2 + '\x01';
   }
 cf_common_join_0063EACD:
   local_14 = uVar9;
-  if ((int)uVar9 < (int)(*(int *)((int)this + 700) + uVar9)) {
+  if ((int)uVar9 < (int)(STField<int>(this,700) + uVar9)) {
     do {
-      iVar10 = *(int *)((int)this + 0x336);
+      iVar10 = STField<int>(this,0x336);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((local_14 < *(uint *)(iVar10 + 0xc)) &&
          (iVar10 = *(int *)(iVar10 + 8) * local_14 + *(int *)(iVar10 + 0x1c), iVar10 != 0)) {
-        *(int *)((int)this + 0x1c) = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
+        STField<int>(this,0x1c) = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
         if (param_1 == 10) {
-          iVar4 = local_18 * *(int *)((int)this + 0x2c0) + *(int *)((int)this + 0x2b4);
+          iVar4 = local_18 * STField<int>(this,0x2c0) + STField<int>(this,0x2b4);
         }
         else {
-          iVar4 = *(int *)((int)this + 0x2c0);
-          iVar4 = ((iVar4 * iVar4 * -0x5f) / 2000 - iVar4 * local_18) + *(int *)((int)this + 0x2b4);
+          iVar4 = STField<int>(this,0x2c0);
+          iVar4 = ((iVar4 * iVar4 * -0x5f) / 2000 - iVar4 * local_18) + STField<int>(this,0x2b4);
         }
         *(float *)(iVar10 + 0x2c) = (float)iVar4;
         lVar12 = Library::MSVCRT::__ftol();
@@ -95,8 +95,8 @@ cf_common_join_0063EACD:
         sVar8 = (short)(iVar4 >> 0x1f);
         sVar3 = (short)(iVar5 >> 0x1f);
         if (param_1 == 10) {
-          if ((int)local_14 % (int)(uint)*(byte *)((int)this + 0x328) == 0) {
-            iVar6 = (int)(local_14 - uVar9) / (int)(uint)*(byte *)((int)this + 0x328);
+          if ((int)local_14 % (int)(uint)STField<byte>(this,0x328) == 0) {
+            iVar6 = (int)(local_14 - uVar9) / (int)(uint)STField<byte>(this,0x328);
             if (iVar4 < 0) {
               local_c = (short)(((short)(iVar4 / 0xc9) + sVar8) -
                                (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)) + -1;
@@ -133,22 +133,20 @@ cf_common_join_0063EACD:
                        (sVar8 < g_worldGrid.sizeY)) && ((-1 < sVar3 && (sVar3 < g_worldGrid.sizeZ)))
                       ) && (STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[0]
                             != nullptr)) {
-                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                    thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
+                    thunk_FUN_00601d10(STField<int>(this,0x259),local_1c,
                                        (int)STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[0],
-                                       (short)*(undefined4 *)((int)this + 0x25d),
-                                       *(ushort *)((int)this + 0x261),0xa8,0x110);
+                                       (short)STField<undefined4>(this,0x25d),
+                                       STField<ushort>(this,0x261),0xa8,0x110);
                   }
                   if ((((short)local_c < g_worldGrid.sizeX) && (-1 < sVar8)) &&
                      ((sVar8 < g_worldGrid.sizeY &&
                       (((-1 < sVar3 && (sVar3 < g_worldGrid.sizeZ)) &&
                        (STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[1] !=
                         nullptr)))))) {
-                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                    thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
+                    thunk_FUN_00601d10(STField<int>(this,0x259),local_1c,
                                        (int)STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[1],
-                                       (short)*(undefined4 *)((int)this + 0x25d),
-                                       *(ushort *)((int)this + 0x261),0xa8,0x110);
+                                       (short)STField<undefined4>(this,0x25d),
+                                       STField<ushort>(this,0x261),0xa8,0x110);
                   }
                 }
                 local_10 = local_10 + 1;
@@ -157,8 +155,8 @@ cf_common_join_0063EACD:
           }
         }
         else if (((g_playSystem_00802A38->field_00E4 & 1) != 0) &&
-                ((int)local_14 % (int)(uint)*(byte *)((int)this + 0x328) == 0)) {
-          iVar6 = (int)(local_14 - uVar9) / (int)(uint)*(byte *)((int)this + 0x328);
+                ((int)local_14 % (int)(uint)STField<byte>(this,0x328) == 0)) {
+          iVar6 = (int)(local_14 - uVar9) / (int)(uint)STField<byte>(this,0x328);
           if (iVar4 < 0) {
             local_c = (short)(((short)(iVar4 / 0xc9) + sVar8) -
                              (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)) + -1;
@@ -194,26 +192,25 @@ cf_common_join_0063EACD:
                      ((sVar3 < g_worldGrid.sizeZ &&
                       (STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[0] !=
                        nullptr)))))) {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
+                thunk_FUN_00601d10(STField<int>(this,0x259),local_1c,
                                    (int)STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).
-                                        objects[0],(short)*(undefined4 *)((int)this + 0x25d),
-                                   *(ushort *)((int)this + 0x261),0xa8,0x110);
+                                        objects[0],(short)STField<undefined4>(this,0x25d),
+                                   STField<ushort>(this,0x261),0xa8,0x110);
               }
               local_10 = local_10 + 1;
             } while (local_10 < 5);
           }
         }
-        uVar7 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-        *(uint *)((int)this + 0x1c) = uVar7;
+        uVar7 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+        STField<uint>(this,0x1c) = uVar7;
         *(uint *)(iVar10 + 8) = *(int *)(iVar10 + 8) + (uVar7 >> 0x10) % 6;
-        uVar7 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-        *(uint *)((int)this + 0x1c) = uVar7;
+        uVar7 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+        STField<uint>(this,0x1c) = uVar7;
         iVar5 = *(int *)(iVar10 + 0xc) + (uVar7 >> 0x10) % 6;
         *(int *)(iVar10 + 0xc) = iVar5;
-        iVar4 = (*(ST3DSMAPContext **)((int)this + 0x211))->field_0380;
+        iVar4 = (STField<ST3DSMAPContext *>(this,0x211))->field_0380;
         fVar11 = ST3DSMAPContext::sub_006E3210
-                           (*(ST3DSMAPContext **)((int)this + 0x211),
+                           (STField<ST3DSMAPContext *>(this,0x211),
                             (*(int *)(iVar10 + 8) * iVar4) / 0xc9,(iVar5 * iVar4) / 0xc9);
         fVar1 = (float)fVar11;
         if (*(float *)(iVar10 + 0x10) != fVar1) {
@@ -230,12 +227,12 @@ cf_common_join_0063EACD:
           }
           else {
             Library::Ourlib::ST3DSMAP::SprClose
-                      (*(void **)((int)this + 0x211),*(uint *)(iVar10 + 0x38));
+                      (STField<void *>(this,0x211),*(uint *)(iVar10 + 0x38));
             *(undefined4 *)(iVar10 + 0x38) = 0xffffffff;
           }
         }
         *(uint *)(iVar10 + 0x30) = g_playSystem_00802A38->field_00E4;
-        uVar7 = *(byte *)((int)this + 0x329) + 5;
+        uVar7 = STField<byte>(this,0x329) + 5;
         *(uint *)(iVar10 + 0x20) = uVar7;
         if (0xf < uVar7) {
           *(undefined4 *)(iVar10 + 0x20) = 0xe;
@@ -247,16 +244,16 @@ cf_common_join_0063EACD:
         }
       }
       local_14 = local_14 + 1;
-    } while ((int)local_14 < (int)(uVar9 + *(int *)((int)this + 700)));
+    } while ((int)local_14 < (int)(uVar9 + STField<int>(this,700)));
   }
-  iVar10 = *(int *)((int)this + 0x2c0) + 1;
-  *(int *)((int)this + 0x2c0) = iVar10;
-  if ((1 < *(uint *)((int)this + 0x245)) && (*(uint *)((int)this + 0x245) == 2)) {
-    *(int *)((int)this + 0x2b8) =
-         (*(int *)((int)this + 0x2b4) - (iVar10 * iVar10 * 0x5f) / 2000) - iVar10 * local_18;
+  iVar10 = STField<int>(this,0x2c0) + 1;
+  STField<int>(this,0x2c0) = iVar10;
+  if ((1 < STField<uint>(this,0x245)) && (STField<uint>(this,0x245) == 2)) {
+    STField<int>(this,0x2b8) =
+         (STField<int>(this,0x2b4) - (iVar10 * iVar10 * 0x5f) / 2000) - iVar10 * local_18;
     return;
   }
-  *(int *)((int)this + 0x2b8) = iVar10 * local_18 + *(int *)((int)this + 0x2b4);
+  STField<int>(this,0x2b8) = iVar10 * local_18 + STField<int>(this,0x2b4);
   return;
 }
 

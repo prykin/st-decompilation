@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined * __thiscall FUN_0057f530(void *this,int param_1)
 
@@ -7,7 +9,7 @@ undefined * __thiscall FUN_0057f530(void *this,int param_1)
   int3 extraout_var;
   int iVar2;
 
-  uVar1 = thunk_FUN_0057f240(0xe0,*(int *)((int)this + 0x259));
+  uVar1 = thunk_FUN_0057f240(0xe0,STField<int>(this,0x259));
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   iVar2 = CONCAT31(extraout_var,uVar1);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

@@ -61,8 +61,7 @@ LAB_00679378:
       *(undefined4 *)pAVar7 = 0;
       pAVar7 = (AnonShape_0068FD00_A5257008 *)&pAVar7->field_0x4;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_3c[0]._0_4_ = 0x71;
+    STPiece<0,4>(local_3c[0]) = 0x71;
     if (&stack0x00000000 != (undefined1 *)0x3c) {
       AiTactClassTy::GetAiMess(this_00,local_3c);
     }

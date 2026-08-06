@@ -55,12 +55,12 @@ void __thiscall MMsgTy::HideSprites(MMsgTy *this)
         if (*puVar5 != 0xffffffff) {
           FUN_006b3af0((int *)puVar5[0x11],*puVar5);
         }
-        if (*(uint *)((int)puVar5 + 0x91) != 0xffffffff) {
-          FUN_006b3af0(*(int **)((int)puVar5 + 0xd5),*(uint *)((int)puVar5 + 0x91));
+        if (STField<uint>(puVar5,0x91) != 0xffffffff) {
+          FUN_006b3af0(STField<int *>(puVar5,0xd5),STField<uint>(puVar5,0x91));
         }
-        if ((*(char *)((int)puVar5 + -5) != '\0') && (*(uint *)((int)puVar5 + 0x122) != 0xffffffff))
+        if ((*(char *)((int)puVar5 + -5) != '\0') && (STField<uint>(puVar5,0x122) != 0xffffffff))
         {
-          FUN_006b3af0(*(int **)((int)puVar5 + 0x166),*(uint *)((int)puVar5 + 0x122));
+          FUN_006b3af0(STField<int *>(puVar5,0x166),STField<uint>(puVar5,0x122));
         }
         iVar3 = iVar3 + 1;
         puVar5 = (uint *)((int)puVar5 + 0x1fb);

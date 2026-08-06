@@ -1238,7 +1238,7 @@ LAB_005458df:
                                           (char)((uint)*piVar24 >> 0x10));
               pcVar11 = LoadResourceString(UVar14,module);
               wsprintfA((LPSTR)local_524,"%s\n&%d%s",local_524,
-                        (*(Global_sub_00528060_param_1Enum *)((int)piVar24 + 5) != CASE_0) + 1,
+                        (STField<Global_sub_00528060_param_1Enum>(piVar24,5) != CASE_0) + 1,
                         pcVar11);
             }
             piVar24 = (int *)((int)piVar24 + 6);

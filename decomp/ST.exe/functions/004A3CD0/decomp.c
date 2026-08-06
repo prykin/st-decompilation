@@ -57,11 +57,9 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
     if (0 < (int)dVar1) {
       do {
         DArrayGetElement(param_3,uVar9,local_8);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        if (local_8._0_2_ != 0xffff) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (STPiece<0,2>(local_8) != 0xffff) {
           pSVar5 = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar3->field_0024,local_8._0_2_,CASE_1);
+                             (g_allPlayers_007FA174,pSVar3->field_0024,STPiece<0,2>(local_8),CASE_1);
           if (pSVar5 == nullptr) {
             iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1191,0,0,
                                        "%s","STGroupBoatC::DistributeDock NULL value");
@@ -90,10 +88,9 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
       if ((dVar1 != 0) && (uVar9 = 0, 0 < (int)dVar1)) {
         do {
           DArrayGetElement(local_c,uVar9,local_8);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar3->field_0024,local_8._0_2_,CASE_1);
+                             (g_allPlayers_007FA174,pSVar3->field_0024,STPiece<0,2>(local_8),CASE_1);
           STBoatC::CmdToObj(pSVar6,CASE_3,&local_10);
           uVar9 = uVar9 + 1;
         } while ((int)uVar9 < (int)dVar1);
@@ -156,10 +153,9 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
     if ((dVar1 != 0) && (uVar9 = 0, pDVar7 = local_28, 0 < (int)dVar1)) {
       do {
         DArrayGetElement(local_c,uVar9,local_8);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar6 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar3->field_0024,local_8._0_2_,CASE_1);
+                           (g_allPlayers_007FA174,pSVar3->field_0024,STPiece<0,2>(local_8),CASE_1);
         STBoatC::CmdToObj(pSVar6,CASE_3,&local_10);
         uVar9 = uVar9 + 1;
         pDVar7 = local_28;

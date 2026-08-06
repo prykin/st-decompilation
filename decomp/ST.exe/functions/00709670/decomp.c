@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 4.
    Evidence: 004AE080 -> 00709670 @ 004AE096; FUN_004ae080 parameter param_3 | 00709670 -> 00709470
@@ -20,8 +22,8 @@ void __thiscall FUN_00709670(void *this,uint param_1,int param_2,int param_3,byt
   puStack_c = &DAT_0079e210;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
-  if (((param_1 < *(uint *)((int)this + 0x310)) &&
-      (puVar1 = (uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114), (*puVar1 & 0x8000) != 0))
+  if (((param_1 < STField<uint>(this,0x310)) &&
+      (puVar1 = (uint *)(STField<int>(this,0x31c) + param_1 * 0x114), (*puVar1 & 0x8000) != 0))
      && ((puVar1[1] & 0x6000) == 0)) {
     local_8 = 0;
     uVar4 = puVar1[0x25];

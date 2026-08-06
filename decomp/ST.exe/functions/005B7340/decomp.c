@@ -39,18 +39,18 @@ void __thiscall MMsgTy::PaintMMsg(MMsgTy *this)
           Library::DKW::DDX::FUN_006b3730
                     ((uint *)puVar5[0xb],puVar5[-6],puVar5[-5],*puVar5,puVar5[1]);
         }
-        if (*(uint *)((int)puVar5 + 0x79) != 0xffffffff) {
+        if (STField<uint>(puVar5,0x79) != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
-                    (*(uint **)((int)puVar5 + 0xbd),*(uint *)((int)puVar5 + 0x79),
-                     *(uint *)((int)puVar5 + 0x7d),*(uint *)((int)puVar5 + 0x91),
-                     *(uint *)((int)puVar5 + 0x95));
+                    (STField<uint *>(puVar5,0xbd),STField<uint>(puVar5,0x79),
+                     STField<uint>(puVar5,0x7d),STField<uint>(puVar5,0x91),
+                     STField<uint>(puVar5,0x95));
         }
         if ((*(char *)((int)puVar5 + -0x1d) != '\0') &&
-           (*(uint *)((int)puVar5 + 0x10a) != 0xffffffff)) {
+           (STField<uint>(puVar5,0x10a) != 0xffffffff)) {
           Library::DKW::DDX::FUN_006b3730
-                    (*(uint **)((int)puVar5 + 0x14e),*(uint *)((int)puVar5 + 0x10a),
-                     *(uint *)((int)puVar5 + 0x10e),*(uint *)((int)puVar5 + 0x122),
-                     *(uint *)((int)puVar5 + 0x126));
+                    (STField<uint *>(puVar5,0x14e),STField<uint>(puVar5,0x10a),
+                     STField<uint>(puVar5,0x10e),STField<uint>(puVar5,0x122),
+                     STField<uint>(puVar5,0x126));
         }
         iVar3 = iVar3 + 1;
         puVar5 = (uint *)((int)puVar5 + 0x1fb);

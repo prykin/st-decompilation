@@ -35,8 +35,7 @@ void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
       _DAT_008072f8 = _DAT_008072f8 + (uint)(byte)(&DAT_008072f8)[uVar2];
       uVar2 = uVar2 + 1;
     } while (uVar2 < 0x82);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_00807300._1_1_ = DAT_00807300._1_1_ | 0xf;
+    STPiece<1,1>(DAT_00807300) = STPiece<1,1>(DAT_00807300) | 0xf;
     DAT_0080731a = 1;
     DAT_0080731e = 1;
     DAT_00807322 = 1;
@@ -44,8 +43,7 @@ void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
     DAT_00807328 = 1;
     DAT_0080732c = 1;
     DAT_00807327 = 7;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_00807300._0_1_ = 8;
+    STPiece<0,1>(DAT_00807300) = 8;
     _DAT_00807330 = 3;
     DAT_00807332 = 1;
     _DAT_00807336 = 1;
@@ -118,8 +116,8 @@ LAB_0057366c:
   memmove(pcVar8, pcVar6, uVar2); /* compiler REP MOVS byte copy */
   uVar5 = 0;
   uVar2 = 0xffffffff;
-  *(undefined4 *)((int)this + 0x779) = 0xdeb00008;
-  *(undefined4 *)((int)this + 0x77d) = 0;
+  STField<undefined4>(this,0x779) = 0xdeb00008;
+  STField<undefined4>(this,0x77d) = 0;
   pcVar6 = &DAT_007ca684;
   do {
     pcVar8 = pcVar6;

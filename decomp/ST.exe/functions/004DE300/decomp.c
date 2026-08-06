@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004DE300_param_1Enum. Cases:
@@ -38,7 +40,7 @@ undefined4 __thiscall FUN_004de300(void *this,Global_sub_004DE300_param_1Enum pa
     uVar3 = 0xbe;
   }
   puVar2 = (uint *)((int)this + 0x4d0);
-  if (*(int *)((int)this + 0x4d0) < 0) {
+  if (STField<int>(this,0x4d0) < 0) {
     return 0;
   }
   puVar4 = (uint *)((int)this + 0x4dc);

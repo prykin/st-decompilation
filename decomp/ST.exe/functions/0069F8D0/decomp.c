@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined2 *
 FUN_0069f8d0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,

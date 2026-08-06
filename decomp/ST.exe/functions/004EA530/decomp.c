@@ -19,7 +19,7 @@ undefined4 __thiscall FUN_004ea530(void *this,short param_1,short param_2,short 
     if ((iVar1 != 0x37) && (iVar1 = (**(code **)(*(int *)this_00 + 0x2c))(), iVar1 != 0x6c)) {
       return 0;
     }
-    iVar1 = thunk_FUN_004e8b10(this_00,*(uint *)((int)this + 0x24));
+    iVar1 = thunk_FUN_004e8b10(this_00,STField<uint>(this,0x24));
     if (iVar1 != 0) {
       thunk_FUN_004ea460(this,*(int *)&this_00->field_0x18,this_00);
     }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 00622990 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 00622246 */

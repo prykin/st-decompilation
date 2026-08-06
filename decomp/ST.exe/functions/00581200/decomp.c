@@ -98,7 +98,7 @@ void __fastcall FUN_00581200(int param_1)
             ((g_playSystem_00802A38 == nullptr ||
              (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)))))))))) {
         this = (void *)local_c->field_0010;
-        if (*(char *)((int)this + 0x146f) == '\0') {
+        if (STField<char>(this,0x146f) == '\0') {
           iVar10 = thunk_FUN_005822e0(this,*(byte *)&pSVar4[1].vtable,local_c->field_0024);
           bVar17 = iVar10 < 0;
         }

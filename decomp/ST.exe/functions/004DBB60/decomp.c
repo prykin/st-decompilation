@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004dbb60(void *this,int *param_1,int param_2)
 
@@ -26,7 +28,7 @@ undefined4 __thiscall FUN_004dbb60(void *this,int *param_1,int param_2)
       }
       *(undefined4 *)((int)this + iVar5 * 4 + 0x4e8) = 1;
       iVar1 = *(int *)((int)this + iVar5 * 4 + 0x4e0);
-      piVar2[0x131] = *(int *)((int)this + 0x18);
+      piVar2[0x131] = STField<int>(this,0x18);
       piVar2[0x130] = iVar1;
       if (*(int *)((int)this + (0x135 - iVar5) * 4) != 0) {
         piVar3 = (int *)((int)this + (0x139 - iVar5) * 4);
@@ -36,7 +38,7 @@ undefined4 __thiscall FUN_004dbb60(void *this,int *param_1,int param_2)
                             (g_playSystem_00802A38,
                              *(AnonShape_005EFAE0_B406B78B **)((int)this + (0x135 - iVar5) * 4),
                              (int *)&param_1);
-          if ((iVar5 == 0) && (param_1[0x131] == *(int *)((int)this + 0x18))) {
+          if ((iVar5 == 0) && (param_1[0x131] == STField<int>(this,0x18))) {
             param_1[0x130] = *piVar3;
           }
         }

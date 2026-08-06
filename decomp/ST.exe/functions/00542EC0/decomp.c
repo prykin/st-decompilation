@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STDestructorApplier] Recovered destructor for InterSystemC.
    Evidence: cleanup_only_vtable_method; zeroed_this_fields=4; same_this_calls=2;

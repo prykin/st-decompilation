@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00692600(int *param_1)
 
@@ -27,9 +29,9 @@ void __fastcall FUN_00692600(int *param_1)
         do {
           pvVar1 = *ppvVar2;
           if (pvVar1 != nullptr) {
-            if (*(int *)((int)pvVar1 + 0x25) == 0) {
+            if (STField<int>(pvVar1,0x25) == 0) {
               iVar6 = 0;
-              if (0 < *(short *)((int)pvVar1 + 0x23)) {
+              if (0 < STField<short>(pvVar1,0x23)) {
                 do {
                   if (*(int *)((int)*ppvVar2 + iVar6 * 4 + 0x2d) != 0) {
                     FreeAndNull((void **)((int)*ppvVar2 + iVar6 * 4 + 0x2d));
@@ -57,9 +59,9 @@ void __fastcall FUN_00692600(int *param_1)
       do {
         pvVar1 = *ppvVar2;
         if (pvVar1 != nullptr) {
-          if (*(int *)((int)pvVar1 + 0x25) == 0) {
+          if (STField<int>(pvVar1,0x25) == 0) {
             iVar6 = 0;
-            if (0 < *(short *)((int)pvVar1 + 0x23)) {
+            if (0 < STField<short>(pvVar1,0x23)) {
               do {
                 if (*(int *)((int)*ppvVar2 + iVar6 * 4 + 0x2d) != 0) {
                   FreeAndNull((void **)((int)*ppvVar2 + iVar6 * 4 + 0x2d));

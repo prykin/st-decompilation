@@ -104,8 +104,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
           iVar7 = *(int *)(message->arg0).ptr;
           if (iVar7 == 1) {
             bVar13 = 0;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_8 = (uint)local_8._1_3_ << 8;
+            local_8 = (uint)STPiece<1,3>(local_8) << 8;
             if (DAT_00808aaf != 0) {
               do {
                 uVar8 = local_8 & 0xff;
@@ -130,8 +129,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
           if (iVar7 == 2) {
             if (DAT_0080874d < 8) {
               bVar13 = 0;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_8 = (uint)local_8._1_3_ << 8;
+              local_8 = (uint)STPiece<1,3>(local_8) << 8;
               if (DAT_00808aaf != 0) {
                 do {
                   iVar7 = (local_8 & 0xff) * 0x9c;

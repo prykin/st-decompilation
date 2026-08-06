@@ -57,15 +57,13 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
       } while ((int)uVar7 < (int)((byte)pCVar2->field_0BB7 + local_14));
     }
     uVar7 = local_c & 0xff;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8._0_1_ = (byte)local_c;
+    STPiece<0,1>(local_8) = (byte)local_c;
     local_14 = uVar7;
     if (uVar7 < (byte)pCVar2->field_0BB5 + uVar7) {
       do {
         pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,2);
         DibPut(pCVar2->field_018C,iVar4 + 3 + uVar7 * 4,0x53,'\x01',pbVar5);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8._0_1_ = (byte)local_8 + 1;
+        STPiece<0,1>(local_8) = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;
       } while ((int)uVar7 < (int)((byte)pCVar2->field_0BB5 + local_14));
     }

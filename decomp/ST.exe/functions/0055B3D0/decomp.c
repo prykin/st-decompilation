@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_0055b3d0(void *this,int param_1,int param_2,undefined4 param_3,uint param_4)
@@ -12,7 +14,7 @@ FUN_0055b3d0(void *this,int param_1,int param_2,undefined4 param_3,uint param_4)
   byte *local_c;
   int *local_8;
 
-  if (((*(int *)((int)this + 0x114) != 0) && (param_4 < 8)) &&
+  if (((STField<int>(this,0x114) != 0) && (param_4 < 8)) &&
      ((g_playSystem_00802A38 == nullptr ||
       (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)))) {
     uVar2 = 0;
@@ -50,11 +52,10 @@ LAB_0055b4de:
                   g_bulkInitializedRecords_008087C7[param_4 & 0xff].field_0023;
         }
         if (bVar6) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((((*local_8 != 0) && (-1 < param_1)) && (param_1 < *(int *)((int)this + 0x20))) &&
-             (((-1 < param_2 && (param_2 < *(int *)((int)this + 0x24))) &&
+          if ((((*local_8 != 0) && (-1 < param_1)) && (param_1 < STField<int>(this,0x20))) &&
+             (((-1 < param_2 && (param_2 < STField<int>(this,0x24))) &&
               (((int)local_c < 0x808a71 &&
-               (*(char *)(*(int *)((int)this + 0x20) * param_2 + *local_8 + param_1) != '\0')))))) {
+               (*(char *)(STField<int>(this,0x20) * param_2 + *local_8 + param_1) != '\0')))))) {
             return 1;
           }
         }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
 
@@ -36,24 +38,24 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (**(code **)(*(int *)this + 0xc4))();
   puVar1[0x1c] = uVar2;
-  *(undefined4 *)(puVar1 + 3) = *(undefined4 *)((int)this + 0x6f7);
-  iVar4 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7));
+  *(undefined4 *)(puVar1 + 3) = STField<undefined4>(this,0x6f7);
+  iVar4 = thunk_FUN_004e8030(STField<int>(this,0x6f7));
   puVar1[7] = (char)iVar4;
-  *(undefined4 *)(puVar1 + 8) = *(undefined4 *)((int)this + 0x18);
-  *(undefined4 *)(puVar1 + 0xc) = *(undefined4 *)((int)this + 0x6fb);
-  *(undefined4 *)(puVar1 + 0x10) = *(undefined4 *)((int)this + 0x6ff);
-  *(undefined4 *)(puVar1 + 0x14) = *(undefined4 *)((int)this + 0x703);
-  *(undefined2 *)(puVar1 + 0x18) = *(undefined2 *)((int)this + 0x707);
-  puVar1[0x1a] = *(undefined1 *)((int)this + 0x709);
-  switch(*(undefined4 *)((int)this + 0x6f7)) {
+  *(undefined4 *)(puVar1 + 8) = STField<undefined4>(this,0x18);
+  *(undefined4 *)(puVar1 + 0xc) = STField<undefined4>(this,0x6fb);
+  *(undefined4 *)(puVar1 + 0x10) = STField<undefined4>(this,0x6ff);
+  *(undefined4 *)(puVar1 + 0x14) = STField<undefined4>(this,0x703);
+  *(undefined2 *)(puVar1 + 0x18) = STField<undefined2>(this,0x707);
+  puVar1[0x1a] = STField<undefined1>(this,0x709);
+  switch(STField<undefined4>(this,0x6f7)) {
   case 7:
   case 0x13:
   case 0x1b:
-    if (*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x7ca) != nullptr)
+    if (STField<AnonShape_005EFAE0_B406B78B *>(this,0x7ca) != nullptr)
     {
       local_c = nullptr;
       STPlaySystemC::sub_006E62D0
-                (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x7ca),
+                (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x7ca),
                  (int *)&local_c);
       if (local_c != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -61,7 +63,7 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
         *(undefined4 *)(puVar1 + 0x1e) = uVar5;
         iVar4 = local_c[8];
         if (iVar4 == 0x14) {
-          iVar4 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7));
+          iVar4 = thunk_FUN_004e8030(STField<int>(this,0x6f7));
           puVar1[0x22] = (char)iVar4;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar2 = (**(code **)(*local_c + 0x7c))();
@@ -98,10 +100,10 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
     *(undefined2 *)(puVar1 + 0x1e) = 0;
     break;
   default:
-    *(undefined2 *)(puVar1 + 0x1e) = *(undefined2 *)((int)this + 0x79a);
-    bVar3 = LookupRecordByte(*(char *)((int)this + 0x24));
+    *(undefined2 *)(puVar1 + 0x1e) = STField<undefined2>(this,0x79a);
+    bVar3 = LookupRecordByte(STField<char>(this,0x24));
     if (bVar3 == 1) {
-      iVar4 = *(int *)((int)this + 0x24);
+      iVar4 = STField<int>(this,0x24);
       iVar6 = 6;
 LAB_00486cfc:
       uVar5 = thunk_FUN_004e60d0(iVar4,iVar6);
@@ -109,22 +111,21 @@ LAB_00486cfc:
     }
     else {
       if (bVar3 == 2) {
-        iVar4 = *(int *)((int)this + 0x24);
+        iVar4 = STField<int>(this,0x24);
         iVar6 = 0x83;
         goto LAB_00486cfc;
       }
       *(undefined2 *)(puVar1 + 0x22) = 0;
     }
-    *(undefined2 *)(puVar1 + 0x26) = *(undefined2 *)((int)this + 0x7a2);
-    *(undefined2 *)(puVar1 + 0x20) = *(undefined2 *)((int)this + 0x7b6);
+    *(undefined2 *)(puVar1 + 0x26) = STField<undefined2>(this,0x7a2);
+    *(undefined2 *)(puVar1 + 0x20) = STField<undefined2>(this,0x7b6);
     *(undefined2 *)(puVar1 + 0x24) = 0;
-    *(undefined2 *)(puVar1 + 0x28) = *(undefined2 *)((int)this + 0x7be);
+    *(undefined2 *)(puVar1 + 0x28) = STField<undefined2>(this,0x7be);
   }
   *(undefined4 *)(puVar1 + 0x2a) = 0;
   puVar1[0x2e] = 0;
   STFishC::sub_004162B0(this,&local_8,&local_6,(undefined2 *)((int)&param_1 + 2));
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  puVar1[0x2e - param_1._2_2_] = 1;
+  puVar1[0x2e - STPiece<2,2>(param_1)] = 1;
   return;
 }
 

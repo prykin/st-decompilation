@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
 
@@ -30,7 +32,7 @@ int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
     *(undefined4 *)(iVar2 + (int)local_24) = DAT_00806774;
     iVar2 = iVar2 + 4;
   } while (iVar2 < 0x44);
-  *(undefined4 *)((int)local_24 + 0x24) = DAT_00806764;
+  STField<undefined4>(local_24,0x24) = DAT_00806764;
   local_20 = 0;
   local_1c = 0;
   local_18 = 0;

@@ -204,10 +204,8 @@ LAB_0058e87e:
       }
       _DAT_00811730 = 0xff;
       _DAT_00811734 = 0xffff;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_30._8_4_ = local_8->field_0008;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_30._12_4_ = 2;
+      STPiece<8,4>(local_30) = local_8->field_0008;
+      STPiece<12,4>(local_30) = 2;
       local_30.field_0010 = 0x110;
       local_30.field_0014 = &DAT_00811728;
       local_8->GetMessage(&local_30);

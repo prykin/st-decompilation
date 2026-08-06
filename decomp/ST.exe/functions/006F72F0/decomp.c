@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -380,8 +382,7 @@ LAB_006f73be:
       param_6 = pbVar8;
     } while ((int)pbVar6 < iVar5);
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  param_11._0_1_ = bVar1;
+  STPiece<0,1>(param_11) = bVar1;
   if (((byte)param_11 & 0xc0) == 0x80) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_6 = param_6 + iVar5;

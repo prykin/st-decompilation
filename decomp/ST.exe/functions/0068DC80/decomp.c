@@ -75,8 +75,7 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
     iVar3 = 0;
     if (0 < pAVar2->field_0125) {
       pAVar2->field_00A5->count = 0;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar9 = *(int *)((int)param_1 + 0x107) + 0x10b + (int)param_1;
+      iVar9 = STField<int>(param_1,0x107) + 0x10b + (int)param_1;
       if (0 < pAVar2->field_0125) {
         do {
           *(undefined4 *)(iVar9 + 4) = pAVar2->field_0024;

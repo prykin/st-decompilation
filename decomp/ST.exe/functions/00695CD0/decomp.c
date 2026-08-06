@@ -15,18 +15,18 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
   int iVar8;
   bool bVar9;
 
-  iVar8 = *(int *)((int)this + 0x5853);
+  iVar8 = STField<int>(this,0x5853);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((iVar8 != 0) && (param_1 < *(uint *)(iVar8 + 0xc))) &&
      (piVar7 = (int *)(*(int *)(iVar8 + 8) * param_1 + *(int *)(iVar8 + 0x1c)), piVar7 != nullptr
      )) {
-    if (*(DArrayTy **)((int)piVar7 + 0x15) != nullptr) {
-      DArrayDestroy(*(DArrayTy **)((int)piVar7 + 0x15));
-      *(undefined4 *)((int)piVar7 + 0x15) = 0;
+    if (STField<DArrayTy *>(piVar7,0x15) != nullptr) {
+      DArrayDestroy(STField<DArrayTy *>(piVar7,0x15));
+      STField<undefined4>(piVar7,0x15) = 0;
     }
-    if (*(DArrayTy **)((int)piVar7 + 0x19) != nullptr) {
-      DArrayDestroy(*(DArrayTy **)((int)piVar7 + 0x19));
-      *(undefined4 *)((int)piVar7 + 0x19) = 0;
+    if (STField<DArrayTy *>(piVar7,0x19) != nullptr) {
+      DArrayDestroy(STField<DArrayTy *>(piVar7,0x19));
+      STField<undefined4>(piVar7,0x19) = 0;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0) {
@@ -37,8 +37,8 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = *piVar7;
     }
-    DArrayRemoveAt(*(DArrayTy **)((int)this + 0x5853),param_1);
-    iVar8 = *(int *)((int)this + 0x5853);
+    DArrayRemoveAt(STField<DArrayTy *>(this,0x5853),param_1);
+    iVar8 = STField<int>(this,0x5853);
     uVar6 = 0;
     if (0 < *(int *)(iVar8 + 0xc)) {
       bVar9 = *(int *)(iVar8 + 0xc) != 0;
@@ -60,8 +60,8 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
               else {
                 iVar3 = 0;
               }
-              psVar1 = (short *)(*(int *)((int)this + 0x584f) +
-                                (*(int *)((int)this + 0x582f) * param_2 + *(int *)(iVar3 + 2)) * 2);
+              psVar1 = (short *)(STField<int>(this,0x584f) +
+                                (STField<int>(this,0x582f) * param_2 + *(int *)(iVar3 + 2)) * 2);
               if ((int)*psVar1 != uVar6) {
                 *psVar1 = (short)uVar6;
               }
@@ -102,7 +102,7 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
           }
         }
         uVar6 = uVar6 + 1;
-        iVar8 = *(int *)((int)this + 0x5853);
+        iVar8 = STField<int>(this,0x5853);
         bVar9 = uVar6 < *(uint *)(iVar8 + 0xc);
       } while ((int)uVar6 < (int)*(uint *)(iVar8 + 0xc));
     }

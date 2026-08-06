@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_0074d39e(void *this,undefined4 *param_1)
 
@@ -5,10 +7,10 @@ undefined4 __thiscall FUN_0074d39e(void *this,undefined4 *param_1)
   DWORD DVar1;
   undefined4 uVar2;
 
-  DVar1 = WaitForSingleObject(*(HANDLE *)((int)this + 4),0);
+  DVar1 = WaitForSingleObject(STField<HANDLE>(this,4),0);
   if (DVar1 == 0) {
     if (param_1 != nullptr) {
-      *param_1 = *(undefined4 *)((int)this + 0xc);
+      *param_1 = STField<undefined4>(this,0xc);
     }
     uVar2 = 1;
   }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions
@@ -121,16 +123,13 @@ FUN_007527a0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char
       iVar11 = 0;
       if (0 < iVar2) {
         do {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          param_1._3_1_ = (byte)(0x80 >> ((byte)local_c & 7));
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (((char)*param_5 != param_4) || ((*local_1c & param_1._3_1_) != 0)) {
+          STPiece<3,1>(param_1) = (byte)(0x80 >> ((byte)local_c & 7));
+          if (((char)*param_5 != param_4) || ((*local_1c & STPiece<3,1>(param_1)) != 0)) {
             if (iVar11 < iVar2) {
               pcVar6 = (char *)(param_2 + local_c);
               iVar14 = iVar2 + -1;
               for (pbVar7 = (byte *)(iVar14 * iVar15 + iVar8 + (int)puVar3);
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  ((iVar11 < iVar14 && (*pcVar6 == param_4)) && ((param_1._3_1_ & *pbVar7) == 0));
+                  ((iVar11 < iVar14 && (*pcVar6 == param_4)) && ((STPiece<3,1>(param_1) & *pbVar7) == 0));
                   pbVar7 = pbVar7 + -iVar15) {
                 pcVar6 = pcVar6 + uVar13;
                 iVar14 = iVar14 + -1;
@@ -152,7 +151,7 @@ FUN_007527a0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char
                 if (iVar11 <= iVar14) {
                   iVar11 = (iVar14 - iVar11) + 1;
                   do {
-                    *pbVar7 = *pbVar7 | param_1._3_1_;
+                    *pbVar7 = *pbVar7 | STPiece<3,1>(param_1);
                     pbVar7 = pbVar7 + iVar15;
                     iVar11 = iVar11 + -1;
                   } while (iVar11 != 0);

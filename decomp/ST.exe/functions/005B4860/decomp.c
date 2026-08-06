@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as MainMenuTy.
    Evidence: this_call_owners=[MainMenuTy]; agreed_this_calls=2; incoming_this_accesses=7;

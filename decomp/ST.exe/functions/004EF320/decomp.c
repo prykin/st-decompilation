@@ -51,7 +51,7 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
     else {
       pAVar7 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0188;
     }
-    uVar3 = thunk_FUN_00526ba0(*local_8,*(byte *)((int)local_8 + 9));
+    uVar3 = thunk_FUN_00526ba0(*local_8,STField<byte>(local_8,9));
     local_10 = (ushort *)FUN_0070b3a0(pAVar7,uVar3);
   }
   local_60.previous = g_currentExceptionFrame;

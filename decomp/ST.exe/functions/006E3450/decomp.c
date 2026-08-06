@@ -21,12 +21,12 @@ undefined4 __cdecl FUN_006e3450(DArrayTy *param_1,int param_2,int *param_3,undef
     pvVar2 = DArrayAt<void>(param_1, uVar1);
     param_1->iteratorIndex = uVar1 + 1;
     if (pvVar2 == nullptr) break;
-    if (*(int *)(*(int *)((int)pvVar2 + 4) + 8) == param_2) {
+    if (*(int *)(STField<int>(pvVar2,4) + 8) == param_2) {
       if (param_3 != nullptr) {
         *param_3 = iVar3;
       }
       if (param_4 != nullptr) {
-        *param_4 = *(undefined4 *)((int)pvVar2 + 4);
+        *param_4 = STField<undefined4>(pvVar2,4);
       }
       return 0;
     }

@@ -57,17 +57,17 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     puVar1 = &pSVar7->field_00C6;
     if ((int)pSVar7->field_00C6 < 0) {
       ST3DSMAPContext::sub_006E8660
-                (g_sT3DSMAPContext_00807598,puVar1,2,0,*(uint *)((int)puVar9 + 9),
-                 *(uint *)((int)puVar9 + 0xd),0x5a,0x45,0);
+                (g_sT3DSMAPContext_00807598,puVar1,2,0,STField<uint>(puVar9,9),
+                 STField<uint>(puVar9,0xd),0x5a,0x45,0);
     }
     else {
       Library::Ourlib::ST3DSMAP::SprSetShadow(g_sT3DSMAPContext_00807598,pSVar7->field_00C6,0,0,0);
       Library::Ourlib::ST3DSMAP::SprSetIms
-                (g_sT3DSMAPContext_00807598,*puVar1,2,0,*(uint *)((int)puVar9 + 9),
-                 *(uint *)((int)puVar9 + 0xd),0x5a,0x45,1);
+                (g_sT3DSMAPContext_00807598,*puVar1,2,0,STField<uint>(puVar9,9),
+                 STField<uint>(puVar9,0xd),0x5a,0x45,1);
     }
     ST3DSMAPContext::sub_006E98E0
-              (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar9,*(int *)((int)puVar9 + 0x21),1);
+              (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar9,STField<int>(puVar9,0x21),1);
     ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,pSVar7->field_00B2);
     local_1c = (float)pSVar7->field_0046 * _DAT_007904f8 * _DAT_007904f0;
     pSVar7->field_006A = local_1c;
@@ -154,7 +154,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
         local_8 = pSVar7->field_00B2 + 3;
       }
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar9,*(int *)((int)puVar9 + 0x21),1);
+                (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar9,STField<int>(puVar9,0x21),1);
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,1,local_8);
       puVar13 = (uint *)*puVar1;
     }
@@ -166,7 +166,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
         local_8 = pSVar7->field_00B2 - 0xf;
       }
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar9,*(int *)((int)puVar9 + 0x21),1);
+                (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar9,STField<int>(puVar9,0x21),1);
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,1,local_8);
       puVar13 = (uint *)*puVar1;
     }

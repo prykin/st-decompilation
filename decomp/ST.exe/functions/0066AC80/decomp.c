@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] stack_parameter_width target=parameter:0: previous_type=/undefined4
    parameter=/char Evidence: entry-use width=/char; unmasked_dword_reads=0; evidence=0066AC86 MOV

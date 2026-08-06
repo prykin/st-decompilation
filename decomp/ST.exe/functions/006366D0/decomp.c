@@ -22,7 +22,7 @@ void __fastcall FUN_006366d0(AnonShape_006366D0_80B1100F *param_1)
         pDVar2 = param_1->field_002C;
         if (((uVar5 < pDVar2->count) &&
             (pvVar4 = DArrayAt<void>(pDVar2, uVar5),
-            pvVar4 != nullptr)) && (uVar3 = *(uint *)((int)pvVar4 + 4), -1 < (int)uVar3)) {
+            pvVar4 != nullptr)) && (uVar3 = STField<uint>(pvVar4,4), -1 < (int)uVar3)) {
           Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,uVar3);
         }
         uVar5 = uVar5 + 1;

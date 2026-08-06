@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004B9A40 -> 004E4990 @ 004B9B30; TLOBaseTy::sub_004B9A40 this; stable alias ESI */

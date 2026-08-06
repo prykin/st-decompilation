@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_005501d0(void *this,void *command)
 
@@ -6,12 +8,12 @@ void __thiscall FUN_005501d0(void *this,void *command)
   undefined4 local_14;
   void *local_10;
 
-  *(int *)((int)command + 0x17) = (int)command + 0x1b;
-  if (*(char *)((int)command + 0xe) == '\x05') {
+  STField<int>(command,0x17) = (int)command + 0x1b;
+  if (STField<char>(command,0xe) == '\x05') {
     local_14 = 0x43ff;
   }
   else {
-    if (*(char *)((int)command + 0xe) != '2') {
+    if (STField<char>(command,0xe) != '2') {
       STAllPlayersC::CmdToPlsObj(g_allPlayers_007FA174,command);
       return;
     }
@@ -19,7 +21,7 @@ void __thiscall FUN_005501d0(void *this,void *command)
   }
   local_10 = command;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(**(int **)((int)this + 0x1c) + 0x20))(local_24);
+  (**(code **)(*STField<int *>(this,0x1c) + 0x20))(local_24);
   return;
 }
 

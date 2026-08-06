@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00664960 -> 00660540 @ 006653F2; MOVSX at 006653E0 establishes signed source width 2
@@ -37,14 +39,14 @@ FUN_00660540(void *this,undefined4 param_1,short param_2,short param_3,short par
   local_1e = param_1;
   local_20 = param_4;
   local_24 = param_2;
-  *(undefined4 *)((int)this + 0xa7) = 0;
+  STField<undefined4>(this,0xa7) = 0;
   local_7 = param_5;
   if (param_7 != nullptr) {
     Library::MSVCRT::_strncpy(local_16,param_7,0xe);
   }
-  if ((*(ushort *)((int)this + 0x7d) != 0xfffe) && (g_allPlayers_007FA174 != nullptr))
+  if ((STField<ushort>(this,0x7d) != 0xfffe) && (g_allPlayers_007FA174 != nullptr))
   {
-    this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x7d));
+    this_00 = thunk_FUN_0042b760(STField<char>(this,0x24),STField<ushort>(this,0x7d));
     if (this_00 != nullptr) {
       this_00->sub_00498D20(9,(short)&local_24);
       return 0;

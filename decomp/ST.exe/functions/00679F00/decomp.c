@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 00679FE0 -> 00679F00 @ 00679FFA */
@@ -10,7 +12,7 @@ FUN_00679f00(void *this,uint param_1,AnonShape_0068FD00_A5257008 *param_2,int pa
   undefined4 *puVar1;
   int iVar2;
 
-  iVar2 = *(int *)((int)this + 0x695);
+  iVar2 = STField<int>(this,0x695);
   if (((iVar2 != 0) && (-1 < (int)param_1)) && ((int)param_1 < (int)*(uint *)(iVar2 + 0xc))) {
     if (param_1 < *(uint *)(iVar2 + 0xc)) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

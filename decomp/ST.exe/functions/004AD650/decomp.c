@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004AD650 returns stored into /STMineSetC+0x2ba @ 006231BB

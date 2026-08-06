@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004ddb30(void *this,int param_1)
 
@@ -7,7 +9,7 @@ undefined4 __thiscall FUN_004ddb30(void *this,int param_1)
   int iVar3;
   int iVar4;
 
-  iVar2 = *(int *)((int)this + 0x4d0);
+  iVar2 = STField<int>(this,0x4d0);
   iVar3 = (int)this + 0x4d0;
   uVar1 = 0;
   iVar4 = 0;

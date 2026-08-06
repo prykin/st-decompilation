@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_00747e65(void *this,int *param_1,char *param_2)
 
@@ -26,7 +28,7 @@ int __thiscall FUN_00747e65(void *this,int *param_1,char *param_2)
     }
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar1 = (**(code **)(*(int *)((int)this + 0xc) + 0x30))((int)this + 0xc,&local_8);
+  iVar1 = (**(code **)(STField<int>(this,0xc) + 0x30))((int)this + 0xc,&local_8);
   if (iVar1 < 0) {
     return local_c;
   }

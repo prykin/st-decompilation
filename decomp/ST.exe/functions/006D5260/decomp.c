@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
 
@@ -27,7 +29,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
   local_14 = (_RTL_CRITICAL_SECTION *)((int)this + 0x7c);
   local_c = this;
   EnterCriticalSection(local_14);
-  pAVar1 = *(AnonShape_00749A79_05F12707 **)((int)this + 0x284);
+  pAVar1 = STField<AnonShape_00749A79_05F12707 *>(this,0x284);
   pAVar2 = (AnonShape_00749A79_05F12707 *)param_1[0x11];
   if (((uint)param_1[0x10] < 0x59) || (iVar4 = FUN_00749a5e((int)pAVar2), iVar4 == 0)) {
     local_8 = nullptr;
@@ -59,7 +61,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
     }
   }
   FUN_0074b98a((void *)((int)this + 0x240),param_1);
-  pAVar1 = *(AnonShape_00749A79_05F12707 **)((int)this + 0x284);
+  pAVar1 = STField<AnonShape_00749A79_05F12707 *>(this,0x284);
   bVar3 = (byte)*(ushort *)&pAVar1->field_0x3e;
   if ((*(ushort *)&pAVar1->field_0x3e < 9) && (*(int *)&pAVar1[1].field_0xc == 0)) {
     *(int *)&pAVar1[1].field_0xc = 1 << (bVar3 & 0x1f);
@@ -127,7 +129,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
     ReleaseDC((HWND)0x0,hdc);
     this = local_c;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006b0a20(*(AnonShape_GLOBAL_0080759C_9638EF10 **)(*(int *)((int)local_c + 0x288) + 0x28),
+    FUN_006b0a20(*(AnonShape_GLOBAL_0080759C_9638EF10 **)(STField<int>(local_c,0x288) + 0x28),
                  (int)(&local_414 + iStart_00),iStart_00,(int)iStart - iStart_00,0);
     FUN_00747406(this,9,nullptr,0);
   }

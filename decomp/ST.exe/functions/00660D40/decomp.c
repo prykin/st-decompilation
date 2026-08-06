@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
 
@@ -47,40 +49,28 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
               }
               *(undefined2 *)pAVar8 = 0;
               pAVar2 = local_8;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_5c._0_4_ = *(undefined4 *)(iVar7 + iVar6 * 4);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_5c._8_4_ = 0;
+              STPiece<0,4>(local_5c) = *(undefined4 *)(iVar7 + iVar6 * 4);
+              STPiece<8,4>(local_5c) = 0;
               if (iVar6 == 0) {
                 local_5c.field_0006 = *(short *)(iVar7 + 0xc);
               }
               else {
                 local_5c.field_0006 = 0;
               }
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_5c._4_2_ = SUB42(uVar5,0);
+              STPiece<4,2>(local_5c) = SUB42(uVar5,0);
               if (local_10 != nullptr) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_5c._8_4_ = local_10->field_065C;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_10->field_065C = local_5c._8_4_ + 1;
+                STPiece<8,4>(local_5c) = local_10->field_065C;
+                local_10->field_065C = STPiece<8,4>(local_5c) + 1;
               }
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_5c._12_2_ = local_8->field_007D;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_5c._22_2_ = *(undefined2 *)(iVar7 + 0xe);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_5c._24_2_ = *(undefined2 *)(iVar7 + 0x10);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_5c._26_2_ = *(undefined2 *)(iVar7 + 0x12);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_5c._28_1_ = *(char *)(iVar7 + 0x14);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              if ((((char)local_5c._28_1_ < '\0') || ('\a' < (char)local_5c._28_1_)) &&
-                 ((local_5c._28_1_ = local_8->field_0081, (char)local_5c._28_1_ < '\0' ||
-                  ('\a' < (char)local_5c._28_1_)))) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_5c._28_1_ = local_8->field_0024;
+              STPiece<12,2>(local_5c) = local_8->field_007D;
+              STPiece<22,2>(local_5c) = *(undefined2 *)(iVar7 + 0xe);
+              STPiece<24,2>(local_5c) = *(undefined2 *)(iVar7 + 0x10);
+              STPiece<26,2>(local_5c) = *(undefined2 *)(iVar7 + 0x12);
+              STPiece<28,1>(local_5c) = *(char *)(iVar7 + 0x14);
+              if ((((char)STPiece<28,1>(local_5c) < '\0') || ('\a' < (char)STPiece<28,1>(local_5c))) &&
+                 ((STPiece<28,1>(local_5c) = local_8->field_0081, (char)STPiece<28,1>(local_5c) < '\0' ||
+                  ('\a' < (char)STPiece<28,1>(local_5c))))) {
+                STPiece<28,1>(local_5c) = local_8->field_0024;
               }
               Library::MSVCRT::_strncpy(&local_5c.field_0x1d,(char *)(iVar7 + 0x15),0xe);
               if (iVar6 == 0) {

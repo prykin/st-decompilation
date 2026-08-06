@@ -56,7 +56,7 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
     iVar12 = 0;
   }
   else {
-    sVar13 = *(short *)((int)this + 0x21a);
+    sVar13 = STField<short>(this,0x21a);
     if (sVar13 < 0) {
       local_64 = (short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
                         (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f)) + -1;
@@ -65,7 +65,7 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
       local_64 = (int)(short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
                              (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f));
     }
-    sVar13 = *(short *)((int)this + 0x21c);
+    sVar13 = STField<short>(this,0x21c);
     if (sVar13 < 0) {
       iVar14 = (short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
                       (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f)) + -1;
@@ -118,7 +118,7 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
                 ((g_playSystem_00802A38 == nullptr ||
                  (g_bulkInitializedRecords_008087C7[(int)this_00[1].vtable].field_0022 < 8)))))) {
               bVar1 = *(byte *)&this_00[1].vtable;
-              bVar2 = *(byte *)((int)this + 0x24);
+              bVar2 = STField<byte>(this,0x24);
               if (DAT_00808a8f == '\0') {
                 if (bVar1 == bVar2) {
 LAB_005fee45:
@@ -180,13 +180,13 @@ LAB_005fef0e:
     }
     local_1c = puVar4;
     if (iVar12 != 0) {
-      *(int *)((int)this + 0x237) = iVar12;
+      STField<int>(this,0x237) = iVar12;
       pvVar9 = Library::DKW::LIB::MemAlloc(iVar12 * 0x18);
-      *(void **)((int)this + 0x23b) = pvVar9;
+      STField<void *>(this,0x23b) = pvVar9;
       pvVar9 = Library::DKW::LIB::MemAlloc(iVar12 * 4);
-      *(void **)((int)this + 0x23f) = pvVar9;
+      STField<void *>(this,0x23f) = pvVar9;
       puVar15 = (undefined4 *)&stack0xffffff64;
-      puVar16 = *(undefined4 **)((int)this + 0x23b);
+      puVar16 = STField<undefined4 *>(this,0x23b);
       for (iVar14 = (iVar12 * 3 & 0x1fffffffU) << 1; iVar14 != 0; iVar14 = iVar14 + -1) {
         *puVar16 = *puVar15;
         puVar15 = puVar15 + 1;
@@ -200,12 +200,12 @@ LAB_005fef0e:
       iVar14 = 0;
       if (0 < iVar12) {
         do {
-          *(int *)(*(int *)((int)this + 0x23f) + iVar14 * 4) = iVar14;
+          *(int *)(STField<int>(this,0x23f) + iVar14 * 4) = iVar14;
           iVar14 = iVar14 + 1;
         } while (iVar14 < iVar12);
       }
-      if (*(int *)((int)this + 0x226) < iVar12) {
-        thunk_FUN_005ff150(*(int *)((int)this + 0x23b),*(int **)((int)this + 0x23f),iVar12);
+      if (STField<int>(this,0x226) < iVar12) {
+        thunk_FUN_005ff150(STField<int>(this,0x23b),STField<int *>(this,0x23f),iVar12);
       }
     }
   }

@@ -27,10 +27,8 @@ SettMapMTy::sub_005D00B0(SettMapMTy *this,AnonShape_005D00B0_9E7CC102 *param_1,u
 
   puVar1 = param_1->field_0050;
   memset(&local_64, 0, 0x60); /* compiler bulk-zero initialization */
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_64._3_1_ = param_1->field_0003;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_64._2_1_ = param_1->field_0002;
+  STPiece<3,1>(local_64) = param_1->field_0003;
+  STPiece<2,1>(local_64) = param_1->field_0002;
   local_60 = 1;
   Library::DKW::TBL::FUN_006afe40(&local_14,puVar1);
   local_10 = param_1->field_0054;

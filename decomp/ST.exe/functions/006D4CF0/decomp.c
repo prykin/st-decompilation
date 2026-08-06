@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_006d4cf0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_2)
 
@@ -45,11 +47,11 @@ undefined4 __cdecl FUN_006d4cf0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_
             (uVar4 = FUN_00749989((char *)(param_2 + 4)), (short)uVar4 != -1)))) &&
           ((piVar7[0x10] == 0 ||
            ((piVar7[0x10] == 3 &&
-            ((*(short *)((int)piVar7 + 0x3e) == 0x10 || (*(short *)((int)piVar7 + 0x3e) == 0x20)))))
+            ((STField<short>(piVar7,0x3e) == 0x10 || (STField<short>(piVar7,0x3e) == 0x20)))))
            ))) && ((piVar7[0x11] == 0 ||
                    (iVar5 = FUN_00749841((RecoveredSourceFamily_dibcopy *)(piVar7 + 0xc)),
                    piVar7[0x11] == iVar5)))) {
-        uVar3 = *(ushort *)((int)piVar7 + 0x3e);
+        uVar3 = STField<ushort>(piVar7,0x3e);
         iVar5 = param_1->field_0028;
         if ((int)(uint)uVar3 <= *(int *)(iVar5 + 0x20)) {
           param_1->field_0090 = piVar7[2] - *piVar7;
@@ -67,7 +69,7 @@ undefined4 __cdecl FUN_006d4cf0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_
             param_1->field_0010 = param_1->field_0090;
             param_1->field_0014 = param_1->field_0094;
           }
-          uVar3 = *(ushort *)((int)piVar7 + 0x3e);
+          uVar3 = STField<ushort>(piVar7,0x3e);
           if (uVar3 == 8) {
             iVar5 = piVar7[0x14];
             if (iVar5 == 0) {

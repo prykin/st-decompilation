@@ -37,15 +37,15 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
       local_8 = *piVar5;
     }
     local_24 = this->field_584F + this->field_582F * local_8;
-    iVar2 = *(int *)(*(int *)((int)piVar5 + 0x15) + 0xc);
-    *(int *)((int)piVar5 + 0x11) = iVar2;
+    iVar2 = *(int *)(STField<int>(piVar5,0x15) + 0xc);
+    STField<int>(piVar5,0x11) = iVar2;
     local_1c = piVar5;
     if (iVar2 == 0) {
       thunk_FUN_00695cd0(this,param_1,param_2,-1);
     }
     else {
       sub_006948E0(this,this->field_5833);
-      iVar2 = *(int *)((int)piVar5 + 0x15);
+      iVar2 = STField<int>(piVar5,0x15);
       local_18 = 0;
       uVar3 = *(uint *)(iVar2 + 0xc);
       if (0 < (int)uVar3) {
@@ -91,7 +91,7 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
              ((*puVar4 = 1, 3 < local_10 && (*puVar4 = 3, local_10 == 8)))) {
             *puVar4 = 7;
           }
-          iVar2 = *(int *)((int)piVar5 + 0x15);
+          iVar2 = STField<int>(piVar5,0x15);
           local_18 = local_18 + 1;
           uVar3 = *(uint *)(iVar2 + 0xc);
         } while ((int)local_18 < (int)uVar3);

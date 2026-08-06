@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 HRESULT FUN_00746bab(LPUNKNOWN param_1,IID *param_2,void **param_3,int *param_4)
 

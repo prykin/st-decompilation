@@ -27,10 +27,8 @@ void __thiscall OptPanelTy::PaintVolume(OptPanelTy *this,byte param_1,byte param
   iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pOVar2 = local_18;
   if (iVar4 == 0) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar3 = local_8._1_3_;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (uint)local_8._1_3_ << 8;
+    uVar3 = STPiece<1,3>(local_8);
+    local_8 = (uint)STPiece<1,3>(local_8) << 8;
     if (param_2 != 0) {
       local_c = local_14 + (uint)param_1 * 0xd + 0x5f;
       iVar4 = 0x80;

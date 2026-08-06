@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
    width=/short; unmasked_dword_reads=0; evidence=005FE3A0 MOVSX EDI,word ptr [EBP + 0x1c] */
@@ -41,14 +43,14 @@ FUN_005fe360(short *param_1,int param_2,int param_3,short param_4,int param_5,sh
     iVar2 = 0xf;
   }
   iVar3 = (int)sVar1 - (int)param_1[8];
-  *(undefined4 *)((int)param_1 + 0x2d) = 7;
-  *(undefined4 *)((int)param_1 + 0x31) = 200;
+  STField<undefined4>(param_1,0x2d) = 7;
+  STField<undefined4>(param_1,0x31) = 200;
   if (800 < iVar3) {
     if (iVar3 < 0x3b6) {
       iVar4 = *(int *)(&DAT_007ce948 + iVar2 * 4);
       iVar2 = *(int *)(&DAT_007ce9c8 + iVar2 * 4);
-      *(undefined4 *)((int)param_1 + 0x35) = 0;
-      *(int *)((int)param_1 + 0x29) = iVar4 - ((iVar4 - iVar2) * (iVar3 + -800)) / 200;
+      STField<undefined4>(param_1,0x35) = 0;
+      STField<int>(param_1,0x29) = iVar4 - ((iVar4 - iVar2) * (iVar3 + -800)) / 200;
       return 1;
     }
     return 0xffffffff;
@@ -72,8 +74,8 @@ FUN_005fe360(short *param_1,int param_2,int param_3,short param_4,int param_5,sh
     iVar4 = ((*(int *)(&DAT_007ce948 + iVar2 * 4) - *(int *)(&DAT_007ce9c8 + iVar2 * 4)) *
             (iVar3 + -600)) / 200 + *(int *)(&DAT_007ce9c8 + iVar2 * 4);
   }
-  *(int *)((int)param_1 + 0x29) = iVar4;
-  *(undefined4 *)((int)param_1 + 0x35) = 0;
+  STField<int>(param_1,0x29) = iVar4;
+  STField<undefined4>(param_1,0x35) = 0;
   return 1;
 }
 

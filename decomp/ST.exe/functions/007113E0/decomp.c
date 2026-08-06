@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_007113e0(void *this,uint *param_1)
 
@@ -30,7 +32,7 @@ int __thiscall FUN_007113e0(void *this,uint *param_1)
       *(undefined1 *)puVar1 = local_5;
     } while (*(char *)param_1 != '\0');
     if (iVar2 != 0) {
-      local_c = local_c + *(int *)((int)this + 0x5c) * iVar3;
+      local_c = local_c + STField<int>(this,0x5c) * iVar3;
     }
   }
   return local_c;

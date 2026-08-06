@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_0057bd70(void *this,short param_1,short param_2,short param_3,short param_4,short param_5,
@@ -14,7 +16,7 @@ FUN_0057bd70(void *this,short param_1,short param_2,short param_3,short param_4,
   sVar2 = 0;
   sVar5 = 0;
   sVar6 = 0;
-  switch(*(undefined4 *)((int)this + 0x267)) {
+  switch(STField<undefined4>(this,0x267)) {
   case 0xe7:
   case 0xe9:
     sVar2 = 0x1c;
@@ -34,12 +36,12 @@ FUN_0057bd70(void *this,short param_1,short param_2,short param_3,short param_4,
   sVar5 = 0xc;
   sVar6 = 0xc;
 switchD_0057bd8f_default:
-  sVar3 = *(short *)((int)this + 0x43) - sVar5;
-  sVar4 = *(short *)((int)this + 0x45) - sVar6;
-  sVar1 = *(short *)((int)this + 0x41) - sVar2;
-  sVar2 = sVar2 + *(short *)((int)this + 0x41);
-  sVar5 = sVar5 + *(short *)((int)this + 0x43);
-  sVar6 = sVar6 + *(short *)((int)this + 0x45);
+  sVar3 = STField<short>(this,0x43) - sVar5;
+  sVar4 = STField<short>(this,0x45) - sVar6;
+  sVar1 = STField<short>(this,0x41) - sVar2;
+  sVar2 = sVar2 + STField<short>(this,0x41);
+  sVar5 = sVar5 + STField<short>(this,0x43);
+  sVar6 = sVar6 + STField<short>(this,0x45);
   if ((((((sVar1 <= param_1) && (param_1 <= sVar2)) || ((sVar1 <= param_4 && (param_4 <= sVar2))))
        || ((param_1 <= sVar1 && (sVar2 <= param_4)))) &&
       (((sVar3 <= param_2 && (param_2 <= sVar5)) ||

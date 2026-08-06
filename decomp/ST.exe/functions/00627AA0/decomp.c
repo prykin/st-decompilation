@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 bool __thiscall FUN_00627aa0(void *this,uint param_1)
 
@@ -8,7 +10,7 @@ bool __thiscall FUN_00627aa0(void *this,uint param_1)
   uint uVar4;
   bool bVar5;
 
-  iVar3 = *(int *)((int)this + 0x2ae);
+  iVar3 = STField<int>(this,0x2ae);
   if (iVar3 == 2) {
     return false;
   }
@@ -28,7 +30,7 @@ bool __thiscall FUN_00627aa0(void *this,uint param_1)
      (7 < g_bulkInitializedRecords_008087C7[param_1].field_0022)) {
     return false;
   }
-  bVar1 = *(byte *)((int)this + 0x24);
+  bVar1 = STField<byte>(this,0x24);
   if (DAT_00808a8f == '\0') {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((byte)param_1 == bVar1) {
@@ -92,7 +94,7 @@ switchD_00627c97_default:
     return false;
   }
 LAB_00627c8a:
-  switch(*(undefined1 *)((int)this + 0x2ad)) {
+  switch(STField<undefined1>(this,0x2ad)) {
   case 0:
   case 2:
     iVar3 = STMineSetC::sub_0041D6C0(this,param_1);

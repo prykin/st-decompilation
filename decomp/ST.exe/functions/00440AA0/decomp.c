@@ -106,8 +106,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
   if (0 < (int)uVar15) {
     do {
       DArrayGetElement(param_2,uVar13,local_28);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if ((ushort)local_28._0_4_ == 0xffff) {
+      if ((ushort)STPiece<0,4>(local_28) == 0xffff) {
 LAB_00440bab:
         DArrayRemoveAt(param_2,uVar13);
         uVar15 = uVar15 - 1;
@@ -115,8 +114,7 @@ LAB_00440bab:
         local_20 = uVar15;
       }
       else {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar5 = GetObjPtr(local_40,param_1,(ushort)local_28._0_4_,CASE_1);
+        pSVar5 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
         iVar4 = pSVar5->vfunc_F8();
         if (iVar4 == 0) goto LAB_00440bab;
       }
@@ -132,16 +130,14 @@ LAB_00440bab:
   if (0 < (int)local_48) {
     do {
       DArrayGetElement(param_3,uVar13,local_28);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if ((ushort)local_28._0_4_ == 0xffff) {
+      if ((ushort)STPiece<0,4>(local_28) == 0xffff) {
 LAB_00440c19:
         DArrayRemoveAt(param_3,uVar13);
         local_48 = local_48 - 1;
         uVar13 = uVar13 - 1;
       }
       else {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar5 = GetObjPtr(local_40,param_1,(ushort)local_28._0_4_,CASE_1);
+        pSVar5 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
         iVar4 = pSVar5->vfunc_F8();
         if (iVar4 == 0) goto LAB_00440c19;
       }
@@ -180,10 +176,8 @@ LAB_00440c19:
         if (0 < (int)local_78) {
           do {
             DArrayGetElement(local_6c,local_2c,local_28);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            if ((ushort)local_28._0_4_ != 0xffff) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              pSVar5 = GetObjPtr(local_40,param_1,(ushort)local_28._0_4_,CASE_1);
+            if ((ushort)STPiece<0,4>(local_28) != 0xffff) {
+              pSVar5 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
               if (pSVar5 == nullptr) {
                 iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2239,0,0,
                                            "%s","STAllPlayersC::_AssignDocks invalid pointer"
@@ -274,8 +268,7 @@ LAB_00440c19:
     do {
       uVar15 = local_1c;
       DArrayGetElement(param_2,local_1c,local_28);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      pSVar5 = GetObjPtr(local_40,param_1,(ushort)local_28._0_4_,CASE_1);
+      pSVar5 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
       STFishC::sub_004162B0((STFishC *)pSVar5,&local_12,&local_14,&local_16);
       uVar13 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
       psVar14 = g_pathingGrid.cells;
@@ -313,8 +306,7 @@ LAB_00440c19:
       if (0 < (int)local_48) {
         do {
           DArrayGetElement(param_3,uVar15,local_28);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar5 = GetObjPtr(local_40,param_1,(ushort)local_28._0_4_,CASE_1);
+          pSVar5 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
           STFishC::sub_004162B0((STFishC *)pSVar5,&local_12,&local_14,&local_16);
           local_68 = (int)g_pathingScratchGrid.cells
                           [(int)local_16 * (int)g_pathingGrid.planeStride +

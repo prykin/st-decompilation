@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
@@ -40,7 +42,7 @@ undefined4 * __thiscall STDestC::sub_00602E90(STDestC *this)
     if (puVar3 != nullptr) {
       if (pSVar1->field_0241 == 0) {
         local_8 = ST3DSMAPContext::sub_006E9000
-                            (pSVar1->field_0211,**(undefined4 **)((int)puVar3 + 0x21),0x5a,0x45,
+                            (pSVar1->field_0211,*STField<undefined4 *>(puVar3,0x21),0x5a,0x45,
                              (float)pSVar1->field_037B * _DAT_007904f8 * _DAT_007904f0,
                              (float)pSVar1->field_037F * _DAT_007904f8 * _DAT_007904f0,
                              (float)pSVar1->field_0383 * _DAT_007904f8 * _DAT_007904f0 +
@@ -48,7 +50,7 @@ undefined4 * __thiscall STDestC::sub_00602E90(STDestC *this)
       }
       if (pSVar1->field_0241 == 1) {
         local_8 = ST3DSMAPContext::sub_006E9000
-                            (pSVar1->field_0211,**(undefined4 **)((int)puVar3 + 0x21),0x78,0x56,
+                            (pSVar1->field_0211,*STField<undefined4 *>(puVar3,0x21),0x78,0x56,
                              (float)pSVar1->field_037B * _DAT_007904f8 * _DAT_007904f0,
                              (float)pSVar1->field_037F * _DAT_007904f8 * _DAT_007904f0,
                              (float)pSVar1->field_0383 * _DAT_007904f8 * _DAT_007904f0 +

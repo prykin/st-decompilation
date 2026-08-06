@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00490CD0.
@@ -17,35 +19,27 @@ STBoatC::sub_00490CD0(STBoatC *this,undefined4 param_1,undefined4 param_2,int pa
   short sVar1;
 
   if (param_3 < 0) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    param_3._2_2_ = 0;
+    STPiece<2,2>(param_3) = 0;
   }
   sVar1 = (short)param_4;
   if ((short)param_4 < 0) {
     sVar1 = 0;
   }
   if (param_4 < 0) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    param_4._2_2_ = 0;
+    STPiece<2,2>(param_4) = 0;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if (g_worldGrid.sizeX + -1 < (int)param_3._2_2_) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    param_3._2_2_ = g_worldGrid.sizeX + -1;
+  if (g_worldGrid.sizeX + -1 < (int)STPiece<2,2>(param_3)) {
+    STPiece<2,2>(param_3) = g_worldGrid.sizeX + -1;
   }
   if (g_worldGrid.sizeY + -1 < (int)sVar1) {
     sVar1 = g_worldGrid.sizeY + -1;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if (g_worldGrid.sizeZ + -1 < (int)param_4._2_2_) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    param_4._2_2_ = g_worldGrid.sizeZ + -1;
+  if (g_worldGrid.sizeZ + -1 < (int)STPiece<2,2>(param_4)) {
+    STPiece<2,2>(param_4) = g_worldGrid.sizeZ + -1;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  this->field_0475 = param_3._2_2_;
+  this->field_0475 = STPiece<2,2>(param_3);
   this->field_0477 = sVar1;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  this->field_0479 = param_4._2_2_;
+  this->field_0479 = STPiece<2,2>(param_4);
   return;
 }
 

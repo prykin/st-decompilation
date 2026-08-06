@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -21,15 +23,14 @@ FUN_006e1dd0(void *this,int param_1,int param_2,float *param_3,float *param_4,fl
   }
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   Library::Ourlib::STREND::FUN_006e29d0(this,&local_10,param_1,param_2,CONCAT22(extraout_var,uVar2));
-  dVar1 = *(double *)((int)this + 200) * _DAT_0079b168;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  dVar1 = STField<double>(this,200) * _DAT_0079b168;
   if ((((local_10 < _DAT_0079034c) ||
-       ((double)(int)**(short **)((int)this + 0x280) * *(double *)((int)this + 200) - dVar1 <=
+       ((double)(int)*STField<short *>(this,0x280) * STField<double>(this,200) - dVar1 <=
         (double)local_10)) || (local_c < _DAT_0079034c)) ||
-     ((double)(int)(*(short **)((int)this + 0x280))[1] * *(double *)((int)this + 200) - dVar1 <=
+     ((double)(int)(STField<short *>(this,0x280))[1] * STField<double>(this,200) - dVar1 <=
       (double)local_c)) {
-    local_10 = -(float)*(double *)((int)this + 200);
-    local_8 = -(float)*(double *)((int)this + 0xd0);
+    local_10 = -(float)STField<double>(this,200);
+    local_8 = -(float)STField<double>(this,0xd0);
     uVar3 = 0;
     local_c = local_10;
   }

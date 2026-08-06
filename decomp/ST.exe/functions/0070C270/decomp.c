@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x0070c30c) */
 /* WARNING: Removing unreachable block (ram,0x0070c2ce) */

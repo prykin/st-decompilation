@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] stack_parameter_scalar_role target=parameter:1: parameter=/int
    Evidence: generic pointer has a scalar-only incoming lifetime before its first slot overwrite:
@@ -35,21 +37,21 @@ FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int para
     uVar4 = param_8;
   }
   else {
-    iVar1 = *(int *)((int)this + 0x2dd) + param_1 * 0x1c;
+    iVar1 = STField<int>(this,0x2dd) + param_1 * 0x1c;
     iVar3 = (int)*(short *)(iVar1 + -0x18);
     uVar4 = (int)*(short *)(iVar1 + -0x1c);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (int)*(short *)(*(int *)((int)this + 0x2dd) + -0x1a + param_1 * 0x1c);
+    param_1 = (int)*(short *)(STField<int>(this,0x2dd) + -0x1a + param_1 * 0x1c);
   }
   iVar5 = iVar5 * 0x1c;
   uVar2 = thunk_FUN_0060f940(0,0,(AnonShape_0060F940_1CCED7C8 *)
-                                 (iVar5 + *(int *)((int)this + 0x2dd)),0,uVar4,param_1,iVar3,param_2
+                                 (iVar5 + STField<int>(this,0x2dd)),0,uVar4,param_1,iVar3,param_2
                              ,param_3,param_4,param_5,param_6,param_7,&param_10,(int *)&param_8);
-  *(undefined4 *)(iVar5 + 0x18 + *(int *)((int)this + 0x2dd)) = uVar2;
-  if (*(int *)(iVar5 + 0x18 + *(int *)((int)this + 0x2dd)) == 8) {
+  *(undefined4 *)(iVar5 + 0x18 + STField<int>(this,0x2dd)) = uVar2;
+  if (*(int *)(iVar5 + 0x18 + STField<int>(this,0x2dd)) == 8) {
     uVar4 = param_8;
-    if (*(int *)((int)this + 0x288) != 0) {
-      uVar4 = (int)param_8 / *(int *)((int)this + 0x288);
+    if (STField<int>(this,0x288) != 0) {
+      uVar4 = (int)param_8 / STField<int>(this,0x288);
     }
     local_24 = 0;
     local_14 = 0;
@@ -65,19 +67,19 @@ FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int para
     param_1 = (int)Library::DKW::LIB::MemAlloc(uVar4 * 4);
     iVar5 = thunk_FUN_0060e210(&local_24,&local_14,4,param_1,uVar4);
     if (iVar5 == 0) {
-      if (*(undefined4 **)((int)this + 0x2e5) == nullptr) {
-        *(uint *)((int)this + 0x2e1) = uVar4;
-        *(void **)((int)this + 0x2e5) = (void *)param_1;
+      if (STField<undefined4 *>(this,0x2e5) == nullptr) {
+        STField<uint>(this,0x2e1) = uVar4;
+        STField<void *>(this,0x2e5) = (void *)param_1;
         return param_8;
       }
-      if (*(int *)((int)this + 0x2e1) < (int)uVar4) {
+      if (STField<int>(this,0x2e1) < (int)uVar4) {
         FreeAndNull((void **)((int)this + 0x2e5));
-        *(uint *)((int)this + 0x2e1) = uVar4;
-        *(int *)((int)this + 0x2e5) = param_1;
+        STField<uint>(this,0x2e1) = uVar4;
+        STField<int>(this,0x2e5) = param_1;
         return param_8;
       }
       puVar6 = (undefined4 *)param_1;
-      puVar7 = *(undefined4 **)((int)this + 0x2e5);
+      puVar7 = STField<undefined4 *>(this,0x2e5);
       for (uVar4 = uVar4 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {
         *puVar7 = *puVar6;
         puVar6 = puVar6 + 1;
@@ -88,7 +90,7 @@ FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int para
         puVar6 = (undefined4 *)((int)puVar6 + 1);
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
-      *(uint *)((int)this + 0x2e1) = param_9;
+      STField<uint>(this,0x2e1) = param_9;
       FreeAndNull((void **)&param_1);
       return param_8;
     }

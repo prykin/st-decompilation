@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 007503AA -> EXTERNAL:0000006D @ 00750436 */
@@ -15,17 +17,17 @@ undefined4 __thiscall FUN_007503aa(void *this,int *param_1,DWORD dwMilliseconds)
   while( true ) {
     EnterCriticalSection(lpCriticalSection);
     iVar4 = 0;
-    if (0 < *(int *)((int)this + 0x28)) {
-      iVar4 = FUN_0074ded7(*(int *)((int)this + 0x20));
+    if (0 < STField<int>(this,0x28)) {
+      iVar4 = FUN_0074ded7(STField<int>(this,0x20));
     }
-    if ((*(int *)((int)this + 100) != 0) && (0 < *(int *)((int)this + 0x40))) {
-      iVar1 = FUN_0074ded7(*(int *)((int)this + 0x38));
-      iVar3 = *(int *)((int)this + 0x6c) + *(int *)(iVar1 + 0x1c) +
-              (uint)CARRY4(*(uint *)((int)this + 0x68),*(uint *)(iVar1 + 0x18));
+    if ((STField<int>(this,100) != 0) && (0 < STField<int>(this,0x40))) {
+      iVar1 = FUN_0074ded7(STField<int>(this,0x38));
+      iVar3 = STField<int>(this,0x6c) + *(int *)(iVar1 + 0x1c) +
+              (uint)CARRY4(STField<uint>(this,0x68),*(uint *)(iVar1 + 0x18));
       if ((iVar4 == 0) ||
          ((iVar3 <= *(int *)(iVar4 + 0x1c) &&
           ((iVar3 < *(int *)(iVar4 + 0x1c) ||
-           (*(uint *)((int)this + 0x68) + *(uint *)(iVar1 + 0x18) < *(uint *)(iVar4 + 0x18))))))) {
+           (STField<uint>(this,0x68) + *(uint *)(iVar1 + 0x18) < *(uint *)(iVar4 + 0x18))))))) {
         iVar4 = iVar1;
       }
     }
@@ -33,7 +35,7 @@ undefined4 __thiscall FUN_007503aa(void *this,int *param_1,DWORD dwMilliseconds)
        (iVar1 = FUN_0074fea4(this,*(uint *)(iVar4 + 0x18),*(int *)(iVar4 + 0x1c),
                              *(int *)(iVar4 + 0x30)), iVar1 != 0)) break;
     LeaveCriticalSection(lpCriticalSection);
-    DVar2 = WaitForSingleObject(*(HANDLE *)((int)this + 0x50),dwMilliseconds);
+    DVar2 = WaitForSingleObject(STField<HANDLE>(this,0x50),dwMilliseconds);
     if (DVar2 != 0) {
       return 0x80004004;
     }

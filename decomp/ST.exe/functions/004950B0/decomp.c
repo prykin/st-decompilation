@@ -24,32 +24,32 @@ int __thiscall FUN_004950b0(void *this,short *param_1,short *param_2,short *para
   do {
     iVar7 = 0;
     do {
-      iVar4 = *(short *)((int)this + 0x66f) + local_8;
+      iVar4 = STField<short>(this,0x66f) + local_8;
       sVar6 = (short)iVar7;
       sVar2 = (short)local_8;
-      if (((iVar4 == *(short *)((int)this + 0x5b)) &&
-          (*(short *)((int)this + 0x671) + iVar7 == (int)*(short *)((int)this + 0x5d))) &&
-         (*(short *)((int)this + 0x673) + 1 == (int)*(short *)((int)this + 0x5f))) {
-        *param_1 = *(short *)((int)this + 0x66f) + sVar2;
-        *param_2 = *(short *)((int)this + 0x671) + sVar6;
-        *param_3 = *(short *)((int)this + 0x673) + 1;
+      if (((iVar4 == STField<short>(this,0x5b)) &&
+          (STField<short>(this,0x671) + iVar7 == (int)STField<short>(this,0x5d))) &&
+         (STField<short>(this,0x673) + 1 == (int)STField<short>(this,0x5f))) {
+        *param_1 = STField<short>(this,0x66f) + sVar2;
+        *param_2 = STField<short>(this,0x671) + sVar6;
+        *param_3 = STField<short>(this,0x673) + 1;
         return 1;
       }
-      sVar1 = *(short *)((int)this + 0x673) + 1;
-      sVar5 = sVar6 + *(short *)((int)this + 0x671);
-      sVar3 = sVar2 + *(short *)((int)this + 0x66f);
+      sVar1 = STField<short>(this,0x673) + 1;
+      sVar5 = sVar6 + STField<short>(this,0x671);
+      sVar3 = sVar2 + STField<short>(this,0x66f);
       if (((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
            ((sVar5 < 0 || ((g_worldGrid.sizeY <= sVar5 || (sVar1 < 0)))))) ||
           (g_worldGrid.sizeZ <= sVar1)) ||
          (STGridAt3D(g_worldGrid, sVar3, sVar5, sVar1).objects[0] == nullptr)) {
-        iVar4 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
-                             (int)*(short *)((int)this + 0x4b),iVar4,
-                             *(short *)((int)this + 0x671) + iVar7,*(short *)((int)this + 0x673) + 1
+        iVar4 = FUN_006aadd0((int)STField<short>(this,0x47),(int)STField<short>(this,0x49),
+                             (int)STField<short>(this,0x4b),iVar4,
+                             STField<short>(this,0x671) + iVar7,STField<short>(this,0x673) + 1
                             );
         if (iVar4 < local_c) {
-          *param_1 = *(short *)((int)this + 0x66f) + sVar2;
-          *param_2 = sVar6 + *(short *)((int)this + 0x671);
-          *param_3 = *(short *)((int)this + 0x673) + 1;
+          *param_1 = STField<short>(this,0x66f) + sVar2;
+          *param_2 = sVar6 + STField<short>(this,0x671);
+          *param_3 = STField<short>(this,0x673) + 1;
           local_c = iVar4;
         }
       }

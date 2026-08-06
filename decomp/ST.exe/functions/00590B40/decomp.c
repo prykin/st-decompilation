@@ -405,8 +405,7 @@ switchD_00590d73_default:
             MMsgTy::StatePanel(*(MMsgTy **)(this_02->field_1A5B + 0x2e6),(int)local_70);
           }
           thunk_FUN_00568bc0(&g_sound,0);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if ((DAT_00807300._1_1_ & 8) != 0) {
+          if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
             thunk_FUN_0056a130(&g_sound,0x12,'\x02',0,nullptr);
           }
           thunk_FUN_00568bc0(&g_sound,1);

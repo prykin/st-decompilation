@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00503BB0 -> 0054EDF0 @ 00503E68; address of zeroed full register at 00503E53 | 0052F2B0

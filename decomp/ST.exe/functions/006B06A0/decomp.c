@@ -59,7 +59,7 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
       *(BYTE *)&pLVar8->palVersion = -1 - BVar6;
       *(undefined1 *)((int)pWVar9 + -1) = 0;
       *(undefined1 *)pWVar9 = 0;
-      *(undefined1 *)((int)pWVar9 + 1) = 2;
+      STField<undefined1>(pWVar9,1) = 2;
       pBVar3 = pBVar3 + 4;
       pWVar9 = pWVar9 + -2;
       pLVar8 = (LOGPALETTE *)pLVar8[-1].palPalEntry;

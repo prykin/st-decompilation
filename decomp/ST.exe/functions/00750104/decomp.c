@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_00750104(void *this,AnonShape_00750104_599B328B *param_1)
 

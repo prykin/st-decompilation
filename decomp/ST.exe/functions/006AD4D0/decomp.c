@@ -76,38 +76,27 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   }
   puVar7 = &local_74c;
   if (DAT_00854ebc != 0) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74c._0_1_ = "Program: "[0];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74c._1_1_ = "Program: "[1];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74c._2_1_ = "Program: "[2];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_74c._3_1_ = "Program: "[3];
+    STPiece<0,1>(local_74c) = "Program: "[0];
+    STPiece<1,1>(local_74c) = "Program: "[1];
+    STPiece<2,1>(local_74c) = "Program: "[2];
+    STPiece<3,1>(local_74c) = "Program: "[3];
     local_748[0] = "Program: "[4];
     local_748[1] = "Program: "[5];
     local_748[2] = "Program: "[6];
     local_748[3] = "Program: "[7];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_744 = (char)"Program: "._8_2_;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uStack_743._0_1_ = SUB21("Program: "._8_2_,1);
+    local_744 = (char)STLiteralPiece<8,2>("Program: ");
+    STPiece<0,1>(uStack_743) = SUB21(STLiteralPiece<8,2>("Program: "),1);
     pcVar8 = local_14c;
     DVar3 = GetModuleFileNameA((HMODULE)0x0,local_14c,0x104);
     if (DVar3 == 0) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uStack_743._0_1_ = "unknown"[0];
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uStack_743._1_1_ = "unknown"[1];
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uStack_743._2_1_ = "unknown"[2];
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uStack_743._3_1_ = "unknown"[3];
+      STPiece<0,1>(uStack_743) = "unknown"[0];
+      STPiece<1,1>(uStack_743) = "unknown"[1];
+      STPiece<2,1>(uStack_743) = "unknown"[2];
+      STPiece<3,1>(uStack_743) = "unknown"[3];
       local_73f[0] = "unknown"[4];
       local_73f[1] = "unknown"[5];
       local_73f[2] = "unknown"[6];
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auStack_73c[0]._0_1_ = "unknown"[7];
+      STPiece<0,1>(auStack_73c[0]) = "unknown"[7];
       puVar7 = auStack_73c;
     }
     else {
@@ -146,9 +135,9 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   pcVar8 = (char *)((int)puVar7 + 1);
   if (sourceFile != nullptr) {
     pcVar9 = (char *)((int)puVar7 + 7);
-    *(undefined4 *)pcVar8 = "File: "._0_4_;
-    *(undefined2 *)((int)puVar7 + 5) = "File: "._4_2_;
-    *(char *)((int)puVar7 + 7) = "File: "[6];
+    *(undefined4 *)pcVar8 = STLiteralPiece<0,4>("File: ");
+    STField<undefined2>(puVar7,5) = STLiteralPiece<4,2>("File: ");
+    STField<char>(puVar7,7) = "File: "[6];
     uVar5 = 0xffffffff;
     pcVar8 = sourceFile;
     do {
@@ -224,9 +213,9 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   }
   if ((g_exceptionSourceFile != nullptr) && (g_exceptionCode == errorCode)) {
     pcVar9 = pcVar8 + 10;
-    *(undefined4 *)pcVar8 = "ExcRaise: "._0_4_;
-    *(undefined4 *)(pcVar8 + 4) = "ExcRaise: "._4_4_;
-    *(undefined2 *)(pcVar8 + 8) = "ExcRaise: "._8_2_;
+    *(undefined4 *)pcVar8 = STLiteralPiece<0,4>("ExcRaise: ");
+    *(undefined4 *)(pcVar8 + 4) = STLiteralPiece<4,4>("ExcRaise: ");
+    *(undefined2 *)(pcVar8 + 8) = STLiteralPiece<8,2>("ExcRaise: ");
     uVar5 = 0xffffffff;
     pcVar8[10] = "ExcRaise: "[10];
     pcVar8 = g_exceptionSourceFile;

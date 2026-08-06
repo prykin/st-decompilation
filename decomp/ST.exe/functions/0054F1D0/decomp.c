@@ -147,7 +147,7 @@ LAB_0054f52c:
             if (*local_8 != 0) {
               do {
                 local_2c = (AnonPointee_STPlaySystemC_0039 **)
-                           (*(int *)((int)puVar19 + 0x13) + *(int *)((int)puVar19 + 0xf));
+                           (STField<int>(puVar19,0x13) + STField<int>(puVar19,0xf));
                 uVar9 = (int)local_2c + 0x1b;
                 puVar10 = Library::DKW::LIB::MemAllocClear(uVar9);
                 puVar20 = puVar19;

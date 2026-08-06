@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
@@ -11,15 +13,15 @@ void __cdecl FUN_00716db0(int *param_1)
 
   piVar1 = (int *)*param_1;
   if (piVar1 != nullptr) {
-    if (*(uint **)((int)piVar1 + 0x21) != nullptr) {
+    if (STField<uint *>(piVar1,0x21) != nullptr) {
       if ((char)piVar1[2] == '\x1d') {
-        cMf32::RecMemFree((cMf32 *)piVar1[1],*(uint **)((int)piVar1 + 0x21));
+        cMf32::RecMemFree((cMf32 *)piVar1[1],STField<uint *>(piVar1,0x21));
       }
       else {
         iVar2 = 0;
         if (0 < *piVar1) {
           do {
-            cMf32::RecMemFree((cMf32 *)piVar1[1],(uint *)(*(int *)((int)piVar1 + 0x21) + iVar2 * 4));
+            cMf32::RecMemFree((cMf32 *)piVar1[1],(uint *)(STField<int>(piVar1,0x21) + iVar2 * 4));
             piVar1 = (int *)*param_1;
             iVar2 = iVar2 + 1;
           } while (iVar2 < *piVar1);
@@ -28,7 +30,7 @@ void __cdecl FUN_00716db0(int *param_1)
       FreeAndNull((void **)(*param_1 + 0x21));
     }
     piVar1 = (int *)*param_1;
-    if (*(int *)((int)piVar1 + 0x29) != 0) {
+    if (STField<int>(piVar1,0x29) != 0) {
       if ((char)piVar1[2] == '\x1d') {
         cMf32::RecMemFree((cMf32 *)piVar1[1],(uint *)((int)piVar1 + 0x25));
       }
@@ -36,7 +38,7 @@ void __cdecl FUN_00716db0(int *param_1)
         iVar2 = 0;
         if (0 < *piVar1) {
           do {
-            cMf32::RecMemFree((cMf32 *)piVar1[1],(uint *)(*(int *)((int)piVar1 + 0x29) + iVar2 * 4));
+            cMf32::RecMemFree((cMf32 *)piVar1[1],(uint *)(STField<int>(piVar1,0x29) + iVar2 * 4));
             piVar1 = (int *)*param_1;
             iVar2 = iVar2 + 1;
           } while (iVar2 < *piVar1);

@@ -98,8 +98,7 @@ STBHEShellC::sub_005F4C50
             local_16 = element_0169->field_0016;
             local_1a = iVar7;
           }
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_2c._2_4_ = ((&this->field_0139)[param_4] * iVar7) / 10000 + this->field_0111;
+          STPiece<2,4>(local_2c) = ((&this->field_0139)[param_4] * iVar7) / 10000 + this->field_0111;
           local_26 = ((&this->field_0139)[param_4] * local_16) / 10000 + this->field_0115;
           local_12 = DAT_007ce5ec;
           local_22 = this->field_0119;

@@ -84,8 +84,8 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
         else {
           pvVar5 = nullptr;
         }
-        if ((pvVar5 != nullptr) && (*(DArrayTy **)((int)pvVar5 + 0x50) != nullptr)) {
-          DArrayDestroy(*(DArrayTy **)((int)pvVar5 + 0x50));
+        if ((pvVar5 != nullptr) && (STField<DArrayTy *>(pvVar5,0x50) != nullptr)) {
+          DArrayDestroy(STField<DArrayTy *>(pvVar5,0x50));
         }
         pDVar6 = this_00->field_1F84;
         uVar10 = uVar10 + 1;
@@ -216,10 +216,10 @@ LAB_005d5350:
       else {
         pvVar5 = nullptr;
       }
-      if ((pvVar5 != nullptr) && (*(char *)((int)pvVar5 + 4) == '\x01')) {
-        DAT_0080874d = *(undefined1 *)((int)pvVar5 + 2);
-        *(undefined1 *)((int)pvVar5 + 4) = 2;
-        DAT_0080874e = *(undefined1 *)((int)pvVar5 + 3);
+      if ((pvVar5 != nullptr) && (STField<char>(pvVar5,4) == '\x01')) {
+        DAT_0080874d = STField<undefined1>(pvVar5,2);
+        STField<undefined1>(pvVar5,4) = 2;
+        DAT_0080874e = STField<undefined1>(pvVar5,3);
         uVar10 = 0xffffffff;
         pcVar12 = (char *)&DAT_00807ddd;
         goto code_r0x005d540b;

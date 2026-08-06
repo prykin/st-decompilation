@@ -21,7 +21,7 @@ int __cdecl FUN_0067bc10(DArrayTy *param_1)
     do {
       if ((((bVar6) &&
            (pvVar3 = DArrayAt<void>(param_1, uVar5),
-           pvVar3 != nullptr)) && (sVar1 = *(short *)((int)pvVar3 + 0x1a), sVar1 < sVar4)) &&
+           pvVar3 != nullptr)) && (sVar1 = STField<short>(pvVar3,0x1a), sVar1 < sVar4)) &&
          (sVar4 = sVar1, local_8 = pvVar3, sVar1 == 0)) {
         return (int)pvVar3;
       }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_005f04b0(void *this,int *param_1)
 
@@ -14,18 +16,18 @@ void __thiscall FUN_005f04b0(void *this,int *param_1)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (**(code **)(*param_1 + 0x2c))();
     if (((iVar3 == 0x1b) || (iVar3 == 7)) || (iVar3 == 0x13)) {
-      *(undefined1 *)((int)this + 0x24e) = 1;
-      *(int *)((int)this + 0x2a3) = piVar2[9];
-      *(undefined2 *)((int)this + 0x2ab) = *(undefined2 *)((int)piVar2 + 0x32);
-      *(int **)((int)this + 0x2a7) = piVar1;
-      iVar3 = thunk_FUN_00495ff0(*(short *)((int)this + 0x242),*(short *)((int)this + 0x244),
-                                 *(short *)((int)this + 0x246),0,this);
+      STField<undefined1>(this,0x24e) = 1;
+      STField<int>(this,0x2a3) = piVar2[9];
+      STField<undefined2>(this,0x2ab) = STField<undefined2>(piVar2,0x32);
+      STField<int *>(this,0x2a7) = piVar1;
+      iVar3 = thunk_FUN_00495ff0(STField<short>(this,0x242),STField<short>(this,0x244),
+                                 STField<short>(this,0x246),0,this);
       if (iVar3 == 0) {
-        *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + -1;
+        STField<char>(this,0x252) = STField<char>(this,0x252) + -1;
       }
-      *(undefined4 *)((int)this + 0x23a) = 4;
-      if (piVar1 != *(int **)((int)this + 0x18)) {
-        *(undefined1 *)((int)this + 0x24f) = 1;
+      STField<undefined4>(this,0x23a) = 4;
+      if (piVar1 != STField<int *>(this,0x18)) {
+        STField<undefined1>(this,0x24f) = 1;
       }
     }
   }

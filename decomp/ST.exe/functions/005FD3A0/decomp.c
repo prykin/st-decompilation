@@ -39,20 +39,18 @@ LAB_005fd4eb:
         puVar5 = (byte *)((int)this + 0x206);
         memmove(puVar5, puVar4, 0x2c); /* compiler REP MOVS byte copy */
         puVar4 = puVar4 + 0xb;
-        *(undefined4 *)((int)this + 0x22a) = DAT_007e65e4;
+        STField<undefined4>(this,0x22a) = DAT_007e65e4;
         iVar3 = thunk_FUN_005fd830();
         if (iVar3 != 0) {
-          *(undefined1 *)((int)this + 0x232) = 1;
+          STField<undefined1>(this,0x232) = 1;
         }
         iVar3 = thunk_FUN_005fd850(this);
         if ((-1 < iVar3) &&
            (iVar3 = thunk_FUN_005ff3a0(this,&local_6,(undefined2 *)((int)&param_1 + 2),&local_8),
            iVar3 != 0)) {
           thunk_FUN_005fea50(this);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          thunk_FUN_005feb60(this,(int)local_6,(int)param_1._2_2_,(int)local_8);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          thunk_FUN_00600110(this,(int)local_6,(int)param_1._2_2_,0x45f);
+          thunk_FUN_005feb60(this,(int)local_6,(int)STPiece<2,2>(param_1),(int)local_8);
+          thunk_FUN_00600110(this,(int)local_6,(int)STPiece<2,2>(param_1),0x45f);
           return 0;
         }
         goto LAB_005fd4eb;
@@ -60,7 +58,7 @@ LAB_005fd4eb:
       iVar3 = thunk_FUN_006010a0(this,puVar4);
       if (iVar3 != 0) {
         memset((void *)((int)this + 0x1d5), 0, 0x2d); /* compiler bulk-zero initialization */
-        if (*(char *)((int)this + 0x232) != '\0') {
+        if (STField<char>(this,0x232) != '\0') {
           SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::thunk_FUN_005fdb50
                     (this,0,-1);
           return 0;
@@ -70,7 +68,7 @@ LAB_005fd4eb:
   }
   else if ((uVar1 == 0x10f) &&
           (local_10 = (byte *)thunk_FUN_006012d0(this,(int *)&local_c), local_10 != nullptr)) {
-    STPlaySystemC::SaveObjData(g_playSystem_00802A38,*(int **)((int)this + 0x18),local_10,local_c);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,STField<int *>(this,0x18),local_10,local_c);
     FreeAndNull(&local_10);
   }
   return 0;

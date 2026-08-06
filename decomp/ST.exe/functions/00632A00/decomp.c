@@ -100,7 +100,7 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
             if (pSVar6->field_0011 == 3) {
               if (pSVar6->field_0025 == *piVar7) {
                 local_8 = local_10;
-                *(int *)((int)piVar7 + 0x1d) = *(int *)local_10;
+                STField<int>(piVar7,0x1d) = *(int *)local_10;
                 puVar4 = local_10;
               }
               else {
@@ -110,7 +110,7 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
             }
             if ((pSVar6->field_0011 == 1) && (local_20 <= (int)local_1c)) {
               local_8 = local_10;
-              *(int *)((int)piVar7 + 0x1d) = *(int *)local_10;
+              STField<int>(piVar7,0x1d) = *(int *)local_10;
               puVar4 = local_10;
             }
             if ((pSVar6->field_0011 == 4) &&
@@ -121,25 +121,25 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
               local_8 = local_14;
             }
             ST3DSMAPContext::sub_006E8660
-                      (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,*(uint *)((int)puVar4 + 9),
-                       *(uint *)((int)puVar4 + 0xd),(int)*(uint *)((int)puVar4 + 9) / 2,
-                       (int)*(uint *)((int)puVar4 + 0xd) / 2 - 0xe,0);
+                      (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,STField<uint>(puVar4,9),
+                       STField<uint>(puVar4,0xd),(int)STField<uint>(puVar4,9) / 2,
+                       (int)STField<uint>(puVar4,0xd) / 2 - 0xe,0);
             ST3DSMAPContext::sub_006E98E0
                       (g_sT3DSMAPContext_00807598,local_c,0,*(int *)puVar4,
-                       *(int *)((int)puVar4 + 0x21),1);
+                       STField<int>(puVar4,0x21),1);
             ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_c,0,0);
             ST3DSMAPContext::sub_006EA5E0(g_sT3DSMAPContext_00807598,local_c,0,0);
             Library::Ourlib::ST3DSMAP::SprMove
                       (g_sT3DSMAPContext_00807598,local_c,
-                       (float)*(int *)((int)piVar7 + 0xd) * _DAT_007904f8 * _DAT_007904f0,
-                       (float)*(int *)((int)piVar7 + 0x11) * _DAT_007904f8 * _DAT_007904f0,
-                       (float)*(int *)((int)piVar7 + 0x15) * _DAT_007904f8 * _DAT_007904f0 +
+                       (float)STField<int>(piVar7,0xd) * _DAT_007904f8 * _DAT_007904f0,
+                       (float)STField<int>(piVar7,0x11) * _DAT_007904f8 * _DAT_007904f0,
+                       (float)STField<int>(piVar7,0x15) * _DAT_007904f8 * _DAT_007904f0 +
                        _DAT_007904fc);
             piVar7[1] = local_c;
             *(undefined1 *)(piVar7 + 3) = 0;
             pSVar6 = local_18;
             if (local_18->field_0015 != 0) {
-              *(int *)((int)piVar7 + 0x1d) = *(int *)puVar4;
+              STField<int>(piVar7,0x1d) = *(int *)puVar4;
             }
           }
           local_1c = local_1c + 1;

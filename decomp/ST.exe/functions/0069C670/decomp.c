@@ -18,11 +18,11 @@ void FUN_0069c670(DArrayTy *param_1,int param_2,uint param_3)
     if ((param_3 < param_1->count) &&
        (pvVar6 = DArrayAt<void>(param_1, param_3),
        pvVar6 != nullptr)) {
-      iVar2 = *(int *)(*(int *)((int)pvVar6 + 0xc) + 0xc);
+      iVar2 = *(int *)(STField<int>(pvVar6,0xc) + 0xc);
       uVar5 = 0;
       if (0 < iVar2) {
         do {
-          iVar3 = *(int *)((int)pvVar6 + 0xc);
+          iVar3 = STField<int>(pvVar6,0xc);
           if (uVar5 < *(uint *)(iVar3 + 0xc)) {
             piVar4 = (int *)(*(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c));
           }

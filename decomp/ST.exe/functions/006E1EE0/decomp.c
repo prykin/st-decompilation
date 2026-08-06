@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0.
@@ -251,8 +253,7 @@ LAB_006e22a2:
             iVar5 = (iVar7 - iVar6) + 1;
             do {
               if (iVar15 < (int)(uint)*puVar11) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_c._0_2_ = (ushort)((uint)iVar17 >> 0x10);
+                STPiece<0,2>(local_c) = (ushort)((uint)iVar17 >> 0x10);
                 *puVar11 = (ushort)local_c;
               }
               puVar11 = puVar11 + 1;

@@ -170,8 +170,7 @@ LAB_005bccb9:
             pSVar4 = this_00->field_1A5B;
             if (pSVar4->field_02E6 != nullptr) {
               memset(&local_48, 0, 0x1a); /* compiler bulk-zero initialization */
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_48._2_2_ = ((*(int *)(g_startSystem_0081176C->field_068E + 4) < 1) - 1 & 2) - 1;
+              STPiece<2,2>(local_48) = ((*(int *)(g_startSystem_0081176C->field_068E + 4) < 1) - 1 & 2) - 1;
               MMsgTy::StatePanel(pSVar4->field_02E6,(int)&local_48);
             }
           }

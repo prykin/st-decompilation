@@ -273,8 +273,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       if (pSVar2 == nullptr) break;
       memset((void *)local_1e4, 0, 0x21); /* compiler bulk-zero initialization */
       STFishC::sub_004162B0(pSVar2,&local_56,&local_68,&local_2e);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_1e4._1_4_ = SEXT24(local_56);
+      STPiece<1,4>(local_1e4) = SEXT24(local_56);
       local_1db = (int)local_2e;
       local_1df = (int)local_68;
       local_1e4[0] = 1;
@@ -350,22 +349,16 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       local_e4 = 0;
       uStack_e3 = 0;
       lVar13 = Library::MSVCRT::__ftol();
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_f4._1_3_ = (undefined3)lVar13;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_f0._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
+      STPiece<1,3>(local_f4) = (undefined3)lVar13;
+      STPiece<0,1>(local_f0) = (undefined1)((ulonglong)lVar13 >> 0x18);
       lVar13 = Library::MSVCRT::__ftol();
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_f0._1_3_ = (undefined3)lVar13;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_ec._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
+      STPiece<1,3>(local_f0) = (undefined3)lVar13;
+      STPiece<0,1>(local_ec) = (undefined1)((ulonglong)lVar13 >> 0x18);
       lVar13 = Library::MSVCRT::__ftol();
       uStack_e3 = *(undefined1 *)&this_00->field_00FB;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_ec._1_3_ = (undefined3)lVar13;
+      STPiece<1,3>(local_ec) = (undefined3)lVar13;
       puVar10 = &local_f4;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_e8._1_3_ = (undefined3)this_00->field_00F7;
+      STPiece<1,3>(local_e8) = (undefined3)this_00->field_00F7;
       local_e8 = STReplaceLowByte((uint32_t)(local_e8), (uint8_t)((char)((ulonglong)lVar13 >> 0x18)));
       local_e4 = (undefined1)((uint)this_00->field_00F7 >> 0x18);
       goto LAB_0054a196;
@@ -433,8 +426,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       local_11a = local_30[0];
       local_119 = local_32[0];
       local_120[0] = (this_00->field_0494 != 0xc) - 1U & 5;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_120._1_4_ = this_00->field_049A->field_0018;
+      STPiece<1,4>(local_120) = this_00->field_049A->field_0018;
       puVar10 = (uint *)local_120;
       puVar14 = (byte *)0x16;
     }
@@ -509,8 +501,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_159 = local_46[0];
     local_15a = local_6c[0];
     local_160[0] = 1;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_160._1_4_ = this_00->field_049A->field_0018;
+    STPiece<1,4>(local_160) = this_00->field_049A->field_0018;
     thunk_FUN_0054edf0((undefined4 *)0x16,(uint *)local_160,0,0xffffffff);
     iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
@@ -562,8 +553,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     if (pSVar2 == nullptr) break;
     memset((void *)local_1c0, 0, 0x21); /* compiler bulk-zero initialization */
     STFishC::sub_004162B0(pSVar2,&local_36,&local_58,&local_62);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_1c0._1_4_ = SEXT24(local_36);
+    STPiece<1,4>(local_1c0) = SEXT24(local_36);
     local_1b7 = (int)local_62;
     local_1bb = (int)local_58;
     local_1c0[0] = 1;
@@ -684,8 +674,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     if (pSVar2 == nullptr) break;
     memset((void *)local_260, 0, 0x21); /* compiler bulk-zero initialization */
     STFishC::sub_004162B0(pSVar2,&local_6e,&local_66,&local_6a);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_260._1_4_ = SEXT24(local_6e);
+    STPiece<1,4>(local_260) = SEXT24(local_6e);
     local_25b = (int)local_66;
     local_257 = (int)local_6a;
     local_260[0] = ((this_00->field_0494 != 0x18) - 1U & 0xeb) + 0x18;
@@ -746,8 +735,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     if (pSVar2 == nullptr) break;
     memset((void *)local_23c, 0, 0x21); /* compiler bulk-zero initialization */
     STFishC::sub_004162B0(pSVar2,&local_70,&local_38,&local_60);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_23c._1_4_ = SEXT24(local_70);
+    STPiece<1,4>(local_23c) = SEXT24(local_70);
     local_237 = (int)local_38;
     local_233 = (int)local_60;
     puVar10 = (uint *)local_23c;
@@ -762,22 +750,16 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_f8 = 0;
     uStack_f7 = 0;
     lVar13 = Library::MSVCRT::__ftol();
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_108._1_3_ = (undefined3)lVar13;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_104._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
+    STPiece<1,3>(local_108) = (undefined3)lVar13;
+    STPiece<0,1>(local_104) = (undefined1)((ulonglong)lVar13 >> 0x18);
     lVar13 = Library::MSVCRT::__ftol();
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_104._1_3_ = (undefined3)lVar13;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_100._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
+    STPiece<1,3>(local_104) = (undefined3)lVar13;
+    STPiece<0,1>(local_100) = (undefined1)((ulonglong)lVar13 >> 0x18);
     lVar13 = Library::MSVCRT::__ftol();
     uStack_f7 = *(undefined1 *)&this_00->field_00FB;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_100._1_3_ = (undefined3)lVar13;
+    STPiece<1,3>(local_100) = (undefined3)lVar13;
     puVar10 = &local_108;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_fc._1_3_ = (undefined3)this_00->field_00F7;
+    STPiece<1,3>(local_fc) = (undefined3)this_00->field_00F7;
     local_fc = STReplaceLowByte((uint32_t)(local_fc), (uint8_t)((char)((ulonglong)lVar13 >> 0x18)));
     local_f8 = (undefined1)((uint)this_00->field_00F7 >> 0x18);
 LAB_0054a196:
@@ -794,29 +776,22 @@ LAB_0054a196:
       local_88 = 0;
       local_84 = 0;
       lVar13 = Library::MSVCRT::__ftol();
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_90._1_3_ = (undefined3)lVar13;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8c._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
+      STPiece<1,3>(local_90) = (undefined3)lVar13;
+      STPiece<0,1>(local_8c) = (undefined1)((ulonglong)lVar13 >> 0x18);
       lVar13 = Library::MSVCRT::__ftol();
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8c._1_3_ = (undefined3)lVar13;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_88._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
+      STPiece<1,3>(local_8c) = (undefined3)lVar13;
+      STPiece<0,1>(local_88) = (undefined1)((ulonglong)lVar13 >> 0x18);
       lVar13 = Library::MSVCRT::__ftol();
       iVar5 = (int)lVar13;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_88._1_3_ = (undefined3)lVar13;
+      STPiece<1,3>(local_88) = (undefined3)lVar13;
       local_84 = (undefined1)((ulonglong)lVar13 >> 0x18);
       if (iVar5 < 0) {
         iVar5 = 0;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_88._1_3_ = 0;
+        STPiece<1,3>(local_88) = 0;
         local_84 = 0;
       }
       if (4 < iVar5) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_88._1_3_ = 4;
+        STPiece<1,3>(local_88) = 4;
         local_84 = 0;
       }
       thunk_FUN_0054edf0((undefined4 *)0x1a,&local_90,0,0xffffffff);
@@ -834,16 +809,11 @@ LAB_0054a196:
     local_e0 = 2;
     local_d4 = 0;
     STFishC::sub_004162B0(this_00->field_049A,&local_64,&local_4e,&local_7a);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_e0._1_3_ = (int3)local_64;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_dc._0_1_ = (char)(local_64 >> 0xf);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_dc._1_3_ = (int3)local_4e;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_d8._0_1_ = (char)(local_4e >> 0xf);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_d8._1_3_ = (int3)local_7a;
+    STPiece<1,3>(local_e0) = (int3)local_64;
+    STPiece<0,1>(local_dc) = (char)(local_64 >> 0xf);
+    STPiece<1,3>(local_dc) = (int3)local_4e;
+    STPiece<0,1>(local_d8) = (char)(local_4e >> 0xf);
+    STPiece<1,3>(local_d8) = (int3)local_7a;
     local_d4 = (char)(local_7a >> 0xf);
     thunk_FUN_0054edf0((undefined4 *)0x1a,&local_e0,0,0xffffffff);
     iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
@@ -884,8 +854,7 @@ cf_common_join_0054A19A:
     pSVar2 = this_00->field_049A;
     if (pSVar2 == nullptr) break;
     memset(local_284, 0, 0x21); /* compiler bulk-zero initialization */
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_284[0]._0_1_ = 0x19;
+    STPiece<0,1>(local_284[0]) = 0x19;
     local_267 = pSVar2->field_0018;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_284,0,0xffffffff);
     iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,

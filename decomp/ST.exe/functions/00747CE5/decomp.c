@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_00747ce5(void *this,int *param_1)
 
@@ -19,7 +21,7 @@ int __thiscall FUN_00747ce5(void *this,int *param_1)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar2 = (**(code **)(*(int *)this + 0x20))(param_1);
     if (iVar2 == 0) {
-      *(int **)((int)this + 0x18) = param_1;
+      STField<int *>(this,0x18) = param_1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*param_1 + 4))(param_1);
       /* ST_PSEUDO[unresolved_register_input,raw_indirect_call]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected typed vtable/callback call with explicit __thiscall receiver */
@@ -42,11 +44,11 @@ int __thiscall FUN_00747ce5(void *this,int *param_1)
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0x2c))();
-    piVar1 = *(int **)((int)this + 0x18);
+    piVar1 = STField<int *>(this,0x18);
     if (piVar1 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 8))(piVar1);
-      *(undefined4 *)((int)this + 0x18) = 0;
+      STField<undefined4>(this,0x18) = 0;
     }
   }
   return iVar2;

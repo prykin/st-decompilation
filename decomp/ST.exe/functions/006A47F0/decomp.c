@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -16,27 +18,19 @@ undefined * FUN_006a47f0(int param_1)
   BVar1 = IsBadStringPtrA(*(LPCSTR *)(param_1 + 8),0x4f);
   if (BVar1 != 0) {
     DAT_008549f4 = s_<damaged_name>_007ec490[0];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_008549f4_1._0_1_ = s_<damaged_name>_007ec490[1];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_008549f4_1._1_1_ = s_<damaged_name>_007ec490[2];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_008549f4_1._2_1_ = s_<damaged_name>_007ec490[3];
+    STPiece<0,1>(DAT_008549f4_1) = s_<damaged_name>_007ec490[1];
+    STPiece<1,1>(DAT_008549f4_1) = s_<damaged_name>_007ec490[2];
+    STPiece<2,1>(DAT_008549f4_1) = s_<damaged_name>_007ec490[3];
     DAT_008549f8 = s_<damaged_name>_007ec490[4];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_008549f8_1._0_1_ = s_<damaged_name>_007ec490[5];
+    STPiece<0,1>(DAT_008549f8_1) = s_<damaged_name>_007ec490[5];
     DAT_008549fa = s_<damaged_name>_007ec490[6];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_008549f8_1._2_1_ = s_<damaged_name>_007ec490[7];
+    STPiece<2,1>(DAT_008549f8_1) = s_<damaged_name>_007ec490[7];
     DAT_00854a00 = s_<damaged_name>_007ec490[0xc];
     DAT_00854a00_1 = s_<damaged_name>_007ec490[0xd];
     DAT_008549fc = s_<damaged_name>_007ec490[8];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_008549fc_1._0_1_ = s_<damaged_name>_007ec490[9];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_008549fc_1._1_1_ = s_<damaged_name>_007ec490[10];
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    DAT_008549fc_1._2_1_ = s_<damaged_name>_007ec490[0xb];
+    STPiece<0,1>(DAT_008549fc_1) = s_<damaged_name>_007ec490[9];
+    STPiece<1,1>(DAT_008549fc_1) = s_<damaged_name>_007ec490[10];
+    STPiece<2,1>(DAT_008549fc_1) = s_<damaged_name>_007ec490[0xb];
     DAT_00854a02 = s_<damaged_name>_007ec490[0xe];
     DAT_00854a43 = 0;
     return &DAT_008549f4;

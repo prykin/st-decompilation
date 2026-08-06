@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -85,7 +87,7 @@ void FUN_006f9ad0(byte *param_1,int param_2,ushort *param_3,int param_4,uint par
       }
       else {
         local_8 = local_8 - uVar3;
-        local_c = (uint)*(byte *)((int)puVar8 + 1);
+        local_c = (uint)STField<byte>(puVar8,1);
         puVar8 = puVar8 + 1;
       }
     }

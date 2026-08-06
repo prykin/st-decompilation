@@ -50,18 +50,16 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10
     memset(local_60, 0, 0x58); /* compiler bulk-zero initialization */
     local_60[3] = 1;
     local_60[2] = 1;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_60[1] = *(undefined4 *)((int)param_1 + 0x24);
+    local_60[1] = STField<undefined4>(param_1,0x24);
     local_60[0] = 0x28;
     thunk_FUN_00416270(param_1,(undefined2 *)((int)&param_1 + 2),(int *)&local_6,(int *)&local_8);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_4c = param_1._2_2_;
-    local_2f = *(undefined2 *)((int)pvVar2 + 0x32);
+    local_4c = STPiece<2,2>(param_1);
+    local_2f = STField<undefined2>(pvVar2,0x32);
     local_46 = param_2;
     local_48 = local_8;
     local_34 = this->field_0x25d;
     local_4a = local_6;
-    local_33 = *(undefined4 *)((int)pvVar2 + 0x18);
+    local_33 = STField<undefined4>(pvVar2,0x18);
     local_42 = param_4;
     uVar1 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
     local_44 = param_3;

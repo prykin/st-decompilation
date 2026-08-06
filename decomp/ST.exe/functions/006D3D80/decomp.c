@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_006d3d80(int param_1,int param_2,int param_3,byte *param_4,int param_5,int param_6,
                  int param_7,int param_8,byte *param_9,int param_10,int param_11,int param_12,
@@ -58,16 +60,16 @@ void FUN_006d3d80(int param_1,int param_2,int param_3,byte *param_4,int param_5,
           pbVar14 = (byte *)(param_7 * param_14 + param_1);
           iVar4 = param_7;
           if (((param_3 == 0) || (param_10 == 0)) || (local_28 = (uint)*local_c, local_28 != 0)) {
-            /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             if (((param_4 != nullptr) && (param_12 != 0)) &&
                (((uint)*local_14 != param_13 - 1U &&
-                ((param_21 == nullptr || ((*local_10 & param_18._3_1_) != 0)))))) {
+                ((param_21 == nullptr || ((*local_10 & STPiece<3,1>(param_18)) != 0)))))) {
               FUN_006dac70(pbVar14,param_2,*(byte **)(param_12 + (uint)*local_14 * 4),param_14,0,
                            param_14,param_15,0);
             }
-            /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             if ((((param_3 != 0) && (param_10 != 0)) && (local_28 != param_11 - 1U)) &&
-               ((param_20 == nullptr || ((*local_8 & param_18._3_1_) != 0)))) {
+               ((param_20 == nullptr || ((*local_8 & STPiece<3,1>(param_18)) != 0)))) {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = *(byte **)(param_10 + local_28 * 4);
               if (param_16 == 0) {
@@ -107,9 +109,8 @@ void FUN_006d3d80(int param_1,int param_2,int param_3,byte *param_4,int param_5,
                 }
               }
             }
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_006d4180:
-            bVar7 = param_18._3_1_ >> 1;
+            bVar7 = STPiece<3,1>(param_18) >> 1;
             param_18 = (uint)bVar7 << 0x18;
             if (bVar7 == 0) {
               local_8 = local_8 + 1;
@@ -126,11 +127,9 @@ LAB_006d4180:
             if (param_8 <= param_7) goto LAB_006d4180;
             do {
               local_28 = (uint)*local_c;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((local_28 != 0) ||
-                 ((param_20 != nullptr && ((*local_8 & param_18._3_1_) == 0)))) break;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              bVar7 = param_18._3_1_ >> 1;
+                 ((param_20 != nullptr && ((*local_8 & STPiece<3,1>(param_18)) == 0)))) break;
+              bVar7 = STPiece<3,1>(param_18) >> 1;
               param_18 = (uint)bVar7 << 0x18;
               if (bVar7 == 0) {
                 local_8 = local_8 + 1;

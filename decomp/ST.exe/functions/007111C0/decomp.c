@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 005545C0 -> 007111C0 @ 0055460C | 00554800 -> 007111C0 @ 005548F6 */
@@ -27,7 +29,7 @@ int __thiscall FUN_007111c0(void *this,char *resourceString)
       if (iVar3 < 0) {
 LAB_00711200:
         uVar4 = FUN_00710fb0(this,(byte *)resourceString);
-        iVar3 = (int)*(short *)(*(int *)((int)this + 0x9a) + 0x6c + (uVar4 & 0xffff) * 10);
+        iVar3 = (int)*(short *)(STField<int>(this,0x9a) + 0x6c + (uVar4 & 0xffff) * 10);
         if (iVar5 < iVar3) {
           iVar5 = iVar3;
         }
@@ -35,10 +37,10 @@ LAB_00711200:
     }
     else {
       iVar3 = FUN_0070cd90((char *)((int)this + 0x9e),(uint *)resourceString);
-      if ((iVar3 != 0) || (*(int *)((int)this + 0x7e) == 0)) goto LAB_00711200;
+      if ((iVar3 != 0) || (STField<int>(this,0x7e) == 0)) goto LAB_00711200;
       bVar2 = true;
     }
-    cVar1 = *(char *)((int)resourceString + 1);
+    cVar1 = STField<char>(resourceString,1);
     resourceString = (char *)((int)resourceString + 1);
   } while( true );
 }

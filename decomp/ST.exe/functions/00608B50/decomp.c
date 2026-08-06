@@ -38,7 +38,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
   iVar5 = 0;
   local_8 = 0;
   FUN_006acf0d(local_10,local_14,local_c,local_10,local_14,param_3 & 0xffff);
-  iVar2 = *(int *)((int)this + 0x1fd);
+  iVar2 = STField<int>(this,0x1fd);
   if (iVar2 == 0) {
     iVar5 = 3;
     local_8 = 2;
@@ -52,8 +52,8 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
     local_8 = 5;
   }
   if (iVar2 == 0) {
-    uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-    *(uint *)((int)this + 0x1c) = uVar1;
+    uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+    STField<uint>(this,0x1c) = uVar1;
     iVar5 = (uVar1 >> 0x10) % (iVar5 - 1U) + iVar5;
   }
   pSVar6 = &local_7c;
@@ -68,8 +68,8 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
       puVar3 = local_cc;
       iVar5 = local_8;
       do {
-        uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-        *(uint *)((int)this + 0x1c) = uVar1;
+        uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+        STField<uint>(this,0x1c) = uVar1;
         iVar5 = iVar5 + -1;
         *puVar3 = (uVar1 >> 0x10) % 3;
         puVar3 = puVar3 + 1;
@@ -79,8 +79,8 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
       iVar5 = iVar2 - local_8;
       puVar3 = local_cc + local_8;
       do {
-        uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-        *(uint *)((int)this + 0x1c) = uVar1;
+        uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+        STField<uint>(this,0x1c) = uVar1;
         iVar5 = iVar5 + -1;
         *puVar3 = (uVar1 >> 0x10) % 3 + 3;
         puVar3 = puVar3 + 1;
@@ -103,22 +103,22 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
           local_44 = param_6;
         }
         local_48 = *param_2 | 0x400;
-        uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-        *(uint *)((int)this + 0x1c) = uVar1;
+        uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+        STField<uint>(this,0x1c) = uVar1;
         local_20 = uVar1 >> 0x10 & 3;
         local_1b = 1;
-        uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
+        uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
         local_24 = 0x9c4;
-        *(uint *)((int)this + 0x1c) = uVar1;
+        STField<uint>(this,0x1c) = uVar1;
         local_30 = 0x78 - (uVar1 >> 0x10) % 0x3d;
-        uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-        *(uint *)((int)this + 0x1c) = uVar1;
+        uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+        STField<uint>(this,0x1c) = uVar1;
         local_2c = (uVar1 >> 0x10) % 0x169;
         local_38 = local_14;
         local_34 = local_c;
         local_3c = local_10;
-        uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-        *(uint *)((int)this + 0x1c) = uVar1;
+        uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
+        STField<uint>(this,0x1c) = uVar1;
         local_28 = (uVar1 >> 0x10 & 3) + 9;
         local_7c.arg0.ptr = local_5c;
         local_1a = iVar5;

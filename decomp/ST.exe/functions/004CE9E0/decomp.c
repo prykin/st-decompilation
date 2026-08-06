@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
@@ -16,11 +18,11 @@ void __thiscall FUN_004ce9e0(void *this,int *param_1,int *param_2,int *param_3)
     sVar2 = sVar3;
   }
   else {
-    sVar3 = *(short *)((int)this + 0x45);
-    sVar1 = *(short *)((int)this + 0x43);
-    sVar2 = *(short *)((int)this + 0x41);
+    sVar3 = STField<short>(this,0x45);
+    sVar1 = STField<short>(this,0x43);
+    sVar2 = STField<short>(this,0x41);
   }
-  switch(*(undefined4 *)((int)this + 0x5ac)) {
+  switch(STField<undefined4>(this,0x5ac)) {
   case 0x32:
   case 0x5c:
     *param_1 = sVar2 + 100;

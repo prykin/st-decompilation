@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_004934b0(void *this,short *param_1,short *param_2,short *param_3,int *param_4)
@@ -16,7 +18,7 @@ FUN_004934b0(void *this,short *param_1,short *param_2,short *param_3,int *param_
 
   uVar3 = 0;
   iVar4 = 1000000;
-  array = g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field1969_0x9da;
+  array = g_packedRecords_A62x8[STField<int>(this,0x24)].field1969_0x9da;
   *param_3 = -1;
   *param_2 = -1;
   *param_1 = -1;
@@ -28,8 +30,8 @@ FUN_004934b0(void *this,short *param_1,short *param_2,short *param_3,int *param_
         DArrayGetElement(array,local_14,&local_10);
         if ((local_10 != nullptr) && (iVar2 = (*local_10->vtable->vfunc_F8)(), iVar2 == 1)) {
           STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
-          iVar2 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
-                               (int)*(short *)((int)this + 0x4b),(int)local_6,(int)local_8,
+          iVar2 = FUN_006aadd0((int)STField<short>(this,0x47),(int)STField<short>(this,0x49),
+                               (int)STField<short>(this,0x4b),(int)local_6,(int)local_8,
                                (int)local_a);
           if (iVar2 < iVar4) {
             *param_1 = local_6;

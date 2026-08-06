@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005A1920 -> 006C7BB0 @ 005A1C39 */
@@ -10,10 +12,8 @@ undefined1 * FUN_006c7bb0(int *param_1,undefined1 *param_2,int *param_3)
   undefined1 *puVar3;
   int iVar4;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar1 = *(int *)((int)param_1 + 0x1a);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar4 = *(int *)((int)param_1 + 0x1e);
+  iVar1 = STField<int>(param_1,0x1a);
+  iVar4 = STField<int>(param_1,0x1e);
   if (param_2 == nullptr) {
     param_2 = Library::DKW::LIB::MemAlloc(iVar1 * 4);
     if (param_2 == nullptr) {

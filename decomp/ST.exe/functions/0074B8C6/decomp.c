@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 bool FUN_0074b8c6(int *param_1,int *param_2)
 

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 006755E0 returns partial register write at 006755F0 @ 006755F5 | 006755E0 returns

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 006B0BE0 -> EXTERNAL:000000A8 @ 006B0C25

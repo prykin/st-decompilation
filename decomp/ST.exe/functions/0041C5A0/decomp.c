@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall sub_0041C5A0(void *this)
 
@@ -5,18 +7,18 @@ void __thiscall sub_0041C5A0(void *this)
   undefined4 uVar1;
 
   if ((g_visibleClass_00802A88 != nullptr) &&
-     ((*(byte *)((int)this + 0x1d1) & 1) == 0)) {
+     ((STField<byte>(this,0x1d1) & 1) == 0)) {
     VisibleClassTy::sub_00559110
-              (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
-               (undefined *)(int)*(short *)((int)this + 0x5d),(int)*(short *)((int)this + 0x5f),
-               *(uint *)((int)this + 0x24),*(int *)((int)this + 0x101),*(int *)((int)this + 0x18),
+              (g_visibleClass_00802A88,(int)STField<short>(this,0x5b),
+               (undefined *)(int)STField<short>(this,0x5d),(int)STField<short>(this,0x5f),
+               STField<uint>(this,0x24),STField<int>(this,0x101),STField<int>(this,0x18),
                0xffffffff);
-    if (*(int *)((int)this + 0x20) == 0x14) {
+    if (STField<int>(this,0x20) == 0x14) {
       VisibleClassTy::sub_00559620
-                (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
-                 (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
-                 *(undefined **)((int)this + 0x24),*(int *)((int)this + 0x105),
-                 *(int *)((int)this + 0x18),0xffffffff);
+                (g_visibleClass_00802A88,(int)STField<short>(this,0x5b),
+                 (int)STField<short>(this,0x5d),(char)STField<undefined2>(this,0x5f),
+                 STField<undefined *>(this,0x24),STField<int>(this,0x105),
+                 STField<int>(this,0x18),0xffffffff);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar1 = (**(code **)(*(int *)this + 0x2c))();
@@ -30,9 +32,9 @@ void __thiscall sub_0041C5A0(void *this)
     case 0xb:
     case 0x23:
       VisibleClassTy::sub_00559D60
-                (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
-                 (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
-                 *(uint *)((int)this + 0x24),*(int *)((int)this + 0x10d),*(uint *)((int)this + 0x18)
+                (g_visibleClass_00802A88,(int)STField<short>(this,0x5b),
+                 (int)STField<short>(this,0x5d),(char)STField<undefined2>(this,0x5f),
+                 STField<uint>(this,0x24),STField<int>(this,0x10d),STField<uint>(this,0x18)
                 );
       return;
     }

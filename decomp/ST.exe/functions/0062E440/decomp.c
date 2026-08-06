@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4
 FUN_0062e440(int param_1,ushort param_2,ushort param_3,ushort param_4,int param_5,int param_6)

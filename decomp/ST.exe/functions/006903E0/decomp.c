@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_006903e0(void *this,undefined4 param_1)
 
@@ -8,7 +10,7 @@ void __thiscall FUN_006903e0(void *this,undefined4 param_1)
   bool bVar4;
 
   uVar3 = 0;
-  iVar2 = *(int *)((int)this + 0xa5);
+  iVar2 = STField<int>(this,0xa5);
   if (0 < *(int *)(iVar2 + 0xc)) {
     bVar4 = *(int *)(iVar2 + 0xc) != 0;
     do {
@@ -17,7 +19,7 @@ void __thiscall FUN_006903e0(void *this,undefined4 param_1)
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)*puVar1)(param_1);
       }
-      iVar2 = *(int *)((int)this + 0xa5);
+      iVar2 = STField<int>(this,0xa5);
       uVar3 = uVar3 + 1;
       bVar4 = uVar3 < *(uint *)(iVar2 + 0xc);
     } while ((int)uVar3 < (int)*(uint *)(iVar2 + 0xc));
