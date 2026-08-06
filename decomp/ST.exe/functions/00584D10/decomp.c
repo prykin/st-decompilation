@@ -4,8 +4,8 @@
 void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
 
 {
-  uint uVar1;
-  undefined4 uVar2;
+  undefined4 uVar1;
+  uint uVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -26,10 +26,10 @@ void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
   int local_8;
 
   iVar5 = param_1->field_0251;
-  uVar2 = param_1->field_025C;
+  uVar1 = param_1->field_025C;
   puVar6 = local_64;
   local_8 = iVar5;
-  for (iVar4 = 0x16; iVar4 != 0; iVar4 = iVar4 + -1) {
+  for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar6 = 0;
     puVar6 = puVar6 + 1;
   }
@@ -40,26 +40,26 @@ void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
   local_64[0] = 0x28;
   local_64[3] = 1;
   local_c = 0;
-  local_64[1] = uVar2;
+  local_64[1] = uVar1;
   do {
     local_3e = (undefined2)iVar5;
-    thunk_FUN_00416270(param_1,&local_4a,(int *)&sStack_48,(int *)&local_46);
+    thunk_FUN_00416270(param_1,(uint *)&local_4a,(int *)&sStack_48,&local_46);
     if (local_c < 4) {
-      iVar4 = FUN_006aff50(iVar5);
-      iVar3 = FUN_006aff5b(local_8);
-      iVar4 = iVar4 * 0xc9;
-      iVar5 = iVar4 / 3;
+      iVar3 = FUN_006aff50(iVar5);
+      uVar2 = FUN_006aff5b(local_8);
+      iVar3 = iVar3 * 0xc9;
+      iVar5 = iVar3 / 3;
       local_4a = local_4a +
                  (((short)(iVar5 / 10000) + (short)(iVar5 >> 0x1f)) -
                  (short)((longlong)iVar5 * 0x68db8bad >> 0x3f));
-      iVar5 = iVar3 * 0xc9;
-      iVar3 = (int)((ulonglong)((longlong)iVar5 * 0x55555555) >> 0x20) + iVar3 * -0xc9;
-      iVar3 = (iVar3 >> 1) - (iVar3 >> 0x1f);
+      iVar5 = uVar2 * 0xc9;
+      iVar4 = (int)((ulonglong)((longlong)iVar5 * 0x55555555) >> 0x20) + uVar2 * -0xc9;
+      iVar4 = (iVar4 >> 1) - (iVar4 >> 0x1f);
       sStack_48 = sStack_48 +
-                  (((short)(iVar3 / 10000) + (short)(iVar3 >> 0x1f)) -
-                  (short)((longlong)iVar3 * 0x68db8bad >> 0x3f));
-      sStack_44 = (((short)(iVar4 / 10000) + (short)(iVar4 >> 0x1f)) -
-                  (short)((longlong)iVar4 * 0x68db8bad >> 0x3f)) + local_4a;
+                  (((short)(iVar4 / 10000) + (short)(iVar4 >> 0x1f)) -
+                  (short)((longlong)iVar4 * 0x68db8bad >> 0x3f));
+      sStack_44 = (((short)(iVar3 / 10000) + (short)(iVar3 >> 0x1f)) -
+                  (short)((longlong)iVar3 * 0x68db8bad >> 0x3f)) + local_4a;
       local_42 = sStack_48 -
                  (((short)(iVar5 / 10000) + (short)(iVar5 >> 0x1f)) -
                  (short)((longlong)iVar5 * 0x68db8bad >> 0x3f));
@@ -69,12 +69,12 @@ void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
     else {
       local_46 = local_46 + -0x1e;
       local_40 = 0;
-      uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
-      param_1->field_001C = uVar1;
-      sStack_44 = (short)((ulonglong)(uVar1 >> 0x10) % 0x193) + -0xc9 + local_4a;
-      uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
-      param_1->field_001C = uVar1;
-      local_42 = (short)((ulonglong)(uVar1 >> 0x10) % 0x193) + -0xc9 + sStack_48;
+      uVar2 = param_1->field_001C * 0x41c64e6d + 0x3039;
+      param_1->field_001C = uVar2;
+      sStack_44 = (short)((ulonglong)(uVar2 >> 0x10) % 0x193) + -0xc9 + local_4a;
+      uVar2 = param_1->field_001C * 0x41c64e6d + 0x3039;
+      param_1->field_001C = uVar2;
+      local_42 = (short)((ulonglong)(uVar2 >> 0x10) % 0x193) + -0xc9 + sStack_48;
     }
     if ((((-1 < local_4a) && (-1 < sStack_48)) && (-1 < local_46)) &&
        (((short)((local_4a / 0xc9 + (local_4a >> 0xf)) -

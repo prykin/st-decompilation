@@ -10,13 +10,15 @@
 void __thiscall st::fn_00590170(MAdvTy *this)
 
 {
+  int iVar1;
   CursorClassTy *this_00;
   MAdvTy *this_01;
   int iVar2;
   LPSTR text;
-  undefined4 uVar3;
+  ushort *puVar3;
   int iVar4;
-  byte bVar6;
+  byte bVar5;
+  int iVar6;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
 
@@ -34,11 +36,11 @@ void __thiscall st::fn_00590170(MAdvTy *this)
       }
     }
     this_01 = local_8;
-    iVar2 = 1;
-    bVar6 = 0;
+    iVar6 = 1;
+    bVar5 = 0;
     text = st::fn_006F2C00(&DAT_007cbc5c,1,(uint)(local_8->field_005D != '\0'));
-    uVar3 = st::fn_0070A9F0(g_cMf32_00806780,text,bVar6,iVar2);
-    this_01->field_005E = uVar3;
+    puVar3 = st::fn_0070A9F0(g_cMf32_00806780,text,bVar5,iVar6);
+    this_01->field_005E = puVar3;
     memset(&this_01->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     this_01->field_002C = this_01->field_0008;
     this_01->field_0028 = 0x13;
@@ -50,14 +52,14 @@ void __thiscall st::fn_00590170(MAdvTy *this)
     st::fn_00401D43(g_dDXContext_0080759C,1,0);
     st::fn_00403AB2(this_01);
     st::fn_0040448A((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
-                       (ushort *)this_01->field_005E,10,2);
+                       this_01->field_005E,10,2);
     this_00 = g_cursorClass_00802A30;
     if (g_cursorClass_00802A30 != nullptr) {
-      iVar2 = g_cursorClass_00802A30->field_00C9;
-      iVar4 = g_cursorClass_00802A30->field_00C5;
+      iVar6 = g_cursorClass_00802A30->field_00C9;
+      iVar1 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       this_00->field_0494 = 0xffff;
-      st::fn_0040507E(this_00,CASE_0,iVar4,iVar2);
+      st::fn_0040507E(this_00,CASE_0,iVar1,iVar6);
       st::fn_0040241E(this_00,this_00->field_00C5,this_00->field_00C9);
       this_00->field_00D2 = 0;
       this_00->field_04DF = -1;
@@ -104,7 +106,7 @@ void __thiscall st::fn_00590410(MAdvTy *this)
     this_00->field_0028 = 0x14;
     this_00->field_002C = this_00->field_0008;
     st::fn_006E6000(this_00,3,1,(undefined4 *)&this_00->field_0x18);
-    st::fn_006F20E0(g_cMf32_00806780,&this_00->field_005E);
+    st::fn_006F20E0(g_cMf32_00806780,(uint *)&this_00->field_005E);
     st::fn_00401D43(g_dDXContext_0080759C,10,2);
     if (this_00->field_0048 != 0) {
       st::fn_006E3B50((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_0x38);
@@ -137,7 +139,8 @@ void __thiscall st::fn_00590580(MAdvTy *this)
 {
   MAdvTy *pMVar2;
   int iVar3;
-  uint *puVar4;
+  char *pcVar3;
+  int iVar5;
   StartServTy *this_00;
   StartServTy *this_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -146,13 +149,14 @@ void __thiscall st::fn_00590580(MAdvTy *this)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   StartServTy *extraout_ECX_00;
   StartServTy *this_03;
-  int iVar5;
+  int iVar4;
   int iVar6;
   int iVar7;
-  uint uVar8;
+  int iVar8;
   uint uVar9;
-  ccFntTy *pcVar10;
-  uint uVar11;
+  uint uVar10;
+  ccFntTy *pcVar11;
+  uint uVar12;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
 
@@ -164,48 +168,48 @@ void __thiscall st::fn_00590580(MAdvTy *this)
     st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
     pMVar2 = local_8;
     st::fn_00403738(0,0,'\x01',(BITMAPINFO *)local_8->field_005E);
-    pcVar10 = g_startSystem_0081176C->field_0030;
-    uVar11 = 1;
-    uVar9 = 0xffffffff;
+    pcVar11 = g_startSystem_0081176C->field_0030;
+    uVar12 = 1;
+    uVar10 = 0xffffffff;
     if (pMVar2->field_005D == '\0') {
-      uVar8 = 0xfffffffe;
-      puVar4 = (uint *)st::fn_006B0140(0x25e4,g_hINSTANCE_00807618);
-      st::fn_00404C2D(this_02,0,0,0x1b8,800,0x14,puVar4,uVar8,uVar9,pcVar10,uVar11);
-      pcVar10 = g_startSystem_0081176C->field_0030;
-      uVar8 = 1;
-      uVar11 = 0xffffffff;
-      uVar9 = 0xffffffff;
-      puVar4 = (uint *)st::fn_006B0140(0x25e8,g_hINSTANCE_00807618);
-      iVar7 = 0x8c;
-      iVar6 = 800;
-      iVar5 = 0x1cc;
-      iVar3 = 0;
+      uVar9 = 0xfffffffe;
+      pcVar3 = st::fn_006B0140(0x25e4,g_hINSTANCE_00807618);
+      st::fn_00404C2D(this_02,0,0,0x1b8,800,0x14,pcVar3,uVar9,uVar10,pcVar11,uVar12);
+      pcVar11 = g_startSystem_0081176C->field_0030;
+      uVar9 = 1;
+      uVar12 = 0xffffffff;
+      uVar10 = 0xffffffff;
+      pcVar3 = st::fn_006B0140(0x25e8,g_hINSTANCE_00807618);
+      iVar8 = 0x8c;
+      iVar7 = 800;
+      iVar6 = 0x1cc;
+      iVar4 = 0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_03 = extraout_ECX_00;
     }
     else {
-      uVar8 = 0xffffffff;
-      puVar4 = (uint *)st::fn_006B0140(0x25e5,g_hINSTANCE_00807618);
-      st::fn_00404C2D(this_00,0,10,10,0x30c,0x32,puVar4,uVar8,uVar9,pcVar10,uVar11);
-      pcVar10 = g_startSystem_0081176C->field_0030;
-      uVar8 = 1;
-      uVar11 = 0xffffffff;
-      uVar9 = 0;
-      puVar4 = (uint *)st::fn_006B0140(0x25e6,g_hINSTANCE_00807618);
-      st::fn_00404C2D(this_01,0,0x10e,0x3c,0x20d,0xfa,puVar4,uVar9,uVar11,pcVar10,uVar8);
-      pcVar10 = g_startSystem_0081176C->field_0030;
-      uVar8 = 1;
-      uVar11 = 0xffffffff;
-      uVar9 = 0;
-      puVar4 = (uint *)st::fn_006B0140(0x25e7,g_hINSTANCE_00807618);
-      iVar7 = 0xe6;
-      iVar6 = 0x302;
-      iVar5 = 0x172;
-      iVar3 = 0x14;
+      uVar9 = 0xffffffff;
+      pcVar3 = st::fn_006B0140(0x25e5,g_hINSTANCE_00807618);
+      st::fn_00404C2D(this_00,0,10,10,0x30c,0x32,pcVar3,uVar9,uVar10,pcVar11,uVar12);
+      pcVar11 = g_startSystem_0081176C->field_0030;
+      uVar9 = 1;
+      uVar12 = 0xffffffff;
+      uVar10 = 0;
+      pcVar3 = st::fn_006B0140(0x25e6,g_hINSTANCE_00807618);
+      st::fn_00404C2D(this_01,0,0x10e,0x3c,0x20d,0xfa,pcVar3,uVar10,uVar12,pcVar11,uVar9);
+      pcVar11 = g_startSystem_0081176C->field_0030;
+      uVar9 = 1;
+      uVar12 = 0xffffffff;
+      uVar10 = 0;
+      pcVar3 = st::fn_006B0140(0x25e7,g_hINSTANCE_00807618);
+      iVar8 = 0xe6;
+      iVar7 = 0x302;
+      iVar6 = 0x172;
+      iVar4 = 0x14;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_03 = extraout_ECX;
     }
-    st::fn_00404C2D(this_03,0,iVar3,iVar5,iVar6,iVar7,puVar4,uVar9,uVar11,pcVar10,uVar8);
+    st::fn_00404C2D(this_03,0,iVar4,iVar6,iVar7,iVar8,pcVar3,uVar10,uVar12,pcVar11,uVar9);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -264,8 +268,10 @@ int __thiscall st::fn_005908B0(MAdvTy *this,STMessage *message)
 {
   MAdvTy *this_00;
   DWORD DVar2;
+  int local_EAX_47;
   int iVar3;
   int iVar4;
+  int iVar5;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
 
@@ -274,9 +280,9 @@ int __thiscall st::fn_005908B0(MAdvTy *this,STMessage *message)
   this->field_0058 = DVar2;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
+  local_EAX_47 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar3 == 0) {
+  if (local_EAX_47 == 0) {
     switch(message->id) {
     case MESS_ID_NONE:
       st::fn_004058D5(local_8);
@@ -310,12 +316,12 @@ int __thiscall st::fn_005908B0(MAdvTy *this,STMessage *message)
     return iVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\adv_obj.cpp",0x87,0,iVar3,"%s",
-                             "MAdvTy::GetMessage");
+  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\adv_obj.cpp",0x87,0,local_EAX_47,
+                             "%s","MAdvTy::GetMessage");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\adv_obj.cpp",0x87);
+  st::fn_006A5E40(local_EAX_47,0,"E:\\__titans\\Start\\adv_obj.cpp",0x87);
   return 0xffff;
 }
 

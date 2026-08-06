@@ -35,14 +35,15 @@ ST3DSMAPContext::sub_006E6FB0
   int iVar8;
   byte *pbVar9;
   int iVar10;
-  undefined1 *puVar11;
-  int iVar12;
+  int iVar11;
+  undefined1 *puVar12;
   int iVar13;
-  uint *puVar14;
-  uint uVar15;
-  int iVar16;
-  byte *pbVar17;
-  longlong lVar18;
+  int iVar14;
+  uint *puVar15;
+  uint uVar16;
+  int iVar17;
+  byte *pbVar18;
+  longlong lVar19;
   int local_4c;
   int local_48;
   int local_40;
@@ -81,43 +82,43 @@ ST3DSMAPContext::sub_006E6FB0
       if (local_1c != 0) {
         if ((this->field_0466 == 0) || ((&this->field_04A2)[this->field_00A8] == 0)) {
           local_20 = 0;
-          iVar7 = this->field_03DC / 2;
-          iVar8 = iVar7;
-          DAT_00856d84 = iVar7;
-          if (-1 < iVar7) {
-            local_20 = iVar7 + 1;
+          iVar10 = this->field_03DC / 2;
+          iVar8 = iVar10;
+          DAT_00856d84 = iVar10;
+          if (-1 < iVar10) {
+            local_20 = iVar10 + 1;
             local_40 = local_20;
             do {
-              if (iVar7 <= iVar8) {
-                puVar11 = (undefined1 *)(local_2c + iVar7);
-                iVar12 = (iVar8 - iVar7) + 1;
+              if (iVar10 <= iVar8) {
+                puVar12 = (undefined1 *)(local_2c + iVar10);
+                iVar13 = (iVar8 - iVar10) + 1;
                 do {
-                  *puVar11 = puVar11[local_1c - local_2c];
-                  puVar11 = puVar11 + 1;
-                  iVar12 = iVar12 + -1;
-                } while (iVar12 != 0);
+                  *puVar12 = puVar12[local_1c - local_2c];
+                  puVar12 = puVar12 + 1;
+                  iVar13 = iVar13 + -1;
+                } while (iVar13 != 0);
               }
               local_2c = local_2c - DAT_00856d8c;
               local_1c = local_1c + this->field_0424;
-              iVar7 = iVar7 + -1;
+              iVar10 = iVar10 + -1;
               iVar8 = iVar8 + 1;
               local_40 = local_40 + -1;
             } while (local_40 != 0);
           }
-          iVar7 = iVar7 + 1;
+          iVar10 = iVar10 + 1;
           iVar8 = iVar8 + -1;
           if (local_20 < this->field_03DC) {
             do {
-              iVar7 = iVar7 + 1;
+              iVar10 = iVar10 + 1;
               iVar8 = iVar8 + -1;
-              if (iVar7 <= iVar8) {
-                puVar11 = (undefined1 *)(local_2c + iVar7);
-                iVar12 = (iVar8 - iVar7) + 1;
+              if (iVar10 <= iVar8) {
+                puVar12 = (undefined1 *)(local_2c + iVar10);
+                iVar13 = (iVar8 - iVar10) + 1;
                 do {
-                  *puVar11 = puVar11[local_1c - local_2c];
-                  puVar11 = puVar11 + 1;
-                  iVar12 = iVar12 + -1;
-                } while (iVar12 != 0);
+                  *puVar12 = puVar12[local_1c - local_2c];
+                  puVar12 = puVar12 + 1;
+                  iVar13 = iVar13 + -1;
+                } while (iVar13 != 0);
               }
               local_2c = local_2c - DAT_00856d8c;
               local_1c = local_1c + this->field_0424;
@@ -126,46 +127,46 @@ ST3DSMAPContext::sub_006E6FB0
           }
         }
         else {
-          iVar16 = this->field_03DC / 2;
-          iVar7 = (int)*(short *)&this->field_0280->field_0x2;
-          iVar12 = (int)*(short *)this->field_0280;
-          iVar8 = ((iVar7 + iVar12) * 0xb505) / this->field_03DC;
+          iVar17 = this->field_03DC / 2;
+          iVar10 = (int)*(short *)&this->field_0280->field_0x2;
+          iVar13 = (int)*(short *)this->field_0280;
+          iVar8 = ((iVar10 + iVar13) * 0xb505) / this->field_03DC;
           switch(this->field_00A8) {
           case CASE_0:
-            iVar7 = 0x87c3c;
-            iVar13 = (this->field_04B2 * 0x10000) / 2;
+            iVar10 = 0x87c3c;
+            iVar14 = (this->field_04B2 * 0x10000) / 2;
             break;
           case CASE_1:
-            iVar13 = (iVar12 + 0xc) * 0xb505;
-            iVar7 = (int)(this->field_04B6 << 0x10) / 2 + iVar12 * -0xb505;
+            iVar14 = (iVar13 + 0xc) * 0xb505;
+            iVar10 = (int)(this->field_04B6 << 0x10) / 2 + iVar13 * -0xb505;
             break;
           case CASE_2:
-            iVar13 = (this->field_04B2 * 0x10000) / 2;
-            iVar7 = this->field_04B6 * 0x10000 + (iVar7 + iVar12) * -0xb505 + -0x97c3c;
+            iVar14 = (this->field_04B2 * 0x10000) / 2;
+            iVar10 = this->field_04B6 * 0x10000 + (iVar10 + iVar13) * -0xb505 + -0x97c3c;
             break;
           case CASE_3:
-            iVar13 = this->field_04B2 * 0x10000 + iVar7 * -0xb505 + -0x97c3c;
-            iVar7 = (int)(this->field_04B6 << 0x10) / 2 + iVar7 * -0xb505;
+            iVar14 = this->field_04B2 * 0x10000 + iVar10 * -0xb505 + -0x97c3c;
+            iVar10 = (int)(this->field_04B6 << 0x10) / 2 + iVar10 * -0xb505;
             break;
           default:
-            iVar13 = 0;
-            iVar7 = 0;
+            iVar14 = 0;
+            iVar10 = 0;
           }
           local_20 = 0;
-          DAT_00856d84 = iVar16;
-          local_8 = iVar16;
-          if (-1 < iVar16) {
-            local_20 = iVar16 + 1;
+          DAT_00856d84 = iVar17;
+          local_8 = iVar17;
+          if (-1 < iVar17) {
+            local_20 = iVar17 + 1;
             local_3c = local_20;
             do {
-              iVar12 = this->field_04B2;
-              iVar10 = (&this->field_04A2)[this->field_00A8];
-              if (iVar16 <= local_8) {
-                local_38 = (undefined1 *)(local_2c + iVar16);
-                local_40 = (local_8 - iVar16) + 1;
-                local_28 = iVar13;
+              iVar13 = this->field_04B2;
+              iVar11 = (&this->field_04A2)[this->field_00A8];
+              if (iVar17 <= local_8) {
+                local_38 = (undefined1 *)(local_2c + iVar17);
+                local_40 = (local_8 - iVar17) + 1;
+                local_28 = iVar14;
                 do {
-                  if (*(char *)((local_28 >> 0x10) + iVar10 + (iVar7 >> 0x10) * iVar12) == '\0') {
+                  if (*(char *)((local_28 >> 0x10) + iVar11 + (iVar10 >> 0x10) * iVar13) == '\0') {
                     *local_38 = this->field_049E;
                   }
                   else {
@@ -176,31 +177,31 @@ ST3DSMAPContext::sub_006E6FB0
                   local_40 = local_40 + -1;
                 } while (local_40 != 0);
               }
-              iVar7 = iVar7 + iVar8;
+              iVar10 = iVar10 + iVar8;
               local_2c = local_2c - DAT_00856d8c;
               local_1c = local_1c + this->field_0424;
-              iVar16 = iVar16 + -1;
+              iVar17 = iVar17 + -1;
               local_8 = local_8 + 1;
-              iVar13 = iVar13 - iVar8;
+              iVar14 = iVar14 - iVar8;
               local_3c = local_3c + -1;
             } while (local_3c != 0);
           }
-          iVar16 = iVar16 + 1;
+          iVar17 = iVar17 + 1;
           local_8 = local_8 + -1;
-          iVar13 = iVar13 + iVar8;
+          iVar14 = iVar14 + iVar8;
           if (local_20 < this->field_03DC) {
             do {
-              iVar16 = iVar16 + 1;
+              iVar17 = iVar17 + 1;
               local_8 = local_8 + -1;
-              iVar13 = iVar13 + iVar8;
-              iVar12 = this->field_04B2;
-              iVar10 = (&this->field_04A2)[this->field_00A8];
-              if (iVar16 <= local_8) {
-                local_38 = (undefined1 *)(local_2c + iVar16);
-                local_40 = (local_8 - iVar16) + 1;
-                local_28 = iVar13;
+              iVar14 = iVar14 + iVar8;
+              iVar13 = this->field_04B2;
+              iVar11 = (&this->field_04A2)[this->field_00A8];
+              if (iVar17 <= local_8) {
+                local_38 = (undefined1 *)(local_2c + iVar17);
+                local_40 = (local_8 - iVar17) + 1;
+                local_28 = iVar14;
                 do {
-                  if (*(char *)((local_28 >> 0x10) + iVar10 + (iVar7 >> 0x10) * iVar12) == '\0') {
+                  if (*(char *)((local_28 >> 0x10) + iVar11 + (iVar10 >> 0x10) * iVar13) == '\0') {
                     *local_38 = this->field_049E;
                   }
                   else {
@@ -211,7 +212,7 @@ ST3DSMAPContext::sub_006E6FB0
                   local_40 = local_40 + -1;
                 } while (local_40 != 0);
               }
-              iVar7 = iVar7 + iVar8;
+              iVar10 = iVar10 + iVar8;
               local_2c = local_2c - DAT_00856d8c;
               local_1c = local_1c + this->field_0424;
               local_20 = local_20 + 1;
@@ -240,44 +241,44 @@ ST3DSMAPContext::sub_006E6FB0
           pAVar3 = (AnonPointee_ST3DSMAPContext_0452 *)pAVar3->field_0000) {
         switch(this->field_00A8) {
         case CASE_0:
-          lVar18 = Library::MSVCRT::__ftol();
-          local_18 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          iVar8 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          local_8 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          iVar7 = (int)lVar18;
+          lVar19 = Library::MSVCRT::__ftol();
+          local_18 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          iVar8 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          local_8 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          iVar10 = (int)lVar19;
           break;
         case CASE_1:
-          lVar18 = Library::MSVCRT::__ftol();
-          local_18 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          iVar8 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          local_8 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          iVar7 = (int)lVar18;
+          lVar19 = Library::MSVCRT::__ftol();
+          local_18 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          iVar8 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          local_8 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          iVar10 = (int)lVar19;
           break;
         case CASE_2:
-          lVar18 = Library::MSVCRT::__ftol();
-          local_18 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          iVar8 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          local_8 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          iVar7 = (int)lVar18;
+          lVar19 = Library::MSVCRT::__ftol();
+          local_18 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          iVar8 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          local_8 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          iVar10 = (int)lVar19;
           break;
         case CASE_3:
-          lVar18 = Library::MSVCRT::__ftol();
-          local_18 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          iVar8 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          local_8 = (int)lVar18;
-          lVar18 = Library::MSVCRT::__ftol();
-          iVar7 = (int)lVar18;
+          lVar19 = Library::MSVCRT::__ftol();
+          local_18 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          iVar8 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          local_8 = (int)lVar19;
+          lVar19 = Library::MSVCRT::__ftol();
+          iVar10 = (int)lVar19;
           break;
         default:
           goto switchD_006e74ad_default;
@@ -285,18 +286,18 @@ ST3DSMAPContext::sub_006E6FB0
         if (iVar8 < 1) {
           iVar8 = 1;
         }
-        iVar12 = this->field_03DC;
-        if (iVar12 + -2 <= iVar8) {
-          iVar8 = iVar12 + -3;
+        iVar13 = this->field_03DC;
+        if (iVar13 + -2 <= iVar8) {
+          iVar8 = iVar13 + -3;
         }
         if (DAT_00856d84 < iVar8) {
-          iVar16 = (DAT_00856d84 - iVar12) + iVar8;
-          if (local_18 <= iVar16 + 1) {
-            local_18 = iVar16 + 2;
+          iVar17 = (DAT_00856d84 - iVar13) + iVar8;
+          if (local_18 <= iVar17 + 1) {
+            local_18 = iVar17 + 2;
           }
-          iVar16 = (iVar12 - iVar8) + DAT_00856d84;
-          if (iVar16 + -2 <= local_18) {
-            local_18 = iVar16 + -3;
+          iVar17 = (iVar13 - iVar8) + DAT_00856d84;
+          if (iVar17 + -2 <= local_18) {
+            local_18 = iVar17 + -3;
           }
         }
         else {
@@ -307,32 +308,32 @@ ST3DSMAPContext::sub_006E6FB0
             local_18 = DAT_00856d84 + iVar8 + -1;
           }
         }
-        if (iVar7 < 1) {
-          iVar7 = 1;
+        if (iVar10 < 1) {
+          iVar10 = 1;
         }
-        if (iVar12 + -2 <= iVar7) {
-          iVar7 = iVar12 + -3;
+        if (iVar13 + -2 <= iVar10) {
+          iVar10 = iVar13 + -3;
         }
-        if (DAT_00856d84 < iVar7) {
-          iVar16 = (DAT_00856d84 - iVar12) + iVar7;
-          if (local_8 <= iVar16 + 1) {
-            local_8 = iVar16 + 2;
+        if (DAT_00856d84 < iVar10) {
+          iVar17 = (DAT_00856d84 - iVar13) + iVar10;
+          if (local_8 <= iVar17 + 1) {
+            local_8 = iVar17 + 2;
           }
-          iVar12 = (iVar12 - iVar7) + DAT_00856d84;
-          if (iVar12 + -2 <= local_8) {
-            local_8 = iVar12 + -3;
+          iVar13 = (iVar13 - iVar10) + DAT_00856d84;
+          if (iVar13 + -2 <= local_8) {
+            local_8 = iVar13 + -3;
           }
         }
         else {
-          if (local_8 < DAT_00856d84 - iVar7) {
-            local_8 = DAT_00856d84 - iVar7;
+          if (local_8 < DAT_00856d84 - iVar10) {
+            local_8 = DAT_00856d84 - iVar10;
           }
-          if (DAT_00856d84 + iVar7 <= local_8) {
-            local_8 = DAT_00856d84 + iVar7 + -1;
+          if (DAT_00856d84 + iVar10 <= local_8) {
+            local_8 = DAT_00856d84 + iVar10 + -1;
           }
         }
         FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,local_18 + param_2,iVar8 + param_3,
-                     local_8 + param_2,iVar7 + param_3,(byte)pAVar3->field_0018,0xd);
+                     local_8 + param_2,iVar10 + param_3,(byte)pAVar3->field_0018,0xd);
 switchD_006e74ad_default:
       }
       for (pAVar4 = this->field_044E; pAVar4 != nullptr;
@@ -342,78 +343,78 @@ switchD_006e74ad_default:
                   (((double)this->field_03DC * _DAT_0079df60) /
                   (double)(int)*(short *)this->field_0280);
           Library::MSVCRT::FUN_00730450(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-          lVar18 = Library::MSVCRT::__ftol();
-          iVar8 = (int)lVar18;
+          lVar19 = Library::MSVCRT::__ftol();
+          iVar8 = (int)lVar19;
           switch(this->field_00A8) {
           case CASE_0:
-            lVar18 = Library::MSVCRT::__ftol();
-            local_30 = (int)lVar18;
-            lVar18 = Library::MSVCRT::__ftol();
-            iVar7 = (int)lVar18;
+            lVar19 = Library::MSVCRT::__ftol();
+            local_30 = (int)lVar19;
+            lVar19 = Library::MSVCRT::__ftol();
+            iVar10 = (int)lVar19;
             break;
           case CASE_1:
-            lVar18 = Library::MSVCRT::__ftol();
-            local_30 = (int)lVar18;
-            lVar18 = Library::MSVCRT::__ftol();
-            iVar7 = (int)lVar18;
+            lVar19 = Library::MSVCRT::__ftol();
+            local_30 = (int)lVar19;
+            lVar19 = Library::MSVCRT::__ftol();
+            iVar10 = (int)lVar19;
             break;
           case CASE_2:
-            lVar18 = Library::MSVCRT::__ftol();
-            local_30 = (int)lVar18;
-            lVar18 = Library::MSVCRT::__ftol();
-            iVar7 = (int)lVar18;
+            lVar19 = Library::MSVCRT::__ftol();
+            local_30 = (int)lVar19;
+            lVar19 = Library::MSVCRT::__ftol();
+            iVar10 = (int)lVar19;
             break;
           case CASE_3:
-            lVar18 = Library::MSVCRT::__ftol();
-            local_30 = (int)lVar18;
-            lVar18 = Library::MSVCRT::__ftol();
-            iVar7 = (int)lVar18;
+            lVar19 = Library::MSVCRT::__ftol();
+            local_30 = (int)lVar19;
+            lVar19 = Library::MSVCRT::__ftol();
+            iVar10 = (int)lVar19;
             break;
           default:
-            iVar7 = 0;
+            iVar10 = 0;
             local_30 = 0;
           }
-          iVar16 = local_30;
-          iVar13 = iVar8 * iVar8;
-          iVar12 = iVar13 * 2;
-          iVar10 = 0;
+          iVar17 = local_30;
+          iVar14 = iVar8 * iVar8;
+          iVar13 = iVar14 * 2;
+          iVar11 = 0;
           local_48 = -iVar8;
           local_34 = 0;
-          local_18 = (local_48 + 1) * iVar13 + ((int)(iVar13 + (iVar13 >> 0x1f & 3U)) >> 2);
-          local_2c = iVar12 * iVar8;
-          local_3c = iVar7 + local_48;
-          local_40 = iVar7 + iVar8;
+          local_18 = (local_48 + 1) * iVar14 + ((int)(iVar14 + (iVar14 >> 0x1f & 3U)) >> 2);
+          local_2c = iVar13 * iVar8;
+          local_3c = iVar10 + local_48;
+          local_40 = iVar10 + iVar8;
           local_24 = DAT_00856d88 - local_3c * DAT_00856d8c;
           local_28 = DAT_00856d88 - local_40 * DAT_00856d8c;
           if (local_3c < DAT_00856d84) {
-            local_8 = (DAT_00856d84 - iVar7) + iVar8;
-            local_c = iVar7 + DAT_00856d84 + local_48;
+            local_8 = (DAT_00856d84 - iVar10) + iVar8;
+            local_c = iVar10 + DAT_00856d84 + local_48;
           }
           else {
-            local_8 = (DAT_00856d84 - this->field_03DC) + iVar7 + 1 + local_48;
-            local_c = (this->field_03DC - iVar7) + iVar8 + -1 + DAT_00856d84;
+            local_8 = (DAT_00856d84 - this->field_03DC) + iVar10 + 1 + local_48;
+            local_c = (this->field_03DC - iVar10) + iVar8 + -1 + DAT_00856d84;
           }
           if (local_40 < DAT_00856d84) {
-            local_10 = (DAT_00856d84 - iVar7) + local_48;
-            local_14 = DAT_00856d84 + iVar8 + iVar7;
+            local_10 = (DAT_00856d84 - iVar10) + local_48;
+            local_14 = DAT_00856d84 + iVar8 + iVar10;
           }
           else {
-            local_10 = (DAT_00856d84 - this->field_03DC) + iVar8 + 1 + iVar7;
-            local_14 = (this->field_03DC - iVar7) + DAT_00856d84 + -1 + local_48;
+            local_10 = (DAT_00856d84 - this->field_03DC) + iVar8 + 1 + iVar10;
+            local_14 = (this->field_03DC - iVar10) + DAT_00856d84 + -1 + local_48;
           }
           if (0 < local_2c) {
             do {
-              if ((local_8 <= iVar16 + iVar10) && (iVar16 + iVar10 <= local_c)) {
-                *(undefined1 *)(local_24 + iVar16 + iVar10) = pAVar4->field_0014;
+              if ((local_8 <= iVar17 + iVar11) && (iVar17 + iVar11 <= local_c)) {
+                *(undefined1 *)(local_24 + iVar17 + iVar11) = pAVar4->field_0014;
               }
               if ((local_8 <= local_30) && (local_30 <= local_c)) {
-                *(undefined1 *)((local_24 - iVar10) + iVar16) = pAVar4->field_0014;
+                *(undefined1 *)((local_24 - iVar11) + iVar17) = pAVar4->field_0014;
               }
-              if ((local_10 <= iVar16 + iVar10) && (iVar16 + iVar10 <= local_14)) {
-                *(undefined1 *)(local_28 + iVar16 + iVar10) = pAVar4->field_0014;
+              if ((local_10 <= iVar17 + iVar11) && (iVar17 + iVar11 <= local_14)) {
+                *(undefined1 *)(local_28 + iVar17 + iVar11) = pAVar4->field_0014;
               }
               if ((local_10 <= local_30) && (local_30 <= local_14)) {
-                *(undefined1 *)((local_28 - iVar10) + iVar16) = pAVar4->field_0014;
+                *(undefined1 *)((local_28 - iVar11) + iVar17) = pAVar4->field_0014;
               }
               if (0 < local_18) {
                 local_48 = local_48 + 1;
@@ -421,7 +422,7 @@ switchD_006e74ad_default:
                 local_40 = local_40 + -1;
                 local_24 = local_24 - DAT_00856d8c;
                 local_28 = local_28 + DAT_00856d8c;
-                local_2c = local_2c + iVar13 * -2;
+                local_2c = local_2c + iVar14 * -2;
                 local_18 = local_18 - local_2c;
                 if (DAT_00856d84 < local_3c) {
                   local_8 = local_8 + 1;
@@ -440,31 +441,31 @@ switchD_006e74ad_default:
                   local_14 = local_14 + -1;
                 }
               }
-              iVar10 = iVar10 + 1;
+              iVar11 = iVar11 + 1;
               local_30 = local_30 + -1;
-              local_34 = local_34 + iVar12;
-              local_18 = local_18 + local_34 + iVar13;
+              local_34 = local_34 + iVar13;
+              local_18 = local_18 + local_34 + iVar14;
             } while (local_34 < local_2c);
           }
           local_18 = local_18 - (local_34 + local_2c) / 2;
           if (local_48 < 1) {
-            local_3c = iVar7 + local_48;
-            local_40 = iVar7 - local_48;
-            local_20 = iVar16 - iVar10;
-            local_30 = iVar16 + iVar10;
+            local_3c = iVar10 + local_48;
+            local_40 = iVar10 - local_48;
+            local_20 = iVar17 - iVar11;
+            local_30 = iVar17 + iVar11;
             local_48 = 1 - local_48;
             do {
               if ((local_8 <= local_30) && (local_30 <= local_c)) {
-                *(undefined1 *)(local_24 + iVar16 + iVar10) = pAVar4->field_0014;
+                *(undefined1 *)(local_24 + iVar17 + iVar11) = pAVar4->field_0014;
               }
               if ((local_8 <= local_20) && (local_20 <= local_c)) {
-                *(undefined1 *)((local_24 - iVar10) + iVar16) = pAVar4->field_0014;
+                *(undefined1 *)((local_24 - iVar11) + iVar17) = pAVar4->field_0014;
               }
               if ((local_10 <= local_30) && (local_30 <= local_14)) {
-                *(undefined1 *)(local_28 + iVar16 + iVar10) = pAVar4->field_0014;
+                *(undefined1 *)(local_28 + iVar17 + iVar11) = pAVar4->field_0014;
               }
               if ((local_10 <= local_20) && (local_20 <= local_14)) {
-                *(undefined1 *)((local_28 - iVar10) + iVar16) = pAVar4->field_0014;
+                *(undefined1 *)((local_28 - iVar11) + iVar17) = pAVar4->field_0014;
               }
               local_3c = local_3c + 1;
               local_40 = local_40 + -1;
@@ -487,115 +488,115 @@ switchD_006e74ad_default:
               local_24 = local_24 - DAT_00856d8c;
               local_28 = local_28 + DAT_00856d8c;
               if (local_18 < 0) {
-                iVar10 = iVar10 + 1;
+                iVar11 = iVar11 + 1;
                 local_30 = local_30 + 1;
                 local_20 = local_20 + -1;
-                local_34 = local_34 + iVar12;
+                local_34 = local_34 + iVar13;
                 local_18 = local_18 + local_34;
               }
-              local_2c = local_2c + iVar13 * -2;
-              local_18 = local_18 + (iVar13 - local_2c);
+              local_2c = local_2c + iVar14 * -2;
+              local_18 = local_18 + (iVar14 - local_2c);
               local_48 = local_48 + -1;
             } while (local_48 != 0);
           }
         }
       }
-      puVar14 = (uint *)this->field_031C;
-      pbVar17 = this->field_0420;
+      puVar15 = (uint *)this->field_031C;
+      pbVar18 = this->field_0420;
       if (0 < local_4c) {
         do {
-          if (((pbVar17[3] & 1) != 0) && ((*pbVar17 & (byte)this->field_0418) != 0)) {
-            if (((*puVar14 & 0x800000) != 0) || (this->field_03E0 != 0)) {
-              dVar1 = (double)((float)puVar14[0x1d] / (float)this->field_00C8);
+          if (((pbVar18[3] & 1) != 0) && ((*pbVar18 & (byte)this->field_0418) != 0)) {
+            if (((*puVar15 & 0x800000) != 0) || (this->field_03E0 != 0)) {
+              dVar1 = (double)((float)puVar15[0x1d] / (float)this->field_00C8);
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-              lVar18 = Library::MSVCRT::__ftol();
-              *(byte *)(puVar14 + 0x44) = (byte)lVar18;
-              if (*(short *)this->field_0280 <= (short)(ushort)(byte)lVar18) {
-                *(char *)(puVar14 + 0x44) = *(char *)this->field_0280 + -1;
+              lVar19 = Library::MSVCRT::__ftol();
+              *(byte *)(puVar15 + 0x44) = (byte)lVar19;
+              if (*(short *)this->field_0280 <= (short)(ushort)(byte)lVar19) {
+                *(char *)(puVar15 + 0x44) = *(char *)this->field_0280 + -1;
               }
-              dVar1 = (double)((float)puVar14[0x1e] / (float)this->field_00C8);
+              dVar1 = (double)((float)puVar15[0x1e] / (float)this->field_00C8);
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-              lVar18 = Library::MSVCRT::__ftol();
-              STField<byte>(puVar14,0x111) = (byte)lVar18;
-              if (*(short *)&this->field_0280->field_0x2 <= (short)(ushort)(byte)lVar18) {
-                STField<char>(puVar14,0x111) = this->field_0280->field_0x2 + -1;
+              lVar19 = Library::MSVCRT::__ftol();
+              STField<byte>(puVar15,0x111) = (byte)lVar19;
+              if (*(short *)&this->field_0280->field_0x2 <= (short)(ushort)(byte)lVar19) {
+                STField<char>(puVar15,0x111) = this->field_0280->field_0x2 + -1;
               }
-              dVar1 = (double)((float)puVar14[0x1f] / (float)this->field_00D0);
+              dVar1 = (double)((float)puVar15[0x1f] / (float)this->field_00D0);
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-              lVar18 = Library::MSVCRT::__ftol();
-              STField<byte>(puVar14,0x112) = (byte)lVar18;
-              if (4 < (byte)lVar18) {
-                STField<undefined1>(puVar14,0x112) = 4;
+              lVar19 = Library::MSVCRT::__ftol();
+              STField<byte>(puVar15,0x112) = (byte)lVar19;
+              if (4 < (byte)lVar19) {
+                STField<undefined1>(puVar15,0x112) = 4;
               }
               switch(this->field_00A8) {
               case CASE_0:
-                lVar18 = Library::MSVCRT::__ftol();
-                puVar14[0x42] = (uint)lVar18;
+                lVar19 = Library::MSVCRT::__ftol();
+                puVar15[0x42] = (uint)lVar19;
                 break;
               case CASE_1:
-                lVar18 = Library::MSVCRT::__ftol();
-                puVar14[0x42] = (uint)lVar18;
+                lVar19 = Library::MSVCRT::__ftol();
+                puVar15[0x42] = (uint)lVar19;
                 break;
               case CASE_2:
-                lVar18 = Library::MSVCRT::__ftol();
-                puVar14[0x42] = (uint)lVar18;
+                lVar19 = Library::MSVCRT::__ftol();
+                puVar15[0x42] = (uint)lVar19;
                 break;
               case CASE_3:
-                lVar18 = Library::MSVCRT::__ftol();
-                puVar14[0x42] = (uint)lVar18;
+                lVar19 = Library::MSVCRT::__ftol();
+                puVar15[0x42] = (uint)lVar19;
                 break;
               default:
                 goto switchD_006e7e25_default;
               }
-              lVar18 = Library::MSVCRT::__ftol();
-              puVar14[0x43] = (uint)lVar18;
+              lVar19 = Library::MSVCRT::__ftol();
+              puVar15[0x43] = (uint)lVar19;
 switchD_006e7e25_default:
-              if ((int)puVar14[0x43] < 1) {
-                puVar14[0x43] = 1;
+              if ((int)puVar15[0x43] < 1) {
+                puVar15[0x43] = 1;
               }
-              if (this->field_03DC + -2 <= (int)puVar14[0x43]) {
-                puVar14[0x43] = this->field_03DC - 3;
+              if (this->field_03DC + -2 <= (int)puVar15[0x43]) {
+                puVar15[0x43] = this->field_03DC - 3;
               }
-              uVar15 = puVar14[0x43];
-              if (DAT_00856d84 < (int)uVar15) {
-                if ((int)puVar14[0x42] <= (int)((uVar15 - this->field_03DC) + 1 + DAT_00856d84)) {
-                  puVar14[0x42] = (puVar14[0x43] - this->field_03DC) + 2 + DAT_00856d84;
+              uVar16 = puVar15[0x43];
+              if (DAT_00856d84 < (int)uVar16) {
+                if ((int)puVar15[0x42] <= (int)((uVar16 - this->field_03DC) + 1 + DAT_00856d84)) {
+                  puVar15[0x42] = (puVar15[0x43] - this->field_03DC) + 2 + DAT_00856d84;
                 }
-                if ((int)((this->field_03DC - puVar14[0x43]) + -2 + DAT_00856d84) <=
-                    (int)puVar14[0x42]) {
-                  uVar15 = (this->field_03DC - puVar14[0x43]) + -3 + DAT_00856d84;
+                if ((int)((this->field_03DC - puVar15[0x43]) + -2 + DAT_00856d84) <=
+                    (int)puVar15[0x42]) {
+                  uVar16 = (this->field_03DC - puVar15[0x43]) + -3 + DAT_00856d84;
                   goto LAB_006e7ff9;
                 }
               }
               else {
-                if ((int)puVar14[0x42] < (int)(DAT_00856d84 - uVar15)) {
-                  puVar14[0x42] = DAT_00856d84 - puVar14[0x43];
+                if ((int)puVar15[0x42] < (int)(DAT_00856d84 - uVar16)) {
+                  puVar15[0x42] = DAT_00856d84 - puVar15[0x43];
                 }
-                if ((int)(puVar14[0x43] + DAT_00856d84) <= (int)puVar14[0x42]) {
-                  uVar15 = (puVar14[0x43] - 1) + DAT_00856d84;
+                if ((int)(puVar15[0x43] + DAT_00856d84) <= (int)puVar15[0x42]) {
+                  uVar16 = (puVar15[0x43] - 1) + DAT_00856d84;
 LAB_006e7ff9:
-                  puVar14[0x42] = uVar15;
+                  puVar15[0x42] = uVar16;
                 }
               }
-              *puVar14 = *puVar14 & 0xff7fffff;
+              *puVar15 = *puVar15 & 0xff7fffff;
             }
-            pbVar9 = (byte *)((puVar14[0x42] - puVar14[0x43] * DAT_00856d8c) + DAT_00856d88);
-            *pbVar9 = pbVar17[1];
-            pbVar9[1] = pbVar17[1];
-            pbVar9[-DAT_00856d8c] = pbVar17[1];
-            pbVar9[1 - DAT_00856d8c] = pbVar17[1];
+            pbVar9 = (byte *)((puVar15[0x42] - puVar15[0x43] * DAT_00856d8c) + DAT_00856d88);
+            *pbVar9 = pbVar18[1];
+            pbVar9[1] = pbVar18[1];
+            pbVar9[-DAT_00856d8c] = pbVar18[1];
+            pbVar9[1 - DAT_00856d8c] = pbVar18[1];
           }
-          pbVar17 = pbVar17 + 4;
-          puVar14 = puVar14 + 0x45;
+          pbVar18 = pbVar18 + 4;
+          puVar15 = puVar15 + 0x45;
           local_4c = local_4c + -1;
         } while (local_4c != 0);
       }
       if (0 < this->field_03E8) {
         iVar8 = this->field_03F0 + param_2;
-        iVar7 = this->field_03EC + param_2;
-        if (iVar7 < iVar8) {
-          iVar12 = this->field_03E8 + param_3;
-          FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar7,iVar12,iVar8,iVar12,
+        iVar10 = this->field_03EC + param_2;
+        if (iVar10 < iVar8) {
+          iVar13 = this->field_03E8 + param_3;
+          FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar10,iVar13,iVar8,iVar13,
                        (byte)this->field_03E4,0xd);
         }
       }
@@ -616,8 +617,8 @@ LAB_006e7ff9:
                        iVar8,this->field_0414 + param_3,(byte)this->field_03E4,0xd);
         }
       }
-      uVar15 = -this->field_00A8 & 3;
-      pvVar5 = (&this->field_0456)[uVar15];
+      uVar16 = -this->field_00A8 & 3;
+      pvVar5 = (&this->field_0456)[uVar16];
       if (pvVar5 != nullptr) {
         FUN_006d25e0((byte *)((DAT_00856d84 -
                               (DAT_00856d8c + 1) * ((int)STField<short>(pvVar5,0x12) / 2)) +
@@ -625,8 +626,8 @@ LAB_006e7ff9:
                      (byte *)((STField<byte>(pvVar5,0xd) >> 1 & 0xe) + 0x16 + (int)pvVar5),
                      (int)STField<short>(pvVar5,0x12),(int)STField<short>(pvVar5,0x14));
       }
-      uVar15 = uVar15 + 1 & 3;
-      pvVar5 = (&this->field_0456)[uVar15];
+      uVar16 = uVar16 + 1 & 3;
+      pvVar5 = (&this->field_0456)[uVar16];
       if (pvVar5 != nullptr) {
         iVar8 = (int)STField<short>(pvVar5,0x14) / 2;
         FUN_006d25e0((byte *)((DAT_00856d88 - (DAT_00856d84 - iVar8) * DAT_00856d8c) + iVar8),
@@ -634,8 +635,8 @@ LAB_006e7ff9:
                      (byte *)((STField<byte>(pvVar5,0xd) >> 1 & 0xe) + 0x16 + (int)pvVar5),
                      (int)STField<short>(pvVar5,0x12),(int)STField<short>(pvVar5,0x14));
       }
-      uVar15 = uVar15 + 1 & 3;
-      pvVar5 = (&this->field_0456)[uVar15];
+      uVar16 = uVar16 + 1 & 3;
+      pvVar5 = (&this->field_0456)[uVar16];
       if (pvVar5 != nullptr) {
         iVar8 = (int)STField<short>(pvVar5,0x12);
         FUN_006d25e0((byte *)((-(((this->field_03DC - iVar8 / 2) -
@@ -644,7 +645,7 @@ LAB_006e7ff9:
                      (byte *)((STField<byte>(pvVar5,0xd) >> 1 & 0xe) + 0x16 + (int)pvVar5),iVar8,
                      (int)STField<short>(pvVar5,0x14));
       }
-      pvVar5 = (&this->field_0456)[uVar15 + 1 & 3];
+      pvVar5 = (&this->field_0456)[uVar16 + 1 & 3];
       if (pvVar5 != nullptr) {
         iVar8 = (int)STField<short>(pvVar5,0x14);
         FUN_006d25e0((byte *)(((-((DAT_00856d84 - iVar8 / 2) * DAT_00856d8c) - iVar8 / 2) -

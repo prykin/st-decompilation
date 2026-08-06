@@ -48,7 +48,7 @@ void FUN_006c2050(void)
     (**(code **)(*DAT_008568b4 + 8))(DAT_008568b4);
     DAT_008568b4 = nullptr;
     DAT_00856878 = 0;
-    FreeAndNull(&LPVOID_008568b0);
+    FreeAndNull(&g_lpBuffer_008568B0);
   }
   return;
 }

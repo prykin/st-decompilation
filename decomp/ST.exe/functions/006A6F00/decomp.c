@@ -70,7 +70,7 @@ LAB_006a76ae:
         iVar7 = param_1 + (uVar8 * param_2 + uVar10 + uVar9 * local_8) * 2;
         if (local_14 < param_5 + 0x1a) {
           local_14 = local_14 + 0x80;
-          pbVar6 = (byte *)FUN_006bfb50((undefined4 *)local_18,local_14 * 8);
+          pbVar6 = (byte *)FUN_006bfb50((int *)local_18,local_14 * 8);
           if (pbVar6 == nullptr) goto LAB_006a76ae;
           local_10 = pbVar6 + ((int)local_10 - (int)local_18 >> 2) * 4;
           local_c = pbVar6 + ((int)local_c - (int)local_18 >> 2) * 4;

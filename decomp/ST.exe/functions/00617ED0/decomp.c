@@ -11,8 +11,8 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
   uint local_14;
   STFishC *local_10;
   short local_a;
-  undefined2 local_8;
-  undefined2 local_6;
+  short local_8;
+  short local_6;
 
   if (STField<int>(this,0x66) == 0) {
     pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);

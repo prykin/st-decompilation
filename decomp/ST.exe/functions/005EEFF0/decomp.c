@@ -67,7 +67,7 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
                      &local_8,&local_c), param_1 < 0)) ||
         (((4 < param_1 || (local_8 < 0)) ||
-         ((pVVar3->field_0030 <= local_8 ||
+         (((int)pVVar3->field_0030 <= local_8 ||
           ((local_c = g_centeredOffsets5[param_1] + local_c, local_c < 0 ||
            (pVVar3->field_0034 <= local_c)))))))) ||
        ((pVVar3->field_004C == nullptr ||
@@ -134,7 +134,7 @@ joined_r0x005ef316:
            (VisibleClassTy::sub_00558C00
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
                        &local_c,&local_8), param_1 < 0)) || ((4 < param_1 || (local_c < 0)))) ||
-         ((pVVar3->field_0030 <= local_c ||
+         (((int)pVVar3->field_0030 <= local_c ||
           ((local_8 = g_centeredOffsets5[param_1] + local_8, local_8 < 0 ||
            (pVVar3->field_0034 <= local_8)))))) || (pVVar3->field_004C == nullptr)) ||
        (pVVar3->field_004C[local_c + local_8 * pVVar3->field_0030] != 0)) {

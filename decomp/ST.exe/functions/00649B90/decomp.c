@@ -12,7 +12,8 @@ undefined4 * CreateBossData(void)
   char cVar1;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  undefined4 *puVar3;
+  int iVar5;
   uint uVar6;
   uint uVar7;
   char *pcVar8;
@@ -49,7 +50,7 @@ undefined4 * CreateBossData(void)
     return nullptr;
   }
   memset(local_34, 0, 0x18); /* compiler bulk-zero initialization */
-  iVar3 = 0;
+  iVar5 = 0;
   memset(&stack0xfffffb6c, 0, 0x318); /* compiler bulk-zero initialization */
   uVar6 = 0xffffffff;
   pcVar8 = &DAT_00807680;
@@ -77,12 +78,12 @@ undefined4 * CreateBossData(void)
     pcVar8 = pcVar11;
   } while (cVar1 != '\0');
   uVar6 = ~uVar6;
-  iVar3 = -1;
+  iVar5 = -1;
   pcVar8 = local_390;
   do {
     pcVar10 = pcVar8;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
+    if (iVar5 == 0) break;
+    iVar5 = iVar5 + -1;
     pcVar10 = pcVar8 + 1;
     cVar1 = *pcVar8;
     pcVar8 = pcVar10;
@@ -133,12 +134,12 @@ undefined4 * CreateBossData(void)
     pcVar8 = pcVar11;
   } while (cVar1 != '\0');
   uVar6 = ~uVar6;
-  iVar3 = -1;
+  iVar5 = -1;
   pcVar8 = local_17c;
   do {
     pcVar10 = pcVar8;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
+    if (iVar5 == 0) break;
+    iVar5 = iVar5 + -1;
     pcVar10 = pcVar8 + 1;
     cVar1 = *pcVar8;
     pcVar8 = pcVar10;
@@ -158,12 +159,12 @@ undefined4 * CreateBossData(void)
     pcVar8 = pcVar11;
   } while (cVar1 != '\0');
   uVar6 = ~uVar6;
-  iVar3 = -1;
+  iVar5 = -1;
   pcVar8 = local_17c;
   do {
     pcVar10 = pcVar8;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
+    if (iVar5 == 0) break;
+    iVar5 = iVar5 + -1;
     pcVar10 = pcVar8 + 1;
     cVar1 = *pcVar8;
     pcVar8 = pcVar10;

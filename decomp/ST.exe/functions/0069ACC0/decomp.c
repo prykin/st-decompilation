@@ -20,8 +20,8 @@ undefined4 __thiscall FUN_0069acc0(void *this,int param_1,int param_2,int param_
       return 1;
     }
     if (((short)iVar1 == param_3) &&
-       (iVar1 = thunk_FUN_006a20e0(STField<int *>(this,8),iVar3,iVar4,param_3 + 1,0xff),
-       iVar1 == 0)) {
+       (iVar3 = thunk_FUN_006a20e0(STField<int *>(this,8),iVar3,iVar4,param_3 + 1,0xff),
+       iVar3 == 0)) {
       return 1;
     }
   }

@@ -14,8 +14,9 @@ void __thiscall STManBasisC::sub_005F19A0(STManBasisC *this)
   VisibleClassTy *pVVar3;
   VisibleClassTy *pVVar4;
   int iVar5;
-  short *psVar6;
   int iVar7;
+  short *psVar6;
+  int iVar8;
   int local_40;
   int local_3c;
   int local_38;
@@ -52,42 +53,42 @@ joined_r0x005f19be:
     else {
       psVar6 = nullptr;
     }
-    iVar7 = (int)psVar6[2];
+    iVar8 = (int)psVar6[2];
     local_18 = (int)psVar6[1];
     local_1c = (int)*psVar6;
     pVVar4 = nullptr;
   } while (pVVar2 == nullptr);
-  local_10 = iVar7;
+  local_10 = iVar8;
   local_8 = psVar6;
   if ((char)psVar6[3] != '\x01') goto LAB_005f1c99;
   if (((((DAT_0080874d != -1) && (pVVar2->field_00F8 != 0)) &&
        (VisibleClassTy::sub_00558C00
                   (pVVar2,pVVar2->field_010C,local_1c,local_18,&local_20,&local_24),
-       pVVar4 = g_visibleClass_00802A88, -1 < iVar7)) &&
-      (((iVar7 < 5 && (-1 < local_20)) &&
-       ((local_20 < pVVar2->field_0030 &&
-        ((iVar7 = g_centeredOffsets5[iVar7] + local_24, -1 < iVar7 && (iVar7 < pVVar2->field_0034)))
+       pVVar4 = g_visibleClass_00802A88, -1 < iVar8)) &&
+      (((iVar8 < 5 && (-1 < local_20)) &&
+       ((local_20 < (int)pVVar2->field_0030 &&
+        ((iVar8 = g_centeredOffsets5[iVar8] + local_24, -1 < iVar8 && (iVar8 < pVVar2->field_0034)))
         ))))) &&
      ((pVVar2->field_004C != nullptr &&
-      (((pVVar2->field_004C[local_20 + iVar7 * pVVar2->field_0030] == 0 && (DAT_0080874d != -1)) &&
+      (((pVVar2->field_004C[local_20 + iVar8 * pVVar2->field_0030] == 0 && (DAT_0080874d != -1)) &&
        (g_visibleClass_00802A88->field_00F8 != 0)))))) {
     local_38 = local_1c + 1;
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,local_18,
                &local_28,&local_2c);
     pVVar2 = g_visibleClass_00802A88;
-    if ((((-1 < local_28) && (local_28 < pVVar4->field_0030)) &&
-        (((iVar7 = g_centeredOffsets5[local_10] + local_2c, -1 < iVar7 &&
-          ((iVar7 < pVVar4->field_0034 && (pVVar4->field_004C != nullptr)))) &&
-         (pVVar4->field_004C[local_28 + iVar7 * pVVar4->field_0030] == 0)))) &&
+    if ((((-1 < local_28) && (local_28 < (int)pVVar4->field_0030)) &&
+        (((iVar8 = g_centeredOffsets5[local_10] + local_2c, -1 < iVar8 &&
+          ((iVar8 < pVVar4->field_0034 && (pVVar4->field_004C != nullptr)))) &&
+         (pVVar4->field_004C[local_28 + iVar8 * pVVar4->field_0030] == 0)))) &&
        ((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)))) {
-      iVar7 = local_18 + 1;
+      iVar8 = local_18 + 1;
       VisibleClassTy::sub_00558C00
-                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_1c,iVar7,
+                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_1c,iVar8,
                  &local_30,&local_34);
       pVVar3 = g_visibleClass_00802A88;
       if (((local_30 < 0) ||
-          ((((pVVar2->field_0030 <= local_30 ||
+          (((((int)pVVar2->field_0030 <= local_30 ||
              (iVar5 = g_centeredOffsets5[local_10] + local_34, psVar6 = local_8, iVar5 < 0)) ||
             (pVVar2->field_0034 <= iVar5)) ||
            ((pVVar2->field_004C == nullptr ||
@@ -95,13 +96,13 @@ joined_r0x005f19be:
          ((DAT_0080874d == -1 ||
           ((((g_visibleClass_00802A88->field_00F8 == 0 ||
              (VisibleClassTy::sub_00558C00
-                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,iVar7,
+                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,iVar8,
                          &local_3c,&local_40), psVar6 = local_8, local_3c < 0)) ||
-            ((pVVar3->field_0030 <= local_3c ||
-             (((iVar7 = g_centeredOffsets5[local_10] + local_40, iVar7 < 0 ||
-               (pVVar3->field_0034 <= iVar7)) || (pVVar3->field_004C == nullptr)))))) ||
+            (((int)pVVar3->field_0030 <= local_3c ||
+             (((iVar8 = g_centeredOffsets5[local_10] + local_40, iVar8 < 0 ||
+               (pVVar3->field_0034 <= iVar8)) || (pVVar3->field_004C == nullptr)))))) ||
            (pVVar4 = g_visibleClass_00802A88,
-           pVVar3->field_004C[local_3c + iVar7 * pVVar3->field_0030] != 0)))))) goto LAB_005f1c4c;
+           pVVar3->field_004C[local_3c + iVar8 * pVVar3->field_0030] != 0)))))) goto LAB_005f1c4c;
       goto joined_r0x005f19be;
     }
   }
@@ -115,9 +116,9 @@ LAB_005f1c4c:
   }
   goto joined_r0x005f19be;
 LAB_005f1c99:
-  iVar7 = VisibleClassTy::sub_005F1D80(pVVar2,local_1c,local_18,iVar7);
+  iVar8 = VisibleClassTy::sub_005F1D80(pVVar2,local_1c,local_18,iVar8);
   pVVar4 = g_visibleClass_00802A88;
-  if (iVar7 == 0) goto joined_r0x005f19be;
+  if (iVar8 == 0) goto joined_r0x005f19be;
   goto LAB_005f1c4c;
 }
 

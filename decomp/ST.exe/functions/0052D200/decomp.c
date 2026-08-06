@@ -15,11 +15,12 @@
 void __thiscall PopUpTy::OutStr(PopUpTy *this,byte param_1)
 
 {
-  uint uVar2;
-  PopUpTy *pPVar3;
+  uint *puVar1;
+  uint uVar3;
+  PopUpTy *pPVar4;
   int errorCode;
-  int iVar4;
-  uint *puVar5;
+  int iVar5;
+  char *resourceString;
   InternalExceptionFrame local_4c;
   PopUpTy *local_8;
 
@@ -27,26 +28,26 @@ void __thiscall PopUpTy::OutStr(PopUpTy *this,byte param_1)
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  pPVar3 = local_8;
+  pPVar4 = local_8;
   if (errorCode == 0) {
-    uVar2 = (uint)param_1;
-    ccFntTy::SetSurf(local_8->field_0094,(int)local_8->field_0090,0,0,uVar2 * 0x13,
+    uVar3 = (uint)param_1;
+    ccFntTy::SetSurf(local_8->field_0094,(int)local_8->field_0090,0,0,uVar3 * 0x13,
                      *(int *)(local_8->field_0090 + 2),0x13);
-    puVar5 = pPVar3->field_0098;
-    if ((int)uVar2 < (int)puVar5[2]) {
-      puVar5 = *(uint **)(puVar5[5] + uVar2 * 4);
+    puVar1 = pPVar4->field_0098;
+    if ((int)uVar3 < (int)puVar1[2]) {
+      resourceString = *(char **)(puVar1[5] + uVar3 * 4);
     }
     else {
-      puVar5 = nullptr;
+      resourceString = nullptr;
     }
-    ccFntTy::WrStr(pPVar3->field_0094,puVar5,0,0,0);
+    ccFntTy::WrStr(pPVar4->field_0094,resourceString,0,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x2d,0,errorCode,"%s"
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x2d,0,errorCode,"%s"
                              ,"PopUpTy::OutStr");
-  if (iVar4 != 0) {
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\mpopup.cpp",0x2d);

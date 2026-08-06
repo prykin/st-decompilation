@@ -16,6 +16,7 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
   STManRub3C *this_00;
   int iVar3;
   int iVar4;
+  int iVar5;
   InternalExceptionFrame local_58;
   byte *local_14;
   uint local_10;

@@ -13,12 +13,14 @@ ProdPanelTy::CreateSlider
 {
   ProdPanelTy *this_00;
   int iVar2;
-  LPSTR pCVar3;
+  LPSTR pCVar2;
+  int iVar8;
+  int iVar3;
   int iVar4;
   int *piVar5;
   undefined4 uVar6;
   int *piVar7;
-  int iVar8;
+  int iVar9;
   int local_42c [6];
   undefined4 local_414;
   undefined4 local_410;
@@ -76,27 +78,27 @@ ProdPanelTy::CreateSlider
     if (DAT_0080734c != '\0') {
       local_64 = 1;
     }
-    iVar8 = 1;
+    iVar9 = 1;
     piVar7 = nullptr;
     uVar6 = 0;
-    iVar2 = 1;
+    iVar3 = 1;
     local_42c[2] = (int)(param_6 == 1);
     local_42c[1] = 2;
     local_2a8 = 2;
     local_42c[3] = 2;
     local_318 = 1;
     local_31c = 1;
-    pCVar3 = thunk_FUN_00571240("BUT_SLLT",0);
-    pCVar3 = FUN_006f2c00(pCVar3,iVar2,uVar6);
-    local_c = cMf32::RecGet(g_cMf32_00806790,1,pCVar3,piVar7,iVar8);
+    pCVar2 = thunk_FUN_00571240("BUT_SLLT",0);
+    pCVar2 = FUN_006f2c00(pCVar2,iVar3,uVar6);
+    local_c = cMf32::RecGet(g_cMf32_00806790,1,pCVar2,piVar7,iVar9);
     local_414 = *(undefined4 *)(local_c + 2);
     local_410 = *(undefined4 *)(local_c + 4);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
-    iVar2 = this_00->field_003C;
-    iVar8 = this_00->field_005C;
-    local_42c[4] = iVar2 + param_3;
+    iVar3 = this_00->field_003C;
+    iVar9 = this_00->field_005C;
+    local_42c[4] = iVar3 + param_3;
     iVar4 = DAT_00806734;
-    if (iVar8 != 0) {
+    if (iVar9 != 0) {
       iVar4 = this_00->field_0044;
     }
     local_3c0 = 2;
@@ -122,9 +124,9 @@ ProdPanelTy::CreateSlider
     piVar7 = local_42c + 2;
     piVar5 = local_2a4;
     memmove(piVar5, piVar7, 0x17c); /* compiler REP MOVS byte copy */
-    local_2a4[2] = iVar2 + param_1;
+    local_2a4[2] = iVar3 + param_1;
     local_2a4[3] = DAT_00806734;
-    if (iVar8 != 0) {
+    if (iVar9 != 0) {
       local_2a4[3] = this_00->field_0044;
     }
     local_2a4[3] = local_2a4[3] + param_2;

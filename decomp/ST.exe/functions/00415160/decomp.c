@@ -10,41 +10,43 @@ int STGroupBoatC::Way3DGrpDistribTgt
 
 {
   uint uVar1;
-  ushort uVar3;
-  ushort *puVar4;
-  STGameObjC *pSVar5;
+  int iVar2;
+  ushort uVar4;
+  ushort *puVar5;
+  STGameObjC *pSVar6;
+  int iVar8;
   int iVar6;
   int iVar7;
-  uint uVar8;
+  uint uVar9;
   InternalExceptionFrame local_50;
   int local_c;
   int local_8;
 
   iVar7 = 0;
   local_c = 0;
-  uVar3 = (ushort)param_2->count;
-  param_1->field_0027 = uVar3;
-  if (uVar3 == 0) {
+  uVar4 = (ushort)param_2->count;
+  param_1->field_0027 = uVar4;
+  if (uVar4 == 0) {
     return 0;
   }
-  uVar3 = thunk_FUN_004233c0(param_1);
-  DAT_007f4d4c = (uint)uVar3;
+  uVar4 = thunk_FUN_004233c0(param_1);
+  DAT_007f4d4c = (uint)uVar4;
   if ((DAT_007f4d4c < 2) && (param_1->field_0027 == 1)) {
     if (param_2->count == 0) {
-      puVar4 = nullptr;
+      puVar5 = nullptr;
     }
     else {
-      puVar4 = param_2->data;
+      puVar5 = param_2->data;
     }
-    pSVar5 = thunk_FUN_00423e70(param_1,*puVar4);
-    if (pSVar5 != nullptr) {
-      pSVar5->field_00B7 = 0;
-      pSVar5->field_00BB = param_3;
-      pSVar5->field_00C7 = param_3;
-      pSVar5->field_00BF = param_4;
-      pSVar5->field_00CB = param_4;
-      pSVar5->field_00C3 = param_5;
-      pSVar5->field_00CF = param_5;
+    pSVar6 = thunk_FUN_00423e70(param_1,*puVar5);
+    if (pSVar6 != nullptr) {
+      pSVar6->field_00B7 = 0;
+      pSVar6->field_00BB = param_3;
+      pSVar6->field_00C7 = param_3;
+      pSVar6->field_00BF = param_4;
+      pSVar6->field_00CB = param_4;
+      pSVar6->field_00C3 = param_5;
+      pSVar6->field_00CF = param_5;
     }
     goto LAB_00415472;
   }
@@ -52,63 +54,63 @@ int STGroupBoatC::Way3DGrpDistribTgt
   g_currentExceptionFrame = &local_50;
   iVar7 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar7 == 0) {
-    iVar7 = thunk_FUN_00413af0(param_1,param_2,param_3,param_4,param_5);
-    uVar8 = 0;
-    if (iVar7 == 0) {
+    iVar8 = thunk_FUN_00413af0(param_1,param_2,param_3,param_4,param_5);
+    uVar9 = 0;
+    if (iVar8 == 0) {
       local_8 = 0;
       if (0 < DAT_007f4d40) {
         do {
-          uVar1 = *(uint *)(uVar8 + 0x18 + (int)DAT_007f4d04);
+          uVar1 = *(uint *)(uVar9 + 0x18 + (int)DAT_007f4d04);
           if (uVar1 < param_2->count) {
-            puVar4 = DArrayAt<ushort>(param_2, uVar1);
+            puVar5 = DArrayAt<ushort>(param_2, uVar1);
           }
           else {
-            puVar4 = nullptr;
+            puVar5 = nullptr;
           }
-          pSVar5 = thunk_FUN_00423e70(param_1,*puVar4);
-          if (pSVar5 != nullptr) {
-            iVar7 = *(int *)(uVar8 + 0xc + (int)DAT_007f4d04);
-            pSVar5->field_00BB = iVar7;
-            pSVar5->field_00C7 = iVar7;
-            iVar7 = *(int *)(uVar8 + 0x10 + (int)DAT_007f4d04);
-            pSVar5->field_00BF = iVar7;
-            pSVar5->field_00CB = iVar7;
-            iVar7 = *(int *)(uVar8 + 0x14 + (int)DAT_007f4d04);
-            pSVar5->field_00C3 = iVar7;
-            pSVar5->field_00CF = iVar7;
+          pSVar6 = thunk_FUN_00423e70(param_1,*puVar5);
+          if (pSVar6 != nullptr) {
+            iVar8 = *(int *)(uVar9 + 0xc + (int)DAT_007f4d04);
+            pSVar6->field_00BB = iVar8;
+            pSVar6->field_00C7 = iVar8;
+            iVar8 = *(int *)(uVar9 + 0x10 + (int)DAT_007f4d04);
+            pSVar6->field_00BF = iVar8;
+            pSVar6->field_00CB = iVar8;
+            iVar8 = *(int *)(uVar9 + 0x14 + (int)DAT_007f4d04);
+            pSVar6->field_00C3 = iVar8;
+            pSVar6->field_00CF = iVar8;
           }
           local_8 = local_8 + 1;
-          uVar8 = uVar8 + 0x1c;
+          uVar9 = uVar9 + 0x1c;
         } while (local_8 < DAT_007f4d40);
       }
-      iVar7 = 0;
+      iVar8 = 0;
       if (0 < DAT_007f4cf8) {
         do {
-          if (*(uint *)(DAT_007f4d04 + ((uint)param_1->field_0027 - iVar7) * 0xe + -2) <
+          if (*(uint *)(DAT_007f4d04 + ((uint)param_1->field_0027 - iVar8) * 0xe + -2) <
               param_2->count) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            puVar4 = (ushort *)
+            puVar5 = (ushort *)
                      (param_2->elementSize *
-                      *(uint *)(DAT_007f4d04 + ((uint)param_1->field_0027 - iVar7) * 0xe + -2) +
+                      *(uint *)(DAT_007f4d04 + ((uint)param_1->field_0027 - iVar8) * 0xe + -2) +
                      (int)param_2->data);
           }
           else {
-            puVar4 = nullptr;
+            puVar5 = nullptr;
           }
-          pSVar5 = thunk_FUN_00423e70(param_1,*puVar4);
-          if (pSVar5 != nullptr) {
-            iVar6 = *(int *)(DAT_007f4d04 + ((uint)param_1->field_0027 - iVar7) * 0xe + -8);
-            pSVar5->field_00BB = iVar6;
-            pSVar5->field_00C7 = iVar6;
-            iVar6 = *(int *)(DAT_007f4d04 + ((uint)param_1->field_0027 - iVar7) * 0xe + -6);
-            pSVar5->field_00BF = iVar6;
-            pSVar5->field_00CB = iVar6;
-            iVar6 = *(int *)(DAT_007f4d04 + ((uint)param_1->field_0027 - iVar7) * 0xe + -4);
-            pSVar5->field_00C3 = iVar6;
-            pSVar5->field_00CF = iVar6;
+          pSVar6 = thunk_FUN_00423e70(param_1,*puVar5);
+          if (pSVar6 != nullptr) {
+            iVar2 = *(int *)(DAT_007f4d04 + ((uint)param_1->field_0027 - iVar8) * 0xe + -8);
+            pSVar6->field_00BB = iVar2;
+            pSVar6->field_00C7 = iVar2;
+            iVar2 = *(int *)(DAT_007f4d04 + ((uint)param_1->field_0027 - iVar8) * 0xe + -6);
+            pSVar6->field_00BF = iVar2;
+            pSVar6->field_00CB = iVar2;
+            iVar2 = *(int *)(DAT_007f4d04 + ((uint)param_1->field_0027 - iVar8) * 0xe + -4);
+            pSVar6->field_00C3 = iVar2;
+            pSVar6->field_00CF = iVar2;
           }
-          iVar7 = iVar7 + 1;
-        } while (iVar7 < DAT_007f4cf8);
+          iVar8 = iVar8 + 1;
+        } while (iVar8 < DAT_007f4cf8);
         g_currentExceptionFrame = local_50.previous;
         iVar7 = local_c;
         goto LAB_00415467;
@@ -116,23 +118,23 @@ int STGroupBoatC::Way3DGrpDistribTgt
     }
     else if (param_1->field_0027 != 0) {
       do {
-        if (uVar8 < param_2->count) {
-          puVar4 = DArrayAt<ushort>(param_2, uVar8);
+        if (uVar9 < param_2->count) {
+          puVar5 = DArrayAt<ushort>(param_2, uVar9);
         }
         else {
-          puVar4 = nullptr;
+          puVar5 = nullptr;
         }
-        pSVar5 = thunk_FUN_00423e70(param_1,*puVar4);
-        if (pSVar5 != nullptr) {
-          pSVar5->field_00BB = param_3;
-          pSVar5->field_00C7 = param_3;
-          pSVar5->field_00BF = param_4;
-          pSVar5->field_00CB = param_4;
-          pSVar5->field_00C3 = param_5;
-          pSVar5->field_00CF = param_5;
+        pSVar6 = thunk_FUN_00423e70(param_1,*puVar5);
+        if (pSVar6 != nullptr) {
+          pSVar6->field_00BB = param_3;
+          pSVar6->field_00C7 = param_3;
+          pSVar6->field_00BF = param_4;
+          pSVar6->field_00CB = param_4;
+          pSVar6->field_00C3 = param_5;
+          pSVar6->field_00CF = param_5;
         }
-        uVar8 = uVar8 + 1;
-      } while ((int)uVar8 < (int)(uint)param_1->field_0027);
+        uVar9 = uVar9 + 1;
+      } while ((int)uVar9 < (int)(uint)param_1->field_0027);
     }
     g_currentExceptionFrame = local_50.previous;
     iVar7 = local_c;

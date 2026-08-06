@@ -11,6 +11,7 @@ undefined4 FUN_00749989(char *param_1)
   char *pcVar5;
   bool bVar6;
   int local_8;
+  char *pcVar3_mg1;
 
   local_8 = 0;
   ppuVar2 = &PTR_DAT_007a1270;
@@ -32,13 +33,13 @@ undefined4 FUN_00749989(char *param_1)
     }
     iVar1 = 0x10;
     bVar6 = true;
-    pcVar3 = param_1;
+    pcVar3_mg1 = param_1;
     do {
       if (iVar1 == 0) break;
       iVar1 = iVar1 + -1;
-      bVar6 = *pcVar4 == *pcVar3;
+      bVar6 = *pcVar4 == *pcVar3_mg1;
       pcVar4 = pcVar4 + 1;
-      pcVar3 = pcVar3 + 1;
+      pcVar3_mg1 = pcVar3_mg1 + 1;
     } while (bVar6);
     if (bVar6) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

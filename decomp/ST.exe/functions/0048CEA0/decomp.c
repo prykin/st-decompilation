@@ -15,9 +15,11 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   STBoatC *pSVar2;
   int iVar3;
   STGameObjC *this_00;
-  DArrayTy *pDVar4;
+  int iVar4;
   int iVar5;
+  DArrayTy *pDVar5;
   int iVar6;
+  int iVar7;
   uint index;
   InternalExceptionFrame local_68;
   undefined1 local_24 [4];
@@ -46,50 +48,50 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
     RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\To_boat.cpp",0x4bb5);
     return;
   }
-  pDVar4 = local_10->field_047B;
-  if ((pDVar4 != nullptr) && (index = 0, 0 < (int)pDVar4->count)) {
+  pDVar5 = local_10->field_047B;
+  if ((pDVar5 != nullptr) && (index = 0, 0 < (int)pDVar5->count)) {
     do {
-      DArrayGetElement(pDVar4,index,local_24);
+      DArrayGetElement(pDVar5,index,local_24);
       if (local_20 != 0xffff) {
         local_1a = local_1a - param_1;
         if (local_1a < 1) {
-          pDVar4 = pSVar2->field_047B;
+          pDVar5 = pSVar2->field_047B;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_20 = CONCAT22(uStack_1e,0xffff);
         }
         else {
           this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_24[0],local_20,CASE_1);
           if (this_00 != nullptr) {
-            iVar3 = this_00->vfunc_F8();
-            if (iVar3 == 1) {
-              iVar3 = this_00->vfunc_F0();
-              if (iVar3 == 1) {
-                iVar3 = (*this_00->vtable->vfunc_F4)(pSVar2->field_0024);
-                if (iVar3 == 1) {
-                  thunk_FUN_00416270(this_00,&local_a,(int *)&local_8,(int *)&local_6);
-                  iVar3 = (int)pSVar2->field_0041 - (int)local_a;
-                  iVar5 = (int)pSVar2->field_0043 - (int)local_8;
-                  iVar6 = (int)pSVar2->field_0045 - (int)local_6;
-                  if (local_14 < (uint)(iVar5 * iVar5 + iVar3 * iVar3 + iVar6 * iVar6)) {
+            iVar4 = this_00->vfunc_F8();
+            if (iVar4 == 1) {
+              iVar4 = this_00->vfunc_F0();
+              if (iVar4 == 1) {
+                iVar4 = (*this_00->vtable->vfunc_F4)(pSVar2->field_0024);
+                if (iVar4 == 1) {
+                  thunk_FUN_00416270(this_00,(uint *)&local_a,(int *)&local_8,&local_6);
+                  iVar4 = (int)pSVar2->field_0041 - (int)local_a;
+                  iVar6 = (int)pSVar2->field_0043 - (int)local_8;
+                  iVar7 = (int)pSVar2->field_0045 - (int)local_6;
+                  if (local_14 < (uint)(iVar6 * iVar6 + iVar4 * iVar4 + iVar7 * iVar7)) {
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     _local_20 = CONCAT22(uStack_1e,0xffff);
                   }
-                  pDVar4 = pSVar2->field_047B;
+                  pDVar5 = pSVar2->field_047B;
                   goto LAB_0048d016;
                 }
               }
             }
           }
-          pDVar4 = pSVar2->field_047B;
+          pDVar5 = pSVar2->field_047B;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_20 = CONCAT22(uStack_1e,0xffff);
         }
 LAB_0048d016:
-        Library::DKW::TBL::DArrayPut(pDVar4,index,local_24);
+        Library::DKW::TBL::DArrayPut(pDVar5,index,local_24);
       }
-      pDVar4 = pSVar2->field_047B;
+      pDVar5 = pSVar2->field_047B;
       index = index + 1;
-    } while ((int)index < (int)pDVar4->count);
+    } while ((int)index < (int)pDVar5->count);
   }
   g_currentExceptionFrame = local_68.previous;
   return;

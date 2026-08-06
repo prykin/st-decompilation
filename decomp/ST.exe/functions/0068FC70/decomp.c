@@ -1,13 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 00679F00 -> 0068FC70 @ 00679F51 | 00679F90 -> 0068FC70 @ 00679FBC
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 0068FC70 returns forwarded through return of FUN_00679f00 @ 00679F57
 
-   [STPrototypeApplier] Propagated return.
-   Evidence: 0068FC70 returns forwarded through return of FUN_00679f00 @ 00679F57 */
+   [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 0068FC70 -> 00662240 @ 0068FCB8 */
 
-int __thiscall FUN_0068fc70(void *this,int aiMess,short param_2)
+int __thiscall FUN_0068fc70(void *this,AnonShape_0068FD00_A5257008 *aiMess,short param_2)
 
 {
   AiFltClassTy *this_00;

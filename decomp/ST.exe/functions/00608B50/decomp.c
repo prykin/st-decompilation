@@ -8,7 +8,8 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
 {
   uint uVar1;
   int iVar2;
-  uint *puVar3;
+  int iVar3;
+  uint *puVar4;
   int iVar5;
   STMessage *pSVar6;
   uint local_cc [20];
@@ -38,26 +39,26 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
   iVar5 = 0;
   local_8 = 0;
   FUN_006acf0d(local_10,local_14,local_c,local_10,local_14,param_3 & 0xffff);
-  iVar2 = STField<int>(this,0x1fd);
-  if (iVar2 == 0) {
+  iVar3 = STField<int>(this,0x1fd);
+  if (iVar3 == 0) {
     iVar5 = 3;
     local_8 = 2;
   }
-  else if (iVar2 == 1) {
+  else if (iVar3 == 1) {
     iVar5 = 1;
     local_8 = 0;
   }
-  else if (iVar2 != 2) {
+  else if (iVar3 != 2) {
     iVar5 = 9;
     local_8 = 5;
   }
-  if (iVar2 == 0) {
+  if (iVar3 == 0) {
     uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
     STField<uint>(this,0x1c) = uVar1;
     iVar5 = (uVar1 >> 0x10) % (iVar5 - 1U) + iVar5;
   }
   pSVar6 = &local_7c;
-  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
+  for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
     pSVar6->unknown_00 = 0;
     pSVar6 = (STMessage *)&pSVar6->unknown_04;
   }
@@ -65,28 +66,28 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
   iVar2 = STExplosionC::CreateGroupPart(this,iVar5);
   if (iVar2 == iVar5) {
     if (0 < local_8) {
-      puVar3 = local_cc;
-      iVar5 = local_8;
+      puVar4 = local_cc;
+      iVar3 = local_8;
       do {
         uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
         STField<uint>(this,0x1c) = uVar1;
-        iVar5 = iVar5 + -1;
-        *puVar3 = (uVar1 >> 0x10) % 3;
-        puVar3 = puVar3 + 1;
-      } while (iVar5 != 0);
+        iVar3 = iVar3 + -1;
+        *puVar4 = (uVar1 >> 0x10) % 3;
+        puVar4 = puVar4 + 1;
+      } while (iVar3 != 0);
     }
     if (local_8 < iVar2) {
-      iVar5 = iVar2 - local_8;
-      puVar3 = local_cc + local_8;
+      iVar3 = iVar2 - local_8;
+      puVar4 = local_cc + local_8;
       do {
         uVar1 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
         STField<uint>(this,0x1c) = uVar1;
-        iVar5 = iVar5 + -1;
-        *puVar3 = (uVar1 >> 0x10) % 3 + 3;
-        puVar3 = puVar3 + 1;
-      } while (iVar5 != 0);
+        iVar3 = iVar3 + -1;
+        *puVar4 = (uVar1 >> 0x10) % 3 + 3;
+        puVar4 = puVar4 + 1;
+      } while (iVar3 != 0);
     }
-    iVar5 = 0;
+    iVar3 = 0;
     if (0 < iVar2) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = local_cc;
@@ -121,14 +122,14 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
         STField<uint>(this,0x1c) = uVar1;
         local_28 = (uVar1 >> 0x10 & 3) + 9;
         local_7c.arg0.ptr = local_5c;
-        local_1a = iVar5;
+        local_1a = iVar3;
         STParticleC::GetMessage(*(STParticleC **)param_3,&local_7c);
-        iVar5 = iVar5 + 1;
+        iVar3 = iVar3 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 4;
-      } while (iVar5 < iVar2);
+      } while (iVar3 < iVar2);
     }
     return iVar2;
   }

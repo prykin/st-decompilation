@@ -19,11 +19,10 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
   int iVar6;
   DArrayTy *pDVar7;
   DArrayTy *pDVar8;
-  char *text;
   undefined4 *puVar9;
-  uint *resourceString;
-  int iVar10;
-  uint uVar11;
+  char *pcVar10;
+  int iVar11;
+  uint uVar12;
   InternalExceptionFrame local_54;
   DArrayTy *local_10;
   WaitTy *local_c;
@@ -38,13 +37,13 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
     if (iVar6 == 0) {
       if (param_2 != 0) {
         pDVar8 = local_c->field_1AF0;
-        uVar11 = local_c->field_1AF4;
-        if ((int)uVar11 < (int)pDVar8->elementSize) {
+        uVar12 = local_c->field_1AF4;
+        if ((int)uVar12 < (int)pDVar8->elementSize) {
           do {
-            FUN_006b7830((AnonShape_006B7830_769CA2DF *)pDVar8,uVar11);
+            FUN_006b7830((AnonShape_006B7830_769CA2DF *)pDVar8,uVar12);
             pDVar8 = pWVar5->field_1AF0;
-            uVar11 = pWVar5->field_1AF4;
-          } while ((int)uVar11 < (int)pDVar8->elementSize);
+            uVar12 = pWVar5->field_1AF4;
+          } while ((int)uVar12 < (int)pDVar8->elementSize);
         }
         FUN_006b4170((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC,0,0,
                      pWVar5->field_1AF4 * 0x13,
@@ -65,13 +64,13 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
         iVar6 = 0;
         if (0 < (int)pDVar8->elementSize) {
           if ((int)pDVar8->elementSize < 1) {
-            text = nullptr;
+            pcVar10 = nullptr;
             goto LAB_005e7d14;
           }
           do {
-            text = *(char **)(pDVar8->growCapacity + iVar6 * 4);
+            pcVar10 = *(char **)(pDVar8->growCapacity + iVar6 * 4);
 LAB_005e7d14:
-            Library::DKW::TBL::FUN_006b5aa0(&pWVar5->field_1AF0->flags,text);
+            Library::DKW::TBL::FUN_006b5aa0(pWVar5->field_1AF0,pcVar10);
             iVar6 = iVar6 + 1;
           } while (iVar6 < (int)pDVar8->elementSize);
         }
@@ -97,11 +96,11 @@ LAB_005e7d14:
                             *(int *)(puVar2 + 4));
         }
         puVar9 = (undefined4 *)FUN_006b4fa0((int *)puVar2);
-        for (uVar11 = (uint)local_8 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
+        for (uVar12 = (uint)local_8 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
           *puVar9 = 0;
           puVar9 = puVar9 + 1;
         }
-        for (uVar11 = (uint)local_8 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+        for (uVar12 = (uint)local_8 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
           *(undefined1 *)puVar9 = 0;
           puVar9 = (undefined4 *)((int)puVar9 + 1);
         }
@@ -115,32 +114,32 @@ LAB_005e7d14:
       }
       if (iVar6 <= (int)(pWVar5->field_1AF0->elementSize - 1)) {
         local_8 = pWVar5->field_1A94 + iVar6;
-        uVar11 = iVar6 * 0x13;
+        uVar12 = iVar6 * 0x13;
         do {
-          FUN_006b4170((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC,0,0,uVar11,
+          FUN_006b4170((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC,0,0,uVar12,
                        ((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC)->field_0004,0x13,0);
-          ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)pWVar5->field_1AEC,0,2,uVar11,
+          ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)pWVar5->field_1AEC,0,2,uVar12,
                            *(int *)(pWVar5->field_1AEC + 2) + -4,0x13);
           if (iVar6 < (int)pWVar5->field_1AF0->elementSize) {
-            resourceString = *(uint **)(pWVar5->field_1AF0->growCapacity + iVar6 * 4);
+            pcVar10 = *(char **)(pWVar5->field_1AF0->growCapacity + iVar6 * 4);
           }
           else {
-            resourceString = nullptr;
+            pcVar10 = nullptr;
           }
-          ccFntTy::WrStr(g_startSystem_0081176C->field_0030,resourceString,0,-1,1);
+          ccFntTy::WrStr(g_startSystem_0081176C->field_0030,pcVar10,0,-1,1);
           FUN_006b35d0((int *)g_ddxContext_008075A8,*local_8);
           iVar6 = iVar6 + 1;
           local_8 = local_8 + 1;
-          uVar11 = uVar11 + 0x13;
+          uVar12 = uVar12 + 0x13;
         } while (iVar6 <= (int)(pWVar5->field_1AF0->elementSize - 1));
       }
       g_currentExceptionFrame = local_54.previous;
       return;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar10 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x120,0,iVar6,
+    iVar11 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x120,0,iVar6,
                                 "%s","WaitTy::AddStr");
-    if (iVar10 != 0) {
+    if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\wait_obj.cpp",0x120);

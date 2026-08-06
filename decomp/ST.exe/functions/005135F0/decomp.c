@@ -11,14 +11,15 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
   HelpPanelTy_field_01A1State HVar1;
   HelpPanelTy *this_00;
   int iVar3;
-  undefined4 *puVar4;
+  byte *pbVar3;
+  int iVar4;
   int iVar5;
   InternalExceptionFrame local_64;
   undefined4 local_20;
   undefined4 local_1c;
   undefined4 local_18;
   undefined4 local_14;
-  undefined1 local_10;
+  byte local_10;
   undefined1 local_f;
   undefined1 local_e;
   undefined1 local_d;
@@ -38,10 +39,10 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
     }
     else {
       local_c->field_01A2 = 0;
-      local_c->field_01AB = 0;
+      local_c->field_01AB = nullptr;
     }
     local_c->field_01A1 = 0;
-    local_c->field_01A3 = 0;
+    local_c->field_01A3 = nullptr;
     if (local_c->field_0178 != 0) {
       local_c->field_0028 = 0x4202;
       *(undefined2 *)&local_c->field_0x2c = 0;
@@ -61,22 +62,22 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
     *(undefined4 *)&this_00->field_01B3->field_0xc = 0;
     this_00->field_01B7 = 0;
     if (*(int *)sizeHelp_exref != 0) {
-      iVar3 = 0;
+      iVar5 = 0;
       do {
-        puVar4 = (undefined4 *)(this_00->field_01C7 + iVar3);
-        if (puVar4[1] == 0) {
-          local_20 = *puVar4;
-          local_1c = puVar4[1];
-          local_18 = puVar4[2];
-          local_14 = puVar4[3];
-          local_10 = *(undefined1 *)(puVar4 + 4);
+        pbVar3 = this_00->field_01C7 + iVar5;
+        if (*(int *)(pbVar3 + 4) == 0) {
+          local_20 = *(undefined4 *)pbVar3;
+          local_1c = *(undefined4 *)(pbVar3 + 4);
+          local_18 = *(undefined4 *)(pbVar3 + 8);
+          local_14 = *(undefined4 *)(pbVar3 + 0xc);
+          local_10 = pbVar3[0x10];
           local_f = 0;
           local_e = 0;
           local_d = 0;
           Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01B3,&local_20);
         }
         local_8 = local_8 + 1;
-        iVar3 = iVar3 + 0x11;
+        iVar5 = iVar5 + 0x11;
       } while (local_8 < *(uint *)sizeHelp_exref);
     }
     CreateList(this_00);
@@ -84,9 +85,9 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_64.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x295,0,iVar3,"%s",
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x295,0,iVar3,"%s",
                              "HelpPanelTy::HomeBut");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\helppan.cpp",0x295);

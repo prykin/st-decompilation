@@ -13,26 +13,29 @@ void __cdecl FUN_00674ef0(char *resourceString)
 {
   char cVar1;
   uint uVar2;
+  uint uVar3;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;
   char local_108 [260];
+  char *pcVar5_mg0;
 
   if ((DAT_00811974 != 0) && (DAT_00811978 != nullptr)) {
     uVar2 = 0xffffffff;
     do {
-      pcVar5 = resourceString;
+      pcVar5_mg0 = resourceString;
       if (uVar2 == 0) break;
       uVar2 = uVar2 - 1;
-      pcVar5 = resourceString + 1;
+      pcVar5_mg0 = resourceString + 1;
       cVar1 = *resourceString;
-      resourceString = pcVar5;
+      resourceString = pcVar5_mg0;
     } while (cVar1 != '\0');
     uVar2 = ~uVar2;
-    pcVar5 = pcVar5 + -uVar2;
+    pcVar5 = pcVar5_mg0 + -uVar2;
     pcVar7 = local_108;
     memmove(pcVar7, pcVar5, uVar2); /* compiler REP MOVS byte copy */
+    uVar3 = 0;
     uVar2 = 0xffffffff;
     pcVar5 = &DAT_007c8ff4;
     do {

@@ -10,15 +10,25 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
 
 {
   STPlaySystemC *this_00;
-  int iVar2;
+  int local_EAX_74;
+  char *pcVar2;
   char *pcVar3;
+  char *local_EAX_889;
+  char *local_EAX_959;
+  int local_EAX_1108;
+  int local_EAX_1151;
+  int local_EAX_1204;
+  int iVar2;
+  int iVar4;
+  DWORD DVar5_mg1;
   char *pcVar4;
   int iVar5;
-  DWORD DVar6;
-  undefined4 uVar7;
-  uint uVar8;
-  DWORD *pDVar9;
-  int *piVar10;
+  undefined4 uVar5;
+  uint uVar6;
+  int iVar7;
+  DWORD *pDVar8;
+  int *piVar9;
+  DWORD DVar10;
   bool bVar12;
   uint uVar13;
   InternalExceptionFrame local_a8;
@@ -40,17 +50,17 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
   }
   local_a8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a8;
-  iVar2 = Library::MSVCRT::__setjmp3(local_a8.jumpBuffer,0);
-  DVar6 = local_1c;
+  local_EAX_74 = Library::MSVCRT::__setjmp3(local_a8.jumpBuffer,0);
+  DVar10 = local_1c;
   this_00 = local_24;
-  if (iVar2 != 0) {
+  if (local_EAX_74 != 0) {
     g_currentExceptionFrame = local_a8.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x411,0,iVar2,
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x411,0,local_EAX_74,
                                "%s","STPlaySystemC::Life");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x412);
+    RaiseInternalException(local_EAX_74,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x412);
     return 0xffffffff;
   }
   if ((DAT_00808783 == '\x03') && (499 < local_1c - local_24->field_007F)) {
@@ -81,16 +91,16 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
     if (this_00->field_0038 == '\0') {
       if ((this_00->field_0059 == 0) && (DAT_00808788 == 0)) {
         if (this_00->field_00E8 == 0) {
-          if ((this_00->field_00EC != 0) && (1000 < (int)(DVar6 - this_00->field_0030))) {
+          if ((this_00->field_00EC != 0) && (1000 < (int)(DVar10 - this_00->field_0030))) {
             iVar2 = FUN_006b7140(g_int_00811764);
             if (iVar2 < 2) {
               this_00->field_00E8 = 1;
             }
-            this_00->field_0030 = DVar6;
+            this_00->field_0030 = DVar10;
           }
-          iVar2 = this_00->field_002C + -1;
-          this_00->field_002C = iVar2;
-          if (iVar2 < 1) {
+          iVar7 = this_00->field_002C + -1;
+          this_00->field_002C = iVar7;
+          if (iVar7 < 1) {
             this_00->field_002C =
                  *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4);
             sub_00550190(this_00);
@@ -101,8 +111,8 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
           }
         }
         else if (this_00->field_004D == '\0') {
-          if ((30000 < (int)(DVar6 - this_00->field_0030)) ||
-             (iVar2 = FUN_006b7140(g_int_00811764), iVar2 < 2)) {
+          if ((30000 < (int)(DVar10 - this_00->field_0030)) ||
+             (local_EAX_1204 = FUN_006b7140(g_int_00811764), local_EAX_1204 < 2)) {
             memset(local_64, 0, 0x20); /* compiler bulk-zero initialization */
             local_64[3] = 1;
             local_64[4] = DAT_0080c526;
@@ -113,43 +123,43 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
           if (this_00->field_003D != nullptr) {
             this_00->field_003D->field_0004 = this_00->field_004D;
             this_00->field_003D->field_0005 = 0;
-            iVar2 = sub_0054EBB0(this_00,(char *)this_00->field_003D,7);
-            if (iVar2 != 0) {
+            local_EAX_1108 = sub_0054EBB0(this_00,(char *)this_00->field_003D,7);
+            if (local_EAX_1108 != 0) {
               thunk_FUN_00550380(1);
               goto LAB_0054e052;
             }
           }
           this_00->field_004D = 0;
-          iVar2 = FUN_00715360(g_int_00811764,0,'4',nullptr,0,0,0xffffffff);
-          if (iVar2 != 0) {
+          local_EAX_1151 = FUN_00715360(g_int_00811764,0,'4',nullptr,0,0,0xffffffff);
+          if (local_EAX_1151 != 0) {
             thunk_FUN_00550380(2);
             goto LAB_0054e052;
           }
-          this_00->field_0030 = DVar6;
+          this_00->field_0030 = DVar10;
         }
       }
       else {
         Library::DKW::DDX::FUN_006b7510(g_int_00811764,0x42,&local_c,-1,0);
-        iVar2 = 0;
+        iVar7 = 0;
         if (0 < local_c) {
           do {
-            iVar5 = Library::Ourlib::CONNECT::FUN_00715630
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,0x42,&local_14,&local_10,&local_8,nullptr,-1,0);
-            if (iVar5 == -0x4d) goto cf_common_join_0054DFAD;
-            if ((iVar5 == 1) && (local_8 != nullptr)) {
+            if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
+            if ((iVar4 == 1) && (local_8 != nullptr)) {
               FreeAndNull(&local_8);
             }
-            iVar2 = iVar2 + 1;
-          } while (iVar2 < local_c);
+            iVar7 = iVar7 + 1;
+          } while (iVar7 < local_c);
         }
         Library::DKW::DDX::FUN_006b7510(g_int_00811764,0x43,&local_c,-1,0);
-        iVar2 = 0;
+        iVar7 = 0;
         if (0 < local_c) {
           do {
-            iVar5 = Library::Ourlib::CONNECT::FUN_00715630
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,0x43,&local_14,&local_10,&local_8,nullptr,-1,0);
-            if (iVar5 == -0x4d) goto cf_common_join_0054DFAD;
-            if (iVar5 == 1) {
+            if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
+            if (iVar4 == 1) {
               if (local_10 == this_00->field_0061) {
                 this_00->field_0059 = 0;
               }
@@ -157,56 +167,56 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 FreeAndNull(&local_8);
               }
             }
-            iVar2 = iVar2 + 1;
-          } while (iVar2 < local_c);
+            iVar7 = iVar7 + 1;
+          } while (iVar7 < local_c);
         }
         Library::DKW::DDX::FUN_006b7510(g_int_00811764,0x33,&local_c,-1,0);
-        iVar2 = 0;
+        iVar7 = 0;
         if (0 < local_c) {
           do {
-            iVar5 = Library::Ourlib::CONNECT::FUN_00715630
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,0x33,&local_14,&local_10,&local_8,nullptr,-1,0);
-            if (iVar5 == -0x4d) goto cf_common_join_0054DFAD;
-            if ((iVar5 == 1) && (local_8 != nullptr)) {
+            if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
+            if ((iVar4 == 1) && (local_8 != nullptr)) {
               thunk_FUN_00550830((int)local_8);
               FreeAndNull(&local_8);
             }
-            iVar2 = iVar2 + 1;
-          } while (iVar2 < local_c);
+            iVar7 = iVar7 + 1;
+          } while (iVar7 < local_c);
         }
         Library::DKW::DDX::FUN_006b7510(g_int_00811764,0x35,&local_c,-1,0);
-        iVar2 = 0;
+        iVar7 = 0;
         if (0 < local_c) {
           do {
-            iVar5 = Library::Ourlib::CONNECT::FUN_00715630
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,0x35,&local_14,&local_10,&local_8,nullptr,-1,0);
-            if (iVar5 == -0x4d) goto cf_common_join_0054DFAD;
-            if ((iVar5 == 1) && (thunk_FUN_00550430(this_00,local_10,1), local_8 != nullptr)) {
+            if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
+            if ((iVar4 == 1) && (thunk_FUN_00550430(this_00,local_10,1), local_8 != nullptr)) {
               FreeAndNull(&local_8);
             }
-            iVar2 = iVar2 + 1;
-          } while (iVar2 < local_c);
+            iVar7 = iVar7 + 1;
+          } while (iVar7 < local_c);
         }
         Library::DKW::DDX::FUN_006b7510(g_int_00811764,0x36,&local_c,-1,0);
-        iVar2 = 0;
+        iVar7 = 0;
         if (0 < local_c) {
           do {
-            iVar5 = Library::Ourlib::CONNECT::FUN_00715630
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,0x36,&local_14,&local_10,&local_8,nullptr,-1,0);
-            if ((iVar5 == 1) && (sub_005505D0(this_00,local_10,local_8), local_8 != nullptr)) {
+            if ((iVar4 == 1) && (sub_005505D0(this_00,local_10,local_8), local_8 != nullptr)) {
               FreeAndNull(&local_8);
             }
-            iVar2 = iVar2 + 1;
-          } while (iVar2 < local_c);
+            iVar7 = iVar7 + 1;
+          } while (iVar7 < local_c);
         }
         Library::DKW::DDX::FUN_006b7510(g_int_00811764,0x11,&local_c,-1,0);
-        iVar2 = 0;
+        iVar7 = 0;
         if (0 < local_c) {
           do {
-            iVar5 = Library::Ourlib::CONNECT::FUN_00715630
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,0x11,&local_14,&local_10,&local_8,nullptr,-1,0);
-            if (iVar5 == -0x4d) goto cf_common_join_0054DFAD;
-            if (iVar5 == 1) {
+            if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
+            if (iVar4 == 1) {
               thunk_FUN_005504f0(this_00,local_10,0x426f,1);
               if (local_10 == this_00->field_0061) {
                 this_00->field_0059 = 0;
@@ -215,17 +225,17 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 FreeAndNull(&local_8);
               }
             }
-            iVar2 = iVar2 + 1;
-          } while (iVar2 < local_c);
+            iVar7 = iVar7 + 1;
+          } while (iVar7 < local_c);
         }
         Library::DKW::DDX::FUN_006b7510(g_int_00811764,0x13,&local_c,-1,0);
-        iVar2 = 0;
+        iVar7 = 0;
         if (0 < local_c) {
           do {
-            iVar5 = Library::Ourlib::CONNECT::FUN_00715630
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,0x13,&local_14,&local_10,&local_8,nullptr,-1,0);
-            if (iVar5 == -0x4d) goto cf_common_join_0054DFAD;
-            if (iVar5 == 1) {
+            if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
+            if (iVar4 == 1) {
               if (local_10 == this_00->field_0061) {
                 this_00->field_0059 = 0;
               }
@@ -237,8 +247,8 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 this_00->field_00E8 = 1;
               }
             }
-            iVar2 = iVar2 + 1;
-          } while (iVar2 < local_c);
+            iVar7 = iVar7 + 1;
+          } while (iVar7 < local_c);
         }
         if ((this_00->field_0059 != 0) &&
            (uVar13 = this_00->field_005D + 1, this_00->field_005D = uVar13, 2000 < uVar13)) {
@@ -252,97 +262,97 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
       local_10 = 0;
       if (0 < local_20) {
         do {
-          iVar2 = Library::Ourlib::CONNECT::FUN_00715630
+          iVar7 = Library::Ourlib::CONNECT::FUN_00715630
                             (g_int_00811764,-1,&local_14,&local_18,&local_8,nullptr,-1,0);
-          if (iVar2 == 1) {
+          if (iVar7 == 1) {
             switch(local_14) {
             case 0x11:
-              iVar2 = 0;
+              iVar7 = 0;
               if (DAT_00808aaf != 0) {
-                pcVar4 = &DAT_00808af6;
+                pcVar3 = &DAT_00808af6;
                 do {
-                  if ((*(int *)(pcVar4 + -6) == local_18) && (*pcVar4 != '\0')) {
-                    pcVar3 = LoadResourceString(0x426f,g_hINSTANCE_00807618);
-                    wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar4 + -0x46,pcVar3);
+                  if ((*(int *)(pcVar3 + -6) == local_18) && (*pcVar3 != '\0')) {
+                    pcVar2 = LoadResourceString(0x426f,g_hINSTANCE_00807618);
+                    wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar3 + -0x46,pcVar2);
                     if (g_popUp_008016D8 != nullptr) {
                       thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
                     }
                     thunk_FUN_005508f0(this_00,local_18);
                     break;
                   }
-                  iVar2 = iVar2 + 1;
-                  pcVar4 = pcVar4 + 0x9c;
-                } while (iVar2 < (int)(uint)DAT_00808aaf);
+                  iVar7 = iVar7 + 1;
+                  pcVar3 = pcVar3 + 0x9c;
+                } while (iVar7 < (int)(uint)DAT_00808aaf);
               }
-              uVar8 = 0;
+              uVar6 = 0;
               uVar13 = g_array_0080C4FE->count;
               if (0 < (int)uVar13) {
                 bVar12 = uVar13 != 0;
                 do {
                   if (bVar12) {
-                    piVar10 = DArrayAt<int>(g_array_0080C4FE, uVar8);
+                    piVar9 = DArrayAt<int>(g_array_0080C4FE, uVar6);
                   }
                   else {
-                    piVar10 = nullptr;
+                    piVar9 = nullptr;
                   }
-                  if ((piVar10 != nullptr) && (*piVar10 == local_18)) {
-                    DArrayRemoveAt(g_array_0080C4FE,uVar8);
+                  if ((piVar9 != nullptr) && (*piVar9 == local_18)) {
+                    DArrayRemoveAt(g_array_0080C4FE,uVar6);
                     break;
                   }
-                  uVar8 = uVar8 + 1;
-                  bVar12 = uVar8 < uVar13;
-                } while ((int)uVar8 < (int)uVar13);
+                  uVar6 = uVar6 + 1;
+                  bVar12 = uVar6 < uVar13;
+                } while ((int)uVar6 < (int)uVar13);
               }
               break;
             case 0x33:
               thunk_FUN_00550830((int)local_8);
               break;
             case 0x35:
-              uVar8 = 0;
+              uVar6 = 0;
               uVar13 = g_array_0080C4FE->count;
               if (0 < (int)uVar13) {
                 bVar12 = uVar13 != 0;
                 do {
                   if (bVar12) {
-                    piVar10 = DArrayAt<int>(g_array_0080C4FE, uVar8);
+                    piVar9 = DArrayAt<int>(g_array_0080C4FE, uVar6);
                   }
                   else {
-                    piVar10 = nullptr;
+                    piVar9 = nullptr;
                   }
-                  if ((piVar10 != nullptr) && (*piVar10 == local_18)) {
-                    DArrayRemoveAt(g_array_0080C4FE,uVar8);
-                    iVar2 = 0;
+                  if ((piVar9 != nullptr) && (*piVar9 == local_18)) {
+                    DArrayRemoveAt(g_array_0080C4FE,uVar6);
+                    iVar7 = 0;
                     if (DAT_00808aaf != 0) {
-                      pcVar4 = &DAT_00808af6;
+                      pcVar3 = &DAT_00808af6;
                       do {
-                        if ((*(int *)(pcVar4 + -6) == local_18) && (*pcVar4 != '\0')) {
-                          pcVar3 = LoadResourceString(0x426e,g_hINSTANCE_00807618);
-                          wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar4 + -0x46,pcVar3);
+                        if ((*(int *)(pcVar3 + -6) == local_18) && (*pcVar3 != '\0')) {
+                          pcVar2 = LoadResourceString(0x426e,g_hINSTANCE_00807618);
+                          wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar3 + -0x46,pcVar2);
                           if (g_popUp_008016D8 != nullptr) {
                             thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
                           }
                         }
-                        iVar2 = iVar2 + 1;
-                        pcVar4 = pcVar4 + 0x9c;
-                      } while (iVar2 < (int)(uint)DAT_00808aaf);
+                        iVar7 = iVar7 + 1;
+                        pcVar3 = pcVar3 + 0x9c;
+                      } while (iVar7 < (int)(uint)DAT_00808aaf);
                     }
                     break;
                   }
-                  uVar8 = uVar8 + 1;
-                  bVar12 = uVar8 < uVar13;
-                } while ((int)uVar8 < (int)uVar13);
+                  uVar6 = uVar6 + 1;
+                  bVar12 = uVar6 < uVar13;
+                } while ((int)uVar6 < (int)uVar13);
               }
             case 0x1a:
-              iVar2 = 0;
+              iVar7 = 0;
               if (DAT_00808aaf != 0) {
-                pcVar4 = &DAT_00808af6;
+                pcVar3 = &DAT_00808af6;
                 do {
-                  if ((*(int *)(pcVar4 + -6) == local_18) && (*pcVar4 != '\0')) {
-                    *(DWORD *)(pcVar4 + 2) = local_1c;
+                  if ((*(int *)(pcVar3 + -6) == local_18) && (*pcVar3 != '\0')) {
+                    *(DWORD *)(pcVar3 + 2) = local_1c;
                   }
-                  iVar2 = iVar2 + 1;
-                  pcVar4 = pcVar4 + 0x9c;
-                } while (iVar2 < (int)(uint)DAT_00808aaf);
+                  iVar7 = iVar7 + 1;
+                  pcVar3 = pcVar3 + 0x9c;
+                } while (iVar7 < (int)(uint)DAT_00808aaf);
               }
             }
             if (local_8 != nullptr) {
@@ -350,51 +360,51 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
             }
           }
           local_10 = local_10 + 1;
-          DVar6 = local_1c;
+          DVar10 = local_1c;
         } while (local_10 < local_20);
       }
       if ((g_popUp_008016D8 != nullptr) && (g_popUp_008016D8->field_009C == '\0')) {
         uVar13 = 8;
-        pcVar4 = LoadResourceString(0x426a,g_hINSTANCE_00807618);
-        thunk_FUN_0052d320(g_popUp_008016D8,pcVar4,uVar13);
+        local_EAX_889 = LoadResourceString(0x426a,g_hINSTANCE_00807618);
+        thunk_FUN_0052d320(g_popUp_008016D8,local_EAX_889,uVar13);
       }
-      if ((g_array_0080C4FE->count == 0) || (59999 < (int)(DVar6 - this_00->field_00BC))) {
+      if ((g_array_0080C4FE->count == 0) || (59999 < (int)(DVar10 - this_00->field_00BC))) {
         if (g_popUp_008016D8 != nullptr) {
           uVar13 = 8;
-          pcVar4 = LoadResourceString(0x4269,g_hINSTANCE_00807618);
-          thunk_FUN_0052d320(g_popUp_008016D8,pcVar4,uVar13);
+          local_EAX_959 = LoadResourceString(0x4269,g_hINSTANCE_00807618);
+          thunk_FUN_0052d320(g_popUp_008016D8,local_EAX_959,uVar13);
         }
         this_00->field_0038 = 0;
       }
-      if ((this_00->field_0038 == '\0') && (iVar2 = 0, DAT_00808aaf != 0)) {
-        pDVar9 = &DAT_00808af8;
+      if ((this_00->field_0038 == '\0') && (iVar7 = 0, DAT_00808aaf != 0)) {
+        pDVar8 = &DAT_00808af8;
         do {
-          *pDVar9 = DVar6;
-          iVar2 = iVar2 + 1;
-          pDVar9 = pDVar9 + 0x27;
-          DVar6 = local_1c;
-        } while (iVar2 < (int)(uint)DAT_00808aaf);
+          *pDVar8 = DVar10;
+          iVar7 = iVar7 + 1;
+          pDVar8 = pDVar8 + 0x27;
+          DVar10 = local_1c;
+        } while (iVar7 < (int)(uint)DAT_00808aaf);
       }
     }
     if (((((DAT_00808783 == '\x03') && (DAT_00808788 == 0)) && (this_00->field_00E8 == 0)) &&
         ((this_00->field_0038 == '\0' && (this_00->field_0059 == 0)))) &&
-       (iVar2 = 0, DAT_00808aaf != 0)) {
-      piVar10 = &DAT_00808af0;
+       (iVar7 = 0, DAT_00808aaf != 0)) {
+      piVar9 = &DAT_00808af0;
       do {
-        if (((piVar10 != (int *)0x40) && (*piVar10 != 0)) &&
-           ((*piVar10 != DAT_0080877f &&
-            (((STField<char>(piVar10,6) != '\0' &&
-              ((&DAT_00809950)[*(byte *)(piVar10 + 1)] == '\0')) &&
-             (DVar6 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620),
-             30000 < (int)(DVar6 - piVar10[2]))))))) {
-          if (*piVar10 != this_00->field_00F4) {
-            thunk_FUN_005503c0(this_00,*piVar10);
+        if (((piVar9 != (int *)0x40) && (*piVar9 != 0)) &&
+           ((*piVar9 != DAT_0080877f &&
+            (((STField<char>(piVar9,6) != '\0' &&
+              ((&DAT_00809950)[*(byte *)(piVar9 + 1)] == '\0')) &&
+             (DVar5_mg1 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620),
+             30000 < (int)(DVar5_mg1 - piVar9[2]))))))) {
+          if (*piVar9 != this_00->field_00F4) {
+            thunk_FUN_005503c0(this_00,*piVar9);
           }
           break;
         }
-        iVar2 = iVar2 + 1;
-        piVar10 = piVar10 + 0x27;
-      } while (iVar2 < (int)(uint)DAT_00808aaf);
+        iVar7 = iVar7 + 1;
+        piVar9 = piVar9 + 0x27;
+      } while (iVar7 < (int)(uint)DAT_00808aaf);
     }
   }
   else {

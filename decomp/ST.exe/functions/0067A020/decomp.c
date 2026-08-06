@@ -42,7 +42,7 @@ AiPlrClassTy::sub_0067A020(AiPlrClassTy *this,AnonShape_0068FD00_A5257008 *param
               AiTactClassTy::GetAiMess(this_00,param_1);
             }
             else {
-              thunk_FUN_0068fc70(this_00,(int)param_1,(short)param_2);
+              thunk_FUN_0068fc70(this_00,param_1,(short)param_2);
             }
           }
         }

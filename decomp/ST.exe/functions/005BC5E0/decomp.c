@@ -21,18 +21,22 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
   PrividerTy *this_00;
   undefined1 uVar8;
   DWORD DVar9;
-  int iVar10;
+  int local_EAX_61;
+  int iVar11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
-  HoloTy *pHVar11;
+  HoloTy *pHVar12;
+  uint uVar18;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
-  undefined4 uVar12;
+  undefined4 uVar13;
+  int iVar10;
   int iVar13;
   MMsgTy *pMVar14;
-  byte bVar16;
-  char cVar17;
-  uint uVar18;
+  int iVar16;
+  byte bVar17;
+  char cVar18;
+  uint uVar19;
   InternalExceptionFrame local_8c;
   undefined4 local_48;
   undefined4 local_2c;
@@ -51,16 +55,16 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
   this->field_0061 = DVar9;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
-  iVar10 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
+  local_EAX_61 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   this_00 = local_c;
-  if (iVar10 != 0) {
+  if (local_EAX_61 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar13 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x34c,0,iVar10,
+    iVar13 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x34c,0,local_EAX_61,
                                 "%s","PrividerTy::GetMessage");
     if (iVar13 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar10,0,"E:\\__titans\\Start\\prov_obj.cpp",0x34c);
+    RaiseInternalException(local_EAX_61,0,"E:\\__titans\\Start\\prov_obj.cpp",0x34c);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_c,message);
@@ -112,8 +116,8 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if (CONCAT31(extraout_var,uVar8) == 0) {
           this_00->field_1A71 = uVar8;
-          iVar10 = thunk_FUN_005da980(this_00->field_1A61);
-          if ((iVar10 == 0) && (iVar10 = thunk_FUN_005daa90(), iVar10 == 0)) {
+          iVar11 = thunk_FUN_005da980(this_00->field_1A61);
+          if ((iVar11 == 0) && (iVar11 = thunk_FUN_005daa90(), iVar11 == 0)) {
             DAT_0080877e = 0;
             CloseButtons(this_00,'\0');
             if (this_00->field_1A5B->field_02E6 != nullptr) {
@@ -140,27 +144,27 @@ LAB_005bccb9:
                       );
           ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)this_00->field_1C8E,0,5,0x16,
                            0x226,0x16);
-          ccFntTy::WrStr(g_startSystem_0081176C->field_0030,*(uint **)(message->arg0).ptr,0,-1,3);
+          ccFntTy::WrStr(g_startSystem_0081176C->field_0030,*(char **)(message->arg0).ptr,0,-1,3);
           uVar2 = (message->arg1).words.low;
           if ((uVar2 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
-            uVar18 = (uint)(message->arg1).words.high;
-            iVar10 = uVar2 + 5;
-            FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1C8E,0,iVar10,uVar18 + 0x19,
-                         iVar10,uVar18 + 0x28,9,0xd);
+            uVar19 = (uint)(message->arg1).words.high;
+            iVar11 = uVar2 + 5;
+            FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1C8E,0,iVar11,uVar19 + 0x19,
+                         iVar11,uVar19 + 0x28,9,0xd);
           }
           FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1C8A);
         }
         else if (SVar3 == MESS_SHARED_64FF) {
           this_00->field_1A71 = 0;
-          iVar10 = thunk_FUN_005daa90();
-          if (iVar10 == 0) {
+          iVar11 = thunk_FUN_005daa90();
+          if (iVar11 == 0) {
             this_00->field_0031 = 0;
             puVar1 = &this_00->field_0x1d;
             this_00->field_002D = 0x20;
             FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
             this_00->field_002D = 0x28;
-            uVar18 = *(uint *)(g_startSystem_0081176C->field_068E + 4);
-            this_00->field_0031 = uVar18 & ((int)uVar18 < 0) - 1;
+            uVar19 = *(uint *)(g_startSystem_0081176C->field_068E + 4);
+            this_00->field_0031 = uVar19 & ((int)uVar19 < 0) - 1;
             FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
             if (0 < *(int *)(g_startSystem_0081176C->field_068E + 4)) {
               this_00->field_002D = 0x20;
@@ -196,20 +200,20 @@ LAB_005bccb9:
       ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)this_00->field_1C82,0,4,
                        (uint)(message->arg1).words.high,*(int *)(this_00->field_1C82 + 2) + -4,0x13);
       if (this_00->field_1A5F == '\0') {
-        iVar10 = g_startSystem_0081176C->field_068A;
+        iVar11 = g_startSystem_0081176C->field_068A;
       }
       else {
-        iVar10 = g_startSystem_0081176C->field_068E;
+        iVar11 = g_startSystem_0081176C->field_068E;
       }
-      if (iVar10 != 0) {
+      if (iVar11 != 0) {
         ccFntTy::WrStr(g_startSystem_0081176C->field_0030,
-                       *(uint **)(iVar10 + 8 + (uint)(message->arg0).words.low * 0x14),2,-1,
+                       *(char **)(iVar11 + 8 + (uint)(message->arg0).words.low * 0x14),2,-1,
                        (-(uint)((message->arg0).words.high != 0) & 2) + 1);
       }
-      uVar18 = (uint)(message->arg1).words.high;
+      uVar19 = (uint)(message->arg1).words.high;
       Library::DKW::DDX::FUN_006b3640
-                ((int *)g_ddxContext_008075A8,this_00->field_1C2A[uVar18 / 0x13],0xfffffffe,0x7a,
-                 uVar18 + 0x67);
+                ((int *)g_ddxContext_008075A8,this_00->field_1C2A[uVar19 / 0x13],0xfffffffe,0x7a,
+                 uVar19 + 0x67);
       break;
     case MESS_SIDTY_8163:
       SVar5 = message->arg0;
@@ -227,12 +231,12 @@ LAB_005bccb9:
                  (int)message,0);
       break;
     case MESS_SHARED_8166:
-      uVar18 = *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
-      this_00->field_1BB9 = uVar18;
+      uVar19 = *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
+      this_00->field_1BB9 = uVar19;
       if (this_00->field_1B9D != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)this_00->field_1BE1,this_00->field_1B9D,this_00->field_1BA1,
-                   this_00->field_1BB5,uVar18);
+                   this_00->field_1BB5,uVar19);
       }
     }
     goto cf_common_exit_005BCF7F;
@@ -260,16 +264,16 @@ switchD_005bc9da_caseD_6949:
     uVar8 = StartSystemTy::sub_005DA940(g_startSystem_0081176C,this_00->field_1A61);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if (CONCAT31(extraout_var_00,uVar8) != 0) goto LAB_005bccb9;
-    iVar10 = thunk_FUN_005da980(this_00->field_1A61);
-    if (iVar10 != 0) break;
+    iVar11 = thunk_FUN_005da980(this_00->field_1A61);
+    if (iVar11 != 0) break;
     if ((int)this_00->field_1C92->elementSize < 1) {
-      uVar12 = 0;
+      uVar13 = 0;
     }
     else {
-      uVar12 = *(undefined4 *)this_00->field_1C92->growCapacity;
+      uVar13 = *(undefined4 *)this_00->field_1C92->growCapacity;
     }
-    iVar10 = thunk_FUN_005dab70(0,uVar12);
-    if (iVar10 != 0) {
+    iVar11 = thunk_FUN_005dab70(0,uVar13);
+    if (iVar11 != 0) {
       pMVar14 = this_00->field_1A5B->field_02E6;
       if (pMVar14 != nullptr) {
         MMsgTy::SetMessage(pMVar14,0x2134,'\0',nullptr,nullptr,nullptr
@@ -283,18 +287,18 @@ switchD_005bc9da_caseD_6949:
     pMVar14 = this_00->field_1A5B->field_02E6;
     goto cf_common_exit_005BCD75;
   case 0x694e:
-    iVar10 = thunk_FUN_005dab70(this_00->field_1A61,&DAT_008016a0);
-    if (iVar10 == 0) {
+    iVar11 = thunk_FUN_005dab70(this_00->field_1A61,&DAT_008016a0);
+    if (iVar11 == 0) {
       this_00->field_1A71 = 1;
       this_00->field_1A69 = this_00->field_0061;
       this_00->field_1A6D = 0;
       pCVar7 = g_cursorClass_00802A30;
       if (g_cursorClass_00802A30 != nullptr) {
-        iVar10 = g_cursorClass_00802A30->field_00C9;
-        iVar13 = g_cursorClass_00802A30->field_00C5;
+        iVar11 = g_cursorClass_00802A30->field_00C9;
+        iVar16 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_5;
         pCVar7->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(pCVar7,CASE_0,iVar13,iVar10);
+        CursorClassTy::SetGCType(pCVar7,CASE_0,iVar16,iVar11);
         CursorClassTy::DrawSprite(pCVar7,pCVar7->field_00C5,pCVar7->field_00C9);
         pCVar7->field_00D2 = 0;
         pCVar7->field_04DF = -1;
@@ -316,11 +320,11 @@ cf_common_exit_005BCD75:
     pCVar7 = g_cursorClass_00802A30;
     DAT_0080877e = 1;
     if (g_cursorClass_00802A30 != nullptr) {
-      iVar10 = g_cursorClass_00802A30->field_00C9;
-      iVar13 = g_cursorClass_00802A30->field_00C5;
+      iVar11 = g_cursorClass_00802A30->field_00C9;
+      iVar16 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       pCVar7->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(pCVar7,CASE_0,iVar13,iVar10);
+      CursorClassTy::SetGCType(pCVar7,CASE_0,iVar16,iVar11);
       CursorClassTy::DrawSprite(pCVar7,pCVar7->field_00C5,pCVar7->field_00C9);
       pCVar7->field_00D2 = 0;
       pCVar7->field_04DF = -1;
@@ -349,42 +353,42 @@ cf_common_exit_005BCD75:
       FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x402f13,0x22e,0x2e,
                    (ushort *)&this_00->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x79,0x197);
-      pHVar11 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-      if (pHVar11 == nullptr) {
-        pHVar11 = nullptr;
+      pHVar12 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+      if (pHVar12 == nullptr) {
+        pHVar12 = nullptr;
       }
       else {
-        pHVar11->field_0002 = 1;
-        pHVar11->field_0000 = 0;
-        *(undefined4 *)&pHVar11->field_0x3 = 0xffffffff;
-        pHVar11->field_0001 = CASE_2;
-        pHVar11->field_0007 = nullptr;
-        pHVar11->field_000B = nullptr;
-        pHVar11->field_000F = 0;
-        *(undefined4 *)&pHVar11->field_0x1b = 1;
-        pHVar11->field_0013 = 1;
-        pHVar11->field_0017 = -1;
-        pHVar11->field_0027 = 0;
-        pHVar11->field_0023 = 0;
-        pHVar11->field_002F = 1;
-        pHVar11->field_002B = 1;
+        pHVar12->field_0002 = 1;
+        pHVar12->field_0000 = 0;
+        *(undefined4 *)&pHVar12->field_0x3 = 0xffffffff;
+        pHVar12->field_0001 = CASE_2;
+        pHVar12->field_0007 = nullptr;
+        pHVar12->field_000B = nullptr;
+        pHVar12->field_000F = 0;
+        *(undefined4 *)&pHVar12->field_0x1b = 1;
+        pHVar12->field_0013 = 1;
+        pHVar12->field_0017 = -1;
+        pHVar12->field_0027 = 0;
+        pHVar12->field_0023 = 0;
+        pHVar12->field_002F = 1;
+        pHVar12->field_002B = 1;
       }
-      this_00->field_1C9A = pHVar11;
-      if (pHVar11 != nullptr) {
-        uVar18 = 0;
-        cVar17 = '\x01';
-        bVar16 = 0x10;
-        iVar13 = 1;
-        iVar10 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
-        uVar18 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar10,iVar13,bVar16,cVar17,
-                              uVar18);
+      this_00->field_1C9A = pHVar12;
+      if (pHVar12 != nullptr) {
+        uVar19 = 0;
+        cVar18 = '\x01';
+        bVar17 = 0x10;
+        iVar16 = 1;
+        iVar11 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
+        uVar18 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar11,iVar16,bVar17,cVar18,
+                              uVar19);
         if (uVar18 != 0) {
-          pHVar11 = this_00->field_1C9A;
-          pHVar11->field_0002 = 1;
-          pHVar11->field_0017 = pHVar11->field_0013;
-          uVar18 = *(uint *)&this_00->field_1C9A->field_0x3;
-          if (-1 < (int)uVar18) {
-            Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar18);
+          pHVar12 = this_00->field_1C9A;
+          pHVar12->field_0002 = 1;
+          pHVar12->field_0017 = pHVar12->field_0013;
+          uVar19 = *(uint *)&this_00->field_1C9A->field_0x3;
+          if (-1 < (int)uVar19) {
+            Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar19);
           }
           FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_1C8A);
         }

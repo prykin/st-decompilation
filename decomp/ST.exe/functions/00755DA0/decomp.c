@@ -1,10 +1,16 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_00755da0(uint param_1,undefined4 *param_2)
+/* [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /uint; no intervening CALL or EAX/AX/AL/AH definition exists; machine CFG audit: used=3,
+   ignored=0, unknown=0 */
+
+uint FUN_00755da0(uint param_1,undefined4 *param_2)
 
 {
   int iVar1;
+  uint uVar2;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(*(int *)(param_1 + 0xc) + 0x1c);
@@ -23,7 +29,8 @@ void FUN_00755da0(uint param_1,undefined4 *param_2)
   FUN_007561d0((AnonShape_00753C80_4C8E695D *)param_1,
                *(int *)(*(int *)(param_1 + 0xc) + 0x44 +
                        *(int *)(*(int *)(param_1 + 0xc) + 0x1c) * 8));
-  FUN_00755560((AnonShape_00755560_6DE97093 *)param_1,(ushort *)(param_2 + 2),param_2[1],*param_2);
-  return;
+  uVar2 = FUN_00755560((AnonShape_00755560_6DE97093 *)param_1,(ushort *)(param_2 + 2),param_2[1],
+                       *param_2);
+  return uVar2;
 }
 

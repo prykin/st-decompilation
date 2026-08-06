@@ -15,8 +15,9 @@ int __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,STMessage *message)
   STMessageId SVar1;
   ProdPanelTy *this_00;
   int iVar3;
-  LPSTR pCVar4;
   int iVar5;
+  LPSTR pCVar6;
+  int iVar4;
   char *text;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
@@ -28,9 +29,9 @@ int __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x2a3,0,iVar3,"%s"
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x2a3,0,iVar3,"%s"
                                ,"ProdPanelTy::GetMessage");
-    if (iVar5 == 0) {
+    if (iVar4 == 0) {
       RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0x2a3);
       return 0xffff;
     }
@@ -40,20 +41,20 @@ int __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_OPTPANELTY_C001) {
     if (SVar1 == MESS_SHARED_C000) {
-      pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
-      PanelTy::PaintIBut((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar4,0x274e,0,1
+      pCVar6 = thunk_FUN_00571240("BUT_MEDIUM",0);
+      PanelTy::PaintIBut((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar6,0x274e,0,1
                         );
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
     if (SVar1 == MESS_ID_NONE) {
       if (this_00->field_0172 == 3) {
-        iVar3 = (this_00->field_0058 - this_00->field_0048) + this_00->field_0050;
-        if (iVar3 < this_00->field_0044) {
+        iVar5 = (this_00->field_0058 - this_00->field_0048) + this_00->field_0050;
+        if (iVar5 < this_00->field_0044) {
           this_00->field_0044 = this_00->field_0044 + -0xf;
         }
-        if (this_00->field_0044 <= iVar3) {
-          this_00->field_0044 = iVar3;
+        if (this_00->field_0044 <= iVar5) {
+          this_00->field_0044 = iVar5;
           this_00->field_0172 = 1;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)this_00->field_0000->field_0018)(1);
@@ -65,12 +66,12 @@ int __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,STMessage *message)
         return 0;
       }
       if (this_00->field_0172 == 4) {
-        iVar3 = this_00->field_0058 + this_00->field_0050;
-        if (this_00->field_0044 < iVar3) {
+        iVar5 = this_00->field_0058 + this_00->field_0050;
+        if (this_00->field_0044 < iVar5) {
           this_00->field_0044 = this_00->field_0044 + 0xf;
         }
-        if (iVar3 <= this_00->field_0044) {
-          this_00->field_0044 = iVar3;
+        if (iVar5 <= this_00->field_0044) {
+          this_00->field_0044 = iVar5;
           this_00->field_0172 = 2;
         }
         Library::DKW::DDX::FUN_006b3640
@@ -105,8 +106,8 @@ int __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,STMessage *message)
       }
       text = "BUT_SLLT";
     }
-    pCVar4 = thunk_FUN_00571240(text,0);
-    PanelTy::PaintBut((PanelTy *)this_00,(AnonShape_005389E0_C98BD548 *)message,1,pCVar4,
+    pCVar6 = thunk_FUN_00571240(text,0);
+    PanelTy::PaintBut((PanelTy *)this_00,(AnonShape_005389E0_C98BD548 *)message,1,pCVar6,
                       thunk_FUN_00529fe0,0,1);
   }
   g_currentExceptionFrame = local_4c.previous;

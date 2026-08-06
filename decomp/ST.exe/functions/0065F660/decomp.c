@@ -14,9 +14,10 @@ int __thiscall AiFltClassTy::AppendPoint(AiFltClassTy *this,short *param_1,int p
   short sVar4;
   AiFltClassTy *this_00;
   int iVar6;
+  uint uVar6;
   uint uVar7;
-  uint uVar8;
   int iVar9;
+  int iVar8;
   InternalExceptionFrame local_64;
   short local_20 [10];
   AiFltClassTy *local_c;
@@ -29,9 +30,9 @@ int __thiscall AiFltClassTy::AppendPoint(AiFltClassTy *this,short *param_1,int p
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x303,0,iVar6,"%s",
+    iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x303,0,iVar6,"%s",
                                "AiFltClassTy::AppendPoint");
-    if (iVar9 == 0) {
+    if (iVar8 == 0) {
       RaiseInternalException(iVar6,0,"E:\\__titans\\ai\\ai_flt.cpp",0x304);
       return iVar6;
     }
@@ -53,27 +54,27 @@ int __thiscall AiFltClassTy::AppendPoint(AiFltClassTy *this,short *param_1,int p
       sVar1 = param_1[1];
       sVar2 = param_1[4];
       if (sVar1 < 0) {
-        iVar6 = this_00->field_001C;
+        iVar9 = this_00->field_001C;
       }
       else {
-        iVar6 = this_00->field_001C;
+        iVar9 = this_00->field_001C;
       }
-      uVar7 = iVar6 * 0x41c64e6d + 0x3039;
-      this_00->field_001C = uVar7;
+      uVar6 = iVar9 * 0x41c64e6d + 0x3039;
+      this_00->field_001C = uVar6;
       sVar3 = param_1[3];
       sVar4 = *param_1;
       if (sVar4 < 0) {
-        iVar6 = this_00->field_001C;
+        iVar9 = this_00->field_001C;
       }
       else {
-        iVar6 = this_00->field_001C;
+        iVar9 = this_00->field_001C;
       }
-      uVar8 = iVar6 * 0x41c64e6d + 0x3039;
-      this_00->field_001C = uVar8;
-      iVar6 = thunk_FUN_00675950((uVar8 >> 0x10) % (uint)(int)sVar3 + (int)sVar4,
-                                 (uVar7 >> 0x10) % (uint)(int)sVar2 + (int)sVar1,2,local_20,
+      uVar7 = iVar9 * 0x41c64e6d + 0x3039;
+      this_00->field_001C = uVar7;
+      iVar9 = thunk_FUN_00675950((uVar7 >> 0x10) % (uint)(int)sVar3 + (int)sVar4,
+                                 (uVar6 >> 0x10) % (uint)(int)sVar2 + (int)sVar1,2,local_20,
                                  local_20 + 1,local_20 + 2,0);
-      if ((iVar6 != 0) && (iVar6 = sub_0065F5C0(this_00,local_20), iVar6 != 0)) {
+      if ((iVar9 != 0) && (iVar9 = sub_0065F5C0(this_00,local_20), iVar9 != 0)) {
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }

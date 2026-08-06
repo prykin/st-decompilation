@@ -36,6 +36,7 @@ import ghidra.program.model.data.Undefined;
 public class STClassLayoutApplier extends GhidraScript {
     private static final String MARKER = "[STClassLayoutApplier]";
     private static final String HASH_MARKER = "; generated_layout_sha256=";
+    private static final String OVERLAY_HASH_MARKER = "; generated_overlay_sha256=";
     private static final String SWITCH_ENUM_MARKER = "[STSwitchEnumApplier]";
     private static final Set<String> COOPERATING_LAYOUT_MARKERS = Set.of(
         MARKER, "[STGlobalDataApplier]");
@@ -68,7 +69,7 @@ public class STClassLayoutApplier extends GhidraScript {
         if (nestedTypeFile.isFile() != nestedFieldFile.isFile())
             throw new IllegalArgumentException("Both class_nested proposal files are required");
         requireColumns(classes, "apply", "owner", "type_path", "existing_length",
-            "proposed_length", "confidence", "reason");
+            "proposed_length", "confidence", "repair_mode", "reason");
         requireColumns(fields, "apply", "owner", "offset", "size", "proposed_name",
             "proposed_type", "type_apply", "inferred_type", "suggested_name",
             "name_apply", "type_confidence", "name_confidence", "type_evidence",
@@ -175,7 +176,8 @@ public class STClassLayoutApplier extends GhidraScript {
                 if (!(installed instanceof Structure structure) ||
                         !structure.getPathName().equals(path))
                     throw new IllegalStateException("could not create exact nested type " + path);
-                structure.setDescription(desired.getDescription());
+                structure.setDescription(descriptionWithHash(
+                    desired.getDescription(), layoutHash(structure)));
                 report.add(new ReportRow(owner + "::pointee", path, "applied",
                     selected.size() + " fields; length=" + length));
                 return;
@@ -188,7 +190,8 @@ public class STClassLayoutApplier extends GhidraScript {
                 return;
             }
             existing.replaceWith(desired);
-            existing.setDescription(desired.getDescription());
+            existing.setDescription(descriptionWithHash(
+                desired.getDescription(), layoutHash(existing)));
             report.add(new ReportRow(owner + "::pointee", path, "updated",
                 selected.size() + " fields; length=" + length));
         }
@@ -210,6 +213,10 @@ public class STClassLayoutApplier extends GhidraScript {
             if (!(type instanceof Structure existing)) {
                 report.add(new ReportRow(owner, path, "conflict",
                     "type is missing or is not a structure"));
+                return;
+            }
+            if ("surgical".equals(unt(row.get("repair_mode")))) {
+                applySurgicalClass(row, fieldRows, existing);
                 return;
             }
             Safety safety = safety(existing);
@@ -309,13 +316,135 @@ public class STClassLayoutApplier extends GhidraScript {
                 return;
             }
             existing.replaceWith(desired);
-            existing.setDescription(desired.getDescription());
+            // replaceWith() may canonicalize default or overlapping
+            // components.  Persist the hash of the installed StructureDB, not
+            // the transient desired value, or our own update appears manual on
+            // the next analyzer pass.
+            existing.setDescription(descriptionWithHash(
+                desired.getDescription(), layoutHash(existing)));
             report.add(new ReportRow(owner, path, safety.placeholder ? "applied" : "updated",
                 installed + " fields; length=" + length + "; " + safety.reason, typed, named));
         }
         catch (Exception exception) {
             report.add(new ReportRow(owner, path, "conflict", message(exception)));
         }
+    }
+
+    private void applySurgicalClass(Map<String, String> row,
+            List<Map<String, String>> fieldRows, Structure structure) {
+        String owner = unt(row.get("owner"));
+        String path = unt(row.get("type_path"));
+        try {
+            String description = text(structure.getDescription());
+            String currentHash = layoutHash(structure);
+            String overlayHash = storedHash(description, OVERLAY_HASH_MARKER);
+            boolean legacy = overlayHash == null && description.contains(MARKER) &&
+                storedHash(description) != null &&
+                !storedHash(description).equals(currentHash) &&
+                generatedComponentsOnly(structure);
+            if (!(overlayHash != null && overlayHash.equals(currentHash)) && !legacy) {
+                report.add(new ReportRow(owner, path, "preserved",
+                    "surgical overlay baseline is stale or unowned"));
+                return;
+            }
+            int length = Integer.parseInt(row.get("proposed_length"));
+            if (length != structure.getLength())
+                throw new IllegalArgumentException(
+                    "surgical overlay cannot change structure length");
+            int typed = 0, named = 0, skipped = 0;
+            List<SurgicalUpdate> updates = new ArrayList<>();
+            List<Map<String, String>> selected = fieldRows.stream()
+                .filter(field -> enabled(field.get("apply")) &&
+                    (enabled(field.get("type_apply")) ||
+                        enabled(field.get("name_apply"))))
+                .sorted(Comparator.comparingLong(field ->
+                    Long.parseLong(field.get("offset")))).toList();
+            for (Map<String, String> field : selected) {
+                int offset = Integer.parseInt(field.get("offset"));
+                int size = Integer.parseInt(field.get("size"));
+                DataTypeComponent current = structure.getComponentAt(offset);
+                if (current == null || current.getOffset() != offset ||
+                        current.getLength() != size || current.getComment() == null ||
+                        !current.getComment().contains(MARKER)) {
+                    skipped++;
+                    continue;
+                }
+                boolean typeApply = enabled(field.get("type_apply"));
+                boolean nameApply = enabled(field.get("name_apply"));
+                if (typeApply && !typeSpecification(current.getDataType())
+                        .equals(unt(field.get("proposed_type")))) {
+                    skipped++;
+                    continue;
+                }
+                if (nameApply && !genericFieldName(current.getFieldName())) {
+                    skipped++;
+                    continue;
+                }
+
+                DataType targetType = current.getDataType();
+                if (typeApply) {
+                    String inferred = unt(field.get("inferred_type"));
+                    if (inferred.isBlank()) continue;
+                    try {
+                        targetType = resolveType(inferred, size);
+                    }
+                    catch (Exception ignored) {
+                        skipped++;
+                        continue;
+                    }
+                }
+                String targetName = current.getFieldName();
+                String suggested = unt(field.get("suggested_name"));
+                if (nameApply && !suggested.isBlank()) targetName = suggested;
+                String comment = MARKER + " reads=" + field.get("reads") +
+                    ", writes=" + field.get("writes") + "; type_confidence=" +
+                    field.get("type_confidence") + "; name_confidence=" +
+                    field.get("name_confidence") + "; " + unt(field.get("reason"));
+                String typeEvidence = unt(field.get("type_evidence"));
+                String nameEvidence = unt(field.get("name_evidence"));
+                if (!typeEvidence.isBlank()) comment +=
+                    "; type_evidence=" + typeEvidence;
+                if (!nameEvidence.isBlank()) comment +=
+                    "; name_evidence=" + nameEvidence;
+                updates.add(new SurgicalUpdate(offset, size, targetType,
+                    targetName, comment, typeApply,
+                    nameApply && !suggested.isBlank()));
+            }
+            for (SurgicalUpdate update : updates) {
+                structure.replaceAtOffset(update.offset, update.type, update.size,
+                    update.name, update.comment);
+                if (update.typed) typed++;
+                if (update.named) named++;
+            }
+            if (typed == 0 && named == 0) {
+                report.add(new ReportRow(owner, path, "unchanged",
+                    "no exact surgical field baseline remained", 0, 0));
+                return;
+            }
+            structure.setDescription(descriptionWithOverlayHash(
+                description, layoutHash(structure)));
+            report.add(new ReportRow(owner, path, "updated",
+                "exact field overlay; unrelated components preserved; skipped=" +
+                    skipped, typed, named));
+        }
+        catch (Exception exception) {
+            report.add(new ReportRow(owner, path, "conflict", message(exception)));
+        }
+    }
+
+    private boolean generatedComponentsOnly(Structure structure) {
+        if (structure.getNumDefinedComponents() == 0) return false;
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            String comment = component.getComment();
+            if (comment == null || !comment.contains(MARKER)) return false;
+        }
+        return true;
+    }
+
+    private boolean genericFieldName(String name) {
+        return name == null || name.isBlank() ||
+            name.matches("(?i)(field|member|value)_?(?:0x)?[0-9a-f]+") ||
+            name.matches("(?i)(field|member|value)_?\\d+");
     }
 
     private DataType resolveType(String specification, int size) {
@@ -409,10 +538,44 @@ public class STClassLayoutApplier extends GhidraScript {
         if (stored == null)
             return new Safety(false, false, "generated structure lacks safety hash");
         String current = layoutHash(structure);
-        if (!stored.equals(current))
+        if (!stored.equals(current) && !stored.equals(transientLayoutHash(structure)))
             return new Safety(false, false, "manual changes detected (stored " +
                 stored.substring(0, 12) + ", current " + current.substring(0, 12) + ")");
-        return new Safety(true, false, "updated unchanged generated structure");
+        return new Safety(true, false, stored.equals(current) ?
+            "updated unchanged generated structure" :
+            "updated legacy canonicalized generated structure");
+    }
+
+    private String transientLayoutHash(Structure structure) {
+        try {
+            StructureDataType mirror = new StructureDataType(
+                structure.getCategoryPath(), structure.getName() + "__HashProbe",
+                structure.getLength(), dataTypes);
+            for (DataTypeComponent component : structure.getDefinedComponents())
+                mirror.replaceAtOffset(component.getOffset(), component.getDataType(),
+                    component.getLength(), component.getFieldName(),
+                    component.getComment());
+            return layoutHash(mirror);
+        }
+        catch (Exception ignored) {
+            return "";
+        }
+    }
+
+    private String descriptionWithHash(String description, String hash) {
+        int index = description.indexOf(HASH_MARKER);
+        if (index < 0) return description;
+        int start = index + HASH_MARKER.length();
+        int end = Math.min(description.length(), start + 64);
+        return description.substring(0, start) + hash + description.substring(end);
+    }
+
+    private String descriptionWithOverlayHash(String description, String hash) {
+        int index = description.indexOf(OVERLAY_HASH_MARKER);
+        if (index < 0) return description + OVERLAY_HASH_MARKER + hash;
+        int start = index + OVERLAY_HASH_MARKER.length();
+        int end = Math.min(description.length(), start + 64);
+        return description.substring(0, start) + hash + description.substring(end);
     }
 
     /**
@@ -459,9 +622,13 @@ public class STClassLayoutApplier extends GhidraScript {
     }
 
     private String storedHash(String description) {
-        int index = description.indexOf(HASH_MARKER);
+        return storedHash(description, HASH_MARKER);
+    }
+
+    private String storedHash(String description, String marker) {
+        int index = description.indexOf(marker);
         if (index < 0) return null;
-        String value = description.substring(index + HASH_MARKER.length()).trim();
+        String value = description.substring(index + marker.length()).trim();
         if (value.length() < 64) return null;
         value = value.substring(0, 64);
         return value.matches("[0-9a-fA-F]{64}") ? value.toLowerCase(Locale.ROOT) : null;
@@ -586,6 +753,8 @@ public class STClassLayoutApplier extends GhidraScript {
             this.safe = safe; this.placeholder = placeholder; this.reason = reason;
         }
     }
+    private record SurgicalUpdate(int offset, int size, DataType type,
+        String name, String comment, boolean typed, boolean named) {}
     private static class ReportRow {
         final String owner, path, status, detail;
         final int typedFields, namedFields;

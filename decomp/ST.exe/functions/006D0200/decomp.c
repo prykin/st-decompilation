@@ -32,7 +32,7 @@ void __cdecl FUN_006d0200(int *param_1,uint param_2,byte *param_3)
       psVar8 = puVar6 + 5;
       sVar5 = ~uVar4 - 1;
       if ((int)puVar6[5] < (int)sVar5) {
-        puVar3 = (uint *)FUN_006bfb50(puVar6,~uVar4 + 0x18);
+        puVar3 = (uint *)FUN_006bfb50((int *)puVar6,~uVar4 + 0x18);
         if (puVar3 != nullptr) {
           psVar8 = puVar3 + 5;
           puVar2[0x30] = (uint)puVar3;

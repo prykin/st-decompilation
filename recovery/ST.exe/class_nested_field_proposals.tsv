@@ -123,8 +123,8 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0068	20	4	field_0014	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01B3	8	4	field_0008	/undefined4	5	nested reads=6, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01B3	28	4	field_001C	/undefined4	5	nested reads=6, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01C7	0	4	field_0000	/undefined4	6	nested reads=6, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01C7	4	4	field_0004	/undefined4	4	nested reads=4, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01C7	0	4	field_0000	/undefined4	3	nested reads=3, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01C7	4	4	field_0004	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01E4	138	4	field_008A	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01E4	160	4	field_00A0	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01EC	4	4	field_0004	/undefined4	1	nested reads=1, writes=0

@@ -8,7 +8,7 @@ void FUN_006c8910(uint *param_1,int *param_2)
   if (param_2 != nullptr) {
     *param_2 = 0;
   }
-  size = FUN_006c87f0(param_1);
+  size = FUN_006c87f0((DArrayTy *)param_1);
   puVar1 = Library::DKW::LIB::MemAlloc(size);
   if (puVar1 == nullptr) {
     return;

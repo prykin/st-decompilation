@@ -17,73 +17,77 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
   int iVar5;
   int iVar6;
   byte *pbVar7;
-  char *pcVar8;
+  byte *pbVar8;
   char *pcVar9;
-  byte *pbVar10;
+  char *pcVar10;
+  byte *pbVar10_mg1;
+  char *pcVar9_mg0;
+  byte *pbVar7_mg0;
+  char *pcVar9_mg2;
 
   uVar3 = 0xffffffff;
   do {
-    pbVar7 = param_1;
+    pbVar7_mg0 = param_1;
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    pbVar7 = param_1 + 1;
+    pbVar7_mg0 = param_1 + 1;
     bVar1 = *param_1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = pbVar7;
+    param_1 = pbVar7_mg0;
   } while (bVar1 != 0);
   uVar3 = ~uVar3;
-  pbVar7 = pbVar7 + -uVar3;
-  pbVar10 = (byte *)((int)this + 0x44);
-  memmove(pbVar10, pbVar7, uVar3); /* compiler REP MOVS byte copy */
+  pbVar7 = pbVar7_mg0 + -uVar3;
+  pbVar8 = (byte *)((int)this + 0x44);
+  memmove(pbVar8, pbVar7, uVar3); /* compiler REP MOVS byte copy */
   uVar4 = 0;
   uVar3 = 0xffffffff;
   do {
-    pcVar9 = param_2;
+    pcVar9_mg0 = param_2;
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    pcVar9 = param_2 + 1;
+    pcVar9_mg0 = param_2 + 1;
     cVar2 = *param_2;
-    param_2 = pcVar9;
+    param_2 = pcVar9_mg0;
   } while (cVar2 != '\0');
   uVar3 = ~uVar3;
-  pcVar9 = pcVar9 + -uVar3;
-  pcVar8 = (char *)((int)this + 0x244);
-  memmove(pcVar8, pcVar9, uVar3); /* compiler REP MOVS byte copy */
+  pcVar10 = pcVar9_mg0 + -uVar3;
+  pcVar9 = (char *)((int)this + 0x244);
+  memmove(pcVar9, pcVar10, uVar3); /* compiler REP MOVS byte copy */
   uVar4 = 0;
   uVar3 = 0xffffffff;
   do {
-    pcVar9 = param_3;
+    pcVar9_mg2 = param_3;
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    pcVar9 = param_3 + 1;
+    pcVar9_mg2 = param_3 + 1;
     cVar2 = *param_3;
-    param_3 = pcVar9;
+    param_3 = pcVar9_mg2;
   } while (cVar2 != '\0');
   uVar3 = ~uVar3;
   iVar5 = 0;
-  pcVar9 = pcVar9 + -uVar3;
-  pcVar8 = (char *)((int)this + 0x444);
+  pcVar10 = pcVar9_mg2 + -uVar3;
+  pcVar9 = (char *)((int)this + 0x444);
   for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pcVar8 = *(undefined4 *)pcVar9;
+    *(undefined4 *)pcVar9 = *(undefined4 *)pcVar10;
+    pcVar10 = pcVar10 + 4;
     pcVar9 = pcVar9 + 4;
-    pcVar8 = pcVar8 + 4;
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = nullptr;
   for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pcVar8 = *pcVar9;
+    *pcVar9 = *pcVar10;
+    pcVar10 = pcVar10 + 1;
     pcVar9 = pcVar9 + 1;
-    pcVar8 = pcVar8 + 1;
   }
   if (0 < param_4->field_0008) {
     do {
       uVar3 = 0xffffffff;
-      pcVar9 = *(char **)(param_4->field_0014 + iVar5 * 4);
+      pcVar10 = *(char **)(param_4->field_0014 + iVar5 * 4);
       do {
         if (uVar3 == 0) break;
         uVar3 = uVar3 - 1;
-        cVar2 = *pcVar9;
-        pcVar9 = pcVar9 + 1;
+        cVar2 = *pcVar10;
+        pcVar10 = pcVar10 + 1;
       } while (cVar2 != '\0');
       iVar5 = iVar5 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -91,11 +95,11 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
     } while (iVar5 < param_4->field_0008);
   }
   if (STField<int>(this,0x644) != 0) {
-    FreeAndNull((void **)((int)this + 0x644));
+    FreeAndNull((undefined4 *)((int)this + 0x644));
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = Library::DKW::LIB::MemAllocClear((uint)(param_1 + param_4->field_0008));
-  STField<void *>(this,0x644) = param_1;
+  STField<undefined4>(this,0x644) = param_1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
     STField<undefined1>(this,10) = 1;
@@ -108,18 +112,18 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
     return;
   }
   if (iVar5 < 1) {
-    pcVar9 = nullptr;
+    pcVar10 = nullptr;
     goto LAB_0055c414;
   }
   do {
-    pcVar9 = *(char **)(param_4->field_0014 + iVar6 * 4);
+    pcVar10 = *(char **)(param_4->field_0014 + iVar6 * 4);
 LAB_0055c414:
     uVar3 = 0xffffffff;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      cVar2 = *pcVar9;
-      pcVar9 = pcVar9 + 1;
+      cVar2 = *pcVar10;
+      pcVar10 = pcVar10 + 1;
     } while (cVar2 != '\0');
     uVar3 = ~uVar3;
     if (iVar6 < iVar5) {
@@ -128,8 +132,8 @@ LAB_0055c414:
     else {
       pbVar7 = nullptr;
     }
-    pbVar10 = param_1;
-    memmove(pbVar10, pbVar7, uVar3); /* compiler REP MOVS byte copy */
+    pbVar10_mg1 = param_1;
+    memmove(pbVar10_mg1, pbVar7, uVar3); /* compiler REP MOVS byte copy */
     param_1[uVar3] = -(iVar6 != param_4->field_0008 + -1) & 10;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + uVar3 + 1;

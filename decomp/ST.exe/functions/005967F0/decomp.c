@@ -72,7 +72,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       this_01->field_1F2F = nullptr;
     }
     if (this_01->field_1E8E != 0) {
-      FreeAndNull((void **)&this_01->field_1E8E);
+      FreeAndNull(&this_01->field_1E8E);
     }
     if (this_01->field_1E92 != nullptr) {
       FreeAndNull(&this_01->field_1E92);

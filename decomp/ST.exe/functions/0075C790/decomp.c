@@ -8,10 +8,11 @@ undefined4 FUN_0075c790(AnonShape_0075C790_3F1CCBA9 *param_1,int *param_2)
   uint *puVar2;
   int iVar3;
   uint uVar4;
-  int iVar5;
-  int *piVar6;
-  byte bVar7;
-  int iVar8;
+  int iVar4;
+  int *piVar5;
+  byte bVar6;
+  int iVar7;
+  uint uVar8;
   uint uVar9;
   AnonShape_0075C180_8EED234B *pAVar10;
   int local_14c [64];
@@ -35,12 +36,12 @@ undefined4 FUN_0075c790(AnonShape_0075C790_3F1CCBA9 *param_1,int *param_2)
   int *local_8;
 
   local_14 = param_1->field_0182;
-  bVar7 = (byte)param_1->field_018A;
-  local_18 = 1 << (bVar7 & 0x1f);
-  piVar6 = param_1->field_01AA;
-  local_20 = -1 << (bVar7 & 0x1f);
-  local_8 = piVar6;
-  if (((param_1->field_010C != 0) && (piVar6[10] == 0)) &&
+  bVar6 = (byte)param_1->field_018A;
+  local_18 = 1 << (bVar6 & 0x1f);
+  piVar5 = param_1->field_01AA;
+  local_20 = -1 << (bVar6 & 0x1f);
+  local_8 = piVar5;
+  if (((param_1->field_010C != 0) && (piVar5[10] == 0)) &&
      (iVar3 = FUN_0075c3b0((AnonShape_0075BE40_B9FD5FDF *)param_1), iVar3 == 0)) {
     return 0;
   }
@@ -49,12 +50,12 @@ undefined4 FUN_0075c790(AnonShape_0075C790_3F1CCBA9 *param_1,int *param_2)
   local_44 = *(undefined4 *)param_1->field_0010;
   local_40 = ((undefined4 *)param_1->field_0010)[1];
   local_3c = param_1->field_018E;
-  pAVar10 = (AnonShape_0075C180_8EED234B *)piVar6[2];
-  iVar3 = piVar6[3];
+  pAVar10 = (AnonShape_0075C180_8EED234B *)piVar5[2];
+  iVar3 = piVar5[3];
   local_1c = *param_2;
-  local_2c = piVar6 + 4;
-  local_c = piVar6[5];
-  local_48 = piVar6[0xf];
+  local_2c = piVar5 + 4;
+  local_c = piVar5[5];
+  local_48 = piVar5[0xf];
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = param_1->field_017E;
   if (local_c == 0) {
@@ -67,55 +68,55 @@ undefined4 FUN_0075c790(AnonShape_0075C790_3F1CCBA9 *param_1,int *param_2)
           iVar3 = local_34;
           pAVar10 = local_38;
           if (7 < local_34) goto LAB_0075c882;
-          iVar8 = 1;
+          iVar7 = 1;
 LAB_0075c8af:
-          uVar4 = FUN_0075b800(&local_44,pAVar10,iVar3,local_48,iVar8);
+          uVar4 = FUN_0075b800(&local_44,pAVar10,iVar3,local_48,iVar7);
           iVar3 = local_34;
           pAVar10 = local_38;
           if ((int)uVar4 < 0) goto cf_break_loop_0075CB0B;
         }
         else {
 LAB_0075c882:
-          uVar4 = (int)pAVar10 >> ((char)iVar3 - 8U & 0x1f) & 0xff;
+          uVar8 = (int)pAVar10 >> ((char)iVar3 - 8U & 0x1f) & 0xff;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar8 = *(int *)(local_48 + 0xd4 + uVar4 * 4);
-          if (iVar8 == 0) {
-            iVar8 = 9;
+          iVar7 = *(int *)(local_48 + 0xd4 + uVar8 * 4);
+          if (iVar7 == 0) {
+            iVar7 = 9;
             goto LAB_0075c8af;
           }
-          uVar4 = (uint)*(byte *)(uVar4 + 0x4d4 + local_48);
-          iVar3 = iVar3 - iVar8;
+          uVar4 = (uint)*(byte *)(uVar8 + 0x4d4 + local_48);
+          iVar3 = iVar3 - iVar7;
         }
         local_10 = (int)uVar4 >> 4;
         if ((uVar4 & 0xf) == 0) {
           if (local_10 != 0xf) {
-            iVar8 = 1 << ((byte)local_10 & 0x1f);
-            piVar6 = local_8;
-            local_c = iVar8;
+            iVar7 = 1 << ((byte)local_10 & 0x1f);
+            piVar5 = local_8;
+            local_c = iVar7;
             if (local_10 == 0) goto LAB_0075ca4a;
             if ((iVar3 < local_10) &&
-               (iVar5 = FUN_0075b720(&local_44,pAVar10,iVar3,local_10), iVar3 = local_34,
-               pAVar10 = local_38, iVar5 == 0)) goto cf_break_loop_0075CB0B;
+               (iVar4 = FUN_0075b720(&local_44,pAVar10,iVar3,local_10), iVar3 = local_34,
+               pAVar10 = local_38, iVar4 == 0)) goto cf_break_loop_0075CB0B;
             iVar3 = iVar3 - local_10;
-            local_c = local_c + ((int)pAVar10 >> ((byte)iVar3 & 0x1f) & iVar8 - 1U);
-            piVar6 = local_8;
+            local_c = local_c + ((int)pAVar10 >> ((byte)iVar3 & 0x1f) & iVar7 - 1U);
+            piVar5 = local_8;
             goto LAB_0075ca4a;
           }
           local_28 = &DAT_007a1e94 + (int)param_2;
-          uVar4 = 0;
+          uVar8 = 0;
         }
         else {
           if ((iVar3 < 1) &&
-             (iVar8 = FUN_0075b720(&local_44,pAVar10,iVar3,1), iVar3 = local_34, pAVar10 = local_38,
-             iVar8 == 0)) goto cf_break_loop_0075CB0B;
+             (iVar7 = FUN_0075b720(&local_44,pAVar10,iVar3,1), iVar3 = local_34, pAVar10 = local_38,
+             iVar7 == 0)) goto cf_break_loop_0075CB0B;
           iVar3 = iVar3 + -1;
           if (((int)pAVar10 >> ((byte)iVar3 & 0x1f) & 1U) == 0) {
             local_28 = &DAT_007a1e94 + (int)param_2;
-            uVar4 = local_20;
+            uVar8 = local_20;
           }
           else {
             local_28 = &DAT_007a1e94 + (int)param_2;
-            uVar4 = local_18;
+            uVar8 = local_18;
           }
         }
         do {
@@ -126,8 +127,8 @@ LAB_0075c882:
           }
           else {
             if ((iVar3 < 1) &&
-               (iVar8 = FUN_0075b720(&local_44,pAVar10,iVar3,1), iVar3 = local_34,
-               pAVar10 = local_38, iVar8 == 0)) goto cf_break_loop_0075CB0B;
+               (iVar7 = FUN_0075b720(&local_44,pAVar10,iVar3,1), iVar3 = local_34,
+               pAVar10 = local_38, iVar7 == 0)) goto cf_break_loop_0075CB0B;
             iVar3 = iVar3 + -1;
             if ((((int)pAVar10 >> ((byte)iVar3 & 0x1f) & 1U) != 0) &&
                (uVar9 = *puVar2, (local_18 & uVar9) == 0)) {
@@ -143,16 +144,16 @@ LAB_0075c882:
           param_2 = (int *)((int)param_2 + 1);
           local_28 = local_28 + 1;
         } while ((int)param_2 <= local_14);
-        if (uVar4 != 0) {
-          iVar8 = (&DAT_007a1e94)[(int)param_2];
+        if (uVar8 != 0) {
+          iVar7 = (&DAT_007a1e94)[(int)param_2];
           local_24 = local_24 + 1;
-          *(uint *)(local_1c + iVar8 * 4) = uVar4;
-          *local_4c = iVar8;
+          *(uint *)(local_1c + iVar7 * 4) = uVar8;
+          *local_4c = iVar7;
           local_4c = local_4c + 1;
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)((int)param_2 + 1);
-        piVar6 = local_8;
+        piVar5 = local_8;
       } while ((int)param_2 <= local_14);
     }
   }
@@ -165,14 +166,14 @@ LAB_0075ca4a:
           puVar2 = (uint *)(local_1c + *local_8 * 4);
           if (*(int *)(local_1c + *local_8 * 4) != 0) {
             if ((iVar3 < 1) &&
-               (iVar8 = FUN_0075b720(&local_44,pAVar10,iVar3,1), iVar3 = local_34,
-               pAVar10 = local_38, iVar8 == 0)) {
+               (iVar7 = FUN_0075b720(&local_44,pAVar10,iVar3,1), iVar3 = local_34,
+               pAVar10 = local_38, iVar7 == 0)) {
 cf_break_loop_0075CB0B:
               if (0 < local_24) {
-                piVar6 = local_14c + local_24;
+                piVar5 = local_14c + local_24;
                 do {
-                  piVar1 = piVar6 + -1;
-                  piVar6 = piVar6 + -1;
+                  piVar1 = piVar5 + -1;
+                  piVar5 = piVar5 + -1;
                   local_24 = local_24 + -1;
                   *(undefined4 *)(local_1c + *piVar1 * 4) = 0;
                 } while (local_24 != 0);
@@ -181,12 +182,12 @@ cf_break_loop_0075CB0B:
             }
             iVar3 = iVar3 + -1;
             if ((((int)pAVar10 >> ((byte)iVar3 & 0x1f) & 1U) != 0) &&
-               (uVar4 = *puVar2, (local_18 & uVar4) == 0)) {
+               (uVar8 = *puVar2, (local_18 & uVar8) == 0)) {
               uVar9 = local_18;
-              if ((int)uVar4 < 0) {
+              if ((int)uVar8 < 0) {
                 uVar9 = local_20;
               }
-              *puVar2 = uVar4 + uVar9;
+              *puVar2 = uVar8 + uVar9;
             }
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -200,10 +201,10 @@ cf_break_loop_0075CB0B:
   *(undefined4 *)param_1->field_0010 = local_44;
   *(undefined4 *)(param_1->field_0010 + 4) = local_40;
   param_1->field_018E = local_3c;
-  piVar6[3] = iVar3;
-  piVar6[2] = (int)pAVar10;
-  piVar6[5] = local_c;
-  piVar6[10] = piVar6[10] + -1;
+  piVar5[3] = iVar3;
+  piVar5[2] = (int)pAVar10;
+  piVar5[5] = local_c;
+  piVar5[10] = piVar5[10] + -1;
   return 1;
 }
 

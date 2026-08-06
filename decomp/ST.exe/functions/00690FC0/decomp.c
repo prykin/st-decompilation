@@ -14,13 +14,13 @@ AllocationRecord_00690FC0 * __cdecl FUN_00690fc0(AllocationRecord_00690FC0 *para
 
 {
   int iVar1;
-  AllocationRecord_00690FC0 *pAVar2;
-  undefined4 uVar3;
-  DArrayTy *pDVar4;
-  AllocationRecord_00668330 *pAVar5;
-  AllocationRecord_00690FC0 *pAVar6;
-  AllocationRecord_00668330 *pAVar7;
-  AllocationRecord_00690FC0 *pAVar8;
+  AllocationRecord_00690FC0 *pAVar1;
+  DArrayTy *pDVar2;
+  AllocationRecord_00668330 *pAVar3;
+  int iVar4;
+  AllocationRecord_00690FC0 *pAVar5;
+  AllocationRecord_00668330 *pAVar6;
+  AllocationRecord_00690FC0 *pAVar7;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   undefined1 *local_c;
@@ -31,54 +31,54 @@ AllocationRecord_00690FC0 * __cdecl FUN_00690fc0(AllocationRecord_00690FC0 *para
   g_currentExceptionFrame = &local_54;
   iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar1 == 0) {
-    pAVar2 = Library::DKW::LIB::MemAllocClear(0x10c);
-    pAVar6 = param_1;
-    pAVar8 = pAVar2;
-    memmove(pAVar8, pAVar6, 0x10c); /* compiler REP MOVS byte copy */
-    iVar1 = 0;
-    pAVar2->field_0014 = 0x10c;
-    pAVar2->field_0018 = 2;
-    local_8 = (AnonShape_00690FC0_955C4112 *)pAVar2;
+    pAVar1 = Library::DKW::LIB::MemAllocClear(0x10c);
+    pAVar5 = param_1;
+    pAVar7 = pAVar1;
+    memmove(pAVar7, pAVar5, 0x10c); /* compiler REP MOVS byte copy */
+    iVar4 = 0;
+    pAVar1->field_0014 = 0x10c;
+    pAVar1->field_0018 = 2;
+    local_8 = (AnonShape_00690FC0_955C4112 *)pAVar1;
     do {
-      if (*(int *)((int)&pAVar2->field_0085 + iVar1) != 0) {
-        uVar3 = FUN_006b0060(nullptr,
-                             (uint *)(&param_1->field_0x10b + *(int *)(&pAVar2->field_0x89 + iVar1))
-                            );
-        *(undefined4 *)((int)&local_8->field_0085 + iVar1) = uVar3;
-        pAVar2 = (AllocationRecord_00690FC0 *)local_8;
+      if (*(int *)((int)&pAVar1->field_0085 + iVar4) != 0) {
+        pDVar2 = FUN_006b0060(nullptr,
+                              (uint *)(&param_1->field_0x10b + *(int *)(&pAVar1->field_0x89 + iVar4)
+                                      ));
+        *(DArrayTy **)((int)&local_8->field_0085 + iVar4) = pDVar2;
+        pAVar1 = (AllocationRecord_00690FC0 *)local_8;
       }
-      iVar1 = iVar1 + 0xc;
-    } while (iVar1 < 0x60);
-    if (pAVar2->field_0085 == 0) {
-      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
-      local_8->field_0085 = &pDVar4->flags;
-      pAVar2 = (AllocationRecord_00690FC0 *)local_8;
+      iVar4 = iVar4 + 0xc;
+    } while (iVar4 < 0x60);
+    if (pAVar1->field_0085 == 0) {
+      pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
+      local_8->field_0085 = &pDVar2->flags;
+      pAVar1 = (AllocationRecord_00690FC0 *)local_8;
     }
-    if (0 < (short)pAVar2->field_0105) {
-      *(undefined4 *)(pAVar2->field_0085 + 0xc) = 0;
-      pAVar7 = (AllocationRecord_00668330 *)(&param_1->field_0x10b + *(int *)&param_1->field_0x107);
-      iVar1 = 0;
-      pAVar2 = (AllocationRecord_00690FC0 *)local_8;
+    if (0 < (short)pAVar1->field_0105) {
+      *(undefined4 *)(pAVar1->field_0085 + 0xc) = 0;
+      pAVar6 = (AllocationRecord_00668330 *)(&param_1->field_0x10b + *(int *)&param_1->field_0x107);
+      iVar4 = 0;
+      pAVar1 = (AllocationRecord_00690FC0 *)local_8;
       if (0 < local_8->field_0105) {
         do {
           local_10 = 0;
           local_c = nullptr;
-          pAVar5 = thunk_FUN_00668330(pAVar7);
-          if (pAVar5 == nullptr) {
+          pAVar3 = thunk_FUN_00668330(pAVar6);
+          if (pAVar3 == nullptr) {
             local_c = nullptr;
           }
           else {
-            local_c = &pAVar5[-1].field_0x240;
+            local_c = &pAVar3[-1].field_0x240;
           }
           Library::DKW::TBL::DArrayAppend((DArrayTy *)local_8->field_0085,&local_10);
-          pAVar7 = (AllocationRecord_00668330 *)(&pAVar7->field_0x0 + pAVar7->field_0014);
-          iVar1 = iVar1 + 1;
-          pAVar2 = (AllocationRecord_00690FC0 *)local_8;
-        } while (iVar1 < local_8->field_0105);
+          pAVar6 = (AllocationRecord_00668330 *)(&pAVar6->field_0x0 + pAVar6->field_0014);
+          iVar4 = iVar4 + 1;
+          pAVar1 = (AllocationRecord_00690FC0 *)local_8;
+        } while (iVar4 < local_8->field_0105);
       }
     }
     g_currentExceptionFrame = local_54.previous;
-    return pAVar2;
+    return pAVar1;
   }
   g_currentExceptionFrame = local_54.previous;
   thunk_FUN_00691540((int *)&local_8);

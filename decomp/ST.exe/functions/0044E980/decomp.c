@@ -32,10 +32,13 @@ STBoatC::GetVisualInfo
 {
   char cVar1;
   int iVar3;
+  uint uVar3;
   uint uVar4;
-  uint uVar5;
+  int iVar5;
   char *pcVar6;
   char *pcVar7;
+  char *pcVar7_mg9;
+  char *pcVar6_mg4;
 
   *param_4 = PTR_0080677c;
   *param_5 = '\0';
@@ -44,51 +47,51 @@ STBoatC::GetVisualInfo
   if ((param_3 != 0xe) && (param_3 != 0xc)) {
     if (param_3 == 0xd) {
       if (param_2 == CASE_B) {
-        uVar4 = 0xffffffff;
-        pcVar7 = &DAT_007a9e94;
+        uVar3 = 0xffffffff;
+        pcVar6 = &DAT_007a9e94;
         do {
-          pcVar6 = pcVar7;
-          if (uVar4 == 0) break;
-          uVar4 = uVar4 - 1;
-          pcVar6 = pcVar7 + 1;
-          cVar1 = *pcVar7;
           pcVar7 = pcVar6;
+          if (uVar3 == 0) break;
+          uVar3 = uVar3 - 1;
+          pcVar7 = pcVar6 + 1;
+          cVar1 = *pcVar6;
+          pcVar6 = pcVar7;
         } while (cVar1 != '\0');
-        uVar4 = ~uVar4;
-        pcVar7 = pcVar6 + -uVar4;
-        memmove(param_5, pcVar7, uVar4); /* compiler REP MOVS byte copy */
+        uVar3 = ~uVar3;
+        pcVar6 = pcVar7 + -uVar3;
+        memmove(param_5, pcVar6, uVar3); /* compiler REP MOVS byte copy */
         return;
       }
       if (param_2 == CASE_16) {
-        uVar4 = 0xffffffff;
-        pcVar7 = &DAT_007a9e9c;
+        uVar3 = 0xffffffff;
+        pcVar6 = &DAT_007a9e9c;
         do {
-          pcVar6 = pcVar7;
-          if (uVar4 == 0) break;
-          uVar4 = uVar4 - 1;
-          pcVar6 = pcVar7 + 1;
-          cVar1 = *pcVar7;
           pcVar7 = pcVar6;
+          if (uVar3 == 0) break;
+          uVar3 = uVar3 - 1;
+          pcVar7 = pcVar6 + 1;
+          cVar1 = *pcVar6;
+          pcVar6 = pcVar7;
         } while (cVar1 != '\0');
-        uVar4 = ~uVar4;
-        pcVar7 = pcVar6 + -uVar4;
-        memmove(param_5, pcVar7, uVar4); /* compiler REP MOVS byte copy */
+        uVar3 = ~uVar3;
+        pcVar6 = pcVar7 + -uVar3;
+        memmove(param_5, pcVar6, uVar3); /* compiler REP MOVS byte copy */
         return;
       }
       if (param_2 == CASE_23) {
-        uVar4 = 0xffffffff;
-        pcVar7 = &DAT_007a9ea4;
+        uVar3 = 0xffffffff;
+        pcVar6 = &DAT_007a9ea4;
         do {
-          pcVar6 = pcVar7;
-          if (uVar4 == 0) break;
-          uVar4 = uVar4 - 1;
-          pcVar6 = pcVar7 + 1;
-          cVar1 = *pcVar7;
           pcVar7 = pcVar6;
+          if (uVar3 == 0) break;
+          uVar3 = uVar3 - 1;
+          pcVar7 = pcVar6 + 1;
+          cVar1 = *pcVar6;
+          pcVar6 = pcVar7;
         } while (cVar1 != '\0');
-        uVar4 = ~uVar4;
-        pcVar7 = pcVar6 + -uVar4;
-        memmove(param_5, pcVar7, uVar4); /* compiler REP MOVS byte copy */
+        uVar3 = ~uVar3;
+        pcVar6 = pcVar7 + -uVar3;
+        memmove(param_5, pcVar6, uVar3); /* compiler REP MOVS byte copy */
         return;
       }
     }
@@ -97,124 +100,124 @@ STBoatC::GetVisualInfo
   }
   switch(param_2) {
   case CASE_1:
-    pcVar7 = &DAT_007a9e8c;
+    pcVar6 = &DAT_007a9e8c;
     break;
   case CASE_2:
-    pcVar7 = &DAT_007a9e84;
+    pcVar6 = &DAT_007a9e84;
     break;
   case CASE_3:
-    pcVar7 = &DAT_007a9e7c;
+    pcVar6 = &DAT_007a9e7c;
     break;
   case CASE_4:
-    pcVar7 = &DAT_007a9e74;
+    pcVar6 = &DAT_007a9e74;
     break;
   case CASE_5:
-    pcVar7 = &DAT_007a9e6c;
+    pcVar6 = &DAT_007a9e6c;
     break;
   case CASE_6:
-    pcVar7 = &DAT_007a9e64;
+    pcVar6 = &DAT_007a9e64;
     break;
   case CASE_7:
-    pcVar7 = &DAT_007a9e5c;
+    pcVar6 = &DAT_007a9e5c;
     break;
   case CASE_8:
-    pcVar7 = &DAT_007a9e54;
+    pcVar6 = &DAT_007a9e54;
     break;
   case CASE_9:
-    pcVar7 = &DAT_007a9e50;
+    pcVar6 = &DAT_007a9e50;
     break;
   case CASE_A:
-    pcVar7 = &DAT_007a9e48;
+    pcVar6 = &DAT_007a9e48;
     break;
   case CASE_B:
-    pcVar7 = &DAT_007a9e40;
+    pcVar6 = &DAT_007a9e40;
     break;
   case CASE_C:
-    pcVar7 = &DAT_007a9e38;
+    pcVar6 = &DAT_007a9e38;
     break;
   case CASE_D:
-    pcVar7 = &DAT_007a9e30;
+    pcVar6 = &DAT_007a9e30;
     break;
   case CASE_E:
-    pcVar7 = &DAT_007a9e28;
+    pcVar6 = &DAT_007a9e28;
     break;
   case CASE_F:
-    pcVar7 = &DAT_007a9e20;
+    pcVar6 = &DAT_007a9e20;
     break;
   case CASE_10:
-    pcVar7 = &DAT_007a9e18;
+    pcVar6 = &DAT_007a9e18;
     break;
   case CASE_11:
-    pcVar7 = &DAT_007a9e10;
+    pcVar6 = &DAT_007a9e10;
     break;
   case CASE_12:
-    pcVar7 = &DAT_007a9e08;
+    pcVar6 = &DAT_007a9e08;
     break;
   case CASE_13:
-    pcVar7 = &DAT_007a9e00;
+    pcVar6 = &DAT_007a9e00;
     break;
   case CASE_14:
-    pcVar7 = &DAT_007a9df8;
+    pcVar6 = &DAT_007a9df8;
     break;
   case CASE_15:
-    pcVar7 = &DAT_007a9df4;
+    pcVar6 = &DAT_007a9df4;
     break;
   case CASE_16:
-    pcVar7 = &DAT_007a9dec;
+    pcVar6 = &DAT_007a9dec;
     break;
   case CASE_17:
-    pcVar7 = &DAT_007a9de4;
+    pcVar6 = &DAT_007a9de4;
     break;
   case CASE_18:
-    pcVar7 = &DAT_007a9ddc;
+    pcVar6 = &DAT_007a9ddc;
     break;
   case CASE_19:
-    pcVar7 = &DAT_007a9dd8;
+    pcVar6 = &DAT_007a9dd8;
     break;
   case CASE_1A:
-    pcVar7 = &DAT_007a9dd4;
+    pcVar6 = &DAT_007a9dd4;
     break;
   case CASE_1B:
-    pcVar7 = &DAT_007a9dd0;
+    pcVar6 = &DAT_007a9dd0;
     break;
   case CASE_1C:
-    pcVar7 = &DAT_007a9dcc;
+    pcVar6 = &DAT_007a9dcc;
     break;
   case CASE_1D:
-    pcVar7 = &DAT_007a9dc8;
+    pcVar6 = &DAT_007a9dc8;
     break;
   case CASE_1E:
-    pcVar7 = &DAT_007a9dc4;
+    pcVar6 = &DAT_007a9dc4;
     break;
   case CASE_1F:
-    pcVar7 = &DAT_007a9dc0;
+    pcVar6 = &DAT_007a9dc0;
     break;
   case CASE_20:
-    pcVar7 = &DAT_007a9dbc;
+    pcVar6 = &DAT_007a9dbc;
     break;
   case CASE_21:
-    pcVar7 = &DAT_007a9db8;
+    pcVar6 = &DAT_007a9db8;
     break;
   case CASE_22:
-    pcVar7 = &DAT_007a9db4;
+    pcVar6 = &DAT_007a9db4;
     break;
   case CASE_23:
-    pcVar7 = &DAT_007a9db0;
+    pcVar6 = &DAT_007a9db0;
     break;
   case CASE_24:
-    pcVar7 = &DAT_007a9dac;
+    pcVar6 = &DAT_007a9dac;
     break;
   case CASE_25:
-    pcVar7 = &DAT_007a9da4;
+    pcVar6 = &DAT_007a9da4;
     break;
   case CASE_26:
-    pcVar7 = &DAT_007a9d9c;
+    pcVar6 = &DAT_007a9d9c;
     break;
   case CASE_27:
-    pcVar7 = &DAT_007a9d94;
+    pcVar6 = &DAT_007a9d94;
     break;
   case CASE_28:
-    pcVar7 = &DAT_007a9d8c;
+    pcVar6 = &DAT_007a9d8c;
     break;
   default:
     *param_4 = 0;
@@ -225,46 +228,46 @@ STBoatC::GetVisualInfo
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  uVar4 = 0xffffffff;
+  uVar3 = 0xffffffff;
   do {
-    pcVar6 = pcVar7;
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    pcVar6 = pcVar7 + 1;
-    cVar1 = *pcVar7;
     pcVar7 = pcVar6;
+    if (uVar3 == 0) break;
+    uVar3 = uVar3 - 1;
+    pcVar7 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar7;
   } while (cVar1 != '\0');
-  uVar4 = ~uVar4;
-  pcVar7 = pcVar6 + -uVar4;
-  pcVar6 = param_5;
-  memmove(pcVar6, pcVar7, uVar4); /* compiler REP MOVS byte copy */
-  uVar5 = 0;
+  uVar3 = ~uVar3;
+  pcVar6 = pcVar7 + -uVar3;
+  pcVar6_mg4 = param_5;
+  memmove(pcVar6_mg4, pcVar6, uVar3); /* compiler REP MOVS byte copy */
+  uVar4 = 0;
   if (param_3 != 0xc) {
     return;
   }
-  uVar4 = 0xffffffff;
-  pcVar7 = &DAT_007a9d88;
+  uVar3 = 0xffffffff;
+  pcVar6 = &DAT_007a9d88;
   do {
-    pcVar6 = pcVar7;
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    pcVar6 = pcVar7 + 1;
-    cVar1 = *pcVar7;
     pcVar7 = pcVar6;
+    if (uVar3 == 0) break;
+    uVar3 = uVar3 - 1;
+    pcVar7 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar7;
   } while (cVar1 != '\0');
-  uVar4 = ~uVar4;
-  iVar3 = -1;
+  uVar3 = ~uVar3;
+  iVar5 = -1;
   do {
-    pcVar7 = param_5;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    pcVar7 = param_5 + 1;
+    pcVar7_mg9 = param_5;
+    if (iVar5 == 0) break;
+    iVar5 = iVar5 + -1;
+    pcVar7_mg9 = param_5 + 1;
     cVar1 = *param_5;
-    param_5 = pcVar7;
+    param_5 = pcVar7_mg9;
   } while (cVar1 != '\0');
-  pcVar6 = pcVar6 + -uVar4;
-  pcVar7 = pcVar7 + -1;
-  memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
+  pcVar6 = pcVar7 + -uVar3;
+  pcVar7 = pcVar7_mg9 + -1;
+  memmove(pcVar7, pcVar6, uVar3); /* compiler REP MOVS byte copy */
   return;
 }
 

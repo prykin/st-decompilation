@@ -69,11 +69,11 @@ FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int para
     if (iVar5 == 0) {
       if (STField<undefined4 *>(this,0x2e5) == nullptr) {
         STField<uint>(this,0x2e1) = uVar4;
-        STField<void *>(this,0x2e5) = (void *)param_1;
+        STField<int>(this,0x2e5) = param_1;
         return param_8;
       }
       if (STField<int>(this,0x2e1) < (int)uVar4) {
-        FreeAndNull((void **)((int)this + 0x2e5));
+        FreeAndNull((int *)((int)this + 0x2e5));
         STField<uint>(this,0x2e1) = uVar4;
         STField<int>(this,0x2e5) = param_1;
         return param_8;
@@ -91,11 +91,11 @@ FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int para
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
       STField<uint>(this,0x2e1) = param_9;
-      FreeAndNull((void **)&param_1);
+      FreeAndNull(&param_1);
       return param_8;
     }
     if (param_1 != 0) {
-      FreeAndNull((void **)&param_1);
+      FreeAndNull(&param_1);
     }
   }
   return 0;

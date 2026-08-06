@@ -9,11 +9,13 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
 
 {
   int iVar2;
-  int *piVar3;
-  undefined4 *puVar4;
-  AnonShape_004AB810_8E5693D5 *pAVar5;
-  undefined4 uVar6;
+  int *piVar2;
+  undefined4 *puVar3;
+  AnonShape_004AB810_8E5693D5 *pAVar4;
+  undefined4 uVar5;
   int iVar7;
+  int iVar6;
+  int iVar8;
   InternalExceptionFrame local_50;
   STRubbishC *local_c;
   int local_8;
@@ -33,39 +35,39 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  piVar3 = &local_c->field_01E5;
-  iVar2 = 0;
-  iVar7 = local_8;
+  piVar2 = &local_c->field_01E5;
+  iVar8 = 0;
+  iVar6 = local_8;
   do {
-    if (*piVar3 == 0) {
-      local_8 = iVar7;
-      puVar4 = Library::DKW::LIB::MemAlloc(0x3e);
-      (&local_c->field_01E5)[iVar2] = puVar4;
-      if (puVar4 != nullptr) {
-        for (iVar7 = 0xf; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *puVar4 = 0;
-          puVar4 = puVar4 + 1;
+    if (*piVar2 == 0) {
+      local_8 = iVar6;
+      puVar3 = Library::DKW::LIB::MemAlloc(0x3e);
+      (&local_c->field_01E5)[iVar8] = puVar3;
+      if (puVar3 != nullptr) {
+        for (iVar6 = 0xf; iVar6 != 0; iVar6 = iVar6 + -1) {
+          *puVar3 = 0;
+          puVar3 = puVar3 + 1;
         }
-        *(undefined2 *)puVar4 = 0;
-        iVar7 = iVar2;
+        *(undefined2 *)puVar3 = 0;
+        iVar6 = iVar8;
         if (local_c->field_01F9 != '\0') {
-          pAVar5 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-          if (pAVar5 == nullptr) {
-            uVar6 = 0;
+          pAVar4 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
+          if (pAVar4 == nullptr) {
+            uVar5 = 0;
           }
           else {
-            uVar6 = thunk_FUN_004ab810(pAVar5);
+            uVar5 = thunk_FUN_004ab810(pAVar4);
           }
-          *(undefined4 *)((&local_c->field_01E5)[iVar2] + 0x10) = uVar6;
+          *(undefined4 *)((&local_c->field_01E5)[iVar8] + 0x10) = uVar5;
         }
       }
       g_currentExceptionFrame = local_50.previous;
-      return iVar7;
+      return iVar6;
     }
-    iVar7 = 5;
-    iVar2 = iVar2 + 1;
-    piVar3 = piVar3 + 1;
-  } while (iVar2 < 5);
+    iVar6 = 5;
+    iVar8 = iVar8 + 1;
+    piVar2 = piVar2 + 1;
+  } while (iVar8 < 5);
   g_currentExceptionFrame = local_50.previous;
   return 5;
 }

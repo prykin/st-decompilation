@@ -20,11 +20,12 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
 
 {
   int iVar2;
-  uint *puVar3;
-  int iVar4;
+  char *pcVar2;
+  int iVar3;
   StartServTy *this_00;
   StartServTy *this_01;
   StartServTy *this_02;
+  int iVar4;
   uint uVar5;
   uint uVar6;
   ccFntTy *pcVar7;
@@ -42,34 +43,34 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
                 (param_2,(int)param_1,param_2,param_3,param_4,param_5,param_6,param_7,
                  &g_startSystem_0081176C->field_0140);
       uVar8 = 2;
-      iVar2 = param_4 + 10;
+      iVar4 = param_4 + 10;
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)LoadResourceString(0x256f,g_hINSTANCE_00807618);
+      pcVar2 = LoadResourceString(0x256f,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
-                (this_00,0,iVar2,param_5 + 10,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8);
-      FUN_006c6850((int)param_1,iVar2,param_5 + 0x1e,param_6 + -0x14,0x8e,
+                (this_00,0,iVar4,param_5 + 10,param_6 + -0x14,0x14,pcVar2,uVar5,uVar6,pcVar7,uVar8);
+      FUN_006c6850((int)param_1,iVar4,param_5 + 0x1e,param_6 + -0x14,0x8e,
                    g_startSystem_0081176C->field_0140);
       uVar8 = 2;
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)LoadResourceString(0x256b,g_hINSTANCE_00807618);
+      pcVar2 = LoadResourceString(0x256b,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
-                (this_01,0,iVar2,param_5 + 0xb4,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8
+                (this_01,0,iVar4,param_5 + 0xb4,param_6 + -0x14,0x14,pcVar2,uVar5,uVar6,pcVar7,uVar8
                 );
-      FUN_006c6850((int)param_1,iVar2,param_5 + 200,param_6 + -0x14,0x19,
+      FUN_006c6850((int)param_1,iVar4,param_5 + 200,param_6 + -0x14,0x19,
                    g_startSystem_0081176C->field_0140);
       uVar8 = 2;
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)LoadResourceString(0x256c,g_hINSTANCE_00807618);
+      pcVar2 = LoadResourceString(0x256c,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
-                (this_02,0,iVar2,param_5 + 0xe1,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pcVar7,uVar8
+                (this_02,0,iVar4,param_5 + 0xe1,param_6 + -0x14,0x14,pcVar2,uVar5,uVar6,pcVar7,uVar8
                 );
-      FUN_006c6850((int)param_1,iVar2,param_5 + 0xf5,param_6 + -0x14,0x19,
+      FUN_006c6850((int)param_1,iVar4,param_5 + 0xf5,param_6 + -0x14,0x19,
                    g_startSystem_0081176C->field_0140);
       uVar8 = 2;
       local_c = param_6 + -0x1e;
@@ -77,10 +78,10 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
       pcVar7 = g_startSystem_0081176C->field_0034;
       uVar6 = 0xffffffff;
       uVar5 = 0;
-      puVar3 = (uint *)LoadResourceString(0x256d,g_hINSTANCE_00807618);
+      pcVar2 = LoadResourceString(0x256d,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
-                ((StartServTy *)(param_5 + 0x11a),0,iVar2,param_5 + 0x11a,(int)(local_8 + -10),0x14,
-                 puVar3,uVar5,uVar6,pcVar7,uVar8);
+                ((StartServTy *)(param_5 + 0x11a),0,iVar4,param_5 + 0x11a,(int)(local_8 + -10),0x14,
+                 pcVar2,uVar5,uVar6,pcVar7,uVar8);
       Library::DKW::DDX::FUN_006c6470
                 ((int)param_1,(int)local_8 + param_4 + -0x14,param_5 + 0x11c,local_8 + 10,0x19,4,
                  g_startSystem_0081176C->field_0140);
@@ -88,25 +89,25 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
                 ((int)param_1,(int)local_8 + param_4 + -0x12,param_5 + 0x11e,local_8 + 9,0x15,4,
                  g_startSystem_0081176C->field_0140);
       Library::DKW::DDX::FUN_006c6470
-                ((int)param_1,iVar2,param_5 + 0x138,(undefined4 *)(param_6 + -0x14),0x19,4,
+                ((int)param_1,iVar4,param_5 + 0x138,(undefined4 *)(param_6 + -0x14),0x19,4,
                  g_startSystem_0081176C->field_0140);
       Library::DKW::DDX::FUN_006c6470
                 ((int)param_1,param_4 + 0xc,param_5 + 0x13a,(undefined4 *)(param_6 + -0x18),0x15,4,
                  g_startSystem_0081176C->field_0140);
-      iVar2 = param_4 + ((int)(local_c + (local_c >> 0x1f & 3U)) >> 2);
+      iVar4 = param_4 + ((int)(local_c + (local_c >> 0x1f & 3U)) >> 2);
       Library::DKW::DDX::FUN_006c6470
-                ((int)param_1,iVar2 + 0xf,param_5 + 0x157,local_8,0x19,4,
+                ((int)param_1,iVar4 + 0xf,param_5 + 0x157,local_8,0x19,4,
                  g_startSystem_0081176C->field_0140);
       Library::DKW::DDX::FUN_006c6470
-                ((int)param_1,iVar2 + 0x11,param_5 + 0x159,local_8 + -1,0x15,4,
+                ((int)param_1,iVar4 + 0x11,param_5 + 0x159,local_8 + -1,0x15,4,
                  g_startSystem_0081176C->field_0140);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xb3,0,iVar2,"%s",
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xb3,0,iVar2,"%s",
                                "FSGSTy::OutSGlProc");
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0xb3);

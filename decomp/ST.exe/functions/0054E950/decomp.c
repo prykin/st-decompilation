@@ -14,8 +14,9 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
 {
   STPlaySystemC *pSVar2;
   int iVar3;
-  void *pvVar4;
+  void *pvVar3;
   int iVar5;
+  int iVar4;
   uint uVar6;
   byte *puVar7;
   InternalExceptionFrame local_50;
@@ -28,19 +29,19 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
     local_c = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (iVar3 == 0) {
-      pvVar4 = Library::DKW::LIB::MemAllocClear(param_2 + 8);
+      pvVar3 = Library::DKW::LIB::MemAllocClear(param_2 + 8);
       pSVar2 = local_c;
-      STField<uint>(pvVar4,4) = param_2;
-      puVar7 = (byte *)((int)pvVar4 + 8);
+      STField<uint>(pvVar3,4) = param_2;
+      puVar7 = (byte *)((int)pvVar3 + 8);
       memmove(puVar7, param_1, param_2); /* compiler REP MOVS byte copy */
       puVar7 = (byte *)(&local_c->field_0065);
-      FUN_006b9910(puVar7,(int)pvVar4);
+      FUN_006b9910(puVar7,(int)pvVar3);
       uVar6 = pSVar2->field_0069 + 1;
       pSVar2->field_0069 = uVar6;
       if (0xd2 < uVar6) {
         local_8 = (int *)*puVar7;
-        iVar3 = FUN_006b98c0(puVar7,local_8);
-        if (iVar3 != 0) {
+        iVar5 = FUN_006b98c0(puVar7,local_8);
+        if (iVar5 != 0) {
           if (local_8 != nullptr) {
             FreeAndNull(&local_8);
           }
@@ -51,9 +52,9 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x482,0,iVar3,
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x482,0,iVar3,
                                "%s","STPlaySystemC::AddToRep");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x484);

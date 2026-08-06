@@ -48,6 +48,7 @@ st::fn_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE35 *param_
   undefined4 uVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
 
   uVar2 = 0;
   if ((&this->field_01E5)[param_1] != 0) {
@@ -62,15 +63,15 @@ st::fn_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE35 *param_
     this->field_001C = uVar1;
     *(uint *)((&this->field_01E5)[param_1] + 0x1c) = (uVar1 >> 0x10) % 5;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar4 = *(int *)((&this->field_01E5)[param_1] + 0x1c);
+    iVar5 = *(int *)((&this->field_01E5)[param_1] + 0x1c);
     iVar3 = st::fn_0040581C();
-    iVar4 = st::fn_004038F5(iVar3,iVar4);
+    iVar4 = st::fn_004038F5(iVar3,iVar5);
     *(int *)((&this->field_01E5)[param_1] + 0x2c) = iVar4;
     *(uint *)((&this->field_01E5)[param_1] + 4) = (uint)param_2->field_0028 >> 0x10;
     *(uint *)((&this->field_01E5)[param_1] + 0xc) = (uint)*(ushort *)&param_2->field_0x24;
     *(undefined4 *)((&this->field_01E5)[param_1] + 8) = *(undefined4 *)(param_2 + 1);
-    iVar4 = *(int *)((&this->field_01E5)[param_1] + 4);
-    if ((iVar4 == 3) || (iVar4 == 6)) {
+    iVar5 = *(int *)((&this->field_01E5)[param_1] + 4);
+    if ((iVar5 == 3) || (iVar5 == 6)) {
       st::fn_004050C9(this,param_1,1);
     }
     uVar2 = 1;
@@ -118,7 +119,8 @@ int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *par
   short sVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  int iVar5;
+  undefined4 *puVar6;
 
   iVar3 = st::fn_004017F3(this);
   iVar4 = this->field_01E1;
@@ -133,16 +135,16 @@ int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *par
       sVar2 = (short)((uint)param_1->field_0028 >> 0x10);
       if ((sVar2 != 3) && (sVar2 != 6)) {
         iVar4 = param_1->field_0020;
-        puVar5 = &this->field_01E5;
-        iVar3 = 5;
+        puVar6 = &this->field_01E5;
+        iVar5 = 5;
         do {
-          piVar1 = (int *)*puVar5;
+          piVar1 = (int *)*puVar6;
           if (((piVar1 != nullptr) && (piVar1[1] != 3)) && (piVar1[1] != 6)) {
             *piVar1 = *piVar1 + iVar4 / 5;
           }
-          puVar5 = puVar5 + 1;
-          iVar3 = iVar3 + -1;
-        } while (iVar3 != 0);
+          puVar6 = puVar6 + 1;
+          iVar5 = iVar5 + -1;
+        } while (iVar5 != 0);
       }
       return this->field_01E1;
     }
@@ -214,7 +216,7 @@ int __thiscall st::fn_0062FEA0(STRubbishC *this,int param_1,int param_2)
     if (param_2 < 0) {
       return iVar2;
     }
-    if (pVVar1->field_0030 <= param_2) {
+    if ((int)pVVar1->field_0030 <= param_2) {
       return iVar2;
     }
     iVar3 = (int)&local_8->vtable + g_centeredOffsets5[iVar3];

@@ -17,11 +17,14 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
   HoloTy *pHVar3;
   MTestTy *this_00;
   DWORD DVar4;
+  int local_EAX_59;
   int iVar5;
   int iVar6;
-  byte bVar7;
-  char cVar8;
-  uint uVar9;
+  int iVar7;
+  int iVar8;
+  byte bVar9;
+  char cVar10;
+  uint uVar11;
   InternalExceptionFrame local_50;
   MTestTy *local_c;
   uint local_8;
@@ -32,9 +35,9 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
   this->field_00A1 = DVar4;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  local_EAX_59 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
-  if (iVar5 == 0) {
+  if (local_EAX_59 == 0) {
     switch(message->id) {
     case MESS_ID_NONE:
       NoneMTest(local_c);
@@ -81,12 +84,12 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           g_holo_00811778->field_002B = 1;
         }
         if (g_holo_00811778 != nullptr) {
-          uVar9 = 0;
-          cVar8 = '\x01';
-          bVar7 = 0x10;
-          iVar6 = 1;
-          iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
-          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar5,iVar6,bVar7,cVar8,uVar9);
+          uVar11 = 0;
+          cVar10 = '\x01';
+          bVar9 = 0x10;
+          iVar8 = 1;
+          iVar7 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
+          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar7,iVar8,bVar9,cVar10,uVar11);
           pHVar3 = g_holo_00811778;
           piVar1 = &g_holo_00811778->field_0013;
           g_holo_00811778->field_0002 = 1;
@@ -135,12 +138,12 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
                     ((MMMObjTy *)&g_startSystem_0081176C->field_0140,(int)g_dDXContext_0080759C,
                      nullptr,nullptr,10,0xb4,0xf9,0x123,
                      &g_startSystem_0081176C->field_0140);
-          uVar9 = 0;
-          cVar8 = '\x01';
-          bVar7 = 0x10;
-          iVar6 = 1;
-          iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
-          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar5,iVar6,bVar7,cVar8,uVar9);
+          uVar11 = 0;
+          cVar10 = '\x01';
+          bVar9 = 0x10;
+          iVar8 = 1;
+          iVar7 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
+          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar7,iVar8,bVar9,cVar10,uVar11);
           pHVar3 = g_holo_00811778;
           g_holo_00811778->field_0002 = 0;
           pHVar3->field_0017 = -1;
@@ -163,12 +166,12 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
     return iVar5;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\Start\\test_obj.cpp",0xb5,0,iVar5,"%s",
-                             "MTestTy::GetMessage");
+  iVar6 = ReportDebugMessage("E:\\__titans\\Start\\test_obj.cpp",0xb5,0,local_EAX_59,
+                             "%s","MTestTy::GetMessage");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\test_obj.cpp",0xb5);
+  RaiseInternalException(local_EAX_59,0,"E:\\__titans\\Start\\test_obj.cpp",0xb5);
   return 0xffff;
 }
 

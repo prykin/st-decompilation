@@ -30,7 +30,7 @@ void __fastcall FUN_00581200(int param_1)
   int local_34;
   int local_30;
   int local_2c;
-  undefined4 local_28;
+  uint local_28;
   int local_24;
   int local_20;
   int local_1c;
@@ -246,8 +246,8 @@ cf_break_loop_00581775:
           iVar11 = local_24;
           local_54 = -1;
           iVar15 = 0x1fffff;
-          thunk_FUN_00416270(*(void **)(local_c->field_020B + local_24 * 4),(undefined2 *)&local_28,
-                             &local_2c,(int *)&local_8);
+          thunk_FUN_00416270(*(void **)(local_c->field_020B + local_24 * 4),&local_28,&local_2c,
+                             &local_8);
           iVar10 = local_c->field_01FD + -1;
           if (-1 < iVar10) {
             local_40 = (int *)(local_c->field_0207 + iVar10 * 4);

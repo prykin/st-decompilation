@@ -1022,18 +1022,20 @@ LAB_0066a419:
    ecx_pointer_setup=2; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
    expected_stack=12; receiver_family_members=5
 
-   [STPrototypeApplier] Propagated parameter 1.
+   [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 00672440 -> 0064A910 @ 006724CA */
 
 int __thiscall
 st::fn_00672440
-          (AnonReceiver_0064A970 *this,int *param_1,int param_2,short *param_3)
+          (AnonReceiver_0064A970 *this,AnonShape_00683780_11EA4E23 *param_1,int param_2,
+          short *param_3)
 
 {
   AnonReceiver_0064A970 *pAVar1;
   int iVar2;
-  char *pcVar3;
-  undefined4 uVar4;
+  char *pcVar2;
+  undefined4 uVar3;
+  int iVar4;
   short *psVar5;
   float10 fVar6;
   InternalExceptionFrame local_64;
@@ -1064,7 +1066,7 @@ st::fn_00672440
   *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
   if (param_3 != nullptr) {
     psVar5 = param_3;
-    for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
+    for (iVar4 = 0x40; iVar4 != 0; iVar4 = iVar4 + -1) {
       psVar5[0] = 0;
       psVar5[1] = 0;
       psVar5 = psVar5 + 2;
@@ -1077,12 +1079,12 @@ st::fn_00672440
         g_currentExceptionFrame = local_64.previous;
         return local_18;
       }
-      pcVar3 = st::fn_00403779(param_1,local_8);
-      if (pcVar3 != nullptr) break;
+      pcVar2 = st::fn_00403779(param_1,local_8);
+      if (pcVar2 != nullptr) break;
       *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
       st::fn_006A5E40(-4,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    switch(*pcVar3) {
+    switch(*pcVar2) {
     case '\b':
       if (param_3 != nullptr) {
         if (0x31 < *param_3) {
@@ -1090,8 +1092,8 @@ st::fn_00672440
           st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 8;
-        uVar4 = (*pAVar1->vtable->slot_00)(pcVar3);
-        *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar4;
+        uVar3 = (*pAVar1->vtable->slot_00)(pcVar2);
+        *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar3;
         *param_3 = *param_3 + 1;
         param_3[2] = param_3[2] + 1;
       }
@@ -1104,7 +1106,7 @@ st::fn_00672440
           st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 9;
-        fVar6 = (float10)(*pAVar1->vtable->slot_04)(pcVar3);
+        fVar6 = (float10)(*pAVar1->vtable->slot_04)(pcVar2);
         *(float *)(param_3 + *param_3 * 2 + 4) = (float)fVar6;
         *param_3 = *param_3 + 1;
         param_3[3] = param_3[3] + 1;
@@ -1118,8 +1120,8 @@ st::fn_00672440
           st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 10;
-        uVar4 = (*pAVar1->vtable->slot_08)(pcVar3);
-        *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar4;
+        uVar3 = (*pAVar1->vtable->slot_08)(pcVar2);
+        *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar3;
         if (*(int *)(param_3 + *param_3 * 2 + 4) == 0) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
           st::fn_006A5E40(-0x6b,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -1130,11 +1132,11 @@ st::fn_00672440
       local_8 = local_8 + 1;
       break;
     case '\v':
-      local_18 = (int)*(short *)(pcVar3 + 1);
+      local_18 = (int)*(short *)(pcVar2 + 1);
       local_10 = 1;
       break;
     default:
-      local_c = st::fn_00401F5F((int)pcVar3,&local_14,&local_20);
+      local_c = st::fn_00401F5F((int)pcVar2,&local_14,&local_20);
       if (local_c == nullptr) {
         *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
 LAB_0067276f:

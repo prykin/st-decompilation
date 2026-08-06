@@ -60,7 +60,7 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
            (VisibleClassTy::sub_00558C00
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                        (int)this->field_0255,(int)this->field_0257,&local_8,&local_c), -1 < iVar2))
-          && (iVar2 < 5)) && ((-1 < local_8 && (local_8 < pVVar1->field_0030)))))) &&
+          && (iVar2 < 5)) && ((-1 < local_8 && (local_8 < (int)pVVar1->field_0030)))))) &&
        ((local_c = g_centeredOffsets5[iVar2] + local_c, -1 < local_c &&
         (((local_c < pVVar1->field_0034 && (pVVar1->field_004C != nullptr)) &&
          (pVVar1->field_004C[local_8 + local_c * pVVar1->field_0030] == 0)))))) {

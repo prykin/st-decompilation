@@ -30,10 +30,10 @@ void __cdecl FUN_00575030(int *param_1,int param_2,int param_3)
         iVar6 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
         *(uint *)(iVar1 + 4) = uVar2 + 1;
         if (iVar6 == 0) goto LAB_005750c2;
-      } while (*(void **)(iVar5 + 0xc) != *(void **)(iVar6 + 8));
+      } while (*(int *)(iVar5 + 0xc) != *(int *)(iVar6 + 8));
       if (iVar6 == 0) {
 LAB_005750c2:
-        FreeAndNull((void **)(iVar5 + 0xc));
+        FreeAndNull((int *)(iVar5 + 0xc));
       }
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

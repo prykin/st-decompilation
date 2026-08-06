@@ -66,48 +66,49 @@ int __fastcall st::fn_00720D30(AnonShape_00720D30_DF382E7D *param_1)
 {
   char cVar1;
   char *pcVar2;
-  int iVar3;
   int iVar4;
+  int iVar3;
   int iVar5;
-  char *pcVar6;
+  int iVar6;
+  char *pcVar7;
   int local_8;
 
-  iVar5 = 0;
-  iVar4 = param_1->field_0138;
-  if ((iVar4 == 0) || (*(int *)(iVar4 + 8) == 0)) {
+  iVar6 = 0;
+  iVar5 = param_1->field_0138;
+  if ((iVar5 == 0) || (*(int *)(iVar5 + 8) == 0)) {
     return 0;
   }
   local_8 = 0;
-  *(undefined4 *)(iVar4 + 4) = param_1->field_0144;
+  *(undefined4 *)(iVar5 + 4) = param_1->field_0144;
   do {
-    iVar4 = param_1->field_0138;
-    if (*(int *)(iVar4 + 8) <= *(int *)(iVar4 + 4)) {
+    iVar5 = param_1->field_0138;
+    if (*(int *)(iVar5 + 8) <= *(int *)(iVar5 + 4)) {
       return local_8;
     }
-    iVar3 = *(int *)(iVar4 + 4) + 1;
-    pcVar2 = *(char **)(*(int *)(iVar4 + 0x14) + -4 + iVar3 * 4);
-    *(int *)(iVar4 + 4) = iVar3;
+    iVar3 = *(int *)(iVar5 + 4) + 1;
+    pcVar2 = *(char **)(*(int *)(iVar5 + 0x14) + -4 + iVar3 * 4);
+    *(int *)(iVar5 + 4) = iVar3;
     if (pcVar2 == nullptr) {
       return local_8;
     }
-    iVar4 = -1;
-    pcVar6 = pcVar2;
+    iVar5 = -1;
+    pcVar7 = pcVar2;
     do {
-      if (iVar4 == 0) break;
-      iVar4 = iVar4 + -1;
-      cVar1 = *pcVar6;
-      pcVar6 = pcVar6 + 1;
+      if (iVar5 == 0) break;
+      iVar5 = iVar5 + -1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
-    pcVar6 = PTR_DAT_007f0afc;
-    if ((iVar4 != -2) && (pcVar6 = pcVar2, (param_1->field_0020 & 0x20) != 0)) {
-      pcVar6 = PTR_DAT_007f0b00;
+    pcVar7 = PTR_DAT_007f0afc;
+    if ((iVar5 != -2) && (pcVar7 = pcVar2, (param_1->field_0020 & 0x20) != 0)) {
+      pcVar7 = PTR_DAT_007f0b00;
     }
-    iVar4 = st::fn_007111C0((void *)param_1->field_0214,pcVar6);
-    if (param_1->field_0030 < iVar4 + iVar5) {
+    iVar4 = st::fn_007111C0((void *)param_1->field_0214,pcVar7);
+    if (param_1->field_0030 < iVar4 + iVar6) {
       return local_8;
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar5 = iVar5 + *(int *)(param_1->field_0214 + 0x5c) + iVar4;
+    iVar6 = iVar6 + *(int *)(param_1->field_0214 + 0x5c) + iVar4;
     local_8 = local_8 + 1;
   } while( true );
 }
@@ -157,107 +158,108 @@ void __thiscall st::fn_00720E70(void *this,int param_1,int param_2)
   void *pvVar3;
   int iVar4;
   int iVar5;
-  uint uVar6;
-  char *pcVar7;
-  byte *pbVar8;
-  char *pcVar9;
+  int iVar6;
+  uint uVar7;
+  char *pcVar8;
+  byte *pbVar9;
+  char *pcVar10;
   int local_10;
   int local_c;
   int local_8;
 
-  iVar5 = STField<int>(this,0x138);
-  if ((iVar5 != 0) && (*(int *)(iVar5 + 8) != 0)) {
+  iVar6 = STField<int>(this,0x138);
+  if ((iVar6 != 0) && (*(int *)(iVar6 + 8) != 0)) {
     local_8 = 0;
     local_c = 0;
     local_10 = 0;
     STField<undefined4>(this,0x208) = 0xffffffff;
-    *(undefined4 *)(iVar5 + 4) = STField<undefined4>(this,0x144);
+    *(undefined4 *)(iVar6 + 4) = STField<undefined4>(this,0x144);
     while( true ) {
-      iVar5 = STField<int>(this,0x138);
-      if (*(int *)(iVar5 + 8) <= *(int *)(iVar5 + 4)) break;
-      iVar4 = *(int *)(iVar5 + 4) + 1;
-      pcVar7 = *(char **)(*(int *)(iVar5 + 0x14) + -4 + iVar4 * 4);
-      *(int *)(iVar5 + 4) = iVar4;
-      if ((pcVar7 == nullptr) || (STField<int>(this,0x30) <= local_c))
+      iVar6 = STField<int>(this,0x138);
+      if (*(int *)(iVar6 + 8) <= *(int *)(iVar6 + 4)) break;
+      iVar5 = *(int *)(iVar6 + 4) + 1;
+      pcVar8 = *(char **)(*(int *)(iVar6 + 0x14) + -4 + iVar5 * 4);
+      *(int *)(iVar6 + 4) = iVar5;
+      if ((pcVar8 == nullptr) || (STField<int>(this,0x30) <= local_c))
       goto cf_break_loop_00720F4E;
-      iVar5 = -1;
-      pcVar9 = pcVar7;
+      iVar6 = -1;
+      pcVar10 = pcVar8;
       do {
-        if (iVar5 == 0) break;
-        iVar5 = iVar5 + -1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar9 + 1;
+        if (iVar6 == 0) break;
+        iVar6 = iVar6 + -1;
+        cVar1 = *pcVar10;
+        pcVar10 = pcVar10 + 1;
       } while (cVar1 != '\0');
-      pcVar9 = PTR_DAT_007f0afc;
-      if ((iVar5 != -2) && (pcVar9 = pcVar7, (STField<byte>(this,0x20) & 0x20) != 0)) {
-        pcVar9 = PTR_DAT_007f0b00;
+      pcVar10 = PTR_DAT_007f0afc;
+      if ((iVar6 != -2) && (pcVar10 = pcVar8, (STField<byte>(this,0x20) & 0x20) != 0)) {
+        pcVar10 = PTR_DAT_007f0b00;
       }
-      iVar4 = st::fn_007111C0(STField<void *>(this,0x214),pcVar9);
-      iVar5 = local_c;
-      iVar4 = iVar4 + *(int *)(STField<int>(this,0x214) + 0x5c);
-      if ((local_c <= param_2) && (param_2 < iVar4 + local_c)) {
+      iVar4 = st::fn_007111C0(STField<void *>(this,0x214),pcVar10);
+      iVar6 = local_c;
+      iVar5 = iVar4 + *(int *)(STField<int>(this,0x214) + 0x5c);
+      if ((local_c <= param_2) && (param_2 < iVar5 + local_c)) {
         STField<int>(this,0x208) = local_c;
         STField<int>(this,0x20c) = local_8;
         goto cf_break_loop_00720F4E;
       }
-      local_c = local_c + iVar4;
+      local_c = local_c + iVar5;
       local_8 = local_8 + 1;
-      local_10 = iVar5;
+      local_10 = iVar6;
     }
-    pcVar7 = nullptr;
+    pcVar8 = nullptr;
 cf_break_loop_00720F4E:
     if (STField<int>(this,0x208) < 0) {
       STField<int>(this,0x208) = local_10;
       param_1 = STField<int>(this,0x2c) + -1;
       STField<int>(this,0x20c) = local_8 + -1;
-      iVar5 = STField<int>(this,0x144) + local_8 + -1;
-      if (iVar5 < *(int *)(STField<int>(this,0x138) + 8)) {
-        pcVar7 = *(char **)(*(int *)(STField<int>(this,0x138) + 0x14) + iVar5 * 4);
+      iVar6 = STField<int>(this,0x144) + local_8 + -1;
+      if (iVar6 < *(int *)(STField<int>(this,0x138) + 8)) {
+        pcVar8 = *(char **)(*(int *)(STField<int>(this,0x138) + 0x14) + iVar6 * 4);
       }
       else {
-        pcVar7 = nullptr;
+        pcVar8 = nullptr;
       }
     }
-    uVar6 = 0xffffffff;
+    uVar7 = 0xffffffff;
     STField<undefined4>(this,0x204) = 0xffffffff;
-    pcVar9 = pcVar7;
+    pcVar10 = pcVar8;
     do {
-      if (uVar6 == 0) break;
-      uVar6 = uVar6 - 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar9 + 1;
+      if (uVar7 == 0) break;
+      uVar7 = uVar7 - 1;
+      cVar1 = *pcVar10;
+      pcVar10 = pcVar10 + 1;
     } while (cVar1 != '\0');
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     local_8 = STField<int>(this,0x148);
-    iVar5 = ~uVar6 - 1;
-    if (local_8 < iVar5) {
-      pbVar8 = (byte *)(pcVar7 + local_8);
+    iVar6 = ~uVar7 - 1;
+    if (local_8 < iVar6) {
+      pbVar9 = (byte *)(pcVar8 + local_8);
       do {
         if ((STField<byte>(this,0x20) & 0x20) == 0) {
           pvVar3 = STField<void *>(this,0x214);
-          uVar6 = st::fn_00710FB0(pvVar3,pbVar8);
-          sVar2 = *(short *)(STField<int>(pvVar3,0x9a) + 0x6a + (uVar6 & 0xffff) * 10);
+          uVar7 = st::fn_00710FB0(pvVar3,pbVar9);
+          sVar2 = *(short *)(STField<int>(pvVar3,0x9a) + 0x6a + (uVar7 & 0xffff) * 10);
         }
         else {
           pvVar3 = STField<void *>(this,0x214);
-          uVar6 = st::fn_00710FB0(pvVar3,PTR_DAT_007f0b00);
-          sVar2 = *(short *)(STField<int>(pvVar3,0x9a) + 0x6a + (uVar6 & 0xffff) * 10);
+          uVar7 = st::fn_00710FB0(pvVar3,PTR_DAT_007f0b00);
+          sVar2 = *(short *)(STField<int>(pvVar3,0x9a) + 0x6a + (uVar7 & 0xffff) * 10);
         }
-        iVar4 = *(int *)(STField<int>(this,0x214) + 0x58) + (int)sVar2;
-        if ((param_2 <= param_1) && (param_1 < iVar4 + param_2)) {
+        iVar5 = *(int *)(STField<int>(this,0x214) + 0x58) + (int)sVar2;
+        if ((param_2 <= param_1) && (param_1 < iVar5 + param_2)) {
           STField<int>(this,0x204) = param_2;
           STField<int>(this,0x210) = local_8;
           break;
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_2 = param_2 + iVar4;
+        param_2 = param_2 + iVar5;
         local_8 = local_8 + 1;
-        pbVar8 = pbVar8 + 1;
-      } while (local_8 < iVar5);
+        pbVar9 = pbVar9 + 1;
+      } while (local_8 < iVar6);
     }
     if (STField<int>(this,0x204) < 0) {
-      STField<int>(this,0x210) = iVar5;
+      STField<int>(this,0x210) = iVar6;
       STField<int>(this,0x204) = param_2;
     }
   }
@@ -271,47 +273,48 @@ void __thiscall st::fn_00721080(void *this,int param_1,uint param_2)
 {
   char cVar1;
   bool bVar2;
-  uint uVar3;
   int iVar4;
-  uint uVar5;
-  char *pcVar6;
+  uint uVar3;
+  int iVar5;
+  uint uVar6;
   char *pcVar7;
-  int iVar8;
-  byte *pbVar9;
-  void *this_00;
+  char *pcVar8;
+  int iVar9;
   byte *pbVar10;
+  void *this_00;
+  byte *pbVar11;
   int local_10;
   int local_c;
 
-  iVar8 = STField<int>(this,0x138);
-  if (iVar8 == 0) {
+  iVar9 = STField<int>(this,0x138);
+  if (iVar9 == 0) {
     return;
   }
-  iVar4 = *(int *)(iVar8 + 8);
-  if (iVar4 == 0) {
+  iVar5 = *(int *)(iVar9 + 8);
+  if (iVar5 == 0) {
     return;
   }
-  uVar5 = STField<int>(this,0x144) + param_2;
-  if ((int)uVar5 < 0) {
+  uVar6 = STField<int>(this,0x144) + param_2;
+  if ((int)uVar6 < 0) {
     return;
   }
-  if (iVar4 <= (int)uVar5) {
-    uVar5 = iVar4 - 1;
+  if (iVar5 <= (int)uVar6) {
+    uVar6 = iVar5 - 1;
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0xfff) {
-    if ((int)uVar5 < iVar4) {
-      pcVar6 = *(char **)(*(int *)(iVar8 + 0x14) + uVar5 * 4);
+    if ((int)uVar6 < iVar5) {
+      pcVar7 = *(char **)(*(int *)(iVar9 + 0x14) + uVar6 * 4);
     }
     else {
-      pcVar6 = nullptr;
+      pcVar7 = nullptr;
     }
     uVar3 = 0xffffffff;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      cVar1 = *pcVar6;
-      pcVar6 = pcVar6 + 1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = ~uVar3 - 1;
@@ -330,32 +333,32 @@ void __thiscall st::fn_00721080(void *this,int param_1,uint param_2)
     return;
   }
 LAB_0072111d:
-  if ((int)uVar5 < iVar4) {
-    pcVar6 = *(char **)(*(int *)(STField<int>(this,0x138) + 0x14) + uVar5 * 4);
+  if ((int)uVar6 < iVar5) {
+    pcVar7 = *(char **)(*(int *)(STField<int>(this,0x138) + 0x14) + uVar6 * 4);
   }
   else {
-    pcVar6 = nullptr;
+    pcVar7 = nullptr;
   }
   uVar3 = 0xffffffff;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar6 + 1;
+    cVar1 = *pcVar7;
+    pcVar7 = pcVar7 + 1;
   } while (cVar1 != '\0');
   if (~uVar3 - 1 < param_2) {
-    if ((int)uVar5 < iVar4) {
-      pcVar6 = *(char **)(*(int *)(STField<int>(this,0x138) + 0x14) + uVar5 * 4);
+    if ((int)uVar6 < iVar5) {
+      pcVar7 = *(char **)(*(int *)(STField<int>(this,0x138) + 0x14) + uVar6 * 4);
     }
     else {
-      pcVar6 = nullptr;
+      pcVar7 = nullptr;
     }
     uVar3 = 0xffffffff;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      cVar1 = *pcVar6;
-      pcVar6 = pcVar6 + 1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = ~uVar3 - 1;
@@ -363,91 +366,91 @@ LAB_0072111d:
   if (param_2 < STField<uint>(this,0x148)) {
     STField<uint>(this,0x148) = param_2;
   }
-  if (uVar5 < STField<uint>(this,0x144)) {
-    STField<uint>(this,0x144) = uVar5;
+  if (uVar6 < STField<uint>(this,0x144)) {
+    STField<uint>(this,0x144) = uVar6;
   }
   do {
-    iVar8 = STField<int>(this,0x144);
+    iVar9 = STField<int>(this,0x144);
     bVar2 = false;
     local_c = 0;
-    if ((int)uVar5 < iVar8) {
+    if ((int)uVar6 < iVar9) {
 LAB_0072122f:
-      iVar4 = 0;
+      iVar9 = 0;
     }
     else {
       do {
-        if (iVar8 < *(int *)(STField<int>(this,0x138) + 8)) {
-          pcVar6 = *(char **)(*(int *)(STField<int>(this,0x138) + 0x14) + iVar8 * 4);
+        if (iVar9 < *(int *)(STField<int>(this,0x138) + 8)) {
+          pcVar7 = *(char **)(*(int *)(STField<int>(this,0x138) + 0x14) + iVar9 * 4);
         }
         else {
-          pcVar6 = nullptr;
+          pcVar7 = nullptr;
         }
-        iVar4 = -1;
-        pcVar7 = pcVar6;
+        iVar5 = -1;
+        pcVar8 = pcVar7;
         do {
-          if (iVar4 == 0) break;
-          iVar4 = iVar4 + -1;
-          cVar1 = *pcVar7;
-          pcVar7 = pcVar7 + 1;
+          if (iVar5 == 0) break;
+          iVar5 = iVar5 + -1;
+          cVar1 = *pcVar8;
+          pcVar8 = pcVar8 + 1;
         } while (cVar1 != '\0');
-        pcVar7 = PTR_DAT_007f0afc;
-        if ((iVar4 == -2) ||
-           (pcVar7 = pcVar6, pcVar6 = PTR_DAT_007f0b00, (STField<byte>(this,0x20) & 0x20) == 0))
+        pcVar8 = PTR_DAT_007f0afc;
+        if ((iVar5 == -2) ||
+           (pcVar8 = pcVar7, pcVar7 = PTR_DAT_007f0b00, (STField<byte>(this,0x20) & 0x20) == 0))
         {
-          pcVar6 = pcVar7;
+          pcVar7 = pcVar8;
         }
-        iVar4 = st::fn_007111C0(STField<void *>(this,0x214),pcVar6);
+        iVar4 = st::fn_007111C0(STField<void *>(this,0x214),pcVar7);
         if (STField<int>(this,0x30) < iVar4 + local_c) {
           bVar2 = true;
           STField<int>(this,0x144) = STField<int>(this,0x144) + 1;
           break;
         }
         local_c = local_c + *(int *)(STField<int>(this,0x214) + 0x5c) + iVar4;
-        iVar8 = iVar8 + 1;
-      } while (iVar8 <= (int)uVar5);
+        iVar9 = iVar9 + 1;
+      } while (iVar9 <= (int)uVar6);
       if (local_c < 1) goto LAB_0072122f;
-      iVar4 = (local_c - *(int *)(STField<int>(this,0x214) + 0x5c)) - iVar4;
+      iVar9 = (local_c - *(int *)(STField<int>(this,0x214) + 0x5c)) - iVar4;
     }
-    STField<int>(this,0x208) = iVar4;
+    STField<int>(this,0x208) = iVar9;
   } while (bVar2);
   do {
     bVar2 = false;
-    if ((*(int *)(STField<int>(this,0x138) + 8) <= (int)uVar5) ||
-       (iVar8 = *(int *)(*(int *)(STField<int>(this,0x138) + 0x14) + uVar5 * 4), iVar8 == 0)) {
+    if ((*(int *)(STField<int>(this,0x138) + 8) <= (int)uVar6) ||
+       (iVar9 = *(int *)(*(int *)(STField<int>(this,0x138) + 0x14) + uVar6 * 4), iVar9 == 0)) {
       STField<undefined4>(this,0x204) = 0;
       break;
     }
     local_10 = STField<int>(this,0x148);
     local_c = 0;
     if (local_10 < (int)param_2) {
-      pbVar9 = (byte *)(iVar8 + local_10);
+      pbVar10 = (byte *)(iVar9 + local_10);
       do {
         if ((STField<byte>(this,0x20) & 0x20) == 0) {
           this_00 = STField<void *>(this,0x214);
-          pbVar10 = pbVar9;
+          pbVar11 = pbVar10;
         }
         else {
           this_00 = STField<void *>(this,0x214);
-          pbVar10 = PTR_DAT_007f0b00;
+          pbVar11 = PTR_DAT_007f0b00;
         }
-        uVar3 = st::fn_00710FB0(this_00,pbVar10);
-        iVar8 = *(int *)(STField<int>(this,0x214) + 0x58) +
+        uVar3 = st::fn_00710FB0(this_00,pbVar11);
+        iVar9 = *(int *)(STField<int>(this,0x214) + 0x58) +
                 (int)*(short *)(STField<int>(this_00,0x9a) + 0x6a + (uVar3 & 0xffff) * 10) +
                 local_c;
-        if (STField<int>(this,0x2c) < iVar8) {
+        if (STField<int>(this,0x2c) < iVar9) {
           bVar2 = true;
           STField<int>(this,0x148) = STField<int>(this,0x148) + 1;
           break;
         }
         local_10 = local_10 + 1;
-        pbVar9 = pbVar9 + 1;
-        local_c = iVar8;
+        pbVar10 = pbVar10 + 1;
+        local_c = iVar9;
       } while (local_10 < (int)param_2);
     }
     STField<int>(this,0x204) = local_c;
   } while (bVar2);
   STField<uint>(this,0x210) = param_2 - STField<int>(this,0x148);
-  STField<uint>(this,0x20c) = uVar5 - STField<int>(this,0x144);
+  STField<uint>(this,0x20c) = uVar6 - STField<int>(this,0x144);
   return;
 }
 
@@ -461,7 +464,8 @@ uint __fastcall st::fn_00721340(AnonShape_00721340_81196542 *param_1)
   uint uVar3;
   uint uVar4;
   uint uVar5;
-  char *pcVar6;
+  uint uVar6;
+  char *pcVar7;
   char *local_c;
   char *local_8;
 
@@ -476,31 +480,31 @@ uint __fastcall st::fn_00721340(AnonShape_00721340_81196542 *param_1)
   else {
     local_c = nullptr;
   }
-  uVar4 = 0xffffffff;
-  pcVar6 = local_c;
+  uVar5 = 0xffffffff;
+  pcVar7 = local_c;
   do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar6 + 1;
+    if (uVar5 == 0) break;
+    uVar5 = uVar5 - 1;
+    cVar1 = *pcVar7;
+    pcVar7 = pcVar7 + 1;
   } while (cVar1 != '\0');
   uVar3 = param_1->field_0210 + param_1->field_0148;
-  if (uVar3 < ~uVar4 - 1) {
-    uVar5 = 0xffffffff;
-    pcVar6 = local_c + uVar3;
+  if (uVar3 < ~uVar5 - 1) {
+    uVar6 = 0xffffffff;
+    pcVar7 = local_c + uVar3;
     do {
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      cVar1 = *pcVar6;
-      pcVar6 = pcVar6 + 1;
+      if (uVar6 == 0) break;
+      uVar6 = uVar6 - 1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
-    local_8 = st::fn_006AAC10(~uVar5);
+    local_8 = st::fn_006AAC10(~uVar6);
     if (local_8 == nullptr) {
       return 0xfffffffe;
     }
     st::fn_0072E340
               (local_8,local_c + param_1->field_0148 + param_1->field_0210,
-               ((~uVar4 - 1) - param_1->field_0148) - param_1->field_0210);
+               ((~uVar5 - 1) - param_1->field_0148) - param_1->field_0210);
     uVar4 = st::fn_00752D50
                       (param_1->field_0138,param_1->field_0144 + 1 + param_1->field_020C,local_8);
     if (-1 < (int)uVar4) {
@@ -514,15 +518,15 @@ uint __fastcall st::fn_00721340(AnonShape_00721340_81196542 *param_1)
         }
       }
       else {
-        uVar4 = 0xffffffff;
-        pcVar6 = local_c;
+        uVar5 = 0xffffffff;
+        pcVar7 = local_c;
         do {
-          if (uVar4 == 0) break;
-          uVar4 = uVar4 - 1;
-          cVar1 = *pcVar6;
-          pcVar6 = pcVar6 + 1;
+          if (uVar5 == 0) break;
+          uVar5 = uVar5 - 1;
+          cVar1 = *pcVar7;
+          pcVar7 = pcVar7 + 1;
         } while (cVar1 != '\0');
-        local_8 = st::fn_006AAC10(~uVar4);
+        local_8 = st::fn_006AAC10(~uVar5);
         if (local_8 == nullptr) {
           return 0xfffffffe;
         }
@@ -812,6 +816,7 @@ undefined4 __thiscall st::fn_00721830(void *this,char *param_1)
   char *pcVar6;
   char *pcVar7;
   short *psVar8;
+  char *pcVar7_mg3;
 
   if (STField<int>(this,0x138) != 0) {
     if ((STField<uint>(this,0x20) & 0x40) != 0) {
@@ -824,8 +829,8 @@ undefined4 __thiscall st::fn_00721830(void *this,char *param_1)
         return 0;
       }
     }
-    if ((STField<uint *>(this,0x138))[2] == 0) {
-      st::fn_006B5AA0(STField<uint *>(this,0x138),PTR_DAT_007f0b04);
+    if ((STField<DArrayTy *>(this,0x138))->elementSize == 0) {
+      st::fn_006B5AA0(STField<DArrayTy *>(this,0x138),PTR_DAT_007f0b04);
     }
     iVar2 = STField<int>(this,0x20c) + STField<int>(this,0x144);
     if (iVar2 < *(int *)(STField<int>(this,0x138) + 8)) {
@@ -869,12 +874,12 @@ undefined4 __thiscall st::fn_00721830(void *this,char *param_1)
       pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
     uVar5 = 0xffffffff;
-    pcVar7 = param_1;
+    pcVar7_mg3 = param_1;
     do {
       if (uVar5 == 0) break;
       uVar5 = uVar5 - 1;
-      cVar1 = *pcVar7;
-      pcVar7 = pcVar7 + 1;
+      cVar1 = *pcVar7_mg3;
+      pcVar7_mg3 = pcVar7_mg3 + 1;
     } while (cVar1 != '\0');
     psVar3 = st::fn_006AAC10(~uVar4 + ~uVar5);
     uVar4 = 0xffffffff;
@@ -1437,7 +1442,7 @@ void __cdecl st::fn_00725680(int *param_1)
 
 {
   if (*param_1 != 0) {
-    st::fn_006AB060((void **)param_1);
+    st::fn_006AB060(param_1);
   }
   return;
 }
@@ -1457,221 +1462,223 @@ st::fn_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_
 
 {
   char cVar1;
+  int iVar3;
+  HANDLE pvVar4;
+  BOOL BVar5;
   int iVar2;
-  HANDLE pvVar3;
-  BOOL BVar4;
-  uint uVar5;
   uint uVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
-  char *pcVar9;
-  CHAR *pCVar10;
-  char *pcVar11;
+  uint uVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
+  char *pcVar10;
+  CHAR *pCVar11;
+  char *pcVar12;
   _WIN32_FIND_DATAA local_248;
   char local_108 [260];
+  char *pcVar8_mg2;
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar2 = (*(code *)param_4)(hFindFile,param_3,1,param_5);
-  if (iVar2 == 0) {
-    uVar5 = 0xffffffff;
-    pcVar7 = hFindFile;
+  iVar3 = (*(code *)param_4)(hFindFile,param_3,1,param_5);
+  if (iVar3 == 0) {
+    uVar6 = 0xffffffff;
+    pcVar8 = hFindFile;
     do {
-      pcVar11 = pcVar7;
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      pcVar11 = pcVar7 + 1;
-      cVar1 = *pcVar7;
-      pcVar7 = pcVar11;
+      pcVar12 = pcVar8;
+      if (uVar6 == 0) break;
+      uVar6 = uVar6 - 1;
+      pcVar12 = pcVar8 + 1;
+      cVar1 = *pcVar8;
+      pcVar8 = pcVar12;
     } while (cVar1 != '\0');
-    uVar5 = ~uVar5;
-    pcVar7 = pcVar11 + -uVar5;
-    pcVar11 = local_108;
-    memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
-    uVar6 = 0;
+    uVar6 = ~uVar6;
+    pcVar8 = pcVar12 + -uVar6;
+    pcVar12 = local_108;
+    memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     st::fn_006B8280(local_108,local_108);
-    uVar5 = 0xffffffff;
-    pcVar7 = text;
+    uVar6 = 0xffffffff;
+    pcVar8_mg2 = text;
     do {
-      pcVar11 = pcVar7;
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      pcVar11 = pcVar7 + 1;
-      cVar1 = *pcVar7;
-      pcVar7 = pcVar11;
+      pcVar8 = pcVar8_mg2;
+      if (uVar6 == 0) break;
+      uVar6 = uVar6 - 1;
+      pcVar8 = pcVar8_mg2 + 1;
+      cVar1 = *pcVar8_mg2;
+      pcVar8_mg2 = pcVar8;
     } while (cVar1 != '\0');
-    uVar5 = ~uVar5;
-    iVar2 = -1;
-    pcVar7 = local_108;
+    uVar6 = ~uVar6;
+    iVar3 = -1;
+    pcVar12 = local_108;
     do {
-      pcVar9 = pcVar7;
-      if (iVar2 == 0) break;
-      iVar2 = iVar2 + -1;
-      pcVar9 = pcVar7 + 1;
-      cVar1 = *pcVar7;
-      pcVar7 = pcVar9;
+      pcVar10 = pcVar12;
+      if (iVar3 == 0) break;
+      iVar3 = iVar3 + -1;
+      pcVar10 = pcVar12 + 1;
+      cVar1 = *pcVar12;
+      pcVar12 = pcVar10;
     } while (cVar1 != '\0');
-    pcVar7 = pcVar11 + -uVar5;
-    pcVar11 = pcVar9 + -1;
-    memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
-    uVar6 = 0;
-    pvVar3 = st::external_00000070(local_108,&local_248);
-    if (pvVar3 != (HANDLE)0xffffffff) {
+    pcVar8 = pcVar8 + -uVar6;
+    pcVar12 = pcVar10 + -1;
+    memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
+    pvVar4 = st::external_00000070(local_108,&local_248);
+    if (pvVar4 != (HANDLE)0xffffffff) {
       do {
         if (((byte)local_248.dwFileAttributes & 0x10) == 0) {
-          uVar5 = 0xffffffff;
-          pcVar7 = hFindFile;
+          uVar6 = 0xffffffff;
+          pcVar8 = hFindFile;
           do {
-            pcVar11 = pcVar7;
-            if (uVar5 == 0) break;
-            uVar5 = uVar5 - 1;
-            pcVar11 = pcVar7 + 1;
-            cVar1 = *pcVar7;
-            pcVar7 = pcVar11;
+            pcVar12 = pcVar8;
+            if (uVar6 == 0) break;
+            uVar6 = uVar6 - 1;
+            pcVar12 = pcVar8 + 1;
+            cVar1 = *pcVar8;
+            pcVar8 = pcVar12;
           } while (cVar1 != '\0');
-          uVar5 = ~uVar5;
-          pcVar7 = pcVar11 + -uVar5;
-          pcVar11 = local_108;
-          memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
-          uVar6 = 0;
+          uVar6 = ~uVar6;
+          pcVar8 = pcVar12 + -uVar6;
+          pcVar12 = local_108;
+          memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+          uVar7 = 0;
           st::fn_006B8280(local_108,local_108);
-          uVar5 = 0xffffffff;
-          pCVar8 = local_248.cFileName;
+          uVar6 = 0xffffffff;
+          pCVar9 = local_248.cFileName;
           do {
-            pCVar10 = pCVar8;
-            if (uVar5 == 0) break;
-            uVar5 = uVar5 - 1;
-            pCVar10 = pCVar8 + 1;
-            cVar1 = *pCVar8;
-            pCVar8 = pCVar10;
+            pCVar11 = pCVar9;
+            if (uVar6 == 0) break;
+            uVar6 = uVar6 - 1;
+            pCVar11 = pCVar9 + 1;
+            cVar1 = *pCVar9;
+            pCVar9 = pCVar11;
           } while (cVar1 != '\0');
-          uVar5 = ~uVar5;
-          iVar2 = -1;
-          pcVar7 = local_108;
+          uVar6 = ~uVar6;
+          iVar3 = -1;
+          pcVar8 = local_108;
           do {
-            pcVar11 = pcVar7;
-            if (iVar2 == 0) break;
-            iVar2 = iVar2 + -1;
-            pcVar11 = pcVar7 + 1;
-            cVar1 = *pcVar7;
-            pcVar7 = pcVar11;
+            pcVar12 = pcVar8;
+            if (iVar3 == 0) break;
+            iVar3 = iVar3 + -1;
+            pcVar12 = pcVar8 + 1;
+            cVar1 = *pcVar8;
+            pcVar8 = pcVar12;
           } while (cVar1 != '\0');
-          pCVar8 = pCVar10 + -uVar5;
-          pcVar7 = pcVar11 + -1;
-          memmove(pcVar7, pCVar8, uVar5); /* compiler REP MOVS byte copy */
-          uVar6 = 0;
+          pCVar9 = pCVar11 + -uVar6;
+          pcVar8 = pcVar12 + -1;
+          memmove(pcVar8, pCVar9, uVar6); /* compiler REP MOVS byte copy */
+          uVar7 = 0;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar2 = (*(code *)param_4)(local_108,&local_248,0,param_5);
-          if (iVar2 != 0) {
-            st::external_00000072(pvVar3);
-            return iVar2;
+          iVar3 = (*(code *)param_4)(local_108,&local_248,0,param_5);
+          if (iVar3 != 0) {
+            st::external_00000072(pvVar4);
+            return iVar3;
           }
         }
-        BVar4 = st::external_00000071(pvVar3,&local_248);
-      } while (BVar4 != 0);
+        BVar5 = st::external_00000071(pvVar4,&local_248);
+      } while (BVar5 != 0);
     }
-    st::external_00000072(pvVar3);
+    st::external_00000072(pvVar4);
     if ((param_6 & 1) == 0) {
-      uVar5 = 0xffffffff;
-      pcVar7 = hFindFile;
+      uVar6 = 0xffffffff;
+      pcVar8 = hFindFile;
       do {
-        pcVar11 = pcVar7;
-        if (uVar5 == 0) break;
-        uVar5 = uVar5 - 1;
-        pcVar11 = pcVar7 + 1;
-        cVar1 = *pcVar7;
-        pcVar7 = pcVar11;
+        pcVar12 = pcVar8;
+        if (uVar6 == 0) break;
+        uVar6 = uVar6 - 1;
+        pcVar12 = pcVar8 + 1;
+        cVar1 = *pcVar8;
+        pcVar8 = pcVar12;
       } while (cVar1 != '\0');
-      uVar5 = ~uVar5;
-      pcVar7 = pcVar11 + -uVar5;
-      pcVar11 = local_108;
-      memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
-      uVar6 = 0;
+      uVar6 = ~uVar6;
+      pcVar8 = pcVar12 + -uVar6;
+      pcVar12 = local_108;
+      memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+      uVar7 = 0;
       st::fn_006B8280(local_108,local_108);
-      uVar5 = 0xffffffff;
-      pcVar7 = &DAT_007cc8bc;
+      uVar6 = 0xffffffff;
+      pcVar8 = &DAT_007cc8bc;
       do {
-        pcVar11 = pcVar7;
-        if (uVar5 == 0) break;
-        uVar5 = uVar5 - 1;
-        pcVar11 = pcVar7 + 1;
-        cVar1 = *pcVar7;
-        pcVar7 = pcVar11;
+        pcVar12 = pcVar8;
+        if (uVar6 == 0) break;
+        uVar6 = uVar6 - 1;
+        pcVar12 = pcVar8 + 1;
+        cVar1 = *pcVar8;
+        pcVar8 = pcVar12;
       } while (cVar1 != '\0');
-      uVar5 = ~uVar5;
-      iVar2 = -1;
-      pcVar7 = local_108;
+      uVar6 = ~uVar6;
+      iVar3 = -1;
+      pcVar8 = local_108;
       do {
-        pcVar9 = pcVar7;
-        if (iVar2 == 0) break;
-        iVar2 = iVar2 + -1;
-        pcVar9 = pcVar7 + 1;
-        cVar1 = *pcVar7;
-        pcVar7 = pcVar9;
+        pcVar10 = pcVar8;
+        if (iVar3 == 0) break;
+        iVar3 = iVar3 + -1;
+        pcVar10 = pcVar8 + 1;
+        cVar1 = *pcVar8;
+        pcVar8 = pcVar10;
       } while (cVar1 != '\0');
-      pcVar7 = pcVar11 + -uVar5;
-      pcVar11 = pcVar9 + -1;
-      memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
-      uVar6 = 0;
-      pvVar3 = st::external_00000070(local_108,&local_248);
-      if (pvVar3 == (HANDLE)0xffffffff) {
+      pcVar8 = pcVar12 + -uVar6;
+      pcVar12 = pcVar10 + -1;
+      memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+      uVar7 = 0;
+      pvVar4 = st::external_00000070(local_108,&local_248);
+      if (pvVar4 == (HANDLE)0xffffffff) {
         return -0x6f;
       }
       do {
         if ((((byte)local_248.dwFileAttributes & 0x10) != 0) && (local_248.cFileName[0] != '.')) {
-          uVar5 = 0xffffffff;
-          pcVar7 = hFindFile;
+          uVar6 = 0xffffffff;
+          pcVar8 = hFindFile;
           do {
-            pcVar11 = pcVar7;
-            if (uVar5 == 0) break;
-            uVar5 = uVar5 - 1;
-            pcVar11 = pcVar7 + 1;
-            cVar1 = *pcVar7;
-            pcVar7 = pcVar11;
+            pcVar12 = pcVar8;
+            if (uVar6 == 0) break;
+            uVar6 = uVar6 - 1;
+            pcVar12 = pcVar8 + 1;
+            cVar1 = *pcVar8;
+            pcVar8 = pcVar12;
           } while (cVar1 != '\0');
-          uVar5 = ~uVar5;
-          pcVar7 = pcVar11 + -uVar5;
-          pcVar11 = local_108;
-          memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
-          uVar6 = 0;
+          uVar6 = ~uVar6;
+          pcVar8 = pcVar12 + -uVar6;
+          pcVar12 = local_108;
+          memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+          uVar7 = 0;
           st::fn_006B8280(local_108,local_108);
-          uVar5 = 0xffffffff;
-          pCVar8 = local_248.cFileName;
+          uVar6 = 0xffffffff;
+          pCVar9 = local_248.cFileName;
           do {
-            pCVar10 = pCVar8;
-            if (uVar5 == 0) break;
-            uVar5 = uVar5 - 1;
-            pCVar10 = pCVar8 + 1;
-            cVar1 = *pCVar8;
-            pCVar8 = pCVar10;
+            pCVar11 = pCVar9;
+            if (uVar6 == 0) break;
+            uVar6 = uVar6 - 1;
+            pCVar11 = pCVar9 + 1;
+            cVar1 = *pCVar9;
+            pCVar9 = pCVar11;
           } while (cVar1 != '\0');
-          uVar5 = ~uVar5;
-          iVar2 = -1;
-          pcVar7 = local_108;
+          uVar6 = ~uVar6;
+          iVar3 = -1;
+          pcVar8 = local_108;
           do {
-            pcVar11 = pcVar7;
-            if (iVar2 == 0) break;
-            iVar2 = iVar2 + -1;
-            pcVar11 = pcVar7 + 1;
-            cVar1 = *pcVar7;
-            pcVar7 = pcVar11;
+            pcVar12 = pcVar8;
+            if (iVar3 == 0) break;
+            iVar3 = iVar3 + -1;
+            pcVar12 = pcVar8 + 1;
+            cVar1 = *pcVar8;
+            pcVar8 = pcVar12;
           } while (cVar1 != '\0');
-          pCVar8 = pCVar10 + -uVar5;
-          pcVar7 = pcVar11 + -1;
-          memmove(pcVar7, pCVar8, uVar5); /* compiler REP MOVS byte copy */
+          pCVar9 = pCVar11 + -uVar6;
+          pcVar8 = pcVar12 + -1;
+          memmove(pcVar8, pCVar9, uVar6); /* compiler REP MOVS byte copy */
           iVar2 = st::fn_00725910(local_108,text,&local_248,param_4,param_5,0);
           if (iVar2 != 0) {
-            st::external_00000072(pvVar3);
+            st::external_00000072(pvVar4);
             return iVar2;
           }
         }
-        BVar4 = st::external_00000071(pvVar3,&local_248);
-      } while (BVar4 != 0);
-      st::external_00000072(pvVar3);
+        BVar5 = st::external_00000071(pvVar4,&local_248);
+      } while (BVar5 != 0);
+      st::external_00000072(pvVar4);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar2 = (*(code *)param_4)(hFindFile,param_3,2,param_5);
+    iVar3 = (*(code *)param_4)(hFindFile,param_3,2,param_5);
   }
-  return iVar2;
+  return iVar3;
 }
 
 // 00725C20 FUN_00725c20
@@ -1707,7 +1714,7 @@ void __cdecl st::fn_00725E30(int *param_1)
     if (0 < *(short *)(iVar1 + 0x23)) {
       do {
         if (*(cMf32 **)(iVar1 + 0x25) == nullptr) {
-          st::fn_006AB060((void **)(iVar1 + 0x2d + iVar2 * 4));
+          st::fn_006AB060((void *)(iVar1 + 0x2d + iVar2 * 4));
         }
         else {
           st::fn_006F20E0(*(cMf32 **)(iVar1 + 0x25),(uint *)(iVar1 + 0x2d + iVar2 * 4));
@@ -1716,7 +1723,7 @@ void __cdecl st::fn_00725E30(int *param_1)
         iVar2 = iVar2 + 1;
       } while (iVar2 < *(short *)(iVar1 + 0x23));
     }
-    st::fn_006AB060((void **)param_1);
+    st::fn_006AB060(param_1);
   }
   return;
 }
@@ -1745,7 +1752,7 @@ void __cdecl st::fn_00726260(uint *param_1)
         iVar3 = iVar3 + 10;
       } while (iVar2 < (int)psVar1[1] * (int)*psVar1);
     }
-    st::fn_006AB060((void **)param_1);
+    st::fn_006AB060(param_1);
   }
   return;
 }
@@ -1770,9 +1777,9 @@ void __cdecl st::fn_00726870(int *param_1)
           iVar2 = iVar2 + 1;
         } while (iVar2 < *piVar1);
       }
-      st::fn_006AB060((void **)(*param_1 + 0x11));
+      st::fn_006AB060((void *)(*param_1 + 0x11));
     }
-    st::fn_006AB060((void **)param_1);
+    st::fn_006AB060(param_1);
   }
   return;
 }
@@ -1789,7 +1796,7 @@ void __cdecl st::fn_00726BD0(int *param_1)
     if (*(cMf32 **)(iVar1 + 2) != nullptr) {
       st::fn_006F20E0(*(cMf32 **)(iVar1 + 2),(uint *)(iVar1 + 10));
     }
-    st::fn_006AB060((void **)param_1);
+    st::fn_006AB060(param_1);
   }
   return;
 }
@@ -2082,6 +2089,7 @@ void st::fn_00727230(int *param_1)
   int iVar2;
   uint uVar3;
   int *piVar4;
+  int *piVar4_mg2;
   uint uVar5;
   uint uVar6;
   uint uVar7;
@@ -2453,15 +2461,15 @@ LAB_007275f0:
         local_8 = iVar8;
       } while (iVar8 != 0 && bVar16);
 LAB_007278f0:
-      piVar4 = param_1;
+      piVar4_mg2 = param_1;
       int scalar_param_1 = DAT_0085707c + (DAT_00857064 + iVar2) * DAT_00857090 * 2; /* split integer lifetime from pointer-typed SSA storage */
       local_8 = (DAT_008570ec - DAT_00857064) - iVar2;
       do {
-        uVar1 = piVar4[4];
-        puVar15 = (uint *)(*piVar4 * 2 + scalar_param_1);
+        uVar1 = piVar4_mg2[4];
+        puVar15 = (uint *)(*piVar4_mg2 * 2 + scalar_param_1);
         if (0 < (int)uVar1) {
-          uVar3 = piVar4[1];
-          iVar2 = piVar4[5];
+          uVar3 = piVar4_mg2[1];
+          iVar2 = piVar4_mg2[5];
           uVar5 = uVar1;
           if (((uint)puVar15 & 2) != 0) {
             *(short *)puVar15 = (short)(uVar3 >> 0x10);
@@ -2485,7 +2493,7 @@ LAB_007278f0:
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0072797d:
         param_1 = (int *)((int)param_1 + DAT_00857090 * 2);
-        piVar4 = piVar4 + 8;
+        piVar4_mg2 = piVar4_mg2 + 8;
         iVar2 = local_8 + -1;
         bVar16 = 0 < local_8;
         local_8 = iVar2;
@@ -2717,67 +2725,68 @@ void __cdecl st::fn_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_0072
 {
   undefined1 uVar1;
   uint uVar2;
+  uint uVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_ECX;
-  int iVar3;
-  uint uVar4;
-  uint *puVar5;
-  uint uVar6;
-  int iVar7;
-  undefined1 *puVar8;
+  int iVar4;
+  uint uVar5;
+  uint *puVar6;
+  uint uVar7;
+  int iVar8;
+  undefined1 *puVar9;
   uint local_c;
 
   if ((((int)DAT_008570dc < (int)param_2->field_0024) &&
       ((int)param_1->field_0024 < (int)DAT_0085705c)) &&
      ((int)param_1->field_0024 >> 0x10 < (int)param_2->field_0024 >> 0x10)) {
     local_c = param_1->field_001C;
-    iVar3 = param_2->field_001C - local_c;
+    iVar4 = param_2->field_001C - local_c;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    iVar3 = (int)(CONCAT44(iVar3 >> 0x10,iVar3 * 0x10000) /
+    iVar4 = (int)(CONCAT44(iVar4 >> 0x10,iVar4 * 0x10000) /
                  (longlong)
                  (int)((param_2->field_0024 & 0xffff0000) - (param_1->field_0024 & 0xffff0000)));
-    uVar2 = param_2->field_0024 & 0xffff0000;
-    if ((int)DAT_0085705c <= (int)uVar2) {
-      uVar2 = DAT_0085705c;
+    uVar3 = param_2->field_0024 & 0xffff0000;
+    if ((int)DAT_0085705c <= (int)uVar3) {
+      uVar3 = DAT_0085705c;
     }
-    uVar6 = param_1->field_0024 & 0xffff0000;
-    if ((int)uVar6 < (int)DAT_008570dc) {
-      uVar2 = st::fn_006DB5F0(iVar3,DAT_008570dc - uVar6);
+    uVar7 = param_1->field_0024 & 0xffff0000;
+    if ((int)uVar7 < (int)DAT_008570dc) {
+      uVar2 = st::fn_006DB5F0(iVar4,DAT_008570dc - uVar7);
       local_c = local_c + uVar2;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar2 = extraout_ECX;
-      uVar6 = DAT_008570dc;
+      uVar3 = extraout_ECX;
+      uVar7 = DAT_008570dc;
     }
     uVar1 = DAT_008570f8;
-    if (uVar2 - uVar6 != 0 && (int)uVar6 <= (int)uVar2) {
-      iVar7 = (uVar6 >> 0x10) + DAT_00857090 * DAT_00857098;
-      puVar5 = (uint *)(iVar7 * 2 + DAT_0085707c);
-      uVar6 = uVar2 - uVar6 >> 0x10;
-      puVar8 = (undefined1 *)(iVar7 + DAT_0085708c);
-      for (uVar2 = uVar6; uVar2 != 0; uVar2 = uVar2 - 1) {
-        *puVar8 = uVar1;
-        puVar8 = puVar8 + 1;
+    if (uVar3 - uVar7 != 0 && (int)uVar7 <= (int)uVar3) {
+      iVar8 = (uVar7 >> 0x10) + DAT_00857090 * DAT_00857098;
+      puVar6 = (uint *)(iVar8 * 2 + DAT_0085707c);
+      uVar7 = uVar3 - uVar7 >> 0x10;
+      puVar9 = (undefined1 *)(iVar8 + DAT_0085708c);
+      for (uVar3 = uVar7; uVar3 != 0; uVar3 = uVar3 - 1) {
+        *puVar9 = uVar1;
+        puVar9 = puVar9 + 1;
       }
-      uVar2 = uVar6;
-      if (((uint)puVar5 & 2) != 0) {
-        *(short *)puVar5 = (short)(local_c >> 0x10);
-        puVar5 = (uint *)((int)puVar5 + 2);
-        local_c = local_c + iVar3;
-        uVar2 = uVar6 - 1;
-        if (uVar2 == 0 || uVar6 == 0) {
+      uVar3 = uVar7;
+      if (((uint)puVar6 & 2) != 0) {
+        *(short *)puVar6 = (short)(local_c >> 0x10);
+        puVar6 = (uint *)((int)puVar6 + 2);
+        local_c = local_c + iVar4;
+        uVar3 = uVar7 - 1;
+        if (uVar3 == 0 || uVar7 == 0) {
           return;
         }
       }
-      while (1 < (int)uVar2) {
-        uVar4 = local_c + iVar3;
-        uVar6 = local_c >> 0x10;
-        local_c = uVar4 + iVar3;
-        *puVar5 = uVar6 | uVar4 & 0xffff0000;
-        puVar5 = puVar5 + 1;
-        uVar2 = uVar2 - 2;
+      while (1 < (int)uVar3) {
+        uVar5 = local_c + iVar4;
+        uVar7 = local_c >> 0x10;
+        local_c = uVar5 + iVar4;
+        *puVar6 = uVar7 | uVar5 & 0xffff0000;
+        puVar6 = puVar6 + 1;
+        uVar3 = uVar3 - 2;
       }
-      if ((uVar2 - 2 & 1) != 0) {
-        *(short *)puVar5 = (short)(local_c >> 0x10);
+      if ((uVar3 - 2 & 1) != 0) {
+        *(short *)puVar6 = (short)(local_c >> 0x10);
       }
     }
   }
@@ -3697,10 +3706,9 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
   int iVar5;
   uint *puVar6;
   uint uVar7;
-  byte *pbVar8;
-  uint uVar9;
-  byte *pbVar10;
-  int iVar11;
+  uint uVar8;
+  byte *pbVar9;
+  int iVar10;
   int local_74;
   byte *local_70;
   int local_6c;
@@ -3729,6 +3737,7 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
   uint local_10;
   int local_c;
   uint local_8;
+  byte *pbVar8;
 
   pbVar8 = param_2;
   local_60 = 1;
@@ -3762,37 +3771,37 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
     local_4c = uVar7;
     local_3c = uVar1;
   }
-  iVar11 = local_4c - local_3c;
+  iVar10 = local_4c - local_3c;
   uVar4 = local_48 - local_38;
   local_28 = (byte *)(local_44 - local_34);
-  uVar9 = (int)uVar4 >> 0x1f;
+  uVar8 = (int)uVar4 >> 0x1f;
   if ((int)uVar7 < (int)uVar1) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_10 = st::fn_0072A520(param_10);
-    iVar5 = (uVar4 ^ uVar9) - uVar9;
-    if (iVar5 < iVar11) {
-      iVar5 = iVar11;
+    iVar5 = (uVar4 ^ uVar8) - uVar8;
+    if (iVar5 < iVar10) {
+      iVar5 = iVar10;
     }
     local_8 = 1 << ((byte)((uint)iVar5 >> 0x10) & 0x1f);
   }
-  if (iVar11 < (int)((uVar4 ^ uVar9) - uVar9)) {
+  if (iVar10 < (int)((uVar4 ^ uVar8) - uVar8)) {
     local_c = (int)local_38 >> 0x10;
     iVar5 = (int)local_48 >> 0x10;
     if (local_c < iVar5) {
-      local_60 = iVar11 / (iVar5 - local_c);
+      local_60 = iVar10 / (iVar5 - local_c);
       local_58 = (int)local_28 / (iVar5 - local_c);
-      iVar11 = param_5[1];
-      if (local_c < iVar11) {
-        local_c = iVar11 - local_c;
+      iVar10 = param_5[1];
+      if (local_c < iVar10) {
+        local_c = iVar10 - local_c;
         local_3c = local_3c + local_c * local_60;
         local_34 = local_34 + local_c * local_58;
         local_8 = local_8 >> ((byte)local_c & 0x1f);
-        local_c = iVar11;
+        local_c = iVar10;
       }
-      iVar11 = param_5[3];
-      if (iVar11 <= iVar5) {
-        local_4c = local_4c - ((iVar5 - iVar11) + 1) * local_60;
-        iVar5 = iVar11 + -1;
+      iVar10 = param_5[3];
+      if (iVar10 <= iVar5) {
+        local_4c = local_4c - ((iVar5 - iVar10) + 1) * local_60;
+        iVar5 = iVar10 + -1;
       }
       local_14 = (iVar5 - local_c) + 1;
       if (local_14 < 1) {
@@ -3803,19 +3812,19 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
     }
     else {
       if (iVar5 != local_c) {
-        local_60 = iVar11 / (local_c - iVar5);
+        local_60 = iVar10 / (local_c - iVar5);
         local_58 = (int)local_28 / (local_c - iVar5);
       }
       if (param_5[3] <= local_c) {
-        iVar11 = (local_c - param_5[3]) + 1;
-        local_3c = local_3c + iVar11 * local_60;
-        local_34 = local_34 + iVar11 * local_58;
+        iVar10 = (local_c - param_5[3]) + 1;
+        local_3c = local_3c + iVar10 * local_60;
+        local_34 = local_34 + iVar10 * local_58;
         local_c = param_5[3] + -1;
       }
-      iVar11 = param_5[1];
-      if (iVar5 < iVar11) {
-        local_4c = local_4c - (iVar11 - iVar5) * local_60;
-        iVar5 = iVar11;
+      iVar10 = param_5[1];
+      if (iVar5 < iVar10) {
+        local_4c = local_4c - (iVar10 - iVar5) * local_60;
+        iVar5 = iVar10;
       }
       local_14 = (local_c - iVar5) + 1;
       if (local_14 == 0) {
@@ -3828,12 +3837,12 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = (uint *)param_9;
     iVar5 = (int)local_3c >> 0x10;
-    iVar11 = -local_2c;
+    iVar10 = -local_2c;
     local_18 = param_8 + -1;
     if (-1 < local_18) {
       local_24 = (byte *)(local_3c & 0xffff);
       local_20 = (byte *)(local_10 - iVar5);
-      local_28 = (byte *)(iVar11 + iVar5);
+      local_28 = (byte *)(iVar10 + iVar5);
       local_2c = param_8;
       do {
         local_50 = param_10;
@@ -3845,20 +3854,20 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
           local_68 = param_5[2];
           local_70 = local_28;
           local_6c = *param_5;
-          st::fn_0072AA60(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
+          st::fn_0072AA60(param_1 + local_c * (int)param_2 + iVar10 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
                        (STField<int>(this,0x14) +
-                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x28) * local_c + iVar10 + iVar5) * 2),puVar6,&local_74
                        ,param_3);
         }
         else {
-          st::fn_0072AB80(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
+          st::fn_0072AB80(param_1 + local_c * (int)param_2 + iVar10 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
                        (STField<int>(this,0x14) +
-                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x28) * local_c + iVar10 + iVar5) * 2),puVar6,&local_74
                        ,param_3);
         }
-        iVar11 = iVar11 + 1;
+        iVar10 = iVar10 + 1;
         local_28 = local_28 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 0x40;
@@ -3869,32 +3878,32 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
     if (-1 < param_6 + -1) {
       local_20 = (byte *)(local_10 - iVar5);
       local_24 = (byte *)(local_3c & 0xffff);
-      pbVar8 = (byte *)(iVar11 + iVar5);
+      pbVar9 = (byte *)(iVar10 + iVar5);
       do {
         local_50 = param_10;
         local_74 = local_14;
         local_54 = local_8;
         local_5c = local_34;
         local_64 = (uint)local_24;
-        if (((int)pbVar8 < *param_5) || (param_5[2] <= (int)(pbVar8 + (int)local_20))) {
+        if (((int)pbVar9 < *param_5) || (param_5[2] <= (int)(pbVar9 + (int)local_20))) {
           local_68 = param_5[2];
-          local_70 = pbVar8;
+          local_70 = pbVar9;
           local_6c = *param_5;
-          st::fn_0072A8A0(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
+          st::fn_0072A8A0(param_1 + local_c * (int)param_2 + iVar10 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
                        (STField<int>(this,0x14) +
-                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x28) * local_c + iVar10 + iVar5) * 2),puVar6,&local_74
                        ,param_7);
         }
         else {
-          st::fn_0072A9D0(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
+          st::fn_0072A9D0(param_1 + local_c * (int)param_2 + iVar10 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
                        (STField<int>(this,0x14) +
-                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x28) * local_c + iVar10 + iVar5) * 2),puVar6,&local_74
                        ,param_7);
         }
-        iVar11 = iVar11 + 1;
-        pbVar8 = pbVar8 + 1;
+        iVar10 = iVar10 + 1;
+        pbVar9 = pbVar9 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = param_6 + -1;
       } while (param_6 != 0);
@@ -3904,7 +3913,7 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
     if (-1 < local_18) {
       local_24 = (byte *)(local_3c & 0xffff);
       local_20 = (byte *)(local_10 - iVar5);
-      pbVar8 = (byte *)(iVar11 + iVar5);
+      pbVar9 = (byte *)(iVar10 + iVar5);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_7 = local_18 + 1;
       do {
@@ -3913,25 +3922,25 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
         local_64 = (uint)local_24;
         local_74 = local_14;
         local_5c = local_34;
-        if (((int)pbVar8 < *param_5) || (param_5[2] <= (int)(pbVar8 + (int)local_20))) {
+        if (((int)pbVar9 < *param_5) || (param_5[2] <= (int)(pbVar9 + (int)local_20))) {
           local_68 = param_5[2];
-          local_70 = pbVar8;
+          local_70 = pbVar9;
           local_6c = *param_5;
-          st::fn_0072AA60(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
+          st::fn_0072AA60(param_1 + local_c * (int)param_2 + iVar10 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
                        (STField<int>(this,0x14) +
-                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x28) * local_c + iVar10 + iVar5) * 2),puVar6,&local_74
                        ,param_3);
         }
         else {
-          st::fn_0072AB80(param_1 + local_c * (int)param_2 + iVar11 + iVar5 + iVar3,(int)local_1c,
+          st::fn_0072AB80(param_1 + local_c * (int)param_2 + iVar10 + iVar5 + iVar3,(int)local_1c,
                        (ushort *)
                        (STField<int>(this,0x14) +
-                       (STField<int>(this,0x28) * local_c + iVar11 + iVar5) * 2),puVar6,&local_74
+                       (STField<int>(this,0x28) * local_c + iVar10 + iVar5) * 2),puVar6,&local_74
                        ,param_3);
         }
-        iVar11 = iVar11 + 1;
-        pbVar8 = pbVar8 + 1;
+        iVar10 = iVar10 + 1;
+        pbVar9 = pbVar9 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + -0x40;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -3941,10 +3950,10 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
   }
   else {
     iVar5 = (int)local_3c >> 0x10;
-    iVar11 = (int)local_4c >> 0x10;
-    if (iVar11 != iVar5) {
-      local_60 = (int)uVar4 / (iVar11 - iVar5);
-      local_58 = (int)local_28 / (iVar11 - iVar5);
+    iVar10 = (int)local_4c >> 0x10;
+    if (iVar10 != iVar5) {
+      local_60 = (int)uVar4 / (iVar10 - iVar5);
+      local_58 = (int)local_28 / (iVar10 - iVar5);
     }
     iVar2 = *param_5;
     if (iVar5 < iVar2) {
@@ -3955,14 +3964,14 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
       iVar5 = iVar2;
     }
     iVar2 = param_5[2];
-    if (iVar2 <= iVar11) {
-      local_48 = local_48 - ((iVar11 - iVar2) + 1) * local_60;
-      iVar11 = iVar2 + -1;
+    if (iVar2 <= iVar10) {
+      local_48 = local_48 - ((iVar10 - iVar2) + 1) * local_60;
+      iVar10 = iVar2 + -1;
     }
-    local_14 = (iVar11 - iVar5) + 1;
+    local_14 = (iVar10 - iVar5) + 1;
     if (0 < local_14) {
       local_1c = (byte *)((int)local_48 >> 0x10);
-      pbVar10 = (byte *)-local_2c;
+      pbVar9 = (byte *)-local_2c;
       local_c = (int)local_38 >> 0x10;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = (uint *)param_9;
@@ -3970,9 +3979,9 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
         local_18 = param_8 + -1;
         if (-1 < local_18) {
           local_10 = local_38 & 0xffff;
-          local_20 = pbVar10 + local_c;
+          local_20 = pbVar9 + local_c;
           local_24 = param_1 + (int)local_20 * (int)param_2 + iVar5 + iVar3;
-          iVar11 = (int)local_1c - local_c;
+          iVar10 = (int)local_1c - local_c;
           local_28 = (byte *)param_8;
           do {
             local_54 = local_8;
@@ -3980,7 +3989,7 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
             local_50 = param_10;
             local_64 = local_10;
             local_5c = local_34;
-            if (((int)local_20 < param_5[1]) || (param_5[3] <= (int)(local_20 + iVar11))) {
+            if (((int)local_20 < param_5[1]) || (param_5[3] <= (int)(local_20 + iVar10))) {
               local_68 = param_5[3];
               local_70 = local_20;
               local_6c = param_5[1];
@@ -4004,16 +4013,16 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
             local_28 = (byte *)((int)local_28 + -1);
           } while (local_28 != nullptr);
           local_28 = nullptr;
-          pbVar10 = pbVar10 + param_8;
+          pbVar9 = pbVar9 + param_8;
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_2 = pbVar10;
+        param_2 = pbVar9;
         if (-1 < param_6 + -1) {
           local_10 = local_38 & 0xffff;
           local_24 = param_2 + local_c;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = (uint *)(param_1 + (int)local_24 * (int)pbVar8 + iVar5 + iVar3);
-          iVar11 = (int)local_1c - local_c;
+          iVar10 = (int)local_1c - local_c;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + param_6;
           do {
@@ -4022,7 +4031,7 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
             local_50 = param_10;
             local_64 = local_10;
             local_5c = local_34;
-            if (((int)local_24 < param_5[1]) || (param_5[3] <= (int)(local_24 + iVar11))) {
+            if (((int)local_24 < param_5[1]) || (param_5[3] <= (int)(local_24 + iVar10))) {
               local_68 = param_5[3];
               local_70 = local_24;
               local_6c = param_5[1];
@@ -4050,9 +4059,9 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
         param_3 = (uint *)(param_8 * 0x100 + -0x100 + param_9);
         if (-1 < local_18) {
           local_10 = local_38 & 0xffff;
-          pbVar10 = param_2 + local_c;
+          pbVar9 = param_2 + local_c;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = param_1 + (int)pbVar10 * (int)pbVar8 + iVar5 + iVar3;
+          param_1 = param_1 + (int)pbVar9 * (int)pbVar8 + iVar5 + iVar3;
           iVar3 = (int)local_1c - local_c;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (byte *)(local_18 + 1);
@@ -4062,26 +4071,26 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
             local_64 = local_10;
             local_74 = local_14;
             local_5c = local_34;
-            if (((int)pbVar10 < param_5[1]) || (param_5[3] <= (int)(pbVar10 + iVar3))) {
+            if (((int)pbVar9 < param_5[1]) || (param_5[3] <= (int)(pbVar9 + iVar3))) {
               local_68 = param_5[3];
-              local_70 = pbVar10;
+              local_70 = pbVar9;
               local_6c = param_5[1];
               st::fn_0072A6F0(param_1,(int)pbVar8,
                            (ushort *)
                            (STField<int>(this,0x14) +
-                           ((int)pbVar10 * STField<int>(this,0x28) + iVar5) * 2),
+                           ((int)pbVar9 * STField<int>(this,0x28) + iVar5) * 2),
                            STField<int>(this,0x28),&local_74,param_3);
             }
             else {
               st::fn_0072A810(param_1,(int)pbVar8,
                            (ushort *)
                            (STField<int>(this,0x14) +
-                           ((int)pbVar10 * STField<int>(this,0x28) + iVar5) * 2),
+                           ((int)pbVar9 * STField<int>(this,0x28) + iVar5) * 2),
                            STField<int>(this,0x28),&local_74,param_3);
             }
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = param_1 + (int)pbVar8;
-            pbVar10 = pbVar10 + 1;
+            pbVar9 = pbVar9 + 1;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_3 = param_3 + -0x40;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -4094,10 +4103,10 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
         local_18 = param_8 + -1;
         if (-1 < local_18) {
           local_10 = local_38 & 0xffff;
-          local_20 = pbVar10 + local_c;
+          local_20 = pbVar9 + local_c;
           local_28 = (byte *)-(int)local_20;
           local_24 = param_1 + (int)local_20 * (int)param_2 + iVar5 + iVar3;
-          iVar11 = (int)local_1c - local_c;
+          iVar10 = (int)local_1c - local_c;
           local_2c = param_8;
           do {
             local_54 = local_8;
@@ -4105,7 +4114,7 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
             local_50 = param_10;
             local_64 = local_10;
             local_5c = local_34;
-            if (((int)local_20 < param_5[3]) && (param_5[1] <= (int)(local_20 + iVar11))) {
+            if (((int)local_20 < param_5[3]) && (param_5[1] <= (int)(local_20 + iVar10))) {
               st::fn_0072A810(local_24,-(int)param_2,
                            (ushort *)
                            (STField<int>(this,0x14) +
@@ -4130,17 +4139,17 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
             local_2c = local_2c + -1;
           } while (local_2c != 0);
           local_2c = 0;
-          pbVar10 = pbVar10 + param_8;
+          pbVar9 = pbVar9 + param_8;
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_2 = pbVar10;
+        param_2 = pbVar9;
         if (-1 < param_6 + -1) {
           local_10 = local_38 & 0xffff;
           local_24 = param_2 + local_c;
           local_28 = (byte *)-(int)local_24;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = (uint *)(param_1 + (int)local_24 * (int)pbVar8 + iVar5 + iVar3);
-          iVar11 = (int)local_1c - local_c;
+          iVar10 = (int)local_1c - local_c;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + param_6;
           do {
@@ -4149,7 +4158,7 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
             local_50 = param_10;
             local_64 = local_10;
             local_5c = local_34;
-            if (((int)local_24 < param_5[3]) && (param_5[1] <= (int)(local_24 + iVar11))) {
+            if (((int)local_24 < param_5[3]) && (param_5[1] <= (int)(local_24 + iVar10))) {
               st::fn_0072A660(param_3,-(int)pbVar8,
                            (ushort *)
                            (STField<int>(this,0x14) +
@@ -4178,11 +4187,11 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
         param_3 = (uint *)(param_8 * 0x100 + -0x100 + param_9);
         if (-1 < local_18) {
           local_10 = local_38 & 0xffff;
-          pbVar10 = param_2 + local_c;
+          pbVar9 = param_2 + local_c;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_2 = (byte *)-(int)pbVar10;
+          param_2 = (byte *)-(int)pbVar9;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = param_1 + (int)pbVar10 * (int)pbVar8 + iVar5 + iVar3;
+          param_1 = param_1 + (int)pbVar9 * (int)pbVar8 + iVar5 + iVar3;
           iVar3 = (int)local_1c - local_c;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_7 = local_18 + 1;
@@ -4192,11 +4201,11 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
             local_64 = local_10;
             local_74 = local_14;
             local_5c = local_34;
-            if (((int)pbVar10 < param_5[3]) && (param_5[1] <= (int)(pbVar10 + iVar3))) {
+            if (((int)pbVar9 < param_5[3]) && (param_5[1] <= (int)(pbVar9 + iVar3))) {
               st::fn_0072A810(param_1,-(int)pbVar8,
                            (ushort *)
                            (STField<int>(this,0x14) +
-                           ((int)pbVar10 * STField<int>(this,0x28) + iVar5) * 2),
+                           ((int)pbVar9 * STField<int>(this,0x28) + iVar5) * 2),
                            -STField<int>(this,0x28),&local_74,param_3);
             }
             else {
@@ -4206,14 +4215,14 @@ st::fn_007297E0(void *this,byte *param_1,byte *param_2,uint *param_3,uint *param
               st::fn_0072A6F0(param_1,-(int)pbVar8,
                            (ushort *)
                            (STField<int>(this,0x14) +
-                           ((int)pbVar10 * STField<int>(this,0x28) + iVar5) * 2),
+                           ((int)pbVar9 * STField<int>(this,0x28) + iVar5) * 2),
                            -STField<int>(this,0x28),&local_74,param_3);
             }
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 + -1;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = param_1 + (int)pbVar8;
-            pbVar10 = pbVar10 + 1;
+            pbVar9 = pbVar9 + 1;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_3 = param_3 + -0x40;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

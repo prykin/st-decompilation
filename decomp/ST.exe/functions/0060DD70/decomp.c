@@ -100,7 +100,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (local_20 < 0) {
       return local_14;
     }
-    if (pVVar2->field_0030 <= local_20) {
+    if ((int)pVVar2->field_0030 <= local_20) {
       return local_14;
     }
     iVar4 = g_centeredOffsets5[local_8] + local_24;
@@ -129,7 +129,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (local_24 < 0) {
       return local_14;
     }
-    if (pVVar3->field_0030 <= local_24) {
+    if ((int)pVVar3->field_0030 <= local_24) {
       return local_14;
     }
     iVar6 = g_centeredOffsets5[iVar6] + local_20;
@@ -160,7 +160,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (local_24 < 0) {
       return local_14;
     }
-    if (pVVar2->field_0030 <= local_24) {
+    if ((int)pVVar2->field_0030 <= local_24) {
       return local_14;
     }
     iVar4 = g_centeredOffsets5[local_8] + local_20;
@@ -188,7 +188,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (local_24 < 0) {
       return local_14;
     }
-    if (pVVar3->field_0030 <= local_24) {
+    if ((int)pVVar3->field_0030 <= local_24) {
       return local_14;
     }
     local_20 = g_centeredOffsets5[iVar6] + local_20;

@@ -1081,6 +1081,7 @@
 {"detail": "g_packedRecords_A62x8: unsupported display type 'PackedRecord_A62x8[8]'", "kind": "global_type_fallback"}
 {"detail": "g_playerRelationMatrix: unsupported display type 'byte[8][8]'", "kind": "global_type_fallback"}
 {"detail": "skipped exported struct tm", "kind": "host_type_reused"}
+{"detail": "CoCreateInstance: no matching function definition", "kind": "import_prototype_fallback"}
 {"detail": "InitializeCriticalSection: no matching function definition", "kind": "import_prototype_fallback"}
 {"detail": "LoadIconA: no matching function definition", "kind": "import_prototype_fallback"}
 {"detail": "_BinkClose_4: no matching function definition", "kind": "import_prototype_fallback"}

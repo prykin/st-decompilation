@@ -15,11 +15,13 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar4;
-  dword dVar5;
-  byte *pbVar6;
+  undefined4 *puVar3;
+  dword dVar4;
+  byte *pbVar5;
+  int iVar6;
   int iVar7;
-  DArrayTy *pDVar8;
+  DArrayTy *pDVar7;
+  int iVar8;
   uint uVar9;
   byte *pbVar10;
   bool bVar11;
@@ -58,71 +60,71 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x41f);
   }
   uVar9 = g_array_007FA158->count - 1;
-  pDVar8 = g_array_007FA158;
+  pDVar7 = g_array_007FA158;
   if ((int)uVar9 < 0) {
     g_currentExceptionFrame = local_6c.previous;
     return local_18;
   }
   do {
-    if (uVar9 < pDVar8->count) {
-      puVar4 = DArrayAt<undefined4>(pDVar8, uVar9);
+    if (uVar9 < pDVar7->count) {
+      puVar3 = DArrayAt<undefined4>(pDVar7, uVar9);
     }
     else {
-      puVar4 = nullptr;
+      puVar3 = nullptr;
     }
-    this = (STFishC *)*puVar4;
+    this = (STFishC *)*puVar3;
     if (((this != nullptr) && (this->field_0024 == param_1)) &&
-       ((local_10 = uVar9, dVar5 = this->slot_2C(), param_2 == 0 ||
-        (pDVar8 = g_array_007FA158, (int)param_2 == dVar5)))) {
-      iVar3 = 1;
+       ((local_10 = uVar9, dVar4 = this->slot_2C(), param_2 == 0 ||
+        (pDVar7 = g_array_007FA158, (int)param_2 == dVar4)))) {
+      iVar8 = 1;
       local_14 = 1;
       if ((param_4 != nullptr) && (*param_4 != 0)) {
         (*this->vtable->vfunc_74)((short)local_28);
         pbVar10 = local_28;
-        pbVar6 = param_4;
+        pbVar5 = param_4;
         do {
-          bVar1 = *pbVar6;
+          bVar1 = *pbVar5;
           bVar11 = bVar1 < *pbVar10;
           if (bVar1 != *pbVar10) {
 LAB_0067835d:
-            iVar7 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
+            iVar6 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
             goto LAB_00678362;
           }
           if (bVar1 == 0) break;
-          bVar1 = pbVar6[1];
+          bVar1 = pbVar5[1];
           bVar11 = bVar1 < pbVar10[1];
           if (bVar1 != pbVar10[1]) goto LAB_0067835d;
-          pbVar6 = pbVar6 + 2;
+          pbVar5 = pbVar5 + 2;
           pbVar10 = pbVar10 + 2;
         } while (bVar1 != 0);
-        iVar7 = 0;
+        iVar6 = 0;
 LAB_00678362:
-        if (iVar7 != 0) {
-          iVar3 = 0;
+        if (iVar6 != 0) {
+          iVar8 = 0;
           local_14 = 0;
         }
       }
-      pDVar8 = g_array_007FA158;
+      pDVar7 = g_array_007FA158;
       uVar9 = local_10;
-      if ((iVar3 != 0) &&
+      if ((iVar8 != 0) &&
          ((local_5 == -1 ||
-          (iVar7 = this->vfunc_6C(), pDVar8 = g_array_007FA158, uVar9 = local_10,
-          local_5 == iVar7)))) {
+          (iVar6 = this->vfunc_6C(), pDVar7 = g_array_007FA158, uVar9 = local_10,
+          local_5 == iVar6)))) {
         if ((0 < param_8) &&
            (((0 < param_9 && (0 < param_10)) &&
             ((STFishC::sub_004162B0(this,&local_8,&local_a,&local_c), local_8 < param_5 ||
              ((((local_a < param_6 || (local_c < param_7)) ||
                ((int)param_5 + (int)param_8 <= (int)local_8)) ||
               (((int)param_6 + (int)param_9 <= (int)local_a ||
-               (iVar3 = local_14, (int)param_7 + (int)param_10 <= (int)local_c)))))))))) {
-          iVar3 = 0;
+               (iVar8 = local_14, (int)param_7 + (int)param_10 <= (int)local_c)))))))))) {
+          iVar8 = 0;
         }
-        pDVar8 = g_array_007FA158;
+        pDVar7 = g_array_007FA158;
         uVar9 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((iVar3 != 0) && (param_11 != nullptr)) &&
-           (iVar3 = (*(code *)param_11)(param_1,local_10,this,param_12), pDVar8 = g_array_007FA158,
-           uVar9 = local_10, iVar3 != 0)) {
+        if (((iVar8 != 0) && (param_11 != nullptr)) &&
+           (iVar8 = (*(code *)param_11)(param_1,local_10,this,param_12), pDVar7 = g_array_007FA158,
+           uVar9 = local_10, iVar8 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
           return -1;
         }

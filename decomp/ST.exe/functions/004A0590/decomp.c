@@ -16,10 +16,11 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   STGroupBoatC *pSVar4;
   int iVar5;
   DArrayTy *array;
-  STBoatC *pSVar6;
-  uint uVar7;
+  STBoatC *pSVar5;
+  uint uVar6;
   int iVar8;
-  uint *puVar9;
+  uint *puVar7;
+  int iVar9;
   uint uVar11;
   InternalExceptionFrame local_80;
   uint local_3c;
@@ -89,10 +90,10 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
           DArrayGetElement(array,uVar11,&local_2c);
           DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
-            pSVar6 = (STBoatC *)
+            pSVar5 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar4->field_0024,STPiece<0,2>(local_c),CASE_1);
-            if (pSVar6 == nullptr) {
+            if (pSVar5 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xd2a);
@@ -103,7 +104,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
             local_34 = local_20;
             local_30 = local_2a;
             local_2e = local_28;
-            STBoatC::CmdToObj(pSVar6,CASE_8,&local_3c);
+            STBoatC::CmdToObj(pSVar5,CASE_8,&local_3c);
             array = local_1c;
           }
           uVar11 = uVar11 + 1;
@@ -118,18 +119,18 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
         do {
           DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
-            pSVar6 = (STBoatC *)
+            pSVar5 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar4->field_0024,STPiece<0,2>(local_c),CASE_1);
-            if (pSVar6 == nullptr) {
+            if (pSVar5 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xd3d);
             }
-            iVar5 = thunk_FUN_0045ff10((STGameObjC *)pSVar6);
-            if (iVar5 == 8) break;
-            uVar7 = STBoatC::CheckPBoxCmd(pSVar6,CASE_8);
-            if (uVar7 == 1) break;
+            iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar5);
+            if (iVar9 == 8) break;
+            uVar6 = STBoatC::CheckPBoxCmd(pSVar5,CASE_8);
+            if (uVar6 == 1) break;
           }
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < (int)local_8);

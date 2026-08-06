@@ -17,7 +17,7 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
   int iVar4;
   undefined4 *puVar5;
   char *pcVar6;
-  uint *resourceString;
+  char *resourceString;
   uint uVar7;
   ccFntTy *this_00;
   uint uVar8;
@@ -57,14 +57,14 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
       uVar8 = 0;
       iVar9 = -1;
       iVar4 = -2;
-      resourceString = (uint *)LoadResourceString(0x2521,g_hINSTANCE_00807618);
+      resourceString = LoadResourceString(0x2521,g_hINSTANCE_00807618);
       this_00 = g_startSystem_0081176C->field_0034;
     }
     else {
       puVar5 = &DAT_00807ddd;
-      resourceString = (uint *)&pSVar3->field_1CD4;
+      resourceString = &pSVar3->field_1CD4;
       pcVar6 = LoadResourceString(0x2520,g_hINSTANCE_00807618);
-      wsprintfA((LPSTR)resourceString,"&0%s\n&5%s&0?",pcVar6,puVar5);
+      wsprintfA(resourceString,"&0%s\n&5%s&0?",pcVar6,puVar5);
       this_00 = g_startSystem_0081176C->field_0034;
       iVar11 = -1;
       iVar10 = -1;
@@ -73,7 +73,7 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
       iVar4 = -2;
     }
     ccFntTy::WrTxt(this_00,resourceString,iVar4,iVar9,uVar8,iVar10,iVar11);
-    FUN_006b5440(pSVar3->field_1CB8,0,0,0x7d,(uint)pSVar3->field_1CC0,0,0xff);
+    FUN_006b5440(pSVar3->field_1CB8,0,0,0x7d,(tagBITMAPINFO *)pSVar3->field_1CC0,0,0xff);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

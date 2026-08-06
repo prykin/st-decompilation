@@ -26,9 +26,11 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this)
   AnonPointee_STGameObjC_01AD *pAVar10;
   AnonPointee_STGameObjC_01B1 *pAVar11;
   ushort *puVar12;
+  int local_EAX_402;
+  AnonPointee_STGameObjC_01B5 *pAVar13;
+  AnonPointee_STGameObjC_01B9 *pAVar14;
   int iVar13;
-  AnonPointee_STGameObjC_01B5 *pAVar14;
-  AnonPointee_STGameObjC_01B9 *pAVar15;
+  int iVar15;
   byte *puVar16;
   byte *pbVar17;
   byte *puVar18;
@@ -89,9 +91,10 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this)
       }
       else if (uVar2 != 0x1a4) {
 cf_common_exit_00419F6C:
-        iVar13 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0x54d,0,0,"%s",
-                                    "STGameObjC::SetSelfCheckFlag unknown game type");
-        if (iVar13 == 0) {
+        local_EAX_402 =
+             ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0x54d,0,0,"%s",
+                                "STGameObjC::SetSelfCheckFlag unknown game type");
+        if (local_EAX_402 == 0) {
           return;
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -125,10 +128,10 @@ cf_common_exit_00419F6C:
         this->field_01A5 = pvVar7;
         pvVar7 = Library::DKW::LIB::MemAlloc(0xc);
         this->field_01A9 = pvVar7;
+        pAVar13 = Library::DKW::LIB::MemAlloc(0xb);
+        this->field_01B5 = pAVar13;
         pAVar14 = Library::DKW::LIB::MemAlloc(0xb);
-        this->field_01B5 = pAVar14;
-        pAVar15 = Library::DKW::LIB::MemAlloc(0xb);
-        this->field_01B9 = pAVar15;
+        this->field_01B9 = pAVar14;
       }
       else if (uVar2 != 0x3e9) goto cf_common_exit_00419F6C;
     }
@@ -137,12 +140,12 @@ cf_common_exit_00419F6C:
   pbVar6 = this->field_0121;
   pbVar17 = this->field_011D;
   memmove(pbVar17, pbVar6, 0x36); /* compiler REP MOVS byte copy */
-  iVar13 = 0;
+  iVar15 = 0;
   (*this->vtable->vfunc_34)((short)this->field_0129);
   puVar16 = (byte *)(this->field_0129);
   puVar18 = (byte *)(this->field_0125);
   memmove(puVar18, puVar16, 0x5c); /* compiler REP MOVS byte copy */
-  iVar13 = 0;
+  iVar15 = 0;
   uVar2 = this->field_0020;
   if (uVar2 < 0x1af) {
     if (uVar2 == 0x1ae) {
@@ -290,12 +293,12 @@ cf_common_exit_00419F6C:
       puVar18[1] = puVar16[1];
       puVar18[2] = puVar16[2];
       (*this->vtable->vfunc_5C)((short)this->field_01B9);
-      pAVar15 = this->field_01B9;
-      pAVar14 = this->field_01B5;
-      pAVar14->field_0000 = pAVar15->field_0000;
-      pAVar14->field_0004 = pAVar15->field_0004;
-      pAVar14->field_0008 = pAVar15->field_0008;
-      pAVar14->field_000A = pAVar15->field_000A;
+      pAVar14 = this->field_01B9;
+      pAVar13 = this->field_01B5;
+      pAVar13->field_0000 = pAVar14->field_0000;
+      pAVar13->field_0004 = pAVar14->field_0004;
+      pAVar13->field_0008 = pAVar14->field_0008;
+      pAVar13->field_000A = pAVar14->field_000A;
       return;
     }
     if (uVar2 == 0x3e9) {

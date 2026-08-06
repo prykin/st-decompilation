@@ -11,12 +11,13 @@ FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5
 {
   short sVar1;
   int iVar2;
-  short sVar3;
-  int iVar4;
-  short sVar5;
-  int iVar6;
-  short sVar7;
+  int iVar3;
+  short sVar4;
+  int iVar5;
+  short sVar6;
+  int iVar7;
   short sVar8;
+  short sVar9;
   int local_24;
   short local_20;
   int local_18;
@@ -33,45 +34,45 @@ FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5
     local_14 = local_24;
     local_8 = local_c;
     thunk_FUN_006756d0((short *)&local_10,(short *)&local_8,(short *)&local_14,(short *)&local_18);
-    sVar3 = (short)local_10;
-    sVar1 = (short)local_14 + -1 + sVar3;
+    sVar4 = (short)local_10;
+    sVar1 = (short)local_14 + -1 + sVar4;
     local_20 = (short)local_18 + -1 + (short)local_8;
-    iVar6 = local_10;
-    iVar2 = local_8;
-    while (sVar3 <= sVar1) {
-      sVar3 = (short)iVar2;
-      iVar4 = iVar2;
-      while (sVar3 <= local_20) {
-        sVar3 = 0;
-        sVar5 = param_3;
+    iVar7 = local_10;
+    iVar3 = local_8;
+    while (sVar4 <= sVar1) {
+      sVar4 = (short)iVar3;
+      iVar5 = iVar3;
+      while (sVar4 <= local_20) {
+        sVar4 = 0;
+        sVar6 = param_3;
         do {
-          sVar7 = (short)iVar6;
-          sVar8 = (short)iVar4;
-          iVar2 = thunk_FUN_004961b0(sVar7,sVar8,sVar5);
+          sVar8 = (short)iVar7;
+          sVar9 = (short)iVar5;
+          iVar2 = thunk_FUN_004961b0(sVar8,sVar9,sVar6);
           if ((iVar2 != 0) &&
-             (((((sVar7 < 0 || (g_worldGrid.sizeX <= sVar7)) || (sVar8 < 0)) ||
-               ((g_worldGrid.sizeY <= sVar8 || (sVar5 < 0)))) ||
-              ((g_worldGrid.sizeZ <= sVar5 ||
-               ((STGridAt3D(g_worldGrid, sVar7, sVar8, sVar5).objects[0] == nullptr ||
-                (iVar2 = (*STGridAt3D(g_worldGrid, sVar7, sVar8, sVar5).objects[0]->vtable[5].
-                           slots_00_28[9])(param_7), iVar2 != 0)))))))) {
-            *param_4 = sVar7;
-            *param_5 = sVar8;
-            *param_6 = sVar5;
+             (((((sVar8 < 0 || (g_worldGrid.sizeX <= sVar8)) || (sVar9 < 0)) ||
+               ((g_worldGrid.sizeY <= sVar9 || (sVar6 < 0)))) ||
+              ((g_worldGrid.sizeZ <= sVar6 ||
+               ((STGridAt3D(g_worldGrid, sVar8, sVar9, sVar6).objects[0] == nullptr ||
+                (iVar3 = (*STGridAt3D(g_worldGrid, sVar8, sVar9, sVar6).objects[0]->vtable[5].
+                           slots_00_28[9])(param_7), iVar3 != 0)))))))) {
+            *param_4 = sVar8;
+            *param_5 = sVar9;
+            *param_6 = sVar6;
             return 1;
           }
-          sVar5 = sVar5 + 1;
-          if (4 < sVar5) {
-            sVar5 = 0;
+          sVar6 = sVar6 + 1;
+          if (4 < sVar6) {
+            sVar6 = 0;
           }
-          sVar3 = sVar3 + 1;
-        } while (sVar3 < 5);
-        iVar4 = iVar4 + 1;
-        iVar2 = local_8;
-        sVar3 = (short)iVar4;
+          sVar4 = sVar4 + 1;
+        } while (sVar4 < 5);
+        iVar5 = iVar5 + 1;
+        iVar3 = local_8;
+        sVar4 = (short)iVar5;
       }
-      iVar6 = iVar6 + 1;
-      sVar3 = (short)iVar6;
+      iVar7 = iVar7 + 1;
+      sVar4 = (short)iVar7;
     }
     local_24 = local_24 + 2;
     local_c = local_c + -1;

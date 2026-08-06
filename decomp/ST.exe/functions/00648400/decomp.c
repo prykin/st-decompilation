@@ -7,13 +7,16 @@
    [STSourceProvenanceApplier end]
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 00649EB0 -> 00648400 @ 00649EF8 */
+   Evidence: 00649EB0 -> 00648400 @ 00649EF8
 
-undefined4 * __cdecl FUN_00648400(char *text,undefined4 param_2)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00648400 returns stored into global 008489B4 @ 00685C3F */
+
+AllocationRecord_00648620 * __cdecl FUN_00648400(char *text,undefined4 param_2)
 
 {
   int exceptionCode;
-  undefined4 *puVar1;
+  AllocationRecord_0065CD10 *pAVar1;
   InternalExceptionFrame local_4c;
   AnonShape_00648400_5C076F88 *local_8;
 
@@ -26,11 +29,11 @@ undefined4 * __cdecl FUN_00648400(char *text,undefined4 param_2)
     local_8->field_0001 = 0x85;
     local_8->field_0005 = 2;
     Library::MSVCRT::_strncpy(&local_8->field_0x6,text,0x3f);
-    puVar1 = thunk_FUN_0065c9e0(text);
-    local_8->field_004E = puVar1;
+    pAVar1 = thunk_FUN_0065c9e0(text);
+    local_8->field_004E = (undefined4 *)pAVar1;
     local_8->field_0052 = param_2;
     g_currentExceptionFrame = local_4c.previous;
-    return (undefined4 *)local_8;
+    return (AllocationRecord_00648620 *)local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_006484f0((int *)&local_8);

@@ -10,9 +10,10 @@
 void __thiscall st::fn_004BE500(TLOBaseTy *this,int param_1)
 
 {
-  TLOBaseTyVTable *pTVar1;
+  int iVar1;
+  TLOBaseTyVTable *pTVar2;
   TLOBaseTy *this_00;
-  dword dVar3;
+  dword dVar4;
   int iVar4;
   int local_EAX_123;
   int uVar5;
@@ -21,7 +22,7 @@ void __thiscall st::fn_004BE500(TLOBaseTy *this,int param_1)
   TLOBaseTy *local_8;
 
   local_8 = this;
-  if ((param_1 != 0) && (dVar3 = this->slot_F8(), dVar3 == 0)) {
+  if ((param_1 != 0) && (dVar4 = this->slot_F8(), dVar4 == 0)) {
     return;
   }
   local_4c.previous = g_currentExceptionFrame;
@@ -29,15 +30,15 @@ void __thiscall st::fn_004BE500(TLOBaseTy *this,int param_1)
   iVar4 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 == 0) {
-    iVar4 = local_8->field_021D;
+    iVar1 = local_8->field_021D;
     st::fn_00404E8A(local_8,param_1);
-    if ((((this_00->field_021D != 0) && (iVar4 == 0)) &&
+    if ((((this_00->field_021D != 0) && (iVar1 == 0)) &&
         (local_EAX_123 = st::fn_004049B7(*(char *)&this_00->field_023D),
         *(int *)(&DAT_00795c00 + ((uint)(byte)local_EAX_123 + this_00->field_0235 * 3) * 4) != 0))
        && (this_00->field_0024 == (byte *)(uint)(byte)this_00->field_0010->field_112D)) {
-      pTVar1 = this_00->vtable;
+      pTVar2 = this_00->vtable;
       uVar5 = st::fn_004049B7(*(char *)&this_00->field_023D);
-      (*pTVar1->vfunc_90)(this_00,4,
+      (*pTVar2->vfunc_90)(this_00,4,
                           (short)*(undefined4 *)
                                   (&DAT_00795c00 + ((uint)(byte)uVar5 + this_00->field_0235 * 3) * 4
                                   ));

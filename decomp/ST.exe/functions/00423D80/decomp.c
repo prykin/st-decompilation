@@ -1,10 +1,11 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00423E00 -> 00423D80 @ 00423E0E */
+/* [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 00423D80 -> 006ACC70 @ 00423DA9 | 0042B7D0 -> 00423D80 @ 0042B85E;
+   STAllPlayersC::AddObjsToGroup parameter groupContent */
 
-undefined4 __thiscall FUN_00423d80(void *this,uint *groupContent)
+undefined4 __thiscall FUN_00423d80(void *this,DArrayTy *groupContent)
 
 {
   uint uVar1;
@@ -15,13 +16,13 @@ undefined4 __thiscall FUN_00423d80(void *this,uint *groupContent)
   undefined4 local_c;
   undefined4 local_8;
 
-  uVar1 = groupContent[3];
+  uVar1 = groupContent->count;
   local_8 = 0;
   uVar3 = 0;
   if ((uVar1 != 0) && (uVar4 = 0, uVar1 != 0)) {
     index = 0;
     do {
-      DArrayGetElement((DArrayTy *)groupContent,index,&local_c);
+      DArrayGetElement(groupContent,index,&local_c);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar2 = (**(code **)(*(int *)this + 4))(local_c);
       if (iVar2 == 0) {

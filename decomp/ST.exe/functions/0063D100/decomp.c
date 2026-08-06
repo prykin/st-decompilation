@@ -4,7 +4,7 @@
 void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
 
 {
-  undefined4 uVar1;
+  DArrayTy *pDVar1;
   int iVar2;
   byte *puVar3;
   AnonShape_004AD790_77673787 *pAVar4;
@@ -28,8 +28,8 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   STField<undefined4>(this,0x347) = 0;
   pAVar4 = (AnonShape_004AD790_77673787 *)((int)param_1 + 0x152);
   if (STField<int>(this,0x336) != 0) {
-    uVar1 = FUN_006b0060(nullptr,(uint *)((int)param_1 + 0x156));
-    STField<undefined4>(this,0x336) = uVar1;
+    pDVar1 = FUN_006b0060(nullptr,(uint *)((int)param_1 + 0x156));
+    STField<DArrayTy *>(this,0x336) = pDVar1;
     pAVar4 = (AnonShape_004AD790_77673787 *)((int)param_1 + 0x156 + *(int *)pAVar4);
   }
   local_20 = Library::DKW::LIB::MemAlloc(0x44);

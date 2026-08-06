@@ -18,10 +18,12 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
   char cVar1;
   byte bVar2;
   int iVar4;
-  void *pvVar5;
+  void *pvVar4;
   DArrayTy *pDVar6;
+  int iVar6;
   byte *pbVar7;
-  int iVar8;
+  int iVar5;
+  DArrayTy *pDVar8;
   uint uVar9;
   uint uVar10;
   byte *pbVar11;
@@ -58,9 +60,9 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_b8.previous;
-    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\settsobj.cpp",0x86,0,iVar4,"%s",
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\settsobj.cpp",0x86,0,iVar4,"%s",
                                "SettMapSTy::PrepPlList");
-    if (iVar8 == 0) {
+    if (iVar5 == 0) {
       RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\settsobj.cpp",0x86);
       return;
     }
@@ -72,25 +74,25 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
   else {
     local_10 = local_8->field_1F43;
   }
-  pDVar6 = local_8->field_1F84;
-  if (pDVar6 != nullptr) {
+  pDVar8 = local_8->field_1F84;
+  if (pDVar8 != nullptr) {
     uVar10 = 0;
-    if (0 < (int)pDVar6->count) {
-      bVar14 = pDVar6->count != 0;
+    if (0 < (int)pDVar8->count) {
+      bVar14 = pDVar8->count != 0;
       do {
         if (bVar14) {
-          pvVar5 = DArrayAt<void>(pDVar6, uVar10);
+          pvVar4 = DArrayAt<void>(pDVar8, uVar10);
         }
         else {
-          pvVar5 = nullptr;
+          pvVar4 = nullptr;
         }
-        if ((pvVar5 != nullptr) && (STField<DArrayTy *>(pvVar5,0x50) != nullptr)) {
-          DArrayDestroy(STField<DArrayTy *>(pvVar5,0x50));
+        if ((pvVar4 != nullptr) && (STField<DArrayTy *>(pvVar4,0x50) != nullptr)) {
+          DArrayDestroy(STField<DArrayTy *>(pvVar4,0x50));
         }
-        pDVar6 = this_00->field_1F84;
+        pDVar8 = this_00->field_1F84;
         uVar10 = uVar10 + 1;
-        bVar14 = uVar10 < pDVar6->count;
-      } while ((int)uVar10 < (int)pDVar6->count);
+        bVar14 = uVar10 < pDVar8->count;
+      } while ((int)uVar10 < (int)pDVar8->count);
     }
     DArrayDestroy(this_00->field_1F84);
   }
@@ -158,19 +160,19 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
             local_14 = pbVar11 + -0x20;
             do {
               if (uVar9 < uVar10) {
-                iVar4 = local_24[2] * uVar9 + local_24[7];
+                iVar6 = local_24[2] * uVar9 + local_24[7];
               }
               else {
-                iVar4 = 0;
+                iVar6 = 0;
               }
-              pbVar7 = (byte *)(iVar4 + 0x4c);
+              pbVar7 = (byte *)(iVar6 + 0x4c);
               pbVar11 = local_14;
               do {
                 bVar2 = *pbVar7;
                 bVar14 = bVar2 < *pbVar11;
                 if (bVar2 != *pbVar11) {
 LAB_005d534b:
-                  iVar4 = (1 - (uint)bVar14) - (uint)(bVar14 != 0);
+                  iVar6 = (1 - (uint)bVar14) - (uint)(bVar14 != 0);
                   goto LAB_005d5350;
                 }
                 if (bVar2 == 0) break;
@@ -180,10 +182,10 @@ LAB_005d534b:
                 pbVar7 = pbVar7 + 2;
                 pbVar11 = pbVar11 + 2;
               } while (bVar2 != 0);
-              iVar4 = 0;
+              iVar6 = 0;
 LAB_005d5350:
               pbVar11 = local_c;
-              if (iVar4 == 0) {
+              if (iVar6 == 0) {
                 uStack_6f = (undefined1)uVar9;
                 break;
               }
@@ -204,22 +206,22 @@ LAB_005d5350:
     }
     local_c = pbVar11 + 0x51;
   } while ((int)local_c < 0x808a70);
-  pDVar6 = this_00->field_1F84;
+  pDVar8 = this_00->field_1F84;
   uVar9 = 0;
-  uVar10 = pDVar6->count;
+  uVar10 = pDVar8->count;
   if (0 < (int)uVar10) {
     bVar14 = uVar10 != 0;
     do {
       if (bVar14) {
-        pvVar5 = DArrayAt<void>(pDVar6, uVar9);
+        pvVar4 = DArrayAt<void>(pDVar8, uVar9);
       }
       else {
-        pvVar5 = nullptr;
+        pvVar4 = nullptr;
       }
-      if ((pvVar5 != nullptr) && (STField<char>(pvVar5,4) == '\x01')) {
-        DAT_0080874d = STField<undefined1>(pvVar5,2);
-        STField<undefined1>(pvVar5,4) = 2;
-        DAT_0080874e = STField<undefined1>(pvVar5,3);
+      if ((pvVar4 != nullptr) && (STField<char>(pvVar4,4) == '\x01')) {
+        DAT_0080874d = STField<undefined1>(pvVar4,2);
+        STField<undefined1>(pvVar4,4) = 2;
+        DAT_0080874e = STField<undefined1>(pvVar4,3);
         uVar10 = 0xffffffff;
         pcVar12 = (char *)&DAT_00807ddd;
         goto code_r0x005d540b;
@@ -241,7 +243,7 @@ code_r0x005d540b:
   }
   uVar10 = ~uVar10;
   pcVar12 = pcVar13 + -uVar10;
-  pcVar13 = (char *)((int)pvVar5 + 10);
+  pcVar13 = (char *)((int)pvVar4 + 10);
   for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
     *(undefined4 *)pcVar13 = *(undefined4 *)pcVar12;
     pcVar12 = pcVar12 + 4;

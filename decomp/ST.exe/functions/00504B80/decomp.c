@@ -11,9 +11,9 @@ void __thiscall CPanelTy::PaintNameRes(CPanelTy *this,int param_1)
   CPanelTy *pCVar2;
   int iVar3;
   uint uVar4;
-  byte *pbVar5;
+  BITMAPINFO *pBVar5;
   UINT resourceId;
-  uint *resourceString;
+  char *resourceString;
   HINSTANCE module;
   int iVar6;
   int iVar7;
@@ -28,8 +28,9 @@ void __thiscall CPanelTy::PaintNameRes(CPanelTy *this,int param_1)
   pCVar2 = local_8;
   if (iVar3 == 0) {
     uVar4 = thunk_FUN_005276e0(local_8->field_0C31,local_8->field_0C32);
-    pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_029A,uVar4);
-    DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,param_1 + 5,0x65,'\x01',pbVar5);
+    pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_029A,uVar4);
+    DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,param_1 + 5,0x65,'\x01',
+           (byte *)pBVar5);
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,param_1 + 2,0x52,0xb2,10);
     iVar8 = -1;
     iVar7 = -1;
@@ -38,7 +39,7 @@ void __thiscall CPanelTy::PaintNameRes(CPanelTy *this,int param_1)
     iVar3 = -2;
     module = g_hINSTANCE_00807618;
     resourceId = thunk_FUN_00528060(pCVar2->field_0C31,pCVar2->field_0C32);
-    resourceString = (uint *)LoadResourceString(resourceId,module);
+    resourceString = LoadResourceString(resourceId,module);
     ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar6,uVar4,iVar7,iVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;

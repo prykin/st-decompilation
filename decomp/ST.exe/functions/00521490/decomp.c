@@ -13,17 +13,19 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  int *piVar2;
-  int iVar3;
-  bool bVar5;
-  int iVar6;
+  int iVar2;
+  int *piVar3;
+  int iVar4;
+  bool bVar6;
+  int iVar7;
   InfocPanelTy *this_00;
-  byte bVar7;
+  byte bVar8;
   int iVar8;
   uint uVar9;
-  byte *pbVar10;
+  BITMAPINFO *pBVar10;
   int iVar11;
-  uint uVar12;
+  uint uVar11;
+  int iVar12;
   InternalExceptionFrame local_58;
   uint local_14;
   InfocPanelTy *local_10;
@@ -49,51 +51,51 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_SHARED_0061) {
     if (SVar1 == MESS_SHARED_0060) {
-      iVar8 = 0;
+      iVar12 = 0;
       local_14 = (uint)(message->arg1).words.high;
-      uVar12 = (uint)(message->arg1).words.low;
+      uVar11 = (uint)(message->arg1).words.low;
       local_c = 0;
       if (this_00->field_0172 == 1) {
         local_8 = local_8 & 0xffffff00;
         do {
           uVar9 = local_8 & 0xff;
-          if (((((int)uVar12 < (int)(&this_00->field_02D4)[uVar9 * 5]) ||
+          if (((((int)uVar11 < (int)(&this_00->field_02D4)[uVar9 * 5]) ||
                ((int)((&this_00->field_02DC)[uVar9 * 5] + (&this_00->field_02D4)[uVar9 * 5]) <=
-                (int)uVar12)) || ((int)local_14 < (int)(&this_00->field_02D8)[uVar9 * 5])) ||
+                (int)uVar11)) || ((int)local_14 < (int)(&this_00->field_02D8)[uVar9 * 5])) ||
              ((int)((&this_00->field_02E0)[uVar9 * 5] + (&this_00->field_02D8)[uVar9 * 5]) <=
               (int)local_14)) {
-            bVar5 = false;
+            bVar6 = false;
           }
           else {
-            bVar5 = true;
+            bVar6 = true;
           }
-          iVar8 = 0;
-          if (bVar5) {
-            iVar8 = (&this_00->field_02E4)[(local_8 & 0xff) * 5];
+          iVar12 = 0;
+          if (bVar6) {
+            iVar12 = (&this_00->field_02E4)[(local_8 & 0xff) * 5];
             break;
           }
-          bVar7 = (char)local_8 + 1;
-          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar7));
-        } while (bVar7 < 0xc);
+          bVar8 = (char)local_8 + 1;
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar8));
+        } while (bVar8 < 0xc);
       }
-      iVar11 = this_00->field_0178;
-      if (iVar11 != iVar8) {
-        if (iVar11 != 0) {
+      iVar2 = this_00->field_0178;
+      if (iVar2 != iVar12) {
+        if (iVar2 != 0) {
           this_00->field_0028 = 0x4202;
           this_00->field_002C = 0;
           this_00->field_002E = 2;
-          this_00->field_0030 = iVar11;
+          this_00->field_0030 = iVar2;
           if (g_cursorClass_00802A30 != nullptr) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
           }
         }
-        this_00->field_0178 = iVar8;
-        if (iVar8 != 0) {
+        this_00->field_0178 = iVar12;
+        if (iVar12 != 0) {
           this_00->field_0028 = 0x4201;
           this_00->field_002C = 0;
           this_00->field_002E = 2;
-          this_00->field_0030 = iVar8;
+          this_00->field_0030 = iVar12;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
           g_currentExceptionFrame = local_58.previous;
@@ -119,28 +121,28 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
     PaintInfoc(this_00);
   }
   else if (SVar1 == MESS_PLAYPANELTY_B209) {
-    piVar2 = (message->arg0).ptr;
-    iVar8 = piVar2[3];
-    iVar11 = this_00->field_003C;
-    bVar7 = (&this_00->field_01AB)[*piVar2];
-    uVar12 = (DAT_0080874e != '\x03') - 1 & 0x11;
-    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar7));
-    iVar3 = piVar2[4];
-    iVar6 = DAT_00806734;
+    piVar3 = (message->arg0).ptr;
+    iVar12 = piVar3[3];
+    iVar2 = this_00->field_003C;
+    bVar8 = (&this_00->field_01AB)[*piVar3];
+    uVar11 = (DAT_0080874e != '\x03') - 1 & 0x11;
+    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar8));
+    iVar4 = piVar3[4];
+    iVar7 = DAT_00806734;
     if (this_00->field_005C != 0) {
-      iVar6 = this_00->field_0044;
+      iVar7 = this_00->field_0044;
     }
-    if (piVar2[1] == 0) {
-      if (bVar7 != 0xff) {
-        uVar12 = bVar7 + 1;
+    if (piVar3[1] == 0) {
+      if (bVar8 != 0xff) {
+        uVar11 = bVar8 + 1;
       }
     }
-    else if ((piVar2[1] == 1) && (bVar7 != 0xff)) {
-      uVar12 = bVar7 + 9;
+    else if ((piVar3[1] == 1) && (bVar8 != 0xff)) {
+      uVar11 = bVar8 + 9;
     }
-    pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03C4,uVar12);
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar8 - iVar11,iVar3 - iVar6,'\x01',
-           pbVar10);
+    pBVar10 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03C4,uVar11);
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar12 - iVar2,iVar4 - iVar7,'\x01',
+           (byte *)pBVar10);
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                this_00->field_0044);

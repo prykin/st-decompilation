@@ -25,7 +25,7 @@ void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum par
 
 {
   int iVar2;
-  uint *puVar3;
+  uint *puVar4;
 
   if ((param_1 != CASE_21) && (param_1 != CASE_5)) {
     STAllPlayersC::DeleteGuardBoat
@@ -35,7 +35,7 @@ void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum par
   switch(param_1) {
   case CASE_1:
     this->field_02CC = 1;
-    puVar3 = &this->field_0328;
+    puVar4 = &this->field_0328;
     break;
   case CASE_2:
     this->field_02D0 = 1;
@@ -52,7 +52,7 @@ void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum par
     return;
   case CASE_4:
     this->field_02D8 = 1;
-    puVar3 = &this->field_039C;
+    puVar4 = &this->field_039C;
     goto LAB_0045f0e0;
   case CASE_5:
     this->field_02DC = 1;
@@ -68,7 +68,7 @@ void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum par
     return;
   case CASE_7:
     this->field_02E4 = 1;
-    puVar3 = &this->field_03D4;
+    puVar4 = &this->field_03D4;
     goto cf_common_exit_0045F1A9;
   case CASE_8:
     this->field_02E8 = 1;
@@ -86,28 +86,28 @@ void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum par
     return;
   case CASE_A:
     this->field_02F0 = 1;
-    puVar3 = &this->field_03DE;
+    puVar4 = &this->field_03DE;
 LAB_0045f0e0:
-    *puVar3 = *param_2;
-    puVar3[1] = param_2[1];
-    *(short *)(puVar3 + 2) = (short)param_2[2];
+    *puVar4 = *param_2;
+    puVar4[1] = param_2[1];
+    *(short *)(puVar4 + 2) = (short)param_2[2];
     return;
   case CASE_B:
     this->field_02F4 = 1;
-    puVar3 = &this->field_041F;
+    puVar4 = &this->field_041F;
     goto cf_common_exit_0045F1A9;
   case CASE_C:
     this->field_02F8 = 1;
-    puVar3 = &this->field_034F;
-    memmove(puVar3, param_2, 0x20); /* compiler REP MOVS byte copy */
+    puVar4 = &this->field_034F;
+    memmove(puVar4, param_2, 0x20); /* compiler REP MOVS byte copy */
     return;
   case CASE_D:
     this->field_02FC = 1;
-    puVar3 = &this->field_0392;
+    puVar4 = &this->field_0392;
 cf_common_exit_0045F1A9:
-    *puVar3 = *param_2;
-    puVar3[1] = param_2[1];
-    *(short *)(puVar3 + 2) = (short)param_2[2];
+    *puVar4 = *param_2;
+    puVar4[1] = param_2[1];
+    *(short *)(puVar4 + 2) = (short)param_2[2];
     return;
   case CASE_E:
     this->field_0300 = 1;
@@ -125,12 +125,12 @@ cf_common_exit_0045F1A9:
     return;
   case CASE_10:
     this->field_0308 = 1;
-    puVar3 = &this->field_03CA;
+    puVar4 = &this->field_03CA;
     break;
   case CASE_11:
     this->field_030C = 1;
-    puVar3 = &this->field_036F;
-    memmove(puVar3, param_2, 0x23); /* compiler REP MOVS byte copy */
+    puVar4 = &this->field_036F;
+    memmove(puVar4, param_2, 0x23); /* compiler REP MOVS byte copy */
     return;
   case CASE_12:
     this->field_0310 = 1;
@@ -153,8 +153,8 @@ cf_common_exit_0045F1A9:
     return;
   case CASE_15:
     this->field_0318 = 1;
-    puVar3 = &this->field_0401;
-    memmove(puVar3, param_2, 0x14); /* compiler REP MOVS byte copy */
+    puVar4 = &this->field_0401;
+    memmove(puVar4, param_2, 0x14); /* compiler REP MOVS byte copy */
     return;
   case CASE_16:
     this->field_031C = 1;
@@ -165,11 +165,11 @@ cf_common_exit_0045F1A9:
     return;
   case CASE_17:
     this->field_0320 = 1;
-    puVar3 = &this->field_0415;
+    puVar4 = &this->field_0415;
   }
-  *puVar3 = *param_2;
-  puVar3[1] = param_2[1];
-  *(short *)(puVar3 + 2) = (short)param_2[2];
+  *puVar4 = *param_2;
+  puVar4[1] = param_2[1];
+  *(short *)(puVar4 + 2) = (short)param_2[2];
   return;
 }
 

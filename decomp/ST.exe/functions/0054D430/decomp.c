@@ -19,6 +19,7 @@ STPlaySystemC::SaveObjData
 {
   int iVar2;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_6c;
   CHAR local_28 [32];
   STPlaySystemC *local_8;

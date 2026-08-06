@@ -12,9 +12,10 @@ int __cdecl _GetEmbrGrpTobjGrpExch(uint param_1,int param_2,int param_3)
   DArrayTy *array;
   int iVar2;
   STGroupBoatC *this;
-  ushort *puVar3;
-  STGameObjC *pSVar4;
+  ushort *puVar2;
+  STGameObjC *pSVar3;
   int iVar5;
+  int iVar4;
   uint uVar6;
   uint uVar7;
   InternalExceptionFrame local_50;
@@ -41,30 +42,30 @@ int __cdecl _GetEmbrGrpTobjGrpExch(uint param_1,int param_2,int param_3)
     if (local_c->count != 0) {
       uVar6 = 0;
       if (local_c->count == 0) {
-        puVar3 = nullptr;
+        puVar2 = nullptr;
         goto LAB_00676470;
       }
       do {
-        puVar3 = DArrayAt<ushort>(array, uVar6);
+        puVar2 = DArrayAt<ushort>(array, uVar6);
 LAB_00676470:
-        pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,*puVar3,CASE_1);
-        if (pSVar4 != nullptr) {
-          iVar2 = (*pSVar4->vtable->vfunc_2C)();
-          if (iVar2 == 0x78) {
-            iVar2 = pSVar4->field_0259;
+        pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
+        if (pSVar3 != nullptr) {
+          iVar5 = (*pSVar3->vtable->vfunc_2C)();
+          if (iVar5 == 0x78) {
+            iVar5 = pSVar3->field_0259;
           }
           else {
-            iVar2 = 0;
+            iVar5 = 0;
           }
-          if (param_2 == iVar2) {
-            iVar2 = (*pSVar4->vtable->vfunc_2C)();
-            if (iVar2 == 0x78) {
-              iVar2 = pSVar4->field_0269;
+          if (param_2 == iVar5) {
+            iVar5 = (*pSVar3->vtable->vfunc_2C)();
+            if (iVar5 == 0x78) {
+              iVar5 = pSVar3->field_0269;
             }
             else {
-              iVar2 = -1;
+              iVar5 = -1;
             }
-            if (param_3 == iVar2) {
+            if (param_3 == iVar5) {
               local_8 = local_8 + 1;
             }
           }
@@ -83,9 +84,9 @@ LAB_00676470:
   if (local_c != nullptr) {
     DArrayDestroy(local_c);
   }
-  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x150,0,iVar2,"%s",
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x150,0,iVar2,"%s",
                              "_GetEmbrGrpTobjGrpExch");
-  if (iVar5 == 0) {
+  if (iVar4 == 0) {
     RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x151);
     return iVar2;
   }

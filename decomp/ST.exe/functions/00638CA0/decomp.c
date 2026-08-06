@@ -11,6 +11,8 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
   VisibleClassTy *pVVar4;
   int iVar5;
   uint uVar6;
+  uint uVar5;
+  int iVar6;
   int iVar7;
   int iVar8;
   byte *puVar9;
@@ -52,7 +54,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
       puVar9 = (byte *)((int)this + 0x2ab);
       memset(puVar9, 0, 0x2d); /* compiler bulk-zero initialization */
       puVar9 = (byte *)((byte *)puVar9 + 0x2c);
-      iVar5 = 0;
+      iVar8 = 0;
       if (STField<char>(this,0x26f) == '\x02') {
         STField<undefined1>(this,0x26f) = 3;
       }
@@ -78,25 +80,25 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     }
     uVar6 = thunk_FUN_00639670(this,g_playSystem_00802A38->field_00E4);
     if (0 < (int)uVar6) {
-      iVar5 = STField<int>(this,0x2bf);
-      if (iVar5 != 0) {
+      iVar8 = STField<int>(this,0x2bf);
+      if (iVar8 != 0) {
         if (STField<int>(this,0x2c7) == 0) {
           Library::Ourlib::ST3DSMAP::SprSetLevBefore
                     (STField<void *>(this,0x211),STField<uint>(this,0x1ed),
-                     *(int *)(iVar5 + 0x1ed));
+                     *(int *)(iVar8 + 0x1ed));
         }
         else {
           Library::Ourlib::ST3DSMAP::SprSetLevAfter
                     (STField<void *>(this,0x211),STField<uint>(this,0x1ed),
-                     *(int *)(iVar5 + 0x1ed));
+                     *(int *)(iVar8 + 0x1ed));
         }
       }
       uVar12 = 0x53;
       uVar11 = 0x5a;
-      iVar5 = 1;
-      uVar6 = thunk_FUN_004ad650((STT3DSprC *)((int)this + 0x1d5));
+      iVar8 = 1;
+      uVar5 = thunk_FUN_004ad650((STT3DSprC *)((int)this + 0x1d5));
       Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
-                (STField<void *>(this,0x211),uVar6,iVar5,uVar11,uVar12);
+                (STField<void *>(this,0x211),uVar5,iVar8,uVar11,uVar12);
       STField<undefined1>(this,0x26f) = 2;
       thunk_FUN_00639990(this);
       return 0;
@@ -112,46 +114,46 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     if (g_visibleClass_00802A88 == nullptr) {
       return 0;
     }
-    iVar5 = STField<int>(this,0x282);
-    sVar3 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
+    iVar8 = STField<int>(this,0x282);
+    sVar3 = (short)(iVar8 >> 0x1f);
+    if (iVar8 < 0) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
-                ((short)(((short)(iVar5 / 200) + sVar3) -
-                        (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1);
+                ((short)(((short)(iVar8 / 200) + sVar3) -
+                        (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
-                (int)(short)(((short)(iVar5 / 200) + sVar3) -
-                            (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
+                (int)(short)(((short)(iVar8 / 200) + sVar3) -
+                            (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
     }
-    iVar5 = STField<int>(this,0x27e);
-    sVar3 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar3) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
+    iVar8 = STField<int>(this,0x27e);
+    sVar3 = (short)(iVar8 >> 0x1f);
+    if (iVar8 < 0) {
+      iVar8 = (short)(((short)(iVar8 / 0xc9) + sVar3) - (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar3) -
-                          (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
+      iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
+                          (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    iVar7 = STField<int>(this,0x27a);
-    sVar3 = (short)(iVar7 >> 0x1f);
-    if (iVar7 < 0) {
-      iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar3) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)
+    iVar6 = STField<int>(this,0x27a);
+    sVar3 = (short)(iVar6 >> 0x1f);
+    if (iVar6 < 0) {
+      iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar3) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar3) -
-                          (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
+      iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar3) -
+                          (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
     }
     if (((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
          (VisibleClassTy::sub_00558C00
-                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar7,iVar5,
+                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar8,
                      &local_c,&local_10), -1 < (int)param_1)) &&
         ((((int)param_1 < 5 && (-1 < local_c)) &&
-         ((local_c < pVVar4->field_0030 &&
+         ((local_c < (int)pVVar4->field_0030 &&
           ((local_10 = local_10 + g_centeredOffsets5[(int)param_1], -1 < local_10 &&
            (local_10 < pVVar4->field_0034)))))))) && (pVVar4->field_004C != nullptr)) {
       bVar1 = pVVar4->field_004C[local_c + local_10 * pVVar4->field_0030];
@@ -172,9 +174,9 @@ joined_r0x00639236:
       return 0;
     }
     STField<undefined1>(this,0x26f) = 0;
-    uVar6 = g_playSystem_00802A38->field_00E4;
+    uVar5 = g_playSystem_00802A38->field_00E4;
     STField<undefined4>(this,0x251) = 0;
-    STField<uint>(this,0x2a3) = uVar6;
+    STField<uint>(this,0x2a3) = uVar5;
     if (STField<char>(this,0x270) == '\0') {
       return 0;
     }
@@ -186,25 +188,25 @@ joined_r0x00639236:
       return 0;
     }
     this_00 = (STT3DSprC *)((int)this + 0x1d5);
-    iVar5 = thunk_FUN_004ac910(this_00,'\r');
+    iVar8 = thunk_FUN_004ac910(this_00,'\r');
     if (STField<char>(this,0x2a2) != '\0') {
-      iVar7 = STT3DSprC::sub_004ACD30(this_00,'\x0e');
-      iVar8 = thunk_FUN_004ac910(this_00,'\x0e');
-      if ((iVar7 + -1 <= iVar8) && (STField<char>(this,0x270) != '\0')) {
+      iVar6 = STT3DSprC::sub_004ACD30(this_00,'\x0e');
+      iVar7 = thunk_FUN_004ac910(this_00,'\x0e');
+      if ((iVar6 + -1 <= iVar7) && (STField<char>(this,0x270) != '\0')) {
         STT3DSprC::StopShow(this_00,0xe);
       }
     }
-    if ((iVar5 == 0x17) && (STField<char>(this,0x270) != '\0')) {
+    if ((iVar8 == 0x17) && (STField<char>(this,0x270) != '\0')) {
       STT3DSprC::StartShow(this_00,0xf,g_playSystem_00802A38->field_00E4);
     }
-    iVar5 = STT3DSprC::sub_004ACD30(this_00,'\r');
-    iVar7 = thunk_FUN_004ac910(this_00,'\r');
-    if (iVar5 + -1 == iVar7) {
+    iVar8 = STT3DSprC::sub_004ACD30(this_00,'\r');
+    iVar6 = thunk_FUN_004ac910(this_00,'\r');
+    if (iVar8 + -1 == iVar6) {
       STT3DSprC::StopShow(this_00,0xd);
     }
-    iVar5 = STT3DSprC::sub_004ACD30(this_00,'\x0f');
-    iVar7 = thunk_FUN_004ac910(this_00,'\x0f');
-    if (iVar5 + -1 == iVar7) {
+    iVar8 = STT3DSprC::sub_004ACD30(this_00,'\x0f');
+    iVar6 = thunk_FUN_004ac910(this_00,'\x0f');
+    if (iVar8 + -1 == iVar6) {
       STField<undefined1>(this,0x26f) = 3;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -213,46 +215,46 @@ joined_r0x00639236:
     if (g_visibleClass_00802A88 == nullptr) {
       return 0;
     }
-    iVar5 = STField<int>(this,0x282);
-    sVar3 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
+    iVar8 = STField<int>(this,0x282);
+    sVar3 = (short)(iVar8 >> 0x1f);
+    if (iVar8 < 0) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
-                ((short)(((short)(iVar5 / 200) + sVar3) -
-                        (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1);
+                ((short)(((short)(iVar8 / 200) + sVar3) -
+                        (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
-                (int)(short)(((short)(iVar5 / 200) + sVar3) -
-                            (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
+                (int)(short)(((short)(iVar8 / 200) + sVar3) -
+                            (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
     }
-    iVar5 = STField<int>(this,0x27e);
-    sVar3 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar3) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
+    iVar8 = STField<int>(this,0x27e);
+    sVar3 = (short)(iVar8 >> 0x1f);
+    if (iVar8 < 0) {
+      iVar8 = (short)(((short)(iVar8 / 0xc9) + sVar3) - (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar3) -
-                          (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
+      iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
+                          (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    iVar7 = STField<int>(this,0x27a);
-    sVar3 = (short)(iVar7 >> 0x1f);
-    if (iVar7 < 0) {
-      iVar7 = (short)(((short)(iVar7 / 0xc9) + sVar3) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)
+    iVar6 = STField<int>(this,0x27a);
+    sVar3 = (short)(iVar6 >> 0x1f);
+    if (iVar6 < 0) {
+      iVar6 = (short)(((short)(iVar6 / 0xc9) + sVar3) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar7 = (int)(short)(((short)(iVar7 / 0xc9) + sVar3) -
-                          (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
+      iVar6 = (int)(short)(((short)(iVar6 / 0xc9) + sVar3) -
+                          (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
     }
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
           (VisibleClassTy::sub_00558C00
-                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar7,iVar5,
+                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar8,
                       &local_10,&local_c), -1 < (int)param_1)) &&
          (((int)param_1 < 5 && (-1 < local_10)))) &&
-        ((local_10 < pVVar4->field_0030 &&
+        ((local_10 < (int)pVVar4->field_0030 &&
          ((local_c = local_c + g_centeredOffsets5[(int)param_1], -1 < local_c &&
           (local_c < pVVar4->field_0034)))))) && (pVVar4->field_004C != nullptr)) {
       bVar1 = pVVar4->field_004C[local_10 + local_c * pVVar4->field_0030];

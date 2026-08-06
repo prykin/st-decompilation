@@ -12,7 +12,8 @@ uint * __cdecl _GetStaffGrpExch(undefined4 param_1)
   int errorCode;
   STGroupBoatC *this;
   uint *puVar2;
-  int iVar3;
+  int iVar2;
+  uint *puVar3;
   InternalExceptionFrame local_4c;
   uint *local_8;
 
@@ -22,9 +23,9 @@ uint * __cdecl _GetStaffGrpExch(undefined4 param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x125,0,errorCode,"%s"
+    iVar2 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x125,0,errorCode,"%s"
                                ,"_GetStaffGrpExch");
-    if (iVar3 != 0) {
+    if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x126);

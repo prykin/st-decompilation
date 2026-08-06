@@ -11,8 +11,8 @@ STSharkC::CreateShark
           undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9)
 
 {
-  undefined4 uVar2;
   int iVar3;
+  undefined4 uVar2;
   undefined4 local_38 [5];
   int local_24;
   int local_20;

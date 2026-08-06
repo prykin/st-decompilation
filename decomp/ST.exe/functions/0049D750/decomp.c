@@ -10,13 +10,14 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
 {
   STGroupBoatC *this_00;
   int iVar2;
-  DArrayTy *pDVar3;
-  STGameObjC *pSVar4;
-  uint *puVar5;
+  DArrayTy *pDVar2;
+  STGameObjC *pSVar3;
+  uint *puVar4;
   STBoatC *this_01;
-  uint uVar6;
+  uint uVar5;
   int iVar7;
-  undefined4 uVar8;
+  undefined4 uVar6;
+  int iVar8;
   dword dVar9;
   uint uVar11;
   uint uVar12;
@@ -54,7 +55,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
   }
   if ((param_1 == 1) || (param_1 == 0)) {
     memset(&local_14->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
-    iVar2 = 0;
+    iVar8 = 0;
     local_14->field_0065 = 0;
     if (*(DArrayTy **)&local_14->field_0x29f != nullptr) {
       DArrayDestroy(*(DArrayTy **)&local_14->field_0x29f);
@@ -70,17 +71,17 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x9b7);
       }
-      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
+      pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
       uVar11 = 0;
-      *(DArrayTy **)&this_00->field_0x29f = pDVar3;
+      *(DArrayTy **)&this_00->field_0x29f = pDVar2;
       if (0 < (int)dVar9) {
         do {
           DArrayGetElement(this_00->field_0160,uVar11,local_8);
           if (((STPiece<0,2>(local_8) != 0xffff) &&
-              (pSVar4 = STAllPlayersC::GetObjPtr
+              (pSVar3 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,this_00->field_0024,STPiece<0,2>(local_8),CASE_1),
-              pSVar4 != nullptr)) &&
-             (iVar2 = (*pSVar4->vtable->vfunc_2C)(), iVar2 == 0x33)) {
+              pSVar3 != nullptr)) &&
+             (iVar8 = (*pSVar3->vtable->vfunc_2C)(), iVar8 == 0x33)) {
             Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&this_00->field_0x29f,local_8);
           }
           uVar11 = uVar11 + 1;
@@ -96,9 +97,9 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       }
     }
     if (this_00->field_029B == 1) {
-      puVar5 = STAllPlayersC::GetTOBJList(g_allPlayers_007FA174,this_00->field_0024,0x33,0,-1);
-      *(uint **)&this_00->field_0x29f = puVar5;
-      if (puVar5[3] == 0) {
+      puVar4 = STAllPlayersC::GetTOBJList(g_allPlayers_007FA174,this_00->field_0024,0x33,0,-1);
+      *(uint **)&this_00->field_0x29f = puVar4;
+      if (puVar4[3] == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x9cd);
@@ -123,10 +124,10 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
             this_01 = (STBoatC *)
                       STAllPlayersC::GetObjPtr
                                 (g_allPlayers_007FA174,this_00->field_0024,STPiece<0,2>(local_8),CASE_1);
-            iVar2 = thunk_FUN_0045ff10((STGameObjC *)this_01);
+            iVar8 = thunk_FUN_0045ff10((STGameObjC *)this_01);
             uVar12 = local_c;
-            if ((iVar2 == 4) ||
-               (uVar6 = STBoatC::CheckPBoxCmd(this_01,CASE_4), uVar12 = local_c, uVar6 == 1)) break;
+            if ((iVar8 == 4) ||
+               (uVar5 = STBoatC::CheckPBoxCmd(this_01,CASE_4), uVar12 = local_c, uVar5 == 1)) break;
           }
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < (int)uVar12);

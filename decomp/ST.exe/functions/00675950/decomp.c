@@ -6,7 +6,8 @@ FUN_00675950(int param_1,int param_2,short param_3,short *param_4,short *param_5
             int param_7)
 
 {
-  short sVar1;
+  int iVar1;
+  short sVar2;
   int iVar2;
   short sVar3;
   int iVar4;
@@ -31,13 +32,13 @@ FUN_00675950(int param_1,int param_2,short param_3,short *param_4,short *param_5
     local_8 = local_c;
     thunk_FUN_006756d0((short *)&local_10,(short *)&local_8,(short *)&local_14,(short *)&local_18);
     sVar3 = (short)local_10;
-    sVar1 = (short)local_14 + -1 + sVar3;
+    sVar2 = (short)local_14 + -1 + sVar3;
     local_20 = (short)local_18 + -1 + (short)local_8;
     iVar4 = local_10;
-    iVar2 = local_8;
-    while (sVar3 <= sVar1) {
-      sVar3 = (short)iVar2;
-      iVar6 = iVar2;
+    iVar1 = local_8;
+    while (sVar3 <= sVar2) {
+      sVar3 = (short)iVar1;
+      iVar6 = iVar1;
       while (sVar3 <= local_20) {
         sVar3 = 0;
         sVar5 = param_3;
@@ -59,7 +60,7 @@ FUN_00675950(int param_1,int param_2,short param_3,short *param_4,short *param_5
           sVar3 = sVar3 + 1;
         } while (sVar3 < 5);
         iVar6 = iVar6 + 1;
-        iVar2 = local_8;
+        iVar1 = local_8;
         sVar3 = (short)iVar6;
       }
       iVar4 = iVar4 + 1;

@@ -17,19 +17,24 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   CPanelTy *this_00;
   byte bVar5;
   int iVar6;
+  uint local_EAX_550;
+  char *pcVar6_mg2;
+  int *piVar6;
+  int *piVar7;
   uint uVar7;
-  char *pcVar8;
-  int *piVar9;
-  int *piVar10;
+  BITMAPINFO *pBVar8;
+  uint uVar9;
+  int iVar10;
   int iVar11;
   uint uVar12;
   char cVar13;
   byte *puVar14;
   byte *pbVar15;
-  byte *pbVar16;
-  char *pcVar17;
-  bool bVar18;
-  dword dVar19;
+  char *pcVar16;
+  byte *pbVar17;
+  char *pcVar18;
+  bool bVar19;
+  dword dVar20;
   InternalExceptionFrame local_90;
   CPanelTy *local_4c;
   char local_48;
@@ -60,17 +65,17 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   this_00 = local_4c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_90.previous;
-    iVar11 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x167,0,iVar6,
+    iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x167,0,iVar6,
                                 "%s","CPanelTy::Update1Panel");
-    if (iVar11 == 0) {
+    if (iVar10 == 0) {
       RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0x167);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   puVar14 = (byte *)&local_4c->field_0B63;
-  pcVar8 = &local_48;
-  memmove(pcVar8, puVar14, 0x36); /* compiler REP MOVS byte copy */
+  pcVar16 = &local_48;
+  memmove(pcVar16, puVar14, 0x36); /* compiler REP MOVS byte copy */
   memset(&local_4c->field_0B63, 0, 0x32); /* compiler bulk-zero initialization */
   local_16 = local_4c->field_0B4B;
   Library::DKW::TBL::FUN_006afe40((int *)&local_16,&local_4c->field_0B95->flags);
@@ -120,18 +125,18 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     if ((this_00->field_0B95->count != local_16->count) || (local_47 != this_00->field_0B64)) {
       SwitchTV(this_00,1);
     }
-    iVar6 = 5;
-    bVar18 = true;
-    pcVar8 = local_1e;
-    pcVar17 = &this_00->field_0xb8d;
+    iVar11 = 5;
+    bVar19 = true;
+    pcVar16 = local_1e;
+    pcVar18 = &this_00->field_0xb8d;
     do {
-      if (iVar6 == 0) break;
-      iVar6 = iVar6 + -1;
-      bVar18 = *pcVar8 == *pcVar17;
-      pcVar8 = pcVar8 + 1;
-      pcVar17 = pcVar17 + 1;
-    } while (bVar18);
-    if (!bVar18) {
+      if (iVar11 == 0) break;
+      iVar11 = iVar11 + -1;
+      bVar19 = *pcVar16 == *pcVar18;
+      pcVar16 = pcVar16 + 1;
+      pcVar18 = pcVar18 + 1;
+    } while (bVar19);
+    if (!bVar19) {
       PaintDeep(this_00,1);
       bVar5 = (DAT_0080874e == '\x03') + 2;
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
@@ -143,17 +148,17 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
         }
       }
     }
-    uVar7 = FUN_006b5a50(local_16,(AnonShape_006B5A50_BD82F60D *)this_00->field_0B95);
-    if (uVar7 != 0) {
+    local_EAX_550 = FUN_006b5a50(local_16,(AnonShape_006B5A50_BD82F60D *)this_00->field_0B95);
+    if (local_EAX_550 != 0) {
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0,0,
                  (byte *)this_00->field_0958,0,0,0,*(int *)(this_00->field_0958 + 2),0x3c);
-      dVar19 = this_00->field_0B95->count;
-      pcVar8 = LoadResourceString(0x36b9,g_hINSTANCE_00807618);
-      wsprintfA(*(LPSTR *)&this_00->field_0x213,"&1%s&0%d",pcVar8,dVar19);
+      dVar20 = this_00->field_0B95->count;
+      pcVar6_mg2 = LoadResourceString(0x36b9,g_hINSTANCE_00807618);
+      wsprintfA(*(LPSTR *)&this_00->field_0x213,"&1%s&0%d",pcVar6_mg2,dVar20);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                        *(int *)(this_00->field_0958 + 2) + -4,0x2d);
-      ccFntTy::WrTxt(this_00->field_01B8,*(uint **)&this_00->field_0x213,-2,-1,0,-1,-1);
+      ccFntTy::WrTxt(this_00->field_01B8,*(char **)&this_00->field_0x213,-2,-1,0,-1,-1);
       if (-1 < (int)this_00->field_0148[1]) {
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[1],0xffffffff,
@@ -167,29 +172,29 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       local_8 = local_16->count;
       if (local_8 != 0) {
         pDVar1 = this_00->field_0B95;
-        uVar7 = pDVar1->count;
+        uVar9 = pDVar1->count;
         do {
           if (local_c < local_8) {
-            piVar9 = DArrayAt<int>(local_16, local_c);
+            piVar6 = DArrayAt<int>(local_16, local_c);
           }
           else {
-            piVar9 = nullptr;
+            piVar6 = nullptr;
           }
           uVar12 = 0;
-          if (uVar7 != 0) {
-            if (uVar7 == 0) {
-              piVar10 = nullptr;
+          if (uVar9 != 0) {
+            if (uVar9 == 0) {
+              piVar7 = nullptr;
               goto LAB_004ff6e4;
             }
             do {
-              piVar10 = DArrayAt<int>(pDVar1, uVar12);
+              piVar7 = DArrayAt<int>(pDVar1, uVar12);
 LAB_004ff6e4:
-              if (*piVar10 == *piVar9) {
+              if (*piVar7 == *piVar6) {
                 local_10 = 0;
                 break;
               }
               uVar12 = uVar12 + 1;
-            } while (uVar12 < uVar7);
+            } while (uVar12 < uVar9);
           }
           if (local_10 == 0) goto LAB_004ff723;
           local_c = local_c + 1;
@@ -225,9 +230,9 @@ LAB_004ff723:
     }
     SwitchTV(this_00,1);
   }
-  iVar6 = this_00->field_0B66;
-  if ((local_45 != iVar6) || (local_41 != this_00->field_0B6A)) {
-    if ((local_45 == 7) || (((local_45 == 0x13 || (iVar6 == 7)) || (iVar6 == 0x13)))) {
+  iVar11 = this_00->field_0B66;
+  if ((local_45 != iVar11) || (local_41 != this_00->field_0B6A)) {
+    if ((local_45 == 7) || (((local_45 == 0x13 || (iVar11 == 7)) || (iVar11 == 0x13)))) {
       PaintInfoBoat(this_00);
     }
     else {
@@ -242,26 +247,26 @@ LAB_004ff723:
       }
     }
   }
-  pbVar16 = &this_00->field_0B6F;
+  pbVar17 = &this_00->field_0B6F;
   pbVar15 = local_3c;
   do {
     bVar5 = *pbVar15;
-    bVar18 = bVar5 < *pbVar16;
-    if (bVar5 != *pbVar16) {
+    bVar19 = bVar5 < *pbVar17;
+    if (bVar5 != *pbVar17) {
 LAB_004ff875:
-      iVar6 = (1 - (uint)bVar18) - (uint)(bVar18 != 0);
+      iVar11 = (1 - (uint)bVar19) - (uint)(bVar19 != 0);
       goto LAB_004ff87a;
     }
     if (bVar5 == 0) break;
     bVar5 = pbVar15[1];
-    bVar18 = bVar5 < pbVar16[1];
-    if (bVar5 != pbVar16[1]) goto LAB_004ff875;
+    bVar19 = bVar5 < pbVar17[1];
+    if (bVar5 != pbVar17[1]) goto LAB_004ff875;
     pbVar15 = pbVar15 + 2;
-    pbVar16 = pbVar16 + 2;
+    pbVar17 = pbVar17 + 2;
   } while (bVar5 != 0);
-  iVar6 = 0;
+  iVar11 = 0;
 LAB_004ff87a:
-  if (iVar6 != 0) {
+  if (iVar11 != 0) {
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0,
                (byte *)this_00->field_0958,0,1,0,0x4e,0x20);
@@ -287,8 +292,8 @@ LAB_004ff87a:
      (local_2c != this_00->field_0B7F)) {
     PaintEnergy(this_00,1);
   }
-  iVar6 = this_00->field_0B66;
-  if (((iVar6 == 7) || (iVar6 == 0x13)) || (iVar6 == 0x1b)) {
+  iVar11 = this_00->field_0B66;
+  if (((iVar11 == 7) || (iVar11 == 0x13)) || (iVar11 == 0x1b)) {
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xb81 != local_2a) {
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0x2f,
@@ -303,11 +308,10 @@ LAB_004ff87a:
     if (GVar3 == 0) goto cf_common_exit_004FFB91;
     if (GVar3 != local_2a) {
       uVar7 = thunk_FUN_00526ba0(GVar3,this_00->field_0xb85);
-      pbVar15 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BE,uVar7
-                                    );
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0xb,0x31,'\x01',pbVar15);
-      pbVar15 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,10,0x30,'\x06',pbVar15);
+      pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BE,uVar7);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0xb,0x31,'\x01',(byte *)pBVar8);
+      pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,10,0x30,'\x06',(byte *)pBVar8);
       if (-1 < (int)this_00->field_0148[1]) {
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[1],0xffffffff,
@@ -322,16 +326,16 @@ LAB_004ff87a:
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(1));
     }
     if (bVar5 < 0x46) {
-      iVar6 = (-(uint)(bVar5 < 0x14) & 5) + 5;
+      iVar11 = (-(uint)(bVar5 < 0x14) & 5) + 5;
     }
     else {
-      iVar6 = 0;
+      iVar11 = 0;
     }
-    uVar7 = local_8 & 0xff;
+    uVar9 = local_8 & 0xff;
     Library::DKW::WGR::FUN_006b55f0
-              ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0x3c,0x52 - uVar7,
-               (byte *)this_00->field_028A,0,iVar6,*(int *)(this_00->field_028A + 4) - uVar7,5,uVar7
-              );
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0x3c,0x52 - uVar9,
+               (byte *)this_00->field_028A,0,iVar11,*(int *)(this_00->field_028A + 4) - uVar9,5,
+               uVar9);
     puVar2 = this_00->field_0148[1];
   }
   else {
@@ -351,18 +355,18 @@ LAB_004ff87a:
                this_00->field_0098);
   }
 cf_common_exit_004FFB91:
-  iVar6 = 5;
-  bVar18 = true;
-  pcVar8 = local_1e;
-  pcVar17 = &this_00->field_0xb8d;
+  iVar11 = 5;
+  bVar19 = true;
+  pcVar16 = local_1e;
+  pcVar18 = &this_00->field_0xb8d;
   do {
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
-    bVar18 = *pcVar8 == *pcVar17;
-    pcVar8 = pcVar8 + 1;
-    pcVar17 = pcVar17 + 1;
-  } while (bVar18);
-  if (!bVar18) {
+    if (iVar11 == 0) break;
+    iVar11 = iVar11 + -1;
+    bVar19 = *pcVar16 == *pcVar18;
+    pcVar16 = pcVar16 + 1;
+    pcVar18 = pcVar18 + 1;
+  } while (bVar19);
+  if (!bVar19) {
     PaintDeep(this_00,1);
     bVar5 = (DAT_0080874e == '\x03') + 2;
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));

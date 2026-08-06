@@ -12,7 +12,9 @@ AiEventClassTy::_CreateDest
 
 {
   bool bVar2;
+  int local_EAX_39;
   int iVar3;
+  int iVar5;
   int iVar4;
   InternalExceptionFrame local_50;
   int local_c;
@@ -21,16 +23,16 @@ AiEventClassTy::_CreateDest
   local_c = -1;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  if (iVar3 != 0) {
+  local_EAX_39 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  if (local_EAX_39 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x13c,0,iVar3,"%s",
-                               "AiEventClassTy::_CreateDest");
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x13c,0,local_EAX_39,
+                               "%s","AiEventClassTy::_CreateDest");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0x13d);
-    return iVar3;
+    RaiseInternalException(local_EAX_39,0,"E:\\__titans\\ai\\ai_event.cpp",0x13d);
+    return local_EAX_39;
   }
   if ((param_1 == 0) || (bVar2 = false, param_1 == 1)) {
     bVar2 = true;
@@ -39,8 +41,8 @@ AiEventClassTy::_CreateDest
     iVar3 = thunk_FUN_004961b0(param_3,param_4,param_5);
     if (iVar3 != 0) {
       local_8 = (int)param_3;
-      iVar3 = thunk_FUN_006036a0(param_3,param_4,param_5,(int)param_1);
-      if (iVar3 != 0) {
+      iVar5 = thunk_FUN_006036a0(param_3,param_4,param_5,(int)param_1);
+      if (iVar5 != 0) {
         if (param_7 == nullptr) {
           param_7 = &DAT_008016a0;
         }

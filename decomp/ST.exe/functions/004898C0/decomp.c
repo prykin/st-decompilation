@@ -5,12 +5,13 @@ void __thiscall FUN_004898c0(void *this,AnonShape_004898C0_081F3DAB *param_1)
 
 {
   int iVar1;
-  AnonShape_004898C0_081F3DAB *pAVar2;
+  int iVar2;
+  AnonShape_004898C0_081F3DAB *pAVar3;
 
-  pAVar2 = param_1;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(undefined4 *)pAVar2 = 0;
-    pAVar2 = (AnonShape_004898C0_081F3DAB *)&pAVar2->field_0x4;
+  pAVar3 = param_1;
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *(undefined4 *)pAVar3 = 0;
+    pAVar3 = (AnonShape_004898C0_081F3DAB *)&pAVar3->field_0x4;
   }
   *(undefined4 *)param_1 = STField<undefined4>(this,0x18);
   *(undefined4 *)&param_1->field_0x4 = STField<undefined4>(this,0x6f7);

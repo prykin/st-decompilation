@@ -32,8 +32,9 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
 
 {
   int iVar2;
-  uint *puVar3;
-  undefined4 *puVar4;
+  uint *puVar2;
+  undefined4 *puVar3;
+  int iVar4;
   int iVar5;
   ccFntTy_CreateTypeSSpr_param_4Enum cVar6;
   uint uVar7;
@@ -45,9 +46,9 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
   g_currentExceptionFrame = &local_48;
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
-    puVar4 = (undefined4 *)&param_1->field_0x21;
-    memset(puVar4, 0, 0x27); /* compiler bulk-zero initialization */
-    puVar4 = (undefined4 *)((byte *)puVar4 + 0x24);
+    puVar3 = (undefined4 *)&param_1->field_0x21;
+    memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
+    puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
     *(undefined4 *)&param_1->field_0x8 = param_9;
     *(undefined4 *)param_1 = param_7;
     *(undefined4 *)&param_1->field_0x4 = param_8;
@@ -93,23 +94,23 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
     if ((param_18 != 0) && (param_19 != nullptr)) {
       uVar9 = 0xffffffff;
       uVar8 = 7;
-      iVar2 = *(int *)&param_1->field_0xd9;
+      iVar5 = *(int *)&param_1->field_0xd9;
       uVar7 = 0xffffffff;
       cVar6 = CASE_FFFFFFFE;
-      puVar3 = (uint *)LoadResourceString(param_18,g_hINSTANCE_00807618);
-      puVar4 = ccFntTy::CreateTypeSSpr
-                         (param_19,puVar3,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
+      puVar2 = (uint *)LoadResourceString(param_18,g_hINSTANCE_00807618);
+      puVar3 = ccFntTy::CreateTypeSSpr
+                         (param_19,puVar2,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(iVar2 + 8))(puVar4,uVar8,uVar9);
+      (**(code **)(iVar5 + 8))(puVar3,uVar8,uVar9);
     }
     param_1->field_00E1 = 0;
     g_currentExceptionFrame = local_48.previous;
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x2d,0,iVar2,"%s",
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x2d,0,iVar2,"%s",
                              "MMObjTy::InitSprBut");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x2d);

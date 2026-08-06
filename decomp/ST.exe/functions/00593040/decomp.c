@@ -18,37 +18,41 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
   MMsgTy *pMVar4;
   CampaignTy *this_00;
   DWORD DVar6;
-  int iVar7;
+  int local_EAX_49;
   LPSTR text;
-  BITMAPINFO *pBVar8;
-  int iVar9;
-  undefined *puVar10;
+  BITMAPINFO *pBVar7;
+  int iVar8;
+  int iVar7;
+  char *pcVar9_mg1;
   int iVar11;
-  int iVar12;
-  uint uVar13;
-  char *pcVar15;
-  char *pcVar16;
-  byte bVar18;
+  int iVar9;
+  int iVar10;
+  uint uVar11;
+  char *pcVar13;
+  char *pcVar14;
+  byte bVar16;
+  int iVar17;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   int *local_c;
   CampaignTy *local_8;
+  char *pcVar9_mg0;
 
   local_8 = this;
   DVar6 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar6;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar7 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
+  local_EAX_49 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar7 != 0) {
+  if (local_EAX_49 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar11 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x24f,0,iVar7,
+    iVar11 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x24f,0,local_EAX_49,
                                 "%s","CampaignTy::GetMessage");
     if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\camp_obj.cpp",0x24f);
+    RaiseInternalException(local_EAX_49,0,"E:\\__titans\\Start\\camp_obj.cpp",0x24f);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_8,message);
@@ -76,11 +80,11 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
       DAT_0080874e = *(byte *)(message->arg0).ptr;
       if (g_startSystem_0081176C->field_0028 == 0) {
         FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
-        iVar7 = 0;
-        bVar18 = 0;
+        iVar17 = 0;
+        bVar16 = 0;
         text = FUN_006f2c00("CMPG_BKG",1,(uint)DAT_0080874e);
-        pBVar8 = (BITMAPINFO *)FUN_0070a9f0(g_cMf32_00806780,text,bVar18,iVar7);
-        PutDDX(0xa5,0x37,'\x01',pBVar8);
+        pBVar7 = (BITMAPINFO *)FUN_0070a9f0(g_cMf32_00806780,text,bVar16,iVar17);
+        PutDDX(0xa5,0x37,'\x01',pBVar7);
       }
       thunk_FUN_005b6730(this_00,4,'\x01',-1);
     }
@@ -122,35 +126,35 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
                          0);
     }
     else {
-      puVar10 = PTR_s_TUTOR_0079bff0;
+      pcVar9_mg0 = PTR_s_TUTOR_0079bff0;
       if (this_00->field_1FFC == 0) {
-        puVar10 = PTR_DAT_0079bfec;
+        pcVar9_mg0 = PTR_DAT_0079bfec;
       }
-      wsprintfA(&DAT_0080ed16,"%s%s%s%d01",&DAT_00807680,PTR_s_MISSIONS__0079bfe8,puVar10,
-                (uint)DAT_0080874e);
-      puVar10 = PTR_s_TUTOR_0079bff0;
+      wsprintfA(&DAT_0080ed16,"%s%s%s%d01",&DAT_00807680,PTR_s_MISSIONS__0079bfe8,
+                pcVar9_mg0,(uint)DAT_0080874e);
+      pcVar9_mg1 = PTR_s_TUTOR_0079bff0;
       if (this_00->field_1FFC == 0) {
-        puVar10 = PTR_DAT_0079bfec;
+        pcVar9_mg1 = PTR_DAT_0079bfec;
       }
-      wsprintfA(&DAT_0080ef1e,"%s%s%d01",PTR_s_MISSIONS__0079bfe8,puVar10,
+      wsprintfA(&DAT_0080ef1e,"%s%s%d01",PTR_s_MISSIONS__0079bfe8,pcVar9_mg1,
                 (uint)DAT_0080874e);
-      uVar13 = 0xffffffff;
-      pcVar15 = &DAT_0080ed16;
+      uVar11 = 0xffffffff;
+      pcVar13 = &DAT_0080ed16;
       do {
-        pcVar16 = pcVar15;
-        if (uVar13 == 0) break;
-        uVar13 = uVar13 - 1;
-        pcVar16 = pcVar15 + 1;
-        cVar1 = *pcVar15;
-        pcVar15 = pcVar16;
+        pcVar14 = pcVar13;
+        if (uVar11 == 0) break;
+        uVar11 = uVar11 - 1;
+        pcVar14 = pcVar13 + 1;
+        cVar1 = *pcVar13;
+        pcVar13 = pcVar14;
       } while (cVar1 != '\0');
-      uVar13 = ~uVar13;
-      pcVar15 = pcVar16 + -uVar13;
-      pcVar16 = (char *)&DAT_0080ee1a;
-      memmove(pcVar16, pcVar15, uVar13); /* compiler REP MOVS byte copy */
+      uVar11 = ~uVar11;
+      pcVar13 = pcVar14 + -uVar11;
+      pcVar14 = (char *)&DAT_0080ee1a;
+      memmove(pcVar14, pcVar13, uVar11); /* compiler REP MOVS byte copy */
       DAT_008087a0 = 8;
-      iVar7 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
-      if (iVar7 != 0) {
+      iVar17 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
+      if (iVar17 != 0) {
         memset(&DAT_0080c522, 0, 0x27f0); /* compiler bulk-zero initialization */
         thunk_FUN_005b6350(this_00,(-(uint)(this_00->field_1FFC != 0) & 8) + 0x6948,0,0);
         this_00->CloseButtons();
@@ -172,108 +176,108 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
   case MESS_SHARED_697F:
     piVar3 = (message->arg0).ptr;
     if (*piVar3 == 1) {
-      iVar7 = 2;
+      iVar17 = 2;
     }
     else {
-      iVar7 = (*piVar3 != 2) + 3;
+      iVar17 = (*piVar3 != 2) + 3;
     }
     switch(piVar3[1]) {
     case 0:
     case 2:
     case 3:
-      iVar11 = (int)&this_00->vtable + iVar7 * 0x1fb;
-      iVar9 = *(int *)(iVar11 + 0xef) + -1;
+      iVar9 = (int)&this_00->vtable + iVar17 * 0x1fb;
+      iVar8 = *(int *)(iVar9 + 0xef) + -1;
       break;
     case 1:
-      iVar11 = (int)&this_00->vtable + iVar7 * 0x1fb;
-      iVar9 = *(int *)(iVar11 + 0xef) + -2;
+      iVar9 = (int)&this_00->vtable + iVar17 * 0x1fb;
+      iVar8 = *(int *)(iVar9 + 0xef) + -2;
       break;
     default:
       goto switchD_005931dd_default;
     }
-    *(int *)(iVar11 + 0xeb) = iVar9;
+    *(int *)(iVar9 + 0xeb) = iVar8;
 switchD_005931dd_default:
-    uVar13 = *(uint *)((int)&this_00->field_00E7 + iVar7 * 0x1fb);
+    uVar11 = *(uint *)((int)&this_00->field_00E7 + iVar17 * 0x1fb);
     local_c = piVar3;
-    if (uVar13 != 0xffffffff) {
+    if (uVar11 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b3730
-                (*(uint **)((int)&this_00->field_012B + iVar7 * 0x1fb),uVar13,
-                 *(uint *)((int)&this_00->field_00EB + iVar7 * 0x1fb),
-                 *(uint *)((int)&this_00->field_00FF + iVar7 * 0x1fb),
-                 *(uint *)((int)&this_00->field_0103 + iVar7 * 0x1fb));
+                (*(uint **)((int)&this_00->field_012B + iVar17 * 0x1fb),uVar11,
+                 *(uint *)((int)&this_00->field_00EB + iVar17 * 0x1fb),
+                 *(uint *)((int)&this_00->field_00FF + iVar17 * 0x1fb),
+                 *(uint *)((int)&this_00->field_0103 + iVar17 * 0x1fb));
     }
-    if ((&this_00->field_00E2)[iVar7 * 0x1fb] != '\0') {
+    if ((&this_00->field_00E2)[iVar17 * 0x1fb] != '\0') {
       switch(piVar3[1]) {
       case 0:
       case 2:
       case 3:
-        *(int *)(&this_00->field_0x221 + iVar7 * 0x1fb) =
-             *(int *)((int)&this_00->field_00FF + iVar7 * 0x1fb) +
-             *(int *)(&this_00->field_0xab + iVar7 * 0x1fb);
-        *(int *)(&this_00->field_0x225 + iVar7 * 0x1fb) =
-             *(int *)((int)&this_00->field_0103 + iVar7 * 0x1fb) +
-             *(int *)(&this_00->field_0xaf + iVar7 * 0x1fb);
+        *(int *)(&this_00->field_0x221 + iVar17 * 0x1fb) =
+             *(int *)((int)&this_00->field_00FF + iVar17 * 0x1fb) +
+             *(int *)(&this_00->field_0xab + iVar17 * 0x1fb);
+        *(int *)(&this_00->field_0x225 + iVar17 * 0x1fb) =
+             *(int *)((int)&this_00->field_0103 + iVar17 * 0x1fb) +
+             *(int *)(&this_00->field_0xaf + iVar17 * 0x1fb);
         break;
       case 1:
-        *(int *)(&this_00->field_0x221 + iVar7 * 0x1fb) =
-             *(int *)((int)&this_00->field_00FF + iVar7 * 0x1fb) +
-             *(int *)(&this_00->field_0xb3 + iVar7 * 0x1fb);
-        *(int *)(&this_00->field_0x225 + iVar7 * 0x1fb) =
-             *(int *)((int)&this_00->field_0103 + iVar7 * 0x1fb) +
-             *(int *)(&this_00->field_0xb7 + iVar7 * 0x1fb);
+        *(int *)(&this_00->field_0x221 + iVar17 * 0x1fb) =
+             *(int *)((int)&this_00->field_00FF + iVar17 * 0x1fb) +
+             *(int *)(&this_00->field_0xb3 + iVar17 * 0x1fb);
+        *(int *)(&this_00->field_0x225 + iVar17 * 0x1fb) =
+             *(int *)((int)&this_00->field_0103 + iVar17 * 0x1fb) +
+             *(int *)(&this_00->field_0xb7 + iVar17 * 0x1fb);
       }
-      uVar13 = *(uint *)((int)&this_00->field_0209 + iVar7 * 0x1fb);
-      if (uVar13 != 0xffffffff) {
+      uVar11 = *(uint *)((int)&this_00->field_0209 + iVar17 * 0x1fb);
+      if (uVar11 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)((int)&this_00->field_024D + iVar7 * 0x1fb),uVar13,
-                   *(uint *)(&this_00->field_0x20d + iVar7 * 0x1fb),
-                   *(uint *)(&this_00->field_0x221 + iVar7 * 0x1fb),
-                   *(uint *)(&this_00->field_0x225 + iVar7 * 0x1fb));
+                  (*(uint **)((int)&this_00->field_024D + iVar17 * 0x1fb),uVar11,
+                   *(uint *)(&this_00->field_0x20d + iVar17 * 0x1fb),
+                   *(uint *)(&this_00->field_0x221 + iVar17 * 0x1fb),
+                   *(uint *)(&this_00->field_0x225 + iVar17 * 0x1fb));
       }
     }
-    local_10 = *(undefined4 *)((int)&this_00->field_0194 + iVar7 * 0x1fb);
-    iVar11 = *(int *)((int)&this_00->field_0190 + iVar7 * 0x1fb);
+    local_10 = *(undefined4 *)((int)&this_00->field_0194 + iVar17 * 0x1fb);
+    iVar9 = *(int *)((int)&this_00->field_0190 + iVar17 * 0x1fb);
     if (*local_c == 2) {
-      iVar9 = 0;
+      iVar8 = 0;
 LAB_0059332b:
-      iVar12 = -2;
+      iVar10 = -2;
     }
     else {
       if (*local_c != 3) {
-        iVar9 = 2;
+        iVar8 = 2;
         goto LAB_0059332b;
       }
-      iVar9 = 0;
-      iVar12 = -3;
+      iVar8 = 0;
+      iVar10 = -3;
     }
     switch(local_c[1]) {
     case 0:
-      *(int *)((int)&this_00->field_017C + iVar7 * 0x1fb) =
-           *(int *)(&this_00->field_0x180 + iVar7 * 0x1fb) + -3;
+      *(int *)((int)&this_00->field_017C + iVar17 * 0x1fb) =
+           *(int *)(&this_00->field_0x180 + iVar17 * 0x1fb) + -3;
       break;
     case 1:
-      *(int *)((int)&this_00->field_0190 + iVar7 * 0x1fb) = iVar9 + iVar11;
-      *(int *)((int)&this_00->field_0194 + iVar7 * 0x1fb) =
-           *(int *)((int)&this_00->field_0194 + iVar7 * 0x1fb) + iVar12;
+      *(int *)((int)&this_00->field_0190 + iVar17 * 0x1fb) = iVar8 + iVar9;
+      *(int *)((int)&this_00->field_0194 + iVar17 * 0x1fb) =
+           *(int *)((int)&this_00->field_0194 + iVar17 * 0x1fb) + iVar10;
     case 3:
-      iVar9 = *(int *)(&this_00->field_0x180 + iVar7 * 0x1fb) + -2;
+      iVar8 = *(int *)(&this_00->field_0x180 + iVar17 * 0x1fb) + -2;
 LAB_00593378:
-      *(int *)((int)&this_00->field_017C + iVar7 * 0x1fb) = iVar9;
+      *(int *)((int)&this_00->field_017C + iVar17 * 0x1fb) = iVar8;
       break;
     case 2:
-      iVar9 = *(int *)(&this_00->field_0x180 + iVar7 * 0x1fb) + -1;
+      iVar8 = *(int *)(&this_00->field_0x180 + iVar17 * 0x1fb) + -1;
       goto LAB_00593378;
     }
-    uVar13 = *(uint *)((int)&this_00->field_0178 + iVar7 * 0x1fb);
-    if (uVar13 != 0xffffffff) {
+    uVar11 = *(uint *)((int)&this_00->field_0178 + iVar17 * 0x1fb);
+    if (uVar11 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b3730
-                (*(uint **)((int)&this_00->field_01BC + iVar7 * 0x1fb),uVar13,
-                 *(uint *)((int)&this_00->field_017C + iVar7 * 0x1fb),
-                 *(uint *)((int)&this_00->field_0190 + iVar7 * 0x1fb),
-                 *(uint *)((int)&this_00->field_0194 + iVar7 * 0x1fb));
+                (*(uint **)((int)&this_00->field_01BC + iVar17 * 0x1fb),uVar11,
+                 *(uint *)((int)&this_00->field_017C + iVar17 * 0x1fb),
+                 *(uint *)((int)&this_00->field_0190 + iVar17 * 0x1fb),
+                 *(uint *)((int)&this_00->field_0194 + iVar17 * 0x1fb));
     }
-    *(int *)((int)&this_00->field_0190 + iVar7 * 0x1fb) = iVar11;
-    *(undefined4 *)((int)&this_00->field_0194 + iVar7 * 0x1fb) = local_10;
+    *(int *)((int)&this_00->field_0190 + iVar17 * 0x1fb) = iVar9;
+    *(undefined4 *)((int)&this_00->field_0194 + iVar17 * 0x1fb) = local_10;
   }
 switchD_005931ad_caseD_6944:
   g_currentExceptionFrame = local_54.previous;

@@ -13,9 +13,11 @@ STGroupBoatC::GetDepotForAttack
 {
   int iVar2;
   STGameObjC *pSVar3;
+  int iVar5;
+  int local_EAX_310;
   int iVar4;
   uint index;
-  STGroupBoatC *pSVar5;
+  STGroupBoatC *pSVar6;
   InternalExceptionFrame local_68;
   char local_24;
   char cStack_23;
@@ -35,7 +37,7 @@ STGroupBoatC::GetDepotForAttack
   g_currentExceptionFrame = &local_68;
   local_14 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
-  pSVar5 = local_14;
+  pSVar6 = local_14;
   if (iVar2 == 0) {
     *param_3 = -1;
     if ((local_14->field_01E6 != CASE_2) || (local_14->field_020E == nullptr)) {
@@ -44,31 +46,32 @@ STGroupBoatC::GetDepotForAttack
                  0x1708);
     }
     pSVar3 = STAllPlayersC::GetObjPtr
-                       (g_allPlayers_007FA174,pSVar5->field_0024,(ushort)param_1,CASE_1);
+                       (g_allPlayers_007FA174,pSVar6->field_0024,(ushort)param_1,CASE_1);
     STFishC::sub_004162B0((STFishC *)pSVar3,&local_10,&local_e,&local_c);
     index = 0;
-    local_1c = pSVar5->field_020E->count;
+    local_1c = pSVar6->field_020E->count;
     iVar2 = local_18;
     if (0 < (int)local_1c) {
       do {
-        DArrayGetElement(pSVar5->field_020E,index,&local_24);
+        DArrayGetElement(pSVar6->field_020E,index,&local_24);
         if (uStack_22 != 0xffff) {
           pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_24,uStack_22,(int)cStack_23);
-          iVar4 = (*pSVar3->vtable->vfunc_2C)();
-          if ((iVar4 == 0x3b) ||
-             (iVar4 = (*pSVar3->vtable->vfunc_2C)(), pSVar5 = local_14, iVar4 == 0x60)) {
+          iVar5 = (*pSVar3->vtable->vfunc_2C)();
+          if ((iVar5 == 0x3b) ||
+             (iVar5 = (*pSVar3->vtable->vfunc_2C)(), pSVar6 = local_14, iVar5 == 0x60)) {
             STFishC::sub_004162B0((STFishC *)pSVar3,&local_8,&local_6,&local_a);
-            iVar4 = FUN_006aadd0((int)local_10,(int)local_e,(int)local_c,(int)local_8,(int)local_6,
-                                 (int)local_a);
-            pSVar5 = local_14;
-            if (iVar4 < iVar2) {
+            local_EAX_310 =
+                 FUN_006aadd0((int)local_10,(int)local_e,(int)local_c,(int)local_8,(int)local_6,
+                              (int)local_a);
+            pSVar6 = local_14;
+            if (local_EAX_310 < iVar2) {
               *param_2 = local_24;
               *param_3 = uStack_22;
               *param_4 = local_8;
               *param_5 = local_6;
               *param_6 = local_a;
-              iVar2 = iVar4;
-              local_18 = iVar4;
+              iVar2 = local_EAX_310;
+              local_18 = local_EAX_310;
             }
           }
         }

@@ -10,9 +10,10 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
 {
   StartSystemTy *this_00;
   WaitTy *pWVar2;
-  int iVar3;
   int iVar4;
-  ccFntTy **ppcVar5;
+  int iVar3;
+  int iVar5;
+  ccFntTy **ppcVar6;
   ccFntTy *local_8d8 [6];
   undefined4 local_8c0;
   undefined4 local_8bc;
@@ -27,11 +28,11 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   InternalExceptionFrame local_4c;
   WaitTy *local_8;
 
-  ppcVar5 = local_8d8;
+  ppcVar6 = local_8d8;
   local_8 = this;
-  for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *ppcVar5 = nullptr;
-    ppcVar5 = ppcVar5 + 1;
+  for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *ppcVar6 = nullptr;
+    ppcVar6 = ppcVar6 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -41,10 +42,10 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
     if (local_8->field_1A64 == 0) {
       StartSystemTy::CreateBinDesc(g_startSystem_0081176C);
       StartSystemTy::CreateChatView(g_startSystem_0081176C);
-      ppcVar5 = local_8d8;
-      for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *ppcVar5 = nullptr;
-        ppcVar5 = ppcVar5 + 1;
+      ppcVar6 = local_8d8;
+      for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+        *ppcVar6 = nullptr;
+        ppcVar6 = ppcVar6 + 1;
       }
       local_8d8[0] = (ccFntTy *)0x1;
       local_8d8[1] = (ccFntTy *)0x9;

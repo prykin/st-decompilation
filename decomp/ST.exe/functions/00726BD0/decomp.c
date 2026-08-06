@@ -11,7 +11,7 @@ void __cdecl FUN_00726bd0(int *param_1)
     if (*(cMf32 **)(iVar1 + 2) != nullptr) {
       cMf32::RecMemFree(*(cMf32 **)(iVar1 + 2),(uint *)(iVar1 + 10));
     }
-    FreeAndNull((void **)param_1);
+    FreeAndNull(param_1);
   }
   return;
 }

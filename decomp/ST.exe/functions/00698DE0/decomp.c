@@ -6,52 +6,54 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
 
 {
   short *psVar1;
-  undefined1 *puVar2;
-  uint uVar3;
+  int iVar2;
+  undefined1 *puVar3;
   uint uVar4;
+  uint uVar5;
+  int local_EAX_152;
   int iVar5;
   short *psVar6;
   uint *puVar7;
   short *psVar8;
   int local_8;
 
-  puVar2 = param_1;
+  puVar3 = param_1;
   local_8 = 0;
   Library::MSVCRT::FUN_00730810(param_1,param_2,10,thunk_FUN_00698db0);
-  iVar5 = *(int *)(param_1 + param_2 * 10 + -4);
-  uVar4 = 0;
-  uVar3 = param_2;
+  iVar2 = *(int *)(param_1 + param_2 * 10 + -4);
+  uVar5 = 0;
+  uVar4 = param_2;
   if (0 < (int)param_2) {
     puVar7 = (uint *)(param_1 + 6);
     do {
-      uVar3 = uVar4;
-      if ((uint)(((100 - param_7) * iVar5) / 100) < *puVar7) break;
-      uVar4 = uVar4 + 1;
-      *puVar7 = iVar5 - *puVar7;
+      uVar4 = uVar5;
+      if ((uint)(((100 - param_7) * iVar2) / 100) < *puVar7) break;
+      uVar5 = uVar5 + 1;
+      *puVar7 = iVar2 - *puVar7;
       puVar7 = (uint *)((int)puVar7 + 10);
-      uVar3 = param_2;
-    } while ((int)uVar4 < (int)param_2);
+      uVar4 = param_2;
+    } while ((int)uVar5 < (int)param_2);
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_2 = uVar3;
+  param_2 = uVar4;
   if (0 < param_3) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_7 = param_3;
     psVar6 = (short *)(param_6 + 4);
     do {
-      iVar5 = thunk_FUN_0069f7f0((int)puVar2,param_2,10,6,10);
+      local_EAX_152 = thunk_FUN_0069f7f0((int)puVar3,param_2,10,6,10);
       psVar8 = psVar6;
-      if (-1 < iVar5) {
+      if (-1 < local_EAX_152) {
         psVar8 = psVar6 + 5;
-        psVar1 = (short *)(puVar2 + iVar5 * 10);
-        psVar6[-2] = *(short *)(puVar2 + iVar5 * 10);
+        psVar1 = (short *)(puVar3 + local_EAX_152 * 10);
+        psVar6[-2] = *(short *)(puVar3 + local_EAX_152 * 10);
         psVar6[-1] = psVar1[1];
         local_8 = local_8 + 1;
         *psVar6 = psVar1[2];
         if (-1 < (int)param_2) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (undefined1 *)(param_2 + 1);
-          puVar7 = (uint *)(puVar2 + 6);
+          puVar7 = (uint *)(puVar3 + 6);
           do {
             iVar5 = FUN_006acf90((int)*psVar1,(int)psVar1[1],(int)*(short *)((int)puVar7 + -6),
                                  (int)(short)puVar7[-1]);

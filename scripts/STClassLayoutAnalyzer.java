@@ -36,6 +36,7 @@ import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.StructureDataType;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
@@ -59,6 +60,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     private static final Set<String> COOPERATING_LAYOUT_MARKERS = Set.of(
         MARKER, "[STGlobalDataApplier]");
     private static final String HASH_MARKER = "generated_layout_sha256=";
+    private static final String OVERLAY_HASH_MARKER = "generated_overlay_sha256=";
     private static final String SWITCH_ENUM_MARKER = "[STSwitchEnumApplier]";
     private static final String OBJECT_FACTORY_TAG = "RECOVERED_OBJECT_FACTORY";
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
@@ -138,27 +140,38 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             markOverlaps(ownerFields);
             long autoFields = ownerFields.stream().filter(field -> field.apply).count();
             boolean safeStructure = isPlaceholder(structure) || isOwnedUnchangedCandidate(structure);
+            boolean surgicalStructure = !safeStructure &&
+                isOwnedSurgicalCandidate(structure);
+            boolean surgicalRepair = surgicalStructure &&
+                proposedSize == structure.getLength() && ownerFields.stream()
+                    .anyMatch(field -> isSurgicalField(structure, field));
             boolean hasExactSize = exactSize >= observedSize;
             boolean hasVtable = vtableTypes.containsKey(evidence.owner);
             // A single remote access is too weak to justify materializing a mostly-empty,
             // potentially enormous structure.  Require a second independent offset, an
             // applied vtable type, or a unique constructor allocation size.
             boolean anchoredLayout = autoFields >= 2 || hasVtable || hasExactSize;
-            boolean apply = safeStructure && autoFields > 0 && anchoredLayout;
+            boolean apply = (safeStructure && autoFields > 0 && anchoredLayout) ||
+                surgicalRepair;
+            String repairMode = surgicalRepair ? "surgical" : "full";
             String reason = exactSize >= observedSize ? "unique_allocation_size_and_this_accesses" :
                 "observed_this_access_extent";
-            if (!safeStructure) reason = "existing_manual_or_unowned_structure_preserved";
+            if (surgicalRepair)
+                reason = "hash_diverged_generated_layout_exact_field_overlay";
+            else if (!safeStructure)
+                reason = "existing_manual_or_unowned_structure_preserved";
             else if (!anchoredLayout) reason = "insufficient_layout_anchors";
             ClassProposal proposal = new ClassProposal(evidence.owner, structure.getPathName(),
                 structure.getLength(), observedSize, exactSize, proposedSize,
                 ownerFields.size(), autoFields, apply, apply ? "high" : "manual",
-                reason, evidence.functions);
+                repairMode, reason, evidence.functions);
             classRows.add(proposal);
             fieldRows.addAll(ownerFields);
             for (NestedTypeProposal nested : ownerNested) {
                 FieldProposal parent = ownerFields.stream().filter(field ->
                     field.offset == nested.parentOffset).findFirst().orElse(null);
-                boolean attach = apply && parent != null && parent.apply && parent.typeApply &&
+                boolean attach = safeStructure && apply && parent != null &&
+                    parent.apply && parent.typeApply &&
                     parent.inferredType.equals("pointer:" + nested.typePath);
                 nested.apply = attach || refreshExistingNested(nested, nestedFields);
                 for (NestedFieldProposal field : nestedFields)
@@ -1330,7 +1343,9 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         for (Parameter parameter : called.getParameters()) {
             if (!parameter.isAutoParameter()) parameters.add(parameter);
         }
-        if (parameters.isEmpty() || parameters.size() != pushes.size()) return;
+        if (parameters.isEmpty() ||
+                (parameters.size() != pushes.size() &&
+                 !(called.hasVarArgs() && pushes.size() >= parameters.size()))) return;
         for (int index = 0; index < parameters.size(); index++) {
             Parameter parameter = parameters.get(index);
             PushEvidence pushed = pushes.get(pushes.size() - 1 - index);
@@ -2256,13 +2271,86 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         if (description == null || COOPERATING_LAYOUT_MARKERS.stream()
                 .noneMatch(description::contains)) return false;
         String stored = storedLayoutHash(description);
-        return stored != null && stored.equals(layoutHash(structure));
+        if (stored == null) return false;
+        if (stored.equals(layoutHash(structure))) return true;
+        // Older appliers hashed the transient StructureDataType before
+        // replaceWith().  Ghidra can canonicalize default or overlapping
+        // components while installing it, so the untouched StructureDB then
+        // looked manually edited.  Rebuild the exact current components through
+        // the same transient representation and accept only a cryptographic
+        // match with that legacy hash.
+        return stored.equals(transientLayoutHash(structure));
+    }
+
+    private boolean isOwnedSurgicalCandidate(Structure structure) {
+        String description = structure.getDescription();
+        if (description == null || !description.contains(MARKER) ||
+                storedLayoutHash(description) == null) return false;
+        String current = layoutHash(structure);
+        String overlay = storedHash(description, OVERLAY_HASH_MARKER);
+        if (overlay != null) return overlay.equals(current);
+        // One-time migration for layouts produced before the applier hashed the
+        // installed StructureDB.  This does not authorize a full rebuild: only
+        // exact fields with a matching generated baseline may change.
+        if (storedLayoutHash(description).equals(current)) return false;
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            String comment = component.getComment();
+            if (comment == null || !comment.contains(MARKER)) return false;
+        }
+        return structure.getNumDefinedComponents() > 0;
+    }
+
+    private boolean isSurgicalField(Structure structure, FieldProposal field) {
+        if (!field.apply || (!field.typeApply && !field.nameApply) ||
+                field.offset < 0 || field.offset > Integer.MAX_VALUE) return false;
+        DataTypeComponent component = structure.getComponentAt((int)field.offset);
+        if (component == null || component.getOffset() != field.offset ||
+                component.getLength() != field.size || component.getComment() == null ||
+                !component.getComment().contains(MARKER)) return false;
+        if (field.typeApply && !typeSpecification(component.getDataType())
+                .equals(field.type)) return false;
+        if (field.typeApply && !resolvableType(field.inferredType)) return false;
+        return !field.nameApply || genericFieldName(component.getFieldName());
+    }
+
+    private boolean resolvableType(String specification) {
+        if (specification == null || specification.isBlank()) return false;
+        if (specification.startsWith("pointer:"))
+            return dataTypes.getDataType(
+                specification.substring("pointer:".length())) != null;
+        if (specification.startsWith("array:")) {
+            int separator = specification.indexOf(':', "array:".length());
+            return separator > 0 && resolvableType(
+                specification.substring(separator + 1));
+        }
+        return specification.startsWith("/undefined") ||
+            dataTypes.getDataType(specification) != null;
+    }
+
+    private String transientLayoutHash(Structure structure) {
+        try {
+            StructureDataType mirror = new StructureDataType(
+                structure.getCategoryPath(), structure.getName() + "__HashProbe",
+                structure.getLength(), dataTypes);
+            for (DataTypeComponent component : structure.getDefinedComponents())
+                mirror.replaceAtOffset(component.getOffset(), component.getDataType(),
+                    component.getLength(), component.getFieldName(),
+                    component.getComment());
+            return layoutHash(mirror);
+        }
+        catch (Exception ignored) {
+            return "";
+        }
     }
 
     private String storedLayoutHash(String description) {
-        int index = description.indexOf(HASH_MARKER);
+        return storedHash(description, HASH_MARKER);
+    }
+
+    private String storedHash(String description, String marker) {
+        int index = description.indexOf(marker);
         if (index < 0) return null;
-        String value = description.substring(index + HASH_MARKER.length()).trim();
+        String value = description.substring(index + marker.length()).trim();
         // Constructor/base evidence is appended on a new line after the generated
         // layout hash. Parse the fixed-width digest instead of requiring it to be
         // the last description token; otherwise generated classes with base
@@ -2536,12 +2624,13 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\towner\ttype_path\texisting_length\tobserved_min_size\t" +
                 "exact_allocation_size\tproposed_length\tfield_count\tauto_field_count\t" +
-                "confidence\treason\tevidence_functions\n");
+                "confidence\trepair_mode\treason\tevidence_functions\n");
             for (ClassProposal row : rows) out.write(bit(row.apply) + "\t" + tsv(row.owner) +
                 "\t" + tsv(row.typePath) + "\t" + row.existingLength + "\t" +
                 row.observedSize + "\t" + (row.exactSize < 0 ? "" : row.exactSize) + "\t" +
                 row.proposedLength + "\t" + row.fieldCount + "\t" + row.autoFieldCount +
-                "\t" + row.confidence + "\t" + row.reason + "\t" +
+                "\t" + row.confidence + "\t" + row.repairMode + "\t" +
+                row.reason + "\t" +
                 tsv(String.join(" | ", row.functions)) + "\n");
         }
     }
@@ -2954,19 +3043,21 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
     }
     private static class ClassProposal {
-        final String owner, typePath, confidence, reason;
+        final String owner, typePath, confidence, repairMode, reason;
         final long existingLength, observedSize, exactSize, proposedLength, fieldCount,
             autoFieldCount;
         final boolean apply;
         final Set<String> functions;
         ClassProposal(String owner, String typePath, long existingLength, long observedSize,
                 long exactSize, long proposedLength, long fieldCount, long autoFieldCount,
-                boolean apply, String confidence, String reason, Set<String> functions) {
+                boolean apply, String confidence, String repairMode, String reason,
+                Set<String> functions) {
             this.owner = owner; this.typePath = typePath; this.existingLength = existingLength;
             this.observedSize = observedSize; this.exactSize = exactSize;
             this.proposedLength = proposedLength; this.fieldCount = fieldCount;
             this.autoFieldCount = autoFieldCount; this.apply = apply;
-            this.confidence = confidence; this.reason = reason;
+            this.confidence = confidence; this.repairMode = repairMode;
+            this.reason = reason;
             this.functions = new TreeSet<>(functions);
         }
     }

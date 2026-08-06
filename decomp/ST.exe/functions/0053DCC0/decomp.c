@@ -12,10 +12,11 @@ UPanelTy::PaintLBut(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte par
 {
   AnonNested_0053DCC0_0018_16DF3813 *pAVar1;
   UPanelTy *pUVar3;
-  int iVar4;
-  undefined4 uVar5;
-  LPSTR text;
   int iVar6;
+  int iVar4;
+  undefined4 uVar7;
+  LPSTR text;
+  int iVar5;
   InternalExceptionFrame local_58;
   UPanelTy *local_14;
   int local_10;
@@ -38,17 +39,17 @@ UPanelTy::PaintLBut(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte par
     iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar4 == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar5 = (*(code *)param_5)(param_1);
-      text = FUN_006f2c00(param_3,1,uVar5);
+      uVar7 = (*(code *)param_5)(param_1);
+      text = FUN_006f2c00(param_3,1,uVar7);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,text,nullptr,1);
-      iVar4 = local_c;
+      iVar6 = local_c;
       pUVar3 = local_14;
       DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_1->field_0014 == 3) {
         local_8 = cMf32::RecGet(g_cMf32_00806790,6,param_4,nullptr,1);
-        DibPut((RecoveredSourceFamily_dibcopy *)pUVar3->field_0068,local_10,iVar4,'\x06',
+        DibPut((RecoveredSourceFamily_dibcopy *)pUVar3->field_0068,local_10,iVar6,'\x06',
                (byte *)local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       }
@@ -59,9 +60,9 @@ UPanelTy::PaintLBut(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte par
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x74,0,iVar4,"%s",
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x74,0,iVar4,"%s",
                                "UPanelTy::PaintLBut");
-    if (iVar6 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\specpan.cpp",0x74);

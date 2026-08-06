@@ -1,13 +1,13 @@
 program=ST.exe
 functions_scanned=5712
 cfg_candidates=4241
-functions_with_gotos=872
-decompile_failures=3
-goto_statements=5485
-resolved_targets=3357
-unresolved_targets=6
-auto_apply=422
-auto_apply_gotos_covered=1915
-kinds={branch_target=106, break_loop=55, common_exit=258, common_join=78, continue_loop=51, error_exit=37, join=2771, switch_join=1}
+functions_with_gotos=874
+decompile_failures=1
+goto_statements=5756
+resolved_targets=3438
+unresolved_targets=4
+auto_apply=429
+auto_apply_gotos_covered=2107
+kinds={branch_target=114, break_loop=58, common_exit=262, common_join=80, continue_loop=52, error_exit=37, join=2834, switch_join=1}
 note=Only labels emitted as goto targets by the decompiler are proposed.
 note_apply=Manual labels are preserved; generic low-confidence joins remain apply=0.

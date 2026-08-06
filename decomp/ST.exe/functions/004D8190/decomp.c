@@ -4,21 +4,22 @@
 void FUN_004d8190(void)
 
 {
-  int iVar1;
   int iVar2;
-  longlong lVar3;
+  int iVar3;
+  int iVar1;
   longlong lVar4;
+  longlong lVar5;
 
   if (DAT_007fa13c != 0) {
-    lVar3 = FUN_006b12cc(DAT_007fa140);
-    lVar4 = FUN_006b12cc(DAT_007fa13c);
-    iVar1 = FUN_006b12a8((int)lVar3,(int)lVar4);
-    iVar2 = FUN_006b1280(iVar1);
-    if (iVar2 < 0x1c2) {
-      iVar1 = FUN_006b12dc(iVar1,iVar1);
-      lVar3 = FUN_006b12cc(0x19);
-      iVar1 = FUN_006b12dc((int)lVar3,iVar1);
-      iVar1 = FUN_006b1280(iVar1);
+    lVar4 = FUN_006b12cc(DAT_007fa140);
+    lVar5 = FUN_006b12cc(DAT_007fa13c);
+    iVar2 = FUN_006b12a8((int)lVar4,(int)lVar5);
+    iVar3 = FUN_006b1280(iVar2);
+    if (iVar3 < 0x1c2) {
+      iVar2 = FUN_006b12dc(iVar2,iVar2);
+      lVar4 = FUN_006b12cc(0x19);
+      iVar2 = FUN_006b12dc((int)lVar4,iVar2);
+      iVar1 = FUN_006b1280(iVar2);
       DAT_007fa144 = iVar1 << 1;
       return;
     }

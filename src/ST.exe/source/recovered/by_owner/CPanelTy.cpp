@@ -584,8 +584,7 @@ void __thiscall st::fn_004FAE90(CPanelTy *this,uint *param_1,ushort param_2)
         local_10 = local_8;
         local_14 = param_1;
         iVar4 = st::fn_0040512D
-                          (g_allPlayers_007FA174,nullptr,nullptr,
-                           &stack0x0000000a);
+                          (g_allPlayers_007FA174,nullptr,nullptr,&stack0x0000000a);
         if (-1 < iVar4) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           local_c = (int)in_stack_0000000a;
@@ -637,8 +636,7 @@ void __thiscall st::fn_00501A10(CPanelTy *this)
 
 {
   undefined4 *puVar1;
-  undefined4 uVar2;
-  int iVar3;
+  BITMAPINFO *pBVar2;
 
   puVar1 = &this->field_0434;
   memset(puVar1, 0, 0x118); /* compiler bulk-zero initialization */
@@ -655,16 +653,16 @@ void __thiscall st::fn_00501A10(CPanelTy *this)
       this->field_0454 = this->field_00A0 + 8;
       this->field_0458 = 100;
       this->field_045C = 0x3c;
-      uVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,0);
-      this->field_0460 = uVar2;
+      pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,0);
+      this->field_0460 = pBVar2;
       this->field_0464 = this->field_0458;
       this->field_0468 = 0x4e87;
       this->field_046C = this->field_0048 + 2;
       this->field_0470 = this->field_00A0 + 6;
       this->field_0474 = 0x20;
       this->field_0478 = 0x35;
-      uVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,2);
-      this->field_047C = uVar2;
+      pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,2);
+      this->field_047C = pBVar2;
       this->field_0484 = 0x2ef0;
       this->field_0480 = this->field_0474;
       return;
@@ -675,10 +673,10 @@ void __thiscall st::fn_00501A10(CPanelTy *this)
     case CASE_16:
     case CASE_17:
     case CASE_25:
-      iVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
-      this->field_043C = *(undefined4 *)(iVar3 + 4);
-      iVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
-      this->field_0440 = *(undefined4 *)(iVar3 + 8);
+      pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
+      this->field_043C = (pBVar2->bmiHeader).biWidth;
+      pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
+      this->field_0440 = (pBVar2->bmiHeader).biHeight;
       *puVar1 = (this->field_018C->field_0004 - this->field_043C) / 2 + this->field_0048;
       this->field_0438 = this->field_00A0 + 0x50;
     }
@@ -780,7 +778,7 @@ switchD_005050fb_caseD_0:
 void __thiscall st::fn_00506040(CPanelTy *this)
 
 {
-  undefined4 uVar1;
+  BITMAPINFO *pBVar1;
 
   memset(&this->field_0x54c, 0, 0x118); /* compiler bulk-zero initialization */
   if (this->field_0BFA == CASE_1) {
@@ -789,16 +787,16 @@ void __thiscall st::fn_00506040(CPanelTy *this)
       this->field_056C = this->field_00A8 + 8;
       this->field_0570 = 100;
       this->field_0574 = 0x3c;
-      uVar1 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,1);
-      this->field_0578 = uVar1;
+      pBVar1 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,1);
+      this->field_0578 = pBVar1;
       this->field_057C = this->field_0570;
       this->field_0580 = 0x4e87;
       this->field_0584 = this->field_0050 + 199;
       this->field_0588 = this->field_00A8 + 6;
       this->field_058C = 0x20;
       this->field_0590 = 0x35;
-      uVar1 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,3);
-      this->field_0594 = uVar1;
+      pBVar1 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,3);
+      this->field_0594 = pBVar1;
       this->field_0598 = this->field_058C;
       this->field_059C = 0x2ef0;
       return;

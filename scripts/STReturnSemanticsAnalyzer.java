@@ -29,6 +29,7 @@ import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
+import ghidra.program.model.data.Undefined;
 import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
@@ -129,6 +130,20 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             return row(function, currentType, "/void", function.hasNoReturn(), false, mutable,
                 "leaf_void", "high",
                 "leaf function has RET and never writes EAX/AX/AL/AH");
+
+        String forwardedReturn = mutable &&
+            (genericUnknown(currentType) || currentType.equals("/void")) &&
+            observed != null && observed.used >= 2 ?
+                exactForwardedCallReturn(function) : "";
+        if (!forwardedReturn.isBlank())
+            return row(function, currentType, forwardedReturn,
+                function.hasNoReturn(), false, true,
+                "forwarded_call_return", "high",
+                "every reachable RET receives full EAX from a trusted concrete " +
+                    "callee with return type " + forwardedReturn +
+                    "; every later accumulator definition is an exact full-width " +
+                    "integer transform of that value" +
+                    observedEvidence(observed));
 
         boolean scriptVoidWithContradictoryCallsite = mutable && currentType.equals("/void") &&
             hasMarker(function, "ignored_eax_void") && observed != null &&
@@ -298,6 +313,202 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             else if (Set.of("AL", "AH").contains(name)) width = Math.max(width, 1);
         }
         return width;
+    }
+
+    /**
+     * Recover wrappers and branching helpers which return a concrete callee's
+     * EAX unchanged.  Caller-side EAX use is only a gate; the proof itself is
+     * entirely inside the callee CFG.  All reachable RETs must be dominated by
+     * a call returning the same trusted type, and any later call or partial/full
+     * accumulator definition rejects the proposal.
+     */
+    private String exactForwardedCallReturn(Function function) {
+        Map<String, DataType> candidates = new HashMap<>();
+        InstructionIterator iterator = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        int totalReturns = 0;
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            String mnemonic = instruction.getMnemonicString()
+                .toUpperCase(Locale.ROOT);
+            if (mnemonic.startsWith("RET")) totalReturns++;
+            if (!"CALL".equals(mnemonic)) continue;
+            Function called = trustedReturnProducer(instruction);
+            if (called == null) continue;
+            DataType type = called.getReturnType();
+            if (!concreteMachineReturn(type)) continue;
+            candidates.putIfAbsent(typeSpec(type), type);
+        }
+        if (totalReturns == 0 || candidates.isEmpty()) return "";
+        List<String> proven = new ArrayList<>();
+        for (String type : candidates.keySet())
+            if (allReturnsForwardType(function, type, totalReturns))
+                proven.add(type);
+        return proven.size() == 1 ? proven.get(0) : "";
+    }
+
+    private boolean allReturnsForwardType(Function function, String proposed,
+            int totalReturns) {
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null) return false;
+        Deque<ForwardState> pending = new ArrayDeque<>();
+        pending.add(new ForwardState(entry.getAddress(), false));
+        Set<ForwardState> visited = new HashSet<>();
+        Set<Address> reachedReturns = new HashSet<>();
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            ForwardState state = pending.removeFirst();
+            if (!visited.add(state) || ++nodes > 32768) continue;
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (instruction == null ||
+                    !function.getBody().contains(instruction.getAddress()))
+                return false;
+            String mnemonic = instruction.getMnemonicString()
+                .toUpperCase(Locale.ROOT);
+            boolean hasValue = state.hasValue;
+            if ("CALL".equals(mnemonic)) {
+                Function producer = trustedReturnProducer(instruction);
+                if (producer != null &&
+                        proposed.equals(typeSpec(producer.getReturnType())))
+                    hasValue = true;
+                else if (hasValue) return false;
+            }
+            else if (hasValue &&
+                    accumulatorWidth(instruction.getResultObjects()) > 0 &&
+                    !preservesAccumulatorType(instruction, proposed)) return false;
+            if (mnemonic.startsWith("RET")) {
+                if (!hasValue) return false;
+                reachedReturns.add(instruction.getAddress());
+                continue;
+            }
+            for (Address successor : instructionSuccessors(function, instruction))
+                pending.addLast(new ForwardState(successor, hasValue));
+        }
+        return reachedReturns.size() == totalReturns;
+    }
+
+    private List<Address> instructionSuccessors(Function function,
+            Instruction instruction) {
+        List<Address> result = new ArrayList<>();
+        Address fallThrough = instruction.getFallThrough();
+        if (fallThrough != null && function.getBody().contains(fallThrough))
+            result.add(fallThrough);
+        if (instruction.getFlowType().isJump()) {
+            for (Address flow : instruction.getFlows())
+                if (function.getBody().contains(flow) && !result.contains(flow))
+                    result.add(flow);
+        }
+        return result;
+    }
+
+    private Function trustedReturnProducer(Instruction instruction) {
+        Function direct = directCalledFunction(instruction);
+        Function called = resolveThunk(direct);
+        if (called == null || !concreteMachineReturn(called.getReturnType()))
+            return null;
+        SourceType source = called.getReturn().getSource();
+        if (source == SourceType.USER_DEFINED || source == SourceType.IMPORTED ||
+                isLibrary(called)) return called;
+        if (typeSpec(called.getReturnType()).equals(
+                machineScalarReturnType(called))) return called;
+        for (ghidra.program.model.listing.FunctionTag tag : called.getTags())
+            if (tag.getName().startsWith("RECOVERED_UTILITY_")) return called;
+        String comment = called.getComment();
+        return comment != null &&
+            (comment.contains("[STPrototypeApplier]") ||
+             comment.contains("[STPrototypeRepairApplier]") ||
+             comment.contains("[STConstructorApplier]") ||
+             comment.contains("[STReturnSemanticsApplier] typed_pointer_return")) ?
+                called : null;
+    }
+
+    /**
+     * Full-width integer arithmetic changes the value but not its return ABI.
+     * Pointer results and partial-register operations are never accepted here.
+     */
+    private boolean preservesAccumulatorType(Instruction instruction,
+            String proposed) {
+        DataType type = unwrap(currentProgram.getDataTypeManager()
+            .getDataType(proposed));
+        if (!(type instanceof ghidra.program.model.data.AbstractIntegerDataType) &&
+                !(type instanceof ghidra.program.model.data.Enum)) return false;
+        if (accumulatorWidth(instruction.getInputObjects()) < 4 ||
+                accumulatorWidth(instruction.getResultObjects()) != 4) return false;
+        String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+        if ("MOV".equals(mnemonic)) {
+            Register destination = instruction.getRegister(0);
+            Register source = instruction.getRegister(1);
+            return destination != null && source != null &&
+                "EAX".equals(destination.getName().toUpperCase(Locale.ROOT)) &&
+                "EAX".equals(source.getName().toUpperCase(Locale.ROOT));
+        }
+        return Set.of("NEG", "NOT", "INC", "DEC", "ADD", "ADC", "SUB",
+            "SBB", "AND", "OR", "XOR", "SHL", "SAL", "SHR", "SAR",
+            "ROL", "ROR", "RCL", "RCR", "IMUL").contains(mnemonic);
+    }
+
+    /**
+     * Independently prove a primitive 32-bit integer return from the callee CFG.
+     * Only signedness-defining machine operations participate.  Ambiguous MOV,
+     * LEA, constants, calls, and partial-register definitions collapse the state
+     * to unknown, so Ghidra's current ANALYSIS type cannot validate itself.
+     */
+    private String machineScalarReturnType(Function function) {
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null || function.getBody().getNumAddresses() > 0x2000)
+            return "";
+        Deque<ScalarReturnState> pending = new ArrayDeque<>();
+        pending.add(new ScalarReturnState(entry.getAddress(), ""));
+        Set<ScalarReturnState> visited = new HashSet<>();
+        Set<String> returned = new HashSet<>();
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            ScalarReturnState state = pending.removeFirst();
+            if (!visited.add(state) || ++nodes > 32768) continue;
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (instruction == null ||
+                    !function.getBody().contains(instruction.getAddress())) return "";
+            String mnemonic = instruction.getMnemonicString()
+                .toUpperCase(Locale.ROOT);
+            if ("CALL".equals(mnemonic)) return "";
+            String scalar = state.type;
+            int written = accumulatorWidth(instruction.getResultObjects());
+            if (written > 0) {
+                if (written != 4) scalar = "";
+                else if ("MOVZX".equals(mnemonic) || "DIV".equals(mnemonic))
+                    scalar = "/uint";
+                else if ("MOVSX".equals(mnemonic) || "IDIV".equals(mnemonic))
+                    scalar = "/int";
+                else if (!scalar.isBlank() &&
+                        preservesAccumulatorType(instruction, scalar)) {
+                    // Exact full-width transform retains the proven scalar ABI.
+                }
+                else scalar = "";
+            }
+            if (mnemonic.startsWith("RET")) {
+                if (scalar.isBlank()) return "";
+                returned.add(scalar);
+                continue;
+            }
+            for (Address successor : instructionSuccessors(function, instruction))
+                pending.addLast(new ScalarReturnState(successor, scalar));
+        }
+        return returned.size() == 1 ? returned.iterator().next() : "";
+    }
+
+    private boolean concreteMachineReturn(DataType type) {
+        type = unwrap(type);
+        if (type == null || type.getLength() != 4 ||
+                Undefined.isUndefined(type) || "/void".equals(type.getPathName()))
+            return false;
+        if (!(type instanceof Pointer pointer)) return true;
+        DataType pointed = unwrap(pointer.getDataType());
+        return pointed != null && !Undefined.isUndefined(pointed) &&
+            !"/void".equals(pointed.getPathName());
     }
 
     private Function directCalledFunction(Instruction instruction) {
@@ -508,7 +719,7 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 "\nAutomatic: " + rows.stream().filter(row -> row.apply).count() + "\n");
             for (String id : List.of("leaf_void", "ignored_eax_void",
                     "repair_unsafe_eax_rollback", "void_eax_read_review",
-                    "typed_pointer_return",
+                    "typed_pointer_return", "forwarded_call_return",
                     "boolean_return_domain", "noreturn_terminal_call"))
                 out.write(id + ": " + rows.stream().filter(row -> row.semantic.equals(id)).count() + "\n");
         }
@@ -540,6 +751,8 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
         boolean endsInNoReturnCall, boolean booleanLike) {}
     private static class ReturnUse { int used, ignored, unknown; }
     private record ScanState(Address address, int distance) {}
+    private record ForwardState(Address address, boolean hasValue) {}
+    private record ScalarReturnState(Address address, String type) {}
     private enum ReturnDisposition { USED, IGNORED, UNKNOWN }
     private record Row(boolean apply, String address, String function, String signature,
         String expectedType, String source, boolean expectedNoReturn, String proposedType,

@@ -15,9 +15,11 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
   STMessageId SVar1;
   ResearchPanelTy *this_00;
   int iVar3;
+  int iVar5;
+  undefined1 *puVar6;
   int iVar4;
-  undefined1 *puVar5;
-  undefined4 *puVar6;
+  int iVar7;
+  undefined4 *puVar8;
   InternalExceptionFrame local_58;
   uint local_14;
   undefined1 local_10;
@@ -42,7 +44,7 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\research.cpp",200);
     return 0xffff;
   }
-  iVar3 = 2;
+  iVar7 = 2;
   if (message->id == MESS_ID_CREATE) {
     ProdPanelTy::PreInitProdPanel((ProdPanelTy *)local_8);
   }
@@ -56,15 +58,15 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
         return 0;
       }
       if (SVar1 == MESS_SHARED_0003) {
-        puVar6 = &this_00->field_027A;
+        puVar8 = &this_00->field_027A;
         do {
-          if ((DArrayTy *)*puVar6 != nullptr) {
-            DArrayDestroy((DArrayTy *)*puVar6);
-            *puVar6 = 0;
+          if ((DArrayTy *)*puVar8 != nullptr) {
+            DArrayDestroy((DArrayTy *)*puVar8);
+            *puVar8 = 0;
           }
-          puVar6 = puVar6 + 1;
-          iVar3 = iVar3 + -1;
-        } while (iVar3 != 0);
+          puVar8 = puVar8 + 1;
+          iVar7 = iVar7 + -1;
+        } while (iVar7 != 0);
         if (this_00->field_0282 != 0) {
           StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0282);
         }
@@ -83,20 +85,20 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
       }
     }
     else {
-      iVar3 = (&this_00->field_027A)[(byte)this_00->field_0278];
-      if ((iVar3 == 0) ||
-         (iVar4 = SVar1 + this_00->field_0199, *(uint *)(iVar3 + 0xc) <= iVar4 - 0xc09fU)) {
-        puVar5 = nullptr;
+      iVar7 = (&this_00->field_027A)[(byte)this_00->field_0278];
+      if ((iVar7 == 0) ||
+         (iVar5 = SVar1 + this_00->field_0199, *(uint *)(iVar7 + 0xc) <= iVar5 - 0xc09fU)) {
+        puVar6 = nullptr;
       }
       else {
-        puVar5 = (undefined1 *)((iVar4 + -0xc09f) * *(int *)(iVar3 + 8) + *(int *)(iVar3 + 0x1c));
+        puVar6 = (undefined1 *)((iVar5 + -0xc09f) * *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0x1c));
       }
-      if ((puVar5 != nullptr) && (puVar5[8] != '\0')) {
+      if ((puVar6 != nullptr) && (puVar6[8] != '\0')) {
         uStack_d = 0;
         local_c = 0;
         local_a = 0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_14 = (uint)CONCAT11(*puVar5,2);
+        local_14 = (uint)CONCAT11(*puVar6,2);
         local_10 = 0;
         uStack_f = 1;
         thunk_FUN_0054edf0((undefined4 *)0x1e,&local_14,0,0xffffffff);

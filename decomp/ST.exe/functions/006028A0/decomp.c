@@ -41,7 +41,7 @@ int __thiscall FUN_006028a0(void *this,int param_1,int param_2,int param_3)
     if (param_2 < 0) {
       return iVar2;
     }
-    if (pVVar1->field_0030 <= param_2) {
+    if ((int)pVVar1->field_0030 <= param_2) {
       return iVar2;
     }
     iVar3 = g_centeredOffsets5[param_3] + (int)local_8;

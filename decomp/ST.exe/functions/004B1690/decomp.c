@@ -169,8 +169,8 @@ LAB_004b1a39:
       while (-1 < iVar8) {
         if (local_10 != nullptr) {
           STFishC::sub_004162B0
-                    (local_10,(short *)((int)&param_4 + 2),(undefined2 *)((int)&param_5 + 2),
-                     (undefined2 *)((int)&local_8 + 2));
+                    (local_10,(short *)((int)&param_4 + 2),(short *)((int)&param_5 + 2),
+                     (short *)((int)&local_8 + 2));
           if (((STPiece<2,2>(param_4) == param_1) && (STPiece<2,2>(param_5) == param_2)) &&
              (STPiece<2,2>(local_8) == param_3)) {
             bVar1 = false;

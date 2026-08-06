@@ -15,7 +15,8 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
   STMessageId SVar1;
   TraksClassTy *this_00;
   int iVar3;
-  TraksClassTy_field_0024DArray *pTVar4;
+  TraksClassTy_field_0024DArray *pTVar3;
+  int iVar4;
   int iVar5;
   InternalExceptionFrame local_58;
   TraksClassTy *local_14;
@@ -30,9 +31,9 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
   this_00 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",0x151,0,iVar3,
+    iVar4 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",0x151,0,iVar3,
                                "TraksClassTy::GetMessage error mess->id == %lX",message->id);
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x152);
@@ -59,9 +60,9 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
         local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_TRACKS_0079aebc,0,0);
       }
       if ((local_8 == nullptr) || (*(int *)(local_8 + 10) == 0)) {
-        pTVar4 = (TraksClassTy_field_0024DArray *)
+        pTVar3 = (TraksClassTy_field_0024DArray *)
                  Library::DKW::TBL::DArrayCreate(nullptr,0x32,0x3c,0x32);
-        this_00->field_0024 = pTVar4;
+        this_00->field_0024 = pTVar3;
         this_00->field_001C = DAT_00808754 * 0x7d;
       }
       else {

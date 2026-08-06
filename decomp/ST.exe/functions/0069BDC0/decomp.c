@@ -14,13 +14,17 @@ CGenerate::sub_0069BDC0
 {
   undefined1 *puVar1;
   int iVar2;
-  int iVar3;
   int iVar4;
+  int iVar3;
   uint uVar5;
-  int iVar6;
-  int *piVar7;
-  undefined4 *puVar8;
-  int *piVar9;
+  uint local_EAX_838;
+  int iVar5;
+  uint uVar6;
+  int iVar7;
+  int *piVar8;
+  int iVar9;
+  undefined4 *puVar10;
+  int *piVar11;
   int local_7c;
   undefined4 *local_78;
   int local_74;
@@ -60,62 +64,62 @@ CGenerate::sub_0069BDC0
   else {
     local_48 = param_2 / 2 + param_3 / 2;
     local_48 = local_48 + local_48 / 2;
-    uVar5 = ((this->field_5833 - param_2) / param_4 + 2) *
+    uVar6 = ((this->field_5833 - param_2) / param_4 + 2) *
             ((this->field_5837 - param_3) / param_4 + 2);
     ExceptionList = &local_14;
-    local_78 = Library::DKW::LIB::MemAlloc(uVar5 * 0x40);
-    piVar7 = (int *)&stack0xffffff6c;
-    puVar8 = local_78;
-    for (iVar4 = (uVar5 & 0x3ffffff) << 4; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
+    local_78 = Library::DKW::LIB::MemAlloc(uVar6 * 0x40);
+    piVar8 = (int *)&stack0xffffff6c;
+    puVar10 = local_78;
+    for (iVar5 = (uVar6 & 0x3ffffff) << 4; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *puVar10 = 0;
+      puVar10 = puVar10 + 1;
     }
-    for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(undefined1 *)puVar8 = 0;
-      puVar8 = (undefined4 *)((int)puVar8 + 1);
+    for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *(undefined1 *)puVar10 = 0;
+      puVar10 = (undefined4 *)((int)puVar10 + 1);
     }
     local_64 = 0;
     local_2c = 1;
     local_3c = 0;
     local_50 = 0;
-    while (iVar4 = 0, (int)local_3c < (int)uVar5) {
+    while (iVar5 = 0, (int)local_3c < (int)uVar6) {
       if (this->field_5837 < local_64 + param_3) {
         local_64 = this->field_5837 - param_3;
         local_2c = 0;
       }
       local_24 = 1;
-      iVar3 = local_64 + -1;
-      iVar6 = local_3c << 6;
+      iVar9 = local_64 + -1;
+      iVar7 = local_3c << 6;
       do {
-        *(int *)(iVar6 + 0x30 + (int)local_78) = iVar4;
-        *(int *)(iVar6 + 0x34 + (int)local_78) = local_64;
-        *(int *)(iVar6 + 0x38 + (int)local_78) = param_2 + -1 + iVar4;
-        *(int *)(iVar6 + 0x3c + (int)local_78) = iVar3 + param_3;
-        puVar1 = (undefined1 *)(iVar6 + (int)local_78);
+        *(int *)(iVar7 + 0x30 + (int)local_78) = iVar5;
+        *(int *)(iVar7 + 0x34 + (int)local_78) = local_64;
+        *(int *)(iVar7 + 0x38 + (int)local_78) = param_2 + -1 + iVar5;
+        *(int *)(iVar7 + 0x3c + (int)local_78) = iVar9 + param_3;
+        puVar1 = (undefined1 *)(iVar7 + (int)local_78);
         if (this->field_5833 + -1 <= *(int *)(puVar1 + 0x38)) {
           local_24 = 0;
         }
-        iVar2 = sub_0069B400(this,iVar4,local_64,*(int *)(puVar1 + 0x38),*(int *)(puVar1 + 0x3c),
+        iVar2 = sub_0069B400(this,iVar5,local_64,*(int *)(puVar1 + 0x38),*(int *)(puVar1 + 0x3c),
                              (int)puVar1);
-        *(int *)(iVar6 + 0x2c + (int)local_78) = iVar2;
-        iVar2 = *(int *)(iVar6 + 0x2c + (int)local_78);
+        *(int *)(iVar7 + 0x2c + (int)local_78) = iVar2;
+        iVar2 = *(int *)(iVar7 + 0x2c + (int)local_78);
         if (local_50 < iVar2) {
           local_50 = iVar2;
         }
         local_3c = local_3c + 1;
-        iVar6 = iVar6 + 0x40;
-        iVar4 = iVar4 + param_4;
+        iVar7 = iVar7 + 0x40;
+        iVar5 = iVar5 + param_4;
         iVar2 = this->field_5833;
-        if (iVar2 <= iVar4 + param_2) {
-          iVar4 = iVar2 - param_2;
+        if (iVar2 <= iVar5 + param_2) {
+          iVar5 = iVar2 - param_2;
         }
-      } while ((iVar4 < iVar2) && (local_24 != 0));
+      } while ((iVar5 < iVar2) && (local_24 != 0));
       local_64 = local_64 + param_4;
       if ((this->field_5837 <= local_64) ||
          (((-1 < (int)local_3c && (this->field_5837 + -1 <= (int)local_78[local_3c * 0x10 + -1])) ||
           (local_2c == 0)))) break;
     }
-    iVar4 = local_40;
+    iVar5 = local_40;
     if (-1 < (int)local_3c) {
       local_8 = 0;
       Library::MSVCRT::FUN_0072da40();
@@ -139,77 +143,77 @@ CGenerate::sub_0069BDC0
       }
       local_50 = 0;
       for (local_74 = local_3c * param_1 * 0x32; -1 < local_74; local_74 = local_74 + -1) {
-        iVar4 = thunk_FUN_0069b910((int)local_78,local_3c,piVar7,param_1,local_48,local_28);
+        iVar4 = thunk_FUN_0069b910((int)local_78,local_3c,piVar8,param_1,local_48,local_28);
         if (iVar4 == param_1) {
           local_40 = 1;
-          iVar3 = thunk_FUN_0069bc10(this,(int)local_78,piVar7,param_1,0x122,&local_6c,&local_20);
-          iVar4 = param_1;
-          piVar9 = local_58;
+          iVar3 = thunk_FUN_0069bc10(this,(int)local_78,piVar8,param_1,0x122,&local_6c,&local_20);
+          iVar5 = param_1;
+          piVar11 = local_58;
           if (local_50 < iVar3) {
-            for (; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *piVar9 = *piVar7;
-              piVar7 = piVar7 + 1;
-              piVar9 = piVar9 + 1;
+            for (; iVar5 != 0; iVar5 = iVar5 + -1) {
+              *piVar11 = *piVar8;
+              piVar8 = piVar8 + 1;
+              piVar11 = piVar11 + 1;
             }
             local_68 = local_6c;
             local_7c = local_20;
-            piVar7 = local_5c;
+            piVar8 = local_5c;
             local_50 = iVar3;
           }
         }
       }
-      iVar4 = local_40;
+      iVar5 = local_40;
       if (local_40 != 0) {
         param_7->field_0010 = local_68;
         param_7->field_0014 = local_7c;
-        iVar3 = 0;
-        iVar4 = param_1;
+        iVar9 = 0;
+        iVar5 = param_1;
         if (0 < param_1) {
 LAB_0069c0f3:
           uVar5 = Library::MSVCRT::FUN_0072e6c0();
-          iVar4 = (int)uVar5 % 3 + 1;
-          local_30 = iVar4;
-          uVar5 = Library::MSVCRT::FUN_0072e6c0();
-          piVar7 = local_58;
-          uVar5 = uVar5 & 0x80000007;
-          if ((int)uVar5 < 0) {
-            uVar5 = (uVar5 - 1 | 0xfffffff8) + 1;
+          iVar5 = (int)uVar5 % 3 + 1;
+          local_30 = iVar5;
+          local_EAX_838 = Library::MSVCRT::FUN_0072e6c0();
+          piVar8 = local_58;
+          uVar6 = local_EAX_838 & 0x80000007;
+          if ((int)uVar6 < 0) {
+            uVar6 = (uVar6 - 1 | 0xfffffff8) + 1;
           }
           do {
             local_70 = 0;
             while( true ) {
-              if (iVar3 <= local_70) {
-                local_78[local_58[iVar3] * 0x10] = iVar4 << 0x10 | uVar5 & 0xffff;
+              if (iVar9 <= local_70) {
+                local_78[local_58[iVar9] * 0x10] = iVar5 << 0x10 | uVar6 & 0xffff;
                 Library::DKW::TBL::DArrayAppend
-                          ((DArrayTy *)param_7->field_0018,local_78 + local_58[iVar3] * 0x10);
-                iVar4 = piVar7[iVar3];
-                *(short *)(param_6 + iVar3 * 4) =
+                          ((DArrayTy *)param_7->field_0018,local_78 + local_58[iVar9] * 0x10);
+                iVar5 = piVar8[iVar9];
+                *(short *)(param_6 + iVar9 * 4) =
                      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                     (short)((int)(local_78[iVar4 * 0x10 + 0xe] - local_78[iVar4 * 0x10 + 0xc]) / 2)
-                     + *(short *)(local_78 + iVar4 * 0x10 + 0xc);
-                iVar4 = piVar7[iVar3];
-                *(short *)(param_6 + 2 + iVar3 * 4) =
+                     (short)((int)(local_78[iVar5 * 0x10 + 0xe] - local_78[iVar5 * 0x10 + 0xc]) / 2)
+                     + *(short *)(local_78 + iVar5 * 0x10 + 0xc);
+                iVar5 = piVar8[iVar9];
+                *(short *)(param_6 + 2 + iVar9 * 4) =
                      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                     (short)((int)(local_78[iVar4 * 0x10 + 0xf] - local_78[iVar4 * 0x10 + 0xd]) / 2)
-                     + *(short *)(local_78 + iVar4 * 0x10 + 0xd);
-                iVar3 = iVar3 + 1;
-                iVar4 = param_1;
-                if (iVar3 < param_1) goto LAB_0069c0f3;
+                     (short)((int)(local_78[iVar5 * 0x10 + 0xf] - local_78[iVar5 * 0x10 + 0xd]) / 2)
+                     + *(short *)(local_78 + iVar5 * 0x10 + 0xd);
+                iVar9 = iVar9 + 1;
+                iVar5 = param_1;
+                if (iVar9 < param_1) goto LAB_0069c0f3;
                 goto LAB_0069c1df;
               }
-              if (*(ushort *)(local_78 + local_58[local_70] * 0x10) == uVar5) break;
+              if (*(ushort *)(local_78 + local_58[local_70] * 0x10) == uVar6) break;
               local_70 = local_70 + 1;
             }
-            if ((int)uVar5 < 7) {
-              uVar5 = uVar5 + 1;
-              iVar4 = local_30;
+            if ((int)uVar6 < 7) {
+              uVar6 = uVar6 + 1;
+              iVar5 = local_30;
             }
             else {
-              uVar5 = 0;
-              iVar4 = local_30 + 1;
-              local_30 = iVar4;
-              if (3 < iVar4) {
-                iVar4 = 1;
+              uVar6 = 0;
+              iVar5 = local_30 + 1;
+              local_30 = iVar5;
+              if (3 < iVar5) {
+                iVar5 = 1;
                 local_30 = 1;
               }
             }
@@ -218,7 +222,7 @@ LAB_0069c0f3:
       }
     }
 LAB_0069c1df:
-    local_40 = iVar4;
+    local_40 = iVar5;
     FreeAndNull(&local_78);
   }
   ExceptionList = local_14;

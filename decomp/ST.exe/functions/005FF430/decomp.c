@@ -34,7 +34,7 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,unde
     if (this_00 == nullptr) {
       return 0;
     }
-    thunk_FUN_00416270(this_00,(undefined2 *)&param_3,(int *)&param_4,(int *)((int)&param_5 + 2));
+    thunk_FUN_00416270(this_00,&param_3,(int *)&param_4,(short *)((int)&param_5 + 2));
     iVar4 = (*this_00->vtable->vfunc_78)();
     if (iVar4 < 1) {
       return 0;

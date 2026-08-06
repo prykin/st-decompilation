@@ -12,9 +12,12 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
 {
   ushort uVar2;
   DArrayTy *array;
-  uint *puVar3;
   int iVar4;
+  int iVar3;
   int iVar5;
+  uint *puVar4;
+  int local_EBX_18;
+  int iVar6;
   InternalExceptionFrame local_58;
   short local_14;
   short local_12;
@@ -23,7 +26,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   DArrayTy *local_8;
 
   uVar2 = (ushort)param_2->count;
-  iVar4 = 0;
+  local_EBX_18 = 0;
   local_c = 0;
   param_1->field_0027 = uVar2;
   if (uVar2 == 0) {
@@ -42,68 +45,68 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   }
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-  if (iVar4 == 0) {
+  local_EBX_18 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  if (local_EBX_18 == 0) {
     if (param_1->field_004D != 0) {
       iVar4 = FUN_006db910(param_3,param_4,param_6,param_7);
-      iVar4 = ((iVar4 * 4 + 0x2d) / 0x5a) * 0x5a;
-      iVar4 = (int)(iVar4 + (iVar4 >> 0x1f & 3U)) >> 2;
-      param_1->field_0055 = iVar4;
-      if (iVar4 == 0x168) {
+      iVar3 = ((iVar4 * 4 + 0x2d) / 0x5a) * 0x5a;
+      iVar3 = (int)(iVar3 + (iVar3 >> 0x1f & 3U)) >> 2;
+      param_1->field_0055 = iVar3;
+      if (iVar3 == 0x168) {
         param_1->field_0055 = 0;
       }
       param_1->field_0049 = param_1->field_0049 | 1;
     }
-    iVar4 = thunk_FUN_00413af0(param_1,param_2,param_6,param_7,param_8);
-    if (iVar4 == 0) {
-      iVar4 = 0;
+    iVar3 = thunk_FUN_00413af0(param_1,param_2,param_6,param_7,param_8);
+    if (iVar3 == 0) {
+      iVar3 = 0;
       if (0 < DAT_007f4d40) {
-        iVar5 = 0;
+        iVar6 = 0;
         do {
-          local_14 = *(short *)(iVar5 + 0xc + (int)DAT_007f4d04);
-          local_12 = *(short *)(iVar5 + 0x10 + (int)DAT_007f4d04);
-          local_10 = *(short *)(iVar5 + 0x14 + (int)DAT_007f4d04);
+          local_14 = *(short *)(iVar6 + 0xc + (int)DAT_007f4d04);
+          local_12 = *(short *)(iVar6 + 0x10 + (int)DAT_007f4d04);
+          local_10 = *(short *)(iVar6 + 0x14 + (int)DAT_007f4d04);
           Library::DKW::TBL::DArrayPut
-                    (local_8,*(uint *)(iVar5 + 0x18 + (int)DAT_007f4d04),&local_14);
-          iVar4 = iVar4 + 1;
-          iVar5 = iVar5 + 0x1c;
-        } while (iVar4 < DAT_007f4d40);
+                    (local_8,*(uint *)(iVar6 + 0x18 + (int)DAT_007f4d04),&local_14);
+          iVar3 = iVar3 + 1;
+          iVar6 = iVar6 + 0x1c;
+        } while (iVar3 < DAT_007f4d40);
       }
-      iVar4 = 0;
+      iVar3 = 0;
       if (0 < DAT_007f4cf8) {
         do {
-          iVar5 = (uint)param_1->field_0027 - iVar4;
-          local_14 = DAT_007f4d04[iVar5 * 0xe + -8];
-          local_12 = DAT_007f4d04[iVar5 * 0xe + -6];
-          local_10 = DAT_007f4d04[iVar5 * 0xe + -4];
-          Library::DKW::TBL::DArrayPut(local_8,*(uint *)(DAT_007f4d04 + iVar5 * 0xe + -2),&local_14);
-          iVar4 = iVar4 + 1;
-        } while (iVar4 < DAT_007f4cf8);
+          iVar6 = (uint)param_1->field_0027 - iVar3;
+          local_14 = DAT_007f4d04[iVar6 * 0xe + -8];
+          local_12 = DAT_007f4d04[iVar6 * 0xe + -6];
+          local_10 = DAT_007f4d04[iVar6 * 0xe + -4];
+          Library::DKW::TBL::DArrayPut(local_8,*(uint *)(DAT_007f4d04 + iVar6 * 0xe + -2),&local_14);
+          iVar3 = iVar3 + 1;
+        } while (iVar3 < DAT_007f4cf8);
         g_currentExceptionFrame = local_58.previous;
-        iVar4 = local_c;
+        local_EBX_18 = local_c;
         goto LAB_004157e1;
       }
     }
     else {
-      iVar4 = 0;
+      iVar3 = 0;
       local_10 = (short)param_8;
       local_14 = (short)param_6;
       local_12 = (short)param_7;
       if (param_1->field_0027 != 0) {
         do {
           Library::DKW::TBL::DArrayAppend(local_8,&local_14);
-          iVar4 = iVar4 + 1;
-        } while (iVar4 < (int)(uint)param_1->field_0027);
+          iVar3 = iVar3 + 1;
+        } while (iVar3 < (int)(uint)param_1->field_0027);
       }
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar4 = local_c;
+    local_EBX_18 = local_c;
   }
   else {
     g_currentExceptionFrame = local_58.previous;
-    local_c = iVar4;
-    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\Grpway3d.cpp",0xeae,0,iVar4,"%s",
-                               "STGroupBoatC::Way3DGrpGetDistrPoint");
+    local_c = local_EBX_18;
+    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\Grpway3d.cpp",0xeae,0,local_EBX_18,
+                               "%s","STGroupBoatC::Way3DGrpGetDistrPoint");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -112,11 +115,12 @@ LAB_004157e1:
   FUN_006a5e90(DAT_007f4d04);
   array = local_8;
 LAB_004157f0:
-  if (iVar4 != 0) {
+  if (local_EBX_18 != 0) {
     DArrayDestroy(array);
     local_8 = nullptr;
     RaiseInternalException
-              (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0xeb8);
+              (local_EBX_18,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",
+               0xeb8);
     return nullptr;
   }
   return &array->flags;

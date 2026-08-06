@@ -36,7 +36,7 @@ int __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int param
   }
   psVar1 = (short *)(param_1 * 0x52 + STField<int>(this,0x233));
   if (*(int *)(psVar1 + 0x27) != 0) {
-    FreeAndNull((void **)(psVar1 + 0x27));
+    FreeAndNull(psVar1 + 0x27);
   }
   pvVar2 = Library::DKW::LIB::MemAlloc(600);
   *(void **)(psVar1 + 0x27) = pvVar2;

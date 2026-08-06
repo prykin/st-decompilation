@@ -4,6 +4,7 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
 {
   uint *puVar1;
   int *piVar2;
+  int iVar4;
   int iVar3;
   int uVar4;
   uint uVar5;
@@ -32,8 +33,8 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
       puVar1 = (uint *)*param_1;
       if ((*puVar1 & 8) == 0) {
         if (((*puVar1 & 2) == 0) || ((int)puVar1[0x1a] < 5)) {
-          iVar3 = FUN_006b0460((int *)&local_20,local_c,(int *)(puVar1 + 1));
-          if (iVar3 != 0) {
+          iVar4 = FUN_006b0460((int *)&local_20,local_c,(int *)(puVar1 + 1));
+          if (iVar4 != 0) {
             if ((int)puVar1[0x1a] < 5) {
               iVar3 = FUN_006d1ad0((int *)(puVar1 + 0x1a),4,local_20,local_1c,local_18,local_14,
                                    puVar1[3],puVar1[4],-(uint)((*puVar1 & 0x2000) != 0));
@@ -46,7 +47,7 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
             if (((uVar5 & 0x3000) != 0) || (((uVar5 & 0x4000) != 0 && ((uVar5 & 0x20000) == 0)))) {
               *puVar1 = uVar5 | 6;
               if (((uVar5 & 0x2000) == 0) || (iVar3 == -1)) {
-                iVar3 = piVar2[4];
+                iVar4 = piVar2[4];
                 iVar10 = piVar2[3];
                 uVar5 = puVar1[4];
                 uVar9 = puVar1[3];
@@ -55,7 +56,7 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
                 piVar6 = (int *)piVar2[0x70];
               }
               else {
-                iVar3 = piVar2[4];
+                iVar4 = piVar2[4];
                 iVar10 = piVar2[3];
                 piVar6 = (int *)piVar2[0x70];
                 uVar7 = local_20;
@@ -63,7 +64,7 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
                 uVar9 = local_18;
                 uVar5 = local_14;
               }
-              uVar4 = FUN_006d1ad0(piVar6,100,uVar7,uVar8,uVar9,uVar5,iVar10,iVar3,1);
+              uVar4 = FUN_006d1ad0(piVar6,100,uVar7,uVar8,uVar9,uVar5,iVar10,iVar4,1);
               if (uVar4 == -1) {
                 return 0xffffffff;
               }
@@ -80,8 +81,8 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
         }
       }
       else {
-        iVar3 = FUN_006cfeb0((int *)&local_20,local_c,piVar2 + piVar2[0x79] * 4 + 5);
-        if (iVar3 != 0) {
+        iVar4 = FUN_006cfeb0((int *)&local_20,local_c,piVar2 + piVar2[0x79] * 4 + 5);
+        if (iVar4 != 0) {
           FUN_006bcb30(piVar2,local_20,local_1c,local_18,local_14);
         }
       }

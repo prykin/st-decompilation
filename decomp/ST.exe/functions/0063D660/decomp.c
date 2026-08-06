@@ -12,10 +12,10 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
   uint uVar4;
   int iVar5;
   undefined4 *puVar6;
-  float10 fVar7;
+  float10 fVar8;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0;
-  float10 fVar8;
+  float10 fVar9;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -28,6 +28,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
   unkbyte10 extraout_ST0_04;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_05;
+  float10 fVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0_06;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -36,7 +37,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
   float10 extraout_ST1_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST1_01;
-  longlong lVar9;
+  longlong lVar10;
   uint local_8;
 
   uVar4 = 0;
@@ -60,17 +61,17 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         if ((local_8 < *(uint *)(iVar2 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar2 + 8) * local_8 + *(int *)(iVar2 + 0x1c)),
            puVar6 != nullptr)) {
-          fVar7 = (float10)(int)_param_1 * (float10)(fVar3 / (float)iVar1);
-          puVar6[10] = (float)fVar7;
-          fcos(fVar7);
-          lVar9 = Library::MSVCRT::__ftol();
+          fVar8 = (float10)(int)_param_1 * (float10)(fVar3 / (float)iVar1);
+          puVar6[10] = (float)fVar8;
+          fcos(fVar8);
+          lVar10 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           fsin(extraout_ST0_06);
-          puVar6[2] = (int)lVar9 + STField<int>(this,0x2a4);
-          lVar9 = Library::MSVCRT::__ftol();
+          puVar6[2] = (int)lVar10 + STField<int>(this,0x2a4);
+          lVar10 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = uVar4 + 1;
-          puVar6[3] = (int)lVar9 + STField<int>(this,0x2a8);
+          puVar6[3] = (int)lVar10 + STField<int>(this,0x2a8);
           puVar6[4] = (float)STField<int>(this,0x2ac) * _DAT_007904f8 * _DAT_007904f0;
           puVar6[5] = STField<undefined4>(this,0x2a4);
           puVar6[6] = STField<undefined4>(this,0x2a8);
@@ -95,25 +96,25 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
   else {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == '\v') {
-      fVar8 = (float10)_DAT_007d2044 * (float10)_DAT_0079d4a4;
+      fVar9 = (float10)_DAT_007d2044 * (float10)_DAT_0079d4a4;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = 0;
       STField<undefined4>(this,0x2b8) = STField<undefined4>(this,0x2b4);
       STField<undefined4>(this,0x29a) = 1;
-      fVar7 = fVar8 + fVar8;
+      fVar8 = fVar9 + fVar9;
       do {
         iVar5 = STField<int>(this,0x336);
         if ((uVar4 < *(uint *)(iVar5 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar5 + 8) * uVar4 + *(int *)(iVar5 + 0x1c)),
            puVar6 != nullptr)) {
-          puVar6[10] = (float)((float10)(int)_param_1 * fVar7);
-          fcos((float10)(int)_param_1 * fVar7);
-          lVar9 = Library::MSVCRT::__ftol();
+          puVar6[10] = (float)((float10)(int)_param_1 * fVar8);
+          fcos((float10)(int)_param_1 * fVar8);
+          lVar10 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           fsin(extraout_ST0_00);
-          puVar6[2] = (int)lVar9 + STField<int>(this,0x2a4);
-          lVar9 = Library::MSVCRT::__ftol();
-          puVar6[3] = (int)lVar9 + STField<int>(this,0x2a8);
+          puVar6[2] = (int)lVar10 + STField<int>(this,0x2a4);
+          lVar10 = Library::MSVCRT::__ftol();
+          puVar6[3] = (int)lVar10 + STField<int>(this,0x2a8);
           puVar6[4] = (float)STField<int>(this,0x2ac) * _DAT_007904f8 * _DAT_007904f0;
           puVar6[5] = STField<undefined4>(this,0x2a4);
           puVar6[6] = STField<undefined4>(this,0x2a8);
@@ -127,13 +128,13 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           _param_1 = _param_1 + 1;
           puVar6[8] = 0;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          fVar7 = extraout_ST0_01;
+          fVar8 = extraout_ST0_01;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          fVar8 = extraout_ST1;
+          fVar9 = extraout_ST1;
         }
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < 0x32);
-      fVar7 = (float10)_DAT_007d2044 * (float10)_DAT_0079d4a0;
+      fVar8 = (float10)_DAT_007d2044 * (float10)_DAT_0079d4a0;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = 0;
       uVar4 = 0x32;
@@ -142,15 +143,15 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         if ((uVar4 < *(uint *)(iVar5 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar5 + 8) * uVar4 + *(int *)(iVar5 + 0x1c)),
            puVar6 != nullptr)) {
-          fVar8 = (float10)(int)_param_1 * fVar7 + fVar8;
-          puVar6[10] = (float)fVar8;
-          fcos(fVar8);
-          lVar9 = Library::MSVCRT::__ftol();
+          fVar9 = (float10)(int)_param_1 * fVar8 + fVar9;
+          puVar6[10] = (float)fVar9;
+          fcos(fVar9);
+          lVar10 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           fsin(extraout_ST0_02);
-          puVar6[2] = (int)lVar9 + STField<int>(this,0x2a4);
-          lVar9 = Library::MSVCRT::__ftol();
-          puVar6[3] = (int)lVar9 + STField<int>(this,0x2a8);
+          puVar6[2] = (int)lVar10 + STField<int>(this,0x2a4);
+          lVar10 = Library::MSVCRT::__ftol();
+          puVar6[3] = (int)lVar10 + STField<int>(this,0x2a8);
           puVar6[4] = (float)STField<int>(this,0x2ac) * _DAT_007904f8 * _DAT_007904f0;
           puVar6[5] = STField<undefined4>(this,0x2a4);
           puVar6[6] = STField<undefined4>(this,0x2a8);
@@ -164,14 +165,14 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           _param_1 = _param_1 + 1;
           *puVar6 = 2;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          fVar7 = extraout_ST0_03;
+          fVar8 = extraout_ST0_03;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          fVar8 = extraout_ST1_00;
+          fVar9 = extraout_ST1_00;
         }
         iVar5 = uVar4 - 0x31;
         uVar4 = uVar4 + 1;
       } while (iVar5 < 10);
-      fVar7 = (float10)_DAT_007d2044 * (float10)_DAT_0079d4a0;
+      fVar8 = (float10)_DAT_007d2044 * (float10)_DAT_0079d4a0;
       iVar5 = 0;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = 0;
@@ -182,17 +183,17 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         if ((local_8 < *(uint *)(iVar1 + 0xc)) &&
            (puVar6 = (undefined4 *)(*(int *)(iVar1 + 8) * local_8 + *(int *)(iVar1 + 0x1c)),
            puVar6 != nullptr)) {
-          fVar8 = (float10)(int)_param_1 * fVar7 + fVar8;
-          puVar6[10] = (float)fVar8;
-          fcos(fVar8);
-          lVar9 = Library::MSVCRT::__ftol();
+          fVar9 = (float10)(int)_param_1 * fVar8 + fVar9;
+          puVar6[10] = (float)fVar9;
+          fcos(fVar9);
+          lVar10 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           fsin(extraout_ST0_04);
-          puVar6[2] = (int)lVar9 + STField<int>(this,0x2a4);
-          lVar9 = Library::MSVCRT::__ftol();
+          puVar6[2] = (int)lVar10 + STField<int>(this,0x2a4);
+          lVar10 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = iVar5 + 1;
-          puVar6[3] = (int)lVar9 + STField<int>(this,0x2a8);
+          puVar6[3] = (int)lVar10 + STField<int>(this,0x2a8);
           puVar6[4] = (float)STField<int>(this,0x2ac) * _DAT_007904f8 * _DAT_007904f0;
           puVar6[5] = STField<undefined4>(this,0x2a4);
           puVar6[6] = STField<undefined4>(this,0x2a8);
@@ -205,9 +206,9 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           puVar6[0xb] = (float)iVar5;
           iVar5 = _param_1;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          fVar7 = extraout_ST0_05;
+          fVar8 = extraout_ST0_05;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          fVar8 = extraout_ST1_01;
+          fVar9 = extraout_ST1_01;
           if (9 < (int)_param_1) {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_1 = 0;
@@ -250,17 +251,17 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           if ((local_8 < *(uint *)(iVar2 + 0xc)) &&
              (puVar6 = (undefined4 *)(*(int *)(iVar2 + 8) * local_8 + *(int *)(iVar2 + 0x1c)),
              puVar6 != nullptr)) {
-            fVar7 = (float10)(int)_param_1 * (float10)(fVar3 / (float)iVar1);
-            puVar6[10] = (float)fVar7;
-            fcos(fVar7);
-            lVar9 = Library::MSVCRT::__ftol();
+            fVar8 = (float10)(int)_param_1 * (float10)(fVar3 / (float)iVar1);
+            puVar6[10] = (float)fVar8;
+            fcos(fVar8);
+            lVar10 = Library::MSVCRT::__ftol();
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             fsin(extraout_ST0);
-            puVar6[2] = (int)lVar9 + STField<int>(this,0x2a4);
-            lVar9 = Library::MSVCRT::__ftol();
+            puVar6[2] = (int)lVar10 + STField<int>(this,0x2a4);
+            lVar10 = Library::MSVCRT::__ftol();
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_1 = uVar4 + 1;
-            puVar6[3] = (int)lVar9 + STField<int>(this,0x2a8);
+            puVar6[3] = (int)lVar10 + STField<int>(this,0x2a8);
             puVar6[4] = (float)STField<int>(this,0x2ac) * _DAT_007904f8 * _DAT_007904f0;
             puVar6[5] = STField<undefined4>(this,0x2a4);
             puVar6[6] = STField<undefined4>(this,0x2a8);

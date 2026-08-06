@@ -17,8 +17,9 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
   BOOL BVar3;
   int iVar4;
   cMf32 *this_00;
-  ushort *puVar5;
-  byte *pbVar6;
+  ushort *puVar4;
+  byte *pbVar5;
+  int iVar6;
   uint uVar7;
   uint uVar8;
   char *pcVar9;
@@ -82,8 +83,8 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
           *(undefined4 *)&this->field_0x805 = 0;
           *(undefined4 *)&this->field_0x809 = 0;
           this->field_0x80d = 0;
-          puVar5 = cMf32::RecGet(this_00,0xc,PTR_s_LASTLOG_0079b0e8,(int *)&local_8,0);
-          if (((puVar5 == nullptr) && (this != (AnonShape_00572510_F06DC155 *)0xfffff83b)) &&
+          puVar4 = cMf32::RecGet(this_00,0xc,PTR_s_LASTLOG_0079b0e8,(int *)&local_8,0);
+          if (((puVar4 == nullptr) && (this != (AnonShape_00572510_F06DC155 *)0xfffff83b)) &&
              (&this->field_0785 != nullptr)) {
             uVar7 = 0xffffffff;
             pcVar9 = &this->field_0785;
@@ -112,7 +113,7 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
           iVar12 = 0;
           local_8 = &this->field_0x805;
           cMf32::RecGet(this_00,0xc,PTR_s_LASTPSW_0079b0ec,(int *)&local_8,0);
-          iVar4 = _DAT_008072f8;
+          iVar6 = _DAT_008072f8;
           _DAT_008072f8 = 0;
           _DAT_008072fc = 0x82;
           uVar7 = 0;
@@ -120,29 +121,29 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
             iVar12 = iVar12 + (uint)(byte)(&DAT_008072f8)[uVar7];
             uVar7 = uVar7 + 1;
           } while (uVar7 < 0x82);
-          if (iVar12 != iVar4) {
+          if (iVar12 != iVar6) {
             thunk_FUN_005734c0(this,(LPDWORD)0x0,(PHKEY)0x1);
           }
-          pbVar6 = &DAT_007ca694;
+          pbVar5 = &DAT_007ca694;
           pbVar13 = &this->field_0x640;
           do {
             bVar2 = *pbVar13;
-            bVar14 = bVar2 < *pbVar6;
-            if (bVar2 != *pbVar6) {
+            bVar14 = bVar2 < *pbVar5;
+            if (bVar2 != *pbVar5) {
 LAB_005727ec:
-              iVar4 = (1 - (uint)bVar14) - (uint)(bVar14 != 0);
+              iVar6 = (1 - (uint)bVar14) - (uint)(bVar14 != 0);
               goto LAB_005727f1;
             }
             if (bVar2 == 0) break;
             bVar2 = pbVar13[1];
-            bVar14 = bVar2 < pbVar6[1];
-            if (bVar2 != pbVar6[1]) goto LAB_005727ec;
+            bVar14 = bVar2 < pbVar5[1];
+            if (bVar2 != pbVar5[1]) goto LAB_005727ec;
             pbVar13 = pbVar13 + 2;
-            pbVar6 = pbVar6 + 2;
+            pbVar5 = pbVar5 + 2;
           } while (bVar2 != 0);
-          iVar4 = 0;
+          iVar6 = 0;
 LAB_005727f1:
-          if ((iVar4 == 0) && ((char)DAT_00807300 == '\x02')) {
+          if ((iVar6 == 0) && ((char)DAT_00807300 == '\x02')) {
             STPiece<0,1>(DAT_00807300) = '\x01';
           }
           thunk_FUN_00573240();

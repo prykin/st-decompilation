@@ -15,6 +15,7 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
 {
   STBoatC *this_00;
   int iVar2;
+  int iVar4;
   int iVar3;
   undefined2 arg_2;
   InternalExceptionFrame local_4c;
@@ -153,8 +154,8 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
         default:
           arg_2 = 0;
         }
-        iVar2 = thunk_FUN_00493cd0((STGameObjC *)local_8);
-        if (iVar2 == 0) {
+        iVar4 = thunk_FUN_00493cd0((STGameObjC *)local_8);
+        if (iVar4 == 0) {
           this_00->vfunc_90(4,arg_2);
         }
       }

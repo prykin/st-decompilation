@@ -46,7 +46,7 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,uint param_2,int param_3,in
       else {
         uVar4 = local_8 & 0xff;
       }
-      ccFntTy::WrStr(pMVar3->field_008B,&DAT_0080f33a,-1,-1,uVar4);
+      ccFntTy::WrStr(pMVar3->field_008B,(char *)&DAT_0080f33a,-1,-1,uVar4);
     }
     cVar1 = DAT_0080c846;
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(DAT_0080c846));
@@ -59,7 +59,7 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,uint param_2,int param_3,in
     else {
       uVar4 = local_8 & 0xff;
     }
-    ccFntTy::WrStr(pMVar3->field_008B,&DAT_0080f33a,-1,-1,uVar4);
+    ccFntTy::WrStr(pMVar3->field_008B,(char *)&DAT_0080f33a,-1,-1,uVar4);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

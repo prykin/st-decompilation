@@ -13,17 +13,18 @@ byte * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint *param
 {
   VisibleClassTy *pVVar2;
   int iVar3;
-  byte *puVar4;
   int iVar5;
-  byte *pbVar6;
-  uint uVar7;
+  byte *puVar6;
+  int iVar4;
+  byte *pbVar7;
   uint uVar8;
-  byte *puVar9;
+  uint uVar9;
   byte *puVar10;
+  byte *puVar11;
   InternalExceptionFrame local_68;
   VisibleClassTy *local_24;
   undefined4 *local_20;
-  uint *local_1c;
+  void **local_1c;
   uint local_18;
   undefined4 *local_14;
   uint local_10;
@@ -51,9 +52,9 @@ byte * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint *param
     if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
-    iVar5 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x105,0,iVar3,"%s",
+    iVar4 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x105,0,iVar3,"%s",
                                "VisibleClassTy::PrepareToSave error");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\visible.cpp",0x106);
@@ -63,15 +64,15 @@ byte * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint *param
     local_c = (undefined4 *)FUN_006b0020(&local_24->field_00F4->flags,(int *)&local_10);
     local_14 = (undefined4 *)FUN_006b0020(&pVVar2->field_0110->flags,(int *)&local_18);
     if (pVVar2->field_0114 != 0) {
-      iVar3 = pVVar2->field_002C * pVVar2->field_0028 * 4;
+      iVar5 = pVVar2->field_002C * pVVar2->field_0028 * 4;
       goto LAB_0055832e;
     }
   }
-  iVar3 = 0;
+  iVar5 = 0;
 LAB_0055832e:
-  uVar8 = iVar3 + local_18 + 0x81 + local_10;
-  *param_1 = uVar8;
-  local_8 = Library::DKW::LIB::MemAllocClear(uVar8);
+  uVar9 = iVar5 + local_18 + 0x81 + local_10;
+  *param_1 = uVar9;
+  local_8 = Library::DKW::LIB::MemAllocClear(uVar9);
   *(undefined4 *)local_8 = 0x50;
   *(undefined4 *)&local_8->field_0x4 = 0xff;
   *(undefined4 *)&local_8->field_0x8 = 2;
@@ -92,33 +93,33 @@ LAB_0055832e:
   local_8->field_004C = *(undefined4 *)(pVVar2->field_00FC + 4);
   if (pVVar2->field_0114 != 0) {
     local_1c = pVVar2->field_003C;
-    puVar4 = (byte *)(&local_8[1].field_0030);
+    puVar6 = (byte *)(&local_8[1].field_0030);
     local_20 = (undefined4 *)0x4;
     do {
-      if ((undefined4 *)*local_1c != nullptr) {
-        uVar7 = pVVar2->field_0028 * pVVar2->field_002C;
-        puVar9 = (byte *)*local_1c;
-        puVar10 = (byte *)(puVar4);
-        memmove(puVar10, puVar9, uVar7); /* compiler REP MOVS byte copy */
-        uVar8 = 0;
-        puVar4 = (byte *)((int)puVar4 + pVVar2->field_0028 * pVVar2->field_002C);
+      if (*local_1c != nullptr) {
+        uVar8 = pVVar2->field_0028 * pVVar2->field_002C;
+        puVar10 = (byte *)(*local_1c);
+        puVar11 = (byte *)(puVar6);
+        memmove(puVar11, puVar10, uVar8); /* compiler REP MOVS byte copy */
+        uVar9 = 0;
+        puVar6 = (byte *)((int)puVar6 + pVVar2->field_0028 * pVVar2->field_002C);
       }
       local_1c = local_1c + 1;
       local_20 = (undefined4 *)((int)local_20 + -1);
     } while (local_20 != nullptr);
     local_20 = nullptr;
     if (local_c != nullptr) {
-      puVar9 = (byte *)(local_c);
-      puVar10 = (byte *)(puVar4);
-      memmove(puVar10, puVar9, local_10); /* compiler REP MOVS byte copy */
-      uVar8 = 0;
-      local_20 = (undefined4 *)((int)puVar4 + local_10);
+      puVar10 = (byte *)(local_c);
+      puVar11 = (byte *)(puVar6);
+      memmove(puVar11, puVar10, local_10); /* compiler REP MOVS byte copy */
+      uVar9 = 0;
+      local_20 = (undefined4 *)((int)puVar6 + local_10);
       FreeAndNull(&local_c);
-      puVar4 = (byte *)(local_20);
+      puVar6 = (byte *)(local_20);
     }
     if (local_14 != nullptr) {
-      puVar9 = (byte *)(local_14);
-      memmove(puVar4, puVar9, local_18); /* compiler REP MOVS byte copy */
+      puVar10 = (byte *)(local_14);
+      memmove(puVar6, puVar10, local_18); /* compiler REP MOVS byte copy */
       FreeAndNull(&local_14);
     }
   }

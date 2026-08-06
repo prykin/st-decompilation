@@ -10,11 +10,12 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
 {
   SettMapTy *pSVar2;
   int iVar3;
-  void *pvVar4;
+  void *pvVar3;
   int iVar5;
-  DArrayTy *pDVar6;
+  DArrayTy *pDVar4;
+  int iVar6;
   uint uVar7;
-  uint *value;
+  void **slotStorage;
   bool bVar8;
   InternalExceptionFrame local_4c;
   SettMapTy *local_8;
@@ -42,8 +43,8 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
         FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
-    iVar3 = pSVar2->field_004D;
-    if (((iVar3 != 0x611f) && (iVar3 != 0x6109)) && (iVar3 != 0x6105)) {
+    iVar6 = pSVar2->field_004D;
+    if (((iVar6 != 0x611f) && (iVar6 != 0x6109)) && (iVar6 != 0x6105)) {
       DarkScreen(g_dDXContext_0080759C,10,2);
     }
     if (pSVar2->field_21EC != nullptr) {
@@ -92,32 +93,32 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&pSVar2->field_1E2B);
     }
     if (pSVar2->field_1C67 != 0) {
-      FreeAndNull((void **)&pSVar2->field_1C67);
+      FreeAndNull(&pSVar2->field_1C67);
     }
     PTR_0081175c = nullptr;
     if (pSVar2->field_1F7C != nullptr) {
       DArrayDestroy(pSVar2->field_1F7C);
     }
-    pDVar6 = pSVar2->field_1F84;
+    pDVar4 = pSVar2->field_1F84;
     pSVar2->field_1F7C = nullptr;
-    if (pDVar6 != nullptr) {
+    if (pDVar4 != nullptr) {
       uVar7 = 0;
-      if (0 < (int)pDVar6->count) {
-        bVar8 = pDVar6->count != 0;
+      if (0 < (int)pDVar4->count) {
+        bVar8 = pDVar4->count != 0;
         do {
           if (bVar8) {
-            pvVar4 = DArrayAt<void>(pDVar6, uVar7);
+            pvVar3 = DArrayAt<void>(pDVar4, uVar7);
           }
           else {
-            pvVar4 = nullptr;
+            pvVar3 = nullptr;
           }
-          if ((pvVar4 != nullptr) && (STField<DArrayTy *>(pvVar4,0x50) != nullptr)) {
-            DArrayDestroy(STField<DArrayTy *>(pvVar4,0x50));
+          if ((pvVar3 != nullptr) && (STField<DArrayTy *>(pvVar3,0x50) != nullptr)) {
+            DArrayDestroy(STField<DArrayTy *>(pvVar3,0x50));
           }
-          pDVar6 = pSVar2->field_1F84;
+          pDVar4 = pSVar2->field_1F84;
           uVar7 = uVar7 + 1;
-          bVar8 = uVar7 < pDVar6->count;
-        } while ((int)uVar7 < (int)pDVar6->count);
+          bVar8 = uVar7 < pDVar4->count;
+        } while ((int)uVar7 < (int)pDVar4->count);
       }
       DArrayDestroy(pSVar2->field_1F84);
       pSVar2->field_1F84 = nullptr;
@@ -129,18 +130,18 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1c6b);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1cfc);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1d8d);
-    value = pSVar2->field_20F4;
-    iVar3 = 10;
+    slotStorage = pSVar2->field_20F4;
+    iVar6 = 10;
     do {
-      FUN_006b3bb0((int *)g_ddxContext_008075A8,(uint)value[-10]);
-      if ((void *)*value != nullptr) {
-        FreeAndNull((void **)value);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,(uint)slotStorage[-10]);
+      if (*slotStorage != nullptr) {
+        FreeAndNull(slotStorage);
       }
-      value = value + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      slotStorage = slotStorage + 1;
+      iVar6 = iVar6 + -1;
+    } while (iVar6 != 0);
     if (pSVar2->field_1E1E != 0) {
-      FreeAndNull((void **)&pSVar2->field_1E1E);
+      FreeAndNull(&pSVar2->field_1E1E);
     }
     FUN_006b3bb0((int *)g_ddxContext_008075A8,pSVar2->field_1E22);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

@@ -28,10 +28,10 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
     }
     else {
       local_8->field_01A2 = 0;
-      local_8->field_01AB = 0;
+      local_8->field_01AB = nullptr;
     }
     local_8->field_01A1 = CASE_A;
-    local_8->field_01A3 = 0;
+    local_8->field_01A3 = nullptr;
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)local_8->field_0068,0,0x21,0x16,
                (byte *)local_8->field_01DC,0,0x21,0x16,0x1b8,0x118);

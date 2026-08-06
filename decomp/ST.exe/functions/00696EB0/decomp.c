@@ -8,8 +8,9 @@ FUN_00696eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,int pa
   uint uVar1;
   int iVar2;
   int iVar3;
-  int *piVar4;
-  byte *pbVar5;
+  int *piVar2;
+  byte *pbVar3;
+  int iVar4;
   ushort local_1c;
   ushort uStack_1a;
   undefined2 uStack_18;
@@ -29,13 +30,13 @@ FUN_00696eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,int pa
     iVar3 = thunk_FUN_006a1370(param_1,param_4,param_5,param_6,(int)&local_1c);
     if (uStack_12 != 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      pbVar5 = (byte *)(*(int *)(local_8 + 0x5833) * param_3 + *(int *)(local_8 + 0x584b) + param_2);
-      *pbVar5 = *pbVar5 | '\x01' << ((byte)param_6 & 0x1f);
+      pbVar3 = (byte *)(*(int *)(local_8 + 0x5833) * param_3 + *(int *)(local_8 + 0x584b) + param_2);
+      *pbVar3 = *pbVar3 | '\x01' << ((byte)param_6 & 0x1f);
     }
     if (uStack_1a != 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      pbVar5 = (byte *)(*(int *)(local_8 + 0x5833) * param_5 + *(int *)(local_8 + 0x584b) + param_4);
-      *pbVar5 = *pbVar5 | '\x01' << ((byte)param_6 & 0x1f);
+      pbVar3 = (byte *)(*(int *)(local_8 + 0x5833) * param_5 + *(int *)(local_8 + 0x584b) + param_4);
+      *pbVar3 = *pbVar3 | '\x01' << ((byte)param_6 & 0x1f);
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((((cStack_17 == cStack_f) && ((short)iVar2 == (short)iVar3)) &&
@@ -47,16 +48,16 @@ FUN_00696eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,int pa
       if (param_7 == 1) {
         uVar1 = (uint)uStack_1a;
       }
-      iVar2 = 0;
-      piVar4 = &DAT_007df82c;
-      while ((piVar4[-1] != param_4 - param_2 || (*piVar4 != param_5 - param_3))) {
-        piVar4 = piVar4 + 2;
-        iVar2 = iVar2 + 1;
-        if (0x7df86b < (int)piVar4) {
+      iVar4 = 0;
+      piVar2 = &DAT_007df82c;
+      while ((piVar2[-1] != param_4 - param_2 || (*piVar2 != param_5 - param_3))) {
+        piVar2 = piVar2 + 2;
+        iVar4 = iVar4 + 1;
+        if (0x7df86b < (int)piVar2) {
           return local_c;
         }
       }
-      if ((iVar2 != -1) && (*(short *)(&DAT_007df898 + (iVar2 + (uVar1 & 0xf) * 8) * 2) != 0)) {
+      if ((iVar4 != -1) && (*(short *)(&DAT_007df898 + (iVar4 + (uVar1 & 0xf) * 8) * 2) != 0)) {
         local_c = 1;
       }
     }

@@ -17,11 +17,12 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   undefined4 *puVar3;
   AiPlrClassTy *this_00;
   int iVar5;
-  byte *pbVar6;
-  LPSTR pCVar7;
+  byte *pbVar5;
+  LPSTR pCVar6;
   STGameObjC *objPtr;
   AiFltClassTy *this_01;
-  DArrayTy *pDVar8;
+  DArrayTy *pDVar7;
+  int iVar8;
   int iVar9;
   uint uVar10;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -53,10 +54,10 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   this_00 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_b0.previous;
-    iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x655,0,iVar5,
+    iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x655,0,iVar5,
                                "AiPlrClassTy::GetMessage error mess->id == %lX Name=%d ",message->id,
                                local_10->field_0018);
-    if (iVar9 != 0) {
+    if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_plr.cpp",0x656);
@@ -71,21 +72,21 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
     else if (SVar2 < MESS_TORPHIT) {
       if (SVar2 == MESS_SHARED_010F) {
         local_14 = 0;
-        pbVar6 = PrepareToSave(local_10,&local_14);
+        pbVar5 = PrepareToSave(local_10,&local_14);
         bVar17 = 0xc;
         uVar10 = local_14;
-        local_18 = pbVar6;
-        pCVar7 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,this_00->field_05D7);
-        STPlaySystemC::SaveObjData(g_playSystem_00802A38,pCVar7,pbVar6,uVar10,bVar17);
-        pCVar7 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,this_00->field_05D7);
+        local_18 = pbVar5;
+        pCVar6 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,this_00->field_05D7);
+        STPlaySystemC::SaveObjData(g_playSystem_00802A38,pCVar6,pbVar5,uVar10,bVar17);
+        pCVar6 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,this_00->field_05D7);
         uVar10 = 0xffffffff;
         do {
-          pcVar12 = pCVar7;
+          pcVar12 = pCVar6;
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          pcVar12 = pCVar7 + 1;
-          cVar1 = *pCVar7;
-          pCVar7 = pcVar12;
+          pcVar12 = pCVar6 + 1;
+          cVar1 = *pCVar6;
+          pCVar6 = pcVar12;
         } while (cVar1 != '\0');
         uVar10 = ~uVar10;
         pcVar12 = pcVar12 + -uVar10;
@@ -99,7 +100,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         if ((&DAT_00809950)[local_10->field_05D7] == '\0') {
           if (DAT_008117bc != nullptr) {
             memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
-            iVar5 = 0;
+            iVar9 = 0;
             local_38[4] = 0x5deb;
             local_24 = STReplaceLowWord((uint32_t)(local_24), (uint16_t)(*(undefined2 *)&this_00->field_05D7));
             if (this_00 == nullptr) {
@@ -125,7 +126,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         else {
           CloseAllTact(local_10);
           memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
-          iVar5 = 0;
+          iVar9 = 0;
           local_38[2] = this_00->field_000C->systemId;
           local_38[3] = 0;
           local_24 = this_00->field_0008;
@@ -170,23 +171,23 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
       }
     }
     else if (SVar2 == MESS_ID_ALLCREATE) {
-      pDVar8 = local_10->field_0695;
+      pDVar7 = local_10->field_0695;
       uVar10 = 0;
-      if (0 < (int)pDVar8->count) {
-        bVar16 = pDVar8->count != 0;
+      if (0 < (int)pDVar7->count) {
+        bVar16 = pDVar7->count != 0;
         do {
           if (bVar16) {
-            piVar14 = DArrayAt<int>(pDVar8, uVar10);
+            piVar14 = DArrayAt<int>(pDVar7, uVar10);
           }
           else {
             piVar14 = nullptr;
           }
           if ((AnonShape_005EFAE0_B406B78B *)piVar14[1] != nullptr) {
             local_c = 0;
-            iVar5 = STPlaySystemC::sub_006E62D0
+            iVar9 = STPlaySystemC::sub_006E62D0
                               (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)piVar14[1],
                                &local_c);
-            if ((iVar5 == 0) && (local_c != 0)) {
+            if ((iVar9 == 0) && (local_c != 0)) {
               *piVar14 = local_c;
             }
             else {
@@ -194,10 +195,10 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
               piVar14[1] = 0;
             }
           }
-          pDVar8 = this_00->field_0695;
+          pDVar7 = this_00->field_0695;
           uVar10 = uVar10 + 1;
-          bVar16 = uVar10 < pDVar8->count;
-        } while ((int)uVar10 < (int)pDVar8->count);
+          bVar16 = uVar10 < pDVar7->count;
+        } while ((int)uVar10 < (int)pDVar7->count);
       }
     }
     else if (SVar2 == MESS_AIPLRCLASSTY_5D94) {
@@ -210,8 +211,8 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
                             (message->arg0).words.high,CASE_1);
       }
       if (objPtr != nullptr) {
-        iVar5 = (*objPtr->vtable->vfunc_2C)();
-        if ((iVar5 < 1) || (0x28 < iVar5)) {
+        iVar9 = (*objPtr->vtable->vfunc_2C)();
+        if ((iVar9 < 1) || (0x28 < iVar9)) {
           bVar16 = false;
         }
         else {
@@ -234,17 +235,17 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
       else {
         local_8 = nullptr;
         Library::DKW::TBL::FUN_006afe40((int *)&local_8,(message->arg1).ptr);
-        pDVar8 = local_8;
+        pDVar7 = local_8;
         if (local_8 != nullptr) {
           ppAVar15 = &local_6c;
-          for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
+          for (iVar9 = 0xd; iVar9 != 0; iVar9 = iVar9 + -1) {
             *ppAVar15 = nullptr;
             ppAVar15 = ppAVar15 + 1;
           }
           local_68 = this_00->field_06FE;
           local_6c = (AnonShape_0068FD00_A5257008 *)0x72;
           local_64 = 0;
-          local_60 = pDVar8;
+          local_60 = pDVar7;
           sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
           local_64 = 1;
           sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);

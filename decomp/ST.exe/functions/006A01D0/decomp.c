@@ -10,10 +10,13 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
 {
   char cVar1;
   CGenerate *this_00;
+  int local_EAX_42;
+  cMf32 *pcVar3;
+  byte *pbVar4;
+  int *piVar5;
+  int local_EAX_314;
+  int iVar6;
   int iVar3;
-  cMf32 *pcVar4;
-  byte *pbVar5;
-  int *piVar6;
   undefined4 uVar7;
   uint uVar8;
   char *pcVar10;
@@ -30,20 +33,20 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
+  local_EAX_42 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   this_00 = local_10;
-  if (iVar3 != 0) {
+  if (local_EAX_42 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar3 = ReportDebugMessage("E:\\__titans\\Maps\\generate.cpp",0x72,0,iVar3,"%s",
-                               "CGenerate::CreateMap");
+    iVar3 = ReportDebugMessage("E:\\__titans\\Maps\\generate.cpp",0x72,0,local_EAX_42,
+                               "%s","CGenerate::CreateMap");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return 0;
   }
-  iVar3 = (local_10->aggregate_001C).field_0210;
+  iVar6 = (local_10->aggregate_001C).field_0210;
   local_10->field_53EB = (local_10->aggregate_001C).field_020C;
-  local_10->field_53EF = iVar3;
+  local_10->field_53EF = iVar6;
   uVar8 = 0xffffffff;
   pcVar10 = &(local_10->aggregate_001C).field_0x108;
   do {
@@ -63,30 +66,30 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
                 (int *)&local_8,1);
   thunk_FUN_00693710(*local_8);
   cMf32::RecMemFree(*(cMf32 **)&(this_00->aggregate_001C).field_0x218,(uint *)&local_8);
-  pcVar4 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+  pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                               (0x345,&(this_00->aggregate_001C).field_0x4,1,0,0);
-  this_00->field_0018 = pcVar4;
+  this_00->field_0018 = pcVar3;
   sub_0069FF90(this_00);
-  pbVar5 = (byte *)Library::Ourlib::MFSTMAP::mfTMapCreate
+  pbVar4 = (byte *)Library::Ourlib::MFSTMAP::mfTMapCreate
                              ((this_00->aggregate_001C).field_020C,
                               (this_00->aggregate_001C).field_0210,
                               *(cMf32 **)&(this_00->aggregate_001C).field_0x218,
                               *(int *)&(this_00->aggregate_001C).field_0x21d,0x20);
-  this_00->field_000C = pbVar5;
+  this_00->field_000C = pbVar4;
   sub_0069FF90(this_00);
-  piVar6 = Library::Ourlib::MFSTMAP::FUN_006f0620((short *)this_00->field_000C);
-  this_00->field_0008 = piVar6;
+  piVar5 = Library::Ourlib::MFSTMAP::FUN_006f0620((short *)this_00->field_000C);
+  this_00->field_0008 = piVar5;
   sub_0069FF90(this_00);
   thunk_FUN_006a2d80(1,this_00->field_0008);
   sub_0069FF90(this_00);
-  iVar3 = Library::Ourlib::MFSTMAP::AuxTMapRefreshAll
-                    ((short *)this_00->field_000C,this_00->field_0008);
-  if (iVar3 != 0) {
+  local_EAX_314 =
+       Library::Ourlib::MFSTMAP::AuxTMapRefreshAll((short *)this_00->field_000C,this_00->field_0008);
+  if (local_EAX_314 != 0) {
     local_c = 0;
   }
   sub_0069FF90(this_00);
-  iVar3 = thunk_FUN_00693ad0(&this_00->field_0x24e,(undefined2 *)&this_00->field_53EB);
-  if (iVar3 == 0) {
+  iVar6 = thunk_FUN_00693ad0(&this_00->field_0x24e,(undefined2 *)&this_00->field_53EB);
+  if (iVar6 == 0) {
     local_c = 0;
   }
   sub_0069FF90(this_00);

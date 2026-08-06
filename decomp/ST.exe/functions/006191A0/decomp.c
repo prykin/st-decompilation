@@ -35,7 +35,7 @@ byte __thiscall STJumpMineC::sub_006191A0(STJumpMineC *this,uint param_1,int par
                (int)this->field_00CB,&param_2,(int *)&local_8);
     if (((iVar2 < 0) || (4 < iVar2)) ||
        ((param_2 < 0 ||
-        ((((pVVar1->field_0030 <= param_2 ||
+        (((((int)pVVar1->field_0030 <= param_2 ||
            (iVar2 = (int)&local_8->vtable + g_centeredOffsets5[iVar2], iVar2 < 0)) ||
           (pVVar1->field_0034 <= iVar2)) ||
          ((pVVar1->field_004C == nullptr ||

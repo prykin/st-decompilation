@@ -15,13 +15,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00678E00::FUN_00679120
   int iVar1;
   AnonShape_00679120_6A32469C *pAVar2;
   uint uVar3;
-  void **value;
+  int *slotStorage;
   InternalExceptionFrame local_68;
   undefined1 local_24 [4];
   uint local_20;
   short local_1c [4];
   AnonShape_00679120_6A32469C *local_14;
-  void *local_10;
+  int local_10;
   int local_c;
   int local_8;
 
@@ -36,13 +36,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00678E00::FUN_00679120
       iVar1 = pAVar2->field_0695;
       if (local_20 < *(uint *)(iVar1 + 0xc)) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        value = (void **)(*(int *)(iVar1 + 8) * local_20 + *(int *)(iVar1 + 0x1c));
+        slotStorage = (int *)(*(int *)(iVar1 + 8) * local_20 + *(int *)(iVar1 + 0x1c));
       }
       else {
-        value = nullptr;
+        slotStorage = nullptr;
       }
-      if ((value[1] == nullptr) && (*value != nullptr)) {
-        local_10 = nullptr;
+      if ((slotStorage[1] == 0) && (*slotStorage != 0)) {
+        local_10 = 0;
         if ((param_2 < 0) || ((param_3 < 0 || (param_4 < 0)))) {
           param_2 = (int)pAVar2->field_063A;
           param_3 = (int)pAVar2->field_063C;
@@ -55,16 +55,18 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00678E00::FUN_00679120
         local_1c[0] = 5;
         local_1c[1] = 0;
         thunk_FUN_006756d0((short *)&local_8,(short *)&local_c,local_1c,local_1c + 2);
-        *(undefined4 *)((int)*value + 4) = pAVar2->field_05D7;
-        *(undefined4 *)((int)*value + 0x7d) = pAVar2->field_0640;
-        *(short *)((int)*value + 0x62) = (short)local_8 + 2;
-        *(short *)((int)*value + 100) = (short)local_c + 2;
-        *(short *)((int)*value + 0x66) = (short)param_4;
-        *(undefined1 *)((int)*value + 0x68) = pAVar2->field_064F;
-        STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x38e,local_24,&local_10,*value,0);
-        FreeAndNull(value);
-        *value = local_10;
-        value[1] = STField<void *>(local_10,0x18);
+        *(undefined4 *)(*slotStorage + 4) = pAVar2->field_05D7;
+        *(undefined4 *)(*slotStorage + 0x7d) = pAVar2->field_0640;
+        *(short *)(*slotStorage + 0x62) = (short)local_8 + 2;
+        *(short *)(*slotStorage + 100) = (short)local_c + 2;
+        *(short *)(*slotStorage + 0x66) = (short)param_4;
+        *(undefined1 *)(*slotStorage + 0x68) = pAVar2->field_064F;
+        STPlaySystemC::CreateGameObject
+                  (g_playSystem_00802A38,0x38e,local_24,&local_10,*slotStorage,0);
+        FreeAndNull(slotStorage);
+        *slotStorage = local_10;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        slotStorage[1] = *(int *)(local_10 + 0x18);
       }
     }
     g_currentExceptionFrame = local_68.previous;

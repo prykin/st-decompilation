@@ -288,7 +288,7 @@ LAB_004ae41c:
 004AE42B  33 C9                     XOR ECX,ECX
 004AE42D  8A 8F E8 EC 4A 00         MOV CL,byte ptr [EDI + 0x4aece8]
 switchD_004ae433::switchD:
-004AE433  FF 24 8D E0 EC 4A 00      JMP dword ptr [ECX*0x4 + 0x4aece0]
+004AE433  FF 24 8D E0 EC 4A 00      JMP dword ptr [ECX*0x4 + 0x4aece0]  ; [STJumpTableBoundaryApplier] finite jump table at 004AECE0: 2 destinations; first non-entry 004AECE8 contains 0x01010000 and is independently read as bytes at 004AE42D
 switchD_004ae433::caseD_38:
 004AE43A  8B 55 10                  MOV EDX,dword ptr [EBP + 0x10]
 004AE43D  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
@@ -308,7 +308,7 @@ switchD_004ae433::caseD_38:
 004AE46A  33 C9                     XOR ECX,ECX
 004AE46C  8A 8F 24 ED 4A 00         MOV CL,byte ptr [EDI + 0x4aed24]
 switchD_004ae472::switchD:
-004AE472  FF 24 8D 14 ED 4A 00      JMP dword ptr [ECX*0x4 + 0x4aed14]
+004AE472  FF 24 8D 14 ED 4A 00      JMP dword ptr [ECX*0x4 + 0x4aed14]  ; [STJumpTableBoundaryApplier] finite jump table at 004AED14: 4 destinations; first non-entry 004AED24 contains 0x03030100 and is independently read as bytes at 004AE46C
 switchD_004ae472::caseD_0:
 004AE479  3D DC 00 00 00            CMP EAX,0xdc
 004AE47E  0F 85 19 08 00 00         JNZ 0x004aec9d

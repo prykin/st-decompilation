@@ -52,10 +52,10 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       DArrayDestroy(pHVar2->field_01CB);
     }
     pHVar2->field_01CB = nullptr;
-    if ((DArrayTy *)pHVar2->field_01D7 != nullptr) {
-      DArrayDestroy((DArrayTy *)pHVar2->field_01D7);
+    if (pHVar2->field_01D7 != nullptr) {
+      DArrayDestroy(pHVar2->field_01D7);
     }
-    pHVar2->field_01D7 = 0;
+    pHVar2->field_01D7 = nullptr;
     if ((DArrayTy *)pHVar2->field_01D3 != nullptr) {
       FUN_006b5570((DArrayTy *)pHVar2->field_01D3);
     }
@@ -69,15 +69,15 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       puVar4 = puVar4 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    pHVar2->field_0238 = 0;
-    pHVar2->field_0248 = 0;
-    pHVar2->field_022C = 0;
-    pHVar2->field_0228 = 0;
-    pHVar2->field_0234 = 0;
-    pHVar2->field_0230 = 0;
-    pHVar2->field_0224 = 0;
-    pHVar2->field_0220 = 0;
-    pHVar2->field_0244 = 0;
+    pHVar2->field_0238 = nullptr;
+    pHVar2->field_0248 = nullptr;
+    pHVar2->field_022C = nullptr;
+    pHVar2->field_0228 = nullptr;
+    pHVar2->field_0234 = nullptr;
+    pHVar2->field_0230 = nullptr;
+    pHVar2->field_0224 = nullptr;
+    pHVar2->field_0220 = nullptr;
+    pHVar2->field_0244 = nullptr;
     pHVar2->field_0240 = 0;
     pHVar2->field_023C = 0;
     if (pHVar2->field_01E0 != nullptr) {
@@ -96,7 +96,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       FreeAndNull(&pHVar2->field_0218);
     }
     if (pHVar2->field_01EC != 0) {
-      FreeAndNull((void **)&pHVar2->field_01EC);
+      FreeAndNull(&pHVar2->field_01EC);
     }
     if (pHVar2->field_024C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pHVar2->field_024C);

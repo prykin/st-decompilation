@@ -41,7 +41,8 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
   CPanelTy *pCVar3;
   int iVar4;
   int iVar5;
-  undefined4 uVar6;
+  undefined4 uVar4;
+  int iVar6;
   InternalExceptionFrame local_1d0;
   int local_18c [4];
   int local_17c;
@@ -111,21 +112,21 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     }
     uVar2 = (uint)param_1;
     local_18c[2] = (&pCVar3->field_003C)[uVar2] + param_4;
-    iVar4 = pCVar3->field_0130;
+    iVar6 = pCVar3->field_0130;
     switch(uVar2) {
     case 0:
     case 1:
     case 2:
     case 3:
-      iVar4 = pCVar3->field_0134;
+      iVar6 = pCVar3->field_0134;
       break;
     case 5:
     case 6:
     case 7:
     case 8:
-      iVar4 = pCVar3->field_0138;
+      iVar6 = pCVar3->field_0138;
     }
-    if (iVar4 == 0) {
+    if (iVar6 == 0) {
       if ((param_1 == 1) || (param_1 == 7)) {
         local_18c[3] = pCVar3->field_00C0;
       }

@@ -12,7 +12,8 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
   DArrayTy *array;
   FSGSTy *this_00;
   int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar3;
+  int iVar4;
   int iVar5;
   uint uVar6;
   byte *puVar7;
@@ -46,7 +47,7 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
         puVar7 = (byte *)(local_8);
         pbVar8 = local_b0;
         memmove(pbVar8, puVar7, 0x2e); /* compiler REP MOVS byte copy */
-        iVar3 = 0;
+        iVar5 = 0;
       }
       puVar7 = (byte *)(local_3c);
       memmove(puVar7, param_1, 0x2d); /* compiler REP MOVS byte copy */
@@ -60,12 +61,12 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
       FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
       this_00->field_002D = 0x20;
       if ((this_00->field_1EA6->count == 0) || (this_00->field_1A6B == 0)) {
-        uVar4 = 0;
+        uVar3 = 0;
       }
       else {
-        uVar4 = 1;
+        uVar3 = 1;
       }
-      *(undefined4 *)&this_00->field_0x31 = uVar4;
+      *(undefined4 *)&this_00->field_0x31 = uVar3;
       FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
       if (local_8 != nullptr) {
         uVar6 = 0;
@@ -87,7 +88,7 @@ LAB_005a252f:
                 bVar10 = bVar1 < *pbVar9;
                 if (bVar1 != *pbVar9) {
 LAB_005a255d:
-                  iVar3 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
+                  iVar5 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
                   goto LAB_005a2562;
                 }
                 if (bVar1 == 0) break;
@@ -97,9 +98,9 @@ LAB_005a255d:
                 pbVar8 = pbVar8 + 2;
                 pbVar9 = pbVar9 + 2;
               } while (bVar1 != 0);
-              iVar3 = 0;
+              iVar5 = 0;
 LAB_005a2562:
-              if (iVar3 == 0) {
+              if (iVar5 == 0) {
                 *(short *)&this_00->field_0x31 = (short)uVar6;
                 *(undefined2 *)&this_00->field_0x37 = 1;
                 *(undefined2 *)&this_00->field_0x35 = 1;
@@ -121,9 +122,9 @@ LAB_005a2562:
       return;
     }
     g_currentExceptionFrame = local_80.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa12,0,iVar3,"%s"
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa12,0,iVar3,"%s"
                                ,"FSGSTy::AddPlayer");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0xa12);

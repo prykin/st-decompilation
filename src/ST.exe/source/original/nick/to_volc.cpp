@@ -23,8 +23,13 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
   STMessageId SVar2;
   uint uVar3;
   STVolcanoC *this_00;
+  int local_EAX_35;
+  int local_EAX_406;
   int iVar5;
-  ushort *puVar6;
+  ushort *puVar5;
+  int local_EAX_1518;
+  int local_EAX_1859;
+  int iVar6;
   int iVar7;
   byte *puVar8;
   byte *puVar9;
@@ -36,14 +41,14 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar5 = st::fn_0072D7F0(local_54.jumpBuffer,0);
+  local_EAX_35 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar5 != 0) {
+  if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\nick\\to_volc.cpp",0x121,0,iVar5,"%s",
-                               "STVolcanoC::GetMessage");
-    if (iVar7 == 0) {
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\nick\\to_volc.cpp",0x123);
+    iVar6 = st::fn_006AD4D0("E:\\__titans\\nick\\to_volc.cpp",0x121,0,local_EAX_35,
+                               "%s","STVolcanoC::GetMessage");
+    if (iVar6 == 0) {
+      st::fn_006A5E40(local_EAX_35,0,"E:\\__titans\\nick\\to_volc.cpp",0x123);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -61,8 +66,9 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
         if (local_8->field_00A4 < g_playSystem_00802A38->field_00E4) {
           local_8->field_009C = g_playSystem_00802A38->field_00E4;
           st::fn_00404B60((AnonShape_00647370_C4EFCC30 *)local_8);
-          iVar5 = st::fn_00402A77(this_00->field_0065,this_00->field_0069,this_00->field_006D);
-          if (iVar5 != 0) {
+          local_EAX_406 =
+               st::fn_00402A77(this_00->field_0065,this_00->field_0069,this_00->field_006D);
+          if (local_EAX_406 != 0) {
             this_00->field_00A8 = 1;
           }
           this_00->field_0071 = 0x29;
@@ -80,8 +86,8 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
         break;
       case CASE_2:
         if ((((local_8->field_0058 & 1) != 0) && (g_playSystem_00802A38->field_00E4 % 3 == 0)) &&
-           (iVar5 = local_8->field_0071 + 1, local_8->field_0071 = iVar5,
-           local_8->field_0075 <= iVar5)) {
+           (iVar7 = local_8->field_0071 + 1, local_8->field_0071 = iVar7,
+           local_8->field_0075 <= iVar7)) {
           local_8->field_0071 = 0;
           local_8->field_0075 = 10;
           local_8->field_00A9 = CASE_1;
@@ -104,14 +110,14 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
               g_currentExceptionFrame = local_54.previous;
               return 0;
             }
-            puVar6 = st::fn_00709AF0
+            puVar5 = st::fn_00709AF0
                                (PTR_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
                                 nullptr);
-            this_00->field_0061 = puVar6;
-            if (puVar6 != nullptr) {
+            this_00->field_0061 = puVar5;
+            if (puVar5 != nullptr) {
               st::fn_006E9000
                         (g_sT3DSMAPContext_00807598,
-                         *(undefined4 *)(STField<int>(puVar6,0x21) + 0xa0),0x5a,0x2f,
+                         *(undefined4 *)(STField<int>(puVar5,0x21) + 0xa0),0x5a,0x2f,
                          (float)this_00->field_0065 * _DAT_007904f8 * _DAT_007904f0,
                          (float)this_00->field_0069 * _DAT_007904f8 * _DAT_007904f0,
                          (float)this_00->field_006D * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc,
@@ -125,15 +131,15 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
           return 0;
         }
         if (((local_8->field_0058 & 2) != 0) && (g_playSystem_00802A38->field_00E4 % 3 == 0)) {
-          iVar5 = local_8->field_007E + 1;
-          local_8->field_007E = iVar5;
-          if (local_8->field_0082 <= iVar5) {
+          iVar7 = local_8->field_007E + 1;
+          local_8->field_007E = iVar7;
+          if (local_8->field_0082 <= iVar7) {
             local_8->field_007E = 0;
             st::fn_006EAB60(g_sT3DSMAPContext_00807598,local_8->field_007A);
           }
-          iVar5 = this_00->field_008A + 1;
-          this_00->field_008A = iVar5;
-          if (this_00->field_008E <= iVar5) {
+          iVar7 = this_00->field_008A + 1;
+          this_00->field_008A = iVar7;
+          if (this_00->field_008E <= iVar7) {
             this_00->field_008A = 0;
             st::fn_006EAB60(g_sT3DSMAPContext_00807598,this_00->field_0086);
           }
@@ -145,8 +151,9 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
           st::fn_0040298C(this_00,0);
         }
         if (this_00->field_00A8 == '\0') {
-          iVar5 = st::fn_00402A77(this_00->field_0065,this_00->field_0069,this_00->field_006D);
-          if (iVar5 != 0) {
+          local_EAX_1518 =
+               st::fn_00402A77(this_00->field_0065,this_00->field_0069,this_00->field_006D);
+          if (local_EAX_1518 != 0) {
             this_00->field_00A8 = 1;
             st::fn_0040176C(this_00,2);
             g_currentExceptionFrame = local_54.previous;
@@ -162,9 +169,9 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
       case CASE_3:
         if (((*(byte *)&local_8->field_0058 & 1) != 0) &&
            (g_playSystem_00802A38->field_00E4 % 3 == 0)) {
-          iVar5 = local_8->field_0071 + 1;
-          local_8->field_0071 = iVar5;
-          if ((local_8->field_0075 <= iVar5) &&
+          iVar7 = local_8->field_0071 + 1;
+          local_8->field_0071 = iVar7;
+          if ((local_8->field_0075 <= iVar7) &&
              (local_8->field_0071 = 0, local_8->field_00A4 < g_playSystem_00802A38->field_00E4)) {
             local_8->field_00A9 = CASE_2;
             st::fn_004036FC(local_8,0x4b6);
@@ -177,9 +184,9 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
             this_00->field_007E = 0;
             this_00->field_0082 = 0x1f;
           }
-          iVar5 = this_00->field_008A + 1;
-          this_00->field_008A = iVar5;
-          if (this_00->field_008E <= iVar5) {
+          iVar7 = this_00->field_008A + 1;
+          this_00->field_008A = iVar7;
+          if (this_00->field_008E <= iVar7) {
             this_00->field_008A = 0;
           }
         }
@@ -193,8 +200,9 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        iVar5 = st::fn_00402A77(this_00->field_0065,this_00->field_0069,this_00->field_006D);
-        if (iVar5 != 0) {
+        local_EAX_1859 =
+             st::fn_00402A77(this_00->field_0065,this_00->field_0069,this_00->field_006D);
+        if (local_EAX_1859 != 0) {
           this_00->field_00A8 = 1;
           st::fn_0040176C(this_00,0);
           g_currentExceptionFrame = local_54.previous;
@@ -203,9 +211,9 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
         break;
       case CASE_4:
         if (g_playSystem_00802A38->field_00E4 % 5 == 0) {
-          iVar5 = local_8->field_0071 + 1;
-          local_8->field_0071 = iVar5;
-          if (local_8->field_0075 <= iVar5) {
+          iVar7 = local_8->field_0071 + 1;
+          local_8->field_0071 = iVar7;
+          if (local_8->field_0075 <= iVar7) {
             uVar1 = local_8->field_00B1 * 0x41c64e6d + 0x3039;
             local_8->field_00B1 = uVar1;
             uVar3 = g_playSystem_00802A38->field_00E4;
@@ -217,9 +225,9 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
             local_8->field_008E = 10;
             local_8->field_00A4 = (uVar1 >> 0x10) % 0x1f5 + 500 + uVar3;
           }
-          iVar5 = local_8->field_008A + 1;
-          local_8->field_008A = iVar5;
-          if (local_8->field_008E <= iVar5) {
+          iVar7 = local_8->field_008A + 1;
+          local_8->field_008A = iVar7;
+          if (local_8->field_008E <= iVar7) {
             local_8->field_008A = 0;
           }
           if (local_8->field_00A8 != '\0') {
@@ -258,8 +266,8 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
       puVar9 = (byte *)&local_8->field_0x1c;
       memmove(puVar9, puVar8, 0x38); /* compiler REP MOVS byte copy */
       local_8->field_00B1 = DAT_00808754;
-      iVar5 = st::fn_00402C57(local_8);
-      if (iVar5 != 0) {
+      iVar7 = st::fn_00402C57(local_8);
+      if (iVar7 != 0) {
         uVar1 = this_00->field_00B1 * 0x41c64e6d + 0x3039;
         this_00->field_00B1 = uVar1;
         this_00->field_00A9 = CASE_6;

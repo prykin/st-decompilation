@@ -16,14 +16,17 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
   short sVar1;
   short sVar2;
   short sVar3;
+  int local_EAX_44;
+  int local_EAX_90;
+  STBoatCVTable *pSVar5;
+  int iVar6;
   int iVar5;
-  STBoatCVTable *pSVar6;
   undefined2 arg_2;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
-    iVar5 = 0;
+    iVar6 = 0;
     this->field_02C4 = 0;
     if (this->field_07BE < 1) {
       return 0;
@@ -46,12 +49,12 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
          ((-1 < sVar2 &&
           (((((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)) &&
             (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1] != nullptr)) &&
-           ((iVar5 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
-            iVar5 == 0x5a || (iVar5 == 0x1ae)))))))))) &&
-       (iVar5 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
+           ((iVar6 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
+            iVar6 == 0x5a || (iVar6 == 0x1ae)))))))))) &&
+       (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                              (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
                                              this->field_004B),1,(short *)&this->field_0x5e2,
-                             (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar5 == 0))
+                             (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0))
     {
       return 0;
     }
@@ -62,8 +65,8 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
     return (-(uint)(iVar5 != -1) & 3) - 1;
   }
   if (this->field_05E8 == 0) {
-    iVar5 = sub_00460260(this,2);
-    switch(iVar5) {
+    local_EAX_44 = sub_00460260(this,2);
+    switch(local_EAX_44) {
     case 0:
       this->field_05E8 = 1;
       return 2;
@@ -82,12 +85,12 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
             ((-1 < sVar2 &&
              (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)))))) &&
            ((STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1] != nullptr &&
-            ((iVar5 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
-             iVar5 == 0x5a || (iVar5 == 0x1ae)))))))) &&
-         (iVar5 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
+            ((iVar6 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
+             iVar6 == 0x5a || (iVar6 == 0x1ae)))))))) &&
+         (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                                (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
                                                this->field_004B),1,(short *)&this->field_0x5e2,
-                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar5 == 0)
+                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0)
          ) {
         return 0;
       }
@@ -115,20 +118,20 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
              (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) &&
               ((sVar3 < g_worldGrid.sizeZ &&
                (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1] != nullptr)))))) &&
-            ((iVar5 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
-             iVar5 == 0x5a || (iVar5 == 0x1ae)))))))) &&
-         (iVar5 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
+            ((iVar6 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
+             iVar6 == 0x5a || (iVar6 == 0x1ae)))))))) &&
+         (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                                (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
                                                this->field_004B),1,(short *)&this->field_0x5e2,
-                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar5 == 0)
+                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0)
          ) {
         return 0;
       }
       break;
     case -1:
-      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x311d,0,0,"%s",
-                                 "STBoatC::SetMine, SETMINE_MOVE error");
-      if (iVar5 != 0) {
+      local_EAX_90 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x311d,0,0,
+                                        "%s","STBoatC::SetMine, SETMINE_MOVE error");
+      if (local_EAX_90 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       return 0xffff;
@@ -141,18 +144,18 @@ switchD_004761eb_caseD_3:
   }
   if (this->field_05E8 != 1) goto LAB_00476633;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar5 = *(int *)((int)this->field_06CB + 0x2c);
-  if (iVar5 == 5) {
-    pSVar6 = this->vtable;
+  iVar6 = *(int *)((int)this->field_06CB + 0x2c);
+  if (iVar6 == 5) {
+    pSVar5 = this->vtable;
     arg_2 = 0xe6;
 LAB_004765df:
-    (*pSVar6->vfunc_90)(this,3,arg_2);
+    (*pSVar5->vfunc_90)(this,3,arg_2);
   }
-  else if (iVar5 == 0x11) {
+  else if (iVar6 == 0x11) {
     this->vfunc_90(3,0x14a);
   }
-  else if (iVar5 == 0x21) {
-    pSVar6 = this->vtable;
+  else if (iVar6 == 0x21) {
+    pSVar5 = this->vtable;
     arg_2 = 0x1cb;
     goto LAB_004765df;
   }
@@ -161,7 +164,7 @@ LAB_004765df:
                      this->field_0045 + -10,(int)this->field_06CB[5],nullptr,0xffffffff);
   this->field_07BE = this->field_07BE + -1;
 LAB_00476633:
-  iVar5 = this->vfunc_D8();
-  return -(uint)(iVar5 != 0);
+  iVar6 = this->vfunc_D8();
+  return -(uint)(iVar6 != 0);
 }
 

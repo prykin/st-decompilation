@@ -12,14 +12,36 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
   STBoatC_field_0580State SVar2;
   undefined4 uVar3;
   undefined2 uVar5;
+  int local_EAX_53;
+  int local_EAX_99;
   int iVar6;
-  dword dVar7;
-  int iVar8;
-  uint uVar9;
-  undefined4 *puVar10;
+  int local_EAX_764;
+  int local_EAX_808;
+  int local_EAX_977;
+  int local_EAX_1390;
+  int local_EAX_1414;
+  int local_EAX_1543;
+  dword dVar6;
+  int local_EAX_1797;
+  int local_EAX_1821;
+  int local_EAX_1958;
+  int local_EAX_2004;
+  int iVar7;
+  uint uVar8;
+  int local_EAX_2998;
+  undefined4 *puVar9;
+  int iVar10;
   int iVar11;
+  int local_EAX_3697;
+  int local_EAX_4347;
   int iVar12;
+  int local_EAX_4651;
+  int local_EAX_5572;
+  int local_EAX_5608;
   int *piVar13;
+  int local_EAX_5748;
+  int local_EAX_5810;
+  int local_EAX_5910;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   short sVar14;
@@ -84,8 +106,8 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
     if (pSVar16 == nullptr) {
       return 0;
     }
-    iVar6 = pSVar16->GetObjectTypeId();
-    if (iVar6 != 0x33) {
+    iVar12 = pSVar16->GetObjectTypeId();
+    if (iVar12 != 0x33) {
       return 0;
     }
     if (pSVar16[1].vtable != (STWorldObjectVTable *)this->field_0024) {
@@ -107,18 +129,18 @@ LAB_00470e23:
 cf_common_exit_00470E2B:
     sub_00460260(this,0);
 cf_common_exit_00470E32:
-    iVar6 = this->vfunc_D8();
-    return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+    iVar12 = this->vfunc_D8();
+    return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
   }
   SVar2 = this->field_0580;
   if (SVar2 == CASE_0) {
-    iVar6 = sub_00460260(this,2);
-    switch(iVar6) {
+    local_EAX_53 = sub_00460260(this,2);
+    switch(local_EAX_53) {
     case 0:
       if (*(int *)&this->field_0x564 == 1) {
-        iVar8 = (int)this->field_0556;
-        iVar6 = (int)this->field_0554;
-        iVar11 = this->field_0558 + 1;
+        iVar7 = (int)this->field_0556;
+        iVar12 = (int)this->field_0554;
+        iVar10 = this->field_0558 + 1;
         *(undefined4 *)&this->field_0x564 = 0;
         break;
       }
@@ -132,29 +154,29 @@ cf_common_exit_00470E32:
       else {
         pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0];
       }
-      iVar6 = sub_00490570(this);
-      if (iVar6 != 1) {
+      iVar12 = sub_00490570(this);
+      if (iVar12 != 1) {
 LAB_0046f794:
         if (((pSVar16 != nullptr) &&
-            (iVar6 = pSVar16->GetObjectTypeId(), iVar6 == 0x33)) &&
+            (iVar12 = pSVar16->GetObjectTypeId(), iVar12 == 0x33)) &&
            (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024)) {
           this->field_0580 = CASE_2;
 LAB_0046f98f:
-          iVar6 = Defence(this,0);
-          return (-(uint)(iVar6 != -1) & 3) - 1;
+          local_EAX_977 = Defence(this,0);
+          return (-(uint)(local_EAX_977 != -1) & 3) - 1;
         }
 LAB_0046f888:
         sub_004602B0(this);
         this->field_00B7 = 0;
-        iVar6 = this->vfunc_D8();
-        return -(uint)(iVar6 != 0);
+        iVar12 = this->vfunc_D8();
+        return -(uint)(iVar12 != 0);
       }
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar5 = extraout_var_00;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((pSVar16 != nullptr) &&
-          (iVar6 = pSVar16->GetObjectTypeId(), uVar5 = extraout_var_01,
-          iVar6 == 0x33)) && (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024)) {
+          (iVar12 = pSVar16->GetObjectTypeId(), uVar5 = extraout_var_01,
+          iVar12 == 0x33)) && (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024)) {
         iVar6 = thunk_FUN_004e1eb0(pSVar16,(int)this->field_0041,(int)this->field_0043,
                                    (int)this->field_0045);
         this->field_0568 = iVar6;
@@ -167,9 +189,9 @@ LAB_0046f888:
                    this->field_0556,(int *)CONCAT22(uVar5,this->field_0558 + 1),1,
                    (short *)&this->field_0x55e,(short *)&this->field_0x560,
                    (short *)&this->field_0x562);
-      iVar11 = (int)*(short *)&this->field_0x562;
-      iVar8 = (int)*(short *)&this->field_0x560;
-      iVar6 = (int)*(short *)&this->field_0x55e;
+      iVar10 = (int)*(short *)&this->field_0x562;
+      iVar7 = (int)*(short *)&this->field_0x560;
+      iVar12 = (int)*(short *)&this->field_0x55e;
       this->field_0580 = CASE_1;
       this->field_00B7 = 0;
       break;
@@ -183,7 +205,7 @@ LAB_0046f888:
             ((sVar19 < g_worldGrid.sizeZ &&
              ((pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
               pSVar16 != nullptr &&
-              (iVar6 = pSVar16->GetObjectTypeId(), iVar6 == 0x33)))))) &&
+              (iVar12 = pSVar16->GetObjectTypeId(), iVar12 == 0x33)))))) &&
            (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024))
         goto cf_common_exit_004707B7;
         goto LAB_0046f888;
@@ -191,22 +213,22 @@ LAB_0046f888:
       *(undefined4 *)&this->field_0x564 = 0;
       sub_004602B0(this);
     case 3:
-      iVar8 = (int)this->field_0556;
-      iVar6 = (int)this->field_0554;
-      iVar11 = this->field_0558 + 1;
+      iVar7 = (int)this->field_0556;
+      iVar12 = (int)this->field_0554;
+      iVar10 = this->field_0558 + 1;
       break;
     default:
       goto cf_common_exit_004707B7;
     case -1:
-      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x28ac,0,0,"%s",
-                                 "STBoatC::ToDok, move to dock error");
-      if (iVar6 != 0) {
+      local_EAX_99 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x28ac,0,0,
+                                        "%s","STBoatC::ToDok, move to dock error");
+      if (local_EAX_99 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar6 = 0x28ac;
+      iVar12 = 0x28ac;
 cf_error_exit_00470C46:
       RaiseInternalException
-                (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar6);
+                (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar12);
       return 0xffff;
     }
     goto LAB_0046fb98;
@@ -214,8 +236,8 @@ cf_error_exit_00470C46:
   if (SVar2 != CASE_1) {
     if (SVar2 == CASE_2) {
       this->field_0574 = this->field_0574 + 1;
-      iVar6 = Defence(this,2);
-      if (iVar6 == -1) {
+      local_EAX_1543 = Defence(this,2);
+      if (local_EAX_1543 == -1) {
         return -1;
       }
       if (this->field_082E != 0) {
@@ -236,16 +258,17 @@ cf_error_exit_00470C46:
           (((pSVar17 = (STFishC *)
                        STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
             pSVar17 != nullptr &&
-            (dVar7 = pSVar17->slot_2C(), dVar7 == 0x33)) &&
+            (dVar6 = pSVar17->slot_2C(), dVar6 == 0x33)) &&
            (pSVar17->field_0024 == this->field_0024)))))) {
-        iVar6 = thunk_FUN_004e1eb0(pSVar17,(int)this->field_0041,(int)this->field_0043,
-                                   (int)this->field_0045);
-        this->field_0568 = iVar6;
-        if (iVar6 == -1) {
+        local_EAX_1797 =
+             thunk_FUN_004e1eb0(pSVar17,(int)this->field_0041,(int)this->field_0043,
+                                (int)this->field_0045);
+        this->field_0568 = local_EAX_1797;
+        if (local_EAX_1797 == -1) {
           return 2;
         }
-        iVar6 = thunk_FUN_004908a0(this,pSVar17,iVar6);
-        if (iVar6 != 1) {
+        local_EAX_1821 = thunk_FUN_004908a0(this,pSVar17,local_EAX_1797);
+        if (local_EAX_1821 != 1) {
           return 2;
         }
         this->field_055A = pSVar17->field_0018;
@@ -263,12 +286,12 @@ LAB_00470bfe:
 LAB_0046fd37:
       sub_004602B0(this);
 LAB_0046fd3e:
-      iVar6 = this->vfunc_D8();
-      return -(uint)(iVar6 != 0);
+      iVar12 = this->vfunc_D8();
+      return -(uint)(iVar12 != 0);
     }
     if (SVar2 == CASE_3) {
-      iVar6 = sub_00460260(this,2);
-      switch(iVar6) {
+      local_EAX_1958 = sub_00460260(this,2);
+      switch(local_EAX_1958) {
       case 0:
         if (*(int *)&this->field_0x564 != 1) {
           sVar14 = this->field_0554;
@@ -279,7 +302,7 @@ LAB_0046fd3e:
              ((sVar19 < g_worldGrid.sizeZ &&
               ((((pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
                  pSVar16 != nullptr &&
-                 (iVar6 = pSVar16->GetObjectTypeId(), iVar6 == 0x33)) &&
+                 (iVar12 = pSVar16->GetObjectTypeId(), iVar12 == 0x33)) &&
                 (*(int *)&pSVar16[0x21].field_0x10 == 0)) &&
                ((*(int *)&pSVar16[0x10].field_0x5 != 6 &&
                 (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024)))))))) {
@@ -287,8 +310,8 @@ LAB_0046fd3e:
                ((this->field_0049 == this->field_056E && (this->field_004B == this->field_0570)))) {
               this->field_0580 = CASE_4;
               *(undefined4 *)&this->field_0x584 = 0;
-              iVar6 = this->vfunc_D8();
-              return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+              iVar12 = this->vfunc_D8();
+              return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
             }
             thunk_FUN_004e2000(pSVar16,this->field_0568,this->field_0018);
             return 0;
@@ -308,7 +331,7 @@ LAB_0046fd3e:
                (((pSVar17 = (STFishC *)
                             STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
                  pSVar17 == nullptr ||
-                 (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33)) ||
+                 (dVar6 = pSVar17->slot_2C(), dVar6 != 0x33)) ||
                 (pSVar17->field_0024 != this->field_0024)))))))) goto LAB_004700a6;
           goto LAB_00470071;
         }
@@ -326,23 +349,24 @@ LAB_0046fd3e:
            (((pSVar17 = (STFishC *)
                         STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
              pSVar17 == nullptr ||
-             (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33)) ||
+             (dVar6 = pSVar17->slot_2C(), dVar6 != 0x33)) ||
             (pSVar17->field_0024 != this->field_0024)))) {
 LAB_004700a6:
-          iVar6 = this->vfunc_D8();
-          return -(uint)(iVar6 != 0);
+          iVar12 = this->vfunc_D8();
+          return -(uint)(iVar12 != 0);
         }
 LAB_00470071:
         thunk_FUN_004908a0(this,pSVar17,this->field_0568);
         sub_00481520(this,(int)this->field_056C,(int)this->field_056E,(int)this->field_0570);
         goto cf_common_exit_00470E2B;
       case -1:
-        iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2977,0,0,"%s",
-                                   "STBoatC::ToDok, move to depot 2 error");
-        if (iVar6 != 0) {
+        local_EAX_2004 =
+             ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2977,0,0,"%s",
+                                "STBoatC::ToDok, move to depot 2 error");
+        if (local_EAX_2004 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        iVar6 = 0x2977;
+        iVar12 = 0x2977;
         goto cf_error_exit_00470C46;
       }
       sVar14 = this->field_0558;
@@ -355,24 +379,25 @@ LAB_00470071:
     }
     if (SVar2 == CASE_4) {
       if (*(int *)&this->field_0x584 == 0) {
-        iVar8 = (ushort)(this->field_0558 * 200) + 300;
-        iVar6 = STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_0556 + 1)) * 0xc9;
-        iVar11 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)((short)this->field_0568 + this->field_0554));
+        iVar7 = (ushort)(this->field_0558 * 200) + 300;
+        iVar12 = STReplaceLowWord((uint32_t)(iVar7), (uint16_t)(this->field_0556 + 1)) * 0xc9;
+        iVar10 = STReplaceLowWord((uint32_t)(iVar12), (uint16_t)((short)this->field_0568 + this->field_0554));
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar5 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
-                           CONCAT22((short)((uint)(iVar11 * 0x19) >> 0x10),this->field_0045),
-                           (short)(iVar11 * 0xc9 + 100),(short)iVar6,iVar8);
+                           CONCAT22((short)((uint)(iVar10 * 0x19) >> 0x10),this->field_0045),
+                           (short)(iVar10 * 0xc9 + 100),(short)iVar12,iVar7);
         this->field_0572 = uVar5;
         *(undefined4 *)&this->field_0x584 = 1;
       }
       if (*(int *)&this->field_0x584 == 1) {
-        uVar9 = sub_004176C0(this,this->field_0572);
-        uVar9 = sub_00417910(this,(short)uVar9);
-        if (uVar9 == 0xffffffff) {
-          iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x29d3,0,0,
-                                     "%s","STBoatC::ToDok, TODOK_PDOCK");
-          if (iVar6 == 0) {
+        uVar8 = sub_004176C0(this,this->field_0572);
+        uVar8 = sub_00417910(this,(short)uVar8);
+        if (uVar8 == 0xffffffff) {
+          local_EAX_2998 =
+               ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x29d3,0,0,"%s",
+                                  "STBoatC::ToDok, TODOK_PDOCK");
+          if (local_EAX_2998 == 0) {
             RaiseInternalException
                       (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                        0x29d4);
@@ -380,7 +405,7 @@ LAB_00470071:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (uVar9 == 0) {
+        if (uVar8 == 0) {
 LAB_004707ad:
           *(undefined4 *)&this->field_0x584 = 2;
           goto cf_common_exit_004707B7;
@@ -394,11 +419,11 @@ LAB_004707ad:
       }
       if (*(int *)&this->field_0x584 == 3) {
         local_c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
-        uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
-        this->field_001C = uVar9;
-        iVar6 = (uVar9 >> 0x10) % 7 - 3;
-        uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
-        this->field_001C = uVar9;
+        uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+        this->field_001C = uVar8;
+        iVar12 = (uVar8 >> 0x10) % 7 - 3;
+        uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+        this->field_001C = uVar8;
         uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar1;
         local_10 = (uVar1 >> 0x10) % 7 - 3;
@@ -407,14 +432,14 @@ LAB_004707ad:
            (param_1 = 0, this->field_02BF != '\0')) {
           local_8 = (undefined4 *)&this->field_0x2b3;
           do {
-            puVar10 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
-                                         this->field_006C);
-            uVar3 = *puVar10;
+            puVar9 = (undefined4 *)
+                     thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
+                                        this->field_006C);
+            uVar3 = *puVar9;
             bVar26 = 0;
             sVar25 = 0;
-            iVar8 = -1;
-            local_1c = *(short *)(puVar10 + 1);
+            iVar7 = -1;
+            local_1c = *(short *)(puVar9 + 1);
             sVar24 = 0;
             sVar23 = 0;
             sVar22 = 0;
@@ -433,28 +458,29 @@ LAB_004707ad:
               bVar26 = 0;
               lVar18 = Library::MSVCRT::__ftol();
               iVar15 = (int)local_1c + this->field_0045 + local_10 + (int)(short)lVar18;
-              iVar11 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
-              iVar12 = (int)(short)local_20 + iVar6 + this->field_0041;
+              iVar10 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
+              iVar11 = (int)(short)local_20 + iVar12 + this->field_0041;
             }
             else {
               iVar15 = (int)local_1c + local_10 + this->field_0045;
               STPiece<2,2>(local_20) = (short)((uint)uVar3 >> 0x10);
-              iVar11 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
+              iVar10 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
               STPiece<0,2>(local_20) = (short)uVar3;
-              iVar12 = (int)(short)local_20 + iVar6 + this->field_0041;
+              iVar11 = (int)(short)local_20 + iVar12 + this->field_0041;
             }
             TraksClassTy::TraksCreate
-                      (g_traksClass_00802A7C,1,2,7,iVar12,iVar11 + ((uVar9 >> 0x10) % 7 - 3),iVar15,
-                       sVar14,sVar19,sVar21,sVar22,sVar23,sVar24,iVar8,sVar25,bVar26);
+                      (g_traksClass_00802A7C,1,2,7,iVar11,iVar10 + ((uVar8 >> 0x10) % 7 - 3),iVar15,
+                       sVar14,sVar19,sVar21,sVar22,sVar23,sVar24,iVar7,sVar25,bVar26);
             local_8 = (undefined4 *)((int)local_8 + 6);
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = param_1 + 1;
           } while (param_1 < (int)(uint)(byte)this->field_02BF);
         }
         if (local_c == -1) {
-          iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x29fe,0,0,
-                                     "%s","STBoatC::UnLoadRC, TODOK_PDOCK 2");
-          if (iVar6 == 0) {
+          local_EAX_3697 =
+               ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x29fe,0,0,"%s",
+                                  "STBoatC::UnLoadRC, TODOK_PDOCK 2");
+          if (local_EAX_3697 == 0) {
             RaiseInternalException
                       (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                        0x29ff);
@@ -465,10 +491,10 @@ LAB_004707ad:
         if (local_c == 0) {
           this->field_0580 = CASE_5;
           this->field_0574 = g_playSystem_00802A38->field_00E4;
-          uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
-          this->field_001C = uVar9;
+          uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+          this->field_001C = uVar8;
           *(undefined4 *)&this->field_0x584 = 0;
-          this->field_0578 = (uVar9 >> 0x10) % 0x33 + 0x28;
+          this->field_0578 = (uVar8 >> 0x10) % 0x33 + 0x28;
         }
       }
       goto cf_common_exit_004707B7;
@@ -485,126 +511,132 @@ LAB_004707ad:
           )))) {
         if (g_playSystem_00802A38->field_00E4 == this->field_0574 + this->field_0578) {
           this->vfunc_90(3,0x363);
-          iVar6 = (*(short *)&this->field_0x237 * -7) / 10;
-          uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
-          this->field_001C = uVar9;
-          sVar14 = (short)((uVar9 >> 0x10) %
-                          (((*(short *)&this->field_0x237 * 7) / 10 - iVar6) + 1U)) + (short)iVar6;
-          iVar6 = (*(short *)&this->field_0x237 * -2) / 10;
-          uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
-          this->field_001C = uVar9;
+          iVar12 = (*(short *)&this->field_0x237 * -7) / 10;
+          uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+          this->field_001C = uVar8;
+          sVar14 = (short)((uVar8 >> 0x10) %
+                          (((*(short *)&this->field_0x237 * 7) / 10 - iVar12) + 1U)) + (short)iVar12
+          ;
+          iVar12 = (*(short *)&this->field_0x237 * -2) / 10;
+          uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+          this->field_001C = uVar8;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_20 = CONCAT22((short)((uVar9 >> 0x10) %
-                                     (((*(short *)&this->field_0x237 * 2) / 10 - iVar6) + 1U)) +
-                              (short)iVar6,sVar14);
-          puVar10 = (undefined4 *)thunk_FUN_0041dc40(local_28,sVar14,0,this->field_006C);
-          uVar3 = *puVar10;
-          local_1c = *(short *)(puVar10 + 1);
+          local_20 = CONCAT22((short)((uVar8 >> 0x10) %
+                                     (((*(short *)&this->field_0x237 * 2) / 10 - iVar12) + 1U)) +
+                              (short)iVar12,sVar14);
+          puVar9 = (undefined4 *)thunk_FUN_0041dc40(local_28,sVar14,0,this->field_006C);
+          uVar3 = *puVar9;
+          local_1c = *(short *)(puVar9 + 1);
           STPiece<2,2>(local_20) = (short)((uint)uVar3 >> 0x10);
-          iVar8 = (int)STPiece<2,2>(local_20);
+          iVar7 = (int)STPiece<2,2>(local_20);
           STPiece<0,2>(local_20) = (short)uVar3;
-          iVar6 = (int)(short)local_20;
+          iVar12 = (int)(short)local_20;
           local_20 = uVar3;
-          thunk_FUN_00637930(this->field_01ED,0,this->field_0041 + iVar6,this->field_0043 + iVar8,
+          thunk_FUN_00637930(this->field_01ED,0,this->field_0041 + iVar12,this->field_0043 + iVar7,
                              this->field_0045 + -0x28,0,0);
           this->field_0574 = g_playSystem_00802A38->field_00E4;
-          uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
-          this->field_001C = uVar9;
-          this->field_0578 = (uVar9 >> 0x10) % 0x33 + 0x28;
+          uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+          this->field_001C = uVar8;
+          this->field_0578 = (uVar8 >> 0x10) % 0x33 + 0x28;
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         thunk_FUN_004e20d0(pSVar16,this->field_0568,this->field_0018,
                            *(int *)((int)this->field_06CB + 0x2c),this->field_0716);
-        iVar6 = thunk_FUN_004e2340(pSVar16,this->field_0568,this->field_0018,nullptr);
-        this->field_0716 = iVar6;
-        if (iVar6 != this->field_0712) goto cf_common_exit_00470E32;
+        local_EAX_4347 =
+             thunk_FUN_004e2340(pSVar16,this->field_0568,this->field_0018,nullptr);
+        this->field_0716 = local_EAX_4347;
+        if (local_EAX_4347 != this->field_0712) goto cf_common_exit_00470E32;
       }
       sub_0048DBA0(this);
       this->field_0580 = CASE_6;
-      iVar6 = this->vfunc_D8();
-      return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+      iVar12 = this->vfunc_D8();
+      return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
     }
     if (SVar2 != CASE_6) {
       if (SVar2 == CASE_7) {
-        iVar6 = sub_00460260(this,2);
-        if (iVar6 == -1) {
-          iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2a8c,0,0,
-                                     "%s","STBoatC::ToDok, TODOK_MOVEWAIT error");
-          if (iVar6 != 0) {
+        local_EAX_5608 = sub_00460260(this,2);
+        if (local_EAX_5608 == -1) {
+          local_EAX_5748 =
+               ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2a8c,0,0,"%s",
+                                  "STBoatC::ToDok, TODOK_MOVEWAIT error");
+          if (local_EAX_5748 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          iVar6 = 0x2a8c;
+          iVar12 = 0x2a8c;
           goto cf_error_exit_00470C46;
         }
-        if (iVar6 == 0) {
+        if (local_EAX_5608 == 0) {
           return 0;
         }
-        if (iVar6 != 3) {
+        if (local_EAX_5608 != 3) {
           return 2;
         }
         uVar20 = this->field_004B;
         piVar13 = (int *)(uint)uVar20;
         sVar14 = this->field_0049;
         sVar19 = this->field_0047;
-        iVar6 = 3;
+        iVar12 = 3;
         sVar21 = sVar14;
         sVar22 = sVar19;
       }
       else {
         if (SVar2 != CASE_8) {
-          iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2ab3,0,0,
-                                     "%s","STBoatC::ToDok - incorrect entry");
-          if (iVar6 == 0) {
+          local_EAX_5910 =
+               ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2ab3,0,0,"%s",
+                                  "STBoatC::ToDok - incorrect entry");
+          if (local_EAX_5910 == 0) {
             return -1;
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        iVar6 = sub_00460260(this,2);
-        if (iVar6 == -1) {
+        local_EAX_5810 = sub_00460260(this,2);
+        if (local_EAX_5810 == -1) {
           return -1;
         }
-        if (iVar6 == 0) {
+        if (local_EAX_5810 == 0) {
           return 0;
         }
-        if (iVar6 != 3) {
+        if (local_EAX_5810 != 3) {
           return 2;
         }
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         piVar13 = (int *)CONCAT22(extraout_var,this->field_004B);
         sVar21 = this->field_0049;
-        iVar6 = 1;
+        iVar12 = 1;
         sVar22 = this->field_0047;
         uVar20 = *(ushort *)&this->field_0x562;
         sVar14 = *(short *)&this->field_0x560;
         sVar19 = *(short *)&this->field_0x55e;
       }
-      sub_0048DFD0(this,sVar19,sVar14,uVar20,sVar22,sVar21,piVar13,iVar6,(short *)&this->field_0x55e
-                   ,(short *)&this->field_0x560,(short *)&this->field_0x562);
+      sub_0048DFD0(this,sVar19,sVar14,uVar20,sVar22,sVar21,piVar13,iVar12,
+                   (short *)&this->field_0x55e,(short *)&this->field_0x560,
+                   (short *)&this->field_0x562);
       sVar21 = *(short *)&this->field_0x562;
       sVar19 = *(short *)&this->field_0x560;
       sVar14 = *(short *)&this->field_0x55e;
       goto LAB_00470bfe;
     }
-    iVar6 = this->field_057C + 1;
-    this->field_057C = iVar6;
-    if (iVar6 < 0x1e) goto cf_common_exit_004707B7;
+    iVar12 = this->field_057C + 1;
+    this->field_057C = iVar12;
+    if (iVar12 < 0x1e) goto cf_common_exit_004707B7;
     if (*(int *)&this->field_0x584 == 0) {
-      iVar6 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_056E * 0xc9)) + 100;
+      iVar12 = STReplaceLowWord((uint32_t)(iVar12), (uint16_t)(this->field_056E * 0xc9)) + 100;
       uVar5 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
-                         this->field_056C * 0xc9 + 100,(short)iVar6,
+                         STReplaceLowWord((uint32_t)(iVar12), (uint16_t)(this->field_0045)),
+                         this->field_056C * 0xc9 + 100,(short)iVar12,
                          (ushort)(this->field_0570 * 200) + 100);
       this->field_0572 = uVar5;
       *(undefined4 *)&this->field_0x584 = 1;
     }
     if (*(int *)&this->field_0x584 == 1) {
-      uVar9 = sub_004176C0(this,this->field_0572);
-      uVar9 = sub_00417910(this,(short)uVar9);
-      if (uVar9 == 0xffffffff) {
-        iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2a42,0,0,"%s",
-                                   "STBoatC::ToDok, TODOK_ODOCK");
-        if (iVar6 == 0) {
+      uVar8 = sub_004176C0(this,this->field_0572);
+      uVar8 = sub_00417910(this,(short)uVar8);
+      if (uVar8 == 0xffffffff) {
+        local_EAX_4651 =
+             ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2a42,0,0,"%s",
+                                "STBoatC::ToDok, TODOK_ODOCK");
+        if (local_EAX_4651 == 0) {
           RaiseInternalException
                     (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                      0x2a43);
@@ -612,7 +644,7 @@ LAB_004707ad:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      if (uVar9 != 0) goto cf_common_exit_004707B7;
+      if (uVar8 != 0) goto cf_common_exit_004707B7;
       goto LAB_004707ad;
     }
     if (*(int *)&this->field_0x584 == 2) {
@@ -623,11 +655,11 @@ LAB_004707ad:
     }
     if (*(int *)&this->field_0x584 != 3) goto cf_common_exit_00470E32;
     local_c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_10,&local_14);
-    uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
-    this->field_001C = uVar9;
-    iVar6 = (uVar9 >> 0x10) % 7 - 3;
-    uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
-    this->field_001C = uVar9;
+    uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+    this->field_001C = uVar8;
+    iVar12 = (uVar8 >> 0x10) % 7 - 3;
+    uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+    this->field_001C = uVar8;
     uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar1;
     local_18 = (uVar1 >> 0x10) % 7 - 3;
@@ -636,14 +668,14 @@ LAB_004707ad:
        (param_1 = 0, this->field_02BF != '\0')) {
       local_8 = (undefined4 *)&this->field_0x2b3;
       do {
-        puVar10 = (undefined4 *)
-                  thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
-                                     this->field_006C);
-        uVar3 = *puVar10;
+        puVar9 = (undefined4 *)
+                 thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
+                                    this->field_006C);
+        uVar3 = *puVar9;
         bVar26 = 0;
         sVar25 = 0;
-        iVar8 = -1;
-        local_1c = *(short *)(puVar10 + 1);
+        iVar7 = -1;
+        local_1c = *(short *)(puVar9 + 1);
         sVar24 = 0;
         sVar23 = 0;
         sVar22 = 0;
@@ -662,31 +694,32 @@ LAB_004707ad:
           bVar26 = 0;
           lVar18 = Library::MSVCRT::__ftol();
           iVar15 = (int)local_1c + this->field_0045 + local_18 + (int)(short)lVar18;
-          iVar11 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
-          iVar12 = (int)(short)local_20 + iVar6 + this->field_0041;
+          iVar10 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
+          iVar11 = (int)(short)local_20 + iVar12 + this->field_0041;
         }
         else {
           iVar15 = (int)local_1c + local_18 + this->field_0045;
           STPiece<2,2>(local_20) = (short)((uint)uVar3 >> 0x10);
-          iVar11 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
+          iVar10 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
           STPiece<0,2>(local_20) = (short)uVar3;
-          iVar12 = (int)(short)local_20 + iVar6 + this->field_0041;
+          iVar11 = (int)(short)local_20 + iVar12 + this->field_0041;
         }
         TraksClassTy::TraksCreate
-                  (g_traksClass_00802A7C,1,2,7,iVar12,iVar11 + ((uVar9 >> 0x10) % 7 - 3),iVar15,
-                   sVar14,sVar19,sVar21,sVar22,sVar23,sVar24,iVar8,sVar25,bVar26);
+                  (g_traksClass_00802A7C,1,2,7,iVar11,iVar10 + ((uVar8 >> 0x10) % 7 - 3),iVar15,
+                   sVar14,sVar19,sVar21,sVar22,sVar23,sVar24,iVar7,sVar25,bVar26);
         local_8 = (undefined4 *)((int)local_8 + 6);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
       } while (param_1 < (int)(uint)(byte)this->field_02BF);
     }
     if (local_c == -1) {
-      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2a6c,0,0,"%s",
-                                 "STBoatC::ToDok, TODOK_ODOCK 2");
-      if (iVar6 != 0) {
+      local_EAX_5572 =
+           ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2a6c,0,0,"%s",
+                              "STBoatC::ToDok, TODOK_ODOCK 2");
+      if (local_EAX_5572 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar6 = 0x2a6d;
+      iVar12 = 0x2a6d;
       goto cf_error_exit_00470C46;
     }
     if (local_c != 0) goto cf_common_exit_00470E32;
@@ -726,11 +759,11 @@ cf_common_exit_00470B14:
                  (int)*(short *)&this->field_0x562);
     goto cf_common_exit_00470E2B;
   }
-  iVar6 = sub_00460260(this,2);
-  switch(iVar6) {
+  local_EAX_764 = sub_00460260(this,2);
+  switch(local_EAX_764) {
   case 0:
-    iVar6 = sub_00490570(this);
-    if (iVar6 != 1) {
+    iVar12 = sub_00490570(this);
+    if (iVar12 != 1) {
       this->field_0580 = CASE_2;
       goto LAB_0046f98f;
     }
@@ -739,9 +772,9 @@ cf_common_exit_00470B14:
                  this->field_0556,(int *)CONCAT22(extraout_var_03,this->field_0558 + 1),1,
                  (short *)&this->field_0x55e,(short *)&this->field_0x560,(short *)&this->field_0x562
                 );
-    iVar11 = (int)*(short *)&this->field_0x562;
-    iVar8 = (int)*(short *)&this->field_0x560;
-    iVar6 = (int)*(short *)&this->field_0x55e;
+    iVar10 = (int)*(short *)&this->field_0x562;
+    iVar7 = (int)*(short *)&this->field_0x560;
+    iVar12 = (int)*(short *)&this->field_0x55e;
     break;
   case 1:
     if (*(int *)&this->field_0x564 == 1) {
@@ -760,26 +793,28 @@ cf_common_exit_00470B14:
           ((g_worldGrid.sizeY <= sVar21 || (sVar19 < 0)))) || (g_worldGrid.sizeZ <= sVar19)) ||
         ((pSVar17 = (STFishC *)
                     STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
-         pSVar17 == nullptr || (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33))
+         pSVar17 == nullptr || (dVar6 = pSVar17->slot_2C(), dVar6 != 0x33))
         )) || (pSVar17->field_0024 != this->field_0024)) goto LAB_0046fd37;
-    iVar6 = thunk_FUN_004e1eb0(pSVar17,(int)this->field_0041,(int)this->field_0043,
-                               (int)this->field_0045);
-    this->field_0568 = iVar6;
-    if ((iVar6 == -1) || (iVar6 = thunk_FUN_004908a0(this,pSVar17,iVar6), iVar6 != 1))
+    local_EAX_1390 =
+         thunk_FUN_004e1eb0(pSVar17,(int)this->field_0041,(int)this->field_0043,
+                            (int)this->field_0045);
+    this->field_0568 = local_EAX_1390;
+    if ((local_EAX_1390 == -1) ||
+       (local_EAX_1414 = thunk_FUN_004908a0(this,pSVar17,local_EAX_1390), local_EAX_1414 != 1))
     goto cf_common_exit_004707B7;
     sub_004602B0(this);
     this->field_055A = pSVar17->field_0018;
     thunk_FUN_004e1fb0(pSVar17,this->field_0568,this->field_0018);
-    iVar11 = (int)this->field_0570;
-    iVar8 = (int)this->field_056E;
-    iVar6 = (int)this->field_056C;
+    iVar10 = (int)this->field_0570;
+    iVar7 = (int)this->field_056E;
+    iVar12 = (int)this->field_056C;
     this->field_0580 = CASE_3;
     break;
   default:
     goto cf_common_exit_004707B7;
   case 3:
-    iVar6 = sub_00490570(this);
-    if (iVar6 == 1) {
+    iVar12 = sub_00490570(this);
+    if (iVar12 == 1) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0554,
                    this->field_0556,
@@ -792,9 +827,10 @@ cf_common_exit_00470B14:
     sub_00460260(this,0);
     goto cf_common_exit_004707B7;
   case -1:
-    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2907,0,0,"%s",
-                               "STBoatC::ToDok, correct move to dock error");
-    if (iVar6 == 0) {
+    local_EAX_808 =
+         ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2907,0,0,"%s",
+                            "STBoatC::ToDok, correct move to dock error");
+    if (local_EAX_808 == 0) {
       RaiseInternalException
                 (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2907);
       return 0xffff;
@@ -802,10 +838,10 @@ cf_common_exit_00470B14:
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
 LAB_0046fb98:
-  sub_00481520(this,iVar6,iVar8,iVar11);
+  sub_00481520(this,iVar12,iVar7,iVar10);
   sub_00460260(this,0);
 cf_common_exit_004707B7:
-  iVar6 = this->vfunc_D8();
-  return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+  iVar12 = this->vfunc_D8();
+  return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
 }
 

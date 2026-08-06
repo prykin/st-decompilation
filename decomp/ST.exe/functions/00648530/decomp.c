@@ -17,7 +17,7 @@ AllocationRecord_00648530 * __cdecl FUN_00648530(AllocationRecord_00648530 *para
 
 {
   int iVar1;
-  AllocationRecord_0065CB00 *pAVar2;
+  AllocationRecord_0065CB00 *pAVar1;
   AllocationRecord_00648530 *pAVar3;
   AnonShape_00648530_D39EB612 *pAVar4;
   InternalExceptionFrame local_4c;
@@ -34,9 +34,9 @@ AllocationRecord_00648530 * __cdecl FUN_00648530(AllocationRecord_00648530 *para
     memmove(pAVar4, pAVar3, 0x85); /* compiler REP MOVS byte copy */
     local_8->field_0001 = 0x85;
     local_8->field_0005 = 2;
-    pAVar2 = thunk_FUN_0065cb00((AllocationRecord_0065CB00 *)
+    pAVar1 = thunk_FUN_0065cb00((AllocationRecord_0065CB00 *)
                                 (&param_1->field_0x84 + local_8->field_0046));
-    local_8->field_004E = (undefined4 *)pAVar2;
+    local_8->field_004E = (undefined4 *)pAVar1;
     g_currentExceptionFrame = local_4c.previous;
     return (AllocationRecord_00648530 *)local_8;
   }

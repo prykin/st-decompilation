@@ -21,7 +21,7 @@ MAdvTy * __cdecl CreateMAdv(void)
     memset(&this->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x38, 0, 0x20); /* compiler bulk-zero initialization */
-    this->field_005E = 0;
+    this->field_005E = nullptr;
     this->field_005D = 0;
     this->field_005C = 2;
     return this;

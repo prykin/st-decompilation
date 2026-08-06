@@ -10,11 +10,13 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
   undefined4 uVar4;
   undefined4 uVar5;
   AnonShape_0062FA80_0B91B2B9 *pAVar6;
+  int local_EAX_76;
+  int iVar8;
   int iVar7;
-  int *piVar8;
-  undefined4 *puVar9;
-  byte *puVar10;
+  int *piVar9;
+  undefined4 *puVar10;
   byte *puVar11;
+  byte *puVar12;
   int local_c;
   int local_8;
 
@@ -29,8 +31,8 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
   STField<undefined4>(this,0x1d9) = uVar4;
   uVar5 = param_1->field_001C;
   STField<undefined4>(this,0x1dd) = uVar5;
-  iVar7 = thunk_FUN_004961b0(STField<short>(this,0x1d5),(short)uVar4,(short)uVar5);
-  if (iVar7 != 0) {
+  local_EAX_76 = thunk_FUN_004961b0(STField<short>(this,0x1d5),(short)uVar4,(short)uVar5);
+  if (local_EAX_76 != 0) {
     sVar1 = STField<short>(this,0x1d5);
     sVar2 = STField<short>(this,0x1dd);
     sVar3 = STField<short>(this,0x1d9);
@@ -38,20 +40,20 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
          ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar2 ||
          (STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[1] == nullptr)))) &&
-       (iVar7 = DumpClassC::WritePtr
+       (iVar8 = DumpClassC::WritePtr
                           ((short)STField<undefined4>(this,0x1d5),
                            (short)STField<undefined4>(this,0x1d9),
-                           (short)STField<undefined4>(this,0x1dd),1,this), iVar7 == 0)) {
-      piVar8 = (int *)&param_1->field_0x24;
+                           (short)STField<undefined4>(this,0x1dd),1,this), iVar8 == 0)) {
+      piVar9 = (int *)&param_1->field_0x24;
       STField<undefined4>(this,0x1e1) = param_1->field_0020;
       STField<undefined1>(this,0x1f9) = param_1->field_0038;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0062FA80_0B91B2B9 *)0x5;
       do {
-        if ((*piVar8 != 0) && (iVar7 = STRubbishC::RubbishCreatePart(this), -1 < iVar7)) {
+        if ((*piVar9 != 0) && (iVar7 = STRubbishC::RubbishCreatePart(this), -1 < iVar7)) {
           local_c = local_c + 1;
         }
-        piVar8 = piVar8 + 1;
+        piVar9 = piVar9 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_0062FA80_0B91B2B9 *)&param_1[-1].field_0x3b;
       } while (param_1 != nullptr);
@@ -60,21 +62,21 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
         return 0;
       }
       local_8 = 0x3d;
-      puVar9 = (undefined4 *)&pAVar6[1].field_0x1;
-      piVar8 = (int *)((int)this + 0x1e5);
+      puVar10 = (undefined4 *)&pAVar6[1].field_0x1;
+      piVar9 = (int *)((int)this + 0x1e5);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0062FA80_0B91B2B9 *)0x5;
       do {
-        puVar11 = (byte *)*piVar8;
-        if (puVar11 != nullptr) {
+        puVar12 = (byte *)*piVar9;
+        if (puVar12 != nullptr) {
           local_8 = local_8 + 0x3e;
-          uVar4 = puVar11[4];
-          puVar10 = (byte *)(puVar9);
-          memmove(puVar11, puVar10, 0x3e); /* compiler REP MOVS byte copy */
-          puVar9 = (undefined4 *)((int)puVar9 + 0x3e);
-          *(undefined4 *)(*piVar8 + 0x10) = uVar4;
+          uVar4 = puVar12[4];
+          puVar11 = (byte *)(puVar10);
+          memmove(puVar12, puVar11, 0x3e); /* compiler REP MOVS byte copy */
+          puVar10 = (undefined4 *)((int)puVar10 + 0x3e);
+          *(undefined4 *)(*piVar9 + 0x10) = uVar4;
         }
-        piVar8 = piVar8 + 1;
+        piVar9 = piVar9 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_0062FA80_0B91B2B9 *)&param_1[-1].field_0x3b;
       } while (param_1 != nullptr);

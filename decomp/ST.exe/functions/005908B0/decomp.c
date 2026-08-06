@@ -14,8 +14,10 @@ int __thiscall MAdvTy::GetMessage(MAdvTy *this,STMessage *message)
 {
   MAdvTy *this_00;
   DWORD DVar2;
+  int local_EAX_47;
   int iVar3;
   int iVar4;
+  int iVar5;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
 
@@ -24,9 +26,9 @@ int __thiscall MAdvTy::GetMessage(MAdvTy *this,STMessage *message)
   this->field_0058 = DVar2;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  local_EAX_47 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar3 == 0) {
+  if (local_EAX_47 == 0) {
     switch(message->id) {
     case MESS_ID_NONE:
       NoneMAdv(local_8);
@@ -60,12 +62,12 @@ int __thiscall MAdvTy::GetMessage(MAdvTy *this,STMessage *message)
     return iVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\adv_obj.cpp",0x87,0,iVar3,"%s",
-                             "MAdvTy::GetMessage");
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\adv_obj.cpp",0x87,0,local_EAX_47,
+                             "%s","MAdvTy::GetMessage");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\adv_obj.cpp",0x87);
+  RaiseInternalException(local_EAX_47,0,"E:\\__titans\\Start\\adv_obj.cpp",0x87);
   return 0xffff;
 }
 

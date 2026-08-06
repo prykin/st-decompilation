@@ -40,7 +40,7 @@ MAdvTy * __cdecl st::fn_00590AD0(void)
     memset(&this->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x38, 0, 0x20); /* compiler bulk-zero initialization */
-    this->field_005E = 0;
+    this->field_005E = nullptr;
     this->field_005D = 0;
     this->field_005C = 2;
     return this;
@@ -155,7 +155,7 @@ Visible * __cdecl st::fn_005947D0(void)
     memset(&this->field_0x88, 0, 0x80); /* compiler bulk-zero initialization */
     this->field_010C = 0;
     this->field_0114 = 0;
-    this->field_0110 = 0;
+    this->field_0110 = nullptr;
     this->field_0108 = 0xffffffff;
     this->field_0084 = 1;
     return this;

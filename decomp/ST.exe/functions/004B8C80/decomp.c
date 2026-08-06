@@ -89,7 +89,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
       if (iVar6 == *(int *)(&DAT_007cdf5a + iVar5 * 0x32)) {
         iVar5 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)puVar1,5,PTR_00806764,"expl_bbt0" + iVar5 * 0x32,
-                           0x1d);
+                           CASE_1D);
         if (iVar5 != 0) {
           return 0xffff;
         }

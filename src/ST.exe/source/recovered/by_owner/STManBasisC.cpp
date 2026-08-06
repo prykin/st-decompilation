@@ -41,7 +41,8 @@ st::fn_005F14B0
 {
   STManBasisC_field_0038DArray *pSVar1;
   int iVar2;
-  short *psVar3;
+  int iVar3;
+  short *psVar4;
   short local_20;
   short local_1e;
   short local_1c;
@@ -59,13 +60,13 @@ st::fn_005F14B0
       return -1;
     }
   }
-  psVar3 = &local_20;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    psVar3[0] = 0;
-    psVar3[1] = 0;
-    psVar3 = psVar3 + 2;
+  psVar4 = &local_20;
+  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+    psVar4[0] = 0;
+    psVar4[1] = 0;
+    psVar4 = psVar4 + 2;
   }
-  *(undefined1 *)psVar3 = 0;
+  *(undefined1 *)psVar4 = 0;
   local_1c = param_3;
   local_1e = param_2;
   local_20 = param_1;
@@ -77,17 +78,17 @@ st::fn_005F14B0
                                 (int)(short)(param_2 * 0xc9 + 100),(int)(short)(param_3 * 200 + 100)
                                );
   if (local_13 == nullptr) {
-    iVar2 = -1;
+    iVar3 = -1;
   }
   else {
     iVar2 = st::fn_006AE1C0((DArrayTy *)this->field_0038,&local_20);
-    iVar2 = iVar2 + 1;
-    if (-1 < iVar2) {
+    iVar3 = iVar2 + 1;
+    if (-1 < iVar3) {
       DAT_00811788 = DAT_00811788 + 1;
-      return iVar2;
+      return iVar3;
     }
   }
-  return iVar2;
+  return iVar3;
 }
 
 // 005F19A0 STManBasisC::sub_005F19A0
@@ -105,8 +106,9 @@ void __thiscall st::fn_005F19A0(STManBasisC *this)
   VisibleClassTy *pVVar3;
   VisibleClassTy *pVVar4;
   int iVar5;
-  short *psVar6;
   int iVar7;
+  short *psVar6;
+  int iVar8;
   int local_40;
   int local_3c;
   int local_38;
@@ -143,42 +145,42 @@ joined_r0x005f19be:
     else {
       psVar6 = nullptr;
     }
-    iVar7 = (int)psVar6[2];
+    iVar8 = (int)psVar6[2];
     local_18 = (int)psVar6[1];
     local_1c = (int)*psVar6;
     pVVar4 = nullptr;
   } while (pVVar2 == nullptr);
-  local_10 = iVar7;
+  local_10 = iVar8;
   local_8 = psVar6;
   if ((char)psVar6[3] != '\x01') goto LAB_005f1c99;
   if (((((DAT_0080874d != -1) && (pVVar2->field_00F8 != 0)) &&
        (st::fn_00403F53
                   (pVVar2,pVVar2->field_010C,local_1c,local_18,&local_20,&local_24),
-       pVVar4 = g_visibleClass_00802A88, -1 < iVar7)) &&
-      (((iVar7 < 5 && (-1 < local_20)) &&
-       ((local_20 < pVVar2->field_0030 &&
-        ((iVar7 = g_centeredOffsets5[iVar7] + local_24, -1 < iVar7 && (iVar7 < pVVar2->field_0034)))
+       pVVar4 = g_visibleClass_00802A88, -1 < iVar8)) &&
+      (((iVar8 < 5 && (-1 < local_20)) &&
+       ((local_20 < (int)pVVar2->field_0030 &&
+        ((iVar8 = g_centeredOffsets5[iVar8] + local_24, -1 < iVar8 && (iVar8 < pVVar2->field_0034)))
         ))))) &&
      ((pVVar2->field_004C != nullptr &&
-      (((pVVar2->field_004C[local_20 + iVar7 * pVVar2->field_0030] == 0 && (DAT_0080874d != -1)) &&
+      (((pVVar2->field_004C[local_20 + iVar8 * pVVar2->field_0030] == 0 && (DAT_0080874d != -1)) &&
        (g_visibleClass_00802A88->field_00F8 != 0)))))) {
     local_38 = local_1c + 1;
     st::fn_00403F53
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,local_18,
                &local_28,&local_2c);
     pVVar2 = g_visibleClass_00802A88;
-    if ((((-1 < local_28) && (local_28 < pVVar4->field_0030)) &&
-        (((iVar7 = g_centeredOffsets5[local_10] + local_2c, -1 < iVar7 &&
-          ((iVar7 < pVVar4->field_0034 && (pVVar4->field_004C != nullptr)))) &&
-         (pVVar4->field_004C[local_28 + iVar7 * pVVar4->field_0030] == 0)))) &&
+    if ((((-1 < local_28) && (local_28 < (int)pVVar4->field_0030)) &&
+        (((iVar8 = g_centeredOffsets5[local_10] + local_2c, -1 < iVar8 &&
+          ((iVar8 < pVVar4->field_0034 && (pVVar4->field_004C != nullptr)))) &&
+         (pVVar4->field_004C[local_28 + iVar8 * pVVar4->field_0030] == 0)))) &&
        ((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)))) {
-      iVar7 = local_18 + 1;
+      iVar8 = local_18 + 1;
       st::fn_00403F53
-                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_1c,iVar7,
+                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_1c,iVar8,
                  &local_30,&local_34);
       pVVar3 = g_visibleClass_00802A88;
       if (((local_30 < 0) ||
-          ((((pVVar2->field_0030 <= local_30 ||
+          (((((int)pVVar2->field_0030 <= local_30 ||
              (iVar5 = g_centeredOffsets5[local_10] + local_34, psVar6 = local_8, iVar5 < 0)) ||
             (pVVar2->field_0034 <= iVar5)) ||
            ((pVVar2->field_004C == nullptr ||
@@ -186,13 +188,13 @@ joined_r0x005f19be:
          ((DAT_0080874d == -1 ||
           ((((g_visibleClass_00802A88->field_00F8 == 0 ||
              (st::fn_00403F53
-                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,iVar7,
+                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,iVar8,
                          &local_3c,&local_40), psVar6 = local_8, local_3c < 0)) ||
-            ((pVVar3->field_0030 <= local_3c ||
-             (((iVar7 = g_centeredOffsets5[local_10] + local_40, iVar7 < 0 ||
-               (pVVar3->field_0034 <= iVar7)) || (pVVar3->field_004C == nullptr)))))) ||
+            (((int)pVVar3->field_0030 <= local_3c ||
+             (((iVar8 = g_centeredOffsets5[local_10] + local_40, iVar8 < 0 ||
+               (pVVar3->field_0034 <= iVar8)) || (pVVar3->field_004C == nullptr)))))) ||
            (pVVar4 = g_visibleClass_00802A88,
-           pVVar3->field_004C[local_3c + iVar7 * pVVar3->field_0030] != 0)))))) goto LAB_005f1c4c;
+           pVVar3->field_004C[local_3c + iVar8 * pVVar3->field_0030] != 0)))))) goto LAB_005f1c4c;
       goto joined_r0x005f19be;
     }
   }
@@ -206,9 +208,9 @@ LAB_005f1c4c:
   }
   goto joined_r0x005f19be;
 LAB_005f1c99:
-  iVar7 = st::fn_00404E5D(pVVar2,local_1c,local_18,iVar7);
+  iVar8 = st::fn_00404E5D(pVVar2,local_1c,local_18,iVar8);
   pVVar4 = g_visibleClass_00802A88;
-  if (iVar7 == 0) goto joined_r0x005f19be;
+  if (iVar8 == 0) goto joined_r0x005f19be;
   goto LAB_005f1c4c;
 }
 
@@ -305,7 +307,8 @@ byte * __thiscall st::fn_005F1FA0(STManBasisC *this,int *param_1)
 undefined4 __thiscall st::fn_005F2110(STManBasisC *this,undefined4 *param_1)
 
 {
-  STManBasisC_field_0038DArray *pSVar1;
+  DArrayTy *pDVar1;
+  STManBasisC_field_0038DArray *pSVar2;
   DArrayTy *pDVar2;
   void *pvVar3;
   int iVar4;
@@ -324,19 +327,19 @@ undefined4 __thiscall st::fn_005F2110(STManBasisC *this,undefined4 *param_1)
   DAT_00811788 = this->field_0034;
   piVar7 = param_1 + 10;
   if (this->field_0038 != nullptr) {
-    pSVar1 = (STManBasisC_field_0038DArray *)st::fn_006B0060(nullptr,param_1 + 0xb);
-    this->field_0038 = pSVar1;
+    pSVar2 = (STManBasisC_field_0038DArray *)st::fn_006B0060(nullptr,param_1 + 0xb);
+    this->field_0038 = pSVar2;
     piVar7 = (int *)((int)(param_1 + 0xb) + *piVar7);
   }
   if (this->field_003C != nullptr) {
-    pDVar2 = (DArrayTy *)st::fn_006B0060(nullptr,(uint *)(piVar7 + 1));
+    pDVar2 = st::fn_006B0060(nullptr,(uint *)(piVar7 + 1));
     this->field_003C = pDVar2;
     uVar5 = 0;
     if (0 < (int)pDVar2->count) {
       do {
-        pDVar2 = this->field_003C;
-        if ((uVar5 < pDVar2->count) &&
-           (pvVar3 = DArrayAt<void>(pDVar2, uVar5),
+        pDVar1 = this->field_003C;
+        if ((uVar5 < pDVar1->count) &&
+           (pvVar3 = DArrayAt<void>(pDVar1, uVar5),
            pvVar3 != nullptr)) {
           STField<undefined4>(pvVar3,0x18) = 0xffffffff;
         }

@@ -14,16 +14,18 @@ st::fn_004B0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,
   short sVar4;
   dword dVar5;
   int iVar6;
+  int iVar12;
   int iVar7;
+  int local_EAX_1940;
   short sVar8;
   int iVar9;
   undefined4 uVar10;
   short *psVar11;
-  int iVar12;
-  uint uVar13;
-  short sVar14;
-  int iVar15;
-  bool bVar17;
+  int iVar13;
+  uint uVar14;
+  short sVar15;
+  int iVar16;
+  bool bVar18;
   int local_88 [10];
   int local_60;
   int local_5c;
@@ -54,11 +56,11 @@ st::fn_004B0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,
   local_50 = -1;
   local_88[8] = 0;
   local_48 = 0;
-  sVar14 = g_worldGrid.sizeY;
+  sVar15 = g_worldGrid.sizeY;
   if (g_worldGrid.sizeY <= g_worldGrid.sizeX) {
-    sVar14 = g_worldGrid.sizeX;
+    sVar15 = g_worldGrid.sizeX;
   }
-  local_88[9] = (int)sVar14 / (int)(uint)DAT_008087c6;
+  local_88[9] = (int)sVar15 / (int)(uint)DAT_008087c6;
   local_40 = st::fn_00405C45(param_1,param_2 + -0x32,0);
   local_10 = st::fn_006AAC70(g_worldGrid.planeStride * 5);
   local_2c = st::fn_006AE290(nullptr,10,4,10);
@@ -69,7 +71,7 @@ st::fn_004B0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,
     uVar10 = STPiece<0,4>(g_worldGrid);
     if (0 < g_worldGrid.sizeY) {
       do {
-        iVar15 = 0;
+        iVar16 = 0;
         if (0 < (short)uVar10) {
           psVar11 = (short *)((short)uVar10 * local_14 + scalar_local_34);
           int scalar_local_1c = (int)psVar11 * 8; /* split integer lifetime from pointer-typed SSA storage */
@@ -77,20 +79,20 @@ st::fn_004B0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,
           do {
             local_c = *(STFishC **)(scalar_local_1c + (int)g_worldGrid.cells);
             if (local_c == nullptr) {
-              sVar14 = (short)iVar15;
-              if (((((sVar14 < 0) || ((short)uVar10 <= sVar14)) ||
+              sVar15 = (short)iVar16;
+              if (((((sVar15 < 0) || ((short)uVar10 <= sVar15)) ||
                    (sVar8 = (short)local_14, sVar8 < 0)) ||
                   ((g_worldGrid.sizeY <= sVar8 || (sVar4 = (short)local_18, sVar4 < 0)))) ||
                  (g_worldGrid.sizeZ <= sVar4)) {
 LAB_004b03a2:
-                *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 3;
+                *(undefined1 *)((int)psVar11 + iVar16 + (int)local_10) = 3;
               }
-              else if (STGridAt3D(g_pathingGrid, sVar14, sVar8, sVar4) == 0) {
-                *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 0;
+              else if (STGridAt3D(g_pathingGrid, sVar15, sVar8, sVar4) == 0) {
+                *(undefined1 *)((int)psVar11 + iVar16 + (int)local_10) = 0;
               }
               else {
-                if (STGridAt3D(g_pathingGrid, sVar14, sVar8, sVar4) == -1) goto LAB_004b03a2;
-                *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 1;
+                if (STGridAt3D(g_pathingGrid, sVar15, sVar8, sVar4) == -1) goto LAB_004b03a2;
+                *(undefined1 *)((int)psVar11 + iVar16 + (int)local_10) = 1;
               }
             }
             else {
@@ -106,38 +108,38 @@ LAB_004b04c9:
                   }
                   else {
                     uVar3 = (uint)bVar1;
-                    uVar13 = param_1 & 0xff;
-                    cVar2 = (&g_app_00806728->field_0x142f)[uVar13 + uVar3 * 8];
+                    uVar14 = param_1 & 0xff;
+                    cVar2 = (&g_app_00806728->field_0x142f)[uVar14 + uVar3 * 8];
                     if ((cVar2 == '\0') &&
                        (psVar11 = local_8,
-                       (&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\0')) {
+                       (&g_app_00806728->field_0x142f)[uVar3 + uVar14 * 8] == '\0')) {
                       iVar9 = -2;
                     }
                     else if ((cVar2 == '\x01') &&
                             (psVar11 = local_8,
-                            (&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\0')) {
+                            (&g_app_00806728->field_0x142f)[uVar3 + uVar14 * 8] == '\0')) {
                       iVar9 = -1;
                     }
                     else if ((cVar2 == '\0') &&
                             (psVar11 = local_8,
-                            (&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] == '\x01')) {
+                            (&g_app_00806728->field_0x142f)[uVar3 + uVar14 * 8] == '\x01')) {
                       iVar9 = 1;
                     }
                     else {
                       if ((cVar2 != '\x01') ||
-                         ((&g_app_00806728->field_0x142f)[uVar3 + uVar13 * 8] != '\x01'))
+                         ((&g_app_00806728->field_0x142f)[uVar3 + uVar14 * 8] != '\x01'))
                       goto LAB_004b04c9;
                       iVar9 = 2;
                     }
                   }
-                  bVar17 = iVar9 < 0;
+                  bVar18 = iVar9 < 0;
                 }
                 else {
-                  bVar17 = (&g_app_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
+                  bVar18 = (&g_app_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
                            (&g_app_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
                 }
-                if (bVar17) {
-                  *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 4;
+                if (bVar18) {
+                  *(undefined1 *)((int)psVar11 + iVar16 + (int)local_10) = 4;
                   dVar5 = local_c->slot_2C();
                   if (((&st_global_00790728.vfunc_04)[dVar5] ==
                        (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) ||
@@ -155,18 +157,18 @@ LAB_004b04c9:
                  ((dVar5 = local_c->slot_2C(), dVar5 == 0x78 &&
                   ((&st_global_00790728.vfunc_04)[*(int *)&local_c->field_0x259] ==
                    (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
-                *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 6;
+                *(undefined1 *)((int)psVar11 + iVar16 + (int)local_10) = 6;
                 st::fn_006AE1C0(local_2c,&local_c);
               }
               else {
-                *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 5;
+                *(undefined1 *)((int)psVar11 + iVar16 + (int)local_10) = 5;
               }
             }
 LAB_004b057d:
-            iVar15 = iVar15 + 1;
+            iVar16 = iVar16 + 1;
             local_1c = local_1c + 4;
             uVar10 = STPiece<0,4>(g_worldGrid);
-          } while (iVar15 < g_worldGrid.sizeX);
+          } while (iVar16 < g_worldGrid.sizeX);
         }
         local_14 = local_14 + 1;
       } while (local_14 < g_worldGrid.sizeY);
@@ -175,37 +177,37 @@ LAB_004b057d:
   } while (local_18 < 4);
   if (g_array_007FA150 != nullptr) {
     g_array_007FA150->iteratorIndex = 0;
-    iVar15 = st::fn_006B1190(g_array_007FA150,(byte *)&local_c);
-    while (-1 < iVar15) {
+    iVar16 = st::fn_006B1190(g_array_007FA150,(byte *)&local_c);
+    while (-1 < iVar16) {
       if (local_c != nullptr) {
-        st::fn_004018C5(local_c,&local_22,(undefined2 *)((int)&param_2 + 2),&local_2e);
+        st::fn_004018C5(local_c,&local_22,(short *)((int)&param_2 + 2),&local_2e);
         *(undefined1 *)
          ((int)local_10 +
          (int)local_22 +
          (int)local_2e * (int)g_worldGrid.planeStride + (int)STPiece<2,2>(param_2) * (int)g_worldGrid.sizeX)
              = 2;
       }
-      iVar15 = st::fn_006B1190(g_array_007FA150,(byte *)&local_c);
+      iVar16 = st::fn_006B1190(g_array_007FA150,(byte *)&local_c);
     }
   }
   local_18 = 0;
   uVar10 = STPiece<0,4>(g_worldGrid);
-  sVar14 = g_worldGrid.sizeY;
+  sVar15 = g_worldGrid.sizeY;
   do {
     local_14 = 0;
-    if (0 < sVar14) {
+    if (0 < sVar15) {
       do {
         local_8 = (short *)(int)(short)uVar10;
-        iVar15 = 0;
+        iVar16 = 0;
         if (0 < (int)local_8) {
           do {
             iVar9 = (int)g_worldGrid.planeStride;
-            iVar12 = (int)local_8 * local_14;
-            if (((*(char *)(iVar12 + iVar9 * local_18 + iVar15 + (int)local_10) == '\0') &&
+            iVar13 = (int)local_8 * local_14;
+            if (((*(char *)(iVar13 + iVar9 * local_18 + iVar16 + (int)local_10) == '\0') &&
                 ((local_18 < 1 ||
-                 (*(char *)((local_18 + -1) * iVar9 + iVar12 + iVar15 + (int)local_10) == '\x03'))))
+                 (*(char *)((local_18 + -1) * iVar9 + iVar13 + iVar16 + (int)local_10) == '\x03'))))
                && ((3 < local_18 ||
-                   (((cVar2 = *(char *)((local_18 + 1) * iVar9 + iVar12 + iVar15 + (int)local_10),
+                   (((cVar2 = *(char *)((local_18 + 1) * iVar9 + iVar13 + iVar16 + (int)local_10),
                      cVar2 != '\x01' && (cVar2 != '\x03')) && (cVar2 != '\x02')))))) {
               local_34 = (short *)(iVar9 * local_18 + (int)local_10);
               memset(local_88, 0, 0x20); /* compiler bulk-zero initialization */
@@ -219,12 +221,12 @@ LAB_004b057d:
                 local_38 = (short *)(local_58 + (int)local_34);
                 local_1c = (short *)(local_60 + (int)local_34);
                 iVar9 = 1;
-                local_28 = (char *)((int)local_34 + iVar15 + iVar12 + -1);
-                local_44 = iVar15 - local_14;
-                local_5c = local_14 - iVar15;
+                local_28 = (char *)((int)local_34 + iVar16 + iVar13 + -1);
+                local_44 = iVar16 - local_14;
+                local_5c = local_14 - iVar16;
                 do {
-                  if ((local_88[0] == 0) && (iVar9 + iVar15 < (int)local_8)) {
-                    cVar2 = *(char *)((int)local_34 + iVar9 + iVar15 + iVar12);
+                  if ((local_88[0] == 0) && (iVar9 + iVar16 < (int)local_8)) {
+                    cVar2 = *(char *)((int)local_34 + iVar9 + iVar16 + iVar13);
                     if ((cVar2 == '\x01') || (cVar2 == '\x03')) {
                       local_88[0] = 1;
                     }
@@ -242,9 +244,9 @@ LAB_004b057d:
                       param_1 = param_1 + 1;
                     }
                   }
-                  if ((local_88[2] == 0) && (local_5c + iVar9 + iVar15 < (int)g_worldGrid.sizeY)) {
-                    if ((*(char *)((int)local_38 + iVar15) == '\x01') ||
-                       (*(char *)((int)local_38 + iVar15) == '\x03')) {
+                  if ((local_88[2] == 0) && (local_5c + iVar9 + iVar16 < (int)g_worldGrid.sizeY)) {
+                    if ((*(char *)((int)local_38 + iVar16) == '\x01') ||
+                       (*(char *)((int)local_38 + iVar16) == '\x03')) {
                       local_88[2] = 1;
                     }
                     else {
@@ -253,8 +255,8 @@ LAB_004b057d:
                     }
                   }
                   if ((local_88[3] == 0) && (-1 < local_20)) {
-                    if ((*(char *)((int)local_1c + iVar15) == '\x01') ||
-                       (*(char *)((int)local_1c + iVar15) == '\x03')) {
+                    if ((*(char *)((int)local_1c + iVar16) == '\x01') ||
+                       (*(char *)((int)local_1c + iVar16) == '\x03')) {
                       local_88[3] = 1;
                     }
                     else {
@@ -263,9 +265,9 @@ LAB_004b057d:
                     }
                   }
                   if (iVar9 * iVar9 < (local_40 * local_40) / 2) {
-                    if (((local_88[4] == 0) && (iVar9 + iVar15 + local_5c < (int)g_worldGrid.sizeY))
-                       && (iVar9 + iVar15 < (int)local_8)) {
-                      cVar2 = *(char *)((int)local_38 + iVar15 + iVar9);
+                    if (((local_88[4] == 0) && (iVar9 + iVar16 + local_5c < (int)g_worldGrid.sizeY))
+                       && (iVar9 + iVar16 < (int)local_8)) {
+                      cVar2 = *(char *)((int)local_38 + iVar16 + iVar9);
                       if ((cVar2 == '\x01') || (cVar2 == '\x03')) {
                         local_88[4] = 1;
                       }
@@ -275,7 +277,7 @@ LAB_004b057d:
                       }
                     }
                     if (((local_88[5] == 0) && (-1 < local_20)) && (-1 < local_44 + local_20)) {
-                      cVar2 = *(char *)((int)local_34 + iVar15 + (local_60 - iVar9));
+                      cVar2 = *(char *)((int)local_34 + iVar16 + (local_60 - iVar9));
                       if ((cVar2 == '\x01') || (cVar2 == '\x03')) {
                         local_88[5] = 1;
                       }
@@ -284,9 +286,9 @@ LAB_004b057d:
                         param_1 = param_1 + 1;
                       }
                     }
-                    if (((local_88[6] == 0) && (local_5c + iVar9 + iVar15 < (int)g_worldGrid.sizeY))
+                    if (((local_88[6] == 0) && (local_5c + iVar9 + iVar16 < (int)g_worldGrid.sizeY))
                        && (-1 < local_44 + local_20)) {
-                      cVar2 = *(char *)((int)local_34 + iVar15 + (local_58 - iVar9));
+                      cVar2 = *(char *)((int)local_34 + iVar16 + (local_58 - iVar9));
                       if ((cVar2 == '\x01') || (cVar2 == '\x03')) {
                         local_88[6] = 1;
                       }
@@ -295,9 +297,9 @@ LAB_004b057d:
                         param_1 = param_1 + 1;
                       }
                     }
-                    if (((local_88[7] == 0) && (-1 < local_20)) && (iVar9 + iVar15 < (int)local_8))
+                    if (((local_88[7] == 0) && (-1 < local_20)) && (iVar9 + iVar16 < (int)local_8))
                     {
-                      cVar2 = *(char *)((int)local_1c + iVar15 + iVar9);
+                      cVar2 = *(char *)((int)local_1c + iVar16 + iVar9);
                       if ((cVar2 == '\x01') || (cVar2 == '\x03')) {
                         local_88[7] = 1;
                       }
@@ -317,46 +319,45 @@ LAB_004b057d:
                 } while (iVar9 <= local_40);
               }
               iVar9 = local_54;
-              iVar12 = local_54;
+              iVar13 = local_54;
               if (local_2c->count != 0) {
                 iVar9 = -1;
                 local_54 = -1;
                 local_2c->iteratorIndex = 0;
                 iVar6 = st::fn_006B1190(local_2c,(byte *)&local_c);
-                iVar12 = local_54;
+                iVar13 = local_54;
                 if (-1 < iVar6) {
                   iVar6 = local_40 / 2;
                   do {
-                    st::fn_004018C5
-                              (local_c,&local_22,(undefined2 *)((int)&param_2 + 2),&local_2e);
-                    iVar12 = st::fn_006ACED8((int)local_22,(int)STPiece<2,2>(param_2),iVar15,local_14);
+                    st::fn_004018C5(local_c,&local_22,(short *)((int)&param_2 + 2),&local_2e);
+                    iVar12 = st::fn_006ACED8((int)local_22,(int)STPiece<2,2>(param_2),iVar16,local_14);
                     if ((iVar12 <= iVar6) && ((iVar9 < 0 || (iVar12 < iVar9)))) {
                       iVar9 = iVar12;
                     }
                     iVar7 = st::fn_006B1190(local_2c,(byte *)&local_c);
-                    iVar12 = iVar9;
+                    iVar13 = iVar9;
                   } while (-1 < iVar7);
                 }
               }
-              local_54 = iVar12;
-              iVar12 = st::fn_006ACED8(iVar15,local_14,param_6,param_7);
+              local_54 = iVar13;
+              local_EAX_1940 = st::fn_006ACED8(iVar16,local_14,param_6,param_7);
               if (local_3c < 0) goto LAB_004b0a54;
-              local_4c = iVar12 / local_88[9];
+              local_4c = local_EAX_1940 / local_88[9];
               if (local_4c <= local_3c / local_88[9]) {
                 if (iVar9 < 0) {
                   if (local_50 < 0) {
 LAB_004b0a3e:
                     if (((int)param_1 <= (int)local_48) &&
-                       ((param_1 != local_48 || (local_3c < iVar12)))) goto LAB_004b0a79;
+                       ((param_1 != local_48 || (local_3c < local_EAX_1940)))) goto LAB_004b0a79;
                   }
 LAB_004b0a54:
                   local_48 = param_1;
-                  *param_3 = iVar15;
+                  *param_3 = iVar16;
                   *param_4 = local_14;
                   local_88[8] = 1;
                   *param_5 = local_18;
                   local_50 = iVar9;
-                  local_3c = iVar12;
+                  local_3c = local_EAX_1940;
                 }
                 else if (-1 < local_50) {
                   if (iVar9 < 0) goto LAB_004b0a3e;
@@ -364,18 +365,19 @@ LAB_004b0a54:
                   if ((local_50 < iVar9) ||
                      ((iVar9 == local_50 &&
                       (((int)local_48 < (int)param_1 ||
-                       ((param_1 == local_48 && (iVar12 <= local_3c)))))))) goto LAB_004b0a54;
+                       ((param_1 == local_48 && (local_EAX_1940 <= local_3c))))))))
+                  goto LAB_004b0a54;
                 }
               }
             }
 LAB_004b0a79:
-            iVar15 = iVar15 + 1;
+            iVar16 = iVar16 + 1;
             local_8 = (short *)(int)g_worldGrid.sizeX;
             uVar10 = STPiece<0,4>(g_worldGrid);
-          } while (iVar15 < (int)local_8);
+          } while (iVar16 < (int)local_8);
         }
         local_14 = local_14 + 1;
-        sVar14 = g_worldGrid.sizeY;
+        sVar15 = g_worldGrid.sizeY;
       } while (local_14 < g_worldGrid.sizeY);
     }
     local_18 = local_18 + 1;
@@ -544,10 +546,13 @@ st::fn_004B1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3
 
 {
   short sVar1;
+  int local_EAX_136;
+  dword dVar2;
   int iVar2;
-  dword dVar3;
-  int iVar4;
-  int *piVar5;
+  int local_EAX_414;
+  int iVar3;
+  int *piVar4;
+  int iVar5;
   int iVar6;
   int iVar7;
   int iVar8;
@@ -561,14 +566,14 @@ st::fn_004B1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3
   local_14 = -1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_6 == 0) {
-    piVar5 = nullptr;
+    piVar4 = nullptr;
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    piVar5 = *(int **)(param_6 + 0x18);
+    piVar4 = *(int **)(param_6 + 0x18);
   }
   local_10 = st::fn_00402829((short)*param_3,*param_4,*param_5,param_2,param_1,nullptr,
-                                nullptr,nullptr,0,piVar5);
+                                nullptr,nullptr,0,piVar4);
   if (local_10 == 0) {
     if ((&st_global_00790728.vfunc_04)[param_2] ==
         (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x1) {
@@ -579,14 +584,14 @@ st::fn_004B1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3
       param_6 = 0;
       if (g_array_007FA150 != nullptr) {
         g_array_007FA150->iteratorIndex = 0;
-        iVar2 = st::fn_006B1190(g_array_007FA150,(byte *)&local_18);
-        if (-1 < iVar2) {
+        local_EAX_136 = st::fn_006B1190(g_array_007FA150,(byte *)&local_18);
+        if (-1 < local_EAX_136) {
           do {
             if (local_18 != nullptr) {
               switch(param_2) {
               case CASE_38:
-                dVar3 = local_18->slot_2C();
-                if (dVar3 == 0xdc) {
+                dVar2 = local_18->slot_2C();
+                if (dVar2 == 0xdc) {
 LAB_004b1226:
                   st::fn_004018C5(local_18,&local_6,&local_8,&local_a);
                   if (((STGridAt3D(g_worldGrid, local_6, local_8, local_a).objects[0] ==
@@ -605,20 +610,20 @@ LAB_004b1226:
                 break;
               case CASE_39:
               case CASE_5E:
-                dVar3 = local_18->slot_2C();
-                if (dVar3 == 0xdd) goto LAB_004b1226;
+                dVar2 = local_18->slot_2C();
+                if (dVar2 == 0xdd) goto LAB_004b1226;
                 break;
               case CASE_4F:
-                dVar3 = local_18->slot_2C();
-                if (dVar3 == 0xde) goto LAB_004b1226;
+                dVar2 = local_18->slot_2C();
+                if (dVar2 == 0xde) goto LAB_004b1226;
                 break;
               case CASE_61:
-                dVar3 = local_18->slot_2C();
-                if (dVar3 == 0xe0) goto LAB_004b1226;
+                dVar2 = local_18->slot_2C();
+                if (dVar2 == 0xe0) goto LAB_004b1226;
               }
             }
-            iVar2 = st::fn_006B1190(g_array_007FA150,(byte *)&local_18);
-          } while (-1 < iVar2);
+            local_EAX_414 = st::fn_006B1190(g_array_007FA150,(byte *)&local_18);
+          } while (-1 < local_EAX_414);
           if (local_10 != 0) {
             *param_3 = param_6;
             *param_4 = param_1;
@@ -634,91 +639,91 @@ LAB_004b1226:
         sVar1 = g_worldGrid.sizeY;
       }
       local_14 = 1;
-      iVar2 = 0;
+      iVar5 = 0;
       if (1 < sVar1) {
         do {
-          local_10 = iVar2;
+          local_10 = iVar5;
           iVar6 = 0;
-          iVar2 = local_14;
+          iVar5 = local_14;
           if ((param_7 < local_14) && (g_worldGrid.sizeZ != 1 && -1 < g_worldGrid.sizeZ + -1)) {
             do {
-              iVar7 = *param_3 - iVar2;
-              if (iVar7 <= *param_3 + iVar2) {
+              iVar7 = *param_3 - iVar5;
+              if (iVar7 <= *param_3 + iVar5) {
                 do {
                   if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
-                    iVar8 = *param_4 - iVar2;
+                    iVar8 = *param_4 - iVar5;
                     if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
-                        piVar5 = nullptr;
+                        piVar4 = nullptr;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar5 = *(int **)(param_6 + 0x18);
+                        piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar4 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
-                                                 nullptr,nullptr,nullptr,0,piVar5);
-                      iVar2 = local_14;
-                      if (iVar4 == 0) goto LAB_004b13a9;
+                      iVar3 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 nullptr,nullptr,nullptr,0,piVar4);
+                      iVar5 = local_14;
+                      if (iVar3 == 0) goto LAB_004b13a9;
 LAB_004b14f8:
                       *param_3 = iVar7;
                       *param_4 = iVar8;
                       goto LAB_004b150e;
                     }
 LAB_004b13a9:
-                    iVar8 = *param_4 + iVar2;
+                    iVar8 = *param_4 + iVar5;
                     if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
-                        piVar5 = nullptr;
+                        piVar4 = nullptr;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar5 = *(int **)(param_6 + 0x18);
+                        piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar4 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
-                                                 nullptr,nullptr,nullptr,0,piVar5);
-                      iVar2 = local_14;
-                      if (iVar4 != 0) goto LAB_004b14f8;
+                      iVar3 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 nullptr,nullptr,nullptr,0,piVar4);
+                      iVar5 = local_14;
+                      if (iVar3 != 0) goto LAB_004b14f8;
                     }
                   }
                   iVar7 = iVar7 + 1;
-                } while (iVar7 <= *param_3 + iVar2);
+                } while (iVar7 <= *param_3 + iVar5);
               }
               iVar7 = *param_4;
-              iVar8 = (iVar7 - iVar2) + 1;
-              if (iVar8 <= iVar7 + -1 + iVar2) {
+              iVar8 = (iVar7 - iVar5) + 1;
+              if (iVar8 <= iVar7 + -1 + iVar5) {
                 do {
                   if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
-                    iVar7 = iVar7 - iVar2;
+                    iVar7 = iVar7 - iVar5;
                     if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
-                        piVar5 = nullptr;
+                        piVar4 = nullptr;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar5 = *(int **)(param_6 + 0x18);
+                        piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar4 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
-                                                 nullptr,nullptr,nullptr,0,piVar5);
-                      iVar2 = local_14;
-                      if (iVar4 != 0) goto LAB_004b1504;
+                      iVar3 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 nullptr,nullptr,nullptr,0,piVar4);
+                      iVar5 = local_14;
+                      if (iVar3 != 0) goto LAB_004b1504;
                     }
-                    iVar7 = *param_3 + iVar2;
+                    iVar7 = *param_3 + iVar5;
                     if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
-                        piVar5 = nullptr;
+                        piVar4 = nullptr;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar5 = *(int **)(param_6 + 0x18);
+                        piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar4 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
-                                                 nullptr,nullptr,nullptr,0,piVar5);
-                      iVar2 = local_14;
-                      if (iVar4 != 0) {
+                      iVar3 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 nullptr,nullptr,nullptr,0,piVar4);
+                      iVar5 = local_14;
+                      if (iVar3 != 0) {
 LAB_004b1504:
                         *param_3 = iVar7;
                         *param_4 = iVar8;
@@ -730,13 +735,13 @@ LAB_004b150e:
                   }
                   iVar8 = iVar8 + 1;
                   iVar7 = *param_4;
-                } while (iVar8 <= iVar7 + -1 + iVar2);
+                } while (iVar8 <= iVar7 + -1 + iVar5);
               }
               iVar6 = iVar6 + 1;
             } while (iVar6 < g_worldGrid.sizeZ + -1);
           }
-          local_14 = iVar2 + 1;
-          iVar2 = local_10;
+          local_14 = iVar5 + 1;
+          iVar5 = local_10;
           if (sVar1 <= local_14) {
             return local_10;
           }
@@ -917,8 +922,8 @@ LAB_004b1a39:
       while (-1 < iVar8) {
         if (local_10 != nullptr) {
           st::fn_004018C5
-                    (local_10,(short *)((int)&param_4 + 2),(undefined2 *)((int)&param_5 + 2),
-                     (undefined2 *)((int)&local_8 + 2));
+                    (local_10,(short *)((int)&param_4 + 2),(short *)((int)&param_5 + 2),
+                     (short *)((int)&local_8 + 2));
           if (((STPiece<2,2>(param_4) == param_1) && (STPiece<2,2>(param_5) == param_2)) &&
              (STPiece<2,2>(local_8) == param_3)) {
             bVar1 = false;
@@ -1034,9 +1039,10 @@ st::fn_004B1FB0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_
 
 {
   int iVar1;
+  int iVar4;
   Global_sub_004B1FB0_param_1Enum GVar2;
   int iVar3;
-  int iVar4;
+  int iVar5;
   STWorldObject *this;
   int local_1c;
   STFishC *local_18;
@@ -1060,18 +1066,18 @@ st::fn_004B1FB0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_
       *param_2 = 1;
     }
     iVar1 = param_7 + param_5;
-    iVar4 = 0;
+    iVar5 = 0;
     for (; param_5 < iVar1; param_5 = param_5 + 1) {
       if ((-1 < param_5) && (param_5 < g_worldGrid.sizeY)) {
         for (iVar3 = param_4; iVar3 < param_6 + param_4; iVar3 = iVar3 + 1) {
           if ((-1 < iVar3) && (iVar3 < g_worldGrid.sizeX)) {
-            iVar4 = iVar4 + (uint)*(byte *)(g_worldGrid.sizeX * param_5 + DAT_007fa168 + iVar3);
+            iVar5 = iVar5 + (uint)*(byte *)(g_worldGrid.sizeX * param_5 + DAT_007fa168 + iVar3);
           }
         }
       }
     }
     if (param_3 != nullptr) {
-      *param_3 = iVar4;
+      *param_3 = iVar5;
       return 0;
     }
   }
@@ -1110,12 +1116,12 @@ st::fn_004B1FB0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_
           local_10 = 0x4f;
         }
         if (((this == nullptr) || (this->value_20 != 1000)) ||
-           (iVar4 = this->GetObjectTypeId(), iVar4 != local_10)) {
+           (iVar5 = this->GetObjectTypeId(), iVar5 != local_10)) {
           local_14 = local_14 + *(int *)&local_18->field_0x259;
         }
         else {
-          iVar4 = (*this->vtable[2].slots_00_28[10])(0);
-          local_14 = local_14 + iVar4;
+          iVar5 = (*this->vtable[2].slots_00_28[10])(0);
+          local_14 = local_14 + iVar5;
         }
       }
       iVar4 = st::fn_006B1190(g_array_007FA150,(byte *)&local_18);
@@ -1445,7 +1451,8 @@ undefined4 __cdecl st::fn_004B2D10(byte param_1,int param_2,int param_3,int para
   int uVar4;
   int iVar6;
   int iVar7;
-  bool bVar8;
+  int iVar8;
+  bool bVar9;
   int local_34;
   int local_30;
   int local_2c;
@@ -1486,43 +1493,43 @@ undefined4 __cdecl st::fn_004B2D10(byte param_1,int param_2,int param_3,int para
     if (0 < local_10) {
       do {
         if (local_30 < local_34 * 2) {
-          iVar7 = (local_30 - local_34) + param_3;
+          iVar8 = (local_30 - local_34) + param_3;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (param_4 - param_3) + local_c;
         }
         else if (local_30 < local_14) {
-          iVar7 = param_3 + local_34;
+          iVar8 = param_3 + local_34;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = local_30 + local_34 * -3 + param_4;
         }
         else {
           if (local_30 < local_18) {
-            iVar7 = (local_1c - local_30) + param_3;
-            iVar6 = local_34;
+            iVar8 = (local_1c - local_30) + param_3;
+            iVar7 = local_34;
           }
           else {
-            iVar6 = local_20 - local_30;
-            iVar7 = local_c;
+            iVar7 = local_20 - local_30;
+            iVar8 = local_c;
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_2 = iVar6 + param_4;
+          param_2 = iVar7 + param_4;
         }
-        if (((((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
+        if (((((-1 < iVar8) && (iVar8 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
             ((param_2 < g_worldGrid.sizeY &&
-             (iVar6 = st::fn_006ACED8(param_3,param_4,iVar7,param_2), iVar6 <= DAT_007951b0 / 0xc9))))
+             (iVar6 = st::fn_006ACED8(param_3,param_4,iVar8,param_2), iVar6 <= DAT_007951b0 / 0xc9))))
            && (local_2c = 0, 0 < g_worldGrid.sizeZ)) {
           do {
-            this = STGridAt3D(g_worldGrid, iVar7, param_2, local_2c).
+            this = STGridAt3D(g_worldGrid, iVar8, param_2, local_2c).
                    objects[0];
             if ((((this != nullptr) && (this[1].vtable < (STWorldObjectVTable *)0x8))
                 && ((g_playSystem_00802A38 == nullptr ||
                     (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)))) &&
-               (iVar6 = this->GetObjectTypeId(), iVar6 == 0x73)) {
+               (iVar7 = this->GetObjectTypeId(), iVar7 == 0x73)) {
               bVar1 = *(byte *)&this[1].vtable;
               if (g_app_00806728->field_146F == '\0') {
                 if (bVar1 == param_1) {
 LAB_004b2fd4:
-                  iVar6 = 0;
+                  iVar7 = 0;
                 }
                 else {
                   uVar3 = (uint)bVar1;
@@ -1530,30 +1537,30 @@ LAB_004b2fd4:
                   cVar2 = (&g_app_00806728->field_0x142f)[uVar5 + uVar3 * 8];
                   if ((cVar2 == '\0') &&
                      ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
-                    iVar6 = -2;
+                    iVar7 = -2;
                   }
                   else if ((cVar2 == '\x01') &&
                           ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
-                    iVar6 = -1;
+                    iVar7 = -1;
                   }
                   else if ((cVar2 == '\0') &&
                           ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\x01')) {
-                    iVar6 = 1;
+                    iVar7 = 1;
                   }
                   else {
                     if ((cVar2 != '\x01') ||
                        ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] != '\x01'))
                     goto LAB_004b2fd4;
-                    iVar6 = 2;
+                    iVar7 = 2;
                   }
                 }
-                bVar8 = iVar6 < 0;
+                bVar9 = iVar7 < 0;
               }
               else {
-                bVar8 = (&g_app_00806728->field_0x11ca)[(uint)param_1 * 0x51] !=
+                bVar9 = (&g_app_00806728->field_0x11ca)[(uint)param_1 * 0x51] !=
                         (&g_app_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
               }
-              if ((bVar8) && (local_24 <= *(int *)&this[0x22].field_0x8)) {
+              if ((bVar9) && (local_24 <= *(int *)&this[0x22].field_0x8)) {
                 local_24 = *(int *)&this[0x22].field_0x8 - local_24;
                 *(int *)&this[0x22].field_0x8 = local_24;
                 if (local_24 < 0) {
@@ -1590,14 +1597,15 @@ undefined4 __cdecl st::fn_004B31C0(int *param_1,int param_2)
   int *piVar1;
   int iVar2;
   int iVar3;
-  DArrayTy *array;
   int iVar4;
+  DArrayTy *array;
+  int iVar5;
   uint index;
   AnonShape_004B31C0_DBC5A6CD *local_c;
   int local_8;
 
   piVar1 = param_1;
-  iVar4 = 0;
+  iVar5 = 0;
   local_8 = 0;
   iVar2 = st::fn_00402815((int)param_1);
   if (iVar2 == 0) {
@@ -1606,18 +1614,18 @@ undefined4 __cdecl st::fn_004B31C0(int *param_1,int param_2)
   if (g_array_007FA170 != nullptr) {
     g_array_007FA170->iteratorIndex = 0;
     iVar3 = st::fn_006B1190(g_array_007FA170,(byte *)&local_c);
-    iVar2 = param_2;
+    iVar4 = param_2;
     while (-1 < iVar3) {
       if ((((local_c != nullptr) && (local_c->field_0024 == piVar1)) &&
-          ((iVar2 == 0 || (local_c->field_0018 != iVar2)))) &&
+          ((iVar4 == 0 || (local_c->field_0018 != iVar4)))) &&
          ((((local_c->field_02EC == 3 || (local_c->field_02A0 != 0)) || (local_c->field_02E0 != 0))
           || (local_c->field_02DC != 0)))) {
         local_8 = local_8 + 1;
       }
       iVar3 = st::fn_006B1190(g_array_007FA170,(byte *)&local_c);
-      iVar4 = local_8;
+      iVar5 = local_8;
     }
-    if (DAT_00808a97 <= (uint)(ushort)g_packedRecords_A62x8[(int)piVar1].field4_0xd + iVar4) {
+    if (DAT_00808a97 <= (uint)(ushort)g_packedRecords_A62x8[(int)piVar1].field4_0xd + iVar5) {
       return 0;
     }
   }
@@ -1629,19 +1637,19 @@ undefined4 __cdecl st::fn_004B31C0(int *param_1,int param_2)
         st::fn_006ACC70(array,index,&param_1);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((param_1 != nullptr) &&
-            ((((iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x32 ||
-               (iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x40)) ||
-              ((iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x49 ||
-               (iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x5c)))) &&
-             (((STField<int>(param_1,0x361) == 1 && (iVar2 = param_1[0x134], iVar2 != 0)) &&
-              (iVar2 != 1)))))) && (iVar2 != 2)) {
-          iVar4 = iVar4 + 1;
+            ((((iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x32 ||
+               (iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x40)) ||
+              ((iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x49 ||
+               (iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x5c)))) &&
+             (((STField<int>(param_1,0x361) == 1 && (iVar4 = param_1[0x134], iVar4 != 0)) &&
+              (iVar4 != 1)))))) && (iVar4 != 2)) {
+          iVar5 = iVar5 + 1;
         }
         array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar1].field3_0x9;
         index = index + 1;
       } while (index < array->count);
     }
-    if (DAT_00808a97 <= (uint)(ushort)g_packedRecords_A62x8[(int)piVar1].field4_0xd + iVar4) {
+    if (DAT_00808a97 <= (uint)(ushort)g_packedRecords_A62x8[(int)piVar1].field4_0xd + iVar5) {
       return 0;
     }
   }
@@ -2631,7 +2639,7 @@ undefined4 __fastcall st::fn_004B8C80(TLOBaseTy *param_1)
       if (iVar6 == *(int *)(&DAT_007cdf5a + iVar5 * 0x32)) {
         iVar5 = st::fn_00404183
                           ((STT3DSprC *)puVar1,5,PTR_00806764,"expl_bbt0" + iVar5 * 0x32,
-                           0x1d);
+                           CASE_1D);
         if (iVar5 != 0) {
           return 0xffff;
         }
@@ -2999,34 +3007,35 @@ undefined4 __fastcall st::fn_004B9D90(AnonShape_004B9D90_4F3151F9 *param_1)
 
 {
   int iVar1;
+  int iVar3;
   int iVar2;
-  bool bVar3;
+  bool bVar4;
 
-  iVar2 = param_1->field_0245;
-  if (iVar2 == 1) {
+  iVar1 = param_1->field_0245;
+  if (iVar1 == 1) {
     return 0;
   }
-  if (iVar2 == 6) {
+  if (iVar1 == 6) {
     return 0;
   }
-  if (iVar2 == 4) {
+  if (iVar1 == 4) {
     return 0;
   }
-  iVar2 = param_1->field_05AC;
-  switch(iVar2) {
+  iVar1 = param_1->field_05AC;
+  switch(iVar1) {
   case 0x32:
   case 0x40:
   case 0x49:
   case 0x5c:
-    iVar1 = param_1->field_04D0;
-    if (iVar1 != 0) {
-      if ((iVar1 != 1) && (iVar1 != 2)) {
+    iVar3 = param_1->field_04D0;
+    if (iVar3 != 0) {
+      if ((iVar3 != 1) && (iVar3 != 2)) {
         return 0;
       }
-      if (iVar2 == 0x40) {
+      if (iVar1 == 0x40) {
         return 0;
       }
-      if (iVar2 == 0x49) {
+      if (iVar1 == 0x49) {
         return 0;
       }
     }
@@ -3044,22 +3053,22 @@ undefined4 __fastcall st::fn_004B9D90(AnonShape_004B9D90_4F3151F9 *param_1)
     if (param_1->field_04D8 != 0xffff) {
       return 0;
     }
-    if (iVar2 == 0x6c) {
+    if (iVar1 == 0x6c) {
       iVar2 = st::fn_00404160((int)param_1);
       if (iVar2 == 0) {
         return 0;
       }
-      iVar2 = param_1->field_061B;
-      if (iVar2 == 0) {
+      iVar1 = param_1->field_061B;
+      if (iVar1 == 0) {
         return 0;
       }
-      if (*(int *)(iVar2 + 0x20) != 1000) {
+      if (*(int *)(iVar1 + 0x20) != 1000) {
         return 0;
       }
-      if (*(int *)(iVar2 + 0x4d8) != 0xffff) {
+      if (*(int *)(iVar1 + 0x4d8) != 0xffff) {
         return 0;
       }
-      if (g_worldGrid.sizeZ + -1 <= *(int *)(iVar2 + 0x5b8)) {
+      if (g_worldGrid.sizeZ + -1 <= *(int *)(iVar1 + 0x5b8)) {
         return 0;
       }
     }
@@ -3080,14 +3089,14 @@ undefined4 __fastcall st::fn_004B9D90(AnonShape_004B9D90_4F3151F9 *param_1)
     }
     break;
   case 0x45:
-    bVar3 = param_1->field_04D0 == 3;
+    bVar4 = param_1->field_04D0 == 3;
     goto LAB_004b9e45;
   case 0x4e:
   case 0x70:
   case 0x72:
-    bVar3 = param_1->field_04D0 == 4;
+    bVar4 = param_1->field_04D0 == 4;
 LAB_004b9e45:
-    if (bVar3) {
+    if (bVar4) {
       return 0;
     }
     break;
@@ -3198,14 +3207,16 @@ void __thiscall st::fn_004BE290(void *this,char *param_1)
   uint uVar2;
   char *pcVar4;
   char *pcVar5;
+  char *pcVar4_mg0;
+  char *pcVar4_mg1;
 
   uVar2 = 0xffffffff;
-  pcVar4 = param_1;
+  pcVar4_mg0 = param_1;
   do {
     if (uVar2 == 0) break;
     uVar2 = uVar2 - 1;
-    cVar1 = *pcVar4;
-    pcVar4 = pcVar4 + 1;
+    cVar1 = *pcVar4_mg0;
+    pcVar4_mg0 = pcVar4_mg0 + 1;
   } while (cVar1 != '\0');
   if (0xe < ~uVar2 - 1) {
     st::fn_0072E340((char *)((int)this + 0x5c4),param_1,0xe);
@@ -3214,15 +3225,15 @@ void __thiscall st::fn_004BE290(void *this,char *param_1)
   }
   uVar2 = 0xffffffff;
   do {
-    pcVar4 = param_1;
+    pcVar4_mg1 = param_1;
     if (uVar2 == 0) break;
     uVar2 = uVar2 - 1;
-    pcVar4 = param_1 + 1;
+    pcVar4_mg1 = param_1 + 1;
     cVar1 = *param_1;
-    param_1 = pcVar4;
+    param_1 = pcVar4_mg1;
   } while (cVar1 != '\0');
   uVar2 = ~uVar2;
-  pcVar4 = pcVar4 + -uVar2;
+  pcVar4 = pcVar4_mg1 + -uVar2;
   pcVar5 = (char *)((int)this + 0x5c4);
   memmove(pcVar5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
   return;

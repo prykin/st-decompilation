@@ -9,7 +9,8 @@ int __thiscall STColl3C::CreateAddSpr(STColl3C *this)
 
 {
   int iVar2;
-  ushort *puVar3;
+  ushort *puVar2;
+  int iVar3;
   int iVar4;
   InternalExceptionFrame local_50;
   int local_c;
@@ -21,23 +22,23 @@ int __thiscall STColl3C::CreateAddSpr(STColl3C *this)
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
-    puVar3 = Library::DKW::LIB::MemAlloc(0x6c);
-    local_8->field_02E6 = puVar3;
-    for (iVar2 = 0x1b; iVar2 != 0; iVar2 = iVar2 + -1) {
-      puVar3[0] = 0;
-      puVar3[1] = 0;
-      puVar3 = puVar3 + 2;
+    puVar2 = Library::DKW::LIB::MemAlloc(0x6c);
+    local_8->field_02E6 = puVar2;
+    for (iVar4 = 0x1b; iVar4 != 0; iVar4 = iVar4 + -1) {
+      puVar2[0] = 0;
+      puVar2[1] = 0;
+      puVar2 = puVar2 + 2;
     }
-    puVar3 = local_8->field_02E6;
-    puVar3[2] = 0xffff;
-    puVar3[3] = 0xffff;
+    puVar2 = local_8->field_02E6;
+    puVar2[2] = 0xffff;
+    puVar2[3] = 0xffff;
     g_currentExceptionFrame = local_50.previous;
     return local_c + 2;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_coll3.cpp",0x5d8,0,iVar2,"%s",
+  iVar3 = ReportDebugMessage("E:\\__titans\\nick\\to_coll3.cpp",0x5d8,0,iVar2,"%s",
                              "STColl3C::CreateAddSpr");
-  if (iVar4 != 0) {
+  if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,"E:\\__titans\\nick\\to_coll3.cpp",0x5da);

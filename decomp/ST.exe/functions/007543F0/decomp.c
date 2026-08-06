@@ -9,8 +9,9 @@ FUN_007543f0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefined4
   int iVar2;
   int iVar3;
   int iVar4;
-  uint uVar5;
-  byte *puVar7;
+  int iVar5;
+  uint uVar6;
+  byte *puVar8;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   param_1->field_000C = *(undefined4 *)(param_1->field_0008 + 0x50);
@@ -24,54 +25,55 @@ FUN_007543f0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefined4
     FUN_007561d0((AnonShape_00753C80_4C8E695D *)param_1,
                  *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar4 = *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8);
-    if (iVar4 == -1) {
-      iVar4 = *(int *)(iVar3 + 4);
+    iVar5 = *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8);
+    if (iVar5 == -1) {
+      iVar5 = *(int *)(iVar3 + 4);
     }
     else {
-      iVar4 = *(int *)(iVar4 + 0x10 + iVar3);
+      iVar5 = *(int *)(iVar5 + 0x10 + iVar3);
     }
-    for (; iVar4 != -1; iVar4 = *(int *)(iVar4 + 0x10 + iVar3)) {
+    while (iVar5 != -1) {
       *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar3 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,iVar4,
+      iVar3 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,iVar5,
                            *(int *)(param_1->field_000C + 0x1c));
       iVar4 = FUN_00753c80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar3 + 8));
+      iVar5 = *(int *)(iVar4 + 0x10 + iVar3);
     }
     iVar2 = param_1->field_000C;
-    iVar4 = *(int *)(iVar2 + 0x1c);
-    if (*(int *)(iVar2 + 0x44 + iVar4 * 8) == -1) {
+    iVar5 = *(int *)(iVar2 + 0x1c);
+    if (*(int *)(iVar2 + 0x44 + iVar5 * 8) == -1) {
       do {
-        if (iVar4 == 0) {
+        if (iVar5 == 0) {
           FUN_00750f20((AnonShape_00750F20_F8C16F98 *)param_1,0,0);
           return 0xfffffffc;
         }
-        *(int *)(iVar2 + 0x1c) = iVar4 + -1;
+        *(int *)(iVar2 + 0x1c) = iVar5 + -1;
         iVar2 = param_1->field_000C;
-        iVar4 = *(int *)(iVar2 + 0x1c);
-      } while (*(int *)(iVar2 + 0x44 + iVar4 * 8) == -1);
+        iVar5 = *(int *)(iVar2 + 0x1c);
+      } while (*(int *)(iVar2 + 0x44 + iVar5 * 8) == -1);
       iVar3 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,
                            *(undefined4 *)(iVar2 + 0x40 + *(int *)(iVar2 + 0x1c) * 8),
                            *(int *)(iVar2 + 0x1c));
     }
-    iVar4 = param_1->field_000C;
-    iVar3 = *(int *)(iVar4 + 0x44 + *(int *)(iVar4 + 0x1c) * 8) + 0x10 + iVar3;
+    iVar5 = param_1->field_000C;
+    iVar3 = *(int *)(iVar5 + 0x44 + *(int *)(iVar5 + 0x1c) * 8) + 0x10 + iVar3;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  } while ((*(code **)(iVar4 + 0xc) != nullptr) &&
-          (iVar4 = (**(code **)(iVar4 + 0xc))(iVar3 + 8,*(undefined4 *)(iVar4 + 0x10)), iVar4 != 0));
+  } while ((*(code **)(iVar5 + 0xc) != nullptr) &&
+          (iVar5 = (**(code **)(iVar5 + 0xc))(iVar3 + 8,*(undefined4 *)(iVar5 + 0x10)), iVar5 != 0));
   *param_3 = *(undefined4 *)(iVar3 + 4);
   if (param_2 != nullptr) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     sVar1 = *(short *)(param_1->field_000C + 0x34);
     if (sVar1 == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar5 = (**(code **)(param_1->field_000C + 8))(iVar3 + 8);
+      uVar6 = (**(code **)(param_1->field_000C + 8))(iVar3 + 8);
     }
     else {
-      uVar5 = (uint)sVar1;
+      uVar6 = (uint)sVar1;
     }
-    puVar7 = (byte *)(iVar3 + 8);
-    memmove(param_2, puVar7, uVar5); /* compiler REP MOVS byte copy */
+    puVar8 = (byte *)(iVar3 + 8);
+    memmove(param_2, puVar8, uVar6); /* compiler REP MOVS byte copy */
   }
   return 0;
 }

@@ -8,10 +8,11 @@ uint __cdecl FUN_0067f5e0(byte *param_1)
   dword dVar2;
   int local_EAX_39;
   byte *pbVar3;
-  int iVar4;
+  int iVar5;
   int uVar3;
-  byte *pbVar5;
-  bool bVar6;
+  int iVar4;
+  byte *pbVar6;
+  bool bVar7;
   InternalExceptionFrame local_4c;
   undefined4 local_8;
 
@@ -30,39 +31,39 @@ uint __cdecl FUN_0067f5e0(byte *param_1)
   dVar2 = g_dArray_00848A2C->elementSize;
   if (0 < (int)dVar2) {
     if ((int)dVar2 < 1) {
-      pbVar5 = nullptr;
+      pbVar6 = nullptr;
       pbVar3 = param_1;
       goto LAB_0067f63c;
     }
     do {
-      pbVar5 = *(byte **)(g_dArray_00848A2C->growCapacity + uVar3 * 4);
+      pbVar6 = *(byte **)(g_dArray_00848A2C->growCapacity + uVar3 * 4);
       pbVar3 = param_1;
 LAB_0067f63c:
       do {
         bVar1 = *pbVar3;
-        bVar6 = bVar1 < *pbVar5;
-        if (bVar1 != *pbVar5) {
+        bVar7 = bVar1 < *pbVar6;
+        if (bVar1 != *pbVar6) {
 LAB_0067f660:
-          iVar4 = (1 - (uint)bVar6) - (uint)(bVar6 != 0);
+          iVar5 = (1 - (uint)bVar7) - (uint)(bVar7 != 0);
           goto LAB_0067f665;
         }
         if (bVar1 == 0) break;
         bVar1 = pbVar3[1];
-        bVar6 = bVar1 < pbVar5[1];
-        if (bVar1 != pbVar5[1]) goto LAB_0067f660;
-        pbVar5 = pbVar5 + 2;
+        bVar7 = bVar1 < pbVar6[1];
+        if (bVar1 != pbVar6[1]) goto LAB_0067f660;
+        pbVar6 = pbVar6 + 2;
         pbVar3 = pbVar3 + 2;
       } while (bVar1 != 0);
-      iVar4 = 0;
+      iVar5 = 0;
 LAB_0067f665:
-      if (iVar4 == 0) goto LAB_0067f671;
+      if (iVar5 == 0) goto LAB_0067f671;
       uVar3 = uVar3 + 1;
     } while (uVar3 < (int)dVar2);
   }
   uVar3 = 0xffffffff;
 LAB_0067f671:
   if (uVar3 < 0) {
-    uVar3 = Library::DKW::TBL::FUN_006b5aa0(&g_dArray_00848A2C->flags,(char *)param_1);
+    uVar3 = Library::DKW::TBL::FUN_006b5aa0(g_dArray_00848A2C,(char *)param_1);
     local_8 = 0;
     iVar4 = Library::DKW::TBL::DArrayAppend(g_array_00848A28,&local_8);
     if (iVar4 != uVar3) {

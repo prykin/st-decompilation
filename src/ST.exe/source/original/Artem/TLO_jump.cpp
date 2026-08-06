@@ -45,7 +45,7 @@ undefined4 __fastcall st::fn_004DCE00(int *param_1)
   if (param_1[0x134] == 1) {
     st::external_00000080(local_108,"%s","jmpmine");
     iVar3 = st::fn_00404183
-                      (STField<STT3DSprC *>(param_1,0x5ff),0xe,PTR_00806774,local_108,0x1d);
+                      (STField<STT3DSprC *>(param_1,0x5ff),0xe,PTR_00806774,local_108,CASE_1D);
     if (iVar3 != 0) {
       st::fn_006A5E40
                 (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_jump.cpp",0x61);

@@ -18,10 +18,11 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this)
   AnonShape_004AB810_8E5693D5 *pAVar5;
   STT3DSprC *this_00;
   HoloTy *pHVar6;
-  undefined4 *puVar7;
   int iVar8;
-  HoloTy *pHVar9;
+  undefined4 *puVar7;
+  int iVar9;
   HoloTy *pHVar10;
+  HoloTy *pHVar11;
 
   pAVar5 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
   if (pAVar5 != nullptr) {
@@ -32,28 +33,28 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this)
         Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00);
         return nullptr;
       }
-      iVar8 = this->field_0265;
-      if (iVar8 != 0) {
-        pHVar9 = this->field_026D;
-        pHVar10 = pHVar6;
-        for (; iVar8 != 0; iVar8 = iVar8 + -1) {
-          HVar2 = pHVar9->field_0001;
-          uVar3 = pHVar9->field_0002;
-          uVar4 = pHVar9->field_0x3;
-          pHVar10->field_0000 = pHVar9->field_0000;
-          pHVar10->field_0001 = HVar2;
-          pHVar10->field_0002 = uVar3;
-          pHVar10->field_0x3 = uVar4;
-          pHVar9 = (HoloTy *)&pHVar9->field_0x4;
+      iVar9 = this->field_0265;
+      if (iVar9 != 0) {
+        pHVar10 = this->field_026D;
+        pHVar11 = pHVar6;
+        for (; iVar9 != 0; iVar9 = iVar9 + -1) {
+          HVar2 = pHVar10->field_0001;
+          uVar3 = pHVar10->field_0002;
+          uVar4 = pHVar10->field_0x3;
+          pHVar11->field_0000 = pHVar10->field_0000;
+          pHVar11->field_0001 = HVar2;
+          pHVar11->field_0002 = uVar3;
+          pHVar11->field_0x3 = uVar4;
           pHVar10 = (HoloTy *)&pHVar10->field_0x4;
+          pHVar11 = (HoloTy *)&pHVar11->field_0x4;
         }
         Library::MSVCRT::FUN_0072e2b0(this->field_026D);
       }
       this->field_026D = pHVar6;
       *(STT3DSprC **)((int)&pHVar6->field_0000 + this->field_0265 * 4) = this_00;
       this->field_0265 = this->field_0265 + 1;
-      iVar8 = STT3DSprC::Init(this_00,PTR_008073cc,0x5a,0x45,this,0xb4,0x8c,0x11);
-      if (iVar8 != 0) {
+      iVar9 = STT3DSprC::Init(this_00,PTR_008073cc,0x5a,0x45,this,0xb4,0x8c,0x11);
+      if (iVar9 != 0) {
         iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x203,0,0,"%s",
                                    "STDcResourcC::Init Sprite Error");
         if (iVar8 != 0) {

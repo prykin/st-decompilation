@@ -306,6 +306,8 @@ void __thiscall st::fn_005770D0(GameSystemC *this)
 void st::fn_00577280(void)
 
 {
+  int iVar1;
+  int iVar4;
   CursorClassTy *this;
   int iVar2;
   GameSystemC *this_00;
@@ -331,11 +333,11 @@ void st::fn_00577280(void)
     st::fn_006E4650((AppClassTy *)&DAT_00807620,(int *)g_parentSystem_0081163C,0);
     g_parentSystem_0081163C->field_0428 = 1;
     this = g_cursorClass_00802A30;
-    iVar2 = g_cursorClass_00802A30->field_00C9;
-    iVar3 = g_cursorClass_00802A30->field_00C5;
+    iVar1 = g_cursorClass_00802A30->field_00C9;
+    iVar4 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = 2;
     this->field_0494 = 0xffff;
-    st::fn_0040507E(this,CASE_0,iVar3,iVar2);
+    st::fn_0040507E(this,CASE_0,iVar4,iVar1);
     st::fn_0040241E(this,this->field_00C5,this->field_00C9);
     this->field_00D2 = 0;
     this->field_04DF = -1;
@@ -380,19 +382,22 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
   size_t _Count;
   void *pvVar3;
   PlayPanelTy *this_00;
+  int local_EAX_51;
+  HANDLE pvVar5;
+  int iVar6;
+  cMf32 *pcVar7;
+  ushort *puVar8;
+  char *local_EAX_1519;
   int iVar5;
-  HANDLE pvVar6;
-  int iVar7;
-  cMf32 *pcVar8;
-  ushort *puVar9;
   DArrayTy *array;
   AnonShape_00648C10_30A1BBFD *strategData;
+  int iVar19;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   SystemClassTy *extraout_ECX;
+  uint uVar9;
   uint uVar10;
-  uint uVar11;
-  int *piVar12;
-  char *pcVar13;
+  int *piVar11;
+  char *pcVar12;
   char *pcVar14;
   byte *puVar15;
   bool bVar16;
@@ -411,21 +416,23 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
   InternalExceptionFrame local_8c;
   undefined4 local_48;
   SystemClassTy *this_01;
-  undefined *puVar17;
-  int *piVar18;
-  undefined1 *puVar19;
+  int *piVar17;
+  undefined1 *puVar18;
+  int iVar20;
+  char *pcVar13;
 
   st::fn_0072DA40();
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   this_01 = extraout_ECX;
-  iVar5 = st::fn_0072D7F0(local_8c.jumpBuffer,0);
-  if (iVar5 != 0) {
+  local_EAX_51 = st::fn_0072D7F0(local_8c.jumpBuffer,0);
+  if (local_EAX_51 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\tsystem.cpp",0x1c6,0,iVar5,"%s");
-    if (iVar7 == 0) {
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\tsystem.cpp",0x1c7);
+    iVar19 = st::fn_006AD4D0("E:\\__titans\\tsystem.cpp",0x1c6,0,local_EAX_51,
+                                "%s");
+    if (iVar19 == 0) {
+      st::fn_006A5E40(local_EAX_51,0,"E:\\__titans\\tsystem.cpp",0x1c7);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -433,12 +440,12 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
   st::fn_006E5F00(this_01,message);
   if (message->id == MESS_GAMESYSTEMC_43FF) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    piVar18 = *(int **)((message->arg0).u32 + 0x17);
-    switch(*piVar18) {
+    piVar17 = *(int **)((message->arg0).u32 + 0x17);
+    switch(*piVar17) {
     case 1:
       if (DAT_00808783 == '\x03') {
-        if (piVar18[2] != 0) {
-          DAT_00808784 = (void *)piVar18[1];
+        if (piVar17[2] != 0) {
+          DAT_00808784 = (void *)piVar17[1];
           this_01[0x21].objectLock = DAT_00808784;
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
@@ -450,9 +457,9 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
           }
         }
       }
-      else if (piVar18[2] == 0) {
+      else if (piVar17[2] == 0) {
         if (this_01[0x21].objectLock == nullptr) {
-          DAT_00808784 = (void *)piVar18[1];
+          DAT_00808784 = (void *)piVar17[1];
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
@@ -462,12 +469,12 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       }
       else {
         if ((DAT_0080878c == 0) && (DAT_00808790 == 0)) {
-          DAT_00808784 = (void *)piVar18[1];
+          DAT_00808784 = (void *)piVar17[1];
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
         }
-        pvVar3 = (void *)piVar18[1];
+        pvVar3 = (void *)piVar17[1];
         this_01[0x21].objectLock = pvVar3;
         if (g_pausePanel_008016E0 != nullptr) {
           st::fn_0040504C(g_pausePanel_008016E0,(int)pvVar3);
@@ -477,22 +484,22 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       }
       break;
     case 4:
-      uVar10 = piVar18[1];
-      if (DAT_0080733b != uVar10) {
-        DAT_0080733b = (byte)uVar10;
+      uVar9 = piVar17[1];
+      if (DAT_0080733b != uVar9) {
+        DAT_0080733b = (byte)uVar9;
         if (DAT_0080877e == '\0') {
-          iVar5 = (uVar10 & 0xff) * 0x18;
-          DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar5 + 0x14);
+          iVar20 = (uVar9 & 0xff) * 0x18;
+          DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar20 + 0x14);
         }
         else {
-          iVar5 = (uVar10 & 0xff) * 0x18;
-          DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar5 + 8);
+          iVar20 = (uVar9 & 0xff) * 0x18;
+          DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar20 + 8);
         }
         if (g_sT3DSMAPContext_00807598 != nullptr) {
           st::fn_006E8640
                     (g_sT3DSMAPContext_00807598,
-                     *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar5 + 0x10),
-                     *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar5 + 4));
+                     *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar20 + 0x10),
+                     *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar20 + 4));
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -500,42 +507,42 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       break;
     case 6:
     case 7:
-      if (*piVar18 == 6) {
-        st::fn_00401212(&DAT_00807620,(byte)((uint)piVar18[1] >> 0x10),*(byte *)(piVar18 + 1),
-                           (char)piVar18[2]);
+      if (*piVar17 == 6) {
+        st::fn_00401212(&DAT_00807620,(byte)((uint)piVar17[1] >> 0x10),*(byte *)(piVar17 + 1),
+                           (char)piVar17[2]);
       }
       else {
-        st::fn_004033A0(&DAT_00807620,(byte)((uint)piVar18[1] >> 0x10),*(byte *)(piVar18 + 1));
+        st::fn_004033A0(&DAT_00807620,(byte)((uint)piVar17[1] >> 0x10),*(byte *)(piVar17 + 1));
       }
       this_00 = g_playPanel_008016E4;
       if (g_playPanel_008016E4 != nullptr) {
         g_playPanel_008016E4->field_0028 = 5;
-        piVar12 = &this_00->field_0181;
-        puVar19 = (undefined1 *)0x8;
+        piVar11 = &this_00->field_0181;
+        puVar18 = (undefined1 *)0x8;
         do {
-          if (*piVar12 != 0) {
-            puVar19 = &this_00->field_0x18;
-            st::fn_006E6080(this_00,2,*piVar12,(undefined4 *)puVar19);
+          if (*piVar11 != 0) {
+            puVar18 = &this_00->field_0x18;
+            st::fn_006E6080(this_00,2,*piVar11,(undefined4 *)puVar18);
           }
-          piVar12 = piVar12 + 1;
-          puVar19 = puVar19 + -1;
-        } while (puVar19 != nullptr);
+          piVar11 = piVar11 + 1;
+          puVar18 = puVar18 + -1;
+        } while (puVar18 != nullptr);
       }
-      if ((ushort)((uint)piVar18[1] >> 0x10) != (ushort)DAT_0080874d) {
+      if ((ushort)((uint)piVar17[1] >> 0x10) != (ushort)DAT_0080874d) {
         if (DAT_00808aaf != 0) {
-          uVar10 = (uint)DAT_00808aaf;
+          uVar9 = (uint)DAT_00808aaf;
           do {
-            uVar10 = uVar10 - 1;
-          } while (uVar10 != 0);
+            uVar9 = uVar9 - 1;
+          } while (uVar9 != 0);
           if (DAT_00808aaf != 0) {
-            uVar10 = (uint)DAT_00808aaf;
+            uVar9 = (uint)DAT_00808aaf;
             do {
-              uVar10 = uVar10 - 1;
-            } while (uVar10 != 0);
+              uVar9 = uVar9 - 1;
+            } while (uVar9 != 0);
           }
         }
-        pcVar13 = st::fn_006B0140(0x42c2,g_hINSTANCE_00807618);
-        st::external_00000080((LPSTR)&DAT_0080f33a,pcVar13);
+        local_EAX_1519 = st::fn_006B0140(0x42c2,g_hINSTANCE_00807618);
+        st::external_00000080((LPSTR)&DAT_0080f33a,local_EAX_1519);
         if (g_popUp_008016D8 != nullptr) {
           st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
           g_currentExceptionFrame = local_8c.previous;
@@ -549,43 +556,43 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       iVar5 = st::fn_0072D7F0(local_1b0.jumpBuffer,0);
       if (iVar5 == 0) {
         st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s");
-        pcVar8 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+        pcVar7 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)&DAT_0080f33a,0,0,0);
         local_48 = 0x577d84;
-        array = (DArrayTy *)st::fn_00403F44(pcVar8,piVar18[1],DAT_0080995c);
-        uVar10 = array->count;
-        if (uVar10 != 0) {
-          if (uVar10 - 1 < uVar10) {
+        array = (DArrayTy *)st::fn_00403F44(pcVar7,piVar17[1],DAT_0080995c);
+        uVar9 = array->count;
+        if (uVar9 != 0) {
+          if (uVar9 - 1 < uVar9) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            pcVar13 = (char *)((uVar10 - 1) * array->elementSize + (int)array->data);
+            pcVar12 = (char *)((uVar9 - 1) * array->elementSize + (int)array->data);
           }
           else {
-            pcVar13 = nullptr;
+            pcVar12 = nullptr;
           }
-          if ((pcVar13 + 0x4c != nullptr) &&
+          if ((pcVar12 + 0x4c != nullptr) &&
              (strategData = (AnonShape_00648C10_30A1BBFD *)
-                            st::fn_004012AD((int)pcVar8,pcVar13 + 0x4c,nullptr),
+                            st::fn_004012AD((int)pcVar7,pcVar12 + 0x4c,nullptr),
              strategData != nullptr)) {
-            uVar10 = 0xffffffff;
+            uVar9 = 0xffffffff;
             do {
-              pcVar14 = pcVar13;
-              if (uVar10 == 0) break;
-              uVar10 = uVar10 - 1;
-              pcVar14 = pcVar13 + 1;
-              cVar1 = *pcVar13;
-              pcVar13 = pcVar14;
+              pcVar14 = pcVar12;
+              if (uVar9 == 0) break;
+              uVar9 = uVar9 - 1;
+              pcVar14 = pcVar12 + 1;
+              cVar1 = *pcVar12;
+              pcVar12 = pcVar14;
             } while (cVar1 != '\0');
-            uVar10 = ~uVar10;
-            pcVar13 = pcVar14 + -uVar10;
+            uVar9 = ~uVar9;
+            pcVar12 = pcVar14 + -uVar9;
             pcVar14 = local_16c;
-            for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-              *(undefined4 *)pcVar14 = *(undefined4 *)pcVar13;
-              pcVar13 = pcVar13 + 4;
+            for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+              *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
+              pcVar12 = pcVar12 + 4;
               pcVar14 = pcVar14 + 4;
             }
-            bVar2 = *(byte *)(piVar18 + 2);
-            for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-              *pcVar14 = *pcVar13;
-              pcVar13 = pcVar13 + 1;
+            bVar2 = *(byte *)(piVar17 + 2);
+            for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+              *pcVar14 = *pcVar12;
+              pcVar12 = pcVar12 + 1;
               pcVar14 = pcVar14 + 1;
             }
             local_12c = DAT_0080877f;
@@ -595,25 +602,25 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
             local_128 = bVar2;
             local_124 = st::external_000000DA();
             if (bVar2 < 8) {
-              pcVar13 = local_16c;
+              pcVar12 = local_16c;
               puVar15 = (byte *)(&DAT_00808ab0 + (uint)DAT_00808aaf * 0x27);
-              memmove(puVar15, pcVar13, 0x9c); /* compiler REP MOVS byte copy */
+              memmove(puVar15, pcVar12, 0x9c); /* compiler REP MOVS byte copy */
               DAT_00808aaf = DAT_00808aaf + 1;
               if (g_playPanel_008016E4 != nullptr) {
                 st::fn_00405E07(g_playPanel_008016E4);
               }
             }
-            pcVar8 = (cMf32 *)0x577e83;
-            st::fn_004018A7(strategData,piVar18[2]);
-            *(undefined1 *)(g_bulkInitializedRecords_008087C7 + piVar18[2]) = 1;
+            pcVar7 = (cMf32 *)0x577e83;
+            st::fn_004018A7(strategData,piVar17[2]);
+            *(undefined1 *)(g_bulkInitializedRecords_008087C7 + piVar17[2]) = 1;
             array = (DArrayTy *)0x577e9d;
-            st::fn_006AB060((void **)&stack0xffffffdc);
+            st::fn_006AB060(&stack0xffffffdc);
           }
         }
         if (array != nullptr) {
           st::fn_006AE110(array);
         }
-        st::fn_006F1170(pcVar8);
+        st::fn_006F1170(pcVar7);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
@@ -628,16 +635,16 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
   }
   else if (message->id == MESS_GAMESYSTEMC_4400) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pcVar13 = *(char **)((message->arg0).u32 + 0x17);
-    cVar1 = *pcVar13;
-    bVar2 = pcVar13[1];
-    uVar10 = (uint)bVar2;
+    pcVar12 = *(char **)((message->arg0).u32 + 0x17);
+    cVar1 = *pcVar12;
+    bVar2 = pcVar12[1];
+    uVar9 = (uint)bVar2;
     if (cVar1 == '\0') {
       if (bVar2 == 0xff) {
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
-      st::fn_004015D2(uVar10);
+      st::fn_004015D2(uVar9);
     }
     else {
       if (cVar1 != '\x01') {
@@ -645,21 +652,21 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
-        _Count = *(size_t *)(pcVar13 + 1);
-        DAT_00808750 = *(undefined4 *)(pcVar13 + 9);
-        iVar5 = -1;
-        st::fn_0072E340((char *)0x88000516,*(char **)(pcVar13 + 5),_Count);
+        _Count = *(size_t *)(pcVar12 + 1);
+        DAT_00808750 = *(undefined4 *)(pcVar12 + 9);
+        iVar20 = -1;
+        st::fn_0072E340((char *)0x88000516,*(char **)(pcVar12 + 5),_Count);
         local_3f4.cAlternateFileName[_Count + 0xf] = '\0';
         do {
-          if (iVar5 < 0) {
+          if (iVar20 < 0) {
             st::external_00000080((LPSTR)&DAT_0080f022,"%s%s%s\\%s%s%s");
           }
           else {
             st::external_00000080((LPSTR)&DAT_0080f022,"%s%s%s\\%s%s%d%s");
           }
-          iVar5 = iVar5 + 1;
-          pvVar6 = st::external_00000070((LPCSTR)&DAT_0080f022,&local_3f4);
-          bVar16 = pvVar6 != (HANDLE)0xffffffff;
+          iVar20 = iVar20 + 1;
+          pvVar5 = st::external_00000070((LPCSTR)&DAT_0080f022,&local_3f4);
+          bVar16 = pvVar5 != (HANDLE)0xffffffff;
           if (!bVar16) {
             DAT_00808794 = 1;
             g_currentExceptionFrame = local_8c.previous;
@@ -667,30 +674,30 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
           }
           local_d0.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_d0;
-          iVar7 = st::fn_0072D7F0(local_d0.jumpBuffer,0);
-          if (iVar7 == 0) {
-            pcVar8 = (cMf32 *)st::fn_006F0EC0
+          iVar6 = st::fn_0072D7F0(local_d0.jumpBuffer,0);
+          if (iVar6 == 0) {
+            pcVar7 = (cMf32 *)st::fn_006F0EC0
                                         (0x345,(byte *)&DAT_0080f022,0,0,0);
-            if (pcVar8 == nullptr) {
+            if (pcVar7 == nullptr) {
               bVar16 = false;
             }
             else {
-              puVar9 = st::fn_006F1CE0(pcVar8,(byte)local_1d90,PTR_s_DESCRIPTOR_0079b1a4,
+              puVar8 = st::fn_006F1CE0(pcVar7,(byte)local_1d90,PTR_s_DESCRIPTOR_0079b1a4,
                                      (int *)&stack0xffffffe0,0);
-              if (puVar9 != nullptr) {
-                piVar18 = (int *)&stack0xffffffe0;
-                puVar17 = PTR_s_SAVE_DESC_0079b1a0;
-                puVar9 = st::fn_006F1CE0(pcVar8,(byte)&stack0xfffffff0,PTR_s_SAVE_DESC_0079b1a0,
-                                       piVar18,0);
-                if ((puVar9 != nullptr) &&
-                   ((puVar17 != nullptr || (local_1d88 != piVar18)))) {
+              if (puVar8 != nullptr) {
+                piVar17 = (int *)&stack0xffffffe0;
+                pcVar13 = PTR_s_SAVE_DESC_0079b1a0;
+                puVar8 = st::fn_006F1CE0(pcVar7,(byte)&stack0xfffffff0,PTR_s_SAVE_DESC_0079b1a0,
+                                       piVar17,0);
+                if ((puVar8 != nullptr) &&
+                   ((pcVar13 != nullptr || (local_1d88 != piVar17)))) {
                   bVar16 = true;
-                  st::fn_006F1170(pcVar8);
+                  st::fn_006F1170(pcVar7);
                   goto LAB_00577956;
                 }
               }
               bVar16 = false;
-              st::fn_006F1170(pcVar8);
+              st::fn_006F1170(pcVar7);
             }
           }
 LAB_00577956:
@@ -706,8 +713,8 @@ LAB_00577956:
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
-      st::fn_004015D2(uVar10);
-      st::fn_004018A7((AnonShape_00648C10_30A1BBFD *)(pcVar13 + 2),uVar10);
+      st::fn_004015D2(uVar9);
+      st::fn_004018A7((AnonShape_00648C10_30A1BBFD *)(pcVar12 + 2),uVar9);
     }
     if (g_optPanel_008016DC != nullptr) {
       st::fn_00401CBC(g_optPanel_008016DC);

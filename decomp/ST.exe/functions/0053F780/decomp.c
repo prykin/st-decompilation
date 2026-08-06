@@ -14,10 +14,11 @@ void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
 {
   ProdPanelTy *this_00;
   short sVar2;
+  int iVar5;
   undefined4 uVar3;
   int iVar4;
-  int iVar5;
-  int *piVar7;
+  int iVar6;
+  int *piVar8;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
 
@@ -42,15 +43,15 @@ void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
       if (this_00->field_019D != 0) {
         FUN_006e6080(this_00,2,this_00->field_019D,(undefined4 *)&this_00->field_0x18);
       }
-      piVar7 = &this_00->field_01A1;
-      iVar5 = 5;
+      piVar8 = &this_00->field_01A1;
+      iVar6 = 5;
       do {
-        if (*piVar7 != 0) {
-          FUN_006e6080(this_00,2,*piVar7,(undefined4 *)&this_00->field_0x18);
+        if (*piVar8 != 0) {
+          FUN_006e6080(this_00,2,*piVar8,(undefined4 *)&this_00->field_0x18);
         }
-        piVar7 = piVar7 + 1;
-        iVar5 = iVar5 + -1;
-      } while (iVar5 != 0);
+        piVar8 = piVar8 + 1;
+        iVar6 = iVar6 + -1;
+      } while (iVar6 != 0);
       if ((param_1 == 0) || (uVar3 = 0x55, DAT_0080734c == '\0')) {
         uVar3 = 0x56;
       }

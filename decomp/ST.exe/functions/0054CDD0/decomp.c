@@ -14,6 +14,7 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
 
 {
   int iVar2;
+  int iVar4;
   int iVar3;
   InternalExceptionFrame local_58;
   void *local_14;
@@ -26,12 +27,12 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
   g_currentExceptionFrame = &local_58;
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar2 == 0) {
-    iVar2 = thunk_FUN_0054cbb0(param_2,&local_8);
-    if (iVar2 == 0) {
+    iVar4 = thunk_FUN_0054cbb0(param_2,&local_8);
+    if (iVar4 == 0) {
       local_10 = Library::Ourlib::SAPP::FUN_006e6200
                            (local_14,local_8,param_1,param_3,&local_c,param_5,param_6);
     }
-    iVar2 = local_10;
+    iVar4 = local_10;
     if (param_4 != nullptr) {
       *param_4 = local_c;
     }
@@ -39,7 +40,7 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
       thunk_FUN_0054cd90();
     }
     g_currentExceptionFrame = local_58.previous;
-    return iVar2;
+    return iVar4;
   }
   g_currentExceptionFrame = local_58.previous;
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x128,0,0,

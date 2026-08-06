@@ -6,6 +6,7 @@ undefined4 __cdecl FUN_006389f0(short param_1,short param_2,short param_3)
 {
   STWorldObject *pSVar1;
   int iVar2;
+  int iVar3;
   undefined4 local_28 [8];
   undefined4 local_8;
 
@@ -17,8 +18,8 @@ undefined4 __cdecl FUN_006389f0(short param_1,short param_2,short param_3)
       ((param_3 < g_worldGrid.sizeZ &&
        (pSVar1 = STGridAt3D(g_worldGrid, param_1, param_2, param_3).objects[1],
        pSVar1 != nullptr)))))) {
-    iVar2 = pSVar1->value_20;
-    if ((iVar2 == 0xbe) || ((iVar2 == 0x1ae || (iVar2 == 0x8c)))) {
+    iVar3 = pSVar1->value_20;
+    if ((iVar3 == 0xbe) || ((iVar3 == 0x1ae || (iVar3 == 0x8c)))) {
       local_8 = 0xffffffff;
     }
     else {

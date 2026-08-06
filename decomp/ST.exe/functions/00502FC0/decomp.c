@@ -22,10 +22,12 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
   CPanelTy *this_00;
   byte bVar4;
   int iVar5;
-  byte *pbVar6;
+  BITMAPINFO *pBVar5;
   int iVar7;
-  CPanelTy_field_0B99State *pCVar8;
-  RecoveredRecord_CPanelTy_00501D00 *pRVar9;
+  int iVar6;
+  CPanelTy_field_0B99State *pCVar7;
+  RecoveredRecord_CPanelTy_00501D00 *pRVar8;
+  int iVar9;
   InternalExceptionFrame local_ac;
   RecoveredRecord_CPanelTy_00501D00 local_68;
   CPanelTy *local_c;
@@ -48,9 +50,9 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   pCVar1 = &local_c->field_0B99;
-  pCVar8 = pCVar1;
-  pRVar9 = &local_68;
-  memmove(pRVar9, pCVar8, 0x5c); /* compiler REP MOVS byte copy */
+  pCVar7 = pCVar1;
+  pRVar8 = &local_68;
+  memmove(pRVar8, pCVar7, 0x5c); /* compiler REP MOVS byte copy */
   memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
   if (STPiece<5,1>(local_68) == this_00->field_0B9E) {
@@ -72,23 +74,21 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
           }
           if ((cVar2 != -1) && (local_8 = (uint)STPiece<1,3>(local_8) << 8, cVar2 != '\0')) {
             do {
-              pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
-                                            this_00->field_02B6,1);
-              DibPut(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',pbVar6);
+              pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+              DibPut(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',(byte *)pBVar5);
               bVar4 = (byte)local_8 + 1;
               local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
             } while (bVar4 < (byte)this_00->field_0BCD);
           }
           if ((byte)local_8 < 0x14) {
-            iVar7 = 0x14 - (local_8 & 0xff);
-            iVar5 = (local_8 & 0xff) * 4 + 0x3f;
+            iVar9 = 0x14 - (local_8 & 0xff);
+            iVar6 = (local_8 & 0xff) * 4 + 0x3f;
             do {
-              pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
-                                            this_00->field_02B6,0);
-              DibPut(this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
-              iVar5 = iVar5 + 4;
-              iVar7 = iVar7 + -1;
-            } while (iVar7 != 0);
+              pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+              DibPut(this_00->field_018C,iVar6,0x87,'\x01',(byte *)pBVar5);
+              iVar6 = iVar6 + 4;
+              iVar9 = iVar9 + -1;
+            } while (iVar9 != 0);
           }
           if ((int)this_00->field_0148[3] < 0) {
             g_currentExceptionFrame = local_ac.previous;
@@ -137,21 +137,21 @@ switchD_005030a2_caseD_1a:
   local_8 = (uint)STPiece<1,3>(local_8) << 8;
   if ((this_00->field_0BB6 & 0xfe) != 0) {
     do {
-      pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
-      DibPut(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',pbVar6);
+      pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
+      DibPut(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',(byte *)pBVar5);
       bVar4 = (byte)local_8 + 1;
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
     } while (bVar4 < (byte)this_00->field_0BB6 >> 1);
   }
   if ((byte)local_8 < 0x14) {
-    iVar7 = 0x14 - (local_8 & 0xff);
-    iVar5 = (local_8 & 0xff) * 4 + 0x3f;
+    iVar9 = 0x14 - (local_8 & 0xff);
+    iVar6 = (local_8 & 0xff) * 4 + 0x3f;
     do {
-      pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-      DibPut(this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
-      iVar5 = iVar5 + 4;
-      iVar7 = iVar7 + -1;
-    } while (iVar7 != 0);
+      pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+      DibPut(this_00->field_018C,iVar6,0x87,'\x01',(byte *)pBVar5);
+      iVar6 = iVar6 + 4;
+      iVar9 = iVar9 + -1;
+    } while (iVar9 != 0);
   }
   if ((int)this_00->field_0148[3] < 0) {
     g_currentExceptionFrame = local_ac.previous;

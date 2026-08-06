@@ -12,7 +12,8 @@ FUN_0060ece0(void *this,int param_1,int param_2,int param_3,int param_4,int para
 {
   short *psVar1;
   int iVar2;
-  short *psVar3;
+  int iVar3;
+  short *psVar4;
 
   STField<int>(this,0x256) = param_8;
   STField<short>(this,0x25a) = (short)param_2;
@@ -35,18 +36,18 @@ FUN_0060ece0(void *this,int param_1,int param_2,int param_3,int param_4,int para
     STField<undefined4>(this,0x28c) = 0;
     if (((STField<int>(this,0x2dd) != 0) && (1 < STField<int>(this,0x2d5))) &&
        (param_1 < STField<int>(this,0x2d5))) {
-      iVar2 = param_1 * 0x1c;
+      iVar3 = param_1 * 0x1c;
       do {
-        psVar3 = (short *)(STField<int>(this,0x2dd) + iVar2);
-        *psVar3 = *psVar3 * 0xc9 + STField<short>(this,0x266);
-        *(short *)(STField<int>(this,0x2dd) + 2 + iVar2) =
-             *(short *)(STField<int>(this,0x2dd) + 2 + iVar2) * 0xc9 +
+        psVar4 = (short *)(STField<int>(this,0x2dd) + iVar3);
+        *psVar4 = *psVar4 * 0xc9 + STField<short>(this,0x266);
+        *(short *)(STField<int>(this,0x2dd) + 2 + iVar3) =
+             *(short *)(STField<int>(this,0x2dd) + 2 + iVar3) * 0xc9 +
              STField<short>(this,0x268);
-        psVar3 = (short *)(STField<int>(this,0x2dd) + 4 + iVar2);
-        psVar1 = (short *)(STField<int>(this,0x2dd) + 4 + iVar2);
+        psVar4 = (short *)(STField<int>(this,0x2dd) + 4 + iVar3);
+        psVar1 = (short *)(STField<int>(this,0x2dd) + 4 + iVar3);
         param_1 = param_1 + 1;
-        iVar2 = iVar2 + 0x1c;
-        *psVar1 = *psVar3 * 200 + STField<short>(this,0x26a);
+        iVar3 = iVar3 + 0x1c;
+        *psVar1 = *psVar4 * 200 + STField<short>(this,0x26a);
       } while (param_1 < STField<int>(this,0x2d5));
     }
   }

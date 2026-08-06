@@ -27,7 +27,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
   int *local_10;
   int local_c;
   short local_8;
-  undefined2 local_6;
+  short local_6;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar2 = *(undefined2 *)(param_1 + 0x7d);
@@ -69,7 +69,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
           if ((this == nullptr) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
           goto cf_continue_loop_0065E27E;
           uVar5 = (*this->vtable->vfunc_2C)();
-          STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,(undefined2 *)((int)&param_3 + 2));
+          STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,(short *)((int)&param_3 + 2));
           if (param_5 != 0) {
             if (uVar5 == 0x78) {
               if ((param_5 & 0x80000000) == 0) {

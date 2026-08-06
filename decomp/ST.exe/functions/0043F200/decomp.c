@@ -12,10 +12,11 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   int *piVar2;
   int iVar4;
   byte *pbVar5;
+  int iVar7;
   int iVar6;
-  uint *puVar7;
-  byte *pbVar8;
-  bool bVar9;
+  uint *puVar8;
+  byte *pbVar9;
+  bool bVar10;
   InternalExceptionFrame local_64;
   byte local_20 [16];
   int local_10;
@@ -47,26 +48,26 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
       if (piVar2 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar2 + 0x74))(local_20);
-        pbVar8 = local_20;
+        pbVar9 = local_20;
         pbVar5 = param_2;
         do {
           bVar1 = *pbVar5;
-          bVar9 = bVar1 < *pbVar8;
-          if (bVar1 != *pbVar8) {
+          bVar10 = bVar1 < *pbVar9;
+          if (bVar1 != *pbVar9) {
 LAB_0043f2ad:
-            iVar6 = (1 - (uint)bVar9) - (uint)(bVar9 != 0);
+            iVar7 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
             goto LAB_0043f2b2;
           }
           if (bVar1 == 0) break;
           bVar1 = pbVar5[1];
-          bVar9 = bVar1 < pbVar8[1];
-          if (bVar1 != pbVar8[1]) goto LAB_0043f2ad;
+          bVar10 = bVar1 < pbVar9[1];
+          if (bVar1 != pbVar9[1]) goto LAB_0043f2ad;
           pbVar5 = pbVar5 + 2;
-          pbVar8 = pbVar8 + 2;
+          pbVar9 = pbVar9 + 2;
         } while (bVar1 != 0);
-        iVar6 = 0;
+        iVar7 = 0;
 LAB_0043f2b2:
-        if (iVar6 == 0) {
+        if (iVar7 == 0) {
           Library::DKW::TBL::DArrayAppend(local_c,(void *)((int)piVar2 + 0x32));
         }
       }

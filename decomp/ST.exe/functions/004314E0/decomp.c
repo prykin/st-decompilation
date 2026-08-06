@@ -11,22 +11,109 @@ STAllPlayersC::FramePick
           int param_6)
 
 {
+  int iVar1;
+  int local_EAX_96;
+  int iVar4;
+  int local_EAX_268;
+  int local_EAX_374;
+  int local_EAX_410;
+  int local_EAX_468;
   int iVar2;
-  int iVar3;
-  STGameObjC *pSVar4;
+  int local_EAX_620;
+  int local_EAX_803;
+  int local_EAX_943;
+  STGameObjC *pSVar5;
+  int local_EAX_1213;
+  int local_EAX_1319;
+  int local_EAX_1353;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EAX;
+  int local_EAX_1636;
+  int local_EAX_1677;
+  int local_EAX_1725;
+  int local_EAX_1808;
+  int local_EAX_1849;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EAX_00;
+  int local_EAX_1928;
+  int local_EAX_2061;
+  int local_EAX_2109;
+  int local_EAX_2170;
+  int local_EAX_2211;
+  int local_EAX_2373;
+  int local_EAX_2421;
+  int local_EAX_2479;
+  int local_EAX_2513;
+  int local_EAX_2791;
+  int local_EAX_2873;
+  int local_EAX_2921;
+  int local_EAX_2982;
+  int local_EAX_3023;
+  int local_EAX_3185;
+  int local_EAX_3233;
+  int local_EAX_3291;
+  int local_EAX_3325;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EAX_01;
-  uint uVar5;
+  uint uVar6;
+  int local_EAX_3553;
+  int local_EAX_3640;
+  int local_EAX_3686;
+  int local_EAX_3860;
+  int local_EAX_3899;
+  int local_EAX_4039;
+  int local_EAX_4090;
+  int local_EAX_4167;
+  int local_EAX_4199;
+  int local_EAX_4479;
+  int local_EAX_4561;
+  int local_EAX_4609;
+  int local_EAX_4670;
+  int local_EAX_4711;
+  int local_EAX_4873;
+  int local_EAX_4921;
+  int local_EAX_4979;
+  int local_EAX_5013;
+  int local_EAX_5291;
+  int local_EAX_5373;
+  int local_EAX_5421;
+  int local_EAX_5482;
+  int local_EAX_5523;
+  int local_EAX_5685;
+  int local_EAX_5733;
+  int local_EAX_5791;
+  int local_EAX_5825;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EAX_02;
+  int local_EAX_6084;
+  int local_EAX_6180;
+  int local_EAX_6219;
+  int local_EAX_6284;
+  int local_EAX_6386;
+  int local_EAX_6425;
+  int local_EAX_6501;
+  int local_EAX_6576;
+  int local_EAX_6850;
+  int local_EAX_6956;
+  int local_EAX_6990;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EAX_03;
+  int local_EAX_7255;
+  int local_EAX_7296;
+  int local_EAX_7344;
+  int local_EAX_7427;
+  int local_EAX_7468;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EAX_04;
+  int local_EAX_7547;
+  int local_EAX_7685;
+  int local_EAX_7789;
+  int local_EAX_7831;
+  int local_EAX_7977;
+  int local_EAX_8035;
+  int local_EAX_8116;
+  int local_EAX_8151;
+  int iVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -43,7 +130,7 @@ STAllPlayersC::FramePick
   undefined4 extraout_ECX_05;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_06;
-  undefined4 uVar6;
+  undefined4 uVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -53,8 +140,8 @@ STAllPlayersC::FramePick
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_02;
   char playerId;
-  uint uVar7;
-  short sVar8;
+  uint uVar8;
+  short sVar9;
   InternalExceptionFrame local_90;
   int local_4c;
   DArrayTy *local_48;
@@ -92,10 +179,10 @@ STAllPlayersC::FramePick
   local_48 = nullptr;
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
-  iVar2 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
-  if (iVar2 != 0) {
+  local_EAX_96 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
+  if (local_EAX_96 != 0) {
     g_currentExceptionFrame = local_90.previous;
-    if (iVar2 == -0x5001fff7) {
+    if (local_EAX_96 == -0x5001fff7) {
       if (local_10 != nullptr) {
         DArrayDestroy(local_10);
       }
@@ -135,10 +222,10 @@ STAllPlayersC::FramePick
       SelfCheckObjControl(this);
       return;
     }
-    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdd1,0,iVar2,"%s",
-                               "STAllPlayersC::FramePick");
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdd1,0,local_EAX_96,
+                               "%s","STAllPlayersC::FramePick");
     if (iVar3 == 0) {
-      RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0xdd2);
+      RaiseInternalException(local_EAX_96,0,"E:\\__titans\\wlad\\to_allpl.cpp",0xdd2);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -149,20 +236,20 @@ STAllPlayersC::FramePick
                    (int *)&local_34,(int *)&local_2c,(int *)&local_20,(int *)&local_28,
                    (int *)&local_30,(int *)&local_38);
   if (local_10->count != 0) {
-    iVar2 = (int)playerId;
-    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
-      iVar3 = g_packedRecords_A62x8[iVar2].field96_0x163;
-      if (iVar3 == 0) {
+    iVar4 = (int)playerId;
+    if (g_packedRecords_A62x8[iVar4].field200_0x203 == 0) {
+      iVar1 = g_packedRecords_A62x8[iVar4].field96_0x163;
+      if (iVar1 == 0) {
 LAB_00431886:
-        iVar3 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
-        if (iVar3 < 1) goto cf_error_exit_004318A9;
-        ActivateTV(this,playerId,0,iVar3);
+        local_EAX_943 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
+        if (local_EAX_943 < 1) goto cf_error_exit_004318A9;
+        ActivateTV(this,playerId,0,local_EAX_943);
 LAB_004318b5:
-        g_packedRecords_A62x8[iVar2].field96_0x163 = 0x3c;
+        g_packedRecords_A62x8[iVar4].field96_0x163 = 0x3c;
       }
-      else if (iVar3 == 0x3c) {
+      else if (iVar1 == 0x3c) {
         if (param_6 == 1) {
-          if (*(int *)&g_packedRecords_A62x8[iVar2].field97_0x167 == iVar2) {
+          if (*(int *)&g_packedRecords_A62x8[iVar4].field97_0x167 == iVar4) {
             CalibrateTmp(this,playerId,0,0,&local_10->flags,nullptr,(int *)&local_44,
                          (int *)&local_48);
             ResetActivityFromObjs(this,param_1,0x3c,local_44,0,0);
@@ -173,11 +260,11 @@ LAB_004318b5:
           }
         }
         else {
-          iVar3 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
-          if (iVar3 < 1) {
-            if (iVar3 < 0) {
+          local_EAX_803 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
+          if (local_EAX_803 < 1) {
+            if (local_EAX_803 < 0) {
               PushTV(playerId,0);
-              if (g_packedRecords_A62x8[iVar2].field105_0x177 == (int)playerId) {
+              if (g_packedRecords_A62x8[iVar4].field105_0x177 == (int)playerId) {
                 CalibrateTmp(this,playerId,0,1,&local_10->flags,(int *)&local_24,nullptr,
                              nullptr);
                 ResetActivityFromObjs(this,param_1,0x3c,local_24,0,0);
@@ -190,19 +277,19 @@ LAB_004318b5:
             }
           }
           else {
-            ActivateTV(this,playerId,0,iVar3);
+            ActivateTV(this,playerId,0,local_EAX_803);
           }
         }
       }
-      else if (iVar3 == 0x1ae) {
+      else if (iVar1 == 0x1ae) {
         if (param_6 != 1) {
-          iVar3 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
-          if (iVar3 < 1) {
+          local_EAX_620 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
+          if (local_EAX_620 < 1) {
             PushTV(playerId,0);
             ResetActivityFromTmp(this,playerId,0,1,0);
             goto cf_error_exit_004318A9;
           }
-          ActivateTV(this,playerId,0,iVar3);
+          ActivateTV(this,playerId,0,local_EAX_620);
         }
       }
       else {
@@ -213,43 +300,45 @@ LAB_004318b5:
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
+    else if (g_packedRecords_A62x8[iVar4].field200_0x203 == 1) {
       if (param_6 != 1) {
-        g_packedRecords_A62x8[iVar2].field200_0x203 = 0;
+        g_packedRecords_A62x8[iVar4].field200_0x203 = 0;
         ResetActivityFromTmp(this,playerId,1,0,0);
-        iVar3 = g_packedRecords_A62x8[iVar2].field96_0x163;
-        if (iVar3 == 0) goto LAB_00431886;
-        if (iVar3 == 0x3c) {
-          iVar3 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
-          if (iVar3 < 0) {
+        iVar1 = g_packedRecords_A62x8[iVar4].field96_0x163;
+        if (iVar1 == 0) goto LAB_00431886;
+        if (iVar1 == 0x3c) {
+          local_EAX_468 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
+          if (local_EAX_468 < 0) {
             PushTV(playerId,0);
 cf_error_exit_004318A9:
             AddObjsToTmp(this,param_1,0,0,local_10);
             goto LAB_004318b5;
           }
-          ActivateTV(this,playerId,0,iVar3);
+          ActivateTV(this,playerId,0,local_EAX_468);
         }
-        else if (iVar3 == 0x1ae) {
-          iVar3 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
-          if (iVar3 < 1) {
+        else if (iVar1 == 0x1ae) {
+          local_EAX_410 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
+          if (local_EAX_410 < 1) {
             PushTV(playerId,0);
             goto cf_error_exit_004318A9;
           }
-          ActivateTV(this,playerId,0,iVar3);
+          ActivateTV(this,playerId,0,local_EAX_410);
         }
         else {
-          iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa88,0,0,
-                                     "%s","STAllPlayersC::FramePick GAMETYPE_BOAT ACT_RIGHT");
-          if (iVar2 != 0) {
+          local_EAX_374 =
+               ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa88,0,0,"%s",
+                                  "STAllPlayersC::FramePick GAMETYPE_BOAT ACT_RIGHT");
+          if (local_EAX_374 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa8c,0,0,"%s",
-                                 "STAllPlayersC::FramePick GAMETYPE_BOAT wrong panel number");
-      if (iVar2 != 0) {
+      local_EAX_268 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa8c,0,0,"%s",
+                              "STAllPlayersC::FramePick GAMETYPE_BOAT wrong panel number");
+      if (local_EAX_268 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
@@ -266,103 +355,111 @@ cf_error_exit_004318A9:
     DArrayGetElement(local_34,0,&local_8);
     local_34->count = 0;
     Library::DKW::TBL::DArrayAppend(local_34,&local_8);
-    pSVar4 = GetObjPtr(this,'\0',(ushort)local_8,CASE_3);
-    if (pSVar4 == nullptr) {
+    pSVar5 = GetObjPtr(this,'\0',(ushort)local_8,CASE_3);
+    if (pSVar5 == nullptr) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xa95);
     }
-    iVar2 = (int)playerId;
+    iVar4 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field96_0x163;
-      sVar8 = (short)local_8;
-      if (iVar2 == 0) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
+    local_4c = iVar4 * 0xa62;
+    if (g_packedRecords_A62x8[iVar4].field200_0x203 == 0) {
+      iVar4 = g_packedRecords_A62x8[iVar4].field96_0x163;
+      sVar9 = (short)local_8;
+      if (iVar4 == 0) {
+        local_EAX_1725 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_1725 < 1) {
 cf_error_exit_00431A49:
-          AddObjToTmp2(this,playerId,0,0,pSVar4->field_0020,
-                       STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(*(undefined1 *)&pSVar4->field_0024)),local_8
-                      );
+          AddObjToTmp2(this,playerId,0,0,pSVar5->field_0020,
+                       STReplaceLowByte((uint32_t)(local_EAX_1725), (uint8_t)(*(undefined1 *)&pSVar5->field_0024)),local_8);
         }
         else {
-          ActivateTV(this,playerId,0,iVar2);
+          ActivateTV(this,playerId,0,local_EAX_1725);
         }
       }
-      else if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
+      else if (iVar4 == 0x3c) {
+        local_EAX_1928 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_1928 < 1) {
 LAB_00431c38:
           PushTV(playerId,0);
           ResetActivityFromTmp(this,playerId,0,1,0);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          iVar2 = extraout_EAX_00;
+          local_EAX_1725 = extraout_EAX_00;
           goto cf_error_exit_00431A49;
         }
-        ActivateTV(this,playerId,0,iVar2);
+        ActivateTV(this,playerId,0,local_EAX_1928);
       }
-      else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
-          if (iVar2 < 0) goto LAB_00431c38;
+      else if (iVar4 == 0x1ae) {
+        local_EAX_1849 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_1849 < 1) {
+          if (local_EAX_1849 < 0) goto LAB_00431c38;
         }
         else {
-          ActivateTV(this,playerId,0,iVar2);
+          ActivateTV(this,playerId,0,local_EAX_1849);
         }
       }
       else {
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xaba,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_MINESET ACT_LEFT");
-        if (iVar2 != 0) {
+        local_EAX_1808 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xaba,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_MINESET ACT_LEFT");
+        if (local_EAX_1808 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
-      g_packedRecords_A62x8[iVar2].field200_0x203 = 0;
+    else if (g_packedRecords_A62x8[iVar4].field200_0x203 == 1) {
+      g_packedRecords_A62x8[iVar4].field200_0x203 = 0;
       ResetActivityFromTmp(this,playerId,1,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field96_0x163 + local_4c);
-      sVar8 = (short)local_8;
-      if (iVar2 == 0) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) goto cf_error_exit_00431A49;
-        ActivateTV(this,playerId,0,iVar2);
+      iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field96_0x163 + local_4c);
+      sVar9 = (short)local_8;
+      if (iVar4 == 0) {
+        local_EAX_1725 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_1725 < 1) goto cf_error_exit_00431A49;
+        ActivateTV(this,playerId,0,local_EAX_1725);
       }
-      else if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
+      else if (iVar4 == 0x3c) {
+        local_EAX_1677 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_1677 < 1) {
 LAB_00431a3f:
           PushTV(playerId,0);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          iVar2 = extraout_EAX;
+          local_EAX_1725 = extraout_EAX;
           goto cf_error_exit_00431A49;
         }
-        ActivateTV(this,playerId,0,iVar2);
+        ActivateTV(this,playerId,0,local_EAX_1677);
       }
-      else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 0) goto LAB_00431a3f;
-        ActivateTV(this,playerId,0,iVar2);
+      else if (iVar4 == 0x1ae) {
+        local_EAX_1353 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_1353 < 0) goto LAB_00431a3f;
+        ActivateTV(this,playerId,0,local_EAX_1353);
       }
       else {
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xade,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_MINESET ACT_RIGHT");
-        if (iVar2 != 0) {
+        local_EAX_1319 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xade,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_MINESET ACT_RIGHT");
+        if (local_EAX_1319 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xae2,0,0,"%s",
-                                 "STAllPlayersC::FramePick GAMETYPE_MINESET wrong panel number");
-      if (iVar2 != 0) {
+      local_EAX_1213 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xae2,0,0,"%s",
+                              "STAllPlayersC::FramePick GAMETYPE_MINESET wrong panel number");
+      if (local_EAX_1213 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
@@ -379,125 +476,134 @@ LAB_00431a3f:
     DArrayGetElement(local_28,0,&local_8);
     local_28->count = 0;
     Library::DKW::TBL::DArrayAppend(local_28,&local_8);
-    pSVar4 = GetObjPtr(this,-1,(ushort)local_8,CASE_2);
-    if (pSVar4 == nullptr) {
+    pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_2);
+    if (pSVar5 == nullptr) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xaeb);
     }
-    iVar2 = (int)playerId;
+    iVar4 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
-      g_packedRecords_A62x8[iVar2].field200_0x203 = 1;
+    local_4c = iVar4 * 0xa62;
+    if (g_packedRecords_A62x8[iVar4].field200_0x203 == 0) {
+      g_packedRecords_A62x8[iVar4].field200_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
-      sVar8 = (short)local_8;
-      if (iVar2 < 0x19b) {
-        if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
-          if (iVar2 < 1) goto LAB_00431ec7;
-          ActivateTV(this,playerId,1,iVar2);
+      iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
+      sVar9 = (short)local_8;
+      if (iVar4 < 0x19b) {
+        if (iVar4 == 0x19a) {
+          local_EAX_2421 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
+          if (local_EAX_2421 < 1) goto LAB_00431ec7;
+          ActivateTV(this,playerId,1,local_EAX_2421);
         }
         else {
-          if (iVar2 != 0) {
-            if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00431e9e;
+          if (iVar4 != 0) {
+            if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00431e9e;
             goto LAB_00431e77;
           }
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
+          local_EAX_2373 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar6 = extraout_ECX;
-          if (iVar2 < 1) goto LAB_00431ed1;
-          ActivateTV(this,playerId,1,iVar2);
+          uVar7 = extraout_ECX;
+          if (local_EAX_2373 < 1) goto LAB_00431ed1;
+          ActivateTV(this,playerId,1,local_EAX_2373);
         }
       }
-      else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
+      else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00431e9e:
-        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 0) {
+        local_EAX_2513 =
+             CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_2513 < 0) {
 LAB_00431ec7:
           PushTV(playerId,1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar6 = extraout_ECX_00;
+          uVar7 = extraout_ECX_00;
 LAB_00431ed1:
-          uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
-          uVar7 = pSVar4->field_0020;
+          uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
+          uVar8 = pSVar5->field_0020;
 LAB_00431edd:
-          AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
+          AddObjToTmp2(this,playerId,1,0,uVar8,uVar6,local_8);
         }
         else {
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_2513);
         }
       }
       else {
 LAB_00431e77:
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb3a,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_ARTEFACT ACT_LEFT");
-        if (iVar2 != 0) {
+        local_EAX_2479 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb3a,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_ARTEFACT ACT_LEFT");
+        if (local_EAX_2479 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field149_0x1b3;
-      sVar8 = (short)local_8;
-      if (iVar2 < 0x19b) {
-        if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
-          if (iVar2 < 1) {
+    else if (g_packedRecords_A62x8[iVar4].field200_0x203 == 1) {
+      iVar4 = g_packedRecords_A62x8[iVar4].field149_0x1b3;
+      sVar9 = (short)local_8;
+      if (iVar4 < 0x19b) {
+        if (iVar4 == 0x19a) {
+          local_EAX_2109 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
+          if (local_EAX_2109 < 1) {
 LAB_00431da2:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-            uVar6 = extraout_EDX_00;
+            uVar7 = extraout_EDX_00;
 LAB_00431dba:
-            uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
-            uVar7 = pSVar4->field_0020;
+            uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
+            uVar8 = pSVar5->field_0020;
             goto LAB_00431edd;
           }
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_2109);
         }
         else {
-          if (iVar2 != 0) {
-            if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00431d70;
+          if (iVar4 != 0) {
+            if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00431d70;
             goto LAB_00431d42;
           }
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
+          local_EAX_2061 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar6 = extraout_EDX;
-          if (iVar2 < 1) goto LAB_00431dba;
-          ActivateTV(this,playerId,1,iVar2);
+          uVar7 = extraout_EDX;
+          if (local_EAX_2061 < 1) goto LAB_00431dba;
+          ActivateTV(this,playerId,1,local_EAX_2061);
         }
       }
-      else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
+      else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00431d70:
-        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
-          if (iVar2 < 0) goto LAB_00431da2;
+        local_EAX_2211 =
+             CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_2211 < 1) {
+          if (local_EAX_2211 < 0) goto LAB_00431da2;
         }
         else {
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_2211);
         }
       }
       else {
 LAB_00431d42:
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb13,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_ARTEFACT ACT_RIGHT");
-        if (iVar2 != 0) {
+        local_EAX_2170 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb13,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_ARTEFACT ACT_RIGHT");
+        if (local_EAX_2170 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb3e,0,0,"%s",
-                                 "STAllPlayersC::FramePick GAMETYPE_ARTEFACT wrong panel number");
-      if (iVar2 != 0) {
+      local_EAX_1636 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb3e,0,0,"%s",
+                              "STAllPlayersC::FramePick GAMETYPE_ARTEFACT wrong panel number");
+      if (local_EAX_1636 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
@@ -514,123 +620,132 @@ LAB_00431d42:
     DArrayGetElement(local_30,0,&local_8);
     local_30->count = 0;
     Library::DKW::TBL::DArrayAppend(local_30,&local_8);
-    pSVar4 = GetObjPtr(this,-1,(ushort)local_8,CASE_5);
-    if (pSVar4 == nullptr) {
+    pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_5);
+    if (pSVar5 == nullptr) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xb47);
     }
-    iVar2 = (int)playerId;
+    iVar4 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
-      g_packedRecords_A62x8[iVar2].field200_0x203 = 1;
+    local_4c = iVar4 * 0xa62;
+    if (g_packedRecords_A62x8[iVar4].field200_0x203 == 0) {
+      g_packedRecords_A62x8[iVar4].field200_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
-      sVar8 = (short)local_8;
-      if (iVar2 < 0x19b) {
-        if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
-          if (iVar2 < 1) goto LAB_004321f3;
-          ActivateTV(this,playerId,1,iVar2);
+      iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
+      sVar9 = (short)local_8;
+      if (iVar4 < 0x19b) {
+        if (iVar4 == 0x19a) {
+          local_EAX_3233 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
+          if (local_EAX_3233 < 1) goto LAB_004321f3;
+          ActivateTV(this,playerId,1,local_EAX_3233);
         }
         else {
-          if (iVar2 != 0) {
-            if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_004321ca;
+          if (iVar4 != 0) {
+            if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_004321ca;
             goto LAB_004321a3;
           }
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
-          if (iVar2 < 1) goto LAB_004321fd;
-          ActivateTV(this,playerId,1,iVar2);
+          local_EAX_3185 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
+          if (local_EAX_3185 < 1) goto LAB_004321fd;
+          ActivateTV(this,playerId,1,local_EAX_3185);
         }
       }
-      else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
+      else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_004321ca:
-        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 0) {
+        local_EAX_3325 =
+             CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_3325 < 0) {
 LAB_004321f3:
           PushTV(playerId,1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          iVar2 = extraout_EAX_01;
+          local_EAX_3185 = extraout_EAX_01;
 LAB_004321fd:
-          uVar5 = STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
-          uVar7 = pSVar4->field_0020;
+          uVar6 = STReplaceLowByte((uint32_t)(local_EAX_3185), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
+          uVar8 = pSVar5->field_0020;
 LAB_00432209:
-          AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
+          AddObjToTmp2(this,playerId,1,0,uVar8,uVar6,local_8);
         }
         else {
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_3325);
         }
       }
       else {
 LAB_004321a3:
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb96,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_CONTAINER ACT_LEFT");
-        if (iVar2 != 0) {
+        local_EAX_3291 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb96,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_CONTAINER ACT_LEFT");
+        if (local_EAX_3291 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field149_0x1b3;
-      sVar8 = (short)local_8;
-      if (iVar2 < 0x19b) {
-        if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
-          if (iVar2 < 1) {
+    else if (g_packedRecords_A62x8[iVar4].field200_0x203 == 1) {
+      iVar4 = g_packedRecords_A62x8[iVar4].field149_0x1b3;
+      sVar9 = (short)local_8;
+      if (iVar4 < 0x19b) {
+        if (iVar4 == 0x19a) {
+          local_EAX_2921 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
+          if (local_EAX_2921 < 1) {
 LAB_004320ce:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-            uVar6 = extraout_ECX_02;
+            uVar7 = extraout_ECX_02;
 LAB_004320e6:
-            uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
-            uVar7 = pSVar4->field_0020;
+            uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
+            uVar8 = pSVar5->field_0020;
             goto LAB_00432209;
           }
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_2921);
         }
         else {
-          if (iVar2 != 0) {
-            if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_0043209c;
+          if (iVar4 != 0) {
+            if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_0043209c;
             goto LAB_0043206e;
           }
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
+          local_EAX_2873 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar6 = extraout_ECX_01;
-          if (iVar2 < 1) goto LAB_004320e6;
-          ActivateTV(this,playerId,1,iVar2);
+          uVar7 = extraout_ECX_01;
+          if (local_EAX_2873 < 1) goto LAB_004320e6;
+          ActivateTV(this,playerId,1,local_EAX_2873);
         }
       }
-      else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
+      else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_0043209c:
-        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
-          if (iVar2 < 0) goto LAB_004320ce;
+        local_EAX_3023 =
+             CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_3023 < 1) {
+          if (local_EAX_3023 < 0) goto LAB_004320ce;
         }
         else {
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_3023);
         }
       }
       else {
 LAB_0043206e:
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb6f,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_CONTAINER ACT_RIGHT");
-        if (iVar2 != 0) {
+        local_EAX_2982 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb6f,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_CONTAINER ACT_RIGHT");
+        if (local_EAX_2982 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb9a,0,0,"%s",
-                                 "STAllPlayersC::FramePick GAMETYPE_CONTAINER wrong panel number");
-      if (iVar2 != 0) {
+      local_EAX_2791 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb9a,0,0,"%s",
+                              "STAllPlayersC::FramePick GAMETYPE_CONTAINER wrong panel number");
+      if (local_EAX_2791 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
@@ -650,12 +765,12 @@ LAB_0043206e:
     if (g_packedRecords_A62x8[playerId].field200_0x203 == 0) {
       g_packedRecords_A62x8[playerId].field200_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
-      iVar2 = g_packedRecords_A62x8[playerId].field149_0x1b3;
-      if (iVar2 < 0x19b) {
-        if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
-          if (-1 < iVar2) {
-            ActivateTV(this,playerId,1,iVar2);
+      iVar4 = g_packedRecords_A62x8[playerId].field149_0x1b3;
+      if (iVar4 < 0x19b) {
+        if (iVar4 == 0x19a) {
+          local_EAX_4090 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
+          if (-1 < local_EAX_4090) {
+            ActivateTV(this,playerId,1,local_EAX_4090);
             goto LAB_00432582;
           }
           PushTV(playerId,1);
@@ -663,42 +778,43 @@ cf_error_exit_0043256B:
           AddObjToTmp(this,playerId,1,0,playerId,local_8);
         }
         else {
-          if (iVar2 != 0) {
-            if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00432536;
+          if (iVar4 != 0) {
+            if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00432536;
             goto LAB_0043250f;
           }
-          iVar2 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
-          if (iVar2 < 1) goto cf_error_exit_0043256B;
-          ActivateTV(this,playerId,1,iVar2);
+          local_EAX_4039 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
+          if (local_EAX_4039 < 1) goto cf_error_exit_0043256B;
+          ActivateTV(this,playerId,1,local_EAX_4039);
         }
 LAB_00432578:
         g_packedRecords_A62x8[playerId].field149_0x1b3 = 0x19a;
       }
-      else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
+      else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00432536:
-        iVar2 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
-        if (iVar2 < 1) {
+        local_EAX_4199 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
+        if (local_EAX_4199 < 1) {
           PushTV(playerId,1);
           goto cf_error_exit_0043256B;
         }
-        ActivateTV(this,playerId,1,iVar2);
+        ActivateTV(this,playerId,1,local_EAX_4199);
       }
       else {
 LAB_0043250f:
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbfb,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_OBJECT ACT_LEFT");
-        if (iVar2 != 0) {
+        local_EAX_4167 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbfb,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_OBJECT ACT_LEFT");
+        if (local_EAX_4167 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else if (g_packedRecords_A62x8[playerId].field200_0x203 == 1) {
-      iVar2 = g_packedRecords_A62x8[playerId].field149_0x1b3;
-      if (iVar2 < 0x19b) {
-        if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
-          if (iVar2 < 1) {
-            if (iVar2 < 0) {
+      iVar4 = g_packedRecords_A62x8[playerId].field149_0x1b3;
+      if (iVar4 < 0x19b) {
+        if (iVar4 == 0x19a) {
+          local_EAX_3686 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
+          if (local_EAX_3686 < 1) {
+            if (local_EAX_3686 < 0) {
               PushTV(playerId,1);
               if (g_packedRecords_A62x8[playerId].field158_0x1c7 == (int)playerId) {
                 CalibrateTmp(this,playerId,1,1,&local_14->flags,(int *)&local_24,nullptr,
@@ -713,43 +829,45 @@ LAB_0043250f:
             }
           }
           else {
-            ActivateTV(this,playerId,1,iVar2);
+            ActivateTV(this,playerId,1,local_EAX_3686);
           }
         }
         else {
-          if (iVar2 == 0) {
-            iVar2 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
-            if (0 < iVar2) {
-              ActivateTV(this,playerId,1,iVar2);
+          if (iVar4 == 0) {
+            local_EAX_3640 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
+            if (0 < local_EAX_3640) {
+              ActivateTV(this,playerId,1,local_EAX_3640);
               goto LAB_00432578;
             }
             goto cf_error_exit_0043256B;
           }
-          if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_0043240a;
+          if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_0043240a;
 LAB_004323dc:
-          iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbd1,0,0,
-                                     "%s","STAllPlayersC::FramePick GAMETYPE_OBJECT ACT_RIGHT");
-          if (iVar2 != 0) {
+          local_EAX_3860 =
+               ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbd1,0,0,"%s",
+                                  "STAllPlayersC::FramePick GAMETYPE_OBJECT ACT_RIGHT");
+          if (local_EAX_3860 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
         }
       }
       else {
-        if ((iVar2 != 0x1a4) && (iVar2 != 0x1b8)) goto LAB_004323dc;
+        if ((iVar4 != 0x1a4) && (iVar4 != 0x1b8)) goto LAB_004323dc;
 LAB_0043240a:
-        iVar2 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
-        if (iVar2 < 1) {
+        local_EAX_3899 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
+        if (local_EAX_3899 < 1) {
           PushTV(playerId,1);
           ResetActivityFromTmp(this,playerId,1,1,0);
           goto cf_error_exit_0043256B;
         }
-        ActivateTV(this,playerId,1,iVar2);
+        ActivateTV(this,playerId,1,local_EAX_3899);
       }
     }
     else {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbff,0,0,"%s",
-                                 "STAllPlayersC::FramePick GAMETYPE_OBJECT wrong panel number");
-      if (iVar2 != 0) {
+      local_EAX_3553 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbff,0,0,"%s",
+                              "STAllPlayersC::FramePick GAMETYPE_OBJECT wrong panel number");
+      if (local_EAX_3553 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
@@ -767,125 +885,134 @@ LAB_00432582:
     DArrayGetElement(local_20,0,&local_8);
     local_20->count = 0;
     Library::DKW::TBL::DArrayAppend(local_20,&local_8);
-    pSVar4 = GetObjPtr(this,-1,(ushort)local_8,CASE_4);
-    if (pSVar4 == nullptr) {
+    pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_4);
+    if (pSVar5 == nullptr) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xc08);
     }
-    iVar2 = (int)playerId;
+    iVar4 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
-      g_packedRecords_A62x8[iVar2].field200_0x203 = 1;
+    local_4c = iVar4 * 0xa62;
+    if (g_packedRecords_A62x8[iVar4].field200_0x203 == 0) {
+      g_packedRecords_A62x8[iVar4].field200_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
-      sVar8 = (short)local_8;
-      if (iVar2 < 0x19b) {
-        if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
-          if (iVar2 < 1) goto LAB_0043288b;
-          ActivateTV(this,playerId,1,iVar2);
+      iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
+      sVar9 = (short)local_8;
+      if (iVar4 < 0x19b) {
+        if (iVar4 == 0x19a) {
+          local_EAX_4921 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
+          if (local_EAX_4921 < 1) goto LAB_0043288b;
+          ActivateTV(this,playerId,1,local_EAX_4921);
         }
         else {
-          if (iVar2 != 0) {
-            if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00432862;
+          if (iVar4 != 0) {
+            if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00432862;
             goto LAB_0043283b;
           }
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
+          local_EAX_4873 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar6 = extraout_ECX_03;
-          if (iVar2 < 1) goto LAB_00432895;
-          ActivateTV(this,playerId,1,iVar2);
+          uVar7 = extraout_ECX_03;
+          if (local_EAX_4873 < 1) goto LAB_00432895;
+          ActivateTV(this,playerId,1,local_EAX_4873);
         }
       }
-      else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
+      else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00432862:
-        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 0) {
+        local_EAX_5013 =
+             CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_5013 < 0) {
 LAB_0043288b:
           PushTV(playerId,1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar6 = extraout_ECX_04;
+          uVar7 = extraout_ECX_04;
 LAB_00432895:
-          uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
-          uVar7 = pSVar4->field_0020;
+          uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
+          uVar8 = pSVar5->field_0020;
 LAB_004328a1:
-          AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
+          AddObjToTmp2(this,playerId,1,0,uVar8,uVar6,local_8);
         }
         else {
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_5013);
         }
       }
       else {
 LAB_0043283b:
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc57,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_RESOURCE ACT_LEFT");
-        if (iVar2 != 0) {
+        local_EAX_4979 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc57,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_RESOURCE ACT_LEFT");
+        if (local_EAX_4979 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field149_0x1b3;
-      sVar8 = (short)local_8;
-      if (iVar2 < 0x19b) {
-        if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
-          if (iVar2 < 1) {
+    else if (g_packedRecords_A62x8[iVar4].field200_0x203 == 1) {
+      iVar4 = g_packedRecords_A62x8[iVar4].field149_0x1b3;
+      sVar9 = (short)local_8;
+      if (iVar4 < 0x19b) {
+        if (iVar4 == 0x19a) {
+          local_EAX_4609 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
+          if (local_EAX_4609 < 1) {
 LAB_00432766:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-            uVar6 = extraout_EDX_02;
+            uVar7 = extraout_EDX_02;
 LAB_0043277e:
-            uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
-            uVar7 = pSVar4->field_0020;
+            uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
+            uVar8 = pSVar5->field_0020;
             goto LAB_004328a1;
           }
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_4609);
         }
         else {
-          if (iVar2 != 0) {
-            if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00432734;
+          if (iVar4 != 0) {
+            if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00432734;
             goto LAB_00432706;
           }
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
+          local_EAX_4561 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar6 = extraout_EDX_01;
-          if (iVar2 < 1) goto LAB_0043277e;
-          ActivateTV(this,playerId,1,iVar2);
+          uVar7 = extraout_EDX_01;
+          if (local_EAX_4561 < 1) goto LAB_0043277e;
+          ActivateTV(this,playerId,1,local_EAX_4561);
         }
       }
-      else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
+      else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00432734:
-        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
-          if (iVar2 < 0) goto LAB_00432766;
+        local_EAX_4711 =
+             CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_4711 < 1) {
+          if (local_EAX_4711 < 0) goto LAB_00432766;
         }
         else {
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_4711);
         }
       }
       else {
 LAB_00432706:
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc30,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_RESOURCE ACT_RIGHT");
-        if (iVar2 != 0) {
+        local_EAX_4670 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc30,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_RESOURCE ACT_RIGHT");
+        if (local_EAX_4670 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc5b,0,0,"%s",
-                                 "STAllPlayersC::FramePick GAMETYPE_RESOURCE wrong panel number");
-      if (iVar2 != 0) {
+      local_EAX_4479 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc5b,0,0,"%s",
+                              "STAllPlayersC::FramePick GAMETYPE_RESOURCE wrong panel number");
+      if (local_EAX_4479 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
@@ -902,123 +1029,132 @@ LAB_00432706:
     DArrayGetElement(local_38,0,&local_8);
     local_38->count = 0;
     Library::DKW::TBL::DArrayAppend(local_38,&local_8);
-    pSVar4 = GetObjPtr(this,-1,(ushort)local_8,CASE_6);
-    if (pSVar4 == nullptr) {
+    pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_6);
+    if (pSVar5 == nullptr) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xc64);
     }
-    iVar2 = (int)playerId;
+    iVar4 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
-      g_packedRecords_A62x8[iVar2].field200_0x203 = 1;
+    local_4c = iVar4 * 0xa62;
+    if (g_packedRecords_A62x8[iVar4].field200_0x203 == 0) {
+      g_packedRecords_A62x8[iVar4].field200_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
-      sVar8 = (short)local_8;
-      if (iVar2 < 0x19b) {
-        if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
-          if (iVar2 < 1) goto LAB_00432bb7;
-          ActivateTV(this,playerId,1,iVar2);
+      iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
+      sVar9 = (short)local_8;
+      if (iVar4 < 0x19b) {
+        if (iVar4 == 0x19a) {
+          local_EAX_5733 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
+          if (local_EAX_5733 < 1) goto LAB_00432bb7;
+          ActivateTV(this,playerId,1,local_EAX_5733);
         }
         else {
-          if (iVar2 != 0) {
-            if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00432b8e;
+          if (iVar4 != 0) {
+            if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00432b8e;
             goto LAB_00432b67;
           }
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
-          if (iVar2 < 1) goto LAB_00432bc1;
-          ActivateTV(this,playerId,1,iVar2);
+          local_EAX_5685 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
+          if (local_EAX_5685 < 1) goto LAB_00432bc1;
+          ActivateTV(this,playerId,1,local_EAX_5685);
         }
       }
-      else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
+      else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00432b8e:
-        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 0) {
+        local_EAX_5825 =
+             CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_5825 < 0) {
 LAB_00432bb7:
           PushTV(playerId,1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          iVar2 = extraout_EAX_02;
+          local_EAX_5685 = extraout_EAX_02;
 LAB_00432bc1:
-          uVar5 = STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
-          uVar7 = pSVar4->field_0020;
+          uVar6 = STReplaceLowByte((uint32_t)(local_EAX_5685), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
+          uVar8 = pSVar5->field_0020;
 LAB_00432bcd:
-          AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
+          AddObjToTmp2(this,playerId,1,0,uVar8,uVar6,local_8);
         }
         else {
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_5825);
         }
       }
       else {
 LAB_00432b67:
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xcb3,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_BLOT ACT_LEFT");
-        if (iVar2 != 0) {
+        local_EAX_5791 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xcb3,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_BLOT ACT_LEFT");
+        if (local_EAX_5791 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field149_0x1b3;
-      sVar8 = (short)local_8;
-      if (iVar2 < 0x19b) {
-        if (iVar2 == 0x19a) {
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
-          if (iVar2 < 1) {
+    else if (g_packedRecords_A62x8[iVar4].field200_0x203 == 1) {
+      iVar4 = g_packedRecords_A62x8[iVar4].field149_0x1b3;
+      sVar9 = (short)local_8;
+      if (iVar4 < 0x19b) {
+        if (iVar4 == 0x19a) {
+          local_EAX_5421 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
+          if (local_EAX_5421 < 1) {
 LAB_00432a92:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-            uVar6 = extraout_ECX_06;
+            uVar7 = extraout_ECX_06;
 LAB_00432aaa:
-            uVar5 = STReplaceLowByte((uint32_t)(uVar6), (uint8_t)(*(undefined1 *)&pSVar4->field_0024));
-            uVar7 = pSVar4->field_0020;
+            uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
+            uVar8 = pSVar5->field_0020;
             goto LAB_00432bcd;
           }
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_5421);
         }
         else {
-          if (iVar2 != 0) {
-            if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00432a60;
+          if (iVar4 != 0) {
+            if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00432a60;
             goto LAB_00432a32;
           }
-          iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            nullptr,sVar8);
+          local_EAX_5373 =
+               CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                         sVar9);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar6 = extraout_ECX_05;
-          if (iVar2 < 1) goto LAB_00432aaa;
-          ActivateTV(this,playerId,1,iVar2);
+          uVar7 = extraout_ECX_05;
+          if (local_EAX_5373 < 1) goto LAB_00432aaa;
+          ActivateTV(this,playerId,1,local_EAX_5373);
         }
       }
-      else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
+      else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00432a60:
-        iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
-          if (iVar2 < 0) goto LAB_00432a92;
+        local_EAX_5523 =
+             CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_5523 < 1) {
+          if (local_EAX_5523 < 0) goto LAB_00432a92;
         }
         else {
-          ActivateTV(this,playerId,1,iVar2);
+          ActivateTV(this,playerId,1,local_EAX_5523);
         }
       }
       else {
 LAB_00432a32:
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc8c,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_BLOT ACT_RIGHT");
-        if (iVar2 != 0) {
+        local_EAX_5482 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc8c,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_BLOT ACT_RIGHT");
+        if (local_EAX_5482 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xcb7,0,0,"%s",
-                                 "STAllPlayersC::FramePick GAMETYPE_BLOT wrong panel number");
-      if (iVar2 != 0) {
+      local_EAX_5291 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xcb7,0,0,"%s",
+                              "STAllPlayersC::FramePick GAMETYPE_BLOT wrong panel number");
+      if (local_EAX_5291 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
@@ -1039,45 +1175,46 @@ LAB_00432a32:
     local_3c->count = 0;
     Library::DKW::TBL::DArrayAppend(local_3c,local_c);
     if (g_packedRecords_A62x8[playerId].field200_0x203 == 0) {
-      iVar2 = g_packedRecords_A62x8[playerId].field96_0x163;
-      if (iVar2 == 0) {
+      iVar4 = g_packedRecords_A62x8[playerId].field96_0x163;
+      if (iVar4 == 0) {
 LAB_00432e7f:
-        iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
-        if (iVar2 < 1) {
+        local_EAX_6576 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
+        if (local_EAX_6576 < 1) {
 cf_error_exit_00432EAE:
           AddObjToTmp(this,playerId,0,0,local_c[0],local_8);
         }
         else {
-          ActivateTV(this,playerId,0,iVar2);
+          ActivateTV(this,playerId,0,local_EAX_6576);
         }
         g_packedRecords_A62x8[playerId].field96_0x163 = 0x3c;
       }
-      else if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
-        if (iVar2 < 1) {
-          if (iVar2 < 0) {
+      else if (iVar4 == 0x3c) {
+        local_EAX_6501 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
+        if (local_EAX_6501 < 1) {
+          if (local_EAX_6501 < 0) {
             PushTV(playerId,0);
             ResetActivityFromTmp(this,playerId,0,1,0);
             goto cf_error_exit_00432EAE;
           }
         }
         else {
-          ActivateTV(this,playerId,0,iVar2);
+          ActivateTV(this,playerId,0,local_EAX_6501);
         }
       }
-      else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
-        if (iVar2 < 1) {
+      else if (iVar4 == 0x1ae) {
+        local_EAX_6425 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
+        if (local_EAX_6425 < 1) {
           PushTV(playerId,0);
           ResetActivityFromTmp(this,playerId,0,1,0);
           goto cf_error_exit_00432EAE;
         }
-        ActivateTV(this,playerId,0,iVar2);
+        ActivateTV(this,playerId,0,local_EAX_6425);
       }
       else {
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xce7,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) ACT_LEFT");
-        if (iVar2 != 0) {
+        local_EAX_6386 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xce7,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) ACT_LEFT");
+        if (local_EAX_6386 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
@@ -1085,36 +1222,38 @@ cf_error_exit_00432EAE:
     else if (g_packedRecords_A62x8[playerId].field200_0x203 == 1) {
       g_packedRecords_A62x8[playerId].field200_0x203 = 0;
       ResetActivityFromTmp(this,playerId,1,0,0);
-      iVar2 = g_packedRecords_A62x8[playerId].field96_0x163;
-      if (iVar2 == 0) goto LAB_00432e7f;
-      if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
-        if (iVar2 < 0) {
+      iVar4 = g_packedRecords_A62x8[playerId].field96_0x163;
+      if (iVar4 == 0) goto LAB_00432e7f;
+      if (iVar4 == 0x3c) {
+        local_EAX_6284 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
+        if (local_EAX_6284 < 0) {
           PushTV(playerId,0);
           goto cf_error_exit_00432EAE;
         }
-        ActivateTV(this,playerId,0,iVar2);
+        ActivateTV(this,playerId,0,local_EAX_6284);
       }
-      else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
-        if (iVar2 < 1) {
+      else if (iVar4 == 0x1ae) {
+        local_EAX_6219 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
+        if (local_EAX_6219 < 1) {
           PushTV(playerId,0);
           goto cf_error_exit_00432EAE;
         }
-        ActivateTV(this,playerId,0,iVar2);
+        ActivateTV(this,playerId,0,local_EAX_6219);
       }
       else {
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd0e,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) ACT_RIGHT");
-        if (iVar2 != 0) {
+        local_EAX_6180 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd0e,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) ACT_RIGHT");
+        if (local_EAX_6180 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd12,0,0,"%s",
-                                 "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) wrong panel number");
-      if (iVar2 != 0) {
+      local_EAX_6084 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd12,0,0,"%s",
+                              "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) wrong panel number");
+      if (local_EAX_6084 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
@@ -1131,107 +1270,115 @@ cf_error_exit_00432EAE:
     DArrayGetElement(local_2c,0,&local_8);
     local_2c->count = 0;
     Library::DKW::TBL::DArrayAppend(local_2c,&local_8);
-    pSVar4 = GetObjPtr(this,'\0',(ushort)local_8,CASE_3);
-    if (pSVar4 == nullptr) {
+    pSVar5 = GetObjPtr(this,'\0',(ushort)local_8,CASE_3);
+    if (pSVar5 == nullptr) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xd1b);
     }
-    iVar2 = (int)playerId;
+    iVar4 = (int)playerId;
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-    local_4c = iVar2 * 0xa62;
-    if (g_packedRecords_A62x8[iVar2].field200_0x203 == 0) {
-      iVar2 = g_packedRecords_A62x8[iVar2].field96_0x163;
-      sVar8 = (short)local_8;
-      if (iVar2 == 0) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
+    local_4c = iVar4 * 0xa62;
+    if (g_packedRecords_A62x8[iVar4].field200_0x203 == 0) {
+      iVar4 = g_packedRecords_A62x8[iVar4].field96_0x163;
+      sVar9 = (short)local_8;
+      if (iVar4 == 0) {
+        local_EAX_7344 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_7344 < 1) {
 cf_error_exit_00433050:
-          AddObjToTmp2(this,playerId,0,0,pSVar4->field_0020,
-                       STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(*(undefined1 *)&pSVar4->field_0024)),local_8
-                      );
+          AddObjToTmp2(this,playerId,0,0,pSVar5->field_0020,
+                       STReplaceLowByte((uint32_t)(local_EAX_7344), (uint8_t)(*(undefined1 *)&pSVar5->field_0024)),local_8);
         }
         else {
-          ActivateTV(this,playerId,0,iVar2);
+          ActivateTV(this,playerId,0,local_EAX_7344);
         }
       }
-      else if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
+      else if (iVar4 == 0x3c) {
+        local_EAX_7547 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_7547 < 1) {
 LAB_0043322b:
           PushTV(playerId,0);
           ResetActivityFromTmp(this,playerId,0,1,0);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          iVar2 = extraout_EAX_04;
+          local_EAX_7344 = extraout_EAX_04;
           goto cf_error_exit_00433050;
         }
-        ActivateTV(this,playerId,0,iVar2);
+        ActivateTV(this,playerId,0,local_EAX_7547);
       }
-      else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
-          if (iVar2 < 0) goto LAB_0043322b;
+      else if (iVar4 == 0x1ae) {
+        local_EAX_7468 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_7468 < 1) {
+          if (local_EAX_7468 < 0) goto LAB_0043322b;
         }
         else {
-          ActivateTV(this,playerId,0,iVar2);
+          ActivateTV(this,playerId,0,local_EAX_7468);
         }
       }
       else {
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd40,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) ACT_LEFT");
-        if (iVar2 != 0) {
+        local_EAX_7427 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd40,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) ACT_LEFT");
+        if (local_EAX_7427 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
-    else if (g_packedRecords_A62x8[iVar2].field200_0x203 == 1) {
-      g_packedRecords_A62x8[iVar2].field200_0x203 = 0;
+    else if (g_packedRecords_A62x8[iVar4].field200_0x203 == 1) {
+      g_packedRecords_A62x8[iVar4].field200_0x203 = 0;
       ResetActivityFromTmp(this,playerId,1,0,0);
-      iVar2 = *(int *)((int)&g_packedRecords_A62x8[0].field96_0x163 + local_4c);
-      sVar8 = (short)local_8;
-      if (iVar2 == 0) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) goto cf_error_exit_00433050;
-        ActivateTV(this,playerId,0,iVar2);
+      iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field96_0x163 + local_4c);
+      sVar9 = (short)local_8;
+      if (iVar4 == 0) {
+        local_EAX_7344 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_7344 < 1) goto cf_error_exit_00433050;
+        ActivateTV(this,playerId,0,local_EAX_7344);
       }
-      else if (iVar2 == 0x3c) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
+      else if (iVar4 == 0x3c) {
+        local_EAX_7296 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_7296 < 1) {
 LAB_00433046:
           PushTV(playerId,0);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          iVar2 = extraout_EAX_03;
+          local_EAX_7344 = extraout_EAX_03;
           goto cf_error_exit_00433050;
         }
-        ActivateTV(this,playerId,0,iVar2);
+        ActivateTV(this,playerId,0,local_EAX_7296);
       }
-      else if (iVar2 == 0x1ae) {
-        iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,nullptr
-                          ,sVar8);
-        if (iVar2 < 1) {
-          if (iVar2 < 0) goto LAB_00433046;
+      else if (iVar4 == 0x1ae) {
+        local_EAX_6990 =
+             CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
+                       sVar9);
+        if (local_EAX_6990 < 1) {
+          if (local_EAX_6990 < 0) goto LAB_00433046;
         }
         else {
-          ActivateTV(this,playerId,0,iVar2);
+          ActivateTV(this,playerId,0,local_EAX_6990);
         }
       }
       else {
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd66,0,0,"%s",
-                                   "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) ACT_RIGHT");
-        if (iVar2 != 0) {
+        local_EAX_6956 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd66,0,0,"%s",
+                                "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) ACT_RIGHT");
+        if (local_EAX_6956 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd6a,0,0,"%s",
-                                 "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) wrong panel number");
-      if (iVar2 != 0) {
+      local_EAX_6850 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd6a,0,0,"%s",
+                              "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) wrong panel number");
+      if (local_EAX_6850 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
@@ -1253,83 +1400,86 @@ LAB_00433046:
   Library::DKW::TBL::DArrayAppend(local_40,local_c);
   if (g_packedRecords_A62x8[playerId].field200_0x203 != 0) {
     if (g_packedRecords_A62x8[playerId].field200_0x203 != 1) {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdcb,0,0,"%s",
-                                 "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) wrong panel number");
-      if (iVar2 != 0) {
+      local_EAX_7255 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdcb,0,0,"%s",
+                              "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) wrong panel number");
+      if (local_EAX_7255 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       goto cf_error_exit_004334F5;
     }
-    iVar2 = g_packedRecords_A62x8[playerId].field149_0x1b3;
-    if (iVar2 < 0x19b) {
-      if (iVar2 == 0x19a) {
-        iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
-        if (0 < iVar2) {
-          ActivateTV(this,playerId,1,iVar2);
+    iVar4 = g_packedRecords_A62x8[playerId].field149_0x1b3;
+    if (iVar4 < 0x19b) {
+      if (iVar4 == 0x19a) {
+        local_EAX_7685 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
+        if (0 < local_EAX_7685) {
+          ActivateTV(this,playerId,1,local_EAX_7685);
           goto cf_error_exit_004334F5;
         }
-        if (-1 < iVar2) goto cf_error_exit_004334F5;
+        if (-1 < local_EAX_7685) goto cf_error_exit_004334F5;
         PushTV(playerId,1);
         ResetActivityFromTmp(this,playerId,1,1,0);
         goto cf_error_exit_004334DF;
       }
-      if (iVar2 == 0) goto LAB_004333f5;
-      if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_00433363;
+      if (iVar4 == 0) goto LAB_004333f5;
+      if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00433363;
     }
-    else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
+    else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00433363:
-      iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
-      if (0 < iVar2) {
-        ActivateTV(this,playerId,1,iVar2);
+      local_EAX_7831 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
+      if (0 < local_EAX_7831) {
+        ActivateTV(this,playerId,1,local_EAX_7831);
         goto cf_error_exit_004334F5;
       }
       PushTV(playerId,1);
       ResetActivityFromTmp(this,playerId,1,1,0);
       goto cf_error_exit_004334DF;
     }
-    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd9d,0,0,"%s",
-                               "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) ACT_RIGHT");
-    if (iVar2 != 0) {
+    local_EAX_7789 =
+         ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd9d,0,0,"%s",
+                            "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) ACT_RIGHT");
+    if (local_EAX_7789 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     goto cf_error_exit_004334F5;
   }
   g_packedRecords_A62x8[playerId].field200_0x203 = 1;
   ResetActivityFromTmp(this,playerId,0,0,0);
-  iVar2 = g_packedRecords_A62x8[playerId].field149_0x1b3;
-  if (iVar2 < 0x19b) {
-    if (iVar2 == 0x19a) {
-      iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
-      if (-1 < iVar2) {
-        ActivateTV(this,playerId,1,iVar2);
+  iVar4 = g_packedRecords_A62x8[playerId].field149_0x1b3;
+  if (iVar4 < 0x19b) {
+    if (iVar4 == 0x19a) {
+      local_EAX_8035 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
+      if (-1 < local_EAX_8035) {
+        ActivateTV(this,playerId,1,local_EAX_8035);
         goto cf_error_exit_004334F5;
       }
       PushTV(playerId,1);
       goto cf_error_exit_004334DF;
     }
-    if (iVar2 != 0) {
-      if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_004334a3;
+    if (iVar4 != 0) {
+      if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_004334a3;
       goto LAB_0043347c;
     }
 LAB_004333f5:
-    iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
-    if (iVar2 < 1) goto cf_error_exit_004334DF;
-    ActivateTV(this,playerId,1,iVar2);
+    local_EAX_7977 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
+    if (local_EAX_7977 < 1) goto cf_error_exit_004334DF;
+    ActivateTV(this,playerId,1,local_EAX_7977);
   }
   else {
-    if ((iVar2 != 0x1a4) && (iVar2 != 0x1b8)) {
+    if ((iVar4 != 0x1a4) && (iVar4 != 0x1b8)) {
 LAB_0043347c:
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdc7,0,0,"%s",
-                                 "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) ACT_LEFT");
-      if (iVar2 != 0) {
+      local_EAX_8116 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdc7,0,0,"%s",
+                              "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) ACT_LEFT");
+      if (local_EAX_8116 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       goto cf_error_exit_004334F5;
     }
 LAB_004334a3:
-    iVar2 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
-    if (0 < iVar2) {
-      ActivateTV(this,playerId,1,iVar2);
+    local_EAX_8151 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
+    if (0 < local_EAX_8151) {
+      ActivateTV(this,playerId,1,local_EAX_8151);
       goto cf_error_exit_004334F5;
     }
     PushTV(playerId,1);

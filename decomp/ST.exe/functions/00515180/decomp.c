@@ -12,34 +12,34 @@ void __thiscall HelpPanelTy::sub_00515180(HelpPanelTy *this,char param_1)
   if ((this->field_01A1 == param_1) || (param_1 == '\a')) {
     switch(param_1) {
     case '\x01':
-      RCProc(this,this->field_01A3,this->field_01A7,'\x01');
+      RCProc(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\x02':
-      ObjProc(this,this->field_01A3,this->field_01A7,'\x01');
+      ObjProc(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\x03':
-      SubProc(this,this->field_01A3,'\x01');
+      SubProc(this,(int)this->field_01A3,'\x01');
       return;
     case '\x04':
-      ArmProc(this,this->field_01A3,this->field_01A7,'\x01');
+      ArmProc(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\x05':
-      TechProc(this,this->field_01A3,*(byte *)&this->field_01A7,'\x01');
+      TechProc(this,(uint)this->field_01A3,*(byte *)&this->field_01A7,'\x01');
       return;
     case '\x06':
-      TTreeProc(this,this->field_01A3,'\x01');
+      TTreeProc(this,(uint)this->field_01A3,'\x01');
       return;
     case '\a':
       PrepMissObj(this);
       return;
     case '\b':
-      TipProc(this,(void *)this->field_01A3,this->field_01A7,'\x01');
+      TipProc(this,this->field_01A3,this->field_01A7,'\x01');
       break;
     case '\v':
-      SpecProc(this,this->field_01A3,this->field_01A7,'\x01');
+      SpecProc(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\f':
-      NatProc(this,this->field_01A3,'\x01');
+      NatProc(this,(int)this->field_01A3,'\x01');
       return;
     }
   }

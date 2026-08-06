@@ -25,6 +25,7 @@ SettMapMTy::ChangePlayerList
   char *pcVar10;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
+  char *pcVar9_mg0;
 
   if (this->field_1F84 != nullptr) {
     local_4c.previous = g_currentExceptionFrame;
@@ -62,15 +63,15 @@ SettMapMTy::ChangePlayerList
         }
         uVar6 = 0xffffffff;
         do {
-          pcVar9 = param_5;
+          pcVar9_mg0 = param_5;
           if (uVar6 == 0) break;
           uVar6 = uVar6 - 1;
-          pcVar9 = param_5 + 1;
+          pcVar9_mg0 = param_5 + 1;
           cVar1 = *param_5;
-          param_5 = pcVar9;
+          param_5 = pcVar9_mg0;
         } while (cVar1 != '\0');
         uVar6 = ~uVar6;
-        pcVar9 = pcVar9 + -uVar6;
+        pcVar9 = pcVar9_mg0 + -uVar6;
         pcVar10 = element_1f84 + 10;
         memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
         if (element_1f84->field_0004 == '\0') {

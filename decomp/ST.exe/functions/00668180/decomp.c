@@ -9,9 +9,6 @@
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0068DC80 -> 00668180 @ 0068DE36
 
-   [STPrototypeApplier] Propagated return.
-   Evidence: 00668180 returns stored into global 008489C4 @ 00685E0A
-
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0064E300 -> 00668180 @ 0064E399; FUN_0064e300 parameter param_3 | 00683C70 -> 00668180
    @ 00685E05; unproven partial register write at 00685DF5 | 0068DC80 -> 00668180 @ 0068DE36;
@@ -28,9 +25,12 @@
 
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 00683C70 -> 00668180 @ 00685E05; unproven partial register write at 00685DDF | 0068DC80
-   -> 00668180 @ 0068DE36; unproven partial register write at 0068DE21 */
+   -> 00668180 @ 0068DE36; unproven partial register write at 0068DE21
 
-AnonShape_GLOBAL_008489C4_F7BABFAC * __cdecl
+   [STPrototypeRepairApplier] Propagated return.
+   Evidence: 00668180 returns stored into global 008489C4 @ 00685E0A */
+
+AllocationRecord_006684E0 * __cdecl
 FUN_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte param_5)
 
 {
@@ -67,7 +67,7 @@ FUN_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte param_
       local_8->field_020F = pDVar1;
     }
     g_currentExceptionFrame = local_4c.previous;
-    return (AnonShape_GLOBAL_008489C4_F7BABFAC *)local_8;
+    return (AllocationRecord_006684E0 *)local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_006686c0((int *)&local_8);

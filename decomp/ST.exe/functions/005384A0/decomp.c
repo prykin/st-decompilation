@@ -15,8 +15,10 @@ int __thiscall PanelTy::GetMessage(PanelTy *this,STMessage *message)
   STMessageId SVar1;
   PanelTy *this_00;
   DWORD DVar3;
+  int local_EAX_47;
   int iVar4;
   int iVar5;
+  int iVar6;
   InternalExceptionFrame local_4c;
   PanelTy *local_8;
 
@@ -25,9 +27,9 @@ int __thiscall PanelTy::GetMessage(PanelTy *this,STMessage *message)
   this->field_0038 = DVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  local_EAX_47 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar4 == 0) {
+  if (local_EAX_47 == 0) {
     SVar1 = message->id;
     if (SVar1 == MESS_ID_CREATE) {
       InitPanel(local_8);
@@ -45,12 +47,12 @@ int __thiscall PanelTy::GetMessage(PanelTy *this,STMessage *message)
     return iVar4;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0x52,0,iVar4,"%s",
-                             "PanelTy::GetMessage");
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0x52,0,local_EAX_47,
+                             "%s","PanelTy::GetMessage");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\panel.cpp",0x52);
+  RaiseInternalException(local_EAX_47,0,"E:\\__titans\\Andrey\\panel.cpp",0x52);
   return 0xffff;
 }
 

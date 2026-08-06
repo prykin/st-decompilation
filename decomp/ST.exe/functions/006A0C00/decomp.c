@@ -13,7 +13,7 @@ void __fastcall FUN_006a0c00(int *param_1)
   cMf32::RecPut((cMf32 *)param_1[6],0xc,local_108,(byte *)*param_1,
                 *(int *)((byte *)*param_1 + 0x14) * 0x92 + 0xaa,nullptr,'\x01',nullptr
                );
-  FreeAndNull((void **)param_1);
+  FreeAndNull(param_1);
   return;
 }
 

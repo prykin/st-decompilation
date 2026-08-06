@@ -6,6 +6,7 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
 {
   char *resourceString;
   int iVar1;
+  int iVar2;
   InternalExceptionFrame local_60;
   undefined1 *local_1c;
   void *local_14;
@@ -34,8 +35,8 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
   iVar1 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0);
   if (iVar1 == 0) {
     local_1c = &stack0xffffff8c;
-    iVar1 = STAppC::InitApp((STAppC *)&DAT_00807620,param_1,param_2,param_3,param_4);
-    if (iVar1 != 1) {
+    iVar2 = STAppC::InitApp((STAppC *)&DAT_00807620,param_1,param_2,param_3,param_4);
+    if (iVar2 != 1) {
       ExceptionList = local_14;
       return 0;
     }

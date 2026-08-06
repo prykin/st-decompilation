@@ -93,7 +93,7 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
   ushort *puVar4;
   InternalExceptionFrame local_54;
   undefined4 local_10;
-  undefined **local_c;
+  char **local_c;
   AnonShape_005F35F0_EF2A6FDB *local_8;
 
   local_10 = 0;
@@ -176,10 +176,11 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
   AnonPointee_STBHEShellC_00F3 *pAVar3;
   int iVar4;
   int iVar5;
-  uint uVar6;
-  int iVar7;
-  longlong lVar8;
+  int iVar6;
+  uint uVar7;
+  int iVar8;
   longlong lVar9;
+  longlong lVar10;
   float local_20 [2];
   int local_18;
   float local_14;
@@ -193,17 +194,17 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
     this->field_00D1 = (short)this->field_0093;
     this->field_00D3 = (short)this->field_0097;
     this->field_00D5 = *(short *)&this->field_009B;
-    iVar4 = 900 - *(short *)&this->field_009B;
+    iVar6 = 900 - *(short *)&this->field_009B;
     this->field_00DF = 0x14;
     this->field_00E7 = 1;
-    this->field_00EF = iVar4;
+    this->field_00EF = iVar6;
     this->field_00FB = g_playSystem_00802A38->field_00E4;
-    if (0 < iVar4) {
+    if (0 < iVar6) {
       this->field_00C9 = 0;
       return 1;
     }
-    iVar4 = st::fn_0040473C(this,param_1,param_2,param_3,'\x01');
-    if (iVar4 != 0) {
+    iVar6 = st::fn_0040473C(this,param_1,param_2,param_3,'\x01');
+    if (iVar6 != 0) {
       this->field_00C9 = 1;
       this->field_0104 = CASE_1;
       local_8 = 1;
@@ -216,37 +217,37 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
     local_14 = (float)iVar4;
     if (iVar4 < 0x1f7) {
       this->field_00F7 = (this->field_00DF * this->field_00DF * 10000) / 0x1f6;
-      iVar5 = this->field_009B;
-      lVar8 = st::fn_0072E288();
-      uVar6 = (int)lVar8 + 1;
-      fVar2 = (float)(int)local_14 / (float)(int)(uVar6 * 2);
+      iVar6 = this->field_009B;
+      lVar9 = st::fn_0072E288();
+      uVar7 = (int)lVar9 + 1;
+      fVar2 = (float)(int)local_14 / (float)(int)(uVar7 * 2);
       local_14 = (fVar2 * fVar2) / (float)(int)local_14;
       dVar1 = (double)(fVar2 / local_14 + _DAT_00790784);
       st::fn_0072E150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-      lVar8 = st::fn_0072E288();
-      local_10 = (int)lVar8;
+      lVar9 = st::fn_0072E288();
+      local_10 = (int)lVar9;
       if (this->field_00EF != 0) {
         this->field_00D1 = (short)this->field_0093;
-        this->field_00FF = uVar6;
+        this->field_00FF = uVar7;
         this->field_00D3 = (short)this->field_0097;
         this->field_00D5 = *(short *)&this->field_009B;
         this->field_00E3 = this->field_00DF;
-        lVar8 = st::fn_0072E288();
-        this->field_00CD = (int)lVar8;
-        lVar8 = st::fn_0072E288();
+        lVar9 = st::fn_0072E288();
+        this->field_00CD = (int)lVar9;
+        lVar9 = st::fn_0072E288();
         local_18 = -this->field_00DF;
-        iVar5 = st::fn_00405B19((float)local_10,(float)(int)this->field_00DF,
-                                   (float)(0x4b0 - iVar5),(float)local_18,local_20);
-        if (iVar5 != 0) {
-          lVar9 = st::fn_0072E288();
-          this->field_00DF = (int)lVar9;
-          lVar9 = st::fn_0072E288();
-          this->field_00EB = (int)lVar9;
-          this->field_00D7 = ((param_1 - this->field_00D1) * (int)lVar8) / iVar4;
-          this->field_00DB = ((param_2 - this->field_00D3) * (int)lVar8) / iVar4;
-          uVar6 = g_playSystem_00802A38->field_00E4;
+        iVar6 = st::fn_00405B19((float)local_10,(float)(int)this->field_00DF,
+                                   (float)(0x4b0 - iVar6),(float)local_18,local_20);
+        if (iVar6 != 0) {
+          lVar10 = st::fn_0072E288();
+          this->field_00DF = (int)lVar10;
+          lVar10 = st::fn_0072E288();
+          this->field_00EB = (int)lVar10;
+          this->field_00D7 = ((param_1 - this->field_00D1) * (int)lVar9) / iVar4;
+          this->field_00DB = ((param_2 - this->field_00D3) * (int)lVar9) / iVar4;
+          uVar7 = g_playSystem_00802A38->field_00E4;
           this->field_00C9 = 1;
-          this->field_00FB = uVar6;
+          this->field_00FB = uVar7;
           this->field_00E7 = local_10;
           this->field_00F3 = (AnonPointee_STBHEShellC_00F3 *)(iVar4 / 2);
           return 1;
@@ -254,37 +255,37 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
       }
     }
     else {
-      iVar5 = this->field_00DF;
-      iVar4 = (iVar5 * iVar5 * 10000) / iVar4;
-      this->field_00F7 = iVar4;
-      if (iVar5 * iVar5 != 0) {
-        this->field_00E3 = iVar5;
+      iVar6 = this->field_00DF;
+      iVar5 = (iVar6 * iVar6 * 10000) / iVar4;
+      this->field_00F7 = iVar5;
+      if (iVar6 * iVar6 != 0) {
+        this->field_00E3 = iVar6;
         this->field_00D1 = (short)this->field_0093;
         this->field_00D3 = (short)this->field_0097;
         this->field_00D5 = *(short *)&this->field_009B;
-        uVar6 = (int)(0x1eab90 / (longlong)(iVar5 * 0x1b9f)) + 1;
-        iVar4 = iVar4 * uVar6;
-        this->field_00FF = uVar6;
-        local_c = iVar5 * 0x1b9f;
-        pAVar3 = (AnonPointee_STBHEShellC_00F3 *)((int)(local_c * uVar6) / 10000);
+        uVar7 = (int)(0x1eab90 / (longlong)(iVar6 * 0x1b9f)) + 1;
+        iVar5 = iVar5 * uVar7;
+        this->field_00FF = uVar7;
+        local_c = iVar6 * 0x1b9f;
+        pAVar3 = (AnonPointee_STBHEShellC_00F3 *)((int)(local_c * uVar7) / 10000);
         local_10 = ((local_c / 100) * (local_c / 100)) / ((int)pAVar3 * 2);
-        iVar7 = (int)((ulonglong)((longlong)iVar4 * -0x68db8bad) >> 0x20);
-        local_18 = (iVar7 >> 0xc) - (iVar7 >> 0x1f);
-        iVar4 = st::fn_00405B19((float)local_c / (float)local_10,(float)iVar5,
+        iVar8 = (int)((ulonglong)((longlong)iVar5 * -0x68db8bad) >> 0x20);
+        local_18 = (iVar8 >> 0xc) - (iVar8 >> 0x1f);
+        iVar6 = st::fn_00405B19((float)local_c / (float)local_10,(float)iVar6,
                                    (float)((int)pAVar3 +
                                           (-(int)*(short *)&this->field_009B -
-                                          (int)(iVar4 * uVar6) / 20000) + 0x44c),(float)local_18,
+                                          (int)(iVar5 * uVar7) / 20000) + 0x44c),(float)local_18,
                                    local_20);
-        if (iVar4 != 0) {
-          lVar8 = st::fn_0072E288();
-          this->field_00DF = (int)lVar8;
-          lVar8 = st::fn_0072E288();
-          this->field_00EB = (int)lVar8;
+        if (iVar6 != 0) {
+          lVar9 = st::fn_0072E288();
+          this->field_00DF = (int)lVar9;
+          lVar9 = st::fn_0072E288();
+          this->field_00EB = (int)lVar9;
           this->field_00D7 = ((param_1 - this->field_00D1) * local_10) / (int)local_14;
           this->field_00DB = ((param_2 - this->field_00D3) * local_10) / (int)local_14;
-          uVar6 = g_playSystem_00802A38->field_00E4;
+          uVar7 = g_playSystem_00802A38->field_00E4;
           this->field_00C9 = 1;
-          this->field_00FB = uVar6;
+          this->field_00FB = uVar7;
           this->field_00E7 = local_10;
           this->field_00F3 = pAVar3;
           return 1;
@@ -293,26 +294,26 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
     }
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  else if ((param_4 == '\x02') && (iVar4 = this->field_00EF, iVar4 != 0)) {
-    uVar6 = this->field_00FF;
+  else if ((param_4 == '\x02') && (iVar6 = this->field_00EF, iVar6 != 0)) {
+    uVar7 = this->field_00FF;
     this->field_00C9 = 2;
-    if (uVar6 < g_playSystem_00802A38->field_00E4) {
-      this->field_00FB = g_playSystem_00802A38->field_00E4 - uVar6;
-      if (0x1f6 < iVar4) {
+    if (uVar7 < g_playSystem_00802A38->field_00E4) {
+      this->field_00FB = g_playSystem_00802A38->field_00E4 - uVar7;
+      if (0x1f6 < iVar6) {
         this->field_00D5 = 0x44c;
         iVar5 = this->field_00E3 * 0x1b9f;
         this->field_00DF = iVar5;
         this->field_00E3 = iVar5;
-        this->field_00D7 = ((param_1 - this->field_00D1) * iVar5) / iVar4;
-        this->field_00DB = ((param_2 - this->field_00D3) * iVar5) / iVar4;
+        this->field_00D7 = ((param_1 - this->field_00D1) * iVar5) / iVar6;
+        this->field_00DB = ((param_2 - this->field_00D3) * iVar5) / iVar6;
         return 1;
       }
-      this->field_00DF = this->field_00F7 * uVar6;
+      this->field_00DF = this->field_00F7 * uVar7;
       iVar5 = this->field_00CD;
-      this->field_00D5 = 0x4b0 - (short)((this->field_00F7 * uVar6 * uVar6) / 20000);
+      this->field_00D5 = 0x4b0 - (short)((this->field_00F7 * uVar7 * uVar7) / 20000);
       this->field_00E3 = iVar5;
-      this->field_00D7 = ((param_1 - this->field_00D1) * iVar5) / iVar4;
-      this->field_00DB = ((param_2 - this->field_00D3) * iVar5) / iVar4;
+      this->field_00D7 = ((param_1 - this->field_00D1) * iVar5) / iVar6;
+      this->field_00DB = ((param_2 - this->field_00D3) * iVar5) / iVar6;
       return 1;
     }
   }
@@ -431,7 +432,7 @@ void __thiscall st::fn_005F4680(STBHEShellC *this)
           (st::fn_00403F53
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,iVar5,
                       &local_c,&local_10), -1 < local_8)) && ((local_8 < 5 && (-1 < local_c)))) &&
-        ((local_c < pVVar2->field_0030 &&
+        ((local_c < (int)pVVar2->field_0030 &&
          ((local_10 = g_centeredOffsets5[local_8] + local_10, -1 < local_10 &&
           (local_10 < pVVar2->field_0034)))))) &&
        ((pVVar2->field_004C != nullptr &&
@@ -618,10 +619,11 @@ int __thiscall st::fn_005F4FA0(STBHEShellC *this)
   int iVar3;
   bool bVar4;
   int iVar5;
-  short sVar6;
-  uint uVar7;
-  char *pcVar8;
-  longlong lVar9;
+  int iVar6;
+  short sVar7;
+  uint uVar8;
+  char *pcVar9;
+  longlong lVar10;
   int local_20;
   short local_18;
   short local_14;
@@ -630,110 +632,110 @@ int __thiscall st::fn_005F4FA0(STBHEShellC *this)
 
   local_c = 0;
   bVar4 = false;
-  iVar5 = 0;
+  iVar6 = 0;
   if ((this->field_0169 != nullptr) &&
      (local_8 = 0, 0 < this->field_010D)) {
     do {
-      uVar7 = local_8 * this->field_0109;
+      uVar8 = local_8 * this->field_0109;
       if (g_playSystem_00802A38->field_00E4 < (uint)(&this->field_0159)[local_8]) {
         local_c = 1;
       }
       else {
         (&this->field_0139)[local_8] = (&this->field_0139)[local_8] + this->field_0125;
-        iVar5 = (&this->field_0149)[local_8] + this->field_0121;
-        (&this->field_0149)[local_8] = iVar5;
-        if ((local_8 == 0) && (iVar5 = iVar5 / 200, iVar5 != this->field_0129)) {
-          this->field_0129 = iVar5;
-          st::fn_00401285(this,iVar5,this->field_0139);
+        iVar6 = (&this->field_0149)[local_8] + this->field_0121;
+        (&this->field_0149)[local_8] = iVar6;
+        if ((local_8 == 0) && (iVar6 = iVar6 / 200, iVar6 != this->field_0129)) {
+          this->field_0129 = iVar6;
+          st::fn_00401285(this,iVar6,this->field_0139);
         }
         local_20 = 0;
         if (0 < this->field_0109) {
           do {
             pSVar1 = this->field_0169;
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            if (((uVar7 < pSVar1->count) &&
-                (pcVar8 = &pSVar1->data->field_0000 + pSVar1->elementSize * uVar7,
-                pcVar8 != nullptr)) && (*pcVar8 != '\x02')) {
-              *(int *)(pcVar8 + 2) =
-                   (*(int *)(pcVar8 + 0x12) * (&this->field_0139)[local_8]) / 10000 +
+            if (((uVar8 < pSVar1->count) &&
+                (pcVar9 = &pSVar1->data->field_0000 + pSVar1->elementSize * uVar8,
+                pcVar9 != nullptr)) && (*pcVar9 != '\x02')) {
+              *(int *)(pcVar9 + 2) =
+                   (*(int *)(pcVar9 + 0x12) * (&this->field_0139)[local_8]) / 10000 +
                    this->field_0111;
-              iVar5 = *(int *)(pcVar8 + 2);
-              *(int *)(pcVar8 + 6) =
-                   (*(int *)(pcVar8 + 0x16) * (&this->field_0139)[local_8]) / 10000 +
+              iVar6 = *(int *)(pcVar9 + 2);
+              *(int *)(pcVar9 + 6) =
+                   (*(int *)(pcVar9 + 0x16) * (&this->field_0139)[local_8]) / 10000 +
                    this->field_0115;
               iVar2 = (&this->field_0149)[local_8];
-              *(int *)(pcVar8 + 10) = iVar2;
-              sVar6 = (short)(iVar5 >> 0x1f);
-              if (iVar5 < 0) {
-                local_18 = (((short)(iVar5 / 0xc9) + sVar6) -
-                           (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
+              *(int *)(pcVar9 + 10) = iVar2;
+              sVar7 = (short)(iVar6 >> 0x1f);
+              if (iVar6 < 0) {
+                local_18 = (((short)(iVar6 / 0xc9) + sVar7) -
+                           (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)) + -1;
               }
               else {
-                local_18 = ((short)(iVar5 / 0xc9) + sVar6) -
-                           (short)((longlong)iVar5 * 0x28c1979 >> 0x3f);
+                local_18 = ((short)(iVar6 / 0xc9) + sVar7) -
+                           (short)((longlong)iVar6 * 0x28c1979 >> 0x3f);
               }
-              iVar3 = *(int *)(pcVar8 + 6);
-              sVar6 = (short)(iVar3 >> 0x1f);
+              iVar3 = *(int *)(pcVar9 + 6);
+              sVar7 = (short)(iVar3 >> 0x1f);
               if (iVar3 < 0) {
-                local_14 = (((short)(iVar3 / 0xc9) + sVar6) -
+                local_14 = (((short)(iVar3 / 0xc9) + sVar7) -
                            (short)((longlong)iVar3 * 0x28c1979 >> 0x3f)) + -1;
               }
               else {
-                local_14 = ((short)(iVar3 / 0xc9) + sVar6) -
+                local_14 = ((short)(iVar3 / 0xc9) + sVar7) -
                            (short)((longlong)iVar3 * 0x28c1979 >> 0x3f);
               }
-              sVar6 = (short)(iVar2 >> 0x1f);
+              sVar7 = (short)(iVar2 >> 0x1f);
               if (iVar2 < 0) {
-                sVar6 = (((short)(iVar2 / 200) + sVar6) -
+                sVar7 = (((short)(iVar2 / 200) + sVar7) -
                         (short)((longlong)iVar2 * 0x51eb851f >> 0x3f)) + -1;
               }
               else {
-                sVar6 = ((short)(iVar2 / 200) + sVar6) -
+                sVar7 = ((short)(iVar2 / 200) + sVar7) -
                         (short)((longlong)iVar2 * 0x51eb851f >> 0x3f);
               }
-              if ((((iVar5 < 0) || (g_worldGrid.sizeX <= iVar5)) ||
-                  ((*(int *)(pcVar8 + 6) < 0 ||
-                   (((int)g_worldGrid.sizeY <= *(int *)(pcVar8 + 6) || (iVar2 < 0)))))) ||
-                 (iVar5 = st::fn_00404D3B(local_18,local_14,sVar6), iVar5 == 0)) {
+              if ((((iVar6 < 0) || (g_worldGrid.sizeX <= iVar6)) ||
+                  ((*(int *)(pcVar9 + 6) < 0 ||
+                   (((int)g_worldGrid.sizeY <= *(int *)(pcVar9 + 6) || (iVar2 < 0)))))) ||
+                 (iVar5 = st::fn_00404D3B(local_18,local_14,sVar7), iVar5 == 0)) {
                 st::fn_006E3210
                           (g_sT3DSMAPContext_00807598,
-                           (*(int *)(pcVar8 + 2) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9,
-                           (*(int *)(pcVar8 + 6) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9);
-                lVar9 = st::fn_0072E288();
-                if (*(int *)(pcVar8 + 10) < (int)(short)lVar9) {
-                  *pcVar8 = '\x02';
-                  if (-1 < (int)*(uint *)(pcVar8 + 0x1f)) {
+                           (*(int *)(pcVar9 + 2) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9,
+                           (*(int *)(pcVar9 + 6) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9);
+                lVar10 = st::fn_0072E288();
+                if (*(int *)(pcVar9 + 10) < (int)(short)lVar10) {
+                  *pcVar9 = '\x02';
+                  if (-1 < (int)*(uint *)(pcVar9 + 0x1f)) {
                     st::fn_006E8BA0
-                              (g_sT3DSMAPContext_00807598,*(uint *)(pcVar8 + 0x1f));
-                    *(uint *)(pcVar8 + 0x1f) = 0xffffffff;
+                              (g_sT3DSMAPContext_00807598,*(uint *)(pcVar9 + 0x1f));
+                    *(uint *)(pcVar9 + 0x1f) = 0xffffffff;
                   }
                   goto LAB_005f528b;
                 }
               }
-              if (*pcVar8 == '\0') {
-                if ((*(uint *)(pcVar8 + 0x1f) == 0xffffffff) && (this->field_0103 != '\0')) {
-                  st::fn_00403247((int)pcVar8,pcVar8[1],0);
+              if (*pcVar9 == '\0') {
+                if ((*(uint *)(pcVar9 + 0x1f) == 0xffffffff) && (this->field_0103 != '\0')) {
+                  st::fn_00403247((int)pcVar9,pcVar9[1],0);
                 }
-                *pcVar8 = '\x01';
+                *pcVar9 = '\x01';
               }
-              if ((local_c == 0) && (*pcVar8 != '\x02')) {
+              if ((local_c == 0) && (*pcVar9 != '\x02')) {
                 local_c = 1;
               }
-              if (((local_8 == 0) && (!bVar4)) && (*pcVar8 != '\x02')) {
+              if (((local_8 == 0) && (!bVar4)) && (*pcVar9 != '\x02')) {
                 bVar4 = true;
               }
             }
 LAB_005f528b:
             local_20 = local_20 + 1;
-            uVar7 = uVar7 + 1;
+            uVar8 = uVar8 + 1;
           } while (local_20 < this->field_0109);
         }
       }
       local_8 = local_8 + 1;
-      iVar5 = local_c;
+      iVar6 = local_c;
     } while (local_8 < this->field_010D);
   }
-  return iVar5;
+  return iVar6;
 }
 
 // 005F53A0 STBHEShellC::sub_005F53A0
@@ -785,48 +787,49 @@ int __thiscall st::fn_005F5700(STBHEShellC *this,int param_1,int param_2)
 {
   int iVar1;
   STWorldObject *this_00;
-  short sVar2;
-  int iVar3;
-  short sVar4;
+  int iVar2;
+  short sVar3;
+  int iVar4;
   int iVar5;
-  int iVar6;
+  short sVar6;
   short sVar7;
-  short sVar8;
   int local_1c;
   int local_14;
   int local_10;
   int local_c;
-  undefined4 local_8;
+  short local_8;
+  short local_6;
+  short sVar2;
 
-  iVar3 = param_1;
+  iVar2 = param_1;
   local_c = 0;
   iVar1 = this->field_0111;
-  sVar2 = (short)(iVar1 >> 0x1f);
+  sVar3 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
-    local_14 = (short)(((short)(iVar1 / 0xc9) + sVar2) -
+    local_14 = (short)(((short)(iVar1 / 0xc9) + sVar3) -
                       (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    local_14 = (int)(short)(((short)(iVar1 / 0xc9) + sVar2) -
+    local_14 = (int)(short)(((short)(iVar1 / 0xc9) + sVar3) -
                            (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
   }
   iVar1 = this->field_0115;
-  sVar2 = (short)(iVar1 >> 0x1f);
+  sVar3 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
-    local_1c = (short)(((short)(iVar1 / 0xc9) + sVar2) -
+    local_1c = (short)(((short)(iVar1 / 0xc9) + sVar3) -
                       (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    local_1c = (int)(short)(((short)(iVar1 / 0xc9) + sVar2) -
+    local_1c = (int)(short)(((short)(iVar1 / 0xc9) + sVar3) -
                            (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
   }
   iVar1 = param_2 / 0xc9;
-  iVar6 = local_1c - (iVar1 + 1);
+  iVar5 = local_1c - (iVar1 + 1);
   local_10 = local_14 - (iVar1 + 1);
   local_1c = iVar1 + 2 + local_1c;
   local_14 = iVar1 + 2 + local_14;
-  if (iVar6 < 0) {
-    iVar6 = 0;
+  if (iVar5 < 0) {
+    iVar5 = 0;
   }
   if (local_10 < 0) {
     local_10 = 0;
@@ -842,49 +845,45 @@ int __thiscall st::fn_005F5700(STBHEShellC *this,int param_1,int param_2)
   }
   do {
     iVar1 = local_10;
-    if (local_1c <= iVar6) {
+    if (local_1c <= iVar5) {
       return local_c;
     }
     for (; iVar1 < local_14; iVar1 = iVar1 + 1) {
-      sVar4 = (short)iVar1;
-      if ((((-1 < sVar4) && (sVar4 < sVar2)) && (sVar7 = (short)iVar6, -1 < sVar7)) &&
-         (((sVar7 < g_worldGrid.sizeY && (sVar8 = (short)iVar3, -1 < sVar8)) &&
-          ((sVar8 < g_worldGrid.sizeZ &&
+      sVar3 = (short)iVar1;
+      if ((((-1 < sVar3) && (sVar3 < sVar2)) && (sVar6 = (short)iVar5, -1 < sVar6)) &&
+         (((sVar6 < g_worldGrid.sizeY && (sVar7 = (short)iVar2, -1 < sVar7)) &&
+          ((sVar7 < g_worldGrid.sizeZ &&
            (this_00 = g_worldGrid.cells
-                      [(int)sVar7 * (int)sVar2 + (int)g_worldGrid.planeStride * (int)sVar8 +
-                       (int)sVar4].objects[0], this_00 != nullptr)))))) {
-        st::fn_004031E3(this_00,(undefined2 *)((int)&local_8 + 2),(int *)((int)&param_1 + 2),
-                           &local_8);
+                      [(int)sVar6 * (int)sVar2 + (int)g_worldGrid.planeStride * (int)sVar7 +
+                       (int)sVar3].objects[0], this_00 != nullptr)))))) {
+        st::fn_004031E3(this_00,(uint *)&local_6,(int *)((int)&param_1 + 2),&local_8);
         if (*(int *)&this_00[1].field_0x8 == 1) {
-          iVar5 = st::fn_006ACED8((int)STPiece<2,2>(local_8),(int)STPiece<2,2>(param_1),this->field_0111,
-                               this->field_0115);
-          if (param_2 <= iVar5) {
-            iVar5 = st::fn_006ACED8(STPiece<2,2>(local_8) + 100,(int)STPiece<2,2>(param_1),this->field_0111,
-                                 this->field_0115);
-            if (param_2 <= iVar5) {
-              iVar5 = st::fn_006ACED8((int)STPiece<2,2>(local_8),STPiece<2,2>(param_1) + 100,this->field_0111,
+          iVar4 = st::fn_006ACED8((int)local_6,(int)STPiece<2,2>(param_1),this->field_0111,this->field_0115);
+          if (param_2 <= iVar4) {
+            iVar4 = st::fn_006ACED8(local_6 + 100,(int)STPiece<2,2>(param_1),this->field_0111,this->field_0115);
+            if (param_2 <= iVar4) {
+              iVar4 = st::fn_006ACED8((int)local_6,STPiece<2,2>(param_1) + 100,this->field_0111,
                                    this->field_0115);
-              if (param_2 <= iVar5) {
-                iVar5 = st::fn_006ACED8(STPiece<2,2>(local_8) + 100,STPiece<2,2>(param_1) + 100,this->field_0111,
+              if (param_2 <= iVar4) {
+                iVar4 = st::fn_006ACED8(local_6 + 100,STPiece<2,2>(param_1) + 100,this->field_0111,
                                      this->field_0115);
-                if (param_2 <= iVar5) goto cf_continue_loop_005F5985;
+                if (param_2 <= iVar4) goto cf_continue_loop_005F5985;
               }
             }
           }
         }
         else {
-          iVar5 = st::fn_006ACED8((int)STPiece<2,2>(local_8),(int)STPiece<2,2>(param_1),this->field_0111,
-                               this->field_0115);
-          if (param_2 <= iVar5) goto cf_continue_loop_005F5985;
+          iVar4 = st::fn_006ACED8((int)local_6,(int)STPiece<2,2>(param_1),this->field_0111,this->field_0115);
+          if (param_2 <= iVar4) goto cf_continue_loop_005F5985;
         }
         local_c = local_c + 1;
-        st::fn_00403E22(this->field_0051,(int)(this->field_007D << 2) / (8 - iVar3),(int)this_00,
+        st::fn_00403E22(this->field_0051,(int)(this->field_007D << 2) / (8 - iVar2),(int)this_00,
                            (short)this->field_0081,this->field_0085,0xb5,0x110);
       }
 cf_continue_loop_005F5985:
       sVar2 = g_worldGrid.sizeX;
     }
-    iVar6 = iVar6 + 1;
+    iVar5 = iVar5 + 1;
   } while( true );
 }
 

@@ -1,10 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 00683C70 -> 0067FDF0 @ 00689D7E */
+/* [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 0067FDF0 -> 0067FD20 @ 0067FE36 | 00683C70 -> 0067FDF0 @ 00689D7E; data at 00848A14 */
 
-uint __cdecl FUN_0067fdf0(int *param_1,byte *param_2)
+uint __cdecl FUN_0067fdf0(AnonShape_00683780_11EA4E23 *param_1,byte *param_2)
 
 {
   int local_EAX_31;

@@ -97,9 +97,11 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,uint par
 
 {
   STT3DSprC *pSVar1;
+  int local_EAX_35;
+  int *piVar2;
   int iVar2;
-  int *piVar3;
-  undefined4 uVar4;
+  undefined4 uVar3;
+  int iVar4;
   uint uVar5;
   code *pcVar6;
   InternalExceptionFrame local_50;
@@ -109,12 +111,12 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,uint par
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  local_EAX_35 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar1 = local_8;
-  if (iVar2 != 0) {
+  if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0xf1,0,iVar2,"%s",
-                               "STT3DSprC::StartShow");
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0xf1,0,local_EAX_35,
+                               "%s","STT3DSprC::StartShow");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -129,8 +131,8 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,uint par
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0xcf);
   }
   uVar5 = (uint)(char)param_1;
-  iVar2 = uVar5 * 0x24;
-  if (*(int *)(&pSVar1->field_0020->field_0x0 + iVar2) == 0) {
+  iVar4 = uVar5 * 0x24;
+  if (*(int *)(&pSVar1->field_0020->field_0x0 + iVar4) == 0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0xd0);
   }
@@ -141,10 +143,10 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,uint par
   }
   ST3DSMAPContext::sub_006E9CB0(pSVar1->field_003C,(uint *)pSVar1->field_0018,uVar5);
   pSVar1->field_001C = pSVar1->field_001C | local_c;
-  if (*(int *)(&pSVar1->field_0020->field_0x20 + iVar2) == 0) {
+  if (*(int *)(&pSVar1->field_0020->field_0x20 + iVar4) == 0) {
     ST3DSMAPContext::sub_006EA270
               (pSVar1->field_003C,pSVar1->field_0018,uVar5,
-               *(uint *)(&pSVar1->field_0020->field_0x18 + iVar2));
+               *(uint *)(&pSVar1->field_0020->field_0x18 + iVar4));
   }
   else {
     ST3DSMAPContext::sub_006E9D40(pSVar1->field_003C,(uint *)pSVar1->field_0018,uVar5);
@@ -155,18 +157,18 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,uint par
   if (pSVar1->field_0011 == '\0') {
     if (pSVar1->field_0010 == '\0') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)(*(int *)(&pSVar1->field_0020->field_0x0 + iVar2) + 0x29) == 0)
+      if (*(int *)(*(int *)(&pSVar1->field_0020->field_0x0 + iVar4) + 0x29) == 0)
       goto cf_common_exit_004AC330;
       pSVar1->field_0013 = param_1;
-      pSVar1->field_0030 = *(undefined4 *)(&pSVar1->field_0020->field_0x18 + iVar2);
+      pSVar1->field_0030 = *(undefined4 *)(&pSVar1->field_0020->field_0x18 + iVar4);
       pcVar6 = thunk_FUN_004ad6c0;
     }
     else {
       if ((pSVar1->field_0038 == 0) ||
-         (piVar3 = (int *)(&pSVar1->field_0020->field_0x0 + iVar2), *(int *)(*piVar3 + 0x29) == 0))
+         (piVar2 = (int *)(&pSVar1->field_0020->field_0x0 + iVar4), *(int *)(*piVar2 + 0x29) == 0))
       goto cf_common_exit_004AC330;
       pSVar1->field_0013 = param_1;
-      pSVar1->field_0030 = piVar3[6];
+      pSVar1->field_0030 = piVar2[6];
       pcVar6 = thunk_FUN_004ad740;
     }
     Library::Ourlib::ST3DSMAP::SprSetShadow
@@ -174,7 +176,7 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,uint par
                (uint)pSVar1);
   }
 cf_common_exit_004AC330:
-  *(uint *)(&pSVar1->field_0020->field_0x1c + iVar2) = param_2;
+  *(uint *)(&pSVar1->field_0020->field_0x1c + iVar4) = param_2;
   g_currentExceptionFrame = local_50.previous;
   return 0;
 }

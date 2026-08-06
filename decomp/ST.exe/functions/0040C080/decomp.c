@@ -6,10 +6,10 @@
    Diagnostic line evidence: 563 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
 
-   [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 004899A0 -> 0040C080 @ 00489B1F */
+   [STPrototypeRepairApplier] Propagated parameter 2.
+   Evidence: 0040C080 -> 006ACC70 @ 0040C16C */
 
-undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
+undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
 
 {
   ushort uVar1;
@@ -18,9 +18,11 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
   short *psVar4;
   STGameObjC *pSVar5;
   int iVar6;
-  int iVar7;
   int iVar8;
-  uint uVar9;
+  int iVar7;
+  dword dVar8;
+  int iVar9;
+  uint index;
   short *psVar10;
   short *psVar11;
   int local_b8;
@@ -33,7 +35,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
   int local_8c;
   int local_88;
   int local_84;
-  uint local_80;
+  dword local_80;
   int local_7c;
   short local_78 [2];
   int local_74;
@@ -64,9 +66,9 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff34;
-  uVar9 = param_2[3];
-  local_80 = uVar9;
-  if (uVar9 == 0) {
+  dVar8 = param_2->count;
+  local_80 = dVar8;
+  if (dVar8 == 0) {
     ExceptionList = &local_14;
     local_1c = &stack0xffffff34;
     psVar4 = Library::DKW::LIB::MemAlloc(4);
@@ -75,13 +77,13 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
   }
   else {
     ExceptionList = &local_14;
-    psVar4 = Library::DKW::LIB::MemAlloc(uVar9 * 4);
+    psVar4 = Library::DKW::LIB::MemAlloc(dVar8 * 4);
     if (psVar4 != nullptr) {
       pSVar5 = thunk_FUN_00423e70(this,(ushort)param_1);
       if (pSVar5 == nullptr) {
         psVar11 = psVar4;
-        if (0 < (int)uVar9) {
-          for (; uVar9 != 0; uVar9 = uVar9 - 1) {
+        if (0 < (int)dVar8) {
+          for (; dVar8 != 0; dVar8 = dVar8 - 1) {
             psVar11[0] = -4;
             psVar11[1] = -1;
             psVar11 = psVar11 + 2;
@@ -92,25 +94,25 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
         local_8 = 0;
         Library::MSVCRT::FUN_0072da40();
         local_8 = 0xffffffff;
-        iVar8 = (int)pSVar5->field_0047;
+        iVar9 = (int)pSVar5->field_0047;
         local_a8 = (int)pSVar5->field_0049;
         local_20 = (int)pSVar5->field_004B;
-        uVar9 = 0;
+        index = 0;
         local_9c = local_a8;
-        local_74 = iVar8;
+        local_74 = iVar9;
         local_30 = local_20;
         local_1c = &stack0xffffff34;
         puVar3 = &stack0xffffff34;
         if (0 < (int)local_80) {
           do {
-            DArrayGetElement((DArrayTy *)param_2,uVar9,&local_90);
+            DArrayGetElement(param_2,index,&local_90);
             STFishC::sub_004162F0(local_90,local_24,local_4c,local_78);
             iVar7 = (int)local_24[0];
             if (iVar7 < local_74) {
               local_74 = iVar7;
             }
-            if (iVar8 < iVar7) {
-              iVar8 = iVar7;
+            if (iVar9 < iVar7) {
+              iVar9 = iVar7;
             }
             iVar6 = (int)local_4c[0];
             if (iVar6 < local_9c) {
@@ -126,13 +128,13 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
             if (local_30 < iVar6) {
               local_30 = iVar6;
             }
-            iVar6 = uVar9 * 0xc;
+            iVar6 = index * 0xc;
             *(int *)(&stack0xffffff34 + iVar6) = iVar7;
             *(int *)(&stack0xffffff38 + iVar6) = (int)local_4c[0];
             *(int *)(&stack0xffffff3c + iVar6) = (int)local_78[0];
-            uVar9 = uVar9 + 1;
+            index = index + 1;
             puVar3 = local_1c;
-          } while ((int)uVar9 < (int)local_80);
+          } while ((int)index < (int)local_80);
         }
         local_1c = puVar3;
         local_74 = local_74 + -2;
@@ -148,9 +150,9 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
           local_20 = 0;
         }
         iVar7 = local_20;
-        iVar8 = iVar8 + 2;
-        if (g_pathingGrid.sizeX <= iVar8) {
-          iVar8 = g_pathingGrid.sizeX + -1;
+        iVar9 = iVar9 + 2;
+        if (g_pathingGrid.sizeX <= iVar9) {
+          iVar9 = g_pathingGrid.sizeX + -1;
         }
         local_a8 = local_a8 + 2;
         if (g_pathingGrid.sizeY <= local_a8) {
@@ -184,11 +186,11 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
         if (g_pathingGrid.sizeZ <= local_6c) {
           local_6c = g_pathingGrid.sizeZ + -1;
         }
-        local_2c = (iVar8 - local_74) + 1;
+        local_2c = (iVar9 - local_74) + 1;
         local_70 = (local_a8 - local_9c) + CASE_1;
         local_68 = (local_30 - local_20) + 1;
         local_64 = local_70 * local_2c;
-        local_84 = iVar8;
+        local_84 = iVar9;
         local_54 = Library::DKW::LIB::MemAlloc(local_64 * local_68 * 2);
         for (local_8c = iVar7; local_8c < local_5c; local_8c = local_8c + 1) {
           psVar11 = g_pathingGrid.cells +
@@ -196,7 +198,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
           psVar10 = local_54 + (local_8c - local_20) * local_64;
           for (local_88 = local_9c; iVar7 = local_74, local_88 <= local_a8; local_88 = local_88 + 1)
           {
-            for (; iVar7 <= iVar8; iVar7 = iVar7 + 1) {
+            for (; iVar7 <= iVar9; iVar7 = iVar7 + 1) {
               psVar10[iVar7 - local_74] = psVar11[iVar7];
             }
             psVar11 = psVar11 + g_pathingGrid.sizeX;
@@ -210,7 +212,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
             psVar10 = local_54 + (local_8c - local_20) * local_64;
             for (local_88 = local_9c; iVar7 = local_74, local_88 < local_38; local_88 = local_88 + 1
                 ) {
-              for (; iVar7 <= iVar8; iVar7 = iVar7 + 1) {
+              for (; iVar7 <= iVar9; iVar7 = iVar7 + 1) {
                 psVar10[iVar7 - local_74] = psVar11[iVar7];
               }
               psVar11 = psVar11 + g_pathingGrid.sizeX;
@@ -238,11 +240,11 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
                 psVar10 = psVar10 + local_2c;
                 local_88 = local_88 + 1;
                 iVar7 = local_74;
-                iVar8 = local_84;
+                iVar9 = local_84;
               } while (local_88 <= local_40);
             }
             for (; iVar7 = local_74, local_88 <= local_a8; local_88 = local_88 + 1) {
-              for (; iVar7 <= iVar8; iVar7 = iVar7 + 1) {
+              for (; iVar7 <= iVar9; iVar7 = iVar7 + 1) {
                 psVar10[iVar7 - local_74] = psVar11[iVar7];
               }
               psVar11 = psVar11 + g_pathingGrid.sizeX;
@@ -257,23 +259,23 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
           psVar10 = local_54 + (local_8c - local_20) * local_64;
           for (local_88 = local_9c; iVar7 = local_74, local_88 <= local_a8; local_88 = local_88 + 1)
           {
-            for (; iVar7 <= iVar8; iVar7 = iVar7 + 1) {
+            for (; iVar7 <= iVar9; iVar7 = iVar7 + 1) {
               psVar10[iVar7 - local_74] = psVar11[iVar7];
             }
             psVar11 = psVar11 + g_pathingGrid.sizeX;
             psVar10 = psVar10 + local_2c;
           }
         }
-        iVar8 = FUN_006ab090((int)local_54,local_2c,local_70,local_68,pSVar5->field_0047 - local_74,
+        iVar9 = FUN_006ab090((int)local_54,local_2c,local_70,local_68,pSVar5->field_0047 - local_74,
                              pSVar5->field_0049 - local_9c,pSVar5->field_004B - local_20,-1,-1,-1);
-        if (iVar8 == 0) {
+        if (iVar9 == 0) {
           local_34 = 0;
           if (0 < (int)local_80) {
             do {
-              iVar8 = local_34 * 0xc;
-              local_8c = *(int *)(&stack0xffffff3c + iVar8) - local_20;
-              local_88 = *(int *)(&stack0xffffff38 + iVar8) - local_9c;
-              local_7c = *(int *)(&stack0xffffff34 + iVar8) - local_74;
+              iVar9 = local_34 * 0xc;
+              local_8c = *(int *)(&stack0xffffff3c + iVar9) - local_20;
+              local_88 = *(int *)(&stack0xffffff38 + iVar9) - local_9c;
+              local_7c = *(int *)(&stack0xffffff34 + iVar9) - local_74;
               psVar11 = local_54 + local_8c * local_64 + local_7c + local_88 * local_2c;
               local_94 = (int)*psVar11;
               if (local_94 < 0) {
@@ -283,19 +285,19 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
                   local_50 = (&SHORT_007ed570)[local_a4 * 4] + local_7c;
                   if ((-1 < local_50) && (local_50 < local_2c)) {
                     iVar7 = (int)(&SHORT_007ed572)[local_a4 * 4];
-                    iVar8 = iVar7 + local_88;
-                    if ((-1 < iVar8) && (iVar8 < (int)local_70)) {
+                    iVar9 = iVar7 + local_88;
+                    if ((-1 < iVar9) && (iVar9 < (int)local_70)) {
                       local_60 = (&SHORT_007ed574)[local_a4 * 4] + local_8c;
                       if ((-1 < local_60) && (local_60 < local_68)) {
                         uVar1 = (&SHORT_007ed576)[local_a4 * 4];
                         if ((uVar1 & 1) == 0) {
                           if (((uVar1 & 0x6000) == 0) || ((uVar1 & 0x9fff) == 0xffe)) {
 LAB_0040c90d:
-                            if ((0 < local_54[iVar8 * local_2c + local_50 + local_60 * local_64]) &&
-                               (iVar8 = (int)local_54[iVar8 * local_2c +
+                            if ((0 < local_54[iVar9 * local_2c + local_50 + local_60 * local_64]) &&
+                               (iVar9 = (int)local_54[iVar9 * local_2c +
                                                       local_50 + local_60 * local_64] +
-                                        (&DAT_007ed640)[local_a4], iVar8 < local_94)) {
-                              local_94 = iVar8;
+                                        (&DAT_007ed640)[local_a4], iVar9 < local_94)) {
+                              local_94 = iVar9;
                             }
                           }
                           else if ((psVar11[(&SHORT_007ed574)[local_a4 * 4] * local_64] & 0xc000U)
@@ -338,12 +340,12 @@ LAB_0040c875:
                 } while (local_a4 < 0x1a);
               }
               if ((local_94 < 1) || (29999 < local_94)) {
-                iVar8 = -4;
+                iVar9 = -4;
               }
               else {
-                iVar8 = (local_94 + -1) / 3;
+                iVar9 = (local_94 + -1) / 3;
               }
-              *(int *)(psVar4 + local_34 * 2) = iVar8;
+              *(int *)(psVar4 + local_34 * 2) = iVar9;
               local_34 = local_34 + 1;
               psVar11 = local_54;
             } while (local_34 < (int)local_80);

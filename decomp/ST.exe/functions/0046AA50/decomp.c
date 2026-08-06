@@ -17,14 +17,22 @@ int __thiscall STBoatC::BackLoadRC(STBoatC *this,STBoatC *param_1)
 
 {
   undefined2 uVar2;
+  int local_EAX_56;
+  int local_EAX_90;
+  int local_EAX_185;
+  int local_EAX_430;
+  int local_EAX_685;
   uint uVar3;
-  int iVar4;
+  int local_EAX_984;
   int iVar5;
-  STBoatC *pSVar6;
+  int local_EAX_1213;
+  int local_EAX_1268;
+  int iVar4;
+  STBoatC *pSVar5;
   STBoatC *local_8;
 
   this->field_00B7 = 0;
-  pSVar6 = this;
+  pSVar5 = this;
   local_8 = this;
   switch(*(undefined4 *)&this->field_0x4d5) {
   case 0:
@@ -36,43 +44,43 @@ int __thiscall STBoatC::BackLoadRC(STBoatC *this,STBoatC *param_1)
   case 8:
   case 10:
     if (*(int *)&this->field_0x4cd != 0) {
-      iVar5 = thunk_FUN_004620f0(this);
-      return iVar5;
+      local_EAX_90 = thunk_FUN_004620f0(this);
+      return local_EAX_90;
     }
-    iVar5 = sub_00460360(this);
+    local_EAX_56 = sub_00460360(this);
     break;
   case 3:
   case 9:
-    iVar5 = thunk_FUN_004620f0(this);
+    local_EAX_56 = thunk_FUN_004620f0(this);
     break;
   case 5:
     sub_0048D930(this);
-    iVar5 = *(int *)&this->field_0x4d1 + 1;
-    *(int *)&this->field_0x4d1 = iVar5;
-    if (iVar5 < 0x47) {
+    iVar4 = *(int *)&this->field_0x4d1 + 1;
+    *(int *)&this->field_0x4d1 = iVar4;
+    if (iVar4 < 0x47) {
 LAB_0046acad:
-      iVar5 = this->vfunc_D8();
-      return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
+      iVar4 = this->vfunc_D8();
+      return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
     }
     *(undefined4 *)&this->field_0x4d1 = 0;
     goto LAB_0046aaed;
   case 6:
   case 0xe:
-    iVar5 = sub_00460360(this);
-    return iVar5;
+    local_EAX_185 = sub_00460360(this);
+    return local_EAX_185;
   case 0xb:
-    iVar5 = this->field_04D9;
-    if (((iVar5 == 0) || (iVar5 == 1)) || (iVar5 == 2)) {
+    iVar4 = this->field_04D9;
+    if (((iVar4 == 0) || (iVar4 == 1)) || (iVar4 == 2)) {
       sub_0048D930(this);
-      iVar5 = this->vfunc_D8();
-      return -(uint)(iVar5 != 0);
+      iVar4 = this->vfunc_D8();
+      return -(uint)(iVar4 != 0);
     }
-    if (iVar5 == 3) {
-      iVar5 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_04C7 * 0xc9)) + 100;
+    if (iVar4 == 3) {
+      iVar4 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_04C7 * 0xc9)) + 100;
       uVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
-                         this->field_04C5 * 0xc9 + 100,(short)iVar5,
+                         STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(this->field_0045)),
+                         this->field_04C5 * 0xc9 + 100,(short)iVar4,
                          (ushort)(this->field_04C9 * 200) + 100);
       this->field_04CB = uVar2;
       this->field_04D9 = 4;
@@ -86,12 +94,13 @@ LAB_0046acad:
         }
         goto cf_common_exit_0046ABCB;
       }
-      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x22fd,0,0,"%s",
-                                 "STBoatC::BackLoadRC, LOADRC_PDEPOT");
-      if (iVar5 != 0) {
+      local_EAX_430 =
+           ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x22fd,0,0,"%s",
+                              "STBoatC::BackLoadRC, LOADRC_PDEPOT");
+      if (local_EAX_430 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar5 = 0x22fe;
+      iVar4 = 0x22fe;
     }
     else {
       if (this->field_04D9 == 5) {
@@ -103,37 +112,38 @@ LAB_0046acad:
       if (this->field_04D9 != 6) {
         return 2;
       }
-      iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
-      if (iVar5 != -1) {
-        if (iVar5 == 0) {
+      iVar4 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
+      if (iVar4 != -1) {
+        if (iVar4 == 0) {
           sub_0048D930(this);
-          iVar5 = this->vfunc_D8();
-          return -(uint)(iVar5 != 0);
+          iVar4 = this->vfunc_D8();
+          return -(uint)(iVar4 != 0);
         }
         goto LAB_0046acad;
       }
-      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2311,0,0,"%s",
-                                 "STBoatC::BackLoadRC, LOADRC_PDEPOT 2");
-      if (iVar5 != 0) {
+      local_EAX_685 =
+           ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2311,0,0,"%s",
+                              "STBoatC::BackLoadRC, LOADRC_PDEPOT 2");
+      if (local_EAX_685 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar5 = 0x2312;
+      iVar4 = 0x2312;
     }
     goto LAB_0046ac10;
   case 0xc:
     sub_0048D930(this);
-    pSVar6 = (STBoatC *)(*(int *)&this->field_0x4d1 + 1);
-    *(STBoatC **)&this->field_0x4d1 = pSVar6;
-    if ((int)pSVar6 < 0x47) goto cf_common_exit_0046ABCB;
+    pSVar5 = (STBoatC *)(*(int *)&this->field_0x4d1 + 1);
+    *(STBoatC **)&this->field_0x4d1 = pSVar5;
+    if ((int)pSVar5 < 0x47) goto cf_common_exit_0046ABCB;
     *(undefined4 *)&this->field_0x4d1 = 0;
     *(undefined4 *)&this->field_0x4d5 = 0xd;
   case 0xd:
     if (this->field_04D9 == 0) {
-      iVar5 = STReplaceLowWord((uint32_t)(pSVar6), (uint16_t)(this->field_04C7 * 0xc9)) + 100;
+      iVar4 = STReplaceLowWord((uint32_t)(pSVar5), (uint16_t)(this->field_04C7 * 0xc9)) + 100;
       uVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
-                         this->field_04C5 * 0xc9 + 100,(short)iVar5,
+                         STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(this->field_0045)),
+                         this->field_04C5 * 0xc9 + 100,(short)iVar4,
                          (ushort)(this->field_04C9 * 200) + 100);
       this->field_04CB = uVar2;
       this->field_04D9 = 1;
@@ -146,15 +156,16 @@ LAB_0046acad:
           this->field_04D9 = 2;
         }
 cf_common_exit_0046ABCB:
-        iVar5 = this->vfunc_D8();
-        return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
+        iVar4 = this->vfunc_D8();
+        return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
-      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2338,0,0,"%s",
-                                 "STBoatC::BackLoadRC, LOADRC_ODEPOT");
-      if (iVar5 != 0) {
+      local_EAX_984 =
+           ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2338,0,0,"%s",
+                              "STBoatC::BackLoadRC, LOADRC_ODEPOT");
+      if (local_EAX_984 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar5 = 0x2339;
+      iVar4 = 0x2339;
     }
     else {
       if (this->field_04D9 == 2) {
@@ -165,45 +176,46 @@ cf_common_exit_0046ABCB:
       }
       if (this->field_04D9 != 3) {
 switchD_0046aa71_caseD_0:
-        iVar5 = thunk_FUN_004620f0(this);
+        local_EAX_1213 = thunk_FUN_004620f0(this);
         iVar4 = this->vfunc_D8();
         if (iVar4 != 0) {
           return -1;
         }
-        return iVar5;
+        return local_EAX_1213;
       }
-      iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
-      if (iVar5 != -1) {
-        if (iVar5 != 0) {
-          iVar5 = this->vfunc_D8();
-          return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
+      iVar4 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
+      if (iVar4 != -1) {
+        if (iVar4 != 0) {
+          iVar4 = this->vfunc_D8();
+          return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
         }
 LAB_0046aaed:
-        iVar5 = this->vfunc_D8();
-        return -(uint)(iVar5 != 0);
+        iVar4 = this->vfunc_D8();
+        return -(uint)(iVar4 != 0);
       }
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2350,0,0,"%s",
                                  "STBoatC::BackLoadRC, LOADRC_ODEPOT 2");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar5 = 0x2351;
+      iVar4 = 0x2351;
     }
 LAB_0046ac10:
     RaiseInternalException
-              (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar5);
+              (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar4);
     return 0xffff;
   default:
-    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2367,0,0,"%s",
-                               "STBoatC::BackLoadRC");
-    if (iVar5 == 0) {
+    local_EAX_1268 =
+         ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2367,0,0,"%s",
+                            "STBoatC::BackLoadRC");
+    if (local_EAX_1268 == 0) {
       return -1;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (iVar5 == 0) {
+  if (local_EAX_56 == 0) {
     sub_0048D930(this);
   }
-  return iVar5;
+  return local_EAX_56;
 }
 

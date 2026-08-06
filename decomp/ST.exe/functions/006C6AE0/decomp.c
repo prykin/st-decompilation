@@ -6,7 +6,8 @@ int FUN_006c6ae0(AnonShape_006C6AE0_9C4F43C2 *param_1)
 {
   int iVar1;
   int iVar2;
-  undefined4 uVar3;
+  int *piVar3;
+  undefined4 uVar4;
   short local_14;
   short local_12;
   byte local_10;
@@ -37,26 +38,26 @@ int FUN_006c6ae0(AnonShape_006C6AE0_9C4F43C2 *param_1)
       param_1->field_0010 = local_10 & 7;
       if ((local_10 & 0x80) != 0) {
         iVar1 = (1 << (local_10 & 7) + 1) * 3;
-        iVar2 = FUN_006bfb70(iVar1);
-        param_1->field_0012 = iVar2;
-        if (iVar2 == 0) {
+        piVar3 = FUN_006bfb70(iVar1);
+        param_1->field_0012 = (int)piVar3;
+        if (piVar3 == nullptr) {
           return -2;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar2 = (*(code *)param_1->field_0042)(param_1,iVar2,iVar1);
+        iVar2 = (*(code *)param_1->field_0042)(param_1,piVar3,iVar1);
         if (iVar2 == iVar1) {
           iVar2 = 0;
         }
         else {
-          FreeAndNull((void **)&param_1->field_0012);
+          FreeAndNull(&param_1->field_0012);
           if (-1 < iVar2) {
             iVar2 = -5;
           }
         }
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar3 = (*(code *)param_1->field_004A)(param_1);
-      param_1->field_0052 = uVar3;
+      uVar4 = (*(code *)param_1->field_004A)(param_1);
+      param_1->field_0052 = uVar4;
       param_1->field_0056 = 4;
       return iVar2;
     }

@@ -14,9 +14,10 @@ void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
 {
   HelpPanelTy *this_00;
   short sVar2;
-  int iVar3;
   int iVar4;
-  int *piVar5;
+  int iVar3;
+  int iVar5;
+  int *piVar6;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 
@@ -38,15 +39,15 @@ void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
       if (local_8->field_017C != 0) {
         FUN_006e6080(local_8,2,local_8->field_017C,(undefined4 *)&local_8->field_0x18);
       }
-      piVar5 = &this_00->field_0180;
-      iVar4 = 7;
+      piVar6 = &this_00->field_0180;
+      iVar5 = 7;
       do {
-        if (*piVar5 != 0) {
-          FUN_006e6080(this_00,2,*piVar5,(undefined4 *)&this_00->field_0x18);
+        if (*piVar6 != 0) {
+          FUN_006e6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x18);
         }
-        piVar5 = piVar5 + 1;
-        iVar4 = iVar4 + -1;
-      } while (iVar4 != 0);
+        piVar6 = piVar6 + 1;
+        iVar5 = iVar5 + -1;
+      } while (iVar5 != 0);
       if (this_00->field_019C != 0) {
         FUN_006e6080(this_00,2,this_00->field_019C,(undefined4 *)&this_00->field_0x18);
         memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */

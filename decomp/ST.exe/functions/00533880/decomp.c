@@ -10,6 +10,7 @@ void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
 {
   OptPanelTy *this_00;
   int iVar2;
+  int iVar4;
   int iVar3;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
@@ -25,13 +26,13 @@ void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
   if (iVar2 == 0) {
     if (param_1 == '\x04') {
       if (DAT_008067a0 == '\0') {
-        iVar2 = 0x3e84;
+        iVar4 = 0x3e84;
       }
       else {
-        iVar2 = 0x3e96 - (uint)(g_playSystem_00802A38->field_00E4 -
+        iVar4 = 0x3e96 - (uint)(g_playSystem_00802A38->field_00E4 -
                                 g_playSystem_00802A38->field_0034 < 6000);
       }
-      local_8->field_01A5 = iVar2;
+      local_8->field_01A5 = iVar4;
     }
     else if (param_1 == '\x05') {
       local_8->field_01A5 = 0x3e85;

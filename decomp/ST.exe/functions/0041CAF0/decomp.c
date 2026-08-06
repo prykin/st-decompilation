@@ -33,10 +33,10 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
             if (7 < param_1->field_0024) {
               return 1;
             }
-            if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == 0) {
+            if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == nullptr) {
               return 1;
             }
-            if (*(char *)(g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] +
+            if (*(char *)((int)g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] +
                          iVar4 + iVar5) == '\0') {
               return 1;
             }
@@ -60,11 +60,11 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
           if (7 < param_1->field_0024) {
             return 1;
           }
-          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == 0) {
+          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == nullptr) {
             return 1;
           }
-          if (*(char *)(g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] + iVar4 + iVar2
-                       ) == '\0') {
+          if (*(char *)((int)g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] +
+                       iVar4 + iVar2) == '\0') {
             return 1;
           }
         }
@@ -80,11 +80,11 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
           if (7 < param_1->field_0024) {
             return 1;
           }
-          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == 0) {
+          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == nullptr) {
             return 1;
           }
-          if (*(char *)(g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] + iVar2 + iVar5
-                       ) == '\0') {
+          if (*(char *)((int)g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] +
+                       iVar2 + iVar5) == '\0') {
             return 1;
           }
         }
@@ -99,11 +99,11 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
           if (7 < param_1->field_0024) {
             return 1;
           }
-          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == 0) {
+          if (g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] == nullptr) {
             return 1;
           }
-          if (*(char *)(g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] + iVar4 + iVar3
-                       ) == '\0') {
+          if (*(char *)((int)g_visibleClass_00802A88->field_003C[param_1->field_0024 + 6] +
+                       iVar4 + iVar3) == '\0') {
             return 1;
           }
         }

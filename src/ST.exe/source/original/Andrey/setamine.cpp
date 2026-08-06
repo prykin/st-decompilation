@@ -13,23 +13,25 @@ void __thiscall st::fn_0053CEF0(SAMPanelTy *this)
   SAMPanelTyVTable *pSVar1;
   SAMPanelTy *this_00;
   int iVar3;
-  LPSTR pCVar4;
-  ushort *puVar5;
-  byte *pbVar6;
-  uint *resourceString;
-  int iVar7;
-  undefined4 uVar8;
-  int iVar9;
-  short sVar10;
-  uint uVar11;
-  byte bVar12;
-  undefined2 uVar13;
-  undefined4 uVar14;
+  LPSTR pCVar3;
+  ushort *puVar4;
+  byte *pbVar5;
+  char *pcVar17_mg1;
   int iVar15;
-  char *pcVar16;
-  undefined4 *puVar17;
-  undefined4 uVar18;
+  int iVar6;
+  undefined4 uVar7;
+  int iVar8;
+  short sVar9;
+  uint uVar10;
+  byte bVar11;
+  undefined2 uVar12;
+  int iVar13;
+  undefined4 uVar14;
+  int iVar16;
+  char *pcVar17;
+  undefined4 *puVar18;
   undefined4 uVar19;
+  undefined4 uVar20;
   InternalExceptionFrame local_5c;
   SAMPanelTy *local_14;
   int local_10;
@@ -45,66 +47,66 @@ void __thiscall st::fn_0053CEF0(SAMPanelTy *this)
     g_sAMPanel_008016EC = local_14;
     st::fn_00403800
               ((SpecPanelTy *)local_14,"BKG_SETANYW",0x2f,2,0xc6,0xc,0x2735,0xc9,0x77);
-    puVar17 = nullptr;
-    iVar15 = 0;
-    iVar3 = 1;
-    bVar12 = 0;
-    uVar11 = 0xffffffff;
-    pCVar4 = st::fn_0040577C("BUT_PRODWEAP",0);
-    puVar5 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,pCVar4,uVar11,bVar12,iVar3,iVar15,puVar17);
+    puVar18 = nullptr;
+    iVar16 = 0;
+    iVar13 = 1;
+    bVar11 = 0;
+    uVar10 = 0xffffffff;
+    pCVar3 = st::fn_0040577C("BUT_PRODWEAP",0);
+    puVar4 = st::fn_00709AF0
+                       (PTR_00806794,CASE_B,pCVar3,uVar10,bVar11,iVar13,iVar16,puVar18);
     local_c = this_00->field_01B5;
-    this_00->field_01B1 = puVar5;
-    iVar3 = 0xb4ff;
+    this_00->field_01B1 = puVar4;
+    iVar13 = 0xb4ff;
     local_8 = 0x17;
     local_10 = 6;
     do {
-      uVar18 = 1;
-      pcVar16 = nullptr;
+      uVar19 = 1;
+      pcVar17 = nullptr;
       uVar14 = 0;
       pSVar1 = this_00->vtable;
-      uVar13 = 0;
-      iVar15 = iVar3 + 0x10;
-      sVar10 = 0;
-      uVar8 = 0;
-      iVar7 = 1;
-      iVar9 = iVar3;
-      pCVar4 = st::fn_0040577C("BUT_PRODWEAP",0);
-      pCVar4 = st::fn_006F2C00(pCVar4,iVar7,uVar8);
-      iVar7 = local_8;
-      uVar11 = (*pSVar1->CreateBut)
-                         ((PanelTy *)this_00,0,1,0x24,local_8 + 1,0,1,1,pCVar4,iVar9,iVar15,sVar10,
-                          uVar13,uVar14,pcVar16,uVar18);
-      *local_c = uVar11;
-      pbVar6 = (byte *)st::fn_00710BA0(this_00->field_0189,this_00->field_0185,0,0x37,iVar7,0xd2
+      uVar12 = 0;
+      iVar16 = iVar13 + 0x10;
+      sVar9 = 0;
+      uVar7 = 0;
+      iVar6 = 1;
+      iVar8 = iVar13;
+      pCVar3 = st::fn_0040577C("BUT_PRODWEAP",0);
+      pCVar3 = st::fn_006F2C00(pCVar3,iVar6,uVar7);
+      iVar6 = local_8;
+      uVar10 = (*pSVar1->CreateBut)
+                         ((PanelTy *)this_00,0,1,0x24,local_8 + 1,0,1,1,pCVar3,iVar8,iVar16,sVar9,
+                          uVar12,uVar14,pcVar17,uVar19);
+      *local_c = uVar10;
+      pbVar5 = (byte *)st::fn_00710BA0(this_00->field_0189,this_00->field_0185,0,0x37,iVar6,0xd2
                                            ,0xc,0);
-      if (pbVar6 != nullptr) {
-        uVar11 = 0;
-        iVar7 = -1;
-        iVar15 = 0;
-        resourceString = (uint *)st::fn_006B0140(iVar3 - 0x842b,g_hINSTANCE_00807618);
-        st::fn_007119C0(this_00->field_0189,resourceString,iVar15,iVar7,uVar11);
-        st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x37,local_8,'\x01',pbVar6);
+      if (pbVar5 != nullptr) {
+        uVar10 = 0;
+        iVar6 = -1;
+        iVar16 = 0;
+        pcVar17_mg1 = st::fn_006B0140(iVar13 - 0x842b,g_hINSTANCE_00807618);
+        st::fn_007119C0(this_00->field_0189,pcVar17_mg1,iVar16,iVar6,uVar10);
+        st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x37,local_8,'\x01',pbVar5);
         st::fn_00710F00(this_00->field_0189);
       }
-      iVar3 = iVar3 + 1;
+      iVar13 = iVar13 + 1;
       local_c = local_c + 1;
       local_8 = local_8 + 0xb;
       local_10 = local_10 + -1;
     } while (local_10 != 0);
-    uVar19 = 1;
+    uVar20 = 1;
     pSVar1 = this_00->vtable;
-    pcVar16 = nullptr;
-    uVar18 = 0;
-    uVar13 = 0;
-    sVar10 = 0;
+    pcVar17 = nullptr;
+    uVar19 = 0;
+    uVar12 = 0;
+    sVar9 = 0;
     uVar14 = 0xb518;
-    uVar8 = 0xb508;
-    pCVar4 = st::fn_0040577C("BUT_BIG",0);
-    uVar8 = (*pSVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0xa0,0x5c,0,1,1,pCVar4,uVar8,uVar14,sVar10,uVar13,
-                       uVar18,pcVar16,uVar19);
-    this_00->field_01CD = uVar8;
+    uVar7 = 0xb508;
+    pCVar3 = st::fn_0040577C("BUT_BIG",0);
+    uVar7 = (*pSVar1->CreateBut)
+                      ((PanelTy *)this_00,0,1,0xa0,0x5c,0,1,1,pCVar3,uVar7,uVar14,sVar9,uVar12,
+                       uVar19,pcVar17,uVar20);
+    this_00->field_01CD = uVar7;
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
@@ -130,7 +132,8 @@ void __thiscall st::fn_0053D1A0(SAMPanelTy *this)
   SAMPanelTy *pSVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int iVar5;
+  uint *puVar6;
   InternalExceptionFrame local_4c;
   SAMPanelTy *local_8;
 
@@ -140,17 +143,17 @@ void __thiscall st::fn_0053D1A0(SAMPanelTy *this)
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 == 0) {
-    iVar3 = 7;
+    iVar5 = 7;
     local_8->field_01B1 = nullptr;
-    puVar5 = local_8->field_01B5;
+    puVar6 = local_8->field_01B5;
     do {
-      if (*puVar5 != 0) {
-        st::fn_006E56B0(pSVar2->field_000C,*puVar5);
-        *puVar5 = 0;
+      if (*puVar6 != 0) {
+        st::fn_006E56B0(pSVar2->field_000C,*puVar6);
+        *puVar6 = 0;
       }
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      puVar6 = puVar6 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     g_sAMPanel_008016EC = nullptr;
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -178,7 +181,8 @@ void __thiscall st::fn_0053D290(SAMPanelTy *this,int param_1)
   short sVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int iVar5;
+  uint *puVar6;
   InternalExceptionFrame local_4c;
   SAMPanelTy *local_8;
 
@@ -196,15 +200,15 @@ void __thiscall st::fn_0053D290(SAMPanelTy *this,int param_1)
     iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (iVar3 == 0) {
-      iVar3 = 7;
-      puVar5 = local_8->field_01B5;
+      iVar5 = 7;
+      puVar6 = local_8->field_01B5;
       do {
-        if (*puVar5 != 0) {
-          st::fn_006E6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
+        if (*puVar6 != 0) {
+          st::fn_006E6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
         }
-        puVar5 = puVar5 + 1;
-        iVar3 = iVar3 + -1;
-      } while (iVar3 != 0);
+        puVar6 = puVar6 + 1;
+        iVar5 = iVar5 + -1;
+      } while (iVar5 != 0);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
@@ -231,7 +235,8 @@ void __thiscall st::fn_0053D3B0(SAMPanelTy *this)
   SAMPanelTy *this_00;
   int iVar2;
   int iVar3;
-  uint *puVar4;
+  int iVar4;
+  uint *puVar5;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   undefined2 local_c;
@@ -248,15 +253,15 @@ void __thiscall st::fn_0053D3B0(SAMPanelTy *this)
     st::fn_004035BC
               (g_allPlayers_007FA174,0x12,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_01AB);
     this_00->field_0028 = 5;
-    puVar4 = this_00->field_01B5;
-    iVar2 = 6;
+    puVar5 = this_00->field_01B5;
+    iVar4 = 6;
     do {
-      if (*puVar4 != 0) {
-        st::fn_006E6080(this_00,2,*puVar4,(undefined4 *)&this_00->field_0x18);
+      if (*puVar5 != 0) {
+        st::fn_006E6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
       }
-      puVar4 = puVar4 + 1;
-      iVar2 = iVar2 + -1;
-    } while (iVar2 != 0);
+      puVar5 = puVar5 + 1;
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
     g_currentExceptionFrame = local_54.previous;
     return;
   }
@@ -289,11 +294,13 @@ int __thiscall st::fn_0053D4D0(SAMPanelTy *this,STMessage *message)
   SAMPanelTy *this_00;
   byte bVar5;
   int iVar6;
-  LPSTR pCVar7;
-  int iVar8;
-  byte *pbVar9;
-  UINT UVar10;
+  LPSTR pCVar6;
+  int iVar7;
+  BITMAPINFO *pBVar8;
   int iVar11;
+  UINT UVar9;
+  int iVar10;
+  int iVar12;
   InternalExceptionFrame local_54;
   byte local_10;
   undefined3 uStack_f;
@@ -346,32 +353,31 @@ int __thiscall st::fn_0053D4D0(SAMPanelTy *this,STMessage *message)
   }
   else if (0xb50e < SVar1) {
     if (SVar1 < MESS_SAMPANELTY_B518) {
-      iVar6 = this_00->field_003C;
+      iVar10 = this_00->field_003C;
       bVar5 = (char)message->id - 0xf;
-      iVar11 = *(int *)(message->arg1).ptr;
+      iVar12 = *(int *)(message->arg1).ptr;
       iVar3 = *(int *)((int)(message->arg1).ptr + 4);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_10 = CONCAT31(uStack_f,bVar5);
-      iVar8 = DAT_00806734;
+      iVar7 = DAT_00806734;
       if (this_00->field_005C != 0) {
-        iVar8 = this_00->field_0044;
+        iVar7 = this_00->field_0044;
       }
-      pbVar9 = (byte *)st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01B1,
-                                    (uint)(*(char *)((int)this_00->field_01B5 + (bVar5 - 10)) ==
-                                          '\0'));
-      st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar11 - iVar6,iVar3 - iVar8,
-             '\x01',pbVar9);
+      pBVar8 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01B1,
+                            (uint)(*(char *)((int)this_00->field_01B5 + (bVar5 - 10)) == '\0'));
+      st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar12 - iVar10,iVar3 - iVar7,
+             '\x01',(byte *)pBVar8);
       st::fn_006B3640
                 ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                  this_00->field_0044);
     }
     else if (SVar1 == MESS_SAMPANELTY_B518) {
       pSVar2 = this_00->vtable;
-      iVar11 = 1;
-      iVar6 = 0;
-      UVar10 = 0x2755;
-      pCVar7 = st::fn_0040577C("BUT_BIG",0);
-      (*pSVar2->PaintIBut)((PanelTy *)this_00,(int)message,pCVar7,UVar10,iVar6,iVar11);
+      iVar12 = 1;
+      iVar10 = 0;
+      UVar9 = 0x2755;
+      pCVar6 = st::fn_0040577C("BUT_BIG",0);
+      (*pSVar2->PaintIBut)((PanelTy *)this_00,(int)message,pCVar6,UVar9,iVar10,iVar12);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }

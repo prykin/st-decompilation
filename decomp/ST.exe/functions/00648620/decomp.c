@@ -22,35 +22,35 @@ BossDataPack(AllocationRecord_00648620 *param_1,undefined4 *param_2,int param_3,
 
 {
   int iVar2;
-  AllocationRecord_00648620 *pAVar3;
+  AllocationRecord_00648620 *pAVar2;
   int iVar4;
-  AllocationRecord_00648620 *pAVar5;
+  AllocationRecord_00648620 *pAVar3;
   uint uVar7;
   byte *puVar8;
   InternalExceptionFrame local_4c;
-  void *local_8;
+  int local_8;
 
-  local_8 = nullptr;
+  local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     *param_4 = param_3 + 0x85U;
-    pAVar3 = Library::DKW::LIB::MemAllocClear(param_3 + 0x85U);
-    pAVar5 = pAVar3;
-    memmove(pAVar5, param_1, 0x85); /* compiler REP MOVS byte copy */
-    pAVar3->field_0001 = *param_4;
-    pAVar3->field_004A = param_3;
-    pAVar3->field_0005 = 0;
-    uVar7 = pAVar3->field_004A;
-    puVar8 = (byte *)&pAVar3->field_0x84;
+    pAVar2 = Library::DKW::LIB::MemAllocClear(param_3 + 0x85U);
+    pAVar3 = pAVar2;
+    memmove(pAVar3, param_1, 0x85); /* compiler REP MOVS byte copy */
+    pAVar2->field_0001 = *param_4;
+    pAVar2->field_004A = param_3;
+    pAVar2->field_0005 = 0;
+    uVar7 = pAVar2->field_004A;
+    puVar8 = (byte *)&pAVar2->field_0x84;
     memmove(puVar8, param_2, uVar7); /* compiler REP MOVS byte copy */
-    pAVar3->field_0046 = &pAVar3->field_0x84 + (-0x84 - (int)pAVar3);
+    pAVar2->field_0046 = &pAVar2->field_0x84 + (-0x84 - (int)pAVar2);
     g_currentExceptionFrame = local_4c.previous;
-    return pAVar3;
+    return pAVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
-  if (local_8 != nullptr) {
+  if (local_8 != 0) {
     FreeAndNull(&local_8);
   }
   iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss_d.cpp",0x6b,0,iVar2,"%s",

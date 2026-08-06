@@ -17,8 +17,9 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
   AiFltClassTy *this_00;
   ushort uVar4;
   int iVar5;
-  uint uVar6;
+  uint uVar5;
   STGroupBoatC *this_01;
+  int iVar6;
   int iVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
@@ -36,10 +37,10 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
   this_00 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0xeca,0,iVar5,
+    iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0xeca,0,iVar5,
                                "AiFltClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
                                local_10->field_0018);
-    if (iVar7 != 0) {
+    if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_flt.cpp",0xecb);
@@ -86,15 +87,15 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
           uVar4 = thunk_FUN_00435850(*(char *)&this_00->field_0024,1,nullptr);
           this_00->field_007D = uVar4;
           sub_0065D6A0(this_00);
-          uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar6;
-          this_00->field_008B = (uVar6 >> 0x10 & 7) + 8;
-          uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar6;
-          this_00->field_01FB = (uVar6 >> 0x10) % 0x1a + 0x19;
-          uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar6;
-          this_00->field_0203 = (uVar6 >> 0x10) % 0x1a + 0x19;
+          uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar5;
+          this_00->field_008B = (uVar5 >> 0x10 & 7) + 8;
+          uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar5;
+          this_00->field_01FB = (uVar5 >> 0x10) % 0x1a + 0x19;
+          uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar5;
+          this_00->field_0203 = (uVar5 >> 0x10) % 0x1a + 0x19;
           thunk_FUN_00676c40(this_00->field_020B,thunk_FUN_00660d10);
           this_00->field_0170 = *(short *)&this_00->field_022F->field_0xc;
           this_00->field_0127 = *(undefined2 *)&this_00->field_0223->field_0xc;

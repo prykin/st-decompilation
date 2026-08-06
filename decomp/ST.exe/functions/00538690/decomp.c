@@ -22,7 +22,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   PanelTy *pPVar2;
   int iVar3;
   int iVar4;
-  undefined4 uVar5;
+  undefined4 uVar3;
   InternalExceptionFrame local_1d0;
   int local_18c [4];
   undefined4 local_17c;

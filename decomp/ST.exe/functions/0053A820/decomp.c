@@ -11,7 +11,8 @@ undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
   PlayPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar2;
+  int iVar4;
   InternalExceptionFrame local_4c;
   PlayPanelTy *local_8;
 
@@ -29,7 +30,7 @@ undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
       if ((g_cPanel_00801688 != nullptr) && (g_cPanel_00801688->field_023F == CASE_1)) {
         CPanelTy::ShiftControls(g_cPanel_00801688,1);
       }
-      iVar2 = 0;
+      iVar4 = 0;
     }
     else {
       if (g_researchPanel_008016E8 != nullptr) {
@@ -69,9 +70,9 @@ undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
       if (g_optPanel_008016DC != nullptr) {
         OptPanelTy::SwitchOptPanelOff(g_optPanel_008016DC);
       }
-      iVar2 = 1;
+      iVar4 = 1;
     }
-    SwitchOptPanel(this_00,iVar2);
+    SwitchOptPanel(this_00,iVar4);
     g_currentExceptionFrame = local_4c.previous;
     return 1;
   }

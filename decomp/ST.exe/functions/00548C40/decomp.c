@@ -18,8 +18,9 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   undefined4 uVar3;
   CursorClassTy *this_00;
   int iVar5;
-  HelpPanelTy_sub_00514BC0_param_1Enum HVar6;
+  HelpPanelTy_sub_00514BC0_param_1Enum HVar5;
   int iVar7;
+  int iVar6;
   uint uVar8;
   ushort *puVar9;
   uint *puVar10;
@@ -94,8 +95,8 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   char local_d4;
   char local_d0;
   short local_cf;
-  undefined2 local_cd;
-  undefined2 local_cb;
+  short local_cd;
+  short local_cb;
   uint local_c8;
   undefined4 local_c4;
   undefined4 local_c0;
@@ -132,7 +133,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   short local_60;
   undefined1 local_5e [2];
   short local_5c;
-  undefined2 local_5a;
+  short local_5a;
   short local_58;
   short local_56;
   undefined4 *local_54;
@@ -144,7 +145,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   ushort *local_3c;
   short local_38;
   short local_36;
-  undefined2 local_34;
+  short local_34;
   byte local_32 [2];
   undefined1 local_30 [2];
   short local_2e;
@@ -170,9 +171,9 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   this_00 = local_124;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_2c8.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0x671,0,iVar5,
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0x671,0,iVar5,
                                "%s","CursorClassTy::TakeCmdToRun");
-    if (iVar7 == 0) {
+    if (iVar6 == 0) {
       RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x672);
       return;
     }
@@ -195,12 +196,12 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   if (this_00->field_04DE != '\0') {
     if (((this_00->field_0494 == 0x48) && (pSVar2 = this_00->field_049A, pSVar2 != nullptr))
        && (g_helpPanel_00801690 != nullptr)) {
-      HVar6 = pSVar2->slot_2C();
-      if (HVar6 == 0x78) {
-        HVar6 = *(HelpPanelTy_sub_00514BC0_param_1Enum *)&this_00->field_049A->field_0x259;
+      HVar5 = pSVar2->slot_2C();
+      if (HVar5 == 0x78) {
+        HVar5 = *(HelpPanelTy_sub_00514BC0_param_1Enum *)&this_00->field_049A->field_0x259;
       }
-      iVar5 = (*pSVar2->vtable->vfunc_0C)();
-      HelpPanelTy::sub_00514BC0(g_helpPanel_00801690,HVar6,iVar5);
+      iVar7 = (*pSVar2->vtable->vfunc_0C)();
+      HelpPanelTy::sub_00514BC0(g_helpPanel_00801690,HVar5,iVar7);
       this_00->field_04DE = 0;
     }
     goto switchD_00548db5_caseD_3;
@@ -299,11 +300,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
           }
           if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
             thunk_FUN_0054edf0((undefined4 *)0x23,&local_b8,0,0xffffffff);
-            iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,
+            iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,
                                  this_00->field_00C5 - this_00->field_04B2,
                                  this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                                  (float *)&local_8);
-            if (iVar5 != 0) {
+            if (iVar7 != 0) {
               if (_DAT_0079034c <= (float)local_8) {
                 local_14 = local_8;
                 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
@@ -401,10 +402,10 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     memset((void *)local_120, 0, 0x18); /* compiler bulk-zero initialization */
     if (this_00->field_049A == nullptr) {
-      iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
+      iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                            this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                            (float *)&local_8);
-      if (iVar5 == 0) break;
+      if (iVar7 == 0) break;
       lVar13 = Library::MSVCRT::__ftol();
       local_11b = (undefined1)lVar13;
       lVar13 = Library::MSVCRT::__ftol();
@@ -420,8 +421,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     else {
       STFishC::sub_004162B0
-                (this_00->field_049A,(short *)local_5e,(undefined2 *)local_30,(undefined2 *)local_32
-                );
+                (this_00->field_049A,(short *)local_5e,(short *)local_30,(short *)local_32);
       local_11b = local_5e[0];
       local_11a = local_30[0];
       local_119 = local_32[0];
@@ -433,10 +433,10 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     goto cf_common_join_0054A19A;
   case 5:
   case 6:
-    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
-    if (iVar5 != 0) {
+    if (iVar7 != 0) {
       lVar13 = Library::MSVCRT::__ftol();
       local_130 = (uint)lVar13;
       lVar13 = Library::MSVCRT::__ftol();
@@ -463,10 +463,10 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     break;
   case 8:
-    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
-    if (iVar5 != 0) {
+    if (iVar7 != 0) {
       local_178[0] = 2;
       lVar13 = Library::MSVCRT::__ftol();
       local_173 = (undefined1)lVar13;
@@ -496,17 +496,17 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     pSVar2 = this_00->field_049A;
     if (pSVar2 == nullptr) break;
     memset((void *)local_160, 0, 0x18); /* compiler bulk-zero initialization */
-    STFishC::sub_004162B0(pSVar2,(short *)local_3e,(undefined2 *)local_6c,(undefined2 *)local_46);
+    STFishC::sub_004162B0(pSVar2,(short *)local_3e,(short *)local_6c,(short *)local_46);
     local_15b = local_3e[0];
     local_159 = local_46[0];
     local_15a = local_6c[0];
     local_160[0] = 1;
     STPiece<1,4>(local_160) = this_00->field_049A->field_0018;
     thunk_FUN_0054edf0((undefined4 *)0x16,(uint *)local_160,0,0xffffffff);
-    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
-    if (iVar5 == 0) break;
+    if (iVar7 == 0) break;
     if (_DAT_0079034c <= (float)local_8) {
       local_14 = local_8;
     }
@@ -563,10 +563,10 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     goto cf_common_join_0054A19A;
   case 0xf:
   case 0x10:
-    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
-    if (iVar5 != 0) {
+    if (iVar7 != 0) {
       local_19c = ((this_00->field_0494 != 0xf) - 1U & 0xf2) + 0x10;
       lVar13 = Library::MSVCRT::__ftol();
       local_19b = (undefined4)lVar13;
@@ -594,10 +594,10 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     break;
   case 0x11:
-    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
-    if (iVar5 != 0) {
+    if (iVar7 != 0) {
       lVar13 = Library::MSVCRT::__ftol();
       local_13c = (uint)lVar13;
       lVar13 = Library::MSVCRT::__ftol();
@@ -649,10 +649,10 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
           thunk_FUN_0054edf0((undefined4 *)0x23,&local_c8,0,0xffffffff);
-          iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
+          iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                                this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                                (float *)&local_8);
-          if (iVar5 != 0) {
+          if (iVar7 != 0) {
             if (_DAT_0079034c <= (float)local_8) {
               local_14 = local_8;
               SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
@@ -691,10 +691,10 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     puVar14 = (byte *)0x21;
     goto cf_common_join_0054A19A;
   case 0x19:
-    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
-    if (iVar5 != 0) {
+    if (iVar7 != 0) {
       lVar13 = Library::MSVCRT::__ftol();
       local_207 = (undefined4)lVar13;
       lVar13 = Library::MSVCRT::__ftol();
@@ -767,10 +767,10 @@ LAB_0054a196:
     goto cf_common_join_0054A19A;
   case 0x1d:
     if (this_00->field_04A2 == 0x18) {
-      iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
+      iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                            this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                            (float *)&local_8);
-      if (iVar5 == 0) break;
+      if (iVar7 == 0) break;
       local_90 = 1;
       local_8c = 0;
       local_88 = 0;
@@ -782,15 +782,15 @@ LAB_0054a196:
       STPiece<1,3>(local_8c) = (undefined3)lVar13;
       STPiece<0,1>(local_88) = (undefined1)((ulonglong)lVar13 >> 0x18);
       lVar13 = Library::MSVCRT::__ftol();
-      iVar5 = (int)lVar13;
+      iVar7 = (int)lVar13;
       STPiece<1,3>(local_88) = (undefined3)lVar13;
       local_84 = (undefined1)((ulonglong)lVar13 >> 0x18);
-      if (iVar5 < 0) {
-        iVar5 = 0;
+      if (iVar7 < 0) {
+        iVar7 = 0;
         STPiece<1,3>(local_88) = 0;
         local_84 = 0;
       }
-      if (4 < iVar5) {
+      if (4 < iVar7) {
         STPiece<1,3>(local_88) = 4;
         local_84 = 0;
       }
@@ -816,10 +816,10 @@ LAB_0054a196:
     STPiece<1,3>(local_d8) = (int3)local_7a;
     local_d4 = (char)(local_7a >> 0xf);
     thunk_FUN_0054edf0((undefined4 *)0x1a,&local_e0,0,0xffffffff);
-    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
-    if (iVar5 == 0) break;
+    if (iVar7 == 0) break;
     if (_DAT_0079034c <= (float)local_8) {
       local_14 = local_8;
     }
@@ -857,10 +857,10 @@ cf_common_join_0054A19A:
     STPiece<0,1>(local_284[0]) = 0x19;
     local_267 = pSVar2->field_0018;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_284,0,0xffffffff);
-    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
-    if (iVar5 == 0) break;
+    if (iVar7 == 0) break;
     if (_DAT_0079034c <= (float)local_8) {
       local_14 = local_8;
     }

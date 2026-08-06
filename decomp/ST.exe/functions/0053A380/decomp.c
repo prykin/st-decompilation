@@ -11,7 +11,8 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
   PlayPanelTy *pPVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int iVar5;
+  uint *puVar6;
   InternalExceptionFrame local_50;
   PlayPanelTy *local_c;
   int local_8;
@@ -34,18 +35,18 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
       StartSystemTy::sub_006E56B0(pPVar2->field_000C,pPVar2->field_01C1);
     }
     pPVar2->field_01C1 = 0;
-    puVar5 = &pPVar2->field_0181;
+    puVar6 = &pPVar2->field_0181;
     local_8 = 2;
     do {
-      iVar3 = 8;
+      iVar5 = 8;
       do {
-        if (*puVar5 != 0) {
-          StartSystemTy::sub_006E56B0(pPVar2->field_000C,*puVar5);
-          *puVar5 = 0;
+        if (*puVar6 != 0) {
+          StartSystemTy::sub_006E56B0(pPVar2->field_000C,*puVar6);
+          *puVar6 = 0;
         }
-        puVar5 = puVar5 + 1;
-        iVar3 = iVar3 + -1;
-      } while (iVar3 != 0);
+        puVar6 = puVar6 + 1;
+        iVar5 = iVar5 + -1;
+      } while (iVar5 != 0);
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     if (pPVar2->field_01DD != nullptr) {

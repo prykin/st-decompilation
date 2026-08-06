@@ -14,10 +14,11 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
 {
   CPanelTy *this_00;
   short sVar2;
-  int iVar3;
   int iVar4;
-  uint *puVar6;
-  uint uVar7;
+  int iVar3;
+  int iVar5;
+  uint *puVar7;
+  uint uVar8;
   InternalExceptionFrame local_50;
   uint local_c;
   CPanelTy *local_8;
@@ -63,60 +64,60 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
     if (local_8->field_09D0 != 0) {
       FUN_006e6080(local_8,2,local_8->field_09D0,(undefined4 *)&local_8->field_0x18);
     }
-    puVar6 = this_00->field_0A15;
-    iVar4 = 6;
+    puVar7 = this_00->field_0A15;
+    iVar5 = 6;
     do {
-      if (*puVar6 != 0) {
-        FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
+      if (*puVar7 != 0) {
+        FUN_006e6080(this_00,2,*puVar7,(undefined4 *)&this_00->field_0x18);
       }
-      puVar6 = puVar6 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    puVar6 = this_00->field_0B1F;
-    iVar4 = 6;
+      puVar7 = puVar7 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
+    puVar7 = this_00->field_0B1F;
+    iVar5 = 6;
     do {
-      if (*puVar6 != 0) {
-        FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
+      if (*puVar7 != 0) {
+        FUN_006e6080(this_00,2,*puVar7,(undefined4 *)&this_00->field_0x18);
       }
-      puVar6 = puVar6 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    iVar4 = this_00->field_0B37;
+      puVar7 = puVar7 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
+    iVar5 = this_00->field_0B37;
   }
   else {
     if (local_8->field_095C != 0) {
       FUN_006e6080(local_8,2,local_8->field_095C,(undefined4 *)&local_8->field_0x18);
     }
-    puVar6 = this_00->field_0960;
-    iVar4 = 4;
+    puVar7 = this_00->field_0960;
+    iVar5 = 4;
     do {
-      if (*puVar6 != 0) {
-        FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
+      if (*puVar7 != 0) {
+        FUN_006e6080(this_00,2,*puVar7,(undefined4 *)&this_00->field_0x18);
       }
-      puVar6 = puVar6 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    iVar4 = this_00->field_0970;
+      puVar7 = puVar7 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
+    iVar5 = this_00->field_0970;
   }
-  if (iVar4 != 0) {
-    FUN_006e6080(this_00,2,iVar4,(undefined4 *)&this_00->field_0x18);
+  if (iVar5 != 0) {
+    FUN_006e6080(this_00,2,iVar5,(undefined4 *)&this_00->field_0x18);
   }
-  uVar7 = local_c & 0xff;
-  if (this_00->field_09C0[uVar7] != 0) {
-    FUN_006e6080(this_00,2,this_00->field_09C0[uVar7],(undefined4 *)&this_00->field_0x18);
+  uVar8 = local_c & 0xff;
+  if (this_00->field_09C0[uVar8] != 0) {
+    FUN_006e6080(this_00,2,this_00->field_09C0[uVar8],(undefined4 *)&this_00->field_0x18);
   }
-  iVar4 = *(int *)((int)this_00->field_0308 + uVar7 * 4 + -10);
-  if (iVar4 != 0) {
-    FUN_006e6080(this_00,2,iVar4,(undefined4 *)&this_00->field_0x18);
+  iVar5 = *(int *)((int)this_00->field_0308 + uVar8 * 4 + -10);
+  if (iVar5 != 0) {
+    FUN_006e6080(this_00,2,iVar5,(undefined4 *)&this_00->field_0x18);
   }
-  if (this_00->field_0308[uVar7] != 0) {
-    FUN_006e6080(this_00,2,this_00->field_0308[uVar7],(undefined4 *)&this_00->field_0x18);
+  if (this_00->field_0308[uVar8] != 0) {
+    FUN_006e6080(this_00,2,this_00->field_0308[uVar8],(undefined4 *)&this_00->field_0x18);
   }
-  if (this_00->field_0310[uVar7] != 0) {
-    FUN_006e6080(this_00,2,this_00->field_0310[uVar7],(undefined4 *)&this_00->field_0x18);
+  if (this_00->field_0310[uVar8] != 0) {
+    FUN_006e6080(this_00,2,this_00->field_0310[uVar8],(undefined4 *)&this_00->field_0x18);
   }
-  if (((char)local_c != '\0') && (this_00->field_0310[uVar7 + 1] != 0)) {
-    FUN_006e6080(this_00,2,this_00->field_0310[uVar7 + 1],(undefined4 *)&this_00->field_0x18);
+  if (((char)local_c != '\0') && (this_00->field_0310[uVar8 + 1] != 0)) {
+    FUN_006e6080(this_00,2,this_00->field_0310[uVar8 + 1],(undefined4 *)&this_00->field_0x18);
   }
   g_currentExceptionFrame = local_50.previous;
   return;

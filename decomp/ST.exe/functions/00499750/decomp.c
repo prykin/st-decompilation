@@ -14,8 +14,9 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,DArr
   STGroupBoatC *pSVar2;
   int iVar3;
   ushort *puVar4;
-  undefined4 uVar5;
   int iVar6;
+  undefined4 uVar5;
+  int iVar7;
   uint index;
   InternalExceptionFrame local_58;
   dword local_14;
@@ -61,18 +62,18 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,DArr
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x4e5);
     }
-    iVar6 = -1;
+    iVar7 = -1;
     iVar3 = 0;
     if (0 < pSVar2->field_021A) {
       puVar4 = pSVar2->field_021E;
       do {
         if (*(int *)(puVar4 + iVar3 * 4) != -1) {
-          if (iVar6 == -1) {
+          if (iVar7 == -1) {
             (puVar4 + iVar3 * 4)[0] = 0;
             (puVar4 + iVar3 * 4)[1] = 0;
             puVar4 = pSVar2->field_021E;
             pSVar2->field_0216 = *(undefined4 *)(puVar4 + iVar3 * 4 + 2);
-            iVar6 = 0;
+            iVar7 = 0;
           }
           else {
             *(undefined4 *)(puVar4 + iVar3 * 4) = pSVar2->field_0216;

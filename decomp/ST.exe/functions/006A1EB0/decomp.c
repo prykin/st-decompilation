@@ -7,9 +7,12 @@ FUN_006a1eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
 
 {
   int iVar1;
+  int local_EAX_102;
   int iVar2;
+  int iVar4;
   int iVar3;
-  uint uVar4;
+  int iVar5;
+  uint uVar6;
   ushort local_18 [4];
   int *local_10;
   int local_c;
@@ -19,33 +22,33 @@ FUN_006a1eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
      (((param_3 < param_1[1] && (-1 < param_4)) && (param_4 < 6)))) {
     iVar1 = thunk_FUN_006a20e0(param_1,param_2,param_3,param_4,param_5);
     if (iVar1 != 0) {
-      iVar2 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(int)local_18);
+      local_EAX_102 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(int)local_18);
       iVar1 = param_5;
-      if ((short)iVar2 != 0) {
+      if ((short)local_EAX_102 != 0) {
         iVar1 = 0xff;
       }
-      thunk_FUN_006a1410(param_1,param_2,param_3,(int)(short)iVar2,iVar1,param_7,param_8);
+      thunk_FUN_006a1410(param_1,param_2,param_3,(int)(short)local_EAX_102,iVar1,param_7,param_8);
     }
     local_10 = &DAT_007df82c;
     do {
-      uVar4 = local_10[-1] + param_2;
+      uVar6 = local_10[-1] + param_2;
       iVar1 = *local_10 + param_3;
       local_8 = param_4;
       if ((int)(param_4 - ((param_6[2] & 0xf00) >> 8)) < param_4) {
         do {
-          if (((-1 < (int)uVar4) && ((int)uVar4 < *param_1)) &&
+          if (((-1 < (int)uVar6) && ((int)uVar6 < *param_1)) &&
              ((-1 < iVar1 && (((iVar1 < param_1[1] && (-1 < local_8)) && (local_8 < 6)))))) {
-            iVar2 = thunk_FUN_006a1370(param_1,uVar4,iVar1,local_8,(int)local_18);
+            iVar2 = thunk_FUN_006a1370(param_1,uVar6,iVar1,local_8,(int)local_18);
             local_c = (int)(short)iVar2;
-            iVar2 = param_5;
+            iVar5 = param_5;
             if (local_c != 0) {
-              iVar2 = 0xff;
+              iVar5 = 0xff;
             }
-            iVar3 = thunk_FUN_006a20e0(param_1,uVar4,iVar1,local_8,iVar2);
-            if (((iVar3 != 0) &&
-                (iVar3 = thunk_FUN_006a24e0(param_6,param_4,local_18,local_c,iVar2), iVar3 == 0)) &&
-               (iVar2 = thunk_FUN_006a2920(param_1,uVar4,iVar1,local_c,iVar2,param_7,param_8),
-               iVar2 == 0)) {
+            iVar4 = thunk_FUN_006a20e0(param_1,uVar6,iVar1,local_8,iVar5);
+            if (((iVar4 != 0) &&
+                (iVar3 = thunk_FUN_006a24e0(param_6,param_4,local_18,local_c,iVar5), iVar3 == 0)) &&
+               (iVar5 = thunk_FUN_006a2920(param_1,uVar6,iVar1,local_c,iVar5,param_7,param_8),
+               iVar5 == 0)) {
               return 0;
             }
           }

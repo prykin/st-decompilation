@@ -12,9 +12,9 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
   int iVar6;
   STFishC *this_00;
   STFishC *local_1c;
-  int local_18;
+  short local_18 [2];
   int local_14;
-  undefined4 local_10;
+  uint local_10;
   short local_a;
   short local_8;
   short local_6;
@@ -24,7 +24,8 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
   sVar2 = STField<short>(this,0x2c9);
   sVar3 = STField<short>(this,0x2c7);
   local_14 = 0;
-  local_18 = 0;
+  local_18[0] = 0;
+  local_18[1] = 0;
   if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
        ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) ||
       ((g_worldGrid.sizeZ <= sVar2 ||
@@ -36,13 +37,13 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
                          (int *)&local_1c), this_00 = local_1c, iVar4 == -4)) {
     return -1;
   }
-  thunk_FUN_00416270(this_00,(undefined2 *)&local_10,&local_14,&local_18);
+  thunk_FUN_00416270(this_00,&local_10,&local_14,local_18);
   if ((((short)local_10 == STField<short>(this,0x2cb)) &&
       ((short)local_14 == STField<short>(this,0x2cd))) &&
-     ((short)local_18 == STField<short>(this,0x2cf))) {
+     (local_18[0] == STField<short>(this,0x2cf))) {
     return 0;
   }
-  iVar5 = (int)(short)local_18 - (int)STField<short>(this,499);
+  iVar5 = (int)local_18[0] - (int)STField<short>(this,499);
   iVar6 = (int)(short)local_14 - (int)STField<short>(this,0x1f1);
   iVar4 = (int)(short)local_10 - (int)STField<short>(this,0x1ef);
   if (iVar4 * iVar4 + iVar6 * iVar6 + iVar5 * iVar5 < 0x191) {
@@ -66,7 +67,7 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
        ((param_1 == STField<int>(this,0x2d5) + -2 && (iVar4 != 0)))) {
       STField<undefined2>(this,0x2cb) = (undefined2)local_10;
       STField<undefined2>(this,0x2cd) = (undefined2)local_14;
-      STField<undefined2>(this,0x2cf) = (undefined2)local_18;
+      STField<short>(this,0x2cf) = local_18[0];
       return iVar4;
     }
   }

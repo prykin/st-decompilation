@@ -12,7 +12,8 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
   AiPlrClassTy *pAVar3;
   int iVar4;
   uint index;
-  undefined4 *puVar5;
+  undefined4 *puVar4;
+  int iVar5;
   int iVar6;
   AiTactClassTy *this_00;
   AnonShape_0068FD00_A5257008 *pAVar7;
@@ -27,9 +28,9 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
   pAVar3 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0xf1,0,iVar4,"%s",
+    iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0xf1,0,iVar4,"%s",
                                "AiPlrClassTy::CloseTactByTitle");
-    if (iVar6 == 0) {
+    if (iVar5 == 0) {
       RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_plr.cpp",0xf2);
       return iVar4;
     }
@@ -43,13 +44,13 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
   pDVar1 = pAVar3->field_0695;
   if ((pDVar1 != nullptr) && ((int)index < (int)pDVar1->count)) {
     if (index < pDVar1->count) {
-      puVar5 = DArrayAt<undefined4>(pDVar1, index);
+      puVar4 = DArrayAt<undefined4>(pDVar1, index);
     }
     else {
-      puVar5 = nullptr;
+      puVar4 = nullptr;
     }
-    if (puVar5[1] != 0) {
-      this_00 = (AiTactClassTy *)*puVar5;
+    if (puVar4[1] != 0) {
+      this_00 = (AiTactClassTy *)*puVar4;
       goto LAB_00679378;
     }
   }
@@ -57,7 +58,7 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
 LAB_00679378:
   if (this_00 != nullptr) {
     pAVar7 = local_3c;
-    for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
+    for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {
       *(undefined4 *)pAVar7 = 0;
       pAVar7 = (AnonShape_0068FD00_A5257008 *)&pAVar7->field_0x4;
     }

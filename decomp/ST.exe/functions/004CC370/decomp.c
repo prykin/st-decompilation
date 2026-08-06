@@ -11,13 +11,14 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
 {
   AnonPointee_STT3DSprC_0020 *pAVar1;
   uint uVar3;
+  int iVar5;
   int iVar4;
   int uVar2;
-  uint uVar5;
+  uint uVar6;
   int local_EAX_774;
   int local_EAX_824;
-  int iVar6;
   int iVar7;
+  int iVar8;
 
   if ((*(int *)&param_1->field_0x444 == 0) || (*(int *)&param_1->field_0x448 == 0)) {
     return 0;
@@ -36,44 +37,44 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
     goto cf_common_exit_004CC6D2;
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar4 = (**(code **)(*(int *)param_1 + 0x7c))();
-  if ((3 < iVar4 / 0x14) && (*(int *)&param_1->field_0x43c == 1)) {
+  iVar5 = (**(code **)(*(int *)param_1 + 0x7c))();
+  if ((3 < iVar5 / 0x14) && (*(int *)&param_1->field_0x43c == 1)) {
     TLOBaseTy::sub_004CC900((TLOBaseTy *)param_1);
     goto cf_common_exit_004CC6D2;
   }
   STT3DSprC::UnLoadSequence((STT3DSprC *)&param_1->field_0x1d5,6);
-  iVar4 = *(int *)&param_1->field_0x440;
-  *(int *)&param_1->field_0x43c = iVar4;
+  iVar5 = *(int *)&param_1->field_0x440;
+  *(int *)&param_1->field_0x43c = iVar5;
   if (g_playSystem_00802A38->field_00E4 <
-      *(int *)&param_1->field_0x450 + (~-(uint)(iVar4 != 1) & DAT_00790c14))
+      *(int *)&param_1->field_0x450 + (~-(uint)(iVar5 != 1) & DAT_00790c14))
   goto cf_common_exit_004CC6D2;
-  if (iVar4 == 2) {
-    iVar4 = STT3DSprC::LoadSequence
+  if (iVar5 == 2) {
+    iVar5 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)param_1->field_0603,0xe,PTR_0080678c,PTR_s_tlo_capture_00790c28,
-                       0x1d);
-    if (iVar4 != 0) {
-      iVar7 = 0x37c;
+                       CASE_1D);
+    if (iVar5 != 0) {
+      iVar8 = 0x37c;
       goto cf_error_exit_004CC50A;
     }
   }
-  else if ((iVar4 == 3) || (iVar4 == 4)) {
-    iVar4 = STT3DSprC::LoadSequence
+  else if ((iVar5 == 3) || (iVar5 == 4)) {
+    iVar5 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)param_1->field_0603,0xe,PTR_0080678c,PTR_s_tlo_emb6_00790c20,
-                       0x1d);
-    if (iVar4 != 0) {
-      iVar7 = 0x37f;
+                       CASE_1D);
+    if (iVar5 != 0) {
+      iVar8 = 0x37f;
       goto cf_error_exit_004CC50A;
     }
   }
   else {
-    iVar4 = STT3DSprC::LoadSequence
+    iVar5 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)param_1->field_0603,0xe,PTR_00806764,PTR_s_tlo_bubbles_00790c1c,
-                       0x1d);
-    if (iVar4 != 0) {
-      iVar7 = 0x381;
+                       CASE_1D);
+    if (iVar5 != 0) {
+      iVar8 = 0x381;
 cf_error_exit_004CC50A:
       RaiseInternalException
-                (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",iVar7);
+                (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",iVar8);
     }
   }
   uVar3 = 6;
@@ -85,25 +86,25 @@ cf_error_exit_004CC50A:
              param_1->field_0201);
   uVar3 = *(int *)&param_1->field_0x1c * 0x41c64e6d + 0x3039;
   *(uint *)&param_1->field_0x1c = uVar3;
-  iVar7 = param_1->field_0235 * 0x44;
-  uVar3 = (uVar3 >> 0x10) % *(uint *)(&DAT_00797748 + iVar7);
+  iVar8 = param_1->field_0235 * 0x44;
+  uVar3 = (uVar3 >> 0x10) % *(uint *)(&DAT_00797748 + iVar8);
   *(uint *)&param_1->field_0x44c = uVar3;
-  iVar4 = *(int *)&param_1->field_0x43c;
-  if (iVar4 == 2) {
-    uVar5 = (param_1->field_0613 - *(int *)(&DAT_0079774c + uVar3 * 8 + iVar7)) + 0x28;
-    uVar3 = (param_1->field_0617 - *(int *)(&DAT_00797750 + uVar3 * 8 + iVar7)) + 0x1f;
+  iVar5 = *(int *)&param_1->field_0x43c;
+  if (iVar5 == 2) {
+    uVar6 = (param_1->field_0613 - *(int *)(&DAT_0079774c + uVar3 * 8 + iVar8)) + 0x28;
+    uVar3 = (param_1->field_0617 - *(int *)(&DAT_00797750 + uVar3 * 8 + iVar8)) + 0x1f;
   }
   else {
-    if ((iVar4 == 3) || (iVar6 = 0x17, iVar4 == 4)) {
-      iVar6 = 0x10;
+    if ((iVar5 == 3) || (iVar7 = 0x17, iVar5 == 4)) {
+      iVar7 = 0x10;
     }
-    uVar5 = (param_1->field_0613 - *(int *)(&DAT_0079774c + uVar3 * 8 + iVar7)) + iVar6;
-    if ((iVar4 == 3) || (iVar6 = 0x5c, iVar4 == 4)) {
-      iVar6 = 0x15;
+    uVar6 = (param_1->field_0613 - *(int *)(&DAT_0079774c + uVar3 * 8 + iVar8)) + iVar7;
+    if ((iVar5 == 3) || (iVar7 = 0x5c, iVar5 == 4)) {
+      iVar7 = 0x15;
     }
-    uVar3 = (param_1->field_0617 - *(int *)(&DAT_00797750 + uVar3 * 8 + iVar7)) + iVar6;
+    uVar3 = (param_1->field_0617 - *(int *)(&DAT_00797750 + uVar3 * 8 + iVar8)) + iVar7;
   }
-  thunk_FUN_004ad380((void *)param_1->field_0603,uVar5,uVar3);
+  thunk_FUN_004ad380((void *)param_1->field_0603,uVar6,uVar3);
   STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_0603,'\x0e',0);
   STT3DSprC::StartShow((STT3DSprC *)param_1->field_0603,0xe,g_playSystem_00802A38->field_00E4);
   thunk_FUN_004ad460((void *)param_1->field_0603,1);
@@ -114,10 +115,10 @@ cf_error_exit_004CC50A:
   if (*(int *)&param_1->field_0x43c == 2) {
     local_EAX_774 = LookupRecordByte(param_1->field_023D);
     if (*(int *)(&DAT_00795f18 + ((uint)(byte)local_EAX_774 + param_1->field_0235 * 3) * 4) != 0) {
-      iVar4 = *(int *)param_1;
+      iVar5 = *(int *)param_1;
       local_EAX_824 = LookupRecordByte(param_1->field_023D);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(iVar4 + 0x90))
+      (**(code **)(iVar5 + 0x90))
                 (3,*(undefined4 *)
                     (&DAT_00795f18 + ((uint)(byte)local_EAX_824 + param_1->field_0235 * 3) * 4));
     }

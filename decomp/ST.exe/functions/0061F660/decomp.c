@@ -16,8 +16,10 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
   STMessageId SVar1;
   float fVar3;
   int iVar4;
+  int iVar6;
   int iVar5;
-  int *piVar6;
+  int *piVar7;
+  int iVar8;
   InternalExceptionFrame local_50;
   float local_c;
   AnonShape_0061FCC0_94F6689F *local_8;
@@ -38,30 +40,30 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
   }
   SVar1 = message->id;
   if (SVar1 == MESS_ID_NONE) {
-    iVar4 = 0xafffff5;
-    piVar6 = (int *)&local_8->field_0x31;
+    iVar8 = 0xafffff5;
+    piVar7 = (int *)&local_8->field_0x31;
     do {
-      if (*(char *)((int)piVar6 + -0x11) != '\0') {
-        ST3DSMAPContext::sub_006E6780(g_sT3DSMAPContext_00807598,iVar4);
-        iVar5 = g_playSystem_00802A38->field_00E4 - piVar6[2];
-        fVar3 = (float)iVar5;
-        local_c = fVar3 * (float)piVar6[1] * fVar3 * _DAT_00790784 +
-                  ((float)(piVar6[-1] - iVar5 * *piVar6) * _DAT_007904f8 + _DAT_007904f4) *
+      if (*(char *)((int)piVar7 + -0x11) != '\0') {
+        ST3DSMAPContext::sub_006E6780(g_sT3DSMAPContext_00807598,iVar8);
+        iVar6 = g_playSystem_00802A38->field_00E4 - piVar7[2];
+        fVar3 = (float)iVar6;
+        local_c = fVar3 * (float)piVar7[1] * fVar3 * _DAT_00790784 +
+                  ((float)(piVar7[-1] - iVar6 * *piVar7) * _DAT_007904f8 + _DAT_007904f4) *
                   _DAT_0079070c;
         if (local_c <= _DAT_007904f8) {
-          ST3DSMAPContext::sub_006E6780(g_sT3DSMAPContext_00807598,iVar4);
-          *(undefined1 *)((int)piVar6 + -0x11) = 0;
+          ST3DSMAPContext::sub_006E6780(g_sT3DSMAPContext_00807598,iVar8);
+          *(undefined1 *)((int)piVar7 + -0x11) = 0;
         }
         else {
           ST3DSMAPContext::sub_006E6710
-                    (g_sT3DSMAPContext_00807598,(float)piVar6[-4] * _DAT_007904f8 + _DAT_007904f4,
-                     (float)piVar6[-3] * _DAT_007904f8 + _DAT_007904f4,(uint)local_c,piVar6[-2],
-                     iVar4);
+                    (g_sT3DSMAPContext_00807598,(float)piVar7[-4] * _DAT_007904f8 + _DAT_007904f4,
+                     (float)piVar7[-3] * _DAT_007904f8 + _DAT_007904f4,(uint)local_c,piVar7[-2],
+                     iVar8);
         }
       }
-      iVar4 = iVar4 + 0xffffff;
-      piVar6 = (int *)((int)piVar6 + 0x1d);
-    } while (iVar4 < 0xffffff0);
+      iVar8 = iVar8 + 0xffffff;
+      piVar7 = (int *)((int)piVar7 + 0x1d);
+    } while (iVar8 < 0xffffff0);
   }
   else if (SVar1 == MESS_ID_CREATE) {
     if (g_dumpClass_007FB284 != nullptr) {

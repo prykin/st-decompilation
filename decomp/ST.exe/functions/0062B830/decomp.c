@@ -55,8 +55,8 @@ FUN_0062b830(int param_1,int param_2,int param_3,undefined4 param_4,int *param_5
   local_c = param_6;
   g_playSystem_00802A38->vfunc_08(0x124,0,0,(short)local_44,0);
   STFishC::sub_004162B0
-            ((STFishC *)this,(short *)((int)&param_3 + 2),(undefined2 *)((int)&param_2 + 2),
-             (undefined2 *)((int)&param_1 + 2));
+            ((STFishC *)this,(short *)((int)&param_3 + 2),(short *)((int)&param_2 + 2),
+             (short *)((int)&param_1 + 2));
   iVar1 = param_8;
   if ((param_9 == 0) && (g_manRuin_008117B0 != nullptr)) {
     if (this[0xb] == 0) {

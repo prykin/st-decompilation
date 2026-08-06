@@ -28,6 +28,7 @@ void FUN_007012f0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   uint local_10;
   ushort *local_c;
   uint local_8;
+  byte *pbVar11_mg1;
 
   uVar1 = 0;
   _DAT_00857000 = 1;
@@ -127,14 +128,14 @@ joined_r0x00701311:
       }
     }
     iVar8 = param_15;
-    pbVar11 = param_13;
+    pbVar11_mg1 = param_13;
     if ((int)uVar4 <= param_15) {
       do {
         iVar8 = iVar8 - uVar4;
-        bVar7 = *pbVar11;
+        bVar7 = *pbVar11_mg1;
         local_10 = (uint)bVar7;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_13 = pbVar11 + 1;
+        param_13 = pbVar11_mg1 + 1;
         if ((bVar7 & 0x80) == 0) {
           uVar4 = local_10 & 0x7f;
         }
@@ -146,10 +147,10 @@ joined_r0x00701311:
           }
           else {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            param_13 = pbVar11 + 2;
+            param_13 = pbVar11_mg1 + 2;
           }
         }
-        pbVar11 = param_13;
+        pbVar11_mg1 = param_13;
       } while ((int)uVar4 <= iVar8);
     }
     local_8 = param_8;

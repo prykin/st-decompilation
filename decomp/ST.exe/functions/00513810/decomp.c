@@ -21,7 +21,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
   int iVar4;
   InternalExceptionFrame local_50;
   HelpPanelTy *local_c;
-  undefined4 local_8;
+  void *local_8;
 
   if (this->field_01A1 != this->field_01A2) {
     local_50.previous = g_currentExceptionFrame;
@@ -43,7 +43,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
       HVar1 = this_00->field_01A2;
       if (HVar1 != 0) {
         if (HVar1 == CASE_6) {
-          TTreeProc(this_00,this_00->field_01AB,'\0');
+          TTreeProc(this_00,(uint)this_00->field_01AB,'\0');
           PutToSHlp(this_00);
           g_currentExceptionFrame = local_50.previous;
           return;
@@ -60,10 +60,10 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
                  (byte *)this_00->field_01DC,0,0x21,0x16,0x1b8,0x118);
       CreateList(this_00);
       if (this_00->field_01A2 == '\0') {
-        local_8 = this_00->field_01B7;
+        local_8 = (void *)this_00->field_01B7;
       }
       else {
-        local_8 = *(undefined4 *)&this_00->field_0x1bf;
+        local_8 = *(void **)&this_00->field_0x1bf;
       }
       if (this_00->field_019C != 0) {
         memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */

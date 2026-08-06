@@ -13,7 +13,7 @@ FUN_006b6230(int *param_1,char *param_2,undefined4 param_3,undefined4 param_4,un
   piVar3 = (int *)*param_5;
   if (*piVar3 <= piVar3[1]) {
     iVar1 = *piVar3 + 10;
-    piVar3 = (int *)FUN_006bfb50(piVar3,iVar1 * 0x14 + 8);
+    piVar3 = FUN_006bfb50(piVar3,iVar1 * 0x14 + 8);
     if (piVar3 == nullptr) {
       return 0;
     }

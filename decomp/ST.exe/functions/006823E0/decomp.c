@@ -23,10 +23,10 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
   short *local_8;
 
   pfVar8 = param_2;
-  if (g_int_00848A14 != nullptr) {
+  if (g_anonShape_00683780_11EA4E23_00848A14 != nullptr) {
     thunk_FUN_006823a0((short)param_1,(short)param_2);
-    iVar7 = (g_int_00848A14[1] - (int)pfVar8) + -1;
-    pcVar2 = thunk_FUN_0064a910(g_int_00848A14,iVar7);
+    iVar7 = (g_anonShape_00683780_11EA4E23_00848A14->field_0004 - (int)pfVar8) + -1;
+    pcVar2 = thunk_FUN_0064a910(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
     if (pcVar2 == nullptr) {
       RaiseInternalException
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x19c);
@@ -54,7 +54,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (param_1 == 1) {
-            iVar7 = thunk_FUN_0064a940(g_int_00848A14,iVar7);
+            iVar7 = thunk_FUN_0064a940(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
@@ -65,7 +65,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           else if (param_1 == 2) {
-            iVar7 = thunk_FUN_0064a940(g_int_00848A14,iVar7);
+            iVar7 = thunk_FUN_0064a940(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
@@ -83,7 +83,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
               FreeAndNull(&param_2);
               return;
             }
-            iVar7 = thunk_FUN_0064a940(g_int_00848A14,iVar7);
+            iVar7 = thunk_FUN_0064a940(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",

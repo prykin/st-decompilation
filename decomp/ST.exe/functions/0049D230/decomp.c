@@ -15,11 +15,12 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   DArrayTy *array;
   int iVar6;
   STBoatC *this_00;
-  dword dVar7;
+  dword dVar6;
   DArrayTy *array_00;
   STGameObjC *objPtr;
   int iVar8;
-  undefined4 uVar9;
+  undefined4 uVar7;
+  int iVar9;
   uint uVar10;
   uint index;
   STWorldObject *this_01;
@@ -85,9 +86,9 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x960);
           }
-          dVar7 = this_00->slot_2C();
-          if (((dVar7 == 8) || (dVar7 = this_00->slot_2C(), dVar7 == 0x14)) ||
-             (dVar7 = this_00->slot_2C(), dVar7 == 0x1a)) {
+          dVar6 = this_00->slot_2C();
+          if (((dVar6 == 8) || (dVar6 = this_00->slot_2C(), dVar6 == 0x14)) ||
+             (dVar6 = this_00->slot_2C(), dVar6 == 0x1a)) {
             if (array_00 == nullptr) {
               array_00 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               local_14 = array_00;
@@ -97,8 +98,8 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
             SVar12 = CASE_D;
           }
           else {
-            iVar6 = thunk_FUN_00490d90((STGameObjC *)this_00);
-            if (iVar6 != 0) {
+            iVar9 = thunk_FUN_00490d90((STGameObjC *)this_00);
+            if (iVar9 != 0) {
               if (local_c == nullptr) {
                 local_c = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               }
@@ -142,8 +143,8 @@ LAB_0049d3ca:
     uVar10 = 0;
     if (((this_01 == nullptr) ||
         (this_01[1].vtable != (STWorldObjectVTable *)(int)pSVar5->field_0024)) ||
-       ((iVar6 = this_01->GetObjectTypeId(), iVar6 != 0x3b &&
-        (iVar6 = this_01->GetObjectTypeId(), iVar6 != 0x60)))) {
+       ((iVar9 = this_01->GetObjectTypeId(), iVar9 != 0x3b &&
+        (iVar9 = this_01->GetObjectTypeId(), iVar9 != 0x60)))) {
       local_20 = 0;
     }
     else {
@@ -162,14 +163,14 @@ LAB_0049d3ca:
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x989);
             }
-            iVar6 = (*objPtr->vtable->vfunc_2C)();
-            if (((iVar6 == 8) || (iVar6 = (*objPtr->vtable->vfunc_2C)(), iVar6 == 0x14)) ||
-               (iVar6 = (*objPtr->vtable->vfunc_2C)(), iVar6 == 0x1a)) {
+            iVar9 = (*objPtr->vtable->vfunc_2C)();
+            if (((iVar9 == 8) || (iVar9 = (*objPtr->vtable->vfunc_2C)(), iVar9 == 0x14)) ||
+               (iVar9 = (*objPtr->vtable->vfunc_2C)(), iVar9 == 0x1a)) {
               local_18 = local_18 + 1;
               local_1c = local_1c + objPtr->field_07DA + objPtr->field_07D6 + objPtr->field_07D2;
               if (0 < local_1c) break;
-              iVar6 = thunk_FUN_0045ff10(objPtr);
-              if (iVar6 == 0xd) {
+              iVar9 = thunk_FUN_0045ff10(objPtr);
+              if (iVar9 == 0xd) {
                 local_28 = 1;
                 break;
               }

@@ -11,7 +11,8 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
   MReportTy *pMVar2;
   int iVar3;
   int iVar4;
-  DArrayTy **ppDVar6;
+  int iVar5;
+  DArrayTy **ppDVar7;
   InternalExceptionFrame local_4c;
   MReportTy *local_8;
 
@@ -29,16 +30,16 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     if (g_cursorClass_00802A30 != nullptr) {
       CursorClassTy::sub_00544940(g_cursorClass_00802A30);
     }
-    ppDVar6 = &pMVar2->field_0347;
-    iVar3 = 3;
+    ppDVar7 = &pMVar2->field_0347;
+    iVar5 = 3;
     do {
-      if (*ppDVar6 != nullptr) {
-        DArrayDestroy(*ppDVar6);
-        *ppDVar6 = nullptr;
+      if (*ppDVar7 != nullptr) {
+        DArrayDestroy(*ppDVar7);
+        *ppDVar7 = nullptr;
       }
-      ppDVar6 = ppDVar6 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      ppDVar7 = ppDVar7 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     if (pMVar2->field_0453 != nullptr) {
       HoloTy::Done(pMVar2->field_0453);
       Library::MSVCRT::FUN_0072e2b0(pMVar2->field_0453);
@@ -49,7 +50,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
       Library::MSVCRT::FUN_0072e2b0(pMVar2->field_0457);
       pMVar2->field_0457 = nullptr;
     }
-    cMf32::RecMemFree(g_cMf32_00806780,&pMVar2->field_005D);
+    cMf32::RecMemFree(g_cMf32_00806780,(uint *)&pMVar2->field_005D);
     cMf32::RecMemFree(g_cMf32_00806780,(uint *)&pMVar2->field_006F);
     if (pMVar2->field_0077 != nullptr) {
       FreeAndNull(&pMVar2->field_0077);

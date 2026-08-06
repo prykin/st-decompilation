@@ -17,10 +17,12 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   VisibleClassTy *pVVar7;
   STParticleC *pSVar8;
   int iVar9;
-  ushort *puVar10;
+  ushort *puVar9;
+  int iVar10;
   int iVar11;
-  undefined4 uVar12;
-  undefined **ppuVar13;
+  undefined4 uVar11;
+  int iVar12;
+  char **ppcVar13;
   bool bVar14;
   InternalExceptionFrame local_70;
   int local_2c;
@@ -32,100 +34,100 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   float local_14;
   uint local_10;
   uint local_c;
-  undefined **local_8;
+  char **local_8;
 
   local_24 = (uint)this->field_0014 >> 8 & 0xff;
-  ppuVar13 = nullptr;
+  ppcVar13 = nullptr;
   local_8 = nullptr;
   switch(local_24) {
   case 0:
   case 1:
-    iVar9 = this->field_001C;
-    if (iVar9 == 4) {
-      ppuVar13 = &PTR_s_partdw01_007d0798;
+    iVar12 = this->field_001C;
+    if (iVar12 == 4) {
+      ppcVar13 = &PTR_s_partdw01_007d0798;
       local_8 = &PTR_s_partdw01_007d0798;
-      iVar9 = (uint)*(byte *)&this->field_0014 * 8;
-      local_10 = *(int *)(&DAT_007d0af0 + iVar9) / 2;
-      local_c = *(int *)(&DAT_007d0af4 + iVar9) / 2 - 0xe;
+      iVar12 = (uint)*(byte *)&this->field_0014 * 8;
+      local_10 = *(int *)(&DAT_007d0af0 + iVar12) / 2;
+      local_c = *(int *)(&DAT_007d0af4 + iVar12) / 2 - 0xe;
     }
     else {
       if (local_24 == 0) {
-        iVar11 = (uint)*(byte *)&this->field_0014 * 8;
-        iVar2 = *(int *)(&DAT_007d0a70 + iVar11);
-        iVar11 = *(int *)("%" + iVar11);
+        iVar10 = (uint)*(byte *)&this->field_0014 * 8;
+        iVar2 = *(int *)(&DAT_007d0a70 + iVar10);
+        iVar10 = *(int *)("%" + iVar10);
       }
       else {
-        iVar11 = (uint)*(byte *)&this->field_0014 * 8;
-        iVar2 = *(int *)(&DAT_007d0bf0 + iVar11);
-        iVar11 = *(int *)(&DAT_007d0bf4 + iVar11);
+        iVar10 = (uint)*(byte *)&this->field_0014 * 8;
+        iVar2 = *(int *)(&DAT_007d0bf0 + iVar10);
+        iVar10 = *(int *)(&DAT_007d0bf4 + iVar10);
       }
       local_10 = iVar2 / 2;
-      local_c = iVar11 / 2 - 0xe;
+      local_c = iVar10 / 2 - 0xe;
       if ((this->field_0014 & 0x100) == 0) {
-        if (iVar9 == 2) {
-          ppuVar13 = &PTR_s_particle0_007d0718;
+        if (iVar12 == 2) {
+          ppcVar13 = &PTR_s_particle0_007d0718;
           local_8 = &PTR_s_particle0_007d0718;
         }
         else {
-          ppuVar13 = &PTR_s_particle01_007d0758;
+          ppcVar13 = &PTR_s_particle01_007d0758;
           local_8 = &PTR_s_particle01_007d0758;
         }
       }
-      else if (iVar9 == 2) {
-        ppuVar13 = &PTR_s_part_g0_007d0800;
+      else if (iVar12 == 2) {
+        ppcVar13 = &PTR_s_part_g0_007d0800;
         local_8 = &PTR_s_part_g0_007d0800;
       }
       else {
-        ppuVar13 = &PTR_s_part_w0_007d07d8;
+        ppcVar13 = &PTR_s_part_w0_007d07d8;
         local_8 = &PTR_s_part_w0_007d07d8;
       }
     }
     break;
   case 2:
-    ppuVar13 = &PTR_s_gr2part0_007d0828;
+    ppcVar13 = &PTR_s_gr2part0_007d0828;
     local_8 = &PTR_s_gr2part0_007d0828;
     local_10 = DAT_007d09d4 / 2;
     local_c = local_10 - 0xe;
     break;
   case 4:
-    ppuVar13 = &PTR_s_stoun0_007d09d8;
+    ppcVar13 = &PTR_s_stoun0_007d09d8;
     local_8 = &PTR_s_stoun0_007d09d8;
-    iVar9 = *(int *)(&DAT_007d0a00 + (uint)*(byte *)&this->field_0014 * 4);
+    iVar12 = *(int *)(&DAT_007d0a00 + (uint)*(byte *)&this->field_0014 * 4);
     goto LAB_00629242;
   case 8:
-    ppuVar13 = &PTR_s_gr1part0_007d0870;
+    ppcVar13 = &PTR_s_gr1part0_007d0870;
     local_8 = &PTR_s_gr1part0_007d0870;
     local_10 = DAT_007d09d4 / 2;
     local_c = local_10 - 0xe;
     break;
   case 0x10:
-    ppuVar13 = &PTR_s_partsi01_007d08c4;
+    ppcVar13 = &PTR_s_partsi01_007d08c4;
     local_8 = &PTR_s_partsi01_007d08c4;
-    iVar9 = (uint)*(byte *)&this->field_0014 * 8;
-    local_10 = *(int *)(&DAT_007d0af0 + iVar9) / 2;
-    local_c = *(int *)(&DAT_007d0af4 + iVar9) / 2 - 0xe;
+    iVar12 = (uint)*(byte *)&this->field_0014 * 8;
+    local_10 = *(int *)(&DAT_007d0af0 + iVar12) / 2;
+    local_c = *(int *)(&DAT_007d0af4 + iVar12) / 2 - 0xe;
     break;
   case 0x20:
-    ppuVar13 = &PTR_s_part_s0_007d0924;
+    ppcVar13 = &PTR_s_part_s0_007d0924;
     local_8 = &PTR_s_part_s0_007d0924;
-    iVar9 = (uint)*(byte *)&this->field_0014 * 8;
-    local_10 = *(int *)(&DAT_007d0b70 + iVar9) / 2;
-    local_c = *(int *)(&DAT_007d0b74 + iVar9) / 2 - 0xe;
+    iVar12 = (uint)*(byte *)&this->field_0014 * 8;
+    local_10 = *(int *)(&DAT_007d0b70 + iVar12) / 2;
+    local_c = *(int *)(&DAT_007d0b74 + iVar12) / 2 - 0xe;
     break;
   case 0x40:
-    ppuVar13 = &PTR_s_grsi0_007d0984;
+    ppcVar13 = &PTR_s_grsi0_007d0984;
     local_8 = &PTR_s_grsi0_007d0984;
-    iVar9 = DAT_007d09d4;
+    iVar12 = DAT_007d09d4;
     goto LAB_00629242;
   case 0x80:
-    ppuVar13 = &PTR_s_rubb3_007d08bc;
+    ppcVar13 = &PTR_s_rubb3_007d08bc;
     local_8 = &PTR_s_rubb3_007d08bc;
-    iVar9 = DAT_007d08b8;
+    iVar12 = DAT_007d08b8;
 LAB_00629242:
-    local_10 = iVar9 / 2;
+    local_10 = iVar12 / 2;
     local_c = local_10 - 0xe;
   }
-  if (ppuVar13 == nullptr) {
+  if (ppcVar13 == nullptr) {
     return 0xffffffff;
   }
   local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(*(undefined1 *)&this->field_0014));
@@ -143,25 +145,25 @@ LAB_00629242:
     RaiseInternalException(iVar9,0,"E:\\__titans\\nick\\to_Part.Cpp",0x2ae);
     return 0xffff;
   }
-  puVar10 = Library::Ourlib::MFRLOAD::mfRLoad
-                      (PTR_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,
-                       nullptr);
+  puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (PTR_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,
+                      nullptr);
   pSVar8 = local_1c;
-  local_1c->field_00B6 = *(int *)puVar10;
+  local_1c->field_00B6 = *(int *)puVar9;
   if (param_1 == 0) {
     return 0;
   }
-  local_1c->field_00CA = puVar10;
+  local_1c->field_00CA = puVar9;
   puVar1 = &local_1c->field_00C6;
   ST3DSMAPContext::sub_006E8660
-            (g_sT3DSMAPContext_00807598,puVar1,2,0,STField<uint>(puVar10,9),
-             STField<uint>(puVar10,0xd),local_10,local_c,0);
+            (g_sT3DSMAPContext_00807598,puVar1,2,0,STField<uint>(puVar9,9),
+             STField<uint>(puVar9,0xd),local_10,local_c,0);
   if (DAT_00807326 != '\0') {
     Library::Ourlib::ST3DSMAP::SprSetShadow
               (g_sT3DSMAPContext_00807598,*puVar1,0,0x4049f8,(uint)pSVar8);
   }
   ST3DSMAPContext::sub_006E98E0
-            (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar10,STField<int>(puVar10,0x21),1);
+            (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar9,STField<int>(puVar9,0x21),1);
   ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,0);
   uVar3 = *puVar1;
   local_20 = (float)pSVar8->field_0046 * _DAT_007904f8 * _DAT_007904f0;
@@ -184,44 +186,44 @@ LAB_00629242:
   }
   pVVar7 = g_visibleClass_00802A88;
   if (g_visibleClass_00802A88 != nullptr) {
-    iVar9 = pSVar8->field_004E;
-    sVar5 = (short)(iVar9 >> 0x1f);
-    if (iVar9 < 0) {
-      local_14 = (float)((short)(((short)(iVar9 / 200) + sVar5) -
-                                (short)((longlong)iVar9 * 0x51eb851f >> 0x3f)) + -1);
+    iVar12 = pSVar8->field_004E;
+    sVar5 = (short)(iVar12 >> 0x1f);
+    if (iVar12 < 0) {
+      local_14 = (float)((short)(((short)(iVar12 / 200) + sVar5) -
+                                (short)((longlong)iVar12 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      local_14 = (float)(int)(short)(((short)(iVar9 / 200) + sVar5) -
-                                    (short)((longlong)iVar9 * 0x51eb851f >> 0x3f));
+      local_14 = (float)(int)(short)(((short)(iVar12 / 200) + sVar5) -
+                                    (short)((longlong)iVar12 * 0x51eb851f >> 0x3f));
     }
-    iVar9 = pSVar8->field_004A;
-    sVar5 = (short)(iVar9 >> 0x1f);
-    if (iVar9 < 0) {
-      iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar5) - (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)
-                     ) + -1;
-    }
-    else {
-      iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar5) -
-                          (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
-    }
-    iVar11 = pSVar8->field_0046;
-    sVar5 = (short)(iVar11 >> 0x1f);
-    if (iVar11 < 0) {
-      iVar11 = (short)(((short)(iVar11 / 0xc9) + sVar5) -
-                      (short)((longlong)iVar11 * 0x28c1979 >> 0x3f)) + -1;
+    iVar12 = pSVar8->field_004A;
+    sVar5 = (short)(iVar12 >> 0x1f);
+    if (iVar12 < 0) {
+      iVar12 = (short)(((short)(iVar12 / 0xc9) + sVar5) -
+                      (short)((longlong)iVar12 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      iVar11 = (int)(short)(((short)(iVar11 / 0xc9) + sVar5) -
-                           (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
+      iVar12 = (int)(short)(((short)(iVar12 / 0xc9) + sVar5) -
+                           (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
+    }
+    iVar10 = pSVar8->field_0046;
+    sVar5 = (short)(iVar10 >> 0x1f);
+    if (iVar10 < 0) {
+      iVar10 = (short)(((short)(iVar10 / 0xc9) + sVar5) -
+                      (short)((longlong)iVar10 * 0x28c1979 >> 0x3f)) + -1;
+    }
+    else {
+      iVar10 = (int)(short)(((short)(iVar10 / 0xc9) + sVar5) -
+                           (short)((longlong)iVar10 * 0x28c1979 >> 0x3f));
     }
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
         (VisibleClassTy::sub_00558C00
-                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,iVar9,
+                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar10,iVar12,
                     &local_28,&local_2c), (int)local_14 < 0)) || (4 < (int)local_14)) {
       bVar14 = true;
     }
     else {
-      if (((local_28 < 0) || (pVVar7->field_0030 <= local_28)) ||
+      if (((local_28 < 0) || ((int)pVVar7->field_0030 <= local_28)) ||
          ((g_centeredOffsets5[(int)local_14] + local_2c < 0 ||
           (pVVar7->field_0034 <= g_centeredOffsets5[(int)local_14] + local_2c)))) {
         bVar14 = false;

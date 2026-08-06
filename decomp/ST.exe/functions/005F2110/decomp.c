@@ -9,7 +9,8 @@
 undefined4 __thiscall STManBasisC::sub_005F2110(STManBasisC *this,undefined4 *param_1)
 
 {
-  STManBasisC_field_0038DArray *pSVar1;
+  DArrayTy *pDVar1;
+  STManBasisC_field_0038DArray *pSVar2;
   DArrayTy *pDVar2;
   void *pvVar3;
   int iVar4;
@@ -28,19 +29,19 @@ undefined4 __thiscall STManBasisC::sub_005F2110(STManBasisC *this,undefined4 *pa
   DAT_00811788 = this->field_0034;
   piVar7 = param_1 + 10;
   if (this->field_0038 != nullptr) {
-    pSVar1 = (STManBasisC_field_0038DArray *)FUN_006b0060(nullptr,param_1 + 0xb);
-    this->field_0038 = pSVar1;
+    pSVar2 = (STManBasisC_field_0038DArray *)FUN_006b0060(nullptr,param_1 + 0xb);
+    this->field_0038 = pSVar2;
     piVar7 = (int *)((int)(param_1 + 0xb) + *piVar7);
   }
   if (this->field_003C != nullptr) {
-    pDVar2 = (DArrayTy *)FUN_006b0060(nullptr,(uint *)(piVar7 + 1));
+    pDVar2 = FUN_006b0060(nullptr,(uint *)(piVar7 + 1));
     this->field_003C = pDVar2;
     uVar5 = 0;
     if (0 < (int)pDVar2->count) {
       do {
-        pDVar2 = this->field_003C;
-        if ((uVar5 < pDVar2->count) &&
-           (pvVar3 = DArrayAt<void>(pDVar2, uVar5),
+        pDVar1 = this->field_003C;
+        if ((uVar5 < pDVar1->count) &&
+           (pvVar3 = DArrayAt<void>(pDVar1, uVar5),
            pvVar3 != nullptr)) {
           STField<undefined4>(pvVar3,0x18) = 0xffffffff;
         }

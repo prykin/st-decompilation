@@ -93,7 +93,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
           ((VisibleClassTy::sub_00558C00
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
                        &local_c,&local_10), pVVar3 = g_visibleClass_00802A88, -1 < param_1 &&
-           ((((param_1 < 5 && (-1 < local_c)) && (local_c < pVVar2->field_0030)) &&
+           ((((param_1 < 5 && (-1 < local_c)) && (local_c < (int)pVVar2->field_0030)) &&
             ((iVar5 = g_centeredOffsets5[param_1] + local_10, -1 < iVar5 &&
              (iVar5 < pVVar2->field_0034)))))))) && (pVVar2->field_004C != nullptr)) &&
         ((pVVar2->field_004C[local_c + iVar5 * pVVar2->field_0030] == 0 && (DAT_0080874d != -1))))
@@ -101,7 +101,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
               (((VisibleClassTy::sub_00558C00
                            (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_2,
                             iVar6,&local_10,&local_c), pVVar2 = g_visibleClass_00802A88,
-                -1 < local_10 && (local_10 < pVVar3->field_0030)) &&
+                -1 < local_10 && (local_10 < (int)pVVar3->field_0030)) &&
                (iVar5 = g_centeredOffsets5[param_1] + local_c, -1 < iVar5)))) &&
              (((iVar5 < pVVar3->field_0034 && (pVVar3->field_004C != nullptr)) &&
               (pVVar3->field_004C[local_10 + iVar5 * pVVar3->field_0030] == 0)))) &&
@@ -110,7 +110,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
                           (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_3,iVar6
                            ,&local_10,&local_c), iVar5 = local_8, pVVar3 = g_visibleClass_00802A88,
                -1 < local_10 &&
-               (((local_10 < pVVar2->field_0030 &&
+               (((local_10 < (int)pVVar2->field_0030 &&
                  (local_c = g_centeredOffsets5[param_1] + local_c, -1 < local_c)) &&
                 (local_c < pVVar2->field_0034)))))) &&
              ((pVVar2->field_004C != nullptr &&
@@ -120,7 +120,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
               (VisibleClassTy::sub_00558C00
                          (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_2,
                           local_8,&param_2,&local_10), -1 < param_2)) &&
-             ((param_2 < pVVar3->field_0030 &&
+             ((param_2 < (int)pVVar3->field_0030 &&
               ((((local_10 = g_centeredOffsets5[param_1] + local_10, -1 < local_10 &&
                  (local_10 < pVVar3->field_0034)) && (pVVar3->field_004C != nullptr)) &&
                ((pVVar3->field_004C[param_2 + local_10 * pVVar3->field_0030] == 0 &&

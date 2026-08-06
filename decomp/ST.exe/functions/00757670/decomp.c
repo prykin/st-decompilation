@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_00757670(AnonShape_00757670_86D3B9A7 *param_1,int param_2)
+/* [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /WinDef.h/DWORD; no intervening CALL or EAX/AX/AL/AH definition exists; machine CFG audit:
+   used=3, ignored=0, unknown=0 */
+
+DWORD FUN_00757670(AnonShape_00757670_86D3B9A7 *param_1,int param_2)
 
 {
   undefined1 *puVar1;
@@ -23,6 +28,6 @@ void FUN_00757670(AnonShape_00757670_86D3B9A7 *param_1,int param_2)
     puVar1 = &param_1->field_0008->field_0x8;
     *(uint *)puVar1 = *(uint *)puVar1 | 0x10;
   }
-  return;
+  return DVar2;
 }
 

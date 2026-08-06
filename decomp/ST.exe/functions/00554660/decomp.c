@@ -9,18 +9,19 @@ void __thiscall cLoadingTy::ShowScr(cLoadingTy *this,int param_1,int param_2)
 
 {
   cLoadingTy *pcVar2;
-  int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  int iVar3;
+  int iVar5;
+  undefined4 *puVar6;
   undefined4 local_44c [256];
   InternalExceptionFrame local_4c;
   cLoadingTy *local_8;
 
-  puVar5 = local_44c;
+  puVar6 = local_44c;
   local_8 = this;
-  for (iVar4 = 0x100; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
+  for (iVar5 = 0x100; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *puVar6 = 0;
+    puVar6 = puVar6 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;

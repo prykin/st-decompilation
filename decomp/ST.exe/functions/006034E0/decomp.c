@@ -39,6 +39,10 @@ FUN_006034e0(short param_1,ushort param_2,ushort param_3,int param_4,int param_5
   undefined1 local_10c;
   char local_10b [259];
   undefined1 local_8;
+  char *pcVar5_mg1;
+  char *pcVar5_mg0;
+  char *pcVar5_mg4;
+  char *pcVar5_mg3;
 
   memset(local_144, 0, 0x13d); /* compiler bulk-zero initialization */
   local_144[3] = 1;
@@ -53,26 +57,26 @@ FUN_006034e0(short param_1,ushort param_2,ushort param_3,int param_4,int param_5
   local_11c = param_3;
   local_124 = param_8;
   uVar3 = 0xffffffff;
-  pcVar5 = param_6;
+  pcVar5_mg0 = param_6;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
+    cVar1 = *pcVar5_mg0;
+    pcVar5_mg0 = pcVar5_mg0 + 1;
   } while (cVar1 != '\0');
   local_128 = 0;
   if (~uVar3 - 1 < 0xf) {
     uVar3 = 0xffffffff;
     do {
-      pcVar5 = param_6;
+      pcVar5_mg1 = param_6;
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      pcVar5 = param_6 + 1;
+      pcVar5_mg1 = param_6 + 1;
       cVar1 = *param_6;
-      param_6 = pcVar5;
+      param_6 = pcVar5_mg1;
     } while (cVar1 != '\0');
     uVar3 = ~uVar3;
-    pcVar5 = pcVar5 + -uVar3;
+    pcVar5 = pcVar5_mg1 + -uVar3;
     pcVar7 = local_11a;
     memmove(pcVar7, pcVar5, uVar3); /* compiler REP MOVS byte copy */
     uVar4 = 0;
@@ -82,25 +86,25 @@ FUN_006034e0(short param_1,ushort param_2,ushort param_3,int param_4,int param_5
     local_10c = 0;
   }
   uVar3 = 0xffffffff;
-  pcVar5 = param_7;
+  pcVar5_mg3 = param_7;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
+    cVar1 = *pcVar5_mg3;
+    pcVar5_mg3 = pcVar5_mg3 + 1;
   } while (cVar1 != '\0');
   if (~uVar3 - 1 < 0x104) {
     uVar3 = 0xffffffff;
     do {
-      pcVar5 = param_7;
+      pcVar5_mg4 = param_7;
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      pcVar5 = param_7 + 1;
+      pcVar5_mg4 = param_7 + 1;
       cVar1 = *param_7;
-      param_7 = pcVar5;
+      param_7 = pcVar5_mg4;
     } while (cVar1 != '\0');
     uVar3 = ~uVar3;
-    pcVar5 = pcVar5 + -uVar3;
+    pcVar5 = pcVar5_mg4 + -uVar3;
     pcVar7 = local_10b;
     memmove(pcVar7, pcVar5, uVar3); /* compiler REP MOVS byte copy */
   }

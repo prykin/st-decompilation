@@ -14,9 +14,10 @@ undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,uint pa
 {
   int *piVar1;
   int iVar2;
+  int iVar5;
   int iVar4;
-  undefined4 uVar5;
-  int *piVar6;
+  undefined4 uVar6;
+  int *piVar7;
 
   if (this->field_0018 != 0xffffffff) {
     if ((param_1 < '\0') || (this->field_0014 + -1 < (int)param_1)) {
@@ -27,15 +28,15 @@ undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,uint pa
       }
     }
     else {
-      iVar4 = param_1 * 0x24;
-      piVar6 = (int *)(&this->field_0020->field_0x0 + iVar4);
-      piVar1 = (int *)*piVar6;
+      iVar5 = param_1 * 0x24;
+      piVar7 = (int *)(&this->field_0020->field_0x0 + iVar5);
+      piVar1 = (int *)*piVar7;
       if (piVar1 != nullptr) {
-        iVar2 = piVar6[6];
+        iVar2 = piVar7[6];
         if ((-1 < iVar2) && (iVar2 < *piVar1)) {
-          *(undefined4 *)(piVar6[1] + iVar2 * 4) = *(undefined4 *)((int)piVar1 + iVar2 * 4 + 0x31);
+          *(undefined4 *)(piVar7[1] + iVar2 * 4) = *(undefined4 *)((int)piVar1 + iVar2 * 4 + 0x31);
         }
-        *(uint *)(&this->field_0020->field_0x18 + iVar4) = param_2;
+        *(uint *)(&this->field_0020->field_0x18 + iVar5) = param_2;
         return 0;
       }
     }

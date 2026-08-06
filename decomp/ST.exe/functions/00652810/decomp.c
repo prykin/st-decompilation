@@ -27,21 +27,160 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   AiEventClassTy *this_00;
   char cVar5;
   short sVar6;
+  int local_EAX_52;
+  undefined4 uVar7;
   int iVar7;
-  undefined4 uVar8;
-  char *pcVar9;
-  short *psVar10;
-  undefined1 *puVar11;
-  DArrayTy *pDVar12;
-  AiPlrClassTy *pAVar13;
-  AiFltClassTy *pAVar14;
-  uint *puVar15;
-  STGroupBoatC *pSVar16;
-  uint uVar17;
-  dword *pdVar18;
-  undefined2 *puVar19;
-  AnonShape_00679600_B8E418A8 *pAVar20;
-  AnonShape_0065DA10_8B0AA883 *pAVar21;
+  int local_EAX_327;
+  char *pcVar8_mg40;
+  short *psVar8;
+  int local_EAX_488;
+  char *pcVar8_mg3F;
+  char *pcVar8_mg39;
+  char *pcVar8_mg38;
+  char *pcVar8_mg37;
+  undefined1 *puVar9;
+  DArrayTy *pDVar10;
+  char *pcVar8_mg36;
+  char *pcVar8_mg35;
+  AiPlrClassTy *pAVar11;
+  char *pcVar8_mg34;
+  char *pcVar8_mg33;
+  char *pcVar8_mg32;
+  int local_EAX_2959;
+  int local_EAX_3277;
+  int local_EAX_3358;
+  int local_EAX_3452;
+  int local_EAX_3527;
+  int local_EAX_3643;
+  int local_EAX_3752;
+  int local_EAX_3857;
+  int local_EAX_3907;
+  int local_EAX_4002;
+  int local_EAX_4052;
+  int local_EAX_4139;
+  int local_EAX_4219;
+  int local_EAX_4307;
+  int local_EAX_4445;
+  int iVar12;
+  int local_EAX_4850;
+  char *pcVar8_mg3A;
+  char *pcVar8_mg31;
+  char *pcVar8_mg30;
+  int local_EAX_5500;
+  int local_EAX_5668;
+  int local_EAX_5904;
+  int local_EAX_5961;
+  int local_EAX_6159;
+  int local_EAX_6230;
+  int local_EAX_6287;
+  int local_EAX_6392;
+  int local_EAX_6449;
+  int local_EAX_6742;
+  int local_EAX_6799;
+  int local_EAX_6856;
+  int local_EAX_6968;
+  int local_EAX_7118;
+  int local_EAX_7204;
+  int local_EAX_7261;
+  int local_EAX_7336;
+  int local_EAX_7431;
+  int local_EAX_7569;
+  int local_EAX_7731;
+  AiFltClassTy *pAVar13;
+  int local_EAX_8204;
+  int local_EAX_8314;
+  int local_EAX_8446;
+  uint *puVar14;
+  int local_EAX_8597;
+  char *pcVar8_mg3E;
+  int local_EAX_11843;
+  int local_EAX_11892;
+  int local_EAX_11906;
+  int local_EAX_12115;
+  STGroupBoatC *pSVar15;
+  int local_EAX_12727;
+  char *pcVar8_mg3D;
+  uint uVar16;
+  dword *pdVar17;
+  undefined2 *puVar18;
+  int local_EAX_13452;
+  char *pcVar8_mg3C;
+  int local_EAX_13781;
+  char *pcVar8_mg2F;
+  char *pcVar8_mg3B;
+  int local_EAX_14486;
+  int local_EAX_14928;
+  char *pcVar8_mg2E;
+  char *pcVar8_mg2D;
+  char *pcVar8_mg2C;
+  char *pcVar8_mg2B;
+  char *pcVar8_mg28;
+  char *pcVar8_mg27;
+  char *pcVar8_mg26;
+  AnonShape_00679600_B8E418A8 *pAVar19;
+  char *pcVar8_mg2A;
+  int local_EAX_17905;
+  char *pcVar8_mg29;
+  char *pcVar8_mg25;
+  char *pcVar8_mg24;
+  int local_EAX_18546;
+  char *pcVar8_mg22;
+  int local_EAX_18755;
+  AnonShape_0065DA10_8B0AA883 *pAVar20;
+  char *pcVar8_mg21;
+  int local_EAX_18964;
+  char *pcVar8_mg20;
+  int local_EAX_19222;
+  int local_EAX_19384;
+  int local_EAX_19546;
+  char *pcVar8_mg1F;
+  int local_EAX_19855;
+  char *pcVar8_mg1E;
+  char *pcVar8_mg1D;
+  char *pcVar8_mg1B;
+  int local_EAX_20759;
+  char *pcVar8_mg1C;
+  char *pcVar8_mg19;
+  int local_EAX_21479;
+  char *pcVar8_mg18;
+  char *pcVar8_mg17;
+  int local_EAX_22002;
+  char *pcVar8_mg16;
+  int local_EAX_22325;
+  char *pcVar8_mg15;
+  int local_EAX_22663;
+  char *pcVar8_mg14;
+  int local_EAX_22928;
+  char *pcVar8_mgE;
+  char *pcVar8_mgD;
+  char *pcVar8_mgC;
+  char *pcVar8_mgB;
+  char *pcVar8_mgA;
+  int local_EAX_24571;
+  char *pcVar8_mg9;
+  char *pcVar8_mg8;
+  char *pcVar8_mg13;
+  int local_EAX_25481;
+  char *pcVar21;
+  char *pcVar8_mg11;
+  int local_EAX_25882;
+  char *pcVar8_mg10;
+  int local_EAX_26279;
+  char *pcVar8_mgF;
+  int local_EAX_26593;
+  char *pcVar8_mg7;
+  int iVar36;
+  char *pcVar8_mg1;
+  int local_EAX_27539;
+  char *pcVar8_mg6;
+  int local_EAX_27909;
+  char *pcVar8_mg5;
+  int local_EAX_28249;
+  char *pcVar8_mg4;
+  int local_EAX_28574;
+  char *pcVar8_mg3;
+  char *pcVar8_mg0;
+  char *pcVar8_mg23;
   short sVar22;
   CPanelTy *pCVar23;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -73,9 +212,9 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   uint uVar32;
   uint **ppuVar34;
   bool bVar35;
-  int iVar36;
-  AiFltClassTyVTable *pAVar37;
-  dword dVar38;
+  int iVar37;
+  AiFltClassTyVTable *pAVar38;
+  dword dVar39;
   byte local_484 [256];
   byte local_384 [256];
   InternalExceptionFrame local_284;
@@ -159,12 +298,12 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   local_180 = nullptr;
   local_198 = 0;
   if ((g_allPlayers_007FA174 != nullptr) &&
-     (local_188 = this, iVar7 = sub_0065BD70(this,message,0), -1 < iVar7)) {
-    local_194 = iVar7;
+     (local_188 = this, local_EAX_52 = sub_0065BD70(this,message,0), -1 < local_EAX_52)) {
+    local_194 = local_EAX_52;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    uVar8 = (*(code *)this->field_0000->field_0018)();
-    this->field_052B = uVar8;
-    if ((iVar7 != 0x456) ||
+    uVar7 = (*(code *)this->field_0000->field_0018)();
+    this->field_052B = uVar7;
+    if ((local_EAX_52 != 0x456) ||
        ((g_playSystem_00802A38->field_00E4 % 0x19 == this->field_00D2 ||
         (g_playSystem_00802A38->field_00E4 == 1)))) {
       local_19c = this->field_04E2[2];
@@ -174,13 +313,13 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
       this_00 = local_188;
       if (iVar7 == 0) {
         local_14 = 0;
-        pDVar12 = local_188->field_04EE;
-        bVar35 = pDVar12->count != 0;
-        if (0 < (int)pDVar12->count) {
+        pDVar10 = local_188->field_04EE;
+        bVar35 = pDVar10->count != 0;
+        if (0 < (int)pDVar10->count) {
           do {
             uVar32 = local_14;
             if (bVar35) {
-              pAVar28 = DArrayAt<AnonShape_00652810_4F58F813>(pDVar12, local_14);
+              pAVar28 = DArrayAt<AnonShape_00652810_4F58F813>(pDVar10, local_14);
             }
             else {
               pAVar28 = nullptr;
@@ -192,13 +331,15 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                   sub_0065BD70(this_00,message,1);
                   local_198 = 1;
                 }
-                iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
-                        thunk_FUN_00672440((AnonReceiver_0064A970 *)this_00,&this_00->field_04FA,
-                                           (int)*(short *)&pAVar28->field_0x9,(short *)&local_16c);
-                uVar17 = uVar32;
-                if (iVar7 < 0) {
-                  iVar36 = this_00->field_0084;
-                  pcVar9 = &this_00->field_0004;
+                local_EAX_327 =
+                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                     thunk_FUN_00672440((AnonReceiver_0064A970 *)this_00,
+                                        (AnonShape_00683780_11EA4E23 *)&this_00->field_04FA,
+                                        (int)*(short *)&pAVar28->field_0x9,(short *)&local_16c);
+                uVar16 = uVar32;
+                if (local_EAX_327 < 0) {
+                  iVar37 = this_00->field_0084;
+                  pcVar8_mg40 = &this_00->field_0004;
                 }
                 else {
                   if (local_9c == '\b') {
@@ -208,47 +349,49 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                       pAVar29 = pAVar28->field_000F;
                       local_170 = nullptr;
                       local_174 = 0;
-                      pDVar12 = pAVar29->field_000C;
-                      if (0 < (int)pDVar12) {
+                      pDVar10 = pAVar29->field_000C;
+                      if (0 < (int)pDVar10) {
                         do {
-                          if (local_170 < pDVar12) {
-                            psVar10 = (short *)(pAVar29->field_0008 * (int)local_170 +
-                                               pAVar29->field_001C);
+                          if (local_170 < pDVar10) {
+                            psVar8 = (short *)(pAVar29->field_0008 * (int)local_170 +
+                                              pAVar29->field_001C);
                           }
                           else {
-                            psVar10 = nullptr;
+                            psVar8 = nullptr;
                           }
-                          iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
-                                  thunk_FUN_00672440((AnonReceiver_0064A970 *)this_00,
-                                                     &this_00->field_04FA,(int)*psVar10,
-                                                     (short *)&local_16c);
-                          if (iVar7 < 0) {
-                            thunk_FUN_0064d0e0(this_00,iVar7,&this_00->field_0004,uVar32,-1);
+                          local_EAX_488 =
+                               SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                               thunk_FUN_00672440((AnonReceiver_0064A970 *)this_00,
+                                                  (AnonShape_00683780_11EA4E23 *)
+                                                  &this_00->field_04FA,(int)*psVar8,
+                                                  (short *)&local_16c);
+                          if (local_EAX_488 < 0) {
+                            thunk_FUN_0064d0e0(this_00,local_EAX_488,&this_00->field_0004,uVar32,-1);
                             goto cf_common_join_00659A73;
                           }
-                          if (iVar7 != 0x19) {
+                          if (local_EAX_488 != 0x19) {
                             local_174 = 0;
                           }
-                          if (0x593 < iVar7) {
-                            if (0x5c8 < iVar7) {
-                              if (iVar7 < 0x76d) {
-                                if (iVar7 != 0x76c) {
-                                  switch(iVar7) {
+                          if (0x593 < local_EAX_488) {
+                            if (0x5c8 < local_EAX_488) {
+                              if (local_EAX_488 < 0x76d) {
+                                if (local_EAX_488 != 0x76c) {
+                                  switch(local_EAX_488) {
                                   case 0x5dc:
-                                    iVar36 = thunk_FUN_00651010((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    iVar37 = thunk_FUN_00651010((short *)&local_16c);
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           pDVar25 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
                                             thunk_FUN_0064e300(pDVar25->flags,(char *)local_15c,
                                                                (ushort)local_158,(char)local_154,
@@ -263,40 +406,40 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5dd:
-                                    iVar36 = thunk_FUN_00651120((int)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_18546 = thunk_FUN_00651120((int)&local_16c);
+                                    if (local_EAX_18546 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                            pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == nullptr) {
+                                            if (pSVar15 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  (int)local_10->vtable);
                                             }
                                             else {
-                                              pAVar21 = (AnonShape_0065DA10_8B0AA883 *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (pAVar21 == nullptr) {
-                                                pAVar37 = local_10->vtable;
-                                                uVar17 = uVar32;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
-                                                                   (int)pAVar37);
+                                              pAVar20 = (AnonShape_0065DA10_8B0AA883 *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (pAVar20 == nullptr) {
+                                                pAVar38 = local_10->vtable;
+                                                uVar16 = uVar32;
+                                                pcVar8_mg22 = thunk_FUN_00674af0(local_EAX_488);
+                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg22,uVar16,
+                                                                   (int)pAVar38);
                                               }
                                               else {
                                                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                                                thunk_FUN_0065d630(pAVar21,extraout_EDX_04);
+                                                thunk_FUN_0065d630(pAVar20,extraout_EDX_04);
                                               }
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -309,40 +452,40 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5de:
-                                    iVar36 = thunk_FUN_00651160((int)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_18755 = thunk_FUN_00651160((int)&local_16c);
+                                    if (local_EAX_18755 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                            pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == nullptr) {
+                                            if (pSVar15 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  (int)local_10->vtable);
                                             }
                                             else {
-                                              pAVar21 = (AnonShape_0065DA10_8B0AA883 *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (pAVar21 == nullptr) {
-                                                pAVar37 = local_10->vtable;
-                                                uVar17 = uVar32;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
-                                                                   (int)pAVar37);
+                                              pAVar20 = (AnonShape_0065DA10_8B0AA883 *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (pAVar20 == nullptr) {
+                                                pAVar38 = local_10->vtable;
+                                                uVar16 = uVar32;
+                                                pcVar8_mg21 = thunk_FUN_00674af0(local_EAX_488);
+                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg21,uVar16,
+                                                                   (int)pAVar38);
                                               }
                                               else {
                                                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                                                thunk_FUN_0065e6c0(pAVar21,extraout_EDX_05);
+                                                thunk_FUN_0065e6c0(pAVar20,extraout_EDX_05);
                                               }
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -355,35 +498,35 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5df:
-                                    iVar36 = thunk_FUN_00651160((int)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_18964 = thunk_FUN_00651160((int)&local_16c);
+                                    if (local_EAX_18964 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
-                                          local_8 = pDVar12;
+                                          local_8 = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                            pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == nullptr) {
+                                            if (pSVar15 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  (int)local_10->vtable);
                                             }
                                             else {
-                                              local_17c = (void *)thunk_FUN_00423300((int)pSVar16);
+                                              local_17c = (void *)thunk_FUN_00423300((int)pSVar15);
                                               if (local_17c == nullptr) {
-                                                pAVar37 = local_10->vtable;
-                                                uVar17 = uVar32;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
-                                                                   (int)pAVar37);
+                                                pAVar38 = local_10->vtable;
+                                                uVar16 = uVar32;
+                                                pcVar8_mg20 = thunk_FUN_00674af0(local_EAX_488);
+                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg20,uVar16,
+                                                                   (int)pAVar38);
                                               }
                                               else {
                                                 local_c = (DArrayTy *)
@@ -404,29 +547,29 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e0:
-                                    iVar36 = thunk_FUN_006511a0((int)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_19222 = thunk_FUN_006511a0((int)&local_16c);
+                                    if (local_EAX_19222 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           pDVar25 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)pDVar25->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)pDVar25->flags,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == nullptr) {
+                                            if (pSVar15 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  pDVar25->flags);
                                             }
                                             else {
-                                              thunk_FUN_00424530(pSVar16,(uint)local_158);
+                                              thunk_FUN_00424530(pSVar15,(uint)local_158);
                                             }
                                             pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -437,29 +580,29 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e1:
-                                    iVar36 = thunk_FUN_006511a0((int)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_19384 = thunk_FUN_006511a0((int)&local_16c);
+                                    if (local_EAX_19384 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           pDVar25 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)pDVar25->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)pDVar25->flags,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == nullptr) {
+                                            if (pSVar15 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  pDVar25->flags);
                                             }
                                             else {
-                                              thunk_FUN_00424620(pSVar16,(uint)local_158);
+                                              thunk_FUN_00424620(pSVar15,(uint)local_158);
                                             }
                                             pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -470,46 +613,46 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e2:
-                                    iVar36 = thunk_FUN_006511e0((int)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_19546 = thunk_FUN_006511e0((int)&local_16c);
+                                    if (local_EAX_19546 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                            pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == nullptr) {
+                                            if (pSVar15 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  (int)local_10->vtable);
                                             }
                                             else {
-                                              local_17c = (void *)thunk_FUN_00423300((int)pSVar16);
+                                              local_17c = (void *)thunk_FUN_00423300((int)pSVar15);
                                               if (local_17c == nullptr) {
-                                                pAVar37 = local_10->vtable;
-                                                uVar17 = uVar32;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
-                                                                   (int)pAVar37);
+                                                pAVar38 = local_10->vtable;
+                                                uVar16 = uVar32;
+                                                pcVar8_mg1F = thunk_FUN_00674af0(local_EAX_488);
+                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg1F,uVar16,
+                                                                   (int)pAVar38);
                                               }
                                               else {
-                                                pAVar13 = nullptr;
+                                                pAVar11 = nullptr;
                                                 local_8 = nullptr;
                                                 if (g_allPlayers_007FA174 != nullptr) {
-                                                  pAVar13 = thunk_FUN_004357f0(*(char *)&local_10->
+                                                  pAVar11 = thunk_FUN_004357f0(*(char *)&local_10->
                                                                                          vtable);
                                                 }
-                                                if (pAVar13 != nullptr) {
+                                                if (pAVar11 != nullptr) {
                                                   local_8 = (DArrayTy *)
-                                                            thunk_FUN_00678ef0(pAVar13,(byte *)
+                                                            thunk_FUN_00678ef0(pAVar11,(byte *)
                                                   local_158);
                                                 }
                                                 if (local_8 == nullptr) {
@@ -531,38 +674,38 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e3:
-                                    iVar36 = thunk_FUN_00651250((int)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_19855 = thunk_FUN_00651250((int)&local_16c);
+                                    if (local_EAX_19855 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                            pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            if (pSVar16 == nullptr) {
+                                            if (pSVar15 == nullptr) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
                                                                  (int)local_10->vtable);
                                             }
                                             else {
-                                              iVar36 = thunk_FUN_00423300((int)pSVar16);
-                                              if (iVar36 == 0) {
-                                                pAVar37 = local_10->vtable;
-                                                uVar17 = uVar32;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
-                                                                   (int)pAVar37);
+                                              iVar37 = thunk_FUN_00423300((int)pSVar15);
+                                              if (iVar37 == 0) {
+                                                pAVar38 = local_10->vtable;
+                                                uVar16 = uVar32;
+                                                pcVar8_mg1E = thunk_FUN_00674af0(local_EAX_488);
+                                                thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg1E,uVar16,
+                                                                   (int)pAVar38);
                                               }
                                               else {
-                                                thunk_FUN_0065d600(iVar36);
+                                                thunk_FUN_0065d600(iVar37);
                                               }
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -575,48 +718,48 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e4:
-                                    iVar36 = thunk_FUN_00651290((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    iVar37 = thunk_FUN_00651290((short *)&local_16c);
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                            pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              pAVar37 = local_10->vtable;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              pAVar38 = local_10->vtable;
+                                              pcVar8_mg1D = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_006577ae:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,
-                                                                 (int)pAVar37);
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg1D,uVar16,
+                                                                 (int)pAVar38);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                pAVar37 = local_10->vtable;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                pAVar38 = local_10->vtable;
+                                                pcVar8_mg1D = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_006577ae;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -626,7 +769,7 @@ LAB_006577ae:
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
                                               local_60 = STPiece<0,1>(local_158);
-                                              iVar36 = (int)local_144 * 0x19;
+                                              iVar37 = (int)local_144 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 1;
@@ -634,15 +777,15 @@ LAB_006577ae:
                                               uStack_56 = (undefined1)((uint)local_148 >> 8);
                                               uStack_55 = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_54 = (undefined1)((uint)local_148 >> 0x18);
-                                              uStack_53 = (undefined1)iVar36;
-                                              uStack_52 = (undefined1)((uint)iVar36 >> 8);
-                                              uStack_51 = (undefined1)((uint)iVar36 >> 0x10);
-                                              uStack_50 = (undefined1)((uint)iVar36 >> 0x18);
-                                              iVar36 = local_140 * 0x19;
-                                              uStack_4f = (undefined1)iVar36;
-                                              local_4e = (undefined2)((uint)iVar36 >> 8);
-                                              uStack_4c = (undefined1)((uint)iVar36 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              uStack_53 = (undefined1)iVar37;
+                                              uStack_52 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_51 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_50 = (undefined1)((uint)iVar37 >> 0x18);
+                                              iVar37 = local_140 * 0x19;
+                                              uStack_4f = (undefined1)iVar37;
+                                              local_4e = (undefined2)((uint)iVar37 >> 8);
+                                              uStack_4c = (undefined1)((uint)iVar37 >> 0x18);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -655,48 +798,48 @@ LAB_006577ae:
                                     }
                                     break;
                                   case 0x5e5:
-                                    iVar36 = thunk_FUN_006514d0((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_20759 = thunk_FUN_006514d0((short *)&local_16c);
+                                    if (local_EAX_20759 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                            pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              pAVar37 = local_10->vtable;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              pAVar38 = local_10->vtable;
+                                              pcVar8_mg1C = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00657a41:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,
-                                                                 (int)pAVar37);
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg1C,uVar16,
+                                                                 (int)pAVar38);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                pAVar37 = local_10->vtable;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                pAVar38 = local_10->vtable;
+                                                pcVar8_mg1C = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00657a41;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -706,15 +849,15 @@ LAB_00657a41:
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
                                               local_60 = STPiece<0,1>(local_158);
-                                              iVar36 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 2;
-                                              uStack_57 = (undefined1)iVar36;
-                                              uStack_56 = (undefined1)((uint)iVar36 >> 8);
-                                              uStack_55 = (undefined1)((uint)iVar36 >> 0x10);
-                                              uStack_54 = (undefined1)((uint)iVar36 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              uStack_57 = (undefined1)iVar37;
+                                              uStack_56 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x18);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -727,48 +870,48 @@ LAB_00657a41:
                                     }
                                     break;
                                   case 0x5e6:
-                                    iVar36 = thunk_FUN_006513c0((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    iVar37 = thunk_FUN_006513c0((short *)&local_16c);
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                            pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              pAVar37 = local_10->vtable;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              pAVar38 = local_10->vtable;
+                                              pcVar8_mg1B = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_006578fe:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,
-                                                                 (int)pAVar37);
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg1B,uVar16,
+                                                                 (int)pAVar38);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                pAVar37 = local_10->vtable;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                pAVar38 = local_10->vtable;
+                                                pcVar8_mg1B = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_006578fe;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -784,13 +927,13 @@ LAB_006578fe:
                                               uStack_52 = (undefined1)((uint)local_148 >> 8);
                                               uStack_51 = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_50 = (undefined1)((uint)local_148 >> 0x18);
-                                              iVar36 = (int)local_144 * 0x19;
+                                              iVar37 = (int)local_144 * 0x19;
                                               local_68[0] = 3;
-                                              uStack_57 = (undefined1)iVar36;
-                                              uStack_56 = (undefined1)((uint)iVar36 >> 8);
-                                              uStack_55 = (undefined1)((uint)iVar36 >> 0x10);
-                                              uStack_54 = (undefined1)((uint)iVar36 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              uStack_57 = (undefined1)iVar37;
+                                              uStack_56 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x18);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -803,49 +946,49 @@ LAB_006578fe:
                                     }
                                     break;
                                   case 0x5e7:
-                                    iVar36 = thunk_FUN_006515b0((
+                                    iVar37 = thunk_FUN_006515b0((
                                                   RecoveredRecord_AiEventClassTy_006515B0 *)
                                                   &local_16c);
-                                    if (iVar36 != 0) {
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg19 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00657bce:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg19,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
                                               local_10 = (AiFltClassTy *)
-                                                         thunk_FUN_00423300((int)pSVar16);
+                                                         thunk_FUN_00423300((int)pSVar15);
                                               if ((local_10 == nullptr) ||
                                                  (local_10->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg19 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00657bce;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               uVar32 = (uint)local_158 & 0x3fffffff;
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
@@ -872,11 +1015,11 @@ LAB_00657bce:
                                               uStack_50 = SUB41(local_144,0);
                                               uStack_4f = (undefined1)((uint)local_144 >> 8);
                                               uStack_4c = (undefined1)local_13c;
-                                              pcVar9 = local_138;
+                                              pcVar21 = local_138;
                                               if (local_138 == nullptr) {
-                                                pcVar9 = &DAT_008016a0;
+                                                pcVar21 = &DAT_008016a0;
                                               }
-                                              Library::MSVCRT::_strncpy(&cStack_4b,pcVar9,0xe);
+                                              Library::MSVCRT::_strncpy(&cStack_4b,pcVar21,0xe);
                                               AiFltClassTy::GetAiMess(local_10,local_68);
                                               uVar32 = local_14;
                                             }
@@ -890,51 +1033,51 @@ LAB_00657bce:
                                     }
                                     break;
                                   case 0x5e8:
-                                    iVar36 = thunk_FUN_00651730((int)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_21479 = thunk_FUN_00651730((int)&local_16c);
+                                    if (local_EAX_21479 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg18 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00657ccf:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg18,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if ((pAVar14 == nullptr) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if ((pAVar13 == nullptr) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg18 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00657ccf;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_68[0] = 5;
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -947,53 +1090,53 @@ LAB_00657ccf:
                                     }
                                     break;
                                   case 0x5e9:
-                                    iVar36 = thunk_FUN_00651770((AnonShape_00651770_8F77396F *)
+                                    iVar37 = thunk_FUN_00651770((AnonShape_00651770_8F77396F *)
                                                                 &local_16c);
-                                    if (iVar36 != 0) {
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg17 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00657dd9:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg17,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if ((pAVar14 == nullptr) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if ((pAVar13 == nullptr) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg17 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00657dd9;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_60 = STPiece<0,1>(local_158);
                                               local_68[0] = 6;
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1006,48 +1149,48 @@ LAB_00657dd9:
                                     }
                                     break;
                                   case 0x5ea:
-                                    iVar36 = thunk_FUN_006517c0((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_22002 = thunk_FUN_006517c0((short *)&local_16c);
+                                    if (local_EAX_22002 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg16 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00657f1c:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg16,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg16 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00657f1c;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -1057,15 +1200,15 @@ LAB_00657f1c:
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
                                               local_60 = STPiece<0,1>(local_158);
-                                              iVar36 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 7;
-                                              uStack_57 = (undefined1)iVar36;
-                                              uStack_56 = (undefined1)((uint)iVar36 >> 8);
-                                              uStack_55 = (undefined1)((uint)iVar36 >> 0x10);
-                                              uStack_54 = (undefined1)((uint)iVar36 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              uStack_57 = (undefined1)iVar37;
+                                              uStack_56 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x18);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1078,48 +1221,48 @@ LAB_00657f1c:
                                     }
                                     break;
                                   case 0x5eb:
-                                    iVar36 = thunk_FUN_00651880((int)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_22325 = thunk_FUN_00651880((int)&local_16c);
+                                    if (local_EAX_22325 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg15 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_0065806e:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg15,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg15 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_0065806e;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_60 = SUB41(local_158,0);
@@ -1135,7 +1278,7 @@ LAB_0065806e:
                                               local_68[0] = 8;
                                               uStack_56 = SUB41(local_144,0);
                                               uStack_55 = (undefined1)((uint)local_144 >> 8);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1148,52 +1291,52 @@ LAB_0065806e:
                                     }
                                     break;
                                   case 0x5ec:
-                                    iVar36 = thunk_FUN_006518c0((int)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_22663 = thunk_FUN_006518c0((int)&local_16c);
+                                    if (local_EAX_22663 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg14 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00658177:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg14,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg14 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00658177;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_68[0] = 9;
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1206,48 +1349,48 @@ LAB_00658177:
                                     }
                                     break;
                                   case 0x5ed:
-                                    iVar36 = thunk_FUN_00651df0((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    iVar37 = thunk_FUN_00651df0((short *)&local_16c);
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg13 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00658b70:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg13,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg13 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00658b70;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5e = SUB41(local_154,0);
@@ -1257,21 +1400,21 @@ LAB_00658b70:
                                               local_4e = (undefined2)((uint)local_14c >> 0x10);
                                               local_60 = SUB41(local_158,0);
                                               uStack_5f = (undefined1)((uint)local_158 >> 8);
-                                              iVar36 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               uStack_5c = SUB41(local_150,0);
                                               uStack_5b = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0x34;
-                                              uStack_5a = (undefined1)iVar36;
-                                              uStack_59 = (undefined1)((uint)iVar36 >> 8);
-                                              local_58 = (undefined1)((uint)iVar36 >> 0x10);
-                                              uStack_57 = (undefined1)((uint)iVar36 >> 0x18);
+                                              uStack_5a = (undefined1)iVar37;
+                                              uStack_59 = (undefined1)((uint)iVar37 >> 8);
+                                              local_58 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_57 = (undefined1)((uint)iVar37 >> 0x18);
                                               uStack_54 = (undefined1)local_140;
                                               uStack_53 = (undefined1)(local_140 >> 8);
                                               uStack_56 = SUB41(local_144,0);
                                               uStack_55 = (undefined1)((uint)local_144 >> 8);
                                               uStack_52 = (undefined1)local_13c;
                                               uStack_51 = (undefined1)((uint)local_13c >> 8);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1284,50 +1427,50 @@ LAB_00658b70:
                                     }
                                     break;
                                   case 0x5ee:
-                                    iVar36 = thunk_FUN_00651ed0((
-                                                  RecoveredRecord_AiEventClassTy_00651ED0 *)
-                                                  &local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_25481 =
+                                         thunk_FUN_00651ed0((RecoveredRecord_AiEventClassTy_00651ED0
+                                                             *)&local_16c);
+                                    if (local_EAX_25481 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg11 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00658d01:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg11,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
                                               local_10 = (AiFltClassTy *)
-                                                         thunk_FUN_00423300((int)pSVar16);
+                                                         thunk_FUN_00423300((int)pSVar15);
                                               if (((local_10 == nullptr) ||
                                                   (local_10->field_007B == 1)) ||
                                                  (local_10->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg11 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00658d01;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_58 = SUB41(local_158,0);
@@ -1344,12 +1487,12 @@ LAB_00658d01:
                                               uStack_53 = (undefined1)((uint)local_150 >> 8);
                                               uStack_52 = (undefined1)((uint)local_150 >> 0x10);
                                               uStack_51 = (undefined1)((uint)local_150 >> 0x18);
-                                              pcVar9 = local_148;
+                                              pcVar21 = local_148;
                                               if (local_148 == nullptr) {
-                                                pcVar9 = &DAT_008016a0;
+                                                pcVar21 = &DAT_008016a0;
                                               }
                                               Library::MSVCRT::_strncpy
-                                                        ((char *)&local_4a,pcVar9,0xe);
+                                                        ((char *)&local_4a,pcVar21,0xe);
                                               uStack_5b = (undefined1)(local_140 >> 8);
                                               uStack_5c = 0;
                                               uStack_5a = 0;
@@ -1373,48 +1516,48 @@ LAB_00658d01:
                                     }
                                     break;
                                   case 0x5ef:
-                                    iVar36 = thunk_FUN_00652030((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_25882 = thunk_FUN_00652030((short *)&local_16c);
+                                    if (local_EAX_25882 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg10 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00658e8e:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg10,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg10 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00658e8e;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_58 = SUB41(local_158,0);
@@ -1440,7 +1583,7 @@ LAB_00658e8e:
                                               uStack_5d = 0;
                                               local_4a = (int)local_138 * 0x19;
                                               local_68[0] = 0x33;
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1453,48 +1596,48 @@ LAB_00658e8e:
                                     }
                                     break;
                                   case 0x5f0:
-                                    iVar36 = thunk_FUN_00652100((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_26279 = thunk_FUN_00652100((short *)&local_16c);
+                                    if (local_EAX_26279 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mgF = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00658fc8:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgF,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mgF = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00658fc8;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
@@ -1505,13 +1648,13 @@ LAB_00658fc8:
                                               uStack_5f = (undefined1)((uint)local_150 >> 8);
                                               uStack_5e = (undefined1)((uint)local_150 >> 0x10);
                                               uStack_5d = (undefined1)((uint)local_150 >> 0x18);
-                                              iVar36 = (int)local_14c * 0x19;
+                                              iVar37 = (int)local_14c * 0x19;
                                               local_68[0] = 0x35;
-                                              local_58 = (undefined1)iVar36;
-                                              uStack_57 = (undefined1)((uint)iVar36 >> 8);
-                                              uStack_56 = (undefined1)((uint)iVar36 >> 0x10);
-                                              uStack_55 = (undefined1)((uint)iVar36 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              local_58 = (undefined1)iVar37;
+                                              uStack_57 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_56 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x18);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1524,47 +1667,47 @@ LAB_00658fc8:
                                     }
                                     break;
                                   case 0x5f1:
-                                    iVar36 = thunk_FUN_00651900((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_22928 = thunk_FUN_00651900((short *)&local_16c);
+                                    if (local_EAX_22928 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mgE = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_006582b3:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgE,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if ((pAVar14 == nullptr) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if ((pAVar13 == nullptr) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mgE = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_006582b3;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_60 = STPiece<0,1>(local_158);
@@ -1585,7 +1728,7 @@ LAB_006582b3:
                                               uStack_52 = 0;
                                               uStack_51 = 0;
                                               uStack_50 = 0;
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1598,46 +1741,46 @@ LAB_006582b3:
                                     }
                                     break;
                                   case 0x5f2:
-                                    iVar36 = thunk_FUN_006519e0((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    iVar37 = thunk_FUN_006519e0((short *)&local_16c);
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mgD = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00658416:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgD,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (pAVar14 == nullptr) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (pAVar13 == nullptr) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mgD = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00658416;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -1645,24 +1788,24 @@ LAB_00658416:
                                               uStack_5b = SUB41(local_14c,0);
                                               uStack_5a = (undefined1)((uint)local_14c >> 8);
                                               local_60 = STPiece<0,1>(local_158);
-                                              iVar36 = (int)local_144 * 0x19;
+                                              iVar37 = (int)local_144 * 0x19;
                                               uStack_5d = SUB41(local_150,0);
                                               uStack_5c = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0xb;
                                               uStack_4f = SUB41(local_148,0);
                                               local_4e = (undefined2)((uint)local_148 >> 8);
                                               uStack_4c = (undefined1)((uint)local_148 >> 0x18);
-                                              uStack_59 = (undefined1)iVar36;
-                                              local_58 = (undefined1)((uint)iVar36 >> 8);
-                                              uStack_57 = (undefined1)((uint)iVar36 >> 0x10);
-                                              uStack_56 = (undefined1)((uint)iVar36 >> 0x18);
+                                              uStack_59 = (undefined1)iVar37;
+                                              local_58 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_57 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_56 = (undefined1)((uint)iVar37 >> 0x18);
                                               uStack_55 = (undefined1)local_140;
                                               uStack_54 = (undefined1)(local_140 >> 8);
                                               uStack_53 = (undefined1)local_13c;
                                               uStack_52 = (undefined1)((uint)local_13c >> 8);
                                               uStack_51 = SUB41(local_138,0);
                                               uStack_50 = (undefined1)((uint)local_138 >> 8);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1675,48 +1818,48 @@ LAB_00658416:
                                     }
                                     break;
                                   case 0x5f3:
-                                    iVar36 = thunk_FUN_00651b40((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    iVar37 = thunk_FUN_00651b40((short *)&local_16c);
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mgC = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00658543:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgC,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mgC = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00658543;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -1725,12 +1868,12 @@ LAB_00658543:
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
                                               local_60 = STPiece<0,1>(local_158);
                                               local_68[0] = 0xc;
-                                              iVar36 = (int)local_150 * 0x19;
-                                              uStack_5b = (undefined1)iVar36;
-                                              uStack_5a = (undefined1)((uint)iVar36 >> 8);
-                                              uStack_59 = (undefined1)((uint)iVar36 >> 0x10);
-                                              local_58 = (undefined1)((uint)iVar36 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              iVar37 = (int)local_150 * 0x19;
+                                              uStack_5b = (undefined1)iVar37;
+                                              uStack_5a = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_59 = (undefined1)((uint)iVar37 >> 0x10);
+                                              local_58 = (undefined1)((uint)iVar37 >> 0x18);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1743,48 +1886,48 @@ LAB_00658543:
                                     }
                                     break;
                                   case 0x5f4:
-                                    iVar36 = thunk_FUN_00651bd0((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    iVar37 = thunk_FUN_00651bd0((short *)&local_16c);
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mgB = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00658670:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgB,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mgB = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00658670;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
@@ -1793,12 +1936,12 @@ LAB_00658670:
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
                                               local_60 = STPiece<0,1>(local_158);
                                               local_68[0] = 0xd;
-                                              iVar36 = (int)local_150 * 0x19;
-                                              uStack_5b = (undefined1)iVar36;
-                                              uStack_5a = (undefined1)((uint)iVar36 >> 8);
-                                              uStack_59 = (undefined1)((uint)iVar36 >> 0x10);
-                                              local_58 = (undefined1)((uint)iVar36 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              iVar37 = (int)local_150 * 0x19;
+                                              uStack_5b = (undefined1)iVar37;
+                                              uStack_5a = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_59 = (undefined1)((uint)iVar37 >> 0x10);
+                                              local_58 = (undefined1)((uint)iVar37 >> 0x18);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1811,48 +1954,48 @@ LAB_00658670:
                                     }
                                     break;
                                   case 0x5f5:
-                                    iVar36 = thunk_FUN_00651cd0((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    iVar37 = thunk_FUN_00651cd0((short *)&local_16c);
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mgA = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_006587e2:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgA,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mgA = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_006587e2;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5e = SUB41(local_154,0);
@@ -1862,21 +2005,21 @@ LAB_006587e2:
                                               local_4e = (undefined2)((uint)local_14c >> 0x10);
                                               local_60 = SUB41(local_158,0);
                                               uStack_5f = (undefined1)((uint)local_158 >> 8);
-                                              iVar36 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               uStack_5c = SUB41(local_150,0);
                                               uStack_5b = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0xe;
-                                              uStack_5a = (undefined1)iVar36;
-                                              uStack_59 = (undefined1)((uint)iVar36 >> 8);
-                                              local_58 = (undefined1)((uint)iVar36 >> 0x10);
-                                              uStack_57 = (undefined1)((uint)iVar36 >> 0x18);
+                                              uStack_5a = (undefined1)iVar37;
+                                              uStack_59 = (undefined1)((uint)iVar37 >> 8);
+                                              local_58 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_57 = (undefined1)((uint)iVar37 >> 0x18);
                                               uStack_54 = (undefined1)local_140;
                                               uStack_53 = (undefined1)(local_140 >> 8);
                                               uStack_56 = SUB41(local_144,0);
                                               uStack_55 = (undefined1)((uint)local_144 >> 8);
                                               uStack_52 = (undefined1)local_13c;
                                               uStack_51 = (undefined1)((uint)local_13c >> 8);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1889,52 +2032,52 @@ LAB_006587e2:
                                     }
                                     break;
                                   case 0x5f6:
-                                    iVar36 = thunk_FUN_00651db0((int)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_24571 = thunk_FUN_00651db0((int)&local_16c);
+                                    if (local_EAX_24571 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg9 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_006588eb:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg9,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg9 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_006588eb;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_68[0] = 0xf;
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -1947,47 +2090,47 @@ LAB_006588eb:
                                     }
                                     break;
                                   case 0x5f7:
-                                    iVar36 = thunk_FUN_00651c60((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    iVar37 = thunk_FUN_00651c60((short *)&local_16c);
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg8 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_006589fe:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg8,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if ((pAVar14 == nullptr) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if ((pAVar13 == nullptr) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg8 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_006589fe;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_60 = STPiece<0,1>(local_158);
@@ -1996,7 +2139,7 @@ LAB_006589fe:
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -2009,48 +2152,48 @@ LAB_006589fe:
                                     }
                                     break;
                                   case 0x5f8:
-                                    iVar36 = thunk_FUN_006521c0((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_26593 = thunk_FUN_006521c0((short *)&local_16c);
+                                    if (local_EAX_26593 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg7 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00659143:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg7,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg7 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00659143;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_58 = SUB41(local_154,0);
@@ -2071,13 +2214,13 @@ LAB_00659143:
                                               uStack_5d = (undefined1)((uint)local_13c >> 0x18);
                                               uStack_52 = SUB41(local_148,0);
                                               uStack_51 = (undefined1)((uint)local_148 >> 8);
-                                              iVar36 = (int)local_138 * 0x19;
+                                              iVar37 = (int)local_138 * 0x19;
                                               local_4e = (undefined2)local_140;
                                               local_68[0] = 0x36;
-                                              uStack_4c = (undefined1)iVar36;
-                                              cStack_4b = (char)((uint)iVar36 >> 8);
-                                              STPiece<0,2>(local_4a) = (undefined2)((uint)iVar36 >> 0x10);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              uStack_4c = (undefined1)iVar37;
+                                              cStack_4b = (char)((uint)iVar37 >> 8);
+                                              STPiece<0,2>(local_4a) = (undefined2)((uint)iVar37 >> 0x10);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -2090,50 +2233,50 @@ LAB_00659143:
                                     }
                                     break;
                                   case 0x5f9:
-                                    iVar36 = thunk_FUN_00652460((
-                                                  RecoveredRecord_AiEventClassTy_00652460 *)
-                                                  &local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_27539 =
+                                         thunk_FUN_00652460((RecoveredRecord_AiEventClassTy_00652460
+                                                             *)&local_16c);
+                                    if (local_EAX_27539 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg6 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_006594ec:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg6,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg6 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_006594ec;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
@@ -2152,12 +2295,12 @@ LAB_006594ec:
                                               uStack_5f = (undefined1)(local_140 >> 8);
                                               uStack_5e = (undefined1)(local_140 >> 0x10);
                                               uStack_5d = (undefined1)(local_140 >> 0x18);
-                                              iVar36 = local_13c * 0x19;
+                                              iVar37 = local_13c * 0x19;
                                               local_68[0] = 0x37;
-                                              uStack_50 = (undefined1)iVar36;
-                                              uStack_4f = (undefined1)((uint)iVar36 >> 8);
-                                              local_4e = (undefined2)((uint)iVar36 >> 0x10);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              uStack_50 = (undefined1)iVar37;
+                                              uStack_4f = (undefined1)((uint)iVar37 >> 8);
+                                              local_4e = (undefined2)((uint)iVar37 >> 0x10);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -2170,48 +2313,48 @@ LAB_006594ec:
                                     }
                                     break;
                                   case 0x5fa:
-                                    iVar36 = thunk_FUN_00652540((short *)&local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_27909 = thunk_FUN_00652540((short *)&local_16c);
+                                    if (local_EAX_27909 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg5 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00659640:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg5,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg5 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00659640;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
@@ -2226,13 +2369,13 @@ LAB_00659640:
                                               uStack_5f = (undefined1)((uint)local_148 >> 8);
                                               uStack_5e = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_5d = (undefined1)((uint)local_148 >> 0x18);
-                                              iVar36 = (int)local_144 * 0x19;
+                                              iVar37 = (int)local_144 * 0x19;
                                               local_68[0] = 0x38;
-                                              uStack_54 = (undefined1)iVar36;
-                                              uStack_53 = (undefined1)((uint)iVar36 >> 8);
-                                              uStack_52 = (undefined1)((uint)iVar36 >> 0x10);
-                                              uStack_51 = (undefined1)((uint)iVar36 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              uStack_54 = (undefined1)iVar37;
+                                              uStack_53 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_52 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_51 = (undefined1)((uint)iVar37 >> 0x18);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -2245,49 +2388,50 @@ LAB_00659640:
                                     }
                                     break;
                                   case 0x5fb:
-                                    iVar36 = thunk_FUN_006525e0((AnonShape_006525E0_52237033 *)
-                                                                &local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_28249 =
+                                         thunk_FUN_006525e0((AnonShape_006525E0_52237033 *)
+                                                            &local_16c);
+                                    if (local_EAX_28249 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg4 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00659785:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg4,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg4 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00659785;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
@@ -2298,15 +2442,15 @@ LAB_00659785:
                                               uStack_5d = (undefined1)((uint)local_14c >> 0x18);
                                               uStack_5c = SUB41(local_158,0);
                                               uStack_5b = (undefined1)((uint)local_158 >> 8);
-                                              iVar36 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               local_58 = SUB41(local_150,0);
                                               uStack_57 = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0x39;
-                                              uStack_56 = (undefined1)iVar36;
-                                              uStack_55 = (undefined1)((uint)iVar36 >> 8);
-                                              uStack_54 = (undefined1)((uint)iVar36 >> 0x10);
-                                              uStack_53 = (undefined1)((uint)iVar36 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              uStack_56 = (undefined1)iVar37;
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_53 = (undefined1)((uint)iVar37 >> 0x18);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -2319,49 +2463,50 @@ LAB_00659785:
                                     }
                                     break;
                                   case 0x5fc:
-                                    iVar36 = thunk_FUN_00652670((AnonShape_00652670_DFEA616F *)
-                                                                &local_16c);
-                                    if (iVar36 != 0) {
+                                    local_EAX_28574 =
+                                         thunk_FUN_00652670((AnonShape_00652670_DFEA616F *)
+                                                            &local_16c);
+                                    if (local_EAX_28574 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg3 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_006598ca:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg3,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if (((pAVar14 == nullptr) ||
-                                                  (pAVar14->field_007B == 1)) ||
-                                                 (pAVar14->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if (((pAVar13 == nullptr) ||
+                                                  (pAVar13->field_007B == 1)) ||
+                                                 (pAVar13->field_007B == -0x8000)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg3 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_006598ca;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
@@ -2372,15 +2517,15 @@ LAB_006598ca:
                                               uStack_5d = (undefined1)((uint)local_14c >> 0x18);
                                               uStack_5c = SUB41(local_158,0);
                                               uStack_5b = (undefined1)((uint)local_158 >> 8);
-                                              iVar36 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               local_58 = SUB41(local_150,0);
                                               uStack_57 = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0x3a;
-                                              uStack_56 = (undefined1)iVar36;
-                                              uStack_55 = (undefined1)((uint)iVar36 >> 8);
-                                              uStack_54 = (undefined1)((uint)iVar36 >> 0x10);
-                                              uStack_53 = (undefined1)((uint)iVar36 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              uStack_56 = (undefined1)iVar37;
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_53 = (undefined1)((uint)iVar37 >> 0x18);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -2398,48 +2543,48 @@ LAB_006598ca:
                                                   &local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg1 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_0065937a:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg1,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
                                               local_10 = (AiFltClassTy *)
-                                                         thunk_FUN_00423300((int)pSVar16);
+                                                         thunk_FUN_00423300((int)pSVar15);
                                               uVar31 = local_140;
                                               if ((local_10 == nullptr) ||
                                                  (local_10->field_007B == -0x8000)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg1 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_0065937a;
                                               }
                                               ppuVar34 = &local_20c;
-                                              for (iVar36 = 0x12; puVar15 = local_158, iVar36 != 0;
-                                                  iVar36 = iVar36 + -1) {
+                                              for (iVar37 = 0x12; puVar14 = local_158, iVar37 != 0;
+                                                  iVar37 = iVar37 + -1) {
                                                 *ppuVar34 = nullptr;
                                                 ppuVar34 = ppuVar34 + 1;
                                               }
                                               *(undefined2 *)ppuVar34 = 0;
-                                              local_20c = puVar15;
+                                              local_20c = puVar14;
                                               local_208 = 0xffff;
                                               local_206 = 0x5622;
                                               local_204 = 0xfffffff0;
@@ -2452,15 +2597,15 @@ LAB_0065937a:
                                               local_1f4 = STPiece<0,2>(local_150);
                                               local_1f2 = STPiece<0,2>(local_14c);
                                               if (((int)local_148 < 0) ||
-                                                 (pcVar9 = local_148, 7 < (int)local_148)) {
+                                                 (pcVar21 = local_148, 7 < (int)local_148)) {
                                                 bVar1 = local_10->field_0081;
-                                                pcVar9 = (char *)(uint)bVar1;
+                                                pcVar21 = (char *)(uint)bVar1;
                                                 if (((char)bVar1 < '\0') || ('\a' < (char)bVar1)) {
-                                                  pcVar9 = (char *)(uint)*(byte *)&local_10->
-                                                                                   field_0024;
+                                                  pcVar21 = (char *)(uint)*(byte *)&local_10->
+                                                                                    field_0024;
                                                 }
                                               }
-                                              local_1f0 = SUB41(pcVar9,0);
+                                              local_1f0 = SUB41(pcVar21,0);
                                               if (local_144 != nullptr) {
                                                 Library::MSVCRT::_strncpy
                                                           (local_1ef,(char *)local_144,0xe);
@@ -2476,11 +2621,11 @@ LAB_0065937a:
                                                 bVar1 = 0;
                                               }
                                               local_1e0 = -(uint)bVar1 & uVar31;
-                                              puVar15 = local_240;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_240;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_236 = &local_20c;
                                               local_1ce = 1;
@@ -2499,49 +2644,49 @@ LAB_0065937a:
                                     }
                                     break;
                                   case 0x5fe:
-                                    iVar36 = thunk_FUN_00652700((
+                                    iVar37 = thunk_FUN_00652700((
                                                   RecoveredRecord_AiEventClassTy_00652700 *)
                                                   &local_16c);
-                                    if (iVar36 != 0) {
+                                    if (iVar37 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                        pDVar12 = (DArrayTy *)
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                        pDVar10 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
-                                        if (0 < (int)pDVar12) {
+                                        if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                            pSVar15 = thunk_FUN_0042b760((char)local_8->flags,
                                                                          (ushort)local_15c);
-                                            uVar17 = uVar32;
-                                            if (pSVar16 == nullptr) {
-                                              dVar38 = local_8->flags;
-                                              pcVar9 = &DAT_008016a0;
-                                              iVar36 = -0xaa;
+                                            uVar16 = uVar32;
+                                            if (pSVar15 == nullptr) {
+                                              dVar39 = local_8->flags;
+                                              pcVar8_mg0 = &DAT_008016a0;
+                                              iVar37 = -0xaa;
 LAB_00659a1c:
-                                              thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,dVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg0,uVar16,
+                                                                 dVar39);
                                             }
                                             else {
-                                              pAVar14 = (AiFltClassTy *)
-                                                        thunk_FUN_00423300((int)pSVar16);
-                                              if ((pAVar14 == nullptr) ||
-                                                 (pAVar14->field_007B != 1)) {
-                                                dVar38 = local_8->flags;
-                                                pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar36 = -0xab;
+                                              pAVar13 = (AiFltClassTy *)
+                                                        thunk_FUN_00423300((int)pSVar15);
+                                              if ((pAVar13 == nullptr) ||
+                                                 (pAVar13->field_007B != 1)) {
+                                                dVar39 = local_8->flags;
+                                                pcVar8_mg0 = thunk_FUN_00674af0(local_EAX_488);
+                                                iVar37 = -0xab;
                                                 goto LAB_00659a1c;
                                               }
-                                              puVar15 = local_68;
-                                              for (iVar36 = 0xd; iVar36 != 0; iVar36 = iVar36 + -1)
+                                              puVar14 = local_68;
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
-                                                *puVar15 = 0;
-                                                puVar15 = puVar15 + 1;
+                                                *puVar14 = 0;
+                                                puVar14 = puVar14 + 1;
                                               }
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_58 = SUB41(local_154,0);
@@ -2558,16 +2703,16 @@ LAB_00659a1c:
                                               uStack_5d = (undefined1)((uint)local_144 >> 0x18);
                                               uStack_56 = SUB41(local_150,0);
                                               uStack_55 = (undefined1)((uint)local_150 >> 8);
-                                              iVar36 = local_140 * 0x19;
+                                              iVar37 = local_140 * 0x19;
                                               uStack_52 = SUB41(local_148,0);
                                               uStack_51 = (undefined1)((uint)local_148 >> 8);
                                               uStack_50 = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_4f = (undefined1)((uint)local_148 >> 0x18);
                                               local_68[0] = 0x3b;
-                                              local_4e = (undefined2)iVar36;
-                                              uStack_4c = (undefined1)((uint)iVar36 >> 0x10);
-                                              cStack_4b = (char)((uint)iVar36 >> 0x18);
-                                              AiFltClassTy::GetAiMess(pAVar14,local_68);
+                                              local_4e = (undefined2)iVar37;
+                                              uStack_4c = (undefined1)((uint)iVar37 >> 0x10);
+                                              cStack_4b = (char)((uint)iVar37 >> 0x18);
+                                              AiFltClassTy::GetAiMess(pAVar13,local_68);
                                               uVar32 = local_14;
                                             }
                                             local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -2584,12 +2729,12 @@ LAB_00659a1c:
                                   }
                                   goto cf_common_join_00652A99;
                                 }
-                                iVar7 = thunk_FUN_006527d0((int)&local_16c);
-                                if (iVar7 == 0) {
-                                  iVar7 = -1;
-                                  uVar17 = uVar32;
-                                  pcVar9 = thunk_FUN_00674af0(0x76c);
-                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                                iVar37 = thunk_FUN_006527d0((int)&local_16c);
+                                if (iVar37 == 0) {
+                                  iVar37 = -1;
+                                  uVar16 = uVar32;
+                                  pcVar8_mg23 = thunk_FUN_00674af0(0x76c);
+                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg23,uVar16,iVar37);
                                 }
                                 else {
                                   DAT_0080c51e = pDStack_164;
@@ -2597,57 +2742,57 @@ LAB_00659a1c:
                               }
                               goto cf_common_join_00659A73;
                             }
-                            if (iVar7 == 0x5c8) {
-                              iVar7 = thunk_FUN_00650ad0((int)&local_16c);
-                              if (iVar7 == 0) {
-                                iVar7 = -1;
-                                uVar17 = uVar32;
-                                pcVar9 = thunk_FUN_00674af0(0x5c8);
-                                thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                            if (local_EAX_488 == 0x5c8) {
+                              iVar37 = thunk_FUN_00650ad0((int)&local_16c);
+                              if (iVar37 == 0) {
+                                iVar37 = -1;
+                                uVar16 = uVar32;
+                                pcVar8_mg25 = thunk_FUN_00674af0(0x5c8);
+                                thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg25,uVar16,iVar37);
                               }
                               else {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar7 == 8) && (pDStack_164 == (DArrayTy *)0x9)) {
-                                  iVar7 = -1;
-                                  uVar17 = uVar32;
-                                  pcVar9 = thunk_FUN_00674af0(0x5c8);
-                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 == 8) && (pDStack_164 == (DArrayTy *)0x9)) {
+                                  iVar37 = -1;
+                                  uVar16 = uVar32;
+                                  pcVar8_mg24 = thunk_FUN_00674af0(0x5c8);
+                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg24,uVar16,iVar37);
                                 }
                                 else {
-                                  pDVar12 = (DArrayTy *)
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
-                                    pDVar12 = local_15c;
+                                    local_c = pDVar10;
+                                    pDVar10 = local_15c;
                                     do {
-                                      puVar11 = (undefined1 *)0xffffffff;
-                                      if (((int)pDVar12 < 1) || (0x28 < (int)pDVar12)) {
+                                      puVar9 = (undefined1 *)0xffffffff;
+                                      if (((int)pDVar10 < 1) || (0x28 < (int)pDVar10)) {
                                         bVar35 = false;
                                       }
                                       else {
                                         bVar35 = true;
                                       }
                                       if (bVar35) {
-                                        puVar11 = (undefined1 *)((int)&pDVar12[2].flags + 1);
+                                        puVar9 = (undefined1 *)((int)&pDVar10[2].flags + 1);
                                       }
-                                      if (((int)pDVar12 < 0x32) || (0x73 < (int)pDVar12)) {
+                                      if (((int)pDVar10 < 0x32) || (0x73 < (int)pDVar10)) {
                                         bVar35 = false;
                                       }
                                       else {
                                         bVar35 = true;
                                       }
                                       if (bVar35) {
-                                        puVar11 = (undefined1 *)((int)&pDVar12[-2].count + 2);
+                                        puVar9 = (undefined1 *)((int)&pDVar10[-2].count + 2);
                                       }
-                                      if (-1 < (int)puVar11) {
-                                        thunk_FUN_004e6080(pDVar25->flags,(int)puVar11,local_158);
-                                        pDVar12 = local_15c;
+                                      if (-1 < (int)puVar9) {
+                                        thunk_FUN_004e6080(pDVar25->flags,(int)puVar9,local_158);
+                                        pDVar10 = local_15c;
                                       }
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2657,18 +2802,18 @@ LAB_00659a1c:
                               }
                               goto cf_common_join_00659A73;
                             }
-                            switch(iVar7) {
+                            switch(local_EAX_488) {
                             case 0x594:
-                              iVar36 = thunk_FUN_0064feb0((int)&local_16c);
-                              if (iVar36 == 0) break;
+                              iVar37 = thunk_FUN_0064feb0((int)&local_16c);
+                              if (iVar37 == 0) break;
                               if (local_160 != nullptr) {
                                 _EnumArt(0,(byte *)pDStack_164,0,0,0,-1,-1,-1,thunk_FUN_0064dd70,
                                          local_160);
                               }
                               goto cf_common_join_00659A73;
                             case 0x595:
-                              iVar36 = thunk_FUN_0064fef0((short *)&local_16c);
-                              if (iVar36 == 0) break;
+                              iVar37 = thunk_FUN_0064fef0((short *)&local_16c);
+                              if (iVar37 == 0) break;
                               if (((pDStack_164 == (DArrayTy *)0xdd) ||
                                   (pDStack_164 == (DArrayTy *)0xde)) ||
                                  (pDStack_164 == (DArrayTy *)0xe0)) {
@@ -2681,46 +2826,47 @@ LAB_00659a1c:
                                 local_18c = local_160;
                                 local_190 = local_15c;
                                 local_184 = local_158;
-                                iVar36 = thunk_FUN_004b1cf0((int)pDStack_164,(int *)&local_18c,
-                                                            (int *)&local_190,(int *)&local_184);
-                                if (iVar36 == 0) goto LAB_00655f4c;
+                                local_EAX_14486 =
+                                     thunk_FUN_004b1cf0((int)pDStack_164,(int *)&local_18c,
+                                                        (int *)&local_190,(int *)&local_184);
+                                if (local_EAX_14486 == 0) goto LAB_00655f4c;
                                 thunk_FUN_00580450(local_18c,local_190,local_184,pDStack_164,
                                                    local_154);
                               }
                               goto cf_common_join_00659A73;
                             case 0x596:
-                              iVar36 = thunk_FUN_0064ff70((RecoveredRecord_AiEventClassTy_0064FF70 *
+                              iVar37 = thunk_FUN_0064ff70((RecoveredRecord_AiEventClassTy_0064FF70 *
                                                           )&local_16c);
-                              if (iVar36 == 0) break;
+                              if (iVar37 == 0) break;
                               DAT_008118fc = 0;
                               _EnumRCField((short)pDStack_164,(short)local_160,(short)local_15c,
                                            (short)local_158,(short)local_154,(short)local_150,
                                            (short)local_14c,thunk_FUN_0064e260,&local_148);
                               goto cf_common_join_00659A73;
                             case 0x597:
-                              iVar36 = thunk_FUN_00650090((RecoveredRecord_AiEventClassTy_00650090 *
+                              iVar37 = thunk_FUN_00650090((RecoveredRecord_AiEventClassTy_00650090 *
                                                           )&local_16c);
-                              if (iVar36 == 0) break;
+                              if (iVar37 == 0) break;
                               _EnumRCField((short)local_15c,(short)local_158,(short)local_154,
                                            (short)local_150,(short)local_14c,(short)local_148,
                                            (short)local_144,thunk_FUN_0064e290,
                                            (int)local_160 << 0x10 | (uint)pDStack_164 & 0xffff);
                               goto cf_common_join_00659A73;
                             case 0x598:
-                              iVar36 = thunk_FUN_006501a0((RecoveredRecord_AiEventClassTy_006501A0 *
+                              iVar37 = thunk_FUN_006501a0((RecoveredRecord_AiEventClassTy_006501A0 *
                                                           )&local_16c);
-                              if (iVar36 != 0) {
-                                iVar36 = _CreateDest(this_00,(short)pDStack_164,(short)local_160,
-                                                     (short)local_15c,(short)local_158,
-                                                     (short)local_154,(char *)local_150,local_14c,
-                                                     local_148);
+                              if (iVar37 != 0) {
+                                local_EAX_13781 =
+                                     _CreateDest(this_00,(short)pDStack_164,(short)local_160,
+                                                 (short)local_15c,(short)local_158,(short)local_154,
+                                                 (char *)local_150,local_14c,local_148);
                                 goto LAB_00655f44;
                               }
                               break;
                             case 0x599:
-                              iVar36 = thunk_FUN_00650240((RecoveredRecord_AiEventClassTy_00650240 *
+                              iVar37 = thunk_FUN_00650240((RecoveredRecord_AiEventClassTy_00650240 *
                                                           )&local_16c);
-                              if (iVar36 == 0) break;
+                              if (iVar37 == 0) break;
                               DAT_008118fc = 0;
                               _EnumDest((byte *)local_160,(char)pDStack_164,(short)local_15c,
                                         (short)local_158,(short)local_154,(short)local_150,
@@ -2728,39 +2874,39 @@ LAB_00659a1c:
                                         &local_144);
                               goto cf_common_join_00659A73;
                             case 0x59a:
-                              iVar36 = thunk_FUN_00650370((int)&local_16c);
-                              if (iVar36 == 0) break;
+                              iVar37 = thunk_FUN_00650370((int)&local_16c);
+                              if (iVar37 == 0) break;
                               if (local_160 != nullptr) {
                                 _EnumDest((byte *)pDStack_164,-1,0,0,0,-1,-1,-1,thunk_FUN_0064df70,
                                           local_160);
                               }
                               goto cf_common_join_00659A73;
                             case 0x59b:
-                              iVar36 = thunk_FUN_006503b0((short *)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_006503b0((short *)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     do {
-                                      iVar36 = _CreateMine(this_00,(ushort)local_8->flags,
-                                                           (short)local_15c,(int)local_158,
-                                                           (int)local_154,local_150,
-                                                           (ushort)local_14c,local_148,local_144,
-                                                           local_140);
-                                      if (iVar36 != 0) {
-                                        dVar38 = local_8->flags;
-                                        uVar17 = uVar32;
-                                        pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar38);
+                                      local_EAX_14928 =
+                                           _CreateMine(this_00,(ushort)local_8->flags,
+                                                       (short)local_15c,(int)local_158,
+                                                       (int)local_154,local_150,(ushort)local_14c,
+                                                       local_148,local_144,local_140);
+                                      if (local_EAX_14928 != 0) {
+                                        dVar39 = local_8->flags;
+                                        uVar16 = uVar32;
+                                        pcVar8_mg2E = thunk_FUN_00674af0(local_EAX_488);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg2E,uVar16,dVar39);
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2772,21 +2918,21 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x59c:
-                              iVar36 = thunk_FUN_00650480((RecoveredRecord_AiEventClassTy_00650480 *
+                              iVar37 = thunk_FUN_00650480((RecoveredRecord_AiEventClassTy_00650480 *
                                                           )&local_16c);
-                              if (iVar36 != 0) {
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     do {
                                       DAT_008118fc = 0;
                                       _EnumMines(pDVar25->flags,(short)local_15c,(char)local_158,
@@ -2802,21 +2948,21 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x59d:
-                              iVar36 = thunk_FUN_00650600((RecoveredRecord_AiEventClassTy_00650600 *
+                              iVar37 = thunk_FUN_00650600((RecoveredRecord_AiEventClassTy_00650600 *
                                                           )&local_16c);
-                              if (iVar36 != 0) {
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     do {
                                       DAT_008118fc = 0;
                                       _EnumMines(pDVar25->flags,(short)local_158,(char)local_154,
@@ -2834,20 +2980,20 @@ LAB_00659a1c:
                             default:
                               goto cf_common_join_00659A73;
                             case 0x5aa:
-                              iVar36 = thunk_FUN_00650760((short *)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_00650760((short *)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     do {
                                       thunk_FUN_004e76e0(pDVar25->flags,&local_15c->flags,
                                                          (byte)local_158);
@@ -2860,20 +3006,20 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ab:
-                              iVar36 = thunk_FUN_00650760((short *)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_00650760((short *)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     do {
                                       thunk_FUN_004e7980((uint *)pDVar25->flags,(int)local_15c,
                                                          (byte)local_158);
@@ -2886,36 +3032,36 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ac:
-                              iVar36 = thunk_FUN_00650820((short *)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_00650820((short *)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
                                     do {
-                                      local_c = pDVar12;
-                                      pAVar13 = thunk_FUN_004357f0((char)local_8->flags);
-                                      if (pAVar13 == nullptr) {
-                                        dVar38 = local_8->flags;
-                                        uVar17 = uVar32;
-                                        pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar38);
+                                      local_c = pDVar10;
+                                      pAVar11 = thunk_FUN_004357f0((char)local_8->flags);
+                                      if (pAVar11 == nullptr) {
+                                        dVar39 = local_8->flags;
+                                        uVar16 = uVar32;
+                                        pcVar8_mg2D = thunk_FUN_00674af0(local_EAX_488);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg2D,uVar16,dVar39);
                                       }
                                       else {
                                         AiPlrClassTy::SetTech
-                                                  (pAVar13,(int)local_15c,(int)local_158,
+                                                  (pAVar11,(int)local_15c,(int)local_158,
                                                    (int)local_154,-1);
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
-                                      pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (pDVar12 != nullptr);
+                                      pDVar10 = (DArrayTy *)((int)&local_c[-1].data + 3);
+                                    } while (pDVar10 != nullptr);
                                     local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
@@ -2923,20 +3069,20 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ad:
-                              iVar36 = thunk_FUN_006508c0((short *)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_006508c0((short *)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     do {
                                       thunk_FUN_004e6310((byte *)pDVar25->flags,(uint)local_15c,
                                                          (uint)local_158);
@@ -2949,20 +3095,20 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ae:
-                              iVar36 = thunk_FUN_006509e0((int)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_006509e0((int)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     do {
                                       thunk_FUN_004e75f0(pDVar25->flags);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
@@ -2974,34 +3120,34 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5af:
-                              iVar36 = thunk_FUN_00650a20((AnonShape_00650A20_4A198923 *)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_00650a20((AnonShape_00650A20_4A198923 *)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
                                     do {
-                                      local_c = pDVar12;
-                                      pAVar13 = thunk_FUN_004357f0((char)local_8->flags);
-                                      if (pAVar13 == nullptr) {
-                                        dVar38 = local_8->flags;
-                                        uVar17 = uVar32;
-                                        pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar38);
+                                      local_c = pDVar10;
+                                      pAVar11 = thunk_FUN_004357f0((char)local_8->flags);
+                                      if (pAVar11 == nullptr) {
+                                        dVar39 = local_8->flags;
+                                        uVar16 = uVar32;
+                                        pcVar8_mg2C = thunk_FUN_00674af0(local_EAX_488);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg2C,uVar16,dVar39);
                                       }
                                       else {
-                                        thunk_FUN_0067b210(pAVar13,(int)local_15c,(int)local_158);
+                                        thunk_FUN_0067b210(pAVar11,(int)local_15c,(int)local_158);
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
-                                      pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (pDVar12 != nullptr);
+                                      pDVar10 = (DArrayTy *)((int)&local_c[-1].data + 3);
+                                    } while (pDVar10 != nullptr);
                                     local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
@@ -3009,34 +3155,34 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b0:
-                              iVar36 = thunk_FUN_00650a90((int)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_00650a90((int)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
                                     do {
-                                      local_c = pDVar12;
-                                      pAVar13 = thunk_FUN_004357f0((char)local_8->flags);
-                                      if (pAVar13 == nullptr) {
-                                        dVar38 = local_8->flags;
-                                        uVar17 = uVar32;
-                                        pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar38);
+                                      local_c = pDVar10;
+                                      pAVar11 = thunk_FUN_004357f0((char)local_8->flags);
+                                      if (pAVar11 == nullptr) {
+                                        dVar39 = local_8->flags;
+                                        uVar16 = uVar32;
+                                        pcVar8_mg2B = thunk_FUN_00674af0(local_EAX_488);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg2B,uVar16,dVar39);
                                       }
                                       else {
-                                        thunk_FUN_0067b260((int)pAVar13);
+                                        thunk_FUN_0067b260((int)pAVar11);
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
-                                      pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (pDVar12 != nullptr);
+                                      pDVar10 = (DArrayTy *)((int)&local_c[-1].data + 3);
+                                    } while (pDVar10 != nullptr);
                                     local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
@@ -3044,20 +3190,20 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b1:
-                              iVar36 = thunk_FUN_006507e0((int)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_006507e0((int)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     do {
                                       thunk_FUN_004e7d70(pDVar25->flags);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
@@ -3069,20 +3215,20 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b2:
-                              iVar36 = thunk_FUN_006507e0((int)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_006507e0((int)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     do {
                                       thunk_FUN_004e7e10((uint *)pDVar25->flags);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
@@ -3094,20 +3240,20 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b3:
-                              iVar36 = thunk_FUN_00650940((short *)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_00650940((short *)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     do {
                                       thunk_FUN_004e7390((byte *)pDVar25->flags,(uint)local_15c,
                                                          (uint)local_158,(int)local_154);
@@ -3120,35 +3266,35 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b4:
-                              iVar36 = thunk_FUN_00650b10((RecoveredRecord_AiEventClassTy_00650B10 *
+                              iVar37 = thunk_FUN_00650b10((RecoveredRecord_AiEventClassTy_00650B10 *
                                                           )&local_16c);
-                              if (iVar36 != 0) {
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_8 = pDVar12;
+                                    local_8 = pDVar10;
                                     do {
                                       local_c = (DArrayTy *)0xffffffff;
-                                      local_8 = pDVar12;
+                                      local_8 = pDVar10;
                                       if (g_allPlayers_007FA174 == nullptr) {
-                                        pAVar13 = nullptr;
+                                        pAVar11 = nullptr;
                                       }
                                       else {
-                                        pAVar13 = thunk_FUN_004357f0((char)pDVar25->flags);
+                                        pAVar11 = thunk_FUN_004357f0((char)pDVar25->flags);
                                       }
-                                      if (pAVar13 != nullptr) {
+                                      if (pAVar11 != nullptr) {
                                         local_c = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_00678E00::thunk_FUN_00679120
-                                                            ((AnonReceiver_00678E00 *)pAVar13,
+                                                            ((AnonReceiver_00678E00 *)pAVar11,
                                                              (byte *)local_15c,(int)local_158,
                                                              (int)local_154,(int)local_150);
                                       }
@@ -3157,51 +3303,51 @@ LAB_00659a1c:
                                                            pDVar25->flags);
                                       }
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
-                                      pDVar12 = (DArrayTy *)((int)&local_8[-1].data + 3);
-                                      local_8 = pDVar12;
-                                    } while (pDVar12 != nullptr);
+                                      pDVar10 = (DArrayTy *)((int)&local_8[-1].data + 3);
+                                      local_8 = pDVar10;
+                                    } while (pDVar10 != nullptr);
                                   }
                                   goto cf_common_join_00659A73;
                                 }
                               }
                               break;
                             case 0x5b5:
-                              iVar36 = thunk_FUN_00650f50((int)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_00650f50((int)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
                                     do {
-                                      local_c = pDVar12;
+                                      local_c = pDVar10;
                                       if (g_allPlayers_007FA174 == nullptr) {
-                                        pAVar20 = nullptr;
+                                        pAVar19 = nullptr;
                                       }
                                       else {
-                                        pAVar20 = (AnonShape_00679600_B8E418A8 *)
+                                        pAVar19 = (AnonShape_00679600_B8E418A8 *)
                                                   thunk_FUN_004357f0((char)local_8->flags);
                                       }
-                                      if (pAVar20 == nullptr) {
-                                        dVar38 = local_8->flags;
-                                        uVar17 = uVar32;
-                                        pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar38);
+                                      if (pAVar19 == nullptr) {
+                                        dVar39 = local_8->flags;
+                                        uVar16 = uVar32;
+                                        pcVar8_mg2A = thunk_FUN_00674af0(local_EAX_488);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg2A,uVar16,dVar39);
                                       }
                                       else {
-                                        pAVar20->field_0644 = (char)local_15c;
-                                        pAVar20->field_0640 = local_158;
-                                        thunk_FUN_00679600(pAVar20);
+                                        pAVar19->field_0644 = (char)local_15c;
+                                        pAVar19->field_0640 = local_158;
+                                        thunk_FUN_00679600(pAVar19);
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
-                                      pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (pDVar12 != nullptr);
+                                      pDVar10 = (DArrayTy *)((int)&local_c[-1].data + 3);
+                                    } while (pDVar10 != nullptr);
                                     local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
@@ -3209,41 +3355,41 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b6:
-                              iVar36 = thunk_FUN_00650f90((short *)&local_16c);
-                              if (iVar36 != 0) {
+                              local_EAX_17905 = thunk_FUN_00650f90((short *)&local_16c);
+                              if (local_EAX_17905 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
                                     do {
-                                      local_c = pDVar12;
+                                      local_c = pDVar10;
                                       if (g_allPlayers_007FA174 == nullptr) {
-                                        pAVar13 = nullptr;
+                                        pAVar11 = nullptr;
                                       }
                                       else {
-                                        pAVar13 = thunk_FUN_004357f0((char)local_8->flags);
+                                        pAVar11 = thunk_FUN_004357f0((char)local_8->flags);
                                       }
-                                      if (pAVar13 == nullptr) {
-                                        dVar38 = local_8->flags;
-                                        uVar17 = uVar32;
-                                        pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar38);
+                                      if (pAVar11 == nullptr) {
+                                        dVar39 = local_8->flags;
+                                        uVar16 = uVar32;
+                                        pcVar8_mg29 = thunk_FUN_00674af0(local_EAX_488);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg29,uVar16,dVar39);
                                       }
                                       else {
-                                        thunk_FUN_0065bd20(pAVar13,(byte)local_15c,(ushort)local_158
+                                        thunk_FUN_0065bd20(pAVar11,(byte)local_15c,(ushort)local_158
                                                            ,(ushort)local_154,(ushort)local_150,
                                                            local_14c);
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
-                                      pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    } while (pDVar12 != nullptr);
+                                      pDVar10 = (DArrayTy *)((int)&local_c[-1].data + 3);
+                                    } while (pDVar10 != nullptr);
                                     local_c = nullptr;
                                   }
                                   goto cf_common_join_00659A73;
@@ -3251,21 +3397,21 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b7:
-                              iVar36 = thunk_FUN_00650bd0((RecoveredRecord_AiEventClassTy_00650BD0 *
+                              iVar37 = thunk_FUN_00650bd0((RecoveredRecord_AiEventClassTy_00650BD0 *
                                                           )&local_16c);
-                              if (iVar36 != 0) {
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     local_10 = (AiFltClassTy *)&local_34;
-                                    local_8 = pDVar12;
+                                    local_8 = pDVar10;
                                     do {
                                       local_c = (DArrayTy *)
                                                 thunk_FUN_00677290(local_10->vtable,(uint)local_15c,
@@ -3275,10 +3421,11 @@ LAB_00659a1c:
                                                                    (short)local_144,(short)local_140
                                                                    ,1);
                                       if (local_c == nullptr) {
-                                        pAVar37 = local_10->vtable;
-                                        uVar17 = uVar32;
-                                        pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar37);
+                                        pAVar38 = local_10->vtable;
+                                        uVar16 = uVar32;
+                                        pcVar8_mg28 = thunk_FUN_00674af0(local_EAX_488);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg28,uVar16,
+                                                           (int)pAVar38);
                                       }
                                       else {
                                         thunk_FUN_00675dc0((uint)local_10->vtable,local_c);
@@ -3294,21 +3441,21 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b8:
-                              iVar36 = thunk_FUN_00650cf0((RecoveredRecord_AiEventClassTy_00650CF0 *
+                              iVar37 = thunk_FUN_00650cf0((RecoveredRecord_AiEventClassTy_00650CF0 *
                                                           )&local_16c);
-                              if (iVar36 != 0) {
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     local_10 = (AiFltClassTy *)&local_34;
-                                    local_8 = pDVar12;
+                                    local_8 = pDVar10;
                                     do {
                                       local_c = (DArrayTy *)
                                                 thunk_FUN_006773b0(local_10->vtable,(uint)local_15c,
@@ -3318,10 +3465,11 @@ LAB_00659a1c:
                                                                    (short)local_144,(short)local_140
                                                                    ,1);
                                       if (local_c == nullptr) {
-                                        pAVar37 = local_10->vtable;
-                                        uVar17 = uVar32;
-                                        pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar37);
+                                        pAVar38 = local_10->vtable;
+                                        uVar16 = uVar32;
+                                        pcVar8_mg27 = thunk_FUN_00674af0(local_EAX_488);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg27,uVar16,
+                                                           (int)pAVar38);
                                       }
                                       else {
                                         thunk_FUN_00675dc0((uint)local_10->vtable,local_c);
@@ -3337,21 +3485,21 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b9:
-                              iVar36 = thunk_FUN_00650e10((RecoveredRecord_AiEventClassTy_00650E10 *
+                              iVar37 = thunk_FUN_00650e10((RecoveredRecord_AiEventClassTy_00650E10 *
                                                           )&local_16c);
-                              if (iVar36 != 0) {
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     local_10 = (AiFltClassTy *)&local_34;
-                                    local_8 = pDVar12;
+                                    local_8 = pDVar10;
                                     do {
                                       local_c = (DArrayTy *)
                                                 thunk_FUN_006774c0(local_10->vtable,
@@ -3362,10 +3510,11 @@ LAB_00659a1c:
                                                                    (short)local_144,(short)local_140
                                                                    ,1);
                                       if (local_c == nullptr) {
-                                        pAVar37 = local_10->vtable;
-                                        uVar17 = uVar32;
-                                        pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar37);
+                                        pAVar38 = local_10->vtable;
+                                        uVar16 = uVar32;
+                                        pcVar8_mg26 = thunk_FUN_00674af0(local_EAX_488);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg26,uVar16,
+                                                           (int)pAVar38);
                                       }
                                       else {
                                         thunk_FUN_00675dc0((uint)local_10->vtable,local_c);
@@ -3382,14 +3531,14 @@ LAB_00659a1c:
                             }
                             goto cf_common_join_00652A99;
                           }
-                          if (iVar7 == 0x593) {
-                            iVar7 = thunk_FUN_0064fd80((RecoveredRecord_AiEventClassTy_0064FD80 *)
-                                                       &local_16c);
-                            if (iVar7 == 0) {
-                              iVar7 = -1;
-                              uVar17 = uVar32;
-                              pcVar9 = thunk_FUN_00674af0(0x593);
-                              thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                          if (local_EAX_488 == 0x593) {
+                            iVar37 = thunk_FUN_0064fd80((RecoveredRecord_AiEventClassTy_0064FD80 *)
+                                                        &local_16c);
+                            if (iVar37 == 0) {
+                              iVar37 = -1;
+                              uVar16 = uVar32;
+                              pcVar8_mg2F = thunk_FUN_00674af0(0x593);
+                              thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg2F,uVar16,iVar37);
                             }
                             else {
                               DAT_008118fc = 0;
@@ -3400,101 +3549,101 @@ LAB_00659a1c:
                             }
                             goto cf_common_join_00659A73;
                           }
-                          if (iVar7 < 0x54e) {
-                            if (iVar7 == 0x54d) {
-                              iVar7 = thunk_FUN_0064ef10((int)&local_16c);
-                              if (iVar7 == 0) {
-                                iVar7 = -1;
-                                uVar17 = uVar32;
-                                pcVar9 = thunk_FUN_00674af0(0x54d);
-                                thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                          if (local_EAX_488 < 0x54e) {
+                            if (local_EAX_488 == 0x54d) {
+                              iVar37 = thunk_FUN_0064ef10((int)&local_16c);
+                              if (iVar37 == 0) {
+                                iVar37 = -1;
+                                uVar16 = uVar32;
+                                pcVar8_mg31 = thunk_FUN_00674af0(0x54d);
+                                thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg31,uVar16,iVar37);
                               }
                               else {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar7 == 8) && (pDStack_164 == (DArrayTy *)0x9)) {
-                                  iVar7 = -1;
-                                  uVar17 = uVar32;
-                                  pcVar9 = thunk_FUN_00674af0(0x54d);
-                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 == 8) && (pDStack_164 == (DArrayTy *)0x9)) {
+                                  iVar37 = -1;
+                                  uVar16 = uVar32;
+                                  pcVar8_mg30 = thunk_FUN_00674af0(0x54d);
+                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg30,uVar16,iVar37);
                                 }
                                 else {
-                                  iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::sub_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
-                                  iVar36 = 0;
-                                  if (0 < iVar7) {
-                                    pDVar12 = &local_34;
+                                  local_EAX_5500 =
+                                       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
+                                       ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                      (char *)pDStack_164,(uint)local_160,
+                                                      &local_34.flags);
+                                  iVar37 = 0;
+                                  if (0 < local_EAX_5500) {
+                                    pDVar10 = &local_34;
                                     do {
-                                      if (pDVar12->flags == (uint)DAT_0080874d) {
+                                      if (pDVar10->flags == (uint)DAT_0080874d) {
                                         if (g_opticClass_007FB2A0 != nullptr) {
                                           thunk_FUN_004aaf60((int)local_15c);
                                         }
                                         break;
                                       }
-                                      iVar36 = iVar36 + 1;
-                                      pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar36 < iVar7);
+                                      iVar37 = iVar37 + 1;
+                                      pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                    } while (iVar37 < local_EAX_5500);
                                   }
                                 }
                               }
                               goto cf_common_join_00659A73;
                             }
-                            if (iVar7 < 0x51b) {
-                              if (iVar7 == 0x51a) {
-                                iVar7 = thunk_FUN_0064e960((int)&local_16c);
-                                if (iVar7 == 0) {
-                                  iVar7 = -1;
-                                  uVar17 = uVar32;
-                                  pcVar9 = thunk_FUN_00674af0(0x51a);
-                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                            if (local_EAX_488 < 0x51b) {
+                              if (local_EAX_488 == 0x51a) {
+                                iVar37 = thunk_FUN_0064e960((int)&local_16c);
+                                if (iVar37 == 0) {
+                                  iVar37 = -1;
+                                  uVar16 = uVar32;
+                                  pcVar8_mg32 = thunk_FUN_00674af0(0x51a);
+                                  thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg32,uVar16,iVar37);
                                 }
                                 else {
                                   (&this_00->field_052F)[(int)pDStack_164] = local_160;
                                 }
                                 goto cf_common_join_00659A73;
                               }
-                              if (0x3e < iVar7) {
-                                if (iVar7 < 0x517) {
-                                  if (iVar7 == 0x516) {
-                                    iVar7 = thunk_FUN_0064e7c0((short *)&local_16c);
-                                    if (iVar7 == 0) {
-                                      iVar7 = -1;
-                                      uVar17 = uVar32;
-                                      pcVar9 = thunk_FUN_00674af0(0x516);
-                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                              if (0x3e < local_EAX_488) {
+                                if (local_EAX_488 < 0x517) {
+                                  if (local_EAX_488 == 0x516) {
+                                    iVar37 = thunk_FUN_0064e7c0((short *)&local_16c);
+                                    if (iVar37 == 0) {
+                                      iVar37 = -1;
+                                      uVar16 = uVar32;
+                                      pcVar8_mg37 = thunk_FUN_00674af0(0x516);
+                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg37,uVar16,iVar37);
                                     }
                                     else {
                                       if (pDStack_164 == (DArrayTy *)0x9) {
                                         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                        iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                        if (iVar7 == 8) {
-                                          pDVar12 = local_15c;
+                                        iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                        if (iVar37 == 8) {
+                                          pDVar10 = local_15c;
                                           if ((int)local_15c <= (int)local_158) {
                                             do {
-                                              puVar11 = (undefined1 *)
-                                                        thunk_FUN_0064e510(this_00,(int)pDVar12);
-                                              if (puVar11 != nullptr) {
-                                                *puVar11 = 0;
+                                              puVar9 = (undefined1 *)
+                                                       thunk_FUN_0064e510(this_00,(int)pDVar10);
+                                              if (puVar9 != nullptr) {
+                                                *puVar9 = 0;
                                               }
-                                              pDVar12 = (DArrayTy *)((int)&pDVar12->flags + 1);
-                                            } while ((int)pDVar12 <= (int)local_158);
+                                              pDVar10 = (DArrayTy *)((int)&pDVar10->flags + 1);
+                                            } while ((int)pDVar10 <= (int)local_158);
                                           }
                                           goto cf_common_join_00659A73;
                                         }
                                       }
-                                      pDVar12 = (DArrayTy *)
+                                      pDVar10 = (DArrayTy *)
                                                 SubmarineTitans::Recovered::HiddenThis::
                                                 AnonReceiver_0064A970::sub_00668F50
                                                           ((AnonReceiver_0064A970 *)this_00,
                                                            (char *)pDStack_164,(uint)local_160,
                                                            &local_34.flags);
-                                      if (0 < (int)pDVar12) {
+                                      if (0 < (int)pDVar10) {
                                         local_8 = &local_34;
                                         do {
-                                          local_c = pDVar12;
+                                          local_c = pDVar10;
                                           if (g_allPlayers_007FA174 == nullptr) {
                                             local_10 = nullptr;
                                           }
@@ -3502,51 +3651,51 @@ LAB_00659a1c:
                                             local_10 = (AiFltClassTy *)
                                                        thunk_FUN_004357f0((char)local_8->flags);
                                           }
-                                          pDVar12 = local_15c;
+                                          pDVar10 = local_15c;
                                           if ((int)local_15c <= (int)local_158) {
                                             do {
                                               if (local_10 != nullptr) {
-                                                puVar11 = (undefined1 *)
-                                                          thunk_FUN_0064e510(&local_10->field_001C,
-                                                                             (int)pDVar12);
-                                                if (puVar11 != nullptr) {
-                                                  *puVar11 = 0;
+                                                puVar9 = (undefined1 *)
+                                                         thunk_FUN_0064e510(&local_10->field_001C,
+                                                                            (int)pDVar10);
+                                                if (puVar9 != nullptr) {
+                                                  *puVar9 = 0;
                                                 }
                                               }
-                                              pDVar12 = (DArrayTy *)((int)&pDVar12->flags + 1);
-                                            } while ((int)pDVar12 <= (int)local_158);
+                                              pDVar10 = (DArrayTy *)((int)&pDVar10->flags + 1);
+                                            } while ((int)pDVar10 <= (int)local_158);
                                           }
                                           local_8 = (DArrayTy *)&local_8->iteratorIndex;
-                                          pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                        } while (pDVar12 != nullptr);
+                                          pDVar10 = (DArrayTy *)((int)&local_c[-1].data + 3);
+                                        } while (pDVar10 != nullptr);
                                         local_c = nullptr;
                                       }
                                     }
                                   }
-                                  else if (iVar7 == 0x42) {
-                                    iVar7 = thunk_FUN_0064e700((int)&local_16c);
-                                    if (iVar7 == 0) {
-                                      iVar7 = -1;
-                                      uVar17 = uVar32;
-                                      pcVar9 = thunk_FUN_00674af0(0x42);
-                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                                  else if (local_EAX_488 == 0x42) {
+                                    iVar37 = thunk_FUN_0064e700((int)&local_16c);
+                                    if (iVar37 == 0) {
+                                      iVar37 = -1;
+                                      uVar16 = uVar32;
+                                      pcVar8_mg38 = thunk_FUN_00674af0(0x42);
+                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg38,uVar16,iVar37);
                                     }
                                     else {
-                                      pDVar12 = local_160;
+                                      pDVar10 = local_160;
                                       if (pDStack_164 == nullptr)
                                       goto cf_continue_loop_00659A80;
                                     }
                                   }
-                                  else if (iVar7 == 0x322) {
+                                  else if (local_EAX_488 == 0x322) {
                                     local_174 = 1;
                                   }
-                                  else if (iVar7 == 0x515) {
-                                    iVar7 = thunk_FUN_0064e780((short *)&local_16c);
-                                    if (iVar7 == 0) {
-                                      iVar7 = -1;
-                                      uVar17 = uVar32;
-                                      pcVar9 = thunk_FUN_00674af0(0x515);
-                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                                  else if (local_EAX_488 == 0x515) {
+                                    iVar37 = thunk_FUN_0064e780((short *)&local_16c);
+                                    if (iVar37 == 0) {
+                                      iVar37 = -1;
+                                      uVar16 = uVar32;
+                                      pcVar8_mg39 = thunk_FUN_00674af0(0x515);
+                                      thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg39,uVar16,iVar37);
                                     }
                                     else if (pDStack_164 == nullptr) {
                                       *(undefined1 *)local_178 = 0;
@@ -3558,43 +3707,43 @@ LAB_00659a1c:
                                     }
                                   }
                                 }
-                                else if (iVar7 == 0x517) {
-                                  iVar7 = thunk_FUN_0064e830((short *)&local_16c);
-                                  if (iVar7 == 0) {
-                                    iVar7 = -1;
-                                    uVar17 = uVar32;
-                                    pcVar9 = thunk_FUN_00674af0(0x517);
-                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                                else if (local_EAX_488 == 0x517) {
+                                  iVar37 = thunk_FUN_0064e830((short *)&local_16c);
+                                  if (iVar37 == 0) {
+                                    iVar37 = -1;
+                                    uVar16 = uVar32;
+                                    pcVar8_mg33 = thunk_FUN_00674af0(0x517);
+                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg33,uVar16,iVar37);
                                   }
                                   else {
                                     if (pDStack_164 == (DArrayTy *)0x9) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                      if (iVar7 == 8) {
-                                        pDVar12 = local_15c;
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if (iVar37 == 8) {
+                                        pDVar10 = local_15c;
                                         if ((int)local_15c <= (int)local_158) {
                                           do {
-                                            puVar11 = (undefined1 *)
-                                                      thunk_FUN_0064e510(this_00,(int)pDVar12);
-                                            if (puVar11 != nullptr) {
-                                              *puVar11 = 1;
-                                              *(byte **)(puVar11 + 0xb) = local_154;
+                                            puVar9 = (undefined1 *)
+                                                     thunk_FUN_0064e510(this_00,(int)pDVar10);
+                                            if (puVar9 != nullptr) {
+                                              *puVar9 = 1;
+                                              *(byte **)(puVar9 + 0xb) = local_154;
                                             }
-                                            pDVar12 = (DArrayTy *)((int)&pDVar12->flags + 1);
-                                          } while ((int)pDVar12 <= (int)local_158);
+                                            pDVar10 = (DArrayTy *)((int)&pDVar10->flags + 1);
+                                          } while ((int)pDVar10 <= (int)local_158);
                                         }
                                         goto cf_common_join_00659A73;
                                       }
                                     }
-                                    pDVar12 = (DArrayTy *)
+                                    pDVar10 = (DArrayTy *)
                                               SubmarineTitans::Recovered::HiddenThis::
                                               AnonReceiver_0064A970::sub_00668F50
                                                         ((AnonReceiver_0064A970 *)this_00,
                                                          (char *)pDStack_164,(uint)local_160,
                                                          &local_34.flags);
-                                    if (0 < (int)pDVar12) {
+                                    if (0 < (int)pDVar10) {
                                       local_8 = &local_34;
-                                      local_c = pDVar12;
+                                      local_c = pDVar10;
                                       do {
                                         if (g_allPlayers_007FA174 == nullptr) {
                                           local_10 = nullptr;
@@ -3603,20 +3752,20 @@ LAB_00659a1c:
                                           local_10 = (AiFltClassTy *)
                                                      thunk_FUN_004357f0((char)local_8->flags);
                                         }
-                                        pDVar12 = local_15c;
+                                        pDVar10 = local_15c;
                                         if ((int)local_15c <= (int)local_158) {
                                           do {
                                             if (local_10 != nullptr) {
-                                              puVar11 = (undefined1 *)
-                                                        thunk_FUN_0064e510(&local_10->field_001C,
-                                                                           (int)pDVar12);
-                                              if (puVar11 != nullptr) {
-                                                *puVar11 = 1;
-                                                *(byte **)(puVar11 + 0xb) = local_154;
+                                              puVar9 = (undefined1 *)
+                                                       thunk_FUN_0064e510(&local_10->field_001C,
+                                                                          (int)pDVar10);
+                                              if (puVar9 != nullptr) {
+                                                *puVar9 = 1;
+                                                *(byte **)(puVar9 + 0xb) = local_154;
                                               }
                                             }
-                                            pDVar12 = (DArrayTy *)((int)&pDVar12->flags + 1);
-                                          } while ((int)pDVar12 <= (int)local_158);
+                                            pDVar10 = (DArrayTy *)((int)&pDVar10->flags + 1);
+                                          } while ((int)pDVar10 <= (int)local_158);
                                         }
                                         local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                         local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -3625,65 +3774,66 @@ LAB_00659a1c:
                                     }
                                   }
                                 }
-                                else if (iVar7 == 0x518) {
-                                  iVar7 = thunk_FUN_0064e8c0((int)&local_16c);
-                                  if (iVar7 == 0) {
-                                    iVar7 = -1;
-                                    uVar17 = uVar32;
-                                    pcVar9 = thunk_FUN_00674af0(0x518);
-                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                                else if (local_EAX_488 == 0x518) {
+                                  iVar37 = thunk_FUN_0064e8c0((int)&local_16c);
+                                  if (iVar37 == 0) {
+                                    iVar37 = -1;
+                                    uVar16 = uVar32;
+                                    pcVar8_mg35 = thunk_FUN_00674af0(0x518);
+                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg35,uVar16,iVar37);
                                   }
                                   else {
                                     if (pDStack_164 == (DArrayTy *)0x9) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                      iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                      if (iVar7 == 8) {
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      if (iVar37 == 8) {
                                         *(uint **)(&this_00->field_0xde + (int)local_15c * 4) =
                                              local_158;
                                         goto cf_common_join_00659A73;
                                       }
                                     }
-                                    pDVar12 = (DArrayTy *)
+                                    pDVar10 = (DArrayTy *)
                                               SubmarineTitans::Recovered::HiddenThis::
                                               AnonReceiver_0064A970::sub_00668F50
                                                         ((AnonReceiver_0064A970 *)this_00,
                                                          (char *)pDStack_164,(uint)local_160,
                                                          &local_34.flags);
-                                    if (0 < (int)pDVar12) {
+                                    if (0 < (int)pDVar10) {
                                       pDVar25 = &local_34;
-                                      local_c = pDVar12;
+                                      local_c = pDVar10;
                                       do {
-                                        local_c = pDVar12;
+                                        local_c = pDVar10;
                                         if (g_allPlayers_007FA174 == nullptr) {
-                                          pAVar13 = nullptr;
+                                          pAVar11 = nullptr;
                                         }
                                         else {
-                                          pAVar13 = thunk_FUN_004357f0((char)pDVar25->flags);
+                                          pAVar11 = thunk_FUN_004357f0((char)pDVar25->flags);
                                         }
-                                        if (pAVar13 == nullptr) {
-                                          dVar38 = pDVar25->flags;
-                                          uVar17 = uVar32;
-                                          pcVar9 = thunk_FUN_00674af0(0x518);
-                                          thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar38);
+                                        if (pAVar11 == nullptr) {
+                                          dVar39 = pDVar25->flags;
+                                          uVar16 = uVar32;
+                                          pcVar8_mg34 = thunk_FUN_00674af0(0x518);
+                                          thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg34,uVar16,dVar39
+                                                            );
                                         }
                                         else {
-                                          *(uint **)(&pAVar13->field_0xfa + (int)local_15c * 4) =
+                                          *(uint **)(&pAVar11->field_0xfa + (int)local_15c * 4) =
                                                local_158;
                                         }
                                         pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
-                                        pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                        local_c = pDVar12;
-                                      } while (pDVar12 != nullptr);
+                                        pDVar10 = (DArrayTy *)((int)&local_c[-1].data + 3);
+                                        local_c = pDVar10;
+                                      } while (pDVar10 != nullptr);
                                     }
                                   }
                                 }
-                                else if (iVar7 == 0x519) {
-                                  iVar7 = thunk_FUN_0064e910((int)&local_16c);
-                                  if (iVar7 == 0) {
-                                    iVar7 = -1;
-                                    uVar17 = uVar32;
-                                    pcVar9 = thunk_FUN_00674af0(0x519);
-                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
+                                else if (local_EAX_488 == 0x519) {
+                                  iVar37 = thunk_FUN_0064e910((int)&local_16c);
+                                  if (iVar37 == 0) {
+                                    iVar37 = -1;
+                                    uVar16 = uVar32;
+                                    pcVar8_mg36 = thunk_FUN_00674af0(0x519);
+                                    thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg36,uVar16,iVar37);
                                   }
                                   else {
                                     (&DAT_0080e43b)[(int)pDStack_164] = local_160;
@@ -3691,13 +3841,13 @@ LAB_00659a1c:
                                 }
                                 goto cf_common_join_00659A73;
                               }
-                              if (iVar7 == 0x3e) {
+                              if (local_EAX_488 == 0x3e) {
 switchD_00652b42_switchD:
                                 switch(local_15c) {
                                 case nullptr:
-                                  iVar36 = thunk_FUN_0064ea10((int)&local_16c);
-                                  if (iVar36 == 0) goto cf_common_join_00652A99;
-                                  switch(iVar7) {
+                                  iVar37 = thunk_FUN_0064ea10((int)&local_16c);
+                                  if (iVar37 == 0) goto cf_common_join_00652A99;
+                                  switch(local_EAX_488) {
                                   case 2:
                                     *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) =
                                          (int)&local_160->flags +
@@ -3739,9 +3889,9 @@ switchD_00652b42_switchD:
                                   }
                                   break;
                                 case (DArrayTy *)0x1:
-                                  iVar36 = thunk_FUN_0064ea10((int)&local_16c);
-                                  if (iVar36 == 0) goto cf_common_join_00652A99;
-                                  switch(iVar7) {
+                                  iVar37 = thunk_FUN_0064ea10((int)&local_16c);
+                                  if (iVar37 == 0) goto cf_common_join_00652A99;
+                                  switch(local_EAX_488) {
                                   case 2:
                                     (&DAT_0080e43b)[(int)pDStack_164] =
                                          (int)&local_160->flags + (&DAT_0080e43b)[(int)pDStack_164];
@@ -3777,9 +3927,9 @@ switchD_00652b42_switchD:
                                   }
                                   break;
                                 case (DArrayTy *)0x2:
-                                  iVar36 = thunk_FUN_0064ea60((int)&local_16c);
-                                  if (iVar36 == 0) goto cf_common_join_00652A99;
-                                  switch(iVar7) {
+                                  iVar37 = thunk_FUN_0064ea60((int)&local_16c);
+                                  if (iVar37 == 0) goto cf_common_join_00652A99;
+                                  switch(local_EAX_488) {
                                   case 2:
                                     (&this_00->field_052F)[(int)pDStack_164] =
                                          (int)&local_160->flags +
@@ -3818,9 +3968,9 @@ switchD_00652b42_switchD:
                                   }
                                   break;
                                 case (DArrayTy *)0x3:
-                                  iVar36 = thunk_FUN_0064eaa0((int)&local_16c);
-                                  if (iVar36 == 0) goto cf_common_join_00652A99;
-                                  if (iVar7 == 5) {
+                                  iVar37 = thunk_FUN_0064eaa0((int)&local_16c);
+                                  if (iVar37 == 0) goto cf_common_join_00652A99;
+                                  if (local_EAX_488 == 5) {
                                     Library::DKW::TBL::FUN_006b6020
                                               (this_00->field_05B3,(uint)pDStack_164,
                                                (char *)local_160);
@@ -3828,7 +3978,7 @@ switchD_00652b42_switchD:
                                 }
                                 goto cf_common_join_00659A73;
                               }
-                              switch(iVar7) {
+                              switch(local_EAX_488) {
                               case 2:
                               case 5:
                               case 0x17:
@@ -3836,54 +3986,54 @@ switchD_00652b42_switchD:
                               case 0x31:
                                 goto switchD_00652b42_switchD;
                               case 0x19:
-                                iVar36 = thunk_FUN_0064e6c0((int)&local_16c);
-                                if (iVar36 == 0) goto cf_common_join_00652A99;
+                                iVar37 = thunk_FUN_0064e6c0((int)&local_16c);
+                                if (iVar37 == 0) goto cf_common_join_00652A99;
                                 if (local_174 != 0) {
                                   local_174 = 0;
                                   local_170 = pDStack_164;
-                                  pDVar12 = local_170;
+                                  pDVar10 = local_170;
                                   goto cf_continue_loop_00659A80;
                                 }
                                 local_174 = 0;
                                 break;
                               case 0x21:
-                                iVar36 = thunk_FUN_0064e740((int)&local_16c);
-                                pDVar12 = pDStack_164;
-                                if (iVar36 == 0) goto cf_common_join_00652A99;
+                                iVar37 = thunk_FUN_0064e740((int)&local_16c);
+                                pDVar10 = pDStack_164;
+                                if (iVar37 == 0) goto cf_common_join_00652A99;
                                 goto cf_continue_loop_00659A80;
                               case 0x23:
-                                iVar36 = thunk_FUN_0064e680((int)&local_16c);
-                                if (iVar36 == 0) goto cf_common_join_00652A99;
+                                iVar37 = thunk_FUN_0064e680((int)&local_16c);
+                                if (iVar37 == 0) goto cf_common_join_00652A99;
                                 if (pDStack_164 == nullptr) {
                                   local_170 = local_160;
-                                  pDVar12 = local_170;
+                                  pDVar10 = local_170;
                                   goto cf_continue_loop_00659A80;
                                 }
                               }
                               goto cf_common_join_00659A73;
                             }
-                            switch(iVar7) {
+                            switch(local_EAX_488) {
                             case 0x51b:
-                              iVar36 = thunk_FUN_0064e9a0((int)&local_16c);
-                              if (iVar36 == 0) goto cf_common_join_00652A99;
+                              iVar37 = thunk_FUN_0064e9a0((int)&local_16c);
+                              if (iVar37 == 0) goto cf_common_join_00652A99;
                               Library::DKW::TBL::FUN_006b6020
                                         (this_00->field_05B3,(uint)pDStack_164,(char *)local_160);
                               break;
                             case 0x528:
-                              iVar36 = thunk_FUN_0064eb20((int)&local_16c);
-                              if (iVar36 != 0) {
+                              local_EAX_2959 = thunk_FUN_0064eb20((int)&local_16c);
+                              if (local_EAX_2959 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     pCVar23 = g_cPanel_00801688;
                                     do {
                                       if (pCVar23 != nullptr) {
@@ -3900,103 +4050,103 @@ switchD_00652b42_switchD:
                               }
                               goto cf_common_join_00652A99;
                             case 0x529:
-                              iVar36 = thunk_FUN_0064eb60((int)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_0064eb60((int)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  pDVar12 = (DArrayTy *)
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  pDVar10 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  if (0 < (int)pDVar12) {
+                                  if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
-                                    local_c = pDVar12;
+                                    local_c = pDVar10;
                                     pCVar23 = g_cPanel_00801688;
                                     do {
-                                      local_c = pDVar12;
+                                      local_c = pDVar10;
                                       if (pCVar23 != nullptr) {
                                         CPanelTy::sub_004F9120(pCVar23,(byte)pDVar25->flags,'\0',0);
                                         pCVar23 = g_cPanel_00801688;
                                       }
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
-                                      pDVar12 = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                      local_c = pDVar12;
-                                    } while (pDVar12 != nullptr);
+                                      pDVar10 = (DArrayTy *)((int)&local_c[-1].data + 3);
+                                      local_c = pDVar10;
+                                    } while (pDVar10 != nullptr);
                                   }
                                   break;
                                 }
                               }
                               goto cf_common_join_00652A99;
                             case 0x52a:
-                              iVar36 = thunk_FUN_0064eba0((int)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_0064eba0((int)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::sub_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
-                                  iVar36 = 0;
-                                  if (0 < iVar7) {
-                                    pDVar12 = &local_34;
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  local_EAX_3277 =
+                                       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
+                                       ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                      (char *)pDStack_164,(uint)local_160,
+                                                      &local_34.flags);
+                                  iVar37 = 0;
+                                  if (0 < local_EAX_3277) {
+                                    pDVar10 = &local_34;
                                     do {
-                                      if (pDVar12->flags == (uint)DAT_0080874d) {
+                                      if (pDVar10->flags == (uint)DAT_0080874d) {
                                         if (g_cPanel_00801688 != nullptr) {
                                           thunk_FUN_004f9260((char)local_15c);
                                         }
                                         break;
                                       }
-                                      iVar36 = iVar36 + 1;
-                                      pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar36 < iVar7);
+                                      iVar37 = iVar37 + 1;
+                                      pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                    } while (iVar37 < local_EAX_3277);
                                   }
                                   break;
                                 }
                               }
                               goto cf_common_join_00652A99;
                             case 0x532:
-                              iVar36 = thunk_FUN_0064ebe0((int)&local_16c);
-                              if (iVar36 == 0) goto cf_common_join_00652A99;
+                              local_EAX_3358 = thunk_FUN_0064ebe0((int)&local_16c);
+                              if (local_EAX_3358 == 0) goto cf_common_join_00652A99;
                               if (g_popUp_008016D8 != nullptr) {
                                 if (pDStack_164 == (DArrayTy *)0x9) {
                                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                  iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                  if (iVar7 == 8) {
+                                  iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                  if (iVar37 == 8) {
                                     thunk_FUN_0052d320(g_popUp_008016D8,(char *)local_15c,8);
                                     break;
                                   }
                                 }
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                                local_EAX_3452 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_3452) {
+                                  pDVar10 = &local_34;
                                   do {
-                                    if (pDVar12->flags == (uint)DAT_0080874d) {
+                                    if (pDVar10->flags == (uint)DAT_0080874d) {
                                       thunk_FUN_0052d320(g_popUp_008016D8,(char *)local_15c,8);
                                       break;
                                     }
-                                    iVar36 = iVar36 + 1;
-                                    pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar36 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                    pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                  } while (iVar37 < local_EAX_3452);
                                 }
                               }
                               break;
                             case 0x533:
-                              iVar36 = thunk_FUN_0064ec30((int)&local_16c);
-                              if (iVar36 == 0) goto cf_common_join_00652A99;
+                              local_EAX_3527 = thunk_FUN_0064ec30((int)&local_16c);
+                              if (local_EAX_3527 == 0) goto cf_common_join_00652A99;
                               if (pDStack_164 == (DArrayTy *)0x9) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                if (iVar7 == 8) {
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if (iVar37 == 8) {
                                   if (DAT_00801694 != nullptr) {
                                     thunk_FUN_0051fac0(DAT_00801694,(char *)local_154,2,
                                                        (char)local_158,(int)local_15c * 1000);
@@ -4004,33 +4154,34 @@ switchD_00652b42_switchD:
                                   break;
                                 }
                               }
-                              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
-                                      ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
-                              iVar36 = 0;
-                              if (0 < iVar7) {
-                                pDVar12 = &local_34;
+                              local_EAX_3643 =
+                                   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                   sub_00668F50((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
+                                                ,(uint)local_160,&local_34.flags);
+                              iVar37 = 0;
+                              if (0 < local_EAX_3643) {
+                                pDVar10 = &local_34;
                                 do {
-                                  if (pDVar12->flags == (uint)DAT_0080874d) {
+                                  if (pDVar10->flags == (uint)DAT_0080874d) {
                                     if (DAT_00801694 != nullptr) {
                                       thunk_FUN_0051fac0(DAT_00801694,(char *)local_154,2,
                                                          (char)local_158,(int)local_15c * 1000);
                                     }
                                     break;
                                   }
-                                  iVar36 = iVar36 + 1;
-                                  pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                } while (iVar36 < iVar7);
+                                  iVar37 = iVar37 + 1;
+                                  pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                } while (iVar37 < local_EAX_3643);
                               }
                               break;
                             case 0x534:
-                              iVar36 = thunk_FUN_0064ec80((AnonShape_0064EC80_53C284F2 *)&local_16c);
-                              if (iVar36 == 0) goto cf_common_join_00652A99;
+                              local_EAX_3752 =
+                                   thunk_FUN_0064ec80((AnonShape_0064EC80_53C284F2 *)&local_16c);
+                              if (local_EAX_3752 == 0) goto cf_common_join_00652A99;
                               if (pDStack_164 == (DArrayTy *)0x9) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                if (iVar7 == 8) {
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if (iVar37 == 8) {
 LAB_006536dd:
                                   if (g_cPanel_00801688 != nullptr) {
                                     CPanelTy::OutText(g_cPanel_00801688,(int)local_158,
@@ -4040,27 +4191,27 @@ LAB_006536dd:
                                   break;
                                 }
                               }
-                              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
-                                      ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
-                              iVar36 = 0;
-                              if (0 < iVar7) {
-                                pDVar12 = &local_34;
+                              local_EAX_3857 =
+                                   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                   sub_00668F50((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
+                                                ,(uint)local_160,&local_34.flags);
+                              iVar37 = 0;
+                              if (0 < local_EAX_3857) {
+                                pDVar10 = &local_34;
                                 do {
-                                  if (pDVar12->flags == (uint)DAT_0080874d) goto LAB_006536dd;
-                                  iVar36 = iVar36 + 1;
-                                  pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                } while (iVar36 < iVar7);
+                                  if (pDVar10->flags == (uint)DAT_0080874d) goto LAB_006536dd;
+                                  iVar37 = iVar37 + 1;
+                                  pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                } while (iVar37 < local_EAX_3857);
                               }
                               break;
                             case 0x535:
-                              iVar36 = thunk_FUN_0064ecd0((int)&local_16c);
-                              if (iVar36 == 0) goto cf_common_join_00652A99;
+                              local_EAX_3907 = thunk_FUN_0064ecd0((int)&local_16c);
+                              if (local_EAX_3907 == 0) goto cf_common_join_00652A99;
                               if (pDStack_164 == (DArrayTy *)0x9) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                if (iVar7 == 8) {
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if (iVar37 == 8) {
 LAB_00653778:
                                   if (g_cPanel_00801688 != nullptr) {
                                     CPanelTy::OutText(g_cPanel_00801688,(char *)local_158,local_15c);
@@ -4068,117 +4219,117 @@ LAB_00653778:
                                   break;
                                 }
                               }
-                              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
-                                      ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
-                              iVar36 = 0;
-                              if (0 < iVar7) {
-                                pDVar12 = &local_34;
+                              local_EAX_4002 =
+                                   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                   sub_00668F50((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
+                                                ,(uint)local_160,&local_34.flags);
+                              iVar37 = 0;
+                              if (0 < local_EAX_4002) {
+                                pDVar10 = &local_34;
                                 do {
-                                  if (pDVar12->flags == (uint)DAT_0080874d) goto LAB_00653778;
-                                  iVar36 = iVar36 + 1;
-                                  pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                } while (iVar36 < iVar7);
+                                  if (pDVar10->flags == (uint)DAT_0080874d) goto LAB_00653778;
+                                  iVar37 = iVar37 + 1;
+                                  pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                } while (iVar37 < local_EAX_4002);
                               }
                               break;
                             case 0x536:
-                              iVar36 = thunk_FUN_0064ed20((int)&local_16c);
-                              if (iVar36 == 0) goto cf_common_join_00652A99;
+                              local_EAX_4052 = thunk_FUN_0064ed20((int)&local_16c);
+                              if (local_EAX_4052 == 0) goto cf_common_join_00652A99;
                               if (pDStack_164 == (DArrayTy *)0x9) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                if (iVar7 == 8) {
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if (iVar37 == 8) {
                                   SoundClassTy::PlaySound
                                             ((SoundClassTy *)&g_sound,SOUND_MODE_12,
                                              (char *)local_15c,0,nullptr,0);
                                   break;
                                 }
                               }
-                              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
-                                      ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
-                              iVar36 = 0;
-                              if (0 < iVar7) {
-                                pDVar12 = &local_34;
+                              local_EAX_4139 =
+                                   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                   sub_00668F50((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
+                                                ,(uint)local_160,&local_34.flags);
+                              iVar37 = 0;
+                              if (0 < local_EAX_4139) {
+                                pDVar10 = &local_34;
                                 do {
-                                  if (pDVar12->flags == (uint)DAT_0080874d) {
+                                  if (pDVar10->flags == (uint)DAT_0080874d) {
                                     SoundClassTy::PlaySound
                                               ((SoundClassTy *)&g_sound,SOUND_MODE_12,
                                                (char *)local_15c,0,nullptr,0);
                                     break;
                                   }
-                                  iVar36 = iVar36 + 1;
-                                  pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                } while (iVar36 < iVar7);
+                                  iVar37 = iVar37 + 1;
+                                  pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                } while (iVar37 < local_EAX_4139);
                               }
                               break;
                             case 0x537:
-                              iVar36 = thunk_FUN_0064ed70((int)&local_16c);
-                              if (iVar36 == 0) goto cf_common_join_00652A99;
+                              local_EAX_4219 = thunk_FUN_0064ed70((int)&local_16c);
+                              if (local_EAX_4219 == 0) goto cf_common_join_00652A99;
                               if (pDStack_164 == (DArrayTy *)0x9) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                if (iVar7 == 8) {
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if (iVar37 == 8) {
                                   if (g_cPanel_00801688 != nullptr) {
                                     CPanelTy::PlayBriefing(g_cPanel_00801688,(char *)local_15c);
                                   }
                                   break;
                                 }
                               }
-                              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
-                                      ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
-                              iVar36 = 0;
-                              if (0 < iVar7) {
-                                pDVar12 = &local_34;
+                              local_EAX_4307 =
+                                   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                   sub_00668F50((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
+                                                ,(uint)local_160,&local_34.flags);
+                              iVar37 = 0;
+                              if (0 < local_EAX_4307) {
+                                pDVar10 = &local_34;
                                 do {
-                                  if (pDVar12->flags == (uint)DAT_0080874d) {
+                                  if (pDVar10->flags == (uint)DAT_0080874d) {
                                     if (g_cPanel_00801688 != nullptr) {
                                       CPanelTy::PlayBriefing(g_cPanel_00801688,(char *)local_15c);
                                     }
                                     break;
                                   }
-                                  iVar36 = iVar36 + 1;
-                                  pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                } while (iVar36 < iVar7);
+                                  iVar37 = iVar37 + 1;
+                                  pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                } while (iVar37 < local_EAX_4307);
                               }
                               break;
                             case 0x546:
-                              iVar36 = thunk_FUN_0064edc0((int)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_0064edc0((int)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::sub_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
-                                  iVar36 = 0;
-                                  if (0 < iVar7) {
-                                    pDVar12 = &local_34;
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  local_EAX_4445 =
+                                       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
+                                       ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                      (char *)pDStack_164,(uint)local_160,
+                                                      &local_34.flags);
+                                  iVar37 = 0;
+                                  if (0 < local_EAX_4445) {
+                                    pDVar10 = &local_34;
                                     do {
-                                      if (pDVar12->flags == (uint)DAT_0080874d) {
+                                      if (pDVar10->flags == (uint)DAT_0080874d) {
                                         if (g_visibleClass_00802A88 != nullptr) {
                                           if ((int)local_14c < 0) {
-                                            iVar7 = -0x10;
+                                            iVar12 = -0x10;
                                           }
                                           else {
-                                            iVar7 = (int)local_14c * 0x19;
+                                            iVar12 = (int)local_14c * 0x19;
                                           }
                                           VisibleClassTy::VisHoleCreate
                                                     (g_visibleClass_00802A88,(int)local_15c,
                                                      (int)local_158,local_154,
-                                                     (&local_34.flags)[iVar36],local_150,iVar7);
+                                                     (&local_34.flags)[iVar37],local_150,iVar12);
                                         }
                                         break;
                                       }
-                                      iVar36 = iVar36 + 1;
-                                      pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar36 < iVar7);
+                                      iVar37 = iVar37 + 1;
+                                      pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                    } while (iVar37 < local_EAX_4445);
                                   }
                                   break;
                                 }
@@ -4186,31 +4337,31 @@ LAB_00653778:
                               goto cf_common_join_00652A99;
                             case 0x547:
                             case 0x548:
-                              iVar36 = thunk_FUN_0064ee00((int)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_0064ee00((int)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
                                              SubmarineTitans::Recovered::HiddenThis::
                                              AnonReceiver_0064A970::sub_00668F50
                                                        ((AnonReceiver_0064A970 *)this_00,
                                                         (char *)pDStack_164,(uint)local_160,
                                                         &local_34.flags);
-                                  iVar36 = 0;
+                                  iVar37 = 0;
                                   if (0 < (int)local_10) {
-                                    pDVar12 = &local_34;
+                                    pDVar10 = &local_34;
                                     do {
-                                      if (pDVar12->flags == (uint)DAT_0080874d) {
+                                      if (pDVar10->flags == (uint)DAT_0080874d) {
                                         if (g_visibleClass_00802A88 == nullptr) break;
                                         if (g_visibleClass_00802A88->field_0114 == 0) {
                                           g_visibleClass_00802A88->field_00F8 = 0;
                                         }
                                         else {
                                           g_visibleClass_00802A88->field_00F8 =
-                                               (uint)(iVar7 == 0x547);
+                                               (uint)(local_EAX_488 == 0x547);
                                           pSVar4 = g_sT3DSMAPContext_00807598;
-                                          if ((iVar7 == 0x547) != 0) {
+                                          if ((local_EAX_488 == 0x547) != 0) {
                                             g_sT3DSMAPContext_00807598->field_0466 = 1;
                                             pSVar4->field_02D8 = 1;
                                             break;
@@ -4221,61 +4372,61 @@ LAB_00653778:
                                         pSVar4->field_02D8 = 1;
                                         break;
                                       }
-                                      iVar36 = iVar36 + 1;
-                                      pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar36 < (int)local_10);
+                                      iVar37 = iVar37 + 1;
+                                      pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                    } while (iVar37 < (int)local_10);
                                   }
                                   break;
                                 }
                               }
                               goto cf_common_join_00652A99;
                             case 0x549:
-                              iVar36 = thunk_FUN_0064ee40((short *)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_0064ee40((short *)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::sub_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
-                                  iVar36 = 0;
-                                  if (0 < iVar7) {
-                                    pDVar12 = &local_34;
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                  local_EAX_4850 =
+                                       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
+                                       ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                      (char *)pDStack_164,(uint)local_160,
+                                                      &local_34.flags);
+                                  iVar37 = 0;
+                                  if (0 < local_EAX_4850) {
+                                    pDVar10 = &local_34;
                                     do {
-                                      if (pDVar12->flags == (uint)DAT_0080874d) {
+                                      if (pDVar10->flags == (uint)DAT_0080874d) {
                                         if (g_opticClass_007FB2A0 != nullptr) {
                                           thunk_FUN_004ab530((int)local_154,&local_15c->flags,
                                                              (int)local_158);
                                         }
                                         break;
                                       }
-                                      iVar36 = iVar36 + 1;
-                                      pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar36 < iVar7);
+                                      iVar37 = iVar37 + 1;
+                                      pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                    } while (iVar37 < local_EAX_4850);
                                   }
                                   break;
                                 }
                               }
                               goto cf_common_join_00652A99;
                             case 0x54a:
-                              iVar36 = thunk_FUN_0064ee90((int)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_0064ee90((int)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
                                              SubmarineTitans::Recovered::HiddenThis::
                                              AnonReceiver_0064A970::sub_00668F50
                                                        ((AnonReceiver_0064A970 *)this_00,
                                                         (char *)pDStack_164,(uint)local_160,
                                                         &local_34.flags);
-                                  iVar36 = 0;
+                                  iVar37 = 0;
                                   if (0 < (int)local_10) {
-                                    pDVar12 = &local_34;
+                                    pDVar10 = &local_34;
 LAB_00653bb7:
-                                    if (pDVar12->flags != (uint)DAT_0080874d) goto code_r0x00653bbb;
+                                    if (pDVar10->flags != (uint)DAT_0080874d) goto code_r0x00653bbb;
                                     if (g_opticClass_007FB2A0 != nullptr) {
                                       memset(local_1c0, 0, 0x20); /* compiler bulk-zero initialization */
                                       switch(local_15c) {
@@ -4292,10 +4443,10 @@ LAB_00653bb7:
                                         local_1b0 = 0x107;
                                         break;
                                       default:
-                                        iVar36 = -1;
+                                        iVar37 = -1;
                                         uVar32 = local_14;
-                                        pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar32,iVar36);
+                                        pcVar8_mg3A = thunk_FUN_00674af0(local_EAX_488);
+                                        thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg3A,uVar32,iVar37);
                                         uVar32 = local_14;
                                         goto cf_common_join_00659A73;
                                       }
@@ -4310,26 +4461,26 @@ LAB_00653bb7:
                               goto cf_common_join_00652A99;
                             case 0x54b:
                             case 0x54c:
-                              iVar36 = thunk_FUN_0064eed0((int)&local_16c);
-                              if (iVar36 != 0) {
+                              iVar37 = thunk_FUN_0064eed0((int)&local_16c);
+                              if (iVar37 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                                iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
                                              SubmarineTitans::Recovered::HiddenThis::
                                              AnonReceiver_0064A970::sub_00668F50
                                                        ((AnonReceiver_0064A970 *)this_00,
                                                         (char *)pDStack_164,(uint)local_160,
                                                         &local_34.flags);
-                                  iVar36 = 0;
+                                  iVar37 = 0;
                                   if (0 < (int)local_10) {
-                                    pDVar12 = &local_34;
+                                    pDVar10 = &local_34;
                                     do {
-                                      if (pDVar12->flags == (uint)DAT_0080874d) {
+                                      if (pDVar10->flags == (uint)DAT_0080874d) {
                                         if (g_opticClass_007FB2A0 != nullptr) {
                                           memset(local_1c0, 0, 0x20); /* compiler bulk-zero initialization */
-                                          iVar36 = 0;
-                                          local_1b0 = (iVar7 != 0x54b) + 0x100;
+                                          iVar37 = 0;
+                                          local_1b0 = (local_EAX_488 != 0x54b) + 0x100;
                                           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                           (*(code *)this_00->field_0000->field_0030)
                                                     (3,0x100,local_1c0);
@@ -4337,9 +4488,9 @@ LAB_00653bb7:
                                         }
                                         break;
                                       }
-                                      iVar36 = iVar36 + 1;
-                                      pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar36 < (int)local_10);
+                                      iVar37 = iVar37 + 1;
+                                      pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                    } while (iVar37 < (int)local_10);
                                   }
                                   break;
                                 }
@@ -4348,30 +4499,30 @@ LAB_00653bb7:
                             }
                             goto cf_common_join_00659A73;
                           }
-                          switch(iVar7) {
+                          switch(local_EAX_488) {
                           case 0x54e:
-                            iVar36 = thunk_FUN_0064ef50((int)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064ef50((int)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_5668 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_5668) {
+                                  pDVar10 = &local_34;
                                   do {
-                                    if (pDVar12->flags == (uint)DAT_0080874d) {
+                                    if (pDVar10->flags == (uint)DAT_0080874d) {
                                       thunk_FUN_0052af90((byte)local_15c,(int)local_158,
                                                          (int)local_154);
                                       break;
                                     }
-                                    iVar36 = iVar36 + 1;
-                                    pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar36 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                    pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                  } while (iVar37 < local_EAX_5668);
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -4380,25 +4531,25 @@ LAB_00653bb7:
                           default:
                             goto cf_common_join_00659A73;
                           case 0x55a:
-                            iVar36 = thunk_FUN_0064f080((int)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064f080((int)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                pDVar12 = (DArrayTy *)
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                pDVar10 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
-                                if (0 < (int)pDVar12) {
+                                if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
-                                  local_c = pDVar12;
+                                  local_c = pDVar10;
                                   do {
-                                    uVar17 = pDVar25->flags;
-                                    (&DAT_00809950)[uVar17] =
+                                    uVar16 = pDVar25->flags;
+                                    (&DAT_00809950)[uVar16] =
                                          (local_15c != (DArrayTy *)0x1) + '\x01';
-                                    if (uVar17 == DAT_0080874d) {
+                                    if (uVar16 == DAT_0080874d) {
                                       DAT_0080c522 = (uint)(local_15c == (DArrayTy *)0x1);
                                     }
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
@@ -4410,21 +4561,21 @@ LAB_00653bb7:
                             }
                             break;
                           case 0x55b:
-                            iVar36 = thunk_FUN_0064f0c0((int)&local_16c);
-                            if (iVar36 != 0) {
+                            local_EAX_5904 = thunk_FUN_0064f0c0((int)&local_16c);
+                            if (local_EAX_5904 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_5961 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_5961) {
+                                  pDVar10 = &local_34;
                                   do {
-                                    if (pDVar12->flags == (uint)DAT_0080874d) {
+                                    if (pDVar10->flags == (uint)DAT_0080874d) {
                                       if (((char)local_15c->flags != '\0') &&
                                          ((DAT_008087a0 == '\x03' || (DAT_008087a0 == '\b')))) {
                                         Library::MSVCRT::FUN_0072e730
@@ -4436,55 +4587,55 @@ LAB_00653bb7:
                                       }
                                       break;
                                     }
-                                    iVar36 = iVar36 + 1;
-                                    pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar36 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                    pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                  } while (iVar37 < local_EAX_5961);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x55c:
-                            iVar36 = thunk_FUN_0064f110((short *)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064f110((short *)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_6159 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_6159) {
                                   do {
-                                    (&DAT_0080c947)[iVar36] = local_158;
-                                    if ((&local_34.flags)[iVar36] == (uint)DAT_0080874d) {
+                                    (&DAT_0080c947)[iVar37] = local_158;
+                                    if ((&local_34.flags)[iVar37] == (uint)DAT_0080874d) {
                                       DAT_0080e301 = (char)local_15c;
                                     }
-                                    iVar36 = iVar36 + 1;
-                                  } while (iVar36 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                  } while (iVar37 < local_EAX_6159);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x55d:
-                            iVar36 = thunk_FUN_0064f160((int)&local_16c);
-                            if (iVar36 != 0) {
+                            local_EAX_6230 = thunk_FUN_0064f160((int)&local_16c);
+                            if (local_EAX_6230 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_6287 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_6287) {
+                                  pDVar10 = &local_34;
 LAB_006540b9:
-                                  if (pDVar12->flags != (uint)DAT_0080874d) goto code_r0x006540bd;
+                                  if (pDVar10->flags != (uint)DAT_0080874d) goto code_r0x006540bd;
                                   DAT_0080e300 = (char)local_15c;
                                   memset(&DAT_0080e303, 0, 0x20); /* compiler bulk-zero initialization */
                                   Library::MSVCRT::_strncpy
@@ -4496,22 +4647,23 @@ LAB_006540b9:
                             }
                             break;
                           case 0x55e:
-                            iVar36 = thunk_FUN_0064f1b0((RecoveredRecord_AiEventClassTy_0064F1B0 *)
-                                                        &local_16c);
-                            if (iVar36 != 0) {
+                            local_EAX_6392 =
+                                 thunk_FUN_0064f1b0((RecoveredRecord_AiEventClassTy_0064F1B0 *)
+                                                    &local_16c);
+                            if (local_EAX_6392 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_6449 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_6449) {
+                                  pDVar10 = &local_34;
                                   do {
-                                    if (pDVar12->flags == (uint)DAT_0080874d) {
+                                    if (pDVar10->flags == (uint)DAT_0080874d) {
                                       DAT_0080e302 = (char)local_15c;
                                       DAT_0080e429 = (char)local_154;
                                       DAT_0080e428 = STPiece<0,1>(local_14c);
@@ -4537,65 +4689,67 @@ LAB_006540b9:
                                       }
                                       break;
                                     }
-                                    iVar36 = iVar36 + 1;
-                                    pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar36 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                    pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                  } while (iVar37 < local_EAX_6449);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x55f:
-                            iVar36 = thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)&local_16c);
-                            if (iVar36 != 0) {
+                            local_EAX_6742 =
+                                 thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)&local_16c);
+                            if (local_EAX_6742 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_6799 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_6799) {
+                                  pDVar10 = &local_34;
                                   do {
-                                    if (pDVar12->flags == (uint)DAT_0080874d) {
-                                      iVar7 = Library::DKW::TBL::FUN_006b5aa0
-                                                        (&g_dArray_0080C4CB->flags,(char *)local_158
-                                                        );
+                                    if (pDVar10->flags == (uint)DAT_0080874d) {
+                                      local_EAX_6856 =
+                                           Library::DKW::TBL::FUN_006b5aa0
+                                                     (g_dArray_0080C4CB,(char *)local_158);
                                       if (g_optPanel_008016DC != nullptr) {
                                         OptPanelTy::UpdateObjectives(g_optPanel_008016DC);
                                       }
-                                      if (-1 < iVar7) {
-                                        *(int *)(&this_00->field_0xde + (int)local_15c * 4) = iVar7;
+                                      if (-1 < local_EAX_6856) {
+                                        *(int *)(&this_00->field_0xde + (int)local_15c * 4) =
+                                             local_EAX_6856;
                                       }
                                       break;
                                     }
-                                    iVar36 = iVar36 + 1;
-                                    pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar36 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                    pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                  } while (iVar37 < local_EAX_6799);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x560:
-                            iVar36 = thunk_FUN_0064f000((int)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064f000((int)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_6968 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_6968) {
+                                  pDVar10 = &local_34;
 LAB_00654362:
-                                  if (pDVar12->flags != (uint)DAT_0080874d) goto code_r0x00654366;
+                                  if (pDVar10->flags != (uint)DAT_0080874d) goto code_r0x00654366;
                                   FUN_006c87c0(g_dArray_0080C4CB,(uint)local_15c);
 LAB_00654386:
                                   if (g_optPanel_008016DC != nullptr) {
@@ -4607,21 +4761,21 @@ LAB_00654386:
                             }
                             break;
                           case 0x561:
-                            iVar36 = thunk_FUN_0064f040((int)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064f040((int)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_7118 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_7118) {
+                                  pDVar10 = &local_34;
                                   do {
-                                    if (pDVar12->flags == (uint)DAT_0080874d) {
+                                    if (pDVar10->flags == (uint)DAT_0080874d) {
                                       if (g_dArray_0080C4CB != nullptr) {
                                         FUN_006b5570(g_dArray_0080C4CB);
                                       }
@@ -4629,95 +4783,97 @@ LAB_00654386:
                                            Library::DKW::TBL::SArrayCreate(nullptr,10,10);
                                       goto LAB_00654386;
                                     }
-                                    iVar36 = iVar36 + 1;
-                                    pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar36 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                    pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                  } while (iVar37 < local_EAX_7118);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x562:
-                            iVar36 = thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)&local_16c);
-                            if (iVar36 != 0) {
+                            local_EAX_7204 =
+                                 thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)&local_16c);
+                            if (local_EAX_7204 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_7261 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_7261) {
+                                  pDVar10 = &local_34;
                                   do {
-                                    if (pDVar12->flags == (uint)DAT_0080874d) {
+                                    if (pDVar10->flags == (uint)DAT_0080874d) {
                                       if (g_dArray_0080C4C7 == nullptr) {
                                         g_dArray_0080C4C7 =
                                              Library::DKW::TBL::SArrayCreate(nullptr,10,10);
                                       }
-                                      iVar7 = Library::DKW::TBL::FUN_006b5aa0
-                                                        (&g_dArray_0080C4C7->flags,(char *)local_158
-                                                        );
-                                      if (-1 < iVar7) {
-                                        *(int *)(&this_00->field_0xde + (int)local_15c * 4) = iVar7;
+                                      local_EAX_7336 =
+                                           Library::DKW::TBL::FUN_006b5aa0
+                                                     (g_dArray_0080C4C7,(char *)local_158);
+                                      if (-1 < local_EAX_7336) {
+                                        *(int *)(&this_00->field_0xde + (int)local_15c * 4) =
+                                             local_EAX_7336;
                                       }
                                       break;
                                     }
-                                    iVar36 = iVar36 + 1;
-                                    pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar36 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                    pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                  } while (iVar37 < local_EAX_7261);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x563:
-                            iVar36 = thunk_FUN_0064f000((int)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064f000((int)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_7431 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_7431) {
+                                  pDVar10 = &local_34;
                                   do {
-                                    if (pDVar12->flags == (uint)DAT_0080874d) {
+                                    if (pDVar10->flags == (uint)DAT_0080874d) {
                                       if (g_dArray_0080C4C7 != nullptr) {
                                         FUN_006c87c0(g_dArray_0080C4C7,(uint)local_15c);
                                       }
                                       break;
                                     }
-                                    iVar36 = iVar36 + 1;
-                                    pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar36 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                    pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                  } while (iVar37 < local_EAX_7431);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x564:
-                            iVar36 = thunk_FUN_0064f040((int)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064f040((int)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_7569 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_7569) {
+                                  pDVar10 = &local_34;
                                   do {
-                                    if (pDVar12->flags == (uint)DAT_0080874d) {
+                                    if (pDVar10->flags == (uint)DAT_0080874d) {
                                       if (g_dArray_0080C4C7 != nullptr) {
                                         FUN_006b5570(g_dArray_0080C4C7);
                                       }
@@ -4725,9 +4881,9 @@ LAB_00654386:
                                            Library::DKW::TBL::SArrayCreate(nullptr,10,10);
                                       break;
                                     }
-                                    iVar36 = iVar36 + 1;
-                                    pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar36 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                    pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                  } while (iVar37 < local_EAX_7569);
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -4735,38 +4891,38 @@ LAB_00654386:
                             break;
                           case 0x565:
                           case 0x566:
-                            iVar36 = thunk_FUN_0064f320((int)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064f320((int)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if (((iVar36 != 8) ||
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if (((iVar37 != 8) ||
                                   ((local_15c != (DArrayTy *)0x9 && (pDStack_164 != (DArrayTy *)0x9)
                                    ))) && (local_15c != (DArrayTy *)0xff)) {
-                                iVar36 = SubmarineTitans::Recovered::HiddenThis::
-                                         AnonReceiver_0064A970::sub_00668F50
-                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                    (char *)local_15c,0,&local_34.flags);
-                                if (iVar36 == 1) {
+                                local_EAX_7731 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,(char *)local_15c
+                                                  ,0,&local_34.flags);
+                                if (local_EAX_7731 == 1) {
                                   local_8 = (DArrayTy *)local_34.flags;
-                                  pAVar14 = (AiFltClassTy *)
+                                  pAVar13 = (AiFltClassTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
-                                  local_10 = pAVar14;
-                                  if (0 < (int)pAVar14) {
-                                    pDVar12 = &local_34;
-                                    local_1a0 = STReplaceLowByte((uint32_t)(local_1a0), (uint8_t)(iVar7 == 0x565));
-                                    local_c = (DArrayTy *)pAVar14;
+                                  local_10 = pAVar13;
+                                  if (0 < (int)pAVar13) {
+                                    pDVar10 = &local_34;
+                                    local_1a0 = STReplaceLowByte((uint32_t)(local_1a0), (uint8_t)(local_EAX_488 == 0x565));
+                                    local_c = (DArrayTy *)pAVar13;
                                     do {
-                                      local_c = (DArrayTy *)pAVar14;
-                                      thunk_FUN_0056a8d0(&DAT_00807620,(byte)pDVar12->flags,
+                                      local_c = (DArrayTy *)pAVar13;
+                                      thunk_FUN_0056a8d0(&DAT_00807620,(byte)pDVar10->flags,
                                                          (byte)local_8,(char)local_1a0);
-                                      pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                      pAVar14 = (AiFltClassTy *)((int)&local_c[-1].data + 3);
-                                      local_c = (DArrayTy *)pAVar14;
-                                    } while (pAVar14 != nullptr);
+                                      pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                      pAVar13 = (AiFltClassTy *)((int)&local_c[-1].data + 3);
+                                      local_c = (DArrayTy *)pAVar13;
+                                    } while (pAVar13 != nullptr);
                                   }
                                   pPVar3 = g_playPanel_008016E4;
                                   if ((g_playPanel_008016E4 != nullptr) &&
@@ -4790,11 +4946,11 @@ LAB_00654386:
                             }
                             break;
                           case 0x567:
-                            iVar36 = thunk_FUN_0064f360((int)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064f360((int)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_10 = (AiFltClassTy *)
                                            SubmarineTitans::Recovered::HiddenThis::
                                            AnonReceiver_0064A970::sub_00668F50
@@ -4802,12 +4958,12 @@ LAB_00654386:
                                                       (char *)pDStack_164,(uint)local_160,
                                                       &local_34.flags);
                                 if (0 < (int)local_10) {
-                                  pDVar12 = &local_34;
+                                  pDVar10 = &local_34;
                                   local_c = (DArrayTy *)local_10;
                                   do {
-                                    thunk_FUN_0056aa00(&DAT_00807620,(byte)pDVar12->flags,
+                                    thunk_FUN_0056aa00(&DAT_00807620,(byte)pDVar10->flags,
                                                        (char)local_15c);
-                                    pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
+                                    pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != nullptr);
                                 }
@@ -4832,58 +4988,58 @@ LAB_00654386:
                             }
                             break;
                           case 0x568:
-                            iVar36 = thunk_FUN_0064f3b0((int)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064f3b0((int)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
-                                        AnonReceiver_0064A970::sub_00668F50
-                                                  ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)pDStack_164,(uint)local_160,
-                                                   &local_34.flags);
-                                iVar36 = 0;
-                                if (0 < iVar7) {
-                                  pDVar12 = &local_34;
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                local_EAX_8204 =
+                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                                     sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                  (char *)pDStack_164,(uint)local_160,
+                                                  &local_34.flags);
+                                iVar37 = 0;
+                                if (0 < local_EAX_8204) {
+                                  pDVar10 = &local_34;
                                   do {
-                                    if (pDVar12->flags == (uint)DAT_0080874d) {
+                                    if (pDVar10->flags == (uint)DAT_0080874d) {
                                       DAT_00808790 = 1;
                                       break;
                                     }
-                                    iVar36 = iVar36 + 1;
-                                    pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar36 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                    pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+                                  } while (iVar37 < local_EAX_8204);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x56a:
-                            iVar36 = thunk_FUN_0064f3f0((int)&local_16c);
-                            if (iVar36 == 0) break;
+                            iVar37 = thunk_FUN_0064f3f0((int)&local_16c);
+                            if (iVar37 == 0) break;
                             thunk_FUN_0056abc0(&DAT_00807620,(char *)pDStack_164);
                             goto cf_common_join_00659A73;
                           case 0x578:
-                            iVar36 = thunk_FUN_0064f430((int)&local_16c);
-                            if (iVar36 != 0) {
+                            local_EAX_8314 = thunk_FUN_0064f430((int)&local_16c);
+                            if (local_EAX_8314 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                pDVar12 = (DArrayTy *)
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                pDVar10 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
-                                if (0 < (int)pDVar12) {
+                                if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
-                                  local_c = pDVar12;
+                                  local_c = pDVar10;
                                   do {
-                                    pDVar12 = local_15c;
+                                    pDVar10 = local_15c;
                                     if ((int)local_15c < 0) {
-                                      pDVar12 = (DArrayTy *)(DAT_00808a90 >> 8 & 0xff);
+                                      pDVar10 = (DArrayTy *)(DAT_00808a90 >> 8 & 0xff);
                                     }
-                                    thunk_FUN_004d86a0(pDVar25->flags,(int)pDVar12);
+                                    thunk_FUN_004d86a0(pDVar25->flags,(int)pDVar10);
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != nullptr);
@@ -4893,30 +5049,30 @@ LAB_00654386:
                             }
                             break;
                           case 0x579:
-                            iVar36 = thunk_FUN_0064f470((int)&local_16c);
-                            if (iVar36 != 0) {
+                            local_EAX_8446 = thunk_FUN_0064f470((int)&local_16c);
+                            if (local_EAX_8446 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                pDVar12 = (DArrayTy *)
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                pDVar10 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
-                                if (0 < (int)pDVar12) {
+                                if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
-                                  local_c = pDVar12;
+                                  local_c = pDVar10;
                                   do {
-                                    pDVar12 = local_15c;
+                                    pDVar10 = local_15c;
                                     if ((int)local_15c < 0) {
-                                      pDVar12 = (DArrayTy *)(DAT_00808a90 >> 0x10 & 0xff);
+                                      pDVar10 = (DArrayTy *)(DAT_00808a90 >> 0x10 & 0xff);
                                     }
-                                    puVar15 = local_158;
+                                    puVar14 = local_158;
                                     if ((int)local_158 < 0) {
-                                      puVar15 = (uint *)(DAT_00808a90 >> 0x18);
+                                      puVar14 = (uint *)(DAT_00808a90 >> 0x18);
                                     }
-                                    thunk_FUN_004e51b0((int *)pDVar25->flags,&pDVar12->flags,puVar15
+                                    thunk_FUN_004e51b0((int *)pDVar25->flags,&pDVar10->flags,puVar14
                                                       );
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -4927,37 +5083,37 @@ LAB_00654386:
                             }
                             break;
                           case 0x57a:
-                            iVar36 = thunk_FUN_0064f4c0((int)&local_16c);
-                            if (iVar36 == 0) break;
-                            pDVar12 = pDStack_164;
+                            local_EAX_8597 = thunk_FUN_0064f4c0((int)&local_16c);
+                            if (local_EAX_8597 == 0) break;
+                            pDVar10 = pDStack_164;
                             if ((int)pDStack_164 < 0) {
-                              pDVar12 = (DArrayTy *)(DAT_00808a90 & 0xff);
+                              pDVar10 = (DArrayTy *)(DAT_00808a90 & 0xff);
                             }
-                            thunk_FUN_004d8760((int)pDVar12);
+                            thunk_FUN_004d8760((int)pDVar10);
                             goto cf_common_join_00659A73;
                           case 0x57b:
-                            iVar36 = thunk_FUN_0064f500((RecoveredRecord_AiEventClassTy_0064F500 *)
+                            iVar37 = thunk_FUN_0064f500((RecoveredRecord_AiEventClassTy_0064F500 *)
                                                         &local_16c);
-                            if (iVar36 != 0) {
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_8 = local_15c;
                                 if ((int)local_15c < 0) {
                                   local_8 = (DArrayTy *)(uint)DAT_00808a9b;
                                 }
-                                pDVar12 = (DArrayTy *)
+                                pDVar10 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
-                                if (0 < (int)pDVar12) {
+                                if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
-                                  local_c = pDVar12;
+                                  local_c = pDVar10;
                                   do {
-                                    dVar38 = pDVar25->flags;
-                                    bVar1 = g_bulkInitializedRecords_008087C7[dVar38].field_0021;
+                                    dVar39 = pDVar25->flags;
+                                    bVar1 = g_bulkInitializedRecords_008087C7[dVar39].field_0021;
                                     uVar27 = (undefined2)((uint)local_150 >> 0x10);
                                     if (bVar1 == 1) {
                                       if ((int)local_8 < 3) {
@@ -5021,8 +5177,9 @@ joined_r0x00655322:
                                         if (local_8 != (DArrayTy *)0xff) {
 LAB_00655324:
                                           uVar32 = local_14;
-                                          pcVar9 = thunk_FUN_00674af0(iVar7);
-                                          thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar32,dVar38);
+                                          pcVar8_mg3E = thunk_FUN_00674af0(local_EAX_488);
+                                          thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg3E,uVar32,dVar39
+                                                            );
                                         }
                                       }
                                     }
@@ -5174,22 +5331,22 @@ LAB_00655324:
                             }
                             break;
                           case 0x582:
-                            iVar36 = thunk_FUN_0064f5a0((int)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064f5a0((int)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                pDVar12 = (DArrayTy *)
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                pDVar10 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
-                                if (0 < (int)pDVar12) {
+                                if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
-                                  local_c = pDVar12;
+                                  local_c = pDVar10;
                                   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                                  uVar8 = extraout_ECX;
+                                  uVar7 = extraout_ECX;
                                   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                   uVar26 = extraout_EDX;
                                   do {
@@ -5237,7 +5394,7 @@ LAB_00655324:
                                                            (int)local_154);
                                       }
                                       else {
-                                        thunk_FUN_004b7080(STReplaceLowByte((uint32_t)(uVar8), (uint8_t)((char)pDVar25->flags)),
+                                        thunk_FUN_004b7080(STReplaceLowByte((uint32_t)(uVar7), (uint8_t)((char)pDVar25->flags)),
                                                            (int)local_154);
                                       }
                                       break;
@@ -5270,7 +5427,7 @@ LAB_00655324:
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                                    uVar8 = extraout_ECX_00;
+                                    uVar7 = extraout_ECX_00;
                                     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                     uVar26 = extraout_EDX_00;
                                   } while (local_c != nullptr);
@@ -5280,45 +5437,45 @@ LAB_00655324:
                             }
                             break;
                           case 0x583:
-                            iVar36 = thunk_FUN_0064f5e0((int)&local_16c);
-                            if (iVar36 == 0) break;
+                            iVar37 = thunk_FUN_0064f5e0((int)&local_16c);
+                            if (iVar37 == 0) break;
                             if (pDStack_164 == nullptr) {
                               thunk_FUN_004d8320(local_160);
                               goto cf_common_join_00659A73;
                             }
                             if ((int)pDStack_164 < 1) {
                               local_c = local_160;
-                              iVar7 = thunk_FUN_004d82b0(0);
-                              if ((int)local_c < iVar7) {
-                                iVar7 = thunk_FUN_004d82b0(0);
-                                iVar7 = iVar7 - (int)local_c;
+                              local_EAX_11892 = thunk_FUN_004d82b0(0);
+                              if ((int)local_c < local_EAX_11892) {
+                                local_EAX_11906 = thunk_FUN_004d82b0(0);
+                                iVar37 = local_EAX_11906 - (int)local_c;
                                 goto LAB_0065565b;
                               }
                             }
                             else {
                               local_c = local_160;
-                              iVar7 = thunk_FUN_004d82b0(0);
-                              iVar7 = (int)&local_c->flags + iVar7;
+                              local_EAX_11843 = thunk_FUN_004d82b0(0);
+                              iVar37 = (int)&local_c->flags + local_EAX_11843;
 LAB_0065565b:
-                              thunk_FUN_004d8320(iVar7);
+                              thunk_FUN_004d8320(iVar37);
                             }
                             thunk_FUN_004d82b0(0);
                             goto cf_common_join_00659A73;
                           case 0x584:
-                            iVar36 = thunk_FUN_0064f620((short *)&local_16c);
-                            if (iVar36 == 0) break;
+                            iVar37 = thunk_FUN_0064f620((short *)&local_16c);
+                            if (iVar37 == 0) break;
                             thunk_FUN_0064e5c0((char)pDStack_164,(short)local_160,(short)local_15c,
                                                local_158,(int)local_154);
                             goto cf_common_join_00659A73;
                           case 0x585:
-                            iVar36 = thunk_FUN_0064f6e0();
-                            if (iVar36 == 0) break;
+                            iVar37 = thunk_FUN_0064f6e0();
+                            if (iVar37 == 0) break;
                             DAT_00808794 = thunk_FUN_0056f930((AnonShape_0056F930_C6277D80 *)
                                                               &DAT_00807620);
                             goto cf_common_join_00659A73;
                           case 0x58c:
-                            iVar36 = thunk_FUN_0064f700((short *)&local_16c);
-                            if (iVar36 == 0) break;
+                            iVar37 = thunk_FUN_0064f700((short *)&local_16c);
+                            if (iVar37 == 0) break;
                             pSVar30 = nullptr;
                             sVar24 = (short)local_160;
                             sVar22 = (short)local_15c;
@@ -5345,9 +5502,10 @@ LAB_00655871:
                                         [1];
                             }
                             else if (local_154 == (byte *)0x2) {
-                              iVar7 = _EnumDest(nullptr,-1,sVar24,sVar22,sVar6,1,1,1,
-                                                thunk_FUN_00678890,0);
-                              if ((iVar7 == -1) && (g_fish_00811984 != nullptr)) {
+                              local_EAX_12115 =
+                                   _EnumDest(nullptr,-1,sVar24,sVar22,sVar6,1,1,1,
+                                             thunk_FUN_00678890,0);
+                              if ((local_EAX_12115 == -1) && (g_fish_00811984 != nullptr)) {
                                 pSVar30 = g_fish_00811984;
                               }
                             }
@@ -5356,67 +5514,70 @@ LAB_00655871:
                             }
                             goto cf_common_join_00659A73;
                           case 0x58d:
-                            iVar36 = thunk_FUN_0064f780((RecoveredRecord_AiEventClassTy_0064F780 *)
+                            iVar37 = thunk_FUN_0064f780((RecoveredRecord_AiEventClassTy_0064F780 *)
                                                         &local_16c);
-                            if (iVar36 != 0) {
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                pDVar12 = (DArrayTy *)
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                pDVar10 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
-                                if (0 < (int)pDVar12) {
+                                if (0 < (int)pDVar10) {
                                   local_10 = (AiFltClassTy *)&local_34;
-                                  local_8 = pDVar12;
+                                  local_8 = pDVar10;
                                   do {
                                     local_c = local_144;
-                                    uVar17 = uVar32;
+                                    uVar16 = uVar32;
                                     if ((int)local_144 < 0) {
                                       local_c = (DArrayTy *)0xfffe;
 LAB_00655972:
-                                      iVar36 = __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_158), (uint16_t)(*(undefined2 *)&local_10->vtable)),(short)local_15c
-                                                  ,(short *)local_158,(short *)local_154,
-                                                  (short *)local_150,(uint)local_c,(uint)local_14c,
-                                                  local_148,local_140,local_13c,(int)local_138,
-                                                  local_134);
-                                      if (iVar36 != 0) {
+                                      local_EAX_12727 =
+                                           __CreateObjPl(this_00,STReplaceLowWord((uint32_t)(local_158), (uint16_t)(*(undefined2 *) &local_10->vtable)),
+                                                         (short)local_15c,(short *)local_158,
+                                                         (short *)local_154,(short *)local_150,
+                                                         (uint)local_c,(uint)local_14c,local_148,
+                                                         local_140,local_13c,(int)local_138,
+                                                         local_134);
+                                      if (local_EAX_12727 != 0) {
 LAB_006559d0:
-                                        pAVar37 = local_10->vtable;
+                                        pAVar38 = local_10->vtable;
 LAB_006559d6:
-                                        pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        iVar36 = -0xab;
+                                        pcVar8_mg3D = thunk_FUN_00674af0(local_EAX_488);
+                                        iVar37 = -0xab;
                                         goto LAB_006559e3;
                                       }
                                     }
                                     else {
                                       if ((int)local_144 < 1) goto LAB_00655972;
-                                      pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                      pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                    (ushort)local_144);
-                                      if (pSVar16 != nullptr) {
-                                        iVar36 = thunk_FUN_00423300((int)pSVar16);
-                                        if (iVar36 != 0) {
+                                      if (pSVar15 != nullptr) {
+                                        iVar37 = thunk_FUN_00423300((int)pSVar15);
+                                        if (iVar37 != 0) {
                                           if (((int)local_15c < 0x32) || (0x73 < (int)local_15c)) {
                                             bVar35 = false;
                                           }
                                           else {
                                             bVar35 = true;
                                           }
-                                          if (((!bVar35) || (*(short *)(iVar36 + 0x7b) == 1)) &&
-                                             (*(short *)(iVar36 + 0x7b) != -0x8000))
+                                          if (((!bVar35) || (*(short *)(iVar37 + 0x7b) == 1)) &&
+                                             (*(short *)(iVar37 + 0x7b) != -0x8000))
                                           goto LAB_00655972;
                                           goto LAB_006559d0;
                                         }
-                                        pAVar37 = local_10->vtable;
+                                        pAVar38 = local_10->vtable;
                                         goto LAB_006559d6;
                                       }
-                                      pAVar37 = local_10->vtable;
-                                      pcVar9 = &DAT_008016a0;
-                                      iVar36 = -0xaa;
+                                      pAVar38 = local_10->vtable;
+                                      pcVar8_mg3D = &DAT_008016a0;
+                                      iVar37 = -0xaa;
 LAB_006559e3:
-                                      thunk_FUN_0064d0e0(this_00,iVar36,pcVar9,uVar17,(int)pAVar37);
+                                      thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg3D,uVar16,
+                                                         (int)pAVar38);
                                     }
                                     local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                     local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
@@ -5428,45 +5589,45 @@ LAB_006559e3:
                             }
                             break;
                           case 0x58e:
-                            iVar36 = thunk_FUN_0064f900((short *)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064f900((short *)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                pDVar12 = (DArrayTy *)
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                pDVar10 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
-                                if (0 < (int)pDVar12) {
+                                if (0 < (int)pDVar10) {
                                   local_10 = (AiFltClassTy *)&local_34;
-                                  local_c = pDVar12;
+                                  local_c = pDVar10;
                                   do {
                                     local_8 = (DArrayTy *)_GetStaffGrpExch(local_10->vtable);
                                     if (local_8 != nullptr) {
                                       uVar31 = 0;
-                                      uVar17 = local_8->count;
+                                      uVar16 = local_8->count;
                                       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                                      pDVar12 = extraout_EDX_01;
-                                      if (0 < (int)uVar17) {
+                                      pDVar10 = extraout_EDX_01;
+                                      if (0 < (int)uVar16) {
                                         do {
-                                          if (uVar31 < uVar17) {
-                                            pDVar12 = local_8->data;
-                                            pdVar18 = (dword *)((int)&pDVar12->flags +
+                                          if (uVar31 < uVar16) {
+                                            pDVar10 = local_8->data;
+                                            pdVar17 = (dword *)((int)&pDVar10->flags +
                                                                local_8->elementSize * uVar31);
                                           }
                                           else {
-                                            pdVar18 = nullptr;
+                                            pdVar17 = nullptr;
                                           }
                                           STAllPlayersC::DestroyObjectMsg
                                                     (g_allPlayers_007FA174,
                                                      *(char *)&local_10->vtable,
-                                                     STReplaceLowWord((uint32_t)(pDVar12), (uint16_t)((short)*pdVar18)),CASE_1,local_15c);
+                                                     STReplaceLowWord((uint32_t)(pDVar10), (uint16_t)((short)*pdVar17)),CASE_1,local_15c);
                                           uVar31 = uVar31 + 1;
-                                          uVar17 = local_8->count;
-                                          pDVar12 = local_8;
-                                        } while ((int)uVar31 < (int)uVar17);
+                                          uVar16 = local_8->count;
+                                          pDVar10 = local_8;
+                                        } while ((int)uVar31 < (int)uVar16);
                                       }
                                       DArrayDestroy(local_8);
                                     }
@@ -5480,21 +5641,21 @@ LAB_006559e3:
                             }
                             break;
                           case 0x58f:
-                            iVar36 = thunk_FUN_0064f950((RecoveredRecord_AiEventClassTy_0064F950 *)
+                            iVar37 = thunk_FUN_0064f950((RecoveredRecord_AiEventClassTy_0064F950 *)
                                                         &local_16c);
-                            if (iVar36 != 0) {
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                pDVar12 = (DArrayTy *)
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                pDVar10 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
-                                if (0 < (int)pDVar12) {
+                                if (0 < (int)pDVar10) {
                                   local_10 = (AiFltClassTy *)&local_34;
-                                  local_c = pDVar12;
+                                  local_c = pDVar10;
                                   do {
                                     if ((char)local_154 == '\b') {
                                       cVar5 = *(char *)&local_10->vtable;
@@ -5503,38 +5664,38 @@ LAB_006559e3:
                                             (cVar5 = (char)local_154, '\b' < (char)local_154)) {
                                       cVar5 = -1;
                                     }
-                                    pDVar12 = (DArrayTy *)
+                                    pDVar10 = (DArrayTy *)
                                               thunk_FUN_006775e0(local_10->vtable,(uint)local_158,
                                                                  (uint)local_15c,local_150,cVar5,
                                                                  (short)local_14c,(short)local_148,
                                                                  (short)local_144,(short)local_140,
                                                                  (short)local_13c,(short)local_138,1
                                                                 );
-                                    if (pDVar12 != nullptr) {
+                                    if (pDVar10 != nullptr) {
                                       uVar32 = 0;
-                                      if (0 < (int)pDVar12->count) {
-                                        bVar35 = pDVar12->count != 0;
+                                      if (0 < (int)pDVar10->count) {
+                                        bVar35 = pDVar10->count != 0;
                                         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                                        uVar8 = extraout_EDX_02;
+                                        uVar7 = extraout_EDX_02;
                                         do {
                                           if (bVar35) {
-                                            puVar19 = DArrayAt<undefined2>(pDVar12, uVar32);
+                                            puVar18 = DArrayAt<undefined2>(pDVar10, uVar32);
                                           }
                                           else {
-                                            puVar19 = nullptr;
+                                            puVar18 = nullptr;
                                           }
                                           STAllPlayersC::DestroyObjectMsg
                                                     (g_allPlayers_007FA174,
                                                      *(char *)&local_10->vtable,
-                                                     STReplaceLowWord((uint32_t)(uVar8), (uint16_t)(*puVar19))
+                                                     STReplaceLowWord((uint32_t)(uVar7), (uint16_t)(*puVar18))
                                                      ,CASE_1,local_134);
                                           uVar32 = uVar32 + 1;
-                                          bVar35 = uVar32 < pDVar12->count;
+                                          bVar35 = uVar32 < pDVar10->count;
                                           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                                          uVar8 = extraout_EDX_03;
-                                        } while ((int)uVar32 < (int)pDVar12->count);
+                                          uVar7 = extraout_EDX_03;
+                                        } while ((int)uVar32 < (int)pDVar10->count);
                                       }
-                                      DArrayDestroy(pDVar12);
+                                      DArrayDestroy(pDVar10);
                                     }
                                     local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -5547,30 +5708,31 @@ LAB_006559e3:
                             }
                             break;
                           case 0x590:
-                            iVar36 = thunk_FUN_0064fb00((short *)&local_16c);
-                            if (iVar36 != 0) {
+                            iVar37 = thunk_FUN_0064fb00((short *)&local_16c);
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                pDVar12 = (DArrayTy *)
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                pDVar10 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
-                                if (0 < (int)pDVar12) {
+                                if (0 < (int)pDVar10) {
                                   local_8 = &local_34;
-                                  local_c = pDVar12;
+                                  local_c = pDVar10;
                                   do {
-                                    iVar36 = _CreateRCCont(this_00,(ushort)local_8->flags,
-                                                           (short)local_15c,(int)local_158,
-                                                           (int)local_154,local_150,local_14c,
-                                                           local_148,(int)local_144);
-                                    if (iVar36 != 0) {
-                                      dVar38 = local_8->flags;
-                                      uVar17 = uVar32;
-                                      pcVar9 = thunk_FUN_00674af0(iVar7);
-                                      thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,dVar38);
+                                    local_EAX_13452 =
+                                         _CreateRCCont(this_00,(ushort)local_8->flags,
+                                                       (short)local_15c,(int)local_158,
+                                                       (int)local_154,local_150,local_14c,local_148,
+                                                       (int)local_144);
+                                    if (local_EAX_13452 != 0) {
+                                      dVar39 = local_8->flags;
+                                      uVar16 = uVar32;
+                                      pcVar8_mg3C = thunk_FUN_00674af0(local_EAX_488);
+                                      thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg3C,uVar16,dVar39);
                                     }
                                     local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -5582,21 +5744,21 @@ LAB_006559e3:
                             }
                             break;
                           case 0x591:
-                            iVar36 = thunk_FUN_0064fb80((RecoveredRecord_AiEventClassTy_0064FB80 *)
+                            iVar37 = thunk_FUN_0064fb80((RecoveredRecord_AiEventClassTy_0064FB80 *)
                                                         &local_16c);
-                            if (iVar36 != 0) {
+                            if (iVar37 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                              iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                pDVar12 = (DArrayTy *)
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                pDVar10 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
-                                if (0 < (int)pDVar12) {
+                                if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
-                                  local_c = pDVar12;
+                                  local_c = pDVar10;
                                   do {
                                     DAT_008118fc = 0;
                                     _EnumRCCont((short)pDVar25->flags,(short)local_15c,
@@ -5612,42 +5774,43 @@ LAB_006559e3:
                             }
                             break;
                           case 0x592:
-                            iVar36 = thunk_FUN_0064fce0((short *)&local_16c);
-                            if (iVar36 == 0) break;
-                            iVar36 = _CreateArt(this_00,(short)pDStack_164,(short)local_160,
-                                                (int)local_15c,(int)local_158,local_154,
-                                                (char *)local_150,local_14c,local_148);
+                            iVar37 = thunk_FUN_0064fce0((short *)&local_16c);
+                            if (iVar37 == 0) break;
+                            local_EAX_13781 =
+                                 _CreateArt(this_00,(short)pDStack_164,(short)local_160,
+                                            (int)local_15c,(int)local_158,local_154,
+                                            (char *)local_150,local_14c,local_148);
 LAB_00655f44:
-                            if (iVar36 != 0) {
+                            if (local_EAX_13781 != 0) {
 LAB_00655f4c:
-                              iVar36 = -1;
-                              uVar17 = uVar32;
-                              pcVar9 = thunk_FUN_00674af0(iVar7);
-                              thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,iVar36);
+                              iVar37 = -1;
+                              uVar16 = uVar32;
+                              pcVar8_mg3B = thunk_FUN_00674af0(local_EAX_488);
+                              thunk_FUN_0064d0e0(this_00,-0xab,pcVar8_mg3B,uVar16,iVar37);
                             }
                             goto cf_common_join_00659A73;
                           }
 cf_common_join_00652A99:
-                          iVar36 = -1;
-                          uVar17 = uVar32;
-                          pcVar9 = thunk_FUN_00674af0(iVar7);
-                          thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar36);
+                          iVar37 = -1;
+                          uVar16 = uVar32;
+                          pcVar8_mg3F = thunk_FUN_00674af0(local_EAX_488);
+                          thunk_FUN_0064d0e0(this_00,-0x7d,pcVar8_mg3F,uVar16,iVar37);
 cf_common_join_00659A73:
-                          pDVar12 = (DArrayTy *)((int)&local_170->flags + 1);
+                          pDVar10 = (DArrayTy *)((int)&local_170->flags + 1);
 cf_continue_loop_00659A80:
-                          local_170 = pDVar12;
+                          local_170 = pDVar10;
                           pAVar29 = local_178->field_000F;
-                          pDVar12 = pAVar29->field_000C;
-                        } while ((int)local_170 < (int)pDVar12);
+                          pDVar10 = pAVar29->field_000C;
+                        } while ((int)local_170 < (int)pDVar10);
                       }
                     }
                     goto LAB_00659aae;
                   }
-                  iVar36 = -1;
-                  pcVar9 = thunk_FUN_00674af0(iVar7);
-                  iVar7 = -0x7d;
+                  iVar37 = -1;
+                  pcVar8_mg40 = thunk_FUN_00674af0(local_EAX_327);
+                  local_EAX_327 = -0x7d;
                 }
-                thunk_FUN_0064d0e0(this_00,iVar7,pcVar9,uVar17,iVar36);
+                thunk_FUN_0064d0e0(this_00,local_EAX_327,pcVar8_mg40,uVar16,iVar37);
                 *(char *)pAVar28 = '\x01';
                 pAVar28->field_000B = 0;
               }
@@ -5659,18 +5822,18 @@ cf_continue_loop_00659A80:
               pAVar28->field_000B = pAVar28->field_000B + -1;
             }
 LAB_00659aae:
-            pDVar12 = this_00->field_04EE;
+            pDVar10 = this_00->field_04EE;
             local_14 = uVar32 + 1;
-            bVar35 = local_14 < pDVar12->count;
-          } while ((int)local_14 < (int)pDVar12->count);
+            bVar35 = local_14 < pDVar10->count;
+          } while ((int)local_14 < (int)pDVar10->count);
         }
         uVar32 = local_19c;
         pAVar2 = (AnonShape_006B7830_769CA2DF *)this_00->field_04E2;
-        iVar7 = pAVar2->field_0008;
-        while ((int)uVar32 < iVar7) {
-          FUN_006b7830(pAVar2,iVar7 - 1);
+        iVar37 = pAVar2->field_0008;
+        while ((int)uVar32 < iVar37) {
+          FUN_006b7830(pAVar2,iVar37 - 1);
           pAVar2 = (AnonShape_006B7830_769CA2DF *)this_00->field_04E2;
-          iVar7 = pAVar2->field_0008;
+          iVar37 = pAVar2->field_0008;
         }
         if (local_194 == 0x456) {
           this_00->field_00D6 = this_00->field_00D6 + 1;
@@ -5688,19 +5851,19 @@ LAB_00659aae:
   }
   return;
 code_r0x00653bbb:
-  iVar36 = iVar36 + 1;
-  pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-  if ((int)local_10 <= iVar36) goto cf_common_join_00659A73;
+  iVar37 = iVar37 + 1;
+  pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+  if ((int)local_10 <= iVar37) goto cf_common_join_00659A73;
   goto LAB_00653bb7;
 code_r0x00654366:
-  iVar36 = iVar36 + 1;
-  pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-  if (iVar7 <= iVar36) goto cf_common_join_00659A73;
+  iVar37 = iVar37 + 1;
+  pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+  if (local_EAX_6968 <= iVar37) goto cf_common_join_00659A73;
   goto LAB_00654362;
 code_r0x006540bd:
-  iVar36 = iVar36 + 1;
-  pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-  if (iVar7 <= iVar36) goto cf_common_join_00659A73;
+  iVar37 = iVar37 + 1;
+  pDVar10 = (DArrayTy *)&pDVar10->iteratorIndex;
+  if (local_EAX_6287 <= iVar37) goto cf_common_join_00659A73;
   goto LAB_006540b9;
 }
 

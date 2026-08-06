@@ -10,8 +10,11 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
 
 {
   short sVar2;
+  int iVar4;
+  int local_EAX_244;
+  int local_EAX_371;
+  undefined4 uVar5;
   int iVar3;
-  undefined4 uVar4;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   undefined4 local_20;
@@ -25,8 +28,8 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
 
   if (param_1->field_03FC == 0) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    iVar3 = (*param_1->vtable->MoveStep)((STGameObjC *)param_1,unaff_EDI);
-    if (iVar3 == -1) {
+    iVar4 = (*param_1->vtable->MoveStep)((STGameObjC *)param_1,unaff_EDI);
+    if (iVar4 == -1) {
       iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x4f,0,-5,"%s",
                                  "move error");
       if (iVar3 != 0) {
@@ -36,19 +39,19 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
       unaff_EDI = (int *)0x4f;
     }
     else {
-      if (iVar3 == 1) goto LAB_004c6e4d;
-      if (iVar3 != 2) goto cf_common_exit_004C6F47;
-      iVar3 = param_1->field_0404 + 1;
-      param_1->field_0404 = iVar3;
-      if ((9 < iVar3) && (iVar3 = TLOBaseTy::sub_004EA620((TLOBaseTy *)param_1), iVar3 != 0)) {
+      if (iVar4 == 1) goto LAB_004c6e4d;
+      if (iVar4 != 2) goto cf_common_exit_004C6F47;
+      iVar4 = param_1->field_0404 + 1;
+      param_1->field_0404 = iVar4;
+      if ((9 < iVar4) && (iVar4 = TLOBaseTy::sub_004EA620((TLOBaseTy *)param_1), iVar4 != 0)) {
         param_1->field_03FC = 1;
         param_1->field_0400 = 0;
       }
-      iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
+      iVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
                         ((AnonReceiver_004167A0 *)param_1,param_1->field_03E0,param_1->field_03E4,
                          param_1->field_03E8);
-      if (iVar3 != -1) {
-        if (iVar3 == 2) {
+      if (iVar4 != -1) {
+        if (iVar4 == 2) {
           param_1->field_03DC = 0;
         }
         goto cf_common_exit_004C6F47;
@@ -59,19 +62,20 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
   }
   else {
     if (param_1->field_0400 == 0) {
-      iVar3 = param_1->vfunc_20();
-      if (iVar3 == -1) {
-        iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x35,0,-5,
-                                   "%s","stop move error");
-        if (iVar3 != 0) {
+      iVar4 = param_1->vfunc_20();
+      if (iVar4 == -1) {
+        local_EAX_244 =
+             ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x35,0,-5,"%s",
+                                "stop move error");
+        if (local_EAX_244 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         RaiseInternalException
                   (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bmove.cpp",0x35);
       }
-      else if (iVar3 == 1) {
+      else if (iVar4 == 1) {
         param_1->field_0400 = 1;
-        thunk_FUN_00416270(param_1,local_10,(int *)local_14,(int *)local_18);
+        thunk_FUN_00416270(param_1,(uint *)local_10,(int *)local_14,local_18);
         sVar2 = *(short *)&param_1->field_05B0 * 0xc9 + 100;
         if (((local_10[0] == sVar2) &&
             (local_14[0] == (short)(*(short *)&param_1->field_05B4 * 0xc9 + 100))) &&
@@ -87,17 +91,18 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
       }
     }
     if ((param_1->field_0400 == 0) || (param_1->field_03DC == 0)) goto cf_common_exit_004C6F47;
-    iVar3 = STJellyGunC::sub_00415ED0(param_1,&local_20,&local_1c);
-    if (iVar3 != -1) {
-      if (iVar3 != 0) goto cf_common_exit_004C6F47;
+    iVar4 = STJellyGunC::sub_00415ED0(param_1,&local_20,&local_1c);
+    if (iVar4 != -1) {
+      if (iVar4 != 0) goto cf_common_exit_004C6F47;
 LAB_004c6e4d:
       param_1->field_03DC = 0;
       sub_004167A0(param_1);
       goto cf_common_exit_004C6F47;
     }
-    iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x47,0,-5,"%s",
-                               "move error");
-    if (iVar3 != 0) {
+    local_EAX_371 =
+         ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x47,0,-5,"%s",
+                            "move error");
+    if (local_EAX_371 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }

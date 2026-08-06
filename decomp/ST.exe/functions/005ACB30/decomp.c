@@ -13,7 +13,8 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
   ChooseMapTy *pCVar3;
   int iVar4;
   int iVar5;
-  uint *puVar6;
+  int iVar6;
+  uint *puVar7;
   InternalExceptionFrame local_4c;
   ChooseMapTy *local_8;
 
@@ -41,8 +42,8 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
         FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
-    iVar4 = pCVar3->field_004D;
-    if (((iVar4 != 0x6120) && (iVar4 != 0x6121)) && (iVar4 != 0x6105)) {
+    iVar6 = pCVar3->field_004D;
+    if (((iVar6 != 0x6120) && (iVar6 != 0x6121)) && (iVar6 != 0x6105)) {
       DarkScreen(g_dDXContext_0080759C,10,2);
     }
     if (g_startSystem_0081176C->field_002C != nullptr) {
@@ -56,16 +57,16 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1A70);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1B01);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1B92);
-    puVar6 = pCVar3->field_1C23;
-    iVar4 = 0x16;
+    puVar7 = pCVar3->field_1C23;
+    iVar6 = 0x16;
     do {
-      if (*puVar6 != 0xffffffff) {
-        FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar6);
-        *puVar6 = 0xffffffff;
+      if (*puVar7 != 0xffffffff) {
+        FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar7);
+        *puVar7 = 0xffffffff;
       }
-      puVar6 = puVar6 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
+      puVar7 = puVar7 + 1;
+      iVar6 = iVar6 + -1;
+    } while (iVar6 != 0);
     if (pCVar3->field_1C87 != 0xffffffff) {
       FUN_006b3bb0((int *)g_ddxContext_008075A8,pCVar3->field_1C87);
     }

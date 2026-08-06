@@ -94,7 +94,7 @@ VisibleClassTy::sub_00559110
                       ((iVar11 < this->field_0034 && (iVar12 = uVar5 * iVar11 + iVar10, -1 < iVar12)
                        ))))) {
                     if (this->field_0050[iVar12] == 1) {
-                      thunk_FUN_00553a70(iVar10,iVar11,(int)this->field_004C,uVar5,this->field_0034);
+                      thunk_FUN_00553a70(iVar10,iVar11,this->field_004C,uVar5,this->field_0034);
                       bVar6 = true;
                     }
                     uVar4 = this->field_0050[iVar12];
@@ -131,7 +131,7 @@ VisibleClassTy::sub_00559110
                        (((iVar10 < this->field_0034 &&
                          (iVar11 = uVar5 * iVar10 + iVar9, -1 < iVar11)) &&
                         (this->field_0050[iVar11] != 0)))) {
-                      thunk_FUN_00553990(iVar9,iVar10,(int)this->field_004C,uVar5,this->field_0034);
+                      thunk_FUN_00553990(iVar9,iVar10,this->field_004C,uVar5,this->field_0034);
                     }
                     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_7 = param_7 + 1;

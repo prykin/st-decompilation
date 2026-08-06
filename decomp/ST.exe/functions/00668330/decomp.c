@@ -14,11 +14,11 @@ AllocationRecord_00668330 * __cdecl FUN_00668330(AllocationRecord_00668330 *para
 
 {
   int iVar1;
-  AllocationRecord_00668330 *pAVar2;
-  undefined4 uVar3;
-  DArrayTy *pDVar4;
+  AllocationRecord_00668330 *pAVar1;
+  DArrayTy *pDVar2;
+  int iVar3;
+  AllocationRecord_00668330 *pAVar4;
   AllocationRecord_00668330 *pAVar5;
-  AllocationRecord_00668330 *pAVar6;
   InternalExceptionFrame local_4c;
   AnonShape_00668330_F270680B *local_8;
 
@@ -27,41 +27,41 @@ AllocationRecord_00668330 * __cdecl FUN_00668330(AllocationRecord_00668330 *para
   g_currentExceptionFrame = &local_4c;
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    pAVar2 = Library::DKW::LIB::MemAllocClear(0x260);
-    pAVar5 = param_1;
-    pAVar6 = pAVar2;
-    memmove(pAVar6, pAVar5, 0x260); /* compiler REP MOVS byte copy */
-    iVar1 = 0;
-    pAVar2->field_0014 = 0x260;
-    pAVar2->field_0018 = 2;
-    local_8 = (AnonShape_00668330_F270680B *)pAVar2;
+    pAVar1 = Library::DKW::LIB::MemAllocClear(0x260);
+    pAVar4 = param_1;
+    pAVar5 = pAVar1;
+    memmove(pAVar5, pAVar4, 0x260); /* compiler REP MOVS byte copy */
+    iVar3 = 0;
+    pAVar1->field_0014 = 0x260;
+    pAVar1->field_0018 = 2;
+    local_8 = (AnonShape_00668330_F270680B *)pAVar1;
     do {
-      if (*(int *)((int)&pAVar2->field_01EB + iVar1) != 0) {
-        uVar3 = FUN_006b0060(nullptr,
-                             (uint *)(&param_1->field_0x25f + *(int *)(&pAVar2->field_0x1ef + iVar1)
-                                     ));
-        *(undefined4 *)((int)&local_8->field_01EB + iVar1) = uVar3;
-        pAVar2 = (AllocationRecord_00668330 *)local_8;
+      if (*(int *)((int)&pAVar1->field_01EB + iVar3) != 0) {
+        pDVar2 = FUN_006b0060(nullptr,
+                              (uint *)(&param_1->field_0x25f +
+                                      *(int *)(&pAVar1->field_0x1ef + iVar3)));
+        *(DArrayTy **)((int)&local_8->field_01EB + iVar3) = pDVar2;
+        pAVar1 = (AllocationRecord_00668330 *)local_8;
       }
-      iVar1 = iVar1 + 0xc;
-    } while (iVar1 < 0x54);
-    if (pAVar2->field_01EB == 0) {
-      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x2c,10);
-      local_8->field_01EB = &pDVar4->flags;
-      pAVar2 = (AllocationRecord_00668330 *)local_8;
+      iVar3 = iVar3 + 0xc;
+    } while (iVar3 < 0x54);
+    if (pAVar1->field_01EB == 0) {
+      pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x2c,10);
+      local_8->field_01EB = &pDVar2->flags;
+      pAVar1 = (AllocationRecord_00668330 *)local_8;
     }
-    if (pAVar2->field_0203 == 0) {
-      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
-      local_8->field_0203 = &pDVar4->flags;
-      pAVar2 = (AllocationRecord_00668330 *)local_8;
+    if (pAVar1->field_0203 == 0) {
+      pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
+      local_8->field_0203 = &pDVar2->flags;
+      pAVar1 = (AllocationRecord_00668330 *)local_8;
     }
-    if (pAVar2->field_020F == 0) {
-      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
-      local_8->field_020F = &pDVar4->flags;
-      pAVar2 = (AllocationRecord_00668330 *)local_8;
+    if (pAVar1->field_020F == 0) {
+      pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
+      local_8->field_020F = &pDVar2->flags;
+      pAVar1 = (AllocationRecord_00668330 *)local_8;
     }
     g_currentExceptionFrame = local_4c.previous;
-    return pAVar2;
+    return pAVar1;
   }
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_006686c0((int *)&local_8);

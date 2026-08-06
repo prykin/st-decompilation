@@ -14,15 +14,16 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
 {
   MainMenuTy *pMVar2;
   int uVar3;
-  uint *puVar3;
-  char *text;
+  char *pcVar3;
+  int iVar4;
   StartServTy *this_00;
   StartServTy *this_01;
-  int iVar4;
-  uint uVar5;
-  uint uVar6;
-  ccFntTy *pcVar7;
+  int iVar5;
+  uint *puVar6;
+  uint uVar7;
   uint uVar8;
+  ccFntTy *pcVar9;
+  uint uVar10;
   InternalExceptionFrame local_4c;
   MainMenuTy *local_8;
 
@@ -35,55 +36,55 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
     PutDDX(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
     pMVar2 = local_8;
     if (local_8->field_1EE3 == '\0') {
-      uVar8 = 0;
-      pcVar7 = g_startSystem_0081176C->field_0030;
-      uVar6 = 0xffffffff;
-      uVar5 = 0xfffffffe;
-      puVar3 = (uint *)LoadResourceString(0x26ac,g_hINSTANCE_00807618);
-      StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
-      uVar6 = DAT_00807dd5 >> 0x10 & 0xff;
-      uVar8 = DAT_00807dd5 & 0xffff;
-      uVar5 = DAT_00807dd5 >> 0x18;
-      text = LoadResourceString(0x2329,g_hINSTANCE_00807618);
-      wsprintfA((LPSTR)(pMVar2->field_1A5B + 0x3c),text,uVar5,uVar6,uVar8);
+      uVar10 = 0;
+      pcVar9 = g_startSystem_0081176C->field_0030;
+      uVar8 = 0xffffffff;
+      uVar7 = 0xfffffffe;
+      pcVar3 = LoadResourceString(0x26ac,g_hINSTANCE_00807618);
+      StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,pcVar3,uVar7,uVar8,pcVar9,uVar10);
+      uVar8 = DAT_00807dd5 >> 0x10 & 0xff;
+      uVar10 = DAT_00807dd5 & 0xffff;
+      uVar7 = DAT_00807dd5 >> 0x18;
+      pcVar3 = LoadResourceString(0x2329,g_hINSTANCE_00807618);
+      wsprintfA((LPSTR)(pMVar2->field_1A5B + 0x3c),pcVar3,uVar7,uVar8,uVar10);
       StartServTy::WrTextDDX
                 ((StartServTy *)g_startSystem_0081176C,0,0,0x240,800,0x18,
-                 (uint *)(pMVar2->field_1A5B + 0x3c),0xfffffffe,0xffffffff,
+                 (char *)(pMVar2->field_1A5B + 0x3c),0xfffffffe,0xffffffff,
                  g_startSystem_0081176C->field_0034,0);
     }
     else if (local_8->field_1EE3 == '\x01') {
-      pcVar7 = g_startSystem_0081176C->field_0030;
-      uVar6 = 0xffffffff;
-      uVar5 = 0xfffffffe;
-      puVar3 = (uint *)LoadResourceString(0x26b0,g_hINSTANCE_00807618);
-      StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar3);
+      pcVar9 = g_startSystem_0081176C->field_0030;
+      uVar8 = 0xffffffff;
+      uVar7 = 0xfffffffe;
+      pcVar3 = LoadResourceString(0x26b0,g_hINSTANCE_00807618);
+      StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,pcVar3,uVar7,uVar8,pcVar9,uVar3);
     }
-    puVar3 = pMVar2->field_1AA7;
-    iVar4 = 10;
+    puVar6 = pMVar2->field_1AA7;
+    iVar5 = 10;
     do {
-      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3 != nullptr) {
-        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3);
+      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6 != nullptr) {
+        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6);
       }
-      puVar3 = puVar3 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    iVar4 = 0;
+      puVar6 = puVar6 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
+    iVar5 = 0;
     if (pMVar2->field_009A != 0) {
-      puVar3 = &pMVar2->field_00FF;
+      puVar6 = &pMVar2->field_00FF;
       do {
-        if (puVar3[-6] != 0xffffffff) {
+        if (puVar6[-6] != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
-                    ((uint *)puVar3[0xb],puVar3[-6],puVar3[-5],*puVar3,puVar3[1]);
+                    ((uint *)puVar6[0xb],puVar6[-6],puVar6[-5],*puVar6,puVar6[1]);
         }
-        if ((pMVar2->field_0065 == '\x01') && (STField<uint>(puVar3,0x79) != 0xffffffff)) {
+        if ((pMVar2->field_0065 == '\x01') && (STField<uint>(puVar6,0x79) != 0xffffffff)) {
           Library::DKW::DDX::FUN_006b3730
-                    (STField<uint *>(puVar3,0xbd),STField<uint>(puVar3,0x79),
-                     STField<uint>(puVar3,0x7d),STField<uint>(puVar3,0x91),
-                     STField<uint>(puVar3,0x95));
+                    (STField<uint *>(puVar6,0xbd),STField<uint>(puVar6,0x79),
+                     STField<uint>(puVar6,0x7d),STField<uint>(puVar6,0x91),
+                     STField<uint>(puVar6,0x95));
         }
-        iVar4 = iVar4 + 1;
-        puVar3 = (uint *)((int)puVar3 + 0x1fb);
-      } while (iVar4 < (int)(uint)pMVar2->field_009A);
+        iVar5 = iVar5 + 1;
+        puVar6 = (uint *)((int)puVar6 + 0x1fb);
+      } while (iVar5 < (int)(uint)pMVar2->field_009A);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

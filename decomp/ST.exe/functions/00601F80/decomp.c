@@ -14,8 +14,10 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
 {
   STMessageId SVar1;
   AnonShape_00602BE0_B1CC517D *this_00;
+  int local_EAX_16;
   int iVar3;
-  byte *puVar4;
+  byte *puVar3;
+  int iVar4;
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
@@ -26,8 +28,8 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
   AnonShape_00602BE0_B1CC517D *local_8;
 
   local_8 = (AnonShape_00602BE0_B1CC517D *)this;
-  iVar3 = STSprGameObjC::GetMessage((STSprGameObjC *)this,message);
-  if (iVar3 != 0xffff) {
+  local_EAX_16 = STSprGameObjC::GetMessage((STSprGameObjC *)this,message);
+  if (local_EAX_16 != 0xffff) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
@@ -54,13 +56,13 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
           }
         }
         else if (SVar1 == MESS_ID_CREATE) {
-          puVar4 = (byte *)((message->arg0).ptr);
-          if (puVar4[3] != 2) {
+          puVar3 = (byte *)((message->arg0).ptr);
+          if (puVar3[3] != 2) {
             puVar6 = (byte *)&local_8->field_0x231;
-            memmove(puVar6, puVar4, 0x13d); /* compiler REP MOVS byte copy */
-            iVar3 = sub_006024B0((STDestC *)local_8);
-            if (iVar3 != 0) {
-              if ((*(int *)&this_00->field_0x3a7 != 0) && (iVar3 = thunk_FUN_006029c0(), iVar3 == 0)
+            memmove(puVar6, puVar3, 0x13d); /* compiler REP MOVS byte copy */
+            iVar5 = sub_006024B0((STDestC *)local_8);
+            if (iVar5 != 0) {
+              if ((*(int *)&this_00->field_0x3a7 != 0) && (iVar5 = thunk_FUN_006029c0(), iVar5 == 0)
                  ) {
                 sub_00602440((STDestC *)this_00);
                 g_currentExceptionFrame = local_54.previous;
@@ -70,8 +72,8 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
                 g_currentExceptionFrame = local_54.previous;
                 return 0;
               }
-              iVar3 = STAllPlayersC::RegisterBlot(g_allPlayers_007FA174,0xffff,this_00);
-              if (iVar3 == 0) {
+              iVar5 = STAllPlayersC::RegisterBlot(g_allPlayers_007FA174,0xffff,this_00);
+              if (iVar5 == 0) {
                 this_00->field_0x3a5 = 1;
                 g_currentExceptionFrame = local_54.previous;
                 return 0;
@@ -81,12 +83,12 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
             g_currentExceptionFrame = local_54.previous;
             return 0;
           }
-          iVar3 = sub_00602660((STDestC *)local_8,puVar4);
-          if (-1 < iVar3) {
+          iVar5 = sub_00602660((STDestC *)local_8,puVar3);
+          if (-1 < iVar5) {
             if (this_00->field_036E == 4) {
-              puVar4 = (byte *)(sub_00602E90((STDestC *)this_00));
-              this_00->field_03AB = puVar4;
-              if (puVar4 == nullptr) {
+              puVar3 = (byte *)(sub_00602E90((STDestC *)this_00));
+              this_00->field_03AB = puVar3;
+              if (puVar3 == nullptr) {
                 sub_00602440((STDestC *)this_00);
               }
             }
@@ -94,9 +96,9 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
               sub_00602BE0((STDestC *)this_00);
             }
             if (((g_allPlayers_007FA174 != nullptr) && (this_00->field_0x3a5 != '\0'))
-               && (iVar3 = STAllPlayersC::RegisterBlot
+               && (iVar5 = STAllPlayersC::RegisterBlot
                                      (g_allPlayers_007FA174,*(ushort *)&this_00->field_0x32,this_00)
-                  , iVar3 != 0)) {
+                  , iVar5 != 0)) {
               sub_00602440((STDestC *)this_00);
               g_currentExceptionFrame = local_54.previous;
               return 0;
@@ -139,9 +141,9 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
       return 0;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_dest.cpp",0x95,0,iVar3,"%s",
+    iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_dest.cpp",0x95,0,iVar3,"%s",
                                "STDestC::GetMessage");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_dest.cpp",0x97);

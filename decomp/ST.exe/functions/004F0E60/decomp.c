@@ -9,18 +9,19 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
 
 {
   int *piVar1;
-  BldObjPanelTy *pBVar3;
-  int iVar4;
-  uint uVar5;
+  int iVar2;
+  BldObjPanelTy *pBVar4;
+  int iVar5;
+  uint uVar6;
   int errorCode;
-  byte *pbVar6;
+  BITMAPINFO *pBVar7;
   int iVar7;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar8;
   InternalExceptionFrame local_5c;
   int local_18;
   BldObjPanelTy *local_14;
   int local_10;
-  ushort *local_c;
+  BITMAPINFO *local_c;
   Global_sub_00526BA0_param_1Enum *local_8;
 
   piVar1 = param_1->field_0018;
@@ -31,18 +32,18 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
   else {
     local_10 = piVar1[1] - this->field_0044;
   }
-  uVar5 = this->field_0199 + -0xc0af + param_1->field_0010;
-  iVar7 = (&this->field_027E)[(byte)this->field_0278];
-  if ((iVar7 == 0) || (*(uint *)(iVar7 + 0xc) <= uVar5)) {
+  uVar6 = this->field_0199 + -0xc0af + param_1->field_0010;
+  iVar2 = (&this->field_027E)[(byte)this->field_0278];
+  if ((iVar2 == 0) || (*(uint *)(iVar2 + 0xc) <= uVar6)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_00526BA0_param_1Enum *)
-              (*(int *)(iVar7 + 8) * uVar5 + *(int *)(iVar7 + 0x1c));
+              (*(int *)(iVar2 + 8) * uVar6 + *(int *)(iVar2 + 0x1c));
   }
   local_14 = this;
   if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {
-    local_c = this->field_027A;
+    local_c = (BITMAPINFO *)this->field_027A;
   }
   else {
     if ((char)local_8[2] == 0) {
@@ -51,25 +52,25 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
     else {
       pAVar8 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0188;
     }
-    uVar5 = thunk_FUN_00526ba0(*local_8,STField<byte>(local_8,9));
-    local_c = (ushort *)FUN_0070b3a0(pAVar8,uVar5);
+    uVar6 = thunk_FUN_00526ba0(*local_8,STField<byte>(local_8,9));
+    local_c = FUN_0070b3a0(pAVar8,uVar6);
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
-  iVar4 = local_10;
-  pBVar3 = local_14;
-  iVar7 = local_18;
+  iVar5 = local_10;
+  pBVar4 = local_14;
+  iVar2 = local_18;
   if (errorCode == 0) {
     DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_18,local_10,'\x01',
            (byte *)local_c);
     if ((param_1->field_0014 == 3) && (local_8 != nullptr)) {
-      pbVar6 = (byte *)FUN_0070b3a0(pBVar3->field_0190,9 - (uint)((char)local_8[2] != 0));
-      DibPut((RecoveredSourceFamily_dibcopy *)pBVar3->field_0068,iVar7,iVar4,'\x06',pbVar6);
+      pBVar7 = FUN_0070b3a0(pBVar4->field_0190,9 - (uint)((char)local_8[2] != 0));
+      DibPut((RecoveredSourceFamily_dibcopy *)pBVar4->field_0068,iVar2,iVar5,'\x06',(byte *)pBVar7);
     }
     Library::DKW::DDX::FUN_006b3640
-              ((int *)g_ddxContext_008075A8,pBVar3->field_0060,0xffffffff,pBVar3->field_003C,
-               pBVar3->field_0044);
+              ((int *)g_ddxContext_008075A8,pBVar4->field_0060,0xffffffff,pBVar4->field_003C,
+               pBVar4->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }

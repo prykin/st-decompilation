@@ -15,17 +15,19 @@
 void __thiscall FSGSTy::PaintLadder(FSGSTy *this)
 
 {
-  FSGSTy *pFVar2;
-  StartServTy *pSVar3;
+  int iVar2;
+  FSGSTy *pFVar3;
+  StartServTy *pSVar4;
   int iVar4;
   uint uVar5;
   tm *ptVar6;
+  int iVar6;
   int iVar7;
   StartServTy *this_00;
   uint uVar8;
   StartServTy *this_01;
   int *piVar9;
-  uint *puVar10;
+  int *piVar10;
   InternalExceptionFrame local_8c;
   StartServTy local_48 [52];
   void *local_14;
@@ -42,48 +44,48 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this)
     iVar4 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
     if (iVar4 == 0) {
       FUN_006b5f80((int *)g_ddxContext_008075A8,0x22,0x5e,0x2e1,0x175);
-      pFVar2 = local_10;
+      pFVar3 = local_10;
       PutDDXClip(0x18a,0x90,0x168,0x32,100,(byte *)0x19,'\x01',local_10->field_1E92);
-      wsprintfA((LPSTR)local_48,"%6d_:_%6d",pFVar2->field_1EDF,
-                (pFVar2->field_1EE3 - 1) + pFVar2->field_1EDF);
+      wsprintfA((LPSTR)local_48,"%6d_:_%6d",pFVar3->field_1EDF,
+                (pFVar3->field_1EE3 - 1) + pFVar3->field_1EDF);
       StartServTy::WrTextDDX
-                (local_48,0,0x18b,0x91,0x62,0x17,(uint *)local_48,0xffffffff,0xffffffff,
-                 (ccFntTy *)pFVar2->field_1A7F,0);
-      PutDDXClip(0x22,0xd6,0,0x78,0x2e1,(byte *)0xfd,'\x01',pFVar2->field_1E92);
-      if (pFVar2->field_1EE3 != 0) {
+                (local_48,0,0x18b,0x91,0x62,0x17,(char *)local_48,0xffffffff,0xffffffff,
+                 (ccFntTy *)pFVar3->field_1A7F,0);
+      PutDDXClip(0x22,0xd6,0,0x78,0x2e1,(byte *)0xfd,'\x01',pFVar3->field_1E92);
+      if (pFVar3->field_1EE3 != 0) {
         local_8 = (StartServTy *)0xdb;
         piVar9 = (int *)((int)local_14 + 0xc);
         local_c = 0;
         do {
-          wsprintfA((LPSTR)local_48,"%6d",pFVar2->field_1EDF + local_c);
+          wsprintfA((LPSTR)local_48,"%6d",pFVar3->field_1EDF + local_c);
           StartServTy::WrTextDDX
-                    (local_48,0,0x23,(int)local_8,0x2b,0x10,(uint *)local_48,0xffffffff,0xffffffff,
-                     (ccFntTy *)pFVar2->field_1A7F,0);
+                    (local_48,0,0x23,(int)local_8,0x2b,0x10,(char *)local_48,0xffffffff,0xffffffff,
+                     (ccFntTy *)pFVar3->field_1A7F,0);
           StartServTy::WrTextDDX
-                    (local_8,0,0x50,(int)local_8,0xe9,0x10,(uint *)(piVar9 + 2),0,0xffffffff,
-                     pFVar2->field_1A73,2);
-          iVar4 = -1;
-          puVar10 = (uint *)(piVar9 + 2);
+                    (local_8,0,0x50,(int)local_8,0xe9,0x10,(char *)(piVar9 + 2),0,0xffffffff,
+                     pFVar3->field_1A73,2);
+          iVar7 = -1;
+          piVar10 = piVar9 + 2;
           do {
-            if (iVar4 == 0) break;
-            iVar4 = iVar4 + -1;
-            uVar5 = *puVar10;
-            puVar10 = (uint *)((int)puVar10 + 1);
-          } while ((char)uVar5 != '\0');
-          if (iVar4 != -2) {
+            if (iVar7 == 0) break;
+            iVar7 = iVar7 + -1;
+            iVar2 = *piVar10;
+            piVar10 = (int *)((int)piVar10 + 1);
+          } while ((char)iVar2 != '\0');
+          if (iVar7 != -2) {
             wsprintfA((LPSTR)local_48,"%6d",piVar9[1]);
-            pSVar3 = local_8;
+            pSVar4 = local_8;
             StartServTy::WrTextDDX
-                      (pFVar2->field_1A7F,0,0x13b,(int)local_8,0x44,0x10,(uint *)local_48,0xffffffff
-                       ,0xffffffff,(ccFntTy *)pFVar2->field_1A7F,0);
+                      (pFVar3->field_1A7F,0,0x13b,(int)local_8,0x44,0x10,(char *)local_48,0xffffffff
+                       ,0xffffffff,(ccFntTy *)pFVar3->field_1A7F,0);
             wsprintfA((LPSTR)local_48,"%6d_:_%6d_:_%6d",piVar9[-2],piVar9[-1],*piVar9);
             StartServTy::WrTextDDX
-                      (pFVar2->field_1A7F,0,0x181,(int)pSVar3,0x8f,0x10,(uint *)local_48,0xffffffff,
-                       0xffffffff,(ccFntTy *)pFVar2->field_1A7F,0);
+                      (pFVar3->field_1A7F,0,0x181,(int)pSVar4,0x8f,0x10,(char *)local_48,0xffffffff,
+                       0xffffffff,(ccFntTy *)pFVar3->field_1A7F,0);
             wsprintfA((LPSTR)local_48,"%6d",*piVar9 + piVar9[-1] + piVar9[-2]);
             StartServTy::WrTextDDX
-                      (this_00,0,0x212,(int)pSVar3,0x44,0x10,(uint *)local_48,0xffffffff,0xffffffff,
-                       (ccFntTy *)pFVar2->field_1A7F,0);
+                      (this_00,0,0x212,(int)pSVar4,0x44,0x10,(char *)local_48,0xffffffff,0xffffffff,
+                       (ccFntTy *)pFVar3->field_1A7F,0);
             uVar8 = *piVar9 + piVar9[-2] + piVar9[-1];
             uVar5 = 0;
             if (uVar8 != 0) {
@@ -91,28 +93,28 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this)
             }
             wsprintfA((LPSTR)local_48,"%3d",uVar5);
             StartServTy::WrTextDDX
-                      (this_01,0,600,(int)pSVar3,0x30,0x10,(uint *)local_48,0xffffffff,0xffffffff,
-                       (ccFntTy *)pFVar2->field_1A7F,0);
+                      (this_01,0,600,(int)pSVar4,0x30,0x10,(char *)local_48,0xffffffff,0xffffffff,
+                       (ccFntTy *)pFVar3->field_1A7F,0);
             ptVar6 = Library::MSVCRT::_gmtime((time_t *)(piVar9 + -3));
             wsprintfA((LPSTR)local_48,"%2d_:_%2d_:_%4d",ptVar6->tm_mday,ptVar6->tm_mon + 1,
                       ptVar6->tm_year + 0x76c);
             StartServTy::WrTextDDX
-                      (pFVar2->field_1A7F,0,0x28a,(int)pSVar3,0x76,0x10,(uint *)local_48,0xffffffff,
-                       0xffffffff,(ccFntTy *)pFVar2->field_1A7F,0);
-            local_8 = pSVar3;
+                      (pFVar3->field_1A7F,0,0x28a,(int)pSVar4,0x76,0x10,(char *)local_48,0xffffffff,
+                       0xffffffff,(ccFntTy *)pFVar3->field_1A7F,0);
+            local_8 = pSVar4;
           }
           local_c = local_c + 1;
           piVar9 = piVar9 + 9;
           local_8 = local_8 + 0x10;
-        } while (local_c < pFVar2->field_1EE3);
+        } while (local_c < pFVar3->field_1EE3);
       }
       g_currentExceptionFrame = local_8c.previous;
       return;
     }
     g_currentExceptionFrame = local_8c.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x49b,0,iVar4,"%s"
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x49b,0,iVar4,"%s"
                                ,"FSGSTy::PaintLadder");
-    if (iVar7 != 0) {
+    if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x49b);

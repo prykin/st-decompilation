@@ -12,10 +12,11 @@ MReportTy::CreateBut
           undefined4 param_8)
 
 {
-  int iVar2;
-  undefined4 uVar3;
   int iVar4;
-  undefined4 *puVar5;
+  int iVar3;
+  undefined4 uVar2;
+  int iVar5;
+  undefined4 *puVar6;
   undefined4 local_1cc [4];
   undefined4 local_1bc;
   undefined4 local_1b8;
@@ -29,11 +30,11 @@ MReportTy::CreateBut
   MReportTy *local_c;
   undefined4 local_8;
 
-  puVar5 = local_1cc;
+  puVar6 = local_1cc;
   local_c = this;
-  for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
+  for (iVar5 = 0x5f; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *puVar6 = 0;
+    puVar6 = puVar6 + 1;
   }
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
@@ -58,9 +59,9 @@ MReportTy::CreateBut
     return local_8;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x29f,0,iVar4,"%s",
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x29f,0,iVar4,"%s",
                              "MReportTy::CreateBut");
-  if (iVar2 != 0) {
+  if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x29f);

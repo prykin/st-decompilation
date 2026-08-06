@@ -9,12 +9,14 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
 
 {
   StartSystemTy *this_00;
-  undefined4 *puVar2;
   int iVar3;
+  undefined4 *puVar2;
   int iVar4;
   int iVar5;
+  int iVar6;
+  int iVar7;
   SettMapMTy *this_01;
-  ccFntTy **ppcVar6;
+  ccFntTy **ppcVar8;
   ccFntTy *local_a80 [6];
   undefined4 local_a68;
   undefined4 local_a64;
@@ -39,14 +41,14 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
   undefined4 local_14;
   SettMapMTy *local_8;
 
-  ppcVar6 = local_a80;
+  ppcVar8 = local_a80;
   local_8 = this;
-  for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *ppcVar6 = nullptr;
-    ppcVar6 = ppcVar6 + 1;
+  for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *ppcVar8 = nullptr;
+    ppcVar8 = ppcVar8 + 1;
   }
   memset(local_60, 0, 0x58); /* compiler bulk-zero initialization */
-  iVar3 = 0;
+  iVar5 = 0;
   memset(local_1f4, 0, 0x150); /* compiler bulk-zero initialization */
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
@@ -54,23 +56,23 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
   this_01 = local_8;
   if (iVar3 == 0) {
     if (param_1 == '\0') {
-      iVar3 = 1;
-      iVar4 = 200;
+      iVar5 = 1;
+      iVar6 = 200;
       puVar2 = local_1f4 + 1;
-      iVar5 = 2;
+      iVar7 = 2;
       do {
-        puVar2[-1] = iVar3;
+        puVar2[-1] = iVar5;
         *puVar2 = 0;
         puVar2[4] = 0x7d;
         puVar2[5] = 0x16;
-        puVar2[2] = iVar4;
+        puVar2[2] = iVar6;
         puVar2[3] = 0x1db;
         this_01 = local_8;
-        iVar3 = iVar3 + 1;
-        iVar4 = iVar4 + 0x7d;
+        iVar5 = iVar5 + 1;
+        iVar6 = iVar6 + 0x7d;
         puVar2 = puVar2 + 0x1c;
-        iVar5 = iVar5 + -1;
-      } while (iVar5 != 0);
+        iVar7 = iVar7 + -1;
+      } while (iVar7 != 0);
       local_60[0] = 1;
       local_18 = local_1f4;
       local_14 = 1;
@@ -87,10 +89,10 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
     else {
       if (local_8->field_0x21e6 != '\0') {
         StartSystemTy::CreateChatView(g_startSystem_0081176C);
-        ppcVar6 = local_a80;
-        for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppcVar6 = nullptr;
-          ppcVar6 = ppcVar6 + 1;
+        ppcVar8 = local_a80;
+        for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+          *ppcVar8 = nullptr;
+          ppcVar8 = ppcVar8 + 1;
         }
         local_a80[0] = (ccFntTy *)0x1;
         local_a80[1] = (ccFntTy *)0x9;

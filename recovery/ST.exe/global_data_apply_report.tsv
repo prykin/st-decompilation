@@ -1,5 +1,6 @@
 address	status	proposed_name	detail
 00792CA0	disabled		apply flags are 0
+007C1890	disabled	g_text_007C1890	apply flags are 0
 007C2B14	disabled		apply flags are 0
 007C2B20	disabled		apply flags are 0
 007C3B5C	disabled	g_text_007C3B5C	apply flags are 0
@@ -23,27 +24,21 @@ address	status	proposed_name	detail
 007EE1AC	disabled		apply flags are 0
 007EE1B0	disabled		apply flags are 0
 007F4D04	disabled		apply flags are 0
-007F4D18	disabled		apply flags are 0
+007F4D6C	disabled		apply flags are 0
 007FA130	disabled	g_array_007FA130	apply flags are 0
 007FA154	disabled	g_array_007FA154	apply flags are 0
 007FA158	disabled	g_array_007FA158	apply flags are 0
 007FA15C	disabled	g_array_007FA15C	apply flags are 0
 007FA160	disabled	g_array_007FA160	apply flags are 0
 007FA164	disabled	g_array_007FA164	apply flags are 0
-007FA168	disabled		apply flags are 0
 007FB230	disabled		apply flags are 0
 007FB240	disabled		apply flags are 0
-007FB24C	disabled	g_value_007FB24C	apply flags are 0
 007FB278	disabled		apply flags are 0
 0080167C	disabled	g_bldBoatPanel_0080167C	apply flags are 0
 00801680	disabled	g_bldLabPanel_00801680	apply flags are 0
 00801684	disabled	g_bldObjPanel_00801684	apply flags are 0
 008016E8	disabled	g_researchPanel_008016E8	apply flags are 0
-00802AD0	disabled		apply flags are 0
-008030D4	disabled		apply flags are 0
 00803144	disabled		apply flags are 0
-00803380	disabled	g_value_00803380	apply flags are 0
-008033B4	disabled	g_value_008033B4	apply flags are 0
 00803408	disabled	g__Path_00803408	apply flags are 0
 00806724	disabled		apply flags are 0
 00806728	disabled	g_app_00806728	apply flags are 0
@@ -61,22 +56,21 @@ address	status	proposed_name	detail
 00808406	disabled		apply flags are 0
 0080874D	disabled		apply flags are 0
 008087B6	disabled		apply flags are 0
+00808AB0	disabled		apply flags are 0
 00808AF4	disabled		apply flags are 0
 00809960	disabled		apply flags are 0
 0080C3C3	disabled	g__Source_0080C3C3	apply flags are 0
 0080C522	disabled		apply flags are 0
 0080C632	disabled		apply flags are 0
 0080E303	disabled		apply flags are 0
-0080ED12	disabled	g_value_0080ED12	apply flags are 0
 0080ED16	disabled		apply flags are 0
 0080EF1E	disabled		apply flags are 0
 0080F22A	disabled		apply flags are 0
-00811718	disabled	g_value_00811718	apply flags are 0
-0081171C	disabled		apply flags are 0
 0081175C	disabled		apply flags are 0
 008117C0	disabled		apply flags are 0
 00811908	disabled		apply flags are 0
 00811914	disabled		apply flags are 0
+00811948	disabled		apply flags are 0
 00811970	disabled		apply flags are 0
 00811978	disabled		apply flags are 0
 00811990	disabled		apply flags are 0
@@ -84,10 +78,10 @@ address	status	proposed_name	detail
 00811C80	disabled		apply flags are 0
 00847D0C	disabled	g__Dest_00847D0C	apply flags are 0
 008489C8	disabled		apply flags are 0
+008489CC	disabled		apply flags are 0
 008489D0	disabled	g_cMf32_008489D0	apply flags are 0
 008489E0	disabled		apply flags are 0
 00848A04	disabled		apply flags are 0
-00853DD4	disabled		apply flags are 0
 00853DE4	disabled		apply flags are 0
 00854EE8	disabled	g_anonShape_006CEC40_BB23E716_00854EE8	apply flags are 0
 00854EF0	disabled		apply flags are 0

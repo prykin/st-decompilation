@@ -16,10 +16,12 @@ STAllPlayersC::GetTOBJImage
 
 {
   STAllPlayersC_GetTOBJImage_param_2Enum SVar2;
+  uint local_EAX_379;
   ushort *puVar3;
   uint uVar4;
   int iVar5;
-  Global_sub_004C2950_param_3Enum GVar7;
+  uint uVar5;
+  Global_sub_004C2950_param_3Enum GVar8;
   char local_154 [256];
   int local_54 [12];
   undefined4 local_24;
@@ -108,8 +110,9 @@ STAllPlayersC::GetTOBJImage
                           nullptr);
       local_24 = *(undefined4 *)(STField<int>(puVar3,0x21) + param_2 * 4);
     }
-    uVar4 = ST3DSMAPContext::sub_00709470(g_sT3DSMAPContext_00807598,local_54,0x11,1,10,0xff);
-    return uVar4;
+    local_EAX_379 =
+         ST3DSMAPContext::sub_00709470(g_sT3DSMAPContext_00807598,local_54,0x11,1,10,0xff);
+    return local_EAX_379;
   default:
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x324e,0,0,"%s",
                                "STAllPlayersC::GetTOBJImage unknown TOBJ-type");
@@ -185,14 +188,14 @@ STAllPlayersC::GetTOBJImage
   case CASE_73:
   case CASE_78:
     local_10 = local_54;
-    GVar7 = 0;
+    GVar8 = 0;
     do {
       local_c = nullptr;
       local_154[0] = '\0';
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
-      thunk_FUN_004c2950(param_1,SVar2,GVar7,&local_c,local_154,(undefined1 *)&local_8,&param_2);
+      thunk_FUN_004c2950(param_1,SVar2,GVar8,&local_c,local_154,(undefined1 *)&local_8,&param_2);
       if (local_154[0] != '\0') {
         puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                            (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
@@ -203,9 +206,9 @@ STAllPlayersC::GetTOBJImage
         }
         *local_10 = *(int *)(STField<int>(puVar3,0x21) + param_2 * 4);
       }
-      GVar7 = GVar7 + 1;
+      GVar8 = GVar8 + 1;
       local_10 = local_10 + 1;
-    } while ((int)GVar7 < 0x11);
+    } while ((int)GVar8 < 0x11);
     goto cf_common_exit_0044C477;
   case CASE_DC:
   case CASE_DD:

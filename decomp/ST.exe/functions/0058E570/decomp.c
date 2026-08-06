@@ -28,14 +28,23 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
   short sVar1;
   short sVar2;
   short sVar3;
-  int iVar5;
+  STGameObjC *this_01;
+  int iVar6;
   uint uVar7;
+  int local_EAX_51;
+  int iVar5;
+  int local_EAX_112;
+  int iVar8;
+  int local_EAX_443;
+  int local_EAX_514;
   int SVar9;
   STGameObjC *pSVar8;
   int local_EAX_1222;
   int local_EAX_1250;
   STGameObjC *pSVar9;
   STSharkC_field_0257State SVar10;
+  int local_EAX_1706;
+  int local_EAX_1797;
   int uVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
@@ -44,37 +53,36 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   AnonShape_0041AF40_F59F8577 *pAVar12;
-  int iVar13;
   AnonShape_0041AF40_F59F8577 local_30;
   uint local_10;
   undefined4 local_c;
   STGameObjC *local_8;
 
-  iVar5 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)this);
+  iVar6 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)this);
   this_00 = &this->field_01D5;
-  if (iVar5 == 0) {
-    iVar5 = 0;
+  if (iVar6 == 0) {
+    iVar6 = 0;
     uVar7 = thunk_FUN_004ad650((STT3DSprC *)this_00);
-    Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar7,iVar5);
+    Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar7,iVar6);
     iVar5 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
     uVar7 = (uint)(iVar5 == 1);
-    iVar5 = thunk_FUN_004ad650((STT3DSprC *)this_00);
-    FUN_006e6870((void *)this->field_0211,iVar5,uVar7);
+    local_EAX_112 = thunk_FUN_004ad650((STT3DSprC *)this_00);
+    FUN_006e6870((void *)this->field_0211,local_EAX_112,uVar7);
   }
   else {
-    iVar5 = 1;
+    iVar6 = 1;
     uVar7 = thunk_FUN_004ad650((STT3DSprC *)this_00);
-    Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar7,iVar5);
-    iVar13 = 1;
-    iVar5 = thunk_FUN_004ad650((STT3DSprC *)this_00);
-    FUN_006e6870((void *)this->field_0211,iVar5,iVar13);
+    Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar7,iVar6);
+    iVar6 = 1;
+    local_EAX_51 = thunk_FUN_004ad650((STT3DSprC *)this_00);
+    FUN_006e6870((void *)this->field_0211,local_EAX_51,iVar6);
   }
   if (0 < this->field_0241) {
     STT3DSprC::sub_004ACE30
               ((STT3DSprC *)this_00,PTR_00806724->entries[this->field_0241 + -1],
                (int)PTR_00806724->field_002C);
     if ((g_playSystem_00802A38->field_00E4 % 3 == 0) &&
-       (iVar5 = this->field_0241 + -1, this->field_0241 = iVar5, iVar5 < 1)) {
+       (iVar6 = this->field_0241 + -1, this->field_0241 = iVar6, iVar6 < 1)) {
       thunk_FUN_004aceb0(this_00,'\x0e');
     }
     goto cf_common_exit_0058E925;
@@ -82,17 +90,18 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
   if (g_playSystem_00802A38->field_00E4 <= this->field_024F) goto cf_common_exit_0058E925;
   switch(this->field_0257) {
   case CASE_0:
-    iVar5 = this->vfunc_20();
-    if (iVar5 == -1) {
-      iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x2dc,0,-5,"%s",
-                                 "stop move error");
-      if (iVar5 != 0) {
+    iVar6 = this->vfunc_20();
+    if (iVar6 == -1) {
+      local_EAX_1706 =
+           ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x2dc,0,-5,"%s",
+                              "stop move error");
+      if (local_EAX_1706 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException
                 (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_shark.cpp",0x2dd);
     }
-    else if (iVar5 == 1) {
+    else if (iVar6 == 1) {
       SVar10 = thunk_FUN_0058f1e0(this,(uint)(0x1d < this->field_0253));
       this->field_0257 = SVar10;
       this->field_0253 = this->field_0253 + 1;
@@ -102,18 +111,18 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
   case CASE_1:
   case CASE_2:
   case CASE_3:
-    iVar5 = (*this->vtable->MoveStep)((STGameObjC *)this,unaff_EDI);
-    if (iVar5 == 0) {
+    iVar6 = (*this->vtable->MoveStep)((STGameObjC *)this,unaff_EDI);
+    if (iVar6 == 0) {
 LAB_0058ea68:
       if (this->field_023D == 0) {
         if (this->field_0253 < 0x1f) {
-          if (iVar5 == 2) {
+          if (iVar6 == 2) {
             this->field_0253 = this->field_0253 + 1;
           }
         }
         else {
-          iVar5 = this->vfunc_20();
-          if (iVar5 == 1) {
+          iVar6 = this->vfunc_20();
+          if (iVar6 == 1) {
             this->field_0253 = 0;
             SVar10 = thunk_FUN_0058f1e0(this,1);
             this->field_0257 = SVar10;
@@ -127,24 +136,25 @@ LAB_0058ea68:
         if (((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) &&
              ((-1 < sVar3 && ((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)))))) &&
             (sVar2 < g_worldGrid.sizeZ)) &&
-           ((((pSVar8 = (STGameObjC *)
-                        STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0],
-              local_8 = pSVar8, pSVar8 != nullptr &&
+           ((((this_01 = (STGameObjC *)
+                         STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0],
+              local_8 = this_01, this_01 != nullptr &&
               (STFishC::sub_004162B0
-                         ((STFishC *)pSVar8,&this->field_0231,&this->field_0233,&this->field_0235),
+                         ((STFishC *)this_01,&this->field_0231,&this->field_0233,&this->field_0235),
               this->field_0047 == this->field_0231)) && (this->field_0049 == this->field_0233)) &&
             ((this->field_004B == this->field_0235 &&
              (pSVar9 = STAllPlayersC::GetObjPtr
                                  (g_allPlayers_007FA174,*(char *)&this->field_0249,this->field_024D,
-                                  CASE_1), pSVar8 == pSVar9)))))) goto LAB_0058e87e;
+                                  CASE_1), this_01 == pSVar9)))))) goto LAB_0058e87e;
       }
     }
     else {
-      if (iVar5 != 1) {
-        if (iVar5 != 2) {
-          iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x2d3,0,0,
-                                     "%s","STSharkC::LifeShark Error Move");
-          if (iVar5 == 0) {
+      if (iVar6 != 1) {
+        if (iVar6 != 2) {
+          local_EAX_514 =
+               ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x2d3,0,0,"%s",
+                                  "STSharkC::LifeShark Error Move");
+          if (local_EAX_514 == 0) {
             return;
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -181,12 +191,12 @@ LAB_0058ea68:
           (pSVar8 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,*(char *)&this->field_0249,this->field_024D,
                                CASE_1), local_8 != pSVar8)))) {
-        iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
+        iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
                           ((AnonReceiver_004167A0 *)this,this->field_0231,this->field_0233,
                            this->field_0235);
         thunk_FUN_00417ff0(this,8);
         thunk_FUN_00418010(this,6);
-        if (iVar5 != 0) {
+        if (iVar6 != 0) {
           local_EAX_1222 = sub_0058FF70(this);
           this->field_024F = local_EAX_1222;
           this->field_0257 = CASE_0;
@@ -194,11 +204,11 @@ LAB_0058ea68:
         break;
       }
       memset(&DAT_00811728, 0, 0x1c); /* compiler bulk-zero initialization */
-      iVar5 = 0;
+      iVar6 = 0;
 LAB_0058e87e:
       DAT_00811728 = 1000;
       pAVar12 = &local_30;
-      for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
+      for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
         *(undefined4 *)pAVar12 = 0;
         pAVar12 = (AnonShape_0041AF40_F59F8577 *)&pAVar12->field_0x4;
       }
@@ -210,8 +220,9 @@ LAB_0058e87e:
       local_30.field_0014 = &DAT_00811728;
       local_8->GetMessage(&local_30);
       this->field_023D = 0;
-      iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,8,PTR_00806764,"expshark",0x1d);
-      if (iVar5 != 0) {
+      iVar6 = STT3DSprC::LoadSequence
+                        ((STT3DSprC *)this_00,8,PTR_00806764,"expshark",CASE_1D);
+      if (iVar6 != 0) {
         return;
       }
       STT3DSprC::StartShow((STT3DSprC *)this_00,8,g_playSystem_00802A38->field_00E4);
@@ -221,24 +232,25 @@ LAB_0058e87e:
     }
     break;
   case CASE_4:
-    iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,'\b');
-    iVar13 = thunk_FUN_004ac910(this_00,'\b');
-    if (iVar13 == iVar5 + -1) {
+    iVar6 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,'\b');
+    iVar8 = thunk_FUN_004ac910(this_00,'\b');
+    if (iVar8 == iVar6 + -1) {
       this->field_0257 = CASE_7;
       STT3DSprC::StopShow((STT3DSprC *)this_00,8);
       sub_0058EFE0(this);
     }
     break;
   case CASE_5:
-    iVar5 = this->vfunc_20();
-    if (iVar5 == -1) {
-      iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x265,0,0,"%s",
-                                 "stop move error");
-      if (iVar5 != 0) {
+    iVar6 = this->vfunc_20();
+    if (iVar6 == -1) {
+      local_EAX_443 =
+           ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x265,0,0,"%s",
+                              "stop move error");
+      if (local_EAX_443 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
-    else if (iVar5 == 1) {
+    else if (iVar6 == 1) {
       thunk_FUN_00417ff0(this,10);
       thunk_FUN_00418010(this,8);
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
@@ -247,17 +259,18 @@ LAB_0058e87e:
     }
     break;
   case CASE_6:
-    iVar5 = thunk_FUN_00417830((AnonShape_00417830_9254190A *)this);
-    if (iVar5 == 0) {
+    iVar6 = thunk_FUN_00417830((AnonShape_00417830_9254190A *)this);
+    if (iVar6 == 0) {
       uVar6 = sub_0058FF70(this);
       this->field_0257 = CASE_0;
       this->field_024F = uVar6;
       this->field_0253 = 0xf;
       return;
     }
-    if (((iVar5 < 2) || (3 < iVar5)) &&
-       (iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x2f8,0,0,"%s",
-                                   "STSharkC::LifeShark Error Move"), iVar5 != 0)) {
+    if (((iVar6 < 2) || (3 < iVar6)) &&
+       (local_EAX_1797 =
+             ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x2f8,0,0,"%s",
+                                "STSharkC::LifeShark Error Move"), local_EAX_1797 != 0)) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   default:
@@ -265,12 +278,12 @@ LAB_0058e87e:
   }
 cf_common_exit_0058E925:
   if ((this->field_0257 != CASE_4) && (this->field_0257 != CASE_7)) {
-    iVar5 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
+    iVar6 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
     uVar7 = g_playSystem_00802A38->field_00E4 % 0x1e;
-    local_10 = uVar7 + (iVar5 / 3) * 0x1e;
+    local_10 = uVar7 + (iVar6 / 3) * 0x1e;
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_00,'\x0e',
-               uVar7 + (((iVar5 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0x1e);
+               uVar7 + (((iVar6 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0x1e);
     STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',local_10);
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
   }

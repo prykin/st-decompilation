@@ -4,152 +4,155 @@
 int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 param_3)
 
 {
-  int iVar1;
-  int iVar2;
   int iVar3;
-  uint uVar4;
+  int iVar4;
+  int iVar2;
   int iVar5;
-  int iVar6;
-  undefined4 uVar7;
+  uint uVar6;
+  int iVar7;
+  DWORD DVar8;
+  int iVar1;
+  int iVar9;
+  undefined4 uVar10;
   undefined2 local_8;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar6 = *(short *)(param_1->field_0008 + 0x16) + -0x10;
+  iVar9 = *(short *)(param_1->field_0008 + 0x16) + -0x10;
   *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + -1;
-  iVar3 = param_1->field_000C;
-  iVar1 = *(int *)(iVar3 + 0x1c);
-  iVar5 = *(int *)(iVar3 + 0x44 + iVar1 * 8);
-  iVar1 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,
-                       *(undefined4 *)(iVar3 + 0x40 + iVar1 * 8),iVar1);
+  iVar5 = param_1->field_000C;
+  iVar4 = *(int *)(iVar5 + 0x1c);
+  iVar7 = *(int *)(iVar5 + 0x44 + iVar4 * 8);
+  iVar4 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,
+                       *(undefined4 *)(iVar5 + 0x40 + iVar4 * 8),iVar4);
   *(uint *)(param_1->field_0008 + 8) = *(uint *)(param_1->field_0008 + 8) | 0x10;
-  iVar2 = FUN_00757450(param_1,iVar5);
-  iVar3 = param_1->field_000C;
-  if (iVar2 < *(short *)(iVar1 + 8)) {
-    if (*(short *)(iVar3 + 0x34) == 0) {
+  iVar2 = FUN_00757450(param_1,iVar7);
+  iVar5 = param_1->field_000C;
+  if (iVar2 < *(short *)(iVar4 + 8)) {
+    if (*(short *)(iVar5 + 0x34) == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar3 = (**(code **)(iVar3 + 8))(iVar2 + 0x18 + iVar1);
+      iVar5 = (**(code **)(iVar5 + 8))(iVar2 + 0x18 + iVar4);
     }
     else {
-      iVar3 = (int)*(short *)(iVar3 + 0x34);
+      iVar5 = (int)*(short *)(iVar5 + 0x34);
     }
-    if (iVar3 + 8 + param_2 < iVar6) {
-      uVar4 = FUN_00757530((AnonShape_00757530_EEED7D69 *)param_1,1,
-                           (undefined4 *)(iVar2 + 0x10 + iVar1));
-      if (uVar4 == 0) {
+    if (iVar5 + 8 + param_2 < iVar9) {
+      uVar6 = FUN_00757530((AnonShape_00757530_EEED7D69 *)param_1,1,
+                           (undefined4 *)(iVar2 + 0x10 + iVar4));
+      if (uVar6 == 0) {
         return -2;
       }
-      iVar3 = param_1->field_000C;
-      uVar7 = *(undefined4 *)(*(int *)(iVar3 + 0x44 + *(int *)(iVar3 + 0x1c) * 8) + 0x10 + iVar1);
-      *(int *)(iVar3 + 0x1c) = *(int *)(iVar3 + 0x1c) + 1;
+      iVar5 = param_1->field_000C;
+      uVar10 = *(undefined4 *)(*(int *)(iVar5 + 0x44 + *(int *)(iVar5 + 0x1c) * 8) + 0x10 + iVar4);
+      *(int *)(iVar5 + 0x1c) = *(int *)(iVar5 + 0x1c) + 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar1 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,uVar7,
+      iVar4 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,uVar10,
                            *(int *)(param_1->field_000C + 0x1c));
-      iVar3 = param_1->field_0010;
+      iVar5 = param_1->field_0010;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar5 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
+      iVar7 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
                            *(int *)(param_1->field_000C + 0x1c));
-      if ((iVar6 <= (int)((int)*(short *)(iVar1 + 8) + (int)*(short *)(iVar5 + 8) + uVar4)) &&
-         ((int)*(short *)(iVar1 + 8) <= (int)((int)*(short *)(iVar5 + 8) + uVar4))) {
+      if ((iVar9 <= (int)((int)*(short *)(iVar4 + 8) + (int)*(short *)(iVar7 + 8) + uVar6)) &&
+         ((int)*(short *)(iVar4 + 8) <= (int)((int)*(short *)(iVar7 + 8) + uVar6))) {
         return 0;
       }
-      *(undefined4 *)param_1->field_001C = *(undefined4 *)(iVar1 + 4);
-      FUN_007574c0((AnonShape_00753C80_4C8E695D *)param_1,iVar5,(uint *)param_1->field_001C,
-                   (int)*(short *)(iVar5 + 8));
-      if ((int)*(short *)(iVar1 + 8) + (int)*(short *)(iVar5 + 8) < iVar6) {
+      *(undefined4 *)param_1->field_001C = *(undefined4 *)(iVar4 + 4);
+      FUN_007574c0((AnonShape_00753C80_4C8E695D *)param_1,iVar7,(uint *)param_1->field_001C,
+                   (int)*(short *)(iVar7 + 8));
+      if ((int)*(short *)(iVar4 + 8) + (int)*(short *)(iVar7 + 8) < iVar9) {
         Library::MSVCRT::FUN_0072da70
-                  ((undefined4 *)(*(short *)(iVar5 + 8) + 0x10 + iVar5),
-                   (AnonPointee_TLOBaseTy_0607 *)(iVar1 + 0x10),(int)*(short *)(iVar1 + 8));
-        *(short *)(iVar5 + 8) = *(short *)(iVar5 + 8) + *(short *)(iVar1 + 8);
-        iVar3 = FUN_00757670((AnonShape_00757670_86D3B9A7 *)param_1,iVar3);
-        if (iVar3 < 0) {
-          return iVar3;
+                  ((undefined4 *)(*(short *)(iVar7 + 8) + 0x10 + iVar7),
+                   (AnonPointee_TLOBaseTy_0607 *)(iVar4 + 0x10),(int)*(short *)(iVar4 + 8));
+        *(short *)(iVar7 + 8) = *(short *)(iVar7 + 8) + *(short *)(iVar4 + 8);
+        DVar8 = FUN_00757670((AnonShape_00757670_86D3B9A7 *)param_1,iVar5);
+        if ((int)DVar8 < 0) {
+          return DVar8;
         }
         *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + -1;
         return 1;
       }
-      uVar4 = FUN_00757530((AnonShape_00757530_EEED7D69 *)param_1,1,(undefined4 *)(iVar1 + 0x10));
-      if (uVar4 == 0) {
+      uVar6 = FUN_00757530((AnonShape_00757530_EEED7D69 *)param_1,1,(undefined4 *)(iVar4 + 0x10));
+      if (uVar6 == 0) {
         return -2;
       }
       Library::MSVCRT::FUN_0072da70
-                ((undefined4 *)(iVar1 + 0x10),(AnonPointee_TLOBaseTy_0607 *)(iVar1 + 0x10 + uVar4),
-                 (int)*(short *)(iVar1 + 8) - uVar4);
-      *(short *)(iVar1 + 8) = *(short *)(iVar1 + 8) - (short)uVar4;
-      *(undefined4 *)(iVar1 + 4) = *(undefined4 *)param_1->field_001C;
+                ((undefined4 *)(iVar4 + 0x10),(AnonPointee_TLOBaseTy_0607 *)(iVar4 + 0x10 + uVar6),
+                 (int)*(short *)(iVar4 + 8) - uVar6);
+      *(short *)(iVar4 + 8) = *(short *)(iVar4 + 8) - (short)uVar6;
+      *(undefined4 *)(iVar4 + 4) = *(undefined4 *)param_1->field_001C;
       *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + -1;
-      iVar3 = FUN_00755da0((uint)param_1,(undefined4 *)param_1->field_001C);
-      if (iVar3 != 0) {
-        return iVar3;
+      uVar6 = FUN_00755da0((uint)param_1,(undefined4 *)param_1->field_001C);
+      if (uVar6 != 0) {
+        return uVar6;
       }
       return 0;
     }
   }
   else {
-    if (*(short *)(iVar3 + 0x34) == 0) {
+    if (*(short *)(iVar5 + 0x34) == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar3 = (**(code **)(iVar3 + 8))
-                        (*(int *)(iVar3 + 0x44 + *(int *)(iVar3 + 0x1c) * 8) + 0x18 + iVar1);
+      iVar5 = (**(code **)(iVar5 + 8))
+                        (*(int *)(iVar5 + 0x44 + *(int *)(iVar5 + 0x1c) * 8) + 0x18 + iVar4);
     }
     else {
-      iVar3 = (int)*(short *)(iVar3 + 0x34);
+      iVar5 = (int)*(short *)(iVar5 + 0x34);
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if ((iVar3 + 8 + param_2 < iVar6) || (param_2 == 0)) {
-      uVar4 = FUN_00757530((AnonShape_00757530_EEED7D69 *)param_1,1,
-                           (undefined4 *)(iVar1 + 0x10 + iVar5));
-      if (uVar4 == 0) {
+    if ((iVar5 + 8 + param_2 < iVar9) || (param_2 == 0)) {
+      uVar6 = FUN_00757530((AnonShape_00757530_EEED7D69 *)param_1,1,
+                           (undefined4 *)(iVar4 + 0x10 + iVar7));
+      if (uVar6 == 0) {
         return -2;
       }
-      FUN_007561d0((AnonShape_00753C80_4C8E695D *)param_1,iVar5);
-      iVar3 = param_1->field_000C;
-      iVar2 = *(int *)(iVar3 + 0x44 + *(int *)(iVar3 + 0x1c) * 8);
-      if (iVar2 == -1) {
-        uVar7 = *(undefined4 *)(iVar1 + 4);
+      FUN_007561d0((AnonShape_00753C80_4C8E695D *)param_1,iVar7);
+      iVar5 = param_1->field_000C;
+      iVar3 = *(int *)(iVar5 + 0x44 + *(int *)(iVar5 + 0x1c) * 8);
+      if (iVar3 == -1) {
+        uVar10 = *(undefined4 *)(iVar4 + 4);
       }
       else {
-        uVar7 = *(undefined4 *)(iVar2 + 0x10 + iVar1);
+        uVar10 = *(undefined4 *)(iVar3 + 0x10 + iVar4);
       }
-      *(int *)(iVar3 + 0x1c) = *(int *)(iVar3 + 0x1c) + 1;
+      *(int *)(iVar5 + 0x1c) = *(int *)(iVar5 + 0x1c) + 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar3 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,uVar7,
+      iVar5 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,uVar10,
                            *(int *)(param_1->field_000C + 0x1c));
-      iVar1 = FUN_00753c80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar3 + 8));
+      iVar1 = FUN_00753c80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar5 + 8));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar2 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
+      iVar4 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
                            *(int *)(param_1->field_000C + 0x1c));
-      if ((iVar6 <= (int)((int)*(short *)(iVar2 + 8) + (int)*(short *)(iVar3 + 8) + uVar4)) &&
-         ((int)*(short *)(iVar3 + 8) <= (int)((int)*(short *)(iVar2 + 8) + uVar4))) {
+      if ((iVar9 <= (int)((int)*(short *)(iVar4 + 8) + (int)*(short *)(iVar5 + 8) + uVar6)) &&
+         ((int)*(short *)(iVar5 + 8) <= (int)((int)*(short *)(iVar4 + 8) + uVar6))) {
         return 0;
       }
       *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) = 0;
-      *(undefined4 *)param_1->field_001C = *(undefined4 *)(iVar2 + 4);
-      FUN_007574c0((AnonShape_00753C80_4C8E695D *)param_1,iVar2,(uint *)param_1->field_001C,0);
-      if ((int)*(short *)(iVar2 + 8) + (int)*(short *)(iVar3 + 8) < iVar6) {
+      *(undefined4 *)param_1->field_001C = *(undefined4 *)(iVar4 + 4);
+      FUN_007574c0((AnonShape_00753C80_4C8E695D *)param_1,iVar4,(uint *)param_1->field_001C,0);
+      if ((int)*(short *)(iVar4 + 8) + (int)*(short *)(iVar5 + 8) < iVar9) {
         Library::MSVCRT::FUN_0072da70
-                  ((undefined4 *)(*(short *)(iVar3 + 8) + 0x10 + iVar3),
-                   (AnonPointee_TLOBaseTy_0607 *)(iVar2 + 0x10),(int)*(short *)(iVar2 + 8));
-        *(short *)(iVar3 + 8) = *(short *)(iVar3 + 8) + *(short *)(iVar2 + 8);
-        iVar3 = FUN_00757670((AnonShape_00757670_86D3B9A7 *)param_1,param_1->field_0010);
-        if (iVar3 < 0) {
-          return iVar3;
+                  ((undefined4 *)(*(short *)(iVar5 + 8) + 0x10 + iVar5),
+                   (AnonPointee_TLOBaseTy_0607 *)(iVar4 + 0x10),(int)*(short *)(iVar4 + 8));
+        *(short *)(iVar5 + 8) = *(short *)(iVar5 + 8) + *(short *)(iVar4 + 8);
+        DVar8 = FUN_00757670((AnonShape_00757670_86D3B9A7 *)param_1,param_1->field_0010);
+        if ((int)DVar8 < 0) {
+          return DVar8;
         }
         *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + -1;
-        *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) = iVar5;
+        *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) = iVar7;
         return 1;
       }
-      *(undefined4 *)(iVar2 + 4) = *(undefined4 *)(iVar3 + 0x10 + iVar1);
-      uVar4 = FUN_00757530((AnonShape_00757530_EEED7D69 *)param_1,1,
-                           (undefined4 *)(iVar3 + 0x10 + iVar1));
-      if (uVar4 == 0) {
+      *(undefined4 *)(iVar4 + 4) = *(undefined4 *)(iVar5 + 0x10 + iVar1);
+      uVar6 = FUN_00757530((AnonShape_00757530_EEED7D69 *)param_1,1,
+                           (undefined4 *)(iVar5 + 0x10 + iVar1));
+      if (uVar6 == 0) {
         return -2;
       }
       local_8 = (undefined2)iVar1;
-      *(undefined2 *)(iVar3 + 8) = local_8;
+      *(undefined2 *)(iVar5 + 8) = local_8;
       *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + -1;
-      *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) = iVar5;
-      iVar3 = FUN_00755da0((uint)param_1,(undefined4 *)param_1->field_001C);
-      if (iVar3 != 0) {
-        return iVar3;
+      *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) = iVar7;
+      uVar6 = FUN_00755da0((uint)param_1,(undefined4 *)param_1->field_001C);
+      if (uVar6 != 0) {
+        return uVar6;
       }
     }
   }

@@ -12,10 +12,11 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   char cVar1;
   SIDTy *this_00;
   int iVar3;
-  HANDLE pvVar4;
-  int iVar5;
-  uint uVar6;
-  uint uVar7;
+  HANDLE pvVar3;
+  int iVar6;
+  uint uVar4;
+  uint uVar5;
+  int iVar7;
   char *pcVar8;
   char *pcVar9;
   char *pcVar10;
@@ -85,6 +86,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   undefined4 local_54;
   InternalExceptionFrame local_50;
   SIDTy *local_8;
+  char *pcVar8_mg2;
 
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -93,9 +95,9 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x104,0,iVar3,"%s",
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x104,0,iVar3,"%s",
                                "SIDTy::CreateCtrls");
-    if (iVar5 != 0) {
+    if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\sid_obj.cpp",0x104);
@@ -105,54 +107,54 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
     FindCloseChangeNotification(local_8->field_1CC4);
     this_00->field_1CC4 = (HANDLE)0x0;
   }
-  uVar6 = 0xffffffff;
+  uVar4 = 0xffffffff;
   pcVar8 = &DAT_00807680;
   do {
     pcVar10 = pcVar8;
-    if (uVar6 == 0) break;
-    uVar6 = uVar6 - 1;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
     pcVar10 = pcVar8 + 1;
     cVar1 = *pcVar8;
     pcVar8 = pcVar10;
   } while (cVar1 != '\0');
-  uVar6 = ~uVar6;
-  pcVar8 = pcVar10 + -uVar6;
+  uVar4 = ~uVar4;
+  pcVar8 = pcVar10 + -uVar4;
   pcVar10 = &this_00->field_1CD4;
-  memmove(pcVar10, pcVar8, uVar6); /* compiler REP MOVS byte copy */
-  uVar7 = 0;
-  uVar6 = 0xffffffff;
-  pcVar8 = PTR_s_SAVEGAME__0079c19c;
+  memmove(pcVar10, pcVar8, uVar4); /* compiler REP MOVS byte copy */
+  uVar5 = 0;
+  uVar4 = 0xffffffff;
+  pcVar8_mg2 = PTR_s_SAVEGAME__0079c19c;
   do {
-    pcVar10 = pcVar8;
-    if (uVar6 == 0) break;
-    uVar6 = uVar6 - 1;
-    pcVar10 = pcVar8 + 1;
-    cVar1 = *pcVar8;
-    pcVar8 = pcVar10;
+    pcVar8 = pcVar8_mg2;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar8_mg2 + 1;
+    cVar1 = *pcVar8_mg2;
+    pcVar8_mg2 = pcVar8;
   } while (cVar1 != '\0');
-  uVar6 = ~uVar6;
-  iVar3 = -1;
-  pcVar8 = &this_00->field_1CD4;
+  uVar4 = ~uVar4;
+  iVar7 = -1;
+  pcVar10 = &this_00->field_1CD4;
   do {
-    pcVar9 = pcVar8;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    pcVar9 = pcVar8 + 1;
-    cVar1 = *pcVar8;
-    pcVar8 = pcVar9;
+    pcVar9 = pcVar10;
+    if (iVar7 == 0) break;
+    iVar7 = iVar7 + -1;
+    pcVar9 = pcVar10 + 1;
+    cVar1 = *pcVar10;
+    pcVar10 = pcVar9;
   } while (cVar1 != '\0');
-  pcVar8 = pcVar10 + -uVar6;
+  pcVar8 = pcVar8 + -uVar4;
   pcVar10 = pcVar9 + -1;
-  memmove(pcVar10, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+  memmove(pcVar10, pcVar8, uVar4); /* compiler REP MOVS byte copy */
   lpPathName = &this_00->field_1CD4;
   FUN_006b78c0(lpPathName,lpPathName);
-  pvVar4 = FindFirstChangeNotificationA(lpPathName,0,2);
-  this_00->field_1CC4 = pvVar4;
-  if (pvVar4 == (HANDLE)0xffffffff) {
+  pvVar3 = FindFirstChangeNotificationA(lpPathName,0,2);
+  this_00->field_1CC4 = pvVar3;
+  if (pvVar3 == (HANDLE)0xffffffff) {
     this_00->field_1CC4 = (HANDLE)0x0;
   }
   memset(local_524, 0, 0x4d4); /* compiler bulk-zero initialization */
-  iVar3 = 0;
+  iVar7 = 0;
   local_524[0] = 0;
   local_524[2] = 0xe4;
   local_524[3] = 0x1be;
@@ -217,7 +219,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   (*this_00->field_000C->vtable->CreateObject)
             ((SystemClassTy *)this_00->field_000C,7,this_00->field_1AF1,nullptr,local_524,0);
   ppcVar12 = local_db0;
-  for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
+  for (iVar7 = 0x223; iVar7 != 0; iVar7 = iVar7 + -1) {
     *ppcVar12 = nullptr;
     ppcVar12 = ppcVar12 + 1;
   }
@@ -240,10 +242,10 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_d24 = local_d64;
   (*this_00->field_000C->vtable->CreateObject)
             ((SystemClassTy *)this_00->field_000C,6,this_00->field_1AF1 + 1,nullptr,local_db0,1);
-  uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
-  this_00->field_1AF9[0] = uVar6;
-  uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
-  this_00->field_1AF9[1] = uVar6;
+  uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
+  this_00->field_1AF9[0] = uVar4;
+  uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
+  this_00->field_1AF9[1] = uVar4;
   PrepFiles(this_00);
   Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1CB4);
   if (this_00->field_1B05 != 0xffffffff) {

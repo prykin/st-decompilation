@@ -69,7 +69,7 @@ void __thiscall FSGSTy::sub_005A07F0(FSGSTy *this)
   }
   this->field_1EAA = nullptr;
   if (this->field_1E8E != 0) {
-    FreeAndNull((void **)&this->field_1E8E);
+    FreeAndNull(&this->field_1E8E);
   }
   if (this->field_1E92 != nullptr) {
     FreeAndNull(&this->field_1E92);

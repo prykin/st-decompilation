@@ -15,10 +15,12 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
   STMessageId SVar1;
   STJumpMineC *this_00;
   byte bVar3;
+  int local_EAX_35;
   int iVar4;
   int iVar5;
-  byte *puVar6;
+  int iVar6;
   byte *puVar7;
+  byte *puVar8;
   InternalExceptionFrame local_58;
   void *local_14;
   byte *local_10;
@@ -28,14 +30,14 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  local_EAX_35 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar4 != 0) {
+  if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_jump_mine.cpp",0xad,0,iVar4,
+    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_jump_mine.cpp",0xad,0,local_EAX_35,
                                "%s","STJumpMineC::GetMessage");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar4,0,"E:\\__titans\\nick\\to_jump_mine.cpp",0xaf);
+      RaiseInternalException(local_EAX_35,0,"E:\\__titans\\nick\\to_jump_mine.cpp",0xaf);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -69,13 +71,13 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_ID_CREATE) {
-      puVar6 = (byte *)((message->arg0).ptr);
-      if (puVar6[3] == 2) {
-        thunk_FUN_006193a0(local_8,puVar6);
-        puVar6 = (byte *)&this_00->field_0x20;
-        memset(puVar6, 0, 0x2d); /* compiler bulk-zero initialization */
-        puVar6 = (byte *)((byte *)puVar6 + 0x2c);
-        iVar4 = 0;
+      puVar7 = (byte *)((message->arg0).ptr);
+      if (puVar7[3] == 2) {
+        thunk_FUN_006193a0(local_8,puVar7);
+        puVar7 = (byte *)&this_00->field_0x20;
+        memset(puVar7, 0, 0x2d); /* compiler bulk-zero initialization */
+        puVar7 = (byte *)((byte *)puVar7 + 0x2c);
+        iVar6 = 0;
         this_00->field_001C = this_00->field_014C;
         if ((this_00->field_0150 != '\0') && (this_00->field_0093 != CASE_5)) {
           LoadImagJMine(this_00,1);
@@ -88,22 +90,22 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
         }
       }
       else {
-        puVar7 = (byte *)&local_8->field_0x4d;
-        memmove(puVar7, puVar6, 0x42); /* compiler REP MOVS byte copy */
+        puVar8 = (byte *)&local_8->field_0x4d;
+        memmove(puVar8, puVar7, 0x42); /* compiler REP MOVS byte copy */
         local_8->field_001C = DAT_00808754;
-        iVar4 = sub_006193E0(local_8);
-        if (iVar4 == 0) {
+        iVar6 = sub_006193E0(local_8);
+        if (iVar6 == 0) {
 LAB_00618ce0:
           sub_006192E0(this_00);
           g_currentExceptionFrame = local_58.previous;
           return 0;
         }
-        iVar4 = thunk_FUN_0061bdb0(this_00,CASE_0,this_00->field_00E7,this_00->field_00EB,
+        iVar6 = thunk_FUN_0061bdb0(this_00,CASE_0,this_00->field_00E7,this_00->field_00EB,
                                    this_00->field_00EF);
-        if (iVar4 == 0) {
-          iVar4 = thunk_FUN_0061bdb0(this_00,CASE_1,this_00->field_00E7,this_00->field_00EB,
+        if (iVar6 == 0) {
+          iVar6 = thunk_FUN_0061bdb0(this_00,CASE_1,this_00->field_00E7,this_00->field_00EB,
                                      this_00->field_00EF);
-          if (iVar4 == 0) goto LAB_00618ce0;
+          if (iVar6 == 0) goto LAB_00618ce0;
           this_00->field_0093 = CASE_1;
         }
         else {
@@ -137,8 +139,8 @@ LAB_00618ce0:
   }
   else if (SVar1 == MESS_ID_ALLCREATE) {
     if (((local_8->field_007D != 0) &&
-        (iVar4 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14), iVar4 != -4
+        (iVar6 = STPlaySystemC::sub_006E62D0
+                           (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14), iVar6 != -4
         )) && (this_00->field_007D = local_14, local_14 != nullptr)) {
       thunk_FUN_00617a20(local_14,this_00->field_008B,this_00->field_0018,this_00);
     }

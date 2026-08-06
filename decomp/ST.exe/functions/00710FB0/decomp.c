@@ -6,6 +6,8 @@ void __thiscall FUN_00710fb0(void *this,byte *param_1)
 {
   int iVar1;
   ushort uVar2;
+  uint uVar4;
+  uint local_EAX_233;
   uint uVar3;
   uint local_8;
 
@@ -21,24 +23,24 @@ void __thiscall FUN_00710fb0(void *this,byte *param_1)
     FUN_00710790(this);
   }
   uVar2 = STField<ushort>(this,0x70);
-  uVar3 = (uint)uVar2;
+  uVar4 = (uint)uVar2;
   iVar1 = STField<int>(this,0x9a);
-  if (*(short *)(iVar1 + (uVar3 + 0xb) * 10) != (short)local_8) {
+  if (*(short *)(iVar1 + (uVar4 + 0xb) * 10) != (short)local_8) {
     while( true ) {
-      uVar3 = uVar3 + 1;
-      if (*(ushort *)(iVar1 + 100) <= (ushort)uVar3) {
-        uVar3 = 0;
+      uVar4 = uVar4 + 1;
+      if (*(ushort *)(iVar1 + 100) <= (ushort)uVar4) {
+        uVar4 = 0;
       }
-      if ((short)uVar3 == STField<short>(this,0x70)) break;
-      if (*(short *)(iVar1 + ((uVar3 & 0xffff) + 0xb) * 10) == (short)local_8) {
-        STField<short>(this,0x70) = (short)uVar3;
+      if ((short)uVar4 == STField<short>(this,0x70)) break;
+      if (*(short *)(iVar1 + ((uVar4 & 0xffff) + 0xb) * 10) == (short)local_8) {
+        STField<short>(this,0x70) = (short)uVar4;
         return;
       }
     }
     if (STField<int>(this,0xa0) == 0) {
       if ((STField<byte>(this,0x18d) & 8) != 0) {
-        uVar3 = Library::Ourlib::MFCFNT::FUN_0070e030(this,local_8,0);
-        STField<ushort>(this,0x70) = (ushort)uVar3 & ((int)uVar3 < 1) - 1;
+        local_EAX_233 = Library::Ourlib::MFCFNT::FUN_0070e030(this,local_8,0);
+        STField<ushort>(this,0x70) = (ushort)local_EAX_233 & ((int)local_EAX_233 < 1) - 1;
         return;
       }
     }

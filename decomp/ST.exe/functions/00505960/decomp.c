@@ -14,12 +14,14 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
 {
   CPanelTy *pCVar2;
   int iVar3;
-  uint uVar4;
-  byte *pbVar5;
-  AnonShape_GLOBAL_0081175C_57F682DD *pAVar6;
-  byte bVar7;
-  uint uVar8;
+  uint uVar3;
+  BITMAPINFO *pBVar4;
   int iVar9;
+  AnonShape_GLOBAL_0081175C_57F682DD *pAVar5;
+  byte bVar6;
+  int iVar7;
+  uint uVar8;
+  int iVar10;
   InternalExceptionFrame local_70;
   uint local_2c;
   CPanelTy *local_28;
@@ -52,57 +54,58 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
   FUN_006b4170((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0,0x4b,0x52,0x27,0x32,0x3a);
   if (pCVar2->field_09D4 == '\x01') {
     local_20 = STReplaceLowByte((uint32_t)(local_20), (uint8_t)(4));
-    bVar7 = 3;
+    bVar6 = 3;
   }
   else {
     local_20 = (uint)STPiece<1,3>(local_20) << 8;
-    bVar7 = 4;
+    bVar6 = 4;
   }
-  local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar7));
-  if (bVar7 != 0) {
+  local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar6));
+  if (bVar6 != 0) {
     local_14 = 0;
     local_2c = local_20 & 0xff;
     local_1c = 0x54;
     local_18 = (AnonShape_00505960_269BEFC9 *)(&pCVar2->field_0C11 + local_2c * 6);
-    local_24 = (uint)bVar7;
+    local_24 = (uint)bVar6;
     do {
       if (*(CPanelTy_field_0C11State *)local_18 == CASE_0) {
-        uVar4 = 0;
+        uVar3 = 0;
       }
       else {
-        uVar4 = ((uint)local_18->field_0002 * 10) / (uint)local_18->field_0004;
+        uVar3 = ((uint)local_18->field_0002 * 10) / (uint)local_18->field_0004;
       }
-      pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,5);
-      DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0x74,local_1c,'\x01',pbVar5);
+      pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,5);
+      DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0x74,local_1c,'\x01',(byte *)pBVar4
+            );
       local_10 = local_10 & 0xffffff00;
-      if (uVar4 != 0) {
+      if (uVar3 != 0) {
         uVar8 = 0;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
           DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,uVar8 * 4 + 0x76,local_1c + 2,
-                 '\x01',pbVar5);
-          bVar7 = (byte)local_10 + 1;
-          local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar7));
-          uVar8 = (uint)bVar7;
-        } while (uVar8 < uVar4);
+                 '\x01',(byte *)pBVar4);
+          bVar6 = (byte)local_10 + 1;
+          local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar6));
+          uVar8 = (uint)bVar6;
+        } while (uVar8 < uVar3);
       }
       if ((byte)local_10 < 10) {
-        iVar9 = 10 - (local_10 & 0xff);
-        iVar3 = (local_10 & 0xff) * 4 + 0x76;
+        iVar10 = 10 - (local_10 & 0xff);
+        iVar7 = (local_10 & 0xff) * 4 + 0x76;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
-          DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,iVar3,local_1c + 2,'\x01',
-                 pbVar5);
-          iVar3 = iVar3 + 4;
-          iVar9 = iVar9 + -1;
-        } while (iVar9 != 0);
+          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+          DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,iVar7,local_1c + 2,'\x01',
+                 (byte *)pBVar4);
+          iVar7 = iVar7 + 4;
+          iVar10 = iVar10 + -1;
+        } while (iVar10 != 0);
       }
       wsprintfA(&pCVar2->field_01E1,"%3d",(uint)local_18->field_0002);
-      uVar4 = local_1c;
+      uVar3 = local_1c;
       ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0xa2,local_1c,0x15,0xc);
-      ccFntTy::WrStr(pCVar2->field_01B8,(uint *)&pCVar2->field_01E1,-3,-1,5);
+      ccFntTy::WrStr(pCVar2->field_01B8,&pCVar2->field_01E1,-3,-1,5);
       if ((char)local_20 == '\0') {
-        if ((int)uVar4 < 0x76) {
+        if ((int)uVar3 < 0x76) {
                     /* WARNING: Could not recover jumptable at 0x00505bca. Too many branches */
                     /* WARNING: Treating indirect jump as call */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -110,7 +113,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
           return;
         }
       }
-      else if ((int)uVar4 < 0x76) {
+      else if ((int)uVar3 < 0x76) {
                     /* WARNING: Could not recover jumptable at 0x00505b82. Too many branches */
                     /* WARNING: Treating indirect jump as call */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -118,19 +121,20 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         return;
       }
       if (*(char *)local_18 == '\0') {
-        pAVar6 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_0292;
+        pAVar5 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_0292;
       }
       else {
-        pAVar6 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_028E;
+        pAVar5 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_028E;
       }
-      pbVar5 = (byte *)FUN_0070b3a0(pAVar6,(-(uint)(*(char *)local_18 != '\0') & 0x14) + 0xb +
-                                           local_14 + local_2c);
-      if (pbVar5 != nullptr) {
-        DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,local_c,local_8,'\x06',pbVar5);
+      pBVar4 = FUN_0070b3a0(pAVar5,(-(uint)(*(char *)local_18 != '\0') & 0x14) + 0xb + local_14 +
+                                   local_2c);
+      if (pBVar4 != nullptr) {
+        DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,local_c,local_8,'\x06',
+               (byte *)pBVar4);
       }
       local_14 = local_14 + 1;
       local_18 = (AnonShape_00505960_269BEFC9 *)&local_18->field_0x6;
-      local_1c = uVar4 + 0xb;
+      local_1c = uVar3 + 0xb;
       local_24 = local_24 - 1;
     } while (local_24 != 0);
   }

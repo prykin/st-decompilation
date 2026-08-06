@@ -13,12 +13,13 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
   int iVar1;
   uint uVar2;
   int iVar3;
+  int iVar4;
   int local_1c;
   int local_18;
   int local_14;
   short local_10;
-  undefined2 local_e;
-  undefined2 local_c;
+  short local_e;
+  short local_c;
   short local_a;
   short local_8;
   short local_6;
@@ -63,12 +64,12 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
   iVar1 = this->field_027A;
   local_18 = (uVar2 >> 0x10) % (uint)(this->field_027E - local_18) + local_18;
   if (iVar1 < 0) {
-    iVar3 = this->field_001C;
+    iVar4 = this->field_001C;
   }
   else {
-    iVar3 = this->field_001C;
+    iVar4 = this->field_001C;
   }
-  uVar2 = iVar3 * 0x41c64e6d + 0x3039;
+  uVar2 = iVar4 * 0x41c64e6d + 0x3039;
   this->field_001C = uVar2;
   local_1c = 0;
   iVar1 = (uVar2 >> 0x10) % (uint)(this->field_0282 - iVar1) + iVar1;
@@ -102,23 +103,23 @@ LAB_005841dc:
           return 0;
         }
       }
-      iVar3 = local_18 - this->field_0047;
-      if (iVar3 < 1) break;
+      iVar4 = local_18 - this->field_0047;
+      if (iVar4 < 1) break;
       local_18 = local_18 + -1;
-      iVar3 = local_18;
+      iVar4 = local_18;
 joined_r0x00584297:
-      if (iVar3 < 0) {
+      if (iVar4 < 0) {
         return 0;
       }
     }
-    if (-1 < iVar3) {
-      iVar3 = iVar1 - this->field_0049;
-      if (0 < iVar3) {
+    if (-1 < iVar4) {
+      iVar4 = iVar1 - this->field_0049;
+      if (0 < iVar4) {
         iVar1 = iVar1 + -1;
-        iVar3 = iVar1;
+        iVar4 = iVar1;
         goto joined_r0x00584297;
       }
-      if (-1 < iVar3) {
+      if (-1 < iVar4) {
         return 0;
       }
       iVar1 = iVar1 + 1;

@@ -194,8 +194,18 @@ STGroupBoatC::sub_00498D20
 
 {
   DArrayTy *pDVar1;
-  undefined4 *puVar2;
+  DArrayTy *local_EAX_149;
+  DArrayTy *pDVar2;
+  undefined4 *puVar3;
+  DArrayTy *local_EAX_438;
+  DArrayTy *local_EAX_524;
+  DArrayTy *local_EAX_739;
+  DArrayTy *local_EAX_864;
+  DArrayTy *local_EAX_1484;
+  DArrayTy *local_EAX_1547;
+  DArrayTy *local_EAX_1610;
   DArrayTy *pDVar3;
+  DArrayTy *local_EAX_1739;
   int iVar4;
   DArrayTy **ppDVar5;
   dword *pdVar6;
@@ -223,9 +233,9 @@ STGroupBoatC::sub_00498D20
     if (this->field_00E7 == 0) {
       data = this->field_00EF;
       uVar7 = data->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,4,1);
+      local_EAX_149 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,4,1);
       uVar8 = 0;
-      this->field_00EF = pDVar3;
+      this->field_00EF = local_EAX_149;
       if (0 < (int)uVar7) {
         do {
           DArrayGetElement(data,uVar8,local_8);
@@ -248,9 +258,9 @@ STGroupBoatC::sub_00498D20
     if (this->field_015C == 0) {
       data = this->field_0160;
       uVar7 = data->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
+      local_EAX_739 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
       uVar8 = 0;
-      this->field_0160 = pDVar3;
+      this->field_0160 = local_EAX_739;
       if (0 < (int)uVar7) {
         do {
           DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
@@ -273,9 +283,9 @@ STGroupBoatC::sub_00498D20
     if (this->field_0164 == 0) {
       data = this->field_0168;
       uVar7 = data->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
+      local_EAX_864 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
       uVar8 = 0;
-      this->field_0168 = pDVar3;
+      this->field_0168 = local_EAX_864;
       if (0 < (int)uVar7) {
         do {
           DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
@@ -292,21 +302,21 @@ STGroupBoatC::sub_00498D20
     ppDVar5 = &this->field_0103;
     *ppDVar5 = (DArrayTy *)data->flags;
     this->field_0107 = data->iteratorIndex;
-    pDVar3 = *ppDVar5;
-    data = (DArrayTy *)pDVar3->count;
-    pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
-    *ppDVar5 = pDVar1;
+    pDVar1 = *ppDVar5;
+    data = (DArrayTy *)pDVar1->count;
+    pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
+    *ppDVar5 = pDVar2;
     uVar7 = 0;
     if (0 < (int)data) {
       do {
-        if (uVar7 < pDVar3->count) {
-          puVar2 = DArrayAt<undefined4>(pDVar3, uVar7);
+        if (uVar7 < pDVar1->count) {
+          puVar3 = DArrayAt<undefined4>(pDVar1, uVar7);
         }
         else {
-          puVar2 = nullptr;
+          puVar3 = nullptr;
         }
-        local_10 = *puVar2;
-        local_c = *(undefined2 *)(puVar2 + 1);
+        local_10 = *puVar3;
+        local_c = *(undefined2 *)(puVar3 + 1);
         Library::DKW::TBL::DArrayPut(*ppDVar5,uVar7,&local_10);
         uVar7 = uVar7 + 1;
       } while ((int)uVar7 < (int)data);
@@ -330,9 +340,9 @@ STGroupBoatC::sub_00498D20
     if (this->field_010B == 0) {
       data = this->field_010F;
       uVar7 = data->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
+      local_EAX_438 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
       uVar8 = 0;
-      this->field_010F = pDVar3;
+      this->field_010F = local_EAX_438;
       if (0 < (int)uVar7) {
         do {
           DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
@@ -344,9 +354,9 @@ STGroupBoatC::sub_00498D20
     if (this->field_0123 == 0) {
       data = this->field_0127;
       uVar7 = data->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
+      local_EAX_524 = Library::DKW::TBL::DArrayCreate(nullptr,uVar7,2,1);
       uVar8 = 0;
-      this->field_0127 = pDVar3;
+      this->field_0127 = local_EAX_524;
       if (0 < (int)uVar7) {
         do {
           DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
@@ -455,8 +465,8 @@ LAB_00499129:
     this->field_0061 = 1;
     this->field_0071 = 1;
     if (this->field_01CA == nullptr) {
-      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
-      this->field_01CA = pDVar3;
+      local_EAX_1484 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
+      this->field_01CA = local_EAX_1484;
     }
     Library::DKW::TBL::DArrayAppend(this->field_01CA,data);
     return;
@@ -464,8 +474,8 @@ LAB_00499129:
     this->field_0061 = 1;
     this->field_0075 = 1;
     if (this->field_01CE == nullptr) {
-      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
-      this->field_01CE = pDVar3;
+      local_EAX_1547 = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
+      this->field_01CE = local_EAX_1547;
     }
     Library::DKW::TBL::DArrayAppend(this->field_01CE,data);
     return;
@@ -473,8 +483,8 @@ LAB_00499129:
     this->field_0061 = 1;
     this->field_0079 = 1;
     if (*(int *)&this->field_0x1d2 == 0) {
-      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
-      *(DArrayTy **)&this->field_0x1d2 = pDVar3;
+      local_EAX_1610 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
+      *(DArrayTy **)&this->field_0x1d2 = local_EAX_1610;
     }
     Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&this->field_0x1d2,data);
     return;
@@ -491,8 +501,8 @@ LAB_00499129:
     this->field_0061 = 1;
     this->field_0081 = 1;
     if (this->field_01DA == nullptr) {
-      pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
-      this->field_01DA = pDVar3;
+      local_EAX_1739 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
+      this->field_01DA = local_EAX_1739;
     }
     Library::DKW::TBL::DArrayAppend(this->field_01DA,data);
   }

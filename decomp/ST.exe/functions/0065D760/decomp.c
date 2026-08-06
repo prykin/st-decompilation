@@ -19,6 +19,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
   AiFltClassTy *pAVar3;
   undefined2 uVar4;
   int iVar5;
+  int iVar7;
   DArrayTy *array;
   int iVar6;
   InternalExceptionFrame local_4c;
@@ -51,8 +52,8 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
   }
   if (g_allPlayers_007FA174 != nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar5 = (**(code **)(*(int *)objPtr + 0x2c))();
-    if ((iVar5 < 0x32) || (0x73 < iVar5)) {
+    iVar7 = (**(code **)(*(int *)objPtr + 0x2c))();
+    if ((iVar7 < 0x32) || (0x73 < iVar7)) {
       bVar2 = false;
     }
     else {
@@ -60,15 +61,15 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if (((bVar2) && (pAVar3->field_007B != 1)) ||
-       (iVar5 = (**(code **)(*(int *)objPtr + 0x2c))(), iVar5 == 0x78)) {
+       (iVar7 = (**(code **)(*(int *)objPtr + 0x2c))(), iVar7 == 0x78)) {
       RaiseInternalException
                 (-100,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x9b);
     }
     array = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
     Library::DKW::TBL::DArrayAppend(array,(void *)(objPtr + 0x32));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar5 = (**(code **)(*(int *)objPtr + 0x2c))();
-    if ((iVar5 < 1) || (0x28 < iVar5)) {
+    iVar7 = (**(code **)(*(int *)objPtr + 0x2c))();
+    if ((iVar7 < 1) || (0x28 < iVar7)) {
       bVar2 = false;
     }
     else {
@@ -84,7 +85,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
       *(undefined2 *)(objPtr + 0x81c) = uVar4;
     }
     STAllPlayersC::AddObjsToGroup
-              (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,pAVar3->field_007D,&array->flags,
+              (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,pAVar3->field_007D,array,
                nullptr);
     DArrayDestroy(array);
     g_currentExceptionFrame = local_4c.previous;

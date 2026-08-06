@@ -300,12 +300,13 @@ st::fn_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
   int iVar1;
   uint uVar2;
   int iVar3;
+  int iVar4;
   int local_1c;
   int local_18;
   int local_14;
   short local_10;
-  undefined2 local_e;
-  undefined2 local_c;
+  short local_e;
+  short local_c;
   short local_a;
   short local_8;
   short local_6;
@@ -350,12 +351,12 @@ st::fn_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
   iVar1 = this->field_027A;
   local_18 = (uVar2 >> 0x10) % (uint)(this->field_027E - local_18) + local_18;
   if (iVar1 < 0) {
-    iVar3 = this->field_001C;
+    iVar4 = this->field_001C;
   }
   else {
-    iVar3 = this->field_001C;
+    iVar4 = this->field_001C;
   }
-  uVar2 = iVar3 * 0x41c64e6d + 0x3039;
+  uVar2 = iVar4 * 0x41c64e6d + 0x3039;
   this->field_001C = uVar2;
   local_1c = 0;
   iVar1 = (uVar2 >> 0x10) % (uint)(this->field_0282 - iVar1) + iVar1;
@@ -389,23 +390,23 @@ LAB_005841dc:
           return 0;
         }
       }
-      iVar3 = local_18 - this->field_0047;
-      if (iVar3 < 1) break;
+      iVar4 = local_18 - this->field_0047;
+      if (iVar4 < 1) break;
       local_18 = local_18 + -1;
-      iVar3 = local_18;
+      iVar4 = local_18;
 joined_r0x00584297:
-      if (iVar3 < 0) {
+      if (iVar4 < 0) {
         return 0;
       }
     }
-    if (-1 < iVar3) {
-      iVar3 = iVar1 - this->field_0049;
-      if (0 < iVar3) {
+    if (-1 < iVar4) {
+      iVar4 = iVar1 - this->field_0049;
+      if (0 < iVar4) {
         iVar1 = iVar1 + -1;
-        iVar3 = iVar1;
+        iVar4 = iVar1;
         goto joined_r0x00584297;
       }
-      if (-1 < iVar3) {
+      if (-1 < iVar4) {
         return 0;
       }
       iVar1 = iVar1 + 1;
@@ -429,15 +430,15 @@ undefined4 __thiscall st::fn_00584380(STJellyGunC *this)
   undefined4 uVar2;
 
   this_00 = &this->field_01D5;
-  iVar1 = st::fn_00404183((STT3DSprC *)this_00,8,PTR_00806774,"Expb11",0x1d);
+  iVar1 = st::fn_00404183((STT3DSprC *)this_00,8,PTR_00806774,"Expb11",CASE_1D);
   if (iVar1 == 0) {
     st::fn_00405240((STT3DSprC *)this_00,8,g_playSystem_00802A38->field_00E4);
-    st::fn_00404183((STT3DSprC *)this_00,10,PTR_00806774,"expmask3",0x1d);
+    st::fn_00404183((STT3DSprC *)this_00,10,PTR_00806774,"expmask3",CASE_1D);
     st::fn_00403233((STT3DSprC *)this_00,'\n');
     st::fn_004044EE((STT3DSprC *)this_00,PTR_008032b8,0x10);
     st::fn_00405240((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
     this->vfunc_D8();
-    iVar1 = st::fn_00404183((STT3DSprC *)this_00,9,PTR_00806764,"bulb_n5",0x1d);
+    iVar1 = st::fn_00404183((STT3DSprC *)this_00,9,PTR_00806764,"bulb_n5",CASE_1D);
     if (iVar1 == 0) {
       st::fn_00402761((STT3DSprC *)this_00,9);
       uVar2 = st::fn_004022AC((STT3DSprC *)this_00,'\t');

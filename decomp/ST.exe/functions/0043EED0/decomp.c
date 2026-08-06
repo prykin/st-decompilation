@@ -21,8 +21,9 @@ STAllPlayersC::GetTOBJListFromDArr
   int iVar4;
   STGameObjC *this_01;
   STAllPlayersC_GetTOBJListFromDArr_param_3Enum SVar5;
+  int iVar7;
   int iVar6;
-  uint *puVar7;
+  uint *puVar8;
   InternalExceptionFrame local_5c;
   undefined1 local_18 [4];
   STAllPlayersC *local_14;
@@ -63,7 +64,7 @@ switchD_0043efb1_caseD_3a:
         }
         else {
           SVar5 = (*this_01->vtable->vfunc_2C)();
-          if ((SVar5 != param_3) || (iVar6 = this_01->vfunc_F8(), iVar6 == 0))
+          if ((SVar5 != param_3) || (iVar7 = this_01->vfunc_F8(), iVar7 == 0))
           goto switchD_0043efb1_caseD_3a;
           if (param_4 != 0) {
             switch(param_3) {
@@ -71,7 +72,7 @@ switchD_0043efb1_caseD_3a:
             case CASE_39:
             case CASE_4F:
             case CASE_5E:
-              if ((param_4 == 1) && (iVar6 = (*this_01->vtable->vfunc_88)(local_18), 0 < iVar6)) {
+              if ((param_4 == 1) && (iVar7 = (*this_01->vtable->vfunc_88)(local_18), 0 < iVar7)) {
                 bVar3 = true;
                 goto LAB_0043efd8;
               }
@@ -82,7 +83,7 @@ switchD_0043efb1_caseD_3a:
         }
 LAB_0043efd8:
         if ((bVar3) &&
-           ((param_5 == -1 || (iVar6 = this_01->vfunc_6C(), iVar6 == param_5)))) {
+           ((param_5 == -1 || (iVar7 = this_01->vfunc_6C(), iVar7 == param_5)))) {
           Library::DKW::TBL::DArrayAppend(local_c,&local_8);
         }
       }

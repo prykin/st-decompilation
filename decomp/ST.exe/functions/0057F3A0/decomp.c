@@ -15,17 +15,18 @@ undefined4 * __thiscall STDcResourcC::sub_0057F3A0(STDcResourcC *this,int param_
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;
+  char *pcVar5_mg0;
 
-  pcVar5 = PTR_s_rgold__d_007cb098;
+  pcVar5_mg0 = PTR_s_rgold__d_007cb098;
   if (param_1 == -1) {
     iVar4 = this->field_0259 / 999999;
     if (0 < iVar4) {
       iVar4 = 0;
     }
     param_1 = -iVar4;
-    pcVar5 = PTR_s_rgold_c0_007cb094;
+    pcVar5_mg0 = PTR_s_rgold_c0_007cb094;
   }
-  wsprintfA((LPSTR)&DAT_00811650,pcVar5,param_1);
+  wsprintfA((LPSTR)&DAT_00811650,pcVar5_mg0,param_1);
   if (param_2 == 0) {
     return &DAT_00811650;
   }

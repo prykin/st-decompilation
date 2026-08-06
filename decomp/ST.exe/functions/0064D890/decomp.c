@@ -15,7 +15,9 @@ AiEventClassTy::_CreateRCCont
 
 {
   bool bVar2;
+  int local_EAX_39;
   int iVar3;
+  int iVar5;
   int iVar4;
   InternalExceptionFrame local_6c;
   int local_28;
@@ -30,16 +32,16 @@ AiEventClassTy::_CreateRCCont
   local_28 = -1;
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
-  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
-  if (iVar3 != 0) {
+  local_EAX_39 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
+  if (local_EAX_39 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0xee,0,iVar3,"%s",
-                               "AiEventClassTy::_CreateRCCont");
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0xee,0,local_EAX_39,
+                               "%s","AiEventClassTy::_CreateRCCont");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0xef);
-    return iVar3;
+    RaiseInternalException(local_EAX_39,0,"E:\\__titans\\ai\\ai_event.cpp",0xef);
+    return local_EAX_39;
   }
   if (g_allPlayers_007FA174 != nullptr) {
     if ((((param_2 == 0xdd) || (param_2 == 0xde)) || (param_2 == 0xe2)) || (param_2 == 0xdc)) {
@@ -65,9 +67,9 @@ AiEventClassTy::_CreateRCCont
         local_c = local_14 + 1;
         local_8 = local_18 + 1;
       }
-      iVar3 = thunk_FUN_00675b10(local_c,local_8,(short)local_10,(short *)&local_c,(short *)&local_8
+      iVar5 = thunk_FUN_00675b10(local_c,local_8,(short)local_10,(short *)&local_c,(short *)&local_8
                                  ,(short *)&local_10,0xfe);
-      if (iVar3 != 0) {
+      if (iVar5 != 0) {
         if (param_7 == nullptr) {
           param_7 = &DAT_008016a0;
         }

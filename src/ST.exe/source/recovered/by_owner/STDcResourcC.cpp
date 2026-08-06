@@ -44,15 +44,16 @@ undefined4 * __thiscall st::fn_0057F2E0(STDcResourcC *this,int param_1,int param
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
+  char *pcVar6_mg0;
 
-  pcVar6 = PTR_s_rc276__d_007cb090;
+  pcVar6_mg0 = PTR_s_rc276__d_007cb090;
   if (param_1 == -1) {
     uVar2 = st::fn_004019FB(0xdd,this->field_0259);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     param_1 = CONCAT31(extraout_var,uVar2);
-    pcVar6 = PTR_s_rc276_c_d_007cb08c;
+    pcVar6_mg0 = PTR_s_rc276_c_d_007cb08c;
   }
-  st::external_00000080((LPSTR)&DAT_00811670,pcVar6,param_1);
+  st::external_00000080((LPSTR)&DAT_00811670,pcVar6_mg0,param_1);
   if (param_2 == 0) {
     return &DAT_00811670;
   }
@@ -99,17 +100,18 @@ undefined4 * __thiscall st::fn_0057F3A0(STDcResourcC *this,int param_1,int param
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;
+  char *pcVar5_mg0;
 
-  pcVar5 = PTR_s_rgold__d_007cb098;
+  pcVar5_mg0 = PTR_s_rgold__d_007cb098;
   if (param_1 == -1) {
     iVar4 = this->field_0259 / 999999;
     if (0 < iVar4) {
       iVar4 = 0;
     }
     param_1 = -iVar4;
-    pcVar5 = PTR_s_rgold_c0_007cb094;
+    pcVar5_mg0 = PTR_s_rgold_c0_007cb094;
   }
-  st::external_00000080((LPSTR)&DAT_00811650,pcVar5,param_1);
+  st::external_00000080((LPSTR)&DAT_00811650,pcVar5_mg0,param_1);
   if (param_2 == 0) {
     return &DAT_00811650;
   }
@@ -159,15 +161,16 @@ undefined4 * __thiscall st::fn_0057F470(STDcResourcC *this,int param_1,int param
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
+  char *pcVar6_mg0;
 
-  pcVar6 = PTR_s_rmeta__d_007cb0a0;
+  pcVar6_mg0 = PTR_s_rmeta__d_007cb0a0;
   if (param_1 == -1) {
     uVar2 = st::fn_004019FB(0xde,this->field_0259);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     param_1 = CONCAT31(extraout_var,uVar2);
-    pcVar6 = PTR_s_rmeta_c_d_007cb09c;
+    pcVar6_mg0 = PTR_s_rmeta_c_d_007cb09c;
   }
-  st::external_00000080((LPSTR)&DAT_00811690,pcVar6,param_1);
+  st::external_00000080((LPSTR)&DAT_00811690,pcVar6_mg0,param_1);
   if (param_2 == 0) {
     return &DAT_00811690;
   }
@@ -212,15 +215,15 @@ undefined4 __thiscall st::fn_005805C0(STDcResourcC *this)
   undefined4 *this_00;
   char *text;
   int iVar1;
-  byte bVar2;
+  Global_mfRLoad_param_2Enum GVar2;
 
-  bVar2 = 0x1d;
+  GVar2 = CASE_1D;
   this_00 = &this->field_01D5;
   text = st::fn_004035D5(this,this->field_025D);
-  iVar1 = st::fn_00404183((STT3DSprC *)this_00,0xe,PTR_00806764,text,bVar2);
+  iVar1 = st::fn_00404183((STT3DSprC *)this_00,0xe,PTR_00806764,text,GVar2);
   if (iVar1 == 0) {
     iVar1 = st::fn_00404183
-                      ((STT3DSprC *)this_00,0xd,PTR_00806764,PTR_s_termsd_007cb0b4,0x1d);
+                      ((STT3DSprC *)this_00,0xd,PTR_00806764,PTR_s_termsd_007cb0b4,CASE_1D);
     if (iVar1 == 0) {
       st::fn_00405240((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
       st::fn_004045D9

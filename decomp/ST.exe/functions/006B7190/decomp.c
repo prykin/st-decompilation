@@ -106,7 +106,7 @@ LAB_006b7373:
       }
     }
     else {
-      FreeAndNull((void **)(param_1 + 5));
+      FreeAndNull(param_1 + 5);
       FUN_006b98c0(piVar1 + 0x14,param_1);
       FreeAndNull(&param_1);
     }

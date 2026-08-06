@@ -11,7 +11,8 @@ void __thiscall FrmPanelTy::DoneFrmPanel(FrmPanelTy *this)
   FrmPanelTy *pFVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int iVar5;
+  uint *puVar6;
   InternalExceptionFrame local_4c;
   FrmPanelTy *local_8;
 
@@ -21,26 +22,26 @@ void __thiscall FrmPanelTy::DoneFrmPanel(FrmPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pFVar2 = local_8;
   if (iVar3 == 0) {
-    iVar3 = 8;
-    puVar5 = local_8->field_01B3;
+    iVar5 = 8;
+    puVar6 = local_8->field_01B3;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(pFVar2->field_000C,*puVar5);
-        *puVar5 = 0;
+      if (*puVar6 != 0) {
+        StartSystemTy::sub_006E56B0(pFVar2->field_000C,*puVar6);
+        *puVar6 = 0;
       }
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
-    puVar5 = pFVar2->field_01D3;
-    iVar3 = 4;
+      puVar6 = puVar6 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
+    puVar6 = pFVar2->field_01D3;
+    iVar5 = 4;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(pFVar2->field_000C,*puVar5);
-        *puVar5 = 0;
+      if (*puVar6 != 0) {
+        StartSystemTy::sub_006E56B0(pFVar2->field_000C,*puVar6);
+        *puVar6 = 0;
       }
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      puVar6 = puVar6 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     g_frmPanel_0080168C = nullptr;
     g_currentExceptionFrame = local_4c.previous;
     return;

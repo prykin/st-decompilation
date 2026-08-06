@@ -1,5 +1,6 @@
 // Apply reviewed global_data_proposals.tsv. Concrete data is preserved except for an
-// exact non-manual pointer global proven by a direct named-constructor result store.
+// exact non-manual pointer global proven by a direct named-constructor result store
+// or by an initialized word which points exactly at defined string data.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
 // @menupath Tools.Submarine Titans.Apply Global Data
@@ -104,6 +105,11 @@ public class STGlobalDataApplier extends GhidraScript {
                 unt(row.get("proposed_type")).startsWith("pointer:") &&
                 unt(row.get("reason")).contains(
                     "direct_constructor_store_overrides_non_manual_pointer_type");
+            boolean stringPointerOverride = baseline && !manualSymbol &&
+                data.getDataType() instanceof Pointer &&
+                "pointer:/char".equals(unt(row.get("proposed_type"))) &&
+                unt(row.get("reason")).contains(
+                    "exact_initialized_string_pointer_overrides_bare_pointer");
             List<String> details = new ArrayList<>();
             boolean changed = false, preserved = false, conflict = false;
             if (typeApply) {
@@ -114,15 +120,17 @@ public class STGlobalDataApplier extends GhidraScript {
                     details.add("type=conflict(missing proposed type)"); conflict = true;
                 }
                 else if (proposed.isEquivalent(data.getDataType())) details.add("type=unchanged");
-                else if (!baseline || concreteData && !scriptOwned && !constructorOverride) {
+                else if (!baseline || concreteData && !scriptOwned &&
+                        !constructorOverride && !stringPointerOverride) {
                     details.add("type=preserved(stale/concrete data)"); preserved = true;
                 }
-                else if (!safeRange(address, proposed.getLength(), constructorOverride)) {
+                else if (!safeRange(address, proposed.getLength(),
+                        constructorOverride || stringPointerOverride)) {
                     details.add("type=conflict(range contains non-default data or code)"); conflict = true;
                 }
                 else {
                     DataUtilities.createData(currentProgram, address, proposed, proposed.getLength(),
-                        scriptOwned || constructorOverride ?
+                        scriptOwned || constructorOverride || stringPointerOverride ?
                             DataUtilities.ClearDataMode.CLEAR_ALL_CONFLICT_DATA :
                             DataUtilities.ClearDataMode.CLEAR_ALL_UNDEFINED_CONFLICT_DATA);
                     data = listing.getDefinedDataAt(address);

@@ -12,7 +12,8 @@ void __thiscall FrmPanelTy::ShiftControls(FrmPanelTy *this,int param_1)
   short sVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int iVar5;
+  uint *puVar6;
   InternalExceptionFrame local_4c;
   FrmPanelTy *local_8;
 
@@ -30,24 +31,24 @@ void __thiscall FrmPanelTy::ShiftControls(FrmPanelTy *this,int param_1)
     iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (iVar3 == 0) {
-      iVar3 = 8;
-      puVar5 = local_8->field_01B3;
+      iVar5 = 8;
+      puVar6 = local_8->field_01B3;
       do {
-        if (*puVar5 != 0) {
-          FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
+        if (*puVar6 != 0) {
+          FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
         }
-        puVar5 = puVar5 + 1;
-        iVar3 = iVar3 + -1;
-      } while (iVar3 != 0);
-      puVar5 = this_00->field_01D3;
-      iVar3 = 4;
+        puVar6 = puVar6 + 1;
+        iVar5 = iVar5 + -1;
+      } while (iVar5 != 0);
+      puVar6 = this_00->field_01D3;
+      iVar5 = 4;
       do {
-        if (*puVar5 != 0) {
-          FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
+        if (*puVar6 != 0) {
+          FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
         }
-        puVar5 = puVar5 + 1;
-        iVar3 = iVar3 + -1;
-      } while (iVar3 != 0);
+        puVar6 = puVar6 + 1;
+        iVar5 = iVar5 + -1;
+      } while (iVar5 != 0);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

@@ -16,6 +16,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
   byte bVar1;
   byte bVar2;
   STWorldObject *this;
+  int iVar10;
   short sVar3;
   int iVar4;
   uint uVar5;
@@ -23,10 +24,10 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
   uint uVar7;
   int iVar8;
   short sVar9;
-  int iVar10;
-  short sVar11;
-  int iVar14;
-  bool bVar15;
+  int iVar11;
+  short sVar12;
+  int iVar15;
+  bool bVar16;
   int local_58 [5];
   uint *local_44;
   uint local_38 [3];
@@ -42,11 +43,11 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
   local_8 = 0;
   sVar9 = (short)(param_1 >> 0x1f);
   if (param_1 < 0) {
-    iVar10 = (short)(((short)(param_1 / 0xc9) + sVar9) -
+    iVar11 = (short)(((short)(param_1 / 0xc9) + sVar9) -
                     (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    iVar10 = (int)(short)(((short)(param_1 / 0xc9) + sVar9) -
+    iVar11 = (int)(short)(((short)(param_1 / 0xc9) + sVar9) -
                          (short)((longlong)param_1 * 0x28c1979 >> 0x3f));
   }
   sVar9 = (short)(param_2 >> 0x1f);
@@ -71,7 +72,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
   if ((int)uVar7 < 0) {
     uVar7 = 0;
   }
-  local_1c = iVar10 - param_4;
+  local_1c = iVar11 - param_4;
   if (local_1c < 0) {
     local_1c = 0;
   }
@@ -79,7 +80,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
   if (g_worldGrid.sizeY < local_18) {
     local_18 = (int)g_worldGrid.sizeY;
   }
-  local_14 = iVar10 + 1 + param_4;
+  local_14 = iVar11 + 1 + param_4;
   if (g_worldGrid.sizeX < local_14) {
     local_14 = (int)g_worldGrid.sizeX;
   }
@@ -97,30 +98,30 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
   local_2c = param_7;
   local_38[0] = param_9;
   local_38[1] = param_8;
-  iVar10 = local_c;
+  iVar11 = local_c;
   iVar4 = local_10;
   sVar9 = g_worldGrid.sizeX;
   if ((int)uVar7 < local_18) {
     do {
       iVar8 = iVar4;
-      iVar14 = local_1c;
+      iVar15 = local_1c;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_9 = uVar7;
       if (local_1c < local_14) {
         do {
           iVar4 = iVar8;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          _param_6 = iVar14;
-          if (iVar8 < iVar10) {
+          _param_6 = iVar15;
+          if (iVar8 < iVar11) {
             do {
-              sVar11 = (short)iVar14;
-              if (((((((-1 < sVar11) && (sVar11 < sVar9)) && (sVar3 = (short)uVar7, -1 < sVar3)) &&
+              sVar12 = (short)iVar15;
+              if (((((((-1 < sVar12) && (sVar12 < sVar9)) && (sVar3 = (short)uVar7, -1 < sVar3)) &&
                     ((sVar3 < g_worldGrid.sizeY && (sVar6 = (short)iVar8, -1 < sVar6)))) &&
                    ((sVar6 < g_worldGrid.sizeZ &&
                     ((this = g_worldGrid.cells
                              [(int)sVar3 * (int)sVar9 + (int)sVar6 * (int)g_worldGrid.planeStride +
-                              (int)sVar11].objects[0], this != nullptr &&
-                     (iVar10 = (*this->vtable[5].slots_00_28[0])(), uVar7 = param_9, iVar10 != 0))))
+                              (int)sVar12].objects[0], this != nullptr &&
+                     (iVar11 = (*this->vtable[5].slots_00_28[0])(), uVar7 = param_9, iVar11 != 0))))
                    )) && (this[1].vtable < (STWorldObjectVTable *)0x8)) &&
                  ((g_playSystem_00802A38 == nullptr ||
                   (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)))) {
@@ -130,37 +131,37 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
                 if (DAT_00808a8f == '\0') {
                   if (bVar1 == (byte)param_5) {
 LAB_006375fd:
-                    iVar10 = 0;
+                    iVar11 = 0;
                   }
                   else {
                     uVar5 = param_5 & 0xff;
                     bVar2 = g_playerRelationMatrix[bVar1][uVar5];
                     if ((bVar2 == 0) && (g_playerRelationMatrix[uVar5][bVar1] == 0)) {
-                      iVar10 = -2;
+                      iVar11 = -2;
                     }
                     else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar5][bVar1] == 0)) {
-                      iVar10 = -1;
+                      iVar11 = -1;
                     }
                     else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar5][bVar1] == 1)) {
-                      iVar10 = 1;
+                      iVar11 = 1;
                     }
                     else {
                       if ((bVar2 != 1) || (g_playerRelationMatrix[uVar5][bVar1] != 1))
                       goto LAB_006375fd;
-                      iVar10 = 2;
+                      iVar11 = 2;
                     }
                   }
-                  bVar15 = iVar10 < 0;
+                  bVar16 = iVar11 < 0;
                 }
                 else {
-                  bVar15 = g_bulkInitializedRecords_008087C7[param_5 & 0xff].field_0023 !=
+                  bVar16 = g_bulkInitializedRecords_008087C7[param_5 & 0xff].field_0023 !=
                            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
-                  iVar14 = _param_6;
+                  iVar15 = _param_6;
                 }
-                if ((bVar15) &&
-                   (iVar10 = (*this->vtable[5].slots_00_28[2])(), uVar7 = param_9, iVar10 != 0)) {
-                  thunk_FUN_00416270(this,(undefined2 *)((int)&param_4 + 2),
-                                     (int *)((int)&param_3 + 2),(int *)&stack0x0000001e);
+                if ((bVar16) &&
+                   (iVar11 = (*this->vtable[5].slots_00_28[2])(), uVar7 = param_9, iVar11 != 0)) {
+                  thunk_FUN_00416270(this,(uint *)((int)&param_4 + 2),(int *)((int)&param_3 + 2),
+                                     (short *)&stack0x0000001e);
                   iVar10 = FUN_006aced8((int)STPiece<2,2>(param_4),(int)STPiece<2,2>(param_3),param_1,param_2);
                   uVar7 = param_9;
                   if (iVar10 < 0x28b) {
@@ -172,19 +173,19 @@ LAB_006375fd:
                     (*this->vtable->slots_00_28[0])(local_58);
                     local_8 = local_8 + 1;
                     uVar7 = param_9;
-                    iVar14 = _param_6;
+                    iVar15 = _param_6;
                   }
                 }
               }
               iVar8 = iVar8 + 1;
-              iVar10 = local_c;
+              iVar11 = local_c;
               iVar4 = local_10;
               sVar9 = g_worldGrid.sizeX;
             } while (iVar8 < local_c);
           }
-          iVar14 = iVar14 + 1;
+          iVar15 = iVar15 + 1;
           iVar8 = iVar4;
-        } while (iVar14 < local_14);
+        } while (iVar15 < local_14);
       }
       uVar7 = uVar7 + 1;
     } while ((int)uVar7 < local_18);

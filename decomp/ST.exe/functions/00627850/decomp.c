@@ -33,6 +33,8 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   undefined4 local_11;
   int local_c;
   int local_8;
+  char *pcVar8_mg1;
+  char *pcVar8_mg0;
 
   sVar7 = (short)(param_5 >> 0x1f);
   if (param_5 < 0) {
@@ -75,25 +77,25 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_11 = param_10;
   if (param_9 != nullptr) {
     uVar4 = 0xffffffff;
-    pcVar8 = param_9;
+    pcVar8_mg0 = param_9;
     do {
       if (uVar4 == 0) break;
       uVar4 = uVar4 - 1;
-      cVar1 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
+      cVar1 = *pcVar8_mg0;
+      pcVar8_mg0 = pcVar8_mg0 + 1;
     } while (cVar1 != '\0');
     if (~uVar4 - 1 < 0xf) {
       uVar4 = 0xffffffff;
       do {
-        pcVar8 = param_9;
+        pcVar8_mg1 = param_9;
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        pcVar8 = param_9 + 1;
+        pcVar8_mg1 = param_9 + 1;
         cVar1 = *param_9;
-        param_9 = pcVar8;
+        param_9 = pcVar8_mg1;
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
-      pcVar8 = pcVar8 + -uVar4;
+      pcVar8 = pcVar8_mg1 + -uVar4;
       pcVar10 = local_2c;
       memmove(pcVar10, pcVar8, uVar4); /* compiler REP MOVS byte copy */
       sVar7 = (short)local_8;

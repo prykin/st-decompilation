@@ -16,11 +16,12 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
   uint uVar3;
   uint *puVar4;
   void *pvVar5;
-  undefined4 uVar6;
+  DArrayTy *pDVar6;
+  int iVar9;
   uint uVar7;
   uint *puVar8;
-  void **value;
-  int iVar9;
+  void **slotStorage;
+  int iVar10;
   InternalExceptionFrame local_58;
   Visible *local_14;
   int local_10;
@@ -78,25 +79,25 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
       pVVar2->field_004C = pvVar5;
       pvVar5 = Library::DKW::LIB::MemAllocClear(pVVar2->field_0030 * pVVar2->field_0034 * 2);
       pVVar2->field_0050 = pvVar5;
-      uVar6 = FUN_006b0060(nullptr,puVar8);
-      pVVar2->field_00F4 = uVar6;
+      pDVar6 = FUN_006b0060(nullptr,puVar8);
+      pVVar2->field_00F4 = pDVar6;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar6 = FUN_006b0060(nullptr,(uint *)((int)puVar8 + *(int *)(param_1 + 0x1c)));
-      pVVar2->field_0110 = uVar6;
+      pDVar6 = FUN_006b0060(nullptr,(uint *)((int)puVar8 + *(int *)(param_1 + 0x1c)));
+      pVVar2->field_0110 = pDVar6;
     }
     g_currentExceptionFrame = local_58.previous;
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar9 = 4;
-  value = &local_14->field_003C;
+  iVar10 = 4;
+  slotStorage = &local_14->field_003C;
   do {
-    if (*value != nullptr) {
-      FreeAndNull(value);
+    if (*slotStorage != nullptr) {
+      FreeAndNull(slotStorage);
     }
-    value = value + 1;
-    iVar9 = iVar9 + -1;
-  } while (iVar9 != 0);
+    slotStorage = slotStorage + 1;
+    iVar10 = iVar10 + -1;
+  } while (iVar10 != 0);
   iVar9 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x132,0,errorCode,"%s"
                              ,"Visible::PrepareAfterSave error");
   if (iVar9 != 0) {

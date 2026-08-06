@@ -20,14 +20,15 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
   void *pvVar2;
   STGroupBoatC *this_00;
   int iVar4;
-  uint *puVar5;
-  int iVar6;
+  uint *puVar4;
+  int iVar9;
   DArrayTy *array;
-  uint uVar7;
+  uint uVar5;
   uint index;
-  byte *pbVar8;
-  byte *pbVar9;
-  bool bVar10;
+  byte *pbVar6;
+  byte *pbVar7;
+  bool bVar8;
+  int iVar10;
   InternalExceptionFrame local_84;
   undefined4 local_40 [2];
   undefined4 local_38;
@@ -49,9 +50,9 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
   this_00 = local_20;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_84.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x3b4,0,iVar4,"%s",
+    iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x3b4,0,iVar4,"%s",
                                "STGroupBoatC::GetMessage");
-    if (iVar6 == 0) {
+    if (iVar9 == 0) {
       RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x3b5);
       return 0xffff;
     }
@@ -73,13 +74,13 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     local_1c[3] = 0;
     local_18 = (byte *)SaveGrpBData(this_00,(int *)&local_10);
     local_8 = Library::DKW::LIB::MemAlloc(local_10 + local_c);
-    pbVar8 = local_1c;
-    pbVar9 = local_8;
-    memmove(pbVar9, pbVar8, local_c); /* compiler REP MOVS byte copy */
-    uVar7 = 0;
-    pbVar8 = local_18;
-    pbVar9 = local_8 + local_c;
-    memmove(pbVar9, pbVar8, local_10); /* compiler REP MOVS byte copy */
+    pbVar6 = local_1c;
+    pbVar7 = local_8;
+    memmove(pbVar7, pbVar6, local_c); /* compiler REP MOVS byte copy */
+    uVar5 = 0;
+    pbVar6 = local_18;
+    pbVar7 = local_8 + local_c;
+    memmove(pbVar7, pbVar6, local_10); /* compiler REP MOVS byte copy */
     *(uint *)(local_8 + 0x38) = local_c;
     *(uint *)(local_8 + 0x3c) = local_10;
     STPlaySystemC::SaveObjData
@@ -136,20 +137,20 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       DArrayDestroy(this_00->field_01DA);
       this_00->field_01DA = nullptr;
     }
-    if ((DArrayTy *)this_00->field_01DE != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_01DE);
-      this_00->field_01DE = 0;
+    if (this_00->field_01DE != nullptr) {
+      DArrayDestroy(this_00->field_01DE);
+      this_00->field_01DE = nullptr;
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar7 = *(uint *)(this_00->field_0029 + 0xc);
-    if ((uVar7 != 0) && (index = 0, uVar7 != 0)) {
+    uVar5 = *(uint *)(this_00->field_0029 + 0xc);
+    if ((uVar5 != 0) && (index = 0, uVar5 != 0)) {
       do {
         DArrayGetElement((DArrayTy *)this_00->field_0029,index,&local_14);
         if ((short)local_14 != -1) {
           thunk_FUN_0040cdb0(this_00,local_14 & 0xffff);
         }
         index = index + 1;
-      } while ((index & 0xffff) < uVar7);
+      } while ((index & 0xffff) < uVar5);
     }
     if (this_00->field_021E != nullptr) {
       FreeAndNull(&this_00->field_021E);
@@ -216,18 +217,18 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     return 0;
   }
   if (this_00->field_0061 == 1) {
-    uVar7 = 0;
+    uVar5 = 0;
     this_00->field_0061 = 0;
     if (this_00->field_0081 == 1) {
       array = this_00->field_01DA;
       this_00->field_0081 = 0;
       if (0 < (int)array->count) {
         do {
-          DArrayGetElement(array,uVar7,&local_14);
+          DArrayGetElement(array,uVar5,&local_14);
           this_00->vfunc_04((short)local_14);
           array = this_00->field_01DA;
-          uVar7 = uVar7 + 1;
-        } while ((int)uVar7 < (int)array->count);
+          uVar5 = uVar5 + 1;
+        } while ((int)uVar5 < (int)array->count);
       }
       if (this_00->field_01E6 == CASE_6) {
         ReMakePatrolPoints(this_00);
@@ -272,76 +273,76 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
 LAB_004984d0:
     switch(this_00->field_01E6) {
     case CASE_1:
-      iVar4 = 2;
+      iVar10 = 2;
 LAB_004984e9:
-      puVar5 = (uint *)GrpMove(this_00,iVar4);
+      puVar4 = (uint *)GrpMove(this_00,iVar10);
       break;
     case CASE_2:
-      puVar5 = (uint *)GrpAttack(this_00,2);
+      puVar4 = (uint *)GrpAttack(this_00,2);
       break;
     case CASE_3:
       GrpMove(this_00,2);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case CASE_4:
-      puVar5 = (uint *)GrpRepare(this_00,2);
+      puVar4 = (uint *)GrpRepare(this_00,2);
       break;
     case CASE_5:
-      puVar5 = (uint *)GrpGuard(this_00,2);
+      puVar4 = (uint *)GrpGuard(this_00,2);
       break;
     case CASE_6:
-      puVar5 = (uint *)GrpPatrol(this_00,2);
+      puVar4 = (uint *)GrpPatrol(this_00,2);
       break;
     case CASE_7:
-      puVar5 = (uint *)GrpGoToDeep(this_00,2);
+      puVar4 = (uint *)GrpGoToDeep(this_00,2);
       break;
     case CASE_8:
-      puVar5 = (uint *)GrpLoadRC(this_00,2);
+      puVar4 = (uint *)GrpLoadRC(this_00,2);
       break;
     case CASE_9:
-      iVar4 = GrpBuild(this_00,2);
-      if (iVar4 != 0) {
+      iVar10 = GrpBuild(this_00,2);
+      if (iVar10 != 0) {
         g_currentExceptionFrame = local_84.previous;
         return 0;
       }
       this_00->field_01E6 = CASE_3;
-      iVar4 = 2;
+      iVar10 = 2;
       goto LAB_00498503;
     case CASE_A:
-      puVar5 = (uint *)GrpUnLoadRC(this_00,2);
+      puVar4 = (uint *)GrpUnLoadRC(this_00,2);
       break;
     case CASE_B:
-      puVar5 = (uint *)GrpLoadObj(this_00,2);
+      puVar4 = (uint *)GrpLoadObj(this_00,2);
       break;
     case CASE_C:
-      puVar5 = GrpUnLoadObj(this_00,2);
+      puVar4 = GrpUnLoadObj(this_00,2);
       break;
     case CASE_D:
-      puVar5 = (uint *)SetMine(this_00,2);
+      puVar4 = (uint *)SetMine(this_00,2);
       break;
     case CASE_E:
-      puVar5 = (uint *)DCBomb(this_00,2);
+      puVar4 = (uint *)DCBomb(this_00,2);
       break;
     case CASE_F:
-      puVar5 = (uint *)Capture(this_00,2);
+      puVar4 = (uint *)Capture(this_00,2);
       break;
     case CASE_10:
-      puVar5 = (uint *)Teleport(this_00,2);
+      puVar4 = (uint *)Teleport(this_00,2);
       break;
     case CASE_11:
-      puVar5 = (uint *)Recharge(this_00,2);
+      puVar4 = (uint *)Recharge(this_00,2);
       break;
     case CASE_12:
-      puVar5 = Bring(this_00,2);
+      puVar4 = Bring(this_00,2);
       break;
     case CASE_13:
-      puVar5 = (uint *)GrpDismant(this_00,2);
+      puVar4 = (uint *)GrpDismant(this_00,2);
       break;
     case CASE_14:
-      puVar5 = Scout(this_00,2);
+      puVar4 = Scout(this_00,2);
       break;
     case CASE_15:
-      puVar5 = (uint *)GrpRepSub(this_00,2);
+      puVar4 = (uint *)GrpRepSub(this_00,2);
       break;
     default:
       goto switchD_004984e0_default;
@@ -350,11 +351,11 @@ LAB_004984e9:
   }
   if (this_00->field_0089 == 1) {
     if (this_00->field_01E6 == CASE_1) {
-      iVar4 = 1;
+      iVar10 = 1;
     }
     else {
       this_00->field_01E6 = CASE_1;
-      iVar4 = 0;
+      iVar10 = 0;
     }
     goto LAB_004984e9;
   }
@@ -371,14 +372,14 @@ LAB_004984e9:
   }
   if (this_00->field_008D == 1) {
     if (this_00->field_01E6 == CASE_2) {
-      puVar5 = (uint *)GrpAttack(this_00,1);
+      puVar4 = (uint *)GrpAttack(this_00,1);
     }
     else {
       this_00->field_01E6 = CASE_2;
-      puVar5 = (uint *)GrpAttack(this_00,0);
+      puVar4 = (uint *)GrpAttack(this_00,0);
     }
 cf_common_exit_004984F2:
-    if (puVar5 != nullptr) {
+    if (puVar4 != nullptr) {
 switchD_004984e0_default:
       g_currentExceptionFrame = local_84.previous;
       return 0;
@@ -388,187 +389,187 @@ switchD_004984e0_default:
   else {
     if (this_00->field_00A1 == 1) {
       if (this_00->field_01E6 == CASE_7) {
-        puVar5 = (uint *)GrpGoToDeep(this_00,1);
+        puVar4 = (uint *)GrpGoToDeep(this_00,1);
       }
       else {
         this_00->field_01E6 = CASE_7;
-        puVar5 = (uint *)GrpGoToDeep(this_00,0);
+        puVar4 = (uint *)GrpGoToDeep(this_00,0);
       }
       goto cf_common_exit_004984F2;
     }
     if (this_00->field_009D == 1) {
-      bVar10 = this_00->field_01E6 == CASE_6;
-      if (!bVar10) {
+      bVar8 = this_00->field_01E6 == CASE_6;
+      if (!bVar8) {
         this_00->field_01E6 = CASE_6;
       }
-      puVar5 = (uint *)GrpPatrol(this_00,(uint)bVar10);
-      if (puVar5 == (uint *)0xffffffff) {
+      puVar4 = (uint *)GrpPatrol(this_00,(uint)bVar8);
+      if (puVar4 == (uint *)0xffffffff) {
         return 0xffff;
       }
       goto cf_common_exit_004984F2;
     }
     if (this_00->field_00A5 == 1) {
-      bVar10 = this_00->field_01E6 == CASE_8;
-      if (!bVar10) {
+      bVar8 = this_00->field_01E6 == CASE_8;
+      if (!bVar8) {
         this_00->field_01E6 = CASE_8;
       }
-      puVar5 = (uint *)GrpLoadRC(this_00,(uint)bVar10);
+      puVar4 = (uint *)GrpLoadRC(this_00,(uint)bVar8);
     }
     else {
       if (this_00->field_00A9 == 1) {
         if (this_00->field_01E6 == CASE_9) {
-          puVar5 = (uint *)GrpBuild(this_00,1);
+          puVar4 = (uint *)GrpBuild(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_9;
-          puVar5 = (uint *)GrpBuild(this_00,0);
+          puVar4 = (uint *)GrpBuild(this_00,0);
         }
         goto cf_common_exit_004984F2;
       }
       if (this_00->field_00AD == 1) {
         if (this_00->field_01E6 == CASE_A) {
-          puVar5 = (uint *)GrpUnLoadRC(this_00,1);
+          puVar4 = (uint *)GrpUnLoadRC(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_A;
-          puVar5 = (uint *)GrpUnLoadRC(this_00,0);
+          puVar4 = (uint *)GrpUnLoadRC(this_00,0);
         }
       }
       else if (this_00->field_0095 == 1) {
         if (this_00->field_01E6 == CASE_4) {
-          puVar5 = (uint *)GrpRepare(this_00,1);
+          puVar4 = (uint *)GrpRepare(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_4;
-          puVar5 = (uint *)GrpRepare(this_00,0);
+          puVar4 = (uint *)GrpRepare(this_00,0);
         }
       }
       else if (this_00->field_0099 == 1) {
         if (this_00->field_01E6 == CASE_5) {
-          puVar5 = (uint *)GrpGuard(this_00,1);
+          puVar4 = (uint *)GrpGuard(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_5;
-          puVar5 = (uint *)GrpGuard(this_00,0);
+          puVar4 = (uint *)GrpGuard(this_00,0);
         }
       }
       else if (this_00->field_00B1 == 1) {
         if (this_00->field_01E6 == CASE_B) {
-          puVar5 = (uint *)GrpLoadObj(this_00,1);
+          puVar4 = (uint *)GrpLoadObj(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_B;
-          puVar5 = (uint *)GrpLoadObj(this_00,0);
+          puVar4 = (uint *)GrpLoadObj(this_00,0);
         }
       }
       else {
         if (this_00->field_00B5 != 1) {
           if (this_00->field_00B9 == 1) {
             if (this_00->field_01E6 == CASE_D) {
-              puVar5 = (uint *)SetMine(this_00,1);
+              puVar4 = (uint *)SetMine(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_D;
-              puVar5 = (uint *)SetMine(this_00,0);
+              puVar4 = (uint *)SetMine(this_00,0);
             }
           }
           else if (this_00->field_00BD == 1) {
             if (this_00->field_01E6 == CASE_E) {
-              puVar5 = (uint *)DCBomb(this_00,1);
+              puVar4 = (uint *)DCBomb(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_E;
-              puVar5 = (uint *)DCBomb(this_00,0);
+              puVar4 = (uint *)DCBomb(this_00,0);
             }
           }
           else if (this_00->field_00C1 == 1) {
             if (this_00->field_01E6 == CASE_F) {
-              puVar5 = (uint *)Capture(this_00,1);
+              puVar4 = (uint *)Capture(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_F;
-              puVar5 = (uint *)Capture(this_00,0);
+              puVar4 = (uint *)Capture(this_00,0);
             }
           }
           else if (this_00->field_00C9 == 1) {
             if (this_00->field_01E6 == CASE_11) {
-              puVar5 = (uint *)Recharge(this_00,1);
+              puVar4 = (uint *)Recharge(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_11;
-              puVar5 = (uint *)Recharge(this_00,0);
+              puVar4 = (uint *)Recharge(this_00,0);
             }
           }
           else if (this_00->field_00C5 == 1) {
             if (this_00->field_01E6 == CASE_10) {
-              puVar5 = (uint *)Teleport(this_00,1);
+              puVar4 = (uint *)Teleport(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_10;
-              puVar5 = (uint *)Teleport(this_00,0);
+              puVar4 = (uint *)Teleport(this_00,0);
             }
           }
           else if (this_00->field_00CD == 1) {
             if (this_00->field_01E6 == CASE_12) {
-              puVar5 = Bring(this_00,1);
+              puVar4 = Bring(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_12;
-              puVar5 = Bring(this_00,0);
+              puVar4 = Bring(this_00,0);
             }
           }
           else if (this_00->field_00D1 == 1) {
             if (this_00->field_01E6 == CASE_13) {
-              puVar5 = (uint *)GrpDismant(this_00,1);
+              puVar4 = (uint *)GrpDismant(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_13;
-              puVar5 = (uint *)GrpDismant(this_00,0);
+              puVar4 = (uint *)GrpDismant(this_00,0);
             }
           }
           else {
             if (this_00->field_00D5 != 1) {
               if (this_00->field_00D9 != 1) goto LAB_004984d0;
               if (this_00->field_01E6 == CASE_15) {
-                puVar5 = (uint *)GrpRepSub(this_00,1);
+                puVar4 = (uint *)GrpRepSub(this_00,1);
               }
               else {
                 this_00->field_01E6 = CASE_15;
-                puVar5 = (uint *)GrpRepSub(this_00,0);
+                puVar4 = (uint *)GrpRepSub(this_00,0);
               }
               goto LAB_0049818d;
             }
             if (this_00->field_01E6 == CASE_14) {
-              puVar5 = Scout(this_00,1);
+              puVar4 = Scout(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_14;
-              puVar5 = Scout(this_00,0);
+              puVar4 = Scout(this_00,0);
             }
           }
           goto cf_common_exit_004984F2;
         }
         if (this_00->field_01E6 == CASE_C) {
-          puVar5 = GrpUnLoadObj(this_00,1);
+          puVar4 = GrpUnLoadObj(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_C;
-          puVar5 = GrpUnLoadObj(this_00,0);
+          puVar4 = GrpUnLoadObj(this_00,0);
         }
       }
     }
 LAB_0049818d:
-    if (puVar5 == (uint *)0xffffffff) {
+    if (puVar4 == (uint *)0xffffffff) {
       return 0xffff;
     }
-    if (puVar5 != nullptr) {
+    if (puVar4 != nullptr) {
       g_currentExceptionFrame = local_84.previous;
       return 0;
     }
   }
-  iVar4 = 0;
+  iVar10 = 0;
 LAB_00498503:
-  GrpMove(this_00,iVar4);
+  GrpMove(this_00,iVar10);
   thunk_FUN_00423320(this_00,0x5d95);
   g_currentExceptionFrame = local_84.previous;
   return 0;

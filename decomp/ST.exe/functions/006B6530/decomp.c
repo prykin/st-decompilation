@@ -18,7 +18,7 @@ FUN_006b6530(AnonShape_006B6530_C4BC1053 *param_1,undefined4 param_2,byte param_
   if (param_1->field_002C != param_1->field_0028) {
     if (*piVar3 <= piVar3[1]) {
       iVar1 = *piVar3 + 10;
-      piVar3 = (int *)FUN_006bfb50(piVar3,iVar1 * 0x14 + 8);
+      piVar3 = FUN_006bfb50(piVar3,iVar1 * 0x14 + 8);
       if (piVar3 == nullptr) {
         return 0;
       }

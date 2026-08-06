@@ -9,11 +9,12 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
 
 {
   HelpPanelTy *this_00;
-  DArrayTy *pDVar2;
   int iVar3;
+  DArrayTy *pDVar2;
   int iVar4;
-  int *piVar5;
-  int *piVar6;
+  int iVar5;
+  int *piVar7;
+  int *piVar8;
   int local_520 [4];
   undefined4 local_510;
   undefined4 local_50c;
@@ -65,11 +66,11 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 
-  piVar5 = local_520;
+  piVar7 = local_520;
   local_8 = this;
-  for (iVar3 = 0x135; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *piVar5 = 0;
-    piVar5 = piVar5 + 1;
+  for (iVar5 = 0x135; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *piVar7 = 0;
+    piVar7 = piVar7 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -131,16 +132,16 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_2cc = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLUP",0,1);
     local_2c8 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLUP",1);
     local_390 = this_00->field_0008;
-    iVar3 = this_00->field_005C;
+    iVar5 = this_00->field_005C;
     local_38c = 2;
     local_274 = 2;
     local_2e0 = 500;
     local_2dc = 0x32;
     local_388 = 0x8164;
-    piVar5 = local_3f0;
-    piVar6 = local_270;
-    memmove(piVar6, piVar5, 0x17c); /* compiler REP MOVS byte copy */
-    if (iVar3 == 0) {
+    piVar7 = local_3f0;
+    piVar8 = local_270;
+    memmove(piVar8, piVar7, 0x17c); /* compiler REP MOVS byte copy */
+    if (iVar5 == 0) {
       local_270[3] = -this_00->field_0048;
     }
     else {
@@ -171,11 +172,11 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_5c = 1;
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,7,&this_00->field_019C,nullptr,local_520,0);
-    iVar3 = this_00->field_019C;
-    if (iVar3 != 0) {
+    iVar5 = this_00->field_019C;
+    if (iVar5 != 0) {
       this_00->field_0028 = 0x20;
       *(undefined4 *)&this_00->field_0x2c = 1;
-      FUN_006e6080(this_00,2,iVar3,(undefined4 *)&this_00->field_0x18);
+      FUN_006e6080(this_00,2,iVar5,(undefined4 *)&this_00->field_0x18);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

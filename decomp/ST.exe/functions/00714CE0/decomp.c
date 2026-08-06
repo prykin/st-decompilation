@@ -12,7 +12,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00714CE0::FUN_00714ce0
           (AnonReceiver_00714CE0 *this,uint param_1)
 
 {
-  AnonReceiver_00714CE0 *pAVar1;
+  int iVar1;
+  AnonReceiver_00714CE0 *pAVar2;
   int iVar2;
   void *pvVar3;
   uint uVar4;
@@ -27,7 +28,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00714CE0::FUN_00714ce0
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  pAVar1 = local_8;
+  pAVar2 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     if (-1 < iVar2) {
@@ -37,13 +38,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00714CE0::FUN_00714ce0
   }
   if (*(void **)local_8 == nullptr) {
     pvVar3 = Library::DKW::LIB::MemAllocClear(param_1);
-    local_8 = pAVar1;
+    local_8 = pAVar2;
   }
   else {
     pvVar3 = Library::DKW::LIB::MemRealloc(*(void **)local_8,param_1);
-    iVar2 = *(int *)&pAVar1->field_0x4;
-    uVar4 = param_1 - iVar2;
-    puVar6 = (byte *)(iVar2 + (int)pvVar3);
+    iVar1 = *(int *)&pAVar2->field_0x4;
+    uVar4 = param_1 - iVar1;
+    puVar6 = (byte *)(iVar1 + (int)pvVar3);
     memset(puVar6, 0, uVar4); /* compiler bulk-zero initialization */
   }
   g_currentExceptionFrame = local_4c.previous;

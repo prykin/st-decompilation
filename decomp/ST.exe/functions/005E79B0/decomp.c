@@ -10,7 +10,7 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
 {
   WaitTy *pWVar2;
   int errorCode;
-  uint *resourceString;
+  char *resourceString;
   int iVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ChatGlassTy *extraout_ECX;
@@ -49,7 +49,7 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
     if (((pWVar2->field_1B00 == nullptr) && (param_1 == '\0')) ||
        ((param_1 != '\0' && ((pWVar2->field_1A64 != 0 && (pWVar2->field_1A68 == 0)))))) {
       MMMObjTy::OutBSlProc
-                ((MMMObjTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,nullptr,
+                ((MMMObjTy *)g_dDXContext_0080759C,g_dDXContext_0080759C,nullptr,
                  nullptr,10,0xb4,0xf9,0x121,&pWVar2->field_1A5B->field_0140);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_01;
@@ -64,7 +64,7 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
     pcVar6 = g_startSystem_0081176C->field_0030;
     uVar5 = 0xffffffff;
     uVar4 = 0xfffffffe;
-    resourceString = (uint *)LoadResourceString(0x26ae,g_hINSTANCE_00807618);
+    resourceString = LoadResourceString(0x26ae,g_hINSTANCE_00807618);
     StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,resourceString,uVar4,uVar5,pcVar6,uVar7);
     g_currentExceptionFrame = local_4c.previous;
     return;

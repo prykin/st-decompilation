@@ -12,17 +12,18 @@ int __thiscall FUN_00714f00(void *this,char *source,size_t param_2)
   uint uVar3;
   size_t sVar4;
   char *pcVar5;
+  char *pcVar5_mg0;
 
   if (source == nullptr) {
     return -0x34;
   }
   uVar3 = 0xffffffff;
-  pcVar5 = source;
+  pcVar5_mg0 = source;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
+    cVar1 = *pcVar5_mg0;
+    pcVar5_mg0 = pcVar5_mg0 + 1;
   } while (cVar1 != '\0');
   sVar4 = ~uVar3 - 1;
   if ((int)param_2 <= (int)(~uVar3 - 1)) {

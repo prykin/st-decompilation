@@ -27,6 +27,8 @@ void __thiscall st::fn_00632A00(STTeamLissagC *this)
   ushort *local_10;
   uint local_c;
   ushort *local_8;
+  int *piVar7_mg1;
+  int *piVar7_mg0;
 
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
@@ -38,14 +40,14 @@ void __thiscall st::fn_00632A00(STTeamLissagC *this)
       iVar3 = local_18->field_0025;
       if (iVar3 < 4) {
         pcVar8 = (&PTR_s_pics_g_007d1bb4)[iVar3];
-        piVar7 = PTR_00806764;
+        piVar7_mg1 = PTR_00806764;
       }
       else {
         pcVar8 = (&PTR_s_pics_g_007d1bb4)[iVar3];
-        piVar7 = PTR_00806774;
+        piVar7_mg1 = PTR_00806774;
       }
       local_10 = st::fn_00709AF0
-                           (piVar7,CASE_1D,pcVar8,0xffffffff,0,1,0,nullptr);
+                           (piVar7_mg1,CASE_1D,pcVar8,0xffffffff,0,1,0,nullptr);
       iVar3 = pSVar6->field_0029;
       if (iVar3 < 4) {
         local_14 = st::fn_00709AF0
@@ -64,14 +66,14 @@ void __thiscall st::fn_00632A00(STTeamLissagC *this)
       iVar3 = local_18->field_000D;
       if (iVar3 < 4) {
         pcVar8 = (&PTR_s_pics_g_007d1bb4)[iVar3];
-        piVar7 = PTR_00806764;
+        piVar7_mg0 = PTR_00806764;
       }
       else {
         pcVar8 = (&PTR_s_pics_g_007d1bb4)[iVar3];
-        piVar7 = PTR_00806774;
+        piVar7_mg0 = PTR_00806774;
       }
       puVar4 = st::fn_00709AF0
-                         (piVar7,CASE_1D,pcVar8,0xffffffff,0,1,0,nullptr);
+                         (piVar7_mg0,CASE_1D,pcVar8,0xffffffff,0,1,0,nullptr);
       local_8 = puVar4;
       if (pSVar6->field_0011 == 1) {
         local_10 = st::fn_00709AF0

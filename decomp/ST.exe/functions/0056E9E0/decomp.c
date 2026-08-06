@@ -12,10 +12,10 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
   byte bVar1;
   STAppC *pSVar2;
   int iVar3;
-  cMf32 *pcVar4;
-  uint *puVar5;
-  DArrayTy *pDVar6;
-  ushort *puVar7;
+  cMf32 *pcVar3;
+  uint *puVar4;
+  DArrayTy *pDVar5;
+  ushort *puVar6;
   uint uVar8;
   byte *pbVar10;
   byte *pbVar12;
@@ -43,31 +43,31 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
     return 0;
   }
   local_c = &local_18->field_76F6;
-  pcVar4 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_c,0,0,0);
-  local_8 = pcVar4;
+  pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_c,0,0,0);
+  local_8 = pcVar3;
   if ((DArrayTy *)pSVar2->field_4EA7 != nullptr) {
     FUN_006b5570((DArrayTy *)pSVar2->field_4EA7);
   }
-  puVar5 = Library::Ourlib::MFSARR::mfSarLoad(pcVar4,PTR_s_DESCRIPTION_0079b074,0);
-  pSVar2->field_4EA7 = puVar5;
-  if (puVar5 == nullptr) {
-    pDVar6 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
-    pSVar2->field_4EA7 = &pDVar6->flags;
+  puVar4 = Library::Ourlib::MFSARR::mfSarLoad(pcVar3,PTR_s_DESCRIPTION_0079b074,0);
+  pSVar2->field_4EA7 = puVar4;
+  if (puVar4 == nullptr) {
+    pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+    pSVar2->field_4EA7 = &pDVar5->flags;
   }
   if ((DArrayTy *)pSVar2->field_4EAB != nullptr) {
     FUN_006b5570((DArrayTy *)pSVar2->field_4EAB);
   }
-  puVar5 = Library::Ourlib::MFSARR::mfSarLoad(pcVar4,PTR_s_OBJECTIVES_0079b078,0);
-  pSVar2->field_4EAB = puVar5;
-  if (puVar5 == nullptr) {
-    pDVar6 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
-    pSVar2->field_4EAB = &pDVar6->flags;
+  puVar4 = Library::Ourlib::MFSARR::mfSarLoad(pcVar3,PTR_s_OBJECTIVES_0079b078,0);
+  pSVar2->field_4EAB = puVar4;
+  if (puVar4 == nullptr) {
+    pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+    pSVar2->field_4EAB = &pDVar5->flags;
   }
   pbVar13 = &pSVar2->field_4DA3;
   memset((void *)pbVar13, 0, 0x104); /* compiler bulk-zero initialization */
   local_14 = (char *)pbVar13;
-  puVar7 = cMf32::RecGet(local_8,0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&local_14,0);
-  if ((puVar7 == nullptr) || (*pbVar13 == '\0')) {
+  puVar6 = cMf32::RecGet(local_8,0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&local_14,0);
+  if ((puVar6 == nullptr) || (*pbVar13 == '\0')) {
     Library::MSVCRT::FUN_0072e730(local_c,nullptr,nullptr,local_160,nullptr);
     uVar8 = 0xffffffff;
     pbVar10 = local_160;

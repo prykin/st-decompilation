@@ -13,7 +13,8 @@ STManBasisC::sub_005F14B0
 {
   STManBasisC_field_0038DArray *pSVar1;
   int iVar2;
-  short *psVar3;
+  int iVar3;
+  short *psVar4;
   short local_20;
   short local_1e;
   short local_1c;
@@ -31,13 +32,13 @@ STManBasisC::sub_005F14B0
       return -1;
     }
   }
-  psVar3 = &local_20;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    psVar3[0] = 0;
-    psVar3[1] = 0;
-    psVar3 = psVar3 + 2;
+  psVar4 = &local_20;
+  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+    psVar4[0] = 0;
+    psVar4[1] = 0;
+    psVar4 = psVar4 + 2;
   }
-  *(undefined1 *)psVar3 = 0;
+  *(undefined1 *)psVar4 = 0;
   local_1c = param_3;
   local_1e = param_2;
   local_20 = param_1;
@@ -49,16 +50,16 @@ STManBasisC::sub_005F14B0
                                 (int)(short)(param_2 * 0xc9 + 100),(int)(short)(param_3 * 200 + 100)
                                );
   if (local_13 == nullptr) {
-    iVar2 = -1;
+    iVar3 = -1;
   }
   else {
     iVar2 = Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_0038,&local_20);
-    iVar2 = iVar2 + 1;
-    if (-1 < iVar2) {
+    iVar3 = iVar2 + 1;
+    if (-1 < iVar3) {
       DAT_00811788 = DAT_00811788 + 1;
-      return iVar2;
+      return iVar3;
     }
   }
-  return iVar2;
+  return iVar3;
 }
 

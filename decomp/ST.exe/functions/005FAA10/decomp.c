@@ -13,7 +13,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
           (AnonReceiver_00416270 *this,int param_1)
 
 {
-  AnonShape_005FAA10_427149EB *pAVar1;
+  int iVar1;
+  AnonShape_005FAA10_427149EB *pAVar2;
   int iVar2;
   ushort *puVar3;
   uint uVar4;
@@ -30,7 +31,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
   g_currentExceptionFrame = &local_54;
   local_10 = (AnonShape_005FAA10_427149EB *)this;
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
-  pAVar1 = local_10;
+  pAVar2 = local_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;
     return local_c;
@@ -53,19 +54,19 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
       uVar7 = 0x2f;
       uVar6 = 0x5a;
     }
-    ST3DSMAPContext::sub_006E8660(pAVar1->field_0211,(int *)&local_8,1,0,uVar4,uVar5,uVar6,uVar7,0);
+    ST3DSMAPContext::sub_006E8660(pAVar2->field_0211,(int *)&local_8,1,0,uVar4,uVar5,uVar6,uVar7,0);
     ST3DSMAPContext::sub_006E98E0
-              (pAVar1->field_0211,local_8,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
-    ST3DSMAPContext::sub_006EA270(pAVar1->field_0211,local_8,0,0);
-    iVar2 = pAVar1->field_02E6;
+              (pAVar2->field_0211,local_8,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+    ST3DSMAPContext::sub_006EA270(pAVar2->field_0211,local_8,0,0);
+    iVar1 = pAVar2->field_02E6;
     Library::Ourlib::ST3DSMAP::SprMove
-              (pAVar1->field_0211,local_8,
-               (float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
-               (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
-               (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    ST3DSMAPContext::sub_006E9EF0(pAVar1->field_0211,local_8,0,1,0,0,30000);
-    Library::Ourlib::ST3DSMAP::SprShow(pAVar1->field_0211,local_8,0);
-    *(uint *)(pAVar1->field_02E6 + 4) = local_8;
+              (pAVar2->field_0211,local_8,
+               (float)*(int *)(iVar1 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
+               (float)*(int *)(iVar1 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
+               (float)*(int *)(iVar1 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    ST3DSMAPContext::sub_006E9EF0(pAVar2->field_0211,local_8,0,1,0,0,30000);
+    Library::Ourlib::ST3DSMAP::SprShow(pAVar2->field_0211,local_8,0);
+    *(uint *)(pAVar2->field_02E6 + 4) = local_8;
     g_currentExceptionFrame = local_54.previous;
     return 1;
   }

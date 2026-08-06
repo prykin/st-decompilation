@@ -7,8 +7,9 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
   uint uVar1;
   undefined4 uVar2;
   int iVar3;
-  byte *puVar4;
+  int iVar4;
   byte *puVar5;
+  byte *puVar6;
   byte *local_8;
 
   uVar1 = param_1->field_0010;
@@ -27,10 +28,10 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
       }
     }
     else if (uVar1 == 2) {
-      puVar4 = (byte *)param_1->field_0014;
-      if (puVar4[3] != 2) {
-        puVar5 = (byte *)((int)this + 0x1d5);
-        memmove(puVar5, puVar4, 0x14); /* compiler REP MOVS byte copy */
+      puVar5 = (byte *)param_1->field_0014;
+      if (puVar5[3] != 2) {
+        puVar6 = (byte *)((int)this + 0x1d5);
+        memmove(puVar6, puVar5, 0x14); /* compiler REP MOVS byte copy */
         STField<undefined4>(this,0x1d5) = 0x15e;
         STField<undefined4>(this,0x24) = STField<undefined4>(this,0x1d9);
         thunk_FUN_00614400(this,(AnonShape_00614400_1B90EA7E *)param_1->field_0014);
@@ -39,11 +40,11 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
         STField<char>(this,0x2e9) = (char)uVar2;
         return 0;
       }
-      thunk_FUN_00614a90(this,puVar4);
+      thunk_FUN_00614a90(this,puVar5);
       memset((void *)((int)this + 0x2eb), 0, 0x2d); /* compiler bulk-zero initialization */
-      iVar3 = 0;
+      iVar4 = 0;
       if (((STField<int>(this,0x20c) != 7) && (STField<int>(this,0x20c) != 9)) &&
-         (iVar3 = STGenBombC::LoadImagSpr(this,1,0), iVar3 != 0)) {
+         (iVar4 = STGenBombC::LoadImagSpr(this,1,0), iVar4 != 0)) {
         return 0;
       }
       thunk_FUN_0060ec00(this);

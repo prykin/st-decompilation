@@ -490,7 +490,7 @@ undefined4 __thiscall st::fn_0061F290(STLightC *this,int param_1)
                     (st::fn_00403F53
                                (this_00,this_00->field_010C,iVar3,local_8,&local_18,&local_1c),
                     iVar4 < 0)) || ((4 < iVar4 || (local_18 < 0)))) ||
-                  ((this_00->field_0030 <= local_18 ||
+                  (((int)this_00->field_0030 <= local_18 ||
                    ((iVar4 = g_centeredOffsets5[iVar4] + local_1c, iVar4 < 0 ||
                     (this_00->field_0034 <= iVar4)))))) ||
                  ((this_00->field_004C == nullptr ||

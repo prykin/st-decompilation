@@ -10,11 +10,12 @@ void __thiscall AiFltClassTy::sub_00661580(AiFltClassTy *this)
 
 {
   ushort *this_00;
+  int iVar2;
   int iVar1;
-  DArrayTy *pDVar2;
-  uint uVar3;
-  uint *puVar4;
-  bool bVar5;
+  DArrayTy *pDVar3;
+  uint uVar4;
+  uint *puVar5;
+  bool bVar6;
 
   this_00 = this->field_0284;
   if (this_00 == nullptr) {
@@ -28,37 +29,37 @@ void __thiscall AiFltClassTy::sub_00661580(AiFltClassTy *this)
   }
   this->field_01FF = this->field_0280;
   if ((this->field_00FF != '\0') && (this->field_007B == 2)) {
-    iVar1 = *(int *)(this_00 + 0x9c);
+    iVar2 = *(int *)(this_00 + 0x9c);
     if (this->field_0039 != 3) {
-      if (iVar1 != 0) goto LAB_006615ff;
-      iVar1 = *(int *)(this_00 + 0x9a);
+      if (iVar2 != 0) goto LAB_006615ff;
+      iVar2 = *(int *)(this_00 + 0x9a);
     }
-    if (iVar1 == 0) {
+    if (iVar2 == 0) {
       return;
     }
   }
 LAB_006615ff:
   iVar1 = thunk_FUN_0068e800(this_00,this->field_007D);
   if (iVar1 < (int)(3 - (uint)(this->field_007B != 1))) {
-    pDVar2 = this->field_020B;
-    uVar3 = 0;
-    if (0 < (int)pDVar2->count) {
-      bVar5 = pDVar2->count != 0;
+    pDVar3 = this->field_020B;
+    uVar4 = 0;
+    if (0 < (int)pDVar3->count) {
+      bVar6 = pDVar3->count != 0;
       do {
-        if (bVar5) {
-          puVar4 = DArrayAt<uint>(pDVar2, uVar3);
+        if (bVar6) {
+          puVar5 = DArrayAt<uint>(pDVar3, uVar4);
         }
         else {
-          puVar4 = nullptr;
+          puVar5 = nullptr;
         }
-        if (((puVar4[10] == 0) && (puVar4[9] == 0)) &&
-           (sub_00660F70(this,puVar4,(short)uVar3), puVar4[9] != 0)) {
+        if (((puVar5[10] == 0) && (puVar5[9] == 0)) &&
+           (sub_00660F70(this,puVar5,(short)uVar4), puVar5[9] != 0)) {
           return;
         }
-        pDVar2 = this->field_020B;
-        uVar3 = uVar3 + 1;
-        bVar5 = uVar3 < pDVar2->count;
-      } while ((int)uVar3 < (int)pDVar2->count);
+        pDVar3 = this->field_020B;
+        uVar4 = uVar4 + 1;
+        bVar6 = uVar4 < pDVar3->count;
+      } while ((int)uVar4 < (int)pDVar3->count);
     }
   }
   return;

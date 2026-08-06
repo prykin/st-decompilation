@@ -8,29 +8,36 @@
    [STPrototypeApplier] Propagated parameter 9.
    Evidence: 00540890 parameter used as this of ccFntTy::EraseSufr @ 005409EC
 
-   [STPrototypeApplier] Propagated parameter 6.
-   Evidence: 00540890 -> 00711370 @ 005408D0 | 00540890 -> 007113E0 @ 005408F4 | 00540890 ->
-   00711B70 @ 00540974 | 00590580 -> 00540890 @ 00590658 | 00591940 -> 00540890 @ 005919EB |
-   00594D40 -> 00540890 @ 00594DF7 | 00594EB0 -> 00540890 @ 00594F9E | 00594EB0 -> 00540890 @
-   00595062 | 00594EB0 -> 00540890 @ 005950C4 | 00594EB0 -> 00540890 @ 00595127 | 005952B0 ->
-   00540890 @ 0059534E | 005952B0 -> 00540890 @ 005953AF | 005952B0 -> 00540890 @ 00595410 |
-   005952B0 -> 00540890 @ 00595481 | 005956C0 -> 00540890 @ 00595787 | 005956C0 -> 00540890 @
-   005957EB | 005956C0 -> 00540890 @ 00595848 | 005956C0 -> 00540890 @ 005958A8 | 005956C0 ->
-   00540890 @ 00595905 | 005956C0 -> 00540890 @ 00595962 | 005956C0 -> 00540890 @ 005959C6 |
-   005956C0 -> 00540890 @ 00595A0A | 005956C0 -> 00540890 @ 00595A94 | 005956C0 -> 00540890 @
-   00595BC2 | 005956C0 -> 00540890 @ 00595C1B | 005B3160 -> 00540890 @ 005B320B | 005B3160 ->
-   00540890 @ 005B324A | 005B3D60 -> 00540890 @ 005B40D6 | 005B3D60 -> 00540890 @ 005B4342 |
-   005B9860 -> 00540890 @ 005B993F | 005C4E20 -> 00540890 @ 005C5027 | 005E79B0 -> 00540890 @
-   005E7B20
-
    [STPrototypeApplier] Propagated parameter 10.
    Evidence: 00540890 -> 00711B70 @ 00540974 | 005B3D60 -> 00540890 @ 005B4342; zeroed full register
-   at 005B427F */
+   at 005B427F
+
+   [STPrototypeRepairApplier] Propagated parameter 6.
+   Evidence: 00540890 -> 00711B70 @ 00540974 | 00590580 -> 00540890 @ 00590658; return of
+   LoadResourceString | 00591940 -> 00540890 @ 005919EB; return of LoadResourceString | 00594D40 ->
+   00540890 @ 00594DF7; return of LoadResourceString | 00594EB0 -> 00540890 @ 00594F9E; return of
+   LoadResourceString | 00594EB0 -> 00540890 @ 00595062; return of LoadResourceString | 00594EB0 ->
+   00540890 @ 005950C4; return of LoadResourceString | 00594EB0 -> 00540890 @ 00595127; return of
+   LoadResourceString | 005952B0 -> 00540890 @ 0059534E; return of LoadResourceString | 005952B0 ->
+   00540890 @ 005953AF; return of LoadResourceString | 005952B0 -> 00540890 @ 00595410; return of
+   LoadResourceString | 005952B0 -> 00540890 @ 00595481; return of LoadResourceString | 005956C0 ->
+   00540890 @ 00595787; return of LoadResourceString | 005956C0 -> 00540890 @ 005957EB; return of
+   LoadResourceString | 005956C0 -> 00540890 @ 00595848; return of LoadResourceString | 005956C0 ->
+   00540890 @ 005958A8; return of LoadResourceString | 005956C0 -> 00540890 @ 00595905; return of
+   LoadResourceString | 005956C0 -> 00540890 @ 00595962; return of LoadResourceString | 005956C0 ->
+   00540890 @ 005959C6; return of LoadResourceString | 005956C0 -> 00540890 @ 00595A0A; return of
+   LoadResourceString | 005956C0 -> 00540890 @ 00595A94; return of LoadResourceString | 005956C0 ->
+   00540890 @ 00595BC2; return of LoadResourceString | 005956C0 -> 00540890 @ 00595C1B; return of
+   LoadResourceString | 005B3160 -> 00540890 @ 005B320B; return of LoadResourceString | 005B3160 ->
+   00540890 @ 005B324A; return of LoadResourceString | 005B3D60 -> 00540890 @ 005B40D6; return of
+   LoadResourceString | 005B3D60 -> 00540890 @ 005B4342; return of LoadResourceString | 005B9860 ->
+   00540890 @ 005B993F; return of LoadResourceString | 005C4E20 -> 00540890 @ 005C5027; return of
+   LoadResourceString | 005E79B0 -> 00540890 @ 005E7B20; return of LoadResourceString */
 
 void __thiscall
 StartServTy::WrTextDDX
           (StartServTy *this,int param_1,int param_2,int param_3,int param_4,int param_5,
-          uint *resourceString,uint param_7,uint param_8,ccFntTy *param_9,uint param_10)
+          char *resourceString,uint param_7,uint param_8,ccFntTy *param_9,uint param_10)
 
 {
   int iVar2;
@@ -43,12 +50,12 @@ StartServTy::WrTextDDX
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
     if (param_4 < 1) {
-      iVar2 = FUN_00711370(param_9,resourceString);
+      iVar2 = FUN_00711370(param_9,(uint *)resourceString);
       param_4 = iVar2 + (((int)param_7 < 1) - 1 & param_7);
     }
     local_8 = param_4;
     if (param_5 < 1) {
-      iVar2 = FUN_007113e0(param_9,resourceString);
+      iVar2 = FUN_007113e0(param_9,(uint *)resourceString);
       param_5 = iVar2 + (((int)param_8 < 1) - 1 & param_8);
     }
     if (param_1 == 0) {

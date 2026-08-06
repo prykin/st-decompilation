@@ -14,15 +14,17 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
 {
   TraksClassTy *pTVar2;
   int iVar3;
-  TraksClassTy_field_0024DArray *pTVar4;
+  TraksClassTy_field_0024DArray *pTVar3;
   char *text;
-  ushort *puVar5;
+  ushort *puVar4;
+  int iVar9;
   TraksClassTy_field_0024Element *element_0024;
-  int *piVar7;
-  uint uVar8;
-  byte bVar9;
+  int *piVar6;
+  uint uVar7;
+  byte bVar8;
   int iVar10;
-  undefined4 *puVar11;
+  int iVar11;
+  undefined4 *puVar12;
   InternalExceptionFrame local_54;
   int local_10;
   TraksClassTy *local_c;
@@ -38,58 +40,58 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c->field_001C = *(undefined4 *)(param_1 + 0xc);
     if ((char)param_1[0xe] == '\0') {
-      pTVar4 = (TraksClassTy_field_0024DArray *)
+      pTVar3 = (TraksClassTy_field_0024DArray *)
                Library::DKW::TBL::DArrayCreate(nullptr,0x32,0x3c,0x32);
-      pTVar2->field_0024 = pTVar4;
+      pTVar2->field_0024 = pTVar3;
     }
     else {
-      pTVar4 = (TraksClassTy_field_0024DArray *)FUN_006b0060(nullptr,(uint *)(param_1 + 0x2e));
-      pTVar2->field_0024 = pTVar4;
-      pTVar4->iteratorIndex = 0;
+      pTVar3 = (TraksClassTy_field_0024DArray *)FUN_006b0060(nullptr,(uint *)(param_1 + 0x2e));
+      pTVar2->field_0024 = pTVar3;
+      pTVar3->iteratorIndex = 0;
       while( true ) {
-        pTVar4 = pTVar2->field_0024;
-        uVar8 = pTVar4->iteratorIndex;
-        if (uVar8 < pTVar4->count) {
-          element_0024 = DArrayAt<TraksClassTy_field_0024Element>(pTVar4, uVar8);
-          pTVar4->iteratorIndex = uVar8 + 1;
+        pTVar3 = pTVar2->field_0024;
+        uVar7 = pTVar3->iteratorIndex;
+        if (uVar7 < pTVar3->count) {
+          element_0024 = DArrayAt<TraksClassTy_field_0024Element>(pTVar3, uVar7);
+          pTVar3->iteratorIndex = uVar7 + 1;
         }
         else {
           element_0024 = nullptr;
         }
         if (element_0024 == nullptr) break;
-        piVar7 = PTR_00806764;
+        piVar6 = PTR_00806764;
         if (*(int *)(&DAT_007c900c + element_0024->field_0000 * 0x18) != 1) {
-          piVar7 = PTR_00806774;
+          piVar6 = PTR_00806774;
         }
-        puVar11 = nullptr;
-        iVar10 = 0;
-        iVar3 = 1;
-        bVar9 = 0;
-        uVar8 = 0xffffffff;
+        puVar12 = nullptr;
+        iVar11 = 0;
+        iVar10 = 1;
+        bVar8 = 0;
+        uVar7 = 0xffffffff;
         text = thunk_FUN_00555840((int)element_0024->field_0000);
-        puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                           (piVar7,CASE_1D,text,uVar8,bVar9,iVar3,iVar10,puVar11);
-        element_0024->field_0036 = *puVar5;
-        iVar3 = element_0024->field_0000 * 0x18;
+        puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
+                           (piVar6,CASE_1D,text,uVar7,bVar8,iVar10,iVar11,puVar12);
+        element_0024->field_0036 = *puVar4;
+        iVar10 = element_0024->field_0000 * 0x18;
         ST3DSMAPContext::sub_006E8660
-                  (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)(&DAT_007c9000 + iVar3),
-                   *(uint *)(&DAT_007c9004 + iVar3),*(uint *)(&DAT_007c8ff8 + iVar3),
-                   *(uint *)(&DAT_007c8ffc + iVar3),0);
+                  (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)(&DAT_007c9000 + iVar10),
+                   *(uint *)(&DAT_007c9004 + iVar10),*(uint *)(&DAT_007c8ff8 + iVar10),
+                   *(uint *)(&DAT_007c8ffc + iVar10),0);
         element_0024->spriteHandle = local_8;
         ST3DSMAPContext::sub_006E98E0
                   (g_sT3DSMAPContext_00807598,local_8,0,(int)element_0024->field_0036,
-                   STField<int>(puVar5,0x21),1);
+                   STField<int>(puVar4,0x21),1);
         ST3DSMAPContext::sub_006EA270
                   (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,0,(int)element_0024->field_0022);
-        iVar3 = element_0024->field_0016;
-        if (-1 < iVar3) {
+        iVar10 = element_0024->field_0016;
+        if (-1 < iVar10) {
           if (element_0024->field_001A == -1) {
             Library::Ourlib::ST3DSMAP::SprSetLevAfter
-                      (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,iVar3);
+                      (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,iVar10);
           }
           else if (element_0024->field_001A == 1) {
             Library::Ourlib::ST3DSMAP::SprSetLevBefore
-                      (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,iVar3);
+                      (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,iVar10);
           }
         }
         Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
@@ -110,9 +112,9 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar10 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",0x11b,0,iVar3,"%s",
-                              "TraksClassTy::PrepareAfterSave error");
-  if (iVar10 != 0) {
+  iVar9 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",0x11b,0,iVar3,"%s",
+                             "TraksClassTy::PrepareAfterSave error");
+  if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x11c);

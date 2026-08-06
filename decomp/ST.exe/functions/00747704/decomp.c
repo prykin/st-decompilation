@@ -12,6 +12,7 @@ uint FUN_00747704(AnonShape_00747822_A1E67AF6 *param_1,uint param_2,int *param_3
   uint uVar3;
   int iVar4;
   int iVar5;
+  int iVar6;
   uint local_8;
 
   pAVar2 = param_1;
@@ -44,23 +45,23 @@ uint FUN_00747704(AnonShape_00747822_A1E67AF6 *param_1,uint param_2,int *param_3
     }
     else {
       do {
-        iVar4 = pAVar2->field_0004;
-        if (pAVar2->field_0008 == iVar4) break;
-        pAVar2->field_0004 = iVar4 + 1;
+        iVar5 = pAVar2->field_0004;
+        if (pAVar2->field_0008 == iVar5) break;
+        pAVar2->field_0004 = iVar5 + 1;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar4 = (**(code **)(*pAVar2->field_000C + 0x1c))(iVar4);
-        if (iVar4 == 0) {
+        iVar5 = (**(code **)(*pAVar2->field_000C + 0x1c))(iVar5);
+        if (iVar5 == 0) {
           return 0x80040203;
         }
-        iVar5 = FUN_0074dee5(&pAVar2[1].field_0004,iVar4);
-        if (iVar5 == 0) {
-          piVar1 = (int *)(iVar4 + 0xc);
+        iVar6 = FUN_0074dee5(&pAVar2[1].field_0004,iVar5);
+        if (iVar6 == 0) {
+          piVar1 = (int *)(iVar5 + 0xc);
           *param_3 = (int)piVar1;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*piVar1 + 4))(piVar1);
           local_8 = local_8 + 1;
           param_3 = param_3 + 1;
-          FUN_0074df72(&pAVar2[1].field_0004,iVar4);
+          FUN_0074df72(&pAVar2[1].field_0004,iVar5);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (AnonShape_00747822_A1E67AF6 *)((int)&param_1[-1].field_0010 + 3);
         }

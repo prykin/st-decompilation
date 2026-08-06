@@ -22,21 +22,21 @@ int __thiscall JumpManagC::sub_00618170(JumpManagC *this,undefined4 *param_1)
   piVar4 = (int *)((int)param_1 + 0x52);
   local_8 = 0x52;
   if (this->field_005E != nullptr) {
-    pDVar1 = (DArrayTy *)FUN_006b0060(nullptr,(uint *)((int)param_1 + 0x56));
+    pDVar1 = FUN_006b0060(nullptr,(uint *)((int)param_1 + 0x56));
     this->field_005E = pDVar1;
     local_8 = *piVar4;
     piVar4 = (int *)((int)param_1 + 0x56 + local_8);
     local_8 = local_8 + 0x52;
   }
   if (this->field_0062 != nullptr) {
-    pDVar1 = (DArrayTy *)FUN_006b0060(nullptr,(uint *)(piVar4 + 1));
+    pDVar1 = FUN_006b0060(nullptr,(uint *)(piVar4 + 1));
     this->field_0062 = pDVar1;
     iVar2 = *piVar4;
     piVar4 = (int *)((int)(piVar4 + 1) + iVar2);
     local_8 = local_8 + iVar2;
   }
   if (this->field_0066 != nullptr) {
-    pDVar1 = (DArrayTy *)FUN_006b0060(nullptr,(uint *)(piVar4 + 1));
+    pDVar1 = FUN_006b0060(nullptr,(uint *)(piVar4 + 1));
     this->field_0066 = pDVar1;
     return local_8 + *piVar4;
   }

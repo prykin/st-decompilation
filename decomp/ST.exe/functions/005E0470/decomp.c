@@ -10,13 +10,14 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
 {
   MTaskTy *this_00;
   int iVar2;
-  DArrayTy *pDVar3;
-  AnonShape_005E10A0_819783CC *pAVar4;
-  int iVar5;
+  DArrayTy *pDVar2;
+  AnonShape_005E10A0_819783CC *pAVar3;
+  int iVar6;
   cMf32 *this_01;
-  uint *puVar6;
-  uint uVar7;
-  void **value;
+  uint *puVar4;
+  uint uVar5;
+  int *slotStorage;
+  int iVar7;
   SpriteClassTy *this_02;
   InternalExceptionFrame local_4c;
   MTaskTy *local_8;
@@ -27,9 +28,9 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",299,0,iVar2,"%s",
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",299,0,iVar2,"%s",
                                "MTaskTy::DoneMTask");
-    if (iVar5 == 0) {
+    if (iVar6 == 0) {
       RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\task_obj.cpp",299);
       return;
     }
@@ -65,109 +66,109 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_02D1);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_0362);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_03F3);
-  puVar6 = this_00->field_02BD;
-  iVar2 = 4;
+  puVar4 = this_00->field_02BD;
+  iVar7 = 4;
   do {
-    if (-1 < (int)*puVar6) {
-      FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar6);
-      *puVar6 = 0xffffffff;
+    if (-1 < (int)*puVar4) {
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar4);
+      *puVar4 = 0xffffffff;
     }
-    puVar6 = puVar6 + 1;
-    iVar2 = iVar2 + -1;
-  } while (iVar2 != 0);
+    puVar4 = puVar4 + 1;
+    iVar7 = iVar7 + -1;
+  } while (iVar7 != 0);
   if (this_00->field_02B9 != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_02B9);
     this_00->field_02B9 = 0;
   }
-  puVar6 = this_00->field_02A5;
-  iVar2 = 5;
+  puVar4 = this_00->field_02A5;
+  iVar7 = 5;
   do {
-    if (-1 < (int)*puVar6) {
-      FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar6);
-      *puVar6 = 0xffffffff;
+    if (-1 < (int)*puVar4) {
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar4);
+      *puVar4 = 0xffffffff;
     }
-    puVar6 = puVar6 + 1;
-    iVar2 = iVar2 + -1;
-  } while (iVar2 != 0);
-  puVar6 = this_00->field_0291;
-  iVar2 = 5;
+    puVar4 = puVar4 + 1;
+    iVar7 = iVar7 + -1;
+  } while (iVar7 != 0);
+  puVar4 = this_00->field_0291;
+  iVar7 = 5;
   do {
-    if (*puVar6 != 0) {
-      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar6);
-      *puVar6 = 0;
+    if (*puVar4 != 0) {
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar4);
+      *puVar4 = 0;
     }
-    puVar6 = puVar6 + 1;
-    iVar2 = iVar2 + -1;
-  } while (iVar2 != 0);
-  pDVar3 = this_00->field_064B;
-  if (pDVar3 != nullptr) {
-    uVar7 = 0;
-    if (pDVar3->count != 0) {
-      if (pDVar3->count == 0) {
+    puVar4 = puVar4 + 1;
+    iVar7 = iVar7 + -1;
+  } while (iVar7 != 0);
+  pDVar2 = this_00->field_064B;
+  if (pDVar2 != nullptr) {
+    uVar5 = 0;
+    if (pDVar2->count != 0) {
+      if (pDVar2->count == 0) {
         this_02 = nullptr;
         goto LAB_005e0672;
       }
       do {
-        this_02 = DArrayAt<SpriteClassTy>(pDVar3, uVar7);
+        this_02 = DArrayAt<SpriteClassTy>(pDVar2, uVar5);
 LAB_005e0672:
         SpriteClassTy::CloseSprite(this_02);
         if (*(int *)((int)&this_02[1].field_0008 + 1) != 0) {
-          FreeAndNull((void **)((int)&this_02[1].field_0008 + 1));
+          FreeAndNull((void *)((int)&this_02[1].field_0008 + 1));
         }
-        pDVar3 = this_00->field_064B;
-        uVar7 = uVar7 + 1;
-      } while (uVar7 < pDVar3->count);
+        pDVar2 = this_00->field_064B;
+        uVar5 = uVar5 + 1;
+      } while (uVar5 < pDVar2->count);
     }
     DArrayDestroy(this_00->field_064B);
     this_00->field_064B = nullptr;
   }
-  pDVar3 = this_00->field_0647;
-  if (pDVar3 != nullptr) {
-    uVar7 = 0;
-    if (pDVar3->count != 0) {
-      if (pDVar3->count == 0) {
-        pAVar4 = nullptr;
+  pDVar2 = this_00->field_0647;
+  if (pDVar2 != nullptr) {
+    uVar5 = 0;
+    if (pDVar2->count != 0) {
+      if (pDVar2->count == 0) {
+        pAVar3 = nullptr;
         goto LAB_005e06d9;
       }
       do {
-        pAVar4 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar3, uVar7);
+        pAVar3 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar2, uVar5);
 LAB_005e06d9:
-        TTaskItemClose(this_00,pAVar4);
-        pDVar3 = this_00->field_0647;
-        uVar7 = uVar7 + 1;
-      } while (uVar7 < pDVar3->count);
+        TTaskItemClose(this_00,pAVar3);
+        pDVar2 = this_00->field_0647;
+        uVar5 = uVar5 + 1;
+      } while (uVar5 < pDVar2->count);
     }
     DArrayDestroy(this_00->field_0647);
     this_00->field_0647 = nullptr;
   }
-  pDVar3 = this_00->field_064F;
-  if (pDVar3 != nullptr) {
-    uVar7 = 0;
-    if (pDVar3->count != 0) {
-      if (pDVar3->count == 0) {
-        pAVar4 = nullptr;
+  pDVar2 = this_00->field_064F;
+  if (pDVar2 != nullptr) {
+    uVar5 = 0;
+    if (pDVar2->count != 0) {
+      if (pDVar2->count == 0) {
+        pAVar3 = nullptr;
         goto LAB_005e072b;
       }
       do {
-        pAVar4 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar3, uVar7);
+        pAVar3 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar2, uVar5);
 LAB_005e072b:
-        TTaskItemClose(this_00,pAVar4);
-        pDVar3 = this_00->field_064F;
-        uVar7 = uVar7 + 1;
-      } while (uVar7 < pDVar3->count);
+        TTaskItemClose(this_00,pAVar3);
+        pDVar2 = this_00->field_064F;
+        uVar5 = uVar5 + 1;
+      } while (uVar5 < pDVar2->count);
     }
     DArrayDestroy(this_00->field_064F);
     this_00->field_064F = nullptr;
   }
-  value = (void **)&this_00->field_0653;
-  iVar2 = 0xb;
+  slotStorage = &this_00->field_0653;
+  iVar7 = 0xb;
   do {
-    if (*value != nullptr) {
-      FreeAndNull(value);
+    if (*slotStorage != 0) {
+      FreeAndNull(slotStorage);
     }
-    value = value + 3;
-    iVar2 = iVar2 + -1;
-  } while (iVar2 != 0);
+    slotStorage = slotStorage + 3;
+    iVar7 = iVar7 + -1;
+  } while (iVar7 != 0);
   if (this_00->field_0089 != nullptr) {
     ccFntTy::operator_delete((uint *)this_00->field_0089);
     this_00->field_0089 = nullptr;

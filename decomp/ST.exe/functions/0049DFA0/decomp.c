@@ -10,12 +10,13 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
 {
   STGroupBoatC *pSVar2;
   int iVar3;
-  dword dVar4;
-  DArrayTy *pDVar5;
+  dword dVar3;
+  DArrayTy *pDVar4;
   DArrayTy *array;
-  uint uVar6;
+  uint uVar5;
   int iVar7;
-  undefined4 uVar8;
+  undefined4 uVar6;
+  int iVar8;
   STBoatC *pSVar9;
   uint uVar11;
   InternalExceptionFrame local_84;
@@ -64,8 +65,8 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
   if ((param_1 != 1) && (param_1 != 0)) goto LAB_0049e26d;
   memset(&local_30->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
   local_30->field_0065 = 0;
-  iVar3 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_30->field_0178,(int *)&local_8);
-  if (iVar3 == -4) {
+  iVar8 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_30->field_0178,(int *)&local_8);
+  if (iVar8 == -4) {
     return 0;
   }
   STFishC::sub_004162F0
@@ -89,13 +90,13 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0xa5b);
         }
-        iVar3 = local_8->vfunc_F8();
-        if (iVar3 != 0) {
-          iVar3 = thunk_FUN_00490d90((STGameObjC *)local_8);
-          if (iVar3 == 0) {
-            dVar4 = local_8->slot_2C();
-            if ((((dVar4 != 7) && (dVar4 != 0x13)) && (dVar4 != 0x1b)) ||
-               (iVar3 = thunk_FUN_00492370((STGameObjC *)local_8), iVar3 != 0)) {
+        iVar8 = local_8->vfunc_F8();
+        if (iVar8 != 0) {
+          iVar8 = thunk_FUN_00490d90((STGameObjC *)local_8);
+          if (iVar8 == 0) {
+            dVar3 = local_8->slot_2C();
+            if ((((dVar3 != 7) && (dVar3 != 0x13)) && (dVar3 != 0x1b)) ||
+               (iVar8 = thunk_FUN_00492370((STGameObjC *)local_8), iVar8 != 0)) {
               STBoatC::CmdToObj(local_8,CASE_3,&local_1c);
               goto LAB_0049e1aa;
             }
@@ -104,21 +105,21 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
             local_38 = *(undefined2 *)&pSVar2->field_0x2a7;
             local_36 = *(undefined4 *)&pSVar2->field_0x2a9;
             STBoatC::CmdToObj(local_8,CASE_F,&local_40);
-            pDVar5 = local_14;
+            pDVar4 = local_14;
             if (local_14 == nullptr) {
-              pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
-              local_14 = pDVar5;
+              pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
+              local_14 = pDVar4;
             }
           }
           else {
-            pDVar5 = array;
+            pDVar4 = array;
             if (array == nullptr) {
               array = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
-              pDVar5 = array;
+              pDVar4 = array;
               local_24 = array;
             }
           }
-          Library::DKW::TBL::DArrayAppend(pDVar5,local_c);
+          Library::DKW::TBL::DArrayAppend(pDVar4,local_c);
         }
       }
 LAB_0049e1aa:
@@ -126,7 +127,7 @@ LAB_0049e1aa:
       pSVar9 = local_10;
     } while ((int)local_20 < (int)local_10);
   }
-  pDVar5 = local_14;
+  pDVar4 = local_14;
   if (local_14 == nullptr) {
 LAB_0049e1de:
     if (array != nullptr) {
@@ -144,13 +145,13 @@ LAB_0049e1de:
       }
       local_18 = 0;
     }
-    pDVar5 = local_14;
+    pDVar4 = local_14;
     if (local_14 != nullptr) goto LAB_0049e241;
     if (array == nullptr) {
       local_18 = 0;
     }
 LAB_0049e23d:
-    if (pDVar5 != nullptr) goto LAB_0049e241;
+    if (pDVar4 != nullptr) goto LAB_0049e241;
   }
   else {
     if (array != nullptr) {
@@ -161,7 +162,7 @@ LAB_0049e23d:
     }
     if (local_14 == nullptr) goto LAB_0049e1de;
 LAB_0049e241:
-    DArrayDestroy(pDVar5);
+    DArrayDestroy(pDVar4);
   }
   if (array != nullptr) {
     DArrayDestroy(array);
@@ -183,20 +184,20 @@ LAB_0049e26d:
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xa8e);
           }
-          iVar3 = local_8->vfunc_F8();
-          if ((iVar3 != 0) &&
-             (((dVar4 = local_8->slot_2C(), dVar4 == 7 || (dVar4 == 0x13)) ||
-              (dVar4 == 0x1b)))) {
+          iVar8 = local_8->vfunc_F8();
+          if ((iVar8 != 0) &&
+             (((dVar3 = local_8->slot_2C(), dVar3 == 7 || (dVar3 == 0x13)) ||
+              (dVar3 == 0x1b)))) {
             local_28 = 1;
-            iVar3 = thunk_FUN_00492370((STGameObjC *)local_8);
-            if (iVar3 == *(int *)&pSVar2->field_0x2a9) {
+            iVar8 = thunk_FUN_00492370((STGameObjC *)local_8);
+            if (iVar8 == *(int *)&pSVar2->field_0x2a9) {
               local_18 = 0;
               RaiseInternalException
                         (-0x5001fff7,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xa95);
             }
-            iVar3 = thunk_FUN_0045ff10((STGameObjC *)local_8);
-            if ((iVar3 == 0xf) || (uVar6 = STBoatC::CheckPBoxCmd(local_8,CASE_F), uVar6 == 1)) {
+            iVar8 = thunk_FUN_0045ff10((STGameObjC *)local_8);
+            if ((iVar8 == 0xf) || (uVar5 = STBoatC::CheckPBoxCmd(local_8,CASE_F), uVar5 == 1)) {
               local_2c = 1;
             }
           }

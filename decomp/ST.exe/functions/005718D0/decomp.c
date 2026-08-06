@@ -4,6 +4,7 @@
 void __fastcall FUN_005718d0(int param_1)
 
 {
+  int iVar2;
   int iVar1;
   CHAR local_164 [260];
   InternalExceptionFrame local_60;
@@ -25,13 +26,13 @@ void __fastcall FUN_005718d0(int param_1)
       local_8 = Library::DKW::DDX::FUN_006c4880
                           (g_dDXContext_0080759C,0,0,g_nWidth_00806730,DAT_00806734,DAT_00806738);
       Library::DKW::DDX::FUN_006c44e0(g_dDXContext_0080759C,local_1c);
-      iVar1 = local_c;
+      iVar2 = local_c;
       if (local_8 != (LPBITMAPINFO)0x0) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         wsprintfA(local_164,"%sscr%03d.bmp",local_c + 0x60,
                   (uint)*(ushort *)(local_c + 0x1138));
         Library::DKW::WGR::FUN_006c4230(local_164,local_8,(LPCVOID)0x0);
-        *(short *)(iVar1 + 0x1138) = *(short *)(iVar1 + 0x1138) + 1;
+        *(short *)(iVar2 + 0x1138) = *(short *)(iVar2 + 0x1138) + 1;
         FreeAndNull(&local_8);
       }
       g_currentExceptionFrame = local_60.previous;

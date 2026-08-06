@@ -9,18 +9,20 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
 
 {
   byte bVar1;
+  int iVar2;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar3;
   undefined4 uVar4;
   uint *puVar5;
   int iVar6;
-  uint uVar7;
-  ulong *puVar8;
-  byte *pbVar9;
+  int iVar7;
+  uint uVar8;
+  ulong *puVar9;
   byte *pbVar10;
-  bool bVar11;
-  FSGSTy_field_1EBEDArray *pFVar12;
+  byte *pbVar11;
+  bool bVar12;
+  FSGSTy_field_1EBEDArray *pFVar13;
   uint local_2bc [11];
   byte local_290 [560];
   InternalExceptionFrame local_60;
@@ -38,11 +40,11 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
     this_00 = g_cursorClass_00802A30;
     if (iVar3 == 0) {
       if (g_cursorClass_00802A30 != nullptr) {
-        iVar3 = g_cursorClass_00802A30->field_00C9;
-        iVar6 = g_cursorClass_00802A30->field_00C5;
+        iVar7 = g_cursorClass_00802A30->field_00C9;
+        iVar2 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
         this_00->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(this_00,CASE_0,iVar6,iVar3);
+        CursorClassTy::SetGCType(this_00,CASE_0,iVar2,iVar7);
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
         this_00->field_00D2 = 0;
         this_00->field_04DF = -1;
@@ -50,19 +52,19 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
       this_01 = local_10;
       local_10->field_002D = 0x26;
       FUN_006e6080(local_10,2,local_10->field_1B20,(undefined4 *)&local_10->field_0x1d);
-      pFVar12 = this_01->field_1EBE;
-      if ((uint)*(ushort *)&this_01->field_0x31 < pFVar12->count) {
-        element_1ebe = DArrayAt<FSGSTy_field_1EBEElement>(pFVar12, (uint)*(ushort *)&this_01->field_0x31);
+      pFVar13 = this_01->field_1EBE;
+      if ((uint)*(ushort *)&this_01->field_0x31 < pFVar13->count) {
+        element_1ebe = DArrayAt<FSGSTy_field_1EBEElement>(pFVar13, (uint)*(ushort *)&this_01->field_0x31);
       }
       else {
         element_1ebe = nullptr;
       }
       if (element_1ebe != nullptr) {
-        puVar8 = element_1ebe;
+        puVar9 = element_1ebe;
         puVar5 = local_2bc;
-        memmove(puVar5, puVar8, 0x25c); /* compiler REP MOVS byte copy */
+        memmove(puVar5, puVar9, 0x25c); /* compiler REP MOVS byte copy */
       }
-      pFVar12->count = 0;
+      pFVar13->count = 0;
       do {
         if (param_1 == 0) {
           FUN_006b5f80((int *)g_ddxContext_008075A8,0x13,0x5e,0x174,0x175);
@@ -81,7 +83,7 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
           *(undefined4 *)&this_01->field_0x31 = uVar4;
           FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
           if (element_1ebe != nullptr) {
-            uVar7 = 0;
+            uVar8 = 0;
             local_8 = this_01->field_1EBE->count;
             if (local_8 != 0) {
               if (local_8 == 0) {
@@ -91,30 +93,30 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
               do {
                 /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
                 puVar5 = (uint *)((int)&this_01->field_1EBE->data->field_0000 +
-                                 this_01->field_1EBE->elementSize * uVar7);
+                                 this_01->field_1EBE->elementSize * uVar8);
 LAB_005a37da:
                 if (puVar5 != nullptr) {
-                  pbVar10 = local_290;
-                  pbVar9 = (byte *)(puVar5 + 0xb);
+                  pbVar11 = local_290;
+                  pbVar10 = (byte *)(puVar5 + 0xb);
                   do {
-                    bVar1 = *pbVar9;
-                    bVar11 = bVar1 < *pbVar10;
-                    if (bVar1 != *pbVar10) {
+                    bVar1 = *pbVar10;
+                    bVar12 = bVar1 < *pbVar11;
+                    if (bVar1 != *pbVar11) {
 LAB_005a380b:
-                      iVar3 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
+                      iVar7 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
                       goto LAB_005a3810;
                     }
                     if (bVar1 == 0) break;
-                    bVar1 = pbVar9[1];
-                    bVar11 = bVar1 < pbVar10[1];
-                    if (bVar1 != pbVar10[1]) goto LAB_005a380b;
-                    pbVar9 = pbVar9 + 2;
+                    bVar1 = pbVar10[1];
+                    bVar12 = bVar1 < pbVar11[1];
+                    if (bVar1 != pbVar11[1]) goto LAB_005a380b;
                     pbVar10 = pbVar10 + 2;
+                    pbVar11 = pbVar11 + 2;
                   } while (bVar1 != 0);
-                  iVar3 = 0;
+                  iVar7 = 0;
 LAB_005a3810:
-                  if (iVar3 == 0) {
-                    *(short *)&this_01->field_0x31 = (short)uVar7;
+                  if (iVar7 == 0) {
+                    *(short *)&this_01->field_0x31 = (short)uVar8;
                     *(undefined2 *)&this_01->field_0x37 = 1;
                     *(undefined2 *)&this_01->field_0x35 = 1;
                     this_01->field_002D = 0x22;
@@ -123,8 +125,8 @@ LAB_005a3810:
                     return;
                   }
                 }
-                uVar7 = uVar7 + 1;
-                if (local_8 <= uVar7) {
+                uVar8 = uVar8 + 1;
+                if (local_8 <= uVar8) {
                   g_currentExceptionFrame = local_60.previous;
                   return;
                 }
@@ -134,34 +136,34 @@ LAB_005a3810:
           g_currentExceptionFrame = local_60.previous;
           return;
         }
-        uVar7 = this_01->field_1EC2;
-        if (uVar7 == 0) {
+        uVar8 = this_01->field_1EC2;
+        if (uVar8 == 0) {
           if (*param_2 == 4) {
-            pFVar12 = this_01->field_1EBE;
+            pFVar13 = this_01->field_1EBE;
             goto LAB_005a36e9;
           }
         }
-        else if ((param_2[2] == uVar7) && (*param_2 == 4)) {
-          if (uVar7 == 0x100) {
+        else if ((param_2[2] == uVar8) && (*param_2 == 4)) {
+          if (uVar8 == 0x100) {
             if (this_01->field_1EC6 != -1) {
               if ((char)param_2[0x1f] != '\0') {
                 Library::MSVCRT::_strncpy(local_1c,(char *)((int)param_2 + 0x7f),8);
                 local_14 = 0;
                 Library::MSVCRT::FUN_0072ee80(local_1c,"%08x");
                 if (local_8 == this_01->field_1EC6) {
-                  pFVar12 = this_01->field_1EBE;
+                  pFVar13 = this_01->field_1EBE;
                   goto LAB_005a36e9;
                 }
               }
               goto LAB_005a36ee;
             }
-            pFVar12 = this_01->field_1EBE;
+            pFVar13 = this_01->field_1EBE;
           }
           else {
-            pFVar12 = this_01->field_1EBE;
+            pFVar13 = this_01->field_1EBE;
           }
 LAB_005a36e9:
-          Library::DKW::TBL::DArrayAppend((DArrayTy *)pFVar12,param_2);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)pFVar13,param_2);
         }
 LAB_005a36ee:
         param_2 = param_2 + 0x97;

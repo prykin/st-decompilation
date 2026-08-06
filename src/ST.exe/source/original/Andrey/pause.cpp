@@ -12,16 +12,18 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
 {
   PausePanelTy *this_00;
   int iVar2;
-  ccFntTy *pcVar3;
-  LPSTR pCVar4;
-  ushort *puVar5;
-  uint *resourceString;
-  undefined4 uVar6;
-  int iVar7;
-  uint uVar8;
-  int *piVar9;
-  int iVar10;
-  int iVar11;
+  int iVar4;
+  ccFntTy *pcVar5;
+  LPSTR pCVar6;
+  ushort *puVar7;
+  char *resourceString;
+  undefined4 uVar8;
+  int iVar3;
+  int iVar9;
+  uint uVar10;
+  int *piVar11;
+  int iVar12;
+  int iVar13;
   InternalExceptionFrame local_4c;
   PausePanelTy *local_8;
 
@@ -32,38 +34,38 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
   this_00 = local_8;
   if (iVar2 == 0) {
     g_pausePanel_008016E0 = local_8;
-    iVar2 = g_nWidth_00806730 + -0x1c;
-    local_8->field_003C = iVar2;
-    local_8->field_0174 = (local_8->field_0040 - iVar2) + g_nWidth_00806730;
-    pcVar3 = (ccFntTy *)st::fn_0070DF00(0x19d,g_interSystem_00802A28->field_0028);
-    this_00->field_017C = pcVar3;
-    pcVar3->field_0058 = 0;
-    pcVar3->field_005C = 0;
-    iVar2 = 1;
-    piVar9 = nullptr;
-    pCVar4 = st::fn_0040577C("BKG_PAUSE",0);
-    puVar5 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar4,piVar9,iVar2);
-    this_00->field_0180 = puVar5;
-    st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)puVar5);
+    iVar4 = g_nWidth_00806730 + -0x1c;
+    local_8->field_003C = iVar4;
+    local_8->field_0174 = (local_8->field_0040 - iVar4) + g_nWidth_00806730;
+    pcVar5 = (ccFntTy *)st::fn_0070DF00(0x19d,g_interSystem_00802A28->field_0028);
+    this_00->field_017C = pcVar5;
+    pcVar5->field_0058 = 0;
+    pcVar5->field_005C = 0;
+    iVar4 = 1;
+    piVar11 = nullptr;
+    pCVar6 = st::fn_0040577C("BKG_PAUSE",0);
+    puVar7 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar6,piVar11,iVar4);
+    this_00->field_0180 = puVar7;
+    st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)puVar7);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x52,2,0xd1,0xc);
-    iVar11 = -1;
-    iVar10 = -1;
-    uVar8 = 0;
-    iVar7 = -1;
-    iVar2 = -2;
-    resourceString = (uint *)st::fn_006B0140(0x2716,g_hINSTANCE_00807618);
-    st::fn_00711B70(this_00->field_017C,resourceString,iVar2,iVar7,uVar8,iVar10,iVar11);
-    pCVar4 = st::fn_0040577C("BUT_MEDIUM",0);
-    uVar6 = st::fn_0040300D((PanelTy *)this_00,0,1,0x115,0x8b,1,0,1,pCVar4,0xbfff,0xc000,0,0,0,
+    iVar13 = -1;
+    iVar12 = -1;
+    uVar10 = 0;
+    iVar9 = -1;
+    iVar4 = -2;
+    resourceString = st::fn_006B0140(0x2716,g_hINSTANCE_00807618);
+    st::fn_00711B70(this_00->field_017C,resourceString,iVar4,iVar9,uVar10,iVar12,iVar13);
+    pCVar6 = st::fn_0040577C("BUT_MEDIUM",0);
+    uVar8 = st::fn_0040300D((PanelTy *)this_00,0,1,0x115,0x8b,1,0,1,pCVar6,0xbfff,0xc000,0,0,0,
                                nullptr,1);
-    this_00->field_0184 = uVar6;
+    this_00->field_0184 = uVar8;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar7 = st::fn_006AD4D0("E:\\__titans\\Andrey\\pause.cpp",0x28,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\pause.cpp",0x28,0,iVar2,"%s",
                              "PausePanelTy::InitPausePanel");
-  if (iVar7 != 0) {
+  if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\pause.cpp",0x28);
@@ -198,8 +200,8 @@ void __thiscall st::fn_005396E0(PausePanelTy *this,int param_1)
 
 {
   short sVar2;
-  int iVar3;
   int iVar4;
+  int iVar3;
   InternalExceptionFrame local_4c;
   PausePanelTy *local_8;
 
@@ -250,8 +252,9 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
   STMessageId SVar1;
   PausePanelTy *this_00;
   int iVar3;
-  LPSTR pCVar4;
   int iVar5;
+  LPSTR pCVar6;
+  int iVar4;
   InternalExceptionFrame local_4c;
   PausePanelTy *local_8;
 
@@ -262,9 +265,9 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\pause.cpp",0x9f,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\pause.cpp",0x9f,0,iVar3,"%s",
                                "PausePanelTy::GetMessage");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\pause.cpp",0x9f);
@@ -280,12 +283,12 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
     }
     if (SVar1 == MESS_ID_NONE) {
       if (this_00->field_0172 == CASE_3) {
-        iVar3 = this_00->field_0054 + -0x174 + this_00->field_004C;
-        if (iVar3 < this_00->field_003C) {
+        iVar5 = this_00->field_0054 + -0x174 + this_00->field_004C;
+        if (iVar5 < this_00->field_003C) {
           this_00->field_003C = this_00->field_003C + -0x1e;
         }
-        if (this_00->field_003C <= iVar3) {
-          this_00->field_003C = iVar3;
+        if (this_00->field_003C <= iVar5) {
+          this_00->field_003C = iVar5;
           this_00->field_0172 = CASE_1;
           st::fn_00404EA3(this_00,1);
         }
@@ -296,12 +299,12 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
         return 0;
       }
       if (this_00->field_0172 == CASE_4) {
-        iVar3 = this_00->field_0054 + this_00->field_004C;
-        if (this_00->field_003C < iVar3) {
+        iVar5 = this_00->field_0054 + this_00->field_004C;
+        if (this_00->field_003C < iVar5) {
           this_00->field_003C = this_00->field_003C + 0x1e;
         }
-        if (iVar3 <= this_00->field_003C) {
-          this_00->field_003C = iVar3;
+        if (iVar5 <= this_00->field_003C) {
+          this_00->field_003C = iVar5;
           this_00->field_0172 = CASE_2;
         }
         st::fn_006B3640
@@ -323,8 +326,8 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
     (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
   }
   else if (SVar1 == MESS_SHARED_C000) {
-    pCVar4 = st::fn_0040577C("BUT_MEDIUM",0);
-    st::fn_00402121((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar4,0x274d,1,0);
+    pCVar6 = st::fn_0040577C("BUT_MEDIUM",0);
+    st::fn_00402121((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar6,0x274d,1,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

@@ -22,12 +22,13 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar4;
-  dword dVar5;
+  undefined4 *puVar3;
+  int iVar5;
   dword dVar6;
-  IMAGE_DOS_HEADER *pIVar7;
-  byte *pbVar8;
-  int iVar9;
+  dword dVar7;
+  IMAGE_DOS_HEADER *pIVar8;
+  byte *pbVar9;
+  int iVar4;
   uint uVar10;
   byte *pbVar11;
   bool bVar12;
@@ -54,9 +55,9 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
   iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x295,0,iVar3,"%s",
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x295,0,iVar3,"%s",
                                "_EnumPlObj");
-    if (iVar9 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x296);
@@ -72,22 +73,22 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
     if (local_1c->count != 0) {
       uVar10 = 0;
       if (local_1c->count == 0) {
-        puVar4 = nullptr;
+        puVar3 = nullptr;
         goto LAB_00676e12;
       }
       do {
-        puVar4 = DArrayAt<undefined4>(local_1c, uVar10);
+        puVar3 = DArrayAt<undefined4>(local_1c, uVar10);
 LAB_00676e12:
-        this = (STFishC *)*puVar4;
-        if ((this != nullptr) && (iVar3 = (*this->vtable->vfunc_F8)(), iVar3 != 0)) {
+        this = (STFishC *)*puVar3;
+        if ((this != nullptr) && (iVar5 = (*this->vtable->vfunc_F8)(), iVar5 != 0)) {
           local_10 = 1;
-          dVar5 = this->slot_2C();
+          dVar6 = this->slot_2C();
           if (param_2 != 0) {
-            if (dVar5 == 0x78) {
+            if (dVar6 == 0x78) {
               if ((param_2 & 0x80000000) == 0) {
                 if ((param_2 & 0x3fffffff) != 0) {
-                  dVar6 = this->slot_2C();
-                  if (dVar6 == 0x78) {
+                  dVar7 = this->slot_2C();
+                  if (dVar7 == 0x78) {
                     uVar10 = *(uint *)&this->field_0x259;
                   }
                   else {
@@ -102,33 +103,33 @@ LAB_00676e88:
               }
             }
             else if (((param_2 & 0x40000000) != 0) ||
-                    (((param_2 & 0x3fffffff) != 0 && ((param_2 & 0x3fffffff) != dVar5))))
+                    (((param_2 & 0x3fffffff) != 0 && ((param_2 & 0x3fffffff) != dVar6))))
             goto LAB_00676e88;
           }
           if (local_10 == 0) {
 LAB_00677024:
             if (param_14 == nullptr) goto LAB_00677041;
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar3 = (*(code *)param_14)(param_1,local_14,this,param_13);
+            iVar5 = (*(code *)param_14)(param_1,local_14,this,param_13);
           }
           else {
             if (param_3 != 0x3fffffff) {
-              if (dVar5 == 0x78) {
+              if (dVar6 == 0x78) {
                 if ((param_3 & 0x80000000) == 0) {
-                  dVar5 = this->slot_2C();
-                  if (dVar5 == 0x78) {
-                    iVar3 = *(int *)&this->field_0x259;
+                  dVar6 = this->slot_2C();
+                  if (dVar6 == 0x78) {
+                    iVar5 = *(int *)&this->field_0x259;
                   }
                   else {
-                    iVar3 = 0;
+                    iVar5 = 0;
                   }
-                  pIVar7 = thunk_FUN_00674fb0(iVar3);
+                  pIVar8 = thunk_FUN_00674fb0(iVar5);
 joined_r0x00676ef3:
-                  if (((uint)pIVar7 & param_3 & 0x3fffffff) != 0) goto LAB_00676efc;
+                  if (((uint)pIVar8 & param_3 & 0x3fffffff) != 0) goto LAB_00676efc;
                 }
               }
               else if ((param_3 & 0x40000000) == 0) {
-                pIVar7 = thunk_FUN_00674fb0(dVar5);
+                pIVar8 = thunk_FUN_00674fb0(dVar6);
                 goto joined_r0x00676ef3;
               }
               local_10 = 0;
@@ -138,30 +139,30 @@ LAB_00676efc:
             if ((param_4 != nullptr) && (*param_4 != 0)) {
               (*this->vtable->vfunc_74)((short)local_2c);
               pbVar11 = local_2c;
-              pbVar8 = param_4;
+              pbVar9 = param_4;
               do {
-                bVar1 = *pbVar8;
+                bVar1 = *pbVar9;
                 bVar12 = bVar1 < *pbVar11;
                 if (bVar1 != *pbVar11) {
 LAB_00676f47:
-                  iVar3 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
+                  iVar5 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
                   goto LAB_00676f4c;
                 }
                 if (bVar1 == 0) break;
-                bVar1 = pbVar8[1];
+                bVar1 = pbVar9[1];
                 bVar12 = bVar1 < pbVar11[1];
                 if (bVar1 != pbVar11[1]) goto LAB_00676f47;
-                pbVar8 = pbVar8 + 2;
+                pbVar9 = pbVar9 + 2;
                 pbVar11 = pbVar11 + 2;
               } while (bVar1 != 0);
-              iVar3 = 0;
+              iVar5 = 0;
 LAB_00676f4c:
-              if (iVar3 != 0) {
+              if (iVar5 != 0) {
                 local_10 = 0;
               }
             }
             if ((local_10 == 0) ||
-               ((local_5 != -1 && (iVar3 = this->vfunc_6C(), local_5 != iVar3))))
+               ((local_5 != -1 && (iVar5 = this->vfunc_6C(), local_5 != iVar5))))
             goto LAB_00677024;
             if ((0 < param_9) &&
                (((0 < param_10 && (0 < param_11)) &&
@@ -174,9 +175,9 @@ LAB_00676f4c:
             }
             if ((local_10 == 0) || (param_12 == nullptr)) goto LAB_00677024;
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar3 = (*(code *)param_12)(param_1,local_14,this,param_13);
+            iVar5 = (*(code *)param_12)(param_1,local_14,this,param_13);
           }
-          if (iVar3 != 0) {
+          if (iVar5 != 0) {
             g_currentExceptionFrame = local_70.previous;
             return -1;
           }

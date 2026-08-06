@@ -10,13 +10,15 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
 {
   CPanelTy *this_00;
   int iVar2;
-  byte *pbVar3;
-  uint uVar4;
+  BITMAPINFO *pBVar2;
+  uint uVar3;
+  int iVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_EAX;
-  byte bVar5;
-  int iVar6;
-  uint uVar7;
+  byte bVar4;
+  int iVar5;
+  uint uVar6;
+  int iVar7;
   InternalExceptionFrame local_54;
   uint local_10;
   CPanelTy *local_c;
@@ -32,32 +34,32 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
     PaintCostsXY(this_00,this_00->field_0194,param_1 + 0x39,0x70,this_00->field_0C1C,0xffff,3,0);
     local_8 = local_8 & 0xffffff00;
     local_10 = ((uint)(byte)this_00->field_0C33 * 0x28) / 100;
-    uVar4 = (uint)(byte)this_00->field_0C33 * -0x33333328;
+    uVar3 = (uint)(byte)this_00->field_0C33 * -0x33333328;
     if (local_10 != 0) {
-      uVar7 = 0;
+      uVar6 = 0;
       do {
-        pbVar3 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,param_1 + 0xb + uVar7 * 4,0x5c,
-               '\x01',pbVar3);
-        bVar5 = (byte)local_8 + 1;
-        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
-        uVar7 = (uint)bVar5;
-        uVar4 = local_10;
-      } while (uVar7 < local_10);
+        pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,param_1 + 0xb + uVar6 * 4,0x5c,
+               '\x01',(byte *)pBVar2);
+        bVar4 = (byte)local_8 + 1;
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
+        uVar6 = (uint)bVar4;
+        uVar3 = local_10;
+      } while (uVar6 < local_10);
     }
     if ((byte)local_8 < 0x28) {
-      iVar2 = param_1 + 0xb + (local_8 & 0xff) * 4;
-      iVar6 = 0x28 - (local_8 & 0xff);
+      iVar7 = param_1 + 0xb + (local_8 & 0xff) * 4;
+      iVar5 = 0x28 - (local_8 & 0xff);
       do {
-        pbVar3 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-        uVar4 = DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar2,0x5c,'\x01',pbVar3
-                      );
-        iVar2 = iVar2 + 4;
-        iVar6 = iVar6 + -1;
-      } while (iVar6 != 0);
+        pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        uVar3 = DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar7,0x5c,'\x01',
+                       (byte *)pBVar2);
+        iVar7 = iVar7 + 4;
+        iVar5 = iVar5 + -1;
+      } while (iVar5 != 0);
     }
     g_currentExceptionFrame = local_54.previous;
-    return uVar4;
+    return uVar3;
   }
   g_currentExceptionFrame = local_54.previous;
   iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x57,0,iVar2,"%s",

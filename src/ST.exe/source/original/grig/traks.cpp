@@ -13,6 +13,7 @@ int __thiscall st::fn_00555720(TraksClassTy *this)
   InternalExceptionFrame *pIVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
   int local_44 [16];
 
   pIVar2 = g_currentExceptionFrame;
@@ -44,8 +45,10 @@ st::fn_00555910(TraksClassTy *this,RecoveredRecord_TraksClassTy_00555910 *param_
 {
   undefined2 uVar1;
   int iVar3;
-  short sVar4;
   int iVar5;
+  short sVar3;
+  int iVar4;
+  int iVar6;
   InternalExceptionFrame local_64;
   int local_20;
   int local_1c;
@@ -60,13 +63,13 @@ st::fn_00555910(TraksClassTy *this,RecoveredRecord_TraksClassTy_00555910 *param_
   local_8 = this;
   iVar3 = st::fn_0072D7F0(local_64.jumpBuffer,0);
   if (iVar3 == 0) {
-    sVar4 = param_1->field_0022;
-    local_20 = (int)sVar4;
+    sVar3 = param_1->field_0022;
+    local_20 = (int)sVar3;
     if (((uint)((int)param_1->field_0014 + param_1->field_0024) <= local_8->field_0020) ||
        (param_1->field_003A != 0)) {
-      param_1->field_0022 = sVar4 + 1;
-      if (param_1->field_0036 <= (short)(sVar4 + 1)) {
-        param_1->field_0022 = sVar4;
+      param_1->field_0022 = sVar3 + 1;
+      if (param_1->field_0036 <= (short)(sVar3 + 1)) {
+        param_1->field_0022 = sVar3;
         param_1->field_0038 = 1;
       }
       param_1->field_0024 = local_8->field_0020;
@@ -78,69 +81,69 @@ st::fn_00555910(TraksClassTy *this,RecoveredRecord_TraksClassTy_00555910 *param_
     local_14 = (int)(short)param_1->field_0006;
     local_1c = (int)(short)param_1->field_0020;
     if (param_1->field_003A == 0) {
-      iVar3 = local_8->field_0020 - param_1->field_0028;
-      if (iVar3 == 0) {
-        iVar3 = 1;
+      iVar6 = local_8->field_0020 - param_1->field_0028;
+      if (iVar6 == 0) {
+        iVar6 = 1;
       }
-      iVar5 = param_1->field_0008 * iVar3;
-      sVar4 = (((short)(iVar5 / 10) + (short)(iVar5 >> 0x1f)) -
-              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + param_1->field_002C;
-      param_1->field_0002 = sVar4;
+      iVar4 = param_1->field_0008 * iVar6;
+      sVar3 = (((short)(iVar4 / 10) + (short)(iVar4 >> 0x1f)) -
+              (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + param_1->field_002C;
+      param_1->field_0002 = sVar3;
       if (param_1->field_000E != 0) {
-        iVar5 = param_1->field_000E * iVar3 * iVar3;
+        iVar4 = param_1->field_000E * iVar6 * iVar6;
         param_1->field_0002 =
-             (((short)(iVar5 / 0x14) + (short)(iVar5 >> 0x1f)) -
-             (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + sVar4;
+             (((short)(iVar4 / 0x14) + (short)(iVar4 >> 0x1f)) -
+             (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + sVar3;
       }
-      iVar5 = param_1->field_000A * iVar3;
-      sVar4 = (((short)(iVar5 / 10) + (short)(iVar5 >> 0x1f)) -
-              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + param_1->field_002E;
-      param_1->field_0004 = sVar4;
+      iVar4 = param_1->field_000A * iVar6;
+      sVar3 = (((short)(iVar4 / 10) + (short)(iVar4 >> 0x1f)) -
+              (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + param_1->field_002E;
+      param_1->field_0004 = sVar3;
       if (param_1->field_0010 != 0) {
-        iVar5 = param_1->field_0010 * iVar3 * iVar3;
+        iVar4 = param_1->field_0010 * iVar6 * iVar6;
         param_1->field_0004 =
-             (((short)(iVar5 / 0x14) + (short)(iVar5 >> 0x1f)) -
-             (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + sVar4;
+             (((short)(iVar4 / 0x14) + (short)(iVar4 >> 0x1f)) -
+             (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + sVar3;
       }
-      iVar5 = param_1->field_000C * iVar3;
-      sVar4 = (((short)(iVar5 / 10) + (short)(iVar5 >> 0x1f)) -
-              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + param_1->field_0030;
-      param_1->field_0006 = sVar4;
+      iVar4 = param_1->field_000C * iVar6;
+      sVar3 = (((short)(iVar4 / 10) + (short)(iVar4 >> 0x1f)) -
+              (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + param_1->field_0030;
+      param_1->field_0006 = sVar3;
       if (param_1->field_0012 != 0) {
-        iVar3 = param_1->field_0012 * iVar3 * iVar3;
+        iVar6 = param_1->field_0012 * iVar6 * iVar6;
         param_1->field_0006 =
-             (((short)(iVar3 / 0x14) + (short)(iVar3 >> 0x1f)) -
-             (short)((longlong)iVar3 * 0x66666667 >> 0x3f)) + sVar4;
+             (((short)(iVar6 / 0x14) + (short)(iVar6 >> 0x1f)) -
+             (short)((longlong)iVar6 * 0x66666667 >> 0x3f)) + sVar3;
       }
-      sVar4 = param_1->field_0002;
-      if (sVar4 < 0) {
-        sVar4 = ((sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f)
+      sVar3 = param_1->field_0002;
+      if (sVar3 < 0) {
+        sVar3 = ((sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f)
                 ) + -1;
       }
       else {
-        sVar4 = (sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f);
+        sVar3 = (sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f);
       }
-      param_1->field_001C = sVar4;
-      sVar4 = param_1->field_0004;
-      if (sVar4 < 0) {
-        sVar4 = ((sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f)
+      param_1->field_001C = sVar3;
+      sVar3 = param_1->field_0004;
+      if (sVar3 < 0) {
+        sVar3 = ((sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f)
                 ) + -1;
       }
       else {
-        sVar4 = (sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f);
+        sVar3 = (sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f);
       }
-      param_1->field_001E = sVar4;
-      sVar4 = param_1->field_0006;
-      if (sVar4 < 0) {
-        sVar4 = ((sVar4 / 200 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x51eb851f >> 0x3f)
+      param_1->field_001E = sVar3;
+      sVar3 = param_1->field_0006;
+      if (sVar3 < 0) {
+        sVar3 = ((sVar3 / 200 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x51eb851f >> 0x3f)
                 ) + -1;
       }
       else {
-        sVar4 = (sVar4 / 200 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x51eb851f >> 0x3f);
+        sVar3 = (sVar3 / 200 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x51eb851f >> 0x3f);
       }
-      param_1->field_0020 = sVar4;
-      iVar3 = st::fn_0040468D((RecoveredRecord_TraksClassTy_00555880 *)param_1);
-      if (iVar3 == 0) {
+      param_1->field_0020 = sVar3;
+      iVar6 = st::fn_0040468D((RecoveredRecord_TraksClassTy_00555880 *)param_1);
+      if (iVar6 == 0) {
         param_1->field_0002 = (undefined2)local_c;
         param_1->field_0004 = (undefined2)local_10;
         param_1->field_001C = uVar1;
@@ -346,15 +349,17 @@ void __thiscall st::fn_00556170(TraksClassTy *this,ushort *param_1)
 {
   TraksClassTy *pTVar2;
   int iVar3;
-  TraksClassTy_field_0024DArray *pTVar4;
+  TraksClassTy_field_0024DArray *pTVar3;
   char *text;
-  ushort *puVar5;
+  ushort *puVar4;
+  int iVar9;
   TraksClassTy_field_0024Element *element_0024;
-  int *piVar7;
-  uint uVar8;
-  byte bVar9;
+  int *piVar6;
+  uint uVar7;
+  byte bVar8;
   int iVar10;
-  undefined4 *puVar11;
+  int iVar11;
+  undefined4 *puVar12;
   InternalExceptionFrame local_54;
   int local_10;
   TraksClassTy *local_c;
@@ -370,58 +375,58 @@ void __thiscall st::fn_00556170(TraksClassTy *this,ushort *param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c->field_001C = *(undefined4 *)(param_1 + 0xc);
     if ((char)param_1[0xe] == '\0') {
-      pTVar4 = (TraksClassTy_field_0024DArray *)
+      pTVar3 = (TraksClassTy_field_0024DArray *)
                st::fn_006AE290(nullptr,0x32,0x3c,0x32);
-      pTVar2->field_0024 = pTVar4;
+      pTVar2->field_0024 = pTVar3;
     }
     else {
-      pTVar4 = (TraksClassTy_field_0024DArray *)st::fn_006B0060(nullptr,(uint *)(param_1 + 0x2e));
-      pTVar2->field_0024 = pTVar4;
-      pTVar4->iteratorIndex = 0;
+      pTVar3 = (TraksClassTy_field_0024DArray *)st::fn_006B0060(nullptr,(uint *)(param_1 + 0x2e));
+      pTVar2->field_0024 = pTVar3;
+      pTVar3->iteratorIndex = 0;
       while( true ) {
-        pTVar4 = pTVar2->field_0024;
-        uVar8 = pTVar4->iteratorIndex;
-        if (uVar8 < pTVar4->count) {
-          element_0024 = DArrayAt<TraksClassTy_field_0024Element>(pTVar4, uVar8);
-          pTVar4->iteratorIndex = uVar8 + 1;
+        pTVar3 = pTVar2->field_0024;
+        uVar7 = pTVar3->iteratorIndex;
+        if (uVar7 < pTVar3->count) {
+          element_0024 = DArrayAt<TraksClassTy_field_0024Element>(pTVar3, uVar7);
+          pTVar3->iteratorIndex = uVar7 + 1;
         }
         else {
           element_0024 = nullptr;
         }
         if (element_0024 == nullptr) break;
-        piVar7 = PTR_00806764;
+        piVar6 = PTR_00806764;
         if (*(int *)(&DAT_007c900c + element_0024->field_0000 * 0x18) != 1) {
-          piVar7 = PTR_00806774;
+          piVar6 = PTR_00806774;
         }
-        puVar11 = nullptr;
-        iVar10 = 0;
-        iVar3 = 1;
-        bVar9 = 0;
-        uVar8 = 0xffffffff;
+        puVar12 = nullptr;
+        iVar11 = 0;
+        iVar10 = 1;
+        bVar8 = 0;
+        uVar7 = 0xffffffff;
         text = st::fn_00404CBE((int)element_0024->field_0000);
-        puVar5 = st::fn_00709AF0
-                           (piVar7,CASE_1D,text,uVar8,bVar9,iVar3,iVar10,puVar11);
-        element_0024->field_0036 = *puVar5;
-        iVar3 = element_0024->field_0000 * 0x18;
+        puVar4 = st::fn_00709AF0
+                           (piVar6,CASE_1D,text,uVar7,bVar8,iVar10,iVar11,puVar12);
+        element_0024->field_0036 = *puVar4;
+        iVar10 = element_0024->field_0000 * 0x18;
         st::fn_006E8660
-                  (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)(&DAT_007c9000 + iVar3),
-                   *(uint *)(&DAT_007c9004 + iVar3),*(uint *)(&DAT_007c8ff8 + iVar3),
-                   *(uint *)(&DAT_007c8ffc + iVar3),0);
+                  (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)(&DAT_007c9000 + iVar10),
+                   *(uint *)(&DAT_007c9004 + iVar10),*(uint *)(&DAT_007c8ff8 + iVar10),
+                   *(uint *)(&DAT_007c8ffc + iVar10),0);
         element_0024->spriteHandle = local_8;
         st::fn_006E98E0
                   (g_sT3DSMAPContext_00807598,local_8,0,(int)element_0024->field_0036,
-                   STField<int>(puVar5,0x21),1);
+                   STField<int>(puVar4,0x21),1);
         st::fn_006EA270
                   (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,0,(int)element_0024->field_0022);
-        iVar3 = element_0024->field_0016;
-        if (-1 < iVar3) {
+        iVar10 = element_0024->field_0016;
+        if (-1 < iVar10) {
           if (element_0024->field_001A == -1) {
             st::fn_006EA3E0
-                      (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,iVar3);
+                      (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,iVar10);
           }
           else if (element_0024->field_001A == 1) {
             st::fn_006EA460
-                      (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,iVar3);
+                      (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,iVar10);
           }
         }
         st::fn_006EA4E0
@@ -442,9 +447,9 @@ void __thiscall st::fn_00556170(TraksClassTy *this,ushort *param_1)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar10 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x11b,0,iVar3,"%s",
-                              "TraksClassTy::PrepareAfterSave error");
-  if (iVar10 != 0) {
+  iVar9 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x11b,0,iVar3,"%s",
+                             "TraksClassTy::PrepareAfterSave error");
+  if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x11c);
@@ -467,7 +472,8 @@ int __thiscall st::fn_005564C0(TraksClassTy *this,STMessage *message)
   STMessageId SVar1;
   TraksClassTy *this_00;
   int iVar3;
-  TraksClassTy_field_0024DArray *pTVar4;
+  TraksClassTy_field_0024DArray *pTVar3;
+  int iVar4;
   int iVar5;
   InternalExceptionFrame local_58;
   TraksClassTy *local_14;
@@ -482,9 +488,9 @@ int __thiscall st::fn_005564C0(TraksClassTy *this,STMessage *message)
   this_00 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x151,0,iVar3,
+    iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x151,0,iVar3,
                                "TraksClassTy::GetMessage error mess->id == %lX",message->id);
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x152);
@@ -511,9 +517,9 @@ int __thiscall st::fn_005564C0(TraksClassTy *this,STMessage *message)
         local_8 = st::fn_006F2D90(g_cMf32_00806754,PTR_s_TRACKS_0079aebc,0,0);
       }
       if ((local_8 == nullptr) || (*(int *)(local_8 + 10) == 0)) {
-        pTVar4 = (TraksClassTy_field_0024DArray *)
+        pTVar3 = (TraksClassTy_field_0024DArray *)
                  st::fn_006AE290(nullptr,0x32,0x3c,0x32);
-        this_00->field_0024 = pTVar4;
+        this_00->field_0024 = pTVar3;
         this_00->field_001C = DAT_00808754 * 0x7d;
       }
       else {
@@ -554,18 +560,21 @@ st::fn_00556760
 
 {
   VisibleClassTy *pVVar2;
-  int iVar3;
-  char *text;
-  ushort *puVar4;
-  short sVar5;
-  int *piVar6;
+  int iVar4;
   int iVar7;
-  short *psVar8;
-  bool bVar9;
+  char *text;
+  ushort *puVar5;
   uint uVar10;
-  byte bVar11;
-  int iVar12;
-  undefined4 *puVar13;
+  int iVar3;
+  short sVar6;
+  int *piVar7;
+  int iVar8;
+  short *psVar9;
+  bool bVar10;
+  uint uVar11;
+  byte bVar12;
+  int iVar13;
+  undefined4 *puVar14;
   InternalExceptionFrame local_a8;
   uint local_64;
   TraksClassTy *local_60;
@@ -622,58 +631,58 @@ st::fn_00556760
     local_18 = param_5 / 0xc9;
   }
   if (param_6 < 0) {
-    iVar7 = param_6 / 200 + -1;
+    iVar8 = param_6 / 200 + -1;
   }
   else {
-    iVar7 = param_6 / 200;
+    iVar8 = param_6 / 200;
   }
   local_60 = this;
-  local_14 = iVar7;
+  local_14 = iVar8;
   if ((param_15 & 2) != 0) goto LAB_0055693a;
-  sVar5 = (short)local_18;
+  sVar6 = (short)local_18;
   if (g_sT3DSMAPContext_00807598 != nullptr) {
     if (((((int)(short)local_10 < g_sT3DSMAPContext_00807598->field_0048) ||
          (g_sT3DSMAPContext_00807598->field_0058 < (int)(short)local_10)) ||
-        ((int)sVar5 < g_sT3DSMAPContext_00807598->field_0044)) ||
-       (g_sT3DSMAPContext_00807598->field_0054 < (int)sVar5)) {
-      iVar3 = 0;
+        ((int)sVar6 < g_sT3DSMAPContext_00807598->field_0044)) ||
+       (g_sT3DSMAPContext_00807598->field_0054 < (int)sVar6)) {
+      iVar4 = 0;
     }
     else {
-      iVar3 = st::fn_006DDBD0();
+      iVar4 = st::fn_006DDBD0();
     }
-    if (iVar3 == 0) {
+    if (iVar4 == 0) {
       return 0;
     }
   }
   pVVar2 = g_visibleClass_00802A88;
   if (g_visibleClass_00802A88 == nullptr) goto LAB_0055693a;
-  iVar7 = (int)(short)iVar7;
+  iVar8 = (int)(short)iVar8;
   if ((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) {
 LAB_00556926:
-    bVar9 = true;
+    bVar10 = true;
   }
   else {
     st::fn_00403F53
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,(int)(short)local_10,
-               (int)sVar5,&local_5c,&local_8);
-    if ((iVar7 < 0) || (4 < iVar7)) goto LAB_00556926;
-    if (((local_5c < 0) || (pVVar2->field_0030 <= local_5c)) ||
-       ((g_centeredOffsets5[iVar7] + local_8 < 0 ||
-        (pVVar2->field_0034 <= g_centeredOffsets5[iVar7] + local_8)))) {
-      bVar9 = false;
+               (int)sVar6,&local_5c,&local_8);
+    if ((iVar8 < 0) || (4 < iVar8)) goto LAB_00556926;
+    if (((local_5c < 0) || ((int)pVVar2->field_0030 <= local_5c)) ||
+       ((g_centeredOffsets5[iVar8] + local_8 < 0 ||
+        (pVVar2->field_0034 <= g_centeredOffsets5[iVar8] + local_8)))) {
+      bVar10 = false;
     }
     else {
-      bVar9 = true;
+      bVar10 = true;
     }
-    if ((bVar9) && (pVVar2->field_004C != nullptr)) {
-      bVar9 = pVVar2->field_004C
-              [local_5c + (g_centeredOffsets5[iVar7] + local_8) * pVVar2->field_0030] != 0;
+    if ((bVar10) && (pVVar2->field_004C != nullptr)) {
+      bVar10 = pVVar2->field_004C
+               [local_5c + (g_centeredOffsets5[iVar8] + local_8) * pVVar2->field_0030] != 0;
     }
     else {
-      bVar9 = true;
+      bVar10 = true;
     }
   }
-  if (!bVar9) {
+  if (!bVar10) {
     return 0;
   }
 LAB_0055693a:
@@ -690,11 +699,11 @@ LAB_0055693a:
     st::fn_006A5E40(iVar7,0,"E:\\__titans\\grig\\traks.cpp",0x1bd);
     return 0xffffffff;
   }
-  psVar8 = &local_58;
-  for (iVar7 = 0xf; iVar7 != 0; iVar7 = iVar7 + -1) {
-    psVar8[0] = 0;
-    psVar8[1] = 0;
-    psVar8 = psVar8 + 2;
+  psVar9 = &local_58;
+  for (iVar8 = 0xf; iVar8 != 0; iVar8 = iVar8 + -1) {
+    psVar9[0] = 0;
+    psVar9[1] = 0;
+    psVar9 = psVar9 + 2;
   }
   local_4c = param_9;
   local_4a = param_10;
@@ -718,32 +727,32 @@ LAB_0055693a:
       ((param_10 == 0 && (param_11 == 0)))) && (param_12 == 0)) {
     local_1c = 0;
   }
-  iVar7 = local_1c;
-  piVar6 = PTR_00806764;
+  iVar8 = local_1c;
+  piVar7 = PTR_00806764;
   if (*(int *)(&DAT_007c900c + param_1 * 0x18) != 1) {
-    piVar6 = PTR_00806774;
+    piVar7 = PTR_00806774;
   }
-  puVar13 = nullptr;
-  iVar12 = 0;
-  iVar3 = 1;
-  bVar11 = 0;
-  uVar10 = 0xffffffff;
+  puVar14 = nullptr;
+  iVar13 = 0;
+  iVar4 = 1;
+  bVar12 = 0;
+  uVar11 = 0xffffffff;
   local_2c = local_56;
   local_2a = local_54;
   local_28 = local_52;
   text = st::fn_00404CBE((int)param_1);
-  puVar4 = st::fn_00709AF0(piVar6,CASE_1D,text,uVar10,bVar11,iVar3,iVar12,puVar13);
-  local_22 = *puVar4;
-  iVar3 = local_58 * 0x18;
+  puVar5 = st::fn_00709AF0(piVar7,CASE_1D,text,uVar11,bVar12,iVar4,iVar13,puVar14);
+  local_22 = *puVar5;
+  iVar4 = local_58 * 0x18;
   st::fn_006E8660
-            (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,*(uint *)(&DAT_007c9000 + iVar3),
-             *(uint *)(&DAT_007c9004 + iVar3),*(uint *)(&DAT_007c8ff8 + iVar3),
-             *(uint *)(&DAT_007c8ffc + iVar3),0);
+            (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,*(uint *)(&DAT_007c9000 + iVar4),
+             *(uint *)(&DAT_007c9004 + iVar4),*(uint *)(&DAT_007c8ff8 + iVar4),
+             *(uint *)(&DAT_007c8ffc + iVar4),0);
   local_26 = local_c;
   st::fn_006E98E0
-            (g_sT3DSMAPContext_00807598,local_c,0,(int)(short)local_22,STField<int>(puVar4,0x21),
+            (g_sT3DSMAPContext_00807598,local_c,0,(int)(short)local_22,STField<int>(puVar5,0x21),
              1);
-  if (iVar7 == 0) {
+  if (iVar8 == 0) {
     st::fn_006EA050
               (g_sT3DSMAPContext_00807598,local_26,(int)local_44,0xffffffff,0);
   }
@@ -767,7 +776,7 @@ LAB_0055693a:
   st::fn_006EAAA0(g_sT3DSMAPContext_00807598,local_26,0);
   local_36 = (undefined2)param_3;
   local_34 = local_60->field_0020;
-  if (iVar7 != 0) {
+  if (iVar8 != 0) {
     uVar10 = st::fn_00402D79(local_60,(undefined4 *)&local_58);
     g_currentExceptionFrame = local_a8.previous;
     return uVar10;
@@ -787,16 +796,19 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
 {
   int iVar1;
   TraksClassTy *this_00;
+  int local_EAX_96;
+  int iVar5;
+  uint uVar6;
+  char *pcVar7;
   int iVar3;
+  int iVar8;
   int iVar4;
-  uint uVar5;
-  char *pcVar6;
-  int iVar7;
-  undefined4 uVar8;
-  short sVar9;
+  undefined4 uVar9;
   short sVar10;
-  cMf32 *pcVar11;
-  char cVar12;
+  short sVar11;
+  cMf32 *pcVar12;
+  char cVar13;
+  int iVar14;
   InternalExceptionFrame local_7c;
   int local_38;
   TraksClassTy *local_34;
@@ -821,121 +833,121 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_34 = this;
-  iVar3 = st::fn_0072D7F0(local_7c.jumpBuffer,0);
-  if (iVar3 == 0) {
+  local_EAX_96 = st::fn_0072D7F0(local_7c.jumpBuffer,0);
+  if (local_EAX_96 == 0) {
     local_8 = st::fn_006ACF0D(param_1[4],param_1[5],param_1[6],param_1[7],param_1[8],param_1[9]);
     if (local_8 == 0) {
-      iVar3 = param_1[0x18];
+      iVar14 = param_1[0x18];
       local_10 = param_1[0xf];
-      if (0 < iVar3) {
-        iVar4 = local_10 - iVar3;
-        if (iVar4 < 0) {
-          iVar7 = local_34->field_001C;
+      if (0 < iVar14) {
+        iVar5 = local_10 - iVar14;
+        if (iVar5 < 0) {
+          iVar8 = local_34->field_001C;
         }
         else {
-          iVar7 = local_34->field_001C;
+          iVar8 = local_34->field_001C;
         }
-        uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-        local_34->field_001C = uVar5;
-        local_10 = (uVar5 >> 0x10) % (((local_10 + iVar3) - iVar4) + 1U) + iVar4;
+        uVar6 = iVar8 * 0x41c64e6d + 0x3039;
+        local_34->field_001C = uVar6;
+        local_10 = (uVar6 >> 0x10) % (((local_10 + iVar14) - iVar5) + 1U) + iVar5;
       }
       local_8 = param_1[0x17];
       if (local_8 < 1) {
         local_8 = param_1[0xe];
       }
       else {
-        iVar3 = param_1[0xe] + local_8;
+        iVar14 = param_1[0xe] + local_8;
         local_8 = param_1[0xe] - local_8;
         if (local_8 < 0) {
-          uVar5 = local_34->field_001C * 0x41c64e6d + 0x3039;
-          local_34->field_001C = uVar5;
-          local_8 = (uVar5 >> 0x10) % ((iVar3 - local_8) + 1U) + local_8;
+          uVar6 = local_34->field_001C * 0x41c64e6d + 0x3039;
+          local_34->field_001C = uVar6;
+          local_8 = (uVar6 >> 0x10) % ((iVar14 - local_8) + 1U) + local_8;
         }
         else {
-          uVar5 = local_34->field_001C * 0x41c64e6d + 0x3039;
-          local_34->field_001C = uVar5;
-          local_8 = (uVar5 >> 0x10) % ((iVar3 - local_8) + 1U) + local_8;
+          uVar6 = local_34->field_001C * 0x41c64e6d + 0x3039;
+          local_34->field_001C = uVar6;
+          local_8 = (uVar6 >> 0x10) % ((iVar14 - local_8) + 1U) + local_8;
         }
       }
       local_14 = param_1[0xd];
-      iVar3 = param_1[0x16];
-      if (0 < iVar3) {
-        iVar4 = local_14 - iVar3;
-        if (iVar4 < 0) {
-          iVar7 = local_34->field_001C;
+      iVar14 = param_1[0x16];
+      if (0 < iVar14) {
+        iVar5 = local_14 - iVar14;
+        if (iVar5 < 0) {
+          iVar8 = local_34->field_001C;
         }
         else {
-          iVar7 = local_34->field_001C;
+          iVar8 = local_34->field_001C;
         }
-        uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-        local_34->field_001C = uVar5;
-        local_14 = (uVar5 >> 0x10) % (((local_14 + iVar3) - iVar4) + 1U) + iVar4;
+        uVar6 = iVar8 * 0x41c64e6d + 0x3039;
+        local_34->field_001C = uVar6;
+        local_14 = (uVar6 >> 0x10) % (((local_14 + iVar14) - iVar5) + 1U) + iVar5;
       }
       local_18 = param_1[0x15];
       if (local_18 < 1) {
         local_18 = param_1[0xc];
       }
       else {
-        iVar3 = param_1[0xc] + local_18;
+        iVar14 = param_1[0xc] + local_18;
         local_18 = param_1[0xc] - local_18;
         if (local_18 < 0) {
-          uVar5 = local_34->field_001C * 0x41c64e6d + 0x3039;
-          local_34->field_001C = uVar5;
-          local_18 = (uVar5 >> 0x10) % ((iVar3 - local_18) + 1U) + local_18;
+          uVar6 = local_34->field_001C * 0x41c64e6d + 0x3039;
+          local_34->field_001C = uVar6;
+          local_18 = (uVar6 >> 0x10) % ((iVar14 - local_18) + 1U) + local_18;
         }
         else {
-          uVar5 = local_34->field_001C * 0x41c64e6d + 0x3039;
-          local_34->field_001C = uVar5;
-          local_18 = (uVar5 >> 0x10) % ((iVar3 - local_18) + 1U) + local_18;
+          uVar6 = local_34->field_001C * 0x41c64e6d + 0x3039;
+          local_34->field_001C = uVar6;
+          local_18 = (uVar6 >> 0x10) % ((iVar14 - local_18) + 1U) + local_18;
         }
       }
-      iVar3 = param_1[0x14];
-      if (iVar3 < 1) {
-        sVar10 = (short)param_1[0xb];
+      iVar14 = param_1[0x14];
+      if (iVar14 < 1) {
+        sVar11 = (short)param_1[0xb];
       }
       else {
-        iVar4 = param_1[0xb];
-        local_c = iVar4 - iVar3;
+        iVar5 = param_1[0xb];
+        local_c = iVar5 - iVar14;
         if (local_c < 0) {
-          iVar7 = local_34->field_001C;
+          iVar8 = local_34->field_001C;
         }
         else {
-          iVar7 = local_34->field_001C;
+          iVar8 = local_34->field_001C;
         }
-        uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-        local_34->field_001C = uVar5;
-        sVar10 = (short)((uVar5 >> 0x10) % (((iVar4 + iVar3) - local_c) + 1U)) + (short)local_c;
+        uVar6 = iVar8 * 0x41c64e6d + 0x3039;
+        local_34->field_001C = uVar6;
+        sVar11 = (short)((uVar6 >> 0x10) % (((iVar5 + iVar14) - local_c) + 1U)) + (short)local_c;
       }
-      iVar3 = param_1[0x13];
-      if (iVar3 < 1) {
-        sVar9 = (short)param_1[10];
+      iVar14 = param_1[0x13];
+      if (iVar14 < 1) {
+        sVar10 = (short)param_1[10];
       }
       else {
-        iVar4 = param_1[10];
-        local_c = iVar4 - iVar3;
+        iVar5 = param_1[10];
+        local_c = iVar5 - iVar14;
         if (local_c < 0) {
-          iVar7 = local_34->field_001C;
+          iVar8 = local_34->field_001C;
         }
         else {
-          iVar7 = local_34->field_001C;
+          iVar8 = local_34->field_001C;
         }
-        uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-        local_34->field_001C = uVar5;
-        sVar9 = (short)((uVar5 >> 0x10) % (((iVar4 + iVar3) - local_c) + 1U)) + (short)local_c;
+        uVar6 = iVar8 * 0x41c64e6d + 0x3039;
+        local_34->field_001C = uVar6;
+        sVar10 = (short)((uVar6 >> 0x10) % (((iVar5 + iVar14) - local_c) + 1U)) + (short)local_c;
       }
       st::fn_00401433(local_34,(short)*param_1,(short)param_1[1],0,param_1[4],param_1[5],param_1[6],
-                  sVar9,sVar10,(short)local_18,(short)local_14,(short)local_8,(short)local_10,
+                  sVar10,sVar11,(short)local_18,(short)local_14,(short)local_8,(short)local_10,
                   param_1[0x19],(short)param_1[0x1a],(byte)param_1[0x1b]);
     }
     else {
-      pcVar11 = g_cMf32_00806760;
+      pcVar12 = g_cMf32_00806760;
       if (*(int *)(&DAT_007c900c + *param_1 * 0x18) != 1) {
-        pcVar11 = PTR_00806770;
+        pcVar12 = PTR_00806770;
       }
-      iVar3 = 1;
-      cVar12 = '\x1d';
-      pcVar6 = st::fn_00404CBE(*param_1);
-      local_38 = st::fn_00716E60(pcVar11,pcVar6,cVar12,iVar3);
+      iVar14 = 1;
+      cVar13 = '\x1d';
+      pcVar7 = st::fn_00404CBE(*param_1);
+      local_38 = st::fn_00716E60(pcVar12,pcVar7,cVar13,iVar14);
       if (param_1[3] < 0) {
         iVar3 = st::fn_006ACF0D(0,0,0,(param_1[0x13] * local_38) / 10 +
                                    (param_1[0x16] * local_38 * local_38) / 0x14 + param_1[0x10],
@@ -944,12 +956,12 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
                              (param_1[0x15] * local_38) / 10 +
                              (param_1[0x18] * local_38 * local_38) / 0x14 + param_1[0x12]);
         if (*(int *)(&DAT_007c9008 + *param_1 * 0x18) < iVar3 / 2) {
-          iVar3 = ((iVar3 / 2) * 100) / *(int *)(&DAT_007c9008 + *param_1 * 0x18);
+          iVar14 = ((iVar3 / 2) * 100) / *(int *)(&DAT_007c9008 + *param_1 * 0x18);
         }
         else {
-          iVar3 = 100;
+          iVar14 = 100;
         }
-        param_1[3] = iVar3;
+        param_1[3] = iVar14;
       }
       this_00 = local_34;
       local_30 = 0;
@@ -962,151 +974,151 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
         }
         local_c = local_c * local_30;
         if (local_8 <= local_c) break;
-        iVar3 = param_1[0x18];
-        if (iVar3 < 1) {
+        iVar14 = param_1[0x18];
+        if (iVar14 < 1) {
           local_18 = param_1[0xf];
         }
         else {
-          iVar4 = param_1[0xf];
-          local_18 = iVar4 - iVar3;
+          iVar5 = param_1[0xf];
+          local_18 = iVar5 - iVar14;
           if (local_18 < 0) {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
           else {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
-          uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          local_18 = (uVar5 >> 0x10) % (((iVar4 + iVar3) - local_18) + 1U) + local_18;
+          uVar6 = iVar8 * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          local_18 = (uVar6 >> 0x10) % (((iVar5 + iVar14) - local_18) + 1U) + local_18;
         }
-        iVar3 = param_1[0x17];
-        if (iVar3 < 1) {
+        iVar14 = param_1[0x17];
+        if (iVar14 < 1) {
           local_14 = param_1[0xe];
         }
         else {
-          iVar4 = param_1[0xe];
-          local_14 = iVar4 - iVar3;
+          iVar5 = param_1[0xe];
+          local_14 = iVar5 - iVar14;
           if (local_14 < 0) {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
           else {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
-          uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          local_14 = (uVar5 >> 0x10) % (((iVar4 + iVar3) - local_14) + 1U) + local_14;
+          uVar6 = iVar8 * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          local_14 = (uVar6 >> 0x10) % (((iVar5 + iVar14) - local_14) + 1U) + local_14;
         }
-        iVar3 = param_1[0x16];
-        if (iVar3 < 1) {
+        iVar14 = param_1[0x16];
+        if (iVar14 < 1) {
           local_1c = param_1[0xd];
         }
         else {
-          iVar4 = param_1[0xd];
-          local_1c = iVar4 - iVar3;
+          iVar5 = param_1[0xd];
+          local_1c = iVar5 - iVar14;
           if (local_1c < 0) {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
           else {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
-          uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          local_1c = (uVar5 >> 0x10) % (((iVar4 + iVar3) - local_1c) + 1U) + local_1c;
+          uVar6 = iVar8 * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          local_1c = (uVar6 >> 0x10) % (((iVar5 + iVar14) - local_1c) + 1U) + local_1c;
         }
-        iVar3 = param_1[0x15];
-        if (iVar3 < 1) {
+        iVar14 = param_1[0x15];
+        if (iVar14 < 1) {
           local_20 = param_1[0xc];
         }
         else {
-          iVar4 = param_1[0xc];
-          local_20 = iVar4 - iVar3;
+          iVar5 = param_1[0xc];
+          local_20 = iVar5 - iVar14;
           if (local_20 < 0) {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
           else {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
-          uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          local_20 = (uVar5 >> 0x10) % (((iVar4 + iVar3) - local_20) + 1U) + local_20;
+          uVar6 = iVar8 * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          local_20 = (uVar6 >> 0x10) % (((iVar5 + iVar14) - local_20) + 1U) + local_20;
         }
-        iVar3 = param_1[0x14];
-        if (iVar3 < 1) {
+        iVar14 = param_1[0x14];
+        if (iVar14 < 1) {
           local_24 = param_1[0xb];
         }
         else {
-          iVar4 = param_1[0xb];
-          local_24 = iVar4 - iVar3;
+          iVar5 = param_1[0xb];
+          local_24 = iVar5 - iVar14;
           if (local_24 < 0) {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
           else {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
-          uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          local_24 = (uVar5 >> 0x10) % (((iVar4 + iVar3) - local_24) + 1U) + local_24;
+          uVar6 = iVar8 * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          local_24 = (uVar6 >> 0x10) % (((iVar5 + iVar14) - local_24) + 1U) + local_24;
         }
-        iVar3 = param_1[0x13];
-        if (iVar3 < 1) {
+        iVar14 = param_1[0x13];
+        if (iVar14 < 1) {
           local_28 = param_1[10];
         }
         else {
-          iVar4 = param_1[10];
-          local_28 = iVar4 - iVar3;
+          iVar5 = param_1[10];
+          local_28 = iVar5 - iVar14;
           if (local_28 < 0) {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
           else {
-            iVar7 = this_00->field_001C;
+            iVar8 = this_00->field_001C;
           }
-          uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          local_28 = (uVar5 >> 0x10) % (((iVar4 + iVar3) - local_28) + 1U) + local_28;
+          uVar6 = iVar8 * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          local_28 = (uVar6 >> 0x10) % (((iVar5 + iVar14) - local_28) + 1U) + local_28;
         }
         if (param_1[0x12] < 1) {
-          iVar3 = local_8 - local_c;
-          local_2c = (param_1[6] * iVar3 + param_1[9] * local_c) / local_8;
+          iVar14 = local_8 - local_c;
+          local_2c = (param_1[6] * iVar14 + param_1[9] * local_c) / local_8;
         }
         else {
-          iVar3 = local_8 - local_c;
-          iVar7 = (param_1[6] * iVar3 + param_1[9] * local_c) / local_8;
-          iVar4 = param_1[0x12];
-          local_2c = iVar7 - iVar4;
-          uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          local_2c = (uVar5 >> 0x10) % (((iVar7 + iVar4) - local_2c) + 1U) + local_2c;
+          iVar14 = local_8 - local_c;
+          iVar8 = (param_1[6] * iVar14 + param_1[9] * local_c) / local_8;
+          iVar5 = param_1[0x12];
+          local_2c = iVar8 - iVar5;
+          uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          local_2c = (uVar6 >> 0x10) % (((iVar8 + iVar5) - local_2c) + 1U) + local_2c;
         }
         if (param_1[0x11] < 1) {
-          iVar4 = (iVar3 * param_1[5] + param_1[8] * local_c) / local_8;
+          iVar5 = (iVar14 * param_1[5] + param_1[8] * local_c) / local_8;
         }
         else {
-          iVar7 = (iVar3 * param_1[5] + param_1[8] * local_c) / local_8;
-          iVar4 = param_1[0x11];
-          local_10 = iVar7 - iVar4;
-          uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          iVar4 = (uVar5 >> 0x10) % (((iVar7 + iVar4) - local_10) + 1U) + local_10;
+          iVar8 = (iVar14 * param_1[5] + param_1[8] * local_c) / local_8;
+          iVar5 = param_1[0x11];
+          local_10 = iVar8 - iVar5;
+          uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          iVar5 = (uVar6 >> 0x10) % (((iVar8 + iVar5) - local_10) + 1U) + local_10;
         }
         if (param_1[0x10] < 1) {
-          iVar3 = (iVar3 * param_1[4] + local_c * param_1[7]) / local_8;
+          iVar14 = (iVar14 * param_1[4] + local_c * param_1[7]) / local_8;
         }
         else {
-          iVar7 = (iVar3 * param_1[4] + local_c * param_1[7]) / local_8;
-          iVar3 = param_1[0x10];
-          local_10 = iVar7 - iVar3;
+          iVar8 = (iVar14 * param_1[4] + local_c * param_1[7]) / local_8;
+          iVar14 = param_1[0x10];
+          local_10 = iVar8 - iVar14;
           if (local_10 < 0) {
             iVar1 = this_00->field_001C;
           }
           else {
             iVar1 = this_00->field_001C;
           }
-          uVar5 = iVar1 * 0x41c64e6d + 0x3039;
-          this_00->field_001C = uVar5;
-          iVar3 = (uVar5 >> 0x10) % (((iVar7 + iVar3) - local_10) + 1U) + local_10;
+          uVar6 = iVar1 * 0x41c64e6d + 0x3039;
+          this_00->field_001C = uVar6;
+          iVar14 = (uVar6 >> 0x10) % (((iVar8 + iVar14) - local_10) + 1U) + local_10;
         }
         st::fn_00401433(this_00,(short)*param_1,(short)param_1[1],
-                    (param_1[2] * local_c * local_38) / (local_8 * 100),iVar3,iVar4,local_2c,
+                    (param_1[2] * local_c * local_38) / (local_8 * 100),iVar14,iVar5,local_2c,
                     (short)local_28,(short)local_24,(short)local_20,(short)local_1c,(short)local_14,
                     (short)local_18,param_1[0x19],(short)param_1[0x1a],(byte)param_1[0x1b]);
         local_30 = local_30 + 1;
@@ -1116,10 +1128,10 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
     return 0;
   }
   g_currentExceptionFrame = local_7c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x1f7,0,iVar3,"%s",
-                             "TraksClassTy::TraksCreateCollection error ");
+  iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x1f7,0,local_EAX_96,
+                             "%s","TraksClassTy::TraksCreateCollection error ");
   if (iVar4 == 0) {
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x1f8);
+    st::fn_006A5E40(local_EAX_96,0,"E:\\__titans\\grig\\traks.cpp",0x1f8);
     return 0xffffffff;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

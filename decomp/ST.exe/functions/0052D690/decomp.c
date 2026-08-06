@@ -13,11 +13,13 @@ void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
   PopUpTy *this_00;
   byte bVar4;
   int iVar5;
-  undefined4 *puVar6;
+  undefined4 *puVar5;
   char *resourceString;
   int uVar9;
-  uint uVar7;
+  int iVar6;
   int iVar8;
+  uint uVar7;
+  int iVar9;
   uint uVar10;
   uint *puVar11;
   InternalExceptionFrame local_5c;
@@ -48,22 +50,22 @@ void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
     uVar10 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
              *(int *)(puVar1 + 4);
   }
-  puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
+  puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
   for (uVar7 = uVar10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *puVar6 = 0x89898989;
-    puVar6 = puVar6 + 1;
+    *puVar5 = 0x89898989;
+    puVar5 = puVar5 + 1;
   }
   local_8 = local_8 & 0xffffff00;
   local_c = 0x1e;
   for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-    *(undefined1 *)puVar6 = 0x89;
-    puVar6 = (undefined4 *)((int)puVar6 + 1);
+    *(undefined1 *)puVar5 = 0x89;
+    puVar5 = (undefined4 *)((int)puVar5 + 1);
   }
   local_10 = -0x18 - (int)this_00;
   local_14 = 0;
   puVar11 = this_00->field_0018;
   do {
-    iVar5 = local_14;
+    iVar6 = local_14;
     if ((DAT_00807342 == 0) || (DAT_00807346 <= (byte)local_8)) {
 LAB_0052d7d4:
       puVar11[0xf] = 0;
@@ -73,12 +75,12 @@ LAB_0052d7d4:
     else {
       puVar2 = this_00->field_0098;
       if (local_14 < (int)puVar2[2]) {
-        iVar8 = *(int *)(puVar2[5] + local_10 + (int)puVar11);
+        iVar9 = *(int *)(puVar2[5] + local_10 + (int)puVar11);
       }
       else {
-        iVar8 = 0;
+        iVar9 = 0;
       }
-      if (iVar8 == 0) goto LAB_0052d7d4;
+      if (iVar9 == 0) goto LAB_0052d7d4;
       if (local_14 < (int)puVar2[2]) {
         resourceString = *(char **)(puVar2[5] + local_10 + (int)puVar11);
       }
@@ -95,7 +97,7 @@ LAB_0052d7d4:
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar11);
     }
     bVar4 = (byte)local_8 + 1;
-    local_14 = iVar5 + 1;
+    local_14 = iVar6 + 1;
     puVar11 = puVar11 + 1;
     local_c = local_c + 0x13;
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
@@ -109,12 +111,12 @@ LAB_0052d7d4:
       if (DAT_00807346 != 0) {
         do {
           if ((int)(local_8 & 0xff) < (int)this_00->field_0098[2]) {
-            iVar5 = *(int *)(this_00->field_0098[5] + (local_8 & 0xff) * 4);
+            iVar6 = *(int *)(this_00->field_0098[5] + (local_8 & 0xff) * 4);
           }
           else {
-            iVar5 = 0;
+            iVar6 = 0;
           }
-          if (iVar5 != 0) {
+          if (iVar6 != 0) {
             OutStr(this_00,(byte)local_8);
           }
           bVar4 = (byte)local_8 + 1;

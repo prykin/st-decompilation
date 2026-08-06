@@ -32,12 +32,10 @@ FSGSTy::sub_005A39A0
   undefined4 uVar4;
   int iVar5;
   uint uVar6;
-  uint *puVar8;
+  char *pcVar8;
   byte *pbVar9;
   char *pcVar10;
-  char *pcVar11;
-  uint *puVar12;
-  uint local_10 [3];
+  CHAR local_10 [12];
 
   pbVar3 = thunk_FUN_0055d590(text,param_3,param_4);
   if (pbVar3 != nullptr) {
@@ -51,24 +49,24 @@ FSGSTy::sub_005A39A0
     } while (bVar1 != 0);
     if (iVar5 != -2) {
       uVar4 = Library::MSVCRT::FUN_0072ff00(pbVar3);
-      wsprintfA((LPSTR)local_10,"%6d",uVar4);
+      wsprintfA(local_10,"%6d",uVar4);
       goto LAB_005a3a15;
     }
   }
   uVar6 = 0xffffffff;
-  pcVar10 = &DAT_007cc58c;
+  pcVar8 = &DAT_007cc58c;
   do {
-    pcVar11 = pcVar10;
+    pcVar10 = pcVar8;
     if (uVar6 == 0) break;
     uVar6 = uVar6 - 1;
-    pcVar11 = pcVar10 + 1;
-    cVar2 = *pcVar10;
-    pcVar10 = pcVar11;
+    pcVar10 = pcVar8 + 1;
+    cVar2 = *pcVar8;
+    pcVar8 = pcVar10;
   } while (cVar2 != '\0');
   uVar6 = ~uVar6;
-  puVar8 = (uint *)(pcVar11 + -uVar6);
-  puVar12 = local_10;
-  memmove(puVar12, puVar8, uVar6); /* compiler REP MOVS byte copy */
+  pcVar8 = pcVar10 + -uVar6;
+  pcVar10 = local_10;
+  memmove(pcVar10, pcVar8, uVar6); /* compiler REP MOVS byte copy */
 LAB_005a3a15:
   FUN_006b4170((RecoveredSourceFamily_dibcopy *)this->field_1AC0,0,param_5,param_6,param_7,param_8,
                0xff);

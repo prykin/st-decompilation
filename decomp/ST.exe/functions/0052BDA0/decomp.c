@@ -19,7 +19,7 @@ void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
   undefined4 *puVar4;
   uint uVar5;
   uint uVar6;
-  uint local_c [2];
+  CHAR local_c [8];
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == DAT_0080874d) {
@@ -28,7 +28,7 @@ void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
       param_2 = DAT_00808a97 - param_2;
     }
     this->field_009E = param_2;
-    wsprintfA((LPSTR)local_c,"%5d",param_2);
+    wsprintfA(local_c,"%5d",param_2);
     if (DAT_00808a97 == -1) {
       bVar3 = 0;
     }

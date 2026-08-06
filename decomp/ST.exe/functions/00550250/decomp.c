@@ -16,6 +16,8 @@
 void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this)
 
 {
+  int iVar1;
+  int iVar4;
   STPlaySystemC *this_00;
   int iVar2;
   int iVar3;
@@ -36,11 +38,11 @@ void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this)
       command = &local_c->field_003D->field_0x7;
       if (local_c->field_003D->field_0005 != 0) {
         do {
-          iVar2 = STField<int>(command,0x13);
-          iVar3 = STField<int>(command,0xf);
+          iVar1 = STField<int>(command,0x13);
+          iVar4 = STField<int>(command,0xf);
           thunk_FUN_005501d0(this_00,command);
           local_8 = local_8 + 1;
-          command = (void *)((int)command + iVar2 + iVar3 + 0x1b);
+          command = (void *)((int)command + iVar1 + iVar4 + 0x1b);
         } while (local_8 < (ushort)this_00->field_003D->field_0005);
       }
       this_00->field_003D->field_0005 = 0;

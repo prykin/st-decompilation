@@ -13,11 +13,12 @@ void __thiscall
 SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uint *param_2)
 
 {
+  int iVar1;
   int iVar2;
   int iVar3;
+  uint uVar3;
   uint uVar4;
-  uint uVar5;
-  byte *puVar6;
+  byte *puVar5;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
 
@@ -28,34 +29,34 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
     iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {
-        uVar5 = local_8->field_1A5B->field_06A6;
-        puVar6 = (byte *)param_1->field_0008;
-        memset(puVar6, 0, uVar5); /* compiler bulk-zero initialization */
-        uVar5 = *param_2;
-        iVar2 = param_1->field_0008;
-        uVar4 = 0;
-        param_1->field_0004 = uVar5;
-        if (uVar5 != 0) {
+        uVar4 = local_8->field_1A5B->field_06A6;
+        puVar5 = (byte *)param_1->field_0008;
+        memset(puVar5, 0, uVar4); /* compiler bulk-zero initialization */
+        uVar4 = *param_2;
+        iVar1 = param_1->field_0008;
+        uVar3 = 0;
+        param_1->field_0004 = uVar4;
+        if (uVar4 != 0) {
           do {
             param_2 = param_2 + 1;
             if (*param_2 < local_8->field_1A5B->field_06A6) {
-              *(undefined1 *)(*param_2 + iVar2) = 1;
+              *(undefined1 *)(*param_2 + iVar1) = 1;
             }
-            uVar4 = uVar4 + 1;
-          } while (uVar4 < (uint)param_1->field_0004);
+            uVar3 = uVar3 + 1;
+          } while (uVar3 < (uint)param_1->field_0004);
         }
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      uVar5 = local_8->field_1A5B->field_06A6;
-      puVar6 = (byte *)param_1->field_0008;
-      for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *puVar6 = 0x1010101;
-        puVar6 = (byte *)(puVar6 + 1);
+      uVar4 = local_8->field_1A5B->field_06A6;
+      puVar5 = (byte *)param_1->field_0008;
+      for (uVar3 = uVar4 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
+        *puVar5 = 0x1010101;
+        puVar5 = (byte *)(puVar5 + 1);
       }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(undefined1 *)puVar6 = 1;
-        puVar6 = (byte *)((int)puVar6 + 1);
+      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+        *(undefined1 *)puVar5 = 1;
+        puVar5 = (byte *)((int)puVar5 + 1);
       }
       param_1->field_0004 = local_8->field_1A5B->field_06A6;
       g_currentExceptionFrame = local_4c.previous;

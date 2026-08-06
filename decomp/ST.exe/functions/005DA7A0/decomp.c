@@ -5,10 +5,12 @@ undefined4 FUN_005da7a0(void)
 
 {
   undefined4 *puVar1;
-  bool bVar2;
+  int *piVar2;
+  int iVar4;
+  bool bVar5;
   int iVar3;
   int *piVar4;
-  char *pcVar5;
+  char *pcVar6;
   InternalExceptionFrame local_4c;
   StartSystemTy *local_8;
 
@@ -19,32 +21,32 @@ undefined4 FUN_005da7a0(void)
     puVar1 = &local_8->field_068A;
     if (local_8->field_068A == 0) {
       Library::DKW::DDX::FUN_006b62d0(puVar1);
-      piVar4 = (int *)*puVar1;
-      bVar2 = true;
-      if (*piVar4 <= piVar4[1]) {
-        piVar4 = (int *)FUN_006bfb50(piVar4,*piVar4 * 0x14 + 0x1c);
+      piVar2 = (int *)*puVar1;
+      bVar5 = true;
+      if (*piVar2 <= piVar2[1]) {
+        piVar4 = FUN_006bfb50(piVar2,*piVar2 * 0x14 + 0x1c);
         if (piVar4 == nullptr) {
-          bVar2 = false;
+          bVar5 = false;
         }
         else {
           *puVar1 = piVar4;
           *piVar4 = *piVar4 + 1;
         }
       }
-      if (bVar2) {
-        pcVar5 = LoadResourceString(0x254b,g_hINSTANCE_00807618);
-        pcVar5 = FUN_006c8170(pcVar5);
-        if (pcVar5 != nullptr) {
-          iVar3 = *puVar1;
+      if (bVar5) {
+        pcVar6 = LoadResourceString(0x254b,g_hINSTANCE_00807618);
+        pcVar6 = FUN_006c8170(pcVar6);
+        if (pcVar6 != nullptr) {
+          iVar4 = *puVar1;
           Library::MSVCRT::FUN_0072da70
-                    ((undefined4 *)(iVar3 + 0x1c),(AnonPointee_TLOBaseTy_0607 *)(iVar3 + 8),
-                     *(int *)(iVar3 + 4) * 0x14);
-          iVar3 = *puVar1;
-          *(undefined4 *)(iVar3 + 0xc) = DAT_007cd700;
-          *(undefined4 *)(iVar3 + 0x10) = DAT_007cd704;
-          *(undefined4 *)(iVar3 + 0x14) = DAT_007cd708;
-          *(undefined4 *)(iVar3 + 0x18) = DAT_007cd70c;
-          *(char **)(*puVar1 + 8) = pcVar5;
+                    ((undefined4 *)(iVar4 + 0x1c),(AnonPointee_TLOBaseTy_0607 *)(iVar4 + 8),
+                     *(int *)(iVar4 + 4) * 0x14);
+          iVar4 = *puVar1;
+          *(undefined4 *)(iVar4 + 0xc) = DAT_007cd700;
+          *(undefined4 *)(iVar4 + 0x10) = DAT_007cd704;
+          *(undefined4 *)(iVar4 + 0x14) = DAT_007cd708;
+          *(undefined4 *)(iVar4 + 0x18) = DAT_007cd70c;
+          *(char **)(*puVar1 + 8) = pcVar6;
           *(int *)(*puVar1 + 4) = *(int *)(*puVar1 + 4) + 1;
         }
       }

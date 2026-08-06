@@ -2,15 +2,15 @@
 void FUN_00497000(void)
 
 {
-  void **value;
+  int *slotStorage;
 
-  value = (void **)&DAT_007fb24c;
+  slotStorage = &DAT_007fb24c;
   do {
-    if (*value != nullptr) {
-      FreeAndNull(value);
+    if (*slotStorage != 0) {
+      FreeAndNull(slotStorage);
     }
-    value = value + 1;
-  } while ((int)value < 0x7fb270);
+    slotStorage = slotStorage + 1;
+  } while ((int)slotStorage < 0x7fb270);
   return;
 }
 

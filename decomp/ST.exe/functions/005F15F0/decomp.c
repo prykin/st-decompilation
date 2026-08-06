@@ -14,8 +14,10 @@ FUN_005f15f0(void *this,ushort param_1,short param_2,undefined2 param_3,undefine
 
 {
   DArrayTy *pDVar1;
+  int local_EAX_152;
   int iVar2;
-  ushort *puVar3;
+  int iVar3;
+  ushort *puVar4;
   ushort local_24;
   short local_22;
   undefined2 local_20;
@@ -36,11 +38,11 @@ FUN_005f15f0(void *this,ushort param_1,short param_2,undefined2 param_3,undefine
   if (pDVar1 == nullptr) {
     return -1;
   }
-  puVar3 = &local_24;
-  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    puVar3[0] = 0;
-    puVar3[1] = 0;
-    puVar3 = puVar3 + 2;
+  puVar4 = &local_24;
+  for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
+    puVar4[0] = 0;
+    puVar4[1] = 0;
+    puVar4 = puVar4 + 2;
   }
   local_24 = param_1;
   local_22 = param_2;
@@ -54,8 +56,8 @@ FUN_005f15f0(void *this,ushort param_1,short param_2,undefined2 param_3,undefine
   local_c = 0xffffffff;
   if (-1 < param_6) {
     local_e = 0;
-    iVar2 = Library::DKW::TBL::DArrayAppend(pDVar1,&local_24);
-    return iVar2 + 1;
+    local_EAX_152 = Library::DKW::TBL::DArrayAppend(pDVar1,&local_24);
+    return local_EAX_152 + 1;
   }
   local_e = (undefined1)PTR_00806724->entryCount;
   iVar2 = Library::DKW::TBL::DArrayAppend(pDVar1,&local_24);

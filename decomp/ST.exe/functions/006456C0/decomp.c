@@ -10,8 +10,8 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
 {
   STTorpC *pSVar2;
   int iVar3;
-  DArrayTy *pDVar4;
-  int iVar5;
+  DArrayTy *pDVar3;
+  int iVar4;
   byte *puVar6;
   byte *puVar7;
   InternalExceptionFrame local_50;
@@ -32,16 +32,15 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
     *(undefined4 *)&local_c->field_0x235 = local_8->field_005C;
     *(undefined4 *)&local_c->field_0x239 = local_8->field_0060;
     local_c->field_023D = local_8->field_0064;
-    pDVar4 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(&local_8->field_0x0 + local_8->field_0068));
-    pSVar2->field_0241 = pDVar4;
+    pDVar3 = FUN_006b0060(nullptr,(uint *)(&local_8->field_0x0 + local_8->field_0068));
+    pSVar2->field_0241 = pDVar3;
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_torp.cpp",0x4e5,0,iVar3,"%s",
+  iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_torp.cpp",0x4e5,0,iVar3,"%s",
                              "STTorpC::RestoreTorpData");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_torp.cpp",0x4e6);

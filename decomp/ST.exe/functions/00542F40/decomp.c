@@ -15,17 +15,19 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
 {
   STMessageId SVar1;
   int iVar3;
-  uint uVar4;
-  LPSTR pCVar5;
-  undefined4 uVar6;
-  BITMAPINFO *pBVar7;
+  uint uVar3;
+  LPSTR pCVar4;
+  undefined4 uVar5;
+  BITMAPINFO *pBVar6;
+  int iVar12;
   char *text;
-  char cVar8;
-  byte bVar9;
+  char cVar7;
+  byte bVar8;
+  int iVar9;
   int *piVar10;
   int iVar11;
-  int iVar12;
-  undefined4 *puVar13;
+  int iVar13;
+  undefined4 *puVar14;
   InternalExceptionFrame local_50;
   tagBITMAPINFO *local_c;
   InterSystemC *local_8;
@@ -67,13 +69,13 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
             g_currentExceptionFrame = local_50.previous;
             return 0;
           }
-          iVar12 = 1;
-          uVar4 = _DAT_00807348 & 0xff;
+          iVar13 = 1;
+          uVar3 = _DAT_00807348 & 0xff;
           piVar10 = nullptr;
-          iVar3 = 1;
-          pCVar5 = thunk_FUN_00571240("PANEL_BKGND",0);
-          pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar4);
-          local_c = (tagBITMAPINFO *)cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar10,iVar12);
+          iVar9 = 1;
+          pCVar4 = thunk_FUN_00571240("PANEL_BKGND",0);
+          pCVar4 = FUN_006f2c00(pCVar4,iVar9,uVar3);
+          local_c = (tagBITMAPINFO *)cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar10,iVar13);
           PutDDX(0,0,'\x01',local_c);
           cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
           g_currentExceptionFrame = local_50.previous;
@@ -133,23 +135,23 @@ switchD_00543107_caseD_b904:
     else {
       text = "BUT_AIOPT";
     }
-    puVar13 = nullptr;
+    puVar14 = nullptr;
     iVar11 = 0;
-    iVar12 = 1;
-    bVar9 = 0;
-    uVar4 = 0xffffffff;
-    uVar6 = thunk_FUN_00529f90((int)message);
-    iVar3 = 1;
-    pCVar5 = thunk_FUN_00571240(text,0);
-    pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar6);
-    pBVar7 = (BITMAPINFO *)
+    iVar13 = 1;
+    bVar8 = 0;
+    uVar3 = 0xffffffff;
+    uVar5 = thunk_FUN_00529f90((int)message);
+    iVar9 = 1;
+    pCVar4 = thunk_FUN_00571240(text,0);
+    pCVar4 = FUN_006f2c00(pCVar4,iVar9,uVar5);
+    pBVar6 = (BITMAPINFO *)
              Library::Ourlib::MFRLOAD::mfRLoad
-                       (PTR_00806794,CASE_1,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
-    iVar3 = piVar10[1];
-    iVar12 = *piVar10;
-    cVar8 = '\x01';
+                       (PTR_00806794,CASE_1,pCVar4,uVar3,bVar8,iVar13,iVar11,puVar14);
+    iVar9 = piVar10[1];
+    iVar13 = *piVar10;
+    cVar7 = '\x01';
 LAB_00543291:
-    PutDDX(iVar12,iVar3,cVar8,pBVar7);
+    PutDDX(iVar13,iVar9,cVar7,pBVar6);
   }
   else {
     switch(SVar1) {
@@ -182,21 +184,21 @@ LAB_00543291:
       }
       piVar10 = (message->arg1).ptr;
       FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
-      puVar13 = nullptr;
+      puVar14 = nullptr;
       iVar11 = 0;
-      iVar12 = 1;
-      bVar9 = 0;
-      uVar4 = 0xffffffff;
-      uVar6 = thunk_FUN_00529f90((int)message);
-      iVar3 = 1;
-      pCVar5 = thunk_FUN_00571240("BUT_OHELP",0);
-      pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar6);
-      pBVar7 = (BITMAPINFO *)
+      iVar13 = 1;
+      bVar8 = 0;
+      uVar3 = 0xffffffff;
+      uVar5 = thunk_FUN_00529f90((int)message);
+      iVar9 = 1;
+      pCVar4 = thunk_FUN_00571240("BUT_OHELP",0);
+      pCVar4 = FUN_006f2c00(pCVar4,iVar9,uVar5);
+      pBVar6 = (BITMAPINFO *)
                Library::Ourlib::MFRLOAD::mfRLoad
-                         (PTR_00806794,CASE_6,pCVar5,uVar4,bVar9,iVar12,iVar11,puVar13);
-      iVar12 = *piVar10;
-      iVar3 = piVar10[1];
-      cVar8 = '\x06';
+                         (PTR_00806794,CASE_6,pCVar4,uVar3,bVar8,iVar13,iVar11,puVar14);
+      iVar13 = *piVar10;
+      iVar9 = piVar10[1];
+      cVar7 = '\x06';
       goto LAB_00543291;
     }
   }

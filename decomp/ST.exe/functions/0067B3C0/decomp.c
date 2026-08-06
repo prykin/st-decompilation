@@ -14,8 +14,10 @@ AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,cha
 
 {
   AiPlrClassTy *pAVar2;
+  int local_EAX_18;
   int iVar3;
   int iVar4;
+  int iVar5;
   InternalExceptionFrame local_60;
   char local_1c;
   undefined2 uStack_1b;
@@ -29,8 +31,8 @@ AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,cha
   AiPlrClassTy *local_8;
 
   local_8 = this;
-  iVar3 = thunk_FUN_0067b2e0(this,param_1,param_2);
-  if (0 < iVar3) {
+  local_EAX_18 = thunk_FUN_0067b2e0(this,param_1,param_2);
+  if (0 < local_EAX_18) {
     return 0;
   }
   local_60.previous = g_currentExceptionFrame;

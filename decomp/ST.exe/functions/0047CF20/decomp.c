@@ -16,7 +16,10 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
   short sVar2;
   short sVar3;
   STWorldObject *this_00;
+  int local_EAX_179;
   int iVar5;
+  int local_EAX_229;
+  int iVar6;
 
   sVar1 = this->field_066F;
   sVar2 = this->field_0673;
@@ -34,15 +37,16 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
   case CASE_1:
   case CASE_2:
   case CASE_4:
-    iVar5 = sub_00460360(this);
-    return iVar5;
+    local_EAX_179 = sub_00460360(this);
+    return local_EAX_179;
   case CASE_3:
     iVar5 = UnLoadObj(this,2);
     return iVar5;
   }
-  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3870,0,0,"%s",
-                             "STBoatC::BackBring incorrect entry");
-  if (iVar5 == 0) {
+  local_EAX_229 =
+       ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3870,0,0,"%s",
+                          "STBoatC::BackBring incorrect entry");
+  if (local_EAX_229 == 0) {
     return -1;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -34,7 +34,7 @@ FUN_00553c20(int param_1,int param_2,byte *param_3,uint param_4,int param_5,unde
           if (((((iVar1 < 0) || ((int)param_4 <= iVar1)) || (iVar4 < 0)) ||
               ((param_5 <= iVar4 || (*(char *)(param_1 + iVar6) != '\0')))) &&
              ((pbVar3 == nullptr || (param_6[iVar6] != '\0')))) {
-            thunk_FUN_00553a70(iVar1,iVar4,(int)param_3,param_4,param_5);
+            thunk_FUN_00553a70(iVar1,iVar4,param_3,param_4,param_5);
           }
           iVar6 = iVar6 + 1;
         } while (iVar6 < iVar2);

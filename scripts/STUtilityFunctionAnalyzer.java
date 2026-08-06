@@ -86,8 +86,10 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
 
         addDiscovered(result, occupied, discoverFreeAndNull(),
             "free_and_null", "FreeAndNull", "__stdcall", "/void",
-            new String[] { "pointer:pointer:/void" }, new String[] { "value" },
-            "frees a non-null allocation and clears the caller-owned pointer");
+            new String[] { "pointer:/void" }, new String[] { "slotStorage" },
+            "treats its argument as the untyped address of a caller-owned pointer slot, " +
+                "frees the non-null allocation, and clears that slot; void * is intentional " +
+                "because unrelated C++ T ** values do not implicitly convert to void **");
         if (!darrayPointer.isBlank()) {
             addDiscovered(result, occupied, discoverDArrayDestroy(),
                 "darray_destroy", "DArrayDestroy", "__stdcall", "/void",
@@ -195,18 +197,49 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
     }
 
     private Function discoverFreeAndNull() throws Exception {
+        List<Function> namedMatches = new ArrayList<>();
+        FunctionIterator namedFunctions =
+            currentProgram.getFunctionManager().getFunctions(true);
+        while (namedFunctions.hasNext()) {
+            Function function = namedFunctions.next();
+            if ("FreeAndNull".equals(function.getName()) &&
+                    freeAndNullMachineShape(function))
+                namedMatches.add(function);
+        }
+        Function named = unique(namedMatches);
+        if (named != null) return named;
+
+        List<Function> taggedMatches = new ArrayList<>();
+        FunctionIterator taggedFunctions =
+            currentProgram.getFunctionManager().getFunctions(true);
+        while (taggedFunctions.hasNext()) {
+            Function function = taggedFunctions.next();
+            if (tagged(function, "RECOVERED_UTILITY_FREE_AND_NULL") &&
+                    freeAndNullMachineShape(function))
+                taggedMatches.add(function);
+        }
+        Function tagged = unique(taggedMatches);
+        if (tagged != null) return tagged;
+
         List<Function> matches = new ArrayList<>();
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
         while (functions.hasNext()) {
             Function function = functions.next();
-            if (!smallInternal(function, 64) || !retCleanup(function, 4) ||
-                    callInstructionCount(function) != 1) continue;
-            String body = machineText(function);
-            if (body.contains("TEST EAX,EAX") && body.contains("MOV EAX,dword ptr [") &&
-                    body.matches("(?s).*MOV dword ptr \\[[A-Z]{2,3}\\],0x0.*"))
-                matches.add(function);
+            if (freeAndNullMachineShape(function)) matches.add(function);
         }
         return unique(matches);
+    }
+
+    private boolean freeAndNullMachineShape(Function function) throws Exception {
+        if (!smallInternal(function, 64) || !retCleanup(function, 4) ||
+                callInstructionCount(function) != 1) return false;
+        String body = machineText(function);
+        return body.contains("TEST EAX,EAX") &&
+            body.contains("MOV EAX,dword ptr [") &&
+            (body.contains("MOV dword ptr [ESI],0x0") ||
+             body.contains("MOV dword ptr [EDI],0x0") ||
+             body.contains("MOV dword ptr [EBX],0x0") ||
+             body.matches("(?s).*MOV dword ptr \\[[A-Z]{2,3}\\],0x0.*"));
     }
 
     private Function discoverDArrayDestroy() throws Exception {

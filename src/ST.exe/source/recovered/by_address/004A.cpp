@@ -1355,11 +1355,13 @@ undefined4 __thiscall st::fn_004AC9E0(void *this,int param_1)
 {
   int iVar1;
   bool bVar2;
+  int iVar4;
+  int local_EAX_370;
   int iVar3;
-  int *piVar4;
-  int iVar5;
-  uint uVar6;
-  int iVar7;
+  int *piVar5;
+  int iVar6;
+  uint uVar7;
+  int iVar8;
   uint local_28;
   uint local_20;
   void *local_14;
@@ -1384,77 +1386,77 @@ cf_continue_loop_004ACA23:
       return 0;
     }
     if ((STField<uint>(this,0x1c) & local_20) != 0) {
-      iVar5 = local_28 * 0x24;
-      iVar3 = STField<int>(this,0x20) + iVar5;
-      if ((*(byte *)(iVar3 + 0xe) & 1) == 0) {
-        uVar6 = param_1 - *(int *)(iVar3 + 0x1c);
-        *(int *)(iVar3 + 0x1c) = param_1;
+      iVar6 = local_28 * 0x24;
+      iVar4 = STField<int>(this,0x20) + iVar6;
+      if ((*(byte *)(iVar4 + 0xe) & 1) == 0) {
+        uVar7 = param_1 - *(int *)(iVar4 + 0x1c);
+        *(int *)(iVar4 + 0x1c) = param_1;
         bVar2 = false;
-        iVar3 = STField<int>(this,0x20) + iVar5;
-        piVar4 = (int *)(*(int *)(iVar3 + 4) + *(int *)(iVar3 + 0x18) * 4);
-        iVar7 = *piVar4;
-        iVar1 = *(int *)(iVar3 + 0x20);
-        if (uVar6 < (uint)(iVar7 + iVar1)) {
-          if (iVar7 < (int)uVar6) {
-            *(uint *)(iVar3 + 0x20) = (iVar1 - uVar6) + iVar7;
-            iVar5 = iVar5 + STField<int>(this,0x20);
-            *(undefined4 *)(*(int *)(iVar5 + 4) + *(int *)(iVar5 + 0x18) * 4) = 0;
+        iVar4 = STField<int>(this,0x20) + iVar6;
+        piVar5 = (int *)(*(int *)(iVar4 + 4) + *(int *)(iVar4 + 0x18) * 4);
+        iVar8 = *piVar5;
+        iVar1 = *(int *)(iVar4 + 0x20);
+        if (uVar7 < (uint)(iVar8 + iVar1)) {
+          if (iVar8 < (int)uVar7) {
+            *(uint *)(iVar4 + 0x20) = (iVar1 - uVar7) + iVar8;
+            iVar6 = iVar6 + STField<int>(this,0x20);
+            *(undefined4 *)(*(int *)(iVar6 + 4) + *(int *)(iVar6 + 0x18) * 4) = 0;
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
           }
           else {
-            *piVar4 = iVar7 - uVar6;
+            *piVar5 = iVar8 - uVar7;
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
           }
           goto cf_continue_loop_004ACA23;
         }
         if (iVar1 != 0) {
-          *(undefined4 *)(iVar3 + 0x20) = 0;
+          *(undefined4 *)(iVar4 + 0x20) = 0;
           st::fn_006E9CB0
                     (STField<ST3DSMAPContext *>(this,0x3c),STField<uint *>(this,0x18),local_28);
         }
-        piVar4 = (int *)(STField<int>(this,0x20) + iVar5);
-        *(undefined4 *)(piVar4[1] + piVar4[6] * 4) = *(undefined4 *)(piVar4[6] * 4 + 0x31 + *piVar4);
-        iVar3 = STField<int>(this,0x20) + iVar5;
-        if (*(int *)(iVar3 + 0x18) == *(int *)(iVar3 + 0x14)) {
-          if (*(char *)(iVar3 + 0xd) == '\x02') {
+        piVar5 = (int *)(STField<int>(this,0x20) + iVar6);
+        *(undefined4 *)(piVar5[1] + piVar5[6] * 4) = *(undefined4 *)(piVar5[6] * 4 + 0x31 + *piVar5);
+        iVar4 = STField<int>(this,0x20) + iVar6;
+        if (*(int *)(iVar4 + 0x18) == *(int *)(iVar4 + 0x14)) {
+          if (*(char *)(iVar4 + 0xd) == '\x02') {
             st::fn_00404264(this,(byte)local_28);
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
             goto cf_continue_loop_004ACA23;
           }
-          if (*(char *)(iVar3 + 0xd) == '\x01') goto LAB_004acbdc;
+          if (*(char *)(iVar4 + 0xd) == '\x01') goto LAB_004acbdc;
         }
-        iVar7 = uVar6 - iVar7;
-        if ((iVar7 == 0) || ((*(byte *)(iVar3 + 0xe) & 4) == 0)) {
+        iVar8 = uVar7 - iVar8;
+        if ((iVar8 == 0) || ((*(byte *)(iVar4 + 0xe) & 4) == 0)) {
           iVar3 = st::fn_00404B65(this,local_28);
-          *(int *)(STField<int>(this,0x20) + 0x18 + iVar5) = iVar3;
+          *(int *)(STField<int>(this,0x20) + 0x18 + iVar6) = iVar3;
           if (local_28 == (int)STField<char>(this,0x13)) {
             STField<undefined4>(this,0x30) =
-                 *(undefined4 *)(STField<int>(this,0x20) + 0x18 + iVar5);
+                 *(undefined4 *)(STField<int>(this,0x20) + 0x18 + iVar6);
           }
         }
         else {
           do {
-            if (iVar7 < 0) goto LAB_004acb87;
-            iVar3 = st::fn_00404B65(this,local_28);
-            *(int *)(STField<int>(this,0x20) + 0x18 + iVar5) = iVar3;
-            piVar4 = (int *)(STField<int>(this,0x20) + iVar5);
-            iVar7 = iVar7 - *(int *)(*piVar4 + 0x31 + piVar4[6] * 4);
-          } while ((piVar4[6] != piVar4[5]) ||
-                  ((STField<char>(piVar4,0xd) != '\x02' &&
-                   (STField<char>(piVar4,0xd) != '\x01'))));
+            if (iVar8 < 0) goto LAB_004acb87;
+            local_EAX_370 = st::fn_00404B65(this,local_28);
+            *(int *)(STField<int>(this,0x20) + 0x18 + iVar6) = local_EAX_370;
+            piVar5 = (int *)(STField<int>(this,0x20) + iVar6);
+            iVar8 = iVar8 - *(int *)(*piVar5 + 0x31 + piVar5[6] * 4);
+          } while ((piVar5[6] != piVar5[5]) ||
+                  ((STField<char>(piVar5,0xd) != '\x02' &&
+                   (STField<char>(piVar5,0xd) != '\x01'))));
           bVar2 = true;
 LAB_004acb87:
           if (!bVar2) {
-            iVar3 = STField<int>(this,0x20) + iVar5;
-            *(int *)(*(int *)(iVar3 + 4) + *(int *)(iVar3 + 0x18) * 4) = -iVar7;
+            iVar4 = STField<int>(this,0x20) + iVar6;
+            *(int *)(*(int *)(iVar4 + 4) + *(int *)(iVar4 + 0x18) * 4) = -iVar8;
           }
         }
         st::fn_006EA270
                   (STField<ST3DSMAPContext *>(this,0x3c),STField<uint>(this,0x18),local_28,
-                   *(uint *)(STField<int>(this,0x20) + 0x18 + iVar5));
+                   *(uint *)(STField<int>(this,0x20) + 0x18 + iVar6));
       }
     }
 LAB_004acbdc:
@@ -1835,15 +1837,16 @@ int __thiscall st::fn_004AD670(void *this,char param_1)
 int st::fn_004AD6C0(AnonReceiver_004248D0 *param_1,undefined4 param_2,int *param_3,int param_4)
 
 {
+  int iVar2;
   int iVar1;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar1 = *(int *)(*(int *)(*(int *)(param_4 + 0x20) + *(char *)(param_4 + 0x13) * 0x24) + 0x29);
+  iVar2 = *(int *)(*(int *)(*(int *)(param_4 + 0x20) + *(char *)(param_4 + 0x13) * 0x24) + 0x29);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + *(int *)(param_4 + 0x30) * 4), iVar1 != 0)) {
+  if ((iVar2 != 0) && (iVar2 = *(int *)(iVar2 + *(int *)(param_4 + 0x30) * 4), iVar2 != 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar1 = st::fn_00403E1D
-                      (param_1,iVar1,*(float *)(param_4 + 0x24) - _DAT_007907a8,
+                      (param_1,iVar2,*(float *)(param_4 + 0x24) - _DAT_007907a8,
                        *(float *)(param_4 + 0x28) - _DAT_007907a8,*(float *)(param_4 + 0x2c),0x20,
                        0x20,param_3);
     return iVar1;
@@ -2021,251 +2024,246 @@ LAB_004ae37e:
     }
   }
 LAB_004ae41c:
-  switch(param_4) {
-  case CASE_38:
-  case CASE_39:
-  case CASE_4F:
-  case CASE_5E:
-  case CASE_61:
-    local_c = 0;
-    local_10 = (STFishC *)st::fn_00405E48(_param_1,param_2,param_3);
-    if (local_10 != nullptr) {
-      dVar8 = local_10->slot_2C();
-                    /* WARNING (jumptable): Sanity check requires truncation of jumptable */
-                    /* WARNING: Could not find normalized switch variable to match jumptable */
-      switch((&BYTE_004aecec)[param_4]) {
-      case 0:
-        if (dVar8 == 0xdc) {
-          local_c = 1;
-        }
-        break;
-      case 1:
-        if (dVar8 == 0xdd) {
-          local_c = 1;
-        }
-        break;
-      case 2:
-        if (dVar8 == 0xde) {
-          local_c = 1;
+  if (param_4 - CASE_38 < 0x2a) {
+                    /* WARNING: Switch is manually overridden */
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    switch(*(undefined1 *)(param_4 + 0x4aecb0)) {
+    case 0:
+      local_c = 0;
+      local_10 = (STFishC *)st::fn_00405E48(_param_1,param_2,param_3);
+      if (local_10 != nullptr) {
+        dVar8 = local_10->slot_2C();
+                    /* WARNING: Switch is manually overridden */
+        switch((&BYTE_004aecec)[param_4]) {
+        case 0:
+          if (dVar8 == 0xdc) {
+            local_c = 1;
+          }
+          break;
+        case 1:
+          if (dVar8 == 0xdd) {
+            local_c = 1;
+          }
+          break;
+        case 2:
+          if (dVar8 == 0xde) {
+            local_c = 1;
+          }
         }
       }
+      goto switchD_004ae472_caseD_3;
     }
-    break;
-  default:
-    local_c = 1;
-    for (iVar18 = _param_1; iVar7 = param_2, iVar18 < iVar11; iVar18 = iVar18 + 1) {
-      for (; iVar7 < iVar17; iVar7 = iVar7 + 1) {
-        iVar6 = param_3;
-        if (param_3 < param_3 + 1) {
-          do {
-            sVar4 = (short)iVar18;
-            if (((sVar4 < 0) || (sVar15 <= sVar4)) ||
-               ((sVar5 = (short)iVar7, sVar5 < 0 ||
-                (((g_worldGrid.sizeY <= sVar5 || (sVar16 = (short)iVar6, sVar16 < 0)) ||
-                 (g_worldGrid.sizeZ <= sVar16)))))) {
-              local_10 = nullptr;
-            }
-            else {
-              local_10 = (STFishC *)
-                         g_worldGrid.cells
-                         [(int)sVar5 * (int)sVar15 + (int)sVar16 * (int)g_worldGrid.planeStride +
-                          (int)sVar4].objects[1];
-            }
-            if (((local_10 != nullptr) && (*(int *)&local_10->field_0x20 != 0xbe)) ||
-               (puVar9 = st::fn_00405E48(iVar18,iVar7,iVar6), puVar9 != nullptr))
-            goto cf_break_loop_004AEC96;
-            iVar6 = iVar6 + 1;
+  }
+  local_c = 1;
+  for (iVar18 = _param_1; iVar7 = param_2, iVar18 < iVar11; iVar18 = iVar18 + 1) {
+    for (; iVar7 < iVar17; iVar7 = iVar7 + 1) {
+      iVar6 = param_3;
+      if (param_3 < param_3 + 1) {
+        do {
+          sVar4 = (short)iVar18;
+          if (((sVar4 < 0) || (sVar15 <= sVar4)) ||
+             ((sVar5 = (short)iVar7, sVar5 < 0 ||
+              (((g_worldGrid.sizeY <= sVar5 || (sVar16 = (short)iVar6, sVar16 < 0)) ||
+               (g_worldGrid.sizeZ <= sVar16)))))) {
             local_10 = nullptr;
-            sVar15 = g_worldGrid.sizeX;
-          } while (iVar6 < param_3 + 1);
-        }
+          }
+          else {
+            local_10 = (STFishC *)
+                       g_worldGrid.cells
+                       [(int)sVar5 * (int)sVar15 + (int)sVar16 * (int)g_worldGrid.planeStride +
+                        (int)sVar4].objects[1];
+          }
+          if (((local_10 != nullptr) && (*(int *)&local_10->field_0x20 != 0xbe)) ||
+             (puVar9 = st::fn_00405E48(iVar18,iVar7,iVar6), puVar9 != nullptr))
+          goto cf_break_loop_004AEC96;
+          iVar6 = iVar6 + 1;
+          local_10 = nullptr;
+          sVar15 = g_worldGrid.sizeX;
+        } while (iVar6 < param_3 + 1);
       }
     }
-    if (((int)param_4 < 0x54) || (0x5a < (int)param_4)) {
-      if (param_4 == 100) {
-        pDVar12 = g_packedRecords_A62x8[param_5].field1968_0x9d6;
-        if ((pDVar12 != nullptr) && (uVar19 = 0, 0 < (int)pDVar12->count)) {
+  }
+  if (((int)param_4 < 0x54) || (0x5a < (int)param_4)) {
+    if (param_4 == 100) {
+      pDVar12 = g_packedRecords_A62x8[param_5].field1968_0x9d6;
+      if ((pDVar12 != nullptr) && (uVar19 = 0, 0 < (int)pDVar12->count)) {
+        do {
+          st::fn_006ACC70(pDVar12,uVar19,&local_10);
+          st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
+          if ((((STPiece<2,2>(param_9) != _param_1) || ((local_6 != param_2 || (local_8 != param_3)))) &&
+              (uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+              (int)((uVar10 ^ uVar13) - uVar13) < 0x10)) &&
+             (uVar10 = local_6 - param_2 >> 0x1f,
+             (int)((local_6 - param_2 ^ uVar10) - uVar10) < 0x10)) goto cf_break_loop_004AEC96;
+          pDVar12 = g_packedRecords_A62x8[param_5].field1968_0x9d6;
+          uVar19 = uVar19 + 1;
+        } while ((int)uVar19 < (int)pDVar12->count);
+      }
+    }
+    else if (param_4 == 0x4d) {
+      pDVar12 = g_packedRecords_A62x8[param_5].field1971_0x9e2;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_10 = (int *)&g_packedRecords_A62x8[param_5].field1971_0x9e2;
+      if (pDVar12 != nullptr) {
+        iVar11 = DAT_00795118 / 0xc9;
+        uVar19 = 0;
+        if (0 < (int)pDVar12->count) {
           do {
             st::fn_006ACC70(pDVar12,uVar19,&local_10);
             st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
-            if ((((STPiece<2,2>(param_9) != _param_1) || ((local_6 != param_2 || (local_8 != param_3)))) &&
-                (uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
-                (int)((uVar10 ^ uVar13) - uVar13) < 0x10)) &&
-               (uVar10 = local_6 - param_2 >> 0x1f,
-               (int)((local_6 - param_2 ^ uVar10) - uVar10) < 0x10)) goto cf_break_loop_004AEC96;
-            pDVar12 = g_packedRecords_A62x8[param_5].field1968_0x9d6;
+            if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
+               ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+                (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
+                (uVar10 = local_6 - param_2 >> 0x1f,
+                (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
+            goto cf_break_loop_004AEC96;
             uVar19 = uVar19 + 1;
+            pDVar12 = (DArrayTy *)*param_10;
           } while ((int)uVar19 < (int)pDVar12->count);
         }
       }
-      else if (param_4 == 0x4d) {
-        pDVar12 = g_packedRecords_A62x8[param_5].field1971_0x9e2;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_packedRecords_A62x8[param_5].field1971_0x9e2;
-        if (pDVar12 != nullptr) {
-          iVar11 = DAT_00795118 / 0xc9;
-          uVar19 = 0;
-          if (0 < (int)pDVar12->count) {
-            do {
-              st::fn_006ACC70(pDVar12,uVar19,&local_10);
-              st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
-              if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
-                  (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
-                  (uVar10 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
-              goto cf_break_loop_004AEC96;
-              uVar19 = uVar19 + 1;
-              pDVar12 = (DArrayTy *)*param_10;
-            } while ((int)uVar19 < (int)pDVar12->count);
-          }
-        }
-      }
-      else if (param_4 == 0x43) {
-        pDVar12 = g_packedRecords_A62x8[param_5].field1974_0x9ee;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_packedRecords_A62x8[param_5].field1974_0x9ee;
-        if (pDVar12 != nullptr) {
-          iVar11 = DAT_007950f0 / 0xc9;
-          uVar19 = 0;
-          if (0 < (int)pDVar12->count) {
-            do {
-              st::fn_006ACC70(pDVar12,uVar19,&local_10);
-              st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
-              if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
-                  (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
-                  (uVar10 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
-              goto cf_break_loop_004AEC96;
-              uVar19 = uVar19 + 1;
-              pDVar12 = (DArrayTy *)*param_10;
-            } while ((int)uVar19 < (int)pDVar12->count);
-          }
-        }
-      }
-      else if (param_4 == 0x73) {
-        pDVar12 = g_packedRecords_A62x8[param_5].field1975_0x9f2;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_packedRecords_A62x8[param_5].field1975_0x9f2;
-        if (pDVar12 != nullptr) {
-          iVar11 = DAT_007951b0 / 0xc9;
-          uVar19 = 0;
-          if (0 < (int)pDVar12->count) {
-            do {
-              st::fn_006ACC70(pDVar12,uVar19,&local_10);
-              st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
-              if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
-                  (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
-                  (uVar10 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
-              goto cf_break_loop_004AEC96;
-              uVar19 = uVar19 + 1;
-              pDVar12 = (DArrayTy *)*param_10;
-            } while ((int)uVar19 < (int)pDVar12->count);
-          }
-        }
-      }
-      else if (param_4 == 0x65) {
-        pDVar12 = g_packedRecords_A62x8[param_5].field1972_0x9e6;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_packedRecords_A62x8[param_5].field1972_0x9e6;
-        if (pDVar12 != nullptr) {
-          iVar11 = DAT_00795178 / 0xc9;
-          uVar19 = 0;
-          if (0 < (int)pDVar12->count) {
-            do {
-              st::fn_006ACC70(pDVar12,uVar19,&local_10);
-              st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
-              if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
-                 ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
-                  (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
-                  (uVar10 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
-              goto cf_break_loop_004AEC96;
-              uVar19 = uVar19 + 1;
-              pDVar12 = (DArrayTy *)*param_10;
-            } while ((int)uVar19 < (int)pDVar12->count);
-          }
+    }
+    else if (param_4 == 0x43) {
+      pDVar12 = g_packedRecords_A62x8[param_5].field1974_0x9ee;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_10 = (int *)&g_packedRecords_A62x8[param_5].field1974_0x9ee;
+      if (pDVar12 != nullptr) {
+        iVar11 = DAT_007950f0 / 0xc9;
+        uVar19 = 0;
+        if (0 < (int)pDVar12->count) {
+          do {
+            st::fn_006ACC70(pDVar12,uVar19,&local_10);
+            st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
+            if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
+               ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+                (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
+                (uVar10 = local_6 - param_2 >> 0x1f,
+                (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
+            goto cf_break_loop_004AEC96;
+            uVar19 = uVar19 + 1;
+            pDVar12 = (DArrayTy *)*param_10;
+          } while ((int)uVar19 < (int)pDVar12->count);
         }
       }
     }
-    else {
-      local_c = 0;
-      if (((((param_2 + -1 < 0) || (param_1 < 0)) || (sVar15 <= param_1)) ||
-          (((sVar4 = (short)(param_2 + -1), sVar4 < 0 || (g_worldGrid.sizeY <= sVar4)) ||
-           ((sVar14 < 0 ||
+    else if (param_4 == 0x73) {
+      pDVar12 = g_packedRecords_A62x8[param_5].field1975_0x9f2;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_10 = (int *)&g_packedRecords_A62x8[param_5].field1975_0x9f2;
+      if (pDVar12 != nullptr) {
+        iVar11 = DAT_007951b0 / 0xc9;
+        uVar19 = 0;
+        if (0 < (int)pDVar12->count) {
+          do {
+            st::fn_006ACC70(pDVar12,uVar19,&local_10);
+            st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
+            if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
+               ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+                (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
+                (uVar10 = local_6 - param_2 >> 0x1f,
+                (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
+            goto cf_break_loop_004AEC96;
+            uVar19 = uVar19 + 1;
+            pDVar12 = (DArrayTy *)*param_10;
+          } while ((int)uVar19 < (int)pDVar12->count);
+        }
+      }
+    }
+    else if (param_4 == 0x65) {
+      pDVar12 = g_packedRecords_A62x8[param_5].field1972_0x9e6;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_10 = (int *)&g_packedRecords_A62x8[param_5].field1972_0x9e6;
+      if (pDVar12 != nullptr) {
+        iVar11 = DAT_00795178 / 0xc9;
+        uVar19 = 0;
+        if (0 < (int)pDVar12->count) {
+          do {
+            st::fn_006ACC70(pDVar12,uVar19,&local_10);
+            st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
+            if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
+               ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
+                (int)((uVar10 ^ uVar13) - uVar13) <= iVar11 &&
+                (uVar10 = local_6 - param_2 >> 0x1f,
+                (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
+            goto cf_break_loop_004AEC96;
+            uVar19 = uVar19 + 1;
+            pDVar12 = (DArrayTy *)*param_10;
+          } while ((int)uVar19 < (int)pDVar12->count);
+        }
+      }
+    }
+  }
+  else {
+    local_c = 0;
+    if (((((param_2 + -1 < 0) || (param_1 < 0)) || (sVar15 <= param_1)) ||
+        (((sVar4 = (short)(param_2 + -1), sVar4 < 0 || (g_worldGrid.sizeY <= sVar4)) ||
+         ((sVar14 < 0 ||
+          ((g_worldGrid.sizeZ <= sVar14 ||
+           (pSVar1 = g_worldGrid.cells
+                     [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)sVar4 +
+                      (int)param_1].objects[0], pSVar1 == nullptr)))))))) ||
+       (((iVar11 = pSVar1->GetObjectTypeId(), iVar11 != 0x53 ||
+         ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
+        (((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
+          iVar11 < 0x54 ||
+          (iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
+          0x5a < iVar11)) ||
+         ((param_10 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != param_10)))))))) {
+      sVar4 = (short)param_2;
+      if (((_param_1 + -1 < 0) ||
+          ((((sVar5 = (short)(_param_1 + -1), sVar5 < 0 || (sVar15 <= sVar5)) || (sVar4 < 0)) ||
+           (((g_worldGrid.sizeY <= sVar4 || (sVar14 < 0)) ||
             ((g_worldGrid.sizeZ <= sVar14 ||
              (pSVar1 = g_worldGrid.cells
-                       [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)sVar4 +
-                        (int)param_1].objects[0], pSVar1 == nullptr)))))))) ||
-         (((iVar11 = pSVar1->GetObjectTypeId(), iVar11 != 0x53 ||
-           ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
+                       [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)sVar15 +
+                        (int)sVar5].objects[0], pSVar1 == nullptr)))))))) ||
+         (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10, iVar11 != 0x53
+           || ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
           (((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
             iVar11 < 0x54 ||
             (iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
             0x5a < iVar11)) ||
-           ((param_10 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != param_10)))))))) {
-        sVar4 = (short)param_2;
-        if (((_param_1 + -1 < 0) ||
-            ((((sVar5 = (short)(_param_1 + -1), sVar5 < 0 || (sVar15 <= sVar5)) || (sVar4 < 0)) ||
-             (((g_worldGrid.sizeY <= sVar4 || (sVar14 < 0)) ||
-              ((g_worldGrid.sizeZ <= sVar14 ||
-               (pSVar1 = g_worldGrid.cells
-                         [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)sVar15 +
-                          (int)sVar5].objects[0], pSVar1 == nullptr)))))))) ||
-           (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10, iVar11 != 0x53
-             || ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
-            (((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
-              iVar11 < 0x54 ||
-              (iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
-              0x5a < iVar11)) ||
-             ((piVar2 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != piVar2)))))))) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          if (((_param_1 + 1 < (int)sVar15) &&
-              ((((((sVar5 = (short)(_param_1 + 1), -1 < sVar5 && (sVar5 < sVar15)) && (-1 < sVar4))
-                 && ((sVar4 < g_worldGrid.sizeY && (-1 < sVar14)))) && (sVar14 < g_worldGrid.sizeZ))
-               && (pSVar1 = g_worldGrid.cells
-                            [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)sVar15 +
-                             (int)sVar5].objects[0], pSVar1 != nullptr)))) &&
-             (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10,
-               iVar11 == 0x53 &&
-               ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
-              ((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
-               0x53 < iVar11 &&
-               ((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
-                iVar11 < 0x5b &&
-                ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
-            local_c = 1;
-          }
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          else if (((param_2 + 1 < (int)g_worldGrid.sizeY) &&
-                   (((-1 < param_1 && (param_1 < sVar15)) &&
-                    (sVar4 = (short)(param_2 + 1), -1 < sVar4)))) &&
-                  ((((sVar4 < g_worldGrid.sizeY && (-1 < sVar14)) &&
-                    ((sVar14 < g_worldGrid.sizeZ &&
-                     (pSVar1 = g_worldGrid.cells
-                               [(int)sVar14 * (int)g_worldGrid.planeStride +
-                                (int)sVar15 * (int)sVar4 + (int)param_1].objects[0],
-                     pSVar1 != nullptr)))) &&
-                   (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10,
-                     iVar11 == 0x53 &&
-                     ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
-                    (((iVar11 = pSVar1->GetObjectTypeId(), 0x53 < iVar11 &&
-                      (iVar11 = pSVar1->GetObjectTypeId(), iVar11 < 0x5b)) &&
-                     ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2))))))))))
-          {
-            local_c = 1;
-          }
+           ((piVar2 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != piVar2)))))))) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+        if (((_param_1 + 1 < (int)sVar15) &&
+            ((((((sVar5 = (short)(_param_1 + 1), -1 < sVar5 && (sVar5 < sVar15)) && (-1 < sVar4)) &&
+               ((sVar4 < g_worldGrid.sizeY && (-1 < sVar14)))) && (sVar14 < g_worldGrid.sizeZ)) &&
+             (pSVar1 = g_worldGrid.cells
+                       [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)sVar15 +
+                        (int)sVar5].objects[0], pSVar1 != nullptr)))) &&
+           (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10, iVar11 == 0x53
+             && ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
+            ((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
+             0x53 < iVar11 &&
+             ((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
+              iVar11 < 0x5b &&
+              ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
+          local_c = 1;
         }
-        else {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+        else if (((param_2 + 1 < (int)g_worldGrid.sizeY) &&
+                 (((-1 < param_1 && (param_1 < sVar15)) &&
+                  (sVar4 = (short)(param_2 + 1), -1 < sVar4)))) &&
+                ((((sVar4 < g_worldGrid.sizeY && (-1 < sVar14)) &&
+                  ((sVar14 < g_worldGrid.sizeZ &&
+                   (pSVar1 = g_worldGrid.cells
+                             [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)sVar4
+                              + (int)param_1].objects[0], pSVar1 != nullptr)))) &&
+                 (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10,
+                   iVar11 == 0x53 &&
+                   ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
+                  (((iVar11 = pSVar1->GetObjectTypeId(), 0x53 < iVar11 &&
+                    (iVar11 = pSVar1->GetObjectTypeId(), iVar11 < 0x5b)) &&
+                   ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
           local_c = 1;
         }
       }
       else {
         local_c = 1;
       }
+    }
+    else {
+      local_c = 1;
     }
   }
 switchD_004ae472_caseD_3:
@@ -2303,21 +2301,23 @@ st::fn_004AF080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,
   short sVar6;
   short sVar7;
   short *psVar8;
-  int iVar9;
   int iVar10;
   int iVar11;
-  dword dVar12;
-  char *pcVar13;
-  DArrayTy *pDVar14;
-  int iVar15;
-  short sVar16;
-  uint uVar17;
-  int iVar18;
+  int iVar9;
+  int iVar12;
+  dword dVar13;
+  int local_EAX_2874;
+  char *pcVar14;
+  DArrayTy *pDVar15;
+  int iVar16;
+  short sVar17;
+  uint uVar18;
   int iVar19;
-  uint uVar20;
-  short sVar21;
-  int iVar22;
-  bool bVar23;
+  int iVar20;
+  uint uVar21;
+  short sVar22;
+  int iVar23;
+  bool bVar24;
   undefined4 local_50;
   int local_40;
   char *local_3c;
@@ -2349,33 +2349,33 @@ st::fn_004AF080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,
   psVar8 = st::fn_006AAC70(g_worldGrid.planeStride * 5);
   local_14 = 0;
   do {
-    iVar9 = g_worldGrid.planeStride * local_14;
+    iVar10 = g_worldGrid.planeStride * local_14;
     local_1c = 0;
     if (0 < g_worldGrid.sizeY) {
       do {
-        iVar10 = (int)g_worldGrid.sizeX;
-        iVar22 = 0;
-        iVar19 = iVar10 * local_1c;
-        if (0 < iVar10) {
+        iVar11 = (int)g_worldGrid.sizeX;
+        iVar23 = 0;
+        iVar20 = iVar11 * local_1c;
+        if (0 < iVar11) {
           do {
             local_10 = (STFishC *)
                        g_worldGrid.cells
-                       [iVar10 * local_1c + iVar22 + g_worldGrid.planeStride * local_14].objects[0];
+                       [iVar11 * local_1c + iVar23 + g_worldGrid.planeStride * local_14].objects[0];
             if (local_10 == nullptr) {
-              sVar21 = (short)iVar22;
-              if ((((sVar21 < 0) || (g_worldGrid.sizeX <= sVar21)) ||
+              sVar22 = (short)iVar23;
+              if ((((sVar22 < 0) || (g_worldGrid.sizeX <= sVar22)) ||
                   (sVar7 = (short)local_1c, sVar7 < 0)) ||
-                 (((g_worldGrid.sizeY <= sVar7 || (sVar16 = (short)local_14, sVar16 < 0)) ||
-                  (g_worldGrid.sizeZ <= sVar16)))) {
+                 (((g_worldGrid.sizeY <= sVar7 || (sVar17 = (short)local_14, sVar17 < 0)) ||
+                  (g_worldGrid.sizeZ <= sVar17)))) {
 LAB_004af1d5:
-                *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 3;
+                *(undefined1 *)(iVar23 + iVar20 + iVar10 + (int)psVar8) = 3;
               }
-              else if (STGridAt3D(g_pathingGrid, sVar21, sVar7, sVar16) == 0) {
-                *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 0;
+              else if (STGridAt3D(g_pathingGrid, sVar22, sVar7, sVar17) == 0) {
+                *(undefined1 *)(iVar23 + iVar20 + iVar10 + (int)psVar8) = 0;
               }
               else {
-                if (STGridAt3D(g_pathingGrid, sVar21, sVar7, sVar16) == -1) goto LAB_004af1d5;
-                *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 1;
+                if (STGridAt3D(g_pathingGrid, sVar22, sVar7, sVar17) == -1) goto LAB_004af1d5;
+                *(undefined1 *)(iVar23 + iVar20 + iVar10 + (int)psVar8) = 1;
               }
             }
             else {
@@ -2386,48 +2386,48 @@ LAB_004af1d5:
                 if (g_app_00806728->field_146F == '\0') {
                   if (bVar2 == (byte)param_1) {
 LAB_004af2f0:
-                    iVar10 = 0;
+                    iVar11 = 0;
                   }
                   else {
-                    uVar20 = (uint)bVar2;
-                    uVar17 = param_1 & 0xff;
-                    cVar3 = (&g_app_00806728->field_0x142f)[uVar17 + uVar20 * 8];
+                    uVar21 = (uint)bVar2;
+                    uVar18 = param_1 & 0xff;
+                    cVar3 = (&g_app_00806728->field_0x142f)[uVar18 + uVar21 * 8];
                     if ((cVar3 == '\0') &&
-                       ((&g_app_00806728->field_0x142f)[uVar20 + uVar17 * 8] == '\0')) {
-                      iVar10 = -2;
+                       ((&g_app_00806728->field_0x142f)[uVar21 + uVar18 * 8] == '\0')) {
+                      iVar11 = -2;
                     }
                     else if ((cVar3 == '\x01') &&
-                            ((&g_app_00806728->field_0x142f)[uVar20 + uVar17 * 8] == '\0')) {
-                      iVar10 = -1;
+                            ((&g_app_00806728->field_0x142f)[uVar21 + uVar18 * 8] == '\0')) {
+                      iVar11 = -1;
                     }
                     else if ((cVar3 == '\0') &&
-                            ((&g_app_00806728->field_0x142f)[uVar20 + uVar17 * 8] == '\x01')) {
-                      iVar10 = 1;
+                            ((&g_app_00806728->field_0x142f)[uVar21 + uVar18 * 8] == '\x01')) {
+                      iVar11 = 1;
                     }
                     else {
                       if ((cVar3 != '\x01') ||
-                         ((&g_app_00806728->field_0x142f)[uVar20 + uVar17 * 8] != '\x01'))
+                         ((&g_app_00806728->field_0x142f)[uVar21 + uVar18 * 8] != '\x01'))
                       goto LAB_004af2f0;
-                      iVar10 = 2;
+                      iVar11 = 2;
                     }
                   }
-                  bVar23 = iVar10 < 0;
+                  bVar24 = iVar11 < 0;
                 }
                 else {
-                  bVar23 = (&g_app_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
+                  bVar24 = (&g_app_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
                            (&g_app_00806728->field_0x11ca)[(uint)bVar2 * 0x51];
                 }
-                if (bVar23) {
-                  *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 4;
+                if (bVar24) {
+                  *(undefined1 *)(iVar23 + iVar20 + iVar10 + (int)psVar8) = 4;
                   goto LAB_004af325;
                 }
               }
-              *(undefined1 *)(iVar22 + iVar19 + iVar9 + (int)psVar8) = 5;
+              *(undefined1 *)(iVar23 + iVar20 + iVar10 + (int)psVar8) = 5;
             }
 LAB_004af325:
-            iVar22 = iVar22 + 1;
-            iVar10 = (int)g_worldGrid.sizeX;
-          } while (iVar22 < iVar10);
+            iVar23 = iVar23 + 1;
+            iVar11 = (int)g_worldGrid.sizeX;
+          } while (iVar23 < iVar11);
         }
         local_1c = local_1c + 1;
       } while (local_1c < g_worldGrid.sizeY);
@@ -2456,263 +2456,265 @@ LAB_004af325:
         local_18 = 0;
         if (0 < g_worldGrid.sizeX) {
           do {
-            iVar9 = local_14;
+            iVar10 = local_14;
             if (local_14 < local_14 + 1) {
               do {
-                if (g_worldGrid.sizeZ <= iVar9) goto cf_common_join_004AFC34;
+                if (g_worldGrid.sizeZ <= iVar10) goto cf_common_join_004AFC34;
                 if (local_1c < local_28 + local_1c) {
-                  iVar19 = g_worldGrid.sizeX * local_1c;
-                  iVar10 = local_1c;
+                  iVar20 = g_worldGrid.sizeX * local_1c;
+                  iVar11 = local_1c;
                   do {
-                    if (g_worldGrid.sizeY <= iVar10) goto cf_common_join_004AFC34;
-                    for (iVar22 = local_18; iVar22 < local_2c + local_18; iVar22 = iVar22 + 1) {
-                      if ((g_worldGrid.sizeX <= iVar22) ||
-                         (*(char *)(iVar19 + iVar22 + g_worldGrid.planeStride * iVar9 + (int)psVar8)
-                          != '\0')) goto cf_common_join_004AFC34;
+                    if (g_worldGrid.sizeY <= iVar11) goto cf_common_join_004AFC34;
+                    for (iVar23 = local_18; iVar23 < local_2c + local_18; iVar23 = iVar23 + 1) {
+                      if ((g_worldGrid.sizeX <= iVar23) ||
+                         (*(char *)(iVar20 + iVar23 + g_worldGrid.planeStride * iVar10 + (int)psVar8
+                                   ) != '\0')) goto cf_common_join_004AFC34;
                     }
-                    iVar19 = iVar19 + g_worldGrid.sizeX;
-                    iVar10 = iVar10 + 1;
-                  } while (iVar10 < local_28 + local_1c);
+                    iVar20 = iVar20 + g_worldGrid.sizeX;
+                    iVar11 = iVar11 + 1;
+                  } while (iVar11 < local_28 + local_1c);
                 }
-                iVar9 = iVar9 + 1;
-              } while (iVar9 < local_14 + 1);
+                iVar10 = iVar10 + 1;
+              } while (iVar10 < local_14 + 1);
             }
             if (0 < local_14) {
               if (local_1c < local_1c + local_28) {
-                iVar10 = (int)g_worldGrid.sizeX;
+                iVar11 = (int)g_worldGrid.sizeX;
                 local_30 = (char *)(local_18 +
-                                    iVar10 * local_1c +
+                                    iVar11 * local_1c +
                                     (local_14 + -1) * (int)g_worldGrid.planeStride + (int)psVar8);
-                iVar9 = local_1c;
+                iVar10 = local_1c;
                 do {
-                  if (iVar9 < g_worldGrid.sizeY) {
-                    pcVar13 = local_30;
-                    for (iVar19 = local_18; iVar19 < local_2c + local_18; iVar19 = iVar19 + 1) {
-                      if ((iVar19 < iVar10) && (*pcVar13 != '\x03')) goto cf_common_join_004AFC34;
-                      pcVar13 = pcVar13 + 1;
+                  if (iVar10 < g_worldGrid.sizeY) {
+                    pcVar14 = local_30;
+                    for (iVar20 = local_18; iVar20 < local_2c + local_18; iVar20 = iVar20 + 1) {
+                      if ((iVar20 < iVar11) && (*pcVar14 != '\x03')) goto cf_common_join_004AFC34;
+                      pcVar14 = pcVar14 + 1;
                     }
                   }
-                  iVar9 = iVar9 + 1;
-                  local_30 = local_30 + iVar10;
-                } while (iVar9 < local_1c + local_28);
+                  iVar10 = iVar10 + 1;
+                  local_30 = local_30 + iVar11;
+                } while (iVar10 < local_1c + local_28);
               }
             }
             if (local_14 < 4) {
               if (local_1c < local_28 + local_1c) {
-                iVar10 = (int)g_worldGrid.sizeX;
-                local_3c = (char *)(iVar10 * local_1c +
+                iVar11 = (int)g_worldGrid.sizeX;
+                local_3c = (char *)(iVar11 * local_1c +
                                     (int)g_worldGrid.planeStride * (local_14 + 1) + local_18 +
                                    (int)psVar8);
-                iVar9 = local_1c;
+                iVar10 = local_1c;
                 do {
-                  if (iVar9 < g_worldGrid.sizeY) {
-                    pcVar13 = local_3c;
-                    for (iVar19 = local_18; iVar19 < local_18 + local_2c; iVar19 = iVar19 + 1) {
-                      if ((iVar19 < iVar10) &&
-                         (((cVar3 = *pcVar13, cVar3 == '\x01' || (cVar3 == '\x03')) ||
+                  if (iVar10 < g_worldGrid.sizeY) {
+                    pcVar14 = local_3c;
+                    for (iVar20 = local_18; iVar20 < local_18 + local_2c; iVar20 = iVar20 + 1) {
+                      if ((iVar20 < iVar11) &&
+                         (((cVar3 = *pcVar14, cVar3 == '\x01' || (cVar3 == '\x03')) ||
                           (cVar3 == '\x02')))) goto cf_common_join_004AFC34;
-                      pcVar13 = pcVar13 + 1;
+                      pcVar14 = pcVar14 + 1;
                     }
                   }
-                  iVar9 = iVar9 + 1;
-                  local_3c = local_3c + iVar10;
-                } while (iVar9 < local_28 + local_1c);
+                  iVar10 = iVar10 + 1;
+                  local_3c = local_3c + iVar11;
+                } while (iVar10 < local_28 + local_1c);
               }
             }
             if (param_2 != 100) {
               if (param_2 == 0x4d) {
-                pDVar14 = g_packedRecords_A62x8[param_1].field1971_0x9e2;
-                if (pDVar14 != nullptr) {
-                  iVar9 = DAT_00795118 / 0xc9;
-                  uVar20 = 0;
-                  if (0 < (int)pDVar14->count) {
+                pDVar15 = g_packedRecords_A62x8[param_1].field1971_0x9e2;
+                if (pDVar15 != nullptr) {
+                  iVar10 = DAT_00795118 / 0xc9;
+                  uVar21 = 0;
+                  if (0 < (int)pDVar15->count) {
                     do {
-                      st::fn_006ACC70(pDVar14,uVar20,&local_10);
+                      st::fn_006ACC70(pDVar15,uVar21,&local_10);
                       st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
-                      uVar17 = local_6 - local_18 >> 0x1f;
-                      if (((int)((local_6 - local_18 ^ uVar17) - uVar17) <= iVar9) &&
-                         (uVar17 = local_8 - local_1c >> 0x1f,
-                         (int)((local_8 - local_1c ^ uVar17) - uVar17) <= iVar9))
+                      uVar18 = local_6 - local_18 >> 0x1f;
+                      if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
+                         (uVar18 = local_8 - local_1c >> 0x1f,
+                         (int)((local_8 - local_1c ^ uVar18) - uVar18) <= iVar10))
                       goto cf_common_join_004AFC34;
-                      uVar20 = uVar20 + 1;
-                      pDVar14 = g_packedRecords_A62x8[param_1].field1971_0x9e2;
-                    } while ((int)uVar20 < (int)pDVar14->count);
+                      uVar21 = uVar21 + 1;
+                      pDVar15 = g_packedRecords_A62x8[param_1].field1971_0x9e2;
+                    } while ((int)uVar21 < (int)pDVar15->count);
                   }
                 }
                 goto cf_common_join_004AFA95;
               }
               if (param_2 == 0x43) {
-                pDVar14 = g_packedRecords_A62x8[param_1].field1974_0x9ee;
-                if (pDVar14 != nullptr) {
-                  iVar9 = DAT_007950f0 / 0xc9;
-                  uVar20 = 0;
-                  if (0 < (int)pDVar14->count) {
+                pDVar15 = g_packedRecords_A62x8[param_1].field1974_0x9ee;
+                if (pDVar15 != nullptr) {
+                  iVar10 = DAT_007950f0 / 0xc9;
+                  uVar21 = 0;
+                  if (0 < (int)pDVar15->count) {
                     do {
-                      st::fn_006ACC70(pDVar14,uVar20,&local_10);
+                      st::fn_006ACC70(pDVar15,uVar21,&local_10);
                       st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
-                      uVar17 = local_6 - local_18 >> 0x1f;
-                      if (((int)((local_6 - local_18 ^ uVar17) - uVar17) <= iVar9) &&
-                         (uVar17 = local_8 - local_1c >> 0x1f,
-                         (int)((local_8 - local_1c ^ uVar17) - uVar17) <= iVar9))
+                      uVar18 = local_6 - local_18 >> 0x1f;
+                      if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
+                         (uVar18 = local_8 - local_1c >> 0x1f,
+                         (int)((local_8 - local_1c ^ uVar18) - uVar18) <= iVar10))
                       goto cf_common_join_004AFC34;
-                      uVar20 = uVar20 + 1;
-                      pDVar14 = g_packedRecords_A62x8[param_1].field1974_0x9ee;
-                    } while ((int)uVar20 < (int)pDVar14->count);
+                      uVar21 = uVar21 + 1;
+                      pDVar15 = g_packedRecords_A62x8[param_1].field1974_0x9ee;
+                    } while ((int)uVar21 < (int)pDVar15->count);
                   }
                 }
                 goto cf_common_join_004AFA95;
               }
               if (param_2 == 0x73) {
-                pDVar14 = g_packedRecords_A62x8[param_1].field1975_0x9f2;
-                if (pDVar14 != nullptr) {
-                  iVar9 = DAT_007951b0 / 0xc9;
-                  uVar20 = 0;
-                  if (0 < (int)pDVar14->count) {
+                pDVar15 = g_packedRecords_A62x8[param_1].field1975_0x9f2;
+                if (pDVar15 != nullptr) {
+                  iVar10 = DAT_007951b0 / 0xc9;
+                  uVar21 = 0;
+                  if (0 < (int)pDVar15->count) {
                     do {
-                      st::fn_006ACC70(pDVar14,uVar20,&local_10);
+                      st::fn_006ACC70(pDVar15,uVar21,&local_10);
                       st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
-                      uVar17 = local_6 - local_18 >> 0x1f;
-                      if (((int)((local_6 - local_18 ^ uVar17) - uVar17) <= iVar9) &&
-                         (uVar17 = local_8 - local_1c >> 0x1f,
-                         (int)((local_8 - local_1c ^ uVar17) - uVar17) <= iVar9))
+                      uVar18 = local_6 - local_18 >> 0x1f;
+                      if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
+                         (uVar18 = local_8 - local_1c >> 0x1f,
+                         (int)((local_8 - local_1c ^ uVar18) - uVar18) <= iVar10))
                       goto cf_common_join_004AFC34;
-                      uVar20 = uVar20 + 1;
-                      pDVar14 = g_packedRecords_A62x8[param_1].field1975_0x9f2;
-                    } while ((int)uVar20 < (int)pDVar14->count);
+                      uVar21 = uVar21 + 1;
+                      pDVar15 = g_packedRecords_A62x8[param_1].field1975_0x9f2;
+                    } while ((int)uVar21 < (int)pDVar15->count);
                   }
                 }
                 goto cf_common_join_004AFA95;
               }
               if (param_2 == 0x65) {
-                pDVar14 = g_packedRecords_A62x8[param_1].field1972_0x9e6;
-                if (pDVar14 != nullptr) {
-                  iVar9 = DAT_00795178 / 0xc9;
-                  uVar20 = 0;
-                  if (0 < (int)pDVar14->count) {
+                pDVar15 = g_packedRecords_A62x8[param_1].field1972_0x9e6;
+                if (pDVar15 != nullptr) {
+                  iVar10 = DAT_00795178 / 0xc9;
+                  uVar21 = 0;
+                  if (0 < (int)pDVar15->count) {
                     do {
-                      st::fn_006ACC70(pDVar14,uVar20,&local_10);
+                      st::fn_006ACC70(pDVar15,uVar21,&local_10);
                       st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
-                      uVar17 = local_6 - local_18 >> 0x1f;
-                      if (((int)((local_6 - local_18 ^ uVar17) - uVar17) <= iVar9) &&
-                         (uVar17 = local_8 - local_1c >> 0x1f,
-                         (int)((local_8 - local_1c ^ uVar17) - uVar17) <= iVar9))
+                      uVar18 = local_6 - local_18 >> 0x1f;
+                      if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
+                         (uVar18 = local_8 - local_1c >> 0x1f,
+                         (int)((local_8 - local_1c ^ uVar18) - uVar18) <= iVar10))
                       goto cf_common_join_004AFC34;
-                      uVar20 = uVar20 + 1;
-                      pDVar14 = g_packedRecords_A62x8[param_1].field1972_0x9e6;
-                    } while ((int)uVar20 < (int)pDVar14->count);
+                      uVar21 = uVar21 + 1;
+                      pDVar15 = g_packedRecords_A62x8[param_1].field1972_0x9e6;
+                    } while ((int)uVar21 < (int)pDVar15->count);
                   }
                 }
                 goto cf_common_join_004AFA95;
               }
               if (((param_2 < 0x54) || (0x5a < param_2)) || (param_9 == 0)) {
                 if (((param_2 == 0x3a) && (g_array_007FA16C != nullptr)) &&
-                   (uVar20 = 0, 0 < (int)g_array_007FA16C->count)) {
+                   (uVar21 = 0, 0 < (int)g_array_007FA16C->count)) {
                   do {
-                    st::fn_006ACC70(g_array_007FA16C,uVar20,&local_10);
+                    st::fn_006ACC70(g_array_007FA16C,uVar21,&local_10);
                     st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
-                    uVar17 = local_6 - local_18 >> 0x1f;
-                    if (((int)((local_6 - local_18 ^ uVar17) - uVar17) < 0xe) &&
-                       (uVar17 = local_8 - local_1c >> 0x1f,
-                       (int)((local_8 - local_1c ^ uVar17) - uVar17) < 0xe))
+                    uVar18 = local_6 - local_18 >> 0x1f;
+                    if (((int)((local_6 - local_18 ^ uVar18) - uVar18) < 0xe) &&
+                       (uVar18 = local_8 - local_1c >> 0x1f,
+                       (int)((local_8 - local_1c ^ uVar18) - uVar18) < 0xe))
                     goto cf_common_join_004AFC34;
-                    uVar20 = uVar20 + 1;
-                  } while ((int)uVar20 < (int)g_array_007FA16C->count);
+                    uVar21 = uVar21 + 1;
+                  } while ((int)uVar21 < (int)g_array_007FA16C->count);
                 }
                 goto cf_common_join_004AFA95;
               }
-              iVar19 = (int)g_worldGrid.planeStride;
-              iVar9 = local_1c + -1;
-              iVar22 = local_1c + local_28;
+              iVar20 = (int)g_worldGrid.planeStride;
+              iVar10 = local_1c + -1;
+              iVar23 = local_1c + local_28;
               bVar4 = false;
-              iVar10 = iVar9;
-              if (iVar9 < iVar22 + 1) {
+              iVar11 = iVar10;
+              if (iVar10 < iVar23 + 1) {
                 do {
-                  if ((-1 < iVar10) && (iVar10 < g_worldGrid.sizeY)) {
+                  if ((-1 < iVar11) && (iVar11 < g_worldGrid.sizeY)) {
                     iVar1 = local_18 + -1;
-                    iVar15 = local_18 + local_2c;
-                    if (iVar1 < iVar15 + 1) {
-                      iVar11 = iVar19 * local_14 + iVar1 + g_worldGrid.sizeX * iVar10;
-                      iVar18 = iVar11 * 8;
-                      local_3c = (char *)(iVar11 + (int)psVar8);
-                      iVar11 = iVar1;
+                    iVar16 = local_18 + local_2c;
+                    if (iVar1 < iVar16 + 1) {
+                      iVar12 = iVar20 * local_14 + iVar1 + g_worldGrid.sizeX * iVar11;
+                      iVar19 = iVar12 * 8;
+                      local_3c = (char *)(iVar12 + (int)psVar8);
+                      iVar12 = iVar1;
                       do {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        if (((((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) &&
-                             ((iVar10 != iVar9 ||
-                              ((iVar11 != iVar1 && ((iVar10 != iVar9 || (iVar11 != iVar15)))))))) &&
-                            ((iVar10 != iVar22 ||
-                             ((iVar11 != iVar15 && ((iVar10 != iVar22 || (iVar11 != iVar1)))))))) &&
-                           (((*local_3c == '\x05' &&
-                             (local_10 = *(STFishC **)((int)(g_worldGrid.cells)->objects + iVar18),
-                             local_10 != nullptr)) &&
-                            (((dVar12 = local_10->slot_2C(), dVar12 == 0x53 &&
-                              (local_10->field_0018 == *(int *)(param_9 + 0x18))) ||
-                             ((dVar12 = local_10->slot_2C(), 0x53 < (int)dVar12
-                              && ((dVar12 = local_10->slot_2C(),
-                                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                                  (int)dVar12 < 0x5b &&
+                        if (((((-1 < iVar12) && (iVar12 < g_worldGrid.sizeX)) &&
+                             ((iVar11 != iVar10 ||
+                              ((iVar12 != iVar1 && ((iVar11 != iVar10 || (iVar12 != iVar16))))))))
+                            && ((iVar11 != iVar23 ||
+                                ((iVar12 != iVar16 && ((iVar11 != iVar23 || (iVar12 != iVar1))))))))
+                           && (((*local_3c == '\x05' &&
+                                (local_10 = *(STFishC **)
+                                             ((int)(g_worldGrid.cells)->objects + iVar19),
+                                local_10 != nullptr)) &&
+                               (((dVar13 = local_10->slot_2C(), dVar13 == 0x53 &&
+                                 (local_10->field_0018 == *(int *)(param_9 + 0x18))) ||
+                                ((dVar13 = local_10->slot_2C(),
+                                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                                 0x53 < (int)dVar13 &&
+                                 ((dVar13 = local_10->slot_2C(),
+                                  (int)dVar13 < 0x5b &&
                                   (*(int *)&local_10[2].field_0xfd == *(int *)(param_9 + 0x18)))))))
-                            )))) {
-                          dVar12 = local_10->slot_2C();
+                               )))) {
+                          dVar13 = local_10->slot_2C();
                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                          if ((dVar12 == 0x53) && (local_10->field_0018 == *(int *)(param_9 + 0x18))
+                          if ((dVar13 == 0x53) && (local_10->field_0018 == *(int *)(param_9 + 0x18))
                              ) {
                             bVar4 = true;
                           }
                           goto cf_common_join_004AFA95;
                         }
-                        iVar11 = iVar11 + 1;
-                        iVar18 = iVar18 + 8;
+                        iVar12 = iVar12 + 1;
+                        iVar19 = iVar19 + 8;
                         local_3c = local_3c + 1;
-                      } while (iVar11 < iVar15 + 1);
+                      } while (iVar12 < iVar16 + 1);
                     }
                   }
-                  iVar10 = iVar10 + 1;
-                } while (iVar10 < iVar22 + 1);
+                  iVar11 = iVar11 + 1;
+                } while (iVar11 < iVar23 + 1);
               }
               goto cf_common_join_004AFC34;
             }
-            pDVar14 = g_packedRecords_A62x8[param_1].field1968_0x9d6;
-            if ((pDVar14 != nullptr) && (uVar20 = 0, 0 < (int)pDVar14->count)) {
+            pDVar15 = g_packedRecords_A62x8[param_1].field1968_0x9d6;
+            if ((pDVar15 != nullptr) && (uVar21 = 0, 0 < (int)pDVar15->count)) {
               do {
-                st::fn_006ACC70(pDVar14,uVar20,&local_10);
+                st::fn_006ACC70(pDVar15,uVar21,&local_10);
                 st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
-                uVar17 = local_6 - local_18 >> 0x1f;
-                if (((int)((local_6 - local_18 ^ uVar17) - uVar17) < 0x10) &&
-                   (uVar17 = local_8 - local_1c >> 0x1f,
-                   (int)((local_8 - local_1c ^ uVar17) - uVar17) < 0x10))
+                uVar18 = local_6 - local_18 >> 0x1f;
+                if (((int)((local_6 - local_18 ^ uVar18) - uVar18) < 0x10) &&
+                   (uVar18 = local_8 - local_1c >> 0x1f,
+                   (int)((local_8 - local_1c ^ uVar18) - uVar18) < 0x10))
                 goto cf_common_join_004AFC34;
-                pDVar14 = g_packedRecords_A62x8[param_1].field1968_0x9d6;
-                uVar20 = uVar20 + 1;
-              } while ((int)uVar20 < (int)pDVar14->count);
+                pDVar15 = g_packedRecords_A62x8[param_1].field1968_0x9d6;
+                uVar21 = uVar21 + 1;
+              } while ((int)uVar21 < (int)pDVar15->count);
             }
 cf_common_join_004AFA95:
-            iVar9 = local_1c + -1;
-            bVar23 = true;
-            if (iVar9 < local_1c + 1 + local_28) {
+            iVar10 = local_1c + -1;
+            bVar24 = true;
+            if (iVar10 < local_1c + 1 + local_28) {
               do {
-                if ((-1 < iVar9) && (iVar9 < g_worldGrid.sizeY)) {
-                  iVar10 = local_18 + -1;
-                  iVar19 = local_18 + 1 + local_2c;
-                  if (iVar10 < iVar19) {
-                    pcVar13 = (char *)(iVar9 * g_worldGrid.sizeX + iVar10 +
+                if ((-1 < iVar10) && (iVar10 < g_worldGrid.sizeY)) {
+                  iVar11 = local_18 + -1;
+                  iVar20 = local_18 + 1 + local_2c;
+                  if (iVar11 < iVar20) {
+                    pcVar14 = (char *)(iVar10 * g_worldGrid.sizeX + iVar11 +
                                        g_worldGrid.planeStride * local_14 + (int)psVar8);
                     do {
-                      if (((-1 < iVar10) && (iVar10 < g_worldGrid.sizeX)) &&
-                         ((*pcVar13 == '\x05' || (*pcVar13 == '\x02')))) {
-                        bVar23 = false;
+                      if (((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) &&
+                         ((*pcVar14 == '\x05' || (*pcVar14 == '\x02')))) {
+                        bVar24 = false;
                         goto LAB_004afbad;
                       }
-                      iVar10 = iVar10 + 1;
-                      pcVar13 = pcVar13 + 1;
-                    } while (iVar10 < iVar19);
+                      iVar11 = iVar11 + 1;
+                      pcVar14 = pcVar14 + 1;
+                    } while (iVar11 < iVar20);
                   }
                 }
-                iVar9 = iVar9 + 1;
-              } while (iVar9 < local_1c + 1 + local_28);
+                iVar10 = iVar10 + 1;
+              } while (iVar10 < local_1c + 1 + local_28);
             }
 LAB_004afbad:
-            iVar9 = st::fn_006ACED8(local_18,local_1c,param_6,param_7);
+            local_EAX_2874 = st::fn_006ACED8(local_18,local_1c,param_6,param_7);
             if ((local_40 < 0) || ((((0x53 < param_2 && (param_2 < 0x5b)) && (bVar4)) && (!bVar5))))
             {
 LAB_004afc0f:
@@ -2720,13 +2722,14 @@ LAB_004afc0f:
               *param_4 = local_1c;
               *param_5 = local_14;
               local_50 = 1;
-              local_40 = iVar9;
+              local_40 = local_EAX_2874;
               bVar5 = bVar4;
             }
-            else if (bVar23) {
-              if (iVar9 < local_40) goto LAB_004afc0f;
+            else if (bVar24) {
+              if (local_EAX_2874 < local_40) goto LAB_004afc0f;
             }
-            else if (iVar9 / ((int)sVar6 / 3) < local_40 / ((int)sVar6 / 3)) goto LAB_004afc0f;
+            else if (local_EAX_2874 / ((int)sVar6 / 3) < local_40 / ((int)sVar6 / 3))
+            goto LAB_004afc0f;
 cf_common_join_004AFC34:
             local_18 = local_18 + 1;
           } while (local_18 < g_worldGrid.sizeX);
@@ -2753,8 +2756,11 @@ st::fn_004AFFA0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *
             int *param_5,int param_6,int param_7)
 
 {
+  int local_EAX_44;
+  dword dVar1;
+  int iVar2;
   int iVar1;
-  dword dVar2;
+  int local_EAX_441;
   int iVar3;
   undefined4 uVar4;
   undefined4 local_18;
@@ -2769,40 +2775,40 @@ st::fn_004AFFA0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *
   local_18 = 0;
   if (g_array_007FA150 != nullptr) {
     g_array_007FA150->iteratorIndex = 0;
-    iVar1 = st::fn_006B1190(g_array_007FA150,(byte *)&local_10);
-    if (-1 < iVar1) {
+    local_EAX_44 = st::fn_006B1190(g_array_007FA150,(byte *)&local_10);
+    if (-1 < local_EAX_44) {
       do {
         if (local_10 == nullptr) goto switchD_004afffd_caseD_3a;
         switch(param_2) {
         case CASE_38:
-          dVar2 = local_10->slot_2C();
-          if (dVar2 != 0xdc) break;
+          dVar1 = local_10->slot_2C();
+          if (dVar1 != 0xdc) break;
           goto LAB_004b004a;
         case CASE_39:
         case CASE_5E:
-          dVar2 = local_10->slot_2C();
-          if (dVar2 == 0xdd) goto LAB_004b004a;
+          dVar1 = local_10->slot_2C();
+          if (dVar1 == 0xdd) goto LAB_004b004a;
           break;
         case CASE_4F:
-          dVar2 = local_10->slot_2C();
+          dVar1 = local_10->slot_2C();
           goto joined_r0x004b0044;
         case CASE_61:
-          dVar2 = local_10->slot_2C();
+          dVar1 = local_10->slot_2C();
 joined_r0x004b0044:
-          if (dVar2 == 0xde) {
+          if (dVar1 == 0xde) {
 LAB_004b004a:
             st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
-            iVar1 = (int)local_8;
+            iVar2 = (int)local_8;
             iVar3 = (int)local_6;
             uVar4 = local_18;
-            if ((((((STGridAt3D(g_worldGrid, iVar3, iVar1, local_a).objects[0] ==
+            if ((((((STGridAt3D(g_worldGrid, iVar3, iVar2, local_a).objects[0] ==
                      nullptr) && (-1 < local_6)) && (local_6 < g_worldGrid.sizeX)) &&
                  ((-1 < local_8 && (local_8 < g_worldGrid.sizeY)))) &&
                 ((-1 < local_a &&
                  ((local_a < g_worldGrid.sizeZ &&
-                  (STGridAt3D(g_pathingGrid, iVar3, iVar1, local_a) == 0)))))) &&
+                  (STGridAt3D(g_pathingGrid, iVar3, iVar2, local_a) == 0)))))) &&
                ((local_a < 4 &&
-                ((iVar1 = st::fn_006ACED8(iVar3,iVar1,param_6,param_7), local_14 < 0 ||
+                ((iVar1 = st::fn_006ACED8(iVar3,iVar2,param_6,param_7), local_14 < 0 ||
                  (iVar1 < local_14)))))) {
               *param_3 = (int)local_6;
               *param_4 = (int)local_8;
@@ -2814,8 +2820,8 @@ LAB_004b004a:
           }
         }
 switchD_004afffd_caseD_3a:
-        iVar1 = st::fn_006B1190(g_array_007FA150,(byte *)&local_10);
-        if (iVar1 < 0) {
+        local_EAX_441 = st::fn_006B1190(g_array_007FA150,(byte *)&local_10);
+        if (local_EAX_441 < 0) {
           return uVar4;
         }
       } while( true );

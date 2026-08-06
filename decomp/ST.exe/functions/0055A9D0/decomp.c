@@ -15,7 +15,7 @@ VisibleClassTy::VisHoleCreate
   VisibleClassTy *this_00;
   int iVar2;
   int iVar3;
-  uint uVar4;
+  uint uVar2;
   InternalExceptionFrame local_6c;
   int local_28 [2];
   undefined *local_20;

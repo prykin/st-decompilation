@@ -43,7 +43,7 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
   if (param_1[0x134] == 1) {
     wsprintfA(local_108,"%s","jmpmine");
     iVar3 = STT3DSprC::LoadSequence
-                      (STField<STT3DSprC *>(param_1,0x5ff),0xe,PTR_00806774,local_108,0x1d);
+                      (STField<STT3DSprC *>(param_1,0x5ff),0xe,PTR_00806774,local_108,CASE_1D);
     if (iVar3 != 0) {
       RaiseInternalException
                 (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_jump.cpp",0x61);

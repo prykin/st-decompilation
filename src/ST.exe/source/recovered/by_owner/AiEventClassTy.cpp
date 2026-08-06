@@ -183,7 +183,7 @@ int __thiscall st::fn_0065BD70(AiEventClassTy *this,STMessage *message,int param
         uVar5 = pSVar4->vfunc_6C();
         this->field_053F = uVar5;
         st::fn_004018C5
-                  ((STFishC *)pSVar4,(short *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
+                  ((STFishC *)pSVar4,(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
                    &local_6);
         this->field_0543 = (int)STPiece<2,2>(message);
         this->field_0547 = (int)STPiece<2,2>(param_2);
@@ -281,7 +281,7 @@ LAB_0065c021:
       this->field_053B = dVar3;
       this->field_053F = 0;
       st::fn_004018C5
-                (this_00,(short *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),&local_6);
+                (this_00,(short *)((int)&message + 2),(short *)((int)&param_2 + 2),&local_6);
       this->field_0543 = (int)STPiece<2,2>(message);
       this->field_0547 = (int)STPiece<2,2>(param_2);
       this->field_054B = (int)local_6;
@@ -305,7 +305,7 @@ LAB_0065c021:
         uVar5 = pSVar4->vfunc_6C();
         this->field_053F = uVar5;
         st::fn_004018C5
-                  ((STFishC *)pSVar4,(short *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
+                  ((STFishC *)pSVar4,(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
                    &local_6);
         this->field_0543 = (int)STPiece<2,2>(message);
         this->field_0547 = (int)STPiece<2,2>(param_2);
@@ -379,8 +379,7 @@ LAB_0065c4bb:
     uVar5 = pSVar4->vfunc_6C();
     this->field_0567 = uVar5;
     st::fn_004018C5
-              ((STFishC *)pSVar4,(short *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
-               &local_6);
+              ((STFishC *)pSVar4,(short *)((int)&message + 2),(short *)((int)&param_2 + 2),&local_6);
     this->field_056B = (int)STPiece<2,2>(message);
     this->field_056F = (int)STPiece<2,2>(param_2);
     this->field_0573 = (int)local_6;

@@ -13,7 +13,8 @@ int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9
   short sVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  int iVar5;
+  undefined4 *puVar6;
 
   iVar3 = RubbishCreatePart(this);
   iVar4 = this->field_01E1;
@@ -28,16 +29,16 @@ int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9
       sVar2 = (short)((uint)param_1->field_0028 >> 0x10);
       if ((sVar2 != 3) && (sVar2 != 6)) {
         iVar4 = param_1->field_0020;
-        puVar5 = &this->field_01E5;
-        iVar3 = 5;
+        puVar6 = &this->field_01E5;
+        iVar5 = 5;
         do {
-          piVar1 = (int *)*puVar5;
+          piVar1 = (int *)*puVar6;
           if (((piVar1 != nullptr) && (piVar1[1] != 3)) && (piVar1[1] != 6)) {
             *piVar1 = *piVar1 + iVar4 / 5;
           }
-          puVar5 = puVar5 + 1;
-          iVar3 = iVar3 + -1;
-        } while (iVar3 != 0);
+          puVar6 = puVar6 + 1;
+          iVar5 = iVar5 + -1;
+        } while (iVar5 != 0);
       }
       return this->field_01E1;
     }

@@ -25,12 +25,16 @@ AiEventClassTy::__CreateObjPl
 
 {
   bool bVar2;
+  int local_EAX_54;
   int iVar3;
+  int iVar5;
   char *_Source;
+  int local_EAX_1070;
   int iVar4;
-  uint uVar5;
-  uint uVar6;
-  Global_sub_004B1120_param_2Enum GVar8;
+  int iVar6;
+  uint uVar7;
+  uint uVar8;
+  Global_sub_004B1120_param_2Enum GVar10;
   InternalExceptionFrame local_e8;
   uint local_a4 [5];
   uint local_90;
@@ -65,16 +69,16 @@ AiEventClassTy::__CreateObjPl
   local_e8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_e8;
   local_38 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
-  if (iVar3 != 0) {
+  local_EAX_54 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
+  if (local_EAX_54 != 0) {
     g_currentExceptionFrame = local_e8.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0xcb,0,iVar3,"%s",
-                               "AiEventClassTy::__CreateObjPl");
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0xcb,0,local_EAX_54,
+                               "%s","AiEventClassTy::__CreateObjPl");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0xcc);
-    return iVar3;
+    RaiseInternalException(local_EAX_54,0,"E:\\__titans\\ai\\ai_event.cpp",0xcc);
+    return local_EAX_54;
   }
   if ((param_2 < 1) || (0x28 < param_2)) {
     bVar2 = false;
@@ -82,23 +86,23 @@ AiEventClassTy::__CreateObjPl
   else {
     bVar2 = true;
   }
-  uVar5 = param_7;
+  uVar7 = param_7;
   if ((bVar2) && (g_allPlayers_007FA174 != nullptr)) {
     if (((short)param_3 < 0) || (((short)param_4 < 0 || ((short)param_5 < 0)))) {
-      uVar5 = param_1 & 0xffff;
+      uVar7 = param_1 & 0xffff;
       local_28[0] = 7;
       local_28[1] = 0;
       local_1c[0] = 7;
       local_1c[1] = 0;
-      local_20 = STReplaceLowWord((uint32_t)(param_3), (uint16_t)((short)g_bulkInitializedRecords_008087C7[uVar5].field_0024 + -3));
+      local_20 = STReplaceLowWord((uint32_t)(param_3), (uint16_t)((short)g_bulkInitializedRecords_008087C7[uVar7].field_0024 + -3));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_30 = CONCAT22((short)(uVar5 * 9 >> 0x10),
-                          (short)g_bulkInitializedRecords_008087C7[uVar5].field_0028 + -3);
+      local_30 = CONCAT22((short)(uVar7 * 9 >> 0x10),
+                          (short)g_bulkInitializedRecords_008087C7[uVar7].field_0028 + -3);
       thunk_FUN_006756d0((short *)&local_20,(short *)&local_30,local_28,local_1c);
       local_38->field_0088 = local_38->field_0088 * 0x41c64e6d + 0x3039;
       local_18 = local_38->field_0088 * 0x41c64e6d + 0x3039;
       local_38->field_0088 = local_18;
-      iVar3 = thunk_FUN_00675b10((local_18 >> 0x10) % (uint)(int)local_28[0] + (int)(short)local_20,
+      iVar5 = thunk_FUN_00675b10((local_18 >> 0x10) % (uint)(int)local_28[0] + (int)(short)local_20,
                                  (local_38->field_0088 >> 0x10) % (uint)(int)local_1c[0] +
                                  (int)(short)local_30,1,(short *)&param_3,(short *)&param_4,
                                  (short *)&param_5,(int)param_2);
@@ -117,11 +121,11 @@ AiEventClassTy::__CreateObjPl
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (short *)(local_24 + 1);
       }
-      iVar3 = thunk_FUN_00675b10((int)param_3,(int)param_4,(short)param_5,(short *)&param_3,
+      iVar5 = thunk_FUN_00675b10((int)param_3,(int)param_4,(short)param_5,(short *)&param_3,
                                  (short *)&param_4,(short *)&param_5,(int)param_2);
     }
-    uVar5 = param_7;
-    if (iVar3 != 0) {
+    uVar7 = param_7;
+    if (iVar5 != 0) {
       memset(local_a4, 0, 0x69); /* compiler bulk-zero initialization */
       local_a4[3] = 0;
       local_a4[1] = param_1 & 0xffff;
@@ -182,32 +186,32 @@ AiEventClassTy::__CreateObjPl
     local_c = (int)(short)param_4;
     local_10 = (int)(short)param_5;
     if (param_11 == 0) {
-      iVar4 = 1;
-      GVar8 = (Global_sub_004B1120_param_2Enum)param_2;
-      uVar5 = param_1 & 0xffff;
-      iVar3 = thunk_FUN_004ae0b0((short)param_3,local_c,local_10,GVar8,uVar5,nullptr,
+      iVar6 = 1;
+      GVar10 = (Global_sub_004B1120_param_2Enum)param_2;
+      uVar7 = param_1 & 0xffff;
+      iVar5 = thunk_FUN_004ae0b0((short)param_3,local_c,local_10,GVar10,uVar7,nullptr,
                                  nullptr,nullptr,1,nullptr);
-      if (iVar3 == 0) {
-        iVar4 = thunk_FUN_004b1120(uVar5,GVar8,&local_8,&local_c,&local_10,0,0);
+      if (iVar5 == 0) {
+        iVar6 = thunk_FUN_004b1120(uVar7,GVar10,&local_8,&local_c,&local_10,0,0);
       }
-      if (iVar4 == 0) {
+      if (iVar6 == 0) {
         g_currentExceptionFrame = local_e8.previous;
         return local_14;
       }
-      if (((int)param_7 < 0) || (uVar6 = param_7, 7 < (int)param_7)) {
-        uVar6 = uVar5;
+      if (((int)param_7 < 0) || (uVar8 = param_7, 7 < (int)param_7)) {
+        uVar8 = uVar7;
       }
-      thunk_FUN_004b1040(uVar5,GVar8,local_8,local_c,local_10,param_6,uVar6,param_8,param_9,param_10
-                        );
+      thunk_FUN_004b1040(uVar7,GVar10,local_8,local_c,local_10,param_6,uVar8,param_8,param_9,
+                         param_10);
     }
     else {
-      uVar6 = param_1 & 0xffff;
-      iVar3 = thunk_FUN_004b1120(uVar6,(int)param_2,&local_8,&local_c,&local_10,0,0);
-      if (iVar3 != 0) {
-        if (((int)uVar5 < 0) || (7 < (int)uVar5)) {
-          uVar5 = uVar6;
+      uVar8 = param_1 & 0xffff;
+      local_EAX_1070 = thunk_FUN_004b1120(uVar8,(int)param_2,&local_8,&local_c,&local_10,0,0);
+      if (local_EAX_1070 != 0) {
+        if (((int)uVar7 < 0) || (7 < (int)uVar7)) {
+          uVar7 = uVar8;
         }
-        thunk_FUN_004b0f20(uVar6,(int)param_2,local_8,local_c,local_10,param_6,uVar5,param_8,0,
+        thunk_FUN_004b0f20(uVar8,(int)param_2,local_8,local_c,local_10,param_6,uVar7,param_8,0,
                            param_9);
       }
     }

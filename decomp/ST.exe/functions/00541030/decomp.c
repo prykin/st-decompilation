@@ -9,21 +9,23 @@
 void DelAllAccelerators(void)
 
 {
-  int iVar2;
   int iVar3;
-  byte *pbVar4;
-  byte **ppbVar5;
+  int local_EAX_91;
+  int iVar2;
+  int iVar4;
+  byte *pbVar5;
+  byte **ppbVar6;
   byte local_b4 [76];
   InternalExceptionFrame local_68;
   byte *local_24 [8];
 
-  pbVar4 = local_b4;
-  for (iVar3 = 0x13; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pbVar4[0] = 0;
-    pbVar4[1] = 0;
-    pbVar4[2] = 0;
-    pbVar4[3] = 0;
-    pbVar4 = pbVar4 + 4;
+  pbVar5 = local_b4;
+  for (iVar4 = 0x13; iVar4 != 0; iVar4 = iVar4 + -1) {
+    pbVar5[0] = 0;
+    pbVar5[1] = 0;
+    pbVar5[2] = 0;
+    pbVar5[3] = 0;
+    pbVar5 = pbVar5 + 4;
   }
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
@@ -31,19 +33,19 @@ void DelAllAccelerators(void)
   if (iVar3 == 0) {
     if (g_array_008026F0 != nullptr) {
       g_array_008026F0->iteratorIndex = 0;
-      iVar3 = DArrayGetNext(g_array_008026F0,local_b4);
-      while (-1 < iVar3) {
-        ppbVar5 = local_24;
-        for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppbVar5 = nullptr;
-          ppbVar5 = ppbVar5 + 1;
+      local_EAX_91 = DArrayGetNext(g_array_008026F0,local_b4);
+      while (-1 < local_EAX_91) {
+        ppbVar6 = local_24;
+        for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+          *ppbVar6 = nullptr;
+          ppbVar6 = ppbVar6 + 1;
         }
         local_24[5] = local_b4;
         local_24[2] = (byte *)0x1;
         local_24[3] = (byte *)0x3;
         local_24[4] = (byte *)0x11;
         FUN_006e3db0((int)local_24);
-        iVar3 = DArrayGetNext(g_array_008026F0,local_b4);
+        local_EAX_91 = DArrayGetNext(g_array_008026F0,local_b4);
       }
       DArrayDestroy(g_array_008026F0);
       g_array_008026F0 = nullptr;

@@ -12,7 +12,8 @@ AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *pa
   short sVar1;
   AiTactClassTy *pAVar3;
   int iVar4;
-  uint uVar5;
+  uint uVar4;
+  int iVar5;
   int iVar6;
   InternalExceptionFrame local_4c;
   AiTactClassTy *local_8;
@@ -25,12 +26,12 @@ AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *pa
   if (iVar4 == 0) {
     *(undefined4 *)&param_1->field_0x2c = 0;
     if (*(short *)&param_1->field_0xc == -1) {
-      uVar5 = 0xffffffff;
+      uVar4 = 0xffffffff;
     }
     else {
-      uVar5 = thunk_FUN_0068e220(local_8,*(short *)&param_1->field_0xc);
+      uVar4 = thunk_FUN_0068e220(local_8,*(short *)&param_1->field_0xc);
     }
-    *(uint *)&param_1->field_0x30 = uVar5;
+    *(uint *)&param_1->field_0x30 = uVar4;
     sVar1 = pAVar3->field_007C;
     *(undefined4 *)&param_1->field_0x34 = 0xffffffff;
     param_1->field_0006 = param_1->field_0006 + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
@@ -41,9 +42,9 @@ AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *pa
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x1a2,0,iVar4,"%s",
+  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x1a2,0,iVar4,"%s",
                              "AiTactClassTy::PrepareToSave");
-  if (iVar6 != 0) {
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_tact.cpp",0x1a3);

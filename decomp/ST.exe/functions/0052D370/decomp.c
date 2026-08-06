@@ -72,7 +72,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
           do {
             pcVar6 = *(char **)(pDVar5->growCapacity + iVar3 * 4);
 LAB_0052d48d:
-            Library::DKW::TBL::FUN_006b5aa0(this_00->field_0098,pcVar6);
+            Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0098,pcVar6);
             if ((byte)this_00->field_009C < DAT_00807346) {
               this_00->field_009C = this_00->field_009C + 1;
             }

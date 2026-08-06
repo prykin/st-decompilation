@@ -14,12 +14,14 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
 {
   CampaignTy *pCVar2;
   uint errorCode;
-  uint *puVar3;
+  char *resourceString;
   LPSTR text;
-  BITMAPINFO *pBVar4;
-  StartServTy *this_00;
+  BITMAPINFO *pBVar3;
   int iVar5;
-  undefined4 *puVar6;
+  StartServTy *this_00;
+  int iVar4;
+  undefined4 *puVar5;
+  uint *puVar6;
   int iVar7;
   uint uVar8;
   uint uVar9;
@@ -48,57 +50,59 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   pcVar11 = g_startSystem_0081176C->field_0030;
   uVar9 = 0xffffffff;
   uVar8 = 0xfffffffe;
-  puVar3 = (uint *)LoadResourceString((-(uint)(local_8->field_1FFC != 0) & 0xfffffca8) + 0x26b1,
-                                      g_hINSTANCE_00807618);
-  StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar3,uVar8,uVar9,pcVar11,errorCode);
+  resourceString =
+       LoadResourceString((-(uint)(local_8->field_1FFC != 0) & 0xfffffca8) + 0x26b1,
+                          g_hINSTANCE_00807618);
+  StartServTy::WrTextDDX
+            (this_00,0,0xe9,0x14,0x14c,0x18,resourceString,uVar8,uVar9,pcVar11,errorCode);
   if (g_startSystem_0081176C->field_0028 == 0) {
-    iVar5 = 0;
+    iVar4 = 0;
     bVar10 = 0;
     text = FUN_006f2c00("CMPG_BKG",1,(uint)DAT_0080874e);
-    pBVar4 = (BITMAPINFO *)FUN_0070a9f0(g_cMf32_00806780,text,bVar10,iVar5);
-    PutDDX(0xa5,0x37,'\x01',pBVar4);
+    pBVar3 = (BITMAPINFO *)FUN_0070a9f0(g_cMf32_00806780,text,bVar10,iVar4);
+    PutDDX(0xa5,0x37,'\x01',pBVar3);
   }
   else {
-    puVar6 = &pCVar2->field_1B13;
-    iVar5 = 3;
+    puVar5 = &pCVar2->field_1B13;
+    iVar4 = 3;
     do {
       iVar7 = 0xf;
       do {
-        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6 != nullptr) {
-          FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6);
+        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar5 != nullptr) {
+          FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar5);
         }
         pCVar2 = local_8;
-        puVar6 = puVar6 + 1;
+        puVar5 = puVar5 + 1;
         iVar7 = iVar7 + -1;
       } while (iVar7 != 0);
-      iVar5 = iVar5 + -1;
-    } while (iVar5 != 0);
-    iVar5 = 4;
-    puVar3 = local_8->field_1BD7;
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
+    iVar4 = 4;
+    puVar6 = local_8->field_1BD7;
     do {
-      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3 != nullptr) {
-        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3);
+      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6 != nullptr) {
+        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar6);
       }
-      puVar3 = puVar3 + 1;
-      iVar5 = iVar5 + -1;
-    } while (iVar5 != 0);
-    iVar5 = 0;
+      puVar6 = puVar6 + 1;
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
+    iVar4 = 0;
     if (pCVar2->field_009A != '\0') {
-      puVar3 = &pCVar2->field_00FF;
+      puVar6 = &pCVar2->field_00FF;
       do {
-        if (puVar3[-6] != 0xffffffff) {
+        if (puVar6[-6] != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
-                    ((uint *)puVar3[0xb],puVar3[-6],puVar3[-5],*puVar3,puVar3[1]);
+                    ((uint *)puVar6[0xb],puVar6[-6],puVar6[-5],*puVar6,puVar6[1]);
         }
-        if ((pCVar2->field_0065 == '\x01') && (STField<uint>(puVar3,0x79) != 0xffffffff)) {
+        if ((pCVar2->field_0065 == '\x01') && (STField<uint>(puVar6,0x79) != 0xffffffff)) {
           Library::DKW::DDX::FUN_006b3730
-                    (STField<uint *>(puVar3,0xbd),STField<uint>(puVar3,0x79),
-                     STField<uint>(puVar3,0x7d),STField<uint>(puVar3,0x91),
-                     STField<uint>(puVar3,0x95));
+                    (STField<uint *>(puVar6,0xbd),STField<uint>(puVar6,0x79),
+                     STField<uint>(puVar6,0x7d),STField<uint>(puVar6,0x91),
+                     STField<uint>(puVar6,0x95));
         }
-        iVar5 = iVar5 + 1;
-        puVar3 = (uint *)((int)puVar3 + 0x1fb);
-      } while (iVar5 < (int)(uint)(byte)pCVar2->field_009A);
+        iVar4 = iVar4 + 1;
+        puVar6 = (uint *)((int)puVar6 + 0x1fb);
+      } while (iVar4 < (int)(uint)(byte)pCVar2->field_009A);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

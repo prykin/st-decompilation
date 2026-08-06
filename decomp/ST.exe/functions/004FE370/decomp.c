@@ -17,7 +17,7 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
   int iVar4;
   Global_sub_00523410_param_1Enum GVar5;
   UINT resourceId;
-  uint *resourceString;
+  char *resourceString;
   int iVar6;
   HINSTANCE module;
   InternalExceptionFrame local_4c;
@@ -53,13 +53,13 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
       }
       module = g_hINSTANCE_00807618;
       resourceId = thunk_FUN_00523410(GVar5,cVar3,0);
-      resourceString = (uint *)LoadResourceString(resourceId,module);
+      resourceString = LoadResourceString(resourceId,module);
     }
     else if (param_1 == 0) {
-      resourceString = (uint *)&pCVar2->field_0C5D;
+      resourceString = &pCVar2->field_0C5D;
     }
     else {
-      resourceString = (uint *)&pCVar2->field_0B6F;
+      resourceString = &pCVar2->field_0B6F;
     }
     ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,-2,-1,0,-1,-1);
     g_currentExceptionFrame = local_4c.previous;

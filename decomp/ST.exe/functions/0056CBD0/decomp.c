@@ -18,10 +18,13 @@ STAppC::MainWindowProc
           uint param_4)
 
 {
+  int local_EAX_42;
+  int local_EAX_76;
+  int local_EAX_112;
+  LRESULT LVar2;
+  uint uVar3;
+  HCURSOR pHVar4;
   int iVar2;
-  LRESULT LVar3;
-  uint uVar4;
-  HCURSOR pHVar5;
   undefined1 local_cc [16];
   undefined4 local_bc;
   tagPAINTSTRUCT local_ac;
@@ -33,26 +36,27 @@ STAppC::MainWindowProc
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  if (iVar2 != 0) {
+  local_EAX_42 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  if (local_EAX_42 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar2 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x3aa,0,iVar2,"%s",
+    iVar2 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x3aa,0,local_EAX_42,"%s",
                                "STAppC::MainWindowProc");
     if (iVar2 == 0) {
       return local_8;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar2 = AppClassTy::DecodeMessage(g_app_00806728,param_2,param_3,param_4);
-  if ((iVar2 != 0) &&
-     (iVar2 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x330,0,-0x5001fff8,"%s",
-                                 "STAppC::MainWindowProc"), iVar2 != 0)) {
+  local_EAX_76 = AppClassTy::DecodeMessage(g_app_00806728,param_2,param_3,param_4);
+  if ((local_EAX_76 != 0) &&
+     (local_EAX_112 =
+           ReportDebugMessage("E:\\__titans\\tapp.cpp",0x330,0,-0x5001fff8,"%s",
+                              "STAppC::MainWindowProc"), local_EAX_112 != 0)) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_2 < 0x21) {
     if (param_2 == 0x20) {
-      pHVar5 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x66);
-      SetCursor(pHVar5);
+      pHVar4 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x66);
+      SetCursor(pHVar4);
       g_currentExceptionFrame = local_4c.previous;
       return 1;
     }
@@ -90,15 +94,15 @@ STAppC::MainWindowProc
         if (g_sT3DSMAPContext_00807598 != nullptr) {
           FUN_006dc310();
         }
-        uVar4 = thunk_FUN_00567060(0x807658);
-        if (uVar4 != 0) {
+        uVar3 = thunk_FUN_00567060(0x807658);
+        if (uVar3 != 0) {
           thunk_FUN_005713b0(0x807620);
         }
         if (g_cursorClass_00802A30 != nullptr) {
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         }
-        pHVar5 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x7f00);
-        SetCursor(pHVar5);
+        pHVar4 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x7f00);
+        SetCursor(pHVar4);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
@@ -110,8 +114,8 @@ STAppC::MainWindowProc
       }
       thunk_FUN_00573240();
       thunk_FUN_00571320(&DAT_00807620,hWnd);
-      pHVar5 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x66);
-      SetCursor(pHVar5);
+      pHVar4 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x66);
+      SetCursor(pHVar4);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     }
@@ -176,8 +180,8 @@ STAppC::MainWindowProc
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }
-  LVar3 = DefWindowProcA(hWnd,param_2,param_3,param_4);
+  LVar2 = DefWindowProcA(hWnd,param_2,param_3,param_4);
   g_currentExceptionFrame = local_4c.previous;
-  return LVar3;
+  return LVar2;
 }
 

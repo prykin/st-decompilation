@@ -14,8 +14,10 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
 
 {
   STMessageId SVar1;
+  int local_EAX_36;
+  uint uVar3;
   int iVar3;
-  uint uVar4;
+  int iVar4;
   undefined4 uVar5;
   longlong lVar6;
   InternalExceptionFrame local_6c;
@@ -28,8 +30,8 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
-  if (iVar3 != 0) {
+  local_EAX_36 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
+  if (local_EAX_36 != 0) {
     g_currentExceptionFrame = local_6c.previous;
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_optic.cpp",0xa9,0,-1,"%s");
     if (iVar3 == 0) {
@@ -89,7 +91,7 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
       }
       if (SVar1 == MESS_OPTICCLASSC_0100) {
         thunk_FUN_004a9c80(0);
-        uVar4 = DAT_0080743c & 0xff;
+        uVar3 = DAT_0080743c & 0xff;
         goto LAB_004a8c6a;
       }
       if (SVar1 != MESS_OPTICCLASSC_0101) {
@@ -113,7 +115,7 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
     (*g_playSystem_00802A38->vtable->SendMessage)
               ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_28);
 LAB_004a8b47:
-    uVar4 = DAT_0080743c & 0xff;
+    uVar3 = DAT_0080743c & 0xff;
   }
   else {
     switch(SVar1) {
@@ -160,10 +162,10 @@ LAB_004a8c23:
     (*g_playSystem_00802A38->vtable->SendMessage)
               ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_28);
 LAB_004a8c49:
-    uVar4 = DAT_0080743c & 0xff;
+    uVar3 = DAT_0080743c & 0xff;
   }
 LAB_004a8c6a:
-  thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,uVar4);
+  thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,uVar3);
 switchD_004a8b81_caseD_108:
   g_currentExceptionFrame = local_6c.previous;
   return 0;

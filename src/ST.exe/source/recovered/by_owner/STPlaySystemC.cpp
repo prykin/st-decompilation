@@ -31,20 +31,26 @@ STPlaySystemC * __thiscall st::fn_0054CB40(STPlaySystemC *this,AppClassTy *param
 /* [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
    Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=2; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
 
-void __thiscall st::fn_0054EBB0(STPlaySystemC *this,char *param_1,uint param_2)
+   [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /int; no intervening CALL or EAX/AX/AL/AH definition exists; machine CFG audit: used=3,
+   ignored=0, unknown=0 */
+
+int __thiscall st::fn_0054EBB0(STPlaySystemC *this,char *param_1,uint param_2)
 
 {
   DWORD DVar1;
+  int iVar2;
 
   *(uint *)param_1 = this->field_0041;
   this->field_0041 = this->field_0041 + 1;
   st::fn_004045FC(this,(undefined4 *)param_1,param_2);
   DVar1 = st::external_000000DA();
   this->field_007F = DVar1;
-  st::fn_00715360(g_int_00811764,0,'1',param_1,param_2,1,*(undefined4 *)param_1);
-  return;
+  iVar2 = st::fn_00715360(g_int_00811764,0,'1',param_1,param_2,1,*(undefined4 *)param_1);
+  return iVar2;
 }
 
 // 00550190 STPlaySystemC::sub_00550190
@@ -87,25 +93,26 @@ void __thiscall st::fn_00550190(STPlaySystemC *this)
 void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
 
 {
+  char *pcVar2;
+  DWORD DVar3;
   char *pcVar1;
-  DWORD DVar2;
-  byte bVar3;
-  uint uVar4;
-  undefined4 *puVar5;
+  byte bVar4;
+  uint uVar5;
+  undefined4 *puVar6;
   CHAR local_10c [260];
   uint local_8;
 
   if (param_2 != nullptr) {
-    pcVar1 = (char *)st::fn_00404863(this,*param_2,&local_8);
-    if (pcVar1 == nullptr) {
+    pcVar2 = (char *)st::fn_00404863(this,*param_2,&local_8);
+    if (pcVar2 == nullptr) {
       st::fn_00715360(g_int_00811764,param_1,'7',nullptr,0,0,0xffffffff);
       st::fn_00401370(this,param_1);
     }
     else {
-      st::fn_00715360(g_int_00811764,param_1,'1',pcVar1,local_8,1,*(undefined4 *)pcVar1);
+      st::fn_00715360(g_int_00811764,param_1,'1',pcVar2,local_8,1,*(undefined4 *)pcVar2);
       if (this->field_00BB < 5) {
-        DVar2 = st::fn_006E51B0((STAppC *)&DAT_00807620);
-        (&this->field_00A7)[this->field_00BB] = DVar2;
+        DVar3 = st::fn_006E51B0((STAppC *)&DAT_00807620);
+        (&this->field_00A7)[this->field_00BB] = DVar3;
         this->field_00BB = this->field_00BB + 1;
       }
       else {
@@ -113,39 +120,39 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
         this->field_00AB = this->field_00AF;
         this->field_00AF = this->field_00B3;
         this->field_00B3 = this->field_00B7;
-        DVar2 = st::fn_006E51B0((STAppC *)&DAT_00807620);
-        this->field_00B7 = DVar2;
+        DVar3 = st::fn_006E51B0((STAppC *)&DAT_00807620);
+        this->field_00B7 = DVar3;
         if (DAT_0080735e == '\0') {
           return;
         }
-        if ((DVar2 - this->field_00A7) / 5 < 0x7d1) {
+        if ((DVar3 - this->field_00A7) / 5 < 0x7d1) {
           if (g_popUp_008016D8 != nullptr) {
-            uVar4 = 9;
-            pcVar1 = st::fn_006B0140(17000,g_hINSTANCE_00807618);
-            st::fn_004014D8(g_popUp_008016D8,pcVar1,uVar4);
+            uVar5 = 9;
+            pcVar2 = st::fn_006B0140(17000,g_hINSTANCE_00807618);
+            st::fn_004014D8(g_popUp_008016D8,pcVar2,uVar5);
           }
           this->field_00BB = 0;
         }
       }
       if (DAT_0080735e != '\0') {
-        bVar3 = 0;
+        bVar4 = 0;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = nullptr;
         if (DAT_00808aaf != 0) {
           do {
-            puVar5 = &DAT_00808ab0 + (int)param_2 * 0x27;
+            puVar6 = &DAT_00808ab0 + (int)param_2 * 0x27;
             if (((&DAT_00808af0)[(int)param_2 * 0x27] == param_1) &&
                ((&DAT_00808af6)[(int)param_2 * 0x9c] != '\0')) {
               pcVar1 = st::fn_006B0140(0x426d,g_hINSTANCE_00807618);
-              st::external_00000080(local_10c,"%s %s",pcVar1,puVar5);
+              st::external_00000080(local_10c,"%s %s",pcVar1,puVar6);
               if (g_popUp_008016D8 != nullptr) {
                 st::fn_004014D8(g_popUp_008016D8,local_10c,8);
               }
             }
-            bVar3 = bVar3 + 1;
+            bVar4 = bVar4 + 1;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            param_2 = (int *)(uint)bVar3;
-          } while (bVar3 < DAT_00808aaf);
+            param_2 = (int *)(uint)bVar4;
+          } while (bVar4 < DAT_00808aaf);
           return;
         }
       }

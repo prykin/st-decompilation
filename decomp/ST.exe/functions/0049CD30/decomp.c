@@ -14,11 +14,12 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
   DArrayTy *array;
   short sVar5;
   int iVar6;
-  STBoatC *pSVar7;
-  dword dVar8;
+  STBoatC *pSVar6;
+  dword dVar7;
   DArrayTy *array_00;
   int iVar9;
-  undefined4 uVar10;
+  undefined4 uVar8;
+  int iVar10;
   uint uVar11;
   uint uVar12;
   byte *puVar13;
@@ -65,7 +66,7 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
   }
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&local_24->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
-    iVar6 = 0;
+    iVar10 = 0;
     local_24->field_0065 = 0;
     puVar13 = (byte *)&local_24->field_0137;
     puVar14 = (byte *)&local_24->field_0276;
@@ -87,17 +88,17 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
       do {
         DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
-          pSVar7 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar4->field_0024,STPiece<0,2>(local_8),CASE_1);
-          if (pSVar7 == nullptr) {
+          if (pSVar6 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x90f);
           }
-          dVar8 = pSVar7->slot_2C();
-          if (((dVar8 == 0xc) || (dVar8 = pSVar7->slot_2C(), dVar8 == 0x18)) ||
-             (dVar8 = pSVar7->slot_2C(), dVar8 == 0x19)) {
+          dVar7 = pSVar6->slot_2C();
+          if (((dVar7 == 0xc) || (dVar7 = pSVar6->slot_2C(), dVar7 == 0x18)) ||
+             (dVar7 = pSVar6->slot_2C(), dVar7 == 0x19)) {
             if (array_00 == nullptr) {
               array_00 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               local_1c = array_00;
@@ -107,8 +108,8 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
             SVar15 = CASE_11;
           }
           else {
-            iVar6 = thunk_FUN_00490d90((STGameObjC *)pSVar7);
-            if (iVar6 != 0) {
+            iVar10 = thunk_FUN_00490d90((STGameObjC *)pSVar6);
+            if (iVar10 != 0) {
               if (local_10 == nullptr) {
                 local_10 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               }
@@ -118,7 +119,7 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
             puVar16 = &local_20;
             SVar15 = CASE_3;
           }
-          STBoatC::CmdToObj(pSVar7,SVar15,puVar16);
+          STBoatC::CmdToObj(pSVar6,SVar15,puVar16);
         }
 LAB_0049cf10:
         local_c = local_c + 1;
@@ -160,19 +161,19 @@ LAB_0049cf10:
       do {
         DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar12,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
-          pSVar7 = (STBoatC *)
+          pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar4->field_0024,STPiece<0,2>(local_8),CASE_1);
-          if (pSVar7 == nullptr) {
+          if (pSVar6 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x938);
           }
-          dVar8 = pSVar7->slot_2C();
-          if (((((dVar8 == 0xc) || (dVar8 = pSVar7->slot_2C(), dVar8 == 0x18)) ||
-               (dVar8 = pSVar7->slot_2C(), dVar8 == 0x19)) &&
-              (iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar7), iVar6 == 0x11)) ||
-             (uVar12 = STBoatC::CheckPBoxCmd(pSVar7,CASE_11), uVar12 == 1)) {
+          dVar7 = pSVar6->slot_2C();
+          if (((((dVar7 == 0xc) || (dVar7 = pSVar6->slot_2C(), dVar7 == 0x18)) ||
+               (dVar7 = pSVar6->slot_2C(), dVar7 == 0x19)) &&
+              (iVar10 = thunk_FUN_0045ff10((STGameObjC *)pSVar6), iVar10 == 0x11)) ||
+             (uVar12 = STBoatC::CheckPBoxCmd(pSVar6,CASE_11), uVar12 == 1)) {
             local_18 = local_18 + 1;
           }
         }

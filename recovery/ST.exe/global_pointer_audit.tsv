@@ -93,258 +93,258 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 0073C32C	PTR_caseD_6_0073c32c	/pointer	0073B9AE	code_pointer	Library::MSVCRT::FUN_0073b6f0			0	0	0		0
 00740BAF	PTR_caseD_20_00740baf	/pointer	007407F5	code_pointer	Library::MSVCRT::FUN_00740700			0	0	0		0
 00743F12	PTR_caseD_a_00743f12	/pointer	00743CD3	code_pointer	Library::MSVCRT::FUN_007434d0			0	0	0		0
-00790C1C	PTR_s_tlo_bubbles_00790c1c	/pointer	007AD59C	string_pointer	s_tlo_bubbles_007ad59c	/string		0	0	0		0
-00790C20	PTR_s_tlo_emb6_00790c20	/pointer	007AD590	string_pointer	s_tlo_emb6_007ad590	/string		0	0	0		0
+00790C1C	PTR_s_tlo_bubbles_00790c1c	pointer:/char	007AD59C	string_pointer	s_tlo_bubbles_007ad59c	/string	/char	0	1	2		0
+00790C20	PTR_s_tlo_emb6_00790c20	pointer:/char	007AD590	string_pointer	s_tlo_emb6_007ad590	/string	/char	0	1	3		0
 00790C24	PTR_DAT_00790c24	/pointer	007AD58C	initialized_data_pointer	DAT_007ad58c			0	0	0		0
-00790C28	PTR_s_tlo_capture_00790c28	/pointer	007AD57C	string_pointer	s_tlo_capture_007ad57c	/string		0	0	0		0
-0079ACEC	PTR_s_SAVEGAME\\_0079acec	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
-0079ACF0	PTR_s_SYSTEM\\_0079acf0	/pointer	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string		0	0	0		0
+00790C28	PTR_s_tlo_capture_00790c28	pointer:/char	007AD57C	string_pointer	s_tlo_capture_007ad57c	/string	/char	0	1	2		0
+0079ACEC	PTR_s_SAVEGAME\\_0079acec	pointer:/char	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string	/char	0	1	1		0
+0079ACF0	PTR_s_SYSTEM\\_0079acf0	pointer:/char	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string	/char	0	1	1		0
 0079ACF4	PTR_DAT_0079acf4	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
 0079ACF8	PTR_DAT_0079acf8	/pointer	007C7078	initialized_data_pointer	DAT_007c7078	/undefined1		0	0	0		0
-0079ACFC	PTR_s_STRATEGS_0079acfc	/pointer	007C706C	string_pointer	s_STRATEGS_007c706c	/string		0	0	0		0
+0079ACFC	PTR_s_STRATEGS_0079acfc	pointer:/char	007C706C	string_pointer	s_STRATEGS_007c706c	/string	/char	0	1	1		0
 0079AD00	PTR_DAT_0079ad00	/pointer	007C7064	initialized_data_pointer	DAT_007c7064	/undefined1		0	0	0		0
-0079AD04	PTR_s_SAVE_DESC_0079ad04	/pointer	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string		0	0	0		0
-0079ADE4	PTR_s_SAVEGAME\\_0079ade4	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
-0079ADE8	PTR_s_SAVE_QUICKSAVE_0079ade8	/pointer	007C7D4C	string_pointer	s_SAVE_QUICKSAVE_007c7d4c	/string		0	0	0		0
-0079ADEC	PTR_s_SAVE_DESC_0079adec	/pointer	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string		0	0	0		0
-0079AE2C	PTR_s_LAST_NAME_0079ae2c	/pointer	007C8410	string_pointer	s_LAST_NAME_007c8410	/string		0	0	0		0
+0079AD04	PTR_s_SAVE_DESC_0079ad04	pointer:/char	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string	/char	0	1	2		0
+0079ADE4	PTR_s_SAVEGAME\\_0079ade4	pointer:/char	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string	/char	0	1	1		0
+0079ADE8	PTR_s_SAVE_QUICKSAVE_0079ade8	pointer:/char	007C7D4C	string_pointer	s_SAVE_QUICKSAVE_007c7d4c	/string	/char	0	1	1		0
+0079ADEC	PTR_s_SAVE_DESC_0079adec	pointer:/char	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string	/char	0	1	2		0
+0079AE2C	PTR_s_LAST_NAME_0079ae2c	pointer:/char	007C8410	string_pointer	s_LAST_NAME_007c8410	/string	/char	0	1	3		0
 0079AE30	PTR_DAT_0079ae30	/pointer	007C8408	initialized_data_pointer	DAT_007c8408			0	0	0		0
-0079AEBC	PTR_s_TRACKS_0079aebc	/pointer	007C90FC	string_pointer	s_TRACKS_007c90fc	/string		0	0	0		0
-0079AEC4	PTR_s_VISIBILITY_0079aec4	/pointer	007C92BC	string_pointer	s_VISIBILITY_007c92bc	/string		0	0	0		0
+0079AEBC	PTR_s_TRACKS_0079aebc	pointer:/char	007C90FC	string_pointer	s_TRACKS_007c90fc	/string	/char	0	1	3		0
+0079AEC4	PTR_s_VISIBILITY_0079aec4	pointer:/char	007C92BC	string_pointer	s_VISIBILITY_007c92bc	/string	/char	0	1	3		0
 0079AEC8	PTR_DAT_0079aec8	/pointer	007C92B4	initialized_data_pointer	DAT_007c92b4			0	0	0		0
 0079AECC	PTR_DAT_0079aecc	/pointer	007C92AC	initialized_data_pointer	DAT_007c92ac			0	0	0		0
-0079AEF0	PTR_s_UPDATES\\_0079aef0	/pointer	007C94C0	string_pointer	s_UPDATES\\_007c94c0	/string		0	0	0		0
-0079AEF4	PTR_s_ST.INF_0079aef4	/pointer	007C94B8	string_pointer	s_ST.INF_007c94b8	/string		0	0	0		0
-0079AF6C	PTR_s_PLT_MMGLASS_0079af6c	/pointer	007C958C	string_pointer	s_PLT_MMGLASS_007c958c	/string		0	0	0		0
-0079AF70	PTR_s_PLT_PAUSE_0079af70	/pointer	007C9580	string_pointer	s_PLT_PAUSE_007c9580	/string		0	0	0		0
-0079AF74	PTR_s_PLT_EXPLITE_0079af74	/pointer	007C9570	string_pointer	s_PLT_EXPLITE_007c9570	/string		0	0	0		0
-0079AF78	PTR_s_PLT_SHAD30_0079af78	/pointer	007C9560	string_pointer	s_PLT_SHAD30_007c9560	/string		0	0	0		0
-0079AF7C	PTR_s_PLT_SHAD40_0079af7c	/pointer	007C9550	string_pointer	s_PLT_SHAD40_007c9550	/string		0	0	0		0
-0079AF80	PTR_s_PLT_SHAD60_0079af80	/pointer	007C9540	string_pointer	s_PLT_SHAD60_007c9540	/string		0	0	0		0
-0079AF84	PTR_s_PLT_FOG_0079af84	/pointer	007C9534	string_pointer	s_PLT_FOG_007c9534	/string		0	0	0		0
-0079AF88	PTR_s_PLT_MMSHAD_0079af88	/pointer	007C9524	string_pointer	s_PLT_MMSHAD_007c9524	/string		0	0	0		0
-0079AF8C	PTR_s_PLT_NUCL_0079af8c	/pointer	007C9518	string_pointer	s_PLT_NUCL_007c9518	/string		0	0	0		0
-0079AF90	PTR_s_PLT_GLOW_0079af90	/pointer	007C950C	string_pointer	s_PLT_GLOW_007c950c	/string		0	0	0		0
-0079AF94	PTR_s_PLT_DKD_0079af94	/pointer	007C9500	string_pointer	s_PLT_DKD_007c9500	/string		0	0	0		0
-0079AF98	PTR_s_PLT_FSGSGLASS_0079af98	/pointer	007C94F0	string_pointer	s_PLT_FSGSGLASS_007c94f0	/string		0	0	0		0
-0079AF9C	PTR_s_PLT_FSGSSHAD_0079af9c	/pointer	007C94E0	string_pointer	s_PLT_FSGSSHAD_007c94e0	/string		0	0	0		0
-0079B00C	PTR_s_music_0079b00c	/pointer	007C9740	string_pointer	s_music_007c9740	/string		0	0	0		0
-0079B010	PTR_s_GM_SET_0079b010	/pointer	007C9738	string_pointer	s_GM_SET_007c9738	/string		0	0	0		0
-0079B014	PTR_s_GM_PEACE_0079b014	/pointer	007C972C	string_pointer	s_GM_PEACE_007c972c	/string		0	0	0		0
-0079B018	PTR_s_GM_PWAR_0079b018	/pointer	007C9720	string_pointer	s_GM_PWAR_007c9720	/string		0	0	0		0
-0079B01C	PTR_s_GM_WAR_0079b01c	/pointer	007C9718	string_pointer	s_GM_WAR_007c9718	/string		0	0	0		0
-0079B028	PTR_s_sounds_0079b028	/pointer	007C97E8	string_pointer	s_sounds_007c97e8	/string		0	0	0		0
-0079B02C	PTR_s_SAVEGAME\\_0079b02c	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
-0079B030	PTR_s_SYSTEM\\_0079b030	/pointer	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string		0	0	0		0
+0079AEF0	PTR_s_UPDATES\\_0079aef0	pointer:/char	007C94C0	string_pointer	s_UPDATES\\_007c94c0	/string	/char	0	1	1		0
+0079AEF4	PTR_s_ST.INF_0079aef4	pointer:/char	007C94B8	string_pointer	s_ST.INF_007c94b8	/string	/char	0	1	1		0
+0079AF6C	PTR_s_PLT_MMGLASS_0079af6c	pointer:/char	007C958C	string_pointer	s_PLT_MMGLASS_007c958c	/string	/char	0	1	2		0
+0079AF70	PTR_s_PLT_PAUSE_0079af70	pointer:/char	007C9580	string_pointer	s_PLT_PAUSE_007c9580	/string	/char	0	1	2		0
+0079AF74	PTR_s_PLT_EXPLITE_0079af74	pointer:/char	007C9570	string_pointer	s_PLT_EXPLITE_007c9570	/string	/char	0	1	2		0
+0079AF78	PTR_s_PLT_SHAD30_0079af78	pointer:/char	007C9560	string_pointer	s_PLT_SHAD30_007c9560	/string	/char	0	1	2		0
+0079AF7C	PTR_s_PLT_SHAD40_0079af7c	pointer:/char	007C9550	string_pointer	s_PLT_SHAD40_007c9550	/string	/char	0	1	2		0
+0079AF80	PTR_s_PLT_SHAD60_0079af80	pointer:/char	007C9540	string_pointer	s_PLT_SHAD60_007c9540	/string	/char	0	1	2		0
+0079AF84	PTR_s_PLT_FOG_0079af84	pointer:/char	007C9534	string_pointer	s_PLT_FOG_007c9534	/string	/char	0	1	2		0
+0079AF88	PTR_s_PLT_MMSHAD_0079af88	pointer:/char	007C9524	string_pointer	s_PLT_MMSHAD_007c9524	/string	/char	0	1	2		0
+0079AF8C	PTR_s_PLT_NUCL_0079af8c	pointer:/char	007C9518	string_pointer	s_PLT_NUCL_007c9518	/string	/char	0	1	2		0
+0079AF90	PTR_s_PLT_GLOW_0079af90	pointer:/char	007C950C	string_pointer	s_PLT_GLOW_007c950c	/string	/char	0	1	2		0
+0079AF94	PTR_s_PLT_DKD_0079af94	pointer:/char	007C9500	string_pointer	s_PLT_DKD_007c9500	/string	/char	0	1	2		0
+0079AF98	PTR_s_PLT_FSGSGLASS_0079af98	pointer:/char	007C94F0	string_pointer	s_PLT_FSGSGLASS_007c94f0	/string	/char	0	1	2		0
+0079AF9C	PTR_s_PLT_FSGSSHAD_0079af9c	pointer:/char	007C94E0	string_pointer	s_PLT_FSGSSHAD_007c94e0	/string	/char	0	1	2		0
+0079B00C	PTR_s_music_0079b00c	pointer:/char	007C9740	string_pointer	s_music_007c9740	/string	/char	0	1	1		0
+0079B010	PTR_s_GM_SET_0079b010	pointer:/char	007C9738	string_pointer	s_GM_SET_007c9738	/string	/char	0	1	1		0
+0079B014	PTR_s_GM_PEACE_0079b014	pointer:/char	007C972C	string_pointer	s_GM_PEACE_007c972c	/string	/char	0	1	1		0
+0079B018	PTR_s_GM_PWAR_0079b018	pointer:/char	007C9720	string_pointer	s_GM_PWAR_007c9720	/string	/char	0	1	1		0
+0079B01C	PTR_s_GM_WAR_0079b01c	pointer:/char	007C9718	string_pointer	s_GM_WAR_007c9718	/string	/char	0	1	1		0
+0079B028	PTR_s_sounds_0079b028	pointer:/char	007C97E8	string_pointer	s_sounds_007c97e8	/string	/char	0	1	1		0
+0079B02C	PTR_s_SAVEGAME\\_0079b02c	pointer:/char	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string	/char	0	1	1		0
+0079B030	PTR_s_SYSTEM\\_0079b030	pointer:/char	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string	/char	0	1	1		0
 0079B034	PTR_DAT_0079b034	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
 0079B038	PTR_DAT_0079b038	/pointer	007C7078	initialized_data_pointer	DAT_007c7078	/undefined1		0	0	0		0
-0079B03C	PTR_s_CAMPAIGN.VPS_0079b03c	/pointer	007CA094	string_pointer	s_CAMPAIGN.VPS_007ca094	/string		0	0	0		0
-0079B040	PTR_s_STARTUP.VPS_0079b040	/pointer	007CA084	string_pointer	s_STARTUP.VPS_007ca084	/string		0	0	0		0
-0079B044	PTR_s_SAVE_QUICKSAVE_0079b044	/pointer	007C7D4C	string_pointer	s_SAVE_QUICKSAVE_007c7d4c	/string		0	0	0		0
-0079B048	PTR_s_TASKS_0079b048	/pointer	007CA07C	string_pointer	s_TASKS_007ca07c	/string		0	0	0		0
-0079B04C	PTR_s_STRATEGS_0079b04c	/pointer	007C706C	string_pointer	s_STRATEGS_007c706c	/string		0	0	0		0
+0079B03C	PTR_s_CAMPAIGN.VPS_0079b03c	pointer:/char	007CA094	string_pointer	s_CAMPAIGN.VPS_007ca094	/string	/char	0	1	2		0
+0079B040	PTR_s_STARTUP.VPS_0079b040	pointer:/char	007CA084	string_pointer	s_STARTUP.VPS_007ca084	/string	/char	0	1	1		0
+0079B044	PTR_s_SAVE_QUICKSAVE_0079b044	pointer:/char	007C7D4C	string_pointer	s_SAVE_QUICKSAVE_007c7d4c	/string	/char	0	1	1		0
+0079B048	PTR_s_TASKS_0079b048	pointer:/char	007CA07C	string_pointer	s_TASKS_007ca07c	/string	/char	0	1	1		0
+0079B04C	PTR_s_STRATEGS_0079b04c	pointer:/char	007C706C	string_pointer	s_STRATEGS_007c706c	/string	/char	0	1	1		0
 0079B050	PTR_DAT_0079b050	/pointer	007C7064	initialized_data_pointer	DAT_007c7064	/undefined1		0	0	0		0
-0079B054	PTR_s_SAVE_DESC_0079b054	/pointer	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string		0	0	0		0
-0079B058	PTR_s_SAVE_PLAYER_0079b058	/pointer	007CA06C	string_pointer	s_SAVE_PLAYER_007ca06c	/string		0	0	0		0
-0079B05C	PTR_s_RND_INIT_0079b05c	/pointer	007CA060	string_pointer	s_RND_INIT_007ca060	/string		0	0	0		0
-0079B060	PTR_s_RESTART_GAME_0079b060	/pointer	007CA050	string_pointer	s_RESTART_GAME_007ca050	/string		0	0	0		0
-0079B064	PTR_s_STATETIMER_GAME_0079b064	/pointer	007CA03C	string_pointer	s_STATETIMER_GAME_007ca03c	/string		0	0	0		0
-0079B068	PTR_s_AUTOSAVETIME_GAME_0079b068	/pointer	007CA024	string_pointer	s_AUTOSAVETIME_GAME_007ca024	/string		0	0	0		0
-0079B06C	PTR_s_BRIEFING_GAME_0079b06c	/pointer	007CA014	string_pointer	s_BRIEFING_GAME_007ca014	/string		0	0	0		0
-0079B070	PTR_s_TITLE_MISSION_0079b070	/pointer	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string		0	0	0		0
-0079B074	PTR_s_DESCRIPTION_0079b074	/pointer	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string		0	0	0		0
-0079B078	PTR_s_OBJECTIVES_0079b078	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
-0079B07C	PTR_s_TEXTURE_0079b07c	/pointer	007C9FD8	string_pointer	s_TEXTURE_007c9fd8	/string		0	0	0		0
-0079B080	PTR_s_DESCRIPTOR_0079b080	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
-0079B084	PTR_s_SMALL_MAP_0079b084	/pointer	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string		0	0	0		0
-0079B088	PTR_s_ORIG_DB_0079b088	/pointer	007C9FB0	string_pointer	s_ORIG_DB_007c9fb0	/string		0	0	0		0
-0079B08C	PTR_s_TYPE_START_0079b08c	/pointer	007C9FA0	string_pointer	s_TYPE_START_007c9fa0	/string		0	0	0		0
-0079B090	PTR_s_REPORT_0079b090	/pointer	007C9F98	string_pointer	s_REPORT_007c9f98	/string		0	0	0		0
-0079B0CC	PTR_s_SAVEGAME\\_0079b0cc	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
-0079B0D0	PTR_s_PL_LOG_0079b0d0	/pointer	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string		0	0	0		0
-0079B0D4	PTR_s_OPTIONS_PLAYER_0079b0d4	/pointer	007CA668	string_pointer	s_OPTIONS_PLAYER_007ca668	/string		0	0	0		0
-0079B0D8	PTR_s_ACCKEYS_PLAYER_0079b0d8	/pointer	007CA654	string_pointer	s_ACCKEYS_PLAYER_007ca654	/string		0	0	0		0
-0079B0DC	PTR_s_AIKEYS_PLAYER_0079b0dc	/pointer	007CA644	string_pointer	s_AIKEYS_PLAYER_007ca644	/string		0	0	0		0
-0079B0E0	PTR_s_SYSKEYS_PLAYER_0079b0e0	/pointer	007CA630	string_pointer	s_SYSKEYS_PLAYER_007ca630	/string		0	0	0		0
-0079B0E4	PTR_s_MOUKEYS_PLAYER_0079b0e4	/pointer	007CA61C	string_pointer	s_MOUKEYS_PLAYER_007ca61c	/string		0	0	0		0
-0079B0E8	PTR_s_LASTLOG_0079b0e8	/pointer	007CA610	string_pointer	s_LASTLOG_007ca610	/string		0	0	0		0
-0079B0EC	PTR_s_LASTPSW_0079b0ec	/pointer	007CA604	string_pointer	s_LASTPSW_007ca604	/string		0	0	0		0
-0079B114	PTR_s_UPDATES\\_0079b114	/pointer	007C94C0	string_pointer	s_UPDATES\\_007c94c0	/string		0	0	0		0
-0079B18C	PTR_s_SAVEGAME\\_0079b18c	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
-0079B190	PTR_s_SYSTEM\\_0079b190	/pointer	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string		0	0	0		0
+0079B054	PTR_s_SAVE_DESC_0079b054	pointer:/char	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string	/char	0	1	2		0
+0079B058	PTR_s_SAVE_PLAYER_0079b058	pointer:/char	007CA06C	string_pointer	s_SAVE_PLAYER_007ca06c	/string	/char	0	1	2		0
+0079B05C	PTR_s_RND_INIT_0079b05c	pointer:/char	007CA060	string_pointer	s_RND_INIT_007ca060	/string	/char	0	1	3		0
+0079B060	PTR_s_RESTART_GAME_0079b060	pointer:/char	007CA050	string_pointer	s_RESTART_GAME_007ca050	/string	/char	0	1	3		0
+0079B064	PTR_s_STATETIMER_GAME_0079b064	pointer:/char	007CA03C	string_pointer	s_STATETIMER_GAME_007ca03c	/string	/char	0	1	3		0
+0079B068	PTR_s_AUTOSAVETIME_GAME_0079b068	pointer:/char	007CA024	string_pointer	s_AUTOSAVETIME_GAME_007ca024	/string	/char	0	1	3		0
+0079B06C	PTR_s_BRIEFING_GAME_0079b06c	pointer:/char	007CA014	string_pointer	s_BRIEFING_GAME_007ca014	/string	/char	0	1	3		0
+0079B070	PTR_s_TITLE_MISSION_0079b070	pointer:/char	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string	/char	0	1	4		0
+0079B074	PTR_s_DESCRIPTION_0079b074	pointer:/char	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string	/char	0	1	5		0
+0079B078	PTR_s_OBJECTIVES_0079b078	pointer:/char	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string	/char	0	1	4		0
+0079B07C	PTR_s_TEXTURE_0079b07c	pointer:/char	007C9FD8	string_pointer	s_TEXTURE_007c9fd8	/string	/char	0	1	4		0
+0079B080	PTR_s_DESCRIPTOR_0079b080	pointer:/char	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string	/char	0	1	6		0
+0079B084	PTR_s_SMALL_MAP_0079b084	pointer:/char	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string	/char	0	1	1		0
+0079B088	PTR_s_ORIG_DB_0079b088	pointer:/char	007C9FB0	string_pointer	s_ORIG_DB_007c9fb0	/string	/char	0	1	3		0
+0079B08C	PTR_s_TYPE_START_0079b08c	pointer:/char	007C9FA0	string_pointer	s_TYPE_START_007c9fa0	/string	/char	0	1	4		0
+0079B090	PTR_s_REPORT_0079b090	pointer:/char	007C9F98	string_pointer	s_REPORT_007c9f98	/string	/char	0	1	3		0
+0079B0CC	PTR_s_SAVEGAME\\_0079b0cc	pointer:/char	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string	/char	0	1	1		0
+0079B0D0	PTR_s_PL_LOG_0079b0d0	pointer:/char	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string	/char	0	1	1		0
+0079B0D4	PTR_s_OPTIONS_PLAYER_0079b0d4	pointer:/char	007CA668	string_pointer	s_OPTIONS_PLAYER_007ca668	/string	/char	0	1	3		0
+0079B0D8	PTR_s_ACCKEYS_PLAYER_0079b0d8	pointer:/char	007CA654	string_pointer	s_ACCKEYS_PLAYER_007ca654	/string	/char	0	1	3		0
+0079B0DC	PTR_s_AIKEYS_PLAYER_0079b0dc	pointer:/char	007CA644	string_pointer	s_AIKEYS_PLAYER_007ca644	/string	/char	0	1	3		0
+0079B0E0	PTR_s_SYSKEYS_PLAYER_0079b0e0	pointer:/char	007CA630	string_pointer	s_SYSKEYS_PLAYER_007ca630	/string	/char	0	1	3		0
+0079B0E4	PTR_s_MOUKEYS_PLAYER_0079b0e4	pointer:/char	007CA61C	string_pointer	s_MOUKEYS_PLAYER_007ca61c	/string	/char	0	1	3		0
+0079B0E8	PTR_s_LASTLOG_0079b0e8	pointer:/char	007CA610	string_pointer	s_LASTLOG_007ca610	/string	/char	0	1	3		0
+0079B0EC	PTR_s_LASTPSW_0079b0ec	pointer:/char	007CA604	string_pointer	s_LASTPSW_007ca604	/string	/char	0	1	3		0
+0079B114	PTR_s_UPDATES\\_0079b114	pointer:/char	007C94C0	string_pointer	s_UPDATES\\_007c94c0	/string	/char	0	1	1		0
+0079B18C	PTR_s_SAVEGAME\\_0079b18c	pointer:/char	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string	/char	0	1	1		0
+0079B190	PTR_s_SYSTEM\\_0079b190	pointer:/char	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string	/char	0	1	1		0
 0079B194	PTR_DAT_0079b194	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
-0079B198	PTR_s_STRATEGS_0079b198	/pointer	007C706C	string_pointer	s_STRATEGS_007c706c	/string		0	0	0		0
+0079B198	PTR_s_STRATEGS_0079b198	pointer:/char	007C706C	string_pointer	s_STRATEGS_007c706c	/string	/char	0	1	1		0
 0079B19C	PTR_DAT_0079b19c	/pointer	007C7064	initialized_data_pointer	DAT_007c7064	/undefined1		0	0	0		0
-0079B1A0	PTR_s_SAVE_DESC_0079b1a0	/pointer	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string		0	0	0		0
-0079B1A4	PTR_s_DESCRIPTOR_0079b1a4	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
-0079B1A8	PTR_s_ANIM_PALETTE_0079b1a8	/pointer	007CAB4C	string_pointer	s_ANIM_PALETTE_007cab4c	/string		0	0	0		0
-0079BFE8	PTR_s_MISSIONS\\_0079bfe8	/pointer	007CBCC8	string_pointer	s_MISSIONS\\_007cbcc8	/string		0	0	0		0
+0079B1A0	PTR_s_SAVE_DESC_0079b1a0	pointer:/char	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string	/char	0	1	2		0
+0079B1A4	PTR_s_DESCRIPTOR_0079b1a4	pointer:/char	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string	/char	0	1	2		0
+0079B1A8	PTR_s_ANIM_PALETTE_0079b1a8	pointer:/char	007CAB4C	string_pointer	s_ANIM_PALETTE_007cab4c	/string	/char	0	1	2		0
+0079BFE8	PTR_s_MISSIONS\\_0079bfe8	pointer:/char	007CBCC8	string_pointer	s_MISSIONS\\_007cbcc8	/string	/char	0	1	1		0
 0079BFEC	PTR_DAT_0079bfec	/pointer	007CBCC0	initialized_data_pointer	DAT_007cbcc0			0	0	0		0
-0079BFF0	PTR_s_TUTOR_0079bff0	/pointer	007CBCB8	string_pointer	s_TUTOR_007cbcb8	/string		0	0	0		0
-0079C020	PTR_s_UPDATES\\_0079c020	/pointer	007C94C0	string_pointer	s_UPDATES\\_007c94c0	/string		0	0	0		0
-0079C024	PTR_s_ST.INF_0079c024	/pointer	007C94B8	string_pointer	s_ST.INF_007c94b8	/string		0	0	0		0
-0079C04C	PTR_s_SAVEGAME\\_0079c04c	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
-0079C050	PTR_s_CUSTOM\\_0079c050	/pointer	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string		0	0	0		0
-0079C054	PTR_s_MISSIONS\\_0079c054	/pointer	007CBCC8	string_pointer	s_MISSIONS\\_007cbcc8	/string		0	0	0		0
+0079BFF0	PTR_s_TUTOR_0079bff0	pointer:/char	007CBCB8	string_pointer	s_TUTOR_007cbcb8	/string	/char	0	1	1		0
+0079C020	PTR_s_UPDATES\\_0079c020	pointer:/char	007C94C0	string_pointer	s_UPDATES\\_007c94c0	/string	/char	0	1	1		0
+0079C024	PTR_s_ST.INF_0079c024	pointer:/char	007C94B8	string_pointer	s_ST.INF_007c94b8	/string	/char	0	1	1		0
+0079C04C	PTR_s_SAVEGAME\\_0079c04c	pointer:/char	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string	/char	0	1	1		0
+0079C050	PTR_s_CUSTOM\\_0079c050	pointer:/char	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string	/char	0	1	1		0
+0079C054	PTR_s_MISSIONS\\_0079c054	pointer:/char	007CBCC8	string_pointer	s_MISSIONS\\_007cbcc8	/string	/char	0	1	1		0
 0079C058	PTR_DAT_0079c058	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
-0079C05C	PTR_s_CAMPAIGN.VPS_0079c05c	/pointer	007CA094	string_pointer	s_CAMPAIGN.VPS_007ca094	/string		0	0	0		0
-0079C060	PTR_s_ADDON_0079c060	/pointer	007CC714	string_pointer	s_ADDON_007cc714	/string		0	0	0		0
-0079C064	PTR_s_MISSION_0079c064	/pointer	007CC708	string_pointer	s_MISSION_007cc708	/string		0	0	0		0
+0079C05C	PTR_s_CAMPAIGN.VPS_0079c05c	pointer:/char	007CA094	string_pointer	s_CAMPAIGN.VPS_007ca094	/string	/char	0	1	1		0
+0079C060	PTR_s_ADDON_0079c060	pointer:/char	007CC714	string_pointer	s_ADDON_007cc714	/string	/char	0	1	1		0
+0079C064	PTR_s_MISSION_0079c064	pointer:/char	007CC708	string_pointer	s_MISSION_007cc708	/string	/char	0	1	3		0
 0079C068	PTR_DAT_0079c068	/pointer	007CC704	initialized_data_pointer	DAT_007cc704			0	0	0		0
 0079C06C	PTR_DAT_0079c06c	/pointer	007C7064	initialized_data_pointer	DAT_007c7064	/undefined1		0	0	0		0
-0079C070	PTR_s_SAVE_DESC_0079c070	/pointer	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string		0	0	0		0
-0079C074	PTR_s_OBJECTIVES_0079c074	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
-0079C078	PTR_s_DESCRIPTOR_0079c078	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
-0079C0B8	PTR_s_SAVEGAME\\_0079c0b8	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
-0079C0BC	PTR_s_CUSTOM\\_0079c0bc	/pointer	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string		0	0	0		0
-0079C0D4	PTR_s_SAVEGAME\\_0079c0d4	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
-0079C0D8	PTR_s_PL_LOG_0079c0d8	/pointer	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string		0	0	0		0
+0079C070	PTR_s_SAVE_DESC_0079c070	pointer:/char	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string	/char	0	1	2		0
+0079C074	PTR_s_OBJECTIVES_0079c074	pointer:/char	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string	/char	0	1	3		0
+0079C078	PTR_s_DESCRIPTOR_0079c078	pointer:/char	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string	/char	0	1	2		0
+0079C0B8	PTR_s_SAVEGAME\\_0079c0b8	pointer:/char	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string	/char	0	1	1		0
+0079C0BC	PTR_s_CUSTOM\\_0079c0bc	pointer:/char	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string	/char	0	1	1		0
+0079C0D4	PTR_s_SAVEGAME\\_0079c0d4	pointer:/char	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string	/char	0	1	1		0
+0079C0D8	PTR_s_PL_LOG_0079c0d8	pointer:/char	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string	/char	0	1	1		0
 0079C0DC	PTR_DAT_0079c0dc	/pointer	007CCEC0	initialized_data_pointer	DAT_007ccec0	/undefined4		0	0	0		0
-0079C0E8	PTR_s_MISSIONS\\_0079c0e8	/pointer	007CBCC8	string_pointer	s_MISSIONS\\_007cbcc8	/string		0	0	0		0
-0079C0EC	PTR_s_SYSTEM\\_0079c0ec	/pointer	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string		0	0	0		0
+0079C0E8	PTR_s_MISSIONS\\_0079c0e8	pointer:/char	007CBCC8	string_pointer	s_MISSIONS\\_007cbcc8	/string	/char	0	1	1		0
+0079C0EC	PTR_s_SYSTEM\\_0079c0ec	pointer:/char	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string	/char	0	1	1		0
 0079C0F0	PTR_DAT_0079c0f0	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
-0079C0F4	PTR_s_RANDOM_0079c0f4	/pointer	007CD0E0	string_pointer	s_RANDOM_007cd0e0	/string		0	0	0		0
-0079C0F8	PTR_s_GENERATE_RND_0079c0f8	/pointer	007CD0D0	string_pointer	s_GENERATE_RND_007cd0d0	/string		0	0	0		0
-0079C0FC	PTR_s_INTERFACE_RND_0079c0fc	/pointer	007CD0C0	string_pointer	s_INTERFACE_RND_007cd0c0	/string		0	0	0		0
-0079C100	PTR_s_STRATEGS_0079c100	/pointer	007C706C	string_pointer	s_STRATEGS_007c706c	/string		0	0	0		0
-0079C104	PTR_s_TITLE_MISSION_0079c104	/pointer	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string		0	0	0		0
-0079C108	PTR_s_DESCRIPTION_0079c108	/pointer	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string		0	0	0		0
-0079C10C	PTR_s_OBJECTIVES_0079c10c	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
-0079C110	PTR_s_DESCRIPTOR_0079c110	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
-0079C114	PTR_s_SMALL_MAP_0079c114	/pointer	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string		0	0	0		0
-0079C19C	PTR_s_SAVEGAME\\_0079c19c	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
-0079C1A0	PTR_s_PL_LOG_0079c1a0	/pointer	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string		0	0	0		0
-0079C1A4	PTR_s_OPTIONS_PLAYER_0079c1a4	/pointer	007CA668	string_pointer	s_OPTIONS_PLAYER_007ca668	/string		0	0	0		0
-0079C1BC	PTR_s_CUSTOM\\_0079c1bc	/pointer	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string		0	0	0		0
+0079C0F4	PTR_s_RANDOM_0079c0f4	pointer:/char	007CD0E0	string_pointer	s_RANDOM_007cd0e0	/string	/char	0	1	1		0
+0079C0F8	PTR_s_GENERATE_RND_0079c0f8	pointer:/char	007CD0D0	string_pointer	s_GENERATE_RND_007cd0d0	/string	/char	0	1	2		0
+0079C0FC	PTR_s_INTERFACE_RND_0079c0fc	pointer:/char	007CD0C0	string_pointer	s_INTERFACE_RND_007cd0c0	/string	/char	0	1	2		0
+0079C100	PTR_s_STRATEGS_0079c100	pointer:/char	007C706C	string_pointer	s_STRATEGS_007c706c	/string	/char	0	1	1		0
+0079C104	PTR_s_TITLE_MISSION_0079c104	pointer:/char	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string	/char	0	1	3		0
+0079C108	PTR_s_DESCRIPTION_0079c108	pointer:/char	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string	/char	0	1	3		0
+0079C10C	PTR_s_OBJECTIVES_0079c10c	pointer:/char	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string	/char	0	1	3		0
+0079C110	PTR_s_DESCRIPTOR_0079c110	pointer:/char	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string	/char	0	1	3		0
+0079C114	PTR_s_SMALL_MAP_0079c114	pointer:/char	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string	/char	0	1	3		0
+0079C19C	PTR_s_SAVEGAME\\_0079c19c	pointer:/char	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string	/char	0	1	1		0
+0079C1A0	PTR_s_PL_LOG_0079c1a0	pointer:/char	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string	/char	0	1	1		0
+0079C1A4	PTR_s_OPTIONS_PLAYER_0079c1a4	pointer:/char	007CA668	string_pointer	s_OPTIONS_PLAYER_007ca668	/string	/char	0	1	2		0
+0079C1BC	PTR_s_CUSTOM\\_0079c1bc	pointer:/char	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string	/char	0	1	1		0
 0079C1C0	PTR_DAT_0079c1c0	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
 0079C1C4	PTR_DAT_0079c1c4	/pointer	007C7078	initialized_data_pointer	DAT_007c7078	/undefined1		0	0	0		0
-0079C1C8	PTR_s_SAVE_PLAYER_0079c1c8	/pointer	007CA06C	string_pointer	s_SAVE_PLAYER_007ca06c	/string		0	0	0		0
-0079C1CC	PTR_s_TITLE_MISSION_0079c1cc	/pointer	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string		0	0	0		0
-0079C1D0	PTR_s_DESCRIPTION_0079c1d0	/pointer	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string		0	0	0		0
-0079C1D4	PTR_s_OBJECTIVES_0079c1d4	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
-0079C1D8	PTR_s_DESCRIPTOR_0079c1d8	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
-0079C1DC	PTR_s_SMALL_MAP_0079c1dc	/pointer	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string		0	0	0		0
-0079C214	PTR_s_TASKPLAY_0079c214	/pointer	007CD988	string_pointer	s_TASKPLAY_007cd988	/string		0	0	0		0
-0079C218	PTR_s_TITLE_MISSION_0079c218	/pointer	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string		0	0	0		0
-0079C21C	PTR_s_DESCRIPTION_0079c21c	/pointer	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string		0	0	0		0
-0079C220	PTR_s_OBJECTIVES_0079c220	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
-0079C224	PTR_s_DEFAULT_WS_ANIMATED_0079c224	/pointer	007CD970	string_pointer	s_DEFAULT_WS_ANIMATED_007cd970	/string		0	0	0		0
-0079C228	PTR_s_DEFAULT_BO_ANIMATED_0079c228	/pointer	007CD958	string_pointer	s_DEFAULT_BO_ANIMATED_007cd958	/string		0	0	0		0
-0079C22C	PTR_s_DEFAULT_SI_ANIMATED_0079c22c	/pointer	007CD940	string_pointer	s_DEFAULT_SI_ANIMATED_007cd940	/string		0	0	0		0
-0079C240	PTR_s_SAVEGAME\\_0079c240	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
-0079C244	PTR_s_CUSTOM\\_0079c244	/pointer	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string		0	0	0		0
-0079C57C	PTR_s_BASIS_MAN_0079c57c	/pointer	007CE554	string_pointer	s_BASIS_MAN_007ce554	/string		0	0	0		0
-0079D080	PTR_s_RUBBISH_3_0079d080	/pointer	007D13E0	string_pointer	s_RUBBISH_3_007d13e0	/string		0	0	0		0
+0079C1C8	PTR_s_SAVE_PLAYER_0079c1c8	pointer:/char	007CA06C	string_pointer	s_SAVE_PLAYER_007ca06c	/string	/char	0	1	3		0
+0079C1CC	PTR_s_TITLE_MISSION_0079c1cc	pointer:/char	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string	/char	0	1	2		0
+0079C1D0	PTR_s_DESCRIPTION_0079c1d0	pointer:/char	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string	/char	0	1	3		0
+0079C1D4	PTR_s_OBJECTIVES_0079c1d4	pointer:/char	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string	/char	0	1	2		0
+0079C1D8	PTR_s_DESCRIPTOR_0079c1d8	pointer:/char	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string	/char	0	1	3		0
+0079C1DC	PTR_s_SMALL_MAP_0079c1dc	pointer:/char	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string	/char	0	1	2		0
+0079C214	PTR_s_TASKPLAY_0079c214	pointer:/char	007CD988	string_pointer	s_TASKPLAY_007cd988	/string	/char	0	1	1		0
+0079C218	PTR_s_TITLE_MISSION_0079c218	pointer:/char	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string	/char	0	1	2		0
+0079C21C	PTR_s_DESCRIPTION_0079c21c	pointer:/char	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string	/char	0	1	2		0
+0079C220	PTR_s_OBJECTIVES_0079c220	pointer:/char	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string	/char	0	1	2		0
+0079C224	PTR_s_DEFAULT_WS_ANIMATED_0079c224	pointer:/char	007CD970	string_pointer	s_DEFAULT_WS_ANIMATED_007cd970	/string	/char	0	1	1		0
+0079C228	PTR_s_DEFAULT_BO_ANIMATED_0079c228	pointer:/char	007CD958	string_pointer	s_DEFAULT_BO_ANIMATED_007cd958	/string	/char	0	1	1		0
+0079C22C	PTR_s_DEFAULT_SI_ANIMATED_0079c22c	pointer:/char	007CD940	string_pointer	s_DEFAULT_SI_ANIMATED_007cd940	/string	/char	0	1	1		0
+0079C240	PTR_s_SAVEGAME\\_0079c240	pointer:/char	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string	/char	0	1	1		0
+0079C244	PTR_s_CUSTOM\\_0079c244	pointer:/char	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string	/char	0	1	1		0
+0079C57C	PTR_s_BASIS_MAN_0079c57c	pointer:/char	007CE554	string_pointer	s_BASIS_MAN_007ce554	/string	/char	0	1	3		0
+0079D080	PTR_s_RUBBISH_3_0079d080	pointer:/char	007D13E0	string_pointer	s_RUBBISH_3_007d13e0	/string	/char	0	1	3		0
 0079D198	PTR_DAT_0079d198	/pointer	007D19F0	initialized_data_pointer	DAT_007d19f0			0	0	0		0
-0079D614	PTR_s_AIBOSS_0079d614	/pointer	007D2748	string_pointer	s_AIBOSS_007d2748	/string		0	0	0		0
+0079D614	PTR_s_AIBOSS_0079d614	pointer:/char	007D2748	string_pointer	s_AIBOSS_007d2748	/string	/char	0	1	2		0
 0079D65C	PTR_DAT_0079d65c	/pointer	007D2860	initialized_data_pointer	DAT_007d2860			0	0	0		0
-0079D660	PTR_s_AIPLAYER_0079d660	/pointer	007D2854	string_pointer	s_AIPLAYER_007d2854	/string		0	0	0		0
-0079D664	PTR_s_AIBOSS_0079d664	/pointer	007D2748	string_pointer	s_AIBOSS_007d2748	/string		0	0	0		0
-0079D668	PTR_s_STRATEG_0079d668	/pointer	007D2848	string_pointer	s_STRATEG_007d2848	/string		0	0	0		0
-0079D6C0	PTR_s_SAVEGAME\\_0079d6c0	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
-0079D6C4	PTR_s_PL_LOG_0079d6c4	/pointer	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string		0	0	0		0
+0079D660	PTR_s_AIPLAYER_0079d660	pointer:/char	007D2854	string_pointer	s_AIPLAYER_007d2854	/string	/char	0	1	2		0
+0079D664	PTR_s_AIBOSS_0079d664	pointer:/char	007D2748	string_pointer	s_AIBOSS_007d2748	/string	/char	0	1	2		0
+0079D668	PTR_s_STRATEG_0079d668	pointer:/char	007D2848	string_pointer	s_STRATEG_007d2848	/string	/char	0	1	1		0
+0079D6C0	PTR_s_SAVEGAME\\_0079d6c0	pointer:/char	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string	/char	0	1	1		0
+0079D6C4	PTR_s_PL_LOG_0079d6c4	pointer:/char	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string	/char	0	1	1		0
 0079D6C8	PTR_DAT_0079d6c8	/pointer	007CCEC0	initialized_data_pointer	DAT_007ccec0	/undefined4		0	0	0		0
-0079D6D0	PTR_s_AIPLAYER_0079d6d0	/pointer	007D2854	string_pointer	s_AIPLAYER_007d2854	/string		0	0	0		0
-0079D718	PTR_s_OBJECTIVES_0079d718	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
-0079D71C	PTR_s_AIPLAYER_0079d71c	/pointer	007D2854	string_pointer	s_AIPLAYER_007d2854	/string		0	0	0		0
-0079D720	PTR_s_AIBOSS_0079d720	/pointer	007D2748	string_pointer	s_AIBOSS_007d2748	/string		0	0	0		0
-0079D724	PTR_s_ASSISTANT_0079d724	/pointer	007D2F98	string_pointer	s_ASSISTANT_007d2f98	/string		0	0	0		0
-0079D728	PTR_s_OPPONENT_0079d728	/pointer	007D2F8C	string_pointer	s_OPPONENT_007d2f8c	/string		0	0	0		0
-0079D72C	PTR_s_STRATEG_0079d72c	/pointer	007D2848	string_pointer	s_STRATEG_007d2848	/string		0	0	0		0
-0079D734	PTR_s___EMPTY___0079d734	/pointer	007D4308	string_pointer	s___EMPTY___007d4308	/string		0	0	0		0
-0079D738	PTR_s___CONST__%03d_0079d738	/pointer	007D42F8	string_pointer	s___CONST__%03d_007d42f8	/string		0	0	0		0
-0079D73C	PTR_s___INCLUDE__%03d_0079d73c	/pointer	007D42E4	string_pointer	s___INCLUDE__%03d_007d42e4	/string		0	0	0		0
-0079D740	PTR_s___EXPAR__%03d_0079d740	/pointer	007D42D4	string_pointer	s___EXPAR__%03d_007d42d4	/string		0	0	0		0
-0079D744	PTR_s__RT%d_0079d744	/pointer	007D42CC	string_pointer	s__RT%d_007d42cc	/string		0	0	0		0
-0079D748	PTR_s__GL%d_0079d748	/pointer	007D42C4	string_pointer	s__GL%d_007d42c4	/string		0	0	0		0
-0079D74C	PTR_s__PI%d_0079d74c	/pointer	007D42BC	string_pointer	s__PI%d_007d42bc	/string		0	0	0		0
-0079D750	PTR_s__PS%d_0079d750	/pointer	007D42B4	string_pointer	s__PS%d_007d42b4	/string		0	0	0		0
-0079D770	PTR_s_DESCRIPTOR_0079d770	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
-0079D774	PTR_s_GENERATE_RND_0079d774	/pointer	007CD0D0	string_pointer	s_GENERATE_RND_007cd0d0	/string		0	0	0		0
-0079D778	PTR_s_INTERFACE_RND_0079d778	/pointer	007CD0C0	string_pointer	s_INTERFACE_RND_007cd0c0	/string		0	0	0		0
-0079D838	PTR_s_TITLE_MISSION_0079d838	/pointer	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string		0	0	0		0
-0079D83C	PTR_s_TEXTURE_0079d83c	/pointer	007C9FD8	string_pointer	s_TEXTURE_007c9fd8	/string		0	0	0		0
-0079D840	PTR_s_SMALL_MAP_0079d840	/pointer	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string		0	0	0		0
-0079D848	PTR_s_PALETTE_0079d848	/pointer	007CA1C8	string_pointer	s_PALETTE_007ca1c8	/string		0	0	0		0
+0079D6D0	PTR_s_AIPLAYER_0079d6d0	pointer:/char	007D2854	string_pointer	s_AIPLAYER_007d2854	/string	/char	0	1	2		0
+0079D718	PTR_s_OBJECTIVES_0079d718	pointer:/char	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string	/char	0	1	3		0
+0079D71C	PTR_s_AIPLAYER_0079d71c	pointer:/char	007D2854	string_pointer	s_AIPLAYER_007d2854	/string	/char	0	1	1		0
+0079D720	PTR_s_AIBOSS_0079d720	pointer:/char	007D2748	string_pointer	s_AIBOSS_007d2748	/string	/char	0	1	1		0
+0079D724	PTR_s_ASSISTANT_0079d724	pointer:/char	007D2F98	string_pointer	s_ASSISTANT_007d2f98	/string	/char	0	1	3		0
+0079D728	PTR_s_OPPONENT_0079d728	pointer:/char	007D2F8C	string_pointer	s_OPPONENT_007d2f8c	/string	/char	0	1	3		0
+0079D72C	PTR_s_STRATEG_0079d72c	pointer:/char	007D2848	string_pointer	s_STRATEG_007d2848	/string	/char	0	1	2		0
+0079D734	PTR_s___EMPTY___0079d734	pointer:/char	007D4308	string_pointer	s___EMPTY___007d4308	/string	/char	0	1	5		0
+0079D738	PTR_s___CONST__%03d_0079d738	pointer:/char	007D42F8	string_pointer	s___CONST__%03d_007d42f8	/string	/char	0	1	2		0
+0079D73C	PTR_s___INCLUDE__%03d_0079d73c	pointer:/char	007D42E4	string_pointer	s___INCLUDE__%03d_007d42e4	/string	/char	0	1	2		0
+0079D740	PTR_s___EXPAR__%03d_0079d740	pointer:/char	007D42D4	string_pointer	s___EXPAR__%03d_007d42d4	/string	/char	0	1	2		0
+0079D744	PTR_s__RT%d_0079d744	pointer:/char	007D42CC	string_pointer	s__RT%d_007d42cc	/string	/char	0	1	1		0
+0079D748	PTR_s__GL%d_0079d748	pointer:/char	007D42C4	string_pointer	s__GL%d_007d42c4	/string	/char	0	1	1		0
+0079D74C	PTR_s__PI%d_0079d74c	pointer:/char	007D42BC	string_pointer	s__PI%d_007d42bc	/string	/char	0	1	1		0
+0079D750	PTR_s__PS%d_0079d750	pointer:/char	007D42B4	string_pointer	s__PS%d_007d42b4	/string	/char	0	1	1		0
+0079D770	PTR_s_DESCRIPTOR_0079d770	pointer:/char	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string	/char	0	1	4		0
+0079D774	PTR_s_GENERATE_RND_0079d774	pointer:/char	007CD0D0	string_pointer	s_GENERATE_RND_007cd0d0	/string	/char	0	1	2		0
+0079D778	PTR_s_INTERFACE_RND_0079d778	pointer:/char	007CD0C0	string_pointer	s_INTERFACE_RND_007cd0c0	/string	/char	0	1	2		0
+0079D838	PTR_s_TITLE_MISSION_0079d838	pointer:/char	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string	/char	0	1	2		0
+0079D83C	PTR_s_TEXTURE_0079d83c	pointer:/char	007C9FD8	string_pointer	s_TEXTURE_007c9fd8	/string	/char	0	1	2		0
+0079D840	PTR_s_SMALL_MAP_0079d840	pointer:/char	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string	/char	0	1	1		0
+0079D848	PTR_s_PALETTE_0079d848	pointer:/char	007CA1C8	string_pointer	s_PALETTE_007ca1c8	/string	/char	0	1	2		0
 007A1270	PTR_DAT_007a1270	/pointer	007A1BB0	initialized_data_pointer	DAT_007a1bb0	/undefined1		0	0	0		0
 007A127C	PTR_DAT_007a127c	/pointer	007A1BA0	initialized_data_pointer	DAT_007a1ba0	/undefined1		0	0	0		0
-007A1284	PTR_s_RGB_VGA_007a1284	/pointer	007A132C	string_pointer	s_RGB_VGA_007a132c	/string		0	0	0		0
+007A1284	PTR_s_RGB_VGA_007a1284	pointer:/char	007A132C	string_pointer	s_RGB_VGA_007a132c	/string	/char	0	1	1		0
 007A5250	PTR_DAT_007a5250	/pointer	007F4DE8	initialized_data_pointer	DAT_007f4de8			0	0	0		0
-007AD25C	PTR_s_tlo_bldmark_si_007ad25c	pointer:/undefined	007AD2B8	string_pointer	s_tlo_bldmark_si_007ad2b8	/string	/undefined	0	0	0		0
+007AD25C	PTR_s_tlo_bldmark_si_007ad25c	pointer:/char	007AD2B8	string_pointer	s_tlo_bldmark_si_007ad2b8	/string	/char	0	1	2		0
 007B5170	PTR_DAT_007b5170	pointer:/undefined	007AD5B0	initialized_data_pointer	DAT_007ad5b0		/undefined	0	0	0		0
 007B5180	PTR_DAT_007b5180	/pointer	007B1FF0	initialized_data_pointer	DAT_007b1ff0			0	0	0		0
 007B8310	PTR_DAT_007b8310	pointer:/undefined	007B5190	initialized_data_pointer	DAT_007b5190		/undefined	0	0	0		0
 007B8320	PTR_DAT_007b8320	/pointer	007FE430	initialized_data_pointer	DAT_007fe430			0	0	0		0
-007B8330	PTR_s_dyaws_body_007b8330	/pointer	007BE898	string_pointer	s_dyaws_body_007be898	/string		0	0	0		0
-007B8334	PTR_s_dyaws_id_007b8334	/pointer	007BE88C	string_pointer	s_dyaws_id_007be88c	/string		0	0	0		0
-007BB198	PTR_PTR_007bb198	pointer:/undefined	007B8330	initialized_data_pointer	PTR_s_dyaws_body_007b8330	/pointer	/undefined	0	0	0		0
+007B8330	PTR_s_dyaws_body_007b8330	pointer:/char	007BE898	string_pointer	s_dyaws_body_007be898	/string	/char	0	1	2		0
+007B8334	PTR_s_dyaws_id_007b8334	pointer:/char	007BE88C	string_pointer	s_dyaws_id_007be88c	/string	/char	0	1	1		0
+007BB198	PTR_PTR_007bb198	pointer:/undefined	007B8330	initialized_data_pointer	PTR_s_dyaws_body_007b8330	pointer:/char	/undefined	0	0	0		0
 007BB1A8	PTR_DAT_007bb1a8	/pointer	007B95C0	initialized_data_pointer	DAT_007b95c0			0	0	0		0
-007BB1B4	PTR_s_tlo_sha_ws_007bb1b4	/pointer	007BDDE4	string_pointer	s_tlo_sha_ws_007bdde4	/string		0	0	0		0
-007BF3E8	PTR_s_tlo_embws1_007bf3e8	/pointer	007BF418	string_pointer	s_tlo_embws1_007bf418	/string		0	0	0		0
+007BB1B4	PTR_s_tlo_sha_ws_007bb1b4	pointer:/char	007BDDE4	string_pointer	s_tlo_sha_ws_007bdde4	/string	/char	0	1	6		0
+007BF3E8	PTR_s_tlo_embws1_007bf3e8	pointer:/char	007BF418	string_pointer	s_tlo_embws1_007bf418	/string	/char	0	1	1		0
 007BFC04	PTR_DAT_007bfc04	/pointer	007BFA30	initialized_data_pointer	DAT_007bfa30			0	0	0		0
 007BFC08	PTR_DAT_007bfc08	/pointer	007BFACC	initialized_data_pointer	DAT_007bfacc			0	0	0		0
 007C0DC8	PTR_DAT_007c0dc8	/pointer	007BFC10	initialized_data_pointer	DAT_007bfc10			0	0	0		0
 007C83B0	PTR_DAT_007c83b0	/pointer	007C8400	initialized_data_pointer	DAT_007c8400	/undefined1		0	0	0		0
-007CB08C	PTR_s_rc276_c%d_007cb08c	/pointer	007CB190	string_pointer	s_rc276_c%d_007cb190	/string		0	0	0		0
-007CB090	PTR_s_rc276_%d_007cb090	/pointer	007CB184	string_pointer	s_rc276_%d_007cb184	/string		0	0	0		0
-007CB094	PTR_s_rgold_c0_007cb094	/pointer	007CB178	string_pointer	s_rgold_c0_007cb178	/string		0	0	0		0
-007CB098	PTR_s_rgold_%d_007cb098	/pointer	007CB16C	string_pointer	s_rgold_%d_007cb16c	/string		0	0	0		0
-007CB09C	PTR_s_rmeta_c%d_007cb09c	/pointer	007CB160	string_pointer	s_rmeta_c%d_007cb160	/string		0	0	0		0
-007CB0A0	PTR_s_rmeta_%d_007cb0a0	/pointer	007CB154	string_pointer	s_rmeta_%d_007cb154	/string		0	0	0		0
-007CB0A4	PTR_s_term0_007cb0a4	pointer:/undefined	007CB14C	string_pointer	s_term0_007cb14c	/string	/undefined	0	0	0		0
-007CB0B4	PTR_s_termsd_007cb0b4	/pointer	007CB134	string_pointer	s_termsd_007cb134	/string		0	0	0		0
-007CDE70	PTR_s_cont1_007cde70	pointer:/undefined	007CE4E4	string_pointer	s_cont1_007ce4e4	/string	/undefined	0	0	0		0
-007CE530	PTR_s_basis_10_007ce530	/pointer	007CE548	string_pointer	s_basis_10_007ce548	/string		0	0	0		0
-007CE534	PTR_s_basis_40_007ce534	/pointer	007CE53C	string_pointer	s_basis_40_007ce53c	/string		0	0	0		0
-007CE5A0	PTR_s_adcbo_007ce5a0	pointer:/undefined	007CE68C	string_pointer	s_adcbo_007ce68c	/string	/undefined	0	0	0		0
-007CE5F8	PTR_s_pics_g_007ce5f8	pointer:/undefined	007CE674	string_pointer	s_pics_g_007ce674	/string	/undefined	0	0	0		0
-007CE6E0	PTR_s_col3l0_007ce6e0	pointer:/undefined	007CE860	string_pointer	s_col3l0_007ce860	/string	/undefined	0	0	0		0
-007CE934	PTR_s_Expb24_007ce934	/pointer	007CEBC0	string_pointer	s_Expb24_007cebc0	/string		0	0	0		0
-007CEBEC	PTR_s_Dest1_0_007cebec	pointer:/undefined	007CED28	string_pointer	s_Dest1_0_007ced28	/string	/undefined	0	0	0		0
-007CEC00	PTR_s_Dest4_0_007cec00	pointer:/undefined	007CED1C	string_pointer	s_Dest4_0_007ced1c	/string	/undefined	0	0	0		0
-007CEC3C	PTR_s_dest0s0_007cec3c	pointer:/undefined	007CECEC	string_pointer	s_dest0s0_007cecec	/string	/undefined	0	0	0		0
-007CED70	PTR_s_expl_bt0_007ced70	pointer:/undefined	007BF540	string_pointer	s_expl_bt0_007bf540	/string	/undefined	0	0	0		0
-007CED98	PTR_s_expl_bm0_007ced98	pointer:/undefined	007CF624	string_pointer	s_expl_bm0_007cf624	/string	/undefined	0	0	0		0
-007CEDC0	PTR_s_expl_bbt0_007cedc0	pointer:/undefined	007AD564	string_pointer	s_expl_bbt0_007ad564	/string	/undefined	0	0	0		0
-007CF6D0	PTR_s_pics_g_007cf6d0	pointer:/undefined	007CE674	string_pointer	s_pics_g_007ce674	/string	/undefined	0	0	0		0
-007D0164	PTR_s_light01_007d0164	pointer:/undefined	007D01A4	string_pointer	s_light01_007d01a4	/string	/undefined	0	0	0		0
+007CB08C	PTR_s_rc276_c%d_007cb08c	pointer:/char	007CB190	string_pointer	s_rc276_c%d_007cb190	/string	/char	0	1	1		0
+007CB090	PTR_s_rc276_%d_007cb090	pointer:/char	007CB184	string_pointer	s_rc276_%d_007cb184	/string	/char	0	1	2		0
+007CB094	PTR_s_rgold_c0_007cb094	pointer:/char	007CB178	string_pointer	s_rgold_c0_007cb178	/string	/char	0	1	1		0
+007CB098	PTR_s_rgold_%d_007cb098	pointer:/char	007CB16C	string_pointer	s_rgold_%d_007cb16c	/string	/char	0	1	2		0
+007CB09C	PTR_s_rmeta_c%d_007cb09c	pointer:/char	007CB160	string_pointer	s_rmeta_c%d_007cb160	/string	/char	0	1	1		0
+007CB0A0	PTR_s_rmeta_%d_007cb0a0	pointer:/char	007CB154	string_pointer	s_rmeta_%d_007cb154	/string	/char	0	1	2		0
+007CB0A4	PTR_s_term0_007cb0a4	pointer:/char	007CB14C	string_pointer	s_term0_007cb14c	/string	/char	0	1	1		0
+007CB0B4	PTR_s_termsd_007cb0b4	pointer:/char	007CB134	string_pointer	s_termsd_007cb134	/string	/char	0	1	2		0
+007CDE70	PTR_s_cont1_007cde70	pointer:/char	007CE4E4	string_pointer	s_cont1_007ce4e4	/string	/char	0	1	2		0
+007CE530	PTR_s_basis_10_007ce530	pointer:/char	007CE548	string_pointer	s_basis_10_007ce548	/string	/char	0	1	1		0
+007CE534	PTR_s_basis_40_007ce534	pointer:/char	007CE53C	string_pointer	s_basis_40_007ce53c	/string	/char	0	1	1		0
+007CE5A0	PTR_s_adcbo_007ce5a0	pointer:/char	007CE68C	string_pointer	s_adcbo_007ce68c	/string	/char	0	1	2		0
+007CE5F8	PTR_s_pics_g_007ce5f8	pointer:/char	007CE674	string_pointer	s_pics_g_007ce674	/string	/char	0	1	2		0
+007CE6E0	PTR_s_col3l0_007ce6e0	pointer:/char	007CE860	string_pointer	s_col3l0_007ce860	/string	/char	0	1	2		0
+007CE934	PTR_s_Expb24_007ce934	pointer:/char	007CEBC0	string_pointer	s_Expb24_007cebc0	/string	/char	0	1	2		0
+007CEBEC	PTR_s_Dest1_0_007cebec	pointer:/char	007CED28	string_pointer	s_Dest1_0_007ced28	/string	/char	0	1	3		0
+007CEC00	PTR_s_Dest4_0_007cec00	pointer:/char	007CED1C	string_pointer	s_Dest4_0_007ced1c	/string	/char	0	1	1		0
+007CEC3C	PTR_s_dest0s0_007cec3c	pointer:/char	007CECEC	string_pointer	s_dest0s0_007cecec	/string	/char	0	1	2		0
+007CED70	PTR_s_expl_bt0_007ced70	pointer:/char	007BF540	string_pointer	s_expl_bt0_007bf540	/string	/char	0	1	1		0
+007CED98	PTR_s_expl_bm0_007ced98	pointer:/char	007CF624	string_pointer	s_expl_bm0_007cf624	/string	/char	0	1	1		0
+007CEDC0	PTR_s_expl_bbt0_007cedc0	pointer:/char	007AD564	string_pointer	s_expl_bbt0_007ad564	/string	/char	0	1	2		0
+007CF6D0	PTR_s_pics_g_007cf6d0	pointer:/char	007CE674	string_pointer	s_pics_g_007ce674	/string	/char	0	1	1		0
+007D0164	PTR_s_light01_007d0164	pointer:/char	007D01A4	string_pointer	s_light01_007d01a4	/string	/char	0	1	2		0
 007D02C4	PTR_DAT_007d02c4	pointer:/undefined	007D06A8	initialized_data_pointer	DAT_007d06a8		/undefined	0	0	0		0
-007D02D4	PTR_s_mine0_007d02d4	pointer:/undefined	007D0688	string_pointer	s_mine0_007d0688	/string	/undefined	0	0	0		0
-007D0354	PTR_s_expdeep_007d0354	pointer:/undefined	007D05A4	string_pointer	s_expdeep_007d05a4	/string	/undefined	0	0	0		0
+007D02D4	PTR_s_mine0_007d02d4	pointer:/char	007D0688	string_pointer	s_mine0_007d0688	/string	/char	0	1	2		0
+007D0354	PTR_s_expdeep_007d0354	pointer:/char	007D05A4	string_pointer	s_expdeep_007d05a4	/string	/char	0	1	2		0
 007D0364	PTR_DAT_007d0364	pointer:/undefined	007D0588	initialized_data_pointer	DAT_007d0588	/undefined1	/undefined	0	0	0		0
 007D0374	PTR_DAT_007d0374	pointer:/undefined	007D0570	initialized_data_pointer	DAT_007d0570	/undefined1	/undefined	0	0	0		0
-007D0718	PTR_s_particle0_007d0718	pointer:/undefined	007D1348	string_pointer	s_particle0_007d1348	/string	/undefined	0	0	0		0
-007D0758	PTR_s_particle01_007d0758	pointer:/undefined	007D126C	string_pointer	s_particle01_007d126c	/string	/undefined	0	0	0		0
-007D0798	PTR_s_partdw01_007d0798	pointer:/undefined	007D1170	string_pointer	s_partdw01_007d1170	/string	/undefined	0	0	0		0
-007D07D8	PTR_s_part_w0_007d07d8	pointer:/undefined	007D114C	string_pointer	s_part_w0_007d114c	/string	/undefined	0	0	0		0
-007D0800	PTR_s_part_g0_007d0800	pointer:/undefined	007D10D4	string_pointer	s_part_g0_007d10d4	/string	/undefined	0	0	0		0
-007D0828	PTR_s_gr2part0_007d0828	pointer:/undefined	007D105C	string_pointer	s_gr2part0_007d105c	/string	/undefined	0	0	0		0
-007D0870	PTR_s_gr1part0_007d0870	pointer:/undefined	007D0F84	string_pointer	s_gr1part0_007d0f84	/string	/undefined	0	0	0		0
-007D08BC	PTR_s_rubb3_007d08bc	/pointer	007D0EB0	string_pointer	s_rubb3_007d0eb0	/string		0	0	0		0
-007D08C4	PTR_s_partsi01_007d08c4	pointer:/undefined	007D0EA4	string_pointer	s_partsi01_007d0ea4	/string	/undefined	0	0	0		0
-007D0924	PTR_s_part_s0_007d0924	pointer:/undefined	007D0E80	string_pointer	s_part_s0_007d0e80	/string	/undefined	0	0	0		0
-007D0984	PTR_s_grsi0_007d0984	pointer:/undefined	007D0E0C	string_pointer	s_grsi0_007d0e0c	/string	/undefined	0	0	0		0
-007D09D8	PTR_s_stoun0_007d09d8	pointer:/undefined	007D0DC4	string_pointer	s_stoun0_007d0dc4	/string	/undefined	0	0	0		0
-007D0C40	PTR_s_expl_sb0_007d0c40	/pointer	007D0D70	string_pointer	s_expl_sb0_007d0d70	/string		0	0	0		0
-007D0C44	PTR_s_expl_sb1_007d0c44	/pointer	007D0D64	string_pointer	s_expl_sb1_007d0d64	/string		0	0	0		0
-007D1480	PTR_s_rubb_w0_007d1480	pointer:/undefined	007D178C	string_pointer	s_rubb_w0_007d178c	/string	/undefined	0	0	0		0
-007D14A8	PTR_s_rubb_g0_007d14a8	pointer:/undefined	007D1714	string_pointer	s_rubb_g0_007d1714	/string	/undefined	0	0	0		0
-007D14D0	PTR_s_rubb3_007d14d0	pointer:/undefined	007D0EB0	string_pointer	s_rubb3_007d0eb0	/string	/undefined	0	0	0		0
-007D14F8	PTR_s_rubb_gb0_007d14f8	pointer:/undefined	007D169C	string_pointer	s_rubb_gb0_007d169c	/string	/undefined	0	0	0		0
-007D1514	PTR_s_rubb_gw0_007d1514	pointer:/undefined	007D1648	string_pointer	s_rubb_gw0_007d1648	/string	/undefined	0	0	0		0
-007D1818	PTR_s_ruin_10_007d1818	pointer:/undefined	007D19E4	string_pointer	s_ruin_10_007d19e4	/string	/undefined	0	0	0		0
-007D1834	PTR_s_ruin_40_007d1834	pointer:/undefined	007D1990	string_pointer	s_ruin_40_007d1990	/string	/undefined	0	0	0		0
-007D1850	PTR_s_ruin_s10_007d1850	pointer:/undefined	007D193C	string_pointer	s_ruin_s10_007d193c	/string	/undefined	0	0	0		0
-007D186C	PTR_s_ruin_s40_007d186c	pointer:/undefined	007D18E8	string_pointer	s_ruin_s40_007d18e8	/string	/undefined	0	0	0		0
-007D1BB4	PTR_s_pics_g_007d1bb4	pointer:/undefined	007CE674	string_pointer	s_pics_g_007ce674	/string	/undefined	0	0	0		0
-007D1BCC	PTR_s_starR_007d1bcc	/pointer	007D1D24	string_pointer	s_starR_007d1d24	/string		0	0	0		0
-007D1BD0	PTR_s_starF_007d1bd0	/pointer	007CF848	string_pointer	s_starF_007cf848	/string		0	0	0		0
-007D1F68	PTR_s_blast_p_007d1f68	pointer:/undefined	007D2090	string_pointer	s_blast_p_007d2090	/string	/undefined	0	0	0		0
+007D0718	PTR_s_particle0_007d0718	pointer:/char	007D1348	string_pointer	s_particle0_007d1348	/string	/char	0	1	1		0
+007D0758	PTR_s_particle01_007d0758	pointer:/char	007D126C	string_pointer	s_particle01_007d126c	/string	/char	0	1	1		0
+007D0798	PTR_s_partdw01_007d0798	pointer:/char	007D1170	string_pointer	s_partdw01_007d1170	/string	/char	0	1	1		0
+007D07D8	PTR_s_part_w0_007d07d8	pointer:/char	007D114C	string_pointer	s_part_w0_007d114c	/string	/char	0	1	1		0
+007D0800	PTR_s_part_g0_007d0800	pointer:/char	007D10D4	string_pointer	s_part_g0_007d10d4	/string	/char	0	1	1		0
+007D0828	PTR_s_gr2part0_007d0828	pointer:/char	007D105C	string_pointer	s_gr2part0_007d105c	/string	/char	0	1	1		0
+007D0870	PTR_s_gr1part0_007d0870	pointer:/char	007D0F84	string_pointer	s_gr1part0_007d0f84	/string	/char	0	1	1		0
+007D08BC	PTR_s_rubb3_007d08bc	pointer:/char	007D0EB0	string_pointer	s_rubb3_007d0eb0	/string	/char	0	1	2		0
+007D08C4	PTR_s_partsi01_007d08c4	pointer:/char	007D0EA4	string_pointer	s_partsi01_007d0ea4	/string	/char	0	1	1		0
+007D0924	PTR_s_part_s0_007d0924	pointer:/char	007D0E80	string_pointer	s_part_s0_007d0e80	/string	/char	0	1	1		0
+007D0984	PTR_s_grsi0_007d0984	pointer:/char	007D0E0C	string_pointer	s_grsi0_007d0e0c	/string	/char	0	1	1		0
+007D09D8	PTR_s_stoun0_007d09d8	pointer:/char	007D0DC4	string_pointer	s_stoun0_007d0dc4	/string	/char	0	1	1		0
+007D0C40	PTR_s_expl_sb0_007d0c40	pointer:/char	007D0D70	string_pointer	s_expl_sb0_007d0d70	/string	/char	0	1	2		0
+007D0C44	PTR_s_expl_sb1_007d0c44	pointer:/char	007D0D64	string_pointer	s_expl_sb1_007d0d64	/string	/char	0	1	1		0
+007D1480	PTR_s_rubb_w0_007d1480	pointer:/char	007D178C	string_pointer	s_rubb_w0_007d178c	/string	/char	0	1	1		0
+007D14A8	PTR_s_rubb_g0_007d14a8	pointer:/char	007D1714	string_pointer	s_rubb_g0_007d1714	/string	/char	0	1	1		0
+007D14D0	PTR_s_rubb3_007d14d0	pointer:/char	007D0EB0	string_pointer	s_rubb3_007d0eb0	/string	/char	0	1	2		0
+007D14F8	PTR_s_rubb_gb0_007d14f8	pointer:/char	007D169C	string_pointer	s_rubb_gb0_007d169c	/string	/char	0	1	1		0
+007D1514	PTR_s_rubb_gw0_007d1514	pointer:/char	007D1648	string_pointer	s_rubb_gw0_007d1648	/string	/char	0	1	1		0
+007D1818	PTR_s_ruin_10_007d1818	pointer:/char	007D19E4	string_pointer	s_ruin_10_007d19e4	/string	/char	0	1	1		0
+007D1834	PTR_s_ruin_40_007d1834	pointer:/char	007D1990	string_pointer	s_ruin_40_007d1990	/string	/char	0	1	1		0
+007D1850	PTR_s_ruin_s10_007d1850	pointer:/char	007D193C	string_pointer	s_ruin_s10_007d193c	/string	/char	0	1	2		0
+007D186C	PTR_s_ruin_s40_007d186c	pointer:/char	007D18E8	string_pointer	s_ruin_s40_007d18e8	/string	/char	0	1	1		0
+007D1BB4	PTR_s_pics_g_007d1bb4	pointer:/char	007CE674	string_pointer	s_pics_g_007ce674	/string	/char	0	1	1		0
+007D1BCC	PTR_s_starR_007d1bcc	pointer:/char	007D1D24	string_pointer	s_starR_007d1d24	/string	/char	0	1	2		0
+007D1BD0	PTR_s_starF_007d1bd0	pointer:/char	007CF848	string_pointer	s_starF_007cf848	/string	/char	0	1	2		0
+007D1F68	PTR_s_blast_p_007d1f68	pointer:/char	007D2090	string_pointer	s_blast_p_007d2090	/string	/char	0	1	2		0
 007D2D1C	PTR_thunk_FUN_00673160_007d2d1c	/pointer	00402F2C	code_pointer	thunk_FUN_00673160			0	0	0		0
 007D3FA8	PTR_thunk_FUN_00680270_007d3fa8	pointer:/undefined	00405DA8	code_pointer	thunk_FUN_00680270		/undefined	0	0	0		0
 007D7F70	PTR_DAT_007d7f70	pointer:/undefined	007D62F0	initialized_data_pointer	DAT_007d62f0		/undefined	0	0	0		0
 007EC188	PTR_DAT_007ec188	/pointer	007EC1C0	initialized_data_pointer	DAT_007ec1c0			0	0	0		0
-007EC18C	PTR_s_Normal_007ec18c	pointer:/undefined	007EC1B8	string_pointer	s_Normal_007ec1b8	/string	/undefined	0	0	0		0
+007EC18C	PTR_s_Normal_007ec18c	pointer:/char	007EC1B8	string_pointer	s_Normal_007ec1b8	/string	/char	0	1	1		0
 007ED56C	PTR_DAT_007ed56c	/pointer	007ED534	initialized_data_pointer	DAT_007ed534	/undefined4		0	0	0		0
 007ED714	PTR_DAT_007ed714	/pointer	007ED6DC	initialized_data_pointer	DAT_007ed6dc			0	0	0		0
 007EDE0C	PTR_DAT_007ede0c	/pointer	007EDDEC	initialized_data_pointer	DAT_007eddec			0	0	0		0
@@ -352,14 +352,14 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 007F0B00	PTR_DAT_007f0b00	/pointer	007C72D8	initialized_data_pointer	DAT_007c72d8	/undefined1		0	0	0		0
 007F0B04	PTR_DAT_007f0b04	/pointer	008016A0	initialized_data_pointer	DAT_008016a0	/undefined1		0	0	0		0
 007F10F8	PTR_FUN_007f10f8	/pointer	0072DDB0	code_pointer	Library::MSVCRT::FUN_0072ddb0			0	0	0		0
-007F123C	PTR_s_LC_COLLATE_007f123c	/pointer	0079FED8	string_pointer	s_LC_COLLATE_0079fed8	/string		0	0	0		0
+007F123C	PTR_s_LC_COLLATE_007f123c	pointer:/char	0079FED8	string_pointer	s_LC_COLLATE_0079fed8	/string	/char	0	1	1		0
 007F1240	PTR_DAT_007f1240	/pointer	007F1120	initialized_data_pointer	DAT_007f1120			0	0	0		0
-007F1248	PTR_s_LC_CTYPE_007f1248	/pointer	0079FECC	string_pointer	s_LC_CTYPE_0079fecc	/string		0	0	0		0
+007F1248	PTR_s_LC_CTYPE_007f1248	pointer:/char	0079FECC	string_pointer	s_LC_CTYPE_0079fecc	/string	/char	0	1	1		0
 007F124C	PTR_DAT_007f124c	pointer:/undefined	007F1120	initialized_data_pointer	DAT_007f1120		/undefined	0	0	0		0
 007F1280	PTR_DAT_007f1280	/pointer	007F128A	initialized_data_pointer	DAT_007f128a			0	0	0		0
 007F1284	PTR_DAT_007f1284	/pointer	007F128A	initialized_data_pointer	DAT_007f128a			0	0	0		0
 007F1498	PTR_FUN_007f1498	/pointer	00730E80	code_pointer	Library::MSVCRT::FUN_00730e80			0	0	0		0
-007F14B8	PTR_s_Warning_007f14b8	/pointer	0079FF4C	string_pointer	s_Warning_0079ff4c	/string		0	0	0		0
+007F14B8	PTR_s_Warning_007f14b8	pointer:/char	0079FF4C	string_pointer	s_Warning_0079ff4c	/string	/char	0	1	1		0
 007F14CC	PTR___exit_007f14cc	/pointer	0072EFA0	code_pointer	Library::MSVCRT::__exit			0	0	0		0
 007F1530	PTR___fptrap_007f1530	/pointer	007406A0	code_pointer	Library::MSVCRT::__fptrap			0	0	0		0
 007F1534	PTR___fptrap_007f1534	/pointer	007406A0	code_pointer	Library::MSVCRT::__fptrap			0	0	0		0
@@ -368,25 +368,25 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 007F1540	PTR___fptrap_007f1540	/pointer	007406A0	code_pointer	Library::MSVCRT::__fptrap			0	0	0		0
 007F1544	PTR___fptrap_007f1544	/pointer	007406A0	code_pointer	Library::MSVCRT::__fptrap			0	0	0		0
 007F1554	PTR_DAT_007f1554	/pointer	007A0260	initialized_data_pointer	DAT_007a0260			0	0	0		0
-007F177C	PTR_s_Spanish_-_Traditional_Sort_007f177c	/pointer	007A0450	string_pointer	s_Spanish_-_Traditional_Sort_007a0450	/string		0	0	0		0
-007F1784	PTR_s_Spain_007f1784	/pointer	007A0448	string_pointer	s_Spain_007a0448	/string		0	0	0		0
-007F1C28	PTR_s_america_007f1c28	/pointer	007A0558	string_pointer	s_america_007a0558	/string		0	0	0		0
-007F1CE0	PTR_s_american_007f1ce0	/pointer	007A0968	string_pointer	s_american_007a0968	/string		0	0	0		0
+007F177C	PTR_s_Spanish_-_Traditional_Sort_007f177c	pointer:/char	007A0450	string_pointer	s_Spanish_-_Traditional_Sort_007a0450	/string	/char	0	1	1		0
+007F1784	PTR_s_Spain_007f1784	pointer:/char	007A0448	string_pointer	s_Spain_007a0448	/string	/char	0	1	1		0
+007F1C28	PTR_s_america_007f1c28	pointer:/char	007A0558	string_pointer	s_america_007a0558	/string	/char	0	1	1		0
+007F1CE0	PTR_s_american_007f1ce0	pointer:/char	007A0968	string_pointer	s_american_007a0968	/string	/char	0	1	1		0
 007F1F58	PTR_DAT_007f1f58	/pointer	007A0A34	initialized_data_pointer	DAT_007a0a34	/undefined1		0	0	0		0
 007F1F5C	PTR_DAT_007f1f5c	/pointer	007A0A24	initialized_data_pointer	DAT_007a0a24	/undefined2		0	0	0		0
 007F1F68	PTR_DAT_007f1f68	/pointer	008572C8	initialized_data_pointer	DAT_008572c8	/undefined4		0	0	0		0
-007F2004	PTR_s_R6002_-_floating_point_not_loade_007f2004	/pointer	007A0D50	string_pointer	s_R6002_-_floating_point_not_loade_007a0d50	/string		0	0	0		0
+007F2004	PTR_s_R6002_-_floating_point_not_loade_007f2004	pointer:/char	007A0D50	string_pointer	s_R6002_-_floating_point_not_loade_007a0d50	/string	/char	0	1	1		0
 007F2090	PTR_DAT_007f2090	/pointer	00859180	initialized_data_pointer	DAT_00859180			0	0	0		0
 007F2640	PTR_PTR_007f2640	/pointer	007F2648	initialized_data_pointer	PTR_DAT_007f2648	pointer:/undefined		0	0	0		0
 007F2648	PTR_DAT_007f2648	pointer:/undefined	007A0F78	initialized_data_pointer	DAT_007a0f78		/undefined	0	0	0		0
-007F2664	PTR_s_Sunday_007f2664	pointer:/undefined	007A0F58	string_pointer	s_Sunday_007a0f58	/string	/undefined	0	0	0		0
+007F2664	PTR_s_Sunday_007f2664	pointer:/char	007A0F58	string_pointer	s_Sunday_007a0f58	/string	/char	0	1	1		0
 007F2680	PTR_DAT_007f2680	pointer:/undefined	007A0F18	initialized_data_pointer	DAT_007a0f18		/undefined	0	0	0		0
-007F26B0	PTR_s_January_007f26b0	pointer:/undefined	007A0EE4	string_pointer	s_January_007a0ee4	/string	/undefined	0	0	0		0
+007F26B0	PTR_s_January_007f26b0	pointer:/char	007A0EE4	string_pointer	s_January_007a0ee4	/string	/char	0	1	1		0
 007F26E0	PTR_DAT_007f26e0	/pointer	007A0E80	initialized_data_pointer	DAT_007a0e80			0	0	0		0
 007F26E4	PTR_DAT_007f26e4	/pointer	007A0E7C	initialized_data_pointer	DAT_007a0e7c			0	0	0		0
-007F26E8	PTR_s_M/d/yy_007f26e8	/pointer	007A0E74	string_pointer	s_M/d/yy_007a0e74	/string		0	0	0		0
-007F26EC	PTR_s_dddd,_MMMM_dd,_yyyy_007f26ec	/pointer	007A0E60	string_pointer	s_dddd,_MMMM_dd,_yyyy_007a0e60	/string		0	0	0		0
-007F26F0	PTR_s_H:mm:ss_007f26f0	/pointer	007A0E58	string_pointer	s_H:mm:ss_007a0e58	/string		0	0	0		0
+007F26E8	PTR_s_M/d/yy_007f26e8	pointer:/char	007A0E74	string_pointer	s_M/d/yy_007a0e74	/string	/char	0	1	1		0
+007F26EC	PTR_s_dddd,_MMMM_dd,_yyyy_007f26ec	pointer:/char	007A0E60	string_pointer	s_dddd,_MMMM_dd,_yyyy_007a0e60	/string	/char	0	1	1		0
+007F26F0	PTR_s_H:mm:ss_007f26f0	pointer:/char	007A0E58	string_pointer	s_H:mm:ss_007a0e58	/string	/char	0	1	1		0
 007F2700	PTR_DAT_007f2700	/pointer	007F26F8	initialized_data_pointer	DAT_007f26f8			0	0	0		0
 007F2704	PTR_DAT_007f2704	/pointer	00857428	initialized_data_pointer	DAT_00857428			0	0	0		0
 007F2708	PTR_DAT_007f2708	pointer:/undefined	00857428	initialized_data_pointer	DAT_00857428		/undefined	0	0	0		0
@@ -419,16 +419,16 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 00806784	PTR_00806784	pointer:/int	00000000	zero_initialized_global			/int	0	1	13		0
 0080678C	PTR_0080678c	pointer:/int	00000000	zero_initialized_global			/int	0	1	52		0
 00806794	PTR_00806794	pointer:/int	00000000	zero_initialized_global			/int	0	1	46		0
+0080679C	PTR_0080679c	pointer:/ushort	00000000	zero_initialized_global			/ushort	0	1	11		0
 008073CC	PTR_008073cc	pointer:/ushort	00000000	zero_initialized_global			/ushort	0	1	29		0
 0080C502	PTR_0080c502	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	0		0
-00811718	PTR_00811718	pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	00000000	zero_initialized_global			/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	1	1	2	/void *32	0
-0081171C	PTR_0081171c	pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	00000000	zero_initialized_global			/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	1	1	1	/void *32	0
+00811718	PTR_00811718	pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	00000000	zero_initialized_global			/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	1	1	0		0
+0081171C	PTR_0081171c	pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	00000000	zero_initialized_global			/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	1	1	0		0
 0081175C	PTR_0081175c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD	1	1	2	pointer:/ushort	0
 0081194C	PTR_0081194c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081194C_4D1525E6	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081194C_4D1525E6	1	1	1		0
 00811AEC	PTR_00811aec	pointer:/char	00000000	zero_initialized_global			/char	0	1	18		0
 00811AF0	PTR_00811af0	pointer:/char	00000000	zero_initialized_global			/char	0	1	3		0
-008489C4	PTR_008489c4	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489C4_F7BABFAC	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489C4_F7BABFAC	1	1	4		0
-008489CC	PTR_008489cc	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489CC_CDF8C3F4	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489CC_CDF8C3F4	1	1	3		0
+008489CC	PTR_008489cc	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489CC_CDF8C3F4	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489CC_CDF8C3F4	1	1	2	/int	0
 00853FF8	PTR_00853ff8	pointer:/cMf32	00000000	zero_initialized_global			/cMf32	0	1	1		0
 00854EE8	PTR_00854ee8	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00854EE8_A19F58CE	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00854EE8_A19F58CE	1	1	1	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006CEC40_BB23E716	0
 00857168	PTR_00857168	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00857168_D75747E9	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00857168_D75747E9	1	1	0		0

@@ -20,12 +20,16 @@ STAllPlayersC::UnRegisterObject
   STAllPlayersC *this_00;
   STGroupBoatC *pSVar4;
   short sVar5;
-  int iVar6;
-  undefined4 uVar7;
-  STGameObjC *pSVar8;
-  DArrayTy *pDVar9;
   int iVar10;
-  uint uVar11;
+  int iVar7;
+  int local_EAX_1804;
+  int local_EAX_3102;
+  undefined4 uVar8;
+  STGameObjC *pSVar9;
+  DArrayTy *pDVar10;
+  int iVar6;
+  int iVar11;
+  uint uVar12;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;
   InternalExceptionFrame local_68;
@@ -38,11 +42,11 @@ STAllPlayersC::UnRegisterObject
   undefined4 local_c;
   undefined4 local_8;
 
-  iVar10 = (int)param_1;
+  iVar11 = (int)param_1;
   local_c = 0;
-  local_14 = (DArrayTy *)g_packedRecords_A62x8[iVar10].field3_0x9;
-  local_1c = (DArrayTy *)g_packedRecords_A62x8[iVar10].field2_0x5;
-  local_20 = (DArrayTy *)g_packedRecords_A62x8[iVar10].field355_0x2e7;
+  local_14 = (DArrayTy *)g_packedRecords_A62x8[iVar11].field3_0x9;
+  local_1c = (DArrayTy *)g_packedRecords_A62x8[iVar11].field2_0x5;
+  local_20 = (DArrayTy *)g_packedRecords_A62x8[iVar11].field355_0x2e7;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_18 = this;
@@ -67,206 +71,207 @@ STAllPlayersC::UnRegisterObject
   }
   if (param_4[8] == 0x14) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar10 = (**(code **)(*param_4 + 0x2c))();
-    if ((*(uint *)(&DAT_00801480 + (iVar10 + 0x41U >> 5) * 4) & 1 << ((byte)(iVar10 + 0x41U) & 0x1f)
+    iVar11 = (**(code **)(*param_4 + 0x2c))();
+    if ((*(uint *)(&DAT_00801480 + (iVar11 + 0x41U >> 5) * 4) & 1 << ((byte)(iVar11 + 0x41U) & 0x1f)
         ) == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar10 = (**(code **)(*param_4 + 0x2c))();
-      if ((*(uint *)(&DAT_00800f10 + (iVar10 + 0x41U >> 5) * 4) &
-          1 << ((byte)(iVar10 + 0x41U) & 0x1f)) == 0) {
+      iVar11 = (**(code **)(*param_4 + 0x2c))();
+      if ((*(uint *)(&DAT_00800f10 + (iVar11 + 0x41U >> 5) * 4) &
+          1 << ((byte)(iVar11 + 0x41U) & 0x1f)) == 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar10 = (**(code **)(*param_4 + 0x2c))();
-        if ((*(uint *)(&DAT_00801450 + (iVar10 + 0x41U >> 5) * 4) &
-            1 << ((byte)(iVar10 + 0x41U) & 0x1f)) == 0) goto LAB_0042f42f;
+        iVar11 = (**(code **)(*param_4 + 0x2c))();
+        if ((*(uint *)(&DAT_00801450 + (iVar11 + 0x41U >> 5) * 4) &
+            1 << ((byte)(iVar11 + 0x41U) & 0x1f)) == 0) goto LAB_0042f42f;
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        iVar10 = param_1 * 0xa62;
+        iVar11 = param_1 * 0xa62;
         g_packedRecords_A62x8[param_1].field20_0x33 =
              g_packedRecords_A62x8[param_1].field20_0x33 + -1;
       }
       else {
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        iVar10 = param_1 * 0xa62;
+        iVar11 = param_1 * 0xa62;
         g_packedRecords_A62x8[param_1].field19_0x2f =
              g_packedRecords_A62x8[param_1].field19_0x2f + -1;
       }
     }
     else {
       /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-      iVar10 = param_1 * 0xa62;
+      iVar11 = param_1 * 0xa62;
       g_packedRecords_A62x8[param_1].field18_0x2b = g_packedRecords_A62x8[param_1].field18_0x2b + -1
       ;
     }
-    piVar1 = (int *)((int)&g_packedRecords_A62x8[0].field21_0x37 + iVar10);
+    piVar1 = (int *)((int)&g_packedRecords_A62x8[0].field21_0x37 + iVar11);
     *piVar1 = *piVar1 + 1;
   }
 LAB_0042f42f:
   if (param_4[8] == 1000) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar10 = (**(code **)(*param_4 + 0x2c))();
-    if ((*(uint *)(&DAT_00800f90 + (iVar10 - 0x32U >> 5) * 4) & 1 << ((byte)(iVar10 - 0x32U) & 0x1f)
+    iVar11 = (**(code **)(*param_4 + 0x2c))();
+    if ((*(uint *)(&DAT_00800f90 + (iVar11 - 0x32U >> 5) * 4) & 1 << ((byte)(iVar11 - 0x32U) & 0x1f)
         ) == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar10 = (**(code **)(*param_4 + 0x2c))();
-      if ((*(uint *)(&DAT_00801360 + (iVar10 - 0x32U >> 5) * 4) &
-          1 << ((byte)(iVar10 - 0x32U) & 0x1f)) == 0) {
+      iVar11 = (**(code **)(*param_4 + 0x2c))();
+      if ((*(uint *)(&DAT_00801360 + (iVar11 - 0x32U >> 5) * 4) &
+          1 << ((byte)(iVar11 - 0x32U) & 0x1f)) == 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar10 = (**(code **)(*param_4 + 0x2c))();
+        iVar11 = (**(code **)(*param_4 + 0x2c))();
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((*(uint *)(&DAT_008014a0 + (iVar10 - 0x32U >> 5) * 4) &
-             1 << ((byte)(iVar10 - 0x32U) & 0x1f)) == 0) &&
-           (iVar10 = (**(code **)(*param_4 + 0x2c))(),
-           (*(uint *)(&DAT_00800f80 + (iVar10 - 0x32U >> 5) * 4) &
-           1 << ((byte)(iVar10 - 0x32U) & 0x1f)) == 0)) goto LAB_0042f547;
+        if (((*(uint *)(&DAT_008014a0 + (iVar11 - 0x32U >> 5) * 4) &
+             1 << ((byte)(iVar11 - 0x32U) & 0x1f)) == 0) &&
+           (iVar11 = (**(code **)(*param_4 + 0x2c))(),
+           (*(uint *)(&DAT_00800f80 + (iVar11 - 0x32U >> 5) * 4) &
+           1 << ((byte)(iVar11 - 0x32U) & 0x1f)) == 0)) goto LAB_0042f547;
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        iVar10 = param_1 * 0xa62;
+        iVar11 = param_1 * 0xa62;
         g_packedRecords_A62x8[param_1].field24_0x43 =
              g_packedRecords_A62x8[param_1].field24_0x43 + -1;
       }
       else {
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        iVar10 = param_1 * 0xa62;
+        iVar11 = param_1 * 0xa62;
         g_packedRecords_A62x8[param_1].field23_0x3f =
              g_packedRecords_A62x8[param_1].field23_0x3f + -1;
       }
     }
     else {
       /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-      iVar10 = param_1 * 0xa62;
+      iVar11 = param_1 * 0xa62;
       g_packedRecords_A62x8[param_1].field22_0x3b = g_packedRecords_A62x8[param_1].field22_0x3b + -1
       ;
     }
-    piVar1 = (int *)((int)&g_packedRecords_A62x8[0].field25_0x47 + iVar10);
+    piVar1 = (int *)((int)&g_packedRecords_A62x8[0].field25_0x47 + iVar11);
     *piVar1 = *piVar1 + 1;
   }
 LAB_0042f547:
   pMVar3 = g_money_008016D4;
   if (param_4[8] == 0x14) {
-    iVar10 = (int)param_1;
-    g_packedRecords_A62x8[iVar10].field4_0xd = g_packedRecords_A62x8[iVar10].field4_0xd + -1;
+    iVar11 = (int)param_1;
+    g_packedRecords_A62x8[iVar11].field4_0xd = g_packedRecords_A62x8[iVar11].field4_0xd + -1;
     if (pMVar3 != nullptr) {
-      MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar10].field4_0xd);
+      MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar11].field4_0xd);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar6 = (**(code **)(*param_4 + 0x2c))();
-    if (iVar6 != 0x19) {
+    iVar7 = (**(code **)(*param_4 + 0x2c))();
+    if (iVar7 != 0x19) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar6 = (**(code **)(*param_4 + 0x2c))();
-      if (((&DAT_00801000)[iVar6 + 0x41U >> 5] & 1 << ((byte)(iVar6 + 0x41U) & 0x1f)) == 0) {
+      iVar7 = (**(code **)(*param_4 + 0x2c))();
+      if (((&DAT_00801000)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar6 = (**(code **)(*param_4 + 0x2c))();
-        if (((&DAT_00801010)[iVar6 + 0x41U >> 5] & 1 << ((byte)(iVar6 + 0x41U) & 0x1f)) == 0) {
+        iVar7 = (**(code **)(*param_4 + 0x2c))();
+        if (((&DAT_00801010)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar6 = (**(code **)(*param_4 + 0x2c))();
-          if (((&DAT_00800f00)[iVar6 + 0x41U >> 5] & 1 << ((byte)(iVar6 + 0x41U) & 0x1f)) == 0) {
+          iVar7 = (**(code **)(*param_4 + 0x2c))();
+          if (((&DAT_00800f00)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar6 = (**(code **)(*param_4 + 0x2c))();
-            if (((&DAT_00801370)[iVar6 + 0x41U >> 5] & 1 << ((byte)(iVar6 + 0x41U) & 0x1f)) == 0) {
+            iVar7 = (**(code **)(*param_4 + 0x2c))();
+            if (((&DAT_00801370)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar6 = (**(code **)(*param_4 + 0x2c))();
-              if (((&DAT_00800fa0)[iVar6 + 0x41U >> 5] & 1 << ((byte)(iVar6 + 0x41U) & 0x1f)) == 0)
+              iVar7 = (**(code **)(*param_4 + 0x2c))();
+              if (((&DAT_00800fa0)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0)
               {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                iVar6 = (**(code **)(*param_4 + 0x2c))();
-                if (((&DAT_00800ff0)[iVar6 + 0x41U >> 5] & 1 << ((byte)(iVar6 + 0x41U) & 0x1f)) == 0
+                iVar7 = (**(code **)(*param_4 + 0x2c))();
+                if (((&DAT_00800ff0)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0
                    ) {
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                  iVar6 = (**(code **)(*param_4 + 0x2c))();
-                  if ((*(uint *)(&DAT_00801460 + (iVar6 + 0x41U >> 5) * 4) &
-                      1 << ((byte)(iVar6 + 0x41U) & 0x1f)) == 0) {
+                  iVar7 = (**(code **)(*param_4 + 0x2c))();
+                  if ((*(uint *)(&DAT_00801460 + (iVar7 + 0x41U >> 5) * 4) &
+                      1 << ((byte)(iVar7 + 0x41U) & 0x1f)) == 0) {
                     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                    iVar6 = (**(code **)(*param_4 + 0x2c))();
-                    if (((&DAT_00800fe0)[iVar6 + 0x41U >> 5] & 1 << ((byte)(iVar6 + 0x41U) & 0x1f))
+                    iVar7 = (**(code **)(*param_4 + 0x2c))();
+                    if (((&DAT_00800fe0)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f))
                         == 0) {
-                      iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x73c,0,0
-                                                  ,"%s",
-                                                  "STAllPlayersC::UnRegisterObject unknown boat type");
-                      if (iVar10 != 0) {
+                      local_EAX_1804 =
+                           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x73c,0,0,
+                                              "%s",
+                                              "STAllPlayersC::UnRegisterObject unknown boat type");
+                      if (local_EAX_1804 != 0) {
                         STDebugBreak(); /* noreturn in standalone pseudocode */
                       }
                     }
                     else {
-                      g_packedRecords_A62x8[iVar10].field54_0xbb =
-                           g_packedRecords_A62x8[iVar10].field54_0xbb + -1;
+                      g_packedRecords_A62x8[iVar11].field54_0xbb =
+                           g_packedRecords_A62x8[iVar11].field54_0xbb + -1;
                       if ((param_5 != 0xfe) &&
-                         (g_packedRecords_A62x8[iVar10].field56_0xc3 =
-                               g_packedRecords_A62x8[iVar10].field56_0xc3 + 1, param_5 != 0xff)) {
+                         (g_packedRecords_A62x8[iVar11].field56_0xc3 =
+                               g_packedRecords_A62x8[iVar11].field56_0xc3 + 1, param_5 != 0xff)) {
                         g_packedRecords_A62x8[param_5].field57_0xc7 =
                              g_packedRecords_A62x8[param_5].field57_0xc7 + 1;
                       }
                     }
                   }
                   else {
-                    g_packedRecords_A62x8[iVar10].field50_0xab =
-                         g_packedRecords_A62x8[iVar10].field50_0xab + -1;
+                    g_packedRecords_A62x8[iVar11].field50_0xab =
+                         g_packedRecords_A62x8[iVar11].field50_0xab + -1;
                     if ((param_5 != 0xfe) &&
-                       (g_packedRecords_A62x8[iVar10].field52_0xb3 =
-                             g_packedRecords_A62x8[iVar10].field52_0xb3 + 1, param_5 != 0xff)) {
+                       (g_packedRecords_A62x8[iVar11].field52_0xb3 =
+                             g_packedRecords_A62x8[iVar11].field52_0xb3 + 1, param_5 != 0xff)) {
                       g_packedRecords_A62x8[param_5].field53_0xb7 =
                            g_packedRecords_A62x8[param_5].field53_0xb7 + 1;
                     }
                   }
                 }
                 else {
-                  g_packedRecords_A62x8[iVar10].field46_0x9b =
-                       g_packedRecords_A62x8[iVar10].field46_0x9b + -1;
+                  g_packedRecords_A62x8[iVar11].field46_0x9b =
+                       g_packedRecords_A62x8[iVar11].field46_0x9b + -1;
                   if ((param_5 != 0xfe) &&
-                     (g_packedRecords_A62x8[iVar10].field48_0xa3 =
-                           g_packedRecords_A62x8[iVar10].field48_0xa3 + 1, param_5 != 0xff)) {
+                     (g_packedRecords_A62x8[iVar11].field48_0xa3 =
+                           g_packedRecords_A62x8[iVar11].field48_0xa3 + 1, param_5 != 0xff)) {
                     g_packedRecords_A62x8[param_5].field49_0xa7 =
                          g_packedRecords_A62x8[param_5].field49_0xa7 + 1;
                   }
                 }
               }
               else {
-                g_packedRecords_A62x8[iVar10].field42_0x8b =
-                     g_packedRecords_A62x8[iVar10].field42_0x8b + -1;
+                g_packedRecords_A62x8[iVar11].field42_0x8b =
+                     g_packedRecords_A62x8[iVar11].field42_0x8b + -1;
                 if ((param_5 != 0xfe) &&
-                   (g_packedRecords_A62x8[iVar10].field44_0x93 =
-                         g_packedRecords_A62x8[iVar10].field44_0x93 + 1, param_5 != 0xff)) {
+                   (g_packedRecords_A62x8[iVar11].field44_0x93 =
+                         g_packedRecords_A62x8[iVar11].field44_0x93 + 1, param_5 != 0xff)) {
                   g_packedRecords_A62x8[param_5].field45_0x97 =
                        g_packedRecords_A62x8[param_5].field45_0x97 + 1;
                 }
               }
             }
             else {
-              g_packedRecords_A62x8[iVar10].field38_0x7b =
-                   g_packedRecords_A62x8[iVar10].field38_0x7b + -1;
+              g_packedRecords_A62x8[iVar11].field38_0x7b =
+                   g_packedRecords_A62x8[iVar11].field38_0x7b + -1;
               if ((param_5 != 0xfe) &&
-                 (g_packedRecords_A62x8[iVar10].field40_0x83 =
-                       g_packedRecords_A62x8[iVar10].field40_0x83 + 1, param_5 != 0xff)) {
+                 (g_packedRecords_A62x8[iVar11].field40_0x83 =
+                       g_packedRecords_A62x8[iVar11].field40_0x83 + 1, param_5 != 0xff)) {
                 g_packedRecords_A62x8[param_5].field41_0x87 =
                      g_packedRecords_A62x8[param_5].field41_0x87 + 1;
               }
             }
           }
           else {
-            g_packedRecords_A62x8[iVar10].field34_0x6b =
-                 g_packedRecords_A62x8[iVar10].field34_0x6b + -1;
+            g_packedRecords_A62x8[iVar11].field34_0x6b =
+                 g_packedRecords_A62x8[iVar11].field34_0x6b + -1;
             if ((param_5 != 0xfe) &&
-               (g_packedRecords_A62x8[iVar10].field36_0x73 =
-                     g_packedRecords_A62x8[iVar10].field36_0x73 + 1, param_5 != 0xff)) {
+               (g_packedRecords_A62x8[iVar11].field36_0x73 =
+                     g_packedRecords_A62x8[iVar11].field36_0x73 + 1, param_5 != 0xff)) {
               g_packedRecords_A62x8[param_5].field37_0x77 =
                    g_packedRecords_A62x8[param_5].field37_0x77 + 1;
             }
           }
         }
         else {
-          g_packedRecords_A62x8[iVar10].field30_0x5b =
-               g_packedRecords_A62x8[iVar10].field30_0x5b + -1;
+          g_packedRecords_A62x8[iVar11].field30_0x5b =
+               g_packedRecords_A62x8[iVar11].field30_0x5b + -1;
           if ((param_5 != 0xfe) &&
-             (g_packedRecords_A62x8[iVar10].field32_0x63 =
-                   g_packedRecords_A62x8[iVar10].field32_0x63 + 1, param_5 != 0xff)) {
+             (g_packedRecords_A62x8[iVar11].field32_0x63 =
+                   g_packedRecords_A62x8[iVar11].field32_0x63 + 1, param_5 != 0xff)) {
             g_packedRecords_A62x8[param_5].field33_0x67 =
                  g_packedRecords_A62x8[param_5].field33_0x67 + 1;
           }
         }
       }
       else {
-        g_packedRecords_A62x8[iVar10].field26_0x4b = g_packedRecords_A62x8[iVar10].field26_0x4b + -1
+        g_packedRecords_A62x8[iVar11].field26_0x4b = g_packedRecords_A62x8[iVar11].field26_0x4b + -1
         ;
         if ((param_5 != 0xfe) &&
-           (g_packedRecords_A62x8[iVar10].field28_0x53 =
-                 g_packedRecords_A62x8[iVar10].field28_0x53 + 1, param_5 != 0xff)) {
+           (g_packedRecords_A62x8[iVar11].field28_0x53 =
+                 g_packedRecords_A62x8[iVar11].field28_0x53 + 1, param_5 != 0xff)) {
           g_packedRecords_A62x8[param_5].field29_0x57 =
                g_packedRecords_A62x8[param_5].field29_0x57 + 1;
         }
@@ -275,160 +280,161 @@ LAB_0042f547:
   }
   pMVar3 = g_money_008016D4;
   if (param_4[8] == 1000) {
-    iVar10 = (int)param_1;
-    g_packedRecords_A62x8[iVar10].field4_0xd = g_packedRecords_A62x8[iVar10].field4_0xd + -1;
+    iVar11 = (int)param_1;
+    g_packedRecords_A62x8[iVar11].field4_0xd = g_packedRecords_A62x8[iVar11].field4_0xd + -1;
     if (pMVar3 != nullptr) {
-      MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar10].field4_0xd);
+      MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar11].field4_0xd);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar6 = (**(code **)(*param_4 + 0x2c))();
-    if (iVar6 == 0x33) {
-      g_packedRecords_A62x8[iVar10].field94_0x15b = g_packedRecords_A62x8[iVar10].field94_0x15b + -1
+    iVar7 = (**(code **)(*param_4 + 0x2c))();
+    if (iVar7 == 0x33) {
+      g_packedRecords_A62x8[iVar11].field94_0x15b = g_packedRecords_A62x8[iVar11].field94_0x15b + -1
       ;
     }
-    else if (iVar6 == 0x62) {
-      g_packedRecords_A62x8[iVar10].field95_0x15f = g_packedRecords_A62x8[iVar10].field95_0x15f + -1
+    else if (iVar7 == 0x62) {
+      g_packedRecords_A62x8[iVar11].field95_0x15f = g_packedRecords_A62x8[iVar11].field95_0x15f + -1
       ;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar6 = (**(code **)(*param_4 + 0x2c))();
-    if (((&DAT_00801420)[iVar6 - 0x32U >> 5] & 1 << ((byte)(iVar6 - 0x32U) & 0x1f)) == 0) {
+    iVar7 = (**(code **)(*param_4 + 0x2c))();
+    if (((&DAT_00801420)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar6 = (**(code **)(*param_4 + 0x2c))();
-      if (((&DAT_008013e0)[iVar6 - 0x32U >> 5] & 1 << ((byte)(iVar6 - 0x32U) & 0x1f)) == 0) {
+      iVar7 = (**(code **)(*param_4 + 0x2c))();
+      if (((&DAT_008013e0)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar6 = (**(code **)(*param_4 + 0x2c))();
-        if (((&DAT_00800ee0)[iVar6 - 0x32U >> 5] & 1 << ((byte)(iVar6 - 0x32U) & 0x1f)) == 0) {
+        iVar7 = (**(code **)(*param_4 + 0x2c))();
+        if (((&DAT_00800ee0)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar6 = (**(code **)(*param_4 + 0x2c))();
-          if (((&DAT_00801490)[iVar6 - 0x32U >> 5] & 1 << ((byte)(iVar6 - 0x32U) & 0x1f)) == 0) {
+          iVar7 = (**(code **)(*param_4 + 0x2c))();
+          if (((&DAT_00801490)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar6 = (**(code **)(*param_4 + 0x2c))();
-            if (((&DAT_00800f20)[iVar6 - 0x32U >> 5] & 1 << ((byte)(iVar6 - 0x32U) & 0x1f)) == 0) {
+            iVar7 = (**(code **)(*param_4 + 0x2c))();
+            if (((&DAT_00800f20)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar6 = (**(code **)(*param_4 + 0x2c))();
-              if (((&DAT_00800ef0)[iVar6 - 0x32U >> 5] & 1 << ((byte)(iVar6 - 0x32U) & 0x1f)) == 0)
+              iVar7 = (**(code **)(*param_4 + 0x2c))();
+              if (((&DAT_00800ef0)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0)
               {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                iVar6 = (**(code **)(*param_4 + 0x2c))();
-                if (((&DAT_00801430)[iVar6 - 0x32U >> 5] & 1 << ((byte)(iVar6 - 0x32U) & 0x1f)) == 0
+                iVar7 = (**(code **)(*param_4 + 0x2c))();
+                if (((&DAT_00801430)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) == 0
                    ) {
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                  iVar6 = (**(code **)(*param_4 + 0x2c))();
-                  if (((&DAT_00801440)[iVar6 - 0x32U >> 5] & 1 << ((byte)(iVar6 - 0x32U) & 0x1f)) ==
+                  iVar7 = (**(code **)(*param_4 + 0x2c))();
+                  if (((&DAT_00801440)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f)) ==
                       0) {
                     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                    iVar6 = (**(code **)(*param_4 + 0x2c))();
-                    if (((&DAT_00800f60)[iVar6 - 0x32U >> 5] & 1 << ((byte)(iVar6 - 0x32U) & 0x1f))
+                    iVar7 = (**(code **)(*param_4 + 0x2c))();
+                    if (((&DAT_00800f60)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f))
                         == 0) {
-                      iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x797,0,0
-                                                  ,"%s",
-                                                  "STAllPlayersC::UnRegisterObject unknown object type");
-                      if (iVar10 != 0) {
+                      local_EAX_3102 =
+                           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x797,0,0,
+                                              "%s",
+                                              "STAllPlayersC::UnRegisterObject unknown object type");
+                      if (local_EAX_3102 != 0) {
                         STDebugBreak(); /* noreturn in standalone pseudocode */
                       }
                     }
                     else {
-                      g_packedRecords_A62x8[iVar10].field90_0x14b =
-                           g_packedRecords_A62x8[iVar10].field90_0x14b + -1;
+                      g_packedRecords_A62x8[iVar11].field90_0x14b =
+                           g_packedRecords_A62x8[iVar11].field90_0x14b + -1;
                       if ((param_5 != 0xfe) &&
-                         (g_packedRecords_A62x8[iVar10].field92_0x153 =
-                               g_packedRecords_A62x8[iVar10].field92_0x153 + 1, param_5 != 0xff)) {
+                         (g_packedRecords_A62x8[iVar11].field92_0x153 =
+                               g_packedRecords_A62x8[iVar11].field92_0x153 + 1, param_5 != 0xff)) {
                         g_packedRecords_A62x8[param_5].field93_0x157 =
                              g_packedRecords_A62x8[param_5].field93_0x157 + 1;
                       }
                     }
                   }
                   else {
-                    g_packedRecords_A62x8[iVar10].field86_0x13b =
-                         g_packedRecords_A62x8[iVar10].field86_0x13b + -1;
+                    g_packedRecords_A62x8[iVar11].field86_0x13b =
+                         g_packedRecords_A62x8[iVar11].field86_0x13b + -1;
                     if ((param_5 != 0xfe) &&
-                       (g_packedRecords_A62x8[iVar10].field88_0x143 =
-                             g_packedRecords_A62x8[iVar10].field88_0x143 + 1, param_5 != 0xff)) {
+                       (g_packedRecords_A62x8[iVar11].field88_0x143 =
+                             g_packedRecords_A62x8[iVar11].field88_0x143 + 1, param_5 != 0xff)) {
                       g_packedRecords_A62x8[param_5].field89_0x147 =
                            g_packedRecords_A62x8[param_5].field89_0x147 + 1;
                     }
                   }
                 }
                 else {
-                  g_packedRecords_A62x8[iVar10].field82_0x12b =
-                       g_packedRecords_A62x8[iVar10].field82_0x12b + -1;
+                  g_packedRecords_A62x8[iVar11].field82_0x12b =
+                       g_packedRecords_A62x8[iVar11].field82_0x12b + -1;
                   if ((param_5 != 0xfe) &&
-                     (g_packedRecords_A62x8[iVar10].field84_0x133 =
-                           g_packedRecords_A62x8[iVar10].field84_0x133 + 1, param_5 != 0xff)) {
+                     (g_packedRecords_A62x8[iVar11].field84_0x133 =
+                           g_packedRecords_A62x8[iVar11].field84_0x133 + 1, param_5 != 0xff)) {
                     g_packedRecords_A62x8[param_5].field85_0x137 =
                          g_packedRecords_A62x8[param_5].field85_0x137 + 1;
                   }
                 }
               }
               else {
-                g_packedRecords_A62x8[iVar10].field78_0x11b =
-                     g_packedRecords_A62x8[iVar10].field78_0x11b + -1;
+                g_packedRecords_A62x8[iVar11].field78_0x11b =
+                     g_packedRecords_A62x8[iVar11].field78_0x11b + -1;
                 if ((param_5 != 0xfe) &&
-                   (g_packedRecords_A62x8[iVar10].field80_0x123 =
-                         g_packedRecords_A62x8[iVar10].field80_0x123 + 1, param_5 != 0xff)) {
+                   (g_packedRecords_A62x8[iVar11].field80_0x123 =
+                         g_packedRecords_A62x8[iVar11].field80_0x123 + 1, param_5 != 0xff)) {
                   g_packedRecords_A62x8[param_5].field81_0x127 =
                        g_packedRecords_A62x8[param_5].field81_0x127 + 1;
                 }
               }
             }
             else {
-              g_packedRecords_A62x8[iVar10].field74_0x10b =
-                   g_packedRecords_A62x8[iVar10].field74_0x10b + -1;
+              g_packedRecords_A62x8[iVar11].field74_0x10b =
+                   g_packedRecords_A62x8[iVar11].field74_0x10b + -1;
               if ((param_5 != 0xfe) &&
-                 (g_packedRecords_A62x8[iVar10].field76_0x113 =
-                       g_packedRecords_A62x8[iVar10].field76_0x113 + 1, param_5 != 0xff)) {
+                 (g_packedRecords_A62x8[iVar11].field76_0x113 =
+                       g_packedRecords_A62x8[iVar11].field76_0x113 + 1, param_5 != 0xff)) {
                 g_packedRecords_A62x8[param_5].field77_0x117 =
                      g_packedRecords_A62x8[param_5].field77_0x117 + 1;
               }
             }
           }
           else {
-            g_packedRecords_A62x8[iVar10].field70_0xfb =
-                 g_packedRecords_A62x8[iVar10].field70_0xfb + -1;
+            g_packedRecords_A62x8[iVar11].field70_0xfb =
+                 g_packedRecords_A62x8[iVar11].field70_0xfb + -1;
             if ((param_5 != 0xfe) &&
-               (g_packedRecords_A62x8[iVar10].field72_0x103 =
-                     g_packedRecords_A62x8[iVar10].field72_0x103 + 1, param_5 != 0xff)) {
+               (g_packedRecords_A62x8[iVar11].field72_0x103 =
+                     g_packedRecords_A62x8[iVar11].field72_0x103 + 1, param_5 != 0xff)) {
               g_packedRecords_A62x8[param_5].field73_0x107 =
                    g_packedRecords_A62x8[param_5].field73_0x107 + 1;
             }
           }
         }
         else {
-          g_packedRecords_A62x8[iVar10].field66_0xeb =
-               g_packedRecords_A62x8[iVar10].field66_0xeb + -1;
+          g_packedRecords_A62x8[iVar11].field66_0xeb =
+               g_packedRecords_A62x8[iVar11].field66_0xeb + -1;
           if ((param_5 != 0xfe) &&
-             (g_packedRecords_A62x8[iVar10].field68_0xf3 =
-                   g_packedRecords_A62x8[iVar10].field68_0xf3 + 1, param_5 != 0xff)) {
+             (g_packedRecords_A62x8[iVar11].field68_0xf3 =
+                   g_packedRecords_A62x8[iVar11].field68_0xf3 + 1, param_5 != 0xff)) {
             g_packedRecords_A62x8[param_5].field69_0xf7 =
                  g_packedRecords_A62x8[param_5].field69_0xf7 + 1;
           }
         }
       }
       else {
-        g_packedRecords_A62x8[iVar10].field62_0xdb = g_packedRecords_A62x8[iVar10].field62_0xdb + -1
+        g_packedRecords_A62x8[iVar11].field62_0xdb = g_packedRecords_A62x8[iVar11].field62_0xdb + -1
         ;
         if ((param_5 != 0xfe) &&
-           (g_packedRecords_A62x8[iVar10].field64_0xe3 =
-                 g_packedRecords_A62x8[iVar10].field64_0xe3 + 1, param_5 != 0xff)) {
+           (g_packedRecords_A62x8[iVar11].field64_0xe3 =
+                 g_packedRecords_A62x8[iVar11].field64_0xe3 + 1, param_5 != 0xff)) {
           g_packedRecords_A62x8[param_5].field65_0xe7 =
                g_packedRecords_A62x8[param_5].field65_0xe7 + 1;
         }
       }
     }
     else {
-      g_packedRecords_A62x8[iVar10].field58_0xcb = g_packedRecords_A62x8[iVar10].field58_0xcb + -1;
+      g_packedRecords_A62x8[iVar11].field58_0xcb = g_packedRecords_A62x8[iVar11].field58_0xcb + -1;
       if ((param_5 != 0xfe) &&
-         (g_packedRecords_A62x8[iVar10].field60_0xd3 =
-               g_packedRecords_A62x8[iVar10].field60_0xd3 + 1, param_5 != 0xff)) {
+         (g_packedRecords_A62x8[iVar11].field60_0xd3 =
+               g_packedRecords_A62x8[iVar11].field60_0xd3 + 1, param_5 != 0xff)) {
         g_packedRecords_A62x8[param_5].field61_0xd7 =
              g_packedRecords_A62x8[param_5].field61_0xd7 + 1;
       }
     }
   }
   this_00 = local_18;
-  pSVar8 = GetObjPtr(local_18,param_1,(ushort)param_3,CASE_1);
-  if (pSVar8 != (STGameObjC *)param_4) {
+  pSVar9 = GetObjPtr(local_18,param_1,(ushort)param_3,CASE_1);
+  if (pSVar9 != (STGameObjC *)param_4) {
     RaiseInternalException
               (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x7a3);
@@ -440,8 +446,8 @@ LAB_0042f547:
                 (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x7a5);
     }
-    iVar10 = thunk_FUN_004237d0(local_10,(ushort)param_3);
-    if (iVar10 == 0) {
+    iVar11 = thunk_FUN_004237d0(local_10,(ushort)param_3);
+    if (iVar11 == 0) {
       RaiseInternalException
                 (-0x5001fffd,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x7a6);
@@ -451,37 +457,37 @@ LAB_0042f547:
   DelObjFromTmps(this_00,DAT_0080874d,param_4[8],param_1,param_3);
   DelObjFromSaveTmps(this_00,param_4[8],param_1,(ushort)param_3);
   pSVar4 = local_10;
-  pDVar9 = local_14;
-  uVar11 = param_3;
+  pDVar10 = local_14;
+  uVar12 = param_3;
   if ((ushort)param_2 != 0xffff) {
     local_10->vfunc_04((ushort)param_3);
     Library::DKW::TBL::DArrayPut(local_14,param_3 & 0xffff,&local_c);
     sVar5 = thunk_FUN_004233c0(pSVar4);
-    if ((sVar5 != 0) || (iVar10 = thunk_FUN_004233a0((int)pSVar4), iVar10 != 0)) goto LAB_00430018;
+    if ((sVar5 != 0) || (iVar11 = thunk_FUN_004233a0((int)pSVar4), iVar11 != 0)) goto LAB_00430018;
     thunk_FUN_0054cf70(g_playSystem_00802A38,pSVar4->field_0008);
-    pDVar9 = local_1c;
-    uVar11 = param_2;
+    pDVar10 = local_1c;
+    uVar12 = param_2;
   }
-  Library::DKW::TBL::DArrayPut(pDVar9,uVar11 & 0xffff,&local_c);
+  Library::DKW::TBL::DArrayPut(pDVar10,uVar12 & 0xffff,&local_c);
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00430018:
-  iVar10 = (**(code **)(*param_4 + 0x2c))();
-  pDVar9 = local_20;
-  if ((iVar10 == 0x1d) && (local_20 != nullptr)) {
+  iVar11 = (**(code **)(*param_4 + 0x2c))();
+  pDVar10 = local_20;
+  if ((iVar11 == 0x1d) && (local_20 != nullptr)) {
     local_24 = local_20->count;
-    uVar11 = 0;
+    uVar12 = 0;
     if (0 < (int)local_24) {
       while( true ) {
-        DArrayGetElement(pDVar9,uVar11,&local_8);
+        DArrayGetElement(pDVar10,uVar12,&local_8);
         if ((ushort)local_8 == (ushort)param_3) break;
-        uVar11 = uVar11 + 1;
-        if ((int)local_24 <= (int)uVar11) {
+        uVar12 = uVar12 + 1;
+        if ((int)local_24 <= (int)uVar12) {
           g_currentExceptionFrame = local_68.previous;
           return 0;
         }
       }
       local_8 = 0xffff;
-      Library::DKW::TBL::DArrayPut(pDVar9,uVar11,&local_8);
+      Library::DKW::TBL::DArrayPut(pDVar10,uVar12,&local_8);
     }
   }
   g_currentExceptionFrame = local_68.previous;

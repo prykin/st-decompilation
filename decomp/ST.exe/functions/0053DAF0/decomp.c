@@ -14,7 +14,7 @@ UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *pa
   undefined4 uVar3;
   LPSTR text;
   ushort *puVar4;
-  uint *resourceString;
+  char *resourceString;
   uint uVar5;
   byte bVar6;
   int iVar7;
@@ -58,7 +58,7 @@ UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *pa
     uVar5 = thunk_FUN_00529fe0((int)param_1);
     iVar9 = -1;
     iVar7 = -2;
-    resourceString = (uint *)LoadResourceString(param_3,g_hINSTANCE_00807618);
+    resourceString = LoadResourceString(param_3,g_hINSTANCE_00807618);
     ccFntTy::WrStr(g_interSystem_00802A28->field_0024,resourceString,iVar7,iVar9,uVar5);
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,

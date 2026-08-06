@@ -15,11 +15,12 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
   ccFntTy *pcVar1;
   undefined4 uVar2;
   StartSystemTy *this_00;
-  int iVar4;
   int iVar5;
-  byte *puVar6;
-  int *piVar7;
-  byte *puVar8;
+  int iVar4;
+  int iVar6;
+  byte *puVar7;
+  int *piVar8;
+  byte *puVar9;
   int local_8c4 [6];
   undefined4 local_8ac;
   undefined4 local_8a8;
@@ -58,11 +59,11 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
   InternalExceptionFrame local_4c;
   StartSystemTy *local_8;
 
-  piVar7 = local_8c4;
+  piVar8 = local_8c4;
   local_8 = this;
-  for (iVar5 = 0x21e; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *piVar7 = 0;
-    piVar7 = piVar7 + 1;
+  for (iVar6 = 0x21e; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *piVar8 = 0;
+    piVar8 = piVar8 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -102,9 +103,9 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
     local_7a0 = 0x6334;
     local_88c = this_00->field_0014;
     local_7a8 = local_88c;
-    puVar6 = (byte *)(local_808);
-    puVar8 = (byte *)(local_688);
-    memmove(puVar8, puVar6, 0x17c); /* compiler REP MOVS byte copy */
+    puVar7 = (byte *)(local_808);
+    puVar9 = (byte *)(local_688);
+    memmove(puVar9, puVar7, 0x17c); /* compiler REP MOVS byte copy */
     local_688[2] = this_00->field_03A9;
     local_674 = this_00->field_03B5;
     local_678 = this_00->field_03B1;

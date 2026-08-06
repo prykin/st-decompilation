@@ -24,12 +24,14 @@ int STAllPlayersC::CheckTmps
               short objectId)
 
 {
-  int iVar2;
-  int *piVar3;
+  int local_EAX_52;
+  int iVar3;
+  int local_EAX_679;
+  int iVar4;
+  int *piVar5;
   DArrayTy *array;
-  dword dVar4;
-  uint uVar5;
-  int iVar6;
+  dword dVar6;
+  uint uVar7;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   short in_stack_00000006;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -37,25 +39,26 @@ int STAllPlayersC::CheckTmps
   DArrayTy *local_10;
   DArrayTy *local_c;
   DArrayTy *local_8;
+  int iVar2;
 
   iVar2 = objectType;
-  uVar5 = 0;
+  uVar7 = 0;
   local_c = nullptr;
   local_10 = nullptr;
   local_8 = nullptr;
   if (tempGroup == 0) {
-    iVar6 = STRecordByteAddress(g_packedRecords_A62x8, playerId, 0x163);
+    iVar3 = STRecordByteAddress(g_packedRecords_A62x8, playerId, 0x163);
   }
   else {
     if (tempGroup != 1) {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2fde,0,0,"%s",
-                                 "STAllPlayersC::CheckTmps invalid panel number");
-      if (iVar2 == 0) {
+      local_EAX_52 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2fde,0,0,
+                                        "%s","STAllPlayersC::CheckTmps invalid panel number");
+      if (local_EAX_52 == 0) {
         return -1;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    iVar6 = STRecordByteAddress(g_packedRecords_A62x8, playerId, 0x1B3);
+    iVar3 = STRecordByteAddress(g_packedRecords_A62x8, playerId, 0x1B3);
   }
   if (0x19a < objectType) {
     if (((objectType == 0x1a4) || (objectType == 0x1ae)) || (objectType == 0x1b8))
@@ -67,61 +70,61 @@ LAB_0044ac57:
     if (objectIds == nullptr) {
       return -1;
     }
-    dVar4 = objectIds->count;
-    if (dVar4 == 0) {
+    dVar6 = objectIds->count;
+    if (dVar6 == 0) {
       return -1;
     }
-    tempGroup = dVar4;
+    tempGroup = dVar6;
     Library::DKW::TBL::FUN_006afe40((int *)&local_c,&objectIds->flags);
-    if (0 < (int)dVar4) {
+    if (0 < (int)dVar6) {
       do {
-        DArrayGetElement(local_c,uVar5,&stack0x0000001a);
+        DArrayGetElement(local_c,uVar7,&stack0x0000001a);
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         if (in_stack_0000001a == -1) {
-          DArrayRemoveAt(local_c,uVar5);
-          dVar4 = dVar4 - 1;
-          uVar5 = uVar5 - 1;
+          DArrayRemoveAt(local_c,uVar7);
+          dVar6 = dVar6 - 1;
+          uVar7 = uVar7 - 1;
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)dVar4);
-      tempGroup = dVar4;
-      if (dVar4 != 0) {
+        uVar7 = uVar7 + 1;
+      } while ((int)uVar7 < (int)dVar6);
+      tempGroup = dVar6;
+      if (dVar6 != 0) {
         objectIds = nullptr;
-        piVar3 = (int *)(iVar6 + 10);
+        piVar5 = (int *)(iVar3 + 10);
         array = local_c;
         do {
-          if (((*(int *)((int)piVar3 + -10) == iVar2) &&
-              (*(int *)((int)piVar3 + -6) == (int)ownerPlayerId)) &&
-             (iVar6 = *(int *)(*piVar3 + 0xc), iVar6 != 0)) {
+          if (((*(int *)((int)piVar5 + -10) == iVar2) &&
+              (*(int *)((int)piVar5 + -6) == (int)ownerPlayerId)) &&
+             (iVar3 = *(int *)(*piVar5 + 0xc), iVar3 != 0)) {
             Library::DKW::TBL::FUN_006afe40((int *)&local_10,&array->flags);
-            Library::DKW::TBL::FUN_006afe40((int *)&local_8,(uint *)*piVar3);
-            uVar5 = 0;
-            if (0 < iVar6) {
+            Library::DKW::TBL::FUN_006afe40((int *)&local_8,(uint *)*piVar5);
+            uVar7 = 0;
+            if (0 < iVar3) {
               do {
-                DArrayGetElement(local_8,uVar5,&stack0x00000006);
+                DArrayGetElement(local_8,uVar7,&stack0x00000006);
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 if (in_stack_00000006 == -1) {
-                  DArrayRemoveAt(local_8,uVar5);
-                  iVar6 = iVar6 + -1;
-                  uVar5 = uVar5 - 1;
+                  DArrayRemoveAt(local_8,uVar7);
+                  iVar3 = iVar3 + -1;
+                  uVar7 = uVar7 - 1;
                 }
-                uVar5 = uVar5 + 1;
-              } while ((int)uVar5 < iVar6);
-              if ((iVar6 != 0) && (0 < (int)tempGroup)) {
+                uVar7 = uVar7 + 1;
+              } while ((int)uVar7 < iVar3);
+              if ((iVar3 != 0) && (0 < (int)tempGroup)) {
                 while( true ) {
                   DArrayGetElement(local_10,0,&stack0x0000001a);
-                  uVar5 = 0;
-                  if (iVar6 < 1) break;
+                  uVar7 = 0;
+                  if (iVar3 < 1) break;
                   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                  while (DArrayGetElement(local_8,uVar5,&stack0x00000006),
+                  while (DArrayGetElement(local_8,uVar7,&stack0x00000006),
                         in_stack_0000001a != in_stack_00000006) {
-                    uVar5 = uVar5 + 1;
-                    if (iVar6 <= (int)uVar5) goto LAB_0044ada0;
+                    uVar7 = uVar7 + 1;
+                    if (iVar3 <= (int)uVar7) goto LAB_0044ada0;
                   }
                   DArrayRemoveAt(local_10,0);
                   tempGroup = tempGroup - 1;
-                  DArrayRemoveAt(local_8,uVar5);
-                  iVar6 = iVar6 + -1;
+                  DArrayRemoveAt(local_8,uVar7);
+                  iVar3 = iVar3 + -1;
                   if ((int)tempGroup < 1) break;
                 }
               }
@@ -131,7 +134,7 @@ LAB_0044ada0:
             local_10 = nullptr;
             DArrayDestroy(local_8);
             local_8 = nullptr;
-            if ((tempGroup == 0) && (iVar6 == 0)) {
+            if ((tempGroup == 0) && (iVar3 == 0)) {
               DArrayDestroy(local_c);
               return (int)objectIds;
             }
@@ -139,7 +142,7 @@ LAB_0044ada0:
             array = local_c;
             iVar2 = objectType;
           }
-          piVar3 = piVar3 + 4;
+          piVar5 = piVar5 + 4;
           objectIds = (DArrayTy *)((int)&objectIds->flags + 1);
           if (4 < (int)objectIds) {
             DArrayDestroy(array);
@@ -154,17 +157,17 @@ LAB_0044ada0:
   if (objectType < 0x5b) {
     if (objectType == 0x5a) {
 LAB_0044ae50:
-      iVar2 = 0;
-      piVar3 = (int *)(iVar6 + 4);
-      while (((piVar3[-1] != objectType || ((short)piVar3[1] != objectId)) ||
-             (*piVar3 != (int)ownerPlayerId))) {
-        iVar2 = iVar2 + 1;
-        piVar3 = piVar3 + 4;
-        if (4 < iVar2) {
+      iVar4 = 0;
+      piVar5 = (int *)(iVar3 + 4);
+      while (((piVar5[-1] != objectType || ((short)piVar5[1] != objectId)) ||
+             (*piVar5 != (int)ownerPlayerId))) {
+        iVar4 = iVar4 + 1;
+        piVar5 = piVar5 + 4;
+        if (4 < iVar4) {
           return -1;
         }
       }
-      return iVar2;
+      return iVar4;
     }
     if (objectType == 0) {
       return -1;
@@ -173,9 +176,10 @@ LAB_0044ae50:
   }
   else if (objectType == 0x172) goto LAB_0044ae50;
 LAB_0044ae21:
-  iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3019,0,0,"%s",
-                             "STAllPlayersC::CheckTmps invalid type");
-  if (iVar2 == 0) {
+  local_EAX_679 =
+       ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3019,0,0,"%s",
+                          "STAllPlayersC::CheckTmps invalid type");
+  if (local_EAX_679 == 0) {
     return -1;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -18,11 +18,13 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
   SAMPanelTy *this_00;
   byte bVar5;
   int iVar6;
-  LPSTR pCVar7;
-  int iVar8;
-  byte *pbVar9;
-  UINT UVar10;
+  LPSTR pCVar6;
+  int iVar7;
+  BITMAPINFO *pBVar8;
   int iVar11;
+  UINT UVar9;
+  int iVar10;
+  int iVar12;
   InternalExceptionFrame local_54;
   byte local_10;
   undefined3 uStack_f;
@@ -75,32 +77,31 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
   }
   else if (0xb50e < SVar1) {
     if (SVar1 < MESS_SAMPANELTY_B518) {
-      iVar6 = this_00->field_003C;
+      iVar10 = this_00->field_003C;
       bVar5 = (char)message->id - 0xf;
-      iVar11 = *(int *)(message->arg1).ptr;
+      iVar12 = *(int *)(message->arg1).ptr;
       iVar3 = *(int *)((int)(message->arg1).ptr + 4);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_10 = CONCAT31(uStack_f,bVar5);
-      iVar8 = DAT_00806734;
+      iVar7 = DAT_00806734;
       if (this_00->field_005C != 0) {
-        iVar8 = this_00->field_0044;
+        iVar7 = this_00->field_0044;
       }
-      pbVar9 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01B1,
-                                    (uint)(*(char *)((int)this_00->field_01B5 + (bVar5 - 10)) ==
-                                          '\0'));
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar11 - iVar6,iVar3 - iVar8,
-             '\x01',pbVar9);
+      pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01B1,
+                            (uint)(*(char *)((int)this_00->field_01B5 + (bVar5 - 10)) == '\0'));
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar12 - iVar10,iVar3 - iVar7,
+             '\x01',(byte *)pBVar8);
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                  this_00->field_0044);
     }
     else if (SVar1 == MESS_SAMPANELTY_B518) {
       pSVar2 = this_00->vtable;
-      iVar11 = 1;
-      iVar6 = 0;
-      UVar10 = 0x2755;
-      pCVar7 = thunk_FUN_00571240("BUT_BIG",0);
-      (*pSVar2->PaintIBut)((PanelTy *)this_00,(int)message,pCVar7,UVar10,iVar6,iVar11);
+      iVar12 = 1;
+      iVar10 = 0;
+      UVar9 = 0x2755;
+      pCVar6 = thunk_FUN_00571240("BUT_BIG",0);
+      (*pSVar2->PaintIBut)((PanelTy *)this_00,(int)message,pCVar6,UVar9,iVar10,iVar12);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }

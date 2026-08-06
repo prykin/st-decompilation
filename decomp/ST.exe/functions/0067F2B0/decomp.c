@@ -8,15 +8,16 @@ void FUN_0067f2b0(LPCSTR lpFileName,int param_2)
   int iVar1;
   byte *pbVar2;
   char *pcVar3;
-  uint *puVar4;
+  char *pcVar4;
+  uint *puVar5;
 
   if (param_2 == 0) {
     if (0 < DAT_00848a24) {
       DAT_00848a24 = DAT_00848a24 + -1;
-      puVar4 = nullptr;
+      puVar5 = nullptr;
       pbVar2 = thunk_FUN_0067ece0(DAT_00848a24);
       pcVar3 = thunk_FUN_0067eea0(pbVar2);
-      iVar1 = thunk_FUN_0067f030("_curr_path",pcVar3,puVar4);
+      iVar1 = thunk_FUN_0067f030("_curr_path",pcVar3,puVar5);
       if (iVar1 == 0) {
         RaiseInternalException(-2,g_overwriteContext_007ED77C,".\\ai\\ai_script_v.inl",0xbb);
       }
@@ -31,11 +32,11 @@ void FUN_0067f2b0(LPCSTR lpFileName,int param_2)
     if (iVar1 == 0) {
       RaiseInternalException(-2,g_overwriteContext_007ED77C,".\\ai\\ai_script_v.inl",0xb5);
     }
-    puVar4 = nullptr;
+    puVar5 = nullptr;
     DAT_00848a24 = DAT_00848a24 + 1;
-    pcVar3 = &DAT_0084868c;
+    pcVar4 = &DAT_0084868c;
     pbVar2 = thunk_FUN_0067ece0(DAT_00848a24);
-    iVar1 = thunk_FUN_0067f030((char *)pbVar2,pcVar3,puVar4);
+    iVar1 = thunk_FUN_0067f030((char *)pbVar2,pcVar4,puVar5);
     if (iVar1 == 0) {
       RaiseInternalException(-2,g_overwriteContext_007ED77C,".\\ai\\ai_script_v.inl",0xb6);
       return;

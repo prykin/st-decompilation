@@ -14,6 +14,7 @@ void __thiscall ProdPanelTy::PreInitProdPanel(ProdPanelTy *this)
 {
   ProdPanelTy *pPVar2;
   int iVar3;
+  int iVar5;
   int iVar4;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
@@ -25,9 +26,9 @@ void __thiscall ProdPanelTy::PreInitProdPanel(ProdPanelTy *this)
   pPVar2 = local_8;
   if (iVar3 == 0) {
     FUN_006b1a50(g_ddxContext_008075A8,3,nullptr,(undefined4 *)&local_8->field_0x4c);
-    iVar3 = pPVar2->field_0050 + pPVar2->field_0058;
-    pPVar2->field_0044 = iVar3;
-    pPVar2->field_0174 = (pPVar2->field_0048 - iVar3) + DAT_00806734;
+    iVar5 = pPVar2->field_0050 + pPVar2->field_0058;
+    pPVar2->field_0044 = iVar5;
+    pPVar2->field_0174 = (pPVar2->field_0048 - iVar5) + DAT_00806734;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

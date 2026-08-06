@@ -7,14 +7,18 @@
    [STSourceProvenanceApplier end]
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0067CF30 -> 0072E340 @ 0067CF98 */
+   Evidence: 0067CF30 -> 0072E340 @ 0067CF98
 
-undefined4 * __cdecl FUN_0067cf30(char *source,undefined2 param_2,char *param_3,undefined4 param_4)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0067CF30 returns stored into global 008489B8 @ 0068574E */
+
+AllocationRecord_0067D3B0 * __cdecl
+FUN_0067cf30(char *source,undefined2 param_2,char *param_3,undefined4 param_4)
 
 {
   int exceptionCode;
   DArrayTy *pDVar1;
-  undefined4 *puVar2;
+  AllocationRecord_0065CD10 *pAVar2;
   char *_Source;
   InternalExceptionFrame local_4c;
   AnonShape_0067CF30_CDCAC01F *local_8;
@@ -43,10 +47,10 @@ undefined4 * __cdecl FUN_0067cf30(char *source,undefined2 param_2,char *param_3,
   local_8->field_006D = 0xff;
   pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x10,5);
   local_8->field_00C2 = &pDVar1->flags;
-  puVar2 = thunk_FUN_0065c9e0(source);
-  local_8->field_0106 = puVar2;
+  pAVar2 = thunk_FUN_0065c9e0(source);
+  local_8->field_0106 = (undefined4 *)pAVar2;
   local_8->field_010A = param_4;
   g_currentExceptionFrame = local_4c.previous;
-  return (undefined4 *)local_8;
+  return (AllocationRecord_0067D3B0 *)local_8;
 }
 

@@ -35,10 +35,15 @@
    006B2330 @ 005E2E5B; data at 008075A8 | 005E5FB0 -> 006B2330 @ 005E6246; data at 008075A8 |
    005E6770 -> 006B2330 @ 005E6A1F; data at 008075A8 | 005E6770 -> 006B2330 @ 005E6A86; data at
    008075A8 | 005E6770 -> 006B2330 @ 005E6C5D; data at 008075A8 | 005E6770 -> 006B2330 @ 005E6DEF;
-   data at 008075A8 */
+   data at 008075A8
 
-void FUN_006b2330(DDXContext_008075A8 *param_1,uint *param_2,uint param_3,uint param_4,uint param_5,
-                 uint param_6,ushort *param_7)
+   [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /int; no intervening CALL or EAX/AX/AL/AH definition exists; machine CFG audit: used=2,
+   ignored=57, unknown=0 */
+
+int FUN_006b2330(DDXContext_008075A8 *param_1,uint *param_2,uint param_3,uint param_4,uint param_5,
+                uint param_6,ushort *param_7)
 
 {
   DDXEntry_008075A8_01B0 *pDVar1;
@@ -60,6 +65,6 @@ void FUN_006b2330(DDXContext_008075A8 *param_1,uint *param_2,uint param_3,uint p
     pDVar1->flags = pDVar1->flags | 0x4000;
     pDVar1->field_00C0 = (uint)param_7;
   }
-  return;
+  return iVar2;
 }
 

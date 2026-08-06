@@ -19,13 +19,14 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
   dword dVar3;
   STAllPlayersC *this_00;
   int iVar5;
-  byte *pbVar6;
-  uint *puVar7;
-  int iVar8;
-  PackedRecord_A62x8 *pPVar9;
-  uint uVar10;
-  uint uVar11;
-  undefined4 *puVar12;
+  byte *pbVar5;
+  uint *puVar6;
+  int iVar11;
+  PackedRecord_A62x8 *pPVar7;
+  uint uVar8;
+  uint uVar9;
+  undefined4 *puVar10;
+  int iVar12;
   int *piVar13;
   char cVar14;
   InternalExceptionFrame local_6c;
@@ -47,9 +48,9 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
   this_00 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa05,0,iVar5,"%s",
-                               "STAllPlayersC::GetMessage");
-    if (iVar8 == 0) {
+    iVar11 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa05,0,iVar5,"%s"
+                                ,"STAllPlayersC::GetMessage");
+    if (iVar11 == 0) {
       RaiseInternalException(iVar5,0,"E:\\__titans\\wlad\\to_allpl.cpp",0xa06);
       return 0xffff;
     }
@@ -63,149 +64,149 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       local_20 = 0;
       local_14 = (byte *)&g_packedRecords_A62x8[0].field3_0x9;
       do {
-        uVar11 = 0;
+        uVar9 = 0;
         array = *(DArrayTy **)((int)local_14 + -4);
         array_00 = *(DArrayTy **)local_14;
         local_24 = array->count;
         local_28 = array_00;
         if (0 < (int)local_24) {
           do {
-            DArrayGetElement(array,uVar11,&local_18);
+            DArrayGetElement(array,uVar9,&local_18);
             if (local_18 != 0) {
               thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_18 + 8));
               local_18 = 0;
-              Library::DKW::TBL::DArrayPut(array,uVar11,&local_18);
+              Library::DKW::TBL::DArrayPut(array,uVar9,&local_18);
             }
-            uVar11 = uVar11 + 1;
-          } while ((int)uVar11 < (int)local_24);
+            uVar9 = uVar9 + 1;
+          } while ((int)uVar9 < (int)local_24);
         }
         dVar3 = array_00->count;
-        uVar11 = 0;
+        uVar9 = 0;
         if (0 < (int)dVar3) {
           do {
-            DArrayGetElement(array_00,uVar11,&local_8);
+            DArrayGetElement(array_00,uVar9,&local_8);
             if (local_8 != 0) {
               thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
               local_8 = 0;
-              Library::DKW::TBL::DArrayPut(array_00,uVar11,&local_8);
+              Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
             }
-            uVar11 = uVar11 + 1;
-          } while ((int)uVar11 < (int)dVar3);
+            uVar9 = uVar9 + 1;
+          } while ((int)uVar9 < (int)dVar3);
         }
-        iVar5 = local_20;
+        iVar12 = local_20;
         cVar14 = (char)local_20;
         thunk_FUN_004d7430(cVar14);
         thunk_FUN_004b7030(cVar14);
-        local_20 = iVar5 + 1;
+        local_20 = iVar12 + 1;
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         local_14 = (byte *)((int)local_14 + 0xa62);
       } while ((int)local_14 < 0x7fa139);
-      uVar11 = 0;
+      uVar9 = 0;
       dVar3 = g_array_007FA154->count;
       if (0 < (int)dVar3) {
         do {
-          DArrayGetElement(g_array_007FA154,uVar11,&local_8);
+          DArrayGetElement(g_array_007FA154,uVar9,&local_8);
           if (local_8 != 0) {
             thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
             local_8 = 0;
-            Library::DKW::TBL::DArrayPut(array_00,uVar11,&local_8);
+            Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar3);
+          uVar9 = uVar9 + 1;
+        } while ((int)uVar9 < (int)dVar3);
       }
-      uVar11 = 0;
+      uVar9 = 0;
       dVar3 = g_array_007FA158->count;
       if (0 < (int)dVar3) {
         do {
-          DArrayGetElement(g_array_007FA158,uVar11,&local_8);
+          DArrayGetElement(g_array_007FA158,uVar9,&local_8);
           if (local_8 != 0) {
             thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
             local_8 = 0;
-            Library::DKW::TBL::DArrayPut(array_00,uVar11,&local_8);
+            Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar3);
+          uVar9 = uVar9 + 1;
+        } while ((int)uVar9 < (int)dVar3);
       }
-      uVar11 = 0;
+      uVar9 = 0;
       dVar3 = g_array_007FA15C->count;
       if (0 < (int)dVar3) {
         do {
-          DArrayGetElement(g_array_007FA15C,uVar11,&local_8);
+          DArrayGetElement(g_array_007FA15C,uVar9,&local_8);
           if (local_8 != 0) {
             thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
             local_8 = 0;
-            Library::DKW::TBL::DArrayPut(array_00,uVar11,&local_8);
+            Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar3);
+          uVar9 = uVar9 + 1;
+        } while ((int)uVar9 < (int)dVar3);
       }
-      uVar11 = 0;
+      uVar9 = 0;
       dVar3 = g_array_007FA160->count;
       if (0 < (int)dVar3) {
         do {
-          DArrayGetElement(g_array_007FA160,uVar11,&local_8);
+          DArrayGetElement(g_array_007FA160,uVar9,&local_8);
           if (local_8 != 0) {
             thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
             local_8 = 0;
-            Library::DKW::TBL::DArrayPut(array_00,uVar11,&local_8);
+            Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar3);
+          uVar9 = uVar9 + 1;
+        } while ((int)uVar9 < (int)dVar3);
       }
-      uVar11 = 0;
+      uVar9 = 0;
       dVar3 = g_array_007FA164->count;
       if (0 < (int)dVar3) {
         do {
-          DArrayGetElement(g_array_007FA164,uVar11,&local_8);
+          DArrayGetElement(g_array_007FA164,uVar9,&local_8);
           if (local_8 != 0) {
             thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
             local_8 = 0;
-            Library::DKW::TBL::DArrayPut(array_00,uVar11,&local_8);
+            Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar3);
+          uVar9 = uVar9 + 1;
+        } while ((int)uVar9 < (int)dVar3);
       }
       local_14 = (byte *)&g_packedRecords_A62x8[0].field2_0x5;
       do {
-        pbVar6 = local_14;
+        pbVar5 = local_14;
         DArrayDestroy(STField<DArrayTy *>(local_14,4));
-        DArrayDestroy(*(DArrayTy **)pbVar6);
-        DArrayDestroy(STField<DArrayTy *>(pbVar6,0x2e2));
-        puVar12 = (undefined4 *)((int)pbVar6 + 10);
-        iVar5 = 4;
+        DArrayDestroy(*(DArrayTy **)pbVar5);
+        DArrayDestroy(STField<DArrayTy *>(pbVar5,0x2e2));
+        puVar10 = (undefined4 *)((int)pbVar5 + 10);
+        iVar12 = 4;
         do {
-          DArrayDestroy((DArrayTy *)*puVar12);
-          *puVar12 = 0;
-          puVar12 = puVar12 + 1;
-          iVar5 = iVar5 + -1;
-        } while (iVar5 != 0);
-        iVar5 = 5;
-        puVar12 = (undefined4 *)((int)local_14 + 0x168);
+          DArrayDestroy((DArrayTy *)*puVar10);
+          *puVar10 = 0;
+          puVar10 = puVar10 + 1;
+          iVar12 = iVar12 + -1;
+        } while (iVar12 != 0);
+        iVar12 = 5;
+        puVar10 = (undefined4 *)((int)local_14 + 0x168);
         do {
-          if ((DArrayTy *)*puVar12 != nullptr) {
-            DArrayDestroy((DArrayTy *)*puVar12);
-            *puVar12 = 0;
-            *(undefined4 *)((int)puVar12 + -10) = 0;
+          if ((DArrayTy *)*puVar10 != nullptr) {
+            DArrayDestroy((DArrayTy *)*puVar10);
+            *puVar10 = 0;
+            *(undefined4 *)((int)puVar10 + -10) = 0;
           }
-          if ((DArrayTy *)puVar12[0x14] != nullptr) {
-            DArrayDestroy((DArrayTy *)puVar12[0x14]);
-            puVar12[0x14] = 0;
-            STField<undefined4>(puVar12,0x46) = 0;
+          if ((DArrayTy *)puVar10[0x14] != nullptr) {
+            DArrayDestroy((DArrayTy *)puVar10[0x14]);
+            puVar10[0x14] = 0;
+            STField<undefined4>(puVar10,0x46) = 0;
           }
-          puVar12 = puVar12 + 4;
-          iVar5 = iVar5 + -1;
-        } while (iVar5 != 0);
-        iVar5 = 10;
-        puVar12 = (undefined4 *)((int)local_14 + 0x20c);
+          puVar10 = puVar10 + 4;
+          iVar12 = iVar12 + -1;
+        } while (iVar12 != 0);
+        iVar12 = 10;
+        puVar10 = (undefined4 *)((int)local_14 + 0x20c);
         do {
-          if ((DArrayTy *)*puVar12 != nullptr) {
-            DArrayDestroy((DArrayTy *)*puVar12);
-            *puVar12 = 0;
-            *(undefined4 *)((int)puVar12 + -10) = 0;
+          if ((DArrayTy *)*puVar10 != nullptr) {
+            DArrayDestroy((DArrayTy *)*puVar10);
+            *puVar10 = 0;
+            *(undefined4 *)((int)puVar10 + -10) = 0;
           }
-          puVar12 = puVar12 + 4;
-          iVar5 = iVar5 + -1;
-        } while (iVar5 != 0);
+          puVar10 = puVar10 + 4;
+          iVar12 = iVar12 + -1;
+        } while (iVar12 != 0);
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         local_14 = (byte *)((int)local_14 + 0xa62);
       } while ((int)local_14 < 0x7fa135);
@@ -233,22 +234,22 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       return 0;
     }
     if (SVar2 == MESS_ID_NONE) {
-      iVar5 = 0;
+      iVar12 = 0;
       local_14 = &g_bulkInitializedRecords_008087C7[0].field_0022;
       piVar13 = &g_packedRecords_A62x8[0].field1981_0xa0a;
       do {
-        cVar14 = (char)iVar5;
+        cVar14 = (char)iVar12;
         if (0x18 < g_playSystem_00802A38->field_00E4 - *piVar13) {
           OptimizeGuardBoats(this_00,cVar14);
           DistributeGuardBoats(this_00,cVar14);
         }
         if ((*local_14 != 0xff) &&
-           (thunk_FUN_004eb150(this_00,iVar5), g_playSystem_00802A38->field_00E4 % 10 == 0)) {
+           (thunk_FUN_004eb150(this_00,iVar12), g_playSystem_00802A38->field_00E4 % 10 == 0)) {
           thunk_FUN_004d78e0(cVar14);
         }
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         piVar13 = (int *)((int)piVar13 + 0xa62);
-        iVar5 = iVar5 + 1;
+        iVar12 = iVar12 + 1;
         local_14 = local_14 + 0x51;
       } while ((int)piVar13 < 0x7fab3a);
       thunk_FUN_004da9c0(this_00);
@@ -257,14 +258,14 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       return 0;
     }
     if (SVar2 == MESS_ID_CREATE) {
-      pPVar9 = g_packedRecords_A62x8;
-      pbVar6 = &g_bulkInitializedRecords_008087C7[0].field_0021;
+      pPVar7 = g_packedRecords_A62x8;
+      pbVar5 = &g_bulkInitializedRecords_008087C7[0].field_0021;
       do {
-        bVar1 = *pbVar6;
-        pbVar6 = pbVar6 + 0x51;
-        pPVar9->field0_0x0 = bVar1;
-        pPVar9 = pPVar9 + 1;
-      } while ((int)pbVar6 < 0x808a70);
+        bVar1 = *pbVar5;
+        pbVar5 = pbVar5 + 0x51;
+        pPVar7->field0_0x0 = bVar1;
+        pPVar7 = pPVar7 + 1;
+      } while ((int)pbVar5 < 0x808a70);
       g_array_007FA154 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310(nullptr,0,4,1,0x40307b);
       g_array_007FA158 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310(nullptr,0,4,1,0x40307b);
       g_array_007FA15C = (DArrayTy *)Library::DKW::TBL::FUN_006ae310(nullptr,0,4,1,0x40307b);
@@ -277,14 +278,14 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       }
       if (local_c == nullptr) {
         piVar13 = nullptr;
-        pbVar6 = &g_bulkInitializedRecords_008087C7[0].field_0022;
-        puVar12 = &g_packedRecords_A62x8[0].field2_0x5;
+        pbVar5 = &g_bulkInitializedRecords_008087C7[0].field_0022;
+        puVar10 = &g_packedRecords_A62x8[0].field2_0x5;
         do {
-          puVar7 = Library::DKW::TBL::FUN_006ae310(nullptr,0xf,4,5,0x40307b);
-          puVar12[1] = puVar7;
-          puVar7 = Library::DKW::TBL::FUN_006ae310(nullptr,0xf,4,5,0x40307b);
-          *puVar12 = puVar7;
-          if (*pbVar6 != 0xff) {
+          puVar6 = Library::DKW::TBL::FUN_006ae310(nullptr,0xf,4,5,0x40307b);
+          puVar10[1] = puVar6;
+          puVar6 = Library::DKW::TBL::FUN_006ae310(nullptr,0xf,4,5,0x40307b);
+          *puVar10 = puVar6;
+          if (*pbVar5 != 0xff) {
             thunk_FUN_004e5140((int)piVar13);
             sub_004EB010(local_10,(int)piVar13);
             cVar14 = (char)piVar13;
@@ -296,38 +297,38 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
             thunk_FUN_004d78e0(cVar14);
           }
           /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-          puVar12 = (undefined4 *)((int)puVar12 + 0xa62);
+          puVar10 = (undefined4 *)((int)puVar10 + 0xa62);
           piVar13 = (int *)((int)piVar13 + 1);
-          pbVar6 = pbVar6 + 0x51;
-        } while ((int)puVar12 < 0x7fa135);
+          pbVar5 = pbVar5 + 0x51;
+        } while ((int)puVar10 < 0x7fa135);
         thunk_FUN_004d8110(0);
         thunk_FUN_004d8760(DAT_00808a90 & 0xff);
         DAT_007fa168 = Library::DKW::LIB::MemAlloc((int)g_worldGrid.planeStride);
-        uVar10 = (uint)g_worldGrid.planeStride;
-        puVar12 = DAT_007fa168;
-        for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *puVar12 = 0x50505050;
-          puVar12 = puVar12 + 1;
+        uVar8 = (uint)g_worldGrid.planeStride;
+        puVar10 = DAT_007fa168;
+        for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+          *puVar10 = 0x50505050;
+          puVar10 = puVar10 + 1;
         }
-        for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *(undefined1 *)puVar12 = 0x50;
-          puVar12 = (undefined4 *)((int)puVar12 + 1);
+        for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+          *(undefined1 *)puVar10 = 0x50;
+          puVar10 = (undefined4 *)((int)puVar10 + 1);
         }
         g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
       cVar14 = '\0';
-      puVar12 = &g_packedRecords_A62x8[0].field2_0x5;
+      puVar10 = &g_packedRecords_A62x8[0].field2_0x5;
       do {
-        puVar7 = Library::DKW::TBL::FUN_006ae310(nullptr,0xf,4,5,0x40307b);
-        puVar12[1] = puVar7;
-        puVar7 = Library::DKW::TBL::FUN_006ae310(nullptr,0xf,4,5,0x40307b);
-        *puVar12 = puVar7;
+        puVar6 = Library::DKW::TBL::FUN_006ae310(nullptr,0xf,4,5,0x40307b);
+        puVar10[1] = puVar6;
+        puVar6 = Library::DKW::TBL::FUN_006ae310(nullptr,0xf,4,5,0x40307b);
+        *puVar10 = puVar6;
         thunk_FUN_004b6fc0(cVar14);
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        puVar12 = (undefined4 *)((int)puVar12 + 0xa62);
+        puVar10 = (undefined4 *)((int)puVar10 + 0xa62);
         cVar14 = cVar14 + '\x01';
-      } while ((int)puVar12 < 0x7fa135);
+      } while ((int)puVar10 < 0x7fa135);
       thunk_FUN_00444e70(this_00,local_c);
       cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_c);
       g_currentExceptionFrame = local_6c.previous;
@@ -342,20 +343,20 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
   }
   else if (SVar2 == MESS_ID_ALLCREATE) {
     if (g_cMf32_00806754 == nullptr) {
-      iVar5 = 0;
+      iVar12 = 0;
       do {
-        _MakeMDPairs(this_00,(char)iVar5);
-        iVar5 = iVar5 + 1;
-      } while (iVar5 < 8);
+        _MakeMDPairs(this_00,(char)iVar12);
+        iVar12 = iVar12 + 1;
+      } while (iVar12 < 8);
     }
     else {
       local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,"allplsave",0,0);
       if (local_c == nullptr) {
-        iVar5 = 0;
+        iVar12 = 0;
         do {
-          _MakeMDPairs(this_00,(char)iVar5);
-          iVar5 = iVar5 + 1;
-        } while (iVar5 < 8);
+          _MakeMDPairs(this_00,(char)iVar12);
+          iVar12 = iVar12 + 1;
+        } while (iVar12 < 8);
       }
       else {
         cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_c);
@@ -363,11 +364,11 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004d8b70(*(char *)(this_00->field_0010 + 0x112d));
-    uVar11 = 0;
+    uVar9 = 0;
     do {
-      thunk_FUN_004b7750(uVar11);
-      uVar11 = uVar11 + 1;
-    } while ((int)uVar11 < 8);
+      thunk_FUN_004b7750(uVar9);
+      uVar9 = uVar9 + 1;
+    } while ((int)uVar9 < 8);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }

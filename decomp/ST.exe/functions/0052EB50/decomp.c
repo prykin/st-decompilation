@@ -16,13 +16,15 @@ OptPanelTy::CreateSlider
 {
   OptPanelTy *pOVar2;
   int iVar3;
-  LPSTR pCVar4;
+  LPSTR pCVar3;
+  int iVar10;
+  int iVar4;
   int iVar5;
   uint *puVar6;
   uint *puVar7;
   undefined4 uVar8;
   int *piVar9;
-  int iVar10;
+  int iVar11;
   uint local_42c [6];
   undefined4 local_414;
   undefined4 local_410;
@@ -54,13 +56,13 @@ OptPanelTy::CreateSlider
   pOVar2 = local_10;
   if (iVar3 == 0) {
     memset(local_42c, 0, 0x3d8); /* compiler bulk-zero initialization */
-    iVar10 = 1;
+    iVar11 = 1;
     piVar9 = nullptr;
     uVar8 = 0;
     local_6c = param_6;
     local_84 = pOVar2->field_0008;
     local_68 = param_7;
-    iVar3 = 1;
+    iVar4 = 1;
     local_42c[0] = (uint)(param_8 != 0);
     local_80 = 2;
     local_7c = param_5;
@@ -70,16 +72,16 @@ OptPanelTy::CreateSlider
     local_31c = 1;
     local_42c[3] = 2;
     local_42c[2] = local_42c[0];
-    pCVar4 = thunk_FUN_00571240("BUT_MINUS",0);
-    pCVar4 = FUN_006f2c00(pCVar4,iVar3,uVar8);
-    local_c = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar9,iVar10);
+    pCVar3 = thunk_FUN_00571240("BUT_MINUS",0);
+    pCVar3 = FUN_006f2c00(pCVar3,iVar4,uVar8);
+    local_c = cMf32::RecGet(g_cMf32_00806790,1,pCVar3,piVar9,iVar11);
     local_414 = *(undefined4 *)(local_c + 2);
     local_410 = *(undefined4 *)(local_c + 4);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
-    iVar3 = pOVar2->field_003C;
-    local_42c[4] = iVar3 + param_3;
-    iVar10 = pOVar2->field_005C;
-    if (iVar10 == 0) {
+    iVar4 = pOVar2->field_003C;
+    local_42c[4] = iVar4 + param_3;
+    iVar11 = pOVar2->field_005C;
+    if (iVar11 == 0) {
       iVar5 = -pOVar2->field_0048;
     }
     else {
@@ -94,14 +96,14 @@ OptPanelTy::CreateSlider
     puVar6 = local_42c + 2;
     puVar7 = local_2a4;
     memmove(puVar7, puVar6, 0x17c); /* compiler REP MOVS byte copy */
-    local_2a4[2] = iVar3 + param_1;
-    if (iVar10 == 0) {
-      iVar3 = -pOVar2->field_0048;
+    local_2a4[2] = iVar4 + param_1;
+    if (iVar11 == 0) {
+      iVar4 = -pOVar2->field_0048;
     }
     else {
-      iVar3 = pOVar2->field_0044;
+      iVar4 = pOVar2->field_0044;
     }
-    local_2a4[3] = iVar3 + param_2;
+    local_2a4[3] = iVar4 + param_2;
     local_23c = 0xc006;
     (*pOVar2->field_000C->vtable->CreateObject)
               ((SystemClassTy *)pOVar2->field_000C,4,&local_8,nullptr,local_42c,0);

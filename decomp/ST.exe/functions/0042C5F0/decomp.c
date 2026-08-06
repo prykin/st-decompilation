@@ -14,9 +14,10 @@ STAllPlayersC::DelObjFromTmps
 
 {
   undefined4 *puVar1;
-  DArrayTy *pDVar2;
-  dword dVar3;
-  STGameObjC *pSVar5;
+  int iVar2;
+  DArrayTy *pDVar3;
+  dword dVar4;
+  STGameObjC *pSVar6;
   int iVar6;
   undefined4 uVar7;
   int iVar8;
@@ -30,13 +31,13 @@ STAllPlayersC::DelObjFromTmps
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1a4) {
       iVar8 = 0;
-      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
+      iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
       do {
-        puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
-        if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1a4) && (puVar1[1] == (int)param_3)) &&
+        puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar2);
+        if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x1a4) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
-          pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_5);
-          pSVar5->vfunc_E8(0);
+          pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_5);
+          pSVar6->vfunc_E8(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -58,21 +59,21 @@ STAllPlayersC::DelObjFromTmps
     if (param_2 == 0x14) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
-      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
+      iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
       do {
-        puVar1 = (undefined4 *)(param_2 * 0x10 + iVar6);
-        if ((*(int *)(param_2 * 0x10 + iVar6) == 0x3c) && (puVar1[1] == (int)param_3)) {
-          pDVar2 = STField<DArrayTy *>(puVar1,10);
+        puVar1 = (undefined4 *)(param_2 * 0x10 + iVar2);
+        if ((*(int *)(param_2 * 0x10 + iVar2) == 0x3c) && (puVar1[1] == (int)param_3)) {
+          pDVar3 = STField<DArrayTy *>(puVar1,10);
           uVar9 = 0;
-          dVar3 = pDVar2->count;
-          if (0 < (int)dVar3) {
+          dVar4 = pDVar3->count;
+          if (0 < (int)dVar4) {
             do {
-              DArrayGetElement(pDVar2,uVar9,&local_8);
+              DArrayGetElement(pDVar3,uVar9,&local_8);
               if ((ushort)local_8 == (ushort)param_4) {
-                pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_1);
-                pSVar5->vfunc_E8(0);
+                pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_1);
+                pSVar6->vfunc_E8(0);
                 local_8 = 0xffff;
-                Library::DKW::TBL::DArrayPut(pDVar2,uVar9,&local_8);
+                Library::DKW::TBL::DArrayPut(pDVar3,uVar9,&local_8);
                 STField<short>(puVar1,0xe) = STField<short>(puVar1,0xe) + -1;
                 if (STField<short>(puVar1,0xe) == 0) {
                   DArrayDestroy(STField<DArrayTy *>(puVar1,10));
@@ -92,7 +93,7 @@ STAllPlayersC::DelObjFromTmps
                 break;
               }
               uVar9 = uVar9 + 1;
-            } while ((int)uVar9 < (int)dVar3);
+            } while ((int)uVar9 < (int)dVar4);
           }
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -105,13 +106,13 @@ STAllPlayersC::DelObjFromTmps
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x5a) {
       iVar8 = 0;
-      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
+      iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
       do {
-        puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
-        if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x5a) && (puVar1[1] == (int)param_3)) &&
+        puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar2);
+        if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x5a) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
-          pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_4);
-          pSVar5->vfunc_E8(0);
+          pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_4);
+          pSVar6->vfunc_E8(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -132,13 +133,13 @@ STAllPlayersC::DelObjFromTmps
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x172) {
       iVar8 = 0;
-      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
+      iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
       do {
-        puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
-        if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x172) && (puVar1[1] == (int)param_3)) &&
+        puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar2);
+        if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x172) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
-          pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_2);
-          pSVar5->vfunc_E8(0);
+          pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_2);
+          pSVar6->vfunc_E8(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -161,13 +162,13 @@ STAllPlayersC::DelObjFromTmps
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1b8) {
       iVar8 = 0;
-      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
+      iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
       do {
-        puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
-        if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1b8) && (puVar1[1] == (int)param_3)) &&
+        puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar2);
+        if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x1b8) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
-          pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_6);
-          pSVar5->vfunc_E8(0);
+          pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_6);
+          pSVar6->vfunc_E8(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -188,13 +189,13 @@ STAllPlayersC::DelObjFromTmps
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1ae) {
       iVar8 = 0;
-      iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
+      iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
       do {
-        puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
-        if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1ae) && (puVar1[1] == (int)param_3)) &&
+        puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar2);
+        if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x1ae) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
-          pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_3);
-          pSVar5->vfunc_E8(0);
+          pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_3);
+          pSVar6->vfunc_E8(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -216,21 +217,21 @@ STAllPlayersC::DelObjFromTmps
   else if ((999 < param_2) && (param_2 < 0x3ea)) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
-    iVar6 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
+    iVar2 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
     do {
-      puVar1 = (undefined4 *)(param_2 * 0x10 + iVar6);
-      if ((*(int *)(param_2 * 0x10 + iVar6) == 0x19a) && (puVar1[1] == (int)param_3)) {
-        pDVar2 = STField<DArrayTy *>(puVar1,10);
+      puVar1 = (undefined4 *)(param_2 * 0x10 + iVar2);
+      if ((*(int *)(param_2 * 0x10 + iVar2) == 0x19a) && (puVar1[1] == (int)param_3)) {
+        pDVar3 = STField<DArrayTy *>(puVar1,10);
         uVar9 = 0;
-        dVar3 = pDVar2->count;
-        if (0 < (int)dVar3) {
+        dVar4 = pDVar3->count;
+        if (0 < (int)dVar4) {
           do {
-            DArrayGetElement(pDVar2,uVar9,&local_8);
+            DArrayGetElement(pDVar3,uVar9,&local_8);
             if ((ushort)local_8 == (ushort)param_4) {
-              pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_1);
-              pSVar5->vfunc_E8(0);
+              pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_1);
+              pSVar6->vfunc_E8(0);
               local_8 = 0xffff;
-              Library::DKW::TBL::DArrayPut(pDVar2,uVar9,&local_8);
+              Library::DKW::TBL::DArrayPut(pDVar3,uVar9,&local_8);
               STField<short>(puVar1,0xe) = STField<short>(puVar1,0xe) + -1;
               if (STField<short>(puVar1,0xe) == 0) {
                 DArrayDestroy(STField<DArrayTy *>(puVar1,10));
@@ -250,7 +251,7 @@ STAllPlayersC::DelObjFromTmps
               break;
             }
             uVar9 = uVar9 + 1;
-          } while ((int)uVar9 < (int)dVar3);
+          } while ((int)uVar9 < (int)dVar4);
         }
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

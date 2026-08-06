@@ -46,24 +46,24 @@ have been checked.
 ## Latest accepted run
 
 The current authoritative headless export is run
-`6eafe6c3ee33ba1a89a5017a69da0a510998dd3fe51f1a612fb77d7657105c01`.
+`c70e28be14e413bb4affd6eeddf76d449477c66fd028c8cf9b7a7df932d0d615`.
 Its receipt is `passed` with semantic hash
-`f33ed22b25e17675da07be95de14d2fe1c51d7b35859d86db60756558563a972`
+`3e516e69565c493f8efc3b24ab81815cf4ab4dbbadeb020a73b9584e9721d2d6`
 and manifest hash
-`b2fe6680417bedc6a88a7a20885abc8d29bc40bc9e916dfb7131ff98d57b4450`.
+`c5ca336f0fa2d0488d8bd833b95629f8f4e7d4b7297a88c9398ef5d99e0e37bd`.
 It contains 10,392 function entries, 5,712 bodies, zero failed bodies, and 2,729
 typed physical-vtable slots. Both the broad export gate and the ABI gate pass;
 the latter verifies all 96 class vptrs and nine fixture functions with zero
-errors or warnings. The broad gate has zero hard regressions and four
-stage-transition warnings. The final quality inventory has 4,150 anonymous-
-shape occurrences, 18,579 undefined types, 2,240 raw pointer offsets, 1,885 raw indirect calls,
+errors or warnings. The broad gate has zero hard regressions and three
+stage-transition warnings. The final quality inventory has 4,165 anonymous-
+shape occurrences, 18,343 undefined types, 2,248 raw pointer offsets, 1,885 raw indirect calls,
 558 consumed return-width artifacts, and 472 unresolved register inputs. The
 old declaration-plus-use return count was intentionally replaced by a use-only
 metric; declarations are not independent ABI failures.
 
 `STDecompExport` now emits a separate compile-readiness inventory. All 5,712
 bodies have zero residual Ghidra `._offset_width_` syntax. The generated C++17
-runtime makes 34,795 exact operations expressible through scalar/calling-
+runtime makes 34,827 exact operations expressible through scalar/calling-
 convention aliases, opaque `code`, `STPiece`, `STLiteralPiece`, `STField`, and
 width-checked composition/carry helpers. The exporter itself is not a source
 generator, but `tools/st_source_tree.py` now supplies the missing offline
@@ -71,8 +71,8 @@ assembly layer. It verifies the passed receipt/manifest and emits all 5,712
 bodies as 318 C++17 translation units under `src/ST.exe`, with 1,044 bodies in
 proven original paths and address-stable `st::fn_ADDRESS` identities. The full
 generated declaration header passes Clang syntax checking. Full object
-compilation still exposes the real remaining debt: 3,894 signatures retain
-undefined semantic types, 1,001 global `__thiscall` functions lack a proven
+compilation still exposes the real remaining debt: 3,877 signatures retain
+undefined semantic types, 999 global `__thiscall` functions lack a proven
 owner, 773 bodies contain raw indirect calls, and 232 bodies retain unresolved
 register/high values. See `docs/compile-readiness.md`,
 `docs/source-tree-generation.md`, and `src/ST.exe/audit/`.
@@ -98,15 +98,16 @@ level object identifier becomes `st_global_ADDRESS`; the Ghidra symbol and type
 names remain provenance. This removes false local-declaration failures without
 changing the database or object layout.
 
-With Apple Clang and a fixed limit of 32 diagnostics per translation unit, 54
-of 318 units pass and 4,066 of 4,068 retained errors map to a function address.
-Only 38 missing-record-member diagnostics remain. The dominant next clusters
-are call argument types (1,198), scalar/pointer assignment roles (1,014),
-scalar subscripting (626), and undeclared decompiler temporaries (599). These
-are capped comparison counts, not the uncapped total. The source generator was
-also reduced from roughly 100 seconds to roughly 39 seconds by combining its
-code-only rewrite pass; identity counts remain 37,352 direct-call rewrites and
-5,712 definition rewrites.
+With Apple Clang and a fixed limit of 64 diagnostics per translation unit, 61
+of 318 units pass and 5,588 of 5,590 retained errors map to a function address.
+Against the preceding audit with the same cap, the accepted lifetime/layout
+pass removes 52 diagnostics: assignment-type errors fall by 23 and call-
+argument errors by 43, while newly exposed undeclared identifiers rise by nine
+and miscellaneous errors by five. The current dominant clusters are assignment
+types (1,472), scalar subscripting (1,138), undeclared identifiers (1,070), and
+call-argument types (1,062). These are capped comparison counts, not the
+uncapped total. Source identity counts are 37,351 direct-call-or-definition
+rewrites and 5,712 definition rewrites.
 
 The previously ugly call in global `__thiscall` function `00717910` now renders
 its proven member load as
@@ -126,12 +127,16 @@ interprocedural receiver rule repaired `005F0A30` from the undersized
 fastcall ECX/EDX parameters at `00753FD0` and `00754185`, after which
 pointer-shape recovery installed their fixed-offset context records.
 
-`004AE0B0` still emits one harmless decompiler warning. The original binary has
-four dword switch targets at `004AED14..004AED23`, followed immediately by byte
-lookup data. Ghidra mistakes bytes `00 01 03 03` for a fifth target
-`03030100`. This is queued as a general adjacent jump/lookup-table boundary
-recovery; it is not binary corruption and must not be hidden by an
-address-specific warning suppression.
+The former `004AE0B0` warning is fixed in the Ghidra database. The original
+binary has four dword switch targets at `004AED14..004AED23`, followed
+immediately by byte lookup data at `004AED24`; Ghidra had mistaken bytes
+`00 01 03 03` for a fifth target `03030100`. The general
+`STJumpTableBoundaryAnalyzer/Applier` proves exact computed-jump references,
+consecutive in-function targets, the first non-executable following word, and
+an independent indexed byte read before considering an override. Of 407
+machine candidates, only two tables in the sole freshly warning function were
+automatic. A confirming decompile reports zero truncation warnings; this is a
+normal Ghidra finite switch override, not exporter suppression or binary repair.
 
 The latest cross-cutting pass promotes one source family only from the
 combination of a unique recovered source basename, several semantic function
@@ -864,3 +869,34 @@ replacement sources subsequently passed Ghidra's on-demand compilation and the
 runtime `full-export` recorded under **Latest accepted run**. Its final stack
 phase took 6.034s, the lifecycle confirmation pass made zero changes, and the
 export gate passed without regressions or warnings.
+
+## Local-lifetime and generated-layout convergence
+
+The interrupted compiler-debt work completed and is part of the current
+accepted run. `STLocalLifetimeAnalyzer` no longer treats an ordinary
+symbol-less or local-to-local nominal `typed_copy` as independent evidence;
+only exact parameter/global/call anchors or the same hash-intact recursive-node
+identity may seed that path. `STLocalLifetimeApplier` gives split merge groups
+deterministic collision-free database names and verifies the exact anchor after
+a fresh decompile. The real mutation staircase applied 527, then seven, then
+zero lifetimes; the final whole-program pass reports 98 already correct, 91
+preserved fresh-decompile rejections, three genuine conflicts, and no mutation.
+
+`STClassLayoutAnalyzer/Applier` now hashes the installed `StructureDB` after
+Ghidra canonicalization. Legacy script-owned layouts whose old transient hash
+diverged are handled by `repair_mode=surgical`: only an exact component still
+carrying the class-layout marker and matching its recorded baseline can change;
+unrelated fields are retained and missing target types are rejected before any
+partial update. This safely refined five `CPanelTy` and nine `HelpPanelTy`
+fields. The confirming pass reports 110 unchanged applicable classes, zero
+updates, and zero conflicts. `STPrototypeAnalyzer` also refuses lateral
+replacement of recovered source-family pointer types.
+
+The full pipeline took `01:07:19`. It additionally applied four switch-enum and
+four pointer-shape refinements, then converged. Export recompiled 196 of 5,712
+bodies and reused the other 5,516 quality analyses; the receipt has zero hard
+regressions and three nonblocking stage-transition warnings. The main
+infrastructure debt is now dependency-aware analyzer caching: the current
+semantic epoch key is deliberately safe but too coarse, so a small structural
+change still reruns several broad decompiler consumers which could instead key
+on their actual datatype/function dependencies.

@@ -13,54 +13,61 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
 
 {
   HelpStringTy *this_00;
-  int iVar2;
-  ccFntTy *pcVar3;
+  int local_EAX_36;
+  ccFntTy *pcVar2;
   int uVar4;
-  ushort *puVar4;
-  byte *puVar5;
-  DWORD DVar6;
+  ushort *puVar3;
+  byte *puVar4;
+  DWORD DVar5;
+  int iVar2;
+  int iVar6;
   int iVar7;
   uint uVar9;
+  char *pcVar10;
   InternalExceptionFrame local_4c;
   HelpStringTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  local_EAX_36 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar2 == 0) {
+  if (local_EAX_36 == 0) {
     switch(message->id) {
     case MESS_ID_NONE:
       if ((local_8->field_012E != 0) &&
-         (DVar6 = STAppC::sub_006E51B0(local_8->field_0010),
-         this_00->field_0126 <= DVar6 - this_00->field_0122)) {
-        memset(&this_00->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
+         (DVar5 = STAppC::sub_006E51B0(local_8->field_0010),
+         this_00->field_0126 <= DVar5 - this_00->field_0122)) {
+        pcVar10 = &this_00->field_0018;
+        for (iVar7 = 0x41; iVar7 != 0; iVar7 = iVar7 + -1) {
+          *(undefined4 *)pcVar10 = 0;
+          pcVar10 = pcVar10 + 4;
+        }
         OutStr(this_00);
         this_00->field_011C = 0;
         this_00->field_012E = 0;
       }
       break;
     case MESS_ID_CREATE:
-      pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
-      this_00->field_011E = pcVar3;
-      pcVar3->field_0058 = 0;
-      pcVar3->field_005C = 0;
-      puVar5 = (byte *)(DAT_0080679c + 0x28);
-      iVar2 = 1;
-      uVar4 = FUN_006b4fe0(DAT_0080679c);
-      puVar4 = (ushort *)
+      pcVar2 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
+      this_00->field_011E = pcVar2;
+      pcVar2->field_0058 = 0;
+      pcVar2->field_005C = 0;
+      puVar3 = PTR_0080679c + 0x14;
+      iVar7 = 1;
+      uVar4 = FUN_006b4fe0((int)PTR_0080679c);
+      puVar3 = (ushort *)
                FUN_006b50c0((g_nWidth_00806730 -
                             ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e)) + -0x87,0x12,
-                            (uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar5,iVar2);
-      this_00->field_012A = puVar4;
-      uVar9 = *(uint *)(puVar4 + 10);
+                            (uint)PTR_0080679c[7],uVar4,(undefined4 *)puVar3,iVar7);
+      this_00->field_012A = puVar3;
+      uVar9 = *(uint *)(puVar3 + 10);
       if (uVar9 == 0) {
-        uVar9 = ((uint)puVar4[7] * *(int *)(puVar4 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(puVar4 + 4);
+        uVar9 = ((uint)puVar3[7] * *(int *)(puVar3 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)(puVar3 + 4);
       }
-      puVar5 = (byte *)FUN_006b4fa0((int *)puVar4);
-      memset(puVar5, 0, uVar9); /* compiler bulk-zero initialization */
+      puVar4 = (byte *)FUN_006b4fa0((int *)puVar3);
+      memset(puVar4, 0, uVar9); /* compiler bulk-zero initialization */
       DAT_00801694 = this_00;
       break;
     case MESS_SHARED_0003:
@@ -81,12 +88,12 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
     return iVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\helpstr.cpp",0x4d,0,iVar2,"%s",
-                             "HelpStringTy::GetMessage");
-  if (iVar7 != 0) {
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\helpstr.cpp",0x4d,0,local_EAX_36,
+                             "%s","HelpStringTy::GetMessage");
+  if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\helpstr.cpp",0x4d);
+  RaiseInternalException(local_EAX_36,0,"E:\\__titans\\Andrey\\helpstr.cpp",0x4d);
   return 0xffff;
 }
 

@@ -112,17 +112,19 @@ int __thiscall st::fn_0060D660(STFieldC *this,int *param_1)
   void *pvVar1;
   int iVar2;
   uint uVar3;
-  int iVar4;
+  uint uVar4;
   int iVar5;
+  int iVar6;
   uint size;
-  int *piVar6;
   int *piVar7;
+  int *piVar8;
   int local_14;
   int local_10;
   int local_8;
+  int *piVar6;
 
-  iVar5 = this->field_023C;
-  size = iVar5 * 0x44;
+  iVar6 = this->field_023C;
+  size = iVar6 * 0x44;
   pvVar1 = st::fn_006AAC70(size);
   this->field_0244 = pvVar1;
   if (pvVar1 == nullptr) {
@@ -131,55 +133,55 @@ int __thiscall st::fn_0060D660(STFieldC *this,int *param_1)
   iVar2 = st::fn_00403413();
   piVar6 = param_1;
   piVar7 = this->field_0244;
-  for (uVar3 = size >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
+  for (uVar4 = size >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
     *piVar7 = *piVar6;
     piVar6 = piVar6 + 1;
     piVar7 = piVar7 + 1;
   }
-  for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
+  for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
     *(char *)piVar7 = (char)*piVar6;
     piVar6 = (int *)((int)piVar6 + 1);
     piVar7 = (int *)((int)piVar7 + 1);
   }
   local_8 = 0;
   local_10 = 0;
-  piVar6 = param_1 + iVar5 * 0x11;
+  piVar7 = param_1 + iVar6 * 0x11;
   if (0 < (int)this->field_023C) {
     local_14 = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = piVar6;
+    param_1 = piVar7;
     do {
       pvVar1 = this->field_0244;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar5 = *(int *)((int)pvVar1 + local_14 + 0x40);
-      if (((iVar5 != 0) || (*(int *)((int)pvVar1 + local_14 + 8) != 0)) && (*piVar6 != 0)) {
-        piVar6 = piVar6 + 1;
-        if (iVar5 != 0) {
-          uVar3 = st::fn_00403B9D((undefined4 *)((int)pvVar1 + local_14 + 0x40),piVar6);
+      iVar6 = *(int *)((int)pvVar1 + local_14 + 0x40);
+      if (((iVar6 != 0) || (*(int *)((int)pvVar1 + local_14 + 8) != 0)) && (*piVar7 != 0)) {
+        piVar7 = piVar7 + 1;
+        if (iVar6 != 0) {
+          uVar3 = st::fn_00403B9D((undefined4 *)((int)pvVar1 + local_14 + 0x40),piVar7);
           if (uVar3 != 0) {
             local_8 = local_8 + iVar2;
           }
-          piVar6 = (int *)((int)piVar6 + iVar2);
+          piVar7 = (int *)((int)piVar7 + iVar2);
         }
         if (*(int *)(local_14 + 8 + (int)this->field_0244) != 0) {
           pvVar1 = st::fn_006AAC70(*(int *)((int)this->field_0244 + local_14 + 4) << 2);
           *(void **)(local_14 + 8 + (int)this->field_0244) = pvVar1;
-          piVar7 = *(int **)((int)this->field_0244 + local_14 + 8);
-          for (uVar3 = *(uint *)(local_14 + 4 + (int)this->field_0244) & 0x3fffffff; uVar3 != 0;
-              uVar3 = uVar3 - 1) {
-            *piVar7 = *piVar6;
-            piVar6 = piVar6 + 1;
+          piVar8 = *(int **)((int)this->field_0244 + local_14 + 8);
+          for (uVar4 = *(uint *)(local_14 + 4 + (int)this->field_0244) & 0x3fffffff; uVar4 != 0;
+              uVar4 = uVar4 - 1) {
+            *piVar8 = *piVar7;
             piVar7 = piVar7 + 1;
+            piVar8 = piVar8 + 1;
           }
-          for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *(char *)piVar7 = (char)*piVar6;
-            piVar6 = (int *)((int)piVar6 + 1);
+          for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+            *(char *)piVar8 = (char)*piVar7;
             piVar7 = (int *)((int)piVar7 + 1);
+            piVar8 = (int *)((int)piVar8 + 1);
           }
         }
-        piVar6 = (int *)((int)param_1 + *param_1);
+        piVar7 = (int *)((int)param_1 + *param_1);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = piVar6;
+        param_1 = piVar7;
       }
       local_10 = local_10 + 1;
       local_14 = local_14 + 0x44;

@@ -20,12 +20,14 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
   undefined2 uVar4;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  int iVar5;
-  ushort *puVar6;
+  int local_EAX_154;
+  ushort *puVar5;
   STGameObjC *this_00;
-  IMAGE_DOS_HEADER *pIVar7;
+  int iVar7;
+  IMAGE_DOS_HEADER *pIVar8;
+  int iVar5;
   DArrayTy *array;
-  int iVar8;
+  int iVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -45,19 +47,19 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
     local_1c = this;
     uVar4 = sub_0065D9C0(this);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    iVar5 = CONCAT22(extraout_var,uVar4);
+    iVar7 = CONCAT22(extraout_var,uVar4);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    if ((0 < iVar5) &&
-       (local_20 = iVar5, local_c = sub_00661800((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
-       (int)this->field_0179 < iVar5 - local_c)) {
+    if ((0 < iVar7) &&
+       (local_20 = iVar7, local_c = sub_00661800((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
+       (int)this->field_0179 < iVar7 - local_c)) {
       local_18 = thunk_FUN_0068f8f0(this->field_0284,this->field_007B);
       local_8 = nullptr;
       local_10 = nullptr;
       local_68.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_68;
-      iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
+      local_EAX_154 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
       pAVar3 = local_1c;
-      if (iVar5 == 0) {
+      if (local_EAX_154 == 0) {
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         local_8 = (DArrayTy *)sub_0065DA10(local_1c,extraout_EDX_00);
         if (local_8 != nullptr) {
@@ -66,29 +68,29 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
           if (0 < (int)local_8->count) {
             do {
               if (local_14 < local_8->count) {
-                puVar6 = DArrayAt<ushort>(local_8, local_14);
+                puVar5 = DArrayAt<ushort>(local_8, local_14);
               }
               else {
-                puVar6 = nullptr;
+                puVar5 = nullptr;
               }
-              local_24 = STReplaceLowWord((uint32_t)(puVar6), (uint16_t)(*puVar6));
+              local_24 = STReplaceLowWord((uint32_t)(puVar5), (uint16_t)(*puVar5));
               this_00 = STAllPlayersC::GetObjPtr
-                                  (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,*puVar6,CASE_1
+                                  (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,*puVar5,CASE_1
                                   );
               if ((this_00 != nullptr) && ((int)pAVar3->field_0179 < local_20 - local_c))
               {
-                iVar5 = (*this_00->vtable->vfunc_2C)();
-                pIVar7 = thunk_FUN_00674fb0(iVar5);
-                if ((pAVar3->field_017F & (uint)pIVar7) != 0) {
+                iVar7 = (*this_00->vtable->vfunc_2C)();
+                pIVar8 = thunk_FUN_00674fb0(iVar7);
+                if ((pAVar3->field_017F & (uint)pIVar8) != 0) {
                   if (pAVar3->field_0039 == 3) {
-                    iVar5 = (*this_00->vtable->vfunc_C4)();
+                    iVar7 = (*this_00->vtable->vfunc_C4)();
                   }
                   else {
-                    iVar5 = (*this_00->vtable->vfunc_7C)();
+                    iVar7 = (*this_00->vtable->vfunc_7C)();
                   }
-                  if (iVar5 < pAVar3->field_0177) {
-                    iVar5 = (*this_00->vtable->vfunc_2C)();
-                    if ((iVar5 < 0x32) || (0x73 < iVar5)) {
+                  if (iVar7 < pAVar3->field_0177) {
+                    iVar7 = (*this_00->vtable->vfunc_2C)();
+                    if ((iVar7 < 0x32) || (0x73 < iVar7)) {
                       bVar2 = false;
                     }
                     else {
@@ -120,8 +122,8 @@ LAB_00661a96:
                         local_c = local_c + 1;
                       }
                     }
-                    iVar5 = (*this_00->vtable->vfunc_2C)();
-                    if ((iVar5 < 1) || (0x28 < iVar5)) {
+                    iVar7 = (*this_00->vtable->vfunc_2C)();
+                    if ((iVar7 < 1) || (0x28 < iVar7)) {
                       bVar2 = false;
                     }
                     else {
@@ -164,12 +166,12 @@ LAB_00661a96:
         DArrayDestroy(local_10);
         local_10 = nullptr;
       }
-      iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x6e9,0,iVar5,"%s",
-                                 "AiFltClassTy::GoToRepair");
-      if (iVar8 != 0) {
+      iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x6e9,0,local_EAX_154,
+                                 "%s","AiFltClassTy::GoToRepair");
+      if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_flt.cpp",0x6ea);
+      RaiseInternalException(local_EAX_154,0,"E:\\__titans\\ai\\ai_flt.cpp",0x6ea);
     }
   }
   return;

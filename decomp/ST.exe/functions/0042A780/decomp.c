@@ -28,8 +28,8 @@ void __cdecl FUN_0042a780(int *param_1)
         } while (*(int *)(iVar2 + 0x40) != *piVar3);
         if (piVar3 == nullptr) {
 LAB_0042a7e7:
-          Library::DKW::TBL::DArrayAppend(array,(void **)(iVar2 + 0x40));
-          FreeAndNull((void **)(iVar2 + 0x40));
+          Library::DKW::TBL::DArrayAppend(array,(void *)(iVar2 + 0x40));
+          FreeAndNull((void *)(iVar2 + 0x40));
         }
       }
       iVar4 = iVar4 + 1;

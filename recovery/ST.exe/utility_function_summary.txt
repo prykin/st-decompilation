@@ -1,8 +1,9 @@
 ST utility-function semantics
 
-Rules: 15
-Verified: 15
+Rules: 16
+Verified: 16
 
+006AB060 FreeAndNull: apply - body pattern verified
 006AE110 DArrayDestroy: apply - body pattern verified
 006AE290 DArrayCreate: apply - body pattern verified
 006B54F0 SArrayCreate: apply - body pattern verified

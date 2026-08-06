@@ -14,7 +14,9 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
 {
   DArrayTy *pDVar1;
   dword dVar2;
+  int iVar3;
   int iVar4;
+  int iVar5;
   int *piVar5;
   uint uVar6;
   uint index;
@@ -35,9 +37,9 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
     if (iVar4 != -0x5001fff7) {
-      iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x117c,0,iVar4,
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x117c,0,iVar4,
                                  "%s","STAllPlayersC::ReplaceObject");
-      if (iVar8 != 0) {
+      if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x117d);
@@ -108,9 +110,9 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
   } while ((int)local_10 < 0x7fa135);
   piVar5 = &g_packedRecords_A62x8[0].field3_0x9;
   do {
-    iVar4 = *piVar5;
-    if (((iVar4 != 0) && (iVar8 = *(int *)(iVar4 + 0xc), iVar8 != 0)) &&
-       (piVar7 = *(int **)(iVar4 + 0x1c), 0 < iVar8)) {
+    iVar3 = *piVar5;
+    if (((iVar3 != 0) && (iVar8 = *(int *)(iVar3 + 0xc), iVar8 != 0)) &&
+       (piVar7 = *(int **)(iVar3 + 0x1c), 0 < iVar8)) {
       do {
         if ((int *)*piVar7 != nullptr) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

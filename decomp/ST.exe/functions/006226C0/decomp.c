@@ -57,9 +57,9 @@ byte __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param
             (VisibleClassTy::sub_00558C00
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                         (int)this->field_0047,(int)this->field_0049,&param_2,(int *)&local_8),
-            -1 < iVar4)) && (iVar4 < 5)) && ((-1 < param_2 && (param_2 < pVVar2->field_0030)))) &&
-         ((iVar4 = (int)&local_8->vtable + g_centeredOffsets5[iVar4], -1 < iVar4 &&
-          ((iVar4 < pVVar2->field_0034 && (pVVar2->field_004C != nullptr)))))) &&
+            -1 < iVar4)) && (iVar4 < 5)) && ((-1 < param_2 && (param_2 < (int)pVVar2->field_0030))))
+         && ((iVar4 = (int)&local_8->vtable + g_centeredOffsets5[iVar4], -1 < iVar4 &&
+             ((iVar4 < pVVar2->field_0034 && (pVVar2->field_004C != nullptr)))))) &&
         (pVVar2->field_004C[param_2 + iVar4 * pVVar2->field_0030] == 0)))))))) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;

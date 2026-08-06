@@ -12,8 +12,9 @@ int __thiscall st::fn_00647DC0(AiBossClassTy *this,undefined4 *param_1)
 {
   int iVar2;
   int iVar3;
-  byte *puVar4;
+  int iVar4;
   byte *puVar5;
+  byte *puVar6;
   InternalExceptionFrame local_4c;
   AiBossClassTy *local_8;
 
@@ -23,13 +24,13 @@ int __thiscall st::fn_00647DC0(AiBossClassTy *this,undefined4 *param_1)
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     if (local_8 == nullptr) {
-      puVar5 = nullptr;
+      puVar6 = nullptr;
     }
     else {
-      puVar5 = (byte *)&local_8->field_0x5d3;
+      puVar6 = (byte *)&local_8->field_0x5d3;
     }
-    puVar4 = (byte *)(param_1);
-    memmove(puVar5, puVar4, 0x85); /* compiler REP MOVS byte copy */
+    puVar5 = (byte *)(param_1);
+    memmove(puVar6, puVar5, 0x85); /* compiler REP MOVS byte copy */
     local_8->field_05D8 = 1;
     st::fn_004054B1
               ((AiEventClassTy *)&local_8->vtable_at_1c,
@@ -128,14 +129,15 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
   int iVar3;
   AiPlrClassTy *this_01;
   int iVar4;
-  uint uVar5;
+  int iVar5;
   uint uVar6;
-  byte *pbVar7;
-  byte *puVar8;
-  char *pcVar9;
-  char cVar10;
-  byte *puVar11;
-  char *pcVar12;
+  uint uVar7;
+  byte *pbVar8;
+  byte *puVar9;
+  char *pcVar10;
+  char cVar11;
+  byte *puVar12;
+  char *pcVar13;
   InternalExceptionFrame local_54;
   AiBossClassTy *local_10;
   byte *local_c;
@@ -157,8 +159,8 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  uVar5 = g_playSystem_00802A38->field_00E4;
-  local_10->field_0658 = uVar5;
+  uVar6 = g_playSystem_00802A38->field_00E4;
+  local_10->field_0658 = uVar6;
   SVar1 = message->id;
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
@@ -173,12 +175,12 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
       st::fn_00401BE0((AiEventClassTy *)&local_10->vtable_at_1c,message);
     }
     else if (SVar1 == MESS_ID_CREATE) {
-      puVar8 = (byte *)((message->arg0).ptr);
-      if (puVar8 == nullptr) {
+      puVar9 = (byte *)((message->arg0).ptr);
+      if (puVar9 == nullptr) {
         st::fn_006A5E40
                   (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss.cpp",0x61);
       }
-      st::fn_00403774(this_00,puVar8);
+      st::fn_00403774(this_00,puVar9);
       DAT_008117bc = this_00;
       st::fn_00401F69();
     }
@@ -191,21 +193,21 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
   else if (SVar1 < 0x5ded) {
     if ((0x5dcf < SVar1) || ((0x5dc4 < SVar1 && (SVar1 < 0x5dc7)))) {
       if (SVar1 == MESS_SHARED_5DD5) {
-        if (uVar5 < local_10->field_0629 + 5) goto LAB_00648291;
-        local_10->field_0629 = uVar5;
+        if (uVar6 < local_10->field_0629 + 5) goto LAB_00648291;
+        local_10->field_0629 = uVar6;
       }
       st::fn_00401BE0((AiEventClassTy *)&local_10->vtable_at_1c,message);
       if (g_allPlayers_007FA174 != nullptr) {
-        cVar10 = '\0';
-        pbVar7 = &g_bulkInitializedRecords_008087C7[0].field_0022;
+        cVar11 = '\0';
+        pbVar8 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if ((*pbVar7 != 0xff) &&
-             (this_01 = st::fn_00401DC5(cVar10), this_01 != nullptr)) {
+          if ((*pbVar8 != 0xff) &&
+             (this_01 = st::fn_00401DC5(cVar11), this_01 != nullptr)) {
             this_01->st::fn_00401BE0(message);
           }
-          pbVar7 = pbVar7 + 0x51;
-          cVar10 = cVar10 + '\x01';
-        } while ((int)pbVar7 < 0x808a71);
+          pbVar8 = pbVar8 + 0x51;
+          cVar11 = cVar11 + '\x01';
+        } while ((int)pbVar8 < 0x808a71);
       }
     }
   }
@@ -217,39 +219,39 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
     else {
       DAT_0080c83a = g_playSystem_00802A38->field_00E4 / 0x19;
     }
-    puVar8 = (byte *)(&DAT_008087b6);
-    puVar11 = (byte *)(&DAT_0080c967);
-    memmove(puVar11, puVar8, 0x1999); /* compiler REP MOVS byte copy */
+    puVar9 = (byte *)(&DAT_008087b6);
+    puVar12 = (byte *)(&DAT_0080c967);
+    memmove(puVar12, puVar9, 0x1999); /* compiler REP MOVS byte copy */
     st::fn_00404197();
-    uVar5 = 0xffffffff;
-    pcVar9 = &DAT_0080ef1e;
+    uVar6 = 0xffffffff;
+    pcVar10 = &DAT_0080ef1e;
     do {
-      pcVar12 = pcVar9;
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      pcVar12 = pcVar9 + 1;
-      cVar10 = *pcVar9;
-      pcVar9 = pcVar12;
-    } while (cVar10 != '\0');
-    uVar5 = ~uVar5;
-    pcVar9 = pcVar12 + -uVar5;
-    pcVar12 = (char *)&DAT_0080c52e;
-    memmove(pcVar12, pcVar9, uVar5); /* compiler REP MOVS byte copy */
-    uVar6 = 0;
-    uVar5 = 0xffffffff;
-    pcVar9 = (char *)&DAT_0080c3c3;
+      pcVar13 = pcVar10;
+      if (uVar6 == 0) break;
+      uVar6 = uVar6 - 1;
+      pcVar13 = pcVar10 + 1;
+      cVar11 = *pcVar10;
+      pcVar10 = pcVar13;
+    } while (cVar11 != '\0');
+    uVar6 = ~uVar6;
+    pcVar10 = pcVar13 + -uVar6;
+    pcVar13 = (char *)&DAT_0080c52e;
+    memmove(pcVar13, pcVar10, uVar6); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
+    uVar6 = 0xffffffff;
+    pcVar10 = (char *)&DAT_0080c3c3;
     do {
-      pcVar12 = pcVar9;
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      pcVar12 = pcVar9 + 1;
-      cVar10 = *pcVar9;
-      pcVar9 = pcVar12;
-    } while (cVar10 != '\0');
-    uVar5 = ~uVar5;
-    pcVar9 = pcVar12 + -uVar5;
-    pcVar12 = (char *)&DAT_0080c736;
-    memmove(pcVar12, pcVar9, uVar5); /* compiler REP MOVS byte copy */
+      pcVar13 = pcVar10;
+      if (uVar6 == 0) break;
+      uVar6 = uVar6 - 1;
+      pcVar13 = pcVar10 + 1;
+      cVar11 = *pcVar10;
+      pcVar10 = pcVar13;
+    } while (cVar11 != '\0');
+    uVar6 = ~uVar6;
+    pcVar10 = pcVar13 + -uVar6;
+    pcVar13 = (char *)&DAT_0080c736;
+    memmove(pcVar13, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     if (DAT_008087a0 == '\b') {
       st::fn_00405CF4();
     }

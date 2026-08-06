@@ -21,12 +21,14 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
   CampaignTy *this_00;
   DWORD DVar5;
   int iVar6;
-  uint uVar7;
-  DWORD *pDVar8;
-  int *piVar9;
-  undefined4 *puVar10;
+  uint uVar6;
+  DWORD *pDVar7;
+  int *piVar8;
   int iVar11;
-  uint *puVar12;
+  undefined4 *puVar9;
+  int iVar10;
+  uint *puVar11;
+  int iVar12;
   undefined4 local_284 [112];
   InternalExceptionFrame local_c4;
   undefined4 local_80 [4];
@@ -66,101 +68,101 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
   AnimationCampaign(this_00);
   cVar1 = this_00->field_0065;
   if (cVar1 == '\x01') {
-    iVar6 = 0;
+    iVar12 = 0;
     if (this_00->field_009A != '\0') {
-      puVar12 = (uint *)&this_00->field_0x221;
+      puVar11 = (uint *)&this_00->field_0x221;
       do {
-        if (((*(int *)((int)puVar12 + -0x165) != 0) && (*(char *)((int)puVar12 + -0x13f) != '\0'))
-           && (puVar12[9] <= this_00->field_0061 - puVar12[10])) {
-          puVar12[10] = this_00->field_0061;
-          uVar7 = puVar12[-5];
-          puVar12[-5] = uVar7 + 1;
-          if ((int)puVar12[-4] <= (int)(uVar7 + 1)) {
-            puVar12[-5] = 0;
+        if (((*(int *)((int)puVar11 + -0x165) != 0) && (*(char *)((int)puVar11 + -0x13f) != '\0'))
+           && (puVar11[9] <= this_00->field_0061 - puVar11[10])) {
+          puVar11[10] = this_00->field_0061;
+          uVar6 = puVar11[-5];
+          puVar11[-5] = uVar6 + 1;
+          if ((int)puVar11[-4] <= (int)(uVar6 + 1)) {
+            puVar11[-5] = 0;
           }
-          if (puVar12[-6] != 0xffffffff) {
+          if (puVar11[-6] != 0xffffffff) {
             Library::DKW::DDX::FUN_006b3730
-                      ((uint *)puVar12[0xb],puVar12[-6],puVar12[-5],*puVar12,puVar12[1]);
+                      ((uint *)puVar11[0xb],puVar11[-6],puVar11[-5],*puVar11,puVar11[1]);
           }
         }
-        iVar6 = iVar6 + 1;
-        puVar12 = (uint *)((int)puVar12 + 0x1fb);
-      } while (iVar6 < (int)(uint)(byte)this_00->field_009A);
+        iVar12 = iVar12 + 1;
+        puVar11 = (uint *)((int)puVar11 + 0x1fb);
+      } while (iVar12 < (int)(uint)(byte)this_00->field_009A);
     }
   }
   else if (cVar1 == '\x03') {
-    iVar6 = 0;
-    uVar7 = (uint)(byte)this_00->field_009A;
-    if (uVar7 != 0) {
+    iVar12 = 0;
+    uVar6 = (uint)(byte)this_00->field_009A;
+    if (uVar6 != 0) {
       do {
-        if (*(int *)(&this_00->field_0xbc + iVar6 * 0x1fb) != 0) {
-          if (this_00->field_0061 - *(int *)((int)&this_00->field_0127 + iVar6 * 0x1fb) <
-              *(uint *)((int)&this_00->field_0123 + iVar6 * 0x1fb)) {
-            iVar6 = 0;
+        if (*(int *)(&this_00->field_0xbc + iVar12 * 0x1fb) != 0) {
+          if (this_00->field_0061 - *(int *)((int)&this_00->field_0127 + iVar12 * 0x1fb) <
+              *(uint *)((int)&this_00->field_0123 + iVar12 * 0x1fb)) {
+            iVar12 = 0;
             local_8 = 0;
-            if (uVar7 != 0) {
-              pDVar8 = (DWORD *)&this_00->field_0x249;
+            if (uVar6 != 0) {
+              pDVar7 = (DWORD *)&this_00->field_0x249;
               do {
-                if (*(char *)((int)pDVar8 + -0x167) != '\0') {
-                  *pDVar8 = this_00->field_0061;
+                if (*(char *)((int)pDVar7 + -0x167) != '\0') {
+                  *pDVar7 = this_00->field_0061;
                 }
-                iVar6 = iVar6 + 1;
-                pDVar8 = (DWORD *)((int)pDVar8 + 0x1fb);
-              } while (iVar6 < (int)(uint)(byte)this_00->field_009A);
+                iVar12 = iVar12 + 1;
+                pDVar7 = (DWORD *)((int)pDVar7 + 0x1fb);
+              } while (iVar12 < (int)(uint)(byte)this_00->field_009A);
             }
           }
           else {
-            iVar11 = *(int *)((int)&this_00->field_00EB + iVar6 * 0x1fb);
-            if (iVar11 < *(int *)(&this_00->field_0xef + iVar6 * 0x1fb) + -1) {
-              if ((iVar11 == 0) &&
-                 (uVar7 = *(uint *)((int)&this_00->field_00E7 + iVar6 * 0x1fb), uVar7 != 0xffffffff)
-                 ) {
+            iVar10 = *(int *)((int)&this_00->field_00EB + iVar12 * 0x1fb);
+            if (iVar10 < *(int *)(&this_00->field_0xef + iVar12 * 0x1fb) + -1) {
+              if ((iVar10 == 0) &&
+                 (uVar6 = *(uint *)((int)&this_00->field_00E7 + iVar12 * 0x1fb), uVar6 != 0xffffffff
+                 )) {
                 Library::DKW::DDX::FUN_006b34d0
-                          (*(uint **)((int)&this_00->field_012B + iVar6 * 0x1fb),uVar7,0xfffffffe,
-                           *(uint *)((int)&this_00->field_00FF + iVar6 * 0x1fb),
-                           *(uint *)((int)&this_00->field_0103 + iVar6 * 0x1fb));
+                          (*(uint **)((int)&this_00->field_012B + iVar12 * 0x1fb),uVar6,0xfffffffe,
+                           *(uint *)((int)&this_00->field_00FF + iVar12 * 0x1fb),
+                           *(uint *)((int)&this_00->field_0103 + iVar12 * 0x1fb));
               }
-              *(int *)((int)&this_00->field_00EB + iVar6 * 0x1fb) =
-                   *(int *)((int)&this_00->field_00EB + iVar6 * 0x1fb) + 1;
-              uVar7 = *(uint *)((int)&this_00->field_00E7 + iVar6 * 0x1fb);
-              if (uVar7 != 0xffffffff) {
+              *(int *)((int)&this_00->field_00EB + iVar12 * 0x1fb) =
+                   *(int *)((int)&this_00->field_00EB + iVar12 * 0x1fb) + 1;
+              uVar6 = *(uint *)((int)&this_00->field_00E7 + iVar12 * 0x1fb);
+              if (uVar6 != 0xffffffff) {
                 Library::DKW::DDX::FUN_006b3730
-                          (*(uint **)((int)&this_00->field_012B + iVar6 * 0x1fb),uVar7,
-                           *(uint *)((int)&this_00->field_00EB + iVar6 * 0x1fb),
-                           *(uint *)((int)&this_00->field_00FF + iVar6 * 0x1fb),
-                           *(uint *)((int)&this_00->field_0103 + iVar6 * 0x1fb));
+                          (*(uint **)((int)&this_00->field_012B + iVar12 * 0x1fb),uVar6,
+                           *(uint *)((int)&this_00->field_00EB + iVar12 * 0x1fb),
+                           *(uint *)((int)&this_00->field_00FF + iVar12 * 0x1fb),
+                           *(uint *)((int)&this_00->field_0103 + iVar12 * 0x1fb));
               }
               local_8 = 0;
             }
             else {
-              iVar11 = *(int *)((int)&this_00->field_017C + iVar6 * 0x1fb);
-              if (iVar11 < *(int *)(&this_00->field_0x180 + iVar6 * 0x1fb) + -3) {
-                if (iVar11 == 0) {
-                  uVar7 = *(uint *)((int)&this_00->field_0178 + iVar6 * 0x1fb);
-                  if (uVar7 != 0xffffffff) {
+              iVar10 = *(int *)((int)&this_00->field_017C + iVar12 * 0x1fb);
+              if (iVar10 < *(int *)(&this_00->field_0x180 + iVar12 * 0x1fb) + -3) {
+                if (iVar10 == 0) {
+                  uVar6 = *(uint *)((int)&this_00->field_0178 + iVar12 * 0x1fb);
+                  if (uVar6 != 0xffffffff) {
                     Library::DKW::DDX::FUN_006b34d0
-                              (*(uint **)((int)&this_00->field_01BC + iVar6 * 0x1fb),uVar7,
-                               0xfffffffe,*(uint *)((int)&this_00->field_0190 + iVar6 * 0x1fb),
-                               *(uint *)((int)&this_00->field_0194 + iVar6 * 0x1fb));
+                              (*(uint **)((int)&this_00->field_01BC + iVar12 * 0x1fb),uVar6,
+                               0xfffffffe,*(uint *)((int)&this_00->field_0190 + iVar12 * 0x1fb),
+                               *(uint *)((int)&this_00->field_0194 + iVar12 * 0x1fb));
                   }
-                  if (((&this_00->field_00E2)[iVar6 * 0x1fb] != '\0') &&
-                     (uVar7 = *(uint *)((int)&this_00->field_0209 + iVar6 * 0x1fb),
-                     uVar7 != 0xffffffff)) {
+                  if (((&this_00->field_00E2)[iVar12 * 0x1fb] != '\0') &&
+                     (uVar6 = *(uint *)((int)&this_00->field_0209 + iVar12 * 0x1fb),
+                     uVar6 != 0xffffffff)) {
                     Library::DKW::DDX::FUN_006b34d0
-                              (*(uint **)((int)&this_00->field_024D + iVar6 * 0x1fb),uVar7,
-                               0xfffffffe,*(uint *)(&this_00->field_0x221 + iVar6 * 0x1fb),
-                               *(uint *)(&this_00->field_0x225 + iVar6 * 0x1fb));
+                              (*(uint **)((int)&this_00->field_024D + iVar12 * 0x1fb),uVar6,
+                               0xfffffffe,*(uint *)(&this_00->field_0x221 + iVar12 * 0x1fb),
+                               *(uint *)(&this_00->field_0x225 + iVar12 * 0x1fb));
                   }
                 }
-                *(int *)((int)&this_00->field_017C + iVar6 * 0x1fb) =
-                     *(int *)((int)&this_00->field_017C + iVar6 * 0x1fb) + 1;
-                uVar7 = *(uint *)((int)&this_00->field_0178 + iVar6 * 0x1fb);
-                if (uVar7 != 0xffffffff) {
+                *(int *)((int)&this_00->field_017C + iVar12 * 0x1fb) =
+                     *(int *)((int)&this_00->field_017C + iVar12 * 0x1fb) + 1;
+                uVar6 = *(uint *)((int)&this_00->field_0178 + iVar12 * 0x1fb);
+                if (uVar6 != 0xffffffff) {
                   Library::DKW::DDX::FUN_006b3730
-                            (*(uint **)((int)&this_00->field_01BC + iVar6 * 0x1fb),uVar7,
-                             *(uint *)((int)&this_00->field_017C + iVar6 * 0x1fb),
-                             *(uint *)((int)&this_00->field_0190 + iVar6 * 0x1fb),
-                             *(uint *)((int)&this_00->field_0194 + iVar6 * 0x1fb));
+                            (*(uint **)((int)&this_00->field_01BC + iVar12 * 0x1fb),uVar6,
+                             *(uint *)((int)&this_00->field_017C + iVar12 * 0x1fb),
+                             *(uint *)((int)&this_00->field_0190 + iVar12 * 0x1fb),
+                             *(uint *)((int)&this_00->field_0194 + iVar12 * 0x1fb));
                 }
                 thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
                 local_8 = 0;
@@ -168,36 +170,36 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
             }
           }
         }
-        iVar6 = iVar6 + 1;
-        uVar7 = (uint)(byte)this_00->field_009A;
-      } while (iVar6 < (int)uVar7);
+        iVar12 = iVar12 + 1;
+        uVar6 = (uint)(byte)this_00->field_009A;
+      } while (iVar12 < (int)uVar6);
     }
     if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
        (g_startSystem_0081176C->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
-      iVar11 = 1;
+      iVar10 = 1;
       memset(local_80, 0, 0x58); /* compiler bulk-zero initialization */
-      iVar6 = 0;
+      iVar12 = 0;
       memset(local_284, 0, 0x1c0); /* compiler bulk-zero initialization */
-      puVar10 = local_284 + 1;
-      iVar6 = 3;
-      piVar9 = (int *)&this_00->field_0x491;
+      puVar9 = local_284 + 1;
+      iVar12 = 3;
+      piVar8 = (int *)&this_00->field_0x491;
       do {
-        iVar2 = piVar9[0x19];
-        puVar10[-1] = iVar11;
-        iVar3 = *piVar9;
-        *puVar10 = 0;
-        puVar10[2] = iVar2 + iVar3;
-        puVar10[4] = piVar9[2];
-        iVar11 = iVar11 + 1;
-        puVar10[3] = piVar9[0x1a] + piVar9[1];
-        puVar10[5] = piVar9[3];
-        puVar10 = puVar10 + 0x1c;
-        iVar6 = iVar6 + -1;
-        piVar9 = (int *)((int)piVar9 + 0x1fb);
-      } while (iVar6 != 0);
+        iVar2 = piVar8[0x19];
+        puVar9[-1] = iVar10;
+        iVar3 = *piVar8;
+        *puVar9 = 0;
+        puVar9[2] = iVar2 + iVar3;
+        puVar9[4] = piVar8[2];
+        iVar10 = iVar10 + 1;
+        puVar9[3] = piVar8[0x1a] + piVar8[1];
+        puVar9[5] = piVar8[3];
+        puVar9 = puVar9 + 0x1c;
+        iVar12 = iVar12 + -1;
+        piVar8 = (int *)((int)piVar8 + 0x1fb);
+      } while (iVar12 != 0);
       local_70 = this_00->field_0008;
       local_34 = (uint)DAT_0080874e;
       local_38 = local_284;
@@ -209,13 +211,13 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
       local_50 = local_70;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0066,0,local_80,0);
-      iVar6 = this_00->field_1A5B;
-      if (*(int *)(iVar6 + 0x2e6) != 0) {
+      iVar12 = this_00->field_1A5B;
+      if (*(int *)(iVar12 + 0x2e6) != 0) {
         memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
         local_1c = 1;
         local_1e = 1;
         STPiece<2,2>(local_28) = 1;
-        MMsgTy::StatePanel(*(MMsgTy **)(iVar6 + 0x2e6),(int)&local_28);
+        MMsgTy::StatePanel(*(MMsgTy **)(iVar12 + 0x2e6),(int)&local_28);
       }
       this_00->field_0065 = 1;
       g_currentExceptionFrame = local_c4.previous;
@@ -223,42 +225,42 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
     }
   }
   else if (cVar1 == '\x04') {
-    iVar6 = 0;
+    iVar12 = 0;
     if (this_00->field_009A != '\0') {
-      puVar12 = &this_00->field_0178;
+      puVar11 = &this_00->field_0178;
       do {
-        if (this_00->field_0061 - *(int *)((int)puVar12 + -0x51) < *(uint *)((int)puVar12 + -0x55))
+        if (this_00->field_0061 - *(int *)((int)puVar11 + -0x51) < *(uint *)((int)puVar11 + -0x55))
         {
 LAB_00591d08:
           local_8 = 0;
         }
         else {
-          if (*(char *)((int)puVar12 + -0xbd) != '\0') {
-            if (*puVar12 != 0xffffffff) {
-              FUN_006b3af0((int *)puVar12[0x11],*puVar12);
+          if (*(char *)((int)puVar11 + -0xbd) != '\0') {
+            if (*puVar11 != 0xffffffff) {
+              FUN_006b3af0((int *)puVar11[0x11],*puVar11);
             }
-            if ((*(char *)((int)puVar12 + -0x96) != '\0') &&
-               (STField<uint>(puVar12,0x91) != 0xffffffff)) {
-              FUN_006b3af0(STField<int *>(puVar12,0xd5),STField<uint>(puVar12,0x91));
+            if ((*(char *)((int)puVar11 + -0x96) != '\0') &&
+               (STField<uint>(puVar11,0x91) != 0xffffffff)) {
+              FUN_006b3af0(STField<int *>(puVar11,0xd5),STField<uint>(puVar11,0x91));
             }
-            *(undefined1 *)((int)puVar12 + -0xbd) = 0;
+            *(undefined1 *)((int)puVar11 + -0xbd) = 0;
           }
-          if (0 < *(int *)((int)puVar12 + -0x8d)) {
-            uVar7 = *(int *)((int)puVar12 + -0x8d) - 1;
-            *(uint *)((int)puVar12 + -0x8d) = uVar7;
-            if (*(uint *)((int)puVar12 + -0x91) != 0xffffffff) {
+          if (0 < *(int *)((int)puVar11 + -0x8d)) {
+            uVar6 = *(int *)((int)puVar11 + -0x8d) - 1;
+            *(uint *)((int)puVar11 + -0x8d) = uVar6;
+            if (*(uint *)((int)puVar11 + -0x91) != 0xffffffff) {
               Library::DKW::DDX::FUN_006b3730
-                        (*(uint **)((int)puVar12 + -0x4d),*(uint *)((int)puVar12 + -0x91),uVar7,
-                         *(uint *)((int)puVar12 + -0x79),*(uint *)((int)puVar12 + -0x75));
+                        (*(uint **)((int)puVar11 + -0x4d),*(uint *)((int)puVar11 + -0x91),uVar6,
+                         *(uint *)((int)puVar11 + -0x79),*(uint *)((int)puVar11 + -0x75));
             }
             goto LAB_00591d08;
           }
         }
-        iVar6 = iVar6 + 1;
-        puVar12 = (uint *)((int)puVar12 + 0x1fb);
-      } while (iVar6 < (int)(uint)(byte)this_00->field_009A);
+        iVar12 = iVar12 + 1;
+        puVar11 = (uint *)((int)puVar11 + 0x1fb);
+      } while (iVar12 < (int)(uint)(byte)this_00->field_009A);
     }
-    iVar6 = 0;
+    iVar12 = 0;
     if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
        (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
@@ -266,14 +268,14 @@ LAB_00591d08:
     if (local_8 != 0) {
       this_00->field_0065 = 2;
       if (this_00->field_009A != '\0') {
-        puVar12 = &this_00->field_00E7;
+        puVar11 = &this_00->field_00E7;
         do {
-          if (*puVar12 != 0xffffffff) {
-            FUN_006b3af0((int *)puVar12[0x11],*puVar12);
+          if (*puVar11 != 0xffffffff) {
+            FUN_006b3af0((int *)puVar11[0x11],*puVar11);
           }
-          iVar6 = iVar6 + 1;
-          puVar12 = (uint *)((int)puVar12 + 0x1fb);
-        } while (iVar6 < (int)(uint)(byte)this_00->field_009A);
+          iVar12 = iVar12 + 1;
+          puVar11 = (uint *)((int)puVar11 + 0x1fb);
+        } while (iVar12 < (int)(uint)(byte)this_00->field_009A);
       }
       if (*(int *)(&this_00->field_0xd1 + (uint)(byte)this_00->field_1A5A * 0x1fb) != 0) {
         AppClassTy::PostNextMessage

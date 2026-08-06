@@ -8,12 +8,14 @@
 void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
 
 {
+  int iVar1;
   MMsgTy *this_00;
   CursorClassTy *this_01;
-  PrividerTy *pPVar2;
+  PrividerTy *pPVar3;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int iVar5;
+  uint *puVar6;
   InternalExceptionFrame local_4c;
   PrividerTy *local_8;
 
@@ -21,16 +23,16 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  pPVar2 = local_8;
+  pPVar3 = local_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     this_01 = g_cursorClass_00802A30;
     if (g_cursorClass_00802A30 != nullptr) {
-      iVar3 = g_cursorClass_00802A30->field_00C9;
-      iVar4 = g_cursorClass_00802A30->field_00C5;
+      iVar5 = g_cursorClass_00802A30->field_00C9;
+      iVar1 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       this_01->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(this_01,CASE_0,iVar4,iVar3);
+      CursorClassTy::SetGCType(this_01,CASE_0,iVar1,iVar5);
       CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);
       this_01->field_00D2 = 0;
       this_01->field_04DF = -1;
@@ -41,58 +43,58 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
         FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
-    if (pPVar2->field_004D == 0x6102) {
+    if (pPVar3->field_004D == 0x6102) {
       DarkScreen(g_dDXContext_0080759C,10,2);
     }
     if (g_startSystem_0081176C->field_002C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
-    SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar2->field_1A77);
-    SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar2->field_1B08);
-    SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar2->field_1B99);
-    puVar5 = pPVar2->field_1C2A;
-    iVar3 = 0x16;
+    SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar3->field_1A77);
+    SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar3->field_1B08);
+    SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar3->field_1B99);
+    puVar6 = pPVar3->field_1C2A;
+    iVar5 = 0x16;
     do {
-      if (*puVar5 != 0xffffffff) {
-        FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar5);
-        *puVar5 = 0xffffffff;
+      if (*puVar6 != 0xffffffff) {
+        FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar6);
+        *puVar6 = 0xffffffff;
       }
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
-    if (pPVar2->field_1C8A != 0xffffffff) {
-      FUN_006b3bb0((int *)g_ddxContext_008075A8,pPVar2->field_1C8A);
+      puVar6 = puVar6 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
+    if (pPVar3->field_1C8A != 0xffffffff) {
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,pPVar3->field_1C8A);
     }
-    pPVar2->field_1C8A = 0xffffffff;
-    if (pPVar2->field_1C82 != nullptr) {
-      FreeAndNull(&pPVar2->field_1C82);
+    pPVar3->field_1C8A = 0xffffffff;
+    if (pPVar3->field_1C82 != nullptr) {
+      FreeAndNull(&pPVar3->field_1C82);
     }
-    if (pPVar2->field_1C8E != nullptr) {
-      FreeAndNull(&pPVar2->field_1C8E);
+    if (pPVar3->field_1C8E != nullptr) {
+      FreeAndNull(&pPVar3->field_1C8E);
     }
-    if (pPVar2->field_1C96 != nullptr) {
-      HoloTy::Done(pPVar2->field_1C96);
-      Library::MSVCRT::FUN_0072e2b0(pPVar2->field_1C96);
-      pPVar2->field_1C96 = nullptr;
+    if (pPVar3->field_1C96 != nullptr) {
+      HoloTy::Done(pPVar3->field_1C96);
+      Library::MSVCRT::FUN_0072e2b0(pPVar3->field_1C96);
+      pPVar3->field_1C96 = nullptr;
     }
-    if (pPVar2->field_1C9A != nullptr) {
-      HoloTy::Done(pPVar2->field_1C9A);
-      Library::MSVCRT::FUN_0072e2b0(pPVar2->field_1C9A);
-      pPVar2->field_1C9A = nullptr;
+    if (pPVar3->field_1C9A != nullptr) {
+      HoloTy::Done(pPVar3->field_1C9A);
+      Library::MSVCRT::FUN_0072e2b0(pPVar3->field_1C9A);
+      pPVar3->field_1C9A = nullptr;
     }
-    if ((pPVar2->field_004D == 0x6102) &&
-       (this_00 = pPVar2->field_1A5B->field_02E6, this_00 != nullptr)) {
+    if ((pPVar3->field_004D == 0x6102) &&
+       (this_00 = pPVar3->field_1A5B->field_02E6, this_00 != nullptr)) {
       MMsgTy::HideSprites(this_00);
-      pPVar2->field_1A5B->field_02E6->field_1CAB = 0;
+      pPVar3->field_1A5B->field_02E6->field_1CAB = 0;
     }
-    if (pPVar2->field_004D != 0) {
-      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pPVar2->field_0x3d);
+    if (pPVar3->field_004D != 0) {
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pPVar3->field_0x3d);
     }
     StartSystemTy::sub_005DAB30(g_startSystem_0081176C);
-    if (pPVar2->field_1C92 != nullptr) {
-      FUN_006b5570(pPVar2->field_1C92);
+    if (pPVar3->field_1C92 != nullptr) {
+      FUN_006b5570(pPVar3->field_1C92);
     }
-    pPVar2->field_1C92 = nullptr;
+    pPVar3->field_1C92 = nullptr;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

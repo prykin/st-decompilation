@@ -17,7 +17,8 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
   int iVar4;
   SettMapMTy_field_1F84Element *element_1f84;
   int iVar6;
-  uint uVar7;
+  uint uVar5;
+  int iVar7;
   bool bVar8;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
@@ -28,32 +29,32 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
     local_8 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar4 == 0) {
-      uVar7 = 0;
+      uVar5 = 0;
       pSVar1 = local_8->field_1F84;
       uVar2 = pSVar1->count;
       if (0 < (int)uVar2) {
         bVar8 = uVar2 != 0;
         while( true ) {
           if (bVar8) {
-            element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar1, uVar7);
+            element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar1, uVar5);
           }
           else {
             element_1f84 = nullptr;
           }
           if (((element_1f84 != nullptr) && (element_1f84->element == param_1)) &&
              ((element_1f84->field_0004 == '\x02' || (element_1f84->field_0004 == '\x03')))) break;
-          uVar7 = uVar7 + 1;
-          bVar8 = uVar7 < uVar2;
-          if ((int)uVar2 <= (int)uVar7) {
+          uVar5 = uVar5 + 1;
+          bVar8 = uVar5 < uVar2;
+          if ((int)uVar2 <= (int)uVar5) {
             g_currentExceptionFrame = local_4c.previous;
             return;
           }
         }
         element_1f84->field_004B = param_2;
-        iVar4 = (uVar7 - local_8->field_1F88) * 0x20;
-        if (*(int *)(iVar4 + 0x1fa4 + (int)local_8) != 0) {
+        iVar7 = (uVar5 - local_8->field_1F88) * 0x20;
+        if (*(int *)(iVar7 + 0x1fa4 + (int)local_8) != 0) {
           local_8->field_002D = 5;
-          FUN_006e6080(local_8,2,*(undefined4 *)(iVar4 + 0x1fa4 + (int)local_8),
+          FUN_006e6080(local_8,2,*(undefined4 *)(iVar7 + 0x1fa4 + (int)local_8),
                        (undefined4 *)&local_8->field_0x1d);
         }
       }

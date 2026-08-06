@@ -10,6 +10,7 @@ void __thiscall IntercomPanelTy::PreInitIntercomPanel(IntercomPanelTy *this)
 {
   IntercomPanelTy *pIVar2;
   int iVar3;
+  int iVar5;
   int iVar4;
   InternalExceptionFrame local_4c;
   IntercomPanelTy *local_8;
@@ -21,9 +22,9 @@ void __thiscall IntercomPanelTy::PreInitIntercomPanel(IntercomPanelTy *this)
   pIVar2 = local_8;
   if (iVar3 == 0) {
     FUN_006b1a50(g_ddxContext_008075A8,3,nullptr,(undefined4 *)&local_8->field_0x188);
-    iVar3 = pIVar2->field_018C - pIVar2->field_0048;
-    pIVar2->field_0044 = iVar3;
-    pIVar2->field_0174 = iVar3 + pIVar2->field_0048;
+    iVar5 = pIVar2->field_018C - pIVar2->field_0048;
+    pIVar2->field_0044 = iVar5;
+    pIVar2->field_0174 = iVar5 + pIVar2->field_0048;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

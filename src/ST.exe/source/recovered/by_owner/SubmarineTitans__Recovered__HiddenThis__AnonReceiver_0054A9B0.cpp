@@ -24,8 +24,9 @@ st::fn_0054A9B0
   VisibleClassTy *pVVar3;
   AnonShape_0054A9B0_643B0813 *pAVar4;
   int iVar5;
-  uint uVar6;
-  SpriteClassTy *pSVar7;
+  uint uVar5;
+  SpriteClassTy *pSVar6;
+  int iVar7;
   int iVar8;
   longlong lVar9;
   InternalExceptionFrame local_58;
@@ -56,11 +57,11 @@ st::fn_0054A9B0
   }
   if (param_2 < _DAT_0079034c) {
     lVar9 = st::fn_0072E288();
-    iVar5 = (short)lVar9 + -1;
+    iVar7 = (short)lVar9 + -1;
   }
   else {
     lVar9 = st::fn_0072E288();
-    iVar5 = (int)(short)lVar9;
+    iVar7 = (int)(short)lVar9;
   }
   if (param_3 < _DAT_0079034c) {
     lVar9 = st::fn_0072E288();
@@ -72,14 +73,14 @@ st::fn_0054A9B0
   }
   pVVar3 = g_visibleClass_00802A88;
   if ((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) {
-    uVar6 = 0;
+    uVar5 = 0;
   }
   else {
     st::fn_00403F53
-              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_8,iVar5,&local_10,
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_8,iVar7,&local_10,
                &local_14);
     if ((iVar8 < 0) || (4 < iVar8)) {
-      uVar6 = 0xffffffff;
+      uVar5 = 0xffffffff;
     }
     else {
       if ((((local_10 < 0) || ((int)pVVar3->field_0028 <= local_10)) ||
@@ -90,16 +91,18 @@ st::fn_0054A9B0
       else {
         bVar2 = true;
       }
-      if (((bVar2) && (pVVar3->field_010C < 4)) && (pVVar3->field_003C[pVVar3->field_010C] != 0)) {
-        uVar6 = (uint)*(byte *)((g_centeredOffsets5[iVar8] + local_14) * pVVar3->field_0028 +
-                                pVVar3->field_003C[pVVar3->field_010C] + local_10);
+      if (((bVar2) && (pVVar3->field_010C < 4)) &&
+         (pVVar3->field_003C[pVVar3->field_010C] != nullptr)) {
+        uVar5 = (uint)*(byte *)((int)pVVar3->field_003C[pVVar3->field_010C] +
+                               local_10 +
+                               (g_centeredOffsets5[iVar8] + local_14) * pVVar3->field_0028);
       }
       else {
-        uVar6 = 0xffffffff;
+        uVar5 = 0xffffffff;
       }
-      if ((int)uVar6 < 0) goto cf_common_exit_0054ACFD;
-      if (uVar6 == 0xf) {
-        if (((local_10 < 0) || (pVVar3->field_0030 <= local_10)) ||
+      if ((int)uVar5 < 0) goto cf_common_exit_0054ACFD;
+      if (uVar5 == 0xf) {
+        if (((local_10 < 0) || ((int)pVVar3->field_0030 <= local_10)) ||
            ((g_centeredOffsets5[iVar8] + local_14 < 0 ||
             (pVVar3->field_0034 <= g_centeredOffsets5[iVar8] + local_14)))) {
           bVar2 = false;
@@ -108,40 +111,40 @@ st::fn_0054A9B0
           bVar2 = true;
         }
         if ((bVar2) && (pVVar3->field_004C != nullptr)) {
-          uVar6 = (uint)pVVar3->field_004C
+          uVar5 = (uint)pVVar3->field_004C
                         [local_10 + (g_centeredOffsets5[iVar8] + local_14) * pVVar3->field_0030];
         }
         else {
-          uVar6 = 0xffffffff;
+          uVar5 = 0xffffffff;
         }
-        if ((int)uVar6 < 0) goto cf_common_exit_0054ACFD;
-        uVar6 = (uint)(uVar6 != 0xf);
+        if ((int)uVar5 < 0) goto cf_common_exit_0054ACFD;
+        uVar5 = (uint)(uVar5 != 0xf);
       }
       else {
-        uVar6 = 2;
+        uVar5 = 2;
       }
     }
   }
   pAVar4 = local_c;
-  if (0 < (int)uVar6) {
+  if (0 < (int)uVar5) {
     if ((SpriteClassTy *)local_c->field_04EB != nullptr) {
       st::fn_00715AB0((SpriteClassTy *)local_c->field_04EB);
       st::fn_0072E2B0((HoloTy *)pAVar4->field_04EB);
       pAVar4->field_04EB = 0;
     }
-    pSVar7 = (SpriteClassTy *)st::fn_0072E530(0x91);
-    if (pSVar7 == nullptr) {
-      pSVar7 = nullptr;
+    pSVar6 = (SpriteClassTy *)st::fn_0072E530(0x91);
+    if (pSVar6 == nullptr) {
+      pSVar6 = nullptr;
     }
     else {
-      pSVar7 = st::fn_00715820(pSVar7);
+      pSVar6 = st::fn_00715820(pSVar6);
     }
-    pAVar4->field_04EB = pSVar7;
-    if (pSVar7 == nullptr) {
+    pAVar4->field_04EB = pSVar6;
+    if (pSVar6 == nullptr) {
       g_currentExceptionFrame = local_58.previous;
       return;
     }
-    st::fn_007158A0(pSVar7,(int *)g_ddxContext_008075A8,1,'\a',nullptr,0,0);
+    st::fn_007158A0(pSVar6,(int *)g_ddxContext_008075A8,1,'\a',nullptr,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)pAVar4->field_04EB + 4))
               (PTR_00806784,7,0,"CUR_CONFIRM2D",0xffffffff);
@@ -157,14 +160,14 @@ st::fn_0054A9B0
          *(int *)(pAVar4->field_04EB + 0x1c) - *(int *)(pAVar4->field_04E7 + 9) / 2;
     *(int *)(pAVar4->field_04EB + 0x20) =
          *(int *)(pAVar4->field_04EB + 0x20) - *(int *)(pAVar4->field_04E7 + 0xd) / 2;
-    iVar5 = pAVar4->field_04EB;
-    if (*(uint *)(iVar5 + 4) == 0xffffffff) {
+    iVar7 = pAVar4->field_04EB;
+    if (*(uint *)(iVar7 + 4) == 0xffffffff) {
       g_currentExceptionFrame = local_58.previous;
       return;
     }
     st::fn_006B34D0
-              (*(uint **)(iVar5 + 0x48),*(uint *)(iVar5 + 4),0xfffffffe,*(uint *)(iVar5 + 0x1c),
-               *(uint *)(iVar5 + 0x20));
+              (*(uint **)(iVar7 + 0x48),*(uint *)(iVar7 + 4),0xfffffffe,*(uint *)(iVar7 + 0x1c),
+               *(uint *)(iVar7 + 0x20));
     g_currentExceptionFrame = local_58.previous;
     return;
   }
@@ -172,11 +175,11 @@ cf_common_exit_0054ACFD:
   pAVar4 = local_c;
   local_8 = 0xffffffff;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar6 = *(uint *)(local_c->field_04E7 + 0xd);
+  uVar5 = *(uint *)(local_c->field_04E7 + 0xd);
   uVar1 = *(uint *)(local_c->field_04E7 + 9);
   st::fn_006E8660
-            (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,uVar1,uVar6,(int)uVar1 / 2,
-             (int)uVar6 / 2 - 0xe,0);
+            (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,uVar1,uVar5,(int)uVar1 / 2,
+             (int)uVar5 / 2 - 0xe,0);
   if (-1 < (int)local_8) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006E98E0

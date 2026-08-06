@@ -39,7 +39,7 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	FSGSTy	7983	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_FSGSTy_1F2F	27	4	8	review	multiple non-overlapping fixed offsets through one class pointer field
 0	HelpPanelTy	104	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0068	24	4	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	HelpPanelTy	435	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01B3	32	2	21	review	multiple non-overlapping fixed offsets through one class pointer field
-0	HelpPanelTy	455	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01C7	8	2	10	review	multiple non-overlapping fixed offsets through one class pointer field
+0	HelpPanelTy	455	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01C7	8	2	5	review	multiple non-overlapping fixed offsets through one class pointer field
 0	HelpPanelTy	484	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01E4	164	2	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	HelpPanelTy	492	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01EC	24	4	8	review	multiple non-overlapping fixed offsets through one class pointer field
 0	HelpPanelTy	536	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0218	24	4	13	review	multiple non-overlapping fixed offsets through one class pointer field

@@ -18,10 +18,11 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
 {
   OptPanelTy *this_00;
   short sVar2;
+  int iVar5;
   undefined4 uVar3;
   int iVar4;
-  int iVar5;
-  uint *puVar6;
+  int iVar6;
+  uint *puVar7;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
 
@@ -40,24 +41,24 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
     iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (iVar5 == 0) {
-      iVar5 = 10;
-      puVar6 = local_8->field_01B5;
+      iVar6 = 10;
+      puVar7 = local_8->field_01B5;
       do {
-        if (*puVar6 != 0) {
-          FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
+        if (*puVar7 != 0) {
+          FUN_006e6080(this_00,2,*puVar7,(undefined4 *)&this_00->field_0x18);
         }
-        puVar6 = puVar6 + 1;
-        iVar5 = iVar5 + -1;
-      } while (iVar5 != 0);
-      puVar6 = this_00->field_01AD;
-      iVar5 = 2;
+        puVar7 = puVar7 + 1;
+        iVar6 = iVar6 + -1;
+      } while (iVar6 != 0);
+      puVar7 = this_00->field_01AD;
+      iVar6 = 2;
       do {
-        if (*puVar6 != 0) {
-          FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
+        if (*puVar7 != 0) {
+          FUN_006e6080(this_00,2,*puVar7,(undefined4 *)&this_00->field_0x18);
         }
-        puVar6 = puVar6 + 1;
-        iVar5 = iVar5 + -1;
-      } while (iVar5 != 0);
+        puVar7 = puVar7 + 1;
+        iVar6 = iVar6 + -1;
+      } while (iVar6 != 0);
       switch(this_00->field_01A4) {
       case CASE_3:
       case CASE_4:

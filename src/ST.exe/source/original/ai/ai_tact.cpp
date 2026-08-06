@@ -11,14 +11,17 @@ int __thiscall st::fn_0068DC80(AiTactClassTy *this,undefined4 *param_1)
 
 {
   AiTactClassTy *pAVar2;
+  int local_EAX_45;
+  AiTactClassTy_field_00A5DArray *pAVar3;
+  DArrayTy *pDVar4;
+  AiTactClassTy_field_00BDDArray *pAVar5;
   int iVar3;
-  AiTactClassTy_field_00A5DArray *pAVar4;
-  DArrayTy *pDVar5;
-  AiTactClassTy_field_00BDDArray *pAVar6;
+  int iVar9;
+  int iVar6;
   byte *puVar7;
   AiTactClassTy_field_00A5DArray **ppAVar8;
-  int iVar9;
-  byte *puVar10;
+  int iVar10;
+  byte *puVar11;
   InternalExceptionFrame local_64;
   undefined4 local_20;
   AnonShape_0068DC80_4419198B *local_1c;
@@ -28,72 +31,71 @@ int __thiscall st::fn_0068DC80(AiTactClassTy *this,undefined4 *param_1)
   AnonShape_0068DC80_4419198B *local_c;
   AllocationRecord_006684E0 *local_8;
 
-  puVar10 = nullptr;
+  puVar11 = nullptr;
   local_c = nullptr;
   local_10 = nullptr;
   local_8 = nullptr;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_18 = this;
-  iVar3 = st::fn_0072D7F0(local_64.jumpBuffer,0);
+  local_EAX_45 = st::fn_0072D7F0(local_64.jumpBuffer,0);
   pAVar2 = local_18;
-  if (iVar3 == 0) {
+  if (local_EAX_45 == 0) {
     if (local_18 != nullptr) {
-      puVar10 = (byte *)(&local_18->field_0020);
+      puVar11 = (byte *)(&local_18->field_0020);
     }
     puVar7 = (byte *)(param_1);
-    memmove(puVar10, puVar7, 0x10c); /* compiler REP MOVS byte copy */
+    memmove(puVar11, puVar7, 0x10c); /* compiler REP MOVS byte copy */
     local_18->field_0020 = 0x38e;
     local_18->field_0038 = 1;
     ppAVar8 = &local_18->field_00A5;
-    iVar3 = 8;
+    iVar6 = 8;
     do {
       if (*ppAVar8 != nullptr) {
-        pAVar4 = (AiTactClassTy_field_00A5DArray *)
+        pAVar3 = (AiTactClassTy_field_00A5DArray *)
                  st::fn_006B0060(nullptr,(uint *)((int)ppAVar8[1] + 0x10b + (int)param_1));
-        *ppAVar8 = pAVar4;
+        *ppAVar8 = pAVar3;
       }
       ppAVar8 = ppAVar8 + 3;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      iVar6 = iVar6 + -1;
+    } while (iVar6 != 0);
     if (pAVar2->field_00A5 == nullptr) {
-      pAVar4 = (AiTactClassTy_field_00A5DArray *)
+      pAVar3 = (AiTactClassTy_field_00A5DArray *)
                st::fn_006AE290(nullptr,10,8,10);
-      pAVar2->field_00A5 = pAVar4;
+      pAVar2->field_00A5 = pAVar3;
     }
     if (pAVar2->field_00B1 == nullptr) {
-      pDVar5 = st::fn_006AE290(nullptr,10,0x34,10);
-      pAVar2->field_00B1 = pDVar5;
+      pDVar4 = st::fn_006AE290(nullptr,10,0x34,10);
+      pAVar2->field_00B1 = pDVar4;
     }
     if (pAVar2->field_00BD == nullptr) {
-      pAVar6 = (AiTactClassTy_field_00BDDArray *)
+      pAVar5 = (AiTactClassTy_field_00BDDArray *)
                st::fn_006AE290(nullptr,10,0x4a,10);
-      pAVar2->field_00BD = pAVar6;
+      pAVar2->field_00BD = pAVar5;
     }
     if (pAVar2->field_00C9 == nullptr) {
-      pDVar5 = st::fn_006AE290(nullptr,10,8,10);
-      pAVar2->field_00C9 = pDVar5;
+      pDVar4 = st::fn_006AE290(nullptr,10,8,10);
+      pAVar2->field_00C9 = pDVar4;
     }
-    iVar3 = 0;
+    iVar6 = 0;
     if (0 < pAVar2->field_0125) {
       pAVar2->field_00A5->count = 0;
-      iVar9 = STField<int>(param_1,0x107) + 0x10b + (int)param_1;
+      iVar10 = STField<int>(param_1,0x107) + 0x10b + (int)param_1;
       if (0 < pAVar2->field_0125) {
         do {
-          *(undefined4 *)(iVar9 + 4) = pAVar2->field_0024;
-          *(undefined4 *)(iVar9 + 0x77) = pAVar2->field_009D;
-          *(undefined1 *)(iVar9 + 0x6a) = pAVar2->field_0088;
-          st::fn_00401BC2(g_playSystem_00802A38,900,&local_14,&local_c,iVar9,0);
+          *(undefined4 *)(iVar10 + 4) = pAVar2->field_0024;
+          *(undefined4 *)(iVar10 + 0x77) = pAVar2->field_009D;
+          *(undefined1 *)(iVar10 + 0x6a) = pAVar2->field_0088;
+          st::fn_00401BC2(g_playSystem_00802A38,900,&local_14,&local_c,iVar10,0);
           local_1c = local_c;
           local_20 = local_c->field_0018;
           st::fn_006AE1C0((DArrayTy *)pAVar2->field_00A5,&local_20);
           local_c->field_0284 = pAVar2;
-          iVar9 = iVar9 + *(int *)(iVar9 + 0x14);
-          iVar3 = iVar3 + 1;
-        } while (iVar3 < pAVar2->field_0125);
+          iVar10 = iVar10 + *(int *)(iVar10 + 0x14);
+          iVar6 = iVar6 + 1;
+        } while (iVar6 < pAVar2->field_0125);
       }
-      local_10 = (AllocationRecord_006684E0 *)
-                 st::fn_004053C1("__REPAIR_FLEET__",pAVar2->field_0039,0x8000,0,
+      local_10 = st::fn_004053C1("__REPAIR_FLEET__",pAVar2->field_0039,0x8000,0,
                                     *(byte *)&pAVar2->field_0024);
       local_8 = st::fn_004014C4(local_10,&local_14);
       st::fn_00405BCD((int *)&local_10);
@@ -115,13 +117,13 @@ int __thiscall st::fn_0068DC80(AiTactClassTy *this,undefined4 *param_1)
   st::fn_0040284C(local_18);
   st::fn_00405BCD((int *)&local_8);
   st::fn_00405BCD((int *)&local_10);
-  iVar9 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x61,0,iVar3,"%s",
-                             "AiTactClassTy::InitData");
+  iVar9 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x61,0,local_EAX_45,"%s"
+                             ,"AiTactClassTy::InitData");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_tact.cpp",0x62);
-  return iVar3;
+  st::fn_006A5E40(local_EAX_45,0,"E:\\__titans\\ai\\ai_tact.cpp",0x62);
+  return local_EAX_45;
 }
 
 // 0068E050 AiTactClassTy::PrepareToSave
@@ -140,7 +142,8 @@ byte * __thiscall st::fn_0068E050(AiTactClassTy *this,uint *param_1)
   int errorCode;
   undefined4 *puVar3;
   byte *pbVar4;
-  int iVar5;
+  int iVar4;
+  byte *pbVar5;
   InternalExceptionFrame local_4c;
   AiTactClassTy *local_8;
 
@@ -172,9 +175,9 @@ byte * __thiscall st::fn_0068E050(AiTactClassTy *this,uint *param_1)
     return pbVar4;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x81,0,errorCode,"%s",
+  iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x81,0,errorCode,"%s",
                              "AiTactClassTy::PrepareToSave");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_tact.cpp",0x82);
@@ -219,7 +222,7 @@ undefined4 __thiscall st::fn_0068E690(void *this,int param_1)
 void __thiscall st::fn_0068E950(AiTactClassTy *this)
 
 {
-  void **value;
+  void **slotStorage;
   AiTactClassTy *pAVar2;
   int errorCode;
   void *pvVar3;
@@ -234,13 +237,13 @@ void __thiscall st::fn_0068E950(AiTactClassTy *this)
   errorCode = st::fn_0072D7F0(local_50.jumpBuffer,0);
   pAVar2 = local_8;
   if (errorCode == 0) {
-    value = &local_8->field_0130;
+    slotStorage = &local_8->field_0130;
     if (local_8->field_0130 != nullptr) {
-      st::fn_006AB060(value);
+      st::fn_006AB060(slotStorage);
     }
     if (pAVar2->field_00BD != nullptr) {
       pvVar3 = (void *)st::fn_006B0020(&pAVar2->field_00BD->flags,&local_c);
-      *value = pvVar3;
+      *slotStorage = pvVar3;
     }
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -309,7 +312,8 @@ st::fn_0068EB30(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *param_1,short p
   short sVar1;
   AiTactClassTy *pAVar3;
   int iVar4;
-  uint uVar5;
+  uint uVar4;
+  int iVar5;
   int iVar6;
   InternalExceptionFrame local_4c;
   AiTactClassTy *local_8;
@@ -322,12 +326,12 @@ st::fn_0068EB30(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *param_1,short p
   if (iVar4 == 0) {
     *(undefined4 *)&param_1->field_0x2c = 0;
     if (*(short *)&param_1->field_0xc == -1) {
-      uVar5 = 0xffffffff;
+      uVar4 = 0xffffffff;
     }
     else {
-      uVar5 = st::fn_00404E21(local_8,*(short *)&param_1->field_0xc);
+      uVar4 = st::fn_00404E21(local_8,*(short *)&param_1->field_0xc);
     }
-    *(uint *)&param_1->field_0x30 = uVar5;
+    *(uint *)&param_1->field_0x30 = uVar4;
     sVar1 = pAVar3->field_007C;
     *(undefined4 *)&param_1->field_0x34 = 0xffffffff;
     param_1->field_0006 = param_1->field_0006 + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
@@ -338,9 +342,9 @@ st::fn_0068EB30(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *param_1,short p
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x1a2,0,iVar4,"%s",
+  iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x1a2,0,iVar4,"%s",
                              "AiTactClassTy::PrepareToSave");
-  if (iVar6 != 0) {
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006A5E40(iVar4,0,"E:\\__titans\\ai\\ai_tact.cpp",0x1a3);
@@ -371,13 +375,14 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
   AiTactClassTy *pAVar6;
   char cVar7;
   int iVar8;
-  AiTactClassTy_field_00BDDArray *pAVar9;
+  AiTactClassTy_field_00BDDArray *pAVar8;
   AiTactClassTy_field_00A5Element *element_00a5;
+  int iVar10;
+  AiTactClassTy_field_00A5DArray *pAVar10;
   int iVar11;
-  AiTactClassTy_field_00A5DArray *pAVar12;
   AiTactClassTy_field_00A5Element *element_00a5_2;
   AiTactClassTy_field_00BDElement *element_00bd;
-  bool bVar16;
+  bool bVar15;
   InternalExceptionFrame local_88;
   uint local_44 [2];
   char local_3c;
@@ -399,14 +404,14 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
     pAVar6 = local_10;
     if (iVar8 == 0) {
       local_8 = 0;
-      pAVar9 = local_10->field_00BD;
-      if (0 < (int)pAVar9->count) {
-        bVar16 = pAVar9->count != 0;
+      pAVar8 = local_10->field_00BD;
+      if (0 < (int)pAVar8->count) {
+        bVar15 = pAVar8->count != 0;
         do {
           uVar4 = uStack_37;
           cVar7 = cStack_3b;
-          if (bVar16) {
-            element_00bd = DArrayAt<AiTactClassTy_field_00BDElement>(pAVar9, local_8);
+          if (bVar15) {
+            element_00bd = DArrayAt<AiTactClassTy_field_00BDElement>(pAVar8, local_8);
           }
           else {
             element_00bd = nullptr;
@@ -421,14 +426,14 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
             if ((element_00bd->field_0012 == 0) ||
                ((uint)(element_00bd->field_003A + element_00bd->field_0012) <= pAVar6->field_012C))
             {
-              pAVar12 = pAVar6->field_00A5;
+              pAVar10 = pAVar6->field_00A5;
               local_c = 0;
-              if (0 < (int)pAVar12->count) {
-                bVar16 = pAVar12->count != 0;
+              if (0 < (int)pAVar10->count) {
+                bVar15 = pAVar10->count != 0;
                 cStack_3b = cVar7;
                 do {
-                  if (bVar16) {
-                    element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar12, local_c);
+                  if (bVar15) {
+                    element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar10, local_c);
                   }
                   else {
                     element_00a5 = nullptr;
@@ -436,7 +441,7 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
                   this_00 = (AiFltClassTy *)element_00a5->field_0004;
                   if (this_00 != nullptr) {
                     memset(local_44, 0, 0x34); /* compiler bulk-zero initialization */
-                    iVar8 = 0;
+                    iVar11 = 0;
                     local_44[1] = pAVar6->field_012C;
                     local_44[0] = 0x68;
                     uStack_3a = SUB42(element_00bd,0);
@@ -453,11 +458,11 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
                       break;
                     }
                   }
-                  pAVar12 = pAVar6->field_00A5;
+                  pAVar10 = pAVar6->field_00A5;
                   local_c = local_c + 1;
-                  bVar16 = local_c < pAVar12->count;
+                  bVar15 = local_c < pAVar10->count;
                   cVar7 = cStack_3b;
-                } while ((int)local_c < (int)pAVar12->count);
+                } while ((int)local_c < (int)pAVar10->count);
               }
             }
             else {
@@ -467,16 +472,16 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
           case 1:
             if ((element_00bd->field_000E == 0) ||
                ((uint)(element_00bd->field_003A + element_00bd->field_000E) <= pAVar6->field_012C)) {
-              pAVar12 = pAVar6->field_00A5;
-              if (element_00bd->field_0034 < pAVar12->count) {
-                element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar12, element_00bd->field_0034);
+              pAVar10 = pAVar6->field_00A5;
+              if (element_00bd->field_0034 < pAVar10->count) {
+                element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar10, element_00bd->field_0034);
               }
               else {
                 element_00a5_2 = nullptr;
               }
               if ((element_00a5_2 != nullptr) && (element_00a5_2->field_0004 != 0)) {
                 memset(local_44, 0, 0x34); /* compiler bulk-zero initialization */
-                iVar8 = 0;
+                iVar11 = 0;
                 local_44[1] = pAVar6->field_012C;
                 local_44[0] = 0x69;
                 uStack_3a = (undefined2)((uint)element_00bd >> 8);
@@ -499,9 +504,9 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
             uVar1 = element_00bd->field_0030;
             cStack_3b = cVar7;
             if (-1 < (int)uVar1) {
-              pAVar12 = pAVar6->field_00A5;
-              if (uVar1 < pAVar12->count) {
-                element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar12, uVar1);
+              pAVar10 = pAVar6->field_00A5;
+              if (uVar1 < pAVar10->count) {
+                element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar10, uVar1);
               }
               else {
                 element_00a5_2 = nullptr;
@@ -521,18 +526,18 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
             cVar7 = cStack_3b;
           }
           cStack_3b = cVar7;
-          pAVar9 = pAVar6->field_00BD;
+          pAVar8 = pAVar6->field_00BD;
           local_8 = local_8 + 1;
-          bVar16 = local_8 < pAVar9->count;
-        } while ((int)local_8 < (int)pAVar9->count);
+          bVar15 = local_8 < pAVar8->count;
+        } while ((int)local_8 < (int)pAVar8->count);
       }
       g_currentExceptionFrame = local_88.previous;
       return;
     }
     g_currentExceptionFrame = local_88.previous;
-    iVar11 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x1ff,0,iVar8,"%s",
+    iVar10 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x1ff,0,iVar8,"%s",
                                 "AiTactClassTy::ExecClaim");
-    if (iVar11 != 0) {
+    if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40(iVar8,0,"E:\\__titans\\ai\\ai_tact.cpp",0x200);
@@ -561,11 +566,12 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
   uint uVar3;
   AiTactClassTy *this_00;
   int iVar5;
-  ushort *puVar6;
+  ushort *puVar5;
   STGameObjC *objPtr;
+  int iVar7;
   AiTactClassTy_field_00A5Element *element_00a5;
   AiTactClassTy_field_00BDElement *element_00bd_2;
-  int iVar8;
+  int iVar6;
   AiTactClassTy_field_00A5DArray *pAVar9;
   AiFltClassTy *this_01;
   uint uVar10;
@@ -607,30 +613,30 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
       local_c = param_1[3];
       while (local_c = local_c - 1, -1 < (int)local_c) {
         if (local_c < param_1[3]) {
-          puVar6 = (ushort *)(param_1[2] * local_c + param_1[7]);
+          puVar5 = (ushort *)(param_1[2] * local_c + param_1[7]);
         }
         else {
-          puVar6 = nullptr;
+          puVar5 = nullptr;
         }
         if (g_allPlayers_007FA174 == nullptr) {
           objPtr = nullptr;
         }
         else {
           objPtr = st::fn_004028BA
-                             (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar6,CASE_1);
+                             (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar5,CASE_1);
         }
         if (objPtr != nullptr) {
-          iVar5 = (*objPtr->vtable->vfunc_2C)();
-          if (iVar5 == 0x78) {
-            iVar5 = (*objPtr->vtable->vfunc_2C)();
-            if (iVar5 == 0x78) {
-              iVar5 = objPtr->field_0259;
+          iVar7 = (*objPtr->vtable->vfunc_2C)();
+          if (iVar7 == 0x78) {
+            iVar7 = (*objPtr->vtable->vfunc_2C)();
+            if (iVar7 == 0x78) {
+              iVar7 = objPtr->field_0259;
             }
             else {
-              iVar5 = 0;
+              iVar7 = 0;
             }
-            if ((iVar5 != 0) &&
-               (uVar10 = st::fn_00403986(this_00,iVar5), this_00 = local_8, -1 < (int)uVar10)) {
+            if ((iVar7 != 0) &&
+               (uVar10 = st::fn_00403986(this_00,iVar7), this_00 = local_8, -1 < (int)uVar10)) {
               pAVar2 = local_8->field_00BD;
               if (uVar10 < pAVar2->count) {
                 element_00bd_2 = DArrayAt<AiTactClassTy_field_00BDElement>(pAVar2, uVar10);
@@ -640,8 +646,8 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
               }
               if ((element_00bd_2 != nullptr) && (-1 < element_00bd_2->field_0030)) {
                 uVar1 = element_00bd_2->field_000C;
-                iVar5 = (*objPtr->vtable->vfunc_2C)();
-                if (iVar5 == 0x78) {
+                iVar7 = (*objPtr->vtable->vfunc_2C)();
+                if (iVar7 == 0x78) {
                   objPtr->field_0269 = (uint)uVar1;
                 }
                 st::fn_006B0C70((DArrayTy *)param_1,local_c);
@@ -651,7 +657,7 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
             }
           }
           else {
-            uVar10 = st::fn_00403986(this_00,iVar5);
+            uVar10 = st::fn_00403986(this_00,iVar7);
             if (-1 < (int)uVar10) {
               pAVar2 = this_00->field_00BD;
               if (uVar10 < pAVar2->count) {
@@ -689,9 +695,9 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar8 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x242,0,iVar5,"%s",
+  iVar6 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x242,0,iVar5,"%s",
                              "AiTactClassTy::GiveObjByClaim");
-  if (iVar8 == 0) {
+  if (iVar6 == 0) {
     st::fn_006A5E40(iVar5,0,"E:\\__titans\\ai\\ai_tact.cpp",0x243);
     return;
   }
@@ -716,13 +722,15 @@ void __thiscall st::fn_0068F360(AiTactClassTy *this,uint *param_1)
   bool bVar4;
   AiTactClassTy *pAVar5;
   int iVar6;
-  ushort *puVar7;
+  ushort *puVar6;
   STGameObjC *objPtr;
+  int iVar7;
   AiFltClassTy *pAVar8;
   int iVar9;
-  AiTactClassTy_field_00A5DArray *pAVar10;
-  uint uVar11;
+  int iVar10;
+  AiTactClassTy_field_00A5DArray *pAVar11;
   uint uVar12;
+  uint uVar13;
   InternalExceptionFrame local_5c;
   uint local_18;
   uint local_14;
@@ -764,100 +772,100 @@ joined_r0x0068f3e2:
           return;
         }
         if (index < param_1[3]) {
-          puVar7 = (ushort *)(param_1[2] * index + param_1[7]);
+          puVar6 = (ushort *)(param_1[2] * index + param_1[7]);
         }
         else {
-          puVar7 = nullptr;
+          puVar6 = nullptr;
         }
         if (g_allPlayers_007FA174 == nullptr) {
           objPtr = nullptr;
         }
         else {
           objPtr = st::fn_004028BA
-                             (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar7,CASE_1);
+                             (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar6,CASE_1);
         }
         pAVar5 = local_8;
       } while (objPtr == nullptr);
-      iVar6 = (*objPtr->vtable->vfunc_2C)();
-      if ((iVar6 != 0x78) || ((int)local_c < 0)) break;
-      pAVar10 = local_8->field_00A5;
-      if ((pAVar10 == nullptr) ||
-         ((int)pAVar10->count <= (int)local_c)) {
+      iVar7 = (*objPtr->vtable->vfunc_2C)();
+      if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
+      pAVar11 = local_8->field_00A5;
+      if ((pAVar11 == nullptr) ||
+         ((int)pAVar11->count <= (int)local_c)) {
         pAVar8 = nullptr;
       }
       else {
         pAVar8 = pARam00000004;
-        if (local_c < pAVar10->count) {
+        if (local_c < pAVar11->count) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
           pAVar8 = *(AiFltClassTy **)
-                    ((int)&pAVar10->data->field_0004 + pAVar10->elementSize * local_c);
+                    ((int)&pAVar11->data->field_0004 + pAVar11->elementSize * local_c);
         }
       }
       uVar1 = pAVar8->field_007D;
-      iVar6 = (*objPtr->vtable->vfunc_2C)();
-      if (iVar6 == 0x78) {
+      iVar7 = (*objPtr->vtable->vfunc_2C)();
+      if (iVar7 == 0x78) {
         objPtr->field_0269 = (uint)uVar1;
       }
       st::fn_006B0C70((DArrayTy *)param_1,index);
       pAVar5 = local_8;
     }
-    if ((iVar6 < 0x32) || (0x73 < iVar6)) {
+    if ((iVar7 < 0x32) || (0x73 < iVar7)) {
       bVar4 = false;
     }
     else {
       bVar4 = true;
     }
-    uVar11 = local_c;
+    uVar12 = local_c;
     pAVar5 = local_8;
-    if ((bVar4) || (iVar6 == 0x78)) goto LAB_0068f509;
+    if ((bVar4) || (iVar7 == 0x78)) goto LAB_0068f509;
     sVar2 = local_8->field_0039;
     if (sVar2 == 1) {
-      iVar9 = 8;
+      iVar10 = 8;
     }
     else if (sVar2 == 2) {
-      iVar9 = 0x14;
+      iVar10 = 0x14;
     }
     else if (sVar2 == 3) {
-      iVar9 = 0x1a;
+      iVar10 = 0x1a;
     }
     else {
-      iVar9 = 0;
+      iVar10 = 0;
     }
-    uVar12 = local_10;
-    if (iVar6 != iVar9) {
+    uVar13 = local_10;
+    if (iVar7 != iVar10) {
       if (sVar2 == 1) {
-        iVar9 = 0xc;
+        iVar10 = 0xc;
       }
       else if (sVar2 == 2) {
-        iVar9 = 0x18;
+        iVar10 = 0x18;
       }
       else if (sVar2 == 3) {
-        iVar9 = 0x19;
+        iVar10 = 0x19;
       }
       else {
-        iVar9 = 0;
+        iVar10 = 0;
       }
-      uVar12 = local_18;
-      uVar11 = local_14;
-      if (iVar6 == iVar9) goto LAB_0068f509;
+      uVar13 = local_18;
+      uVar12 = local_14;
+      if (iVar7 == iVar10) goto LAB_0068f509;
     }
-  } while ((int)uVar12 < 0);
-  pAVar10 = local_8->field_00A5;
-  uVar11 = uVar12;
+  } while ((int)uVar13 < 0);
+  pAVar11 = local_8->field_00A5;
+  uVar12 = uVar13;
   goto LAB_0068f516;
 LAB_0068f509:
-  if (-1 < (int)uVar11) {
-    pAVar10 = local_8->field_00A5;
+  if (-1 < (int)uVar12) {
+    pAVar11 = local_8->field_00A5;
 LAB_0068f516:
-    if ((pAVar10 == nullptr) || ((int)pAVar10->count <= (int)uVar11))
+    if ((pAVar11 == nullptr) || ((int)pAVar11->count <= (int)uVar12))
     {
       pAVar8 = nullptr;
     }
     else {
       pAVar8 = pARam00000004;
-      if (uVar11 < pAVar10->count) {
+      if (uVar12 < pAVar11->count) {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-        pAVar8 = *(AiFltClassTy **)((int)&pAVar10->data->field_0004 + pAVar10->elementSize * uVar11);
+        pAVar8 = *(AiFltClassTy **)((int)&pAVar11->data->field_0004 + pAVar11->elementSize * uVar12);
       }
     }
     st::fn_00404200(pAVar8,(uint)objPtr,0);
@@ -994,10 +1002,11 @@ void __thiscall st::fn_0068FB30(AiTactClassTy *this,short param_1)
 
 {
   AiTactClassTy *this_00;
+  int iVar3;
   void *this_01;
   int iVar2;
-  int iVar3;
-  uint *puVar4;
+  int iVar4;
+  uint *puVar5;
   InternalExceptionFrame local_80;
   uint local_3c [2];
   short local_33;
@@ -1005,11 +1014,11 @@ void __thiscall st::fn_0068FB30(AiTactClassTy *this,short param_1)
   DArrayTy *local_2b;
   AiTactClassTy *local_8;
 
-  puVar4 = local_3c;
+  puVar5 = local_3c;
   local_8 = this;
-  for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = 0;
-    puVar4 = puVar4 + 1;
+  for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *puVar5 = 0;
+    puVar5 = puVar5 + 1;
   }
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
@@ -1053,12 +1062,15 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
 {
   undefined4 uVar1;
   AiTactClassTy *this_00;
+  int local_EAX_35;
+  int iVar4;
   int iVar3;
-  AiTactClassTy_field_00A5DArray *pAVar4;
+  AiTactClassTy_field_00A5DArray *pAVar5;
   AiTactClassTy_field_00A5Element *element_00a5;
-  int iVar6;
-  uint uVar7;
-  bool bVar9;
+  int iVar7;
+  int iVar8;
+  uint uVar9;
+  bool bVar11;
   InternalExceptionFrame local_80;
   uint local_3c [3];
   undefined1 local_30;
@@ -1070,15 +1082,15 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_8 = this;
-  iVar3 = st::fn_0072D7F0(local_80.jumpBuffer,0);
+  local_EAX_35 = st::fn_0072D7F0(local_80.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar3 != 0) {
+  if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x36a,0,iVar3,"%s",
-                               "AiTactClassTy::GetAiMess");
-    if (iVar6 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_tact.cpp",0x36b);
-      return iVar3;
+    iVar7 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x36a,0,local_EAX_35,
+                               "%s","AiTactClassTy::GetAiMess");
+    if (iVar7 == 0) {
+      st::fn_006A5E40(local_EAX_35,0,"E:\\__titans\\ai\\ai_tact.cpp",0x36b);
+      return local_EAX_35;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
@@ -1109,21 +1121,21 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
       g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x6f:
-      iVar6 = st::fn_0040457F(local_8,*(int *)((int)&param_1->field_000A + 2));
-      iVar3 = *(int *)((int)&param_1->field_000A + 2);
-      *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar6;
-      iVar3 = st::fn_00401D0C(this_00,iVar3);
+      iVar4 = st::fn_0040457F(local_8,*(int *)((int)&param_1->field_000A + 2));
+      iVar8 = *(int *)((int)&param_1->field_000A + 2);
+      *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar4;
+      iVar3 = st::fn_00401D0C(this_00,iVar8);
       *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar3;
       g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x70:
-      uVar7 = 0;
-      pAVar4 = local_8->field_00A5;
-      if (0 < (int)pAVar4->count) {
-        bVar9 = pAVar4->count != 0;
+      uVar9 = 0;
+      pAVar5 = local_8->field_00A5;
+      if (0 < (int)pAVar5->count) {
+        bVar11 = pAVar5->count != 0;
         do {
-          if (bVar9) {
-            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
+          if (bVar11) {
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar5, uVar9);
           }
           else {
             element_00a5 = nullptr;
@@ -1143,10 +1155,10 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
               return 0;
             }
           }
-          pAVar4 = this_00->field_00A5;
-          uVar7 = uVar7 + 1;
-          bVar9 = uVar7 < pAVar4->count;
-          if ((int)pAVar4->count <= (int)uVar7) {
+          pAVar5 = this_00->field_00A5;
+          uVar9 = uVar9 + 1;
+          bVar11 = uVar9 < pAVar5->count;
+          if ((int)pAVar5->count <= (int)uVar9) {
             g_currentExceptionFrame = local_80.previous;
             return 0;
           }
@@ -1154,12 +1166,12 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
       }
       break;
     case 0x71:
-      uVar7 = local_8->field_00A5->count - 1;
-      if (-1 < (int)uVar7) {
+      uVar9 = local_8->field_00A5->count - 1;
+      if (-1 < (int)uVar9) {
         do {
-          pAVar4 = this_00->field_00A5;
-          if (uVar7 < pAVar4->count) {
-            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
+          pAVar5 = this_00->field_00A5;
+          if (uVar9 < pAVar5->count) {
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar5, uVar9);
           }
           else {
             element_00a5 = nullptr;
@@ -1168,40 +1180,40 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
              (element_00a5->field_0004 != nullptr)) {
             st::fn_00401555(element_00a5->field_0004,(uint *)param_1);
             st::fn_0040432C(g_playSystem_00802A38,*(uint *)(element_00a5->field_0004 + 8));
-            st::fn_006B0C70((DArrayTy *)this_00->field_00A5,uVar7);
+            st::fn_006B0C70((DArrayTy *)this_00->field_00A5,uVar9);
           }
-          uVar7 = uVar7 - 1;
-        } while (-1 < (int)uVar7);
+          uVar9 = uVar9 - 1;
+        } while (-1 < (int)uVar9);
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       break;
     case 0x72:
-      iVar3 = *(int *)&param_1->field_0x8;
-      if (iVar3 == 0) {
+      iVar8 = *(int *)&param_1->field_0x8;
+      if (iVar8 == 0) {
         st::fn_00403E04(local_8,*(uint **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      if (iVar3 == 1) {
+      if (iVar8 == 1) {
         st::fn_004040F2(local_8,*(uint **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      if (iVar3 == 2) {
+      if (iVar8 == 2) {
         st::fn_004057AE(local_8,*(DArrayTy **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       break;
     case 0x73:
-      uVar7 = 0;
-      pAVar4 = local_8->field_00A5;
-      if (0 < (int)pAVar4->count) {
-        bVar9 = pAVar4->count != 0;
+      uVar9 = 0;
+      pAVar5 = local_8->field_00A5;
+      if (0 < (int)pAVar5->count) {
+        bVar11 = pAVar5->count != 0;
         do {
-          if (bVar9) {
-            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
+          if (bVar11) {
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar5, uVar9);
           }
           else {
             element_00a5 = nullptr;
@@ -1213,10 +1225,10 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
             g_currentExceptionFrame = local_80.previous;
             return 0;
           }
-          pAVar4 = this_00->field_00A5;
-          uVar7 = uVar7 + 1;
-          bVar9 = uVar7 < pAVar4->count;
-        } while ((int)uVar7 < (int)pAVar4->count);
+          pAVar5 = this_00->field_00A5;
+          uVar9 = uVar9 + 1;
+          bVar11 = uVar9 < pAVar5->count;
+        } while ((int)uVar9 < (int)pAVar5->count);
       }
     }
   }
@@ -1250,7 +1262,7 @@ st::fn_00690650(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *param_1)
   AiTactClassTy_field_00A5Element *element_00a5;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_EDI;
-  bool bVar13;
+  bool bVar14;
   InternalExceptionFrame local_98;
   uint local_54 [2];
   char local_4c;
@@ -1290,7 +1302,7 @@ st::fn_00690650(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *param_1)
   bVar2 = *(byte *)&this->field_0024;
   local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
   if (DAT_00808a8f != '\0') {
-    bVar13 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+    bVar14 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
     goto LAB_00690763;
   }
@@ -1314,9 +1326,9 @@ LAB_00690758:
       iVar6 = 2;
     }
   }
-  bVar13 = iVar6 < 0;
+  bVar14 = iVar6 < 0;
 LAB_00690763:
-  if ((bVar13) && (param_1->field_001A != -1)) {
+  if ((bVar14) && (param_1->field_001A != -1)) {
     local_98.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_98;
     local_c = this;
@@ -1344,9 +1356,9 @@ LAB_00690763:
           pAVar9 = this_01->field_00A5;
           local_8 = 0;
           if (0 < (int)pAVar9->count) {
-            bVar13 = pAVar9->count != 0;
+            bVar14 = pAVar9->count != 0;
             do {
-              if (bVar13) {
+              if (bVar14) {
                 element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar9, local_8);
               }
               else {
@@ -1377,7 +1389,7 @@ LAB_00690763:
               }
               local_8 = local_8 + 1;
               pAVar9 = local_c->field_00A5;
-              bVar13 = local_8 < pAVar9->count;
+              bVar14 = local_8 < pAVar9->count;
               if ((int)pAVar9->count <= (int)local_8) {
                 g_currentExceptionFrame = local_98.previous;
                 return;
@@ -1416,8 +1428,9 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
   STMessageId SVar1;
   AiTactClassTy *this_00;
   int iVar3;
-  AiTactClassTy_field_00A5DArray *pAVar4;
+  AiTactClassTy_field_00A5DArray *pAVar3;
   int iVar5;
+  int iVar4;
   uint uVar6;
   undefined4 *puVar7;
   AiTactClassTy_field_00A5Element *element_00a5;
@@ -1478,21 +1491,21 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_ID_ALLCREATE) {
-      pAVar4 = local_14->field_00A5;
-      if (0 < (int)pAVar4->count) {
-        bVar8 = pAVar4->count != 0;
+      pAVar3 = local_14->field_00A5;
+      if (0 < (int)pAVar3->count) {
+        bVar8 = pAVar3->count != 0;
         do {
           if (bVar8) {
-            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar6);
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar3, uVar6);
           }
           else {
             element_00a5 = nullptr;
           }
           local_8 = 0;
           if ((((AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000 == nullptr) ||
-              (iVar3 = st::fn_006E62D0
+              (iVar5 = st::fn_006E62D0
                                  (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000,
-                                  &local_8), iVar3 != 0)) || (local_8 == 0)) {
+                                  &local_8), iVar5 != 0)) || (local_8 == 0)) {
             element_00a5->field_0004 = 0;
             element_00a5->field_0000 = nullptr;
           }
@@ -1500,10 +1513,10 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
             element_00a5->field_0004 = local_8;
             *(AiTactClassTy **)(local_8 + 0x284) = this_00;
           }
-          pAVar4 = this_00->field_00A5;
+          pAVar3 = this_00->field_00A5;
           uVar6 = uVar6 + 1;
-          bVar8 = uVar6 < pAVar4->count;
-        } while ((int)uVar6 < (int)pAVar4->count);
+          bVar8 = uVar6 < pAVar3->count;
+        } while ((int)uVar6 < (int)pAVar3->count);
       }
     }
     else if (SVar1 == MESS_SHARED_5DD5) {
@@ -1514,10 +1527,10 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x4ad,0,iVar3,
+  iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact.cpp",0x4ad,0,iVar3,
                              "AiTactClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
                              local_14->field_0018);
-  if (iVar5 == 0) {
+  if (iVar4 == 0) {
     st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_tact.cpp",0x4ae);
     return 0xffff;
   }

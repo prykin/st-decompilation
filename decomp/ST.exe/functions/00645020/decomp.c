@@ -11,6 +11,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   dword dVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
   uint index;
   InternalExceptionFrame local_5c;
   int local_18;

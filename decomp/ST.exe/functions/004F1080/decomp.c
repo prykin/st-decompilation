@@ -15,8 +15,10 @@ int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
   STMessageId SVar1;
   BldObjPanelTy *this_00;
   int iVar3;
-  undefined4 *puVar4;
+  int iVar4;
+  undefined4 *puVar5;
   int iVar5;
+  int iVar6;
   InternalExceptionFrame local_4c;
   BldObjPanelTy *local_8;
 
@@ -73,16 +75,16 @@ int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
     case MESS_FSGSTY_C0A1:
     case MESS_SHARED_C0A2:
     case MESS_SHARED_C0A3:
-      iVar3 = (&this_00->field_027E)[(byte)this_00->field_0278];
-      if ((iVar3 == 0) ||
-         (iVar5 = SVar1 + this_00->field_0199, *(uint *)(iVar3 + 0xc) <= iVar5 - 0xc09fU)) {
-        puVar4 = nullptr;
+      iVar6 = (&this_00->field_027E)[(byte)this_00->field_0278];
+      if ((iVar6 == 0) ||
+         (iVar4 = SVar1 + this_00->field_0199, *(uint *)(iVar6 + 0xc) <= iVar4 - 0xc09fU)) {
+        puVar5 = nullptr;
       }
       else {
-        puVar4 = (undefined4 *)((iVar5 + -0xc09f) * *(int *)(iVar3 + 8) + *(int *)(iVar3 + 0x1c));
+        puVar5 = (undefined4 *)((iVar4 + -0xc09f) * *(int *)(iVar6 + 8) + *(int *)(iVar6 + 0x1c));
       }
-      if ((puVar4 != nullptr) && (*(char *)(puVar4 + 2) != '\0')) {
-        CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0xe,*puVar4);
+      if ((puVar5 != nullptr) && (*(char *)(puVar5 + 2) != '\0')) {
+        CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0xe,*puVar5);
         ProdPanelTy::SetPanel((ProdPanelTy *)this_00,'\0');
         thunk_FUN_005252c0(0xae);
         g_currentExceptionFrame = local_4c.previous;

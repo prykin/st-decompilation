@@ -22,6 +22,7 @@ void FUN_006f5240(byte *param_1,int param_2,uint *param_3,int param_4,int param_
   int iVar8;
   byte *pbVar9;
   byte *pbVar10;
+  byte *temp_3fc152a556;
 
   _DAT_00857000 = 1;
 LAB_006f5259:
@@ -195,7 +196,7 @@ cf_common_join_006F53A7:
   iVar8 = (param_7 - (int)param_9) - param_8;
   while( true ) {
     while( true ) {
-      pbVar9 = param_6;
+      temp_3fc152a556 = param_6;
       if (((uint)pbVar10 & 0x80) == 0) {
         do {
           if (iVar8 <= (int)pbVar10) goto cf_continue_loop_006F53F2;
@@ -203,23 +204,23 @@ cf_common_join_006F53A7:
           bVar1 = *param_6;
           pbVar10 = (byte *)(uint)bVar1;
           param_6 = param_6 + 1;
-          pbVar9 = param_6;
+          temp_3fc152a556 = param_6;
         } while ((bVar1 & 0x80) == 0);
       }
       if (((uint)pbVar10 & 0x40) == 0) break;
-      param_6 = pbVar9 + 1;
+      param_6 = temp_3fc152a556 + 1;
       if (iVar8 <= (int)((uint)pbVar10 & 0xffffff3f)) goto cf_continue_loop_006F53F2;
       iVar8 = iVar8 - ((uint)pbVar10 & 0xffffff3f);
       pbVar10 = (byte *)(uint)*param_6;
-      param_6 = pbVar9 + 2;
+      param_6 = temp_3fc152a556 + 2;
     }
     uVar7 = (uint)pbVar10 & 0xffffff3f;
     if (iVar8 <= (int)uVar7) break;
     iVar8 = iVar8 - uVar7;
-    pbVar10 = (byte *)(uint)pbVar9[uVar7];
-    param_6 = pbVar9 + uVar7 + 1;
+    pbVar10 = (byte *)(uint)temp_3fc152a556[uVar7];
+    param_6 = temp_3fc152a556 + uVar7 + 1;
   }
-  param_6 = pbVar9 + uVar7;
+  param_6 = temp_3fc152a556 + uVar7;
 cf_continue_loop_006F53F2:
   param_3 = (uint *)((int)param_3 + (int)param_9 * -2 + param_4);
   param_1 = param_1 + (param_2 - (int)param_9);

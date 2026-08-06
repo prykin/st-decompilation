@@ -32114,10 +32114,10 @@
 {"address":"00790C00","name":"VTable_00790C00","type":"VTable_00790C00","length":4,"value":"","referenced_from":["004B7EF0 TLOBaseTy::TLOBaseTy"]}
 {"address":"00790C04","name":"TLOBldMarkVTable","type":"TLOBldMarkVTable","length":4,"value":"","referenced_from":["004C60A0 TLOBldMark::TLOBldMark"]}
 {"address":"00790C14","name":"DAT_00790c14","type":"undefined4","length":4,"value":"0000007Dh","referenced_from":["004CC370 FUN_004cc370"]}
-{"address":"00790C1C","name":"PTR_s_tlo_bubbles_00790c1c","type":"pointer","length":4,"value":"007ad59c","referenced_from":["004CC370 FUN_004cc370"]}
-{"address":"00790C20","name":"PTR_s_tlo_emb6_00790c20","type":"pointer","length":4,"value":"007ad590","referenced_from":["004CC370 FUN_004cc370","004D11D0 TLOEmbryoTy::Create"]}
+{"address":"00790C1C","name":"PTR_s_tlo_bubbles_00790c1c","type":"char *","length":4,"value":"007ad59c","referenced_from":["004CC370 FUN_004cc370"]}
+{"address":"00790C20","name":"PTR_s_tlo_emb6_00790c20","type":"char *","length":4,"value":"007ad590","referenced_from":["004CC370 FUN_004cc370","004D11D0 TLOEmbryoTy::Create"]}
 {"address":"00790C24","name":"PTR_DAT_00790c24","type":"pointer","length":4,"value":"007ad58c","referenced_from":["004D9000 FUN_004d9000"]}
-{"address":"00790C28","name":"PTR_s_tlo_capture_00790c28","type":"pointer","length":4,"value":"007ad57c","referenced_from":["004CC370 FUN_004cc370"]}
+{"address":"00790C28","name":"PTR_s_tlo_capture_00790c28","type":"char *","length":4,"value":"007ad57c","referenced_from":["004CC370 FUN_004cc370"]}
 {"address":"00791154","name":"PTR_s_expl_bbt1_00791154","type":"undefined *","length":4,"value":"007ad570","referenced_from":[]}
 {"address":"00791158","name":"PTR_s_expl_bbt1_00791158","type":"undefined *","length":4,"value":"007ad570","referenced_from":[]}
 {"address":"0079115C","name":"PTR_s_expl_bbt1_0079115c","type":"undefined *","length":4,"value":"007ad570","referenced_from":[]}
@@ -32237,103 +32237,103 @@
 {"address":"0079AC70","name":"InfocPanelTyVTable","type":"InfocPanelTyVTable","length":36,"value":"","referenced_from":["0051FE40 CreateInfocPanel"]}
 {"address":"0079AC9C","name":"IntercomPanelTyVTable","type":"IntercomPanelTyVTable","length":24,"value":"","referenced_from":["00521840 CreateIntercomPanel"]}
 {"address":"0079ACE4","name":"MoneyTyVTable","type":"MoneyTyVTable","length":8,"value":"","referenced_from":["0052B670 CreateMoney"]}
-{"address":"0079ACEC","name":"PTR_s_SAVEGAME\\_0079acec","type":"pointer","length":4,"value":"007c7094","referenced_from":["0052FB00 OptPanelTy::SetOptControls","00532D50 OptPanelTy::PrepFiles","005335E0 FUN_005335e0","00533D10 OptPanelTy::GetMessage"]}
-{"address":"0079ACF0","name":"PTR_s_SYSTEM\\_0079acf0","type":"pointer","length":4,"value":"007c7088","referenced_from":["005325B0 OptPanelTy::PrepAsses","00533D10 OptPanelTy::GetMessage"]}
+{"address":"0079ACEC","name":"PTR_s_SAVEGAME\\_0079acec","type":"char *","length":4,"value":"007c7094","referenced_from":["0052FB00 OptPanelTy::SetOptControls","00532D50 OptPanelTy::PrepFiles","005335E0 FUN_005335e0","00533D10 OptPanelTy::GetMessage"]}
+{"address":"0079ACF0","name":"PTR_s_SYSTEM\\_0079acf0","type":"char *","length":4,"value":"007c7088","referenced_from":["005325B0 OptPanelTy::PrepAsses","00533D10 OptPanelTy::GetMessage"]}
 {"address":"0079ACF4","name":"PTR_DAT_0079acf4","type":"pointer","length":4,"value":"007c7080","referenced_from":["00532D50 OptPanelTy::PrepFiles","00533D10 OptPanelTy::GetMessage"]}
 {"address":"0079ACF8","name":"PTR_DAT_0079acf8","type":"pointer","length":4,"value":"007c7078","referenced_from":["00533D10 OptPanelTy::GetMessage"]}
-{"address":"0079ACFC","name":"PTR_s_STRATEGS_0079acfc","type":"pointer","length":4,"value":"007c706c","referenced_from":["005325B0 OptPanelTy::PrepAsses","00533D10 OptPanelTy::GetMessage"]}
+{"address":"0079ACFC","name":"PTR_s_STRATEGS_0079acfc","type":"char *","length":4,"value":"007c706c","referenced_from":["005325B0 OptPanelTy::PrepAsses","00533D10 OptPanelTy::GetMessage"]}
 {"address":"0079AD00","name":"PTR_DAT_0079ad00","type":"pointer","length":4,"value":"007c7064","referenced_from":["00532D50 OptPanelTy::PrepFiles","005335E0 FUN_005335e0","00533D10 OptPanelTy::GetMessage"]}
-{"address":"0079AD04","name":"PTR_s_SAVE_DESC_0079ad04","type":"pointer","length":4,"value":"007c7058","referenced_from":["00532D50 OptPanelTy::PrepFiles"]}
+{"address":"0079AD04","name":"PTR_s_SAVE_DESC_0079ad04","type":"char *","length":4,"value":"007c7058","referenced_from":["00532D50 OptPanelTy::PrepFiles"]}
 {"address":"0079AD10","name":"OptPanelTyVTable","type":"OptPanelTyVTable","length":24,"value":"","referenced_from":["0052E3A0 CreateOptPanel"]}
 {"address":"0079AD2C","name":"PausePanelTyVTable","type":"PausePanelTyVTable","length":24,"value":"","referenced_from":["005391E0 CreatePausePanel"]}
 {"address":"0079AD48","name":"PlayPanelTyVTable","type":"PlayPanelTyVTable","length":24,"value":"","referenced_from":["00539AA0 CreatePlayPanel"]}
 {"address":"0079AD64","name":"ResearchPanelTyVTable","type":"ResearchPanelTyVTable","length":32,"value":"","referenced_from":["0053BFF0 CreateResearchPanel"]}
 {"address":"0079AD8C","name":"SAMPanelTyVTable","type":"SAMPanelTyVTable","length":36,"value":"","referenced_from":["0053CE10 CreateSAMPanel"]}
 {"address":"0079ADB8","name":"InterSystemCVTable","type":"InterSystemCVTable","length":36,"value":"","referenced_from":["00542440 InterSystemC::InterSystemC"]}
-{"address":"0079ADE4","name":"PTR_s_SAVEGAME\\_0079ade4","type":"pointer","length":4,"value":"007c7094","referenced_from":["005449B0 CursorClassTy::GetMessage"]}
-{"address":"0079ADE8","name":"PTR_s_SAVE_QUICKSAVE_0079ade8","type":"pointer","length":4,"value":"007c7d4c","referenced_from":["005449B0 CursorClassTy::GetMessage"]}
-{"address":"0079ADEC","name":"PTR_s_SAVE_DESC_0079adec","type":"pointer","length":4,"value":"007c7058","referenced_from":["005449B0 CursorClassTy::GetMessage"]}
-{"address":"0079AE2C","name":"PTR_s_LAST_NAME_0079ae2c","type":"pointer","length":4,"value":"007c8410","referenced_from":["0054C740 CreatePlaySystem","0054D2F0 STPlaySystemC::Save"]}
+{"address":"0079ADE4","name":"PTR_s_SAVEGAME\\_0079ade4","type":"char *","length":4,"value":"007c7094","referenced_from":["005449B0 CursorClassTy::GetMessage"]}
+{"address":"0079ADE8","name":"PTR_s_SAVE_QUICKSAVE_0079ade8","type":"char *","length":4,"value":"007c7d4c","referenced_from":["005449B0 CursorClassTy::GetMessage"]}
+{"address":"0079ADEC","name":"PTR_s_SAVE_DESC_0079adec","type":"char *","length":4,"value":"007c7058","referenced_from":["005449B0 CursorClassTy::GetMessage"]}
+{"address":"0079AE2C","name":"PTR_s_LAST_NAME_0079ae2c","type":"char *","length":4,"value":"007c8410","referenced_from":["0054C740 CreatePlaySystem","0054D2F0 STPlaySystemC::Save"]}
 {"address":"0079AE30","name":"PTR_DAT_0079ae30","type":"pointer","length":4,"value":"007c8408","referenced_from":["0054CFC0 STPlaySystemC::InitSystem","0054D2F0 STPlaySystemC::Save"]}
 {"address":"0079AE38","name":"STPlaySystemCVTable","type":"STPlaySystemCVTable","length":36,"value":"","referenced_from":["0054CB40 STPlaySystemC::STPlaySystemC"]}
 {"address":"0079AE64","name":"VTable_0079AE64","type":"VTable_0079AE64","length":36,"value":"","referenced_from":["00550C90 FUN_00550c90"]}
 {"address":"0079AE90","name":"UpgPanelTyVTable","type":"UpgPanelTyVTable","length":36,"value":"","referenced_from":["005527D0 CreateUpgPanel"]}
-{"address":"0079AEBC","name":"PTR_s_TRACKS_0079aebc","type":"pointer","length":4,"value":"007c90fc","referenced_from":["005564C0 TraksClassTy::GetMessage"]}
+{"address":"0079AEBC","name":"PTR_s_TRACKS_0079aebc","type":"char *","length":4,"value":"007c90fc","referenced_from":["005564C0 TraksClassTy::GetMessage"]}
 {"address":"0079AEC0","name":"TraksClassTyVTable","type":"TraksClassTyVTable","length":4,"value":"","referenced_from":["005556D0 TraksClassTy::TraksClassTy"]}
-{"address":"0079AEC4","name":"PTR_s_VISIBILITY_0079aec4","type":"pointer","length":4,"value":"007c92bc","referenced_from":["00558840 VisibleClassTy::GetMessage"]}
+{"address":"0079AEC4","name":"PTR_s_VISIBILITY_0079aec4","type":"char *","length":4,"value":"007c92bc","referenced_from":["00558840 VisibleClassTy::GetMessage"]}
 {"address":"0079AEC8","name":"PTR_DAT_0079aec8","type":"pointer","length":4,"value":"007c92b4","referenced_from":["00557C90 VisibleClassTy::Init"]}
 {"address":"0079AECC","name":"PTR_DAT_0079aecc","type":"pointer","length":4,"value":"007c92ac","referenced_from":["00557C90 VisibleClassTy::Init"]}
 {"address":"0079AED0","name":"g_centeredOffsets5","type":"int[5]","length":20,"value":"","referenced_from":["0041C710 FUN_0041c710","004C6440 TLOBldMark::sub_004C6440","0054A9B0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0","00556760 TraksClassTy::TraksCreate","00558DC0 VisibleClassTy::sub_00558DC0","00559110 VisibleClassTy::sub_00559110","0057E0A0 STDcResourcC::GetMessage","005EEFF0 FUN_005eeff0","005F19A0 STManBasisC::sub_005F19A0","005F1D80 VisibleClassTy::sub_005F1D80","005F23D0 FUN_005f23d0","005F27C0 STBHEShellC::GetMessage","005F3940 FUN_005f3940","005F4680 STBHEShellC::sub_005F4680","005F5440 FUN_005f5440","005FDB50 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50","00600750 FUN_00600750","006028A0 FUN_006028a0","00602BE0 STDestC::sub_00602BE0","00604350 STExplosion::sub_00604350","006051B0 STExplosionC::LoadImagSpr","006057C0 FUN_006057c0","0060A4B0 FUN_0060a4b0","0060AEF0 FUN_0060aef0","0060DD70 FUN_0060dd70","006101B0 FUN_006101b0","006132F0 STGenBombC::LoadImagSpr","006191A0 STJumpMineC::sub_006191A0","00619A20 STJumpMineC::sub_00619A20","00619C70 STJumpMineC::sub_00619C70","0061E110 FUN_0061e110","0061E7F0 FUN_0061e7f0","0061F290 STLightC::sub_0061F290","006226C0 STMineSetC::sub_006226C0","00623600 FUN_00623600","006239A0 STMineSetC::sub_006239A0","00627EB0 STParticleC::GetMessage","00629070 STParticleC::InitVisibelFlight","006298A0 STParticleC::InitVisibelDeton","0062B4A0 STParticleC::sub_0062B4A0","0062F150 FUN_0062f150","0062FEA0 STRubbishC::sub_0062FEA0","00635BF0 FUN_00635bf0","00635DA0 FUN_00635da0","00636FC0 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0","00638CA0 FUN_00638ca0","00639C90 FUN_00639c90","0063C510 FUN_0063c510","00643E20 FUN_00643e20","00646E00 FUN_00646e00"]}
 {"address":"0079AEEC","name":"VisibleClassTyVTable","type":"VisibleClassTyVTable","length":4,"value":"","referenced_from":["005577C0 VisibleClassTy::VisibleClassTy"]}
-{"address":"0079AEF0","name":"PTR_s_UPDATES\\_0079aef0","type":"pointer","length":4,"value":"007c94c0","referenced_from":["0055C590 FUN_0055c590"]}
-{"address":"0079AEF4","name":"PTR_s_ST.INF_0079aef4","type":"pointer","length":4,"value":"007c94b8","referenced_from":["0055C590 FUN_0055c590"]}
+{"address":"0079AEF0","name":"PTR_s_UPDATES\\_0079aef0","type":"char *","length":4,"value":"007c94c0","referenced_from":["0055C590 FUN_0055c590"]}
+{"address":"0079AEF4","name":"PTR_s_ST.INF_0079aef4","type":"char *","length":4,"value":"007c94b8","referenced_from":["0055C590 FUN_0055c590"]}
 {"address":"0079AEFC","name":"CFsgsConnectionVTable","type":"CFsgsConnectionVTable","length":92,"value":"","referenced_from":["0055BCB0 FUN_0055bcb0","0055BD40 FUN_0055bd40","0055BDA0"]}
-{"address":"0079AF6C","name":"PTR_s_PLT_MMGLASS_0079af6c","type":"pointer","length":4,"value":"007c958c","referenced_from":["0055DA40 LoadStartPlt"]}
-{"address":"0079AF70","name":"PTR_s_PLT_PAUSE_0079af70","type":"pointer","length":4,"value":"007c9580","referenced_from":["0055D730 LoadGamePlt"]}
-{"address":"0079AF74","name":"PTR_s_PLT_EXPLITE_0079af74","type":"pointer","length":4,"value":"007c9570","referenced_from":["0055D730 LoadGamePlt"]}
-{"address":"0079AF78","name":"PTR_s_PLT_SHAD30_0079af78","type":"pointer","length":4,"value":"007c9560","referenced_from":["0055D730 LoadGamePlt"]}
-{"address":"0079AF7C","name":"PTR_s_PLT_SHAD40_0079af7c","type":"pointer","length":4,"value":"007c9550","referenced_from":["0055D730 LoadGamePlt"]}
-{"address":"0079AF80","name":"PTR_s_PLT_SHAD60_0079af80","type":"pointer","length":4,"value":"007c9540","referenced_from":["0055D730 LoadGamePlt"]}
-{"address":"0079AF84","name":"PTR_s_PLT_FOG_0079af84","type":"pointer","length":4,"value":"007c9534","referenced_from":["0055D730 LoadGamePlt"]}
-{"address":"0079AF88","name":"PTR_s_PLT_MMSHAD_0079af88","type":"pointer","length":4,"value":"007c9524","referenced_from":["0055DA40 LoadStartPlt"]}
-{"address":"0079AF8C","name":"PTR_s_PLT_NUCL_0079af8c","type":"pointer","length":4,"value":"007c9518","referenced_from":["0055D730 LoadGamePlt"]}
-{"address":"0079AF90","name":"PTR_s_PLT_GLOW_0079af90","type":"pointer","length":4,"value":"007c950c","referenced_from":["0055D730 LoadGamePlt"]}
-{"address":"0079AF94","name":"PTR_s_PLT_DKD_0079af94","type":"pointer","length":4,"value":"007c9500","referenced_from":["0055D730 LoadGamePlt"]}
-{"address":"0079AF98","name":"PTR_s_PLT_FSGSGLASS_0079af98","type":"pointer","length":4,"value":"007c94f0","referenced_from":["0055DA40 LoadStartPlt"]}
-{"address":"0079AF9C","name":"PTR_s_PLT_FSGSSHAD_0079af9c","type":"pointer","length":4,"value":"007c94e0","referenced_from":["0055DA40 LoadStartPlt"]}
-{"address":"0079B00C","name":"PTR_s_music_0079b00c","type":"pointer","length":4,"value":"007c9740","referenced_from":["00566600 FUN_00566600"]}
-{"address":"0079B010","name":"PTR_s_GM_SET_0079b010","type":"pointer","length":4,"value":"007c9738","referenced_from":["00566600 FUN_00566600"]}
-{"address":"0079B014","name":"PTR_s_GM_PEACE_0079b014","type":"pointer","length":4,"value":"007c972c","referenced_from":["00566970 SoundManagerTy::sub_00566970"]}
-{"address":"0079B018","name":"PTR_s_GM_PWAR_0079b018","type":"pointer","length":4,"value":"007c9720","referenced_from":["00566970 SoundManagerTy::sub_00566970"]}
-{"address":"0079B01C","name":"PTR_s_GM_WAR_0079b01c","type":"pointer","length":4,"value":"007c9718","referenced_from":["00566970 SoundManagerTy::sub_00566970"]}
+{"address":"0079AF6C","name":"PTR_s_PLT_MMGLASS_0079af6c","type":"char *","length":4,"value":"007c958c","referenced_from":["0055DA40 LoadStartPlt"]}
+{"address":"0079AF70","name":"PTR_s_PLT_PAUSE_0079af70","type":"char *","length":4,"value":"007c9580","referenced_from":["0055D730 LoadGamePlt"]}
+{"address":"0079AF74","name":"PTR_s_PLT_EXPLITE_0079af74","type":"char *","length":4,"value":"007c9570","referenced_from":["0055D730 LoadGamePlt"]}
+{"address":"0079AF78","name":"PTR_s_PLT_SHAD30_0079af78","type":"char *","length":4,"value":"007c9560","referenced_from":["0055D730 LoadGamePlt"]}
+{"address":"0079AF7C","name":"PTR_s_PLT_SHAD40_0079af7c","type":"char *","length":4,"value":"007c9550","referenced_from":["0055D730 LoadGamePlt"]}
+{"address":"0079AF80","name":"PTR_s_PLT_SHAD60_0079af80","type":"char *","length":4,"value":"007c9540","referenced_from":["0055D730 LoadGamePlt"]}
+{"address":"0079AF84","name":"PTR_s_PLT_FOG_0079af84","type":"char *","length":4,"value":"007c9534","referenced_from":["0055D730 LoadGamePlt"]}
+{"address":"0079AF88","name":"PTR_s_PLT_MMSHAD_0079af88","type":"char *","length":4,"value":"007c9524","referenced_from":["0055DA40 LoadStartPlt"]}
+{"address":"0079AF8C","name":"PTR_s_PLT_NUCL_0079af8c","type":"char *","length":4,"value":"007c9518","referenced_from":["0055D730 LoadGamePlt"]}
+{"address":"0079AF90","name":"PTR_s_PLT_GLOW_0079af90","type":"char *","length":4,"value":"007c950c","referenced_from":["0055D730 LoadGamePlt"]}
+{"address":"0079AF94","name":"PTR_s_PLT_DKD_0079af94","type":"char *","length":4,"value":"007c9500","referenced_from":["0055D730 LoadGamePlt"]}
+{"address":"0079AF98","name":"PTR_s_PLT_FSGSGLASS_0079af98","type":"char *","length":4,"value":"007c94f0","referenced_from":["0055DA40 LoadStartPlt"]}
+{"address":"0079AF9C","name":"PTR_s_PLT_FSGSSHAD_0079af9c","type":"char *","length":4,"value":"007c94e0","referenced_from":["0055DA40 LoadStartPlt"]}
+{"address":"0079B00C","name":"PTR_s_music_0079b00c","type":"char *","length":4,"value":"007c9740","referenced_from":["00566600 FUN_00566600"]}
+{"address":"0079B010","name":"PTR_s_GM_SET_0079b010","type":"char *","length":4,"value":"007c9738","referenced_from":["00566600 FUN_00566600"]}
+{"address":"0079B014","name":"PTR_s_GM_PEACE_0079b014","type":"char *","length":4,"value":"007c972c","referenced_from":["00566970 SoundManagerTy::sub_00566970"]}
+{"address":"0079B018","name":"PTR_s_GM_PWAR_0079b018","type":"char *","length":4,"value":"007c9720","referenced_from":["00566970 SoundManagerTy::sub_00566970"]}
+{"address":"0079B01C","name":"PTR_s_GM_WAR_0079b01c","type":"char *","length":4,"value":"007c9718","referenced_from":["00566970 SoundManagerTy::sub_00566970"]}
 {"address":"0079B024","name":"SoundManagerTyVTable","type":"SoundManagerTyVTable","length":4,"value":"","referenced_from":["00566590 CreateSoundManager"]}
-{"address":"0079B028","name":"PTR_s_sounds_0079b028","type":"pointer","length":4,"value":"007c97e8","referenced_from":["00567330 FUN_00567330"]}
-{"address":"0079B02C","name":"PTR_s_SAVEGAME\\_0079b02c","type":"pointer","length":4,"value":"007c7094","referenced_from":["0056ADC0 STAppC::InitApp","0056F250 FUN_0056f250","0056F930 FUN_0056f930"]}
-{"address":"0079B030","name":"PTR_s_SYSTEM\\_0079b030","type":"pointer","length":4,"value":"007c7088","referenced_from":["0056ADC0 STAppC::InitApp","0056DB80 STAppC::StartGame"]}
+{"address":"0079B028","name":"PTR_s_sounds_0079b028","type":"char *","length":4,"value":"007c97e8","referenced_from":["00567330 FUN_00567330"]}
+{"address":"0079B02C","name":"PTR_s_SAVEGAME\\_0079b02c","type":"char *","length":4,"value":"007c7094","referenced_from":["0056ADC0 STAppC::InitApp","0056F250 FUN_0056f250","0056F930 FUN_0056f930"]}
+{"address":"0079B030","name":"PTR_s_SYSTEM\\_0079b030","type":"char *","length":4,"value":"007c7088","referenced_from":["0056ADC0 STAppC::InitApp","0056DB80 STAppC::StartGame"]}
 {"address":"0079B034","name":"PTR_DAT_0079b034","type":"pointer","length":4,"value":"007c7080","referenced_from":["0056F250 FUN_0056f250","0056F930 FUN_0056f930"]}
 {"address":"0079B038","name":"PTR_DAT_0079b038","type":"pointer","length":4,"value":"007c7078","referenced_from":["0056F250 FUN_0056f250"]}
-{"address":"0079B03C","name":"PTR_s_CAMPAIGN.VPS_0079b03c","type":"pointer","length":4,"value":"007ca094","referenced_from":["0056FA60 STAppC::GetMessage"]}
-{"address":"0079B040","name":"PTR_s_STARTUP.VPS_0079b040","type":"pointer","length":4,"value":"007ca084","referenced_from":["0056ADC0 STAppC::InitApp"]}
-{"address":"0079B044","name":"PTR_s_SAVE_QUICKSAVE_0079b044","type":"pointer","length":4,"value":"007c7d4c","referenced_from":["0056F250 FUN_0056f250"]}
-{"address":"0079B048","name":"PTR_s_TASKS_0079b048","type":"pointer","length":4,"value":"007ca07c","referenced_from":["0056ADC0 STAppC::InitApp"]}
-{"address":"0079B04C","name":"PTR_s_STRATEGS_0079b04c","type":"pointer","length":4,"value":"007c706c","referenced_from":["0056ADC0 STAppC::InitApp"]}
+{"address":"0079B03C","name":"PTR_s_CAMPAIGN.VPS_0079b03c","type":"char *","length":4,"value":"007ca094","referenced_from":["0056FA60 STAppC::GetMessage"]}
+{"address":"0079B040","name":"PTR_s_STARTUP.VPS_0079b040","type":"char *","length":4,"value":"007ca084","referenced_from":["0056ADC0 STAppC::InitApp"]}
+{"address":"0079B044","name":"PTR_s_SAVE_QUICKSAVE_0079b044","type":"char *","length":4,"value":"007c7d4c","referenced_from":["0056F250 FUN_0056f250"]}
+{"address":"0079B048","name":"PTR_s_TASKS_0079b048","type":"char *","length":4,"value":"007ca07c","referenced_from":["0056ADC0 STAppC::InitApp"]}
+{"address":"0079B04C","name":"PTR_s_STRATEGS_0079b04c","type":"char *","length":4,"value":"007c706c","referenced_from":["0056ADC0 STAppC::InitApp"]}
 {"address":"0079B050","name":"PTR_DAT_0079b050","type":"pointer","length":4,"value":"007c7064","referenced_from":["0056ADC0 STAppC::InitApp","0056F250 FUN_0056f250","0056F930 FUN_0056f930"]}
-{"address":"0079B054","name":"PTR_s_SAVE_DESC_0079b054","type":"pointer","length":4,"value":"007c7058","referenced_from":["0056F250 FUN_0056f250"]}
-{"address":"0079B058","name":"PTR_s_SAVE_PLAYER_0079b058","type":"pointer","length":4,"value":"007ca06c","referenced_from":["0056F250 FUN_0056f250"]}
-{"address":"0079B05C","name":"PTR_s_RND_INIT_0079b05c","type":"pointer","length":4,"value":"007ca060","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
-{"address":"0079B060","name":"PTR_s_RESTART_GAME_0079b060","type":"pointer","length":4,"value":"007ca050","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
-{"address":"0079B064","name":"PTR_s_STATETIMER_GAME_0079b064","type":"pointer","length":4,"value":"007ca03c","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
-{"address":"0079B068","name":"PTR_s_AUTOSAVETIME_GAME_0079b068","type":"pointer","length":4,"value":"007ca024","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
-{"address":"0079B06C","name":"PTR_s_BRIEFING_GAME_0079b06c","type":"pointer","length":4,"value":"007ca014","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
-{"address":"0079B070","name":"PTR_s_TITLE_MISSION_0079b070","type":"pointer","length":4,"value":"007ca004","referenced_from":["0056DB80 STAppC::StartGame","0056E9E0 STAppC::sub_0056E9E0","0056F250 FUN_0056f250"]}
-{"address":"0079B074","name":"PTR_s_DESCRIPTION_0079b074","type":"pointer","length":4,"value":"007c9ff4","referenced_from":["0056DB80 STAppC::StartGame","0056E9E0 STAppC::sub_0056E9E0","0056EBE0 STAppC::sub_0056EBE0","0056F250 FUN_0056f250"]}
-{"address":"0079B078","name":"PTR_s_OBJECTIVES_0079b078","type":"pointer","length":4,"value":"007c9fe4","referenced_from":["0056DB80 STAppC::StartGame","0056E9E0 STAppC::sub_0056E9E0","0056F250 FUN_0056f250"]}
-{"address":"0079B07C","name":"PTR_s_TEXTURE_0079b07c","type":"pointer","length":4,"value":"007c9fd8","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
-{"address":"0079B080","name":"PTR_s_DESCRIPTOR_0079b080","type":"pointer","length":4,"value":"007c9fc8","referenced_from":["0056ADC0 STAppC::InitApp","0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
-{"address":"0079B084","name":"PTR_s_SMALL_MAP_0079b084","type":"pointer","length":4,"value":"007c9fbc","referenced_from":["0056F250 FUN_0056f250"]}
-{"address":"0079B088","name":"PTR_s_ORIG_DB_0079b088","type":"pointer","length":4,"value":"007c9fb0","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
-{"address":"0079B08C","name":"PTR_s_TYPE_START_0079b08c","type":"pointer","length":4,"value":"007c9fa0","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
-{"address":"0079B090","name":"PTR_s_REPORT_0079b090","type":"pointer","length":4,"value":"007c9f98","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
+{"address":"0079B054","name":"PTR_s_SAVE_DESC_0079b054","type":"char *","length":4,"value":"007c7058","referenced_from":["0056F250 FUN_0056f250"]}
+{"address":"0079B058","name":"PTR_s_SAVE_PLAYER_0079b058","type":"char *","length":4,"value":"007ca06c","referenced_from":["0056F250 FUN_0056f250"]}
+{"address":"0079B05C","name":"PTR_s_RND_INIT_0079b05c","type":"char *","length":4,"value":"007ca060","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
+{"address":"0079B060","name":"PTR_s_RESTART_GAME_0079b060","type":"char *","length":4,"value":"007ca050","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
+{"address":"0079B064","name":"PTR_s_STATETIMER_GAME_0079b064","type":"char *","length":4,"value":"007ca03c","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
+{"address":"0079B068","name":"PTR_s_AUTOSAVETIME_GAME_0079b068","type":"char *","length":4,"value":"007ca024","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
+{"address":"0079B06C","name":"PTR_s_BRIEFING_GAME_0079b06c","type":"char *","length":4,"value":"007ca014","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
+{"address":"0079B070","name":"PTR_s_TITLE_MISSION_0079b070","type":"char *","length":4,"value":"007ca004","referenced_from":["0056DB80 STAppC::StartGame","0056E9E0 STAppC::sub_0056E9E0","0056F250 FUN_0056f250"]}
+{"address":"0079B074","name":"PTR_s_DESCRIPTION_0079b074","type":"char *","length":4,"value":"007c9ff4","referenced_from":["0056DB80 STAppC::StartGame","0056E9E0 STAppC::sub_0056E9E0","0056EBE0 STAppC::sub_0056EBE0","0056F250 FUN_0056f250"]}
+{"address":"0079B078","name":"PTR_s_OBJECTIVES_0079b078","type":"char *","length":4,"value":"007c9fe4","referenced_from":["0056DB80 STAppC::StartGame","0056E9E0 STAppC::sub_0056E9E0","0056F250 FUN_0056f250"]}
+{"address":"0079B07C","name":"PTR_s_TEXTURE_0079b07c","type":"char *","length":4,"value":"007c9fd8","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
+{"address":"0079B080","name":"PTR_s_DESCRIPTOR_0079b080","type":"char *","length":4,"value":"007c9fc8","referenced_from":["0056ADC0 STAppC::InitApp","0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
+{"address":"0079B084","name":"PTR_s_SMALL_MAP_0079b084","type":"char *","length":4,"value":"007c9fbc","referenced_from":["0056F250 FUN_0056f250"]}
+{"address":"0079B088","name":"PTR_s_ORIG_DB_0079b088","type":"char *","length":4,"value":"007c9fb0","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
+{"address":"0079B08C","name":"PTR_s_TYPE_START_0079b08c","type":"char *","length":4,"value":"007c9fa0","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
+{"address":"0079B090","name":"PTR_s_REPORT_0079b090","type":"char *","length":4,"value":"007c9f98","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250"]}
 {"address":"0079B0A8","name":"STAppCVTable","type":"STAppCVTable","length":28,"value":"","referenced_from":["0056A5F0 STAppC::STAppC"]}
-{"address":"0079B0CC","name":"PTR_s_SAVEGAME\\_0079b0cc","type":"pointer","length":4,"value":"007c7094","referenced_from":["00571E40 FUN_00571e40","00572510 FUN_00572510","00572920 FUN_00572920","00572BA0 FUN_00572ba0","005738D0 FUN_005738d0"]}
-{"address":"0079B0D0","name":"PTR_s_PL_LOG_0079b0d0","type":"pointer","length":4,"value":"007ca67c","referenced_from":["00572510 FUN_00572510","00572920 FUN_00572920","00572BA0 FUN_00572ba0"]}
-{"address":"0079B0D4","name":"PTR_s_OPTIONS_PLAYER_0079b0d4","type":"pointer","length":4,"value":"007ca668","referenced_from":["00572510 FUN_00572510","00572920 FUN_00572920"]}
-{"address":"0079B0D8","name":"PTR_s_ACCKEYS_PLAYER_0079b0d8","type":"pointer","length":4,"value":"007ca654","referenced_from":["00572510 FUN_00572510","00572BA0 FUN_00572ba0"]}
-{"address":"0079B0DC","name":"PTR_s_AIKEYS_PLAYER_0079b0dc","type":"pointer","length":4,"value":"007ca644","referenced_from":["00572510 FUN_00572510","00572BA0 FUN_00572ba0"]}
-{"address":"0079B0E0","name":"PTR_s_SYSKEYS_PLAYER_0079b0e0","type":"pointer","length":4,"value":"007ca630","referenced_from":["00572510 FUN_00572510","00572BA0 FUN_00572ba0"]}
-{"address":"0079B0E4","name":"PTR_s_MOUKEYS_PLAYER_0079b0e4","type":"pointer","length":4,"value":"007ca61c","referenced_from":["00572510 FUN_00572510","00572BA0 FUN_00572ba0"]}
-{"address":"0079B0E8","name":"PTR_s_LASTLOG_0079b0e8","type":"pointer","length":4,"value":"007ca610","referenced_from":["00572510 FUN_00572510","00572920 FUN_00572920"]}
-{"address":"0079B0EC","name":"PTR_s_LASTPSW_0079b0ec","type":"pointer","length":4,"value":"007ca604","referenced_from":["00572510 FUN_00572510","00572920 FUN_00572920"]}
-{"address":"0079B114","name":"PTR_s_UPDATES\\_0079b114","type":"pointer","length":4,"value":"007c94c0","referenced_from":["00575A10 FUN_00575a10"]}
+{"address":"0079B0CC","name":"PTR_s_SAVEGAME\\_0079b0cc","type":"char *","length":4,"value":"007c7094","referenced_from":["00571E40 FUN_00571e40","00572510 FUN_00572510","00572920 FUN_00572920","00572BA0 FUN_00572ba0","005738D0 FUN_005738d0"]}
+{"address":"0079B0D0","name":"PTR_s_PL_LOG_0079b0d0","type":"char *","length":4,"value":"007ca67c","referenced_from":["00572510 FUN_00572510","00572920 FUN_00572920","00572BA0 FUN_00572ba0"]}
+{"address":"0079B0D4","name":"PTR_s_OPTIONS_PLAYER_0079b0d4","type":"char *","length":4,"value":"007ca668","referenced_from":["00572510 FUN_00572510","00572920 FUN_00572920"]}
+{"address":"0079B0D8","name":"PTR_s_ACCKEYS_PLAYER_0079b0d8","type":"char *","length":4,"value":"007ca654","referenced_from":["00572510 FUN_00572510","00572BA0 FUN_00572ba0"]}
+{"address":"0079B0DC","name":"PTR_s_AIKEYS_PLAYER_0079b0dc","type":"char *","length":4,"value":"007ca644","referenced_from":["00572510 FUN_00572510","00572BA0 FUN_00572ba0"]}
+{"address":"0079B0E0","name":"PTR_s_SYSKEYS_PLAYER_0079b0e0","type":"char *","length":4,"value":"007ca630","referenced_from":["00572510 FUN_00572510","00572BA0 FUN_00572ba0"]}
+{"address":"0079B0E4","name":"PTR_s_MOUKEYS_PLAYER_0079b0e4","type":"char *","length":4,"value":"007ca61c","referenced_from":["00572510 FUN_00572510","00572BA0 FUN_00572ba0"]}
+{"address":"0079B0E8","name":"PTR_s_LASTLOG_0079b0e8","type":"char *","length":4,"value":"007ca610","referenced_from":["00572510 FUN_00572510","00572920 FUN_00572920"]}
+{"address":"0079B0EC","name":"PTR_s_LASTPSW_0079b0ec","type":"char *","length":4,"value":"007ca604","referenced_from":["00572510 FUN_00572510","00572920 FUN_00572920"]}
+{"address":"0079B114","name":"PTR_s_UPDATES\\_0079b114","type":"char *","length":4,"value":"007c94c0","referenced_from":["00575A10 FUN_00575a10"]}
 {"address":"0079B188","name":"STAlgaCVTable","type":"STAlgaCVTable","length":4,"value":"","referenced_from":["00576A60 CreateSTAlga"]}
-{"address":"0079B18C","name":"PTR_s_SAVEGAME\\_0079b18c","type":"pointer","length":4,"value":"007c7094","referenced_from":["005776D0 GameSystemC::GetMessage"]}
-{"address":"0079B190","name":"PTR_s_SYSTEM\\_0079b190","type":"pointer","length":4,"value":"007c7088","referenced_from":["005776D0 GameSystemC::GetMessage"]}
+{"address":"0079B18C","name":"PTR_s_SAVEGAME\\_0079b18c","type":"char *","length":4,"value":"007c7094","referenced_from":["005776D0 GameSystemC::GetMessage"]}
+{"address":"0079B190","name":"PTR_s_SYSTEM\\_0079b190","type":"char *","length":4,"value":"007c7088","referenced_from":["005776D0 GameSystemC::GetMessage"]}
 {"address":"0079B194","name":"PTR_DAT_0079b194","type":"pointer","length":4,"value":"007c7080","referenced_from":["005776D0 GameSystemC::GetMessage"]}
-{"address":"0079B198","name":"PTR_s_STRATEGS_0079b198","type":"pointer","length":4,"value":"007c706c","referenced_from":["005776D0 GameSystemC::GetMessage"]}
+{"address":"0079B198","name":"PTR_s_STRATEGS_0079b198","type":"char *","length":4,"value":"007c706c","referenced_from":["005776D0 GameSystemC::GetMessage"]}
 {"address":"0079B19C","name":"PTR_DAT_0079b19c","type":"pointer","length":4,"value":"007c7064","referenced_from":["005776D0 GameSystemC::GetMessage"]}
-{"address":"0079B1A0","name":"PTR_s_SAVE_DESC_0079b1a0","type":"pointer","length":4,"value":"007c7058","referenced_from":["005776D0 GameSystemC::GetMessage"]}
-{"address":"0079B1A4","name":"PTR_s_DESCRIPTOR_0079b1a4","type":"pointer","length":4,"value":"007c9fc8","referenced_from":["005776D0 GameSystemC::GetMessage"]}
-{"address":"0079B1A8","name":"PTR_s_ANIM_PALETTE_0079b1a8","type":"pointer","length":4,"value":"007cab4c","referenced_from":["00576EF0 GameSystemC::InitSystem"]}
+{"address":"0079B1A0","name":"PTR_s_SAVE_DESC_0079b1a0","type":"char *","length":4,"value":"007c7058","referenced_from":["005776D0 GameSystemC::GetMessage"]}
+{"address":"0079B1A4","name":"PTR_s_DESCRIPTOR_0079b1a4","type":"char *","length":4,"value":"007c9fc8","referenced_from":["005776D0 GameSystemC::GetMessage"]}
+{"address":"0079B1A8","name":"PTR_s_ANIM_PALETTE_0079b1a8","type":"char *","length":4,"value":"007cab4c","referenced_from":["00576EF0 GameSystemC::InitSystem"]}
 {"address":"0079B1B4","name":"BaseSystemCVTable","type":"BaseSystemCVTable","length":36,"value":"","referenced_from":["00576AA0 BaseSystemC::BaseSystemC"]}
 {"address":"0079B1E0","name":"GameSystemCVTable","type":"GameSystemCVTable","length":36,"value":"","referenced_from":["00576DD0 GameSystemC::GameSystemC"]}
 {"address":"0079B20C","name":"DebugSystemCVTable","type":"DebugSystemCVTable","length":36,"value":"","referenced_from":["005781C0 DebugSystemC::DebugSystemC"]}
@@ -32357,82 +32357,82 @@
 {"address":"0079BE80","name":"STSharkCVTable","type":"STSharkCVTable","length":292,"value":"","referenced_from":["0058D750 STSharkC::STSharkC"]}
 {"address":"0079BFE0","name":"VTable_0079BFE0","type":"VTable_0079BFE0","length":4,"value":"","referenced_from":["0058D750 STSharkC::STSharkC"]}
 {"address":"0079BFE4","name":"MAdvTyVTable","type":"MAdvTyVTable","length":4,"value":"","referenced_from":["00590AD0 CreateMAdv"]}
-{"address":"0079BFE8","name":"PTR_s_MISSIONS\\_0079bfe8","type":"pointer","length":4,"value":"007cbcc8","referenced_from":["00593040 CampaignTy::GetMessage"]}
+{"address":"0079BFE8","name":"PTR_s_MISSIONS\\_0079bfe8","type":"char *","length":4,"value":"007cbcc8","referenced_from":["00593040 CampaignTy::GetMessage"]}
 {"address":"0079BFEC","name":"PTR_DAT_0079bfec","type":"pointer","length":4,"value":"007cbcc0","referenced_from":["00593040 CampaignTy::GetMessage"]}
-{"address":"0079BFF0","name":"PTR_s_TUTOR_0079bff0","type":"pointer","length":4,"value":"007cbcb8","referenced_from":["00593040 CampaignTy::GetMessage"]}
+{"address":"0079BFF0","name":"PTR_s_TUTOR_0079bff0","type":"char *","length":4,"value":"007cbcb8","referenced_from":["00593040 CampaignTy::GetMessage"]}
 {"address":"0079BFF8","name":"CampaignTyVTable","type":"CampaignTyVTable","length":12,"value":"","referenced_from":["00593860 CreateCampaign"]}
 {"address":"0079C008","name":"MMObjTyVTable","type":"MMObjTyVTable","length":12,"value":"","referenced_from":["005AA2C0 CreateFSGS","005B2790 CreateChooseMap","005BD2E0 CreatePrivider","005D4B40 CreateSettMapM","005D77A0 CreateSettMap","005EAD30 CreateWait"]}
 {"address":"0079C018","name":"VTable_0079C018","type":"VTable_0079C018","length":4,"value":"","referenced_from":["005AA2C0 CreateFSGS","005B2790 CreateChooseMap","005BD2E0 CreatePrivider","005D4B40 CreateSettMapM","005D77A0 CreateSettMap","005EAD30 CreateWait"]}
 {"address":"0079C01C","name":"VisibleVTable","type":"VisibleVTable","length":4,"value":"","referenced_from":["005947D0 CreateVisible"]}
-{"address":"0079C020","name":"PTR_s_UPDATES\\_0079c020","type":"pointer","length":4,"value":"007c94c0","referenced_from":["005A1160 FSGSTy::CheckUpdate","005A4350 FSGSTy::GetMessage"]}
-{"address":"0079C024","name":"PTR_s_ST.INF_0079c024","type":"pointer","length":4,"value":"007c94b8","referenced_from":["005A1160 FSGSTy::CheckUpdate"]}
+{"address":"0079C020","name":"PTR_s_UPDATES\\_0079c020","type":"char *","length":4,"value":"007c94c0","referenced_from":["005A1160 FSGSTy::CheckUpdate","005A4350 FSGSTy::GetMessage"]}
+{"address":"0079C024","name":"PTR_s_ST.INF_0079c024","type":"char *","length":4,"value":"007c94b8","referenced_from":["005A1160 FSGSTy::CheckUpdate"]}
 {"address":"0079C02C","name":"FSGSTyVTable","type":"FSGSTyVTable","length":12,"value":"","referenced_from":["005AA2C0 CreateFSGS"]}
-{"address":"0079C04C","name":"PTR_s_SAVEGAME\\_0079c04c","type":"pointer","length":4,"value":"007c7094","referenced_from":["005AB300 ChooseMapTy::InitChooseMap"]}
-{"address":"0079C050","name":"PTR_s_CUSTOM\\_0079c050","type":"pointer","length":4,"value":"007cc71c","referenced_from":["005AB300 ChooseMapTy::InitChooseMap"]}
-{"address":"0079C054","name":"PTR_s_MISSIONS\\_0079c054","type":"pointer","length":4,"value":"007cbcc8","referenced_from":["005AB300 ChooseMapTy::InitChooseMap","005B0BA0 ChooseMapTy::GetMessage"]}
+{"address":"0079C04C","name":"PTR_s_SAVEGAME\\_0079c04c","type":"char *","length":4,"value":"007c7094","referenced_from":["005AB300 ChooseMapTy::InitChooseMap"]}
+{"address":"0079C050","name":"PTR_s_CUSTOM\\_0079c050","type":"char *","length":4,"value":"007cc71c","referenced_from":["005AB300 ChooseMapTy::InitChooseMap"]}
+{"address":"0079C054","name":"PTR_s_MISSIONS\\_0079c054","type":"char *","length":4,"value":"007cbcc8","referenced_from":["005AB300 ChooseMapTy::InitChooseMap","005B0BA0 ChooseMapTy::GetMessage"]}
 {"address":"0079C058","name":"PTR_DAT_0079c058","type":"pointer","length":4,"value":"007c7080","referenced_from":["005AFD00 ChooseMapTy::PrepFiles"]}
-{"address":"0079C05C","name":"PTR_s_CAMPAIGN.VPS_0079c05c","type":"pointer","length":4,"value":"007ca094","referenced_from":["005B0BA0 ChooseMapTy::GetMessage"]}
-{"address":"0079C060","name":"PTR_s_ADDON_0079c060","type":"pointer","length":4,"value":"007cc714","referenced_from":["005AE050 ChooseMapTy::ShowDescription","005AFD00 ChooseMapTy::PrepFiles"]}
-{"address":"0079C064","name":"PTR_s_MISSION_0079c064","type":"pointer","length":4,"value":"007cc708","referenced_from":["005AE050 ChooseMapTy::ShowDescription","005AFD00 ChooseMapTy::PrepFiles"]}
+{"address":"0079C05C","name":"PTR_s_CAMPAIGN.VPS_0079c05c","type":"char *","length":4,"value":"007ca094","referenced_from":["005B0BA0 ChooseMapTy::GetMessage"]}
+{"address":"0079C060","name":"PTR_s_ADDON_0079c060","type":"char *","length":4,"value":"007cc714","referenced_from":["005AE050 ChooseMapTy::ShowDescription","005AFD00 ChooseMapTy::PrepFiles"]}
+{"address":"0079C064","name":"PTR_s_MISSION_0079c064","type":"char *","length":4,"value":"007cc708","referenced_from":["005AE050 ChooseMapTy::ShowDescription","005AFD00 ChooseMapTy::PrepFiles"]}
 {"address":"0079C068","name":"PTR_DAT_0079c068","type":"pointer","length":4,"value":"007cc704","referenced_from":["005AE050 ChooseMapTy::ShowDescription"]}
 {"address":"0079C06C","name":"PTR_DAT_0079c06c","type":"pointer","length":4,"value":"007c7064","referenced_from":["005AE050 ChooseMapTy::ShowDescription","005AFD00 ChooseMapTy::PrepFiles","005B0BA0 ChooseMapTy::GetMessage"]}
-{"address":"0079C070","name":"PTR_s_SAVE_DESC_0079c070","type":"pointer","length":4,"value":"007c7058","referenced_from":["005AFD00 ChooseMapTy::PrepFiles"]}
-{"address":"0079C074","name":"PTR_s_OBJECTIVES_0079c074","type":"pointer","length":4,"value":"007c9fe4","referenced_from":["005AE050 ChooseMapTy::ShowDescription","005AFD00 ChooseMapTy::PrepFiles"]}
-{"address":"0079C078","name":"PTR_s_DESCRIPTOR_0079c078","type":"pointer","length":4,"value":"007c9fc8","referenced_from":["005AFD00 ChooseMapTy::PrepFiles"]}
+{"address":"0079C070","name":"PTR_s_SAVE_DESC_0079c070","type":"char *","length":4,"value":"007c7058","referenced_from":["005AFD00 ChooseMapTy::PrepFiles"]}
+{"address":"0079C074","name":"PTR_s_OBJECTIVES_0079c074","type":"char *","length":4,"value":"007c9fe4","referenced_from":["005AE050 ChooseMapTy::ShowDescription","005AFD00 ChooseMapTy::PrepFiles"]}
+{"address":"0079C078","name":"PTR_s_DESCRIPTOR_0079c078","type":"char *","length":4,"value":"007c9fc8","referenced_from":["005AFD00 ChooseMapTy::PrepFiles"]}
 {"address":"0079C088","name":"ChooseMapTyVTable","type":"ChooseMapTyVTable","length":12,"value":"","referenced_from":["005B2790 CreateChooseMap"]}
 {"address":"0079C098","name":"MainMenuTyVTable","type":"MainMenuTyVTable","length":12,"value":"","referenced_from":["005B50E0 CreateMainMenu"]}
 {"address":"0079C0A8","name":"MMsgTyVTable","type":"MMsgTyVTable","length":12,"value":"","referenced_from":["005B95B0 CreateMMsg"]}
-{"address":"0079C0B8","name":"PTR_s_SAVEGAME\\_0079c0b8","type":"pointer","length":4,"value":"007c7094","referenced_from":["005BAE00 PrividerTy::NonePrivider"]}
-{"address":"0079C0BC","name":"PTR_s_CUSTOM\\_0079c0bc","type":"pointer","length":4,"value":"007cc71c","referenced_from":["005BAE00 PrividerTy::NonePrivider"]}
+{"address":"0079C0B8","name":"PTR_s_SAVEGAME\\_0079c0b8","type":"char *","length":4,"value":"007c7094","referenced_from":["005BAE00 PrividerTy::NonePrivider"]}
+{"address":"0079C0BC","name":"PTR_s_CUSTOM\\_0079c0bc","type":"char *","length":4,"value":"007cc71c","referenced_from":["005BAE00 PrividerTy::NonePrivider"]}
 {"address":"0079C0C4","name":"PrividerTyVTable","type":"PrividerTyVTable","length":12,"value":"","referenced_from":["005BD2E0 CreatePrivider"]}
-{"address":"0079C0D4","name":"PTR_s_SAVEGAME\\_0079c0d4","type":"pointer","length":4,"value":"007c7094","referenced_from":["005BD7A0 MReportTy::InitMReport","005C0E00 MReportTy::SetCtrl"]}
-{"address":"0079C0D8","name":"PTR_s_PL_LOG_0079c0d8","type":"pointer","length":4,"value":"007ca67c","referenced_from":["005BD7A0 MReportTy::InitMReport","005C0E00 MReportTy::SetCtrl"]}
+{"address":"0079C0D4","name":"PTR_s_SAVEGAME\\_0079c0d4","type":"char *","length":4,"value":"007c7094","referenced_from":["005BD7A0 MReportTy::InitMReport","005C0E00 MReportTy::SetCtrl"]}
+{"address":"0079C0D8","name":"PTR_s_PL_LOG_0079c0d8","type":"char *","length":4,"value":"007ca67c","referenced_from":["005BD7A0 MReportTy::InitMReport","005C0E00 MReportTy::SetCtrl"]}
 {"address":"0079C0DC","name":"PTR_DAT_0079c0dc","type":"pointer","length":4,"value":"007ccec0","referenced_from":["005BD7A0 MReportTy::InitMReport","005C0E00 MReportTy::SetCtrl"]}
 {"address":"0079C0E4","name":"MReportTyVTable","type":"MReportTyVTable","length":4,"value":"","referenced_from":["005C2620 CreateMReport"]}
-{"address":"0079C0E8","name":"PTR_s_MISSIONS\\_0079c0e8","type":"pointer","length":4,"value":"007cbcc8","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
-{"address":"0079C0EC","name":"PTR_s_SYSTEM\\_0079c0ec","type":"pointer","length":4,"value":"007c7088","referenced_from":["005C29B0 SettMapMTy::sub_005C29B0","005C7800 FUN_005c7800"]}
+{"address":"0079C0E8","name":"PTR_s_MISSIONS\\_0079c0e8","type":"char *","length":4,"value":"007cbcc8","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
+{"address":"0079C0EC","name":"PTR_s_SYSTEM\\_0079c0ec","type":"char *","length":4,"value":"007c7088","referenced_from":["005C29B0 SettMapMTy::sub_005C29B0","005C7800 FUN_005c7800"]}
 {"address":"0079C0F0","name":"PTR_DAT_0079c0f0","type":"pointer","length":4,"value":"007c7080","referenced_from":["005C29B0 SettMapMTy::sub_005C29B0"]}
-{"address":"0079C0F4","name":"PTR_s_RANDOM_0079c0f4","type":"pointer","length":4,"value":"007cd0e0","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
-{"address":"0079C0F8","name":"PTR_s_GENERATE_RND_0079c0f8","type":"pointer","length":4,"value":"007cd0d0","referenced_from":["005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
-{"address":"0079C0FC","name":"PTR_s_INTERFACE_RND_0079c0fc","type":"pointer","length":4,"value":"007cd0c0","referenced_from":["005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
-{"address":"0079C100","name":"PTR_s_STRATEGS_0079c100","type":"pointer","length":4,"value":"007c706c","referenced_from":["005C29B0 SettMapMTy::sub_005C29B0"]}
-{"address":"0079C104","name":"PTR_s_TITLE_MISSION_0079c104","type":"pointer","length":4,"value":"007ca004","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
-{"address":"0079C108","name":"PTR_s_DESCRIPTION_0079c108","type":"pointer","length":4,"value":"007c9ff4","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
-{"address":"0079C10C","name":"PTR_s_OBJECTIVES_0079c10c","type":"pointer","length":4,"value":"007c9fe4","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
-{"address":"0079C110","name":"PTR_s_DESCRIPTOR_0079c110","type":"pointer","length":4,"value":"007c9fc8","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
-{"address":"0079C114","name":"PTR_s_SMALL_MAP_0079c114","type":"pointer","length":4,"value":"007c9fbc","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
+{"address":"0079C0F4","name":"PTR_s_RANDOM_0079c0f4","type":"char *","length":4,"value":"007cd0e0","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
+{"address":"0079C0F8","name":"PTR_s_GENERATE_RND_0079c0f8","type":"char *","length":4,"value":"007cd0d0","referenced_from":["005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
+{"address":"0079C0FC","name":"PTR_s_INTERFACE_RND_0079c0fc","type":"char *","length":4,"value":"007cd0c0","referenced_from":["005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
+{"address":"0079C100","name":"PTR_s_STRATEGS_0079c100","type":"char *","length":4,"value":"007c706c","referenced_from":["005C29B0 SettMapMTy::sub_005C29B0"]}
+{"address":"0079C104","name":"PTR_s_TITLE_MISSION_0079c104","type":"char *","length":4,"value":"007ca004","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
+{"address":"0079C108","name":"PTR_s_DESCRIPTION_0079c108","type":"char *","length":4,"value":"007c9ff4","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
+{"address":"0079C10C","name":"PTR_s_OBJECTIVES_0079c10c","type":"char *","length":4,"value":"007c9fe4","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
+{"address":"0079C110","name":"PTR_s_DESCRIPTOR_0079c110","type":"char *","length":4,"value":"007c9fc8","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
+{"address":"0079C114","name":"PTR_s_SMALL_MAP_0079c114","type":"char *","length":4,"value":"007c9fbc","referenced_from":["005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200"]}
 {"address":"0079C124","name":"SettMapMTyVTable","type":"SettMapMTyVTable","length":48,"value":"","referenced_from":["005D4B40 CreateSettMapM"]}
 {"address":"0079C160","name":"SettMapTyVTable","type":"SettMapTyVTable","length":48,"value":"","referenced_from":["005D77A0 CreateSettMap"]}
-{"address":"0079C19C","name":"PTR_s_SAVEGAME\\_0079c19c","type":"pointer","length":4,"value":"007c7094","referenced_from":["005D8450 SIDTy::CreateCtrls","005D8BF0 SIDTy::PrepFiles","005D9470 SIDTy::GetMessage"]}
-{"address":"0079C1A0","name":"PTR_s_PL_LOG_0079c1a0","type":"pointer","length":4,"value":"007ca67c","referenced_from":["005D8BF0 SIDTy::PrepFiles"]}
-{"address":"0079C1A4","name":"PTR_s_OPTIONS_PLAYER_0079c1a4","type":"pointer","length":4,"value":"007ca668","referenced_from":["005D8BF0 SIDTy::PrepFiles"]}
+{"address":"0079C19C","name":"PTR_s_SAVEGAME\\_0079c19c","type":"char *","length":4,"value":"007c7094","referenced_from":["005D8450 SIDTy::CreateCtrls","005D8BF0 SIDTy::PrepFiles","005D9470 SIDTy::GetMessage"]}
+{"address":"0079C1A0","name":"PTR_s_PL_LOG_0079c1a0","type":"char *","length":4,"value":"007ca67c","referenced_from":["005D8BF0 SIDTy::PrepFiles"]}
+{"address":"0079C1A4","name":"PTR_s_OPTIONS_PLAYER_0079c1a4","type":"char *","length":4,"value":"007ca668","referenced_from":["005D8BF0 SIDTy::PrepFiles"]}
 {"address":"0079C1AC","name":"SIDTyVTable","type":"SIDTyVTable","length":12,"value":"","referenced_from":["005D9F80 CreateSID"]}
-{"address":"0079C1BC","name":"PTR_s_CUSTOM\\_0079c1bc","type":"pointer","length":4,"value":"007cc71c","referenced_from":["005DEB90 FUN_005deb90"]}
+{"address":"0079C1BC","name":"PTR_s_CUSTOM\\_0079c1bc","type":"char *","length":4,"value":"007cc71c","referenced_from":["005DEB90 FUN_005deb90"]}
 {"address":"0079C1C0","name":"PTR_DAT_0079c1c0","type":"pointer","length":4,"value":"007c7080","referenced_from":["005DE670 FUN_005de670","005DEB90 FUN_005deb90"]}
 {"address":"0079C1C4","name":"PTR_DAT_0079c1c4","type":"pointer","length":4,"value":"007c7078","referenced_from":["005DE670 FUN_005de670","005DEB90 FUN_005deb90"]}
-{"address":"0079C1C8","name":"PTR_s_SAVE_PLAYER_0079c1c8","type":"pointer","length":4,"value":"007ca06c","referenced_from":["005DB030 FUN_005db030","005DC050 StartSystemTy::LoadMapData"]}
-{"address":"0079C1CC","name":"PTR_s_TITLE_MISSION_0079c1cc","type":"pointer","length":4,"value":"007ca004","referenced_from":["005DC050 StartSystemTy::LoadMapData"]}
-{"address":"0079C1D0","name":"PTR_s_DESCRIPTION_0079c1d0","type":"pointer","length":4,"value":"007c9ff4","referenced_from":["005DC050 StartSystemTy::LoadMapData","005DC730 StartSystemTy::SetObjectives"]}
-{"address":"0079C1D4","name":"PTR_s_OBJECTIVES_0079c1d4","type":"pointer","length":4,"value":"007c9fe4","referenced_from":["005DC050 StartSystemTy::LoadMapData"]}
-{"address":"0079C1D8","name":"PTR_s_DESCRIPTOR_0079c1d8","type":"pointer","length":4,"value":"007c9fc8","referenced_from":["005DB030 FUN_005db030","005DC050 StartSystemTy::LoadMapData"]}
-{"address":"0079C1DC","name":"PTR_s_SMALL_MAP_0079c1dc","type":"pointer","length":4,"value":"007c9fbc","referenced_from":["005DC050 StartSystemTy::LoadMapData"]}
+{"address":"0079C1C8","name":"PTR_s_SAVE_PLAYER_0079c1c8","type":"char *","length":4,"value":"007ca06c","referenced_from":["005DB030 FUN_005db030","005DC050 StartSystemTy::LoadMapData"]}
+{"address":"0079C1CC","name":"PTR_s_TITLE_MISSION_0079c1cc","type":"char *","length":4,"value":"007ca004","referenced_from":["005DC050 StartSystemTy::LoadMapData"]}
+{"address":"0079C1D0","name":"PTR_s_DESCRIPTION_0079c1d0","type":"char *","length":4,"value":"007c9ff4","referenced_from":["005DC050 StartSystemTy::LoadMapData","005DC730 StartSystemTy::SetObjectives"]}
+{"address":"0079C1D4","name":"PTR_s_OBJECTIVES_0079c1d4","type":"char *","length":4,"value":"007c9fe4","referenced_from":["005DC050 StartSystemTy::LoadMapData"]}
+{"address":"0079C1D8","name":"PTR_s_DESCRIPTOR_0079c1d8","type":"char *","length":4,"value":"007c9fc8","referenced_from":["005DB030 FUN_005db030","005DC050 StartSystemTy::LoadMapData"]}
+{"address":"0079C1DC","name":"PTR_s_SMALL_MAP_0079c1dc","type":"char *","length":4,"value":"007c9fbc","referenced_from":["005DC050 StartSystemTy::LoadMapData"]}
 {"address":"0079C1E8","name":"StartSystemTyVTable","type":"StartSystemTyVTable","length":36,"value":"","referenced_from":["005DA610 StartSystemTy::StartSystemTy"]}
-{"address":"0079C214","name":"PTR_s_TASKPLAY_0079c214","type":"pointer","length":4,"value":"007cd988","referenced_from":["005DFA30 MTaskTy::InitMTask"]}
-{"address":"0079C218","name":"PTR_s_TITLE_MISSION_0079c218","type":"pointer","length":4,"value":"007ca004","referenced_from":["005DFA30 MTaskTy::InitMTask"]}
-{"address":"0079C21C","name":"PTR_s_DESCRIPTION_0079c21c","type":"pointer","length":4,"value":"007c9ff4","referenced_from":["005DFA30 MTaskTy::InitMTask"]}
-{"address":"0079C220","name":"PTR_s_OBJECTIVES_0079c220","type":"pointer","length":4,"value":"007c9fe4","referenced_from":["005DFA30 MTaskTy::InitMTask"]}
-{"address":"0079C224","name":"PTR_s_DEFAULT_WS_ANIMATED_0079c224","type":"pointer","length":4,"value":"007cd970","referenced_from":["005E1330 MTaskTy::PlayScript"]}
-{"address":"0079C228","name":"PTR_s_DEFAULT_BO_ANIMATED_0079c228","type":"pointer","length":4,"value":"007cd958","referenced_from":["005E1330 MTaskTy::PlayScript"]}
-{"address":"0079C22C","name":"PTR_s_DEFAULT_SI_ANIMATED_0079c22c","type":"pointer","length":4,"value":"007cd940","referenced_from":["005E1330 MTaskTy::PlayScript"]}
+{"address":"0079C214","name":"PTR_s_TASKPLAY_0079c214","type":"char *","length":4,"value":"007cd988","referenced_from":["005DFA30 MTaskTy::InitMTask"]}
+{"address":"0079C218","name":"PTR_s_TITLE_MISSION_0079c218","type":"char *","length":4,"value":"007ca004","referenced_from":["005DFA30 MTaskTy::InitMTask"]}
+{"address":"0079C21C","name":"PTR_s_DESCRIPTION_0079c21c","type":"char *","length":4,"value":"007c9ff4","referenced_from":["005DFA30 MTaskTy::InitMTask"]}
+{"address":"0079C220","name":"PTR_s_OBJECTIVES_0079c220","type":"char *","length":4,"value":"007c9fe4","referenced_from":["005DFA30 MTaskTy::InitMTask"]}
+{"address":"0079C224","name":"PTR_s_DEFAULT_WS_ANIMATED_0079c224","type":"char *","length":4,"value":"007cd970","referenced_from":["005E1330 MTaskTy::PlayScript"]}
+{"address":"0079C228","name":"PTR_s_DEFAULT_BO_ANIMATED_0079c228","type":"char *","length":4,"value":"007cd958","referenced_from":["005E1330 MTaskTy::PlayScript"]}
+{"address":"0079C22C","name":"PTR_s_DEFAULT_SI_ANIMATED_0079c22c","type":"char *","length":4,"value":"007cd940","referenced_from":["005E1330 MTaskTy::PlayScript"]}
 {"address":"0079C23C","name":"MTestTyVTable","type":"MTestTyVTable","length":4,"value":"","referenced_from":["005E6570 CreateMTest"]}
-{"address":"0079C240","name":"PTR_s_SAVEGAME\\_0079c240","type":"pointer","length":4,"value":"007c7094","referenced_from":["005E84D0 WaitTy::NoneWait"]}
-{"address":"0079C244","name":"PTR_s_CUSTOM\\_0079c244","type":"pointer","length":4,"value":"007cc71c","referenced_from":["005E7FE0 WaitTy::ShowDescription","005E84D0 WaitTy::NoneWait"]}
+{"address":"0079C240","name":"PTR_s_SAVEGAME\\_0079c240","type":"char *","length":4,"value":"007c7094","referenced_from":["005E84D0 WaitTy::NoneWait"]}
+{"address":"0079C244","name":"PTR_s_CUSTOM\\_0079c244","type":"char *","length":4,"value":"007cc71c","referenced_from":["005E7FE0 WaitTy::ShowDescription","005E84D0 WaitTy::NoneWait"]}
 {"address":"0079C24C","name":"WaitTyVTable","type":"WaitTyVTable","length":12,"value":"","referenced_from":["005EAD30 CreateWait"]}
 {"address":"0079C25C","name":"STArtiafactCVTable_at_1D5","type":"STArtiafactCVTable_at_1D5","length":4,"value":"","referenced_from":["005EBC70 CreateSTArtiafact"]}
 {"address":"0079C260","name":"STArtiafactCVTable","type":"STArtiafactCVTable","length":328,"value":"","referenced_from":["005EBC70 CreateSTArtiafact"]}
 {"address":"0079C3EC","name":"STSprGameObjCVTable","type":"STSprGameObjCVTable","length":328,"value":"","referenced_from":["005EC7E0 STSprGameObjC::STSprGameObjC"]}
 {"address":"0079C578","name":"VTable_0079C578","type":"VTable_0079C578","length":4,"value":"","referenced_from":["005EC7E0 STSprGameObjC::STSprGameObjC"]}
-{"address":"0079C57C","name":"PTR_s_BASIS_MAN_0079c57c","type":"pointer","length":4,"value":"007ce554","referenced_from":["005F10D0 STManBasisC::GetMessage"]}
+{"address":"0079C57C","name":"PTR_s_BASIS_MAN_0079c57c","type":"char *","length":4,"value":"007ce554","referenced_from":["005F10D0 STManBasisC::GetMessage"]}
 {"address":"0079C580","name":"STManBasisCVTable","type":"STManBasisCVTable","length":4,"value":"","referenced_from":["005F1350 STManBasisC::STManBasisC"]}
 {"address":"0079C584","name":"STBHEShellCVTable","type":"STBHEShellCVTable","length":4,"value":"","referenced_from":["005F3440 STBHEShellC::STBHEShellC"]}
 {"address":"0079C5A8","name":"STColl3CVTable_at_1D5","type":"STColl3CVTable_at_1D5","length":4,"value":"","referenced_from":["005F6600 STColl3C::STColl3C"]}
@@ -32450,7 +32450,7 @@
 {"address":"0079CED4","name":"STLightCVTable","type":"STLightCVTable","length":8,"value":"","referenced_from":["0061D620 STLightC::STLightC"]}
 {"address":"0079CEFC","name":"STMineSetCVTable","type":"STMineSetCVTable","length":292,"value":"","referenced_from":["00622600 STMineSetC::STMineSetC"]}
 {"address":"0079D05C","name":"VTable_0079D05C","type":"VTable_0079D05C","length":4,"value":"","referenced_from":["00622600 STMineSetC::STMineSetC"]}
-{"address":"0079D080","name":"PTR_s_RUBBISH_3_0079d080","type":"pointer","length":4,"value":"007d13e0","referenced_from":["0062CCA0 STManRub3C::GetMessage"]}
+{"address":"0079D080","name":"PTR_s_RUBBISH_3_0079d080","type":"char *","length":4,"value":"007d13e0","referenced_from":["0062CCA0 STManRub3C::GetMessage"]}
 {"address":"0079D084","name":"STManRub3CVTable","type":"STManRub3CVTable","length":4,"value":"","referenced_from":["0062CF00 STManRub3C::STManRub3C"]}
 {"address":"0079D098","name":"STRubbishCVTable","type":"STRubbishCVTable","length":212,"value":"","referenced_from":["0062ED10 STRubbishC::STRubbishC"]}
 {"address":"0079D198","name":"PTR_DAT_0079d198","type":"pointer","length":4,"value":"007d19f0","referenced_from":["00630430 STManRuinC::GetMessage"]}
@@ -32461,46 +32461,46 @@
 {"address":"0079D49C","name":"VTable_0079D49C","type":"VTable_0079D49C","length":4,"value":"","referenced_from":["0063BFA0 FUN_0063bfa0"]}
 {"address":"0079D4AC","name":"STTorpCVTable","type":"STTorpCVTable","length":292,"value":"","referenced_from":["00645830 CreateSTTorp"]}
 {"address":"0079D610","name":"STVolcanoCVTable","type":"STVolcanoCVTable","length":4,"value":"","referenced_from":["00646C90 STVolcanoC::STVolcanoC"]}
-{"address":"0079D614","name":"PTR_s_AIBOSS_0079d614","type":"pointer","length":4,"value":"007d2748","referenced_from":["00648030 AiBossClassTy::GetMessage"]}
+{"address":"0079D614","name":"PTR_s_AIBOSS_0079d614","type":"char *","length":4,"value":"007d2748","referenced_from":["00648030 AiBossClassTy::GetMessage"]}
 {"address":"0079D618","name":"AiBossClassTyVTable_at_1C","type":"AiBossClassTyVTable_at_1C","length":52,"value":"","referenced_from":["00647AD0 AiBossClassTy::AiBossClassTy"]}
 {"address":"0079D658","name":"AiBossClassTyVTable","type":"AiBossClassTyVTable","length":4,"value":"","referenced_from":["00647AD0 AiBossClassTy::AiBossClassTy"]}
 {"address":"0079D65C","name":"PTR_DAT_0079d65c","type":"pointer","length":4,"value":"007d2860","referenced_from":["006494C0 CreatePlrDataForWS","00649790 CreatePlrDataForBO","00649B90 CreateBossData","00649FF0 FUN_00649ff0"]}
-{"address":"0079D660","name":"PTR_s_AIPLAYER_0079d660","type":"pointer","length":4,"value":"007d2854","referenced_from":["00648FE0 CreateAi"]}
-{"address":"0079D664","name":"PTR_s_AIBOSS_0079d664","type":"pointer","length":4,"value":"007d2748","referenced_from":["00648E70 CreateArbiter"]}
-{"address":"0079D668","name":"PTR_s_STRATEG_0079d668","type":"pointer","length":4,"value":"007d2848","referenced_from":["00648FE0 CreateAi"]}
+{"address":"0079D660","name":"PTR_s_AIPLAYER_0079d660","type":"char *","length":4,"value":"007d2854","referenced_from":["00648FE0 CreateAi"]}
+{"address":"0079D664","name":"PTR_s_AIBOSS_0079d664","type":"char *","length":4,"value":"007d2748","referenced_from":["00648E70 CreateArbiter"]}
+{"address":"0079D668","name":"PTR_s_STRATEG_0079d668","type":"char *","length":4,"value":"007d2848","referenced_from":["00648FE0 CreateAi"]}
 {"address":"0079D67C","name":"VTable_0079D67C","type":"VTable_0079D67C","length":52,"value":"","referenced_from":["0064CC90 FUN_0064cc90"]}
 {"address":"0079D6BC","name":"AiFltClassTyVTable","type":"AiFltClassTyVTable","length":4,"value":"","referenced_from":["0065D230 AiFltClassTy::AiFltClassTy"]}
-{"address":"0079D6C0","name":"PTR_s_SAVEGAME\\_0079d6c0","type":"pointer","length":4,"value":"007c7094","referenced_from":["006767D0 FUN_006767d0"]}
-{"address":"0079D6C4","name":"PTR_s_PL_LOG_0079d6c4","type":"pointer","length":4,"value":"007ca67c","referenced_from":["006767D0 FUN_006767d0"]}
+{"address":"0079D6C0","name":"PTR_s_SAVEGAME\\_0079d6c0","type":"char *","length":4,"value":"007c7094","referenced_from":["006767D0 FUN_006767d0"]}
+{"address":"0079D6C4","name":"PTR_s_PL_LOG_0079d6c4","type":"char *","length":4,"value":"007ca67c","referenced_from":["006767D0 FUN_006767d0"]}
 {"address":"0079D6C8","name":"PTR_DAT_0079d6c8","type":"pointer","length":4,"value":"007ccec0","referenced_from":["006767D0 FUN_006767d0"]}
-{"address":"0079D6D0","name":"PTR_s_AIPLAYER_0079d6d0","type":"pointer","length":4,"value":"007d2854","referenced_from":["0067C7E0 AiPlrClassTy::GetMessage"]}
+{"address":"0079D6D0","name":"PTR_s_AIPLAYER_0079d6d0","type":"char *","length":4,"value":"007d2854","referenced_from":["0067C7E0 AiPlrClassTy::GetMessage"]}
 {"address":"0079D6D4","name":"AiPlrClassTyVTable_at_1C","type":"AiPlrClassTyVTable_at_1C","length":52,"value":"","referenced_from":["006788B0 AiPlrClassTy::AiPlrClassTy"]}
 {"address":"0079D714","name":"AiPlrClassTyVTable","type":"AiPlrClassTyVTable","length":4,"value":"","referenced_from":["006788B0 AiPlrClassTy::AiPlrClassTy"]}
-{"address":"0079D718","name":"PTR_s_OBJECTIVES_0079d718","type":"pointer","length":4,"value":"007c9fe4","referenced_from":["0067DC20 _CreateStgListByRoot","0067E7E0 CreateArbList"]}
-{"address":"0079D71C","name":"PTR_s_AIPLAYER_0079d71c","type":"pointer","length":4,"value":"007d2854","referenced_from":["0067E200 CreateSaveStrategList"]}
-{"address":"0079D720","name":"PTR_s_AIBOSS_0079d720","type":"pointer","length":4,"value":"007d2748","referenced_from":["0067E7E0 CreateArbList"]}
-{"address":"0079D724","name":"PTR_s_ASSISTANT_0079d724","type":"pointer","length":4,"value":"007d2f98","referenced_from":["0067DEC0 CreateAssistantList","0067E580 GetAssistantNameDB"]}
-{"address":"0079D728","name":"PTR_s_OPPONENT_0079d728","type":"pointer","length":4,"value":"007d2f8c","referenced_from":["0067DFD0 CreateOpponentList","0067E6B0 GetOpponentNameDB"]}
-{"address":"0079D72C","name":"PTR_s_STRATEG_0079d72c","type":"pointer","length":4,"value":"007d2848","referenced_from":["0067E0E0 CreateStrategList","0067E320 GetStrategNameDB","0067E4A0 GetStrategName"]}
-{"address":"0079D734","name":"PTR_s___EMPTY___0079d734","type":"pointer","length":4,"value":"007d4308","referenced_from":["0067F1D0 FUN_0067f1d0","00680D40 FUN_00680d40","00680FF0 FUN_00680ff0","00681140 FUN_00681140"]}
-{"address":"0079D738","name":"PTR_s___CONST__%03d_0079d738","type":"pointer","length":4,"value":"007d42f8","referenced_from":["0067ECA0 FUN_0067eca0"]}
-{"address":"0079D73C","name":"PTR_s___INCLUDE__%03d_0079d73c","type":"pointer","length":4,"value":"007d42e4","referenced_from":["0067ECE0 FUN_0067ece0"]}
-{"address":"0079D740","name":"PTR_s___EXPAR__%03d_0079d740","type":"pointer","length":4,"value":"007d42d4","referenced_from":["0067FBD0 FUN_0067fbd0"]}
-{"address":"0079D744","name":"PTR_s__RT%d_0079d744","type":"pointer","length":4,"value":"007d42cc","referenced_from":["0067FF00 FUN_0067ff00"]}
-{"address":"0079D748","name":"PTR_s__GL%d_0079d748","type":"pointer","length":4,"value":"007d42c4","referenced_from":["0067FF50 FUN_0067ff50"]}
-{"address":"0079D74C","name":"PTR_s__PI%d_0079d74c","type":"pointer","length":4,"value":"007d42bc","referenced_from":["0067FFA0 FUN_0067ffa0"]}
-{"address":"0079D750","name":"PTR_s__PS%d_0079d750","type":"pointer","length":4,"value":"007d42b4","referenced_from":["0067FFF0 FUN_0067fff0"]}
+{"address":"0079D718","name":"PTR_s_OBJECTIVES_0079d718","type":"char *","length":4,"value":"007c9fe4","referenced_from":["0067DC20 _CreateStgListByRoot","0067E7E0 CreateArbList"]}
+{"address":"0079D71C","name":"PTR_s_AIPLAYER_0079d71c","type":"char *","length":4,"value":"007d2854","referenced_from":["0067E200 CreateSaveStrategList"]}
+{"address":"0079D720","name":"PTR_s_AIBOSS_0079d720","type":"char *","length":4,"value":"007d2748","referenced_from":["0067E7E0 CreateArbList"]}
+{"address":"0079D724","name":"PTR_s_ASSISTANT_0079d724","type":"char *","length":4,"value":"007d2f98","referenced_from":["0067DEC0 CreateAssistantList","0067E580 GetAssistantNameDB"]}
+{"address":"0079D728","name":"PTR_s_OPPONENT_0079d728","type":"char *","length":4,"value":"007d2f8c","referenced_from":["0067DFD0 CreateOpponentList","0067E6B0 GetOpponentNameDB"]}
+{"address":"0079D72C","name":"PTR_s_STRATEG_0079d72c","type":"char *","length":4,"value":"007d2848","referenced_from":["0067E0E0 CreateStrategList","0067E320 GetStrategNameDB","0067E4A0 GetStrategName"]}
+{"address":"0079D734","name":"PTR_s___EMPTY___0079d734","type":"char *","length":4,"value":"007d4308","referenced_from":["0067F1D0 FUN_0067f1d0","00680D40 FUN_00680d40","00680FF0 FUN_00680ff0","00681140 FUN_00681140"]}
+{"address":"0079D738","name":"PTR_s___CONST__%03d_0079d738","type":"char *","length":4,"value":"007d42f8","referenced_from":["0067ECA0 FUN_0067eca0"]}
+{"address":"0079D73C","name":"PTR_s___INCLUDE__%03d_0079d73c","type":"char *","length":4,"value":"007d42e4","referenced_from":["0067ECE0 FUN_0067ece0"]}
+{"address":"0079D740","name":"PTR_s___EXPAR__%03d_0079d740","type":"char *","length":4,"value":"007d42d4","referenced_from":["0067FBD0 FUN_0067fbd0"]}
+{"address":"0079D744","name":"PTR_s__RT%d_0079d744","type":"char *","length":4,"value":"007d42cc","referenced_from":["0067FF00 FUN_0067ff00"]}
+{"address":"0079D748","name":"PTR_s__GL%d_0079d748","type":"char *","length":4,"value":"007d42c4","referenced_from":["0067FF50 FUN_0067ff50"]}
+{"address":"0079D74C","name":"PTR_s__PI%d_0079d74c","type":"char *","length":4,"value":"007d42bc","referenced_from":["0067FFA0 FUN_0067ffa0"]}
+{"address":"0079D750","name":"PTR_s__PS%d_0079d750","type":"char *","length":4,"value":"007d42b4","referenced_from":["0067FFF0 FUN_0067fff0"]}
 {"address":"0079D76C","name":"AiTactClassTyVTable","type":"AiTactClassTyVTable","length":4,"value":"","referenced_from":["0068DC00 AiTactClassTy::AiTactClassTy"]}
-{"address":"0079D770","name":"PTR_s_DESCRIPTOR_0079d770","type":"pointer","length":4,"value":"007c9fc8","referenced_from":["006939F0 FUN_006939f0","00693D00 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00693D00::FUN_00693d00","006942A0 FUN_006942a0"]}
-{"address":"0079D774","name":"PTR_s_GENERATE_RND_0079d774","type":"pointer","length":4,"value":"007cd0d0","referenced_from":["006952B0 CGenerate::FUN_006952b0"]}
-{"address":"0079D778","name":"PTR_s_INTERFACE_RND_0079d778","type":"pointer","length":4,"value":"007cd0c0","referenced_from":["006952B0 CGenerate::FUN_006952b0"]}
+{"address":"0079D770","name":"PTR_s_DESCRIPTOR_0079d770","type":"char *","length":4,"value":"007c9fc8","referenced_from":["006939F0 FUN_006939f0","00693D00 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00693D00::FUN_00693d00","006942A0 FUN_006942a0"]}
+{"address":"0079D774","name":"PTR_s_GENERATE_RND_0079d774","type":"char *","length":4,"value":"007cd0d0","referenced_from":["006952B0 CGenerate::FUN_006952b0"]}
+{"address":"0079D778","name":"PTR_s_INTERFACE_RND_0079d778","type":"char *","length":4,"value":"007cd0c0","referenced_from":["006952B0 CGenerate::FUN_006952b0"]}
 {"address":"0079D77C","name":"DAT_0079d77c","type":"undefined1","length":1,"value":"03h","referenced_from":["00696310 FUN_00696310"]}
 {"address":"0079D77D","name":"DAT_0079d77d","type":"undefined1","length":1,"value":"03h","referenced_from":["00696310 FUN_00696310"]}
 {"address":"0079D782","name":"DAT_0079d782","type":"undefined1","length":1,"value":"05h","referenced_from":["00696310 FUN_00696310"]}
-{"address":"0079D838","name":"PTR_s_TITLE_MISSION_0079d838","type":"pointer","length":4,"value":"007ca004","referenced_from":["006A0740 CGenerate::SaveMap"]}
-{"address":"0079D83C","name":"PTR_s_TEXTURE_0079d83c","type":"pointer","length":4,"value":"007c9fd8","referenced_from":["006A0740 CGenerate::SaveMap"]}
-{"address":"0079D840","name":"PTR_s_SMALL_MAP_0079d840","type":"pointer","length":4,"value":"007c9fbc","referenced_from":["006A0740 CGenerate::SaveMap"]}
-{"address":"0079D848","name":"PTR_s_PALETTE_0079d848","type":"pointer","length":4,"value":"007ca1c8","referenced_from":["006A2ED0 FUN_006a2ed0"]}
+{"address":"0079D838","name":"PTR_s_TITLE_MISSION_0079d838","type":"char *","length":4,"value":"007ca004","referenced_from":["006A0740 CGenerate::SaveMap"]}
+{"address":"0079D83C","name":"PTR_s_TEXTURE_0079d83c","type":"char *","length":4,"value":"007c9fd8","referenced_from":["006A0740 CGenerate::SaveMap"]}
+{"address":"0079D840","name":"PTR_s_SMALL_MAP_0079d840","type":"char *","length":4,"value":"007c9fbc","referenced_from":["006A0740 CGenerate::SaveMap"]}
+{"address":"0079D848","name":"PTR_s_PALETTE_0079d848","type":"char *","length":4,"value":"007ca1c8","referenced_from":["006A2ED0 FUN_006a2ed0"]}
 {"address":"0079DAF0","name":"VTable_0079DAF0","type":"VTable_0079DAF0","length":20,"value":"","referenced_from":["006D4FF0 FUN_006d4ff0","006D51A0 FUN_006d51a0"]}
 {"address":"0079DB04","name":"VTable_0079DB04","type":"VTable_0079DB04","length":36,"value":"","referenced_from":["006D4FF0 FUN_006d4ff0","006D51A0 FUN_006d51a0"]}
 {"address":"0079DB28","name":"VTable_0079DB28","type":"VTable_0079DB28","length":20,"value":"","referenced_from":["006D4FF0 FUN_006d4ff0","006D51A0 FUN_006d51a0"]}
@@ -32571,7 +32571,7 @@
 {"address":"007A1258","name":"DAT_007a1258","type":"undefined4","length":4,"value":"0000001Fh","referenced_from":["0074987C FUN_0074987c"]}
 {"address":"007A1270","name":"PTR_DAT_007a1270","type":"pointer","length":4,"value":"007a1bb0","referenced_from":["00749989 FUN_00749989","007499DC FUN_007499dc"]}
 {"address":"007A127C","name":"PTR_DAT_007a127c","type":"pointer","length":4,"value":"007a1ba0","referenced_from":["00749989 FUN_00749989","007499DC FUN_007499dc"]}
-{"address":"007A1284","name":"PTR_s_RGB_VGA_007a1284","type":"pointer","length":4,"value":"007a132c","referenced_from":["007499DC FUN_007499dc"]}
+{"address":"007A1284","name":"PTR_s_RGB_VGA_007a1284","type":"char *","length":4,"value":"007a132c","referenced_from":["007499DC FUN_007499dc"]}
 {"address":"007A1348","name":"DAT_007a1348","type":"undefined4","length":4,"value":"73646976h","referenced_from":["006D4CF0 FUN_006d4cf0","006D58C0 FUN_006d58c0"]}
 {"address":"007A134C","name":"DAT_007a134c","type":"undefined4","length":4,"value":"00100000h","referenced_from":["006D4CF0 FUN_006d4cf0","006D58C0 FUN_006d58c0"]}
 {"address":"007A1350","name":"DAT_007a1350","type":"undefined4","length":4,"value":"AA000080h","referenced_from":["006D58C0 FUN_006d58c0"]}
@@ -32794,7 +32794,7 @@
 {"address":"007AA020","name":"DAT_007aa020","type":"undefined1","length":1,"value":"34h","referenced_from":["0044EE30 STBoatC::GetMessage","005044B0 CPanelTy::PaintMineInf"]}
 {"address":"007AA024","name":"DAT_007aa024","type":"undefined1","length":1,"value":"33h","referenced_from":["0044EE30 STBoatC::GetMessage","005044B0 CPanelTy::PaintMineInf"]}
 {"address":"007AA028","name":"DAT_007aa028","type":"undefined1","length":1,"value":"32h","referenced_from":["0044EE30 STBoatC::GetMessage","005044B0 CPanelTy::PaintMineInf"]}
-{"address":"007AD25C","name":"PTR_s_tlo_bldmark_si_007ad25c","type":"undefined *","length":4,"value":"007ad2b8","referenced_from":["004C6440 TLOBldMark::sub_004C6440"]}
+{"address":"007AD25C","name":"PTR_s_tlo_bldmark_si_007ad25c","type":"char *","length":4,"value":"007ad2b8","referenced_from":["004C6440 TLOBldMark::sub_004C6440"]}
 {"address":"007AD260","name":"PTR_s_tlo_bldmark_red_ws_007ad260","type":"undefined *","length":4,"value":"007ad2a0","referenced_from":[]}
 {"address":"007AD264","name":"PTR_s_tlo_bldmark_red_bo_007ad264","type":"undefined *","length":4,"value":"007ad288","referenced_from":[]}
 {"address":"007AD268","name":"PTR_s_tlo_bldmark_red_si_007ad268","type":"undefined *","length":4,"value":"007ad270","referenced_from":[]}
@@ -32808,8 +32808,8 @@
 {"address":"007B8318","name":"PTR_DAT_007b8318","type":"undefined *","length":4,"value":"007fb2b0","referenced_from":[]}
 {"address":"007B831C","name":"PTR_DAT_007b831c","type":"undefined *","length":4,"value":"007fcb70","referenced_from":[]}
 {"address":"007B8320","name":"PTR_DAT_007b8320","type":"pointer","length":4,"value":"007fe430","referenced_from":["004CAFC0 TLOBaseTy::sub_004CAFC0"]}
-{"address":"007B8330","name":"PTR_s_dyaws_body_007b8330","type":"pointer","length":4,"value":"007be898","referenced_from":["004C2950 FUN_004c2950","004D32C0 FUN_004d32c0","007BB198","007BB19C"]}
-{"address":"007B8334","name":"PTR_s_dyaws_id_007b8334","type":"pointer","length":4,"value":"007be88c","referenced_from":["004C2950 FUN_004c2950","004D32C0 FUN_004d32c0"]}
+{"address":"007B8330","name":"PTR_s_dyaws_body_007b8330","type":"char *","length":4,"value":"007be898","referenced_from":["004C2950 FUN_004c2950","004D32C0 FUN_004d32c0","007BB198","007BB19C"]}
+{"address":"007B8334","name":"PTR_s_dyaws_id_007b8334","type":"char *","length":4,"value":"007be88c","referenced_from":["004C2950 FUN_004c2950","004D32C0 FUN_004d32c0"]}
 {"address":"007B8354","name":"PTR_s_repd_body_007b8354","type":"undefined *","length":4,"value":"007be864","referenced_from":[]}
 {"address":"007B8358","name":"PTR_s_repd_id_007b8358","type":"undefined *","length":4,"value":"007be858","referenced_from":[]}
 {"address":"007B835C","name":"PTR_s_repd_ani_007b835c","type":"undefined *","length":4,"value":"007be84c","referenced_from":[]}
@@ -32910,9 +32910,9 @@
 {"address":"007BB1A0","name":"PTR_DAT_007bb1a0","type":"undefined *","length":4,"value":"007b8c78","referenced_from":[]}
 {"address":"007BB1A4","name":"PTR_DAT_007bb1a4","type":"undefined *","length":4,"value":"007b9f08","referenced_from":[]}
 {"address":"007BB1A8","name":"PTR_DAT_007bb1a8","type":"pointer","length":4,"value":"007b95c0","referenced_from":["004C9770 TLOBaseTy::LoadImages"]}
-{"address":"007BB1B4","name":"PTR_s_tlo_sha_ws_007bb1b4","type":"pointer","length":4,"value":"007bdde4","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D32C0 FUN_004d32c0","004D55B0 TLOEmbryoTy::GetMessage"]}
+{"address":"007BB1B4","name":"PTR_s_tlo_sha_ws_007bb1b4","type":"char *","length":4,"value":"007bdde4","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D32C0 FUN_004d32c0","004D55B0 TLOEmbryoTy::GetMessage"]}
 {"address":"007BE8C4","name":"DAT_007be8c4","type":"undefined4","length":4,"value":"00000064h","referenced_from":["004BEA70 TLOBaseTy::FUN_004bea70","004E0830 FUN_004e0830"]}
-{"address":"007BF3E8","name":"PTR_s_tlo_embws1_007bf3e8","type":"pointer","length":4,"value":"007bf418","referenced_from":["004D11D0 TLOEmbryoTy::Create","004D55B0 TLOEmbryoTy::GetMessage"]}
+{"address":"007BF3E8","name":"PTR_s_tlo_embws1_007bf3e8","type":"char *","length":4,"value":"007bf418","referenced_from":["004D11D0 TLOEmbryoTy::Create","004D55B0 TLOEmbryoTy::GetMessage"]}
 {"address":"007BF678","name":"DAT_007bf678","type":"undefined4","length":4,"value":"00000001h","referenced_from":["004BEA70 TLOBaseTy::FUN_004bea70","004DD880 FUN_004dd880","00518C20 HelpPanelTy::SubProc","0051A100 HelpPanelTy::ObjProc","0051B5A0 HelpPanelTy::ArmProc"]}
 {"address":"007BF67C","name":"DAT_007bf67c","type":"undefined4","length":4,"value":"00000000h","referenced_from":["004DD880 FUN_004dd880","004E80F0 FUN_004e80f0","0051B5A0 HelpPanelTy::ArmProc"]}
 {"address":"007BF680","name":"DAT_007bf680","type":"undefined4","length":4,"value":"00000001h","referenced_from":["004DD880 FUN_004dd880","004E80F0 FUN_004e80f0"]}
@@ -33024,17 +33024,17 @@
 {"address":"007CAEC8","name":"DAT_007caec8","type":"undefined4","length":4,"value":"FFFFE176h","referenced_from":["0057A2C0 FUN_0057a2c0"]}
 {"address":"007CAF18","name":"DAT_007caf18","type":"undefined4","length":4,"value":"00000000h","referenced_from":["0057A2C0 FUN_0057a2c0"]}
 {"address":"007CAF1C","name":"DAT_007caf1c","type":"undefined4","length":4,"value":"00000000h","referenced_from":["0057A2C0 FUN_0057a2c0"]}
-{"address":"007CB08C","name":"PTR_s_rc276_c%d_007cb08c","type":"pointer","length":4,"value":"007cb190","referenced_from":["0057F2E0 STDcResourcC::sub_0057F2E0"]}
-{"address":"007CB090","name":"PTR_s_rc276_%d_007cb090","type":"pointer","length":4,"value":"007cb184","referenced_from":["0057F2E0 STDcResourcC::sub_0057F2E0"]}
-{"address":"007CB094","name":"PTR_s_rgold_c0_007cb094","type":"pointer","length":4,"value":"007cb178","referenced_from":["0057F3A0 STDcResourcC::sub_0057F3A0"]}
-{"address":"007CB098","name":"PTR_s_rgold_%d_007cb098","type":"pointer","length":4,"value":"007cb16c","referenced_from":["0057F3A0 STDcResourcC::sub_0057F3A0"]}
-{"address":"007CB09C","name":"PTR_s_rmeta_c%d_007cb09c","type":"pointer","length":4,"value":"007cb160","referenced_from":["0057E0A0 STDcResourcC::GetMessage","0057F470 STDcResourcC::sub_0057F470","0057F6E0 STDcResourcC::CreateRes"]}
-{"address":"007CB0A0","name":"PTR_s_rmeta_%d_007cb0a0","type":"pointer","length":4,"value":"007cb154","referenced_from":["0057F470 STDcResourcC::sub_0057F470"]}
-{"address":"007CB0A4","name":"PTR_s_term0_007cb0a4","type":"undefined *","length":4,"value":"007cb14c","referenced_from":["0057E0A0 STDcResourcC::GetMessage","0057F530 FUN_0057f530","0057F6E0 STDcResourcC::CreateRes"]}
+{"address":"007CB08C","name":"PTR_s_rc276_c%d_007cb08c","type":"char *","length":4,"value":"007cb190","referenced_from":["0057F2E0 STDcResourcC::sub_0057F2E0"]}
+{"address":"007CB090","name":"PTR_s_rc276_%d_007cb090","type":"char *","length":4,"value":"007cb184","referenced_from":["0057F2E0 STDcResourcC::sub_0057F2E0"]}
+{"address":"007CB094","name":"PTR_s_rgold_c0_007cb094","type":"char *","length":4,"value":"007cb178","referenced_from":["0057F3A0 STDcResourcC::sub_0057F3A0"]}
+{"address":"007CB098","name":"PTR_s_rgold_%d_007cb098","type":"char *","length":4,"value":"007cb16c","referenced_from":["0057F3A0 STDcResourcC::sub_0057F3A0"]}
+{"address":"007CB09C","name":"PTR_s_rmeta_c%d_007cb09c","type":"char *","length":4,"value":"007cb160","referenced_from":["0057E0A0 STDcResourcC::GetMessage","0057F470 STDcResourcC::sub_0057F470","0057F6E0 STDcResourcC::CreateRes"]}
+{"address":"007CB0A0","name":"PTR_s_rmeta_%d_007cb0a0","type":"char *","length":4,"value":"007cb154","referenced_from":["0057F470 STDcResourcC::sub_0057F470"]}
+{"address":"007CB0A4","name":"PTR_s_term0_007cb0a4","type":"char *","length":4,"value":"007cb14c","referenced_from":["0057E0A0 STDcResourcC::GetMessage","0057F530 FUN_0057f530","0057F6E0 STDcResourcC::CreateRes"]}
 {"address":"007CB0A8","name":"PTR_s_term1_007cb0a8","type":"undefined *","length":4,"value":"007cb144","referenced_from":[]}
 {"address":"007CB0AC","name":"PTR_s_term2_007cb0ac","type":"undefined *","length":4,"value":"007cb13c","referenced_from":[]}
 {"address":"007CB0B0","name":"PTR_s_term2_007cb0b0","type":"undefined *","length":4,"value":"007cb13c","referenced_from":[]}
-{"address":"007CB0B4","name":"PTR_s_termsd_007cb0b4","type":"pointer","length":4,"value":"007cb134","referenced_from":["005805C0 STDcResourcC::sub_005805C0"]}
+{"address":"007CB0B4","name":"PTR_s_termsd_007cb0b4","type":"char *","length":4,"value":"007cb134","referenced_from":["005805C0 STDcResourcC::sub_005805C0"]}
 {"address":"007CB0B8","name":"DAT_007cb0b8","type":"undefined4","length":4,"value":"00000000h","referenced_from":["0057F6E0 STDcResourcC::CreateRes"]}
 {"address":"007CB0BC","name":"DAT_007cb0bc","type":"undefined4","length":4,"value":"00000001h","referenced_from":["0057F6E0 STDcResourcC::CreateRes"]}
 {"address":"007CB0DC","name":"DAT_007cb0dc","type":"undefined4","length":4,"value":"00000000h","referenced_from":["0057F6E0 STDcResourcC::CreateRes"]}
@@ -33079,7 +33079,7 @@
 {"address":"007CDC08","name":"DAT_007cdc08","type":"undefined1","length":1,"value":"44h","referenced_from":["005E1330 MTaskTy::PlayScript"]}
 {"address":"007CDC18","name":"DAT_007cdc18","type":"undefined1","length":1,"value":"44h","referenced_from":["005E1330 MTaskTy::PlayScript"]}
 {"address":"007CDC48","name":"DAT_007cdc48","type":"undefined1","length":1,"value":"44h","referenced_from":["005E1330 MTaskTy::PlayScript"]}
-{"address":"007CDE70","name":"PTR_s_cont1_007cde70","type":"undefined *","length":4,"value":"007ce4e4","referenced_from":["005EC9F0 FUN_005ec9f0"]}
+{"address":"007CDE70","name":"PTR_s_cont1_007cde70","type":"char *","length":4,"value":"007ce4e4","referenced_from":["005EC9F0 FUN_005ec9f0"]}
 {"address":"007CDE74","name":"PTR_s_cont2_007cde74","type":"undefined *","length":4,"value":"007ce4dc","referenced_from":[]}
 {"address":"007CDE78","name":"PTR_DAT_007cde78","type":"undefined *","length":4,"value":"007ce4d4","referenced_from":[]}
 {"address":"007CDE7C","name":"PTR_s_contw_007cde7c","type":"undefined *","length":4,"value":"007ce4cc","referenced_from":[]}
@@ -33092,20 +33092,20 @@
 {"address":"007CDEFC","name":"DAT_007cdefc","type":"undefined4","length":4,"value":"00000028h","referenced_from":["005EE080 FUN_005ee080"]}
 {"address":"007CE4D4","name":"DAT_007ce4d4","type":"undefined1","length":1,"value":"63h","referenced_from":["005FCF50 FUN_005fcf50","007CDE78"]}
 {"address":"007CE4D5","name":"DAT_007ce4d5","type":"undefined1","length":1,"value":"6Fh","referenced_from":["005FCF50 FUN_005fcf50"]}
-{"address":"007CE530","name":"PTR_s_basis_10_007ce530","type":"pointer","length":4,"value":"007ce548","referenced_from":["005F1700 FUN_005f1700"]}
-{"address":"007CE534","name":"PTR_s_basis_40_007ce534","type":"pointer","length":4,"value":"007ce53c","referenced_from":["005F1700 FUN_005f1700"]}
-{"address":"007CE5A0","name":"PTR_s_adcbo_007ce5a0","type":"undefined *","length":4,"value":"007ce68c","referenced_from":["005F35F0 STBHEShellC::sub_005F35F0"]}
+{"address":"007CE530","name":"PTR_s_basis_10_007ce530","type":"char *","length":4,"value":"007ce548","referenced_from":["005F1700 FUN_005f1700"]}
+{"address":"007CE534","name":"PTR_s_basis_40_007ce534","type":"char *","length":4,"value":"007ce53c","referenced_from":["005F1700 FUN_005f1700"]}
+{"address":"007CE5A0","name":"PTR_s_adcbo_007ce5a0","type":"char *","length":4,"value":"007ce68c","referenced_from":["005F35F0 STBHEShellC::sub_005F35F0"]}
 {"address":"007CE5A4","name":"PTR_s_bhesh_007ce5a4","type":"undefined *","length":4,"value":"007ce684","referenced_from":[]}
 {"address":"007CE5A8","name":"PTR_s_adcbo_007ce5a8","type":"undefined *","length":4,"value":"007ce68c","referenced_from":[]}
 {"address":"007CE5AC","name":"PTR_DAT_007ce5ac","type":"undefined *","length":4,"value":"007ce67c","referenced_from":[]}
 {"address":"007CE5EC","name":"DAT_007ce5ec","type":"undefined4","length":4,"value":"00000001h","referenced_from":["005F4C50 STBHEShellC::sub_005F4C50"]}
-{"address":"007CE5F8","name":"PTR_s_pics_g_007ce5f8","type":"undefined *","length":4,"value":"007ce674","referenced_from":["005F4A30 FUN_005f4a30"]}
+{"address":"007CE5F8","name":"PTR_s_pics_g_007ce5f8","type":"char *","length":4,"value":"007ce674","referenced_from":["005F4A30 FUN_005f4a30"]}
 {"address":"007CE5FC","name":"PTR_s_pics_r_007ce5fc","type":"undefined *","length":4,"value":"007ce66c","referenced_from":[]}
 {"address":"007CE600","name":"PTR_s_pics_b_007ce600","type":"undefined *","length":4,"value":"007ce664","referenced_from":[]}
 {"address":"007CE604","name":"PTR_s_pics_w_007ce604","type":"undefined *","length":4,"value":"007ce65c","referenced_from":[]}
 {"address":"007CE608","name":"PTR_s_pic_w3_007ce608","type":"undefined *","length":4,"value":"007ce654","referenced_from":[]}
 {"address":"007CE60C","name":"PTR_s_pic_w2_007ce60c","type":"undefined *","length":4,"value":"007ce64c","referenced_from":[]}
-{"address":"007CE6E0","name":"PTR_s_col3l0_007ce6e0","type":"undefined *","length":4,"value":"007ce860","referenced_from":["005F6AF0 STColl3C::LoadImagSpr"]}
+{"address":"007CE6E0","name":"PTR_s_col3l0_007ce6e0","type":"char *","length":4,"value":"007ce860","referenced_from":["005F6AF0 STColl3C::LoadImagSpr"]}
 {"address":"007CE6E4","name":"PTR_s_col3l1_007ce6e4","type":"undefined *","length":4,"value":"007ce858","referenced_from":[]}
 {"address":"007CE6E8","name":"PTR_s_col3l2_007ce6e8","type":"undefined *","length":4,"value":"007ce850","referenced_from":[]}
 {"address":"007CE6EC","name":"PTR_s_col3l3_007ce6ec","type":"undefined *","length":4,"value":"007ce848","referenced_from":[]}
@@ -33119,17 +33119,17 @@
 {"address":"007CE7A4","name":"DAT_007ce7a4","type":"undefined4","length":4,"value":"00001081h","referenced_from":["005FB1F0 FUN_005fb1f0"]}
 {"address":"007CE7A8","name":"DAT_007ce7a8","type":"undefined4","length":4,"value":"00002A40h","referenced_from":["005FB1F0 FUN_005fb1f0"]}
 {"address":"007CE7AC","name":"DAT_007ce7ac","type":"undefined4","length":4,"value":"00672640h","referenced_from":["005FB1F0 FUN_005fb1f0"]}
-{"address":"007CE934","name":"PTR_s_Expb24_007ce934","type":"pointer","length":4,"value":"007cebc0","referenced_from":["005FDB50 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50"]}
+{"address":"007CE934","name":"PTR_s_Expb24_007ce934","type":"char *","length":4,"value":"007cebc0","referenced_from":["005FDB50 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50"]}
 {"address":"007CE984","name":"DAT_007ce984","type":"undefined4","length":4,"value":"000000C4h","referenced_from":["005FE360 FUN_005fe360"]}
 {"address":"007CEA04","name":"DAT_007cea04","type":"undefined4","length":4,"value":"000000E4h","referenced_from":["005FE360 FUN_005fe360"]}
 {"address":"007CEA84","name":"DAT_007cea84","type":"undefined4","length":4,"value":"00000106h","referenced_from":["005FE360 FUN_005fe360"]}
 {"address":"007CEB04","name":"DAT_007ceb04","type":"undefined4","length":4,"value":"000000F0h","referenced_from":["005FE360 FUN_005fe360"]}
-{"address":"007CEBEC","name":"PTR_s_Dest1_0_007cebec","type":"undefined *","length":4,"value":"007ced28","referenced_from":["006029C0 FUN_006029c0","00602E90 STDestC::sub_00602E90"]}
+{"address":"007CEBEC","name":"PTR_s_Dest1_0_007cebec","type":"char *","length":4,"value":"007ced28","referenced_from":["006029C0 FUN_006029c0","00602E90 STDestC::sub_00602E90"]}
 {"address":"007CEBF0","name":"PTR_s_cont2_007cebf0","type":"undefined *","length":4,"value":"007ce4dc","referenced_from":[]}
 {"address":"007CEBF4","name":"PTR_s_contw_007cebf4","type":"undefined *","length":4,"value":"007ce4cc","referenced_from":[]}
 {"address":"007CEBF8","name":"PTR_s_contb_007cebf8","type":"undefined *","length":4,"value":"007ce4c4","referenced_from":[]}
 {"address":"007CEBFC","name":"PTR_s_conts_007cebfc","type":"undefined *","length":4,"value":"007ce4bc","referenced_from":[]}
-{"address":"007CEC00","name":"PTR_s_Dest4_0_007cec00","type":"undefined *","length":4,"value":"007ced1c","referenced_from":["006029C0 FUN_006029c0","00602E90 STDestC::sub_00602E90"]}
+{"address":"007CEC00","name":"PTR_s_Dest4_0_007cec00","type":"char *","length":4,"value":"007ced1c","referenced_from":["006029C0 FUN_006029c0","00602E90 STDestC::sub_00602E90"]}
 {"address":"007CEC04","name":"PTR_s_cont2_007cec04","type":"undefined *","length":4,"value":"007ce4dc","referenced_from":[]}
 {"address":"007CEC08","name":"PTR_s_contw_007cec08","type":"undefined *","length":4,"value":"007ce4cc","referenced_from":[]}
 {"address":"007CEC0C","name":"PTR_s_contb_007cec0c","type":"undefined *","length":4,"value":"007ce4c4","referenced_from":[]}
@@ -33144,7 +33144,7 @@
 {"address":"007CEC30","name":"PTR_s_contw_007cec30","type":"undefined *","length":4,"value":"007ce4cc","referenced_from":[]}
 {"address":"007CEC34","name":"PTR_s_contb_007cec34","type":"undefined *","length":4,"value":"007ce4c4","referenced_from":[]}
 {"address":"007CEC38","name":"PTR_s_conts_007cec38","type":"undefined *","length":4,"value":"007ce4bc","referenced_from":[]}
-{"address":"007CEC3C","name":"PTR_s_dest0s0_007cec3c","type":"undefined *","length":4,"value":"007cecec","referenced_from":["006029C0 FUN_006029c0"]}
+{"address":"007CEC3C","name":"PTR_s_dest0s0_007cec3c","type":"char *","length":4,"value":"007cecec","referenced_from":["006029C0 FUN_006029c0"]}
 {"address":"007CEC40","name":"PTR_s_dest0s1_007cec40","type":"undefined *","length":4,"value":"007cece0","referenced_from":[]}
 {"address":"007CEC44","name":"PTR_s_dest0s2_007cec44","type":"undefined *","length":4,"value":"007cecd4","referenced_from":[]}
 {"address":"007CEC48","name":"PTR_s_dest0s3_007cec48","type":"undefined *","length":4,"value":"007cecc8","referenced_from":[]}
@@ -33160,7 +33160,7 @@
 {"address":"007CEC70","name":"PTR_s_dest0s5_007cec70","type":"undefined *","length":4,"value":"007cecb0","referenced_from":[]}
 {"address":"007CEC74","name":"PTR_s_dest0s6_007cec74","type":"undefined *","length":4,"value":"007ceca4","referenced_from":[]}
 {"address":"007CEC78","name":"PTR_s_dest0s7_007cec78","type":"undefined *","length":4,"value":"007cec98","referenced_from":[]}
-{"address":"007CED70","name":"PTR_s_expl_bt0_007ced70","type":"undefined *","length":4,"value":"007bf540","referenced_from":["006051B0 STExplosionC::LoadImagSpr"]}
+{"address":"007CED70","name":"PTR_s_expl_bt0_007ced70","type":"char *","length":4,"value":"007bf540","referenced_from":["006051B0 STExplosionC::LoadImagSpr"]}
 {"address":"007CED74","name":"PTR_s_expl_bt1_007ced74","type":"undefined *","length":4,"value":"007bf54c","referenced_from":[]}
 {"address":"007CED78","name":"PTR_s_expl_bt0_007ced78","type":"undefined *","length":4,"value":"007bf540","referenced_from":[]}
 {"address":"007CED7C","name":"PTR_s_expl_bt0_007ced7c","type":"undefined *","length":4,"value":"007bf540","referenced_from":[]}
@@ -33170,7 +33170,7 @@
 {"address":"007CED8C","name":"PTR_s_expl_bt0_007ced8c","type":"undefined *","length":4,"value":"007bf540","referenced_from":[]}
 {"address":"007CED90","name":"PTR_s_expl_bt0_007ced90","type":"undefined *","length":4,"value":"007bf540","referenced_from":[]}
 {"address":"007CED94","name":"PTR_s_expl_bt0_007ced94","type":"undefined *","length":4,"value":"007bf540","referenced_from":[]}
-{"address":"007CED98","name":"PTR_s_expl_bm0_007ced98","type":"undefined *","length":4,"value":"007cf624","referenced_from":["006051B0 STExplosionC::LoadImagSpr"]}
+{"address":"007CED98","name":"PTR_s_expl_bm0_007ced98","type":"char *","length":4,"value":"007cf624","referenced_from":["006051B0 STExplosionC::LoadImagSpr"]}
 {"address":"007CED9C","name":"PTR_s_expl_bm0_007ced9c","type":"undefined *","length":4,"value":"007cf624","referenced_from":[]}
 {"address":"007CEDA0","name":"PTR_s_expl_bm0_007ceda0","type":"undefined *","length":4,"value":"007cf624","referenced_from":[]}
 {"address":"007CEDA4","name":"PTR_s_expl_bm0_007ceda4","type":"undefined *","length":4,"value":"007cf624","referenced_from":[]}
@@ -33180,7 +33180,7 @@
 {"address":"007CEDB4","name":"PTR_s_expl_bm0_007cedb4","type":"undefined *","length":4,"value":"007cf624","referenced_from":[]}
 {"address":"007CEDB8","name":"PTR_s_expl_bm0_007cedb8","type":"undefined *","length":4,"value":"007cf624","referenced_from":[]}
 {"address":"007CEDBC","name":"PTR_s_expl_bm0_007cedbc","type":"undefined *","length":4,"value":"007cf624","referenced_from":[]}
-{"address":"007CEDC0","name":"PTR_s_expl_bbt0_007cedc0","type":"undefined *","length":4,"value":"007ad564","referenced_from":["006051B0 STExplosionC::LoadImagSpr"]}
+{"address":"007CEDC0","name":"PTR_s_expl_bbt0_007cedc0","type":"char *","length":4,"value":"007ad564","referenced_from":["006051B0 STExplosionC::LoadImagSpr"]}
 {"address":"007CEDC4","name":"PTR_s_expl_bbt1_007cedc4","type":"undefined *","length":4,"value":"007ad570","referenced_from":[]}
 {"address":"007CEDC8","name":"PTR_s_expl_bbt0_007cedc8","type":"undefined *","length":4,"value":"007ad564","referenced_from":[]}
 {"address":"007CEDCC","name":"PTR_s_expl_bbt0_007cedcc","type":"undefined *","length":4,"value":"007ad564","referenced_from":[]}
@@ -33191,7 +33191,7 @@
 {"address":"007CEDE0","name":"PTR_s_expl_bbt0_007cede0","type":"undefined *","length":4,"value":"007ad564","referenced_from":[]}
 {"address":"007CEDE4","name":"PTR_s_expl_bbt0_007cede4","type":"undefined *","length":4,"value":"007ad564","referenced_from":[]}
 {"address":"007CEE44","name":"DAT_007cee44","type":"undefined4","length":4,"value":"00000031h","referenced_from":["00605130 STExplosion::sub_00605130","006057C0 FUN_006057c0"]}
-{"address":"007CF6D0","name":"PTR_s_pics_g_007cf6d0","type":"undefined *","length":4,"value":"007ce674","referenced_from":["00609D60 STFieldC::LoadImagSpr"]}
+{"address":"007CF6D0","name":"PTR_s_pics_g_007cf6d0","type":"char *","length":4,"value":"007ce674","referenced_from":["00609D60 STFieldC::LoadImagSpr"]}
 {"address":"007CF6D4","name":"PTR_s_pics_r_007cf6d4","type":"undefined *","length":4,"value":"007ce66c","referenced_from":[]}
 {"address":"007CF6D8","name":"PTR_s_pics_b_007cf6d8","type":"undefined *","length":4,"value":"007ce664","referenced_from":[]}
 {"address":"007CF6DC","name":"PTR_s_pics_w_007cf6dc","type":"undefined *","length":4,"value":"007ce65c","referenced_from":[]}
@@ -33201,7 +33201,7 @@
 {"address":"007CF6EC","name":"PTR_s_starP_007cf6ec","type":"undefined *","length":4,"value":"007cf838","referenced_from":[]}
 {"address":"007CF730","name":"DAT_007cf730","type":"undefined4","length":4,"value":"00000000h","referenced_from":["0060D810 FUN_0060d810"]}
 {"address":"007CF734","name":"DAT_007cf734","type":"undefined4","length":4,"value":"0A450085h","referenced_from":["0060D810 FUN_0060d810"]}
-{"address":"007D0164","name":"PTR_s_light01_007d0164","type":"undefined *","length":4,"value":"007d01a4","referenced_from":["0061DB80 STLightC::LoadNextLight"]}
+{"address":"007D0164","name":"PTR_s_light01_007d0164","type":"char *","length":4,"value":"007d01a4","referenced_from":["0061DB80 STLightC::LoadNextLight"]}
 {"address":"007D0168","name":"PTR_s_light02_007d0168","type":"undefined *","length":4,"value":"007d0198","referenced_from":[]}
 {"address":"007D016C","name":"PTR_s_light03_007d016c","type":"undefined *","length":4,"value":"007d018c","referenced_from":[]}
 {"address":"007D0170","name":"PTR_s_light04_007d0170","type":"undefined *","length":4,"value":"007d0180","referenced_from":[]}
@@ -33212,7 +33212,7 @@
 {"address":"007D02C8","name":"PTR_s_lassn_007d02c8","type":"undefined *","length":4,"value":"007d06a0","referenced_from":[]}
 {"address":"007D02CC","name":"PTR_s_akmine_007d02cc","type":"undefined *","length":4,"value":"007d0698","referenced_from":[]}
 {"address":"007D02D0","name":"PTR_s_beacon_007d02d0","type":"undefined *","length":4,"value":"007d0690","referenced_from":[]}
-{"address":"007D02D4","name":"PTR_s_mine0_007d02d4","type":"undefined *","length":4,"value":"007d0688","referenced_from":["00623170 STMineSetC::LoadImagMineSet"]}
+{"address":"007D02D4","name":"PTR_s_mine0_007d02d4","type":"char *","length":4,"value":"007d0688","referenced_from":["00623170 STMineSetC::LoadImagMineSet"]}
 {"address":"007D02D8","name":"PTR_s_mine1_007d02d8","type":"undefined *","length":4,"value":"007d0680","referenced_from":[]}
 {"address":"007D02DC","name":"PTR_s_mine2_007d02dc","type":"undefined *","length":4,"value":"007d0678","referenced_from":[]}
 {"address":"007D02E0","name":"PTR_s_mine3_007d02e0","type":"undefined *","length":4,"value":"007d0670","referenced_from":[]}
@@ -33244,7 +33244,7 @@
 {"address":"007D0348","name":"PTR_s_mine5_007d0348","type":"undefined *","length":4,"value":"007d0660","referenced_from":[]}
 {"address":"007D034C","name":"PTR_s_mine6_007d034c","type":"undefined *","length":4,"value":"007d0658","referenced_from":[]}
 {"address":"007D0350","name":"PTR_s_mine7_007d0350","type":"undefined *","length":4,"value":"007d0650","referenced_from":[]}
-{"address":"007D0354","name":"PTR_s_expdeep_007d0354","type":"undefined *","length":4,"value":"007d05a4","referenced_from":["00623170 STMineSetC::LoadImagMineSet","00624000 FUN_00624000"]}
+{"address":"007D0354","name":"PTR_s_expdeep_007d0354","type":"char *","length":4,"value":"007d05a4","referenced_from":["00623170 STMineSetC::LoadImagMineSet","00624000 FUN_00624000"]}
 {"address":"007D0358","name":"PTR_s_Expb10_007d0358","type":"undefined *","length":4,"value":"007d059c","referenced_from":[]}
 {"address":"007D035C","name":"PTR_DAT_007d035c","type":"undefined *","length":4,"value":"007d0594","referenced_from":[]}
 {"address":"007D0360","name":"PTR_DAT_007d0360","type":"undefined *","length":4,"value":"007d0594","referenced_from":[]}
@@ -33266,7 +33266,7 @@
 {"address":"007D0570","name":"DAT_007d0570","type":"undefined1","length":1,"value":"65h","referenced_from":["006406D0 STTorpC::GetMessage","007D0374","007D037C","007D0380"]}
 {"address":"007D0588","name":"DAT_007d0588","type":"undefined1","length":1,"value":"65h","referenced_from":["006406D0 STTorpC::GetMessage","007D0364","007D036C","007D0370"]}
 {"address":"007D0594","name":"DAT_007d0594","type":"undefined1","length":1,"value":"65h","referenced_from":["006406D0 STTorpC::GetMessage","007D035C","007D0360"]}
-{"address":"007D0718","name":"PTR_s_particle0_007d0718","type":"undefined *","length":4,"value":"007d1348","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D0718","name":"PTR_s_particle0_007d0718","type":"char *","length":4,"value":"007d1348","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
 {"address":"007D071C","name":"PTR_s_particle1_007d071c","type":"undefined *","length":4,"value":"007d133c","referenced_from":[]}
 {"address":"007D0720","name":"PTR_s_particle2_007d0720","type":"undefined *","length":4,"value":"007d1330","referenced_from":[]}
 {"address":"007D0724","name":"PTR_s_particle3_007d0724","type":"undefined *","length":4,"value":"007d1324","referenced_from":[]}
@@ -33282,7 +33282,7 @@
 {"address":"007D074C","name":"PTR_s_particle13_007d074c","type":"undefined *","length":4,"value":"007d129c","referenced_from":[]}
 {"address":"007D0750","name":"PTR_s_particle14_007d0750","type":"undefined *","length":4,"value":"007d128c","referenced_from":[]}
 {"address":"007D0754","name":"PTR_s_particle15_007d0754","type":"undefined *","length":4,"value":"007d127c","referenced_from":[]}
-{"address":"007D0758","name":"PTR_s_particle01_007d0758","type":"undefined *","length":4,"value":"007d126c","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D0758","name":"PTR_s_particle01_007d0758","type":"char *","length":4,"value":"007d126c","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
 {"address":"007D075C","name":"PTR_s_particle011_007d075c","type":"undefined *","length":4,"value":"007d125c","referenced_from":[]}
 {"address":"007D0760","name":"PTR_s_particle21_007d0760","type":"undefined *","length":4,"value":"007d124c","referenced_from":[]}
 {"address":"007D0764","name":"PTR_s_particle31_007d0764","type":"undefined *","length":4,"value":"007d123c","referenced_from":[]}
@@ -33298,7 +33298,7 @@
 {"address":"007D078C","name":"PTR_s_particle131_007d078c","type":"undefined *","length":4,"value":"007d119c","referenced_from":[]}
 {"address":"007D0790","name":"PTR_s_particle141_007d0790","type":"undefined *","length":4,"value":"007d118c","referenced_from":[]}
 {"address":"007D0794","name":"PTR_s_particle151_007d0794","type":"undefined *","length":4,"value":"007d117c","referenced_from":[]}
-{"address":"007D0798","name":"PTR_s_partdw01_007d0798","type":"undefined *","length":4,"value":"007d1170","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D0798","name":"PTR_s_partdw01_007d0798","type":"char *","length":4,"value":"007d1170","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
 {"address":"007D079C","name":"PTR_s_partdw02_007d079c","type":"undefined *","length":4,"value":"007d1164","referenced_from":[]}
 {"address":"007D07A0","name":"PTR_s_partdw03_007d07a0","type":"undefined *","length":4,"value":"007d1158","referenced_from":[]}
 {"address":"007D07A4","name":"PTR_s_partdw01_007d07a4","type":"undefined *","length":4,"value":"007d1170","referenced_from":[]}
@@ -33314,7 +33314,7 @@
 {"address":"007D07CC","name":"PTR_s_partdw02_007d07cc","type":"undefined *","length":4,"value":"007d1164","referenced_from":[]}
 {"address":"007D07D0","name":"PTR_s_partdw03_007d07d0","type":"undefined *","length":4,"value":"007d1158","referenced_from":[]}
 {"address":"007D07D4","name":"PTR_s_partdw01_007d07d4","type":"undefined *","length":4,"value":"007d1170","referenced_from":[]}
-{"address":"007D07D8","name":"PTR_s_part_w0_007d07d8","type":"undefined *","length":4,"value":"007d114c","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D07D8","name":"PTR_s_part_w0_007d07d8","type":"char *","length":4,"value":"007d114c","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
 {"address":"007D07DC","name":"PTR_s_part_w1_007d07dc","type":"undefined *","length":4,"value":"007d1140","referenced_from":[]}
 {"address":"007D07E0","name":"PTR_s_part_w2_007d07e0","type":"undefined *","length":4,"value":"007d1134","referenced_from":[]}
 {"address":"007D07E4","name":"PTR_s_part_w3_007d07e4","type":"undefined *","length":4,"value":"007d1128","referenced_from":[]}
@@ -33324,7 +33324,7 @@
 {"address":"007D07F4","name":"PTR_s_part_w7_007d07f4","type":"undefined *","length":4,"value":"007d10f8","referenced_from":[]}
 {"address":"007D07F8","name":"PTR_s_part_w8_007d07f8","type":"undefined *","length":4,"value":"007d10ec","referenced_from":[]}
 {"address":"007D07FC","name":"PTR_s_part_w9_007d07fc","type":"undefined *","length":4,"value":"007d10e0","referenced_from":[]}
-{"address":"007D0800","name":"PTR_s_part_g0_007d0800","type":"undefined *","length":4,"value":"007d10d4","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D0800","name":"PTR_s_part_g0_007d0800","type":"char *","length":4,"value":"007d10d4","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
 {"address":"007D0804","name":"PTR_s_part_g1_007d0804","type":"undefined *","length":4,"value":"007d10c8","referenced_from":[]}
 {"address":"007D0808","name":"PTR_s_part_g2_007d0808","type":"undefined *","length":4,"value":"007d10bc","referenced_from":[]}
 {"address":"007D080C","name":"PTR_s_part_g3_007d080c","type":"undefined *","length":4,"value":"007d10b0","referenced_from":[]}
@@ -33334,7 +33334,7 @@
 {"address":"007D081C","name":"PTR_s_part_g7_007d081c","type":"undefined *","length":4,"value":"007d1080","referenced_from":[]}
 {"address":"007D0820","name":"PTR_s_part_g8_007d0820","type":"undefined *","length":4,"value":"007d1074","referenced_from":[]}
 {"address":"007D0824","name":"PTR_s_part_g9_007d0824","type":"undefined *","length":4,"value":"007d1068","referenced_from":[]}
-{"address":"007D0828","name":"PTR_s_gr2part0_007d0828","type":"undefined *","length":4,"value":"007d105c","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D0828","name":"PTR_s_gr2part0_007d0828","type":"char *","length":4,"value":"007d105c","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
 {"address":"007D082C","name":"PTR_s_gr2part1_007d082c","type":"undefined *","length":4,"value":"007d1050","referenced_from":[]}
 {"address":"007D0830","name":"PTR_s_gr2part2_007d0830","type":"undefined *","length":4,"value":"007d1044","referenced_from":[]}
 {"address":"007D0834","name":"PTR_s_gr2part3_007d0834","type":"undefined *","length":4,"value":"007d1038","referenced_from":[]}
@@ -33352,7 +33352,7 @@
 {"address":"007D0864","name":"PTR_s_gr2part15_007d0864","type":"undefined *","length":4,"value":"007d0fa8","referenced_from":[]}
 {"address":"007D0868","name":"PTR_s_gr2part16_007d0868","type":"undefined *","length":4,"value":"007d0f9c","referenced_from":[]}
 {"address":"007D086C","name":"PTR_s_gr2part17_007d086c","type":"undefined *","length":4,"value":"007d0f90","referenced_from":[]}
-{"address":"007D0870","name":"PTR_s_gr1part0_007d0870","type":"undefined *","length":4,"value":"007d0f84","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D0870","name":"PTR_s_gr1part0_007d0870","type":"char *","length":4,"value":"007d0f84","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
 {"address":"007D0874","name":"PTR_s_gr1part1_007d0874","type":"undefined *","length":4,"value":"007d0f78","referenced_from":[]}
 {"address":"007D0878","name":"PTR_s_gr1part2_007d0878","type":"undefined *","length":4,"value":"007d0f6c","referenced_from":[]}
 {"address":"007D087C","name":"PTR_s_gr1part3_007d087c","type":"undefined *","length":4,"value":"007d0f60","referenced_from":[]}
@@ -33371,8 +33371,8 @@
 {"address":"007D08B0","name":"PTR_s_gr1part16_007d08b0","type":"undefined *","length":4,"value":"007d0ec4","referenced_from":[]}
 {"address":"007D08B4","name":"PTR_s_gr1part17_007d08b4","type":"undefined *","length":4,"value":"007d0eb8","referenced_from":[]}
 {"address":"007D08B8","name":"DAT_007d08b8","type":"undefined4","length":4,"value":"0000000Fh","referenced_from":["00629070 STParticleC::InitVisibelFlight","00629F90 STParticleC::sub_00629F90"]}
-{"address":"007D08BC","name":"PTR_s_rubb3_007d08bc","type":"pointer","length":4,"value":"007d0eb0","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
-{"address":"007D08C4","name":"PTR_s_partsi01_007d08c4","type":"undefined *","length":4,"value":"007d0ea4","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D08BC","name":"PTR_s_rubb3_007d08bc","type":"char *","length":4,"value":"007d0eb0","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D08C4","name":"PTR_s_partsi01_007d08c4","type":"char *","length":4,"value":"007d0ea4","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
 {"address":"007D08C8","name":"PTR_s_partsi02_007d08c8","type":"undefined *","length":4,"value":"007d0e98","referenced_from":[]}
 {"address":"007D08CC","name":"PTR_s_partsi03_007d08cc","type":"undefined *","length":4,"value":"007d0e8c","referenced_from":[]}
 {"address":"007D08D0","name":"PTR_s_partsi01_007d08d0","type":"undefined *","length":4,"value":"007d0ea4","referenced_from":[]}
@@ -33396,7 +33396,7 @@
 {"address":"007D0918","name":"PTR_s_partsi01_007d0918","type":"undefined *","length":4,"value":"007d0ea4","referenced_from":[]}
 {"address":"007D091C","name":"PTR_s_partsi02_007d091c","type":"undefined *","length":4,"value":"007d0e98","referenced_from":[]}
 {"address":"007D0920","name":"PTR_s_partsi03_007d0920","type":"undefined *","length":4,"value":"007d0e8c","referenced_from":[]}
-{"address":"007D0924","name":"PTR_s_part_s0_007d0924","type":"undefined *","length":4,"value":"007d0e80","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D0924","name":"PTR_s_part_s0_007d0924","type":"char *","length":4,"value":"007d0e80","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
 {"address":"007D0928","name":"PTR_s_part_s1_007d0928","type":"undefined *","length":4,"value":"007d0e74","referenced_from":[]}
 {"address":"007D092C","name":"PTR_s_part_s2_007d092c","type":"undefined *","length":4,"value":"007d0e68","referenced_from":[]}
 {"address":"007D0930","name":"PTR_s_part_s3_007d0930","type":"undefined *","length":4,"value":"007d0e5c","referenced_from":[]}
@@ -33420,7 +33420,7 @@
 {"address":"007D0978","name":"PTR_s_partsi01_007d0978","type":"undefined *","length":4,"value":"007d0ea4","referenced_from":[]}
 {"address":"007D097C","name":"PTR_s_partsi02_007d097c","type":"undefined *","length":4,"value":"007d0e98","referenced_from":[]}
 {"address":"007D0980","name":"PTR_s_partsi03_007d0980","type":"undefined *","length":4,"value":"007d0e8c","referenced_from":[]}
-{"address":"007D0984","name":"PTR_s_grsi0_007d0984","type":"undefined *","length":4,"value":"007d0e0c","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D0984","name":"PTR_s_grsi0_007d0984","type":"char *","length":4,"value":"007d0e0c","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
 {"address":"007D0988","name":"PTR_s_grsi1_007d0988","type":"undefined *","length":4,"value":"007d0e04","referenced_from":[]}
 {"address":"007D098C","name":"PTR_s_grsi2_007d098c","type":"undefined *","length":4,"value":"007d0dfc","referenced_from":[]}
 {"address":"007D0990","name":"PTR_s_grsi3_007d0990","type":"undefined *","length":4,"value":"007d0df4","referenced_from":[]}
@@ -33441,7 +33441,7 @@
 {"address":"007D09CC","name":"PTR_s_grsi8_007d09cc","type":"undefined *","length":4,"value":"007d0dcc","referenced_from":[]}
 {"address":"007D09D0","name":"PTR_s_grsi0_007d09d0","type":"undefined *","length":4,"value":"007d0e0c","referenced_from":[]}
 {"address":"007D09D4","name":"DAT_007d09d4","type":"undefined4","length":4,"value":"0000005Eh","referenced_from":["00629070 STParticleC::InitVisibelFlight","00629F90 STParticleC::sub_00629F90"]}
-{"address":"007D09D8","name":"PTR_s_stoun0_007d09d8","type":"undefined *","length":4,"value":"007d0dc4","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
+{"address":"007D09D8","name":"PTR_s_stoun0_007d09d8","type":"char *","length":4,"value":"007d0dc4","referenced_from":["00629070 STParticleC::InitVisibelFlight"]}
 {"address":"007D09DC","name":"PTR_s_stoun1_007d09dc","type":"undefined *","length":4,"value":"007d0dbc","referenced_from":[]}
 {"address":"007D09E0","name":"PTR_s_stoun2_007d09e0","type":"undefined *","length":4,"value":"007d0db4","referenced_from":[]}
 {"address":"007D09E4","name":"PTR_s_stoun3_007d09e4","type":"undefined *","length":4,"value":"007d0dac","referenced_from":[]}
@@ -33451,9 +33451,9 @@
 {"address":"007D09F4","name":"PTR_s_stoun7_007d09f4","type":"undefined *","length":4,"value":"007d0d8c","referenced_from":[]}
 {"address":"007D09F8","name":"PTR_s_stoun8_007d09f8","type":"undefined *","length":4,"value":"007d0d84","referenced_from":[]}
 {"address":"007D09FC","name":"PTR_s_stoun9_007d09fc","type":"undefined *","length":4,"value":"007d0d7c","referenced_from":[]}
-{"address":"007D0C40","name":"PTR_s_expl_sb0_007d0c40","type":"pointer","length":4,"value":"007d0d70","referenced_from":["006298A0 STParticleC::InitVisibelDeton"]}
-{"address":"007D0C44","name":"PTR_s_expl_sb1_007d0c44","type":"pointer","length":4,"value":"007d0d64","referenced_from":["006298A0 STParticleC::InitVisibelDeton"]}
-{"address":"007D1480","name":"PTR_s_rubb_w0_007d1480","type":"undefined *","length":4,"value":"007d178c","referenced_from":["0062F3B0 STRubbishC::LoadImagSpr"]}
+{"address":"007D0C40","name":"PTR_s_expl_sb0_007d0c40","type":"char *","length":4,"value":"007d0d70","referenced_from":["006298A0 STParticleC::InitVisibelDeton"]}
+{"address":"007D0C44","name":"PTR_s_expl_sb1_007d0c44","type":"char *","length":4,"value":"007d0d64","referenced_from":["006298A0 STParticleC::InitVisibelDeton"]}
+{"address":"007D1480","name":"PTR_s_rubb_w0_007d1480","type":"char *","length":4,"value":"007d178c","referenced_from":["0062F3B0 STRubbishC::LoadImagSpr"]}
 {"address":"007D1484","name":"PTR_s_rubb_w1_007d1484","type":"undefined *","length":4,"value":"007d1780","referenced_from":[]}
 {"address":"007D1488","name":"PTR_s_rubb_w2_007d1488","type":"undefined *","length":4,"value":"007d1774","referenced_from":[]}
 {"address":"007D148C","name":"PTR_s_rubb_w3_007d148c","type":"undefined *","length":4,"value":"007d1768","referenced_from":[]}
@@ -33463,7 +33463,7 @@
 {"address":"007D149C","name":"PTR_s_rubb_w7_007d149c","type":"undefined *","length":4,"value":"007d1738","referenced_from":[]}
 {"address":"007D14A0","name":"PTR_s_rubb_w8_007d14a0","type":"undefined *","length":4,"value":"007d172c","referenced_from":[]}
 {"address":"007D14A4","name":"PTR_s_rubb_w9_007d14a4","type":"undefined *","length":4,"value":"007d1720","referenced_from":[]}
-{"address":"007D14A8","name":"PTR_s_rubb_g0_007d14a8","type":"undefined *","length":4,"value":"007d1714","referenced_from":["0062F3B0 STRubbishC::LoadImagSpr"]}
+{"address":"007D14A8","name":"PTR_s_rubb_g0_007d14a8","type":"char *","length":4,"value":"007d1714","referenced_from":["0062F3B0 STRubbishC::LoadImagSpr"]}
 {"address":"007D14AC","name":"PTR_s_rubb_g1_007d14ac","type":"undefined *","length":4,"value":"007d1708","referenced_from":[]}
 {"address":"007D14B0","name":"PTR_s_rubb_g2_007d14b0","type":"undefined *","length":4,"value":"007d16fc","referenced_from":[]}
 {"address":"007D14B4","name":"PTR_s_rubb_g3_007d14b4","type":"undefined *","length":4,"value":"007d16f0","referenced_from":[]}
@@ -33473,7 +33473,7 @@
 {"address":"007D14C4","name":"PTR_s_rubb_g7_007d14c4","type":"undefined *","length":4,"value":"007d16c0","referenced_from":[]}
 {"address":"007D14C8","name":"PTR_s_rubb_g8_007d14c8","type":"undefined *","length":4,"value":"007d16b4","referenced_from":[]}
 {"address":"007D14CC","name":"PTR_s_rubb_g9_007d14cc","type":"undefined *","length":4,"value":"007d16a8","referenced_from":[]}
-{"address":"007D14D0","name":"PTR_s_rubb3_007d14d0","type":"undefined *","length":4,"value":"007d0eb0","referenced_from":["0062F3B0 STRubbishC::LoadImagSpr"]}
+{"address":"007D14D0","name":"PTR_s_rubb3_007d14d0","type":"char *","length":4,"value":"007d0eb0","referenced_from":["0062F3B0 STRubbishC::LoadImagSpr"]}
 {"address":"007D14D4","name":"PTR_s_rubb3_007d14d4","type":"undefined *","length":4,"value":"007d0eb0","referenced_from":[]}
 {"address":"007D14D8","name":"PTR_s_rubb3_007d14d8","type":"undefined *","length":4,"value":"007d0eb0","referenced_from":[]}
 {"address":"007D14DC","name":"PTR_s_rubb3_007d14dc","type":"undefined *","length":4,"value":"007d0eb0","referenced_from":[]}
@@ -33483,42 +33483,42 @@
 {"address":"007D14EC","name":"PTR_s_rubb3_007d14ec","type":"undefined *","length":4,"value":"007d0eb0","referenced_from":[]}
 {"address":"007D14F0","name":"PTR_s_rubb3_007d14f0","type":"undefined *","length":4,"value":"007d0eb0","referenced_from":[]}
 {"address":"007D14F4","name":"PTR_s_rubb3_007d14f4","type":"undefined *","length":4,"value":"007d0eb0","referenced_from":[]}
-{"address":"007D14F8","name":"PTR_s_rubb_gb0_007d14f8","type":"undefined *","length":4,"value":"007d169c","referenced_from":["0062F3B0 STRubbishC::LoadImagSpr"]}
+{"address":"007D14F8","name":"PTR_s_rubb_gb0_007d14f8","type":"char *","length":4,"value":"007d169c","referenced_from":["0062F3B0 STRubbishC::LoadImagSpr"]}
 {"address":"007D14FC","name":"PTR_s_rubb_gb1_007d14fc","type":"undefined *","length":4,"value":"007d1690","referenced_from":[]}
 {"address":"007D1500","name":"PTR_s_rubb_gb2_007d1500","type":"undefined *","length":4,"value":"007d1684","referenced_from":[]}
 {"address":"007D1504","name":"PTR_s_rubb_gb3_007d1504","type":"undefined *","length":4,"value":"007d1678","referenced_from":[]}
 {"address":"007D1508","name":"PTR_s_rubb_gb4_007d1508","type":"undefined *","length":4,"value":"007d166c","referenced_from":[]}
 {"address":"007D150C","name":"PTR_s_rubb_gb5_007d150c","type":"undefined *","length":4,"value":"007d1660","referenced_from":[]}
 {"address":"007D1510","name":"PTR_s_rubb_gb6_007d1510","type":"undefined *","length":4,"value":"007d1654","referenced_from":[]}
-{"address":"007D1514","name":"PTR_s_rubb_gw0_007d1514","type":"undefined *","length":4,"value":"007d1648","referenced_from":["0062F3B0 STRubbishC::LoadImagSpr"]}
+{"address":"007D1514","name":"PTR_s_rubb_gw0_007d1514","type":"char *","length":4,"value":"007d1648","referenced_from":["0062F3B0 STRubbishC::LoadImagSpr"]}
 {"address":"007D1518","name":"PTR_s_rubb_gw1_007d1518","type":"undefined *","length":4,"value":"007d163c","referenced_from":[]}
 {"address":"007D151C","name":"PTR_s_rubb_gw2_007d151c","type":"undefined *","length":4,"value":"007d1630","referenced_from":[]}
 {"address":"007D1520","name":"PTR_s_rubb_gw3_007d1520","type":"undefined *","length":4,"value":"007d1624","referenced_from":[]}
 {"address":"007D1524","name":"PTR_s_rubb_gw4_007d1524","type":"undefined *","length":4,"value":"007d1618","referenced_from":[]}
 {"address":"007D1528","name":"PTR_s_rubb_gw5_007d1528","type":"undefined *","length":4,"value":"007d160c","referenced_from":[]}
 {"address":"007D152C","name":"PTR_s_rubb_gw6_007d152c","type":"undefined *","length":4,"value":"007d1600","referenced_from":[]}
-{"address":"007D1818","name":"PTR_s_ruin_10_007d1818","type":"undefined *","length":4,"value":"007d19e4","referenced_from":["00630C50 STManRuinC::sub_00630C50"]}
+{"address":"007D1818","name":"PTR_s_ruin_10_007d1818","type":"char *","length":4,"value":"007d19e4","referenced_from":["00630C50 STManRuinC::sub_00630C50"]}
 {"address":"007D181C","name":"PTR_s_ruin_11_007d181c","type":"undefined *","length":4,"value":"007d19d8","referenced_from":[]}
 {"address":"007D1820","name":"PTR_s_ruin_12_007d1820","type":"undefined *","length":4,"value":"007d19cc","referenced_from":[]}
 {"address":"007D1824","name":"PTR_s_ruin_13_007d1824","type":"undefined *","length":4,"value":"007d19c0","referenced_from":[]}
 {"address":"007D1828","name":"PTR_s_ruin_14_007d1828","type":"undefined *","length":4,"value":"007d19b4","referenced_from":[]}
 {"address":"007D182C","name":"PTR_s_ruin_15_007d182c","type":"undefined *","length":4,"value":"007d19a8","referenced_from":[]}
 {"address":"007D1830","name":"PTR_s_ruin_16_007d1830","type":"undefined *","length":4,"value":"007d199c","referenced_from":[]}
-{"address":"007D1834","name":"PTR_s_ruin_40_007d1834","type":"undefined *","length":4,"value":"007d1990","referenced_from":["00630C50 STManRuinC::sub_00630C50"]}
+{"address":"007D1834","name":"PTR_s_ruin_40_007d1834","type":"char *","length":4,"value":"007d1990","referenced_from":["00630C50 STManRuinC::sub_00630C50"]}
 {"address":"007D1838","name":"PTR_s_ruin_41_007d1838","type":"undefined *","length":4,"value":"007d1984","referenced_from":[]}
 {"address":"007D183C","name":"PTR_s_ruin_42_007d183c","type":"undefined *","length":4,"value":"007d1978","referenced_from":[]}
 {"address":"007D1840","name":"PTR_s_ruin_43_007d1840","type":"undefined *","length":4,"value":"007d196c","referenced_from":[]}
 {"address":"007D1844","name":"PTR_s_ruin_44_007d1844","type":"undefined *","length":4,"value":"007d1960","referenced_from":[]}
 {"address":"007D1848","name":"PTR_s_ruin_45_007d1848","type":"undefined *","length":4,"value":"007d1954","referenced_from":[]}
 {"address":"007D184C","name":"PTR_s_ruin_46_007d184c","type":"undefined *","length":4,"value":"007d1948","referenced_from":[]}
-{"address":"007D1850","name":"PTR_s_ruin_s10_007d1850","type":"undefined *","length":4,"value":"007d193c","referenced_from":["00630C50 STManRuinC::sub_00630C50"]}
+{"address":"007D1850","name":"PTR_s_ruin_s10_007d1850","type":"char *","length":4,"value":"007d193c","referenced_from":["00630C50 STManRuinC::sub_00630C50"]}
 {"address":"007D1854","name":"PTR_s_ruin_s11_007d1854","type":"undefined *","length":4,"value":"007d1930","referenced_from":[]}
 {"address":"007D1858","name":"PTR_s_ruin_s12_007d1858","type":"undefined *","length":4,"value":"007d1924","referenced_from":[]}
 {"address":"007D185C","name":"PTR_s_ruin_s13_007d185c","type":"undefined *","length":4,"value":"007d1918","referenced_from":[]}
 {"address":"007D1860","name":"PTR_s_ruin_s14_007d1860","type":"undefined *","length":4,"value":"007d190c","referenced_from":[]}
 {"address":"007D1864","name":"PTR_s_ruin_s15_007d1864","type":"undefined *","length":4,"value":"007d1900","referenced_from":[]}
 {"address":"007D1868","name":"PTR_s_ruin_s16_007d1868","type":"undefined *","length":4,"value":"007d18f4","referenced_from":[]}
-{"address":"007D186C","name":"PTR_s_ruin_s40_007d186c","type":"undefined *","length":4,"value":"007d18e8","referenced_from":["00630C50 STManRuinC::sub_00630C50"]}
+{"address":"007D186C","name":"PTR_s_ruin_s40_007d186c","type":"char *","length":4,"value":"007d18e8","referenced_from":["00630C50 STManRuinC::sub_00630C50"]}
 {"address":"007D1870","name":"PTR_s_ruin_s41_007d1870","type":"undefined *","length":4,"value":"007d18dc","referenced_from":[]}
 {"address":"007D1874","name":"PTR_s_ruin_s42_007d1874","type":"undefined *","length":4,"value":"007d18d0","referenced_from":[]}
 {"address":"007D1878","name":"PTR_s_ruin_s43_007d1878","type":"undefined *","length":4,"value":"007d18c4","referenced_from":[]}
@@ -33558,21 +33558,21 @@
 {"address":"007D1B80","name":"DAT_007d1b80","type":"undefined4","length":4,"value":"3A83126Fh","referenced_from":["00632E30 FUN_00632e30"]}
 {"address":"007D1B9C","name":"DAT_007d1b9c","type":"undefined4","length":4,"value":"3C23D70Ah","referenced_from":["00632E30 FUN_00632e30"]}
 {"address":"007D1BA0","name":"DAT_007d1ba0","type":"undefined4","length":4,"value":"3CF5C28Fh","referenced_from":["00632E30 FUN_00632e30"]}
-{"address":"007D1BB4","name":"PTR_s_pics_g_007d1bb4","type":"undefined *","length":4,"value":"007ce674","referenced_from":["00632A00 STTeamLissagC::InitVisibelSystem"]}
+{"address":"007D1BB4","name":"PTR_s_pics_g_007d1bb4","type":"char *","length":4,"value":"007ce674","referenced_from":["00632A00 STTeamLissagC::InitVisibelSystem"]}
 {"address":"007D1BB8","name":"PTR_s_pics_r_007d1bb8","type":"undefined *","length":4,"value":"007ce66c","referenced_from":[]}
 {"address":"007D1BBC","name":"PTR_s_pics_b_007d1bbc","type":"undefined *","length":4,"value":"007ce664","referenced_from":[]}
 {"address":"007D1BC0","name":"PTR_s_pics_w_007d1bc0","type":"undefined *","length":4,"value":"007ce65c","referenced_from":[]}
 {"address":"007D1BC4","name":"PTR_s_starG_007d1bc4","type":"undefined *","length":4,"value":"007d1d34","referenced_from":[]}
 {"address":"007D1BC8","name":"PTR_s_starB_007d1bc8","type":"undefined *","length":4,"value":"007d1d2c","referenced_from":[]}
-{"address":"007D1BCC","name":"PTR_s_starR_007d1bcc","type":"pointer","length":4,"value":"007d1d24","referenced_from":["00632A00 STTeamLissagC::InitVisibelSystem"]}
-{"address":"007D1BD0","name":"PTR_s_starF_007d1bd0","type":"pointer","length":4,"value":"007cf848","referenced_from":["00632A00 STTeamLissagC::InitVisibelSystem"]}
+{"address":"007D1BCC","name":"PTR_s_starR_007d1bcc","type":"char *","length":4,"value":"007d1d24","referenced_from":["00632A00 STTeamLissagC::InitVisibelSystem"]}
+{"address":"007D1BD0","name":"PTR_s_starF_007d1bd0","type":"char *","length":4,"value":"007cf848","referenced_from":["00632A00 STTeamLissagC::InitVisibelSystem"]}
 {"address":"007D1DB4","name":"DAT_007d1db4","type":"undefined4","length":4,"value":"0000656Dh","referenced_from":["00639500 FUN_00639500"]}
 {"address":"007D1DB8","name":"DAT_007d1db8","type":"undefined4","length":4,"value":"6C707865h","referenced_from":["00639500 FUN_00639500","00639990 FUN_00639990"]}
 {"address":"007D1DBC","name":"DAT_007d1dbc","type":"undefined4","length":4,"value":"0030735Fh","referenced_from":["00639500 FUN_00639500"]}
 {"address":"007D1DC0","name":"DAT_007d1dc0","type":"undefined4","length":4,"value":"FFFFFF1Dh","referenced_from":["00639500 FUN_00639500"]}
 {"address":"007D1DC4","name":"DAT_007d1dc4","type":"undefined4","length":4,"value":"0006FBEDh","referenced_from":["00639500 FUN_00639500"]}
 {"address":"007D1DC8","name":"DAT_007d1dc8","type":"undefined4","length":4,"value":"F7E416B3h","referenced_from":["00639500 FUN_00639500"]}
-{"address":"007D1F68","name":"PTR_s_blast_p_007d1f68","type":"undefined *","length":4,"value":"007d2090","referenced_from":["0063E160 STTmMineC::LoadImagSpr"]}
+{"address":"007D1F68","name":"PTR_s_blast_p_007d1f68","type":"char *","length":4,"value":"007d2090","referenced_from":["0063E160 STTmMineC::LoadImagSpr"]}
 {"address":"007D1F6C","name":"PTR_s_pics_b_007d1f6c","type":"undefined *","length":4,"value":"007ce664","referenced_from":[]}
 {"address":"007D1F70","name":"PTR_s_partv1_007d1f70","type":"undefined *","length":4,"value":"007d2088","referenced_from":[]}
 {"address":"007D1F74","name":"PTR_s_partv2_007d1f74","type":"undefined *","length":4,"value":"007d2080","referenced_from":[]}
@@ -33709,7 +33709,7 @@
 {"address":"007EC180","name":"DAT_007ec180","type":"undefined4","length":4,"value":"FFFFFFFFh","referenced_from":["006A3D40 Library::MSVCRT::FUN_006a3d40","006A41E0 Library::MSVCRT::FUN_006a41e0","006A5050 FUN_006a5050"]}
 {"address":"007EC184","name":"DAT_007ec184","type":"undefined4","length":4,"value":"00CDDDFDh","referenced_from":["006A3D40 Library::MSVCRT::FUN_006a3d40","006A41E0 Library::MSVCRT::FUN_006a41e0","006A49C0 Library::MSVCRT::FUN_006a49c0","006A5210 FUN_006a5210"]}
 {"address":"007EC188","name":"PTR_DAT_007ec188","type":"pointer","length":4,"value":"007ec1c0","referenced_from":["006A49C0 Library::MSVCRT::FUN_006a49c0","006A5210 FUN_006a5210","006A5D60 FUN_006a5d60"]}
-{"address":"007EC18C","name":"PTR_s_Normal_007ec18c","type":"undefined *","length":4,"value":"007ec1b8","referenced_from":["006A5D60 FUN_006a5d60"]}
+{"address":"007EC18C","name":"PTR_s_Normal_007ec18c","type":"char *","length":4,"value":"007ec1b8","referenced_from":["006A5D60 FUN_006a5d60"]}
 {"address":"007EC190","name":"PTR_DAT_007ec190","type":"undefined *","length":4,"value":"007ec1b4","referenced_from":[]}
 {"address":"007EC194","name":"PTR_s_Ignore_007ec194","type":"undefined *","length":4,"value":"007ec1ac","referenced_from":[]}
 {"address":"007EC198","name":"PTR_s_Client_007ec198","type":"undefined *","length":4,"value":"007ec1a4","referenced_from":[]}
@@ -33784,9 +33784,9 @@
 {"address":"007F1104","name":"DAT_007f1104","type":"undefined4","length":4,"value":"0000173Fh","referenced_from":["0072E150 Library::MSVCRT::FUN_0072e150"]}
 {"address":"007F1110","name":"DAT_007f1110","type":"undefined4","length":4,"value":"00000001h","referenced_from":["0072E6B0 Library::MSVCRT::FUN_0072e6b0","0072E6C0 Library::MSVCRT::FUN_0072e6c0"]}
 {"address":"007F1234","name":"DAT_007f1234","type":"undefined4","length":4,"value":"00000000h","referenced_from":["0072F260 Library::MSVCRT::FUN_0072f260","0072F5D0 Library::MSVCRT::FUN_0072f5d0","0072F770 Library::MSVCRT::FUN_0072f770"]}
-{"address":"007F123C","name":"PTR_s_LC_COLLATE_007f123c","type":"pointer","length":4,"value":"0079fed8","referenced_from":["0072F260 Library::MSVCRT::FUN_0072f260","0072F770 Library::MSVCRT::FUN_0072f770"]}
+{"address":"007F123C","name":"PTR_s_LC_COLLATE_007f123c","type":"char *","length":4,"value":"0079fed8","referenced_from":["0072F260 Library::MSVCRT::FUN_0072f260","0072F770 Library::MSVCRT::FUN_0072f770"]}
 {"address":"007F1240","name":"PTR_DAT_007f1240","type":"pointer","length":4,"value":"007f1120","referenced_from":["0072F770 Library::MSVCRT::FUN_0072f770"]}
-{"address":"007F1248","name":"PTR_s_LC_CTYPE_007f1248","type":"pointer","length":4,"value":"0079fecc","referenced_from":["0072F260 Library::MSVCRT::FUN_0072f260","0072F770 Library::MSVCRT::FUN_0072f770"]}
+{"address":"007F1248","name":"PTR_s_LC_CTYPE_007f1248","type":"char *","length":4,"value":"0079fecc","referenced_from":["0072F260 Library::MSVCRT::FUN_0072f260","0072F770 Library::MSVCRT::FUN_0072f770"]}
 {"address":"007F124C","name":"PTR_DAT_007f124c","type":"undefined *","length":4,"value":"007f1120","referenced_from":["0072F770 Library::MSVCRT::FUN_0072f770"]}
 {"address":"007F1250","name":"PTR_FUN_007f1250","type":"undefined *","length":4,"value":"00739d80","referenced_from":[]}
 {"address":"007F1254","name":"PTR_s_LC_MONETARY_007f1254","type":"undefined *","length":4,"value":"0079fec0","referenced_from":[]}
@@ -33804,7 +33804,7 @@
 {"address":"007F148C","name":"DAT_007f148c","type":"undefined4","length":4,"value":"00000001h","referenced_from":["006748D0 FUN_006748d0","006A5BE0 FUN_006a5be0","006B9770 Library::DKW::STR::FUN_006b9770","006C8990 FUN_006c8990","0072FE00 Library::MSVCRT::FUN_0072fe00","0072FF20 Library::MSVCRT::FUN_0072ff20","00730310 Library::MSVCRT::FUN_00730310","007306E0 Library::MSVCRT::FUN_007306e0","00734030 Library::MSVCRT::FUN_00734030","00734240 Library::MSVCRT::FUN_00734240","00734600 Library::MSVCRT::FUN_00734600","00734650 Library::MSVCRT::FUN_00734650","00734690 Library::MSVCRT::FUN_00734690","007346D0 Library::MSVCRT::FUN_007346d0","00734710 Library::MSVCRT::FUN_00734710","00734760 Library::MSVCRT::FUN_00734760","007347A0 Library::MSVCRT::FUN_007347a0","007347E0 Library::MSVCRT::FUN_007347e0","00734830 Library::MSVCRT::FUN_00734830","00734880 Library::MSVCRT::FUN_00734880","007348D0 Library::MSVCRT::FUN_007348d0","00734930 Library::MSVCRT::FUN_00734930","00734990 Library::MSVCRT::FUN_00734990","00734AC0 Library::MSVCRT::FUN_00734ac0","007376E0 Library::MSVCRT::FUN_007376e0","00738AC0 Library::MSVCRT::FUN_00738ac0","00739D80 Library::MSVCRT::FUN_00739d80","007410B0 Library::MSVCRT::FUN_007410b0","00742790 Library::MSVCRT::FUN_00742790","00742F10 Library::MSVCRT::FUN_00742f10","007434D0 Library::MSVCRT::FUN_007434d0"]}
 {"address":"007F1490","name":"DAT_007f1490","type":"undefined1","length":1,"value":"2Eh","referenced_from":["007301E0 Library::MSVCRT::FUN_007301e0","00734AC0 Library::MSVCRT::FUN_00734ac0","00734B70 Library::MSVCRT::__cropzeros","00734CD0 Library::MSVCRT::FUN_00734cd0","00734E90 Library::MSVCRT::FUN_00734e90","007376E0 Library::MSVCRT::FUN_007376e0","007395F0 Library::MSVCRT::FUN_007395f0","007434D0 Library::MSVCRT::FUN_007434d0"]}
 {"address":"007F1498","name":"PTR_FUN_007f1498","type":"pointer","length":4,"value":"00730e80","referenced_from":["006A3D40 Library::MSVCRT::FUN_006a3d40","006A41E0 Library::MSVCRT::FUN_006a41e0","006A49C0 Library::MSVCRT::FUN_006a49c0","006A5100 FUN_006a5100"]}
-{"address":"007F14B8","name":"PTR_s_Warning_007f14b8","type":"pointer","length":4,"value":"0079ff4c","referenced_from":["00731330 Library::MSVCRT::FUN_00731330"]}
+{"address":"007F14B8","name":"PTR_s_Warning_007f14b8","type":"char *","length":4,"value":"0079ff4c","referenced_from":["00731330 Library::MSVCRT::FUN_00731330"]}
 {"address":"007F14C8","name":"DAT_007f14c8","type":"undefined4","length":4,"value":"000003F8h","referenced_from":["00730E20 Library::MSVCRT::FUN_00730e20","00731640 Library::MSVCRT::FUN_00731640","007316D0 Library::MSVCRT::FUN_007316d0","00731A50 Library::MSVCRT::FUN_00731a50","00731A60 Library::MSVCRT::FUN_00731a60"]}
 {"address":"007F14CC","name":"PTR___exit_007f14cc","type":"pointer","length":4,"value":"0072efa0","referenced_from":["00733850 Library::MSVCRT::__amsg_exit"]}
 {"address":"007F14D0","name":"DAT_007f14d0","type":"undefined4","length":4,"value":"00000002h","referenced_from":["0073DFD0 Library::MSVCRT::__FF_MSGBANNER","0073E020 Library::MSVCRT::FUN_0073e020","00740DB0 Library::MSVCRT::__set_osfhnd","00740E60 Library::MSVCRT::FUN_00740e60"]}
@@ -33835,10 +33835,10 @@
 {"address":"007F162C","name":"DAT_007f162c","type":"undefined4","length":4,"value":"7FF00000h","referenced_from":["00735A60 Library::MSVCRT::FUN_00735a60"]}
 {"address":"007F1638","name":"DAT_007f1638","type":"undefined4","length":4,"value":"FFFFFFFFh","referenced_from":["00735A60 Library::MSVCRT::FUN_00735a60"]}
 {"address":"007F163C","name":"DAT_007f163c","type":"undefined4","length":4,"value":"7FEFFFFFh","referenced_from":["00735A60 Library::MSVCRT::FUN_00735a60"]}
-{"address":"007F177C","name":"PTR_s_Spanish_-_Traditional_Sort_007f177c","type":"pointer","length":4,"value":"007a0450","referenced_from":["0073B190 Library::MSVCRT::crtGetLocaleInfoA"]}
-{"address":"007F1784","name":"PTR_s_Spain_007f1784","type":"pointer","length":4,"value":"007a0448","referenced_from":["0073B190 Library::MSVCRT::crtGetLocaleInfoA"]}
-{"address":"007F1C28","name":"PTR_s_america_007f1c28","type":"pointer","length":4,"value":"007a0558","referenced_from":["0073A670 Library::MSVCRT::FUN_0073a670"]}
-{"address":"007F1CE0","name":"PTR_s_american_007f1ce0","type":"pointer","length":4,"value":"007a0968","referenced_from":["0073A670 Library::MSVCRT::FUN_0073a670"]}
+{"address":"007F177C","name":"PTR_s_Spanish_-_Traditional_Sort_007f177c","type":"char *","length":4,"value":"007a0450","referenced_from":["0073B190 Library::MSVCRT::crtGetLocaleInfoA"]}
+{"address":"007F1784","name":"PTR_s_Spain_007f1784","type":"char *","length":4,"value":"007a0448","referenced_from":["0073B190 Library::MSVCRT::crtGetLocaleInfoA"]}
+{"address":"007F1C28","name":"PTR_s_america_007f1c28","type":"char *","length":4,"value":"007a0558","referenced_from":["0073A670 Library::MSVCRT::FUN_0073a670"]}
+{"address":"007F1CE0","name":"PTR_s_american_007f1ce0","type":"char *","length":4,"value":"007a0968","referenced_from":["0073A670 Library::MSVCRT::FUN_0073a670"]}
 {"address":"007F1EF4","name":"DAT_007f1ef4","type":"undefined4","length":4,"value":"0000001Eh","referenced_from":["0072FC30 Library::MSVCRT::_gmtime"]}
 {"address":"007F1EF8","name":"DAT_007f1ef8","type":"undefined4","length":4,"value":"0000003Bh","referenced_from":["0072FC30 Library::MSVCRT::_gmtime"]}
 {"address":"007F1F58","name":"PTR_DAT_007f1f58","type":"pointer","length":4,"value":"007a0a34","referenced_from":["0073B6F0 Library::MSVCRT::FUN_0073b6f0"]}
@@ -33858,7 +33858,7 @@
 {"address":"007F1FF0","name":"DAT_007f1ff0","type":"undefined4","length":4,"value":"0000000Ah","referenced_from":["00733930 Library::MSVCRT::FUN_00733930","00733D00 Library::MSVCRT::siglookup","0073D2C0 Library::MSVCRT::xcptlookup"]}
 {"address":"007F1FF4","name":"DAT_007f1ff4","type":"undefined4","length":4,"value":"0000008Ch","referenced_from":["00733B40 Library::MSVCRT::FUN_00733b40","0073D110 Library::MSVCRT::__XcptFilter"]}
 {"address":"007F1FFC","name":"DAT_007f1ffc","type":"undefined1","length":1,"value":"00h","referenced_from":["0073B470 Library::MSVCRT::FUN_0073b470","0073CD70 Library::MSVCRT::FUN_0073cd70"]}
-{"address":"007F2004","name":"PTR_s_R6002_-_floating_point_not_loade_007f2004","type":"pointer","length":4,"value":"007a0d50","referenced_from":["0073E020 Library::MSVCRT::FUN_0073e020","0073E1E0 Library::MSVCRT::__GET_RTERRMSG"]}
+{"address":"007F2004","name":"PTR_s_R6002_-_floating_point_not_loade_007f2004","type":"char *","length":4,"value":"007a0d50","referenced_from":["0073E020 Library::MSVCRT::FUN_0073e020","0073E1E0 Library::MSVCRT::__GET_RTERRMSG"]}
 {"address":"007F2090","name":"PTR_DAT_007f2090","type":"pointer","length":4,"value":"00859180","referenced_from":["0073E620 Library::MSVCRT::FUN_0073e620"]}
 {"address":"007F24D0","name":"DAT_007f24d0","type":"undefined4","length":4,"value":"00002694h","referenced_from":["00735330 Library::MSVCRT::FUN_00735330","00735390 Library::MSVCRT::FUN_00735390","00735400 Library::MSVCRT::FUN_00735400","007354C0 Library::MSVCRT::FUN_007354c0","0073E770 Library::MSVCRT::__cintrindisp2","0073E7AE Library::MSVCRT::__cintrindisp1","00744750 Library::MSVCRT::FUN_00744750"]}
 {"address":"007F2640","name":"PTR_PTR_007f2640","type":"pointer","length":4,"value":"007f2648","referenced_from":["00738C70 Library::MSVCRT::___init_time","00741370 Library::MSVCRT::FUN_00741370","007414A0 Library::MSVCRT::FUN_007414a0","007415D0 Library::MSVCRT::FUN_007415d0","00741960 Library::MSVCRT::FUN_00741960"]}
@@ -33869,7 +33869,7 @@
 {"address":"007F2658","name":"PTR_DAT_007f2658","type":"undefined *","length":4,"value":"007a0f68","referenced_from":[]}
 {"address":"007F265C","name":"PTR_DAT_007f265c","type":"undefined *","length":4,"value":"007a0f64","referenced_from":[]}
 {"address":"007F2660","name":"PTR_DAT_007f2660","type":"undefined *","length":4,"value":"007a0f60","referenced_from":[]}
-{"address":"007F2664","name":"PTR_s_Sunday_007f2664","type":"undefined *","length":4,"value":"007a0f58","referenced_from":["00741370 Library::MSVCRT::FUN_00741370","007415D0 Library::MSVCRT::FUN_007415d0"]}
+{"address":"007F2664","name":"PTR_s_Sunday_007f2664","type":"char *","length":4,"value":"007a0f58","referenced_from":["00741370 Library::MSVCRT::FUN_00741370","007415D0 Library::MSVCRT::FUN_007415d0"]}
 {"address":"007F2668","name":"PTR_s_Monday_007f2668","type":"undefined *","length":4,"value":"007a0f50","referenced_from":[]}
 {"address":"007F266C","name":"PTR_s_Tuesday_007f266c","type":"undefined *","length":4,"value":"007a0f48","referenced_from":[]}
 {"address":"007F2670","name":"PTR_s_Wednesday_007f2670","type":"undefined *","length":4,"value":"007a0f3c","referenced_from":[]}
@@ -33888,7 +33888,7 @@
 {"address":"007F26A4","name":"PTR_DAT_007f26a4","type":"undefined *","length":4,"value":"007a0ef4","referenced_from":[]}
 {"address":"007F26A8","name":"PTR_DAT_007f26a8","type":"undefined *","length":4,"value":"007a0ef0","referenced_from":[]}
 {"address":"007F26AC","name":"PTR_DAT_007f26ac","type":"undefined *","length":4,"value":"007a0eec","referenced_from":[]}
-{"address":"007F26B0","name":"PTR_s_January_007f26b0","type":"undefined *","length":4,"value":"007a0ee4","referenced_from":["007414A0 Library::MSVCRT::FUN_007414a0","007415D0 Library::MSVCRT::FUN_007415d0"]}
+{"address":"007F26B0","name":"PTR_s_January_007f26b0","type":"char *","length":4,"value":"007a0ee4","referenced_from":["007414A0 Library::MSVCRT::FUN_007414a0","007415D0 Library::MSVCRT::FUN_007415d0"]}
 {"address":"007F26B4","name":"PTR_s_February_007f26b4","type":"undefined *","length":4,"value":"007a0ed8","referenced_from":[]}
 {"address":"007F26B8","name":"PTR_s_March_007f26b8","type":"undefined *","length":4,"value":"007a0ed0","referenced_from":[]}
 {"address":"007F26BC","name":"PTR_s_April_007f26bc","type":"undefined *","length":4,"value":"007a0ec8","referenced_from":[]}
@@ -33902,9 +33902,9 @@
 {"address":"007F26DC","name":"PTR_s_December_007f26dc","type":"undefined *","length":4,"value":"007a0e84","referenced_from":[]}
 {"address":"007F26E0","name":"PTR_DAT_007f26e0","type":"pointer","length":4,"value":"007a0e80","referenced_from":["007415D0 Library::MSVCRT::FUN_007415d0"]}
 {"address":"007F26E4","name":"PTR_DAT_007f26e4","type":"pointer","length":4,"value":"007a0e7c","referenced_from":["007415D0 Library::MSVCRT::FUN_007415d0"]}
-{"address":"007F26E8","name":"PTR_s_M/d/yy_007f26e8","type":"pointer","length":4,"value":"007a0e74","referenced_from":["007415D0 Library::MSVCRT::FUN_007415d0"]}
-{"address":"007F26EC","name":"PTR_s_dddd,_MMMM_dd,_yyyy_007f26ec","type":"pointer","length":4,"value":"007a0e60","referenced_from":["007415D0 Library::MSVCRT::FUN_007415d0"]}
-{"address":"007F26F0","name":"PTR_s_H:mm:ss_007f26f0","type":"pointer","length":4,"value":"007a0e58","referenced_from":["007415D0 Library::MSVCRT::FUN_007415d0"]}
+{"address":"007F26E8","name":"PTR_s_M/d/yy_007f26e8","type":"char *","length":4,"value":"007a0e74","referenced_from":["007415D0 Library::MSVCRT::FUN_007415d0"]}
+{"address":"007F26EC","name":"PTR_s_dddd,_MMMM_dd,_yyyy_007f26ec","type":"char *","length":4,"value":"007a0e60","referenced_from":["007415D0 Library::MSVCRT::FUN_007415d0"]}
+{"address":"007F26F0","name":"PTR_s_H:mm:ss_007f26f0","type":"char *","length":4,"value":"007a0e58","referenced_from":["007415D0 Library::MSVCRT::FUN_007415d0"]}
 {"address":"007F2700","name":"PTR_DAT_007f2700","type":"pointer","length":4,"value":"007f26f8","referenced_from":["007395F0 Library::MSVCRT::FUN_007395f0","00739920 Library::MSVCRT::FUN_00739920","00742A20 Library::MSVCRT::FUN_00742a20","007F2730"]}
 {"address":"007F2704","name":"PTR_DAT_007f2704","type":"pointer","length":4,"value":"00857428","referenced_from":["007395F0 Library::MSVCRT::FUN_007395f0","00739920 Library::MSVCRT::FUN_00739920"]}
 {"address":"007F2708","name":"PTR_DAT_007f2708","type":"undefined *","length":4,"value":"00857428","referenced_from":["007395F0 Library::MSVCRT::FUN_007395f0","00739920 Library::MSVCRT::FUN_00739920"]}
@@ -34224,7 +34224,7 @@
 {"address":"00806790","name":"g_cMf32_00806790","type":"cMf32 *","length":4,"value":"00000000","referenced_from":["004EE350 BehPanelTy::PaintBBut","004EEA40 BldBoatPanelTy::InitBldBoatPanel","004EFB60 BldLabPanelTy::InitBldLabPanel","004F05C0 BldObjPanelTy::InitBldObjPanel","004F0A60 FUN_004f0a60","004F2E40 CPanelTy::SetButStruct","004F3130 CPanelTy::CreateBut","004F3540 CPanelTy::PaintBut","004F37C0 CPanelTy::PaintBBut","004F3A30 CPanelTy::PaintTxtBut","004F3CF0 CPanelTy::PaintTxtBut","004F3FE0 CPanelTy::PaintLBut","004F42A0 CPanelTy::PaintTab","004F5690 CPanelTy::InitCPanel","004F7800 CPanelTy::DoneCPanel","004F80A0 CPanelTy::PaintTV","004F96A0 CPanelTy::PlayBrief","004F9CD0 CPanelTy::PlayBriefing","005105E0 FrmPanelTy::PaintBut","00510E30 HelpPanelTy::InitHelpPanel","00511760 HelpPanelTy::DoneHelpPanel","005123A0 HelpPanelTy::CreateList","00512830 HelpPanelTy::CreateSlider","00512BE0 HelpPanelTy::sub_00512BE0","0051D540 HelpPanelTy::TipProc","0051FF50 InfocPanelTy::InitInfocPanel","005219E0 IntercomPanelTy::InitIntercomPanel","00521B90 IntercomPanelTy::DoneIntercomPanel","0052BF00 MoneyTy::GetMessage","0052E5E0 OptPanelTy::InitOptPanel","0052E8F0 OptPanelTy::DoneOptPanel","0052EB50 OptPanelTy::CreateSlider","0052EFB0 OptPanelTy::PaintDblBut","0052FB00 OptPanelTy::SetOptControls","00538690 PanelTy::CreateBut","005389E0 PanelTy::PaintBut","00538BA0 PanelTy::PaintTxtBut","00538FC0 PanelTy::PaintLBut","00539280 PausePanelTy::InitPausePanel","00539490 PausePanelTy::DonePausePanel","00539B90 PlayPanelTy::InitPlayPanel","0053A380 PlayPanelTy::DonePlayPanel","0053AFB0 PlayPanelTy::GetMessage","0053C120 ResearchPanelTy::InitResearchPanel","0053D7A0 UPanelTy::PaintBut","0053D920 UPanelTy::PaintTxtBut","0053DCC0 UPanelTy::PaintLBut","0053DEA0 UPanelTy::CreateBut","0053E3F0 SpecPanelTy::InitPanel","0053E640 SpecPanelTy::DonePanel","0053F220 ProdPanelTy::DoneProdPanel","0053F940 ProdPanelTy::CreateSlider","0053FCD0 ProdPanelTy::PaintTab","0053FEE0 ProdPanelTy::PaintTab","005424A0 InterSystemC::CreateInterfObjects","00542F40 InterSystemC::GetMessage","00550DB0 TradePanelTy::InitTradePanel","0056D370 STAppC::OpenGameDBs","0056D580 STAppC::CloseGameDBs"]}
 {"address":"00806794","name":"PTR_00806794","type":"int *","length":4,"value":"00000000","referenced_from":["004ED630 BehPanelTy::InitBehPanel","004EEA40 BldBoatPanelTy::InitBldBoatPanel","004EFB60 BldLabPanelTy::InitBldLabPanel","004F05C0 BldObjPanelTy::InitBldObjPanel","004F5690 CPanelTy::InitCPanel","004F80A0 CPanelTy::PaintTV","004F9ED0 CPanelTy::SwitchCPanel","004FB060 CPanelTy::GetMessage","004FF110 CPanelTy::SwitchTV","00504210 CPanelTy::UpdateStackPanel","0050A340 CPanelTy::PaintCtrlObjSI","00510E30 HelpPanelTy::InitHelpPanel","0051FF50 InfocPanelTy::InitInfocPanel","0052BF00 MoneyTy::GetMessage","0052E5E0 OptPanelTy::InitOptPanel","00538DB0 PanelTy::PaintIBut","00539B90 PlayPanelTy::InitPlayPanel","0053C120 ResearchPanelTy::InitResearchPanel","0053CEF0 SAMPanelTy::InitSAMPanel","0053DAF0 UPanelTy::PaintIBut","0053EF20 ProdPanelTy::InitProdPanel","005424A0 InterSystemC::CreateInterfObjects","00542F40 InterSystemC::GetMessage","00550DB0 TradePanelTy::InitTradePanel","00551EC0 TradePanelTy::PaintIndicators","005522A0 TradePanelTy::GetMessage","005528B0 UpgPanelTy::InitUpgPanel","0056D370 STAppC::OpenGameDBs","0056D580 STAppC::CloseGameDBs"]}
 {"address":"00806798","name":"g_cMf32_00806798","type":"cMf32 *","length":4,"value":"00000000","referenced_from":["004F80A0 CPanelTy::PaintTV","004F96A0 CPanelTy::PlayBrief","00568DD0 SoundClassTy::PlaySound","0056ADC0 STAppC::InitApp","0056C750 STAppC::DoneApp","005E0470 MTaskTy::DoneMTask","005E1330 MTaskTy::PlayScript"]}
-{"address":"0080679C","name":"DAT_0080679c","type":"undefined4","length":4,"value":"00000000h","referenced_from":["0042A290 LoadLand","004F5690 CPanelTy::InitCPanel","0051FBA0 HelpStringTy::GetMessage","0052BF00 MoneyTy::GetMessage","0052DD20 PopUpTy::GetMessage","005381B0 PanelTy::InitPanel","005424A0 InterSystemC::CreateInterfObjects","0056C750 STAppC::DoneApp","0056DB80 STAppC::StartGame","0056F250 FUN_0056f250","00577690 GameSystemC::sub_00577690"]}
+{"address":"0080679C","name":"PTR_0080679c","type":"ushort *","length":4,"value":"00000000","referenced_from":["0042A290 LoadLand","004F5690 CPanelTy::InitCPanel","0051FBA0 HelpStringTy::GetMessage","0052BF00 MoneyTy::GetMessage","0052DD20 PopUpTy::GetMessage","005381B0 PanelTy::InitPanel","005424A0 InterSystemC::CreateInterfObjects","0056C750 STAppC::DoneApp","0056DB80 STAppC::StartGame","0056F250 FUN_0056f250","00577690 GameSystemC::sub_00577690"]}
 {"address":"008067A0","name":"DAT_008067a0","type":"undefined1","length":1,"value":"00h","referenced_from":["00521CF0 FUN_00521cf0","0052FB00 OptPanelTy::SetOptControls","00533880 OptPanelTy::Question","00533B80 FUN_00533b80","00533D10 OptPanelTy::GetMessage","005449B0 CursorClassTy::GetMessage","0054C740 CreatePlaySystem","0054D640 STPlaySystemC::Life","0056FA60 STAppC::GetMessage","00595E40 FSGSTy::InitFSGS","005A32F0 FSGSTy::CreateGame","005A4350 FSGSTy::GetMessage","005AB300 ChooseMapTy::InitChooseMap","005AD390 ChooseMapTy::NoneChooseMap","005B0BA0 ChooseMapTy::GetMessage","005B2970 MainMenuTy::InitMainMenu","005B9B10 PrividerTy::InitPrivider","005BD7A0 MReportTy::InitMReport","005C29B0 SettMapMTy::sub_005C29B0","005C5130 SettMapTy::NoneSettMap","005C7800 FUN_005c7800","005C8200 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200","005C8A40 SettMapTy::GetMessage","005CD430 SettMapMTy::PrepPlList","005CD9A0 SettMapMTy::ChgPlList","005CDB20 SettMapMTy::AddPlList","005CE0E0 SettMapMTy::NoneSettMap","005D1100 SettMapMTy::AddPlayerList","005D1400 SettMapMTy::GetMessage","005E6770 WaitTy::InitWait","005E84D0 WaitTy::NoneWait","005EA680 WaitTy::GetMessage"]}
 {"address":"008067A1","name":"DAT_008067a1","type":"undefined1","length":1,"value":"00h","referenced_from":["00571240 FUN_00571240"]}
 {"address":"008071F8","name":"DAT_008071f8","type":"undefined4","length":4,"value":"00000000h","referenced_from":["00571E40 FUN_00571e40","00572920 FUN_00572920","00572D30 FUN_00572d30","005734C0 FUN_005734c0"]}
@@ -34609,11 +34609,11 @@
 {"address":"008488B4","name":"DAT_008488b4","type":"undefined4","length":4,"value":"00000000h","referenced_from":["006802A0 FUN_006802a0","00683C70 FUN_00683c70","0068CEC0 FUN_0068cec0"]}
 {"address":"008488B8","name":"DAT_008488b8","type":"undefined1","length":1,"value":"00h","referenced_from":["006802A0 FUN_006802a0","0068CEC0 FUN_0068cec0"]}
 {"address":"008488B9","name":"DAT_008488b9","type":"undefined1","length":1,"value":"00h","referenced_from":["006802A0 FUN_006802a0","0068CEC0 FUN_0068cec0"]}
-{"address":"008489B4","name":"DAT_008489b4","type":"undefined4","length":4,"value":"00000000h","referenced_from":["00683670 FUN_00683670","00683C70 FUN_00683c70"]}
-{"address":"008489B8","name":"DAT_008489b8","type":"undefined4","length":4,"value":"00000000h","referenced_from":["00683670 FUN_00683670","00683C70 FUN_00683c70"]}
-{"address":"008489BC","name":"DAT_008489bc","type":"undefined4","length":4,"value":"00000000h","referenced_from":["00683670 FUN_00683670","00683C70 FUN_00683c70"]}
+{"address":"008489B4","name":"g_allocationRecord_00648620_008489B4","type":"AllocationRecord_00648620 *","length":4,"value":"00000000","referenced_from":["00683670 FUN_00683670","00683C70 FUN_00683c70"]}
+{"address":"008489B8","name":"g_allocationRecord_0067D3B0_008489B8","type":"AllocationRecord_0067D3B0 *","length":4,"value":"00000000","referenced_from":["00683670 FUN_00683670","00683C70 FUN_00683c70"]}
+{"address":"008489BC","name":"g_allocationRecord_0065CD10_008489BC","type":"AllocationRecord_0065CD10 *","length":4,"value":"00000000","referenced_from":["00683670 FUN_00683670","00683C70 FUN_00683c70"]}
 {"address":"008489C0","name":"DAT_008489c0","type":"undefined4","length":4,"value":"00000000h","referenced_from":["00683670 FUN_00683670","00683C70 FUN_00683c70"]}
-{"address":"008489C4","name":"PTR_008489c4","type":"AnonShape_GLOBAL_008489C4_F7BABFAC *","length":4,"value":"00000000","referenced_from":["00683C70 FUN_00683c70"]}
+{"address":"008489C4","name":"g_allocationRecord_006684E0_008489C4","type":"AllocationRecord_006684E0 *","length":4,"value":"00000000","referenced_from":["00683C70 FUN_00683c70"]}
 {"address":"008489C8","name":"DAT_008489c8","type":"undefined4","length":4,"value":"00000000h","referenced_from":["00683C70 FUN_00683c70"]}
 {"address":"008489CC","name":"PTR_008489cc","type":"AnonShape_GLOBAL_008489CC_CDF8C3F4 *","length":4,"value":"00000000","referenced_from":["00683C70 FUN_00683c70"]}
 {"address":"008489D0","name":"DAT_008489d0","type":"undefined4","length":4,"value":"00000000h","referenced_from":["006803B0 FUN_006803b0","00680890 FUN_00680890","00683C70 FUN_00683c70"]}
@@ -34629,7 +34629,7 @@
 {"address":"00848A08","name":"DAT_00848a08","type":"undefined1","length":1,"value":"00h","referenced_from":["00680530 FUN_00680530","00680550 FUN_00680550","00680570 FUN_00680570"]}
 {"address":"00848A0C","name":"DAT_00848a0c","type":"undefined4","length":4,"value":"00000000h","referenced_from":["00680590 FUN_00680590","00680650 FUN_00680650","00680710 FUN_00680710","006807D0 FUN_006807d0","00680890 FUN_00680890","00683C70 FUN_00683c70"]}
 {"address":"00848A10","name":"DAT_00848a10","type":"undefined4","length":4,"value":"00000000h","referenced_from":["00680590 FUN_00680590","00680650 FUN_00680650","00680710 FUN_00680710","006807D0 FUN_006807d0","00680890 FUN_00680890","00683C70 FUN_00683c70"]}
-{"address":"00848A14","name":"g_int_00848A14","type":"int *","length":4,"value":"00000000","referenced_from":["00682370 FUN_00682370","006823E0 FUN_006823e0","00683C70 FUN_00683c70"]}
+{"address":"00848A14","name":"g_anonShape_00683780_11EA4E23_00848A14","type":"AnonShape_00683780_11EA4E23 *","length":4,"value":"00000000","referenced_from":["00682370 FUN_00682370","006823E0 FUN_006823e0","00683C70 FUN_00683c70"]}
 {"address":"00848A18","name":"g_dArray_00848A18","type":"DArrayTy *","length":4,"value":"00000000","referenced_from":["0067EDB0 FUN_0067edb0","0067EE40 FUN_0067ee40","0067EF60 FUN_0067ef60","0067F030 FUN_0067f030","0067F1D0 FUN_0067f1d0","0067F260 FUN_0067f260"]}
 {"address":"00848A1C","name":"g_dArray_00848A1C","type":"DArrayTy *","length":4,"value":"00000000","referenced_from":["0067ED20 FUN_0067ed20","0067EE70 FUN_0067ee70","0067EF60 FUN_0067ef60","0067F0F0 FUN_0067f0f0","0067F1D0 FUN_0067f1d0","0067F260 FUN_0067f260"]}
 {"address":"00848A20","name":"DAT_00848a20","type":"undefined4","length":4,"value":"00000000h","referenced_from":["0067ECA0 FUN_0067eca0","0067F1D0 FUN_0067f1d0"]}
@@ -34773,7 +34773,7 @@
 {"address":"00855188","name":"DAT_00855188","type":"undefined4","length":4,"value":"00000000h","referenced_from":["006C0FB0 Library::DKW::SND::FUN_006c0fb0","006C2530 Library::DKW::SND::FUN_006c2530"]}
 {"address":"008551AC","name":"DAT_008551ac","type":"undefined1","length":1,"value":"00h","referenced_from":["006C0FB0 Library::DKW::SND::FUN_006c0fb0","006C2530 Library::DKW::SND::FUN_006c2530"]}
 {"address":"00856878","name":"DAT_00856878","type":"undefined4","length":4,"value":"00000000h","referenced_from":["006BFE70 FUN_006bfe70","006C1AD0 Library::DKW::SND::FUN_006c1ad0","006C2050 FUN_006c2050","006C2530 Library::DKW::SND::FUN_006c2530"]}
-{"address":"008568B0","name":"LPVOID_008568b0","type":"LPVOID","length":4,"value":"00000000","referenced_from":["006BFE70 FUN_006bfe70","006C2050 FUN_006c2050","006C2530 Library::DKW::SND::FUN_006c2530"]}
+{"address":"008568B0","name":"g_lpBuffer_008568B0","type":"LPVOID","length":4,"value":"00000000","referenced_from":["006BFE70 FUN_006bfe70","006C2050 FUN_006c2050","006C2530 Library::DKW::SND::FUN_006c2530"]}
 {"address":"008568B4","name":"DAT_008568b4","type":"undefined4","length":4,"value":"00000000h","referenced_from":["006BFBF0 FUN_006bfbf0","006C0FB0 Library::DKW::SND::FUN_006c0fb0","006C1530 Library::DKW::SND::FUN_006c1530","006C18D0 FUN_006c18d0","006C1950 FUN_006c1950","006C19D0 FUN_006c19d0","006C1AD0 Library::DKW::SND::FUN_006c1ad0","006C1BA0 FUN_006c1ba0","006C1C90 FUN_006c1c90","006C1CE0 Library::DKW::SND::FUN_006c1ce0","006C1D80 Library::DKW::SND::FUN_006c1d80","006C1E20 FUN_006c1e20","006C1F00 FUN_006c1f00","006C1F90 FUN_006c1f90","006C2050 FUN_006c2050","006C2220 Library::DKW::SND::FUN_006c2220","006C2530 Library::DKW::SND::FUN_006c2530"]}
 {"address":"008568B8","name":"DAT_008568b8","type":"undefined4","length":4,"value":"00000000h","referenced_from":["006C1530 Library::DKW::SND::FUN_006c1530","006C2050 FUN_006c2050"]}
 {"address":"008568BC","name":"DAT_008568bc","type":"undefined4","length":4,"value":"00000000h","referenced_from":["006BFBF0 FUN_006bfbf0","006C1530 Library::DKW::SND::FUN_006c1530","006C18B0 FUN_006c18b0","006C2140 FUN_006c2140","006C2160 Library::DKW::SND::FUN_006c2160","006C2220 Library::DKW::SND::FUN_006c2220"]}

@@ -12,7 +12,8 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
   int uVar4;
   int iVar6;
   int iVar7;
-  bool bVar8;
+  int iVar8;
+  bool bVar9;
   int local_34;
   int local_30;
   int local_2c;
@@ -53,43 +54,43 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
     if (0 < local_10) {
       do {
         if (local_30 < local_34 * 2) {
-          iVar7 = (local_30 - local_34) + param_3;
+          iVar8 = (local_30 - local_34) + param_3;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (param_4 - param_3) + local_c;
         }
         else if (local_30 < local_14) {
-          iVar7 = param_3 + local_34;
+          iVar8 = param_3 + local_34;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = local_30 + local_34 * -3 + param_4;
         }
         else {
           if (local_30 < local_18) {
-            iVar7 = (local_1c - local_30) + param_3;
-            iVar6 = local_34;
+            iVar8 = (local_1c - local_30) + param_3;
+            iVar7 = local_34;
           }
           else {
-            iVar6 = local_20 - local_30;
-            iVar7 = local_c;
+            iVar7 = local_20 - local_30;
+            iVar8 = local_c;
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_2 = iVar6 + param_4;
+          param_2 = iVar7 + param_4;
         }
-        if (((((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
+        if (((((-1 < iVar8) && (iVar8 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
             ((param_2 < g_worldGrid.sizeY &&
-             (iVar6 = FUN_006aced8(param_3,param_4,iVar7,param_2), iVar6 <= DAT_007951b0 / 0xc9))))
+             (iVar6 = FUN_006aced8(param_3,param_4,iVar8,param_2), iVar6 <= DAT_007951b0 / 0xc9))))
            && (local_2c = 0, 0 < g_worldGrid.sizeZ)) {
           do {
-            this = STGridAt3D(g_worldGrid, iVar7, param_2, local_2c).
+            this = STGridAt3D(g_worldGrid, iVar8, param_2, local_2c).
                    objects[0];
             if ((((this != nullptr) && (this[1].vtable < (STWorldObjectVTable *)0x8))
                 && ((g_playSystem_00802A38 == nullptr ||
                     (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)))) &&
-               (iVar6 = this->GetObjectTypeId(), iVar6 == 0x73)) {
+               (iVar7 = this->GetObjectTypeId(), iVar7 == 0x73)) {
               bVar1 = *(byte *)&this[1].vtable;
               if (g_app_00806728->field_146F == '\0') {
                 if (bVar1 == param_1) {
 LAB_004b2fd4:
-                  iVar6 = 0;
+                  iVar7 = 0;
                 }
                 else {
                   uVar3 = (uint)bVar1;
@@ -97,30 +98,30 @@ LAB_004b2fd4:
                   cVar2 = (&g_app_00806728->field_0x142f)[uVar5 + uVar3 * 8];
                   if ((cVar2 == '\0') &&
                      ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
-                    iVar6 = -2;
+                    iVar7 = -2;
                   }
                   else if ((cVar2 == '\x01') &&
                           ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\0')) {
-                    iVar6 = -1;
+                    iVar7 = -1;
                   }
                   else if ((cVar2 == '\0') &&
                           ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] == '\x01')) {
-                    iVar6 = 1;
+                    iVar7 = 1;
                   }
                   else {
                     if ((cVar2 != '\x01') ||
                        ((&g_app_00806728->field_0x142f)[uVar3 + uVar5 * 8] != '\x01'))
                     goto LAB_004b2fd4;
-                    iVar6 = 2;
+                    iVar7 = 2;
                   }
                 }
-                bVar8 = iVar6 < 0;
+                bVar9 = iVar7 < 0;
               }
               else {
-                bVar8 = (&g_app_00806728->field_0x11ca)[(uint)param_1 * 0x51] !=
+                bVar9 = (&g_app_00806728->field_0x11ca)[(uint)param_1 * 0x51] !=
                         (&g_app_00806728->field_0x11ca)[(uint)bVar1 * 0x51];
               }
-              if ((bVar8) && (local_24 <= *(int *)&this[0x22].field_0x8)) {
+              if ((bVar9) && (local_24 <= *(int *)&this[0x22].field_0x8)) {
                 local_24 = *(int *)&this[0x22].field_0x8 - local_24;
                 *(int *)&this[0x22].field_0x8 = local_24;
                 if (local_24 < 0) {

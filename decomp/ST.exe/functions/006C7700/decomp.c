@@ -9,9 +9,9 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
   LONG LVar3;
   int iVar4;
   uint uVar5;
-  undefined4 *puVar6;
+  int *piVar6;
   int iVar7;
-  undefined4 *puVar8;
+  int *piVar8;
   char local_94;
   char local_93;
   char local_92;
@@ -21,14 +21,14 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
   undefined1 uStack_8d;
   short local_8c;
   short local_8a;
-  undefined4 local_84 [12];
+  int local_84 [12];
   byte local_53;
   short sStack_52;
   undefined1 uStack_50;
   undefined1 uStack_4f;
   undefined4 local_14;
   int local_10;
-  undefined4 *local_c;
+  int *local_c;
   char local_5;
 
   local_c = nullptr;
@@ -72,7 +72,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
   local_14 = param_1->field_002A;
   uVar5 = (-(uint)(local_93 != '\x03') & 0xe) + 2;
   if (bVar1) {
-    local_c = (undefined4 *)FUN_006bfb70(0x300);
+    local_c = FUN_006bfb70(0x300);
     param_1->field_001E = local_c;
     if (local_c == nullptr) {
       return 0xfffffffe;
@@ -108,7 +108,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
     }
   }
   else if (local_93 != '\x03') {
-    local_c = (undefined4 *)FUN_006bfb70(0x30);
+    local_c = FUN_006bfb70(0x30);
     param_1->field_001E = local_c;
     if (local_c == nullptr) {
       return 0xfffffffe;
@@ -117,12 +117,12 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = uVar5;
   if (uVar5 == 0x10) {
-    puVar6 = local_84;
-    puVar8 = local_c;
+    piVar6 = local_84;
+    piVar8 = local_c;
     for (iVar4 = 0xc; iVar7 = local_10, iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar8 = *puVar6;
-      puVar6 = puVar6 + 1;
-      puVar8 = puVar8 + 1;
+      *piVar8 = *piVar6;
+      piVar6 = piVar6 + 1;
+      piVar8 = piVar8 + 1;
     }
   }
 LAB_006c78ff:

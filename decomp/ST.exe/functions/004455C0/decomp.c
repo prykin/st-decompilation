@@ -9,11 +9,16 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
 
 {
   ushort uVar2;
+  int local_EAX_40;
   int iVar3;
-  uint uVar4;
+  uint uVar3;
+  int local_EAX_166;
+  int local_EAX_284;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EAX;
   int iVar5;
+  uint uVar4;
+  int iVar4;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   InternalExceptionFrame local_58;
@@ -26,15 +31,15 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-  if (iVar3 != 0) {
+  local_EAX_40 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  if (local_EAX_40 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27df,0,iVar3,"%s"
-                               ,"STAllPlayersC::CreateBoat");
-    if (iVar5 != 0) {
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27df,0,local_EAX_40,
+                               "%s","STAllPlayersC::CreateBoat");
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x27e0);
+    RaiseInternalException(local_EAX_40,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x27e0);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     return CONCAT22(extraout_var,(undefined2)local_14);
   }
@@ -49,9 +54,10 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
                0x27b6);
   }
   if ((7 < (uint)param_1[5]) && (param_1[5] != 0xffffffff)) {
-    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27c2,0,0,"%s",
-                               "STAllPlayersC::CreateBoat - incorrect player color");
-    if (iVar3 != 0) {
+    local_EAX_166 =
+         ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27c2,0,0,"%s",
+                            "STAllPlayersC::CreateBoat - incorrect player color");
+    if (local_EAX_166 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
@@ -62,9 +68,10 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
       (STField<short>(param_1,0x1e) < 0)) ||
      (((g_worldGrid.sizeY <= STField<short>(param_1,0x1e) || (*(short *)(param_1 + 8) < 0)) ||
       (g_worldGrid.sizeZ <= *(short *)(param_1 + 8))))) {
-    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27c8,0,0,"%s",
-                               "STAllPlayersC::CreateBoat - incorrect position");
-    if (iVar3 != 0) {
+    local_EAX_284 =
+         ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27c8,0,0,"%s",
+                            "STAllPlayersC::CreateBoat - incorrect position");
+    if (local_EAX_284 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
@@ -89,16 +96,16 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
     }
   }
   STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x14,0,&local_c,param_1,0);
-  iVar3 = local_c;
+  iVar5 = local_c;
   if (local_c == 0) {
     RaiseInternalException
               (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x27db);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    iVar3 = extraout_EAX;
+    iVar5 = extraout_EAX;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar4 = STGroupC::AddObj(local_8,STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(*(undefined2 *)(local_c + 0x32))),0);
+  uVar4 = STGroupC::AddObj(local_8,STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(*(undefined2 *)(local_c + 0x32))),0);
   g_currentExceptionFrame = local_58.previous;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   return STReplaceLowWord((uint32_t)(uVar4), (uint16_t)(*(undefined2 *)(local_c + 0x32)));

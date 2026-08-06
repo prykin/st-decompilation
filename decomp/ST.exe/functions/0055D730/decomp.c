@@ -15,6 +15,7 @@ int __cdecl LoadGamePlt(int param_1,byte param_2)
 {
   int iVar2;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;

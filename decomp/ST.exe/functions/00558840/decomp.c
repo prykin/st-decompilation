@@ -14,8 +14,10 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
 {
   STMessageId SVar1;
   VisibleClassTy *this_00;
+  int local_EAX_34;
   int iVar3;
   VisibleClassTy_field_0110Element *element_0110;
+  int iVar4;
   int iVar5;
   uint uVar6;
   uint uVar7;
@@ -32,9 +34,9 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  local_EAX_34 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
-  if (iVar3 == 0) {
+  if (local_EAX_34 == 0) {
     local_14->field_0108 = g_playSystem_00802A38->field_00E4;
     SVar1 = message->id;
     if (SVar1 < MESS_STSPRGAMEOBJC_0109) {
@@ -127,10 +129,10 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x186,0,iVar3,
+  iVar4 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x186,0,local_EAX_34,
                              "VisibleClassTy::GetMessage error mess->id == %lX",message->id);
-  if (iVar5 == 0) {
-    RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\visible.cpp",0x187);
+  if (iVar4 == 0) {
+    RaiseInternalException(local_EAX_34,0,"E:\\__titans\\grig\\visible.cpp",0x187);
     return 0xffff;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

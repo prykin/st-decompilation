@@ -9,13 +9,16 @@
    [STSourceProvenanceApplier end]
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 00649EB0 -> 00648400 @ 00649EF8 */
+   Evidence: 00649EB0 -> 00648400 @ 00649EF8
 
-undefined4 * __cdecl st::fn_00648400(char *text,undefined4 param_2)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00648400 returns stored into global 008489B4 @ 00685C3F */
+
+AllocationRecord_00648620 * __cdecl st::fn_00648400(char *text,undefined4 param_2)
 
 {
   int exceptionCode;
-  undefined4 *puVar1;
+  AllocationRecord_0065CD10 *pAVar1;
   InternalExceptionFrame local_4c;
   AnonShape_00648400_5C076F88 *local_8;
 
@@ -28,11 +31,11 @@ undefined4 * __cdecl st::fn_00648400(char *text,undefined4 param_2)
     local_8->field_0001 = 0x85;
     local_8->field_0005 = 2;
     st::fn_0072E340(&local_8->field_0x6,text,0x3f);
-    puVar1 = st::fn_004015E1(text);
-    local_8->field_004E = puVar1;
+    pAVar1 = st::fn_004015E1(text);
+    local_8->field_004E = (undefined4 *)pAVar1;
     local_8->field_0052 = param_2;
     g_currentExceptionFrame = local_4c.previous;
-    return (undefined4 *)local_8;
+    return (AllocationRecord_00648620 *)local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
   st::fn_004020A4((int *)&local_8);
@@ -58,7 +61,7 @@ AllocationRecord_00648530 * __cdecl st::fn_00648530(AllocationRecord_00648530 *p
 
 {
   int iVar1;
-  AllocationRecord_0065CB00 *pAVar2;
+  AllocationRecord_0065CB00 *pAVar1;
   AllocationRecord_00648530 *pAVar3;
   AnonShape_00648530_D39EB612 *pAVar4;
   InternalExceptionFrame local_4c;
@@ -75,9 +78,9 @@ AllocationRecord_00648530 * __cdecl st::fn_00648530(AllocationRecord_00648530 *p
     memmove(pAVar4, pAVar3, 0x85); /* compiler REP MOVS byte copy */
     local_8->field_0001 = 0x85;
     local_8->field_0005 = 2;
-    pAVar2 = st::fn_00403BF2((AllocationRecord_0065CB00 *)
+    pAVar1 = st::fn_00403BF2((AllocationRecord_0065CB00 *)
                                 (&param_1->field_0x84 + local_8->field_0046));
-    local_8->field_004E = (undefined4 *)pAVar2;
+    local_8->field_004E = (undefined4 *)pAVar1;
     g_currentExceptionFrame = local_4c.previous;
     return (AllocationRecord_00648530 *)local_8;
   }
@@ -110,35 +113,35 @@ st::fn_00648620(AllocationRecord_00648620 *param_1,undefined4 *param_2,int param
 
 {
   int iVar2;
-  AllocationRecord_00648620 *pAVar3;
+  AllocationRecord_00648620 *pAVar2;
   int iVar4;
-  AllocationRecord_00648620 *pAVar5;
+  AllocationRecord_00648620 *pAVar3;
   uint uVar7;
   byte *puVar8;
   InternalExceptionFrame local_4c;
-  void *local_8;
+  int local_8;
 
-  local_8 = nullptr;
+  local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     *param_4 = param_3 + 0x85U;
-    pAVar3 = st::fn_006AAC10(param_3 + 0x85U);
-    pAVar5 = pAVar3;
-    memmove(pAVar5, param_1, 0x85); /* compiler REP MOVS byte copy */
-    pAVar3->field_0001 = *param_4;
-    pAVar3->field_004A = param_3;
-    pAVar3->field_0005 = 0;
-    uVar7 = pAVar3->field_004A;
-    puVar8 = (byte *)&pAVar3->field_0x84;
+    pAVar2 = st::fn_006AAC10(param_3 + 0x85U);
+    pAVar3 = pAVar2;
+    memmove(pAVar3, param_1, 0x85); /* compiler REP MOVS byte copy */
+    pAVar2->field_0001 = *param_4;
+    pAVar2->field_004A = param_3;
+    pAVar2->field_0005 = 0;
+    uVar7 = pAVar2->field_004A;
+    puVar8 = (byte *)&pAVar2->field_0x84;
     memmove(puVar8, param_2, uVar7); /* compiler REP MOVS byte copy */
-    pAVar3->field_0046 = &pAVar3->field_0x84 + (-0x84 - (int)pAVar3);
+    pAVar2->field_0046 = &pAVar2->field_0x84 + (-0x84 - (int)pAVar2);
     g_currentExceptionFrame = local_4c.previous;
-    return pAVar3;
+    return pAVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
-  if (local_8 != nullptr) {
+  if (local_8 != 0) {
     st::fn_006AB060(&local_8);
   }
   iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_boss_d.cpp",0x6b,0,iVar2,"%s",
@@ -210,6 +213,7 @@ int __cdecl st::fn_006488C0(int param_1,char *param_2,AllocationRecord_00648620 
 {
   int iVar2;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_58;
   uint local_14;
   uint local_10;

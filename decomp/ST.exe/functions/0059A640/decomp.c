@@ -12,7 +12,7 @@ void __thiscall FSGSTy::PaintGameNew(FSGSTy *this)
   FSGSTy *pFVar3;
   int iVar4;
   undefined4 *puVar5;
-  uint *puVar6;
+  char *pcVar6;
   uint uVar7;
   uint uVar8;
   int iVar9;
@@ -44,22 +44,22 @@ void __thiscall FSGSTy::PaintGameNew(FSGSTy *this)
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)LoadResourceString(0x256b,g_hINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
+    pcVar6 = LoadResourceString(0x256b,g_hINSTANCE_00807618);
+    ccFntTy::WrStr(pFVar3->field_1A73,pcVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x5b,0x188,0x1b,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x7f,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)LoadResourceString(0x2550,g_hINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
+    pcVar6 = LoadResourceString(0x2550,g_hINSTANCE_00807618);
+    ccFntTy::WrStr(pFVar3->field_1A73,pcVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x92,0xb6,0x16,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0xb1,0xb4,0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)LoadResourceString(0x256d,g_hINSTANCE_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
+    pcVar6 = LoadResourceString(0x256d,g_hINSTANCE_00807618);
+    ccFntTy::WrStr(pFVar3->field_1A73,pcVar6,iVar4,iVar9,uVar8);
     FUN_006c7570((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x19,0xc5,(undefined4 *)0x186
                  ,0x19,4,0xf);
     FUN_006c7570((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x1b,199,(undefined4 *)0x182,

@@ -9,9 +9,10 @@ uint __thiscall
 STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint param_3)
 
 {
+  int iVar3;
   int iVar2;
-  uint uVar3;
-  STGameObjC *pSVar4;
+  uint uVar4;
+  STGameObjC *pSVar5;
   DArrayTy *array;
   undefined4 local_2c;
   int local_26;
@@ -64,8 +65,8 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
             local_1a = 3;
             local_2c = 1;
             Library::DKW::TBL::DArrayPut(this->field_022E,param_3,&local_2c);
-            iVar2 = sub_004A7E30(this,1);
-            return (uint)(iVar2 != 0);
+            iVar3 = sub_004A7E30(this,1);
+            return (uint)(iVar3 != 0);
           }
         }
         local_1a = 1;
@@ -81,14 +82,14 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
     array = this->field_022E;
   }
   else {
-    pSVar4 = thunk_FUN_00423e70(this,(ushort)param_2);
-    if ((int)pSVar4->field_0047 != pSVar4->field_00C7) {
+    pSVar5 = thunk_FUN_00423e70(this,(ushort)param_2);
+    if ((int)pSVar5->field_0047 != pSVar5->field_00C7) {
       return 0;
     }
-    if ((int)pSVar4->field_0049 != pSVar4->field_00CB) {
+    if ((int)pSVar5->field_0049 != pSVar5->field_00CB) {
       return 0;
     }
-    if ((int)pSVar4->field_004B != pSVar4->field_00CF) {
+    if ((int)pSVar5->field_004B != pSVar5->field_00CF) {
       return 0;
     }
     if (this->field_023E == 0) {
@@ -99,7 +100,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   }
   local_2c = 1;
   Library::DKW::TBL::DArrayPut(array,param_3,&local_2c);
-  iVar2 = sub_004A7E30(this,1);
-  return (uint)(iVar2 != 0);
+  iVar3 = sub_004A7E30(this,1);
+  return (uint)(iVar3 != 0);
 }
 

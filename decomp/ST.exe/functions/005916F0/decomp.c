@@ -11,9 +11,11 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
   MMsgTy *this_00;
   CampaignTy *pCVar2;
   int iVar3;
-  undefined4 *puVar4;
-  uint *puVar5;
   int iVar6;
+  int iVar4;
+  undefined4 *puVar5;
+  uint *puVar6;
+  int iVar7;
   InternalExceptionFrame local_4c;
   CampaignTy *local_8;
 
@@ -43,37 +45,37 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
       MMsgTy::HideSprites(this_00);
       *(undefined4 *)(*(int *)(pCVar2->field_1A5B + 0x2e6) + 0x1cab) = 0;
     }
-    puVar4 = &pCVar2->field_1B13;
-    iVar3 = 3;
+    puVar5 = &pCVar2->field_1B13;
+    iVar4 = 3;
     do {
-      iVar6 = 0xf;
+      iVar7 = 0xf;
       do {
-        if ((undefined4 *)*puVar4 != nullptr) {
-          FUN_006c4a70((undefined4 *)*puVar4);
-          *puVar4 = 0;
+        if ((undefined4 *)*puVar5 != nullptr) {
+          FUN_006c4a70((undefined4 *)*puVar5);
+          *puVar5 = 0;
         }
-        if (puVar4[-0x2d] != 0) {
-          cMf32::RecMemFree(g_cMf32_00806780,puVar4 + -0x2d);
+        if (puVar5[-0x2d] != 0) {
+          cMf32::RecMemFree(g_cMf32_00806780,puVar5 + -0x2d);
         }
         pCVar2 = local_8;
-        puVar4 = puVar4 + 1;
-        iVar6 = iVar6 + -1;
-      } while (iVar6 != 0);
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
-    iVar3 = 4;
-    puVar5 = local_8->field_1BD7;
+        puVar5 = puVar5 + 1;
+        iVar7 = iVar7 + -1;
+      } while (iVar7 != 0);
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
+    iVar4 = 4;
+    puVar6 = local_8->field_1BD7;
     do {
-      if ((undefined4 *)*puVar5 != nullptr) {
-        FUN_006c4a70((undefined4 *)*puVar5);
-        *puVar5 = 0;
+      if ((undefined4 *)*puVar6 != nullptr) {
+        FUN_006c4a70((undefined4 *)*puVar6);
+        *puVar6 = 0;
       }
-      if (puVar5[-4] != 0) {
-        cMf32::RecMemFree(g_cMf32_00806780,puVar5 + -4);
+      if (puVar6[-4] != 0) {
+        cMf32::RecMemFree(g_cMf32_00806780,puVar6 + -4);
       }
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      puVar6 = puVar6 + 1;
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
     if (pCVar2->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pCVar2->field_0x3d);
     }

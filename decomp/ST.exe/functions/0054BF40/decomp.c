@@ -29,10 +29,12 @@ CursorClassTy::SetGCType
   CursorClassTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
-  char *pcVar5;
-  BITMAPINFO *pBVar6;
-  uint uVar7;
+  undefined4 uVar2;
+  char *pcVar3;
+  BITMAPINFO *pBVar4;
+  uint uVar5;
+  int iVar6;
+  int iVar7;
   InternalExceptionFrame local_58;
   CursorClassTy *local_14;
   undefined4 local_10;
@@ -67,275 +69,275 @@ switchD_0054bfbc_caseD_20:
   case 0:
     switch(local_14->field_0493) {
     case CASE_1:
-      pcVar5 = "CUR_MENU";
+      pcVar3 = "CUR_MENU";
       break;
     default:
-      pcVar5 = "CUR_ARROW";
+      pcVar3 = "CUR_ARROW";
       break;
     case CASE_3:
-      pcVar5 = "CUR_TASK";
+      pcVar3 = "CUR_TASK";
       break;
     case CASE_4:
-      pcVar5 = "CUR_REPORT";
+      pcVar3 = "CUR_REPORT";
       break;
     case CASE_5:
-      pcVar5 = "CUR_CLOCK";
+      pcVar3 = "CUR_CLOCK";
     }
-    iVar3 = -1;
-    iVar2 = -1;
+    iVar7 = -1;
+    iVar6 = -1;
     if (local_14->field_0493 == CASE_5) {
-      uVar7 = 0x12;
-      pBVar6 = (BITMAPINFO *)0xd;
-      uVar4 = 1000;
+      uVar5 = 0x12;
+      pBVar4 = (BITMAPINFO *)0xd;
+      uVar2 = 1000;
     }
     else {
-      uVar7 = 0;
-      pBVar6 = nullptr;
-      uVar4 = 0x32;
+      uVar5 = 0;
+      pBVar4 = nullptr;
+      uVar2 = 0x32;
     }
     goto cf_common_exit_0054C01C;
   case 1:
   case 6:
-    iVar3 = 0x20;
-    iVar2 = 0x3b;
-    uVar7 = 0x14;
-    pBVar6 = (BITMAPINFO *)0x22;
-    pcVar5 = "CUR_CMD";
+    iVar7 = 0x20;
+    iVar6 = 0x3b;
+    uVar5 = 0x14;
+    pBVar4 = (BITMAPINFO *)0x22;
+    pcVar3 = "CUR_CMD";
     goto cf_common_exit_0054C06F;
   case 2:
   case 7:
-    iVar3 = 0x32;
-    iVar2 = 0x43;
-    uVar7 = 0x1d;
-    pBVar6 = (BITMAPINFO *)0x27;
-    pcVar5 = "CUR_FIRE";
+    iVar7 = 0x32;
+    iVar6 = 0x43;
+    uVar5 = 0x1d;
+    pBVar4 = (BITMAPINFO *)0x27;
+    pcVar3 = "CUR_FIRE";
     break;
   case 3:
-    iVar3 = 0x1f;
-    iVar2 = 0x35;
-    uVar7 = 0x14;
-    pBVar6 = (BITMAPINFO *)0x22;
-    pcVar5 = "CUR_OWNBOAT";
+    iVar7 = 0x1f;
+    iVar6 = 0x35;
+    uVar5 = 0x14;
+    pBVar4 = (BITMAPINFO *)0x22;
+    pcVar3 = "CUR_OWNBOAT";
     break;
   case 4:
-    iVar3 = 0x1f;
-    iVar2 = 0x35;
-    uVar7 = 0x14;
-    pBVar6 = (BITMAPINFO *)0x22;
-    pcVar5 = "CUR_OWNOBJ";
+    iVar7 = 0x1f;
+    iVar6 = 0x35;
+    uVar5 = 0x14;
+    pBVar4 = (BITMAPINFO *)0x22;
+    pcVar3 = "CUR_OWNOBJ";
     goto cf_common_exit_0054C06F;
   case 5:
   case 0x14:
-    iVar3 = -1;
-    iVar2 = -1;
-    uVar7 = 0;
-    pBVar6 = nullptr;
-    pcVar5 = "CUR_ARROW";
+    iVar7 = -1;
+    iVar6 = -1;
+    uVar5 = 0;
+    pBVar4 = nullptr;
+    pcVar3 = "CUR_ARROW";
     break;
   case 8:
-    iVar3 = 0x39;
-    iVar2 = 0x37;
-    uVar7 = 0x26;
-    pBVar6 = (BITMAPINFO *)0x25;
-    pcVar5 = "CUR_DCBOMBER";
+    iVar7 = 0x39;
+    iVar6 = 0x37;
+    uVar5 = 0x26;
+    pBVar4 = (BITMAPINFO *)0x25;
+    pcVar3 = "CUR_DCBOMBER";
     goto cf_common_exit_0054C06F;
   case 9:
-    iVar3 = 0x34;
-    iVar2 = 0x43;
-    uVar7 = 0x1b;
-    pBVar6 = (BITMAPINFO *)0x24;
-    pcVar5 = "CUR_CAPTURE";
+    iVar7 = 0x34;
+    iVar6 = 0x43;
+    uVar5 = 0x1b;
+    pBVar4 = (BITMAPINFO *)0x24;
+    pcVar3 = "CUR_CAPTURE";
     break;
   case 10:
-    iVar3 = 0x34;
-    iVar2 = 0x43;
-    uVar7 = 0x1b;
-    pBVar6 = (BITMAPINFO *)0x24;
-    pcVar5 = "CUR_CAPTUREUSE";
+    iVar7 = 0x34;
+    iVar6 = 0x43;
+    uVar5 = 0x1b;
+    pBVar4 = (BITMAPINFO *)0x24;
+    pcVar3 = "CUR_CAPTUREUSE";
     goto cf_common_exit_0054C06F;
   case 0xb:
-    iVar3 = 0x34;
-    iVar2 = 0x43;
-    uVar7 = 0x1b;
-    pBVar6 = (BITMAPINFO *)0x24;
-    uVar4 = 0x32;
-    pcVar5 = "CUR_CAPTUREACS";
+    iVar7 = 0x34;
+    iVar6 = 0x43;
+    uVar5 = 0x1b;
+    pBVar4 = (BITMAPINFO *)0x24;
+    uVar2 = 0x32;
+    pcVar3 = "CUR_CAPTUREACS";
     goto cf_common_exit_0054C01C;
   case 0xc:
   case 0x1f:
-    iVar3 = 0x34;
-    iVar2 = 0x43;
-    uVar7 = 0x1b;
-    pBVar6 = (BITMAPINFO *)0x24;
-    uVar4 = 0x32;
-    pcVar5 = "CUR_PARALISE";
+    iVar7 = 0x34;
+    iVar6 = 0x43;
+    uVar5 = 0x1b;
+    pBVar4 = (BITMAPINFO *)0x24;
+    uVar2 = 0x32;
+    pcVar3 = "CUR_PARALISE";
     goto cf_common_exit_0054C01C;
   case 0xd:
   case 0xe:
-    iVar3 = 0x2c;
-    iVar2 = 0x41;
-    uVar7 = 0x1d;
-    pBVar6 = (BITMAPINFO *)0x2a;
-    pcVar5 = "CUR_DEFENCE";
+    iVar7 = 0x2c;
+    iVar6 = 0x41;
+    uVar5 = 0x1d;
+    pBVar4 = (BITMAPINFO *)0x2a;
+    pcVar3 = "CUR_DEFENCE";
     goto cf_common_exit_0054C06F;
   case 0xf:
   case 0x10:
-    iVar3 = 0x20;
-    iVar2 = 0x3b;
-    uVar7 = 0x14;
-    pBVar6 = (BITMAPINFO *)0x22;
-    pcVar5 = "CUR_PATROL";
+    iVar7 = 0x20;
+    iVar6 = 0x3b;
+    uVar5 = 0x14;
+    pBVar4 = (BITMAPINFO *)0x22;
+    pcVar3 = "CUR_PATROL";
     break;
   case 0x11:
-    iVar3 = 0x20;
-    iVar2 = 0x3b;
-    uVar7 = 0x14;
-    pBVar6 = (BITMAPINFO *)0x22;
-    uVar4 = 0x32;
-    pcVar5 = "CUR_EQUIPM";
+    iVar7 = 0x20;
+    iVar6 = 0x3b;
+    uVar5 = 0x14;
+    pBVar4 = (BITMAPINFO *)0x22;
+    uVar2 = 0x32;
+    pcVar3 = "CUR_EQUIPM";
     goto cf_common_exit_0054C01C;
   case 0x12:
-    iVar3 = 0x26;
-    iVar2 = 0x43;
-    uVar7 = 0x14;
-    pBVar6 = (BITMAPINFO *)0x22;
-    pcVar5 = "CUR_RC";
+    iVar7 = 0x26;
+    iVar6 = 0x43;
+    uVar5 = 0x14;
+    pBVar4 = (BITMAPINFO *)0x22;
+    pcVar3 = "CUR_RC";
     goto cf_common_exit_0054C06F;
   case 0x13:
-    iVar3 = 0x28;
-    iVar2 = 0x3c;
-    uVar7 = 0x1e;
-    pBVar6 = (BITMAPINFO *)0x28;
-    uVar4 = 0x32;
-    pcVar5 = "CUR_UNLOADRC";
+    iVar7 = 0x28;
+    iVar6 = 0x3c;
+    uVar5 = 0x1e;
+    pBVar4 = (BITMAPINFO *)0x28;
+    uVar2 = 0x32;
+    pcVar3 = "CUR_UNLOADRC";
     goto cf_common_exit_0054C01C;
   case 0x15:
-    iVar3 = -1;
-    iVar2 = -1;
-    uVar7 = 0x13;
-    pBVar6 = (BITMAPINFO *)0x23;
-    pcVar5 = "CUR_NOBUILD";
+    iVar7 = -1;
+    iVar6 = -1;
+    uVar5 = 0x13;
+    pBVar4 = (BITMAPINFO *)0x23;
+    pcVar3 = "CUR_NOBUILD";
     goto cf_common_exit_0054C06F;
   case 0x16:
-    iVar3 = 0x3a;
-    iVar2 = 0x38;
-    uVar7 = 0x26;
-    pBVar6 = (BITMAPINFO *)0x25;
-    uVar4 = 0x32;
-    pcVar5 = "CUR_DISMANTLING";
+    iVar7 = 0x3a;
+    iVar6 = 0x38;
+    uVar5 = 0x26;
+    pBVar4 = (BITMAPINFO *)0x25;
+    uVar2 = 0x32;
+    pcVar3 = "CUR_DISMANTLING";
     goto cf_common_exit_0054C01C;
   case 0x17:
   case 0x18:
-    iVar3 = 0x28;
-    iVar2 = 0x32;
-    uVar7 = 0x14;
-    pBVar6 = (BITMAPINFO *)0x23;
-    uVar4 = 0x32;
-    pcVar5 = "CUR_REPAIR";
+    iVar7 = 0x28;
+    iVar6 = 0x32;
+    uVar5 = 0x14;
+    pBVar4 = (BITMAPINFO *)0x23;
+    uVar2 = 0x32;
+    pcVar3 = "CUR_REPAIR";
     goto cf_common_exit_0054C01C;
   case 0x19:
-    iVar3 = 0x20;
-    iVar2 = 0x3b;
-    uVar7 = 0x14;
-    pBVar6 = (BITMAPINFO *)0x22;
-    uVar4 = 0x32;
-    pcVar5 = "CUR_VIEW";
+    iVar7 = 0x20;
+    iVar6 = 0x3b;
+    uVar5 = 0x14;
+    pBVar4 = (BITMAPINFO *)0x22;
+    uVar2 = 0x32;
+    pcVar3 = "CUR_VIEW";
     goto cf_common_exit_0054C01C;
   case 0x1a:
   case 0x1e:
-    iVar3 = 0x32;
-    iVar2 = 0x34;
-    uVar7 = 0x25;
-    pBVar6 = (BITMAPINFO *)0x25;
-    pcVar5 = "CUR_UNLOADCNT";
+    iVar7 = 0x32;
+    iVar6 = 0x34;
+    uVar5 = 0x25;
+    pBVar4 = (BITMAPINFO *)0x25;
+    pcVar3 = "CUR_UNLOADCNT";
     break;
   case 0x1b:
-    iVar3 = 0x21;
-    iVar2 = 0x3a;
-    uVar7 = 0x13;
-    pBVar6 = (BITMAPINFO *)0x21;
-    pcVar5 = "CUR_REPLENISH";
+    iVar7 = 0x21;
+    iVar6 = 0x3a;
+    uVar5 = 0x13;
+    pBVar4 = (BITMAPINFO *)0x21;
+    pcVar3 = "CUR_REPLENISH";
     break;
   case 0x1c:
-    iVar3 = 0x1b;
-    iVar2 = 0x56;
-    uVar7 = 0x13;
-    pBVar6 = (BITMAPINFO *)0x34;
-    pcVar5 = "CUR_FORMATION";
+    iVar7 = 0x1b;
+    iVar6 = 0x56;
+    uVar5 = 0x13;
+    pBVar4 = (BITMAPINFO *)0x34;
+    pcVar3 = "CUR_FORMATION";
     break;
   case 0x1d:
-    iVar3 = 0x2e;
-    iVar2 = 0x41;
-    uVar7 = 0x23;
-    pBVar6 = (BITMAPINFO *)0x28;
-    pcVar5 = "CUR_TELEPORT";
+    iVar7 = 0x2e;
+    iVar6 = 0x41;
+    uVar5 = 0x23;
+    pBVar4 = (BITMAPINFO *)0x28;
+    pcVar3 = "CUR_TELEPORT";
     goto cf_common_exit_0054C06F;
   default:
     goto switchD_0054bfbc_caseD_20;
   case 0x32:
-    iVar3 = -1;
-    iVar2 = -1;
-    uVar7 = 0x1b;
-    pBVar6 = (BITMAPINFO *)0x24;
-    pcVar5 = "CUR_SUP";
+    iVar7 = -1;
+    iVar6 = -1;
+    uVar5 = 0x1b;
+    pBVar4 = (BITMAPINFO *)0x24;
+    pcVar3 = "CUR_SUP";
     goto cf_common_exit_0054C06F;
   case 0x33:
-    iVar3 = -1;
-    iVar2 = -1;
-    uVar7 = 0x1b;
-    pBVar6 = (BITMAPINFO *)0x24;
-    uVar4 = 0x32;
-    pcVar5 = "CUR_SDN";
+    iVar7 = -1;
+    iVar6 = -1;
+    uVar5 = 0x1b;
+    pBVar4 = (BITMAPINFO *)0x24;
+    uVar2 = 0x32;
+    pcVar3 = "CUR_SDN";
     goto cf_common_exit_0054C01C;
   case 0x34:
-    iVar3 = -1;
-    iVar2 = -1;
-    uVar7 = 0x1b;
-    pBVar6 = (BITMAPINFO *)0x24;
-    pcVar5 = "CUR_SRT";
+    iVar7 = -1;
+    iVar6 = -1;
+    uVar5 = 0x1b;
+    pBVar4 = (BITMAPINFO *)0x24;
+    pcVar3 = "CUR_SRT";
     break;
   case 0x35:
-    iVar3 = -1;
-    iVar2 = -1;
-    uVar7 = 0x1b;
-    pBVar6 = (BITMAPINFO *)0x24;
-    pcVar5 = "CUR_SLT";
+    iVar7 = -1;
+    iVar6 = -1;
+    uVar5 = 0x1b;
+    pBVar4 = (BITMAPINFO *)0x24;
+    pcVar3 = "CUR_SLT";
     goto cf_common_exit_0054C06F;
   case 0x36:
-    iVar3 = -1;
-    iVar2 = -1;
-    uVar7 = 0x16;
-    pBVar6 = (BITMAPINFO *)0x24;
-    uVar4 = 0x32;
-    pcVar5 = "CUR_SLU";
+    iVar7 = -1;
+    iVar6 = -1;
+    uVar5 = 0x16;
+    pBVar4 = (BITMAPINFO *)0x24;
+    uVar2 = 0x32;
+    pcVar3 = "CUR_SLU";
     goto cf_common_exit_0054C01C;
   case 0x37:
-    iVar3 = -1;
-    iVar2 = -1;
-    uVar7 = 0x16;
-    pBVar6 = (BITMAPINFO *)0x24;
-    pcVar5 = "CUR_SRU";
+    iVar7 = -1;
+    iVar6 = -1;
+    uVar5 = 0x16;
+    pBVar4 = (BITMAPINFO *)0x24;
+    pcVar3 = "CUR_SRU";
     break;
   case 0x38:
-    iVar3 = -1;
-    iVar2 = -1;
-    uVar7 = 0x20;
-    pBVar6 = (BITMAPINFO *)0x24;
-    pcVar5 = "CUR_SLD";
+    iVar7 = -1;
+    iVar6 = -1;
+    uVar5 = 0x20;
+    pBVar4 = (BITMAPINFO *)0x24;
+    pcVar3 = "CUR_SLD";
 cf_common_exit_0054C06F:
-    SetImages(local_14,1,pcVar5,0x32,pBVar6,uVar7,iVar2,iVar3);
+    SetImages(local_14,1,pcVar3,0x32,pBVar4,uVar5,iVar6,iVar7);
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   case 0x39:
-    iVar3 = -1;
-    iVar2 = -1;
-    uVar7 = 0x20;
-    pBVar6 = (BITMAPINFO *)0x24;
-    uVar4 = 0x32;
-    pcVar5 = "CUR_SRD";
+    iVar7 = -1;
+    iVar6 = -1;
+    uVar5 = 0x20;
+    pBVar4 = (BITMAPINFO *)0x24;
+    uVar2 = 0x32;
+    pcVar3 = "CUR_SRD";
 cf_common_exit_0054C01C:
-    SetImages(local_14,1,pcVar5,uVar4,pBVar6,uVar7,iVar2,iVar3);
+    SetImages(local_14,1,pcVar3,uVar2,pBVar4,uVar5,iVar6,iVar7);
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = local_58.previous;
     return 0;
@@ -347,8 +349,8 @@ cf_common_exit_0054C01C:
   case 0x41:
   case 0x42:
   case 0x43:
-    iVar2 = param_1 - 0x3c;
-    switch(iVar2) {
+    iVar6 = param_1 - 0x3c;
+    switch(iVar6) {
     case 0:
     case 1:
       local_c = (BITMAPINFO *)0x22;
@@ -366,7 +368,7 @@ cf_common_exit_0054C01C:
     default:
       goto switchD_0054c0ac_default;
     }
-    switch(iVar2) {
+    switch(iVar6) {
     case 0:
     case 4:
     case 5:
@@ -382,11 +384,11 @@ cf_common_exit_0054C01C:
       local_8 = 0x14;
     }
 switchD_0054c0ac_default:
-    iVar3 = -1;
-    iVar2 = -1;
-    pcVar5 = "CUR_SNO";
-    pBVar6 = local_c;
-    uVar7 = local_8;
+    iVar7 = -1;
+    iVar6 = -1;
+    pcVar3 = "CUR_SNO";
+    pBVar4 = local_c;
+    uVar5 = local_8;
     break;
   case 0x46:
     SetImages(local_14,1,"CUR_HYPER",0x32,(BITMAPINFO *)0xd,0,0x1b,0xf);
@@ -399,13 +401,13 @@ switchD_0054c0ac_default:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   case 0x48:
-    iVar3 = 0x1e;
-    iVar2 = 0x36;
-    pcVar5 = "CUR_HELPYES";
-    pBVar6 = (BITMAPINFO *)0x20;
-    uVar7 = 0x12;
+    iVar7 = 0x1e;
+    iVar6 = 0x36;
+    pcVar3 = "CUR_HELPYES";
+    pBVar4 = (BITMAPINFO *)0x20;
+    uVar5 = 0x12;
   }
-  SetImages(local_14,1,pcVar5,0x32,pBVar6,uVar7,iVar2,iVar3);
+  SetImages(local_14,1,pcVar3,0x32,pBVar4,uVar5,iVar6,iVar7);
   DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
   g_currentExceptionFrame = local_58.previous;
   return 0;

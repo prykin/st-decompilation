@@ -17,9 +17,11 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   STParticleC *pSVar7;
   int iVar8;
   char *text;
-  ushort *puVar9;
+  ushort *puVar8;
+  int iVar9;
   int iVar10;
-  undefined4 uVar11;
+  undefined4 uVar10;
+  int iVar11;
   bool bVar12;
   uint *puVar13;
   InternalExceptionFrame local_60;
@@ -50,24 +52,24 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   if (3 < *(byte *)&local_18->field_0014) {
     text = PTR_s_expl_sb0_007d0c40;
   }
-  puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+  puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806764,CASE_1D,text,0xffffffff,0,1,0,nullptr);
-  pSVar7->field_00B6 = *(int *)puVar9;
+  pSVar7->field_00B6 = *(int *)puVar8;
   if (param_1 != 0) {
     puVar1 = &pSVar7->field_00C6;
     if ((int)pSVar7->field_00C6 < 0) {
       ST3DSMAPContext::sub_006E8660
-                (g_sT3DSMAPContext_00807598,puVar1,2,0,STField<uint>(puVar9,9),
-                 STField<uint>(puVar9,0xd),0x5a,0x45,0);
+                (g_sT3DSMAPContext_00807598,puVar1,2,0,STField<uint>(puVar8,9),
+                 STField<uint>(puVar8,0xd),0x5a,0x45,0);
     }
     else {
       Library::Ourlib::ST3DSMAP::SprSetShadow(g_sT3DSMAPContext_00807598,pSVar7->field_00C6,0,0,0);
       Library::Ourlib::ST3DSMAP::SprSetIms
-                (g_sT3DSMAPContext_00807598,*puVar1,2,0,STField<uint>(puVar9,9),
-                 STField<uint>(puVar9,0xd),0x5a,0x45,1);
+                (g_sT3DSMAPContext_00807598,*puVar1,2,0,STField<uint>(puVar8,9),
+                 STField<uint>(puVar8,0xd),0x5a,0x45,1);
     }
     ST3DSMAPContext::sub_006E98E0
-              (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar9,STField<int>(puVar9,0x21),1);
+              (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar8,STField<int>(puVar8,0x21),1);
     ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,pSVar7->field_00B2);
     local_1c = (float)pSVar7->field_0046 * _DAT_007904f8 * _DAT_007904f0;
     pSVar7->field_006A = local_1c;
@@ -81,44 +83,44 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     pSVar7->field_00C1 = 1;
     pVVar6 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != nullptr) {
-      iVar8 = pSVar7->field_004E;
-      sVar4 = (short)(iVar8 >> 0x1f);
-      if (iVar8 < 0) {
-        local_c = (float)((short)(((short)(iVar8 / 200) + sVar4) -
-                                 (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) + -1);
+      iVar11 = pSVar7->field_004E;
+      sVar4 = (short)(iVar11 >> 0x1f);
+      if (iVar11 < 0) {
+        local_c = (float)((short)(((short)(iVar11 / 200) + sVar4) -
+                                 (short)((longlong)iVar11 * 0x51eb851f >> 0x3f)) + -1);
       }
       else {
-        local_c = (float)(int)(short)(((short)(iVar8 / 200) + sVar4) -
-                                     (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
+        local_c = (float)(int)(short)(((short)(iVar11 / 200) + sVar4) -
+                                     (short)((longlong)iVar11 * 0x51eb851f >> 0x3f));
       }
-      iVar8 = pSVar7->field_004A;
-      sVar4 = (short)(iVar8 >> 0x1f);
-      if (iVar8 < 0) {
-        iVar8 = (short)(((short)(iVar8 / 0xc9) + sVar4) -
-                       (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)) + -1;
-      }
-      else {
-        iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar4) -
-                            (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
-      }
-      iVar10 = pSVar7->field_0046;
-      sVar4 = (short)(iVar10 >> 0x1f);
-      if (iVar10 < 0) {
-        iVar10 = (short)(((short)(iVar10 / 0xc9) + sVar4) -
-                        (short)((longlong)iVar10 * 0x28c1979 >> 0x3f)) + -1;
+      iVar11 = pSVar7->field_004A;
+      sVar4 = (short)(iVar11 >> 0x1f);
+      if (iVar11 < 0) {
+        iVar11 = (short)(((short)(iVar11 / 0xc9) + sVar4) -
+                        (short)((longlong)iVar11 * 0x28c1979 >> 0x3f)) + -1;
       }
       else {
-        iVar10 = (int)(short)(((short)(iVar10 / 0xc9) + sVar4) -
-                             (short)((longlong)iVar10 * 0x28c1979 >> 0x3f));
+        iVar11 = (int)(short)(((short)(iVar11 / 0xc9) + sVar4) -
+                             (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
+      }
+      iVar9 = pSVar7->field_0046;
+      sVar4 = (short)(iVar9 >> 0x1f);
+      if (iVar9 < 0) {
+        iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar4) -
+                       (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
+      }
+      else {
+        iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar4) -
+                            (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
       }
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
           (VisibleClassTy::sub_00558C00
-                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar10,iVar8,
+                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar11,
                       &local_14,&local_10), (int)local_c < 0)) || (4 < (int)local_c)) {
         bVar12 = true;
       }
       else {
-        if (((local_14 < 0) || (pVVar6->field_0030 <= local_14)) ||
+        if (((local_14 < 0) || ((int)pVVar6->field_0030 <= local_14)) ||
            ((local_10 + g_centeredOffsets5[(int)local_c] < 0 ||
             (pVVar6->field_0034 <= local_10 + g_centeredOffsets5[(int)local_c])))) {
           bVar12 = false;
@@ -147,26 +149,26 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       }
     }
     if (*(byte *)&pSVar7->field_0014 < 4) {
-      puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+      puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
                          (PTR_00806764,CASE_1D,"expl_s1",0xffffffff,0,1,0,nullptr
                          );
       if (0xe < (int)pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 + 3;
       }
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar9,STField<int>(puVar9,0x21),1);
+                (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar8,STField<int>(puVar8,0x21),1);
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,1,local_8);
       puVar13 = (uint *)*puVar1;
     }
     else {
-      puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+      puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
                          (PTR_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
                          );
       if (0xe < (int)pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 - 0xf;
       }
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar9,STField<int>(puVar9,0x21),1);
+                (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar8,STField<int>(puVar8,0x21),1);
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,1,local_8);
       puVar13 = (uint *)*puVar1;
     }

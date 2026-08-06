@@ -46,8 +46,7 @@ STGroupBoatC::sub_0049A500
           this_00 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_10),CASE_1);
           STFishC::sub_004162B0
-                    ((STFishC *)this_00,(short *)&local_14,(undefined2 *)&local_18,
-                     (undefined2 *)&local_1c);
+                    ((STFishC *)this_00,(short *)&local_14,(short *)&local_18,(short *)&local_1c);
           iVar5 = iVar5 + local_14;
           iVar3 = iVar3 + local_18;
           local_8 = local_8 + local_1c;

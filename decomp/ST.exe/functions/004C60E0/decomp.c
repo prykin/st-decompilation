@@ -11,6 +11,7 @@ int __thiscall TLOBldMark::Create(TLOBldMark *this)
   InternalExceptionFrame *pIVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
   int local_48 [16];
   TLOBldMark *local_8;
 

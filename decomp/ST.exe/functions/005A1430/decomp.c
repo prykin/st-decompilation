@@ -47,7 +47,7 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
       pcVar5 = LoadResourceString(0x25bb,g_hINSTANCE_00807618);
       pcVar6 = LoadResourceString(0x25ba,g_hINSTANCE_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%s %d%%\n(%d %s)",pcVar6,param_1,param_2,pcVar5);
-      ccFntTy::WrTxt(pFVar3->field_1A73,&DAT_0080f33a,-2,-1,2,-1,-1);
+      ccFntTy::WrTxt(pFVar3->field_1A73,(char *)&DAT_0080f33a,-2,-1,2,-1,-1);
       FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
       g_currentExceptionFrame = local_4c.previous;
       return;

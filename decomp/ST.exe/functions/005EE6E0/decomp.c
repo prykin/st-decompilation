@@ -7,12 +7,14 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
   undefined1 *this;
   uint uVar1;
   int iVar2;
+  int iVar4;
+  int iVar5;
   int iVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined4 uVar4;
+  undefined4 uVar6;
   undefined4 local_38 [2];
   undefined4 local_30;
   undefined4 local_2c;
@@ -39,17 +41,17 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
     }
     break;
   case 1:
-    iVar2 = thunk_FUN_005ede30(param_1,&local_c,&local_10,&local_14);
-    if (iVar2 != 0) {
+    iVar4 = thunk_FUN_005ede30(param_1,&local_c,&local_10,&local_14);
+    if (iVar4 != 0) {
       param_1->field_027F = local_14;
       param_1->field_0277 = local_c;
       param_1->field_027B = local_10;
       if ((((param_1->field_0317 != '\0') && ((g_playSystem_00802A38->field_00E4 & 3) == 0)) &&
           (param_1->field_0x250 == '\0')) && (param_1->field_024F == '\0')) {
-        iVar2 = thunk_FUN_005eda50((AnonShape_005EDA50_4BDBD797 *)param_1);
-        if (iVar2 == 0) {
-          iVar2 = thunk_FUN_005f07a0((STBoatC *)param_1);
-          if (iVar2 != 0) {
+        iVar4 = thunk_FUN_005eda50((AnonShape_005EDA50_4BDBD797 *)param_1);
+        if (iVar4 == 0) {
+          iVar4 = thunk_FUN_005f07a0((STBoatC *)param_1);
+          if (iVar4 != 0) {
             param_1->field_0x250 = 1;
             param_1->field_024F = 1;
             param_1->field_023A = 3;
@@ -79,8 +81,8 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
       }
     }
     else {
-      iVar2 = thunk_FUN_005ed1c0(param_1,&local_c,&local_10,&local_14,&local_18);
-      if (iVar2 != 0) {
+      iVar4 = thunk_FUN_005ed1c0(param_1,&local_c,&local_10,&local_14,&local_18);
+      if (iVar4 != 0) {
         param_1->field_0277 = local_c;
         param_1->field_027B = local_10;
         param_1->field_02BA = local_18;
@@ -102,14 +104,14 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
   case 3:
     if ((uint)param_1->field_028F <= g_playSystem_00802A38->field_00E4) {
       if (param_1->field_0x250 == '\x02') {
-        iVar2 = thunk_FUN_005edc20((AnonShape_005EDC20_3D37DB9E *)param_1);
-        if (iVar2 < 0) {
+        iVar4 = thunk_FUN_005edc20((AnonShape_005EDC20_3D37DB9E *)param_1);
+        if (iVar4 < 0) {
 LAB_005ee9db:
           param_1->field_0x250 = 0;
           param_1->field_024F = 0;
         }
-        else if (0 < iVar2) {
-          if (iVar2 < 2) {
+        else if (0 < iVar4) {
+          if (iVar4 < 2) {
             param_1->field_023A = 6;
             param_1->field_0x250 = 3;
           }
@@ -120,8 +122,8 @@ LAB_005ee9db:
         }
       }
       else {
-        iVar2 = thunk_FUN_005ed1c0(param_1,&local_c,&local_10,&local_14,&local_18);
-        if (iVar2 == 0) {
+        iVar4 = thunk_FUN_005ed1c0(param_1,&local_c,&local_10,&local_14,&local_18);
+        if (iVar4 == 0) {
           iVar2 = thunk_FUN_005ef4b0(param_1,param_1->field_0273);
           if (iVar2 == 0) {
             thunk_FUN_005ee670((AnonShape_005EE670_EFEE702F *)param_1);
@@ -166,31 +168,31 @@ cf_common_exit_005EEDDF:
     }
     else {
       this = &param_1->field_0x1d5;
-      iVar2 = thunk_FUN_004ac910(this,'\b');
-      if (iVar2 == 1) {
+      iVar4 = thunk_FUN_004ac910(this,'\b');
+      if (iVar4 == 1) {
         STT3DSprC::StopShow((STT3DSprC *)this,0xf);
         STT3DSprC::StopShow((STT3DSprC *)this,0);
         STT3DSprC::StopShow((STT3DSprC *)this,1);
       }
-      if (iVar2 == *(int *)(&DAT_007cdf52 + (uint)param_1->field_02DF * 0x32)) {
-        iVar3 = thunk_FUN_00495ff0(param_1->field_0242,*(short *)&param_1->field_0x244,
+      if (iVar4 == *(int *)(&DAT_007cdf52 + (uint)param_1->field_02DF * 0x32)) {
+        iVar5 = thunk_FUN_00495ff0(param_1->field_0242,*(short *)&param_1->field_0x244,
                                    param_1->field_0246,0,(AnonShape_00495FF0_59081BDD *)param_1);
-        if (iVar3 == 0) {
+        if (iVar5 == 0) {
           param_1->field_0252 = param_1->field_0252 + -1;
         }
         STT3DSprC::StopShow((STT3DSprC *)this,0xe);
         if ((param_1->field_0315 == '\x04') || (param_1->field_0315 == '\x02')) {
-          uVar4 = 0xffffffff;
+          uVar6 = 0xffffffff;
           iVar3 = thunk_FUN_004ad650((STT3DSprC *)this);
           thunk_FUN_0062b770((int)param_1->field_0041,(int)param_1->field_0043,
                              (int)param_1->field_0045,param_1->field_0231,(int)param_1,
-                             (int)*(short *)&param_1->field_0x6c,iVar3,uVar4);
+                             (int)*(short *)&param_1->field_0x6c,iVar3,uVar6);
         }
         if (param_1->field_0231 == 0xfd) {
           if (g_allPlayers_007FA174 != nullptr) {
             STArtiafactC::sub_005F0D00((STArtiafactC *)param_1);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-            iVar3 = STAllPlayersC::UnRegisterArtefact
+            iVar5 = STAllPlayersC::UnRegisterArtefact
                               (g_allPlayers_007FA174,CONCAT22(extraout_var_00,param_1->field_0032),
                                (AnonShape_00449E60_F2069C78 *)param_1);
             goto joined_r0x005eed0b;
@@ -199,11 +201,11 @@ cf_common_exit_005EEDDF:
         else if ((param_1->field_0231 == 0xfe) && (g_allPlayers_007FA174 != nullptr)) {
           STContainerC::sub_005F0D90((STContainerC *)param_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          iVar3 = STAllPlayersC::UnRegisterContainer
+          iVar5 = STAllPlayersC::UnRegisterContainer
                             (g_allPlayers_007FA174,CONCAT22(extraout_var,param_1->field_0032),
                              (AnonShape_0044A730_DBE673B2 *)param_1);
 joined_r0x005eed0b:
-          if (iVar3 != 0) {
+          if (iVar5 != 0) {
             param_1->field_023A = 6;
           }
         }
@@ -211,27 +213,27 @@ joined_r0x005eed0b:
           param_1->field_0x2e4 = 0;
         }
       }
-      if (iVar2 == *(int *)(&DAT_007cdf56 + (uint)param_1->field_02DF * 0x32)) {
+      if (iVar4 == *(int *)(&DAT_007cdf56 + (uint)param_1->field_02DF * 0x32)) {
         thunk_FUN_004ad5e0((STT3DSprC *)this);
       }
-      if (iVar2 == *(int *)(&DAT_007cdf5a + (uint)param_1->field_02DF * 0x32)) {
+      if (iVar4 == *(int *)(&DAT_007cdf5a + (uint)param_1->field_02DF * 0x32)) {
         STT3DSprC::StartShow((STT3DSprC *)this,9,g_playSystem_00802A38->field_00E4);
       }
-      iVar3 = (uint)param_1->field_02DF * 0x32;
-      if ((*(int *)(&DAT_007cdf5a + iVar3) < iVar2) &&
-         (iVar2 == *(int *)(&DAT_007cdf4e + iVar3) + -1)) {
+      iVar5 = (uint)param_1->field_02DF * 0x32;
+      if ((*(int *)(&DAT_007cdf5a + iVar5) < iVar4) &&
+         (iVar4 == *(int *)(&DAT_007cdf4e + iVar5) + -1)) {
         STT3DSprC::StopShow((STT3DSprC *)this,8);
       }
-      iVar2 = thunk_FUN_004ac910(this,'\t');
-      if (iVar2 == *(int *)(&DAT_007cdf5e + (uint)param_1->field_02DF * 0x32))
+      iVar4 = thunk_FUN_004ac910(this,'\t');
+      if (iVar4 == *(int *)(&DAT_007cdf5e + (uint)param_1->field_02DF * 0x32))
       goto cf_common_exit_005EEDDF;
     }
     thunk_FUN_005eeff0(param_1,1);
     break;
   case 6:
-    iVar2 = thunk_FUN_00495ff0(param_1->field_0242,*(short *)&param_1->field_0x244,
+    iVar4 = thunk_FUN_00495ff0(param_1->field_0242,*(short *)&param_1->field_0x244,
                                param_1->field_0246,0,(AnonShape_00495FF0_59081BDD *)param_1);
-    if (iVar2 == 0) {
+    if (iVar4 == 0) {
       param_1->field_0252 = param_1->field_0252 + -1;
       return local_8;
     }

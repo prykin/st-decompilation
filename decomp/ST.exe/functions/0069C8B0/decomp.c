@@ -9,9 +9,11 @@ uint * FUN_0069c8b0(int param_1,int param_2,int param_3)
   void *pvVar2;
   uint uVar3;
   int uVar6;
-  int iVar4;
   uint uVar5;
+  int iVar3;
+  uint uVar4;
   uint uVar7;
+  uint uVar8;
   int local_68 [9];
   int local_44 [3];
   DArrayTy *local_38;
@@ -35,8 +37,8 @@ uint * FUN_0069c8b0(int param_1,int param_2,int param_3)
     local_1c = 0;
     local_20 = (int *)(param_1 + 2);
     local_2c = param_3;
-    iVar4 = param_2 * 0xe;
-    local_34 = iVar4;
+    iVar3 = param_2 * 0xe;
+    local_34 = iVar3;
     do {
       if (0 < param_2) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -46,7 +48,7 @@ uint * FUN_0069c8b0(int param_1,int param_2,int param_3)
         local_14 = local_20;
         local_28 = param_2;
         do {
-          uVar5 = 0xffffffff;
+          uVar4 = 0xffffffff;
           local_24 = *local_14;
           local_30 = thunk_FUN_00696310(local_8,param_1,param_2,local_68,nullptr);
           local_10 = 0;
@@ -73,33 +75,33 @@ LAB_0069ca03:
           else {
             local_c = local_68;
             do {
-              uVar7 = *(uint *)(iVar1 + 10 + *local_c * 0xe);
-              if ((int)uVar7 < 0) break;
+              uVar8 = *(uint *)(iVar1 + 10 + *local_c * 0xe);
+              if ((int)uVar8 < 0) break;
               if (*(int *)(iVar1 + *local_c * 0xe + 2) == local_24) {
-                if (uVar5 == 0xffffffff) {
-                  uVar5 = uVar7;
-                  if (((uVar7 < array->count) &&
-                      (pvVar2 = DArrayAt<void>(array, uVar7),
+                if (uVar4 == 0xffffffff) {
+                  uVar4 = uVar8;
+                  if (((uVar8 < array->count) &&
+                      (pvVar2 = DArrayAt<void>(array, uVar8),
                       pvVar2 != nullptr)) &&
                      (uVar3 = thunk_FUN_0069c710(iVar1,param_1,(int)pvVar2), -1 < (int)uVar3)) {
-                    *(uint *)(param_3 + 10 + iVar1) = uVar7;
+                    *(uint *)(param_3 + 10 + iVar1) = uVar8;
                   }
                 }
-                else if (uVar5 != uVar7) {
-                  uVar7 = *(uint *)(iVar1 + 10 + local_68[local_10] * 0xe);
-                  uVar3 = uVar5;
-                  if ((int)uVar7 < (int)uVar5) {
-                    uVar3 = uVar7;
-                    uVar7 = uVar5;
+                else if (uVar4 != uVar8) {
+                  uVar8 = *(uint *)(iVar1 + 10 + local_68[local_10] * 0xe);
+                  uVar7 = uVar4;
+                  if ((int)uVar8 < (int)uVar4) {
+                    uVar7 = uVar8;
+                    uVar8 = uVar4;
                   }
-                  thunk_FUN_0069c790(&array->flags,iVar1,uVar3,uVar7);
+                  thunk_FUN_0069c790(&array->flags,iVar1,uVar7,uVar8);
                   break;
                 }
               }
               local_10 = local_10 + 1;
               local_c = local_c + 1;
             } while (local_10 < local_30);
-            if ((int)uVar5 < 0) goto LAB_0069ca03;
+            if ((int)uVar4 < 0) goto LAB_0069ca03;
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = param_3 + 0xe;
@@ -107,12 +109,12 @@ LAB_0069ca03:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = param_1 + 1;
           local_28 = local_28 + -1;
-          iVar4 = local_34;
+          iVar3 = local_34;
         } while (local_28 != 0);
       }
       local_18 = local_18 + param_2;
-      local_1c = local_1c + iVar4;
-      local_20 = (int *)((int)local_20 + iVar4);
+      local_1c = local_1c + iVar3;
+      local_20 = (int *)((int)local_20 + iVar3);
       local_2c = local_2c + -1;
     } while (local_2c != 0);
   }

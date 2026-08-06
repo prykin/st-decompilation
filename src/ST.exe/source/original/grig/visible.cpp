@@ -13,17 +13,19 @@ void __thiscall st::fn_005578D0(VisibleClassTy *this)
   byte bVar1;
   VisibleClassTy *pVVar3;
   int iVar4;
-  int iVar5;
-  byte *pbVar6;
-  ushort *puVar7;
-  void *pvVar8;
-  VisibleClassTy_field_00F4DArray *pVVar9;
-  VisibleClassTy_field_0110DArray *pVVar10;
-  uint uVar11;
+  int iVar6;
+  byte *pbVar7;
+  ushort *puVar8;
+  void *pvVar9;
+  VisibleClassTy_field_00F4DArray *pVVar10;
+  VisibleClassTy_field_0110DArray *pVVar11;
   uint uVar12;
+  int iVar5;
   uint uVar13;
-  uint *puVar14;
-  bool bVar15;
+  int iVar14;
+  uint uVar15;
+  void **ppvVar16;
+  bool bVar17;
   InternalExceptionFrame local_50;
   VisibleClassTy *local_c;
   byte *local_8;
@@ -45,84 +47,84 @@ void __thiscall st::fn_005578D0(VisibleClassTy *this)
     return;
   }
   local_c->field_0020 = (int)g_worldGrid.sizeX;
-  iVar4 = local_c->field_0020;
-  iVar5 = (int)g_worldGrid.sizeY;
-  local_c->field_0024 = iVar5;
-  local_c->field_0028 = (iVar4 + iVar5) * 0xb505 + 0x117878 >> 0x10;
-  local_c->field_002C = (local_c->field_0024 + iVar4) * 0xb505 + 0x117878 >> 0x10;
-  local_c->field_0030 = (local_c->field_0024 + iVar4) * 0xb505 + 0x117878 >> 0x10;
-  local_c->field_0034 = (local_c->field_0024 + iVar4) * 0xb505 + 0x117878 >> 0x10;
+  iVar14 = local_c->field_0020;
+  iVar6 = (int)g_worldGrid.sizeY;
+  local_c->field_0024 = iVar6;
+  local_c->field_0028 = (iVar14 + iVar6) * 0xb505 + 0x117878 >> 0x10;
+  local_c->field_002C = (local_c->field_0024 + iVar14) * 0xb505 + 0x117878 >> 0x10;
+  local_c->field_0030 = (local_c->field_0024 + iVar14) * 0xb505 + 0x117878 >> 0x10;
+  local_c->field_0034 = (local_c->field_0024 + iVar14) * 0xb505 + 0x117878 >> 0x10;
   if (DAT_0080874d == 0xff) {
     local_c->field_0114 = 0;
     local_c->field_00F8 = 0;
   }
   else {
     local_c->field_0114 = 1;
-    pbVar6 = st::fn_006AAC10(local_c->field_0024 * iVar4 * 2);
-    pVVar3->field_0038 = pbVar6;
-    pbVar6 = st::fn_006AAC10(pVVar3->field_0030 * pVVar3->field_0034);
-    pVVar3->field_004C = pbVar6;
-    puVar7 = st::fn_006AAC10(pVVar3->field_0030 * pVVar3->field_0034 * 2);
-    pVVar3->field_0050 = puVar7;
-    puVar14 = pVVar3->field_003C;
-    iVar4 = 4;
+    pbVar7 = st::fn_006AAC10(local_c->field_0024 * iVar14 * 2);
+    pVVar3->field_0038 = pbVar7;
+    pbVar7 = st::fn_006AAC10(pVVar3->field_0030 * pVVar3->field_0034);
+    pVVar3->field_004C = pbVar7;
+    puVar8 = st::fn_006AAC10(pVVar3->field_0030 * pVVar3->field_0034 * 2);
+    pVVar3->field_0050 = puVar8;
+    ppvVar16 = pVVar3->field_003C;
+    iVar14 = 4;
     do {
-      pvVar8 = st::fn_006AAC10(pVVar3->field_0028 * pVVar3->field_002C);
-      *puVar14 = (uint)pvVar8;
-      puVar14 = puVar14 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    pVVar9 = (VisibleClassTy_field_00F4DArray *)
-             st::fn_006AE290(nullptr,10,0x1c,10);
-    pVVar3->field_00F4 = pVVar9;
-    pVVar10 = (VisibleClassTy_field_0110DArray *)
+      pvVar9 = st::fn_006AAC10(pVVar3->field_0028 * pVVar3->field_002C);
+      *ppvVar16 = pvVar9;
+      ppvVar16 = ppvVar16 + 1;
+      iVar14 = iVar14 + -1;
+    } while (iVar14 != 0);
+    pVVar10 = (VisibleClassTy_field_00F4DArray *)
+              st::fn_006AE290(nullptr,10,0x1c,10);
+    pVVar3->field_00F4 = pVVar10;
+    pVVar11 = (VisibleClassTy_field_0110DArray *)
               st::fn_006AE290(nullptr,10,0xc,10);
-    pVVar3->field_0110 = pVVar10;
+    pVVar3->field_0110 = pVVar11;
     pVVar3->field_00F8 = (uint)DAT_00808a95;
     pVVar3->field_00FC[DAT_0080874d] = 1;
     if (DAT_00808a94 != '\0') {
-      uVar13 = 0;
+      uVar15 = 0;
       local_8 = &g_bulkInitializedRecords_008087C7[0].field_0022;
       do {
         if ((g_playSystem_00802A38 == nullptr) || (*local_8 < 8)) {
-          uVar11 = (uint)DAT_0080874d;
-          if (uVar13 != uVar11) {
+          uVar12 = (uint)DAT_0080874d;
+          if (uVar15 != uVar12) {
             if (DAT_00808a8f == '\0') {
-              if (DAT_0080874d == (byte)uVar13) {
+              if (DAT_0080874d == (byte)uVar15) {
 LAB_00557b2d:
-                iVar4 = 0;
+                iVar14 = 0;
               }
               else {
-                uVar12 = uVar13 & 0xff;
-                bVar1 = g_playerRelationMatrix[uVar11][uVar12];
-                if ((bVar1 == 0) && (g_playerRelationMatrix[uVar12][uVar11] == 0)) {
-                  iVar4 = -2;
+                uVar13 = uVar15 & 0xff;
+                bVar1 = g_playerRelationMatrix[uVar12][uVar13];
+                if ((bVar1 == 0) && (g_playerRelationMatrix[uVar13][uVar12] == 0)) {
+                  iVar14 = -2;
                 }
-                else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar12][uVar11] == 0)) {
-                  iVar4 = -1;
+                else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar13][uVar12] == 0)) {
+                  iVar14 = -1;
                 }
-                else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar12][uVar11] == 1)) {
-                  iVar4 = 1;
+                else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar13][uVar12] == 1)) {
+                  iVar14 = 1;
                 }
                 else {
-                  if ((bVar1 != 1) || (g_playerRelationMatrix[uVar12][uVar11] != 1))
+                  if ((bVar1 != 1) || (g_playerRelationMatrix[uVar13][uVar12] != 1))
                   goto LAB_00557b2d;
-                  iVar4 = 2;
+                  iVar14 = 2;
                 }
               }
-              bVar15 = iVar4 < 0;
+              bVar17 = iVar14 < 0;
             }
             else {
-              bVar15 = g_bulkInitializedRecords_008087C7[uVar13 & 0xff].field_0023 !=
-                       g_bulkInitializedRecords_008087C7[uVar11].field_0023;
+              bVar17 = g_bulkInitializedRecords_008087C7[uVar15 & 0xff].field_0023 !=
+                       g_bulkInitializedRecords_008087C7[uVar12].field_0023;
             }
-            if (bVar15) goto LAB_00557b44;
+            if (bVar17) goto LAB_00557b44;
           }
-          pVVar3->field_00FC[uVar13] = 1;
+          pVVar3->field_00FC[uVar15] = 1;
         }
 LAB_00557b44:
         local_8 = local_8 + 0x51;
-        uVar13 = uVar13 + 1;
+        uVar15 = uVar15 + 1;
       } while ((int)local_8 < 0x808a71);
     }
   }
@@ -144,10 +146,11 @@ void __thiscall st::fn_00557C90(VisibleClassTy *this)
   ST3DSMAPContext *pSVar3;
   VisibleClassTy *this_00;
   int iVar4;
-  LPSTR pCVar5;
+  LPSTR pCVar4;
+  undefined4 *puVar5;
   undefined4 *puVar6;
-  undefined4 *puVar7;
   VisibleClassTy_field_0110Element *element_0110;
+  int iVar8;
   VisibleClassTy_field_0110DArray *pVVar9;
   undefined4 *puVar10;
   int iVar11;
@@ -186,35 +189,35 @@ void __thiscall st::fn_00557C90(VisibleClassTy *this)
       psVar16 = (short *)0x1;
       bVar15 = 0;
       bVar14 = 0x1c;
-      pCVar5 = st::fn_006F2C00(PTR_DAT_0079aec8,1,iVar11);
-      local_8 = st::fn_0070B430(PTR_00806770,pCVar5,bVar14,bVar15,psVar16);
+      pCVar4 = st::fn_006F2C00(PTR_DAT_0079aec8,1,iVar11);
+      local_8 = st::fn_0070B430(PTR_00806770,pCVar4,bVar14,bVar15,psVar16);
       (&DAT_007c9290)[iVar11] = (int)STField<short>(local_8,9);
-      puVar7 = puVar10 + -0x30;
+      puVar6 = puVar10 + -0x30;
       (&DAT_007c929c)[iVar11] = (int)STField<short>(local_8,0xb);
-      puVar6 = (undefined4 *)((int)local_8 + 0x11);
+      puVar5 = (undefined4 *)((int)local_8 + 0x11);
       local_c = 0x10;
       do {
-        uVar1 = *puVar6;
+        uVar1 = *puVar5;
+        puVar5 = puVar5 + 1;
+        *puVar6 = uVar1;
         puVar6 = puVar6 + 1;
-        *puVar7 = uVar1;
-        puVar7 = puVar7 + 1;
         local_c = local_c + -1;
       } while (local_c != 0);
       st::fn_0070B600((int *)&local_8);
       psVar16 = (short *)0x1;
       bVar15 = 0;
       bVar14 = 0x1c;
-      pCVar5 = st::fn_006F2C00(PTR_DAT_0079aecc,1,iVar11);
-      local_8 = st::fn_0070B430(PTR_00806770,pCVar5,bVar14,bVar15,psVar16);
-      puVar7 = (undefined4 *)((int)local_8 + 0x11);
-      iVar4 = 0x10;
+      pCVar4 = st::fn_006F2C00(PTR_DAT_0079aecc,1,iVar11);
+      local_8 = st::fn_0070B430(PTR_00806770,pCVar4,bVar14,bVar15,psVar16);
+      puVar6 = (undefined4 *)((int)local_8 + 0x11);
+      iVar8 = 0x10;
       do {
-        uVar1 = *puVar7;
-        puVar7 = puVar7 + 1;
+        uVar1 = *puVar6;
+        puVar6 = puVar6 + 1;
         *puVar10 = uVar1;
         puVar10 = puVar10 + 1;
-        iVar4 = iVar4 + -1;
-      } while (iVar4 != 0);
+        iVar8 = iVar8 + -1;
+      } while (iVar8 != 0);
       st::fn_0070B600((int *)&local_8);
       iVar11 = iVar11 + 1;
     } while (iVar11 < 3);
@@ -304,17 +307,18 @@ byte * __thiscall st::fn_005582A0(VisibleClassTy *this,uint *param_1)
 {
   VisibleClassTy *pVVar2;
   int iVar3;
-  byte *puVar4;
   int iVar5;
-  byte *pbVar6;
-  uint uVar7;
+  byte *puVar6;
+  int iVar4;
+  byte *pbVar7;
   uint uVar8;
-  byte *puVar9;
+  uint uVar9;
   byte *puVar10;
+  byte *puVar11;
   InternalExceptionFrame local_68;
   VisibleClassTy *local_24;
   undefined4 *local_20;
-  uint *local_1c;
+  void **local_1c;
   uint local_18;
   undefined4 *local_14;
   uint local_10;
@@ -342,9 +346,9 @@ byte * __thiscall st::fn_005582A0(VisibleClassTy *this,uint *param_1)
     if (local_8 != nullptr) {
       st::fn_006AB060(&local_8);
     }
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x105,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x105,0,iVar3,"%s",
                                "VisibleClassTy::PrepareToSave error");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\visible.cpp",0x106);
@@ -354,15 +358,15 @@ byte * __thiscall st::fn_005582A0(VisibleClassTy *this,uint *param_1)
     local_c = (undefined4 *)st::fn_006B0020(&local_24->field_00F4->flags,(int *)&local_10);
     local_14 = (undefined4 *)st::fn_006B0020(&pVVar2->field_0110->flags,(int *)&local_18);
     if (pVVar2->field_0114 != 0) {
-      iVar3 = pVVar2->field_002C * pVVar2->field_0028 * 4;
+      iVar5 = pVVar2->field_002C * pVVar2->field_0028 * 4;
       goto LAB_0055832e;
     }
   }
-  iVar3 = 0;
+  iVar5 = 0;
 LAB_0055832e:
-  uVar8 = iVar3 + local_18 + 0x81 + local_10;
-  *param_1 = uVar8;
-  local_8 = st::fn_006AAC10(uVar8);
+  uVar9 = iVar5 + local_18 + 0x81 + local_10;
+  *param_1 = uVar9;
+  local_8 = st::fn_006AAC10(uVar9);
   *(undefined4 *)local_8 = 0x50;
   *(undefined4 *)&local_8->field_0x4 = 0xff;
   *(undefined4 *)&local_8->field_0x8 = 2;
@@ -383,33 +387,33 @@ LAB_0055832e:
   local_8->field_004C = *(undefined4 *)(pVVar2->field_00FC + 4);
   if (pVVar2->field_0114 != 0) {
     local_1c = pVVar2->field_003C;
-    puVar4 = (byte *)(&local_8[1].field_0030);
+    puVar6 = (byte *)(&local_8[1].field_0030);
     local_20 = (undefined4 *)0x4;
     do {
-      if ((undefined4 *)*local_1c != nullptr) {
-        uVar7 = pVVar2->field_0028 * pVVar2->field_002C;
-        puVar9 = (byte *)*local_1c;
-        puVar10 = (byte *)(puVar4);
-        memmove(puVar10, puVar9, uVar7); /* compiler REP MOVS byte copy */
-        uVar8 = 0;
-        puVar4 = (byte *)((int)puVar4 + pVVar2->field_0028 * pVVar2->field_002C);
+      if (*local_1c != nullptr) {
+        uVar8 = pVVar2->field_0028 * pVVar2->field_002C;
+        puVar10 = (byte *)(*local_1c);
+        puVar11 = (byte *)(puVar6);
+        memmove(puVar11, puVar10, uVar8); /* compiler REP MOVS byte copy */
+        uVar9 = 0;
+        puVar6 = (byte *)((int)puVar6 + pVVar2->field_0028 * pVVar2->field_002C);
       }
       local_1c = local_1c + 1;
       local_20 = (undefined4 *)((int)local_20 + -1);
     } while (local_20 != nullptr);
     local_20 = nullptr;
     if (local_c != nullptr) {
-      puVar9 = (byte *)(local_c);
-      puVar10 = (byte *)(puVar4);
-      memmove(puVar10, puVar9, local_10); /* compiler REP MOVS byte copy */
-      uVar8 = 0;
-      local_20 = (undefined4 *)((int)puVar4 + local_10);
+      puVar10 = (byte *)(local_c);
+      puVar11 = (byte *)(puVar6);
+      memmove(puVar11, puVar10, local_10); /* compiler REP MOVS byte copy */
+      uVar9 = 0;
+      local_20 = (undefined4 *)((int)puVar6 + local_10);
       st::fn_006AB060(&local_c);
-      puVar4 = (byte *)(local_20);
+      puVar6 = (byte *)(local_20);
     }
     if (local_14 != nullptr) {
-      puVar9 = (byte *)(local_14);
-      memmove(puVar4, puVar9, local_18); /* compiler REP MOVS byte copy */
+      puVar10 = (byte *)(local_14);
+      memmove(puVar6, puVar10, local_18); /* compiler REP MOVS byte copy */
       st::fn_006AB060(&local_14);
     }
   }
@@ -434,11 +438,12 @@ void __thiscall st::fn_005585F0(Visible *this,ushort *param_1)
   uint uVar3;
   uint *puVar4;
   void *pvVar5;
-  undefined4 uVar6;
+  DArrayTy *pDVar6;
+  int iVar9;
   uint uVar7;
   uint *puVar8;
-  void **value;
-  int iVar9;
+  void **slotStorage;
+  int iVar10;
   InternalExceptionFrame local_58;
   Visible *local_14;
   int local_10;
@@ -496,25 +501,25 @@ void __thiscall st::fn_005585F0(Visible *this,ushort *param_1)
       pVVar2->field_004C = pvVar5;
       pvVar5 = st::fn_006AAC10(pVVar2->field_0030 * pVVar2->field_0034 * 2);
       pVVar2->field_0050 = pvVar5;
-      uVar6 = st::fn_006B0060(nullptr,puVar8);
-      pVVar2->field_00F4 = uVar6;
+      pDVar6 = st::fn_006B0060(nullptr,puVar8);
+      pVVar2->field_00F4 = pDVar6;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar6 = st::fn_006B0060(nullptr,(uint *)((int)puVar8 + *(int *)(param_1 + 0x1c)));
-      pVVar2->field_0110 = uVar6;
+      pDVar6 = st::fn_006B0060(nullptr,(uint *)((int)puVar8 + *(int *)(param_1 + 0x1c)));
+      pVVar2->field_0110 = pDVar6;
     }
     g_currentExceptionFrame = local_58.previous;
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar9 = 4;
-  value = &local_14->field_003C;
+  iVar10 = 4;
+  slotStorage = &local_14->field_003C;
   do {
-    if (*value != nullptr) {
-      st::fn_006AB060(value);
+    if (*slotStorage != nullptr) {
+      st::fn_006AB060(slotStorage);
     }
-    value = value + 1;
-    iVar9 = iVar9 + -1;
-  } while (iVar9 != 0);
+    slotStorage = slotStorage + 1;
+    iVar10 = iVar10 + -1;
+  } while (iVar10 != 0);
   iVar9 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x132,0,errorCode,"%s"
                              ,"Visible::PrepareAfterSave error");
   if (iVar9 != 0) {
@@ -539,8 +544,10 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
 {
   STMessageId SVar1;
   VisibleClassTy *this_00;
+  int local_EAX_34;
   int iVar3;
   VisibleClassTy_field_0110Element *element_0110;
+  int iVar4;
   int iVar5;
   uint uVar6;
   uint uVar7;
@@ -557,9 +564,9 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar3 = st::fn_0072D7F0(local_58.jumpBuffer,0);
+  local_EAX_34 = st::fn_0072D7F0(local_58.jumpBuffer,0);
   this_00 = local_14;
-  if (iVar3 == 0) {
+  if (local_EAX_34 == 0) {
     local_14->field_0108 = g_playSystem_00802A38->field_00E4;
     SVar1 = message->id;
     if (SVar1 < MESS_STSPRGAMEOBJC_0109) {
@@ -652,10 +659,10 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x186,0,iVar3,
+  iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x186,0,local_EAX_34,
                              "VisibleClassTy::GetMessage error mess->id == %lX",message->id);
-  if (iVar5 == 0) {
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\visible.cpp",0x187);
+  if (iVar4 == 0) {
+    st::fn_006A5E40(local_EAX_34,0,"E:\\__titans\\grig\\visible.cpp",0x187);
     return 0xffff;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -700,7 +707,7 @@ st::fn_005597A0
      ((g_playSystem_00802A38 == nullptr ||
       (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)))) {
     local_14 = this;
-    if (this->field_003C[param_4 + 6] == 0) {
+    if (this->field_003C[param_4 + 6] == nullptr) {
       local_60.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_60;
       iVar4 = st::fn_0072D7F0(local_60.jumpBuffer,0);
@@ -715,7 +722,7 @@ st::fn_005597A0
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       pvVar5 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
-      this->field_003C[param_4 + 6] = (uint)pvVar5;
+      this->field_003C[param_4 + 6] = pvVar5;
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
@@ -746,9 +753,9 @@ st::fn_005597A0
               }
               if (bVar3) {
                 iVar8 = this->field_0020 * iVar4;
-                cVar1 = *(char *)(this->field_003C[param_4 + 6] + iVar9 + iVar8);
+                cVar1 = *(char *)((int)this->field_003C[param_4 + 6] + iVar9 + iVar8);
                 if (cVar1 != -1) {
-                  *(char *)(this->field_003C[param_4 + 6] + iVar9 + iVar8) = cVar1 + '\x01';
+                  *(char *)((int)this->field_003C[param_4 + 6] + iVar9 + iVar8) = cVar1 + '\x01';
                 }
               }
             }
@@ -790,10 +797,11 @@ st::fn_00559B30
   byte bVar1;
   bool bVar3;
   int iVar4;
+  byte *pbVar6;
   byte *pbVar5;
-  int iVar6;
   int iVar7;
   int iVar8;
+  int iVar9;
   InternalExceptionFrame local_60;
   int local_18;
   VisibleClassTy *local_14;
@@ -819,8 +827,8 @@ st::fn_00559B30
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      pbVar5 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
-      this->field_0074[param_4] = pbVar5;
+      pbVar6 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
+      this->field_0074[param_4] = pbVar6;
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
@@ -838,28 +846,28 @@ st::fn_00559B30
         local_10 = local_c;
         local_8 = pbVar5;
         do {
-          iVar6 = 0;
-          iVar8 = local_18;
+          iVar7 = 0;
+          iVar9 = local_18;
           do {
-            if ((pbVar5 == nullptr) || (local_8[iVar6] != 0)) {
-              if ((iVar8 < 0) ||
-                 (((this->field_0020 <= iVar8 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
+            if ((pbVar5 == nullptr) || (local_8[iVar7] != 0)) {
+              if ((iVar9 < 0) ||
+                 (((this->field_0020 <= iVar9 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
                 bVar3 = false;
               }
               else {
                 bVar3 = true;
               }
               if (bVar3) {
-                iVar7 = this->field_0020 * iVar4;
-                bVar1 = this->field_0074[param_4][iVar8 + iVar7];
+                iVar8 = this->field_0020 * iVar4;
+                bVar1 = this->field_0074[param_4][iVar9 + iVar8];
                 if (bVar1 != 0xff) {
-                  this->field_0074[param_4][iVar8 + iVar7] = bVar1 + 1;
+                  this->field_0074[param_4][iVar9 + iVar8] = bVar1 + 1;
                 }
               }
             }
-            iVar6 = iVar6 + 1;
-            iVar8 = iVar8 + 1;
-          } while (iVar6 < local_c);
+            iVar7 = iVar7 + 1;
+            iVar9 = iVar9 + 1;
+          } while (iVar7 < local_c);
           local_8 = local_8 + local_c;
           iVar4 = iVar4 + 1;
           local_10 = local_10 + -1;
@@ -893,10 +901,11 @@ st::fn_00559EC0
   byte bVar1;
   bool bVar3;
   int iVar4;
+  byte *pbVar6;
   byte *pbVar5;
-  int iVar6;
   int iVar7;
   int iVar8;
+  int iVar9;
   InternalExceptionFrame local_60;
   int local_18;
   VisibleClassTy *local_14;
@@ -922,8 +931,8 @@ st::fn_00559EC0
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      pbVar5 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
-      this->field_0094[param_4] = pbVar5;
+      pbVar6 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
+      this->field_0094[param_4] = pbVar6;
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
@@ -941,28 +950,28 @@ st::fn_00559EC0
         local_10 = local_c;
         local_8 = pbVar5;
         do {
-          iVar6 = 0;
-          iVar8 = local_18;
+          iVar7 = 0;
+          iVar9 = local_18;
           do {
-            if ((pbVar5 == nullptr) || (local_8[iVar6] != 0)) {
-              if ((iVar8 < 0) ||
-                 (((this->field_0020 <= iVar8 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
+            if ((pbVar5 == nullptr) || (local_8[iVar7] != 0)) {
+              if ((iVar9 < 0) ||
+                 (((this->field_0020 <= iVar9 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
                 bVar3 = false;
               }
               else {
                 bVar3 = true;
               }
               if (bVar3) {
-                iVar7 = this->field_0020 * iVar4;
-                bVar1 = this->field_0094[param_4][iVar8 + iVar7];
+                iVar8 = this->field_0020 * iVar4;
+                bVar1 = this->field_0094[param_4][iVar9 + iVar8];
                 if (bVar1 != 0xff) {
-                  this->field_0094[param_4][iVar8 + iVar7] = bVar1 + 1;
+                  this->field_0094[param_4][iVar9 + iVar8] = bVar1 + 1;
                 }
               }
             }
-            iVar6 = iVar6 + 1;
-            iVar8 = iVar8 + 1;
-          } while (iVar6 < local_c);
+            iVar7 = iVar7 + 1;
+            iVar9 = iVar9 + 1;
+          } while (iVar7 < local_c);
           local_8 = local_8 + local_c;
           iVar4 = iVar4 + 1;
           local_10 = local_10 + -1;
@@ -993,10 +1002,11 @@ st::fn_0055A270
   byte bVar1;
   bool bVar3;
   int iVar4;
+  byte *pbVar6;
   byte *pbVar5;
-  int iVar6;
   int iVar7;
   int iVar8;
+  int iVar9;
   InternalExceptionFrame local_60;
   int local_18;
   VisibleClassTy *local_14;
@@ -1022,8 +1032,8 @@ st::fn_0055A270
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      pbVar5 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
-      this->field_00B4[param_4] = pbVar5;
+      pbVar6 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
+      this->field_00B4[param_4] = pbVar6;
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
@@ -1041,28 +1051,28 @@ st::fn_0055A270
         local_10 = local_c;
         local_8 = pbVar5;
         do {
-          iVar6 = 0;
-          iVar8 = local_18;
+          iVar7 = 0;
+          iVar9 = local_18;
           do {
-            if ((pbVar5 == nullptr) || (local_8[iVar6] != 0)) {
-              if ((iVar8 < 0) ||
-                 (((this->field_0020 <= iVar8 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
+            if ((pbVar5 == nullptr) || (local_8[iVar7] != 0)) {
+              if ((iVar9 < 0) ||
+                 (((this->field_0020 <= iVar9 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
                 bVar3 = false;
               }
               else {
                 bVar3 = true;
               }
               if (bVar3) {
-                iVar7 = this->field_0020 * iVar4;
-                bVar1 = this->field_00B4[param_4][iVar8 + iVar7];
+                iVar8 = this->field_0020 * iVar4;
+                bVar1 = this->field_00B4[param_4][iVar9 + iVar8];
                 if (bVar1 != 0xff) {
-                  this->field_00B4[param_4][iVar8 + iVar7] = bVar1 + 1;
+                  this->field_00B4[param_4][iVar9 + iVar8] = bVar1 + 1;
                 }
               }
             }
-            iVar6 = iVar6 + 1;
-            iVar8 = iVar8 + 1;
-          } while (iVar6 < local_c);
+            iVar7 = iVar7 + 1;
+            iVar9 = iVar9 + 1;
+          } while (iVar7 < local_c);
           local_8 = local_8 + local_c;
           iVar4 = iVar4 + 1;
           local_10 = local_10 + -1;
@@ -1093,10 +1103,11 @@ st::fn_0055A620
   byte bVar1;
   bool bVar3;
   int iVar4;
+  byte *pbVar6;
   byte *pbVar5;
-  int iVar6;
   int iVar7;
   int iVar8;
+  int iVar9;
   InternalExceptionFrame local_60;
   int local_18;
   VisibleClassTy *local_14;
@@ -1122,8 +1133,8 @@ st::fn_0055A620
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      pbVar5 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
-      this->field_00D4[param_4] = pbVar5;
+      pbVar6 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
+      this->field_00D4[param_4] = pbVar6;
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
@@ -1141,28 +1152,28 @@ st::fn_0055A620
         local_10 = local_c;
         local_8 = pbVar5;
         do {
-          iVar6 = 0;
-          iVar8 = local_18;
+          iVar7 = 0;
+          iVar9 = local_18;
           do {
-            if ((pbVar5 == nullptr) || (local_8[iVar6] != 0)) {
-              if ((iVar8 < 0) ||
-                 (((this->field_0020 <= iVar8 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
+            if ((pbVar5 == nullptr) || (local_8[iVar7] != 0)) {
+              if ((iVar9 < 0) ||
+                 (((this->field_0020 <= iVar9 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
                 bVar3 = false;
               }
               else {
                 bVar3 = true;
               }
               if (bVar3) {
-                iVar7 = this->field_0020 * iVar4;
-                bVar1 = this->field_00D4[param_4][iVar8 + iVar7];
+                iVar8 = this->field_0020 * iVar4;
+                bVar1 = this->field_00D4[param_4][iVar9 + iVar8];
                 if (bVar1 != 0xff) {
-                  this->field_00D4[param_4][iVar8 + iVar7] = bVar1 + 1;
+                  this->field_00D4[param_4][iVar9 + iVar8] = bVar1 + 1;
                 }
               }
             }
-            iVar6 = iVar6 + 1;
-            iVar8 = iVar8 + 1;
-          } while (iVar6 < local_c);
+            iVar7 = iVar7 + 1;
+            iVar9 = iVar9 + 1;
+          } while (iVar7 < local_c);
           local_8 = local_8 + local_c;
           iVar4 = iVar4 + 1;
           local_10 = local_10 + -1;
@@ -1189,7 +1200,7 @@ st::fn_0055A9D0
   VisibleClassTy *this_00;
   int iVar2;
   int iVar3;
-  uint uVar4;
+  uint uVar2;
   InternalExceptionFrame local_6c;
   int local_28 [2];
   undefined *local_20;

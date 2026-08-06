@@ -4,7 +4,7 @@
 undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param_1)
 
 {
-  undefined4 uVar1;
+  DArrayTy *pDVar1;
   int *piVar2;
   int iVar3;
   AnonShape_00604A90_035626E6 *pAVar5;
@@ -34,8 +34,8 @@ undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param
   STField<undefined4>(this,0x27e) = param_1->field_00A9;
   if (STField<int>(this,0x215) != 0) {
     iVar3 = *piVar9;
-    uVar1 = FUN_006b0060(nullptr,(uint *)&param_1[1].field_0x2);
-    STField<undefined4>(this,0x215) = uVar1;
+    pDVar1 = FUN_006b0060(nullptr,(uint *)&param_1[1].field_0x2);
+    STField<DArrayTy *>(this,0x215) = pDVar1;
     piVar9 = (int *)(&param_1[1].field_0x2 + iVar3);
   }
   iVar3 = STField<int>(this,0x269);

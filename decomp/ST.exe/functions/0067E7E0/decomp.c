@@ -15,19 +15,21 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   char cVar1;
   byte bVar2;
   bool bVar4;
+  int iVar8;
   char *pcVar5;
   void *pvVar6;
-  uint *puVar7;
-  int iVar8;
-  uint uVar9;
-  uint uVar10;
   int iVar11;
+  uint *puVar7;
+  int iVar9;
+  uint uVar10;
+  uint uVar11;
+  int iVar12;
   ushort *_Source;
-  byte *pbVar12;
-  char *pcVar14;
+  byte *pbVar13;
   char *pcVar15;
-  byte *pbVar16;
-  bool bVar17;
+  char *pcVar16;
+  byte *pbVar17;
+  bool bVar18;
   undefined1 local_33c [516];
   char local_138 [76];
   char local_ec [36];
@@ -42,8 +44,12 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   DArrayTy *local_10;
   ushort *local_c;
   DArrayTy *local_8;
+  char *pcVar16_mg3;
+  char *pcVar5_mg0;
+  char *pcVar5_mg3;
 
   memset((void *)local_33c, 0, 0x201); /* compiler bulk-zero initialization */
+  iVar9 = 0;
   local_8 = nullptr;
   local_10 = nullptr;
   local_a0.previous = g_currentExceptionFrame;
@@ -73,22 +79,22 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   if (param_2 != 0) {
     local_10 = (DArrayTy *)CreateOpponentList(param_1,0,0xffffffff);
   }
-  uVar9 = 0xffffffff;
+  uVar10 = 0xffffffff;
   local_33c[0] = 0xc;
-  pcVar5 = PTR_s_AIBOSS_0079d720;
+  pcVar5_mg0 = PTR_s_AIBOSS_0079d720;
   do {
-    pcVar15 = pcVar5;
-    if (uVar9 == 0) break;
-    uVar9 = uVar9 - 1;
-    pcVar15 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar15;
+    pcVar5 = pcVar5_mg0;
+    if (uVar10 == 0) break;
+    uVar10 = uVar10 - 1;
+    pcVar5 = pcVar5_mg0 + 1;
+    cVar1 = *pcVar5_mg0;
+    pcVar5_mg0 = pcVar5;
   } while (cVar1 != '\0');
-  uVar9 = ~uVar9;
-  pcVar5 = pcVar15 + -uVar9;
-  pcVar15 = local_33c + 1;
-  memmove(pcVar15, pcVar5, uVar9); /* compiler REP MOVS byte copy */
-  uVar10 = 0;
+  uVar10 = ~uVar10;
+  pcVar5 = pcVar5 + -uVar10;
+  pcVar16 = local_33c + 1;
+  memmove(pcVar16, pcVar5, uVar10); /* compiler REP MOVS byte copy */
+  uVar11 = 0;
   cMf32::ToBeg(param_1,FUN_006f2d10,local_33c);
   pcVar5 = (char *)cMf32::RecNameGetNext(param_1);
   do {
@@ -102,105 +108,105 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
     local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,pcVar5,0,1);
     if (local_c != nullptr) {
       _Source = local_c + 3;
-      pcVar15 = local_138;
-      for (iVar8 = 0x26; iVar8 != 0; iVar8 = iVar8 + -1) {
-        pcVar15[0] = '\0';
-        pcVar15[1] = '\0';
-        pcVar15[2] = '\0';
-        pcVar15[3] = '\0';
-        pcVar15 = pcVar15 + 4;
+      pcVar16 = local_138;
+      for (iVar9 = 0x26; iVar9 != 0; iVar9 = iVar9 + -1) {
+        pcVar16[0] = '\0';
+        pcVar16[1] = '\0';
+        pcVar16[2] = '\0';
+        pcVar16[3] = '\0';
+        pcVar16 = pcVar16 + 4;
       }
       Library::MSVCRT::_strncpy(local_138,(char *)_Source,0x3f);
       Library::MSVCRT::_strncpy(local_ec,pcVar5,0x1f);
-      uVar9 = 0xffffffff;
-      pcVar15 = PTR_s_AIBOSS_0079d720;
+      uVar10 = 0xffffffff;
+      pcVar16_mg3 = PTR_s_AIBOSS_0079d720;
       do {
-        pcVar14 = pcVar15;
-        if (uVar9 == 0) break;
-        uVar9 = uVar9 - 1;
-        pcVar14 = pcVar15 + 1;
-        cVar1 = *pcVar15;
-        pcVar15 = pcVar14;
+        pcVar16 = pcVar16_mg3;
+        if (uVar10 == 0) break;
+        uVar10 = uVar10 - 1;
+        pcVar16 = pcVar16_mg3 + 1;
+        cVar1 = *pcVar16_mg3;
+        pcVar16_mg3 = pcVar16;
       } while (cVar1 != '\0');
-      uVar9 = ~uVar9;
-      pbVar12 = (byte *)(pcVar14 + -uVar9);
-      pbVar16 = local_5c;
-      memmove(pbVar16, pbVar12, uVar9); /* compiler REP MOVS byte copy */
-      uVar10 = 0;
-      uVar9 = 0xffffffff;
-      pcVar15 = "%d";
+      uVar10 = ~uVar10;
+      pbVar13 = (byte *)(pcVar16 + -uVar10);
+      pbVar17 = local_5c;
+      memmove(pbVar17, pbVar13, uVar10); /* compiler REP MOVS byte copy */
+      uVar11 = 0;
+      uVar10 = 0xffffffff;
+      pcVar16 = "%d";
       do {
-        pcVar14 = pcVar15;
-        if (uVar9 == 0) break;
-        uVar9 = uVar9 - 1;
-        pcVar14 = pcVar15 + 1;
-        cVar1 = *pcVar15;
-        pcVar15 = pcVar14;
+        pcVar15 = pcVar16;
+        if (uVar10 == 0) break;
+        uVar10 = uVar10 - 1;
+        pcVar15 = pcVar16 + 1;
+        cVar1 = *pcVar16;
+        pcVar16 = pcVar15;
       } while (cVar1 != '\0');
-      uVar9 = ~uVar9;
+      uVar10 = ~uVar10;
       local_18 = 0;
-      iVar8 = -1;
-      pbVar12 = local_5c;
+      iVar9 = -1;
+      pbVar13 = local_5c;
       do {
-        pbVar16 = pbVar12;
-        if (iVar8 == 0) break;
-        iVar8 = iVar8 + -1;
-        pbVar16 = pbVar12 + 1;
-        bVar2 = *pbVar12;
-        pbVar12 = pbVar16;
+        pbVar17 = pbVar13;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pbVar17 = pbVar13 + 1;
+        bVar2 = *pbVar13;
+        pbVar13 = pbVar17;
       } while (bVar2 != 0);
-      pbVar12 = (byte *)(pcVar14 + -uVar9);
-      pbVar16 = pbVar16 + -1;
-      memmove(pbVar16, pbVar12, uVar9); /* compiler REP MOVS byte copy */
-      uVar10 = 0;
+      pbVar13 = (byte *)(pcVar15 + -uVar10);
+      pbVar17 = pbVar17 + -1;
+      memmove(pbVar17, pbVar13, uVar10); /* compiler REP MOVS byte copy */
+      uVar11 = 0;
       Library::MSVCRT::FUN_0072ee80(pcVar5,local_5c);
-      iVar8 = local_18;
+      iVar9 = local_18;
       if (local_18 == 0) {
         Library::MSVCRT::_strncpy(local_c8,PTR_s_OBJECTIVES_0079d718,0x1f);
       }
       else {
-        uVar9 = 0xffffffff;
-        pcVar5 = PTR_s_OBJECTIVES_0079d718;
+        uVar10 = 0xffffffff;
+        pcVar5_mg3 = PTR_s_OBJECTIVES_0079d718;
         do {
-          pcVar15 = pcVar5;
-          if (uVar9 == 0) break;
-          uVar9 = uVar9 - 1;
-          pcVar15 = pcVar5 + 1;
-          cVar1 = *pcVar5;
-          pcVar5 = pcVar15;
+          pcVar5 = pcVar5_mg3;
+          if (uVar10 == 0) break;
+          uVar10 = uVar10 - 1;
+          pcVar5 = pcVar5_mg3 + 1;
+          cVar1 = *pcVar5_mg3;
+          pcVar5_mg3 = pcVar5;
         } while (cVar1 != '\0');
-        uVar9 = ~uVar9;
-        pbVar12 = (byte *)(pcVar15 + -uVar9);
-        pbVar16 = local_5c;
-        memmove(pbVar16, pbVar12, uVar9); /* compiler REP MOVS byte copy */
-        uVar10 = 0;
-        uVar9 = 0xffffffff;
+        uVar10 = ~uVar10;
+        pbVar13 = (byte *)(pcVar5 + -uVar10);
+        pbVar17 = local_5c;
+        memmove(pbVar17, pbVar13, uVar10); /* compiler REP MOVS byte copy */
+        uVar11 = 0;
+        uVar10 = 0xffffffff;
         pcVar5 = "%03d";
         do {
-          pcVar15 = pcVar5;
-          if (uVar9 == 0) break;
-          uVar9 = uVar9 - 1;
-          pcVar15 = pcVar5 + 1;
+          pcVar16 = pcVar5;
+          if (uVar10 == 0) break;
+          uVar10 = uVar10 - 1;
+          pcVar16 = pcVar5 + 1;
           cVar1 = *pcVar5;
-          pcVar5 = pcVar15;
+          pcVar5 = pcVar16;
         } while (cVar1 != '\0');
-        uVar9 = ~uVar9;
-        iVar11 = -1;
-        pbVar12 = local_5c;
+        uVar10 = ~uVar10;
+        iVar12 = -1;
+        pbVar13 = local_5c;
         do {
-          pbVar16 = pbVar12;
-          if (iVar11 == 0) break;
-          iVar11 = iVar11 + -1;
-          pbVar16 = pbVar12 + 1;
-          bVar2 = *pbVar12;
-          pbVar12 = pbVar16;
+          pbVar17 = pbVar13;
+          if (iVar12 == 0) break;
+          iVar12 = iVar12 + -1;
+          pbVar17 = pbVar13 + 1;
+          bVar2 = *pbVar13;
+          pbVar13 = pbVar17;
         } while (bVar2 != 0);
-        pbVar12 = (byte *)(pcVar15 + -uVar9);
-        pbVar16 = pbVar16 + -1;
-        memmove(pbVar16, pbVar12, uVar9); /* compiler REP MOVS byte copy */
-        wsprintfA(local_c8,(char *)local_5c,iVar8);
+        pbVar13 = (byte *)(pcVar16 + -uVar10);
+        pbVar17 = pbVar17 + -1;
+        memmove(pbVar17, pbVar13, uVar10); /* compiler REP MOVS byte copy */
+        wsprintfA(local_c8,(char *)local_5c,iVar9);
       }
-      uVar9 = 0;
+      uVar10 = 0;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_a8 = *(uint *)(local_c + 0x29);
       if (local_a8 == 0) {
@@ -212,31 +218,31 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
         bVar4 = false;
         local_14 = 0;
         local_1c = 0;
-        uVar10 = local_10->count;
-        if (0 < (int)uVar10) {
-          bVar17 = uVar10 != 0;
+        uVar11 = local_10->count;
+        if (0 < (int)uVar11) {
+          bVar18 = uVar11 != 0;
           do {
-            if (bVar17) {
-              pvVar6 = DArrayAt<void>(local_10, uVar9);
+            if (bVar18) {
+              pvVar6 = DArrayAt<void>(local_10, uVar10);
             }
             else {
               pvVar6 = nullptr;
             }
             if ((pvVar6 != nullptr) && ((STField<uint>(pvVar6,0x90) & local_a8) != 0)) {
-              iVar8 = STField<int>(pvVar6,0x94);
-              if (iVar8 == 1) {
+              iVar9 = STField<int>(pvVar6,0x94);
+              if (iVar9 == 1) {
                 bVar4 = true;
               }
-              else if (iVar8 == 2) {
+              else if (iVar9 == 2) {
                 local_14 = 1;
               }
-              else if (iVar8 == 3) {
+              else if (iVar9 == 3) {
                 local_1c = 1;
               }
             }
-            uVar9 = uVar9 + 1;
-            bVar17 = uVar9 < uVar10;
-          } while ((int)uVar9 < (int)uVar10);
+            uVar10 = uVar10 + 1;
+            bVar18 = uVar10 < uVar11;
+          } while ((int)uVar10 < (int)uVar11);
         }
         if (((bVar4) && (local_14 != 0)) && (local_1c != 0)) {
           bVar4 = true;

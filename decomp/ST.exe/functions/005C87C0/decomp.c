@@ -33,7 +33,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
       FUN_006e83f0((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0x14,0x14,
                    0x8b,(uint)DAT_008087c2);
       FUN_006b5440(g_startSystem_0081176C->field_02F0,0,0x14,0x14,
-                   (uint)g_startSystem_0081176C->field_02F4,0,0);
+                   (tagBITMAPINFO *)g_startSystem_0081176C->field_02F4,0,0);
       pSVar2 = local_8;
       if ((DAT_0080734b != '\0') &&
          ((pDVar4 = local_8->field_1F84, pDVar4 != nullptr && (0 < (int)pDVar4->count)))) {

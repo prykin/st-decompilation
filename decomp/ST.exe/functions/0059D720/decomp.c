@@ -17,13 +17,15 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this)
 {
   byte bVar1;
   FSGSTy *this_00;
-  byte *pbVar3;
-  DArrayTy *pDVar4;
-  int iVar5;
+  int iVar3;
+  byte *pbVar4;
   int iVar6;
-  byte *pbVar7;
-  ccFntTy **ppcVar8;
-  bool bVar9;
+  DArrayTy *pDVar5;
+  int iVar5;
+  int iVar7;
+  byte *pbVar8;
+  ccFntTy **ppcVar9;
+  bool bVar10;
   ccFntTy *local_8dc [8];
   DArrayTy *local_8bc;
   undefined4 local_8b0;
@@ -39,29 +41,29 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this)
   FSGSTy *local_c;
   int local_8;
 
-  pbVar3 = this->field_1B0C;
-  if (pbVar3 != nullptr) {
-    pbVar7 = &DAT_00807e1d;
-    ppcVar8 = local_8dc;
+  pbVar4 = this->field_1B0C;
+  if (pbVar4 != nullptr) {
+    pbVar8 = &DAT_00807e1d;
+    ppcVar9 = local_8dc;
     local_c = this;
-    for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *ppcVar8 = nullptr;
-      ppcVar8 = ppcVar8 + 1;
+    for (iVar7 = 0x223; iVar7 != 0; iVar7 = iVar7 + -1) {
+      *ppcVar9 = nullptr;
+      ppcVar9 = ppcVar9 + 1;
     }
     do {
-      bVar1 = *pbVar3;
-      bVar9 = bVar1 < *pbVar7;
-      if (bVar1 != *pbVar7) {
+      bVar1 = *pbVar4;
+      bVar10 = bVar1 < *pbVar8;
+      if (bVar1 != *pbVar8) {
 LAB_0059d77b:
-        local_8 = (1 - (uint)bVar9) - (uint)(bVar9 != 0);
+        local_8 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
         goto LAB_0059d780;
       }
       if (bVar1 == 0) break;
-      bVar1 = pbVar3[1];
-      bVar9 = bVar1 < pbVar7[1];
-      if (bVar1 != pbVar7[1]) goto LAB_0059d77b;
-      pbVar3 = pbVar3 + 2;
-      pbVar7 = pbVar7 + 2;
+      bVar1 = pbVar4[1];
+      bVar10 = bVar1 < pbVar8[1];
+      if (bVar1 != pbVar8[1]) goto LAB_0059d77b;
+      pbVar4 = pbVar4 + 2;
+      pbVar8 = pbVar8 + 2;
     } while (bVar1 != 0);
     local_8 = 0;
 LAB_0059d780:
@@ -69,23 +71,23 @@ LAB_0059d780:
     g_currentExceptionFrame = &local_50;
     iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (iVar6 == 0) {
-      pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
+      pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00 = local_c;
-      local_c->field_1AF8 = pDVar4;
-      Library::DKW::TBL::FUN_006b5aa0(&pDVar4->flags,&DAT_008016a0);
-      pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
-      this_00->field_1AFC = pDVar4;
-      Library::DKW::TBL::FUN_006b5aa0(&pDVar4->flags,&DAT_008016a0);
-      pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
-      this_00->field_1B00 = pDVar4;
-      Library::DKW::TBL::FUN_006b5aa0(&pDVar4->flags,&DAT_008016a0);
-      pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
-      this_00->field_1B04 = &pDVar4->flags;
-      Library::DKW::TBL::FUN_006b5aa0(&pDVar4->flags,&DAT_008016a0);
-      ppcVar8 = local_8dc;
-      for (iVar6 = 0x223; iVar5 = local_8, iVar6 != 0; iVar6 = iVar6 + -1) {
-        *ppcVar8 = nullptr;
-        ppcVar8 = ppcVar8 + 1;
+      local_c->field_1AF8 = pDVar5;
+      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&DAT_008016a0);
+      pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
+      this_00->field_1AFC = pDVar5;
+      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&DAT_008016a0);
+      pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
+      this_00->field_1B00 = pDVar5;
+      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&DAT_008016a0);
+      pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
+      this_00->field_1B04 = &pDVar5->flags;
+      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&DAT_008016a0);
+      ppcVar9 = local_8dc;
+      for (iVar7 = 0x223; iVar3 = local_8, iVar7 != 0; iVar7 = iVar7 + -1) {
+        *ppcVar9 = nullptr;
+        ppcVar9 = ppcVar9 + 1;
       }
       local_8dc[0] = (ccFntTy *)0x1;
       local_8dc[1] = (ccFntTy *)0x89;
@@ -119,7 +121,7 @@ LAB_0059d780:
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE0,nullptr,local_8dc,0);
       local_8dc[1] = (ccFntTy *)0xc8;
-      if (iVar5 != 0) {
+      if (iVar3 != 0) {
         local_8dc[1] = (ccFntTy *)0xcc;
       }
       local_8bc = (DArrayTy *)this_00->field_1B04;

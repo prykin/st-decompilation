@@ -11,8 +11,9 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   OptPanelTy *pOVar2;
   int iVar3;
   int iVar4;
-  ushort **ppuVar5;
-  uint *puVar6;
+  int iVar5;
+  ushort **ppuVar6;
+  uint *puVar7;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
 
@@ -49,26 +50,26 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       FindCloseChangeNotification(pOVar2->field_01DD);
       pOVar2->field_01DD = (HANDLE)0x0;
     }
-    puVar6 = pOVar2->field_01B5;
-    iVar3 = 10;
+    puVar7 = pOVar2->field_01B5;
+    iVar5 = 10;
     do {
-      if (*puVar6 != 0) {
-        StartSystemTy::sub_006E56B0(pOVar2->field_000C,*puVar6);
+      if (*puVar7 != 0) {
+        StartSystemTy::sub_006E56B0(pOVar2->field_000C,*puVar7);
       }
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
-    puVar6 = pOVar2->field_01AD;
-    iVar3 = 2;
+      *puVar7 = 0;
+      puVar7 = puVar7 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
+    puVar7 = pOVar2->field_01AD;
+    iVar5 = 2;
     do {
-      if (*puVar6 != 0) {
-        StartSystemTy::sub_006E56B0(pOVar2->field_000C,*puVar6);
+      if (*puVar7 != 0) {
+        StartSystemTy::sub_006E56B0(pOVar2->field_000C,*puVar7);
       }
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      *puVar7 = 0;
+      puVar7 = puVar7 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     g_optPanel_008016DC = nullptr;
     if (pOVar2->field_017C != nullptr) {
       ccFntTy::operator_delete((uint *)pOVar2->field_017C);
@@ -79,15 +80,15 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       pOVar2->field_0180 = nullptr;
     }
     pOVar2->field_0198 = nullptr;
-    ppuVar5 = &pOVar2->field_0184;
-    iVar3 = 5;
+    ppuVar6 = &pOVar2->field_0184;
+    iVar5 = 5;
     do {
-      if (*ppuVar5 != nullptr) {
-        cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar5);
+      if (*ppuVar6 != nullptr) {
+        cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar6);
       }
-      ppuVar5 = ppuVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      ppuVar6 = ppuVar6 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

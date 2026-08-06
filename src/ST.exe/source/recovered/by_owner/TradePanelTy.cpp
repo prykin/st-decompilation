@@ -13,7 +13,8 @@ void __thiscall st::fn_00551800(TradePanelTy *this)
 {
   int iVar1;
   uint uVar2;
-  int iVar3;
+  int iVar2;
+  uint uVar3;
   undefined4 uVar4;
 
   iVar1 = this->field_01C8;
@@ -46,31 +47,31 @@ void __thiscall st::fn_00551800(TradePanelTy *this)
   if (this->field_01BB == '\0') {
     if ((DAT_0080874e == '\x03') && (this->field_01D0 == '\0')) {
       if (*(ushort *)&this->field_0x1ad == 0) goto LAB_0055198e;
-      iVar3 = (uint)(ushort)this->field_01BC * (uint)*(ushort *)&this->field_0x1ad;
+      iVar2 = (uint)(ushort)this->field_01BC * (uint)*(ushort *)&this->field_0x1ad;
 LAB_0055194f:
-      if (iVar3 < 1) goto LAB_0055198e;
+      if (iVar2 < 1) goto LAB_0055198e;
       if (DAT_0080874e == '\x03') {
         uVar2 = st::fn_004036A7((uint)DAT_0080874d);
       }
       else {
         uVar2 = st::fn_004016E0(DAT_0080874d);
       }
-      if ((int)uVar2 < iVar3) goto LAB_0055198e;
-      iVar3 = 1;
+      if ((int)uVar2 < iVar2) goto LAB_0055198e;
+      iVar2 = 1;
     }
     else {
       if (*(ushort *)(&this->field_0x1ad + (uint)(byte)this->field_01D0 * 8) != 0) {
-        iVar3 = (int)((ulonglong)(ushort)(&this->field_01BC)[(byte)this->field_01D0] /
+        iVar2 = (int)((ulonglong)(ushort)(&this->field_01BC)[(byte)this->field_01D0] /
                      (ulonglong)
                      (longlong)
                      (int)(uint)*(ushort *)(&this->field_0x1ad + (uint)(byte)this->field_01D0 * 8));
         goto LAB_0055194f;
       }
 LAB_0055198e:
-      iVar3 = 0;
+      iVar2 = 0;
     }
-    *(int *)&this->field_0x2c = iVar3;
-    if (iVar3 == 0) {
+    *(int *)&this->field_0x2c = iVar2;
+    if (iVar2 == 0) {
       if (iVar1 != 0) {
 LAB_005519a4:
         uVar4 = this->field_01C8;
@@ -99,14 +100,14 @@ LAB_005519bc:
   st::fn_006E6080(this,2,this->field_01CC,(undefined4 *)&this->field_0x18);
   iVar1 = *(int *)&this->field_0x2c;
   if (this->field_01D0 == '\0') {
-    iVar3 = st::fn_00403954(DAT_0080874d);
+    iVar2 = st::fn_00403954(DAT_0080874d);
   }
   else {
-    iVar3 = st::fn_00402284(DAT_0080874d);
+    iVar2 = st::fn_00402284(DAT_0080874d);
   }
-  uVar2 = (uint)((int)(uint)(ushort)(&this->field_01BC)[(byte)this->field_01D0] <= iVar3);
-  *(uint *)&this->field_0x2c = uVar2;
-  if (uVar2 == 0) {
+  uVar3 = (uint)((int)(uint)(ushort)(&this->field_01BC)[(byte)this->field_01D0] <= iVar2);
+  *(uint *)&this->field_0x2c = uVar3;
+  if (uVar3 == 0) {
     if (iVar1 == 0) {
       return;
     }

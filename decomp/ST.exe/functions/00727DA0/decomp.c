@@ -19,49 +19,52 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
   AnonShape_00727DA0_C4265AA0 *pAVar1;
   bool bVar2;
   byte bVar3;
+  int iVar5;
+  uint uVar14;
   int iVar4;
-  uint uVar5;
+  int local_EAX_936;
+  uint uVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_ECX;
-  uint uVar6;
-  undefined4 *puVar7;
-  AnonShape_00727DA0_C4265AA0 *pAVar8;
-  uint uVar9;
-  AnonShape_00727DA0_C4265AA0 *pAVar10;
-  uint uVar11;
-  byte *pbVar12;
-  int *piVar13;
-  uint uVar14;
-  undefined2 *puVar15;
-  byte *pbVar16;
+  uint uVar7;
+  undefined4 *puVar8;
+  AnonShape_00727DA0_C4265AA0 *pAVar9;
+  uint uVar10;
+  AnonShape_00727DA0_C4265AA0 *pAVar11;
+  uint uVar12;
+  byte *pbVar13;
+  int *piVar14;
+  uint uVar15;
+  undefined2 *puVar16;
+  byte *pbVar17;
   AnonShape_00728170_7560EBA7 local_60;
   int local_38;
   AnonShape_00728170_E57D1DF1 local_34;
   int local_c;
   AnonReceiver_00727C80 *local_8;
 
-  iVar4 = param_1->field_0028 + param_2 * 0x1c;
-  puVar7 = (undefined4 *)
+  iVar5 = param_1->field_0028 + param_2 * 0x1c;
+  puVar8 = (undefined4 *)
            ((uint)*(byte *)(param_1->field_0028 + 1 + param_2 * 0x1c) * 0x10 + param_3);
-  DAT_008570a8 = *puVar7;
-  DAT_008570ac = puVar7[1];
-  DAT_008570b0 = puVar7[2];
-  _DAT_008570b4 = puVar7[3];
-  puVar7 = (undefined4 *)((uint)*(byte *)(iVar4 + 2) * 0x10 + param_3);
-  DAT_008570b8 = *puVar7;
-  DAT_008570bc = puVar7[1];
-  DAT_008570c0 = puVar7[2];
-  _DAT_008570c4 = puVar7[3];
-  puVar7 = (undefined4 *)((uint)*(byte *)(iVar4 + 3) * 0x10 + param_3);
-  DAT_008570c8 = *puVar7;
-  DAT_008570cc = puVar7[1];
-  DAT_008570d0 = puVar7[2];
-  _DAT_008570d4 = puVar7[3];
-  iVar4 = *(int *)&this->field_0x124;
-  if (iVar4 == 2) {
+  DAT_008570a8 = *puVar8;
+  DAT_008570ac = puVar8[1];
+  DAT_008570b0 = puVar8[2];
+  _DAT_008570b4 = puVar8[3];
+  puVar8 = (undefined4 *)((uint)*(byte *)(iVar5 + 2) * 0x10 + param_3);
+  DAT_008570b8 = *puVar8;
+  DAT_008570bc = puVar8[1];
+  DAT_008570c0 = puVar8[2];
+  _DAT_008570c4 = puVar8[3];
+  puVar8 = (undefined4 *)((uint)*(byte *)(iVar5 + 3) * 0x10 + param_3);
+  DAT_008570c8 = *puVar8;
+  DAT_008570cc = puVar8[1];
+  DAT_008570d0 = puVar8[2];
+  _DAT_008570d4 = puVar8[3];
+  iVar5 = *(int *)&this->field_0x124;
+  if (iVar5 == 2) {
     _DAT_008570f8 = (uint)(byte)(&this[1].field_0x150)[param_1->field_0008];
   }
-  else if (iVar4 == 6) {
+  else if (iVar5 == 6) {
     _DAT_008570f8 = param_2;
     DAT_008570a0 = '\x01' << ((byte)(*(int *)&this->field_0xa8 << 1) & 0x1f);
     DAT_008570d8 = param_1->field_003C;
@@ -72,108 +75,108 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
     }
   }
   else {
-    _DAT_008570f8 = (iVar4 != 3) + 0xfe;
+    _DAT_008570f8 = (iVar5 != 3) + 0xfe;
   }
-  uVar5 = 0;
-  pAVar10 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
+  uVar6 = 0;
+  pAVar11 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = 0;
-  pAVar8 = (AnonShape_00727DA0_C4265AA0 *)0x7fff0000;
+  pAVar9 = (AnonShape_00727DA0_C4265AA0 *)0x7fff0000;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
-  piVar13 = &DAT_008570ac;
+  piVar14 = &DAT_008570ac;
   do {
-    pAVar1 = (AnonShape_00727DA0_C4265AA0 *)*piVar13;
-    if ((int)pAVar1 < (int)pAVar8) {
-      pAVar8 = pAVar1;
-      pAVar10 = param_1;
+    pAVar1 = (AnonShape_00727DA0_C4265AA0 *)*piVar14;
+    if ((int)pAVar1 < (int)pAVar9) {
+      pAVar9 = pAVar1;
+      pAVar11 = param_1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_2 = uVar5;
+      param_2 = uVar6;
     }
-    if ((int)pAVar10 < (int)pAVar1) {
-      pAVar10 = pAVar1;
-      DAT_00857070 = uVar5;
+    if ((int)pAVar11 < (int)pAVar1) {
+      pAVar11 = pAVar1;
+      DAT_00857070 = uVar6;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = pAVar1;
     }
-    piVar13 = piVar13 + 4;
-    uVar5 = uVar5 + 1;
-  } while ((int)piVar13 < 0x8570dc);
-  if ((int)pAVar8 < (int)pAVar10) {
-    DAT_00857098 = (int)pAVar8 >> 0x10;
+    piVar14 = piVar14 + 4;
+    uVar6 = uVar6 + 1;
+  } while ((int)piVar14 < 0x8570dc);
+  if ((int)pAVar9 < (int)pAVar11) {
+    DAT_00857098 = (int)pAVar9 >> 0x10;
     STPiece<0,4>(local_34) = 0xffffffff;
     local_8 = this;
-    iVar4 = FUN_00727c80((int *)&local_34,param_2);
-    if (iVar4 != 0) {
+    iVar5 = FUN_00727c80((int *)&local_34,param_2);
+    if (iVar5 != 0) {
       STPiece<0,4>(local_60) = 1;
-      iVar4 = FUN_00727c80((int *)&local_60,param_2);
-      if (iVar4 != 0) {
+      iVar5 = FUN_00727c80((int *)&local_60,param_2);
+      if (iVar5 != 0) {
         if (*(int *)&this->field_0x124 == 6) {
-          iVar4 = *(int *)&this->field_0x28 * DAT_00857098;
+          iVar5 = *(int *)&this->field_0x28 * DAT_00857098;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = (AnonShape_00727DA0_C4265AA0 *)(*(int *)&this->field_0xc + iVar4);
+          param_1 = (AnonShape_00727DA0_C4265AA0 *)(*(int *)&this->field_0xc + iVar5);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_2 = *(int *)&this->field_0x14 + iVar4 * 2;
+          param_2 = *(int *)&this->field_0x14 + iVar5 * 2;
           if (DAT_00857098 < *(int *)&this->field_0x3c) {
             do {
-              uVar5 = local_34.field_001C;
+              uVar6 = local_34.field_001C;
               if (*(int *)&this->field_0x34 <= DAT_00857098) {
-                uVar14 = local_34.field_0024 & 0xffff0000;
-                uVar11 = (local_60.field_0024 & 0xffff0000) - uVar14;
+                uVar15 = local_34.field_0024 & 0xffff0000;
+                uVar12 = (local_60.field_0024 & 0xffff0000) - uVar15;
                 this = local_8;
-                if (uVar11 != 0 && (int)uVar14 <= (int)(local_60.field_0024 & 0xffff0000)) {
+                if (uVar12 != 0 && (int)uVar15 <= (int)(local_60.field_0024 & 0xffff0000)) {
                   DAT_00857068 = (int)(local_60.field_001C - local_34.field_001C) /
-                                 (int)(uVar11 >> 0x10);
-                  uVar11 = local_60.field_0024 & 0xffff0000;
+                                 (int)(uVar12 >> 0x10);
+                  uVar12 = local_60.field_0024 & 0xffff0000;
                   if ((int)DAT_0085705c <= (int)(local_60.field_0024 & 0xffff0000)) {
-                    uVar11 = DAT_0085705c;
+                    uVar12 = DAT_0085705c;
                   }
-                  if ((int)uVar14 < (int)DAT_008570dc) {
-                    uVar14 = FUN_006db5f0(DAT_00857068,DAT_008570dc - uVar14);
-                    uVar5 = uVar5 + uVar14;
+                  if ((int)uVar15 < (int)DAT_008570dc) {
+                    uVar14 = FUN_006db5f0(DAT_00857068,DAT_008570dc - uVar15);
+                    uVar6 = uVar6 + uVar14;
                     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                    uVar11 = extraout_ECX;
-                    uVar14 = DAT_008570dc;
+                    uVar12 = extraout_ECX;
+                    uVar15 = DAT_008570dc;
                   }
-                  iVar4 = DAT_008570d8;
+                  iVar5 = DAT_008570d8;
                   bVar3 = DAT_008570a0;
                   this = local_8;
-                  if (uVar11 - uVar14 != 0 && (int)uVar14 <= (int)uVar11) {
-                    uVar11 = uVar11 - uVar14 >> 0x10;
-                    pbVar16 = &param_1->field_0x0 + (uVar14 >> 0x10);
-                    uVar6 = uVar11;
-                    pbVar12 = pbVar16;
-                    puVar15 = (undefined2 *)((uVar14 >> 0x10) * 2 + param_2);
+                  if (uVar12 - uVar15 != 0 && (int)uVar15 <= (int)uVar12) {
+                    uVar12 = uVar12 - uVar15 >> 0x10;
+                    pbVar17 = &param_1->field_0x0 + (uVar15 >> 0x10);
+                    uVar7 = uVar12;
+                    pbVar13 = pbVar17;
+                    puVar16 = (undefined2 *)((uVar15 >> 0x10) * 2 + param_2);
                     do {
-                      if ((*pbVar12 != 0xff) &&
-                         (DAT_00857078 < (int)(*(int *)(puVar15 + -1) - uVar5))) {
-                        *(byte *)(iVar4 + (uint)*pbVar12) =
-                             *(byte *)(iVar4 + (uint)*pbVar12) | bVar3;
+                      if ((*pbVar13 != 0xff) &&
+                         (DAT_00857078 < (int)(*(int *)(puVar16 + -1) - uVar6))) {
+                        *(byte *)(iVar5 + (uint)*pbVar13) =
+                             *(byte *)(iVar5 + (uint)*pbVar13) | bVar3;
                       }
-                      uVar9 = uVar5 + DAT_00857068;
-                      pbVar12 = pbVar12 + 1;
-                      *puVar15 = (short)(uVar5 >> 0x10);
-                      uVar14 = uVar6 - 1;
-                      bVar2 = 0 < (int)uVar6;
-                      uVar6 = uVar14;
-                      uVar5 = uVar9;
-                      puVar15 = puVar15 + 1;
-                    } while (uVar14 != 0 && bVar2);
+                      uVar10 = uVar6 + DAT_00857068;
+                      pbVar13 = pbVar13 + 1;
+                      *puVar16 = (short)(uVar6 >> 0x10);
+                      uVar15 = uVar7 - 1;
+                      bVar2 = 0 < (int)uVar7;
+                      uVar7 = uVar15;
+                      uVar6 = uVar10;
+                      puVar16 = puVar16 + 1;
+                    } while (uVar15 != 0 && bVar2);
                     bVar3 = DAT_008570f8;
                     do {
-                      *pbVar16 = bVar3;
-                      pbVar16 = pbVar16 + 1;
-                      uVar5 = uVar11 - 1;
-                      bVar2 = 0 < (int)uVar11;
-                      uVar11 = uVar5;
-                    } while (uVar5 != 0 && bVar2);
+                      *pbVar17 = bVar3;
+                      pbVar17 = pbVar17 + 1;
+                      uVar6 = uVar12 - 1;
+                      bVar2 = 0 < (int)uVar12;
+                      uVar12 = uVar6;
+                    } while (uVar6 != 0 && bVar2);
                   }
                 }
               }
               STPiece<4,4>(local_34) = STPiece<4,4>(local_34) + -1;
               if (STPiece<4,4>(local_34) == 0) {
-                iVar4 = FUN_00727c80((int *)&local_34,STPiece<8,4>(local_34));
-                if (iVar4 == 0) {
+                iVar5 = FUN_00727c80((int *)&local_34,STPiece<8,4>(local_34));
+                if (iVar5 == 0) {
                   return;
                 }
               }
@@ -183,8 +186,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
               }
               STPiece<4,4>(local_60) = STPiece<4,4>(local_60) + -1;
               if (STPiece<4,4>(local_60) == 0) {
-                iVar4 = FUN_00727c80((int *)&local_60,STPiece<8,4>(local_60));
-                if (iVar4 == 0) {
+                iVar5 = FUN_00727c80((int *)&local_60,STPiece<8,4>(local_60));
+                if (iVar5 == 0) {
                   return;
                 }
               }
@@ -208,7 +211,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
               FUN_00728170(&local_34,&local_60);
             }
             iVar4 = FUN_00727d50((int *)&local_34);
-          } while (((iVar4 != 0) && (iVar4 = FUN_00727d50((int *)&local_60), iVar4 != 0)) &&
+          } while (((iVar4 != 0) &&
+                   (local_EAX_936 = FUN_00727d50((int *)&local_60), local_EAX_936 != 0)) &&
                   (DAT_00857098 = DAT_00857098 + 1, DAT_00857098 < *(int *)&this->field_0x3c));
         }
       }

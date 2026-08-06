@@ -19,9 +19,9 @@ void __cdecl FUN_00726870(int *param_1)
           iVar2 = iVar2 + 1;
         } while (iVar2 < *piVar1);
       }
-      FreeAndNull((void **)(*param_1 + 0x11));
+      FreeAndNull((void *)(*param_1 + 0x11));
     }
-    FreeAndNull((void **)param_1);
+    FreeAndNull(param_1);
   }
   return;
 }

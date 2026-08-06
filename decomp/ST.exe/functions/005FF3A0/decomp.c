@@ -14,7 +14,7 @@ FUN_005ff3a0(void *this,undefined2 *param_1,undefined2 *param_2,short *param_3)
   if (this_00 != nullptr) {
     iVar1 = this_00->vfunc_F8();
     if (iVar1 != 0) {
-      thunk_FUN_00416270(this_00,param_1,(int *)param_2,(int *)param_3);
+      thunk_FUN_00416270(this_00,(uint *)param_1,(int *)param_2,param_3);
       *param_3 = *param_3 + -0x1e;
       return 1;
     }

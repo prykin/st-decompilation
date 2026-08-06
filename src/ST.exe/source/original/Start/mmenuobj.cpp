@@ -34,8 +34,9 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
 
 {
   int iVar2;
-  uint *puVar3;
-  undefined4 *puVar4;
+  uint *puVar2;
+  undefined4 *puVar3;
+  int iVar4;
   int iVar5;
   ccFntTy_CreateTypeSSpr_param_4Enum cVar6;
   uint uVar7;
@@ -47,9 +48,9 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
   g_currentExceptionFrame = &local_48;
   iVar2 = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
-    puVar4 = (undefined4 *)&param_1->field_0x21;
-    memset(puVar4, 0, 0x27); /* compiler bulk-zero initialization */
-    puVar4 = (undefined4 *)((byte *)puVar4 + 0x24);
+    puVar3 = (undefined4 *)&param_1->field_0x21;
+    memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
+    puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
     *(undefined4 *)&param_1->field_0x8 = param_9;
     *(undefined4 *)param_1 = param_7;
     *(undefined4 *)&param_1->field_0x4 = param_8;
@@ -95,23 +96,23 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
     if ((param_18 != 0) && (param_19 != nullptr)) {
       uVar9 = 0xffffffff;
       uVar8 = 7;
-      iVar2 = *(int *)&param_1->field_0xd9;
+      iVar5 = *(int *)&param_1->field_0xd9;
       uVar7 = 0xffffffff;
       cVar6 = CASE_FFFFFFFE;
-      puVar3 = (uint *)st::fn_006B0140(param_18,g_hINSTANCE_00807618);
-      puVar4 = st::fn_00713480
-                         (param_19,puVar3,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
+      puVar2 = (uint *)st::fn_006B0140(param_18,g_hINSTANCE_00807618);
+      puVar3 = st::fn_00713480
+                         (param_19,puVar2,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(iVar2 + 8))(puVar4,uVar8,uVar9);
+      (**(code **)(iVar5 + 8))(puVar3,uVar8,uVar9);
     }
     param_1->field_00E1 = 0;
     g_currentExceptionFrame = local_48.previous;
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0x2d,0,iVar2,"%s",
+  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0x2d,0,iVar2,"%s",
                              "MMObjTy::InitSprBut");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006A5E40(iVar2,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x2d);
@@ -132,7 +133,7 @@ st::fn_005B5510
 {
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar2;
   undefined4 local_1cc [4];
   undefined4 local_1bc;
   undefined4 local_1b8;
@@ -197,8 +198,10 @@ st::fn_005B5690(MMObjTy *this,int param_1,uint param_2,int param_3,int param_4,i
   undefined4 uVar1;
   MMObjTy *pMVar3;
   int iVar4;
+  int iVar6;
   int iVar5;
-  uint uVar6;
+  int iVar7;
+  uint uVar8;
   InternalExceptionFrame local_4c;
   MMObjTy *local_8;
 
@@ -222,79 +225,79 @@ st::fn_005B5690(MMObjTy *this,int param_1,uint param_2,int param_3,int param_4,i
   case 0:
   case 1:
   case 3:
-    iVar5 = (param_2 & 0xff) * 0x1fb + (int)local_8;
-    iVar4 = *(int *)(iVar5 + 0xef);
+    iVar6 = (param_2 & 0xff) * 0x1fb + (int)local_8;
+    iVar7 = *(int *)(iVar6 + 0xef);
     break;
   case 2:
-    iVar5 = (param_2 & 0xff) * 0x1fb + (int)local_8;
-    iVar4 = *(int *)(iVar5 + 0xef) - param_3;
+    iVar6 = (param_2 & 0xff) * 0x1fb + (int)local_8;
+    iVar7 = *(int *)(iVar6 + 0xef) - param_3;
     break;
   default:
     goto switchD_005b56d4_default;
   }
-  *(int *)(iVar5 + 0xeb) = iVar4 + -1;
+  *(int *)(iVar6 + 0xeb) = iVar7 + -1;
 switchD_005b56d4_default:
-  iVar4 = (param_2 & 0xff) * 0x1fb;
+  iVar7 = (param_2 & 0xff) * 0x1fb;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar6 = *(uint *)((int)local_8 + (param_2 & 0xff) * 0x1fb + 0xe7);
-  if (uVar6 != 0xffffffff) {
+  uVar8 = *(uint *)((int)local_8 + (param_2 & 0xff) * 0x1fb + 0xe7);
+  if (uVar8 != 0xffffffff) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006B3730
-              (*(uint **)((int)local_8 + iVar4 + 299),uVar6,*(uint *)((int)local_8 + iVar4 + 0xeb),
-               *(uint *)((int)local_8 + iVar4 + 0xff),*(uint *)((int)local_8 + iVar4 + 0x103));
+              (*(uint **)((int)local_8 + iVar7 + 299),uVar8,*(uint *)((int)local_8 + iVar7 + 0xeb),
+               *(uint *)((int)local_8 + iVar7 + 0xff),*(uint *)((int)local_8 + iVar7 + 0x103));
   }
-  if (*(char *)((int)pMVar3 + iVar4 + 0xe2) != '\0') {
+  if (*(char *)((int)pMVar3 + iVar7 + 0xe2) != '\0') {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     switch(*(undefined2 *)(param_1 + 0x14)) {
     case 0:
     case 1:
     case 3:
-      *(int *)((int)pMVar3 + iVar4 + 0x221) =
-           *(int *)((int)pMVar3 + iVar4 + 0xff) + *(int *)((int)pMVar3 + iVar4 + 0xab);
-      *(int *)((int)pMVar3 + iVar4 + 0x225) =
-           *(int *)((int)pMVar3 + iVar4 + 0x103) + *(int *)((int)pMVar3 + iVar4 + 0xaf);
+      *(int *)((int)pMVar3 + iVar7 + 0x221) =
+           *(int *)((int)pMVar3 + iVar7 + 0xff) + *(int *)((int)pMVar3 + iVar7 + 0xab);
+      *(int *)((int)pMVar3 + iVar7 + 0x225) =
+           *(int *)((int)pMVar3 + iVar7 + 0x103) + *(int *)((int)pMVar3 + iVar7 + 0xaf);
       break;
     case 2:
-      *(int *)((int)pMVar3 + iVar4 + 0x221) =
-           *(int *)((int)pMVar3 + iVar4 + 0xff) + *(int *)((int)pMVar3 + iVar4 + 0xb3);
-      *(int *)((int)pMVar3 + iVar4 + 0x225) =
-           *(int *)((int)pMVar3 + iVar4 + 0x103) + *(int *)((int)pMVar3 + iVar4 + 0xb7);
+      *(int *)((int)pMVar3 + iVar7 + 0x221) =
+           *(int *)((int)pMVar3 + iVar7 + 0xff) + *(int *)((int)pMVar3 + iVar7 + 0xb3);
+      *(int *)((int)pMVar3 + iVar7 + 0x225) =
+           *(int *)((int)pMVar3 + iVar7 + 0x103) + *(int *)((int)pMVar3 + iVar7 + 0xb7);
     }
-    uVar6 = *(uint *)((int)pMVar3 + iVar4 + 0x209);
-    if (uVar6 != 0xffffffff) {
+    uVar8 = *(uint *)((int)pMVar3 + iVar7 + 0x209);
+    if (uVar8 != 0xffffffff) {
       st::fn_006B3730
-                (*(uint **)((int)pMVar3 + iVar4 + 0x24d),uVar6,
-                 *(uint *)((int)pMVar3 + iVar4 + 0x20d),*(uint *)((int)pMVar3 + iVar4 + 0x221),
-                 *(uint *)((int)pMVar3 + iVar4 + 0x225));
+                (*(uint **)((int)pMVar3 + iVar7 + 0x24d),uVar8,
+                 *(uint *)((int)pMVar3 + iVar7 + 0x20d),*(uint *)((int)pMVar3 + iVar7 + 0x221),
+                 *(uint *)((int)pMVar3 + iVar7 + 0x225));
     }
   }
-  iVar5 = *(int *)((int)pMVar3 + iVar4 + 400);
-  uVar1 = *(undefined4 *)((int)pMVar3 + iVar4 + 0x194);
+  iVar6 = *(int *)((int)pMVar3 + iVar7 + 400);
+  uVar1 = *(undefined4 *)((int)pMVar3 + iVar7 + 0x194);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined2 *)(param_1 + 0x14)) {
   case 0:
-    *(int *)((int)pMVar3 + iVar4 + 0x17c) = *(int *)((int)pMVar3 + iVar4 + 0x180) + -1;
+    *(int *)((int)pMVar3 + iVar7 + 0x17c) = *(int *)((int)pMVar3 + iVar7 + 0x180) + -1;
     break;
   case 1:
-    *(int *)((int)pMVar3 + iVar4 + 0x17c) = *(int *)((int)pMVar3 + iVar4 + 0x180) + -3;
+    *(int *)((int)pMVar3 + iVar7 + 0x17c) = *(int *)((int)pMVar3 + iVar7 + 0x180) + -3;
     break;
   case 2:
-    *(int *)((int)pMVar3 + iVar4 + 400) = iVar5 + param_4;
-    *(int *)((int)pMVar3 + iVar4 + 0x194) = *(int *)((int)pMVar3 + iVar4 + 0x194) + param_5;
+    *(int *)((int)pMVar3 + iVar7 + 400) = iVar6 + param_4;
+    *(int *)((int)pMVar3 + iVar7 + 0x194) = *(int *)((int)pMVar3 + iVar7 + 0x194) + param_5;
   case 3:
-    *(int *)((int)pMVar3 + iVar4 + 0x17c) = *(int *)((int)pMVar3 + iVar4 + 0x180) + -2;
+    *(int *)((int)pMVar3 + iVar7 + 0x17c) = *(int *)((int)pMVar3 + iVar7 + 0x180) + -2;
   }
-  uVar6 = *(uint *)((int)pMVar3 + iVar4 + 0x178);
-  if (uVar6 != 0xffffffff) {
+  uVar8 = *(uint *)((int)pMVar3 + iVar7 + 0x178);
+  if (uVar8 != 0xffffffff) {
     st::fn_006B3730
-              (*(uint **)((int)pMVar3 + iVar4 + 0x1bc),uVar6,*(uint *)((int)pMVar3 + iVar4 + 0x17c),
-               *(uint *)((int)pMVar3 + iVar4 + 400),*(uint *)((int)pMVar3 + iVar4 + 0x194));
+              (*(uint **)((int)pMVar3 + iVar7 + 0x1bc),uVar8,*(uint *)((int)pMVar3 + iVar7 + 0x17c),
+               *(uint *)((int)pMVar3 + iVar7 + 400),*(uint *)((int)pMVar3 + iVar7 + 0x194));
   }
-  *(int *)((int)pMVar3 + iVar4 + 400) = iVar5;
-  *(undefined4 *)((int)pMVar3 + iVar4 + 0x194) = uVar1;
+  *(int *)((int)pMVar3 + iVar7 + 400) = iVar6;
+  *(undefined4 *)((int)pMVar3 + iVar7 + 0x194) = uVar1;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(short *)(param_1 + 0x14) == 2) {
-    uVar6 = 4;
+    uVar8 = 4;
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -302,9 +305,9 @@ switchD_005b56d4_default:
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    uVar6 = 3;
+    uVar8 = 3;
   }
-  st::fn_00404BF1(local_8,uVar6,'\x01',-1);
+  st::fn_00404BF1(local_8,uVar8,'\x01',-1);
   g_currentExceptionFrame = local_4c.previous;
   return;
 }
@@ -405,8 +408,9 @@ void __thiscall st::fn_005B6220(MMObjTy *this)
   MMObjTy *pMVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  uint *puVar3;
   SpriteClassTy *this_00;
+  int iVar5;
   InternalExceptionFrame local_4c;
   MMObjTy *local_8;
 
@@ -416,18 +420,18 @@ void __thiscall st::fn_005B6220(MMObjTy *this)
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (iVar3 == 0) {
-    iVar3 = 0xd;
-    puVar5 = &local_8->field_0066;
+    iVar5 = 0xd;
+    puVar3 = &local_8->field_0066;
     do {
-      if (*puVar5 != 0) {
-        st::fn_006E56B0(pMVar2->field_000C,*puVar5);
+      if (*puVar3 != 0) {
+        st::fn_006E56B0(pMVar2->field_000C,*puVar3);
       }
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      *puVar3 = 0;
+      puVar3 = puVar3 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     this_00 = (SpriteClassTy *)&pMVar2[1].field_0x91;
-    iVar3 = 0xd;
+    iVar5 = 0xd;
     do {
       st::fn_00715AB0(this_00 + -1);
       st::fn_00715AB0(this_00);
@@ -435,8 +439,8 @@ void __thiscall st::fn_005B6220(MMObjTy *this)
         st::fn_00715AB0(this_00 + 1);
       }
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -466,7 +470,8 @@ void __thiscall st::fn_005B6480(MMObjTy *this)
   MMObjTy *pMVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  uint *puVar3;
+  int iVar5;
   InternalExceptionFrame local_4c;
   MMObjTy *local_8;
 
@@ -476,16 +481,16 @@ void __thiscall st::fn_005B6480(MMObjTy *this)
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (iVar3 == 0) {
-    iVar3 = 0xd;
-    puVar5 = &local_8->field_0066;
+    iVar5 = 0xd;
+    puVar3 = &local_8->field_0066;
     do {
-      if (*puVar5 != 0) {
-        st::fn_006E56B0(pMVar2->field_000C,*puVar5);
+      if (*puVar3 != 0) {
+        st::fn_006E56B0(pMVar2->field_000C,*puVar3);
       }
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      *puVar3 = 0;
+      puVar3 = puVar3 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -520,7 +525,8 @@ st::fn_005B6560
 {
   int iVar2;
   int iVar3;
-  uint uVar4;
+  int iVar4;
+  uint uVar5;
   InternalExceptionFrame local_4c;
   MMMObjTy *local_8;
 
@@ -545,15 +551,15 @@ st::fn_005B6560
     goto switchD_005b65a4_default;
   case 1:
   case 3:
-    iVar2 = (uint)param_3 * 3;
+    iVar4 = (uint)param_3 * 3;
     break;
   case 2:
-    iVar2 = (uint)param_3 * 3 + 1;
+    iVar4 = (uint)param_3 * 3 + 1;
     break;
   default:
     goto switchD_005b65a4_default;
   }
-  param_1->field_0008 = iVar2;
+  param_1->field_0008 = iVar4;
 switchD_005b65a4_default:
   if (param_1->field_0004 != 0xffffffff) {
     st::fn_006B3730
@@ -562,7 +568,7 @@ switchD_005b65a4_default:
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(short *)(param_2 + 0x14) == 2) {
-    uVar4 = 10;
+    uVar5 = 10;
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -570,9 +576,9 @@ switchD_005b65a4_default:
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    uVar4 = 9;
+    uVar5 = 9;
   }
-  st::fn_00404BF1(local_8,uVar4,'\x01',-1);
+  st::fn_00404BF1(local_8,uVar5,'\x01',-1);
   g_currentExceptionFrame = local_4c.previous;
   return;
 }
@@ -653,12 +659,19 @@ st::fn_005B67A0
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=9, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00596CC0 -> 005B68B0 @ 00596E4D; data at 0080759C | 00596CC0 -> 005B68B0 @ 00596F64;
+   data at 0080759C | 005AD050 -> 005B68B0 @ 005AD0F0; data at 0080759C | 005AD050 -> 005B68B0 @
+   005AD13A; data at 0080759C | 005AF350 -> 005B68B0 @ 005AF447; data at 0080759C | 005B68B0 ->
+   005B67A0 @ 005B690C | 005C4E20 -> 005B68B0 @ 005C4EDE; data at 0080759C | 005C4E20 -> 005B68B0 @
+   005C4FB2; data at 0080759C | 005E79B0 -> 005B68B0 @ 005E7AA1; data at 0080759C */
 
 void __thiscall
 st::fn_005B68B0
-          (MMMObjTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int param_4,int param_5,
-          int param_6,int param_7,undefined4 *param_8)
+          (MMMObjTy *this,DDXContext *param_1,MMMObjTy *param_2,MMMObjTy *param_3,int param_4,
+          int param_5,int param_6,int param_7,undefined4 *param_8)
 
 {
   int errorCode;
@@ -673,12 +686,11 @@ st::fn_005B68B0
     g_currentExceptionFrame = &local_50;
     errorCode = st::fn_0072D7F0(local_50.jumpBuffer,0);
     if (errorCode == 0) {
-      st::fn_00403099(param_2,param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8);
+      st::fn_00403099(param_2,(int)param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8);
       local_c = param_4 + -0x15 + param_6;
-      st::fn_006C6660
-                ((DDXContext *)param_1,local_c,param_5 + 0x26,7,param_7 - 0x4cU,3,0);
+      st::fn_006C6660(param_1,local_c,param_5 + 0x26,7,param_7 - 0x4cU,3,0);
       st::fn_006C6470
-                (param_1,local_c,param_5 + 0x26,(undefined4 *)0x7,param_7 - 0x4cU,3,*local_8);
+                ((int)param_1,local_c,param_5 + 0x26,(undefined4 *)0x7,param_7 - 0x4cU,3,*local_8);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

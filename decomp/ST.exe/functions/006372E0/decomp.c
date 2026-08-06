@@ -4,10 +4,11 @@
 undefined4 __fastcall FUN_006372e0(int *param_1)
 
 {
+  int iVar2;
   int iVar1;
 
-  iVar1 = thunk_FUN_006367d0(param_1);
-  if (iVar1 != 0) {
+  iVar2 = thunk_FUN_006367d0(param_1);
+  if (iVar2 != 0) {
     return 1;
   }
   if (param_1[10] == 0) {

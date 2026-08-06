@@ -12,39 +12,40 @@ int __fastcall AiFltClassTy::sub_00661800(AnonShape_0065DA10_8B0AA883 *param_1,u
   DArrayTy *array;
   ushort *puVar1;
   STGameObjC *this;
+  int iVar3;
   int iVar2;
-  uint uVar3;
-  bool bVar4;
+  uint uVar4;
+  bool bVar5;
   int local_8;
 
   local_8 = 0;
   array = (DArrayTy *)sub_0065DA10((AiFltClassTy *)param_1,param_2);
   if (array != nullptr) {
-    uVar3 = 0;
-    iVar2 = 0;
+    uVar4 = 0;
+    iVar3 = 0;
     if (0 < (int)array->count) {
-      bVar4 = array->count != 0;
+      bVar5 = array->count != 0;
       do {
-        if (bVar4) {
-          puVar1 = DArrayAt<ushort>(array, uVar3);
+        if (bVar5) {
+          puVar1 = DArrayAt<ushort>(array, uVar4);
         }
         else {
           puVar1 = nullptr;
         }
         this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,param_1->field_0024,*puVar1,CASE_1);
-        if ((((this != nullptr) && (iVar2 = (*this->vtable->vfunc_2C)(), 0x31 < iVar2)) &&
-            (iVar2 < 0x74)) &&
+        if ((((this != nullptr) && (iVar3 = (*this->vtable->vfunc_2C)(), 0x31 < iVar3)) &&
+            (iVar3 < 0x74)) &&
            ((*(short *)&param_1->field_0x39 != 3 &&
             ((this->field_0361 == 5 || (iVar2 = thunk_FUN_004c93e0(this,5), 0 < iVar2)))))) {
           local_8 = local_8 + 1;
         }
-        uVar3 = uVar3 + 1;
-        bVar4 = uVar3 < array->count;
-        iVar2 = local_8;
-      } while ((int)uVar3 < (int)array->count);
+        uVar4 = uVar4 + 1;
+        bVar5 = uVar4 < array->count;
+        iVar3 = local_8;
+      } while ((int)uVar4 < (int)array->count);
     }
     DArrayDestroy(array);
-    return iVar2;
+    return iVar3;
   }
   return 0;
 }

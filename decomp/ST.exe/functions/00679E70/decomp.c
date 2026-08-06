@@ -7,16 +7,17 @@ int __thiscall FUN_00679e70(void *this,short param_1)
   uint uVar1;
   undefined4 *puVar2;
   int iVar3;
-  uint uVar4;
+  int iVar4;
+  uint uVar5;
 
-  uVar4 = 0;
-  iVar3 = STField<int>(this,0x695);
-  uVar1 = *(uint *)(iVar3 + 0xc);
+  uVar5 = 0;
+  iVar4 = STField<int>(this,0x695);
+  uVar1 = *(uint *)(iVar4 + 0xc);
   if (0 < (int)uVar1) {
     do {
-      if (((iVar3 != 0) && (-1 < (int)uVar4)) && ((int)uVar4 < (int)uVar1)) {
-        if (uVar4 < uVar1) {
-          puVar2 = (undefined4 *)(*(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c));
+      if (((iVar4 != 0) && (-1 < (int)uVar5)) && ((int)uVar5 < (int)uVar1)) {
+        if (uVar5 < uVar1) {
+          puVar2 = (undefined4 *)(*(int *)(iVar4 + 8) * uVar5 + *(int *)(iVar4 + 0x1c));
         }
         else {
           puVar2 = nullptr;
@@ -26,10 +27,10 @@ int __thiscall FUN_00679e70(void *this,short param_1)
           return iVar3;
         }
       }
-      iVar3 = STField<int>(this,0x695);
-      uVar4 = uVar4 + 1;
-      uVar1 = *(uint *)(iVar3 + 0xc);
-    } while ((int)uVar4 < (int)uVar1);
+      iVar4 = STField<int>(this,0x695);
+      uVar5 = uVar5 + 1;
+      uVar1 = *(uint *)(iVar4 + 0xc);
+    } while ((int)uVar5 < (int)uVar1);
   }
   return 0;
 }

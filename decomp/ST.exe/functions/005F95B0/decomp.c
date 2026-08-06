@@ -56,7 +56,7 @@ undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
   *(int *)(param_1->field_02E6 + 0x50) = (int)lVar10;
   lVar10 = Library::MSVCRT::__ftol();
   *(int *)(param_1->field_02E6 + 0x54) = (int)lVar10;
-  thunk_FUN_00416270(param_1,&local_8,(int *)&local_6,&local_c);
+  thunk_FUN_00416270(param_1,(uint *)&local_8,(int *)&local_6,(short *)&local_c);
   param_1->field_02C5 = (int)local_6;
   param_1->field_02C1 = (int)local_8;
   param_1->field_02C9 = (int)(short)local_c;

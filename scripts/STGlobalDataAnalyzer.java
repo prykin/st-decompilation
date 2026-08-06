@@ -65,6 +65,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         File selected = outputDirectory(); if (selected == null) return;
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         dataTypes = currentProgram.getDataTypeManager();
+        collectInitializedStringPointers();
         int functionsSeen = 0, callsSeen = 0;
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
         while (functions.hasNext()) {
@@ -354,7 +355,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             }
         }
         List<Parameter> parameters = explicitParameters(called);
-        if (parameters.size() != pushes.size()) return;
+        if (parameters.size() != pushes.size() &&
+                !(called.hasVarArgs() && pushes.size() >= parameters.size())) return;
         for (int index = 0; index < parameters.size(); index++) {
             GlobalValue value = pushes.get(pushes.size() - 1 - index);
             if (value == null) continue;
@@ -435,6 +437,67 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         value.sites.add(site);
     }
 
+    /**
+     * Ghidra's bare Pointer data type loses the initialized pointee identity even
+     * when the image word points exactly at defined string data.  This is not a
+     * callsite vote: the relocation value and target Data object are a complete,
+     * address-independent proof that the global stores char *.  Keeping it as
+     * bare /pointer later renders it as uintptr_t and poisons every string call
+     * boundary which consumes it.
+     */
+    private void collectInitializedStringPointers() throws Exception {
+        DataIterator iterator = currentProgram.getListing().getDefinedData(true);
+        while (iterator.hasNext()) {
+            monitor.checkCancelled();
+            Data data = iterator.next();
+            if (data.getLength() != currentProgram.getDefaultPointerSize() ||
+                    !initializedStringPointerCandidate(data.getDataType())) continue;
+            long raw;
+            try {
+                raw = currentProgram.getDefaultPointerSize() == 4 ?
+                    Integer.toUnsignedLong(currentProgram.getMemory()
+                        .getInt(data.getAddress())) :
+                    currentProgram.getMemory().getLong(data.getAddress());
+            }
+            catch (Exception ignored) {
+                continue;
+            }
+            Address target = currentProgram.getAddressFactory()
+                .getDefaultAddressSpace().getAddress(raw);
+            Data string = target == null ? null :
+                currentProgram.getListing().getDefinedDataAt(target);
+            if (string == null || !string.hasStringValue()) continue;
+            Evidence value = evidence.computeIfAbsent(data.getAddress(),
+                ignored -> new Evidence());
+            value.initializedStringPointers++;
+            Symbol targetSymbol = currentProgram.getSymbolTable().getPrimarySymbol(target);
+            String pointerName = stringPointerName(targetSymbol, data.getAddress());
+            if (!pointerName.isBlank()) value.initializedStringNames.add(pointerName);
+            add(data.getAddress(), "pointer:/char", "", true, false,
+                addr(data.getAddress()) + " contains exact pointer to string data " +
+                    addr(target));
+        }
+    }
+
+    private boolean genericBarePointer(DataType type) {
+        if (!(type instanceof Pointer pointer)) return false;
+        DataType pointed = pointer.getDataType();
+        return pointed == null || Undefined.isUndefined(pointed) ||
+            "/void".equals(pointed.getPathName());
+    }
+
+    private boolean initializedStringPointerCandidate(DataType type) {
+        if (genericBarePointer(type)) return true;
+        if (!(type instanceof Pointer pointer) || pointer.getDataType() == null) return false;
+        return "/char".equals(pointer.getDataType().getPathName());
+    }
+
+    private String stringPointerName(Symbol target, Address pointerAddress) {
+        if (target == null || !target.getName().startsWith("s_")) return "";
+        String stem = target.getName().replaceFirst("(?i)_[0-9a-f]{8}$", "");
+        return "PTR_" + stem + "_" + addr(pointerAddress).toLowerCase(Locale.ROOT);
+    }
+
     private List<Proposal> makeProposals() {
         List<Proposal> result = new ArrayList<>();
         for (Map.Entry<Address, Evidence> entry : evidence.entrySet()) {
@@ -446,7 +509,11 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             boolean scriptOwned = isOwned(address);
             boolean synthetic = SYNTHETIC.matcher(currentName).matches() || scriptOwned ||
                 currentName.matches("(?i)g_[A-Za-z0-9_]+_[0-9a-f]{8}");
-            if (!synthetic) continue;
+            // Ghidra gives exact initialized string pointers useful PTR_s_* names
+            // while leaving their datatype as bare /pointer. Preserve the name,
+            // but do not exclude the independently proven type upgrade merely
+            // because that name is already semantic.
+            if (!synthetic && ev.initializedStringPointers == 0) continue;
             String constructorType = unique(ev.constructorStores);
             String typedStoreType = unique(ev.typedStoreTypes);
             String proposedType = !constructorType.isBlank() ? constructorType :
@@ -489,8 +556,14 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 data.getDataType() instanceof Pointer &&
                 symbol.getSource() != SourceType.USER_DEFINED &&
                 symbol.getSource() != SourceType.IMPORTED;
+            boolean initializedStringPointer = ev.initializedStringPointers > 0 &&
+                "pointer:/char".equals(proposedType) &&
+                genericBarePointer(data.getDataType()) &&
+                symbol.getSource() != SourceType.USER_DEFINED &&
+                symbol.getSource() != SourceType.IMPORTED;
             boolean currentReplaceable = Undefined.isUndefined(data.getDataType()) ||
-                generatedAnonymous || constructorConcreteOverride;
+                generatedAnonymous || constructorConcreteOverride ||
+                initializedStringPointer;
             DataType currentBase = data.getDataType() instanceof Pointer pointer ?
                 pointer.getDataType() : null;
             DataType proposedBase = resolveBaseType(proposedType);
@@ -514,7 +587,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 anchoredStoreDominates && proposedType.startsWith("pointer:");
             boolean typeApply = !typeConflict && typeChange && smallSafeType &&
                 currentReplaceable && extentCompatible && addressEvidenceCompatible &&
-                (contextualAnonymous || anchoredStoreDominates || ev.typedStores >= 1 ||
+                (contextualAnonymous || initializedStringPointer ||
+                    anchoredStoreDominates || ev.typedStores >= 1 ||
                     ev.strongCount >= 2 || count >= 3);
             String proposedName = unique(ev.names);
             int proposedNameCount = proposedName.isBlank() ? 0 :
@@ -532,11 +606,24 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             if (contextualAnonymous)
                 proposedName = "g_" + context.family.toLowerCase(Locale.ROOT) +
                     "Context_" + addr(address);
+            String initializedStringName = ev.initializedStringNames.size() == 1 ?
+                ev.initializedStringNames.iterator().next() : "";
+            boolean generatedGenericStringName =
+                symbol.getSource() == SourceType.ANALYSIS &&
+                symbol.getName().matches("(?i)g_(?:text|_?source)_[0-9a-f]{8}");
+            boolean preserveInitializedStringName =
+                ev.initializedStringPointers > 0 && symbol.getName().startsWith("PTR_s_");
+            boolean repairInitializedStringName =
+                ev.initializedStringPointers > 0 && generatedGenericStringName &&
+                !initializedStringName.isBlank();
+            if (preserveInitializedStringName) proposedName = symbol.getName();
+            else if (repairInitializedStringName) proposedName = initializedStringName;
             boolean sameConcreteType = !proposedType.isBlank() && sameType(currentType, proposedType);
             boolean nameApply = (!typeConflict || currentTypeDominates) && !proposedName.isBlank() &&
                 !symbol.getName().equals(proposedName) && (typeApply || sameConcreteType &&
                     (ev.typedStores >= 1 || ev.strongCount >= 2 || count >= 3) ||
-                    currentTypeDominates || contextualAnonymous || strongSemanticName) &&
+                    currentTypeDominates || contextualAnonymous || strongSemanticName ||
+                    repairInitializedStringName) &&
                 symbol.getSource() != SourceType.USER_DEFINED &&
                 symbol.getSource() != SourceType.IMPORTED;
             if (!typeChange && !nameApply) continue;
@@ -574,6 +661,12 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             if (generatedAnonymous) reasons.add("script_owned_anonymous_pointer_upgrade");
             if (constructorConcreteOverride && !generatedAnonymous)
                 reasons.add("direct_constructor_store_overrides_non_manual_pointer_type");
+            if (initializedStringPointer)
+                reasons.add("exact_initialized_string_pointer_overrides_bare_pointer");
+            if (preserveInitializedStringName)
+                reasons.add("exact_initialized_string_pointer_name_preserved");
+            if (repairInitializedStringName)
+                reasons.add("repair_generated_generic_string_pointer_name_from_exact_target");
             if (!extentCompatible) reasons.add("named_type_shorter_than_observed_anonymous_extent");
             if (!currentReplaceable) reasons.add("concrete_existing_data_preserved");
             result.add(new Proposal(address, symbol, data, proposedType, proposedName,
@@ -944,6 +1037,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                     .getPrimarySymbol(entry.getKey());
                 if (data == null || symbol == null) continue;
                 Proposal proposal = byAddress.get(entry.getKey());
+                String trustedStoreSites = String.join(" | ", ev.typedStoreSites);
+                if (trustedStoreSites.isBlank()) trustedStoreSites = "-";
                 out.write(addr(entry.getKey()) + "\t" + tsv(symbol.getName()) + "\t" +
                     tsv(typeSpecification(data.getDataType())) + "\t" +
                     tsv(ev.callBoundaryTypes.toString()) + "\t" +
@@ -953,7 +1048,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                     tsv(proposal == null ? "" : proposal.proposedType) + "\t" +
                     bit(proposal != null && proposal.typeApply) + "\t" +
                     tsv(String.join(" | ", ev.callBoundarySites)) + "\t" +
-                    tsv(String.join(" | ", ev.typedStoreSites)) + "\n");
+                    tsv(trustedStoreSites) + "\n");
             }
         }
     }
@@ -1043,8 +1138,10 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             constructorStores = new TreeMap<>(), typedStoreTypes = new TreeMap<>(),
             callBoundaryTypes = new TreeMap<>(), libraryContexts = new TreeMap<>();
         final Set<String> sites = new TreeSet<>(), strongNames = new TreeSet<>(),
-            typedStoreSites = new TreeSet<>(), callBoundarySites = new TreeSet<>();
-        int strongCount, addressEvidence, typedStores, libraryContextCalls;
+            typedStoreSites = new TreeSet<>(), callBoundarySites = new TreeSet<>(),
+            initializedStringNames = new TreeSet<>();
+        int strongCount, addressEvidence, typedStores, libraryContextCalls,
+            initializedStringPointers;
     }
     private record ContextVote(String family, int count, int total) {}
     private record TypedValue(String type, String producer, boolean constructorResult) {}

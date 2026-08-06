@@ -170,9 +170,10 @@ LAB_00623d08:
       iVar5 = (int)lVar6;
       lVar6 = Library::MSVCRT::__ftol();
       VisibleClassTy::sub_00558C00(this_00,this_00->field_010C,(int)lVar6,iVar5,piVar7,piVar8);
-      if ((((-1 < iVar3) && (((iVar3 < 5 && (-1 < local_18)) && (local_18 < this_00->field_0030))))
-          && (((local_1c = g_centeredOffsets5[iVar3] + local_1c, -1 < local_1c &&
-               (local_1c < this_00->field_0034)) && (this_00->field_004C != nullptr)))) &&
+      if ((((-1 < iVar3) &&
+           (((iVar3 < 5 && (-1 < local_18)) && (local_18 < (int)this_00->field_0030)))) &&
+          (((local_1c = g_centeredOffsets5[iVar3] + local_1c, -1 < local_1c &&
+            (local_1c < this_00->field_0034)) && (this_00->field_004C != nullptr)))) &&
          (this_00->field_004C[local_18 + local_1c * this_00->field_0030] == 0)) {
         if (this->field_02E9 == '\0') {
           return local_8;

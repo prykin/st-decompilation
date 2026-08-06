@@ -15,8 +15,9 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
   STMessageId SVar1;
   PausePanelTy *this_00;
   int iVar3;
-  LPSTR pCVar4;
   int iVar5;
+  LPSTR pCVar6;
+  int iVar4;
   InternalExceptionFrame local_4c;
   PausePanelTy *local_8;
 
@@ -27,9 +28,9 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\pause.cpp",0x9f,0,iVar3,"%s",
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\pause.cpp",0x9f,0,iVar3,"%s",
                                "PausePanelTy::GetMessage");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\pause.cpp",0x9f);
@@ -45,12 +46,12 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
     }
     if (SVar1 == MESS_ID_NONE) {
       if (this_00->field_0172 == CASE_3) {
-        iVar3 = this_00->field_0054 + -0x174 + this_00->field_004C;
-        if (iVar3 < this_00->field_003C) {
+        iVar5 = this_00->field_0054 + -0x174 + this_00->field_004C;
+        if (iVar5 < this_00->field_003C) {
           this_00->field_003C = this_00->field_003C + -0x1e;
         }
-        if (this_00->field_003C <= iVar3) {
-          this_00->field_003C = iVar3;
+        if (this_00->field_003C <= iVar5) {
+          this_00->field_003C = iVar5;
           this_00->field_0172 = CASE_1;
           ShiftControls(this_00,1);
         }
@@ -61,12 +62,12 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
         return 0;
       }
       if (this_00->field_0172 == CASE_4) {
-        iVar3 = this_00->field_0054 + this_00->field_004C;
-        if (this_00->field_003C < iVar3) {
+        iVar5 = this_00->field_0054 + this_00->field_004C;
+        if (this_00->field_003C < iVar5) {
           this_00->field_003C = this_00->field_003C + 0x1e;
         }
-        if (iVar3 <= this_00->field_003C) {
-          this_00->field_003C = iVar3;
+        if (iVar5 <= this_00->field_003C) {
+          this_00->field_003C = iVar5;
           this_00->field_0172 = CASE_2;
         }
         Library::DKW::DDX::FUN_006b3640
@@ -88,8 +89,8 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
     (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
   }
   else if (SVar1 == MESS_SHARED_C000) {
-    pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    PanelTy::PaintIBut((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar4,0x274d,1,0);
+    pCVar6 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    PanelTy::PaintIBut((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar6,0x274d,1,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

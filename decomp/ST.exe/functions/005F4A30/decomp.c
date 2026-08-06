@@ -15,7 +15,7 @@ undefined4 FUN_005f4a30(int param_1,byte param_2,int param_3)
   int iVar4;
   InternalExceptionFrame local_58;
   AnonShape_005F4A30_D28DC55A *local_14;
-  undefined **local_10;
+  char **local_10;
   int local_c;
   undefined4 local_8;
 

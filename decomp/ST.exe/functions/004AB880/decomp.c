@@ -39,41 +39,51 @@
    00613515 | 00639990 -> 004AB880 @ 006399E4 | 00639990 -> 004AB880 @ 00639AC8 | 00639C90 ->
    004AB880 @ 00639D35 | 00639C90 -> 004AB880 @ 00639D79 | 00639C90 -> 004AB880 @ 00639E80 |
    00639C90 -> 004AB880 @ 00639EA8 | 00639C90 -> 004AB880 @ 0063B5D2 | 00639C90 -> 004AB880 @
-   0063B5FA */
+   0063B5FA
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 004AB880 -> 00709AF0 @ 004AB948 | 004ADBA0 -> 004AB880 @ 004ADD18; unproven partial
+   register write at 004ADD03 */
 
 undefined4 __thiscall
-STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byte param_4)
+STT3DSprC::LoadSequence
+          (STT3DSprC *this,byte param_1,int *param_2,char *text,Global_mfRLoad_param_2Enum param_4)
 
 {
-  byte *pbVar1;
-  char cVar2;
+  ushort *puVar1;
+  byte *pbVar2;
+  char cVar3;
   STT3DSprC *this_00;
-  int iVar4;
+  int local_EAX_35;
   int iVar5;
   ushort *puVar6;
-  void *pvVar7;
-  int iVar8;
-  undefined4 uVar9;
-  int *piVar10;
+  void *pvVar6;
+  int iVar7;
+  int iVar4;
+  undefined4 uVar8;
+  int *piVar9;
+  uint uVar10;
   uint uVar11;
-  uint uVar12;
-  undefined4 *puVar14;
+  undefined4 *puVar13;
+  int iVar14;
   char *pcVar15;
   char *pcVar16;
   InternalExceptionFrame local_58;
   uint local_14;
   STT3DSprC *local_c;
   int local_8;
+  char *pcVar15_mg1;
+  char *pcVar15_mg0;
 
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  local_EAX_35 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_c;
-  if (iVar4 != 0) {
+  if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x3b,0,iVar4,"%s",
-                               "STT3DSprC::LoadSequence");
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x3b,0,local_EAX_35,
+                               "%s","STT3DSprC::LoadSequence");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -88,9 +98,9 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0x23);
   }
   local_14 = (uint)(char)param_1;
-  iVar4 = local_14 * 0x24;
-  local_8 = iVar4;
-  if (*(int *)(&this_00->field_0020->field_0x0 + iVar4) != 0) {
+  iVar14 = local_14 * 0x24;
+  local_8 = iVar14;
+  if (*(int *)(&this_00->field_0020->field_0x0 + iVar14) != 0) {
     iVar5 = UnLoadSequence(this_00,param_1);
     if (iVar5 != 0) {
       RaiseInternalException
@@ -99,57 +109,57 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   }
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                      (param_2,param_4,text,0xffffffff,0,1,0,nullptr);
-  *(ushort **)(&this_00->field_0020->field_0x0 + iVar4) = puVar6;
-  iVar5 = **(int **)(&this_00->field_0020->field_0x0 + iVar4);
-  pvVar7 = Library::DKW::LIB::MemAlloc(iVar5 * 4);
-  *(void **)(&this_00->field_0020->field_0x4 + iVar4) = pvVar7;
-  iVar8 = 0;
+  *(ushort **)(&this_00->field_0020->field_0x0 + iVar14) = puVar6;
+  iVar5 = **(int **)(&this_00->field_0020->field_0x0 + iVar14);
+  pvVar6 = Library::DKW::LIB::MemAlloc(iVar5 * 4);
+  *(void **)(&this_00->field_0020->field_0x4 + iVar14) = pvVar6;
+  iVar7 = 0;
   if (0 < iVar5) {
     do {
-      piVar10 = (int *)(&this_00->field_0020->field_0x0 + iVar4);
-      iVar8 = iVar8 + 1;
-      *(undefined4 *)(piVar10[1] + -4 + iVar8 * 4) = *(undefined4 *)(*piVar10 + 0x2d + iVar8 * 4);
-    } while (iVar8 < iVar5);
+      piVar9 = (int *)(&this_00->field_0020->field_0x0 + iVar14);
+      iVar7 = iVar7 + 1;
+      *(undefined4 *)(piVar9[1] + -4 + iVar7 * 4) = *(undefined4 *)(*piVar9 + 0x2d + iVar7 * 4);
+    } while (iVar7 < iVar5);
   }
-  uVar11 = 0xffffffff;
-  pcVar15 = text;
+  uVar10 = 0xffffffff;
+  pcVar15_mg0 = text;
   do {
+    if (uVar10 == 0) break;
+    uVar10 = uVar10 - 1;
+    cVar3 = *pcVar15_mg0;
+    pcVar15_mg0 = pcVar15_mg0 + 1;
+  } while (cVar3 != '\0');
+  pvVar6 = Library::DKW::LIB::MemAlloc(~uVar10);
+  uVar10 = local_14;
+  *(void **)(&this_00->field_0020->field_0x8 + iVar14) = pvVar6;
+  uVar11 = 0xffffffff;
+  do {
+    pcVar15_mg1 = text;
     if (uVar11 == 0) break;
     uVar11 = uVar11 - 1;
-    cVar2 = *pcVar15;
-    pcVar15 = pcVar15 + 1;
-  } while (cVar2 != '\0');
-  pvVar7 = Library::DKW::LIB::MemAlloc(~uVar11);
-  uVar11 = local_14;
-  *(void **)(&this_00->field_0020->field_0x8 + iVar4) = pvVar7;
-  uVar12 = 0xffffffff;
-  do {
-    pcVar15 = text;
-    if (uVar12 == 0) break;
-    uVar12 = uVar12 - 1;
-    pcVar15 = text + 1;
-    cVar2 = *text;
-    text = pcVar15;
-  } while (cVar2 != '\0');
-  uVar12 = ~uVar12;
-  pcVar15 = pcVar15 + -uVar12;
+    pcVar15_mg1 = text + 1;
+    cVar3 = *text;
+    text = pcVar15_mg1;
+  } while (cVar3 != '\0');
+  uVar11 = ~uVar11;
+  pcVar15 = pcVar15_mg1 + -uVar11;
   pcVar16 = *(char **)(&this_00->field_0020->field_0x8 + local_8);
-  memmove(pcVar16, pcVar15, uVar12); /* compiler REP MOVS byte copy */
+  memmove(pcVar16, pcVar15, uVar11); /* compiler REP MOVS byte copy */
   (&this_00->field_0020->field_0xc)[local_8] = param_4;
   *(undefined4 *)(&this_00->field_0020->field_0x18 + local_8) = 0;
   *(undefined4 *)(&this_00->field_0020->field_0x10 + local_8) = 0;
-  puVar14 = (undefined4 *)(&this_00->field_0020->field_0x0 + local_8);
-  puVar14[5] = *(int *)*puVar14 + -1;
+  puVar13 = (undefined4 *)(&this_00->field_0020->field_0x0 + local_8);
+  puVar13[5] = *(int *)*puVar13 + -1;
   *(undefined4 *)(&this_00->field_0020->field_0x20 + local_8) = 0;
-  piVar10 = *(int **)(&this_00->field_0020->field_0x0 + local_8);
+  piVar9 = *(int **)(&this_00->field_0020->field_0x0 + local_8);
   ST3DSMAPContext::sub_006E98E0
-            (this_00->field_003C,this_00->field_0018,local_14,*piVar10,STField<int>(piVar10,0x21)
-             ,0);
-  puVar6 = (ushort *)(&this_00->field_0020->field_0xe + local_8);
-  *puVar6 = *puVar6 & 0xfe37;
-  pbVar1 = &this_00->field_0020->field_0xe + local_8;
-  *pbVar1 = *pbVar1 | 0x20;
-  this_00->field_001C = this_00->field_001C & ~(1 << ((byte)uVar11 & 0x1f));
+            (this_00->field_003C,this_00->field_0018,local_14,*piVar9,STField<int>(piVar9,0x21),0
+            );
+  puVar1 = (ushort *)(&this_00->field_0020->field_0xe + local_8);
+  *puVar1 = *puVar1 & 0xfe37;
+  pbVar2 = &this_00->field_0020->field_0xe + local_8;
+  *pbVar2 = *pbVar2 | 0x20;
+  this_00->field_001C = this_00->field_001C & ~(1 << ((byte)uVar10 & 0x1f));
   g_currentExceptionFrame = local_58.previous;
   return 0;
 }

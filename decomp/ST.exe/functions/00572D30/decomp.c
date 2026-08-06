@@ -14,8 +14,9 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
   char cVar2;
   LSTATUS LVar3;
   uint uVar4;
-  UINT UVar5;
-  int iVar6;
+  UINT UVar4;
+  int iVar5;
+  uint uVar6;
   uint uVar7;
   char *pcVar8;
   char *pcVar9;
@@ -46,62 +47,62 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
         local_14 = 0;
         uVar4 = thunk_FUN_00571dc0();
         local_1c[0] = STReplaceLowByte((uint32_t)(local_1c[0]), (uint8_t)((char)uVar4));
-        UVar5 = GetDriveTypeA((LPCSTR)local_1c);
-        if (UVar5 != 5) {
-          uVar4 = 0xffffffff;
+        UVar4 = GetDriveTypeA((LPCSTR)local_1c);
+        if (UVar4 != 5) {
+          uVar6 = 0xffffffff;
           pcVar9 = &DAT_007ca694;
           do {
             pcVar11 = pcVar9;
-            if (uVar4 == 0) break;
-            uVar4 = uVar4 - 1;
+            if (uVar6 == 0) break;
+            uVar6 = uVar6 - 1;
             pcVar11 = pcVar9 + 1;
             cVar2 = *pcVar9;
             pcVar9 = pcVar11;
           } while (cVar2 != '\0');
-          uVar4 = ~uVar4;
-          pcVar9 = pcVar11 + -uVar4;
+          uVar6 = ~uVar6;
+          pcVar9 = pcVar11 + -uVar6;
           pcVar11 = (char *)local_1c;
-          memmove(pcVar11, pcVar9, uVar4); /* compiler REP MOVS byte copy */
+          memmove(pcVar11, pcVar9, uVar6); /* compiler REP MOVS byte copy */
           uVar7 = 0;
         }
         FUN_006b78c0((char *)local_1c,(char *)local_1c);
-        uVar4 = 0xffffffff;
+        uVar6 = 0xffffffff;
         pcVar9 = (char *)local_1c;
         do {
           pcVar11 = pcVar9;
-          if (uVar4 == 0) break;
-          uVar4 = uVar4 - 1;
+          if (uVar6 == 0) break;
+          uVar6 = uVar6 - 1;
           pcVar11 = pcVar9 + 1;
           cVar2 = *pcVar9;
           pcVar9 = pcVar11;
         } while (cVar2 != '\0');
-        uVar4 = ~uVar4;
-        pcVar9 = pcVar11 + -uVar4;
+        uVar6 = ~uVar6;
+        pcVar9 = pcVar11 + -uVar6;
         pcVar11 = (char *)((int)this + 0x640);
-        for (uVar7 = uVar4 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+        for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
           *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
           pcVar9 = pcVar9 + 4;
           pcVar11 = pcVar11 + 4;
         }
-        for (uVar4 = uVar4 & 3; pcVar10 = RegSetValueExA_exref, uVar4 != 0; uVar4 = uVar4 - 1) {
+        for (uVar6 = uVar6 & 3; pcVar10 = RegSetValueExA_exref, uVar6 != 0; uVar6 = uVar6 - 1) {
           *pcVar11 = *pcVar9;
           pcVar9 = pcVar9 + 1;
           pcVar11 = pcVar11 + 1;
         }
       }
       (*pcVar10)(local_8,"CDAudioDrive",0,1,(int)this + 0x640,5);
-      iVar6 = (*pcVar10)(local_8,"CharSet",0,4,(int)this + 0x781,4);
-      if (iVar6 != 0) {
+      iVar5 = (*pcVar10)(local_8,"CharSet",0,4,(int)this + 0x781,4);
+      if (iVar5 != 0) {
         RegCloseKey(local_8);
         return 0;
       }
-      iVar6 = (*pcVar10)(local_8,"Server",0,1,(int)this + 0xdae,0x40);
-      if (iVar6 != 0) {
+      iVar5 = (*pcVar10)(local_8,"Server",0,1,(int)this + 0xdae,0x40);
+      if (iVar5 != 0) {
         RegCloseKey(local_8);
         return 0;
       }
       if ((((uint)param_2 & 2) != 0) &&
-         (iVar6 = (*pcVar10)(local_8,"Editor",0,3,&DAT_008071f8,0x100), iVar6 != 0)) {
+         (iVar5 = (*pcVar10)(local_8,"Editor",0,3,&DAT_008071f8,0x100), iVar5 != 0)) {
         RegCloseKey(local_8);
         return 0;
       }
@@ -120,30 +121,30 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
       FUN_006b8280(pcVar8,pcVar8);
       LVar3 = RegCreateKeyA((HKEY)0x80000002,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Directories",&local_8);
       if (LVar3 == 0) {
-        iVar6 = (*pcVar10)(local_8,"MainPath",0,1,pcVar9,0x104);
-        if (iVar6 != 0) {
+        iVar5 = (*pcVar10)(local_8,"MainPath",0,1,pcVar9,0x104);
+        if (iVar5 != 0) {
           RegCloseKey(local_8);
           return 0;
         }
-        iVar6 = (*pcVar10)(local_8,"SoundPath",0,1,pcVar11,0x104);
-        if (iVar6 != 0) {
+        iVar5 = (*pcVar10)(local_8,"SoundPath",0,1,pcVar11,0x104);
+        if (iVar5 != 0) {
           RegCloseKey(local_8);
           return 0;
         }
-        iVar6 = (*pcVar10)(local_8,"MusicPath",0,1,pcVar1,0x104);
-        if (iVar6 != 0) {
+        iVar5 = (*pcVar10)(local_8,"MusicPath",0,1,pcVar1,0x104);
+        if (iVar5 != 0) {
           RegCloseKey(local_8);
           return 0;
         }
-        iVar6 = (*pcVar10)(local_8,"VideoPath",0,1,local_c,0x104);
-        if (iVar6 == 0) {
-          iVar6 = (*pcVar10)(local_8,"DataPath",0,1,local_10,0x104);
-          if (iVar6 != 0) {
+        iVar5 = (*pcVar10)(local_8,"VideoPath",0,1,local_c,0x104);
+        if (iVar5 == 0) {
+          iVar5 = (*pcVar10)(local_8,"DataPath",0,1,local_10,0x104);
+          if (iVar5 != 0) {
             RegCloseKey(local_8);
             return 0;
           }
-          iVar6 = (*pcVar10)(local_8,"InstPath",0,1,pcVar8,0x104);
-          if (iVar6 == 0) {
+          iVar5 = (*pcVar10)(local_8,"InstPath",0,1,pcVar8,0x104);
+          if (iVar5 == 0) {
             RegCloseKey(local_8);
             return 1;
           }

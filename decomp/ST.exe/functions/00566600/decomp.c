@@ -11,11 +11,12 @@ int FUN_00566600(int param_1)
 {
   char cVar1;
   int iVar2;
-  cMf32 *pcVar3;
-  undefined4 *puVar4;
-  LPSTR pCVar5;
+  cMf32 *pcVar2;
+  undefined4 *puVar3;
+  LPSTR pCVar4;
+  uint uVar5;
   uint uVar6;
-  uint uVar7;
+  int iVar7;
   byte *pbVar8;
   char *pcVar9;
   byte *pbVar10;
@@ -32,6 +33,8 @@ int FUN_00566600(int param_1)
   SoundManagerTy *local_10;
   uint local_c;
   ushort *local_8;
+  char *pcVar9_mg1;
+  char *pcVar9_mg2;
 
   local_1c = 0;
   local_60.previous = g_currentExceptionFrame;
@@ -46,108 +49,108 @@ int FUN_00566600(int param_1)
     g_currentExceptionFrame = local_60.previous;
     return local_1c;
   }
-  uVar6 = 0xffffffff;
+  uVar5 = 0xffffffff;
   pcVar9 = &DAT_0080798c;
   do {
     pcVar11 = pcVar9;
-    if (uVar6 == 0) break;
-    uVar6 = uVar6 - 1;
+    if (uVar5 == 0) break;
+    uVar5 = uVar5 - 1;
     pcVar11 = pcVar9 + 1;
     cVar1 = *pcVar9;
     pcVar9 = pcVar11;
   } while (cVar1 != '\0');
-  uVar6 = ~uVar6;
-  pbVar8 = (byte *)(pcVar11 + -uVar6);
+  uVar5 = ~uVar5;
+  pbVar8 = (byte *)(pcVar11 + -uVar5);
   pbVar10 = local_164;
-  memmove(pbVar10, pbVar8, uVar6); /* compiler REP MOVS byte copy */
-  uVar7 = 0;
+  memmove(pbVar10, pbVar8, uVar5); /* compiler REP MOVS byte copy */
+  uVar6 = 0;
   FUN_006b8280((char *)local_164,(char *)local_164);
-  uVar6 = 0xffffffff;
-  pcVar9 = PTR_s_music_0079b00c;
+  uVar5 = 0xffffffff;
+  pcVar9_mg1 = PTR_s_music_0079b00c;
   do {
-    pcVar11 = pcVar9;
-    if (uVar6 == 0) break;
-    uVar6 = uVar6 - 1;
-    pcVar11 = pcVar9 + 1;
-    cVar1 = *pcVar9;
-    pcVar9 = pcVar11;
+    pcVar9 = pcVar9_mg1;
+    if (uVar5 == 0) break;
+    uVar5 = uVar5 - 1;
+    pcVar9 = pcVar9_mg1 + 1;
+    cVar1 = *pcVar9_mg1;
+    pcVar9_mg1 = pcVar9;
   } while (cVar1 != '\0');
-  uVar6 = ~uVar6;
-  iVar2 = -1;
+  uVar5 = ~uVar5;
+  iVar7 = -1;
   pbVar8 = local_164;
   do {
     pbVar10 = pbVar8;
-    if (iVar2 == 0) break;
-    iVar2 = iVar2 + -1;
+    if (iVar7 == 0) break;
+    iVar7 = iVar7 + -1;
     pbVar10 = pbVar8 + 1;
     bVar12 = *pbVar8;
     pbVar8 = pbVar10;
   } while (bVar12 != 0);
-  pbVar8 = (byte *)(pcVar11 + -uVar6);
+  pbVar8 = (byte *)(pcVar9 + -uVar5);
   pbVar10 = pbVar10 + -1;
-  memmove(pbVar10, pbVar8, uVar6); /* compiler REP MOVS byte copy */
-  uVar7 = 0;
-  pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_164,3,0,0);
-  uVar6 = 0xffffffff;
-  local_10->field_0018 = pcVar3;
-  pcVar9 = PTR_s_GM_SET_0079b010;
+  memmove(pbVar10, pbVar8, uVar5); /* compiler REP MOVS byte copy */
+  uVar6 = 0;
+  pcVar2 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_164,3,0,0);
+  uVar5 = 0xffffffff;
+  local_10->field_0018 = pcVar2;
+  pcVar9_mg2 = PTR_s_GM_SET_0079b010;
   do {
-    pcVar11 = pcVar9;
-    if (uVar6 == 0) break;
-    uVar6 = uVar6 - 1;
-    pcVar11 = pcVar9 + 1;
-    cVar1 = *pcVar9;
-    pcVar9 = pcVar11;
+    pcVar9 = pcVar9_mg2;
+    if (uVar5 == 0) break;
+    uVar5 = uVar5 - 1;
+    pcVar9 = pcVar9_mg2 + 1;
+    cVar1 = *pcVar9_mg2;
+    pcVar9_mg2 = pcVar9;
   } while (cVar1 != '\0');
-  uVar6 = ~uVar6;
+  uVar5 = ~uVar5;
   local_368 = 0xc;
-  pcVar9 = pcVar11 + -uVar6;
+  pcVar9 = pcVar9 + -uVar5;
   pcVar11 = local_367;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+  for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
     *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
     pcVar9 = pcVar9 + 4;
     pcVar11 = pcVar11 + 4;
   }
   local_c = 0;
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+  for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
     *pcVar11 = *pcVar9;
     pcVar9 = pcVar9 + 1;
     pcVar11 = pcVar11 + 1;
   }
   local_18 = local_367;
-  local_14 = pcVar3;
-  cMf32::ToBeg(pcVar3,FUN_006f2d10,&local_368);
-  pcVar3 = local_14;
-  puVar4 = cMf32::RecNameGetNext(local_14);
-  uVar6 = local_c;
-  while (puVar4 != nullptr) {
-    local_c = uVar6 + 1;
-    puVar4 = cMf32::RecNameGetNext(pcVar3);
-    uVar6 = local_c;
+  local_14 = pcVar2;
+  cMf32::ToBeg(pcVar2,FUN_006f2d10,&local_368);
+  pcVar2 = local_14;
+  puVar3 = cMf32::RecNameGetNext(local_14);
+  uVar5 = local_c;
+  while (puVar3 != nullptr) {
+    local_c = uVar5 + 1;
+    puVar3 = cMf32::RecNameGetNext(pcVar2);
+    uVar5 = local_c;
   }
-  local_c = uVar6;
-  if (uVar6 == 0) {
+  local_c = uVar5;
+  if (uVar5 == 0) {
     RaiseInternalException(-4,g_overwriteContext_007ED77C,"E:\\__titans\\snd_mngr.cpp",0x25);
   }
   if ((param_1 == 0) || ((param_1 < 0 && ((int)local_10->field_0028 < 1)))) {
-    uVar7 = Library::MSVCRT::FUN_0072e6c0();
-    local_10->field_0028 = uVar7 % uVar6 + 1;
+    uVar6 = Library::MSVCRT::FUN_0072e6c0();
+    local_10->field_0028 = uVar6 % uVar5 + 1;
   }
   if (0 < param_1) {
     local_10->field_0028 = param_1;
   }
-  iVar2 = 0;
+  iVar7 = 0;
   bVar12 = 0;
-  pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,local_10->field_0028);
-  local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(local_10->field_0018,pCVar5,bVar12,iVar2);
+  pCVar4 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,local_10->field_0028);
+  local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(local_10->field_0018,pCVar4,bVar12,iVar7);
   if (local_8 == nullptr) {
-    uVar7 = Library::MSVCRT::FUN_0072e6c0();
+    uVar6 = Library::MSVCRT::FUN_0072e6c0();
     iVar13 = 0;
     bVar12 = 0;
-    iVar2 = uVar7 % uVar6 + 1;
-    local_10->field_0028 = iVar2;
-    pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,iVar2);
-    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(local_10->field_0018,pCVar5,bVar12,iVar13);
+    iVar7 = uVar6 % uVar5 + 1;
+    local_10->field_0028 = iVar7;
+    pCVar4 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,iVar7);
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(local_10->field_0018,pCVar4,bVar12,iVar13);
     if (local_8 == nullptr) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\snd_mngr.cpp",0x32);

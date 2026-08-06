@@ -10,12 +10,15 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
 {
   undefined4 uVar1;
   AiTactClassTy *this_00;
+  int local_EAX_35;
+  int iVar4;
   int iVar3;
-  AiTactClassTy_field_00A5DArray *pAVar4;
+  AiTactClassTy_field_00A5DArray *pAVar5;
   AiTactClassTy_field_00A5Element *element_00a5;
-  int iVar6;
-  uint uVar7;
-  bool bVar9;
+  int iVar7;
+  int iVar8;
+  uint uVar9;
+  bool bVar11;
   InternalExceptionFrame local_80;
   uint local_3c [3];
   undefined1 local_30;
@@ -27,15 +30,15 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
+  local_EAX_35 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar3 != 0) {
+  if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x36a,0,iVar3,"%s",
-                               "AiTactClassTy::GetAiMess");
-    if (iVar6 == 0) {
-      RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_tact.cpp",0x36b);
-      return iVar3;
+    iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x36a,0,local_EAX_35,
+                               "%s","AiTactClassTy::GetAiMess");
+    if (iVar7 == 0) {
+      RaiseInternalException(local_EAX_35,0,"E:\\__titans\\ai\\ai_tact.cpp",0x36b);
+      return local_EAX_35;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
@@ -66,21 +69,21 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
       g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x6f:
-      iVar6 = thunk_FUN_0068e850(local_8,*(int *)((int)&param_1->field_000A + 2));
-      iVar3 = *(int *)((int)&param_1->field_000A + 2);
-      *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar6;
-      iVar3 = sub_0068E610(this_00,iVar3);
+      iVar4 = thunk_FUN_0068e850(local_8,*(int *)((int)&param_1->field_000A + 2));
+      iVar8 = *(int *)((int)&param_1->field_000A + 2);
+      *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar4;
+      iVar3 = sub_0068E610(this_00,iVar8);
       *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar3;
       g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x70:
-      uVar7 = 0;
-      pAVar4 = local_8->field_00A5;
-      if (0 < (int)pAVar4->count) {
-        bVar9 = pAVar4->count != 0;
+      uVar9 = 0;
+      pAVar5 = local_8->field_00A5;
+      if (0 < (int)pAVar5->count) {
+        bVar11 = pAVar5->count != 0;
         do {
-          if (bVar9) {
-            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
+          if (bVar11) {
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar5, uVar9);
           }
           else {
             element_00a5 = nullptr;
@@ -100,10 +103,10 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
               return 0;
             }
           }
-          pAVar4 = this_00->field_00A5;
-          uVar7 = uVar7 + 1;
-          bVar9 = uVar7 < pAVar4->count;
-          if ((int)pAVar4->count <= (int)uVar7) {
+          pAVar5 = this_00->field_00A5;
+          uVar9 = uVar9 + 1;
+          bVar11 = uVar9 < pAVar5->count;
+          if ((int)pAVar5->count <= (int)uVar9) {
             g_currentExceptionFrame = local_80.previous;
             return 0;
           }
@@ -111,12 +114,12 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
       }
       break;
     case 0x71:
-      uVar7 = local_8->field_00A5->count - 1;
-      if (-1 < (int)uVar7) {
+      uVar9 = local_8->field_00A5->count - 1;
+      if (-1 < (int)uVar9) {
         do {
-          pAVar4 = this_00->field_00A5;
-          if (uVar7 < pAVar4->count) {
-            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
+          pAVar5 = this_00->field_00A5;
+          if (uVar9 < pAVar5->count) {
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar5, uVar9);
           }
           else {
             element_00a5 = nullptr;
@@ -125,40 +128,40 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
              (element_00a5->field_0004 != nullptr)) {
             AiFltClassTy::GetAiMess(element_00a5->field_0004,(uint *)param_1);
             thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(element_00a5->field_0004 + 8));
-            DArrayRemoveAt((DArrayTy *)this_00->field_00A5,uVar7);
+            DArrayRemoveAt((DArrayTy *)this_00->field_00A5,uVar9);
           }
-          uVar7 = uVar7 - 1;
-        } while (-1 < (int)uVar7);
+          uVar9 = uVar9 - 1;
+        } while (-1 < (int)uVar9);
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       break;
     case 0x72:
-      iVar3 = *(int *)&param_1->field_0x8;
-      if (iVar3 == 0) {
+      iVar8 = *(int *)&param_1->field_0x8;
+      if (iVar8 == 0) {
         GiveObjByClaim(local_8,*(uint **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      if (iVar3 == 1) {
+      if (iVar8 == 1) {
         GiveObjByFltType(local_8,*(uint **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      if (iVar3 == 2) {
+      if (iVar8 == 2) {
         GiveObjByGrpNum(local_8,*(DArrayTy **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       break;
     case 0x73:
-      uVar7 = 0;
-      pAVar4 = local_8->field_00A5;
-      if (0 < (int)pAVar4->count) {
-        bVar9 = pAVar4->count != 0;
+      uVar9 = 0;
+      pAVar5 = local_8->field_00A5;
+      if (0 < (int)pAVar5->count) {
+        bVar11 = pAVar5->count != 0;
         do {
-          if (bVar9) {
-            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
+          if (bVar11) {
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar5, uVar9);
           }
           else {
             element_00a5 = nullptr;
@@ -170,10 +173,10 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
             g_currentExceptionFrame = local_80.previous;
             return 0;
           }
-          pAVar4 = this_00->field_00A5;
-          uVar7 = uVar7 + 1;
-          bVar9 = uVar7 < pAVar4->count;
-        } while ((int)uVar7 < (int)pAVar4->count);
+          pAVar5 = this_00->field_00A5;
+          uVar9 = uVar9 + 1;
+          bVar11 = uVar9 < pAVar5->count;
+        } while ((int)uVar9 < (int)pAVar5->count);
       }
     }
   }

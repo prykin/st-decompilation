@@ -134,130 +134,152 @@ int st::fn_0040CE20(AnonShape_0040D540_1BB7A4CF *param_1,AnonShape_0040CE20_D332
   short *psVar2;
   uint uVar3;
   int iVar4;
-  int iVar5;
+  int local_EAX_586;
+  int local_EAX_617;
+  int local_EAX_649;
+  int local_EAX_679;
+  int local_EAX_710;
   int iVar6;
+  int local_EAX_957;
+  int local_EAX_989;
+  int local_EAX_1022;
+  int local_EAX_1053;
+  int local_EAX_1085;
+  int iVar5;
   int iVar7;
   int iVar8;
-  short *psVar9;
+  int iVar9;
+  short *psVar10;
   int local_1c;
   int local_14;
 
   psVar2 = g_pathingGrid.cells;
   iVar5 = (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
-  iVar7 = (int)param_2->field_0049 * (int)g_pathingGrid.sizeX + param_2->field_004B * iVar5 +
+  iVar8 = (int)param_2->field_0049 * (int)g_pathingGrid.sizeX + param_2->field_004B * iVar5 +
           (int)param_2->field_0047;
   sVar1 = 30000;
   local_14 = 1;
   do {
     if (param_2->field_00A3 - param_2->field_00A7 <= local_14) break;
     local_1c = 0;
-    psVar9 = (short *)(param_2->field_009F + (param_2->field_00A7 + local_14) * 0x48);
+    psVar10 = (short *)(param_2->field_009F + (param_2->field_00A7 + local_14) * 0x48);
     do {
-      if (*psVar9 == -1) break;
+      if (*psVar10 == -1) break;
       uVar3 = st::fn_006A5EB0((int)param_2->field_0047,(int)param_2->field_0049,
-                           (int)param_2->field_004B,(int)*psVar9,(int)psVar9[1],(int)psVar9[2]);
+                           (int)param_2->field_004B,(int)*psVar10,(int)psVar10[1],(int)psVar10[2]);
       if ((uVar3 != 0xffe) &&
-         ((psVar9[3] < sVar1 ||
-          (((psVar9[3] == sVar1 && (uVar3 == param_2->field_00AF)) && (local_14 < 2)))))) {
-        iVar8 = (int)*psVar9 - (int)param_2->field_0047;
-        iVar6 = (int)psVar9[1] - (int)param_2->field_0049;
+         ((psVar10[3] < sVar1 ||
+          (((psVar10[3] == sVar1 && (uVar3 == param_2->field_00AF)) && (local_14 < 2)))))) {
+        iVar9 = (int)*psVar10 - (int)param_2->field_0047;
+        iVar7 = (int)psVar10[1] - (int)param_2->field_0049;
         if ((uVar3 & 1) == 0) {
           if (((uVar3 & 0x6000) == 0) || ((uVar3 & 0xffff9fff) == 0xffe)) {
 LAB_0040d369:
-            *param_3 = (int)*psVar9;
-            *param_4 = (int)psVar9[1];
-            *param_5 = (int)psVar9[2];
+            *param_3 = (int)*psVar10;
+            *param_4 = (int)psVar10[1];
+            *param_5 = (int)psVar10[2];
             *param_6 = uVar3;
-            sVar1 = psVar9[3];
+            sVar1 = psVar10[3];
           }
-          else if (((psVar2[iVar7 + ((int)psVar9[2] - (int)param_2->field_004B) * iVar5] & 0xc000U)
+          else if (((psVar2[iVar8 + ((int)psVar10[2] - (int)param_2->field_004B) * iVar5] & 0xc000U)
                     != 0xc000) &&
                   (iVar4 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
                                               (int)param_2->field_0047,(int)param_2->field_0049,
-                                              (int)psVar9[2]), iVar4 != 0)) {
-            if (psVar9[1] == param_2->field_0049) {
-              if ((psVar2[iVar7 + iVar8] & 0xc000U) != 0xc000) {
-                iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,(int)*psVar9,
-                                           (int)param_2->field_0049,(int)param_2->field_004B);
+                                              (int)psVar10[2]), iVar4 != 0)) {
+            if (psVar10[1] == param_2->field_0049) {
+              if ((psVar2[iVar8 + iVar9] & 0xc000U) != 0xc000) {
+                iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,(int)*psVar10
+                                           ,(int)param_2->field_0049,(int)param_2->field_004B);
 joined_r0x0040d327:
                 if (iVar6 != 0) goto LAB_0040d369;
               }
             }
-            else if ((psVar2[iVar7 + g_pathingGrid.sizeX * iVar6] & 0xc000U) != 0xc000) {
+            else if ((psVar2[iVar8 + g_pathingGrid.sizeX * iVar7] & 0xc000U) != 0xc000) {
               iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                         (int)param_2->field_0047,(int)psVar9[1],
+                                         (int)param_2->field_0047,(int)psVar10[1],
                                          (int)param_2->field_004B);
               goto joined_r0x0040d327;
             }
           }
         }
-        else if ((((psVar2[iVar7 + iVar8] & 0xc000U) != 0xc000) &&
-                 ((psVar2[iVar7 + g_pathingGrid.sizeX * iVar6] & 0xc000U) != 0xc000)) &&
+        else if ((((psVar2[iVar8 + iVar9] & 0xc000U) != 0xc000) &&
+                 ((psVar2[iVar8 + g_pathingGrid.sizeX * iVar7] & 0xc000U) != 0xc000)) &&
                 ((iVar4 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                             (int)param_2->field_0047,(int)psVar9[1],
+                                             (int)param_2->field_0047,(int)psVar10[1],
                                              (int)param_2->field_004B), iVar4 != 0 &&
                  (iVar4 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                             (int)*psVar9,(int)param_2->field_0049,
+                                             (int)*psVar10,(int)param_2->field_0049,
                                              (int)param_2->field_004B), iVar4 != 0)))) {
           if ((uVar3 & 0x4000) == 0) {
             if ((uVar3 & 0x2000) == 0) goto LAB_0040d369;
-            if ((((((psVar2[iVar7 + iVar5] & 0xc000U) != 0xc000) &&
-                  ((psVar2[iVar7 + iVar8 + iVar5] & 0xc000U) != 0xc000)) &&
-                 (iVar6 = g_pathingGrid.sizeX * iVar6,
-                 (psVar2[iVar7 + iVar6 + iVar5] & 0xc000U) != 0xc000)) &&
-                (((psVar2[iVar7 + iVar6 + iVar8] & 0xc000U) != 0xc000 &&
-                 ((psVar2[iVar7 + iVar8] & 0xc000U) != 0xc000)))) &&
-               (((((psVar2[iVar7 + iVar6] & 0xc000U) != 0xc000 &&
-                  ((iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                               (int)param_2->field_0047,(int)param_2->field_0049,
-                                               param_2->field_004B + 1), iVar6 != 0 &&
-                   (iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                               (int)*psVar9,(int)param_2->field_0049,
-                                               param_2->field_004B + 1), iVar6 != 0)))) &&
-                 (iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                             (int)param_2->field_0047,(int)psVar9[1],
-                                             param_2->field_004B + 1), iVar6 != 0)) &&
-                ((iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                             (int)*psVar9,(int)psVar9[1],(int)param_2->field_004B),
-                 iVar6 != 0 &&
-                 (iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                             (int)param_2->field_0047,(int)psVar9[1],
-                                             (int)param_2->field_004B), iVar6 != 0)))))) {
-              iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,(int)*psVar9,
+            if ((((((psVar2[iVar8 + iVar5] & 0xc000U) != 0xc000) &&
+                  ((psVar2[iVar8 + iVar9 + iVar5] & 0xc000U) != 0xc000)) &&
+                 (iVar7 = g_pathingGrid.sizeX * iVar7,
+                 (psVar2[iVar8 + iVar7 + iVar5] & 0xc000U) != 0xc000)) &&
+                (((psVar2[iVar8 + iVar7 + iVar9] & 0xc000U) != 0xc000 &&
+                 ((psVar2[iVar8 + iVar9] & 0xc000U) != 0xc000)))) &&
+               (((((psVar2[iVar8 + iVar7] & 0xc000U) != 0xc000 &&
+                  ((local_EAX_957 =
+                         st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                            (int)param_2->field_0047,(int)param_2->field_0049,
+                                            param_2->field_004B + 1), local_EAX_957 != 0 &&
+                   (local_EAX_989 =
+                         st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                            (int)*psVar10,(int)param_2->field_0049,
+                                            param_2->field_004B + 1), local_EAX_989 != 0)))) &&
+                 (local_EAX_1022 =
+                       st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                          (int)param_2->field_0047,(int)psVar10[1],
+                                          param_2->field_004B + 1), local_EAX_1022 != 0)) &&
+                ((local_EAX_1053 =
+                       st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,(int)*psVar10,
+                                          (int)psVar10[1],(int)param_2->field_004B),
+                 local_EAX_1053 != 0 &&
+                 (local_EAX_1085 =
+                       st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                          (int)param_2->field_0047,(int)psVar10[1],
+                                          (int)param_2->field_004B), local_EAX_1085 != 0)))))) {
+              iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,(int)*psVar10,
                                          (int)param_2->field_0049,(int)param_2->field_004B);
               goto joined_r0x0040d327;
             }
           }
-          else if ((((((psVar2[iVar7 - iVar5] & 0xc000U) != 0xc000) &&
-                     ((psVar2[iVar7 + (iVar8 - iVar5)] & 0xc000U) != 0xc000)) &&
-                    (iVar6 = g_pathingGrid.sizeX * iVar6,
-                    (psVar2[iVar7 + (iVar6 - iVar5)] & 0xc000U) != 0xc000)) &&
-                   ((((psVar2[iVar7 + iVar6 + iVar8] & 0xc000U) != 0xc000 &&
-                     ((psVar2[iVar7 + iVar8] & 0xc000U) != 0xc000)) &&
-                    (((psVar2[iVar7 + iVar6] & 0xc000U) != 0xc000 &&
-                     ((iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                                  (int)param_2->field_0047,(int)param_2->field_0049,
-                                                  param_2->field_004B + -1), iVar6 != 0 &&
-                      (iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                                  (int)*psVar9,(int)param_2->field_0049,
-                                                  param_2->field_004B + -1), iVar6 != 0)))))))) &&
-                  ((iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                               (int)param_2->field_0047,(int)psVar9[1],
-                                               param_2->field_004B + -1), iVar6 != 0 &&
-                   ((iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                                (int)*psVar9,(int)psVar9[1],(int)param_2->field_004B
-                                               ), iVar6 != 0 &&
-                    (iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
-                                                (int)param_2->field_0047,(int)psVar9[1],
-                                                (int)param_2->field_004B), iVar6 != 0)))))) {
-            iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,(int)*psVar9,
+          else if ((((((psVar2[iVar8 - iVar5] & 0xc000U) != 0xc000) &&
+                     ((psVar2[iVar8 + (iVar9 - iVar5)] & 0xc000U) != 0xc000)) &&
+                    (iVar7 = g_pathingGrid.sizeX * iVar7,
+                    (psVar2[iVar8 + (iVar7 - iVar5)] & 0xc000U) != 0xc000)) &&
+                   ((((psVar2[iVar8 + iVar7 + iVar9] & 0xc000U) != 0xc000 &&
+                     ((psVar2[iVar8 + iVar9] & 0xc000U) != 0xc000)) &&
+                    (((psVar2[iVar8 + iVar7] & 0xc000U) != 0xc000 &&
+                     ((local_EAX_586 =
+                            st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                               (int)param_2->field_0047,(int)param_2->field_0049,
+                                               param_2->field_004B + -1), local_EAX_586 != 0 &&
+                      (local_EAX_617 =
+                            st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                               (int)*psVar10,(int)param_2->field_0049,
+                                               param_2->field_004B + -1), local_EAX_617 != 0))))))))
+                  && ((local_EAX_649 =
+                            st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                               (int)param_2->field_0047,(int)psVar10[1],
+                                               param_2->field_004B + -1), local_EAX_649 != 0 &&
+                      ((local_EAX_679 =
+                             st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                                (int)*psVar10,(int)psVar10[1],
+                                                (int)param_2->field_004B), local_EAX_679 != 0 &&
+                       (local_EAX_710 =
+                             st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,
+                                                (int)param_2->field_0047,(int)psVar10[1],
+                                                (int)param_2->field_004B), local_EAX_710 != 0))))))
+          {
+            iVar6 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)param_2,(int)*psVar10,
                                        (int)param_2->field_0049,(int)param_2->field_004B);
             goto joined_r0x0040d327;
           }
         }
       }
       local_1c = local_1c + 1;
-      psVar9 = psVar9 + 4;
+      psVar10 = psVar10 + 4;
     } while (local_1c < 9);
     local_14 = local_14 + 1;
   } while (local_14 < 3);
@@ -277,12 +299,30 @@ int st::fn_0040D540(AnonShape_0040D540_1BB7A4CF *param_1,uint param_2)
   AnonNested_0040D540_0029_4E1A5CA3 *pAVar5;
   short *psVar6;
   STGameObjC *pSVar7;
+  int iVar11;
   int iVar8;
+  int local_EAX_594;
+  int local_EAX_716;
+  int local_EAX_747;
+  int iVar12;
+  int local_EAX_967;
+  int local_EAX_999;
+  int local_EAX_1032;
+  int local_EAX_1063;
+  int local_EAX_1095;
+  int local_EAX_1324;
+  int local_EAX_1356;
+  int local_EAX_1389;
+  int local_EAX_1420;
+  int local_EAX_1452;
   int iVar9;
   int iVar10;
-  ushort *puVar11;
-  STGameObjC *pSVar12;
   ushort *puVar13;
+  STGameObjC *pSVar14;
+  int local_EAX_2011;
+  int local_EAX_2187;
+  ushort *puVar15;
+  int iVar16;
   int local_54;
   int local_50;
   int local_4c;
@@ -309,28 +349,29 @@ int st::fn_0040D540(AnonShape_0040D540_1BB7A4CF *param_1,uint param_2)
   local_40 = nullptr;
   pSVar7 = st::fn_0040286F(param_1,(ushort)param_2);
   psVar6 = g_pathingGrid.cells;
-  iVar8 = (int)pSVar7->field_0047;
-  if (((iVar8 == pSVar7->field_00BB) && ((int)pSVar7->field_0049 == pSVar7->field_00BF)) &&
+  iVar11 = (int)pSVar7->field_0047;
+  if (((iVar11 == pSVar7->field_00BB) && ((int)pSVar7->field_0049 == pSVar7->field_00BF)) &&
      ((int)pSVar7->field_004B == pSVar7->field_00C3)) {
     return 0;
   }
   if (pSVar7->field_009F == nullptr) {
-    iVar8 = st::fn_006AADD0(iVar8,(int)pSVar7->field_0049,(int)pSVar7->field_004B,pSVar7->field_00BB,
+    iVar8 = st::fn_006AADD0(iVar11,(int)pSVar7->field_0049,(int)pSVar7->field_004B,pSVar7->field_00BB,
                          pSVar7->field_00BF,pSVar7->field_00C3);
     return ((pSVar7->field_00B7 < iVar8) - 1 & 6) - 6;
   }
-  iVar9 = pSVar7->field_00A3;
-  if (iVar9 + -1 <= pSVar7->field_00A7) {
+  iVar16 = pSVar7->field_00A3;
+  if (iVar16 + -1 <= pSVar7->field_00A7) {
     return 0;
   }
   psVar4 = pSVar7->field_009F;
-  if (((pSVar7->field_0047 == psVar4[iVar9 * 0x24 + -0x24]) &&
-      (pSVar7->field_0049 == psVar4[iVar9 * 0x24 + -0x23])) &&
-     (pSVar7->field_004B == psVar4[iVar9 * 0x24 + -0x22])) {
+  if (((pSVar7->field_0047 == psVar4[iVar16 * 0x24 + -0x24]) &&
+      (pSVar7->field_0049 == psVar4[iVar16 * 0x24 + -0x23])) &&
+     (pSVar7->field_004B == psVar4[iVar16 * 0x24 + -0x22])) {
     return 0;
   }
   local_c = (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
-  iVar8 = pSVar7->field_004B * local_c + iVar8 + (int)pSVar7->field_0049 * (int)g_pathingGrid.sizeX;
+  iVar11 = pSVar7->field_004B * local_c +
+           iVar11 + (int)pSVar7->field_0049 * (int)g_pathingGrid.sizeX;
   local_14 = 30000;
   local_38 = (int)pSVar7->field_009F[(pSVar7->field_00A7 * 9 + (int)pSVar7->field_00AB) * 4 + 3];
   local_28 = -1;
@@ -339,13 +380,13 @@ int st::fn_0040D540(AnonShape_0040D540_1BB7A4CF *param_1,uint param_2)
   local_1c = 1;
   while (local_1c < pSVar7->field_00A3 - pSVar7->field_00A7) {
     local_24 = nullptr;
-    puVar13 = (ushort *)(pSVar7->field_009F + (pSVar7->field_00A7 + local_1c) * 0x24);
+    puVar15 = (ushort *)(pSVar7->field_009F + (pSVar7->field_00A7 + local_1c) * 0x24);
     do {
-      if (*puVar13 == 0xffff) break;
+      if (*puVar15 == 0xffff) break;
       local_10 = st::fn_006A5EB0((int)pSVar7->field_0047,(int)pSVar7->field_0049,
-                              (int)pSVar7->field_004B,(int)(short)*puVar13,(int)(short)puVar13[1],
-                              (int)(short)puVar13[2]);
-      if ((local_10 != 0xffe) && (local_8 = (int)(short)puVar13[3], local_8 < local_38)) {
+                              (int)pSVar7->field_004B,(int)(short)*puVar15,(int)(short)puVar15[1],
+                              (int)(short)puVar15[2]);
+      if ((local_10 != 0xffe) && (local_8 = (int)(short)puVar15[3], local_8 < local_38)) {
         local_44 = local_10 & 0x6000;
         if (local_44 == 0) {
           if ((local_10 & 1) == 0) {
@@ -366,11 +407,12 @@ LAB_0040d750:
         local_34 = local_10 & 1;
         if ((local_8 <= local_14) &&
            (((local_8 != local_14 || ((local_10 == pSVar7->field_00AF && (local_1c < 2)))) &&
-            (iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                        (int)(short)*puVar13,(int)(short)puVar13[1],
-                                        (int)(short)puVar13[2]), iVar9 != 0)))) {
-          iVar9 = (int)(short)*puVar13 - (int)pSVar7->field_0047;
-          local_18 = (int)(short)puVar13[1] - (int)pSVar7->field_0049;
+            (local_EAX_594 =
+                  st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,(int)(short)*puVar15
+                                     ,(int)(short)puVar15[1],(int)(short)puVar15[2]),
+            local_EAX_594 != 0)))) {
+          iVar16 = (int)(short)*puVar15 - (int)pSVar7->field_0047;
+          local_18 = (int)(short)puVar15[1] - (int)pSVar7->field_0049;
           if (local_34 == 0) {
             if ((local_44 == 0) || ((local_10 & 0xffff9fff) == 0xffe)) {
 LAB_0040dc04:
@@ -381,38 +423,39 @@ LAB_0040dc04:
                   do {
                     pAVar5 = param_1->field_0029;
                     if ((*(uint *)&pAVar5->field_0xc <= local_34) ||
-                       (puVar11 = (ushort *)
+                       (puVar13 = (ushort *)
                                   (*(int *)&pAVar5->field_0x8 * local_34 + pAVar5->field_001C),
-                       puVar11 == nullptr)) break;
-                    uVar3 = *puVar11;
+                       puVar13 == nullptr)) break;
+                    uVar3 = *puVar13;
                     if (((uVar3 != 0xffff) &&
-                        ((((pSVar12 = st::fn_0040286F(param_1,uVar3),
-                           pSVar12 != nullptr && (pSVar12 != pSVar7)) &&
-                          (puVar11 = pSVar12->field_0097, puVar11 != nullptr)) &&
-                         (pSVar12->field_009F != nullptr)))) &&
-                       ((((puVar11[4] == *puVar13 && (puVar11[5] == puVar13[1])) &&
-                         (puVar11[6] == puVar13[2])) ||
-                        ((((local_48 = st::fn_006A5EB0((int)pSVar12->field_0047,
-                                                    (int)pSVar12->field_0049,
-                                                    (int)pSVar12->field_004B,(int)(short)*puVar13,
-                                                    (int)(short)puVar13[1],(int)(short)puVar13[2]),
+                        ((((pSVar14 = st::fn_0040286F(param_1,uVar3),
+                           pSVar14 != nullptr && (pSVar14 != pSVar7)) &&
+                          (puVar13 = pSVar14->field_0097, puVar13 != nullptr)) &&
+                         (pSVar14->field_009F != nullptr)))) &&
+                       ((((puVar13[4] == *puVar15 && (puVar13[5] == puVar15[1])) &&
+                         (puVar13[6] == puVar15[2])) ||
+                        ((((local_48 = st::fn_006A5EB0((int)pSVar14->field_0047,
+                                                    (int)pSVar14->field_0049,
+                                                    (int)pSVar14->field_004B,(int)(short)*puVar15,
+                                                    (int)(short)puVar15[1],(int)(short)puVar15[2]),
                            local_48 != 0xffe &&
-                           ((local_48 != pSVar12->field_00AF ||
-                            (pSVar12->field_009F
-                             [(pSVar12->field_00A7 * 9 + (int)pSVar12->field_00AB) * 4 + 3] <
+                           ((local_48 != pSVar14->field_00AF ||
+                            (pSVar14->field_009F
+                             [(pSVar14->field_00A7 * 9 + (int)pSVar14->field_00AB) * 4 + 3] <
                              local_38)))) &&
-                          (iVar9 = st::fn_00402513(param_1,(AnonShape_0040CE20_D3328A6B *)pSVar12
-                                                      ,&local_4c,&local_50,&local_54,&local_48),
-                          iVar9 != 0)) &&
-                         (((local_4c == (short)*puVar13 && (local_50 == (short)puVar13[1])) &&
-                          (local_54 == (short)puVar13[2])))))))) goto LAB_0040dd8a;
+                          (local_EAX_2011 =
+                                st::fn_00402513(param_1,(AnonShape_0040CE20_D3328A6B *)pSVar14,
+                                                   &local_4c,&local_50,&local_54,&local_48),
+                          local_EAX_2011 != 0)) &&
+                         (((local_4c == (short)*puVar15 && (local_50 == (short)puVar15[1])) &&
+                          (local_54 == (short)puVar15[2])))))))) goto LAB_0040dd8a;
                     local_34 = local_34 + 1;
                   } while ((int)local_34 < (int)local_44);
                 }
               }
-              local_28 = (int)(short)*puVar13;
-              local_2c = (int)(short)puVar13[1];
-              local_30 = (int)(short)puVar13[2];
+              local_28 = (int)(short)*puVar15;
+              local_2c = (int)(short)puVar15[1];
+              local_30 = (int)(short)puVar15[2];
               local_3c = local_1c;
               local_20 = local_10;
               local_14 = local_8;
@@ -420,91 +463,103 @@ LAB_0040dc04:
               if ((local_24 == nullptr) && (pSVar7->field_00AB == nullptr))
               goto LAB_0040dde1;
             }
-            else if (((psVar6[iVar8 + ((int)(short)puVar13[2] - (int)pSVar7->field_004B) * local_c]
+            else if (((psVar6[iVar11 + ((int)(short)puVar15[2] - (int)pSVar7->field_004B) * local_c]
                       & 0xc000U) != 0xc000) &&
                     (iVar10 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                                  (int)pSVar7->field_0047,(int)pSVar7->field_0049,
-                                                 (int)(short)puVar13[2]), iVar10 != 0)) {
-              if (puVar13[1] == pSVar7->field_0049) {
-                if ((psVar6[iVar8 + iVar9] & 0xc000U) != 0xc000) {
+                                                 (int)(short)puVar15[2]), iVar10 != 0)) {
+              if (puVar15[1] == pSVar7->field_0049) {
+                if ((psVar6[iVar11 + iVar16] & 0xc000U) != 0xc000) {
                   iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                             (int)(short)*puVar13,(int)pSVar7->field_0049,
+                                             (int)(short)*puVar15,(int)pSVar7->field_0049,
                                              (int)pSVar7->field_004B);
 joined_r0x0040dbb9:
                   if (iVar9 != 0) goto LAB_0040dc04;
                 }
               }
-              else if ((psVar6[iVar8 + g_pathingGrid.sizeX * local_18] & 0xc000U) != 0xc000) {
+              else if ((psVar6[iVar11 + g_pathingGrid.sizeX * local_18] & 0xc000U) != 0xc000) {
                 iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                           (int)pSVar7->field_0047,(int)(short)puVar13[1],
+                                           (int)pSVar7->field_0047,(int)(short)puVar15[1],
                                            (int)pSVar7->field_004B);
                 goto joined_r0x0040dbb9;
               }
             }
           }
-          else if (((((psVar6[iVar8 + iVar9] & 0xc000U) != 0xc000) &&
-                    ((psVar6[iVar8 + g_pathingGrid.sizeX * local_18] & 0xc000U) != 0xc000)) &&
-                   (iVar10 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                                (int)pSVar7->field_0047,(int)(short)puVar13[1],
-                                                (int)pSVar7->field_004B), iVar10 != 0)) &&
-                  (iVar10 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                               (int)(short)*puVar13,(int)pSVar7->field_0049,
-                                               (int)pSVar7->field_004B), iVar10 != 0)) {
+          else if (((((psVar6[iVar11 + iVar16] & 0xc000U) != 0xc000) &&
+                    ((psVar6[iVar11 + g_pathingGrid.sizeX * local_18] & 0xc000U) != 0xc000)) &&
+                   (local_EAX_716 =
+                         st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                            (int)pSVar7->field_0047,(int)(short)puVar15[1],
+                                            (int)pSVar7->field_004B), local_EAX_716 != 0)) &&
+                  (local_EAX_747 =
+                        st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                           (int)(short)*puVar15,(int)pSVar7->field_0049,
+                                           (int)pSVar7->field_004B), local_EAX_747 != 0)) {
             if ((local_10 & 0x4000) == 0) {
               if ((local_10 & 0x2000) == 0) goto LAB_0040dc04;
-              if (((((psVar6[iVar8 + local_c] & 0xc000U) != 0xc000) &&
-                   ((psVar6[iVar8 + iVar9 + local_c] & 0xc000U) != 0xc000)) &&
-                  ((iVar10 = g_pathingGrid.sizeX * local_18,
-                   (psVar6[iVar8 + iVar10 + local_c] & 0xc000U) != 0xc000 &&
-                   (((psVar6[iVar8 + iVar10 + iVar9] & 0xc000U) != 0xc000 &&
-                    ((psVar6[iVar8 + iVar9] & 0xc000U) != 0xc000)))))) &&
-                 (((psVar6[iVar8 + iVar10] & 0xc000U) != 0xc000 &&
-                  ((((iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                                 (int)pSVar7->field_0047,(int)pSVar7->field_0049,
-                                                 pSVar7->field_004B + 1), iVar9 != 0 &&
-                     (iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                                 (int)(short)*puVar13,(int)pSVar7->field_0049,
-                                                 pSVar7->field_004B + 1), iVar9 != 0)) &&
-                    (iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                                (int)pSVar7->field_0047,(int)(short)puVar13[1],
-                                                pSVar7->field_004B + 1), iVar9 != 0)) &&
-                   ((iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                                (int)(short)*puVar13,(int)(short)puVar13[1],
-                                                (int)pSVar7->field_004B), iVar9 != 0 &&
-                    (iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                                (int)pSVar7->field_0047,(int)(short)puVar13[1],
-                                                (int)pSVar7->field_004B), iVar9 != 0)))))))) {
+              if (((((psVar6[iVar11 + local_c] & 0xc000U) != 0xc000) &&
+                   ((psVar6[iVar11 + iVar16 + local_c] & 0xc000U) != 0xc000)) &&
+                  ((iVar12 = g_pathingGrid.sizeX * local_18,
+                   (psVar6[iVar11 + iVar12 + local_c] & 0xc000U) != 0xc000 &&
+                   (((psVar6[iVar11 + iVar12 + iVar16] & 0xc000U) != 0xc000 &&
+                    ((psVar6[iVar11 + iVar16] & 0xc000U) != 0xc000)))))) &&
+                 (((psVar6[iVar11 + iVar12] & 0xc000U) != 0xc000 &&
+                  ((((local_EAX_1324 =
+                           st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                              (int)pSVar7->field_0047,(int)pSVar7->field_0049,
+                                              pSVar7->field_004B + 1), local_EAX_1324 != 0 &&
+                     (local_EAX_1356 =
+                           st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                              (int)(short)*puVar15,(int)pSVar7->field_0049,
+                                              pSVar7->field_004B + 1), local_EAX_1356 != 0)) &&
+                    (local_EAX_1389 =
+                          st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                             (int)pSVar7->field_0047,(int)(short)puVar15[1],
+                                             pSVar7->field_004B + 1), local_EAX_1389 != 0)) &&
+                   ((local_EAX_1420 =
+                          st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                             (int)(short)*puVar15,(int)(short)puVar15[1],
+                                             (int)pSVar7->field_004B), local_EAX_1420 != 0 &&
+                    (local_EAX_1452 =
+                          st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                             (int)pSVar7->field_0047,(int)(short)puVar15[1],
+                                             (int)pSVar7->field_004B), local_EAX_1452 != 0)))))))) {
                 sVar1 = pSVar7->field_004B;
                 sVar2 = pSVar7->field_0049;
-                uVar3 = *puVar13;
+                uVar3 = *puVar15;
                 goto LAB_0040db07;
               }
             }
-            else if ((((((psVar6[iVar8 - local_c] & 0xc000U) != 0xc000) &&
-                       ((psVar6[iVar8 + (iVar9 - local_c)] & 0xc000U) != 0xc000)) &&
-                      ((iVar10 = g_pathingGrid.sizeX * local_18,
-                       (psVar6[iVar8 + (iVar10 - local_c)] & 0xc000U) != 0xc000 &&
-                       ((((psVar6[iVar8 + iVar10 + iVar9] & 0xc000U) != 0xc000 &&
-                         ((psVar6[iVar8 + iVar9] & 0xc000U) != 0xc000)) &&
-                        ((psVar6[iVar8 + iVar10] & 0xc000U) != 0xc000)))))) &&
-                     ((iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                                  (int)pSVar7->field_0047,(int)pSVar7->field_0049,
-                                                  pSVar7->field_004B + -1), iVar9 != 0 &&
-                      (iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                                  (int)(short)*puVar13,(int)pSVar7->field_0049,
-                                                  pSVar7->field_004B + -1), iVar9 != 0)))) &&
-                    ((iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                                 (int)pSVar7->field_0047,(int)(short)puVar13[1],
-                                                 pSVar7->field_004B + -1), iVar9 != 0 &&
-                     ((iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                                  (int)(short)*puVar13,(int)(short)puVar13[1],
-                                                  (int)pSVar7->field_004B), iVar9 != 0 &&
-                      (iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                                  (int)pSVar7->field_0047,(int)(short)puVar13[1],
-                                                  (int)pSVar7->field_004B), iVar9 != 0)))))) {
+            else if ((((((psVar6[iVar11 - local_c] & 0xc000U) != 0xc000) &&
+                       ((psVar6[iVar11 + (iVar16 - local_c)] & 0xc000U) != 0xc000)) &&
+                      ((iVar12 = g_pathingGrid.sizeX * local_18,
+                       (psVar6[iVar11 + (iVar12 - local_c)] & 0xc000U) != 0xc000 &&
+                       ((((psVar6[iVar11 + iVar12 + iVar16] & 0xc000U) != 0xc000 &&
+                         ((psVar6[iVar11 + iVar16] & 0xc000U) != 0xc000)) &&
+                        ((psVar6[iVar11 + iVar12] & 0xc000U) != 0xc000)))))) &&
+                     ((local_EAX_967 =
+                            st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                               (int)pSVar7->field_0047,(int)pSVar7->field_0049,
+                                               pSVar7->field_004B + -1), local_EAX_967 != 0 &&
+                      (local_EAX_999 =
+                            st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                               (int)(short)*puVar15,(int)pSVar7->field_0049,
+                                               pSVar7->field_004B + -1), local_EAX_999 != 0)))) &&
+                    ((local_EAX_1032 =
+                           st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                              (int)pSVar7->field_0047,(int)(short)puVar15[1],
+                                              pSVar7->field_004B + -1), local_EAX_1032 != 0 &&
+                     ((local_EAX_1063 =
+                            st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                               (int)(short)*puVar15,(int)(short)puVar15[1],
+                                               (int)pSVar7->field_004B), local_EAX_1063 != 0 &&
+                      (local_EAX_1095 =
+                            st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
+                                               (int)pSVar7->field_0047,(int)(short)puVar15[1],
+                                               (int)pSVar7->field_004B), local_EAX_1095 != 0)))))) {
               sVar1 = pSVar7->field_004B;
               sVar2 = pSVar7->field_0049;
-              uVar3 = *puVar13;
+              uVar3 = *puVar15;
 LAB_0040db07:
               iVar9 = st::fn_004044AD((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                          (int)(short)uVar3,(int)sVar2,(int)sVar1);
@@ -514,16 +569,17 @@ LAB_0040db07:
         }
       }
 LAB_0040dd8a:
-      puVar13 = puVar13 + 4;
+      puVar15 = puVar15 + 4;
       local_24 = (ushort *)((int)local_24 + 1);
     } while ((int)local_24 < 9);
     local_1c = local_1c + 1;
     if (2 < local_1c) break;
   }
   if (local_14 == 30000) {
-    iVar8 = st::fn_00402513(param_1,(AnonShape_0040CE20_D3328A6B *)pSVar7,&local_28,&local_2c,
-                               &local_30,&local_20);
-    if (iVar8 == 0) {
+    local_EAX_2187 =
+         st::fn_00402513(param_1,(AnonShape_0040CE20_D3328A6B *)pSVar7,&local_28,&local_2c,
+                            &local_30,&local_20);
+    if (local_EAX_2187 == 0) {
       return 2;
     }
   }
@@ -536,11 +592,11 @@ LAB_0040dde1:
   st::fn_006A5E90((short *)pSVar7->field_0097);
   pSVar7->field_00A7 = pSVar7->field_00A7 + local_3c;
   pSVar7->field_00AB = local_40;
-  puVar13 = st::fn_006AAC10(0x10);
-  pSVar7->field_0097 = puVar13;
-  if (puVar13 != nullptr) {
+  puVar15 = st::fn_006AAC10(0x10);
+  pSVar7->field_0097 = puVar15;
+  if (puVar15 != nullptr) {
     pSVar7->field_009B = 2;
-    puVar13[4] = (ushort)local_28;
+    puVar15[4] = (ushort)local_28;
     pSVar7->field_0097[5] = (ushort)local_2c;
     pSVar7->field_0097[6] = (ushort)local_30;
     pSVar7->field_0097[7] = (ushort)local_20;
@@ -556,16 +612,20 @@ undefined4 st::fn_0040EB90(void)
 
 {
   int *piVar1;
-  int iVar2;
-  int *piVar3;
+  int iVar3;
+  int *piVar4;
   int iVar4;
   int iVar5;
-  int iVar6;
+  int iVar2;
+  int local_EAX_807;
   int iVar7;
-  uint uVar8;
+  int iVar6;
+  int iVar8;
   int iVar9;
-  int *piVar10;
-  undefined4 *puVar11;
+  uint uVar10;
+  int iVar11;
+  int *piVar12;
+  undefined4 *puVar13;
   undefined4 *local_80;
   int local_7c;
   int local_74;
@@ -581,144 +641,145 @@ undefined4 st::fn_0040EB90(void)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
+  int *piVar10;
 
-  puVar11 = DAT_007f4d20;
+  puVar13 = DAT_007f4d20;
   puStack_c = &DAT_00790040;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
-  iVar9 = 0;
+  iVar11 = 0;
   local_8 = 0;
   ExceptionList = &local_14;
   st::fn_0072DA40();
   local_8 = 0xffffffff;
-  iVar7 = 0;
+  iVar9 = 0;
   DAT_007f4d00 = (int *)&stack0xffffff74;
-  if (0 < (int)puVar11) {
+  if (0 < (int)puVar13) {
     iVar6 = 0;
-    iVar2 = 0;
+    iVar3 = 0;
     DAT_007f4d00 = (int *)&stack0xffffff74;
     do {
-      *(int *)(iVar6 + 8 + (int)DAT_007f4d00) = DAT_007f4d48 + iVar2;
-      iVar7 = iVar7 + 1;
-      iVar2 = iVar2 + 0x1c;
+      *(int *)(iVar6 + 8 + (int)DAT_007f4d00) = DAT_007f4d48 + iVar3;
+      iVar9 = iVar9 + 1;
+      iVar3 = iVar3 + 0x1c;
       iVar6 = iVar6 + 0xc;
-      puVar11 = DAT_007f4d20;
-    } while (iVar7 < (int)DAT_007f4d20);
+      puVar13 = DAT_007f4d20;
+    } while (iVar9 < (int)DAT_007f4d20);
   }
-  iVar7 = 0;
+  iVar9 = 0;
   local_74 = 0;
-  if (0 < (int)puVar11) {
-    piVar3 = DAT_007f4d3c + 2;
-    local_80 = puVar11;
+  if (0 < (int)puVar13) {
+    piVar4 = DAT_007f4d3c + 2;
+    local_80 = puVar13;
     do {
-      iVar7 = iVar7 + 2 + piVar3[-2] * 4;
-      iVar9 = iVar9 + 2 + piVar3[-1] * 4;
-      local_74 = local_74 + 2 + *piVar3 * 4;
-      piVar3 = piVar3 + 5;
+      iVar9 = iVar9 + 2 + piVar4[-2] * 4;
+      iVar11 = iVar11 + 2 + piVar4[-1] * 4;
+      local_74 = local_74 + 2 + *piVar4 * 4;
+      piVar4 = piVar4 + 5;
       local_80 = (undefined4 *)((int)local_80 + -1);
     } while (local_80 != nullptr);
   }
-  iVar2 = (int)puVar11 / 2;
-  iVar7 = (iVar2 + iVar7) / (int)puVar11;
-  iVar9 = (iVar2 + iVar9) / (int)puVar11;
+  iVar3 = (int)puVar13 / 2;
+  iVar9 = (iVar3 + iVar9) / (int)puVar13;
+  iVar11 = (iVar3 + iVar11) / (int)puVar13;
   local_30 = 30000;
   local_4c = -30000;
-  local_7c = st::fn_006ACED8(DAT_007f4d0c,DAT_007f4d10,iVar7,iVar9);
+  local_7c = st::fn_006ACED8(DAT_007f4d0c,DAT_007f4d10,iVar9,iVar11);
   if (local_7c == 0) {
     local_7c = 1;
   }
   iVar6 = local_7c >> 1;
   local_54 = 0;
   if (0 < (int)DAT_007f4d20) {
-    piVar3 = (int *)(DAT_007f4d48 + 4);
+    piVar4 = (int *)(DAT_007f4d48 + 4);
     piVar10 = DAT_007f4d00;
     do {
-      iVar4 = st::fn_006AAE60(iVar7,iVar9,(iVar2 + local_74) / (int)puVar11,piVar3[-1] * 4 + 2,
-                           *piVar3 * 4 + 2,piVar3[1] * 4 + 2);
+      iVar4 = st::fn_006AAE60(iVar9,iVar11,(iVar3 + local_74) / (int)puVar13,piVar4[-1] * 4 + 2,
+                           *piVar4 * 4 + 2,piVar4[1] * 4 + 2);
       *piVar10 = iVar4;
-      iVar5 = ((piVar3[-1] * 4 - DAT_007f4d0c) + 2) * (iVar9 - DAT_007f4d10) -
-              ((*piVar3 * 4 - DAT_007f4d10) + 2) * (iVar7 - DAT_007f4d0c);
-      iVar4 = iVar6;
+      iVar5 = ((piVar4[-1] * 4 - DAT_007f4d0c) + 2) * (iVar11 - DAT_007f4d10) -
+              ((*piVar4 * 4 - DAT_007f4d10) + 2) * (iVar9 - DAT_007f4d0c);
+      iVar8 = iVar6;
       if (iVar5 < 0) {
-        iVar4 = -iVar6;
+        iVar8 = -iVar6;
       }
-      iVar4 = (iVar5 + iVar4) / local_7c;
-      piVar10[1] = iVar4;
-      if (iVar4 < local_30) {
-        local_30 = iVar4;
+      iVar8 = (iVar5 + iVar8) / local_7c;
+      piVar10[1] = iVar8;
+      if (iVar8 < local_30) {
+        local_30 = iVar8;
       }
-      if (local_4c < iVar4) {
-        local_4c = iVar4;
+      if (local_4c < iVar8) {
+        local_4c = iVar8;
       }
       local_54 = local_54 + 1;
       piVar10 = piVar10 + 3;
-      piVar3 = piVar3 + 7;
+      piVar4 = piVar4 + 7;
     } while (local_54 < (int)DAT_007f4d20);
   }
   local_60 = 30000;
   local_20 = -30000;
   local_54 = 0;
-  iVar2 = -30000;
-  iVar4 = 30000;
+  iVar3 = -30000;
+  iVar8 = 30000;
   if (0 < (int)DAT_007f4d20) {
-    piVar3 = DAT_007f4d3c + 1;
+    piVar4 = DAT_007f4d3c + 1;
     do {
-      iVar2 = st::fn_006AAE60(DAT_007f4d0c,DAT_007f4d10,DAT_007f4d1c,piVar3[-1] * 4 + 2,*piVar3 * 4 + 2
-                           ,piVar3[1] * 4 + 2);
-      piVar3[2] = iVar2;
-      iVar4 = ((piVar3[-1] * 4 - DAT_007f4d0c) + 2) * (iVar9 - DAT_007f4d10) -
-              ((*piVar3 * 4 - DAT_007f4d10) + 2) * (iVar7 - DAT_007f4d0c);
-      iVar2 = iVar6;
-      if (iVar4 < 0) {
-        iVar2 = -iVar6;
+      iVar2 = st::fn_006AAE60(DAT_007f4d0c,DAT_007f4d10,DAT_007f4d1c,piVar4[-1] * 4 + 2,*piVar4 * 4 + 2
+                           ,piVar4[1] * 4 + 2);
+      piVar4[2] = iVar2;
+      iVar8 = ((piVar4[-1] * 4 - DAT_007f4d0c) + 2) * (iVar11 - DAT_007f4d10) -
+              ((*piVar4 * 4 - DAT_007f4d10) + 2) * (iVar9 - DAT_007f4d0c);
+      iVar3 = iVar6;
+      if (iVar8 < 0) {
+        iVar3 = -iVar6;
       }
-      iVar2 = (iVar4 + iVar2) / local_7c;
-      piVar3[3] = iVar2;
-      if (iVar2 < local_60) {
-        local_60 = iVar2;
+      iVar3 = (iVar8 + iVar3) / local_7c;
+      piVar4[3] = iVar3;
+      if (iVar3 < local_60) {
+        local_60 = iVar3;
       }
-      if (local_20 < iVar2) {
-        local_20 = iVar2;
+      if (local_20 < iVar3) {
+        local_20 = iVar3;
       }
       local_54 = local_54 + 1;
-      piVar3 = piVar3 + 5;
-      iVar2 = local_20;
-      iVar4 = local_60;
+      piVar4 = piVar4 + 5;
+      iVar3 = local_20;
+      iVar8 = local_60;
     } while (local_54 < (int)DAT_007f4d20);
   }
-  if (local_4c - local_30 < iVar2 - iVar4) {
+  if (local_4c - local_30 < iVar3 - iVar8) {
     st::fn_006ACCD0(DAT_007f4d3c,DAT_007f4d20,0x14,FUN_0040f220);
     local_28 = 0;
     if (0 < (int)DAT_007f4d20) {
-      piVar3 = DAT_007f4d3c + 1;
+      piVar4 = DAT_007f4d3c + 1;
       do {
-        iVar9 = 30000;
+        iVar11 = 30000;
         local_54 = 0;
         if (0 < (int)DAT_007f4d20) {
-          piVar10 = DAT_007f4d00 + 2;
+          piVar12 = DAT_007f4d00 + 2;
           do {
-            if (-1 < piVar10[-2]) {
-              piVar1 = (int *)*piVar10;
-              iVar7 = st::fn_006AAE60(*piVar1,piVar1[1],piVar1[2],piVar3[-1],*piVar3,piVar3[1]);
-              uVar8 = piVar10[-1] - piVar3[3] >> 0x1f;
-              iVar2 = (piVar10[-1] - piVar3[3] ^ uVar8) - uVar8;
-              iVar7 = iVar7 + iVar2;
-              if ((iVar7 < iVar9) || ((iVar9 == iVar7 && (iVar2 < local_40)))) {
+            if (-1 < piVar12[-2]) {
+              piVar1 = (int *)*piVar12;
+              iVar7 = st::fn_006AAE60(*piVar1,piVar1[1],piVar1[2],piVar4[-1],*piVar4,piVar4[1]);
+              uVar10 = piVar12[-1] - piVar4[3] >> 0x1f;
+              iVar9 = (piVar12[-1] - piVar4[3] ^ uVar10) - uVar10;
+              iVar3 = iVar7 + iVar9;
+              if ((iVar3 < iVar11) || ((iVar11 == iVar3 && (iVar9 < local_40)))) {
                 local_48 = local_54;
-                iVar9 = iVar7;
-                local_40 = iVar2;
+                iVar11 = iVar3;
+                local_40 = iVar9;
               }
             }
             local_54 = local_54 + 1;
-            piVar10 = piVar10 + 3;
+            piVar12 = piVar12 + 3;
           } while (local_54 < (int)DAT_007f4d20);
         }
-        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0xc) = piVar3[-1];
-        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0x10) = *piVar3;
-        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0x14) = piVar3[1];
+        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0xc) = piVar4[-1];
+        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0x10) = *piVar4;
+        *(int *)(DAT_007f4d00[local_48 * 3 + 2] + 0x14) = piVar4[1];
         DAT_007f4d00[local_48 * 3] = -1;
         local_28 = local_28 + 1;
-        piVar3 = piVar3 + 5;
+        piVar4 = piVar4 + 5;
       } while (local_28 < (int)DAT_007f4d20);
     }
   }
@@ -726,35 +787,36 @@ undefined4 st::fn_0040EB90(void)
     st::fn_006ACCD0(DAT_007f4d00,DAT_007f4d20,0xc,FUN_0040f1d0);
     local_54 = 0;
     if (0 < (int)DAT_007f4d20) {
-      piVar3 = DAT_007f4d00 + 2;
+      piVar4 = DAT_007f4d00 + 2;
       do {
-        iVar9 = 30000;
+        iVar11 = 30000;
         local_28 = 0;
         if (0 < (int)DAT_007f4d20) {
-          piVar10 = DAT_007f4d3c + 1;
+          piVar12 = DAT_007f4d3c + 1;
           do {
-            if (-1 < piVar10[-1]) {
-              piVar1 = (int *)*piVar3;
-              iVar7 = st::fn_006AAE60(piVar10[-1],*piVar10,piVar10[1],*piVar1,piVar1[1],piVar1[2]);
-              uVar8 = piVar10[3] - piVar3[-1] >> 0x1f;
-              iVar2 = (piVar10[3] - piVar3[-1] ^ uVar8) - uVar8;
-              iVar7 = iVar7 + iVar2;
-              if ((iVar7 < iVar9) || ((iVar9 == iVar7 && (iVar2 < local_40)))) {
+            if (-1 < piVar12[-1]) {
+              piVar1 = (int *)*piVar4;
+              local_EAX_807 =
+                   st::fn_006AAE60(piVar12[-1],*piVar12,piVar12[1],*piVar1,piVar1[1],piVar1[2]);
+              uVar10 = piVar12[3] - piVar4[-1] >> 0x1f;
+              iVar9 = (piVar12[3] - piVar4[-1] ^ uVar10) - uVar10;
+              iVar3 = local_EAX_807 + iVar9;
+              if ((iVar3 < iVar11) || ((iVar11 == iVar3 && (iVar9 < local_40)))) {
                 local_48 = local_28;
-                iVar9 = iVar7;
-                local_40 = iVar2;
+                iVar11 = iVar3;
+                local_40 = iVar9;
               }
             }
             local_28 = local_28 + 1;
-            piVar10 = piVar10 + 5;
+            piVar12 = piVar12 + 5;
           } while (local_28 < (int)DAT_007f4d20);
         }
-        *(undefined4 *)(*piVar3 + 0xc) = DAT_007f4d3c[local_48 * 5];
-        *(undefined4 *)(*piVar3 + 0x10) = DAT_007f4d3c[local_48 * 5 + 1];
-        *(undefined4 *)(*piVar3 + 0x14) = DAT_007f4d3c[local_48 * 5 + 2];
+        *(undefined4 *)(*piVar4 + 0xc) = DAT_007f4d3c[local_48 * 5];
+        *(undefined4 *)(*piVar4 + 0x10) = DAT_007f4d3c[local_48 * 5 + 1];
+        *(undefined4 *)(*piVar4 + 0x14) = DAT_007f4d3c[local_48 * 5 + 2];
         DAT_007f4d3c[local_48 * 5] = 0xffffffff;
         local_54 = local_54 + 1;
-        piVar3 = piVar3 + 3;
+        piVar4 = piVar4 + 3;
       } while (local_54 < (int)DAT_007f4d20);
     }
   }

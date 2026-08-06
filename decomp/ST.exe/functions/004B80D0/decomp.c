@@ -51,11 +51,13 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
   TLOBaseTy *this_01;
   short sVar8;
   int iVar9;
+  int iVar11;
   int local_EAX_497;
   int uVar10;
+  int iVar12;
   int iVar10;
-  int iVar11;
-  short sVar12;
+  short sVar13;
+  int iVar14;
   InternalExceptionFrame local_50;
   TLOBaseTy *local_c;
   int local_8;
@@ -67,15 +69,15 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
   this_01 = local_c;
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar11 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_base.cpp",0xe1,0,iVar9,
+    iVar10 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_base.cpp",0xe1,0,iVar9,
                                 "TLOBaseTy::SetState error _state == %i",param_1);
-    if (iVar11 != 0) {
+    if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar9,0,"E:\\__titans\\Artem\\TLO_base.cpp",0xe2);
     return iVar9;
   }
-  if ((param_2 == 0) || (iVar9 = sub_004B7F90(local_c,param_1), iVar9 != 0)) {
+  if ((param_2 == 0) || (iVar11 = sub_004B7F90(local_c,param_1), iVar11 != 0)) {
     this_01->field_0249 = 0xffffffff;
     this_01->field_024D = this_01->field_0245;
     this_01->field_0245 = param_1;
@@ -121,74 +123,74 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       }
       sVar8 = *(short *)&this_01->field_05B0;
       sVar1 = *(short *)&this_01->field_05B8;
-      sVar12 = *(short *)&this_01->field_05B4;
-      if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar12 < 0)) ||
-          ((g_worldGrid.sizeY <= sVar12 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
+      sVar13 = *(short *)&this_01->field_05B4;
+      if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar13 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar13 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
         sVar8 = -1;
       }
       else {
-        sVar8 = STGridAt3D(g_pathingGrid, sVar8, sVar12, sVar1);
+        sVar8 = STGridAt3D(g_pathingGrid, sVar8, sVar13, sVar1);
       }
       if (sVar8 == 0) {
         local_8 = this_01->field_05B4;
-        iVar9 = 2 - (uint)(*(int *)(&DAT_00791e30 + this_01->field_0235 * 4) != 1);
-        if (local_8 < local_8 + iVar9) {
+        iVar11 = 2 - (uint)(*(int *)(&DAT_00791e30 + this_01->field_0235 * 4) != 1);
+        if (local_8 < local_8 + iVar11) {
           do {
-            iVar11 = this_01->field_05B0;
-            if (iVar11 < iVar11 + iVar9) {
+            iVar14 = this_01->field_05B0;
+            if (iVar14 < iVar14 + iVar11) {
               do {
-                iVar10 = thunk_FUN_004960d0((short)iVar11,(short)local_8,
+                iVar12 = thunk_FUN_004960d0((short)iVar14,(short)local_8,
                                             *(short *)&this_01->field_05B8);
-                if (iVar10 != 0) {
+                if (iVar12 != 0) {
                   RaiseInternalException
                             (-5,g_overwriteContext_007ED77C,
                              "E:\\__titans\\Artem\\TLO_base.cpp",0x6a);
                 }
-                iVar11 = iVar11 + 1;
-              } while (iVar11 < iVar9 + this_01->field_05B0);
+                iVar14 = iVar14 + 1;
+              } while (iVar14 < iVar11 + this_01->field_05B0);
             }
             local_8 = local_8 + 1;
-          } while (local_8 < this_01->field_05B4 + iVar9);
+          } while (local_8 < this_01->field_05B4 + iVar11);
         }
         this_01->field_0251 = 1;
       }
       break;
     case CASE_1:
-      iVar9 = this_01->vfunc_08();
-      if (iVar9 != 0) {
+      iVar11 = this_01->vfunc_08();
+      if (iVar11 != 0) {
         this_01->SetActivity(0);
       }
       sVar8 = *(short *)&this_01->field_05B0;
       sVar1 = *(short *)&this_01->field_05B8;
-      sVar12 = *(short *)&this_01->field_05B4;
+      sVar13 = *(short *)&this_01->field_05B4;
       if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
-         (((sVar12 < 0 || ((g_worldGrid.sizeY <= sVar12 || (sVar1 < 0)))) ||
+         (((sVar13 < 0 || ((g_worldGrid.sizeY <= sVar13 || (sVar1 < 0)))) ||
           (g_worldGrid.sizeZ <= sVar1)))) {
         sVar8 = -1;
       }
       else {
-        sVar8 = STGridAt3D(g_pathingGrid, sVar8, sVar12, sVar1);
+        sVar8 = STGridAt3D(g_pathingGrid, sVar8, sVar13, sVar1);
       }
       if (sVar8 != 0) {
         local_8 = this_01->field_05B4;
-        iVar9 = 2 - (uint)(*(int *)(&DAT_00791e30 + this_01->field_0235 * 4) != 1);
-        if (local_8 < local_8 + iVar9) {
+        iVar11 = 2 - (uint)(*(int *)(&DAT_00791e30 + this_01->field_0235 * 4) != 1);
+        if (local_8 < local_8 + iVar11) {
           do {
-            iVar11 = this_01->field_05B0;
-            if (iVar11 < iVar11 + iVar9) {
+            iVar14 = this_01->field_05B0;
+            if (iVar14 < iVar14 + iVar11) {
               do {
-                iVar10 = thunk_FUN_00496140((short)iVar11,(short)local_8,
+                iVar12 = thunk_FUN_00496140((short)iVar14,(short)local_8,
                                             *(short *)&this_01->field_05B8);
-                if (iVar10 != 0) {
+                if (iVar12 != 0) {
                   RaiseInternalException
                             (-5,g_overwriteContext_007ED77C,
                              "E:\\__titans\\Artem\\TLO_base.cpp",0x87);
                 }
-                iVar11 = iVar11 + 1;
-              } while (iVar11 < iVar9 + this_01->field_05B0);
+                iVar14 = iVar14 + 1;
+              } while (iVar14 < iVar11 + this_01->field_05B0);
             }
             local_8 = local_8 + 1;
-          } while (local_8 < this_01->field_05B4 + iVar9);
+          } while (local_8 < this_01->field_05B4 + iVar11);
         }
         this_01->field_0251 = 0;
       }
@@ -294,18 +296,18 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     case CASE_4:
       sVar8 = *(short *)&this_01->field_05B0;
       sVar1 = *(short *)&this_01->field_05B8;
-      sVar12 = *(short *)&this_01->field_05B4;
+      sVar13 = *(short *)&this_01->field_05B4;
       if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
-         ((sVar12 < 0 ||
-          (((g_worldGrid.sizeY <= sVar12 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) {
-        sVar12 = -1;
+         ((sVar13 < 0 ||
+          (((g_worldGrid.sizeY <= sVar13 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) {
+        sVar13 = -1;
       }
       else {
-        sVar12 = STGridAt3D(g_pathingGrid, sVar8, sVar12, sVar1);
+        sVar13 = STGridAt3D(g_pathingGrid, sVar8, sVar13, sVar1);
       }
-      if (sVar12 != 0) {
-        iVar9 = thunk_FUN_00496140(sVar8,*(short *)&this_01->field_05B4,sVar1);
-        if (iVar9 != 0) {
+      if (sVar13 != 0) {
+        iVar11 = thunk_FUN_00496140(sVar8,*(short *)&this_01->field_05B4,sVar1);
+        if (iVar11 != 0) {
           RaiseInternalException
                     (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_base.cpp",0x73);
         }
@@ -359,7 +361,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     }
     if (bVar7) {
       if (((this_01->field_0245 == CASE_5) && (param_1 == 2)) &&
-         (iVar9 = sub_004B7F90(this_01,0), iVar9 != 0)) {
+         (iVar11 = sub_004B7F90(this_01,0), iVar11 != 0)) {
         SetState(this_01,0,1);
       }
       TVar3 = this_01->field_0245;
@@ -374,7 +376,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         this_01->field_0275 = 0;
       }
       if (((TVar3 == CASE_4) && (this_01->field_03DC != 0)) &&
-         (iVar9 = sub_004EA620(this_01), iVar9 != 0)) {
+         (iVar11 = sub_004EA620(this_01), iVar11 != 0)) {
         this_01->field_03FC = 1;
         this_01->field_0400 = 0;
         g_currentExceptionFrame = local_50.previous;

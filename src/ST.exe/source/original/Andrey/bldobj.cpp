@@ -12,16 +12,17 @@ void __thiscall st::fn_004F05C0(BldObjPanelTy *this)
 {
   BldObjPanelTy *this_00;
   byte bVar2;
+  int iVar7;
   DArrayTy *pDVar3;
   LPSTR pCVar4;
   ushort *puVar5;
   int iVar6;
-  int iVar7;
-  uint uVar8;
-  undefined4 uVar9;
-  undefined4 *puVar10;
-  bool bVar11;
-  int *piVar12;
+  int iVar8;
+  uint uVar9;
+  undefined4 uVar10;
+  undefined4 *puVar11;
+  bool bVar12;
+  int *piVar13;
   int local_358 [11];
   undefined4 auStack_32c [3];
   undefined4 auStack_320 [4];
@@ -47,11 +48,11 @@ void __thiscall st::fn_004F05C0(BldObjPanelTy *this)
   int local_c;
   uint local_8;
 
-  puVar10 = local_74;
+  puVar11 = local_74;
   local_1c = this;
-  for (iVar7 = 0x16; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
+  for (iVar8 = 0x16; iVar8 != 0; iVar8 = iVar8 + -1) {
+    *puVar11 = 0;
+    puVar11 = puVar11 + 1;
   }
   memset(local_358, 0, 0x2a0); /* compiler bulk-zero initialization */
   local_b8.previous = g_currentExceptionFrame;
@@ -68,20 +69,20 @@ void __thiscall st::fn_004F05C0(BldObjPanelTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar7 = 5;
+  iVar8 = 5;
   g_bldObjPanel_00801684 = (ProdPanelTy *)local_1c;
-  puVar10 = &local_1c->field_027E;
+  puVar11 = &local_1c->field_027E;
   do {
     pDVar3 = st::fn_006AE290(nullptr,10,0x30,5);
-    *puVar10 = pDVar3;
-    puVar10 = puVar10 + 1;
-    iVar7 = iVar7 + -1;
-  } while (iVar7 != 0);
-  iVar7 = 1;
+    *puVar11 = pDVar3;
+    puVar11 = puVar11 + 1;
+    iVar8 = iVar8 + -1;
+  } while (iVar8 != 0);
+  iVar8 = 1;
   this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
-  piVar12 = nullptr;
+  piVar13 = nullptr;
   pCVar4 = st::fn_0040577C("BKG_BLDOBJW",0);
-  puVar5 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar4,piVar12,iVar7);
+  puVar5 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar4,piVar13,iVar8);
   this_00->field_0184 = puVar5;
   pCVar4 = st::fn_0040577C("BKG_BLDOBJBUT",0);
   st::external_00000080(&this_00->field_006C,"%s0",pCVar4);
@@ -103,57 +104,57 @@ void __thiscall st::fn_004F05C0(BldObjPanelTy *this)
     local_18 = this_00->field_003C;
     local_c = this_00->field_005C;
     local_14 = (-(uint)(DAT_0080874e != '\x03') & 0xffffffeb) + 0x3d;
-    uVar8 = 0;
+    uVar9 = 0;
     do {
-      iVar7 = local_14;
-      local_358[uVar8 * 0x1c] = uVar8 + 1;
-      local_358[uVar8 * 0x1c + 1] = 0;
-      local_358[uVar8 * 0x1c + 3] = iVar7 + uVar8 * 0x2c + local_18;
-      bVar11 = local_c != 0;
-      local_358[uVar8 * 0x1c + 5] = 0x2b;
-      iVar7 = DAT_00806734;
-      if (bVar11) {
-        iVar7 = this_00->field_0044;
+      iVar8 = local_14;
+      local_358[uVar9 * 0x1c] = uVar9 + 1;
+      local_358[uVar9 * 0x1c + 1] = 0;
+      local_358[uVar9 * 0x1c + 3] = iVar8 + uVar9 * 0x2c + local_18;
+      bVar12 = local_c != 0;
+      local_358[uVar9 * 0x1c + 5] = 0x2b;
+      iVar8 = DAT_00806734;
+      if (bVar12) {
+        iVar8 = this_00->field_0044;
       }
-      local_358[uVar8 * 0x1c + 4] = iVar7 + 0x3d;
-      local_358[uVar8 * 0x1c + 6] = 0x1b;
-      auStack_310[uVar8 * 0x1c] = 0;
-      auStack_300[uVar8 * 0x1c] = 0x101;
-      auStack_32c[uVar8 * 0x1c] = 0x101;
-      auStack_300[uVar8 * 0x1c + 1] = 3;
-      auStack_32c[uVar8 * 0x1c + 1] = 3;
-      auStack_32c[uVar8 * 0x1c + 2] = 0x4201;
-      auStack_300[uVar8 * 0x1c + 2] = 0x4202;
-      *(undefined2 *)(auStack_2f4 + uVar8 * 0x1c) = 0;
-      *(undefined2 *)(auStack_320 + uVar8 * 0x1c) = 0;
-      *(undefined2 *)((int)auStack_2f4 + (uVar8 * 0x38 + 1) * 2) = 2;
-      *(undefined2 *)((int)auStack_320 + (uVar8 * 0x38 + 1) * 2) = 2;
-      switch(uVar8) {
+      local_358[uVar9 * 0x1c + 4] = iVar8 + 0x3d;
+      local_358[uVar9 * 0x1c + 6] = 0x1b;
+      auStack_310[uVar9 * 0x1c] = 0;
+      auStack_300[uVar9 * 0x1c] = 0x101;
+      auStack_32c[uVar9 * 0x1c] = 0x101;
+      auStack_300[uVar9 * 0x1c + 1] = 3;
+      auStack_32c[uVar9 * 0x1c + 1] = 3;
+      auStack_32c[uVar9 * 0x1c + 2] = 0x4201;
+      auStack_300[uVar9 * 0x1c + 2] = 0x4202;
+      *(undefined2 *)(auStack_2f4 + uVar9 * 0x1c) = 0;
+      *(undefined2 *)(auStack_320 + uVar9 * 0x1c) = 0;
+      *(undefined2 *)((int)auStack_2f4 + (uVar9 * 0x38 + 1) * 2) = 2;
+      *(undefined2 *)((int)auStack_320 + (uVar9 * 0x38 + 1) * 2) = 2;
+      switch(uVar9) {
       case 0:
-        uVar9 = 0x3a9b;
+        uVar10 = 0x3a9b;
         break;
       case 1:
-        uVar9 = 0x3a9c;
+        uVar10 = 0x3a9c;
         break;
       case 2:
-        uVar9 = 0x3a9d;
+        uVar10 = 0x3a9d;
         break;
       case 3:
-        uVar9 = 0x3aa8;
+        uVar10 = 0x3aa8;
         break;
       case 4:
-        uVar9 = 0x3a9e;
+        uVar10 = 0x3a9e;
         break;
       default:
         goto switchD_004f0850_default;
       }
-      auStack_2f4[uVar8 * 0x1c + 1] = uVar9;
-      auStack_320[uVar8 * 0x1c + 1] = uVar9;
+      auStack_2f4[uVar9 * 0x1c + 1] = uVar10;
+      auStack_320[uVar9 * 0x1c + 1] = uVar10;
 switchD_004f0850_default:
       bVar2 = (char)local_8 + 1;
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
-      uVar8 = (uint)bVar2;
-    } while ((int)uVar8 < local_10);
+      uVar9 = (uint)bVar2;
+    } while ((int)uVar9 < local_10);
   }
   local_2c = local_358;
   local_28 = (byte)this_00->field_0278 + 1;
@@ -237,18 +238,19 @@ void __thiscall st::fn_004F0E60(BldObjPanelTy *this,AnonShape_004EF320_444F9AB1 
 
 {
   int *piVar1;
-  BldObjPanelTy *pBVar3;
-  int iVar4;
-  uint uVar5;
+  int iVar2;
+  BldObjPanelTy *pBVar4;
+  int iVar5;
+  uint uVar6;
   int errorCode;
-  byte *pbVar6;
+  BITMAPINFO *pBVar7;
   int iVar7;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar8;
   InternalExceptionFrame local_5c;
   int local_18;
   BldObjPanelTy *local_14;
   int local_10;
-  ushort *local_c;
+  BITMAPINFO *local_c;
   Global_sub_00526BA0_param_1Enum *local_8;
 
   piVar1 = param_1->field_0018;
@@ -259,18 +261,18 @@ void __thiscall st::fn_004F0E60(BldObjPanelTy *this,AnonShape_004EF320_444F9AB1 
   else {
     local_10 = piVar1[1] - this->field_0044;
   }
-  uVar5 = this->field_0199 + -0xc0af + param_1->field_0010;
-  iVar7 = (&this->field_027E)[(byte)this->field_0278];
-  if ((iVar7 == 0) || (*(uint *)(iVar7 + 0xc) <= uVar5)) {
+  uVar6 = this->field_0199 + -0xc0af + param_1->field_0010;
+  iVar2 = (&this->field_027E)[(byte)this->field_0278];
+  if ((iVar2 == 0) || (*(uint *)(iVar2 + 0xc) <= uVar6)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_00526BA0_param_1Enum *)
-              (*(int *)(iVar7 + 8) * uVar5 + *(int *)(iVar7 + 0x1c));
+              (*(int *)(iVar2 + 8) * uVar6 + *(int *)(iVar2 + 0x1c));
   }
   local_14 = this;
   if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {
-    local_c = this->field_027A;
+    local_c = (BITMAPINFO *)this->field_027A;
   }
   else {
     if ((char)local_8[2] == 0) {
@@ -279,25 +281,25 @@ void __thiscall st::fn_004F0E60(BldObjPanelTy *this,AnonShape_004EF320_444F9AB1 
     else {
       pAVar8 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0188;
     }
-    uVar5 = st::fn_004056F5(*local_8,STField<byte>(local_8,9));
-    local_c = (ushort *)st::fn_0070B3A0(pAVar8,uVar5);
+    uVar6 = st::fn_004056F5(*local_8,STField<byte>(local_8,9));
+    local_c = st::fn_0070B3A0(pAVar8,uVar6);
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   errorCode = st::fn_0072D7F0(local_5c.jumpBuffer,0);
-  iVar4 = local_10;
-  pBVar3 = local_14;
-  iVar7 = local_18;
+  iVar5 = local_10;
+  pBVar4 = local_14;
+  iVar2 = local_18;
   if (errorCode == 0) {
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_18,local_10,'\x01',
            (byte *)local_c);
     if ((param_1->field_0014 == 3) && (local_8 != nullptr)) {
-      pbVar6 = (byte *)st::fn_0070B3A0(pBVar3->field_0190,9 - (uint)((char)local_8[2] != 0));
-      st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar3->field_0068,iVar7,iVar4,'\x06',pbVar6);
+      pBVar7 = st::fn_0070B3A0(pBVar4->field_0190,9 - (uint)((char)local_8[2] != 0));
+      st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar4->field_0068,iVar2,iVar5,'\x06',(byte *)pBVar7);
     }
     st::fn_006B3640
-              ((int *)g_ddxContext_008075A8,pBVar3->field_0060,0xffffffff,pBVar3->field_003C,
-               pBVar3->field_0044);
+              ((int *)g_ddxContext_008075A8,pBVar4->field_0060,0xffffffff,pBVar4->field_003C,
+               pBVar4->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
@@ -327,8 +329,10 @@ int __thiscall st::fn_004F1080(BldObjPanelTy *this,STMessage *message)
   STMessageId SVar1;
   BldObjPanelTy *this_00;
   int iVar3;
-  undefined4 *puVar4;
+  int iVar4;
+  undefined4 *puVar5;
   int iVar5;
+  int iVar6;
   InternalExceptionFrame local_4c;
   BldObjPanelTy *local_8;
 
@@ -385,16 +389,16 @@ int __thiscall st::fn_004F1080(BldObjPanelTy *this,STMessage *message)
     case MESS_FSGSTY_C0A1:
     case MESS_SHARED_C0A2:
     case MESS_SHARED_C0A3:
-      iVar3 = (&this_00->field_027E)[(byte)this_00->field_0278];
-      if ((iVar3 == 0) ||
-         (iVar5 = SVar1 + this_00->field_0199, *(uint *)(iVar3 + 0xc) <= iVar5 - 0xc09fU)) {
-        puVar4 = nullptr;
+      iVar6 = (&this_00->field_027E)[(byte)this_00->field_0278];
+      if ((iVar6 == 0) ||
+         (iVar4 = SVar1 + this_00->field_0199, *(uint *)(iVar6 + 0xc) <= iVar4 - 0xc09fU)) {
+        puVar5 = nullptr;
       }
       else {
-        puVar4 = (undefined4 *)((iVar5 + -0xc09f) * *(int *)(iVar3 + 8) + *(int *)(iVar3 + 0x1c));
+        puVar5 = (undefined4 *)((iVar4 + -0xc09f) * *(int *)(iVar6 + 8) + *(int *)(iVar6 + 0x1c));
       }
-      if ((puVar4 != nullptr) && (*(char *)(puVar4 + 2) != '\0')) {
-        st::fn_004035AD(g_cursorClass_00802A30,0xe,*puVar4);
+      if ((puVar5 != nullptr) && (*(char *)(puVar5 + 2) != '\0')) {
+        st::fn_004035AD(g_cursorClass_00802A30,0xe,*puVar5);
         st::fn_00401A73((ProdPanelTy *)this_00,'\0');
         st::fn_00405E2F(0xae);
         g_currentExceptionFrame = local_4c.previous;

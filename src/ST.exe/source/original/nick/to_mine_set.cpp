@@ -27,9 +27,12 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
   bool bVar8;
   STMineSetC *this_00;
   byte bVar9;
+  int local_EAX_16;
   int iVar10;
-  STMineSetC_field_02AEState SVar11;
-  STMineSetC_sub_00626B50_param_1Enum SVar12;
+  int local_EAX_831;
+  STMineSetC_field_02AEState SVar10;
+  STMineSetC_sub_00626B50_param_1Enum SVar11;
+  int iVar12;
   int iVar13;
   byte *puVar14;
   STWorldObject *pSVar15;
@@ -43,8 +46,8 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
   STMineSetC *local_8;
 
   local_8 = this;
-  iVar10 = st::fn_00404F07((STSprGameObjC *)this,message);
-  if (iVar10 == 0xffff) {
+  local_EAX_16 = st::fn_00404F07((STSprGameObjC *)this,message);
+  if (local_EAX_16 == 0xffff) {
     return 0xffff;
   }
   local_60.previous = g_currentExceptionFrame;
@@ -53,9 +56,9 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
   this_00 = local_8;
   if (iVar10 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar13 = st::fn_006AD4D0("E:\\__titans\\nick\\to_mine_set.cpp",0x174,0,iVar10,
+    iVar12 = st::fn_006AD4D0("E:\\__titans\\nick\\to_mine_set.cpp",0x174,0,iVar10,
                                 "%s","STMineSetC::GetMessage");
-    if (iVar13 == 0) {
+    if (iVar12 == 0) {
       st::fn_006A5E40(iVar10,0,"E:\\__titans\\nick\\to_mine_set.cpp",0x176);
       return 0xffff;
     }
@@ -110,8 +113,8 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
   }
   if (MESS_SHARED_0003 < SVar5) {
     if (SVar5 == MESS_SHARED_0108) {
-      SVar12 = st::fn_0040581C();
-      st::fn_00402414(local_8,SVar12);
+      SVar11 = st::fn_0040581C();
+      st::fn_00402414(local_8,SVar11);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
@@ -142,8 +145,8 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
        (0x1194 < g_playSystem_00802A38->field_00E4 - local_8->field_035F)) {
       st::fn_0040525E(local_8);
     }
-    iVar10 = st::fn_00405BFA(this_00);
-    if (iVar10 == 0) {
+    iVar13 = st::fn_00405BFA(this_00);
+    if (iVar13 == 0) {
       if ((this_00->field_02AE == CASE_2) && (this_00->field_0353 == '\0')) {
         bVar9 = st::fn_00405637(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
         this_00->field_0353 = bVar9;
@@ -154,13 +157,13 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
       }
     }
     else {
-      if ((((this_00->field_0314 == '\0') && (SVar11 = this_00->field_02AE, SVar11 != CASE_2)) &&
-          (SVar11 != CASE_3)) && ((SVar11 != CASE_4 && (SVar11 != CASE_5)))) {
-        SVar11 = st::fn_00404093(this_00,SVar11);
-        this_00->field_02AE = SVar11;
+      if ((((this_00->field_0314 == '\0') && (SVar10 = this_00->field_02AE, SVar10 != CASE_2)) &&
+          (SVar10 != CASE_3)) && ((SVar10 != CASE_4 && (SVar10 != CASE_5)))) {
+        SVar10 = st::fn_00404093(this_00,SVar10);
+        this_00->field_02AE = SVar10;
       }
-      SVar11 = this_00->field_02AE;
-      if (((SVar11 != CASE_2) && (SVar11 != CASE_3)) && ((SVar11 != CASE_4 && (SVar11 != CASE_5))))
+      SVar10 = this_00->field_02AE;
+      if (((SVar10 != CASE_2) && (SVar10 != CASE_3)) && ((SVar10 != CASE_4 && (SVar10 != CASE_5))))
       {
         if (this_00->field_0353 == '\0') {
           bVar9 = st::fn_00405637(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
@@ -189,7 +192,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
            ((((g_playSystem_00802A38->field_00E4 % 5 == 0 &&
               (0x19 < g_playSystem_00802A38->field_00E4 - this_00->field_0346)) &&
              ((this_00->field_02AE == CASE_0 || (this_00->field_02AE == CASE_1)))) &&
-            (iVar10 = st::fn_00405C5E(this_00), iVar10 != 0)))) {
+            (iVar13 = st::fn_00405C5E(this_00), iVar13 != 0)))) {
           this_00->field_02AE = CASE_2;
           this_00->field_030F =
                *(int *)(&DAT_007d02a4 + (uint)this_00->field_02AD * 4) +
@@ -204,7 +207,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
       this_00->field_0355 = 1;
     }
     if ((this_00->field_0363 != nullptr) &&
-       (iVar10 = st::fn_00403C4C((int *)this_00->field_0363), iVar10 != 0)) {
+       (iVar13 = st::fn_00403C4C((int *)this_00->field_0363), iVar13 != 0)) {
       st::fn_00401B40((AnonShape_006366D0_80B1100F *)this_00->field_0363);
       st::fn_0072E2B0(this_00->field_0363);
       this_00->field_0363 = nullptr;
@@ -241,27 +244,27 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
         pSVar15 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[local_14];
       }
       if ((pSVar15 == nullptr) &&
-         (iVar10 = st::fn_00401325
+         (iVar13 = st::fn_00401325
                              (sVar2,sVar4,sVar3,this_00->field_008E,
-                              (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar10 == 0)) {
+                              (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar13 == 0)) {
         this_00->field_0314 = this_00->field_0314 + '\x01';
-        iVar10 = local_1c;
+        iVar13 = local_1c;
       }
       else {
-        iVar10 = 0;
+        iVar13 = 0;
       }
-      if (iVar10 == 0) {
+      if (iVar13 == 0) {
         st::fn_00404147(this_00);
       }
     }
     memset(&this_00->field_0x231, 0, 0x2d); /* compiler bulk-zero initialization */
     if (this_00->field_0353 != '\0') {
-      iVar10 = st::fn_004052CC((STT3DSprC *)&this_00->field_01D5);
-      this_00->field_02BA = iVar10;
+      local_EAX_831 = st::fn_004052CC((STT3DSprC *)&this_00->field_01D5);
+      this_00->field_02BA = local_EAX_831;
     }
     this_00->field_0363 = nullptr;
-    iVar10 = st::fn_004030B7(g_allPlayers_007FA174,this_00->field_0032,this_00);
-    if (iVar10 == 0) {
+    iVar13 = st::fn_004030B7(g_allPlayers_007FA174,this_00->field_0032,this_00);
+    if (iVar13 == 0) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
@@ -280,8 +283,8 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
     local_8->field_0286 = local_8->field_027A;
     local_8->field_028A = local_8->field_027E;
   }
-  iVar10 = st::fn_00404B74(local_8);
-  if (iVar10 == 0) {
+  iVar13 = st::fn_00404B74(local_8);
+  if (iVar13 == 0) {
     st::fn_00404147(this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -291,15 +294,15 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
     this_00->field_0034 = this_00->field_0041;
     this_00->field_0036 = this_00->field_0043;
     this_00->field_0038 = this_00->field_0045;
-    iVar10 = st::fn_00404D6D(this_00,CASE_1,this_00->field_02C2,this_00->field_02C6,
+    iVar13 = st::fn_00404D6D(this_00,CASE_1,this_00->field_02C2,this_00->field_02C6,
                                 this_00->field_02CA);
-    if (iVar10 == 0) goto cf_common_exit_00621D24;
+    if (iVar13 == 0) goto cf_common_exit_00621D24;
     this_00->field_02EE = 1;
   }
   else {
-    iVar10 = st::fn_00404D6D(this_00,CASE_2,(int)this_00->field_003A,(int)this_00->field_003C,
+    iVar13 = st::fn_00404D6D(this_00,CASE_2,(int)this_00->field_003A,(int)this_00->field_003C,
                                 (int)this_00->field_003E);
-    if (iVar10 == 0) goto cf_common_exit_00621D24;
+    if (iVar13 == 0) goto cf_common_exit_00621D24;
     this_00->field_02EE = 2;
   }
   this_00->field_02AE = CASE_1;
@@ -309,8 +312,8 @@ cf_common_exit_00621D24:
     this_00->field_02AE = CASE_1;
     this_00->field_0353 = 1;
     st::fn_004012C6(this_00,0);
-    iVar10 = st::fn_004030B7(g_allPlayers_007FA174,0xffff,this_00);
-    if (iVar10 != 0) {
+    iVar13 = st::fn_004030B7(g_allPlayers_007FA174,0xffff,this_00);
+    if (iVar13 != 0) {
       st::fn_00404147(this_00);
     }
     st::fn_00402BB7((AnonShape_00627700_6F319351 *)this_00);
@@ -334,9 +337,11 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
 {
   undefined4 *this_00;
   STMineSetC *pSVar2;
+  int local_EAX_41;
   int iVar3;
+  int iVar5;
   int iVar4;
-  undefined4 uVar5;
+  undefined4 uVar6;
   InternalExceptionFrame local_50;
   STMineSetC *local_c;
   undefined4 local_8;
@@ -345,26 +350,26 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
+  local_EAX_41 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   pSVar2 = local_c;
-  if (iVar3 != 0) {
+  if (local_EAX_41 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_mine_set.cpp",0x2df,0,iVar3,
+    iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_mine_set.cpp",0x2df,0,local_EAX_41,
                                "%s","STMineSetC::LoadImagMineSet");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_mine_set.cpp",0x2e1);
+    st::fn_006A5E40(local_EAX_41,0,"E:\\__titans\\nick\\to_mine_set.cpp",0x2e1);
     return 0xffff;
   }
   this_00 = &local_c->field_01D5;
   iVar3 = st::fn_004052CC((STT3DSprC *)this_00);
   pSVar2->field_02BA = iVar3;
   if (param_1 == 0) {
-    iVar3 = st::fn_00404183
+    iVar5 = st::fn_00404183
                       ((STT3DSprC *)this_00,0xe,PTR_00806774,(&PTR_DAT_007d02c4)[pSVar2->field_02AD]
-                       ,0x1d);
-    if (iVar3 != 0) {
+                       ,CASE_1D);
+    if (iVar5 != 0) {
       return local_8;
     }
     st::fn_004023C4(this_00,0x5a,0x45);
@@ -372,14 +377,14 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
     st::fn_00401064((STT3DSprC *)this_00,'\x0e',pSVar2->field_02CE);
     st::fn_004030BC((STT3DSprC *)this_00,'\x0e');
     st::fn_00405240((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
-    iVar3 = st::fn_004022AC((STT3DSprC *)this_00,'\x0e');
-    pSVar2->field_02D2 = iVar3;
+    iVar5 = st::fn_004022AC((STT3DSprC *)this_00,'\x0e');
+    pSVar2->field_02D2 = iVar5;
     if (pSVar2->field_0352 != '\0') {
-      iVar3 = st::fn_00404183
+      iVar5 = st::fn_00404183
                         ((STT3DSprC *)this_00,0xc,PTR_00806774,
                          (&PTR_s_mine0_007d02d4)[pSVar2->field_0262 + (uint)pSVar2->field_02AD * 8],
-                         0x1d);
-      if (iVar3 != 0) {
+                         CASE_1D);
+      if (iVar5 != 0) {
         return local_8;
       }
       st::fn_00401064((STT3DSprC *)this_00,'\f',pSVar2->field_02CE);
@@ -392,20 +397,20 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
     }
   }
   else {
-    iVar3 = st::fn_00404183
+    iVar5 = st::fn_00404183
                       ((STT3DSprC *)this_00,0xe,PTR_00806774,
-                       (&PTR_s_expdeep_007d0354)[pSVar2->field_02AD],0x1d);
-    if (iVar3 != 0) {
+                       (&PTR_s_expdeep_007d0354)[pSVar2->field_02AD],CASE_1D);
+    if (iVar5 != 0) {
       return local_8;
     }
     st::fn_00405AA6(this_00,'\x0e');
     st::fn_00401064((STT3DSprC *)this_00,'\x0e',pSVar2->field_02CE);
     st::fn_004030BC((STT3DSprC *)this_00,'\x0e');
     st::fn_00405240((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
-    iVar3 = st::fn_00404183
+    iVar5 = st::fn_00404183
                       ((STT3DSprC *)this_00,10,PTR_00806774,(&PTR_DAT_007d0364)[pSVar2->field_02AD],
-                       0x1d);
-    if (iVar3 != 0) {
+                       CASE_1D);
+    if (iVar5 != 0) {
       return local_8;
     }
     st::fn_00405AA6(this_00,'\n');
@@ -415,10 +420,10 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
     st::fn_00403233((STT3DSprC *)this_00,'\n');
     st::fn_00405240((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
     pSVar2->field_02E0 = 1;
-    iVar3 = st::fn_00404183
+    iVar5 = st::fn_00404183
                       ((STT3DSprC *)this_00,9,PTR_00806764,(&PTR_DAT_007d0374)[pSVar2->field_02AD],
-                       0x1d);
-    if (iVar3 != 0) {
+                       CASE_1D);
+    if (iVar5 != 0) {
       return local_8;
     }
     st::fn_00405AA6(this_00,'\t');

@@ -12,7 +12,8 @@ uint * __cdecl CreateStrategList(int param_1,int param_2,uint param_3)
   int errorCode;
   LPSTR pCVar2;
   uint *puVar3;
-  int iVar4;
+  int iVar3;
+  uint *puVar4;
   InternalExceptionFrame local_4c;
   DArrayTy *local_8;
 
@@ -31,9 +32,9 @@ uint * __cdecl CreateStrategList(int param_1,int param_2,uint param_3)
     return puVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x19a,0,errorCode,"%s",
+  iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x19a,0,errorCode,"%s",
                              "CreateStrategList");
-  if (iVar4 != 0) {
+  if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   DArrayDestroy(local_8);

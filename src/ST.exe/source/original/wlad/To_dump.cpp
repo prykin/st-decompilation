@@ -15,13 +15,17 @@ int __thiscall st::fn_00495980(DumpClassC *this,STMessage *message)
 
 {
   DumpClassC *pDVar2;
+  int iVar5;
   int iVar3;
   uint uVar4;
-  int iVar5;
+  int local_EAX_923;
+  int iVar4;
+  uint uVar5;
   uint uVar6;
-  short *psVar7;
-  STWorldObject **ppSVar8;
-  undefined4 *puVar9;
+  int iVar7;
+  short *psVar8;
+  STWorldObject **ppSVar9;
+  undefined4 *puVar10;
   InternalExceptionFrame local_90;
   InternalExceptionFrame local_4c;
   DumpClassC *local_8;
@@ -40,9 +44,9 @@ int __thiscall st::fn_00495980(DumpClassC *this,STMessage *message)
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar5 = 0x3e;
+      iVar4 = 0x3e;
 LAB_00495c27:
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\To_dump.cpp",iVar5);
+      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\To_dump.cpp",iVar4);
       return 0xffff;
     }
     g_pathingGrid.sizeX = *PTR_00806750;
@@ -55,16 +59,16 @@ LAB_00495c27:
       st::fn_006A5E40
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_dump.cpp",0x2b);
     }
-    uVar4 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
-    psVar7 = g_pathingGrid.cells;
-    for (uVar6 = (uVar4 & 0x7fffffff) >> 1; uVar6 != 0; uVar6 = uVar6 - 1) {
-      psVar7[0] = 0;
-      psVar7[1] = 0;
-      psVar7 = psVar7 + 2;
+    uVar5 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
+    psVar8 = g_pathingGrid.cells;
+    for (uVar6 = (uVar5 & 0x7fffffff) >> 1; uVar6 != 0; uVar6 = uVar6 - 1) {
+      psVar8[0] = 0;
+      psVar8[1] = 0;
+      psVar8 = psVar8 + 2;
     }
-    for (uVar4 = uVar4 * 2 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *(undefined1 *)psVar7 = 0;
-      psVar7 = (short *)((int)psVar7 + 1);
+    for (uVar5 = uVar5 * 2 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *(undefined1 *)psVar8 = 0;
+      psVar8 = (short *)((int)psVar8 + 1);
     }
     g_pathingScratchGrid.sizeY = g_pathingGrid.sizeY;
     g_pathingScratchGrid.sizeZ = g_pathingGrid.sizeZ;
@@ -90,29 +94,29 @@ LAB_00495c27:
       st::fn_006A5E40
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_dump.cpp",0x34);
     }
-    iVar3 = ((int)g_worldGrid.sizeZ * (int)g_worldGrid.sizeY * (int)g_worldGrid.sizeX & 0x1fffffffU)
+    iVar4 = ((int)g_worldGrid.sizeZ * (int)g_worldGrid.sizeY * (int)g_worldGrid.sizeX & 0x1fffffffU)
             << 1;
-    ppSVar8 = (g_worldGrid.cells)->objects;
-    for (; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *ppSVar8 = nullptr;
-      ppSVar8 = ppSVar8 + 1;
+    ppSVar9 = (g_worldGrid.cells)->objects;
+    for (; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *ppSVar9 = nullptr;
+      ppSVar9 = ppSVar9 + 1;
     }
-    for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined1 *)ppSVar8 = 0;
-      ppSVar8 = (STWorldObject **)((int)ppSVar8 + 1);
+    for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *(undefined1 *)ppSVar9 = 0;
+      ppSVar9 = (STWorldObject **)((int)ppSVar9 + 1);
     }
     DAT_007fb26c = st::fn_006AAC70
                              ((int)g_pathingScratchGrid.sizeY * (int)g_pathingScratchGrid.sizeX);
-    iVar3 = (int)g_pathingScratchGrid.sizeY;
-    iVar5 = (int)g_pathingScratchGrid.sizeX;
-    puVar9 = DAT_007fb26c;
-    for (uVar4 = (uint)(iVar3 * iVar5) >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *puVar9 = 0;
-      puVar9 = puVar9 + 1;
+    iVar4 = (int)g_pathingScratchGrid.sizeY;
+    iVar7 = (int)g_pathingScratchGrid.sizeX;
+    puVar10 = DAT_007fb26c;
+    for (uVar5 = (uint)(iVar4 * iVar7) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *puVar10 = 0;
+      puVar10 = puVar10 + 1;
     }
-    for (uVar4 = iVar3 * iVar5 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *(undefined1 *)puVar9 = 0;
-      puVar9 = (undefined4 *)((int)puVar9 + 1);
+    for (uVar5 = iVar4 * iVar7 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *(undefined1 *)puVar10 = 0;
+      puVar10 = (undefined4 *)((int)puVar10 + 1);
     }
     g_array_007FB270 = st::fn_006AE290(nullptr,10,0x18,10);
     st::fn_00404D22();
@@ -125,12 +129,13 @@ LAB_00495c27:
     iVar3 = st::fn_0072D7F0(local_90.jumpBuffer,0);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_90.previous;
-      iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\To_dump.cpp",0x58,0,iVar3,"%s",
-                                 "DumpClassC::GetMessage - MESS_ID_DONE");
-      if (iVar5 != 0) {
+      local_EAX_923 =
+           st::fn_006AD4D0("E:\\__titans\\wlad\\To_dump.cpp",0x58,0,iVar3,"%s",
+                              "DumpClassC::GetMessage - MESS_ID_DONE");
+      if (local_EAX_923 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar5 = 0x59;
+      iVar4 = 0x59;
       goto LAB_00495c27;
     }
     st::fn_00404557();

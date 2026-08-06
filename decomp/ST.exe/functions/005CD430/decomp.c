@@ -27,9 +27,10 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
   SettMapMTy_field_1E26State SVar2;
   byte bVar3;
   int iVar5;
-  SettMapMTy_field_1F84DArray *pSVar6;
-  char *pcVar7;
+  SettMapMTy_field_1F84DArray *pSVar5;
+  char *pcVar6;
   SettMapMTy_field_1F84Element *element_1f84;
+  int iVar7;
   int iVar8;
   byte *pbVar9;
   uint uVar10;
@@ -64,9 +65,9 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
   pSVar11 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_b8.previous;
-    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x1cb,0,iVar5,"%s"
+    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x1cb,0,iVar5,"%s"
                                ,"SettMapMTy::PrepPlList");
-    if (iVar8 != 0) {
+    if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\settmobj.cpp",0x1cb);
@@ -79,31 +80,31 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
   else {
     local_8 = local_10->field_1F43;
   }
-  pSVar6 = local_10->field_1F84;
-  if (pSVar6 != nullptr) {
+  pSVar5 = local_10->field_1F84;
+  if (pSVar5 != nullptr) {
     uVar12 = 0;
-    if (0 < (int)pSVar6->count) {
-      bVar17 = pSVar6->count != 0;
+    if (0 < (int)pSVar5->count) {
+      bVar17 = pSVar5->count != 0;
       do {
         if (bVar17) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          pcVar7 = &pSVar6->data->field_0000 + pSVar6->elementSize * uVar12;
+          pcVar6 = &pSVar5->data->field_0000 + pSVar5->elementSize * uVar12;
         }
         else {
-          pcVar7 = nullptr;
+          pcVar6 = nullptr;
         }
-        if ((pcVar7 != nullptr) && (*(DArrayTy **)(pcVar7 + 0x50) != nullptr)) {
-          DArrayDestroy(*(DArrayTy **)(pcVar7 + 0x50));
+        if ((pcVar6 != nullptr) && (*(DArrayTy **)(pcVar6 + 0x50) != nullptr)) {
+          DArrayDestroy(*(DArrayTy **)(pcVar6 + 0x50));
         }
-        pSVar6 = pSVar11->field_1F84;
+        pSVar5 = pSVar11->field_1F84;
         uVar12 = uVar12 + 1;
-        bVar17 = uVar12 < pSVar6->count;
-      } while ((int)uVar12 < (int)pSVar6->count);
+        bVar17 = uVar12 < pSVar5->count;
+      } while ((int)uVar12 < (int)pSVar5->count);
     }
     DArrayDestroy((DArrayTy *)pSVar11->field_1F84);
   }
-  pSVar6 = (SettMapMTy_field_1F84DArray *)Library::DKW::TBL::DArrayCreate(nullptr,8,0x60,8);
-  pSVar11->field_1F84 = pSVar6;
+  pSVar5 = (SettMapMTy_field_1F84DArray *)Library::DKW::TBL::DArrayCreate(nullptr,8,0x60,8);
+  pSVar11->field_1F84 = pSVar5;
   if ((pSVar11->field_1E26 != CASE_C) && (pSVar11->field_1E26 != CASE_10)) {
     DAT_0080874d = -1;
     DAT_0080874e = '\0';
@@ -156,19 +157,19 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
               bVar17 = local_24[3] != 0;
               do {
                 if (bVar17) {
-                  iVar5 = local_24[2] * uVar12 + local_24[7];
+                  iVar8 = local_24[2] * uVar12 + local_24[7];
                 }
                 else {
-                  iVar5 = 0;
+                  iVar8 = 0;
                 }
-                pbVar9 = (byte *)(iVar5 + 0x4c);
+                pbVar9 = (byte *)(iVar8 + 0x4c);
                 pbVar13 = local_14;
                 do {
                   bVar3 = *pbVar9;
                   bVar17 = bVar3 < *pbVar13;
                   if (bVar3 != *pbVar13) {
 LAB_005cd670:
-                    iVar5 = (1 - (uint)bVar17) - (uint)(bVar17 != 0);
+                    iVar8 = (1 - (uint)bVar17) - (uint)(bVar17 != 0);
                     goto LAB_005cd675;
                   }
                   if (bVar3 == 0) break;
@@ -178,11 +179,11 @@ LAB_005cd670:
                   pbVar9 = pbVar9 + 2;
                   pbVar13 = pbVar13 + 2;
                 } while (bVar3 != 0);
-                iVar5 = 0;
+                iVar8 = 0;
 LAB_005cd675:
                 pSVar11 = local_10;
                 pbVar13 = local_c;
-                if (iVar5 == 0) {
+                if (iVar8 == 0) {
                   uStack_6f = (undefined1)uVar12;
                   break;
                 }
@@ -210,26 +211,26 @@ LAB_005cd675:
       local_c = pbVar13 + 0x51;
     } while ((int)local_c < 0x808a70);
     if (pSVar11->field_1E26 == CASE_C) {
-      pSVar6 = pSVar11->field_1F84;
+      pSVar5 = pSVar11->field_1F84;
       uVar10 = 0;
-      uVar12 = pSVar6->count;
+      uVar12 = pSVar5->count;
       if (0 < (int)uVar12) {
         bVar17 = uVar12 != 0;
         do {
           if (bVar17) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            pcVar7 = &pSVar6->data->field_0000 + pSVar6->elementSize * uVar10;
+            pcVar6 = &pSVar5->data->field_0000 + pSVar5->elementSize * uVar10;
           }
           else {
-            pcVar7 = nullptr;
+            pcVar6 = nullptr;
           }
-          if (((pcVar7 != nullptr) && (pcVar7[4] == '\x01')) &&
-             ((DAT_0080874d == pcVar7[2] && (DAT_0080874e == pcVar7[3])))) {
-            pcVar7 = &DAT_00807e1d;
+          if (((pcVar6 != nullptr) && (pcVar6[4] == '\x01')) &&
+             ((DAT_0080874d == pcVar6[2] && (DAT_0080874e == pcVar6[3])))) {
+            pcVar6 = &DAT_00807e1d;
             if (DAT_008067a0 == '\0') {
-              pcVar7 = (char *)&DAT_00807ddd;
+              pcVar6 = (char *)&DAT_00807ddd;
             }
-            AddPlayerList(pSVar11,DAT_0080877f,uVar10,(DAT_0080874f != '\0') + 2,pcVar7);
+            AddPlayerList(pSVar11,DAT_0080877f,uVar10,(DAT_0080874f != '\0') + 2,pcVar6);
             break;
           }
           uVar10 = uVar10 + 1;
@@ -238,14 +239,14 @@ LAB_005cd675:
       }
     }
     else {
-      pSVar6 = pSVar11->field_1F84;
+      pSVar5 = pSVar11->field_1F84;
       uVar10 = 0;
-      uVar12 = pSVar6->count;
+      uVar12 = pSVar5->count;
       if (0 < (int)uVar12) {
         bVar17 = uVar12 != 0;
         do {
           if (bVar17) {
-            element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar6, uVar10);
+            element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar5, uVar10);
           }
           else {
             element_1f84 = nullptr;
@@ -284,8 +285,8 @@ code_r0x005cd7da:
   }
   uVar12 = ~uVar12;
   pcVar15 = pcVar16 + -uVar12;
-  pcVar7 = pcVar7 + 10;
-  memmove(pcVar7, pcVar15, uVar12); /* compiler REP MOVS byte copy */
+  pcVar6 = pcVar6 + 10;
+  memmove(pcVar6, pcVar15, uVar12); /* compiler REP MOVS byte copy */
   goto LAB_005cd7f2;
 }
 

@@ -6,11 +6,13 @@ undefined4 __thiscall FUN_004ac9e0(void *this,int param_1)
 {
   int iVar1;
   bool bVar2;
+  int iVar4;
+  int local_EAX_370;
   int iVar3;
-  int *piVar4;
-  int iVar5;
-  uint uVar6;
-  int iVar7;
+  int *piVar5;
+  int iVar6;
+  uint uVar7;
+  int iVar8;
   uint local_28;
   uint local_20;
   void *local_14;
@@ -35,77 +37,77 @@ cf_continue_loop_004ACA23:
       return 0;
     }
     if ((STField<uint>(this,0x1c) & local_20) != 0) {
-      iVar5 = local_28 * 0x24;
-      iVar3 = STField<int>(this,0x20) + iVar5;
-      if ((*(byte *)(iVar3 + 0xe) & 1) == 0) {
-        uVar6 = param_1 - *(int *)(iVar3 + 0x1c);
-        *(int *)(iVar3 + 0x1c) = param_1;
+      iVar6 = local_28 * 0x24;
+      iVar4 = STField<int>(this,0x20) + iVar6;
+      if ((*(byte *)(iVar4 + 0xe) & 1) == 0) {
+        uVar7 = param_1 - *(int *)(iVar4 + 0x1c);
+        *(int *)(iVar4 + 0x1c) = param_1;
         bVar2 = false;
-        iVar3 = STField<int>(this,0x20) + iVar5;
-        piVar4 = (int *)(*(int *)(iVar3 + 4) + *(int *)(iVar3 + 0x18) * 4);
-        iVar7 = *piVar4;
-        iVar1 = *(int *)(iVar3 + 0x20);
-        if (uVar6 < (uint)(iVar7 + iVar1)) {
-          if (iVar7 < (int)uVar6) {
-            *(uint *)(iVar3 + 0x20) = (iVar1 - uVar6) + iVar7;
-            iVar5 = iVar5 + STField<int>(this,0x20);
-            *(undefined4 *)(*(int *)(iVar5 + 4) + *(int *)(iVar5 + 0x18) * 4) = 0;
+        iVar4 = STField<int>(this,0x20) + iVar6;
+        piVar5 = (int *)(*(int *)(iVar4 + 4) + *(int *)(iVar4 + 0x18) * 4);
+        iVar8 = *piVar5;
+        iVar1 = *(int *)(iVar4 + 0x20);
+        if (uVar7 < (uint)(iVar8 + iVar1)) {
+          if (iVar8 < (int)uVar7) {
+            *(uint *)(iVar4 + 0x20) = (iVar1 - uVar7) + iVar8;
+            iVar6 = iVar6 + STField<int>(this,0x20);
+            *(undefined4 *)(*(int *)(iVar6 + 4) + *(int *)(iVar6 + 0x18) * 4) = 0;
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
           }
           else {
-            *piVar4 = iVar7 - uVar6;
+            *piVar5 = iVar8 - uVar7;
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
           }
           goto cf_continue_loop_004ACA23;
         }
         if (iVar1 != 0) {
-          *(undefined4 *)(iVar3 + 0x20) = 0;
+          *(undefined4 *)(iVar4 + 0x20) = 0;
           ST3DSMAPContext::sub_006E9CB0
                     (STField<ST3DSMAPContext *>(this,0x3c),STField<uint *>(this,0x18),local_28);
         }
-        piVar4 = (int *)(STField<int>(this,0x20) + iVar5);
-        *(undefined4 *)(piVar4[1] + piVar4[6] * 4) = *(undefined4 *)(piVar4[6] * 4 + 0x31 + *piVar4);
-        iVar3 = STField<int>(this,0x20) + iVar5;
-        if (*(int *)(iVar3 + 0x18) == *(int *)(iVar3 + 0x14)) {
-          if (*(char *)(iVar3 + 0xd) == '\x02') {
+        piVar5 = (int *)(STField<int>(this,0x20) + iVar6);
+        *(undefined4 *)(piVar5[1] + piVar5[6] * 4) = *(undefined4 *)(piVar5[6] * 4 + 0x31 + *piVar5);
+        iVar4 = STField<int>(this,0x20) + iVar6;
+        if (*(int *)(iVar4 + 0x18) == *(int *)(iVar4 + 0x14)) {
+          if (*(char *)(iVar4 + 0xd) == '\x02') {
             STT3DSprC::StopShow(this,(byte)local_28);
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
             goto cf_continue_loop_004ACA23;
           }
-          if (*(char *)(iVar3 + 0xd) == '\x01') goto LAB_004acbdc;
+          if (*(char *)(iVar4 + 0xd) == '\x01') goto LAB_004acbdc;
         }
-        iVar7 = uVar6 - iVar7;
-        if ((iVar7 == 0) || ((*(byte *)(iVar3 + 0xe) & 4) == 0)) {
+        iVar8 = uVar7 - iVar8;
+        if ((iVar8 == 0) || ((*(byte *)(iVar4 + 0xe) & 4) == 0)) {
           iVar3 = thunk_FUN_004ac950(this,local_28);
-          *(int *)(STField<int>(this,0x20) + 0x18 + iVar5) = iVar3;
+          *(int *)(STField<int>(this,0x20) + 0x18 + iVar6) = iVar3;
           if (local_28 == (int)STField<char>(this,0x13)) {
             STField<undefined4>(this,0x30) =
-                 *(undefined4 *)(STField<int>(this,0x20) + 0x18 + iVar5);
+                 *(undefined4 *)(STField<int>(this,0x20) + 0x18 + iVar6);
           }
         }
         else {
           do {
-            if (iVar7 < 0) goto LAB_004acb87;
-            iVar3 = thunk_FUN_004ac950(this,local_28);
-            *(int *)(STField<int>(this,0x20) + 0x18 + iVar5) = iVar3;
-            piVar4 = (int *)(STField<int>(this,0x20) + iVar5);
-            iVar7 = iVar7 - *(int *)(*piVar4 + 0x31 + piVar4[6] * 4);
-          } while ((piVar4[6] != piVar4[5]) ||
-                  ((STField<char>(piVar4,0xd) != '\x02' &&
-                   (STField<char>(piVar4,0xd) != '\x01'))));
+            if (iVar8 < 0) goto LAB_004acb87;
+            local_EAX_370 = thunk_FUN_004ac950(this,local_28);
+            *(int *)(STField<int>(this,0x20) + 0x18 + iVar6) = local_EAX_370;
+            piVar5 = (int *)(STField<int>(this,0x20) + iVar6);
+            iVar8 = iVar8 - *(int *)(*piVar5 + 0x31 + piVar5[6] * 4);
+          } while ((piVar5[6] != piVar5[5]) ||
+                  ((STField<char>(piVar5,0xd) != '\x02' &&
+                   (STField<char>(piVar5,0xd) != '\x01'))));
           bVar2 = true;
 LAB_004acb87:
           if (!bVar2) {
-            iVar3 = STField<int>(this,0x20) + iVar5;
-            *(int *)(*(int *)(iVar3 + 4) + *(int *)(iVar3 + 0x18) * 4) = -iVar7;
+            iVar4 = STField<int>(this,0x20) + iVar6;
+            *(int *)(*(int *)(iVar4 + 4) + *(int *)(iVar4 + 0x18) * 4) = -iVar8;
           }
         }
         ST3DSMAPContext::sub_006EA270
                   (STField<ST3DSMAPContext *>(this,0x3c),STField<uint>(this,0x18),local_28,
-                   *(uint *)(STField<int>(this,0x20) + 0x18 + iVar5));
+                   *(uint *)(STField<int>(this,0x20) + 0x18 + iVar6));
       }
     }
 LAB_004acbdc:

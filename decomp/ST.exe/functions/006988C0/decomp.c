@@ -10,15 +10,19 @@ void __thiscall CGenerate::sub_006988C0(CGenerate *this)
 
 {
   CGenerate_field_5853DArray *pCVar1;
-  int iVar2;
+  int iVar3;
+  uint uVar4;
+  byte *pbVar5;
   uint uVar3;
-  byte *pbVar4;
-  DArrayTy *pDVar5;
-  uint uVar6;
-  dword dVar7;
-  AnonShape_00697AF0_A94F4D28 *pAVar8;
-  int iVar9;
-  bool bVar10;
+  DArrayTy *pDVar6;
+  uint local_EAX_596;
+  uint local_EAX_615;
+  uint uVar7;
+  int iVar2;
+  dword dVar8;
+  AnonShape_00697AF0_A94F4D28 *pAVar9;
+  int iVar10;
+  bool bVar11;
   undefined1 local_3c [8];
   dword local_34;
   uint local_30;
@@ -34,10 +38,10 @@ void __thiscall CGenerate::sub_006988C0(CGenerate *this)
   AnonShape_00697AF0_A94F4D28 *pAStack_8;
 
   if (this->field_5853 != nullptr) {
-    dVar7 = this->field_5853->count;
+    dVar8 = this->field_5853->count;
     local_30 = 0;
-    local_34 = dVar7;
-    if (0 < (int)dVar7) {
+    local_34 = dVar8;
+    if (0 < (int)dVar8) {
       do {
         pCVar1 = this->field_5853;
         if (local_30 < pCVar1->count) {
@@ -48,129 +52,129 @@ void __thiscall CGenerate::sub_006988C0(CGenerate *this)
         else {
           pAStack_8 = nullptr;
         }
-        pAVar8 = pAStack_8;
+        pAVar9 = pAStack_8;
         if (((0 < *(int *)&pAStack_8->field_0x0) && (*(int *)&pAStack_8->field_0x9 == 4)) &&
            (*(int *)&pAStack_8->field_0xd == 2)) {
-          iVar2 = thunk_FUN_00697af0(this,pAStack_8,(int *)&local_14,&local_18,(int *)&local_1c,
+          iVar3 = thunk_FUN_00697af0(this,pAStack_8,(int *)&local_14,&local_18,(int *)&local_1c,
                                      &local_10);
-          if (iVar2 != 0) {
+          if (iVar3 != 0) {
             local_c = 0;
-            iVar9 = (byte)pAVar8->field_0x4 - 1;
+            iVar10 = (byte)pAVar9->field_0x4 - 1;
             local_24 = local_1c + 1;
             local_20 = local_10 + 1;
-            iVar2 = sub_00697C50(this,iVar9,local_14 - 1,local_18 + -1);
-            if (iVar2 != 0) {
+            iVar3 = sub_00697C50(this,iVar10,local_14 - 1,local_18 + -1);
+            if (iVar3 != 0) {
               local_c = 1;
             }
-            iVar2 = sub_00697C50(this,iVar9,local_24,local_20);
-            if (iVar2 != 0) {
+            iVar3 = sub_00697C50(this,iVar10,local_24,local_20);
+            if (iVar3 != 0) {
               local_c = local_c + 1;
             }
             local_28 = 0;
             local_24 = local_1c + 1;
             local_20 = local_18 - 1;
-            iVar2 = sub_00697C50(this,iVar9,local_14 - 1,local_10 + 1);
-            if (iVar2 != 0) {
+            iVar3 = sub_00697C50(this,iVar10,local_14 - 1,local_10 + 1);
+            if (iVar3 != 0) {
               local_28 = 1;
             }
-            iVar2 = sub_00697C50(this,iVar9,local_24,local_20);
-            uVar3 = local_28;
-            if (iVar2 != 0) {
-              uVar3 = local_28 + 1;
+            iVar3 = sub_00697C50(this,iVar10,local_24,local_20);
+            uVar4 = local_28;
+            if (iVar3 != 0) {
+              uVar4 = local_28 + 1;
             }
-            if ((int)uVar3 < local_c) {
+            if ((int)uVar4 < local_c) {
               if (0 < local_c) {
-                sub_006A0E30(this,local_14,local_18,*(int *)&pAVar8->field_0x0,-1);
-                iVar2 = *(int *)&pAVar8->field_0x0;
-                iVar9 = local_10;
+                sub_006A0E30(this,local_14,local_18,*(int *)&pAVar9->field_0x0,-1);
+                iVar3 = *(int *)&pAVar9->field_0x0;
+                iVar10 = local_10;
 LAB_00698a36:
-                sub_006A0E30(this,local_1c,iVar9,iVar2,-1);
+                sub_006A0E30(this,local_1c,iVar10,iVar3,-1);
               }
             }
-            else if (0 < (int)uVar3) {
-              sub_006A0E30(this,local_14,local_10,*(int *)&pAVar8->field_0x0,-1);
-              iVar2 = *(int *)&pAVar8->field_0x0;
-              iVar9 = local_18;
+            else if (0 < (int)uVar4) {
+              sub_006A0E30(this,local_14,local_10,*(int *)&pAVar9->field_0x0,-1);
+              iVar3 = *(int *)&pAVar9->field_0x0;
+              iVar10 = local_18;
               goto LAB_00698a36;
             }
           }
-          dVar7 = local_34;
-          if (*(int *)&pAVar8->field_0x0 <= this->field_5847 + -1) {
-            pDVar5 = pAVar8->field_0015;
-            uVar3 = 0;
+          dVar8 = local_34;
+          if (*(int *)&pAVar9->field_0x0 <= this->field_5847 + -1) {
+            pDVar6 = pAVar9->field_0015;
+            uVar4 = 0;
             local_c = 0;
-            if ((pDVar5 != nullptr) && (uVar6 = pDVar5->count, 0 < (int)uVar6)) {
-              bVar10 = uVar6 != 0;
+            if ((pDVar6 != nullptr) && (uVar7 = pDVar6->count, 0 < (int)uVar7)) {
+              bVar11 = uVar7 != 0;
               do {
-                if (bVar10) {
-                  pbVar4 = DArrayAt<byte>(pDVar5, uVar3);
+                if (bVar11) {
+                  pbVar5 = DArrayAt<byte>(pDVar6, uVar4);
                 }
                 else {
-                  pbVar4 = nullptr;
+                  pbVar5 = nullptr;
                 }
-                if ((pbVar4[1] == 0) && ((*pbVar4 & 2) != 0)) {
+                if ((pbVar5[1] == 0) && ((*pbVar5 & 2) != 0)) {
                   local_c = local_c + 1;
                 }
-                uVar3 = uVar3 + 1;
-                bVar10 = uVar3 < uVar6;
-              } while ((int)uVar3 < (int)uVar6);
+                uVar4 = uVar4 + 1;
+                bVar11 = uVar4 < uVar7;
+              } while ((int)uVar4 < (int)uVar7);
             }
             uVar3 = Library::MSVCRT::FUN_0072e6c0();
-            uVar3 = uVar3 & 0x80000001;
-            if ((int)uVar3 < 0) {
-              uVar3 = (uVar3 - 1 | 0xfffffffe) + 1;
+            uVar4 = uVar3 & 0x80000001;
+            if ((int)uVar4 < 0) {
+              uVar4 = (uVar4 - 1 | 0xfffffffe) + 1;
             }
-            local_28 = uVar3 + 1;
-            if (this->field_5847 < (int)(*(int *)&pAVar8->field_0x0 + uVar3 + 1)) {
-              local_28 = uVar3;
+            local_28 = uVar4 + 1;
+            if (this->field_5847 < (int)(*(int *)&pAVar9->field_0x0 + uVar4 + 1)) {
+              local_28 = uVar4;
             }
-            dVar7 = local_34;
+            dVar8 = local_34;
             if ((local_28 != 0) && (0 < local_c)) {
-              pDVar5 = pAVar8->field_0015;
+              pDVar6 = pAVar9->field_0015;
               local_2c = 0;
-              if (0 < (int)pDVar5->count) {
-                bVar10 = pDVar5->count != 0;
+              if (0 < (int)pDVar6->count) {
+                bVar11 = pDVar6->count != 0;
                 do {
-                  if (bVar10) {
-                    pbVar4 = DArrayAt<byte>(pDVar5, local_2c);
+                  if (bVar11) {
+                    pbVar5 = DArrayAt<byte>(pDVar6, local_2c);
                   }
                   else {
-                    pbVar4 = nullptr;
+                    pbVar5 = nullptr;
                   }
-                  if (pbVar4[1] == 0) {
-                    local_24 = *(int *)(pbVar4 + 2) / this->field_5833;
-                    local_20 = *(int *)(pbVar4 + 2) % this->field_5833;
-                    pAVar8 = pAStack_8;
-                    if (((*pbVar4 & 2) != 0) &&
-                       (uVar3 = Library::MSVCRT::FUN_0072e6c0(), pAVar8 = pAStack_8,
-                       (int)uVar3 % (local_c + 1) == 1)) {
-                      uVar3 = Library::MSVCRT::FUN_0072e6c0();
-                      uVar3 = uVar3 & 0x80000001;
-                      if ((int)uVar3 < 0) {
-                        uVar3 = (uVar3 - 1 | 0xfffffffe) + 1;
+                  if (pbVar5[1] == 0) {
+                    local_24 = *(int *)(pbVar5 + 2) / this->field_5833;
+                    local_20 = *(int *)(pbVar5 + 2) % this->field_5833;
+                    pAVar9 = pAStack_8;
+                    if (((*pbVar5 & 2) != 0) &&
+                       (local_EAX_596 = Library::MSVCRT::FUN_0072e6c0(), pAVar9 = pAStack_8,
+                       (int)local_EAX_596 % (local_c + 1) == 1)) {
+                      local_EAX_615 = Library::MSVCRT::FUN_0072e6c0();
+                      uVar4 = local_EAX_615 & 0x80000001;
+                      if ((int)uVar4 < 0) {
+                        uVar4 = (uVar4 - 1 | 0xfffffffe) + 1;
                       }
-                      uVar6 = Library::MSVCRT::FUN_0072e6c0();
+                      uVar7 = Library::MSVCRT::FUN_0072e6c0();
                       iVar2 = thunk_FUN_006a1370(this->field_0008,local_20,local_24,local_28,
                                                  (int)local_3c);
-                      pAVar8 = pAStack_8;
-                      if ((int)((int)(short)iVar2 + uVar3 + 1) < this->field_5847) {
+                      pAVar9 = pAStack_8;
+                      if ((int)((int)(short)iVar2 + uVar4 + 1) < this->field_5847) {
                         thunk_FUN_006a0c90(local_20,local_24,*(int *)&pAStack_8->field_0x0 + 1,
-                                           uVar3 + 1,0xff,0,(int)uVar6 % 6 + 1);
-                        pAVar8 = pAStack_8;
+                                           uVar4 + 1,0xff,0,(int)uVar7 % 6 + 1);
+                        pAVar9 = pAStack_8;
                       }
                     }
                   }
-                  pDVar5 = pAVar8->field_0015;
+                  pDVar6 = pAVar9->field_0015;
                   local_2c = local_2c + 1;
-                  bVar10 = local_2c < pDVar5->count;
-                  dVar7 = local_34;
-                } while ((int)local_2c < (int)pDVar5->count);
+                  bVar11 = local_2c < pDVar6->count;
+                  dVar8 = local_34;
+                } while ((int)local_2c < (int)pDVar6->count);
               }
             }
           }
         }
         local_30 = local_30 + 1;
-      } while ((int)local_30 < (int)dVar7);
+      } while ((int)local_30 < (int)dVar8);
     }
   }
   return;

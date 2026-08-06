@@ -28,7 +28,7 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
     FUN_006b4170((RecoveredSourceFamily_dibcopy *)pcVar2->field_0004,0,
                  pcVar2->field_0014 + pcVar2->field_000C,pcVar2->field_0010 + pcVar2->field_0018,
                  pcVar2->field_001C,pcVar2->field_0034,0);
-    ccFntTy::WrStr(pcVar2->field_0008,(uint *)resourceString,pcVar2->field_000C,pcVar2->field_0010,
+    ccFntTy::WrStr(pcVar2->field_0008,resourceString,pcVar2->field_000C,pcVar2->field_0010,
                    pcVar2->field_0024);
     iVar3 = pcVar2->field_0018 + pcVar2->field_0010;
     iVar4 = pcVar2->field_0014 + pcVar2->field_000C;

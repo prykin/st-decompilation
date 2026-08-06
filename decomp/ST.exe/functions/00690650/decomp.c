@@ -25,7 +25,7 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   AiTactClassTy_field_00A5Element *element_00a5;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_EDI;
-  bool bVar13;
+  bool bVar14;
   InternalExceptionFrame local_98;
   uint local_54 [2];
   char local_4c;
@@ -65,7 +65,7 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   bVar2 = *(byte *)&this->field_0024;
   local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
   if (DAT_00808a8f != '\0') {
-    bVar13 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+    bVar14 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
     goto LAB_00690763;
   }
@@ -89,9 +89,9 @@ LAB_00690758:
       iVar6 = 2;
     }
   }
-  bVar13 = iVar6 < 0;
+  bVar14 = iVar6 < 0;
 LAB_00690763:
-  if ((bVar13) && (param_1->field_001A != -1)) {
+  if ((bVar14) && (param_1->field_001A != -1)) {
     local_98.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_98;
     local_c = this;
@@ -119,9 +119,9 @@ LAB_00690763:
           pAVar9 = this_01->field_00A5;
           local_8 = 0;
           if (0 < (int)pAVar9->count) {
-            bVar13 = pAVar9->count != 0;
+            bVar14 = pAVar9->count != 0;
             do {
-              if (bVar13) {
+              if (bVar14) {
                 element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar9, local_8);
               }
               else {
@@ -152,7 +152,7 @@ LAB_00690763:
               }
               local_8 = local_8 + 1;
               pAVar9 = local_c->field_00A5;
-              bVar13 = local_8 < pAVar9->count;
+              bVar14 = local_8 < pAVar9->count;
               if ((int)pAVar9->count <= (int)local_8) {
                 g_currentExceptionFrame = local_98.previous;
                 return;

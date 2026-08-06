@@ -8,11 +8,13 @@
 void __thiscall MTestTy::InitMTest(MTestTy *this)
 
 {
+  int iVar1;
   CursorClassTy *this_00;
   MTestTy *this_01;
   int iVar2;
   ushort *puVar3;
   int iVar4;
+  int iVar5;
   undefined4 local_44c [256];
   InternalExceptionFrame local_4c;
   MTestTy *local_8;
@@ -30,7 +32,7 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
         FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
-    puVar3 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"LOADSINGLE",0,1);
+    puVar3 = FUN_0070a9f0(g_cMf32_00806780,"LOADSINGLE",0,1);
     this_01 = local_8;
     local_8->field_005D = puVar3;
     FUN_006bc360(puVar3,local_44c,nullptr);
@@ -48,14 +50,14 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
     DarkScreen(g_dDXContext_0080759C,1,0);
     PaintMTest(this_01);
     thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
-                       (ushort *)this_01->field_005D,10,2);
+                       this_01->field_005D,10,2);
     this_00 = g_cursorClass_00802A30;
     if (g_cursorClass_00802A30 != nullptr) {
-      iVar2 = g_cursorClass_00802A30->field_00C9;
-      iVar4 = g_cursorClass_00802A30->field_00C5;
+      iVar5 = g_cursorClass_00802A30->field_00C9;
+      iVar1 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       this_00->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(this_00,CASE_0,iVar4,iVar2);
+      CursorClassTy::SetGCType(this_00,CASE_0,iVar1,iVar5);
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
       this_00->field_00D2 = 0;
       this_00->field_04DF = -1;

@@ -32,11 +32,11 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
     }
     else {
       local_8->field_01A2 = 0;
-      local_8->field_01AB = 0;
+      local_8->field_01AB = nullptr;
     }
     local_8->field_01A1 = CASE_7;
     local_8->field_01A7 = 0;
-    local_8->field_01A3 = 0;
+    local_8->field_01A3 = nullptr;
     local_8->field_01AF = 0;
     local_8->field_01B1 = 0;
     if (local_8->field_0178 != 0) {

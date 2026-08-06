@@ -14,9 +14,8 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
 
 {
   int iVar1;
-  void **value;
   byte **ppbVar2;
-  uint *value_00;
+  void **ppvVar3;
 
   if (this->field_0038 != nullptr) {
     FreeAndNull(&this->field_0038);
@@ -27,13 +26,13 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
   if (this->field_0050 != nullptr) {
     FreeAndNull(&this->field_0050);
   }
-  value = &this->field_0054;
+  ppvVar3 = &this->field_0054;
   iVar1 = 8;
   do {
-    if (*value != nullptr) {
-      FreeAndNull(value);
+    if (*ppvVar3 != nullptr) {
+      FreeAndNull(ppvVar3);
     }
-    value = value + 1;
+    ppvVar3 = ppvVar3 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
   ppbVar2 = this->field_0074;
@@ -72,13 +71,13 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
     ppbVar2 = ppbVar2 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
-  value_00 = this->field_003C;
+  ppvVar3 = this->field_003C;
   iVar1 = 4;
   do {
-    if (*value_00 != 0) {
-      FreeAndNull((void **)value_00);
+    if (*ppvVar3 != nullptr) {
+      FreeAndNull(ppvVar3);
     }
-    value_00 = value_00 + 1;
+    ppvVar3 = ppvVar3 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
   if (this->field_00F4 != nullptr) {

@@ -8,7 +8,7 @@
 void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
 
 {
-  CFsgsConnection *value;
+  CFsgsConnection *slotStorage;
   CFsgsConnection *pCVar1;
   int iVar2;
   char *pcVar3;
@@ -39,14 +39,14 @@ void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
     iVar2 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
     pCVar1 = local_c;
     if (iVar2 == 0) {
-      value = local_c + 0x40;
+      slotStorage = local_c + 0x40;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(local_c + 0x40) != 0) {
-        FreeAndNull((void **)value);
+        FreeAndNull(slotStorage);
       }
       pBVar4 = Library::DKW::WGR::FUN_006bbfa0
                          (local_8,nullptr,*(HPALETTE *)(pCVar1 + 0x3c));
-      *(BITMAPINFO **)value = pBVar4;
+      *(BITMAPINFO **)slotStorage = pBVar4;
       g_currentExceptionFrame = local_94.previous;
       FreeAndNull(&local_8);
       return;

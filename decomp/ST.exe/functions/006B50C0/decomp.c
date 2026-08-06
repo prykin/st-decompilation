@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_006b50c0(int param_1,int param_2,int param_3,uint param_4,undefined4 *param_5,int param_6)
+/* [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /int; no intervening CALL or EAX/AX/AL/AH definition exists; machine CFG audit: used=63,
+   ignored=0, unknown=0 */
+
+int FUN_006b50c0(int param_1,int param_2,int param_3,uint param_4,undefined4 *param_5,int param_6)
 
 {
   int iVar1;
@@ -19,6 +24,6 @@ void FUN_006b50c0(int param_1,int param_2,int param_3,uint param_4,undefined4 *p
       puVar2 = puVar2 + 1;
     }
   }
-  return;
+  return iVar1;
 }
 

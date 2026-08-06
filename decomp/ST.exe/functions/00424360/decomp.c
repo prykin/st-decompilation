@@ -8,11 +8,12 @@
 void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
 
 {
-  STGroupC *pSVar2;
-  AnonShape_00424360_8159BFF1 *pAVar3;
+  int iVar1;
+  STGroupC *pSVar3;
+  AnonShape_00424360_8159BFF1 *pAVar4;
   int iVar4;
   uint *puVar5;
-  int iVar6;
+  int iVar5;
   InternalExceptionFrame local_50;
   STGroupC *local_c;
   AnonShape_00424360_8159BFF1 *local_8;
@@ -22,13 +23,13 @@ void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
   g_currentExceptionFrame = &local_50;
   local_c = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  pAVar3 = local_8;
-  pSVar2 = local_c;
+  pAVar4 = local_8;
+  pSVar3 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x1d5,0,iVar4,"%s",
+    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x1d5,0,iVar4,"%s",
                                "STGroupC::RestoreGrpData");
-    if (iVar6 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x1d6);
@@ -47,16 +48,16 @@ void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
   else {
     puVar5 = FUN_006b00c0(nullptr,(uint *)(&local_8->field_0x0 + local_8->field_001C),
                           thunk_FUN_00423e30);
-    pSVar2->field_0029 = puVar5;
+    pSVar3->field_0029 = puVar5;
   }
-  iVar4 = *(int *)&pAVar3->field_0x24;
-  if (iVar4 != -1) {
-    puVar5 = FUN_006b00c0(nullptr,(uint *)(&pAVar3->field_0x0 + iVar4),thunk_FUN_00423e30);
-    pSVar2->field_002D = puVar5;
+  iVar1 = *(int *)&pAVar4->field_0x24;
+  if (iVar1 != -1) {
+    puVar5 = FUN_006b00c0(nullptr,(uint *)(&pAVar4->field_0x0 + iVar1),thunk_FUN_00423e30);
+    pSVar3->field_002D = puVar5;
     g_currentExceptionFrame = local_50.previous;
     return;
   }
-  pSVar2->field_002D = nullptr;
+  pSVar3->field_002D = nullptr;
   g_currentExceptionFrame = local_50.previous;
   return;
 }

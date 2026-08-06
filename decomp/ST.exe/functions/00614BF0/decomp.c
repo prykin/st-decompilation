@@ -5,10 +5,10 @@ void __fastcall FUN_00614bf0(AnonShape_00614BF0_51042166 *param_1)
 
 {
   if (param_1->field_02DD != 0) {
-    FreeAndNull((void **)&param_1->field_02DD);
+    FreeAndNull(&param_1->field_02DD);
   }
   if (param_1->field_02E5 != 0) {
-    FreeAndNull((void **)&param_1->field_02E5);
+    FreeAndNull(&param_1->field_02E5);
   }
   param_1->field_02D5 = 0;
   if ((STT3DSprC *)param_1->field_0252 != nullptr) {

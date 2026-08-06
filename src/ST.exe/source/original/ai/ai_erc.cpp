@@ -79,8 +79,9 @@ int __cdecl st::fn_0064A830(int *param_1,undefined4 *param_2)
 
 {
   int iVar1;
-  void *pvVar2;
-  undefined4 *puVar3;
+  int iVar2;
+  void *pvVar3;
+  undefined4 *puVar4;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
@@ -88,18 +89,18 @@ int __cdecl st::fn_0064A830(int *param_1,undefined4 *param_2)
   iVar1 = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (iVar1 == 0) {
     if (*param_1 <= param_1[1]) {
-      iVar1 = *param_1 + 10;
-      *param_1 = iVar1;
-      pvVar2 = st::fn_006ACF50((void *)param_1[2],iVar1 * 5);
-      param_1[2] = (int)pvVar2;
+      iVar2 = *param_1 + 10;
+      *param_1 = iVar2;
+      pvVar3 = st::fn_006ACF50((void *)param_1[2],iVar2 * 5);
+      param_1[2] = (int)pvVar3;
     }
-    puVar3 = (undefined4 *)(param_1[1] * 5 + param_1[2]);
-    *puVar3 = *param_2;
-    *(undefined1 *)(puVar3 + 1) = *(undefined1 *)(param_2 + 1);
-    iVar1 = param_1[1];
-    param_1[1] = iVar1 + 1;
+    puVar4 = (undefined4 *)(param_1[1] * 5 + param_1[2]);
+    *puVar4 = *param_2;
+    *(undefined1 *)(puVar4 + 1) = *(undefined1 *)(param_2 + 1);
+    iVar2 = param_1[1];
+    param_1[1] = iVar2 + 1;
     g_currentExceptionFrame = local_48.previous;
-    return iVar1;
+    return iVar2;
   }
   g_currentExceptionFrame = local_48.previous;
   st::fn_006A5E40(iVar1,0,"E:\\__titans\\ai\\ai_erc.cpp",0x56);
@@ -129,20 +130,43 @@ float * st::fn_0064A970(char *param_1,int param_2,int *param_3)
   char cVar3;
   short sVar4;
   int iVar5;
-  byte *pbVar6;
+  int iVar6;
   byte *pbVar7;
-  int iVar8;
-  float fVar9;
-  char *pcVar10;
-  undefined4 uVar11;
   char *pcVar12;
-  uint uVar13;
+  char *local_EAX_1213;
+  char *local_EAX_1546;
+  char *pcVar8;
+  byte *pbVar9;
+  char *local_EAX_2068;
+  char *local_EAX_2282;
+  char *local_EAX_2633;
+  char *local_EAX_3036;
+  char *local_EAX_3240;
+  char *local_EAX_3468;
+  int iVar10;
+  char *local_EAX_3714;
+  char *local_EAX_3904;
+  char *local_EAX_4136;
+  char *local_EAX_4301;
+  float fVar11;
+  char *local_EAX_4782;
+  char *local_EAX_4913;
+  char *local_EAX_5067;
+  char *local_EAX_5222;
+  char *pcVar13_mg5;
+  undefined4 uVar12;
+  char *pcVar13;
+  char *local_EAX_5998;
+  char *local_EAX_6215;
+  char *local_EAX_6402;
+  char *local_ECX_128;
   uint uVar14;
-  float *pfVar15;
+  uint uVar15;
   float *pfVar16;
-  bool bVar17;
-  float10 fVar18;
-  longlong lVar19;
+  float *pfVar17;
+  bool bVar18;
+  float10 fVar19;
+  longlong lVar20;
   InternalExceptionFrame local_c0;
   undefined4 local_7c;
   char *local_78;
@@ -199,12 +223,12 @@ float * st::fn_0064A970(char *param_1,int param_2,int *param_3)
   st::fn_0072E340((char *)(local_38 + 1),&DAT_008016a0,0x7f);
   local_38[0x21] = -1;
   cVar3 = *param_1;
-  pcVar12 = param_1;
-  for (iVar5 = 0; (cVar3 != '\a' && (iVar5 < param_2)); iVar5 = iVar5 + 1) {
-    cVar3 = pcVar12[5];
-    pcVar12 = pcVar12 + 5;
+  local_ECX_128 = param_1;
+  for (iVar6 = 0; (cVar3 != '\a' && (iVar6 < param_2)); iVar6 = iVar6 + 1) {
+    cVar3 = local_ECX_128[5];
+    local_ECX_128 = local_ECX_128 + 5;
   }
-  if (iVar5 != param_2) {
+  if (iVar6 != param_2) {
     st::fn_006A5E40
               (-0x69,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x81);
   }
@@ -213,9 +237,9 @@ float * st::fn_0064A970(char *param_1,int param_2,int *param_3)
     st::fn_006A5E40
               (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x82);
   }
-  iVar5 = (int)*(short *)(local_10 + 1);
-  if (iVar5 < 0x3e) {
-    if (iVar5 == 0x3d) {
+  iVar6 = (int)*(short *)(local_10 + 1);
+  if (iVar6 < 0x3e) {
+    if (iVar6 == 0x3d) {
 switchD_0064aa67_caseD_1:
       if (param_2 != 2) {
         st::fn_006A5E40
@@ -225,78 +249,78 @@ switchD_0064aa67_caseD_1:
       if ((sVar4 == 1) && ((*param_1 == '\x06' || (*param_1 == '\x03')))) {
         if ((param_1[5] == '\x06') || (param_1[5] == '\x03')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          pcVar12 = (char *)(**(code **)(*local_38 + 8))(param_1);
+          pcVar8 = (char *)(**(code **)(*local_38 + 8))(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
-          local_18 = pbVar7;
-          if ((pcVar12 == nullptr) || (pbVar7 == nullptr)) {
+          pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
+          local_18 = pbVar9;
+          if ((pcVar8 == nullptr) || (pbVar9 == nullptr)) {
             st::fn_006A5E40
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x8e);
           }
-          uVar13 = 0xffffffff;
-          pbVar6 = pbVar7;
-          do {
-            if (uVar13 == 0) break;
-            uVar13 = uVar13 - 1;
-            bVar2 = *pbVar6;
-            pbVar6 = pbVar6 + 1;
-          } while (bVar2 != 0);
           uVar14 = 0xffffffff;
-          pcVar10 = pcVar12;
+          pbVar7 = pbVar9;
           do {
             if (uVar14 == 0) break;
             uVar14 = uVar14 - 1;
-            cVar3 = *pcVar10;
-            pcVar10 = pcVar10 + 1;
+            bVar2 = *pbVar7;
+            pbVar7 = pbVar7 + 1;
+          } while (bVar2 != 0);
+          uVar15 = 0xffffffff;
+          pcVar13 = pcVar8;
+          do {
+            if (uVar15 == 0) break;
+            uVar15 = uVar15 - 1;
+            cVar3 = *pcVar13;
+            pcVar13 = pcVar13 + 1;
           } while (cVar3 != '\0');
-          local_8 = st::fn_006AAC10(~uVar13 + ~uVar14 + 2);
-          if ((local_8 != nullptr) && (pcVar12 != nullptr)) {
-            uVar13 = 0xffffffff;
+          local_8 = st::fn_006AAC10(~uVar14 + ~uVar15 + 2);
+          if ((local_8 != nullptr) && (pcVar8 != nullptr)) {
+            uVar14 = 0xffffffff;
             do {
-              pcVar10 = pcVar12;
-              if (uVar13 == 0) break;
-              uVar13 = uVar13 - 1;
-              pcVar10 = pcVar12 + 1;
-              cVar3 = *pcVar12;
-              pcVar12 = pcVar10;
+              pcVar13 = pcVar8;
+              if (uVar14 == 0) break;
+              uVar14 = uVar14 - 1;
+              pcVar13 = pcVar8 + 1;
+              cVar3 = *pcVar8;
+              pcVar8 = pcVar13;
             } while (cVar3 != '\0');
-            uVar13 = ~uVar13;
-            pfVar15 = (float *)(pcVar10 + -uVar13);
-            pfVar16 = local_8;
-            for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
-              *pfVar16 = *pfVar15;
-              pfVar15 = pfVar15 + 1;
+            uVar14 = ~uVar14;
+            pfVar16 = (float *)(pcVar13 + -uVar14);
+            pfVar17 = local_8;
+            for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
+              *pfVar17 = *pfVar16;
               pfVar16 = pfVar16 + 1;
+              pfVar17 = pfVar17 + 1;
             }
-            for (uVar13 = uVar13 & 3; pbVar7 = local_18, uVar13 != 0; uVar13 = uVar13 - 1) {
-              *(undefined1 *)pfVar16 = *(undefined1 *)pfVar15;
-              pfVar15 = (float *)((int)pfVar15 + 1);
+            for (uVar14 = uVar14 & 3; pbVar9 = local_18, uVar14 != 0; uVar14 = uVar14 - 1) {
+              *(undefined1 *)pfVar17 = *(undefined1 *)pfVar16;
               pfVar16 = (float *)((int)pfVar16 + 1);
+              pfVar17 = (float *)((int)pfVar17 + 1);
             }
           }
-          uVar13 = 0xffffffff;
+          uVar14 = 0xffffffff;
           do {
-            pbVar6 = pbVar7;
-            if (uVar13 == 0) break;
-            uVar13 = uVar13 - 1;
-            pbVar6 = pbVar7 + 1;
-            bVar2 = *pbVar7;
-            pbVar7 = pbVar6;
+            pbVar7 = pbVar9;
+            if (uVar14 == 0) break;
+            uVar14 = uVar14 - 1;
+            pbVar7 = pbVar9 + 1;
+            bVar2 = *pbVar9;
+            pbVar9 = pbVar7;
           } while (bVar2 != 0);
-          uVar13 = ~uVar13;
-          iVar5 = -1;
-          pfVar15 = local_8;
+          uVar14 = ~uVar14;
+          iVar6 = -1;
+          pfVar16 = local_8;
           do {
-            pfVar16 = pfVar15;
-            if (iVar5 == 0) break;
-            iVar5 = iVar5 + -1;
-            pfVar16 = (float *)((int)pfVar15 + 1);
-            cVar3 = *(char *)pfVar15;
-            pfVar15 = pfVar16;
+            pfVar17 = pfVar16;
+            if (iVar6 == 0) break;
+            iVar6 = iVar6 + -1;
+            pfVar17 = (float *)((int)pfVar16 + 1);
+            cVar3 = *(char *)pfVar16;
+            pfVar16 = pfVar17;
           } while (cVar3 != '\0');
-          pbVar7 = pbVar6 + -uVar13;
-          pbVar6 = (byte *)((int)pfVar16 + -1);
-          memmove(pbVar6, pbVar7, uVar13); /* compiler REP MOVS byte copy */
+          pbVar9 = pbVar7 + -uVar14;
+          pbVar7 = (byte *)((int)pfVar17 + -1);
+          memmove(pbVar7, pbVar9, uVar14); /* compiler REP MOVS byte copy */
 cf_common_exit_0064BBB1:
           if (param_3 == nullptr) {
             g_currentExceptionFrame = local_c0.previous;
@@ -313,47 +337,47 @@ cf_common_exit_0064BBB1:
         cVar3 = param_1[5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar5 = (**(code **)*local_38)(param_1);
+          iVar6 = (**(code **)*local_38)(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar8 = (**(code **)*local_38)(param_1 + 5);
+          iVar10 = (**(code **)*local_38)(param_1 + 5);
           local_8 = st::fn_006AAC10(4);
           switch(*(undefined2 *)(local_10 + 1)) {
           case 1:
-            *local_8 = (float)(iVar8 + iVar5);
+            *local_8 = (float)(iVar10 + iVar6);
             break;
           default:
-            iVar5 = 0xa1;
+            iVar6 = 0xa1;
             goto cf_error_exit_0064B368;
           case 0x16:
-            if (iVar8 == 0) {
+            if (iVar10 == 0) {
               st::fn_006A5E40
                         (-0x67,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x9f
                         );
             }
-            *local_8 = (float)(iVar5 / iVar8);
+            *local_8 = (float)(iVar6 / iVar10);
             break;
           case 0x2c:
-            if (iVar8 == 0) {
+            if (iVar10 == 0) {
               st::fn_006A5E40
                         (-0x67,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0xa0
                         );
             }
-            *local_8 = (float)(iVar5 % iVar8);
+            *local_8 = (float)(iVar6 % iVar10);
             break;
           case 0x30:
-            *local_8 = (float)(iVar8 * iVar5);
+            *local_8 = (float)(iVar10 * iVar6);
             break;
           case 0x3d:
-            *local_8 = (float)(iVar5 - iVar8);
+            *local_8 = (float)(iVar6 - iVar10);
           }
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 != '\x05') && (cVar3 != '\x02')) {
-          pcVar12 = st::fn_004057DB((int)sVar4);
-          if (pcVar12 != nullptr) {
-            st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+          local_EAX_2068 = st::fn_004057DB((int)sVar4);
+          if (local_EAX_2068 != nullptr) {
+            st::fn_0072E340((char *)(local_38 + 1),local_EAX_2068,0x7f);
             local_38[0x21] = -1;
-            iVar5 = -0x76;
+            iVar6 = -0x76;
             goto cf_error_exit_0064C2A4;
           }
           goto cf_error_exit_0064B714;
@@ -361,15 +385,15 @@ cf_common_exit_0064BBB1:
         int scalar_local_18 = **(code **)*local_38)(param_1; /* split integer lifetime from pointer-typed SSA storage */
         local_c = (int *)(float)scalar_local_18;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
-        local_14 = (float)fVar18;
+        fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
+        local_14 = (float)fVar19;
         local_8 = st::fn_006AAC10(4);
         switch((int)*(short *)(local_10 + 1)) {
         case 1:
           *local_8 = local_14 + (float)local_c;
           break;
         default:
-          pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+          local_EAX_2282 = st::fn_004057DB((int)*(short *)(local_10 + 1));
           goto joined_r0x0064b49a;
         case 0x16:
           if (local_14 == (float)_DAT_0079d670) {
@@ -390,24 +414,24 @@ cf_common_exit_0064BBB1:
         cVar3 = param_1[5];
         if ((cVar3 != '\x04') && (cVar3 != '\x01')) {
           if ((cVar3 != '\x05') && (cVar3 != '\x02')) {
-            pcVar12 = st::fn_004057DB((int)sVar4);
-            if (pcVar12 != nullptr) {
-              st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+            local_EAX_2633 = st::fn_004057DB((int)sVar4);
+            if (local_EAX_2633 != nullptr) {
+              st::fn_0072E340((char *)(local_38 + 1),local_EAX_2633,0x7f);
               local_38[0x21] = -1;
-              iVar5 = -0x76;
+              iVar6 = -0x76;
               goto cf_error_exit_0064C2A4;
             }
             goto cf_error_exit_0064B714;
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
-          local_c = (int *)(float)fVar18;
+          fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
+          local_c = (int *)(float)fVar19;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
-          local_14 = (float)fVar18;
+          fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
+          local_14 = (float)fVar19;
           local_8 = st::fn_006AAC10(4);
-          iVar5 = (int)*(short *)(local_10 + 1);
-          switch(iVar5) {
+          iVar6 = (int)*(short *)(local_10 + 1);
+          switch(iVar6) {
           case 1:
             *local_8 = local_14 + (float)local_c;
             break;
@@ -430,23 +454,23 @@ cf_common_exit_0064BBB1:
           break;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
-        local_c = (int *)(float)fVar18;
+        fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
+        local_c = (int *)(float)fVar19;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         local_18 = (byte *)(**(code **)*local_38)(param_1 + 5);
         local_14 = (float)(int)local_18;
         local_8 = st::fn_006AAC10(4);
-        iVar5 = (int)*(short *)(local_10 + 1);
-        switch(iVar5) {
+        iVar6 = (int)*(short *)(local_10 + 1);
+        switch(iVar6) {
         case 1:
           *local_8 = local_14 + (float)local_c;
           break;
         default:
 switchD_0064b42d_caseD_2:
-          pcVar12 = st::fn_004057DB(iVar5);
+          local_EAX_2282 = st::fn_004057DB(iVar6);
 joined_r0x0064b49a:
-          if (pcVar12 != nullptr) {
-            st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+          if (local_EAX_2282 != nullptr) {
+            st::fn_0072E340((char *)(local_38 + 1),local_EAX_2282,0x7f);
           }
           local_38[0x21] = -1;
           st::fn_006A5E40(-0x76,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -466,11 +490,11 @@ joined_r0x0064b49a:
         }
         break;
       default:
-        pcVar12 = st::fn_004057DB((int)sVar4);
-        if (pcVar12 != nullptr) {
-          st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+        local_EAX_3036 = st::fn_004057DB((int)sVar4);
+        if (local_EAX_3036 != nullptr) {
+          st::fn_0072E340((char *)(local_38 + 1),local_EAX_3036,0x7f);
           local_38[0x21] = -1;
-          iVar5 = -0x76;
+          iVar6 = -0x76;
           goto cf_error_exit_0064C2A4;
         }
         goto LAB_0064b80a;
@@ -484,7 +508,7 @@ cf_common_exit_0064B291:
       g_currentExceptionFrame = local_c0.previous;
       return local_8;
     }
-    switch(iVar5) {
+    switch(iVar6) {
     case 1:
     case 0x16:
     case 0x2c:
@@ -502,44 +526,44 @@ switchD_0064aa67_caseD_3:
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar5 = (**(code **)*local_38)(param_1);
+          iVar6 = (**(code **)*local_38)(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar8 = (**(code **)*local_38)(param_1 + 5);
+          iVar10 = (**(code **)*local_38)(param_1 + 5);
           local_8 = st::fn_006AAC10(4);
           sVar4 = *(short *)(local_10 + 1);
           if (sVar4 == 3) {
-            if ((iVar5 != 0) && (iVar8 != 0)) {
+            if ((iVar6 != 0) && (iVar10 != 0)) {
               *local_8 = 1.4013e-45;
               goto cf_common_exit_0064B36F;
             }
           }
           else {
             if (sVar4 == 0x34) {
-              if (iVar5 == 0) {
+              if (iVar6 == 0) {
 joined_r0x0064b781:
-                if (iVar8 == 0) goto cf_common_exit_0064B79F;
+                if (iVar10 == 0) goto cf_common_exit_0064B79F;
               }
 LAB_0064b78b:
               *local_8 = 1.4013e-45;
               goto cf_common_exit_0064B36F;
             }
             if (sVar4 != 0x43) {
-              iVar5 = 0x139;
+              iVar6 = 0x139;
               goto cf_error_exit_0064B368;
             }
-            if (iVar5 == 0) goto joined_r0x0064b781;
-            if (iVar8 == 0) goto LAB_0064b78b;
+            if (iVar6 == 0) goto joined_r0x0064b781;
+            if (iVar10 == 0) goto LAB_0064b78b;
           }
           goto cf_common_exit_0064B79F;
         }
       }
-      pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-      if (pcVar12 != nullptr) {
-        st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+      local_EAX_3468 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+      if (local_EAX_3468 != nullptr) {
+        st::fn_0072E340((char *)(local_38 + 1),local_EAX_3468,0x7f);
       }
 cf_error_exit_0064B714:
       local_38[0x21] = -1;
-      iVar5 = -0x76;
+      iVar6 = -0x76;
       goto cf_error_exit_0064C2A4;
     case 8:
     case 10:
@@ -550,37 +574,37 @@ cf_error_exit_0064B714:
       }
       if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
 LAB_0064ae25:
-        pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-        if (pcVar12 != nullptr) {
-          st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+        local_EAX_1213 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+        if (local_EAX_1213 != nullptr) {
+          st::fn_0072E340((char *)(local_38 + 1),local_EAX_1213,0x7f);
         }
         local_38[0x21] = -1;
-        iVar5 = -0x76;
+        iVar6 = -0x76;
         goto cf_error_exit_0064C2A4;
       }
       if ((param_1[5] != '\x04') && (param_1[5] != '\x01')) goto LAB_0064ae25;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar13 = (**(code **)*local_38)(param_1);
+      uVar14 = (**(code **)*local_38)(param_1);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar14 = (**(code **)*local_38)(param_1 + 5);
+      uVar15 = (**(code **)*local_38)(param_1 + 5);
       local_8 = st::fn_006AAC10(4);
       sVar4 = *(short *)(local_10 + 1);
       if (sVar4 == 8) {
-        *local_8 = (float)(uVar14 & uVar13);
+        *local_8 = (float)(uVar15 & uVar14);
         goto cf_common_exit_0064B36F;
       }
       if (sVar4 == 10) {
-        *local_8 = (float)(uVar14 | uVar13);
+        *local_8 = (float)(uVar15 | uVar14);
         goto cf_common_exit_0064B36F;
       }
       if (sVar4 == 0xb) {
-        *local_8 = (float)(uVar14 ^ uVar13);
+        *local_8 = (float)(uVar15 ^ uVar14);
         goto cf_common_exit_0064B36F;
       }
-      iVar5 = 0x15a;
+      iVar6 = 0x15a;
 cf_error_exit_0064B368:
       st::fn_006A5E40
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",iVar5);
+                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",iVar6);
       goto cf_common_exit_0064B36F;
     case 9:
       if (param_2 != 1) {
@@ -590,8 +614,8 @@ cf_error_exit_0064B368:
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         local_8 = st::fn_006AAC10(4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        uVar13 = (**(code **)*local_38)(param_1);
-        *local_8 = (float)~uVar13;
+        uVar14 = (**(code **)*local_38)(param_1);
+        *local_8 = (float)~uVar14;
         goto cf_common_exit_0064B36F;
       }
       break;
@@ -602,62 +626,62 @@ cf_error_exit_0064B368:
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar5 = (**(code **)*local_38)(param_1);
-        iVar5 = 2 - (uint)(iVar5 != 0);
-        pcVar12 = param_1 + iVar5 * 5;
-        cVar3 = param_1[iVar5 * 5];
+        iVar6 = (**(code **)*local_38)(param_1);
+        iVar6 = 2 - (uint)(iVar6 != 0);
+        pcVar8 = param_1 + iVar6 * 5;
+        cVar3 = param_1[iVar6 * 5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           local_8 = st::fn_006AAC10(4);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          fVar9 = (float)(**(code **)*local_38)(pcVar12);
-          *local_8 = fVar9;
+          fVar11 = (float)(**(code **)*local_38)(pcVar8);
+          *local_8 = fVar11;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           local_8 = st::fn_006AAC10(4);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          fVar18 = (float10)(**(code **)(*local_38 + 4))(pcVar12);
-          *local_8 = (float)fVar18;
+          fVar19 = (float10)(**(code **)(*local_38 + 4))(pcVar8);
+          *local_8 = (float)fVar19;
           goto cf_common_exit_0064B291;
         }
         if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          pcVar12 = (char *)(**(code **)(*local_38 + 8))(pcVar12);
-          if (pcVar12 == nullptr) {
+          pcVar8 = (char *)(**(code **)(*local_38 + 8))(pcVar8);
+          if (pcVar8 == nullptr) {
             st::fn_006A5E40
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x182);
           }
-          uVar13 = 0xffffffff;
-          pcVar10 = pcVar12;
+          uVar14 = 0xffffffff;
+          pcVar13 = pcVar8;
           do {
-            if (uVar13 == 0) break;
-            uVar13 = uVar13 - 1;
-            cVar3 = *pcVar10;
-            pcVar10 = pcVar10 + 1;
+            if (uVar14 == 0) break;
+            uVar14 = uVar14 - 1;
+            cVar3 = *pcVar13;
+            pcVar13 = pcVar13 + 1;
           } while (cVar3 != '\0');
-          local_8 = st::fn_006AAC10(~uVar13 + 1);
-          uVar13 = 0xffffffff;
+          local_8 = st::fn_006AAC10(~uVar14 + 1);
+          uVar14 = 0xffffffff;
           do {
-            pcVar10 = pcVar12;
-            if (uVar13 == 0) break;
-            uVar13 = uVar13 - 1;
-            pcVar10 = pcVar12 + 1;
-            cVar3 = *pcVar12;
-            pcVar12 = pcVar10;
+            pcVar13 = pcVar8;
+            if (uVar14 == 0) break;
+            uVar14 = uVar14 - 1;
+            pcVar13 = pcVar8 + 1;
+            cVar3 = *pcVar8;
+            pcVar8 = pcVar13;
           } while (cVar3 != '\0');
-          uVar13 = ~uVar13;
-          pfVar15 = (float *)(pcVar10 + -uVar13);
-          pfVar16 = local_8;
-          memmove(pfVar16, pfVar15, uVar13); /* compiler REP MOVS byte copy */
+          uVar14 = ~uVar14;
+          pfVar16 = (float *)(pcVar13 + -uVar14);
+          pfVar17 = local_8;
+          memmove(pfVar17, pfVar16, uVar14); /* compiler REP MOVS byte copy */
           goto cf_common_exit_0064BBB1;
         }
       }
-      pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-      if (pcVar12 != nullptr) {
-        st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+      local_EAX_1546 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+      if (local_EAX_1546 != nullptr) {
+        st::fn_0072E340((char *)(local_38 + 1),local_EAX_1546,0x7f);
       }
       local_38[0x21] = -1;
-      iVar5 = -0x76;
+      iVar6 = -0x76;
       goto cf_error_exit_0064C2A4;
     case 0x1e:
     case 0x27:
@@ -673,31 +697,31 @@ cf_error_exit_0064B368:
       if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar5 = (**(code **)*local_38)(param_1);
+          iVar6 = (**(code **)*local_38)(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar8 = (**(code **)*local_38)(param_1 + 5);
+          iVar10 = (**(code **)*local_38)(param_1 + 5);
           local_8 = st::fn_006AAC10(4);
           switch(*(undefined2 *)(local_10 + 1)) {
           case 0x1e:
-            *local_8 = (float)(uint)(iVar5 == iVar8);
+            *local_8 = (float)(uint)(iVar6 == iVar10);
             break;
           default:
-            iVar5 = 0x104;
+            iVar6 = 0x104;
             goto cf_error_exit_0064B368;
           case 0x27:
-            *local_8 = (float)(uint)(iVar5 < iVar8);
+            *local_8 = (float)(uint)(iVar6 < iVar10);
             break;
           case 0x28:
-            *local_8 = (float)(uint)(iVar5 <= iVar8);
+            *local_8 = (float)(uint)(iVar6 <= iVar10);
             break;
           case 0x2e:
-            *local_8 = (float)(uint)(iVar8 < iVar5);
+            *local_8 = (float)(uint)(iVar10 < iVar6);
             break;
           case 0x2f:
-            *local_8 = (float)(uint)(iVar8 <= iVar5);
+            *local_8 = (float)(uint)(iVar10 <= iVar6);
             break;
           case 0x33:
-            *local_8 = (float)(uint)(iVar5 != iVar8);
+            *local_8 = (float)(uint)(iVar6 != iVar10);
           }
           goto cf_common_exit_0064B36F;
         }
@@ -705,11 +729,11 @@ cf_error_exit_0064B368:
       if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
         if ((param_1[5] == '\x05') || (param_1[5] == '\x02')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
-          local_20 = (float)fVar18;
+          fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
+          local_20 = (float)fVar19;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
-          local_24 = (float)fVar18;
+          fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
+          local_24 = (float)fVar19;
           local_8 = st::fn_006AAC10(4);
           switch(*(undefined2 *)(local_10 + 1)) {
           case 0x1e:
@@ -719,7 +743,7 @@ cf_error_exit_0064B368:
             }
             break;
           default:
-            iVar5 = 0x114;
+            iVar6 = 0x114;
             goto cf_error_exit_0064B368;
           case 0x27:
             if (local_20 < local_24) {
@@ -758,52 +782,52 @@ cf_error_exit_0064B368:
       if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
         if ((param_1[5] == '\x06') || (param_1[5] == '\x03')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1);
+          pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          pbVar6 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
-          if ((pbVar7 == nullptr) || (pbVar6 == nullptr)) {
+          pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
+          if ((pbVar9 == nullptr) || (pbVar7 == nullptr)) {
             st::fn_006A5E40
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x11c);
           }
           local_8 = st::fn_006AAC10(4);
           do {
-            bVar2 = *pbVar7;
-            bVar17 = bVar2 < *pbVar6;
-            if (bVar2 != *pbVar6) {
+            bVar2 = *pbVar9;
+            bVar18 = bVar2 < *pbVar7;
+            if (bVar2 != *pbVar7) {
 LAB_0064ab54:
-              iVar5 = (1 - (uint)bVar17) - (uint)(bVar17 != 0);
+              iVar6 = (1 - (uint)bVar18) - (uint)(bVar18 != 0);
               goto LAB_0064ab59;
             }
             if (bVar2 == 0) break;
-            bVar2 = pbVar7[1];
-            bVar17 = bVar2 < pbVar6[1];
-            if (bVar2 != pbVar6[1]) goto LAB_0064ab54;
+            bVar2 = pbVar9[1];
+            bVar18 = bVar2 < pbVar7[1];
+            if (bVar2 != pbVar7[1]) goto LAB_0064ab54;
+            pbVar9 = pbVar9 + 2;
             pbVar7 = pbVar7 + 2;
-            pbVar6 = pbVar6 + 2;
           } while (bVar2 != 0);
-          iVar5 = 0;
+          iVar6 = 0;
 LAB_0064ab59:
           switch(*(undefined2 *)(local_10 + 1)) {
           case 0x1e:
-            *local_8 = (float)(uint)(iVar5 == 0);
+            *local_8 = (float)(uint)(iVar6 == 0);
             break;
           default:
-            iVar5 = 0x126;
+            iVar6 = 0x126;
             goto cf_error_exit_0064B368;
           case 0x27:
-            *local_8 = (float)(uint)(iVar5 < 0);
+            *local_8 = (float)(uint)(iVar6 < 0);
             break;
           case 0x28:
-            *local_8 = (float)(uint)(iVar5 < 1);
+            *local_8 = (float)(uint)(iVar6 < 1);
             break;
           case 0x2e:
-            *local_8 = (float)(uint)(0 < iVar5);
+            *local_8 = (float)(uint)(0 < iVar6);
             break;
           case 0x2f:
-            *local_8 = (float)(uint)(-1 < iVar5);
+            *local_8 = (float)(uint)(-1 < iVar6);
             break;
           case 0x33:
-            *local_8 = (float)(uint)(iVar5 != 0);
+            *local_8 = (float)(uint)(iVar6 != 0);
           }
           goto cf_common_exit_0064B36F;
         }
@@ -820,77 +844,77 @@ LAB_0064ab59:
           st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
         }
         local_38[0x21] = -1;
-        iVar5 = -0x76;
+        iVar6 = -0x76;
         goto cf_error_exit_0064C2A4;
       }
       local_8 = st::fn_006AAC10(4);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar5 = (**(code **)*local_38)(param_1);
-      *local_8 = (float)(uint)(iVar5 == 0);
+      iVar6 = (**(code **)*local_38)(param_1);
+      *local_8 = (float)(uint)(iVar6 == 0);
       goto cf_common_exit_0064B36F;
     }
 LAB_0064b7ea:
-    pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-    if (pcVar12 != nullptr) {
-      st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+    local_EAX_3714 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+    if (local_EAX_3714 != nullptr) {
+      st::fn_0072E340((char *)(local_38 + 1),local_EAX_3714,0x7f);
     }
 LAB_0064b80a:
     local_38[0x21] = -1;
-    iVar5 = -0x76;
+    iVar6 = -0x76;
     goto cf_error_exit_0064C2A4;
   }
-  if (iVar5 < 0x38a) {
-    if (iVar5 != 0x389) {
-      if (0x385 < iVar5) {
-        if (iVar5 == 0x386) {
+  if (iVar6 < 0x38a) {
+    if (iVar6 != 0x389) {
+      if (0x385 < iVar6) {
+        if (iVar6 == 0x386) {
           if (param_2 != 1) {
             st::fn_006A5E40
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",399);
           }
           if ((*param_1 == '\x06') || (*param_1 == '\x03')) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1);
-            if (pbVar7 == nullptr) {
+            pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
+            if (pbVar9 == nullptr) {
               st::fn_006A5E40
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
                          0x192);
             }
             local_8 = st::fn_006AAC10(4);
-            fVar9 = (float)st::fn_0072FF00(pbVar7);
-            *local_8 = fVar9;
+            fVar11 = (float)st::fn_0072FF00(pbVar9);
+            *local_8 = fVar11;
             goto cf_common_exit_0064B36F;
           }
         }
         else {
-          if (iVar5 == 0x387) {
+          if (iVar6 == 0x387) {
             if (param_2 != 1) {
               st::fn_006A5E40
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
                          0x19d);
             }
             if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
-              pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-              if (pcVar12 != nullptr) {
-                st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+              local_EAX_4301 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+              if (local_EAX_4301 != nullptr) {
+                st::fn_0072E340((char *)(local_38 + 1),local_EAX_4301,0x7f);
               }
               local_38[0x21] = -1;
-              iVar5 = -0x78;
+              iVar6 = -0x78;
               goto cf_error_exit_0064C2A4;
             }
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1);
-            if (pbVar7 == nullptr) {
+            pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
+            if (pbVar9 == nullptr) {
               st::fn_006A5E40
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
                          0x1a0);
             }
             local_18 = nullptr;
             local_8 = st::fn_006AAC10(4);
-            fVar18 = st::fn_00730310(pbVar7,(int *)&local_18);
-            *local_8 = (float)fVar18;
+            fVar19 = st::fn_00730310(pbVar9,(int *)&local_18);
+            *local_8 = (float)fVar19;
             goto cf_common_exit_0064B291;
           }
-          if (iVar5 != 0x388) goto cf_common_exit_0064C271;
+          if (iVar6 != 0x388) goto cf_common_exit_0064C271;
           if (param_2 != 2) {
             st::fn_006A5E40
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1ac);
@@ -898,36 +922,36 @@ LAB_0064b80a:
           if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
             if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar5 = (**(code **)*local_38)(param_1);
+              iVar6 = (**(code **)*local_38)(param_1);
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar8 = (**(code **)*local_38)(param_1 + 5);
-              if (iVar8 < 2) {
-                iVar8 = 2;
+              iVar10 = (**(code **)*local_38)(param_1 + 5);
+              if (iVar10 < 2) {
+                iVar10 = 2;
               }
-              if (0x24 < iVar8) {
-                iVar8 = 0x24;
+              if (0x24 < iVar10) {
+                iVar10 = 0x24;
               }
               local_8 = st::fn_006AAC10(0x40);
-              st::fn_0072DE60(iVar5,(char *)local_8,iVar8);
+              st::fn_0072DE60(iVar6,(char *)local_8,iVar10);
               goto cf_common_exit_0064BBB1;
             }
           }
         }
-        pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-        if (pcVar12 != nullptr) {
-          st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+        local_EAX_4136 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+        if (local_EAX_4136 != nullptr) {
+          st::fn_0072E340((char *)(local_38 + 1),local_EAX_4136,0x7f);
         }
         local_38[0x21] = -1;
-        iVar5 = -0x78;
+        iVar6 = -0x78;
         goto cf_error_exit_0064C2A4;
       }
-      if (iVar5 == 0x385) {
+      if (iVar6 == 0x385) {
         if (param_2 < 1) {
           st::fn_006A5E40
                     (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x206);
         }
         local_28 = nullptr;
-        iVar5 = param_2;
+        iVar6 = param_2;
         if (0 < param_2) {
           do {
             cVar3 = *param_1;
@@ -940,8 +964,8 @@ LAB_0064b8f1:
 LAB_0064b901:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
-                local_c = (int *)(float)fVar18;
+                fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
+                local_c = (int *)(float)fVar19;
               }
             }
             else {
@@ -949,9 +973,9 @@ LAB_0064b901:
                 if ((cVar3 == '\x04') || (cVar3 == '\x01')) goto LAB_0064b8f1;
                 goto LAB_0064b901;
               }
-              pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-              if (pcVar12 != nullptr) {
-                st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+              local_EAX_3904 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+              if (local_EAX_3904 != nullptr) {
+                st::fn_0072E340((char *)(local_38 + 1),local_EAX_3904,0x7f);
               }
               local_38[0x21] = -1;
               st::fn_006A5E40
@@ -959,14 +983,14 @@ LAB_0064b901:
             }
             local_28 = (char *)((float)local_c + (float)local_28);
             param_1 = param_1 + 5;
-            iVar5 = iVar5 + -1;
-          } while (iVar5 != 0);
+            iVar6 = iVar6 + -1;
+          } while (iVar6 != 0);
         }
         local_8 = st::fn_006AAC10(4);
         *local_8 = (float)local_28 / (float)param_2;
         goto cf_common_exit_0064B291;
       }
-      if (iVar5 == 0x41) {
+      if (iVar6 == 0x41) {
         if (param_2 != 1) {
           st::fn_006A5E40
                     (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0xdf);
@@ -975,21 +999,21 @@ LAB_0064b901:
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           local_8 = st::fn_006AAC10(4);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar5 = (**(code **)*local_38)(param_1);
-          *local_8 = (float)-iVar5;
+          iVar6 = (**(code **)*local_38)(param_1);
+          *local_8 = (float)-iVar6;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           local_8 = st::fn_006AAC10(4);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
-          *local_8 = (float)-fVar18;
+          fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
+          *local_8 = (float)-fVar19;
           goto cf_common_exit_0064B36F;
         }
         goto LAB_0064b7ea;
       }
-      if (iVar5 == 0x43) goto switchD_0064aa67_caseD_3;
-      if (iVar5 == 900) {
+      if (iVar6 == 0x43) goto switchD_0064aa67_caseD_3;
+      if (iVar6 == 900) {
         if (param_2 < 1) {
           st::fn_006A5E40
                     (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",500);
@@ -1007,11 +1031,11 @@ LAB_0064b659:
 LAB_0064b663:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
+                fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
                 st::fn_00730450
-                          (SUB84((double)fVar18,0),(uint)((ulonglong)(double)fVar18 >> 0x20));
-                lVar19 = st::fn_0072E288();
-                local_c = (int *)lVar19;
+                          (SUB84((double)fVar19,0),(uint)((ulonglong)(double)fVar19 >> 0x20));
+                lVar20 = st::fn_0072E288();
+                local_c = (int *)lVar20;
               }
             }
             else {
@@ -1019,9 +1043,9 @@ LAB_0064b663:
                 if ((cVar3 == '\x04') || (cVar3 == '\x01')) goto LAB_0064b659;
                 goto LAB_0064b663;
               }
-              pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-              if (pcVar12 != nullptr) {
-                st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+              local_EAX_3240 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+              if (local_EAX_3240 != nullptr) {
+                st::fn_0072E340((char *)(local_38 + 1),local_EAX_3240,0x7f);
               }
               local_38[0x21] = -1;
               st::fn_006A5E40
@@ -1045,33 +1069,33 @@ LAB_0064b663:
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
-        local_18 = (byte *)(float)fVar18;
+        fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
+        local_18 = (byte *)(float)fVar19;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar5 = (**(code **)*local_38)(param_1 + 5);
-        if (iVar5 < 2) {
-          iVar5 = 2;
+        iVar6 = (**(code **)*local_38)(param_1 + 5);
+        if (iVar6 < 2) {
+          iVar6 = 2;
         }
-        if (0x40 < iVar5) {
-          iVar5 = 0x40;
+        if (0x40 < iVar6) {
+          iVar6 = 0x40;
         }
-        local_8 = st::fn_006AAC10(iVar5 + 10);
+        local_8 = st::fn_006AAC10(iVar6 + 10);
         st::fn_007301E0
                   (SUB84((double)(float)local_18,0),
-                   (int)((ulonglong)(double)(float)local_18 >> 0x20),iVar5,(char *)local_8);
+                   (int)((ulonglong)(double)(float)local_18 >> 0x20),iVar6,(char *)local_8);
         goto cf_common_exit_0064BBB1;
       }
     }
 LAB_0064bd33:
-    pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-    if (pcVar12 != nullptr) {
-      st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+    local_EAX_5067 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+    if (local_EAX_5067 != nullptr) {
+      st::fn_0072E340((char *)(local_38 + 1),local_EAX_5067,0x7f);
     }
     local_38[0x21] = -1;
-    iVar5 = -0x78;
+    iVar6 = -0x78;
     goto cf_error_exit_0064C2A4;
   }
-  switch(iVar5) {
+  switch(iVar6) {
   case 0x38a:
     if (param_2 != 1) {
       st::fn_006A5E40
@@ -1084,12 +1108,12 @@ LAB_0064bd33:
       *local_8 = (float)(int)local_18;
       goto cf_common_exit_0064B291;
     }
-    pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-    if (pcVar12 != nullptr) {
-      st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+    local_EAX_4782 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+    if (local_EAX_4782 != nullptr) {
+      st::fn_0072E340((char *)(local_38 + 1),local_EAX_4782,0x7f);
     }
     local_38[0x21] = -1;
-    iVar5 = -0x78;
+    iVar6 = -0x78;
     break;
   case 0x38b:
     if (param_2 != 1) {
@@ -1098,22 +1122,22 @@ LAB_0064bd33:
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
-      local_18 = (byte *)(float)fVar18;
+      fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
+      local_18 = (byte *)(float)fVar19;
       local_8 = st::fn_006AAC10(4);
       st::fn_0072E150
                 (SUB84((double)(float)local_18,0),(uint)((ulonglong)(double)(float)local_18 >> 0x20)
                 );
-      lVar19 = st::fn_0072E288();
-      *local_8 = (float)lVar19;
+      lVar20 = st::fn_0072E288();
+      *local_8 = (float)lVar20;
       goto cf_common_exit_0064B36F;
     }
-    pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-    if (pcVar12 != nullptr) {
-      st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+    local_EAX_4913 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+    if (local_EAX_4913 != nullptr) {
+      st::fn_0072E340((char *)(local_38 + 1),local_EAX_4913,0x7f);
     }
     local_38[0x21] = -1;
-    iVar5 = -0x78;
+    iVar6 = -0x78;
     break;
   case 0x38c:
     if (param_2 != 1) {
@@ -1122,14 +1146,14 @@ LAB_0064bd33:
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      fVar18 = (float10)(**(code **)(*local_38 + 4))(param_1);
-      local_18 = (byte *)(float)fVar18;
+      fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
+      local_18 = (byte *)(float)fVar19;
       local_8 = st::fn_006AAC10(4);
       st::fn_00730450
                 (SUB84((double)(float)local_18,0),(uint)((ulonglong)(double)(float)local_18 >> 0x20)
                 );
-      lVar19 = st::fn_0072E288();
-      *local_8 = (float)lVar19;
+      lVar20 = st::fn_0072E288();
+      *local_8 = (float)lVar20;
       goto cf_common_exit_0064B36F;
     }
     goto LAB_0064bd33;
@@ -1139,9 +1163,9 @@ LAB_0064bd33:
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x218);
     }
     if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
-      pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-      if (pcVar12 != nullptr) {
-        st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+      local_EAX_5222 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+      if (local_EAX_5222 != nullptr) {
+        st::fn_0072E340((char *)(local_38 + 1),local_EAX_5222,0x7f);
       }
       local_38[0x21] = -1;
       st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -1152,15 +1176,15 @@ LAB_0064bd33:
       st::fn_006A5E40
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x21a);
     }
-    uVar13 = 0xffffffff;
-    pbVar7 = local_18;
+    uVar14 = 0xffffffff;
+    pbVar9 = local_18;
     do {
-      if (uVar13 == 0) break;
-      uVar13 = uVar13 - 1;
-      bVar2 = *pbVar7;
-      pbVar7 = pbVar7 + 1;
+      if (uVar14 == 0) break;
+      uVar14 = uVar14 - 1;
+      bVar2 = *pbVar9;
+      pbVar9 = pbVar9 + 1;
     } while (bVar2 != 0);
-    local_20 = (float)(~uVar13 + 1);
+    local_20 = (float)(~uVar14 + 1);
     local_14 = 0.0;
     local_28 = (char *)0x200;
     local_1c = st::fn_006AAC70(0x200);
@@ -1169,60 +1193,60 @@ LAB_0064bd33:
       local_30 = param_2 + -1;
       local_2c = 4;
       local_24 = 1.12104e-44;
-      pcVar12 = local_28;
+      pcVar8 = local_28;
       do {
         cVar3 = (char)*local_c;
         if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          pcVar10 = (char *)(**(code **)(*local_38 + 8))(local_c);
-          local_78 = pcVar10;
-          if (pcVar10 == nullptr) {
+          pcVar13 = (char *)(**(code **)(*local_38 + 8))(local_c);
+          local_78 = pcVar13;
+          if (pcVar13 == nullptr) {
             st::fn_006A5E40
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x220);
           }
-          if ((int)pcVar12 <= local_2c) {
-            local_28 = (char *)((int)pcVar12 + 0x200);
+          if ((int)pcVar8 <= local_2c) {
+            local_28 = (char *)((int)pcVar8 + 0x200);
             local_1c = st::fn_006ACF50(local_1c,(uint)local_28);
           }
           puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
           local_14 = (float)((int)local_14 + 4);
           local_2c = local_2c + 4;
           local_24 = (float)((int)local_24 + 4);
-          uVar13 = 0xffffffff;
-          *puVar1 = pcVar10;
+          uVar14 = 0xffffffff;
+          *puVar1 = pcVar13;
           do {
-            if (uVar13 == 0) break;
-            uVar13 = uVar13 - 1;
-            cVar3 = *pcVar10;
-            pcVar10 = pcVar10 + 1;
+            if (uVar14 == 0) break;
+            uVar14 = uVar14 - 1;
+            cVar3 = *pcVar13;
+            pcVar13 = pcVar13 + 1;
           } while (cVar3 != '\0');
-          local_20 = (float)((int)local_20 + ~uVar13 + 1);
-          pcVar12 = local_28;
+          local_20 = (float)((int)local_20 + ~uVar14 + 1);
+          pcVar8 = local_28;
         }
         else if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          uVar11 = (**(code **)*local_38)(local_c);
-          local_7c = uVar11;
-          if ((int)pcVar12 <= local_2c) {
-            pcVar12 = (char *)((int)pcVar12 + 0x200);
-            local_28 = pcVar12;
-            local_1c = st::fn_006ACF50(local_1c,(uint)pcVar12);
+          uVar12 = (**(code **)*local_38)(local_c);
+          local_7c = uVar12;
+          if ((int)pcVar8 <= local_2c) {
+            pcVar8 = (char *)((int)pcVar8 + 0x200);
+            local_28 = pcVar8;
+            local_1c = st::fn_006ACF50(local_1c,(uint)pcVar8);
           }
           puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
           local_14 = (float)((int)local_14 + 4);
-          *puVar1 = uVar11;
+          *puVar1 = uVar12;
           local_24 = (float)((int)local_24 + 4);
           local_2c = local_2c + 4;
           local_20 = (float)((int)local_20 + 0xc);
         }
         else if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          fVar18 = (float10)(**(code **)(*local_38 + 4))(local_c);
-          local_34 = (float)fVar18;
-          if ((int)pcVar12 <= (int)local_24) {
-            pcVar12 = (char *)((int)pcVar12 + 0x200);
-            local_28 = pcVar12;
-            local_1c = st::fn_006ACF50(local_1c,(uint)pcVar12);
+          fVar19 = (float10)(**(code **)(*local_38 + 4))(local_c);
+          local_34 = (float)fVar19;
+          if ((int)pcVar8 <= (int)local_24) {
+            pcVar8 = (char *)((int)pcVar8 + 0x200);
+            local_28 = pcVar8;
+            local_1c = st::fn_006ACF50(local_1c,(uint)pcVar8);
           }
           *(double *)((int)local_14 + (int)local_1c) = (double)local_34;
           local_14 = (float)((int)local_14 + 8);
@@ -1231,9 +1255,9 @@ LAB_0064bd33:
           local_20 = (float)((int)local_20 + 0x20);
         }
         else {
-          pcVar10 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-          if (pcVar10 != nullptr) {
-            st::fn_0072E340((char *)(local_38 + 1),pcVar10,0x7f);
+          pcVar13_mg5 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+          if (pcVar13_mg5 != nullptr) {
+            st::fn_0072E340((char *)(local_38 + 1),pcVar13_mg5,0x7f);
           }
           local_38[0x21] = -1;
           st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -1242,9 +1266,9 @@ LAB_0064bd33:
         local_30 = local_30 + -1;
       } while (local_30 != 0);
     }
-    fVar9 = local_20;
+    fVar11 = local_20;
     local_8 = st::fn_006AAC10((uint)local_20);
-    st::fn_007300E0((undefined1 *)local_8,(int)fVar9,local_18,local_1c);
+    st::fn_007300E0((undefined1 *)local_8,(int)fVar11,local_18,local_1c);
     if (param_3 != nullptr) {
       *param_3 = 3;
     }
@@ -1265,13 +1289,13 @@ LAB_0064bd33:
       do {
         if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar5 = (**(code **)*local_38)(param_1);
-          *local_c = iVar5;
+          iVar6 = (**(code **)*local_38)(param_1);
+          *local_c = iVar6;
         }
         else {
-          pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-          if (pcVar12 != nullptr) {
-            st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+          local_EAX_6215 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+          if (local_EAX_6215 != nullptr) {
+            st::fn_0072E340((char *)(local_38 + 1),local_EAX_6215,0x7f);
           }
           local_38[0x21] = -1;
           st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -1300,13 +1324,13 @@ LAB_0064bd33:
       do {
         if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar5 = (**(code **)*local_38)(param_1);
-          *local_c = iVar5;
+          iVar6 = (**(code **)*local_38)(param_1);
+          *local_c = iVar6;
         }
         else {
-          pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
-          if (pcVar12 != nullptr) {
-            st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+          local_EAX_5998 = st::fn_004057DB((int)*(short *)(local_10 + 1));
+          if (local_EAX_5998 != nullptr) {
+            st::fn_0072E340((char *)(local_38 + 1),local_EAX_5998,0x7f);
           }
           local_38[0x21] = -1;
           st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -1334,15 +1358,15 @@ cf_common_exit_0064B36F:
     return local_8;
   default:
 cf_common_exit_0064C271:
-    pcVar12 = st::fn_004057DB(iVar5);
-    if (pcVar12 != nullptr) {
-      st::fn_0072E340((char *)(local_38 + 1),pcVar12,0x7f);
+    local_EAX_6402 = st::fn_004057DB(iVar6);
+    if (local_EAX_6402 != nullptr) {
+      st::fn_0072E340((char *)(local_38 + 1),local_EAX_6402,0x7f);
     }
     local_38[0x21] = -1;
-    iVar5 = -0x75;
+    iVar6 = -0x75;
   }
 cf_error_exit_0064C2A4:
-  st::fn_006A5E40(iVar5,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+  st::fn_006A5E40(iVar6,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
   g_currentExceptionFrame = local_c0.previous;
   return local_8;
 }

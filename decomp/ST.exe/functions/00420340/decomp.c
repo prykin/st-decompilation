@@ -20,96 +20,98 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this)
   char cVar1;
   byte bVar3;
   STSprGameObjC_field_0259State SVar4;
-  dword dVar5;
-  uint uVar6;
   int iVar7;
-  uint uVar8;
-  int iVar9;
-  char *pcVar10;
+  dword dVar5;
+  int local_EAX_1282;
+  uint uVar6;
+  int iVar8;
+  uint uVar9;
+  int iVar10;
   char *pcVar11;
   char *pcVar12;
+  char *pcVar13;
   char local_24 [20];
   char local_10 [12];
 
   uVar6 = 0xffffffff;
-  pcVar10 = &DAT_007a5000;
+  pcVar11 = &DAT_007a5000;
   do {
-    pcVar12 = pcVar10;
+    pcVar13 = pcVar11;
     if (uVar6 == 0) break;
     uVar6 = uVar6 - 1;
-    pcVar12 = pcVar10 + 1;
-    cVar1 = *pcVar10;
-    pcVar10 = pcVar12;
+    pcVar13 = pcVar11 + 1;
+    cVar1 = *pcVar11;
+    pcVar11 = pcVar13;
   } while (cVar1 != '\0');
   uVar6 = ~uVar6;
   local_24[0] = '\0';
-  iVar7 = -1;
-  pcVar10 = local_24;
+  iVar8 = -1;
+  pcVar11 = local_24;
   do {
-    pcVar11 = pcVar10;
-    if (iVar7 == 0) break;
-    iVar7 = iVar7 + -1;
-    pcVar11 = pcVar10 + 1;
-    cVar1 = *pcVar10;
-    pcVar10 = pcVar11;
+    pcVar12 = pcVar11;
+    if (iVar8 == 0) break;
+    iVar8 = iVar8 + -1;
+    pcVar12 = pcVar11 + 1;
+    cVar1 = *pcVar11;
+    pcVar11 = pcVar12;
   } while (cVar1 != '\0');
-  pcVar10 = pcVar12 + -uVar6;
-  pcVar12 = pcVar11 + -1;
-  for (uVar8 = uVar6 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined4 *)pcVar12 = *(undefined4 *)pcVar10;
-    pcVar10 = pcVar10 + 4;
-    pcVar12 = pcVar12 + 4;
+  pcVar11 = pcVar13 + -uVar6;
+  pcVar13 = pcVar12 + -1;
+  for (uVar9 = uVar6 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+    *(undefined4 *)pcVar13 = *(undefined4 *)pcVar11;
+    pcVar11 = pcVar11 + 4;
+    pcVar13 = pcVar13 + 4;
   }
-  iVar7 = 10;
+  iVar8 = 10;
   for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar12 = *pcVar10;
-    pcVar10 = pcVar10 + 1;
-    pcVar12 = pcVar12 + 1;
+    *pcVar13 = *pcVar11;
+    pcVar11 = pcVar11 + 1;
+    pcVar13 = pcVar13 + 1;
   }
   uVar6 = 0xffffffff;
-  pcVar10 = &DAT_007a4ffc;
+  pcVar11 = &DAT_007a4ffc;
   do {
-    pcVar12 = pcVar10;
+    pcVar13 = pcVar11;
     if (uVar6 == 0) break;
     uVar6 = uVar6 - 1;
-    pcVar12 = pcVar10 + 1;
-    cVar1 = *pcVar10;
-    pcVar10 = pcVar12;
+    pcVar13 = pcVar11 + 1;
+    cVar1 = *pcVar11;
+    pcVar11 = pcVar13;
   } while (cVar1 != '\0');
   uVar6 = ~uVar6;
-  iVar9 = -1;
-  pcVar10 = local_24;
+  iVar10 = -1;
+  pcVar11 = local_24;
   do {
-    pcVar11 = pcVar10;
-    if (iVar9 == 0) break;
-    iVar9 = iVar9 + -1;
-    pcVar11 = pcVar10 + 1;
-    cVar1 = *pcVar10;
-    pcVar10 = pcVar11;
+    pcVar12 = pcVar11;
+    if (iVar10 == 0) break;
+    iVar10 = iVar10 + -1;
+    pcVar12 = pcVar11 + 1;
+    cVar1 = *pcVar11;
+    pcVar11 = pcVar12;
   } while (cVar1 != '\0');
-  pcVar10 = pcVar12 + -uVar6;
-  pcVar12 = pcVar11 + -1;
-  for (uVar8 = uVar6 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined4 *)pcVar12 = *(undefined4 *)pcVar10;
-    pcVar10 = pcVar10 + 4;
-    pcVar12 = pcVar12 + 4;
+  pcVar11 = pcVar13 + -uVar6;
+  pcVar13 = pcVar12 + -1;
+  for (uVar9 = uVar6 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+    *(undefined4 *)pcVar13 = *(undefined4 *)pcVar11;
+    pcVar11 = pcVar11 + 4;
+    pcVar13 = pcVar13 + 4;
   }
-  pcVar11 = local_10;
+  pcVar12 = local_10;
   for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar12 = *pcVar10;
-    pcVar10 = pcVar10 + 1;
-    pcVar12 = pcVar12 + 1;
+    *pcVar13 = *pcVar11;
+    pcVar11 = pcVar11 + 1;
+    pcVar13 = pcVar13 + 1;
   }
   bVar3 = thunk_FUN_004ab030();
-  Library::MSVCRT::__itoa((uint)bVar3,pcVar11,iVar7);
-  iVar7 = this->field_0020;
-  if ((((iVar7 != 0x1ae) && (iVar7 != 0x172)) && (iVar7 != 0x5a)) &&
-     ((iVar7 != 0x1a4 && (iVar7 != 0x1b8)))) {
-    if ((iVar7 == 0x14) || (iVar7 == 1000)) {
+  Library::MSVCRT::__itoa((uint)bVar3,pcVar12,iVar8);
+  iVar8 = this->field_0020;
+  if ((((iVar8 != 0x1ae) && (iVar8 != 0x172)) && (iVar8 != 0x5a)) &&
+     ((iVar8 != 0x1a4 && (iVar8 != 0x1b8)))) {
+    if ((iVar8 == 0x14) || (iVar8 == 1000)) {
       SVar4 = this->slot_2C();
     }
     else {
-      if (iVar7 != 0x3e9) {
+      if (iVar8 != 0x3e9) {
         return;
       }
       SVar4 = this->field_0259;
@@ -122,55 +124,55 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this)
     case 0x25:
 switchD_00420436_caseD_1:
       uVar6 = 0xffffffff;
-      pcVar10 = &DAT_007a4fb4;
+      pcVar11 = &DAT_007a4fb4;
       do {
-        pcVar12 = pcVar10;
+        pcVar13 = pcVar11;
         if (uVar6 == 0) break;
         uVar6 = uVar6 - 1;
-        pcVar12 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar12;
+        pcVar13 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar13;
       } while (cVar1 != '\0');
       uVar6 = ~uVar6;
-      iVar7 = -1;
-      pcVar10 = local_24;
+      iVar8 = -1;
+      pcVar11 = local_24;
       do {
-        pcVar11 = pcVar10;
-        if (iVar7 == 0) break;
-        iVar7 = iVar7 + -1;
-        pcVar11 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar11;
+        pcVar12 = pcVar11;
+        if (iVar8 == 0) break;
+        iVar8 = iVar8 + -1;
+        pcVar12 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar12 + -uVar6;
-      pcVar12 = pcVar11 + -1;
-      memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-      uVar8 = 0;
+      pcVar11 = pcVar13 + -uVar6;
+      pcVar13 = pcVar12 + -1;
+      memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
+      uVar9 = 0;
       uVar6 = 0xffffffff;
-      pcVar10 = local_10;
+      pcVar11 = local_10;
       do {
-        pcVar12 = pcVar10;
+        pcVar13 = pcVar11;
         if (uVar6 == 0) break;
         uVar6 = uVar6 - 1;
-        pcVar12 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar12;
+        pcVar13 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar13;
       } while (cVar1 != '\0');
       uVar6 = ~uVar6;
-      iVar7 = -1;
-      pcVar10 = local_24;
+      iVar8 = -1;
+      pcVar11 = local_24;
       do {
-        pcVar11 = pcVar10;
-        if (iVar7 == 0) break;
-        iVar7 = iVar7 + -1;
-        pcVar11 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar11;
+        pcVar12 = pcVar11;
+        if (iVar8 == 0) break;
+        iVar8 = iVar8 + -1;
+        pcVar12 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar12 + -uVar6;
-      pcVar12 = pcVar11 + -1;
-      memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-      pcVar10 = &DAT_007a4fb0;
+      pcVar11 = pcVar13 + -uVar6;
+      pcVar13 = pcVar12 + -1;
+      memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
+      pcVar11 = &DAT_007a4fb0;
       break;
     case 2:
     case 3:
@@ -269,56 +271,56 @@ switchD_00420436_caseD_1:
     case 100:
     case 0x6e:
       uVar6 = 0xffffffff;
-      pcVar10 = &DAT_007a4ff8;
+      pcVar11 = &DAT_007a4ff8;
       do {
-        pcVar12 = pcVar10;
+        pcVar13 = pcVar11;
         if (uVar6 == 0) break;
         uVar6 = uVar6 - 1;
-        pcVar12 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar12;
+        pcVar13 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar13;
       } while (cVar1 != '\0');
       uVar6 = ~uVar6;
-      iVar7 = -1;
-      pcVar10 = local_24;
+      iVar8 = -1;
+      pcVar11 = local_24;
       do {
-        pcVar11 = pcVar10;
-        if (iVar7 == 0) break;
-        iVar7 = iVar7 + -1;
-        pcVar11 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar11;
+        pcVar12 = pcVar11;
+        if (iVar8 == 0) break;
+        iVar8 = iVar8 + -1;
+        pcVar12 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar12 + -uVar6;
-      pcVar12 = pcVar11 + -1;
-      memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-      uVar8 = 0;
+      pcVar11 = pcVar13 + -uVar6;
+      pcVar13 = pcVar12 + -1;
+      memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
+      uVar9 = 0;
       uVar6 = 0xffffffff;
-      pcVar10 = local_10;
+      pcVar11 = local_10;
       do {
-        pcVar12 = pcVar10;
+        pcVar13 = pcVar11;
         if (uVar6 == 0) break;
         uVar6 = uVar6 - 1;
-        pcVar12 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar12;
+        pcVar13 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar13;
       } while (cVar1 != '\0');
       uVar6 = ~uVar6;
-      iVar7 = -1;
-      pcVar10 = local_24;
+      iVar8 = -1;
+      pcVar11 = local_24;
       do {
-        pcVar11 = pcVar10;
-        if (iVar7 == 0) break;
-        iVar7 = iVar7 + -1;
-        pcVar11 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar11;
+        pcVar12 = pcVar11;
+        if (iVar8 == 0) break;
+        iVar8 = iVar8 + -1;
+        pcVar12 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar12 + -uVar6;
-      pcVar12 = pcVar11 + -1;
-      memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-      uVar8 = 0;
-      pcVar10 = &DAT_007a4ff8;
+      pcVar11 = pcVar13 + -uVar6;
+      pcVar13 = pcVar12 + -1;
+      memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
+      uVar9 = 0;
+      pcVar11 = &DAT_007a4ff8;
       break;
     case 0x3b:
     case 0x3c:
@@ -335,90 +337,90 @@ switchD_00420436_caseD_1:
     case 0x70:
     case 0x73:
       uVar6 = 0xffffffff;
-      pcVar10 = &DAT_007a4ff8;
+      pcVar11 = &DAT_007a4ff8;
       do {
-        pcVar12 = pcVar10;
+        pcVar13 = pcVar11;
         if (uVar6 == 0) break;
         uVar6 = uVar6 - 1;
-        pcVar12 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar12;
+        pcVar13 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar13;
       } while (cVar1 != '\0');
       uVar6 = ~uVar6;
-      iVar7 = -1;
-      pcVar10 = local_24;
+      iVar8 = -1;
+      pcVar11 = local_24;
       do {
-        pcVar11 = pcVar10;
-        if (iVar7 == 0) break;
-        iVar7 = iVar7 + -1;
-        pcVar11 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar11;
+        pcVar12 = pcVar11;
+        if (iVar8 == 0) break;
+        iVar8 = iVar8 + -1;
+        pcVar12 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar12 + -uVar6;
-      pcVar12 = pcVar11 + -1;
-      memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-      uVar8 = 0;
+      pcVar11 = pcVar13 + -uVar6;
+      pcVar13 = pcVar12 + -1;
+      memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
+      uVar9 = 0;
       uVar6 = 0xffffffff;
-      pcVar10 = local_10;
+      pcVar11 = local_10;
       do {
-        pcVar12 = pcVar10;
+        pcVar13 = pcVar11;
         if (uVar6 == 0) break;
         uVar6 = uVar6 - 1;
-        pcVar12 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar12;
+        pcVar13 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar13;
       } while (cVar1 != '\0');
       uVar6 = ~uVar6;
-      iVar7 = -1;
-      pcVar10 = local_24;
+      iVar8 = -1;
+      pcVar11 = local_24;
       do {
-        pcVar11 = pcVar10;
-        if (iVar7 == 0) break;
-        iVar7 = iVar7 + -1;
-        pcVar11 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar11;
+        pcVar12 = pcVar11;
+        if (iVar8 == 0) break;
+        iVar8 = iVar8 + -1;
+        pcVar12 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar12 + -uVar6;
-      pcVar12 = pcVar11 + -1;
-      memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-      uVar8 = 0;
-      pcVar10 = &DAT_007a4ff4;
+      pcVar11 = pcVar13 + -uVar6;
+      pcVar13 = pcVar12 + -1;
+      memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
+      uVar9 = 0;
+      pcVar11 = &DAT_007a4ff4;
     }
 LAB_00420678:
     uVar6 = 0xffffffff;
     do {
-      pcVar12 = pcVar10;
+      pcVar13 = pcVar11;
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
-      pcVar12 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar12;
+      pcVar13 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar13;
     } while (cVar1 != '\0');
     uVar6 = ~uVar6;
-    iVar7 = -1;
-    pcVar10 = local_24;
+    iVar8 = -1;
+    pcVar11 = local_24;
     do {
-      pcVar11 = pcVar10;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar11 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar12 = pcVar11;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar12;
     } while (cVar1 != '\0');
-    pcVar10 = pcVar12 + -uVar6;
-    pcVar12 = pcVar11 + -1;
-    memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
+    pcVar11 = pcVar13 + -uVar6;
+    pcVar13 = pcVar12 + -1;
+    memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
     this_00 = &this->field_01D5;
-    iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xf,PTR_00806774,local_24,0x1d);
-    if (iVar7 != 0) {
+    iVar8 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xf,PTR_00806774,local_24,CASE_1D);
+    if (iVar8 != 0) {
       RaiseInternalException
                 (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",
                  0xc4a);
     }
-    iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0,PTR_00806774,local_24,0x1d);
-    if (iVar7 != 0) {
+    iVar8 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0,PTR_00806774,local_24,CASE_1D);
+    if (iVar8 != 0) {
       RaiseInternalException
                 (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",
                  0xc4b);
@@ -450,9 +452,10 @@ LAB_00420678:
   case 0xbd:
     goto switchD_00420436_caseD_1;
   default:
-    iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xbc0,0,0,"%s",
-                               "STSprGameObjC::LoadActFrame 1 unknown object type");
-    if (iVar7 == 0) {
+    local_EAX_1282 =
+         ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xbc0,0,0,"%s",
+                            "STSprGameObjC::LoadActFrame 1 unknown object type");
+    if (local_EAX_1282 == 0) {
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -461,110 +464,110 @@ LAB_00420678:
   case 0xe0:
 switchD_00420436_caseD_7:
     uVar6 = 0xffffffff;
-    pcVar10 = &DAT_007a4fb4;
+    pcVar11 = &DAT_007a4fb4;
     do {
-      pcVar12 = pcVar10;
+      pcVar13 = pcVar11;
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
-      pcVar12 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar12;
+      pcVar13 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar13;
     } while (cVar1 != '\0');
     uVar6 = ~uVar6;
-    iVar7 = -1;
-    pcVar10 = local_24;
+    iVar8 = -1;
+    pcVar11 = local_24;
     do {
-      pcVar11 = pcVar10;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar11 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar12 = pcVar11;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar12;
     } while (cVar1 != '\0');
-    pcVar10 = pcVar12 + -uVar6;
-    pcVar12 = pcVar11 + -1;
-    memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-    uVar8 = 0;
+    pcVar11 = pcVar13 + -uVar6;
+    pcVar13 = pcVar12 + -1;
+    memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
+    uVar9 = 0;
     uVar6 = 0xffffffff;
-    pcVar10 = local_10;
+    pcVar11 = local_10;
     do {
-      pcVar12 = pcVar10;
+      pcVar13 = pcVar11;
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
-      pcVar12 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar12;
+      pcVar13 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar13;
     } while (cVar1 != '\0');
     uVar6 = ~uVar6;
-    iVar7 = -1;
-    pcVar10 = local_24;
+    iVar8 = -1;
+    pcVar11 = local_24;
     do {
-      pcVar11 = pcVar10;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar11 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar12 = pcVar11;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar12;
     } while (cVar1 != '\0');
-    pcVar10 = pcVar12 + -uVar6;
-    pcVar12 = pcVar11 + -1;
-    memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-    uVar8 = 0;
-    pcVar10 = &DAT_007a4fac;
+    pcVar11 = pcVar13 + -uVar6;
+    pcVar13 = pcVar12 + -1;
+    memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
+    uVar9 = 0;
+    pcVar11 = &DAT_007a4fac;
     goto LAB_00420678;
   case 0xfd:
   case 0xfe:
 switchD_00420436_caseD_2:
     uVar6 = 0xffffffff;
-    pcVar10 = &DAT_007a4fb4;
+    pcVar11 = &DAT_007a4fb4;
     do {
-      pcVar12 = pcVar10;
+      pcVar13 = pcVar11;
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
-      pcVar12 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar12;
+      pcVar13 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar13;
     } while (cVar1 != '\0');
     uVar6 = ~uVar6;
-    iVar7 = -1;
-    pcVar10 = local_24;
+    iVar8 = -1;
+    pcVar11 = local_24;
     do {
-      pcVar11 = pcVar10;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar11 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar12 = pcVar11;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar12;
     } while (cVar1 != '\0');
-    pcVar10 = pcVar12 + -uVar6;
-    pcVar12 = pcVar11 + -1;
-    memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-    uVar8 = 0;
+    pcVar11 = pcVar13 + -uVar6;
+    pcVar13 = pcVar12 + -1;
+    memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
+    uVar9 = 0;
     uVar6 = 0xffffffff;
-    pcVar10 = local_10;
+    pcVar11 = local_10;
     do {
-      pcVar12 = pcVar10;
+      pcVar13 = pcVar11;
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
-      pcVar12 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar12;
+      pcVar13 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar13;
     } while (cVar1 != '\0');
     uVar6 = ~uVar6;
-    iVar7 = -1;
-    pcVar10 = local_24;
+    iVar8 = -1;
+    pcVar11 = local_24;
     do {
-      pcVar11 = pcVar10;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar11 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar12 = pcVar11;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar12;
     } while (cVar1 != '\0');
-    pcVar10 = pcVar12 + -uVar6;
-    pcVar12 = pcVar11 + -1;
-    memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-    pcVar10 = &DAT_007a4fb4;
+    pcVar11 = pcVar13 + -uVar6;
+    pcVar13 = pcVar12 + -1;
+    memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
+    pcVar11 = &DAT_007a4fb4;
     goto LAB_00420678;
   }
 }

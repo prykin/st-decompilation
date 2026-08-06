@@ -5,7 +5,8 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
 
 {
   int iVar1;
-  uint uVar2;
+  uint uVar1;
+  int iVar2;
   InternalExceptionFrame local_4c;
   void *local_8;
 
@@ -22,7 +23,7 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
                              (param_1 ^ (int)param_1 >> 0x1f) - ((int)param_1 >> 0x1f),-1,
                              nullptr);
     }
-    iVar1 = param_3;
+    iVar2 = param_3;
     if (param_2 == '\x01') {
       if (param_4 == nullptr) {
         g_currentExceptionFrame = local_4c.previous;
@@ -30,9 +31,9 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
       }
       if (param_3 < 0) {
         param_3 = 0;
-        iVar1 = 0xf;
+        iVar2 = 0xf;
       }
-      uVar2 = 2;
+      uVar1 = 2;
     }
     else if (param_2 == '\x02') {
       if (param_4 == nullptr) {
@@ -41,11 +42,11 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
       }
       if (param_3 < 0) {
         param_3 = 0;
-        uVar2 = 9;
-        iVar1 = 0xf;
+        uVar1 = 9;
+        iVar2 = 0xf;
       }
       else {
-        uVar2 = 9;
+        uVar1 = 9;
       }
     }
     else {
@@ -55,14 +56,14 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
       }
       if (param_3 < 0) {
         param_3 = 0x10;
-        uVar2 = 0;
-        iVar1 = 0x1f;
+        uVar1 = 0;
+        iVar2 = 0x1f;
       }
       else {
-        uVar2 = 0;
+        uVar1 = 0;
       }
     }
-    FUN_006c1390(param_4,0,uVar2,DAT_0080730e,0,param_3,iVar1);
+    FUN_006c1390(param_4,0,uVar1,DAT_0080730e,0,param_3,iVar2);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

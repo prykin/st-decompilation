@@ -15,10 +15,13 @@ cLoadingTy::InitParam
   ccFntTy *pcVar2;
   undefined4 uVar3;
   cLoadingTy *pcVar5;
-  int iVar6;
-  byte *puVar7;
+  int local_EAX_36;
+  byte *puVar6;
   char *resourceString;
+  int iVar6;
+  int iVar7;
   int iVar8;
+  int iVar9;
   uint uVar10;
   InternalExceptionFrame local_4c;
   cLoadingTy *local_8;
@@ -26,9 +29,9 @@ cLoadingTy::InitParam
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  local_EAX_36 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pcVar5 = local_8;
-  if (iVar6 == 0) {
+  if (local_EAX_36 == 0) {
     local_8->field_0014 = param_1;
     local_8->field_0018 = param_2;
     if (param_3 < 1) {
@@ -48,16 +51,16 @@ cLoadingTy::InitParam
       uVar10 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                *(int *)(puVar1 + 4);
     }
-    puVar7 = (byte *)FUN_006b4fa0((int *)puVar1);
-    memset(puVar7, 0, uVar10); /* compiler bulk-zero initialization */
+    puVar6 = (byte *)FUN_006b4fa0((int *)puVar1);
+    memset(puVar6, 0, uVar10); /* compiler bulk-zero initialization */
     pcVar2 = pcVar5->field_0008;
-    iVar6 = pcVar5->field_0020;
+    iVar7 = pcVar5->field_0020;
     uVar3 = pcVar5->field_001C;
-    iVar8 = pcVar5->field_0014;
+    iVar9 = pcVar5->field_0014;
     pcVar2->field_0064 = pcVar5->field_0018;
-    pcVar2->field_0060 = iVar8;
+    pcVar2->field_0060 = iVar9;
     pcVar2->field_0068 = uVar3;
-    pcVar2->field_006C = iVar6;
+    pcVar2->field_006C = iVar7;
     pcVar2->field_0050 = 0;
     pcVar2->field_0054 = 0;
     pcVar2 = pcVar5->field_0008;
@@ -67,11 +70,11 @@ cLoadingTy::InitParam
     pcVar2->field_005C = param_7;
     resourceString = LoadResourceString(0x267a,g_hINSTANCE_00807618);
     iVar6 = FUN_007111c0(pcVar5->field_0008,resourceString);
-    iVar6 = pcVar5->field_002C + iVar6;
-    iVar8 = pcVar5->field_0020 / iVar6;
-    pcVar5->field_0034 = iVar6;
-    pcVar5->field_0030 = iVar8;
-    if (iVar8 < 1) {
+    iVar9 = pcVar5->field_002C + iVar6;
+    iVar7 = pcVar5->field_0020 / iVar9;
+    pcVar5->field_0034 = iVar9;
+    pcVar5->field_0030 = iVar7;
+    if (iVar7 < 1) {
       RaiseInternalException
                 (-6,g_overwriteContext_007ED77C,"E:\\__titans\\grig\\loading.cpp",0xa3);
     }
@@ -84,12 +87,12 @@ cLoadingTy::InitParam
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0xac,0,iVar6,"%s",
-                             "cLoadingTy::InitParam");
+  iVar8 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0xac,0,local_EAX_36,
+                             "%s","cLoadingTy::InitParam");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar6,0,"E:\\__titans\\grig\\loading.cpp",0xad);
+  RaiseInternalException(local_EAX_36,0,"E:\\__titans\\grig\\loading.cpp",0xad);
   return;
 }
 

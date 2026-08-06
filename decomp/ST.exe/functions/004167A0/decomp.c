@@ -17,9 +17,9 @@ void __thiscall sub_004167A0(void *this)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_8 = 0;
-  if (STField<void *>(this,0x97) != nullptr) {
+  if (STField<int>(this,0x97) != 0) {
     ExceptionList = &local_14;
-    FreeAndNull((void **)((int)this + 0x97));
+    FreeAndNull((int *)((int)this + 0x97));
     STField<undefined4>(this,0x9b) = 0;
     STField<undefined4>(this,0xd3) = 0;
     STField<undefined1>(this,0xe3) = 0;

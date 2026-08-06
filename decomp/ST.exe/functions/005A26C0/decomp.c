@@ -12,19 +12,21 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
   DArrayTy *pDVar2;
   FSGSTy *this_00;
   int iVar4;
-  undefined4 uVar5;
+  undefined4 uVar4;
+  int iVar5;
   int iVar6;
   uint index;
   uint uVar7;
   byte *puVar8;
   byte *pbVar9;
-  byte *pbVar10;
-  bool bVar11;
+  byte *pbVar11;
+  bool bVar12;
   InternalExceptionFrame local_84;
   byte local_40 [48];
   FSGSTy *local_10;
   uint local_c;
   undefined4 *local_8;
+  byte *pbVar10;
 
   if ((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) {
     local_84.previous = g_currentExceptionFrame;
@@ -64,23 +66,23 @@ LAB_005a278f:
           if (pbVar9 != nullptr) {
             do {
               bVar1 = *pbVar9;
-              bVar11 = bVar1 < *pbVar10;
+              bVar12 = bVar1 < *pbVar10;
               if (bVar1 != *pbVar10) {
 LAB_005a27ba:
-                iVar4 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
+                iVar6 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
                 goto LAB_005a27bf;
               }
               if (bVar1 == 0) break;
               bVar1 = pbVar9[1];
-              bVar11 = bVar1 < pbVar10[1];
+              bVar12 = bVar1 < pbVar10[1];
               if (bVar1 != pbVar10[1]) goto LAB_005a27ba;
               pbVar9 = pbVar9 + 2;
               pbVar10 = pbVar10 + 2;
             } while (bVar1 != 0);
-            iVar4 = 0;
+            iVar6 = 0;
 LAB_005a27bf:
             uVar7 = local_c;
-            if (iVar4 == 0) {
+            if (iVar6 == 0) {
               DArrayRemoveAt(this_00->field_1EA6,index);
               break;
             }
@@ -96,12 +98,12 @@ LAB_005a27bf:
       FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
       this_00->field_002D = 0x20;
       if ((this_00->field_1EA6->count == 0) || (this_00->field_1A6B == 0)) {
-        uVar5 = 0;
+        uVar4 = 0;
       }
       else {
-        uVar5 = 1;
+        uVar4 = 1;
       }
-      *(undefined4 *)&this_00->field_0x31 = uVar5;
+      *(undefined4 *)&this_00->field_0x31 = uVar4;
       FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
       if (local_8 != nullptr) {
         uVar7 = 0;
@@ -117,25 +119,25 @@ LAB_005a27bf:
                              (int)this_00->field_1EA6->data);
 LAB_005a28be:
             if (pbVar9 != nullptr) {
-              pbVar10 = local_40;
+              pbVar11 = local_40;
               do {
                 bVar1 = *pbVar9;
-                bVar11 = bVar1 < *pbVar10;
-                if (bVar1 != *pbVar10) {
+                bVar12 = bVar1 < *pbVar11;
+                if (bVar1 != *pbVar11) {
 LAB_005a28e9:
-                  iVar4 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
+                  iVar6 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
                   goto LAB_005a28ee;
                 }
                 if (bVar1 == 0) break;
                 bVar1 = pbVar9[1];
-                bVar11 = bVar1 < pbVar10[1];
-                if (bVar1 != pbVar10[1]) goto LAB_005a28e9;
+                bVar12 = bVar1 < pbVar11[1];
+                if (bVar1 != pbVar11[1]) goto LAB_005a28e9;
                 pbVar9 = pbVar9 + 2;
-                pbVar10 = pbVar10 + 2;
+                pbVar11 = pbVar11 + 2;
               } while (bVar1 != 0);
-              iVar4 = 0;
+              iVar6 = 0;
 LAB_005a28ee:
-              if (iVar4 == 0) {
+              if (iVar6 == 0) {
                 *(short *)&this_00->field_0x31 = (short)uVar7;
                 *(undefined2 *)&this_00->field_0x37 = 1;
                 *(undefined2 *)&this_00->field_0x35 = 1;
@@ -157,9 +159,9 @@ LAB_005a28ee:
       return;
     }
     g_currentExceptionFrame = local_84.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa3c,0,iVar4,"%s"
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa3c,0,iVar4,"%s"
                                ,"FSGSTy::DelPlayer");
-    if (iVar6 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0xa3c);

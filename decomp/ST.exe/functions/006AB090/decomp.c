@@ -118,7 +118,7 @@ LAB_006acc40:
         local_28 = (ushort *)(param_1 + iVar22 * 2);
         if (local_34 < param_5 + 0x1a) {
           local_34 = local_34 + 0x80;
-          pbVar11 = (byte *)FUN_006bfb50((undefined4 *)local_38,local_34 * 8);
+          pbVar11 = (byte *)FUN_006bfb50((int *)local_38,local_34 * 8);
           if (pbVar11 == nullptr) goto LAB_006acc40;
           local_20 = pbVar11 + ((int)local_20 - (int)local_38 >> 2) * 4;
           local_24 = pbVar11 + ((int)local_24 - (int)local_38 >> 2) * 4;

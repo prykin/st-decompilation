@@ -11,7 +11,8 @@ void __thiscall ProdPanelTy::DoneProdPanel(ProdPanelTy *this)
   ProdPanelTy *pPVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int iVar5;
+  uint *puVar6;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
 
@@ -29,16 +30,16 @@ void __thiscall ProdPanelTy::DoneProdPanel(ProdPanelTy *this)
       StartSystemTy::sub_006E56B0(pPVar2->field_000C,pPVar2->field_019D);
     }
     pPVar2->field_019D = 0;
-    puVar5 = &pPVar2->field_01A1;
-    iVar3 = 5;
+    puVar6 = &pPVar2->field_01A1;
+    iVar5 = 5;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(pPVar2->field_000C,*puVar5);
-        *puVar5 = 0;
+      if (*puVar6 != 0) {
+        StartSystemTy::sub_006E56B0(pPVar2->field_000C,*puVar6);
+        *puVar6 = 0;
       }
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      puVar6 = puVar6 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     if (pPVar2->field_017C != nullptr) {
       ccFntTy::operator_delete((uint *)pPVar2->field_017C);
       pPVar2->field_017C = nullptr;

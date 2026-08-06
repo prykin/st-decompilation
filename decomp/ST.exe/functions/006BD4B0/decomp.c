@@ -4,6 +4,8 @@
 void FUN_006bd4b0(void)
 
 {
+  int iVar2;
+  int local_EAX_386;
   int iVar1;
 
   if (((*DAT_00854f44 & 0x80004) == 0x80004) && ((byte *)DAT_00854f44[0x30] != nullptr)) {
@@ -29,10 +31,11 @@ void FUN_006bd4b0(void)
           DAT_00854fe4 = DAT_00854fec;
         }
         if (((DAT_00854ed4 == 0) &&
-            (iVar1 = FUN_006cfeb0(&DAT_00854ef0,(int *)DAT_00854fd8,DAT_00854f90), iVar1 != 0)) &&
-           (iVar1 = FUN_006d1ad0((int *)g_int_00854FD4[0x70],100,DAT_00854ef0,DAT_00854ef4,
-                                 DAT_00854ef8,DAT_00854efc,g_int_00854FD4[3],g_int_00854FD4[4],1),
-           iVar1 == -1)) {
+            (iVar2 = FUN_006cfeb0(&DAT_00854ef0,(int *)DAT_00854fd8,DAT_00854f90), iVar2 != 0)) &&
+           (local_EAX_386 =
+                 FUN_006d1ad0((int *)g_int_00854FD4[0x70],100,DAT_00854ef0,DAT_00854ef4,DAT_00854ef8
+                              ,DAT_00854efc,g_int_00854FD4[3],g_int_00854FD4[4],1),
+           local_EAX_386 == -1)) {
           DAT_00854ed4 = 1;
         }
         DAT_00854fd8 = DAT_00854fd8 + 4;

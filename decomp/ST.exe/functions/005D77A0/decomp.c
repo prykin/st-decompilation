@@ -14,7 +14,8 @@ SettMapTy * __cdecl CreateSettMap(void)
   undefined4 *puVar2;
   SpriteClassTy *this_00;
   undefined4 *puVar3;
-  uint *puVar4;
+  void **ppvVar4;
+  uint *puVar5;
   int local_8;
 
   this = (SettMapTy *)FUN_006b04d0(0x21fc);
@@ -74,13 +75,16 @@ SettMapTy * __cdecl CreateSettMap(void)
     iVar1 = 0;
     this->field_211D = 0;
     this->field_1F88 = 0;
-    puVar4 = this->field_20CC;
+    puVar5 = this->field_20CC;
     for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar4 = 0xffffffff;
-      puVar4 = puVar4 + 1;
+      *puVar5 = 0xffffffff;
+      puVar5 = puVar5 + 1;
     }
-    memset(this->field_20F4, 0, 0x28); /* compiler bulk-zero initialization */
-    iVar1 = 0;
+    ppvVar4 = this->field_20F4;
+    for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *ppvVar4 = nullptr;
+      ppvVar4 = ppvVar4 + 1;
+    }
     this->field_1E1E = 0;
     this->field_1E22 = 0xffffffff;
     memset(this->field_2125, 0, 0x38); /* compiler bulk-zero initialization */

@@ -11,6 +11,7 @@ int __thiscall TraksClassTy::CreateDate(TraksClassTy *this)
   InternalExceptionFrame *pIVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
   int local_44 [16];
 
   pIVar2 = g_currentExceptionFrame;

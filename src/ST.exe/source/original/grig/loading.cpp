@@ -16,15 +16,19 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
   char cVar1;
   cMf32 *this_00;
   int iVar3;
+  uint uVar5;
+  uint local_EAX_356;
   LPSTR text_00;
+  ushort *puVar3;
   uint uVar4;
   undefined4 *puVar5;
-  int iVar6;
-  uint *puVar7;
-  uint uVar8;
+  int iVar11;
+  uint *puVar6;
+  uint uVar7;
+  char *pcVar8;
   char *pcVar9;
-  char *pcVar10;
-  byte bVar11;
+  byte bVar10;
+  int iVar12;
   undefined1 local_65c;
   char local_65b [515];
   undefined1 local_458;
@@ -41,9 +45,9 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0x3a,0,iVar3,"%s",
-                               "cLoadingTy::new");
-    if (iVar6 == 0) {
+    iVar11 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0x3a,0,iVar3,"%s",
+                                "cLoadingTy::new");
+    if (iVar11 == 0) {
       if (local_8 != nullptr) {
         st::fn_006F20E0(g_cMf32_00806780,local_8);
         if ((uint *)local_8[2] != nullptr) {
@@ -62,20 +66,20 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
   if (DAT_0080874e == '\x01') {
     local_c = 0;
     uVar4 = 0xffffffff;
-    pcVar10 = "LOADINGW";
+    pcVar9 = "LOADINGW";
     do {
-      pcVar9 = pcVar10;
+      pcVar8 = pcVar9;
       if (uVar4 == 0) break;
       uVar4 = uVar4 - 1;
-      pcVar9 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar9;
+      pcVar8 = pcVar9 + 1;
+      cVar1 = *pcVar9;
+      pcVar9 = pcVar8;
     } while (cVar1 != '\0');
     uVar4 = ~uVar4;
     local_65c = 1;
-    pcVar10 = pcVar9 + -uVar4;
-    pcVar9 = local_65b;
-    memmove(pcVar9, pcVar10, uVar4); /* compiler REP MOVS byte copy */
+    pcVar9 = pcVar8 + -uVar4;
+    pcVar8 = local_65b;
+    memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
     st::fn_006F12B0(g_cMf32_00806780,FUN_006f2d10,&local_65c);
     puVar5 = st::fn_006F2790(this_00);
     uVar4 = local_c;
@@ -89,41 +93,41 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
       st::fn_006A5E40
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\grig\\loading.cpp",0x24);
     }
-    iVar3 = 1;
-    bVar11 = 0;
-    uVar8 = st::fn_0072E6C0();
-    text_00 = st::fn_006F2C00("LOADINGW",1,uVar8 % uVar4 + 1);
+    iVar12 = 1;
+    bVar10 = 0;
+    uVar7 = st::fn_0072E6C0();
+    text_00 = st::fn_006F2C00("LOADINGW",1,uVar7 % uVar4 + 1);
   }
   else {
     if (DAT_0080874e == '\x02') {
       local_c = 0;
       uVar4 = 0xffffffff;
-      pcVar10 = "LOADINGB";
+      pcVar9 = "LOADINGB";
       do {
-        pcVar9 = pcVar10;
+        pcVar8 = pcVar9;
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        pcVar9 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar9;
+        pcVar8 = pcVar9 + 1;
+        cVar1 = *pcVar9;
+        pcVar9 = pcVar8;
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
       local_254 = 1;
-      pcVar10 = pcVar9 + -uVar4;
-      pcVar9 = local_253;
-      memmove(pcVar9, pcVar10, uVar4); /* compiler REP MOVS byte copy */
-      uVar8 = 0;
+      pcVar9 = pcVar8 + -uVar4;
+      pcVar8 = local_253;
+      memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
+      uVar7 = 0;
       st::fn_006F12B0(g_cMf32_00806780,FUN_006f2d10,&local_254);
       puVar5 = st::fn_006F2790(this_00);
       while (puVar5 != nullptr) {
         local_c = local_c + 1;
         puVar5 = st::fn_006F2790(this_00);
       }
-      iVar3 = 1;
-      bVar11 = 0;
-      uVar4 = st::fn_0072E6C0();
-      uVar4 = uVar4 % local_c;
-      pcVar10 = "LOADINGB";
+      iVar12 = 1;
+      bVar10 = 0;
+      local_EAX_356 = st::fn_0072E6C0();
+      uVar4 = local_EAX_356 % local_c;
+      pcVar9 = "LOADINGB";
     }
     else {
       if (DAT_0080874e != '\x03') {
@@ -133,36 +137,36 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
       }
       local_c = 0;
       uVar4 = 0xffffffff;
-      pcVar10 = "LOADINGS";
+      pcVar9 = "LOADINGS";
       do {
-        pcVar9 = pcVar10;
+        pcVar8 = pcVar9;
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        pcVar9 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar9;
+        pcVar8 = pcVar9 + 1;
+        cVar1 = *pcVar9;
+        pcVar9 = pcVar8;
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
       local_458 = 1;
-      pcVar10 = pcVar9 + -uVar4;
-      pcVar9 = local_457;
-      memmove(pcVar9, pcVar10, uVar4); /* compiler REP MOVS byte copy */
+      pcVar9 = pcVar8 + -uVar4;
+      pcVar8 = local_457;
+      memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
       st::fn_006F12B0(g_cMf32_00806780,FUN_006f2d10,&local_458);
       puVar5 = st::fn_006F2790(this_00);
       while (puVar5 != nullptr) {
         local_c = local_c + 1;
         puVar5 = st::fn_006F2790(this_00);
       }
-      iVar3 = 1;
-      bVar11 = 0;
-      uVar4 = st::fn_0072E6C0();
-      uVar4 = uVar4 % local_c;
-      pcVar10 = "LOADINGS";
+      iVar12 = 1;
+      bVar10 = 0;
+      uVar5 = st::fn_0072E6C0();
+      uVar4 = uVar5 % local_c;
+      pcVar9 = "LOADINGS";
     }
-    text_00 = st::fn_006F2C00(pcVar10,1,uVar4 + 1);
+    text_00 = st::fn_006F2C00(pcVar9,1,uVar4 + 1);
   }
-  uVar4 = st::fn_0070A9F0(g_cMf32_00806780,text_00,bVar11,iVar3);
-  *local_8 = uVar4;
+  puVar3 = st::fn_0070A9F0(g_cMf32_00806780,text_00,bVar10,iVar12);
+  *local_8 = (uint)puVar3;
 LAB_00554324:
   uVar4 = st::fn_00404BD3(*local_8,nullptr,DAT_00807dd9);
   local_8[2] = uVar4;
@@ -229,18 +233,19 @@ void __thiscall st::fn_00554660(cLoadingTy *this,int param_1,int param_2)
 
 {
   cLoadingTy *pcVar2;
-  int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  int iVar3;
+  int iVar5;
+  undefined4 *puVar6;
   undefined4 local_44c [256];
   InternalExceptionFrame local_4c;
   cLoadingTy *local_8;
 
-  puVar5 = local_44c;
+  puVar6 = local_44c;
   local_8 = this;
-  for (iVar4 = 0x100; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
+  for (iVar5 = 0x100; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *puVar6 = 0;
+    puVar6 = puVar6 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -283,10 +288,13 @@ st::fn_00554800
   ccFntTy *pcVar2;
   undefined4 uVar3;
   cLoadingTy *pcVar5;
-  int iVar6;
-  byte *puVar7;
+  int local_EAX_36;
+  byte *puVar6;
   char *resourceString;
+  int iVar6;
+  int iVar7;
   int iVar8;
+  int iVar9;
   uint uVar10;
   InternalExceptionFrame local_4c;
   cLoadingTy *local_8;
@@ -294,9 +302,9 @@ st::fn_00554800
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar6 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
+  local_EAX_36 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pcVar5 = local_8;
-  if (iVar6 == 0) {
+  if (local_EAX_36 == 0) {
     local_8->field_0014 = param_1;
     local_8->field_0018 = param_2;
     if (param_3 < 1) {
@@ -316,16 +324,16 @@ st::fn_00554800
       uVar10 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                *(int *)(puVar1 + 4);
     }
-    puVar7 = (byte *)st::fn_006B4FA0((int *)puVar1);
-    memset(puVar7, 0, uVar10); /* compiler bulk-zero initialization */
+    puVar6 = (byte *)st::fn_006B4FA0((int *)puVar1);
+    memset(puVar6, 0, uVar10); /* compiler bulk-zero initialization */
     pcVar2 = pcVar5->field_0008;
-    iVar6 = pcVar5->field_0020;
+    iVar7 = pcVar5->field_0020;
     uVar3 = pcVar5->field_001C;
-    iVar8 = pcVar5->field_0014;
+    iVar9 = pcVar5->field_0014;
     pcVar2->field_0064 = pcVar5->field_0018;
-    pcVar2->field_0060 = iVar8;
+    pcVar2->field_0060 = iVar9;
     pcVar2->field_0068 = uVar3;
-    pcVar2->field_006C = iVar6;
+    pcVar2->field_006C = iVar7;
     pcVar2->field_0050 = 0;
     pcVar2->field_0054 = 0;
     pcVar2 = pcVar5->field_0008;
@@ -335,11 +343,11 @@ st::fn_00554800
     pcVar2->field_005C = param_7;
     resourceString = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
     iVar6 = st::fn_007111C0(pcVar5->field_0008,resourceString);
-    iVar6 = pcVar5->field_002C + iVar6;
-    iVar8 = pcVar5->field_0020 / iVar6;
-    pcVar5->field_0034 = iVar6;
-    pcVar5->field_0030 = iVar8;
-    if (iVar8 < 1) {
+    iVar9 = pcVar5->field_002C + iVar6;
+    iVar7 = pcVar5->field_0020 / iVar9;
+    pcVar5->field_0034 = iVar9;
+    pcVar5->field_0030 = iVar7;
+    if (iVar7 < 1) {
       st::fn_006A5E40
                 (-6,g_overwriteContext_007ED77C,"E:\\__titans\\grig\\loading.cpp",0xa3);
     }
@@ -352,12 +360,12 @@ st::fn_00554800
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0xac,0,iVar6,"%s",
-                             "cLoadingTy::InitParam");
+  iVar8 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0xac,0,local_EAX_36,
+                             "%s","cLoadingTy::InitParam");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar6,0,"E:\\__titans\\grig\\loading.cpp",0xad);
+  st::fn_006A5E40(local_EAX_36,0,"E:\\__titans\\grig\\loading.cpp",0xad);
   return;
 }
 
@@ -386,7 +394,7 @@ void __thiscall st::fn_00554AD0(cLoadingTy *this,uint *param_1)
     st::fn_006B4170((RecoveredSourceFamily_dibcopy *)local_8->field_0004,0,
                  local_8->field_0014 + local_8->field_000C,local_8->field_0010 + local_8->field_0018
                  ,local_8->field_001C,local_8->field_0034,0);
-    st::fn_007119C0(pcVar2->field_0008,param_1,pcVar2->field_000C,pcVar2->field_0010,
+    st::fn_007119C0(pcVar2->field_0008,(char *)param_1,pcVar2->field_000C,pcVar2->field_0010,
                    pcVar2->field_0024);
     iVar3 = pcVar2->field_0010 + pcVar2->field_0018;
     iVar4 = pcVar2->field_000C + pcVar2->field_0014;
@@ -445,7 +453,7 @@ void __thiscall st::fn_00554C80(cLoadingTy *this,char *resourceString)
     st::fn_006B4170((RecoveredSourceFamily_dibcopy *)pcVar2->field_0004,0,
                  pcVar2->field_0014 + pcVar2->field_000C,pcVar2->field_0010 + pcVar2->field_0018,
                  pcVar2->field_001C,pcVar2->field_0034,0);
-    st::fn_007119C0(pcVar2->field_0008,(uint *)resourceString,pcVar2->field_000C,pcVar2->field_0010,
+    st::fn_007119C0(pcVar2->field_0008,resourceString,pcVar2->field_000C,pcVar2->field_0010,
                    pcVar2->field_0024);
     iVar3 = pcVar2->field_0018 + pcVar2->field_0010;
     iVar4 = pcVar2->field_0014 + pcVar2->field_000C;
@@ -570,20 +578,30 @@ st::fn_00555040
 {
   char cVar1;
   int iVar3;
-  DWORD DVar4;
-  char *pcVar5;
-  int iVar6;
-  uint uVar7;
-  uint uVar8;
-  uint uVar9;
-  cLoadingTy *pcVar10;
+  char *pcVar4_mgD;
+  char *pcVar4_mgE;
+  char *pcVar4_mg8;
+  char *pcVar4_mg9;
+  DWORD DVar3;
+  char *pcVar4_mg3;
+  char *pcVar4_mg4;
+  char *pcVar4_mg0;
+  char *pcVar4_mg1;
+  int iVar5;
+  uint uVar4;
+  uint uVar5;
+  uint uVar6;
+  int iVar7;
+  char *pcVar8;
+  cLoadingTy *pcVar9;
+  uint *puVar10;
   uint *puVar11;
-  uint *puVar12;
-  char *pcVar13;
+  char *pcVar12;
   uint local_450 [256];
   InternalExceptionFrame local_50;
   uint local_c;
   cLoadingTy *local_8;
+  char *pcVar4_mg6;
 
   local_8 = this;
   st::fn_0040249B(this);
@@ -593,12 +611,12 @@ st::fn_00555040
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
-  pcVar10 = local_8;
+  pcVar9 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0x14a,0,iVar3,"%s",
+    iVar5 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0x14a,0,iVar3,"%s",
                                "cLoadingTy::SetState");
-    if (iVar6 == 0) {
+    if (iVar5 == 0) {
       st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\loading.cpp",0x14b);
       return;
     }
@@ -606,276 +624,276 @@ st::fn_00555040
   }
   switch(param_1) {
   case CASE_0:
-    pcVar5 = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
-    uVar8 = 0xffffffff;
+    pcVar4_mgD = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
+    uVar5 = 0xffffffff;
     do {
-      pcVar13 = pcVar5;
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      pcVar13 = pcVar5 + 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar13;
+      pcVar8 = pcVar4_mgD;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar8 = pcVar4_mgD + 1;
+      cVar1 = *pcVar4_mgD;
+      pcVar4_mgD = pcVar8;
     } while (cVar1 != '\0');
-    uVar8 = ~uVar8;
-    puVar11 = (uint *)(pcVar13 + -uVar8);
-    puVar12 = local_450;
-    memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = st::fn_006B0140(0x267e,g_hINSTANCE_00807618);
-    uVar8 = 0xffffffff;
-    do {
-      pcVar13 = pcVar5;
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      pcVar13 = pcVar5 + 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar13;
-    } while (cVar1 != '\0');
-    uVar8 = ~uVar8;
-    iVar3 = -1;
+    uVar5 = ~uVar5;
+    puVar10 = (uint *)(pcVar8 + -uVar5);
     puVar11 = local_450;
+    memmove(puVar11, puVar10, uVar5); /* compiler REP MOVS byte copy */
+    pcVar4_mgE = st::fn_006B0140(0x267e,g_hINSTANCE_00807618);
+    uVar5 = 0xffffffff;
     do {
-      puVar12 = puVar11;
-      if (iVar3 == 0) break;
-      iVar3 = iVar3 + -1;
-      puVar12 = (uint *)((int)puVar11 + 1);
-      uVar9 = *puVar11;
-      puVar11 = puVar12;
-    } while ((char)uVar9 != '\0');
-    pcVar5 = pcVar13 + -uVar8;
-    pcVar13 = (char *)((int)puVar12 + -1);
-    memmove(pcVar13, pcVar5, uVar8); /* compiler REP MOVS byte copy */
+      pcVar8 = pcVar4_mgE;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar8 = pcVar4_mgE + 1;
+      cVar1 = *pcVar4_mgE;
+      pcVar4_mgE = pcVar8;
+    } while (cVar1 != '\0');
+    uVar5 = ~uVar5;
+    iVar7 = -1;
+    puVar10 = local_450;
+    do {
+      puVar11 = puVar10;
+      if (iVar7 == 0) break;
+      iVar7 = iVar7 + -1;
+      puVar11 = (uint *)((int)puVar10 + 1);
+      uVar6 = *puVar10;
+      puVar10 = puVar11;
+    } while ((char)uVar6 != '\0');
+    pcVar8 = pcVar8 + -uVar5;
+    pcVar12 = (char *)((int)puVar11 + -1);
+    memmove(pcVar12, pcVar8, uVar5); /* compiler REP MOVS byte copy */
     st::fn_00404381(local_8,local_450);
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_1:
-    pcVar5 = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
-    uVar8 = 0xffffffff;
+    pcVar4_mg8 = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
+    uVar5 = 0xffffffff;
     do {
-      pcVar13 = pcVar5;
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      pcVar13 = pcVar5 + 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar13;
+      pcVar8 = pcVar4_mg8;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar8 = pcVar4_mg8 + 1;
+      cVar1 = *pcVar4_mg8;
+      pcVar4_mg8 = pcVar8;
     } while (cVar1 != '\0');
-    uVar8 = ~uVar8;
-    puVar11 = (uint *)(pcVar13 + -uVar8);
-    puVar12 = local_450;
-    memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = st::fn_006B0140(0x267b,g_hINSTANCE_00807618);
-    uVar8 = 0xffffffff;
-    do {
-      pcVar13 = pcVar5;
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      pcVar13 = pcVar5 + 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar13;
-    } while (cVar1 != '\0');
-    uVar8 = ~uVar8;
-    iVar3 = -1;
+    uVar5 = ~uVar5;
+    puVar10 = (uint *)(pcVar8 + -uVar5);
     puVar11 = local_450;
+    memmove(puVar11, puVar10, uVar5); /* compiler REP MOVS byte copy */
+    pcVar4_mg9 = st::fn_006B0140(0x267b,g_hINSTANCE_00807618);
+    uVar5 = 0xffffffff;
     do {
-      puVar12 = puVar11;
-      if (iVar3 == 0) break;
-      iVar3 = iVar3 + -1;
-      puVar12 = (uint *)((int)puVar11 + 1);
-      uVar9 = *puVar11;
-      puVar11 = puVar12;
-    } while ((char)uVar9 != '\0');
-    pcVar5 = pcVar13 + -uVar8;
-    pcVar13 = (char *)((int)puVar12 + -1);
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)pcVar13 = *(undefined4 *)pcVar5;
-      pcVar5 = pcVar5 + 4;
-      pcVar13 = pcVar13 + 4;
+      pcVar8 = pcVar4_mg9;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar8 = pcVar4_mg9 + 1;
+      cVar1 = *pcVar4_mg9;
+      pcVar4_mg9 = pcVar8;
+    } while (cVar1 != '\0');
+    uVar5 = ~uVar5;
+    iVar7 = -1;
+    puVar10 = local_450;
+    do {
+      puVar11 = puVar10;
+      if (iVar7 == 0) break;
+      iVar7 = iVar7 + -1;
+      puVar11 = (uint *)((int)puVar10 + 1);
+      uVar6 = *puVar10;
+      puVar10 = puVar11;
+    } while ((char)uVar6 != '\0');
+    pcVar8 = pcVar8 + -uVar5;
+    pcVar12 = (char *)((int)puVar11 + -1);
+    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
+      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar8;
+      pcVar8 = pcVar8 + 4;
+      pcVar12 = pcVar12 + 4;
     }
-    for (uVar8 = uVar8 & 3; pcVar10 = local_8, uVar8 != 0; uVar8 = uVar8 - 1) {
-      *pcVar13 = *pcVar5;
-      pcVar5 = pcVar5 + 1;
-      pcVar13 = pcVar13 + 1;
+    for (uVar5 = uVar5 & 3; pcVar9 = local_8, uVar5 != 0; uVar5 = uVar5 - 1) {
+      *pcVar12 = *pcVar8;
+      pcVar8 = pcVar8 + 1;
+      pcVar12 = pcVar12 + 1;
     }
     if (local_8->field_003C == 0) {
-      uVar8 = local_8->field_0040;
-      if (uVar8 < param_2) {
-        param_2 = uVar8;
+      uVar5 = local_8->field_0040;
+      if (uVar5 < param_2) {
+        param_2 = uVar5;
       }
     }
     else {
-      DVar4 = st::external_000000DA();
-      uVar8 = pcVar10->field_0040;
-      param_2 = DVar4 - pcVar10->field_0044;
-      if (uVar8 < param_2) {
-        param_2 = uVar8;
+      DVar3 = st::external_000000DA();
+      uVar5 = pcVar9->field_0040;
+      param_2 = DVar3 - pcVar9->field_0044;
+      if (uVar5 < param_2) {
+        param_2 = uVar5;
       }
     }
     if (param_2 == 0) {
       param_2 = 1;
     }
-    uVar8 = (param_2 * 100) / uVar8;
-    if (uVar8 != pcVar10->field_0050) {
-      if (0 < (int)uVar8) {
-        local_c = uVar8;
+    uVar5 = (param_2 * 100) / uVar5;
+    if (uVar5 != pcVar9->field_0050) {
+      if (0 < (int)uVar5) {
+        local_c = uVar5;
         do {
-          uVar9 = 0xffffffff;
-          pcVar5 = &DAT_007c8fec;
+          uVar6 = 0xffffffff;
+          pcVar8 = &DAT_007c8fec;
           do {
-            pcVar13 = pcVar5;
-            if (uVar9 == 0) break;
-            uVar9 = uVar9 - 1;
-            pcVar13 = pcVar5 + 1;
-            cVar1 = *pcVar5;
-            pcVar5 = pcVar13;
+            pcVar12 = pcVar8;
+            if (uVar6 == 0) break;
+            uVar6 = uVar6 - 1;
+            pcVar12 = pcVar8 + 1;
+            cVar1 = *pcVar8;
+            pcVar8 = pcVar12;
           } while (cVar1 != '\0');
-          uVar9 = ~uVar9;
-          iVar3 = -1;
-          puVar11 = local_450;
+          uVar6 = ~uVar6;
+          iVar7 = -1;
+          puVar10 = local_450;
           do {
-            puVar12 = puVar11;
-            if (iVar3 == 0) break;
-            iVar3 = iVar3 + -1;
-            puVar12 = (uint *)((int)puVar11 + 1);
-            uVar7 = *puVar11;
-            puVar11 = puVar12;
-          } while ((char)uVar7 != '\0');
-          pcVar5 = pcVar13 + -uVar9;
-          pcVar13 = (char *)((int)puVar12 + -1);
-          for (uVar7 = uVar9 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *(undefined4 *)pcVar13 = *(undefined4 *)pcVar5;
-            pcVar5 = pcVar5 + 4;
-            pcVar13 = pcVar13 + 4;
+            puVar11 = puVar10;
+            if (iVar7 == 0) break;
+            iVar7 = iVar7 + -1;
+            puVar11 = (uint *)((int)puVar10 + 1);
+            uVar4 = *puVar10;
+            puVar10 = puVar11;
+          } while ((char)uVar4 != '\0');
+          pcVar8 = pcVar12 + -uVar6;
+          pcVar12 = (char *)((int)puVar11 + -1);
+          for (uVar4 = uVar6 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+            *(undefined4 *)pcVar12 = *(undefined4 *)pcVar8;
+            pcVar8 = pcVar8 + 4;
+            pcVar12 = pcVar12 + 4;
           }
-          uVar7 = local_c - 1;
-          for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-            *pcVar13 = *pcVar5;
-            pcVar5 = pcVar5 + 1;
-            pcVar13 = pcVar13 + 1;
+          uVar4 = local_c - 1;
+          for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+            *pcVar12 = *pcVar8;
+            pcVar8 = pcVar8 + 1;
+            pcVar12 = pcVar12 + 1;
           }
-          local_c = uVar7;
-          pcVar10 = local_8;
-        } while (uVar7 != 0);
+          local_c = uVar4;
+          pcVar9 = local_8;
+        } while (uVar4 != 0);
       }
-      st::fn_00404381(pcVar10,local_450);
-      pcVar10->field_0050 = uVar8;
+      st::fn_00404381(pcVar9,local_450);
+      pcVar9->field_0050 = uVar5;
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    if ((code *)pcVar10->field_0058 != nullptr) {
+    if ((code *)pcVar9->field_0058 != nullptr) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)pcVar10->field_0058)(pcVar10->field_0054);
+      (*(code *)pcVar9->field_0058)(pcVar9->field_0054);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
     break;
   case CASE_2:
     local_8->field_003C = -1;
-    pcVar5 = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
-    uVar8 = 0xffffffff;
+    pcVar4_mg3 = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
+    uVar5 = 0xffffffff;
     do {
-      pcVar13 = pcVar5;
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      pcVar13 = pcVar5 + 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar13;
+      pcVar8 = pcVar4_mg3;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar8 = pcVar4_mg3 + 1;
+      cVar1 = *pcVar4_mg3;
+      pcVar4_mg3 = pcVar8;
     } while (cVar1 != '\0');
-    uVar8 = ~uVar8;
-    puVar11 = (uint *)(pcVar13 + -uVar8);
-    puVar12 = local_450;
-    memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = st::fn_006B0140(0x267c,g_hINSTANCE_00807618);
-    uVar8 = 0xffffffff;
-    do {
-      pcVar13 = pcVar5;
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      pcVar13 = pcVar5 + 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar13;
-    } while (cVar1 != '\0');
-    uVar8 = ~uVar8;
-    iVar3 = -1;
+    uVar5 = ~uVar5;
+    puVar10 = (uint *)(pcVar8 + -uVar5);
     puVar11 = local_450;
+    memmove(puVar11, puVar10, uVar5); /* compiler REP MOVS byte copy */
+    pcVar4_mg4 = st::fn_006B0140(0x267c,g_hINSTANCE_00807618);
+    uVar5 = 0xffffffff;
     do {
-      puVar12 = puVar11;
-      if (iVar3 == 0) break;
-      iVar3 = iVar3 + -1;
-      puVar12 = (uint *)((int)puVar11 + 1);
-      uVar9 = *puVar11;
-      puVar11 = puVar12;
-    } while ((char)uVar9 != '\0');
-    pcVar5 = pcVar13 + -uVar8;
-    pcVar13 = (char *)((int)puVar12 + -1);
-    memmove(pcVar13, pcVar5, uVar8); /* compiler REP MOVS byte copy */
-    uVar9 = 0;
+      pcVar8 = pcVar4_mg4;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar8 = pcVar4_mg4 + 1;
+      cVar1 = *pcVar4_mg4;
+      pcVar4_mg4 = pcVar8;
+    } while (cVar1 != '\0');
+    uVar5 = ~uVar5;
+    iVar7 = -1;
+    puVar10 = local_450;
+    do {
+      puVar11 = puVar10;
+      if (iVar7 == 0) break;
+      iVar7 = iVar7 + -1;
+      puVar11 = (uint *)((int)puVar10 + 1);
+      uVar6 = *puVar10;
+      puVar10 = puVar11;
+    } while ((char)uVar6 != '\0');
+    pcVar8 = pcVar8 + -uVar5;
+    pcVar12 = (char *)((int)puVar11 + -1);
+    memmove(pcVar12, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
     goto joined_r0x00555393;
   case CASE_3:
     local_8->field_003C = -1;
-    pcVar5 = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
-    uVar8 = 0xffffffff;
+    pcVar4_mg0 = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
+    uVar5 = 0xffffffff;
     do {
-      pcVar13 = pcVar5;
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      pcVar13 = pcVar5 + 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar13;
+      pcVar8 = pcVar4_mg0;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar8 = pcVar4_mg0 + 1;
+      cVar1 = *pcVar4_mg0;
+      pcVar4_mg0 = pcVar8;
     } while (cVar1 != '\0');
-    uVar8 = ~uVar8;
-    puVar11 = (uint *)(pcVar13 + -uVar8);
-    puVar12 = local_450;
-    memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
-    pcVar5 = st::fn_006B0140(0x267d,g_hINSTANCE_00807618);
-    uVar8 = 0xffffffff;
-    do {
-      pcVar13 = pcVar5;
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      pcVar13 = pcVar5 + 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar13;
-    } while (cVar1 != '\0');
-    uVar8 = ~uVar8;
-    iVar3 = -1;
+    uVar5 = ~uVar5;
+    puVar10 = (uint *)(pcVar8 + -uVar5);
     puVar11 = local_450;
+    memmove(puVar11, puVar10, uVar5); /* compiler REP MOVS byte copy */
+    pcVar4_mg1 = st::fn_006B0140(0x267d,g_hINSTANCE_00807618);
+    uVar5 = 0xffffffff;
     do {
-      puVar12 = puVar11;
-      if (iVar3 == 0) break;
-      iVar3 = iVar3 + -1;
-      puVar12 = (uint *)((int)puVar11 + 1);
-      uVar9 = *puVar11;
-      puVar11 = puVar12;
-    } while ((char)uVar9 != '\0');
-    pcVar5 = pcVar13 + -uVar8;
-    pcVar13 = (char *)((int)puVar12 + -1);
-    memmove(pcVar13, pcVar5, uVar8); /* compiler REP MOVS byte copy */
+      pcVar8 = pcVar4_mg1;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar8 = pcVar4_mg1 + 1;
+      cVar1 = *pcVar4_mg1;
+      pcVar4_mg1 = pcVar8;
+    } while (cVar1 != '\0');
+    uVar5 = ~uVar5;
+    iVar7 = -1;
+    puVar10 = local_450;
+    do {
+      puVar11 = puVar10;
+      if (iVar7 == 0) break;
+      iVar7 = iVar7 + -1;
+      puVar11 = (uint *)((int)puVar10 + 1);
+      uVar6 = *puVar10;
+      puVar10 = puVar11;
+    } while ((char)uVar6 != '\0');
+    pcVar8 = pcVar8 + -uVar5;
+    pcVar12 = (char *)((int)puVar11 + -1);
+    memmove(pcVar12, pcVar8, uVar5); /* compiler REP MOVS byte copy */
 joined_r0x00555393:
     if (param_3 != nullptr) {
-      uVar8 = 0xffffffff;
+      uVar5 = 0xffffffff;
       do {
-        pcVar5 = param_3;
-        if (uVar8 == 0) break;
-        uVar8 = uVar8 - 1;
-        pcVar5 = param_3 + 1;
+        pcVar4_mg6 = param_3;
+        if (uVar5 == 0) break;
+        uVar5 = uVar5 - 1;
+        pcVar4_mg6 = param_3 + 1;
         cVar1 = *param_3;
-        param_3 = pcVar5;
+        param_3 = pcVar4_mg6;
       } while (cVar1 != '\0');
-      uVar8 = ~uVar8;
-      iVar3 = -1;
-      puVar11 = local_450;
+      uVar5 = ~uVar5;
+      iVar7 = -1;
+      puVar10 = local_450;
       do {
-        puVar12 = puVar11;
-        if (iVar3 == 0) break;
-        iVar3 = iVar3 + -1;
-        puVar12 = (uint *)((int)puVar11 + 1);
-        uVar9 = *puVar11;
-        puVar11 = puVar12;
-      } while ((char)uVar9 != '\0');
-      pcVar5 = pcVar5 + -uVar8;
-      pcVar13 = (char *)((int)puVar12 + -1);
-      memmove(pcVar13, pcVar5, uVar8); /* compiler REP MOVS byte copy */
+        puVar11 = puVar10;
+        if (iVar7 == 0) break;
+        iVar7 = iVar7 + -1;
+        puVar11 = (uint *)((int)puVar10 + 1);
+        uVar6 = *puVar10;
+        puVar10 = puVar11;
+      } while ((char)uVar6 != '\0');
+      pcVar8 = pcVar4_mg6 + -uVar5;
+      pcVar12 = (char *)((int)puVar11 + -1);
+      memmove(pcVar12, pcVar8, uVar5); /* compiler REP MOVS byte copy */
     }
-    st::fn_00401230(pcVar10,(char *)local_450);
+    st::fn_00401230(pcVar9,(char *)local_450);
     g_currentExceptionFrame = local_50.previous;
     return;
   default:

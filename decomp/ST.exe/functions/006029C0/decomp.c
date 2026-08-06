@@ -6,8 +6,10 @@ undefined4 FUN_006029c0(void)
 {
   undefined1 *this;
   short sVar1;
-  int iVar2;
+  int local_EAX_41;
   char *text;
+  int iVar3;
+  int iVar2;
   InternalExceptionFrame local_50;
   AnonShape_006029C0_E1371936 *local_c;
   undefined4 local_8;
@@ -15,8 +17,8 @@ undefined4 FUN_006029c0(void)
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  if (iVar2 == 0) {
+  local_EAX_41 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  if (local_EAX_41 == 0) {
     if (local_c->field_0241 == 1) {
       text = (&PTR_s_Dest4_0_007cec00)[local_c->field_0372];
     }
@@ -24,19 +26,19 @@ undefined4 FUN_006029c0(void)
       text = (&PTR_s_Dest1_0_007cebec)[local_c->field_0372];
     }
     this = &local_c->field_0x1d5;
-    iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)this,0xe,PTR_00806774,text,0x1d);
-    if (iVar2 == 0) {
+    iVar3 = STT3DSprC::LoadSequence((STT3DSprC *)this,0xe,PTR_00806774,text,CASE_1D);
+    if (iVar3 == 0) {
       thunk_FUN_004ac610(this,'\x0e');
       STT3DSprC::SetCurFase((STT3DSprC *)this,'\x0e',local_c->field_0387);
       STT3DSprC::StartShow((STT3DSprC *)this,0xe,g_playSystem_00802A38->field_00E4);
       STT3DSprC::sub_004ACEF0((STT3DSprC *)this,PTR_008073cc);
       local_c->field_037A = 1;
       if (-1 < local_c->field_0249) {
-        iVar2 = STT3DSprC::LoadSequence
+        iVar3 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)this,0xc,PTR_00806774,
                            (&PTR_s_dest0s0_007cec3c)[local_c->field_0249 + local_c->field_0372 * 8],
-                           0x1d);
-        if (iVar2 != 0) {
+                           CASE_1D);
+        if (iVar3 != 0) {
           return local_8;
         }
         STT3DSprC::SetCurFase((STT3DSprC *)this,'\f',local_c->field_038F);

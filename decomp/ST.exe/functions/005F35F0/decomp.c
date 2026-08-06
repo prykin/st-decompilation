@@ -22,7 +22,7 @@ undefined4 __thiscall STBHEShellC::sub_005F35F0(STBHEShellC *this,int param_1)
   ushort *puVar4;
   InternalExceptionFrame local_54;
   undefined4 local_10;
-  undefined **local_c;
+  char **local_c;
   AnonShape_005F35F0_EF2A6FDB *local_8;
 
   local_10 = 0;

@@ -10,16 +10,17 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
 {
   BldObjPanelTy *this_00;
   byte bVar2;
+  int iVar7;
   DArrayTy *pDVar3;
   LPSTR pCVar4;
   ushort *puVar5;
   int iVar6;
-  int iVar7;
-  uint uVar8;
-  undefined4 uVar9;
-  undefined4 *puVar10;
-  bool bVar11;
-  int *piVar12;
+  int iVar8;
+  uint uVar9;
+  undefined4 uVar10;
+  undefined4 *puVar11;
+  bool bVar12;
+  int *piVar13;
   int local_358 [11];
   undefined4 auStack_32c [3];
   undefined4 auStack_320 [4];
@@ -45,11 +46,11 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   int local_c;
   uint local_8;
 
-  puVar10 = local_74;
+  puVar11 = local_74;
   local_1c = this;
-  for (iVar7 = 0x16; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
+  for (iVar8 = 0x16; iVar8 != 0; iVar8 = iVar8 + -1) {
+    *puVar11 = 0;
+    puVar11 = puVar11 + 1;
   }
   memset(local_358, 0, 0x2a0); /* compiler bulk-zero initialization */
   local_b8.previous = g_currentExceptionFrame;
@@ -66,20 +67,20 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar7 = 5;
+  iVar8 = 5;
   g_bldObjPanel_00801684 = (ProdPanelTy *)local_1c;
-  puVar10 = &local_1c->field_027E;
+  puVar11 = &local_1c->field_027E;
   do {
     pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x30,5);
-    *puVar10 = pDVar3;
-    puVar10 = puVar10 + 1;
-    iVar7 = iVar7 + -1;
-  } while (iVar7 != 0);
-  iVar7 = 1;
+    *puVar11 = pDVar3;
+    puVar11 = puVar11 + 1;
+    iVar8 = iVar8 + -1;
+  } while (iVar8 != 0);
+  iVar8 = 1;
   this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
-  piVar12 = nullptr;
+  piVar13 = nullptr;
   pCVar4 = thunk_FUN_00571240("BKG_BLDOBJW",0);
-  puVar5 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar12,iVar7);
+  puVar5 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar13,iVar8);
   this_00->field_0184 = puVar5;
   pCVar4 = thunk_FUN_00571240("BKG_BLDOBJBUT",0);
   wsprintfA(&this_00->field_006C,"%s0",pCVar4);
@@ -101,57 +102,57 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
     local_18 = this_00->field_003C;
     local_c = this_00->field_005C;
     local_14 = (-(uint)(DAT_0080874e != '\x03') & 0xffffffeb) + 0x3d;
-    uVar8 = 0;
+    uVar9 = 0;
     do {
-      iVar7 = local_14;
-      local_358[uVar8 * 0x1c] = uVar8 + 1;
-      local_358[uVar8 * 0x1c + 1] = 0;
-      local_358[uVar8 * 0x1c + 3] = iVar7 + uVar8 * 0x2c + local_18;
-      bVar11 = local_c != 0;
-      local_358[uVar8 * 0x1c + 5] = 0x2b;
-      iVar7 = DAT_00806734;
-      if (bVar11) {
-        iVar7 = this_00->field_0044;
+      iVar8 = local_14;
+      local_358[uVar9 * 0x1c] = uVar9 + 1;
+      local_358[uVar9 * 0x1c + 1] = 0;
+      local_358[uVar9 * 0x1c + 3] = iVar8 + uVar9 * 0x2c + local_18;
+      bVar12 = local_c != 0;
+      local_358[uVar9 * 0x1c + 5] = 0x2b;
+      iVar8 = DAT_00806734;
+      if (bVar12) {
+        iVar8 = this_00->field_0044;
       }
-      local_358[uVar8 * 0x1c + 4] = iVar7 + 0x3d;
-      local_358[uVar8 * 0x1c + 6] = 0x1b;
-      auStack_310[uVar8 * 0x1c] = 0;
-      auStack_300[uVar8 * 0x1c] = 0x101;
-      auStack_32c[uVar8 * 0x1c] = 0x101;
-      auStack_300[uVar8 * 0x1c + 1] = 3;
-      auStack_32c[uVar8 * 0x1c + 1] = 3;
-      auStack_32c[uVar8 * 0x1c + 2] = 0x4201;
-      auStack_300[uVar8 * 0x1c + 2] = 0x4202;
-      *(undefined2 *)(auStack_2f4 + uVar8 * 0x1c) = 0;
-      *(undefined2 *)(auStack_320 + uVar8 * 0x1c) = 0;
-      *(undefined2 *)((int)auStack_2f4 + (uVar8 * 0x38 + 1) * 2) = 2;
-      *(undefined2 *)((int)auStack_320 + (uVar8 * 0x38 + 1) * 2) = 2;
-      switch(uVar8) {
+      local_358[uVar9 * 0x1c + 4] = iVar8 + 0x3d;
+      local_358[uVar9 * 0x1c + 6] = 0x1b;
+      auStack_310[uVar9 * 0x1c] = 0;
+      auStack_300[uVar9 * 0x1c] = 0x101;
+      auStack_32c[uVar9 * 0x1c] = 0x101;
+      auStack_300[uVar9 * 0x1c + 1] = 3;
+      auStack_32c[uVar9 * 0x1c + 1] = 3;
+      auStack_32c[uVar9 * 0x1c + 2] = 0x4201;
+      auStack_300[uVar9 * 0x1c + 2] = 0x4202;
+      *(undefined2 *)(auStack_2f4 + uVar9 * 0x1c) = 0;
+      *(undefined2 *)(auStack_320 + uVar9 * 0x1c) = 0;
+      *(undefined2 *)((int)auStack_2f4 + (uVar9 * 0x38 + 1) * 2) = 2;
+      *(undefined2 *)((int)auStack_320 + (uVar9 * 0x38 + 1) * 2) = 2;
+      switch(uVar9) {
       case 0:
-        uVar9 = 0x3a9b;
+        uVar10 = 0x3a9b;
         break;
       case 1:
-        uVar9 = 0x3a9c;
+        uVar10 = 0x3a9c;
         break;
       case 2:
-        uVar9 = 0x3a9d;
+        uVar10 = 0x3a9d;
         break;
       case 3:
-        uVar9 = 0x3aa8;
+        uVar10 = 0x3aa8;
         break;
       case 4:
-        uVar9 = 0x3a9e;
+        uVar10 = 0x3a9e;
         break;
       default:
         goto switchD_004f0850_default;
       }
-      auStack_2f4[uVar8 * 0x1c + 1] = uVar9;
-      auStack_320[uVar8 * 0x1c + 1] = uVar9;
+      auStack_2f4[uVar9 * 0x1c + 1] = uVar10;
+      auStack_320[uVar9 * 0x1c + 1] = uVar10;
 switchD_004f0850_default:
       bVar2 = (char)local_8 + 1;
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
-      uVar8 = (uint)bVar2;
-    } while ((int)uVar8 < local_10);
+      uVar9 = (uint)bVar2;
+    } while ((int)uVar9 < local_10);
   }
   local_2c = local_358;
   local_28 = (byte)this_00->field_0278 + 1;

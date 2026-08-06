@@ -10,18 +10,19 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   undefined1 *puVar4;
   short sVar5;
   int iVar6;
+  int iVar8;
   int iVar7;
-  uint uVar8;
-  void *pvVar9;
-  short sVar10;
-  int iVar11;
+  uint uVar9;
+  void *pvVar10;
+  short sVar11;
   int iVar12;
-  short sVar13;
-  int iVar14;
-  undefined4 *puVar15;
-  STWorldObject *this_00;
+  int iVar13;
+  short sVar14;
+  int iVar15;
   undefined4 *puVar16;
-  bool bVar17;
+  STWorldObject *this_00;
+  undefined4 *puVar17;
+  bool bVar18;
   uint local_90 [11];
   int local_64;
   int local_60;
@@ -42,37 +43,37 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff64;
-  iVar12 = 0;
-  sVar13 = (short)(param_3 >> 0x1f);
+  iVar13 = 0;
+  sVar14 = (short)(param_3 >> 0x1f);
   if (param_3 < 0) {
-    local_50 = (short)(((short)(param_3 / 200) + sVar13) -
+    local_50 = (short)(((short)(param_3 / 200) + sVar14) -
                       (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
   }
   else {
-    local_50 = (int)(short)(((short)(param_3 / 200) + sVar13) -
+    local_50 = (int)(short)(((short)(param_3 / 200) + sVar14) -
                            (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
   if (local_50 < 1) {
-    iVar12 = 0;
+    iVar13 = 0;
   }
   else {
-    sVar13 = STField<short>(this,0x21a);
-    if (sVar13 < 0) {
-      local_64 = (short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
-                        (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f)) + -1;
+    sVar14 = STField<short>(this,0x21a);
+    if (sVar14 < 0) {
+      local_64 = (short)((sVar14 / 0xc9 + (sVar14 >> 0xf)) -
+                        (short)((longlong)(int)sVar14 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      local_64 = (int)(short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
-                             (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f));
+      local_64 = (int)(short)((sVar14 / 0xc9 + (sVar14 >> 0xf)) -
+                             (short)((longlong)(int)sVar14 * 0x28c1979 >> 0x3f));
     }
-    sVar13 = STField<short>(this,0x21c);
-    if (sVar13 < 0) {
-      iVar14 = (short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
-                      (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f)) + -1;
+    sVar14 = STField<short>(this,0x21c);
+    if (sVar14 < 0) {
+      iVar15 = (short)((sVar14 / 0xc9 + (sVar14 >> 0xf)) -
+                      (short)((longlong)(int)sVar14 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      iVar14 = (int)(short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
-                           (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f));
+      iVar15 = (int)(short)((sVar14 / 0xc9 + (sVar14 >> 0xf)) -
+                           (short)((longlong)(int)sVar14 * 0x28c1979 >> 0x3f));
     }
     local_8 = 0;
     ExceptionList = &local_14;
@@ -84,12 +85,12 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
     if (0 < local_50) {
       do {
         iVar6 = local_50 - local_44;
-        iVar11 = iVar14 - iVar6;
+        iVar12 = iVar15 - iVar6;
         local_24 = local_64 - iVar6;
-        local_60 = iVar6 + 1 + iVar14;
+        local_60 = iVar6 + 1 + iVar15;
         local_58 = iVar6 + 1 + local_64;
-        if (iVar11 < 0) {
-          iVar11 = 0;
+        if (iVar12 < 0) {
+          iVar12 = 0;
         }
         if (local_24 < 0) {
           local_24 = 0;
@@ -100,20 +101,20 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
         if (g_worldGrid.sizeX < local_58) {
           local_58 = (int)g_worldGrid.sizeX;
         }
-        for (; iVar6 = local_24, iVar11 < local_60; iVar11 = iVar11 + 1) {
+        for (; iVar6 = local_24, iVar12 < local_60; iVar12 = iVar12 + 1) {
           for (; iVar6 < local_58; iVar6 = iVar6 + 1) {
-            sVar13 = (short)iVar6;
-            if (((((sVar13 < 0) || (g_worldGrid.sizeX <= sVar13)) ||
-                 (sVar5 = (short)iVar11, sVar5 < 0)) ||
-                ((g_worldGrid.sizeY <= sVar5 || (sVar10 = (short)local_44, sVar10 < 0)))) ||
-               (g_worldGrid.sizeZ <= sVar10)) {
+            sVar14 = (short)iVar6;
+            if (((((sVar14 < 0) || (g_worldGrid.sizeX <= sVar14)) ||
+                 (sVar5 = (short)iVar12, sVar5 < 0)) ||
+                ((g_worldGrid.sizeY <= sVar5 || (sVar11 = (short)local_44, sVar11 < 0)))) ||
+               (g_worldGrid.sizeZ <= sVar11)) {
               this_00 = nullptr;
             }
             else {
-              this_00 = STGridAt3D(g_worldGrid, sVar13, sVar5, sVar10).objects[0];
+              this_00 = STGridAt3D(g_worldGrid, sVar14, sVar5, sVar11).objects[0];
             }
             if (((this_00 != nullptr) &&
-                (iVar7 = (*this_00->vtable[5].slots_00_28[0])(), iVar7 != 0)) &&
+                (iVar8 = (*this_00->vtable[5].slots_00_28[0])(), iVar8 != 0)) &&
                ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
                 ((g_playSystem_00802A38 == nullptr ||
                  (g_bulkInitializedRecords_008087C7[(int)this_00[1].vtable].field_0022 < 8)))))) {
@@ -122,52 +123,52 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
               if (DAT_00808a8f == '\0') {
                 if (bVar1 == bVar2) {
 LAB_005fee45:
-                  iVar7 = 0;
+                  iVar8 = 0;
                 }
                 else {
                   bVar3 = g_playerRelationMatrix[bVar1][bVar2];
                   if ((bVar3 == 0) && (g_playerRelationMatrix[bVar2][bVar1] == 0)) {
-                    iVar7 = -2;
+                    iVar8 = -2;
                   }
                   else if ((bVar3 == 1) && (g_playerRelationMatrix[bVar2][bVar1] == 0)) {
-                    iVar7 = -1;
+                    iVar8 = -1;
                   }
                   else if ((bVar3 == 0) && (g_playerRelationMatrix[bVar2][bVar1] == 1)) {
-                    iVar7 = 1;
+                    iVar8 = 1;
                   }
                   else {
                     if ((bVar3 != 1) || (g_playerRelationMatrix[bVar2][bVar1] != 1))
                     goto LAB_005fee45;
-                    iVar7 = 2;
+                    iVar8 = 2;
                   }
                 }
-                bVar17 = iVar7 < 0;
+                bVar18 = iVar8 < 0;
               }
               else {
-                bVar17 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+                bVar18 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                          g_bulkInitializedRecords_008087C7[bVar1].field_0023;
               }
-              if ((bVar17) && (iVar7 = (*this_00->vtable[5].slots_00_28[2])(), iVar7 != 0)) {
-                thunk_FUN_00416270(this_00,local_20,(int *)local_30,(int *)local_2c);
+              if ((bVar18) && (iVar8 = (*this_00->vtable[5].slots_00_28[2])(), iVar8 != 0)) {
+                thunk_FUN_00416270(this_00,(uint *)local_20,(int *)local_30,local_2c);
                 iVar7 = FUN_006acf90(param_1,param_2,(int)local_20[0],(int)local_30[0]);
-                iVar7 = thunk_FUN_005fe990(param_3 - local_2c[0],iVar7);
-                if (iVar7 != 0) {
-                  iVar7 = 0;
-                  if (0 < iVar12) {
+                iVar8 = thunk_FUN_005fe990(param_3 - local_2c[0],iVar7);
+                if (iVar8 != 0) {
+                  iVar8 = 0;
+                  if (0 < iVar13) {
                     do {
-                      if (((uint)*(ushort *)&this_00[1].field_0xe == local_90[iVar7 * 6 + -3]) &&
-                         (this_00[1].vtable == (STWorldObjectVTable *)local_90[iVar7 * 6 + -1]))
+                      if (((uint)*(ushort *)&this_00[1].field_0xe == local_90[iVar8 * 6 + -3]) &&
+                         (this_00[1].vtable == (STWorldObjectVTable *)local_90[iVar8 * 6 + -1]))
                       goto LAB_005fef0e;
-                      iVar7 = iVar7 + 1;
-                    } while (iVar7 < iVar12);
+                      iVar8 = iVar8 + 1;
+                    } while (iVar8 < iVar13);
                   }
-                  local_90[iVar12 * 6 + -1] = (uint)this_00[1].vtable;
-                  local_90[iVar12 * 6 + -3] = (uint)*(ushort *)&this_00[1].field_0xe;
-                  uVar8 = this_00->GetObjectTypeId();
-                  local_90[iVar12 * 6 + -2] = uVar8;
-                  local_90[iVar12 * 6] = *(uint *)&this_00[0xe].field_0x1d;
-                  local_90[iVar12 * 6 + 1] = *(uint *)((int)&this_00[0xe].value_20 + 1);
-                  iVar12 = iVar12 + 1;
+                  local_90[iVar13 * 6 + -1] = (uint)this_00[1].vtable;
+                  local_90[iVar13 * 6 + -3] = (uint)*(ushort *)&this_00[1].field_0xe;
+                  uVar9 = this_00->GetObjectTypeId();
+                  local_90[iVar13 * 6 + -2] = uVar9;
+                  local_90[iVar13 * 6] = *(uint *)&this_00[0xe].field_0x1d;
+                  local_90[iVar13 * 6 + 1] = *(uint *)((int)&this_00[0xe].value_20 + 1);
+                  iVar13 = iVar13 + 1;
                 }
               }
             }
@@ -179,37 +180,37 @@ LAB_005fef0e:
       } while (local_44 < local_50);
     }
     local_1c = puVar4;
-    if (iVar12 != 0) {
-      STField<int>(this,0x237) = iVar12;
-      pvVar9 = Library::DKW::LIB::MemAlloc(iVar12 * 0x18);
-      STField<void *>(this,0x23b) = pvVar9;
-      pvVar9 = Library::DKW::LIB::MemAlloc(iVar12 * 4);
-      STField<void *>(this,0x23f) = pvVar9;
-      puVar15 = (undefined4 *)&stack0xffffff64;
-      puVar16 = STField<undefined4 *>(this,0x23b);
-      for (iVar14 = (iVar12 * 3 & 0x1fffffffU) << 1; iVar14 != 0; iVar14 = iVar14 + -1) {
-        *puVar16 = *puVar15;
-        puVar15 = puVar15 + 1;
+    if (iVar13 != 0) {
+      STField<int>(this,0x237) = iVar13;
+      pvVar10 = Library::DKW::LIB::MemAlloc(iVar13 * 0x18);
+      STField<void *>(this,0x23b) = pvVar10;
+      pvVar10 = Library::DKW::LIB::MemAlloc(iVar13 * 4);
+      STField<void *>(this,0x23f) = pvVar10;
+      puVar16 = (undefined4 *)&stack0xffffff64;
+      puVar17 = STField<undefined4 *>(this,0x23b);
+      for (iVar15 = (iVar13 * 3 & 0x1fffffffU) << 1; iVar15 != 0; iVar15 = iVar15 + -1) {
+        *puVar17 = *puVar16;
         puVar16 = puVar16 + 1;
+        puVar17 = puVar17 + 1;
       }
-      for (iVar14 = 0; iVar14 != 0; iVar14 = iVar14 + -1) {
-        *(undefined1 *)puVar16 = *(undefined1 *)puVar15;
-        puVar15 = (undefined4 *)((int)puVar15 + 1);
+      for (iVar15 = 0; iVar15 != 0; iVar15 = iVar15 + -1) {
+        *(undefined1 *)puVar17 = *(undefined1 *)puVar16;
         puVar16 = (undefined4 *)((int)puVar16 + 1);
+        puVar17 = (undefined4 *)((int)puVar17 + 1);
       }
-      iVar14 = 0;
-      if (0 < iVar12) {
+      iVar15 = 0;
+      if (0 < iVar13) {
         do {
-          *(int *)(STField<int>(this,0x23f) + iVar14 * 4) = iVar14;
-          iVar14 = iVar14 + 1;
-        } while (iVar14 < iVar12);
+          *(int *)(STField<int>(this,0x23f) + iVar15 * 4) = iVar15;
+          iVar15 = iVar15 + 1;
+        } while (iVar15 < iVar13);
       }
-      if (STField<int>(this,0x226) < iVar12) {
-        thunk_FUN_005ff150(STField<int>(this,0x23b),STField<int *>(this,0x23f),iVar12);
+      if (STField<int>(this,0x226) < iVar13) {
+        thunk_FUN_005ff150(STField<int>(this,0x23b),STField<int *>(this,0x23f),iVar13);
       }
     }
   }
   ExceptionList = local_14;
-  return iVar12;
+  return iVar13;
 }
 

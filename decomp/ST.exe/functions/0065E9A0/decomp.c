@@ -54,7 +54,7 @@ FUN_0065e9a0(void *this,short *param_1,short *param_2,uint param_3,uint param_4,
       if ((STFishC *)local_8[iVar3 * 0xb + 3] != nullptr) {
         STFishC::sub_004162B0
                   ((STFishC *)local_8[iVar3 * 0xb + 3],(short *)&param_1,local_14,
-                   (undefined2 *)((int)&param_2 + 2));
+                   (short *)((int)&param_2 + 2));
         *psVar1 = (short)param_1 + -1;
         psVar1[2] = 0;
         psVar1[1] = local_14[0] + -1;

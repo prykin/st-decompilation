@@ -9,11 +9,12 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
 
 {
   FSGSTy *this_00;
+  int iVar5;
   DArrayTy *pDVar2;
   undefined4 uVar3;
   int iVar4;
-  int iVar5;
-  ccFntTy **ppcVar6;
+  int iVar6;
+  ccFntTy **ppcVar7;
   ccFntTy *local_8d8 [8];
   DArrayTy *local_8b8;
   undefined4 local_8ac;
@@ -31,11 +32,11 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
-  ppcVar6 = local_8d8;
+  ppcVar7 = local_8d8;
   local_8 = this;
-  for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *ppcVar6 = nullptr;
-    ppcVar6 = ppcVar6 + 1;
+  for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *ppcVar7 = nullptr;
+    ppcVar7 = ppcVar7 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -44,14 +45,14 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00 = local_8;
     local_8->field_1AE8 = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_00807e1d);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_00807e1d);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AEC = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
-    ppcVar6 = local_8d8;
-    for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *ppcVar6 = nullptr;
-      ppcVar6 = ppcVar6 + 1;
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_008016a0);
+    ppcVar7 = local_8d8;
+    for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *ppcVar7 = nullptr;
+      ppcVar7 = ppcVar7 + 1;
     }
     local_8d8[2] = this_00->field_1A73;
     local_8b8 = this_00->field_1AE8;

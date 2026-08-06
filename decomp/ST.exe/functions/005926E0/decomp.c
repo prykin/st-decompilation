@@ -15,9 +15,11 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar1;
   CampaignTy *this_00;
   int iVar3;
-  BITMAPINFO *pBVar4;
+  BITMAPINFO *pBVar3;
   int iVar5;
-  CampaignTy_field_1BE8State CVar6;
+  int iVar4;
+  CampaignTy_field_1BE8State CVar5;
+  int iVar6;
   uint *puVar7;
   undefined4 *puVar8;
   int *piVar9;
@@ -46,16 +48,16 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   if (local_8->field_1BE7 != '\0') goto LAB_00592b7c;
   local_24[5] = local_8->field_1BE8;
   puVar7 = local_8->field_1BD7;
-  iVar3 = 4;
+  iVar6 = 4;
   do {
     if ((int *)*puVar7 != nullptr) {
       thunk_FUN_005926a0((int *)*puVar7);
     }
     puVar7 = puVar7 + 1;
-    iVar3 = iVar3 + -1;
-  } while (iVar3 != 0);
-  CVar6 = this_00->field_1BE8;
-  switch(CVar6) {
+    iVar6 = iVar6 + -1;
+  } while (iVar6 != 0);
+  CVar5 = this_00->field_1BE8;
+  switch(CVar5) {
   case CASE_0:
   case CASE_3:
   case CASE_6:
@@ -95,64 +97,64 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
     local_24[3] = 0xd;
     local_24[4] = 0xb;
   }
-  switch(CVar6) {
+  switch(CVar5) {
   default:
-    iVar3 = 0;
+    iVar6 = 0;
     break;
   case CASE_3:
   case CASE_4:
   case CASE_5:
-    iVar3 = 1;
+    iVar6 = 1;
     break;
   case CASE_6:
   case CASE_7:
   case CASE_8:
-    iVar3 = 2;
+    iVar6 = 2;
   }
-  if ((&this_00->field_1B13)[local_24[2] + iVar3 * 0xf] == 0) goto switchD_00592962_caseD_1;
-  switch(CVar6) {
+  if ((&this_00->field_1B13)[local_24[2] + iVar6 * 0xf] == 0) goto switchD_00592962_caseD_1;
+  switch(CVar5) {
   default:
-    iVar3 = 0;
+    iVar6 = 0;
     break;
   case CASE_3:
   case CASE_4:
   case CASE_5:
-    iVar3 = 1;
+    iVar6 = 1;
     break;
   case CASE_6:
   case CASE_7:
   case CASE_8:
-    iVar3 = 2;
+    iVar6 = 2;
   }
-  switch(CVar6) {
+  switch(CVar5) {
   default:
-    iVar5 = 0;
+    iVar4 = 0;
     break;
   case CASE_3:
   case CASE_4:
   case CASE_5:
-    iVar5 = 1;
+    iVar4 = 1;
     break;
   case CASE_6:
   case CASE_7:
   case CASE_8:
-    iVar5 = 2;
+    iVar4 = 2;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)((&this_00->field_1B13)[local_24[2] + iVar3 * 0xf] + 0x14) -
-      *(int *)((&this_00->field_1B13)[local_24[2] + iVar5 * 0xf] + 0x18) != 1)
+  if (*(int *)((&this_00->field_1B13)[local_24[2] + iVar6 * 0xf] + 0x14) -
+      *(int *)((&this_00->field_1B13)[local_24[2] + iVar4 * 0xf] + 0x18) != 1)
   goto switchD_00592962_caseD_1;
-  switch(CVar6) {
+  switch(CVar5) {
   case CASE_0:
   case CASE_1:
-    CVar6 = (DAT_0080874e != 1) + CASE_1;
+    CVar5 = (DAT_0080874e != 1) + CASE_1;
     goto LAB_00592933;
   case CASE_2:
   case CASE_5:
   case CASE_8:
-    CVar6 = (uint)DAT_0080874e * 3 - CASE_3;
+    CVar5 = (uint)DAT_0080874e * 3 - CASE_3;
 LAB_00592933:
-    this_00->field_1BE8 = CVar6;
+    this_00->field_1BE8 = CVar5;
     break;
   case CASE_3:
   case CASE_4:
@@ -174,53 +176,53 @@ LAB_00592933:
   switch(this_00->field_1BE8) {
   case CASE_0:
     thunk_FUN_005b6730(this_00,0x15,'\0',1);
-    iVar3 = 1;
+    iVar6 = 1;
     cVar11 = '\x02';
     uVar10 = 0x18;
     break;
   default:
     goto switchD_00592962_caseD_1;
   case CASE_2:
-    iVar3 = -1;
+    iVar6 = -1;
     cVar11 = '\x01';
     uVar10 = 0x1b;
     break;
   case CASE_3:
     thunk_FUN_005b6730(this_00,0x16,'\0',1);
-    iVar3 = 1;
+    iVar6 = 1;
     cVar11 = '\x02';
     uVar10 = 0x19;
     break;
   case CASE_5:
-    iVar3 = -1;
+    iVar6 = -1;
     cVar11 = '\x01';
     uVar10 = 0x1c;
     break;
   case CASE_6:
     thunk_FUN_005b6730(this_00,0x17,'\0',1);
-    iVar3 = 1;
+    iVar6 = 1;
     cVar11 = '\x02';
     uVar10 = 0x1a;
     break;
   case CASE_8:
-    iVar3 = -1;
+    iVar6 = -1;
     cVar11 = '\x01';
     uVar10 = 0x1d;
   }
-  thunk_FUN_005b6730(this_00,uVar10,cVar11,iVar3);
+  thunk_FUN_005b6730(this_00,uVar10,cVar11,iVar6);
 switchD_00592962_caseD_1:
   if (local_24[5] != this_00->field_1BE8) {
     puVar8 = &this_00->field_1B13;
     local_24[5] = 3;
     do {
-      iVar3 = 0xf;
+      iVar6 = 0xf;
       do {
         if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar8 != nullptr) {
           FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar8);
         }
         puVar8 = puVar8 + 1;
-        iVar3 = iVar3 + -1;
-      } while (iVar3 != 0);
+        iVar6 = iVar6 + -1;
+      } while (iVar6 != 0);
       local_24[5] = local_24[5] + -1;
     } while (local_24[5] != 0);
     switch(this_00->field_1BE8) {
@@ -269,34 +271,34 @@ switchD_00592962_caseD_1:
   do {
     switch(this_00->field_1BE8) {
     default:
-      iVar3 = 0;
+      iVar6 = 0;
       break;
     case CASE_3:
     case CASE_4:
     case CASE_5:
-      iVar3 = 1;
+      iVar6 = 1;
       break;
     case CASE_6:
     case CASE_7:
     case CASE_8:
-      iVar3 = 2;
+      iVar6 = 2;
     }
-    if ((&this_00->field_1B13)[*piVar9 + iVar3 * 0xf] != 0) {
+    if ((&this_00->field_1B13)[*piVar9 + iVar6 * 0xf] != 0) {
       switch(this_00->field_1BE8) {
       default:
-        iVar3 = 0;
+        iVar6 = 0;
         break;
       case CASE_3:
       case CASE_4:
       case CASE_5:
-        iVar3 = 1;
+        iVar6 = 1;
         break;
       case CASE_6:
       case CASE_7:
       case CASE_8:
-        iVar3 = 2;
+        iVar6 = 2;
       }
-      thunk_FUN_005926a0((int *)(&this_00->field_1B13)[*piVar9 + iVar3 * 0xf]);
+      thunk_FUN_005926a0((int *)(&this_00->field_1B13)[*piVar9 + iVar6 * 0xf]);
     }
     piVar9 = piVar9 + 1;
     local_24[5] = local_24[5] + -1;
@@ -325,10 +327,10 @@ LAB_00592b82:
         uVar10 = piVar9[3];
       }
       if (uVar10 <= local_8->field_0061 - piVar9[4]) {
-        pBVar4 = (BITMAPINFO *)FUN_0070b3a0(pAVar1,(int)(short)pAVar1->field_0029);
+        pBVar3 = FUN_0070b3a0(pAVar1,(int)(short)pAVar1->field_0029);
         FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar9,piVar9[1],(int)*(short *)(pAVar1 + 1),
                      (int)*(short *)&pAVar1[1].field_0x2);
-        PutDDX(*piVar9,piVar9[1],'\x01',pBVar4);
+        PutDDX(*piVar9,piVar9[1],'\x01',pBVar3);
         if ((char)piVar9[5] != '\0') {
           *(undefined1 *)(piVar9 + 5) = 0;
         }

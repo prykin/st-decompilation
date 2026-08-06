@@ -8,7 +8,6 @@
 uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
 
 {
-  undefined1 *resourceString;
   ulonglong uVar1;
   CPanelTy *pCVar3;
   int errorCode;
@@ -83,7 +82,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       cVar9 = (char)uVar4;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_c = CONCAT31(uStack_b,cVar9);
-      resourceString = &pCVar3->field_01E1;
+      pcVar10 = &pCVar3->field_01E1;
       if (cVar9 == '\0') {
         puVar8 = &DAT_007c2198;
         pcVar11 = "%s;";
@@ -92,13 +91,11 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
         puVar8 = (undefined *)(uVar4 & 0xff);
         pcVar11 = "%2d:";
       }
-      wsprintfA(resourceString,pcVar11,puVar8);
+      wsprintfA(pcVar10,pcVar11,puVar8);
       uVar1 = (ulonglong)uVar7 % 0xe10;
-      wsprintfA(resourceString,"%s%02d:%02d",resourceString,(int)(uVar1 / 0x3c),
-                (int)(uVar1 % 0x3c));
+      wsprintfA(pcVar10,"%s%02d:%02d",pcVar10,(int)(uVar1 / 0x3c),(int)(uVar1 % 0x3c));
       puVar5 = (ushort *)
-               ccFntTy::WrTxt(pCVar3->field_01BC,(uint *)resourceString,0,0,
-                              (uint)(DAT_0080874e == '\x03'),-1,-1);
+               ccFntTy::WrTxt(pCVar3->field_01BC,pcVar10,0,0,(uint)(DAT_0080874e == '\x03'),-1,-1);
     }
     else {
       uVar7 = pCVar3->field_09A0 - *(int *)&g_bulkInitializedRecords_008087C7[uVar4].field_0x35;
@@ -110,38 +107,38 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
         _local_c = CONCAT31(uStack_b,cVar9);
         if (cVar9 == '\0') {
           puVar8 = &DAT_007c2198;
-          pcVar11 = "%s;";
+          pcVar10 = "%s;";
         }
         else {
           puVar8 = (undefined *)(uVar4 & 0xff);
-          pcVar11 = "%2d:";
+          pcVar10 = "%2d:";
         }
-        wsprintfA(&pCVar3->field_01E1,pcVar11,puVar8);
+        wsprintfA(&pCVar3->field_01E1,pcVar10,puVar8);
         uVar1 = (ulonglong)uVar7 % 0xe10;
         wsprintfA(&pCVar3->field_01E1,"%s%02d:%02d",&pCVar3->field_01E1,(int)(uVar1 / 0x3c)
                   ,(int)(uVar1 % 0x3c));
       }
       else {
         uVar4 = 0xffffffff;
-        pcVar11 = &DAT_007c21a4;
+        pcVar10 = &DAT_007c21a4;
         do {
-          pcVar10 = pcVar11;
+          pcVar11 = pcVar10;
           if (uVar4 == 0) break;
           uVar4 = uVar4 - 1;
-          pcVar10 = pcVar11 + 1;
-          cVar9 = *pcVar11;
-          pcVar11 = pcVar10;
+          pcVar11 = pcVar10 + 1;
+          cVar9 = *pcVar10;
+          pcVar10 = pcVar11;
         } while (cVar9 != '\0');
         uVar4 = ~uVar4;
-        pcVar11 = pcVar10 + -uVar4;
-        pcVar10 = &pCVar3->field_01E1;
-        memmove(pcVar10, pcVar11, uVar4); /* compiler REP MOVS byte copy */
+        pcVar10 = pcVar11 + -uVar4;
+        pcVar11 = &pCVar3->field_01E1;
+        memmove(pcVar11, pcVar10, uVar4); /* compiler REP MOVS byte copy */
       }
       puVar5 = (ushort *)
-               ccFntTy::WrTxt(pCVar3->field_01BC,(uint *)&pCVar3->field_01E1,0,0,
+               ccFntTy::WrTxt(pCVar3->field_01BC,&pCVar3->field_01E1,0,0,
                               (DAT_0080874e == '\x03') + 2,-1,-1);
       if (DAT_0080c4d3 != 2) {
-        ccFntTy::WrTxt(pCVar3->field_01CC,(uint *)&pCVar3->field_01E1,0xd,10,0,-1,-1);
+        ccFntTy::WrTxt(pCVar3->field_01CC,&pCVar3->field_01E1,0xd,10,0,-1,-1);
         puVar5 = (ushort *)
                  Library::DKW::DDX::FUN_006b3640
                            ((int *)g_ddxContext_008075A8,pCVar3->field_0174,0xffffffff,

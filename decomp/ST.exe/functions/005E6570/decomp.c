@@ -18,7 +18,7 @@ MTestTy * __cdecl CreateMTest(void)
   if (this != nullptr) {
     sub_006E5FB0(this);
     this->field_0018 = 0;
-    this->field_005D = 0;
+    this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(&this->field_0x3d, 0, 0x20); /* compiler bulk-zero initialization */

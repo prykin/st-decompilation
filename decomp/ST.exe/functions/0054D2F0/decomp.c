@@ -15,6 +15,7 @@ int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
   STPlaySystemC *pSVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
   InternalExceptionFrame local_74;
   undefined1 local_30 [12];
   undefined4 local_24;

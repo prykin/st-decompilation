@@ -35,7 +35,7 @@ void __thiscall HelpPanelTy::FwdBut(HelpPanelTy *this)
       if (puVar6 != nullptr) {
         local_8->field_01A1 = 0;
         local_8->field_01A7 = 0;
-        local_8->field_01A3 = 0;
+        local_8->field_01A3 = nullptr;
         uVar5 = *(uint *)(puVar6 + 5);
         pvVar2 = *(void **)(puVar6 + 1);
         switch(*puVar6) {

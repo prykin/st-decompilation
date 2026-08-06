@@ -15,8 +15,9 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
   STMessageId SVar1;
   AiTactClassTy *this_00;
   int iVar3;
-  AiTactClassTy_field_00A5DArray *pAVar4;
+  AiTactClassTy_field_00A5DArray *pAVar3;
   int iVar5;
+  int iVar4;
   uint uVar6;
   undefined4 *puVar7;
   AiTactClassTy_field_00A5Element *element_00a5;
@@ -77,21 +78,21 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_ID_ALLCREATE) {
-      pAVar4 = local_14->field_00A5;
-      if (0 < (int)pAVar4->count) {
-        bVar8 = pAVar4->count != 0;
+      pAVar3 = local_14->field_00A5;
+      if (0 < (int)pAVar3->count) {
+        bVar8 = pAVar3->count != 0;
         do {
           if (bVar8) {
-            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar6);
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar3, uVar6);
           }
           else {
             element_00a5 = nullptr;
           }
           local_8 = 0;
           if ((((AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000 == nullptr) ||
-              (iVar3 = STPlaySystemC::sub_006E62D0
+              (iVar5 = STPlaySystemC::sub_006E62D0
                                  (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000,
-                                  &local_8), iVar3 != 0)) || (local_8 == 0)) {
+                                  &local_8), iVar5 != 0)) || (local_8 == 0)) {
             element_00a5->field_0004 = 0;
             element_00a5->field_0000 = nullptr;
           }
@@ -99,10 +100,10 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
             element_00a5->field_0004 = local_8;
             *(AiTactClassTy **)(local_8 + 0x284) = this_00;
           }
-          pAVar4 = this_00->field_00A5;
+          pAVar3 = this_00->field_00A5;
           uVar6 = uVar6 + 1;
-          bVar8 = uVar6 < pAVar4->count;
-        } while ((int)uVar6 < (int)pAVar4->count);
+          bVar8 = uVar6 < pAVar3->count;
+        } while ((int)uVar6 < (int)pAVar3->count);
       }
     }
     else if (SVar1 == MESS_SHARED_5DD5) {
@@ -113,10 +114,10 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x4ad,0,iVar3,
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x4ad,0,iVar3,
                              "AiTactClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
                              local_14->field_0018);
-  if (iVar5 == 0) {
+  if (iVar4 == 0) {
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_tact.cpp",0x4ae);
     return 0xffff;
   }

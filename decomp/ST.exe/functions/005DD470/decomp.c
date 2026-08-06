@@ -23,13 +23,14 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
   ccFntTy *pcVar5;
   RecoveredSourceFamily_dibcopy *pRVar6;
   StartSystemTy *this_00;
+  int iVar10;
   undefined4 *puVar8;
   int iVar9;
-  int iVar10;
-  uint uVar11;
-  DArrayTy *pDVar12;
-  uint uVar13;
-  uint *resourceString;
+  int iVar11;
+  uint uVar12;
+  DArrayTy *pDVar13;
+  uint uVar14;
+  char *resourceString;
   InternalExceptionFrame local_74;
   undefined4 local_30 [4];
   undefined4 local_20;
@@ -40,7 +41,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
 
   puVar8 = local_30;
   local_8 = this;
-  for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
+  for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
     *puVar8 = 0;
     puVar8 = puVar8 + 1;
   }
@@ -71,27 +72,27 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
       pRVar6 = (RecoveredSourceFamily_dibcopy *)this_00->field_067E;
       local_c = *(int *)&pcVar5->field_0x8a;
       FUN_006b4170(pRVar6,0,0,0,pRVar6->field_0004,pRVar6->field_0008,0xff);
-      uVar11 = (uint)(param_1->arg0).words.high;
-      pDVar12 = g_dArray_0080C4FA;
-      uVar13 = uVar11;
-      if ((int)uVar11 < (int)(uVar11 + *(int *)(dVar4 + 0x1e0))) {
+      uVar12 = (uint)(param_1->arg0).words.high;
+      pDVar13 = g_dArray_0080C4FA;
+      uVar14 = uVar12;
+      if ((int)uVar12 < (int)(uVar12 + *(int *)(dVar4 + 0x1e0))) {
         do {
-          if ((int)uVar13 < (int)pDVar12->elementSize) {
-            resourceString = *(uint **)(pDVar12->growCapacity + uVar13 * 4);
+          if ((int)uVar14 < (int)pDVar13->elementSize) {
+            resourceString = *(char **)(pDVar13->growCapacity + uVar14 * 4);
           }
           else {
             resourceString = nullptr;
           }
           if (resourceString != nullptr) {
             ccFntTy::SetSurf(this_00->field_0034,(int)this_00->field_067E,0,0,
-                             (uVar13 - uVar11) * local_c,*(int *)(this_00->field_067E + 2),local_c);
+                             (uVar14 - uVar12) * local_c,*(int *)(this_00->field_067E + 2),local_c);
             ccFntTy::WrStr(this_00->field_0034,resourceString,0,-1,0);
-            pDVar12 = g_dArray_0080C4FA;
+            pDVar13 = g_dArray_0080C4FA;
           }
-          uVar13 = uVar13 + 1;
-          uVar11 = (uint)(param_1->arg0).words.high;
+          uVar14 = uVar14 + 1;
+          uVar12 = (uint)(param_1->arg0).words.high;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        } while ((int)uVar13 < (int)(uVar11 + *(int *)(local_10 + 0x1e0)));
+        } while ((int)uVar14 < (int)(uVar12 + *(int *)(local_10 + 0x1e0)));
       }
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_0558);
     }
@@ -99,31 +100,31 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
   else {
     if (SVar2 == MESS_BEHPANELTY_C0A0) {
       puVar3 = local_8->field_0682;
-      uVar13 = *(uint *)(puVar3 + 10);
-      if (uVar13 == 0) {
-        uVar13 = ((uint)puVar3[7] * *(int *)(puVar3 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+      uVar14 = *(uint *)(puVar3 + 10);
+      if (uVar14 == 0) {
+        uVar14 = ((uint)puVar3[7] * *(int *)(puVar3 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                  *(int *)(puVar3 + 4);
       }
       puVar8 = (undefined4 *)FUN_006b4fa0((int *)puVar3);
-      for (uVar11 = uVar13 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
+      for (uVar12 = uVar14 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
         *puVar8 = 0xffffffff;
         puVar8 = puVar8 + 1;
       }
-      for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
+      for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
         *(undefined1 *)puVar8 = 0xff;
         puVar8 = (undefined4 *)((int)puVar8 + 1);
       }
       ccFntTy::SetSurf(this_00->field_0034,(int)this_00->field_0682,0,0,0,0,0);
       if ((param_1->arg0).ptr != nullptr) {
-        ccFntTy::WrStr(this_00->field_0034,*(uint **)(param_1->arg0).ptr,0,-1,2);
+        ccFntTy::WrStr(this_00->field_0034,*(char **)(param_1->arg0).ptr,0,-1,2);
       }
       uVar1 = (param_1->arg1).words.low;
       if ((uVar1 != 0xffff) || ((param_1->arg1).words.high != 0xffff)) {
-        uVar13 = (uint)(param_1->arg1).words.high;
-        FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_0682,0,(uint)uVar1,uVar13 + 2,
+        uVar14 = (uint)(param_1->arg1).words.high;
+        FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_0682,0,(uint)uVar1,uVar14 + 2,
                      (uint)uVar1,
                      (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_0682)->field_0008 +
-                     (-5 - uVar13),9,0xd);
+                     (-5 - uVar14),9,0xd);
       }
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_0554);
       g_currentExceptionFrame = local_74.previous;

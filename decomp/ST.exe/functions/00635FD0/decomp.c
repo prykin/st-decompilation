@@ -19,7 +19,7 @@ void __fastcall FUN_00635fd0(int *param_1)
   uint uVar4;
 
   if ((STField<int>(param_1,0x11) == 3) && (STField<int>(param_1,0x39) != 0)) {
-    FreeAndNull((void **)((int)param_1 + 0x39));
+    FreeAndNull((void *)((int)param_1 + 0x39));
   }
   if (*param_1 != 0) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

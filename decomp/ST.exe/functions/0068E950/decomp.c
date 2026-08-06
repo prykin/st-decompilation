@@ -8,7 +8,7 @@
 void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
 
 {
-  void **value;
+  void **slotStorage;
   AiTactClassTy *pAVar2;
   int errorCode;
   void *pvVar3;
@@ -23,13 +23,13 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pAVar2 = local_8;
   if (errorCode == 0) {
-    value = &local_8->field_0130;
+    slotStorage = &local_8->field_0130;
     if (local_8->field_0130 != nullptr) {
-      FreeAndNull(value);
+      FreeAndNull(slotStorage);
     }
     if (pAVar2->field_00BD != nullptr) {
       pvVar3 = (void *)FUN_006b0020(&pAVar2->field_00BD->flags,&local_c);
-      *value = pvVar3;
+      *slotStorage = pvVar3;
     }
     g_currentExceptionFrame = local_50.previous;
     return;

@@ -13,11 +13,12 @@ void __thiscall CPanelTy::PaintNewDeep(CPanelTy *this)
   CPanelTy *pCVar4;
   char cVar5;
   int iVar6;
-  uint uVar7;
-  byte *pbVar8;
-  int iVar9;
-  byte bVar10;
-  RecoveredSourceFamily_dibcopy *pRVar11;
+  uint uVar6;
+  BITMAPINFO *pBVar7;
+  int iVar8;
+  byte bVar8;
+  RecoveredSourceFamily_dibcopy *pRVar9;
+  int iVar10;
   InternalExceptionFrame local_60;
   byte *local_1c;
   undefined4 local_18;
@@ -33,9 +34,9 @@ void __thiscall CPanelTy::PaintNewDeep(CPanelTy *this)
   pCVar4 = local_10;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x226,0,iVar6,"%s"
+    iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x226,0,iVar6,"%s"
                                ,"CPanelTy::PaintNewDeep");
-    if (iVar9 != 0) {
+    if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0x226);
@@ -43,17 +44,17 @@ void __thiscall CPanelTy::PaintNewDeep(CPanelTy *this)
   }
   local_c = local_c & 0xffffff00;
   do {
-    uVar7 = local_c & 0xff;
-    pbVar1 = (byte *)((int)pCVar4->field_0308 + (uVar7 - 0x60));
+    uVar6 = local_c & 0xff;
+    pbVar1 = (byte *)((int)pCVar4->field_0308 + (uVar6 - 0x60));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((*(char *)((int)pCVar4->field_0308 + (uVar7 - 0x60)) != -1) &&
-       (199 < (uint)(pCVar4->field_0038 - *(int *)((int)pCVar4->field_0308 + uVar7 * 4 + -0x5e)))) {
-      *(undefined4 *)((int)pCVar4->field_0308 + uVar7 * 4 + -0x5e) = pCVar4->field_0038;
-      local_1c = (byte *)((int)pCVar4->field_0308 + (uVar7 - 0x62));
+    if ((*(char *)((int)pCVar4->field_0308 + (uVar6 - 0x60)) != -1) &&
+       (199 < (uint)(pCVar4->field_0038 - *(int *)((int)pCVar4->field_0308 + uVar6 * 4 + -0x5e)))) {
+      *(undefined4 *)((int)pCVar4->field_0308 + uVar6 * 4 + -0x5e) = pCVar4->field_0038;
+      local_1c = (byte *)((int)pCVar4->field_0308 + (uVar6 - 0x62));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      bVar10 = *(char *)((int)pCVar4->field_0308 + (uVar7 - 0x62)) + 1;
-      *local_1c = bVar10;
-      switch(bVar10) {
+      bVar8 = *(char *)((int)pCVar4->field_0308 + (uVar6 - 0x62)) + 1;
+      *local_1c = bVar8;
+      switch(bVar8) {
       case 1:
       case 3:
       case 5:
@@ -110,51 +111,51 @@ LAB_00500d40:
           local_8 = (uint)STPiece<1,3>(local_8) << 8;
         }
       }
-      if (bVar10 < 7) {
+      if (bVar8 < 7) {
         if (DAT_0080874e == '\x03') {
           if ((char)local_c == '\0') {
-            uVar7 = (uint)(byte)pCVar4->field_02A8;
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
-                                          local_8 & 0xff);
-            pRVar11 = pCVar4->field_018C;
-            iVar6 = (5 - uVar7) * 0xb;
+            uVar6 = (uint)(byte)pCVar4->field_02A8;
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
+                                  local_8 & 0xff);
+            pRVar9 = pCVar4->field_018C;
+            iVar10 = (5 - uVar6) * 0xb;
           }
           else {
-            uVar7 = (uint)*pbVar1;
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
-                                          local_8 & 0xff);
-            pRVar11 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0194;
-            iVar6 = uVar7 * 0xb + 0x87;
+            uVar6 = (uint)*pbVar1;
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
+                                  local_8 & 0xff);
+            pRVar9 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0194;
+            iVar10 = uVar6 * 0xb + 0x87;
           }
-          DibPut(pRVar11,iVar6,uVar7 * 0xb + 0xb,'\x06',pbVar8);
-          bVar10 = (-((char)local_c != '\0') & 2U) + 3;
-          local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(bVar10));
-          if (bVar10 < 0xb) {
-            uVar7 = (uint)bVar10;
-            puVar2 = pCVar4->field_0148[uVar7];
+          DibPut(pRVar9,iVar10,uVar6 * 0xb + 0xb,'\x06',(byte *)pBVar7);
+          bVar8 = (-((char)local_c != '\0') & 2U) + 3;
+          local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(bVar8));
+          if (bVar8 < 0xb) {
+            uVar6 = (uint)bVar8;
+            puVar2 = pCVar4->field_0148[uVar6];
 joined_r0x00500e7c:
             if (-1 < (int)puVar2) {
               Library::DKW::DDX::FUN_006b3640
                         ((int *)g_ddxContext_008075A8,(uint)puVar2,0xffffffff,
-                         (&pCVar4->field_003C)[uVar7],(&pCVar4->field_0094)[uVar7]);
+                         (&pCVar4->field_003C)[uVar6],(&pCVar4->field_0094)[uVar6]);
             }
           }
         }
         else {
           if ((char)local_c == '\0') {
-            pRVar11 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0188;
+            pRVar9 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0188;
           }
           else {
-            pRVar11 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0198;
+            pRVar9 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0198;
           }
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
-                                        local_8 & 0xff);
-          DibPut(pRVar11,7,(uint)*pbVar1 * 0x1d + 6,'\x01',pbVar8);
-          bVar10 = (-((char)local_c != '\0') & 4U) + 2;
-          local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar10));
-          if (bVar10 < 0xb) {
-            uVar7 = (uint)bVar10;
-            puVar2 = pCVar4->field_0148[uVar7];
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
+                                local_8 & 0xff);
+          DibPut(pRVar9,7,(uint)*pbVar1 * 0x1d + 6,'\x01',(byte *)pBVar7);
+          bVar8 = (-((char)local_c != '\0') & 4U) + 2;
+          local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar8));
+          if (bVar8 < 0xb) {
+            uVar6 = (uint)bVar8;
+            puVar2 = pCVar4->field_0148[uVar6];
             goto joined_r0x00500e7c;
           }
         }
@@ -163,9 +164,9 @@ joined_r0x00500e7c:
         *pbVar1 = 0xff;
       }
     }
-    bVar10 = (char)local_c + 1;
-    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar10));
-    if (1 < bVar10) {
+    bVar8 = (char)local_c + 1;
+    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar8));
+    if (1 < bVar8) {
       g_currentExceptionFrame = local_60.previous;
       return;
     }

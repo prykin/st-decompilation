@@ -15,10 +15,11 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
   undefined2 uVar8;
   short sVar9;
   int iVar10;
-  short sVar11;
   int iVar12;
-  short sVar13;
-  int iVar14;
+  short sVar11;
+  int iVar13;
+  short sVar14;
+  int iVar15;
   short sVar15;
   int iVar16;
   int *piVar17;
@@ -49,53 +50,53 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
   if (param_4 == nullptr) {
     return 0;
   }
-  sVar15 = (short)(param_1 >> 0x1f);
+  sVar9 = (short)(param_1 >> 0x1f);
   if (param_1 < 0) {
-    iVar16 = (short)(((short)(param_1 / 0xc9) + sVar15) -
+    iVar16 = (short)(((short)(param_1 / 0xc9) + sVar9) -
                     (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    iVar16 = (int)(short)(((short)(param_1 / 0xc9) + sVar15) -
+    iVar16 = (int)(short)(((short)(param_1 / 0xc9) + sVar9) -
                          (short)((longlong)param_1 * 0x28c1979 >> 0x3f));
   }
-  sVar15 = (short)(param_2 >> 0x1f);
+  sVar9 = (short)(param_2 >> 0x1f);
   if (param_2 < 0) {
-    iVar12 = (short)(((short)(param_2 / 0xc9) + sVar15) -
+    iVar13 = (short)(((short)(param_2 / 0xc9) + sVar9) -
                     (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    iVar12 = (int)(short)(((short)(param_2 / 0xc9) + sVar15) -
+    iVar13 = (int)(short)(((short)(param_2 / 0xc9) + sVar9) -
                          (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
   }
-  sVar15 = (short)(param_3 >> 0x1f);
+  sVar9 = (short)(param_3 >> 0x1f);
   if (param_3 < 0) {
-    iVar10 = (short)(((short)(param_3 / 200) + sVar15) -
+    iVar10 = (short)(((short)(param_3 / 200) + sVar9) -
                     (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
   }
   else {
-    iVar10 = (int)(short)(((short)(param_3 / 200) + sVar15) -
+    iVar10 = (int)(short)(((short)(param_3 / 200) + sVar9) -
                          (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
-  if (((((-1 < iVar16) && (-1 < iVar12)) && (-1 < iVar10)) &&
+  if (((((-1 < iVar16) && (-1 < iVar13)) && (-1 < iVar10)) &&
       ((iVar18 = (int)g_worldGrid.sizeX, iVar16 < iVar18 &&
-       (iVar14 = (int)g_worldGrid.sizeY, iVar12 < iVar14)))) && (iVar10 < 5)) {
-    local_20 = iVar12 + -1;
-    if (iVar12 + -1 < 0) {
+       (iVar15 = (int)g_worldGrid.sizeY, iVar13 < iVar15)))) && (iVar10 < 5)) {
+    local_20 = iVar13 + -1;
+    if (iVar13 + -1 < 0) {
       local_20 = 0;
     }
     local_18 = iVar16 + -1;
     if (iVar16 + -1 < 0) {
       local_18 = 0;
     }
-    local_2c = iVar12 + 2;
-    if (iVar14 < iVar12 + 2) {
-      local_2c = iVar14;
+    local_2c = iVar13 + 2;
+    if (iVar15 < iVar13 + 2) {
+      local_2c = iVar15;
     }
     local_1c = iVar16 + 2;
     if (iVar18 < iVar16 + 2) {
       local_1c = iVar18;
     }
-    iVar12 = 0;
+    iVar13 = 0;
     local_c = 0;
     local_34 = 0;
     local_3c = 0x18894;
@@ -111,16 +112,16 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
         do {
           iVar16 = local_28;
           if (local_28 < local_1c) {
-            piVar17 = local_800 + iVar12 * 0xb;
+            piVar17 = local_800 + iVar13 * 0xb;
             do {
               sVar9 = (short)local_28;
               if ((((-1 < sVar9) && (sVar9 < sVar15)) &&
                   ((sVar11 = (short)local_10, -1 < sVar11 &&
-                   (((sVar11 < g_worldGrid.sizeY && (sVar13 = (short)iVar18, -1 < sVar13)) &&
-                    (sVar13 < g_worldGrid.sizeZ)))))) &&
+                   (((sVar11 < g_worldGrid.sizeY && (sVar14 = (short)iVar18, -1 < sVar14)) &&
+                    (sVar14 < g_worldGrid.sizeZ)))))) &&
                  (((this_00 = g_worldGrid.cells
                               [(int)sVar11 * (int)sVar15 +
-                               (int)sVar13 * (int)g_worldGrid.planeStride + (int)sVar9].objects[0],
+                               (int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar9].objects[0],
                    this_00 != nullptr &&
                    (iVar16 = (*this_00->vtable[5].slots_00_28[0])(), iVar16 != 0)) &&
                   ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
@@ -162,7 +163,7 @@ LAB_0061cd61:
                            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                 }
                 if ((bVar20) && (iVar16 = (*this_00->vtable[5].slots_00_28[2])(), iVar16 != 0)) {
-                  thunk_FUN_00416270(this_00,&local_6,(int *)((int)&param_3 + 2),(int *)&local_22);
+                  thunk_FUN_00416270(this_00,(uint *)&local_6,(int *)((int)&param_3 + 2),&local_22);
                   uVar4 = *(undefined2 *)&this_00[1].field_0xe;
                   memset(piVar17, 0, 0x2c); /* compiler bulk-zero initialization */
                   uVar5 = *(undefined4 *)&this_00->field_0x18;
@@ -177,15 +178,15 @@ LAB_0061cd61:
                   iVar16 = (int)local_6;
                   STField<undefined2>(piVar17,0x16) = uVar8;
                   *(undefined2 *)(piVar17 + 6) = uVar4;
-                  iVar12 = (int)local_22;
+                  iVar13 = (int)local_22;
                   piVar17[2] = iVar16;
                   pSVar6 = this_00->vtable;
                   piVar17[3] = (int)STPiece<2,2>(param_3);
-                  piVar17[4] = iVar12;
+                  piVar17[4] = iVar13;
                   iVar16 = (*pSVar6->GetObjectTypeId)(this_00);
-                  iVar12 = (int)local_6;
+                  iVar13 = (int)local_6;
                   piVar17[1] = iVar16;
-                  iVar12 = FUN_006aced8(param_1,param_2,iVar12,(int)STPiece<2,2>(param_3));
+                  iVar12 = FUN_006aced8(param_1,param_2,iVar13,(int)STPiece<2,2>(param_3));
                   iVar16 = local_3c;
                   STField<int>(piVar17,0x1e) = iVar12;
                   STField<int>(piVar17,0x22) = iVar12;
@@ -200,7 +201,7 @@ LAB_0061cd61:
               local_28 = local_28 + 1;
               iVar16 = local_18;
               iVar18 = local_14;
-              iVar12 = local_c;
+              iVar13 = local_c;
               iVar10 = local_2c;
               sVar15 = g_worldGrid.sizeX;
             } while (local_28 < local_1c);
@@ -211,7 +212,7 @@ LAB_0061cd61:
       }
       local_14 = iVar18 + 1;
     } while (iVar18 + 1 < 5);
-    if (0 < iVar12) {
+    if (0 < iVar13) {
       local_38 = 1;
       piVar17 = local_800 + local_34 * 0xb;
       memmove(param_4, piVar17, 0x2c); /* compiler REP MOVS byte copy */

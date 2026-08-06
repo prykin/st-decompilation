@@ -1,21 +1,29 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __cdecl FUN_006aff5b(int param_1)
+/* [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /uint; every later accumulator definition is an exact full-width integer transform of that value;
+   machine CFG audit: used=13, ignored=1, unknown=0 */
+
+uint __cdecl FUN_006aff5b(int param_1)
 
 {
+  uint local_EAX_38;
   uint uVar1;
+  uint uVar2;
 
-  uVar1 = param_1 % 0x168;
-  if ((int)uVar1 < 0) {
-    uVar1 = uVar1 + 0x168;
+  uVar2 = param_1 % 0x168;
+  if ((int)uVar2 < 0) {
+    uVar2 = uVar2 + 0x168;
   }
-  if (uVar1 < 0xb5) {
-    FUN_006aff93();
+  if (uVar2 < 0xb5) {
+    uVar1 = FUN_006aff93();
   }
   else {
-    FUN_006aff93();
+    local_EAX_38 = FUN_006aff93();
+    uVar1 = -local_EAX_38;
   }
-  return;
+  return uVar1;
 }
 

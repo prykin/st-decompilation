@@ -10,8 +10,9 @@ int __thiscall AiBossClassTy::InitData(AiBossClassTy *this,undefined4 *param_1)
 {
   int iVar2;
   int iVar3;
-  byte *puVar4;
+  int iVar4;
   byte *puVar5;
+  byte *puVar6;
   InternalExceptionFrame local_4c;
   AiBossClassTy *local_8;
 
@@ -21,13 +22,13 @@ int __thiscall AiBossClassTy::InitData(AiBossClassTy *this,undefined4 *param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     if (local_8 == nullptr) {
-      puVar5 = nullptr;
+      puVar6 = nullptr;
     }
     else {
-      puVar5 = (byte *)&local_8->field_0x5d3;
+      puVar6 = (byte *)&local_8->field_0x5d3;
     }
-    puVar4 = (byte *)(param_1);
-    memmove(puVar5, puVar4, 0x85); /* compiler REP MOVS byte copy */
+    puVar5 = (byte *)(param_1);
+    memmove(puVar6, puVar5, 0x85); /* compiler REP MOVS byte copy */
     local_8->field_05D8 = 1;
     AiEventClassTy::InitData
               ((AiEventClassTy *)&local_8->vtable_at_1c,

@@ -10,7 +10,7 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
 {
   PrividerTy *pPVar2;
   int errorCode;
-  uint *puVar3;
+  char *pcVar3;
   int iVar4;
   MMMObjTy *this_00;
   StartServTy *this_01;
@@ -49,13 +49,13 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
   if (pPVar2->field_1A5F == '\x01') {
-    puVar3 = (uint *)LoadResourceString(0x26b4,g_hINSTANCE_00807618);
-    StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
+    pcVar3 = LoadResourceString(0x26b4,g_hINSTANCE_00807618);
+    StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,pcVar3,uVar5,uVar6,pcVar7,uVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  puVar3 = (uint *)LoadResourceString(0x26b3,g_hINSTANCE_00807618);
-  StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
+  pcVar3 = LoadResourceString(0x26b3,g_hINSTANCE_00807618);
+  StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,pcVar3,uVar5,uVar6,pcVar7,uVar8);
   if ((pPVar2->field_1C9A == nullptr) && (param_1 == '\0')) {
     MMMObjTy::OutEdProc((MMMObjTy *)g_dDXContext_0080759C,
                         (AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,0x79,0x197,

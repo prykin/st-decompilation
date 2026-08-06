@@ -15,7 +15,8 @@ void __thiscall MMObjTy::CloseButtons(MMObjTy *this)
   MMObjTy *pMVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  uint *puVar3;
+  int iVar5;
   InternalExceptionFrame local_4c;
   MMObjTy *local_8;
 
@@ -25,16 +26,16 @@ void __thiscall MMObjTy::CloseButtons(MMObjTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (iVar3 == 0) {
-    iVar3 = 0xd;
-    puVar5 = &local_8->field_0066;
+    iVar5 = 0xd;
+    puVar3 = &local_8->field_0066;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(pMVar2->field_000C,*puVar5);
+      if (*puVar3 != 0) {
+        StartSystemTy::sub_006E56B0(pMVar2->field_000C,*puVar3);
       }
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      *puVar3 = 0;
+      puVar3 = puVar3 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

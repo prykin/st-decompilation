@@ -8,6 +8,7 @@ byte * FUN_006cfe10(byte *param_1,int param_2)
   uint uVar4;
   int iVar5;
   int iVar6;
+  byte *pbVar7_mg1;
   byte *pbVar7;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -28,34 +29,32 @@ byte * FUN_006cfe10(byte *param_1,int param_2)
   param_1 = pbVar7;
   uVar3 = 0;
   iVar6 = param_2 * iVar2;
+  pbVar7 = param_1;
   do {
     while( true ) {
-      pbVar7 = param_1;
+      pbVar7_mg1 = pbVar7;
       iVar5 = iVar6 - uVar3;
       if (iVar5 == 0 || iVar6 < (int)uVar3) {
-        return pbVar7;
+        return pbVar7_mg1;
       }
-      bVar1 = *pbVar7;
+      bVar1 = *pbVar7_mg1;
       uVar3 = (uint)bVar1;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = pbVar7 + 1;
+      pbVar7 = pbVar7_mg1 + 1;
       if (uVar3 == 0) break;
       iVar6 = iVar5;
       if ((bVar1 & 0x80) != 0) {
         if ((bVar1 & 0x40) == 0) {
           uVar3 = bVar1 & 0xffffff3f;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = param_1 + uVar3;
+          pbVar7 = pbVar7 + uVar3;
         }
         else {
           uVar3 = bVar1 & 0xffffff3f;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = pbVar7 + 2;
+          pbVar7 = pbVar7_mg1 + 2;
         }
       }
     }
     iVar6 = iVar5 - iVar2;
   } while (iVar6 != 0 && iVar2 <= iVar5);
-  return param_1;
+  return pbVar7;
 }
 

@@ -14,13 +14,15 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar4;
+  undefined4 *puVar3;
+  int iVar4;
   byte *pbVar5;
+  int iVar7;
   int iVar6;
-  DArrayTy *pDVar7;
-  uint uVar8;
-  byte *pbVar9;
-  bool bVar10;
+  DArrayTy *pDVar8;
+  uint uVar9;
+  byte *pbVar10;
+  bool bVar11;
   InternalExceptionFrame local_70;
   byte local_2c [16];
   undefined4 local_1c;
@@ -49,78 +51,78 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x39c);
   }
-  uVar8 = g_array_007FA160->count - 1;
-  pDVar7 = g_array_007FA160;
-  if ((int)uVar8 < 0) {
+  uVar9 = g_array_007FA160->count - 1;
+  pDVar8 = g_array_007FA160;
+  if ((int)uVar9 < 0) {
     g_currentExceptionFrame = local_70.previous;
     return local_18;
   }
   do {
-    if (uVar8 < pDVar7->count) {
-      puVar4 = DArrayAt<undefined4>(pDVar7, uVar8);
+    if (uVar9 < pDVar8->count) {
+      puVar3 = DArrayAt<undefined4>(pDVar8, uVar9);
     }
     else {
-      puVar4 = nullptr;
+      puVar3 = nullptr;
     }
-    this = (STFishC *)*puVar4;
+    this = (STFishC *)*puVar3;
     if (((this != nullptr) &&
-        (local_10 = uVar8, local_1c = (*this->vtable[1].vfunc_08)(this), pDVar7 = g_array_007FA160,
+        (local_10 = uVar9, local_1c = (*this->vtable[1].vfunc_08)(this), pDVar8 = g_array_007FA160,
         (short)local_1c == param_1)) &&
        ((param_2 == 0 ||
-        (iVar3 = (*this->vtable[1].vfunc_0C)(), pDVar7 = g_array_007FA160, iVar3 == param_2)))) {
-      iVar3 = 1;
+        (iVar4 = (*this->vtable[1].vfunc_0C)(), pDVar8 = g_array_007FA160, iVar4 == param_2)))) {
+      iVar4 = 1;
       local_14 = 1;
       if ((param_3 != nullptr) && (*param_3 != 0)) {
         (*this->vtable->vfunc_74)((short)local_2c);
-        pbVar9 = local_2c;
+        pbVar10 = local_2c;
         pbVar5 = param_3;
         do {
           bVar1 = *pbVar5;
-          bVar10 = bVar1 < *pbVar9;
-          if (bVar1 != *pbVar9) {
+          bVar11 = bVar1 < *pbVar10;
+          if (bVar1 != *pbVar10) {
 LAB_00677ce9:
-            iVar6 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
+            iVar7 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
             goto LAB_00677cee;
           }
           if (bVar1 == 0) break;
           bVar1 = pbVar5[1];
-          bVar10 = bVar1 < pbVar9[1];
-          if (bVar1 != pbVar9[1]) goto LAB_00677ce9;
+          bVar11 = bVar1 < pbVar10[1];
+          if (bVar1 != pbVar10[1]) goto LAB_00677ce9;
           pbVar5 = pbVar5 + 2;
-          pbVar9 = pbVar9 + 2;
+          pbVar10 = pbVar10 + 2;
         } while (bVar1 != 0);
-        iVar6 = 0;
+        iVar7 = 0;
 LAB_00677cee:
-        if (iVar6 != 0) {
-          iVar3 = 0;
+        if (iVar7 != 0) {
+          iVar4 = 0;
           local_14 = 0;
         }
       }
-      pDVar7 = g_array_007FA160;
-      uVar8 = local_10;
-      if (iVar3 != 0) {
+      pDVar8 = g_array_007FA160;
+      uVar9 = local_10;
+      if (iVar4 != 0) {
         if ((((0 < param_7) && (0 < param_8)) && (0 < param_9)) &&
            ((((STFishC::sub_004162F0(this,&local_6,&local_8,&local_a), local_6 < param_4 ||
               (local_8 < param_5)) ||
              ((local_a < param_6 ||
               (((int)param_4 + (int)param_7 <= (int)local_6 ||
                ((int)param_5 + (int)param_8 <= (int)local_8)))))) ||
-            (iVar3 = local_14, (int)param_6 + (int)param_9 <= (int)local_a)))) {
-          iVar3 = 0;
+            (iVar4 = local_14, (int)param_6 + (int)param_9 <= (int)local_a)))) {
+          iVar4 = 0;
         }
-        pDVar7 = g_array_007FA160;
-        uVar8 = local_10;
+        pDVar8 = g_array_007FA160;
+        uVar9 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((iVar3 != 0) && (param_10 != nullptr)) &&
-           (iVar3 = (*(code *)param_10)(local_1c,local_10,this,param_11), pDVar7 = g_array_007FA160,
-           uVar8 = local_10, iVar3 != 0)) {
+        if (((iVar4 != 0) && (param_10 != nullptr)) &&
+           (iVar4 = (*(code *)param_10)(local_1c,local_10,this,param_11), pDVar8 = g_array_007FA160,
+           uVar9 = local_10, iVar4 != 0)) {
           g_currentExceptionFrame = local_70.previous;
           return -1;
         }
       }
     }
-    uVar8 = uVar8 - 1;
-    if ((int)uVar8 < 0) {
+    uVar9 = uVar9 - 1;
+    if ((int)uVar9 < 0) {
       g_currentExceptionFrame = local_70.previous;
       return local_18;
     }

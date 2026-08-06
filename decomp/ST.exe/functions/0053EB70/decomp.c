@@ -16,11 +16,12 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
   AnonPointee_SpecPanelTy_0000 *pAVar2;
   SpecPanelTy *this_00;
   int iVar4;
-  LPSTR pCVar5;
   int iVar6;
-  undefined4 uVar7;
+  LPSTR pCVar7;
+  int iVar5;
   undefined4 uVar8;
   undefined4 uVar9;
+  undefined4 uVar10;
   InternalExceptionFrame local_4c;
   SpecPanelTy *local_8;
 
@@ -31,9 +32,9 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x168,0,iVar4,"%s"
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x168,0,iVar4,"%s"
                                ,"SpecPanelTy::GetMessage");
-    if (iVar6 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\specpan.cpp",0x168);
@@ -41,9 +42,9 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
   }
   if (message->id == MESS_ID_CREATE) {
     FUN_006b1a50(g_ddxContext_008075A8,3,nullptr,(undefined4 *)&local_8->field_0x4c);
-    iVar4 = this_00->field_0050 + this_00->field_0058;
-    this_00->field_0044 = iVar4;
-    this_00->field_0174 = (this_00->field_0048 - iVar4) + DAT_00806734;
+    iVar6 = this_00->field_0050 + this_00->field_0058;
+    this_00->field_0044 = iVar6;
+    this_00->field_0174 = (this_00->field_0048 - iVar6) + DAT_00806734;
   }
   PanelTy::GetMessage((PanelTy *)this_00,message);
   SVar1 = message->id;
@@ -57,12 +58,12 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
     }
     if (SVar1 == MESS_ID_NONE) {
       if (this_00->field_0172 == 3) {
-        iVar4 = this_00->field_0050 + (this_00->field_0058 - this_00->field_0048);
-        if (iVar4 < this_00->field_0044) {
+        iVar6 = this_00->field_0050 + (this_00->field_0058 - this_00->field_0048);
+        if (iVar6 < this_00->field_0044) {
           this_00->field_0044 = this_00->field_0044 + -0xf;
         }
-        if (this_00->field_0044 <= iVar4) {
-          this_00->field_0044 = iVar4;
+        if (this_00->field_0044 <= iVar6) {
+          this_00->field_0044 = iVar6;
           this_00->field_0172 = 1;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)this_00->field_0000->field_0018)(1);
@@ -74,12 +75,12 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
         return 0;
       }
       if (this_00->field_0172 == 4) {
-        iVar4 = this_00->field_0050 + this_00->field_0058;
-        if (this_00->field_0044 < iVar4) {
+        iVar6 = this_00->field_0050 + this_00->field_0058;
+        if (this_00->field_0044 < iVar6) {
           this_00->field_0044 = this_00->field_0044 + 0xf;
         }
-        if (iVar4 <= this_00->field_0044) {
-          this_00->field_0044 = iVar4;
+        if (iVar6 <= this_00->field_0044) {
+          this_00->field_0044 = iVar6;
           this_00->field_0172 = 2;
         }
         Library::DKW::DDX::FUN_006b3640
@@ -97,12 +98,12 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
   }
   else if (SVar1 == MESS_SHARED_C000) {
     pAVar2 = this_00->field_0000;
-    uVar9 = 1;
-    uVar8 = 0;
-    uVar7 = 0x274e;
-    pCVar5 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    uVar10 = 1;
+    uVar9 = 0;
+    uVar8 = 0x274e;
+    pCVar7 = thunk_FUN_00571240("BUT_MEDIUM",0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pAVar2->field_0010)(message,pCVar5,uVar7,uVar8,uVar9);
+    (*(code *)pAVar2->field_0010)(message,pCVar7,uVar8,uVar9,uVar10);
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;

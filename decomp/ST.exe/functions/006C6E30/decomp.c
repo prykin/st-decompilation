@@ -4,18 +4,19 @@
 int FUN_006c6e30(AnonShape_006C6E30_3C2F0429 *param_1)
 
 {
-  undefined1 *value;
+  undefined1 *slotStorage;
   AnonShape_006C6E30_3C2F0429 *pAVar1;
   int iVar2;
-  AnonShape_006C6E30_3C2F0429 *pAVar3;
+  int *piVar3;
+  AnonShape_006C6E30_3C2F0429 *pAVar4;
   short local_10;
   short local_e;
   short local_c;
   short local_a;
   byte local_8;
 
-  value = &param_1->field_0x2a;
-  FreeAndNull((void **)value);
+  slotStorage = &param_1->field_0x2a;
+  FreeAndNull(slotStorage);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar2 = (*(code *)param_1->field_0042)(param_1,&local_10,9);
   if (iVar2 == 9) {
@@ -29,18 +30,18 @@ int FUN_006c6e30(AnonShape_006C6E30_3C2F0429 *param_1)
     else {
       param_1->field_0019 = local_8 & 7;
       pAVar1 = (AnonShape_006C6E30_3C2F0429 *)((1 << (local_8 & 7) + 1) * 3);
-      iVar2 = FUN_006bfb70((int)pAVar1);
-      *(int *)value = iVar2;
-      if (iVar2 == 0) {
+      piVar3 = FUN_006bfb70((int)pAVar1);
+      *(int **)slotStorage = piVar3;
+      if (piVar3 == nullptr) {
         return -2;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      pAVar3 = (AnonShape_006C6E30_3C2F0429 *)(*(code *)param_1->field_0042)(param_1,iVar2,pAVar1);
-      if (pAVar3 != pAVar1) {
-        FreeAndNull((void **)value);
+      pAVar4 = (AnonShape_006C6E30_3C2F0429 *)(*(code *)param_1->field_0042)(param_1,piVar3,pAVar1);
+      if (pAVar4 != pAVar1) {
+        FreeAndNull(slotStorage);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = pAVar3;
-        if (-1 < (int)pAVar3) {
+        param_1 = pAVar4;
+        if (-1 < (int)pAVar4) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (AnonShape_006C6E30_3C2F0429 *)0xfffffffb;
         }

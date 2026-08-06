@@ -35,6 +35,7 @@ int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
 {
   int iVar2;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_4c;
   TLOBaseTy *local_8;
 

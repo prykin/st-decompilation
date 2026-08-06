@@ -9,13 +9,14 @@ void __thiscall
 FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undefined4 *param_4)
 
 {
-  void **value;
+  void **slotStorage;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar2;
-  undefined4 *puVar3;
+  undefined4 *puVar2;
   int iVar4;
-  uint uVar5;
+  uint uVar3;
+  int iVar5;
   InternalExceptionFrame local_6c;
   undefined4 local_28 [4];
   undefined4 local_18;
@@ -38,24 +39,24 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
     iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
     this_01 = local_8;
     if (iVar2 == 0) {
-      value = &local_8->field_1EDB;
+      slotStorage = &local_8->field_1EDB;
       if (local_8->field_1EDB != nullptr) {
-        FreeAndNull(value);
+        FreeAndNull(slotStorage);
       }
       this_01->field_1EDF = param_2;
       this_01->field_1EE3 = param_3;
-      puVar3 = Library::DKW::LIB::MemAlloc(param_3 * 0x24);
-      uVar5 = this_01->field_1EE3;
-      *value = puVar3;
-      for (uVar5 = uVar5 * 9 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *puVar3 = *param_4;
+      puVar2 = Library::DKW::LIB::MemAlloc(param_3 * 0x24);
+      uVar3 = this_01->field_1EE3;
+      *slotStorage = puVar2;
+      for (uVar3 = uVar3 * 9 & 0x3fffffff; uVar3 != 0; uVar3 = uVar3 - 1) {
+        *puVar2 = *param_4;
         param_4 = param_4 + 1;
-        puVar3 = puVar3 + 1;
+        puVar2 = puVar2 + 1;
       }
-      for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *(undefined1 *)puVar3 = *(undefined1 *)param_4;
+      for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
+        *(undefined1 *)puVar2 = *(undefined1 *)param_4;
         param_4 = (undefined4 *)((int)param_4 + 1);
-        puVar3 = (undefined4 *)((int)puVar3 + 1);
+        puVar2 = (undefined4 *)((int)puVar2 + 1);
       }
       PaintLadder(this_01);
       memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */

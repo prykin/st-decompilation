@@ -17,14 +17,18 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
 
 {
   short **ppsVar1;
+  ushort *puVar2;
   CPanelTy *this_00;
-  byte bVar3;
-  int iVar4;
-  undefined1 *puVar5;
+  byte bVar4;
+  int iVar5;
+  undefined1 *puVar6;
   char *text;
-  char *pcVar6;
+  ushort *local_EAX_411;
   ushort *puVar7;
+  char *pcVar7;
+  ushort *local_EAX_1224;
   short *psVar8;
+  tagBITMAPINFO *tOBJImage;
   byte bVar9;
   char cVar10;
   int *piVar11;
@@ -51,14 +55,14 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
   local_24 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
+  iVar5 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
   this_00 = local_24;
-  if (iVar4 != 0) {
+  if (iVar5 != 0) {
     g_currentExceptionFrame = local_74.previous;
-    iVar17 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x2c9,0,iVar4,"%s"
+    iVar17 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x2c9,0,iVar5,"%s"
                                 ,"CPanelTy::PaintTV");
     if (iVar17 == 0) {
-      RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cpanel.cpp",0x2c9);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\cpanel.cpp",0x2c9);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -89,11 +93,11 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
         local_28 = STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar9)) & 0xffffff08;
         if ((bVar9 & 8) < 0xb) {
           uVar12 = bVar9 & 8;
-          puVar7 = this_00->field_0148[uVar12];
+          puVar2 = this_00->field_0148[uVar12];
 joined_r0x004f81d1:
-          if (-1 < (int)puVar7) {
+          if (-1 < (int)puVar2) {
             Library::DKW::DDX::FUN_006b3640
-                      ((int *)g_ddxContext_008075A8,(uint)puVar7,0xffffffff,
+                      ((int *)g_ddxContext_008075A8,(uint)puVar2,0xffffffff,
                        (&this_00->field_003C)[uVar12],(&this_00->field_0094)[uVar12]);
           }
         }
@@ -103,24 +107,25 @@ joined_r0x004f81d1:
     case 3:
       if (0x31 < (uint)(this_00->field_0038 -
                        *(int *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a))) {
-        pcVar6 = (char *)((int)this_00->field_0308 + (uVar12 - 0x1e));
+        pcVar7 = (char *)((int)this_00->field_0308 + (uVar12 - 0x1e));
         *(undefined4 *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a) = this_00->field_0038;
-        if (*pcVar6 == '\0') {
-          puVar5 = &this_00->field_0B63;
+        if (*pcVar7 == '\0') {
+          puVar6 = &this_00->field_0B63;
           if (bVar9 != 0) {
-            puVar5 = &this_00->field_0C51;
+            puVar6 = &this_00->field_0C51;
           }
           puVar18 = nullptr;
           iVar17 = 0;
-          iVar4 = 1;
+          iVar5 = 1;
           bVar9 = 0;
           uVar15 = 6;
-          text = thunk_FUN_00526100(puVar5,0);
-          puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
-                             (PTR_00806794,CASE_1F,text,uVar15,bVar9,iVar4,iVar17,puVar18);
-          *(ushort **)((int)this_00->field_0308 + uVar12 * 4 + -0x26) = puVar7;
+          text = thunk_FUN_00526100(puVar6,0);
+          local_EAX_411 =
+               Library::Ourlib::MFRLOAD::mfRLoad
+                         (PTR_00806794,CASE_1F,text,uVar15,bVar9,iVar5,iVar17,puVar18);
+          *(ushort **)((int)this_00->field_0308 + uVar12 * 4 + -0x26) = local_EAX_411;
           *local_10 = 1;
-          *pcVar6 = '\0';
+          *pcVar7 = '\0';
           if (this_00->field_023F == CASE_5) {
             if ((char)local_c == '\0') {
               cVar10 = this_00->field_02ED;
@@ -135,7 +140,7 @@ joined_r0x004f81d1:
           }
         }
         else {
-          *pcVar6 = *pcVar6 + -1;
+          *pcVar7 = *pcVar7 + -1;
         }
         thunk_FUN_004f1890(this_00,(byte)local_c);
         bVar9 = -((char)local_c != '\0');
@@ -187,7 +192,7 @@ joined_r0x004f81d1:
         local_20 = (undefined1 *)(STReplaceLowByte((uint32_t)(local_20), (uint8_t)(bVar9)) & 0xffffff08);
         if ((bVar9 & 8) < 0xb) {
           uVar12 = bVar9 & 8;
-          puVar7 = this_00->field_0148[uVar12];
+          puVar2 = this_00->field_0148[uVar12];
           goto joined_r0x004f81d1;
         }
       }
@@ -216,7 +221,7 @@ joined_r0x004f81d1:
         local_14 = (undefined1 *)(STReplaceLowByte((uint32_t)(local_14), (uint8_t)(bVar9)) & 0xffffff08);
         if ((bVar9 & 8) < 0xb) {
           uVar12 = bVar9 & 8;
-          puVar7 = this_00->field_0148[uVar12];
+          puVar2 = this_00->field_0148[uVar12];
           goto joined_r0x004f81d1;
         }
       }
@@ -256,7 +261,7 @@ joined_r0x004f81d1:
             local_30 = STReplaceLowByte((uint32_t)(local_30), (uint8_t)(bVar9));
             if (bVar9 < 0xb) {
               uVar12 = (uint)bVar9;
-              puVar7 = this_00->field_0148[uVar12];
+              puVar2 = this_00->field_0148[uVar12];
               goto joined_r0x004f861b;
             }
           }
@@ -267,13 +272,14 @@ joined_r0x004f81d1:
             if (*pbVar13 == 0) {
               puVar18 = nullptr;
               iVar17 = 0;
-              iVar4 = 1;
+              iVar5 = 1;
               bVar9 = 0;
               uVar12 = 6;
-              pcVar6 = (char *)thunk_FUN_004f1d20(local_14);
-              puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
-                                 (PTR_00806794,CASE_1F,pcVar6,uVar12,bVar9,iVar4,iVar17,puVar18);
-              piVar11[-0x12] = (int)puVar7;
+              pcVar7 = (char *)thunk_FUN_004f1d20(local_14);
+              local_EAX_1224 =
+                   Library::Ourlib::MFRLOAD::mfRLoad
+                             (PTR_00806794,CASE_1F,pcVar7,uVar12,bVar9,iVar5,iVar17,puVar18);
+              piVar11[-0x12] = (int)local_EAX_1224;
               pbVar13[0xc] = 1;
               *pbVar13 = 0;
             }
@@ -285,7 +291,7 @@ joined_r0x004f81d1:
             local_2c = STReplaceLowByte((uint32_t)(local_2c), (uint8_t)(bVar9));
             if (bVar9 < 0xb) {
               uVar12 = (uint)bVar9;
-              puVar7 = this_00->field_0148[uVar12];
+              puVar2 = this_00->field_0148[uVar12];
               goto joined_r0x004f861b;
             }
           }
@@ -293,9 +299,9 @@ joined_r0x004f81d1:
         else if ((bVar9 == 4) && (0x31 < (uint)(this_00->field_0038 - *piVar11))) {
           *piVar11 = this_00->field_0038;
           bVar9 = *pbVar13;
-          bVar3 = bVar9 + 1;
-          *pbVar13 = bVar3;
-          if (*(short *)piVar11[-0x12] <= (short)(ushort)bVar3) {
+          bVar4 = bVar9 + 1;
+          *pbVar13 = bVar4;
+          if (*(short *)piVar11[-0x12] <= (short)(ushort)bVar4) {
             *pbVar13 = bVar9;
             pbVar13[0xc] = 2;
           }
@@ -304,11 +310,11 @@ joined_r0x004f81d1:
           local_28 = STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar9));
           if (bVar9 < 0xb) {
             uVar12 = (uint)bVar9;
-            puVar7 = this_00->field_0148[uVar12];
+            puVar2 = this_00->field_0148[uVar12];
 joined_r0x004f861b:
-            if (-1 < (int)puVar7) {
+            if (-1 < (int)puVar2) {
               Library::DKW::DDX::FUN_006b3640
-                        ((int *)g_ddxContext_008075A8,(uint)puVar7,0xffffffff,
+                        ((int *)g_ddxContext_008075A8,(uint)puVar2,0xffffffff,
                          (&this_00->field_003C)[uVar12],(&this_00->field_0094)[uVar12]);
             }
           }
@@ -326,8 +332,8 @@ joined_r0x004f861b:
       local_10 = (undefined1 *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar9));
     } while (bVar9 < local_5);
   }
-  iVar4 = FUN_006b33f0(g_ddxContext_008075A8,this_00->field_017C);
-  if (iVar4 == 0) {
+  iVar5 = FUN_006b33f0(g_ddxContext_008075A8,this_00->field_017C);
+  if (iVar5 == 0) {
     g_currentExceptionFrame = local_74.previous;
     return;
   }
@@ -350,10 +356,10 @@ joined_r0x004f861b:
           FUN_0070b600((int *)&this_00->field_025B);
         }
         psVar8 = (short *)0x1;
-        bVar3 = 0;
+        bVar4 = 0;
         bVar9 = 6;
-        pcVar6 = (char *)thunk_FUN_005260b0(0,0,0);
-        psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(g_cMf32_00806790,pcVar6,bVar9,bVar3,psVar8);
+        pcVar7 = (char *)thunk_FUN_005260b0(0,0,0);
+        psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(g_cMf32_00806790,pcVar7,bVar9,bVar4,psVar8);
         this_00->field_025B = psVar8;
         this_00->field_0260 = CASE_1;
         this_00->field_025F = 0;
@@ -405,10 +411,10 @@ LAB_004f8860:
     }
     if (*ppsVar1 == nullptr) {
       psVar8 = (short *)0x1;
-      bVar3 = 0;
+      bVar4 = 0;
       bVar9 = 6;
-      pcVar6 = (char *)thunk_FUN_005260b0(0,0,0);
-      psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(g_cMf32_00806790,pcVar6,bVar9,bVar3,psVar8);
+      pcVar7 = (char *)thunk_FUN_005260b0(0,0,0);
+      psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(g_cMf32_00806790,pcVar7,bVar9,bVar4,psVar8);
       *ppsVar1 = psVar8;
     }
     this_00->field_0260 = CASE_1;
@@ -418,15 +424,15 @@ LAB_004f88e6:
   sub_004F1950(this_00);
 cf_common_join_004F88ED:
   if (((this_00->field_01D8 != nullptr) && ((g_playSystem_00802A38->field_00E4 & 1) != 0)) &&
-     (iVar4 = *(int *)&this_00->field_01D8->field_0x4, iVar4 < this_00->field_01DC + -2)) {
+     (iVar5 = *(int *)&this_00->field_01D8->field_0x4, iVar5 < this_00->field_01DC + -2)) {
     FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_01B4,0,100,5,0x226,0x55,0);
-    uVar12 = FUN_007140e0(this_00->field_01D8,1,'\0');
-    if (uVar12 != 0) {
-      FUN_006b5440((ushort *)this_00->field_01B4,0,100,5,uVar12,0,0xff);
+    tOBJImage = (tagBITMAPINFO *)FUN_007140e0(this_00->field_01D8,1,'\0');
+    if (tOBJImage != nullptr) {
+      FUN_006b5440((ushort *)this_00->field_01B4,0,100,5,tOBJImage,0,0xff);
     }
     FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_017C);
     if (this_00->field_01E0 != '\0') {
-      uVar12 = iVar4 + 1U & 0x80000001;
+      uVar12 = iVar5 + 1U & 0x80000001;
       bVar14 = uVar12 == 0;
       if ((int)uVar12 < 0) {
         bVar14 = (uVar12 - 1 | 0xfffffffe) == 0xffffffff;

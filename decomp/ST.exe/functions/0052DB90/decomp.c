@@ -11,12 +11,13 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
   ushort *puVar1;
   PopUpTy *pPVar3;
   int iVar4;
-  DArrayTy *pDVar5;
-  undefined4 *puVar6;
-  int iVar7;
-  uint uVar8;
-  uint uVar9;
-  uint *puVar10;
+  DArrayTy *pDVar4;
+  undefined4 *puVar5;
+  int iVar9;
+  uint uVar6;
+  uint uVar7;
+  uint *puVar8;
+  int iVar10;
   InternalExceptionFrame local_4c;
   PopUpTy *local_8;
 
@@ -30,41 +31,41 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
       if ((DArrayTy *)local_8->field_0098 != nullptr) {
         FUN_006b5570((DArrayTy *)local_8->field_0098);
       }
-      pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
-      pPVar3->field_0098 = &pDVar5->flags;
+      pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+      pPVar3->field_0098 = &pDVar4->flags;
       puVar1 = pPVar3->field_0090;
-      uVar9 = *(uint *)(puVar1 + 10);
-      if (uVar9 == 0) {
-        uVar9 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+      uVar7 = *(uint *)(puVar1 + 10);
+      if (uVar7 == 0) {
+        uVar7 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                 *(int *)(puVar1 + 4);
       }
-      puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
-      for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *puVar6 = 0x89898989;
-        puVar6 = puVar6 + 1;
+      puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
+      for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
+        *puVar5 = 0x89898989;
+        puVar5 = puVar5 + 1;
       }
-      puVar10 = pPVar3->field_0018;
-      for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined1 *)puVar6 = 0x89;
-        puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar8 = pPVar3->field_0018;
+      for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+        *(undefined1 *)puVar5 = 0x89;
+        puVar5 = (undefined4 *)((int)puVar5 + 1);
       }
-      iVar4 = 0xf;
+      iVar10 = 0xf;
       do {
-        puVar10[0xf] = 0;
-        FUN_006b2800(g_ddxContext_008075A8,*puVar10,0,0x13);
-        FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar10);
-        puVar10 = puVar10 + 1;
-        iVar4 = iVar4 + -1;
-      } while (iVar4 != 0);
+        puVar8[0xf] = 0;
+        FUN_006b2800(g_ddxContext_008075A8,*puVar8,0,0x13);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar8);
+        puVar8 = puVar8 + 1;
+        iVar10 = iVar10 + -1;
+      } while (iVar10 != 0);
       pPVar3->field_009C = 0;
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0xa8,0,iVar4,"%s",
+  iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0xa8,0,iVar4,"%s",
                              "PopUpTy::Clear");
-  if (iVar7 != 0) {
+  if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\mpopup.cpp",0xa8);

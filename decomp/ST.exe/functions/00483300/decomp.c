@@ -32,9 +32,9 @@ int __fastcall FUN_00483300(int *param_1,undefined4 param_2)
   undefined4 local_1c;
   int local_18;
   int local_14;
-  undefined4 local_10;
+  uint local_10;
   int *local_c;
-  int local_8;
+  undefined4 local_8;
 
   if (STField<int>(param_1,0x7e2) == 0) {
     if (STField<int>(param_1,0x7a2) != 0) goto LAB_00483342;
@@ -45,7 +45,7 @@ LAB_00483342:
                      (g_allPlayers_007FA174,STField<char>(param_1,0x487),
                       STField<ushort>(param_1,0x48b),
                       STField<STAllPlayersC_GetObjPtr_param_3Enum>(param_1,0x483));
-    thunk_FUN_00416270(this,(undefined2 *)&local_10,&local_14,&local_8);
+    thunk_FUN_00416270(this,&local_10,&local_14,(short *)&local_8);
     iVar2 = FUN_006acf0d((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
                          (int)STField<short>(param_1,0x45),(int)(short)local_10,
                          (int)(short)local_14,(int)(short)local_8);
@@ -89,20 +89,20 @@ LAB_00483342:
         sVar8 = (short)local_10 + local_28;
         sVar9 = (short)local_14 - sStack_26;
         if (STField<int>(param_1,0x736) == 0) {
-          iVar2 = STSprGameObjC::CheckRay
+          iVar3 = STSprGameObjC::CheckRay
                             ((STSprGameObjC *)param_1,sVar7,sVar1,(short)local_1c,sVar8,sVar9,
                              (short)local_8,
                              STField<STSprGameObjC_CheckRay_param_7Enum>(param_1,0x79a),
                              nullptr,0);
         }
         else {
-          iVar2 = STSprGameObjC::CheckRay
+          iVar3 = STSprGameObjC::CheckRay
                             ((STSprGameObjC *)param_1,sVar7,sVar1,(short)local_1c,sVar8,sVar9,
                              (short)local_8,
                              STField<STSprGameObjC_CheckRay_param_7Enum>(param_1,0x79a),
                              nullptr,1);
         }
-        if (iVar2 == 0) {
+        if (iVar3 == 0) {
           return 8;
         }
         local_20 = local_20 + 1;

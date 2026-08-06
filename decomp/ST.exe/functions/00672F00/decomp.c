@@ -92,7 +92,7 @@ int FUN_00672f00(void)
   if (DAT_00811958 == nullptr) {
     FreeAndNull(&DAT_00857528);
     FreeAndNull(&DAT_00811948);
-    FreeAndNull((void **)&DAT_0085755c);
+    FreeAndNull(&DAT_0085755c);
     FreeAndNull(&DAT_0085753c);
     for (puVar2 = DAT_00811908; puVar2 != nullptr; puVar2 = (undefined4 *)*puVar2) {
       FUN_006a5e90((short *)puVar2[1]);

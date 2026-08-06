@@ -16,6 +16,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
   LPSTR pCVar6;
   int iVar7;
   int iVar8;
+  int iVar9;
   InternalExceptionFrame local_58;
   ProdPanelTy *local_14;
   int local_10;
@@ -37,24 +38,24 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
     local_14 = this;
     piVar4 = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (piVar4 == nullptr) {
-      iVar8 = 1;
+      iVar9 = 1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar5 = (*(code *)param_2)(param_1);
-      iVar7 = 2;
+      iVar8 = 2;
       pCVar6 = thunk_FUN_00571240("BUT_MFTABS",0);
-      pCVar6 = FUN_006f2c00(pCVar6,iVar7,uVar5);
-      local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar6,piVar4,iVar8);
-      iVar7 = local_c;
+      pCVar6 = FUN_006f2c00(pCVar6,iVar8,uVar5);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar6,piVar4,iVar9);
+      iVar8 = local_c;
       pPVar3 = local_14;
       DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,'\x01',
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_1->field_0014->field_0004 == 3) {
-        iVar8 = 1;
+        iVar9 = 1;
         piVar4 = nullptr;
         pCVar6 = thunk_FUN_00571240("BUT_MFFRAMES",0);
-        local_8 = cMf32::RecGet(g_cMf32_00806790,6,pCVar6,piVar4,iVar8);
-        DibPut((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_10,iVar7,'\x06',
+        local_8 = cMf32::RecGet(g_cMf32_00806790,6,pCVar6,piVar4,iVar9);
+        DibPut((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_10,iVar8,'\x06',
                (byte *)local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       }

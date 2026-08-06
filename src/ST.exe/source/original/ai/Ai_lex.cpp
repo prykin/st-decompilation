@@ -17,9 +17,12 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   char cVar1;
   int *piVar2;
   int exceptionCode;
-  char *pcVar3;
+  char *pcVar3_mg0;
+  char *pcVar3_mg1;
+  char *pcVar3_mg2;
+  uint uVar3;
   uint uVar4;
-  uint uVar5;
+  char *pcVar5;
   short *psVar6;
   InternalExceptionFrame local_60;
   int *local_1c;
@@ -28,6 +31,7 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   short *local_10;
   short *local_c;
   short *local_8;
+  char *pcVar3_mg3;
 
   local_c = nullptr;
   local_10 = nullptr;
@@ -83,12 +87,12 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   piVar2 = local_1c;
   local_1c[1] = DAT_00857560;
   local_1c[2] = (int)PTR_0081194c;
-  pcVar3 = st::fn_006C49B0((char *)DAT_00857528);
-  piVar2[6] = (int)pcVar3;
-  pcVar3 = st::fn_006C49B0((char *)DAT_00811948);
-  piVar2[0xb] = (int)pcVar3;
-  pcVar3 = st::fn_006C49B0(DAT_0085753c);
-  piVar2[7] = (int)pcVar3;
+  pcVar3_mg0 = st::fn_006C49B0((char *)DAT_00857528);
+  piVar2[6] = (int)pcVar3_mg0;
+  pcVar3_mg1 = st::fn_006C49B0((char *)DAT_00811948);
+  piVar2[0xb] = (int)pcVar3_mg1;
+  pcVar3_mg2 = st::fn_006C49B0(DAT_0085753c);
+  piVar2[7] = (int)pcVar3_mg2;
   PTR_0081194c = param_2;
   local_18 = 0;
   if (param_1 != nullptr) {
@@ -99,26 +103,26 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
                 (-10,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\Ai_lex.c",0xe7);
     }
     else {
-      uVar4 = 0xffffffff;
+      uVar3 = 0xffffffff;
       do {
-        pcVar3 = param_1;
-        if (uVar4 == 0) break;
-        uVar4 = uVar4 - 1;
-        pcVar3 = param_1 + 1;
+        pcVar3_mg3 = param_1;
+        if (uVar3 == 0) break;
+        uVar3 = uVar3 - 1;
+        pcVar3_mg3 = param_1 + 1;
         cVar1 = *param_1;
-        param_1 = pcVar3;
+        param_1 = pcVar3_mg3;
       } while (cVar1 != '\0');
-      uVar4 = ~uVar4;
-      pcVar3 = pcVar3 + -uVar4;
+      uVar3 = ~uVar3;
+      pcVar5 = pcVar3_mg3 + -uVar3;
       psVar6 = local_8;
-      for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(undefined4 *)psVar6 = *(undefined4 *)pcVar3;
-        pcVar3 = pcVar3 + 4;
+      for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+        *(undefined4 *)psVar6 = *(undefined4 *)pcVar5;
+        pcVar5 = pcVar5 + 4;
         psVar6 = (short *)((int)psVar6 + 4);
       }
-      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(char *)psVar6 = *pcVar3;
-        pcVar3 = pcVar3 + 1;
+      for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
+        *(char *)psVar6 = *pcVar5;
+        pcVar5 = pcVar5 + 1;
         psVar6 = (short *)((int)psVar6 + 1);
       }
     }

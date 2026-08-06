@@ -8,9 +8,11 @@
 void __thiscall FSGSTy::DoLogon(FSGSTy *this)
 
 {
-  StartSystemTy *pSVar1;
+  int iVar1;
+  int iVar2;
+  StartSystemTy *pSVar3;
   CursorClassTy *this_00;
-  FSGSTy *pFVar3;
+  FSGSTy *pFVar5;
   int iVar4;
   int iVar5;
   InternalExceptionFrame local_5c;
@@ -27,25 +29,25 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
   this_00 = g_cursorClass_00802A30;
   if (iVar4 == 0) {
     if (g_cursorClass_00802A30 != nullptr) {
-      iVar4 = g_cursorClass_00802A30->field_00C9;
-      iVar5 = g_cursorClass_00802A30->field_00C5;
+      iVar1 = g_cursorClass_00802A30->field_00C9;
+      iVar2 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       this_00->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(this_00,CASE_0,iVar5,iVar4);
+      CursorClassTy::SetGCType(this_00,CASE_0,iVar2,iVar1);
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
       this_00->field_00D2 = 0;
       this_00->field_04DF = -1;
     }
-    pFVar3 = local_8;
+    pFVar5 = local_8;
     local_8->CloseButtons();
-    pFVar3->field_1A61 = 2;
-    pSVar1 = pFVar3->field_1A5B;
-    if (pSVar1->field_02E6 != nullptr) {
+    pFVar5->field_1A61 = 2;
+    pSVar3 = pFVar5->field_1A5B;
+    if (pSVar3->field_02E6 != nullptr) {
       local_18 = 0;
       local_14 = 0;
       local_10 = 0;
       local_c = 0;
-      MMsgTy::thunk_FUN_005b8f40(pSVar1->field_02E6,&local_18);
+      MMsgTy::thunk_FUN_005b8f40(pSVar3->field_02E6,&local_18);
     }
     g_currentExceptionFrame = local_5c.previous;
     return;

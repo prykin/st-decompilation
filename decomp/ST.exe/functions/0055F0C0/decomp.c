@@ -29,6 +29,7 @@ int * FUN_0055f0c0(int *param_1,uint param_2,uint param_3,int param_4,uint param
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
+  int *piVar4_mg0;
 
   puStack_c = &DAT_0079afc0;
   puStack_10 = &LAB_0072d964;
@@ -58,17 +59,17 @@ int * FUN_0055f0c0(int *param_1,uint param_2,uint param_3,int param_4,uint param
   local_60 = param_4;
   if (0 < param_4) {
     do {
-      piVar4 = param_1;
-      piVar7 = local_24;
+      piVar4_mg0 = param_1;
+      piVar4 = local_24;
       for (uVar2 = param_2 & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {
-        *piVar7 = *piVar4;
+        *piVar4 = *piVar4_mg0;
+        piVar4_mg0 = piVar4_mg0 + 1;
         piVar4 = piVar4 + 1;
-        piVar7 = piVar7 + 1;
       }
       for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *(char *)piVar7 = (char)*piVar4;
+        *(char *)piVar4 = (char)*piVar4_mg0;
+        piVar4_mg0 = (int *)((int)piVar4_mg0 + 1);
         piVar4 = (int *)((int)piVar4 + 1);
-        piVar7 = (int *)((int)piVar7 + 1);
       }
       local_50 = 0;
       if (0 < (int)param_3) {

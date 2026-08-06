@@ -17,12 +17,14 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
   BehPanelTy *this_00;
   char cVar3;
   int iVar4;
-  char *pcVar5;
-  LPSTR pCVar6;
-  byte bVar8;
-  code *pcVar9;
+  char *pcVar4;
+  LPSTR pCVar5;
   int iVar10;
+  byte bVar7;
+  int iVar8;
+  code *pcVar9;
   int iVar11;
+  int iVar12;
   InternalExceptionFrame local_70;
   uint local_2c [7];
   uint local_f;
@@ -49,14 +51,14 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
   if (SVar1 < 0xb20f) {
     if (SVar1 == 0xb20e) {
       pBVar1 = this_00->vtable;
-      iVar11 = 1;
-      iVar10 = 0;
+      iVar12 = 1;
+      iVar11 = 0;
       pcVar9 = thunk_FUN_0052a320;
-      iVar4 = 0;
-      pcVar5 = thunk_FUN_00529590((&this_00->field_0x1af)[(message->arg0).words.high],
+      iVar8 = 0;
+      pcVar4 = thunk_FUN_00529590((&this_00->field_0x1af)[(message->arg0).words.high],
                                   this_00->field_01AB);
-      pCVar6 = thunk_FUN_00571240(pcVar5,iVar4);
-      (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar6,pcVar9,iVar10,iVar11);
+      pCVar5 = thunk_FUN_00571240(pcVar4,iVar8);
+      (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar5,pcVar9,iVar11,iVar12);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -66,14 +68,14 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
         return 0;
       }
       pBVar1 = this_00->vtable;
-      iVar11 = 1;
-      iVar10 = 0;
+      iVar12 = 1;
+      iVar11 = 0;
       pcVar9 = thunk_FUN_0052a320;
-      iVar4 = 0;
-      pcVar5 = thunk_FUN_00529590((&this_00->field_0x1af)[(message->arg0).words.high],
+      iVar8 = 0;
+      pcVar4 = thunk_FUN_00529590((&this_00->field_0x1af)[(message->arg0).words.high],
                                   this_00->field_01AB);
-      pCVar6 = thunk_FUN_00571240(pcVar5,iVar4);
-      (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,1,pCVar6,pcVar9,iVar10,iVar11);
+      pCVar5 = thunk_FUN_00571240(pcVar4,iVar8);
+      (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,1,pCVar5,pcVar9,iVar11,iVar12);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -134,19 +136,19 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
   default:
     goto switchD_004ee68c_caseD_c0a2;
   case 0xc0af:
-    bVar8 = this_00->field_0x1bb == '\x03';
-    pcVar5 = "BUT_BLOCK";
+    bVar7 = this_00->field_0x1bb == '\x03';
+    pcVar4 = "BUT_BLOCK";
     break;
   case 0xc0b0:
-    bVar8 = this_00->field_0x1bc == '\x03';
-    pcVar5 = "BUT_BHOLD";
+    bVar7 = this_00->field_0x1bc == '\x03';
+    pcVar4 = "BUT_BHOLD";
     break;
   case 0xc0b1:
-    bVar8 = this_00->field_01BD == '\x03';
-    pcVar5 = "BUT_BAGR";
+    bVar7 = this_00->field_01BD == '\x03';
+    pcVar4 = "BUT_BAGR";
   }
-  pCVar6 = thunk_FUN_00571240(pcVar5,0);
-  PaintBBut(this_00,(AnonShape_004EE350_18D491EA *)message,pCVar6,bVar8);
+  pCVar5 = thunk_FUN_00571240(pcVar4,0);
+  PaintBBut(this_00,(AnonShape_004EE350_18D491EA *)message,pCVar5,bVar7);
 switchD_004ee68c_caseD_c0a2:
   g_currentExceptionFrame = local_70.previous;
   return 0;

@@ -16,23 +16,26 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
   int iVar1;
   undefined2 uVar3;
   STGroupBoatC *this_00;
+  int iVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   DArrayTy *pDVar4;
+  int local_EAX_1627;
   uint uVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   undefined4 *puVar6;
-  int iVar7;
   int iVar8;
+  int iVar11;
   undefined4 uVar9;
   DArrayTy *pDVar10;
-  int iVar11;
-  uint uVar12;
-  short sVar13;
+  int iVar12;
+  uint uVar13;
   short sVar14;
   short sVar15;
-  short sVar16;
+  int iVar16;
+  short sVar17;
+  short sVar18;
   int local_70;
   short local_6c;
   int local_6a;
@@ -52,9 +55,9 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
   undefined4 *local_20;
   undefined4 local_1c;
   uint local_18;
-  undefined4 local_14;
+  uint local_14;
   int local_10;
-  int local_c;
+  undefined4 local_c;
   STGameObjC *local_8;
 
   local_34 = 0;
@@ -68,19 +71,19 @@ LAB_0048a37f:
     local_1c = 1;
   }
   else {
-    iVar11 = this->field_047F + 1;
-    this->field_047F = iVar11;
+    iVar12 = this->field_047F + 1;
+    this->field_047F = iVar12;
     if (this->field_048B == 0xffff) {
-      if (iVar11 % 0x14 != 0) goto LAB_0048a37f;
+      if (iVar12 % 0x14 != 0) goto LAB_0048a37f;
     }
     else {
       local_8 = STAllPlayersC::GetObjPtr
                           (g_allPlayers_007FA174,*(char *)&this->field_0487,(ushort)this->field_048B
                            ,this->field_0483);
       if ((((local_8 != nullptr) &&
-           (iVar11 = local_8->vfunc_F8(), iVar11 == 1)) &&
-          (iVar11 = local_8->vfunc_F0(), iVar11 == 1)) &&
-         ((iVar11 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar11 == 1 &&
+           (iVar12 = local_8->vfunc_F8(), iVar12 == 1)) &&
+          (iVar12 = local_8->vfunc_F0(), iVar12 == 1)) &&
+         ((iVar12 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar12 == 1 &&
           (this->field_047F % 0x28 != 0)))) {
         return 0;
       }
@@ -99,26 +102,27 @@ LAB_0048a37f:
                                   ,2,(uint)(this->field_0736 != 0));
       if (pDVar4 != nullptr) {
         this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
-        local_20 = thunk_FUN_0040c080(this_00,(uint)(ushort)this->field_0032,(uint *)pDVar4);
+        local_20 = thunk_FUN_0040c080(this_00,(uint)(ushort)this->field_0032,pDVar4);
         local_18 = 0;
         if (0 < (int)pDVar4->count) {
           do {
-            iVar11 = local_20[local_18];
-            if ((iVar11 != -4) && (iVar11 < 9)) {
-              iVar7 = (8 - iVar11) * 0x32;
+            iVar12 = local_20[local_18];
+            if ((iVar12 != -4) && (iVar12 < 9)) {
+              iVar16 = (8 - iVar12) * 0x32;
               DArrayGetElement(pDVar4,local_18,&local_8);
-              iVar11 = local_8->vfunc_F8();
-              if ((iVar11 != 0) &&
-                 ((iVar11 = local_8->vfunc_F0(), iVar11 != 0 &&
-                  (iVar11 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar11 != 0)))) {
-                iVar11 = local_8->vfunc_FC();
-                if (0 < iVar11) {
-                  iVar7 = iVar7 + 300;
+              iVar12 = local_8->vfunc_F8();
+              if ((iVar12 != 0) &&
+                 ((iVar12 = local_8->vfunc_F0(), iVar12 != 0 &&
+                  (iVar12 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar12 != 0)))) {
+                iVar12 = local_8->vfunc_FC();
+                if (0 < iVar12) {
+                  iVar16 = iVar16 + 300;
                 }
-                iVar11 = local_8->field_0219;
+                iVar12 = local_8->field_0219;
                 iVar1 = local_8->field_0215;
                 iVar8 = (*local_8->vtable->vfunc_7C)();
-                local_38 = iVar7 + ((int)(iVar11 + (iVar11 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2;
+                local_38 = iVar16 + ((int)(iVar12 + (iVar12 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2
+                ;
                 if ((((uint)(ushort)local_8->field_0032 == this->field_048B) &&
                     (local_8->field_0024 == this->field_0487)) &&
                    (((this->field_0483 == CASE_1 &&
@@ -127,14 +131,14 @@ LAB_0048a37f:
                     ((this->field_0483 == CASE_3 && (local_8->field_0020 == 0x1ae)))))) {
                   local_38 = local_38 + 200;
                 }
-                iVar11 = local_38;
-                thunk_FUN_00416270(local_8,(undefined2 *)&local_14,&local_10,&local_c);
+                iVar12 = local_38;
+                thunk_FUN_00416270(local_8,&local_14,&local_10,(short *)&local_c);
                 iVar7 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,
                                      (int)this->field_0045,(int)(short)local_14,(int)(short)local_10
                                      ,(int)(short)local_c);
                 if ((iVar7 == 0) ||
-                   (uVar5 = (int)(short)local_c - (int)this->field_0045, uVar12 = (int)uVar5 >> 0x1f
-                   , (int)(((uVar5 ^ uVar12) - uVar12) * 10) / iVar7 < 4)) {
+                   (uVar5 = (int)(short)local_c - (int)this->field_0045, uVar13 = (int)uVar5 >> 0x1f
+                   , (int)(((uVar5 ^ uVar13) - uVar13) * 10) / iVar7 < 4)) {
                   uVar3 = (*this->vtable->vfunc_10)
                                     (this->field_0041,this->field_0043,
                                      STReplaceLowWord((uint32_t)(local_10), (uint16_t)(this->field_0045)),
@@ -150,8 +154,8 @@ LAB_0048a37f:
                                                   local_30[1],(short)local_24);
                       local_40 = (short)*puVar6;
                       sStack_3e = (short)((uint)*puVar6 >> 0x10);
-                      sVar13 = this->field_0043 - sStack_3e;
-                      sVar14 = this->field_0041 + local_40;
+                      sVar14 = this->field_0043 - sStack_3e;
+                      sVar15 = this->field_0041 + local_40;
                       local_28 = STReplaceLowWord((uint32_t)(puVar6), (uint16_t)(this->field_0045 + *(short *)(puVar6 + 1)));
                       sStack_3e = *local_30;
                       local_40 = 0;
@@ -159,24 +163,24 @@ LAB_0048a37f:
                       local_40 = (short)*puVar6;
                       sStack_3e = (short)((uint)*puVar6 >> 0x10);
                       local_3c = *(undefined2 *)(puVar6 + 1);
-                      sVar15 = (short)local_14 + local_40;
-                      sVar16 = (short)local_10 - sStack_3e;
+                      sVar17 = (short)local_14 + local_40;
+                      sVar18 = (short)local_10 - sStack_3e;
                       if (this->field_0736 == 0) {
-                        iVar7 = STSprGameObjC::CheckRay
-                                          ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,
-                                           sVar15,sVar16,(short)local_c,this->field_079A,nullptr,
-                                           0);
-                        iVar11 = local_38;
+                        iVar16 = STSprGameObjC::CheckRay
+                                           ((STSprGameObjC *)this,sVar15,sVar14,(short)local_28,
+                                            sVar17,sVar18,(short)local_c,this->field_079A,nullptr
+                                            ,0);
+                        iVar12 = local_38;
                       }
                       else {
-                        iVar7 = STSprGameObjC::CheckRay
-                                          ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,
-                                           sVar15,sVar16,(short)local_c,this->field_079A,nullptr,
-                                           1);
-                        iVar11 = local_38;
+                        iVar16 = STSprGameObjC::CheckRay
+                                           ((STSprGameObjC *)this,sVar15,sVar14,(short)local_28,
+                                            sVar17,sVar18,(short)local_c,this->field_079A,nullptr
+                                            ,1);
+                        iVar12 = local_38;
                       }
-                      local_38 = iVar11;
-                      if (iVar7 == 0) {
+                      local_38 = iVar12;
+                      if (iVar16 == 0) {
                         if (this->field_07E6 != 0) goto LAB_00489eb0;
                         goto LAB_00489dfc;
                       }
@@ -184,7 +188,7 @@ LAB_0048a37f:
                       local_30 = local_30 + 3;
                     } while (local_2c < (int)(uint)(byte)this->field_02B2);
                   }
-                  iVar11 = iVar11 + 200;
+                  iVar12 = iVar12 + 200;
                 }
 LAB_00489dfc:
                 if (((local_8->field_0020 != 0x1ae) &&
@@ -193,7 +197,7 @@ LAB_00489dfc:
                   do {
                     DArrayGetElement(pDVar10,uVar5,&local_70);
                     if ((local_6c == local_8->field_0032) && (local_70 == local_8->field_0024)) {
-                      iVar11 = iVar11 + local_6a;
+                      iVar12 = iVar12 + local_6a;
                       break;
                     }
                     pDVar10 = this->field_047B;
@@ -202,14 +206,14 @@ LAB_00489dfc:
                 }
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if ((*(int *)((int)this->field_06CB + 0x2c) == 0x1c) &&
-                   (iVar7 = local_8->vfunc_120(), iVar7 == 1)) {
-                  iVar11 = iVar11 / 0x14;
+                   (iVar16 = local_8->vfunc_120(), iVar16 == 1)) {
+                  iVar12 = iVar12 / 0x14;
                 }
-                if (local_34 < iVar11) {
+                if (local_34 < iVar12) {
                   this->field_0487 = local_8->field_0024;
                   this->field_048B = (uint)(ushort)local_8->field_0032;
                   this->field_0483 = (-(uint)(local_8->field_0020 != 0x1ae) & 0xfffffffe) + CASE_3;
-                  local_34 = iVar11;
+                  local_34 = iVar12;
                 }
               }
             }
@@ -248,17 +252,17 @@ LAB_00489eb0:
         if (0 < (int)pDVar4->count) {
           do {
             DArrayGetElement(pDVar4,local_18,&local_8);
-            iVar11 = local_8->vfunc_F8();
-            if (((iVar11 != 0) && (iVar11 = local_8->vfunc_F0(), iVar11 != 0)) &&
-               (iVar11 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar11 != 0)) {
-              thunk_FUN_00416270(local_8,(undefined2 *)&local_14,&local_10,&local_c);
-              iVar11 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,
-                                    (int)this->field_0045,(int)(short)local_14,(int)(short)local_10,
-                                    (int)(short)local_c);
-              local_38 = iVar11;
-              if ((iVar11 == 0) ||
-                 (uVar5 = (int)(short)local_c - (int)this->field_0045, uVar12 = (int)uVar5 >> 0x1f,
-                 (int)(((uVar5 ^ uVar12) - uVar12) * 10) / iVar11 < 4)) {
+            iVar12 = local_8->vfunc_F8();
+            if (((iVar12 != 0) && (iVar12 = local_8->vfunc_F0(), iVar12 != 0)) &&
+               (iVar12 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar12 != 0)) {
+              thunk_FUN_00416270(local_8,&local_14,&local_10,(short *)&local_c);
+              local_EAX_1627 =
+                   FUN_006acf0d((int)this->field_0041,(int)this->field_0043,(int)this->field_0045,
+                                (int)(short)local_14,(int)(short)local_10,(int)(short)local_c);
+              local_38 = local_EAX_1627;
+              if ((local_EAX_1627 == 0) ||
+                 (uVar5 = (int)(short)local_c - (int)this->field_0045, uVar13 = (int)uVar5 >> 0x1f,
+                 (int)(((uVar5 ^ uVar13) - uVar13) * 10) / local_EAX_1627 < 4)) {
                 uVar3 = (*this->vtable->vfunc_10)
                                   (this->field_0041,this->field_0043,
                                    STReplaceLowWord((uint32_t)(local_10), (uint16_t)(this->field_0045)),
@@ -274,8 +278,8 @@ LAB_00489eb0:
                                                 local_30[1],(short)local_24);
                     local_40 = (short)*puVar6;
                     sStack_3e = (short)((uint)*puVar6 >> 0x10);
-                    sVar13 = this->field_0043 - sStack_3e;
-                    sVar14 = this->field_0041 + local_40;
+                    sVar14 = this->field_0043 - sStack_3e;
+                    sVar15 = this->field_0041 + local_40;
                     local_28 = STReplaceLowWord((uint32_t)(puVar6), (uint16_t)(this->field_0045 + *(short *)(puVar6 + 1)));
                     sStack_3e = *local_30;
                     local_40 = 0;
@@ -283,42 +287,42 @@ LAB_00489eb0:
                     local_40 = (short)*puVar6;
                     sStack_3e = (short)((uint)*puVar6 >> 0x10);
                     local_3c = *(undefined2 *)(puVar6 + 1);
-                    sVar15 = (short)local_14 + local_40;
-                    sVar16 = (short)local_10 - sStack_3e;
+                    sVar17 = (short)local_14 + local_40;
+                    sVar18 = (short)local_10 - sStack_3e;
                     if (this->field_0736 == 0) {
-                      iVar7 = STSprGameObjC::CheckRay
-                                        ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,sVar15,
-                                         sVar16,(short)local_c,this->field_079A,nullptr,0);
-                      iVar11 = local_38;
+                      iVar12 = STSprGameObjC::CheckRay
+                                         ((STSprGameObjC *)this,sVar15,sVar14,(short)local_28,sVar17
+                                          ,sVar18,(short)local_c,this->field_079A,nullptr,0);
+                      local_EAX_1627 = local_38;
                     }
                     else {
-                      iVar7 = STSprGameObjC::CheckRay
-                                        ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,sVar15,
-                                         sVar16,(short)local_c,this->field_079A,nullptr,1);
-                      iVar11 = local_38;
+                      iVar12 = STSprGameObjC::CheckRay
+                                         ((STSprGameObjC *)this,sVar15,sVar14,(short)local_28,sVar17
+                                          ,sVar18,(short)local_c,this->field_079A,nullptr,1);
+                      local_EAX_1627 = local_38;
                     }
-                    local_38 = iVar11;
-                    if (iVar7 == 0) goto LAB_0048a2dd;
+                    local_38 = local_EAX_1627;
+                    if (iVar12 == 0) goto LAB_0048a2dd;
                     local_2c = local_2c + 1;
                     local_30 = local_30 + 3;
                   } while (local_2c < (int)(uint)(byte)this->field_02B2);
                 }
-                iVar7 = ((int)this->field_0816 - iVar11 / 0xc9) * 0x32;
-                iVar11 = local_8->vfunc_FC();
-                if (0 < iVar11) {
-                  iVar7 = iVar7 + 300;
+                iVar16 = ((int)this->field_0816 - local_EAX_1627 / 0xc9) * 0x32;
+                iVar12 = local_8->vfunc_FC();
+                if (0 < iVar12) {
+                  iVar16 = iVar16 + 300;
                 }
-                iVar11 = local_8->field_0219;
+                iVar12 = local_8->field_0219;
                 iVar1 = local_8->field_0215;
                 iVar8 = (*local_8->vtable->vfunc_7C)();
-                iVar11 = iVar7 + ((int)(iVar11 + (iVar11 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2;
+                iVar12 = iVar16 + ((int)(iVar12 + (iVar12 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2;
                 if (((uint)(ushort)local_8->field_0032 == this->field_048B) &&
                    (local_8->field_0024 == this->field_0487)) {
                   if ((this->field_0483 == CASE_1) &&
                      (((uVar5 = local_8->field_0020, uVar5 == 0x14 || (uVar5 == 1000)) ||
                       (uVar5 == 0x3e9)))) {
 LAB_0048a226:
-                    iVar11 = iVar11 + 200;
+                    iVar12 = iVar12 + 200;
                     goto LAB_0048a22c;
                   }
                   if (this->field_0483 != CASE_3) goto LAB_0048a22c;
@@ -329,7 +333,7 @@ LAB_0048a235:
                     do {
                       DArrayGetElement(pDVar10,uVar5,&local_70);
                       if ((local_6c == local_8->field_0032) && (local_70 == local_8->field_0024)) {
-                        iVar11 = iVar11 + local_6a;
+                        iVar12 = iVar12 + local_6a;
                         break;
                       }
                       pDVar10 = this->field_047B;
@@ -343,14 +347,14 @@ LAB_0048a22c:
                 }
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if ((*(int *)((int)this->field_06CB + 0x2c) == 0x1c) &&
-                   (iVar7 = local_8->vfunc_120(), iVar7 == 1)) {
-                  iVar11 = iVar11 / 0x14;
+                   (iVar16 = local_8->vfunc_120(), iVar16 == 1)) {
+                  iVar12 = iVar12 / 0x14;
                 }
-                if (local_34 < iVar11) {
+                if (local_34 < iVar12) {
                   this->field_0487 = local_8->field_0024;
                   this->field_048B = (uint)(ushort)local_8->field_0032;
                   this->field_0483 = (-(uint)(local_8->field_0020 != 0x1ae) & 0xfffffffe) + CASE_3;
-                  local_34 = iVar11;
+                  local_34 = iVar12;
                 }
               }
             }

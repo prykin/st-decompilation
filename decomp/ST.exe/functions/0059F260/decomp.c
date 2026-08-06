@@ -9,14 +9,17 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
 
 {
   FSGSTy *this_00;
+  int iVar6;
   DArrayTy *pDVar2;
   uint uVar3;
-  undefined4 uVar4;
-  LPBITMAPINFO ptVar5;
-  int iVar6;
+  int local_EAX_198;
+  LPBITMAPINFO ptVar4;
+  undefined4 uVar5;
   int iVar7;
-  ccFntTy **ppcVar8;
-  ushort *puVar9;
+  int iVar8;
+  int iVar9;
+  ccFntTy **ppcVar10;
+  ushort *puVar11;
   ccFntTy *local_8e0 [8];
   DArrayTy *local_8c0;
   undefined4 local_894;
@@ -30,11 +33,11 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   int local_c;
   undefined4 *local_8;
 
-  ppcVar8 = local_8e0;
+  ppcVar10 = local_8e0;
   local_10 = this;
-  for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *ppcVar8 = nullptr;
-    ppcVar8 = ppcVar8 + 1;
+  for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
+    *ppcVar10 = nullptr;
+    ppcVar10 = ppcVar10 + 1;
   }
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -46,47 +49,48 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     }
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AE8 = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_008016a0);
     if (this_00->field_1E8E != 0) {
-      FreeAndNull((void **)&this_00->field_1E8E);
+      FreeAndNull(&this_00->field_1E8E);
     }
     if (this_00->field_1E92 != nullptr) {
       FreeAndNull(&this_00->field_1E92);
     }
-    iVar6 = 1;
-    puVar9 = this_00->field_005D + 0x14;
+    iVar8 = 1;
+    puVar11 = this_00->field_005D + 0x14;
     uVar3 = FUN_006b4fe0((int)this_00->field_005D);
-    uVar4 = FUN_006b50c0(0x2e1,0x175,(uint)this_00->field_005D[7],uVar3,(undefined4 *)puVar9,iVar6);
-    this_00->field_1E8E = uVar4;
-    ptVar5 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x22,0x5e,0x2e1,0x175,8);
-    this_00->field_1E92 = ptVar5;
-    uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2c,0x90,0x96,0x19,0x6906,0x698e);
-    this_00->field_1EB6 = uVar4;
-    uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,199,0x90,0x96,0x19,0x6907,0x698f);
-    this_00->field_1EBA = uVar4;
-    uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,0,0x16c,0x90,0x19,0x19,0x6908,0x6990);
-    this_00->field_1ED3 = uVar4;
-    uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,499,0x90,0x19,0x19,0x6909,0x6991);
-    this_00->field_1ED7 = uVar4;
-    uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2b6,0x90,0x41,0x19,0x690a,0x6992);
-    this_00->field_1B24 = uVar4;
-    iVar7 = 0x6913;
-    iVar6 = 0xdb;
+    local_EAX_198 =
+         FUN_006b50c0(0x2e1,0x175,(uint)this_00->field_005D[7],uVar3,(undefined4 *)puVar11,iVar8);
+    this_00->field_1E8E = local_EAX_198;
+    ptVar4 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x22,0x5e,0x2e1,0x175,8);
+    this_00->field_1E92 = ptVar4;
+    uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2c,0x90,0x96,0x19,0x6906,0x698e);
+    this_00->field_1EB6 = uVar5;
+    uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,199,0x90,0x96,0x19,0x6907,0x698f);
+    this_00->field_1EBA = uVar5;
+    uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,0,0x16c,0x90,0x19,0x19,0x6908,0x6990);
+    this_00->field_1ED3 = uVar5;
+    uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,499,0x90,0x19,0x19,0x6909,0x6991);
+    this_00->field_1ED7 = uVar5;
+    uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2b6,0x90,0x41,0x19,0x690a,0x6992);
+    this_00->field_1B24 = uVar5;
+    iVar9 = 0x6913;
+    iVar8 = 0xdb;
     local_8 = &this_00->field_1EE7;
     local_c = 0xf;
     do {
-      uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x50,iVar6,0xe9,0x10,iVar7,0);
-      iVar7 = iVar7 + 1;
-      iVar6 = iVar6 + 0x10;
-      *local_8 = uVar4;
+      uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x50,iVar8,0xe9,0x10,iVar9,0);
+      iVar9 = iVar9 + 1;
+      iVar8 = iVar8 + 0x10;
+      *local_8 = uVar5;
       local_8 = local_8 + 1;
       local_c = local_c + -1;
     } while (local_c != 0);
     local_c = 0;
-    ppcVar8 = local_8e0;
-    for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *ppcVar8 = nullptr;
-      ppcVar8 = ppcVar8 + 1;
+    ppcVar10 = local_8e0;
+    for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *ppcVar10 = nullptr;
+      ppcVar10 = ppcVar10 + 1;
     }
     local_8e0[2] = this_00->field_1A73;
     local_8c0 = this_00->field_1AE8;

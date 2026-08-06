@@ -37,6 +37,8 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
   AnonPointee_TLOBaseTy_01F5 *pAVar2;
   TLOBaseTy *this_00;
   int iVar4;
+  int iVar6;
+  int iVar7;
   int iVar5;
   InternalExceptionFrame local_50;
   int local_c;
@@ -58,8 +60,8 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (((local_8->field_0245 == CASE_1) && (local_8->field_05DF != 5)) &&
-     (iVar4 = thunk_FUN_004ac910(&local_8->field_01D5,'\x04'),
-     *(int *)(&DAT_007cdf52 + *(int *)(&DAT_0079125c + this_00->field_0235 * 4) * 0x32) < iVar4)) {
+     (iVar6 = thunk_FUN_004ac910(&local_8->field_01D5,'\x04'),
+     *(int *)(&DAT_007cdf52 + *(int *)(&DAT_0079125c + this_00->field_0235 * 4) * 0x32) < iVar6)) {
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }
@@ -99,21 +101,21 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
   }
   if (this_00->field_05F3 != 0) {
     puVar1 = &this_00->field_01D5;
-    iVar4 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x0e');
-    iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-    if (((iVar5 < iVar4) && (iVar4 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r'), 1 < iVar4))
-       && (iVar4 = thunk_FUN_004cba10(), iVar4 == 2)) {
+    iVar6 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x0e');
+    iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
+    if (((iVar7 < iVar6) && (iVar6 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r'), 1 < iVar6))
+       && (iVar6 = thunk_FUN_004cba10(), iVar6 == 2)) {
       pAVar2 = this_00->field_01F5;
-      iVar4 = pAVar2->field_0208;
-      if (iVar4 < (int)pAVar2->field_020C) {
-        iVar4 = pAVar2->field_0210 - iVar4;
+      iVar6 = pAVar2->field_0208;
+      if (iVar6 < (int)pAVar2->field_020C) {
+        iVar6 = pAVar2->field_0210 - iVar6;
       }
       else {
-        iVar4 = iVar4 - pAVar2->field_0210;
+        iVar6 = iVar6 - pAVar2->field_0210;
       }
       local_c = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x0e');
-      iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-      if ((iVar4 < (local_c - iVar5) + -1) || ((this_00->field_01F1 & 0x2000) != 0))
+      iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
+      if ((iVar6 < (local_c - iVar7) + -1) || ((this_00->field_01F1 & 0x2000) != 0))
       goto LAB_004cadb1;
     }
     sub_004CA7B0(this_00,(uint *)0xd,param_1);

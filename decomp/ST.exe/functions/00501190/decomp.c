@@ -15,7 +15,8 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
   CPanelTy *pCVar2;
   byte bVar3;
   int iVar4;
-  byte *pbVar5;
+  BITMAPINFO *pBVar4;
+  int iVar5;
   int iVar6;
   uint uVar7;
   InternalExceptionFrame local_58;
@@ -30,16 +31,16 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pCVar2 = local_10;
   if (iVar4 == 0) {
-    iVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02B2,0);
-    iVar4 = (pCVar2->field_018C->field_0004 - *(int *)(iVar4 + 4)) / 2;
-    pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,
-                                  -(uint)(DAT_0080874e != '\x01') & 6);
-    DibPut(pCVar2->field_018C,iVar4,0x50,'\x01',pbVar5);
+    pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02B2,0);
+    iVar6 = (pCVar2->field_018C->field_0004 - (pBVar4->bmiHeader).biWidth) / 2;
+    pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,
+                          -(uint)(DAT_0080874e != '\x01') & 6);
+    DibPut(pCVar2->field_018C,iVar6,0x50,'\x01',(byte *)pBVar4);
     local_8 = local_8 & 0xffffff00;
     if (pCVar2->field_0BB6 != '\0') {
       do {
-        pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
-        DibPut(pCVar2->field_018C,iVar4 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',pbVar5);
+        pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+        DibPut(pCVar2->field_018C,iVar6 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',(byte *)pBVar4);
         bVar3 = (byte)local_8 + 1;
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
       } while (bVar3 < (byte)pCVar2->field_0BB6);
@@ -49,8 +50,8 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
     local_14 = uVar7;
     if (uVar7 < (byte)pCVar2->field_0BB7 + uVar7) {
       do {
-        pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,5);
-        DibPut(pCVar2->field_018C,iVar4 + 3 + uVar7 * 4,0x53,'\x01',pbVar5);
+        pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,5);
+        DibPut(pCVar2->field_018C,iVar6 + 3 + uVar7 * 4,0x53,'\x01',(byte *)pBVar4);
         bVar3 = (byte)local_c + 1;
         local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar3));
         uVar7 = (uint)bVar3;
@@ -61,8 +62,8 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
     local_14 = uVar7;
     if (uVar7 < (byte)pCVar2->field_0BB5 + uVar7) {
       do {
-        pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,2);
-        DibPut(pCVar2->field_018C,iVar4 + 3 + uVar7 * 4,0x53,'\x01',pbVar5);
+        pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,2);
+        DibPut(pCVar2->field_018C,iVar6 + 3 + uVar7 * 4,0x53,'\x01',(byte *)pBVar4);
         STPiece<0,1>(local_8) = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;
       } while ((int)uVar7 < (int)((byte)pCVar2->field_0BB5 + local_14));
@@ -71,9 +72,9 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x32,0,iVar4,"%s",
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x32,0,iVar4,"%s",
                              "CPanelTy::PaintBCapacity");
-  if (iVar6 != 0) {
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cpanel2.cpp",0x32);

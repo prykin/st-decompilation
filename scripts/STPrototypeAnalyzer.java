@@ -14,6 +14,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -27,6 +28,7 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.AbstractFloatDataType;
 import ghidra.program.model.data.AbstractIntegerDataType;
+import ghidra.program.model.data.Array;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Enum;
@@ -41,8 +43,10 @@ import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.SourceType;
+import ghidra.program.model.symbol.StackReference;
 
 public class STPrototypeAnalyzer extends GhidraScript {
     private static final Pattern MEMORY = Pattern.compile(
@@ -65,6 +69,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
     private DataTypeManager dataTypes;
     private int reverseReturnEvidence;
     private int sccComponents, sccTargets;
+    private int propagationCycleLength, propagationCycleDroppedSeeds;
 
     @Override
     protected void run() throws Exception {
@@ -75,6 +80,10 @@ public class STPrototypeAnalyzer extends GhidraScript {
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         dataTypes = currentProgram.getDataTypeManager();
         int functionsSeen = 0, callSites = 0, propagationPasses = 0;
+        List<Map<TargetKey, String>> seedHistory = new ArrayList<>();
+        Map<String, Integer> seedStateIndex = new LinkedHashMap<>();
+        seedHistory.add(new TreeMap<>(inferredSeeds));
+        seedStateIndex.put(seedStateFingerprint(inferredSeeds), 0);
         for (int pass = 1; pass <= MAX_TYPE_PROPAGATION_PASSES; pass++) {
             evidence.clear();
             boundaryEdges.clear();
@@ -90,6 +99,37 @@ public class STPrototypeAnalyzer extends GhidraScript {
             Map<TargetKey, String> nextSeeds = qualifiedInferredSeeds();
             propagationPasses = pass;
             if (nextSeeds.equals(inferredSeeds)) break;
+            String nextFingerprint = seedStateFingerprint(nextSeeds);
+            Integer repeated = seedStateIndex.get(nextFingerprint);
+            if (repeated != null) {
+                List<Map<TargetKey, String>> cycle =
+                    seedHistory.subList(repeated, seedHistory.size());
+                propagationCycleLength = cycle.size();
+                Map<TargetKey, String> consensus = seedCycleConsensus(cycle);
+                Set<TargetKey> union = new TreeSet<>();
+                for (Map<TargetKey, String> state : cycle)
+                    union.addAll(state.keySet());
+                propagationCycleDroppedSeeds = union.size() - consensus.size();
+                inferredSeeds = consensus;
+
+                // Proposal evidence must correspond to the conservative cycle
+                // intersection, not to an arbitrary MAX_PASS parity.
+                evidence.clear();
+                boundaryEdges.clear();
+                callSiteAudits.clear();
+                reverseReturnEvidence = 0;
+                sccComponents = 0;
+                sccTargets = 0;
+                ScanCounts finalCounts = scanAllFunctions();
+                functionsSeen = finalCounts.functions;
+                callSites = finalCounts.callSites;
+                addNarrowRawStorageFallbacks();
+                addStronglyConnectedBoundaryEvidence();
+                propagationPasses = pass + 1;
+                break;
+            }
+            seedStateIndex.put(nextFingerprint, seedHistory.size());
+            seedHistory.add(new TreeMap<>(nextSeeds));
             inferredSeeds = nextSeeds;
         }
         seedPreviouslyAppliedTargets();
@@ -106,7 +146,34 @@ public class STPrototypeAnalyzer extends GhidraScript {
             proposals.stream().filter(row -> row.typeApply).count() + ", name_apply: " +
             proposals.stream().filter(row -> row.nameApply).count() + ", repair: " +
             proposals.stream().filter(row -> row.repair).count() +
-            ", propagation_passes: " + propagationPasses);
+            ", propagation_passes: " + propagationPasses +
+            (propagationCycleLength == 0 ? "" :
+                ", cycle_length: " + propagationCycleLength +
+                ", cycle_seeds_dropped: " + propagationCycleDroppedSeeds));
+    }
+
+    private String seedStateFingerprint(Map<TargetKey, String> state) {
+        StringBuilder result = new StringBuilder();
+        for (Map.Entry<TargetKey, String> entry : new TreeMap<>(state).entrySet())
+            result.append(boundaryIdentity(entry.getKey())).append('=')
+                .append(entry.getValue()).append('\n');
+        return result.toString();
+    }
+
+    /** Keep only facts which are identical throughout an oscillating fixed-point
+     * cycle. Volatile edges remain review evidence; pass-count parity never
+     * chooses the Program ABI. */
+    private Map<TargetKey, String> seedCycleConsensus(
+            List<Map<TargetKey, String>> cycle) {
+        if (cycle.isEmpty()) return Map.of();
+        Map<TargetKey, String> result = new TreeMap<>(cycle.get(0));
+        result.entrySet().removeIf(entry -> {
+            for (int index = 1; index < cycle.size(); index++)
+                if (!entry.getValue().equals(
+                        cycle.get(index).get(entry.getKey()))) return true;
+            return false;
+        });
+        return result;
     }
 
     private ScanCounts scanAllFunctions() throws Exception {
@@ -516,6 +583,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
             }
             if (instruction.getFlowType().isJump()) pushes.clear();
             if ("MOV".equals(mnemonic) && operands.length >= 2)
+                observePointerOutputStore(caller, instruction, operands, registers);
+            if ("MOV".equals(mnemonic) && operands.length >= 2)
                 observeProducedStore(instruction, operands, registers);
             updateRegisters(instruction, mnemonic, operands, registers, stackParameters,
                 stackSpills);
@@ -535,7 +604,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
         // Propagation remains stricter than the audit: a suffix behind saved-register or
         // temporary prefix pushes is useful diagnostic evidence, but is not safe enough to
         // mutate prototypes automatically.
-        if (stackTargets.size() == pushes.size()) {
+        if (stackTargets.size() == pushes.size() ||
+                (called.hasVarArgs() && pushes.size() >= stackTargets.size())) {
             for (int index = 0; index < stackTargets.size(); index++) {
                 Parameter target = stackTargets.get(index);
                 Value value = pushes.get(pushes.size() - 1 - index);
@@ -749,6 +819,45 @@ public class STPrototypeAnalyzer extends GhidraScript {
             instruction.getAddress(), "stored into " + target.evidence);
     }
 
+    /**
+     * Refine an unknown pointer pointee from an exact machine-width output store.
+     *
+     * This is deliberately narrower than general pointer-shape recovery.  The
+     * destination must be offset zero of one explicit pointer parameter whose
+     * current pointee is undefined, while the stored register must already carry
+     * an independently typed value of exactly the same width.  A common example
+     * is `mov ax,[this+field]; mov [output],ax`, which proves `short *` when the
+     * recovered field is short.  No class or function name participates.
+     */
+    private void observePointerOutputStore(Function function,
+            Instruction instruction, String[] operands,
+            Map<String, Value> registers) {
+        MemoryExpr destination = memoryExpr(operands[0]);
+        if (destination == null || destination.displacement != 0) return;
+        Value pointer = registers.get(destination.register);
+        if (pointer == null || pointer.parameterOrdinal < 0) return;
+        Parameter target = explicitParameter(function, pointer.parameterOrdinal);
+        DataType formal = target == null ? null : unwrap(target.getFormalDataType());
+        if (!(formal instanceof Pointer formalPointer)) return;
+        DataType pointed = unwrap(formalPointer.getDataType());
+        if (pointed == null || !Undefined.isUndefined(pointed)) return;
+
+        int width = memoryOperandWidth(operands[0]);
+        String sourceRegister = cleanRegister(operands[1]);
+        Value source = sourceRegister == null ? null : registers.get(sourceRegister);
+        boolean exactTypedField = source != null && source.evidence.startsWith("/") &&
+            source.evidence.contains("+0x");
+        if (source == null || (!source.trusted && !exactTypedField) || source.literal ||
+                source.type.startsWith("pointer:") ||
+                width < 1 || operandWidth(operands[1]) != width ||
+                typeLength(source.type) != width || pointed.getLength() != width)
+            return;
+        addParameterEvidence(function, target, "pointer:" + source.type,
+            pointer.name, true,
+            addr(instruction.getAddress()) + " exact " + width +
+                "-byte output store from " + source.evidence);
+    }
+
     private StoreType storedType(Instruction instruction, String operand,
             Map<String, Value> registers) {
         if (!operand.contains("[") || !operand.contains("]")) return null;
@@ -803,15 +912,17 @@ public class STPrototypeAnalyzer extends GhidraScript {
             int nameCount = proposedName.isBlank() ? 0 : ev.names.get(proposedName);
             boolean machineForwardedReturn = !proposedType.isBlank() &&
                 exactFullAccumulatorWrapperReturn(function, key, target, proposedType, ev);
+            int strongTypeCount = proposedType.isBlank() ? 0 :
+                ev.strongTypeSites.getOrDefault(proposedType, Set.of()).size();
             boolean compatible = !proposedType.isBlank() &&
                 (typeLength(proposedType) == effectiveLength(target.getDataType()) ||
                  machineForwardedReturn);
             boolean safeScriptRepair = !scriptOwned ||
-                scriptRepairImproves(currentType, proposedType);
+                scriptRepairImproves(currentType, proposedType) ||
+                strongPrimitiveRoleRepair(currentType, proposedType, ev,
+                    strongTypeCount);
             boolean typeChange = compatible && !sameType(currentType, proposedType) &&
                 (safeToRefine(target, proposedType) || scriptOwned) && safeScriptRepair;
-            int strongTypeCount = proposedType.isBlank() ? 0 :
-                ev.strongTypeSites.getOrDefault(proposedType, Set.of()).size();
             boolean enoughTypeEvidence = "return".equals(key.kind) ?
                 strongTypeCount > 0 : strongTypeCount > 0 || typeCount >= 2;
             boolean protectedOverride = legacyDebugGenericReturn(function, target, key,
@@ -940,8 +1051,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
         }
         if ("MOV".equals(mnemonic) && destination != null && operands.length >= 2) {
             if (!fullDestination) {
-                registers.put(destination, partialScalarValue(instruction, operands,
-                    registers, stackParameters, stackSpills));
+                Value typedPiece = typedPartialMoveValue(instruction, operands,
+                    registers, stackParameters, stackSpills);
+                registers.put(destination, typedPiece == null ?
+                    partialScalarValue(instruction, operands, registers,
+                        stackParameters, stackSpills) : typedPiece);
                 return;
             }
             Value value = sourceValue(instruction, 1, operands[1], registers,
@@ -1002,12 +1116,17 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (memory != null && "EBP".equals(memory.register)) {
             Value parameter = stackSpills.get(stackKey(memory));
             if (parameter == null) parameter = stackParameters.get(memory.displacement);
-            if (parameter == null) return null;
-            if (!addressOf) return parameter;
-            String pointed = parameter.type.isBlank() || parameter.type.startsWith("pointer:") ?
-                "" : "pointer:" + parameter.type;
-            return new Value(parameter.parameterOrdinal, pointed, parameter.name,
-                parameter.trusted, "address of " + parameter.evidence);
+            if (parameter != null) {
+                if (!addressOf) return parameter;
+                String pointed = parameter.type.isBlank() ||
+                    parameter.type.startsWith("pointer:") ?
+                        "" : "pointer:" + parameter.type;
+                return new Value(parameter.parameterOrdinal, pointed, parameter.name,
+                    parameter.trusted, "address of " + parameter.evidence);
+            }
+            Value local = stackLocalAddressValue(instruction, operandIndex,
+                memory.displacement);
+            if (local != null) return local;
         }
         Value field = typedFieldValue(memory, registers, addressOf);
         if (field != null) return field;
@@ -1034,6 +1153,73 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (!addressOf && literal != null)
             return Value.literal(literal, addr(instruction.getAddress()));
         return null;
+    }
+
+    /**
+     * Recover the type of `lea reg,[ebp-local]` from the Listing stack variable.
+     * The local type is weak evidence unless it is manual or semantic, so two
+     * independent callsites are still required before a primitive pointee changes
+     * a callee prototype.  This connects Ghidra's already separated local lifetime
+     * to the function boundary instead of guessing from rendered C casts.
+     */
+    private Value stackLocalAddressValue(Instruction instruction,
+            int operandIndex, long rawStackOffset) {
+        Function function = currentProgram.getFunctionManager()
+            .getFunctionContaining(instruction.getAddress());
+        if (function == null) return null;
+        Set<Integer> offsets = new LinkedHashSet<>();
+        if (rawStackOffset >= Integer.MIN_VALUE && rawStackOffset <= Integer.MAX_VALUE)
+            offsets.add((int)rawStackOffset);
+        for (Reference reference : instruction.getReferencesFrom()) {
+            if (!(reference instanceof StackReference stack) ||
+                    reference.getOperandIndex() != operandIndex) continue;
+            offsets.add(stack.getStackOffset());
+        }
+        for (int offset : offsets) {
+            Variable local = localAt(function, offset);
+            if (local == null) continue;
+            DataType localType = unwrap(local.getDataType());
+            if (localType instanceof Array array) localType = unwrap(array.getDataType());
+            if (localType == null || Undefined.isUndefined(localType)) continue;
+            String type = meaningfulType(localType);
+            if (type.isBlank() || type.startsWith("pointer:")) return null;
+            boolean trusted = protectedSource(local.getSource()) || semanticType(localType);
+            return new Value(-1, "pointer:" + type, local.getName(), trusted,
+                "address of " + function.getName(true) + " stack local " +
+                    local.getName() + " at " + addr(instruction.getAddress()));
+        }
+        return null;
+    }
+
+    private Variable localAt(Function function, int stackOffset) {
+        for (Variable local : function.getLocalVariables()) {
+            try {
+                if (local.isStackVariable() && local.getStackOffset() == stackOffset)
+                    return local;
+            }
+            catch (RuntimeException ignored) { }
+        }
+        return null;
+    }
+
+    /** Preserve an exact typed byte/word source across `mov ax/al,...`.  The
+     * upper accumulator is intentionally not claimed; consumers must use the
+     * same partial width before this evidence can cross a boundary. */
+    private Value typedPartialMoveValue(Instruction instruction,
+            String[] operands, Map<String, Value> registers,
+            Map<Long, Value> stackParameters,
+            Map<String, Value> stackSpills) {
+        int width = operandWidth(operands[0]);
+        if (width < 1 || width > 2 || operandWidth(operands[1]) != width)
+            return null;
+        Value source = sourceValue(instruction, 1, operands[1], registers,
+            stackParameters, stackSpills, false);
+        if (source == null || source.type.startsWith("pointer:") ||
+                typeLength(source.type) != width) return null;
+        return new Value(source.parameterOrdinal, source.type, source.name,
+            source.trusted, source.evidence + "; exact partial-width MOV at " +
+                addr(instruction.getAddress()), source.producer,
+            Extension.NONE, width);
     }
 
     /**
@@ -1405,8 +1591,13 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (type instanceof Enum || type instanceof TypeDef || type instanceof Structure) return true;
         if (type instanceof Pointer pointer) {
             DataType pointed = pointer.getDataType();
-            return pointed != null && !Undefined.isUndefined(pointed) &&
-                !"/void".equals(pointed.getPathName());
+            // A DEFAULT/ANALYSIS `int *`, `uint *`, or `char *` is still only a
+            // primitive machine view.  Treating it as semantic made generated
+            // prototype guesses validate one another and defeat later independent
+            // call-boundary evidence.  Nominal pointees retain semantic strength.
+            if (pointed instanceof TypeDef) return true;
+            pointed = unwrap(pointed);
+            return pointed instanceof Enum || pointed instanceof Structure;
         }
         return false;
     }
@@ -1471,6 +1662,13 @@ public class STPrototypeAnalyzer extends GhidraScript {
             if (pointed == null || Undefined.isUndefined(pointed) ||
                     "/void".equals(pointed.getPathName())) return true;
             String path = pointed.getPathName();
+            // A source-family pointee is already an interprocedurally proven nominal
+            // identity.  One consumer-local view must not replace it merely because
+            // that view has a more concrete field layout at one call boundary.
+            // Revisit the family in STTypeFamilyAnalyzer instead, where all defining
+            // flows and named callees are considered together.
+            if (path.contains("/Recovered/PointerShapes/RecoveredSourceFamily_"))
+                return false;
             return !protectedSource(target.getSource()) &&
                 (path.contains("/Recovered/PointerShapes/") ||
                  path.contains("/Recovered/ClassPointees/") ||
@@ -1492,6 +1690,36 @@ public class STPrototypeAnalyzer extends GhidraScript {
         // Two unrelated generated shapes or two distinct named semantic types are evidence
         // for review, not permission for an automatic lateral replacement.
         return false;
+    }
+
+    /**
+     * Revisit an automation-owned generic machine word or primitive pointer when
+     * at least two independent strong call boundaries establish one pointer role.
+     * This is the conservative escape hatch for an old `/uint *` guess later
+     * contradicted by dozens of `char *` producers.  Nominal aggregates and all
+     * manual/imported targets remain protected; competing strong pointer roles
+     * remain conflicts.
+     */
+    private boolean strongPrimitiveRoleRepair(String current, String proposed,
+            Evidence value, int strongForProposed) {
+        if (strongForProposed < 2 || !proposed.startsWith("pointer:") ||
+                !primitiveOrVoidPointee(proposed)) return false;
+        for (String alternative : value.types.keySet()) {
+            if (alternative.equals(proposed)) continue;
+            if (!value.strongTypeSites.getOrDefault(alternative, Set.of()).isEmpty())
+                return false;
+        }
+        if (current.startsWith("pointer:"))
+            return primitiveOrVoidPointee(current);
+        return current.matches("/(?:undefined4|u?int(?:4)?|dword|pointer)");
+    }
+
+    private boolean primitiveOrVoidPointee(String specification) {
+        if (specification == null || !specification.startsWith("pointer:"))
+            return false;
+        String path = specification.substring("pointer:".length()).toLowerCase(Locale.ROOT);
+        return path.matches("/(?:void|undefined(?:1|2|4|8)?|u?int(?:1|2|4|8)?|" +
+            "byte|char|short|long|float|double|bool|dword|word)");
     }
 
     private int semanticRank(String specification) {
@@ -1903,6 +2131,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
         Files.write(path, List.of("program=" + currentProgram.getName(),
             "functions_scanned=" + functions, "direct_calls_seen=" + calls,
             "type_propagation_passes=" + propagationPasses,
+            "type_propagation_cycle_length=" + propagationCycleLength,
+            "type_propagation_cycle_dropped_seeds=" +
+                propagationCycleDroppedSeeds,
             "proposals=" + rows.size(),
             "parameter_proposals=" + rows.stream().filter(r -> r.kind.equals("parameter")).count(),
             "return_proposals=" + rows.stream().filter(r -> r.kind.equals("return")).count(),
@@ -1926,7 +2157,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
             "note_undefined=All undefined function parameters and returns are audited, " +
                 "including no-evidence and conflicting rows which cannot be auto-applied.",
             "note_fixed_point=Qualified machine/callsite types are propagated through " +
-                "parameter-forwarding wrappers inside one analyzer run.",
+                "parameter-forwarding wrappers inside one analyzer run. Oscillating states " +
+                "are collapsed to their exact common seed intersection and rescanned once; " +
+                "MAX_PASS parity never selects an ABI.",
             "note_scc=Mutually recursive boundary components require one unambiguous " +
                 "protected, semantic, ABI, or previously machine-qualified anchor; " +
                 "unanchored generic cycles cannot validate themselves.",

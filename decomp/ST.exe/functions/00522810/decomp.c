@@ -15,6 +15,7 @@ void FUN_00522810(char *param_1)
   char *pcVar7;
   InternalExceptionFrame local_4c;
   int local_8;
+  char *pcVar6_mg0;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -26,15 +27,15 @@ void FUN_00522810(char *param_1)
   uVar4 = 0xffffffff;
   _Str1 = (char *)(local_8 + 0x6c);
   do {
-    pcVar6 = param_1;
+    pcVar6_mg0 = param_1;
     if (uVar4 == 0) break;
     uVar4 = uVar4 - 1;
-    pcVar6 = param_1 + 1;
+    pcVar6_mg0 = param_1 + 1;
     cVar1 = *param_1;
-    param_1 = pcVar6;
+    param_1 = pcVar6_mg0;
   } while (cVar1 != '\0');
   uVar4 = ~uVar4;
-  pcVar6 = pcVar6 + -uVar4;
+  pcVar6 = pcVar6_mg0 + -uVar4;
   pcVar7 = _Str1;
   memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
   FUN_006b77e0(_Str1,(byte *)_Str1);

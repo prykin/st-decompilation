@@ -33,7 +33,7 @@ void __thiscall STJumpMineC::sub_00619A20(STJumpMineC *this)
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                       (int)this->field_00C9,(int)this->field_00CB,&local_8,&local_c), iVar2 < 0)) ||
          ((4 < iVar2 || (local_8 < 0)))) ||
-        ((pVVar1->field_0030 <= local_8 ||
+        (((int)pVVar1->field_0030 <= local_8 ||
          ((local_c = g_centeredOffsets5[iVar2] + local_c, local_c < 0 ||
           (pVVar1->field_0034 <= local_c)))))) ||
        ((pVVar1->field_004C == nullptr ||

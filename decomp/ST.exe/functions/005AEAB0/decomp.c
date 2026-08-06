@@ -22,14 +22,15 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
 {
   StartSystemTy *pSVar1;
   ChooseMapTy *this_00;
-  int iVar3;
   int iVar4;
-  uint uVar5;
+  int iVar3;
+  int iVar5;
   uint uVar6;
   uint uVar7;
-  char cVar8;
-  ccFntTy **ppcVar10;
-  undefined4 *puVar11;
+  uint uVar8;
+  char cVar9;
+  ccFntTy **ppcVar11;
+  undefined4 *puVar12;
   ccFntTy *local_fe4 [6];
   undefined4 local_fcc;
   undefined4 local_fc8;
@@ -108,20 +109,21 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   ChooseMapTy *local_c;
   uint local_8;
 
-  puVar11 = local_598;
+  puVar12 = local_598;
   local_c = this;
-  for (iVar4 = 0x135; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar11 = 0;
-    puVar11 = puVar11 + 1;
+  for (iVar5 = 0x135; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *puVar12 = 0;
+    puVar12 = puVar12 + 1;
   }
-  ppcVar10 = local_fe4;
-  for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *ppcVar10 = nullptr;
-    ppcVar10 = ppcVar10 + 1;
+  ppcVar11 = local_fe4;
+  for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *ppcVar11 = nullptr;
+    ppcVar11 = ppcVar11 + 1;
   }
   memset(local_80, 0, 0x58); /* compiler bulk-zero initialization */
-  iVar4 = 0;
+  iVar5 = 0;
   memset(local_758, 0, 0x1c0); /* compiler bulk-zero initialization */
+  iVar5 = 0;
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
   iVar4 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0);
@@ -136,57 +138,57 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\load_obj.cpp",0x39f);
     return;
   }
-  uVar7 = 0;
+  uVar8 = 0;
   switch(local_c->field_1A5F) {
   case CASE_1:
   case CASE_2:
     local_34 = (uint)g_startSystem_0081176C->field_02EB;
-    uVar7 = 2;
+    uVar8 = 2;
     local_c->field_1A5F = (local_34 != 1) + CASE_1;
     goto LAB_005aebde;
   case CASE_4:
   case CASE_5:
-    uVar7 = 2;
+    uVar8 = 2;
     local_34 = (uint)g_startSystem_0081176C->field_02EB;
     local_c->field_1A5F = (local_34 != 1) + CASE_4;
     break;
   case CASE_9:
   case CASE_A:
   case CASE_B:
-    uVar7 = 3;
+    uVar8 = 3;
     local_34 = (uint)(byte)g_startSystem_0081176C->field_02EA;
-    cVar8 = g_startSystem_0081176C->field_02EA;
-    if (cVar8 == '\x01') {
+    cVar9 = g_startSystem_0081176C->field_02EA;
+    if (cVar9 == '\x01') {
       local_c->field_1A5F = CASE_9;
     }
-    else if (cVar8 == '\x02') {
+    else if (cVar9 == '\x02') {
       local_c->field_1A5F = CASE_A;
     }
-    else if (cVar8 == '\x03') {
+    else if (cVar9 == '\x03') {
       local_c->field_1A5F = CASE_B;
     }
   }
 LAB_005aebde:
-  if (uVar7 == 0) {
+  if (uVar8 == 0) {
 LAB_005aecc2:
     if (param_1 != '\0') goto LAB_005aef44;
   }
   else if (param_1 != '\0') {
-    cVar8 = '\0';
-    if (uVar7 != 0) {
-      uVar5 = 0;
+    cVar9 = '\0';
+    if (uVar8 != 0) {
+      uVar6 = 0;
       do {
-        local_758[uVar5 * 0x1c] = uVar5 + 1;
-        cVar8 = cVar8 + '\x01';
-        local_758[uVar5 * 0x1c + 1] = 0;
-        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar8));
-        local_758[uVar5 * 0x1c + 3] = uVar5 * 0x7c + 0x112;
-        uVar6 = local_8 & 0xff;
-        local_758[uVar5 * 0x1c + 5] = 0x7a;
-        local_758[uVar5 * 0x1c + 4] = 0x1d4;
-        local_758[uVar5 * 0x1c + 6] = 0x18;
-        uVar5 = uVar6;
-      } while (uVar6 < uVar7);
+        local_758[uVar6 * 0x1c] = uVar6 + 1;
+        cVar9 = cVar9 + '\x01';
+        local_758[uVar6 * 0x1c + 1] = 0;
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar9));
+        local_758[uVar6 * 0x1c + 3] = uVar6 * 0x7c + 0x112;
+        uVar7 = local_8 & 0xff;
+        local_758[uVar6 * 0x1c + 5] = 0x7a;
+        local_758[uVar6 * 0x1c + 4] = 0x1d4;
+        local_758[uVar6 * 0x1c + 6] = 0x18;
+        uVar6 = uVar7;
+      } while (uVar7 < uVar8);
     }
     local_70 = this_00->field_0008;
     local_38 = local_758;
@@ -288,10 +290,10 @@ LAB_005aef44:
   }
   if ((this_00->field_20B7 != '\0') && (param_1 == '\0')) {
     StartSystemTy::CreateChatView(g_startSystem_0081176C);
-    ppcVar10 = local_fe4;
-    for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *ppcVar10 = nullptr;
-      ppcVar10 = ppcVar10 + 1;
+    ppcVar11 = local_fe4;
+    for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *ppcVar11 = nullptr;
+      ppcVar11 = ppcVar11 + 1;
     }
     local_fe4[0] = (ccFntTy *)0x1;
     local_fe4[1] = (ccFntTy *)0x9;

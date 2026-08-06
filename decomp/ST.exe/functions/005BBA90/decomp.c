@@ -14,10 +14,11 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
 {
   undefined1 *puVar1;
   PrividerTy *this_00;
-  int iVar3;
   int iVar4;
-  uint *puVar5;
-  ccFntTy **ppcVar6;
+  int iVar3;
+  int iVar5;
+  uint *puVar6;
+  ccFntTy **ppcVar7;
   ccFntTy *local_dd0 [8];
   DArrayTy *local_db0;
   undefined4 local_d84;
@@ -83,16 +84,16 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   uint local_c;
   char local_5;
 
-  puVar5 = local_544;
+  puVar6 = local_544;
   local_10 = this;
-  for (iVar4 = 0x135; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
+  for (iVar5 = 0x135; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *puVar6 = 0;
+    puVar6 = puVar6 + 1;
   }
-  ppcVar6 = local_dd0;
-  for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *ppcVar6 = nullptr;
-    ppcVar6 = ppcVar6 + 1;
+  ppcVar7 = local_dd0;
+  for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *ppcVar7 = nullptr;
+    ppcVar7 = ppcVar7 + 1;
   }
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;

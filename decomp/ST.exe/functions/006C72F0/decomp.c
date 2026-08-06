@@ -7,9 +7,10 @@ void FUN_006c72f0(AnonShape_006C72F0_54F06289 *param_1)
   uint uVar1;
   int iVar2;
   int iVar3;
-  undefined4 *puVar4;
   int iVar5;
-  uint uVar6;
+  undefined4 *puVar4;
+  int iVar6;
+  uint uVar7;
   InternalExceptionFrame local_70;
   int local_2c;
   int local_28;
@@ -27,24 +28,24 @@ void FUN_006c72f0(AnonShape_006C72F0_54F06289 *param_1)
   local_14 = ExceptionList;
   local_1c = &stack0xffffff7c;
   local_20 = param_1->field_0062 + *(int *)param_1;
-  iVar5 = param_1->field_006A;
+  iVar6 = param_1->field_006A;
   iVar3 = *(int *)(param_1->field_003A + 4);
-  if (iVar3 < iVar5 + local_20) {
-    iVar5 = iVar3 - local_20;
+  if (iVar3 < iVar6 + local_20) {
+    iVar6 = iVar3 - local_20;
   }
   local_24 = param_1->field_0066 + *(int *)&param_1->field_0x4;
   iVar3 = param_1->field_006E;
   uVar1 = *(uint *)(param_1->field_003A + 8);
-  uVar6 = (int)uVar1 >> 0x1f;
-  iVar2 = (uVar1 ^ uVar6) - uVar6;
+  uVar7 = (int)uVar1 >> 0x1f;
+  iVar2 = (uVar1 ^ uVar7) - uVar7;
   if (iVar2 < iVar3 + local_24) {
     iVar3 = iVar2 - local_24;
   }
   ExceptionList = &local_14;
   local_2c = iVar3;
-  local_28 = iVar5;
-  FreeAndNull((void **)&param_1->field_0072);
-  if ((iVar5 == param_1->field_006A) && (iVar3 == param_1->field_006E)) {
+  local_28 = iVar6;
+  FreeAndNull(&param_1->field_0072);
+  if ((iVar6 == param_1->field_006A) && (iVar3 == param_1->field_006E)) {
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
     iVar5 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,local_8);

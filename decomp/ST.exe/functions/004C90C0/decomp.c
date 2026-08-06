@@ -9,19 +9,20 @@
 int __thiscall TLOBaseTy::sub_004C90C0(TLOBaseTy *this)
 
 {
-  TLOBaseTy_field_05ACState TVar1;
+  int iVar1;
+  TLOBaseTy_field_05ACState TVar2;
   int iVar2;
 
-  iVar2 = *(int *)&this->field_0x361;
-  if (iVar2 == 0) {
+  iVar1 = *(int *)&this->field_0x361;
+  if (iVar1 == 0) {
     return 1;
   }
-  if (iVar2 == 1) {
+  if (iVar1 == 1) {
     iVar2 = sub_004CE7D0(this);
   }
   else {
-    if (iVar2 != 2) {
-      if (iVar2 == 5) {
+    if (iVar1 != 2) {
+      if (iVar1 == 5) {
         sub_004CC900(this);
       }
       iVar2 = 1;
@@ -35,9 +36,9 @@ int __thiscall TLOBaseTy::sub_004C90C0(TLOBaseTy *this)
 LAB_004c9106:
   *(undefined4 *)&this->field_0x361 = 0;
   if ((((*(int *)(&DAT_00792778 + this->field_0235 * 4) != 0) &&
-       ((TVar1 = this->field_05AC, TVar1 != CASE_45 || (this->field_04D0 == CASE_1)))) &&
-      ((TVar1 != CASE_4E || (this->field_04D0 == CASE_1)))) &&
-     ((TVar1 != CASE_72 || (this->field_04D0 == CASE_1)))) {
+       ((TVar2 = this->field_05AC, TVar2 != CASE_45 || (this->field_04D0 == CASE_1)))) &&
+      ((TVar2 != CASE_4E || (this->field_04D0 == CASE_1)))) &&
+     ((TVar2 != CASE_72 || (this->field_04D0 == CASE_1)))) {
     this->field_0261 = 1;
     *(undefined4 *)&this->field_0x2e1 = 1;
   }

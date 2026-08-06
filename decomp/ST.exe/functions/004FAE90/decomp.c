@@ -42,8 +42,7 @@ void __thiscall CPanelTy::sub_004FAE90(CPanelTy *this,uint *param_1,ushort param
         local_10 = local_8;
         local_14 = param_1;
         iVar4 = STAllPlayersC::GetActiveCenter
-                          (g_allPlayers_007FA174,nullptr,nullptr,
-                           &stack0x0000000a);
+                          (g_allPlayers_007FA174,nullptr,nullptr,&stack0x0000000a);
         if (-1 < iVar4) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           local_c = (int)in_stack_0000000a;

@@ -79,6 +79,12 @@ Original binaries are local under ignored `bin/` and must not be committed.
   unambiguous and its concrete database return width exactly matches `N`.
 - Packed/unaligned fields and overlapping unions are intentional. Never align or
   merge them merely to improve decompiler spelling.
+- A packed byte lookup table immediately after a dword jump table must not become
+  an extra code target. Install a finite switch override only when consecutive
+  table words match the complete existing computed-jump reference set, every
+  target is an instruction in the containing function, the first rejected word
+  is non-executable and independently read as bytes, and a fresh decompile
+  reports jump-table truncation. Preserve foreign/manual overrides.
 - Integer promotion in comparisons does not invalidate a proven narrow storage
   width. Treat competing same-width scalar signedness on an already generated
   field as review-only; automatically clearing it can make Ghidra oscillate
@@ -118,6 +124,13 @@ Original binaries are local under ignored `bin/` and must not be committed.
   recursive node and heterogeneous siblings otherwise poison its rendering. A
   fresh decompile must reattach the database local to that same anchor before
   `applied` is reported; inseparable `Node *`/`Node **` groups remain conflicts.
+- A decompiler-only nominal type is not an independent `typed_copy` lifetime
+  anchor. For ordinary types the copied value must originate at an exact typed
+  parameter, global, return, or call boundary; a local-to-local or symbol-less
+  copy may anchor itself only when the complete type chain ends at the same
+  hash-intact generated recursive node. Split merge groups receive deterministic
+  collision-free database names and must survive a fresh decompile at the same
+  machine anchor.
 - Non-leaf `void` is valid only when every direct-call CFG path kills EAX before
   an explicit read; an unresolved path is `unknown`, not ignored. A bare caller
   `RET` proves forwarding only when that caller already has a protected non-void
@@ -188,6 +201,13 @@ Original binaries are local under ignored `bin/` and must not be committed.
   the cached body. A generated layout change must invalidate functions which
   spell the changed field, but unrelated additions elsewhere in that structure
   must not invalidate every user.
+- Hash generated class layouts only after Ghidra installs the final
+  `StructureDB`; hashing the transient `StructureDataType` can make Ghidra's own
+  canonicalization look like a manual edit. A legacy hash-diverged generated
+  class may receive only a surgical exact-field overlay where the installed
+  field still matches its recorded script baseline. Preserve every unrelated
+  component, preflight every proposed datatype, and never use an overlay hash
+  to rebaseline or rebuild the whole structure.
 - Source-tree member syntax must not make the host compiler authoritative for
   recovered object layout. A receiver-aware physical-vtable slot may receive a
   non-virtual forwarding member wrapper over the explicit `vtable` field;

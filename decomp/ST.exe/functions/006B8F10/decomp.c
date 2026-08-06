@@ -6,8 +6,11 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
 {
   uint uVar1;
   AnonShape_006B8F10_41B61BA9 *pAVar2;
-  int iVar3;
+  int local_EAX_86;
+  int iVar5;
+  int iVar6;
   int iVar4;
+  int iVar3;
   undefined4 local_b4;
   undefined4 local_b0;
   byte *local_ac;
@@ -39,14 +42,15 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
     param_2[2] = param_1->field_0018;
     param_2[3] = param_1->field_001C;
   }
-  if (((param_1->field_0004 & 0x4000) != 0) && (iVar3 = FUN_006b8e30((int *)param_1), iVar3 != 0)) {
-    return iVar3;
+  if (((param_1->field_0004 & 0x4000) != 0) &&
+     (local_EAX_86 = FUN_006b8e30((int *)param_1), local_EAX_86 != 0)) {
+    return local_EAX_86;
   }
   uVar1 = param_1->field_0004;
   param_1->field_0004 = uVar1 & 0xffffefff;
-  iVar3 = param_1->field_0008 - param_1->field_0020;
+  iVar5 = param_1->field_0008 - param_1->field_0020;
   local_18 = param_1->field_000C - param_1->field_0024;
-  local_14 = iVar3;
+  local_14 = iVar5;
   local_10 = local_18;
   if ((uVar1 & 0x8000000) == 0) {
     if ((uVar1 & 0x20000000) == 0) {
@@ -58,9 +62,9 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       local_b4 = 0x7c;
       local_b0 = 6;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar4 = (**(code **)(*(int *)param_1 + 0x58))(param_1,&local_b4);
-      if (iVar4 != 0) {
-        return iVar4;
+      iVar6 = (**(code **)(*(int *)param_1 + 0x58))(param_1,&local_b4);
+      if (iVar6 != 0) {
+        return iVar6;
       }
       local_c = local_a8;
       local_8 = local_ac;
@@ -85,7 +89,7 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
     pAVar2->field_0018 = local_c;
     pAVar2->field_001C = (int)local_8;
     if ((local_c != 0) && (local_8 != nullptr)) {
-      local_28 = local_14 - iVar3;
+      local_28 = local_14 - iVar5;
       local_24 = local_10 - local_18;
       if ((pAVar2->field_0004 & 0x8000000) != 0) {
         iVar3 = Library::DKW::DDX::FUN_006b82e0
@@ -108,27 +112,27 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = nullptr;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      while (iVar3 = (**(code **)(**(int **)(*(int *)pAVar2 + 0x40) + 0x14))
+      while (iVar5 = (**(code **)(**(int **)(*(int *)pAVar2 + 0x40) + 0x14))
                                (*(int **)(*(int *)pAVar2 + 0x40),&local_38,param_1,&local_28,
-                                0x1008000,0), iVar3 != 0) {
-        if (iVar3 == -0x7789fe3e) {
+                                0x1008000,0), iVar5 != 0) {
+        if (iVar5 == -0x7789fe3e) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*(int *)param_1 + 0x6c))(param_1);
           FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)pAVar2);
         }
         else {
-          if (((iVar3 != -0x7789ff60) && (iVar3 != -0x7789fe52)) || (param_2 != nullptr)) break;
+          if (((iVar5 != -0x7789ff60) && (iVar5 != -0x7789fe52)) || (param_2 != nullptr)) break;
           Sleep(2);
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)((int)param_2 + 1);
         if (1 < (int)param_2) break;
       }
-      if ((iVar3 == -0x7789ff60) || (iVar3 == -0x7789fe52)) {
-        iVar3 = 0;
+      if ((iVar5 == -0x7789ff60) || (iVar5 == -0x7789fe52)) {
+        iVar5 = 0;
       }
       pAVar2->field_0004 = pAVar2->field_0004 | 0x4000;
-      return iVar3;
+      return iVar5;
     }
   }
   return iVar4;

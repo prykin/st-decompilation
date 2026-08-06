@@ -9,11 +9,12 @@ uint FUN_007474f4(LPVOID *ppv)
 {
   undefined4 *puVar1;
   uint uVar2;
+  uint uVar3;
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)((int)ppv[-4] + 0x20))();
   if (puVar1 == nullptr) {
-    uVar2 = 1;
+    uVar3 = 1;
   }
   else {
     CoInitialize((LPVOID)0x0);
@@ -25,8 +26,8 @@ uint FUN_007474f4(LPVOID *ppv)
     }
     CoFreeUnusedLibraries();
     CoUninitialize();
-    uVar2 = -(uint)(uVar2 != 0x80070002) & uVar2;
+    uVar3 = -(uint)(uVar2 != 0x80070002) & uVar2;
   }
-  return uVar2;
+  return uVar3;
 }
 

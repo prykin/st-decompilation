@@ -90,11 +90,13 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
 {
   HoloTy *pHVar1;
   int iVar2;
+  uint uVar7;
+  uint local_EAX_546;
   uint *puVar3;
   int iVar4;
   byte bVar5;
   char cVar6;
-  uint uVar7;
+  uint uVar8;
   int local_8;
 
   local_8 = 4;
@@ -152,19 +154,19 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
   }
   this->field_0453 = pHVar1;
   if (pHVar1 != nullptr) {
-    uVar7 = 0;
+    uVar8 = 0;
     cVar6 = '\x01';
     bVar5 = 0x10;
     iVar4 = 1;
     iVar2 = st::fn_006BF9F0((int *)g_ddxContext_008075A8,0x47,0x46,0x2bd,0x15e);
-    uVar7 = st::fn_0040459D(this->field_0453,CASE_2,0x47,0x46,iVar2,iVar4,bVar5,cVar6,uVar7);
+    uVar7 = st::fn_0040459D(this->field_0453,CASE_2,0x47,0x46,iVar2,iVar4,bVar5,cVar6,uVar8);
     if (uVar7 != 0) {
       pHVar1 = this->field_0453;
       pHVar1->field_0002 = 0;
       pHVar1->field_0017 = -1;
-      uVar7 = *(uint *)&this->field_0453->field_0x3;
-      if (-1 < (int)uVar7) {
-        st::fn_006B3430((int *)g_ddxContext_008075A8,uVar7);
+      uVar8 = *(uint *)&this->field_0453->field_0x3;
+      if (-1 < (int)uVar8) {
+        st::fn_006B3430((int *)g_ddxContext_008075A8,uVar8);
       }
       st::fn_004055F1(this->field_0453);
     }
@@ -192,19 +194,19 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
   }
   this->field_0457 = pHVar1;
   if (pHVar1 != nullptr) {
-    uVar7 = 0;
+    uVar8 = 0;
     cVar6 = '\x01';
     bVar5 = 0x10;
     iVar4 = 1;
     iVar2 = st::fn_006BF9F0((int *)g_ddxContext_008075A8,0x1a,10,0x2e9,0x32);
-    uVar7 = st::fn_0040459D(this->field_0457,CASE_3,0x1a,10,iVar2,iVar4,bVar5,cVar6,uVar7);
-    if (uVar7 != 0) {
+    local_EAX_546 = st::fn_0040459D(this->field_0457,CASE_3,0x1a,10,iVar2,iVar4,bVar5,cVar6,uVar8);
+    if (local_EAX_546 != 0) {
       pHVar1 = this->field_0457;
       pHVar1->field_0002 = 0;
       pHVar1->field_0017 = -1;
-      uVar7 = *(uint *)&this->field_0457->field_0x3;
-      if (-1 < (int)uVar7) {
-        st::fn_006B3430((int *)g_ddxContext_008075A8,uVar7);
+      uVar8 = *(uint *)&this->field_0457->field_0x3;
+      if (-1 < (int)uVar8) {
+        st::fn_006B3430((int *)g_ddxContext_008075A8,uVar8);
       }
       st::fn_004055F1(this->field_0457);
     }

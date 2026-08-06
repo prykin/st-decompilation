@@ -2578,7 +2578,7 @@ void __cdecl st::fn_0065D0F0(int *param_1)
 {
   if ((AnonShape_0065D030_CB0F82F0 *)*param_1 != nullptr) {
     st::fn_00402F8B((AnonShape_0065D030_CB0F82F0 *)*param_1);
-    st::fn_006AB060((void **)param_1);
+    st::fn_006AB060(param_1);
   }
   return;
 }
@@ -2601,7 +2601,7 @@ void __cdecl st::fn_0065D1F0(int *param_1)
       st::fn_006AE110(array);
       *(undefined4 *)(*param_1 + 0xf) = 0;
     }
-    st::fn_006AB060((void **)param_1);
+    st::fn_006AB060(param_1);
   }
   return;
 }
@@ -2971,7 +2971,7 @@ st::fn_0065E070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint pa
   int *local_10;
   int local_c;
   short local_8;
-  undefined2 local_6;
+  short local_6;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar2 = *(undefined2 *)(param_1 + 0x7d);
@@ -3013,7 +3013,7 @@ st::fn_0065E070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint pa
           if ((this == nullptr) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
           goto cf_continue_loop_0065E27E;
           uVar5 = (*this->vtable->vfunc_2C)();
-          st::fn_004018C5((STFishC *)this,&local_8,&local_6,(undefined2 *)((int)&param_3 + 2));
+          st::fn_004018C5((STFishC *)this,&local_8,&local_6,(short *)((int)&param_3 + 2));
           if (param_5 != 0) {
             if (uVar5 == 0x78) {
               if ((param_5 & 0x80000000) == 0) {
@@ -3426,7 +3426,7 @@ st::fn_0065E9A0(void *this,short *param_1,short *param_2,uint param_3,uint param
       if ((STFishC *)local_8[iVar3 * 0xb + 3] != nullptr) {
         st::fn_004018C5
                   ((STFishC *)local_8[iVar3 * 0xb + 3],(short *)&param_1,local_14,
-                   (undefined2 *)((int)&param_2 + 2));
+                   (short *)((int)&param_2 + 2));
         *psVar1 = (short)param_1 + -1;
         psVar1[2] = 0;
         psVar1[1] = local_14[0] + -1;
@@ -3457,12 +3457,13 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
   int iVar2;
   int iVar3;
   int iVar4;
-  char cVar5;
+  int iVar5;
+  char cVar6;
   uint *local_c;
   int local_8;
 
-  iVar4 = param_2;
-  iVar2 = 0;
+  iVar5 = param_2;
+  iVar3 = 0;
   local_8 = 0;
   local_c = nullptr;
   if (((g_allPlayers_007FA174 != nullptr) && (param_3 != nullptr)) && (0 < param_2)
@@ -3474,8 +3475,8 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
       param_1 = (uint)DAT_0080874d;
     }
     if (param_1 != 0xff) {
-      cVar5 = (char)param_1;
-      uVar1 = st::fn_00401E7E(cVar5);
+      cVar6 = (char)param_1;
+      uVar1 = st::fn_00401E7E(cVar6);
       if (uVar1 == 0) {
         local_8 = 0;
       }
@@ -3485,7 +3486,7 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((char)param_7 == '\b') {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(cVar5));
+          param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(cVar6));
         }
         else if (((char)param_7 < '\0') || ('\b' < (char)param_7)) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -3496,39 +3497,39 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
         if (DAT_00811900 == 0) {
           local_8 = 0;
         }
-        else if (iVar4 < DAT_00811900) {
-          if (0 < iVar4) {
+        else if (iVar5 < DAT_00811900) {
+          if (0 < iVar5) {
             do {
               iVar2 = st::fn_00402423((void *)((int)this + 0x1c),(int *)local_c,DAT_00811900);
               if (local_c[iVar2 * 0xb + 3] != 0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                STPiece<0,2>(param_2) = CONCAT11(1,cVar5);
+                STPiece<0,2>(param_2) = CONCAT11(1,cVar6);
                 /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22((short)local_c[iVar2 * 0xb + 4],(undefined2)param_2);
                 st::fn_006AE1C0((DArrayTy *)param_3,&param_2);
                 local_8 = local_8 + 1;
               }
-              iVar4 = iVar4 + -1;
-            } while (iVar4 != 0);
+              iVar5 = iVar5 + -1;
+            } while (iVar5 != 0);
           }
         }
         else {
-          iVar3 = 0;
-          iVar4 = DAT_00811900;
+          iVar4 = 0;
+          iVar5 = DAT_00811900;
           if (0 < DAT_00811900) {
             do {
-              if (*(int *)(iVar2 + 0xc + (int)local_c) != 0) {
+              if (*(int *)(iVar3 + 0xc + (int)local_c) != 0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                STPiece<0,2>(param_2) = CONCAT11(1,cVar5);
+                STPiece<0,2>(param_2) = CONCAT11(1,cVar6);
                 /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-                param_2 = CONCAT22(*(undefined2 *)(iVar2 + 0x10 + (int)local_c),(undefined2)param_2);
+                param_2 = CONCAT22(*(undefined2 *)(iVar3 + 0x10 + (int)local_c),(undefined2)param_2);
                 st::fn_006AE1C0((DArrayTy *)param_3,&param_2);
                 local_8 = local_8 + 1;
-                iVar4 = DAT_00811900;
+                iVar5 = DAT_00811900;
               }
-              iVar3 = iVar3 + 1;
-              iVar2 = iVar2 + 0x2c;
-            } while (iVar3 < iVar4);
+              iVar4 = iVar4 + 1;
+              iVar3 = iVar3 + 0x2c;
+            } while (iVar4 < iVar5);
           }
         }
       }

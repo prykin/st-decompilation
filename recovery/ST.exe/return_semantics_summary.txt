@@ -9,5 +9,6 @@ ignored_eax_void: 0
 repair_unsafe_eax_rollback: 0
 void_eax_read_review: 0
 typed_pointer_return: 0
+forwarded_call_return: 0
 boolean_return_domain: 0
 noreturn_terminal_call: 0

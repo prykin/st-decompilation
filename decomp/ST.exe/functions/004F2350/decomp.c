@@ -22,7 +22,7 @@ CPanelTy::PaintCostsXYSI
 {
   CPanelTy *pCVar2;
   int iVar3;
-  uint *resourceString;
+  char *resourceString;
   int iVar4;
   uint uVar5;
   int iVar6;
@@ -43,18 +43,18 @@ CPanelTy::PaintCostsXYSI
       uVar5 = 5;
       iVar4 = -1;
       iVar3 = -1;
-      resourceString = (uint *)LoadResourceString(0x36b3,g_hINSTANCE_00807618);
+      resourceString = LoadResourceString(0x36b3,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar4,uVar5,iVar6,iVar7);
     }
     if (param_2 != 0xffff) {
       wsprintfA(&pCVar2->field_01E1,"%4d",param_2);
       ccFntTy::SetSurf(pCVar2->field_01C4,param_1,0,0x7d,0x5a,0x18,0xf);
-      ccFntTy::WrTxt(pCVar2->field_01C4,(uint *)&pCVar2->field_01E1,-3,-1,(uint)param_4,-1,-1);
+      ccFntTy::WrTxt(pCVar2->field_01C4,&pCVar2->field_01E1,-3,-1,(uint)param_4,-1,-1);
     }
     if (param_3 != 0xffff) {
       wsprintfA(&pCVar2->field_01E1,"%4d",param_3);
       ccFntTy::SetSurf(pCVar2->field_01C4,param_1,0,0x5f,0x5a,0x18,0xf);
-      ccFntTy::WrTxt(pCVar2->field_01C4,(uint *)&pCVar2->field_01E1,-3,-1,(uint)param_5,-1,-1);
+      ccFntTy::WrTxt(pCVar2->field_01C4,&pCVar2->field_01E1,-3,-1,(uint)param_5,-1,-1);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

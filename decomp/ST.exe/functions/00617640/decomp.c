@@ -16,8 +16,9 @@ int __thiscall JumpManagC::GetMessage(JumpManagC *this,STMessage *message)
   JumpManagC *this_00;
   int iVar3;
   int iVar4;
-  byte *puVar5;
+  int iVar5;
   byte *puVar6;
+  byte *puVar7;
   InternalExceptionFrame local_54;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
@@ -40,14 +41,14 @@ int __thiscall JumpManagC::GetMessage(JumpManagC *this,STMessage *message)
   }
   SVar1 = message->id;
   if (SVar1 == MESS_ID_CREATE) {
-    puVar5 = (byte *)((message->arg0).ptr);
-    if (puVar5[3] != 2) {
-      puVar6 = (byte *)&local_8->field_0x1c;
-      memmove(puVar6, puVar5, 0x3e); /* compiler REP MOVS byte copy */
+    puVar6 = (byte *)((message->arg0).ptr);
+    if (puVar6[3] != 2) {
+      puVar7 = (byte *)&local_8->field_0x1c;
+      memmove(puVar7, puVar6, 0x3e); /* compiler REP MOVS byte copy */
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    sub_00618170(local_8,puVar5);
+    sub_00618170(local_8,puVar6);
     sub_006179D0(this_00);
   }
   else if (SVar1 == MESS_SHARED_0003) {

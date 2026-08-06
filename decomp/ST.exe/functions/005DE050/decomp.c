@@ -19,7 +19,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
   int errorCode;
   uint uVar5;
   int iVar6;
-  uint *resourceString;
+  char *resourceString;
   uint uVar7;
   InternalExceptionFrame local_54;
   StartSystemTy *local_10;
@@ -49,7 +49,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
       if ((int)uVar5 < (int)(*(int *)(local_c + 0x1e0) + uVar5)) {
         do {
           if ((int)uVar7 < (int)pSVar4->field_0548[2]) {
-            resourceString = *(uint **)(pSVar4->field_0548[5] + uVar7 * 4);
+            resourceString = *(char **)(pSVar4->field_0548[5] + uVar7 * 4);
           }
           else {
             resourceString = nullptr;

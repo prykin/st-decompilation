@@ -10,16 +10,18 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
 {
   PausePanelTy *this_00;
   int iVar2;
-  ccFntTy *pcVar3;
-  LPSTR pCVar4;
-  ushort *puVar5;
-  uint *resourceString;
-  undefined4 uVar6;
-  int iVar7;
-  uint uVar8;
-  int *piVar9;
-  int iVar10;
-  int iVar11;
+  int iVar4;
+  ccFntTy *pcVar5;
+  LPSTR pCVar6;
+  ushort *puVar7;
+  char *resourceString;
+  undefined4 uVar8;
+  int iVar3;
+  int iVar9;
+  uint uVar10;
+  int *piVar11;
+  int iVar12;
+  int iVar13;
   InternalExceptionFrame local_4c;
   PausePanelTy *local_8;
 
@@ -30,38 +32,38 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
   this_00 = local_8;
   if (iVar2 == 0) {
     g_pausePanel_008016E0 = local_8;
-    iVar2 = g_nWidth_00806730 + -0x1c;
-    local_8->field_003C = iVar2;
-    local_8->field_0174 = (local_8->field_0040 - iVar2) + g_nWidth_00806730;
-    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
-    this_00->field_017C = pcVar3;
-    pcVar3->field_0058 = 0;
-    pcVar3->field_005C = 0;
-    iVar2 = 1;
-    piVar9 = nullptr;
-    pCVar4 = thunk_FUN_00571240("BKG_PAUSE",0);
-    puVar5 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar9,iVar2);
-    this_00->field_0180 = puVar5;
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)puVar5);
+    iVar4 = g_nWidth_00806730 + -0x1c;
+    local_8->field_003C = iVar4;
+    local_8->field_0174 = (local_8->field_0040 - iVar4) + g_nWidth_00806730;
+    pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
+    this_00->field_017C = pcVar5;
+    pcVar5->field_0058 = 0;
+    pcVar5->field_005C = 0;
+    iVar4 = 1;
+    piVar11 = nullptr;
+    pCVar6 = thunk_FUN_00571240("BKG_PAUSE",0);
+    puVar7 = cMf32::RecGet(g_cMf32_00806790,1,pCVar6,piVar11,iVar4);
+    this_00->field_0180 = puVar7;
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)puVar7);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x52,2,0xd1,0xc);
-    iVar11 = -1;
-    iVar10 = -1;
-    uVar8 = 0;
-    iVar7 = -1;
-    iVar2 = -2;
-    resourceString = (uint *)LoadResourceString(0x2716,g_hINSTANCE_00807618);
-    ccFntTy::WrTxt(this_00->field_017C,resourceString,iVar2,iVar7,uVar8,iVar10,iVar11);
-    pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    uVar6 = PanelTy::CreateBut((PanelTy *)this_00,0,1,0x115,0x8b,1,0,1,pCVar4,0xbfff,0xc000,0,0,0,
+    iVar13 = -1;
+    iVar12 = -1;
+    uVar10 = 0;
+    iVar9 = -1;
+    iVar4 = -2;
+    resourceString = LoadResourceString(0x2716,g_hINSTANCE_00807618);
+    ccFntTy::WrTxt(this_00->field_017C,resourceString,iVar4,iVar9,uVar10,iVar12,iVar13);
+    pCVar6 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    uVar8 = PanelTy::CreateBut((PanelTy *)this_00,0,1,0x115,0x8b,1,0,1,pCVar6,0xbfff,0xc000,0,0,0,
                                nullptr,1);
-    this_00->field_0184 = uVar6;
+    this_00->field_0184 = uVar8;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\pause.cpp",0x28,0,iVar2,"%s",
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\pause.cpp",0x28,0,iVar2,"%s",
                              "PausePanelTy::InitPausePanel");
-  if (iVar7 != 0) {
+  if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\pause.cpp",0x28);

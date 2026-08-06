@@ -39,9 +39,10 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   int iVar2;
   uint index;
   int iVar3;
-  uint *puVar4;
-  uint *puVar6;
-  bool bVar7;
+  int iVar4;
+  uint *puVar5;
+  uint *puVar7;
+  bool bVar8;
   uint local_100 [19];
   InternalExceptionFrame local_b4;
   int local_70 [5];
@@ -72,7 +73,7 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   memset(local_50, 0, 0x4c); /* compiler bulk-zero initialization */
-  iVar2 = 0;
+  iVar4 = 0;
   local_3c = param_2;
   local_1c = param_2;
   local_38 = param_3;
@@ -105,18 +106,18 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
     index = DArrayGetNext(g_array_008026F0,(byte *)local_100);
     if (-1 < (int)index) {
       do {
-        iVar2 = 0x13;
-        bVar7 = true;
-        puVar4 = local_100;
-        puVar6 = local_50;
+        iVar4 = 0x13;
+        bVar8 = true;
+        puVar5 = local_100;
+        puVar7 = local_50;
         do {
-          if (iVar2 == 0) break;
-          iVar2 = iVar2 + -1;
-          bVar7 = *puVar4 == *puVar6;
-          puVar4 = puVar4 + 1;
-          puVar6 = puVar6 + 1;
-        } while (bVar7);
-        if (bVar7) {
+          if (iVar4 == 0) break;
+          iVar4 = iVar4 + -1;
+          bVar8 = *puVar5 == *puVar7;
+          puVar5 = puVar5 + 1;
+          puVar7 = puVar7 + 1;
+        } while (bVar8);
+        if (bVar8) {
           DArrayRemoveAt(g_array_008026F0,index);
           if (g_array_008026F0->count != 0) {
             g_currentExceptionFrame = local_b4.previous;

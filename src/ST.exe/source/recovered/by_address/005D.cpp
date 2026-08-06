@@ -150,7 +150,8 @@ SettMapTy * __cdecl st::fn_005D77A0(void)
   undefined4 *puVar2;
   SpriteClassTy *this_00;
   undefined4 *puVar3;
-  uint *puVar4;
+  void **ppvVar4;
+  uint *puVar5;
   int local_8;
 
   this = (SettMapTy *)st::fn_006B04D0(0x21fc);
@@ -210,13 +211,16 @@ SettMapTy * __cdecl st::fn_005D77A0(void)
     iVar1 = 0;
     this->field_211D = 0;
     this->field_1F88 = 0;
-    puVar4 = this->field_20CC;
+    puVar5 = this->field_20CC;
     for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar4 = 0xffffffff;
-      puVar4 = puVar4 + 1;
+      *puVar5 = 0xffffffff;
+      puVar5 = puVar5 + 1;
     }
-    memset(this->field_20F4, 0, 0x28); /* compiler bulk-zero initialization */
-    iVar1 = 0;
+    ppvVar4 = this->field_20F4;
+    for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *ppvVar4 = nullptr;
+      ppvVar4 = ppvVar4 + 1;
+    }
     this->field_1E1E = 0;
     this->field_1E22 = 0xffffffff;
     memset(this->field_2125, 0, 0x38); /* compiler bulk-zero initialization */
@@ -602,10 +606,12 @@ undefined4 st::fn_005DA7A0(void)
 
 {
   undefined4 *puVar1;
-  bool bVar2;
+  int *piVar2;
+  int iVar4;
+  bool bVar5;
   int iVar3;
   int *piVar4;
-  char *pcVar5;
+  char *pcVar6;
   InternalExceptionFrame local_4c;
   StartSystemTy *local_8;
 
@@ -616,32 +622,32 @@ undefined4 st::fn_005DA7A0(void)
     puVar1 = &local_8->field_068A;
     if (local_8->field_068A == 0) {
       st::fn_006B62D0(puVar1);
-      piVar4 = (int *)*puVar1;
-      bVar2 = true;
-      if (*piVar4 <= piVar4[1]) {
-        piVar4 = (int *)st::fn_006BFB50(piVar4,*piVar4 * 0x14 + 0x1c);
+      piVar2 = (int *)*puVar1;
+      bVar5 = true;
+      if (*piVar2 <= piVar2[1]) {
+        piVar4 = st::fn_006BFB50(piVar2,*piVar2 * 0x14 + 0x1c);
         if (piVar4 == nullptr) {
-          bVar2 = false;
+          bVar5 = false;
         }
         else {
           *puVar1 = piVar4;
           *piVar4 = *piVar4 + 1;
         }
       }
-      if (bVar2) {
-        pcVar5 = st::fn_006B0140(0x254b,g_hINSTANCE_00807618);
-        pcVar5 = st::fn_006C8170(pcVar5);
-        if (pcVar5 != nullptr) {
-          iVar3 = *puVar1;
+      if (bVar5) {
+        pcVar6 = st::fn_006B0140(0x254b,g_hINSTANCE_00807618);
+        pcVar6 = st::fn_006C8170(pcVar6);
+        if (pcVar6 != nullptr) {
+          iVar4 = *puVar1;
           st::fn_0072DA70
-                    ((undefined4 *)(iVar3 + 0x1c),(AnonPointee_TLOBaseTy_0607 *)(iVar3 + 8),
-                     *(int *)(iVar3 + 4) * 0x14);
-          iVar3 = *puVar1;
-          *(undefined4 *)(iVar3 + 0xc) = DAT_007cd700;
-          *(undefined4 *)(iVar3 + 0x10) = DAT_007cd704;
-          *(undefined4 *)(iVar3 + 0x14) = DAT_007cd708;
-          *(undefined4 *)(iVar3 + 0x18) = DAT_007cd70c;
-          *(char **)(*puVar1 + 8) = pcVar5;
+                    ((undefined4 *)(iVar4 + 0x1c),(AnonPointee_TLOBaseTy_0607 *)(iVar4 + 8),
+                     *(int *)(iVar4 + 4) * 0x14);
+          iVar4 = *puVar1;
+          *(undefined4 *)(iVar4 + 0xc) = DAT_007cd700;
+          *(undefined4 *)(iVar4 + 0x10) = DAT_007cd704;
+          *(undefined4 *)(iVar4 + 0x14) = DAT_007cd708;
+          *(undefined4 *)(iVar4 + 0x18) = DAT_007cd70c;
+          *(char **)(*puVar1 + 8) = pcVar6;
           *(int *)(*puVar1 + 4) = *(int *)(*puVar1 + 4) + 1;
         }
       }
@@ -791,10 +797,10 @@ undefined4 __cdecl st::fn_005DB030(byte *param_1,undefined4 param_2,char param_3
   bool bVar2;
   int iVar3;
   cMf32 *this;
-  ushort *puVar4;
-  uint uVar5;
+  ushort *puVar3;
+  uint uVar4;
+  byte *pbVar6;
   byte *pbVar7;
-  byte *pbVar8;
   int local_1e18;
   int local_1e14;
   int local_1e10;
@@ -805,9 +811,10 @@ undefined4 __cdecl st::fn_005DB030(byte *param_1,undefined4 param_2,char param_3
   InternalExceptionFrame *local_6c;
   int local_68 [9];
   int iStackY_44;
-  undefined1 uVar9;
-  undefined4 uVar10;
-  int *piVar11;
+  undefined1 uVar8;
+  undefined4 uVar9;
+  int *piVar10;
+  int iVar11;
   undefined4 uVar12;
 
   st::fn_0072DA40();
@@ -826,24 +833,24 @@ undefined4 __cdecl st::fn_005DB030(byte *param_1,undefined4 param_2,char param_3
     g_currentExceptionFrame = local_6c;
     return 0;
   }
-  uVar9 = 0;
+  uVar8 = 0;
   this = (cMf32 *)st::fn_006F0EC0(0x345,local_170,0,0,0);
-  piVar11 = (int *)&stack0xffffffe4;
-  iVar3 = 0;
-  uVar10 = 0x5db113;
-  puVar4 = st::fn_006F1CE0(this,0,PTR_s_DESCRIPTOR_0079c1d8,piVar11,0);
-  if (puVar4 == nullptr) goto cf_common_exit_005DB1E1;
-  if ((char)*piVar11 == '\x05') {
-    iVar3 = 0;
-    uVar10 = 0x5db13b;
-    puVar4 = st::fn_006F1CE0(this,0x80,PTR_s_SAVE_PLAYER_0079c1c8,(int *)&stack0xffffffe0,0);
-    if (puVar4 == nullptr) goto cf_common_exit_005DB1E1;
+  piVar10 = (int *)&stack0xffffffe4;
+  iVar11 = 0;
+  uVar9 = 0x5db113;
+  puVar3 = st::fn_006F1CE0(this,0,PTR_s_DESCRIPTOR_0079c1d8,piVar10,0);
+  if (puVar3 == nullptr) goto cf_common_exit_005DB1E1;
+  if ((char)*piVar10 == '\x05') {
+    iVar11 = 0;
+    uVar9 = 0x5db13b;
+    puVar3 = st::fn_006F1CE0(this,0x80,PTR_s_SAVE_PLAYER_0079c1c8,(int *)&stack0xffffffe0,0);
+    if (puVar3 == nullptr) goto cf_common_exit_005DB1E1;
   }
   bVar2 = false;
-  if ((local_1e18 != 0) && (local_1e10 == STField<int>(piVar11,1))) {
-    switch((char)*piVar11) {
+  if ((local_1e18 != 0) && (local_1e10 == STField<int>(piVar10,1))) {
+    switch((char)*piVar10) {
     case '\x02':
-      if (local_1e14 != iVar3) goto joined_r0x005db18e;
+      if (local_1e14 != iVar11) goto joined_r0x005db18e;
 cf_common_exit_005DB1AB:
       bVar2 = true;
       break;
@@ -856,25 +863,25 @@ joined_r0x005db18e:
       break;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case '\x05':
-      if (STField<int>(piVar11,5) == CONCAT31((int3)uVar10,uVar9)) goto cf_common_exit_005DB1AB;
+      if (STField<int>(piVar10,5) == CONCAT31((int3)uVar9,uVar8)) goto cf_common_exit_005DB1AB;
     }
   }
   if (bVar2) {
-    uVar5 = 0xffffffff;
+    uVar4 = 0xffffffff;
     uVar12 = 0xffffff90;
-    pbVar7 = local_170;
+    pbVar6 = local_170;
     do {
-      pbVar8 = pbVar7;
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      pbVar8 = pbVar7 + 1;
-      bVar1 = *pbVar7;
-      pbVar7 = pbVar8;
+      pbVar7 = pbVar6;
+      if (uVar4 == 0) break;
+      uVar4 = uVar4 - 1;
+      pbVar7 = pbVar6 + 1;
+      bVar1 = *pbVar6;
+      pbVar6 = pbVar7;
     } while (bVar1 != 0);
-    uVar5 = ~uVar5;
-    pbVar7 = pbVar8 + -uVar5;
-    pbVar8 = &DAT_0080ed16;
-    memmove(pbVar8, pbVar7, uVar5); /* compiler REP MOVS byte copy */
+    uVar4 = ~uVar4;
+    pbVar6 = pbVar7 + -uVar4;
+    pbVar7 = &DAT_0080ed16;
+    memmove(pbVar7, pbVar6, uVar4); /* compiler REP MOVS byte copy */
   }
 cf_common_exit_005DB1E1:
   st::fn_006F1170(this);
@@ -1008,38 +1015,44 @@ void __cdecl st::fn_005DE5B0(UINT param_1,int param_2)
 
 // 005DEFE0 FUN_005defe0
 #line 4 "decomp/ST.exe/functions/005DEFE0/decomp.c"
-void __cdecl st::fn_005DEFE0(int param_1,undefined *param_2,BYTE param_3)
+/* [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /WinDef.h/HDC; no intervening CALL or EAX/AX/AL/AH definition exists; machine CFG audit: used=4,
+   ignored=0, unknown=0 */
+
+HDC __cdecl st::fn_005DEFE0(int param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_98;
   byte local_5c [76];
   byte local_10 [12];
 
-  pLVar6 = &local_98;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_98;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_98.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Verdana";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Verdana";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_98.lfHeight = -0x10;
   local_98.lfWidth = 0;
   local_98.lfEscapement = 0;
@@ -1053,18 +1066,18 @@ void __cdecl st::fn_005DEFE0(int param_1,undefined *param_2,BYTE param_3)
   local_98.lfQuality = '\x01';
   local_98.lfPitchAndFamily = '\"';
   local_10[0] = 0;
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_98.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_98.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_10[1] = 0x1b;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_10[2] = 0x17;
   local_10[3] = 0x18;
@@ -1148,45 +1161,52 @@ void __cdecl st::fn_005DEFE0(int param_1,undefined *param_2,BYTE param_3)
   local_5c[0x46] = 0x78;
   local_5c[0x47] = 0x79;
   local_5c[0x48] = 0x7a;
-  st::fn_0070D1F0
-            (0x19d,&local_98,nullptr,local_5c,param_1,local_10,5,2,1,1,0x40011c,param_2);
-  return;
+  pHVar2 = st::fn_0070D1F0
+                     (0x19d,&local_98,nullptr,local_5c,param_1,local_10,5,2,1,1,0x40011c,param_2
+                     );
+  return pHVar2;
 }
 
 // 005DF290 FUN_005df290
 #line 4 "decomp/ST.exe/functions/005DF290/decomp.c"
-void __cdecl st::fn_005DF290(int param_1,undefined *param_2,BYTE param_3)
+/* [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /WinDef.h/HDC; no intervening CALL or EAX/AX/AL/AH definition exists; machine CFG audit: used=4,
+   ignored=0, unknown=0 */
+
+HDC __cdecl st::fn_005DF290(int param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_98;
   byte local_5c [76];
   byte local_10 [12];
 
-  pLVar6 = &local_98;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_98;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_98.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Verdana";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Verdana";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_98.lfHeight = -0xc;
   local_98.lfWidth = 0;
   local_98.lfEscapement = 0;
@@ -1200,18 +1220,18 @@ void __cdecl st::fn_005DF290(int param_1,undefined *param_2,BYTE param_3)
   local_98.lfQuality = '\x01';
   local_98.lfPitchAndFamily = '\"';
   local_10[0] = 0;
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_98.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_98.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_10[1] = 0x1b;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_10[2] = 0x17;
   local_10[3] = 0x18;
@@ -1295,9 +1315,10 @@ void __cdecl st::fn_005DF290(int param_1,undefined *param_2,BYTE param_3)
   local_5c[0x46] = 0x78;
   local_5c[0x47] = 0x79;
   local_5c[0x48] = 0x7a;
-  st::fn_0070D1F0
-            (0x19d,&local_98,nullptr,local_5c,param_1,local_10,5,2,1,0,0x40011c,param_2);
-  return;
+  pHVar2 = st::fn_0070D1F0
+                     (0x19d,&local_98,nullptr,local_5c,param_1,local_10,5,2,1,0,0x40011c,param_2
+                     );
+  return pHVar2;
 }
 
 // 005DF930 FUN_005df930

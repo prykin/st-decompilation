@@ -15,19 +15,19 @@ DWORD FUN_006bfb90(HANDLE param_1,LPDWORD lpNumberOfBytesRead,LPVOID lpBuffer,
 
 {
   DWORD DVar1;
+  BOOL BVar2;
   DWORD DVar2;
-  BOOL BVar3;
 
   DVar1 = SetFilePointer(param_1,(LONG)lpNumberOfBytesRead,(PLONG)0x0,0);
   DVar2 = nNumberOfBytesToRead;
   if ((DVar1 != 0xffffffff) &&
-     (BVar3 = ReadFile(param_1,lpBuffer,nNumberOfBytesToRead,(LPDWORD)&lpNumberOfBytesRead,
-                       (LPOVERLAPPED)0x0), BVar3 != 0)) {
+     (BVar2 = ReadFile(param_1,lpBuffer,nNumberOfBytesToRead,(LPDWORD)&lpNumberOfBytesRead,
+                       (LPOVERLAPPED)0x0), BVar2 != 0)) {
     return -(uint)(lpNumberOfBytesRead != (LPDWORD)DVar2) & 0xfffffff2;
   }
-  DVar2 = GetLastError();
-  if (DVar2 != 0) {
-    return DVar2;
+  DVar1 = GetLastError();
+  if (DVar1 != 0) {
+    return DVar1;
   }
   return 0xffffff03;
 }

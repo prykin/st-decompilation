@@ -11,7 +11,7 @@ void __thiscall CPanelTy::PaintMap(CPanelTy *this)
   CPanelTy *pCVar2;
   int iVar3;
   uint uVar4;
-  uint *resourceString;
+  char *resourceString;
   int iVar5;
   int iVar6;
   int iVar7;
@@ -32,7 +32,7 @@ void __thiscall CPanelTy::PaintMap(CPanelTy *this)
     uVar4 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
     iVar5 = -1;
     iVar3 = -2;
-    resourceString = (uint *)LoadResourceString(0x2712,g_hINSTANCE_00807618);
+    resourceString = LoadResourceString(0x2712,g_hINSTANCE_00807618);
     ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar5,uVar4,iVar6,iVar7);
     if (-1 < (int)pCVar2->field_0148[4]) {
       Library::DKW::DDX::FUN_006b3640

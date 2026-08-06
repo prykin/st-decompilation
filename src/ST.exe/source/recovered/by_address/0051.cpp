@@ -190,6 +190,8 @@ HelpStringTy * __cdecl st::fn_0051F860(void)
 
 {
   HelpStringTy *this;
+  int iVar1;
+  char *pcVar2;
 
   this = (HelpStringTy *)st::fn_006B04D0(0x132);
   if (this != nullptr) {
@@ -202,7 +204,11 @@ HelpStringTy * __cdecl st::fn_0051F860(void)
     this->field_011E = nullptr;
     this->field_012A = nullptr;
     this->field_012E = 0;
-    memset(&this->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
+    pcVar2 = &this->field_0018;
+    for (iVar1 = 0x41; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *(undefined4 *)pcVar2 = 0;
+      pcVar2 = pcVar2 + 4;
+    }
     return this;
   }
   return nullptr;
@@ -222,20 +228,21 @@ void __thiscall st::fn_0051FAC0(void *this,char *param_1,byte param_2,char param
   uint uVar3;
   char *pcVar6;
   char *pcVar7;
+  char *pcVar6_mg0;
 
   if (STField<byte>(this,0x11c) <= param_2) {
     if (param_1 != nullptr) {
       uVar3 = 0xffffffff;
       do {
-        pcVar6 = param_1;
+        pcVar6_mg0 = param_1;
         if (uVar3 == 0) break;
         uVar3 = uVar3 - 1;
-        pcVar6 = param_1 + 1;
+        pcVar6_mg0 = param_1 + 1;
         cVar1 = *param_1;
-        param_1 = pcVar6;
+        param_1 = pcVar6_mg0;
       } while (cVar1 != '\0');
       uVar3 = ~uVar3;
-      pcVar6 = pcVar6 + -uVar3;
+      pcVar6 = pcVar6_mg0 + -uVar3;
       pcVar7 = (char *)((int)this + 0x18);
       memmove(pcVar7, pcVar6, uVar3); /* compiler REP MOVS byte copy */
       STField<byte>(this,0x11c) = param_2;

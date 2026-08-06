@@ -33,7 +33,7 @@ undefined4 __thiscall FUN_006ecc70(void *this,int *param_1,uint *param_2)
   int *local_c;
   int *local_8;
 
-  local_8 = (int *)FUN_006bfb70(param_2[0x38] << 4);
+  local_8 = FUN_006bfb70(param_2[0x38] << 4);
   if (local_8 != nullptr) {
     local_10 = (uint *)param_2[0x39];
     local_18 = (uint *)param_2[0x3c];

@@ -20,7 +20,10 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
   short sVar1;
   short sVar2;
   short sVar3;
+  int local_EAX_44;
   int iVar5;
+  int local_EAX_602;
+  int iVar6;
 
   this->field_00B7 = 0;
   switch(this->field_06C3) {
@@ -32,8 +35,8 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
   case CASE_3:
     this->field_06C3 = CASE_5;
     this->field_06C7 = 0;
-    iVar5 = this->vfunc_D8();
-    return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
+    iVar6 = this->vfunc_D8();
+    return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
   case CASE_4:
     sVar1 = this->field_06A9;
     sVar2 = this->field_06AD;
@@ -52,7 +55,7 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
         (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
          this->field_06AF)) ||
        ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
-        (iVar5 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar5 == 0)))) {
+        (iVar6 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar6 == 0)))) {
       STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
     }
     if (param_1 != nullptr) {
@@ -65,21 +68,22 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
     else {
       this->field_06C3 = CASE_6;
     }
-    iVar5 = this->vfunc_D8();
-    return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
+    iVar6 = this->vfunc_D8();
+    return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
   case CASE_5:
     iVar5 = Dismant(this,(int *)0x2);
     return iVar5;
   default:
-    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3b30,0,0,"%s",
-                               "STBoatC::BackDismant incorrect entry");
-    if (iVar5 == 0) {
+    local_EAX_602 =
+         ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3b30,0,0,"%s",
+                            "STBoatC::BackDismant incorrect entry");
+    if (local_EAX_602 == 0) {
       return -1;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar5 = sub_00460360(this);
-  if (iVar5 == 0) {
+  local_EAX_44 = sub_00460360(this);
+  if (local_EAX_44 == 0) {
     sVar1 = this->field_06A9;
     sVar2 = this->field_06AD;
     sVar3 = this->field_06AB;
@@ -97,7 +101,7 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
         (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
          this->field_06AF)) ||
        ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
-        (iVar5 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar5 == 0)))) {
+        (iVar6 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar6 == 0)))) {
       STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
     }
     if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {

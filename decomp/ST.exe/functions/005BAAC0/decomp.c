@@ -12,7 +12,8 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
   PrividerTy *this_00;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  int iVar5;
+  undefined4 *puVar6;
   undefined4 local_264;
   undefined4 local_257;
   undefined4 local_253;
@@ -48,14 +49,14 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
   local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 == 0) {
-    puVar5 = &local_264;
-    for (iVar3 = 0x7e; this_00 = local_8, iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+    puVar6 = &local_264;
+    for (iVar5 = 0x7e; this_00 = local_8, iVar5 != 0; iVar5 = iVar5 + -1) {
+      *puVar6 = 0;
+      puVar6 = puVar6 + 1;
     }
-    *(undefined2 *)puVar5 = 0;
+    *(undefined2 *)puVar6 = 0;
     this_00->field_1A5F = param_1;
-    STField<undefined1>(puVar5,2) = 0;
+    STField<undefined1>(puVar6,2) = 0;
     if (param_1 == '\x01') {
       local_1a1 = 0x2340;
       if ((this_00->field_0065 != CASE_5) || (local_19d = 0, this_00->field_1A72 != '\0')) {
@@ -98,12 +99,12 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     local_209 = local_230;
     local_16d = local_230;
     if (pSVar1->field_02E6 != nullptr) {
-      puVar5 = local_68;
-      for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar5 = 0xffffffff;
-        puVar5 = puVar5 + 1;
+      puVar6 = local_68;
+      for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+        *puVar6 = 0xffffffff;
+        puVar6 = puVar6 + 1;
       }
-      *(undefined2 *)puVar5 = 0xffff;
+      *(undefined2 *)puVar6 = 0xffff;
       MMsgTy::SetPanel(pSVar1->field_02E6,0,(int)&local_264,0,0);
       MMsgTy::StatePanel(this_00->field_1A5B->field_02E6,(int)local_68);
     }

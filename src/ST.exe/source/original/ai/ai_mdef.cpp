@@ -77,10 +77,11 @@ void __cdecl st::fn_00675FE0(uint param_1)
 {
   dword dVar1;
   int iVar3;
-  DArrayTy *array;
-  ushort *puVar4;
-  STGameObjC *pSVar5;
+  DArrayTy *groupContent;
+  ushort *puVar3;
+  STGameObjC *pSVar4;
   int iVar6;
+  int iVar5;
   uint uVar7;
   uint uVar8;
   char objPtr;
@@ -91,9 +92,9 @@ void __cdecl st::fn_00675FE0(uint param_1)
   iVar3 = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x118,0,iVar3,"%s",
+    iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x118,0,iVar3,"%s",
                                "_AddAllGrpExch");
-    if (iVar6 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x119);
@@ -101,39 +102,38 @@ void __cdecl st::fn_00675FE0(uint param_1)
   }
   if (g_allPlayers_007FA174 != nullptr) {
     objPtr = (char)param_1;
-    array = (DArrayTy *)st::fn_00404ABB(objPtr);
-    if (array != nullptr) {
-      dVar1 = array->count;
+    groupContent = (DArrayTy *)st::fn_00404ABB(objPtr);
+    if (groupContent != nullptr) {
+      dVar1 = groupContent->count;
       if (dVar1 != 0) {
         uVar8 = 0;
         if (dVar1 != 0) {
           uVar7 = 0;
           if (dVar1 == 0) {
-            puVar4 = nullptr;
+            puVar3 = nullptr;
             goto LAB_00676053;
           }
           do {
-            puVar4 = DArrayAt<ushort>(array, uVar7);
+            puVar3 = DArrayAt<ushort>(groupContent, uVar7);
 LAB_00676053:
-            pSVar5 = st::fn_004028BA(g_allPlayers_007FA174,objPtr,*puVar4,CASE_1);
-            if (pSVar5 != nullptr) {
-              iVar3 = (*pSVar5->vtable->vfunc_2C)();
-              if (iVar3 == 0x78) {
-                iVar3 = (*pSVar5->vtable->vfunc_2C)();
-                if (iVar3 == 0x78) {
-                  pSVar5->field_0269 = 0xffffffff;
+            pSVar4 = st::fn_004028BA(g_allPlayers_007FA174,objPtr,*puVar3,CASE_1);
+            if (pSVar4 != nullptr) {
+              iVar6 = (*pSVar4->vtable->vfunc_2C)();
+              if (iVar6 == 0x78) {
+                iVar6 = (*pSVar4->vtable->vfunc_2C)();
+                if (iVar6 == 0x78) {
+                  pSVar4->field_0269 = 0xffffffff;
                 }
               }
             }
             uVar8 = uVar8 + 1;
             uVar7 = uVar8 & 0xffff;
-          } while (uVar7 < array->count);
+          } while (uVar7 < groupContent->count);
         }
-        st::fn_0040178F
-                  (g_allPlayers_007FA174,objPtr,0,(uint *)array,nullptr);
+        st::fn_0040178F(g_allPlayers_007FA174,objPtr,0,groupContent,nullptr);
       }
-      if (array != nullptr) {
-        st::fn_006AE110(array);
+      if (groupContent != nullptr) {
+        st::fn_006AE110(groupContent);
       }
     }
   }
@@ -154,7 +154,8 @@ uint * __cdecl st::fn_00676170(undefined4 param_1)
   int errorCode;
   STGroupBoatC *this;
   uint *puVar2;
-  int iVar3;
+  int iVar2;
+  uint *puVar3;
   InternalExceptionFrame local_4c;
   uint *local_8;
 
@@ -164,9 +165,9 @@ uint * __cdecl st::fn_00676170(undefined4 param_1)
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x125,0,errorCode,"%s"
+    iVar2 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x125,0,errorCode,"%s"
                                ,"_GetStaffGrpExch");
-    if (iVar3 != 0) {
+    if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x126);
@@ -200,9 +201,10 @@ int __cdecl st::fn_00676260(uint param_1,int param_2)
   DArrayTy *array;
   int iVar2;
   STGroupBoatC *this;
-  ushort *puVar3;
-  STGameObjC *pSVar4;
+  ushort *puVar2;
+  STGameObjC *pSVar3;
   int iVar5;
+  int iVar4;
   uint uVar6;
   uint uVar7;
   InternalExceptionFrame local_50;
@@ -229,22 +231,22 @@ int __cdecl st::fn_00676260(uint param_1,int param_2)
     if (local_c->count != 0) {
       uVar6 = 0;
       if (local_c->count == 0) {
-        puVar3 = nullptr;
+        puVar2 = nullptr;
         goto LAB_006762e0;
       }
       do {
-        puVar3 = DArrayAt<ushort>(array, uVar6);
+        puVar2 = DArrayAt<ushort>(array, uVar6);
 LAB_006762e0:
-        pSVar4 = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar3,CASE_1);
-        if (pSVar4 != nullptr) {
-          iVar2 = (*pSVar4->vtable->vfunc_2C)();
-          if (iVar2 == 0x78) {
-            iVar2 = pSVar4->field_0259;
+        pSVar3 = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
+        if (pSVar3 != nullptr) {
+          iVar5 = (*pSVar3->vtable->vfunc_2C)();
+          if (iVar5 == 0x78) {
+            iVar5 = pSVar3->field_0259;
           }
           else {
-            iVar2 = 0;
+            iVar5 = 0;
           }
-          if (param_2 == iVar2) {
+          if (param_2 == iVar5) {
             local_8 = local_8 + 1;
           }
         }
@@ -262,9 +264,9 @@ LAB_006762e0:
   if (local_c != nullptr) {
     st::fn_006AE110(local_c);
   }
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x13a,0,iVar2,"%s",
+  iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x13a,0,iVar2,"%s",
                              "_GetEmbrTobjGrpExch");
-  if (iVar5 == 0) {
+  if (iVar4 == 0) {
     st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x13b);
     return iVar2;
   }
@@ -284,9 +286,10 @@ int __cdecl st::fn_006763F0(uint param_1,int param_2,int param_3)
   DArrayTy *array;
   int iVar2;
   STGroupBoatC *this;
-  ushort *puVar3;
-  STGameObjC *pSVar4;
+  ushort *puVar2;
+  STGameObjC *pSVar3;
   int iVar5;
+  int iVar4;
   uint uVar6;
   uint uVar7;
   InternalExceptionFrame local_50;
@@ -313,30 +316,30 @@ int __cdecl st::fn_006763F0(uint param_1,int param_2,int param_3)
     if (local_c->count != 0) {
       uVar6 = 0;
       if (local_c->count == 0) {
-        puVar3 = nullptr;
+        puVar2 = nullptr;
         goto LAB_00676470;
       }
       do {
-        puVar3 = DArrayAt<ushort>(array, uVar6);
+        puVar2 = DArrayAt<ushort>(array, uVar6);
 LAB_00676470:
-        pSVar4 = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar3,CASE_1);
-        if (pSVar4 != nullptr) {
-          iVar2 = (*pSVar4->vtable->vfunc_2C)();
-          if (iVar2 == 0x78) {
-            iVar2 = pSVar4->field_0259;
+        pSVar3 = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
+        if (pSVar3 != nullptr) {
+          iVar5 = (*pSVar3->vtable->vfunc_2C)();
+          if (iVar5 == 0x78) {
+            iVar5 = pSVar3->field_0259;
           }
           else {
-            iVar2 = 0;
+            iVar5 = 0;
           }
-          if (param_2 == iVar2) {
-            iVar2 = (*pSVar4->vtable->vfunc_2C)();
-            if (iVar2 == 0x78) {
-              iVar2 = pSVar4->field_0269;
+          if (param_2 == iVar5) {
+            iVar5 = (*pSVar3->vtable->vfunc_2C)();
+            if (iVar5 == 0x78) {
+              iVar5 = pSVar3->field_0269;
             }
             else {
-              iVar2 = -1;
+              iVar5 = -1;
             }
-            if (param_3 == iVar2) {
+            if (param_3 == iVar5) {
               local_8 = local_8 + 1;
             }
           }
@@ -355,9 +358,9 @@ LAB_00676470:
   if (local_c != nullptr) {
     st::fn_006AE110(local_c);
   }
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x150,0,iVar2,"%s",
+  iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x150,0,iVar2,"%s",
                              "_GetEmbrGrpTobjGrpExch");
-  if (iVar5 == 0) {
+  if (iVar4 == 0) {
     st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x151);
     return iVar2;
   }
@@ -387,12 +390,13 @@ st::fn_00676D80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar4;
-  dword dVar5;
+  undefined4 *puVar3;
+  int iVar5;
   dword dVar6;
-  IMAGE_DOS_HEADER *pIVar7;
-  byte *pbVar8;
-  int iVar9;
+  dword dVar7;
+  IMAGE_DOS_HEADER *pIVar8;
+  byte *pbVar9;
+  int iVar4;
   uint uVar10;
   byte *pbVar11;
   bool bVar12;
@@ -419,9 +423,9 @@ st::fn_00676D80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
   iVar3 = st::fn_0072D7F0(local_70.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x295,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x295,0,iVar3,"%s",
                                "_EnumPlObj");
-    if (iVar9 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x296);
@@ -437,22 +441,22 @@ st::fn_00676D80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
     if (local_1c->count != 0) {
       uVar10 = 0;
       if (local_1c->count == 0) {
-        puVar4 = nullptr;
+        puVar3 = nullptr;
         goto LAB_00676e12;
       }
       do {
-        puVar4 = DArrayAt<undefined4>(local_1c, uVar10);
+        puVar3 = DArrayAt<undefined4>(local_1c, uVar10);
 LAB_00676e12:
-        this = (STFishC *)*puVar4;
-        if ((this != nullptr) && (iVar3 = (*this->vtable->vfunc_F8)(), iVar3 != 0)) {
+        this = (STFishC *)*puVar3;
+        if ((this != nullptr) && (iVar5 = (*this->vtable->vfunc_F8)(), iVar5 != 0)) {
           local_10 = 1;
-          dVar5 = this->slot_2C();
+          dVar6 = this->slot_2C();
           if (param_2 != 0) {
-            if (dVar5 == 0x78) {
+            if (dVar6 == 0x78) {
               if ((param_2 & 0x80000000) == 0) {
                 if ((param_2 & 0x3fffffff) != 0) {
-                  dVar6 = this->slot_2C();
-                  if (dVar6 == 0x78) {
+                  dVar7 = this->slot_2C();
+                  if (dVar7 == 0x78) {
                     uVar10 = *(uint *)&this->field_0x259;
                   }
                   else {
@@ -467,33 +471,33 @@ LAB_00676e88:
               }
             }
             else if (((param_2 & 0x40000000) != 0) ||
-                    (((param_2 & 0x3fffffff) != 0 && ((param_2 & 0x3fffffff) != dVar5))))
+                    (((param_2 & 0x3fffffff) != 0 && ((param_2 & 0x3fffffff) != dVar6))))
             goto LAB_00676e88;
           }
           if (local_10 == 0) {
 LAB_00677024:
             if (param_14 == nullptr) goto LAB_00677041;
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar3 = (*(code *)param_14)(param_1,local_14,this,param_13);
+            iVar5 = (*(code *)param_14)(param_1,local_14,this,param_13);
           }
           else {
             if (param_3 != 0x3fffffff) {
-              if (dVar5 == 0x78) {
+              if (dVar6 == 0x78) {
                 if ((param_3 & 0x80000000) == 0) {
-                  dVar5 = this->slot_2C();
-                  if (dVar5 == 0x78) {
-                    iVar3 = *(int *)&this->field_0x259;
+                  dVar6 = this->slot_2C();
+                  if (dVar6 == 0x78) {
+                    iVar5 = *(int *)&this->field_0x259;
                   }
                   else {
-                    iVar3 = 0;
+                    iVar5 = 0;
                   }
-                  pIVar7 = st::fn_0040410B(iVar3);
+                  pIVar8 = st::fn_0040410B(iVar5);
 joined_r0x00676ef3:
-                  if (((uint)pIVar7 & param_3 & 0x3fffffff) != 0) goto LAB_00676efc;
+                  if (((uint)pIVar8 & param_3 & 0x3fffffff) != 0) goto LAB_00676efc;
                 }
               }
               else if ((param_3 & 0x40000000) == 0) {
-                pIVar7 = st::fn_0040410B(dVar5);
+                pIVar8 = st::fn_0040410B(dVar6);
                 goto joined_r0x00676ef3;
               }
               local_10 = 0;
@@ -503,30 +507,30 @@ LAB_00676efc:
             if ((param_4 != nullptr) && (*param_4 != 0)) {
               (*this->vtable->vfunc_74)((short)local_2c);
               pbVar11 = local_2c;
-              pbVar8 = param_4;
+              pbVar9 = param_4;
               do {
-                bVar1 = *pbVar8;
+                bVar1 = *pbVar9;
                 bVar12 = bVar1 < *pbVar11;
                 if (bVar1 != *pbVar11) {
 LAB_00676f47:
-                  iVar3 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
+                  iVar5 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
                   goto LAB_00676f4c;
                 }
                 if (bVar1 == 0) break;
-                bVar1 = pbVar8[1];
+                bVar1 = pbVar9[1];
                 bVar12 = bVar1 < pbVar11[1];
                 if (bVar1 != pbVar11[1]) goto LAB_00676f47;
-                pbVar8 = pbVar8 + 2;
+                pbVar9 = pbVar9 + 2;
                 pbVar11 = pbVar11 + 2;
               } while (bVar1 != 0);
-              iVar3 = 0;
+              iVar5 = 0;
 LAB_00676f4c:
-              if (iVar3 != 0) {
+              if (iVar5 != 0) {
                 local_10 = 0;
               }
             }
             if ((local_10 == 0) ||
-               ((local_5 != -1 && (iVar3 = this->vfunc_6C(), local_5 != iVar3))))
+               ((local_5 != -1 && (iVar5 = this->vfunc_6C(), local_5 != iVar5))))
             goto LAB_00677024;
             if ((0 < param_9) &&
                (((0 < param_10 && (0 < param_11)) &&
@@ -539,9 +543,9 @@ LAB_00676f4c:
             }
             if ((local_10 == 0) || (param_12 == nullptr)) goto LAB_00677024;
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar3 = (*(code *)param_12)(param_1,local_14,this,param_13);
+            iVar5 = (*(code *)param_12)(param_1,local_14,this,param_13);
           }
-          if (iVar3 != 0) {
+          if (iVar5 != 0) {
             g_currentExceptionFrame = local_70.previous;
             return -1;
           }
@@ -746,9 +750,10 @@ st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short pa
 {
   STFishC *this;
   int iVar2;
-  undefined4 *puVar3;
-  dword dVar4;
+  undefined4 *puVar2;
+  dword dVar3;
   int iVar5;
+  int iVar4;
   uint uVar6;
   InternalExceptionFrame local_5c;
   int local_18;
@@ -764,9 +769,9 @@ st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short pa
   iVar2 = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x37f,0,iVar2,"%s",
+    iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x37f,0,iVar2,"%s",
                                "_EnumRCField");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x380);
@@ -780,16 +785,16 @@ st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short pa
   if (-1 < (int)uVar6) {
     do {
       if (uVar6 < g_array_007FA15C->count) {
-        puVar3 = DArrayAt<undefined4>(g_array_007FA15C, uVar6);
+        puVar2 = DArrayAt<undefined4>(g_array_007FA15C, uVar6);
       }
       else {
-        puVar3 = nullptr;
+        puVar2 = nullptr;
       }
-      this = (STFishC *)*puVar3;
+      this = (STFishC *)*puVar2;
       if ((this != nullptr) &&
          ((local_10 = uVar6, param_1 == 0 ||
-          (dVar4 = this->slot_2C(), (int)param_1 == dVar4)))) {
-        iVar2 = 1;
+          (dVar3 = this->slot_2C(), (int)param_1 == dVar3)))) {
+        iVar5 = 1;
         local_18 = 1;
         if ((0 < param_5) &&
            (((0 < param_6 && (0 < param_7)) &&
@@ -797,13 +802,13 @@ st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short pa
              ((((local_8 < param_3 || (local_a < param_4)) ||
                ((int)param_2 + (int)param_5 <= (int)local_6)) ||
               (((int)param_3 + (int)param_6 <= (int)local_8 ||
-               (iVar2 = local_18, (int)param_4 + (int)param_7 <= (int)local_a)))))))))) {
-          iVar2 = 0;
+               (iVar5 = local_18, (int)param_4 + (int)param_7 <= (int)local_a)))))))))) {
+          iVar5 = 0;
         }
         uVar6 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((iVar2 != 0) && (param_8 != nullptr)) &&
-           (iVar2 = (*(code *)param_8)(0,local_10,this,param_9), iVar2 != 0)) {
+        if (((iVar5 != 0) && (param_8 != nullptr)) &&
+           (iVar5 = (*(code *)param_8)(0,local_10,this,param_9), iVar5 != 0)) {
           g_currentExceptionFrame = local_5c.previous;
           return -1;
         }
@@ -834,13 +839,15 @@ st::fn_00677BE0(short param_1,short param_2,byte *param_3,short param_4,short pa
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar4;
+  undefined4 *puVar3;
+  int iVar4;
   byte *pbVar5;
+  int iVar7;
   int iVar6;
-  DArrayTy *pDVar7;
-  uint uVar8;
-  byte *pbVar9;
-  bool bVar10;
+  DArrayTy *pDVar8;
+  uint uVar9;
+  byte *pbVar10;
+  bool bVar11;
   InternalExceptionFrame local_70;
   byte local_2c [16];
   undefined4 local_1c;
@@ -869,78 +876,78 @@ st::fn_00677BE0(short param_1,short param_2,byte *param_3,short param_4,short pa
     st::fn_006A5E40
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x39c);
   }
-  uVar8 = g_array_007FA160->count - 1;
-  pDVar7 = g_array_007FA160;
-  if ((int)uVar8 < 0) {
+  uVar9 = g_array_007FA160->count - 1;
+  pDVar8 = g_array_007FA160;
+  if ((int)uVar9 < 0) {
     g_currentExceptionFrame = local_70.previous;
     return local_18;
   }
   do {
-    if (uVar8 < pDVar7->count) {
-      puVar4 = DArrayAt<undefined4>(pDVar7, uVar8);
+    if (uVar9 < pDVar8->count) {
+      puVar3 = DArrayAt<undefined4>(pDVar8, uVar9);
     }
     else {
-      puVar4 = nullptr;
+      puVar3 = nullptr;
     }
-    this = (STFishC *)*puVar4;
+    this = (STFishC *)*puVar3;
     if (((this != nullptr) &&
-        (local_10 = uVar8, local_1c = (*this->vtable[1].vfunc_08)(this), pDVar7 = g_array_007FA160,
+        (local_10 = uVar9, local_1c = (*this->vtable[1].vfunc_08)(this), pDVar8 = g_array_007FA160,
         (short)local_1c == param_1)) &&
        ((param_2 == 0 ||
-        (iVar3 = (*this->vtable[1].vfunc_0C)(), pDVar7 = g_array_007FA160, iVar3 == param_2)))) {
-      iVar3 = 1;
+        (iVar4 = (*this->vtable[1].vfunc_0C)(), pDVar8 = g_array_007FA160, iVar4 == param_2)))) {
+      iVar4 = 1;
       local_14 = 1;
       if ((param_3 != nullptr) && (*param_3 != 0)) {
         (*this->vtable->vfunc_74)((short)local_2c);
-        pbVar9 = local_2c;
+        pbVar10 = local_2c;
         pbVar5 = param_3;
         do {
           bVar1 = *pbVar5;
-          bVar10 = bVar1 < *pbVar9;
-          if (bVar1 != *pbVar9) {
+          bVar11 = bVar1 < *pbVar10;
+          if (bVar1 != *pbVar10) {
 LAB_00677ce9:
-            iVar6 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
+            iVar7 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
             goto LAB_00677cee;
           }
           if (bVar1 == 0) break;
           bVar1 = pbVar5[1];
-          bVar10 = bVar1 < pbVar9[1];
-          if (bVar1 != pbVar9[1]) goto LAB_00677ce9;
+          bVar11 = bVar1 < pbVar10[1];
+          if (bVar1 != pbVar10[1]) goto LAB_00677ce9;
           pbVar5 = pbVar5 + 2;
-          pbVar9 = pbVar9 + 2;
+          pbVar10 = pbVar10 + 2;
         } while (bVar1 != 0);
-        iVar6 = 0;
+        iVar7 = 0;
 LAB_00677cee:
-        if (iVar6 != 0) {
-          iVar3 = 0;
+        if (iVar7 != 0) {
+          iVar4 = 0;
           local_14 = 0;
         }
       }
-      pDVar7 = g_array_007FA160;
-      uVar8 = local_10;
-      if (iVar3 != 0) {
+      pDVar8 = g_array_007FA160;
+      uVar9 = local_10;
+      if (iVar4 != 0) {
         if ((((0 < param_7) && (0 < param_8)) && (0 < param_9)) &&
            ((((st::fn_00405F0B(this,&local_6,&local_8,&local_a), local_6 < param_4 ||
               (local_8 < param_5)) ||
              ((local_a < param_6 ||
               (((int)param_4 + (int)param_7 <= (int)local_6 ||
                ((int)param_5 + (int)param_8 <= (int)local_8)))))) ||
-            (iVar3 = local_14, (int)param_6 + (int)param_9 <= (int)local_a)))) {
-          iVar3 = 0;
+            (iVar4 = local_14, (int)param_6 + (int)param_9 <= (int)local_a)))) {
+          iVar4 = 0;
         }
-        pDVar7 = g_array_007FA160;
-        uVar8 = local_10;
+        pDVar8 = g_array_007FA160;
+        uVar9 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((iVar3 != 0) && (param_10 != nullptr)) &&
-           (iVar3 = (*(code *)param_10)(local_1c,local_10,this,param_11), pDVar7 = g_array_007FA160,
-           uVar8 = local_10, iVar3 != 0)) {
+        if (((iVar4 != 0) && (param_10 != nullptr)) &&
+           (iVar4 = (*(code *)param_10)(local_1c,local_10,this,param_11), pDVar8 = g_array_007FA160,
+           uVar9 = local_10, iVar4 != 0)) {
           g_currentExceptionFrame = local_70.previous;
           return -1;
         }
       }
     }
-    uVar8 = uVar8 - 1;
-    if ((int)uVar8 < 0) {
+    uVar9 = uVar9 - 1;
+    if ((int)uVar9 < 0) {
       g_currentExceptionFrame = local_70.previous;
       return local_18;
     }
@@ -962,11 +969,13 @@ st::fn_00677F40(short param_1,byte *param_2,short param_3,short param_4,short pa
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar4;
-  byte *pbVar5;
+  undefined4 *puVar3;
+  byte *pbVar4;
+  int iVar5;
   int iVar6;
-  byte *pbVar7;
-  bool bVar8;
+  int iVar7;
+  byte *pbVar8;
+  bool bVar9;
   InternalExceptionFrame local_6c;
   byte local_28 [16];
   int local_18;
@@ -1001,55 +1010,55 @@ st::fn_00677F40(short param_1,byte *param_2,short param_3,short param_4,short pa
   }
   do {
     if (local_10 < g_array_007FA154->count) {
-      puVar4 = DArrayAt<undefined4>(g_array_007FA154, local_10);
+      puVar3 = DArrayAt<undefined4>(g_array_007FA154, local_10);
     }
     else {
-      puVar4 = nullptr;
+      puVar3 = nullptr;
     }
-    this = (STFishC *)*puVar4;
+    this = (STFishC *)*puVar3;
     if ((this != nullptr) &&
        ((param_1 == 0 || (*(int *)&this[1].field_0xd7 == (int)param_1)))) {
-      iVar3 = 1;
+      iVar7 = 1;
       local_14 = 1;
       if ((param_2 != nullptr) && (*param_2 != 0)) {
         (*this->vtable->vfunc_74)((short)local_28);
-        pbVar7 = local_28;
-        pbVar5 = param_2;
+        pbVar8 = local_28;
+        pbVar4 = param_2;
         do {
-          bVar1 = *pbVar5;
-          bVar8 = bVar1 < *pbVar7;
-          if (bVar1 != *pbVar7) {
+          bVar1 = *pbVar4;
+          bVar9 = bVar1 < *pbVar8;
+          if (bVar1 != *pbVar8) {
 LAB_00678031:
-            iVar6 = (1 - (uint)bVar8) - (uint)(bVar8 != 0);
+            iVar5 = (1 - (uint)bVar9) - (uint)(bVar9 != 0);
             goto LAB_00678036;
           }
           if (bVar1 == 0) break;
-          bVar1 = pbVar5[1];
-          bVar8 = bVar1 < pbVar7[1];
-          if (bVar1 != pbVar7[1]) goto LAB_00678031;
-          pbVar5 = pbVar5 + 2;
-          pbVar7 = pbVar7 + 2;
+          bVar1 = pbVar4[1];
+          bVar9 = bVar1 < pbVar8[1];
+          if (bVar1 != pbVar8[1]) goto LAB_00678031;
+          pbVar4 = pbVar4 + 2;
+          pbVar8 = pbVar8 + 2;
         } while (bVar1 != 0);
-        iVar6 = 0;
+        iVar5 = 0;
 LAB_00678036:
-        if (iVar6 != 0) {
-          iVar3 = 0;
+        if (iVar5 != 0) {
+          iVar7 = 0;
           local_14 = 0;
         }
       }
-      if (iVar3 != 0) {
+      if (iVar7 != 0) {
         if ((((0 < param_6) && (0 < param_7)) && (0 < param_8)) &&
            ((((st::fn_00405F0B(this,&local_6,&local_8,&local_a), local_6 < param_3 ||
               (local_8 < param_4)) ||
              ((local_a < param_5 ||
               (((int)param_3 + (int)param_6 <= (int)local_6 ||
                ((int)param_4 + (int)param_7 <= (int)local_8)))))) ||
-            (iVar3 = local_14, (int)param_5 + (int)param_8 <= (int)local_a)))) {
-          iVar3 = 0;
+            (iVar7 = local_14, (int)param_5 + (int)param_8 <= (int)local_a)))) {
+          iVar7 = 0;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((iVar3 != 0) && (param_9 != nullptr)) &&
-           (iVar3 = (*(code *)param_9)(0,local_10,this,param_10), iVar3 != 0)) {
+        if (((iVar7 != 0) && (param_9 != nullptr)) &&
+           (iVar7 = (*(code *)param_9)(0,local_10,this,param_10), iVar7 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
           return -1;
         }
@@ -1079,11 +1088,13 @@ st::fn_00678240(int param_1,short param_2,char param_3,byte *param_4,short param
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar4;
-  dword dVar5;
-  byte *pbVar6;
+  undefined4 *puVar3;
+  dword dVar4;
+  byte *pbVar5;
+  int iVar6;
   int iVar7;
-  DArrayTy *pDVar8;
+  DArrayTy *pDVar7;
+  int iVar8;
   uint uVar9;
   byte *pbVar10;
   bool bVar11;
@@ -1122,71 +1133,71 @@ st::fn_00678240(int param_1,short param_2,char param_3,byte *param_4,short param
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x41f);
   }
   uVar9 = g_array_007FA158->count - 1;
-  pDVar8 = g_array_007FA158;
+  pDVar7 = g_array_007FA158;
   if ((int)uVar9 < 0) {
     g_currentExceptionFrame = local_6c.previous;
     return local_18;
   }
   do {
-    if (uVar9 < pDVar8->count) {
-      puVar4 = DArrayAt<undefined4>(pDVar8, uVar9);
+    if (uVar9 < pDVar7->count) {
+      puVar3 = DArrayAt<undefined4>(pDVar7, uVar9);
     }
     else {
-      puVar4 = nullptr;
+      puVar3 = nullptr;
     }
-    this = (STFishC *)*puVar4;
+    this = (STFishC *)*puVar3;
     if (((this != nullptr) && (this->field_0024 == param_1)) &&
-       ((local_10 = uVar9, dVar5 = this->slot_2C(), param_2 == 0 ||
-        (pDVar8 = g_array_007FA158, (int)param_2 == dVar5)))) {
-      iVar3 = 1;
+       ((local_10 = uVar9, dVar4 = this->slot_2C(), param_2 == 0 ||
+        (pDVar7 = g_array_007FA158, (int)param_2 == dVar4)))) {
+      iVar8 = 1;
       local_14 = 1;
       if ((param_4 != nullptr) && (*param_4 != 0)) {
         (*this->vtable->vfunc_74)((short)local_28);
         pbVar10 = local_28;
-        pbVar6 = param_4;
+        pbVar5 = param_4;
         do {
-          bVar1 = *pbVar6;
+          bVar1 = *pbVar5;
           bVar11 = bVar1 < *pbVar10;
           if (bVar1 != *pbVar10) {
 LAB_0067835d:
-            iVar7 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
+            iVar6 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
             goto LAB_00678362;
           }
           if (bVar1 == 0) break;
-          bVar1 = pbVar6[1];
+          bVar1 = pbVar5[1];
           bVar11 = bVar1 < pbVar10[1];
           if (bVar1 != pbVar10[1]) goto LAB_0067835d;
-          pbVar6 = pbVar6 + 2;
+          pbVar5 = pbVar5 + 2;
           pbVar10 = pbVar10 + 2;
         } while (bVar1 != 0);
-        iVar7 = 0;
+        iVar6 = 0;
 LAB_00678362:
-        if (iVar7 != 0) {
-          iVar3 = 0;
+        if (iVar6 != 0) {
+          iVar8 = 0;
           local_14 = 0;
         }
       }
-      pDVar8 = g_array_007FA158;
+      pDVar7 = g_array_007FA158;
       uVar9 = local_10;
-      if ((iVar3 != 0) &&
+      if ((iVar8 != 0) &&
          ((local_5 == -1 ||
-          (iVar7 = this->vfunc_6C(), pDVar8 = g_array_007FA158, uVar9 = local_10,
-          local_5 == iVar7)))) {
+          (iVar6 = this->vfunc_6C(), pDVar7 = g_array_007FA158, uVar9 = local_10,
+          local_5 == iVar6)))) {
         if ((0 < param_8) &&
            (((0 < param_9 && (0 < param_10)) &&
             ((st::fn_004018C5(this,&local_8,&local_a,&local_c), local_8 < param_5 ||
              ((((local_a < param_6 || (local_c < param_7)) ||
                ((int)param_5 + (int)param_8 <= (int)local_8)) ||
               (((int)param_6 + (int)param_9 <= (int)local_a ||
-               (iVar3 = local_14, (int)param_7 + (int)param_10 <= (int)local_c)))))))))) {
-          iVar3 = 0;
+               (iVar8 = local_14, (int)param_7 + (int)param_10 <= (int)local_c)))))))))) {
+          iVar8 = 0;
         }
-        pDVar8 = g_array_007FA158;
+        pDVar7 = g_array_007FA158;
         uVar9 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((iVar3 != 0) && (param_11 != nullptr)) &&
-           (iVar3 = (*(code *)param_11)(param_1,local_10,this,param_12), pDVar8 = g_array_007FA158,
-           uVar9 = local_10, iVar3 != 0)) {
+        if (((iVar8 != 0) && (param_11 != nullptr)) &&
+           (iVar8 = (*(code *)param_11)(param_1,local_10,this,param_12), pDVar7 = g_array_007FA158,
+           uVar9 = local_10, iVar8 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
           return -1;
         }
@@ -1215,11 +1226,13 @@ st::fn_006785A0(byte *param_1,char param_2,short param_3,short param_4,short par
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar4;
-  byte *pbVar5;
+  undefined4 *puVar3;
+  byte *pbVar4;
+  int iVar5;
   int iVar6;
-  byte *pbVar7;
-  bool bVar8;
+  int iVar7;
+  byte *pbVar8;
+  bool bVar9;
   InternalExceptionFrame local_6c;
   byte local_28 [16];
   int local_18;
@@ -1258,55 +1271,55 @@ st::fn_006785A0(byte *param_1,char param_2,short param_3,short param_4,short par
   }
   do {
     if (local_10 < g_array_007FA164->count) {
-      puVar4 = DArrayAt<undefined4>(g_array_007FA164, local_10);
+      puVar3 = DArrayAt<undefined4>(g_array_007FA164, local_10);
     }
     else {
-      puVar4 = nullptr;
+      puVar3 = nullptr;
     }
-    this = (STFishC *)*puVar4;
+    this = (STFishC *)*puVar3;
     if (this != nullptr) {
-      iVar3 = 1;
+      iVar7 = 1;
       local_14 = 1;
       if ((param_1 != nullptr) && (*param_1 != 0)) {
         (*this->vtable->vfunc_74)((short)local_28);
-        pbVar7 = local_28;
-        pbVar5 = param_1;
+        pbVar8 = local_28;
+        pbVar4 = param_1;
         do {
-          bVar1 = *pbVar5;
-          bVar8 = bVar1 < *pbVar7;
-          if (bVar1 != *pbVar7) {
+          bVar1 = *pbVar4;
+          bVar9 = bVar1 < *pbVar8;
+          if (bVar1 != *pbVar8) {
 LAB_0067868d:
-            iVar6 = (1 - (uint)bVar8) - (uint)(bVar8 != 0);
+            iVar5 = (1 - (uint)bVar9) - (uint)(bVar9 != 0);
             goto LAB_00678692;
           }
           if (bVar1 == 0) break;
-          bVar1 = pbVar5[1];
-          bVar8 = bVar1 < pbVar7[1];
-          if (bVar1 != pbVar7[1]) goto LAB_0067868d;
-          pbVar5 = pbVar5 + 2;
-          pbVar7 = pbVar7 + 2;
+          bVar1 = pbVar4[1];
+          bVar9 = bVar1 < pbVar8[1];
+          if (bVar1 != pbVar8[1]) goto LAB_0067868d;
+          pbVar4 = pbVar4 + 2;
+          pbVar8 = pbVar8 + 2;
         } while (bVar1 != 0);
-        iVar6 = 0;
+        iVar5 = 0;
 LAB_00678692:
-        if (iVar6 != 0) {
-          iVar3 = 0;
+        if (iVar5 != 0) {
+          iVar7 = 0;
           local_14 = 0;
         }
       }
-      if ((iVar3 != 0) &&
-         ((local_5 == -1 || (iVar6 = this->vfunc_6C(), local_5 == iVar6)))) {
+      if ((iVar7 != 0) &&
+         ((local_5 == -1 || (iVar5 = this->vfunc_6C(), local_5 == iVar5)))) {
         if ((0 < param_6) &&
            (((0 < param_7 && (0 < param_8)) &&
             ((st::fn_004018C5(this,&local_8,&local_a,&local_c), local_8 < param_3 ||
              ((((local_a < param_4 || (local_c < param_5)) ||
                ((int)param_3 + (int)param_6 <= (int)local_8)) ||
               (((int)param_4 + (int)param_7 <= (int)local_a ||
-               (iVar3 = local_14, (int)param_5 + (int)param_8 <= (int)local_c)))))))))) {
-          iVar3 = 0;
+               (iVar7 = local_14, (int)param_5 + (int)param_8 <= (int)local_c)))))))))) {
+          iVar7 = 0;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((iVar3 != 0) && (param_9 != nullptr)) &&
-           (iVar3 = (*(code *)param_9)(0,local_10,this,param_10), iVar3 != 0)) {
+        if (((iVar7 != 0) && (param_9 != nullptr)) &&
+           (iVar7 = (*(code *)param_9)(0,local_10,this,param_10), iVar7 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
           return -1;
         }

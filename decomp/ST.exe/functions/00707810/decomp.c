@@ -12,16 +12,18 @@ void FUN_00707810(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   bool bVar2;
   uint uVar3;
   uint uVar4;
-  int iVar5;
-  int iVar6;
-  ushort *puVar7;
-  ushort *puVar8;
+  uint uVar5;
+  uint uVar6;
+  int iVar7;
+  int iVar8;
+  ushort *puVar9;
+  ushort *puVar10;
   byte *pbVar9;
-  byte *pbVar10;
-  undefined1 *puVar11;
+  byte *pbVar11;
   undefined1 *puVar12;
-  int *piVar13;
-  int iVar14;
+  undefined1 *puVar13;
+  int *piVar14;
+  int iVar15;
   int local_80 [31];
 
   _DAT_00857000 = 1;
@@ -39,46 +41,43 @@ void FUN_00707810(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_16 = 0x1f;
-    piVar13 = local_80;
+    piVar14 = local_80;
     do {
       uVar3 = Library::MSVCRT::FUN_0072e6c0();
       uVar4 = Library::MSVCRT::FUN_0072e6c0();
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_16 = param_16 - 1;
-      *piVar13 = ((int)uVar4 % param_15) * param_2 + (int)uVar3 % param_15;
-      piVar13 = piVar13 + 1;
+      *piVar14 = ((int)uVar4 % param_15) * param_2 + (int)uVar3 % param_15;
+      piVar14 = piVar14 + 1;
     } while (param_16 != 0);
-    iVar14 = 0;
+    iVar15 = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_12 = param_12 + -1;
+    pbVar9 = param_6;
     if (-1 < param_12) {
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 joined_r0x007078a5:
       while (((param_14 & 1) == 0 && (param_12 = param_12 + -1, -1 < param_12))) {
-        uVar3 = (uint)*param_6;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_6 = param_6 + 1;
-        iVar6 = param_7;
-        if (uVar3 != 0) {
+        uVar6 = (uint)*pbVar9;
+        pbVar9 = pbVar9 + 1;
+        iVar8 = param_7;
+        if (uVar6 != 0) {
           while( true ) {
-            if ((uVar3 & 0x80) == 0) {
-              uVar4 = uVar3 & 0x7f;
+            if ((uVar6 & 0x80) == 0) {
+              uVar5 = uVar6 & 0x7f;
             }
-            else if ((uVar3 & 0x40) == 0) {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_6 = param_6 + (uVar3 & 0x3f);
-              uVar4 = uVar3 & 0x3f;
+            else if ((uVar6 & 0x40) == 0) {
+              pbVar9 = pbVar9 + (uVar6 & 0x3f);
+              uVar5 = uVar6 & 0x3f;
             }
             else {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_6 = param_6 + 1;
-              uVar4 = uVar3 & 0x3f;
+              pbVar9 = pbVar9 + 1;
+              uVar5 = uVar6 & 0x3f;
             }
-            if ((int)(iVar6 - uVar4) < 1) break;
-            uVar3 = (uint)*param_6;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            param_6 = param_6 + 1;
-            iVar6 = iVar6 - uVar4;
+            if ((int)(iVar8 - uVar5) < 1) break;
+            uVar6 = (uint)*pbVar9;
+            pbVar9 = pbVar9 + 1;
+            iVar8 = iVar8 - uVar5;
           }
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -89,8 +88,8 @@ joined_r0x007078a5:
         }
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_16 = (uint)*param_6;
-      pbVar9 = param_6 + 1;
+      param_16 = (uint)*pbVar9;
+      pbVar9 = pbVar9 + 1;
       if (param_16 != 0) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_15 = param_8;
@@ -98,15 +97,15 @@ joined_r0x007078a5:
         param_6 = pbVar9;
         do {
           if ((param_16 & 0x80) == 0) {
-            uVar3 = param_16 & 0x7f;
-            if (param_15 < (int)uVar3) goto LAB_0070795e;
+            uVar6 = param_16 & 0x7f;
+            if (param_15 < (int)uVar6) goto LAB_0070795e;
           }
           else {
-            uVar3 = param_16 & 0x3f;
-            if (param_15 < (int)uVar3) goto LAB_0070795e;
+            uVar6 = param_16 & 0x3f;
+            if (param_15 < (int)uVar6) goto LAB_0070795e;
             if ((param_16 & 0x40) == 0) {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_6 = param_6 + uVar3;
+              param_6 = param_6 + uVar6;
             }
             else {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -114,7 +113,7 @@ joined_r0x007078a5:
             }
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_15 = param_15 - uVar3;
+          param_15 = param_15 - uVar6;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_16 = (uint)*param_6;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -126,7 +125,7 @@ joined_r0x007078a5:
   }
   return;
 LAB_0070795e:
-  uVar3 = uVar3 - param_15;
+  uVar6 = uVar6 - param_15;
   if (((byte)param_16 & 0xc0) == 0x80) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_6 = param_6 + param_15;
@@ -134,102 +133,102 @@ LAB_0070795e:
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_15 = param_11;
   if (param_10 == 0) {
-    iVar6 = param_13;
-    puVar8 = param_3;
-    puVar11 = param_1;
-    if ((int)uVar3 <= param_11) {
+    iVar8 = param_13;
+    puVar10 = param_3;
+    puVar12 = param_1;
+    if ((int)uVar6 <= param_11) {
       do {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_9 = param_16 & 0x80;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_15 = param_15 - uVar3;
+        param_15 = param_15 - uVar6;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (param_9 == 0) {
-          if (-1 < (int)(uVar3 - 1)) {
+          if (-1 < (int)(uVar6 - 1)) {
             do {
-              if (((byte)iVar6 & 1) == 1) {
-                puVar11 = puVar11 + 1;
-                puVar8 = puVar8 + 1;
+              if (((byte)iVar8 & 1) == 1) {
+                puVar12 = puVar12 + 1;
+                puVar10 = puVar10 + 1;
               }
-              iVar6 = iVar6 + 1;
-              if (4 < iVar6) {
-                iVar6 = 0;
+              iVar8 = iVar8 + 1;
+              if (4 < iVar8) {
+                iVar8 = 0;
               }
-              uVar3 = uVar3 - 1;
-            } while (uVar3 != 0);
+              uVar6 = uVar6 - 1;
+            } while (uVar6 != 0);
           }
           goto LAB_00708302;
         }
         if ((param_16 & 0x40) == 0) {
-          if (iVar6 < 1) {
+          if (iVar8 < 1) {
 switchD_0070819b_default:
-            if (0 < (int)uVar3) {
-              pbVar9 = param_6 + 1;
-              puVar7 = puVar8;
-              puVar12 = puVar11;
-              for (iVar5 = uVar3 - 1; iVar6 = 1, puVar8 = puVar7, puVar11 = puVar12,
+            if (0 < (int)uVar6) {
+              pbVar11 = param_6 + 1;
+              puVar9 = puVar10;
+              puVar13 = puVar12;
+              for (iVar7 = uVar6 - 1; iVar8 = 1, puVar10 = puVar9, puVar12 = puVar13,
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-                  param_6 = pbVar9, 0 < iVar5; iVar5 = iVar5 + -5) {
-                if (param_5 <= *puVar7) {
-                  piVar13 = local_80 + iVar14;
-                  iVar14 = iVar14 + 1;
-                  *puVar12 = puVar12[*piVar13];
-                  if (0x1e < iVar14) {
-                    iVar14 = 0;
+                  param_6 = pbVar11, 0 < iVar7; iVar7 = iVar7 + -5) {
+                if (param_5 <= *puVar9) {
+                  piVar14 = local_80 + iVar15;
+                  iVar15 = iVar15 + 1;
+                  *puVar13 = puVar13[*piVar14];
+                  if (0x1e < iVar15) {
+                    iVar15 = 0;
                   }
                 }
-                puVar8 = puVar7 + 1;
-                puVar11 = puVar12 + 1;
+                puVar10 = puVar9 + 1;
+                puVar12 = puVar13 + 1;
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-                param_6 = pbVar9 + 1;
-                iVar6 = 2;
-                if (iVar5 + -1 < 1) break;
+                param_6 = pbVar11 + 1;
+                iVar8 = 2;
+                if (iVar7 + -1 < 1) break;
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-                param_6 = pbVar9 + 2;
-                iVar6 = 3;
-                if (iVar5 + -2 < 1) break;
-                if (param_5 <= *puVar8) {
-                  piVar13 = local_80 + iVar14;
-                  iVar14 = iVar14 + 1;
-                  *puVar11 = puVar11[*piVar13];
-                  if (0x1e < iVar14) {
-                    iVar14 = 0;
+                param_6 = pbVar11 + 2;
+                iVar8 = 3;
+                if (iVar7 + -2 < 1) break;
+                if (param_5 <= *puVar10) {
+                  piVar14 = local_80 + iVar15;
+                  iVar15 = iVar15 + 1;
+                  *puVar12 = puVar12[*piVar14];
+                  if (0x1e < iVar15) {
+                    iVar15 = 0;
                   }
                 }
-                puVar8 = puVar7 + 2;
-                puVar11 = puVar12 + 2;
+                puVar10 = puVar9 + 2;
+                puVar12 = puVar13 + 2;
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-                param_6 = pbVar9 + 3;
-                iVar6 = 4;
-                if (iVar5 + -3 < 1) break;
+                param_6 = pbVar11 + 3;
+                iVar8 = 4;
+                if (iVar7 + -3 < 1) break;
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-                param_6 = pbVar9 + 4;
-                iVar6 = 0;
-                if (iVar5 + -4 < 1) break;
-                pbVar9 = pbVar9 + 5;
-                puVar7 = puVar8;
-                puVar12 = puVar11;
+                param_6 = pbVar11 + 4;
+                iVar8 = 0;
+                if (iVar7 + -4 < 1) break;
+                pbVar11 = pbVar11 + 5;
+                puVar9 = puVar10;
+                puVar13 = puVar12;
               }
             }
           }
           else {
-            switch(iVar6) {
+            switch(iVar8) {
             case 1:
-              if (param_5 <= *puVar8) {
-                piVar13 = local_80 + iVar14;
-                iVar14 = iVar14 + 1;
-                *puVar11 = puVar11[*piVar13];
-                if (0x1e < iVar14) {
-                  iVar14 = 0;
+              if (param_5 <= *puVar10) {
+                piVar14 = local_80 + iVar15;
+                iVar15 = iVar15 + 1;
+                *puVar12 = puVar12[*piVar14];
+                if (0x1e < iVar15) {
+                  iVar15 = 0;
                 }
               }
-              puVar8 = puVar8 + 1;
-              puVar11 = puVar11 + 1;
+              puVar10 = puVar10 + 1;
+              puVar12 = puVar12 + 1;
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = param_6 + 1;
-              uVar3 = uVar3 - 1;
-              iVar6 = 2;
-              if ((int)uVar3 < 1) goto LAB_00708302;
+              uVar6 = uVar6 - 1;
+              iVar8 = 2;
+              if ((int)uVar6 < 1) goto LAB_00708302;
               break;
             case 2:
               break;
@@ -242,30 +241,30 @@ switchD_0070819b_default:
             }
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = param_6 + 1;
-            uVar3 = uVar3 - 1;
-            iVar6 = 3;
-            if (0 < (int)uVar3) {
+            uVar6 = uVar6 - 1;
+            iVar8 = 3;
+            if (0 < (int)uVar6) {
 switchD_0070819b_caseD_3:
-              if (param_5 <= *puVar8) {
-                piVar13 = local_80 + iVar14;
-                iVar14 = iVar14 + 1;
-                *puVar11 = puVar11[*piVar13];
-                if (0x1e < iVar14) {
-                  iVar14 = 0;
+              if (param_5 <= *puVar10) {
+                piVar14 = local_80 + iVar15;
+                iVar15 = iVar15 + 1;
+                *puVar12 = puVar12[*piVar14];
+                if (0x1e < iVar15) {
+                  iVar15 = 0;
                 }
               }
-              puVar8 = puVar8 + 1;
-              puVar11 = puVar11 + 1;
+              puVar10 = puVar10 + 1;
+              puVar12 = puVar12 + 1;
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = param_6 + 1;
-              uVar3 = uVar3 - 1;
-              iVar6 = 4;
-              if (0 < (int)uVar3) {
+              uVar6 = uVar6 - 1;
+              iVar8 = 4;
+              if (0 < (int)uVar6) {
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 switchD_0070819b_caseD_4:
                 param_6 = param_6 + 1;
-                iVar6 = 0;
-                uVar3 = uVar3 - 1;
+                iVar8 = 0;
+                uVar6 = uVar6 - 1;
                 goto switchD_0070819b_default;
               }
             }
@@ -274,66 +273,66 @@ switchD_0070819b_caseD_4:
         else {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_6 = param_6 + 1;
-          puVar7 = puVar8;
-          puVar12 = puVar11;
-          if (iVar6 < 1) {
+          puVar9 = puVar10;
+          puVar13 = puVar12;
+          if (iVar8 < 1) {
 switchD_00708078_default:
-            puVar8 = puVar7;
-            puVar11 = puVar12;
-            if (0 < (int)uVar3) {
-              iVar5 = uVar3 - 1;
-              iVar6 = 1;
-              if (0 < iVar5) {
+            puVar10 = puVar9;
+            puVar12 = puVar13;
+            if (0 < (int)uVar6) {
+              iVar7 = uVar6 - 1;
+              iVar8 = 1;
+              if (0 < iVar7) {
                 while( true ) {
-                  if (param_5 <= *puVar7) {
-                    piVar13 = local_80 + iVar14;
-                    iVar14 = iVar14 + 1;
-                    *puVar12 = puVar12[*piVar13];
-                    if (0x1e < iVar14) {
-                      iVar14 = 0;
+                  if (param_5 <= *puVar9) {
+                    piVar14 = local_80 + iVar15;
+                    iVar15 = iVar15 + 1;
+                    *puVar13 = puVar13[*piVar14];
+                    if (0x1e < iVar15) {
+                      iVar15 = 0;
                     }
                   }
-                  puVar8 = puVar7 + 1;
-                  puVar11 = puVar12 + 1;
-                  iVar6 = 2;
-                  if ((iVar5 + -1 < 1) || (iVar6 = 3, iVar5 + -2 < 1)) break;
-                  if (param_5 <= *puVar8) {
-                    piVar13 = local_80 + iVar14;
-                    iVar14 = iVar14 + 1;
-                    *puVar11 = puVar11[*piVar13];
-                    if (0x1e < iVar14) {
-                      iVar14 = 0;
+                  puVar10 = puVar9 + 1;
+                  puVar12 = puVar13 + 1;
+                  iVar8 = 2;
+                  if ((iVar7 + -1 < 1) || (iVar8 = 3, iVar7 + -2 < 1)) break;
+                  if (param_5 <= *puVar10) {
+                    piVar14 = local_80 + iVar15;
+                    iVar15 = iVar15 + 1;
+                    *puVar12 = puVar12[*piVar14];
+                    if (0x1e < iVar15) {
+                      iVar15 = 0;
                     }
                   }
-                  puVar8 = puVar7 + 2;
-                  puVar11 = puVar12 + 2;
-                  iVar6 = 4;
-                  if ((iVar5 + -3 < 1) || (iVar6 = 0, iVar5 + -4 < 1)) break;
-                  iVar5 = iVar5 + -5;
-                  iVar6 = 1;
-                  puVar7 = puVar8;
-                  puVar12 = puVar11;
-                  if (iVar5 < 1) break;
+                  puVar10 = puVar9 + 2;
+                  puVar12 = puVar13 + 2;
+                  iVar8 = 4;
+                  if ((iVar7 + -3 < 1) || (iVar8 = 0, iVar7 + -4 < 1)) break;
+                  iVar7 = iVar7 + -5;
+                  iVar8 = 1;
+                  puVar9 = puVar10;
+                  puVar13 = puVar12;
+                  if (iVar7 < 1) break;
                 }
               }
             }
           }
           else {
-            switch(iVar6) {
+            switch(iVar8) {
             case 1:
-              if (param_5 <= *puVar8) {
-                piVar13 = local_80 + iVar14;
-                iVar14 = iVar14 + 1;
-                *puVar11 = puVar11[*piVar13];
-                if (0x1e < iVar14) {
-                  iVar14 = 0;
+              if (param_5 <= *puVar10) {
+                piVar14 = local_80 + iVar15;
+                iVar15 = iVar15 + 1;
+                *puVar12 = puVar12[*piVar14];
+                if (0x1e < iVar15) {
+                  iVar15 = 0;
                 }
               }
-              puVar8 = puVar8 + 1;
-              puVar11 = puVar11 + 1;
-              uVar3 = uVar3 - 1;
-              iVar6 = 2;
-              if ((int)uVar3 < 1) goto LAB_00708302;
+              puVar10 = puVar10 + 1;
+              puVar12 = puVar12 + 1;
+              uVar6 = uVar6 - 1;
+              iVar8 = 2;
+              if ((int)uVar6 < 1) goto LAB_00708302;
               break;
             case 2:
               break;
@@ -344,28 +343,28 @@ switchD_00708078_default:
             default:
               goto switchD_00708078_default;
             }
-            uVar3 = uVar3 - 1;
-            iVar6 = 3;
-            if (0 < (int)uVar3) {
+            uVar6 = uVar6 - 1;
+            iVar8 = 3;
+            if (0 < (int)uVar6) {
 switchD_00708078_caseD_3:
-              if (param_5 <= *puVar8) {
-                piVar13 = local_80 + iVar14;
-                iVar14 = iVar14 + 1;
-                *puVar11 = puVar11[*piVar13];
-                if (0x1e < iVar14) {
-                  iVar14 = 0;
+              if (param_5 <= *puVar10) {
+                piVar14 = local_80 + iVar15;
+                iVar15 = iVar15 + 1;
+                *puVar12 = puVar12[*piVar14];
+                if (0x1e < iVar15) {
+                  iVar15 = 0;
                 }
               }
-              puVar8 = puVar8 + 1;
-              puVar11 = puVar11 + 1;
-              uVar3 = uVar3 - 1;
-              iVar6 = 4;
-              if (0 < (int)uVar3) {
+              puVar10 = puVar10 + 1;
+              puVar12 = puVar12 + 1;
+              uVar6 = uVar6 - 1;
+              iVar8 = 4;
+              if (0 < (int)uVar6) {
 switchD_00708078_caseD_4:
-                iVar6 = 0;
-                uVar3 = uVar3 - 1;
-                puVar7 = puVar8;
-                puVar12 = puVar11;
+                iVar8 = 0;
+                uVar6 = uVar6 - 1;
+                puVar9 = puVar10;
+                puVar13 = puVar12;
                 goto switchD_00708078_default;
               }
             }
@@ -373,7 +372,7 @@ switchD_00708078_caseD_4:
         }
 LAB_00708302:
         if (param_15 < 1) {
-          uVar3 = 0;
+          uVar6 = 0;
           break;
         }
         bVar1 = *param_6;
@@ -382,30 +381,30 @@ LAB_00708302:
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = param_6 + 1;
         if ((bVar1 & 0x80) == 0) {
-          uVar3 = bVar1 & 0x7f;
+          uVar6 = bVar1 & 0x7f;
         }
         else {
-          uVar3 = bVar1 & 0x3f;
+          uVar6 = bVar1 & 0x3f;
         }
-      } while ((int)uVar3 <= param_15);
+      } while ((int)uVar6 <= param_15);
     }
-    uVar3 = uVar3 - param_15;
+    uVar6 = uVar6 - param_15;
     pbVar9 = param_6;
     if ((param_15 < 1) || ((param_16 & 0x80) == 0)) goto cf_common_join_00707E36;
     if ((param_16 & 0x40) == 0) {
-      if (iVar6 < 1) goto switchD_00708491_default;
-      switch(iVar6) {
+      if (iVar8 < 1) goto switchD_00708491_default;
+      switch(iVar8) {
       case 1:
-        if (param_5 <= *puVar8) {
-          piVar13 = local_80 + iVar14;
-          iVar14 = iVar14 + 1;
-          *puVar11 = puVar11[*piVar13];
-          if (0x1e < iVar14) {
-            iVar14 = 0;
+        if (param_5 <= *puVar10) {
+          piVar14 = local_80 + iVar15;
+          iVar15 = iVar15 + 1;
+          *puVar12 = puVar12[*piVar14];
+          if (0x1e < iVar15) {
+            iVar15 = 0;
           }
         }
-        puVar8 = puVar8 + 1;
-        puVar11 = puVar11 + 1;
+        puVar10 = puVar10 + 1;
+        puVar12 = puVar12 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = param_6 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -422,16 +421,16 @@ LAB_007084d1:
         pbVar9 = param_6;
         if (param_15 < 1) goto cf_common_join_00707E36;
 switchD_00708491_caseD_3:
-        if (param_5 <= *puVar8) {
-          piVar13 = local_80 + iVar14;
-          iVar14 = iVar14 + 1;
-          *puVar11 = puVar11[*piVar13];
-          if (0x1e < iVar14) {
-            iVar14 = 0;
+        if (param_5 <= *puVar10) {
+          piVar14 = local_80 + iVar15;
+          iVar15 = iVar15 + 1;
+          *puVar12 = puVar12[*piVar14];
+          if (0x1e < iVar15) {
+            iVar15 = 0;
           }
         }
-        puVar8 = puVar8 + 1;
-        puVar11 = puVar11 + 1;
+        puVar10 = puVar10 + 1;
+        puVar12 = puVar12 + 1;
         pbVar9 = param_6 + 1;
         if (param_15 + -1 < 1) goto cf_common_join_00707E36;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -457,26 +456,26 @@ switchD_00708491_default:
         pbVar9 = param_6;
         if (0 < param_15) {
           while( true ) {
-            if (param_5 <= *puVar8) {
-              piVar13 = local_80 + iVar14;
-              iVar14 = iVar14 + 1;
-              *puVar11 = puVar11[*piVar13];
-              if (0x1e < iVar14) {
-                iVar14 = 0;
+            if (param_5 <= *puVar10) {
+              piVar14 = local_80 + iVar15;
+              iVar15 = iVar15 + 1;
+              *puVar12 = puVar12[*piVar14];
+              if (0x1e < iVar15) {
+                iVar15 = 0;
               }
             }
             pbVar9 = param_6 + 1;
             if ((param_15 + -1 < 1) || (pbVar9 = param_6 + 2, param_15 + -2 < 1)) break;
-            if (param_5 <= puVar8[1]) {
-              piVar13 = local_80 + iVar14;
-              iVar14 = iVar14 + 1;
-              puVar11[1] = (puVar11 + 1)[*piVar13];
-              if (0x1e < iVar14) {
-                iVar14 = 0;
+            if (param_5 <= puVar10[1]) {
+              piVar14 = local_80 + iVar15;
+              iVar15 = iVar15 + 1;
+              puVar12[1] = (puVar12 + 1)[*piVar14];
+              if (0x1e < iVar15) {
+                iVar15 = 0;
               }
             }
-            puVar8 = puVar8 + 2;
-            puVar11 = puVar11 + 2;
+            puVar10 = puVar10 + 2;
+            puVar12 = puVar12 + 2;
             pbVar9 = param_6 + 3;
             if ((param_15 + -3 < 1) || (pbVar9 = param_6 + 4, param_15 + -4 < 1)) break;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -491,19 +490,19 @@ switchD_00708491_default:
       goto cf_common_join_00707E36;
     }
     pbVar9 = param_6 + 1;
-    if (iVar6 < 1) goto switchD_0070837c_default;
-    switch(iVar6) {
+    if (iVar8 < 1) goto switchD_0070837c_default;
+    switch(iVar8) {
     case 1:
-      if (param_5 <= *puVar8) {
-        piVar13 = local_80 + iVar14;
-        iVar14 = iVar14 + 1;
-        *puVar11 = puVar11[*piVar13];
-        if (0x1e < iVar14) {
-          iVar14 = 0;
+      if (param_5 <= *puVar10) {
+        piVar14 = local_80 + iVar15;
+        iVar15 = iVar15 + 1;
+        *puVar12 = puVar12[*piVar14];
+        if (0x1e < iVar15) {
+          iVar15 = 0;
         }
       }
-      puVar8 = puVar8 + 1;
-      puVar11 = puVar11 + 1;
+      puVar10 = puVar10 + 1;
+      puVar12 = puVar12 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_15 = param_15 + -1;
       if (param_15 < 1) goto cf_common_join_00707E36;
@@ -514,16 +513,16 @@ LAB_007083b3:
       param_15 = param_15 + -1;
       if (param_15 < 1) goto cf_common_join_00707E36;
 switchD_0070837c_caseD_3:
-      if (param_5 <= *puVar8) {
-        piVar13 = local_80 + iVar14;
-        iVar14 = iVar14 + 1;
-        *puVar11 = puVar11[*piVar13];
-        if (0x1e < iVar14) {
-          iVar14 = 0;
+      if (param_5 <= *puVar10) {
+        piVar14 = local_80 + iVar15;
+        iVar15 = iVar15 + 1;
+        *puVar12 = puVar12[*piVar14];
+        if (0x1e < iVar15) {
+          iVar15 = 0;
         }
       }
-      puVar8 = puVar8 + 1;
-      puVar11 = puVar11 + 1;
+      puVar10 = puVar10 + 1;
+      puVar12 = puVar12 + 1;
       if (param_15 + -1 < 1) goto cf_common_join_00707E36;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_15 = param_15 + -2;
@@ -538,127 +537,127 @@ switchD_0070837c_caseD_3:
 switchD_0070837c_default:
     if ((0 < param_15) && (param_15 = param_15 + -1, 0 < param_15)) {
       while( true ) {
-        if (param_5 <= *puVar8) {
-          piVar13 = local_80 + iVar14;
-          iVar14 = iVar14 + 1;
-          *puVar11 = puVar11[*piVar13];
-          if (0x1e < iVar14) {
-            iVar14 = 0;
+        if (param_5 <= *puVar10) {
+          piVar14 = local_80 + iVar15;
+          iVar15 = iVar15 + 1;
+          *puVar12 = puVar12[*piVar14];
+          if (0x1e < iVar15) {
+            iVar15 = 0;
           }
         }
         if (param_15 + -2 < 1) break;
-        if (param_5 <= puVar8[1]) {
-          piVar13 = local_80 + iVar14;
-          iVar14 = iVar14 + 1;
-          puVar11[1] = (puVar11 + 1)[*piVar13];
-          if (0x1e < iVar14) {
-            iVar14 = 0;
+        if (param_5 <= puVar10[1]) {
+          piVar14 = local_80 + iVar15;
+          iVar15 = iVar15 + 1;
+          puVar12[1] = (puVar12 + 1)[*piVar14];
+          if (0x1e < iVar15) {
+            iVar15 = 0;
           }
         }
-        puVar8 = puVar8 + 2;
-        puVar11 = puVar11 + 2;
+        puVar10 = puVar10 + 2;
+        puVar12 = puVar12 + 2;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((param_15 + -4 < 1) || (param_15 = param_15 + -5, param_15 < 1)) break;
       }
     }
     goto cf_common_join_00707E36;
   }
-  iVar6 = param_13;
-  puVar8 = param_3;
-  puVar11 = param_1;
-  if ((int)uVar3 <= param_11) {
+  iVar8 = param_13;
+  puVar10 = param_3;
+  puVar12 = param_1;
+  if ((int)uVar6 <= param_11) {
     do {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_9 = param_16 & 0x80;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_15 = param_15 - uVar3;
+      param_15 = param_15 - uVar6;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_9 == 0) {
-        if (-1 < (int)(uVar3 - 1)) {
+        if (-1 < (int)(uVar6 - 1)) {
           do {
-            if (((byte)iVar6 & 1) == 1) {
-              puVar11 = puVar11 + 1;
-              puVar8 = puVar8 + 1;
+            if (((byte)iVar8 & 1) == 1) {
+              puVar12 = puVar12 + 1;
+              puVar10 = puVar10 + 1;
             }
-            iVar6 = iVar6 + 1;
-            if (4 < iVar6) {
-              iVar6 = 0;
+            iVar8 = iVar8 + 1;
+            if (4 < iVar8) {
+              iVar8 = 0;
             }
-            uVar3 = uVar3 - 1;
-          } while (uVar3 != 0);
+            uVar6 = uVar6 - 1;
+          } while (uVar6 != 0);
         }
         goto LAB_00707ca8;
       }
       if ((param_16 & 0x40) == 0) {
-        if (iVar6 < 1) {
+        if (iVar8 < 1) {
 switchD_00707b1e_default:
-          if (0 < (int)uVar3) {
-            pbVar9 = param_6 + 1;
-            puVar7 = puVar8;
-            puVar12 = puVar11;
-            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            for (iVar5 = uVar3 - 1; iVar6 = 1, puVar8 = puVar7, puVar11 = puVar12, param_6 = pbVar9,
-                0 < iVar5; iVar5 = iVar5 + -5) {
-              if (param_5 <= *puVar7) {
-                piVar13 = local_80 + iVar14;
-                iVar14 = iVar14 + 1;
-                *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar13] + param_10);
-                if (0x1e < iVar14) {
-                  iVar14 = 0;
+          if (0 < (int)uVar6) {
+            pbVar11 = param_6 + 1;
+            puVar9 = puVar10;
+            puVar13 = puVar12;
+            for (iVar7 = uVar6 - 1; iVar8 = 1, puVar10 = puVar9, puVar12 = puVar13,
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+                param_6 = pbVar11, 0 < iVar7; iVar7 = iVar7 + -5) {
+              if (param_5 <= *puVar9) {
+                piVar14 = local_80 + iVar15;
+                iVar15 = iVar15 + 1;
+                *puVar13 = *(undefined1 *)((uint)(byte)puVar13[*piVar14] + param_10);
+                if (0x1e < iVar15) {
+                  iVar15 = 0;
                 }
               }
-              puVar8 = puVar7 + 1;
-              puVar11 = puVar12 + 1;
+              puVar10 = puVar9 + 1;
+              puVar12 = puVar13 + 1;
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_6 = pbVar9 + 1;
-              iVar6 = 2;
-              if (iVar5 + -1 < 1) break;
+              param_6 = pbVar11 + 1;
+              iVar8 = 2;
+              if (iVar7 + -1 < 1) break;
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_6 = pbVar9 + 2;
-              iVar6 = 3;
-              if (iVar5 + -2 < 1) break;
-              if (param_5 <= *puVar8) {
-                piVar13 = local_80 + iVar14;
-                iVar14 = iVar14 + 1;
-                *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-                if (0x1e < iVar14) {
-                  iVar14 = 0;
+              param_6 = pbVar11 + 2;
+              iVar8 = 3;
+              if (iVar7 + -2 < 1) break;
+              if (param_5 <= *puVar10) {
+                piVar14 = local_80 + iVar15;
+                iVar15 = iVar15 + 1;
+                *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+                if (0x1e < iVar15) {
+                  iVar15 = 0;
                 }
               }
-              puVar8 = puVar7 + 2;
-              puVar11 = puVar12 + 2;
+              puVar10 = puVar9 + 2;
+              puVar12 = puVar13 + 2;
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_6 = pbVar9 + 3;
-              iVar6 = 4;
-              if (iVar5 + -3 < 1) break;
+              param_6 = pbVar11 + 3;
+              iVar8 = 4;
+              if (iVar7 + -3 < 1) break;
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_6 = pbVar9 + 4;
-              iVar6 = 0;
-              if (iVar5 + -4 < 1) break;
-              pbVar9 = pbVar9 + 5;
-              puVar7 = puVar8;
-              puVar12 = puVar11;
+              param_6 = pbVar11 + 4;
+              iVar8 = 0;
+              if (iVar7 + -4 < 1) break;
+              pbVar11 = pbVar11 + 5;
+              puVar9 = puVar10;
+              puVar13 = puVar12;
             }
           }
         }
         else {
-          switch(iVar6) {
+          switch(iVar8) {
           case 1:
-            if (param_5 <= *puVar8) {
-              piVar13 = local_80 + iVar14;
-              iVar14 = iVar14 + 1;
-              *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-              if (0x1e < iVar14) {
-                iVar14 = 0;
+            if (param_5 <= *puVar10) {
+              piVar14 = local_80 + iVar15;
+              iVar15 = iVar15 + 1;
+              *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+              if (0x1e < iVar15) {
+                iVar15 = 0;
               }
             }
-            puVar8 = puVar8 + 1;
-            puVar11 = puVar11 + 1;
+            puVar10 = puVar10 + 1;
+            puVar12 = puVar12 + 1;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = param_6 + 1;
-            uVar3 = uVar3 - 1;
-            iVar6 = 2;
-            if ((int)uVar3 < 1) goto LAB_00707ca8;
+            uVar6 = uVar6 - 1;
+            iVar8 = 2;
+            if ((int)uVar6 < 1) goto LAB_00707ca8;
             break;
           case 2:
             break;
@@ -671,30 +670,30 @@ switchD_00707b1e_default:
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_6 = param_6 + 1;
-          uVar3 = uVar3 - 1;
-          iVar6 = 3;
-          if (0 < (int)uVar3) {
+          uVar6 = uVar6 - 1;
+          iVar8 = 3;
+          if (0 < (int)uVar6) {
 switchD_00707b1e_caseD_3:
-            if (param_5 <= *puVar8) {
-              piVar13 = local_80 + iVar14;
-              iVar14 = iVar14 + 1;
-              *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-              if (0x1e < iVar14) {
-                iVar14 = 0;
+            if (param_5 <= *puVar10) {
+              piVar14 = local_80 + iVar15;
+              iVar15 = iVar15 + 1;
+              *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+              if (0x1e < iVar15) {
+                iVar15 = 0;
               }
             }
-            puVar8 = puVar8 + 1;
-            puVar11 = puVar11 + 1;
+            puVar10 = puVar10 + 1;
+            puVar12 = puVar12 + 1;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = param_6 + 1;
-            uVar3 = uVar3 - 1;
-            iVar6 = 4;
-            if (0 < (int)uVar3) {
+            uVar6 = uVar6 - 1;
+            iVar8 = 4;
+            if (0 < (int)uVar6) {
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 switchD_00707b1e_caseD_4:
               param_6 = param_6 + 1;
-              iVar6 = 0;
-              uVar3 = uVar3 - 1;
+              iVar8 = 0;
+              uVar6 = uVar6 - 1;
               goto switchD_00707b1e_default;
             }
           }
@@ -703,64 +702,64 @@ switchD_00707b1e_caseD_4:
       else {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = param_6 + 1;
-        if (iVar6 < 1) {
+        if (iVar8 < 1) {
 switchD_007079d4_default:
-          if (0 < (int)uVar3) {
-            iVar5 = uVar3 - 1;
-            iVar6 = 1;
-            puVar7 = puVar8;
-            puVar12 = puVar11;
-            if (0 < iVar5) {
+          if (0 < (int)uVar6) {
+            iVar7 = uVar6 - 1;
+            iVar8 = 1;
+            puVar9 = puVar10;
+            puVar13 = puVar12;
+            if (0 < iVar7) {
               while( true ) {
-                if (param_5 <= *puVar7) {
-                  piVar13 = local_80 + iVar14;
-                  iVar14 = iVar14 + 1;
-                  *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar13] + param_10);
-                  if (0x1e < iVar14) {
-                    iVar14 = 0;
+                if (param_5 <= *puVar9) {
+                  piVar14 = local_80 + iVar15;
+                  iVar15 = iVar15 + 1;
+                  *puVar13 = *(undefined1 *)((uint)(byte)puVar13[*piVar14] + param_10);
+                  if (0x1e < iVar15) {
+                    iVar15 = 0;
                   }
                 }
-                puVar8 = puVar7 + 1;
-                puVar11 = puVar12 + 1;
-                iVar6 = 2;
-                if ((iVar5 + -1 < 1) || (iVar6 = 3, iVar5 + -2 < 1)) break;
-                if (param_5 <= *puVar8) {
-                  piVar13 = local_80 + iVar14;
-                  iVar14 = iVar14 + 1;
-                  *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-                  if (0x1e < iVar14) {
-                    iVar14 = 0;
+                puVar10 = puVar9 + 1;
+                puVar12 = puVar13 + 1;
+                iVar8 = 2;
+                if ((iVar7 + -1 < 1) || (iVar8 = 3, iVar7 + -2 < 1)) break;
+                if (param_5 <= *puVar10) {
+                  piVar14 = local_80 + iVar15;
+                  iVar15 = iVar15 + 1;
+                  *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+                  if (0x1e < iVar15) {
+                    iVar15 = 0;
                   }
                 }
-                puVar8 = puVar7 + 2;
-                puVar11 = puVar12 + 2;
-                iVar6 = 4;
-                if ((iVar5 + -3 < 1) || (iVar6 = 0, iVar5 + -4 < 1)) break;
-                iVar5 = iVar5 + -5;
-                iVar6 = 1;
-                puVar7 = puVar8;
-                puVar12 = puVar11;
-                if (iVar5 < 1) break;
+                puVar10 = puVar9 + 2;
+                puVar12 = puVar13 + 2;
+                iVar8 = 4;
+                if ((iVar7 + -3 < 1) || (iVar8 = 0, iVar7 + -4 < 1)) break;
+                iVar7 = iVar7 + -5;
+                iVar8 = 1;
+                puVar9 = puVar10;
+                puVar13 = puVar12;
+                if (iVar7 < 1) break;
               }
             }
           }
         }
         else {
-          switch(iVar6) {
+          switch(iVar8) {
           case 1:
-            if (param_5 <= *puVar8) {
-              piVar13 = local_80 + iVar14;
-              iVar14 = iVar14 + 1;
-              *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-              if (0x1e < iVar14) {
-                iVar14 = 0;
+            if (param_5 <= *puVar10) {
+              piVar14 = local_80 + iVar15;
+              iVar15 = iVar15 + 1;
+              *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+              if (0x1e < iVar15) {
+                iVar15 = 0;
               }
             }
-            puVar8 = puVar8 + 1;
-            puVar11 = puVar11 + 1;
-            uVar3 = uVar3 - 1;
-            iVar6 = 2;
-            if ((int)uVar3 < 1) goto LAB_00707ca8;
+            puVar10 = puVar10 + 1;
+            puVar12 = puVar12 + 1;
+            uVar6 = uVar6 - 1;
+            iVar8 = 2;
+            if ((int)uVar6 < 1) goto LAB_00707ca8;
             break;
           case 2:
             break;
@@ -771,26 +770,26 @@ switchD_007079d4_default:
           default:
             goto switchD_007079d4_default;
           }
-          uVar3 = uVar3 - 1;
-          iVar6 = 3;
-          if (0 < (int)uVar3) {
+          uVar6 = uVar6 - 1;
+          iVar8 = 3;
+          if (0 < (int)uVar6) {
 switchD_007079d4_caseD_3:
-            if (param_5 <= *puVar8) {
-              piVar13 = local_80 + iVar14;
-              iVar14 = iVar14 + 1;
-              *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-              if (0x1e < iVar14) {
-                iVar14 = 0;
+            if (param_5 <= *puVar10) {
+              piVar14 = local_80 + iVar15;
+              iVar15 = iVar15 + 1;
+              *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+              if (0x1e < iVar15) {
+                iVar15 = 0;
               }
             }
-            puVar8 = puVar8 + 1;
-            puVar11 = puVar11 + 1;
-            uVar3 = uVar3 - 1;
-            iVar6 = 4;
-            if (0 < (int)uVar3) {
+            puVar10 = puVar10 + 1;
+            puVar12 = puVar12 + 1;
+            uVar6 = uVar6 - 1;
+            iVar8 = 4;
+            if (0 < (int)uVar6) {
 switchD_007079d4_caseD_4:
-              iVar6 = 0;
-              uVar3 = uVar3 - 1;
+              iVar8 = 0;
+              uVar6 = uVar6 - 1;
               goto switchD_007079d4_default;
             }
           }
@@ -798,7 +797,7 @@ switchD_007079d4_caseD_4:
       }
 LAB_00707ca8:
       if (param_15 < 1) {
-        uVar3 = 0;
+        uVar6 = 0;
         break;
       }
       bVar1 = *param_6;
@@ -807,30 +806,30 @@ LAB_00707ca8:
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = param_6 + 1;
       if ((bVar1 & 0x80) == 0) {
-        uVar3 = bVar1 & 0x7f;
+        uVar6 = bVar1 & 0x7f;
       }
       else {
-        uVar3 = bVar1 & 0x3f;
+        uVar6 = bVar1 & 0x3f;
       }
-    } while ((int)uVar3 <= param_15);
+    } while ((int)uVar6 <= param_15);
   }
-  uVar3 = uVar3 - param_15;
+  uVar6 = uVar6 - param_15;
   pbVar9 = param_6;
   if ((param_15 < 1) || ((param_16 & 0x80) == 0)) goto cf_common_join_00707E36;
   if ((param_16 & 0x40) == 0) {
-    if (iVar6 < 1) goto switchD_00707ed6_default;
-    switch(iVar6) {
+    if (iVar8 < 1) goto switchD_00707ed6_default;
+    switch(iVar8) {
     case 1:
-      if (param_5 <= *puVar8) {
-        piVar13 = local_80 + iVar14;
-        iVar14 = iVar14 + 1;
-        *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-        if (0x1e < iVar14) {
-          iVar14 = 0;
+      if (param_5 <= *puVar10) {
+        piVar14 = local_80 + iVar15;
+        iVar15 = iVar15 + 1;
+        *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+        if (0x1e < iVar15) {
+          iVar15 = 0;
         }
       }
-      puVar8 = puVar8 + 1;
-      puVar11 = puVar11 + 1;
+      puVar10 = puVar10 + 1;
+      puVar12 = puVar12 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = param_6 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -847,16 +846,16 @@ LAB_00707f1e:
       pbVar9 = param_6;
       if (param_15 < 1) goto cf_common_join_00707E36;
 switchD_00707ed6_caseD_3:
-      if (param_5 <= *puVar8) {
-        piVar13 = local_80 + iVar14;
-        iVar14 = iVar14 + 1;
-        *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-        if (0x1e < iVar14) {
-          iVar14 = 0;
+      if (param_5 <= *puVar10) {
+        piVar14 = local_80 + iVar15;
+        iVar15 = iVar15 + 1;
+        *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+        if (0x1e < iVar15) {
+          iVar15 = 0;
         }
       }
-      puVar8 = puVar8 + 1;
-      puVar11 = puVar11 + 1;
+      puVar10 = puVar10 + 1;
+      puVar12 = puVar12 + 1;
       pbVar9 = param_6 + 1;
       if (param_15 + -1 < 1) goto cf_common_join_00707E36;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -882,26 +881,26 @@ switchD_00707ed6_default:
       pbVar9 = param_6;
       if (0 < param_15) {
         while( true ) {
-          if (param_5 <= *puVar8) {
-            piVar13 = local_80 + iVar14;
-            iVar14 = iVar14 + 1;
-            *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-            if (0x1e < iVar14) {
-              iVar14 = 0;
+          if (param_5 <= *puVar10) {
+            piVar14 = local_80 + iVar15;
+            iVar15 = iVar15 + 1;
+            *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+            if (0x1e < iVar15) {
+              iVar15 = 0;
             }
           }
           pbVar9 = param_6 + 1;
           if ((param_15 + -1 < 1) || (pbVar9 = param_6 + 2, param_15 + -2 < 1)) break;
-          if (param_5 <= puVar8[1]) {
-            piVar13 = local_80 + iVar14;
-            iVar14 = iVar14 + 1;
-            puVar11[1] = *(undefined1 *)((uint)(byte)(puVar11 + 1)[*piVar13] + param_10);
-            if (0x1e < iVar14) {
-              iVar14 = 0;
+          if (param_5 <= puVar10[1]) {
+            piVar14 = local_80 + iVar15;
+            iVar15 = iVar15 + 1;
+            puVar12[1] = *(undefined1 *)((uint)(byte)(puVar12 + 1)[*piVar14] + param_10);
+            if (0x1e < iVar15) {
+              iVar15 = 0;
             }
           }
-          puVar8 = puVar8 + 2;
-          puVar11 = puVar11 + 2;
+          puVar10 = puVar10 + 2;
+          puVar12 = puVar12 + 2;
           pbVar9 = param_6 + 3;
           if ((param_15 + -3 < 1) || (pbVar9 = param_6 + 4, param_15 + -4 < 1)) break;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -916,19 +915,19 @@ switchD_00707ed6_default:
     goto cf_common_join_00707E36;
   }
   pbVar9 = param_6 + 1;
-  if (iVar6 < 1) goto switchD_00707d22_default;
-  switch(iVar6) {
+  if (iVar8 < 1) goto switchD_00707d22_default;
+  switch(iVar8) {
   case 1:
-    if (param_5 <= *puVar8) {
-      piVar13 = local_80 + iVar14;
-      iVar14 = iVar14 + 1;
-      *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-      if (0x1e < iVar14) {
-        iVar14 = 0;
+    if (param_5 <= *puVar10) {
+      piVar14 = local_80 + iVar15;
+      iVar15 = iVar15 + 1;
+      *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+      if (0x1e < iVar15) {
+        iVar15 = 0;
       }
     }
-    puVar8 = puVar8 + 1;
-    puVar11 = puVar11 + 1;
+    puVar10 = puVar10 + 1;
+    puVar12 = puVar12 + 1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_15 = param_15 + -1;
     if (param_15 < 1) goto cf_common_join_00707E36;
@@ -939,16 +938,16 @@ LAB_00707d61:
     param_15 = param_15 + -1;
     if (param_15 < 1) goto cf_common_join_00707E36;
 switchD_00707d22_caseD_3:
-    if (param_5 <= *puVar8) {
-      piVar13 = local_80 + iVar14;
-      iVar14 = iVar14 + 1;
-      *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-      if (0x1e < iVar14) {
-        iVar14 = 0;
+    if (param_5 <= *puVar10) {
+      piVar14 = local_80 + iVar15;
+      iVar15 = iVar15 + 1;
+      *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+      if (0x1e < iVar15) {
+        iVar15 = 0;
       }
     }
-    puVar8 = puVar8 + 1;
-    puVar11 = puVar11 + 1;
+    puVar10 = puVar10 + 1;
+    puVar12 = puVar12 + 1;
     if (param_15 + -1 < 1) goto cf_common_join_00707E36;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_15 = param_15 + -2;
@@ -963,52 +962,52 @@ switchD_00707d22_caseD_3:
 switchD_00707d22_default:
   if ((0 < param_15) && (param_15 = param_15 + -1, 0 < param_15)) {
     while( true ) {
-      if (param_5 <= *puVar8) {
-        piVar13 = local_80 + iVar14;
-        iVar14 = iVar14 + 1;
-        *puVar11 = *(undefined1 *)((uint)(byte)puVar11[*piVar13] + param_10);
-        if (0x1e < iVar14) {
-          iVar14 = 0;
+      if (param_5 <= *puVar10) {
+        piVar14 = local_80 + iVar15;
+        iVar15 = iVar15 + 1;
+        *puVar12 = *(undefined1 *)((uint)(byte)puVar12[*piVar14] + param_10);
+        if (0x1e < iVar15) {
+          iVar15 = 0;
         }
       }
       if (param_15 + -2 < 1) break;
-      if (param_5 <= puVar8[1]) {
-        piVar13 = local_80 + iVar14;
-        iVar14 = iVar14 + 1;
-        puVar11[1] = *(undefined1 *)((uint)(byte)(puVar11 + 1)[*piVar13] + param_10);
-        if (0x1e < iVar14) {
-          iVar14 = 0;
+      if (param_5 <= puVar10[1]) {
+        piVar14 = local_80 + iVar15;
+        iVar15 = iVar15 + 1;
+        puVar12[1] = *(undefined1 *)((uint)(byte)(puVar12 + 1)[*piVar14] + param_10);
+        if (0x1e < iVar15) {
+          iVar15 = 0;
         }
       }
-      puVar8 = puVar8 + 2;
-      puVar11 = puVar11 + 2;
+      puVar10 = puVar10 + 2;
+      puVar12 = puVar12 + 2;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if ((param_15 + -4 < 1) || (param_15 = param_15 + -5, param_15 < 1)) break;
     }
   }
 cf_common_join_00707E36:
-  iVar6 = (param_7 - param_8) - param_11;
+  iVar8 = (param_7 - param_8) - param_11;
   bVar1 = (byte)param_16;
-  if ((int)uVar3 < iVar6) {
+  if ((int)uVar6 < iVar8) {
     do {
-      iVar6 = iVar6 - uVar3;
-      pbVar10 = pbVar9;
+      iVar8 = iVar8 - uVar6;
+      pbVar11 = pbVar9;
       if (((byte)param_16 & 0xc0) == 0x80) {
-        pbVar10 = pbVar9 + uVar3;
+        pbVar11 = pbVar9 + uVar6;
       }
-      bVar1 = *pbVar10;
+      bVar1 = *pbVar11;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_16 = (uint)bVar1;
-      pbVar9 = pbVar10 + 1;
-      uVar3 = param_16;
-      if (((bVar1 & 0x80) != 0) && (uVar3 = param_16 & 0x3f, (bVar1 & 0x40) != 0)) {
-        pbVar9 = pbVar10 + 2;
+      pbVar9 = pbVar11 + 1;
+      uVar6 = param_16;
+      if (((bVar1 & 0x80) != 0) && (uVar6 = param_16 & 0x3f, (bVar1 & 0x40) != 0)) {
+        pbVar9 = pbVar11 + 2;
       }
-    } while ((int)uVar3 < iVar6);
+    } while ((int)uVar6 < iVar8);
   }
   STPiece<0,1>(param_16) = bVar1;
   if (((byte)param_16 & 0xc0) == 0x80) {
-    pbVar9 = pbVar9 + iVar6;
+    pbVar9 = pbVar9 + iVar8;
   }
 LAB_00707e8a:
   param_1 = param_1 + param_2;
@@ -1021,8 +1020,6 @@ LAB_00707e8a:
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_12 = param_12 + -1;
-  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_6 = pbVar9;
   if (param_12 < 0) {
     return;
   }

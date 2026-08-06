@@ -19,6 +19,7 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
   undefined4 *puVar11;
   tagLOGPALETTE *local_408;
   tagPALETTEENTRY *local_404;
+  LOGPALETTE *pLVar8_mg0;
 
   if (*(HGDIOBJ *)param_1 != (HGDIOBJ)0x0) {
     DeleteObject(*(HGDIOBJ *)param_1);
@@ -28,11 +29,11 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
     DeleteObject(param_1->field_04B4);
     param_1->field_04B4 = (HPALETTE)0x0;
   }
-  pLVar8 = param_2;
+  pLVar8_mg0 = param_2;
   for (iVar7 = 0x101; iVar7 != 0; iVar7 = iVar7 + -1) {
-    pLVar8->palVersion = 0;
-    pLVar8->palNumEntries = 0;
-    pLVar8 = (LOGPALETTE *)pLVar8->palPalEntry;
+    pLVar8_mg0->palVersion = 0;
+    pLVar8_mg0->palNumEntries = 0;
+    pLVar8_mg0 = (LOGPALETTE *)pLVar8_mg0->palPalEntry;
   }
   param_2->palVersion = 0x300;
   param_2->palNumEntries = 0x100;

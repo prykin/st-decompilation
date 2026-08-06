@@ -20,22 +20,24 @@ STAllPlayersC::sub_004DB160
 {
   STAllPlayersC *pSVar1;
   short sVar2;
-  int iVar3;
+  int iVar4;
   int local_EAX_191;
   int uVar4;
-  int iVar4;
+  int iVar5;
   STWorldObject *this_00;
   int local_EAX_744;
   int local_EAX_990;
   int local_EAX_1169;
-  uint uVar5;
-  short sVar6;
-  int *piVar7;
-  short sVar8;
-  uint uVar9;
+  uint uVar6;
   int iVar10;
+  int iVar3;
+  short sVar7;
+  int *piVar8;
+  short sVar9;
+  uint uVar10;
   int iVar11;
-  STWorldObjectVTable *pSVar12;
+  int iVar12;
+  STWorldObjectVTable *pSVar13;
   int local_60 [21];
   STAllPlayersC *local_c;
   int local_8;
@@ -43,108 +45,108 @@ STAllPlayersC::sub_004DB160
   *param_6 = -1;
   sVar2 = (short)*param_3;
   local_c = this;
-  if ((((((-1 < sVar2) && (sVar2 < g_worldGrid.sizeX)) && (sVar8 = (short)*param_4, -1 < sVar8)) &&
-       ((sVar8 < g_worldGrid.sizeY && (sVar6 = (short)*param_5, -1 < sVar6)))) &&
-      ((sVar6 < g_worldGrid.sizeZ &&
-       ((this_00 = STGridAt3D(g_worldGrid, sVar2, sVar8, sVar6).objects[0], this_00 != nullptr &&
+  if ((((((-1 < sVar2) && (sVar2 < g_worldGrid.sizeX)) && (sVar9 = (short)*param_4, -1 < sVar9)) &&
+       ((sVar9 < g_worldGrid.sizeY && (sVar7 = (short)*param_5, -1 < sVar7)))) &&
+      ((sVar7 < g_worldGrid.sizeZ &&
+       ((this_00 = STGridAt3D(g_worldGrid, sVar2, sVar9, sVar7).objects[0], this_00 != nullptr &&
         (this_00[1].vtable != (STWorldObjectVTable *)param_1)))))) &&
-     ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
-      (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))) {
+     ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+      (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))) {
     local_EAX_191 = LookupRecordByte(*(char *)&this_00[1].vtable);
     local_EAX_191 = (int)(byte)local_EAX_191;
     if (local_EAX_191 == 1) {
-      iVar3 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
+      iVar4 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
     }
     else {
       if (local_EAX_191 == 2) {
-        pSVar12 = this_00[1].vtable;
-        iVar3 = 0x43;
+        pSVar13 = this_00[1].vtable;
+        iVar4 = 0x43;
       }
       else {
         if (local_EAX_191 != 3) goto LAB_004db257;
-        pSVar12 = this_00[1].vtable;
-        iVar3 = 99;
+        pSVar13 = this_00[1].vtable;
+        iVar4 = 99;
       }
-      iVar3 = thunk_FUN_004e60d0((int)pSVar12,iVar3);
+      iVar4 = thunk_FUN_004e60d0((int)pSVar13,iVar4);
     }
-    if (iVar3 != 0) {
-      iVar3 = *param_5;
-      iVar11 = *param_4;
-      iVar10 = *param_3;
+    if (iVar4 != 0) {
+      iVar4 = *param_5;
+      iVar12 = *param_4;
+      iVar11 = *param_3;
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 cf_common_join_004DB690:
-      param_1 = iVar10;
+      param_1 = iVar11;
       *param_6 = (int)this_00[1].vtable;
       if (param_1 < 0) {
         return;
       }
+      if (iVar12 < 0) {
+        return;
+      }
+      if (iVar4 < 0) {
+        return;
+      }
+      iVar4 = 0;
+      piVar8 = local_60;
+      do {
+        *piVar8 = iVar4;
+        pSVar1 = local_c;
+        iVar4 = iVar4 + 1;
+        piVar8 = piVar8 + 1;
+      } while (iVar4 < 0x15);
+      iVar4 = 0x15;
+      do {
+        uVar6 = pSVar1->field_001C * 0x41c64e6d + 0x3039;
+        pSVar1->field_001C = uVar6;
+        uVar6 = (uVar6 >> 0x10) % 0x15;
+        do {
+          uVar10 = pSVar1->field_001C * 0x41c64e6d + 0x3039;
+          pSVar1->field_001C = uVar10;
+          uVar10 = (uVar10 >> 0x10) % 0x15;
+        } while (uVar10 == uVar6);
+        iVar11 = local_60[uVar6];
+        iVar4 = iVar4 + -1;
+        local_60[uVar6] = local_60[uVar10];
+        local_60[uVar10] = iVar11;
+      } while (iVar4 != 0);
+      iVar4 = 1;
+      uVar6 = local_c->field_001C * 0x41c64e6d + 0x3039;
+      local_c->field_001C = uVar6;
+      uVar6 = (uVar6 >> 0x10) % 0xd2;
+      iVar11 = 0;
+      piVar8 = local_60;
+      do {
+        uVar6 = uVar6 - *piVar8;
+        if ((int)uVar6 < 1) {
+          iVar4 = local_60[iVar11];
+          break;
+        }
+        iVar11 = iVar11 + 1;
+        piVar8 = piVar8 + 1;
+      } while (iVar11 < 0x15);
+      uVar6 = local_c->field_001C * 0x41c64e6d + 0x3039;
+      local_c->field_001C = uVar6;
+      uVar6 = (uVar6 >> 0x10) % 0x168;
+      iVar11 = FUN_006aff50(uVar6);
+      iVar10 = FUN_006b1280(iVar11 * iVar4);
+      iVar11 = iVar10 + param_1;
+      uVar6 = FUN_006aff5b(uVar6);
+      iVar3 = FUN_006b1280(uVar6 * iVar4);
+      iVar12 = iVar3 + iVar12;
       if (iVar11 < 0) {
         return;
       }
-      if (iVar3 < 0) {
+      if (g_worldGrid.sizeX <= iVar11) {
         return;
       }
-      iVar3 = 0;
-      piVar7 = local_60;
-      do {
-        *piVar7 = iVar3;
-        pSVar1 = local_c;
-        iVar3 = iVar3 + 1;
-        piVar7 = piVar7 + 1;
-      } while (iVar3 < 0x15);
-      iVar3 = 0x15;
-      do {
-        uVar5 = pSVar1->field_001C * 0x41c64e6d + 0x3039;
-        pSVar1->field_001C = uVar5;
-        uVar5 = (uVar5 >> 0x10) % 0x15;
-        do {
-          uVar9 = pSVar1->field_001C * 0x41c64e6d + 0x3039;
-          pSVar1->field_001C = uVar9;
-          uVar9 = (uVar9 >> 0x10) % 0x15;
-        } while (uVar9 == uVar5);
-        iVar10 = local_60[uVar5];
-        iVar3 = iVar3 + -1;
-        local_60[uVar5] = local_60[uVar9];
-        local_60[uVar9] = iVar10;
-      } while (iVar3 != 0);
-      iVar3 = 1;
-      uVar5 = local_c->field_001C * 0x41c64e6d + 0x3039;
-      local_c->field_001C = uVar5;
-      uVar5 = (uVar5 >> 0x10) % 0xd2;
-      iVar10 = 0;
-      piVar7 = local_60;
-      do {
-        uVar5 = uVar5 - *piVar7;
-        if ((int)uVar5 < 1) {
-          iVar3 = local_60[iVar10];
-          break;
-        }
-        iVar10 = iVar10 + 1;
-        piVar7 = piVar7 + 1;
-      } while (iVar10 < 0x15);
-      uVar5 = local_c->field_001C * 0x41c64e6d + 0x3039;
-      local_c->field_001C = uVar5;
-      uVar5 = (uVar5 >> 0x10) % 0x168;
-      iVar10 = FUN_006aff50(uVar5);
-      iVar10 = FUN_006b1280(iVar10 * iVar3);
-      iVar10 = iVar10 + param_1;
-      iVar4 = FUN_006aff5b(uVar5);
-      iVar3 = FUN_006b1280(iVar4 * iVar3);
-      iVar3 = iVar3 + iVar11;
-      if (iVar10 < 0) {
+      if (iVar12 < 0) {
         return;
       }
-      if (g_worldGrid.sizeX <= iVar10) {
+      if (g_worldGrid.sizeY <= iVar12) {
         return;
       }
-      if (iVar3 < 0) {
-        return;
-      }
-      if (g_worldGrid.sizeY <= iVar3) {
-        return;
-      }
-      *param_3 = iVar10;
-      *param_4 = iVar3;
+      *param_3 = iVar11;
+      *param_4 = iVar12;
       return;
     }
   }
@@ -156,150 +158,150 @@ LAB_004db257:
     local_8 = 0;
     if (sVar2 != 1 && -1 < sVar2 + -1) {
       do {
-        iVar10 = *param_3 - (int)param_5;
-        if (iVar10 <= *param_3 + (int)param_5) {
+        iVar11 = *param_3 - (int)param_5;
+        if (iVar11 <= *param_3 + (int)param_5) {
           do {
-            if ((-1 < iVar10) && (iVar10 < g_worldGrid.sizeX)) {
-              iVar11 = *param_4 - (int)param_5;
-              sVar2 = (short)iVar10;
-              if ((((-1 < iVar11) &&
-                   (((iVar11 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeX))))
-                  && (((sVar8 = (short)iVar11, -1 < sVar8 && (sVar8 < g_worldGrid.sizeY)) &&
-                      (sVar6 = (short)local_8, -1 < sVar6)))) &&
-                 (((sVar6 < g_worldGrid.sizeZ &&
-                   (this_00 = STGridAt3D(g_worldGrid, sVar2, sVar8, sVar6).objects[0],
+            if ((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) {
+              iVar12 = *param_4 - (int)param_5;
+              sVar2 = (short)iVar11;
+              if ((((-1 < iVar12) &&
+                   (((iVar12 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeX))))
+                  && (((sVar9 = (short)iVar12, -1 < sVar9 && (sVar9 < g_worldGrid.sizeY)) &&
+                      (sVar7 = (short)local_8, -1 < sVar7)))) &&
+                 (((sVar7 < g_worldGrid.sizeZ &&
+                   (this_00 = STGridAt3D(g_worldGrid, sVar2, sVar9, sVar7).objects[0],
                    this_00 != nullptr)) &&
                   ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
-                   ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
-                    (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))))) {
+                   ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                    (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))))))) {
                 uVar4 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 uVar4 = (int)(byte)uVar4;
                 if (uVar4 == 1) {
-                  iVar4 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
-                  iVar3 = local_8;
+                  iVar5 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
+                  iVar4 = local_8;
                 }
                 else {
                   if (uVar4 == 2) {
-                    pSVar12 = this_00[1].vtable;
-                    iVar3 = 0x43;
+                    pSVar13 = this_00[1].vtable;
+                    iVar4 = 0x43;
                   }
                   else {
                     if (uVar4 != 3) goto LAB_004db3e4;
-                    pSVar12 = this_00[1].vtable;
-                    iVar3 = 99;
+                    pSVar13 = this_00[1].vtable;
+                    iVar4 = 99;
                   }
-                  iVar4 = thunk_FUN_004e60d0((int)pSVar12,iVar3);
-                  iVar3 = local_8;
+                  iVar5 = thunk_FUN_004e60d0((int)pSVar13,iVar4);
+                  iVar4 = local_8;
                 }
-                local_8 = iVar3;
-                if (iVar4 != 0) goto cf_common_join_004DB690;
+                local_8 = iVar4;
+                if (iVar5 != 0) goto cf_common_join_004DB690;
               }
 LAB_004db3e4:
-              iVar11 = *param_4 + (int)param_5;
-              if ((((-1 < iVar11) && (iVar11 < g_worldGrid.sizeY)) &&
+              iVar12 = *param_4 + (int)param_5;
+              if ((((-1 < iVar12) && (iVar12 < g_worldGrid.sizeY)) &&
                   (this_00 = (STWorldObject *)
-                             thunk_FUN_004db980(sVar2,(short)iVar11,(short)local_8,0),
+                             thunk_FUN_004db980(sVar2,(short)iVar12,(short)local_8,0),
                   this_00 != nullptr)) &&
                  ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
-                  ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
-                   (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))) {
+                  ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                   (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))))) {
                 local_EAX_744 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 local_EAX_744 = (int)(byte)local_EAX_744;
                 if (local_EAX_744 == 1) {
-                  iVar4 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
-                  iVar3 = local_8;
+                  iVar5 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
+                  iVar4 = local_8;
                 }
                 else {
                   if (local_EAX_744 == 2) {
-                    pSVar12 = this_00[1].vtable;
-                    iVar3 = 0x43;
+                    pSVar13 = this_00[1].vtable;
+                    iVar4 = 0x43;
                   }
                   else {
                     if (local_EAX_744 != 3) goto LAB_004db497;
-                    pSVar12 = this_00[1].vtable;
-                    iVar3 = 99;
+                    pSVar13 = this_00[1].vtable;
+                    iVar4 = 99;
                   }
-                  iVar4 = thunk_FUN_004e60d0((int)pSVar12,iVar3);
-                  iVar3 = local_8;
+                  iVar5 = thunk_FUN_004e60d0((int)pSVar13,iVar4);
+                  iVar4 = local_8;
                 }
-                local_8 = iVar3;
-                if (iVar4 != 0) goto cf_common_join_004DB690;
+                local_8 = iVar4;
+                if (iVar5 != 0) goto cf_common_join_004DB690;
               }
             }
 LAB_004db497:
-            iVar10 = iVar10 + 1;
-          } while (iVar10 <= *param_3 + (int)param_5);
+            iVar11 = iVar11 + 1;
+          } while (iVar11 <= *param_3 + (int)param_5);
         }
-        iVar11 = (*param_4 - (int)param_5) + 1;
-        if (iVar11 <= *param_4 + -1 + (int)param_5) {
+        iVar12 = (*param_4 - (int)param_5) + 1;
+        if (iVar12 <= *param_4 + -1 + (int)param_5) {
           do {
-            if ((-1 < iVar11) && (iVar11 < g_worldGrid.sizeY)) {
-              iVar10 = *param_3 - (int)param_5;
-              if ((-1 < iVar10) &&
-                 ((((iVar10 < g_worldGrid.sizeX &&
+            if ((-1 < iVar12) && (iVar12 < g_worldGrid.sizeY)) {
+              iVar11 = *param_3 - (int)param_5;
+              if ((-1 < iVar11) &&
+                 ((((iVar11 < g_worldGrid.sizeX &&
                     (this_00 = (STWorldObject *)
-                               thunk_FUN_004db980((short)iVar10,(short)iVar11,(short)local_8,0),
+                               thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0),
                     this_00 != nullptr)) &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)) &&
-                  ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
-                   (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))) {
+                  ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                   (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))))) {
                 local_EAX_990 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 local_EAX_990 = (int)(byte)local_EAX_990;
                 if (local_EAX_990 == 1) {
-                  iVar4 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
-                  iVar3 = local_8;
+                  iVar5 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
+                  iVar4 = local_8;
                 }
                 else {
                   if (local_EAX_990 == 2) {
-                    pSVar12 = this_00[1].vtable;
-                    iVar3 = 0x43;
+                    pSVar13 = this_00[1].vtable;
+                    iVar4 = 0x43;
                   }
                   else {
                     if (local_EAX_990 != 3) goto LAB_004db58d;
-                    pSVar12 = this_00[1].vtable;
-                    iVar3 = 99;
+                    pSVar13 = this_00[1].vtable;
+                    iVar4 = 99;
                   }
-                  iVar4 = thunk_FUN_004e60d0((int)pSVar12,iVar3);
-                  iVar3 = local_8;
+                  iVar5 = thunk_FUN_004e60d0((int)pSVar13,iVar4);
+                  iVar4 = local_8;
                 }
-                local_8 = iVar3;
-                if (iVar4 != 0) goto cf_common_join_004DB690;
+                local_8 = iVar4;
+                if (iVar5 != 0) goto cf_common_join_004DB690;
               }
 LAB_004db58d:
-              iVar10 = *param_3 + (int)param_5;
-              if ((((-1 < iVar10) && (iVar10 < g_worldGrid.sizeX)) &&
+              iVar11 = *param_3 + (int)param_5;
+              if ((((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) &&
                   ((this_00 = (STWorldObject *)
-                              thunk_FUN_004db980((short)iVar10,(short)iVar11,(short)local_8,0),
+                              thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0),
                    this_00 != nullptr &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)))) &&
-                 ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
-                  (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))) {
+                 ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                  (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))) {
                 local_EAX_1169 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 local_EAX_1169 = (int)(byte)local_EAX_1169;
                 if (local_EAX_1169 == 1) {
-                  iVar4 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
-                  iVar3 = local_8;
+                  iVar5 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
+                  iVar4 = local_8;
                 }
                 else {
                   if (local_EAX_1169 == 2) {
-                    pSVar12 = this_00[1].vtable;
-                    iVar3 = 0x43;
+                    pSVar13 = this_00[1].vtable;
+                    iVar4 = 0x43;
                   }
                   else {
                     if (local_EAX_1169 != 3) goto LAB_004db638;
-                    pSVar12 = this_00[1].vtable;
-                    iVar3 = 99;
+                    pSVar13 = this_00[1].vtable;
+                    iVar4 = 99;
                   }
-                  iVar4 = thunk_FUN_004e60d0((int)pSVar12,iVar3);
-                  iVar3 = local_8;
+                  iVar5 = thunk_FUN_004e60d0((int)pSVar13,iVar4);
+                  iVar4 = local_8;
                 }
-                local_8 = iVar3;
-                if (iVar4 != 0) goto cf_common_join_004DB690;
+                local_8 = iVar4;
+                if (iVar5 != 0) goto cf_common_join_004DB690;
               }
             }
 LAB_004db638:
-            iVar11 = iVar11 + 1;
-          } while (iVar11 <= *param_4 + -1 + (int)param_5);
+            iVar12 = iVar12 + 1;
+          } while (iVar12 <= *param_4 + -1 + (int)param_5);
         }
         local_8 = local_8 + 1;
         sVar2 = g_worldGrid.sizeZ;

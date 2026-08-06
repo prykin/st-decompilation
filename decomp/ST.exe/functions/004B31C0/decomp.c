@@ -7,14 +7,15 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
   int *piVar1;
   int iVar2;
   int iVar3;
-  DArrayTy *array;
   int iVar4;
+  DArrayTy *array;
+  int iVar5;
   uint index;
   AnonShape_004B31C0_DBC5A6CD *local_c;
   int local_8;
 
   piVar1 = param_1;
-  iVar4 = 0;
+  iVar5 = 0;
   local_8 = 0;
   iVar2 = thunk_FUN_0044e1b0((int)param_1);
   if (iVar2 == 0) {
@@ -23,18 +24,18 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
   if (g_array_007FA170 != nullptr) {
     g_array_007FA170->iteratorIndex = 0;
     iVar3 = DArrayGetNext(g_array_007FA170,(byte *)&local_c);
-    iVar2 = param_2;
+    iVar4 = param_2;
     while (-1 < iVar3) {
       if ((((local_c != nullptr) && (local_c->field_0024 == piVar1)) &&
-          ((iVar2 == 0 || (local_c->field_0018 != iVar2)))) &&
+          ((iVar4 == 0 || (local_c->field_0018 != iVar4)))) &&
          ((((local_c->field_02EC == 3 || (local_c->field_02A0 != 0)) || (local_c->field_02E0 != 0))
           || (local_c->field_02DC != 0)))) {
         local_8 = local_8 + 1;
       }
       iVar3 = DArrayGetNext(g_array_007FA170,(byte *)&local_c);
-      iVar4 = local_8;
+      iVar5 = local_8;
     }
-    if (DAT_00808a97 <= (uint)(ushort)g_packedRecords_A62x8[(int)piVar1].field4_0xd + iVar4) {
+    if (DAT_00808a97 <= (uint)(ushort)g_packedRecords_A62x8[(int)piVar1].field4_0xd + iVar5) {
       return 0;
     }
   }
@@ -46,19 +47,19 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
         DArrayGetElement(array,index,&param_1);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((param_1 != nullptr) &&
-            ((((iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x32 ||
-               (iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x40)) ||
-              ((iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x49 ||
-               (iVar2 = (**(code **)(*param_1 + 0x2c))(), iVar2 == 0x5c)))) &&
-             (((STField<int>(param_1,0x361) == 1 && (iVar2 = param_1[0x134], iVar2 != 0)) &&
-              (iVar2 != 1)))))) && (iVar2 != 2)) {
-          iVar4 = iVar4 + 1;
+            ((((iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x32 ||
+               (iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x40)) ||
+              ((iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x49 ||
+               (iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x5c)))) &&
+             (((STField<int>(param_1,0x361) == 1 && (iVar4 = param_1[0x134], iVar4 != 0)) &&
+              (iVar4 != 1)))))) && (iVar4 != 2)) {
+          iVar5 = iVar5 + 1;
         }
         array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar1].field3_0x9;
         index = index + 1;
       } while (index < array->count);
     }
-    if (DAT_00808a97 <= (uint)(ushort)g_packedRecords_A62x8[(int)piVar1].field4_0xd + iVar4) {
+    if (DAT_00808a97 <= (uint)(ushort)g_packedRecords_A62x8[(int)piVar1].field4_0xd + iVar5) {
       return 0;
     }
   }

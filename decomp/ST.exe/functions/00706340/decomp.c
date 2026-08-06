@@ -22,6 +22,7 @@ void FUN_00706340(undefined1 *param_1,int param_2,byte *param_3,int param_4,byte
   undefined1 *puVar9;
   byte *pbVar10;
   byte *pbVar11;
+  byte *pbVar12;
   uint local_c;
   uint local_8;
 
@@ -132,31 +133,31 @@ LAB_00706429:
           if (iVar4 < 1) {
 switchD_00706553_default:
             if (0 < (int)uVar2) {
-              pbVar5 = pbVar6 + 1;
+              pbVar12 = pbVar6 + 1;
               puVar9 = puVar8;
               pbVar10 = pbVar11;
-              for (iVar3 = uVar2 - 1; iVar4 = 1, pbVar6 = pbVar5, puVar8 = puVar9, pbVar11 = pbVar10
-                  , 0 < iVar3; iVar3 = iVar3 + -5) {
+              for (iVar3 = uVar2 - 1; iVar4 = 1, pbVar6 = pbVar12, puVar8 = puVar9,
+                  pbVar11 = pbVar10, 0 < iVar3; iVar3 = iVar3 + -5) {
                 pbVar11 = pbVar10 + 1;
-                pbVar6 = pbVar5 + 1;
+                pbVar6 = pbVar12 + 1;
                 *puVar9 = *(undefined1 *)((uint)*pbVar10 + param_12);
                 iVar4 = 2;
                 puVar8 = puVar9 + 1;
                 if (iVar3 + -1 < 1) break;
-                pbVar6 = pbVar5 + 2;
+                pbVar6 = pbVar12 + 2;
                 iVar4 = 3;
                 if (iVar3 + -2 < 1) break;
                 puVar8 = puVar9 + 2;
                 bVar7 = *pbVar11;
                 pbVar11 = pbVar10 + 2;
-                pbVar6 = pbVar5 + 3;
+                pbVar6 = pbVar12 + 3;
                 puVar9[1] = *(undefined1 *)((uint)bVar7 + param_12);
                 iVar4 = 4;
                 if (iVar3 + -3 < 1) break;
-                pbVar6 = pbVar5 + 4;
+                pbVar6 = pbVar12 + 4;
                 iVar4 = 0;
                 if (iVar3 + -4 < 1) break;
-                pbVar5 = pbVar5 + 5;
+                pbVar12 = pbVar12 + 5;
                 puVar9 = puVar8;
                 pbVar10 = pbVar11;
               }
@@ -208,31 +209,31 @@ switchD_00706553_caseD_4:
         }
         else {
           pbVar6 = pbVar6 + 1;
-          pbVar5 = pbVar11;
+          pbVar12 = pbVar11;
           if (iVar4 < 1) {
 switchD_00706480_default:
             puVar8 = puVar9;
-            pbVar11 = pbVar5;
+            pbVar11 = pbVar12;
             if (0 < (int)uVar2) {
               iVar3 = uVar2 - 1;
               iVar4 = 1;
               if (0 < iVar3) {
                 while( true ) {
-                  pbVar10 = pbVar5 + 1;
-                  *puVar9 = *(undefined1 *)((uint)*pbVar5 + param_12);
+                  pbVar10 = pbVar12 + 1;
+                  *puVar9 = *(undefined1 *)((uint)*pbVar12 + param_12);
                   iVar4 = 2;
                   puVar8 = puVar9 + 1;
                   pbVar11 = pbVar10;
                   if ((iVar3 + -1 < 1) || (iVar4 = 3, iVar3 + -2 < 1)) break;
                   puVar8 = puVar9 + 2;
-                  pbVar11 = pbVar5 + 2;
+                  pbVar11 = pbVar12 + 2;
                   puVar9[1] = *(undefined1 *)((uint)*pbVar10 + param_12);
                   iVar4 = 4;
                   if ((iVar3 + -3 < 1) || (iVar4 = 0, iVar3 + -4 < 1)) break;
                   iVar3 = iVar3 + -5;
                   iVar4 = 1;
                   puVar9 = puVar8;
-                  pbVar5 = pbVar11;
+                  pbVar12 = pbVar11;
                   if (iVar3 < 1) break;
                 }
               }
@@ -274,7 +275,7 @@ switchD_00706480_caseD_4:
                 iVar4 = 0;
                 uVar2 = uVar2 - 1;
                 puVar9 = puVar8;
-                pbVar5 = pbVar11;
+                pbVar12 = pbVar11;
                 goto switchD_00706480_default;
               }
             }
@@ -351,13 +352,13 @@ switchD_00706745_default:
           pbVar5 = pbVar6;
           if (0 < (int)param_5) {
             while( true ) {
-              pbVar10 = pbVar11 + 1;
+              pbVar12 = pbVar11 + 1;
               *puVar8 = *(undefined1 *)((uint)*pbVar11 + param_12);
               pbVar5 = pbVar6 + 1;
               if (((int)(param_5 + -1) < 1) || (pbVar5 = pbVar6 + 2, (int)(param_5 + -2) < 1))
               break;
               pbVar11 = pbVar11 + 2;
-              puVar8[1] = *(undefined1 *)((uint)*pbVar10 + param_12);
+              puVar8[1] = *(undefined1 *)((uint)*pbVar12 + param_12);
               pbVar5 = pbVar6 + 3;
               if (((int)(param_5 + -3) < 1) || (pbVar5 = pbVar6 + 4, (int)(param_5 + -4) < 1))
               break;

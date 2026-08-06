@@ -14,9 +14,10 @@ void __thiscall PlayPanelTy::ShiftControls(PlayPanelTy *this,int param_1)
 {
   PlayPanelTy *this_00;
   short sVar2;
-  int iVar3;
   int iVar4;
-  int *piVar6;
+  int iVar3;
+  int iVar5;
+  int *piVar7;
   InternalExceptionFrame local_54;
   PlayPanelTy *local_10;
   int local_c;
@@ -40,22 +41,22 @@ void __thiscall PlayPanelTy::ShiftControls(PlayPanelTy *this,int param_1)
       if (local_10->field_017C != 0) {
         FUN_006e6080(local_10,2,local_10->field_017C,(undefined4 *)&local_10->field_0x18);
       }
-      piVar6 = &this_00->field_0181;
+      piVar7 = &this_00->field_0181;
       local_c = 8;
       do {
-        iVar4 = 2;
-        local_8 = piVar6;
+        iVar5 = 2;
+        local_8 = piVar7;
         do {
-          if (*piVar6 != 0) {
-            FUN_006e6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x18);
+          if (*piVar7 != 0) {
+            FUN_006e6080(this_00,2,*piVar7,(undefined4 *)&this_00->field_0x18);
           }
-          piVar6 = piVar6 + 8;
-          iVar4 = iVar4 + -1;
-        } while (iVar4 != 0);
-        piVar6 = local_8 + 1;
+          piVar7 = piVar7 + 8;
+          iVar5 = iVar5 + -1;
+        } while (iVar5 != 0);
+        piVar7 = local_8 + 1;
         local_c = local_c + -1;
       } while (local_c != 0);
-      local_8 = piVar6;
+      local_8 = piVar7;
       if (this_00->field_01C5 != 0) {
         FUN_006e6080(this_00,2,this_00->field_01C5,(undefined4 *)&this_00->field_0x18);
       }

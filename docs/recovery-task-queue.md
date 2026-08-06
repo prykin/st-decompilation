@@ -368,20 +368,60 @@ layout or ABI changes merely because their raw occurrence counts are larger.
 
 ### Q-040 Bound adjacent jump and lookup tables
 
-Status: diagnosed, not yet applied. `004AE0B0` contains a four-entry dword jump
+Status: implemented and runtime-confirmed. `004AE0B0` contains a four-entry dword jump
 table at `004AED14..004AED23`, immediately followed by a byte lookup table at
 `004AED24`. Ghidra reads the first lookup bytes `00 01 03 03` as a fifth
 little-endian code pointer (`03030100`) and warns that it cannot read that
 address. The executable bytes are intact; the recovery error is the inferred
 table boundary.
 
-Implement this as a general analyzer/applier pair, not an address suppression:
-require a bounded indirect-jump index, consecutive in-memory executable targets,
-then an adjacent candidate element outside executable memory whose bytes also
-have independent byte-table reads. The analyzer should propose the exact dword
-extent and following byte-array extent; the applier must preserve manual data,
-references, and switch overrides. A fresh decompile must remove the invalid
-target while preserving all real switch cases.
+`STJumpTableBoundaryAnalyzer/Applier` implements this as a general database
+repair, not an address suppression. The machine scan found 407 bounded table
+candidates across 235 functions, but only the one function whose fresh Ghidra
+output reported jump-table truncation was automatic. Its two adjacent tables
+received finite Ghidra switch overrides (two and four destinations); the other
+405 rows remain disabled review evidence. A confirming fresh analysis reports
+zero functions with the truncation warning, keeps both owned overrides enabled
+for stale-baseline validation, and emits no `03030100` read warning.
+
+### Q-047 Converge local lifetimes and legacy generated class layouts
+
+Status: implemented, runtime-confirmed, and accepted. Ordinary symbol-less and
+local-to-local nominal `typed_copy` values can no longer bootstrap their own
+lifetime type. Exact typed parameters/globals/call boundaries remain valid
+anchors; the one local exception is an exact pointer chain ending at the same
+hash-intact recursive-node identity. Split merge groups receive deterministic
+collision-free names and must reattach to the same machine anchor after a fresh
+decompile. The mutation staircase applied 527, then seven, then zero rows. The
+final broad pass reports 98 already-correct groups, 91 preserved reattachment
+failures, three real conflicts, and no mutation.
+
+Class-layout hashes are now computed from the installed `StructureDB`, after
+Ghidra canonicalization. A legacy script-owned layout with a divergent
+pre-install hash is not rebaselined or rebuilt: `repair_mode=surgical` permits
+only exact marker-owned components which still match their recorded baseline,
+preflights all target datatypes, preserves unrelated fields, and records a
+separate overlay hash. This refined five `CPanelTy` and nine `HelpPanelTy`
+fields; the confirming pass reports 110 unchanged applicable classes and zero
+conflicts. Source-family pointer types are also protected from lateral
+prototype refinement.
+
+Accepted run:
+
+- run `c70e28be14e413bb4affd6eeddf76d449477c66fd028c8cf9b7a7df932d0d615`;
+- semantic hash `3e516e69565c493f8efc3b24ab81815cf4ab4dbbadeb020a73b9584e9721d2d6`;
+- corpus manifest `c5ca336f0fa2d0488d8bd833b95629f8f4e7d4b7297a88c9398ef5d99e0e37bd`;
+- 10,392 functions, 5,712 bodies, zero failed bodies, 2,729 typed vtable slots;
+- export gate: zero hard regressions and three nonblocking warnings;
+- full-pipeline duration: `01:07:19`;
+- compiler audit at 64 diagnostics per TU: 61/318 pass, 5,590 errors, 5,588
+  address-mapped; 52 fewer errors than the preceding same-cap audit.
+
+Next infrastructure item: replace the safe whole-Program semantic epoch for
+the slow broad analyzers with dependency fingerprints over the exact function,
+prototype, datatype member, and proposal inputs they consume. Do not cache an
+analyzer merely because its source is unchanged, and do not weaken the final
+fixed-point or regression gates.
 
 ## Definition of done for one queue item
 

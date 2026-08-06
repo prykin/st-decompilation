@@ -175,18 +175,19 @@ void __cdecl st::fn_00680340(char *param_1,undefined4 param_2,undefined4 param_3
   uint uVar2;
   char *pcVar4;
   char *pcVar5;
+  char *pcVar4_mg0;
 
   uVar2 = 0xffffffff;
   do {
-    pcVar4 = param_1;
+    pcVar4_mg0 = param_1;
     if (uVar2 == 0) break;
     uVar2 = uVar2 - 1;
-    pcVar4 = param_1 + 1;
+    pcVar4_mg0 = param_1 + 1;
     cVar1 = *param_1;
-    param_1 = pcVar4;
+    param_1 = pcVar4_mg0;
   } while (cVar1 != '\0');
   uVar2 = ~uVar2;
-  pcVar4 = pcVar4 + -uVar2;
+  pcVar4 = pcVar4_mg0 + -uVar2;
   pcVar5 = &DAT_008489e0;
   memmove(pcVar5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
   DAT_00848a00 = param_3;
@@ -537,7 +538,7 @@ undefined4 st::fn_00680D40(void)
   if ((0 < *(int *)(&DAT_00811ae8 + DAT_008488b0 * 0x2b14)) &&
      (0 < *(int *)(&DAT_00811c7c + DAT_008488b0 * 0x2b14))) {
     if (*(int *)(&DAT_00811ae8 + DAT_008488b0 * 0x2b14) < 2) {
-      pcVar2 = st::fn_00403E36(PTR_s___EMPTY___0079d734);
+      pcVar2 = st::fn_00403E36((byte *)PTR_s___EMPTY___0079d734);
       (&PTR_00811af0)[iVar1 * 0xac5] = pcVar2;
     }
     if (*(int *)(&DAT_00811c7c + iVar1 * 0x2b14) < 2) {
@@ -639,7 +640,7 @@ undefined4 st::fn_00680FF0(void)
   char *pcVar1;
 
   if (*(int *)(&DAT_00811ae8 + DAT_008488b0 * 0x2b14) < 1) {
-    pcVar1 = st::fn_00403E36(PTR_s___EMPTY___0079d734);
+    pcVar1 = st::fn_00403E36((byte *)PTR_s___EMPTY___0079d734);
     (&PTR_00811aec)[DAT_008488b0 * 0xac5] = pcVar1;
   }
   return 1;
@@ -711,7 +712,7 @@ undefined4 st::fn_00681140(void)
     *(undefined4 *)(&DAT_00811c9c + iVar3) = 0xffffffff;
   }
   if (*(int *)(&DAT_00811ae8 + iVar3) < 1) {
-    pcVar2 = st::fn_00403E36(PTR_s___EMPTY___0079d734);
+    pcVar2 = st::fn_00403E36((byte *)PTR_s___EMPTY___0079d734);
     (&PTR_00811aec)[iVar1 * 0xac5] = pcVar2;
   }
   if ((int)(&DAT_00811c8c)[iVar1 * 0xac5] < 0) {
@@ -1493,8 +1494,8 @@ void st::fn_00682340(int param_1)
 void __cdecl st::fn_00682370(undefined4 *param_1)
 
 {
-  if (g_int_00848A14 != nullptr) {
-    st::fn_00402149(g_int_00848A14,param_1);
+  if (g_anonShape_00683780_11EA4E23_00848A14 != nullptr) {
+    st::fn_00402149((int *)g_anonShape_00683780_11EA4E23_00848A14,param_1);
   }
   return;
 }
@@ -2218,18 +2219,21 @@ void st::fn_00683600(void)
 int st::fn_00683670(void)
 
 {
-  int iVar1;
+  AllocationRecord_0065CD10 *pAVar1;
 
-  if ((DAT_008489bc == 0) || (iVar1 = DAT_008489bc, DAT_008489c0 == 0)) {
-    if ((DAT_008489b8 != 0) && (DAT_008489c0 != 0)) {
-      return *(int *)(DAT_008489b8 + 0x106);
+  if ((g_allocationRecord_0065CD10_008489BC == nullptr) ||
+     (pAVar1 = g_allocationRecord_0065CD10_008489BC, DAT_008489c0 == 0)) {
+    if ((g_allocationRecord_0067D3B0_008489B8 != nullptr) &&
+       (DAT_008489c0 != 0)) {
+      return *(int *)&g_allocationRecord_0067D3B0_008489B8->field_0x106;
     }
-    if ((DAT_008489b4 != 0) && (DAT_008489c0 != 0)) {
-      return *(int *)(DAT_008489b4 + 0x4e);
+    if ((g_allocationRecord_00648620_008489B4 != nullptr) &&
+       (DAT_008489c0 != 0)) {
+      return *(int *)&g_allocationRecord_00648620_008489B4->field_0x4e;
     }
-    iVar1 = 0;
+    pAVar1 = nullptr;
   }
-  return iVar1;
+  return (int)pAVar1;
 }
 
 // 0068CDA0 FUN_0068cda0
@@ -2832,13 +2836,13 @@ int __thiscall st::fn_0068FAC0(void *this,ushort param_1,undefined4 param_2)
 
 // 0068FC70 FUN_0068fc70
 #line 4 "decomp/ST.exe/functions/0068FC70/decomp.c"
-/* [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 00679F00 -> 0068FC70 @ 00679F51 | 00679F90 -> 0068FC70 @ 00679FBC
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 0068FC70 returns forwarded through return of FUN_00679f00 @ 00679F57
 
-   [STPrototypeApplier] Propagated return.
-   Evidence: 0068FC70 returns forwarded through return of FUN_00679f00 @ 00679F57 */
+   [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 0068FC70 -> 00662240 @ 0068FCB8 */
 
-int __thiscall st::fn_0068FC70(void *this,int aiMess,short param_2)
+int __thiscall st::fn_0068FC70(void *this,AnonShape_0068FD00_A5257008 *aiMess,short param_2)
 
 {
   AiFltClassTy *this_00;

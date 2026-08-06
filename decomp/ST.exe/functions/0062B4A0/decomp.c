@@ -80,7 +80,7 @@ byte __thiscall STParticleC::sub_0062B4A0(STParticleC *this)
                ,&local_c);
     if (((local_10 < 0) || (4 < local_10)) ||
        ((local_14 < 0 ||
-        ((((pVVar4->field_0030 <= local_14 ||
+        (((((int)pVVar4->field_0030 <= local_14 ||
            (local_c = g_centeredOffsets5[local_10] + local_c, local_c < 0)) ||
           (pVVar4->field_0034 <= local_c)) ||
          ((pVVar4->field_004C == nullptr ||

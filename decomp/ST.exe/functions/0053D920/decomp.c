@@ -18,7 +18,7 @@ UPanelTy::PaintTxtBut
   UPanelTy *pUVar2;
   int iVar3;
   uint uVar4;
-  uint *resourceString;
+  char *resourceString;
   int iVar5;
   InternalExceptionFrame local_5c;
   AnonNested_0053D920_0018_8DE8F5C2 *local_18;
@@ -55,7 +55,7 @@ UPanelTy::PaintTxtBut
       uVar4 = (*(code *)param_6)(param_1);
       iVar5 = -1;
       iVar3 = -2;
-      resourceString = (uint *)LoadResourceString(param_5,g_hINSTANCE_00807618);
+      resourceString = LoadResourceString(param_5,g_hINSTANCE_00807618);
       ccFntTy::WrStr(param_4,resourceString,iVar3,iVar5,uVar4);
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,

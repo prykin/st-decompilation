@@ -9,6 +9,8 @@
 void CreateGameSystem(void)
 
 {
+  int iVar1;
+  int iVar4;
   CursorClassTy *this;
   int iVar2;
   GameSystemC *this_00;
@@ -34,11 +36,11 @@ void CreateGameSystem(void)
     AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)g_parentSystem_0081163C,0);
     g_parentSystem_0081163C->field_0428 = 1;
     this = g_cursorClass_00802A30;
-    iVar2 = g_cursorClass_00802A30->field_00C9;
-    iVar3 = g_cursorClass_00802A30->field_00C5;
+    iVar1 = g_cursorClass_00802A30->field_00C9;
+    iVar4 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = 2;
     this->field_0494 = 0xffff;
-    CursorClassTy::SetGCType(this,CASE_0,iVar3,iVar2);
+    CursorClassTy::SetGCType(this,CASE_0,iVar4,iVar1);
     CursorClassTy::DrawSprite(this,this->field_00C5,this->field_00C9);
     this->field_00D2 = 0;
     this->field_04DF = -1;

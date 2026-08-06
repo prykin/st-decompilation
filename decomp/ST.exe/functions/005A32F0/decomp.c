@@ -8,8 +8,10 @@
 void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
 
 {
-  uint uVar1;
-  MMsgTy *pMVar2;
+  int iVar1;
+  int iVar2;
+  uint uVar3;
+  MMsgTy *pMVar4;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar4;
@@ -33,23 +35,23 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (g_cursorClass_00802A30 != nullptr) {
-    iVar4 = g_cursorClass_00802A30->field_00C9;
-    iVar5 = g_cursorClass_00802A30->field_00C5;
+    iVar1 = g_cursorClass_00802A30->field_00C9;
+    iVar2 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = CASE_1;
     this_00->field_0494 = 0xffff;
-    CursorClassTy::SetGCType(this_00,CASE_0,iVar5,iVar4);
+    CursorClassTy::SetGCType(this_00,CASE_0,iVar2,iVar1);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;
   }
   this_01 = local_8;
   if (param_1 != 0) {
-    pMVar2 = local_8->field_1A5B->field_02E6;
-    if (pMVar2 == nullptr) {
+    pMVar4 = local_8->field_1A5B->field_02E6;
+    if (pMVar4 == nullptr) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    MMsgTy::SetMessage(pMVar2,0x2594,'\0',nullptr,nullptr,nullptr,0,0);
+    MMsgTy::SetMessage(pMVar4,0x2594,'\0',nullptr,nullptr,nullptr,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -57,22 +59,22 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   DAT_0080877e = 1;
   local_8->field_1A61 = 0;
   DAT_008067a0 = 1;
-  uVar1 = local_8->field_1EC2;
-  if (uVar1 < 0x502) {
-    if (uVar1 == 0x501) {
+  uVar3 = local_8->field_1EC2;
+  if (uVar3 < 0x502) {
+    if (uVar3 == 0x501) {
       DAT_00803400 = 5;
       goto cf_common_exit_005A33FB;
     }
-    if (uVar1 == 0x200) {
+    if (uVar3 == 0x200) {
       DAT_00803400 = 0x14;
       goto cf_common_exit_005A33FB;
     }
-    if (uVar1 == 0x400) {
+    if (uVar3 == 0x400) {
       DAT_00803400 = 0x15;
       goto cf_common_exit_005A33FB;
     }
   }
-  else if (uVar1 == 0x502) {
+  else if (uVar3 == 0x502) {
     DAT_00803400 = 0xc;
     goto cf_common_exit_005A33FB;
   }
@@ -80,12 +82,12 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
 cf_common_exit_005A33FB:
   thunk_FUN_005b6350(local_8,0x611f,0x13,0);
   this_01->CloseButtons();
-  pMVar2 = this_01->field_1A5B->field_02E6;
-  if (pMVar2 == nullptr) {
+  pMVar4 = this_01->field_1A5B->field_02E6;
+  if (pMVar4 == nullptr) {
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  MMsgTy::HidePanel(pMVar2,1,0,1);
+  MMsgTy::HidePanel(pMVar4,1,0,1);
   g_currentExceptionFrame = local_4c.previous;
   return;
 }

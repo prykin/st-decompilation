@@ -35,7 +35,7 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
   param_1->field_0049 = param_1->field_0049 | 1;
   if (param_2 != -1) {
     param_1->field_004D = param_2;
-    FreeAndNull((void **)&param_1->field_0x59);
+    FreeAndNull(&param_1->field_0x59);
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_2 == -2) || (param_2 == -3)) {

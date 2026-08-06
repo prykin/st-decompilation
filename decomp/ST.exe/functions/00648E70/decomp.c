@@ -11,6 +11,7 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
 {
   int iVar2;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_4c;
   ushort *local_8;
 

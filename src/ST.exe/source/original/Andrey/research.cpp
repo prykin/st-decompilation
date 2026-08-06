@@ -12,15 +12,17 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
 {
   ResearchPanelTy *this_00;
   int iVar2;
+  int iVar6;
   DArrayTy *pDVar3;
   LPSTR text;
   ushort *puVar4;
   undefined4 *puVar5;
-  int iVar6;
-  undefined4 uVar7;
   int iVar8;
+  int iVar7;
+  undefined4 uVar8;
   int iVar9;
-  int *piVar10;
+  int iVar10;
+  int *piVar11;
   undefined4 local_1fc [84];
   InternalExceptionFrame local_ac;
   undefined4 local_68 [4];
@@ -40,7 +42,7 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
 
   puVar5 = local_68;
   local_10 = this;
-  for (iVar6 = 0x16; iVar6 != 0; iVar6 = iVar6 + -1) {
+  for (iVar7 = 0x16; iVar7 != 0; iVar7 = iVar7 + -1) {
     *puVar5 = 0;
     puVar5 = puVar5 + 1;
   }
@@ -59,20 +61,20 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
     st::fn_006A5E40(iVar6,0,"E:\\__titans\\Andrey\\research.cpp",0x39);
     return;
   }
-  iVar6 = 2;
+  iVar7 = 2;
   g_researchPanel_008016E8 = (ProdPanelTy *)local_10;
   puVar5 = &local_10->field_027A;
   do {
     pDVar3 = st::fn_006AE290(nullptr,0x28,0x30,10);
     *puVar5 = pDVar3;
     puVar5 = puVar5 + 1;
-    iVar6 = iVar6 + -1;
-  } while (iVar6 != 0);
-  iVar6 = 1;
-  piVar10 = nullptr;
+    iVar7 = iVar7 + -1;
+  } while (iVar7 != 0);
+  iVar7 = 1;
+  piVar11 = nullptr;
   this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
   text = st::fn_0040577C("BKG_RESEARCHW",0);
-  puVar4 = st::fn_006F1CE0(g_cMf32_00806790,1,text,piVar10,iVar6);
+  puVar4 = st::fn_006F1CE0(g_cMf32_00806790,1,text,piVar11,iVar7);
   this_00->field_0184 = puVar4;
   puVar4 = st::fn_00709AF0
                      (PTR_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
@@ -86,20 +88,20 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
   if (DAT_0080874e != '\x03') {
     local_c = this_00->field_005C;
     puVar5 = local_1fc + 1;
-    iVar8 = this_00->field_003C + 0x70;
+    iVar9 = this_00->field_003C + 0x70;
     local_8 = 2;
-    iVar6 = 0;
+    iVar7 = 0;
     do {
       iVar2 = local_c;
-      puVar5[-1] = iVar6 + 1;
+      puVar5[-1] = iVar7 + 1;
       *puVar5 = 0;
-      puVar5[2] = iVar8;
+      puVar5[2] = iVar9;
       puVar5[4] = 0x2e;
-      iVar9 = DAT_00806734;
+      iVar10 = DAT_00806734;
       if (iVar2 != 0) {
-        iVar9 = this_00->field_0044;
+        iVar10 = this_00->field_0044;
       }
-      puVar5[3] = iVar9 + 0x34;
+      puVar5[3] = iVar10 + 0x34;
       puVar5[5] = 0x10;
       puVar5[0x11] = 0;
       puVar5[0x15] = 0x101;
@@ -112,20 +114,20 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
       *(undefined2 *)(puVar5 + 0xd) = 0;
       STField<undefined2>(puVar5,0x62) = 2;
       STField<undefined2>(puVar5,0x36) = 2;
-      if (iVar6 == 0) {
-        uVar7 = 0x3aab;
+      if (iVar7 == 0) {
+        uVar8 = 0x3aab;
 LAB_0053c30d:
-        puVar5[0x19] = uVar7;
-        puVar5[0xe] = uVar7;
+        puVar5[0x19] = uVar8;
+        puVar5[0xe] = uVar8;
       }
-      else if (iVar6 == 1) {
-        uVar7 = 0x3aac;
+      else if (iVar7 == 1) {
+        uVar8 = 0x3aac;
         goto LAB_0053c30d;
       }
-      iVar8 = iVar8 + 0x31;
+      iVar9 = iVar9 + 0x31;
       puVar5 = puVar5 + 0x1c;
       local_8 = local_8 + -1;
-      iVar6 = iVar6 + 1;
+      iVar7 = iVar7 + 1;
     } while (local_8 != 0);
     local_20 = local_1fc;
     local_58 = this_00->field_0008;
@@ -212,11 +214,13 @@ st::fn_0053C820(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
 {
   uint uVar1;
   int *piVar2;
-  ResearchPanelTy *pRVar4;
+  int iVar3;
+  int iVar6;
+  ResearchPanelTy *pRVar7;
   int iVar5;
-  byte *pbVar6;
+  BITMAPINFO *pBVar8;
   int iVar7;
-  AnonShape_GLOBAL_0081175C_57F682DD *pAVar8;
+  AnonShape_GLOBAL_0081175C_57F682DD *pAVar9;
   InternalExceptionFrame local_5c;
   int local_18;
   int local_14;
@@ -233,13 +237,13 @@ st::fn_0053C820(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
     local_14 = piVar2[1] - this->field_0044;
   }
   uVar1 = this->field_0199 + -0xc0af + param_1->field_0010;
-  iVar5 = (&this->field_027A)[(byte)this->field_0278];
-  if ((iVar5 == 0) || (*(uint *)(iVar5 + 0xc) <= uVar1)) {
+  iVar3 = (&this->field_027A)[(byte)this->field_0278];
+  if ((iVar3 == 0) || (*(uint *)(iVar3 + 0xc) <= uVar1)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_005276E0_param_1Enum *)
-              (*(int *)(iVar5 + 8) * uVar1 + *(int *)(iVar5 + 0x1c));
+              (*(int *)(iVar3 + 8) * uVar1 + *(int *)(iVar3 + 0x1c));
   }
   local_10 = this;
   if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {
@@ -252,25 +256,26 @@ st::fn_0053C820(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   iVar5 = st::fn_0072D7F0(local_5c.jumpBuffer,0);
-  pRVar4 = local_10;
+  pRVar7 = local_10;
   if (iVar5 == 0) {
     if ((local_8 == nullptr) || (local_8[8] == CASE_0)) {
-      pAVar8 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_018C;
+      pAVar9 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_018C;
     }
     else {
-      pAVar8 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_0188;
+      pAVar9 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_0188;
     }
-    pbVar6 = (byte *)st::fn_0070B3A0(pAVar8,local_c);
-    iVar7 = local_14;
-    iVar5 = local_18;
-    st::fn_00403229((RecoveredSourceFamily_dibcopy *)pRVar4->field_0068,local_18,local_14,'\x01',pbVar6);
+    pBVar8 = st::fn_0070B3A0(pAVar9,local_c);
+    iVar6 = local_14;
+    iVar3 = local_18;
+    st::fn_00403229((RecoveredSourceFamily_dibcopy *)pRVar7->field_0068,local_18,local_14,'\x01',
+           (byte *)pBVar8);
     if ((param_1->field_0014 == 3) && (local_8 != nullptr)) {
-      pbVar6 = (byte *)st::fn_0070B3A0(pRVar4->field_0190,7 - (uint)(local_8[8] != CASE_0));
-      st::fn_00403229((RecoveredSourceFamily_dibcopy *)pRVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);
+      pBVar8 = st::fn_0070B3A0(pRVar7->field_0190,7 - (uint)(local_8[8] != CASE_0));
+      st::fn_00403229((RecoveredSourceFamily_dibcopy *)pRVar7->field_0068,iVar3,iVar6,'\x06',(byte *)pBVar8);
     }
     st::fn_006B3640
-              ((int *)g_ddxContext_008075A8,pRVar4->field_0060,0xffffffff,pRVar4->field_003C,
-               pRVar4->field_0044);
+              ((int *)g_ddxContext_008075A8,pRVar7->field_0060,0xffffffff,pRVar7->field_003C,
+               pRVar7->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
@@ -300,9 +305,11 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
   STMessageId SVar1;
   ResearchPanelTy *this_00;
   int iVar3;
+  int iVar5;
+  undefined1 *puVar6;
   int iVar4;
-  undefined1 *puVar5;
-  undefined4 *puVar6;
+  int iVar7;
+  undefined4 *puVar8;
   InternalExceptionFrame local_58;
   uint local_14;
   undefined1 local_10;
@@ -327,7 +334,7 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
     st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\research.cpp",200);
     return 0xffff;
   }
-  iVar3 = 2;
+  iVar7 = 2;
   if (message->id == MESS_ID_CREATE) {
     st::fn_004032A6((ProdPanelTy *)local_8);
   }
@@ -341,15 +348,15 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
         return 0;
       }
       if (SVar1 == MESS_SHARED_0003) {
-        puVar6 = &this_00->field_027A;
+        puVar8 = &this_00->field_027A;
         do {
-          if ((DArrayTy *)*puVar6 != nullptr) {
-            st::fn_006AE110((DArrayTy *)*puVar6);
-            *puVar6 = 0;
+          if ((DArrayTy *)*puVar8 != nullptr) {
+            st::fn_006AE110((DArrayTy *)*puVar8);
+            *puVar8 = 0;
           }
-          puVar6 = puVar6 + 1;
-          iVar3 = iVar3 + -1;
-        } while (iVar3 != 0);
+          puVar8 = puVar8 + 1;
+          iVar7 = iVar7 + -1;
+        } while (iVar7 != 0);
         if (this_00->field_0282 != 0) {
           st::fn_006E56B0(this_00->field_000C,this_00->field_0282);
         }
@@ -368,20 +375,20 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
       }
     }
     else {
-      iVar3 = (&this_00->field_027A)[(byte)this_00->field_0278];
-      if ((iVar3 == 0) ||
-         (iVar4 = SVar1 + this_00->field_0199, *(uint *)(iVar3 + 0xc) <= iVar4 - 0xc09fU)) {
-        puVar5 = nullptr;
+      iVar7 = (&this_00->field_027A)[(byte)this_00->field_0278];
+      if ((iVar7 == 0) ||
+         (iVar5 = SVar1 + this_00->field_0199, *(uint *)(iVar7 + 0xc) <= iVar5 - 0xc09fU)) {
+        puVar6 = nullptr;
       }
       else {
-        puVar5 = (undefined1 *)((iVar4 + -0xc09f) * *(int *)(iVar3 + 8) + *(int *)(iVar3 + 0x1c));
+        puVar6 = (undefined1 *)((iVar5 + -0xc09f) * *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0x1c));
       }
-      if ((puVar5 != nullptr) && (puVar5[8] != '\0')) {
+      if ((puVar6 != nullptr) && (puVar6[8] != '\0')) {
         uStack_d = 0;
         local_c = 0;
         local_a = 0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_14 = (uint)CONCAT11(*puVar5,2);
+        local_14 = (uint)CONCAT11(*puVar6,2);
         local_10 = 0;
         uStack_f = 1;
         st::fn_00403C33((undefined4 *)0x1e,&local_14,0,0xffffffff);

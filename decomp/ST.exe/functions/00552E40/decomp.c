@@ -15,6 +15,7 @@ int __thiscall UpgPanelTy::GetMessage(UpgPanelTy *this,STMessage *message)
   UpgPanelTy *this_00;
   int iVar2;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_4c;
   UpgPanelTy *local_8;
 

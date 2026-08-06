@@ -25,8 +25,7 @@ int __cdecl FUN_0057ba30(void *param_1,int param_2)
   if (param_1 == nullptr) {
     return 0;
   }
-  thunk_FUN_00416270(param_1,(undefined2 *)((int)&param_1 + 2),(int *)((int)&param_2 + 2),
-                     (int *)&local_6);
+  thunk_FUN_00416270(param_1,(uint *)((int)&param_1 + 2),(int *)((int)&param_2 + 2),&local_6);
   local_18 = STPiece<2,2>(param_2) + 1 + local_1c;
   local_14 = STPiece<2,2>(param_2) - local_1c;
   local_c = STPiece<2,2>(param_1) - local_1c;

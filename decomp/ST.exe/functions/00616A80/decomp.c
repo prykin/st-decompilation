@@ -11,9 +11,10 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
   short sVar2;
   short sVar3;
   int iVar4;
-  int iVar5;
+  float10 fVar5;
   int iVar6;
   int iVar7;
+  int iVar8;
   float10 fVar8;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0;
@@ -43,11 +44,11 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
   fVar8 = thunk_FUN_00616400(this,param_1,param_2,param_3);
   local_8 = (float)fVar8;
   if (fVar8 == (float10)_DAT_0079034c) {
-    iVar6 = thunk_FUN_006173a0(this,STField<int>(this,0x288),param_4,param_5,param_6);
-    if (iVar6 < 1) {
+    iVar7 = thunk_FUN_006173a0(this,STField<int>(this,0x288),param_4,param_5,param_6);
+    if (iVar7 < 1) {
       thunk_FUN_0060ec00(this);
       STField<undefined4>(this,0x20c) = 9;
-      return iVar6;
+      return iVar7;
     }
     STField<undefined4>(this,0x256) = 2;
     STField<undefined4>(this,0x20c) = 4;
@@ -56,7 +57,7 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
     STField<uint>(this,0x1c) = uVar1;
     STField<uint>(this,0x294) = (uVar1 >> 0x10) % 0xb + 10 + g_playSystem_00802A38->field_00E4;
     STField<uint>(this,0x298) = g_playSystem_00802A38->field_00E4;
-    return iVar6;
+    return iVar7;
   }
   local_c = STField<int>(this,0x27c);
   sVar2 = STField<short>(this,0x25a);
@@ -76,54 +77,54 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
   local_1c = (float)local_14;
   local_8 = (float)(int)STField<short>(this,0x25e);
   lVar10 = Library::MSVCRT::__ftol();
-  iVar6 = param_3 - (int)lVar10;
+  iVar7 = param_3 - (int)lVar10;
   local_20 = param_2 - local_20;
   local_44 = SQRT((float)((param_1 - local_24) * (param_1 - local_24) + local_20 * local_20 +
-                         iVar6 * iVar6));
+                         iVar7 * iVar7));
   if (local_44 != _DAT_0079034c) {
     iVar4 = STField<int>(this,0x288);
     local_48 = (float)local_20 / local_44;
-    iVar5 = (iVar4 * local_c) / 10000;
-    local_44 = (float)iVar6 / local_44;
-    iVar6 = (iVar4 * local_10) / 10000;
+    iVar6 = (iVar4 * local_c) / 10000;
+    local_44 = (float)iVar7 / local_44;
+    iVar7 = (iVar4 * local_10) / 10000;
     iVar4 = (iVar4 * local_14) / 10000;
     lVar10 = Library::MSVCRT::__ftol();
-    iVar7 = (int)lVar10 * 0x172;
+    iVar8 = (int)lVar10 * 0x172;
     STField<short>(this,0x272) =
-         (sVar2 - (((short)(iVar7 / 10000) + (short)(iVar7 >> 0x1f)) -
-                  (short)((longlong)iVar7 * 0x68db8bad >> 0x3f))) + (short)iVar5;
+         (sVar2 - (((short)(iVar8 / 10000) + (short)(iVar8 >> 0x1f)) -
+                  (short)((longlong)iVar8 * 0x68db8bad >> 0x3f))) + (short)iVar6;
     lVar10 = Library::MSVCRT::__ftol();
-    iVar7 = (int)lVar10 * 0x172;
+    iVar8 = (int)lVar10 * 0x172;
     STField<short>(this,0x274) =
-         (sVar3 - (((short)(iVar7 / 10000) + (short)(iVar7 >> 0x1f)) -
-                  (short)((longlong)iVar7 * 0x68db8bad >> 0x3f))) + (short)iVar6;
+         (sVar3 - (((short)(iVar8 / 10000) + (short)(iVar8 >> 0x1f)) -
+                  (short)((longlong)iVar8 * 0x68db8bad >> 0x3f))) + (short)iVar7;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     fVar9 = extraout_ST1;
     lVar10 = Library::MSVCRT::__ftol();
-    iVar7 = (int)lVar10 * 0x172;
+    iVar8 = (int)lVar10 * 0x172;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     local_4c = (float)-extraout_ST0;
     local_48 = -local_48;
     local_44 = -local_44;
-    fVar8 = (float10)_DAT_0079cea8;
+    fVar5 = (float10)_DAT_0079cea8;
     STField<short>(this,0x276) =
          ((short)local_28 -
-         (((short)(iVar7 / 10000) + (short)(iVar7 >> 0x1f)) -
-         (short)((longlong)iVar7 * 0x68db8bad >> 0x3f))) + (short)iVar4;
-    local_40 = (float)(fVar9 * fVar8);
+         (((short)(iVar8 / 10000) + (short)(iVar8 >> 0x1f)) -
+         (short)((longlong)iVar8 * 0x68db8bad >> 0x3f))) + (short)iVar4;
+    local_40 = (float)(fVar9 * fVar5);
     local_3c = local_18 * _DAT_0079cea8;
     local_38 = local_1c * _DAT_0079cea8;
     local_34 = local_38 * local_48 - local_3c * local_44;
     local_30 = local_40 * local_44 - local_38 * local_4c;
     local_2c = local_3c * local_4c - local_40 * local_48;
-    iVar7 = thunk_FUN_0062ba50(&local_4c,(float *)((int)this + 0x29d));
-    if (iVar7 != 0) {
+    iVar8 = thunk_FUN_0062ba50(&local_4c,(float *)((int)this + 0x29d));
+    if (iVar8 != 0) {
       STField<undefined4>(this,0x20c) = 5;
       STField<uint>(this,0x294) = g_playSystem_00802A38->field_00E4;
       STField<uint>(this,0x298) = g_playSystem_00802A38->field_00E4;
       STField<undefined1>(this,0x29c) = 0;
-      *param_4 = STField<short>(this,0x25a) + iVar5;
-      *param_5 = STField<short>(this,0x25c) + iVar6;
+      *param_4 = STField<short>(this,0x25a) + iVar6;
+      *param_5 = STField<short>(this,0x25c) + iVar7;
       *param_6 = STField<short>(this,0x25e) + iVar4;
       return 1;
     }

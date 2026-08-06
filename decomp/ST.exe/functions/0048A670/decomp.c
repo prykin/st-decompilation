@@ -20,7 +20,8 @@
 void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this)
 
 {
-  byte bVar2;
+  int iVar1;
+  byte bVar3;
   int iVar3;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -86,13 +87,13 @@ void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this)
     }
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  bVar2 = thunk_FUN_00430750(*(Global_sub_00430750_param_1Enum *)((int)this->field_06CB + 0x2c));
-  thunk_FUN_00417ff0(this,bVar2);
-  thunk_FUN_00418010(this,bVar2 / 2);
+  bVar3 = thunk_FUN_00430750(*(Global_sub_00430750_param_1Enum *)((int)this->field_06CB + 0x2c));
+  thunk_FUN_00417ff0(this,bVar3);
+  thunk_FUN_00418010(this,bVar3 / 2);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar3 = *(int *)(&DAT_007dfbac + *(int *)((int)this->field_06CB + 0x2c) * 4);
-  this->field_0716 = iVar3;
-  this->field_0712 = iVar3;
+  iVar1 = *(int *)(&DAT_007dfbac + *(int *)((int)this->field_06CB + 0x2c) * 4);
+  this->field_0716 = iVar1;
+  this->field_0712 = iVar1;
   return;
 }
 

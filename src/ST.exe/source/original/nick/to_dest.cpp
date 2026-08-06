@@ -16,8 +16,10 @@ int __thiscall st::fn_00601F80(STDestC *this,STMessage *message)
 {
   STMessageId SVar1;
   AnonShape_00602BE0_B1CC517D *this_00;
+  int local_EAX_16;
   int iVar3;
-  byte *puVar4;
+  byte *puVar3;
+  int iVar4;
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
@@ -28,8 +30,8 @@ int __thiscall st::fn_00601F80(STDestC *this,STMessage *message)
   AnonShape_00602BE0_B1CC517D *local_8;
 
   local_8 = (AnonShape_00602BE0_B1CC517D *)this;
-  iVar3 = st::fn_00404F07((STSprGameObjC *)this,message);
-  if (iVar3 != 0xffff) {
+  local_EAX_16 = st::fn_00404F07((STSprGameObjC *)this,message);
+  if (local_EAX_16 != 0xffff) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     iVar3 = st::fn_0072D7F0(local_54.jumpBuffer,0);
@@ -56,13 +58,13 @@ int __thiscall st::fn_00601F80(STDestC *this,STMessage *message)
           }
         }
         else if (SVar1 == MESS_ID_CREATE) {
-          puVar4 = (byte *)((message->arg0).ptr);
-          if (puVar4[3] != 2) {
+          puVar3 = (byte *)((message->arg0).ptr);
+          if (puVar3[3] != 2) {
             puVar6 = (byte *)&local_8->field_0x231;
-            memmove(puVar6, puVar4, 0x13d); /* compiler REP MOVS byte copy */
-            iVar3 = st::fn_00403049((STDestC *)local_8);
-            if (iVar3 != 0) {
-              if ((*(int *)&this_00->field_0x3a7 != 0) && (iVar3 = st::fn_004013ED(), iVar3 == 0)
+            memmove(puVar6, puVar3, 0x13d); /* compiler REP MOVS byte copy */
+            iVar5 = st::fn_00403049((STDestC *)local_8);
+            if (iVar5 != 0) {
+              if ((*(int *)&this_00->field_0x3a7 != 0) && (iVar5 = st::fn_004013ED(), iVar5 == 0)
                  ) {
                 st::fn_00401BF4((STDestC *)this_00);
                 g_currentExceptionFrame = local_54.previous;
@@ -72,8 +74,8 @@ int __thiscall st::fn_00601F80(STDestC *this,STMessage *message)
                 g_currentExceptionFrame = local_54.previous;
                 return 0;
               }
-              iVar3 = st::fn_004015DC(g_allPlayers_007FA174,0xffff,this_00);
-              if (iVar3 == 0) {
+              iVar5 = st::fn_004015DC(g_allPlayers_007FA174,0xffff,this_00);
+              if (iVar5 == 0) {
                 this_00->field_0x3a5 = 1;
                 g_currentExceptionFrame = local_54.previous;
                 return 0;
@@ -83,12 +85,12 @@ int __thiscall st::fn_00601F80(STDestC *this,STMessage *message)
             g_currentExceptionFrame = local_54.previous;
             return 0;
           }
-          iVar3 = st::fn_00404179((STDestC *)local_8,puVar4);
-          if (-1 < iVar3) {
+          iVar5 = st::fn_00404179((STDestC *)local_8,puVar3);
+          if (-1 < iVar5) {
             if (this_00->field_036E == 4) {
-              puVar4 = (byte *)(st::fn_00405D30((STDestC *)this_00));
-              this_00->field_03AB = puVar4;
-              if (puVar4 == nullptr) {
+              puVar3 = (byte *)(st::fn_00405D30((STDestC *)this_00));
+              this_00->field_03AB = puVar3;
+              if (puVar3 == nullptr) {
                 st::fn_00401BF4((STDestC *)this_00);
               }
             }
@@ -96,9 +98,9 @@ int __thiscall st::fn_00601F80(STDestC *this,STMessage *message)
               st::fn_00402CF2((STDestC *)this_00);
             }
             if (((g_allPlayers_007FA174 != nullptr) && (this_00->field_0x3a5 != '\0'))
-               && (iVar3 = st::fn_004015DC
+               && (iVar5 = st::fn_004015DC
                                      (g_allPlayers_007FA174,*(ushort *)&this_00->field_0x32,this_00)
-                  , iVar3 != 0)) {
+                  , iVar5 != 0)) {
               st::fn_00401BF4((STDestC *)this_00);
               g_currentExceptionFrame = local_54.previous;
               return 0;
@@ -141,9 +143,9 @@ int __thiscall st::fn_00601F80(STDestC *this,STMessage *message)
       return 0;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\nick\\to_dest.cpp",0x95,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_dest.cpp",0x95,0,iVar3,"%s",
                                "STDestC::GetMessage");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_dest.cpp",0x97);

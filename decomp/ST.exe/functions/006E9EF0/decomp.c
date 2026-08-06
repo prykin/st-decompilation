@@ -72,7 +72,7 @@ ST3DSMAPContext::sub_006E9EF0
         } while (iVar6 < (int)puVar1[0x25]);
       }
       if ((*puVar1 & 0x100) != 0) {
-        FreeAndNull((void **)(puVar1 + 0x2a));
+        FreeAndNull(puVar1 + 0x2a);
       }
       if (iVar6 < (int)puVar1[0x25]) {
         return;

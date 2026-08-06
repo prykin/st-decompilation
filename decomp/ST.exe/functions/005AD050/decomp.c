@@ -21,7 +21,7 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   ChooseMapTy *pCVar3;
   int errorCode;
   UINT resourceId;
-  uint *resourceString;
+  char *resourceString;
   int iVar4;
   MMMObjTy *this_00;
   undefined4 *this_01;
@@ -52,15 +52,15 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   pCVar3 = local_8;
   if ((local_8->field_20B8 == nullptr) && (param_1 == '\0')) {
     MMMObjTy::OutBSlProc
-              (this_00,(int)g_dDXContext_0080759C,nullptr,nullptr,0x112,0x38,0x204,
-               0x19d,&local_8->field_1A5B->field_0140);
+              (this_00,g_dDXContext_0080759C,nullptr,nullptr,0x112,0x38,0x204,0x19d,
+               &local_8->field_1A5B->field_0140);
   }
   if (((pCVar3->field_20BC == nullptr) && (param_1 == '\0')) ||
      ((param_1 != '\0' && (pCVar3->field_0x20b4 == '\0')))) {
     this_01 = &pCVar3->field_1A5B->field_0140;
     MMMObjTy::OutBSlProc
-              ((MMMObjTy *)this_01,(int)g_dDXContext_0080759C,nullptr,nullptr,10,
-               0xb4,0xf9,0x121,this_01);
+              ((MMMObjTy *)this_01,g_dDXContext_0080759C,nullptr,nullptr,10,0xb4,
+               0xf9,0x121,this_01);
   }
   CVar1 = pCVar3->field_1A5F;
   if (((((CVar1 == CASE_C) || (CVar1 == CASE_4)) || (CVar1 == CASE_5)) || (CVar1 == CASE_13)) &&
@@ -99,7 +99,7 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   uVar8 = 0;
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
-  resourceString = (uint *)LoadResourceString(resourceId,g_hINSTANCE_00807618);
+  resourceString = LoadResourceString(resourceId,g_hINSTANCE_00807618);
   StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,resourceString,uVar5,uVar6,pcVar7,uVar8);
 switchD_005ad1b8_caseD_6:
   g_currentExceptionFrame = local_4c.previous;

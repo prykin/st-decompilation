@@ -20,14 +20,16 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   WaitTy *this_02;
   bool bVar5;
   DWORD DVar6;
-  int iVar7;
+  int local_EAX_52;
+  int iVar9;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
+  int iVar7;
   int iVar8;
-  uint uVar9;
   uint uVar10;
-  char *pcVar11;
+  uint uVar11;
   char *pcVar12;
+  char *pcVar13;
   char local_4a4 [64];
   char local_464 [1044];
   InternalExceptionFrame local_50;
@@ -39,16 +41,16 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   this->field_0061 = DVar6;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar7 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  local_EAX_52 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_02 = local_c;
-  if (iVar7 != 0) {
+  if (local_EAX_52 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x3bb,0,iVar7,"%s"
-                               ,"WaitTy::GetMessage");
+    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x3bb,0,local_EAX_52,
+                               "%s","WaitTy::GetMessage");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\wait_obj.cpp",0x3bb);
+    RaiseInternalException(local_EAX_52,0,"E:\\__titans\\Start\\wait_obj.cpp",0x3bb);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_c,message);
@@ -183,17 +185,17 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     goto cf_common_exit_005EAB6A;
   }
   if (SVar2 != MESS_SHARED_C0A2) goto cf_common_exit_005EAB6A;
-  iVar7 = thunk_FUN_005ddb40((int)this_02->field_1A5B);
-  if (iVar7 == 0) {
+  iVar9 = thunk_FUN_005ddb40((int)this_02->field_1A5B);
+  if (iVar9 == 0) {
     if (DAT_008067a0 != '\0') {
       pDVar3 = this_02->field_1A5B->field_0686;
       if ((int)pDVar3->elementSize < 1) {
-        pcVar11 = nullptr;
+        pcVar12 = nullptr;
       }
       else {
-        pcVar11 = *(char **)pDVar3->growCapacity;
+        pcVar12 = *(char **)pDVar3->growCapacity;
       }
-      bVar5 = thunk_FUN_005717e0(pcVar11);
+      bVar5 = thunk_FUN_005717e0(pcVar12);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (CONCAT31(extraout_var,bVar5) != 0) {
         pDVar3 = this_02->field_1A5B->field_0686;
@@ -207,54 +209,54 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         goto LAB_005eab28;
       }
     }
-    pcVar11 = local_4a4;
-    for (iVar7 = 0x114; iVar7 != 0; iVar7 = iVar7 + -1) {
-      pcVar11[0] = '\0';
-      pcVar11[1] = '\0';
-      pcVar11[2] = '\0';
-      pcVar11[3] = '\0';
-      pcVar11 = pcVar11 + 4;
-    }
-    *pcVar11 = '\0';
-    pcVar11 = &DAT_00807e1d;
-    if (DAT_008067a0 == '\0') {
-      pcVar11 = (char *)&DAT_00807ddd;
-    }
-    uVar9 = 0xffffffff;
-    do {
-      pcVar12 = pcVar11;
-      if (uVar9 == 0) break;
-      uVar9 = uVar9 - 1;
-      pcVar12 = pcVar11 + 1;
-      cVar1 = *pcVar11;
-      pcVar11 = pcVar12;
-    } while (cVar1 != '\0');
-    uVar9 = ~uVar9;
-    this_01 = this_02->field_1A5B;
-    pcVar11 = pcVar12 + -uVar9;
     pcVar12 = local_4a4;
-    memmove(pcVar12, pcVar11, uVar9); /* compiler REP MOVS byte copy */
-    uVar10 = 0;
+    for (iVar9 = 0x114; iVar9 != 0; iVar9 = iVar9 + -1) {
+      pcVar12[0] = '\0';
+      pcVar12[1] = '\0';
+      pcVar12[2] = '\0';
+      pcVar12[3] = '\0';
+      pcVar12 = pcVar12 + 4;
+    }
+    *pcVar12 = '\0';
+    pcVar12 = &DAT_00807e1d;
+    if (DAT_008067a0 == '\0') {
+      pcVar12 = (char *)&DAT_00807ddd;
+    }
+    uVar10 = 0xffffffff;
+    do {
+      pcVar13 = pcVar12;
+      if (uVar10 == 0) break;
+      uVar10 = uVar10 - 1;
+      pcVar13 = pcVar12 + 1;
+      cVar1 = *pcVar12;
+      pcVar12 = pcVar13;
+    } while (cVar1 != '\0');
+    uVar10 = ~uVar10;
+    this_01 = this_02->field_1A5B;
+    pcVar12 = pcVar13 + -uVar10;
+    pcVar13 = local_4a4;
+    memmove(pcVar13, pcVar12, uVar10); /* compiler REP MOVS byte copy */
+    uVar11 = 0;
     pDVar3 = this_01->field_0686;
     if ((int)pDVar3->elementSize < 1) {
-      pcVar11 = nullptr;
+      pcVar12 = nullptr;
     }
     else {
-      pcVar11 = *(char **)pDVar3->growCapacity;
+      pcVar12 = *(char **)pDVar3->growCapacity;
     }
-    uVar9 = 0xffffffff;
+    uVar10 = 0xffffffff;
     do {
-      pcVar12 = pcVar11;
-      if (uVar9 == 0) break;
-      uVar9 = uVar9 - 1;
-      pcVar12 = pcVar11 + 1;
-      cVar1 = *pcVar11;
-      pcVar11 = pcVar12;
+      pcVar13 = pcVar12;
+      if (uVar10 == 0) break;
+      uVar10 = uVar10 - 1;
+      pcVar13 = pcVar12 + 1;
+      cVar1 = *pcVar12;
+      pcVar12 = pcVar13;
     } while (cVar1 != '\0');
-    uVar9 = ~uVar9;
-    pcVar11 = pcVar12 + -uVar9;
-    pcVar12 = local_464;
-    memmove(pcVar12, pcVar11, uVar9); /* compiler REP MOVS byte copy */
+    uVar10 = ~uVar10;
+    pcVar12 = pcVar13 + -uVar10;
+    pcVar13 = local_464;
+    memmove(pcVar13, pcVar12, uVar10); /* compiler REP MOVS byte copy */
     local_8 = local_464;
     StartSystemTy::AddToChat(this_01,(int)local_4a4);
     FUN_00715360(g_int_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);

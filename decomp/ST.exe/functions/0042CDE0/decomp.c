@@ -14,13 +14,14 @@ undefined4 STAllPlayersC::PushTV(char param_1,int param_2,int param_3,char param
   DArrayTy *array;
   dword dVar1;
   int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar3;
+  int iVar4;
   uint index;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   short in_stack_00000006;
 
   if (param_2 == 0) {
-    iVar3 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
+    iVar4 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x163);
   }
   else {
     if (param_2 != 1) {
@@ -31,11 +32,11 @@ undefined4 STAllPlayersC::PushTV(char param_1,int param_2,int param_3,char param
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    iVar3 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
+    iVar4 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
   }
-  iVar3 = iVar3 + param_3 * 0x10;
-  if (*(int *)(iVar3 + 4) == (int)param_4) {
-    array = *(DArrayTy **)(iVar3 + 10);
+  iVar4 = iVar4 + param_3 * 0x10;
+  if (*(int *)(iVar4 + 4) == (int)param_4) {
+    array = *(DArrayTy **)(iVar4 + 10);
     index = 0;
     dVar1 = array->count;
     if (0 < (int)dVar1) {

@@ -31,8 +31,7 @@ void __thiscall MoneyTy::sub_0052B990(MoneyTy *this)
     if (0 < (int)(uVar1 - (byte)this->field_00A2)) {
       uVar7 = 1;
       do {
-        pBVar3 = (BITMAPINFO *)
-                 FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,0);
+        pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,0);
         PutDDX(this->field_0030 + -4 + uVar7 * 4,this->field_0034,'\x01',pBVar3);
         STPiece<0,1>(local_8) = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;
@@ -43,8 +42,7 @@ void __thiscall MoneyTy::sub_0052B990(MoneyTy *this)
       iVar5 = (uint)bVar4 * 4;
       iVar6 = (uVar1 - bVar4) + 1;
       do {
-        pBVar3 = (BITMAPINFO *)
-                 FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,4);
+        pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,4);
         PutDDX(this->field_0030 + -4 + iVar5,this->field_0034,'\x01',pBVar3);
         iVar5 = iVar5 + 4;
         iVar6 = iVar6 + -1;
@@ -56,8 +54,7 @@ void __thiscall MoneyTy::sub_0052B990(MoneyTy *this)
     local_8 = 1;
     if (this->field_00A2 != '\0') {
       do {
-        pBVar3 = (BITMAPINFO *)
-                 FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,
+        pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,
                               (-(uint)(DAT_0080874e != '\x03') & 2) + 1);
         PutDDX(this->field_0030 + -4 + local_8 * 4,this->field_0034,'\x01',pBVar3);
         bVar4 = bVar4 + 1;
@@ -69,8 +66,7 @@ void __thiscall MoneyTy::sub_0052B990(MoneyTy *this)
       iVar5 = (uint)bVar4 * 4;
       iVar6 = ((uint)bVar2 - (uint)bVar4) + 1;
       do {
-        pBVar3 = (BITMAPINFO *)
-                 FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,0);
+        pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,0);
         PutDDX(this->field_0030 + -4 + iVar5,this->field_0034,'\x01',pBVar3);
         iVar5 = iVar5 + 4;
         iVar6 = iVar6 + -1;

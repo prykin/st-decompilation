@@ -1,11 +1,11 @@
 program=ST.exe
-candidate_functions=1363
-switches_seen=1018
-decompile_retries=16
-decompile_failures=3
-proposals=942
-auto_apply=544
-target_kinds={class_field=89, generated_enum=361, global=6, local=361, parameter=125}
+candidate_functions=1378
+switches_seen=1079
+decompile_retries=5
+decompile_failures=0
+proposals=1035
+auto_apply=591
+target_kinds={class_field=91, generated_enum=407, global=6, local=407, parameter=124}
 note=At least three numeric case values are required to create a new enum; an existing script-owned enum can grow from one exact typed value.
 note_nested_switches=Case labels are assigned to their innermost switch; nested switches are analyzed independently.
 note_compositions=Exact CASE_A|CASE_B and ~(CASE_A|CASE_B) values grow only an already script-owned enum when the typed operand is unambiguous.

@@ -28,10 +28,10 @@ VisibleClassTy::sub_0041CDA0(VisibleClassTy *this,int param_1,int param_2,int pa
       if (7 < param_4) {
         return 1;
       }
-      if (this->field_003C[param_4 + 6] == 0) {
+      if (this->field_003C[param_4 + 6] == nullptr) {
         return 1;
       }
-      if (*(char *)(this->field_003C[param_4 + 6] + param_1 + iVar2) == '\0') {
+      if (*(char *)((int)this->field_003C[param_4 + 6] + param_1 + iVar2) == '\0') {
         return 1;
       }
     }

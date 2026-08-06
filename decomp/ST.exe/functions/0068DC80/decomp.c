@@ -9,14 +9,17 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
 
 {
   AiTactClassTy *pAVar2;
+  int local_EAX_45;
+  AiTactClassTy_field_00A5DArray *pAVar3;
+  DArrayTy *pDVar4;
+  AiTactClassTy_field_00BDDArray *pAVar5;
   int iVar3;
-  AiTactClassTy_field_00A5DArray *pAVar4;
-  DArrayTy *pDVar5;
-  AiTactClassTy_field_00BDDArray *pAVar6;
+  int iVar9;
+  int iVar6;
   byte *puVar7;
   AiTactClassTy_field_00A5DArray **ppAVar8;
-  int iVar9;
-  byte *puVar10;
+  int iVar10;
+  byte *puVar11;
   InternalExceptionFrame local_64;
   undefined4 local_20;
   AnonShape_0068DC80_4419198B *local_1c;
@@ -26,72 +29,71 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   AnonShape_0068DC80_4419198B *local_c;
   AllocationRecord_006684E0 *local_8;
 
-  puVar10 = nullptr;
+  puVar11 = nullptr;
   local_c = nullptr;
   local_10 = nullptr;
   local_8 = nullptr;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_18 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
+  local_EAX_45 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   pAVar2 = local_18;
-  if (iVar3 == 0) {
+  if (local_EAX_45 == 0) {
     if (local_18 != nullptr) {
-      puVar10 = (byte *)(&local_18->field_0020);
+      puVar11 = (byte *)(&local_18->field_0020);
     }
     puVar7 = (byte *)(param_1);
-    memmove(puVar10, puVar7, 0x10c); /* compiler REP MOVS byte copy */
+    memmove(puVar11, puVar7, 0x10c); /* compiler REP MOVS byte copy */
     local_18->field_0020 = 0x38e;
     local_18->field_0038 = 1;
     ppAVar8 = &local_18->field_00A5;
-    iVar3 = 8;
+    iVar6 = 8;
     do {
       if (*ppAVar8 != nullptr) {
-        pAVar4 = (AiTactClassTy_field_00A5DArray *)
+        pAVar3 = (AiTactClassTy_field_00A5DArray *)
                  FUN_006b0060(nullptr,(uint *)((int)ppAVar8[1] + 0x10b + (int)param_1));
-        *ppAVar8 = pAVar4;
+        *ppAVar8 = pAVar3;
       }
       ppAVar8 = ppAVar8 + 3;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      iVar6 = iVar6 + -1;
+    } while (iVar6 != 0);
     if (pAVar2->field_00A5 == nullptr) {
-      pAVar4 = (AiTactClassTy_field_00A5DArray *)
+      pAVar3 = (AiTactClassTy_field_00A5DArray *)
                Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
-      pAVar2->field_00A5 = pAVar4;
+      pAVar2->field_00A5 = pAVar3;
     }
     if (pAVar2->field_00B1 == nullptr) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x34,10);
-      pAVar2->field_00B1 = pDVar5;
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x34,10);
+      pAVar2->field_00B1 = pDVar4;
     }
     if (pAVar2->field_00BD == nullptr) {
-      pAVar6 = (AiTactClassTy_field_00BDDArray *)
+      pAVar5 = (AiTactClassTy_field_00BDDArray *)
                Library::DKW::TBL::DArrayCreate(nullptr,10,0x4a,10);
-      pAVar2->field_00BD = pAVar6;
+      pAVar2->field_00BD = pAVar5;
     }
     if (pAVar2->field_00C9 == nullptr) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
-      pAVar2->field_00C9 = pDVar5;
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
+      pAVar2->field_00C9 = pDVar4;
     }
-    iVar3 = 0;
+    iVar6 = 0;
     if (0 < pAVar2->field_0125) {
       pAVar2->field_00A5->count = 0;
-      iVar9 = STField<int>(param_1,0x107) + 0x10b + (int)param_1;
+      iVar10 = STField<int>(param_1,0x107) + 0x10b + (int)param_1;
       if (0 < pAVar2->field_0125) {
         do {
-          *(undefined4 *)(iVar9 + 4) = pAVar2->field_0024;
-          *(undefined4 *)(iVar9 + 0x77) = pAVar2->field_009D;
-          *(undefined1 *)(iVar9 + 0x6a) = pAVar2->field_0088;
-          STPlaySystemC::CreateGameObject(g_playSystem_00802A38,900,&local_14,&local_c,iVar9,0);
+          *(undefined4 *)(iVar10 + 4) = pAVar2->field_0024;
+          *(undefined4 *)(iVar10 + 0x77) = pAVar2->field_009D;
+          *(undefined1 *)(iVar10 + 0x6a) = pAVar2->field_0088;
+          STPlaySystemC::CreateGameObject(g_playSystem_00802A38,900,&local_14,&local_c,iVar10,0);
           local_1c = local_c;
           local_20 = local_c->field_0018;
           Library::DKW::TBL::DArrayAppend((DArrayTy *)pAVar2->field_00A5,&local_20);
           local_c->field_0284 = pAVar2;
-          iVar9 = iVar9 + *(int *)(iVar9 + 0x14);
-          iVar3 = iVar3 + 1;
-        } while (iVar3 < pAVar2->field_0125);
+          iVar10 = iVar10 + *(int *)(iVar10 + 0x14);
+          iVar6 = iVar6 + 1;
+        } while (iVar6 < pAVar2->field_0125);
       }
-      local_10 = (AllocationRecord_006684E0 *)
-                 thunk_FUN_00668180("__REPAIR_FLEET__",pAVar2->field_0039,0x8000,0,
+      local_10 = thunk_FUN_00668180("__REPAIR_FLEET__",pAVar2->field_0039,0x8000,0,
                                     *(byte *)&pAVar2->field_0024);
       local_8 = FltDataPack(local_10,&local_14);
       thunk_FUN_006686c0((int *)&local_10);
@@ -113,12 +115,12 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   sub_0068E010(local_18);
   thunk_FUN_006686c0((int *)&local_8);
   thunk_FUN_006686c0((int *)&local_10);
-  iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x61,0,iVar3,"%s",
-                             "AiTactClassTy::InitData");
+  iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x61,0,local_EAX_45,"%s"
+                             ,"AiTactClassTy::InitData");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_tact.cpp",0x62);
-  return iVar3;
+  RaiseInternalException(local_EAX_45,0,"E:\\__titans\\ai\\ai_tact.cpp",0x62);
+  return local_EAX_45;
 }
 

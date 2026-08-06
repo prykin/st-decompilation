@@ -12,8 +12,10 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,RecoveredRecord_TraksClassTy_005
 {
   undefined2 uVar1;
   int iVar3;
-  short sVar4;
   int iVar5;
+  short sVar3;
+  int iVar4;
+  int iVar6;
   InternalExceptionFrame local_64;
   int local_20;
   int local_1c;
@@ -28,13 +30,13 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,RecoveredRecord_TraksClassTy_005
   local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (iVar3 == 0) {
-    sVar4 = param_1->field_0022;
-    local_20 = (int)sVar4;
+    sVar3 = param_1->field_0022;
+    local_20 = (int)sVar3;
     if (((uint)((int)param_1->field_0014 + param_1->field_0024) <= local_8->field_0020) ||
        (param_1->field_003A != 0)) {
-      param_1->field_0022 = sVar4 + 1;
-      if (param_1->field_0036 <= (short)(sVar4 + 1)) {
-        param_1->field_0022 = sVar4;
+      param_1->field_0022 = sVar3 + 1;
+      if (param_1->field_0036 <= (short)(sVar3 + 1)) {
+        param_1->field_0022 = sVar3;
         param_1->field_0038 = 1;
       }
       param_1->field_0024 = local_8->field_0020;
@@ -46,69 +48,69 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,RecoveredRecord_TraksClassTy_005
     local_14 = (int)(short)param_1->field_0006;
     local_1c = (int)(short)param_1->field_0020;
     if (param_1->field_003A == 0) {
-      iVar3 = local_8->field_0020 - param_1->field_0028;
-      if (iVar3 == 0) {
-        iVar3 = 1;
+      iVar6 = local_8->field_0020 - param_1->field_0028;
+      if (iVar6 == 0) {
+        iVar6 = 1;
       }
-      iVar5 = param_1->field_0008 * iVar3;
-      sVar4 = (((short)(iVar5 / 10) + (short)(iVar5 >> 0x1f)) -
-              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + param_1->field_002C;
-      param_1->field_0002 = sVar4;
+      iVar4 = param_1->field_0008 * iVar6;
+      sVar3 = (((short)(iVar4 / 10) + (short)(iVar4 >> 0x1f)) -
+              (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + param_1->field_002C;
+      param_1->field_0002 = sVar3;
       if (param_1->field_000E != 0) {
-        iVar5 = param_1->field_000E * iVar3 * iVar3;
+        iVar4 = param_1->field_000E * iVar6 * iVar6;
         param_1->field_0002 =
-             (((short)(iVar5 / 0x14) + (short)(iVar5 >> 0x1f)) -
-             (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + sVar4;
+             (((short)(iVar4 / 0x14) + (short)(iVar4 >> 0x1f)) -
+             (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + sVar3;
       }
-      iVar5 = param_1->field_000A * iVar3;
-      sVar4 = (((short)(iVar5 / 10) + (short)(iVar5 >> 0x1f)) -
-              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + param_1->field_002E;
-      param_1->field_0004 = sVar4;
+      iVar4 = param_1->field_000A * iVar6;
+      sVar3 = (((short)(iVar4 / 10) + (short)(iVar4 >> 0x1f)) -
+              (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + param_1->field_002E;
+      param_1->field_0004 = sVar3;
       if (param_1->field_0010 != 0) {
-        iVar5 = param_1->field_0010 * iVar3 * iVar3;
+        iVar4 = param_1->field_0010 * iVar6 * iVar6;
         param_1->field_0004 =
-             (((short)(iVar5 / 0x14) + (short)(iVar5 >> 0x1f)) -
-             (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + sVar4;
+             (((short)(iVar4 / 0x14) + (short)(iVar4 >> 0x1f)) -
+             (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + sVar3;
       }
-      iVar5 = param_1->field_000C * iVar3;
-      sVar4 = (((short)(iVar5 / 10) + (short)(iVar5 >> 0x1f)) -
-              (short)((longlong)iVar5 * 0x66666667 >> 0x3f)) + param_1->field_0030;
-      param_1->field_0006 = sVar4;
+      iVar4 = param_1->field_000C * iVar6;
+      sVar3 = (((short)(iVar4 / 10) + (short)(iVar4 >> 0x1f)) -
+              (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + param_1->field_0030;
+      param_1->field_0006 = sVar3;
       if (param_1->field_0012 != 0) {
-        iVar3 = param_1->field_0012 * iVar3 * iVar3;
+        iVar6 = param_1->field_0012 * iVar6 * iVar6;
         param_1->field_0006 =
-             (((short)(iVar3 / 0x14) + (short)(iVar3 >> 0x1f)) -
-             (short)((longlong)iVar3 * 0x66666667 >> 0x3f)) + sVar4;
+             (((short)(iVar6 / 0x14) + (short)(iVar6 >> 0x1f)) -
+             (short)((longlong)iVar6 * 0x66666667 >> 0x3f)) + sVar3;
       }
-      sVar4 = param_1->field_0002;
-      if (sVar4 < 0) {
-        sVar4 = ((sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f)
+      sVar3 = param_1->field_0002;
+      if (sVar3 < 0) {
+        sVar3 = ((sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f)
                 ) + -1;
       }
       else {
-        sVar4 = (sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f);
+        sVar3 = (sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f);
       }
-      param_1->field_001C = sVar4;
-      sVar4 = param_1->field_0004;
-      if (sVar4 < 0) {
-        sVar4 = ((sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f)
+      param_1->field_001C = sVar3;
+      sVar3 = param_1->field_0004;
+      if (sVar3 < 0) {
+        sVar3 = ((sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f)
                 ) + -1;
       }
       else {
-        sVar4 = (sVar4 / 0xc9 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x28c1979 >> 0x3f);
+        sVar3 = (sVar3 / 0xc9 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x28c1979 >> 0x3f);
       }
-      param_1->field_001E = sVar4;
-      sVar4 = param_1->field_0006;
-      if (sVar4 < 0) {
-        sVar4 = ((sVar4 / 200 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x51eb851f >> 0x3f)
+      param_1->field_001E = sVar3;
+      sVar3 = param_1->field_0006;
+      if (sVar3 < 0) {
+        sVar3 = ((sVar3 / 200 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x51eb851f >> 0x3f)
                 ) + -1;
       }
       else {
-        sVar4 = (sVar4 / 200 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x51eb851f >> 0x3f);
+        sVar3 = (sVar3 / 200 + (sVar3 >> 0xf)) - (short)((longlong)(int)sVar3 * 0x51eb851f >> 0x3f);
       }
-      param_1->field_0020 = sVar4;
-      iVar3 = thunk_FUN_00555880((RecoveredRecord_TraksClassTy_00555880 *)param_1);
-      if (iVar3 == 0) {
+      param_1->field_0020 = sVar3;
+      iVar6 = thunk_FUN_00555880((RecoveredRecord_TraksClassTy_00555880 *)param_1);
+      if (iVar6 == 0) {
         param_1->field_0002 = (undefined2)local_c;
         param_1->field_0004 = (undefined2)local_10;
         param_1->field_001C = uVar1;

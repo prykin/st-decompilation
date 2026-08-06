@@ -13,9 +13,10 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   STMineSetC_sub_00626B50_param_1Enum SVar2;
   undefined4 uVar3;
   int iVar4;
-  short sVar5;
+  int iVar5;
   short sVar6;
   short sVar7;
+  short sVar8;
   undefined4 local_8;
 
   local_8 = 0;
@@ -28,55 +29,55 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   SVar2 = thunk_FUN_004ab050();
   sub_00626B50(this,SVar2);
   this->field_0056 = (short)this->field_02C6;
-  iVar4 = this->field_02C2;
+  iVar5 = this->field_02C2;
   this->field_0054 = (short)this->field_02C2;
   this->field_0058 = (short)this->field_02CA;
-  sVar5 = (short)(iVar4 >> 0x1f);
-  if (iVar4 < 0) {
-    sVar5 = (((short)(iVar4 / 0xc9) + sVar5) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)) + -1;
+  sVar6 = (short)(iVar5 >> 0x1f);
+  if (iVar5 < 0) {
+    sVar6 = (((short)(iVar5 / 0xc9) + sVar6) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    sVar5 = ((short)(iVar4 / 0xc9) + sVar5) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f);
+    sVar6 = ((short)(iVar5 / 0xc9) + sVar6) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f);
   }
-  iVar4 = this->field_02C6;
-  this->field_0047 = sVar5;
-  sVar6 = (short)(iVar4 >> 0x1f);
-  if (iVar4 < 0) {
-    sVar6 = (((short)(iVar4 / 0xc9) + sVar6) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)) + -1;
-  }
-  else {
-    sVar6 = ((short)(iVar4 / 0xc9) + sVar6) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f);
-  }
-  iVar4 = this->field_02CA;
-  this->field_0049 = sVar6;
-  sVar7 = (short)(iVar4 >> 0x1f);
-  if (iVar4 < 0) {
-    sVar7 = (((short)(iVar4 / 200) + sVar7) - (short)((longlong)iVar4 * 0x51eb851f >> 0x3f)) + -1;
+  iVar5 = this->field_02C6;
+  this->field_0047 = sVar6;
+  sVar7 = (short)(iVar5 >> 0x1f);
+  if (iVar5 < 0) {
+    sVar7 = (((short)(iVar5 / 0xc9) + sVar7) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    sVar7 = ((short)(iVar4 / 200) + sVar7) - (short)((longlong)iVar4 * 0x51eb851f >> 0x3f);
+    sVar7 = ((short)(iVar5 / 0xc9) + sVar7) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f);
   }
-  this->field_005D = sVar6;
-  this->field_004B = sVar7;
-  this->field_005B = sVar5;
-  this->field_005F = sVar7;
+  iVar5 = this->field_02CA;
+  this->field_0049 = sVar7;
+  sVar8 = (short)(iVar5 >> 0x1f);
+  if (iVar5 < 0) {
+    sVar8 = (((short)(iVar5 / 200) + sVar8) - (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1;
+  }
+  else {
+    sVar8 = ((short)(iVar5 / 200) + sVar8) - (short)((longlong)iVar5 * 0x51eb851f >> 0x3f);
+  }
+  this->field_005D = sVar7;
+  this->field_004B = sVar8;
+  this->field_005B = sVar6;
+  this->field_005F = sVar8;
   uVar3 = thunk_FUN_00626f10(this->field_0272);
   this->field_02AD = (STMineSetC_field_02ADState)uVar3;
   this->field_035F = g_playSystem_00802A38->field_00E4;
   if ((STMineSetC_field_02ADState)uVar3 == CASE_2) {
     this->field_0342 = 0xffffffff;
   }
-  sVar5 = this->field_0047 * 0xc9 + 100;
+  sVar6 = this->field_0047 * 0xc9 + 100;
   this->field_003C = this->field_0049 * 0xc9 + 100;
-  sVar7 = this->field_004B * 200;
-  this->field_003A = sVar5;
+  sVar8 = this->field_004B * 200;
+  this->field_003A = sVar6;
   this->field_0313 = 1;
-  sVar6 = sVar7 + 0x32;
-  this->field_003E = sVar6;
-  this->field_028A = (short)(sVar7 + 100) + -0x32;
+  sVar7 = sVar8 + 0x32;
+  this->field_003E = sVar7;
+  this->field_028A = (short)(sVar8 + 100) + -0x32;
   this->field_008E = 1;
-  iVar4 = FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)sVar5,(int)sVar5,
-                       (int)sVar6);
+  iVar4 = FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)sVar6,(int)sVar6,
+                       (int)sVar7);
   this->field_02F6 = iVar4;
   SVar1 = this->field_02AD;
   if (SVar1 == CASE_3) {
@@ -100,24 +101,24 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
                (int *)this->field_0018,0xffffffff);
     sub_0041D1A0(this,*(int *)(&DAT_007d02b4 + (uint)this->field_02AD * 4));
   }
-  sVar5 = this->field_0047;
-  if ((((-1 < sVar5) && (sVar6 = this->field_0049, -1 < sVar6)) &&
-      (sVar7 = this->field_004B, -1 < sVar7)) &&
-     (((sVar5 < g_worldGrid.sizeX && (sVar6 < g_worldGrid.sizeY)) && (sVar7 < 5)))) {
+  sVar6 = this->field_0047;
+  if ((((-1 < sVar6) && (sVar7 = this->field_0049, -1 < sVar7)) &&
+      (sVar8 = this->field_004B, -1 < sVar8)) &&
+     (((sVar6 < g_worldGrid.sizeX && (sVar7 < g_worldGrid.sizeY)) && (sVar8 < 5)))) {
     this->field_003A = *(short *)&this->field_0282;
     this->field_003C = *(short *)&this->field_0286;
     this->field_003E = *(short *)&this->field_028A;
     if (this->field_0313 != '\0') {
-      if (((-1 < sVar5) && (sVar5 < g_worldGrid.sizeX)) &&
-         (((-1 < sVar6 &&
-           (((sVar6 < g_worldGrid.sizeY && (-1 < sVar7)) && (sVar7 < g_worldGrid.sizeZ)))) &&
-          (STGridAt3D(g_worldGrid, sVar5, sVar6, sVar7).objects[(byte)this->field_008E] != nullptr)))) {
+      if (((-1 < sVar6) && (sVar6 < g_worldGrid.sizeX)) &&
+         (((-1 < sVar7 &&
+           (((sVar7 < g_worldGrid.sizeY && (-1 < sVar8)) && (sVar8 < g_worldGrid.sizeZ)))) &&
+          (STGridAt3D(g_worldGrid, sVar6, sVar7, sVar8).objects[(byte)this->field_008E] != nullptr)))) {
         return 0;
       }
-      iVar4 = DumpClassC::WritePtr
-                        (sVar5,sVar6,sVar7,this->field_008E,
+      iVar5 = DumpClassC::WritePtr
+                        (sVar6,sVar7,sVar8,this->field_008E,
                          (RecoveredRecord_DumpClassC_00495EC0 *)this);
-      if (iVar4 != 0) {
+      if (iVar5 != 0) {
         return 0;
       }
       this->field_0314 = this->field_0314 + '\x01';

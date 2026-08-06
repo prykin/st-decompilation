@@ -11,13 +11,15 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   int iVar1;
   CursorClassTy *this_00;
   MTaskTy *pMVar3;
-  int iVar4;
-  cMf32 *pcVar5;
-  ushort *puVar6;
-  MTaskTy_field_0074DArray *pMVar7;
+  int local_EAX_46;
+  cMf32 *pcVar4;
+  ushort *puVar5;
+  MTaskTy_field_0074DArray *pMVar6;
   LPSTR text;
-  ccFntTy *pcVar8;
-  DArrayTy *pDVar9;
+  ccFntTy *pcVar7;
+  DArrayTy *pDVar8;
+  int iVar4;
+  int iVar9;
   uint uVar10;
   byte *pbVar12;
   undefined4 *puVar13;
@@ -37,12 +39,12 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
+  local_EAX_46 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pMVar3 = local_10;
-  if (iVar4 != 0) {
+  if (local_EAX_46 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0xdd,0,iVar4,"%s",
-                               "MTaskTy::InitMTask");
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0xdd,0,local_EAX_46,
+                               "%s","MTaskTy::InitMTask");
     pMVar3 = local_10;
     if (iVar4 == 0) {
       thunk_FUN_005b66e0(local_10);
@@ -66,13 +68,13 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     DAT_0080877f = 0;
   }
   if (pMVar3->field_006E == '\0') {
-    pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
+    pcVar4 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
   }
   else {
     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,&DAT_0080c52e);
-    pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+    pcVar4 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   }
-  pMVar3->field_0070 = pcVar5;
+  pMVar3->field_0070 = pcVar4;
   if (DAT_0080fb6e != 0) {
     if (g_dArray_0080C4C7 != nullptr) {
       FUN_006b5570(g_dArray_0080C4C7);
@@ -93,10 +95,10 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
       g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     }
     memset(&DAT_0080c3c3, 0, 0x104); /* compiler bulk-zero initialization */
-    iVar4 = 0;
+    iVar9 = 0;
     local_8 = &DAT_0080c3c3;
-    puVar6 = cMf32::RecGet(pMVar3->field_0070,0xc,PTR_s_TITLE_MISSION_0079c218,(int *)&local_8,0);
-    if ((puVar6 == nullptr) || ((char)DAT_0080c3c3 == '\0')) {
+    puVar5 = cMf32::RecGet(pMVar3->field_0070,0xc,PTR_s_TITLE_MISSION_0079c218,(int *)&local_8,0);
+    if ((puVar5 == nullptr) || ((char)DAT_0080c3c3 == '\0')) {
       Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,nullptr,nullptr,local_1a8,nullptr);
       uVar10 = 0xffffffff;
       pbVar12 = local_1a8;
@@ -115,21 +117,21 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     }
   }
   if (pMVar3->field_006E == '\0') {
-    pcVar5 = pMVar3->field_0070;
+    pcVar4 = pMVar3->field_0070;
     pcVar17 = PTR_s_TASKPLAY_0079c214;
   }
   else {
-    pcVar5 = pMVar3->field_0070;
+    pcVar4 = pMVar3->field_0070;
     pcVar17 = (char *)&DAT_0080e303;
   }
-  pMVar7 = (MTaskTy_field_0074DArray *)Library::Ourlib::MFDARR::mfDarLoad(pcVar5,pcVar17,0);
-  pMVar3->field_0074 = pMVar7;
-  if (pMVar7 == nullptr) {
-    pMVar7 = (MTaskTy_field_0074DArray *)Library::DKW::TBL::DArrayCreate(nullptr,1,0x50,1);
+  pMVar6 = (MTaskTy_field_0074DArray *)Library::Ourlib::MFDARR::mfDarLoad(pcVar4,pcVar17,0);
+  pMVar3->field_0074 = pMVar6;
+  if (pMVar6 == nullptr) {
+    pMVar6 = (MTaskTy_field_0074DArray *)Library::DKW::TBL::DArrayCreate(nullptr,1,0x50,1);
     memset(local_a4, 0, 0x50); /* compiler bulk-zero initialization */
-    pMVar3->field_0074 = pMVar7;
+    pMVar3->field_0074 = pMVar6;
     STPiece<0,1>(local_a4[0]) = 8;
-    Library::DKW::TBL::DArrayAppend((DArrayTy *)pMVar7,local_a4);
+    Library::DKW::TBL::DArrayAppend((DArrayTy *)pMVar6,local_a4);
   }
   Library::DKW::TBL::FUN_006afe40((int *)&pMVar3->field_0078,&pMVar3->field_0074->flags);
   if (g_cursorClass_00802A30 != nullptr) {
@@ -140,28 +142,28 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
       FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
   }
-  iVar4 = 1;
+  iVar9 = 1;
   bVar16 = 0;
   text = FUN_006f2c00("TASK_BKG",1,(uint)DAT_0080874e);
-  puVar6 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,text,bVar16,iVar4);
-  pMVar3->field_005D = puVar6;
+  puVar5 = FUN_0070a9f0(g_cMf32_00806780,text,bVar16,iVar9);
+  pMVar3->field_005D = puVar5;
   pMVar3->field_0080 = 1;
-  puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
+  puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806784,CASE_B,"MT_CHECK",0xffffffff,0,1,0,nullptr);
-  pMVar3->field_0081 = puVar6;
+  pMVar3->field_0081 = puVar5;
   thunk_FUN_00568bc0(&g_sound,0);
   FUN_006bc360(pMVar3->field_005D,local_5a8,nullptr);
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_5a8,0,0x100,0x1a,0x10,(undefined4 *)&pMVar3->field_0x91);
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_5a8,0,0x100,0x2e,0x10,(undefined4 *)&pMVar3->field_0x191);
-  pcVar8 = (ccFntTy *)thunk_FUN_005defe0((int)pMVar3->field_005D,nullptr,DAT_00807dd9);
-  pMVar3->field_0089 = pcVar8;
-  pcVar8->field_0058 = 1;
-  pcVar8->field_005C = 0;
-  pcVar8 = (ccFntTy *)thunk_FUN_005df290((int)pMVar3->field_005D,nullptr,DAT_00807dd9);
+  pcVar7 = (ccFntTy *)thunk_FUN_005defe0((int)pMVar3->field_005D,nullptr,DAT_00807dd9);
+  pMVar3->field_0089 = pcVar7;
+  pcVar7->field_0058 = 1;
+  pcVar7->field_005C = 0;
+  pcVar7 = (ccFntTy *)thunk_FUN_005df290((int)pMVar3->field_005D,nullptr,DAT_00807dd9);
   local_c = (ushort *)&pMVar3->field_0653;
-  pMVar3->field_008D = pcVar8;
+  pMVar3->field_008D = pcVar7;
   puVar15 = pMVar3->field_02A5;
   local_8 = (undefined4 *)0x5;
   do {
@@ -257,23 +259,23 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   FUN_006b2330(g_ddxContext_008075A8,puVar13,0x32,0x402f63,0,0,(ushort *)&pMVar3->field_06CB);
   Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar13,0xffffffff,0,0);
   FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar13);
-  pDVar9 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310(nullptr,10,0x9e,10,0x405de4);
-  pMVar3->field_064B = pDVar9;
-  pDVar9 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310(nullptr,10,0x3e,10,0x40365c);
-  pMVar3->field_0647 = pDVar9;
-  pDVar9 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310(nullptr,10,0x3e,10,0x40365c);
-  pMVar3->field_064F = pDVar9;
+  pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310(nullptr,10,0x9e,10,0x405de4);
+  pMVar3->field_064B = pDVar8;
+  pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310(nullptr,10,0x3e,10,0x40365c);
+  pMVar3->field_0647 = pDVar8;
+  pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310(nullptr,10,0x3e,10,0x40365c);
+  pMVar3->field_064F = pDVar8;
   if (g_startSystem_0081176C->field_02E6 != nullptr) {
     MMsgTy::HidePanel(g_startSystem_0081176C->field_02E6,0,0,1);
   }
   DarkScreen(g_dDXContext_0080759C,1,0);
   this_00 = g_cursorClass_00802A30;
   if (g_cursorClass_00802A30 != nullptr) {
-    iVar4 = g_cursorClass_00802A30->field_00C9;
+    iVar9 = g_cursorClass_00802A30->field_00C9;
     iVar1 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = CASE_3;
     this_00->field_0494 = 0xffff;
-    CursorClassTy::SetGCType(this_00,CASE_0,iVar1,iVar4);
+    CursorClassTy::SetGCType(this_00,CASE_0,iVar1,iVar9);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;

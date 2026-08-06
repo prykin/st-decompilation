@@ -11,7 +11,8 @@ void __thiscall MMsgTy::HideSprites(MMsgTy *this)
   MMsgTy *pMVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int iVar5;
+  uint *puVar6;
   InternalExceptionFrame local_4c;
   MMsgTy *local_8;
 
@@ -21,16 +22,16 @@ void __thiscall MMsgTy::HideSprites(MMsgTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (iVar3 == 0) {
-    iVar3 = 0xd;
-    puVar5 = &local_8->field_0066;
+    iVar5 = 0xd;
+    puVar6 = &local_8->field_0066;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(pMVar2->field_000C,*puVar5);
+      if (*puVar6 != 0) {
+        StartSystemTy::sub_006E56B0(pMVar2->field_000C,*puVar6);
       }
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      *puVar6 = 0;
+      puVar6 = puVar6 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     pMVar2->field_1CFF = 0;
     if (pMVar2->field_1CFB != 0xffffffff) {
       Library::DKW::DDX::FUN_006b3730
@@ -43,28 +44,28 @@ void __thiscall MMsgTy::HideSprites(MMsgTy *this)
     if (pMVar2->field_1D8C != 0xffffffff) {
       FUN_006b3af0((int *)pMVar2->field_1DD0,pMVar2->field_1D8C);
     }
-    iVar3 = 0;
+    iVar5 = 0;
     if (pMVar2->field_009A != 0) {
-      puVar5 = &pMVar2->field_00E7;
+      puVar6 = &pMVar2->field_00E7;
       do {
-        puVar5[1] = 0;
-        if (*puVar5 != 0xffffffff) {
+        puVar6[1] = 0;
+        if (*puVar6 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
-                    ((uint *)puVar5[0x11],*puVar5,puVar5[1],puVar5[6],puVar5[7]);
+                    ((uint *)puVar6[0x11],*puVar6,puVar6[1],puVar6[6],puVar6[7]);
         }
-        if (*puVar5 != 0xffffffff) {
-          FUN_006b3af0((int *)puVar5[0x11],*puVar5);
+        if (*puVar6 != 0xffffffff) {
+          FUN_006b3af0((int *)puVar6[0x11],*puVar6);
         }
-        if (STField<uint>(puVar5,0x91) != 0xffffffff) {
-          FUN_006b3af0(STField<int *>(puVar5,0xd5),STField<uint>(puVar5,0x91));
+        if (STField<uint>(puVar6,0x91) != 0xffffffff) {
+          FUN_006b3af0(STField<int *>(puVar6,0xd5),STField<uint>(puVar6,0x91));
         }
-        if ((*(char *)((int)puVar5 + -5) != '\0') && (STField<uint>(puVar5,0x122) != 0xffffffff))
+        if ((*(char *)((int)puVar6 + -5) != '\0') && (STField<uint>(puVar6,0x122) != 0xffffffff))
         {
-          FUN_006b3af0(STField<int *>(puVar5,0x166),STField<uint>(puVar5,0x122));
+          FUN_006b3af0(STField<int *>(puVar6,0x166),STField<uint>(puVar6,0x122));
         }
-        iVar3 = iVar3 + 1;
-        puVar5 = (uint *)((int)puVar5 + 0x1fb);
-      } while (iVar3 < (int)(uint)pMVar2->field_009A);
+        iVar5 = iVar5 + 1;
+        puVar6 = (uint *)((int)puVar6 + 0x1fb);
+      } while (iVar5 < (int)(uint)pMVar2->field_009A);
     }
     pMVar2->field_0065 = 2;
     g_currentExceptionFrame = local_4c.previous;

@@ -3,19 +3,27 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::GetActiveCenter */
+   STAllPlayersC::GetActiveCenter
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0042DB80 exact 2-byte output store from MOVSX at 0042DB77 establishes signed source
+   width 2 | 0042DDF8 exact 2-byte output store from MOVSX at 0042DDEF establishes signed source
+   width 2 */
 
 undefined4 __thiscall
 STAllPlayersC::GetActiveCenter
-          (STAllPlayersC *this,undefined2 *param_1,undefined2 *param_2,undefined2 *param_3)
+          (STAllPlayersC *this,short *param_1,undefined2 *param_2,undefined2 *param_3)
 
 {
   DArrayTy *pDVar1;
   dword dVar2;
+  int local_EAX_75;
+  undefined4 uVar4;
+  STGameObjC *pSVar5;
+  int local_EAX_631;
   int iVar4;
-  undefined4 uVar5;
-  STGameObjC *pSVar6;
-  uint uVar7;
+  uint uVar6;
+  int iVar7;
   int iVar8;
   int iVar9;
   STAllPlayersC_GetObjPtr_param_3Enum SVar10;
@@ -26,12 +34,12 @@ STAllPlayersC::GetActiveCenter
   int local_c;
   int local_8;
 
-  uVar7 = (uint)DAT_0080874d;
-  if (g_packedRecords_A62x8[uVar7].field200_0x203 == 0) {
-    iVar4 = g_packedRecords_A62x8[uVar7].field96_0x163;
-    if (iVar4 == 0) {
+  uVar6 = (uint)DAT_0080874d;
+  if (g_packedRecords_A62x8[uVar6].field200_0x203 == 0) {
+    iVar7 = g_packedRecords_A62x8[uVar6].field96_0x163;
+    if (iVar7 == 0) {
       if (param_1 != nullptr) {
-        *param_1 = 0xffff;
+        *param_1 = -1;
       }
       if (param_2 != nullptr) {
         *param_2 = 0xffff;
@@ -42,10 +50,10 @@ STAllPlayersC::GetActiveCenter
       *param_3 = 0xffff;
       return 0xffffffff;
     }
-    if (iVar4 == 0x3c) {
-      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar7].field102_0x16d;
+    if (iVar7 == 0x3c) {
+      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar6].field102_0x16d;
       iVar8 = 0;
-      iVar4 = 0;
+      iVar7 = 0;
       dVar2 = pDVar1->count;
       iVar9 = 0;
       local_1c = 0;
@@ -55,15 +63,14 @@ STAllPlayersC::GetActiveCenter
           DArrayGetElement(pDVar1,local_18,local_14);
           if (STPiece<0,2>(local_14) != 0xffff) {
             local_1c = local_1c + 1;
-            pSVar6 = GetObjPtr(g_allPlayers_007FA174,
+            pSVar5 = GetObjPtr(g_allPlayers_007FA174,
                                g_packedRecords_A62x8[DAT_0080874d].field97_0x167,STPiece<0,2>(local_14),
                                CASE_1);
             STFishC::sub_004162B0
-                      ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
-                       (undefined2 *)&local_10);
+                      ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
             iVar8 = iVar8 + local_8;
             iVar9 = iVar9 + local_c;
-            iVar4 = iVar4 + local_10;
+            iVar7 = iVar7 + local_10;
           }
           local_18 = local_18 + 1;
         } while ((int)local_18 < (int)dVar2);
@@ -77,12 +84,12 @@ STAllPlayersC::GetActiveCenter
           if (param_3 == nullptr) {
             return 0;
           }
-          *param_3 = (short)((int)(short)iVar4 / local_1c);
+          *param_3 = (short)((int)(short)iVar7 / local_1c);
           return 0;
         }
       }
       if (param_1 != nullptr) {
-        *param_1 = 0xffff;
+        *param_1 = -1;
       }
 joined_r0x0042de37:
       if (param_2 != nullptr) {
@@ -94,13 +101,13 @@ joined_r0x0042de37:
       *param_3 = 0xffff;
       return 0;
     }
-    if (iVar4 == 0x1ae) {
-      pSVar6 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar7].field97_0x167,
-                         g_packedRecords_A62x8[uVar7].field101_0x16b,CASE_3);
+    if (iVar7 == 0x1ae) {
+      pSVar5 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar6].field97_0x167,
+                         g_packedRecords_A62x8[uVar6].field101_0x16b,CASE_3);
       STFishC::sub_004162B0
-                ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
+                ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
       if (param_1 != nullptr) {
-        *param_1 = (undefined2)local_8;
+        *param_1 = (short)local_8;
       }
       if (param_2 != nullptr) {
         *param_2 = (undefined2)local_c;
@@ -116,40 +123,39 @@ joined_r0x0042de37:
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (param_1 != nullptr) {
-      *param_1 = 0xffff;
+      *param_1 = -1;
     }
     goto joined_r0x0042dcbd;
   }
-  if (g_packedRecords_A62x8[uVar7].field200_0x203 == 1) {
-    iVar4 = g_packedRecords_A62x8[uVar7].field149_0x1b3;
-    if (0x19a < iVar4) {
-      if (iVar4 == 0x1a4) {
+  if (g_packedRecords_A62x8[uVar6].field200_0x203 == 1) {
+    iVar7 = g_packedRecords_A62x8[uVar6].field149_0x1b3;
+    if (0x19a < iVar7) {
+      if (iVar7 == 0x1a4) {
         SVar10 = CASE_5;
 LAB_0042da27:
-        pSVar6 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar7].field150_0x1b7,
-                           g_packedRecords_A62x8[uVar7].field154_0x1bb,SVar10);
+        pSVar5 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar6].field150_0x1b7,
+                           g_packedRecords_A62x8[uVar6].field154_0x1bb,SVar10);
         STFishC::sub_004162B0
-                  ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
-                   (undefined2 *)&local_10);
+                  ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
       }
       else {
-        if (iVar4 != 0x1b8) {
+        if (iVar7 != 0x1b8) {
 LAB_0042dbdf:
-          iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x537,0,0,
-                                     "%s","STAllPlayersC::GetActiveCenter ACT_RIGHT invalid game type");
-          if (iVar4 != 0) {
+          local_EAX_631 =
+               ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x537,0,0,"%s",
+                                  "STAllPlayersC::GetActiveCenter ACT_RIGHT invalid game type");
+          if (local_EAX_631 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           goto joined_r0x0042dc09;
         }
-        pSVar6 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar7].field150_0x1b7,
-                           g_packedRecords_A62x8[uVar7].field154_0x1bb,CASE_6);
+        pSVar5 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar6].field150_0x1b7,
+                           g_packedRecords_A62x8[uVar6].field154_0x1bb,CASE_6);
         STFishC::sub_004162B0
-                  ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
-                   (undefined2 *)&local_10);
+                  ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
       }
       if (param_1 != nullptr) {
-        *param_1 = (undefined2)local_8;
+        *param_1 = (short)local_8;
       }
 joined_r0x0042dc56:
       if (param_2 != nullptr) {
@@ -161,10 +167,10 @@ joined_r0x0042dc56:
       *param_3 = (undefined2)local_10;
       return 0;
     }
-    if (iVar4 == 0x19a) {
-      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar7].field155_0x1bd;
+    if (iVar7 == 0x19a) {
+      pDVar1 = (DArrayTy *)g_packedRecords_A62x8[uVar6].field155_0x1bd;
       iVar8 = 0;
-      iVar4 = 0;
+      iVar7 = 0;
       dVar2 = pDVar1->count;
       iVar9 = 0;
       local_1c = 0;
@@ -174,15 +180,14 @@ joined_r0x0042dc56:
           DArrayGetElement(pDVar1,local_18,local_14);
           if (STPiece<0,2>(local_14) != 0xffff) {
             local_1c = local_1c + 1;
-            pSVar6 = GetObjPtr(g_allPlayers_007FA174,
+            pSVar5 = GetObjPtr(g_allPlayers_007FA174,
                                g_packedRecords_A62x8[DAT_0080874d].field150_0x1b7,STPiece<0,2>(local_14),
                                CASE_1);
             STFishC::sub_004162B0
-                      ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
-                       (undefined2 *)&local_10);
+                      ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
             iVar8 = iVar8 + local_8;
             iVar9 = iVar9 + local_c;
-            iVar4 = iVar4 + local_10;
+            iVar7 = iVar7 + local_10;
           }
           local_18 = local_18 + 1;
         } while ((int)local_18 < (int)dVar2);
@@ -196,42 +201,41 @@ joined_r0x0042dc56:
           if (param_3 == nullptr) {
             return 0;
           }
-          *param_3 = (short)((int)(short)iVar4 / local_1c);
+          *param_3 = (short)((int)(short)iVar7 / local_1c);
           return 0;
         }
       }
       if (param_1 != nullptr) {
-        *param_1 = 0xffff;
+        *param_1 = -1;
       }
       goto joined_r0x0042de37;
     }
-    if (iVar4 != 0) {
-      if (iVar4 == 0x5a) {
-        pSVar6 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar7].field150_0x1b7,
-                           g_packedRecords_A62x8[uVar7].field154_0x1bb,CASE_4);
+    if (iVar7 != 0) {
+      if (iVar7 == 0x5a) {
+        pSVar5 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar6].field150_0x1b7,
+                           g_packedRecords_A62x8[uVar6].field154_0x1bb,CASE_4);
         STFishC::sub_004162B0
-                  ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,
-                   (undefined2 *)&local_10);
+                  ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
         if (param_1 != nullptr) {
-          *param_1 = (undefined2)local_8;
+          *param_1 = (short)local_8;
         }
         goto joined_r0x0042dc56;
       }
-      if (iVar4 != 0x172) goto LAB_0042dbdf;
+      if (iVar7 != 0x172) goto LAB_0042dbdf;
       SVar10 = CASE_2;
       goto LAB_0042da27;
     }
   }
   else {
-    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x53e,0,0,"%s",
-                               "STAllPlayersC::GetActiveCenter");
-    if (iVar4 != 0) {
+    local_EAX_75 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x53e,0,0,
+                                      "%s","STAllPlayersC::GetActiveCenter");
+    if (local_EAX_75 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
 joined_r0x0042dc09:
   if (param_1 != nullptr) {
-    *param_1 = 0xffff;
+    *param_1 = -1;
   }
 joined_r0x0042dcbd:
   if (param_2 != nullptr) {

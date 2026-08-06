@@ -8,10 +8,11 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
   byte bVar2;
   DArrayTy *pDVar3;
   int uVar3;
-  int *piVar4;
-  int iVar5;
+  int *piVar5;
   int iVar6;
-  int *piVar7;
+  int iVar5;
+  int iVar7;
+  int *piVar8;
   uint index;
   int local_fc [40];
   int local_5c [2];
@@ -32,6 +33,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
   undefined *local_10;
   undefined *local_c;
   int local_8;
+  int *piVar4;
 
   local_20 = 0;
   local_18 = 0;
@@ -44,9 +46,9 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
       pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x30,5);
       *piVar4 = (int)pDVar3;
     }
-    iVar6 = *piVar4;
+    iVar7 = *piVar4;
     piVar4 = piVar4 + 1;
-    *(undefined4 *)(iVar6 + 0xc) = 0;
+    *(undefined4 *)(iVar7 + 0xc) = 0;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
   if ((STField<int>(this,0x5ac) == 0x32) || (STField<int>(this,0x5ac) == 0x5c)) {
@@ -59,16 +61,16 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
         pDVar3 != nullptr)) && (index = 0, 0 < (int)pDVar3->count)) {
       do {
         DArrayGetElement(pDVar3,index,&local_28);
-        piVar4 = local_fc;
-        piVar7 = (int *)(local_28 + 0x4e0);
-        iVar6 = 0x28;
+        piVar5 = local_fc;
+        piVar8 = (int *)(local_28 + 0x4e0);
+        iVar7 = 0x28;
         do {
-          iVar5 = *piVar7;
-          piVar7 = piVar7 + 1;
-          *piVar4 = *piVar4 + iVar5;
-          piVar4 = piVar4 + 1;
-          iVar6 = iVar6 + -1;
-        } while (iVar6 != 0);
+          iVar6 = *piVar8;
+          piVar8 = piVar8 + 1;
+          *piVar5 = *piVar5 + iVar6;
+          piVar5 = piVar5 + 1;
+          iVar7 = iVar7 + -1;
+        } while (iVar7 != 0);
         index = index + 1;
         pDVar3 = g_packedRecords_A62x8[STField<int>(this,0x24)].field1970_0x9de;
       } while ((int)index < (int)pDVar3->count);
@@ -93,24 +95,24 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
         local_c = local_10;
       }
       local_14 = local_fc;
-      iVar6 = 1;
+      iVar7 = 1;
       do {
-        if ((local_10 == nullptr) || (iVar5 = FUN_006b0fd0((int)local_10), iVar5 != 0)) {
-          iVar5 = FUN_006b0fd0((int)local_c);
-          if ((iVar5 != 0) &&
-             (iVar5 = thunk_FUN_004e6010(STField<int>(this,0x24),iVar6 + 0x41), iVar5 != 0)) {
+        if ((local_10 == nullptr) || (iVar6 = FUN_006b0fd0((int)local_10), iVar6 != 0)) {
+          iVar6 = FUN_006b0fd0((int)local_c);
+          if ((iVar6 != 0) &&
+             (iVar6 = thunk_FUN_004e6010(STField<int>(this,0x24),iVar7 + 0x41), iVar6 != 0)) {
             memset(local_5c, 0, 0x30); /* compiler bulk-zero initialization */
-            local_5c[0] = iVar6;
-            local_5c[1] = TLOBaseTy::sub_004C9370(this,1,iVar6,-1);
-            if ((STField<int>(this,0x361) == 1) && (STField<int>(this,0x369) == iVar6)) {
+            local_5c[0] = iVar7;
+            local_5c[1] = TLOBaseTy::sub_004C9370(this,1,iVar7,-1);
+            if ((STField<int>(this,0x361) == 1) && (STField<int>(this,0x369) == iVar7)) {
               local_5c[1] = local_5c[1] + STField<int>(this,0x36d);
             }
-            iVar5 = thunk_FUN_004e6a80(STField<byte *>(this,0x24),iVar6);
+            iVar5 = thunk_FUN_004e6a80(STField<byte *>(this,0x24),iVar7);
             if ((iVar5 == 0) ||
                (local_54 = '\x01', g_worldGrid.sizeZ + -1 <= STField<int>(this,0x5b8))) {
               local_54 = '\0';
             }
-            thunk_FUN_004c7260(this,CASE_1,iVar6,&local_20,&local_18,&local_1c,&local_24);
+            thunk_FUN_004c7260(this,CASE_1,iVar7,&local_20,&local_18,&local_1c,&local_24);
             local_4e = (undefined2)local_20;
             local_52 = (undefined2)local_18;
             bVar2 = LookupRecordByte(STField<char>(this,0x24));
@@ -126,14 +128,14 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
             }
             local_53 = LookupRecordByte(STField<char>(this,0x24));
             if (local_54 == '\0') {
-              thunk_FUN_004e6b40(STField<byte *>(this,0x24),iVar6,local_4a);
+              thunk_FUN_004e6b40(STField<byte *>(this,0x24),iVar7,local_4a);
             }
             Library::DKW::TBL::DArrayAppend((DArrayTy *)param_1[local_8],local_5c);
           }
         }
         local_14 = local_14 + 1;
-        bVar1 = iVar6 < 0x28;
-        iVar6 = iVar6 + 1;
+        bVar1 = iVar7 < 0x28;
+        iVar7 = iVar7 + 1;
       } while (bVar1);
       local_8 = local_8 + 1;
     } while (local_8 < 4);

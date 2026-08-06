@@ -13,8 +13,9 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
 {
   byte bVar1;
   int iVar3;
-  byte *pbVar4;
+  byte *pbVar3;
   int iVar5;
+  int iVar4;
   uint uVar6;
   byte *pbVar7;
   byte *pbVar8;
@@ -44,27 +45,27 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
           pbVar8 = (byte *)(((DArrayTy *)local_c)->elementSize * uVar6 +
                            (int)((DArrayTy *)local_c)->data);
 LAB_005a2aea:
-          pbVar4 = pbVar8;
+          pbVar3 = pbVar8;
           pbVar7 = param_1;
           if (pbVar8 != nullptr) {
             do {
-              bVar1 = *pbVar4;
+              bVar1 = *pbVar3;
               bVar9 = bVar1 < *pbVar7;
               if (bVar1 != *pbVar7) {
 LAB_005a2b17:
-                iVar3 = (1 - (uint)bVar9) - (uint)(bVar9 != 0);
+                iVar5 = (1 - (uint)bVar9) - (uint)(bVar9 != 0);
                 goto LAB_005a2b1c;
               }
               if (bVar1 == 0) break;
-              bVar1 = pbVar4[1];
+              bVar1 = pbVar3[1];
               bVar9 = bVar1 < pbVar7[1];
               if (bVar1 != pbVar7[1]) goto LAB_005a2b17;
-              pbVar4 = pbVar4 + 2;
+              pbVar3 = pbVar3 + 2;
               pbVar7 = pbVar7 + 2;
             } while (bVar1 != 0);
-            iVar3 = 0;
+            iVar5 = 0;
 LAB_005a2b1c:
-            if (iVar3 == 0) {
+            if (iVar5 == 0) {
               *(undefined4 *)(pbVar8 + 0x25) = *(undefined4 *)(param_1 + 0x25);
               break;
             }
@@ -78,9 +79,9 @@ LAB_005a2b1c:
       return;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa50,0,iVar3,"%s"
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa50,0,iVar3,"%s"
                                ,"FSGSTy::ChangePlayer");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0xa50);

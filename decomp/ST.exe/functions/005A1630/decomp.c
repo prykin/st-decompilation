@@ -14,14 +14,16 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
   CursorClassTy *this_01;
   FSGSTy *this_02;
   int iVar4;
-  undefined4 *puVar5;
-  uint *resourceString;
-  uint uVar6;
-  uint uVar7;
-  STMessage *pSVar8;
+  undefined4 *puVar4;
+  char *resourceString;
   int iVar9;
+  uint uVar5;
+  uint uVar6;
+  STMessage *pSVar7;
+  int iVar8;
   int iVar10;
   int iVar11;
+  int iVar12;
   InternalExceptionFrame local_6c;
   STMessage local_28;
   FSGSTy *local_8;
@@ -35,11 +37,11 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
     this_01 = g_cursorClass_00802A30;
     if (iVar4 == 0) {
       if (g_cursorClass_00802A30 != nullptr) {
-        iVar4 = g_cursorClass_00802A30->field_00C9;
-        iVar9 = g_cursorClass_00802A30->field_00C5;
+        iVar8 = g_cursorClass_00802A30->field_00C9;
+        iVar10 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
         this_01->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(this_01,CASE_0,iVar9,iVar4);
+        CursorClassTy::SetGCType(this_01,CASE_0,iVar10,iVar8);
         CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);
         this_01->field_00D2 = 0;
         this_01->field_04DF = -1;
@@ -54,34 +56,34 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
         return;
       }
       puVar1 = local_8->field_1AC0;
-      uVar7 = *(uint *)(puVar1 + 10);
-      if (uVar7 == 0) {
-        uVar7 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+      uVar6 = *(uint *)(puVar1 + 10);
+      if (uVar6 == 0) {
+        uVar6 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                 *(int *)(puVar1 + 4);
       }
-      puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
-      for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *puVar5 = 0xffffffff;
-        puVar5 = puVar5 + 1;
+      puVar4 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
+      for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+        *puVar4 = 0xffffffff;
+        puVar4 = puVar4 + 1;
       }
-      for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *(undefined1 *)puVar5 = 0xff;
-        puVar5 = (undefined4 *)((int)puVar5 + 1);
+      for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+        *(undefined1 *)puVar4 = 0xff;
+        puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
       ccFntTy::SetSurf(this_02->field_1A73,(int)this_02->field_1AC0,0,0,0x16,0x1b8,0xf0);
+      iVar12 = -1;
       iVar11 = -1;
+      uVar6 = 2;
       iVar10 = -1;
-      uVar7 = 2;
-      iVar9 = -1;
-      iVar4 = -2;
-      resourceString = (uint *)LoadResourceString(0x25b9,g_hINSTANCE_00807618);
-      ccFntTy::WrTxt(this_02->field_1A73,resourceString,iVar4,iVar9,uVar7,iVar10,iVar11);
+      iVar8 = -2;
+      resourceString = LoadResourceString(0x25b9,g_hINSTANCE_00807618);
+      ccFntTy::WrTxt(this_02->field_1A73,resourceString,iVar8,iVar10,uVar6,iVar11,iVar12);
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1ABC);
       pSVar2 = this_02->field_1A5B;
-      pSVar8 = &local_28;
-      for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-        pSVar8->unknown_00 = 0;
-        pSVar8 = (STMessage *)&pSVar8->unknown_04;
+      pSVar7 = &local_28;
+      for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {
+        pSVar7->unknown_00 = 0;
+        pSVar7 = (STMessage *)&pSVar7->unknown_04;
       }
       local_28.unknown_08 = this_02->field_0008;
       local_28.unknown_0c = 2;

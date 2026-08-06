@@ -30,11 +30,13 @@ CPanelTy::SetButStruct
           undefined4 param_10,char *param_11)
 
 {
-  undefined1 *text;
+  char *text;
   uint uVar2;
   ushort uVar3;
+  int local_EAX_42;
+  ushort *puVar4;
   int iVar4;
-  ushort *puVar5;
+  int iVar5;
   int iVar6;
   AnonShape_004F2E40_DC76A8C6 *pAVar7;
   InternalExceptionFrame local_50;
@@ -45,44 +47,44 @@ CPanelTy::SetButStruct
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  if (iVar4 == 0) {
+  local_EAX_42 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  if (local_EAX_42 == 0) {
     pAVar7 = param_1;
-    for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
+    for (iVar6 = 0x5f; iVar6 != 0; iVar6 = iVar6 + -1) {
       *(undefined4 *)pAVar7 = 0;
       pAVar7 = (AnonShape_004F2E40_DC76A8C6 *)((int)&pAVar7->field_0001 + 3);
     }
     *(undefined4 *)param_1 = param_3;
     uVar2 = (uint)param_2;
     *(int *)&param_1->field_0x8 = (&local_c->field_003C)[uVar2] + param_4;
-    iVar4 = local_c->field_0130;
+    iVar6 = local_c->field_0130;
     switch(uVar2) {
     case 0:
     case 1:
     case 2:
     case 3:
-      iVar4 = local_c->field_0134;
+      iVar6 = local_c->field_0134;
       break;
     case 5:
     case 6:
     case 7:
     case 8:
-      iVar4 = local_c->field_0138;
+      iVar6 = local_c->field_0138;
     }
-    if (iVar4 == 0) {
+    if (iVar6 == 0) {
       if ((param_2 == 1) || (param_2 == 7)) {
-        iVar4 = local_c->field_00C0;
+        iVar6 = local_c->field_00C0;
       }
       else {
-        iVar4 = 0;
+        iVar6 = 0;
       }
-      iVar4 = iVar4 + DAT_00806734;
+      iVar6 = iVar6 + DAT_00806734;
     }
     else {
-      iVar4 = (&local_c->field_0094)[uVar2];
+      iVar6 = (&local_c->field_0094)[uVar2];
     }
     text = &local_c->field_01E1;
-    *(int *)&param_1->field_0xc = iVar4 + param_5;
+    *(int *)&param_1->field_0xc = iVar6 + param_5;
     param_1->field_0108 = 1;
     param_1->field_010C = 1;
     wsprintfA(text,"%s0",param_7);
@@ -109,8 +111,8 @@ CPanelTy::SetButStruct
     param_1->field_00B2 = param_8;
     *(undefined4 *)&param_1->field_0xb4 = param_10;
     if (param_11 != nullptr) {
-      puVar5 = FUN_0070aa70(g_cMf32_00806790,param_11,0,1);
-      param_1->field_0124 = puVar5;
+      puVar4 = FUN_0070aa70(g_cMf32_00806790,param_11,0,1);
+      param_1->field_0124 = puVar4;
       iVar4 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_11,1);
       param_1->field_0128 = iVar4;
     }
@@ -118,12 +120,12 @@ CPanelTy::SetButStruct
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x171,0,iVar4,"%s",
-                             "CPanelTy::SetButStruct");
-  if (iVar6 != 0) {
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x171,0,local_EAX_42,
+                             "%s","CPanelTy::SetButStruct");
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x171);
+  RaiseInternalException(local_EAX_42,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x171);
   return;
 }
 

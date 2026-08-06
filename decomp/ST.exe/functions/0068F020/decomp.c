@@ -20,11 +20,12 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
   uint uVar3;
   AiTactClassTy *this_00;
   int iVar5;
-  ushort *puVar6;
+  ushort *puVar5;
   STGameObjC *objPtr;
+  int iVar7;
   AiTactClassTy_field_00A5Element *element_00a5;
   AiTactClassTy_field_00BDElement *element_00bd_2;
-  int iVar8;
+  int iVar6;
   AiTactClassTy_field_00A5DArray *pAVar9;
   AiFltClassTy *this_01;
   uint uVar10;
@@ -66,30 +67,30 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
       local_c = param_1[3];
       while (local_c = local_c - 1, -1 < (int)local_c) {
         if (local_c < param_1[3]) {
-          puVar6 = (ushort *)(param_1[2] * local_c + param_1[7]);
+          puVar5 = (ushort *)(param_1[2] * local_c + param_1[7]);
         }
         else {
-          puVar6 = nullptr;
+          puVar5 = nullptr;
         }
         if (g_allPlayers_007FA174 == nullptr) {
           objPtr = nullptr;
         }
         else {
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar6,CASE_1);
+                             (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar5,CASE_1);
         }
         if (objPtr != nullptr) {
-          iVar5 = (*objPtr->vtable->vfunc_2C)();
-          if (iVar5 == 0x78) {
-            iVar5 = (*objPtr->vtable->vfunc_2C)();
-            if (iVar5 == 0x78) {
-              iVar5 = objPtr->field_0259;
+          iVar7 = (*objPtr->vtable->vfunc_2C)();
+          if (iVar7 == 0x78) {
+            iVar7 = (*objPtr->vtable->vfunc_2C)();
+            if (iVar7 == 0x78) {
+              iVar7 = objPtr->field_0259;
             }
             else {
-              iVar5 = 0;
+              iVar7 = 0;
             }
-            if ((iVar5 != 0) &&
-               (uVar10 = thunk_FUN_0068e8c0(this_00,iVar5), this_00 = local_8, -1 < (int)uVar10)) {
+            if ((iVar7 != 0) &&
+               (uVar10 = thunk_FUN_0068e8c0(this_00,iVar7), this_00 = local_8, -1 < (int)uVar10)) {
               pAVar2 = local_8->field_00BD;
               if (uVar10 < pAVar2->count) {
                 element_00bd_2 = DArrayAt<AiTactClassTy_field_00BDElement>(pAVar2, uVar10);
@@ -99,8 +100,8 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
               }
               if ((element_00bd_2 != nullptr) && (-1 < element_00bd_2->field_0030)) {
                 uVar1 = element_00bd_2->field_000C;
-                iVar5 = (*objPtr->vtable->vfunc_2C)();
-                if (iVar5 == 0x78) {
+                iVar7 = (*objPtr->vtable->vfunc_2C)();
+                if (iVar7 == 0x78) {
                   objPtr->field_0269 = (uint)uVar1;
                 }
                 DArrayRemoveAt((DArrayTy *)param_1,local_c);
@@ -110,7 +111,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
             }
           }
           else {
-            uVar10 = thunk_FUN_0068e8c0(this_00,iVar5);
+            uVar10 = thunk_FUN_0068e8c0(this_00,iVar7);
             if (-1 < (int)uVar10) {
               pAVar2 = this_00->field_00BD;
               if (uVar10 < pAVar2->count) {
@@ -148,9 +149,9 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x242,0,iVar5,"%s",
+  iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x242,0,iVar5,"%s",
                              "AiTactClassTy::GiveObjByClaim");
-  if (iVar8 == 0) {
+  if (iVar6 == 0) {
     RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_tact.cpp",0x243);
     return;
   }

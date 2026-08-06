@@ -11,10 +11,11 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
   FrmPanelTy *this_00;
   int iVar2;
   int iVar3;
-  int *piVar4;
-  uint *puVar5;
-  int *piVar6;
-  bool bVar7;
+  int iVar4;
+  int *piVar5;
+  uint *puVar6;
+  int *piVar7;
+  bool bVar8;
   InternalExceptionFrame local_54;
   int local_10 [2];
   FrmPanelTy *local_8;
@@ -34,33 +35,33 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
     RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0x70);
     return;
   }
-  piVar4 = &local_8->field_01AB;
-  local_10[0] = *piVar4;
+  piVar5 = &local_8->field_01AB;
+  local_10[0] = *piVar5;
   local_10[1] = local_8->field_01AF;
-  *piVar4 = 0;
+  *piVar5 = 0;
   local_8->field_01AF = 0;
-  STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,0x11,(AnonShape_0043BEB0_1C00EC12 *)piVar4);
-  iVar2 = 2;
-  bVar7 = true;
-  piVar6 = local_10;
+  STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,0x11,(AnonShape_0043BEB0_1C00EC12 *)piVar5);
+  iVar4 = 2;
+  bVar8 = true;
+  piVar7 = local_10;
   do {
-    if (iVar2 == 0) break;
-    iVar2 = iVar2 + -1;
-    bVar7 = *piVar4 == *piVar6;
-    piVar4 = piVar4 + 1;
-    piVar6 = piVar6 + 1;
-  } while (bVar7);
-  if (!bVar7) {
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+    bVar8 = *piVar5 == *piVar7;
+    piVar5 = piVar5 + 1;
+    piVar7 = piVar7 + 1;
+  } while (bVar8);
+  if (!bVar8) {
     this_00->field_0028 = 5;
-    puVar5 = this_00->field_01B3;
-    iVar2 = 8;
+    puVar6 = this_00->field_01B3;
+    iVar4 = 8;
     do {
-      if (*puVar5 != 0) {
-        FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
+      if (*puVar6 != 0) {
+        FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
       }
-      puVar5 = puVar5 + 1;
-      iVar2 = iVar2 + -1;
-    } while (iVar2 != 0);
+      puVar6 = puVar6 + 1;
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
   }
   g_currentExceptionFrame = local_54.previous;
   return;

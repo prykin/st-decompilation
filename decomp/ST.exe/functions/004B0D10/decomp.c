@@ -18,8 +18,9 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
 {
   icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *piVar1;
   int iVar3;
-  undefined4 uVar4;
   int iVar5;
+  undefined4 uVar6;
+  int iVar4;
   InternalExceptionFrame local_50;
   undefined4 local_c;
   int local_8;
@@ -30,9 +31,9 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_ai.cpp",0x313,0,iVar3,"%s",
+    iVar4 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_ai.cpp",0x313,0,iVar3,"%s",
                                "TLOAiChkOrFindBuildingPlace error !");
-    if (iVar5 == 0) {
+    if (iVar4 == 0) {
       RaiseInternalException(iVar3,0,"E:\\__titans\\Artem\\TLO_ai.cpp",0x314);
       return 0;
     }
@@ -40,37 +41,37 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   }
   if (((-1 < *param_3) && (local_8 = *param_4, -1 < local_8)) && (-1 < *param_5)) {
     if (param_9 == 0) {
-      iVar3 = 0;
+      iVar5 = 0;
     }
     else {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar3 = *(int *)(param_9 + 0x18);
+      iVar5 = *(int *)(param_9 + 0x18);
     }
-    iVar3 = thunk_FUN_004ae0b0((short)*param_3,local_8,*param_5,param_2,param_1,nullptr,
-                               nullptr,nullptr,iVar3,nullptr);
-    if (iVar3 != 0) {
+    iVar5 = thunk_FUN_004ae0b0((short)*param_3,local_8,*param_5,param_2,param_1,nullptr,
+                               nullptr,nullptr,iVar5,nullptr);
+    if (iVar5 != 0) {
       g_currentExceptionFrame = local_50.previous;
       return 1;
     }
   }
   piVar1 = (&STGroupBoatCVTable.vfunc_04)[param_2];
   if (piVar1 == nullptr) {
-    uVar4 = thunk_FUN_004af080(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,
+    uVar6 = thunk_FUN_004af080(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,
                                param_9);
     g_currentExceptionFrame = local_50.previous;
-    return uVar4;
+    return uVar6;
   }
   if (piVar1 == (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x1) {
-    uVar4 = thunk_FUN_004affa0(param_1,param_2,param_3,param_4,param_5,param_6,param_7);
+    uVar6 = thunk_FUN_004affa0(param_1,param_2,param_3,param_4,param_5,param_6,param_7);
     g_currentExceptionFrame = local_50.previous;
-    return uVar4;
+    return uVar6;
   }
   if (piVar1 != (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) {
     g_currentExceptionFrame = local_50.previous;
     return local_c;
   }
-  uVar4 = thunk_FUN_004b0250(param_1,param_2,param_3,param_4,param_5,param_6,param_7);
+  uVar6 = thunk_FUN_004b0250(param_1,param_2,param_3,param_4,param_5,param_6,param_7);
   g_currentExceptionFrame = local_50.previous;
-  return uVar4;
+  return uVar6;
 }
 

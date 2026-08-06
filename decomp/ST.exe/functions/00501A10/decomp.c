@@ -19,8 +19,7 @@ void __thiscall CPanelTy::sub_00501A10(CPanelTy *this)
 
 {
   undefined4 *puVar1;
-  undefined4 uVar2;
-  int iVar3;
+  BITMAPINFO *pBVar2;
 
   puVar1 = &this->field_0434;
   memset(puVar1, 0, 0x118); /* compiler bulk-zero initialization */
@@ -37,16 +36,16 @@ void __thiscall CPanelTy::sub_00501A10(CPanelTy *this)
       this->field_0454 = this->field_00A0 + 8;
       this->field_0458 = 100;
       this->field_045C = 0x3c;
-      uVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,0);
-      this->field_0460 = uVar2;
+      pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,0);
+      this->field_0460 = pBVar2;
       this->field_0464 = this->field_0458;
       this->field_0468 = 0x4e87;
       this->field_046C = this->field_0048 + 2;
       this->field_0470 = this->field_00A0 + 6;
       this->field_0474 = 0x20;
       this->field_0478 = 0x35;
-      uVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,2);
-      this->field_047C = uVar2;
+      pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,2);
+      this->field_047C = pBVar2;
       this->field_0484 = 0x2ef0;
       this->field_0480 = this->field_0474;
       return;
@@ -57,10 +56,10 @@ void __thiscall CPanelTy::sub_00501A10(CPanelTy *this)
     case CASE_16:
     case CASE_17:
     case CASE_25:
-      iVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
-      this->field_043C = *(undefined4 *)(iVar3 + 4);
-      iVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
-      this->field_0440 = *(undefined4 *)(iVar3 + 8);
+      pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
+      this->field_043C = (pBVar2->bmiHeader).biWidth;
+      pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
+      this->field_0440 = (pBVar2->bmiHeader).biHeight;
       *puVar1 = (this->field_018C->field_0004 - this->field_043C) / 2 + this->field_0048;
       this->field_0438 = this->field_00A0 + 0x50;
     }

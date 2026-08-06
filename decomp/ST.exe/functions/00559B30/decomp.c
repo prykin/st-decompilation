@@ -24,10 +24,11 @@ VisibleClassTy::SetZoneAst
   byte bVar1;
   bool bVar3;
   int iVar4;
+  byte *pbVar6;
   byte *pbVar5;
-  int iVar6;
   int iVar7;
   int iVar8;
+  int iVar9;
   InternalExceptionFrame local_60;
   int local_18;
   VisibleClassTy *local_14;
@@ -53,8 +54,8 @@ VisibleClassTy::SetZoneAst
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      pbVar5 = Library::DKW::LIB::MemAllocClear(local_14->field_0024 * local_14->field_0020);
-      this->field_0074[param_4] = pbVar5;
+      pbVar6 = Library::DKW::LIB::MemAllocClear(local_14->field_0024 * local_14->field_0020);
+      this->field_0074[param_4] = pbVar6;
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
@@ -72,28 +73,28 @@ VisibleClassTy::SetZoneAst
         local_10 = local_c;
         local_8 = pbVar5;
         do {
-          iVar6 = 0;
-          iVar8 = local_18;
+          iVar7 = 0;
+          iVar9 = local_18;
           do {
-            if ((pbVar5 == nullptr) || (local_8[iVar6] != 0)) {
-              if ((iVar8 < 0) ||
-                 (((this->field_0020 <= iVar8 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
+            if ((pbVar5 == nullptr) || (local_8[iVar7] != 0)) {
+              if ((iVar9 < 0) ||
+                 (((this->field_0020 <= iVar9 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
                 bVar3 = false;
               }
               else {
                 bVar3 = true;
               }
               if (bVar3) {
-                iVar7 = this->field_0020 * iVar4;
-                bVar1 = this->field_0074[param_4][iVar8 + iVar7];
+                iVar8 = this->field_0020 * iVar4;
+                bVar1 = this->field_0074[param_4][iVar9 + iVar8];
                 if (bVar1 != 0xff) {
-                  this->field_0074[param_4][iVar8 + iVar7] = bVar1 + 1;
+                  this->field_0074[param_4][iVar9 + iVar8] = bVar1 + 1;
                 }
               }
             }
-            iVar6 = iVar6 + 1;
-            iVar8 = iVar8 + 1;
-          } while (iVar6 < local_c);
+            iVar7 = iVar7 + 1;
+            iVar9 = iVar9 + 1;
+          } while (iVar7 < local_c);
           local_8 = local_8 + local_c;
           iVar4 = iVar4 + 1;
           local_10 = local_10 + -1;

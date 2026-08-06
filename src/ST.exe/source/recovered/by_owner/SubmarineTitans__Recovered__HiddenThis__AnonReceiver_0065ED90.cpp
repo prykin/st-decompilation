@@ -16,9 +16,9 @@ st::fn_0065ED90
 {
   short *psVar1;
   short sVar2;
+  int iVar4;
   int iVar3;
-  uint uVar4;
-  int iVar5;
+  uint uVar5;
   int iVar6;
   int iVar7;
   int local_1c;
@@ -30,14 +30,14 @@ st::fn_0065ED90
 
   psVar1 = param_2;
   local_10 = this;
-  iVar3 = st::fn_00402A8B(this,&local_c,&local_8,&local_c,&local_1c);
-  if (iVar3 != 0) {
+  iVar4 = st::fn_00402A8B(this,&local_c,&local_8,&local_c,&local_1c);
+  if (iVar4 != 0) {
     return -4;
   }
   iVar7 = (int)param_1[3] / 2 + (int)*param_1;
-  iVar5 = (int)param_1[4] / 2 + (int)param_1[1];
-  local_18 = iVar5;
-  iVar3 = st::fn_006ACED8(local_8,local_c,iVar7,iVar5);
+  iVar4 = (int)param_1[4] / 2 + (int)param_1[1];
+  local_18 = iVar4;
+  iVar3 = st::fn_006ACED8(local_8,local_c,iVar7,iVar4);
   if (iVar3 < 8) {
     return -4;
   }
@@ -46,26 +46,26 @@ st::fn_0065ED90
   param_2[3] = 3;
   param_2[4] = 3;
   param_2[5] = 5;
-  uVar4 = *(int *)&local_10->field_0x1c * 0x41c64e6d + 0x3039;
-  *(uint *)&local_10->field_0x1c = uVar4;
+  uVar5 = *(int *)&local_10->field_0x1c * 0x41c64e6d + 0x3039;
+  *(uint *)&local_10->field_0x1c = uVar5;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = (short *)param_3;
-  iVar6 = (uVar4 >> 0x10) % 6 + 0x14;
+  iVar6 = (uVar5 >> 0x10) % 6 + 0x14;
   if (param_3 != 0x200) {
     if (param_3 != 0x400) {
-      uVar4 = *(int *)&local_10->field_0x1c * 0x41c64e6d + 0x3039;
-      *(uint *)&local_10->field_0x1c = uVar4;
-      param_3 = (-(uint)((uVar4 & 0x10000) != 0) & 0x200) + 0x200;
+      uVar5 = *(int *)&local_10->field_0x1c * 0x41c64e6d + 0x3039;
+      *(uint *)&local_10->field_0x1c = uVar5;
+      param_3 = (-(uint)((uVar5 & 0x10000) != 0) & 0x200) + 0x200;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (short *)param_3;
     if ((short *)param_3 != (short *)0x200) {
-      *psVar1 = ((short)iVar7 - (short)((iVar6 * (local_c - iVar5)) / iVar3)) + -1;
+      *psVar1 = ((short)iVar7 - (short)((iVar6 * (local_c - iVar4)) / iVar3)) + -1;
       sVar2 = ((short)local_18 - (short)((iVar6 * local_14) / iVar3)) + -1;
       goto LAB_0065eedf;
     }
   }
-  *psVar1 = (short)((iVar6 * (local_c - iVar5)) / iVar3) + -1 + (short)iVar7;
+  *psVar1 = (short)((iVar6 * (local_c - iVar4)) / iVar3) + -1 + (short)iVar7;
   sVar2 = (short)((iVar6 * local_14) / iVar3) + -1 + (short)local_18;
 LAB_0065eedf:
   psVar1[1] = sVar2;

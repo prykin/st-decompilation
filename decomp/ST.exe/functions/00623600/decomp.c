@@ -24,7 +24,7 @@ void __fastcall FUN_00623600(AnonShape_00623600_61226D23 *param_1)
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                      (int)param_1->field_0047,(int)param_1->field_0049,&local_8,&local_c), iVar6 < 0
          )) || ((((4 < iVar6 || (local_8 < 0)) ||
-                 ((pVVar5->field_0030 <= local_8 ||
+                 (((int)pVVar5->field_0030 <= local_8 ||
                   ((local_c = g_centeredOffsets5[iVar6] + local_c, local_c < 0 ||
                    (pVVar5->field_0034 <= local_c)))))) || (pVVar5->field_004C == nullptr)))) ||
        (pVVar5->field_004C[local_8 + local_c * pVVar5->field_0030] != 0)) {

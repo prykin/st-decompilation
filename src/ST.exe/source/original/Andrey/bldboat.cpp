@@ -12,17 +12,18 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
 {
   BldBoatPanelTy *this_00;
   byte bVar2;
+  int iVar8;
   DArrayTy *pDVar3;
   ccFntTy *pcVar4;
   LPSTR pCVar5;
   ushort *puVar6;
   int iVar7;
-  int iVar8;
-  uint uVar9;
-  undefined4 uVar10;
-  undefined4 *puVar11;
-  bool bVar12;
-  int *piVar13;
+  int iVar9;
+  uint uVar10;
+  undefined4 uVar11;
+  undefined4 *puVar12;
+  bool bVar13;
+  int *piVar14;
   int local_2e8 [11];
   undefined4 auStack_2bc [3];
   undefined4 auStack_2b0 [4];
@@ -49,11 +50,11 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
   uint local_8;
   char *text;
 
-  puVar11 = local_74;
+  puVar12 = local_74;
   local_1c = this;
-  for (iVar8 = 0x16; iVar8 != 0; iVar8 = iVar8 + -1) {
-    *puVar11 = 0;
-    puVar11 = puVar11 + 1;
+  for (iVar9 = 0x16; iVar9 != 0; iVar9 = iVar9 + -1) {
+    *puVar12 = 0;
+    puVar12 = puVar12 + 1;
   }
   memset(local_2e8, 0, 0x230); /* compiler bulk-zero initialization */
   local_b8.previous = g_currentExceptionFrame;
@@ -70,24 +71,24 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar8 = 4;
+  iVar9 = 4;
   g_bldBoatPanel_0080167C = (ProdPanelTy *)local_1c;
-  puVar11 = &local_1c->field_027A;
+  puVar12 = &local_1c->field_027A;
   do {
     pDVar3 = st::fn_006AE290(nullptr,10,0x30,5);
-    *puVar11 = pDVar3;
-    puVar11 = puVar11 + 1;
-    iVar8 = iVar8 + -1;
-  } while (iVar8 != 0);
+    *puVar12 = pDVar3;
+    puVar12 = puVar12 + 1;
+    iVar9 = iVar9 + -1;
+  } while (iVar9 != 0);
   this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
   pcVar4 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,"HOLD_FONT",0);
   this_00->field_028A = pcVar4;
   pcVar4->field_0058 = 1;
   pcVar4->field_005C = 0;
-  iVar8 = 1;
-  piVar13 = nullptr;
+  iVar9 = 1;
+  piVar14 = nullptr;
   pCVar5 = st::fn_0040577C("BKG_BLDBOATW",0);
-  puVar6 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar5,piVar13,iVar8);
+  puVar6 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar5,piVar14,iVar9);
   this_00->field_0184 = puVar6;
   text = &this_00->field_006C;
   pCVar5 = st::fn_0040577C("BKG_BLDBOATBUT",0);
@@ -95,12 +96,12 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
   puVar6 = st::fn_006F1CE0(g_cMf32_00806790,1,text,nullptr,1);
   this_00->field_028E = puVar6;
   if (DAT_0080874d == 0xff) {
-    iVar8 = 1;
+    iVar9 = 1;
   }
   else {
-    iVar8 = DAT_0080874d + 1;
+    iVar9 = DAT_0080874d + 1;
   }
-  st::external_00000080(text,"BOATS_%d",iVar8);
+  st::external_00000080(text,"BOATS_%d",iVar9);
   puVar6 = st::fn_00709AF0
                      (PTR_00806794,CASE_B,text,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar6;
@@ -116,55 +117,55 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
   if (local_10 != 0) {
     local_18 = this_00->field_003C;
     local_14 = (-(uint)(DAT_0080874e != '\x03') & 0xffffffea) + 0x5e;
-    uVar9 = 0;
+    uVar10 = 0;
     local_c = this_00->field_005C;
     do {
-      iVar8 = local_14;
-      local_2e8[uVar9 * 0x1c] = uVar9 + 1;
-      local_2e8[uVar9 * 0x1c + 1] = 0;
-      local_2e8[uVar9 * 0x1c + 3] = iVar8 + uVar9 * 0x2c + local_18;
-      bVar12 = local_c != 0;
-      local_2e8[uVar9 * 0x1c + 5] = 0x2b;
-      iVar8 = DAT_00806734;
-      if (bVar12) {
-        iVar8 = this_00->field_0044;
+      iVar9 = local_14;
+      local_2e8[uVar10 * 0x1c] = uVar10 + 1;
+      local_2e8[uVar10 * 0x1c + 1] = 0;
+      local_2e8[uVar10 * 0x1c + 3] = iVar9 + uVar10 * 0x2c + local_18;
+      bVar13 = local_c != 0;
+      local_2e8[uVar10 * 0x1c + 5] = 0x2b;
+      iVar9 = DAT_00806734;
+      if (bVar13) {
+        iVar9 = this_00->field_0044;
       }
-      local_2e8[uVar9 * 0x1c + 4] = iVar8 + 0x3d;
-      local_2e8[uVar9 * 0x1c + 6] = 0x1b;
-      auStack_2a0[uVar9 * 0x1c] = 0;
-      auStack_290[uVar9 * 0x1c] = 0x101;
-      auStack_2bc[uVar9 * 0x1c] = 0x101;
-      auStack_290[uVar9 * 0x1c + 1] = 3;
-      auStack_2bc[uVar9 * 0x1c + 1] = 3;
-      auStack_2bc[uVar9 * 0x1c + 2] = 0x4201;
-      auStack_290[uVar9 * 0x1c + 2] = 0x4202;
-      *(undefined2 *)(auStack_284 + uVar9 * 0x1c) = 0;
-      *(undefined2 *)(auStack_2b0 + uVar9 * 0x1c) = 0;
-      *(undefined2 *)((int)auStack_284 + (uVar9 * 0x38 + 1) * 2) = 2;
-      *(undefined2 *)((int)auStack_2b0 + (uVar9 * 0x38 + 1) * 2) = 2;
-      switch(uVar9) {
+      local_2e8[uVar10 * 0x1c + 4] = iVar9 + 0x3d;
+      local_2e8[uVar10 * 0x1c + 6] = 0x1b;
+      auStack_2a0[uVar10 * 0x1c] = 0;
+      auStack_290[uVar10 * 0x1c] = 0x101;
+      auStack_2bc[uVar10 * 0x1c] = 0x101;
+      auStack_290[uVar10 * 0x1c + 1] = 3;
+      auStack_2bc[uVar10 * 0x1c + 1] = 3;
+      auStack_2bc[uVar10 * 0x1c + 2] = 0x4201;
+      auStack_290[uVar10 * 0x1c + 2] = 0x4202;
+      *(undefined2 *)(auStack_284 + uVar10 * 0x1c) = 0;
+      *(undefined2 *)(auStack_2b0 + uVar10 * 0x1c) = 0;
+      *(undefined2 *)((int)auStack_284 + (uVar10 * 0x38 + 1) * 2) = 2;
+      *(undefined2 *)((int)auStack_2b0 + (uVar10 * 0x38 + 1) * 2) = 2;
+      switch(uVar10) {
       case 0:
-        uVar10 = 0x3a9f;
+        uVar11 = 0x3a9f;
         break;
       case 1:
-        uVar10 = 0x3aa0;
+        uVar11 = 0x3aa0;
         break;
       case 2:
-        uVar10 = 0x3aa2;
+        uVar11 = 0x3aa2;
         break;
       case 3:
-        uVar10 = 0x3aa1;
+        uVar11 = 0x3aa1;
         break;
       default:
         goto switchD_004eed0b_default;
       }
-      auStack_284[uVar9 * 0x1c + 1] = uVar10;
-      auStack_2b0[uVar9 * 0x1c + 1] = uVar10;
+      auStack_284[uVar10 * 0x1c + 1] = uVar11;
+      auStack_2b0[uVar10 * 0x1c + 1] = uVar11;
 switchD_004eed0b_default:
       bVar2 = (char)local_8 + 1;
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
-      uVar9 = (uint)bVar2;
-    } while ((int)uVar9 < local_10);
+      uVar10 = (uint)bVar2;
+    } while ((int)uVar10 < local_10);
   }
   local_2c = local_2e8;
   local_28 = (byte)this_00->field_0278 + 1;
@@ -248,17 +249,19 @@ void __thiscall
 st::fn_004EF320(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
 
 {
-  BldBoatPanelTy *pBVar2;
-  uint uVar3;
+  int iVar1;
+  BldBoatPanelTy *pBVar3;
+  uint uVar4;
   int iVar4;
-  byte *pbVar5;
+  BITMAPINFO *pBVar5;
   int iVar6;
-  AnonShape_GLOBAL_0081175C_57F682DD *pAVar7;
+  AnonShape_GLOBAL_0081175C_57F682DD *pAVar6;
+  int iVar7;
   InternalExceptionFrame local_60;
   int local_1c;
   BldBoatPanelTy *local_18;
   int *local_14;
-  ushort *local_10;
+  BITMAPINFO *local_10;
   uint local_c;
   Global_sub_00526BA0_param_1Enum *local_8;
 
@@ -270,35 +273,35 @@ st::fn_004EF320(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
   else {
     local_c = local_14[1] - this->field_0044;
   }
-  uVar3 = this->field_0199 + -0xc0af + param_1->field_0010;
-  iVar6 = (&this->field_027A)[(byte)this->field_0278];
-  if ((iVar6 == 0) || (*(uint *)(iVar6 + 0xc) <= uVar3)) {
+  uVar4 = this->field_0199 + -0xc0af + param_1->field_0010;
+  iVar1 = (&this->field_027A)[(byte)this->field_0278];
+  if ((iVar1 == 0) || (*(uint *)(iVar1 + 0xc) <= uVar4)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_00526BA0_param_1Enum *)
-              (*(int *)(iVar6 + 8) * uVar3 + *(int *)(iVar6 + 0x1c));
+              (*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c));
   }
   local_18 = this;
   if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {
-    local_10 = this->field_028E;
+    local_10 = (BITMAPINFO *)this->field_028E;
   }
   else {
     if ((char)local_8[2] == 0) {
-      pAVar7 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_018C;
+      pAVar6 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_018C;
     }
     else {
-      pAVar7 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0188;
+      pAVar6 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0188;
     }
-    uVar3 = st::fn_004056F5(*local_8,STField<byte>(local_8,9));
-    local_10 = (ushort *)st::fn_0070B3A0(pAVar7,uVar3);
+    uVar4 = st::fn_004056F5(*local_8,STField<byte>(local_8,9));
+    local_10 = st::fn_0070B3A0(pAVar6,uVar4);
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   iVar4 = st::fn_0072D7F0(local_60.jumpBuffer,0);
-  uVar3 = local_c;
-  pBVar2 = local_18;
-  iVar6 = local_1c;
+  uVar4 = local_c;
+  pBVar3 = local_18;
+  iVar1 = local_1c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_60.previous;
     iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\bldboat.cpp",0x9e,0,iVar4,"%s",
@@ -311,27 +314,27 @@ st::fn_004EF320(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
   }
   st::fn_006B4170((RecoveredSourceFamily_dibcopy *)local_18->field_0068,0,local_1c,local_c,local_14[2],
                local_14[3],0);
-  st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar2->field_0068,iVar6 + 1,uVar3 + 1,'\x01',
+  st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar3->field_0068,iVar1 + 1,uVar4 + 1,'\x01',
          (byte *)local_10);
   if (param_1->field_0014 == 3) {
     if (local_8 == nullptr) goto LAB_004ef4e9;
-    iVar4 = (-(uint)((char)local_8[2] != 0) & 2) + 3;
+    iVar7 = (-(uint)((char)local_8[2] != 0) & 2) + 3;
   }
   else {
-    iVar4 = 4;
+    iVar7 = 4;
   }
-  pbVar5 = (byte *)st::fn_0070B3A0(pBVar2->field_0190,iVar4);
-  st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar2->field_0068,iVar6,uVar3,'\x06',pbVar5);
+  pBVar5 = st::fn_0070B3A0(pBVar3->field_0190,iVar7);
+  st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar3->field_0068,iVar1,uVar4,'\x06',(byte *)pBVar5);
   if ((((local_8 != nullptr) && (local_8[1] != 0)) &&
       ((char)local_8[2] != 0)) && (param_1->field_0014 != 0)) {
-    st::external_00000080(&pBVar2->field_006C,"%d",local_8[1]);
-    st::fn_00710A90(pBVar2->field_028A,pBVar2->field_0068,0,iVar6,uVar3,local_14[2],local_14[3]);
-    st::fn_007119C0(pBVar2->field_028A,(uint *)&pBVar2->field_006C,-2,-1,0);
+    st::external_00000080(&pBVar3->field_006C,"%d",local_8[1]);
+    st::fn_00710A90(pBVar3->field_028A,pBVar3->field_0068,0,iVar1,uVar4,local_14[2],local_14[3]);
+    st::fn_007119C0(pBVar3->field_028A,&pBVar3->field_006C,-2,-1,0);
   }
 LAB_004ef4e9:
   st::fn_006B3640
-            ((int *)g_ddxContext_008075A8,pBVar2->field_0060,0xffffffff,pBVar2->field_003C,
-             pBVar2->field_0044);
+            ((int *)g_ddxContext_008075A8,pBVar3->field_0060,0xffffffff,pBVar3->field_003C,
+             pBVar3->field_0044);
   g_currentExceptionFrame = local_60.previous;
   return;
 }
@@ -353,8 +356,10 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
   BldBoatPanelTy *this_00;
   ushort uVar3;
   int iVar4;
-  undefined4 *puVar5;
+  int iVar5;
+  undefined4 *puVar6;
   int iVar6;
+  int iVar7;
   InternalExceptionFrame local_58;
   undefined1 local_14;
   undefined3 uStack_13;
@@ -418,20 +423,20 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
     case MESS_FSGSTY_C0A1:
     case MESS_SHARED_C0A2:
     case MESS_SHARED_C0A3:
-      iVar4 = (&this_00->field_027A)[(byte)this_00->field_0278];
-      if ((iVar4 == 0) ||
-         (iVar6 = SVar1 + this_00->field_0199, *(uint *)(iVar4 + 0xc) <= iVar6 - 0xc09fU)) {
-        puVar5 = nullptr;
+      iVar7 = (&this_00->field_027A)[(byte)this_00->field_0278];
+      if ((iVar7 == 0) ||
+         (iVar5 = SVar1 + this_00->field_0199, *(uint *)(iVar7 + 0xc) <= iVar5 - 0xc09fU)) {
+        puVar6 = nullptr;
       }
       else {
-        puVar5 = (undefined4 *)((iVar6 + -0xc09f) * *(int *)(iVar4 + 8) + *(int *)(iVar4 + 0x1c));
+        puVar6 = (undefined4 *)((iVar5 + -0xc09f) * *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0x1c));
       }
-      if ((puVar5 != nullptr) && (*(char *)(puVar5 + 2) != '\0')) {
+      if ((puVar6 != nullptr) && (*(char *)(puVar6 + 2) != '\0')) {
         sStack_f = 0;
         uStack_d = 0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        _local_14 = CONCAT31((int3)*puVar5,1);
-        local_10 = (undefined1)((uint)*puVar5 >> 0x18);
+        _local_14 = CONCAT31((int3)*puVar6,1);
+        local_10 = (undefined1)((uint)*puVar6 >> 0x18);
         local_c = 0;
         local_a = 0;
         if ((message->arg1).u32 == 0) {

@@ -45,8 +45,7 @@ InfocPanelTy::PaintInfocObj
     FUN_006b4170((RecoveredSourceFamily_dibcopy *)pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,
                  bVar3);
     ccFntTy::SetSurf(pIVar2->field_0189,pIVar2->field_0068,0,param_3,param_4,0x2d,0xc);
-    ccFntTy::WrStr(pIVar2->field_0189,(uint *)&pIVar2->field_018D,-1,-1,
-                   (DAT_0080874e != '\x03') - 1 & 5);
+    ccFntTy::WrStr(pIVar2->field_0189,&pIVar2->field_018D,-1,-1,(DAT_0080874e != '\x03') - 1 & 5);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

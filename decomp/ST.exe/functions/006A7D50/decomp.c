@@ -12,11 +12,12 @@ int FUN_006a7d50(int param_1,int param_2,int param_3,int param_4,int param_5,int
   ushort uVar4;
   short sVar5;
   uint uVar6;
-  int iVar7;
-  uint uVar8;
-  int iVar9;
+  uint uVar7;
+  int iVar8;
+  uint uVar9;
   int iVar10;
-  undefined4 *puVar11;
+  int iVar11;
+  undefined4 *puVar12;
   uint local_4c;
   int local_48;
   int local_44;
@@ -36,63 +37,63 @@ int FUN_006a7d50(int param_1,int param_2,int param_3,int param_4,int param_5,int
   int local_c;
   int local_8;
 
-  iVar10 = param_2 * param_3;
+  iVar11 = param_2 * param_3;
   local_10 = param_10;
   local_30 = param_8;
-  sVar2 = *(short *)(param_1 + (param_2 * param_9 + param_8 + iVar10 * param_10) * 2);
+  sVar2 = *(short *)(param_1 + (param_2 * param_9 + param_8 + iVar11 * param_10) * 2);
   local_8 = param_12 + -1;
-  puVar11 = param_11 + local_8 * 0x12;
+  puVar12 = param_11 + local_8 * 0x12;
   local_c = param_9;
-  *(short *)puVar11 = (short)param_8;
-  STField<short>(puVar11,2) = (short)param_9;
-  *(short *)(puVar11 + 1) = (short)param_10;
-  STField<undefined2>(puVar11,6) = 0;
+  *(short *)puVar12 = (short)param_8;
+  STField<short>(puVar12,2) = (short)param_9;
+  *(short *)(puVar12 + 1) = (short)param_10;
+  STField<undefined2>(puVar12,6) = 0;
   local_40 = 0;
   local_44 = 0;
   local_18 = 0;
-  STField<undefined2>(puVar11,0xe) = 0x7fff;
+  STField<undefined2>(puVar12,0xe) = 0x7fff;
   uVar6 = FUN_006a6360(param_5,param_6,param_7,param_8,param_9,param_10);
   local_2c = FUN_006a6320(uVar6);
   if (((param_8 == param_5) && (param_9 == param_6)) && (param_10 == param_7)) {
     local_8 = local_8 + -1;
-    puVar11 = param_11 + local_8 * 0x12;
-    *(short *)puVar11 = (short)param_5;
-    STField<undefined2>(puVar11,2) = (undefined2)param_6;
-    *(undefined2 *)(puVar11 + 1) = (undefined2)param_7;
-    STField<short>(puVar11,6) = sVar2;
-    STField<undefined2>(puVar11,0xe) = 0x7fff;
+    puVar12 = param_11 + local_8 * 0x12;
+    *(short *)puVar12 = (short)param_5;
+    STField<undefined2>(puVar12,2) = (undefined2)param_6;
+    *(undefined2 *)(puVar12 + 1) = (undefined2)param_7;
+    STField<short>(puVar12,6) = sVar2;
+    STField<undefined2>(puVar12,0xe) = 0x7fff;
 LAB_006a8234:
     if (0 < local_8) {
-      puVar11 = param_11 + local_8 * 0x12;
-      for (iVar10 = ((param_12 - local_8) * 9 & 0x1fffffffU) << 1; iVar10 != 0; iVar10 = iVar10 + -1
+      puVar12 = param_11 + local_8 * 0x12;
+      for (iVar11 = ((param_12 - local_8) * 9 & 0x1fffffffU) << 1; iVar11 != 0; iVar11 = iVar11 + -1
           ) {
-        *param_11 = *puVar11;
-        puVar11 = puVar11 + 1;
+        *param_11 = *puVar12;
+        puVar12 = puVar12 + 1;
         param_11 = param_11 + 1;
       }
-      for (iVar10 = 0; iVar10 != 0; iVar10 = iVar10 + -1) {
-        *(undefined1 *)param_11 = *(undefined1 *)puVar11;
-        puVar11 = (undefined4 *)((int)puVar11 + 1);
+      for (iVar11 = 0; iVar11 != 0; iVar11 = iVar11 + -1) {
+        *(undefined1 *)param_11 = *(undefined1 *)puVar12;
+        puVar12 = (undefined4 *)((int)puVar12 + 1);
         param_11 = (undefined4 *)((int)param_11 + 1);
       }
     }
     return (param_12 - local_8) + -1;
   }
-  uVar6 = param_13 & 4;
-  local_28 = puVar11;
+  uVar7 = param_13 & 4;
+  local_28 = puVar12;
   local_14 = local_2c;
   do {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_13 = 30000;
-    iVar1 = param_1 + (local_c * param_2 + local_30 + local_10 * iVar10) * 2;
-    if (uVar6 == 0) {
-      uVar8 = FUN_006a6360(param_5,param_6,param_7,local_30,local_c,local_10);
-      local_34 = FUN_006a6320(uVar8);
+    iVar1 = param_1 + (local_c * param_2 + local_30 + local_10 * iVar11) * 2;
+    if (uVar7 == 0) {
+      uVar9 = FUN_006a6360(param_5,param_6,param_7,local_30,local_c,local_10);
+      local_34 = FUN_006a6320(uVar9);
     }
     else {
-      iVar7 = FUN_006a6100(local_30,local_c,local_10,param_8,param_9,param_10,(int *)&local_4c);
-      if (iVar7 < 0x1a) {
-        local_34 = (uint)(&SHORT_007ed576)[iVar7 * 4];
+      iVar8 = FUN_006a6100(local_30,local_c,local_10,param_8,param_9,param_10,(int *)&local_4c);
+      if (iVar8 < 0x1a) {
+        local_34 = (uint)(&SHORT_007ed576)[iVar8 * 4];
         local_14 = local_34;
       }
       else {
@@ -103,11 +104,11 @@ LAB_006a8234:
     local_1c = (ushort *)&SHORT_007ed576;
     local_3c = &DAT_007ed640;
     do {
-      iVar7 = (int)(short)local_1c[-3];
-      local_20 = local_30 + iVar7;
+      iVar8 = (int)(short)local_1c[-3];
+      local_20 = local_30 + iVar8;
       if ((-1 < local_20) && (local_20 < param_2)) {
-        iVar9 = (int)(short)local_1c[-2];
-        local_38 = iVar9 + local_c;
+        iVar10 = (int)(short)local_1c[-2];
+        local_38 = iVar10 + local_c;
         if ((-1 < local_38) && (local_38 < param_3)) {
           local_48 = local_10 + (short)local_1c[-1];
           if ((-1 < local_48) && (local_48 < param_4)) {
@@ -116,7 +117,7 @@ LAB_006a8234:
               if (((uVar3 & 0x6000) == 0) || ((uVar3 & 0x9fff) == 0xffe)) {
 LAB_006a80b6:
                 local_4c = (uint)*(short *)(param_1 +
-                                           (local_38 * param_2 + local_20 + local_48 * iVar10) * 2);
+                                           (local_38 * param_2 + local_20 + local_48 * iVar11) * 2);
                 if (((local_20 == param_5) && (local_38 == param_6)) && (local_48 == param_7)) {
                   local_2c = local_24;
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -140,32 +141,32 @@ LAB_006a80b6:
                   }
                 }
               }
-              else if ((*(ushort *)(iVar1 + (short)local_1c[-1] * iVar10 * 2) & 0xc000) != 0xc000) {
-                if (iVar9 == 0) {
-                  uVar4 = *(ushort *)(iVar1 + iVar7 * 2);
+              else if ((*(ushort *)(iVar1 + (short)local_1c[-1] * iVar11 * 2) & 0xc000) != 0xc000) {
+                if (iVar10 == 0) {
+                  uVar4 = *(ushort *)(iVar1 + iVar8 * 2);
                 }
                 else {
-                  uVar4 = *(ushort *)(iVar1 + iVar9 * param_2 * 2);
+                  uVar4 = *(ushort *)(iVar1 + iVar10 * param_2 * 2);
                 }
                 goto joined_r0x006a8098;
               }
             }
-            else if (((*(ushort *)(iVar1 + iVar7 * 2) & 0xc000) != 0xc000) &&
-                    (iVar9 = iVar9 * param_2, (*(ushort *)(iVar1 + iVar9 * 2) & 0xc000) != 0xc000))
-            {
+            else if (((*(ushort *)(iVar1 + iVar8 * 2) & 0xc000) != 0xc000) &&
+                    (iVar10 = iVar10 * param_2, (*(ushort *)(iVar1 + iVar10 * 2) & 0xc000) != 0xc000
+                    )) {
               if ((uVar3 & 0x4000) == 0) {
                 if ((uVar3 & 0x2000) == 0) goto LAB_006a80b6;
-                if ((((*(ushort *)(iVar1 + iVar10 * 2) & 0xc000) != 0xc000) &&
-                    ((*(ushort *)(iVar1 + (iVar7 + iVar10) * 2) & 0xc000) != 0xc000)) &&
-                   ((*(ushort *)(iVar1 + (iVar9 + iVar10) * 2) & 0xc000) != 0xc000)) {
-                  uVar4 = *(ushort *)(iVar1 + (iVar9 + iVar7) * 2);
+                if ((((*(ushort *)(iVar1 + iVar11 * 2) & 0xc000) != 0xc000) &&
+                    ((*(ushort *)(iVar1 + (iVar8 + iVar11) * 2) & 0xc000) != 0xc000)) &&
+                   ((*(ushort *)(iVar1 + (iVar10 + iVar11) * 2) & 0xc000) != 0xc000)) {
+                  uVar4 = *(ushort *)(iVar1 + (iVar10 + iVar8) * 2);
                   goto joined_r0x006a8098;
                 }
               }
-              else if ((((*(ushort *)(iVar1 + iVar10 * -2) & 0xc000) != 0xc000) &&
-                       ((*(ushort *)(iVar1 + (iVar7 - iVar10) * 2) & 0xc000) != 0xc000)) &&
-                      ((*(ushort *)(iVar1 + (iVar9 - iVar10) * 2) & 0xc000) != 0xc000)) {
-                uVar4 = *(ushort *)(iVar1 + (iVar9 + iVar7) * 2);
+              else if ((((*(ushort *)(iVar1 + iVar11 * -2) & 0xc000) != 0xc000) &&
+                       ((*(ushort *)(iVar1 + (iVar8 - iVar11) * 2) & 0xc000) != 0xc000)) &&
+                      ((*(ushort *)(iVar1 + (iVar10 - iVar11) * 2) & 0xc000) != 0xc000)) {
+                uVar4 = *(ushort *)(iVar1 + (iVar10 + iVar8) * 2);
 joined_r0x006a8098:
                 if ((uVar4 & 0xc000) != 0xc000) goto LAB_006a80b6;
               }

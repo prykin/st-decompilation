@@ -18,15 +18,16 @@ undefined4 * __thiscall STDcResourcC::sub_0057F2E0(STDcResourcC *this,int param_
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
+  char *pcVar6_mg0;
 
-  pcVar6 = PTR_s_rc276__d_007cb090;
+  pcVar6_mg0 = PTR_s_rc276__d_007cb090;
   if (param_1 == -1) {
     uVar2 = thunk_FUN_0057f240(0xdd,this->field_0259);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     param_1 = CONCAT31(extraout_var,uVar2);
-    pcVar6 = PTR_s_rc276_c_d_007cb08c;
+    pcVar6_mg0 = PTR_s_rc276_c_d_007cb08c;
   }
-  wsprintfA((LPSTR)&DAT_00811670,pcVar6,param_1);
+  wsprintfA((LPSTR)&DAT_00811670,pcVar6_mg0,param_1);
   if (param_2 == 0) {
     return &DAT_00811670;
   }

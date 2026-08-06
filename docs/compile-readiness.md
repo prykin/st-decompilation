@@ -34,18 +34,18 @@ sites, not unique source objects.
 
 | Class | Functions | Body share | Occurrences | State | What remains |
 | --- | ---: | ---: | ---: | --- | --- |
-| Translation-unit/declaration assembly | 5,712 | 100.00% | 5,712 | assembled and audited | `tools/st_source_tree.py` emits 318 deterministic TUs; `tools/st_compile_audit.py` currently passes 54 and maps 4,066 capped errors to function addresses. |
-| Default `FUN_ADDRESS` names | 4,157 | 72.78% | 4,157 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
-| Undefined function signatures | 3,894 | 68.17% | 3,894 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
-| Undefined scalar spelling | 3,658 | 64.04% | 18,595 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
-| Typed byte-offset field view | 1,145 | 20.05% | 9,924 | compatibility implemented | `STField<T>(base, offset)` preserves the exact access until owner/layout proof supplies a named member. |
-| Ownerless `__thiscall` | 1,001 | 17.52% | 1,001 | source ABI emitted | `st::fn_ADDRESS` retains the explicit ECX receiver until a class is proven. |
+| Translation-unit/declaration assembly | 5,712 | 100.00% | 5,712 | assembled and audited | `tools/st_source_tree.py` emits 318 deterministic TUs; the current 64-diagnostic compiler audit passes 61 and maps 5,588 of 5,590 capped errors to function addresses. |
+| Default `FUN_ADDRESS` names | 4,155 | 72.74% | 4,155 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
+| Undefined function signatures | 3,877 | 67.88% | 3,877 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
+| Undefined scalar spelling | 3,642 | 63.76% | 18,343 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
+| Typed byte-offset field view | 1,144 | 20.03% | 10,124 | compatibility implemented | `STField<T>(base, offset)` preserves the exact access until owner/layout proof supplies a named member. |
+| Ownerless `__thiscall` | 999 | 17.49% | 999 | source ABI emitted | `st::fn_ADDRESS` retains the explicit ECX receiver until a class is proven. |
 | Opaque `code *` callback type | 793 | 13.88% | 1,936 | compatibility implemented | Install the exact callback/vtable-slot `FunctionDefinition`. |
 | Raw indirect call | 773 | 13.53% | 1,885 | semantic debt | Recover receiver, calling convention, argument count, and return type. |
 | Unresolved register/high value | 232 | 4.06% | 1,450 | semantic debt | Repair boundary ABI, return width, x87 result, SEH/setjmp live-in, or SSA lifetime. |
 | Partial lvalue piece helper | 222 | 3.89% | 1,071 | compatibility implemented | Replace `STPiece<O,W>` only when a field/union facet is proven. |
 | `CONCAT*` intrinsic | 234 | 4.10% | 815 | compatibility implemented | Recover a packed value or retain exact byte composition. |
-| Nonstandard integer/x87 width | 310 | 5.43% | 2,026 | compatibility implemented | Includes `int3`/`uint3`, `longlong` aliases, `float10`, and unresolved x87 `unkbyte10`. |
+| Nonstandard integer/x87 width | 310 | 5.43% | 2,106 | compatibility implemented | Includes `int3`/`uint3`, `longlong` aliases, `float10`, and unresolved x87 `unkbyte10`. |
 | `SUB*` intrinsic | 35 | 0.61% | 162 | compatibility implemented | Recover a named subfield or retain exact extraction. |
 | Carry/borrow intrinsic | 27 | 0.47% | 134 | compatibility implemented | Prefer a source comparison only when its arithmetic proof is exact. |
 | x87 math intrinsic | 19 | 0.33% | 125 | compatibility implemented | `fsin`/`fcos`/`fpatan` retain long-double semantics pending complete x87-stack recovery. |
@@ -53,7 +53,7 @@ sites, not unique source objects.
 | Literal-storage piece | 1 | 0.02% | 3 | compatibility implemented | `STLiteralPiece<O,W>` keeps the little-endian bytes; later recover the intended initializer. |
 | Residual Ghidra `._offset_width_` syntax | 0 | 0.00% | 0 | closed | No remaining syntactic occurrence in exported bodies. |
 
-The compatibility surface covers 34,795 occurrences. It does not claim that
+The compatibility surface covers 34,827 occurrences. It does not claim that
 `undefined4`, `code *`, or a byte-offset access is the original source type; it
 only makes the exact recovered operation expressible in C++ while preserving
 the semantic debt for later analyzers.
@@ -165,16 +165,16 @@ current errors expose residual overlapping `field_0x...` views, pointer/word
 role conflicts, untyped vtable slots, and weak prototypes. See
 `docs/source-tree-generation.md` and `src/ST.exe/audit/`.
 
-The first source-compilation layer materializes 2,664 exact unnamed-byte views
+The first source-compilation layer materializes 2,663 exact unnamed-byte views
 actually referenced by statically typed bodies, emits 780 non-virtual member
 wrappers over receiver-aware physical-vtable slots, and exposes 1,292 uniquely
 owned non-virtual `__thiscall` functions as forwarding class methods over their
 address-stable `st::fn_ADDRESS` implementations. It does not alter packed layout
 or synthesize inheritance. It also renames 231 exact address-taken global-object
 uses whose image symbol collides with a C++ type name to `st_global_ADDRESS`,
-without changing the Ghidra symbol. With a fixed 32-error-per-TU Apple Clang
-probe, 54 of 318 units pass; the 4,068 retained errors are dominated by call
-argument types (1,198), scalar/pointer assignment roles (1,014), scalar
-subscripting (626), and undeclared decompiler temporaries (599). Only 38 missing
-record-member diagnostics remain. These capped counts are a comparison baseline,
+without changing the Ghidra symbol. With a fixed 64-error-per-TU Apple Clang
+probe, 61 of 318 units pass; the 5,590 retained errors are dominated by
+assignment types (1,472), scalar subscripting (1,138), undeclared identifiers
+(1,070), and call-argument types (1,062). There are 71 missing-record-member
+diagnostics. These capped counts are a comparison baseline,
 not an assertion that later diagnostics in a failed TU do not exist.

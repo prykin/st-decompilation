@@ -5,7 +5,8 @@ undefined4 FUN_006939f0(void)
 
 {
   int iVar1;
-  byte *puVar2;
+  int iVar2;
+  byte *puVar3;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   cMf32 *in_stack_00000004;
   InternalExceptionFrame local_54;
@@ -20,7 +21,7 @@ undefined4 FUN_006939f0(void)
   iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar1 == 0) {
     memset(local_10, 0, 0x1999); /* compiler bulk-zero initialization */
-    iVar1 = 0;
+    iVar2 = 0;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     cMf32::RecGet(in_stack_00000004,0,PTR_s_DESCRIPTOR_0079d770,(int *)&local_8,1);
     g_currentExceptionFrame = local_54.previous;
@@ -32,8 +33,8 @@ undefined4 FUN_006939f0(void)
     cMf32::RecMemFree(in_stack_00000004,(uint *)&local_8);
   }
   if (local_8 != nullptr) {
-    puVar2 = (byte *)(local_8);
-    memmove(local_10, puVar2, 0x1999); /* compiler REP MOVS byte copy */
+    puVar3 = (byte *)(local_8);
+    memmove(local_10, puVar3, 0x1999); /* compiler REP MOVS byte copy */
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     cMf32::RecMemFree(in_stack_00000004,(uint *)&local_8);
   }

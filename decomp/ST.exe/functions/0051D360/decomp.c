@@ -32,10 +32,10 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
       }
       else {
         local_c->field_01A2 = 0;
-        local_c->field_01AB = 0;
+        local_c->field_01AB = nullptr;
       }
       local_c->field_01A1 = CASE_C;
-      local_c->field_01A3 = param_1;
+      local_c->field_01A3 = (void *)param_1;
       local_c->field_01A7 = 0;
       local_c->field_01AF = 0x23;
       local_c->field_01B1 = 5;

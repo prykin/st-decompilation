@@ -16,6 +16,7 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
   STManBasisC *this_00;
   int iVar3;
   int iVar4;
+  int iVar5;
   InternalExceptionFrame local_58;
   byte *local_14;
   uint local_10;

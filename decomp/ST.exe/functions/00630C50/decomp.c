@@ -21,7 +21,8 @@ STManRuinC::sub_00630C50
   undefined4 *puVar1;
   STManRuinC *pSVar2;
   int iVar3;
-  ushort *puVar4;
+  ushort *puVar3;
+  int iVar4;
   int iVar5;
   uint uVar6;
   uint uVar7;
@@ -31,7 +32,7 @@ STManRuinC::sub_00630C50
   int local_14;
   STManRuinC *local_10;
   ushort *local_c;
-  undefined **local_8;
+  char **local_8;
 
   local_c = nullptr;
   if (param_2 == 1) {
@@ -57,13 +58,13 @@ STManRuinC::sub_00630C50
     g_currentExceptionFrame = local_58.previous;
     return local_c;
   }
-  puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
+  puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806774,CASE_1D,local_8[local_10->field_0040],0xffffffff,0,1,0,
                       nullptr);
   if (param_3 == 0) {
     if (param_2 == 1) {
       local_c = ST3DSMAPContext::sub_006E9000
-                          (g_sT3DSMAPContext_00807598,*STField<undefined4 *>(puVar4,0x21),0x5a,
+                          (g_sT3DSMAPContext_00807598,*STField<undefined4 *>(puVar3,0x21),0x5a,
                            0x45,(float)pSVar2->field_0054 * _DAT_007904f8 * _DAT_007904f0,
                            (float)pSVar2->field_0058 * _DAT_007904f8 * _DAT_007904f0,
                            (float)pSVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc
@@ -72,7 +73,7 @@ STManRuinC::sub_00630C50
     if (param_2 == 4) {
       local_14 = pSVar2->field_0054 + 100;
       local_c = ST3DSMAPContext::sub_006E9000
-                          (g_sT3DSMAPContext_00807598,*STField<undefined4 *>(puVar4,0x21),0x78,
+                          (g_sT3DSMAPContext_00807598,*STField<undefined4 *>(puVar3,0x21),0x78,
                            0x56,(float)local_14 * _DAT_007904f8 * _DAT_007904f0,
                            (float)(pSVar2->field_0058 + 100) * _DAT_007904f8 * _DAT_007904f0,
                            (float)pSVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 + _DAT_0079d1a0
@@ -83,40 +84,40 @@ STManRuinC::sub_00630C50
   }
   puVar1 = &pSVar2->field_0061;
   if (param_2 == 1) {
-    uVar7 = STField<uint>(puVar4,0xd);
-    uVar6 = STField<uint>(puVar4,9);
+    uVar7 = STField<uint>(puVar3,0xd);
+    uVar6 = STField<uint>(puVar3,9);
     uVar9 = 0x45;
     uVar8 = 0x5a;
   }
   else {
-    uVar7 = STField<uint>(puVar4,0xd);
-    uVar6 = STField<uint>(puVar4,9);
+    uVar7 = STField<uint>(puVar3,0xd);
+    uVar6 = STField<uint>(puVar3,9);
     uVar9 = 100;
     uVar8 = 0x78;
   }
   ST3DSMAPContext::sub_006E8660(g_sT3DSMAPContext_00807598,puVar1,1,0,uVar6,uVar7,uVar8,uVar9,0);
   ST3DSMAPContext::sub_006E98E0
-            (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
+            (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
   ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,0);
   Library::Ourlib::ST3DSMAP::SprSetLevAfter(g_sT3DSMAPContext_00807598,*puVar1,-1);
   Library::Ourlib::ST3DSMAP::SprSetSplit(g_sT3DSMAPContext_00807598,*puVar1);
   if (param_2 == 1) {
-    iVar3 = pSVar2->field_0058;
+    iVar4 = pSVar2->field_0058;
     iVar5 = pSVar2->field_0054;
   }
   else {
-    iVar3 = pSVar2->field_0058 + 100;
+    iVar4 = pSVar2->field_0058 + 100;
     iVar5 = pSVar2->field_0054 + 100;
     local_14 = iVar5;
   }
   Library::Ourlib::ST3DSMAP::SprMove
             (g_sT3DSMAPContext_00807598,*puVar1,(float)iVar5 * _DAT_007904f8 * _DAT_007904f0,
-             (float)iVar3 * _DAT_007904f8 * _DAT_007904f0,
+             (float)iVar4 * _DAT_007904f8 * _DAT_007904f0,
              (float)pSVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
   if (param_4 != 0) {
     Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*puVar1,0);
   }
   g_currentExceptionFrame = local_58.previous;
-  return puVar4;
+  return puVar3;
 }
 

@@ -12,10 +12,11 @@ undefined4 * __cdecl FUN_00561670(int param_1,int param_2,int param_3,int *param
   int iVar1;
   short sVar2;
   short sVar3;
-  undefined4 *puVar4;
+  int *piVar4;
   undefined4 *puVar5;
-  uint uVar6;
-  int *piVar7;
+  undefined4 *puVar6;
+  uint uVar7;
+  int *piVar7_mg0;
   int iVar8;
   short *psVar9;
   int *piVar10;
@@ -39,23 +40,23 @@ undefined4 * __cdecl FUN_00561670(int param_1,int param_2,int param_3,int *param
   if (param_5 < 1) {
     return nullptr;
   }
-  puVar4 = Library::DKW::LIB::MemAllocClear(param_2 * param_3 * 2);
-  if (puVar4 == nullptr) {
+  puVar5 = Library::DKW::LIB::MemAllocClear(param_2 * param_3 * 2);
+  if (puVar5 == nullptr) {
     return nullptr;
   }
   if (0 < param_3) {
     local_28 = param_3;
-    puVar12 = puVar4;
+    puVar12 = puVar5;
     do {
-      puVar5 = puVar12;
+      puVar6 = puVar12;
       iVar8 = param_2;
       if (0 < param_2) {
         do {
-          if (*(short *)((param_1 - (int)puVar4) + (int)puVar5) == -1) {
-            *(undefined2 *)puVar5 = 0xffff;
+          if (*(short *)((param_1 - (int)puVar5) + (int)puVar6) == -1) {
+            *(undefined2 *)puVar6 = 0xffff;
           }
           iVar8 = iVar8 + -1;
-          puVar5 = (undefined4 *)((int)puVar5 + 2);
+          puVar6 = (undefined4 *)((int)puVar6 + 2);
         } while (iVar8 != 0);
       }
       puVar12 = (undefined4 *)((int)puVar12 + param_2 * 2);
@@ -67,7 +68,7 @@ undefined4 * __cdecl FUN_00561670(int param_1,int param_2,int param_3,int *param
     iVar8 = param_5;
   }
   local_18 = iVar8;
-  local_24 = (int *)FUN_006bfb70(iVar8 << 4);
+  local_24 = FUN_006bfb70(iVar8 << 4);
   if (local_24 == nullptr) {
 LAB_00561bff:
     local_2c = -2;
@@ -82,7 +83,7 @@ LAB_00561bff:
         iVar8 = *param_4;
         if ((((-1 < iVar8) && (iVar8 < param_2)) && (iVar13 = param_4[1], -1 < iVar13)) &&
            (iVar13 < param_3)) {
-          *(undefined2 *)((int)puVar4 + (iVar13 * param_2 + iVar8) * 2) = 1;
+          *(undefined2 *)((int)puVar5 + (iVar13 * param_2 + iVar8) * 2) = 1;
           *piVar11 = *param_4;
           local_20 = local_20 + 1;
           piVar11[1] = param_4[1];
@@ -109,32 +110,32 @@ LAB_00561bff:
         local_8 = local_14[local_3c * 2];
         local_10 = local_14[local_3c * 2 + 1];
         iVar13 = (local_10 * param_2 + local_8) * 2;
-        sVar2 = *(short *)(iVar13 + (int)puVar4);
+        sVar2 = *(short *)(iVar13 + (int)puVar5);
         iVar8 = (int)sVar2;
-        local_c = (undefined2 *)(iVar13 + (int)puVar4);
+        local_c = (undefined2 *)(iVar13 + (int)puVar5);
         iVar13 = iVar13 + param_1;
         if (local_18 < (int)param_4) {
           local_34 = local_34 + 0x800;
           local_18 = local_18 + 0x80;
-          uVar6 = local_28 + 0x400;
-          piVar7 = (int *)FUN_006bfb50(local_24,local_34);
-          if (piVar7 == nullptr) goto LAB_00561bff;
-          local_1c = piVar7 + ((int)local_1c - (int)local_24 >> 3) * 2;
-          local_14 = piVar7 + ((int)local_14 - (int)local_24 >> 3) * 2;
-          if (local_1c == piVar7) {
+          uVar7 = local_28 + 0x400;
+          piVar7_mg0 = FUN_006bfb50(local_24,local_34);
+          if (piVar7_mg0 == nullptr) goto LAB_00561bff;
+          local_1c = piVar7_mg0 + ((int)local_1c - (int)local_24 >> 3) * 2;
+          local_14 = piVar7_mg0 + ((int)local_14 - (int)local_24 >> 3) * 2;
+          if (local_1c == piVar7_mg0) {
             local_14 = local_14 + 0x100;
           }
           else {
             local_1c = local_1c + 0x100;
           }
           piVar11 = local_1c + param_5 * 2;
-          local_24 = piVar7;
+          local_24 = piVar7_mg0;
           Library::MSVCRT::FUN_0072da70
-                    ((undefined4 *)(local_28 + 0x800 + (int)piVar7),
-                     (AnonPointee_TLOBaseTy_0607 *)(uVar6 + (int)piVar7),uVar6);
-          local_28 = uVar6;
+                    ((undefined4 *)(local_28 + 0x800 + (int)piVar7_mg0),
+                     (AnonPointee_TLOBaseTy_0607 *)(uVar7 + (int)piVar7_mg0),uVar7);
+          local_28 = uVar7;
         }
-        piVar7 = local_1c;
+        piVar4 = local_1c;
         sVar3 = (short)local_8;
         piVar10 = piVar11;
         if ((local_8 < param_2 + -1) &&
@@ -257,14 +258,14 @@ LAB_00561bff:
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_5 == 0) break;
       local_1c = local_14;
-      local_14 = piVar7;
+      local_14 = piVar4;
       iVar8 = local_18;
       local_20 = param_5;
     }
   }
   FreeAndNull(&local_24);
   if (local_2c == 0) {
-    return puVar4;
+    return puVar5;
   }
   RaiseInternalException
             (local_2c,g_overwriteContext_007ED77C,"E:\\__titans\\scoreai.cpp",600);

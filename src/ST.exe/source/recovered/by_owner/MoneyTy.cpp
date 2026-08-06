@@ -152,8 +152,7 @@ void __thiscall st::fn_0052B990(MoneyTy *this)
     if (0 < (int)(uVar1 - (byte)this->field_00A2)) {
       uVar7 = 1;
       do {
-        pBVar3 = (BITMAPINFO *)
-                 st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,0);
+        pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,0);
         st::fn_00403738(this->field_0030 + -4 + uVar7 * 4,this->field_0034,'\x01',pBVar3);
         STPiece<0,1>(local_8) = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;
@@ -164,8 +163,7 @@ void __thiscall st::fn_0052B990(MoneyTy *this)
       iVar5 = (uint)bVar4 * 4;
       iVar6 = (uVar1 - bVar4) + 1;
       do {
-        pBVar3 = (BITMAPINFO *)
-                 st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,4);
+        pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,4);
         st::fn_00403738(this->field_0030 + -4 + iVar5,this->field_0034,'\x01',pBVar3);
         iVar5 = iVar5 + 4;
         iVar6 = iVar6 + -1;
@@ -177,8 +175,7 @@ void __thiscall st::fn_0052B990(MoneyTy *this)
     local_8 = 1;
     if (this->field_00A2 != '\0') {
       do {
-        pBVar3 = (BITMAPINFO *)
-                 st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,
+        pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,
                               (-(uint)(DAT_0080874e != '\x03') & 2) + 1);
         st::fn_00403738(this->field_0030 + -4 + local_8 * 4,this->field_0034,'\x01',pBVar3);
         bVar4 = bVar4 + 1;
@@ -190,8 +187,7 @@ void __thiscall st::fn_0052B990(MoneyTy *this)
       iVar5 = (uint)bVar4 * 4;
       iVar6 = ((uint)bVar2 - (uint)bVar4) + 1;
       do {
-        pBVar3 = (BITMAPINFO *)
-                 st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,0);
+        pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,0);
         st::fn_00403738(this->field_0030 + -4 + iVar5,this->field_0034,'\x01',pBVar3);
         iVar5 = iVar5 + 4;
         iVar6 = iVar6 + -1;
@@ -309,7 +305,7 @@ void __thiscall st::fn_0052BDA0(MoneyTy *this,char param_1,int param_2)
   undefined4 *puVar4;
   uint uVar5;
   uint uVar6;
-  uint local_c [2];
+  CHAR local_c [8];
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == DAT_0080874d) {
@@ -318,7 +314,7 @@ void __thiscall st::fn_0052BDA0(MoneyTy *this,char param_1,int param_2)
       param_2 = DAT_00808a97 - param_2;
     }
     this->field_009E = param_2;
-    st::external_00000080((LPSTR)local_c,"%5d",param_2);
+    st::external_00000080(local_c,"%5d",param_2);
     if (DAT_00808a97 == -1) {
       bVar3 = 0;
     }

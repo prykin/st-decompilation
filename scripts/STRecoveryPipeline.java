@@ -55,6 +55,9 @@ public class STRecoveryPipeline extends GhidraScript {
             "switch_enum_proposals.tsv", "switch_enum_decompile_retries.tsv",
             "switch_enum_decompile_failures.tsv", "switch_enum_domains.tsv",
             "switch_enum_summary.txt")),
+        Map.entry("STJumpTableBoundaryAnalyzer.java", List.of(
+            "jump_table_boundary_proposals.tsv",
+            "jump_table_boundary_summary.txt")),
         Map.entry("STDiscriminatedPayloadAnalyzer.java", List.of(
             "discriminated_payload_proposals.tsv",
             "discriminated_stack_proposals.tsv",
@@ -96,6 +99,7 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STDArrayElementAnalyzer.java", List.of()),
         Map.entry("STPointerShapeAnalyzer.java", List.of()),
         Map.entry("STSwitchEnumAnalyzer.java", List.of("switch_enum_domains.tsv")),
+        Map.entry("STJumpTableBoundaryAnalyzer.java", List.of()),
         Map.entry("STDiscriminatedPayloadAnalyzer.java", List.of()),
         Map.entry("STPointerRoleRepairAnalyzer.java", List.of()),
         Map.entry("STPrototypeAnalyzer.java", List.of()),
@@ -183,6 +187,16 @@ public class STRecoveryPipeline extends GhidraScript {
             section("startup ABI validation");
             runAbiRegressionGate("startup");
             if (!options.mode.equals("export")) initializeAnalyzerCache();
+            if (!options.mode.equals("export")) {
+                // Freeze only machine-proven finite jump tables before any broad analyzer opens
+                // a decompiler.  Without this boundary, packed selector bytes immediately after
+                // a table can be re-read as an extra code address on every DecompInterface.
+                section("jump-table boundary repair");
+                pair("STJumpTableBoundaryAnalyzer.java",
+                    "STJumpTableBoundaryApplier.java",
+                    "jump_table_boundary_proposals.tsv",
+                    "jump_table_boundary_apply_report.tsv");
+            }
             switch (options.mode) {
                 case "core" -> { runCore(); recordEvidence(); }
                 case "deep" -> { runDeep(); recordEvidence(); }

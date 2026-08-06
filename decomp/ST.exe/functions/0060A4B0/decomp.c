@@ -69,7 +69,7 @@ undefined4 __fastcall FUN_0060a4b0(AnonShape_0060A4B0_7BF9A20C *param_1)
                 ((VisibleClassTy::sub_00558C00
                             (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6
                              ,&local_1c,&local_20), local_8 < 0 || ((4 < local_8 || (local_1c < 0)))
-                 ))) || ((pVVar4->field_0030 <= local_1c ||
+                 ))) || (((int)pVVar4->field_0030 <= local_1c ||
                          ((((iVar6 = g_centeredOffsets5[local_8] + local_20, iVar6 < 0 ||
                             (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == nullptr))
                           || (pVVar4->field_004C[local_1c + iVar6 * pVVar4->field_0030] != 0)))))) {

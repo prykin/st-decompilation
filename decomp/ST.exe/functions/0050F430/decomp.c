@@ -20,9 +20,10 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   CPanelTy *this_00;
   int iVar4;
   int iVar5;
-  bool *pbVar6;
+  int iVar6;
   bool *pbVar7;
-  undefined4 *puVar8;
+  bool *pbVar8;
+  undefined4 *puVar9;
   bool local_19c [36];
   bool local_178 [36];
   bool local_154 [36];
@@ -118,9 +119,9 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   bVar1 = (&this_00->field_0BFE)[param_1];
   switch((uint)bVar1) {
   case 1:
-    pbVar6 = &local_6;
+    pbVar7 = &local_6;
     local_6 = false;
-    puVar8 = (undefined4 *)0x8;
+    puVar9 = (undefined4 *)0x8;
     break;
   case 2:
   case 3:
@@ -142,11 +143,11 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   case 0x15:
   case 0x16:
     local_5 = bVar1 != 0x15;
-    pbVar6 = &local_5;
-    puVar8 = (undefined4 *)0x28;
+    pbVar7 = &local_5;
+    puVar9 = (undefined4 *)0x28;
     break;
   case 0x1b:
-    pbVar6 = local_38;
+    pbVar7 = local_38;
     local_38[4] = false;
     local_38[0] = true;
     local_38[1] = false;
@@ -158,10 +159,10 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     local_38[8] = true;
     local_38[9] = true;
     local_38[10] = true;
-    puVar8 = (undefined4 *)0x1e;
+    puVar9 = (undefined4 *)0x1e;
     break;
   case 0x1c:
-    pbVar6 = local_2c;
+    pbVar7 = local_2c;
     local_2c[4] = false;
     local_2c[0] = true;
     local_2c[1] = false;
@@ -173,7 +174,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     local_2c[8] = true;
     local_2c[9] = true;
     local_2c[10] = true;
-    puVar8 = (undefined4 *)0x1e;
+    puVar9 = (undefined4 *)0x1e;
     break;
   case 0x1d:
   case 0x3d:
@@ -186,7 +187,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     return;
   case 0x1e:
   case 0x1f:
-    pbVar6 = &local_14;
+    pbVar7 = &local_14;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_14 = CONCAT31((-(uint3)(bVar1 != 0x1e) & 0xc) + 9,1);
     local_10 = 0;
@@ -194,13 +195,13 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     uStack_d = 0xff;
     local_c = 0xffff;
     local_a = 0xff;
-    puVar8 = (undefined4 *)0x1e;
+    puVar9 = (undefined4 *)0x1e;
     break;
   case 0x20:
   case 0x33:
-    pbVar6 = &local_7;
+    pbVar7 = &local_7;
     local_7 = false;
-    puVar8 = (undefined4 *)0x22;
+    puVar9 = (undefined4 *)0x22;
     break;
   case 0x21:
   case 0x41:
@@ -214,7 +215,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   case 0x22:
   case 0x3b:
   case 0x40:
-    pbVar6 = local_40;
+    pbVar7 = local_40;
     local_40[4] = false;
     local_40[5] = false;
     local_40[6] = false;
@@ -222,58 +223,58 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     local_40[1] = false;
     local_40[2] = false;
     local_40[3] = false;
-    puVar8 = (undefined4 *)0x1f;
+    puVar9 = (undefined4 *)0x1f;
     break;
   case 0x23:
-    pbVar6 = local_10c;
-    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pbVar6[0] = false;
-      pbVar6[1] = false;
-      pbVar6[2] = false;
-      pbVar6[3] = false;
-      pbVar6 = pbVar6 + 4;
-    }
-    *pbVar6 = false;
-    pbVar6 = local_10c;
-    local_10c[0] = true;
-    puVar8 = (undefined4 *)0x17;
-    break;
-  case 0x24:
-  case 0x25:
-    pbVar7 = local_a4;
-    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+    pbVar7 = local_10c;
+    for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
       pbVar7[0] = false;
       pbVar7[1] = false;
       pbVar7[2] = false;
       pbVar7[3] = false;
       pbVar7 = pbVar7 + 4;
     }
-    pbVar6 = local_a4;
     *pbVar7 = false;
+    pbVar7 = local_10c;
+    local_10c[0] = true;
+    puVar9 = (undefined4 *)0x17;
+    break;
+  case 0x24:
+  case 0x25:
+    pbVar8 = local_a4;
+    for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
+      pbVar8[0] = false;
+      pbVar8[1] = false;
+      pbVar8[2] = false;
+      pbVar8[3] = false;
+      pbVar8 = pbVar8 + 4;
+    }
+    pbVar7 = local_a4;
+    *pbVar8 = false;
     local_a4[0] = true;
-    puVar8 = (undefined4 *)0x17;
+    puVar9 = (undefined4 *)0x17;
     local_87 = (uint)(bVar1 == 0x24);
     break;
   case 0x27:
   case 0x32:
-    pbVar6 = &local_8;
+    pbVar7 = &local_8;
     local_8 = false;
-    puVar8 = (undefined4 *)0x9;
+    puVar9 = (undefined4 *)0x9;
     break;
   case 0x28:
   case 0x29:
-    pbVar6 = local_178;
-    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pbVar6[0] = false;
-      pbVar6[1] = false;
-      pbVar6[2] = false;
-      pbVar6[3] = false;
-      pbVar6 = pbVar6 + 4;
+    pbVar7 = local_178;
+    for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
+      pbVar7[0] = false;
+      pbVar7[1] = false;
+      pbVar7[2] = false;
+      pbVar7[3] = false;
+      pbVar7 = pbVar7 + 4;
     }
-    *pbVar6 = false;
-    pbVar6 = local_178;
+    *pbVar7 = false;
+    pbVar7 = local_178;
     local_178[0] = (bool)((bVar1 != 0x28) + '\f');
-    puVar8 = (undefined4 *)0x17;
+    puVar9 = (undefined4 *)0x17;
     break;
   case 0x30:
   case 0x3f:
@@ -293,48 +294,48 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     g_currentExceptionFrame = local_e8.previous;
     return;
   case 0x36:
-    pbVar6 = local_130;
-    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pbVar6[0] = false;
-      pbVar6[1] = false;
-      pbVar6[2] = false;
-      pbVar6[3] = false;
-      pbVar6 = pbVar6 + 4;
-    }
-    *pbVar6 = false;
-    pbVar6 = local_130;
-    local_130[0] = true;
-    puVar8 = (undefined4 *)0x17;
-    break;
-  case 0x38:
-  case 0x45:
-    pbVar7 = local_80;
-    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+    pbVar7 = local_130;
+    for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
       pbVar7[0] = false;
       pbVar7[1] = false;
       pbVar7[2] = false;
       pbVar7[3] = false;
       pbVar7 = pbVar7 + 4;
     }
-    pbVar6 = local_80;
     *pbVar7 = false;
+    pbVar7 = local_130;
+    local_130[0] = true;
+    puVar9 = (undefined4 *)0x17;
+    break;
+  case 0x38:
+  case 0x45:
+    pbVar8 = local_80;
+    for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
+      pbVar8[0] = false;
+      pbVar8[1] = false;
+      pbVar8[2] = false;
+      pbVar8[3] = false;
+      pbVar8 = pbVar8 + 4;
+    }
+    pbVar7 = local_80;
+    *pbVar8 = false;
     local_80[0] = true;
-    puVar8 = (undefined4 *)0x17;
+    puVar9 = (undefined4 *)0x17;
     local_63 = (uint)(bVar1 != 0x38);
     break;
   case 0x39:
   case 0x46:
-    pbVar7 = local_19c;
-    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pbVar7[0] = false;
-      pbVar7[1] = false;
-      pbVar7[2] = false;
-      pbVar7[3] = false;
-      pbVar7 = pbVar7 + 4;
+    pbVar8 = local_19c;
+    for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
+      pbVar8[0] = false;
+      pbVar8[1] = false;
+      pbVar8[2] = false;
+      pbVar8[3] = false;
+      pbVar8 = pbVar8 + 4;
     }
-    pbVar6 = local_19c;
-    *pbVar7 = false;
-    puVar8 = (undefined4 *)0x17;
+    pbVar7 = local_19c;
+    *pbVar8 = false;
+    puVar9 = (undefined4 *)0x17;
     local_19c[0] = (bool)((bVar1 != 0x39) + '\f');
     break;
   case 0x3e:
@@ -350,7 +351,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     g_currentExceptionFrame = local_e8.previous;
     return;
   case 0x4f:
-    pbVar6 = local_20;
+    pbVar7 = local_20;
     local_20[4] = false;
     local_20[0] = true;
     local_20[1] = false;
@@ -362,37 +363,37 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     local_20[8] = true;
     local_20[9] = true;
     local_20[10] = true;
-    puVar8 = (undefined4 *)0x1e;
+    puVar9 = (undefined4 *)0x1e;
     break;
   case 0x50:
   case 0x51:
-    pbVar6 = local_154;
-    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pbVar6[0] = false;
-      pbVar6[1] = false;
-      pbVar6[2] = false;
-      pbVar6[3] = false;
-      pbVar6 = pbVar6 + 4;
-    }
-    *pbVar6 = false;
-    pbVar6 = local_154;
-    local_154[0] = (bool)((bVar1 != 0x50) + '\x1b');
-    puVar8 = (undefined4 *)0x17;
-    break;
-  case 0x52:
-    pbVar6 = local_5c;
-    pbVar7 = local_5c;
-    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+    pbVar7 = local_154;
+    for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
       pbVar7[0] = false;
       pbVar7[1] = false;
       pbVar7[2] = false;
       pbVar7[3] = false;
       pbVar7 = pbVar7 + 4;
     }
+    *pbVar7 = false;
+    pbVar7 = local_154;
+    local_154[0] = (bool)((bVar1 != 0x50) + '\x1b');
+    puVar9 = (undefined4 *)0x17;
+    break;
+  case 0x52:
+    pbVar7 = local_5c;
+    pbVar8 = local_5c;
+    for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
+      pbVar8[0] = false;
+      pbVar8[1] = false;
+      pbVar8[2] = false;
+      pbVar8[3] = false;
+      pbVar8 = pbVar8 + 4;
+    }
     local_5c[0] = true;
-    puVar8 = (undefined4 *)0x16;
+    puVar9 = (undefined4 *)0x16;
   }
-  thunk_FUN_0054edf0(puVar8,(uint *)pbVar6,0,0xffffffff);
+  thunk_FUN_0054edf0(puVar9,(uint *)pbVar7,0,0xffffffff);
 switchD_0050f5b2_caseD_4:
   g_currentExceptionFrame = local_e8.previous;
   return;

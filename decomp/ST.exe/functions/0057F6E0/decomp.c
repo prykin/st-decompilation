@@ -17,15 +17,19 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   short sVar2;
   short sVar3;
   STDcResourcC *this_00;
+  int local_EAX_43;
+  int iVar6;
+  STT3DSprC *pSVar7;
+  char *pcVar8;
   int iVar5;
-  STT3DSprC *pSVar6;
-  char *pcVar7;
-  STWorldObject *pSVar8;
-  int iVar9;
-  int iVar10;
+  STWorldObject *pSVar9;
+  int local_EAX_1699;
   int iVar11;
+  int iVar10;
   int iVar12;
-  byte bVar13;
+  int iVar13;
+  int iVar14;
+  Global_mfRLoad_param_2Enum GVar15;
   InternalExceptionFrame local_5c;
   STDcResourcC *local_18;
   int local_14;
@@ -37,16 +41,16 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
+  local_EAX_43 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_18;
-  if (iVar5 != 0) {
+  if (local_EAX_43 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar10 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x2b3,0,iVar5,"%s",
-                                "STDcResourcC::CreateRes");
+    iVar10 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x2b3,0,local_EAX_43,
+                                "%s","STDcResourcC::CreateRes");
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,"E:\\__titans\\Igor\\To_gold.cpp",0x2b4);
+    RaiseInternalException(local_EAX_43,0,"E:\\__titans\\Igor\\To_gold.cpp",0x2b4);
     return 0xffff;
   }
   switch(local_18->field_0255) {
@@ -54,39 +58,39 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
     local_c = -1;
     local_14 = 0;
     do {
-      iVar5 = *(int *)((int)&DAT_007cb0b8 + local_14);
+      iVar12 = *(int *)((int)&DAT_007cb0b8 + local_14);
       local_10 = *(int *)((int)&DAT_007cb0dc + local_14);
-      iVar10 = this_00->field_0245 + iVar5;
-      if (((((iVar10 < g_worldGrid.sizeX) && (-1 < iVar10)) &&
-           (iVar10 = this_00->field_0249 + local_10, iVar10 < g_worldGrid.sizeY)) &&
-          ((-1 < iVar10 && (-1 < (int)this_00->field_024D)))) && ((int)this_00->field_024D < 5)) {
+      iVar6 = this_00->field_0245 + iVar12;
+      if (((((iVar6 < g_worldGrid.sizeX) && (-1 < iVar6)) &&
+           (iVar6 = this_00->field_0249 + local_10, iVar6 < g_worldGrid.sizeY)) &&
+          ((-1 < iVar6 && (-1 < (int)this_00->field_024D)))) && ((int)this_00->field_024D < 5)) {
         if (this_00 == nullptr) {
-          pSVar6 = nullptr;
+          pSVar7 = nullptr;
         }
         else {
-          pSVar6 = (STT3DSprC *)&this_00->field_01D5;
+          pSVar7 = (STT3DSprC *)&this_00->field_01D5;
         }
-        if ((3 < local_14) && (pSVar6 = (STT3DSprC *)Init(this_00), pSVar6 == nullptr))
+        if ((3 < local_14) && (pSVar7 = (STT3DSprC *)Init(this_00), pSVar7 == nullptr))
         goto cf_break_loop_0057FAA5;
-        bVar13 = 0x1d;
-        pcVar7 = (char *)sub_0057F3A0(this_00,local_c,0);
-        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xe,PTR_00806774,pcVar7,bVar13);
-        if (iVar10 != 0) goto cf_break_loop_0057FAA5;
-        bVar13 = 0x1d;
-        pcVar7 = (char *)sub_0057F3A0(this_00,local_c,1);
-        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xd,PTR_00806774,pcVar7,bVar13);
-        if (iVar10 != 0) goto cf_break_loop_0057FAA5;
-        STT3DSprC::StartShow(pSVar6,0xe,g_playSystem_00802A38->field_00E4);
-        STT3DSprC::sub_004ACEF0(pSVar6,PTR_008073cc);
-        STT3DSprC::sub_004ACF50(pSVar6,'\r');
-        STT3DSprC::StartShow(pSVar6,0xd,g_playSystem_00802A38->field_00E4);
-        iVar10 = this_00->field_0249 + local_10;
-        local_10 = this_00->field_0245 + iVar5;
+        GVar15 = CASE_1D;
+        pcVar8 = (char *)sub_0057F3A0(this_00,local_c,0);
+        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,pcVar8,GVar15);
+        if (iVar6 != 0) goto cf_break_loop_0057FAA5;
+        GVar15 = CASE_1D;
+        pcVar8 = (char *)sub_0057F3A0(this_00,local_c,1);
+        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,pcVar8,GVar15);
+        if (iVar6 != 0) goto cf_break_loop_0057FAA5;
+        STT3DSprC::StartShow(pSVar7,0xe,g_playSystem_00802A38->field_00E4);
+        STT3DSprC::sub_004ACEF0(pSVar7,PTR_008073cc);
+        STT3DSprC::sub_004ACF50(pSVar7,'\r');
+        STT3DSprC::StartShow(pSVar7,0xd,g_playSystem_00802A38->field_00E4);
+        iVar6 = this_00->field_0249 + local_10;
+        local_10 = this_00->field_0245 + iVar12;
         STT3DSprC::sub_004AD3C0
-                  (pSVar6,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
-                   (float)iVar10 * _DAT_007904f8 + _DAT_007904f4,
+                  (pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
+                   (float)iVar6 * _DAT_007904f8 + _DAT_007904f4,
                    (float)(int)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
-        Library::Ourlib::ST3DSMAP::SprSetLevAfter((void *)this_00->field_0211,pSVar6->field_0018,-1);
+        Library::Ourlib::ST3DSMAP::SprSetLevAfter((void *)this_00->field_0211,pSVar7->field_0018,-1);
       }
       local_14 = local_14 + 4;
       local_c = local_c + 1;
@@ -96,84 +100,83 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
     local_c = -1;
     local_14 = 0;
     do {
-      iVar5 = *(int *)((int)&DAT_007cb0b8 + local_14);
+      iVar12 = *(int *)((int)&DAT_007cb0b8 + local_14);
       local_10 = *(int *)((int)&DAT_007cb0dc + local_14);
-      iVar10 = this_00->field_0245 + iVar5;
-      if ((((iVar10 < g_worldGrid.sizeX) && (-1 < iVar10)) &&
-          (iVar10 = this_00->field_0249 + local_10, iVar10 < g_worldGrid.sizeY)) &&
-         (((-1 < iVar10 && (-1 < (int)this_00->field_024D)) && ((int)this_00->field_024D < 5)))) {
+      iVar6 = this_00->field_0245 + iVar12;
+      if ((((iVar6 < g_worldGrid.sizeX) && (-1 < iVar6)) &&
+          (iVar6 = this_00->field_0249 + local_10, iVar6 < g_worldGrid.sizeY)) &&
+         (((-1 < iVar6 && (-1 < (int)this_00->field_024D)) && ((int)this_00->field_024D < 5)))) {
         if (this_00 == nullptr) {
-          pSVar6 = nullptr;
+          pSVar7 = nullptr;
         }
         else {
-          pSVar6 = (STT3DSprC *)&this_00->field_01D5;
+          pSVar7 = (STT3DSprC *)&this_00->field_01D5;
         }
-        if ((3 < local_14) && (pSVar6 = (STT3DSprC *)Init(this_00), pSVar6 == nullptr))
+        if ((3 < local_14) && (pSVar7 = (STT3DSprC *)Init(this_00), pSVar7 == nullptr))
         goto cf_break_loop_0057FAA5;
-        bVar13 = 0x1d;
-        pcVar7 = (char *)sub_0057F2E0(this_00,local_c,0);
-        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xe,PTR_00806774,pcVar7,bVar13);
-        if (iVar10 != 0) goto cf_break_loop_0057FAA5;
-        bVar13 = 0x1d;
-        pcVar7 = (char *)sub_0057F2E0(this_00,local_c,1);
-        iVar10 = STT3DSprC::LoadSequence(pSVar6,0xd,PTR_00806774,pcVar7,bVar13);
-        if (iVar10 != 0) goto cf_break_loop_0057FAA5;
-        STT3DSprC::StartShow(pSVar6,0xe,g_playSystem_00802A38->field_00E4);
-        STT3DSprC::sub_004ACEF0(pSVar6,PTR_008073cc);
-        STT3DSprC::sub_004ACF50(pSVar6,'\r');
-        STT3DSprC::StartShow(pSVar6,0xd,g_playSystem_00802A38->field_00E4);
-        iVar10 = this_00->field_0249 + local_10;
-        local_10 = this_00->field_0245 + iVar5;
+        GVar15 = CASE_1D;
+        pcVar8 = (char *)sub_0057F2E0(this_00,local_c,0);
+        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,pcVar8,GVar15);
+        if (iVar6 != 0) goto cf_break_loop_0057FAA5;
+        GVar15 = CASE_1D;
+        pcVar8 = (char *)sub_0057F2E0(this_00,local_c,1);
+        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,pcVar8,GVar15);
+        if (iVar6 != 0) goto cf_break_loop_0057FAA5;
+        STT3DSprC::StartShow(pSVar7,0xe,g_playSystem_00802A38->field_00E4);
+        STT3DSprC::sub_004ACEF0(pSVar7,PTR_008073cc);
+        STT3DSprC::sub_004ACF50(pSVar7,'\r');
+        STT3DSprC::StartShow(pSVar7,0xd,g_playSystem_00802A38->field_00E4);
+        iVar6 = this_00->field_0249 + local_10;
+        local_10 = this_00->field_0245 + iVar12;
         STT3DSprC::sub_004AD3C0
-                  (pSVar6,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
-                   (float)iVar10 * _DAT_007904f8 + _DAT_007904f4,
+                  (pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
+                   (float)iVar6 * _DAT_007904f8 + _DAT_007904f4,
                    (float)(int)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
-        Library::Ourlib::ST3DSMAP::SprSetLevAfter((void *)this_00->field_0211,pSVar6->field_0018,-1);
+        Library::Ourlib::ST3DSMAP::SprSetLevAfter((void *)this_00->field_0211,pSVar7->field_0018,-1);
       }
       local_14 = local_14 + 4;
       local_c = local_c + 1;
     } while (local_14 < 0x21);
     break;
   case CASE_DE:
-    iVar5 = -1;
+    iVar12 = -1;
     do {
-      if (iVar5 == 1) {
-        iVar5 = 0;
+      if (iVar12 == 1) {
+        iVar12 = 0;
       }
-      local_c = (&DAT_007cb0bc)[iVar5];
-      local_10 = (&DAT_007cb0e0)[iVar5];
-      iVar10 = local_c + this_00->field_0245;
-      if ((((iVar10 < g_worldGrid.sizeX) && (-1 < iVar10)) &&
-          ((iVar10 = this_00->field_0249 + local_10, iVar10 < g_worldGrid.sizeY &&
-           ((-1 < iVar10 && (-1 < (int)this_00->field_024D)))))) && ((int)this_00->field_024D < 5))
-      {
+      local_c = (&DAT_007cb0bc)[iVar12];
+      local_10 = (&DAT_007cb0e0)[iVar12];
+      iVar6 = local_c + this_00->field_0245;
+      if ((((iVar6 < g_worldGrid.sizeX) && (-1 < iVar6)) &&
+          ((iVar6 = this_00->field_0249 + local_10, iVar6 < g_worldGrid.sizeY &&
+           ((-1 < iVar6 && (-1 < (int)this_00->field_024D)))))) && ((int)this_00->field_024D < 5)) {
         if (this_00 == nullptr) {
-          pSVar6 = nullptr;
+          pSVar7 = nullptr;
         }
         else {
-          pSVar6 = (STT3DSprC *)&this_00->field_01D5;
+          pSVar7 = (STT3DSprC *)&this_00->field_01D5;
         }
-        if ((iVar5 < 0) || (pSVar6 = (STT3DSprC *)Init(this_00), pSVar6 != nullptr)) {
-          bVar13 = 0x1d;
-          pcVar7 = (char *)sub_0057F470(this_00,iVar5,0);
-          iVar10 = STT3DSprC::LoadSequence(pSVar6,0xe,PTR_00806774,pcVar7,bVar13);
-          if (iVar10 == 0) {
-            bVar13 = 0x1d;
-            pcVar7 = (char *)sub_0057F470(this_00,iVar5,1);
-            iVar10 = STT3DSprC::LoadSequence(pSVar6,0xd,PTR_00806774,pcVar7,bVar13);
-            if (iVar10 == 0) {
-              STT3DSprC::StartShow(pSVar6,0xe,g_playSystem_00802A38->field_00E4);
-              STT3DSprC::sub_004ACEF0(pSVar6,PTR_008073cc);
-              STT3DSprC::sub_004ACF50(pSVar6,'\r');
-              STT3DSprC::StartShow(pSVar6,0xd,g_playSystem_00802A38->field_00E4);
+        if ((iVar12 < 0) || (pSVar7 = (STT3DSprC *)Init(this_00), pSVar7 != nullptr)) {
+          GVar15 = CASE_1D;
+          pcVar8 = (char *)sub_0057F470(this_00,iVar12,0);
+          iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,pcVar8,GVar15);
+          if (iVar6 == 0) {
+            GVar15 = CASE_1D;
+            pcVar8 = (char *)sub_0057F470(this_00,iVar12,1);
+            iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,pcVar8,GVar15);
+            if (iVar6 == 0) {
+              STT3DSprC::StartShow(pSVar7,0xe,g_playSystem_00802A38->field_00E4);
+              STT3DSprC::sub_004ACEF0(pSVar7,PTR_008073cc);
+              STT3DSprC::sub_004ACF50(pSVar7,'\r');
+              STT3DSprC::StartShow(pSVar7,0xd,g_playSystem_00802A38->field_00E4);
               local_14 = this_00->field_0245 + local_c;
               STT3DSprC::sub_004AD3C0
-                        (pSVar6,(float)local_14 * _DAT_007904f8 + _DAT_007904f4,
+                        (pSVar7,(float)local_14 * _DAT_007904f8 + _DAT_007904f4,
                          (float)(this_00->field_0249 + local_10) * _DAT_007904f8 + _DAT_007904f4,
                          (float)(int)this_00->field_024D * _DAT_00790504 + _DAT_00790500 +
                          _DAT_007904fc);
               Library::Ourlib::ST3DSMAP::SprSetLevAfter
-                        ((void *)this_00->field_0211,pSVar6->field_0018,-1);
+                        ((void *)this_00->field_0211,pSVar7->field_0018,-1);
               goto LAB_0057fc59;
             }
           }
@@ -182,9 +185,9 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         break;
       }
 LAB_0057fc59:
-      iVar5 = iVar5 + 2;
-    } while (iVar5 < 7);
-    if (iVar5 != 8) {
+      iVar12 = iVar12 + 2;
+    } while (iVar12 < 7);
+    if (iVar12 != 8) {
       local_8 = 0;
     }
     goto LAB_0057fd72;
@@ -193,21 +196,21 @@ LAB_0057fc59:
   case CASE_E0:
     if ((((((int)local_18->field_0245 < (int)g_worldGrid.sizeX) && (-1 < (int)local_18->field_0245))
          && (local_18->field_0249 < (int)g_worldGrid.sizeY)) &&
-        ((-1 < local_18->field_0249 && (iVar5 = local_18->field_024D, -1 < iVar5)))) &&
-       ((iVar5 < 5 &&
+        ((-1 < local_18->field_0249 && (iVar12 = local_18->field_024D, -1 < iVar12)))) &&
+       ((iVar12 < 5 &&
         (iVar5 = thunk_FUN_004961b0(*(short *)&local_18->field_0245,(short)local_18->field_0249,
-                                    (short)iVar5), iVar5 != 0)))) {
+                                    (short)iVar12), iVar5 != 0)))) {
       sVar1 = *(short *)&this_00->field_0245;
       sVar2 = *(short *)&this_00->field_024D;
       sVar3 = (short)this_00->field_0249;
       if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
          (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
-        pSVar8 = nullptr;
+        pSVar9 = nullptr;
       }
       else {
-        pSVar8 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
+        pSVar9 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
       }
-      if (pSVar8 == nullptr) {
+      if (pSVar9 == nullptr) {
         sub_005805C0(this_00);
         goto LAB_0057fd72;
       }
@@ -220,36 +223,36 @@ LAB_0057faac:
   }
 LAB_0057fd72:
   if (local_8 != 0) {
-    iVar5 = thunk_FUN_004ab050();
+    local_EAX_1699 = thunk_FUN_004ab050();
     local_c = 0;
     if (0 < this_00->field_0265) {
-      iVar10 = iVar5 * 2 + 1;
-      local_10 = iVar5 * 8 + -0x1c;
-      iVar5 = iVar10 * 4;
+      iVar12 = local_EAX_1699 * 2 + 1;
+      local_10 = local_EAX_1699 * 8 + -0x1c;
+      iVar6 = iVar12 * 4;
       do {
-        iVar9 = iVar5;
-        if (8 < iVar10) {
-          iVar9 = local_10;
+        iVar11 = iVar6;
+        if (8 < iVar12) {
+          iVar11 = local_10;
         }
-        local_14 = *(int *)((int)&DAT_007cb0b8 + iVar9) + this_00->field_0245;
+        local_14 = *(int *)((int)&DAT_007cb0b8 + iVar11) + this_00->field_0245;
         STT3DSprC::sub_004AD3C0
                   (*(STT3DSprC **)(&this_00->field_026D->field_0000 + local_c * 4),
                    (float)local_14 * _DAT_007904f8 + _DAT_007904f4,
-                   (float)(*(int *)((int)&DAT_007cb0dc + iVar9) + this_00->field_0249) *
+                   (float)(*(int *)((int)&DAT_007cb0dc + iVar11) + this_00->field_0249) *
                    _DAT_007904f8 + _DAT_007904f4,
                    (float)(int)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
-        iVar11 = iVar5 + 4;
-        iVar12 = iVar10 + 1;
-        iVar9 = local_10 + 4;
+        iVar13 = iVar6 + 4;
+        iVar14 = iVar12 + 1;
+        iVar11 = local_10 + 4;
         if (this_00->field_0255 == CASE_DE) {
-          iVar11 = iVar5 + 8;
-          iVar12 = iVar10 + 2;
-          iVar9 = local_10 + 8;
+          iVar13 = iVar6 + 8;
+          iVar14 = iVar12 + 2;
+          iVar11 = local_10 + 8;
         }
-        local_10 = iVar9;
+        local_10 = iVar11;
         local_c = local_c + 1;
-        iVar5 = iVar11;
-        iVar10 = iVar12;
+        iVar6 = iVar13;
+        iVar12 = iVar14;
       } while (local_c < this_00->field_0265);
     }
   }

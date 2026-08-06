@@ -17,14 +17,16 @@ void __thiscall AiFltClassTy::sub_00660F70(AiFltClassTy *this,uint *param_1,unde
   uint uVar5;
   Global_sub_004E80F0_param_2Enum *pGVar6;
   STAllPlayersC *pSVar7;
-  int iVar8;
+  int iVar9;
   DArrayTy *array;
-  STGameObjC *pSVar9;
-  short sVar10;
-  undefined4 uVar11;
+  STGameObjC *pSVar10;
+  int iVar8;
+  int local_EAX_1023;
+  short sVar11;
+  undefined4 uVar12;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
-  AnonShape_0068EB30_4F4B480A *pAVar12;
+  AnonShape_0068EB30_4F4B480A *pAVar13;
   AnonShape_0068EB30_4F4B480A local_6c;
   AiPlrClassTy *local_20;
   int local_1c;
@@ -37,14 +39,14 @@ void __thiscall AiFltClassTy::sub_00660F70(AiFltClassTy *this,uint *param_1,unde
   if (((this->field_0284 != nullptr) && (this->field_020B != nullptr)) &&
      (g_allPlayers_007FA174 != nullptr)) {
     local_20 = thunk_FUN_004357f0(*(char *)&this->field_0024);
-    sVar10 = this->field_007B;
+    sVar11 = this->field_007B;
     local_c = 0;
-    if ((-(uint)(sVar10 != 1) & 2) != 0xffffffff) {
+    if ((-(uint)(sVar11 != 1) & 2) != 0xffffffff) {
       local_8 = param_1;
       pSVar7 = g_allPlayers_007FA174;
       do {
         GVar1 = *local_8;
-        if ((GVar1 == 0) || (((GVar1 == 0 || (0x28 < GVar1)) && (sVar10 != 1))))
+        if ((GVar1 == 0) || (((GVar1 == 0 || (0x28 < GVar1)) && (sVar11 != 1))))
         goto cf_continue_loop_0066137E;
         if ((((int)GVar1 < 1) || (0x28 < (int)GVar1)) || (pSVar7 == nullptr)) {
           if ((((int)GVar1 < 0x32) || (0x73 < (int)GVar1)) || (pSVar7 == nullptr)) {
@@ -79,54 +81,54 @@ void __thiscall AiFltClassTy::sub_00660F70(AiFltClassTy *this,uint *param_1,unde
         case 0x1a:
         case 0x3b:
         case 0x60:
-          iVar8 = *(int *)(this->field_0284 + 0x9c);
+          iVar9 = *(int *)(this->field_0284 + 0x9c);
           if (this->field_0039 != 3) {
-            if (iVar8 != 0) goto switchD_0066104e_caseD_9;
+            if (iVar9 != 0) goto switchD_0066104e_caseD_9;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            iVar8 = *(int *)(this->field_0284 + 0x9a);
+            iVar9 = *(int *)(this->field_0284 + 0x9a);
           }
-          if (iVar8 == 0) goto cf_continue_loop_0066137E;
+          if (iVar9 == 0) goto cf_continue_loop_0066137E;
         default:
           goto switchD_0066104e_caseD_9;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         case 0x39:
         case 0x5e:
-          iVar8 = *(int *)(this->field_0284 + 0x9c);
+          iVar9 = *(int *)(this->field_0284 + 0x9c);
           break;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         case 0x3a:
-          iVar8 = *(int *)(this->field_0284 + 0x9e);
+          iVar9 = *(int *)(this->field_0284 + 0x9e);
           break;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         case 0x4f:
         case 0x61:
-          iVar8 = *(int *)(this->field_0284 + 0x9a);
+          iVar9 = *(int *)(this->field_0284 + 0x9a);
           break;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         case 100:
-          iVar8 = *(int *)(this->field_0284 + 0xa0);
+          iVar9 = *(int *)(this->field_0284 + 0xa0);
         }
-        if (iVar8 != 0) {
+        if (iVar9 != 0) {
 switchD_0066104e_caseD_9:
           if ((0x31 < *local_8) && (*local_8 < 0x74)) {
-            sVar10 = STField<short>(param_1,0xe);
-            uVar11 = STReplaceLowWord((uint32_t)(local_8), (uint16_t)(sVar10));
+            sVar11 = STField<short>(param_1,0xe);
+            uVar12 = STReplaceLowWord((uint32_t)(local_8), (uint16_t)(sVar11));
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-            if ((sVar10 < 0) ||
+            if ((sVar11 < 0) ||
                ((((short)param_1[4] < 0 || (STField<short>(param_1,0x12) < 0)) ||
-                (iVar8 = thunk_FUN_004ae0b0(sVar10,(int)(short)param_1[4],
+                (iVar9 = thunk_FUN_004ae0b0(sVar11,(int)(short)param_1[4],
                                             (int)STField<short>(param_1,0x12),*local_8,
                                             this->field_0024,nullptr,nullptr,nullptr
-                                            ,0,nullptr), uVar11 = extraout_EDX, iVar8 == 0)))) {
+                                            ,0,nullptr), uVar12 = extraout_EDX, iVar9 == 0)))) {
               local_10 = nullptr;
               if (((0x53 < *local_8) && (*local_8 < 0x5b)) &&
-                 (array = (DArrayTy *)sub_0065E360(this,uVar11,0x53), array != nullptr)) {
+                 (array = (DArrayTy *)sub_0065E360(this,uVar12,0x53), array != nullptr)) {
                 if (((array->count != 0) && (g_allPlayers_007FA174 != nullptr)) &&
-                   (pSVar9 = STAllPlayersC::GetObjPtr
-                                       (g_allPlayers_007FA174,*(char *)&this->field_0024,
-                                        *(ushort *)array->data,CASE_1), pSVar9 != nullptr)
-                   ) {
-                  local_10 = pSVar9;
+                   (pSVar10 = STAllPlayersC::GetObjPtr
+                                        (g_allPlayers_007FA174,*(char *)&this->field_0024,
+                                         *(ushort *)array->data,CASE_1),
+                   pSVar10 != nullptr)) {
+                  local_10 = pSVar10;
                 }
                 DArrayDestroy(array);
               }
@@ -134,10 +136,10 @@ switchD_0066104e_caseD_9:
               puVar2 = this->field_0284;
               local_18 = (int)(short)param_1[4];
               local_1c = (int)STField<short>(param_1,0x12);
-              iVar8 = thunk_FUN_004b0d10(this->field_0024,*local_8,&local_14,&local_18,&local_1c,
+              iVar9 = thunk_FUN_004b0d10(this->field_0024,*local_8,&local_14,&local_18,&local_1c,
                                          (int)(short)puVar2[0x41],(int)(short)puVar2[0x42],
                                          (int)(short)puVar2[0x43],(int)local_10);
-              if (iVar8 == 0) {
+              if (iVar9 == 0) {
                 return;
               }
               STField<undefined2>(param_1,0xe) = (undefined2)local_14;
@@ -150,13 +152,13 @@ switchD_0066104e_caseD_9:
             }
           }
           pGVar6 = local_8;
-          pAVar12 = &local_6c;
-          for (iVar8 = 0x12; iVar8 != 0; iVar8 = iVar8 + -1) {
-            *(undefined4 *)pAVar12 = 0;
-            pAVar12 = (AnonShape_0068EB30_4F4B480A *)((int)&pAVar12->field_0003 + 1);
+          pAVar13 = &local_6c;
+          for (iVar9 = 0x12; iVar9 != 0; iVar9 = iVar9 + -1) {
+            *(undefined4 *)pAVar13 = 0;
+            pAVar13 = (AnonShape_0068EB30_4F4B480A *)((int)&pAVar13->field_0003 + 1);
           }
           uVar5 = param_1[3];
-          *(undefined2 *)pAVar12 = 0;
+          *(undefined2 *)pAVar13 = 0;
           STPiece<0,4>(local_6c) = *pGVar6;
           STPiece<4,2>(local_6c) = param_2;
           if (local_20 == nullptr) {
@@ -179,10 +181,11 @@ switchD_0066104e_caseD_9:
           }
           local_6c.field_0006 = (short)uVar5;
           Library::MSVCRT::_strncpy(&local_6c.field_0x1d,(char *)((int)param_1 + 0x15),0xe);
-          iVar8 = AiTactClassTy::PrepareToSave
-                            ((AiTactClassTy *)this->field_0284,&local_6c,this->field_007F);
+          local_EAX_1023 =
+               AiTactClassTy::PrepareToSave
+                         ((AiTactClassTy *)this->field_0284,&local_6c,this->field_007F);
           pSVar7 = g_allPlayers_007FA174;
-          if (iVar8 == 0) {
+          if (local_EAX_1023 == 0) {
             param_1[9] = STPiece<8,4>(local_6c);
             return;
           }
@@ -190,8 +193,8 @@ switchD_0066104e_caseD_9:
 cf_continue_loop_0066137E:
         local_8 = local_8 + 1;
         local_c = local_c + 1;
-        sVar10 = this->field_007B;
-        if ((int)((-(uint)(sVar10 != 1) & 2) + 1) <= local_c) {
+        sVar11 = this->field_007B;
+        if ((int)((-(uint)(sVar11 != 1) & 2) + 1) <= local_c) {
           return;
         }
       } while( true );

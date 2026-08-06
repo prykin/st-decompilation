@@ -10,6 +10,7 @@ char * FUN_007499dc(char *param_1)
   char *pcVar4;
   char *pcVar5;
   bool bVar6;
+  char *pcVar5_mg0;
 
   iVar3 = 0;
   ppuVar2 = &PTR_DAT_007a1270;
@@ -17,13 +18,13 @@ char * FUN_007499dc(char *param_1)
     iVar1 = 0x10;
     bVar6 = true;
     pcVar4 = *ppuVar2;
-    pcVar5 = param_1;
+    pcVar5_mg0 = param_1;
     do {
       if (iVar1 == 0) break;
       iVar1 = iVar1 + -1;
-      bVar6 = *pcVar4 == *pcVar5;
+      bVar6 = *pcVar4 == *pcVar5_mg0;
       pcVar4 = pcVar4 + 1;
-      pcVar5 = pcVar5 + 1;
+      pcVar5_mg0 = pcVar5_mg0 + 1;
     } while (bVar6);
     if (bVar6) {
       return *(char **)(&UNK_007a1278 + iVar3 * 0xc);

@@ -11,9 +11,12 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
 {
   int iVar1;
   CGenerate *this_00;
+  int local_EAX_536;
+  int local_EAX_1032;
   int iVar2;
-  AnonShape_006952B0_7A982E30 *pAVar3;
+  int iVar3;
   AnonShape_006952B0_7A982E30 *pAVar4;
+  AnonShape_006952B0_7A982E30 *pAVar5;
   InternalExceptionFrame local_d4;
   DArrayTy *local_78;
   DArrayTy *local_74;
@@ -45,20 +48,20 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
   local_c = 0;
   local_4c = this;
   Library::MSVCRT::FUN_0072e6b0(*(DWORD *)param_1);
-  pAVar3 = param_1;
-  pAVar4 = &this->aggregate_001C;
-  memmove(pAVar4, pAVar3, 0x232); /* compiler REP MOVS byte copy */
-  iVar2 = CreateMap(this);
+  pAVar4 = param_1;
+  pAVar5 = &this->aggregate_001C;
+  memmove(pAVar5, pAVar4, 0x232); /* compiler REP MOVS byte copy */
+  iVar3 = CreateMap(this);
   sub_0069FF90(this);
-  if (iVar2 != 0) {
+  if (iVar3 != 0) {
     local_10 = 1;
     local_48 = timeGetTime();
     local_3c = 0;
     local_70 = timeGetTime();
     local_28 = param_1->field_0214;
-    iVar2 = thunk_FUN_00698f90(param_1->field_020C,param_1->field_0210,local_28,
+    iVar3 = thunk_FUN_00698f90(param_1->field_020C,param_1->field_0210,local_28,
                                (uint)(byte)param_1->field_0x22d,(int *)&local_1c,&local_18);
-    if (iVar2 == 0) {
+    if (iVar3 == 0) {
       local_1c = local_28 * 3;
       local_18 = 1;
     }
@@ -72,7 +75,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
     local_44 = local_44 / 3;
     local_8 = Library::DKW::LIB::MemAlloc(local_28 * 4);
     memset(&stack0xffffff70, 0, 0x20); /* compiler bulk-zero initialization */
-    iVar2 = 0;
+    iVar3 = 0;
     local_54 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x40,10);
     local_78 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x40,10);
     local_50 = Library::DKW::TBL::DArrayCreate(nullptr,local_1c,0xf,10);
@@ -93,8 +96,8 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       sub_0069FF90(this);
       sub_00696740(this,0);
       sub_0069FF90(this);
-      iVar2 = sub_006971B0(this);
-      this->field_583F = iVar2;
+      local_EAX_536 = sub_006971B0(this);
+      this->field_583F = local_EAX_536;
       sub_0069FF90(this);
       sub_00696DC0(this,this->field_583F,local_2c);
       sub_0069FF90(this);
@@ -142,10 +145,11 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       sub_00695EB0(this);
       sub_0069FF90(this);
-      iVar2 = thunk_FUN_00695180((AnonShape_0052EFB0_8161B92D *)&local_6c,
-                                 (RecoveredRecord_CGenerate_00695180 *)&stack0xffffff70,
-                                 (int)&local_38,local_c);
-      if (iVar2 == 0) {
+      local_EAX_1032 =
+           thunk_FUN_00695180((AnonShape_0052EFB0_8161B92D *)&local_6c,
+                              (RecoveredRecord_CGenerate_00695180 *)&stack0xffffff70,(int)&local_38,
+                              local_c);
+      if (local_EAX_1032 == 0) {
         sub_00694B90(this);
       }
       else {
@@ -168,9 +172,9 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       sub_0069CB50((int *)this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      iVar2 = *this->field_0008;
+      iVar3 = *this->field_0008;
       iVar1 = this->field_0008[1];
-      thunk_FUN_0069f160(this,iVar2 * 2,iVar1 * 2,local_34,(iVar2 * iVar1 * 4) / 100);
+      thunk_FUN_0069f160(this,iVar3 * 2,iVar1 * 2,local_34,(iVar3 * iVar1 * 4) / 100);
       local_40 = SaveMap(this);
       sub_0069FF90(this);
       if (DAT_00853dd4 != nullptr) {

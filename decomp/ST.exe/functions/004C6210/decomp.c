@@ -50,7 +50,8 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,int 
   thunk_FUN_004ad5e0(this->field_002C);
   iVar2 = STT3DSprC::LoadSequence
                     (this->field_002C,0,PTR_0080678c,
-                     *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),0x1d);
+                     *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),
+                     CASE_1D);
   if (iVar2 != 0) {
     RaiseInternalException
               (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x4c);

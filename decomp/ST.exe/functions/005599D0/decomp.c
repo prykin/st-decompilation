@@ -39,7 +39,7 @@ VisibleClassTy::sub_005599D0
   if ((((this->field_0114 != 0) && (-1 < param_5)) && (param_4 < 8)) &&
      (((g_playSystem_00802A38 == nullptr ||
        (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)) &&
-      (this->field_003C[param_4 + 6] != 0)))) {
+      (this->field_003C[param_4 + 6] != nullptr)))) {
     sub_0055BBC0(this,2,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     iVar1 = param_5 * 2 + 1;
     iVar5 = param_1 - param_5;
@@ -58,9 +58,9 @@ VisibleClassTy::sub_005599D0
              ((-1 < iVar7 &&
               (((iVar7 < this->field_0020 && (-1 < iVar8)) && (iVar8 < this->field_0024)))))) {
             iVar6 = iVar8 * this->field_0020;
-            cVar2 = *(char *)(this->field_003C[param_4 + 6] + iVar7 + iVar6);
+            cVar2 = *(char *)((int)this->field_003C[param_4 + 6] + iVar7 + iVar6);
             if (cVar2 != '\0') {
-              *(char *)(this->field_003C[param_4 + 6] + iVar7 + iVar6) = cVar2 + -1;
+              *(char *)((int)this->field_003C[param_4 + 6] + iVar7 + iVar6) = cVar2 + -1;
             }
           }
           iVar4 = iVar4 + 1;

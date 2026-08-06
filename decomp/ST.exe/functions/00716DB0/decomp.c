@@ -27,7 +27,7 @@ void __cdecl FUN_00716db0(int *param_1)
           } while (iVar2 < *piVar1);
         }
       }
-      FreeAndNull((void **)(*param_1 + 0x21));
+      FreeAndNull((void *)(*param_1 + 0x21));
     }
     piVar1 = (int *)*param_1;
     if (STField<int>(piVar1,0x29) != 0) {
@@ -44,9 +44,9 @@ void __cdecl FUN_00716db0(int *param_1)
           } while (iVar2 < *piVar1);
         }
       }
-      FreeAndNull((void **)(*param_1 + 0x29));
+      FreeAndNull((void *)(*param_1 + 0x29));
     }
-    FreeAndNull((void **)param_1);
+    FreeAndNull(param_1);
   }
   return;
 }

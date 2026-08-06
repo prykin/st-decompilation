@@ -9,11 +9,12 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
 
 {
   char cVar1;
+  int iVar2;
   CPanelTy *this_00;
   int iVar3;
-  byte *pbVar4;
-  int iVar5;
-  RecoveredSourceFamily_dibcopy *pRVar6;
+  BITMAPINFO *pBVar4;
+  int iVar4;
+  RecoveredSourceFamily_dibcopy *pRVar5;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
 
@@ -24,9 +25,9 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0xb5,0,iVar3,"%s",
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0xb5,0,iVar3,"%s",
                                "CPanelTy::PaintInfoObj");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0xb5);
@@ -45,8 +46,8 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
              (byte *)this_00->field_09D9[8]);
       goto LAB_004fef26;
     }
-    pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,1);
-    pRVar6 = (RecoveredSourceFamily_dibcopy *)this_00->field_0198;
+    pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,1);
+    pRVar5 = (RecoveredSourceFamily_dibcopy *)this_00->field_0198;
   }
   else {
     if (DAT_0080874e == '\x03') {
@@ -54,21 +55,21 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
              (byte *)this_00->field_09D9[10]);
       goto LAB_004fef26;
     }
-    pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,0);
-    pRVar6 = (RecoveredSourceFamily_dibcopy *)this_00->field_0198;
+    pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,0);
+    pRVar5 = (RecoveredSourceFamily_dibcopy *)this_00->field_0198;
   }
-  DibPut(pRVar6,0,0,'\x01',pbVar4);
+  DibPut(pRVar5,0,0,'\x01',(byte *)pBVar4);
 LAB_004fef26:
   PaintDeep(this_00,0);
   cVar1 = this_00->field_0C51;
   if (((cVar1 == '\x01') || (cVar1 == '\x04')) || (cVar1 == '\x03')) {
     PaintName(this_00,0);
-    iVar3 = this_00->field_0C54;
-    if (((iVar3 != 0xdd) && (iVar3 != 0xde)) && (iVar3 != 0xe0)) {
+    iVar2 = this_00->field_0C54;
+    if (((iVar2 != 0xdd) && (iVar2 != 0xde)) && (iVar2 != 0xe0)) {
       PaintLife(this_00,0);
     }
-    iVar3 = this_00->field_0C54;
-    if (((iVar3 != 0xdd) && (iVar3 != 0xde)) && (iVar3 != 0xe0)) {
+    iVar2 = this_00->field_0C54;
+    if (((iVar2 != 0xdd) && (iVar2 != 0xde)) && (iVar2 != 0xe0)) {
       PaintWeap(this_00,0);
     }
     if ((DAT_0080874e == '\x03') && (this_00->field_0C58 == '\x03')) {

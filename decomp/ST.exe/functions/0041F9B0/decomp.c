@@ -19,15 +19,18 @@ STSprGameObjC::CheckRay
   byte bVar1;
   byte bVar2;
   byte bVar4;
+  int local_EAX_47;
   int iVar5;
-  undefined4 uVar6;
-  short sVar7;
-  short sVar8;
   int iVar9;
-  STWorldObject *pSVar10;
-  short sVar11;
-  int iVar12;
-  bool bVar13;
+  undefined4 uVar5;
+  short sVar6;
+  short sVar7;
+  int iVar8;
+  int iVar10;
+  STWorldObject *pSVar11;
+  short sVar12;
+  int iVar13;
+  bool bVar14;
   InternalExceptionFrame local_ac;
   int local_68;
   int local_64;
@@ -62,19 +65,19 @@ STSprGameObjC::CheckRay
   local_ac.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ac;
   local_1c = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0);
-  if (iVar5 != 0) {
+  local_EAX_47 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0);
+  if (local_EAX_47 != 0) {
     g_currentExceptionFrame = local_ac.previous;
-    if (iVar5 != -0x5001fff7) {
-      if (iVar5 == -0x5001fff6) {
+    if (local_EAX_47 != -0x5001fff7) {
+      if (local_EAX_47 == -0x5001fff6) {
         return 1;
       }
-      iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xb9b,0,iVar5,"%s"
-                                 ,"STSprGameObjC::CheckRay");
+      iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xb9b,0,local_EAX_47,
+                                 "%s","STSprGameObjC::CheckRay");
       if (iVar9 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar5,0,"E:\\__titans\\wlad\\Tc_gobj.cpp",0xb9c);
+      RaiseInternalException(local_EAX_47,0,"E:\\__titans\\wlad\\Tc_gobj.cpp",0xb9c);
     }
     return 0;
   }
@@ -121,102 +124,102 @@ STSprGameObjC::CheckRay
     local_14 = (int)param_2;
     local_10 = (int)param_3;
     do {
-      iVar9 = (local_60 * local_28) / local_30 + (int)param_1;
-      iVar5 = (local_50 * local_28) / local_30 + (int)param_2;
-      iVar12 = (local_48 * local_28) / local_30 + (int)param_3;
-      local_64 = iVar9;
-      local_5c = iVar5;
-      local_54 = iVar12;
-      local_8 = FUN_006acf0d(local_18,local_14,local_10,iVar9,iVar5,iVar12);
+      iVar10 = (local_60 * local_28) / local_30 + (int)param_1;
+      iVar8 = (local_50 * local_28) / local_30 + (int)param_2;
+      iVar13 = (local_48 * local_28) / local_30 + (int)param_3;
+      local_64 = iVar10;
+      local_5c = iVar8;
+      local_54 = iVar13;
+      local_8 = FUN_006acf0d(local_18,local_14,local_10,iVar10,iVar8,iVar13);
       local_8 = local_8 / 0x32;
       if (local_8 < 1) {
         local_8 = 1;
       }
       if (0 < local_8) {
-        local_4c = iVar12 - local_10;
-        local_68 = iVar5 - local_14;
-        local_58 = iVar9 - local_18;
+        local_4c = iVar13 - local_10;
+        local_68 = iVar8 - local_14;
+        local_58 = iVar10 - local_18;
         local_44 = local_8;
         local_2c = local_68;
         local_24 = local_4c;
         local_20 = local_58;
         do {
-          iVar5 = local_20 / local_8 + local_18;
-          sVar8 = (short)(iVar5 >> 0x1f);
-          if (iVar5 < 0) {
-            local_c = (short)(((short)(iVar5 / 0xc9) + sVar8) -
-                             (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
+          iVar8 = local_20 / local_8 + local_18;
+          sVar7 = (short)(iVar8 >> 0x1f);
+          if (iVar8 < 0) {
+            local_c = (short)(((short)(iVar8 / 0xc9) + sVar7) -
+                             (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)) + -1;
           }
           else {
-            local_c = (int)(short)(((short)(iVar5 / 0xc9) + sVar8) -
-                                  (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
+            local_c = (int)(short)(((short)(iVar8 / 0xc9) + sVar7) -
+                                  (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
           }
-          iVar5 = local_2c / local_8 + local_14;
-          sVar8 = (short)(iVar5 >> 0x1f);
-          if (iVar5 < 0) {
-            iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar8) -
-                           (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) + -1;
-          }
-          else {
-            iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar8) -
-                                (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
-          }
-          iVar9 = local_24 / local_8 + local_10;
-          sVar8 = (short)(iVar9 >> 0x1f);
-          if (iVar9 < 0) {
-            iVar9 = (short)(((short)(iVar9 / 200) + sVar8) -
-                           (short)((longlong)iVar9 * 0x51eb851f >> 0x3f)) + -1;
+          iVar8 = local_2c / local_8 + local_14;
+          sVar7 = (short)(iVar8 >> 0x1f);
+          if (iVar8 < 0) {
+            iVar8 = (short)(((short)(iVar8 / 0xc9) + sVar7) -
+                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)) + -1;
           }
           else {
-            iVar9 = (int)(short)(((short)(iVar9 / 200) + sVar8) -
-                                (short)((longlong)iVar9 * 0x51eb851f >> 0x3f));
+            iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar7) -
+                                (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
           }
-          sVar7 = (short)local_c;
-          sVar8 = (short)iVar5;
-          sVar11 = (short)iVar9;
-          if (((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar8 < 0)) ||
-              ((g_worldGrid.sizeY <= sVar8 || (sVar11 < 0)))) || (g_worldGrid.sizeZ <= sVar11)) {
-            pSVar10 = nullptr;
+          iVar10 = local_24 / local_8 + local_10;
+          sVar7 = (short)(iVar10 >> 0x1f);
+          if (iVar10 < 0) {
+            iVar10 = (short)(((short)(iVar10 / 200) + sVar7) -
+                            (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) + -1;
           }
           else {
-            pSVar10 = STGridAt3D(g_worldGrid, sVar7, sVar8, sVar11).objects[0];
+            iVar10 = (int)(short)(((short)(iVar10 / 200) + sVar7) -
+                                 (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
           }
-          if (((pSVar10 == nullptr) || ((STWorldObjectVTable *)0x7 < pSVar10[1].vtable)
+          sVar6 = (short)local_c;
+          sVar7 = (short)iVar8;
+          sVar12 = (short)iVar10;
+          if (((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar7 < 0)) ||
+              ((g_worldGrid.sizeY <= sVar7 || (sVar12 < 0)))) || (g_worldGrid.sizeZ <= sVar12)) {
+            pSVar11 = nullptr;
+          }
+          else {
+            pSVar11 = STGridAt3D(g_worldGrid, sVar6, sVar7, sVar12).objects[0];
+          }
+          if (((pSVar11 == nullptr) || ((STWorldObjectVTable *)0x7 < pSVar11[1].vtable)
               ) || ((g_playSystem_00802A38 != nullptr &&
-                    (7 < g_bulkInitializedRecords_008087C7[(int)pSVar10[1].vtable].field_0022)))) {
+                    (7 < g_bulkInitializedRecords_008087C7[(int)pSVar11[1].vtable].field_0022)))) {
 LAB_0041fe0d:
-            if (STGridAt3D(g_pathingGrid, local_c, iVar5, iVar9) < 0) {
+            if (STGridAt3D(g_pathingGrid, local_c, iVar8, iVar10) < 0) {
               RaiseInternalException
                         (-0x5001fff7,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb85);
             }
-            sVar7 = (short)local_c;
-            if ((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar8 < 0)) ||
-               (((g_worldGrid.sizeY <= sVar8 || (sVar11 < 0)) || (g_worldGrid.sizeZ <= sVar11)))) {
-              pSVar10 = nullptr;
+            sVar6 = (short)local_c;
+            if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar7 < 0)) ||
+               (((g_worldGrid.sizeY <= sVar7 || (sVar12 < 0)) || (g_worldGrid.sizeZ <= sVar12)))) {
+              pSVar11 = nullptr;
             }
             else {
-              pSVar10 = STGridAt3D(g_worldGrid, sVar7, sVar8, sVar11).objects[1];
+              pSVar11 = STGridAt3D(g_worldGrid, sVar6, sVar7, sVar12).objects[1];
             }
-            if (((pSVar10 != nullptr) &&
-                (pSVar10[1].vtable < (STWorldObjectVTable *)0x8)) &&
+            if (((pSVar11 != nullptr) &&
+                (pSVar11[1].vtable < (STWorldObjectVTable *)0x8)) &&
                (((g_playSystem_00802A38 == nullptr ||
-                 (g_bulkInitializedRecords_008087C7[(int)pSVar10[1].vtable].field_0022 < 8)) &&
-                (local_1c->field_0018 != *(int *)&pSVar10->field_0x18)))) {
-              if ((pSVar10[0xc].value_20 & 0x1000) != 0) {
+                 (g_bulkInitializedRecords_008087C7[(int)pSVar11[1].vtable].field_0022 < 8)) &&
+                (local_1c->field_0018 != *(int *)&pSVar11->field_0x18)))) {
+              if ((pSVar11[0xc].value_20 & 0x1000) != 0) {
                 if (param_8 != nullptr) {
-                  *param_8 = (int)pSVar10;
+                  *param_8 = (int)pSVar11;
                 }
                 RaiseInternalException
                           (-0x5001fff7,g_overwriteContext_007ED77C,
                            "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb8c);
               }
               if (param_9 == 0) {
-                if (((STWorldObjectVTable *)0x7 < pSVar10[1].vtable) ||
+                if (((STWorldObjectVTable *)0x7 < pSVar11[1].vtable) ||
                    ((g_playSystem_00802A38 != nullptr &&
-                    (7 < g_bulkInitializedRecords_008087C7[(int)pSVar10[1].vtable].field_0022))))
+                    (7 < g_bulkInitializedRecords_008087C7[(int)pSVar11[1].vtable].field_0022))))
                 goto cf_continue_loop_0042004A;
-                bVar4 = *(byte *)&pSVar10[1].vtable;
+                bVar4 = *(byte *)&pSVar11[1].vtable;
                 bVar1 = (byte)local_1c->field_0024;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 _local_38 = CONCAT31(uStack_37,bVar4);
@@ -225,32 +228,32 @@ LAB_0041fe0d:
                 if (DAT_00808a8f == '\0') {
                   if (bVar4 == bVar1) {
 LAB_0041fffd:
-                    iVar5 = 0;
+                    iVar8 = 0;
                   }
                   else {
                     bVar2 = g_playerRelationMatrix[bVar4][bVar1];
                     if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar4] == 0)) {
-                      iVar5 = -2;
+                      iVar8 = -2;
                     }
                     else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar4] == 0)) {
-                      iVar5 = -1;
+                      iVar8 = -1;
                     }
                     else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar4] == 1)) {
-                      iVar5 = 1;
+                      iVar8 = 1;
                     }
                     else {
                       if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar4] != 1))
                       goto LAB_0041fffd;
-                      iVar5 = 2;
+                      iVar8 = 2;
                     }
                   }
-                  bVar13 = iVar5 < 0;
+                  bVar14 = iVar8 < 0;
                 }
                 else {
-                  bVar13 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                  bVar14 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
                            g_bulkInitializedRecords_008087C7[bVar4].field_0023;
                 }
-                if ((!bVar13) && (pSVar10->value_20 == 0x1ae)) {
+                if ((!bVar14) && (pSVar11->value_20 == 0x1ae)) {
                   RaiseInternalException
                             (-0x5001fff7,g_overwriteContext_007ED77C,
                              "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb91);
@@ -261,21 +264,21 @@ LAB_0041fffd:
                          "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb93);
             }
           }
-          else if (local_1c->field_0018 != *(int *)&pSVar10->field_0x18) {
+          else if (local_1c->field_0018 != *(int *)&pSVar11->field_0x18) {
             if (param_8 != nullptr) {
-              *param_8 = (int)pSVar10;
+              *param_8 = (int)pSVar11;
             }
-            if ((pSVar10[0xc].value_20 & 0x1000) != 0) {
+            if ((pSVar11[0xc].value_20 & 0x1000) != 0) {
               RaiseInternalException
                         (-0x5001fff7,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb7e);
             }
             if (param_9 == 0) {
-              if (((STWorldObjectVTable *)0x7 < pSVar10[1].vtable) ||
+              if (((STWorldObjectVTable *)0x7 < pSVar11[1].vtable) ||
                  ((g_playSystem_00802A38 != nullptr &&
-                  (7 < g_bulkInitializedRecords_008087C7[(int)pSVar10[1].vtable].field_0022))))
+                  (7 < g_bulkInitializedRecords_008087C7[(int)pSVar11[1].vtable].field_0022))))
               goto cf_continue_loop_0042004A;
-              bVar4 = *(byte *)&pSVar10[1].vtable;
+              bVar4 = *(byte *)&pSVar11[1].vtable;
               bVar1 = (byte)local_1c->field_0024;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               _local_40 = CONCAT31(uStack_3f,bVar4);
@@ -284,32 +287,32 @@ LAB_0041fffd:
               if (DAT_00808a8f == '\0') {
                 if (bVar4 == bVar1) {
 LAB_0041fdc6:
-                  iVar12 = 0;
+                  iVar13 = 0;
                 }
                 else {
                   bVar2 = g_playerRelationMatrix[bVar4][bVar1];
                   if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar4] == 0)) {
-                    iVar12 = -2;
+                    iVar13 = -2;
                   }
                   else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar4] == 0)) {
-                    iVar12 = -1;
+                    iVar13 = -1;
                   }
                   else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar4] == 1)) {
-                    iVar12 = 1;
+                    iVar13 = 1;
                   }
                   else {
                     if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar4] != 1))
                     goto LAB_0041fdc6;
-                    iVar12 = 2;
+                    iVar13 = 2;
                   }
                 }
-                bVar13 = iVar12 < 0;
+                bVar14 = iVar13 < 0;
               }
               else {
-                bVar13 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+                bVar14 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
                          g_bulkInitializedRecords_008087C7[bVar4].field_0023;
               }
-              if (!bVar13) {
+              if (!bVar14) {
                 RaiseInternalException
                           (-0x5001fff7,g_overwriteContext_007ED77C,
                            "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb81);
@@ -327,14 +330,14 @@ cf_continue_loop_0042004A:
           local_44 = local_44 + -1;
         } while (local_44 != 0);
         local_44 = 0;
-        iVar5 = local_5c;
-        iVar9 = local_64;
-        iVar12 = local_54;
+        iVar8 = local_5c;
+        iVar10 = local_64;
+        iVar13 = local_54;
       }
       local_28 = local_28 + 1;
-      local_18 = iVar9;
-      local_14 = iVar5;
-      local_10 = iVar12;
+      local_18 = iVar10;
+      local_14 = iVar8;
+      local_10 = iVar13;
     } while (local_28 <= local_30);
   }
   g_currentExceptionFrame = local_ac.previous;

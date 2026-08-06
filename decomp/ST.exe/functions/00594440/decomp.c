@@ -16,8 +16,10 @@ int __thiscall ComboTy::GetMessage(ComboTy *this,STMessage *message)
   STMessageId SVar2;
   ushort *puVar3;
   ComboTy *this_00;
+  int local_EAX_35;
+  undefined4 *puVar5;
   int iVar5;
-  undefined4 *puVar6;
+  int iVar6;
   int iVar7;
   uint uVar8;
   uint uVar9;
@@ -28,16 +30,16 @@ int __thiscall ComboTy::GetMessage(ComboTy *this,STMessage *message)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  local_EAX_35 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
-  if (iVar5 != 0) {
+  if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\combo.cpp",0xb7,0,iVar5,"%s",
-                               "ComboTy::GetMessage");
-    if (iVar7 != 0) {
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\combo.cpp",0xb7,0,local_EAX_35,
+                               "%s","ComboTy::GetMessage");
+    if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\combo.cpp",0xb7);
+    RaiseInternalException(local_EAX_35,0,"E:\\__titans\\Start\\combo.cpp",0xb7);
     return 0xffff;
   }
   SVar2 = message->id;
@@ -85,14 +87,14 @@ cf_common_exit_00594615:
                 *(int *)(puVar3 + 4);
     }
     uVar1 = local_c->field_00D8;
-    puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar3);
+    puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar3);
     for (uVar9 = local_8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *puVar6 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
-      puVar6 = puVar6 + 1;
+      *puVar5 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
+      puVar5 = puVar5 + 1;
     }
     for (uVar9 = local_8 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined1 *)puVar6 = uVar1;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      *(undefined1 *)puVar5 = uVar1;
+      puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
     this_00->field_00BC = message->arg0;
     FUN_006e5fe0(this_00,(undefined4 *)&this_00->field_0xa8);

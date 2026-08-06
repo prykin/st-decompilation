@@ -11,6 +11,7 @@ int __cdecl SaveBossEdit(int param_1,char *param_2,AllocationRecord_00648620 *pa
 {
   int iVar2;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_58;
   uint local_14;
   uint local_10;

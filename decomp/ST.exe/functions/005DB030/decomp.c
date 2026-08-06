@@ -8,10 +8,10 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   bool bVar2;
   int iVar3;
   cMf32 *this;
-  ushort *puVar4;
-  uint uVar5;
+  ushort *puVar3;
+  uint uVar4;
+  byte *pbVar6;
   byte *pbVar7;
-  byte *pbVar8;
   int local_1e18;
   int local_1e14;
   int local_1e10;
@@ -22,9 +22,10 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   InternalExceptionFrame *local_6c;
   int local_68 [9];
   int iStackY_44;
-  undefined1 uVar9;
-  undefined4 uVar10;
-  int *piVar11;
+  undefined1 uVar8;
+  undefined4 uVar9;
+  int *piVar10;
+  int iVar11;
   undefined4 uVar12;
 
   Library::MSVCRT::FUN_0072da40();
@@ -43,24 +44,24 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
     g_currentExceptionFrame = local_6c;
     return 0;
   }
-  uVar9 = 0;
+  uVar8 = 0;
   this = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_170,0,0,0);
-  piVar11 = (int *)&stack0xffffffe4;
-  iVar3 = 0;
-  uVar10 = 0x5db113;
-  puVar4 = cMf32::RecGet(this,0,PTR_s_DESCRIPTOR_0079c1d8,piVar11,0);
-  if (puVar4 == nullptr) goto cf_common_exit_005DB1E1;
-  if ((char)*piVar11 == '\x05') {
-    iVar3 = 0;
-    uVar10 = 0x5db13b;
-    puVar4 = cMf32::RecGet(this,0x80,PTR_s_SAVE_PLAYER_0079c1c8,(int *)&stack0xffffffe0,0);
-    if (puVar4 == nullptr) goto cf_common_exit_005DB1E1;
+  piVar10 = (int *)&stack0xffffffe4;
+  iVar11 = 0;
+  uVar9 = 0x5db113;
+  puVar3 = cMf32::RecGet(this,0,PTR_s_DESCRIPTOR_0079c1d8,piVar10,0);
+  if (puVar3 == nullptr) goto cf_common_exit_005DB1E1;
+  if ((char)*piVar10 == '\x05') {
+    iVar11 = 0;
+    uVar9 = 0x5db13b;
+    puVar3 = cMf32::RecGet(this,0x80,PTR_s_SAVE_PLAYER_0079c1c8,(int *)&stack0xffffffe0,0);
+    if (puVar3 == nullptr) goto cf_common_exit_005DB1E1;
   }
   bVar2 = false;
-  if ((local_1e18 != 0) && (local_1e10 == STField<int>(piVar11,1))) {
-    switch((char)*piVar11) {
+  if ((local_1e18 != 0) && (local_1e10 == STField<int>(piVar10,1))) {
+    switch((char)*piVar10) {
     case '\x02':
-      if (local_1e14 != iVar3) goto joined_r0x005db18e;
+      if (local_1e14 != iVar11) goto joined_r0x005db18e;
 cf_common_exit_005DB1AB:
       bVar2 = true;
       break;
@@ -73,25 +74,25 @@ joined_r0x005db18e:
       break;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case '\x05':
-      if (STField<int>(piVar11,5) == CONCAT31((int3)uVar10,uVar9)) goto cf_common_exit_005DB1AB;
+      if (STField<int>(piVar10,5) == CONCAT31((int3)uVar9,uVar8)) goto cf_common_exit_005DB1AB;
     }
   }
   if (bVar2) {
-    uVar5 = 0xffffffff;
+    uVar4 = 0xffffffff;
     uVar12 = 0xffffff90;
-    pbVar7 = local_170;
+    pbVar6 = local_170;
     do {
-      pbVar8 = pbVar7;
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      pbVar8 = pbVar7 + 1;
-      bVar1 = *pbVar7;
-      pbVar7 = pbVar8;
+      pbVar7 = pbVar6;
+      if (uVar4 == 0) break;
+      uVar4 = uVar4 - 1;
+      pbVar7 = pbVar6 + 1;
+      bVar1 = *pbVar6;
+      pbVar6 = pbVar7;
     } while (bVar1 != 0);
-    uVar5 = ~uVar5;
-    pbVar7 = pbVar8 + -uVar5;
-    pbVar8 = &DAT_0080ed16;
-    memmove(pbVar8, pbVar7, uVar5); /* compiler REP MOVS byte copy */
+    uVar4 = ~uVar4;
+    pbVar6 = pbVar7 + -uVar4;
+    pbVar7 = &DAT_0080ed16;
+    memmove(pbVar7, pbVar6, uVar4); /* compiler REP MOVS byte copy */
   }
 cf_common_exit_005DB1E1:
   cMf32::delete(this);

@@ -21,7 +21,7 @@ void __thiscall st::fn_005148A0(HelpPanelTy *this,int param_1)
   uint uVar2;
   int *piVar3;
   uint uVar4;
-  int *piVar5;
+  byte *pbVar5;
   int iVar6;
 
   if (param_1 < 1) {
@@ -29,8 +29,9 @@ void __thiscall st::fn_005148A0(HelpPanelTy *this,int param_1)
   }
   iVar6 = param_1;
   do {
-    piVar5 = (int *)(this->field_01C7 + iVar6 * 0x11);
-    if ((*piVar5 == *(int *)(param_1 * 0x11 + 4 + this->field_01C7)) || (piVar5[1] == 0)) {
+    pbVar5 = this->field_01C7 + iVar6 * 0x11;
+    if ((*(int *)pbVar5 == *(int *)(this->field_01C7 + param_1 * 0x11 + 4)) ||
+       (*(int *)(pbVar5 + 4) == 0)) {
       pAVar1 = this->field_01B3;
       uVar4 = 0;
       uVar2 = *(uint *)&pAVar1->field_0xc;
@@ -42,7 +43,7 @@ void __thiscall st::fn_005148A0(HelpPanelTy *this,int param_1)
         do {
           piVar3 = (int *)(pAVar1->field_0008 * uVar4 + pAVar1->field_001C);
 LAB_0051490d:
-          if ((*piVar3 == *piVar5) && (piVar3[1] == piVar5[1])) {
+          if ((*piVar3 == *(int *)pbVar5) && (piVar3[1] == *(int *)(pbVar5 + 4))) {
             if (STField<char>(piVar3,0x12) != '\0') {
               return;
             }
@@ -83,74 +84,76 @@ st::fn_00514BC0
           (HelpPanelTy *this,HelpPanelTy_sub_00514BC0_param_1Enum param_1,int param_2)
 
 {
-  char cVar1;
-  int iVar2;
-  uint uVar3;
-  void *pvVar4;
-  bool bVar5;
+  byte bVar1;
+  byte *pbVar2;
+  int iVar3;
+  uint uVar4;
+  void *pvVar5;
   int iVar6;
+  bool bVar7;
   uint local_c;
 
-  bVar5 = false;
+  bVar7 = false;
   local_c = 0;
   if (*(int *)sizeHelp_exref == 0) {
     return;
   }
 LAB_00514be2:
-  iVar6 = local_c * 0x11 + this->field_01C7;
-  cVar1 = *(char *)(iVar6 + 8);
-  switch(cVar1) {
+  pbVar2 = this->field_01C7;
+  iVar6 = local_c * 0x11;
+  bVar1 = pbVar2[iVar6 + 8];
+  switch(bVar1) {
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case '\x01':
-  case '\x02':
-  case '\x03':
-  case '\x04':
-  case '\v':
-    if ((*(HelpPanelTy_sub_00514BC0_param_1Enum *)(iVar6 + 9) == param_1) &&
-       ((cVar1 == '\x03' || (*(int *)(iVar6 + 0xd) == param_2)))) {
-      bVar5 = true;
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+  case 0xb:
+    if ((*(HelpPanelTy_sub_00514BC0_param_1Enum *)(pbVar2 + iVar6 + 9) == param_1) &&
+       ((bVar1 == 3 || (*(int *)(pbVar2 + iVar6 + 0xd) == param_2)))) {
+      bVar7 = true;
       goto LAB_00514d04;
     }
-  case '\x05':
-  case '\x06':
-  case '\a':
-  case '\b':
-  case '\t':
-  case '\n':
+  case 5:
+  case 6:
+  case 7:
+  case 8:
+  case 9:
+  case 10:
     break;
-  case '\f':
+  case 0xc:
     switch(param_1) {
     case CASE_F2:
     case CASE_F3:
     case CASE_F4:
     case CASE_F5:
-      iVar2 = *(int *)(iVar6 + 9);
-      if ((((iVar2 != 0xf2) && (iVar2 != 0xf3)) && (iVar2 != 0xf4)) && (iVar2 != 0xf5))
+      iVar3 = *(int *)(pbVar2 + iVar6 + 9);
+      if ((((iVar3 != 0xf2) && (iVar3 != 0xf3)) && (iVar3 != 0xf4)) && (iVar3 != 0xf5))
       goto cf_common_join_00514CF6;
-      bVar5 = true;
+      bVar7 = true;
       break;
     case CASE_F6:
     case CASE_F7:
-      if ((*(int *)(iVar6 + 9) != 0xf6) && (*(int *)(iVar6 + 9) != 0xf7))
+      if ((*(int *)(pbVar2 + iVar6 + 9) != 0xf6) && (*(int *)(pbVar2 + iVar6 + 9) != 0xf7))
       goto cf_common_join_00514CF6;
-      bVar5 = true;
+      bVar7 = true;
       break;
     case CASE_F8:
     case CASE_F9:
-      if ((*(int *)(iVar6 + 9) != 0xf8) && (*(int *)(iVar6 + 9) != 0xf9))
+      if ((*(int *)(pbVar2 + iVar6 + 9) != 0xf8) && (*(int *)(pbVar2 + iVar6 + 9) != 0xf9))
       goto cf_common_join_00514CF6;
-      bVar5 = true;
+      bVar7 = true;
       break;
     case CASE_FA:
     case CASE_FB:
-      if ((*(int *)(iVar6 + 9) != 0xfa) && (*(int *)(iVar6 + 9) != 0xfb))
+      if ((*(int *)(pbVar2 + iVar6 + 9) != 0xfa) && (*(int *)(pbVar2 + iVar6 + 9) != 0xfb))
       goto cf_common_join_00514CF6;
-      bVar5 = true;
+      bVar7 = true;
       break;
     default:
-      if (*(HelpPanelTy_sub_00514BC0_param_1Enum *)(iVar6 + 9) != param_1)
+      if (*(HelpPanelTy_sub_00514BC0_param_1Enum *)(pbVar2 + iVar6 + 9) != param_1)
       goto cf_common_join_00514CF6;
-      bVar5 = true;
+      bVar7 = true;
     }
     goto LAB_00514d04;
   default:
@@ -158,46 +161,46 @@ LAB_00514be2:
   }
 cf_common_join_00514CF6:
 switchD_00514c13_default:
-  if (bVar5) {
+  if (bVar7) {
 LAB_00514d04:
-    uVar3 = *(uint *)(iVar6 + 0xd);
-    pvVar4 = *(void **)(iVar6 + 9);
-    switch(cVar1) {
-    case '\x01':
-      st::fn_00404E85(this,(int)pvVar4,uVar3,'\0');
+    uVar4 = *(uint *)(pbVar2 + iVar6 + 0xd);
+    pvVar5 = *(void **)(pbVar2 + iVar6 + 9);
+    switch(bVar1) {
+    case 1:
+      st::fn_00404E85(this,(int)pvVar5,uVar4,'\0');
       break;
-    case '\x02':
-      st::fn_00403747(this,(int)pvVar4,uVar3,'\0');
+    case 2:
+      st::fn_00403747(this,(int)pvVar5,uVar4,'\0');
       break;
-    case '\x03':
-      st::fn_00403878(this,(int)pvVar4,'\0');
+    case 3:
+      st::fn_00403878(this,(int)pvVar5,'\0');
       break;
-    case '\x04':
-      st::fn_004057E0(this,(int)pvVar4,uVar3,'\0');
+    case 4:
+      st::fn_004057E0(this,(int)pvVar5,uVar4,'\0');
       break;
-    case '\x05':
-      st::fn_00402833(this,(uint)pvVar4,(byte)uVar3,'\0');
+    case 5:
+      st::fn_00402833(this,(uint)pvVar5,(byte)uVar4,'\0');
       break;
-    case '\x06':
-      st::fn_00405E61(this,(uint)pvVar4,'\0');
+    case 6:
+      st::fn_00405E61(this,(uint)pvVar5,'\0');
       break;
-    case '\a':
+    case 7:
       st::fn_004011FE(this);
       break;
-    case '\b':
-      st::fn_004020B8(this,pvVar4,uVar3,'\0');
+    case 8:
+      st::fn_004020B8(this,pvVar5,uVar4,'\0');
       break;
-    case '\n':
+    case 10:
       st::fn_00405803(this);
       break;
-    case '\v':
-      st::fn_00402CAC(this,(int)pvVar4,uVar3,'\0');
+    case 0xb:
+      st::fn_00402CAC(this,(int)pvVar5,uVar4,'\0');
       break;
-    case '\f':
-      st::fn_00403BC0(this,(int)pvVar4,'\0');
+    case 0xc:
+      st::fn_00403BC0(this,(int)pvVar5,'\0');
     }
-    iVar6 = this->field_01C7 + local_c * 0x11;
-    st::fn_004054C5(this,*(int *)(iVar6 + 9),*(int *)(iVar6 + 0xd));
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    st::fn_004054C5(this,*(int *)(this->field_01C7 + iVar6 + 9),*(int *)(this->field_01C7 + iVar6 + 0xd));
     st::fn_00405100(this);
     local_c = *(uint *)sizeHelp_exref;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -223,34 +226,34 @@ void __thiscall st::fn_00515180(HelpPanelTy *this,char param_1)
   if ((this->field_01A1 == param_1) || (param_1 == '\a')) {
     switch(param_1) {
     case '\x01':
-      st::fn_00404E85(this,this->field_01A3,this->field_01A7,'\x01');
+      st::fn_00404E85(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\x02':
-      st::fn_00403747(this,this->field_01A3,this->field_01A7,'\x01');
+      st::fn_00403747(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\x03':
-      st::fn_00403878(this,this->field_01A3,'\x01');
+      st::fn_00403878(this,(int)this->field_01A3,'\x01');
       return;
     case '\x04':
-      st::fn_004057E0(this,this->field_01A3,this->field_01A7,'\x01');
+      st::fn_004057E0(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\x05':
-      st::fn_00402833(this,this->field_01A3,*(byte *)&this->field_01A7,'\x01');
+      st::fn_00402833(this,(uint)this->field_01A3,*(byte *)&this->field_01A7,'\x01');
       return;
     case '\x06':
-      st::fn_00405E61(this,this->field_01A3,'\x01');
+      st::fn_00405E61(this,(uint)this->field_01A3,'\x01');
       return;
     case '\a':
       st::fn_004027AC(this);
       return;
     case '\b':
-      st::fn_004020B8(this,(void *)this->field_01A3,this->field_01A7,'\x01');
+      st::fn_004020B8(this,this->field_01A3,this->field_01A7,'\x01');
       break;
     case '\v':
-      st::fn_00402CAC(this,this->field_01A3,this->field_01A7,'\x01');
+      st::fn_00402CAC(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\f':
-      st::fn_00403BC0(this,this->field_01A3,'\x01');
+      st::fn_00403BC0(this,(int)this->field_01A3,'\x01');
       return;
     }
   }
@@ -271,14 +274,15 @@ void __thiscall st::fn_0051DA70(HelpPanelTy *this)
   byte bVar2;
   byte bVar3;
   byte bVar4;
+  uint uVar10;
   uint uVar5;
   byte bVar6;
   byte bVar7;
   byte bVar8;
   byte bVar9;
-  uint uVar10;
-  uint *puVar11;
-  int iVar12;
+  uint uVar11;
+  uint *puVar12;
+  int iVar13;
   int local_c;
   uint local_8;
 
@@ -293,95 +297,95 @@ void __thiscall st::fn_0051DA70(HelpPanelTy *this)
     bVar4 = 0;
     if (bVar3 != 0) {
       bVar9 = 0;
-      uVar10 = (uint)bVar3;
+      uVar11 = (uint)bVar3;
       do {
         if ((DAT_0080734e & 1 << (bVar9 & 0x1f)) != 0) {
           bVar8 = bVar8 + 1;
         }
         bVar9 = bVar9 + 1;
-        uVar10 = uVar10 - 1;
+        uVar11 = uVar11 - 1;
         bVar4 = bVar8;
-      } while (uVar10 != 0);
+      } while (uVar11 != 0);
     }
     bVar9 = 0;
     bVar8 = this->field_0251;
     if (bVar8 != 0) {
       bVar6 = 0;
-      uVar10 = (uint)bVar8;
+      uVar11 = (uint)bVar8;
       do {
         if ((DAT_00807352 & 1 << (bVar6 & 0x1f)) != 0) {
           bVar9 = bVar9 + 1;
         }
         bVar6 = bVar6 + 1;
-        uVar10 = uVar10 - 1;
-      } while (uVar10 != 0);
+        uVar11 = uVar11 - 1;
+      } while (uVar11 != 0);
       local_8 = (uint)bVar9;
     }
     bVar9 = this->field_0252;
     if (bVar9 != 0) {
       bVar6 = 0;
-      uVar10 = (uint)bVar9;
+      uVar11 = (uint)bVar9;
       do {
         if ((DAT_00807356 & 1 << (bVar6 & 0x1f)) != 0) {
           bVar1 = bVar1 + 1;
         }
         bVar6 = bVar6 + 1;
-        uVar10 = uVar10 - 1;
-      } while (uVar10 != 0);
+        uVar11 = uVar11 - 1;
+      } while (uVar11 != 0);
     }
     bVar6 = this->field_0253;
     if (bVar6 != 0) {
       bVar7 = 0;
-      uVar10 = (uint)bVar6;
+      uVar11 = (uint)bVar6;
       do {
         if ((DAT_0080735a & 1 << (bVar7 & 0x1f)) != 0) {
           bVar2 = bVar2 + 1;
         }
         bVar7 = bVar7 + 1;
-        uVar10 = uVar10 - 1;
-      } while (uVar10 != 0);
+        uVar11 = uVar11 - 1;
+      } while (uVar11 != 0);
     }
     if (DAT_0080874e == '\x02') {
-      iVar12 = (((uint)bVar9 - (uint)bVar1) - (uint)bVar4) + -1 + (uint)bVar3;
+      iVar13 = (((uint)bVar9 - (uint)bVar1) - (uint)bVar4) + -1 + (uint)bVar3;
     }
     else if (DAT_0080874e == '\x03') {
-      iVar12 = (((uint)bVar6 - (uint)bVar2) - (uint)bVar4) + -1 + (uint)bVar3;
+      iVar13 = (((uint)bVar6 - (uint)bVar2) - (uint)bVar4) + -1 + (uint)bVar3;
     }
     else {
-      iVar12 = ((bVar8 - local_8) - (uint)bVar4) + -1 + (uint)bVar3;
+      iVar13 = ((bVar8 - local_8) - (uint)bVar4) + -1 + (uint)bVar3;
     }
-    if (-1 < iVar12) {
+    if (-1 < iVar13) {
       uVar10 = st::fn_0072E6C0();
-      uVar10 = uVar10 % (iVar12 + 1U);
+      uVar11 = uVar10 % (iVar13 + 1U);
       uVar5 = (uint)(byte)this->field_0250;
-      local_8 = uVar10 & 0xff;
-      if ((int)(uVar10 & 0xff) < (int)(uVar5 - bVar4)) {
-        puVar11 = &DAT_0080734e;
+      local_8 = uVar11 & 0xff;
+      if ((int)(uVar11 & 0xff) < (int)(uVar5 - bVar4)) {
+        puVar12 = &DAT_0080734e;
         local_c = 0;
       }
       else {
-        local_8 = (uint)(byte)((char)uVar10 + (bVar4 - this->field_0250));
+        local_8 = (uint)(byte)((char)uVar11 + (bVar4 - this->field_0250));
         if (DAT_0080874e == '\x01') {
-          puVar11 = &DAT_00807352;
+          puVar12 = &DAT_00807352;
           uVar5 = (uint)(byte)this->field_0251;
           local_c = 1;
         }
         else if (DAT_0080874e == '\x02') {
-          puVar11 = &DAT_00807356;
+          puVar12 = &DAT_00807356;
           uVar5 = (uint)(byte)this->field_0252;
           local_c = 2;
         }
         else {
-          puVar11 = &DAT_0080735a;
+          puVar12 = &DAT_0080735a;
           uVar5 = (uint)(byte)this->field_0253;
           local_c = 3;
         }
       }
       bVar1 = 0;
       if (uVar5 != 0) {
-        uVar10 = 0;
+        uVar11 = 0;
         do {
-          if ((*puVar11 & 1 << ((byte)uVar10 & 0x1f)) == 0) {
+          if ((*puVar12 & 1 << ((byte)uVar11 & 0x1f)) == 0) {
             if ((char)local_8 == '\0') {
               st::fn_004020B8(this,(void *)(uint)bVar1,local_c,'\0');
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -391,8 +395,8 @@ void __thiscall st::fn_0051DA70(HelpPanelTy *this)
             local_8 = (uint)(byte)((char)local_8 - 1);
           }
           bVar1 = bVar1 + 1;
-          uVar10 = (uint)bVar1;
-        } while (uVar10 < uVar5);
+          uVar11 = (uint)bVar1;
+        } while (uVar11 < uVar5);
         return;
       }
     }

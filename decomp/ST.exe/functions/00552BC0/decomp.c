@@ -10,8 +10,9 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
 {
   UpgPanelTy *pUVar2;
   int iVar3;
-  uint uVar4;
-  byte *pbVar5;
+  uint uVar3;
+  BITMAPINFO *pBVar4;
+  int iVar5;
   int iVar6;
   uint *puVar7;
   uint *puVar8;
@@ -35,71 +36,72 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
     puVar9 = local_298;
     memmove(puVar9, puVar7, 0x240); /* compiler REP MOVS byte copy */
     STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,0x10,(AnonShape_0043BEB0_1C00EC12 *)puVar8);
-    iVar3 = 0x19;
+    iVar6 = 0x19;
     puVar8 = &pUVar2->field_01AB;
     local_8 = 3;
     do {
-      uVar4 = thunk_FUN_005276e0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
+      uVar3 = thunk_FUN_005276e0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
       if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == CASE_0) {
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EF;
       }
       else {
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
       }
-      pbVar5 = (byte *)FUN_0070b3a0(pAVar10,uVar4);
-      DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0x24,iVar3,'\x01',pbVar5);
+      pBVar4 = FUN_0070b3a0(pAVar10,uVar3);
+      DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0x24,iVar6,'\x01',(byte *)pBVar4);
       puVar8 = puVar8 + 0xc;
-      iVar3 = iVar3 + 0x1b;
+      iVar6 = iVar6 + 0x1b;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     local_8 = 0x5e;
     puVar8 = &pUVar2->field_023B;
     local_c = 2;
     do {
-      iVar3 = 0x19;
+      iVar6 = 0x19;
       local_10 = 3;
       do {
-        uVar4 = thunk_FUN_005276e0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
+        uVar3 = thunk_FUN_005276e0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
         if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == CASE_0) {
           pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EF;
         }
         else {
           pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
         }
-        pbVar5 = (byte *)FUN_0070b3a0(pAVar10,uVar4);
-        DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_8,iVar3,'\x01',pbVar5);
+        pBVar4 = FUN_0070b3a0(pAVar10,uVar3);
+        DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_8,iVar6,'\x01',
+               (byte *)pBVar4);
         puVar8 = puVar8 + 0xc;
-        iVar3 = iVar3 + 0x1b;
+        iVar6 = iVar6 + 0x1b;
         local_10 = local_10 + -1;
       } while (local_10 != 0);
       local_8 = local_8 + 0x33;
       local_c = local_c + -1;
     } while (local_c != 0);
-    iVar3 = 0x19;
+    iVar6 = 0x19;
     puVar8 = &pUVar2->field_035B;
     local_c = 3;
     local_10 = 0;
     do {
-      uVar4 = thunk_FUN_005276e0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
+      uVar3 = thunk_FUN_005276e0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
       if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == CASE_0) {
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EF;
       }
       else {
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
       }
-      pbVar5 = (byte *)FUN_0070b3a0(pAVar10,uVar4);
-      DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0xd3,iVar3,'\x01',pbVar5);
+      pBVar4 = FUN_0070b3a0(pAVar10,uVar3);
+      DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0xd3,iVar6,'\x01',(byte *)pBVar4);
       puVar8 = puVar8 + 0xc;
-      iVar3 = iVar3 + 0x1b;
+      iVar6 = iVar6 + 0x1b;
       local_c = local_c + -1;
     } while (local_c != 0);
     g_currentExceptionFrame = local_58.previous;
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\upginfo.cpp",0x54,0,iVar3,"%s",
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\upginfo.cpp",0x54,0,iVar3,"%s",
                              "UpgPanelTy::Update");
-  if (iVar6 != 0) {
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x54);

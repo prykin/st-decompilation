@@ -10,8 +10,9 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
 {
   STGroupC *pSVar2;
   int iVar3;
-  STGameObjC *pSVar4;
+  STGameObjC *pSVar3;
   int iVar5;
+  int iVar4;
   uint *puVar6;
   uint index;
   InternalExceptionFrame local_58;
@@ -33,15 +34,15 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
       do {
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
-          pSVar4 = STAllPlayersC::GetObjPtr
+          pSVar3 = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar3 == nullptr) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\tc_grp.cpp",0x81);
           }
-          iVar3 = (*pSVar4->vtable->vfunc_2C)();
-          if (iVar3 == param_1) {
+          iVar5 = (*pSVar3->vtable->vfunc_2C)();
+          if (iVar5 == param_1) {
             Library::DKW::TBL::DArrayAppend(local_c,local_8);
           }
         }
@@ -52,9 +53,9 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
     return &local_c->flags;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x86,0,iVar3,"%s",
+  iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x86,0,iVar3,"%s",
                              "STGroupC::GetTOBJList");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x87);

@@ -11,16 +11,17 @@
 void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort param_2)
 
 {
-  AnonPointee_HelpPanelTy_0218 **value;
+  AnonPointee_HelpPanelTy_0218 **slotStorage;
   AnonPointee_HelpPanelTy_0218 *pAVar1;
   HelpPanelTy *pHVar3;
   int iVar4;
   int uVar5;
-  AnonPointee_HelpPanelTy_0218 *pAVar5;
-  undefined4 *puVar6;
-  int iVar7;
-  uint uVar8;
-  ushort *puVar9;
+  AnonPointee_HelpPanelTy_0218 *pAVar4;
+  undefined4 *puVar5;
+  int iVar8;
+  uint uVar6;
+  ushort *puVar7;
+  int iVar9;
   InternalExceptionFrame local_50;
   HelpPanelTy *local_c;
   uint local_8;
@@ -33,41 +34,41 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort pa
     iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     pHVar3 = local_c;
     if (iVar4 == 0) {
-      iVar4 = 1;
-      pAVar5 = local_c->field_0218;
-      value = &local_c->field_0218;
-      puVar9 = local_c->field_01DC + 0x14;
+      iVar9 = 1;
+      pAVar4 = local_c->field_0218;
+      slotStorage = &local_c->field_0218;
+      puVar7 = local_c->field_01DC + 0x14;
       uVar5 = FUN_006b4fe0((int)local_c->field_01DC);
-      pAVar5 = (AnonPointee_HelpPanelTy_0218 *)
-               FUN_006b50c0(pAVar5->field_0004,pAVar5->field_0008 + 0x32,(uint)pHVar3->field_01DC[7]
-                            ,uVar5,(undefined4 *)puVar9,iVar4);
-      local_8 = pAVar5->field_0014;
+      pAVar4 = (AnonPointee_HelpPanelTy_0218 *)
+               FUN_006b50c0(pAVar4->field_0004,pAVar4->field_0008 + 0x32,(uint)pHVar3->field_01DC[7]
+                            ,uVar5,(undefined4 *)puVar7,iVar9);
+      local_8 = pAVar4->field_0014;
       if (local_8 == 0) {
-        local_8 = ((uint)(ushort)pAVar5->field_000E * pAVar5->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-                  pAVar5->field_0008;
+        local_8 = ((uint)(ushort)pAVar4->field_000E * pAVar4->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+                  pAVar4->field_0008;
       }
-      puVar6 = (undefined4 *)FUN_006b4fa0((int *)pAVar5);
-      for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *puVar6 = 0xffffffff;
-        puVar6 = puVar6 + 1;
+      puVar5 = (undefined4 *)FUN_006b4fa0((int *)pAVar4);
+      for (uVar6 = local_8 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
+        *puVar5 = 0xffffffff;
+        puVar5 = puVar5 + 1;
       }
-      for (uVar8 = local_8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *(undefined1 *)puVar6 = 0xff;
-        puVar6 = (undefined4 *)((int)puVar6 + 1);
+      for (uVar6 = local_8 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+        *(undefined1 *)puVar5 = 0xff;
+        puVar5 = (undefined4 *)((int)puVar5 + 1);
       }
-      pAVar1 = *value;
+      pAVar1 = *slotStorage;
       Library::DKW::WGR::FUN_006b55f0
-                ((RecoveredSourceFamily_dibcopy *)pAVar5,0,0,0,(byte *)pAVar1,0,0,0,
+                ((RecoveredSourceFamily_dibcopy *)pAVar4,0,0,0,(byte *)pAVar1,0,0,0,
                  pAVar1->field_0004,pAVar1->field_0008);
-      FreeAndNull(value);
-      *value = pAVar5;
+      FreeAndNull(slotStorage);
+      *slotStorage = pAVar4;
       g_currentExceptionFrame = local_50.previous;
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0xdc,0,iVar4,"%s",
+    iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0xdc,0,iVar4,"%s",
                                "HelpPanelTy::CheckBkView");
-    if (iVar7 != 0) {
+    if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\helppan.cpp",0xdc);

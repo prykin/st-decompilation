@@ -12,6 +12,7 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
   ComboTy *this_00;
   int iVar3;
   int iVar4;
+  int iVar5;
   InternalExceptionFrame local_4c;
   ComboTy *local_8;
 
@@ -27,17 +28,17 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
     puVar1 = &this_00->field_0x18;
     this_00->field_010C = 0;
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
-    iVar3 = 0;
+    iVar5 = 0;
     this_00->field_0028 = 0x11;
     this_00->field_002C = (ComboTy *)&this_00->field_0038;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
-    iVar3 = 0;
+    iVar5 = 0;
     this_00->field_002C = (ComboTy *)this_00->field_0008;
     this_00->field_0028 = 0x14;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
-    iVar3 = 0;
+    iVar5 = 0;
     this_00->field_0028 = 0x19;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */

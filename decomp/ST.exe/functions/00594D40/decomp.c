@@ -21,7 +21,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
 
 {
   int errorCode;
-  uint *resourceString;
+  char *resourceString;
   int iVar2;
   StartServTy *this_00;
   uint uVar3;
@@ -45,7 +45,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
       pcVar5 = g_startSystem_0081176C->field_0034;
       uVar4 = 0xffffffff;
       uVar3 = 0xfffffffe;
-      resourceString = (uint *)LoadResourceString(param_8,g_hINSTANCE_00807618);
+      resourceString = LoadResourceString(param_8,g_hINSTANCE_00807618);
       StartServTy::WrTextDDX
                 (this_00,0,param_4,param_5,param_6,0x15,resourceString,uVar3,uVar4,pcVar5,uVar6);
       g_currentExceptionFrame = local_48.previous;

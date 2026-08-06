@@ -16,7 +16,7 @@ void __cdecl FUN_0067d160(int *param_1)
     if ((*(char *)(iVar2 + 0x18) == '\x02') && (*(int *)(iVar2 + 0x106) != 0)) {
       thunk_FUN_0065d0f0((int *)(iVar2 + 0x106));
     }
-    FreeAndNull((void **)param_1);
+    FreeAndNull(param_1);
   }
   return;
 }

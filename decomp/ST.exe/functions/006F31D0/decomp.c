@@ -30,15 +30,16 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
   AnonShape_006F31D0_0BFF23DC *pAVar8;
   AnonShape_006F31D0_0BFF23DC *pAVar9;
   undefined1 *puVar10;
+  byte *pbVar17;
   uint *puVar11;
   int iVar12;
   int iVar13;
   byte *pbVar14;
   uint uVar15;
   AnonShape_006F31D0_0BFF23DC *pAVar16;
-  byte *pbVar17;
-  uint *puVar18;
-  byte *pbVar19;
+  byte *pbVar18;
+  uint *puVar19;
+  byte *pbVar20;
   int local_70;
   undefined1 *local_6c;
   int local_68;
@@ -72,26 +73,26 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
   local_30 = nullptr;
   local_3c = 0;
   local_5c = param_1 * 0x68;
-  puVar18 = *(uint **)(local_5c + 100 + *(int *)&this->field_0x330);
-  puVar18[0xf] = puVar18[0x19];
-  puVar18[0x10] = puVar18[0x1a];
-  puVar18[0x11] = puVar18[0x1b];
-  puVar18[0x12] = puVar18[0x1c];
-  local_2c = puVar18;
+  puVar19 = *(uint **)(local_5c + 100 + *(int *)&this->field_0x330);
+  puVar19[0xf] = puVar19[0x19];
+  puVar19[0x10] = puVar19[0x1a];
+  puVar19[0x11] = puVar19[0x1b];
+  puVar19[0x12] = puVar19[0x1c];
+  local_2c = puVar19;
   local_24 = this;
   if ((*(int *)this != 0) && (param_4 == 0)) {
-    FUN_006b5f80(*(int **)this,*(int *)&this->field_0x20 + puVar18[0x19],
-                 *(int *)&this->field_0x24 + puVar18[0x1a],puVar18[0x1b],puVar18[0x1c]);
+    FUN_006b5f80(*(int **)this,*(int *)&this->field_0x20 + puVar19[0x19],
+                 *(int *)&this->field_0x24 + puVar19[0x1a],puVar19[0x1b],puVar19[0x1c]);
   }
-  uVar7 = puVar18[4];
-  if (((puVar18[1] & 0x80) == 0) && (((puVar18[1] & 0x20) == 0 || (puVar18[7] != 0xffffffff)))) {
+  uVar7 = puVar19[4];
+  if (((puVar19[1] & 0x80) == 0) && (((puVar19[1] & 0x20) == 0 || (puVar19[7] != 0xffffffff)))) {
 LAB_006f32f9:
     local_38 = 1;
-    iVar13 = (int)(puVar18[0x19] - *(int *)&this->field_0x2c8) / *(int *)&this->field_0x2c0;
-    iVar4 = (int)((puVar18[0x19] - *(int *)&this->field_0x2c8) + -1 + puVar18[0x1b]) /
+    iVar13 = (int)(puVar19[0x19] - *(int *)&this->field_0x2c8) / *(int *)&this->field_0x2c0;
+    iVar4 = (int)((puVar19[0x19] - *(int *)&this->field_0x2c8) + -1 + puVar19[0x1b]) /
             *(int *)&this->field_0x2c0;
-    iVar5 = (int)(puVar18[0x1a] - *(int *)&this->field_0x2cc) / *(int *)&this->field_0x2c4;
-    iVar6 = (int)((puVar18[0x1c] - *(int *)&this->field_0x2cc) + -1 + puVar18[0x1a]) /
+    iVar5 = (int)(puVar19[0x1a] - *(int *)&this->field_0x2cc) / *(int *)&this->field_0x2c4;
+    iVar6 = (int)((puVar19[0x1c] - *(int *)&this->field_0x2cc) + -1 + puVar19[0x1a]) /
             *(int *)&this->field_0x2c4;
     iVar12 = *(int *)&this->field_0x2b0 + *(int *)&this->field_0x2b8 * iVar5 * 2;
     if (iVar5 <= iVar6) {
@@ -115,19 +116,19 @@ LAB_006f32f9:
       local_44 = nullptr;
       if (local_38 == 0) {
         if (param_2 < 1) {
-          local_38 = (-(uint)(param_4 != 0) & 0x180000) + 0x80000 & *puVar18;
+          local_38 = (-(uint)(param_4 != 0) & 0x180000) + 0x80000 & *puVar19;
         }
         else {
-          local_38 = (-(uint)(param_4 != 0) & 0x300000) + 0x100000 & *puVar18;
+          local_38 = (-(uint)(param_4 != 0) & 0x300000) + 0x100000 & *puVar19;
         }
       }
     }
   }
   else {
     local_38 = 1;
-    if ((-1 < (int)puVar18[9]) && (-1 < (int)puVar18[10])) {
-      iVar12 = (int)(*(int *)&this->field_0x2f0 * puVar18[9]) / 100 + puVar18[0x15];
-      iVar13 = (int)(*(int *)&this->field_0x2f4 * puVar18[10]) / 100 + puVar18[0x16];
+    if ((-1 < (int)puVar19[9]) && (-1 < (int)puVar19[10])) {
+      iVar12 = (int)(*(int *)&this->field_0x2f0 * puVar19[9]) / 100 + puVar19[0x15];
+      iVar13 = (int)(*(int *)&this->field_0x2f4 * puVar19[10]) / 100 + puVar19[0x16];
       if ((((iVar12 < 0) || (iVar13 < 0)) || (*(int *)&this->field_0x28 <= iVar12)) ||
          ((*(int *)&this->field_0x2c <= iVar13 ||
           ((int)(uint)*(ushort *)
@@ -137,10 +138,10 @@ LAB_006f32f9:
     }
   }
   local_28 = 0;
-  if ((local_38 == 0) && ((puVar18[1] & 0x10000) != 0)) {
-    local_28 = puVar18[0x2e];
+  if ((local_38 == 0) && ((puVar19[1] & 0x10000) != 0)) {
+    local_28 = puVar19[0x2e];
   }
-  uVar15 = puVar18[0xe];
+  uVar15 = puVar19[0xe];
   local_48 = nullptr;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = uVar7;
@@ -148,18 +149,18 @@ LAB_006f32f9:
     local_50 = (int)uVar15 >> 2;
     if (param_2 == 0) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = uVar7 + puVar18[0xb];
+      param_1 = uVar7 + puVar19[0xb];
       uVar15 = uVar15 - local_50;
     }
     else if (param_2 == 1) {
       local_48 = (AnonShape_006F31D0_0BFF23DC *)(uVar15 - local_50);
-      uVar15 = puVar18[0xc];
+      uVar15 = puVar19[0xc];
       goto LAB_006f34a4;
     }
   }
   else if (param_2 == 0) {
     local_50 = param_3;
-    uVar15 = puVar18[0xb];
+    uVar15 = puVar19[0xb];
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_006f34a4:
     param_1 = uVar7 + uVar15;
@@ -168,13 +169,13 @@ LAB_006f34a4:
   else if (param_2 == 1) {
     local_48 = (AnonShape_006F31D0_0BFF23DC *)param_3;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = uVar7 + puVar18[0xc];
+    param_1 = uVar7 + puVar19[0xc];
     uVar15 = uVar15 - param_3;
   }
   local_50 = uVar15;
   if (param_4 == 0) {
     if ((*(int *)&this->field_0x144 == 0) || (*(int *)&this->field_0x158 == 0)) {
-      local_20 = puVar18[0x2d];
+      local_20 = puVar19[0x2d];
     }
     else if (*(int *)&this->field_0x16c < (int)uVar7) {
       local_20 = (uVar7 & 0x7f00) + *(int *)&this->field_0x158;
@@ -198,14 +199,14 @@ LAB_006f34a4:
     }
   }
   local_60 = *(uint *)(local_5c + *(int *)&this->field_0x330) & 2;
-  local_4c = puVar18[0x25] - 1;
+  local_4c = puVar19[0x25] - 1;
   if (-1 < (int)local_4c) {
 LAB_006f3562:
-    psVar1 = (short *)(puVar18[0x29] + local_4c * 4);
+    psVar1 = (short *)(puVar19[0x29] + local_4c * 4);
     uVar2 = psVar1[1];
     if (((uVar2 & 0xc000) == 0xc000) && ((local_60 != 0 || ((uVar2 & 0x80) != 0)))) {
       if ((uVar2 & 1) == 0) {
-        iVar12 = *(int *)(puVar18[0x28] + 4 + local_4c * 8);
+        iVar12 = *(int *)(puVar19[0x28] + 4 + local_4c * 8);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (((iVar12 != 0) && (param_4 == (uVar2 & 4) >> 2)) &&
            (local_54 = (ushort *)(*(int *)&this->field_0x330 + local_5c),
@@ -215,19 +216,19 @@ LAB_006f3562:
           local_64 = (int)*(short *)(local_34 + 0x14);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           pbVar14 = (byte *)(int)*(short *)(local_34 + 0x12);
-          if (((DAT_00857030 == 0) || ((puVar18[1] & 4) != 0)) ||
-             ((*(byte *)(puVar18[0x29] + 2 + local_4c * 4) & 2) != 0)) {
+          if (((DAT_00857030 == 0) || ((puVar19[1] & 4) != 0)) ||
+             ((*(byte *)(puVar19[0x29] + 2 + local_4c * 4) & 2) != 0)) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (((int)local_48 < (int)*(short *)(local_34 + 0x14) + (int)*(short *)(local_34 + 0x10)
                 ) && (puVar10 = &local_48->field_0x0 + local_50,
                      (int)*(short *)(local_34 + 0x10) <= (int)puVar10)) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_70 = puVar18[0x13] + (int)*(short *)(local_34 + 0xe);
+              local_70 = puVar19[0x13] + (int)*(short *)(local_34 + 0xe);
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_68 = (int)*(short *)(local_34 + 0x12);
               if (param_2 < 0) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                local_6c = (undefined1 *)(puVar18[0x14] + (int)*(short *)(local_34 + 0x10));
+                local_6c = (undefined1 *)(puVar19[0x14] + (int)*(short *)(local_34 + 0x10));
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 local_64 = (int)*(short *)(local_34 + 0x14);
               }
@@ -243,7 +244,7 @@ LAB_006f3562:
                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   puVar10 = &pAVar8->field_0x0 + *(short *)(local_34 + 0x14);
                 }
-                local_6c = &pAVar16->field_0x0 + puVar18[0x14];
+                local_6c = &pAVar16->field_0x0 + puVar19[0x14];
                 local_64 = (int)puVar10 - (int)pAVar16;
               }
               goto LAB_006f397a;
@@ -311,13 +312,13 @@ LAB_006f3562:
               iVar12 = ((int)local_58 / DAT_00857008) * 2 + ((int)uVar7 >> 1);
               local_68 = local_68 - local_70;
               local_64 = local_64 - iVar12;
-              local_70 = local_70 + puVar18[0x15];
-              local_6c = (undefined1 *)(iVar12 + puVar18[0x16]);
+              local_70 = local_70 + puVar19[0x15];
+              local_6c = (undefined1 *)(iVar12 + puVar19[0x16]);
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_006f397a:
               local_58 = *(AnonShape_006F31D0_0BFF23DC **)(local_54 + 0xc);
               if ((int)local_58 < 5) {
-                if ((*(byte *)(puVar18[0x29] + 2 + local_4c * 4) & 0xc0) == 0xc0) {
+                if ((*(byte *)(puVar19[0x29] + 2 + local_4c * 4) & 0xc0) == 0xc0) {
                   puVar11 = (uint *)(local_54 + 4);
                   local_60 = 1;
                 }
@@ -327,9 +328,9 @@ LAB_006f397a:
                 }
               }
               else {
-                puVar11 = puVar18 + 0x19;
+                puVar11 = puVar19 + 0x19;
               }
-              if (local_4c == puVar18[0x23]) {
+              if (local_4c == puVar19[0x23]) {
                 DAT_00856fe8 = local_70;
                 _DAT_00856ff0 = local_68;
                 _DAT_00856ff4 = local_64;
@@ -337,8 +338,8 @@ LAB_006f397a:
                 _DAT_00856fec = local_6c;
                 DAT_0085700c = pbVar14;
               }
-              if (((*(byte *)(puVar18[0x29] + 3 + local_4c * 4) & 0x20) == 0) ||
-                 (local_54 = (ushort *)0x1, (int)puVar18[0x23] <= (int)local_4c)) {
+              if (((*(byte *)(puVar19[0x29] + 3 + local_4c * 4) & 0x20) == 0) ||
+                 (local_54 = (ushort *)0x1, (int)puVar19[0x23] <= (int)local_4c)) {
                 local_54 = nullptr;
               }
               _DAT_00857000 = local_30;
@@ -350,20 +351,20 @@ LAB_006f397a:
                     goto LAB_006f3a58;
                   }
 LAB_006f3a60:
-                  pbVar19 = (byte *)((*(int *)&this->field_0x24 + DAT_00856fd4) * DAT_00857028 +
+                  pbVar20 = (byte *)((*(int *)&this->field_0x24 + DAT_00856fd4) * DAT_00857028 +
                                      *(int *)&this->field_0x20 + DAT_00856fd0 + DAT_00857004);
                   iVar12 = *(int *)&this->field_0x28 * DAT_00856fd4;
                   local_30 = (byte *)(*(int *)&this->field_0xc + iVar12 + DAT_00856fd0);
                   local_8 = (uint *)(*(int *)&this->field_0x14 + (iVar12 + DAT_00856fd0) * 2);
-                  if (((DAT_00857030 == 0) || ((puVar18[1] & 4) != 0)) ||
-                     ((*(byte *)(puVar18[0x29] + 2 + local_4c * 4) & 2) != 0)) {
+                  if (((DAT_00857030 == 0) || ((puVar19[1] & 4) != 0)) ||
+                     ((*(byte *)(puVar19[0x29] + 2 + local_4c * 4) & 2) != 0)) {
                     local_1c = (byte *)(DAT_00856fd0 - local_70);
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     local_18 = (ushort *)
-                               ((DAT_00856fd4 - *(short *)(local_34 + 0x10)) - puVar18[0x14]);
-                    local_44 = (AnonShape_006F31D0_0BFF23DC *)puVar18[0x30];
+                               ((DAT_00856fd4 - *(short *)(local_34 + 0x10)) - puVar19[0x14]);
+                    local_44 = (AnonShape_006F31D0_0BFF23DC *)puVar19[0x30];
                     if (local_44 != nullptr) {
-                      local_3c = (DAT_00856fd4 - puVar18[0x14]) * puVar18[0x2f] + (int)local_44;
+                      local_3c = (DAT_00856fd4 - puVar19[0x14]) * puVar19[0x2f] + (int)local_44;
                     }
                     if ((int)local_18 < 1) {
                       pbVar17 = local_34 + (local_34[0xd] >> 1 & 0xe) + 0x16;
@@ -383,48 +384,48 @@ LAB_006f3a60:
                                 if (local_38 == 0) {
                                   if (local_20 == 0) {
                                     if (local_28 == 0) {
-                                      FUN_006f4e70(pbVar19,DAT_00857028,local_8,
+                                      FUN_006f4e70(pbVar20,DAT_00857028,local_8,
                                                    *(int *)&this->field_0x28 << 1,param_1,pbVar17,
                                                    DAT_00856fd8,DAT_00856fdc);
                                     }
                                     else {
-                                      FUN_006f4fe0(pbVar19,DAT_00857028,local_8,
+                                      FUN_006f4fe0(pbVar20,DAT_00857028,local_8,
                                                    *(int *)&this->field_0x28 * 2,param_1,pbVar17,
                                                    (int)DAT_00856fd8,DAT_00856fdc,local_30,
                                                    *(int *)&this->field_0x28,local_28);
                                     }
                                   }
                                   else if (local_28 == 0) {
-                                    FUN_006f5760(pbVar19,DAT_00857028,local_8,
+                                    FUN_006f5760(pbVar20,DAT_00857028,local_8,
                                                  *(int *)&this->field_0x28 << 1,param_1,pbVar17,
                                                  (int)DAT_00856fd8,DAT_00856fdc,local_20);
                                   }
                                   else {
-                                    FUN_006f5920(pbVar19,DAT_00857028,local_8,
+                                    FUN_006f5920(pbVar20,DAT_00857028,local_8,
                                                  *(int *)&this->field_0x28 * 2,param_1,pbVar17,
                                                  (int)DAT_00856fd8,DAT_00856fdc,local_20,local_30,
                                                  *(int *)&this->field_0x28,local_28);
                                   }
                                 }
                                 else if (local_20 == 0) {
-                                  FUN_006d25e0(pbVar19,DAT_00857028,pbVar17,(int)DAT_00856fd8,
+                                  FUN_006d25e0(pbVar20,DAT_00857028,pbVar17,(int)DAT_00856fd8,
                                                DAT_00856fdc);
                                 }
                                 else {
-                                  FUN_006f5bd0(pbVar19,DAT_00857028,pbVar17,(int)DAT_00856fd8,
+                                  FUN_006f5bd0(pbVar20,DAT_00857028,pbVar17,(int)DAT_00856fd8,
                                                DAT_00856fdc,local_20);
                                 }
                               }
                               else if (local_38 == 0) {
                                 if (local_20 == 0) {
                                   if (local_28 == 0) {
-                                    FUN_006f5240(pbVar19,DAT_00857028,local_8,
+                                    FUN_006f5240(pbVar20,DAT_00857028,local_8,
                                                  *(int *)&this->field_0x28 << 1,param_1,pbVar17,
                                                  (int)pbVar14,(int)local_1c,DAT_00856fd8,
                                                  DAT_00856fdc);
                                   }
                                   else {
-                                    FUN_006f5430(pbVar19,DAT_00857028,local_8,
+                                    FUN_006f5430(pbVar20,DAT_00857028,local_8,
                                                  *(int *)&this->field_0x28 * 2,param_1,pbVar17,
                                                  (int)pbVar14,(int)local_1c,(uint)DAT_00856fd8,
                                                  DAT_00856fdc,local_30,*(int *)&this->field_0x28,
@@ -432,13 +433,13 @@ LAB_006f3a60:
                                   }
                                 }
                                 else if (local_28 == 0) {
-                                  FUN_006f5d80(pbVar19,DAT_00857028,(ushort *)local_8,
+                                  FUN_006f5d80(pbVar20,DAT_00857028,(ushort *)local_8,
                                                *(int *)&this->field_0x28 << 1,param_1,pbVar17,
                                                (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,
                                                DAT_00856fdc,local_20);
                                 }
                                 else {
-                                  FUN_006f6020(pbVar19,DAT_00857028,(ushort *)local_8,
+                                  FUN_006f6020(pbVar20,DAT_00857028,(ushort *)local_8,
                                                *(int *)&this->field_0x28 * 2,param_1,pbVar17,
                                                (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,
                                                DAT_00856fdc,local_20,local_30,
@@ -446,11 +447,11 @@ LAB_006f3a60:
                                 }
                               }
                               else if (local_20 == 0) {
-                                FUN_006d26d0(pbVar19,DAT_00857028,pbVar17,(int)pbVar14,(int)local_1c
+                                FUN_006d26d0(pbVar20,DAT_00857028,pbVar17,(int)pbVar14,(int)local_1c
                                              ,(uint)DAT_00856fd8,DAT_00856fdc);
                               }
                               else {
-                                FUN_006f8660((undefined4 *)pbVar19,DAT_00857028,pbVar17,(int)pbVar14
+                                FUN_006f8660((undefined4 *)pbVar20,DAT_00857028,pbVar17,(int)pbVar14
                                              ,(int)local_1c,(uint)DAT_00856fd8,DAT_00856fdc,local_20
                                             );
                               }
@@ -458,25 +459,25 @@ LAB_006f3a60:
                             else if (local_40 != 0) {
                               if (DAT_00856fd8 == pbVar14) {
                                 if (local_38 == 0) {
-                                  FUN_006f5c60(pbVar19,DAT_00857028,local_30,
+                                  FUN_006f5c60(pbVar20,DAT_00857028,local_30,
                                                *(int *)&this->field_0x28,(ushort *)local_8,
                                                *(int *)&this->field_0x28 * 2,param_1,pbVar17,
                                                (int)DAT_00856fd8,DAT_00856fdc,local_40);
                                 }
                                 else {
-                                  FUN_006f85a0(pbVar19,DAT_00857028,local_30,
+                                  FUN_006f85a0(pbVar20,DAT_00857028,local_30,
                                                *(int *)&this->field_0x28,pbVar17,(int)DAT_00856fd8,
                                                DAT_00856fdc,local_40);
                                 }
                               }
                               else if (local_38 == 0) {
-                                FUN_006f7d10(pbVar19,DAT_00857028,local_30,*(int *)&this->field_0x28
+                                FUN_006f7d10(pbVar20,DAT_00857028,local_30,*(int *)&this->field_0x28
                                              ,(ushort *)local_8,*(int *)&this->field_0x28 * 2,
                                              param_1,pbVar17,(int)pbVar14,(int)local_1c,
                                              (int)DAT_00856fd8,DAT_00856fdc,local_40);
                               }
                               else {
-                                FUN_006f88a0(pbVar19,DAT_00857028,local_30,*(int *)&this->field_0x28
+                                FUN_006f88a0(pbVar20,DAT_00857028,local_30,*(int *)&this->field_0x28
                                              ,pbVar17,(int)pbVar14,(int)local_1c,(int)DAT_00856fd8,
                                              DAT_00856fdc,local_40);
                               }
@@ -503,13 +504,13 @@ LAB_006f3a60:
                               local_44 = nullptr;
                             }
                             if (local_20 == 0) {
-                              FUN_006f72f0(pbVar19,DAT_00857028,(ushort *)local_8,
+                              FUN_006f72f0(pbVar20,DAT_00857028,(ushort *)local_8,
                                            *(int *)&this->field_0x28 << 1,param_1,pbVar17,
                                            (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,DAT_00856fdc
                                            ,local_30,(uint)DAT_0085700c,(int)local_44);
                             }
                             else {
-                              FUN_006f77e0(pbVar19,DAT_00857028,(ushort *)local_8,
+                              FUN_006f77e0(pbVar20,DAT_00857028,(ushort *)local_8,
                                            *(int *)&this->field_0x28 << 1,param_1,pbVar17,
                                            (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,DAT_00856fdc
                                            ,local_30,(uint)DAT_0085700c,(int)local_44,local_20);
@@ -528,7 +529,7 @@ LAB_006f3a60:
                             if (local_20 == 0) {
                               if (local_28 == 0) {
                                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                                FUN_006f6330(pbVar19,DAT_00857028,(ushort *)local_8,
+                                FUN_006f6330(pbVar20,DAT_00857028,(ushort *)local_8,
                                              *(int *)&this->field_0x28 << 1,param_1,pbVar17,
                                              (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,
                                              DAT_00856fdc,local_3c,local_2c[0x2f],
@@ -536,7 +537,7 @@ LAB_006f3a60:
                               }
                               else {
                                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                                FUN_006f66c0(pbVar19,DAT_00857028,(ushort *)local_8,
+                                FUN_006f66c0(pbVar20,DAT_00857028,(ushort *)local_8,
                                              *(int *)&this->field_0x28 * 2,param_1,pbVar17,
                                              (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,
                                              DAT_00856fdc,local_3c,local_2c[0x2f],
@@ -546,7 +547,7 @@ LAB_006f3a60:
                             }
                             else if (local_28 == 0) {
                               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                              FUN_006f6ae0(pbVar19,DAT_00857028,(ushort *)local_8,
+                              FUN_006f6ae0(pbVar20,DAT_00857028,(ushort *)local_8,
                                            *(int *)&this->field_0x28 << 1,param_1,pbVar17,
                                            (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,DAT_00856fdc
                                            ,local_3c,local_2c[0x2f],
@@ -554,7 +555,7 @@ LAB_006f3a60:
                             }
                             else {
                               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                              FUN_006f6ea0(pbVar19,DAT_00857028,(ushort *)local_8,
+                              FUN_006f6ea0(pbVar20,DAT_00857028,(ushort *)local_8,
                                            *(int *)&this->field_0x28 * 2,param_1,pbVar17,
                                            (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,DAT_00856fdc
                                            ,local_3c,local_2c[0x2f],
@@ -564,7 +565,7 @@ LAB_006f3a60:
                           }
                           else if (local_40 != 0) {
                             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                            FUN_006f81d0(pbVar19,DAT_00857028,local_30,*(int *)&this->field_0x28,
+                            FUN_006f81d0(pbVar20,DAT_00857028,local_30,*(int *)&this->field_0x28,
                                          (ushort *)local_8,*(int *)&this->field_0x28 * 2,param_1,
                                          pbVar17,(int)pbVar14,(int)local_1c,(int)DAT_00856fd8,
                                          DAT_00856fdc,local_40,local_3c,local_2c[0x2f],
@@ -582,7 +583,7 @@ LAB_006f3a60:
                           if (DAT_00856fd8 == pbVar14) {
                             local_1c = nullptr;
                           }
-                          FUN_006f7fc0(pbVar19,DAT_00857028,(ushort *)local_8,
+                          FUN_006f7fc0(pbVar20,DAT_00857028,(ushort *)local_8,
                                        *(int *)&this->field_0x28 << 1,param_1,pbVar17,(int)pbVar14,
                                        (int)local_1c,(int)DAT_00856fd8,DAT_00856fdc,(int)local_44);
                         }
@@ -596,23 +597,23 @@ LAB_006f3a60:
                       if (DAT_00856fd8 == pbVar14) {
                         local_1c = nullptr;
                       }
-                      FUN_007068d0(pbVar19,DAT_00857028,(ushort *)local_8,
+                      FUN_007068d0(pbVar20,DAT_00857028,(ushort *)local_8,
                                    *(int *)&this->field_0x28 << 1,param_1,pbVar17,(int)pbVar14,
                                    (int)local_1c,local_2c[0x26],local_2c[0x27],(int)DAT_00856fd8,
                                    DAT_00856fdc);
                     }
                   }
                   else {
-                    pbVar17 = DAT_00856fd8 + (DAT_00856fd0 - puVar18[0x15]);
+                    pbVar18 = DAT_00856fd8 + (DAT_00856fd0 - puVar19[0x15]);
                     if (DAT_00857008 == 3) {
-                      uVar7 = (uint)pbVar17 & 1;
+                      uVar7 = (uint)pbVar18 & 1;
                     }
                     else {
-                      uVar7 = (-(uint)(((uint)pbVar17 & 1) != 0) & 3) - 1;
+                      uVar7 = (-(uint)(((uint)pbVar18 & 1) != 0) & 3) - 1;
                     }
-                    local_44 = (AnonShape_006F31D0_0BFF23DC *)(DAT_00856fd0 - puVar18[0x15]);
+                    local_44 = (AnonShape_006F31D0_0BFF23DC *)(DAT_00856fd0 - puVar19[0x15]);
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                    iVar12 = ((int)pbVar17 / 2) * DAT_00857008 +
+                    iVar12 = ((int)pbVar18 / 2) * DAT_00857008 +
                              (uVar7 - (int)*(short *)(local_34 + 0xe));
                     if (DAT_00857008 == 3) {
                       local_10 = ((uint)local_44 & 1) << 1;
@@ -646,7 +647,7 @@ LAB_006f3a60:
                     if (local_2c[0x30] != 0) {
                       local_3c = local_2c[0x2f] * (int)local_18 + local_2c[0x30];
                     }
-                    local_1c = pbVar19;
+                    local_1c = pbVar20;
                     if (local_14 < 1) {
                       local_18 = (ushort *)(local_34 + (local_34[0xd] >> 1 & 0xe) + 0x16);
                     }
@@ -784,10 +785,10 @@ LAB_006f3a60:
                             iVar5 = ((int)*(short *)(local_34 + 0x10) -
                                     (int)*(short *)(DAT_00856fe4 + 0x10)) + local_14;
                             if (iVar5 < 1) {
-                              pbVar19 = DAT_00856fe4 + (DAT_00856fe4[0xd] >> 1 & 0xe) + 0x16;
+                              pbVar20 = DAT_00856fe4 + (DAT_00856fe4[0xd] >> 1 & 0xe) + 0x16;
                             }
                             else {
-                              pbVar19 = FUN_006cfe10(DAT_00856fe4,iVar5);
+                              pbVar20 = FUN_006cfe10(DAT_00856fe4,iVar5);
                             }
                             if (local_38 != 0) {
                               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -798,14 +799,14 @@ LAB_006f3a60:
                                 FUN_00700190(local_1c,DAT_00857028,(ushort *)local_8,
                                              *(int *)&local_24->field_0x28 << 1,param_1,
                                              (byte *)local_18,(int)pbVar14,iVar13,iVar12 - iVar13,
-                                             iVar4 - local_14,local_10,local_c,pbVar19,
+                                             iVar4 - local_14,local_10,local_c,pbVar20,
                                              (int)DAT_0085700c,(int)local_44);
                               }
                               else {
                                 FUN_00700920(local_1c,DAT_00857028,(ushort *)local_8,
                                              *(int *)&local_24->field_0x28 << 1,param_1,
                                              (byte *)local_18,(int)pbVar14,iVar13,iVar12 - iVar13,
-                                             iVar4 - local_14,local_10,local_c,pbVar19,
+                                             iVar4 - local_14,local_10,local_c,pbVar20,
                                              (int)DAT_0085700c,(int)local_44);
                               }
                             }
@@ -813,14 +814,14 @@ LAB_006f3a60:
                               FUN_007012f0(local_1c,DAT_00857028,(ushort *)local_8,
                                            *(int *)&local_24->field_0x28 << 1,param_1,
                                            (byte *)local_18,(int)pbVar14,iVar13,iVar12 - iVar13,
-                                           iVar4 - local_14,local_10,local_c,pbVar19,
+                                           iVar4 - local_14,local_10,local_c,pbVar20,
                                            (int)DAT_0085700c,(int)local_44,local_20);
                             }
                             else {
                               FUN_00701ad0(local_1c,DAT_00857028,(ushort *)local_8,
                                            *(int *)&local_24->field_0x28 << 1,param_1,
                                            (byte *)local_18,(int)pbVar14,iVar13,iVar12 - iVar13,
-                                           iVar4 - local_14,local_10,local_c,pbVar19,
+                                           iVar4 - local_14,local_10,local_c,pbVar20,
                                            (int)DAT_0085700c,(int)local_44,local_20);
                             }
                           }
@@ -963,7 +964,7 @@ LAB_006f3a60:
 LAB_006f3a58:
                   if (iVar12 != 0) goto LAB_006f3a60;
                 }
-                puVar18 = local_2c;
+                puVar19 = local_2c;
                 this = local_24;
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if (*(int *)(*(int *)&local_24->field_0x330 + 0x18 + local_5c) <=
@@ -998,7 +999,7 @@ LAB_006f363d:
             *puVar11 = *puVar11 & 0xffffff7d | 1;
           }
           else {
-            local_18 = (ushort *)(local_58->field_0050 - puVar18[0x14]);
+            local_18 = (ushort *)(local_58->field_0050 - puVar19[0x14]);
             if (param_2 == 0) {
               uVar15 = local_50 - (int)local_18;
               if ((int)local_18 < (int)local_50) {
@@ -1035,10 +1036,10 @@ LAB_006f363d:
 LAB_006f4e0c:
   if (4 < *(int *)(local_5c + 0x18 + *(int *)&this->field_0x330)) {
     if (param_4 != 0) {
-      *puVar18 = *puVar18 | ((0 < param_2) - 1 & 0xffe00000) + 0x400000;
+      *puVar19 = *puVar19 | ((0 < param_2) - 1 & 0xffe00000) + 0x400000;
       return;
     }
-    *puVar18 = *puVar18 | ((0 < param_2) - 1 & 0xfff80000) + 0x100000;
+    *puVar19 = *puVar19 | ((0 < param_2) - 1 & 0xfff80000) + 0x100000;
   }
   return;
 LAB_006f4dec:

@@ -16,8 +16,12 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   char cVar2;
   SettMapMTy_field_1F84DArray *pSVar3;
   SettMapMTy *pSVar5;
+  int local_EAX_42;
   int iVar6;
-  DArrayTy *pDVar7;
+  DArrayTy *pDVar6;
+  int local_EAX_956;
+  int local_EAX_1067;
+  int iVar7;
   int iVar8;
   uint uVar9;
   uint uVar10;
@@ -41,13 +45,13 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_14 = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
-  if (iVar6 != 0) {
+  local_EAX_42 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
+  if (local_EAX_42 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x164,0,iVar6,"%s"
-                               ,"SettMapMTy::SetListCtrls");
-    if (iVar8 == 0) {
-      RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\settmobj.cpp",0x164);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x164,0,local_EAX_42,
+                               "%s","SettMapMTy::SetListCtrls");
+    if (iVar7 == 0) {
+      RaiseInternalException(local_EAX_42,0,"E:\\__titans\\Start\\settmobj.cpp",0x164);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -100,19 +104,19 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
             switch(pSVar5->field_1E26) {
             case CASE_5:
             case CASE_F:
-              pDVar7 = (DArrayTy *)CreateStrategList((int)local_c,(uint)(byte)pcVar11[2],0xffffffff);
+              pDVar6 = (DArrayTy *)CreateStrategList((int)local_c,(uint)(byte)pcVar11[2],0xffffffff);
               break;
             default:
-              pDVar7 = (DArrayTy *)CreateOpponentList(local_c,(uint)(byte)pcVar11[3],DAT_0080995c);
+              pDVar6 = (DArrayTy *)CreateOpponentList(local_c,(uint)(byte)pcVar11[3],DAT_0080995c);
               break;
             case CASE_C:
             case CASE_10:
-              pDVar7 = (DArrayTy *)
+              pDVar6 = (DArrayTy *)
                        CreateSaveStrategList((int)local_c,(uint)(byte)pcVar11[2],0xffffffff);
             }
-            *(DArrayTy **)(pcVar11 + 0x50) = pDVar7;
-            if (pDVar7->count <= (uint)(byte)pcVar11[5]) {
-              pcVar11[5] = (char)pDVar7->count;
+            *(DArrayTy **)(pcVar11 + 0x50) = pDVar6;
+            if (pDVar6->count <= (uint)(byte)pcVar11[5]) {
+              pcVar11[5] = (char)pDVar6->count;
             }
             if (((*(DArrayTy **)(pcVar11 + 0x50))->count == 0) && (pcVar11[4] == '\x04')) {
               pcVar11[4] = '\x01';
@@ -136,7 +140,7 @@ LAB_005cd10f:
                 goto cf_common_join_005CD142;
               }
               if (pcVar11[4] == '\x02') {
-                iVar6 = *(int *)(pcVar11 + 6);
+                iVar8 = *(int *)(pcVar11 + 6);
                 goto joined_r0x005cd0bb;
               }
             }
@@ -146,7 +150,7 @@ LAB_005cd10f:
                ((cVar2 == '\x02' && (*(int *)(pcVar11 + 6) == DAT_0080877f))))
             goto cf_common_join_005CD142;
             if (cVar2 == '\x03') {
-              iVar6 = *(int *)(pcVar11 + 6);
+              iVar8 = *(int *)(pcVar11 + 6);
               goto joined_r0x005cd0bb;
             }
             break;
@@ -163,7 +167,7 @@ LAB_005cd10f:
               }
               else {
                 if (cVar2 == '\x02') {
-                  iVar6 = *(int *)(pcVar11 + 6);
+                  iVar8 = *(int *)(pcVar11 + 6);
                   goto joined_r0x005cd0bb;
                 }
 cf_common_join_005CD142:
@@ -173,9 +177,9 @@ cf_common_join_005CD142:
             break;
           case 7:
             if (pcVar11[4] == '\x02') {
-              iVar6 = *(int *)(pcVar11 + 6);
+              iVar8 = *(int *)(pcVar11 + 6);
 joined_r0x005cd0bb:
-              if (iVar6 == DAT_0080877f) goto cf_common_join_005CD142;
+              if (iVar8 == DAT_0080877f) goto cf_common_join_005CD142;
             }
           }
         }
@@ -197,8 +201,8 @@ joined_r0x005cd0bb:
       }
       local_108.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_108;
-      iVar6 = Library::MSVCRT::__setjmp3(local_108.jumpBuffer,0);
-      if (iVar6 == 0) {
+      local_EAX_956 = Library::MSVCRT::__setjmp3(local_108.jumpBuffer,0);
+      if (local_EAX_956 == 0) {
         FUN_006e6080(local_14,2,local_14->field_211D,local_3c);
       }
       local_2c = 0x22;
@@ -213,8 +217,8 @@ joined_r0x005cd0bb:
       }
       g_currentExceptionFrame = &local_14c;
       local_14c.previous = local_108.previous;
-      iVar6 = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0);
-      if (iVar6 == 0) {
+      local_EAX_1067 = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0);
+      if (local_EAX_1067 == 0) {
         FUN_006e6080(local_14,2,local_14->field_211D,local_3c);
       }
       g_currentExceptionFrame = local_80.previous;

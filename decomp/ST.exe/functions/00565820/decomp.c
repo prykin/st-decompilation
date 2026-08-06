@@ -13,19 +13,24 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
   byte bVar1;
   byte bVar2;
   dword dVar3;
+  DArrayTy *pDVar5;
   int iVar5;
   byte *pbVar6;
-  DArrayTy *pDVar7;
-  int iVar9;
-  byte *pbVar10;
-  int iVar11;
-  uint uVar12;
-  uint uVar13;
+  DArrayTy *pDVar6_mg1;
+  int local_EAX_2465;
   int iVar14;
-  byte *pbVar15;
-  dword dVar16;
-  int iVar17;
-  bool bVar18;
+  int iVar11;
+  int iVar8;
+  byte *pbVar9;
+  int iVar10;
+  uint uVar11;
+  uint uVar12;
+  int iVar13;
+  int iVar15;
+  byte *pbVar16;
+  dword dVar17;
+  int iVar18;
+  bool bVar19;
   InternalExceptionFrame local_d8;
   dword local_94 [10];
   byte local_6c;
@@ -76,44 +81,44 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
   iVar5 = Library::MSVCRT::__setjmp3(local_d8.jumpBuffer,0);
   if (iVar5 == 0) {
     local_14 = FUN_00561240(param_4,param_5,param_6);
-    iVar11 = local_14[2];
-    iVar5 = local_14[4] + 2;
-    iVar17 = iVar11 + 2;
-    iVar14 = iVar5 * iVar17;
-    local_28 = iVar5;
-    local_c = iVar17;
-    local_48 = Library::DKW::LIB::MemAllocClear(iVar14 * 7);
+    iVar10 = local_14[2];
+    iVar15 = local_14[4] + 2;
+    iVar18 = iVar10 + 2;
+    iVar13 = iVar15 * iVar18;
+    local_28 = iVar15;
+    local_c = iVar18;
+    local_48 = Library::DKW::LIB::MemAllocClear(iVar13 * 7);
     local_20 = nullptr;
     local_2c = nullptr;
     local_30 = local_14[1] + -1 + param_2;
     if (local_30 < 0) {
       local_20 = (DArrayTy *)-local_30;
-      local_c = local_30 + iVar17;
+      local_c = local_30 + iVar18;
       local_30 = 0;
     }
-    iVar9 = local_14[2] + local_14[1] + param_2;
-    if (g_pathingGrid.sizeX <= iVar9) {
-      local_c = local_c + -1 + (g_pathingGrid.sizeX - iVar9);
+    iVar8 = local_14[2] + local_14[1] + param_2;
+    if (g_pathingGrid.sizeX <= iVar8) {
+      local_c = local_c + -1 + (g_pathingGrid.sizeX - iVar8);
     }
-    iVar9 = local_14[3] + -1 + param_3;
-    local_44 = iVar9;
-    if (iVar9 < 0) {
+    iVar8 = local_14[3] + -1 + param_3;
+    local_44 = iVar8;
+    if (iVar8 < 0) {
       local_44 = 0;
-      local_2c = (dword *)-iVar9;
-      iVar5 = iVar5 + iVar9;
-      local_28 = iVar5;
+      local_2c = (dword *)-iVar8;
+      iVar15 = iVar15 + iVar8;
+      local_28 = iVar15;
     }
-    iVar9 = local_14[4] + local_14[3] + param_3;
-    if (g_pathingGrid.sizeY <= iVar9) {
-      iVar5 = iVar5 + -1 + (g_pathingGrid.sizeY - iVar9);
-      local_28 = iVar5;
+    iVar8 = local_14[4] + local_14[3] + param_3;
+    if (g_pathingGrid.sizeY <= iVar8) {
+      iVar15 = iVar15 + -1 + (g_pathingGrid.sizeY - iVar8);
+      local_28 = iVar15;
     }
-    local_34 = (DArrayTy *)((int)local_48 + (int)local_2c * iVar17 + (int)local_20 + iVar14);
+    local_34 = (DArrayTy *)((int)local_48 + (int)local_2c * iVar18 + (int)local_20 + iVar13);
     local_10 = 0;
-    pDVar7 = local_34;
-    if (0 < iVar5) {
+    pDVar5 = local_34;
+    if (0 < iVar15) {
       do {
-        local_18 = pDVar7;
+        local_18 = pDVar5;
         local_54 = g_pathingGrid.cells + (int)g_pathingGrid.sizeX * (local_44 + local_10) + local_30
         ;
         local_1c = (DArrayTy *)
@@ -122,11 +127,11 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
         if (0 < local_c) {
           do {
             local_5c = local_54;
-            pbVar15 = (byte *)((int)&local_18->flags + local_8);
-            local_68 = -1 - iVar14;
-            local_64 = 1 - iVar14;
+            pbVar16 = (byte *)((int)&local_18->flags + local_8);
+            local_68 = -1 - iVar13;
+            local_64 = 1 - iVar13;
             local_38 = 5;
-            local_4c = iVar17 - iVar14;
+            local_4c = iVar18 - iVar13;
             local_50 = local_1c;
             do {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -134,48 +139,48 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
                  (*(int *)(local_50->iteratorIndex + 0x20) == 0x1ae)) {
                 if (0 < local_10) {
                   if (0 < local_8) {
-                    pbVar15[(-iVar17 - iVar14) + -1] = pbVar15[(-iVar17 - iVar14) + -1] | 2;
-                    pbVar15[-1 - iVar17] = pbVar15[-1 - iVar17] | 2;
-                    pbVar15[iVar14 + (-1 - iVar17)] = pbVar15[iVar14 + (-1 - iVar17)] | 2;
+                    pbVar16[(-iVar18 - iVar13) + -1] = pbVar16[(-iVar18 - iVar13) + -1] | 2;
+                    pbVar16[-1 - iVar18] = pbVar16[-1 - iVar18] | 2;
+                    pbVar16[iVar13 + (-1 - iVar18)] = pbVar16[iVar13 + (-1 - iVar18)] | 2;
                   }
-                  pbVar10 = pbVar15 + (-iVar17 - iVar14);
-                  *pbVar10 = *pbVar10 | 2;
-                  pbVar6 = pbVar15 + -iVar17;
+                  pbVar9 = pbVar16 + (-iVar18 - iVar13);
+                  *pbVar9 = *pbVar9 | 2;
+                  pbVar6 = pbVar16 + -iVar18;
                   *pbVar6 = *pbVar6 | 2;
-                  pbVar6[iVar14] = pbVar6[iVar14] | 2;
+                  pbVar6[iVar13] = pbVar6[iVar13] | 2;
                   if (local_8 < local_c + -1) {
-                    pbVar10[1] = pbVar10[1] | 2;
+                    pbVar9[1] = pbVar9[1] | 2;
                     pbVar6[1] = pbVar6[1] | 2;
-                    pbVar6[iVar14 + 1] = pbVar6[iVar14 + 1] | 2;
+                    pbVar6[iVar13 + 1] = pbVar6[iVar13 + 1] | 2;
                   }
                 }
                 if (0 < local_8) {
-                  pbVar15[-1 - iVar14] = pbVar15[-1 - iVar14] | 2;
-                  pbVar15[iVar14 + local_68] = pbVar15[iVar14 + local_68] | 2;
-                  pbVar15[iVar14 + -1] = pbVar15[iVar14 + -1] | 2;
+                  pbVar16[-1 - iVar13] = pbVar16[-1 - iVar13] | 2;
+                  pbVar16[iVar13 + local_68] = pbVar16[iVar13 + local_68] | 2;
+                  pbVar16[iVar13 + -1] = pbVar16[iVar13 + -1] | 2;
                 }
-                pbVar6 = pbVar15 + -iVar14;
+                pbVar6 = pbVar16 + -iVar13;
                 *pbVar6 = *pbVar6 | 2;
-                *pbVar15 = *pbVar15 | 2;
-                pbVar15[iVar14] = pbVar15[iVar14] | 2;
+                *pbVar16 = *pbVar16 | 2;
+                pbVar16[iVar13] = pbVar16[iVar13] | 2;
                 if (local_8 < local_c + -1) {
                   pbVar6[1] = pbVar6[1] | 2;
-                  pbVar15[local_64 + iVar14] = pbVar15[local_64 + iVar14] | 2;
-                  pbVar15[iVar14 + 1] = pbVar15[iVar14 + 1] | 2;
+                  pbVar16[local_64 + iVar13] = pbVar16[local_64 + iVar13] | 2;
+                  pbVar16[iVar13 + 1] = pbVar16[iVar13 + 1] | 2;
                 }
                 if (local_10 < local_28 + -1) {
                   if (0 < local_8) {
-                    pbVar6[iVar11 + 1] = pbVar6[iVar11 + 1] | 2;
-                    pbVar15[iVar11 + 1] = pbVar15[iVar11 + 1] | 2;
-                    pbVar15[iVar17 + iVar14 + -1] = pbVar15[iVar17 + iVar14 + -1] | 2;
+                    pbVar6[iVar10 + 1] = pbVar6[iVar10 + 1] | 2;
+                    pbVar16[iVar10 + 1] = pbVar16[iVar10 + 1] | 2;
+                    pbVar16[iVar18 + iVar13 + -1] = pbVar16[iVar18 + iVar13 + -1] | 2;
                   }
-                  pbVar6[iVar17] = pbVar6[iVar17] | 2;
-                  pbVar15[local_4c + iVar14] = pbVar15[local_4c + iVar14] | 2;
-                  pbVar15[iVar14 + iVar17] = pbVar15[iVar14 + iVar17] | 2;
+                  pbVar6[iVar18] = pbVar6[iVar18] | 2;
+                  pbVar16[local_4c + iVar13] = pbVar16[local_4c + iVar13] | 2;
+                  pbVar16[iVar13 + iVar18] = pbVar16[iVar13 + iVar18] | 2;
                   if (local_8 < local_c + -1) {
-                    pbVar6[iVar11 + 3] = pbVar6[iVar11 + 3] | 2;
-                    pbVar15[iVar11 + 3] = pbVar15[iVar11 + 3] | 2;
-                    pbVar15[iVar14 + iVar17 + 1] = pbVar15[iVar14 + iVar17 + 1] | 2;
+                    pbVar6[iVar10 + 3] = pbVar6[iVar10 + 3] | 2;
+                    pbVar16[iVar10 + 3] = pbVar16[iVar10 + 3] | 2;
+                    pbVar16[iVar13 + iVar18 + 1] = pbVar16[iVar13 + iVar18 + 1] | 2;
                   }
                 }
               }
@@ -188,84 +193,84 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == (byte)param_1) {
 LAB_00565c6c:
-                      iVar5 = 0;
+                      iVar15 = 0;
                     }
                     else {
-                      uVar12 = param_1 & 0xff;
-                      bVar2 = g_playerRelationMatrix[bVar1][uVar12];
-                      if ((bVar2 == 0) && (g_playerRelationMatrix[uVar12][bVar1] == 0)) {
-                        iVar5 = -2;
+                      uVar11 = param_1 & 0xff;
+                      bVar2 = g_playerRelationMatrix[bVar1][uVar11];
+                      if ((bVar2 == 0) && (g_playerRelationMatrix[uVar11][bVar1] == 0)) {
+                        iVar15 = -2;
                       }
-                      else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar12][bVar1] == 0)) {
-                        iVar5 = -1;
+                      else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar11][bVar1] == 0)) {
+                        iVar15 = -1;
                       }
-                      else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar12][bVar1] == 1)) {
-                        iVar5 = 1;
+                      else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar11][bVar1] == 1)) {
+                        iVar15 = 1;
                       }
                       else {
-                        if ((bVar2 != 1) || (g_playerRelationMatrix[uVar12][bVar1] != 1))
+                        if ((bVar2 != 1) || (g_playerRelationMatrix[uVar11][bVar1] != 1))
                         goto LAB_00565c6c;
-                        iVar5 = 2;
+                        iVar15 = 2;
                       }
                     }
-                    bVar18 = iVar5 < 0;
+                    bVar19 = iVar15 < 0;
                   }
                   else {
-                    bVar18 = g_bulkInitializedRecords_008087C7[param_1 & 0xff].field_0023 !=
+                    bVar19 = g_bulkInitializedRecords_008087C7[param_1 & 0xff].field_0023 !=
                              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
-                  if (!bVar18) {
+                  if (!bVar19) {
                     if (0 < local_10) {
                       if (0 < local_8) {
-                        pbVar15[(-iVar17 - iVar14) + -1] = pbVar15[(-iVar17 - iVar14) + -1] | 3;
-                        pbVar15[-1 - iVar17] = pbVar15[-1 - iVar17] | 3;
-                        pbVar15[iVar14 + (-1 - iVar17)] = pbVar15[iVar14 + (-1 - iVar17)] | 3;
+                        pbVar16[(-iVar18 - iVar13) + -1] = pbVar16[(-iVar18 - iVar13) + -1] | 3;
+                        pbVar16[-1 - iVar18] = pbVar16[-1 - iVar18] | 3;
+                        pbVar16[iVar13 + (-1 - iVar18)] = pbVar16[iVar13 + (-1 - iVar18)] | 3;
                       }
-                      pbVar10 = pbVar15 + (-iVar17 - iVar14);
-                      *pbVar10 = *pbVar10 | 3;
-                      pbVar6 = pbVar15 + -iVar17;
+                      pbVar9 = pbVar16 + (-iVar18 - iVar13);
+                      *pbVar9 = *pbVar9 | 3;
+                      pbVar6 = pbVar16 + -iVar18;
                       *pbVar6 = *pbVar6 | 3;
-                      pbVar6[iVar14] = pbVar6[iVar14] | 3;
+                      pbVar6[iVar13] = pbVar6[iVar13] | 3;
                       if (local_8 < local_c + -1) {
-                        pbVar10[1] = pbVar10[1] | 3;
+                        pbVar9[1] = pbVar9[1] | 3;
                         pbVar6[1] = pbVar6[1] | 3;
-                        pbVar6[iVar14 + 1] = pbVar6[iVar14 + 1] | 3;
+                        pbVar6[iVar13 + 1] = pbVar6[iVar13 + 1] | 3;
                       }
                     }
                     if (0 < local_8) {
-                      pbVar15[-1 - iVar14] = pbVar15[-1 - iVar14] | 3;
-                      pbVar15[iVar14 + local_68] = pbVar15[iVar14 + local_68] | 3;
-                      pbVar15[iVar14 + -1] = pbVar15[iVar14 + -1] | 3;
+                      pbVar16[-1 - iVar13] = pbVar16[-1 - iVar13] | 3;
+                      pbVar16[iVar13 + local_68] = pbVar16[iVar13 + local_68] | 3;
+                      pbVar16[iVar13 + -1] = pbVar16[iVar13 + -1] | 3;
                     }
-                    pbVar6 = pbVar15 + -iVar14;
+                    pbVar6 = pbVar16 + -iVar13;
                     *pbVar6 = *pbVar6 | 3;
-                    *pbVar15 = *pbVar15 | 3;
-                    pbVar15[iVar14] = pbVar15[iVar14] | 3;
+                    *pbVar16 = *pbVar16 | 3;
+                    pbVar16[iVar13] = pbVar16[iVar13] | 3;
                     if (local_8 < local_c + -1) {
                       pbVar6[1] = pbVar6[1] | 3;
-                      pbVar15[local_64 + iVar14] = pbVar15[local_64 + iVar14] | 3;
-                      pbVar15[iVar14 + 1] = pbVar15[iVar14 + 1] | 3;
+                      pbVar16[local_64 + iVar13] = pbVar16[local_64 + iVar13] | 3;
+                      pbVar16[iVar13 + 1] = pbVar16[iVar13 + 1] | 3;
                     }
                     if (local_10 < local_28 + -1) {
                       if (0 < local_8) {
-                        pbVar6[iVar11 + 1] = pbVar6[iVar11 + 1] | 3;
-                        pbVar15[iVar11 + 1] = pbVar15[iVar11 + 1] | 3;
-                        pbVar15[iVar17 + iVar14 + -1] = pbVar15[iVar17 + iVar14 + -1] | 3;
+                        pbVar6[iVar10 + 1] = pbVar6[iVar10 + 1] | 3;
+                        pbVar16[iVar10 + 1] = pbVar16[iVar10 + 1] | 3;
+                        pbVar16[iVar18 + iVar13 + -1] = pbVar16[iVar18 + iVar13 + -1] | 3;
                       }
-                      pbVar6[iVar17] = pbVar6[iVar17] | 3;
-                      pbVar15[local_4c + iVar14] = pbVar15[local_4c + iVar14] | 3;
-                      pbVar15[iVar14 + iVar17] = pbVar15[iVar14 + iVar17] | 3;
+                      pbVar6[iVar18] = pbVar6[iVar18] | 3;
+                      pbVar16[local_4c + iVar13] = pbVar16[local_4c + iVar13] | 3;
+                      pbVar16[iVar13 + iVar18] = pbVar16[iVar13 + iVar18] | 3;
                       if (local_8 < local_c + -1) {
-                        pbVar6[iVar11 + 3] = pbVar6[iVar11 + 3] | 3;
-                        pbVar15[iVar11 + 3] = pbVar15[iVar11 + 3] | 3;
-                        pbVar15[iVar14 + iVar17 + 1] = pbVar15[iVar14 + iVar17 + 1] | 3;
+                        pbVar6[iVar10 + 3] = pbVar6[iVar10 + 3] | 3;
+                        pbVar16[iVar10 + 3] = pbVar16[iVar10 + 3] | 3;
+                        pbVar16[iVar13 + iVar18 + 1] = pbVar16[iVar13 + iVar18 + 1] | 3;
                       }
                     }
                   }
                 }
-                *pbVar15 = *pbVar15 | 1;
+                *pbVar16 = *pbVar16 | 1;
               }
-              pbVar15 = pbVar15 + iVar14;
+              pbVar16 = pbVar16 + iVar13;
               local_5c = local_5c + g_pathingGrid.planeStride;
               local_50 = (DArrayTy *)(&local_50->flags + g_worldGrid.planeStride * 2);
               local_38 = local_38 + -1;
@@ -275,10 +280,10 @@ LAB_00565c6c:
             local_1c = (DArrayTy *)&local_1c->elementSize;
           } while (local_8 < local_c);
         }
-        local_18 = (DArrayTy *)((int)&local_18->flags + iVar17);
+        local_18 = (DArrayTy *)((int)&local_18->flags + iVar18);
         local_10 = local_10 + 1;
-        iVar5 = local_28;
-        pDVar7 = local_18;
+        iVar15 = local_28;
+        pDVar5 = local_18;
       } while (local_10 < local_28);
     }
     if (local_20 == nullptr) {
@@ -291,144 +296,144 @@ LAB_00565c6c:
       local_c = (local_14[2] - (int)local_20) + 1;
     }
     if (local_2c == nullptr) {
-      iVar5 = iVar5 + -1;
-      local_34 = (DArrayTy *)((int)&local_34->flags + iVar17);
+      iVar15 = iVar15 + -1;
+      local_34 = (DArrayTy *)((int)&local_34->flags + iVar18);
       local_44 = local_44 + 1;
       local_2c = (dword *)0x1;
-      local_28 = iVar5;
+      local_28 = iVar15;
     }
-    if (local_14[4] + 1 < (int)local_2c + iVar5) {
+    if (local_14[4] + 1 < (int)local_2c + iVar15) {
       local_28 = (local_14[4] - (int)local_2c) + 1;
     }
     local_38 = param_2 - local_30;
-    pDVar7 = Library::DKW::TBL::DArrayCreate
-                       (nullptr,(int)(*local_14 + (*local_14 >> 0x1f & 3U)) >> 2,6,10);
+    pDVar6_mg1 = Library::DKW::TBL::DArrayCreate
+                           (nullptr,(int)(*local_14 + (*local_14 >> 0x1f & 3U)) >> 2,6,10);
     local_8 = 0;
     local_1c = local_34;
-    local_24 = pDVar7;
+    local_24 = pDVar6_mg1;
     do {
       local_10 = 0;
-      local_94[local_8 + 5] = pDVar7->count;
+      local_94[local_8 + 5] = pDVar6_mg1->count;
       local_20 = local_1c;
       if (0 < local_28) {
         int scalar_local_18 = (int)local_2c * 8; /* split integer lifetime from pointer-typed SSA storage */
         do {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar5 = *(int *)(scalar_local_18 + 0x10 + (int)local_14) + local_38;
+          iVar15 = *(int *)(scalar_local_18 + 0x10 + (int)local_14) + local_38;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar9 = *(int *)(scalar_local_18 + 0xc + (int)local_14) + local_38;
-          local_4c = iVar5;
-          if (iVar9 <= iVar5) {
+          iVar8 = *(int *)(scalar_local_18 + 0xc + (int)local_14) + local_38;
+          local_4c = iVar15;
+          if (iVar8 <= iVar15) {
             do {
-              if ((((-1 < iVar9) && (iVar9 < local_c)) && (-1 < local_10)) &&
-                 ((local_10 < local_28 && (*(char *)((int)&local_20->flags + iVar9) == '\0')))) {
-                local_40 = (short)iVar9 + (short)local_30;
+              if ((((-1 < iVar8) && (iVar8 < local_c)) && (-1 < local_10)) &&
+                 ((local_10 < local_28 && (*(char *)((int)&local_20->flags + iVar8) == '\0')))) {
+                local_40 = (short)iVar8 + (short)local_30;
                 local_3e = (short)local_10 + (short)local_44;
                 local_3c = (undefined2)local_8;
-                Library::DKW::TBL::DArrayAppend(pDVar7,&local_40);
+                Library::DKW::TBL::DArrayAppend(pDVar6_mg1,&local_40);
                 local_94[local_8] = local_94[local_8] + 1;
-                iVar5 = iVar9 - iVar14;
-                pbVar15 = (byte *)((iVar5 - iVar17) + (int)local_20);
-                pbVar15[-1] = pbVar15[-1] | 2;
-                *pbVar15 = *pbVar15 | 2;
-                pbVar15[1] = pbVar15[1] | 2;
-                pbVar15 = (byte *)(iVar5 + (int)local_20);
-                pbVar15[-1] = *(byte *)(iVar5 + -1 + (int)local_20) | 2;
-                *pbVar15 = *pbVar15 | 2;
-                pbVar15[1] = pbVar15[1] | 2;
-                pbVar15[iVar11 + 1] = pbVar15[iVar11 + 1] | 2;
-                pbVar15[iVar17] = pbVar15[iVar17] | 2;
-                pbVar15[iVar11 + 3] = pbVar15[iVar11 + 3] | 2;
-                pbVar15 = (byte *)((iVar9 - iVar17) + (int)local_20);
-                pbVar15[-1] = *(byte *)((iVar9 - iVar17) + -1 + (int)local_20) | 2;
-                *pbVar15 = *pbVar15 | 2;
-                pbVar15[1] = pbVar15[1] | 2;
-                *(byte *)(iVar9 + -1 + (int)local_20) = *(byte *)(iVar9 + -1 + (int)local_20) | 2;
-                *(byte *)((int)&local_20->flags + iVar9) =
-                     *(byte *)((int)&local_20->flags + iVar9) | 2;
-                *(byte *)((int)&local_20->flags + iVar9 + 1) =
-                     *(byte *)((int)&local_20->flags + iVar9 + 1) | 2;
-                pbVar6 = (byte *)((int)&local_20->flags + iVar9 + iVar11 + 1);
+                iVar15 = iVar8 - iVar13;
+                pbVar16 = (byte *)((iVar15 - iVar18) + (int)local_20);
+                pbVar16[-1] = pbVar16[-1] | 2;
+                *pbVar16 = *pbVar16 | 2;
+                pbVar16[1] = pbVar16[1] | 2;
+                pbVar16 = (byte *)(iVar15 + (int)local_20);
+                pbVar16[-1] = *(byte *)(iVar15 + -1 + (int)local_20) | 2;
+                *pbVar16 = *pbVar16 | 2;
+                pbVar16[1] = pbVar16[1] | 2;
+                pbVar16[iVar10 + 1] = pbVar16[iVar10 + 1] | 2;
+                pbVar16[iVar18] = pbVar16[iVar18] | 2;
+                pbVar16[iVar10 + 3] = pbVar16[iVar10 + 3] | 2;
+                pbVar16 = (byte *)((iVar8 - iVar18) + (int)local_20);
+                pbVar16[-1] = *(byte *)((iVar8 - iVar18) + -1 + (int)local_20) | 2;
+                *pbVar16 = *pbVar16 | 2;
+                pbVar16[1] = pbVar16[1] | 2;
+                *(byte *)(iVar8 + -1 + (int)local_20) = *(byte *)(iVar8 + -1 + (int)local_20) | 2;
+                *(byte *)((int)&local_20->flags + iVar8) =
+                     *(byte *)((int)&local_20->flags + iVar8) | 2;
+                *(byte *)((int)&local_20->flags + iVar8 + 1) =
+                     *(byte *)((int)&local_20->flags + iVar8 + 1) | 2;
+                pbVar6 = (byte *)((int)&local_20->flags + iVar8 + iVar10 + 1);
                 *pbVar6 = *pbVar6 | 2;
-                pbVar6 = (byte *)((int)&local_20->flags + iVar9 + iVar17);
+                pbVar6 = (byte *)((int)&local_20->flags + iVar8 + iVar18);
                 *pbVar6 = *pbVar6 | 2;
-                pbVar6 = (byte *)((int)&local_20->flags + iVar9 + iVar11 + 3);
+                pbVar6 = (byte *)((int)&local_20->flags + iVar8 + iVar10 + 3);
                 *pbVar6 = *pbVar6 | 2;
-                pbVar15[iVar14 + -1] = pbVar15[iVar14 + -1] | 2;
-                pbVar15[iVar14] = pbVar15[iVar14] | 2;
-                pbVar15[iVar14 + 1] = pbVar15[iVar14 + 1] | 2;
-                *(byte *)((int)local_20 + iVar9 + iVar14 + -1) =
-                     *(byte *)((int)local_20 + iVar9 + iVar14 + -1) | 2;
-                *(byte *)((int)&local_20->flags + iVar9 + iVar14) =
-                     *(byte *)((int)&local_20->flags + iVar9 + iVar14) | 2;
-                *(byte *)((int)&local_20->flags + iVar9 + iVar14 + 1) =
-                     *(byte *)((int)&local_20->flags + iVar9 + iVar14 + 1) | 2;
-                iVar5 = iVar17 + iVar14;
-                *(byte *)((int)&local_20->flags + iVar9 + iVar5 + -1) =
-                     *(byte *)((int)&local_20->flags + iVar9 + iVar5 + -1) | 2;
-                *(byte *)((int)&local_20->flags + iVar9 + iVar5) =
-                     *(byte *)((int)&local_20->flags + iVar9 + iVar5) | 2;
-                *(byte *)((int)&local_20->flags + iVar9 + iVar5 + 1) =
-                     *(byte *)((int)&local_20->flags + iVar9 + iVar5 + 1) | 2;
-                pDVar7 = local_24;
-                iVar5 = local_4c;
+                pbVar16[iVar13 + -1] = pbVar16[iVar13 + -1] | 2;
+                pbVar16[iVar13] = pbVar16[iVar13] | 2;
+                pbVar16[iVar13 + 1] = pbVar16[iVar13 + 1] | 2;
+                *(byte *)((int)local_20 + iVar8 + iVar13 + -1) =
+                     *(byte *)((int)local_20 + iVar8 + iVar13 + -1) | 2;
+                *(byte *)((int)&local_20->flags + iVar8 + iVar13) =
+                     *(byte *)((int)&local_20->flags + iVar8 + iVar13) | 2;
+                *(byte *)((int)&local_20->flags + iVar8 + iVar13 + 1) =
+                     *(byte *)((int)&local_20->flags + iVar8 + iVar13 + 1) | 2;
+                iVar15 = iVar18 + iVar13;
+                *(byte *)((int)&local_20->flags + iVar8 + iVar15 + -1) =
+                     *(byte *)((int)&local_20->flags + iVar8 + iVar15 + -1) | 2;
+                *(byte *)((int)&local_20->flags + iVar8 + iVar15) =
+                     *(byte *)((int)&local_20->flags + iVar8 + iVar15) | 2;
+                *(byte *)((int)&local_20->flags + iVar8 + iVar15 + 1) =
+                     *(byte *)((int)&local_20->flags + iVar8 + iVar15 + 1) | 2;
+                pDVar6_mg1 = local_24;
+                iVar15 = local_4c;
               }
-              iVar9 = iVar9 + 1;
-            } while (iVar9 <= iVar5);
+              iVar8 = iVar8 + 1;
+            } while (iVar8 <= iVar15);
           }
           local_18 = (DArrayTy *)((int)local_18 + 8);
           local_10 = local_10 + 1;
-          local_20 = (DArrayTy *)((int)&local_20->flags + iVar17);
+          local_20 = (DArrayTy *)((int)&local_20->flags + iVar18);
         } while (local_10 < local_28);
       }
       local_8 = local_8 + 1;
-      local_1c = (DArrayTy *)((int)&local_1c->flags + iVar14);
+      local_1c = (DArrayTy *)((int)&local_1c->flags + iVar13);
     } while (local_8 < 5);
-    if ((0 < (int)param_7) && ((int)param_7 < (int)pDVar7->count)) {
+    if ((0 < (int)param_7) && ((int)param_7 < (int)pDVar6_mg1->count)) {
       local_1c = Library::DKW::TBL::DArrayCreate(nullptr,param_7,6,10);
       while( true ) {
-        iVar11 = 0;
+        iVar10 = 0;
         local_2c = local_94;
-        dVar16 = 0xffffffff;
+        dVar17 = 0xffffffff;
         local_18 = nullptr;
-        iVar5 = -(int)local_58;
+        iVar15 = -(int)local_58;
         do {
-          if (((int)dVar16 < (int)*local_2c) ||
-             ((dVar16 == *local_2c &&
-              (uVar12 = (int)(iVar5 + 3U) >> 0x1f, uVar13 = (int)(iVar11 + 3U) >> 0x1f,
-              (int)((iVar11 + 3U ^ uVar13) - uVar13) < (int)((iVar5 + 3U ^ uVar12) - uVar12))))) {
+          if (((int)dVar17 < (int)*local_2c) ||
+             ((dVar17 == *local_2c &&
+              (uVar11 = (int)(iVar15 + 3U) >> 0x1f, uVar12 = (int)(iVar10 + 3U) >> 0x1f,
+              (int)((iVar10 + 3U ^ uVar12) - uVar12) < (int)((iVar15 + 3U ^ uVar11) - uVar11))))) {
             local_58 = local_18;
-            dVar16 = *local_2c;
-            iVar5 = iVar11;
+            dVar17 = *local_2c;
+            iVar15 = iVar10;
           }
-          iVar11 = iVar11 + -1;
+          iVar10 = iVar10 + -1;
           local_18 = (DArrayTy *)((int)&local_18->flags + 1);
           local_2c = local_2c + 1;
-        } while (-5 < iVar11);
-        if ((int)dVar16 < 1) goto cf_common_exit_0056623F;
+        } while (-5 < iVar10);
+        if ((int)dVar17 < 1) goto cf_common_exit_0056623F;
         dVar3 = local_94[(int)((int)&local_58->iteratorIndex + 1)];
-        if ((int)param_7 < (int)dVar16) break;
-        iVar5 = 0;
-        if (0 < (int)dVar16) {
+        if ((int)param_7 < (int)dVar17) break;
+        iVar15 = 0;
+        if (0 < (int)dVar17) {
           do {
-            iVar11 = DArrayGetElement(local_24,iVar5 + dVar3,&local_40);
-            if (-1 < iVar11) {
+            local_EAX_2465 = DArrayGetElement(local_24,iVar15 + dVar3,&local_40);
+            if (-1 < local_EAX_2465) {
               Library::DKW::TBL::DArrayAppend(local_1c,&local_40);
             }
-            iVar5 = iVar5 + 1;
-          } while (iVar5 < (int)dVar16);
+            iVar15 = iVar15 + 1;
+          } while (iVar15 < (int)dVar17);
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_7 = param_7 - dVar16;
+        param_7 = param_7 - dVar17;
         if ((int)param_7 < 1) goto cf_common_exit_0056623F;
         local_94[(int)((int)&local_58->iteratorIndex + 1)] = 0;
       }
-      iVar5 = param_7 + 1;
-      iVar11 = dVar3 * 0x10000 + -0x10000;
+      iVar15 = param_7 + 1;
+      iVar10 = dVar3 * 0x10000 + -0x10000;
       if (0 < (int)param_7) {
         do {
-          iVar11 = iVar11 + (int)((dVar16 + 1) * 0x10000) / iVar5;
-          iVar14 = DArrayGetElement(local_24,iVar11 >> 0x10,&local_40);
+          iVar10 = iVar10 + (int)((dVar17 + 1) * 0x10000) / iVar15;
+          iVar14 = DArrayGetElement(local_24,iVar10 >> 0x10,&local_40);
           if (-1 < iVar14) {
             Library::DKW::TBL::DArrayAppend(local_1c,&local_40);
           }
@@ -452,14 +457,15 @@ cf_common_exit_0056623F:
     }
   }
   local_60 = iVar5;
-  iVar5 = local_60;
+  iVar15 = local_60;
   FreeAndNull(&local_48);
   FreeAndNull(&local_14);
-  if (iVar5 == 0) {
+  if (iVar15 == 0) {
     return &local_24->flags;
   }
   FreeAndNull(&local_24);
-  RaiseInternalException(iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\scoreai.cpp",0xf0f);
+  RaiseInternalException
+            (iVar15,g_overwriteContext_007ED77C,"E:\\__titans\\scoreai.cpp",0xf0f);
   return nullptr;
 }
 

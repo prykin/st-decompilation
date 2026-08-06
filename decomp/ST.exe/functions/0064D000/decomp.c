@@ -11,6 +11,7 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
   AiEventClassTy *pAVar2;
   int errorCode;
   AllocationRecord_0065CD10 *pAVar3;
+  AllocationRecord_0065CD10 *pAVar3_mg1;
   int iVar4;
   undefined4 *puVar5;
   InternalExceptionFrame local_4c;
@@ -28,11 +29,11 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
     else {
       pAVar3 = (AllocationRecord_0065CD10 *)&local_8->field_008C;
     }
-    pAVar3 = EventDataPack(pAVar3,param_1);
-    *(undefined1 *)pAVar3 = 1;
-    *(uint *)&pAVar3->field_0x4e = pAVar2->field_0088;
+    pAVar3_mg1 = EventDataPack(pAVar3,param_1);
+    *(undefined1 *)pAVar3_mg1 = 1;
+    *(uint *)&pAVar3_mg1->field_0x4e = pAVar2->field_0088;
     g_currentExceptionFrame = local_4c.previous;
-    return (undefined4 *)pAVar3;
+    return (undefined4 *)pAVar3_mg1;
   }
   g_currentExceptionFrame = local_4c.previous;
   iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x66,0,errorCode,"%s",

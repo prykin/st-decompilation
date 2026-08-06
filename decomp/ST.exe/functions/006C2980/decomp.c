@@ -11,17 +11,19 @@ char * FUN_006c2980(char *param_1,char *param_2)
   uint uVar3;
   char *pcVar4;
   uint uVar5;
+  char *pcVar4_mg2;
+  char *pcVar4_mg0;
 
   if (param_2 == nullptr) {
     return nullptr;
   }
   uVar3 = 0xffffffff;
-  pcVar4 = param_2;
+  pcVar4_mg0 = param_2;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar4;
-    pcVar4 = pcVar4 + 1;
+    cVar1 = *pcVar4_mg0;
+    pcVar4_mg0 = pcVar4_mg0 + 1;
   } while (cVar1 != '\0');
   pcVar4 = param_2 + (~uVar3 - 1);
   do {
@@ -31,8 +33,8 @@ char * FUN_006c2980(char *param_1,char *param_2)
   } while ((*pcVar4 == ' ') || (*pcVar4 == '\t'));
   if ((param_1 != nullptr) && (param_1 != param_2)) {
     uVar5 = (int)pcVar2 - (int)param_2;
-    pcVar4 = param_1;
-    memmove(pcVar4, param_2, uVar5); /* compiler REP MOVS byte copy */
+    pcVar4_mg2 = param_1;
+    memmove(pcVar4_mg2, param_2, uVar5); /* compiler REP MOVS byte copy */
     param_1[uVar5] = '\0';
     return param_1;
   }

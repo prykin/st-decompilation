@@ -13,15 +13,21 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  int *piVar2;
-  short sVar4;
+  int iVar2;
+  int *piVar3;
+  short sVar5;
   STColl3C *this_00;
+  int local_EAX_16;
   int iVar5;
+  int local_EAX_456;
+  int local_EAX_529;
   dword dVar6;
+  int local_EAX_1026;
   int iVar7;
-  byte *puVar8;
+  int iVar8;
   byte *puVar9;
-  STWorldObject *pSVar10;
+  byte *puVar10;
+  STWorldObject *pSVar11;
   InternalExceptionFrame local_60;
   byte *local_1c;
   AnonShape_0060EA30_DCEB68AD *local_18;
@@ -31,8 +37,8 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
   STColl3C *local_8;
 
   local_8 = this;
-  iVar5 = STSprGameObjC::GetMessage((STSprGameObjC *)this,message);
-  if (iVar5 == 0xffff) {
+  local_EAX_16 = STSprGameObjC::GetMessage((STSprGameObjC *)this,message);
+  if (local_EAX_16 == 0xffff) {
     return 0xffff;
   }
   local_60.previous = g_currentExceptionFrame;
@@ -110,43 +116,43 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  puVar8 = (byte *)((message->arg0).ptr);
-  if (puVar8[3] != 2) {
-    puVar9 = (byte *)&local_8->field_0x231;
-    memmove(puVar9, puVar8, 0x2c); /* compiler REP MOVS byte copy */
-    iVar5 = local_8->field_0245;
-    sVar4 = (short)(iVar5 >> 0x1f);
-    if (iVar5 < 0) {
-      iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar4) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
+  puVar9 = (byte *)((message->arg0).ptr);
+  if (puVar9[3] != 2) {
+    puVar10 = (byte *)&local_8->field_0x231;
+    memmove(puVar10, puVar9, 0x2c); /* compiler REP MOVS byte copy */
+    iVar8 = local_8->field_0245;
+    sVar5 = (short)(iVar8 >> 0x1f);
+    if (iVar8 < 0) {
+      iVar8 = (short)(((short)(iVar8 / 0xc9) + sVar5) - (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar4) -
-                          (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
+      iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar5) -
+                          (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    iVar7 = local_8->field_0249;
-    local_8->field_025D = iVar5;
-    sVar4 = (short)(iVar7 >> 0x1f);
-    if (iVar7 < 0) {
-      iVar5 = (short)(((short)(iVar7 / 0xc9) + sVar4) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f)
+    iVar2 = local_8->field_0249;
+    local_8->field_025D = iVar8;
+    sVar5 = (short)(iVar2 >> 0x1f);
+    if (iVar2 < 0) {
+      iVar8 = (short)(((short)(iVar2 / 0xc9) + sVar5) - (short)((longlong)iVar2 * 0x28c1979 >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar5 = (int)(short)(((short)(iVar7 / 0xc9) + sVar4) -
-                          (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
+      iVar8 = (int)(short)(((short)(iVar2 / 0xc9) + sVar5) -
+                          (short)((longlong)iVar2 * 0x28c1979 >> 0x3f));
     }
-    iVar7 = local_8->field_024D;
-    local_8->field_0261 = iVar5;
-    sVar4 = (short)(iVar7 >> 0x1f);
-    if (iVar7 < 0) {
-      iVar5 = (short)(((short)(iVar7 / 200) + sVar4) - (short)((longlong)iVar7 * 0x51eb851f >> 0x3f)
+    iVar2 = local_8->field_024D;
+    local_8->field_0261 = iVar8;
+    sVar5 = (short)(iVar2 >> 0x1f);
+    if (iVar2 < 0) {
+      iVar8 = (short)(((short)(iVar2 / 200) + sVar5) - (short)((longlong)iVar2 * 0x51eb851f >> 0x3f)
                      ) + -1;
     }
     else {
-      iVar5 = (int)(short)(((short)(iVar7 / 200) + sVar4) -
-                          (short)((longlong)iVar7 * 0x51eb851f >> 0x3f));
+      iVar8 = (int)(short)(((short)(iVar2 / 200) + sVar5) -
+                          (short)((longlong)iVar2 * 0x51eb851f >> 0x3f));
     }
-    local_8->field_0265 = iVar5;
+    local_8->field_0265 = iVar8;
     sub_005FA8B0(local_8,&local_8->field_027D,&local_8->field_0281,&local_8->field_0285);
     this_00->field_0269 = 600;
     this_00->field_02DD = CASE_1;
@@ -159,28 +165,28 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  iVar5 = sub_005F68B0(local_8,puVar8);
-  if (iVar5 == 0) {
+  local_EAX_456 = sub_005F68B0(local_8,puVar9);
+  if (local_EAX_456 == 0) {
     sub_005F66B0(this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   STFishC::sub_004162B0((STFishC *)this_00,local_14,local_10,local_c);
-  iVar5 = thunk_FUN_004961b0(local_14[0],local_10[0],local_c[0]);
-  if (iVar5 != 0) {
+  local_EAX_529 = thunk_FUN_004961b0(local_14[0],local_10[0],local_c[0]);
+  if (local_EAX_529 != 0) {
     if (((((local_14[0] < 0) || (g_worldGrid.sizeX <= local_14[0])) || (local_10[0] < 0)) ||
         ((g_worldGrid.sizeY <= local_10[0] || (local_c[0] < 0)))) ||
        (g_worldGrid.sizeZ <= local_c[0])) {
-      pSVar10 = nullptr;
+      pSVar11 = nullptr;
     }
     else {
-      pSVar10 = STGridAt3D(g_worldGrid, local_14[0], local_10[0], local_c[0]).objects[0];
+      pSVar11 = STGridAt3D(g_worldGrid, local_14[0], local_10[0], local_c[0]).objects[0];
     }
-    if ((pSVar10 == nullptr) &&
+    if ((pSVar11 == nullptr) &&
        ((this_00->field_02DD == CASE_1 ||
-        (iVar5 = DumpClassC::WritePtr
+        (iVar8 = DumpClassC::WritePtr
                            (local_14[0],local_10[0],local_c[0],0,
-                            (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar5 == 0))))
+                            (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar8 == 0))))
     goto LAB_005f61e2;
   }
   sub_005F66B0(this_00);
@@ -193,20 +199,20 @@ LAB_005f61e2:
   g_currentExceptionFrame = local_60.previous;
   return 0;
 switchD_005f6301_caseD_110:
-  piVar2 = (message->arg0).ptr;
+  piVar3 = (message->arg0).ptr;
   dVar6 = local_8->slot_78();
   if ((int)dVar6 < 1) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  iVar5 = sub_005F6F20(this_00,*piVar2);
-  if (iVar5 == 0) {
+  local_EAX_1026 = sub_005F6F20(this_00,*piVar3);
+  if (local_EAX_1026 == 0) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   LoadImagSpr(this_00,0);
-  this_00->field_0275 = (uint)*(byte *)(piVar2 + 2);
-  this_00->field_0279 = (uint)STField<ushort>(piVar2,0xe);
+  this_00->field_0275 = (uint)*(byte *)(piVar3 + 2);
+  this_00->field_0279 = (uint)STField<ushort>(piVar3,0xe);
   sub_005FA070(this_00);
   this_00->field_02DD = CASE_D;
   g_currentExceptionFrame = local_60.previous;

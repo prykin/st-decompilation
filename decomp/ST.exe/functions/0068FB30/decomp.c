@@ -9,10 +9,11 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
 
 {
   AiTactClassTy *this_00;
+  int iVar3;
   void *this_01;
   int iVar2;
-  int iVar3;
-  uint *puVar4;
+  int iVar4;
+  uint *puVar5;
   InternalExceptionFrame local_80;
   uint local_3c [2];
   short local_33;
@@ -20,11 +21,11 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
   DArrayTy *local_2b;
   AiTactClassTy *local_8;
 
-  puVar4 = local_3c;
+  puVar5 = local_3c;
   local_8 = this;
-  for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = 0;
-    puVar4 = puVar4 + 1;
+  for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *puVar5 = 0;
+    puVar5 = puVar5 + 1;
   }
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;

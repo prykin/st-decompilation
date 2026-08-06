@@ -13,8 +13,8 @@ void __thiscall SpecPanelTy::ShiftControls(SpecPanelTy *this,int param_1)
 
 {
   short sVar2;
-  int iVar3;
   int iVar4;
+  int iVar3;
   InternalExceptionFrame local_4c;
   SpecPanelTy *local_8;
 

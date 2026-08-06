@@ -9,6 +9,7 @@ void __thiscall STBoatC::CancelLoading(STBoatC *this,int param_1)
 
 {
   STBoatC_field_045DState SVar1;
+  int iVar2;
   int iVar3;
 
   SVar1 = this->field_045D;
@@ -20,12 +21,12 @@ void __thiscall STBoatC::CancelLoading(STBoatC *this,int param_1)
   }
   if (((SVar1 == CASE_F) || (SVar1 == CASE_E)) &&
      ((this->field_058E == (AnonShape_005EFAE0_B406B78B *)param_1 && (this->field_0596 == 3)))) {
-    iVar3 = this->field_059A;
-    if (((iVar3 == 0) || (iVar3 == 1)) || (iVar3 == 2)) {
+    iVar2 = this->field_059A;
+    if (((iVar2 == 0) || (iVar2 == 1)) || (iVar2 == 2)) {
       this->field_059A = 9;
       return;
     }
-    if ((iVar3 == 3) || (iVar3 == 4)) {
+    if ((iVar2 == 3) || (iVar2 == 4)) {
       this->field_059A = 5;
       return;
     }

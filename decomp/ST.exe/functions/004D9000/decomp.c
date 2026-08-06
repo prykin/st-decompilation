@@ -12,6 +12,7 @@ undefined4 __fastcall FUN_004d9000(AnonShape_004D9000_7AA66E43 *param_1)
 {
   AnonShape_004AB810_8E5693D5 *pAVar1;
   STT3DSprC *this;
+  int iVar3;
   int iVar2;
   int uVar3;
   uint uVar4;
@@ -25,10 +26,10 @@ undefined4 __fastcall FUN_004d9000(AnonShape_004D9000_7AA66E43 *param_1)
       this = (STT3DSprC *)thunk_FUN_004ab810(pAVar1);
     }
     param_1->field_05FF = this;
-    iVar2 = STT3DSprC::Init(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
-    if (iVar2 != 0) {
+    iVar3 = STT3DSprC::Init(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    if (iVar3 != 0) {
       RaiseInternalException
-                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_glsat.cpp",0x61);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_glsat.cpp",0x61);
     }
   }
   switch(param_1->field_0245) {
@@ -45,25 +46,25 @@ undefined4 __fastcall FUN_004d9000(AnonShape_004D9000_7AA66E43 *param_1)
     *(undefined4 *)&param_1->field_0x4d0 = 0;
     break;
   case 5:
-    iVar2 = *(int *)&param_1->field_0x4d0;
-    if (iVar2 == 1) {
+    iVar3 = *(int *)&param_1->field_0x4d0;
+    if (iVar3 == 1) {
       *(undefined4 *)&param_1->field_0x4d0 = 3;
     }
-    else if (iVar2 == 3) {
+    else if (iVar3 == 3) {
       *(undefined4 *)&param_1->field_0x4d0 = 4;
     }
-    else if (iVar2 == 5) {
+    else if (iVar3 == 5) {
       *(undefined4 *)&param_1->field_0x4d0 = 0;
     }
     param_1->field_0265 = param_1->field_0265 & 0xfffffffd;
     param_1->field_026D = 0;
   }
   if (*(int *)&param_1->field_0x4d0 == 4) {
-    iVar2 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,PTR_DAT_00790c24,0x1d);
-    if (iVar2 != 0) {
+    iVar3 = STT3DSprC::LoadSequence
+                      ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,PTR_DAT_00790c24,CASE_1D);
+    if (iVar3 != 0) {
       RaiseInternalException
-                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_glsat.cpp",0x79);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_glsat.cpp",0x79);
     }
     thunk_FUN_004ad5e0((STT3DSprC *)param_1->field_05FF);
     uVar4 = 10;
@@ -77,14 +78,14 @@ undefined4 __fastcall FUN_004d9000(AnonShape_004D9000_7AA66E43 *param_1)
     uVar4 = g_playSystem_00802A38->field_00E4;
     *(undefined4 *)&param_1->field_0x4dc = 1;
     *(uint *)&param_1->field_0x4d8 = uVar4;
-    iVar2 = *(int *)&param_1->field_0x4d0 * 0x18;
+    iVar3 = *(int *)&param_1->field_0x4d0 * 0x18;
     STT3DSprC::sub_004AD3C0
               ((STT3DSprC *)param_1->field_05FF,
-               (float)(*(int *)(&DAT_00798de8 + iVar2) + 100 + (int)param_1->field_0041) *
+               (float)(*(int *)(&DAT_00798de8 + iVar3) + 100 + (int)param_1->field_0041) *
                _DAT_007904f8 * _DAT_007904f0,
-               (float)(*(int *)(&DAT_00798dec + iVar2) + 100 + (int)param_1->field_0043) *
+               (float)(*(int *)(&DAT_00798dec + iVar3) + 100 + (int)param_1->field_0043) *
                _DAT_007904f8 * _DAT_007904f0,
-               (float)(*(int *)(&DAT_00798df0 + iVar2) + (int)param_1->field_0045) * _DAT_007904f8 *
+               (float)(*(int *)(&DAT_00798df0 + iVar3) + (int)param_1->field_0045) * _DAT_007904f8 *
                _DAT_007904f0 + _DAT_007904fc);
     thunk_FUN_004ad460((void *)param_1->field_05FF,1);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

@@ -13,7 +13,8 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   STBoatC *this_00;
   STGameObjC *objPtr;
   int iVar4;
-  undefined4 uVar5;
+  undefined4 uVar3;
+  int iVar5;
   uint uVar6;
   uint uVar8;
   InternalExceptionFrame local_6c;
@@ -25,7 +26,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   uint local_18;
   undefined1 local_14 [4];
   undefined4 local_10;
-  undefined2 local_a;
+  short local_a;
   short local_8;
   short local_6;
 
@@ -78,13 +79,13 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
     }
     local_10 = 2;
   }
-  uVar5 = local_10;
+  uVar3 = local_10;
   if (param_1 == 2) {
     if (g_playSystem_00802A38->field_00E4 % 3 == 0) {
       uVar6 = 0;
       uVar8 = 0;
       local_10 = 0;
-      uVar5 = 0;
+      uVar3 = 0;
       if (local_18 != 0) {
         do {
           DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,local_14);
@@ -96,9 +97,9 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x732);
             }
-            iVar3 = thunk_FUN_0045ff30((int)objPtr);
-            if (((iVar3 != 0) || (iVar3 = thunk_FUN_0045ff10(objPtr), iVar3 == 1)) ||
-               (iVar3 = thunk_FUN_0045ff10(objPtr), iVar3 == 0)) goto LAB_0049b6c1;
+            iVar5 = thunk_FUN_0045ff30((int)objPtr);
+            if (((iVar5 != 0) || (iVar5 = thunk_FUN_0045ff10(objPtr), iVar5 == 1)) ||
+               (iVar5 = thunk_FUN_0045ff10(objPtr), iVar5 == 0)) goto LAB_0049b6c1;
           }
           uVar6 = uVar6 + 1;
           uVar8 = uVar6 & 0xffff;
@@ -112,10 +113,10 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
     else {
 LAB_0049b6c1:
       local_10 = 2;
-      uVar5 = local_10;
+      uVar3 = local_10;
     }
   }
-  local_10 = uVar5;
+  local_10 = uVar3;
   g_currentExceptionFrame = local_6c.previous;
   return local_10;
 }

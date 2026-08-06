@@ -11,7 +11,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
   SettMapTy_field_1E26State SVar1;
   SettMapTy *pSVar3;
   int errorCode;
-  uint *resourceString;
+  char *resourceString;
   int iVar4;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ChatGlassTy *extraout_ECX;
@@ -51,8 +51,8 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
     else if (((pSVar3->field_21EC == nullptr) && (param_1 == '\0')) ||
             ((param_1 != '\0' && (pSVar3->field_0x21e2 == '\0')))) {
       MMMObjTy::OutBSlProc
-                (pSVar3->field_1A5B + 0x140,(int)g_dDXContext_0080759C,nullptr,
-                 nullptr,10,0xb4,0xf9,0x121,(undefined4 *)(pSVar3->field_1A5B + 0x140));
+                (pSVar3->field_1A5B + 0x140,g_dDXContext_0080759C,nullptr,nullptr,10
+                 ,0xb4,0xf9,0x121,(undefined4 *)(pSVar3->field_1A5B + 0x140));
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pCVar5 = extraout_ECX_00;
     }
@@ -66,8 +66,8 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
     }
     if ((pSVar3->field_21E8 == nullptr) && (param_1 == '\0')) {
       MMMObjTy::OutBSlProc
-                (pSVar3->field_1A5B + 0x140,(int)g_dDXContext_0080759C,nullptr,
-                 nullptr,0x112,0x38,0x205,0x104,(undefined4 *)(pSVar3->field_1A5B + 0x140));
+                (pSVar3->field_1A5B + 0x140,g_dDXContext_0080759C,nullptr,nullptr,
+                 0x112,0x38,0x205,0x104,(undefined4 *)(pSVar3->field_1A5B + 0x140));
     }
     if ((pSVar3->field_21F4 == nullptr) && (param_1 == '\0')) {
       MMMObjTy::OutRGlProc
@@ -78,7 +78,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
     pcVar8 = g_startSystem_0081176C->field_0030;
     uVar7 = 0xffffffff;
     uVar6 = 0xfffffffe;
-    resourceString = (uint *)LoadResourceString(0x26b2,g_hINSTANCE_00807618);
+    resourceString = LoadResourceString(0x26b2,g_hINSTANCE_00807618);
     StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,resourceString,uVar6,uVar7,pcVar8,uVar9);
     g_currentExceptionFrame = local_4c.previous;
     return;

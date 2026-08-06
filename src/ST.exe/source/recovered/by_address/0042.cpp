@@ -434,10 +434,11 @@ undefined4 __thiscall st::fn_00423C70(void *this,short param_1)
 
 // 00423D80 FUN_00423d80
 #line 4 "decomp/ST.exe/functions/00423D80/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00423E00 -> 00423D80 @ 00423E0E */
+/* [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 00423D80 -> 006ACC70 @ 00423DA9 | 0042B7D0 -> 00423D80 @ 0042B85E;
+   STAllPlayersC::AddObjsToGroup parameter groupContent */
 
-undefined4 __thiscall st::fn_00423D80(void *this,uint *groupContent)
+undefined4 __thiscall st::fn_00423D80(void *this,DArrayTy *groupContent)
 
 {
   uint uVar1;
@@ -448,13 +449,13 @@ undefined4 __thiscall st::fn_00423D80(void *this,uint *groupContent)
   undefined4 local_c;
   undefined4 local_8;
 
-  uVar1 = groupContent[3];
+  uVar1 = groupContent->count;
   local_8 = 0;
   uVar3 = 0;
   if ((uVar1 != 0) && (uVar4 = 0, uVar1 != 0)) {
     index = 0;
     do {
-      st::fn_006ACC70((DArrayTy *)groupContent,index,&local_c);
+      st::fn_006ACC70(groupContent,index,&local_c);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar2 = (**(code **)(*(int *)this + 4))(local_c);
       if (iVar2 == 0) {
@@ -473,11 +474,11 @@ undefined4 __thiscall st::fn_00423D80(void *this,uint *groupContent)
 void __fastcall st::fn_00423E00(void *param_1)
 
 {
-  DArrayTy *array;
+  DArrayTy *groupContent;
 
-  array = (DArrayTy *)st::fn_00402DB5(param_1);
-  st::fn_004031E8(param_1,(uint *)array);
-  st::fn_006AE110(array);
+  groupContent = (DArrayTy *)st::fn_00402DB5(param_1);
+  st::fn_004031E8(param_1,groupContent);
+  st::fn_006AE110(groupContent);
   return;
 }
 
@@ -672,7 +673,7 @@ void __thiscall st::fn_004248A0(void *this,undefined4 param_1)
 
 {
   st::fn_00403CFB(STReplaceLowByte((uint32_t)(param_1), (uint8_t)(STField<undefined1>(this,0x24))),
-                     STField<uint *>(this,0x29),param_1);
+                     STField<DArrayTy *>(this,0x29),param_1);
   return;
 }
 
@@ -965,99 +966,100 @@ int __cdecl st::fn_00428B20(int *param_1,uint param_2,uint param_3,uint *param_4
   uint uVar4;
   int iVar5;
   int iVar6;
-  int *piVar7;
   int *piVar8;
-  bool bVar9;
+  int *piVar9;
+  bool bVar10;
   int local_14;
   uint local_10;
   int local_c;
   uint local_8;
+  int *piVar7;
 
   local_8 = param_3;
   piVar7 = param_1;
   do {
     uVar3 = param_2 >> 2;
-    bVar9 = uVar3 == 0;
+    bVar10 = uVar3 == 0;
     piVar8 = piVar7;
     do {
       piVar7 = piVar8;
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
       piVar7 = piVar8 + 1;
-      bVar9 = *piVar8 == -1;
+      bVar10 = *piVar8 == -1;
       piVar8 = piVar7;
-    } while (bVar9);
-    if (!bVar9) {
+    } while (bVar10);
+    if (!bVar10) {
       local_8 = param_3 - local_8;
-      piVar7 = (int *)((int)param_1 + (param_3 - 1) * param_2);
+      piVar8 = (int *)((int)param_1 + (param_3 - 1) * param_2);
       goto LAB_00428b85;
     }
     uVar3 = local_8 - 1;
-    bVar9 = 0 < (int)local_8;
+    bVar10 = 0 < (int)local_8;
     local_8 = uVar3;
-  } while (uVar3 != 0 && bVar9);
+  } while (uVar3 != 0 && bVar10);
   local_8 = param_3;
   local_c = -1;
   local_10 = param_2;
   local_14 = -1;
   goto LAB_00428c07;
   while( true ) {
-    piVar7 = (int *)((int)piVar8 + param_2 * -2 + uVar3);
+    piVar8 = (int *)((int)piVar9 + param_2 * -2 + uVar3);
     uVar4 = param_3 - 1;
-    bVar9 = (int)param_3 < 1;
+    bVar10 = (int)param_3 < 1;
     param_3 = uVar4;
-    if (uVar4 == 0 || bVar9) break;
+    if (uVar4 == 0 || bVar10) break;
 LAB_00428b85:
     uVar3 = param_2 >> 2;
-    bVar9 = uVar3 == 0;
+    bVar10 = uVar3 == 0;
     do {
-      piVar8 = piVar7;
+      piVar9 = piVar8;
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      piVar8 = piVar7 + 1;
-      bVar9 = *piVar7 == -1;
-      piVar7 = piVar8;
-    } while (bVar9);
+      piVar9 = piVar8 + 1;
+      bVar10 = *piVar8 == -1;
+      piVar8 = piVar9;
+    } while (bVar10);
     uVar4 = param_3;
-    if (!bVar9) break;
+    if (!bVar10) break;
   }
   local_c = uVar4 - 1;
   local_10 = param_2;
   local_14 = 0;
-  piVar7 = (int *)((int)param_1 + local_8 * param_2);
-  bVar9 = SCARRY4(local_c - local_8,1);
+  piVar8 = (int *)((int)param_1 + local_8 * param_2);
+  bVar10 = SCARRY4(local_c - local_8,1);
   iVar5 = (local_c - local_8) + 1;
   do {
     uVar3 = local_10 >> 2;
-    piVar8 = piVar7;
-    if (local_10 >> 2 != 0 && !bVar9) {
+    piVar9 = piVar8;
+    if (local_10 >> 2 != 0 && !bVar10) {
       do {
-        if (*piVar8 != -1) {
-          local_10 = (int)piVar8 - (int)piVar7;
+        if (*piVar9 != -1) {
+          local_10 = (int)piVar9 - (int)piVar8;
           break;
         }
         uVar4 = uVar3 - 1;
-        bVar9 = 0 < (int)uVar3;
+        bVar10 = 0 < (int)uVar3;
         uVar3 = uVar4;
-        piVar8 = piVar8 + 1;
-      } while (uVar4 != 0 && bVar9);
+        piVar9 = piVar9 + 1;
+      } while (uVar4 != 0 && bVar10);
     }
     uVar3 = param_2 - local_14 >> 2;
-    piVar8 = (int *)((int)piVar7 + param_2);
-    if (uVar3 != 0 && !SBORROW4((int)((int)piVar7 + param_2),4)) {
+    piVar9 = (int *)((int)piVar8 + param_2);
+    if (uVar3 != 0 && !SBORROW4((int)((int)piVar8 + param_2),4)) {
       do {
-        if (piVar8[-1] != -1) {
-          local_14 = (int)piVar8 - (int)piVar7;
+        if (piVar9[-1] != -1) {
+          local_14 = (int)piVar9 - (int)piVar8;
           break;
         }
         uVar4 = uVar3 - 1;
-        bVar9 = 0 < (int)uVar3;
+        bVar10 = 0 < (int)uVar3;
         uVar3 = uVar4;
-        piVar8 = piVar8 + -1;
-      } while (uVar4 != 0 && bVar9);
+        piVar9 = piVar9 + -1;
+      } while (uVar4 != 0 && bVar10);
     }
-    piVar7 = (int *)((int)piVar7 + param_2);
-    bVar9 = SBORROW4(iVar5,1);
+    piVar8 = (int *)((int)piVar8 + param_2);
+    bVar10 = SBORROW4(iVar5,1);
     iVar6 = iVar5 + -1;
     bVar1 = 0 < iVar5;
     iVar5 = iVar6;
@@ -1225,8 +1227,8 @@ void __cdecl st::fn_0042A780(int *param_1)
         } while (*(int *)(iVar2 + 0x40) != *piVar3);
         if (piVar3 == nullptr) {
 LAB_0042a7e7:
-          st::fn_006AE1C0(array,(void **)(iVar2 + 0x40));
-          st::fn_006AB060((void **)(iVar2 + 0x40));
+          st::fn_006AE1C0(array,(void *)(iVar2 + 0x40));
+          st::fn_006AB060((void *)(iVar2 + 0x40));
         }
       }
       iVar4 = iVar4 + 1;

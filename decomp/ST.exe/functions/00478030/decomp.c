@@ -16,9 +16,15 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
 
 {
   undefined2 uVar2;
+  int local_EAX_36;
+  int local_EAX_253;
+  int local_EAX_463;
   STGameObjC *pSVar3;
   uint uVar4;
   int iVar5;
+  int local_EAX_1096;
+  int local_EAX_1172;
+  int iVar6;
   STBoatC *local_8;
 
   uVar2 = (undefined2)((uint)this >> 0x10);
@@ -26,28 +32,28 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
   switch(this->field_0611) {
   case CASE_0:
   case CASE_5:
-    iVar5 = sub_00460360(this);
-    return iVar5;
+    local_EAX_36 = sub_00460360(this);
+    return local_EAX_36;
   case CASE_1:
     return 0;
   case CASE_2:
-    iVar5 = this->field_0615;
-    if (iVar5 == 0) {
+    iVar6 = this->field_0615;
+    if (iVar6 == 0) {
       return 0;
     }
-    if (iVar5 == 1) {
+    if (iVar6 == 1) {
       return 0;
     }
-    if (iVar5 == 2) {
+    if (iVar6 == 2) {
       return 0;
     }
-    if (iVar5 == 3) {
+    if (iVar6 == 3) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar5 = CONCAT22(uVar2,this->field_0605 * 0xc9) + 100;
+      iVar6 = CONCAT22(uVar2,this->field_0605 * 0xc9) + 100;
       uVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
-                         this->field_0603 * 0xc9 + 100,(short)iVar5,
+                         STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
+                         this->field_0603 * 0xc9 + 100,(short)iVar6,
                          (ushort)(this->field_0607 * 200) + 100);
       this->field_060F = uVar2;
       this->field_0615 = 4;
@@ -56,9 +62,10 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
       uVar4 = sub_004176C0(this,this->field_060F);
       uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 == 0xffffffff) {
-        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3336,0,0,"%s",
-                                   "STBoatC::BackCapture, CAPTURE_PMOVE");
-        if (iVar5 == 0) {
+        local_EAX_253 =
+             ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3336,0,0,"%s",
+                                "STBoatC::BackCapture, CAPTURE_PMOVE");
+        if (local_EAX_253 == 0) {
           return -1;
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -66,8 +73,8 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
       if (uVar4 == 0) {
         this->field_0615 = 5;
 LAB_00478373:
-        iVar5 = this->vfunc_D8();
-        return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
+        iVar6 = this->vfunc_D8();
+        return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
       }
     }
     if (this->field_0615 == 5) {
@@ -77,22 +84,23 @@ LAB_00478373:
       this->field_0615 = 6;
     }
     if (this->field_0615 == 6) {
-      iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
-      if (iVar5 == -1) {
-        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x334b,0,0,"%s",
-                                   "STBoatC::BackCapture, CAPTURE_PMOVE 2");
-        if (iVar5 != 0) {
+      iVar6 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
+      if (iVar6 == -1) {
+        local_EAX_463 =
+             ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x334b,0,0,"%s",
+                                "STBoatC::BackCapture, CAPTURE_PMOVE 2");
+        if (local_EAX_463 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        iVar5 = 0x334c;
+        iVar6 = 0x334c;
 LAB_0047848a:
         RaiseInternalException
-                  (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar5);
+                  (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar6);
         return 0xffff;
       }
-      if (iVar5 == 0) {
-        iVar5 = this->vfunc_D8();
-        return -(uint)(iVar5 != 0);
+      if (iVar6 == 0) {
+        iVar6 = this->vfunc_D8();
+        return -(uint)(iVar6 != 0);
       }
     }
     break;
@@ -100,13 +108,13 @@ LAB_0047848a:
     pSVar3 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
     if (((pSVar3 != nullptr) && (pSVar3->field_0018 == this->field_05FF)) &&
-       (iVar5 = (*pSVar3->vtable->vfunc_108)(this->field_0024), iVar5 != 0)) {
+       (iVar6 = (*pSVar3->vtable->vfunc_108)(this->field_0024), iVar6 != 0)) {
       thunk_FUN_004cd450((AnonShape_004CC900_31EE9CAA *)pSVar3);
     }
     if (((int)this->field_0041 != (this->field_0609 + 1) * 0xc9) ||
        ((int)this->field_0043 != (this->field_060B + 1) * 0xc9)) {
-      iVar5 = this->vfunc_D8();
-      return -(uint)(iVar5 != 0);
+      iVar6 = this->vfunc_D8();
+      return -(uint)(iVar6 != 0);
     }
     this->field_0611 = CASE_4;
     this->field_0615 = 0;
@@ -114,11 +122,11 @@ LAB_0047848a:
   case CASE_4:
     if (this->field_0615 == 0) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar5 = CONCAT22(uVar2,this->field_0605 * 0xc9) + 100;
+      iVar6 = CONCAT22(uVar2,this->field_0605 * 0xc9) + 100;
       uVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
-                         STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
-                         this->field_0603 * 0xc9 + 100,(short)iVar5,
+                         STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_0045)),
+                         this->field_0603 * 0xc9 + 100,(short)iVar6,
                          (ushort)(this->field_0607 * 200) + 100);
       this->field_060F = uVar2;
       this->field_0615 = 1;
@@ -146,31 +154,33 @@ LAB_0047848a:
       this->field_0615 = 3;
     }
     if (this->field_0615 == 3) {
-      iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
-      if (iVar5 == -1) {
-        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3388,0,0,"%s",
-                                   "STBoatC::BackCapture, CAPTURE_OMOVE 2");
-        if (iVar5 != 0) {
+      iVar6 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
+      if (iVar6 == -1) {
+        local_EAX_1096 =
+             ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3388,0,0,"%s",
+                                "STBoatC::BackCapture, CAPTURE_OMOVE 2");
+        if (local_EAX_1096 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        iVar5 = 0x3389;
+        iVar6 = 0x3389;
         goto LAB_0047848a;
       }
-      if (iVar5 == 0) {
-        iVar5 = this->vfunc_D8();
-        return -(uint)(iVar5 != 0);
+      if (iVar6 == 0) {
+        iVar6 = this->vfunc_D8();
+        return -(uint)(iVar6 != 0);
       }
     }
     break;
   default:
-    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3396,0,0,"%s",
-                               "STBoatC::BackCapture - incorrect entry");
-    if (iVar5 == 0) {
+    local_EAX_1172 =
+         ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3396,0,0,"%s",
+                            "STBoatC::BackCapture - incorrect entry");
+    if (local_EAX_1172 == 0) {
       return -1;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar5 = this->vfunc_D8();
-  return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
+  iVar6 = this->vfunc_D8();
+  return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
 }
 

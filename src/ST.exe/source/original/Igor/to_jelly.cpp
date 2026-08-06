@@ -30,20 +30,24 @@ void __thiscall st::fn_005825C0(STJellyGunC *this)
   short sVar6;
   STWorldObject *pSVar7;
   uint uVar9;
+  int iVar11;
+  uint uVar12;
   int iVar10;
-  uint uVar11;
   int iVar12;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   STGameObjC *pSVar13;
-  STJellyGunC_field_0235State SVar14;
-  int iVar15;
+  int iVar14;
+  STJellyGunC_field_0235State SVar15;
+  int iVar16;
+  uint uVar11;
+  int local_EAX_970;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
-  AnonShape_0041AF40_F59F8577 *pAVar17;
-  bool bVar18;
+  AnonShape_0041AF40_F59F8577 *pAVar18;
+  bool bVar19;
   AnonShape_0041AF40_F59F8577 local_4c;
   int local_2c;
   int local_28;
@@ -56,28 +60,28 @@ void __thiscall st::fn_005825C0(STJellyGunC *this)
   undefined4 local_c;
   char local_5;
 
-  iVar10 = st::fn_00401A3C((AnonShape_0041C710_C4D46939 *)this);
+  iVar11 = st::fn_00401A3C((AnonShape_0041C710_C4D46939 *)this);
   puVar1 = &this->field_01D5;
-  if (iVar10 == 0) {
-    iVar10 = 0;
-    uVar11 = st::fn_004052CC((STT3DSprC *)puVar1);
-    st::fn_006EABF0(this->field_0211,uVar11,iVar10);
+  if (iVar11 == 0) {
+    iVar11 = 0;
+    uVar12 = st::fn_004052CC((STT3DSprC *)puVar1);
+    st::fn_006EABF0(this->field_0211,uVar12,iVar11);
     iVar10 = st::fn_004050D8((AnonShape_0041CAF0_1630B9E0 *)this);
     if (iVar10 == 1) {
-      iVar10 = 1;
+      iVar11 = 1;
     }
     else {
-      iVar10 = 0;
+      iVar11 = 0;
     }
   }
   else {
-    iVar10 = 1;
-    uVar11 = st::fn_004052CC((STT3DSprC *)puVar1);
-    st::fn_006EABF0(this->field_0211,uVar11,iVar10);
-    iVar10 = 1;
+    iVar11 = 1;
+    uVar12 = st::fn_004052CC((STT3DSprC *)puVar1);
+    st::fn_006EABF0(this->field_0211,uVar12,iVar11);
+    iVar11 = 1;
   }
   iVar12 = st::fn_004052CC((STT3DSprC *)puVar1);
-  st::fn_006E6870(this->field_0211,iVar12,iVar10);
+  st::fn_006E6870(this->field_0211,iVar12,iVar11);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   local_14 = CONCAT22(extraout_var,this->field_0041);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -90,16 +94,16 @@ void __thiscall st::fn_005825C0(STJellyGunC *this)
     local_28 = (int)this->field_0049;
     sVar4 = this->field_0047;
     local_2c = this->vfunc_24();
-    iVar10 = (int)this->field_0047;
-    if ((((((sVar4 == iVar10) && (local_28 == this->field_0049)) &&
+    iVar11 = (int)this->field_0047;
+    if ((((((sVar4 == iVar11) && (local_28 == this->field_0049)) &&
           (local_1c == (int)this->field_004B)) ||
-         (((iVar12 = (int)this->field_0049, iVar10 < 0 || (iVar12 < 0)) ||
-          ((iVar15 = (int)g_worldGrid.sizeX, iVar15 <= iVar10 ||
-           ((g_worldGrid.sizeY <= iVar12 ||
-            (*(char *)(iVar15 * iVar12 + DAT_007fb26c + iVar10) == '\0')))))))) ||
+         (((iVar14 = (int)this->field_0049, iVar11 < 0 || (iVar14 < 0)) ||
+          ((iVar16 = (int)g_worldGrid.sizeX, iVar16 <= iVar11 ||
+           ((g_worldGrid.sizeY <= iVar14 ||
+            (*(char *)(iVar16 * iVar14 + DAT_007fb26c + iVar11) == '\0')))))))) ||
         (((&DAT_007fb24c)[this->field_0024] != 0 &&
-         (*(char *)(iVar15 * iVar12 + (&DAT_007fb24c)[this->field_0024] + iVar10) != '\0')))) ||
-       (uVar11 = st::fn_00403B66(iVar10,iVar12,this->field_0024,1,DAT_007e6760), (int)uVar11 < 0)
+         (*(char *)(iVar16 * iVar14 + (&DAT_007fb24c)[this->field_0024] + iVar11) != '\0')))) ||
+       (uVar11 = st::fn_00403B66(iVar11,iVar14,this->field_0024,1,DAT_007e6760), (int)uVar11 < 0)
        ) {
       if (local_2c == 0) {
 LAB_005829e6:
@@ -108,9 +112,10 @@ LAB_005829e6:
       else {
         if (local_2c != 1) {
           if (local_2c != 2) {
-            iVar10 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x11b,0,0,
-                                        "%s","STJellyGunC::LifeGun Error Move");
-            if (iVar10 == 0) {
+            local_EAX_970 =
+                 st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x11b,0,0,"%s"
+                                    ,"STJellyGunC::LifeGun Error Move");
+            if (local_EAX_970 == 0) {
               return;
             }
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -122,12 +127,12 @@ LAB_005829e6:
                                  (g_allPlayers_007FA174,*(char *)&this->field_0241,
                                   *(ushort *)&this->field_0x245,CASE_1),
             pSVar13 == nullptr ||
-            (iVar10 = pSVar13->vfunc_F8(), iVar10 == 0)))) {
+            (iVar11 = pSVar13->vfunc_F8(), iVar11 == 0)))) {
           this->field_023D = 0;
         }
 LAB_005829f4:
-        SVar14 = st::fn_004016D6(this);
-        this->field_0235 = SVar14;
+        SVar15 = st::fn_004016D6(this);
+        this->field_0235 = SVar15;
       }
       sVar4 = this->field_0047;
       sVar5 = this->field_004B;
@@ -138,55 +143,55 @@ LAB_005829f4:
             (pSVar7 = STGridAt3D(g_worldGrid, sVar4, sVar6, sVar5).objects[0],
             pSVar7 != nullptr)))) &&
           ((pSVar7->value_20 == 1000 || (pSVar7->value_20 == 0x14)))) &&
-         ((iVar10 = (*pSVar7->vtable[5].slots_00_28[0])(), iVar10 != 0 &&
+         ((iVar11 = (*pSVar7->vtable[5].slots_00_28[0])(), iVar11 != 0 &&
           ((pSVar7[1].vtable < (STWorldObjectVTable *)0x8 &&
            ((g_playSystem_00802A38 == nullptr ||
             (g_bulkInitializedRecords_008087C7[(int)pSVar7[1].vtable].field_0022 < 8)))))))) {
-        iVar10 = this->field_0010;
+        iVar11 = this->field_0010;
         bVar2 = *(byte *)&pSVar7[1].vtable;
         bVar3 = *(byte *)&this->field_0024;
         local_1c = STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar2));
         local_28 = STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar3));
-        if (*(char *)(iVar10 + 0x146f) == '\0') {
+        if (*(char *)(iVar11 + 0x146f) == '\0') {
           if (bVar2 == bVar3) {
 LAB_00582bb0:
-            iVar10 = 0;
+            iVar11 = 0;
           }
           else {
-            uVar11 = (uint)bVar2;
+            uVar12 = (uint)bVar2;
             uVar9 = (uint)bVar3;
-            local_5 = *(char *)(uVar9 + uVar11 * 8 + 0x142f + iVar10);
-            if ((local_5 == '\0') && (*(char *)(uVar11 + uVar9 * 8 + 0x142f + iVar10) == '\0')) {
-              iVar10 = -2;
+            local_5 = *(char *)(uVar9 + uVar12 * 8 + 0x142f + iVar11);
+            if ((local_5 == '\0') && (*(char *)(uVar12 + uVar9 * 8 + 0x142f + iVar11) == '\0')) {
+              iVar11 = -2;
             }
             else if ((local_5 == '\x01') &&
-                    (*(char *)(uVar11 + uVar9 * 8 + 0x142f + iVar10) == '\0')) {
-              iVar10 = -1;
+                    (*(char *)(uVar12 + uVar9 * 8 + 0x142f + iVar11) == '\0')) {
+              iVar11 = -1;
             }
             else if ((local_5 == '\0') &&
-                    (*(char *)(uVar11 + uVar9 * 8 + 0x142f + iVar10) == '\x01')) {
-              iVar10 = 1;
+                    (*(char *)(uVar12 + uVar9 * 8 + 0x142f + iVar11) == '\x01')) {
+              iVar11 = 1;
             }
             else {
-              if ((local_5 != '\x01') || (*(char *)(uVar11 + uVar9 * 8 + 0x142f + iVar10) != '\x01')
+              if ((local_5 != '\x01') || (*(char *)(uVar12 + uVar9 * 8 + 0x142f + iVar11) != '\x01')
                  ) goto LAB_00582bb0;
-              iVar10 = 2;
+              iVar11 = 2;
             }
           }
-          bVar18 = iVar10 < 0;
+          bVar19 = iVar11 < 0;
         }
         else {
-          local_2c = iVar10 + (uint)bVar3 * 0x48;
+          local_2c = iVar11 + (uint)bVar3 * 0x48;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          bVar18 = *(char *)((uint)bVar3 * 9 + 0x11ca + local_2c) !=
-                   *(char *)((uint)bVar2 * 0x51 + 0x11ca + iVar10);
+          bVar19 = *(char *)((uint)bVar3 * 9 + 0x11ca + local_2c) !=
+                   *(char *)((uint)bVar2 * 0x51 + 0x11ca + iVar11);
         }
-        if ((bVar18) && (iVar10 = (*pSVar7->vtable[5].slots_00_28[2])(), iVar10 != 0)) {
-          iVar10 = (*pSVar7->vtable[4].slots_00_28[7])
+        if ((bVar19) && (iVar11 = (*pSVar7->vtable[5].slots_00_28[2])(), iVar11 != 0)) {
+          iVar11 = (*pSVar7->vtable[4].slots_00_28[7])
                              (this->field_0041,this->field_0043,this->field_0045,local_14,local_10,
                               local_c);
-          *(int *)&this->field_0x252 = iVar10;
-          if (-1 < iVar10) {
+          *(int *)&this->field_0x252 = iVar11;
+          if (-1 < iVar11) {
             st::fn_00404877(this);
             puVar1 = &this->field_01D5;
             this->field_0241 = pSVar7[1].vtable;
@@ -196,17 +201,17 @@ LAB_00582bb0:
             st::fn_00404264((STT3DSprC *)puVar1,0xc);
             st::fn_00402A90((STT3DSprC *)puVar1);
             st::fn_00405600(this,(int)this->field_0041,(int)this->field_0043,0x498);
-            iVar10 = st::fn_00402CD9(this);
-            if (iVar10 != 0) goto LAB_00582958;
+            iVar11 = st::fn_00402CD9(this);
+            if (iVar11 != 0) goto LAB_00582958;
             (*pSVar7->vtable[4].slots_00_28[8])
                       (*(undefined4 *)&this->field_0x252,&local_14,&local_10,&local_c,&local_18);
             if (local_18 != 0) {
-              iVar10 = *(int *)&pSVar7[0xd].field_0x19;
+              iVar11 = *(int *)&pSVar7[0xd].field_0x19;
               goto LAB_00582cbd;
             }
-            iVar10 = *(int *)&pSVar7[0xd].field_0x19;
+            iVar11 = *(int *)&pSVar7[0xd].field_0x19;
 LAB_00582c9f:
-            st::fn_006EA460(this->field_0211,this->field_01ED,iVar10);
+            st::fn_006EA460(this->field_0211,this->field_01ED,iVar11);
           }
         }
       }
@@ -225,56 +230,56 @@ LAB_00582958:
     }
     break;
   case CASE_2:
-    uVar11 = st::fn_004042AF(puVar1,'\b');
-    local_1c = uVar11;
-    if (((uVar11 == 1) && (this->field_0241 != 0xff)) &&
+    uVar12 = st::fn_004042AF(puVar1,'\b');
+    local_1c = uVar12;
+    if (((uVar12 == 1) && (this->field_0241 != 0xff)) &&
        (pSVar13 = st::fn_004028BA
                             (g_allPlayers_007FA174,*(char *)&this->field_0241,
                              *(ushort *)&this->field_0x245,CASE_1), pSVar13 != nullptr)) {
       memset(&DAT_008116c8, 0, 0x1c); /* compiler bulk-zero initialization */
-      iVar10 = 0;
+      iVar11 = 0;
       DAT_008116c8 = DAT_007e6760;
       _DAT_008116d4 = this->field_0292;
       _DAT_008116d6 = this->field_028E;
       _DAT_008116d0 = *(undefined4 *)&this->field_0x25a;
       DAT_008116cc = 0xbc;
-      pAVar17 = &local_4c;
-      for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
-        *(undefined4 *)pAVar17 = 0;
-        pAVar17 = (AnonShape_0041AF40_F59F8577 *)&pAVar17->field_0x4;
+      pAVar18 = &local_4c;
+      for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
+        *(undefined4 *)pAVar18 = 0;
+        pAVar18 = (AnonShape_0041AF40_F59F8577 *)&pAVar18->field_0x4;
       }
       STPiece<8,4>(local_4c) = pSVar13->field_0008;
       STPiece<12,4>(local_4c) = 2;
       local_4c.field_0010 = 0x110;
       local_4c.field_0014 = &DAT_008116c8;
       pSVar13->GetMessage(&local_4c);
-      uVar11 = local_1c;
+      uVar12 = local_1c;
     }
-    if ((this->field_0x24f != '\0') && (uVar11 == (byte)this->field_0x250)) {
+    if ((this->field_0x24f != '\0') && (uVar12 == (byte)this->field_0x250)) {
       st::fn_00405240((STT3DSprC *)puVar1,9,g_playSystem_00802A38->field_00E4);
       st::fn_00404854(puVar1,9);
     }
-    iVar10 = st::fn_004022AC((STT3DSprC *)puVar1,'\b');
-    if (uVar11 == iVar10 - 1U) {
+    iVar11 = st::fn_004022AC((STT3DSprC *)puVar1,'\b');
+    if (uVar12 == iVar11 - 1U) {
       st::fn_00404264((STT3DSprC *)puVar1,8);
     }
-    iVar10 = st::fn_004022AC((STT3DSprC *)puVar1,'\n');
-    if (uVar11 == iVar10 - 1U) {
+    iVar11 = st::fn_004022AC((STT3DSprC *)puVar1,'\n');
+    if (uVar12 == iVar11 - 1U) {
       st::fn_00404264((STT3DSprC *)puVar1,10);
     }
     if (this->field_0x24f != '\0') {
-      iVar10 = st::fn_004022AC((STT3DSprC *)puVar1,'\t');
-      iVar12 = st::fn_004042AF(puVar1,'\t');
-      uVar11 = local_1c;
-      if (iVar12 == iVar10 + -1) {
+      iVar11 = st::fn_004022AC((STT3DSprC *)puVar1,'\t');
+      iVar14 = st::fn_004042AF(puVar1,'\t');
+      uVar12 = local_1c;
+      if (iVar14 == iVar11 + -1) {
         st::fn_00404264((STT3DSprC *)puVar1,9);
         this->field_0x24f = 0;
-        uVar11 = local_1c;
+        uVar12 = local_1c;
       }
     }
-    iVar10 = st::fn_004022AC((STT3DSprC *)puVar1,'\b');
-    if ((uVar11 != iVar10 - 1U) || (this->field_0x24f != '\0')) {
-      if (((int)uVar11 < 10) &&
+    iVar11 = st::fn_004022AC((STT3DSprC *)puVar1,'\b');
+    if ((uVar12 != iVar11 - 1U) || (this->field_0x24f != '\0')) {
+      if (((int)uVar12 < 10) &&
          ((0 < *(int *)&this->field_0x252 &&
           (pSVar13 = st::fn_004028BA
                                (g_allPlayers_007FA174,*(char *)&this->field_0241,
@@ -291,27 +296,27 @@ LAB_00582958:
     st::fn_004016C7(this);
     return;
   case CASE_3:
-    iVar10 = st::fn_00402847(this,&local_24,&local_20);
-    if (iVar10 == -1) goto switchD_00582651_default;
-    if ((-1 < iVar10) && (iVar10 < 2)) {
+    iVar11 = st::fn_00402847(this,&local_24,&local_20);
+    if (iVar11 == -1) goto switchD_00582651_default;
+    if ((-1 < iVar11) && (iVar11 < 2)) {
       if ((this->field_0241 == 0xff) ||
          ((pSVar13 = st::fn_004028BA
                                (g_allPlayers_007FA174,(char)this->field_0241,
                                 *(ushort *)&this->field_0x245,CASE_1), pSVar13 == nullptr
-          || (iVar12 = pSVar13->vfunc_F8(), iVar12 == 0)))) {
+          || (iVar14 = pSVar13->vfunc_F8(), iVar14 == 0)))) {
         this->field_023D = 0;
         goto switchD_00582651_default;
       }
       if (((byte)g_playSystem_00802A38->field_00E4 & 7) != 1) {
 LAB_005827b7:
-        if (iVar10 == 0) goto switchD_00582651_default;
+        if (iVar11 == 0) goto switchD_00582651_default;
         break;
       }
-      iVar12 = (*pSVar13->vtable->vfunc_DC)
+      iVar14 = (*pSVar13->vtable->vfunc_DC)
                          (this->field_0041,this->field_0043,this->field_0045,local_14,local_10,
                           local_c);
-      *(int *)&this->field_0x252 = iVar12;
-      if (iVar12 < 0) goto LAB_005827b7;
+      *(int *)&this->field_0x252 = iVar14;
+      if (iVar14 < 0) goto LAB_005827b7;
       st::fn_00405600(this,(int)this->field_0041,(int)this->field_0043,0x498);
       st::fn_00404877(this);
       puVar1 = &this->field_01D5;
@@ -321,29 +326,29 @@ LAB_005827b7:
       st::fn_00404264((STT3DSprC *)puVar1,0xe);
       st::fn_00404264((STT3DSprC *)puVar1,0xc);
       st::fn_00402A90((STT3DSprC *)puVar1);
-      iVar10 = st::fn_00402CD9(this);
-      if (iVar10 != 0) goto LAB_00582958;
+      iVar11 = st::fn_00402CD9(this);
+      if (iVar11 != 0) goto LAB_00582958;
       (*pSVar13->vtable->vfunc_E0)
                 (*(undefined4 *)&this->field_0x252,&local_14,&local_10,&local_c,&local_18);
       if (local_18 == 0) {
-        iVar10 = pSVar13->field_01ED;
+        iVar11 = pSVar13->field_01ED;
         goto LAB_00582c9f;
       }
-      iVar10 = pSVar13->field_01ED;
+      iVar11 = pSVar13->field_01ED;
 LAB_00582cbd:
-      st::fn_006EA3E0(this->field_0211,this->field_01ED,iVar10);
+      st::fn_006EA3E0(this->field_0211,this->field_01ED,iVar11);
     }
     break;
   default:
 switchD_00582651_default:
-    SVar14 = st::fn_004016D6(this);
-    this->field_0235 = SVar14;
+    SVar15 = st::fn_004016D6(this);
+    this->field_0235 = SVar15;
   }
   if (this->field_0239 < 0) {
     if (*(int *)&this->field_0x24b == 0) {
-      iVar10 = *(int *)&this->field_0x247 + -2;
-      *(int *)&this->field_0x247 = iVar10;
-      if (-1 < iVar10) goto LAB_00582f2d;
+      iVar11 = *(int *)&this->field_0x247 + -2;
+      *(int *)&this->field_0x247 = iVar11;
+      if (-1 < iVar11) goto LAB_00582f2d;
       *(undefined4 *)&this->field_0x247 = 1;
       *(undefined4 *)&this->field_0x24b = 1;
 LAB_00582f27:
@@ -352,8 +357,8 @@ LAB_00582f27:
     else if (this->field_0231 == 0) {
       if ((int)this->field_003E - (int)this->field_0038 < -10) {
         if (((g_playSystem_00802A38->field_00E4 & 3) == 0) &&
-           (iVar10 = *(int *)&this->field_0x247 + 1, *(int *)&this->field_0x247 = iVar10,
-           10 < iVar10)) {
+           (iVar11 = *(int *)&this->field_0x247 + 1, *(int *)&this->field_0x247 = iVar11,
+           10 < iVar11)) {
           *(undefined4 *)&this->field_0x247 = 10;
         }
       }
@@ -361,9 +366,9 @@ LAB_00582f27:
     }
     else {
 LAB_00582edf:
-      iVar10 = *(int *)&this->field_0x247 + 1;
-      *(int *)&this->field_0x247 = iVar10;
-      if (10 < iVar10) {
+      iVar11 = *(int *)&this->field_0x247 + 1;
+      *(int *)&this->field_0x247 = iVar11;
+      if (10 < iVar11) {
         *(undefined4 *)&this->field_0x247 = 9;
         *(undefined4 *)&this->field_0x24b = 0;
         goto LAB_00582f27;
@@ -371,19 +376,19 @@ LAB_00582edf:
     }
 LAB_00582f2d:
     if (((this->field_0231 != 0) || (*(int *)&this->field_0x247 != 4)) ||
-       (iVar10 = (int)this->field_003E - (int)this->field_0038, iVar10 < -10))
+       (iVar11 = (int)this->field_003E - (int)this->field_0038, iVar11 < -10))
     goto cf_common_exit_00582F72;
     this->field_0239 = 0x19;
-    if (iVar10 == 0) goto cf_common_exit_00582F72;
-    if (iVar10 < 0) {
-      iVar10 = -iVar10;
+    if (iVar11 == 0) goto cf_common_exit_00582F72;
+    if (iVar11 < 0) {
+      iVar11 = -iVar11;
     }
-    iVar10 = (int)(0x19 / (longlong)iVar10);
+    iVar11 = (int)(0x19 / (longlong)iVar11);
   }
   else {
-    iVar10 = this->field_0239 + -1;
+    iVar11 = this->field_0239 + -1;
   }
-  this->field_0239 = iVar10;
+  this->field_0239 = iVar11;
 cf_common_exit_00582F72:
   puVar1 = &this->field_01D5;
   st::fn_00401064((STT3DSprC *)puVar1,'\x0e',*(uint *)&this->field_0x247);
@@ -413,18 +418,23 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
   STMessageId SVar2;
   undefined4 uVar3;
   STJellyGunC *this_00;
+  int local_EAX_80;
+  int local_EAX_793;
+  int local_EAX_853;
+  int local_EAX_912;
   int iVar5;
   int iVar6;
-  uint uVar7;
-  short sVar8;
-  AnonShape_00583270_F758043B *pAVar9;
-  byte *puVar10;
-  byte *pbVar11;
-  int *piVar12;
-  byte *puVar13;
-  char *pcVar14;
-  AnonShape_00583270_0B8831C2 *pAVar15;
-  byte *pbVar16;
+  int iVar7;
+  uint uVar8;
+  short sVar9;
+  AnonShape_00583270_F758043B *pAVar10;
+  byte *puVar11;
+  byte *pbVar12;
+  int *piVar13;
+  byte *puVar14;
+  char *pcVar15;
+  AnonShape_00583270_0B8831C2 *pAVar16;
+  byte *pbVar17;
   InternalExceptionFrame local_a0;
   undefined4 local_5c [4];
   undefined4 local_4c;
@@ -450,14 +460,14 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
   local_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a0;
   local_3c = this;
-  iVar5 = st::fn_0072D7F0(local_a0.jumpBuffer,0);
+  local_EAX_80 = st::fn_0072D7F0(local_a0.jumpBuffer,0);
   this_00 = local_3c;
-  if (iVar5 != 0) {
+  if (local_EAX_80 != 0) {
     g_currentExceptionFrame = local_a0.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x2af,0,iVar5,"%s",
-                               "STJellyGunC::GetMessage");
+    iVar6 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x2af,0,local_EAX_80,
+                               "%s","STJellyGunC::GetMessage");
     if (iVar6 == 0) {
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\Igor\\to_jelly.cpp",0x2b0);
+      st::fn_006A5E40(local_EAX_80,0,"E:\\__titans\\Igor\\to_jelly.cpp",0x2b0);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -468,16 +478,16 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
     if (SVar2 == MESS_TORPHIT) {
       if ((this_00->field_0235 != CASE_2) && (this_00->field_0235 != CASE_4)) {
         st::fn_00404877(this_00);
-        puVar10 = (byte *)(&this_00->field_01D5);
+        puVar11 = (byte *)(&this_00->field_01D5);
         this_00->field_0241 = 0xff;
         *(undefined2 *)&this_00->field_0x245 = 0;
         *(undefined4 *)&this_00->field_0x252 = 0;
         this_00->field_0235 = CASE_2;
-        st::fn_00404264((STT3DSprC *)puVar10,0xe);
-        st::fn_00404264((STT3DSprC *)puVar10,0xc);
-        st::fn_00402A90((STT3DSprC *)puVar10);
-        iVar5 = st::fn_00402CD9(this_00);
-        if (iVar5 != 0) {
+        st::fn_00404264((STT3DSprC *)puVar11,0xe);
+        st::fn_00404264((STT3DSprC *)puVar11,0xc);
+        st::fn_00402A90((STT3DSprC *)puVar11);
+        iVar7 = st::fn_00402CD9(this_00);
+        if (iVar7 != 0) {
           st::fn_004016C7(this_00);
           g_currentExceptionFrame = local_a0.previous;
           return 0;
@@ -505,60 +515,61 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
           this_00->field_023D = 0;
           this_00->field_0241 = 0xff;
           this_00->field_0231 = 0;
-          puVar10 = (byte *)((message->arg0).ptr);
-          puVar13 = (byte *)&this_00->field_0x256;
-          memmove(puVar13, puVar10, 0x3e); /* compiler REP MOVS byte copy */
-          iVar5 = this_00->field_026A;
-          sVar8 = (short)(iVar5 >> 0x1f);
-          if (iVar5 < 0) {
-            sVar8 = (((short)(iVar5 / 0xc9) + sVar8) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f))
+          puVar11 = (byte *)((message->arg0).ptr);
+          puVar14 = (byte *)&this_00->field_0x256;
+          memmove(puVar14, puVar11, 0x3e); /* compiler REP MOVS byte copy */
+          iVar7 = this_00->field_026A;
+          sVar9 = (short)(iVar7 >> 0x1f);
+          if (iVar7 < 0) {
+            sVar9 = (((short)(iVar7 / 0xc9) + sVar9) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f))
                     + -1;
           }
           else {
-            sVar8 = ((short)(iVar5 / 0xc9) + sVar8) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f);
+            sVar9 = ((short)(iVar7 / 0xc9) + sVar9) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f);
           }
-          iVar5 = this_00->field_026E;
-          this_00->field_0047 = sVar8;
-          sVar8 = (short)(iVar5 >> 0x1f);
-          if (iVar5 < 0) {
-            sVar8 = (((short)(iVar5 / 0xc9) + sVar8) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f))
+          iVar7 = this_00->field_026E;
+          this_00->field_0047 = sVar9;
+          sVar9 = (short)(iVar7 >> 0x1f);
+          if (iVar7 < 0) {
+            sVar9 = (((short)(iVar7 / 0xc9) + sVar9) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f))
                     + -1;
           }
           else {
-            sVar8 = ((short)(iVar5 / 0xc9) + sVar8) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f);
+            sVar9 = ((short)(iVar7 / 0xc9) + sVar9) - (short)((longlong)iVar7 * 0x28c1979 >> 0x3f);
           }
-          iVar5 = this_00->field_0272;
-          this_00->field_0049 = sVar8;
-          sVar8 = (short)(iVar5 >> 0x1f);
-          if (iVar5 < 0) {
-            sVar8 = (((short)(iVar5 / 200) + sVar8) - (short)((longlong)iVar5 * 0x51eb851f >> 0x3f))
+          iVar7 = this_00->field_0272;
+          this_00->field_0049 = sVar9;
+          sVar9 = (short)(iVar7 >> 0x1f);
+          if (iVar7 < 0) {
+            sVar9 = (((short)(iVar7 / 200) + sVar9) - (short)((longlong)iVar7 * 0x51eb851f >> 0x3f))
                     + -1;
           }
           else {
-            sVar8 = ((short)(iVar5 / 200) + sVar8) - (short)((longlong)iVar5 * 0x51eb851f >> 0x3f);
+            sVar9 = ((short)(iVar7 / 200) + sVar9) - (short)((longlong)iVar7 * 0x51eb851f >> 0x3f);
           }
-          this_00->field_004B = sVar8;
+          this_00->field_004B = sVar9;
           this_00->field_0239 = -1;
           *(undefined4 *)&this_00->field_0x24b = 1;
           *(undefined4 *)&this_00->field_0x247 = 0;
           st::fn_00402B5D(this_00,1);
-          iVar5 = st::fn_0040295F(this_00,this_00->field_0047,this_00->field_0049,
+          iVar7 = st::fn_0040295F(this_00,this_00->field_0047,this_00->field_0049,
                                      this_00->field_004B,1);
-          if (iVar5 == 0) {
-            iVar5 = st::fn_00401AAA(this_00,8);
-            if (iVar5 == 0) {
-              iVar5 = st::fn_00405DC1(this_00,0);
-              if (iVar5 == 0) {
-                puVar10 = (byte *)(&this_00->field_01D5);
-                iVar5 = st::fn_00404183
-                                  ((STT3DSprC *)puVar10,0xe,PTR_0080676c,"jellygun",0x1d);
-                if (iVar5 != 0) {
+          if (iVar7 == 0) {
+            iVar7 = st::fn_00401AAA(this_00,8);
+            if (iVar7 == 0) {
+              iVar7 = st::fn_00405DC1(this_00,0);
+              if (iVar7 == 0) {
+                puVar11 = (byte *)(&this_00->field_01D5);
+                iVar7 = st::fn_00404183
+                                  ((STT3DSprC *)puVar11,0xe,PTR_0080676c,"jellygun",CASE_1D
+                                  );
+                if (iVar7 != 0) {
                   st::fn_006A5E40
                             (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_jelly.cpp"
                              ,0x1f9);
                 }
-                iVar5 = *(int *)&this_00->field_0x25a;
-                if (7 < iVar5) {
+                iVar7 = *(int *)&this_00->field_0x25a;
+                if (7 < iVar7) {
                   iVar5 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x1fe,0,0,
                                              "%s",
                                              "STJellyGunC::Invalid player number");
@@ -566,33 +577,33 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
                     STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
                   *(undefined4 *)&this_00->field_0x25a = 0;
-                  iVar5 = 0;
+                  iVar7 = 0;
                 }
-                piVar12 = PTR_0080676c;
-                uVar7 = 0xffffffff;
-                pcVar14 = "jellygun0";
+                piVar13 = PTR_0080676c;
+                uVar8 = 0xffffffff;
+                pcVar15 = "jellygun0";
                 do {
-                  if (uVar7 == 0) break;
-                  uVar7 = uVar7 - 1;
-                  cVar1 = *pcVar14;
-                  pcVar14 = pcVar14 + 1;
+                  if (uVar8 == 0) break;
+                  uVar8 = uVar8 - 1;
+                  cVar1 = *pcVar15;
+                  pcVar15 = pcVar15 + 1;
                 } while (cVar1 != '\0');
-                (&DAT_007cb3ea)[~uVar7] = (char)iVar5 + '0';
-                iVar5 = st::fn_00404183
-                                  ((STT3DSprC *)puVar10,0xc,piVar12,"jellygun0",0x1d);
-                if (iVar5 != 0) {
+                (&DAT_007cb3ea)[~uVar8] = (char)iVar7 + '0';
+                iVar7 = st::fn_00404183
+                                  ((STT3DSprC *)puVar11,0xc,piVar13,"jellygun0",CASE_1D);
+                if (iVar7 != 0) {
                   st::fn_006A5E40
                             (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_jelly.cpp"
                              ,0x204);
                 }
-                st::fn_00405AA6(puVar10,'\f');
-                st::fn_00405240((STT3DSprC *)puVar10,0xc,g_playSystem_00802A38->field_00E4);
-                st::fn_00405AA6(puVar10,'\x0e');
-                st::fn_00405240((STT3DSprC *)puVar10,0xe,g_playSystem_00802A38->field_00E4);
+                st::fn_00405AA6(puVar11,'\f');
+                st::fn_00405240((STT3DSprC *)puVar11,0xc,g_playSystem_00802A38->field_00E4);
+                st::fn_00405AA6(puVar11,'\x0e');
+                st::fn_00405240((STT3DSprC *)puVar11,0xe,g_playSystem_00802A38->field_00E4);
                 st::fn_00403107(this_00,(ushort)this_00->field_026A,(short)this_00->field_026E,
                              (ushort)this_00->field_0272);
                 st::fn_004045D9
-                          ((STT3DSprC *)puVar10,
+                          ((STT3DSprC *)puVar11,
                            (float)this_00->field_026A * _DAT_007904f8 * _DAT_007904f0,
                            (float)this_00->field_026E * _DAT_007904f8 * _DAT_007904f0,
                            (float)this_00->field_0272 * _DAT_007904f8 * _DAT_007904f0);
@@ -600,40 +611,43 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
                 st::fn_00405600(this_00,this_00->field_026A,this_00->field_026E,0x497);
               }
               else {
-                iVar5 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",499,0,0,
-                                           "%s","STJellyGunC::Phase Count err");
-                if (iVar5 != 0) {
+                local_EAX_912 =
+                     st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",499,0,0,
+                                        "%s","STJellyGunC::Phase Count err");
+                if (local_EAX_912 != 0) {
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
                 st::fn_004016C7(this_00);
               }
             }
             else {
-              iVar5 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x1ec,0,0,
-                                         "%s","STJellyGunC::GetMessage Phase Count err");
-              if (iVar5 != 0) {
+              local_EAX_853 =
+                   st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x1ec,0,0,
+                                      "%s","STJellyGunC::GetMessage Phase Count err");
+              if (local_EAX_853 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
               st::fn_004016C7(this_00);
             }
           }
           else {
-            iVar5 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x1e5,0,0,
-                                       "%s","STJellyGunC::Cell is busy");
-            if (iVar5 != 0) {
+            local_EAX_793 =
+                 st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x1e5,0,0,"%s"
+                                    ,"STJellyGunC::Cell is busy");
+            if (local_EAX_793 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
             st::fn_004016C7(this_00);
           }
         }
         else if (*(uint *)&local_38->field_0xc == 2) {
-          pAVar9 = local_38;
-          puVar10 = (byte *)&this_00->field_0x256;
-          memmove(puVar10, pAVar9, 0x3e); /* compiler REP MOVS byte copy */
+          pAVar10 = local_38;
+          puVar11 = (byte *)&this_00->field_0x256;
+          memmove(puVar11, pAVar10, 0x3e); /* compiler REP MOVS byte copy */
           local_8 = local_38->field_0067;
           st::fn_0040551F
                     ((STAllPlayersC *)this_00,(undefined4 *)(&local_38[1].field_0x3 + local_8));
-          pAVar9 = local_38;
+          pAVar10 = local_38;
           *(undefined4 *)&this_00->field_0x247 = local_38->field_004A;
           *(undefined4 *)&this_00->field_0x24b = local_38->field_004E;
           this_00->field_0235 = local_38->field_0042;
@@ -648,17 +662,17 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
           *(undefined4 *)&this_00->field_0x252 = local_38->field_0063;
           local_34 = st::fn_006AAC70(0x44);
           if (local_34 != nullptr) {
-            iVar5 = 0;
+            iVar7 = 0;
             do {
-              piVar12 = PTR_00806774;
-              if (((iVar5 == 8) || (iVar5 == 10)) || (piVar12 = PTR_0080676c, iVar5 != 9)) {
-                *(int **)((int)local_34 + iVar5 * 4) = piVar12;
+              piVar13 = PTR_00806774;
+              if (((iVar7 == 8) || (iVar7 == 10)) || (piVar13 = PTR_0080676c, iVar7 != 9)) {
+                *(int **)((int)local_34 + iVar7 * 4) = piVar13;
               }
               else {
                 STField<int *>(local_34,0x24) = PTR_00806764;
               }
-              iVar5 = iVar5 + 1;
-            } while (iVar5 < 0x11);
+              iVar7 = iVar7 + 1;
+            } while (iVar7 < 0x11);
             local_30 = 0;
             local_2c = 0;
             local_28 = PTR_008073cc;
@@ -667,7 +681,7 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
             local_1c = 0;
             st::fn_00404CA5
                       ((STT3DSprC *)&this_00->field_01D5,(int *)&local_34,
-                       (AnonShape_004AD790_77673787 *)&pAVar9->field_0x6b);
+                       (AnonShape_004AD790_77673787 *)&pAVar10->field_0x6b);
             st::fn_006AB060(&local_34);
             st::fn_00401325
                       (this_00->field_005B,this_00->field_005D,this_00->field_005F,1,
@@ -691,9 +705,9 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
       local_c = st::fn_006AAC70(local_10 + 0x6f + local_8);
       if (((local_14 != nullptr) && (local_18 != nullptr)) &&
          (local_c != nullptr)) {
-        puVar10 = (byte *)&this_00->field_0x256;
-        pAVar15 = local_c;
-        memmove(pAVar15, puVar10, 0x3e); /* compiler REP MOVS byte copy */
+        puVar11 = (byte *)&this_00->field_0x256;
+        pAVar16 = local_c;
+        memmove(pAVar16, puVar11, 0x3e); /* compiler REP MOVS byte copy */
         *(undefined4 *)&local_c->field_0xc = 2;
         *(STJellyGunC_field_0235State *)&local_c->field_0x42 = this_00->field_0235;
         local_c->field_0046 = this_00->field_023D;
@@ -709,14 +723,14 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
         local_c->field_0x62 = this_00->field_0251;
         *(undefined4 *)&local_c->field_0x63 = *(undefined4 *)&this_00->field_0x252;
         local_c->field_0067 = local_8;
-        pbVar11 = local_14;
-        pbVar16 = &local_c->field_0x6b;
-        memmove(pbVar16, pbVar11, local_8); /* compiler REP MOVS byte copy */
-        uVar7 = 0;
+        pbVar12 = local_14;
+        pbVar17 = &local_c->field_0x6b;
+        memmove(pbVar17, pbVar12, local_8); /* compiler REP MOVS byte copy */
+        uVar8 = 0;
         *(uint *)(&local_c->field_0x6b + local_8) = local_10;
-        pbVar11 = local_18;
-        pbVar16 = &local_c[1].field_0x3 + local_8;
-        memmove(pbVar16, pbVar11, local_10); /* compiler REP MOVS byte copy */
+        pbVar12 = local_18;
+        pbVar17 = &local_c[1].field_0x3 + local_8;
+        memmove(pbVar17, pbVar12, local_10); /* compiler REP MOVS byte copy */
         st::fn_004025F9
                   (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                    (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x6f + local_8));
@@ -741,15 +755,15 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
     if (((SVar2 == MESS_HITKILL) && (this_00->field_0235 != CASE_2)) &&
        (this_00->field_0235 != CASE_4)) {
       st::fn_00404877(this_00);
-      puVar10 = (byte *)(&this_00->field_01D5);
+      puVar11 = (byte *)(&this_00->field_01D5);
       this_00->field_0241 = 0xff;
       *(undefined2 *)&this_00->field_0x245 = 0;
       *(undefined4 *)&this_00->field_0x252 = 0;
       this_00->field_0235 = CASE_4;
-      st::fn_00404264((STT3DSprC *)puVar10,0xe);
-      st::fn_00404264((STT3DSprC *)puVar10,0xc);
-      st::fn_00402A90((STT3DSprC *)puVar10);
-      st::fn_00403D0F((STT3DSprC *)puVar10);
+      st::fn_00404264((STT3DSprC *)puVar11,0xe);
+      st::fn_00404264((STT3DSprC *)puVar11,0xc);
+      st::fn_00402A90((STT3DSprC *)puVar11);
+      st::fn_00403D0F((STT3DSprC *)puVar11);
       st::fn_004016C7(this_00);
       g_currentExceptionFrame = local_a0.previous;
       return 0;

@@ -10,15 +10,17 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
 {
   ResearchPanelTy *this_00;
   int iVar2;
+  int iVar6;
   DArrayTy *pDVar3;
   LPSTR text;
   ushort *puVar4;
   undefined4 *puVar5;
-  int iVar6;
-  undefined4 uVar7;
   int iVar8;
+  int iVar7;
+  undefined4 uVar8;
   int iVar9;
-  int *piVar10;
+  int iVar10;
+  int *piVar11;
   undefined4 local_1fc [84];
   InternalExceptionFrame local_ac;
   undefined4 local_68 [4];
@@ -38,7 +40,7 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
 
   puVar5 = local_68;
   local_10 = this;
-  for (iVar6 = 0x16; iVar6 != 0; iVar6 = iVar6 + -1) {
+  for (iVar7 = 0x16; iVar7 != 0; iVar7 = iVar7 + -1) {
     *puVar5 = 0;
     puVar5 = puVar5 + 1;
   }
@@ -57,20 +59,20 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
     RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\research.cpp",0x39);
     return;
   }
-  iVar6 = 2;
+  iVar7 = 2;
   g_researchPanel_008016E8 = (ProdPanelTy *)local_10;
   puVar5 = &local_10->field_027A;
   do {
     pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,0x28,0x30,10);
     *puVar5 = pDVar3;
     puVar5 = puVar5 + 1;
-    iVar6 = iVar6 + -1;
-  } while (iVar6 != 0);
-  iVar6 = 1;
-  piVar10 = nullptr;
+    iVar7 = iVar7 + -1;
+  } while (iVar7 != 0);
+  iVar7 = 1;
+  piVar11 = nullptr;
   this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
   text = thunk_FUN_00571240("BKG_RESEARCHW",0);
-  puVar4 = cMf32::RecGet(g_cMf32_00806790,1,text,piVar10,iVar6);
+  puVar4 = cMf32::RecGet(g_cMf32_00806790,1,text,piVar11,iVar7);
   this_00->field_0184 = puVar4;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
@@ -84,20 +86,20 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   if (DAT_0080874e != '\x03') {
     local_c = this_00->field_005C;
     puVar5 = local_1fc + 1;
-    iVar8 = this_00->field_003C + 0x70;
+    iVar9 = this_00->field_003C + 0x70;
     local_8 = 2;
-    iVar6 = 0;
+    iVar7 = 0;
     do {
       iVar2 = local_c;
-      puVar5[-1] = iVar6 + 1;
+      puVar5[-1] = iVar7 + 1;
       *puVar5 = 0;
-      puVar5[2] = iVar8;
+      puVar5[2] = iVar9;
       puVar5[4] = 0x2e;
-      iVar9 = DAT_00806734;
+      iVar10 = DAT_00806734;
       if (iVar2 != 0) {
-        iVar9 = this_00->field_0044;
+        iVar10 = this_00->field_0044;
       }
-      puVar5[3] = iVar9 + 0x34;
+      puVar5[3] = iVar10 + 0x34;
       puVar5[5] = 0x10;
       puVar5[0x11] = 0;
       puVar5[0x15] = 0x101;
@@ -110,20 +112,20 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
       *(undefined2 *)(puVar5 + 0xd) = 0;
       STField<undefined2>(puVar5,0x62) = 2;
       STField<undefined2>(puVar5,0x36) = 2;
-      if (iVar6 == 0) {
-        uVar7 = 0x3aab;
+      if (iVar7 == 0) {
+        uVar8 = 0x3aab;
 LAB_0053c30d:
-        puVar5[0x19] = uVar7;
-        puVar5[0xe] = uVar7;
+        puVar5[0x19] = uVar8;
+        puVar5[0xe] = uVar8;
       }
-      else if (iVar6 == 1) {
-        uVar7 = 0x3aac;
+      else if (iVar7 == 1) {
+        uVar8 = 0x3aac;
         goto LAB_0053c30d;
       }
-      iVar8 = iVar8 + 0x31;
+      iVar9 = iVar9 + 0x31;
       puVar5 = puVar5 + 0x1c;
       local_8 = local_8 + -1;
-      iVar6 = iVar6 + 1;
+      iVar7 = iVar7 + 1;
     } while (local_8 != 0);
     local_20 = local_1fc;
     local_58 = this_00->field_0008;

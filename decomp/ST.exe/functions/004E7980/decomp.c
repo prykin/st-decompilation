@@ -8,9 +8,10 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,byte param_3)
 
 {
   int *piVar1;
-  undefined *puVar2;
-  bool bVar3;
-  uint *puVar4;
+  byte bVar2;
+  undefined *puVar3;
+  bool bVar4;
+  uint *puVar5;
   byte bVar5;
   int iVar6;
   int iVar7;
@@ -24,7 +25,7 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,byte param_3)
   int local_10;
   int local_c;
 
-  puVar4 = param_1;
+  puVar5 = param_1;
   if (((int)param_1 < 0) || (7 < (int)param_1)) {
     return 0;
   }
@@ -44,16 +45,16 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,byte param_3)
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (uint *)&DAT_00801020;
     do {
-      thunk_FUN_004e5af0((int)puVar4,*param_1,(uint)(byte)param_1[1]);
+      thunk_FUN_004e5af0((int)puVar5,*param_1,(uint)(byte)param_1[1]);
       pbVar11 = &DAT_007c0dd4;
       do {
-        bVar5 = pbVar11[1];
-        for (iVar9 = 1; (bVar5 != 0 && (iVar9 < 3)); iVar9 = iVar9 + 1) {
-          if ((*(byte *)(STRecordByteAddress(g_packedRecords_A62x8, (int)puVar4, 0x2EB) + ((int)(pbVar11[iVar9] ^ 7) >> 3)) >>
+        bVar2 = pbVar11[1];
+        for (iVar9 = 1; (bVar2 != 0 && (iVar9 < 3)); iVar9 = iVar9 + 1) {
+          if ((*(byte *)(STRecordByteAddress(g_packedRecords_A62x8, (int)puVar5, 0x2EB) + ((int)(pbVar11[iVar9] ^ 7) >> 3)) >>
                ((pbVar11[iVar9] ^ 7) & 7) & 1) == 0) goto LAB_004e7a7f;
-          bVar5 = pbVar11[iVar9 + 1];
+          bVar2 = pbVar11[iVar9 + 1];
         }
-        *(undefined4 *)(STRecordByteAddress(g_packedRecords_A62x8, (int)puVar4, 0x593) + (uint)*pbVar11 * 4) = 1;
+        *(undefined4 *)(STRecordByteAddress(g_packedRecords_A62x8, (int)puVar5, 0x593) + (uint)*pbVar11 * 4) = 1;
 LAB_004e7a7f:
         pbVar11 = pbVar11 + 3;
       } while ((int)pbVar11 < 0x7c0e4c);
@@ -61,13 +62,13 @@ LAB_004e7a7f:
       param_2 = 0x42;
       pbVar11 = &DAT_007c0e4c + iVar6 * 0xc6;
       do {
-        bVar5 = pbVar11[1];
-        for (iVar9 = 1; (bVar5 != 0 && (iVar9 < 3)); iVar9 = iVar9 + 1) {
-          if ((*(byte *)(STRecordByteAddress(g_packedRecords_A62x8, (int)puVar4, 0x2EB) + ((int)(pbVar11[iVar9] ^ 7) >> 3)) >>
+        bVar2 = pbVar11[1];
+        for (iVar9 = 1; (bVar2 != 0 && (iVar9 < 3)); iVar9 = iVar9 + 1) {
+          if ((*(byte *)(STRecordByteAddress(g_packedRecords_A62x8, (int)puVar5, 0x2EB) + ((int)(pbVar11[iVar9] ^ 7) >> 3)) >>
                ((pbVar11[iVar9] ^ 7) & 7) & 1) == 0) goto LAB_004e7b13;
-          bVar5 = pbVar11[iVar9 + 1];
+          bVar2 = pbVar11[iVar9 + 1];
         }
-        *(undefined4 *)(STRecordByteAddress(g_packedRecords_A62x8, (int)puVar4, 0x593) + (uint)*pbVar11 * 4) = 1;
+        *(undefined4 *)(STRecordByteAddress(g_packedRecords_A62x8, (int)puVar5, 0x593) + (uint)*pbVar11 * 4) = 1;
 LAB_004e7b13:
         pbVar11 = pbVar11 + 3;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -83,24 +84,24 @@ LAB_004e7b13:
         do {
           if ((*(uint *)((int)piVar12 + _param_3) == *param_1) &&
              (*(char *)((int)piVar12 + _param_3 + 4) == (char)param_1[1])) {
-            bVar3 = true;
+            bVar4 = true;
             local_10 = 0;
             iVar9 = _param_3;
             if (*(int *)((int)piVar12 + param_2) != 0) {
               do {
                 if (3 < local_10) break;
-                puVar2 = (&PTR_DAT_007c0dc8)[iVar6];
-                iVar7 = thunk_FUN_004e60d0((int)puVar4,*(int *)(puVar2 + iVar9 + 5));
-                if (iVar7 < (int)(uint)(byte)puVar2[iVar9 + 9]) {
-                  bVar3 = false;
+                puVar3 = (&PTR_DAT_007c0dc8)[iVar6];
+                iVar7 = thunk_FUN_004e60d0((int)puVar5,*(int *)(puVar3 + iVar9 + 5));
+                if (iVar7 < (int)(uint)(byte)puVar3[iVar9 + 9]) {
+                  bVar4 = false;
                 }
                 iVar7 = iVar9 + 10;
                 local_10 = local_10 + 1;
                 iVar9 = iVar9 + 5;
-              } while (*(int *)(puVar2 + iVar7) != 0);
-              if (!bVar3) goto LAB_004e7bd3;
+              } while (*(int *)(puVar3 + iVar7) != 0);
+              if (!bVar4) goto LAB_004e7bd3;
             }
-            thunk_FUN_004e5d50((int)puVar4,*param_1);
+            thunk_FUN_004e5d50((int)puVar5,*param_1);
           }
 LAB_004e7bd3:
           iVar9 = 0;

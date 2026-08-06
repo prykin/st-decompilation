@@ -38,7 +38,7 @@ VisibleClassTy::SetZoneDes
      ((g_playSystem_00802A38 == nullptr ||
       (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)))) {
     local_14 = this;
-    if (this->field_003C[param_4 + 6] == 0) {
+    if (this->field_003C[param_4 + 6] == nullptr) {
       local_60.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_60;
       iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
@@ -53,7 +53,7 @@ VisibleClassTy::SetZoneDes
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       pvVar5 = Library::DKW::LIB::MemAllocClear(local_14->field_0024 * local_14->field_0020);
-      this->field_003C[param_4 + 6] = (uint)pvVar5;
+      this->field_003C[param_4 + 6] = pvVar5;
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
@@ -84,9 +84,9 @@ VisibleClassTy::SetZoneDes
               }
               if (bVar3) {
                 iVar8 = this->field_0020 * iVar4;
-                cVar1 = *(char *)(this->field_003C[param_4 + 6] + iVar9 + iVar8);
+                cVar1 = *(char *)((int)this->field_003C[param_4 + 6] + iVar9 + iVar8);
                 if (cVar1 != -1) {
-                  *(char *)(this->field_003C[param_4 + 6] + iVar9 + iVar8) = cVar1 + '\x01';
+                  *(char *)((int)this->field_003C[param_4 + 6] + iVar9 + iVar8) = cVar1 + '\x01';
                 }
               }
             }

@@ -15,85 +15,87 @@ st::fn_00493610
 
 {
   short sVar1;
-  undefined4 uVar2;
   int iVar3;
-  short sVar4;
-  int iVar5;
-  short sVar6;
-  int iVar7;
-  short sVar8;
-  int iVar9;
+  undefined4 uVar2;
+  int iVar4;
+  short sVar5;
+  int iVar6;
+  short sVar7;
+  int iVar8;
+  short sVar9;
+  int iVar10;
   undefined4 local_14;
   int local_c;
   int local_8;
 
   local_8 = (int)*(short *)&this->field_0x621;
   uVar2 = 0;
-  iVar5 = local_8 + -1;
+  iVar6 = local_8 + -1;
   local_c = 1000000;
   local_14 = 0;
-  if (local_8 + 1 < iVar5) {
+  if (local_8 + 1 < iVar6) {
     return 0;
   }
   local_8 = local_8 + -2;
   do {
-    if (((-2 < local_8) && (iVar5 <= g_worldGrid.sizeZ + -1)) &&
-       (iVar9 = *(short *)&this->field_0x61f + -1, iVar9 <= *(short *)&this->field_0x61f + 2)) {
+    if (((-2 < local_8) && (iVar6 <= g_worldGrid.sizeZ + -1)) &&
+       (iVar10 = *(short *)&this->field_0x61f + -1, iVar10 <= *(short *)&this->field_0x61f + 2)) {
       do {
-        if (((-1 < iVar9) && (iVar9 <= g_worldGrid.sizeY + -1)) &&
-           (iVar7 = *(short *)&this->field_0x61d + -1, iVar7 <= *(short *)&this->field_0x61d + 2)) {
+        if (((-1 < iVar10) && (iVar10 <= g_worldGrid.sizeY + -1)) &&
+           (iVar8 = *(short *)&this->field_0x61d + -1, iVar8 <= *(short *)&this->field_0x61d + 2)) {
           do {
-            if (((-1 < iVar7) && (iVar3 = (int)g_worldGrid.sizeX, iVar7 <= iVar3 + -1)) &&
-               (STGridAt3D(g_pathingGrid, iVar7, iVar9, iVar5) == 0)) {
-              sVar6 = (short)iVar7;
-              sVar8 = (short)iVar9;
-              sVar4 = (short)iVar5;
-              if ((((sVar6 < 0) ||
-                   ((((((g_worldGrid.sizeX <= sVar6 || (sVar8 < 0)) || (g_worldGrid.sizeY <= sVar8))
-                      || ((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)))) ||
+            if (((-1 < iVar8) && (iVar4 = (int)g_worldGrid.sizeX, iVar8 <= iVar4 + -1)) &&
+               (STGridAt3D(g_pathingGrid, iVar8, iVar10, iVar6) == 0)) {
+              sVar7 = (short)iVar8;
+              sVar9 = (short)iVar10;
+              sVar5 = (short)iVar6;
+              if ((((sVar7 < 0) ||
+                   ((((((g_worldGrid.sizeX <= sVar7 || (sVar9 < 0)) || (g_worldGrid.sizeY <= sVar9))
+                      || ((sVar5 < 0 || (g_worldGrid.sizeZ <= sVar5)))) ||
                      (g_worldGrid.cells
-                      [(int)sVar4 * (int)g_worldGrid.planeStride + sVar8 * iVar3 + (int)sVar6].
+                      [(int)sVar5 * (int)g_worldGrid.planeStride + sVar9 * iVar4 + (int)sVar7].
                       objects[0] == nullptr)) &&
-                    (((sVar6 < 0 || (g_worldGrid.sizeX <= sVar6)) ||
-                     (((sVar8 < 0 ||
-                       (((g_worldGrid.sizeY <= sVar8 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)
+                    (((sVar7 < 0 || (g_worldGrid.sizeX <= sVar7)) ||
+                     (((sVar9 < 0 ||
+                       (((g_worldGrid.sizeY <= sVar9 || (sVar5 < 0)) || (g_worldGrid.sizeZ <= sVar5)
                         ))) || (g_worldGrid.cells
-                                [(int)sVar4 * (int)g_worldGrid.planeStride + sVar8 * iVar3 +
-                                 (int)sVar6].objects[1] == nullptr)))))))) &&
-                  ((sVar1 = sVar4 + -1, sVar6 < 0 ||
-                   ((((((g_worldGrid.sizeX <= sVar6 || (sVar8 < 0)) ||
-                       ((g_worldGrid.sizeY <= sVar8 || ((sVar1 < 0 || (g_worldGrid.sizeZ <= sVar1)))
+                                [(int)sVar5 * (int)g_worldGrid.planeStride + sVar9 * iVar4 +
+                                 (int)sVar7].objects[1] == nullptr)))))))) &&
+                  ((sVar1 = sVar5 + -1, sVar7 < 0 ||
+                   ((((((g_worldGrid.sizeX <= sVar7 || (sVar9 < 0)) ||
+                       ((g_worldGrid.sizeY <= sVar9 || ((sVar1 < 0 || (g_worldGrid.sizeZ <= sVar1)))
                         ))) || (g_worldGrid.cells
-                                [(int)g_worldGrid.planeStride * (int)sVar1 + sVar8 * iVar3 +
-                                 (int)sVar6].objects[0] == nullptr)) ||
-                     (STGridAt3D(g_pathingGrid, iVar7, iVar9, local_8) ==
-                      0)) && (((((sVar6 < 0 || (g_worldGrid.sizeX <= sVar6)) || (sVar8 < 0)) ||
-                               ((g_worldGrid.sizeY <= sVar8 || (sVar1 = sVar4 + -1, sVar1 < 0)))) ||
-                              ((g_worldGrid.sizeZ <= sVar1 ||
-                               (g_worldGrid.cells
-                                [(int)g_worldGrid.planeStride * (int)sVar1 + sVar8 * iVar3 +
-                                 (int)sVar6].objects[1] == nullptr)))))))))) &&
+                                [(int)g_worldGrid.planeStride * (int)sVar1 + sVar9 * iVar4 +
+                                 (int)sVar7].objects[0] == nullptr)) ||
+                     (STGridAt3D(g_pathingGrid, iVar8, iVar10, local_8)
+                      == 0)) &&
+                    (((((sVar7 < 0 || (g_worldGrid.sizeX <= sVar7)) || (sVar9 < 0)) ||
+                      ((g_worldGrid.sizeY <= sVar9 || (sVar1 = sVar5 + -1, sVar1 < 0)))) ||
+                     ((g_worldGrid.sizeZ <= sVar1 ||
+                      (g_worldGrid.cells
+                       [(int)g_worldGrid.planeStride * (int)sVar1 + sVar9 * iVar4 + (int)sVar7].
+                       objects[1] == nullptr)))))))))) &&
                  (iVar3 = st::fn_006AADD0((int)*(short *)&this->field_0x47,
                                        (int)*(short *)&this->field_0x49,
-                                       (int)*(short *)&this->field_0x4b,iVar7,iVar9,iVar5),
+                                       (int)*(short *)&this->field_0x4b,iVar8,iVar10,iVar6),
                  iVar3 < local_c)) {
-                *param_1 = sVar6;
-                *param_2 = sVar8;
+                *param_1 = sVar7;
+                *param_2 = sVar9;
                 local_14 = 1;
-                *param_3 = sVar4;
+                *param_3 = sVar5;
                 local_c = iVar3;
               }
             }
-            iVar7 = iVar7 + 1;
-          } while (iVar7 <= *(short *)&this->field_0x61d + 2);
+            iVar8 = iVar8 + 1;
+          } while (iVar8 <= *(short *)&this->field_0x61d + 2);
         }
-        iVar9 = iVar9 + 1;
+        iVar10 = iVar10 + 1;
         uVar2 = local_14;
-      } while (iVar9 <= *(short *)&this->field_0x61f + 2);
+      } while (iVar10 <= *(short *)&this->field_0x61f + 2);
     }
-    iVar5 = iVar5 + 1;
+    iVar6 = iVar6 + 1;
     local_8 = local_8 + 1;
-  } while (iVar5 <= *(short *)&this->field_0x621 + 1);
+  } while (iVar6 <= *(short *)&this->field_0x621 + 1);
   return uVar2;
 }
 

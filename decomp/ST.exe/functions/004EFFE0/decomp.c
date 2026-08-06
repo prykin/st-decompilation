@@ -11,11 +11,13 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
   uint uVar1;
   int *piVar2;
   BldLabPanelTy_field_027ADArray *pBVar3;
-  BldLabPanelTy *pBVar5;
+  int iVar5;
+  int iVar7;
+  BldLabPanelTy *pBVar8;
   int iVar6;
-  byte *pbVar7;
+  BITMAPINFO *pBVar9;
   int iVar8;
-  AnonShape_GLOBAL_0081175C_57F682DD *pAVar9;
+  AnonShape_GLOBAL_0081175C_57F682DD *pAVar10;
   InternalExceptionFrame local_5c;
   int local_18;
   int local_14;
@@ -51,25 +53,26 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
-  pBVar5 = local_10;
+  pBVar8 = local_10;
   if (iVar6 == 0) {
     if ((element_027a == nullptr) || ((char)element_027a->field_0008 == 0)) {
-      pAVar9 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_018C;
+      pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_018C;
     }
     else {
-      pAVar9 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_0188;
+      pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_0188;
     }
-    pbVar7 = (byte *)FUN_0070b3a0(pAVar9,local_c);
-    iVar8 = local_14;
-    iVar6 = local_18;
-    DibPut((RecoveredSourceFamily_dibcopy *)pBVar5->field_0068,local_18,local_14,'\x01',pbVar7);
+    pBVar9 = FUN_0070b3a0(pAVar10,local_c);
+    iVar7 = local_14;
+    iVar5 = local_18;
+    DibPut((RecoveredSourceFamily_dibcopy *)pBVar8->field_0068,local_18,local_14,'\x01',
+           (byte *)pBVar9);
     if ((param_1->field_0014 == 3) && (element_027a != nullptr)) {
-      pbVar7 = (byte *)FUN_0070b3a0(pBVar5->field_0190,9 - (uint)((char)element_027a->field_0008 != 0));
-      DibPut((RecoveredSourceFamily_dibcopy *)pBVar5->field_0068,iVar6,iVar8,'\x06',pbVar7);
+      pBVar9 = FUN_0070b3a0(pBVar8->field_0190,9 - (uint)((char)element_027a->field_0008 != 0));
+      DibPut((RecoveredSourceFamily_dibcopy *)pBVar8->field_0068,iVar5,iVar7,'\x06',(byte *)pBVar9);
     }
     Library::DKW::DDX::FUN_006b3640
-              ((int *)g_ddxContext_008075A8,pBVar5->field_0060,0xffffffff,pBVar5->field_003C,
-               pBVar5->field_0044);
+              ((int *)g_ddxContext_008075A8,pBVar8->field_0060,0xffffffff,pBVar8->field_003C,
+               pBVar8->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }

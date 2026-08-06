@@ -11,6 +11,7 @@ int __cdecl SavePlrEdit(int param_1,char *param_2,AnonShape_0067D9C0_2E8A2257 *p
 {
   int iVar2;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_58;
   uint local_14;
   uint local_10;

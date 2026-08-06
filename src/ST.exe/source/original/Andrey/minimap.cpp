@@ -20,11 +20,12 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
   AnonShape_006DBCA0_EF06575F *pAVar7;
   ST3DSMAPContext *this;
   void *pvVar8;
+  int iVar11;
   uint uVar9;
   int *piVar10;
-  int iVar11;
-  undefined4 *puVar12;
+  int iVar12;
   undefined4 *puVar13;
+  undefined4 *puVar14;
   InternalExceptionFrame local_68;
   uint local_24;
   int local_20;
@@ -123,18 +124,18 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
       if (0 < (int)param_3) {
         local_18 = 0;
         do {
-          puVar12 = (undefined4 *)(this->field_0028 * iVar6 + this->field_000C);
-          puVar13 = (undefined4 *)(*local_c + local_18);
+          puVar13 = (undefined4 *)(this->field_0028 * iVar6 + this->field_000C);
+          puVar14 = (undefined4 *)(*local_c + local_18);
           for (uVar9 = param_3 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-            *puVar13 = *puVar12;
-            puVar12 = puVar12 + 1;
+            *puVar14 = *puVar13;
             puVar13 = puVar13 + 1;
+            puVar14 = puVar14 + 1;
           }
           iVar6 = iVar6 + 1;
           for (uVar9 = param_3 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-            *(undefined1 *)puVar13 = *(undefined1 *)puVar12;
-            puVar12 = (undefined4 *)((int)puVar12 + 1);
+            *(undefined1 *)puVar14 = *(undefined1 *)puVar13;
             puVar13 = (undefined4 *)((int)puVar13 + 1);
+            puVar14 = (undefined4 *)((int)puVar14 + 1);
           }
           local_18 = local_18 + param_3;
           uVar9 = local_1c;
@@ -161,12 +162,12 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
     st::fn_0072E2B0((HoloTy *)this);
   }
   if (iVar6 != 0) {
-    iVar11 = 4;
+    iVar12 = 4;
     do {
-      st::fn_006AB060((void **)param_2);
+      st::fn_006AB060(param_2);
       param_2 = param_2 + 1;
-      iVar11 = iVar11 + -1;
-    } while (iVar11 != 0);
+      iVar12 = iVar12 + -1;
+    } while (iVar12 != 0);
     st::fn_006A5E40
               (iVar6,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x42);
   }

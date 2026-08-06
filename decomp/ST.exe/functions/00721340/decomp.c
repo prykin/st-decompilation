@@ -9,7 +9,8 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
   uint uVar3;
   uint uVar4;
   uint uVar5;
-  char *pcVar6;
+  uint uVar6;
+  char *pcVar7;
   char *local_c;
   char *local_8;
 
@@ -24,31 +25,31 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
   else {
     local_c = nullptr;
   }
-  uVar4 = 0xffffffff;
-  pcVar6 = local_c;
+  uVar5 = 0xffffffff;
+  pcVar7 = local_c;
   do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar6 + 1;
+    if (uVar5 == 0) break;
+    uVar5 = uVar5 - 1;
+    cVar1 = *pcVar7;
+    pcVar7 = pcVar7 + 1;
   } while (cVar1 != '\0');
   uVar3 = param_1->field_0210 + param_1->field_0148;
-  if (uVar3 < ~uVar4 - 1) {
-    uVar5 = 0xffffffff;
-    pcVar6 = local_c + uVar3;
+  if (uVar3 < ~uVar5 - 1) {
+    uVar6 = 0xffffffff;
+    pcVar7 = local_c + uVar3;
     do {
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      cVar1 = *pcVar6;
-      pcVar6 = pcVar6 + 1;
+      if (uVar6 == 0) break;
+      uVar6 = uVar6 - 1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
-    local_8 = Library::DKW::LIB::MemAllocClear(~uVar5);
+    local_8 = Library::DKW::LIB::MemAllocClear(~uVar6);
     if (local_8 == nullptr) {
       return 0xfffffffe;
     }
     Library::MSVCRT::_strncpy
               (local_8,local_c + param_1->field_0148 + param_1->field_0210,
-               ((~uVar4 - 1) - param_1->field_0148) - param_1->field_0210);
+               ((~uVar5 - 1) - param_1->field_0148) - param_1->field_0210);
     uVar4 = Library::DKW::TBL::FUN_00752d50
                       (param_1->field_0138,param_1->field_0144 + 1 + param_1->field_020C,local_8);
     if (-1 < (int)uVar4) {
@@ -62,15 +63,15 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
         }
       }
       else {
-        uVar4 = 0xffffffff;
-        pcVar6 = local_c;
+        uVar5 = 0xffffffff;
+        pcVar7 = local_c;
         do {
-          if (uVar4 == 0) break;
-          uVar4 = uVar4 - 1;
-          cVar1 = *pcVar6;
-          pcVar6 = pcVar6 + 1;
+          if (uVar5 == 0) break;
+          uVar5 = uVar5 - 1;
+          cVar1 = *pcVar7;
+          pcVar7 = pcVar7 + 1;
         } while (cVar1 != '\0');
-        local_8 = Library::DKW::LIB::MemAllocClear(~uVar4);
+        local_8 = Library::DKW::LIB::MemAllocClear(~uVar5);
         if (local_8 == nullptr) {
           return 0xfffffffe;
         }

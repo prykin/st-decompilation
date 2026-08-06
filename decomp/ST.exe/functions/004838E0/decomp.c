@@ -16,135 +16,164 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
   short sVar1;
   short sVar2;
   short sVar3;
-  uint uVar4;
-  uint uVar5;
+  longlong lVar4;
+  longlong lVar5;
   uint uVar6;
   uint uVar7;
   uint uVar8;
   uint uVar9;
-  int iVar10;
+  uint uVar10;
   uint uVar11;
   int iVar12;
-  int iVar13;
+  uint uVar13;
   int iVar14;
-  uint uVar15;
-  uint uVar16;
+  int iVar15;
+  int iVar16;
   uint uVar17;
   uint uVar18;
   uint uVar19;
   uint uVar20;
   uint uVar21;
-  longlong lVar22;
-  longlong lVar23;
-  longlong lVar24;
-  undefined8 uVar25;
+  uint uVar22;
+  uint uVar23;
+  longlong local_EDXEAX_136;
+  longlong local_EDXEAX_163;
+  longlong local_EDXEAX_197;
+  undefined8 uVar24;
+  longlong local_EDXEAX_321;
+  longlong local_EDXEAX_330;
+  longlong local_EDXEAX_355;
+  longlong local_EDXEAX_374;
+  longlong lVar25;
+  longlong local_EDXEAX_440;
   longlong lVar26;
   longlong lVar27;
+  longlong local_EDXEAX_531;
+  longlong local_EDXEAX_556;
+  longlong lVar23;
+  longlong local_EDXEAX_611;
+  longlong lVar22;
+  longlong local_EDXEAX_652;
   longlong lVar28;
+  longlong lVar24;
+  longlong local_EDXEAX_749;
+  longlong local_EDXEAX_798;
+  longlong local_EDXEAX_913;
+  longlong local_EDXEAX_932;
+  longlong local_EDXEAX_948;
   longlong local_60;
   undefined8 local_48;
 
   sVar1 = param_1->field_003A;
-  uVar16 = (uint)param_1->field_0034;
-  uVar4 = (int)sVar1 - uVar16;
-  uVar17 = (int)uVar4 >> 0x1f;
+  uVar18 = (uint)param_1->field_0034;
+  uVar6 = (int)sVar1 - uVar18;
+  uVar19 = (int)uVar6 >> 0x1f;
   sVar2 = param_1->field_003C;
-  uVar18 = (uint)param_1->field_0036;
-  uVar5 = (int)sVar2 - uVar18;
-  uVar19 = (int)uVar5 >> 0x1f;
+  uVar20 = (uint)param_1->field_0036;
+  uVar7 = (int)sVar2 - uVar20;
+  uVar21 = (int)uVar7 >> 0x1f;
   sVar3 = param_1->field_003E;
-  uVar20 = (uint)param_1->field_0038;
-  uVar6 = (int)sVar3 - uVar20;
-  uVar21 = (int)uVar6 >> 0x1f;
-  uVar7 = (uint)*(short *)&this->field_0x45;
-  uVar8 = (uint)*(short *)&this->field_0x43;
-  uVar9 = (uint)*(short *)&this->field_0x41;
-  lVar22 = Library::MSVCRT::__allmul(uVar9,(int)uVar9 >> 0x1f,uVar4,uVar17);
-  lVar23 = Library::MSVCRT::__allmul(uVar8,(int)uVar8 >> 0x1f,uVar5,uVar19);
-  lVar24 = Library::MSVCRT::__allmul(uVar7,(int)uVar7 >> 0x1f,uVar6,uVar21);
-  lVar24 = lVar24 + lVar23 + lVar22;
-  iVar10 = (int)lVar24;
-  uVar11 = -iVar10;
-  uVar15 = -((int)((ulonglong)lVar24 >> 0x20) + (uint)(iVar10 != 0));
-  iVar10 = (int)uVar16 >> 0x1f;
-  if (uVar4 == 0) {
-    uVar20 = uVar16;
-    iVar14 = iVar10;
-    if (uVar5 == 0) {
-      local_48 = (longlong)(int)uVar18;
-      if (uVar6 == 0) {
+  uVar22 = (uint)param_1->field_0038;
+  uVar8 = (int)sVar3 - uVar22;
+  uVar23 = (int)uVar8 >> 0x1f;
+  uVar9 = (uint)*(short *)&this->field_0x45;
+  uVar10 = (uint)*(short *)&this->field_0x43;
+  uVar11 = (uint)*(short *)&this->field_0x41;
+  local_EDXEAX_136 = Library::MSVCRT::__allmul(uVar11,(int)uVar11 >> 0x1f,uVar6,uVar19);
+  local_EDXEAX_163 = Library::MSVCRT::__allmul(uVar10,(int)uVar10 >> 0x1f,uVar7,uVar21);
+  local_EDXEAX_197 = Library::MSVCRT::__allmul(uVar9,(int)uVar9 >> 0x1f,uVar8,uVar23);
+  lVar4 = local_EDXEAX_197 + local_EDXEAX_163 + local_EDXEAX_136;
+  iVar12 = (int)lVar4;
+  uVar13 = -iVar12;
+  uVar17 = -((int)((ulonglong)lVar4 >> 0x20) + (uint)(iVar12 != 0));
+  iVar12 = (int)uVar18 >> 0x1f;
+  if (uVar6 == 0) {
+    uVar22 = uVar18;
+    iVar16 = iVar12;
+    if (uVar7 == 0) {
+      local_48 = (longlong)(int)uVar20;
+      if (uVar8 == 0) {
         return 0;
       }
-      uVar25 = Library::MSVCRT::__alldiv(uVar11,uVar15,uVar6,uVar21);
+      uVar24 = Library::MSVCRT::__alldiv(uVar13,uVar17,uVar8,uVar23);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar25 = CONCAT44(-((int)((ulonglong)uVar25 >> 0x20) + (uint)((int)uVar25 != 0)),-(int)uVar25);
+      uVar24 = CONCAT44(-((int)((ulonglong)uVar24 >> 0x20) + (uint)((int)uVar24 != 0)),-(int)uVar24);
     }
     else {
-      local_60 = (longlong)(int)uVar18;
-      lVar24 = Library::MSVCRT::__allmul(uVar18,(int)uVar18 >> 0x1f,uVar6,uVar21);
-      lVar24 = Library::MSVCRT::__allmul((uint)lVar24,(int)((ulonglong)lVar24 >> 0x20),uVar6,uVar21);
-      lVar22 = Library::MSVCRT::__allmul(uVar11,uVar15,uVar5,uVar19);
-      lVar23 = Library::MSVCRT::__allmul(uVar6,uVar21,uVar6,uVar21);
-      lVar26 = Library::MSVCRT::__allmul(uVar5,uVar19,uVar5,uVar19);
+      local_60 = (longlong)(int)uVar20;
+      local_EDXEAX_321 = Library::MSVCRT::__allmul(uVar20,(int)uVar20 >> 0x1f,uVar8,uVar23);
+      local_EDXEAX_330 =
+           Library::MSVCRT::__allmul
+                     ((uint)local_EDXEAX_321,(int)((ulonglong)local_EDXEAX_321 >> 0x20),uVar8,uVar23
+                     );
+      local_EDXEAX_355 = Library::MSVCRT::__allmul(uVar13,uVar17,uVar7,uVar21);
+      local_EDXEAX_374 = Library::MSVCRT::__allmul(uVar8,uVar23,uVar8,uVar23);
+      lVar25 = Library::MSVCRT::__allmul(uVar7,uVar21,uVar7,uVar21);
       local_48 = Library::MSVCRT::__alldiv
-                           ((uint)(lVar24 - lVar22),(uint)((ulonglong)(lVar24 - lVar22) >> 0x20),
-                            (uint)(lVar23 + lVar26),(uint)((ulonglong)(lVar23 + lVar26) >> 0x20));
-      lVar24 = Library::MSVCRT::__allmul
-                         ((uint)(local_48 - local_60),
-                          (int)((ulonglong)(local_48 - local_60) >> 0x20),uVar6,uVar21);
-      uVar25 = Library::MSVCRT::__alldiv
-                         ((uint)lVar24,(uint)((ulonglong)lVar24 >> 0x20),uVar5,uVar19);
+                           ((uint)(local_EDXEAX_330 - local_EDXEAX_355),
+                            (uint)((ulonglong)(local_EDXEAX_330 - local_EDXEAX_355) >> 0x20),
+                            (uint)(local_EDXEAX_374 + lVar25),
+                            (uint)((ulonglong)(local_EDXEAX_374 + lVar25) >> 0x20));
+      local_EDXEAX_440 =
+           Library::MSVCRT::__allmul
+                     ((uint)(local_48 - local_60),(int)((ulonglong)(local_48 - local_60) >> 0x20),
+                      uVar8,uVar23);
+      uVar24 = Library::MSVCRT::__alldiv
+                         ((uint)local_EDXEAX_440,(uint)((ulonglong)local_EDXEAX_440 >> 0x20),uVar7,
+                          uVar21);
     }
   }
   else {
-    lVar23 = Library::MSVCRT::__allmul(uVar20,(int)uVar20 >> 0x1f,uVar4,uVar17);
-    lVar26 = Library::MSVCRT::__allmul(uVar18,(int)uVar18 >> 0x1f,uVar4,uVar17);
-    lVar24 = Library::MSVCRT::__allmul(uVar16,iVar10,uVar5,uVar19);
-    lVar24 = Library::MSVCRT::__allmul
-                       ((uint)(lVar24 - lVar26),(int)((ulonglong)(lVar24 - lVar26) >> 0x20),uVar5,
-                        uVar19);
-    lVar27 = Library::MSVCRT::__allmul(uVar11,uVar15,uVar4,uVar17);
-    lVar22 = Library::MSVCRT::__allmul(uVar16,iVar10,uVar6,uVar21);
+    lVar26 = Library::MSVCRT::__allmul(uVar22,(int)uVar22 >> 0x1f,uVar6,uVar19);
+    lVar27 = Library::MSVCRT::__allmul(uVar20,(int)uVar20 >> 0x1f,uVar6,uVar19);
+    local_EDXEAX_531 = Library::MSVCRT::__allmul(uVar18,iVar12,uVar7,uVar21);
+    local_EDXEAX_556 =
+         Library::MSVCRT::__allmul
+                   ((uint)(local_EDXEAX_531 - lVar27),
+                    (int)((ulonglong)(local_EDXEAX_531 - lVar27) >> 0x20),uVar7,uVar21);
+    lVar23 = Library::MSVCRT::__allmul(uVar13,uVar17,uVar6,uVar19);
+    local_EDXEAX_611 = Library::MSVCRT::__allmul(uVar18,iVar12,uVar8,uVar23);
     lVar22 = Library::MSVCRT::__allmul
-                       ((uint)(lVar22 - lVar23),(int)((ulonglong)(lVar22 - lVar23) >> 0x20),uVar6,
-                        uVar21);
-    lVar22 = (lVar27 - lVar24) - lVar22;
-    lVar27 = Library::MSVCRT::__allmul(uVar6,uVar21,uVar6,uVar21);
-    lVar28 = Library::MSVCRT::__allmul(uVar5,uVar19,uVar5,uVar19);
-    lVar24 = Library::MSVCRT::__allmul(uVar4,uVar17,uVar4,uVar17);
-    lVar24 = lVar27 + lVar28 + lVar24;
-    uVar25 = Library::MSVCRT::__alldiv
-                       ((uint)lVar22,(uint)((ulonglong)lVar22 >> 0x20),(uint)lVar24,
-                        (uint)((ulonglong)lVar24 >> 0x20));
-    uVar20 = -(int)uVar25;
-    iVar14 = -((int)((ulonglong)uVar25 >> 0x20) + (uint)((int)uVar25 != 0));
-    iVar10 = (iVar14 - iVar10) - (uint)(uVar20 < uVar16);
-    lVar24 = Library::MSVCRT::__allmul(uVar20 - uVar16,iVar10,uVar5,uVar19);
+                       ((uint)(local_EDXEAX_611 - lVar26),
+                        (int)((ulonglong)(local_EDXEAX_611 - lVar26) >> 0x20),uVar8,uVar23);
+    lVar5 = (lVar23 - local_EDXEAX_556) - lVar22;
+    local_EDXEAX_652 = Library::MSVCRT::__allmul(uVar8,uVar23,uVar8,uVar23);
+    lVar28 = Library::MSVCRT::__allmul(uVar7,uVar21,uVar7,uVar21);
+    lVar24 = Library::MSVCRT::__allmul(uVar6,uVar19,uVar6,uVar19);
+    lVar4 = local_EDXEAX_652 + lVar28 + lVar24;
+    uVar24 = Library::MSVCRT::__alldiv
+                       ((uint)lVar5,(uint)((ulonglong)lVar5 >> 0x20),(uint)lVar4,
+                        (uint)((ulonglong)lVar4 >> 0x20));
+    uVar22 = -(int)uVar24;
+    iVar16 = -((int)((ulonglong)uVar24 >> 0x20) + (uint)((int)uVar24 != 0));
+    iVar12 = (iVar16 - iVar12) - (uint)(uVar22 < uVar18);
+    local_EDXEAX_749 = Library::MSVCRT::__allmul(uVar22 - uVar18,iVar12,uVar7,uVar21);
     local_48 = Library::MSVCRT::__alldiv
-                         ((uint)(lVar24 + lVar26),(uint)((ulonglong)(lVar24 + lVar26) >> 0x20),uVar4
-                          ,uVar17);
-    lVar24 = Library::MSVCRT::__allmul(uVar20 - uVar16,iVar10,uVar6,uVar21);
-    uVar25 = Library::MSVCRT::__alldiv
-                       ((uint)(lVar24 + lVar23),(uint)((ulonglong)(lVar24 + lVar23) >> 0x20),uVar4,
-                        uVar17);
+                         ((uint)(local_EDXEAX_749 + lVar27),
+                          (uint)((ulonglong)(local_EDXEAX_749 + lVar27) >> 0x20),uVar6,uVar19);
+    local_EDXEAX_798 = Library::MSVCRT::__allmul(uVar22 - uVar18,iVar12,uVar8,uVar23);
+    uVar24 = Library::MSVCRT::__alldiv
+                       ((uint)(local_EDXEAX_798 + lVar26),
+                        (uint)((ulonglong)(local_EDXEAX_798 + lVar26) >> 0x20),uVar6,uVar19);
   }
-  uVar4 = uVar7 - (uint)uVar25;
-  iVar12 = (((int)uVar7 >> 0x1f) - (int)((ulonglong)uVar25 >> 0x20)) - (uint)(uVar7 < (uint)uVar25);
-  iVar13 = (((int)uVar8 >> 0x1f) - STPiece<4,4>(local_48)) - (uint)(uVar8 < (uint)local_48);
-  iVar14 = (((int)uVar9 >> 0x1f) - iVar14) - (uint)(uVar9 < uVar20);
-  iVar10 = ((int)*(short *)&this->field_0x237 << 2) / 5;
-  lVar24 = Library::MSVCRT::__allmul(uVar9 - uVar20,iVar14,uVar9 - uVar20,iVar14);
-  lVar22 = Library::MSVCRT::__allmul(uVar8 - (uint)local_48,iVar13,uVar8 - (uint)local_48,iVar13);
-  lVar23 = Library::MSVCRT::__allmul(uVar4,iVar12,uVar4,iVar12);
-  if ((lVar22 + lVar24 + lVar23 <= (longlong)(iVar10 * iVar10)) &&
-     (lVar22 = (longlong)(int)(uVar8 - (int)param_1->field_0043) *
-               (longlong)((int)sVar2 - (int)param_1->field_0043) +
-               (longlong)(int)(uVar9 - (int)param_1->field_0041) *
-               (longlong)((int)sVar1 - (int)param_1->field_0041),
-     lVar24 = (longlong)(int)(uVar7 - (int)param_1->field_0045) *
-              (longlong)((int)sVar3 - (int)param_1->field_0045),
-     -1 < (int)((int)((ulonglong)lVar22 >> 0x20) + (int)((ulonglong)lVar24 >> 0x20) +
-               (uint)CARRY4((uint)lVar22,(uint)lVar24)))) {
+  uVar6 = uVar9 - (uint)uVar24;
+  iVar14 = (((int)uVar9 >> 0x1f) - (int)((ulonglong)uVar24 >> 0x20)) - (uint)(uVar9 < (uint)uVar24);
+  iVar15 = (((int)uVar10 >> 0x1f) - STPiece<4,4>(local_48)) - (uint)(uVar10 < (uint)local_48);
+  iVar16 = (((int)uVar11 >> 0x1f) - iVar16) - (uint)(uVar11 < uVar22);
+  iVar12 = ((int)*(short *)&this->field_0x237 << 2) / 5;
+  local_EDXEAX_913 = Library::MSVCRT::__allmul(uVar11 - uVar22,iVar16,uVar11 - uVar22,iVar16);
+  local_EDXEAX_932 =
+       Library::MSVCRT::__allmul(uVar10 - (uint)local_48,iVar15,uVar10 - (uint)local_48,iVar15);
+  local_EDXEAX_948 = Library::MSVCRT::__allmul(uVar6,iVar14,uVar6,iVar14);
+  if ((local_EDXEAX_932 + local_EDXEAX_913 + local_EDXEAX_948 <= (longlong)(iVar12 * iVar12)) &&
+     (lVar5 = (longlong)(int)(uVar10 - (int)param_1->field_0043) *
+              (longlong)((int)sVar2 - (int)param_1->field_0043) +
+              (longlong)(int)(uVar11 - (int)param_1->field_0041) *
+              (longlong)((int)sVar1 - (int)param_1->field_0041),
+     lVar4 = (longlong)(int)(uVar9 - (int)param_1->field_0045) *
+             (longlong)((int)sVar3 - (int)param_1->field_0045),
+     -1 < (int)((int)((ulonglong)lVar5 >> 0x20) + (int)((ulonglong)lVar4 >> 0x20) +
+               (uint)CARRY4((uint)lVar5,(uint)lVar4)))) {
     return 1;
   }
   return 0;

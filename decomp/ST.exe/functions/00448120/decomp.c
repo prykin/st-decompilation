@@ -21,18 +21,29 @@ STAllPlayersC::PutOnPlaceGuardBoats
   short sVar2;
   short sVar3;
   short sVar4;
+  int iVar6;
   int iVar5;
-  uint uVar6;
-  STBoatC *pSVar7;
+  int local_EAX_1180;
+  int local_EAX_1553;
+  int local_EAX_1893;
   int iVar8;
-  short sVar9;
+  uint uVar7;
+  int local_EAX_2921;
+  STBoatC *pSVar8;
+  int iVar9;
+  int local_EAX_3288;
+  int local_EAX_3660;
+  int local_EAX_4031;
+  int local_EAX_4414;
+  int local_EAX_4754;
   short sVar10;
-  dword dVar11;
-  undefined2 *puVar12;
-  short *psVar13;
-  uint uVar14;
-  int *piVar15;
-  int iVar16;
+  short sVar11;
+  dword dVar12;
+  undefined2 *puVar13;
+  short *psVar14;
+  uint uVar15;
+  int *piVar16;
+  int iVar17;
   char objPtr;
   int local_104 [8];
   int local_e4 [7];
@@ -93,7 +104,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
   undefined4 local_c;
   uint local_8;
 
-  uVar14 = param_5;
+  uVar15 = param_5;
   local_c0 = 0;
   local_be = 2;
   local_bc = 0;
@@ -177,38 +188,38 @@ STAllPlayersC::PutOnPlaceGuardBoats
   local_e4[5] = 0xe1;
   local_e4[6] = 0x87;
   local_c8 = 0x13b;
-  if ((param_8 != nullptr) && (dVar11 = param_8->count, dVar11 != 0)) {
+  if ((param_8 != nullptr) && (dVar12 = param_8->count, dVar12 != 0)) {
     sVar3 = (short)param_2;
     sVar2 = (short)param_3;
     local_28 = this;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((param_2 == param_5) && (param_3 == param_6)) {
-      iVar5 = -1;
+      iVar6 = -1;
     }
     else {
       sVar4 = (short)param_6;
       iVar5 = FUN_006acf0d((int)(short)(sVar3 * 0xc9 + 100),(int)(short)(sVar2 * 0xc9 + 100),0,
                            (int)(short)((short)param_5 * 0xc9 + 100),
                            (int)(short)(sVar4 * 0xc9 + 100),0);
-      iVar5 = ((short)((sVar4 - sVar2) * 0xc9 + 100) * 1000) / iVar5;
-      if (iVar5 < -0x39c) {
-        iVar5 = 0x5a;
+      iVar6 = ((short)((sVar4 - sVar2) * 0xc9 + 100) * 1000) / iVar5;
+      if (iVar6 < -0x39c) {
+        iVar6 = 0x5a;
       }
-      else if ((iVar5 < -0x39c) || (-0x180 < iVar5)) {
-        if ((iVar5 < -0x17f) || (0x17e < iVar5)) {
-          if ((iVar5 < 0x17f) || (0x39b < iVar5)) {
-            iVar5 = 0x10e;
+      else if ((iVar6 < -0x39c) || (-0x180 < iVar6)) {
+        if ((iVar6 < -0x17f) || (0x17e < iVar6)) {
+          if ((iVar6 < 0x17f) || (0x39b < iVar6)) {
+            iVar6 = 0x10e;
           }
           else {
-            iVar5 = (((int)uVar14 <= (int)param_2) - 1 & 0x5a) + 0xe1;
+            iVar6 = (((int)uVar15 <= (int)param_2) - 1 & 0x5a) + 0xe1;
           }
         }
         else {
-          iVar5 = (((int)uVar14 <= (int)param_2) - 1 & 0xffffff4c) + 0xb4;
+          iVar6 = (((int)uVar15 <= (int)param_2) - 1 & 0xffffff4c) + 0xb4;
         }
       }
       else {
-        iVar5 = (((int)uVar14 <= (int)param_2) - 1 & 0xffffffa6) + 0x87;
+        iVar6 = (((int)uVar15 <= (int)param_2) - 1 & 0xffffffa6) + 0x87;
       }
     }
     local_18 = g_playSystem_00802A38->field_00E4;
@@ -216,12 +227,12 @@ STAllPlayersC::PutOnPlaceGuardBoats
     local_14 = CONCAT22(sVar2,sVar3);
     local_10 = STReplaceLowWord((uint32_t)(local_10), (uint16_t)(param_4));
     objPtr = (char)param_1;
-    local_1c = dVar11;
-    local_20 = dVar11;
-    if (iVar5 < 0x88) {
-      if (iVar5 == 0x87) {
-        local_24 = (STBoatC *)((int)(dVar11 - 1) / 10);
-        iVar5 = 0;
+    local_1c = dVar12;
+    local_20 = dVar12;
+    if (iVar6 < 0x88) {
+      if (iVar6 == 0x87) {
+        local_24 = (STBoatC *)((int)(dVar12 - 1) / 10);
+        iVar6 = 0;
         if (-1 < (int)local_24) {
           local_1c = 0;
           do {
@@ -234,57 +245,57 @@ STAllPlayersC::PutOnPlaceGuardBoats
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
-              psVar13 = local_6a;
+              psVar14 = local_6a;
               local_8 = local_1c;
               do {
-                psVar13 = psVar13 + 3;
+                psVar14 = psVar14 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                if (pSVar7 == nullptr) {
-                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d64,0,0,
-                                             "%s",
-                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_135");
-                  if (iVar5 == 0) {
+                pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                if (pSVar8 == nullptr) {
+                  local_EAX_3288 =
+                       ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d64,0,0,
+                                          "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_135");
+                  if (local_EAX_3288 == 0) {
                     return;
                   }
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
-                sVar4 = (short)iVar5;
-                if (psVar13[2] == 0) {
-                  sVar10 = (sVar3 - sVar4) + -3;
-                  sVar4 = ((sVar2 - sVar4) - *psVar13) + -2;
+                sVar4 = (short)iVar6;
+                if (psVar14[2] == 0) {
+                  sVar11 = (sVar3 - sVar4) + -3;
+                  sVar4 = ((sVar2 - sVar4) - *psVar14) + -2;
                 }
                 else {
-                  sVar10 = (sVar3 - sVar4) + *psVar13 + -2;
+                  sVar11 = (sVar3 - sVar4) + *psVar14 + -2;
                   sVar4 = (sVar2 - sVar4) + -3;
                 }
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_10 = CONCAT22(sVar10,(undefined2)local_10);
+                local_10 = CONCAT22(sVar11,(undefined2)local_10);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_c = CONCAT22(psVar13[1],sVar4);
-                iVar8 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
-                if (iVar8 == 5) {
-                  STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                local_c = CONCAT22(psVar14[1],sVar4);
+                iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                if (iVar9 == 5) {
+                  STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                 }
                 else {
-                  STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
+                  STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;
               } while (param_6 < (int)_param_4);
             }
-            iVar5 = iVar5 + 1;
+            iVar6 = iVar6 + 1;
             local_1c = local_1c + 10;
             local_20 = local_20 - 10;
-          } while (iVar5 <= (int)local_24);
+          } while (iVar6 <= (int)local_24);
           return;
         }
       }
       else {
-        switch(iVar5) {
+        switch(iVar6) {
         case 0:
-          local_20 = (int)(dVar11 - 1) / 0xf;
+          local_20 = (int)(dVar12 - 1) / 0xf;
           local_24 = nullptr;
           if (-1 < (int)local_20) {
             local_8 = 0;
@@ -298,16 +309,17 @@ STAllPlayersC::PutOnPlaceGuardBoats
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
               if (0 < (int)_param_4) {
-                puVar12 = &local_be;
-                uVar14 = local_8;
+                puVar13 = &local_be;
+                uVar15 = local_8;
                 do {
-                  DArrayGetElement(param_8,uVar14,&param_5);
-                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                  if (pSVar7 == nullptr) {
-                    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d83,0,0,
-                                               "%s",
-                                               "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_0");
-                    if (iVar5 == 0) {
+                  DArrayGetElement(param_8,uVar15,&param_5);
+                  pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                  if (pSVar8 == nullptr) {
+                    local_EAX_1893 =
+                         ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d83,0,0,
+                                            "%s",
+                                            "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_0");
+                    if (local_EAX_1893 == 0) {
                       return;
                     }
                     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -315,18 +327,18 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_10 = CONCAT22((short)local_24 + 3 + sVar3,(undefined2)local_10);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c = CONCAT22(*puVar12,puVar12[-1] + sVar2);
-                  iVar5 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
-                  if (iVar5 == 5) {
-                    STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                  local_c = CONCAT22(*puVar13,puVar13[-1] + sVar2);
+                  iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                  if (iVar6 == 5) {
+                    STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                   }
                   else {
-                    STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
+                    STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
-                  uVar14 = uVar14 + 1;
-                  puVar12 = puVar12 + 3;
+                  uVar15 = uVar15 + 1;
+                  puVar13 = puVar13 + 3;
                 } while (param_6 < (int)_param_4);
               }
               local_24 = (STBoatC *)((int)local_24 + 1);
@@ -337,8 +349,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
           }
           break;
         case 0x2d:
-          local_24 = (STBoatC *)((int)(dVar11 - 1) / 10);
-          iVar5 = 0;
+          local_24 = (STBoatC *)((int)(dVar12 - 1) / 10);
+          iVar6 = 0;
           if (-1 < (int)local_24) {
             local_1c = 0;
             do {
@@ -351,59 +363,60 @@ STAllPlayersC::PutOnPlaceGuardBoats
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
               if (0 < (int)_param_4) {
-                psVar13 = local_6a;
+                psVar14 = local_6a;
                 local_8 = local_1c;
                 do {
-                  psVar13 = psVar13 + 3;
+                  psVar14 = psVar14 + 3;
                   DArrayGetElement(param_8,local_8,&param_5);
-                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                  if (pSVar7 == nullptr) {
-                    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d45,0,0,
-                                               "%s",
-                                               "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_45");
-                    if (iVar5 == 0) {
+                  pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                  if (pSVar8 == nullptr) {
+                    local_EAX_1553 =
+                         ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d45,0,0,
+                                            "%s",
+                                            "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_45");
+                    if (local_EAX_1553 == 0) {
                       return;
                     }
                     STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
-                  sVar4 = (short)iVar5;
-                  if (psVar13[2] == 0) {
-                    sVar10 = *psVar13 + sVar4 + 2;
+                  sVar4 = (short)iVar6;
+                  if (psVar14[2] == 0) {
+                    sVar11 = *psVar14 + sVar4 + 2;
                     sVar4 = (sVar2 - sVar4) + -3;
                   }
                   else {
-                    sVar10 = sVar4 + 3;
-                    sVar4 = (*psVar13 - sVar4) + -2 + sVar2;
+                    sVar11 = sVar4 + 3;
+                    sVar4 = (*psVar14 - sVar4) + -2 + sVar2;
                   }
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_10 = CONCAT22(sVar10 + sVar3,(undefined2)local_10);
+                  local_10 = CONCAT22(sVar11 + sVar3,(undefined2)local_10);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c = CONCAT22(psVar13[1],sVar4);
-                  iVar8 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
-                  if (iVar8 == 5) {
-                    STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                  local_c = CONCAT22(psVar14[1],sVar4);
+                  iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                  if (iVar9 == 5) {
+                    STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                   }
                   else {
-                    STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
+                    STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
                   local_8 = local_8 + 1;
                 } while (param_6 < (int)_param_4);
               }
-              iVar5 = iVar5 + 1;
+              iVar6 = iVar6 + 1;
               local_1c = local_1c + 10;
               local_20 = local_20 - 10;
-            } while (iVar5 <= (int)local_24);
+            } while (iVar6 <= (int)local_24);
             return;
           }
           break;
         case 0x5a:
-          local_20 = (int)(dVar11 - 1) / 0xf;
+          local_20 = (int)(dVar12 - 1) / 0xf;
           local_24 = nullptr;
           if (-1 < (int)local_20) {
             local_1c = 0;
-            local_8 = dVar11;
+            local_8 = dVar12;
             do {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = local_8;
@@ -414,35 +427,36 @@ STAllPlayersC::PutOnPlaceGuardBoats
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
               if (0 < (int)_param_4) {
-                puVar12 = &local_be;
-                uVar14 = local_1c;
+                puVar13 = &local_be;
+                uVar15 = local_1c;
                 do {
-                  DArrayGetElement(param_8,uVar14,&param_5);
-                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                  if (pSVar7 == nullptr) {
-                    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d2c,0,0,
-                                               "%s",
-                                               "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_90");
-                    if (iVar5 == 0) {
+                  DArrayGetElement(param_8,uVar15,&param_5);
+                  pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                  if (pSVar8 == nullptr) {
+                    local_EAX_1180 =
+                         ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d2c,0,0,
+                                            "%s",
+                                            "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_90");
+                    if (local_EAX_1180 == 0) {
                       return;
                     }
                     STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_10 = CONCAT22(puVar12[-1] + sVar3,(undefined2)local_10);
+                  local_10 = CONCAT22(puVar13[-1] + sVar3,(undefined2)local_10);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c = CONCAT22(*puVar12,(sVar2 - (short)local_24) + -3);
-                  iVar5 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
-                  if (iVar5 == 5) {
-                    STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                  local_c = CONCAT22(*puVar13,(sVar2 - (short)local_24) + -3);
+                  iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                  if (iVar6 == 5) {
+                    STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                   }
                   else {
-                    STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
+                    STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
-                  uVar14 = uVar14 + 1;
-                  puVar12 = puVar12 + 3;
+                  uVar15 = uVar15 + 1;
+                  puVar13 = puVar13 + 3;
                 } while (param_6 < (int)_param_4);
               }
               local_24 = (STBoatC *)((int)local_24 + 1);
@@ -453,36 +467,37 @@ STAllPlayersC::PutOnPlaceGuardBoats
           }
           break;
         case -1:
-          local_c4 = (int)(dVar11 - 1) / 100;
-          iVar5 = 0;
+          local_c4 = (int)(dVar12 - 1) / 100;
+          iVar6 = 0;
           local_20 = 0xffffffff;
           if (-1 < local_c4) {
             local_8 = 0;
             do {
-              piVar15 = local_104;
-              local_1c = dVar11;
-              for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {
-                *piVar15 = 0;
-                piVar15 = piVar15 + 1;
+              piVar16 = local_104;
+              local_1c = dVar12;
+              for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
+                *piVar16 = 0;
+                piVar16 = piVar16 + 1;
               }
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              _param_4 = dVar11;
-              if (99 < (int)dVar11) {
+              _param_4 = dVar12;
+              if (99 < (int)dVar12) {
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_4 = 100;
               }
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
-              uVar14 = local_8;
+              uVar15 = local_8;
               if (0 < (int)_param_4) {
                 do {
-                  DArrayGetElement(param_8,uVar14,&param_5);
+                  DArrayGetElement(param_8,uVar15,&param_5);
                   local_24 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (local_24 == nullptr) {
-                    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2e0b,0,0,
-                                               "%s",
-                                               "STAllPlayersC::PutOnPlaceGuardBoats NULL dir==-1");
-                    if (iVar5 == 0) {
+                    local_EAX_2921 =
+                         ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2e0b,0,0,
+                                            "%s",
+                                            "STAllPlayersC::PutOnPlaceGuardBoats NULL dir==-1");
+                    if (local_EAX_2921 == 0) {
                       return;
                     }
                     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -493,33 +508,33 @@ STAllPlayersC::PutOnPlaceGuardBoats
                       if ((int)local_20 < 0) {
                         local_20 = (local_20 - 1 | 0xfffffff8) + 1;
                       }
-                      iVar8 = local_e4[local_20];
-                      if (iVar8 % 0x5a != 0) break;
+                      iVar9 = local_e4[local_20];
+                      if (iVar9 % 0x5a != 0) break;
                       if (local_104[local_20] != 0xf) goto LAB_00448970;
                     }
                   } while (local_104[local_20] == 10);
 LAB_00448970:
-                  iVar16 = local_104[local_20] + 1;
-                  local_104[local_20] = iVar16;
-                  sVar4 = (short)iVar5;
-                  if (iVar8 < 0xb5) {
-                    if (iVar8 == 0xb4) {
-                      sVar10 = (sVar3 - sVar4) + -3;
-                      sVar4 = (&sStack_c6)[iVar16 * 3] + sVar2;
+                  iVar17 = local_104[local_20] + 1;
+                  local_104[local_20] = iVar17;
+                  sVar4 = (short)iVar6;
+                  if (iVar9 < 0xb5) {
+                    if (iVar9 == 0xb4) {
+                      sVar11 = (sVar3 - sVar4) + -3;
+                      sVar4 = (&sStack_c6)[iVar17 * 3] + sVar2;
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00448aaf:
-                      local_10 = CONCAT22(sVar10,(undefined2)local_10);
+                      local_10 = CONCAT22(sVar11,(undefined2)local_10);
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      local_c = CONCAT22(*(undefined2 *)((int)&local_c4 + iVar16 * 6),sVar4);
+                      local_c = CONCAT22(*(undefined2 *)((int)&local_c4 + iVar17 * 6),sVar4);
                     }
                     else {
-                      switch(iVar8) {
+                      switch(iVar9) {
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       case 0:
                         local_10 = CONCAT22(sVar4 + 3 + sVar3,(undefined2)local_10);
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_c = CONCAT22(*(undefined2 *)((int)&local_c4 + iVar16 * 6),
-                                           (&sStack_c6)[iVar16 * 3] + sVar2);
+                        local_c = CONCAT22(*(undefined2 *)((int)&local_c4 + iVar17 * 6),
+                                           (&sStack_c6)[iVar17 * 3] + sVar2);
                         break;
                       default:
 switchD_004489a9_caseD_1:
@@ -531,28 +546,28 @@ switchD_004489a9_caseD_1:
                         }
                         break;
                       case 0x2d:
-                        if (local_6a[iVar16 * 3 + 2] == 0) {
+                        if (local_6a[iVar17 * 3 + 2] == 0) {
                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                          local_10 = CONCAT22(local_6a[iVar16 * 3] + sVar4 + 2 + sVar3,
+                          local_10 = CONCAT22(local_6a[iVar17 * 3] + sVar4 + 2 + sVar3,
                                               (undefined2)local_10);
                           sVar4 = (sVar2 - sVar4) + -3;
                           goto LAB_00448bc0;
                         }
-                        sVar10 = (sVar2 - sVar4) + -2 + local_6a[iVar16 * 3];
+                        sVar11 = (sVar2 - sVar4) + -2 + local_6a[iVar17 * 3];
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00448b30:
                         local_10 = CONCAT22(sVar4 + 3 + sVar3,(undefined2)local_10);
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_c = CONCAT22(local_6a[iVar16 * 3 + 1],sVar10);
+                        local_c = CONCAT22(local_6a[iVar17 * 3 + 1],sVar11);
                         break;
                       case 0x5a:
-                        sVar10 = (&sStack_c6)[iVar16 * 3] + sVar3;
+                        sVar11 = (&sStack_c6)[iVar17 * 3] + sVar3;
                         sVar4 = (sVar2 - sVar4) + -3;
                         goto LAB_00448aaf;
                       case 0x87:
-                        if (local_6a[iVar16 * 3 + 2] != 0) {
+                        if (local_6a[iVar17 * 3 + 2] != 0) {
                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                          local_10 = CONCAT22(-sVar4 + -2 + sVar3 + local_6a[iVar16 * 3],
+                          local_10 = CONCAT22(-sVar4 + -2 + sVar3 + local_6a[iVar17 * 3],
                                               (undefined2)local_10);
                           sVar4 = -sVar4 + -3 + sVar2;
                           goto LAB_00448bc0;
@@ -560,66 +575,66 @@ LAB_00448b30:
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_10 = CONCAT22(-sVar4 + -3 + sVar3,(undefined2)local_10);
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_c = CONCAT22(local_6a[iVar16 * 3 + 1],
-                                           ((-sVar4 + sVar2) - local_6a[iVar16 * 3]) + -2);
+                        local_c = CONCAT22(local_6a[iVar17 * 3 + 1],
+                                           ((-sVar4 + sVar2) - local_6a[iVar17 * 3]) + -2);
                       }
                     }
                   }
                   else {
-                    if (iVar8 == 0xe1) {
-                      if (local_6a[iVar16 * 3 + 2] == 0) {
+                    if (iVar9 == 0xe1) {
+                      if (local_6a[iVar17 * 3 + 2] == 0) {
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_10 = CONCAT22(((sVar3 - sVar4) - local_6a[iVar16 * 3]) + -2,
+                        local_10 = CONCAT22(((sVar3 - sVar4) - local_6a[iVar17 * 3]) + -2,
                                             (undefined2)local_10);
                         sVar4 = sVar4 + 3 + sVar2;
                       }
                       else {
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_10 = CONCAT22((sVar3 - sVar4) + -3,(undefined2)local_10);
-                        sVar4 = ((sVar4 + sVar2) - local_6a[iVar16 * 3]) + 2;
+                        sVar4 = ((sVar4 + sVar2) - local_6a[iVar17 * 3]) + 2;
                       }
 LAB_00448bc0:
-                      sVar10 = local_6a[iVar16 * 3 + 1];
+                      sVar11 = local_6a[iVar17 * 3 + 1];
                     }
                     else {
-                      if (iVar8 != 0x10e) {
-                        if (iVar8 != 0x13b) goto switchD_004489a9_caseD_1;
-                        if (local_6a[iVar16 * 3 + 2] == 0) {
-                          sVar10 = local_6a[iVar16 * 3] + sVar4 + 2 + sVar2;
+                      if (iVar9 != 0x10e) {
+                        if (iVar9 != 0x13b) goto switchD_004489a9_caseD_1;
+                        if (local_6a[iVar17 * 3 + 2] == 0) {
+                          sVar11 = local_6a[iVar17 * 3] + sVar4 + 2 + sVar2;
                           goto LAB_00448b30;
                         }
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_10 = CONCAT22(((sVar4 + sVar3) - local_6a[iVar16 * 3]) + 2,
+                        local_10 = CONCAT22(((sVar4 + sVar3) - local_6a[iVar17 * 3]) + 2,
                                             (undefined2)local_10);
                         sVar4 = sVar4 + 3 + sVar2;
                         goto LAB_00448bc0;
                       }
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      local_10 = CONCAT22((&sStack_c6)[iVar16 * 3] + sVar3,(undefined2)local_10);
+                      local_10 = CONCAT22((&sStack_c6)[iVar17 * 3] + sVar3,(undefined2)local_10);
                       sVar4 = sVar4 + 3 + sVar2;
-                      sVar10 = *(short *)((int)&local_c4 + iVar16 * 6);
+                      sVar11 = *(short *)((int)&local_c4 + iVar17 * 6);
                     }
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    local_c = CONCAT22(sVar10,sVar4);
+                    local_c = CONCAT22(sVar11,sVar4);
                   }
-                  pSVar7 = local_24;
-                  iVar8 = thunk_FUN_0045ff10((STGameObjC *)local_24);
-                  if (((iVar8 == 5) && (uVar6 = STBoatC::CheckPBoxCmd(pSVar7,CASE_3), uVar6 == 1))
-                     || (iVar8 = thunk_FUN_0045ff10((STGameObjC *)pSVar7), iVar8 != 5)) {
-                    STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
+                  pSVar8 = local_24;
+                  iVar9 = thunk_FUN_0045ff10((STGameObjC *)local_24);
+                  if (((iVar9 == 5) && (uVar7 = STBoatC::CheckPBoxCmd(pSVar8,CASE_3), uVar7 == 1))
+                     || (iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8), iVar9 != 5)) {
+                    STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
                   else {
-                    STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                    STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                   }
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
-                  uVar14 = uVar14 + 1;
+                  uVar15 = uVar15 + 1;
                 } while (param_6 < (int)_param_4);
               }
               local_8 = local_8 + 100;
-              iVar5 = iVar5 + 1;
-              dVar11 = local_1c - 100;
-              if (local_c4 < iVar5) {
+              iVar6 = iVar6 + 1;
+              dVar12 = local_1c - 100;
+              if (local_c4 < iVar6) {
                 return;
               }
             } while( true );
@@ -628,9 +643,9 @@ LAB_00448bc0:
       }
     }
     else {
-      switch(iVar5) {
+      switch(iVar6) {
       case 0xb4:
-        local_20 = (int)(dVar11 - 1) / 0xf;
+        local_20 = (int)(dVar12 - 1) / 0xf;
         local_24 = nullptr;
         if (-1 < (int)local_20) {
           local_8 = 0;
@@ -644,16 +659,16 @@ LAB_00448bc0:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
-              puVar12 = &local_be;
-              uVar14 = local_8;
+              puVar13 = &local_be;
+              uVar15 = local_8;
               do {
-                DArrayGetElement(param_8,uVar14,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                if (pSVar7 == nullptr) {
-                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d9b,0,0,
-                                             "%s",
-                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_180");
-                  if (iVar5 == 0) {
+                DArrayGetElement(param_8,uVar15,&param_5);
+                pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                if (pSVar8 == nullptr) {
+                  local_EAX_3660 =
+                       ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d9b,0,0,
+                                          "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_180");
+                  if (local_EAX_3660 == 0) {
                     return;
                   }
                   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -661,18 +676,18 @@ LAB_00448bc0:
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_10 = CONCAT22((sVar3 - (short)local_24) + -3,(undefined2)local_10);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_c = CONCAT22(*puVar12,puVar12[-1] + sVar2);
-                iVar5 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
-                if (iVar5 == 5) {
-                  STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                local_c = CONCAT22(*puVar13,puVar13[-1] + sVar2);
+                iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                if (iVar6 == 5) {
+                  STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                 }
                 else {
-                  STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
+                  STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
-                uVar14 = uVar14 + 1;
-                puVar12 = puVar12 + 3;
+                uVar15 = uVar15 + 1;
+                puVar13 = puVar13 + 3;
               } while (param_6 < (int)_param_4);
             }
             local_24 = (STBoatC *)((int)local_24 + 1);
@@ -683,8 +698,8 @@ LAB_00448bc0:
         }
         break;
       case 0xe1:
-        local_24 = (STBoatC *)((int)(dVar11 - 1) / 0x14);
-        iVar5 = 0;
+        local_24 = (STBoatC *)((int)(dVar12 - 1) / 0x14);
+        iVar6 = 0;
         if (-1 < (int)local_24) {
           local_1c = 0;
           do {
@@ -697,57 +712,57 @@ LAB_00448bc0:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
-              psVar13 = local_6a;
+              psVar14 = local_6a;
               local_8 = local_1c;
               do {
-                psVar13 = psVar13 + 3;
+                psVar14 = psVar14 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                if (pSVar7 == nullptr) {
-                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2dd2,0,0,
-                                             "%s",
-                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_225");
-                  if (iVar5 == 0) {
+                pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                if (pSVar8 == nullptr) {
+                  local_EAX_4414 =
+                       ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2dd2,0,0,
+                                          "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_225");
+                  if (local_EAX_4414 == 0) {
                     return;
                   }
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
-                sVar4 = (short)iVar5;
-                if (psVar13[2] == 0) {
-                  sVar9 = sVar4 + 3 + sVar2;
-                  local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(sVar9));
-                  sVar10 = ((sVar3 - sVar4) - *psVar13) + -2;
+                sVar4 = (short)iVar6;
+                if (psVar14[2] == 0) {
+                  sVar10 = sVar4 + 3 + sVar2;
+                  local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(sVar10));
+                  sVar11 = ((sVar3 - sVar4) - *psVar14) + -2;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c = CONCAT22(psVar13[1],sVar9);
+                  local_c = CONCAT22(psVar14[1],sVar10);
                 }
                 else {
-                  sVar10 = (sVar3 - sVar4) + -3;
+                  sVar11 = (sVar3 - sVar4) + -3;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_c = CONCAT22(psVar13[1],(sVar4 - *psVar13) + 2 + sVar2);
+                  local_c = CONCAT22(psVar14[1],(sVar4 - *psVar14) + 2 + sVar2);
                 }
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_10 = CONCAT22(sVar10,(undefined2)local_10);
-                iVar8 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
-                if (iVar8 == 5) {
-                  STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                local_10 = CONCAT22(sVar11,(undefined2)local_10);
+                iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                if (iVar9 == 5) {
+                  STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                 }
                 else {
-                  STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
+                  STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;
               } while (param_6 < (int)_param_4);
             }
-            iVar5 = iVar5 + 1;
+            iVar6 = iVar6 + 1;
             local_1c = local_1c + 0x14;
             local_20 = local_20 - 0x14;
-          } while (iVar5 <= (int)local_24);
+          } while (iVar6 <= (int)local_24);
           return;
         }
         break;
       case 0x10e:
-        local_20 = (int)(dVar11 - 1) / 0xf;
+        local_20 = (int)(dVar12 - 1) / 0xf;
         local_24 = nullptr;
         if (-1 < (int)local_20) {
           local_8 = 0;
@@ -761,35 +776,35 @@ LAB_00448bc0:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
-              puVar12 = &local_be;
-              uVar14 = local_8;
+              puVar13 = &local_be;
+              uVar15 = local_8;
               do {
-                DArrayGetElement(param_8,uVar14,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                if (pSVar7 == nullptr) {
-                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2df1,0,0,
-                                             "%s",
-                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_270");
-                  if (iVar5 == 0) {
+                DArrayGetElement(param_8,uVar15,&param_5);
+                pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                if (pSVar8 == nullptr) {
+                  local_EAX_4754 =
+                       ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2df1,0,0,
+                                          "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_270");
+                  if (local_EAX_4754 == 0) {
                     return;
                   }
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_10 = CONCAT22(puVar12[-1] + sVar3,(undefined2)local_10);
+                local_10 = CONCAT22(puVar13[-1] + sVar3,(undefined2)local_10);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_c = CONCAT22(*puVar12,(short)local_24 + 3 + sVar2);
-                iVar5 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
-                if (iVar5 == 5) {
-                  STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                local_c = CONCAT22(*puVar13,(short)local_24 + 3 + sVar2);
+                iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                if (iVar6 == 5) {
+                  STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                 }
                 else {
-                  STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
+                  STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
-                uVar14 = uVar14 + 1;
-                puVar12 = puVar12 + 3;
+                uVar15 = uVar15 + 1;
+                puVar13 = puVar13 + 3;
               } while (param_6 < (int)_param_4);
             }
             local_24 = (STBoatC *)((int)local_24 + 1);
@@ -800,8 +815,8 @@ LAB_00448bc0:
         }
         break;
       case 0x13b:
-        local_24 = (STBoatC *)((int)(dVar11 - 1) / 0x14);
-        iVar5 = 0;
+        local_24 = (STBoatC *)((int)(dVar12 - 1) / 0x14);
+        iVar6 = 0;
         if (-1 < (int)local_24) {
           local_1c = 0;
           do {
@@ -814,50 +829,50 @@ LAB_00448bc0:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
-              psVar13 = local_6a;
+              psVar14 = local_6a;
               local_8 = local_1c;
               do {
-                psVar13 = psVar13 + 3;
+                psVar14 = psVar14 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
-                if (pSVar7 == nullptr) {
-                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2db3,0,0,
-                                             "%s",
-                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_315");
-                  if (iVar5 == 0) {
+                pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                if (pSVar8 == nullptr) {
+                  local_EAX_4031 =
+                       ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2db3,0,0,
+                                          "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_315");
+                  if (local_EAX_4031 == 0) {
                     return;
                   }
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
-                sVar4 = (short)iVar5;
-                if (psVar13[2] == 0) {
-                  sVar10 = sVar4 + 3;
-                  sVar4 = sVar4 + sVar2 + *psVar13 + 2;
+                sVar4 = (short)iVar6;
+                if (psVar14[2] == 0) {
+                  sVar11 = sVar4 + 3;
+                  sVar4 = sVar4 + sVar2 + *psVar14 + 2;
                 }
                 else {
-                  sVar10 = (sVar4 - *psVar13) + 2;
+                  sVar11 = (sVar4 - *psVar14) + 2;
                   sVar4 = sVar4 + 3 + sVar2;
                 }
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_10 = CONCAT22(sVar10 + sVar3,(undefined2)local_10);
+                local_10 = CONCAT22(sVar11 + sVar3,(undefined2)local_10);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_c = CONCAT22(psVar13[1],sVar4);
-                iVar8 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
-                if (iVar8 == 5) {
-                  STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                local_c = CONCAT22(psVar14[1],sVar4);
+                iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                if (iVar9 == 5) {
+                  STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                 }
                 else {
-                  STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
+                  STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;
               } while (param_6 < (int)_param_4);
             }
-            iVar5 = iVar5 + 1;
+            iVar6 = iVar6 + 1;
             local_1c = local_1c + 0x14;
             local_20 = local_20 - 0x14;
-          } while (iVar5 <= (int)local_24);
+          } while (iVar6 <= (int)local_24);
           return;
         }
       }

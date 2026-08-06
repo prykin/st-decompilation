@@ -14,7 +14,8 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   STBoatC *this_01;
   STGameObjC *objPtr;
   int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar2;
+  int iVar4;
   uint uVar5;
   uint uVar6;
   InternalExceptionFrame local_64;
@@ -96,12 +97,12 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x638);
             }
-            iVar2 = thunk_FUN_0045ff30((int)objPtr);
-            if (iVar2 != 0) goto cf_common_exit_0049A832;
-            iVar2 = thunk_FUN_0045ff10(objPtr);
-            if (iVar2 == 1) goto cf_common_exit_0049A832;
-            iVar2 = thunk_FUN_0045ff10(objPtr);
-            if (iVar2 == 0) goto cf_common_exit_0049A832;
+            iVar4 = thunk_FUN_0045ff30((int)objPtr);
+            if (iVar4 != 0) goto cf_common_exit_0049A832;
+            iVar4 = thunk_FUN_0045ff10(objPtr);
+            if (iVar4 == 1) goto cf_common_exit_0049A832;
+            iVar4 = thunk_FUN_0045ff10(objPtr);
+            if (iVar4 == 0) goto cf_common_exit_0049A832;
           }
           uVar5 = uVar5 + 1;
           uVar6 = uVar5 & 0xffff;

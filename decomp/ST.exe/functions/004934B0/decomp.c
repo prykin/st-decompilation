@@ -7,17 +7,18 @@ FUN_004934b0(void *this,short *param_1,short *param_2,short *param_3,int *param_
 {
   DArrayTy *array;
   dword dVar1;
+  int iVar3;
   int iVar2;
-  undefined4 uVar3;
-  int iVar4;
+  undefined4 uVar4;
+  int iVar5;
   uint local_14;
   STFishC *local_10;
   short local_a;
   short local_8;
   short local_6;
 
-  uVar3 = 0;
-  iVar4 = 1000000;
+  uVar4 = 0;
+  iVar5 = 1000000;
   array = g_packedRecords_A62x8[STField<int>(this,0x24)].field1969_0x9da;
   *param_3 = -1;
   *param_2 = -1;
@@ -28,24 +29,24 @@ FUN_004934b0(void *this,short *param_1,short *param_2,short *param_3,int *param_
     if (0 < (int)dVar1) {
       do {
         DArrayGetElement(array,local_14,&local_10);
-        if ((local_10 != nullptr) && (iVar2 = (*local_10->vtable->vfunc_F8)(), iVar2 == 1)) {
+        if ((local_10 != nullptr) && (iVar3 = (*local_10->vtable->vfunc_F8)(), iVar3 == 1)) {
           STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
           iVar2 = FUN_006aadd0((int)STField<short>(this,0x47),(int)STField<short>(this,0x49),
                                (int)STField<short>(this,0x4b),(int)local_6,(int)local_8,
                                (int)local_a);
-          if (iVar2 < iVar4) {
+          if (iVar2 < iVar5) {
             *param_1 = local_6;
-            uVar3 = 1;
+            uVar4 = 1;
             *param_2 = local_8;
             *param_3 = local_a;
             *param_4 = local_10->field_0018;
-            iVar4 = iVar2;
+            iVar5 = iVar2;
           }
         }
         local_14 = local_14 + 1;
       } while ((int)local_14 < (int)dVar1);
     }
   }
-  return uVar3;
+  return uVar4;
 }
 

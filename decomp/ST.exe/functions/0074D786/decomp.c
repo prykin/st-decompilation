@@ -19,9 +19,14 @@ longlong FUN_0074d786(uint param_1,uint param_2,uint param_3,uint param_4,uint p
   bool bVar10;
   bool bVar11;
   longlong local_EDXEAX_175;
+  longlong local_EDXEAX_197;
+  longlong local_EDXEAX_214;
   longlong lVar12;
+  longlong lVar14;
+  undefined8 uVar15;
+  longlong lVar16;
+  longlong local_EDXEAX_650;
   longlong lVar13;
-  undefined8 uVar14;
   longlong uVar12;
   uint local_34;
   uint local_28;
@@ -71,9 +76,9 @@ longlong FUN_0074d786(uint param_1,uint param_2,uint param_3,uint param_4,uint p
   }
   bVar2 = (bool)(bVar4 ^ bVar3);
   local_EDXEAX_175 = Library::MSVCRT::__allmul(uVar9,0,local_c,0);
-  lVar12 = Library::MSVCRT::__allmul(local_8,0,uVar9,0);
-  lVar13 = Library::MSVCRT::__allmul(local_10,0,local_c,0);
-  uVar1 = lVar13 + lVar12 + ((ulonglong)local_EDXEAX_175 >> 0x20);
+  local_EDXEAX_197 = Library::MSVCRT::__allmul(local_8,0,uVar9,0);
+  local_EDXEAX_214 = Library::MSVCRT::__allmul(local_10,0,local_c,0);
+  uVar1 = local_EDXEAX_214 + local_EDXEAX_197 + ((ulonglong)local_EDXEAX_175 >> 0x20);
   uVar9 = (uint)uVar1;
   lVar12 = Library::MSVCRT::__allmul(local_8,0,local_10,0);
   local_34 = (uint)local_EDXEAX_175;
@@ -105,19 +110,19 @@ LAB_0074d8cc:
   uVar9 = bVar10 + uVar6;
   uVar6 = (uint)bVar11 + (uint)CARRY4((uint)bVar10,uVar6);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  lVar12 = CONCAT44(local_18 + (uint)CARRY4(uVar6,local_1c),uVar6 + local_1c);
-  lVar13 = uVar1 + lVar12;
-  local_28 = (uint)((ulonglong)lVar13 >> 0x20);
-  uVar1 = uVar1 + lVar12;
-  if (lVar13 < 0) {
+  lVar14 = CONCAT44(local_18 + (uint)CARRY4(uVar6,local_1c),uVar6 + local_1c);
+  lVar16 = uVar1 + lVar14;
+  local_28 = (uint)((ulonglong)lVar16 >> 0x20);
+  uVar1 = uVar1 + lVar14;
+  if (lVar16 < 0) {
     bVar2 = !bVar2;
     uVar6 = ~local_34;
     local_34 = uVar6 + 1;
     uVar9 = ~uVar9 + (uint)(0xfffffffe < uVar6);
     uVar6 = (uint)(local_34 == 0 && uVar9 == 0);
-    local_28 = ~local_28 + (uint)CARRY4(~(uint)lVar13,uVar6);
+    local_28 = ~local_28 + (uint)CARRY4(~(uint)lVar16,uVar6);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar1 = CONCAT44(local_28,~(uint)lVar13 + uVar6);
+    uVar1 = CONCAT44(local_28,~(uint)lVar16 + uVar6);
   }
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0074d94d:
@@ -129,58 +134,60 @@ LAB_0074d94d:
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if (uVar1 < CONCAT44(uVar5,param_3)) {
     if (uVar1 == 0) {
-      lVar12 = Library::MSVCRT::__aulldiv(local_34,uVar9,param_3,uVar5);
+      local_EDXEAX_650 = Library::MSVCRT::__aulldiv(local_34,uVar9,param_3,uVar5);
       if (bVar2) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        lVar12 = CONCAT44(-((int)((ulonglong)lVar12 >> 0x20) + (uint)((int)lVar12 != 0)),
-                          -(int)lVar12);
+        local_EDXEAX_650 =
+             CONCAT44(-((int)((ulonglong)local_EDXEAX_650 >> 0x20) +
+                       (uint)((int)local_EDXEAX_650 != 0)),-(int)local_EDXEAX_650);
       }
     }
     else if (uVar5 == 0) {
-      lVar13 = Library::MSVCRT::__aulldiv(uVar9,(uint)uVar1,param_3,0);
-      uVar14 = Library::MSVCRT::__aullrem(uVar9,(uint)uVar1,param_3,0);
-      lVar12 = Library::MSVCRT::__aulldiv(local_34,(uint)uVar14,param_3,0);
-      lVar12 = lVar12 + (lVar13 << 0x20);
+      lVar14 = Library::MSVCRT::__aulldiv(uVar9,(uint)uVar1,param_3,0);
+      uVar15 = Library::MSVCRT::__aullrem(uVar9,(uint)uVar1,param_3,0);
+      lVar16 = Library::MSVCRT::__aulldiv(local_34,(uint)uVar15,param_3,0);
+      local_EDXEAX_650 = lVar16 + (lVar14 << 0x20);
       if (bVar2) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        lVar12 = CONCAT44(-((int)((ulonglong)lVar12 >> 0x20) + (uint)((int)lVar12 != 0)),
-                          -(int)lVar12);
+        local_EDXEAX_650 =
+             CONCAT44(-((int)((ulonglong)local_EDXEAX_650 >> 0x20) +
+                       (uint)((int)local_EDXEAX_650 != 0)),-(int)local_EDXEAX_650);
       }
     }
     else {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_8 = 0x40;
       do {
-        lVar12 = Library::MSVCRT::__allshl(1,iVar8);
+        local_EDXEAX_650 = Library::MSVCRT::__allshl(1,iVar8);
         lVar13 = Library::MSVCRT::__allshl(1,local_28);
         local_28 = (uint)((ulonglong)lVar13 >> 0x20);
-        uVar9 = (uint)lVar13;
+        STPiece<0,4>(lVar13) = (uint)lVar13;
         if ((uVar12 & 0x8000000000000000U) != 0) {
-          uVar9 = uVar9 + 1;
+          STPiece<0,4>(lVar13) = (uint)lVar13 + 1;
         }
         uVar12 = Library::MSVCRT::__allshl(1,(int)((ulonglong)uVar12 >> 0x20));
-        if ((uVar5 <= local_28) && ((uVar5 < local_28 || (param_3 <= uVar9)))) {
-          local_28 = (local_28 - uVar5) - (uint)(uVar9 < param_3);
-          lVar12 = lVar12 + 1;
+        if ((uVar5 <= local_28) && ((uVar5 < local_28 || (param_3 <= (uint)lVar13)))) {
+          local_28 = (local_28 - uVar5) - (uint)((uint)lVar13 < param_3);
+          local_EDXEAX_650 = local_EDXEAX_650 + 1;
         }
-        iVar8 = (int)((ulonglong)lVar12 >> 0x20);
+        iVar8 = (int)((ulonglong)local_EDXEAX_650 >> 0x20);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_5 = (uint)lVar12;
+        param_5 = (uint)local_EDXEAX_650;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_8 = param_8 - 1;
       } while (param_8 != 0);
       if (bVar2) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        lVar12 = CONCAT44(-(iVar8 + (uint)(param_5 != 0)),-param_5);
+        local_EDXEAX_650 = CONCAT44(-(iVar8 + (uint)(param_5 != 0)),-param_5);
       }
     }
   }
   else if (bVar2) {
-    lVar12 = -0x8000000000000000;
+    local_EDXEAX_650 = -0x8000000000000000;
   }
   else {
-    lVar12 = 0x7fffffffffffffff;
+    local_EDXEAX_650 = 0x7fffffffffffffff;
   }
-  return lVar12;
+  return local_EDXEAX_650;
 }
 

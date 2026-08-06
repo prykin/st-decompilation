@@ -19,6 +19,7 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
 {
   AnonShape_004AB810_8E5693D5 *pAVar1;
   STT3DSprC *this;
+  int iVar3;
   int iVar2;
   int uVar3;
   uint uVar4;
@@ -34,10 +35,10 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
       this = (STT3DSprC *)st::fn_00401316(pAVar1);
     }
     param_1->field_05FF = this;
-    iVar2 = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
-    if (iVar2 != 0) {
+    iVar3 = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    if (iVar3 != 0) {
       st::fn_006A5E40
-                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",0x56);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",0x56);
     }
   }
   switch(param_1->field_0245) {
@@ -66,10 +67,11 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
     return 0;
   }
   st::external_00000080(local_108,"%s","trmmine");
-  iVar2 = st::fn_00404183((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,local_108,0x1d);
-  if (iVar2 != 0) {
+  iVar3 = st::fn_00404183
+                    ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,local_108,CASE_1D);
+  if (iVar3 != 0) {
     st::fn_006A5E40
-              (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",99);
+              (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",99);
   }
   uVar4 = 10;
   iVar2 = st::fn_004052CC((STT3DSprC *)&param_1->field_0x1d5);
@@ -83,13 +85,13 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
   uVar4 = g_playSystem_00802A38->field_00E4;
   *(undefined4 *)&param_1->field_0x4dc = 1;
   *(uint *)&param_1->field_0x4d8 = uVar4;
-  iVar2 = *(int *)&param_1->field_0x4d0 * 0x18;
-  local_8 = *(int *)(&DAT_0079aa18 + iVar2) + (int)param_1->field_0041;
+  iVar3 = *(int *)&param_1->field_0x4d0 * 0x18;
+  local_8 = *(int *)(&DAT_0079aa18 + iVar3) + (int)param_1->field_0041;
   st::fn_004045D9
             ((STT3DSprC *)param_1->field_05FF,(float)local_8 * _DAT_007904f8 * _DAT_007904f0,
-             (float)(*(int *)(&DAT_0079aa1c + iVar2) + (int)param_1->field_0043) * _DAT_007904f8 *
+             (float)(*(int *)(&DAT_0079aa1c + iVar3) + (int)param_1->field_0043) * _DAT_007904f8 *
              _DAT_007904f0,
-             (float)(*(int *)(&DAT_0079aa20 + iVar2) + (int)param_1->field_0045) * _DAT_007904f8 *
+             (float)(*(int *)(&DAT_0079aa20 + iVar3) + (int)param_1->field_0045) * _DAT_007904f8 *
              _DAT_007904f0 + _DAT_007904fc);
   st::fn_00402982((void *)param_1->field_05FF,1);
   if (*(int *)&param_1->field_0x4d0 == 3) {

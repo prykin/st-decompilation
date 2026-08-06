@@ -28,8 +28,8 @@ undefined4 FUN_006c7240(AnonShape_006C7240_F2C56622 *param_1,int param_2,int par
       return 0;
     }
     Library::DKW::WGR::FUN_006b5110
-              ((int)pRVar1,param_1->field_003E,iVar3,iVar4,param_1->field_002E,param_2,0,0,iVar2,1,
-               param_1->field_0061);
+              ((int)pRVar1,param_1->field_003E,iVar3,iVar4,(BITMAPINFO *)param_1->field_002E,param_2
+               ,0,0,iVar2,1,param_1->field_0061);
   }
   else if ((param_1->field_0016 != '\0') && (param_1->field_0x18 == '\0')) {
     return 0xffffffff;

@@ -8,15 +8,18 @@
 int __thiscall STBoatC::BackPatrol(STBoatC *this,int *param_1)
 
 {
+  int local_EAX_17;
+  int local_EAX_35;
   int iVar2;
+  int iVar3;
 
   if (this->field_0497 == 0) {
-    iVar2 = sub_00460360(this);
-    return iVar2;
+    local_EAX_17 = sub_00460360(this);
+    return local_EAX_17;
   }
   if (this->field_0497 == 1) {
-    iVar2 = thunk_FUN_004620f0(this);
-    return iVar2;
+    local_EAX_35 = thunk_FUN_004620f0(this);
+    return local_EAX_35;
   }
   iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1c52,0,0,"%s",
                              "STBoatC::BackPatrol");

@@ -23,8 +23,9 @@ CPanelTy::PaintTab(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,c
   uint uVar2;
   CPanelTy *pCVar3;
   int iVar4;
-  undefined4 uVar5;
+  undefined4 uVar4;
   LPSTR text_00;
+  int iVar5;
   int iVar6;
   InternalExceptionFrame local_58;
   CPanelTy *local_14;
@@ -40,7 +41,7 @@ CPanelTy::PaintTab(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,c
   local_10 = *(int *)((param_2->arg0).u32 + 0xc) - (&this->field_003C)[uVar2];
   switch(uVar2) {
   case 1:
-    iVar4 = this->field_0134;
+    iVar6 = this->field_0134;
     goto LAB_004f4318;
   default:
     if (this->field_0130 != 0) {
@@ -61,9 +62,9 @@ CPanelTy::PaintTab(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,c
     }
     break;
   case 7:
-    iVar4 = this->field_0138;
+    iVar6 = this->field_0138;
 LAB_004f4318:
-    if (iVar4 != 0) {
+    if (iVar6 != 0) {
       local_c = local_c - (&this->field_0094)[uVar2];
       goto cf_common_join_004F4331;
     }
@@ -77,8 +78,8 @@ cf_common_join_004F4331:
     local_14 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar4 == 0) {
-      uVar5 = (*param_6)((AnonShape_0052A7B0_DD603BF4 *)param_2);
-      text_00 = FUN_006f2c00(text,2,uVar5);
+      uVar4 = (*param_6)((AnonShape_0052A7B0_DD603BF4 *)param_2);
+      text_00 = FUN_006f2c00(text,2,uVar4);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text_00,nullptr,1);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
@@ -100,9 +101,9 @@ cf_common_join_004F4331:
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x256,0,iVar4,"%s",
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x256,0,iVar4,"%s",
                                "CPanelTy::PaintTab");
-    if (iVar6 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x256);

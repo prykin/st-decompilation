@@ -15,11 +15,13 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
   STMessageId SVar1;
   FrmPanelTy *this_00;
   int iVar2;
-  LPSTR pCVar3;
+  LPSTR pCVar2;
   int iVar4;
-  FrmPanelTyVTable *pFVar5;
-  char *pcVar6;
-  code *pcVar7;
+  int iVar3;
+  FrmPanelTyVTable *pFVar4;
+  char *pcVar5;
+  code *pcVar6;
+  int iVar7;
   undefined4 uVar8;
   InternalExceptionFrame local_60;
   uint local_1c [4];
@@ -65,8 +67,8 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
           }
           else {
             if (SVar1 == MESS_FRMPANELTY_B109) {
-              pFVar5 = this_00->vtable;
-              pcVar6 = "BUT_FINC";
+              pFVar4 = this_00->vtable;
+              pcVar5 = "BUT_FINC";
               goto LAB_00510902;
             }
             if (SVar1 != MESS_FRMPANELTY_B10A) {
@@ -100,8 +102,8 @@ cf_common_exit_005109A5:
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        pFVar5 = this_00->vtable;
-        pcVar6 = "BUT_FDEC";
+        pFVar4 = this_00->vtable;
+        pcVar5 = "BUT_FDEC";
       }
       else {
         switch(SVar1) {
@@ -109,23 +111,23 @@ cf_common_exit_005109A5:
         case MESS_CPANELTY_B10E:
           goto cf_common_exit_005109A5;
         case MESS_CPANELTY_B10D:
-          pFVar5 = this_00->vtable;
-          pcVar6 = "BUT_FRLFT";
+          pFVar4 = this_00->vtable;
+          pcVar5 = "BUT_FRLFT";
           break;
         case 0xb10f:
-          pFVar5 = this_00->vtable;
-          pcVar6 = "BUT_FRRT";
+          pFVar4 = this_00->vtable;
+          pcVar5 = "BUT_FRRT";
           break;
         default:
           goto switchD_005108d5_default;
         }
       }
 LAB_00510902:
-      iVar4 = 1;
-      iVar2 = 0;
-      pcVar7 = thunk_FUN_0052a080;
-      pCVar3 = thunk_FUN_00571240(pcVar6,0);
-      (*pFVar5->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar3,pcVar7,iVar2,iVar4);
+      iVar7 = 1;
+      iVar3 = 0;
+      pcVar6 = thunk_FUN_0052a080;
+      pCVar2 = thunk_FUN_00571240(pcVar5,0);
+      (*pFVar4->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar2,pcVar6,iVar3,iVar7);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
@@ -167,31 +169,31 @@ switchD_00510930_default:
   default:
     goto switchD_005108d5_default;
   case MESS_INTERCOMPANELTY_C0AF:
-    pcVar6 = "BUT_FLINE";
+    pcVar5 = "BUT_FLINE";
     break;
   case 0xc0b0:
-    pcVar6 = "BUT_FBENDUP";
+    pcVar5 = "BUT_FBENDUP";
     break;
   case MESS_BEHPANELTY_C0B1:
-    pcVar6 = "BUT_FHOLD";
+    pcVar5 = "BUT_FHOLD";
     break;
   case 0xc0b2:
-    pcVar6 = "BUT_FLOCK";
+    pcVar5 = "BUT_FLOCK";
     break;
   case MESS_BLDLABPANELTY_C0B3:
-    pcVar6 = "BUT_FWALL";
+    pcVar5 = "BUT_FWALL";
     break;
   case MESS_RESEARCHPANELTY_C0B4:
-    pcVar6 = "BUT_FBENDDN";
+    pcVar5 = "BUT_FBENDDN";
     break;
   case MESS_SHARED_C0B5:
-    pcVar6 = "BUT_FSQUARE";
+    pcVar5 = "BUT_FSQUARE";
     break;
   case MESS_RESEARCHPANELTY_C0B4|MESS_ID_CREATE:
-    pcVar6 = "BUT_FBREAK";
+    pcVar5 = "BUT_FBREAK";
   }
-  pCVar3 = thunk_FUN_00571240(pcVar6,0);
-  PaintBut(this_00,(AnonShape_005105E0_BBFE3E3B *)message,pCVar3);
+  pCVar2 = thunk_FUN_00571240(pcVar5,0);
+  PaintBut(this_00,(AnonShape_005105E0_BBFE3E3B *)message,pCVar2);
 switchD_005108d5_default:
   g_currentExceptionFrame = local_60.previous;
   return 0;

@@ -9,18 +9,21 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  int iVar2;
+  undefined4 uVar3;
   MTaskTy *this_00;
   int iVar4;
-  uint uVar5;
+  tagBITMAPINFO *ptVar5;
   DArrayTy *pDVar6;
   uint uVar7;
   int iVar8;
+  uint uVar8;
   uint uVar9;
-  AnonShape_005E10A0_819783CC *pAVar10;
+  int iVar10;
+  AnonShape_005E10A0_819783CC *pAVar11;
   SpriteClassTy *this_01;
-  uint *puVar11;
-  uint uVar12;
+  uint *puVar12;
+  uint uVar13;
   InternalExceptionFrame local_50;
   MTaskTy *local_c;
   uint local_8;
@@ -48,45 +51,45 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
     uVar9 = 0;
     if (pDVar6->count != 0) {
       if (pDVar6->count == 0) {
-        pAVar10 = nullptr;
+        pAVar11 = nullptr;
         goto LAB_005e0b38;
       }
       do {
-        pAVar10 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar6, uVar9);
+        pAVar11 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar6, uVar9);
 LAB_005e0b38:
-        if (((-1 < *(int *)pAVar10) && (pAVar10->field_003A != 0)) && (pAVar10->field_0031 != 0)) {
-          if ((*(uint *)&pAVar10->field_0x1c - 3 < *(uint *)&pAVar10->field_0x10) &&
-             (*(uint *)&pAVar10->field_0x28 <
-              (uint)(this_00->field_0069 - *(int *)&pAVar10->field_0x24))) {
-            if (*(uint *)&pAVar10->field_0x10 < *(uint *)&pAVar10->field_0x1c) {
-              PrepareTSurf(this_00,*(AnonShape_005E11D0_D0F8BE03 **)&pAVar10->field_0x4,
-                           pAVar10->field_0x35,pAVar10->field_0x38);
-              FUN_00714b30((void *)pAVar10->field_0031,*(int *)&pAVar10->field_0x10 + -1);
-              uVar5 = FUN_007140e0((void *)pAVar10->field_0031,1,'\0');
-              if (uVar5 != 0) {
-                FUN_006b5440(*(ushort **)&pAVar10->field_0x4,0,*(int *)&pAVar10->field_0x14,
-                             *(int *)&pAVar10->field_0x18,uVar5,0,0xff);
+        if (((-1 < *(int *)pAVar11) && (pAVar11->field_003A != 0)) && (pAVar11->field_0031 != 0)) {
+          if ((*(uint *)&pAVar11->field_0x1c - 3 < *(uint *)&pAVar11->field_0x10) &&
+             (*(uint *)&pAVar11->field_0x28 <
+              (uint)(this_00->field_0069 - *(int *)&pAVar11->field_0x24))) {
+            if (*(uint *)&pAVar11->field_0x10 < *(uint *)&pAVar11->field_0x1c) {
+              PrepareTSurf(this_00,*(AnonShape_005E11D0_D0F8BE03 **)&pAVar11->field_0x4,
+                           pAVar11->field_0x35,pAVar11->field_0x38);
+              FUN_00714b30((void *)pAVar11->field_0031,*(int *)&pAVar11->field_0x10 + -1);
+              ptVar5 = (tagBITMAPINFO *)FUN_007140e0((void *)pAVar11->field_0031,1,'\0');
+              if (ptVar5 != nullptr) {
+                FUN_006b5440(*(ushort **)&pAVar11->field_0x4,0,*(int *)&pAVar11->field_0x14,
+                             *(int *)&pAVar11->field_0x18,ptVar5,0,0xff);
               }
-              FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar10);
-              *(int *)&pAVar10->field_0x10 = *(int *)&pAVar10->field_0x10 + 1;
-              *(undefined4 *)&pAVar10->field_0x24 = this_00->field_0069;
+              FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar11);
+              *(int *)&pAVar11->field_0x10 = *(int *)&pAVar11->field_0x10 + 1;
+              *(undefined4 *)&pAVar11->field_0x24 = this_00->field_0069;
             }
             else {
-              TTaskItemClose(this_00,pAVar10);
+              TTaskItemClose(this_00,pAVar11);
             }
           }
-          if (*(uint *)&pAVar10->field_0x10 < *(int *)&pAVar10->field_0x1c - 3U) {
-            PrepareTSurf(this_00,*(AnonShape_005E11D0_D0F8BE03 **)&pAVar10->field_0x4,
-                         pAVar10->field_0x35,pAVar10->field_0x38);
-            uVar5 = FUN_007140e0((void *)pAVar10->field_0031,1,'\0');
-            if (uVar5 != 0) {
-              FUN_006b5440(*(ushort **)&pAVar10->field_0x4,0,*(int *)&pAVar10->field_0x14,
-                           *(int *)&pAVar10->field_0x18,uVar5,0,0xff);
+          if (*(uint *)&pAVar11->field_0x10 < *(int *)&pAVar11->field_0x1c - 3U) {
+            PrepareTSurf(this_00,*(AnonShape_005E11D0_D0F8BE03 **)&pAVar11->field_0x4,
+                         pAVar11->field_0x35,pAVar11->field_0x38);
+            ptVar5 = (tagBITMAPINFO *)FUN_007140e0((void *)pAVar11->field_0031,1,'\0');
+            if (ptVar5 != nullptr) {
+              FUN_006b5440(*(ushort **)&pAVar11->field_0x4,0,*(int *)&pAVar11->field_0x14,
+                           *(int *)&pAVar11->field_0x18,ptVar5,0,0xff);
             }
-            FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar10);
-            uVar5 = *(int *)&pAVar10->field_0x10 + 1;
-            *(uint *)&pAVar10->field_0x10 = uVar5;
-            if ((pAVar10->field_0x30 != '\0') && (uVar5 % 3 != 0)) {
+            FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar11);
+            uVar8 = *(int *)&pAVar11->field_0x10 + 1;
+            *(uint *)&pAVar11->field_0x10 = uVar8;
+            if ((pAVar11->field_0x30 != '\0') && (uVar8 % 3 != 0)) {
               thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
             }
           }
@@ -101,23 +104,23 @@ LAB_005e0b38:
     uVar9 = 0;
     if (pDVar6->count != 0) {
       if (pDVar6->count == 0) {
-        pAVar10 = nullptr;
+        pAVar11 = nullptr;
         goto LAB_005e0ca3;
       }
       do {
-        pAVar10 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar6, uVar9);
+        pAVar11 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar6, uVar9);
 LAB_005e0ca3:
-        if (((-1 < (int)*(uint *)pAVar10) && (*(int *)&pAVar10->field_0x10 != 0)) &&
-           (*(uint *)&pAVar10->field_0x28 <
-            (uint)(this_00->field_0069 - *(int *)&pAVar10->field_0x24))) {
-          uVar5 = *(int *)&pAVar10->field_0x10 + 1;
-          *(uint *)&pAVar10->field_0x10 = uVar5;
-          *(undefined4 *)&pAVar10->field_0x24 = this_00->field_0069;
-          if (uVar5 < 3) {
-            FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar10);
+        if (((-1 < (int)*(uint *)pAVar11) && (*(int *)&pAVar11->field_0x10 != 0)) &&
+           (*(uint *)&pAVar11->field_0x28 <
+            (uint)(this_00->field_0069 - *(int *)&pAVar11->field_0x24))) {
+          uVar8 = *(int *)&pAVar11->field_0x10 + 1;
+          *(uint *)&pAVar11->field_0x10 = uVar8;
+          *(undefined4 *)&pAVar11->field_0x24 = this_00->field_0069;
+          if (uVar8 < 3) {
+            FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar11);
           }
           else {
-            TTaskItemClose(this_00,pAVar10);
+            TTaskItemClose(this_00,pAVar11);
           }
         }
         pDVar6 = this_00->field_064F;
@@ -136,7 +139,7 @@ LAB_005e0ca3:
       do {
         this_01 = DArrayAt<SpriteClassTy>(pDVar6, local_8);
 LAB_005e0d20:
-        uVar5 = local_8;
+        uVar8 = local_8;
         uVar9 = this_01->field_0004;
         if (uVar9 != 0xffffffff) {
           switch(*(undefined1 *)&this_01[1].vtable) {
@@ -157,9 +160,9 @@ LAB_005e0d20:
             break;
           case 2:
             if ((uint)this_01->field_0040 <= (uint)(this_00->field_0069 - this_01->field_0044)) {
-              iVar4 = this_01->field_0008 + 1;
-              this_01->field_0008 = iVar4;
-              if (iVar4 == this_01->field_000C) {
+              iVar10 = this_01->field_0008 + 1;
+              this_01->field_0008 = iVar10;
+              if (iVar10 == this_01->field_000C) {
                 this_01->field_0008 = 0;
               }
               this_01->field_0044 = this_00->field_0069;
@@ -169,62 +172,62 @@ LAB_005e0d20:
             }
             break;
           case 3:
-            iVar4 = *(int *)((int)&this_01[1].vtable + 1);
-            if (iVar4 != *(int *)((int)&this_01[1].field_0004 + 1)) {
-              iVar8 = *(int *)((int)&this_01[1].field_0008 + 1);
-              this_01->field_001C = *(undefined4 *)(iVar8 + iVar4 * 8);
+            iVar10 = *(int *)((int)&this_01[1].vtable + 1);
+            if (iVar10 != *(int *)((int)&this_01[1].field_0004 + 1)) {
+              iVar2 = *(int *)((int)&this_01[1].field_0008 + 1);
+              this_01->field_001C = *(undefined4 *)(iVar2 + iVar10 * 8);
               iVar1 = this_01->field_0044;
-              this_01->field_0020 = *(undefined4 *)(iVar8 + iVar4 * 8 + 4);
-              uVar5 = this_01->field_0040;
-              *(int *)((int)&this_01[1].vtable + 1) = iVar4 + 1;
-              if (uVar5 <= (uint)(this_00->field_0069 - iVar1)) {
-                iVar4 = this_01->field_0008 + 1;
-                this_01->field_0008 = iVar4;
-                if (iVar4 == this_01->field_000C) {
+              this_01->field_0020 = *(undefined4 *)(iVar2 + iVar10 * 8 + 4);
+              uVar8 = this_01->field_0040;
+              *(int *)((int)&this_01[1].vtable + 1) = iVar10 + 1;
+              if (uVar8 <= (uint)(this_00->field_0069 - iVar1)) {
+                iVar10 = this_01->field_0008 + 1;
+                this_01->field_0008 = iVar10;
+                if (iVar10 == this_01->field_000C) {
                   this_01->field_0008 = 0;
                 }
                 this_01->field_0044 = this_00->field_0069;
               }
-              uVar5 = this_01->field_0020;
+              uVar8 = this_01->field_0020;
               uVar7 = this_01->field_001C;
-              uVar12 = this_01->field_0008;
-              puVar11 = (uint *)this_01->field_0048;
+              uVar13 = this_01->field_0008;
+              puVar12 = (uint *)this_01->field_0048;
               goto LAB_005e0edd;
             }
             SpriteClassTy::CloseSprite(this_01);
             if (*(int *)((int)&this_01[1].field_0008 + 1) != 0) {
-              FreeAndNull((void **)((int)&this_01[1].field_0008 + 1));
+              FreeAndNull((void *)((int)&this_01[1].field_0008 + 1));
             }
             break;
           case 4:
-            iVar4 = *(int *)((int)&this_01[1].vtable + 1);
-            iVar8 = *(int *)((int)&this_01[1].field_0008 + 1);
-            this_01->field_001C = *(undefined4 *)(iVar8 + iVar4 * 8);
-            uVar2 = *(undefined4 *)(iVar8 + iVar4 * 8 + 4);
-            *(int *)((int)&this_01[1].vtable + 1) = iVar4 + 1;
-            this_01->field_0020 = uVar2;
-            if (iVar4 + 1 == *(int *)((int)&this_01[1].field_0004 + 1)) {
+            iVar10 = *(int *)((int)&this_01[1].vtable + 1);
+            iVar2 = *(int *)((int)&this_01[1].field_0008 + 1);
+            this_01->field_001C = *(undefined4 *)(iVar2 + iVar10 * 8);
+            uVar3 = *(undefined4 *)(iVar2 + iVar10 * 8 + 4);
+            *(int *)((int)&this_01[1].vtable + 1) = iVar10 + 1;
+            this_01->field_0020 = uVar3;
+            if (iVar10 + 1 == *(int *)((int)&this_01[1].field_0004 + 1)) {
               *(undefined4 *)((int)&this_01[1].vtable + 1) = 0;
             }
             if ((uint)this_01->field_0040 <= (uint)(this_00->field_0069 - this_01->field_0044)) {
-              iVar4 = this_01->field_0008 + 1;
-              this_01->field_0008 = iVar4;
-              if (iVar4 == this_01->field_000C) {
+              iVar10 = this_01->field_0008 + 1;
+              this_01->field_0008 = iVar10;
+              if (iVar10 == this_01->field_000C) {
                 this_01->field_0008 = 0;
               }
               this_01->field_0044 = this_00->field_0069;
             }
-            uVar5 = this_01->field_0020;
+            uVar8 = this_01->field_0020;
             uVar7 = this_01->field_001C;
-            uVar12 = this_01->field_0008;
-            puVar11 = (uint *)this_01->field_0048;
+            uVar13 = this_01->field_0008;
+            puVar12 = (uint *)this_01->field_0048;
 LAB_005e0edd:
-            Library::DKW::DDX::FUN_006b3730(puVar11,uVar9,uVar12,uVar7,uVar5);
-            uVar5 = local_8;
+            Library::DKW::DDX::FUN_006b3730(puVar12,uVar9,uVar13,uVar7,uVar8);
+            uVar8 = local_8;
           }
         }
         pDVar6 = this_00->field_064B;
-        local_8 = uVar5 + 1;
+        local_8 = uVar8 + 1;
       } while (local_8 < pDVar6->count);
     }
   }

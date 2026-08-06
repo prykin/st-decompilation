@@ -16,16 +16,19 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
   StartServTy *pSVar1;
   MainMenuTy *this_00;
   DWORD DVar3;
+  int local_EAX_60;
+  undefined3 uVar6;
+  uint uVar4;
   int iVar4;
-  undefined3 uVar7;
-  uint uVar5;
   int iVar6;
+  int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
   MMsgTy *this_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
-  char cVar9;
+  char cVar8;
+  int iVar9;
   InternalExceptionFrame local_8c;
   undefined4 local_48 [8];
   undefined4 local_28 [8];
@@ -38,55 +41,55 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
   this->field_0061 = DVar3;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
-  iVar4 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
+  local_EAX_60 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar4 != 0) {
+  if (local_EAX_60 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x241,0,iVar4,"%s"
-                               ,"MainMenuTy::GetMessage");
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x241,0,local_EAX_60,
+                               "%s","MainMenuTy::GetMessage");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\main_obj.cpp",0x241);
+    RaiseInternalException(local_EAX_60,0,"E:\\__titans\\Start\\main_obj.cpp",0x241);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_8,message);
   temp_5f8d1d2a76 = message->id;
   if ((temp_5f8d1d2a76 < 0x697f) || (0x69fe < temp_5f8d1d2a76)) goto switchD_005b4c27_default;
-  uVar7 = (undefined3)(temp_5f8d1d2a76 - 0x697f >> 8);
+  uVar6 = (undefined3)(temp_5f8d1d2a76 - 0x697f >> 8);
   switch(temp_5f8d1d2a76 - 0x697f) {
   case 0:
-    iVar4 = -2;
-    iVar6 = 1;
+    iVar5 = -2;
+    iVar9 = 1;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar5 = CONCAT31(uVar7,(char)message->id + 0x81);
+    uVar4 = CONCAT31(uVar6,(char)message->id + 0x81);
     break;
   case 1:
-    iVar4 = -2;
+    iVar5 = -2;
     goto LAB_005b4c5f;
   case 2:
-    iVar4 = -2;
-    iVar6 = 2;
+    iVar5 = -2;
+    iVar9 = 2;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar5 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)((char)message->id + 0x81));
+    uVar4 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)((char)message->id + 0x81));
     break;
   case 3:
-    iVar4 = -2;
-    iVar6 = 0;
+    iVar5 = -2;
+    iVar9 = 0;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar5 = CONCAT31(uVar7,(char)message->id + 0x81);
+    uVar4 = CONCAT31(uVar6,(char)message->id + 0x81);
     break;
   case 4:
-    iVar4 = -3;
+    iVar5 = -3;
 LAB_005b4c5f:
-    iVar6 = 0;
+    iVar9 = 0;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar5 = STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)((char)message->id + 0x81));
+    uVar4 = STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)((char)message->id + 0x81));
     break;
   default:
     goto switchD_005b4c27_default;
   }
-  MMObjTy::PaintSprBut((MMObjTy *)this_00,(int)message,uVar5,1,iVar6,iVar4);
+  MMObjTy::PaintSprBut((MMObjTy *)this_00,(int)message,uVar4,1,iVar9,iVar5);
 switchD_005b4c27_default:
   SVar1 = message->id;
   if (SVar1 < 0x6903) {
@@ -161,7 +164,7 @@ LAB_005b4df8:
     pSVar1 = this_00->field_1A5B;
     if (*(int *)(pSVar1 + 0x2e6) == 0) break;
     memset(local_48, 0, 0x20); /* compiler bulk-zero initialization */
-    iVar4 = 0;
+    iVar5 = 0;
     memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
     local_48[2] = this_00->field_0008;
     local_48[3] = 2;
@@ -169,9 +172,9 @@ LAB_005b4df8:
     local_48[4] = 0x6941;
     local_28[4] = 0x693f;
     local_28[2] = local_48[2];
-    iVar4 = MMsgTy::SetMessage(*(MMsgTy **)(pSVar1 + 0x2e6),0x251d,'\x01',local_48,local_28,
+    iVar5 = MMsgTy::SetMessage(*(MMsgTy **)(pSVar1 + 0x2e6),0x251d,'\x01',local_48,local_28,
                                nullptr,0,0);
-    if (iVar4 == 0) break;
+    if (iVar5 == 0) break;
   case 0x6940:
     sub_005B4860(this_00);
     break;
@@ -186,7 +189,7 @@ LAB_005b4df8:
     }
     break;
   case 0x6942:
-    cVar9 = '\0';
+    cVar8 = '\0';
     goto LAB_005b4ee5;
   case 0x6943:
     thunk_FUN_005b6350(this_00,0x6942,0,0);
@@ -195,9 +198,9 @@ LAB_005b4df8:
     this_01 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
     goto LAB_005b4df8;
   case 0x6944:
-    cVar9 = '\x01';
+    cVar8 = '\x01';
 LAB_005b4ee5:
-    SetMode(this_00,cVar9,0);
+    SetMode(this_00,cVar8,0);
   }
 cf_common_exit_005B4EEC:
   g_currentExceptionFrame = local_8c.previous;

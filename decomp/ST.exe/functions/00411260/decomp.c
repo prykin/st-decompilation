@@ -12,6 +12,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
   short *psVar1;
   int uVar2;
   int iVar2;
+  int iVar3;
   uint uVar4;
   bool bVar5;
   uint uVar6;
@@ -91,7 +92,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
     }
     local_5c = 0;
     local_20 = 0;
-    iVar2 = local_60;
+    iVar3 = local_60;
     while( true ) {
       local_68 = 0;
       local_30 = uVar2;
@@ -109,7 +110,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
         local_74 = 0;
         iVar7 = DAT_007f4d2c;
         uVar4 = local_3c;
-        iVar2 = local_60;
+        iVar3 = local_60;
         if (0 < uVar2) {
           do {
             local_50 = (char)psVar1[uVar4 * 2] + param_1;
@@ -160,13 +161,13 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
                   uVar3 = iVar7 >> 0x10;
                 }
                 local_b8 = local_b8 + -1;
-                iVar2 = local_60;
+                iVar3 = local_60;
               } while (local_b8 != 0);
             }
           }
           else {
             FUN_0040f4d0((undefined4 *)local_24,uVar2,local_4c,1);
-            iVar2 = local_60;
+            iVar3 = local_60;
             if (0 < local_28) {
               iVar7 = local_2c * 0x14;
               local_b0 = local_28;
@@ -174,9 +175,9 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
               psVar1 = local_54;
               do {
                 iVar2 = FUN_0040f840(local_24,uVar2,local_4c,1);
-                iVar2 = (int)(iVar2 + local_3c) % uVar2;
-                local_50 = (char)psVar1[iVar2 * 2] + param_1;
-                local_58 = *(char *)((int)psVar1 + iVar2 * 4 + 1) + param_2;
+                iVar3 = (int)(iVar2 + local_3c) % uVar2;
+                local_50 = (char)psVar1[iVar3 * 2] + param_1;
+                local_58 = *(char *)((int)psVar1 + iVar3 * 4 + 1) + param_2;
                 *(int *)(iVar7 + DAT_007f4d3c) = local_50;
                 *(int *)(iVar7 + 4 + DAT_007f4d3c) = local_58;
                 *(int *)(iVar7 + 8 + DAT_007f4d3c) = local_60;
@@ -189,7 +190,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
                   psVar1 = local_54;
                 }
                 local_b0 = local_b0 + -1;
-                iVar2 = local_60;
+                iVar3 = local_60;
               } while (local_b0 != 0);
             }
           }
@@ -210,7 +211,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
               bVar5 = true;
             }
             if ((!bVar5) ||
-               (uVar6 = iVar2 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7,
+               (uVar6 = iVar3 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7,
                (*(byte *)(DAT_007f4cfc + ((int)uVar6 >> 3)) >> (uVar6 & 7) & 1) == 0)) {
               *(int *)(local_a8 + DAT_007f4d3c) = local_50;
               *(int *)(local_a8 + 4 + DAT_007f4d3c) = local_58;
@@ -229,7 +230,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
               uVar4 = 0;
             }
             local_ac = local_ac - 1;
-            iVar2 = local_60;
+            iVar3 = local_60;
           } while (local_ac != 0);
         }
       }
@@ -250,58 +251,58 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
             local_3c = 0;
           }
           local_34 = 1;
-          iVar2 = local_60;
+          iVar3 = local_60;
         }
         switch(local_20) {
         case 1:
-          iVar2 = iVar2 + 1;
-          local_60 = iVar2;
+          iVar3 = iVar3 + 1;
+          local_60 = iVar3;
           break;
         case 2:
-          iVar2 = iVar2 + -2;
-          local_60 = iVar2;
+          iVar3 = iVar3 + -2;
+          local_60 = iVar3;
           break;
         case 3:
-          iVar2 = iVar2 + 3;
-          local_60 = iVar2;
+          iVar3 = iVar3 + 3;
+          local_60 = iVar3;
           break;
         case 4:
-          iVar2 = iVar2 + -4;
-          local_60 = iVar2;
+          iVar3 = iVar3 + -4;
+          local_60 = iVar3;
           break;
         case 5:
-          iVar2 = iVar2 + 5;
-          local_60 = iVar2;
+          iVar3 = iVar3 + 5;
+          local_60 = iVar3;
           break;
         case 6:
-          iVar2 = iVar2 + -6;
-          local_60 = iVar2;
+          iVar3 = iVar3 + -6;
+          local_60 = iVar3;
           break;
         case 7:
-          iVar2 = iVar2 + 7;
-          local_60 = iVar2;
+          iVar3 = iVar3 + 7;
+          local_60 = iVar3;
           break;
         case 8:
-          iVar2 = iVar2 + -8;
-          local_60 = iVar2;
+          iVar3 = iVar3 + -8;
+          local_60 = iVar3;
         }
-      } while ((iVar2 < 0) || (psVar1 = local_54, DAT_007f4d34 <= iVar2));
+      } while ((iVar3 < 0) || (psVar1 = local_54, DAT_007f4d34 <= iVar3));
     }
     local_2c = 0;
-    iVar2 = DAT_007f4d3c;
+    iVar3 = DAT_007f4d3c;
     if (0 < DAT_007f4d20) {
       do {
-        local_50 = *(int *)(iVar7 + iVar2);
-        local_58 = *(int *)(iVar7 + 4 + iVar2);
-        local_60 = *(int *)(iVar7 + 8 + iVar2);
+        local_50 = *(int *)(iVar7 + iVar3);
+        local_58 = *(int *)(iVar7 + 4 + iVar3);
+        local_60 = *(int *)(iVar7 + 8 + iVar3);
         if ((((local_50 < 0) || (DAT_007f4d2c <= local_50)) || (local_58 < 0)) ||
            ((DAT_007f4d30 <= local_58 ||
             (*(short *)(DAT_007f4cf0 +
                        (local_60 * local_38 + local_50 + DAT_007f4d2c * local_58) * 2) != 0)))) {
-          iVar2 = FUN_0040f270(&local_50,&local_58,&local_60,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
+          iVar3 = FUN_0040f270(&local_50,&local_58,&local_60,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
-          if (iVar2 != 0) {
-            iVar2 = -4;
+          if (iVar3 != 0) {
+            iVar3 = -4;
             goto LAB_00411975;
           }
           uVar4 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
@@ -310,25 +311,25 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
           *(int *)(iVar7 + DAT_007f4d3c) = local_50;
           *(int *)(iVar7 + 4 + DAT_007f4d3c) = local_58;
           *(int *)(iVar7 + 8 + DAT_007f4d3c) = local_60;
-          iVar2 = DAT_007f4d3c;
+          iVar3 = DAT_007f4d3c;
         }
         local_2c = local_2c + 1;
         iVar7 = iVar7 + 0x14;
       } while (local_2c < DAT_007f4d20);
     }
     FUN_0040eb90();
-    iVar2 = local_44;
+    iVar3 = local_44;
 LAB_00411975:
     FUN_006a5e90(local_54);
-    if (iVar2 == 0) {
+    if (iVar3 == 0) {
       ExceptionList = local_14;
       return 0;
     }
-    if (iVar2 != -4) {
+    if (iVar3 != -4) {
       RaiseInternalException
-                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0xb6e);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0xb6e);
       ExceptionList = local_14;
-      return iVar2;
+      return iVar3;
     }
   }
   ExceptionList = local_14;

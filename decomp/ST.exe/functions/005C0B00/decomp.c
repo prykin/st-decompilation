@@ -97,7 +97,7 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
       else {
         uVar10 = 4;
       }
-      ccFntTy::WrStr(local_c->field_0083,local_18,-1,-1,uVar10);
+      ccFntTy::WrStr(local_c->field_0083,(char *)local_18,-1,-1,uVar10);
     }
     SVar3 = local_20;
                     /* WARNING: Load size is inaccurate */

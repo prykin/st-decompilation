@@ -195,29 +195,36 @@ st::fn_00540760(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,c
    [STPrototypeApplier] Propagated parameter 9.
    Evidence: 00540890 parameter used as this of ccFntTy::EraseSufr @ 005409EC
 
-   [STPrototypeApplier] Propagated parameter 6.
-   Evidence: 00540890 -> 00711370 @ 005408D0 | 00540890 -> 007113E0 @ 005408F4 | 00540890 ->
-   00711B70 @ 00540974 | 00590580 -> 00540890 @ 00590658 | 00591940 -> 00540890 @ 005919EB |
-   00594D40 -> 00540890 @ 00594DF7 | 00594EB0 -> 00540890 @ 00594F9E | 00594EB0 -> 00540890 @
-   00595062 | 00594EB0 -> 00540890 @ 005950C4 | 00594EB0 -> 00540890 @ 00595127 | 005952B0 ->
-   00540890 @ 0059534E | 005952B0 -> 00540890 @ 005953AF | 005952B0 -> 00540890 @ 00595410 |
-   005952B0 -> 00540890 @ 00595481 | 005956C0 -> 00540890 @ 00595787 | 005956C0 -> 00540890 @
-   005957EB | 005956C0 -> 00540890 @ 00595848 | 005956C0 -> 00540890 @ 005958A8 | 005956C0 ->
-   00540890 @ 00595905 | 005956C0 -> 00540890 @ 00595962 | 005956C0 -> 00540890 @ 005959C6 |
-   005956C0 -> 00540890 @ 00595A0A | 005956C0 -> 00540890 @ 00595A94 | 005956C0 -> 00540890 @
-   00595BC2 | 005956C0 -> 00540890 @ 00595C1B | 005B3160 -> 00540890 @ 005B320B | 005B3160 ->
-   00540890 @ 005B324A | 005B3D60 -> 00540890 @ 005B40D6 | 005B3D60 -> 00540890 @ 005B4342 |
-   005B9860 -> 00540890 @ 005B993F | 005C4E20 -> 00540890 @ 005C5027 | 005E79B0 -> 00540890 @
-   005E7B20
-
    [STPrototypeApplier] Propagated parameter 10.
    Evidence: 00540890 -> 00711B70 @ 00540974 | 005B3D60 -> 00540890 @ 005B4342; zeroed full register
-   at 005B427F */
+   at 005B427F
+
+   [STPrototypeRepairApplier] Propagated parameter 6.
+   Evidence: 00540890 -> 00711B70 @ 00540974 | 00590580 -> 00540890 @ 00590658; return of
+   LoadResourceString | 00591940 -> 00540890 @ 005919EB; return of LoadResourceString | 00594D40 ->
+   00540890 @ 00594DF7; return of LoadResourceString | 00594EB0 -> 00540890 @ 00594F9E; return of
+   LoadResourceString | 00594EB0 -> 00540890 @ 00595062; return of LoadResourceString | 00594EB0 ->
+   00540890 @ 005950C4; return of LoadResourceString | 00594EB0 -> 00540890 @ 00595127; return of
+   LoadResourceString | 005952B0 -> 00540890 @ 0059534E; return of LoadResourceString | 005952B0 ->
+   00540890 @ 005953AF; return of LoadResourceString | 005952B0 -> 00540890 @ 00595410; return of
+   LoadResourceString | 005952B0 -> 00540890 @ 00595481; return of LoadResourceString | 005956C0 ->
+   00540890 @ 00595787; return of LoadResourceString | 005956C0 -> 00540890 @ 005957EB; return of
+   LoadResourceString | 005956C0 -> 00540890 @ 00595848; return of LoadResourceString | 005956C0 ->
+   00540890 @ 005958A8; return of LoadResourceString | 005956C0 -> 00540890 @ 00595905; return of
+   LoadResourceString | 005956C0 -> 00540890 @ 00595962; return of LoadResourceString | 005956C0 ->
+   00540890 @ 005959C6; return of LoadResourceString | 005956C0 -> 00540890 @ 00595A0A; return of
+   LoadResourceString | 005956C0 -> 00540890 @ 00595A94; return of LoadResourceString | 005956C0 ->
+   00540890 @ 00595BC2; return of LoadResourceString | 005956C0 -> 00540890 @ 00595C1B; return of
+   LoadResourceString | 005B3160 -> 00540890 @ 005B320B; return of LoadResourceString | 005B3160 ->
+   00540890 @ 005B324A; return of LoadResourceString | 005B3D60 -> 00540890 @ 005B40D6; return of
+   LoadResourceString | 005B3D60 -> 00540890 @ 005B4342; return of LoadResourceString | 005B9860 ->
+   00540890 @ 005B993F; return of LoadResourceString | 005C4E20 -> 00540890 @ 005C5027; return of
+   LoadResourceString | 005E79B0 -> 00540890 @ 005E7B20; return of LoadResourceString */
 
 void __thiscall
 st::fn_00540890
           (StartServTy *this,int param_1,int param_2,int param_3,int param_4,int param_5,
-          uint *resourceString,uint param_7,uint param_8,ccFntTy *param_9,uint param_10)
+          char *resourceString,uint param_7,uint param_8,ccFntTy *param_9,uint param_10)
 
 {
   int iVar2;
@@ -230,12 +237,12 @@ st::fn_00540890
   iVar2 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
     if (param_4 < 1) {
-      iVar2 = st::fn_00711370(param_9,resourceString);
+      iVar2 = st::fn_00711370(param_9,(uint *)resourceString);
       param_4 = iVar2 + (((int)param_7 < 1) - 1 & param_7);
     }
     local_8 = param_4;
     if (param_5 < 1) {
-      iVar2 = st::fn_007113E0(param_9,resourceString);
+      iVar2 = st::fn_007113E0(param_9,(uint *)resourceString);
       param_5 = iVar2 + (((int)param_8 < 1) - 1 & param_8);
     }
     if (param_1 == 0) {
@@ -365,9 +372,10 @@ st::fn_00540DC0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 par
   int iVar2;
   uint index;
   int iVar3;
-  uint *puVar4;
-  uint *puVar6;
-  bool bVar7;
+  int iVar4;
+  uint *puVar5;
+  uint *puVar7;
+  bool bVar8;
   uint local_100 [19];
   InternalExceptionFrame local_b4;
   int local_70 [5];
@@ -398,7 +406,7 @@ st::fn_00540DC0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 par
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   memset(local_50, 0, 0x4c); /* compiler bulk-zero initialization */
-  iVar2 = 0;
+  iVar4 = 0;
   local_3c = param_2;
   local_1c = param_2;
   local_38 = param_3;
@@ -431,18 +439,18 @@ st::fn_00540DC0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 par
     index = st::fn_006B1190(g_array_008026F0,(byte *)local_100);
     if (-1 < (int)index) {
       do {
-        iVar2 = 0x13;
-        bVar7 = true;
-        puVar4 = local_100;
-        puVar6 = local_50;
+        iVar4 = 0x13;
+        bVar8 = true;
+        puVar5 = local_100;
+        puVar7 = local_50;
         do {
-          if (iVar2 == 0) break;
-          iVar2 = iVar2 + -1;
-          bVar7 = *puVar4 == *puVar6;
-          puVar4 = puVar4 + 1;
-          puVar6 = puVar6 + 1;
-        } while (bVar7);
-        if (bVar7) {
+          if (iVar4 == 0) break;
+          iVar4 = iVar4 + -1;
+          bVar8 = *puVar5 == *puVar7;
+          puVar5 = puVar5 + 1;
+          puVar7 = puVar7 + 1;
+        } while (bVar8);
+        if (bVar8) {
           st::fn_006B0C70(g_array_008026F0,index);
           if (g_array_008026F0->count != 0) {
             g_currentExceptionFrame = local_b4.previous;
@@ -475,21 +483,23 @@ st::fn_00540DC0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 par
 void st::fn_00541030(void)
 
 {
-  int iVar2;
   int iVar3;
-  byte *pbVar4;
-  byte **ppbVar5;
+  int local_EAX_91;
+  int iVar2;
+  int iVar4;
+  byte *pbVar5;
+  byte **ppbVar6;
   byte local_b4 [76];
   InternalExceptionFrame local_68;
   byte *local_24 [8];
 
-  pbVar4 = local_b4;
-  for (iVar3 = 0x13; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pbVar4[0] = 0;
-    pbVar4[1] = 0;
-    pbVar4[2] = 0;
-    pbVar4[3] = 0;
-    pbVar4 = pbVar4 + 4;
+  pbVar5 = local_b4;
+  for (iVar4 = 0x13; iVar4 != 0; iVar4 = iVar4 + -1) {
+    pbVar5[0] = 0;
+    pbVar5[1] = 0;
+    pbVar5[2] = 0;
+    pbVar5[3] = 0;
+    pbVar5 = pbVar5 + 4;
   }
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
@@ -497,19 +507,19 @@ void st::fn_00541030(void)
   if (iVar3 == 0) {
     if (g_array_008026F0 != nullptr) {
       g_array_008026F0->iteratorIndex = 0;
-      iVar3 = st::fn_006B1190(g_array_008026F0,local_b4);
-      while (-1 < iVar3) {
-        ppbVar5 = local_24;
-        for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppbVar5 = nullptr;
-          ppbVar5 = ppbVar5 + 1;
+      local_EAX_91 = st::fn_006B1190(g_array_008026F0,local_b4);
+      while (-1 < local_EAX_91) {
+        ppbVar6 = local_24;
+        for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+          *ppbVar6 = nullptr;
+          ppbVar6 = ppbVar6 + 1;
         }
         local_24[5] = local_b4;
         local_24[2] = (byte *)0x1;
         local_24[3] = (byte *)0x3;
         local_24[4] = (byte *)0x11;
         st::fn_006E3DB0((int)local_24);
-        iVar3 = st::fn_006B1190(g_array_008026F0,local_b4);
+        local_EAX_91 = st::fn_006B1190(g_array_008026F0,local_b4);
       }
       st::fn_006AE110(g_array_008026F0);
       g_array_008026F0 = nullptr;

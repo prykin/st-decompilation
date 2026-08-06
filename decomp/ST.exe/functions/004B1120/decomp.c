@@ -11,10 +11,13 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
 
 {
   short sVar1;
+  int local_EAX_136;
+  dword dVar2;
   int iVar2;
-  dword dVar3;
-  int iVar4;
-  int *piVar5;
+  int local_EAX_414;
+  int iVar3;
+  int *piVar4;
+  int iVar5;
   int iVar6;
   int iVar7;
   int iVar8;
@@ -28,14 +31,14 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
   local_14 = -1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_6 == 0) {
-    piVar5 = nullptr;
+    piVar4 = nullptr;
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    piVar5 = *(int **)(param_6 + 0x18);
+    piVar4 = *(int **)(param_6 + 0x18);
   }
   local_10 = thunk_FUN_004ae0b0((short)*param_3,*param_4,*param_5,param_2,param_1,nullptr,
-                                nullptr,nullptr,0,piVar5);
+                                nullptr,nullptr,0,piVar4);
   if (local_10 == 0) {
     if ((&STGroupBoatCVTable.vfunc_04)[param_2] ==
         (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x1) {
@@ -46,14 +49,14 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
       param_6 = 0;
       if (g_array_007FA150 != nullptr) {
         g_array_007FA150->iteratorIndex = 0;
-        iVar2 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
-        if (-1 < iVar2) {
+        local_EAX_136 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
+        if (-1 < local_EAX_136) {
           do {
             if (local_18 != nullptr) {
               switch(param_2) {
               case CASE_38:
-                dVar3 = local_18->slot_2C();
-                if (dVar3 == 0xdc) {
+                dVar2 = local_18->slot_2C();
+                if (dVar2 == 0xdc) {
 LAB_004b1226:
                   STFishC::sub_004162B0(local_18,&local_6,&local_8,&local_a);
                   if (((STGridAt3D(g_worldGrid, local_6, local_8, local_a).objects[0] ==
@@ -72,20 +75,20 @@ LAB_004b1226:
                 break;
               case CASE_39:
               case CASE_5E:
-                dVar3 = local_18->slot_2C();
-                if (dVar3 == 0xdd) goto LAB_004b1226;
+                dVar2 = local_18->slot_2C();
+                if (dVar2 == 0xdd) goto LAB_004b1226;
                 break;
               case CASE_4F:
-                dVar3 = local_18->slot_2C();
-                if (dVar3 == 0xde) goto LAB_004b1226;
+                dVar2 = local_18->slot_2C();
+                if (dVar2 == 0xde) goto LAB_004b1226;
                 break;
               case CASE_61:
-                dVar3 = local_18->slot_2C();
-                if (dVar3 == 0xe0) goto LAB_004b1226;
+                dVar2 = local_18->slot_2C();
+                if (dVar2 == 0xe0) goto LAB_004b1226;
               }
             }
-            iVar2 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
-          } while (-1 < iVar2);
+            local_EAX_414 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
+          } while (-1 < local_EAX_414);
           if (local_10 != 0) {
             *param_3 = param_6;
             *param_4 = param_1;
@@ -101,91 +104,91 @@ LAB_004b1226:
         sVar1 = g_worldGrid.sizeY;
       }
       local_14 = 1;
-      iVar2 = 0;
+      iVar5 = 0;
       if (1 < sVar1) {
         do {
-          local_10 = iVar2;
+          local_10 = iVar5;
           iVar6 = 0;
-          iVar2 = local_14;
+          iVar5 = local_14;
           if ((param_7 < local_14) && (g_worldGrid.sizeZ != 1 && -1 < g_worldGrid.sizeZ + -1)) {
             do {
-              iVar7 = *param_3 - iVar2;
-              if (iVar7 <= *param_3 + iVar2) {
+              iVar7 = *param_3 - iVar5;
+              if (iVar7 <= *param_3 + iVar5) {
                 do {
                   if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
-                    iVar8 = *param_4 - iVar2;
+                    iVar8 = *param_4 - iVar5;
                     if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
-                        piVar5 = nullptr;
+                        piVar4 = nullptr;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar5 = *(int **)(param_6 + 0x18);
+                        piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar4 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
-                                                 nullptr,nullptr,nullptr,0,piVar5);
-                      iVar2 = local_14;
-                      if (iVar4 == 0) goto LAB_004b13a9;
+                      iVar3 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 nullptr,nullptr,nullptr,0,piVar4);
+                      iVar5 = local_14;
+                      if (iVar3 == 0) goto LAB_004b13a9;
 LAB_004b14f8:
                       *param_3 = iVar7;
                       *param_4 = iVar8;
                       goto LAB_004b150e;
                     }
 LAB_004b13a9:
-                    iVar8 = *param_4 + iVar2;
+                    iVar8 = *param_4 + iVar5;
                     if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
-                        piVar5 = nullptr;
+                        piVar4 = nullptr;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar5 = *(int **)(param_6 + 0x18);
+                        piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar4 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
-                                                 nullptr,nullptr,nullptr,0,piVar5);
-                      iVar2 = local_14;
-                      if (iVar4 != 0) goto LAB_004b14f8;
+                      iVar3 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 nullptr,nullptr,nullptr,0,piVar4);
+                      iVar5 = local_14;
+                      if (iVar3 != 0) goto LAB_004b14f8;
                     }
                   }
                   iVar7 = iVar7 + 1;
-                } while (iVar7 <= *param_3 + iVar2);
+                } while (iVar7 <= *param_3 + iVar5);
               }
               iVar7 = *param_4;
-              iVar8 = (iVar7 - iVar2) + 1;
-              if (iVar8 <= iVar7 + -1 + iVar2) {
+              iVar8 = (iVar7 - iVar5) + 1;
+              if (iVar8 <= iVar7 + -1 + iVar5) {
                 do {
                   if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
-                    iVar7 = iVar7 - iVar2;
+                    iVar7 = iVar7 - iVar5;
                     if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
-                        piVar5 = nullptr;
+                        piVar4 = nullptr;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar5 = *(int **)(param_6 + 0x18);
+                        piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar4 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
-                                                 nullptr,nullptr,nullptr,0,piVar5);
-                      iVar2 = local_14;
-                      if (iVar4 != 0) goto LAB_004b1504;
+                      iVar3 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 nullptr,nullptr,nullptr,0,piVar4);
+                      iVar5 = local_14;
+                      if (iVar3 != 0) goto LAB_004b1504;
                     }
-                    iVar7 = *param_3 + iVar2;
+                    iVar7 = *param_3 + iVar5;
                     if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
                       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
-                        piVar5 = nullptr;
+                        piVar4 = nullptr;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar5 = *(int **)(param_6 + 0x18);
+                        piVar4 = *(int **)(param_6 + 0x18);
                       }
-                      iVar4 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
-                                                 nullptr,nullptr,nullptr,0,piVar5);
-                      iVar2 = local_14;
-                      if (iVar4 != 0) {
+                      iVar3 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 nullptr,nullptr,nullptr,0,piVar4);
+                      iVar5 = local_14;
+                      if (iVar3 != 0) {
 LAB_004b1504:
                         *param_3 = iVar7;
                         *param_4 = iVar8;
@@ -197,13 +200,13 @@ LAB_004b150e:
                   }
                   iVar8 = iVar8 + 1;
                   iVar7 = *param_4;
-                } while (iVar8 <= iVar7 + -1 + iVar2);
+                } while (iVar8 <= iVar7 + -1 + iVar5);
               }
               iVar6 = iVar6 + 1;
             } while (iVar6 < g_worldGrid.sizeZ + -1);
           }
-          local_14 = iVar2 + 1;
-          iVar2 = local_10;
+          local_14 = iVar5 + 1;
+          iVar5 = local_10;
           if (sVar1 <= local_14) {
             return local_10;
           }

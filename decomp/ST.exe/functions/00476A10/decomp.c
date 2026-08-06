@@ -11,6 +11,7 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
   short sVar1;
   short sVar2;
   short sVar3;
+  int iVar6;
   int iVar5;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_ESI;
@@ -23,19 +24,19 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
                              *(short *)&this->field_0x5ee * 0xc9 + 100,100,
                              (uint)(ushort)this->field_0032,0xf);
           this->field_07BE = this->field_07BE + -0xf;
-          iVar5 = this->vfunc_D8();
-          return -(uint)(iVar5 != 0);
+          iVar6 = this->vfunc_D8();
+          return -(uint)(iVar6 != 0);
         }
         thunk_FUN_005fd750(this->field_0024,*(short *)&this->field_0x5ec * 0xc9 + 100,
                            *(short *)&this->field_0x5ee * 0xc9 + 100,100,
                            (uint)(ushort)this->field_0032,this->field_07BE);
         this->field_07BE = 0;
       }
-      iVar5 = this->vfunc_D8();
-      return -(uint)(iVar5 != 0);
+      iVar6 = this->vfunc_D8();
+      return -(uint)(iVar6 != 0);
     }
-    iVar5 = sub_0045FF50(this,2);
-    if (iVar5 == -1) {
+    iVar6 = sub_0045FF50(this,2);
+    if (iVar6 == -1) {
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3184,0,0,"%s",
                                  "STBoatC::DCBomb, DCBOMB_MOVE error");
       if (iVar5 == 0) {
@@ -43,13 +44,13 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    if (iVar5 == 0) {
+    if (iVar6 == 0) {
       this->field_05F8 = 1;
     }
-    else if (iVar5 == 3) {
+    else if (iVar6 == 3) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      iVar5 = sub_004926C0(this,unaff_ESI);
-      if (iVar5 != 1) {
+      iVar6 = sub_004926C0(this,unaff_ESI);
+      if (iVar6 != 1) {
         return 0;
       }
       sVar1 = *(short *)&this->field_0x5f6;
@@ -66,16 +67,16 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
     *(undefined2 *)&this->field_0x5ee = this->field_03E4;
     *(undefined2 *)&this->field_0x5f0 = this->field_03E6;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    iVar5 = sub_004926C0(this,unaff_ESI);
-    if (iVar5 == 1) {
+    iVar6 = sub_004926C0(this,unaff_ESI);
+    if (iVar6 == 1) {
       sVar1 = *(short *)&this->field_0x5f6;
       sVar2 = *(short *)&this->field_0x5f4;
       sVar3 = *(short *)&this->field_0x5f2;
       this->field_05F8 = 0;
 LAB_00476c07:
       sub_00481520(this,(int)sVar3,(int)sVar2,(int)sVar1);
-      iVar5 = sub_0045FF50(this,0);
-      return (-(uint)(iVar5 != -1) & 3) - 1;
+      iVar6 = sub_0045FF50(this,0);
+      return (-(uint)(iVar6 != -1) & 3) - 1;
     }
   }
   return 0;

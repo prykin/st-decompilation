@@ -322,20 +322,26 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
   STColl3CVTable_at_1D5 **this_00;
   short sVar1;
   undefined1 uVar2;
-  bool bVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
+  int local_EAX_1370;
+  int local_EAX_1734;
+  int iVar5;
+  bool bVar3;
   STColl3C_field_02DDState SVar4;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
+  int local_EAX_3453;
   int uVar5;
-  int iVar5;
+  int local_EAX_4165;
+  int iVar7;
   int iVar6;
-  ushort *puVar7;
-  uint uVar8;
+  ushort *puVar8;
   uint uVar9;
-  undefined4 uVar10;
-  ushort uVar11;
+  int iVar10;
+  uint uVar11;
+  undefined4 uVar12;
+  ushort uVar13;
   undefined4 local_2c;
   undefined4 local_28;
   ushort *local_24;
@@ -352,11 +358,11 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
   case CASE_1:
     if ((this->field_02E1 <= g_playSystem_00802A38->field_00E4) && (this->field_02EA == 0)) {
       if (this->field_02B7 < 0) {
-        iVar5 = st::fn_00402A81(this,this->field_0245,this->field_0249,this->field_024D);
-        if (iVar5 != 0) {
-          uVar10 = st::fn_00403963();
-          this->field_02B6 = (char)uVar10;
-          if ((char)uVar10 != '\0') {
+        iVar7 = st::fn_00402A81(this,this->field_0245,this->field_0249,this->field_024D);
+        if (iVar7 != 0) {
+          uVar12 = st::fn_00403963();
+          this->field_02B6 = (char)uVar12;
+          if ((char)uVar12 != '\0') {
             st::fn_00401D8E(this,1);
           }
           this->field_02BB = 1;
@@ -367,10 +373,10 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
         }
       }
       else {
-        iVar5 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
-        if (((iVar5 != 0) && (iVar5 = st::fn_004013C0(this,2), iVar5 != 0)) &&
-           (iVar5 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
-                                       *(short *)&this->field_0299,1), iVar5 == 0)) {
+        iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+        if (((iVar7 != 0) && (iVar7 = st::fn_004013C0(this,2), iVar7 != 0)) &&
+           (iVar7 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
+                                       *(short *)&this->field_0299,1), iVar7 == 0)) {
           this->field_02DD = CASE_3;
           st::fn_00402A90((STT3DSprC *)&this->vtable_at_1d5);
           this->field_02BB = 2;
@@ -411,21 +417,21 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
           this->field_028D = 0;
           return;
         }
-        iVar5 = this->field_028D + 1;
-        this->field_028D = iVar5;
-        if (iVar5 < 6) {
-          if (iVar5 < 0xb) {
+        iVar7 = this->field_028D + 1;
+        this->field_028D = iVar7;
+        if (iVar7 < 6) {
+          if (iVar7 < 0xb) {
             return;
           }
           goto LAB_005f744e;
         }
-        iVar5 = st::fn_004013C0(this,2);
-        if (iVar5 == 0) {
+        iVar7 = st::fn_004013C0(this,2);
+        if (iVar7 == 0) {
           return;
         }
-        iVar5 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
+        iVar7 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
                                    *(short *)&this->field_0299,1);
-        if (iVar5 != 0) {
+        if (iVar7 != 0) {
           return;
         }
         this->field_02DD = CASE_3;
@@ -434,19 +440,19 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
         sVar1 = PTR_00806724->entryCount;
         goto LAB_005f7400;
       }
-      iVar5 = st::fn_00404EDA(this,this->field_0289,0,nullptr,nullptr,
+      iVar7 = st::fn_00404EDA(this,this->field_0289,0,nullptr,nullptr,
                                  nullptr);
-      if (iVar5 == 0) {
+      if (iVar7 == 0) {
         st::fn_00404AE3(this);
         return;
       }
-      iVar5 = st::fn_004013C0(this,2);
-      if (iVar5 == 0) {
+      iVar7 = st::fn_004013C0(this,2);
+      if (iVar7 == 0) {
         return;
       }
-      iVar5 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
+      iVar7 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
                                  *(short *)&this->field_0299,1);
-      if (iVar5 != 0) {
+      if (iVar7 != 0) {
         return;
       }
       this->field_02DD = CASE_3;
@@ -462,19 +468,19 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
       this->field_029D = 0;
     }
     else {
-      iVar5 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
-      if (iVar5 == 0) {
+      iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+      if (iVar7 == 0) {
 LAB_005f744e:
         st::fn_00404133(this,200);
         return;
       }
-      iVar5 = st::fn_004013C0(this,2);
-      if (iVar5 == 0) {
+      iVar7 = st::fn_004013C0(this,2);
+      if (iVar7 == 0) {
         return;
       }
-      iVar5 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
+      iVar7 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
                                  *(short *)&this->field_0299,1);
-      if (iVar5 != 0) {
+      if (iVar7 != 0) {
         return;
       }
       this->field_02DD = CASE_3;
@@ -491,10 +497,10 @@ LAB_005f7400:
         this->field_029F = 0;
       }
     }
-    iVar5 = st::fn_00402A81(this,(int)(short)(*(short *)&this->field_0291 * 0xc9 + 100),
+    iVar7 = st::fn_00402A81(this,(int)(short)(*(short *)&this->field_0291 * 0xc9 + 100),
                          (int)(short)(*(short *)&this->field_0295 * 0xc9 + 100),
                          (int)(short)(*(short *)&this->field_0299 * 200 + 100));
-    if (iVar5 != 0) {
+    if (iVar7 != 0) {
       st::fn_00402B12((STAllPlayersC *)this);
       st::fn_00402982(&this->vtable_at_1d5,0);
       st::fn_004023A1((TLOEmbryoTy *)this,(undefined *)0x2);
@@ -516,18 +522,18 @@ LAB_005f7400:
     }
     else {
       this->field_02DD = CASE_4;
-      uVar8 = *(uint *)(this->field_02E6 + 2);
-      if (-1 < (int)uVar8) {
-        st::fn_006EA050(this->field_0211,uVar8,1,0xffffffff,0);
-        puVar7 = this->field_02E6;
-        puVar7[2] = 0xffff;
-        puVar7[3] = 0xffff;
+      uVar9 = *(uint *)(this->field_02E6 + 2);
+      if (-1 < (int)uVar9) {
+        st::fn_006EA050(this->field_0211,uVar9,1,0xffffffff,0);
+        puVar8 = this->field_02E6;
+        puVar8[2] = 0xffff;
+        puVar8[3] = 0xffff;
         st::fn_00403517(this);
       }
     }
   case CASE_4:
-    iVar5 = st::fn_004057B3((AnonShape_005FA180_2D8671A3 *)this);
-    if (iVar5 < 0) {
+    local_EAX_1370 = st::fn_004057B3((AnonShape_005FA180_2D8671A3 *)this);
+    if (local_EAX_1370 < 0) {
       if (this->field_02EA != 0) {
         if (this->field_029E != '\0') {
           st::fn_00404AE3(this);
@@ -547,9 +553,9 @@ cf_common_exit_005F7A68:
         this->field_02D9 = g_playSystem_00802A38->field_00E4 + 0x32;
         return;
       }
-      iVar5 = st::fn_00402FAE(this);
-      if (-1 < iVar5) {
-        if (iVar5 == 2) {
+      iVar7 = st::fn_00402FAE(this);
+      if (-1 < iVar7) {
+        if (iVar7 == 2) {
           this->field_02DD = (-(uint)(this->field_029F != '\0') & 2) + CASE_8;
           return;
         }
@@ -574,8 +580,8 @@ LAB_005f79aa:
     this->field_02DD = SVar4;
     return;
   case CASE_6:
-    iVar5 = st::fn_004057B3((AnonShape_005FA180_2D8671A3 *)this);
-    if (PTR_00806724->entryCount <= iVar5) {
+    local_EAX_4165 = st::fn_004057B3((AnonShape_005FA180_2D8671A3 *)this);
+    if (PTR_00806724->entryCount <= local_EAX_4165) {
       this->field_02DD = CASE_2;
       return;
     }
@@ -601,45 +607,45 @@ LAB_005f79aa:
       if ((int)local_6 != this->field_0295) {
         return;
       }
-      iVar5 = st::fn_00404EDA(this,this->field_0289,1,(int *)&local_24,&local_2c,&local_28);
-      if (iVar5 != 0) {
-        iVar5 = st::fn_00401168(this);
-        if (iVar5 < 1) {
+      iVar7 = st::fn_00404EDA(this,this->field_0289,1,(int *)&local_24,&local_2c,&local_28);
+      if (iVar7 != 0) {
+        local_EAX_3453 = st::fn_00401168(this);
+        if (local_EAX_3453 < 1) {
           return;
         }
-        puVar7 = this->field_02E6 + 4;
-        for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *(undefined4 *)puVar7 = *(undefined4 *)local_24;
+        puVar8 = this->field_02E6 + 4;
+        for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
+          *(undefined4 *)puVar8 = *(undefined4 *)local_24;
           local_24 = local_24 + 2;
-          puVar7 = puVar7 + 2;
+          puVar8 = puVar8 + 2;
         }
-        *puVar7 = *local_24;
+        *puVar8 = *local_24;
         (&this->field_0x2a4)[this->field_02A0 * 6] = 1;
         *(undefined4 *)(&this->field_0x2a6 + this->field_02A0 * 6) = local_28;
         (&this->field_0x2a5)[this->field_02A0 * 6] = this->field_0024;
-        if (iVar5 == 2) {
+        if (local_EAX_3453 == 2) {
           *(undefined4 *)this->field_02E6 = local_2c;
         }
         if (*(STT3DSprC **)this->field_02E6 != nullptr) {
-          uVar11 = 30000;
-          uVar9 = 0;
-          iVar6 = 0;
-          iVar5 = 1;
-          uVar8 = 0xe;
+          uVar13 = 30000;
+          uVar11 = 0;
+          iVar10 = 0;
+          iVar7 = 1;
+          uVar9 = 0xe;
           uVar5 = st::fn_004052CC(*(STT3DSprC **)this->field_02E6);
           st::fn_006E9EF0
-                    ((ST3DSMAPContext *)this->field_0211,uVar5,uVar8,iVar5,iVar6,uVar9,uVar11);
+                    ((ST3DSMAPContext *)this->field_0211,uVar5,uVar9,iVar7,iVar10,uVar11,uVar13);
         }
         st::fn_00403611(this,this->field_0289);
-        iVar5 = st::fn_0040527C((AnonShape_005F95B0_F363C582 *)this);
-        if (iVar5 == 0) {
+        iVar7 = st::fn_0040527C((AnonShape_005F95B0_F363C582 *)this);
+        if (iVar7 == 0) {
           return;
         }
         *(uint *)(this->field_02E6 + 0x34) = g_playSystem_00802A38->field_00E4;
-        puVar7 = this->field_02E6;
+        puVar8 = this->field_02E6;
         this->field_02DD = CASE_9;
-        puVar7[0x32] = 1;
-        puVar7[0x33] = 0;
+        puVar8[0x32] = 1;
+        puVar8[0x33] = 0;
         this->field_02E6[0x19] = 0xffff;
         *(int *)(this->field_02E6 + 0x30) = *(int *)(this->field_02E6 + 0x2e) + -1;
         return;
@@ -648,10 +654,10 @@ LAB_005f79aa:
     st::fn_00404AE3(this);
     this->field_02DD = CASE_C;
     this->field_02D5 = g_playSystem_00802A38->field_00E4;
-    uVar8 = g_playSystem_00802A38->field_00E4;
+    uVar9 = g_playSystem_00802A38->field_00E4;
     this->field_02BB = 1;
     this->field_02EF = 0;
-    this->field_02D9 = uVar8 + 0x32;
+    this->field_02D9 = uVar9 + 0x32;
     this->field_0076 = 1;
     if (0 < this->field_02A0) {
       this->field_029F = 1;
@@ -661,24 +667,24 @@ LAB_005f7efc:
     this->field_029F = 0;
     return;
   case CASE_9:
-    iVar5 = st::fn_0040531C(this,g_playSystem_00802A38->field_00E4,&local_14,&local_18,&local_10);
-    if (iVar5 == 1) {
+    iVar7 = st::fn_0040531C(this,g_playSystem_00802A38->field_00E4,&local_14,&local_18,&local_10);
+    if (iVar7 == 1) {
       *(int *)(this->field_02E6 + 10) = local_14;
       *(int *)(this->field_02E6 + 0xc) = local_18;
       *(int *)(this->field_02E6 + 0xe) = local_10;
       *(int *)(this->field_02E6 + 0x10) = *(int *)(this->field_02E6 + 0x10) + 1;
-      puVar7 = this->field_02E6;
-      if (*(int *)(puVar7 + 0x12) <= *(int *)(puVar7 + 0x10)) {
-        puVar7[0x10] = 0;
-        puVar7[0x11] = 0;
+      puVar8 = this->field_02E6;
+      if (*(int *)(puVar8 + 0x12) <= *(int *)(puVar8 + 0x10)) {
+        puVar8[0x10] = 0;
+        puVar8[0x11] = 0;
       }
       st::fn_00404151((AnonShape_005F9E40_7E333F34 *)this);
       return;
     }
-    if (iVar5 == 3) {
+    if (iVar7 == 3) {
       st::fn_00403517(this);
-      iVar5 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
-      if (iVar5 == 0) {
+      iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+      if (iVar7 == 0) {
         this->field_0281 = this->field_0261;
         this->field_027D = this->field_025D;
         this->field_0285 = this->field_0265;
@@ -688,14 +694,14 @@ LAB_005f7efc:
         this->field_029E = 1;
       }
       st::fn_004018C5((STFishC *)this,&local_8,&local_6,&local_a);
-      iVar5 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,(int)local_a,
+      iVar7 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,(int)local_a,
                                  &local_14,&local_18,&local_10);
-      if (iVar5 != 0) {
+      if (iVar7 != 0) {
         this->field_02A0 = this->field_02A0 + 1;
-        iVar5 = st::fn_00401460(this);
-        if (iVar5 == 0) {
-          iVar5 = st::fn_00403C24(this,local_14,local_18,local_10);
-          if (iVar5 == 0) {
+        iVar7 = st::fn_00401460(this);
+        if (iVar7 == 0) {
+          iVar7 = st::fn_00403C24(this,local_14,local_18,local_10);
+          if (iVar7 == 0) {
             return;
           }
           this->field_02DD = CASE_5;
@@ -706,18 +712,18 @@ LAB_005f7efc:
         }
         this->field_02DD = CASE_C;
         this->field_02D5 = g_playSystem_00802A38->field_00E4;
-        uVar8 = g_playSystem_00802A38->field_00E4;
+        uVar9 = g_playSystem_00802A38->field_00E4;
         this->field_02EF = 0;
         this->field_02BB = 1;
-        this->field_02D9 = uVar8 + 0x32;
+        this->field_02D9 = uVar9 + 0x32;
         this->field_0076 = 1;
         goto LAB_005f7efc;
       }
     }
     break;
   case CASE_A:
-    iVar5 = st::fn_00404070(this,&local_10,&local_20);
-    if (iVar5 != 0) {
+    iVar7 = st::fn_00404070(this,&local_10,&local_20);
+    if (iVar7 != 0) {
       this->field_02DD = CASE_B;
       st::fn_004039B3(this,local_10,local_20,1);
       return;
@@ -730,13 +736,13 @@ LAB_005f7efc:
     bVar3 = st::fn_00404D4F((AnonShape_005FAEE0_B5D482C5 *)this);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if (CONCAT31(extraout_var_00,bVar3) != 0) {
-      iVar5 = this->field_02A0;
-      if ((&this->field_029E)[iVar5 * 6] != '\0') {
-        st::fn_00405AFB(this,*(int *)((int)&this->field_02A0 + iVar5 * 6),iVar5 + -1);
+      iVar7 = this->field_02A0;
+      if ((&this->field_029E)[iVar7 * 6] != '\0') {
+        st::fn_00405AFB(this,*(int *)((int)&this->field_02A0 + iVar7 * 6),iVar7 + -1);
         (&this->field_029E)[this->field_02A0 * 6] = 0;
-        iVar5 = this->field_02A0 + -1;
-        this->field_02A0 = iVar5;
-        if (0 < iVar5) {
+        iVar7 = this->field_02A0 + -1;
+        this->field_02A0 = iVar7;
+        if (0 < iVar7) {
           st::fn_00405763(this,1,1,0,0,0,0);
           return;
         }
@@ -747,8 +753,8 @@ LAB_005f7efc:
       if (this->field_02EA != 0) goto cf_common_exit_005F7A68;
       st::fn_00403A49(this,0);
       if (this->field_029E == '\0') {
-        iVar5 = st::fn_004013C0(this,2);
-        if (iVar5 != 0) {
+        iVar7 = st::fn_004013C0(this,2);
+        if (iVar7 != 0) {
           local_20 = st::fn_00403C24(this,this->field_0291,this->field_0295,this->field_0299);
           if (-1 < (int)local_20) {
             this->field_02DD = CASE_5;
@@ -771,13 +777,13 @@ LAB_005f7efc:
         this->field_02D9 = g_playSystem_00802A38->field_00E4 + 0x32;
       }
       else {
-        iVar5 = st::fn_004013C0(this,2);
-        if (iVar5 != 0) {
+        iVar7 = st::fn_004013C0(this,2);
+        if (iVar7 != 0) {
           st::fn_004018C5((STFishC *)this,&local_8,&local_6,&local_a);
-          iVar5 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
+          iVar7 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
-          if ((iVar5 != 0) &&
-             (iVar5 = st::fn_00403C24(this,local_14,local_18,local_10), iVar5 != 0)) {
+          if ((iVar7 != 0) &&
+             (iVar7 = st::fn_00403C24(this,local_14,local_18,local_10), iVar7 != 0)) {
             this->field_02DD = CASE_5;
             this->field_02BB = 1;
             this->field_029D = local_1c[0];
@@ -811,15 +817,15 @@ LAB_005f7efc:
         if ((this->field_02D9 < g_playSystem_00802A38->field_00E4) &&
            (iVar5 = st::fn_006ACFD0(this->field_025D,this->field_0261,(int)this->field_005B,
                                  (int)this->field_005D), 3 < iVar5)) {
-          iVar5 = this->field_02EF;
-          if (iVar5 != 0) goto LAB_005f7927;
-          iVar5 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
-          if (iVar5 == 0) goto cf_common_exit_005F76D2;
+          iVar7 = this->field_02EF;
+          if (iVar7 != 0) goto LAB_005f7927;
+          iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+          if (iVar7 == 0) goto cf_common_exit_005F76D2;
           st::fn_004018C5((STFishC *)this,&local_8,&local_6,&local_a);
-          iVar5 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
+          iVar7 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
-          if ((iVar5 != 0) &&
-             (iVar5 = st::fn_00403C24(this,local_14,local_18,local_10), iVar5 != 0)) {
+          if ((iVar7 != 0) &&
+             (iVar7 = st::fn_00403C24(this,local_14,local_18,local_10), iVar7 != 0)) {
             this->field_02DD = CASE_5;
             this->field_02BB = 1;
             this->field_0076 = 0;
@@ -830,14 +836,14 @@ LAB_005f7efc:
         }
       }
       else {
-        iVar5 = st::fn_00404EDA(this,this->field_0289,0,nullptr,nullptr,
+        iVar7 = st::fn_00404EDA(this,this->field_0289,0,nullptr,nullptr,
                                    nullptr);
-        if ((iVar5 != 0) && (iVar5 = st::fn_004013C0(this,2), iVar5 != 0)) {
+        if ((iVar7 != 0) && (iVar7 = st::fn_004013C0(this,2), iVar7 != 0)) {
           st::fn_004018C5((STFishC *)this,&local_8,&local_6,&local_a);
-          iVar5 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
+          iVar7 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
-          if ((iVar5 != 0) &&
-             (iVar5 = st::fn_00403C24(this,local_14,local_18,local_10), iVar5 != 0)) {
+          if ((iVar7 != 0) &&
+             (iVar7 = st::fn_00403C24(this,local_14,local_18,local_10), iVar7 != 0)) {
             this->field_02DD = CASE_5;
             this->field_02BB = 1;
             this->field_0076 = 0;
@@ -849,20 +855,21 @@ LAB_005f7efc:
       }
     }
     else if (this->field_02A0 != 0) {
-      iVar5 = this->field_02EF;
-      if (iVar5 != 0) {
+      iVar7 = this->field_02EF;
+      if (iVar7 != 0) {
 LAB_005f7927:
-        this->field_02EF = iVar5 + -1;
+        this->field_02EF = iVar7 + -1;
         return;
       }
-      iVar5 = st::fn_006ACFD0(this->field_025D,this->field_0261,(int)this->field_005B,
-                           (int)this->field_005D);
-      if (iVar5 < 4) {
-        iVar5 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
-        if (iVar5 == 0) goto cf_common_exit_005F76D2;
-        iVar5 = st::fn_00402FAE(this);
-        if (-1 < iVar5) {
-          if ((iVar5 == 2) && (this->field_029F != '\0')) {
+      local_EAX_1734 =
+           st::fn_006ACFD0(this->field_025D,this->field_0261,(int)this->field_005B,
+                        (int)this->field_005D);
+      if (local_EAX_1734 < 4) {
+        iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+        if (iVar7 == 0) goto cf_common_exit_005F76D2;
+        iVar7 = st::fn_00402FAE(this);
+        if (-1 < iVar7) {
+          if ((iVar7 == 2) && (this->field_029F != '\0')) {
             this->field_0076 = 0;
             this->field_02DD = CASE_A;
             return;
@@ -875,13 +882,13 @@ LAB_005f7927:
         }
       }
       else {
-        iVar5 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
-        if (iVar5 != 0) {
+        iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+        if (iVar7 != 0) {
           st::fn_004018C5((STFishC *)this,&local_8,&local_6,&local_a);
-          iVar5 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
+          iVar7 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
-          if ((iVar5 != 0) &&
-             (iVar5 = st::fn_00403C24(this,local_14,local_18,local_10), iVar5 != 0)) {
+          if ((iVar7 != 0) &&
+             (iVar7 = st::fn_00403C24(this,local_14,local_18,local_10), iVar7 != 0)) {
             this->field_02DD = CASE_5;
             this->field_02BB = 1;
             this->field_029D = local_1c[0];
@@ -898,35 +905,35 @@ cf_common_exit_005F76D2:
     break;
   case CASE_D:
     this_00 = &this->vtable_at_1d5;
-    iVar5 = st::fn_004042AF(this_00,'\b');
-    if (iVar5 == 1) {
+    iVar7 = st::fn_004042AF(this_00,'\b');
+    if (iVar7 == 1) {
       if (this->field_02BB != '\0') {
         st::fn_0040464C(this);
         st::fn_00404629((TLOBaseTy *)this);
       }
       st::fn_00404264((STT3DSprC *)this_00,0xf);
     }
-    if (iVar5 == *(int *)(&DAT_007ce73d + this->field_02CD * 0x39)) {
+    if (iVar7 == *(int *)(&DAT_007ce73d + this->field_02CD * 0x39)) {
       st::fn_00404EC1(this->field_005B,this->field_005D,this->field_005F,0,
                          (AnonShape_00495FF0_59081BDD *)this);
       st::fn_00404264((STT3DSprC *)this_00,0xe);
       st::fn_00404264((STT3DSprC *)this_00,0xc);
-      uVar10 = 0xffffffff;
+      uVar12 = 0xffffffff;
       iVar6 = st::fn_004052CC((STT3DSprC *)this_00);
       st::fn_0040223E((int)this->field_0041,(int)this->field_0043,(int)this->field_0045,0x2b,
-                         (int)this,(int)this->field_006C,iVar6,uVar10);
+                         (int)this,(int)this->field_006C,iVar6,uVar12);
     }
-    if (iVar5 == *(int *)(&DAT_007ce741 + this->field_02CD * 0x39)) {
+    if (iVar7 == *(int *)(&DAT_007ce741 + this->field_02CD * 0x39)) {
       st::fn_00402A90((STT3DSprC *)this_00);
     }
-    if (iVar5 == *(int *)(&DAT_007ce745 + this->field_02CD * 0x39)) {
+    if (iVar7 == *(int *)(&DAT_007ce745 + this->field_02CD * 0x39)) {
       st::fn_00405240((STT3DSprC *)this_00,9,g_playSystem_00802A38->field_00E4);
     }
-    if (iVar5 == *(int *)(&DAT_007ce739 + this->field_02CD * 0x39) + -1) {
+    if (iVar7 == *(int *)(&DAT_007ce739 + this->field_02CD * 0x39) + -1) {
       st::fn_00404264((STT3DSprC *)this_00,8);
     }
-    iVar5 = st::fn_004042AF(this_00,'\t');
-    if (iVar5 == *(int *)(&DAT_007ce749 + this->field_02CD * 0x39)) {
+    iVar7 = st::fn_004042AF(this_00,'\t');
+    if (iVar7 == *(int *)(&DAT_007ce749 + this->field_02CD * 0x39)) {
       st::fn_00401B04(this);
     }
   }

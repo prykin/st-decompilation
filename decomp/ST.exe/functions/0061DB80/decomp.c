@@ -8,13 +8,15 @@
 undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
 
 {
+  int iVar1;
   STLightC *this_00;
   int iVar2;
   ushort *puVar3;
   undefined4 *puVar4;
   STLightC_field_00A3DArray *pSVar5;
   int iVar6;
-  undefined4 uVar7;
+  undefined4 uVar6;
+  int iVar7;
   InternalExceptionFrame local_50;
   STLightC *local_c;
   uint local_8;
@@ -31,22 +33,22 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
     sub_0061D9C0(this_00,puVar3,(int *)&local_8,0);
     puVar4 = Library::DKW::LIB::MemAlloc(this_00->field_0093 << 4);
     this_00->field_0057 = puVar4;
-    for (iVar2 = (this_00->field_0093 & 0xfffffffU) << 2; iVar2 != 0; iVar2 = iVar2 + -1) {
+    for (iVar7 = (this_00->field_0093 & 0xfffffffU) << 2; iVar7 != 0; iVar7 = iVar7 + -1) {
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
-    for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
+    for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
       *(undefined1 *)puVar4 = 0;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    iVar2 = 0;
+    iVar7 = 0;
     if (0 < this_00->field_0093) {
       do {
-        *(undefined4 *)((int)this_00->field_0057 + iVar2 * 4) = 0xffffffff;
-        iVar6 = iVar2 + this_00->field_0093 * 3;
-        iVar2 = iVar2 + 1;
-        *(undefined4 *)((int)this_00->field_0057 + iVar6 * 4) = 0xffffffff;
-      } while (iVar2 < this_00->field_0093);
+        *(undefined4 *)((int)this_00->field_0057 + iVar7 * 4) = 0xffffffff;
+        iVar1 = iVar7 + this_00->field_0093 * 3;
+        iVar7 = iVar7 + 1;
+        *(undefined4 *)((int)this_00->field_0057 + iVar1 * 4) = 0xffffffff;
+      } while (iVar7 < this_00->field_0093);
     }
     *(undefined4 *)this_00->field_0057 = 0;
     *(undefined4 *)((int)this_00->field_0057 + this_00->field_0093 * 0xc) = 0;

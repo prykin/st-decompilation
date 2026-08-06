@@ -38,7 +38,7 @@ void __thiscall ST3DSMAPContext::sub_006DBAB0(ST3DSMAPContext *this)
     this->field_04CA = 0;
     this->field_04D6 = 0;
     this->field_04DA = 0;
-    FreeAndNull((void **)&this->field_0388);
+    FreeAndNull(&this->field_0x388);
     if (this->field_031C != nullptr) {
       uVar1 = 0;
       if (0 < (int)this->field_0310) {
@@ -53,7 +53,7 @@ void __thiscall ST3DSMAPContext::sub_006DBAB0(ST3DSMAPContext *this)
         } while ((int)uVar1 < (int)this->field_0310);
       }
       FreeAndNull(&this->field_031C);
-      FreeAndNull((void **)&this->field_0330);
+      FreeAndNull(&this->field_0x330);
     }
     this->field_02E0 = 0;
     this->field_0000 = nullptr;

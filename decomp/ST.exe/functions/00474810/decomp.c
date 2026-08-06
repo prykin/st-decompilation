@@ -8,51 +8,55 @@
 int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
 
 {
+  int local_EAX_32;
+  int iVar3;
+  int local_EAX_171;
   int iVar2;
 
   if (param_1 == nullptr) {
     sub_00492420(this);
   }
-  iVar2 = this->field_0596;
-  if (iVar2 == 0) {
-    iVar2 = sub_00460360(this);
-    return iVar2;
+  iVar3 = this->field_0596;
+  if (iVar3 == 0) {
+    local_EAX_32 = sub_00460360(this);
+    return local_EAX_32;
   }
-  if (iVar2 == 1) {
-    iVar2 = this->vfunc_D8();
-    return -(uint)(iVar2 != 0);
+  if (iVar3 == 1) {
+    iVar3 = this->vfunc_D8();
+    return -(uint)(iVar3 != 0);
   }
-  if (iVar2 == 2) {
+  if (iVar3 == 2) {
     STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_058E,(int *)&param_1);
     if ((param_1 != nullptr) && ((AnonShape_005EFAE0_B406B78B *)param_1[6] == this->field_058E))
     {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*param_1 + 0xac))(this->field_0018);
-      iVar2 = this->vfunc_D8();
-      return -(uint)(iVar2 != 0);
+      iVar3 = this->vfunc_D8();
+      return -(uint)(iVar3 != 0);
     }
-    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2f2d,0,0,"%s",
-                               "STBoatC::BackLoadObj LOADOBJ_WAITOBJ");
-    if (iVar2 != 0) {
+    local_EAX_171 =
+         ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2f2d,0,0,"%s",
+                            "STBoatC::BackLoadObj LOADOBJ_WAITOBJ");
+    if (local_EAX_171 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return -1;
   }
-  if (iVar2 != 3) {
+  if (iVar3 != 3) {
     return 2;
   }
-  iVar2 = this->field_059A;
-  if (((iVar2 != 0) && (iVar2 != 1)) && (iVar2 != 2)) {
-    if ((iVar2 != 3) && (iVar2 != 4)) {
+  iVar3 = this->field_059A;
+  if (((iVar3 != 0) && (iVar3 != 1)) && (iVar3 != 2)) {
+    if ((iVar3 != 3) && (iVar3 != 4)) {
       iVar2 = LoadObj(this,(AnonShape_005EFAE0_B406B78B *)0x2);
       return iVar2;
     }
     this->field_059A = 5;
-    iVar2 = this->vfunc_D8();
-    return (-(uint)(iVar2 != 0) & 0xfffffffd) + 2;
+    iVar3 = this->vfunc_D8();
+    return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
   }
   Library::Ourlib::ST3DSMAP::SprRstLev(this->field_0211,this->field_01ED);
-  iVar2 = this->vfunc_D8();
-  return -(uint)(iVar2 != 0);
+  iVar3 = this->vfunc_D8();
+  return -(uint)(iVar3 != 0);
 }
 

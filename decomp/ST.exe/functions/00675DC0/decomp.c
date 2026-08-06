@@ -39,8 +39,7 @@ LAB_00675dfe:
         uVar5 = uVar6 & 0xffff;
       } while (uVar5 < param_2->count);
     }
-    STAllPlayersC::AddObjsToGroup
-              (g_allPlayers_007FA174,(char)param_1,0,&param_2->flags,nullptr);
+    STAllPlayersC::AddObjsToGroup(g_allPlayers_007FA174,(char)param_1,0,param_2,nullptr);
   }
   return;
 }

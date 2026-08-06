@@ -18,9 +18,11 @@ STAllPlayersC::GetGObjFromBox
   int *piVar1;
   int *piVar3;
   int iVar4;
-  DArrayTy *pDVar5;
+  DArrayTy *pDVar4;
   int iVar6;
+  int iVar5;
   int iVar7;
+  int iVar8;
   InternalExceptionFrame local_70;
   int local_2c;
   int local_28;
@@ -57,26 +59,26 @@ STAllPlayersC::GetGObjFromBox
   if (local_8 < 0) {
     local_8 = 0;
   }
-  iVar4 = g_worldGrid.sizeX + -1;
-  if (iVar4 < local_14) {
-    local_14 = iVar4;
+  iVar5 = g_worldGrid.sizeX + -1;
+  if (iVar5 < local_14) {
+    local_14 = iVar5;
   }
   if (local_c < 0) {
     local_c = 0;
   }
-  iVar4 = g_worldGrid.sizeY + -1;
-  if (iVar4 < local_10) {
-    local_10 = iVar4;
+  iVar5 = g_worldGrid.sizeY + -1;
+  if (iVar5 < local_10) {
+    local_10 = iVar5;
   }
   if (local_18 < 0) {
     local_18 = 0;
   }
-  iVar6 = local_18;
-  iVar4 = g_worldGrid.sizeZ + -1;
-  if (iVar4 < local_1c) {
-    local_1c = iVar4;
+  iVar7 = local_18;
+  iVar5 = g_worldGrid.sizeZ + -1;
+  if (iVar5 < local_1c) {
+    local_1c = iVar5;
   }
-  iVar4 = local_1c;
+  iVar5 = local_1c;
   if ((((g_worldGrid.sizeX < local_8) || (g_worldGrid.sizeY < local_c)) ||
       (g_worldGrid.sizeZ < local_18)) ||
      (((local_14 < local_8 || (local_10 < local_c)) || (local_1c < local_18)))) {
@@ -92,12 +94,12 @@ STAllPlayersC::GetGObjFromBox
     }
   }
   else if (*param_8 == 0) {
-    pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,7,2,5);
-    *param_8 = (int)pDVar5;
+    pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,7,2,5);
+    *param_8 = (int)pDVar4;
   }
   if ((param_9 != nullptr) && (*param_9 == 0)) {
-    pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,7,2,5);
-    *param_9 = (int)pDVar5;
+    pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,7,2,5);
+    *param_9 = (int)pDVar4;
   }
   if (param_10 != nullptr) {
     *param_10 = 0;
@@ -105,28 +107,28 @@ STAllPlayersC::GetGObjFromBox
   if (param_11 != nullptr) {
     *param_11 = 0;
   }
-  iVar7 = g_worldGrid.sizeX * local_c + local_8 + (iVar6 + -1) * (int)g_worldGrid.planeStride;
-  if (iVar6 <= iVar4) {
-    local_24 = (iVar4 - iVar6) + 1;
-    iVar4 = local_c;
+  iVar8 = g_worldGrid.sizeX * local_c + local_8 + (iVar7 + -1) * (int)g_worldGrid.planeStride;
+  if (iVar7 <= iVar5) {
+    local_24 = (iVar5 - iVar7) + 1;
+    iVar5 = local_c;
     do {
-      iVar7 = iVar7 + g_worldGrid.planeStride;
-      local_2c = iVar7 - g_worldGrid.sizeX;
-      if (iVar4 <= local_10) {
-        local_20 = (local_10 - iVar4) + 1;
-        local_28 = iVar7;
+      iVar8 = iVar8 + g_worldGrid.planeStride;
+      local_2c = iVar8 - g_worldGrid.sizeX;
+      if (iVar5 <= local_10) {
+        local_20 = (local_10 - iVar5) + 1;
+        local_28 = iVar8;
         do {
           local_2c = local_2c + g_worldGrid.sizeX;
           if (local_8 <= local_14) {
-            iVar6 = (local_14 - local_8) + 1;
-            iVar4 = local_2c * 8 + -8;
+            iVar7 = (local_14 - local_8) + 1;
+            iVar5 = local_2c * 8 + -8;
             do {
-              piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar4);
+              piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar5);
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               if (((piVar1 != nullptr) && (piVar1[9] == (int)param_1)) &&
-                 (iVar7 = (**(code **)(*piVar1 + 0xf8))(), iVar7 == 1)) {
-                iVar7 = piVar1[8];
-                if (iVar7 == 0x14) {
+                 (iVar8 = (**(code **)(*piVar1 + 0xf8))(), iVar8 == 1)) {
+                iVar8 = piVar1[8];
+                if (iVar8 == 0x14) {
                   piVar3 = param_10;
                   if (param_8 != nullptr) {
                     Library::DKW::TBL::DArrayAppend
@@ -134,7 +136,7 @@ STAllPlayersC::GetGObjFromBox
                   }
                 }
                 else {
-                  if ((iVar7 != 1000) && (iVar7 != 0x3e9)) goto LAB_0042b469;
+                  if ((iVar8 != 1000) && (iVar8 != 0x3e9)) goto LAB_0042b469;
                   piVar3 = param_11;
                   if (param_9 != nullptr) {
                     Library::DKW::TBL::DArrayAppend
@@ -146,13 +148,13 @@ STAllPlayersC::GetGObjFromBox
                 }
               }
 LAB_0042b469:
-              iVar6 = iVar6 + -1;
-              iVar7 = local_28;
-              iVar4 = iVar4 + 8;
-            } while (iVar6 != 0);
+              iVar7 = iVar7 + -1;
+              iVar8 = local_28;
+              iVar5 = iVar5 + 8;
+            } while (iVar7 != 0);
           }
           local_20 = local_20 + -1;
-          iVar4 = local_c;
+          iVar5 = local_c;
         } while (local_20 != 0);
       }
       local_24 = local_24 + -1;

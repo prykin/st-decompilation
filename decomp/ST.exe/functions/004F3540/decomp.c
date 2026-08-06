@@ -25,8 +25,9 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,c
   int *errorCode;
   undefined4 uVar4;
   LPSTR text_00;
-  int iVar5;
   int iVar6;
+  int iVar5;
+  int iVar7;
   InternalExceptionFrame local_54;
   int *local_10;
   ushort *local_c;
@@ -51,14 +52,14 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,c
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar6 = 1;
+  iVar7 = 1;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar4 = (*(code *)param_5)(param_2);
   text_00 = FUN_006f2c00(text,1,uVar4);
-  local_c = cMf32::RecGet(g_cMf32_00806790,param_3,text_00,errorCode,iVar6);
+  local_c = cMf32::RecGet(g_cMf32_00806790,param_3,text_00,errorCode,iVar7);
   pCVar3 = local_8;
   uVar2 = (uint)param_1;
-  iVar6 = local_10[1];
+  iVar7 = local_10[1];
   iVar5 = DAT_00806734;
   switch(uVar2) {
   case 1:
@@ -88,10 +89,10 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,c
       break;
     }
 LAB_004f3636:
-    iVar6 = iVar6 - local_8->field_00C0;
+    iVar7 = iVar7 - local_8->field_00C0;
   }
   DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0148[uVar2 + 0xe],
-         *local_10 - (&local_8->field_003C)[uVar2],iVar6 - iVar5,param_3,(byte *)local_c);
+         *local_10 - (&local_8->field_003C)[uVar2],iVar7 - iVar5,param_3,(byte *)local_c);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
   if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
     Library::DKW::DDX::FUN_006b3640

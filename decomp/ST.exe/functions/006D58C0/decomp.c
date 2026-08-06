@@ -9,9 +9,10 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   int iVar1;
   AnonShape_006BB8B0_D6DE56CA *pAVar2;
   int iVar3;
-  undefined4 **ppuVar4;
-  byte *puVar5;
+  int iVar4;
+  undefined4 **ppuVar5;
   byte *puVar6;
+  byte *puVar7;
   undefined4 *local_58 [18];
   void *local_10;
   AnonShape_006BB8B0_D6DE56CA *local_c;
@@ -54,9 +55,9 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
     LeaveCriticalSection(local_8);
     return 0x40103;
   }
-  ppuVar4 = local_58;
-  puVar5 = (byte *)(param_2);
-  memmove(puVar5, ppuVar4, 0x48); /* compiler REP MOVS byte copy */
+  ppuVar5 = local_58;
+  puVar6 = (byte *)(param_2);
+  memmove(puVar6, ppuVar5, 0x48); /* compiler REP MOVS byte copy */
   *param_2 = DAT_007a1348;
   param_2[1] = DAT_007a134c;
   param_2[2] = DAT_007a1350;
@@ -67,6 +68,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   param_2[0xe] = DAT_007a1364;
   param_2[0x10] = 0x58;
   memset(&DAT_00856900, 0, 0x468); /* compiler bulk-zero initialization */
+  iVar4 = 0;
   DAT_00856900 = 0;
   DAT_00856904 = 0;
   _DAT_00856908 = *(undefined4 *)(iVar1 + 0x90);
@@ -119,9 +121,9 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
     param_2[5] = DAT_007a16e4;
     param_2[6] = DAT_007a16e8;
     param_2[7] = DAT_007a16ec;
-    puVar5 = (byte *)(iVar1 + 0x108);
-    puVar6 = (byte *)(&DAT_00856958);
-    memmove(puVar6, puVar5, 0x400); /* compiler REP MOVS byte copy */
+    puVar6 = (byte *)(iVar1 + 0x108);
+    puVar7 = (byte *)(&DAT_00856958);
+    memmove(puVar7, puVar6, 0x400); /* compiler REP MOVS byte copy */
     param_2[0x10] = param_2[0x10] + 0x400;
     LeaveCriticalSection(local_8);
     return 0;

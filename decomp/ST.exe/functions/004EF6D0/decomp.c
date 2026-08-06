@@ -16,8 +16,10 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
   BldBoatPanelTy *this_00;
   ushort uVar3;
   int iVar4;
-  undefined4 *puVar5;
+  int iVar5;
+  undefined4 *puVar6;
   int iVar6;
+  int iVar7;
   InternalExceptionFrame local_58;
   undefined1 local_14;
   undefined3 uStack_13;
@@ -81,20 +83,20 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
     case MESS_FSGSTY_C0A1:
     case MESS_SHARED_C0A2:
     case MESS_SHARED_C0A3:
-      iVar4 = (&this_00->field_027A)[(byte)this_00->field_0278];
-      if ((iVar4 == 0) ||
-         (iVar6 = SVar1 + this_00->field_0199, *(uint *)(iVar4 + 0xc) <= iVar6 - 0xc09fU)) {
-        puVar5 = nullptr;
+      iVar7 = (&this_00->field_027A)[(byte)this_00->field_0278];
+      if ((iVar7 == 0) ||
+         (iVar5 = SVar1 + this_00->field_0199, *(uint *)(iVar7 + 0xc) <= iVar5 - 0xc09fU)) {
+        puVar6 = nullptr;
       }
       else {
-        puVar5 = (undefined4 *)((iVar6 + -0xc09f) * *(int *)(iVar4 + 8) + *(int *)(iVar4 + 0x1c));
+        puVar6 = (undefined4 *)((iVar5 + -0xc09f) * *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0x1c));
       }
-      if ((puVar5 != nullptr) && (*(char *)(puVar5 + 2) != '\0')) {
+      if ((puVar6 != nullptr) && (*(char *)(puVar6 + 2) != '\0')) {
         sStack_f = 0;
         uStack_d = 0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        _local_14 = CONCAT31((int3)*puVar5,1);
-        local_10 = (undefined1)((uint)*puVar5 >> 0x18);
+        _local_14 = CONCAT31((int3)*puVar6,1);
+        local_10 = (undefined1)((uint)*puVar6 >> 0x18);
         local_c = 0;
         local_a = 0;
         if ((message->arg1).u32 == 0) {

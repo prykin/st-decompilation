@@ -26,7 +26,7 @@ undefined4 * CreateDefaultBossData(void)
   g_currentExceptionFrame = &local_5c;
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (errorCode == 0) {
-    local_8 = (AllocationRecord_00648620 *)thunk_FUN_00648400("Default Arbiter",1);
+    local_8 = thunk_FUN_00648400("Default Arbiter",1);
     local_10 = EventDataPack(*(AllocationRecord_0065CD10 **)&local_8->field_0x4e,&local_14);
     local_c = BossDataPack(local_8,(undefined4 *)local_10,local_14,&local_18);
     thunk_FUN_0065d0f0((int *)&local_10);

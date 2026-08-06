@@ -13,8 +13,9 @@ CPanelTy::PaintLBut(CPanelTy *this,byte param_1,AnonShape_004F3FE0_1578D6B9 *par
   uint uVar2;
   CPanelTy *pCVar3;
   int iVar4;
-  undefined4 uVar5;
+  undefined4 uVar4;
   LPSTR text;
+  int iVar5;
   int iVar6;
   InternalExceptionFrame local_58;
   CPanelTy *local_14;
@@ -28,7 +29,7 @@ CPanelTy::PaintLBut(CPanelTy *this,byte param_1,AnonShape_004F3FE0_1578D6B9 *par
   local_10 = *param_2->field_0018 - (&this->field_003C)[uVar2];
   switch(uVar2) {
   case 1:
-    iVar4 = this->field_0134;
+    iVar6 = this->field_0134;
     goto LAB_004f4057;
   default:
     if (this->field_0130 != 0) {
@@ -49,9 +50,9 @@ CPanelTy::PaintLBut(CPanelTy *this,byte param_1,AnonShape_004F3FE0_1578D6B9 *par
     }
     break;
   case 7:
-    iVar4 = this->field_0138;
+    iVar6 = this->field_0138;
 LAB_004f4057:
-    if (iVar4 != 0) {
+    if (iVar6 != 0) {
       local_c = local_c - (&this->field_0094)[uVar2];
       goto cf_common_join_004F4070;
     }
@@ -66,8 +67,8 @@ cf_common_join_004F4070:
     iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar4 == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar5 = (*(code *)param_6)(param_2);
-      text = FUN_006f2c00(param_4,1,uVar5);
+      uVar4 = (*(code *)param_6)(param_2);
+      text = FUN_006f2c00(param_4,1,uVar4);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text,nullptr,1);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
@@ -89,9 +90,9 @@ cf_common_join_004F4070:
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x235,0,iVar4,"%s",
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x235,0,iVar4,"%s",
                                "CPanelTy::PaintLBut");
-    if (iVar6 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x235);

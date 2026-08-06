@@ -20,14 +20,15 @@ byte * __cdecl st::fn_006A2ED0(short *param_1)
   ushort *puVar3;
   byte *pbVar4;
   byte *puVar5;
-  int iVar6;
   int iVar7;
-  int *piVar9;
-  int iVar10;
-  undefined1 *puVar11;
-  uint uVar12;
-  undefined4 *puVar13;
-  int iVar14;
+  int iVar6;
+  int iVar8;
+  int *piVar10;
+  int iVar11;
+  undefined1 *puVar12;
+  uint uVar13;
+  undefined4 *puVar14;
+  int iVar15;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   cMf32 *in_stack_00000008;
   int local_18;
@@ -58,9 +59,9 @@ LAB_006a2f2f:
   *(undefined2 *)((int)&local_14[0x15].field_000B + 2) = 0xeae8;
   iVar6 = 0;
   if (0 < STField<int>(param_1,0x455)) {
-    piVar9 = (int *)((int)param_1 + 0x459);
+    piVar10 = (int *)((int)param_1 + 0x459);
     do {
-      puVar5 = (byte *)*piVar9;
+      puVar5 = (byte *)*piVar10;
       if ((puVar5 != nullptr) && (*(short *)(puVar5 + 2) != 0)) {
         *puVar5 = *(undefined4 *)((int)&local_14[6].field_000B + 3);
         *(undefined4 **)((int)&local_14[6].field_000B + 3) = puVar5;
@@ -68,7 +69,7 @@ LAB_006a2f2f:
         *piVar1 = *piVar1 + 1;
       }
       iVar6 = iVar6 + 1;
-      piVar9 = piVar9 + 1;
+      piVar10 = piVar10 + 1;
     } while (iVar6 < STField<int>(param_1,0x455));
   }
   st::fn_006DD610
@@ -77,85 +78,85 @@ LAB_006a2f2f:
   st::fn_006DDBE0((ST3DSMAPContext *)local_14);
   st::fn_006DDD50((ST3DSMAPContext *)local_14);
   local_8 = st::fn_006AAC10(0x4b79);
-  iVar10 = 0;
+  iVar11 = 0;
   iVar6 = 0;
   do {
     puVar5 = (byte *)
-             (*(int *)((int)&local_14->field_0027 + 1) * iVar10 +
+             (*(int *)((int)&local_14->field_0027 + 1) * iVar11 +
              *(int *)((int)&local_14->field_000B + 1));
-    puVar13 = (undefined4 *)((int)local_8 + iVar6);
-    for (iVar7 = 0x22; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar13 = *puVar5;
+    puVar14 = (undefined4 *)((int)local_8 + iVar6);
+    for (iVar8 = 0x22; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *puVar14 = *puVar5;
       puVar5 = (byte *)(puVar5 + 1);
-      puVar13 = puVar13 + 1;
+      puVar14 = puVar14 + 1;
     }
-    *(undefined2 *)puVar13 = *(undefined2 *)puVar5;
+    *(undefined2 *)puVar14 = *(undefined2 *)puVar5;
     iVar6 = iVar6 + 0x8b;
-    iVar10 = iVar10 + 1;
-    STField<undefined1>(puVar13,2) = STField<undefined1>(puVar5,2);
+    iVar11 = iVar11 + 1;
+    STField<undefined1>(puVar14,2) = STField<undefined1>(puVar5,2);
   } while (iVar6 < 0x4b79);
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   puVar3 = st::fn_006F1CE0(in_stack_00000008,1,PTR_s_PALETTE_0079d848,nullptr,1);
   pbVar4 = (byte *)st::fn_006B50C0(0x8b,0x8b,8,0x100,(undefined4 *)(puVar3 + 0x14),1);
-  uVar12 = *(uint *)(pbVar4 + 0x14);
-  if (uVar12 == 0) {
-    uVar12 = ((uint)*(ushort *)(pbVar4 + 0xe) * *(int *)(pbVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+  uVar13 = *(uint *)(pbVar4 + 0x14);
+  if (uVar13 == 0) {
+    uVar13 = ((uint)*(ushort *)(pbVar4 + 0xe) * *(int *)(pbVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
              *(int *)(pbVar4 + 8);
   }
   puVar5 = (byte *)st::fn_006B4FA0((int *)pbVar4);
-  memset(puVar5, 0, uVar12); /* compiler bulk-zero initialization */
+  memset(puVar5, 0, uVar13); /* compiler bulk-zero initialization */
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = local_8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   in_stack_00000008 = (cMf32 *)0x45;
   iVar7 = st::fn_006B4FA0((int *)pbVar4);
   local_18 = 0x46;
-  iVar7 = iVar7 + ((uint)*(ushort *)(pbVar4 + 0xe) * *(int *)(pbVar4 + 4) + 0x1f >> 3 & 0x1ffffffc)
+  iVar8 = iVar7 + ((uint)*(ushort *)(pbVar4 + 0xe) * *(int *)(pbVar4 + 4) + 0x1f >> 3 & 0x1ffffffc)
                   * (*(int *)(pbVar4 + 8) + -1);
   iVar6 = 0x45;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  iVar10 = (int)in_stack_00000008;
+  iVar11 = (int)in_stack_00000008;
   do {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    in_stack_00000008 = (cMf32 *)iVar10;
-    iVar14 = iVar6;
+    in_stack_00000008 = (cMf32 *)iVar11;
+    iVar15 = iVar6;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    if (iVar14 <= (int)in_stack_00000008) {
+    if (iVar15 <= (int)in_stack_00000008) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      iVar6 = ((int)in_stack_00000008 - iVar14) + 1;
-      puVar11 = (undefined1 *)(iVar7 + iVar14);
+      iVar6 = ((int)in_stack_00000008 - iVar15) + 1;
+      puVar12 = (undefined1 *)(iVar8 + iVar15);
       do {
         iVar6 = iVar6 + -1;
-        *puVar11 = (puVar11 + 1)[(int)param_1 + (-1 - iVar7)];
-        puVar11 = puVar11 + 1;
+        *puVar12 = (puVar12 + 1)[(int)param_1 + (-1 - iVar8)];
+        puVar12 = puVar12 + 1;
       } while (iVar6 != 0);
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (short *)((int)param_1 + 0x8b);
-    iVar7 = iVar7 - ((uint)*(ushort *)(pbVar4 + 0xe) * *(int *)(pbVar4 + 4) + 0x1f >> 3 & 0x1ffffffc
+    iVar8 = iVar8 - ((uint)*(ushort *)(pbVar4 + 0xe) * *(int *)(pbVar4 + 4) + 0x1f >> 3 & 0x1ffffffc
                     );
     local_18 = local_18 + -1;
-    iVar6 = iVar14 + -1;
+    iVar6 = iVar15 + -1;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    iVar10 = (int)in_stack_00000008 + 1;
+    iVar11 = (int)in_stack_00000008 + 1;
   } while (local_18 != 0);
   local_18 = 0x45;
   do {
-    iVar14 = iVar14 + 1;
+    iVar15 = iVar15 + 1;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     in_stack_00000008 = (cMf32 *)((int)in_stack_00000008 + -1);
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    if (iVar14 <= (int)in_stack_00000008) {
+    if (iVar15 <= (int)in_stack_00000008) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      iVar6 = ((int)in_stack_00000008 - iVar14) + 1;
-      puVar11 = (undefined1 *)(iVar7 + iVar14);
+      iVar6 = ((int)in_stack_00000008 - iVar15) + 1;
+      puVar12 = (undefined1 *)(iVar8 + iVar15);
       do {
         iVar6 = iVar6 + -1;
-        *puVar11 = puVar11[(int)param_1 - iVar7];
-        puVar11 = puVar11 + 1;
+        *puVar12 = puVar12[(int)param_1 - iVar8];
+        puVar12 = puVar12 + 1;
       } while (iVar6 != 0);
     }
-    iVar7 = iVar7 - ((uint)*(ushort *)(pbVar4 + 0xe) * *(int *)(pbVar4 + 4) + 0x1f >> 3 & 0x1ffffffc
+    iVar8 = iVar8 - ((uint)*(ushort *)(pbVar4 + 0xe) * *(int *)(pbVar4 + 4) + 0x1f >> 3 & 0x1ffffffc
                     );
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (short *)((int)param_1 + 0x8b);

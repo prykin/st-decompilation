@@ -70,7 +70,7 @@ int FUN_005f3940(int param_1,int param_2,int param_3)
     if (param_3 < 0) {
       return iVar3;
     }
-    if (pVVar2->field_0030 <= param_3) {
+    if ((int)pVVar2->field_0030 <= param_3) {
       return iVar3;
     }
     local_8 = g_centeredOffsets5[param_2] + local_8;

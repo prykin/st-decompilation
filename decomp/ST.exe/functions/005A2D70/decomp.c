@@ -16,10 +16,12 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
 
 {
   undefined1 *puVar1;
+  int iVar2;
+  int iVar4;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar6;
   int iVar5;
   InternalExceptionFrame local_7c;
   undefined1 local_38 [45];
@@ -35,11 +37,11 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
     this_00 = g_cursorClass_00802A30;
     if (iVar3 == 0) {
       if (g_cursorClass_00802A30 != nullptr) {
-        iVar3 = g_cursorClass_00802A30->field_00C9;
-        iVar5 = g_cursorClass_00802A30->field_00C5;
+        iVar2 = g_cursorClass_00802A30->field_00C9;
+        iVar4 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
         this_00->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(this_00,CASE_0,iVar5,iVar3);
+        CursorClassTy::SetGCType(this_00,CASE_0,iVar4,iVar2);
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
         this_00->field_00D2 = 0;
         this_00->field_04DF = -1;
@@ -57,12 +59,12 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
       FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)puVar1);
       this_01->field_002D = 0x20;
       if ((this_01->field_1EA6->count == 0) || (this_01->field_1A6B == 0)) {
-        uVar4 = 0;
+        uVar6 = 0;
       }
       else {
-        uVar4 = 1;
+        uVar6 = 1;
       }
-      *(undefined4 *)&this_01->field_0x31 = uVar4;
+      *(undefined4 *)&this_01->field_0x31 = uVar6;
       FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)puVar1);
       this_01->field_002D = 0x20;
       *(undefined4 *)&this_01->field_0x31 = 0;

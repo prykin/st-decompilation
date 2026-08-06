@@ -1,7 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __cdecl FUN_004f4640(int param_1,undefined *param_2,BYTE param_3)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004F5690 -> 004F4640 @ 004F57B1; data at 0080679C */
+
+void __cdecl FUN_004f4640(ushort *param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
@@ -160,7 +163,7 @@ void __cdecl FUN_004f4640(int param_1,undefined *param_2,BYTE param_3)
   local_6c[0x39] = 0x7e;
   local_6c[0x3a] = 0x2a;
   ccFntTy::operator_new
-            (0x19d,&local_a8,nullptr,local_6c,param_1,local_30,6,7,1,0,0x20022c,param_2);
+            (0x19d,&local_a8,nullptr,local_6c,(int)param_1,local_30,6,7,1,0,0x20022c,param_2);
   return;
 }
 

@@ -15,11 +15,12 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
   uint uVar1;
   STGameObjC *this_00;
   int iVar3;
+  int iVar4;
   uint index;
-  uint uVar4;
+  uint uVar5;
   undefined1 local_8 [4];
 
-  uVar4 = 0;
+  uVar5 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar1 = *(uint *)(this->field_0029 + 0xc);
   if (uVar1 != 0) {
@@ -39,13 +40,13 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x1743);
         }
-        iVar3 = (*this_00->vtable->vfunc_2C)();
-        if ((iVar3 == 0x16) || (iVar3 = (*this_00->vtable->vfunc_2C)(), iVar3 == 0x25)) {
+        iVar4 = (*this_00->vtable->vfunc_2C)();
+        if ((iVar4 == 0x16) || (iVar4 = (*this_00->vtable->vfunc_2C)(), iVar4 == 0x25)) {
           thunk_FUN_00494160(this_00,param_1);
         }
       }
-      uVar4 = uVar4 + 1;
-      index = uVar4 & 0xffff;
+      uVar5 = uVar5 + 1;
+      index = uVar5 & 0xffff;
     } while (index < uVar1);
   }
   return;

@@ -13,6 +13,8 @@ STPlaySystemC::CreateGameObject
 {
   STPlaySystemC *this_00;
   int iVar2;
+  int iVar4;
+  int local_EAX_203;
   int iVar3;
   InternalExceptionFrame local_50;
   STPlaySystemC *local_c;
@@ -24,25 +26,26 @@ STPlaySystemC::CreateGameObject
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 == 0) {
-    iVar2 = thunk_FUN_0054cbb0(param_1,(undefined4 *)local_8);
-    if (iVar2 != 0) {
+    iVar4 = thunk_FUN_0054cbb0(param_1,(undefined4 *)local_8);
+    if (iVar4 != 0) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xef);
     }
-    iVar2 = this_00->vfunc_08(local_8[0],(undefined2)param_2,(undefined2)param_3,
+    iVar4 = this_00->vfunc_08(local_8[0],(undefined2)param_2,(undefined2)param_3,
                        (undefined2)param_4,(undefined2)param_5);
-    if (iVar2 != 0) {
+    if (iVar4 != 0) {
       RaiseInternalException
-                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf0);
+                (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf0);
     }
     g_currentExceptionFrame = local_50.previous;
-    return iVar2;
+    return iVar4;
   }
   g_currentExceptionFrame = local_50.previous;
   if (iVar2 == -4) {
-    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0xf3,0,0,
-                               "Not found system type for game type %d",param_1);
-    if (iVar3 != 0) {
+    local_EAX_203 =
+         ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0xf3,0,0,
+                            "Not found system type for game type %d",param_1);
+    if (local_EAX_203 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }

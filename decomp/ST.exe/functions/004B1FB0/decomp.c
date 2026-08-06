@@ -11,9 +11,10 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
 
 {
   int iVar1;
+  int iVar4;
   Global_sub_004B1FB0_param_1Enum GVar2;
   int iVar3;
-  int iVar4;
+  int iVar5;
   STWorldObject *this;
   int local_1c;
   STFishC *local_18;
@@ -37,18 +38,18 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
       *param_2 = 1;
     }
     iVar1 = param_7 + param_5;
-    iVar4 = 0;
+    iVar5 = 0;
     for (; param_5 < iVar1; param_5 = param_5 + 1) {
       if ((-1 < param_5) && (param_5 < g_worldGrid.sizeY)) {
         for (iVar3 = param_4; iVar3 < param_6 + param_4; iVar3 = iVar3 + 1) {
           if ((-1 < iVar3) && (iVar3 < g_worldGrid.sizeX)) {
-            iVar4 = iVar4 + (uint)*(byte *)(g_worldGrid.sizeX * param_5 + DAT_007fa168 + iVar3);
+            iVar5 = iVar5 + (uint)*(byte *)(g_worldGrid.sizeX * param_5 + DAT_007fa168 + iVar3);
           }
         }
       }
     }
     if (param_3 != nullptr) {
-      *param_3 = iVar4;
+      *param_3 = iVar5;
       return 0;
     }
   }
@@ -87,12 +88,12 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
           local_10 = 0x4f;
         }
         if (((this == nullptr) || (this->value_20 != 1000)) ||
-           (iVar4 = this->GetObjectTypeId(), iVar4 != local_10)) {
+           (iVar5 = this->GetObjectTypeId(), iVar5 != local_10)) {
           local_14 = local_14 + *(int *)&local_18->field_0x259;
         }
         else {
-          iVar4 = (*this->vtable[2].slots_00_28[10])(0);
-          local_14 = local_14 + iVar4;
+          iVar5 = (*this->vtable[2].slots_00_28[10])(0);
+          local_14 = local_14 + iVar5;
         }
       }
       iVar4 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);

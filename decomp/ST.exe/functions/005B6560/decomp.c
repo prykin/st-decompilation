@@ -20,7 +20,8 @@ MMMObjTy::PaintSlBut
 {
   int iVar2;
   int iVar3;
-  uint uVar4;
+  int iVar4;
+  uint uVar5;
   InternalExceptionFrame local_4c;
   MMMObjTy *local_8;
 
@@ -45,15 +46,15 @@ MMMObjTy::PaintSlBut
     goto switchD_005b65a4_default;
   case 1:
   case 3:
-    iVar2 = (uint)param_3 * 3;
+    iVar4 = (uint)param_3 * 3;
     break;
   case 2:
-    iVar2 = (uint)param_3 * 3 + 1;
+    iVar4 = (uint)param_3 * 3 + 1;
     break;
   default:
     goto switchD_005b65a4_default;
   }
-  param_1->field_0008 = iVar2;
+  param_1->field_0008 = iVar4;
 switchD_005b65a4_default:
   if (param_1->field_0004 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b3730
@@ -62,7 +63,7 @@ switchD_005b65a4_default:
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(short *)(param_2 + 0x14) == 2) {
-    uVar4 = 10;
+    uVar5 = 10;
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -70,9 +71,9 @@ switchD_005b65a4_default:
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    uVar4 = 9;
+    uVar5 = 9;
   }
-  thunk_FUN_005b6730(local_8,uVar4,'\x01',-1);
+  thunk_FUN_005b6730(local_8,uVar5,'\x01',-1);
   g_currentExceptionFrame = local_4c.previous;
   return;
 }

@@ -8,13 +8,15 @@
 void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
 
 {
+  int iVar1;
   CursorClassTy *this_00;
   MAdvTy *this_01;
   int iVar2;
   LPSTR text;
-  undefined4 uVar3;
+  ushort *puVar3;
   int iVar4;
-  byte bVar6;
+  byte bVar5;
+  int iVar6;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
 
@@ -32,11 +34,11 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
       }
     }
     this_01 = local_8;
-    iVar2 = 1;
-    bVar6 = 0;
+    iVar6 = 1;
+    bVar5 = 0;
     text = FUN_006f2c00(&DAT_007cbc5c,1,(uint)(local_8->field_005D != '\0'));
-    uVar3 = FUN_0070a9f0(g_cMf32_00806780,text,bVar6,iVar2);
-    this_01->field_005E = uVar3;
+    puVar3 = FUN_0070a9f0(g_cMf32_00806780,text,bVar5,iVar6);
+    this_01->field_005E = puVar3;
     memset(&this_01->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     this_01->field_002C = this_01->field_0008;
     this_01->field_0028 = 0x13;
@@ -48,14 +50,14 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
     DarkScreen(g_dDXContext_0080759C,1,0);
     PaintMAdv(this_01);
     thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
-                       (ushort *)this_01->field_005E,10,2);
+                       this_01->field_005E,10,2);
     this_00 = g_cursorClass_00802A30;
     if (g_cursorClass_00802A30 != nullptr) {
-      iVar2 = g_cursorClass_00802A30->field_00C9;
-      iVar4 = g_cursorClass_00802A30->field_00C5;
+      iVar6 = g_cursorClass_00802A30->field_00C9;
+      iVar1 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       this_00->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(this_00,CASE_0,iVar4,iVar2);
+      CursorClassTy::SetGCType(this_00,CASE_0,iVar1,iVar6);
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
       this_00->field_00D2 = 0;
       this_00->field_04DF = -1;

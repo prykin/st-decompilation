@@ -11,6 +11,7 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
 {
   MTestTy *pMVar2;
   int iVar3;
+  int iVar5;
   int iVar4;
   InternalExceptionFrame local_4c;
   MTestTy *local_8;
@@ -23,15 +24,15 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
   if (iVar3 == 0) {
     if (local_8->field_00B3 == '\x01') {
       if (g_holo_00811778 != nullptr) {
-        iVar3 = HoloTy::NextFas(g_holo_00811778);
-        if (iVar3 == 0) {
+        iVar5 = HoloTy::NextFas(g_holo_00811778);
+        if (iVar5 == 0) {
           pMVar2->field_00B3 = 4;
         }
       }
     }
     else if ((local_8->field_00B3 == '\x05') && (g_holo_00811778 != nullptr)) {
-      iVar3 = HoloTy::NextFas(g_holo_00811778);
-      if (iVar3 == 0) {
+      iVar5 = HoloTy::NextFas(g_holo_00811778);
+      if (iVar5 == 0) {
         pMVar2->field_00B3 = 0;
         if (-1 < (int)*(uint *)&g_holo_00811778->field_0x3) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,*(uint *)&g_holo_00811778->field_0x3);

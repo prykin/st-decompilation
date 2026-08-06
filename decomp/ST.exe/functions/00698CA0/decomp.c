@@ -38,13 +38,13 @@ CGenerate::sub_00698CA0
         *param_6 = 1;
       }
       *param_5 = (int)(short)iVar1;
-      iVar1 = (int)(short)iVar1 - uVar3;
-      *param_4 = iVar1;
+      iVar2 = (int)(short)iVar1 - uVar3;
+      *param_4 = iVar2;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_3 == *param_5) {
         return 4;
       }
-      return (param_3 != iVar1) + 1;
+      return (param_3 != iVar2) + 1;
     }
   }
   return 0;

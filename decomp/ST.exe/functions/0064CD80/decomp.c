@@ -10,17 +10,20 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
 {
   AiEventClassTy *pAVar2;
   int iVar3;
+  DArrayTy *local_EAX_96;
+  byte *puVar3;
   DArrayTy *pDVar4;
-  byte *puVar5;
-  uint *puVar6;
-  undefined4 uVar7;
-  int iVar8;
-  int *piVar10;
-  uint uVar11;
-  byte *puVar12;
-  void *pvVar13;
-  int *piVar14;
-  bool bVar15;
+  uint *puVar4;
+  DArrayTy *pDVar5;
+  DArrayTy *local_EAX_393;
+  int iVar6;
+  int iVar7;
+  int *piVar9;
+  uint uVar10;
+  byte *puVar11;
+  void *pvVar12;
+  int *piVar13;
+  bool bVar14;
   InternalExceptionFrame local_4c;
   AiEventClassTy *local_8;
 
@@ -31,87 +34,87 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
   pAVar2 = local_8;
   if (iVar3 == 0) {
     if (local_8 == nullptr) {
-      piVar14 = nullptr;
+      piVar13 = nullptr;
     }
     else {
-      piVar14 = (int *)&local_8->field_008C;
+      piVar13 = (int *)&local_8->field_008C;
     }
-    piVar10 = param_1;
-    memmove(piVar14, piVar10, 0x49f); /* compiler REP MOVS byte copy */
+    piVar9 = param_1;
+    memmove(piVar13, piVar9, 0x49f); /* compiler REP MOVS byte copy */
     local_8->field_0091 = 1;
-    pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,5,5);
-    pAVar2->field_05B3 = pDVar4;
-    uVar11 = 0;
+    local_EAX_96 = Library::DKW::TBL::SArrayCreate(nullptr,5,5);
+    pAVar2->field_05B3 = local_EAX_96;
+    uVar10 = 0;
     do {
-      Library::DKW::TBL::FUN_006b6020(pAVar2->field_05B3,uVar11,&DAT_008016a0);
-      uVar11 = uVar11 + 1;
-    } while ((int)uVar11 < 4);
+      Library::DKW::TBL::FUN_006b6020(pAVar2->field_05B3,uVar10,&DAT_008016a0);
+      uVar10 = uVar10 + 1;
+    } while ((int)uVar10 < 4);
     if (pAVar2->field_008C == '\0') {
       pAVar2->field_0088 = DAT_00808754;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar3 = (*(code *)pAVar2->field_0000->field_0018)();
-      uVar11 = iVar3 * 2 + 2;
-      pAVar2->field_00D2 = uVar11;
-      if (0x18 < uVar11) {
+      iVar7 = (*(code *)pAVar2->field_0000->field_0018)();
+      uVar10 = iVar7 * 2 + 2;
+      pAVar2->field_00D2 = uVar10;
+      if (0x18 < uVar10) {
         pAVar2->field_00D2 = 3;
       }
     }
     else {
       pAVar2->field_0088 = pAVar2->field_00DA;
     }
-    iVar3 = pAVar2->field_0506;
-    piVar14 = &pAVar2->field_04FA;
-    if (piVar14 == nullptr) {
-      uVar11 = 0;
+    iVar7 = pAVar2->field_0506;
+    piVar13 = &pAVar2->field_04FA;
+    if (piVar13 == nullptr) {
+      uVar10 = 0;
     }
     else {
-      uVar11 = *piVar14 * 5;
+      uVar10 = *piVar13 * 5;
     }
-    puVar5 = (byte *)(Library::DKW::LIB::MemAllocClear(uVar11));
-    pAVar2->field_0502 = puVar5;
-    if (piVar14 == nullptr) {
-      uVar11 = 0;
+    puVar3 = (byte *)(Library::DKW::LIB::MemAllocClear(uVar10));
+    pAVar2->field_0502 = puVar3;
+    if (piVar13 == nullptr) {
+      uVar10 = 0;
     }
     else {
-      uVar11 = *piVar14 * 5;
+      uVar10 = *piVar13 * 5;
     }
-    puVar12 = (byte *)(iVar3 + 0x49e + (int)param_1);
-    memmove(puVar5, puVar12, uVar11); /* compiler REP MOVS byte copy */
-    pDVar4 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(pAVar2->field_04F2 + 0x49e + (int)param_1));
+    puVar11 = (byte *)(iVar7 + 0x49e + (int)param_1);
+    memmove(puVar3, puVar11, uVar10); /* compiler REP MOVS byte copy */
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(pAVar2->field_04F2 + 0x49e + (int)param_1));
     pAVar2->field_04EE = pDVar4;
-    puVar6 = Library::DKW::TBL::FUN_006c8680
+    puVar4 = Library::DKW::TBL::FUN_006c8680
                        (nullptr,(uint *)(pAVar2->field_04E6 + 0x49e + (int)param_1));
-    pAVar2->field_04E2 = puVar6;
-    pDVar4 = pAVar2->field_04EE;
-    uVar11 = 0;
-    if (0 < (int)pDVar4->count) {
-      bVar15 = pDVar4->count != 0;
+    pAVar2->field_04E2 = puVar4;
+    pDVar5 = pAVar2->field_04EE;
+    uVar10 = 0;
+    if (0 < (int)pDVar5->count) {
+      bVar14 = pDVar5->count != 0;
       do {
-        if (bVar15) {
-          pvVar13 = DArrayAt<void>(pDVar4, uVar11);
+        if (bVar14) {
+          pvVar12 = DArrayAt<void>(pDVar5, uVar10);
         }
         else {
-          pvVar13 = nullptr;
+          pvVar12 = nullptr;
         }
-        if (STField<int>(pvVar13,0xf) != 0) {
-          uVar7 = FUN_006b0060(nullptr,
-                               (uint *)(STField<int>(pvVar13,0x13) + 0x49e + (int)param_1));
-          STField<undefined4>(pvVar13,0xf) = uVar7;
+        if (STField<int>(pvVar12,0xf) != 0) {
+          local_EAX_393 =
+               FUN_006b0060(nullptr,
+                            (uint *)(STField<int>(pvVar12,0x13) + 0x49e + (int)param_1));
+          STField<DArrayTy *>(pvVar12,0xf) = local_EAX_393;
         }
-        pDVar4 = pAVar2->field_04EE;
-        uVar11 = uVar11 + 1;
-        bVar15 = uVar11 < pDVar4->count;
-      } while ((int)uVar11 < (int)pDVar4->count);
+        pDVar5 = pAVar2->field_04EE;
+        uVar10 = uVar10 + 1;
+        bVar14 = uVar10 < pDVar5->count;
+      } while ((int)uVar10 < (int)pDVar5->count);
     }
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
   FUN_00402e14(local_8);
-  iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x50,0,iVar3,"%s",
+  iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x50,0,iVar3,"%s",
                              "AiEventClassTy::InitData");
-  if (iVar8 != 0) {
+  if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0x51);

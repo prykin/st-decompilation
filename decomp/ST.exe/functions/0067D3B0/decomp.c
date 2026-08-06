@@ -27,15 +27,15 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
   byte *pbVar5;
   AllocationRecord_0067D3B0 *pAVar6;
   DArrayTy *pDVar7;
+  int iVar12;
   uint uVar8;
   undefined1 *puVar9;
   int iVar10;
   byte *puVar11;
-  int iVar12;
-  uint *puVar13;
-  AllocationRecord_0067D3B0 *pAVar14;
-  uint *puVar15;
-  void **ppvVar16;
+  int iVar13;
+  uint *puVar14;
+  AllocationRecord_0067D3B0 *pAVar15;
+  uint *puVar16;
   uint uVar17;
   int *piVar18;
   AllocationRecord_0067D3B0 *pAVar19;
@@ -72,9 +72,9 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
           else {
             piVar18 = nullptr;
           }
-          iVar12 = *piVar18;
-          if ((iVar12 != 0) && (*(char *)(iVar12 + 0x18) == '\x02')) {
-            *(int *)((int)local_c + uVar17 * 4) = iVar12;
+          iVar13 = *piVar18;
+          if ((iVar13 != 0) && (*(char *)(iVar13 + 0x18) == '\x02')) {
+            *(int *)((int)local_c + uVar17 * 4) = iVar13;
             pbVar5 = TactDataPack(*(undefined4 **)((int)local_c + uVar17 * 4),(uint *)(piVar18 + 3));
             *piVar18 = (int)pbVar5;
           }
@@ -86,7 +86,7 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
     }
     pDVar7 = param_1->field_00C2;
     local_18 = &param_1->field_00C2;
-    iVar12 = local_10;
+    iVar13 = local_10;
     if (pDVar7 != nullptr) {
       uVar17 = 0;
       if (0 < (int)pDVar7->count) {
@@ -99,8 +99,8 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
             piVar18 = nullptr;
           }
           if ((*piVar18 != 0) && (*(char *)(*piVar18 + 0x18) == '\0')) {
-            iVar12 = iVar12 + piVar18[3];
-            local_10 = iVar12;
+            iVar13 = iVar13 + piVar18[3];
+            local_10 = iVar13;
           }
           uVar17 = uVar17 + 1;
           bVar21 = uVar17 < pDVar7->count;
@@ -113,21 +113,21 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
       pDVar7 = *ppDVar4;
       if (pDVar7 != nullptr) {
         iVar1 = pDVar7->count * pDVar7->elementSize + 0x1c;
-        iVar12 = iVar12 + iVar1;
+        iVar13 = iVar13 + iVar1;
         ppDVar4[2] = (DArrayTy *)iVar1;
-        local_10 = iVar12;
+        local_10 = iVar13;
       }
       ppDVar4 = ppDVar4 + 3;
       iVar10 = iVar10 + -1;
     } while (iVar10 != 0);
-    *param_4 = iVar12 + 299U;
-    pAVar6 = Library::DKW::LIB::MemAllocClear(iVar12 + 299U);
-    pAVar14 = param_1;
+    *param_4 = iVar13 + 299U;
+    pAVar6 = Library::DKW::LIB::MemAllocClear(iVar13 + 299U);
+    pAVar15 = param_1;
     pAVar19 = pAVar6;
-    memmove(pAVar19, pAVar14, 0x12a); /* compiler REP MOVS byte copy */
+    memmove(pAVar19, pAVar15, 0x12a); /* compiler REP MOVS byte copy */
     pAVar19 = (AllocationRecord_0067D3B0 *)((byte *)pAVar19 + 0x128);
-    pAVar14 = (AllocationRecord_0067D3B0 *)((byte *)pAVar14 + 0x128);
-    pAVar19->field_0x2 = pAVar14->field_0x2;
+    pAVar15 = (AllocationRecord_0067D3B0 *)((byte *)pAVar15 + 0x128);
+    pAVar19->field_0x2 = pAVar15->field_0x2;
     pAVar6->field_0018 = 0;
     pAVar6->field_0014 = *param_4;
     pAVar6->field_0102 = param_3;
@@ -138,7 +138,7 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
     uVar8 = 0;
     pAVar6->field_00FE = puVar9 + (-0x12a - (int)pAVar6);
     pDVar7 = pAVar6->field_00C2;
-    puVar13 = (uint *)(puVar9 + pAVar6->field_0102);
+    puVar14 = (uint *)(puVar9 + pAVar6->field_0102);
     local_14 = 0;
     if (0 < (int)pDVar7->count) {
       bVar21 = pDVar7->count != 0;
@@ -149,13 +149,13 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
         else {
           puVar11 = nullptr;
         }
-        puVar15 = (uint *)*puVar11;
-        if ((puVar15 != nullptr) && ((char)puVar15[6] == '\0')) {
+        puVar16 = (uint *)*puVar11;
+        if ((puVar16 != nullptr) && ((char)puVar16[6] == '\0')) {
           uVar17 = puVar11[3];
-          puVar20 = puVar13;
-          memmove(puVar20, puVar15, uVar17); /* compiler REP MOVS byte copy */
-          puVar9 = (undefined1 *)((int)puVar13 + (-0x12a - (int)pAVar6));
-          puVar13 = (uint *)((int)puVar13 + puVar11[3]);
+          puVar20 = puVar14;
+          memmove(puVar20, puVar16, uVar17); /* compiler REP MOVS byte copy */
+          puVar9 = (undefined1 *)((int)puVar14 + (-0x12a - (int)pAVar6));
+          puVar14 = (uint *)((int)puVar14 + puVar11[3]);
           puVar11[2] = puVar9;
         }
         pDVar7 = pAVar6->field_00C2;
@@ -163,19 +163,19 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
         bVar21 = local_14 < pDVar7->count;
       } while ((int)local_14 < (int)pDVar7->count);
     }
-    iVar12 = 0;
+    iVar13 = 0;
     local_8 = pAVar6;
     do {
-      puVar15 = *(uint **)((int)&pAVar6->field_00C2 + iVar12);
-      if (puVar15 != nullptr) {
-        FUN_006affc0(puVar15,puVar13,&local_10);
-        *(int *)(&local_8->field_0xc6 + iVar12) = (int)puVar13 + (-0x12a - (int)local_8);
-        puVar13 = (uint *)((int)puVar13 + *(int *)(&local_8->field_0xca + iVar12));
+      puVar16 = *(uint **)((int)&pAVar6->field_00C2 + iVar13);
+      if (puVar16 != nullptr) {
+        FUN_006affc0(puVar16,puVar14,&local_10);
+        *(int *)(&local_8->field_0xc6 + iVar13) = (int)puVar14 + (-0x12a - (int)local_8);
+        puVar14 = (uint *)((int)puVar14 + *(int *)(&local_8->field_0xca + iVar13));
         pAVar6 = local_8;
       }
       ppDVar4 = local_18;
-      iVar12 = iVar12 + 0xc;
-    } while (iVar12 < 0x3c);
+      iVar13 = iVar13 + 0xc;
+    } while (iVar13 < 0x3c);
     if ((((param_1->field_0018 == '\x02') && (pDVar7 = *local_18, pDVar7 != nullptr)) &&
         (dVar2 = pDVar7->count, dVar2 != 0)) && (local_c != nullptr)) {
       uVar17 = 0;
@@ -183,18 +183,17 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
         bVar21 = dVar2 != 0;
         do {
           if (bVar21) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar17) (runtime stride) */
-            ppvVar16 = (void **)(pDVar7->elementSize * uVar17 + (int)pDVar7->data);
+            piVar18 = DArrayAt<int>(pDVar7, uVar17);
           }
           else {
-            ppvVar16 = nullptr;
+            piVar18 = nullptr;
           }
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (((*ppvVar16 != nullptr) && (*(char *)((int)*ppvVar16 + 0x18) == '\0')) &&
-             ((iVar12 = *(int *)((int)local_c + uVar17 * 4), iVar12 != 0 &&
-              (*(char *)(iVar12 + 0x18) == '\x02')))) {
-            FreeAndNull(ppvVar16);
-            *ppvVar16 = *(void **)((int)local_c + uVar17 * 4);
+          if (((*piVar18 != 0) && (*(char *)(*piVar18 + 0x18) == '\0')) &&
+             ((iVar13 = *(int *)((int)local_c + uVar17 * 4), iVar13 != 0 &&
+              (*(char *)(iVar13 + 0x18) == '\x02')))) {
+            FreeAndNull(piVar18);
+            *piVar18 = *(int *)((int)local_c + uVar17 * 4);
           }
           pDVar7 = *ppDVar4;
           uVar17 = uVar17 + 1;
@@ -214,18 +213,17 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
       bVar21 = dVar2 != 0;
       do {
         if (bVar21) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar17) (runtime stride) */
-          ppvVar16 = (void **)(pDVar7->elementSize * uVar17 + (int)pDVar7->data);
+          piVar18 = DArrayAt<int>(pDVar7, uVar17);
         }
         else {
-          ppvVar16 = nullptr;
+          piVar18 = nullptr;
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if ((((*ppvVar16 != nullptr) && (*(char *)((int)*ppvVar16 + 0x18) == '\0')) &&
-            (iVar12 = *(int *)((int)local_c + uVar17 * 4), iVar12 != 0)) &&
-           (*(char *)(iVar12 + 0x18) == '\x02')) {
-          FreeAndNull(ppvVar16);
-          *ppvVar16 = *(void **)((int)local_c + uVar17 * 4);
+        if ((((*piVar18 != 0) && (*(char *)(*piVar18 + 0x18) == '\0')) &&
+            (iVar13 = *(int *)((int)local_c + uVar17 * 4), iVar13 != 0)) &&
+           (*(char *)(iVar13 + 0x18) == '\x02')) {
+          FreeAndNull(piVar18);
+          *piVar18 = *(int *)((int)local_c + uVar17 * 4);
         }
         pDVar7 = param_1->field_00C2;
         uVar17 = uVar17 + 1;

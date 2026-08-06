@@ -20,15 +20,15 @@ STBoatC::GetCellForLoading
   undefined2 uVar1;
   int *piVar3;
   int iVar4;
+  int iVar10;
   undefined4 uVar5;
   uint uVar6;
   uint uVar7;
   int iVar8;
   int iVar9;
-  int iVar10;
   int iVar11;
-  short *psVar12;
-  short *psVar13;
+  int iVar12;
+  short *psVar14;
   int local_68;
   int local_64 [4];
   int local_54;
@@ -38,11 +38,13 @@ STBoatC::GetCellForLoading
   int local_20 [5];
   STBoatC *local_c;
   int local_8;
+  short *psVar12;
+  short *psVar13;
 
   local_68 = (int)param_4;
-  iVar10 = (int)param_5;
+  iVar11 = (int)param_5;
   local_64[1] = local_68 + -1;
-  local_64[0] = iVar10 + -1;
+  local_64[0] = iVar11 + -1;
   local_64[3] = local_68 + 1;
   local_48[0] = 0;
   local_48[1] = 0;
@@ -50,7 +52,7 @@ STBoatC::GetCellForLoading
   local_48[3] = 0;
   local_48[4] = 0;
   uVar6 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
-  local_4c = iVar10 + 1;
+  local_4c = iVar11 + 1;
   psVar12 = g_pathingGrid.cells;
   psVar13 = g_pathingScratchGrid.cells;
   for (uVar7 = (uVar6 & 0x7fffffff) >> 1; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -68,16 +70,16 @@ STBoatC::GetCellForLoading
   local_48[7] = 0xffffffff;
   local_48[8] = 0xffffffff;
   local_48[9] = 0xffffffff;
-  local_64[2] = iVar10;
-  local_54 = iVar10;
+  local_64[2] = iVar11;
+  local_54 = iVar11;
   local_50 = local_68;
   local_c = this;
   FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
                (int)g_pathingGrid.sizeZ,(int)param_1,(int)param_2,(int)param_3,-1,-1,-1);
-  iVar10 = g_pathingGrid.sizeX * iVar10;
+  iVar11 = g_pathingGrid.sizeX * iVar11;
   iVar9 = 0;
   if (g_pathingScratchGrid.cells
-      [(int)(short)param_6 * (int)g_pathingGrid.planeStride + iVar10 + (int)param_4] < 1) {
+      [(int)(short)param_6 * (int)g_pathingGrid.planeStride + iVar11 + (int)param_4] < 1) {
     return 0xfffffffe;
   }
   switch((int)(short)param_6) {
@@ -124,11 +126,11 @@ LAB_00491b42:
   }
   do {
     local_8 = *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride;
-    if (0 < g_pathingScratchGrid.cells[local_8 + iVar10 + (int)param_4]) {
+    if (0 < g_pathingScratchGrid.cells[local_8 + iVar11 + (int)param_4]) {
       piVar3 = &local_68;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_3 = 1000000000;
-      iVar11 = 0;
+      iVar12 = 0;
       do {
         iVar4 = *piVar3;
         if ((((-1 < iVar4) && (iVar4 <= g_pathingGrid.sizeX + -1)) &&
@@ -137,13 +139,13 @@ LAB_00491b42:
           iVar8 = (int)g_pathingScratchGrid.cells[iVar4];
           if (0 < iVar8) {
             if ((STBoatC *)g_worldGrid.cells[iVar4].objects[0] == local_c) {
-              *(int *)((int)local_48 + iVar9 + 0x14) = iVar11;
+              *(int *)((int)local_48 + iVar9 + 0x14) = iVar12;
               *(undefined4 *)((int)local_48 + iVar9) = 2;
               break;
             }
             if ((STBoatC *)g_worldGrid.cells[iVar4].objects[0] == nullptr) {
               if (*(int *)((int)local_48 + iVar9) == 0) {
-                *(int *)((int)local_48 + iVar9 + 0x14) = iVar11;
+                *(int *)((int)local_48 + iVar9 + 0x14) = iVar12;
                 *(undefined4 *)((int)local_48 + iVar9) = 1;
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_3 = iVar8;
@@ -156,27 +158,27 @@ LAB_00491c08:
               if (*(int *)((int)local_48 + iVar9) != 0) goto cf_continue_loop_00491C1C;
             }
             if (iVar8 < _param_3) {
-              *(int *)((int)local_48 + iVar9 + 0x14) = iVar11;
+              *(int *)((int)local_48 + iVar9 + 0x14) = iVar12;
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_3 = iVar8;
             }
           }
         }
 cf_continue_loop_00491C1C:
-        iVar11 = iVar11 + 1;
+        iVar12 = iVar12 + 1;
         piVar3 = piVar3 + 2;
-      } while (iVar11 < 4);
+      } while (iVar12 < 4);
     }
     iVar9 = iVar9 + 4;
     if (0x13 < iVar9) {
       iVar9 = (short)param_6 + 1;
       if (iVar9 < 5) {
-        iVar11 = (short)param_6 + 2;
-        psVar12 = g_pathingScratchGrid.cells +
-                  g_pathingGrid.planeStride * iVar9 + iVar10 + (int)param_4;
+        iVar12 = (short)param_6 + 2;
+        psVar14 = g_pathingScratchGrid.cells +
+                  g_pathingGrid.planeStride * iVar9 + iVar11 + (int)param_4;
         do {
-          iVar9 = iVar11;
-          if (*psVar12 < 1) {
+          iVar9 = iVar12;
+          if (*psVar14 < 1) {
             for (; iVar9 < 5; iVar9 = iVar9 + 1) {
               iVar4 = 0;
               piVar3 = local_20;
@@ -190,35 +192,35 @@ cf_continue_loop_00491C1C:
               } while (iVar4 < 5);
             }
           }
-          psVar12 = psVar12 + g_pathingGrid.planeStride;
-          iVar11 = iVar11 + 1;
-        } while (iVar11 < 6);
+          psVar14 = psVar14 + g_pathingGrid.planeStride;
+          iVar12 = iVar12 + 1;
+        } while (iVar12 < 6);
       }
       iVar9 = (short)param_6 + -1;
       if (-1 < iVar9) {
-        psVar12 = g_pathingScratchGrid.cells +
-                  g_pathingGrid.planeStride * iVar9 + iVar10 + (int)param_4;
+        psVar14 = g_pathingScratchGrid.cells +
+                  g_pathingGrid.planeStride * iVar9 + iVar11 + (int)param_4;
         do {
-          if ((*psVar12 < 1) && (iVar10 = iVar9 + -1, 0 < iVar9)) {
+          if ((*psVar14 < 1) && (iVar11 = iVar9 + -1, 0 < iVar9)) {
             do {
-              iVar11 = 0;
+              iVar12 = 0;
               piVar3 = local_20;
               do {
-                if (*piVar3 == iVar10) {
-                  local_48[iVar11 + 5] = -1;
+                if (*piVar3 == iVar11) {
+                  local_48[iVar12 + 5] = -1;
                   break;
                 }
-                iVar11 = iVar11 + 1;
+                iVar12 = iVar12 + 1;
                 piVar3 = piVar3 + 1;
-              } while (iVar11 < 5);
-              iVar10 = iVar10 + -1;
-            } while (-1 < iVar10);
+              } while (iVar12 < 5);
+              iVar11 = iVar11 + -1;
+            } while (-1 < iVar11);
           }
           iVar9 = iVar9 + -1;
-          psVar12 = psVar12 + -(int)g_pathingGrid.planeStride;
+          psVar14 = psVar14 + -(int)g_pathingGrid.planeStride;
         } while (-1 < iVar9);
       }
-      iVar10 = -1;
+      iVar11 = -1;
       iVar9 = 0;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_3 = 1000000000;
@@ -226,38 +228,38 @@ cf_continue_loop_00491C1C:
       _param_6 = 0;
       do {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar11 = *(int *)((int)local_48 + iVar9 + 0x14);
-        if (iVar11 != -1) {
-          if ((iVar10 == -1) || ((*(int *)((int)local_48 + iVar9) == 1 && (local_48[iVar10] == 0))))
+        iVar12 = *(int *)((int)local_48 + iVar9 + 0x14);
+        if (iVar12 != -1) {
+          if ((iVar11 == -1) || ((*(int *)((int)local_48 + iVar9) == 1 && (local_48[iVar11] == 0))))
           {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_3 = (int)g_pathingScratchGrid.cells
-                            [*(int *)((int)local_64 + iVar11 * 8) * (int)g_pathingGrid.sizeX +
+                            [*(int *)((int)local_64 + iVar12 * 8) * (int)g_pathingGrid.sizeX +
                              *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride +
-                             (&local_68)[iVar11 * 2]];
-            iVar10 = _param_6;
+                             (&local_68)[iVar12 * 2]];
+            iVar11 = _param_6;
           }
-          else if (((*(int *)((int)local_48 + iVar9) != 0) || (local_48[iVar10] != 1)) &&
+          else if (((*(int *)((int)local_48 + iVar9) != 0) || (local_48[iVar11] != 1)) &&
                   (g_pathingScratchGrid.cells
-                   [*(int *)((int)local_64 + iVar11 * 8) * (int)g_pathingGrid.sizeX +
+                   [*(int *)((int)local_64 + iVar12 * 8) * (int)g_pathingGrid.sizeX +
                     *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride +
-                    (&local_68)[iVar11 * 2]] < _param_3)) {
-            iVar10 = _param_6;
+                    (&local_68)[iVar12 * 2]] < _param_3)) {
+            iVar11 = _param_6;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_3 = (int)g_pathingScratchGrid.cells
-                            [*(int *)((int)local_64 + iVar11 * 8) * (int)g_pathingGrid.sizeX +
+                            [*(int *)((int)local_64 + iVar12 * 8) * (int)g_pathingGrid.sizeX +
                              *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride +
-                             (&local_68)[iVar11 * 2]];
+                             (&local_68)[iVar12 * 2]];
           }
         }
         iVar9 = iVar9 + 4;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         _param_6 = _param_6 + 1;
       } while (iVar9 < 0x14);
-      if (iVar10 != -1) {
-        iVar9 = local_20[iVar10];
-        uVar1 = *(undefined2 *)((int)local_64 + local_48[iVar10 + 5] * 8);
-        *param_7 = (short)(&local_68)[local_48[iVar10 + 5] * 2];
+      if (iVar11 != -1) {
+        iVar9 = local_20[iVar11];
+        uVar1 = *(undefined2 *)((int)local_64 + local_48[iVar11 + 5] * 8);
+        *param_7 = (short)(&local_68)[local_48[iVar11 + 5] * 2];
         *param_8 = uVar1;
         *param_9 = (short)iVar9;
         *param_10 = param_4;

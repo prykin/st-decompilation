@@ -14,9 +14,10 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
   uint uVar7;
   int iVar8;
   byte bVar9;
+  ushort *puVar10_mg2;
   ushort *puVar10;
-  ushort *puVar11;
-  int *piVar12;
+  int *piVar11;
+  ushort *puVar12;
   int iVar13;
   ushort local_220 [256];
   uint local_20;
@@ -71,7 +72,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
       local_8 = (ushort *)((int)local_8 + 1);
     }
   }
-  puVar10 = local_8;
+  puVar12 = local_8;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_7 == (uint *)0xffffffff) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -114,7 +115,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
           iVar13 = iVar13 + 1;
           *local_8 = (ushort)((int)((uint)*pbVar1 << 8) >> ((byte)local_c & 0x1f)) &
                      (ushort)local_20 |
-                     (ushort)((int)((uint)*pbVar2 << 8) >> ((byte)puVar10 & 0x1f)) &
+                     (ushort)((int)((uint)*pbVar2 << 8) >> ((byte)puVar12 & 0x1f)) &
                      (ushort)local_1c |
                      (ushort)((int)((uint)*pbVar3 << 8) >> (bVar9 & 0x1f)) & (ushort)local_14;
           local_8 = local_8 + 1;
@@ -125,13 +126,13 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
       while (param_6 != 0) {
         Library::DKW::JPG::FUN_007568d0((int)param_1,param_4,1);
         iVar13 = 0;
-        puVar10 = param_2;
+        puVar10_mg2 = param_2;
         if (0 < param_1->field_0068) {
           do {
             pbVar1 = (byte *)(*param_4 + iVar13);
             iVar13 = iVar13 + 1;
-            *puVar10 = local_220[*pbVar1];
-            puVar10 = puVar10 + 1;
+            *puVar10_mg2 = local_220[*pbVar1];
+            puVar10_mg2 = puVar10_mg2 + 1;
           } while (iVar13 < param_1->field_0068);
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -146,8 +147,8 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
   }
   else {
     local_c = local_c + 0x10;
-    puVar10 = local_8 + 4;
-    local_8 = puVar10;
+    puVar12 = local_8 + 4;
+    local_8 = puVar12;
     if (param_1->field_0084 < param_1->field_006C) {
       do {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -155,23 +156,23 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
           return;
         }
         Library::DKW::JPG::FUN_007568d0((int)pAVar6,param_4,1);
-        piVar12 = (int *)*param_4;
+        piVar11 = (int *)*param_4;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
         if (0 < pAVar6->field_0068) {
           local_10 = param_2;
           do {
-            uVar7 = *piVar12 << 8;
-            piVar12 = (int *)((int)piVar12 + 3);
+            uVar7 = *piVar11 << 8;
+            piVar11 = (int *)((int)piVar11 + 3);
             local_18 = uVar7 >> (bVar9 & 0x1f) & local_14;
-            puVar11 = local_10 + 1;
+            puVar10 = local_10 + 1;
             *local_10 = (ushort)local_18 |
-                        (ushort)(uVar7 >> ((byte)puVar10 & 0x1f)) & (ushort)local_1c |
+                        (ushort)(uVar7 >> ((byte)puVar12 & 0x1f)) & (ushort)local_1c |
                         (ushort)(uVar7 >> ((byte)local_c & 0x1f)) & (ushort)local_20;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = (AnonShape_00754B80_75BFDB7A *)&param_1->field_0x1;
-            puVar10 = local_8;
-            local_10 = puVar11;
+            puVar12 = local_8;
+            local_10 = puVar10;
           } while ((int)param_1 < pAVar6->field_0068);
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

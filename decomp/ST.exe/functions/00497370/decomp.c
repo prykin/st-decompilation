@@ -11,12 +11,13 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,uint param_4,void *
   dword dVar2;
   AnonShape_00497110_465BC742 *this;
   int iVar3;
-  uint uVar4;
-  int iVar5;
-  undefined4 *puVar6;
+  uint uVar3;
+  int iVar4;
+  undefined4 *puVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
-  uint uVar9;
+  uint uVar8;
+  int iVar9;
   int *piVar10;
   uint *puVar11;
   uint *puVar12;
@@ -71,38 +72,38 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,uint param_4,void *
       else {
         puVar12 = nullptr;
       }
-      uVar4 = puVar12[2];
-      if (uVar4 != param_3) {
+      uVar3 = puVar12[2];
+      if (uVar3 != param_3) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        _local_5c = CONCAT31(uStack_5b,(char)uVar4);
+        _local_5c = CONCAT31(uStack_5b,(char)uVar3);
         if (DAT_00808a8f == '\0') {
-          if ((char)uVar4 == (char)param_3) {
+          if ((char)uVar3 == (char)param_3) {
 LAB_004974ca:
-            iVar3 = 0;
+            iVar9 = 0;
           }
           else {
-            uVar4 = uVar4 & 0xff;
-            uVar9 = param_3 & 0xff;
-            bVar1 = g_playerRelationMatrix[uVar4][uVar9];
-            if ((bVar1 == 0) && (g_playerRelationMatrix[uVar9][uVar4] == 0)) {
-              iVar3 = -2;
+            uVar3 = uVar3 & 0xff;
+            uVar8 = param_3 & 0xff;
+            bVar1 = g_playerRelationMatrix[uVar3][uVar8];
+            if ((bVar1 == 0) && (g_playerRelationMatrix[uVar8][uVar3] == 0)) {
+              iVar9 = -2;
             }
-            else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar9][uVar4] == 0)) {
-              iVar3 = -1;
+            else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar8][uVar3] == 0)) {
+              iVar9 = -1;
             }
-            else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar9][uVar4] == 1)) {
-              iVar3 = 1;
+            else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar8][uVar3] == 1)) {
+              iVar9 = 1;
             }
             else {
-              if ((bVar1 != 1) || (g_playerRelationMatrix[uVar9][uVar4] != 1)) goto LAB_004974ca;
-              iVar3 = 2;
+              if ((bVar1 != 1) || (g_playerRelationMatrix[uVar8][uVar3] != 1)) goto LAB_004974ca;
+              iVar9 = 2;
             }
           }
-          bVar15 = iVar3 < 0;
+          bVar15 = iVar9 < 0;
         }
         else {
           bVar15 = g_bulkInitializedRecords_008087C7[param_3 & 0xff].field_0023 !=
-                   g_bulkInitializedRecords_008087C7[uVar4 & 0xff].field_0023;
+                   g_bulkInitializedRecords_008087C7[uVar3 & 0xff].field_0023;
         }
         if ((bVar15) &&
            (iVar3 = FUN_006aced8(*puVar12 * 0xc9 + 100,puVar12[1] * 0xc9 + 100,param_1 * 0xc9 + 100,
@@ -110,10 +111,10 @@ LAB_004974ca:
         {
           puVar13 = puVar11 + -4;
           memmove(puVar13, puVar12, 0x18); /* compiler REP MOVS byte copy */
-          uVar4 = thunk_FUN_0060ca20(puVar11[1]);
-          uVar4 = ((int)uVar4 < 0) - 1 & uVar4;
-          *puVar11 = uVar4;
-          local_40 = local_40 + uVar4;
+          uVar3 = thunk_FUN_0060ca20(puVar11[1]);
+          uVar3 = ((int)uVar3 < 0) - 1 & uVar3;
+          *puVar11 = uVar3;
+          local_40 = local_40 + uVar3;
           local_30 = local_30 + 1;
           puVar11 = puVar11 + 6;
           pDVar14 = g_array_007FB270;
@@ -123,80 +124,80 @@ LAB_004974ca:
     } while ((int)local_34 < (int)local_44);
   }
   if (local_30 != 0) {
-    iVar5 = thunk_FUN_0060ca20((int)param_5);
-    iVar8 = local_30;
+    iVar4 = thunk_FUN_0060ca20((int)param_5);
+    iVar7 = local_30;
     local_20 = local_30;
-    iVar3 = iVar5 / local_30;
-    if (iVar5 < local_40) {
-      iVar7 = 0;
+    iVar9 = iVar4 / local_30;
+    if (iVar4 < local_40) {
+      iVar6 = 0;
       piVar10 = local_3c;
       if (0 < local_30) {
         do {
-          *piVar10 = iVar7;
-          iVar7 = iVar7 + 1;
+          *piVar10 = iVar6;
+          iVar6 = iVar6 + 1;
           piVar10 = piVar10 + 1;
-        } while (iVar7 < local_30);
+        } while (iVar6 < local_30);
       }
       thunk_FUN_004977c0((int)local_38,local_3c,local_30);
-      while (0 < iVar5) {
-        iVar7 = local_30 - iVar8;
-        if (iVar7 < local_30) {
-          piVar10 = (int *)(local_38 + iVar7 * 0x18 + 0x10);
-          iVar7 = local_30 - iVar7;
+      while (0 < iVar4) {
+        iVar6 = local_30 - iVar7;
+        if (iVar6 < local_30) {
+          piVar10 = (int *)(local_38 + iVar6 * 0x18 + 0x10);
+          iVar6 = local_30 - iVar6;
           do {
-            iVar8 = *piVar10;
-            if (iVar8 < iVar3) {
+            iVar7 = *piVar10;
+            if (iVar7 < iVar9) {
               *piVar10 = 0;
               local_20 = local_20 + -1;
             }
             else {
-              *piVar10 = iVar8 - iVar3;
-              iVar8 = iVar3;
+              *piVar10 = iVar7 - iVar9;
+              iVar7 = iVar9;
             }
-            local_40 = local_40 - iVar8;
-            iVar5 = iVar5 - iVar8;
+            local_40 = local_40 - iVar7;
+            iVar4 = iVar4 - iVar7;
             piVar10 = piVar10 + 6;
-            iVar7 = iVar7 + -1;
-            iVar8 = local_20;
-          } while (iVar7 != 0);
+            iVar6 = iVar6 + -1;
+            iVar7 = local_20;
+          } while (iVar6 != 0);
         }
-        if (((iVar5 < 1) || (iVar8 < 1)) || (iVar3 = iVar5 / iVar8, iVar3 == 0)) {
-          iVar5 = 0;
+        if (((iVar4 < 1) || (iVar7 < 1)) || (iVar9 = iVar4 / iVar7, iVar9 == 0)) {
+          iVar4 = 0;
         }
       }
     }
     else {
-      iVar5 = iVar5 - local_40;
+      iVar4 = iVar4 - local_40;
       if (0 < local_30) {
-        puVar6 = (undefined4 *)(local_38 + 0x10);
-        iVar3 = local_30;
+        puVar5 = (undefined4 *)(local_38 + 0x10);
+        iVar9 = local_30;
         do {
-          *puVar6 = 0;
-          puVar6 = puVar6 + 6;
-          iVar3 = iVar3 + -1;
-        } while (iVar3 != 0);
+          *puVar5 = 0;
+          puVar5 = puVar5 + 6;
+          iVar9 = iVar9 + -1;
+        } while (iVar9 != 0);
       }
     }
-    iVar3 = local_30;
-    iVar8 = thunk_FUN_0060ca20((int)param_5);
-    thunk_FUN_0060ca40(param_5,iVar8 - iVar5);
-    if (0 < iVar3) {
+    iVar9 = local_30;
+    iVar7 = thunk_FUN_0060ca20((int)param_5);
+    thunk_FUN_0060ca40(param_5,iVar7 - iVar4);
+    if (0 < iVar9) {
       piVar10 = (int *)(local_38 + 0x10);
       do {
         this = (AnonShape_00497110_465BC742 *)piVar10[1];
-        iVar5 = thunk_FUN_0060ca20((int)this);
-        if (iVar5 != *piVar10) {
-          iVar5 = thunk_FUN_0060ca20((int)this);
-          thunk_FUN_0060ca40(this,iVar5 - *piVar10);
+        iVar4 = thunk_FUN_0060ca20((int)this);
+        if (iVar4 != *piVar10) {
+          iVar4 = thunk_FUN_0060ca20((int)this);
+          thunk_FUN_0060ca40(this,iVar4 - *piVar10);
           thunk_FUN_00497110(param_5,this);
         }
         piVar10 = piVar10 + 6;
-        iVar3 = iVar3 + -1;
-      } while (iVar3 != 0);
+        iVar9 = iVar9 + -1;
+      } while (iVar9 != 0);
     }
   }
-  iVar3 = thunk_FUN_0060ca20((int)param_5);
-  if (0 < iVar3) {
+  iVar9 = thunk_FUN_0060ca20((int)param_5);
+  if (0 < iVar9) {
     local_28 = 1;
   }
   ExceptionList = local_14;

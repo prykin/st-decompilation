@@ -53,7 +53,7 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
             (VisibleClassTy::sub_00558C00
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6,
                         &local_c,&local_10), local_8 < 0)) || ((4 < local_8 || (local_c < 0)))) ||
-          ((pVVar4->field_0030 <= local_c ||
+          (((int)pVVar4->field_0030 <= local_c ||
            ((local_10 = g_centeredOffsets5[local_8] + local_10, local_10 < 0 ||
             (pVVar4->field_0034 <= local_10)))))) ||
          ((pVVar4->field_004C == nullptr ||

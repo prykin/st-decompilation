@@ -7,26 +7,28 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
   undefined1 *puVar1;
   undefined1 uVar2;
   byte bVar3;
+  int iVar5;
   int iVar4;
-  undefined4 uVar5;
-  int iVar6;
+  int local_EAX_316;
+  undefined4 uVar6;
+  int iVar7;
   int *local_c;
   short local_8;
-  undefined2 local_6;
+  short local_6;
 
   puVar1 = param_1;
   *param_1 = 1;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar4 = (**(code **)(*(int *)this + 8))();
-  if (iVar4 == 1) {
+  iVar5 = (**(code **)(*(int *)this + 8))();
+  if (iVar5 == 1) {
     puVar1[1] = 1;
   }
   else {
     puVar1[1] = 0;
   }
   puVar1[2] = 1;
-  iVar4 = thunk_FUN_00493cd0(this);
-  if (iVar4 == 0) {
+  iVar5 = thunk_FUN_00493cd0(this);
+  if (iVar5 == 0) {
     puVar1[0x1d] = 1;
   }
   else {
@@ -59,17 +61,17 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
                  (int *)&local_c);
       if (local_c != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        uVar5 = (**(code **)(*local_c + 0x2c))();
-        *(undefined4 *)(puVar1 + 0x1e) = uVar5;
-        iVar4 = local_c[8];
-        if (iVar4 == 0x14) {
-          iVar4 = thunk_FUN_004e8030(STField<int>(this,0x6f7));
-          puVar1[0x22] = (char)iVar4;
+        uVar6 = (**(code **)(*local_c + 0x2c))();
+        *(undefined4 *)(puVar1 + 0x1e) = uVar6;
+        iVar5 = local_c[8];
+        if (iVar5 == 0x14) {
+          local_EAX_316 = thunk_FUN_004e8030(STField<int>(this,0x6f7));
+          puVar1[0x22] = (char)local_EAX_316;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar2 = (**(code **)(*local_c + 0x7c))();
           puVar1[0x23] = uVar2;
         }
-        else if ((iVar4 == 0x172) || (iVar4 == 0x1a4)) {
+        else if ((iVar5 == 0x172) || (iVar5 == 0x1a4)) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar2 = (**(code **)(*local_c + 0xc))();
           puVar1[0x22] = uVar2;
@@ -103,16 +105,16 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
     *(undefined2 *)(puVar1 + 0x1e) = STField<undefined2>(this,0x79a);
     bVar3 = LookupRecordByte(STField<char>(this,0x24));
     if (bVar3 == 1) {
-      iVar4 = STField<int>(this,0x24);
-      iVar6 = 6;
+      iVar5 = STField<int>(this,0x24);
+      iVar7 = 6;
 LAB_00486cfc:
-      uVar5 = thunk_FUN_004e60d0(iVar4,iVar6);
-      *(short *)(puVar1 + 0x22) = (short)uVar5;
+      uVar6 = thunk_FUN_004e60d0(iVar5,iVar7);
+      *(short *)(puVar1 + 0x22) = (short)uVar6;
     }
     else {
       if (bVar3 == 2) {
-        iVar4 = STField<int>(this,0x24);
-        iVar6 = 0x83;
+        iVar5 = STField<int>(this,0x24);
+        iVar7 = 0x83;
         goto LAB_00486cfc;
       }
       *(undefined2 *)(puVar1 + 0x22) = 0;
@@ -124,7 +126,7 @@ LAB_00486cfc:
   }
   *(undefined4 *)(puVar1 + 0x2a) = 0;
   puVar1[0x2e] = 0;
-  STFishC::sub_004162B0(this,&local_8,&local_6,(undefined2 *)((int)&param_1 + 2));
+  STFishC::sub_004162B0(this,&local_8,&local_6,(short *)((int)&param_1 + 2));
   puVar1[0x2e - STPiece<2,2>(param_1)] = 1;
   return;
 }

@@ -19,8 +19,9 @@ STAllPlayersC::GetTOBJList
   bool bVar3;
   int iVar4;
   STAllPlayersC_GetTOBJList_param_2Enum SVar5;
+  int iVar7;
   int iVar6;
-  uint *puVar7;
+  uint *puVar8;
   InternalExceptionFrame local_58;
   undefined1 local_14 [4];
   int local_10;
@@ -51,7 +52,7 @@ STAllPlayersC::GetTOBJList
       piVar1 = *(int **)(*(int *)(local_10 + 0x1c) + iVar4 * 4);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if (((piVar1 == nullptr) || (SVar5 = (**(code **)(*piVar1 + 0x2c))(), SVar5 != param_2)) ||
-         (iVar6 = (**(code **)(*piVar1 + 0xf8))(), iVar6 == 0)) {
+         (iVar7 = (**(code **)(*piVar1 + 0xf8))(), iVar7 == 0)) {
 switchD_0043e836_caseD_3a:
         bVar3 = false;
       }
@@ -63,7 +64,7 @@ switchD_0043e836_caseD_3a:
           case CASE_39:
           case CASE_4F:
           case CASE_5E:
-            if ((param_3 == 1) && (iVar6 = (**(code **)(*piVar1 + 0x88))(local_14), 0 < iVar6)) {
+            if ((param_3 == 1) && (iVar7 = (**(code **)(*piVar1 + 0x88))(local_14), 0 < iVar7)) {
               bVar3 = true;
               goto LAB_0043e85d;
             }
@@ -75,7 +76,7 @@ switchD_0043e836_caseD_3a:
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0043e85d:
       if ((bVar3) &&
-         ((param_4 == -1 || (iVar6 = (**(code **)(*piVar1 + 0x6c))(), iVar6 == param_4)))) {
+         ((param_4 == -1 || (iVar7 = (**(code **)(*piVar1 + 0x6c))(), iVar7 == param_4)))) {
         Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar1 + 0x32));
       }
       iVar4 = iVar4 + 1;

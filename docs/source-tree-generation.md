@@ -147,8 +147,8 @@ before layout assertions or a real link are meaningful.
 `CMakeLists.txt` exposes every generated translation unit as an object target.
 It intentionally does not link. A full object build is expected to fail today
 and is now useful evidence rather than a missing-infrastructure failure. The
-current Apple Clang C++17 probe, with a limit of 32 diagnostics per translation
-unit, passes 54 of 318 units and records 4,068 errors, 4,066 of them mapped to a
+current Apple Clang C++17 probe, with a limit of 64 diagnostics per translation
+unit, passes 61 of 318 units and records 5,590 errors, 5,588 of them mapped to a
 function address. The cap makes this a monotonic comparison baseline, not the
 uncapped total of all errors. Remaining diagnostics principally identify:
 

@@ -9,16 +9,18 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
 
 {
   ccFntTy *pcVar1;
+  undefined4 uVar2;
   FSGSTy *this_00;
-  uint uVar3;
-  undefined4 uVar4;
+  int iVar7;
+  uint uVar4;
+  int local_EAX_163;
   LPBITMAPINFO ptVar5;
   int iVar6;
-  int iVar7;
-  byte *puVar8;
-  int *piVar9;
-  byte *puVar10;
-  ushort *puVar11;
+  int iVar8;
+  byte *puVar9;
+  int *piVar10;
+  byte *puVar11;
+  ushort *puVar12;
   int local_8c4 [5];
   int local_8b0;
   undefined4 local_8ac;
@@ -58,34 +60,35 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
-  piVar9 = local_8c4;
+  piVar10 = local_8c4;
   local_8 = this;
-  for (iVar7 = 0x21e; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *piVar9 = 0;
-    piVar9 = piVar9 + 1;
+  for (iVar8 = 0x21e; iVar8 != 0; iVar8 = iVar8 + -1) {
+    *piVar10 = 0;
+    piVar10 = piVar10 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar7 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar7 == 0) {
-    puVar8 = (byte *)(&local_8->field_1E8E);
+    puVar9 = (byte *)(&local_8->field_1E8E);
     if (local_8->field_1E8E != 0) {
-      FreeAndNull((void **)puVar8);
+      FreeAndNull(puVar9);
     }
     if (this_00->field_1E92 != nullptr) {
       FreeAndNull(&this_00->field_1E92);
     }
-    iVar7 = 1;
-    puVar11 = this_00->field_005D + 0x14;
-    uVar3 = FUN_006b4fe0((int)this_00->field_005D);
-    uVar4 = FUN_006b50c0(0x2c8 - this_00->field_1B4C,0x149,(uint)this_00->field_005D[7],uVar3,
-                         (undefined4 *)puVar11,iVar7);
-    *puVar8 = uVar4;
+    iVar8 = 1;
+    puVar12 = this_00->field_005D + 0x14;
+    uVar4 = FUN_006b4fe0((int)this_00->field_005D);
+    local_EAX_163 =
+         FUN_006b50c0(0x2c8 - this_00->field_1B4C,0x149,(uint)this_00->field_005D[7],uVar4,
+                      (undefined4 *)puVar12,iVar8);
+    *puVar9 = local_EAX_163;
     ptVar5 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x22,0x72,0x2e1,0x14c,8);
-    iVar7 = *puVar8;
+    iVar8 = *puVar9;
     this_00->field_1E92 = ptVar5;
-    if ((iVar7 != 0) && (ptVar5 != (LPBITMAPINFO)0x0)) {
+    if ((iVar8 != 0) && (ptVar5 != (LPBITMAPINFO)0x0)) {
       pcVar1 = this_00->field_1A73;
       local_8c4[0] = 0;
       local_8c4[3] = 0;
@@ -116,12 +119,12 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       local_6f8 = 500;
       local_6f4 = 0x32;
       local_7a0 = 0x6334;
-      uVar4 = this_00->field_1B48;
+      uVar2 = this_00->field_1B48;
       local_88c = this_00->field_0008;
       local_7a8 = local_88c;
-      puVar8 = (byte *)(local_808);
-      puVar10 = (byte *)(local_688);
-      memmove(puVar10, puVar8, 0x17c); /* compiler REP MOVS byte copy */
+      puVar9 = (byte *)(local_808);
+      puVar11 = (byte *)(local_688);
+      memmove(puVar11, puVar9, 0x17c); /* compiler REP MOVS byte copy */
       local_688[2] = this_00->field_1B44;
       local_674 = this_00->field_1B50;
       local_678 = this_00->field_1B4C;
@@ -136,7 +139,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       local_4ec = 0xe;
       local_4b4 = 2;
       local_4b0 = 0x6335;
-      local_688[3] = uVar4;
+      local_688[3] = uVar2;
       local_4b8 = local_88c;
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,8,&this_00->field_1B14,nullptr,local_8c4,0);

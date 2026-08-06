@@ -11,7 +11,8 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
   CursorClassTy *this_00;
   int iVar2;
   int iVar3;
-  AnonShape_00544100_1A02F945 *pAVar5;
+  int iVar4;
+  AnonShape_00544100_1A02F945 *pAVar6;
   InternalExceptionFrame local_b8;
   AnonShape_00544100_1A02F945 local_74;
   undefined4 local_28 [4];
@@ -26,14 +27,14 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
   this_00 = local_8;
   if (iVar2 == 0) {
     memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
-    iVar2 = 0;
+    iVar4 = 0;
     local_14 = (AnonShape_00544100_1A02F945 *)this_00->field_0008;
     local_18 = 0x14;
     FUN_006e6000(this_00,3,1,local_28);
-    pAVar5 = &local_74;
-    for (iVar2 = 0x13; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(undefined4 *)pAVar5 = 0;
-      pAVar5 = (AnonShape_00544100_1A02F945 *)&pAVar5->field_0004;
+    pAVar6 = &local_74;
+    for (iVar4 = 0x13; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *(undefined4 *)pAVar6 = 0;
+      pAVar6 = (AnonShape_00544100_1A02F945 *)&pAVar6->field_0004;
     }
     STPiece<20,4>(local_74) = this_00->field_0008;
     STPiece<24,4>(local_74) = 2;
@@ -55,27 +56,27 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
     local_74.field_003C = 0xa115;
     FUN_006e6000(this_00,3,1,local_28);
     local_74.field_003C = 0xa133;
-    iVar2 = 4;
+    iVar4 = 4;
     do {
-      thunk_FUN_005440c0(this_00,iVar2,local_28,(int)&local_74);
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < 8);
+      thunk_FUN_005440c0(this_00,iVar4,local_28,(int)&local_74);
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < 8);
     local_74.field_003C = 0;
-    iVar2 = 8;
+    iVar4 = 8;
     do {
-      thunk_FUN_005440c0(this_00,iVar2,local_28,(int)&local_74);
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < 0x50);
-    iVar2 = 0;
+      thunk_FUN_005440c0(this_00,iVar4,local_28,(int)&local_74);
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < 0x50);
+    iVar4 = 0;
     do {
-      thunk_FUN_00544150(this_00,iVar2,local_28,(int)&local_74);
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < 10);
-    iVar2 = 0;
+      thunk_FUN_00544150(this_00,iVar4,local_28,(int)&local_74);
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < 10);
+    iVar4 = 0;
     do {
-      thunk_FUN_00544100(this_00,iVar2,local_28,&local_74);
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < 0x1e);
+      thunk_FUN_00544100(this_00,iVar4,local_28,&local_74);
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < 0x1e);
     g_currentExceptionFrame = local_b8.previous;
     return;
   }

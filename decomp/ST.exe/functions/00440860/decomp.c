@@ -13,10 +13,11 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
   int *piVar3;
   int iVar4;
   int iVar5;
-  uint uVar6;
+  int iVar6;
+  uint uVar7;
   char objPtr;
 
-  uVar6 = param_3;
+  uVar7 = param_3;
   piVar3 = param_2;
   objPtr = (char)param_2;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -33,24 +34,24 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
                0x21d1);
   }
   if (param_1 == 1) {
-    iVar4 = _AddMDPairs(this,objPtr,uVar6);
+    iVar5 = _AddMDPairs(this,objPtr,uVar7);
   }
   else {
-    iVar4 = _SubMDObject(piVar3,uVar6);
+    iVar5 = _SubMDObject(piVar3,uVar7);
   }
-  if ((((iVar4 == 1) &&
+  if ((((iVar5 == 1) &&
        (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field2_0x5, array != nullptr)
-       ) && (dVar1 = array->count, dVar1 != 0)) && (uVar6 = 0, 0 < (int)dVar1)) {
+       ) && (dVar1 = array->count, dVar1 != 0)) && (uVar7 = 0, 0 < (int)dVar1)) {
     do {
-      DArrayGetElement(array,uVar6,&param_2);
+      DArrayGetElement(array,uVar7,&param_2);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      if ((param_2 != nullptr) && (iVar5 = (**(code **)(*param_2 + 0xc))(), iVar5 == 8)) {
+      if ((param_2 != nullptr) && (iVar6 = (**(code **)(*param_2 + 0xc))(), iVar6 == 8)) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*param_2 + 0x10))(param_1,param_3);
       }
-      uVar6 = uVar6 + 1;
-    } while ((int)uVar6 < (int)dVar1);
+      uVar7 = uVar7 + 1;
+    } while ((int)uVar7 < (int)dVar1);
   }
-  return iVar4;
+  return iVar5;
 }
 

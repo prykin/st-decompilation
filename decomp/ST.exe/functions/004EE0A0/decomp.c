@@ -9,13 +9,15 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
 
 {
   BehPanelTy *this_00;
+  int local_EAX_35;
   int iVar2;
+  int iVar4;
   int iVar3;
-  int *piVar4;
-  short *psVar5;
-  Global_sub_005272B0_param_1Enum *pGVar6;
-  short *psVar7;
-  bool bVar8;
+  int *piVar5;
+  short *psVar6;
+  Global_sub_005272B0_param_1Enum *pGVar7;
+  short *psVar8;
+  bool bVar9;
   InternalExceptionFrame local_6c;
   undefined4 local_28;
   undefined4 local_24;
@@ -31,14 +33,14 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_10 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
+  local_EAX_35 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   this_00 = local_10;
-  if (iVar2 != 0) {
+  if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\behpanel.cpp",0xb2,0,iVar2,"%s"
-                               ,"BehPanelTy::Update");
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\behpanel.cpp",0xb2,0,local_EAX_35,
+                               "%s","BehPanelTy::Update");
     if (iVar3 == 0) {
-      RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\behpanel.cpp",0xb2);
+      RaiseInternalException(local_EAX_35,0,"E:\\__titans\\Andrey\\behpanel.cpp",0xb2);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -53,39 +55,39 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
             (g_allPlayers_007FA174,0xb,(AnonShape_0043BEB0_1C00EC12 *)&local_10->field_01AB);
   local_8 = (Global_sub_005272B0_param_1Enum *)&local_24;
   local_14 = -0x1af - (int)this_00;
-  pGVar6 = &this_00->field_0x1af;
-  piVar4 = &this_00->field_01CF;
+  pGVar7 = &this_00->field_0x1af;
+  piVar5 = &this_00->field_01CF;
   local_c = 6;
   do {
     this_00->field_0028 = 0x54;
-    *(uint *)&this_00->field_0x2c = (uint)pGVar6[6];
-    this_00->field_0030 = pGVar6 + local_14;
+    *(uint *)&this_00->field_0x2c = (uint)pGVar7[6];
+    this_00->field_0030 = pGVar7 + local_14;
     FUN_006e6080(this_00,2,this_00->field_01BE,(undefined4 *)&this_00->field_0x18);
-    if (*pGVar6 != *local_8) {
-      *(undefined1 *)((int)piVar4 + -1) = 1;
-      iVar2 = thunk_FUN_00525390(*pGVar6,this_00->field_01AB);
-      *piVar4 = iVar2;
-      iVar2 = thunk_FUN_005272b0(*pGVar6);
-      piVar4[2] = iVar2;
-      *(undefined1 *)(piVar4 + 3) = 3;
+    if (*pGVar7 != *local_8) {
+      *(undefined1 *)((int)piVar5 + -1) = 1;
+      iVar2 = thunk_FUN_00525390(*pGVar7,this_00->field_01AB);
+      *piVar5 = iVar2;
+      iVar4 = thunk_FUN_005272b0(*pGVar7);
+      piVar5[2] = iVar4;
+      *(undefined1 *)(piVar5 + 3) = 3;
     }
-    piVar4 = (int *)((int)piVar4 + 0x27);
-    pGVar6 = pGVar6 + 1;
+    piVar5 = (int *)((int)piVar5 + 0x27);
+    pGVar7 = pGVar7 + 1;
     local_8 = local_8 + 1;
     local_c = local_c + -1;
   } while (local_c != 0);
-  iVar2 = 3;
-  bVar8 = true;
-  psVar5 = (short *)&this_00->field_0x1af;
-  psVar7 = (short *)&local_24;
+  iVar4 = 3;
+  bVar9 = true;
+  psVar6 = (short *)&this_00->field_0x1af;
+  psVar8 = (short *)&local_24;
   do {
-    if (iVar2 == 0) break;
-    iVar2 = iVar2 + -1;
-    bVar8 = *psVar5 == *psVar7;
-    psVar5 = psVar5 + 1;
-    psVar7 = psVar7 + 1;
-  } while (bVar8);
-  if (!bVar8) {
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+    bVar9 = *psVar6 == *psVar8;
+    psVar6 = psVar6 + 1;
+    psVar8 = psVar8 + 1;
+  } while (bVar9);
+  if (!bVar9) {
     this_00->field_0028 = 5;
     FUN_006e6080(this_00,2,this_00->field_01BE,(undefined4 *)&this_00->field_0x18);
   }

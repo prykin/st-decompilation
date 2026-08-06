@@ -20,8 +20,9 @@ HelpPanelTy::DrawObj
 {
   HelpPanelTy *pHVar2;
   int iVar3;
-  uint uVar4;
-  byte *pbVar5;
+  uint uVar3;
+  BITMAPINFO *pBVar4;
+  int iVar5;
   int iVar6;
   InternalExceptionFrame local_58;
   int local_14;
@@ -44,40 +45,40 @@ HelpPanelTy::DrawObj
       if (local_8 != nullptr) {
         local_14 = local_8->field_0004;
         local_c = local_8->field_0008;
-        iVar3 = (0x19c - local_14) / 2;
+        iVar6 = (0x19c - local_14) / 2;
         Library::DKW::WGR::FUN_006b55f0
-                  ((RecoveredSourceFamily_dibcopy *)pHVar2->field_0218,0,iVar3,*param_1,
+                  ((RecoveredSourceFamily_dibcopy *)pHVar2->field_0218,0,iVar6,*param_1,
                    (byte *)pHVar2->field_021C,0,(*(int *)(pHVar2->field_021C + 2) - local_14) / 2,
                    (*(int *)(pHVar2->field_021C + 4) - local_c) / 2,local_14,local_c);
-        FUN_006b5440((ushort *)pHVar2->field_0218,0,iVar3,*param_1,(uint)local_8,0,0xff);
-        FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pHVar2->field_0218,0,iVar3 + -2,*param_1 + -2,
+        FUN_006b5440((ushort *)pHVar2->field_0218,0,iVar6,*param_1,(tagBITMAPINFO *)local_8,0,0xff);
+        FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pHVar2->field_0218,0,iVar6 + -2,*param_1 + -2,
                      local_14 + 4,local_c + 4,0x6f,0xd);
         *param_1 = *param_1 + local_c + 10;
         FreeAndNull(&local_8);
       }
     }
     if (param_4 != 0) {
-      uVar4 = thunk_FUN_00526ba0((Global_sub_00526BA0_param_1Enum)param_2,param_3);
+      uVar3 = thunk_FUN_00526ba0((Global_sub_00526BA0_param_1Enum)param_2,param_3);
       local_8 = (AnonShape_00515650_BBDC7053 *)
-                FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_4,uVar4);
-      if (local_8 != nullptr) {
-        iVar3 = (0x19c - local_8->field_0004) / 2;
-        DibPut((RecoveredSourceFamily_dibcopy *)pHVar2->field_0218,iVar3,*param_1,'\x01',
+                FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_4,uVar3);
+      if ((BITMAPINFO *)local_8 != nullptr) {
+        iVar6 = (0x19c - (((BITMAPINFO *)local_8)->bmiHeader).biWidth) / 2;
+        DibPut((RecoveredSourceFamily_dibcopy *)pHVar2->field_0218,iVar6,*param_1,'\x01',
                (byte *)local_8);
-        pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pHVar2->field_0248,4);
-        DibPut((RecoveredSourceFamily_dibcopy *)pHVar2->field_0218,iVar3 + -2,*param_1 + -2,'\x06',
-               pbVar5);
-        iVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pHVar2->field_0248,4);
-        *param_1 = *param_1 + *(int *)(iVar3 + 8);
+        pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pHVar2->field_0248,4);
+        DibPut((RecoveredSourceFamily_dibcopy *)pHVar2->field_0218,iVar6 + -2,*param_1 + -2,'\x06',
+               (byte *)pBVar4);
+        pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pHVar2->field_0248,4);
+        *param_1 = *param_1 + (pBVar4->bmiHeader).biHeight;
       }
     }
     g_currentExceptionFrame = local_58.previous;
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x3f3,0,iVar3,"%s",
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x3f3,0,iVar3,"%s",
                              "HelpPanelTy::DrawObj");
-  if (iVar6 != 0) {
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\helppan.cpp",0x3f3);

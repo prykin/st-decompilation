@@ -21,19 +21,20 @@ void __cdecl FUN_006802a0(int exceptionCode,char *resourceString)
   uint uVar2;
   char *pcVar4;
   char *pcVar5;
+  char *pcVar4_mg0;
 
   if (resourceString != nullptr) {
     uVar2 = 0xffffffff;
     do {
-      pcVar4 = resourceString;
+      pcVar4_mg0 = resourceString;
       if (uVar2 == 0) break;
       uVar2 = uVar2 - 1;
-      pcVar4 = resourceString + 1;
+      pcVar4_mg0 = resourceString + 1;
       cVar1 = *resourceString;
-      resourceString = pcVar4;
+      resourceString = pcVar4_mg0;
     } while (cVar1 != '\0');
     uVar2 = ~uVar2;
-    pcVar4 = pcVar4 + -uVar2;
+    pcVar4 = pcVar4_mg0 + -uVar2;
     pcVar5 = (char *)&DAT_008488b4;
     memmove(pcVar5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
   }

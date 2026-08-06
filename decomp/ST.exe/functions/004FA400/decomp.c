@@ -11,7 +11,8 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
   CPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar2;
+  int iVar4;
   uint *puVar5;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
@@ -29,23 +30,23 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
     ShiftControls(local_8,1,param_1);
     ShiftControls(this_00,0,param_1);
     puVar5 = this_00->field_09A4;
-    iVar2 = 7;
+    iVar4 = 7;
     do {
       if (*puVar5 != 0) {
         FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
       }
       puVar5 = puVar5 + 1;
-      iVar2 = iVar2 + -1;
-    } while (iVar2 != 0);
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
     puVar5 = this_00->field_09C0;
-    iVar2 = 2;
+    iVar4 = 2;
     do {
       if (*puVar5 != 0) {
         FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
       }
       puVar5 = puVar5 + 1;
-      iVar2 = iVar2 + -1;
-    } while (iVar2 != 0);
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
     g_currentExceptionFrame = local_4c.previous;
     return 1;
   }

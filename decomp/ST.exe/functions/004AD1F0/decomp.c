@@ -29,19 +29,21 @@ STT3DSprC::Init(STT3DSprC *this,ushort *param_1,uint param_2,uint param_3,STDcRe
 
 {
   STT3DSprC *pSVar2;
+  int local_EAX_34;
+  AnonPointee_STT3DSprC_0020 *pAVar3;
   int iVar3;
-  AnonPointee_STT3DSprC_0020 *pAVar4;
-  undefined4 uVar5;
-  uint uVar6;
+  undefined4 uVar4;
+  uint uVar5;
+  int iVar6;
   InternalExceptionFrame local_4c;
   STT3DSprC *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  local_EAX_34 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
-  if (iVar3 == 0) {
+  if (local_EAX_34 == 0) {
     local_8->field_0034 = param_1;
     local_8->field_0008 = param_3;
     local_8->field_0004 = param_2;
@@ -49,22 +51,22 @@ STT3DSprC::Init(STT3DSprC *this,ushort *param_1,uint param_2,uint param_3,STDcRe
     ST3DSMAPContext::sub_006E8660
               (local_8->field_003C,(int *)&local_8->field_0018,param_7,0,param_5,param_6,param_2,
                param_3,(uint)param_4);
-    pAVar4 = Library::DKW::LIB::MemAlloc(pSVar2->field_0014 * 0x24);
-    pSVar2->field_0020 = pAVar4;
-    for (uVar6 = pSVar2->field_0014 * 9 & 0x3fffffff; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pAVar4 = 0;
-      pAVar4 = (AnonPointee_STT3DSprC_0020 *)&pAVar4->field_0x4;
+    pAVar3 = Library::DKW::LIB::MemAlloc(pSVar2->field_0014 * 0x24);
+    pSVar2->field_0020 = pAVar3;
+    for (uVar5 = pSVar2->field_0014 * 9 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *(undefined4 *)pAVar3 = 0;
+      pAVar3 = (AnonPointee_STT3DSprC_0020 *)&pAVar3->field_0x4;
     }
-    for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined1 *)pAVar4 = 0;
-      pAVar4 = (AnonPointee_STT3DSprC_0020 *)&pAVar4->field_0x1;
+    for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *(undefined1 *)pAVar3 = 0;
+      pAVar3 = (AnonPointee_STT3DSprC_0020 *)&pAVar3->field_0x1;
     }
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x2b1,0,iVar3,"%s",
-                             "STT3DSprC::Init");
+  iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x2b1,0,local_EAX_34,
+                             "%s","STT3DSprC::Init");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

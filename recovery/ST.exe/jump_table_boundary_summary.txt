@@ -1,0 +1,5 @@
+Jump-table boundary recovery
+finite_tables=407
+apply=2
+functions_with_truncation_warning=0
+proof=existing computed-jump references plus an exact consecutive pointer table; the first following word is not executable and has an independent indexed byte read; automatic application additionally requires a fresh decompiler truncation warning or an existing script-owned override

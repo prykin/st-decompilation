@@ -15,9 +15,12 @@ int __thiscall MMsgTy::GetMessage(MMsgTy *this,STMessage *message)
   MMsgTy *this_00;
   byte bVar2;
   DWORD DVar3;
+  int local_EAX_47;
   int iVar4;
   int iVar5;
-  uint uVar6;
+  int iVar6;
+  uint uVar7;
+  int iVar8;
   InternalExceptionFrame local_4c;
   MMsgTy *local_8;
   uint SVar1;
@@ -28,16 +31,16 @@ int __thiscall MMsgTy::GetMessage(MMsgTy *this,STMessage *message)
   this->field_0061 = DVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  local_EAX_47 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar4 != 0) {
+  if (local_EAX_47 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x200,0,iVar4,"%s"
-                               ,"MMsgTy::GetMessage");
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x200,0,local_EAX_47,
+                               "%s","MMsgTy::GetMessage");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\mmsg_obj.cpp",0x200);
+    RaiseInternalException(local_EAX_47,0,"E:\\__titans\\Start\\mmsg_obj.cpp",0x200);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_8,message);
@@ -45,49 +48,49 @@ int __thiscall MMsgTy::GetMessage(MMsgTy *this,STMessage *message)
   if ((0x697e < temp_5f8e730a25) && (temp_5f8e730a25 < 0x69ff)) {
     switch(temp_5f8e730a25) {
     case 0x697f:
-      iVar5 = -1;
-      iVar4 = 3;
-      uVar6 = 0;
+      iVar8 = -1;
+      iVar6 = 3;
+      uVar7 = 0;
       break;
     case 0x6980:
-      iVar5 = -1;
-      iVar4 = 2;
-      uVar6 = 1;
+      iVar8 = -1;
+      iVar6 = 2;
+      uVar7 = 1;
       break;
     case 0x6981:
-      iVar5 = -1;
-      iVar4 = 2;
-      uVar6 = 2;
+      iVar8 = -1;
+      iVar6 = 2;
+      uVar7 = 2;
       break;
     case 0x6982:
-      iVar5 = -2;
-      iVar4 = 2;
-      uVar6 = 3;
+      iVar8 = -2;
+      iVar6 = 2;
+      uVar7 = 3;
       break;
     case 0x6983:
-      iVar5 = 2;
-      iVar4 = 2;
-      uVar6 = 4;
+      iVar8 = 2;
+      iVar6 = 2;
+      uVar7 = 4;
       break;
     case 0x6984:
-      iVar5 = 1;
-      iVar4 = 2;
-      uVar6 = 5;
+      iVar8 = 1;
+      iVar6 = 2;
+      uVar7 = 5;
       break;
     case 0x6985:
-      iVar5 = 1;
-      iVar4 = 2;
-      uVar6 = 6;
+      iVar8 = 1;
+      iVar6 = 2;
+      uVar7 = 6;
       break;
     case 0x6986:
-      iVar5 = 1;
-      iVar4 = 3;
-      uVar6 = 7;
+      iVar8 = 1;
+      iVar6 = 3;
+      uVar7 = 7;
       break;
     default:
       goto switchD_005b939a_default;
     }
-    MMObjTy::PaintSprBut((MMObjTy *)this_00,(int)message,uVar6,iVar4,iVar5,-1);
+    MMObjTy::PaintSprBut((MMObjTy *)this_00,(int)message,uVar7,iVar6,iVar8,-1);
   }
 switchD_005b939a_default:
   SVar1 = message->id;

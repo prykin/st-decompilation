@@ -9,10 +9,11 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
 
 {
   FSGSTy *this_00;
+  int iVar4;
   DArrayTy *pDVar2;
   int iVar3;
-  int iVar4;
-  ccFntTy **ppcVar5;
+  int iVar5;
+  ccFntTy **ppcVar6;
   ccFntTy *local_8d8 [8];
   DArrayTy *local_8b8;
   undefined4 local_8ac;
@@ -27,11 +28,11 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
-  ppcVar5 = local_8d8;
+  ppcVar6 = local_8d8;
   local_8 = this;
-  for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *ppcVar5 = nullptr;
-    ppcVar5 = ppcVar5 + 1;
+  for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *ppcVar6 = nullptr;
+    ppcVar6 = ppcVar6 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -40,29 +41,29 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00 = local_8;
     local_8->field_1AE8 = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_00807e1d);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_00807e1d);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AEC = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_008016a0);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AF0 = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_008016a0);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AF8 = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_008016a0);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AFC = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_008016a0);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1B00 = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_008016a0);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1B04 = &pDVar2->flags;
-    Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
-    ppcVar5 = local_8d8;
-    for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *ppcVar5 = nullptr;
-      ppcVar5 = ppcVar5 + 1;
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_008016a0);
+    ppcVar6 = local_8d8;
+    for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *ppcVar6 = nullptr;
+      ppcVar6 = ppcVar6 + 1;
     }
     local_8d8[2] = this_00->field_1A73;
     local_8b8 = this_00->field_1AE8;

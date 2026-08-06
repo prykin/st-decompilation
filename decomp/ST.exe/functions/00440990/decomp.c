@@ -16,6 +16,7 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
   dword dVar1;
   int *piVar3;
   int iVar4;
+  int iVar5;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
   uint index;
@@ -35,16 +36,16 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
                0x21ee);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar4 = (**(code **)(*param_2 + 0x2c))();
-  if ((((iVar4 == 0x33) &&
+  iVar5 = (**(code **)(*param_2 + 0x2c))();
+  if ((((iVar5 == 0x33) &&
        (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field2_0x5, array != nullptr)
        ) && (dVar1 = array->count, dVar1 != 0)) && (index = 0, 0 < (int)dVar1)) {
     do {
       DArrayGetElement(array,index,&param_2);
       if (param_2 != nullptr) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar4 = (**(code **)(*param_2 + 0xc))();
-        if (iVar4 == 4) {
+        iVar5 = (**(code **)(*param_2 + 0xc))();
+        if (iVar5 == 4) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*param_2 + 0x14))(param_1,param_3);
         }

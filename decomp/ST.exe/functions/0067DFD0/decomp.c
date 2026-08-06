@@ -15,7 +15,8 @@ uint * __cdecl CreateOpponentList(cMf32 *param_1,int param_2,uint param_3)
 {
   int errorCode;
   uint *puVar2;
-  int iVar3;
+  int iVar2;
+  uint *puVar3;
   InternalExceptionFrame local_4c;
   DArrayTy *local_8;
 
@@ -33,9 +34,9 @@ uint * __cdecl CreateOpponentList(cMf32 *param_1,int param_2,uint param_3)
     return puVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x184,0,errorCode,"%s",
+  iVar2 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x184,0,errorCode,"%s",
                              "CreateOpponentList");
-  if (iVar3 != 0) {
+  if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   DArrayDestroy(local_8);

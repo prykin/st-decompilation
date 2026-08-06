@@ -7,15 +7,16 @@ undefined4 __cdecl FUN_005809e0(short param_1,short param_2,int param_3,int para
   STWorldObject *this;
   short sVar1;
   int iVar2;
-  short sVar3;
+  int iVar3;
+  short sVar4;
 
-  sVar3 = (short)param_3;
-  iVar2 = thunk_FUN_004961b0(param_1,param_2,sVar3);
+  sVar4 = (short)param_3;
+  iVar2 = thunk_FUN_004961b0(param_1,param_2,sVar4);
   if (iVar2 == 0) {
     return 0;
   }
   if (param_3 != 0) {
-    sVar1 = sVar3 + -1;
+    sVar1 = sVar4 + -1;
     if (param_1 < 0) {
       return 1;
     }
@@ -27,19 +28,19 @@ undefined4 __cdecl FUN_005809e0(short param_1,short param_2,int param_3,int para
   }
   if (((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) ||
      (((param_2 < 0 ||
-       (((g_worldGrid.sizeY <= param_2 || (sVar3 < 0)) || (g_worldGrid.sizeZ <= sVar3)))) ||
-      (this = STGridAt3D(g_worldGrid, param_1, param_2, sVar3).objects[0], this == nullptr)))) {
+       (((g_worldGrid.sizeY <= param_2 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)))) ||
+      (this = STGridAt3D(g_worldGrid, param_1, param_2, sVar4).objects[0], this == nullptr)))) {
     return 1;
   }
-  iVar2 = this->GetObjectTypeId();
-  if (iVar2 != 0x39) {
-    if (iVar2 == 0x4f) {
+  iVar3 = this->GetObjectTypeId();
+  if (iVar3 != 0x39) {
+    if (iVar3 == 0x4f) {
       if (param_4 != 0xde) {
         return 0;
       }
       return 1;
     }
-    if (iVar2 != 0x5e) {
+    if (iVar3 != 0x5e) {
       return 0;
     }
   }

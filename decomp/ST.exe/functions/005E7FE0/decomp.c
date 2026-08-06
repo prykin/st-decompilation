@@ -11,14 +11,17 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   undefined1 *puVar1;
   RecoveredSourceFamily_dibcopy *pRVar2;
   cMf32 *pcVar4;
-  int iVar5;
-  ushort *puVar6;
-  DArrayTy *pDVar7;
+  int local_EAX_45;
+  ushort *puVar5;
+  DArrayTy *pDVar6;
+  char *pcVar7;
   char *pcVar8;
-  char *pcVar9;
+  int iVar5;
+  int local_EAX_409;
   int iVar10;
   WaitTy *this_00;
-  uint *puVar11;
+  uint *puVar9;
+  int iVar11;
   byte *pbVar12;
   byte local_1a8 [260];
   InternalExceptionFrame local_a4;
@@ -33,34 +36,34 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_8 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
-  if (iVar5 != 0) {
+  local_EAX_45 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
+  if (local_EAX_45 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar10 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x15e,0,iVar5,
+    iVar10 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x15e,0,local_EAX_45,
                                 "%s","WaitTy::ShowDescription");
     if (iVar10 == 0) {
-      RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\wait_obj.cpp",0x15e);
+      RaiseInternalException(local_EAX_45,0,"E:\\__titans\\Start\\wait_obj.cpp",0x15e);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  puVar6 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
+  puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
   DibPut((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
-         (byte *)puVar6);
+         (byte *)puVar5);
   pRVar2 = (RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_0544;
   FUN_006b4170(pRVar2,0,0,0,pRVar2->field_0004,pRVar2->field_0008,0xff);
   if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
     FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
   }
-  pDVar7 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+  pDVar6 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
   this_00 = local_8;
-  g_startSystem_0081176C->field_0548 = &pDVar7->flags;
+  g_startSystem_0081176C->field_0548 = &pDVar6->flags;
   if (local_8->field_1A8F == -1) {
-    pcVar8 = LoadResourceString(0x252c,g_hINSTANCE_00807618);
-    pcVar9 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
-    wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar9,pcVar8);
-    iVar5 = 0;
-    puVar11 = &DAT_0080f33a;
+    pcVar7 = LoadResourceString(0x252c,g_hINSTANCE_00807618);
+    pcVar8 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar8,pcVar7);
+    iVar11 = 0;
+    puVar9 = &DAT_0080f33a;
   }
   else {
     if (((byte)local_8->field_1A93 < 2) || (3 < (byte)local_8->field_1A93)) goto LAB_005e829d;
@@ -71,8 +74,8 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     if (iVar5 == -0x70) {
       local_a4.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_a4;
-      iVar5 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
-      if (iVar5 == 0) {
+      local_EAX_409 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
+      if (local_EAX_409 == 0) {
         local_10 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
       }
       this_00 = local_8;
@@ -84,21 +87,21 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
         local_c = 1;
         Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,nullptr,nullptr,local_1a8,nullptr);
         pbVar12 = local_1a8;
-        pcVar8 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
-        wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar8,pbVar12);
+        pcVar7 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar7,pbVar12);
         AddStr(this_00,&DAT_0080f33a,0);
         cMf32::delete(pcVar4);
       }
       goto LAB_005e829d;
     }
-    pcVar8 = LoadResourceString(0x252b,g_hINSTANCE_00807618);
-    pcVar9 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
-    wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar9,pcVar8);
+    pcVar7 = LoadResourceString(0x252b,g_hINSTANCE_00807618);
+    pcVar8 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar8,pcVar7);
     AddStr(this_00,&DAT_0080f33a,0);
-    iVar5 = 0;
-    puVar11 = (uint *)LoadResourceString(0x252d,g_hINSTANCE_00807618);
+    iVar11 = 0;
+    puVar9 = (uint *)LoadResourceString(0x252d,g_hINSTANCE_00807618);
   }
-  AddStr(this_00,puVar11,iVar5);
+  AddStr(this_00,puVar9,iVar11);
 LAB_005e829d:
   DAT_008087be = this_00->field_1A8F;
   if (local_c == 0) {

@@ -26,7 +26,7 @@ void FUN_00496e40(int param_1,int param_2,undefined4 param_3,int param_4)
     DArrayRemoveAt(g_array_007FB270,index);
     iVar2 = thunk_FUN_00496f00(iVar1);
     if (iVar2 == 0) {
-      FreeAndNull((void **)(&DAT_007fb24c + iVar1));
+      FreeAndNull(&DAT_007fb24c + iVar1);
     }
   }
   return;

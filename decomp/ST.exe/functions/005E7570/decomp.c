@@ -12,7 +12,8 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
   WaitTy *pWVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int iVar5;
+  uint *puVar6;
   InternalExceptionFrame local_4c;
   WaitTy *local_8;
 
@@ -50,16 +51,16 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1AF8);
       pWVar2->field_1AF8 = nullptr;
     }
-    puVar5 = pWVar2->field_1A94;
-    iVar3 = 0x16;
+    puVar6 = pWVar2->field_1A94;
+    iVar5 = 0x16;
     do {
-      if (*puVar5 != 0xffffffff) {
-        FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar5);
-        *puVar5 = 0xffffffff;
+      if (*puVar6 != 0xffffffff) {
+        FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar6);
+        *puVar6 = 0xffffffff;
       }
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      puVar6 = puVar6 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     if (pWVar2->field_1B00 != nullptr) {
       HoloTy::Done(pWVar2->field_1B00);
       Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1B00);

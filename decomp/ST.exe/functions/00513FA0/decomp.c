@@ -53,7 +53,7 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
     if ((char)piVar5[2] != '\0') {
       local_8->field_01A1 = 0;
       local_8->field_01A7 = 0;
-      local_8->field_01A3 = 0;
+      local_8->field_01A3 = nullptr;
       uVar7 = STField<uint>(piVar5,0xd);
       pvVar3 = STField<void *>(piVar5,9);
       switch((char)piVar5[2]) {

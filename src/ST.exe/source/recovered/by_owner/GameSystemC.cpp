@@ -40,7 +40,7 @@ void __thiscall st::fn_00577690(GameSystemC *this)
   DVar1 = st::fn_006E51B0(this->field_0018);
   this->field_0020 = DVar1;
   this->field_0024 = 0;
-  st::fn_006BC360(DAT_0080679c,(undefined4 *)&this->field_0x28,nullptr);
+  st::fn_006BC360(PTR_0080679c,(undefined4 *)&this->field_0x28,nullptr);
   return;
 }
 

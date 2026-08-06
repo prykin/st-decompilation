@@ -16,9 +16,10 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
   BldLabPanelTy_field_027ADArray *pBVar2;
   BldLabPanelTy *this_00;
   int iVar4;
-  Global_sub_00526BA0_param_1Enum *pGVar5;
-  BldLabPanelTy_field_027AElement *element_027a;
   int iVar6;
+  Global_sub_00526BA0_param_1Enum *pGVar7;
+  BldLabPanelTy_field_027AElement *element_027a;
+  int iVar5;
   InternalExceptionFrame local_4c;
   BldLabPanelTy *local_8;
 
@@ -29,9 +30,9 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\bldlab.cpp",0x9a,0,iVar4,"%s",
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\bldlab.cpp",0x9a,0,iVar4,"%s",
                                "BldLabPanelTy::GetMessage");
-    if (iVar6 == 0) {
+    if (iVar5 == 0) {
       RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\bldlab.cpp",0x9a);
       return 0xffff;
     }
@@ -63,11 +64,11 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
     }
     pBVar2 = this_00->field_027A;
     if ((pBVar2 == nullptr) ||
-       (iVar4 = SVar1 + this_00->field_0199, pBVar2->count <= iVar4 - 0xc09fU)) {
-      pGVar5 = nullptr;
+       (iVar6 = SVar1 + this_00->field_0199, pBVar2->count <= iVar6 - 0xc09fU)) {
+      pGVar7 = nullptr;
     }
     else {
-      element_027a = DArrayAt<BldLabPanelTy_field_027AElement>(pBVar2, iVar4 + -0xc09f);
+      element_027a = DArrayAt<BldLabPanelTy_field_027AElement>(pBVar2, iVar6 + -0xc09f);
     }
     if (element_027a == nullptr) {
       g_currentExceptionFrame = local_4c.previous;

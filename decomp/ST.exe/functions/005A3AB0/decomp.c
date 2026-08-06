@@ -11,15 +11,20 @@ void __thiscall FSGSTy::SetInfo(FSGSTy *this,byte *param_1,uint param_2,byte *pa
   byte bVar1;
   CursorClassTy *this_00;
   FSGSTy *this_01;
-  byte *pbVar3;
+  byte *pbVar4;
+  int iVar6;
   int iVar4;
-  uint *puVar5;
-  DArrayTy *pDVar6;
-  BOOL BVar7;
-  int iVar8;
-  byte *pbVar9;
+  byte *pbVar3;
+  byte *local_EAX_321;
+  byte *local_EAX_393;
+  uint *puVar7;
+  DArrayTy *pDVar8;
+  byte *local_EAX_791;
+  int local_EAX_838;
+  BOOL BVar9;
+  int iVar5;
   bool bVar10;
-  uint local_88 [8];
+  CHAR local_88 [32];
   InternalExceptionFrame local_68;
   _SYSTEMTIME local_24;
   FSGSTy *local_14;
@@ -36,25 +41,25 @@ void __thiscall FSGSTy::SetInfo(FSGSTy *this,byte *param_1,uint param_2,byte *pa
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;
   }
-  if ((this->field_1A5F == CASE_A) && (pbVar3 = this->field_1B0C, pbVar3 != nullptr)) {
+  if ((this->field_1A5F == CASE_A) && (pbVar4 = this->field_1B0C, pbVar4 != nullptr)) {
     do {
-      bVar1 = *pbVar3;
+      bVar1 = *pbVar4;
       bVar10 = bVar1 < *param_1;
       if (bVar1 != *param_1) {
 LAB_005a3b5e:
-        iVar4 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
+        iVar6 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
         goto LAB_005a3b63;
       }
       if (bVar1 == 0) break;
-      bVar1 = pbVar3[1];
+      bVar1 = pbVar4[1];
       bVar10 = bVar1 < param_1[1];
       if (bVar1 != param_1[1]) goto LAB_005a3b5e;
-      pbVar3 = pbVar3 + 2;
+      pbVar4 = pbVar4 + 2;
       param_1 = param_1 + 2;
     } while (bVar1 != 0);
-    iVar4 = 0;
+    iVar6 = 0;
 LAB_005a3b63:
-    if (iVar4 == 0) {
+    if (iVar6 == 0) {
       local_68.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_68;
       iVar4 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
@@ -67,16 +72,16 @@ LAB_005a3b63:
           this_01->field_002D = 0x33;
           FUN_006e6080(this_01,2,this_01->field_1AD8,(undefined4 *)&this_01->field_0x1d);
         }
-        pbVar3 = thunk_FUN_0055d590("Profile\\Sex",param_2,param_3);
-        if (pbVar3 != nullptr) {
-          Library::DKW::TBL::FUN_006b6020(this_01->field_1AFC,0,(char *)pbVar3);
+        local_EAX_321 = thunk_FUN_0055d590("Profile\\Sex",param_2,param_3);
+        if (local_EAX_321 != nullptr) {
+          Library::DKW::TBL::FUN_006b6020(this_01->field_1AFC,0,(char *)local_EAX_321);
           this_01->field_002D = 0x33;
           *(DArrayTy **)&this_01->field_0x31 = this_01->field_1AFC;
           FUN_006e6080(this_01,2,this_01->field_1ADC,(undefined4 *)&this_01->field_0x1d);
         }
-        pbVar3 = thunk_FUN_0055d590("Profile\\Location",param_2,param_3);
-        if (pbVar3 != nullptr) {
-          Library::DKW::TBL::FUN_006b6020(this_01->field_1B00,0,(char *)pbVar3);
+        local_EAX_393 = thunk_FUN_0055d590("Profile\\Location",param_2,param_3);
+        if (local_EAX_393 != nullptr) {
+          Library::DKW::TBL::FUN_006b6020(this_01->field_1B00,0,(char *)local_EAX_393);
           this_01->field_002D = 0x33;
           *(DArrayTy **)&this_01->field_0x31 = this_01->field_1B00;
           FUN_006e6080(this_01,2,this_01->field_1AE0,(undefined4 *)&this_01->field_0x1d);
@@ -86,12 +91,12 @@ LAB_005a3b63:
           if ((DArrayTy *)this_01->field_1B04 != nullptr) {
             FUN_006b5570((DArrayTy *)this_01->field_1B04);
           }
-          puVar5 = ccFntTy::_TxtToSarr(this_01->field_1A73,local_10);
-          this_01->field_1B04 = puVar5;
-          if (puVar5 == nullptr) {
-            pDVar6 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
-            this_01->field_1B04 = &pDVar6->flags;
-            Library::DKW::TBL::FUN_006b5aa0(&pDVar6->flags,&DAT_008016a0);
+          puVar7 = ccFntTy::_TxtToSarr(this_01->field_1A73,local_10);
+          this_01->field_1B04 = puVar7;
+          if (puVar7 == nullptr) {
+            pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
+            this_01->field_1B04 = &pDVar8->flags;
+            Library::DKW::TBL::FUN_006b5aa0(pDVar8,&DAT_008016a0);
           }
           this_01->field_002D = 0x33;
           *(uint **)&this_01->field_0x31 = this_01->field_1B04;
@@ -109,26 +114,27 @@ LAB_005a3b63:
                      ,0x17);
         sub_005A39A0(this_01,this_01->field_1A7B,"1\\Rank",param_2,param_3,0x7e,0x11b,0x4e,
                      0x17);
-        pbVar3 = thunk_FUN_0055d590("1\\Last Game",param_2,param_3);
-        if (pbVar3 != nullptr) {
-          iVar4 = -1;
-          pbVar9 = pbVar3;
+        local_EAX_791 = thunk_FUN_0055d590("1\\Last Game",param_2,param_3);
+        if (local_EAX_791 != nullptr) {
+          iVar6 = -1;
+          pbVar4 = local_EAX_791;
           do {
-            if (iVar4 == 0) break;
-            iVar4 = iVar4 + -1;
-            bVar1 = *pbVar9;
-            pbVar9 = pbVar9 + 1;
+            if (iVar6 == 0) break;
+            iVar6 = iVar6 + -1;
+            bVar1 = *pbVar4;
+            pbVar4 = pbVar4 + 1;
           } while (bVar1 != 0);
-          if (iVar4 != -2) {
-            iVar4 = Library::MSVCRT::FUN_0072ee80((char *)pbVar3,(byte *)"%d %d");
-            if (iVar4 != 2) {
+          if (iVar6 != -2) {
+            local_EAX_838 =
+                 Library::MSVCRT::FUN_0072ee80((char *)local_EAX_791,(byte *)"%d %d");
+            if (local_EAX_838 != 2) {
               local_c.dwHighDateTime = 0;
               local_c.dwLowDateTime = 0;
             }
-            BVar7 = FileTimeToSystemTime(&local_c,&local_24);
-            if (BVar7 != 0) {
-              wsprintfA((LPSTR)local_88,"%2d/%2d/%4d",STPiece<6,4>(local_24) & 0xffff,
-                        local_24.wMonth,local_24.wYear);
+            BVar9 = FileTimeToSystemTime(&local_c,&local_24);
+            if (BVar9 != 0) {
+              wsprintfA(local_88,"%2d/%2d/%4d",STPiece<6,4>(local_24) & 0xffff,local_24.wMonth,
+                        local_24.wYear);
               FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1AC0,0,0xe2,0x11b,0xb2,
                            0x17,0xff);
               ccFntTy::SetSurf(this_01->field_1A73,(int)this_01->field_1AC0,0,0xe2,0x11b,0xb2,0x17);
@@ -149,9 +155,9 @@ LAB_005a3b63:
         return;
       }
       g_currentExceptionFrame = local_68.previous;
-      iVar8 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xb4e,0,iVar4,
+      iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xb4e,0,iVar4,
                                  "%s","FSGSTy::SetInfo");
-      if (iVar8 != 0) {
+      if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0xb4e);

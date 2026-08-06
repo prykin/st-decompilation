@@ -12,8 +12,10 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
   AnonPointee_TLOBaseTy_01F5 *pAVar2;
   TLOBaseTy *pTVar4;
   int iVar5;
-  undefined4 uVar6;
   int iVar7;
+  undefined4 uVar8;
+  int iVar6;
+  int iVar9;
   CHAR local_15c [256];
   InternalExceptionFrame local_5c;
   TLOBaseTy *local_18;
@@ -34,37 +36,37 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       local_10 = pAVar2->field_01E4;
       local_14 = pAVar2->field_01E8;
       local_c = pAVar2->field_01EC;
-      iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-      if (iVar5 != 0) {
-        iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-        local_8 = Library::DKW::LIB::MemAllocClear(iVar5 << 2);
-        iVar7 = 0;
-        iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-        if (0 < iVar5) {
+      iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
+      if (iVar7 != 0) {
+        iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
+        local_8 = Library::DKW::LIB::MemAllocClear(iVar7 << 2);
+        iVar9 = 0;
+        iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
+        if (0 < iVar7) {
           do {
-            uVar6 = thunk_FUN_004acdd0(puVar1,'\r',iVar7);
-            *(undefined4 *)((int)local_8 + iVar7 * 4) = uVar6;
-            iVar7 = iVar7 + 1;
-            iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-          } while (iVar7 < iVar5);
+            uVar8 = thunk_FUN_004acdd0(puVar1,'\r',iVar9);
+            *(undefined4 *)((int)local_8 + iVar9 * 4) = uVar8;
+            iVar9 = iVar9 + 1;
+            iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
+          } while (iVar9 < iVar7);
         }
       }
       wsprintfA(local_15c,"%s%1i",pTVar4->field_05F3,pTVar4->field_05C0);
-      iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,PTR_0080678c,local_15c,0x1d);
-      if (iVar5 != 0) {
+      iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,PTR_0080678c,local_15c,CASE_1D);
+      if (iVar7 != 0) {
         RaiseInternalException
-                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xd3);
+                  (iVar7,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xd3);
       }
       thunk_FUN_004abce0(puVar1,0xd,local_10,local_14,'\0');
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\r',local_c);
-      iVar7 = 0;
-      iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-      if (0 < iVar5) {
+      iVar9 = 0;
+      iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
+      if (0 < iVar7) {
         do {
-          thunk_FUN_004ace00(puVar1,'\r',iVar7,*(undefined4 *)((int)local_8 + iVar7 * 4));
-          iVar7 = iVar7 + 1;
-          iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-        } while (iVar7 < iVar5);
+          thunk_FUN_004ace00(puVar1,'\r',iVar9,*(undefined4 *)((int)local_8 + iVar9 * 4));
+          iVar9 = iVar9 + 1;
+          iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
+        } while (iVar9 < iVar7);
       }
       FreeAndNull(&local_8);
     }
@@ -75,37 +77,37 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       local_10 = pAVar2->field_0130;
       local_14 = pAVar2->field_0134;
       local_c = pAVar2->field_0138;
-      iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
-      if (iVar5 != 0) {
-        iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
-        local_8 = Library::DKW::LIB::MemAllocClear(iVar5 << 2);
-        iVar7 = 0;
-        iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
-        if (0 < iVar5) {
+      iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
+      if (iVar7 != 0) {
+        iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
+        local_8 = Library::DKW::LIB::MemAllocClear(iVar7 << 2);
+        iVar9 = 0;
+        iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
+        if (0 < iVar7) {
           do {
-            uVar6 = thunk_FUN_004acdd0(puVar1,'\b',iVar7);
-            *(undefined4 *)((int)local_8 + iVar7 * 4) = uVar6;
-            iVar7 = iVar7 + 1;
-            iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
-          } while (iVar7 < iVar5);
+            uVar8 = thunk_FUN_004acdd0(puVar1,'\b',iVar9);
+            *(undefined4 *)((int)local_8 + iVar9 * 4) = uVar8;
+            iVar9 = iVar9 + 1;
+            iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
+          } while (iVar9 < iVar7);
         }
       }
       wsprintfA(local_15c,"%s_cover%1i",pTVar4->field_05F3,pTVar4->field_05C0);
-      iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,PTR_0080678c,local_15c,0x1d);
-      if (iVar5 != 0) {
+      iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,PTR_0080678c,local_15c,CASE_1D);
+      if (iVar7 != 0) {
         RaiseInternalException
-                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xea);
+                  (iVar7,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xea);
       }
       thunk_FUN_004abce0(puVar1,8,local_10,local_14,'\0');
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\b',local_c);
-      iVar7 = 0;
-      iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
-      if (0 < iVar5) {
+      iVar9 = 0;
+      iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
+      if (0 < iVar7) {
         do {
-          thunk_FUN_004ace00(puVar1,'\b',iVar7,*(undefined4 *)((int)local_8 + iVar7 * 4));
-          iVar7 = iVar7 + 1;
-          iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
-        } while (iVar7 < iVar5);
+          thunk_FUN_004ace00(puVar1,'\b',iVar9,*(undefined4 *)((int)local_8 + iVar9 * 4));
+          iVar9 = iVar9 + 1;
+          iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
+        } while (iVar9 < iVar7);
       }
       FreeAndNull(&local_8);
     }
@@ -113,9 +115,9 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
     return 0;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar7 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bspr.cpp",0xf6,0,iVar5,"%s",
+  iVar6 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bspr.cpp",0xf6,0,iVar5,"%s",
                              "TLOBaseTy::ReloadLogoPlane error");
-  if (iVar7 != 0) {
+  if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar5,0,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xf7);

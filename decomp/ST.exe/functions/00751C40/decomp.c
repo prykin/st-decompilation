@@ -1,9 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_00751c40(undefined4 param_1,uint param_2,int param_3,uint *param_4,int param_5)
+/* [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /int; no intervening CALL or EAX/AX/AL/AH definition exists; machine CFG audit: used=2,
+   ignored=0, unknown=0 */
+
+int FUN_00751c40(undefined4 param_1,uint param_2,int param_3,uint *param_4,int param_5)
 
 {
+  int iVar1;
   undefined1 local_38 [14];
   undefined2 local_2a;
   int local_28;
@@ -20,7 +26,7 @@ void FUN_00751c40(undefined4 param_1,uint param_2,int param_3,uint *param_4,int 
     local_10[2] = 0x1f;
     param_4 = local_10;
   }
-  Library::DKW::JPG::FUN_00754530((int)local_38,param_4,0,0,param_1,param_2);
-  return;
+  iVar1 = Library::DKW::JPG::FUN_00754530((int)local_38,param_4,0,0,param_1,param_2);
+  return iVar1;
 }
 

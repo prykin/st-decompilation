@@ -11,9 +11,6 @@
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0068DC80 -> 00668180 @ 0068DE36
 
-   [STPrototypeApplier] Propagated return.
-   Evidence: 00668180 returns stored into global 008489C4 @ 00685E0A
-
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0064E300 -> 00668180 @ 0064E399; FUN_0064e300 parameter param_3 | 00683C70 -> 00668180
    @ 00685E05; unproven partial register write at 00685DF5 | 0068DC80 -> 00668180 @ 0068DE36;
@@ -30,9 +27,12 @@
 
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 00683C70 -> 00668180 @ 00685E05; unproven partial register write at 00685DDF | 0068DC80
-   -> 00668180 @ 0068DE36; unproven partial register write at 0068DE21 */
+   -> 00668180 @ 0068DE36; unproven partial register write at 0068DE21
 
-AnonShape_GLOBAL_008489C4_F7BABFAC * __cdecl
+   [STPrototypeRepairApplier] Propagated return.
+   Evidence: 00668180 returns stored into global 008489C4 @ 00685E0A */
+
+AllocationRecord_006684E0 * __cdecl
 st::fn_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte param_5)
 
 {
@@ -69,7 +69,7 @@ st::fn_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte par
       local_8->field_020F = pDVar1;
     }
     g_currentExceptionFrame = local_4c.previous;
-    return (AnonShape_GLOBAL_008489C4_F7BABFAC *)local_8;
+    return (AllocationRecord_006684E0 *)local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
   st::fn_00405BCD((int *)&local_8);
@@ -92,11 +92,11 @@ AllocationRecord_00668330 * __cdecl st::fn_00668330(AllocationRecord_00668330 *p
 
 {
   int iVar1;
-  AllocationRecord_00668330 *pAVar2;
-  undefined4 uVar3;
-  DArrayTy *pDVar4;
+  AllocationRecord_00668330 *pAVar1;
+  DArrayTy *pDVar2;
+  int iVar3;
+  AllocationRecord_00668330 *pAVar4;
   AllocationRecord_00668330 *pAVar5;
-  AllocationRecord_00668330 *pAVar6;
   InternalExceptionFrame local_4c;
   AnonShape_00668330_F270680B *local_8;
 
@@ -105,41 +105,41 @@ AllocationRecord_00668330 * __cdecl st::fn_00668330(AllocationRecord_00668330 *p
   g_currentExceptionFrame = &local_4c;
   iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    pAVar2 = st::fn_006AAC10(0x260);
-    pAVar5 = param_1;
-    pAVar6 = pAVar2;
-    memmove(pAVar6, pAVar5, 0x260); /* compiler REP MOVS byte copy */
-    iVar1 = 0;
-    pAVar2->field_0014 = 0x260;
-    pAVar2->field_0018 = 2;
-    local_8 = (AnonShape_00668330_F270680B *)pAVar2;
+    pAVar1 = st::fn_006AAC10(0x260);
+    pAVar4 = param_1;
+    pAVar5 = pAVar1;
+    memmove(pAVar5, pAVar4, 0x260); /* compiler REP MOVS byte copy */
+    iVar3 = 0;
+    pAVar1->field_0014 = 0x260;
+    pAVar1->field_0018 = 2;
+    local_8 = (AnonShape_00668330_F270680B *)pAVar1;
     do {
-      if (*(int *)((int)&pAVar2->field_01EB + iVar1) != 0) {
-        uVar3 = st::fn_006B0060(nullptr,
-                             (uint *)(&param_1->field_0x25f + *(int *)(&pAVar2->field_0x1ef + iVar1)
-                                     ));
-        *(undefined4 *)((int)&local_8->field_01EB + iVar1) = uVar3;
-        pAVar2 = (AllocationRecord_00668330 *)local_8;
+      if (*(int *)((int)&pAVar1->field_01EB + iVar3) != 0) {
+        pDVar2 = st::fn_006B0060(nullptr,
+                              (uint *)(&param_1->field_0x25f +
+                                      *(int *)(&pAVar1->field_0x1ef + iVar3)));
+        *(DArrayTy **)((int)&local_8->field_01EB + iVar3) = pDVar2;
+        pAVar1 = (AllocationRecord_00668330 *)local_8;
       }
-      iVar1 = iVar1 + 0xc;
-    } while (iVar1 < 0x54);
-    if (pAVar2->field_01EB == 0) {
-      pDVar4 = st::fn_006AE290(nullptr,10,0x2c,10);
-      local_8->field_01EB = &pDVar4->flags;
-      pAVar2 = (AllocationRecord_00668330 *)local_8;
+      iVar3 = iVar3 + 0xc;
+    } while (iVar3 < 0x54);
+    if (pAVar1->field_01EB == 0) {
+      pDVar2 = st::fn_006AE290(nullptr,10,0x2c,10);
+      local_8->field_01EB = &pDVar2->flags;
+      pAVar1 = (AllocationRecord_00668330 *)local_8;
     }
-    if (pAVar2->field_0203 == 0) {
-      pDVar4 = st::fn_006AE290(nullptr,10,0x14,10);
-      local_8->field_0203 = &pDVar4->flags;
-      pAVar2 = (AllocationRecord_00668330 *)local_8;
+    if (pAVar1->field_0203 == 0) {
+      pDVar2 = st::fn_006AE290(nullptr,10,0x14,10);
+      local_8->field_0203 = &pDVar2->flags;
+      pAVar1 = (AllocationRecord_00668330 *)local_8;
     }
-    if (pAVar2->field_020F == 0) {
-      pDVar4 = st::fn_006AE290(nullptr,10,0xc,10);
-      local_8->field_020F = &pDVar4->flags;
-      pAVar2 = (AllocationRecord_00668330 *)local_8;
+    if (pAVar1->field_020F == 0) {
+      pDVar2 = st::fn_006AE290(nullptr,10,0xc,10);
+      local_8->field_020F = &pDVar2->flags;
+      pAVar1 = (AllocationRecord_00668330 *)local_8;
     }
     g_currentExceptionFrame = local_4c.previous;
-    return pAVar2;
+    return pAVar1;
   }
   g_currentExceptionFrame = local_4c.previous;
   st::fn_00405BCD((int *)&local_8);
@@ -167,11 +167,13 @@ AllocationRecord_00668330 * __cdecl st::fn_00668330(AllocationRecord_00668330 *p
 AllocationRecord_006684E0 * __cdecl st::fn_006684E0(AllocationRecord_006684E0 *param_1,uint *param_2)
 
 {
-  uint *puVar1;
+  int iVar1;
+  uint *puVar2;
   int iVar3;
   AllocationRecord_006684E0 *pAVar4;
   int iVar5;
-  uint **ppuVar6;
+  uint **ppuVar5;
+  int iVar6;
   AllocationRecord_006684E0 *pAVar7;
   uint *puVar8;
   InternalExceptionFrame local_50;
@@ -184,37 +186,37 @@ AllocationRecord_006684E0 * __cdecl st::fn_006684E0(AllocationRecord_006684E0 *p
   g_currentExceptionFrame = &local_50;
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar3 == 0) {
-    iVar3 = 7;
-    ppuVar6 = &param_1->field_01EB;
+    iVar6 = 7;
+    ppuVar5 = &param_1->field_01EB;
     do {
-      puVar8 = *ppuVar6;
+      puVar8 = *ppuVar5;
       if (puVar8 != nullptr) {
-        iVar5 = puVar8[3] * puVar8[2] + 0x1c;
-        local_c = local_c + iVar5;
-        ppuVar6[2] = (uint *)iVar5;
+        iVar1 = puVar8[3] * puVar8[2] + 0x1c;
+        local_c = local_c + iVar1;
+        ppuVar5[2] = (uint *)iVar1;
       }
-      ppuVar6 = ppuVar6 + 3;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      ppuVar5 = ppuVar5 + 3;
+      iVar6 = iVar6 + -1;
+    } while (iVar6 != 0);
     *param_2 = local_c + 0x260U;
     pAVar4 = st::fn_006AAC10(local_c + 0x260U);
     pAVar7 = pAVar4;
     memmove(pAVar7, param_1, 0x260); /* compiler REP MOVS byte copy */
-    iVar3 = 0;
+    iVar6 = 0;
     pAVar4->field_0014 = *param_2;
     pAVar4->field_0018 = 0;
     puVar8 = (uint *)&pAVar4->field_0x25f;
     local_8 = pAVar4;
     do {
-      puVar1 = *(uint **)((int)&pAVar4->field_01EB + iVar3);
-      if (puVar1 != nullptr) {
-        st::fn_006AFFC0(puVar1,puVar8,&local_c);
-        *(int *)(&local_8->field_0x1ef + iVar3) = (int)puVar8 + (-0x25f - (int)local_8);
-        puVar8 = (uint *)((int)puVar8 + *(int *)(&local_8->field_0x1f3 + iVar3));
+      puVar2 = *(uint **)((int)&pAVar4->field_01EB + iVar6);
+      if (puVar2 != nullptr) {
+        st::fn_006AFFC0(puVar2,puVar8,&local_c);
+        *(int *)(&local_8->field_0x1ef + iVar6) = (int)puVar8 + (-0x25f - (int)local_8);
+        puVar8 = (uint *)((int)puVar8 + *(int *)(&local_8->field_0x1f3 + iVar6));
         pAVar4 = local_8;
       }
-      iVar3 = iVar3 + 0xc;
-    } while (iVar3 < 0x54);
+      iVar6 = iVar6 + 0xc;
+    } while (iVar6 < 0x54);
     g_currentExceptionFrame = local_50.previous;
     return pAVar4;
   }

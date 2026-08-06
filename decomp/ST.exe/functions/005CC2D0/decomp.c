@@ -50,7 +50,7 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
         piVar2 = (int *)((int)&pSVar4->data->field_0000 + pSVar4->elementSize * uVar5);
 LAB_005cc360:
         if ((piVar2 != nullptr) && (piVar2[2] != 0)) {
-          FreeAndNull((void **)(piVar2 + 2));
+          FreeAndNull(piVar2 + 2);
         }
         pSVar4 = this_00->field_2237;
         uVar5 = uVar5 + 1;

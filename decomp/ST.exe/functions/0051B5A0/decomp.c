@@ -11,38 +11,80 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   char cVar1;
   HelpPanelTy_field_01A1State HVar2;
   HelpPanelTy *this_00;
-  int iVar4;
+  BITMAPINFO *pBVar4;
+  int local_EAX_88;
   UINT UVar5;
+  uint local_EAX_296;
+  BITMAPINFO *pBVar5_mg0;
+  char *pcVar6_mg0;
+  int iVar4;
+  char *pcVar6_mg4;
+  char *pcVar7_mg3;
+  char *pcVar6_mg3;
+  char *pcVar7_mg2;
+  char *pcVar6_mg2;
+  char *pcVar7_mg1;
+  char *pcVar6_mg1;
+  char *pcVar7_mg0;
+  int local_EAX_917;
+  char *pcVar6_mg5;
+  char *pcVar6_mg6;
   uint uVar6;
-  byte *pbVar7;
-  uint *puVar8;
-  char *pcVar9;
-  char *pcVar10;
-  uint uVar11;
-  Global_sub_00526BA0_param_1Enum GVar12;
-  int *piVar13;
-  HINSTANCE pHVar14;
-  char cVar15;
-  undefined4 uVar16;
+  BITMAPINFO *pBVar5_mg1;
+  char *pcVar6_mg7;
+  BITMAPINFO *pBVar5_mg2;
+  char *pcVar6_mg8;
+  char *pcVar6_mg9;
+  char *pcVar6_mgA;
+  char *pcVar6_mgB;
+  char *pcVar6_mgC;
+  char *pcVar6_mgD;
+  uint *puVar6;
+  uint local_EAX_2416;
+  BITMAPINFO *pBVar5_mg4;
+  char *pcVar6_mgF;
+  int local_EAX_2664;
+  char *pcVar6_mg10;
+  uint local_EAX_2872;
+  BITMAPINFO *pBVar5_mg6;
+  int local_EAX_3080;
+  char *pcVar6_mg12;
+  uint local_EAX_3288;
+  BITMAPINFO *pBVar5_mg8;
+  int local_EAX_3503;
+  char *pcVar6_mg14;
+  uint local_EAX_3708;
+  BITMAPINFO *pBVar5_mgA;
   int iVar17;
+  uint uVar7;
+  char *pcVar8;
+  Global_sub_00526BA0_param_1Enum GVar9;
+  int *piVar10;
+  char *pcVar11;
+  HINSTANCE pHVar12;
+  char cVar13;
+  int iVar14;
+  undefined4 uVar15;
+  int iVar16;
   int iVar18;
   Global_sub_005259B0_param_1Enum GVar19;
+  uint uVar20;
   InternalExceptionFrame local_a4;
   undefined4 local_60;
   uint local_5c;
-  undefined4 local_58;
-  undefined4 local_54;
+  LONG local_58;
+  LONG local_54;
   undefined1 local_50;
   undefined4 local_4f;
   undefined4 local_4b;
   HelpPanelTy *local_44;
   int local_40;
   int local_3c;
-  byte *local_38;
+  BITMAPINFO *local_38;
   undefined4 local_34;
   uint local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
+  LONG local_2c;
+  LONG local_28;
   undefined1 local_24;
   Global_sub_00526BA0_param_1Enum local_23;
   int local_1f;
@@ -54,13 +96,13 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
 
   local_8 = 0;
   local_44 = this;
-  local_38 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0248,4);
+  local_38 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0248,4);
   if (g_allPlayers_007FA174 != nullptr) {
     local_a4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_a4;
-    iVar4 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
+    local_EAX_88 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
     this_00 = local_44;
-    if (iVar4 == 0) {
+    if (local_EAX_88 == 0) {
       if (param_3 == '\0') {
         HVar2 = local_44->field_01A1;
         if (((HVar2 == 0) || (HVar2 == CASE_6)) || (HVar2 == CASE_A)) {
@@ -69,10 +111,10 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         }
         else {
           local_44->field_01A2 = 0;
-          local_44->field_01AB = 0;
+          local_44->field_01AB = nullptr;
         }
         local_44->field_01A1 = CASE_4;
-        local_44->field_01A3 = param_1;
+        local_44->field_01A3 = (void *)param_1;
         local_44->field_01A7 = param_2;
         local_44->field_01AF = 0x32;
         local_44->field_01B1 = 5;
@@ -90,197 +132,199 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       GVar19 = (Global_sub_005259B0_param_1Enum)param_1;
       UVar5 = thunk_FUN_00524fe0(GVar19);
       DrawTitle(this_00,0x55fd,param_2,UVar5);
-      uVar6 = thunk_FUN_005259b0(GVar19,0,'\x01');
-      pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0244,uVar6);
-      if (pbVar7 != nullptr) {
+      local_EAX_296 = thunk_FUN_005259b0(GVar19,0,'\x01');
+      pBVar5_mg0 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0244,
+                                local_EAX_296);
+      if (pBVar5_mg0 != nullptr) {
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x35,
-               (0x1e - *(int *)(pbVar7 + 8)) / 2 + 0x2a,'\x06',pbVar7);
+               (0x1e - (pBVar5_mg0->bmiHeader).biHeight) / 2 + 0x2a,'\x06',(byte *)pBVar5_mg0);
       }
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-      uVar6 = 3;
-      iVar17 = -1;
-      iVar4 = -3;
-      puVar8 = (uint *)LoadResourceString(0x55f8,g_hINSTANCE_00807618);
-      ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
-      iVar17 = 0;
+      uVar20 = 3;
+      iVar16 = -1;
+      iVar14 = -3;
+      pcVar6_mg0 = LoadResourceString(0x55f8,g_hINSTANCE_00807618);
+      ccFntTy::WrStr(this_00->field_01E0,pcVar6_mg0,iVar14,iVar16,uVar20);
+      iVar14 = 0;
       iVar4 = thunk_FUN_006460c0(param_1);
       if (0 < iVar4) {
         do {
-          iVar4 = thunk_FUN_00646110(param_1,iVar17,&local_c,&local_14,&local_18);
-          if (iVar4 != 0) {
+          iVar16 = thunk_FUN_00646110(param_1,iVar14,&local_c,&local_14,&local_18);
+          if (iVar16 != 0) {
             ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
             if ((local_14 == nullptr) || (local_18 == 0)) {
-              if (iVar17 == 0) {
-                pcVar9 = LoadResourceString(0x565c,g_hINSTANCE_00807618);
-                uVar16 = 2;
-                pcVar10 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
+              if (iVar14 == 0) {
+                pcVar6_mg1 = LoadResourceString(0x565c,g_hINSTANCE_00807618);
+                uVar15 = 2;
+                pcVar7_mg0 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
                 wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d &%d%s &%d(%s)",2,local_c,
-                          (DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar16,pcVar9);
+                          (DAT_0080874e != '\x03') - 1 & 5,pcVar7_mg0,uVar15,pcVar6_mg1);
               }
               else {
-                pcVar9 = LoadResourceString(0x565d,g_hINSTANCE_00807618);
-                uVar16 = 2;
-                iVar4 = iVar17;
-                pcVar10 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
+                pcVar6_mg2 = LoadResourceString(0x565d,g_hINSTANCE_00807618);
+                uVar15 = 2;
+                iVar16 = iVar14;
+                pcVar7_mg1 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
                 wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d &%d%s &%d(%d %s)",2,local_c,
-                          (DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar16,iVar4,pcVar9);
+                          (DAT_0080874e != '\x03') - 1 & 5,pcVar7_mg1,uVar15,iVar16,pcVar6_mg2);
               }
             }
-            else if (iVar17 == 0) {
-              pcVar9 = LoadResourceString(0x565c,g_hINSTANCE_00807618);
-              uVar16 = 2;
-              pcVar10 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
+            else if (iVar14 == 0) {
+              pcVar6_mg3 = LoadResourceString(0x565c,g_hINSTANCE_00807618);
+              uVar15 = 2;
+              pcVar7_mg2 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
               wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d/%d*%d &%d%s &%d(%s)",2,local_c,local_14
-                        ,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar16,pcVar9);
+                        ,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar7_mg2,uVar15,pcVar6_mg3);
             }
             else {
-              pcVar9 = LoadResourceString(0x565d,g_hINSTANCE_00807618);
-              uVar16 = 2;
-              iVar4 = iVar17;
-              pcVar10 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
+              pcVar6_mg4 = LoadResourceString(0x565d,g_hINSTANCE_00807618);
+              uVar15 = 2;
+              iVar16 = iVar14;
+              pcVar7_mg3 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
               wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d/%d*%d &%d%s &%d(%d %s)",2,local_c,
-                        local_14,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar16,iVar4,
-                        pcVar9);
+                        local_14,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar7_mg3,uVar15,iVar16,
+                        pcVar6_mg4);
             }
-            ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,1,-1,0);
+            ccFntTy::WrStr(this_00->field_01E0,(char *)&DAT_0080f33a,1,-1,0);
             local_8 = local_8 + 0xf;
           }
-          iVar17 = iVar17 + 1;
-          iVar4 = thunk_FUN_006460c0(param_1);
-        } while (iVar17 < iVar4);
+          iVar14 = iVar14 + 1;
+          local_EAX_917 = thunk_FUN_006460c0(param_1);
+        } while (iVar14 < local_EAX_917);
       }
-      iVar4 = param_1 * 3 + -0x1c2;
-      local_14 = (int *)(iVar4 * 4);
-      if ((&DAT_007bf67c)[iVar4] != 0) {
+      iVar14 = param_1 * 3 + -0x1c2;
+      local_14 = (int *)(iVar14 * 4);
+      if ((&DAT_007bf67c)[iVar14] != 0) {
         ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-        uVar6 = 3;
-        iVar17 = -1;
-        iVar4 = -3;
-        puVar8 = (uint *)LoadResourceString(0x5657,g_hINSTANCE_00807618);
-        ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
+        uVar20 = 3;
+        iVar16 = -1;
+        iVar14 = -3;
+        pcVar6_mg5 = LoadResourceString(0x5657,g_hINSTANCE_00807618);
+        ccFntTy::WrStr(this_00->field_01E0,pcVar6_mg5,iVar14,iVar16,uVar20);
         ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-        piVar13 = local_14;
-        uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
-        iVar17 = -1;
-        iVar4 = 1;
-        pHVar14 = g_hINSTANCE_00807618;
+        piVar10 = local_14;
+        uVar20 = (DAT_0080874e != '\x03') - 1 & 5;
+        iVar16 = -1;
+        iVar14 = 1;
+        pHVar12 = g_hINSTANCE_00807618;
         UVar5 = thunk_FUN_00528060(*(Global_sub_00528060_param_1Enum *)
                                     ((int)&DAT_007bf67c + (int)local_14),'\0');
-        puVar8 = (uint *)LoadResourceString(UVar5,pHVar14);
-        ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
+        pcVar6_mg6 = LoadResourceString(UVar5,pHVar12);
+        ccFntTy::WrStr(this_00->field_01E0,pcVar6_mg6,iVar14,iVar16,uVar20);
         local_8 = local_8 + 0xf;
         uVar6 = thunk_FUN_005276e0(*(Global_sub_005276E0_param_1Enum *)
-                                    ((int)&DAT_007bf67c + (int)piVar13),0);
-        pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0230,
-                                      uVar6);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
+                                    ((int)&DAT_007bf67c + (int)piVar10),0);
+        pBVar5_mg1 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0230,uVar6);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
+               (byte *)pBVar5_mg1);
         local_60 = 0x96;
-        local_58 = *(undefined4 *)(pbVar7 + 4);
+        local_58 = (pBVar5_mg1->bmiHeader).biWidth;
         local_5c = local_8;
-        local_54 = *(undefined4 *)(pbVar7 + 8);
+        local_54 = (pBVar5_mg1->bmiHeader).biHeight;
         local_50 = 5;
         local_4b = 0;
         local_4f = *(undefined4 *)((int)&DAT_007bf67c + (int)local_14);
-        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_60);
-        local_8 = local_8 + 5 + *(int *)(pbVar7 + 8);
+        Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_60);
+        local_8 = local_8 + 5 + (pBVar5_mg1->bmiHeader).biHeight;
       }
-      iVar4 = (&DAT_007e6024)[param_1 * 5 + -0x2ee];
-      if (iVar4 != 0) {
+      iVar14 = (&DAT_007e6024)[param_1 * 5 + -0x2ee];
+      if (iVar14 != 0) {
         ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-        uVar6 = 3;
+        uVar20 = 3;
         iVar18 = -1;
-        iVar17 = -3;
-        puVar8 = (uint *)LoadResourceString(0x55f7,g_hINSTANCE_00807618);
-        ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar17,iVar18,uVar6);
+        iVar16 = -3;
+        pcVar6_mg7 = LoadResourceString(0x55f7,g_hINSTANCE_00807618);
+        ccFntTy::WrStr(this_00->field_01E0,pcVar6_mg7,iVar16,iVar18,uVar20);
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
-        wsprintfA((LPSTR)&DAT_0080f33a,"%4d",iVar4);
-        ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 4);
-        uVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0238,0);
-        FUN_006b5440((ushort *)this_00->field_0218,0,0xb4,local_8,uVar6,0,0x3a);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%4d",iVar14);
+        ccFntTy::WrStr(this_00->field_01E8,(char *)&DAT_0080f33a,1,-1,
+                       (DAT_0080874e != '\x03') - 1 & 4);
+        pBVar5_mg2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0238,0);
+        FUN_006b5440((ushort *)this_00->field_0218,0,0xb4,local_8,pBVar5_mg2,0,0x3a);
         local_34 = 0xb4;
-        local_2c = *(undefined4 *)(uVar6 + 4);
+        local_2c = (pBVar5_mg2->bmiHeader).biWidth;
         local_30 = local_8;
-        local_28 = *(undefined4 *)(uVar6 + 8);
+        local_28 = (pBVar5_mg2->bmiHeader).biHeight;
         local_24 = 1;
         local_23 = 0xdd;
         local_1f = param_2;
-        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
+        Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_34);
         local_8 = local_8 + 0x14;
       }
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-      pcVar9 = LoadResourceString(0x5658,g_hINSTANCE_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,"%s:",pcVar9);
-      ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,-3,-1,3);
-      iVar4 = *(int *)(&DAT_007d1fdc + param_1 * 4);
-      if (iVar4 == -1) {
+      pcVar6_mg8 = LoadResourceString(0x5658,g_hINSTANCE_00807618);
+      wsprintfA((LPSTR)&DAT_0080f33a,"%s:",pcVar6_mg8);
+      ccFntTy::WrStr(this_00->field_01E0,(char *)&DAT_0080f33a,-3,-1,3);
+      iVar14 = *(int *)(&DAT_007d1fdc + param_1 * 4);
+      if (iVar14 == -1) {
         UVar5 = 0x5617;
       }
       else {
-        iVar17 = 0;
-        piVar13 = &DAT_007d2234;
+        iVar16 = 0;
+        piVar10 = &DAT_007d2234;
         do {
-          if (*piVar13 != -1) {
-            local_40 = (&DAT_007d2234)[iVar17];
+          if (*piVar10 != -1) {
+            local_40 = (&DAT_007d2234)[iVar16];
             local_3c = local_40;
             break;
           }
-          piVar13 = piVar13 + 1;
-          iVar17 = iVar17 + 1;
-        } while ((int)piVar13 < 0x7d22e8);
-        piVar13 = &DAT_007d2234;
+          piVar10 = piVar10 + 1;
+          iVar16 = iVar16 + 1;
+        } while ((int)piVar10 < 0x7d22e8);
+        piVar10 = &DAT_007d2234;
         do {
-          iVar17 = *piVar13;
-          if (iVar17 != -1) {
-            if (iVar17 < local_3c) {
-              local_3c = iVar17;
+          iVar16 = *piVar10;
+          if (iVar16 != -1) {
+            if (iVar16 < local_3c) {
+              local_3c = iVar16;
             }
-            if (local_40 < iVar17) {
-              local_40 = iVar17;
+            if (local_40 < iVar16) {
+              local_40 = iVar16;
             }
           }
-          piVar13 = piVar13 + 1;
-        } while ((int)piVar13 < 0x7d22e8);
-        iVar17 = (local_40 - local_3c) / 3;
-        if (iVar4 < iVar17 + local_3c) {
+          piVar10 = piVar10 + 1;
+        } while ((int)piVar10 < 0x7d22e8);
+        iVar16 = (local_40 - local_3c) / 3;
+        if (iVar14 < iVar16 + local_3c) {
           UVar5 = 0x5615;
         }
         else {
-          UVar5 = (iVar4 < local_3c + iVar17 * 2) + 0x5613;
+          UVar5 = (iVar14 < local_3c + iVar16 * 2) + 0x5613;
         }
       }
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-      uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
-      iVar17 = -1;
-      iVar4 = 1;
-      puVar8 = (uint *)LoadResourceString(UVar5,g_hINSTANCE_00807618);
-      ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
+      uVar20 = (DAT_0080874e != '\x03') - 1 & 5;
+      iVar16 = -1;
+      iVar14 = 1;
+      pcVar6_mg9 = LoadResourceString(UVar5,g_hINSTANCE_00807618);
+      ccFntTy::WrStr(this_00->field_01E0,pcVar6_mg9,iVar14,iVar16,uVar20);
       local_8 = local_8 + 0xf;
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-      uVar6 = 3;
-      iVar17 = -1;
-      iVar4 = -3;
-      puVar8 = (uint *)LoadResourceString(0x565e,g_hINSTANCE_00807618);
-      ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
+      uVar20 = 3;
+      iVar16 = -1;
+      iVar14 = -3;
+      pcVar6_mgA = LoadResourceString(0x565e,g_hINSTANCE_00807618);
+      ccFntTy::WrStr(this_00->field_01E0,pcVar6_mgA,iVar14,iVar16,uVar20);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-      uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
-      iVar17 = -1;
-      iVar4 = 1;
-      puVar8 = (uint *)LoadResourceString(0x273f - (*(int *)("blast_p" + param_1 * 4) != 0)
-                                          ,g_hINSTANCE_00807618);
-      ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
-      piVar13 = local_14;
+      uVar20 = (DAT_0080874e != '\x03') - 1 & 5;
+      iVar16 = -1;
+      iVar14 = 1;
+      pcVar6_mgB = LoadResourceString(0x273f - (*(int *)("blast_p" + param_1 * 4) != 0),
+                                      g_hINSTANCE_00807618);
+      ccFntTy::WrStr(this_00->field_01E0,pcVar6_mgB,iVar14,iVar16,uVar20);
+      piVar10 = local_14;
       local_8 = local_8 + 0xf;
-      cVar15 = (char)param_2;
+      cVar13 = (char)param_2;
       if (*(int *)((int)&DAT_007bf678 + (int)local_14) != 0) {
         local_c = CASE_34;
         ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-        uVar6 = 3;
-        iVar17 = -1;
-        iVar4 = -3;
-        puVar8 = (uint *)LoadResourceString(0x565f,g_hINSTANCE_00807618);
-        ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
+        uVar20 = 3;
+        iVar16 = -1;
+        iVar14 = -3;
+        pcVar6_mgC = LoadResourceString(0x565f,g_hINSTANCE_00807618);
+        ccFntTy::WrStr(this_00->field_01E0,pcVar6_mgC,iVar14,iVar16,uVar20);
         ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-        switch(*(undefined4 *)((int)&DAT_007bf678 + (int)piVar13)) {
+        switch(*(undefined4 *)((int)&DAT_007bf678 + (int)piVar10)) {
         case 1:
           local_c = CASE_34;
           break;
@@ -293,220 +337,229 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         case 4:
           local_c = CASE_4E;
         }
-        pHVar14 = g_hINSTANCE_00807618;
-        UVar5 = thunk_FUN_00523410(local_c,cVar15,0);
-        pcVar9 = LoadResourceString(UVar5,pHVar14);
-        uVar6 = 0xffffffff;
+        pHVar12 = g_hINSTANCE_00807618;
+        UVar5 = thunk_FUN_00523410(local_c,cVar13,0);
+        pcVar6_mgD = LoadResourceString(UVar5,pHVar12);
+        uVar20 = 0xffffffff;
         do {
-          pcVar10 = pcVar9;
-          if (uVar6 == 0) break;
-          uVar6 = uVar6 - 1;
-          pcVar10 = pcVar9 + 1;
-          cVar1 = *pcVar9;
-          pcVar9 = pcVar10;
+          pcVar8 = pcVar6_mgD;
+          if (uVar20 == 0) break;
+          uVar20 = uVar20 - 1;
+          pcVar8 = pcVar6_mgD + 1;
+          cVar1 = *pcVar6_mgD;
+          pcVar6_mgD = pcVar8;
         } while (cVar1 != '\0');
-        uVar6 = ~uVar6;
-        pcVar9 = pcVar10 + -uVar6;
-        pcVar10 = (char *)&DAT_0080f33a;
-        memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
-        uVar11 = 0;
-        for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != nullptr;
-            puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
-          *(undefined1 *)puVar8 = 0x20;
+        uVar20 = ~uVar20;
+        pcVar8 = pcVar8 + -uVar20;
+        pcVar11 = (char *)&DAT_0080f33a;
+        memmove(pcVar11, pcVar8, uVar20); /* compiler REP MOVS byte copy */
+        uVar7 = 0;
+        for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != nullptr;
+            puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
+          *(undefined1 *)puVar6 = 0x20;
         }
-        ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5);
-        GVar12 = local_c;
+        ccFntTy::WrStr(this_00->field_01E0,(char *)&DAT_0080f33a,1,-1,
+                       (DAT_0080874e != '\x03') - 1 & 5);
+        GVar9 = local_c;
         local_8 = local_8 + 0xf;
-        uVar6 = thunk_FUN_00526ba0(local_c,cVar15);
-        pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0240,
-                                      uVar6);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
-        pbVar7 = local_38;
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',local_38
-              );
+        local_EAX_2416 = thunk_FUN_00526ba0(local_c,cVar13);
+        pBVar5_mg4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0240,
+                                  local_EAX_2416);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
+               (byte *)pBVar5_mg4);
+        pBVar4 = local_38;
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
+               (byte *)local_38);
         local_34 = 0x94;
-        local_2c = *(undefined4 *)(pbVar7 + 4);
+        local_2c = (pBVar4->bmiHeader).biWidth;
         local_30 = local_8 - 2;
-        local_28 = *(undefined4 *)(pbVar7 + 8);
+        local_28 = (pBVar4->bmiHeader).biHeight;
         local_24 = 2;
-        local_23 = GVar12;
+        local_23 = GVar9;
         local_1f = param_2;
-        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
-        local_8 = local_8 + *(int *)(pbVar7 + 8);
+        Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_34);
+        local_8 = local_8 + (pBVar4->bmiHeader).biHeight;
       }
       local_d = '\0';
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-      uVar6 = 3;
-      iVar17 = -1;
-      iVar4 = -3;
-      puVar8 = (uint *)LoadResourceString(0x5660,g_hINSTANCE_00807618);
-      ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar17,uVar6);
+      uVar20 = 3;
+      iVar16 = -1;
+      iVar14 = -3;
+      pcVar6_mgF = LoadResourceString(0x5660,g_hINSTANCE_00807618);
+      ccFntTy::WrStr(this_00->field_01E0,pcVar6_mgF,iVar14,iVar16,uVar20);
       local_14 = &DAT_007a8b1c;
       local_c = CASE_1;
       do {
-        GVar12 = local_c;
-        if ((*local_14 == param_1) && (iVar4 = thunk_FUN_004e8030(local_c), iVar4 == param_2)) {
+        GVar9 = local_c;
+        if ((*local_14 == param_1) &&
+           (local_EAX_2664 = thunk_FUN_004e8030(local_c), local_EAX_2664 == param_2)) {
           ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-          pHVar14 = g_hINSTANCE_00807618;
-          UVar5 = thunk_FUN_00523410(local_c,cVar15,0);
-          pcVar9 = LoadResourceString(UVar5,pHVar14);
-          uVar6 = 0xffffffff;
+          pHVar12 = g_hINSTANCE_00807618;
+          UVar5 = thunk_FUN_00523410(local_c,cVar13,0);
+          pcVar6_mg10 = LoadResourceString(UVar5,pHVar12);
+          uVar20 = 0xffffffff;
           do {
-            pcVar10 = pcVar9;
-            if (uVar6 == 0) break;
-            uVar6 = uVar6 - 1;
-            pcVar10 = pcVar9 + 1;
-            cVar1 = *pcVar9;
-            pcVar9 = pcVar10;
+            pcVar8 = pcVar6_mg10;
+            if (uVar20 == 0) break;
+            uVar20 = uVar20 - 1;
+            pcVar8 = pcVar6_mg10 + 1;
+            cVar1 = *pcVar6_mg10;
+            pcVar6_mg10 = pcVar8;
           } while (cVar1 != '\0');
-          uVar6 = ~uVar6;
-          pcVar9 = pcVar10 + -uVar6;
-          pcVar10 = (char *)&DAT_0080f33a;
-          memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
-          uVar11 = 0;
-          for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != nullptr;
-              puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
-            *(undefined1 *)puVar8 = 0x20;
+          uVar20 = ~uVar20;
+          pcVar8 = pcVar8 + -uVar20;
+          pcVar11 = (char *)&DAT_0080f33a;
+          memmove(pcVar11, pcVar8, uVar20); /* compiler REP MOVS byte copy */
+          uVar7 = 0;
+          for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != nullptr;
+              puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
+            *(undefined1 *)puVar6 = 0x20;
           }
-          ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5);
-          GVar12 = local_c;
+          ccFntTy::WrStr(this_00->field_01E0,(char *)&DAT_0080f33a,1,-1,
+                         (DAT_0080874e != '\x03') - 1 & 5);
+          GVar9 = local_c;
           local_8 = local_8 + 0xf;
-          uVar6 = thunk_FUN_00526ba0(local_c,cVar15);
-          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_023C,
-                                        uVar6);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
-          pbVar7 = local_38;
+          local_EAX_2872 = thunk_FUN_00526ba0(local_c,cVar13);
+          pBVar5_mg6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_023C,
+                                    local_EAX_2872);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
+                 (byte *)pBVar5_mg6);
+          pBVar4 = local_38;
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
-                 local_38);
+                 (byte *)local_38);
           local_34 = 0x94;
-          local_2c = *(undefined4 *)(pbVar7 + 4);
+          local_2c = (pBVar4->bmiHeader).biWidth;
           local_30 = local_8 - 2;
-          local_28 = *(undefined4 *)(pbVar7 + 8);
+          local_28 = (pBVar4->bmiHeader).biHeight;
           local_24 = 3;
-          local_23 = GVar12;
+          local_23 = GVar9;
           local_1f = param_2;
-          Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
-          local_8 = local_8 + *(int *)(pbVar7 + 8);
+          Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_34);
+          local_8 = local_8 + (pBVar4->bmiHeader).biHeight;
           local_d = '\x01';
         }
         local_14 = local_14 + 1;
-        local_c = GVar12 + CASE_1;
-      } while ((int)GVar12 < 0x28);
+        local_c = GVar9 + CASE_1;
+      } while ((int)GVar9 < 0x28);
       local_14 = &DAT_007a8cfc;
       local_c = CASE_1;
       do {
-        GVar12 = local_c;
-        if ((*local_14 == param_1) && (iVar4 = thunk_FUN_004e8030(local_c), iVar4 == param_2)) {
+        GVar9 = local_c;
+        if ((*local_14 == param_1) &&
+           (local_EAX_3080 = thunk_FUN_004e8030(local_c), local_EAX_3080 == param_2)) {
           ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-          pHVar14 = g_hINSTANCE_00807618;
-          UVar5 = thunk_FUN_00523410(local_c,cVar15,0);
-          pcVar9 = LoadResourceString(UVar5,pHVar14);
-          uVar6 = 0xffffffff;
+          pHVar12 = g_hINSTANCE_00807618;
+          UVar5 = thunk_FUN_00523410(local_c,cVar13,0);
+          pcVar6_mg12 = LoadResourceString(UVar5,pHVar12);
+          uVar20 = 0xffffffff;
           do {
-            pcVar10 = pcVar9;
-            if (uVar6 == 0) break;
-            uVar6 = uVar6 - 1;
-            pcVar10 = pcVar9 + 1;
-            cVar1 = *pcVar9;
-            pcVar9 = pcVar10;
+            pcVar8 = pcVar6_mg12;
+            if (uVar20 == 0) break;
+            uVar20 = uVar20 - 1;
+            pcVar8 = pcVar6_mg12 + 1;
+            cVar1 = *pcVar6_mg12;
+            pcVar6_mg12 = pcVar8;
           } while (cVar1 != '\0');
-          uVar6 = ~uVar6;
-          pcVar9 = pcVar10 + -uVar6;
-          pcVar10 = (char *)&DAT_0080f33a;
-          memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
-          uVar11 = 0;
-          for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != nullptr;
-              puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
-            *(undefined1 *)puVar8 = 0x20;
+          uVar20 = ~uVar20;
+          pcVar8 = pcVar8 + -uVar20;
+          pcVar11 = (char *)&DAT_0080f33a;
+          memmove(pcVar11, pcVar8, uVar20); /* compiler REP MOVS byte copy */
+          uVar7 = 0;
+          for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != nullptr;
+              puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
+            *(undefined1 *)puVar6 = 0x20;
           }
-          ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5);
-          GVar12 = local_c;
+          ccFntTy::WrStr(this_00->field_01E0,(char *)&DAT_0080f33a,1,-1,
+                         (DAT_0080874e != '\x03') - 1 & 5);
+          GVar9 = local_c;
           local_8 = local_8 + 0xf;
-          uVar6 = thunk_FUN_00526ba0(local_c,cVar15);
-          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_023C,
-                                        uVar6);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',pbVar7);
-          pbVar7 = local_38;
+          local_EAX_3288 = thunk_FUN_00526ba0(local_c,cVar13);
+          pBVar5_mg8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_023C,
+                                    local_EAX_3288);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
+                 (byte *)pBVar5_mg8);
+          pBVar4 = local_38;
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
-                 local_38);
+                 (byte *)local_38);
           local_34 = 0x94;
-          local_2c = *(undefined4 *)(pbVar7 + 4);
+          local_2c = (pBVar4->bmiHeader).biWidth;
           local_30 = local_8 - 2;
-          local_28 = *(undefined4 *)(pbVar7 + 8);
+          local_28 = (pBVar4->bmiHeader).biHeight;
           local_24 = 3;
-          local_23 = GVar12;
+          local_23 = GVar9;
           local_1f = param_2;
-          Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
-          local_8 = local_8 + *(int *)(pbVar7 + 8);
+          Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_34);
+          local_8 = local_8 + (pBVar4->bmiHeader).biHeight;
           local_d = '\x01';
         }
         local_14 = local_14 + 1;
-        local_c = GVar12 + CASE_1;
-        if (0x27 < (int)GVar12) {
-          piVar13 = &DAT_00792ca0;
+        local_c = GVar9 + CASE_1;
+        if (0x27 < (int)GVar9) {
+          piVar10 = &DAT_00792ca0;
           local_c = CASE_32;
           do {
             local_18 = 2;
-            GVar12 = local_c;
+            GVar9 = local_c;
             do {
-              if ((*piVar13 == param_1) &&
-                 (local_14 = piVar13, iVar4 = thunk_FUN_004e8030(GVar12), iVar4 == param_2)) {
+              if ((*piVar10 == param_1) &&
+                 (local_14 = piVar10, local_EAX_3503 = thunk_FUN_004e8030(GVar9),
+                 local_EAX_3503 == param_2)) {
                 ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,
                                  0xf);
-                pHVar14 = g_hINSTANCE_00807618;
-                UVar5 = thunk_FUN_00523410(local_c,cVar15,0);
-                pcVar9 = LoadResourceString(UVar5,pHVar14);
-                uVar6 = 0xffffffff;
+                pHVar12 = g_hINSTANCE_00807618;
+                UVar5 = thunk_FUN_00523410(local_c,cVar13,0);
+                pcVar6_mg14 = LoadResourceString(UVar5,pHVar12);
+                uVar20 = 0xffffffff;
                 do {
-                  pcVar10 = pcVar9;
-                  if (uVar6 == 0) break;
-                  uVar6 = uVar6 - 1;
-                  pcVar10 = pcVar9 + 1;
-                  cVar1 = *pcVar9;
-                  pcVar9 = pcVar10;
+                  pcVar8 = pcVar6_mg14;
+                  if (uVar20 == 0) break;
+                  uVar20 = uVar20 - 1;
+                  pcVar8 = pcVar6_mg14 + 1;
+                  cVar1 = *pcVar6_mg14;
+                  pcVar6_mg14 = pcVar8;
                 } while (cVar1 != '\0');
-                uVar6 = ~uVar6;
-                pcVar9 = pcVar10 + -uVar6;
-                pcVar10 = (char *)&DAT_0080f33a;
-                memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
-                for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n');
-                    puVar8 != nullptr; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
-                  *(undefined1 *)puVar8 = 0x20;
+                uVar20 = ~uVar20;
+                pcVar8 = pcVar8 + -uVar20;
+                pcVar11 = (char *)&DAT_0080f33a;
+                memmove(pcVar11, pcVar8, uVar20); /* compiler REP MOVS byte copy */
+                for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n');
+                    puVar6 != nullptr; puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
+                  *(undefined1 *)puVar6 = 0x20;
                 }
-                ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,1,-1,
+                ccFntTy::WrStr(this_00->field_01E0,(char *)&DAT_0080f33a,1,-1,
                                (DAT_0080874e != '\x03') - 1 & 5);
-                GVar12 = local_c;
+                GVar9 = local_c;
                 local_8 = local_8 + 0xf;
-                uVar6 = thunk_FUN_00526ba0(local_c,cVar15);
-                pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
-                                              this_00->field_0240,uVar6);
+                local_EAX_3708 = thunk_FUN_00526ba0(local_c,cVar13);
+                pBVar5_mgA = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0240,
+                                          local_EAX_3708);
                 DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
-                       pbVar7);
-                pbVar7 = local_38;
+                       (byte *)pBVar5_mgA);
+                pBVar4 = local_38;
                 DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
-                       local_38);
+                       (byte *)local_38);
                 local_34 = 0x94;
-                local_2c = *(undefined4 *)(pbVar7 + 4);
+                local_2c = (pBVar4->bmiHeader).biWidth;
                 local_30 = local_8 - 2;
-                local_28 = *(undefined4 *)(pbVar7 + 8);
+                local_28 = (pBVar4->bmiHeader).biHeight;
                 local_24 = 2;
-                local_23 = GVar12;
+                local_23 = GVar9;
                 local_1f = param_2;
-                Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
-                local_8 = local_8 + *(int *)(pbVar7 + 8);
+                Library::DKW::TBL::DArrayAppend(this_00->field_01D7,&local_34);
+                local_8 = local_8 + (pBVar4->bmiHeader).biHeight;
                 local_d = '\x01';
-                GVar12 = local_c;
-                piVar13 = local_14;
+                GVar9 = local_c;
+                piVar10 = local_14;
               }
-              piVar13 = piVar13 + 3;
+              piVar10 = piVar10 + 3;
               local_18 = local_18 + -1;
             } while (local_18 != 0);
-            local_c = GVar12 + CASE_1;
-            if (0x41 < (int)(GVar12 - CASE_31)) {
+            local_c = GVar9 + CASE_1;
+            if (0x41 < (int)(GVar9 - CASE_31)) {
               if (local_d == '\0') {
                 local_8 = local_8 + 0xf;
               }
-              local_14 = piVar13;
+              local_14 = piVar10;
               UVar5 = thunk_FUN_00525ca0(GVar19);
               DrawDescription(this_00,(int *)&local_8,UVar5);
               AddLinks(this_00,(int *)&local_8,'\x04',param_1,param_2);
@@ -518,12 +571,12 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       } while( true );
     }
     g_currentExceptionFrame = local_a4.previous;
-    iVar17 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x8c4,0,iVar4,
+    iVar17 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x8c4,0,local_EAX_88,
                                 "%s","HelpPanelTy::ArmProc");
     if (iVar17 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\helppan.cpp",0x8c4);
+    RaiseInternalException(local_EAX_88,0,"E:\\__titans\\Andrey\\helppan.cpp",0x8c4);
   }
   return;
 }

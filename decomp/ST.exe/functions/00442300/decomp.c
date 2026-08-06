@@ -12,15 +12,19 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
 
 {
   STAllPlayersC *pSVar2;
-  byte bVar3;
+  STGameObjC *pSVar3;
+  byte bVar4;
   int iVar4;
-  STGameObjC *pSVar5;
+  STGameObjC *pSVar4_mg3;
+  STGameObjC *pSVar4_mg1;
+  int iVar5;
   int iVar6;
-  undefined4 uVar7;
+  undefined4 uVar6;
+  uint uVar7;
   uint uVar8;
-  uint uVar9;
-  int *piVar10;
-  short *psVar11;
+  int *piVar9;
+  short *psVar10;
+  int iVar11;
   short *psVar12;
   STAllPlayersC_GetTOBJList_param_2Enum SVar13;
   STAllPlayersC_GetTOBJList_param_2Enum SVar14;
@@ -66,7 +70,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   local_d4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d4;
   iVar4 = Library::MSVCRT::__setjmp3(local_d4.jumpBuffer,0);
-  iVar6 = local_4c;
+  iVar5 = local_4c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_d4.previous;
     if (iVar4 != -0x5001fff7) {
@@ -80,57 +84,57 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
     return local_10;
   }
   if (0 < local_4c) {
-    piVar10 = &g_packedRecords_A62x8[param_1].field5_0xf;
-    iVar4 = local_4c;
+    piVar9 = &g_packedRecords_A62x8[param_1].field5_0xf;
+    iVar11 = local_4c;
     do {
-      if (*piVar10 == 0) {
+      if (*piVar9 == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x23dd);
       }
-      piVar10 = piVar10 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
+      piVar9 = piVar9 + 1;
+      iVar11 = iVar11 + -1;
+    } while (iVar11 != 0);
   }
-  pSVar5 = local_44;
+  pSVar3 = local_44;
   pSVar2 = local_5c;
   if ((local_58 == 0x3b) || (local_58 == 0x60)) {
     STFishC::sub_004162B0((STFishC *)local_44,&local_38,&local_36,&local_34);
-    local_32 = pSVar5->field_0032;
-    uVar8 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
-    psVar11 = g_pathingGrid.cells;
+    local_32 = pSVar3->field_0032;
+    uVar7 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
+    psVar10 = g_pathingGrid.cells;
     psVar12 = g_pathingScratchGrid.cells;
-    for (uVar9 = (uVar8 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)psVar12 = *(undefined4 *)psVar11;
-      psVar11 = psVar11 + 2;
+    for (uVar8 = (uVar7 & 0x7fffffff) >> 1; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *(undefined4 *)psVar12 = *(undefined4 *)psVar10;
+      psVar10 = psVar10 + 2;
       psVar12 = psVar12 + 2;
     }
-    for (uVar8 = uVar8 * 2 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(char *)psVar12 = (char)*psVar11;
-      psVar11 = (short *)((int)psVar11 + 1);
+    for (uVar7 = uVar7 * 2 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+      *(char *)psVar12 = (char)*psVar10;
+      psVar10 = (short *)((int)psVar10 + 1);
       psVar12 = (short *)((int)psVar12 + 1);
     }
     FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
                  (int)g_pathingGrid.sizeZ,(int)local_38,(int)local_36,(int)local_34,-1,-1,-1);
     pSVar2 = local_5c;
     local_14 = 0;
-    if (0 < iVar6) {
+    if (0 < iVar5) {
       do {
-        iVar6 = local_14 * 4;
+        iVar5 = local_14 * 4;
         local_c = (DArrayTy *)GetTOBJList(pSVar2,param_1,local_6c[local_14],0,-1);
         local_48 = local_c->count;
         if (local_48 != 0) {
-          local_8 = *(DArrayTy **)(iVar6 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0xF));
+          local_8 = *(DArrayTy **)(iVar5 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0xF));
           local_18 = 0;
           if (0 < (int)local_48) {
             do {
               DArrayGetElement(local_c,local_18,local_1c);
-              pSVar5 = GetObjPtr(pSVar2,param_1,STPiece<0,2>(local_1c),CASE_1);
-              local_44 = pSVar5;
-              iVar6 = (*pSVar5->vtable->vfunc_88)(local_54);
-              if (0 < iVar6) {
-                STFishC::sub_004162B0((STFishC *)pSVar5,&local_40,&local_3e,&local_3c);
-                local_3a = pSVar5->field_0032;
+              pSVar4_mg1 = GetObjPtr(pSVar2,param_1,STPiece<0,2>(local_1c),CASE_1);
+              local_44 = pSVar4_mg1;
+              iVar5 = (*pSVar4_mg1->vtable->vfunc_88)(local_54);
+              if (0 < iVar5) {
+                STFishC::sub_004162B0((STFishC *)pSVar4_mg1,&local_40,&local_3e,&local_3c);
+                local_3a = pSVar4_mg1->field_0032;
                 local_30 = (int)g_pathingScratchGrid.cells
                                 [(local_3c + 1) * (int)g_pathingGrid.planeStride +
                                  (int)local_3e * (int)g_pathingGrid.sizeX + (int)local_40];
@@ -139,26 +143,26 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                   local_28 = 100;
                 }
                 else {
-                  bVar3 = thunk_FUN_00430750(CASE_8);
-                  local_50 = (uint)bVar3;
+                  bVar4 = thunk_FUN_00430750(CASE_8);
+                  local_50 = (uint)bVar4;
                   local_30 = ((((local_30 * 0xc9) / 3) / (int)local_50) * 0xc) / 10 + 800;
                   local_28 = (undefined4)(40000 / (longlong)local_30);
                 }
-                uVar9 = 0;
-                uVar8 = local_8->count;
+                uVar8 = 0;
+                uVar7 = local_8->count;
                 local_2c = local_28;
-                if (0 < (int)uVar8) {
+                if (0 < (int)uVar7) {
                   do {
-                    DArrayGetElement(local_8,uVar9,local_90);
+                    DArrayGetElement(local_8,uVar8,local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
-                      Library::DKW::TBL::DArrayPut(local_8,uVar9,&local_40);
+                      Library::DKW::TBL::DArrayPut(local_8,uVar8,&local_40);
                       local_10 = 1;
                       break;
                     }
-                    uVar9 = uVar9 + 1;
-                  } while ((int)uVar9 < (int)uVar8);
+                    uVar8 = uVar8 + 1;
+                  } while ((int)uVar8 < (int)uVar7);
                 }
-                if (uVar9 == uVar8) {
+                if (uVar8 == uVar7) {
                   Library::DKW::TBL::DArrayAppend(local_8,&local_40);
                   local_10 = 1;
                 }
@@ -175,34 +179,34 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   else {
     local_14 = 0;
     SVar13 = local_58;
-    if (0 < iVar6) {
+    if (0 < iVar5) {
       do {
-        iVar6 = local_14;
+        iVar5 = local_14;
         if (SVar13 == local_6c[local_14]) {
-          bVar3 = LookupRecordByte(param_1);
-          if (bVar3 == 3) {
+          bVar4 = LookupRecordByte(param_1);
+          if (bVar4 == 3) {
             SVar14 = 0x60;
           }
           else {
             SVar14 = 0x3b;
           }
           local_c = (DArrayTy *)GetTOBJList(pSVar2,param_1,SVar14,0,-1);
-          pSVar5 = local_44;
+          pSVar3 = local_44;
           local_48 = local_c->count;
           if (local_48 != 0) {
             STFishC::sub_004162B0((STFishC *)local_44,&local_40,&local_3e,&local_3c);
-            local_3a = pSVar5->field_0032;
-            uVar8 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
-            psVar11 = g_pathingGrid.cells;
+            local_3a = pSVar3->field_0032;
+            uVar7 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
+            psVar10 = g_pathingGrid.cells;
             psVar12 = g_pathingScratchGrid.cells;
-            for (uVar9 = (uVar8 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {
-              *(undefined4 *)psVar12 = *(undefined4 *)psVar11;
-              psVar11 = psVar11 + 2;
+            for (uVar8 = (uVar7 & 0x7fffffff) >> 1; uVar8 != 0; uVar8 = uVar8 - 1) {
+              *(undefined4 *)psVar12 = *(undefined4 *)psVar10;
+              psVar10 = psVar10 + 2;
               psVar12 = psVar12 + 2;
             }
-            for (uVar8 = uVar8 * 2 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-              *(char *)psVar12 = (char)*psVar11;
-              psVar11 = (short *)((int)psVar11 + 1);
+            for (uVar7 = uVar7 * 2 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+              *(char *)psVar12 = (char)*psVar10;
+              psVar10 = (short *)((int)psVar10 + 1);
               psVar12 = (short *)((int)psVar12 + 1);
             }
             FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,
@@ -210,15 +214,15 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                          (int)local_3e,(int)local_3c,-1,-1,-1);
             local_18 = 0;
             local_8 = *(DArrayTy **)(local_14 * 4 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0xF));
-            iVar6 = local_14;
+            iVar5 = local_14;
             SVar13 = local_58;
             if (0 < (int)local_48) {
               do {
                 DArrayGetElement(local_c,local_18,local_1c);
-                pSVar5 = GetObjPtr(pSVar2,param_1,STPiece<0,2>(local_1c),CASE_1);
-                local_44 = pSVar5;
-                STFishC::sub_004162B0((STFishC *)pSVar5,&local_38,&local_36,&local_34);
-                local_32 = pSVar5->field_0032;
+                pSVar4_mg3 = GetObjPtr(pSVar2,param_1,STPiece<0,2>(local_1c),CASE_1);
+                local_44 = pSVar4_mg3;
+                STFishC::sub_004162B0((STFishC *)pSVar4_mg3,&local_38,&local_36,&local_34);
+                local_32 = pSVar4_mg3->field_0032;
                 local_30 = (int)g_pathingScratchGrid.cells
                                 [(local_34 + 1) * (int)g_pathingGrid.planeStride +
                                  (int)g_pathingGrid.sizeX * (int)local_36 + (int)local_38];
@@ -227,39 +231,39 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                   local_28 = 100;
                 }
                 else {
-                  bVar3 = thunk_FUN_00430750(CASE_8);
-                  local_50 = (uint)bVar3;
+                  bVar4 = thunk_FUN_00430750(CASE_8);
+                  local_50 = (uint)bVar4;
                   local_30 = ((((local_30 * 0xc9) / 3) / (int)local_50) * 0xc) / 10 + 800;
                   local_28 = (undefined4)(40000 / (longlong)local_30);
                 }
-                uVar9 = 0;
-                uVar8 = local_8->count;
+                uVar8 = 0;
+                uVar7 = local_8->count;
                 local_2c = local_28;
-                if (0 < (int)uVar8) {
+                if (0 < (int)uVar7) {
                   do {
-                    DArrayGetElement(local_8,uVar9,local_90);
+                    DArrayGetElement(local_8,uVar8,local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
-                      Library::DKW::TBL::DArrayPut(local_8,uVar9,&local_40);
+                      Library::DKW::TBL::DArrayPut(local_8,uVar8,&local_40);
                       local_10 = 1;
                       break;
                     }
-                    uVar9 = uVar9 + 1;
-                  } while ((int)uVar9 < (int)uVar8);
+                    uVar8 = uVar8 + 1;
+                  } while ((int)uVar8 < (int)uVar7);
                 }
-                if (uVar9 == uVar8) {
+                if (uVar8 == uVar7) {
                   Library::DKW::TBL::DArrayAppend(local_8,&local_40);
                   local_10 = 1;
                 }
                 local_18 = local_18 + 1;
-                iVar6 = local_14;
+                iVar5 = local_14;
                 SVar13 = local_58;
               } while ((int)local_18 < (int)local_48);
             }
           }
           DArrayDestroy(local_c);
         }
-        local_14 = iVar6 + 1;
-        if (local_4c <= iVar6 + 1) {
+        local_14 = iVar5 + 1;
+        if (local_4c <= iVar5 + 1) {
           g_currentExceptionFrame = local_d4.previous;
           return local_10;
         }

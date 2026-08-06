@@ -255,12 +255,11 @@ public class STLocalLifetimeApplier extends GhidraScript {
             DataType current = (DataType)high.getClass()
                 .getMethod("getDataType").invoke(high);
             Set<Integer> groups = mergeGroups(high);
-            boolean recursiveIsolation = groups.size() > 1 &&
-                recursivePointerIdentity(prepared.proposed) != null &&
+            boolean requestedIsolation = groups.size() > 1 &&
                 unt(row.get("reason")).contains(
                     "heterogeneous siblings require isolation");
             if (equivalentType(prepared.proposed, current) &&
-                    !recursiveIsolation) {
+                    !requestedIsolation) {
                 report.add(report(row, "unchanged",
                     "anchor lifetime already has the proposed type"));
                 return;
@@ -312,7 +311,10 @@ public class STLocalLifetimeApplier extends GhidraScript {
             Baseline baseline = before == null ? null :
                 new Baseline(before, before.getDataType(), before.getSource(),
                     text(before.getComment()));
-            updateVariable(splitSymbol, prepared.proposed);
+            String updateName = groups.size() > 1 ?
+                uniqueLifetimeName(prepared.highFunction, before,
+                    unt(row.get("original_name")), prepared.targetGroup) : null;
+            updateVariable(splitSymbol, updateName, prepared.proposed);
             Variable variable = functionVariable(splitSymbol);
             if (variable == null ||
                     !equivalentType(prepared.proposed, variable.getDataType()))
@@ -330,7 +332,29 @@ public class STLocalLifetimeApplier extends GhidraScript {
         }
     }
 
-    private void updateVariable(Object highSymbol, DataType proposed)
+    private String uniqueLifetimeName(Object highFunction, Variable current,
+            String originalName, int mergeGroup) throws Exception {
+        Function function = (Function)highFunction.getClass()
+            .getMethod("getFunction").invoke(highFunction);
+        String base = originalName == null ? "" : originalName.trim();
+        if (base.isBlank()) base = "local";
+        base = base.replaceAll("[^A-Za-z0-9_]", "_")
+            .replaceFirst("_mg[0-9A-Fa-f]+(?:_[0-9]+)?$", "");
+        String stem = base + "_mg" +
+            Integer.toHexString(mergeGroup).toUpperCase(Locale.ROOT);
+        Set<String> occupied = new HashSet<>();
+        for (Variable variable : function.getAllVariables())
+            if (current == null || variable != current)
+                occupied.add(variable.getName());
+        if (!occupied.contains(stem)) return stem;
+        for (int suffix = 2; ; suffix++) {
+            String candidate = stem + "_" + suffix;
+            if (!occupied.contains(candidate)) return candidate;
+        }
+    }
+
+    private void updateVariable(Object highSymbol, String name,
+            DataType proposed)
             throws Exception {
         ClassLoader loader = highSymbol.getClass().getClassLoader();
         Class<?> utility = Class.forName(
@@ -347,7 +371,7 @@ public class STLocalLifetimeApplier extends GhidraScript {
             throw new IllegalStateException(
                 "HighFunctionDBUtil API is unavailable");
         try {
-            update.invoke(null, highSymbol, null, proposed,
+            update.invoke(null, highSymbol, name, proposed,
                 SourceType.ANALYSIS);
         }
         catch (InvocationTargetException exception) {
@@ -373,6 +397,7 @@ public class STLocalLifetimeApplier extends GhidraScript {
                 case "typed_field_load" -> "LOAD";
                 case "typed_field_address" -> "PTRSUB";
                 case "typed_field_store" -> "STORE";
+                case "typed_cast" -> "CAST";
                 case "typed_recursive_cast" -> "CAST";
                 default -> "CALL";
             };
@@ -402,6 +427,7 @@ public class STLocalLifetimeApplier extends GhidraScript {
         if (kind.equals("call_return") || kind.equals("typed_copy") ||
                 kind.equals("typed_field_load") ||
                 kind.equals("typed_field_address") ||
+                kind.equals("typed_cast") ||
                 kind.equals("typed_recursive_cast"))
             varnode = op.getClass().getMethod("getOutput").invoke(op);
         else if (kind.equals("typed_field_store"))
@@ -506,6 +532,27 @@ public class STLocalLifetimeApplier extends GhidraScript {
             String identity = recursivePointerIdentity(type);
             return identity != null && identity.equals(
                 unt(row.get("anchor_source"))) ? type : null;
+        }
+        if (anchor.kind.equals("typed_cast")) {
+            Object input = anchor.op.getClass()
+                .getMethod("getInput", int.class).invoke(anchor.op, 0);
+            Object high = input == null ? null :
+                input.getClass().getMethod("getHigh").invoke(input);
+            if (high == null) return null;
+            Object symbol = high.getClass().getMethod("getSymbol").invoke(high);
+            if (symbol == null) return null;
+            boolean parameter = (boolean)symbol.getClass()
+                .getMethod("isParameter").invoke(symbol);
+            boolean global = (boolean)symbol.getClass()
+                .getMethod("isGlobal").invoke(symbol);
+            DataType type = (DataType)high.getClass()
+                .getMethod("getDataType").invoke(high);
+            SourceType source = symbolSource(symbol);
+            if ((!parameter && !global) ||
+                    source == SourceType.DEFAULT && !nominalType(type) ||
+                    !typeSpecification(type).equals(
+                        unt(row.get("anchor_source")))) return null;
+            return type;
         }
         Function direct = directTarget(anchor.op);
         if (direct == null) return null;
@@ -711,6 +758,11 @@ public class STLocalLifetimeApplier extends GhidraScript {
             !(base instanceof Enum) && !(base instanceof Pointer) &&
             (Undefined.isUndefined(base) ||
                 base instanceof AbstractIntegerDataType);
+    }
+
+    private boolean nominalType(DataType type) {
+        if (type instanceof TypeDef || type instanceof Enum) return true;
+        return untypedef(type) instanceof Pointer && semanticType(type);
     }
 
     private SignatureParameters signatureParameters(Function function,

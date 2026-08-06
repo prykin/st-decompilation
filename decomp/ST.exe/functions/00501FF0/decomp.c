@@ -22,8 +22,8 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
   CPanelTy *this_00;
   int iVar4;
   int iVar5;
-  CPanelTy_field_0B99State *pCVar6;
-  RecoveredRecord_CPanelTy_00501D00 *pRVar7;
+  CPanelTy_field_0B99State *pCVar7;
+  RecoveredRecord_CPanelTy_00501D00 *pRVar8;
   InternalExceptionFrame local_a8;
   RecoveredRecord_CPanelTy_00501D00 local_64;
   CPanelTy *local_8;
@@ -44,9 +44,9 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   pCVar1 = &local_8->field_0B99;
-  pCVar6 = pCVar1;
-  pRVar7 = &local_64;
-  memmove(pRVar7, pCVar6, 0x5c); /* compiler REP MOVS byte copy */
+  pCVar7 = pCVar1;
+  pRVar8 = &local_64;
+  memmove(pRVar8, pCVar7, 0x5c); /* compiler REP MOVS byte copy */
   memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
   if (STPiece<5,1>(local_64) != this_00->field_0B9E) {

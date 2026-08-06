@@ -30,59 +30,65 @@ TLOBaseTy::FUN_004c7cc0
   TLOBaseTyVTable *pTVar3;
   bool bVar4;
   byte bVar5;
+  int iVar7;
+  int local_EAX_331;
   int iVar6;
+  int local_EAX_538;
+  int local_EAX_559;
+  uint uVar11;
   int uVar9;
   int local_EAX_1031;
-  AnonPointee_TLOBaseTy_0607 *pAVar7;
-  int *piVar8;
-  uint uVar11;
-  int iVar12;
-  byte *puVar13;
+  int local_EAX_1126;
+  AnonPointee_TLOBaseTy_0607 *pAVar8;
+  int *piVar9;
+  uint uVar12;
+  int iVar13;
   byte *puVar14;
+  byte *puVar15;
 
   if ((int)param_3 < 0) {
-    iVar6 = (param_3 ^ (int)param_3 >> 0x1f) - ((int)param_3 >> 0x1f);
+    iVar7 = (param_3 ^ (int)param_3 >> 0x1f) - ((int)param_3 >> 0x1f);
     if ((this->field_03D4 != 0) && (this->field_0607 != nullptr)) {
       do {
         iVar1 = this->field_03D4;
         bVar4 = false;
-        iVar12 = iVar1 + -1;
-        if (-1 < iVar12) {
-          piVar8 = (int *)(iVar12 * 0x27 + (int)this->field_0607);
+        iVar13 = iVar1 + -1;
+        if (-1 < iVar13) {
+          piVar9 = (int *)(iVar13 * 0x27 + (int)this->field_0607);
 LAB_004c7d1c:
-          if ((*piVar8 != param_1) || (piVar8[1] != param_2)) goto LAB_004c7d2b;
+          if ((*piVar9 != param_1) || (piVar9[1] != param_2)) goto LAB_004c7d2b;
           bVar4 = true;
-          puVar14 = (byte *)(iVar12 * 0x27 + (int)this->field_0607);
-          iVar2 = puVar14[2];
-          if (iVar2 <= iVar6) {
-            iVar6 = iVar6 - iVar2;
-            if (iVar12 < iVar1 + -1) {
-              uVar11 = ((iVar1 - iVar12) + -1) * 0x27;
-              puVar13 = (byte *)((iVar12 + 1) * 0x27 + (int)this->field_0607);
-              memmove(puVar14, puVar13, uVar11); /* compiler REP MOVS byte copy */
+          puVar15 = (byte *)(iVar13 * 0x27 + (int)this->field_0607);
+          iVar2 = puVar15[2];
+          if (iVar2 <= iVar7) {
+            iVar7 = iVar7 - iVar2;
+            if (iVar13 < iVar1 + -1) {
+              uVar12 = ((iVar1 - iVar13) + -1) * 0x27;
+              puVar14 = (byte *)((iVar13 + 1) * 0x27 + (int)this->field_0607);
+              memmove(puVar15, puVar14, uVar12); /* compiler REP MOVS byte copy */
             }
             this->field_03D4 = this->field_03D4 + -1;
             goto LAB_004c7d8c;
           }
-          piVar8 = (int *)(iVar12 * 0x27 + 8 + (int)this->field_0607);
-          *piVar8 = *piVar8 - iVar6;
+          piVar9 = (int *)(iVar13 * 0x27 + 8 + (int)this->field_0607);
+          *piVar9 = *piVar9 - iVar7;
           goto cf_common_exit_004C8287;
         }
 LAB_004c7d8c:
-        if (iVar6 == 0) goto cf_common_exit_004C8287;
+        if (iVar7 == 0) goto cf_common_exit_004C8287;
       } while (bVar4);
     }
-    if (((iVar6 != 0) && (*(int *)&this->field_0x361 == param_1)) &&
+    if (((iVar7 != 0) && (*(int *)&this->field_0x361 == param_1)) &&
        (*(uint *)&this->field_0x369 == param_2)) {
-      if (*(int *)&this->field_0x36d < iVar6) {
-        iVar6 = *(int *)&this->field_0x36d;
+      if (*(int *)&this->field_0x36d < iVar7) {
+        iVar7 = *(int *)&this->field_0x36d;
       }
-      iVar6 = *(int *)&this->field_0x36d - iVar6;
-      *(int *)&this->field_0x36d = iVar6;
-      if (iVar6 == 0) {
+      iVar7 = *(int *)&this->field_0x36d - iVar7;
+      *(int *)&this->field_0x36d = iVar7;
+      if (iVar7 == 0) {
         *(int *)&this->field_0x365 = *(int *)&this->field_0x361;
-        iVar6 = sub_004C90C0(this);
-        if (iVar6 == 0) {
+        local_EAX_331 = sub_004C90C0(this);
+        if (local_EAX_331 == 0) {
           *(undefined4 *)&this->field_0x36d = 1;
         }
         else {
@@ -107,19 +113,19 @@ LAB_004c7d8c:
   else {
     iVar6 = sub_004C7860(this,param_1,param_2,param_3,0,0);
     if (iVar6 != 0) {
-      iVar6 = sub_004C7860(this,param_1,param_2,param_3,1,0);
-      if ((iVar6 == 0) || (iVar6 = thunk_FUN_004c7c20(this), iVar6 == 0)) {
+      local_EAX_538 = sub_004C7860(this,param_1,param_2,param_3,1,0);
+      if ((local_EAX_538 == 0) || (local_EAX_559 = thunk_FUN_004c7c20(this), local_EAX_559 == 0)) {
         if (param_4 != 0) {
-          iVar6 = sub_004C9370(this,param_1,param_2,-1);
+          local_EAX_1126 = sub_004C9370(this,param_1,param_2,-1);
           if ((*(int *)&this->field_0x361 == param_1) && (*(uint *)&this->field_0x369 == param_2)) {
-            iVar6 = iVar6 + *(int *)&this->field_0x36d;
+            local_EAX_1126 = local_EAX_1126 + *(int *)&this->field_0x36d;
           }
-          if ((int)(iVar6 + param_3) < 100) {
+          if ((int)(local_EAX_1126 + param_3) < 100) {
             if (this->field_03D8 <= this->field_03D4 + 1) {
-              iVar6 = this->field_03D8 + 0x14;
-              this->field_03D8 = iVar6;
-              pAVar7 = Library::DKW::LIB::MemRealloc(this->field_0607,iVar6 * 0x27);
-              this->field_0607 = pAVar7;
+              iVar7 = this->field_03D8 + 0x14;
+              this->field_03D8 = iVar7;
+              pAVar8 = Library::DKW::LIB::MemRealloc(this->field_0607,iVar7 * 0x27);
+              this->field_0607 = pAVar8;
             }
             *(int *)(this->field_03D4 * 0x27 + (int)this->field_0607) = param_1;
             *(uint *)(this->field_03D4 * 0x27 + 4 + (int)this->field_0607) = param_2;
@@ -127,12 +133,12 @@ LAB_004c7d8c:
             *(uint *)(this->field_03D4 * 0x27 + 0xc + (int)this->field_0607) = param_5;
             *(undefined4 *)(this->field_03D4 * 0x27 + 0x10 + (int)this->field_0607) = param_6;
             *(int *)(this->field_03D4 * 0x27 + 0x14 + (int)this->field_0607) = param_7;
-            puVar14 = (byte *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607);
-            *puVar14 = 0;
-            puVar14[1] = 0;
-            puVar14[2] = 0;
-            *(undefined2 *)(puVar14 + 3) = 0;
-            STField<undefined1>(puVar14,0xe) = 0;
+            puVar15 = (byte *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607);
+            *puVar15 = 0;
+            puVar15[1] = 0;
+            puVar15[2] = 0;
+            *(undefined2 *)(puVar15 + 3) = 0;
+            STField<undefined1>(puVar15,0xe) = 0;
             if (param_8 != nullptr) {
               Library::MSVCRT::_strncpy
                         ((char *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607),param_8,
@@ -227,9 +233,9 @@ cf_common_exit_004C8287:
   }
   return 0;
 LAB_004c7d2b:
-  iVar12 = iVar12 + -1;
-  piVar8 = (int *)((int)piVar8 + -0x27);
-  if (iVar12 < 0) goto LAB_004c7d8c;
+  iVar13 = iVar13 + -1;
+  piVar9 = (int *)((int)piVar9 + -0x27);
+  if (iVar13 < 0) goto LAB_004c7d8c;
   goto LAB_004c7d1c;
 }
 

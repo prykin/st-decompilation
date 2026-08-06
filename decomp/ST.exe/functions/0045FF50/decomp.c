@@ -11,7 +11,8 @@ undefined4 __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
 {
   STGroupBoatC *this_00;
   int iVar1;
-  undefined4 uVar2;
+  undefined4 uVar1;
+  int iVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
 
@@ -43,14 +44,14 @@ switchD_00460024_caseD_1:
     }
   }
   else {
-    uVar2 = this->vfunc_1C();
-    iVar1 = this->vfunc_D8();
-    if (iVar1 == 0) {
-      switch(uVar2) {
+    uVar1 = this->vfunc_1C();
+    iVar2 = this->vfunc_D8();
+    if (iVar2 == 0) {
+      switch(uVar1) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case 0:
-        iVar1 = *(int *)((int)this->field_06CB + 0x2c);
-        if ((iVar1 != 0xb) && (iVar1 != 0x23)) {
+        iVar2 = *(int *)((int)this->field_06CB + 0x2c);
+        if ((iVar2 != 0xb) && (iVar2 != 0x23)) {
           return 2;
         }
         if (this->field_021D != 1) {

@@ -10,16 +10,22 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
 {
   dword dVar1;
   STGroupBoatC *this_00;
-  int iVar3;
+  int local_EAX_70;
   STGameObjC *this_01;
-  int iVar4;
   int iVar5;
-  DArrayTy *pDVar6;
-  int *piVar7;
-  uint uVar8;
-  uint uVar9;
-  DArrayTy *pDVar10;
-  DArrayTy *pDVar11;
+  int iVar6;
+  int local_EAX_228;
+  int iVar7;
+  int local_EAX_1110;
+  int local_EAX_1610;
+  int iVar3;
+  int iVar4;
+  DArrayTy *pDVar8;
+  int *piVar9;
+  uint uVar10;
+  uint uVar11;
+  DArrayTy *pDVar12;
+  DArrayTy *pDVar13;
   InternalExceptionFrame local_78;
   int local_34 [4];
   STGroupBoatC *local_24;
@@ -40,17 +46,17 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
   local_24 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
+  local_EAX_70 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   this_00 = local_24;
-  if (iVar3 != 0) {
+  if (local_EAX_70 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    if (iVar3 != -0x5001fff7) {
-      iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x126a,0,iVar3,
+    if (local_EAX_70 != -0x5001fff7) {
+      iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x126a,0,local_EAX_70,
                                  "%s","STGroupBoatC::ChangeMDNotify");
       if (iVar4 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x126b);
+      RaiseInternalException(local_EAX_70,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x126b);
     }
     return;
   }
@@ -58,24 +64,24 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                       (g_allPlayers_007FA174,local_24->field_0024,(ushort)param_2,CASE_1);
   local_18 = this_01;
   if (param_1 == 1) {
-    iVar3 = (*this_01->vtable->vfunc_2C)();
-    if ((iVar3 == 0x3b) || (iVar3 = (*this_01->vtable->vfunc_2C)(), iVar3 == 0x60)) {
+    iVar5 = (*this_01->vtable->vfunc_2C)();
+    if ((iVar5 == 0x3b) || (iVar5 = (*this_01->vtable->vfunc_2C)(), iVar5 == 0x60)) {
       if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
         if (this_00->field_0266 == nullptr) {
           RaiseInternalException
                     (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x11f2);
         }
-        uVar8 = 0;
+        uVar10 = 0;
         dVar1 = this_00->field_0266->count;
         if (0 < (int)dVar1) {
           do {
-            DArrayGetElement(this_00->field_0266,uVar8,&local_10);
+            DArrayGetElement(this_00->field_0266,uVar10,&local_10);
             if ((short)local_10 == -1) break;
-            uVar8 = uVar8 + 1;
-          } while ((int)uVar8 < (int)dVar1);
+            uVar10 = uVar10 + 1;
+          } while ((int)uVar10 < (int)dVar1);
         }
-        Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar8,&param_2);
+        Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar10,&param_2);
         DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,
                      (DArrayTy *)this_00->field_0029);
         this_01 = local_18;
@@ -114,33 +120,34 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x11fe);
       }
-      uVar8 = 0;
+      uVar10 = 0;
       dVar1 = this_00->field_0266->count;
       if (0 < (int)dVar1) {
         do {
-          DArrayGetElement(this_00->field_0266,uVar8,&local_10);
+          DArrayGetElement(this_00->field_0266,uVar10,&local_10);
           if ((short)local_10 == -1) break;
-          uVar8 = uVar8 + 1;
-        } while ((int)uVar8 < (int)dVar1);
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)dVar1);
       }
-      pDVar6 = this_00->field_0266;
+      pDVar8 = this_00->field_0266;
     }
     else {
-      iVar3 = 0;
+      iVar5 = 0;
       if (0 < local_1c) {
-        piVar7 = local_34;
+        piVar9 = local_34;
         do {
-          iVar4 = (*local_18->vtable->vfunc_2C)();
+          iVar6 = (*local_18->vtable->vfunc_2C)();
           this_01 = local_18;
-          if (iVar4 == *piVar7) break;
-          iVar3 = iVar3 + 1;
-          piVar7 = piVar7 + 1;
-        } while (iVar3 < local_1c);
+          if (iVar6 == *piVar9) break;
+          iVar5 = iVar5 + 1;
+          piVar9 = piVar9 + 1;
+        } while (iVar5 < local_1c);
       }
-      if (iVar3 == local_1c) {
-        iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x120a,0,0,"%s",
-                                   "STGroupBoatC::ChangeMDNotify invalid type");
-        if (iVar3 != 0) {
+      if (iVar5 == local_1c) {
+        local_EAX_228 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x120a,0,0,"%s",
+                                "STGroupBoatC::ChangeMDNotify invalid type");
+        if (local_EAX_228 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         RaiseInternalException
@@ -151,13 +158,13 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      iVar3 = (*this_01->vtable->vfunc_2C)();
-      if (iVar3 != this_00->field_025E) {
+      iVar5 = (*this_01->vtable->vfunc_2C)();
+      if (iVar5 != this_00->field_025E) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      iVar3 = (*this_01->vtable->vfunc_88)(local_14);
-      if (iVar3 < 1) {
+      iVar5 = (*this_01->vtable->vfunc_88)(local_14);
+      if (iVar5 < 1) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
@@ -191,25 +198,25 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x1215);
       }
-      uVar8 = 0;
+      uVar10 = 0;
       dVar1 = this_00->field_024E->count;
       if (0 < (int)dVar1) {
         do {
-          DArrayGetElement(this_00->field_024E,uVar8,&local_10);
+          DArrayGetElement(this_00->field_024E,uVar10,&local_10);
           if ((short)local_10 == -1) break;
-          uVar8 = uVar8 + 1;
-        } while ((int)uVar8 < (int)dVar1);
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)dVar1);
       }
-      pDVar6 = this_00->field_024E;
+      pDVar8 = this_00->field_024E;
     }
-    Library::DKW::TBL::DArrayPut(pDVar6,uVar8,&param_2);
-    pDVar6 = (DArrayTy *)this_00->field_0029;
-    pDVar11 = this_00->field_0266;
-    pDVar10 = this_00->field_024E;
+    Library::DKW::TBL::DArrayPut(pDVar8,uVar10,&param_2);
+    pDVar8 = (DArrayTy *)this_00->field_0029;
+    pDVar13 = this_00->field_0266;
+    pDVar12 = this_00->field_024E;
     goto LAB_004a4aab;
   }
-  iVar3 = (*this_01->vtable->vfunc_2C)();
-  if ((iVar3 == 0x3b) || (iVar4 = (*this_01->vtable->vfunc_2C)(), iVar3 = local_1c, iVar4 == 0x60))
+  iVar5 = (*this_01->vtable->vfunc_2C)();
+  if ((iVar5 == 0x3b) || (iVar6 = (*this_01->vtable->vfunc_2C)(), iVar5 = local_1c, iVar6 == 0x60))
   {
     if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
       if (this_00->field_0266 == nullptr) {
@@ -217,18 +224,18 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x1226);
       }
-      uVar8 = 0;
+      uVar10 = 0;
       dVar1 = this_00->field_0266->count;
       if (0 < (int)dVar1) {
         do {
-          DArrayGetElement(this_00->field_0266,uVar8,&local_10);
+          DArrayGetElement(this_00->field_0266,uVar10,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
-            Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar8,&local_10);
+            Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar10,&local_10);
             break;
           }
-          uVar8 = uVar8 + 1;
-        } while ((int)uVar8 < (int)dVar1);
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)dVar1);
       }
       DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,(DArrayTy *)this_00->field_0029
                   );
@@ -268,44 +275,45 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1234);
     }
-    uVar9 = 0;
-    uVar8 = this_00->field_0266->count;
-    if (0 < (int)uVar8) {
+    uVar11 = 0;
+    uVar10 = this_00->field_0266->count;
+    if (0 < (int)uVar10) {
       do {
-        DArrayGetElement(this_00->field_0266,uVar9,&local_10);
+        DArrayGetElement(this_00->field_0266,uVar11,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
-          Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar9,&local_10);
+          Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar11,&local_10);
           break;
         }
-        uVar9 = uVar9 + 1;
-      } while ((int)uVar9 < (int)uVar8);
+        uVar11 = uVar11 + 1;
+      } while ((int)uVar11 < (int)uVar10);
     }
-    if (uVar9 == uVar8) {
+    if (uVar11 == uVar10) {
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x123b,0,0,"%s",
                                  "STGroupBoatC::ChangeMDNotify depot is absent");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar3 = 0x123c;
+      iVar5 = 0x123c;
       goto LAB_004a4a83;
     }
   }
   else {
-    iVar4 = 0;
+    iVar6 = 0;
     if (0 < local_1c) {
       local_20 = local_34;
       do {
-        iVar5 = (*local_18->vtable->vfunc_2C)();
-        if (iVar5 == *local_20) break;
-        iVar4 = iVar4 + 1;
+        iVar7 = (*local_18->vtable->vfunc_2C)();
+        if (iVar7 == *local_20) break;
+        iVar6 = iVar6 + 1;
         local_20 = local_20 + 1;
-      } while (iVar4 < iVar3);
+      } while (iVar6 < iVar5);
     }
-    if (iVar4 == iVar3) {
-      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1246,0,0,"%s",
-                                 "STGroupBoatC::ChangeMDNotify invalid type");
-      if (iVar3 != 0) {
+    if (iVar6 == iVar5) {
+      local_EAX_1110 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1246,0,0,"%s",
+                              "STGroupBoatC::ChangeMDNotify invalid type");
+      if (local_EAX_1110 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException
@@ -318,18 +326,18 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x124b);
       }
-      uVar8 = 0;
+      uVar10 = 0;
       dVar1 = this_00->field_024E->count;
       if (0 < (int)dVar1) {
         do {
-          DArrayGetElement(this_00->field_024E,uVar8,&local_10);
+          DArrayGetElement(this_00->field_024E,uVar10,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
-            Library::DKW::TBL::DArrayPut(this_00->field_024E,uVar8,&local_10);
+            Library::DKW::TBL::DArrayPut(this_00->field_024E,uVar10,&local_10);
             break;
           }
-          uVar8 = uVar8 + 1;
-        } while ((int)uVar8 < (int)dVar1);
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)dVar1);
       }
       DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,(DArrayTy *)this_00->field_0029
                   );
@@ -368,37 +376,38 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1259);
     }
-    uVar9 = 0;
-    uVar8 = this_00->field_024E->count;
-    if (0 < (int)uVar8) {
+    uVar11 = 0;
+    uVar10 = this_00->field_024E->count;
+    if (0 < (int)uVar10) {
       do {
-        DArrayGetElement(this_00->field_024E,uVar9,&local_10);
+        DArrayGetElement(this_00->field_024E,uVar11,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
-          Library::DKW::TBL::DArrayPut(this_00->field_024E,uVar9,&local_10);
+          Library::DKW::TBL::DArrayPut(this_00->field_024E,uVar11,&local_10);
           break;
         }
-        uVar9 = uVar9 + 1;
-      } while ((int)uVar9 < (int)uVar8);
+        uVar11 = uVar11 + 1;
+      } while ((int)uVar11 < (int)uVar10);
     }
-    if (uVar9 == uVar8) {
-      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1260,0,0,"%s",
-                                 "STGroupBoatC::ChangeMDNotify mine is absent");
-      if (iVar3 != 0) {
+    if (uVar11 == uVar10) {
+      local_EAX_1610 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1260,0,0,"%s",
+                              "STGroupBoatC::ChangeMDNotify mine is absent");
+      if (local_EAX_1610 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar3 = 0x1261;
+      iVar5 = 0x1261;
 LAB_004a4a83:
       RaiseInternalException
                 (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
-                 iVar3);
+                 iVar5);
     }
   }
-  pDVar6 = (DArrayTy *)this_00->field_0029;
-  pDVar11 = this_00->field_0266;
-  pDVar10 = this_00->field_024E;
+  pDVar8 = (DArrayTy *)this_00->field_0029;
+  pDVar13 = this_00->field_0266;
+  pDVar12 = this_00->field_024E;
 LAB_004a4aab:
-  DistributeMD(this_00,0,pDVar10,pDVar11,pDVar6);
+  DistributeMD(this_00,0,pDVar12,pDVar13,pDVar8);
   g_currentExceptionFrame = local_78.previous;
   return;
 }

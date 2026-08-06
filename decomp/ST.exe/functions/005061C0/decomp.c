@@ -32,20 +32,42 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
   CPanelTy *this_00;
   byte bVar3;
   int iVar4;
+  byte *pbVar4;
+  char *pcVar8_mg1;
+  UINT UVar5;
+  char *pcVar8_mg0;
+  uint local_EAX_1314;
+  BITMAPINFO *pBVar6;
+  uint uVar7;
+  UINT local_EAX_1601;
+  char *pcVar8_mg2;
+  uint *puVar8;
+  char *pcVar8_mgC;
   uint uVar5;
-  byte *pbVar6;
+  char *pcVar8_mgF;
+  char *pcVar8_mg4;
+  char *pcVar8_mg5;
+  uint local_EAX_3244;
   UINT UVar7;
-  char *pcVar8;
-  uint *puVar9;
-  byte *pbVar10;
+  char *pcVar8_mg10;
+  char *pcVar8_mgD;
+  char *pcVar8_mg9;
+  char *pcVar8_mgA;
+  char *pcVar8_mgB;
+  char *pcVar8_mg8;
+  char *pcVar8_mg7;
+  char *pcVar8_mgE;
   int iVar11;
-  uint uVar12;
-  char cVar13;
-  Global_sub_00529500_param_1Enum GVar15;
+  uint uVar9;
+  char cVar10;
+  int iVar12;
+  Global_sub_00529500_param_1Enum GVar13;
   int GVar14;
-  char *pcVar16;
-  HINSTANCE pHVar17;
-  RecoveredSourceFamily_dibcopy *pRVar18;
+  char *pcVar14;
+  char *pcVar15;
+  HINSTANCE pHVar16;
+  RecoveredSourceFamily_dibcopy *pRVar17;
+  int iVar18;
   int iVar19;
   int iVar20;
   int iVar21;
@@ -79,17 +101,17 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
   case CASE_0:
   case CASE_3:
   case CASE_4:
-    pbVar6 = (byte *)local_20->field_09D9[0];
-    pRVar18 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
-    iVar11 = 0;
-    iVar4 = 0;
+    pbVar4 = (byte *)local_20->field_09D9[0];
+    pRVar17 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
+    iVar18 = 0;
+    iVar12 = 0;
     goto LAB_0050633b;
   case CASE_1:
     if (local_20->field_0BFB == '\x02') {
-      pbVar6 = (byte *)local_20->field_09D9[1];
-      pRVar18 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
-      iVar11 = 0;
-      iVar4 = 0;
+      pbVar4 = (byte *)local_20->field_09D9[1];
+      pRVar17 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
+      iVar18 = 0;
+      iVar12 = 0;
       goto LAB_0050633b;
     }
     break;
@@ -110,7 +132,7 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
   case CASE_4E:
   case CASE_51:
   case CASE_52:
-    pbVar6 = (byte *)local_20->field_09D9[3];
+    pbVar4 = (byte *)local_20->field_09D9[3];
     goto LAB_005062d5;
   case CASE_33:
   case CASE_35:
@@ -121,9 +143,9 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
   case CASE_44:
   case CASE_45:
   case CASE_4C:
-    pbVar6 = (byte *)local_20->field_09D9[2];
+    pbVar4 = (byte *)local_20->field_09D9[2];
 LAB_005062d5:
-    pRVar18 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
+    pRVar17 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
     break;
   case CASE_34:
   case CASE_38:
@@ -136,32 +158,32 @@ LAB_005062d5:
   case CASE_4F:
   case CASE_50:
   case CASE_6F:
-    pbVar6 = (byte *)local_20->field_09D9[1];
-    pRVar18 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
+    pbVar4 = (byte *)local_20->field_09D9[1];
+    pRVar17 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
     break;
   case CASE_36:
     if (local_20->field_0BF9 == '\x01') {
-      pbVar6 = (byte *)local_20->field_09D9[3];
-      pRVar18 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
+      pbVar4 = (byte *)local_20->field_09D9[3];
+      pRVar17 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
     }
     else {
       if (local_20->field_0BF9 != '\x02') goto switchD_00506270_caseD_53;
-      pbVar6 = (byte *)local_20->field_09D9[2];
-      pRVar18 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
+      pbVar4 = (byte *)local_20->field_09D9[2];
+      pRVar17 = (RecoveredSourceFamily_dibcopy *)local_20->field_0194;
     }
     break;
   default:
     goto switchD_00506270_caseD_53;
   }
-  DibPut(pRVar18,0,0,'\x01',pbVar6);
+  DibPut(pRVar17,0,0,'\x01',pbVar4);
 switchD_00506270_caseD_53:
   switch(this_00->field_0BF5) {
   case CASE_36:
     if (this_00->field_0BF9 == '\x01') {
-      pbVar6 = (byte *)this_00->field_09D9[4];
-      pRVar18 = (RecoveredSourceFamily_dibcopy *)this_00->field_0194;
-      iVar11 = 0x35;
-      iVar4 = 0xc;
+      pbVar4 = (byte *)this_00->field_09D9[4];
+      pRVar17 = (RecoveredSourceFamily_dibcopy *)this_00->field_0194;
+      iVar18 = 0x35;
+      iVar12 = 0xc;
       goto LAB_0050633b;
     }
     break;
@@ -173,12 +195,12 @@ switchD_00506270_caseD_53:
   case CASE_4A:
   case CASE_4B:
   case CASE_51:
-    pbVar6 = (byte *)this_00->field_09D9[4];
-    pRVar18 = (RecoveredSourceFamily_dibcopy *)this_00->field_0194;
-    iVar11 = 0x35;
-    iVar4 = 0xc;
+    pbVar4 = (byte *)this_00->field_09D9[4];
+    pRVar17 = (RecoveredSourceFamily_dibcopy *)this_00->field_0194;
+    iVar18 = 0x35;
+    iVar12 = 0xc;
 LAB_0050633b:
-    DibPut(pRVar18,iVar4,iVar11,'\x01',pbVar6);
+    DibPut(pRVar17,iVar12,iVar18,'\x01',pbVar4);
   }
 switchD_00506214_caseD_2:
   if (this_00->field_0BFA != CASE_1) {
@@ -188,92 +210,94 @@ switchD_00506214_caseD_2:
       case CASE_DE:
       case CASE_E0:
       case CASE_FE:
-        iVar4 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
-                *(int *)((byte *)this_00->field_09D9[5] + 4)) / 2;
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4,0x50,'\x01',
+        iVar12 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
+                 *(int *)((byte *)this_00->field_09D9[5] + 4)) / 2;
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x50,'\x01',
                (byte *)this_00->field_09D9[5]);
-        pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02D2,
-                                      (uint)this_00->field_0C11);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4 + 3,0x53,'\x01',pbVar6);
-        pbVar6 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[5],0,0x49,7,
+        pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02D2,
+                              (uint)this_00->field_0C11);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12 + 3,0x53,'\x01',
+               (byte *)pBVar6);
+        pbVar4 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[5],0,0x49,7,
                                              0x67,0xc,0);
-        if (pbVar6 != nullptr) {
+        if (pbVar4 != nullptr) {
           if (this_00->field_0BF5 == 0xfe) {
             local_8 = thunk_FUN_00529480(this_00->field_0C11);
           }
           else {
             local_8 = thunk_FUN_005293f0(this_00->field_0BF5);
           }
-          uVar5 = thunk_FUN_00529500(local_8);
+          uVar7 = thunk_FUN_00529500(local_8);
           iVar19 = -1;
-          iVar11 = -1;
-          puVar9 = (uint *)LoadResourceString(local_8,g_hINSTANCE_00807618);
-          ccFntTy::WrStr(this_00->field_01B8,puVar9,iVar11,iVar19,uVar5);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4 + 0x49,0x57,'\x01',
-                 pbVar6);
+          iVar18 = -1;
+          pcVar8_mg1 = LoadResourceString(local_8,g_hINSTANCE_00807618);
+          ccFntTy::WrStr(this_00->field_01B8,pcVar8_mg1,iVar18,iVar19,uVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12 + 0x49,0x57,'\x01',
+                 pbVar4);
           ccFntTy::EraseSufr(this_00->field_01B8);
         }
         local_1c = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[5],0,100,0x14
                                                ,0x3c,0x14,0);
         if (local_1c != nullptr) {
-          uVar5 = 0;
+          uVar7 = 0;
           wsprintfA((LPSTR)&DAT_0080f33a,"%06d",*(undefined4 *)&this_00->field_0xc12);
           switch(this_00->field_0C11) {
           case CASE_0:
-            uVar5 = 0;
+            uVar7 = 0;
             break;
           case CASE_1:
-            uVar5 = 2;
+            uVar7 = 2;
             break;
           case CASE_2:
-            uVar5 = 1;
+            uVar7 = 1;
             break;
           case CASE_3:
-            uVar5 = 7;
+            uVar7 = 7;
             break;
           case CASE_4:
-            uVar5 = 3;
+            uVar7 = 3;
           }
-          ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,uVar5);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4 + 100,100,'\x01',
+          ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,uVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12 + 100,100,'\x01',
                  local_1c);
           ccFntTy::EraseSufr(this_00->field_01C4);
         }
         break;
       case CASE_FD:
-        iVar4 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
-                *(int *)((byte *)this_00->field_09D9[0xe] + 4)) / 2;
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4,0x3f,'\x01',
+        iVar12 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
+                 *(int *)((byte *)this_00->field_09D9[0xe] + 4)) / 2;
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x3f,'\x01',
                (byte *)this_00->field_09D9[0xe]);
         CVar1 = this_00->field_0C11;
         if ((CVar1 != CASE_0) && (CVar1 < 0x16)) {
-          pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CE,
-                                        CVar1 - 1);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4 + 6,0x44,'\x01',pbVar6);
+          pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CE,CVar1 - 1);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12 + 6,0x44,'\x01',
+                 (byte *)pBVar6);
         }
-        pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,10);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4 + 4,0x42,'\x06',pbVar6);
-        pbVar6 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[0xe],0,0x38,4,
+        pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,10);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12 + 4,0x42,'\x06',
+               (byte *)pBVar6);
+        pbVar4 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[0xe],0,0x38,4,
                                              0x7b,0x19,0);
-        if (pbVar6 != nullptr) {
+        if (pbVar4 != nullptr) {
           iVar21 = -1;
           iVar20 = -1;
-          uVar5 = 0;
+          uVar7 = 0;
           iVar19 = -1;
-          iVar11 = -2;
-          pHVar17 = g_hINSTANCE_00807618;
-          UVar7 = thunk_FUN_00525290(this_00->field_0C11);
-          puVar9 = (uint *)LoadResourceString(UVar7,pHVar17);
-          ccFntTy::WrTxt(this_00->field_01B8,puVar9,iVar11,iVar19,uVar5,iVar20,iVar21);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4 + 0x38,0x43,'\x01',
-                 pbVar6);
+          iVar18 = -2;
+          pHVar16 = g_hINSTANCE_00807618;
+          UVar5 = thunk_FUN_00525290(this_00->field_0C11);
+          pcVar8_mg0 = LoadResourceString(UVar5,pHVar16);
+          ccFntTy::WrTxt(this_00->field_01B8,pcVar8_mg0,iVar18,iVar19,uVar7,iVar20,iVar21);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12 + 0x38,0x43,'\x01',
+                 pbVar4);
           ccFntTy::EraseSufr(this_00->field_01B8);
         }
-        pbVar6 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[0xe],0,2,0x1e,
+        pbVar4 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[0xe],0,2,0x1e,
                                              0xb2,0x22,0);
-        if (pbVar6 != nullptr) {
-          ccFntTy::WrTxt(this_00->field_01B8,(uint *)this_00->field_0C16,-2,-1,1,-1,-1);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4 + 2,0x5d,'\x01',pbVar6);
+        if (pbVar4 != nullptr) {
+          ccFntTy::WrTxt(this_00->field_01B8,(char *)this_00->field_0C16,-2,-1,1,-1,-1);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12 + 2,0x5d,'\x01',pbVar4);
           ccFntTy::EraseSufr(this_00->field_01B8);
         }
       }
@@ -281,61 +305,66 @@ switchD_00506214_caseD_2:
     goto switchD_00506377_caseD_df;
   }
   if (this_00->field_0BFB == '\x02') {
-    GVar15 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
+    GVar13 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
              *(int *)((byte *)this_00->field_09D9[5] + 4)) / 2;
-    local_8 = GVar15;
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar15,0x50,'\x01',
+    local_8 = GVar13;
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar13,0x50,'\x01',
            (byte *)this_00->field_09D9[5]);
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 != 0) {
-      uVar5 = thunk_FUN_00526ba0(*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12,
-                                 this_00->field_0C1A);
-      pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02C2,uVar5);
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar15 + 6,0x5d,'\x01',pbVar6);
-      FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,GVar15 + 0x36,0x5d,7,0x21,
+      local_EAX_1314 =
+           thunk_FUN_00526ba0(*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12,
+                              this_00->field_0C1A);
+      pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02C2,local_EAX_1314
+                           );
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar13 + 6,0x5d,'\x01',
+             (byte *)pBVar6);
+      FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,GVar13 + 0x36,0x5d,7,0x21,
                    0);
-      GVar15 = local_8;
+      GVar13 = local_8;
       bVar3 = this_00->field_0C24;
       local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar3));
-      cVar13 = (char)(((uint)bVar3 * 0x21) / 100);
-      local_10 = (Global_sub_00526BA0_param_1Enum *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(cVar13));
-      if ((bVar3 != 0) && (cVar13 == '\0')) {
+      cVar10 = (char)(((uint)bVar3 * 0x21) / 100);
+      local_10 = (Global_sub_00526BA0_param_1Enum *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(cVar10));
+      if ((bVar3 != 0) && (cVar10 == '\0')) {
         local_10 = (Global_sub_00526BA0_param_1Enum *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(1));
       }
       if (bVar3 < 0x46) {
-        iVar4 = (-(uint)(bVar3 < 0x14) & 5) + 5;
+        iVar12 = (-(uint)(bVar3 < 0x14) & 5) + 5;
       }
       else {
-        iVar4 = 0;
+        iVar12 = 0;
       }
-      uVar5 = (uint)local_10 & 0xff;
+      uVar7 = (uint)local_10 & 0xff;
       Library::DKW::WGR::FUN_006b55f0
-                ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar5,
-                 (byte *)this_00->field_028A,0,iVar4,*(int *)(this_00->field_028A + 4) - uVar5,5,
-                 uVar5);
-      pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar15 + 5,0x5c,'\x06',pbVar6);
-      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar15 + 2,0x52,0xb2,10);
-      pHVar17 = g_hINSTANCE_00807618;
-      UVar7 = thunk_FUN_00523410(*(Global_sub_00523410_param_1Enum *)&this_00->field_0xc12,
-                                 this_00->field_0C1A,0);
-      pcVar8 = LoadResourceString(UVar7,pHVar17);
-      uVar5 = 0xffffffff;
+                ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar7,
+                 (byte *)this_00->field_028A,0,iVar12,*(int *)(this_00->field_028A + 4) - uVar7,5,
+                 uVar7);
+      pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar13 + 5,0x5c,'\x06',
+             (byte *)pBVar6);
+      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar13 + 2,0x52,0xb2,10);
+      pHVar16 = g_hINSTANCE_00807618;
+      local_EAX_1601 =
+           thunk_FUN_00523410(*(Global_sub_00523410_param_1Enum *)&this_00->field_0xc12,
+                              this_00->field_0C1A,0);
+      pcVar8_mg2 = LoadResourceString(local_EAX_1601,pHVar16);
+      uVar7 = 0xffffffff;
       do {
-        pcVar16 = pcVar8;
-        if (uVar5 == 0) break;
-        uVar5 = uVar5 - 1;
-        pcVar16 = pcVar8 + 1;
-        cVar13 = *pcVar8;
-        pcVar8 = pcVar16;
-      } while (cVar13 != '\0');
-      uVar5 = ~uVar5;
-      pcVar8 = pcVar16 + -uVar5;
-      pcVar16 = &this_00->field_01E1;
-      memmove(pcVar16, pcVar8, uVar5); /* compiler REP MOVS byte copy */
-      uVar12 = 0;
-      for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
-          puVar9 != nullptr; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
-        *(undefined1 *)puVar9 = 0x20;
+        pcVar14 = pcVar8_mg2;
+        if (uVar7 == 0) break;
+        uVar7 = uVar7 - 1;
+        pcVar14 = pcVar8_mg2 + 1;
+        cVar10 = *pcVar8_mg2;
+        pcVar8_mg2 = pcVar14;
+      } while (cVar10 != '\0');
+      uVar7 = ~uVar7;
+      pcVar14 = pcVar14 + -uVar7;
+      pcVar15 = &this_00->field_01E1;
+      memmove(pcVar15, pcVar14, uVar7); /* compiler REP MOVS byte copy */
+      uVar9 = 0;
+      for (puVar8 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
+          puVar8 != nullptr; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
+        *(undefined1 *)puVar8 = 0x20;
       }
       goto cf_common_exit_00507034;
     }
@@ -354,98 +383,101 @@ switchD_00506214_caseD_2:
 LAB_0050709d:
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar14 + 2,0x52,0xb2,0x2f);
 LAB_005070be:
-      uVar5 = 0;
-      UVar7 = 0x2713;
+      uVar7 = 0;
+      UVar5 = 0x2713;
       goto LAB_0050777e;
     }
-    uVar5 = thunk_FUN_00526ba0(*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12,
-                               this_00->field_0C1A);
-    pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BA,uVar5);
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar14 + 6,0x5d,'\x01',pbVar6);
+    local_EAX_3244 =
+         thunk_FUN_00526ba0(*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12,
+                            this_00->field_0C1A);
+    pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BA,local_EAX_3244);
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar14 + 6,0x5d,'\x01',
+           (byte *)pBVar6);
     if (this_00->field_0C26 != 0) {
       wsprintfA(&this_00->field_01E1,"%d",(uint)(byte)this_00->field_0C26);
       ccFntTy::SetSurf(this_00->field_01C8,this_00->field_0194,0,GVar14 + 6,0x5d,0x30,0x21);
-      ccFntTy::WrStr(this_00->field_01C8,(uint *)&this_00->field_01E1,-2,-1,0);
+      ccFntTy::WrStr(this_00->field_01C8,&this_00->field_01E1,-2,-1,0);
     }
     FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,GVar14 + 0x36,0x5d,7,0x21,0);
-    GVar15 = local_8;
+    GVar13 = local_8;
     bVar3 = this_00->field_0C24;
-    cVar13 = (char)(((uint)bVar3 * 0x21) / 100);
-    local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(cVar13));
-    if ((bVar3 != 0) && (cVar13 == '\0')) {
+    cVar10 = (char)(((uint)bVar3 * 0x21) / 100);
+    local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(cVar10));
+    if ((bVar3 != 0) && (cVar10 == '\0')) {
       local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(1));
     }
     if (bVar3 < 0x46) {
-      iVar4 = (-(uint)(bVar3 < 0x14) & 5) + 5;
+      iVar12 = (-(uint)(bVar3 < 0x14) & 5) + 5;
     }
     else {
-      iVar4 = 0;
+      iVar12 = 0;
     }
-    uVar5 = (uint)local_1c & 0xff;
+    uVar7 = (uint)local_1c & 0xff;
     Library::DKW::WGR::FUN_006b55f0
-              ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar5,
-               (byte *)this_00->field_028A,0,iVar4,*(int *)(this_00->field_028A + 4) - uVar5,5,uVar5
-              );
-    pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar15 + 5,0x5c,'\x06',pbVar6);
-    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar15 + 2,0x52,0xb2,10);
-    pHVar17 = g_hINSTANCE_00807618;
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar7,
+               (byte *)this_00->field_028A,0,iVar12,*(int *)(this_00->field_028A + 4) - uVar7,5,
+               uVar7);
+    pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar13 + 5,0x5c,'\x06',
+           (byte *)pBVar6);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar13 + 2,0x52,0xb2,10);
+    pHVar16 = g_hINSTANCE_00807618;
     UVar7 = thunk_FUN_00523410(*(Global_sub_00523410_param_1Enum *)&this_00->field_0xc12,
                                this_00->field_0C1A,0);
-    pcVar8 = LoadResourceString(UVar7,pHVar17);
-    uVar5 = 0xffffffff;
+    pcVar8_mg10 = LoadResourceString(UVar7,pHVar16);
+    uVar7 = 0xffffffff;
     do {
-      pcVar16 = pcVar8;
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      pcVar16 = pcVar8 + 1;
-      cVar13 = *pcVar8;
-      pcVar8 = pcVar16;
-    } while (cVar13 != '\0');
-    uVar5 = ~uVar5;
-    pcVar8 = pcVar16 + -uVar5;
-    pcVar16 = &this_00->field_01E1;
-    memmove(pcVar16, pcVar8, uVar5); /* compiler REP MOVS byte copy */
-    uVar12 = 0;
-    for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
-        puVar9 != nullptr; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
-      *(undefined1 *)puVar9 = 0x20;
+      pcVar14 = pcVar8_mg10;
+      if (uVar7 == 0) break;
+      uVar7 = uVar7 - 1;
+      pcVar14 = pcVar8_mg10 + 1;
+      cVar10 = *pcVar8_mg10;
+      pcVar8_mg10 = pcVar14;
+    } while (cVar10 != '\0');
+    uVar7 = ~uVar7;
+    pcVar14 = pcVar14 + -uVar7;
+    pcVar15 = &this_00->field_01E1;
+    memmove(pcVar15, pcVar14, uVar7); /* compiler REP MOVS byte copy */
+    uVar9 = 0;
+    for (puVar8 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
+        puVar8 != nullptr; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
+      *(undefined1 *)puVar8 = 0x20;
     }
     goto cf_common_exit_00507034;
   case CASE_33:
-    iVar11 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
+    iVar18 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
              *(int *)((byte *)this_00->field_09D9[8] + 4)) / 2;
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar11,0x36,'\x01',
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar18,0x36,'\x01',
            (byte *)this_00->field_09D9[8]);
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar11 + 5,0x39,'\x01',
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar18 + 5,0x39,'\x01',
            (byte *)this_00->field_09D9[9]);
     local_c = &this_00->field_0C1C;
     local_10 = (Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12;
     local_8 = 0;
-    iVar4 = 0x3a;
+    iVar12 = 0x3a;
     do {
       if (*local_10 == 0) {
-        ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar11 + 2,iVar4 - 2,0xb2,0x2f);
+        ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar18 + 2,iVar12 - 2,0xb2,0x2f);
         iVar22 = -1;
         iVar21 = -1;
-        uVar5 = 0;
+        uVar7 = 0;
         iVar20 = -1;
         iVar19 = -2;
-        puVar9 = (uint *)LoadResourceString(0x2713,g_hINSTANCE_00807618);
-        ccFntTy::WrTxt(this_00->field_01B8,puVar9,iVar19,iVar20,uVar5,iVar21,iVar22);
+        pcVar8_mgF = LoadResourceString(0x2713,g_hINSTANCE_00807618);
+        ccFntTy::WrTxt(this_00->field_01B8,pcVar8_mgF,iVar19,iVar20,uVar7,iVar21,iVar22);
       }
       else {
         uVar5 = thunk_FUN_00526ba0(*local_10,(&this_00->field_0C1A)[local_8]);
-        pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BA,
-                                      uVar5);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar11 + 6,iVar4,'\x01',pbVar6);
-        FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar11 + 0x36,iVar4,7,
+        pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BA,uVar5);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar18 + 6,iVar12,'\x01',
+               (byte *)pBVar6);
+        FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar18 + 0x36,iVar12,7,
                      0x21,0);
         bVar3 = (&this_00->field_0C24)[local_8];
         local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(bVar3));
-        cVar13 = (char)(((uint)bVar3 * 0x21) / 100);
-        local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(cVar13));
-        if ((bVar3 != 0) && (cVar13 == '\0')) {
+        cVar10 = (char)(((uint)bVar3 * 0x21) / 100);
+        local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(cVar10));
+        if ((bVar3 != 0) && (cVar10 == '\0')) {
           local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(1));
         }
         if (bVar3 < 0x46) {
@@ -454,51 +486,51 @@ LAB_005070be:
         else {
           local_1c = nullptr;
         }
-        uVar5 = local_18 & 0xff;
+        uVar7 = local_18 & 0xff;
         Library::DKW::WGR::FUN_006b55f0
-                  ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar11 + 0x37,
-                   (iVar4 - uVar5) + 0x21,(byte *)this_00->field_028A,0,(int)local_1c,
-                   *(int *)(this_00->field_028A + 4) - uVar5,5,uVar5);
-        pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar11 + 5,iVar4 + -1,'\x06',
-               pbVar6);
-        PaintDamageXY(this_00,this_00->field_0194,iVar11 + 0x41,iVar4,
+                  ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar18 + 0x37,
+                   (iVar12 - uVar7) + 0x21,(byte *)this_00->field_028A,0,(int)local_1c,
+                   *(int *)(this_00->field_028A + 4) - uVar7,5,uVar7);
+        pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar18 + 5,iVar12 + -1,'\x06',
+               (byte *)pBVar6);
+        PaintDamageXY(this_00,this_00->field_0194,iVar18 + 0x41,iVar12,
                       100 - (&this_00->field_0C24)[local_8],0x36b1);
-        PaintCostsXY(this_00,this_00->field_0194,iVar11 + 0x41,iVar4 + 0xb,*local_c,local_c[2],4,2);
+        PaintCostsXY(this_00,this_00->field_0194,iVar18 + 0x41,iVar12 + 0xb,*local_c,local_c[2],4,2);
       }
-      iVar4 = iVar4 + 0x23;
+      iVar12 = iVar12 + 0x23;
       local_8 = local_8 + 1;
       local_c = local_c + 1;
       local_10 = local_10 + 1;
-    } while (iVar4 < 0x80);
+    } while (iVar12 < 0x80);
     break;
   case CASE_34:
-    iVar4 = ((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004;
-    iVar11 = *(int *)(this_00->field_09D9[8] + 4);
+    iVar12 = ((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004;
+    iVar18 = *(int *)(this_00->field_09D9[8] + 4);
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x60,0x1f,'\x01',
            (byte *)this_00->field_09D9[0xb]);
-    PaintMunition(this_00,(iVar4 - iVar11) / 2);
+    PaintMunition(this_00,(iVar12 - iVar18) / 2);
     break;
   case CASE_35:
-    iVar4 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
-            *(int *)((byte *)this_00->field_09D9[5] + 4)) / 2;
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4,0x50,'\x01',
+    iVar12 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
+             *(int *)((byte *)this_00->field_09D9[5] + 4)) / 2;
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x50,'\x01',
            (byte *)this_00->field_09D9[5]);
     if (this_00->field_0C31 != '\0') {
-      PaintNameRes(this_00,iVar4);
-      PaintPerRes(this_00,iVar4);
+      PaintNameRes(this_00,iVar12);
+      PaintPerRes(this_00,iVar12);
       break;
     }
-    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar4 + 2,0x52,0xb2,0x2f);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar12 + 2,0x52,0xb2,0x2f);
     if (this_00->field_0C2F == 0) goto LAB_005070be;
-    pcVar8 = LoadResourceString(0x273c,g_hINSTANCE_00807618);
-    wsprintfA((LPSTR)&DAT_0080f33a,"%d %s",(uint)(ushort)this_00->field_0C2F,pcVar8);
+    pcVar8_mgD = LoadResourceString(0x273c,g_hINSTANCE_00807618);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%d %s",(uint)(ushort)this_00->field_0C2F,pcVar8_mgD);
     iVar20 = -1;
     iVar19 = -1;
-    uVar5 = 0;
-    iVar11 = -1;
-    iVar4 = -2;
-    puVar9 = &DAT_0080f33a;
+    uVar7 = 0;
+    iVar18 = -1;
+    iVar12 = -2;
+    pcVar8_mgE = (char *)&DAT_0080f33a;
     goto LAB_00507784;
   case CASE_36:
   case CASE_37:
@@ -509,20 +541,20 @@ LAB_005070be:
   case CASE_4D:
   case CASE_4E:
   case CASE_6F:
-    iVar4 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
-            *(int *)((byte *)this_00->field_09D9[7] + 4)) / 2;
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4,0x67,'\x01',
+    iVar12 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
+             *(int *)((byte *)this_00->field_09D9[7] + 4)) / 2;
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x67,'\x01',
            (byte *)this_00->field_09D9[7]);
-    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar4 + 2,0x69,0xa7,0xc);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar12 + 2,0x69,0xa7,0xc);
     iVar21 = -1;
     iVar20 = -1;
-    uVar5 = 0;
+    uVar7 = 0;
     iVar19 = -1;
-    iVar11 = -2;
-    pHVar17 = g_hINSTANCE_00807618;
-    UVar7 = thunk_FUN_00525890(this_00->field_0BF5);
-    puVar9 = (uint *)LoadResourceString(UVar7,pHVar17);
-    ccFntTy::WrTxt(this_00->field_01B8,puVar9,iVar11,iVar19,uVar5,iVar20,iVar21);
+    iVar18 = -2;
+    pHVar16 = g_hINSTANCE_00807618;
+    UVar5 = thunk_FUN_00525890(this_00->field_0BF5);
+    pcVar8_mgC = LoadResourceString(UVar5,pHVar16);
+    ccFntTy::WrTxt(this_00->field_01B8,pcVar8_mgC,iVar18,iVar19,uVar7,iVar20,iVar21);
     if (this_00->field_0C29 != 0xff) {
       if (0x28 < this_00->field_0C29) {
         this_00->field_0C29 = 0x28;
@@ -530,26 +562,26 @@ LAB_005070be:
       local_8 = local_8 & 0xffffff00;
       if (this_00->field_0C29 != 0) {
         do {
-          if ((this_00->field_0BF5 != CASE_4D) || (iVar11 = 4, this_00->field_0C28 == '\0')) {
-            iVar11 = 3;
+          if ((this_00->field_0BF5 != CASE_4D) || (iVar18 = 4, this_00->field_0C28 == '\0')) {
+            iVar18 = 3;
           }
-          pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,
-                                        iVar11);
+          pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,iVar18);
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,
-                 iVar4 + 6 + (local_8 & 0xff) * 4,0x75,'\x01',pbVar6);
+                 iVar12 + 6 + (local_8 & 0xff) * 4,0x75,'\x01',(byte *)pBVar6);
           bVar3 = (undefined1)local_8 + 1;
           local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
         } while (bVar3 < this_00->field_0C29);
       }
       if ((byte)(undefined1)local_8 < 0x28) {
-        iVar11 = 0x28 - (local_8 & 0xff);
-        iVar4 = iVar4 + 6 + (local_8 & 0xff) * 4;
+        iVar18 = 0x28 - (local_8 & 0xff);
+        iVar12 = iVar12 + 6 + (local_8 & 0xff) * 4;
         do {
-          pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4,0x75,'\x01',pbVar6);
-          iVar4 = iVar4 + 4;
-          iVar11 = iVar11 + -1;
-        } while (iVar11 != 0);
+          pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x75,'\x01',
+                 (byte *)pBVar6);
+          iVar12 = iVar12 + 4;
+          iVar18 = iVar18 + -1;
+        } while (iVar18 != 0);
       }
     }
     break;
@@ -560,179 +592,184 @@ LAB_005070be:
                          / 2);
     break;
   case CASE_3A:
-    iVar11 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
+    iVar18 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
              *(int *)((byte *)this_00->field_09D9[5] + 4)) / 2;
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar11,0x50,'\x01',
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar18,0x50,'\x01',
            (byte *)this_00->field_09D9[5]);
-    iVar4 = iVar11 + 2;
-    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar4,0x52,0x69,0xc);
+    iVar12 = iVar18 + 2;
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar12,0x52,0x69,0xc);
     iVar22 = -1;
     iVar21 = -1;
-    uVar5 = 1;
+    uVar7 = 1;
     iVar20 = -1;
     iVar19 = -3;
-    puVar9 = (uint *)LoadResourceString(0x36b7,g_hINSTANCE_00807618);
-    ccFntTy::WrTxt(this_00->field_01B8,puVar9,iVar19,iVar20,uVar5,iVar21,iVar22);
-    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar4,0x5d,0x69,0xc);
+    pcVar8_mg9 = LoadResourceString(0x36b7,g_hINSTANCE_00807618);
+    ccFntTy::WrTxt(this_00->field_01B8,pcVar8_mg9,iVar19,iVar20,uVar7,iVar21,iVar22);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar12,0x5d,0x69,0xc);
     iVar22 = -1;
     iVar21 = -1;
-    uVar5 = 1;
+    uVar7 = 1;
     iVar20 = -1;
     iVar19 = -3;
-    puVar9 = (uint *)LoadResourceString(0x36b8,g_hINSTANCE_00807618);
-    ccFntTy::WrTxt(this_00->field_01B8,puVar9,iVar19,iVar20,uVar5,iVar21,iVar22);
-    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar4,0x69,0xb2,0xc);
+    pcVar8_mgA = LoadResourceString(0x36b8,g_hINSTANCE_00807618);
+    ccFntTy::WrTxt(this_00->field_01B8,pcVar8_mgA,iVar19,iVar20,uVar7,iVar21,iVar22);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar12,0x69,0xb2,0xc);
     iVar21 = -1;
     iVar20 = -1;
-    uVar5 = 1;
+    uVar7 = 1;
     iVar19 = -1;
-    iVar4 = -2;
-    puVar9 = (uint *)LoadResourceString(0x36b6,g_hINSTANCE_00807618);
-    ccFntTy::WrTxt(this_00->field_01B8,puVar9,iVar4,iVar19,uVar5,iVar20,iVar21);
+    iVar12 = -2;
+    pcVar8_mgB = LoadResourceString(0x36b6,g_hINSTANCE_00807618);
+    ccFntTy::WrTxt(this_00->field_01B8,pcVar8_mgB,iVar12,iVar19,uVar7,iVar20,iVar21);
     local_8 = local_8 & 0xffffff00;
     if (this_00->field_0C3A != '\0') {
       do {
-        pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
+        pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,
-               iVar11 + 0x70 + (local_8 & 0xff) * 4,0x54,'\x01',pbVar6);
+               iVar18 + 0x70 + (local_8 & 0xff) * 4,0x54,'\x01',(byte *)pBVar6);
         bVar3 = (undefined1)local_8 + 1;
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
       } while (bVar3 < (byte)this_00->field_0C3A);
     }
     if ((byte)(undefined1)local_8 < 0xf) {
       local_1c = (byte *)(0xf - (local_8 & 0xff));
-      iVar4 = iVar11 + 0x70 + (local_8 & 0xff) * 4;
+      iVar12 = iVar18 + 0x70 + (local_8 & 0xff) * 4;
       do {
-        pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4,0x54,'\x01',pbVar6);
-        iVar4 = iVar4 + 4;
+        pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x54,'\x01',
+               (byte *)pBVar6);
+        iVar12 = iVar12 + 4;
         local_1c = local_1c + -1;
       } while (local_1c != nullptr);
     }
     local_8 = local_8 & 0xffffff00;
     if (this_00->field_0C3B != '\0') {
       do {
-        pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
+        pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,
-               iVar11 + 0x70 + (local_8 & 0xff) * 4,0x5f,'\x01',pbVar6);
+               iVar18 + 0x70 + (local_8 & 0xff) * 4,0x5f,'\x01',(byte *)pBVar6);
         bVar3 = (undefined1)local_8 + 1;
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
       } while (bVar3 < (byte)this_00->field_0C3B);
     }
     if ((byte)(undefined1)local_8 < 0xf) {
       local_1c = (byte *)(0xf - (local_8 & 0xff));
-      iVar4 = iVar11 + 0x70 + (local_8 & 0xff) * 4;
+      iVar12 = iVar18 + 0x70 + (local_8 & 0xff) * 4;
       do {
-        pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4,0x5f,'\x01',pbVar6);
-        iVar4 = iVar4 + 4;
+        pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x5f,'\x01',
+               (byte *)pBVar6);
+        iVar12 = iVar12 + 4;
         local_1c = (byte *)((int)local_1c + -1);
       } while (local_1c != nullptr);
     }
     local_8 = local_8 & 0xffffff00;
     local_1c = (byte *)(((uint)(ushort)this_00->field_0C34 * 0x28) / 400);
     if (local_1c != nullptr) {
-      pbVar6 = nullptr;
+      pbVar4 = nullptr;
       do {
-        pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,2);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar11 + 0xb + (int)pbVar6 * 4,
-               0x76,'\x01',pbVar10);
+        pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,2);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar18 + 0xb + (int)pbVar4 * 4,
+               0x76,'\x01',(byte *)pBVar6);
         bVar3 = (undefined1)local_8 + 1;
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
-        pbVar6 = (byte *)(uint)bVar3;
-      } while (pbVar6 < local_1c);
+        pbVar4 = (byte *)(uint)bVar3;
+      } while (pbVar4 < local_1c);
     }
     if ((byte)(undefined1)local_8 < 0x28) {
       iVar19 = 0x28 - (local_8 & 0xff);
-      iVar4 = iVar11 + 0xb + (local_8 & 0xff) * 4;
+      iVar12 = iVar18 + 0xb + (local_8 & 0xff) * 4;
       do {
-        pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4,0x76,'\x01',pbVar6);
-        iVar4 = iVar4 + 4;
+        pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x76,'\x01',
+               (byte *)pBVar6);
+        iVar12 = iVar12 + 4;
         iVar19 = iVar19 + -1;
       } while (iVar19 != 0);
     }
     break;
   case CASE_3C:
-    iVar4 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
-            *(int *)((byte *)this_00->field_09D9[5] + 4)) / 2;
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4,0x50,'\x01',
+    iVar12 = (((RecoveredSourceFamily_dibcopy *)this_00->field_0194)->field_0004 -
+             *(int *)((byte *)this_00->field_09D9[5] + 4)) / 2;
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x50,'\x01',
            (byte *)this_00->field_09D9[5]);
     switch(this_00->field_0C3C) {
     case CASE_0:
-      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar4,0x50,
+      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar12,0x50,
                        *(int *)(this_00->field_09D9[5] + 4),*(int *)(this_00->field_09D9[5] + 8));
-      uVar5 = 1;
-      UVar7 = 0x36bb;
+      uVar7 = 1;
+      UVar5 = 0x36bb;
       goto LAB_0050777e;
     case CASE_1:
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4 + 5,0x65,'\x01',
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12 + 5,0x65,'\x01',
              (byte *)this_00->field_09D9[0xd]);
-      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar4 + 2,0x52,0xb2,10);
+      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar12 + 2,0x52,0xb2,10);
       iVar21 = -1;
       iVar20 = -1;
-      uVar5 = 0;
+      uVar7 = 0;
       iVar19 = -1;
-      iVar11 = -2;
-      puVar9 = (uint *)LoadResourceString(0x36bd,g_hINSTANCE_00807618);
-      ccFntTy::WrTxt(this_00->field_01B8,puVar9,iVar11,iVar19,uVar5,iVar20,iVar21);
-      PaintDamageXY(this_00,this_00->field_0194,iVar4 + 0x39,0x65,*(byte *)&this_00->field_0C3D,
+      iVar18 = -2;
+      pcVar8_mg8 = LoadResourceString(0x36bd,g_hINSTANCE_00807618);
+      ccFntTy::WrTxt(this_00->field_01B8,pcVar8_mg8,iVar18,iVar19,uVar7,iVar20,iVar21);
+      PaintDamageXY(this_00,this_00->field_0194,iVar12 + 0x39,0x65,*(byte *)&this_00->field_0C3D,
                     0x2714);
-      uVar5 = (uint)(this_00->field_0C3D * 0x28) / 100;
+      uVar7 = (uint)(this_00->field_0C3D * 0x28) / 100;
       local_18 = 0;
-      if (uVar5 != 0) {
-        iVar11 = iVar4 + 0xb;
-        local_1c = (byte *)uVar5;
-        local_18 = uVar5;
+      if (uVar7 != 0) {
+        iVar18 = iVar12 + 0xb;
+        local_1c = (byte *)uVar7;
+        local_18 = uVar7;
         do {
-          pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar11,0x5c,'\x01',pbVar6);
-          iVar11 = iVar11 + 4;
+          pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar18,0x5c,'\x01',
+                 (byte *)pBVar6);
+          iVar18 = iVar18 + 4;
           local_1c = (byte *)((int)local_1c - 1);
         } while (local_1c != nullptr);
         local_1c = nullptr;
       }
       if (local_18 < 0x28) {
-        iVar4 = iVar4 + 0xb + local_18 * 4;
-        iVar11 = 0x28 - local_18;
+        iVar12 = iVar12 + 0xb + local_18 * 4;
+        iVar18 = 0x28 - local_18;
         do {
-          pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar4,0x5c,'\x01',pbVar6);
-          iVar4 = iVar4 + 4;
-          iVar11 = iVar11 + -1;
-        } while (iVar11 != 0);
+          pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x5c,'\x01',
+                 (byte *)pBVar6);
+          iVar12 = iVar12 + 4;
+          iVar18 = iVar18 + -1;
+        } while (iVar18 != 0);
       }
       break;
     case CASE_2:
-      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar4,0x54,
+      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar12,0x54,
                        *(int *)(this_00->field_09D9[5] + 4),0x21);
       iVar21 = -1;
       iVar20 = -1;
-      uVar5 = 1;
+      uVar7 = 1;
       iVar19 = -1;
-      iVar11 = -2;
-      puVar9 = (uint *)LoadResourceString(0x36bc,g_hINSTANCE_00807618);
-      ccFntTy::WrTxt(this_00->field_01B8,puVar9,iVar11,iVar19,uVar5,iVar20,iVar21);
+      iVar18 = -2;
+      pcVar8_mg7 = LoadResourceString(0x36bc,g_hINSTANCE_00807618);
+      ccFntTy::WrTxt(this_00->field_01B8,pcVar8_mg7,iVar18,iVar19,uVar7,iVar20,iVar21);
       wsprintfA(&this_00->field_01E1,"%4d",this_00->field_0C3D);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      ccFntTy::SetSurf(this_00->field_01BC,this_00->field_0194,0,iVar4,0x71,
+      ccFntTy::SetSurf(this_00->field_01BC,this_00->field_0194,0,iVar12,0x71,
                        *(int *)(this_00->field_09D9[5] + 4),
                        *(int *)(this_00->field_09D9[5] + 8) + -0x21);
-      ccFntTy::WrStr(this_00->field_01BC,(uint *)&this_00->field_01E1,-1,-1,0);
+      ccFntTy::WrStr(this_00->field_01BC,&this_00->field_01E1,-1,-1,0);
       break;
     case CASE_3:
-      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar4,0x50,
+      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar12,0x50,
                        *(int *)(this_00->field_09D9[5] + 4),*(int *)(this_00->field_09D9[5] + 8));
-      uVar5 = 1;
-      UVar7 = 0x36be;
+      uVar7 = 1;
+      UVar5 = 0x36be;
 LAB_0050777e:
       iVar20 = -1;
       iVar19 = -1;
-      iVar11 = -1;
-      iVar4 = -2;
-      puVar9 = (uint *)LoadResourceString(UVar7,g_hINSTANCE_00807618);
+      iVar18 = -1;
+      iVar12 = -2;
+      pcVar8_mgE = LoadResourceString(UVar5,g_hINSTANCE_00807618);
 LAB_00507784:
-      ccFntTy::WrTxt(this_00->field_01B8,puVar9,iVar4,iVar11,uVar5,iVar19,iVar20);
+      ccFntTy::WrTxt(this_00->field_01B8,pcVar8_mgE,iVar12,iVar18,uVar7,iVar19,iVar20);
     }
     break;
   case CASE_44:
@@ -745,59 +782,61 @@ LAB_00507784:
     local_8 = GVar14;
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar14,0x50,'\x01',
            (byte *)this_00->field_09D9[5]);
-    uVar5 = (uint)(ushort)this_00->field_0C34;
-    pcVar8 = LoadResourceString(0x2725,g_hINSTANCE_00807618);
-    wsprintfA((LPSTR)&DAT_0080f33a,"&1%s &0%d",pcVar8,uVar5);
+    uVar7 = (uint)(ushort)this_00->field_0C34;
+    pcVar8_mg4 = LoadResourceString(0x2725,g_hINSTANCE_00807618);
+    wsprintfA((LPSTR)&DAT_0080f33a,"&1%s &0%d",pcVar8_mg4,uVar7);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x56,0x39,0x6d,0x15);
-    ccFntTy::WrTxt(this_00->field_01B8,&DAT_0080f33a,-2,-1,0,-1,-1);
+    ccFntTy::WrTxt(this_00->field_01B8,(char *)&DAT_0080f33a,-2,-1,0,-1,-1);
     if (*(int *)&this_00->field_0xc12 == 0) goto LAB_0050709d;
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar14 + 6,0x5d,'\x01',
            (byte *)this_00->field_09D9[0xc]);
     FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,GVar14 + 0x36,0x5d,7,0x21,0);
-    GVar15 = local_8;
+    GVar13 = local_8;
     bVar3 = this_00->field_0C24;
-    cVar13 = (char)(((uint)bVar3 * 0x21) / 100);
-    local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(cVar13));
-    if ((bVar3 != 0) && (cVar13 == '\0')) {
+    cVar10 = (char)(((uint)bVar3 * 0x21) / 100);
+    local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(cVar10));
+    if ((bVar3 != 0) && (cVar10 == '\0')) {
       local_1c = (byte *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(1));
     }
     if (bVar3 < 0x46) {
-      iVar4 = (-(uint)(bVar3 < 0x14) & 5) + 5;
+      iVar12 = (-(uint)(bVar3 < 0x14) & 5) + 5;
     }
     else {
-      iVar4 = 0;
+      iVar12 = 0;
     }
-    uVar5 = (uint)local_1c & 0xff;
+    uVar7 = (uint)local_1c & 0xff;
     Library::DKW::WGR::FUN_006b55f0
-              ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar5,
-               (byte *)this_00->field_028A,0,iVar4,*(int *)(this_00->field_028A + 4) - uVar5,5,uVar5
-              );
-    pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar15 + 5,0x5c,'\x06',pbVar6);
-    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar15 + 2,0x52,0xb2,10);
-    pcVar8 = LoadResourceString(0x2b2c,g_hINSTANCE_00807618);
-    uVar5 = 0xffffffff;
+              ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar7,
+               (byte *)this_00->field_028A,0,iVar12,*(int *)(this_00->field_028A + 4) - uVar7,5,
+               uVar7);
+    pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,GVar13 + 5,0x5c,'\x06',
+           (byte *)pBVar6);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar13 + 2,0x52,0xb2,10);
+    pcVar8_mg5 = LoadResourceString(0x2b2c,g_hINSTANCE_00807618);
+    uVar7 = 0xffffffff;
     do {
-      pcVar16 = pcVar8;
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      pcVar16 = pcVar8 + 1;
-      cVar13 = *pcVar8;
-      pcVar8 = pcVar16;
-    } while (cVar13 != '\0');
-    uVar5 = ~uVar5;
-    pcVar8 = pcVar16 + -uVar5;
-    pcVar16 = &this_00->field_01E1;
-    memmove(pcVar16, pcVar8, uVar5); /* compiler REP MOVS byte copy */
-    for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
-        puVar9 != nullptr; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
-      *(undefined1 *)puVar9 = 0x20;
+      pcVar14 = pcVar8_mg5;
+      if (uVar7 == 0) break;
+      uVar7 = uVar7 - 1;
+      pcVar14 = pcVar8_mg5 + 1;
+      cVar10 = *pcVar8_mg5;
+      pcVar8_mg5 = pcVar14;
+    } while (cVar10 != '\0');
+    uVar7 = ~uVar7;
+    pcVar14 = pcVar14 + -uVar7;
+    pcVar15 = &this_00->field_01E1;
+    memmove(pcVar15, pcVar14, uVar7); /* compiler REP MOVS byte copy */
+    for (puVar8 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
+        puVar8 != nullptr; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
+      *(undefined1 *)puVar8 = 0x20;
     }
 cf_common_exit_00507034:
-    ccFntTy::WrTxt(this_00->field_01B8,(uint *)&this_00->field_01E1,-2,-1,0,-1,-1);
-    iVar4 = local_8 + 0x41;
-    PaintDamageXY(this_00,this_00->field_0194,iVar4,0x5d,this_00->field_0C24,0x2714);
-    PaintCostsXY(this_00,this_00->field_0194,iVar4,0x68,this_00->field_0C1C,this_00->field_0C20,4,2);
+    ccFntTy::WrTxt(this_00->field_01B8,&this_00->field_01E1,-2,-1,0,-1,-1);
+    iVar12 = local_8 + 0x41;
+    PaintDamageXY(this_00,this_00->field_0194,iVar12,0x5d,this_00->field_0C24,0x2714);
+    PaintCostsXY(this_00,this_00->field_0194,iVar12,0x68,this_00->field_0C1C,this_00->field_0C20,4,2
+                );
     break;
   case CASE_50:
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,

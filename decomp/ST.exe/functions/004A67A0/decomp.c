@@ -10,14 +10,14 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
 {
   undefined4 *puVar2;
   int iVar3;
-  byte *puVar4;
-  DArrayTy *pDVar5;
-  undefined4 uVar6;
-  ushort *puVar7;
-  int iVar8;
+  byte *puVar3;
+  DArrayTy *pDVar4;
+  ushort *puVar5;
+  int iVar6;
+  int iVar7;
+  uint uVar8;
   uint uVar9;
-  uint uVar10;
-  byte *puVar11;
+  byte *puVar10;
   InternalExceptionFrame local_50;
   undefined4 *local_c;
   STGroupBoatC *local_8;
@@ -30,9 +30,9 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   puVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x158b,0,iVar3,"%s",
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x158b,0,iVar3,"%s",
                                "STGroupBoatC::RestoreGrpBData");
-    if (iVar8 == 0) {
+    if (iVar6 == 0) {
       RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x158c);
       return;
     }
@@ -48,19 +48,19 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_005D = local_c[9];
   local_8->field_0061 = local_c[10];
   local_8->field_0065 = local_c[0xb];
-  puVar11 = (byte *)(local_c + 0xc);
-  puVar4 = (byte *)&local_8->field_0x69;
-  for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar11;
-    puVar11 = (byte *)(puVar11 + 1);
-    puVar4 = (byte *)(puVar4 + 1);
+  puVar10 = (byte *)(local_c + 0xc);
+  puVar3 = (byte *)&local_8->field_0x69;
+  for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *puVar3 = *puVar10;
+    puVar10 = (byte *)(puVar10 + 1);
+    puVar3 = (byte *)(puVar3 + 1);
   }
-  puVar11 = (byte *)(local_c + 0x14);
-  puVar4 = (byte *)(&local_8->field_0089);
-  for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar11;
-    puVar11 = (byte *)(puVar11 + 1);
-    puVar4 = (byte *)(puVar4 + 1);
+  puVar10 = (byte *)(local_c + 0x14);
+  puVar3 = (byte *)(&local_8->field_0089);
+  for (iVar7 = 0x15; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *puVar3 = *puVar10;
+    puVar10 = (byte *)(puVar10 + 1);
+    puVar3 = (byte *)(puVar3 + 1);
   }
   *(undefined4 *)&local_8->field_0xdd = local_c[0x29];
   *(undefined4 *)&local_8->field_0xe1 = local_c[0x2a];
@@ -99,15 +99,15 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_0133 = STField<undefined2>(local_c,0x106);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_0135 = *(undefined2 *)(local_c + 0x42);
-  puVar11 = (byte *)((int)local_c + 0x10a);
-  puVar4 = (byte *)&local_8->field_0137;
-  for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar11;
-    puVar11 = (byte *)(puVar11 + 1);
-    puVar4 = (byte *)(puVar4 + 1);
+  puVar10 = (byte *)((int)local_c + 0x10a);
+  puVar3 = (byte *)&local_8->field_0137;
+  for (iVar7 = 7; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *puVar3 = *puVar10;
+    puVar10 = (byte *)(puVar10 + 1);
+    puVar3 = (byte *)(puVar3 + 1);
   }
-  *(undefined2 *)puVar4 = *(undefined2 *)puVar11;
-  STField<undefined1>(puVar4,2) = STField<undefined1>(puVar11,2);
+  *(undefined2 *)puVar3 = *(undefined2 *)puVar10;
+  STField<undefined1>(puVar3,2) = STField<undefined1>(puVar10,2);
   *(undefined4 *)&local_8->field_0x156 = STField<undefined4>(local_c,0x129);
   local_8->field_015A = STField<undefined2>(local_c,0x12d);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -148,12 +148,12 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   *(undefined4 *)&local_8->field_0x1bf = STField<undefined4>(local_c,0x19a);
   local_8->field_01C3 = STField<undefined2>(local_c,0x19e);
   local_8->field_01C5 = (AnonShape_005EFAE0_B406B78B *)local_c[0x68];
-  puVar11 = (byte *)((int)local_c + 0x1d5);
-  puVar4 = (byte *)&local_8->field_0x1e2;
-  for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar11;
-    puVar11 = (byte *)(puVar11 + 1);
-    puVar4 = (byte *)(puVar4 + 1);
+  puVar10 = (byte *)((int)local_c + 0x1d5);
+  puVar3 = (byte *)&local_8->field_0x1e2;
+  for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *puVar3 = *puVar10;
+    puVar10 = (byte *)(puVar10 + 1);
+    puVar3 = (byte *)(puVar3 + 1);
   }
   local_8->field_0212 = STField<undefined4>(local_c,0x205);
   local_8->field_0216 = STField<undefined4>(local_c,0x209);
@@ -180,15 +180,15 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_0270 = STField<short>(local_c,0x27b);
   local_8->field_0272 = STField<short>(local_c,0x27d);
   local_8->field_0274 = STField<short>(local_c,0x27f);
-  puVar11 = (byte *)((int)local_c + 0x281);
-  puVar4 = (byte *)&local_8->field_0276;
-  for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar11;
-    puVar11 = (byte *)(puVar11 + 1);
-    puVar4 = (byte *)(puVar4 + 1);
+  puVar10 = (byte *)((int)local_c + 0x281);
+  puVar3 = (byte *)&local_8->field_0276;
+  for (iVar7 = 7; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *puVar3 = *puVar10;
+    puVar10 = (byte *)(puVar10 + 1);
+    puVar3 = (byte *)(puVar3 + 1);
   }
-  *(undefined2 *)puVar4 = *(undefined2 *)puVar11;
-  STField<undefined1>(puVar4,2) = STField<undefined1>(puVar11,2);
+  *(undefined2 *)puVar3 = *(undefined2 *)puVar10;
+  STField<undefined1>(puVar3,2) = STField<undefined1>(puVar10,2);
   *(undefined4 *)&local_8->field_0x295 = local_c[0xa8];
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_0299 = *(undefined2 *)(local_c + 0xa9);
@@ -233,174 +233,159 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
     local_8->field_0059 = nullptr;
   }
   else {
-    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(local_c[8]));
-    local_8->field_0059 = puVar4;
-    uVar10 = puVar2[8];
-    puVar11 = (byte *)(puVar2[7] + (int)puVar2);
-    memmove(puVar4, puVar11, uVar10); /* compiler REP MOVS byte copy */
+    puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(local_c[8]));
+    local_8->field_0059 = puVar3;
+    uVar9 = puVar2[8];
+    puVar10 = (byte *)(puVar2[7] + (int)puVar2);
+    memmove(puVar3, puVar10, uVar9); /* compiler REP MOVS byte copy */
+    uVar8 = 0;
     uVar9 = 0;
-    uVar10 = 0;
   }
   if (STField<int>(puVar2,0xb2) == -1) {
     local_8->field_00EF = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0xb2) + (int)puVar2));
-    local_8->field_00EF = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0xb2) + (int)puVar2));
+    local_8->field_00EF = pDVar4;
   }
   if (STField<int>(puVar2,0xca) == -1) {
     local_8->field_0103 = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0xca) + (int)puVar2));
-    local_8->field_0103 = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0xca) + (int)puVar2));
+    local_8->field_0103 = pDVar4;
   }
   if (STField<int>(puVar2,0xda) == -1) {
     local_8->field_010F = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0xda) + (int)puVar2));
-    local_8->field_010F = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0xda) + (int)puVar2));
+    local_8->field_010F = pDVar4;
   }
   if (STField<int>(puVar2,0xf6) == -1) {
     local_8->field_0127 = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0xf6) + (int)puVar2));
-    local_8->field_0127 = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0xf6) + (int)puVar2));
+    local_8->field_0127 = pDVar4;
   }
   if (STField<int>(puVar2,0x133) == -1) {
     local_8->field_0160 = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x133) + (int)puVar2));
-    local_8->field_0160 = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x133) + (int)puVar2));
+    local_8->field_0160 = pDVar4;
   }
   if (STField<int>(puVar2,0x1a5) == -1) {
     local_8->field_01CA = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1a5) + (int)puVar2));
-    local_8->field_01CA = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1a5) + (int)puVar2));
+    local_8->field_01CA = pDVar4;
   }
   if (STField<int>(puVar2,0x1ad) == -1) {
     local_8->field_01CE = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1ad) + (int)puVar2));
-    local_8->field_01CE = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1ad) + (int)puVar2));
+    local_8->field_01CE = pDVar4;
   }
   if (STField<int>(puVar2,0x1b5) == -1) {
     *(undefined4 *)&local_8->field_0x1d2 = 0;
   }
   else {
-    uVar6 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1b5) + (int)puVar2));
-    *(undefined4 *)&local_8->field_0x1d2 = uVar6;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1b5) + (int)puVar2));
+    *(DArrayTy **)&local_8->field_0x1d2 = pDVar4;
   }
   if (STField<int>(puVar2,0x1bd) == -1) {
     local_8->field_01D6 = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1bd) + (int)puVar2));
-    local_8->field_01D6 = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1bd) + (int)puVar2));
+    local_8->field_01D6 = pDVar4;
   }
   if (STField<int>(puVar2,0x1c5) == -1) {
     local_8->field_01DA = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1c5) + (int)puVar2));
-    local_8->field_01DA = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1c5) + (int)puVar2));
+    local_8->field_01DA = pDVar4;
   }
   if (STField<int>(puVar2,0x1cd) == -1) {
-    local_8->field_01DE = 0;
+    local_8->field_01DE = nullptr;
   }
   else {
-    uVar6 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1cd) + (int)puVar2));
-    local_8->field_01DE = uVar6;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1cd) + (int)puVar2));
+    local_8->field_01DE = pDVar4;
   }
   if (STField<int>(puVar2,0x1fd) == -1) {
     local_8->field_020E = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1fd) + (int)puVar2));
-    local_8->field_020E = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x1fd) + (int)puVar2));
+    local_8->field_020E = pDVar4;
   }
   if ((STField<int>(puVar2,0x211) == -1) ||
-     (uVar10 = STField<uint>(puVar2,0x215), (int)uVar10 < 1)) {
+     (uVar9 = STField<uint>(puVar2,0x215), (int)uVar9 < 1)) {
     local_8->field_021E = nullptr;
   }
   else {
-    puVar7 = Library::DKW::LIB::MemAlloc(uVar10);
-    local_8->field_021E = puVar7;
-    puVar11 = (byte *)((int)puVar2 + STField<int>(puVar2,0x211));
-    for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)puVar7 = *puVar11;
-      puVar11 = (byte *)(puVar11 + 1);
-      puVar7 = puVar7 + 2;
+    puVar5 = Library::DKW::LIB::MemAlloc(uVar9);
+    local_8->field_021E = puVar5;
+    puVar10 = (byte *)((int)puVar2 + STField<int>(puVar2,0x211));
+    for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *(undefined4 *)puVar5 = *puVar10;
+      puVar10 = (byte *)(puVar10 + 1);
+      puVar5 = puVar5 + 2;
     }
-    for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *(undefined1 *)puVar7 = *(undefined1 *)puVar11;
-      puVar11 = (byte *)((int)puVar11 + 1);
-      puVar7 = (ushort *)((int)puVar7 + 1);
+    for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *(undefined1 *)puVar5 = *(undefined1 *)puVar10;
+      puVar10 = (byte *)((int)puVar10 + 1);
+      puVar5 = (ushort *)((int)puVar5 + 1);
     }
   }
   if (STField<int>(puVar2,0x21d) == -1) {
     local_8->field_0226 = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x21d) + (int)puVar2));
-    local_8->field_0226 = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x21d) + (int)puVar2));
+    local_8->field_0226 = pDVar4;
   }
   if (STField<int>(puVar2,0x225) == -1) {
     local_8->field_022A = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x225) + (int)puVar2));
-    local_8->field_022A = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x225) + (int)puVar2));
+    local_8->field_022A = pDVar4;
   }
   if (STField<int>(puVar2,0x22d) == -1) {
     local_8->field_022E = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x22d) + (int)puVar2));
-    local_8->field_022E = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x22d) + (int)puVar2));
+    local_8->field_022E = pDVar4;
   }
   if (STField<int>(puVar2,0x251) == -1) {
     local_8->field_024E = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x251) + (int)puVar2));
-    local_8->field_024E = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x251) + (int)puVar2));
+    local_8->field_024E = pDVar4;
   }
   if (STField<int>(puVar2,0x26d) == -1) {
     local_8->field_0266 = nullptr;
   }
   else {
-    pDVar5 = (DArrayTy *)
-             FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x26d) + (int)puVar2));
-    local_8->field_0266 = pDVar5;
+    pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x26d) + (int)puVar2));
+    local_8->field_0266 = pDVar4;
   }
   if (STField<int>(puVar2,0x2aa) == -1) {
     *(undefined4 *)&local_8->field_0x29f = 0;
     g_currentExceptionFrame = local_50.previous;
     return;
   }
-  uVar6 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x2aa) + (int)puVar2));
-  *(undefined4 *)&local_8->field_0x29f = uVar6;
+  pDVar4 = FUN_006b0060(nullptr,(uint *)(STField<int>(puVar2,0x2aa) + (int)puVar2));
+  *(DArrayTy **)&local_8->field_0x29f = pDVar4;
   g_currentExceptionFrame = local_50.previous;
   return;
 }

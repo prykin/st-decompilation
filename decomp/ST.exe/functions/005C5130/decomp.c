@@ -19,8 +19,9 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
   SettMapTy *this_00;
   DWORD DVar6;
   int iVar7;
+  int iVar9;
   int iVar8;
-  uint *puVar9;
+  uint *puVar10;
   InternalExceptionFrame local_50;
   SettMapTy *local_c;
   int local_8;
@@ -51,30 +52,30 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
   }
   else if (cVar1 == '\x03') {
     if (((local_c->field_0x21e1 != '\0') && (local_c->field_21E8 != nullptr)) &&
-       (iVar7 = HoloTy::NextFas(local_c->field_21E8), iVar7 != 0)) {
+       (iVar9 = HoloTy::NextFas(local_c->field_21E8), iVar9 != 0)) {
       local_8 = 0;
     }
     if (((this_00->field_0x21e5 != '\0') && (this_00->field_21F4 != nullptr)) &&
-       (iVar7 = HoloTy::NextFas(this_00->field_21F4), iVar7 != 0)) {
+       (iVar9 = HoloTy::NextFas(this_00->field_21F4), iVar9 != 0)) {
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
     if (((SVar2 != CASE_6) && (SVar2 != CASE_7)) &&
        ((SVar2 != CASE_E &&
         (((this_00->field_0x21e2 != '\0' && (this_00->field_21EC != nullptr)) &&
-         (iVar7 = HoloTy::NextFas(this_00->field_21EC), iVar7 != 0)))))) {
+         (iVar9 = HoloTy::NextFas(this_00->field_21EC), iVar9 != 0)))))) {
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
     if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
        (((this_00->field_0x21e3 != '\0' && (this_00->field_21F0 != nullptr)) &&
-        (iVar7 = HoloTy::NextFas(this_00->field_21F0), iVar7 != 0)))) {
+        (iVar9 = HoloTy::NextFas(this_00->field_21F0), iVar9 != 0)))) {
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
     if (((((SVar2 != CASE_6) && (SVar2 != CASE_1)) && (SVar2 != CASE_2)) &&
         ((this_00->field_0x21e6 != '\0' && (this_00->field_21F8 != nullptr)))) &&
-       (iVar7 = HoloTy::NextFas(this_00->field_21F8), iVar7 != 0)) {
+       (iVar9 = HoloTy::NextFas(this_00->field_21F8), iVar9 != 0)) {
       local_8 = 0;
     }
     if ((this_00->field_0x21e4 != '\0') &&
@@ -124,13 +125,13 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
                     ((uint *)this_00->field_1DD5,this_00->field_1D91,0xfffffffe,this_00->field_1DA9,
                      this_00->field_1DAD);
         }
-        puVar9 = this_00->field_20CC;
-        iVar7 = 10;
+        puVar10 = this_00->field_20CC;
+        iVar9 = 10;
         do {
-          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar9);
-          puVar9 = puVar9 + 1;
-          iVar7 = iVar7 + -1;
-        } while (iVar7 != 0);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar10);
+          puVar10 = puVar10 + 1;
+          iVar9 = iVar9 + -1;
+        } while (iVar9 != 0);
       }
       if (this_00->field_21F4 != nullptr) {
         HoloTy::Done(this_00->field_21F4);
@@ -226,8 +227,8 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
       local_8 = 0;
     }
     if ((this_00->field_0x21e1 != '\0') && (this_00->field_21E8 != nullptr)) {
-      iVar7 = HoloTy::NextFas(this_00->field_21E8);
-      if (iVar7 == 0) {
+      iVar9 = HoloTy::NextFas(this_00->field_21E8);
+      if (iVar9 == 0) {
         uVar4 = *(uint *)&this_00->field_21E8->field_0x3;
         if (-1 < (int)uVar4) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar4);
@@ -238,8 +239,8 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
       }
     }
     if ((this_00->field_0x21e5 != '\0') && (this_00->field_21F4 != nullptr)) {
-      iVar7 = HoloTy::NextFas(this_00->field_21F4);
-      if (iVar7 == 0) {
+      iVar9 = HoloTy::NextFas(this_00->field_21F4);
+      if (iVar9 == 0) {
         uVar4 = *(uint *)&this_00->field_21F4->field_0x3;
         if (-1 < (int)uVar4) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar4);
@@ -252,8 +253,8 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
     SVar2 = this_00->field_1E26;
     if ((((SVar2 != CASE_6) && (SVar2 != CASE_7)) && (SVar2 != CASE_E)) &&
        ((this_00->field_0x21e2 != '\0' && (this_00->field_21EC != nullptr)))) {
-      iVar7 = HoloTy::NextFas(this_00->field_21EC);
-      if (iVar7 == 0) {
+      iVar9 = HoloTy::NextFas(this_00->field_21EC);
+      if (iVar9 == 0) {
         uVar4 = *(uint *)&this_00->field_21EC->field_0x3;
         if (-1 < (int)uVar4) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar4);
@@ -266,8 +267,8 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
     SVar2 = this_00->field_1E26;
     if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
        ((this_00->field_0x21e3 != '\0' && (this_00->field_21F0 != nullptr)))) {
-      iVar7 = HoloTy::NextFas(this_00->field_21F0);
-      if (iVar7 == 0) {
+      iVar9 = HoloTy::NextFas(this_00->field_21F0);
+      if (iVar9 == 0) {
         uVar4 = *(uint *)&this_00->field_21F0->field_0x3;
         if (-1 < (int)uVar4) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar4);
@@ -280,8 +281,8 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
     SVar2 = this_00->field_1E26;
     if ((((SVar2 != CASE_6) && (SVar2 != CASE_1)) && (SVar2 != CASE_2)) &&
        ((this_00->field_0x21e6 != '\0' && (this_00->field_21F8 != nullptr)))) {
-      iVar7 = HoloTy::NextFas(this_00->field_21F8);
-      if (iVar7 == 0) {
+      iVar9 = HoloTy::NextFas(this_00->field_21F8);
+      if (iVar9 == 0) {
         uVar4 = *(uint *)&this_00->field_21F8->field_0x3;
         if (-1 < (int)uVar4) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar4);

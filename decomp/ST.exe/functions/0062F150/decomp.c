@@ -21,7 +21,7 @@ void __fastcall FUN_0062f150(RecoveredRecord_STRubbishC_0062F150 *param_1)
                 (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_1->field_01D5,
                  param_1->field_01D9,&local_8,&local_10);
       if (((((-1 < iVar1) && (iVar1 < 5)) && (-1 < local_8)) &&
-          (((local_8 < pVVar2->field_0030 &&
+          (((local_8 < (int)pVVar2->field_0030 &&
             (local_10 = g_centeredOffsets5[iVar1] + local_10, -1 < local_10)) &&
            (local_10 < pVVar2->field_0034)))) &&
          ((pVVar2->field_004C != nullptr &&

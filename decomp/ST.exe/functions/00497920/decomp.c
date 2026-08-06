@@ -85,10 +85,34 @@
    establishes signed source width 2 | 0040D540 -> 00497920 @ 0040DAEC; MOVSX at 0040DADD
    establishes signed source width 2 | 0040D540 -> 00497920 @ 0040DBB2; MOVSX at 0040DBA5
    establishes signed source width 2 | 0040D540 -> 00497920 @ 0040DBF7; MOVSX at 0040DBED
-   establishes signed source width 2 */
+   establishes signed source width 2
 
-int FUN_00497920(RecoveredRecord_STBoatC_0040AE40 *param_1,int param_2,int param_3,
-                undefined4 param_4)
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0040BC90 -> 00497920 @ 0040BDD6; FUN_0040bc90 parameter param_1 | 0040CE20 -> 00497920
+   @ 0040CF6B; MOVSX at 0040CF58 establishes signed source width 2 | 0040CE20 -> 00497920 @
+   0040CF8A; MOVSX at 0040CF78 establishes signed source width 2 | 0040CE20 -> 00497920 @ 0040D0C7;
+   MOVSX at 0040D0B6 establishes signed source width 2 | 0040CE20 -> 00497920 @ 0040D0E6; MOVSX at
+   0040D0D4 establishes signed source width 2 | 0040CE20 -> 00497920 @ 0040D104; MOVSX at 0040D0F3
+   establishes signed source width 2 | 0040CE20 -> 00497920 @ 0040D23D; MOVSX at 0040D22B
+   establishes signed source width 2 | 0040CE20 -> 00497920 @ 0040D25D; MOVSX at 0040D24A
+   establishes signed source width 2 | 0040CE20 -> 00497920 @ 0040D27C; MOVSX at 0040D26A
+   establishes signed source width 2 | 0040CE20 -> 00497920 @ 0040D2DC; MOVSX at 0040D2CD
+   establishes signed source width 2 | 0040CE20 -> 00497920 @ 0040D320; MOVSX at 0040D30F
+   establishes signed source width 2 | 0040CE20 -> 00497920 @ 0040D35D; MOVSX at 0040D34B
+   establishes signed source width 2 | 0040D540 -> 00497920 @ 0040D792; MOVSX at 0040D780
+   establishes signed source width 2 | 0040D540 -> 00497920 @ 0040D80C; MOVSX at 0040D7FD
+   establishes signed source width 2 | 0040D540 -> 00497920 @ 0040D82B; MOVSX at 0040D819
+   establishes signed source width 2 | 0040D540 -> 00497920 @ 0040D967; MOVSX at 0040D955
+   establishes signed source width 2 | 0040D540 -> 00497920 @ 0040D987; MOVSX at 0040D974
+   establishes signed source width 2 | 0040D540 -> 00497920 @ 0040DACC; MOVSX at 0040DABA
+   establishes signed source width 2 | 0040D540 -> 00497920 @ 0040DAEC; MOVSX at 0040DAD9
+   establishes signed source width 2 | 0040D540 -> 00497920 @ 0040DB6E; MOVSX at 0040DB5F
+   establishes signed source width 2 | 0040D540 -> 00497920 @ 0040DBB2; MOVSX at 0040DBA1
+   establishes signed source width 2 | 0040D540 -> 00497920 @ 0040DBF7; MOVSX at 0040DBE5
+   establishes signed source width 2 | 0049794D TEST AX,AX classifies dword parameter loaded at
+   0049794A | 00497952 CMP AX,word ptr [0x007fb244] classifies dword parameter loaded at 0049794A */
+
+int FUN_00497920(RecoveredRecord_STBoatC_0040AE40 *param_1,int param_2,int param_3,int param_4)
 
 {
   int iVar1;

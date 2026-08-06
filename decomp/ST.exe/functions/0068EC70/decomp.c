@@ -23,13 +23,14 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
   AiTactClassTy *pAVar6;
   char cVar7;
   int iVar8;
-  AiTactClassTy_field_00BDDArray *pAVar9;
+  AiTactClassTy_field_00BDDArray *pAVar8;
   AiTactClassTy_field_00A5Element *element_00a5;
+  int iVar10;
+  AiTactClassTy_field_00A5DArray *pAVar10;
   int iVar11;
-  AiTactClassTy_field_00A5DArray *pAVar12;
   AiTactClassTy_field_00A5Element *element_00a5_2;
   AiTactClassTy_field_00BDElement *element_00bd;
-  bool bVar16;
+  bool bVar15;
   InternalExceptionFrame local_88;
   uint local_44 [2];
   char local_3c;
@@ -51,14 +52,14 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
     pAVar6 = local_10;
     if (iVar8 == 0) {
       local_8 = 0;
-      pAVar9 = local_10->field_00BD;
-      if (0 < (int)pAVar9->count) {
-        bVar16 = pAVar9->count != 0;
+      pAVar8 = local_10->field_00BD;
+      if (0 < (int)pAVar8->count) {
+        bVar15 = pAVar8->count != 0;
         do {
           uVar4 = uStack_37;
           cVar7 = cStack_3b;
-          if (bVar16) {
-            element_00bd = DArrayAt<AiTactClassTy_field_00BDElement>(pAVar9, local_8);
+          if (bVar15) {
+            element_00bd = DArrayAt<AiTactClassTy_field_00BDElement>(pAVar8, local_8);
           }
           else {
             element_00bd = nullptr;
@@ -73,14 +74,14 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
             if ((element_00bd->field_0012 == 0) ||
                ((uint)(element_00bd->field_003A + element_00bd->field_0012) <= pAVar6->field_012C))
             {
-              pAVar12 = pAVar6->field_00A5;
+              pAVar10 = pAVar6->field_00A5;
               local_c = 0;
-              if (0 < (int)pAVar12->count) {
-                bVar16 = pAVar12->count != 0;
+              if (0 < (int)pAVar10->count) {
+                bVar15 = pAVar10->count != 0;
                 cStack_3b = cVar7;
                 do {
-                  if (bVar16) {
-                    element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar12, local_c);
+                  if (bVar15) {
+                    element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar10, local_c);
                   }
                   else {
                     element_00a5 = nullptr;
@@ -88,7 +89,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
                   this_00 = (AiFltClassTy *)element_00a5->field_0004;
                   if (this_00 != nullptr) {
                     memset(local_44, 0, 0x34); /* compiler bulk-zero initialization */
-                    iVar8 = 0;
+                    iVar11 = 0;
                     local_44[1] = pAVar6->field_012C;
                     local_44[0] = 0x68;
                     uStack_3a = SUB42(element_00bd,0);
@@ -105,11 +106,11 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
                       break;
                     }
                   }
-                  pAVar12 = pAVar6->field_00A5;
+                  pAVar10 = pAVar6->field_00A5;
                   local_c = local_c + 1;
-                  bVar16 = local_c < pAVar12->count;
+                  bVar15 = local_c < pAVar10->count;
                   cVar7 = cStack_3b;
-                } while ((int)local_c < (int)pAVar12->count);
+                } while ((int)local_c < (int)pAVar10->count);
               }
             }
             else {
@@ -119,16 +120,16 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
           case 1:
             if ((element_00bd->field_000E == 0) ||
                ((uint)(element_00bd->field_003A + element_00bd->field_000E) <= pAVar6->field_012C)) {
-              pAVar12 = pAVar6->field_00A5;
-              if (element_00bd->field_0034 < pAVar12->count) {
-                element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar12, element_00bd->field_0034);
+              pAVar10 = pAVar6->field_00A5;
+              if (element_00bd->field_0034 < pAVar10->count) {
+                element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar10, element_00bd->field_0034);
               }
               else {
                 element_00a5_2 = nullptr;
               }
               if ((element_00a5_2 != nullptr) && (element_00a5_2->field_0004 != 0)) {
                 memset(local_44, 0, 0x34); /* compiler bulk-zero initialization */
-                iVar8 = 0;
+                iVar11 = 0;
                 local_44[1] = pAVar6->field_012C;
                 local_44[0] = 0x69;
                 uStack_3a = (undefined2)((uint)element_00bd >> 8);
@@ -151,9 +152,9 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
             uVar1 = element_00bd->field_0030;
             cStack_3b = cVar7;
             if (-1 < (int)uVar1) {
-              pAVar12 = pAVar6->field_00A5;
-              if (uVar1 < pAVar12->count) {
-                element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar12, uVar1);
+              pAVar10 = pAVar6->field_00A5;
+              if (uVar1 < pAVar10->count) {
+                element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar10, uVar1);
               }
               else {
                 element_00a5_2 = nullptr;
@@ -173,18 +174,18 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
             cVar7 = cStack_3b;
           }
           cStack_3b = cVar7;
-          pAVar9 = pAVar6->field_00BD;
+          pAVar8 = pAVar6->field_00BD;
           local_8 = local_8 + 1;
-          bVar16 = local_8 < pAVar9->count;
-        } while ((int)local_8 < (int)pAVar9->count);
+          bVar15 = local_8 < pAVar8->count;
+        } while ((int)local_8 < (int)pAVar8->count);
       }
       g_currentExceptionFrame = local_88.previous;
       return;
     }
     g_currentExceptionFrame = local_88.previous;
-    iVar11 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x1ff,0,iVar8,"%s",
+    iVar10 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x1ff,0,iVar8,"%s",
                                 "AiTactClassTy::ExecClaim");
-    if (iVar11 != 0) {
+    if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar8,0,"E:\\__titans\\ai\\ai_tact.cpp",0x200);

@@ -19,7 +19,7 @@ void __thiscall HelpPanelTy::sub_005148A0(HelpPanelTy *this,int param_1)
   uint uVar2;
   int *piVar3;
   uint uVar4;
-  int *piVar5;
+  byte *pbVar5;
   int iVar6;
 
   if (param_1 < 1) {
@@ -27,8 +27,9 @@ void __thiscall HelpPanelTy::sub_005148A0(HelpPanelTy *this,int param_1)
   }
   iVar6 = param_1;
   do {
-    piVar5 = (int *)(this->field_01C7 + iVar6 * 0x11);
-    if ((*piVar5 == *(int *)(param_1 * 0x11 + 4 + this->field_01C7)) || (piVar5[1] == 0)) {
+    pbVar5 = this->field_01C7 + iVar6 * 0x11;
+    if ((*(int *)pbVar5 == *(int *)(this->field_01C7 + param_1 * 0x11 + 4)) ||
+       (*(int *)(pbVar5 + 4) == 0)) {
       pAVar1 = this->field_01B3;
       uVar4 = 0;
       uVar2 = *(uint *)&pAVar1->field_0xc;
@@ -40,7 +41,7 @@ void __thiscall HelpPanelTy::sub_005148A0(HelpPanelTy *this,int param_1)
         do {
           piVar3 = (int *)(pAVar1->field_0008 * uVar4 + pAVar1->field_001C);
 LAB_0051490d:
-          if ((*piVar3 == *piVar5) && (piVar3[1] == piVar5[1])) {
+          if ((*piVar3 == *(int *)pbVar5) && (piVar3[1] == *(int *)(pbVar5 + 4))) {
             if (STField<char>(piVar3,0x12) != '\0') {
               return;
             }

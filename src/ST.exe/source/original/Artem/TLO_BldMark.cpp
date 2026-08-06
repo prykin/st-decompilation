@@ -13,6 +13,7 @@ int __thiscall st::fn_004C60E0(TLOBldMark *this)
   InternalExceptionFrame *pIVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
   int local_48 [16];
   TLOBldMark *local_8;
 
@@ -85,7 +86,8 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
   st::fn_00402A90(this->field_002C);
   iVar2 = st::fn_00404183
                     (this->field_002C,0,PTR_0080678c,
-                     *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),0x1d);
+                     *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),
+                     CASE_1D);
   if (iVar2 != 0) {
     st::fn_006A5E40
               (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x4c);
@@ -178,7 +180,7 @@ st::fn_004C6440
                          local_8,&local_30,&local_34), (int)piVar8 < 0x79aed0 ||
              (0x79aee3 < (int)piVar8)))))) ||
           ((local_30 < 0 ||
-           (((pVVar4->field_0030 <= local_30 ||
+           ((((int)pVVar4->field_0030 <= local_30 ||
              (iVar9 = *piVar8 + local_34, piVar8 = local_20, iVar9 < 0)) ||
             (pVVar4->field_0034 <= iVar9)))))) ||
          ((pVVar4->field_004C == nullptr ||
@@ -211,7 +213,8 @@ cf_common_exit_004C6899:
       }
       iVar9 = st::fn_00404183
                         (this->field_002C,0,PTR_0080678c,
-                         (&PTR_s_tlo_bldmark_si_007ad25c)[(byte)this->field_0010->field_112E],0x1d);
+                         (&PTR_s_tlo_bldmark_si_007ad25c)[(byte)this->field_0010->field_112E],
+                         CASE_1D);
       if (iVar9 != 0) {
         st::fn_006A5E40
                   (iVar9,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",
@@ -244,8 +247,8 @@ cf_common_exit_004C6899:
   else if (this->field_0024 == 0) {
     iVar5 = st::fn_00404183
                       (this->field_002C,0,PTR_0080678c,
-                       *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),0x1d
-                      );
+                       *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),
+                       CASE_1D);
     if (iVar5 != 0) {
       st::fn_006A5E40
                 (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x77);
@@ -316,6 +319,7 @@ int __thiscall st::fn_004C6A00(TLOBldMark *this,STMessage *message)
   STMessageId SVar1;
   int iVar3;
   int iVar4;
+  int iVar5;
   InternalExceptionFrame local_4c;
   TLOBldMark *local_8;
 

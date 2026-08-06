@@ -7,9 +7,12 @@
    [STSourceProvenanceApplier end]
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0065C9E0 -> 0072E340 @ 0065CA3B */
+   Evidence: 0065C9E0 -> 0072E340 @ 0065CA3B
 
-undefined4 * __cdecl FUN_0065c9e0(char *source)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0065C9E0 returns stored into global 008489BC @ 00686295 */
+
+AllocationRecord_0065CD10 * __cdecl FUN_0065c9e0(char *source)
 
 {
   int exceptionCode;
@@ -32,7 +35,7 @@ undefined4 * __cdecl FUN_0065c9e0(char *source)
     local_8->field_0462 = &pDVar1->flags;
     thunk_FUN_0064a6f0((int *)&local_8[1].field_0x6,10);
     g_currentExceptionFrame = local_4c.previous;
-    return (undefined4 *)local_8;
+    return (AllocationRecord_0065CD10 *)local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_0065d0f0((int *)&local_8);

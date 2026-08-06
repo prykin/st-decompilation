@@ -11,10 +11,11 @@ int FUN_0074ceb2(AnonShape_0074CEB2_D881A5E3 *param_1,int *lpCriticalSection,int
   LPCRITICAL_SECTION lpCriticalSection_00;
   int *piVar1;
   void *this;
+  int iVar3;
   int iVar2;
 
   if (lpCriticalSection == nullptr) {
-    iVar2 = -0x7fffbffd;
+    iVar3 = -0x7fffbffd;
   }
   else {
     param_1->field_004C = param_3;
@@ -36,8 +37,8 @@ int FUN_0074ceb2(AnonShape_0074CEB2_D881A5E3 *param_1,int *lpCriticalSection,int
       return iVar2;
     }
     LeaveCriticalSection(lpCriticalSection_00);
-    iVar2 = 0;
+    iVar3 = 0;
   }
-  return iVar2;
+  return iVar3;
 }
 

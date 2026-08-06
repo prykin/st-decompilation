@@ -16,16 +16,23 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
   int *piVar1;
   int iVar2;
   byte bVar4;
-  int iVar5;
+  int local_EAX_58;
+  int local_EAX_151;
   int iVar6;
+  int local_EAX_227;
+  int local_EAX_645;
   STGameObjC *pSVar7;
-  uint uVar8;
-  STAllPlayersC_GetObjPtr_param_3Enum SVar9;
+  int iVar8;
+  int local_EAX_1656;
+  int local_EAX_2197;
+  int iVar5;
+  uint uVar9;
+  STAllPlayersC_GetObjPtr_param_3Enum SVar10;
   int local_10;
   int local_c;
   int local_8;
 
-  iVar5 = param_2;
+  iVar8 = param_2;
   local_10 = 0;
   local_c = 0;
   local_8 = 0;
@@ -46,12 +53,11 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
           if (param_3 == 1) {
             pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),CASE_3);
             STFishC::sub_004162B0
-                      ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
-                       (undefined2 *)&local_8);
-            iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                      ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
+            iVar8 = Library::Ourlib::ST3DSPR::SprInRect
                               (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,
                                DAT_00807414,DAT_00807418,DAT_0080741c);
-            if (iVar5 != 1) {
+            if (iVar8 != 1) {
               thunk_FUN_004a8e00(local_10,local_c,local_8);
               thunk_FUN_004a8f20(1);
               thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff
@@ -90,9 +96,10 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
     }
     else {
       if (g_packedRecords_A62x8[DAT_0080874d].field200_0x203 != 1) {
-        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1a6b,0,0,"%s"
-                                   ,"STAllPlayersC::SetActivePanel");
-        if (iVar5 != 0) {
+        local_EAX_151 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1a6b,0,0,"%s",
+                                "STAllPlayersC::SetActivePanel");
+        if (local_EAX_151 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         goto LAB_0043aee4;
@@ -106,9 +113,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
       if (iVar2 == 0x3c) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (((param_3 == 1) &&
-            (uVar8 = CONCAT22((short)((uint)&local_c >> 0x10),*(undefined2 *)(iVar6 + 8)),
-            iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(uVar8), (uint8_t)(*(undefined1 *)(iVar6 + 4))),
-                                *(DArrayTy **)(iVar6 + 10),uVar8,&local_10,&local_c,&local_8,
+            (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),*(undefined2 *)(iVar6 + 8)),
+            iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)(*(undefined1 *)(iVar6 + 4))),
+                                *(DArrayTy **)(iVar6 + 10),uVar9,&local_10,&local_c,&local_8,
                                 (uint *)&param_1), iVar6 == 0)) &&
            (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
                               (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
@@ -123,13 +130,14 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
         bVar4 = DAT_0080874d;
         g_packedRecords_A62x8[DAT_0080874d].field200_0x203 = 0;
         ResetActivityFromTmp(this,bVar4,1,0,0);
-        ActivateTV(this,DAT_0080874d,0,iVar5);
+        ActivateTV(this,DAT_0080874d,0,iVar8);
         return;
       }
       if (iVar2 != 0x1ae) {
-        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1a67,0,0,"%s"
-                                   ,"STAllPlayersC::SetActivePanel ACT_LEFT ACT_RIGHT invalid game type");
-        if (iVar5 == 0) {
+        local_EAX_2197 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1a67,0,0,"%s",
+                                "STAllPlayersC::SetActivePanel ACT_LEFT ACT_RIGHT invalid game type");
+        if (local_EAX_2197 == 0) {
           return;
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -137,12 +145,11 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
       if (param_3 == 1) {
         pSVar7 = GetObjPtr(this,*(char *)(iVar6 + 4),*(ushort *)(iVar6 + 8),CASE_3);
         STFishC::sub_004162B0
-                  ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
-                   (undefined2 *)&local_8);
-        iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                  ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
+        iVar8 = Library::Ourlib::ST3DSPR::SprInRect
                           (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
                            DAT_00807418,DAT_0080741c);
-        if (iVar5 != 1) {
+        if (iVar8 != 1) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
           thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
@@ -154,28 +161,29 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
       bVar4 = DAT_0080874d;
       g_packedRecords_A62x8[DAT_0080874d].field200_0x203 = 0;
       ResetActivityFromTmp(this,bVar4,1,0,0);
-      iVar5 = param_2;
+      iVar8 = param_2;
     }
     iVar6 = 0;
     goto cf_common_exit_0043BB49;
   }
   if (param_1 != (uint *)0x1) {
-    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1b2b,0,0,"%s",
-                               "STAllPlayersC::SetActivePanel invalid panel number");
-    if (iVar5 == 0) {
+    local_EAX_58 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1b2b,0,0,
+                                      "%s","STAllPlayersC::SetActivePanel invalid panel number");
+    if (local_EAX_58 == 0) {
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
 LAB_0043aee4:
-  iVar5 = param_2;
+  iVar8 = param_2;
   /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   iVar6 = (uint)DAT_0080874d * 0xa62;
   if (g_packedRecords_A62x8[DAT_0080874d].field200_0x203 != 0) {
     if (g_packedRecords_A62x8[DAT_0080874d].field200_0x203 != 1) {
-      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1b27,0,0,"%s",
-                                 "STAllPlayersC::SetActivePanel");
-      if (iVar5 == 0) {
+      local_EAX_227 =
+           ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1b27,0,0,"%s",
+                              "STAllPlayersC::SetActivePanel");
+      if (local_EAX_227 == 0) {
         return;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -189,9 +197,9 @@ LAB_0043aee4:
       if (iVar6 == 0x19a) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (((param_3 == 1) &&
-            (uVar8 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
-            iVar6 = GetCamPoint(0x19a,STReplaceLowByte((uint32_t)(uVar8), (uint8_t)((char)piVar1[1])),
-                                STField<DArrayTy *>(piVar1,10),uVar8,&local_10,&local_c,&local_8,
+            (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
+            iVar6 = GetCamPoint(0x19a,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)((char)piVar1[1])),
+                                STField<DArrayTy *>(piVar1,10),uVar9,&local_10,&local_c,&local_8,
                                 (uint *)&param_1), iVar6 == 0)) &&
            (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
                               (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
@@ -203,7 +211,7 @@ LAB_0043aee4:
           DAT_0080674c = 2;
           DAT_0080745d = 0;
         }
-        ActivateTV(this,DAT_0080874d,1,iVar5);
+        ActivateTV(this,DAT_0080874d,1,iVar8);
         return;
       }
       if (iVar6 == 0) {
@@ -211,16 +219,15 @@ LAB_0043aee4:
       }
       if (iVar6 == 0x5a) {
         if (param_3 == 1) {
-          SVar9 = CASE_4;
+          SVar10 = CASE_4;
 LAB_0043b0f1:
-          pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar9);
+          pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar10);
           STFishC::sub_004162B0
-                    ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
-                     (undefined2 *)&local_8);
-          iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                    ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
+          iVar8 = Library::Ourlib::ST3DSPR::SprInRect
                             (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414
                              ,DAT_00807418,DAT_0080741c);
-          if (iVar5 != 1) {
+          if (iVar8 != 1) {
             thunk_FUN_004a8e00(local_10,local_c,local_8);
             thunk_FUN_004a8f20(1);
             thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
@@ -228,7 +235,7 @@ LAB_0043b0f1:
             DAT_0080674c = 2;
             DAT_0080745d = 0;
             iVar6 = 1;
-            iVar5 = param_2;
+            iVar8 = param_2;
             goto cf_common_exit_0043BB49;
           }
         }
@@ -236,35 +243,35 @@ LAB_0043b0f1:
       }
       if (iVar6 != 0x172) {
 LAB_0043b0af:
-        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1ac4,0,0,"%s"
-                                   ,"STAllPlayersC::SetActivePanel ACT_RIGHT ACT_RIGHT invalid game type");
-        if (iVar5 == 0) {
+        local_EAX_645 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1ac4,0,0,"%s",
+                                "STAllPlayersC::SetActivePanel ACT_RIGHT ACT_RIGHT invalid game type");
+        if (local_EAX_645 == 0) {
           return;
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if (param_3 != 1) goto cf_common_exit_0043B294;
-      SVar9 = CASE_2;
+      SVar10 = CASE_2;
     }
     else {
       if (iVar6 != 0x1a4) {
         if (iVar6 != 0x1b8) goto LAB_0043b0af;
         if (param_3 == 1) {
-          SVar9 = CASE_6;
+          SVar10 = CASE_6;
           goto LAB_0043b0f1;
         }
         goto cf_common_exit_0043B686;
       }
       if (param_3 != 1) goto cf_common_exit_0043B294;
-      SVar9 = CASE_5;
+      SVar10 = CASE_5;
     }
-    pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar9);
-    STFishC::sub_004162B0
-              ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-    iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+    pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar10);
+    STFishC::sub_004162B0((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
+    iVar8 = Library::Ourlib::ST3DSPR::SprInRect
                       (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
                        DAT_00807418,DAT_0080741c);
-    if (iVar5 != 1) {
+    if (iVar8 != 1) {
       thunk_FUN_004a8e00(local_10,local_c,local_8);
       thunk_FUN_004a8f20(1);
       thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
@@ -282,9 +289,9 @@ cf_common_exit_0043B294:
     if (iVar6 == 0x19a) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if (((param_3 == 1) &&
-          (uVar8 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
-          iVar6 = GetCamPoint(0x19a,STReplaceLowByte((uint32_t)(uVar8), (uint8_t)((char)piVar1[1])),
-                              STField<DArrayTy *>(piVar1,10),uVar8,&local_10,&local_c,&local_8,
+          (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
+          iVar6 = GetCamPoint(0x19a,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)((char)piVar1[1])),
+                              STField<DArrayTy *>(piVar1,10),uVar9,&local_10,&local_c,&local_8,
                               (uint *)&param_1), iVar6 == 0)) &&
          (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
                             (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
@@ -299,7 +306,7 @@ cf_common_exit_0043B294:
       bVar4 = DAT_0080874d;
       g_packedRecords_A62x8[DAT_0080874d].field200_0x203 = 1;
       ResetActivityFromTmp(this,bVar4,0,0,0);
-      ActivateTV(this,DAT_0080874d,1,iVar5);
+      ActivateTV(this,DAT_0080874d,1,iVar8);
       return;
     }
     if (iVar6 == 0) {
@@ -307,17 +314,16 @@ cf_common_exit_0043B294:
     }
     if (iVar6 == 0x5a) {
       if (param_3 == 1) {
-        SVar9 = CASE_4;
+        SVar10 = CASE_4;
 LAB_0043b2fe:
-        pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar9);
+        pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar10);
         STFishC::sub_004162B0
-                  ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
-                   (undefined2 *)&local_8);
-        iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                  ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
+        iVar8 = Library::Ourlib::ST3DSPR::SprInRect
                           (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
                            DAT_00807418,DAT_0080741c);
 joined_r0x0043b5ec:
-        if (iVar5 != 1) {
+        if (iVar8 != 1) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
 LAB_0043b630:
@@ -331,15 +337,16 @@ LAB_0043b630:
     else {
       if (iVar6 != 0x172) {
 LAB_0043b4a2:
-        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1b23,0,0,"%s"
-                                   ,"STAllPlayersC::SetActivePanel ACT_RIGHT ACT_LEFT invalid game type");
-        if (iVar5 == 0) {
+        local_EAX_1656 =
+             ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1b23,0,0,"%s",
+                                "STAllPlayersC::SetActivePanel ACT_RIGHT ACT_LEFT invalid game type");
+        if (local_EAX_1656 == 0) {
           return;
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if (param_3 == 1) {
-        SVar9 = CASE_2;
+        SVar10 = CASE_2;
         goto LAB_0043b2fe;
       }
     }
@@ -348,8 +355,8 @@ LAB_0043b4a2:
     if (param_3 == 1) {
       pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),CASE_5);
       STFishC::sub_004162B0
-                ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-      iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
+      iVar8 = Library::Ourlib::ST3DSPR::SprInRect
                         (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
                          DAT_00807418,DAT_0080741c);
       goto joined_r0x0043b5ec;
@@ -360,11 +367,11 @@ LAB_0043b4a2:
     if (param_3 == 1) {
       pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),CASE_6);
       STFishC::sub_004162B0
-                ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-      iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
+      iVar8 = Library::Ourlib::ST3DSPR::SprInRect
                         (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
                          DAT_00807418,DAT_0080741c);
-      if (iVar5 != 1) {
+      if (iVar8 != 1) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);
         goto LAB_0043b630;
@@ -376,9 +383,9 @@ LAB_0043b4a2:
   ResetActivityFromTmp(this,bVar4,0,0,0);
 cf_common_exit_0043B686:
   iVar6 = 1;
-  iVar5 = param_2;
+  iVar8 = param_2;
 cf_common_exit_0043BB49:
-  ActivateTV(this,DAT_0080874d,iVar6,iVar5);
+  ActivateTV(this,DAT_0080874d,iVar6,iVar8);
   return;
 }
 

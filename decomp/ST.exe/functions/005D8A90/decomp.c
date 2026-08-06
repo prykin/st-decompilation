@@ -11,7 +11,8 @@ void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
   SIDTy *pSVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int iVar5;
+  uint *puVar6;
   InternalExceptionFrame local_4c;
   SIDTy *local_8;
 
@@ -21,16 +22,16 @@ void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 == 0) {
-    iVar3 = 4;
-    puVar5 = local_8->field_1AF1;
+    iVar5 = 4;
+    puVar6 = local_8->field_1AF1;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(pSVar2->field_000C,*puVar5);
+      if (*puVar6 != 0) {
+        StartSystemTy::sub_006E56B0(pSVar2->field_000C,*puVar6);
       }
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      *puVar6 = 0;
+      puVar6 = puVar6 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
     FUN_006b3af0((int *)g_ddxContext_008075A8,pSVar2->field_1CB4);
     if (pSVar2->field_1B05 != 0xffffffff) {
       FUN_006b3af0((int *)pSVar2->field_1B49,pSVar2->field_1B05);

@@ -7,7 +7,8 @@ undefined4 FUN_0075c440(AnonShape_0075C440_EFE38C9F *param_1,int *param_2)
   int iVar1;
   int iVar2;
   uint uVar3;
-  int iVar4;
+  int iVar3;
+  uint uVar4;
   uint uVar5;
   int iVar6;
   AnonShape_0075C180_8EED234B *pAVar7;
@@ -67,25 +68,25 @@ LAB_0075c541:
         }
         else {
 LAB_0075c512:
-          uVar3 = (int)pAVar7 >> ((char)iVar1 - 8U & 0x1f) & 0xff;
+          uVar5 = (int)pAVar7 >> ((char)iVar1 - 8U & 0x1f) & 0xff;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar2 = *(int *)(local_8 + 0xd4 + uVar3 * 4);
+          iVar2 = *(int *)(local_8 + 0xd4 + uVar5 * 4);
           if (iVar2 == 0) {
             iVar2 = 9;
             goto LAB_0075c541;
           }
-          uVar3 = (uint)*(byte *)(uVar3 + 0x4d4 + local_8);
+          uVar3 = (uint)*(byte *)(uVar5 + 0x4d4 + local_8);
           iVar1 = iVar1 - iVar2;
         }
         iVar2 = (int)uVar3 >> 4;
-        uVar3 = uVar3 & 0xf;
-        if (uVar3 == 0) {
+        uVar5 = uVar3 & 0xf;
+        if (uVar5 == 0) {
           if (iVar2 != 0xf) {
             iVar6 = 1 << ((byte)iVar2 & 0x1f);
             if (iVar2 != 0) {
               if ((iVar1 < iVar2) &&
-                 (iVar4 = FUN_0075b720(&local_38,pAVar7,iVar1,iVar2), iVar1 = local_28,
-                 pAVar7 = local_2c, iVar4 == 0)) {
+                 (iVar3 = FUN_0075b720(&local_38,pAVar7,iVar1,iVar2), iVar1 = local_28,
+                 pAVar7 = local_2c, iVar3 == 0)) {
                 return 0;
               }
               iVar1 = iVar1 - iVar2;
@@ -101,17 +102,17 @@ LAB_0075c512:
         else {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (int *)((int)param_2 + iVar2);
-          if ((iVar1 < (int)uVar3) &&
-             (iVar2 = FUN_0075b720(&local_38,pAVar7,iVar1,uVar3), iVar1 = local_28,
+          if ((iVar1 < (int)uVar5) &&
+             (iVar2 = FUN_0075b720(&local_38,pAVar7,iVar1,uVar5), iVar1 = local_28,
              pAVar7 = local_2c, iVar2 == 0)) {
             return 0;
           }
-          iVar1 = iVar1 - uVar3;
-          uVar5 = (1 << (sbyte)uVar3) - 1U & (int)pAVar7 >> ((byte)iVar1 & 0x1f);
-          if ((int)uVar5 < *(int *)(&DAT_007a2054 + uVar3 * 4)) {
-            uVar5 = *(int *)(&DAT_007a2094 + uVar3 * 4) + uVar5;
+          iVar1 = iVar1 - uVar5;
+          uVar4 = (1 << (sbyte)uVar5) - 1U & (int)pAVar7 >> ((byte)iVar1 & 0x1f);
+          if ((int)uVar4 < *(int *)(&DAT_007a2054 + uVar5 * 4)) {
+            uVar4 = *(int *)(&DAT_007a2094 + uVar5 * 4) + uVar4;
           }
-          *(uint *)(local_1c + (&DAT_007a1e94)[(int)param_2] * 4) = uVar5 << ((byte)local_18 & 0x1f);
+          *(uint *)(local_1c + (&DAT_007a1e94)[(int)param_2] * 4) = uVar4 << ((byte)local_18 & 0x1f);
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)((int)param_2 + 1);

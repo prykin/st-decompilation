@@ -17,22 +17,29 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this)
 {
   short sVar1;
   AiPlrClassTy *this_00;
-  undefined1 uVar3;
-  int iVar4;
+  bool bVar13;
+  int local_EAX_119;
   AiPlrClassTy_field_06A1DArray *array;
+  int local_EAX_259;
+  int local_EAX_300;
+  undefined1 uVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
-  uint uVar5;
-  undefined4 *puVar6;
-  int iVar7;
-  DArrayTy *pDVar8;
-  uint uVar9;
-  void *pvVar10;
+  int local_EAX_427;
+  uint uVar4;
+  undefined4 *puVar5;
+  int iVar4;
+  int local_EAX_824;
+  int iVar9;
+  DArrayTy *pDVar6;
+  uint uVar7;
+  void *pvVar8;
+  int iVar10;
   STGameObjC *pSVar11;
   AnonShape_0068FD00_A5257008 *pAVar12;
-  bool bVar13;
+  bool bVar14;
   int local_c8 [7];
   int local_ac [7];
   InternalExceptionFrame local_90;
@@ -49,104 +56,105 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this)
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
     local_18 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
+    local_EAX_119 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
     this_00 = local_18;
-    if (iVar4 == 0) {
+    if (local_EAX_119 == 0) {
       local_10 = 0;
       array = local_18->field_06A1;
       if (0 < (int)array->count) {
-        bVar13 = array->count != 0;
+        bVar14 = array->count != 0;
         do {
-          uVar5 = local_10;
-          if (bVar13) {
+          uVar4 = local_10;
+          if (bVar14) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            pvVar10 = (void *)((int)&array->data->field_0000 + array->elementSize * local_10);
+            pvVar8 = (void *)((int)&array->data->field_0000 + array->elementSize * local_10);
           }
           else {
-            pvVar10 = nullptr;
+            pvVar8 = nullptr;
           }
-          switch(STField<undefined1>(pvVar10,7)) {
+          switch(STField<undefined1>(pvVar8,7)) {
           case 0:
-            sVar1 = STField<short>(pvVar10,3);
-            iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)STField<short>(pvVar10,1));
-            if (iVar4 < sVar1) {
-              iVar4 = thunk_FUN_004e5f90(this_00->field_05D7,(int)STField<short>(pvVar10,1));
-              if (iVar4 == 0) {
-                pSVar11 = (STGameObjC *)(int)STField<short>(pvVar10,1);
-                local_14 = (int)STField<short>(pvVar10,3);
+            sVar1 = STField<short>(pvVar8,3);
+            iVar10 = thunk_FUN_004e60d0(this_00->field_05D7,(int)STField<short>(pvVar8,1));
+            if (iVar10 < sVar1) {
+              local_EAX_259 =
+                   thunk_FUN_004e5f90(this_00->field_05D7,(int)STField<short>(pvVar8,1));
+              if (local_EAX_259 == 0) {
+                pSVar11 = (STGameObjC *)(int)STField<short>(pvVar8,1);
+                local_14 = (int)STField<short>(pvVar8,3);
                 local_8 = pSVar11;
-                iVar4 = thunk_FUN_004e5910(this_00->field_05D7,(uint)pSVar11);
+                local_EAX_300 = thunk_FUN_004e5910(this_00->field_05D7,(uint)pSVar11);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                if ((iVar4 == 0) ||
+                if ((local_EAX_300 == 0) ||
                    (bVar13 = thunk_FUN_004e5c40((byte *)this_00->field_05D7,(uint)pSVar11),
                    CONCAT31(extraout_var,bVar13) == 0)) {
 LAB_0067b6db:
-                  bVar13 = false;
+                  bVar14 = false;
                 }
                 else {
                   uVar3 = thunk_FUN_004e6140(this_00->field_05D7,(int)pSVar11);
                   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                   local_c = CONCAT31(extraout_var_00,uVar3);
-                  iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)pSVar11);
-                  if (((int)local_c <= iVar4) ||
-                     ((iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)pSVar11),
-                      iVar4 != local_14 + -1 ||
-                      (iVar4 = thunk_FUN_004e5f90(this_00->field_05D7,(uint)pSVar11), iVar4 != 0))))
-                  goto LAB_0067b6db;
-                  bVar13 = true;
+                  iVar10 = thunk_FUN_004e60d0(this_00->field_05D7,(int)pSVar11);
+                  if (((int)local_c <= iVar10) ||
+                     ((iVar10 = thunk_FUN_004e60d0(this_00->field_05D7,(int)pSVar11),
+                      iVar10 != local_14 + -1 ||
+                      (local_EAX_427 = thunk_FUN_004e5f90(this_00->field_05D7,(uint)pSVar11),
+                      local_EAX_427 != 0)))) goto LAB_0067b6db;
+                  bVar14 = true;
                 }
-                if (bVar13) {
-                  pDVar8 = this_00->field_0695;
+                if (bVar14) {
+                  pDVar6 = this_00->field_0695;
                   local_c = 0;
-                  uVar5 = pDVar8->count;
-                  if (0 < (int)uVar5) {
+                  uVar4 = pDVar6->count;
+                  if (0 < (int)uVar4) {
                     do {
-                      uVar9 = local_c;
-                      if (((pDVar8 == nullptr) || ((int)local_c < 0)) ||
-                         ((int)uVar5 <= (int)local_c)) {
+                      uVar7 = local_c;
+                      if (((pDVar6 == nullptr) || ((int)local_c < 0)) ||
+                         ((int)uVar4 <= (int)local_c)) {
 LAB_0067b724:
                         local_8 = nullptr;
                       }
                       else {
-                        if (local_c < uVar5) {
-                          puVar6 = DArrayAt<undefined4>(pDVar8, local_c);
+                        if (local_c < uVar4) {
+                          puVar5 = DArrayAt<undefined4>(pDVar6, local_c);
                         }
                         else {
-                          puVar6 = nullptr;
+                          puVar5 = nullptr;
                         }
-                        if (puVar6[1] == 0) goto LAB_0067b724;
-                        local_8 = (STGameObjC *)*puVar6;
+                        if (puVar5[1] == 0) goto LAB_0067b724;
+                        local_8 = (STGameObjC *)*puVar5;
                       }
                       if (local_8 != nullptr) {
                         pAVar12 = local_4c;
-                        for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
+                        for (iVar10 = 0xd; iVar10 != 0; iVar10 = iVar10 + -1) {
                           *(undefined4 *)pAVar12 = 0;
                           pAVar12 = (AnonShape_0068FD00_A5257008 *)&pAVar12->field_0x4;
                         }
                         STPiece<4,4>(local_4c[0]) = this_00->field_06FE;
                         STPiece<0,4>(local_4c[0]) = 0x73;
                         local_4c[0].field_0009 = 1;
-                        local_4c[0].field_000A = pvVar10;
+                        local_4c[0].field_000A = pvVar8;
                         if (&stack0x00000000 != (undefined1 *)0x4c) {
                           AiTactClassTy::GetAiMess((AiTactClassTy *)local_8,local_4c);
-                          uVar9 = local_c;
+                          uVar7 = local_c;
                         }
                         if ('\0' < (char)STPiece<8,1>(local_4c[0])) {
-                          STField<undefined1>(pvVar10,7) = 1;
-                          STField<undefined2>(pvVar10,8) = STPiece<14,2>(local_4c[0]);
+                          STField<undefined1>(pvVar8,7) = 1;
+                          STField<undefined2>(pvVar8,8) = STPiece<14,2>(local_4c[0]);
                           break;
                         }
                       }
-                      pDVar8 = this_00->field_0695;
-                      local_c = uVar9 + 1;
-                      uVar5 = pDVar8->count;
-                    } while ((int)local_c < (int)uVar5);
+                      pDVar6 = this_00->field_0695;
+                      local_c = uVar7 + 1;
+                      uVar4 = pDVar6->count;
+                    } while ((int)local_c < (int)uVar4);
                   }
                 }
               }
             }
             else {
-              STField<undefined1>(pvVar10,7) = 2;
+              STField<undefined1>(pvVar8,7) = 2;
             }
             break;
           case 1:
@@ -156,63 +164,63 @@ LAB_0067b724:
             else {
               local_8 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,*(char *)&this_00->field_05D7,
-                                   STField<ushort>(pvVar10,8),CASE_1);
+                                   STField<ushort>(pvVar8,8),CASE_1);
             }
             if (local_8 == nullptr) {
-              STField<undefined1>(pvVar10,7) = 0;
-              STField<undefined2>(pvVar10,8) = 0;
+              STField<undefined1>(pvVar8,7) = 0;
+              STField<undefined2>(pvVar8,8) = 0;
             }
             else {
-              sVar1 = STField<short>(pvVar10,3);
-              iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)STField<short>(pvVar10,1));
-              if (iVar4 < sVar1) {
-                iVar4 = thunk_FUN_004e3800(local_8,(int)STField<short>(pvVar10,1),
-                                           (int)STField<short>(pvVar10,3));
+              sVar1 = STField<short>(pvVar8,3);
+              iVar10 = thunk_FUN_004e60d0(this_00->field_05D7,(int)STField<short>(pvVar8,1));
+              if (iVar10 < sVar1) {
+                iVar4 = thunk_FUN_004e3800(local_8,(int)STField<short>(pvVar8,1),
+                                           (int)STField<short>(pvVar8,3));
                 if (iVar4 == 0) {
-                  STField<undefined1>(pvVar10,7) = 0;
-                  STField<undefined2>(pvVar10,8) = 0;
+                  STField<undefined1>(pvVar8,7) = 0;
+                  STField<undefined2>(pvVar8,8) = 0;
                 }
               }
               else {
-                STField<undefined1>(pvVar10,7) = 2;
+                STField<undefined1>(pvVar8,7) = 2;
               }
             }
             break;
           case 2:
           case 3:
             DArrayRemoveAt((DArrayTy *)array,local_10);
-            local_10 = uVar5 - 1;
+            local_10 = uVar4 - 1;
           }
           array = this_00->field_06A1;
           local_10 = local_10 + 1;
-          bVar13 = local_10 < array->count;
+          bVar14 = local_10 < array->count;
         } while ((int)local_10 < (int)array->count);
       }
       if (((g_allPlayers_007FA174 != nullptr) && (this_00->field_0662 == '\x01')) &&
-         (iVar4 = thunk_FUN_0067b1a0(this_00,(int)this_00->field_0660),
-         iVar4 < (int)((-(uint)(this_00->field_05EC != 3) & 0xfffffffc) + 5))) {
+         (local_EAX_824 = thunk_FUN_0067b1a0(this_00,(int)this_00->field_0660),
+         local_EAX_824 < (int)((-(uint)(this_00->field_05EC != 3) & 0xfffffffc) + 5))) {
         thunk_FUN_004e7230(this_00->field_05D7,(int)this_00->field_0660,local_c8,local_ac);
-        iVar4 = 0;
+        iVar10 = 0;
         do {
-          if (*(int *)((int)local_c8 + iVar4) == 0) {
+          if (*(int *)((int)local_c8 + iVar10) == 0) {
             g_currentExceptionFrame = local_90.previous;
             return;
           }
-          SetTech(this_00,*(int *)((int)local_c8 + iVar4),*(int *)((int)local_ac + iVar4),
+          SetTech(this_00,*(int *)((int)local_c8 + iVar10),*(int *)((int)local_ac + iVar10),
                   (int)this_00->field_0663,(char)this_00->field_0660);
-          iVar4 = iVar4 + 4;
-        } while (iVar4 < 0x1c);
+          iVar10 = iVar10 + 4;
+        } while (iVar10 < 0x1c);
       }
       g_currentExceptionFrame = local_90.previous;
       return;
     }
     g_currentExceptionFrame = local_90.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x40d,0,iVar4,"%s",
-                               "AiPlrClassTy::ExecTech");
-    if (iVar7 != 0) {
+    iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x40d,0,local_EAX_119,
+                               "%s","AiPlrClassTy::ExecTech");
+    if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_plr.cpp",0x40e);
+    RaiseInternalException(local_EAX_119,0,"E:\\__titans\\ai\\ai_plr.cpp",0x40e);
   }
   return;
 }

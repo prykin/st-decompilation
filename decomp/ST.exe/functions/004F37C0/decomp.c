@@ -24,8 +24,9 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
   CPanelTy *pCVar3;
   int *errorCode;
   LPSTR text;
-  int iVar4;
   int iVar5;
+  int iVar4;
+  int iVar6;
   InternalExceptionFrame local_54;
   int *local_10;
   ushort *local_c;
@@ -47,12 +48,12 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
     RaiseInternalException((int)errorCode,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x1de);
     return;
   }
-  iVar5 = 1;
+  iVar6 = 1;
   text = FUN_006f2c00(param_4,1,(uint)param_5);
-  local_c = cMf32::RecGet(g_cMf32_00806790,param_3,text,errorCode,iVar5);
+  local_c = cMf32::RecGet(g_cMf32_00806790,param_3,text,errorCode,iVar6);
   pCVar3 = local_8;
   uVar2 = (uint)param_1;
-  iVar5 = local_10[1];
+  iVar6 = local_10[1];
   iVar4 = DAT_00806734;
   switch(uVar2) {
   case 1:
@@ -82,10 +83,10 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
       break;
     }
 LAB_004f38ad:
-    iVar5 = iVar5 - local_8->field_00C0;
+    iVar6 = iVar6 - local_8->field_00C0;
   }
   DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0148[uVar2 + 0xe],
-         *local_10 - (&local_8->field_003C)[uVar2],iVar5 - iVar4,param_3,(byte *)local_c);
+         *local_10 - (&local_8->field_003C)[uVar2],iVar6 - iVar4,param_3,(byte *)local_c);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
   if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
     Library::DKW::DDX::FUN_006b3640

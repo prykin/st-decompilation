@@ -11,10 +11,11 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   uint uVar2;
   STGroupBoatC *pSVar3;
   int iVar4;
-  ushort *puVar5;
-  STGameObjC *pSVar6;
+  ushort *puVar4;
+  STGameObjC *pSVar5;
   int iVar7;
-  undefined4 uVar8;
+  undefined4 uVar6;
+  int iVar8;
   uint uVar9;
   InternalExceptionFrame local_58;
   char local_14;
@@ -40,38 +41,38 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     uVar9 = pSVar3->field_020E->count;
     pSVar3->field_021A = uVar9;
     local_c = uVar9;
-    puVar5 = Library::DKW::LIB::MemAlloc(uVar9 * 8);
+    puVar4 = Library::DKW::LIB::MemAlloc(uVar9 * 8);
     uVar2 = local_c;
-    pSVar3->field_021E = puVar5;
-    for (iVar4 = (uVar9 & 0x1fffffff) << 1; iVar4 != 0; iVar4 = iVar4 + -1) {
-      puVar5[0] = 0;
-      puVar5[1] = 0;
-      puVar5 = puVar5 + 2;
+    pSVar3->field_021E = puVar4;
+    for (iVar8 = (uVar9 & 0x1fffffff) << 1; iVar8 != 0; iVar8 = iVar8 + -1) {
+      puVar4[0] = 0;
+      puVar4[1] = 0;
+      puVar4 = puVar4 + 2;
     }
     uVar9 = 0;
-    for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(undefined1 *)puVar5 = 0;
-      puVar5 = (ushort *)((int)puVar5 + 1);
+    for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *(undefined1 *)puVar4 = 0;
+      puVar4 = (ushort *)((int)puVar4 + 1);
     }
     pSVar3->field_0216 = 0;
     if (0 < (int)local_c) {
       do {
         DArrayGetElement(pSVar3->field_020E,uVar9,&local_14);
-        pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_14,uStack_12,(int)cStack_13);
-        if (pSVar6 == nullptr) {
+        pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_14,uStack_12,(int)cStack_13);
+        if (pSVar5 == nullptr) {
           uStack_12 = 0xffff;
           Library::DKW::TBL::DArrayPut(pSVar3->field_020E,uVar9,&local_14);
-          puVar5 = pSVar3->field_021E;
-          (puVar5 + uVar9 * 4)[0] = 0xffff;
-          (puVar5 + uVar9 * 4)[1] = 0xffff;
+          puVar4 = pSVar3->field_021E;
+          (puVar4 + uVar9 * 4)[0] = 0xffff;
+          (puVar4 + uVar9 * 4)[1] = 0xffff;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
             *(undefined4 *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
           }
         }
         else {
-          iVar4 = pSVar6->field_0219 + pSVar6->field_0215;
-          pSVar3->field_0216 = pSVar3->field_0216 + iVar4;
-          *(int *)(pSVar3->field_021E + uVar9 * 4 + 2) = iVar4;
+          iVar8 = pSVar5->field_0219 + pSVar5->field_0215;
+          pSVar3->field_0216 = pSVar3->field_0216 + iVar8;
+          *(int *)(pSVar3->field_021E + uVar9 * 4 + 2) = iVar8;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
             *(undefined4 *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
           }

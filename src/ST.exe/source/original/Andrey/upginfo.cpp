@@ -12,17 +12,19 @@ void __thiscall st::fn_005528B0(UpgPanelTy *this)
 {
   UpgPanelTy *this_00;
   int iVar2;
-  LPSTR pCVar3;
-  ushort *puVar4;
-  undefined4 uVar5;
+  LPSTR pCVar2;
+  ushort *puVar3;
   int iVar6;
-  uint uVar7;
-  byte bVar8;
-  int iVar9;
-  UINT UVar10;
-  undefined4 uVar11;
+  int iVar4;
+  undefined4 uVar5;
+  int iVar7;
+  uint uVar8;
+  byte bVar9;
+  int iVar10;
+  UINT UVar11;
   undefined4 uVar12;
-  undefined4 *puVar13;
+  undefined4 uVar13;
+  undefined4 *puVar14;
   InternalExceptionFrame local_4c;
   UpgPanelTy *local_8;
 
@@ -32,32 +34,32 @@ void __thiscall st::fn_005528B0(UpgPanelTy *this)
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
-    uVar12 = 0x77;
-    uVar11 = 0xc9;
-    UVar10 = 0x36c1;
-    iVar9 = 0xc;
-    iVar6 = 0xc6;
+    uVar13 = 0x77;
+    uVar12 = 0xc9;
+    UVar11 = 0x36c1;
+    iVar10 = 0xc;
+    iVar7 = 0xc6;
     uVar5 = 2;
-    iVar2 = 0x31;
+    iVar4 = 0x31;
     g_upgPanel_00802A48 = local_8;
-    pCVar3 = st::fn_0040577C("BKG_UPDATESW",0);
+    pCVar2 = st::fn_0040577C("BKG_UPDATESW",0);
     st::fn_00403800
-              ((SpecPanelTy *)this_00,pCVar3,iVar2,uVar5,iVar6,iVar9,UVar10,uVar11,uVar12);
-    puVar4 = st::fn_00709AF0
+              ((SpecPanelTy *)this_00,pCVar2,iVar4,uVar5,iVar7,iVar10,UVar11,uVar12,uVar13);
+    puVar3 = st::fn_00709AF0
                        (PTR_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
-    this_00->field_03EB = puVar4;
-    puVar4 = st::fn_00709AF0
+    this_00->field_03EB = puVar3;
+    puVar3 = st::fn_00709AF0
                        (PTR_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
-    this_00->field_03EF = puVar4;
-    puVar13 = nullptr;
-    iVar6 = 0;
-    iVar2 = 1;
-    bVar8 = 0;
-    uVar7 = 0xffffffff;
-    pCVar3 = st::fn_0040577C("FRAMES",0);
-    puVar4 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,pCVar3,uVar7,bVar8,iVar2,iVar6,puVar13);
-    this_00->field_03F3 = puVar4;
+    this_00->field_03EF = puVar3;
+    puVar14 = nullptr;
+    iVar7 = 0;
+    iVar4 = 1;
+    bVar9 = 0;
+    uVar8 = 0xffffffff;
+    pCVar2 = st::fn_0040577C("FRAMES",0);
+    puVar3 = st::fn_00709AF0
+                       (PTR_00806794,CASE_B,pCVar2,uVar8,bVar9,iVar4,iVar7,puVar14);
+    this_00->field_03F3 = puVar3;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -158,8 +160,9 @@ void __thiscall st::fn_00552BC0(UpgPanelTy *this)
 {
   UpgPanelTy *pUVar2;
   int iVar3;
-  uint uVar4;
-  byte *pbVar5;
+  uint uVar3;
+  BITMAPINFO *pBVar4;
+  int iVar5;
   int iVar6;
   uint *puVar7;
   uint *puVar8;
@@ -183,71 +186,72 @@ void __thiscall st::fn_00552BC0(UpgPanelTy *this)
     puVar9 = local_298;
     memmove(puVar9, puVar7, 0x240); /* compiler REP MOVS byte copy */
     st::fn_004035BC(g_allPlayers_007FA174,0x10,(AnonShape_0043BEB0_1C00EC12 *)puVar8);
-    iVar3 = 0x19;
+    iVar6 = 0x19;
     puVar8 = &pUVar2->field_01AB;
     local_8 = 3;
     do {
-      uVar4 = st::fn_004033F0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
+      uVar3 = st::fn_004033F0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
       if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == CASE_0) {
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EF;
       }
       else {
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
       }
-      pbVar5 = (byte *)st::fn_0070B3A0(pAVar10,uVar4);
-      st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0x24,iVar3,'\x01',pbVar5);
+      pBVar4 = st::fn_0070B3A0(pAVar10,uVar3);
+      st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0x24,iVar6,'\x01',(byte *)pBVar4);
       puVar8 = puVar8 + 0xc;
-      iVar3 = iVar3 + 0x1b;
+      iVar6 = iVar6 + 0x1b;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     local_8 = 0x5e;
     puVar8 = &pUVar2->field_023B;
     local_c = 2;
     do {
-      iVar3 = 0x19;
+      iVar6 = 0x19;
       local_10 = 3;
       do {
-        uVar4 = st::fn_004033F0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
+        uVar3 = st::fn_004033F0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
         if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == CASE_0) {
           pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EF;
         }
         else {
           pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
         }
-        pbVar5 = (byte *)st::fn_0070B3A0(pAVar10,uVar4);
-        st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_8,iVar3,'\x01',pbVar5);
+        pBVar4 = st::fn_0070B3A0(pAVar10,uVar3);
+        st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_8,iVar6,'\x01',
+               (byte *)pBVar4);
         puVar8 = puVar8 + 0xc;
-        iVar3 = iVar3 + 0x1b;
+        iVar6 = iVar6 + 0x1b;
         local_10 = local_10 + -1;
       } while (local_10 != 0);
       local_8 = local_8 + 0x33;
       local_c = local_c + -1;
     } while (local_c != 0);
-    iVar3 = 0x19;
+    iVar6 = 0x19;
     puVar8 = &pUVar2->field_035B;
     local_c = 3;
     local_10 = 0;
     do {
-      uVar4 = st::fn_004033F0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
+      uVar3 = st::fn_004033F0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
       if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == CASE_0) {
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EF;
       }
       else {
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
       }
-      pbVar5 = (byte *)st::fn_0070B3A0(pAVar10,uVar4);
-      st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0xd3,iVar3,'\x01',pbVar5);
+      pBVar4 = st::fn_0070B3A0(pAVar10,uVar3);
+      st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0xd3,iVar6,'\x01',(byte *)pBVar4);
       puVar8 = puVar8 + 0xc;
-      iVar3 = iVar3 + 0x1b;
+      iVar6 = iVar6 + 0x1b;
       local_c = local_c + -1;
     } while (local_c != 0);
     g_currentExceptionFrame = local_58.previous;
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\upginfo.cpp",0x54,0,iVar3,"%s",
+  iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\upginfo.cpp",0x54,0,iVar3,"%s",
                              "UpgPanelTy::Update");
-  if (iVar6 != 0) {
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x54);
@@ -270,6 +274,7 @@ int __thiscall st::fn_00552E40(UpgPanelTy *this,STMessage *message)
   UpgPanelTy *this_00;
   int iVar2;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_4c;
   UpgPanelTy *local_8;
 

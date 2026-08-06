@@ -17,13 +17,15 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
   bool bVar4;
   AiTactClassTy *pAVar5;
   int iVar6;
-  ushort *puVar7;
+  ushort *puVar6;
   STGameObjC *objPtr;
+  int iVar7;
   AiFltClassTy *pAVar8;
   int iVar9;
-  AiTactClassTy_field_00A5DArray *pAVar10;
-  uint uVar11;
+  int iVar10;
+  AiTactClassTy_field_00A5DArray *pAVar11;
   uint uVar12;
+  uint uVar13;
   InternalExceptionFrame local_5c;
   uint local_18;
   uint local_14;
@@ -65,100 +67,100 @@ joined_r0x0068f3e2:
           return;
         }
         if (index < param_1[3]) {
-          puVar7 = (ushort *)(param_1[2] * index + param_1[7]);
+          puVar6 = (ushort *)(param_1[2] * index + param_1[7]);
         }
         else {
-          puVar7 = nullptr;
+          puVar6 = nullptr;
         }
         if (g_allPlayers_007FA174 == nullptr) {
           objPtr = nullptr;
         }
         else {
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar7,CASE_1);
+                             (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar6,CASE_1);
         }
         pAVar5 = local_8;
       } while (objPtr == nullptr);
-      iVar6 = (*objPtr->vtable->vfunc_2C)();
-      if ((iVar6 != 0x78) || ((int)local_c < 0)) break;
-      pAVar10 = local_8->field_00A5;
-      if ((pAVar10 == nullptr) ||
-         ((int)pAVar10->count <= (int)local_c)) {
+      iVar7 = (*objPtr->vtable->vfunc_2C)();
+      if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
+      pAVar11 = local_8->field_00A5;
+      if ((pAVar11 == nullptr) ||
+         ((int)pAVar11->count <= (int)local_c)) {
         pAVar8 = nullptr;
       }
       else {
         pAVar8 = pARam00000004;
-        if (local_c < pAVar10->count) {
+        if (local_c < pAVar11->count) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
           pAVar8 = *(AiFltClassTy **)
-                    ((int)&pAVar10->data->field_0004 + pAVar10->elementSize * local_c);
+                    ((int)&pAVar11->data->field_0004 + pAVar11->elementSize * local_c);
         }
       }
       uVar1 = pAVar8->field_007D;
-      iVar6 = (*objPtr->vtable->vfunc_2C)();
-      if (iVar6 == 0x78) {
+      iVar7 = (*objPtr->vtable->vfunc_2C)();
+      if (iVar7 == 0x78) {
         objPtr->field_0269 = (uint)uVar1;
       }
       DArrayRemoveAt((DArrayTy *)param_1,index);
       pAVar5 = local_8;
     }
-    if ((iVar6 < 0x32) || (0x73 < iVar6)) {
+    if ((iVar7 < 0x32) || (0x73 < iVar7)) {
       bVar4 = false;
     }
     else {
       bVar4 = true;
     }
-    uVar11 = local_c;
+    uVar12 = local_c;
     pAVar5 = local_8;
-    if ((bVar4) || (iVar6 == 0x78)) goto LAB_0068f509;
+    if ((bVar4) || (iVar7 == 0x78)) goto LAB_0068f509;
     sVar2 = local_8->field_0039;
     if (sVar2 == 1) {
-      iVar9 = 8;
+      iVar10 = 8;
     }
     else if (sVar2 == 2) {
-      iVar9 = 0x14;
+      iVar10 = 0x14;
     }
     else if (sVar2 == 3) {
-      iVar9 = 0x1a;
+      iVar10 = 0x1a;
     }
     else {
-      iVar9 = 0;
+      iVar10 = 0;
     }
-    uVar12 = local_10;
-    if (iVar6 != iVar9) {
+    uVar13 = local_10;
+    if (iVar7 != iVar10) {
       if (sVar2 == 1) {
-        iVar9 = 0xc;
+        iVar10 = 0xc;
       }
       else if (sVar2 == 2) {
-        iVar9 = 0x18;
+        iVar10 = 0x18;
       }
       else if (sVar2 == 3) {
-        iVar9 = 0x19;
+        iVar10 = 0x19;
       }
       else {
-        iVar9 = 0;
+        iVar10 = 0;
       }
-      uVar12 = local_18;
-      uVar11 = local_14;
-      if (iVar6 == iVar9) goto LAB_0068f509;
+      uVar13 = local_18;
+      uVar12 = local_14;
+      if (iVar7 == iVar10) goto LAB_0068f509;
     }
-  } while ((int)uVar12 < 0);
-  pAVar10 = local_8->field_00A5;
-  uVar11 = uVar12;
+  } while ((int)uVar13 < 0);
+  pAVar11 = local_8->field_00A5;
+  uVar12 = uVar13;
   goto LAB_0068f516;
 LAB_0068f509:
-  if (-1 < (int)uVar11) {
-    pAVar10 = local_8->field_00A5;
+  if (-1 < (int)uVar12) {
+    pAVar11 = local_8->field_00A5;
 LAB_0068f516:
-    if ((pAVar10 == nullptr) || ((int)pAVar10->count <= (int)uVar11))
+    if ((pAVar11 == nullptr) || ((int)pAVar11->count <= (int)uVar12))
     {
       pAVar8 = nullptr;
     }
     else {
       pAVar8 = pARam00000004;
-      if (uVar11 < pAVar10->count) {
+      if (uVar12 < pAVar11->count) {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-        pAVar8 = *(AiFltClassTy **)((int)&pAVar10->data->field_0004 + pAVar10->elementSize * uVar11);
+        pAVar8 = *(AiFltClassTy **)((int)&pAVar11->data->field_0004 + pAVar11->elementSize * uVar12);
       }
     }
     AiFltClassTy::_AddObjFlt(pAVar8,(uint)objPtr,0);

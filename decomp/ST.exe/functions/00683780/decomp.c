@@ -46,7 +46,7 @@ int __cdecl FUN_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,int p
                     );
         }
         else {
-          iVar5 = thunk_FUN_006836c0(param_3,pbVar4);
+          iVar5 = thunk_FUN_006836c0((DArrayTy *)param_3,pbVar4);
           sStack_b = (short)iVar5;
         }
       }

@@ -16,9 +16,11 @@ int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *messag
   STMessageId SVar2;
   SoundManagerTy *this_00;
   DWORD DVar4;
+  int local_EAX_48;
   int iVar5;
   int iVar6;
-  uint uVar7;
+  int iVar7;
+  uint uVar8;
   InternalExceptionFrame local_4c;
   SoundManagerTy *local_8;
 
@@ -27,16 +29,16 @@ int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *messag
   this->field_001C = DVar4;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  local_EAX_48 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar5 != 0) {
+  if (local_EAX_48 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\snd_mngr.cpp",0xdc,0,iVar5,"%s",
-                               "SoundManagerTy::GetMessage");
+    iVar6 = ReportDebugMessage("E:\\__titans\\snd_mngr.cpp",0xdc,0,local_EAX_48,"%s"
+                               ,"SoundManagerTy::GetMessage");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,"E:\\__titans\\snd_mngr.cpp",0xdc);
+    RaiseInternalException(local_EAX_48,0,"E:\\__titans\\snd_mngr.cpp",0xdc);
     return 0xffff;
   }
   SVar2 = message->id;
@@ -62,11 +64,11 @@ int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *messag
     local_8->field_0020 = local_8->field_001C;
     break;
   case CASE_1:
-    iVar5 = local_8->field_001C;
-    if ((4999 < (uint)(iVar5 - local_8->field_0020)) &&
-       ((uint)(iVar5 - local_8->field_0024) < 0x3e9)) {
-      local_8->field_0024 = iVar5;
-      local_8->field_0020 = iVar5;
+    iVar7 = local_8->field_001C;
+    if ((4999 < (uint)(iVar7 - local_8->field_0020)) &&
+       ((uint)(iVar7 - local_8->field_0024) < 0x3e9)) {
+      local_8->field_0024 = iVar7;
+      local_8->field_0020 = iVar7;
 joined_r0x00566d57:
       if (SVar1 != CASE_3) {
         local_8->field_0038 = CASE_3;
@@ -76,23 +78,23 @@ LAB_00566d5d:
     }
     break;
   case CASE_2:
-    iVar5 = local_8->field_001C;
-    if (4999 < (uint)(iVar5 - local_8->field_0020)) {
-      uVar7 = iVar5 - local_8->field_0024;
-      if (19999 < uVar7) goto LAB_00566d35;
-      if (uVar7 < 0x3e9) {
-        local_8->field_0024 = iVar5;
-        local_8->field_0020 = iVar5;
+    iVar7 = local_8->field_001C;
+    if (4999 < (uint)(iVar7 - local_8->field_0020)) {
+      uVar8 = iVar7 - local_8->field_0024;
+      if (19999 < uVar8) goto LAB_00566d35;
+      if (uVar8 < 0x3e9) {
+        local_8->field_0024 = iVar7;
+        local_8->field_0020 = iVar7;
         goto joined_r0x00566d57;
       }
     }
     break;
   case CASE_3:
-    iVar5 = local_8->field_001C;
-    if (14999 < (uint)(iVar5 - local_8->field_0024)) {
+    iVar7 = local_8->field_001C;
+    if (14999 < (uint)(iVar7 - local_8->field_0024)) {
 LAB_00566d35:
-      local_8->field_0024 = iVar5;
-      local_8->field_0020 = iVar5;
+      local_8->field_0024 = iVar7;
+      local_8->field_0020 = iVar7;
       if (SVar1 != CASE_1) {
         local_8->field_0038 = CASE_1;
         goto LAB_00566d5d;

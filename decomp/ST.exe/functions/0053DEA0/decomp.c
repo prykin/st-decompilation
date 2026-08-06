@@ -36,7 +36,8 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   UPanelTy *pUVar2;
   int iVar3;
   int iVar4;
-  undefined4 uVar5;
+  undefined4 uVar3;
+  int iVar5;
   int *piVar6;
   int local_1d0 [4];
   undefined4 local_1c0;
@@ -78,7 +79,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar3 == 0) {
     piVar6 = local_1d0;
-    for (iVar3 = 0x5f; pUVar2 = local_10, iVar3 != 0; iVar3 = iVar3 + -1) {
+    for (iVar5 = 0x5f; pUVar2 = local_10, iVar5 != 0; iVar5 = iVar5 + -1) {
       *piVar6 = 0;
       piVar6 = piVar6 + 1;
     }

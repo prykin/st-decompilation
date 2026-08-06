@@ -14,15 +14,19 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   char cVar1;
   cMf32 *this_00;
   int iVar3;
+  uint uVar5;
+  uint local_EAX_356;
   LPSTR text_00;
+  ushort *puVar3;
   uint uVar4;
   undefined4 *puVar5;
-  int iVar6;
-  uint *puVar7;
-  uint uVar8;
+  int iVar11;
+  uint *puVar6;
+  uint uVar7;
+  char *pcVar8;
   char *pcVar9;
-  char *pcVar10;
-  byte bVar11;
+  byte bVar10;
+  int iVar12;
   undefined1 local_65c;
   char local_65b [515];
   undefined1 local_458;
@@ -39,9 +43,9 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0x3a,0,iVar3,"%s",
-                               "cLoadingTy::new");
-    if (iVar6 == 0) {
+    iVar11 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0x3a,0,iVar3,"%s",
+                                "cLoadingTy::new");
+    if (iVar11 == 0) {
       if (local_8 != nullptr) {
         cMf32::RecMemFree(g_cMf32_00806780,local_8);
         if ((uint *)local_8[2] != nullptr) {
@@ -60,20 +64,20 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   if (DAT_0080874e == '\x01') {
     local_c = 0;
     uVar4 = 0xffffffff;
-    pcVar10 = "LOADINGW";
+    pcVar9 = "LOADINGW";
     do {
-      pcVar9 = pcVar10;
+      pcVar8 = pcVar9;
       if (uVar4 == 0) break;
       uVar4 = uVar4 - 1;
-      pcVar9 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar9;
+      pcVar8 = pcVar9 + 1;
+      cVar1 = *pcVar9;
+      pcVar9 = pcVar8;
     } while (cVar1 != '\0');
     uVar4 = ~uVar4;
     local_65c = 1;
-    pcVar10 = pcVar9 + -uVar4;
-    pcVar9 = local_65b;
-    memmove(pcVar9, pcVar10, uVar4); /* compiler REP MOVS byte copy */
+    pcVar9 = pcVar8 + -uVar4;
+    pcVar8 = local_65b;
+    memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
     cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_65c);
     puVar5 = cMf32::RecNameGetNext(this_00);
     uVar4 = local_c;
@@ -87,41 +91,41 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\grig\\loading.cpp",0x24);
     }
-    iVar3 = 1;
-    bVar11 = 0;
-    uVar8 = Library::MSVCRT::FUN_0072e6c0();
-    text_00 = FUN_006f2c00("LOADINGW",1,uVar8 % uVar4 + 1);
+    iVar12 = 1;
+    bVar10 = 0;
+    uVar7 = Library::MSVCRT::FUN_0072e6c0();
+    text_00 = FUN_006f2c00("LOADINGW",1,uVar7 % uVar4 + 1);
   }
   else {
     if (DAT_0080874e == '\x02') {
       local_c = 0;
       uVar4 = 0xffffffff;
-      pcVar10 = "LOADINGB";
+      pcVar9 = "LOADINGB";
       do {
-        pcVar9 = pcVar10;
+        pcVar8 = pcVar9;
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        pcVar9 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar9;
+        pcVar8 = pcVar9 + 1;
+        cVar1 = *pcVar9;
+        pcVar9 = pcVar8;
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
       local_254 = 1;
-      pcVar10 = pcVar9 + -uVar4;
-      pcVar9 = local_253;
-      memmove(pcVar9, pcVar10, uVar4); /* compiler REP MOVS byte copy */
-      uVar8 = 0;
+      pcVar9 = pcVar8 + -uVar4;
+      pcVar8 = local_253;
+      memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
+      uVar7 = 0;
       cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_254);
       puVar5 = cMf32::RecNameGetNext(this_00);
       while (puVar5 != nullptr) {
         local_c = local_c + 1;
         puVar5 = cMf32::RecNameGetNext(this_00);
       }
-      iVar3 = 1;
-      bVar11 = 0;
-      uVar4 = Library::MSVCRT::FUN_0072e6c0();
-      uVar4 = uVar4 % local_c;
-      pcVar10 = "LOADINGB";
+      iVar12 = 1;
+      bVar10 = 0;
+      local_EAX_356 = Library::MSVCRT::FUN_0072e6c0();
+      uVar4 = local_EAX_356 % local_c;
+      pcVar9 = "LOADINGB";
     }
     else {
       if (DAT_0080874e != '\x03') {
@@ -131,36 +135,36 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
       }
       local_c = 0;
       uVar4 = 0xffffffff;
-      pcVar10 = "LOADINGS";
+      pcVar9 = "LOADINGS";
       do {
-        pcVar9 = pcVar10;
+        pcVar8 = pcVar9;
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        pcVar9 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar9;
+        pcVar8 = pcVar9 + 1;
+        cVar1 = *pcVar9;
+        pcVar9 = pcVar8;
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
       local_458 = 1;
-      pcVar10 = pcVar9 + -uVar4;
-      pcVar9 = local_457;
-      memmove(pcVar9, pcVar10, uVar4); /* compiler REP MOVS byte copy */
+      pcVar9 = pcVar8 + -uVar4;
+      pcVar8 = local_457;
+      memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
       cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_458);
       puVar5 = cMf32::RecNameGetNext(this_00);
       while (puVar5 != nullptr) {
         local_c = local_c + 1;
         puVar5 = cMf32::RecNameGetNext(this_00);
       }
-      iVar3 = 1;
-      bVar11 = 0;
-      uVar4 = Library::MSVCRT::FUN_0072e6c0();
-      uVar4 = uVar4 % local_c;
-      pcVar10 = "LOADINGS";
+      iVar12 = 1;
+      bVar10 = 0;
+      uVar5 = Library::MSVCRT::FUN_0072e6c0();
+      uVar4 = uVar5 % local_c;
+      pcVar9 = "LOADINGS";
     }
-    text_00 = FUN_006f2c00(pcVar10,1,uVar4 + 1);
+    text_00 = FUN_006f2c00(pcVar9,1,uVar4 + 1);
   }
-  uVar4 = FUN_0070a9f0(g_cMf32_00806780,text_00,bVar11,iVar3);
-  *local_8 = uVar4;
+  puVar3 = FUN_0070a9f0(g_cMf32_00806780,text_00,bVar10,iVar12);
+  *local_8 = (uint)puVar3;
 LAB_00554324:
   uVar4 = thunk_FUN_00553e20(*local_8,nullptr,DAT_00807dd9);
   local_8[2] = uVar4;

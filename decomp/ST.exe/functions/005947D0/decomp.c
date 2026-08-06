@@ -20,7 +20,7 @@ Visible * __cdecl CreateVisible(void)
     memset(&this->field_0x88, 0, 0x80); /* compiler bulk-zero initialization */
     this->field_010C = 0;
     this->field_0114 = 0;
-    this->field_0110 = 0;
+    this->field_0110 = nullptr;
     this->field_0108 = 0xffffffff;
     this->field_0084 = 1;
     return this;

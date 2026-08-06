@@ -18,14 +18,15 @@ STPlaySystemC::SetCtrlCmd
           uint param_5,undefined4 *param_6,uint param_7)
 
 {
-  bool bVar2;
+  int iVar1;
+  bool bVar3;
   int iVar3;
   void *pvVar4;
-  int iVar5;
+  int iVar4;
+  uint uVar5;
   uint uVar6;
-  uint uVar7;
-  uint *puVar8;
-  byte *puVar9;
+  uint *puVar7;
+  byte *puVar8;
   InternalExceptionFrame local_54;
   int local_10;
   uint local_c;
@@ -84,44 +85,44 @@ STPlaySystemC::SetCtrlCmd
   local_c = param_5;
   local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
-  uVar7 = local_c;
+  uVar6 = local_c;
   if (iVar3 == 0) {
-    iVar3 = local_c + param_7;
-    local_10 = iVar3;
-    pvVar4 = Library::DKW::LIB::MemAllocClear(iVar3 + 0x1b);
+    iVar1 = local_c + param_7;
+    local_10 = iVar1;
+    pvVar4 = Library::DKW::LIB::MemAllocClear(iVar1 + 0x1b);
     STField<uint>(pvVar4,4) = local_8->field_00E4;
     STField<undefined1>(pvVar4,8) = param_1;
     STField<char>(pvVar4,9) = (char)g_cursorClass_00802A30->field_04AE;
     STField<uint>(pvVar4,10) = param_2;
     STField<char>(pvVar4,0xe) = param_3;
-    STField<uint>(pvVar4,0xf) = uVar7;
+    STField<uint>(pvVar4,0xf) = uVar6;
     STField<uint>(pvVar4,0x13) = param_7;
-    local_c = iVar3;
+    local_c = iVar1;
     if (param_4 != nullptr) {
-      uVar6 = uVar7 >> 2;
+      uVar5 = uVar6 >> 2;
       STField<uint *>(pvVar4,0x17) = (uint *)((int)pvVar4 + 0x1b);
-      puVar8 = (uint *)((int)pvVar4 + 0x1b);
-      for (; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *puVar8 = *param_4;
+      puVar7 = (uint *)((int)pvVar4 + 0x1b);
+      for (; uVar5 != 0; uVar5 = uVar5 - 1) {
+        *puVar7 = *param_4;
         param_4 = param_4 + 1;
-        puVar8 = puVar8 + 1;
+        puVar7 = puVar7 + 1;
       }
-      for (uVar7 = uVar7 & 3; local_c = local_10, uVar7 != 0; uVar7 = uVar7 - 1) {
-        *(char *)puVar8 = (char)*param_4;
+      for (uVar6 = uVar6 & 3; local_c = local_10, uVar6 != 0; uVar6 = uVar6 - 1) {
+        *(char *)puVar7 = (char)*param_4;
         param_4 = (uint *)((int)param_4 + 1);
-        puVar8 = (uint *)((int)puVar8 + 1);
+        puVar7 = (uint *)((int)puVar7 + 1);
       }
     }
     if ((param_6 != nullptr) && (param_7 != 0)) {
-      puVar9 = (byte *)(STField<int>(pvVar4,0x17) + STField<int>(pvVar4,0xf));
-      memmove(puVar9, param_6, param_7); /* compiler REP MOVS byte copy */
+      puVar8 = (byte *)(STField<int>(pvVar4,0x17) + STField<int>(pvVar4,0xf));
+      memmove(puVar8, param_6, param_7); /* compiler REP MOVS byte copy */
     }
     if (DAT_0080877e == '\0') {
-      bVar2 = true;
+      bVar3 = true;
       if ((param_3 != '\x05') && (param_3 != '2')) {
-        bVar2 = false;
+        bVar3 = false;
       }
-      if (bVar2) {
+      if (bVar3) {
         FUN_006b9910(&local_8->field_0039,(int)pvVar4);
         PlaySystemTy::SendClientMail((PlaySystemTy *)local_8);
         g_currentExceptionFrame = local_54.previous;
@@ -133,9 +134,9 @@ STPlaySystemC::SetCtrlCmd
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x55b,0,iVar3,"%s",
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x55b,0,iVar3,"%s",
                              "STPlaySystemC::SetCtrlCmd");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x55d);

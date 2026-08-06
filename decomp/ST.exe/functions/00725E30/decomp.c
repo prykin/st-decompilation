@@ -13,7 +13,7 @@ void __cdecl FUN_00725e30(int *param_1)
     if (0 < *(short *)(iVar1 + 0x23)) {
       do {
         if (*(cMf32 **)(iVar1 + 0x25) == nullptr) {
-          FreeAndNull((void **)(iVar1 + 0x2d + iVar2 * 4));
+          FreeAndNull((void *)(iVar1 + 0x2d + iVar2 * 4));
         }
         else {
           cMf32::RecMemFree(*(cMf32 **)(iVar1 + 0x25),(uint *)(iVar1 + 0x2d + iVar2 * 4));
@@ -22,7 +22,7 @@ void __cdecl FUN_00725e30(int *param_1)
         iVar2 = iVar2 + 1;
       } while (iVar2 < *(short *)(iVar1 + 0x23));
     }
-    FreeAndNull((void **)param_1);
+    FreeAndNull(param_1);
   }
   return;
 }

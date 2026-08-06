@@ -9,7 +9,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   uint uVar3;
   uint uVar4;
   byte *pbVar5;
-  void **value;
+  byte **slotStorage;
   byte *puVar6;
   byte *pbVar7;
   undefined4 local_17c;
@@ -22,16 +22,14 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   uint local_4d;
   int local_49;
   uint local_45 [6];
-  void *local_2c [3];
-  byte *local_20;
-  undefined4 *local_1c;
+  byte *local_2c [5];
   int local_18;
   byte *local_14;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   byte *local_8;
 
-  local_20 = nullptr;
+  local_2c[3] = nullptr;
   local_10 = nullptr;
   local_14 = nullptr;
   if (param_1 == 0) {
@@ -52,7 +50,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   }
   puVar6 = (byte *)(local_10d);
   memmove(puVar6, puVar1, 0xb0); /* compiler REP MOVS byte copy */
-  local_20 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)param_1,(int *)&local_5d);
+  local_2c[3] = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)param_1,(int *)&local_5d);
   local_59 = 0x14f;
   local_10 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(param_1 + 0x1d5),&local_55);
   local_51 = local_5d + local_59;
@@ -64,15 +62,15 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   local_18 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x370) == 0) {
-    local_1c = (undefined4 *)(param_1 + 0x350);
+    local_2c[4] = (byte *)(param_1 + 0x350);
     do {
-      puVar1 = (byte *)(STT3DSprC::SaveSpr((STT3DSprC *)*local_1c,(uint *)((int)local_45 + iVar2)));
+      puVar1 = (byte *)(STT3DSprC::SaveSpr(*(STT3DSprC **)local_2c[4],(uint *)((int)local_45 + iVar2)));
       *(undefined4 **)((int)local_2c + iVar2) = puVar1;
       *(AnonShape_0060EA30_DCEB68AD **)((int)local_45 + iVar2 + 0xc) = local_c;
       uVar3 = *(uint *)((int)local_45 + iVar2);
       iVar2 = iVar2 + 4;
       local_c = (AnonShape_0060EA30_DCEB68AD *)(&local_c->field_0x0 + uVar3);
-      local_1c = local_1c + 1;
+      local_2c[4] = (byte *)((int)local_2c[4] + 4);
       local_18 = local_18 + uVar3;
     } while (iVar2 < 0xc);
   }
@@ -81,7 +79,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   puVar1 = (byte *)(&local_17c);
   pbVar5 = local_8;
   memmove(pbVar5, puVar1, 0x14f); /* compiler REP MOVS byte copy */
-  pbVar5 = local_20;
+  pbVar5 = local_2c[3];
   pbVar7 = local_8 + local_59;
   memmove(pbVar7, pbVar5, local_5d); /* compiler REP MOVS byte copy */
   uVar3 = 0;
@@ -116,16 +114,16 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   STPlaySystemC::SaveObjData(g_playSystem_00802A38,*(int **)(param_1 + 0x18),local_8,local_c);
   FreeAndNull(&local_8);
-  FreeAndNull(&local_20);
+  FreeAndNull(local_2c + 3);
   FreeAndNull(&local_10);
   FreeAndNull(&local_14);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x370) == 0) {
-    value = local_2c;
+    slotStorage = local_2c;
     iVar2 = 3;
     do {
-      FreeAndNull(value);
-      value = value + 1;
+      FreeAndNull(slotStorage);
+      slotStorage = slotStorage + 1;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
   }

@@ -28,7 +28,7 @@ int __cdecl FUN_006838b0(int *param_1,char param_2,byte *param_3,int param_4)
   iVar1 = param_1[1];
   if (param_2 == '\x01') {
     local_c = 10;
-    iVar3 = thunk_FUN_006836c0(param_4,param_3);
+    iVar3 = thunk_FUN_006836c0((DArrayTy *)param_4,param_3);
     uStack_b = (undefined2)iVar3;
     thunk_FUN_0064a830(param_1,(undefined4 *)&local_c);
     return iVar1;

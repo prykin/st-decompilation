@@ -6,29 +6,28 @@
    Diagnostic line evidence: 906 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-int __cdecl FUN_006836c0(int param_1,byte *param_2)
+int __cdecl FUN_006836c0(DArrayTy *param_1,byte *param_2)
 
 {
   byte bVar1;
-  int iVar2;
+  dword dVar2;
   byte *pbVar3;
   int iVar4;
   byte *pbVar5;
   int iVar6;
   bool bVar7;
 
-  if ((param_1 == 0) || (param_2 == nullptr)) {
+  if ((param_1 == nullptr) || (param_2 == nullptr)) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x38a);
   }
-  iVar2 = *(int *)(param_1 + 8);
+  dVar2 = param_1->elementSize;
   iVar6 = 0;
-  if (0 < iVar2) {
+  if (0 < (int)dVar2) {
     do {
       pbVar5 = param_2;
-      if (iVar6 < iVar2) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        pbVar3 = *(byte **)(*(int *)(param_1 + 0x14) + iVar6 * 4);
+      if (iVar6 < (int)dVar2) {
+        pbVar3 = *(byte **)(param_1->growCapacity + iVar6 * 4);
       }
       else {
         pbVar3 = nullptr;
@@ -54,9 +53,9 @@ LAB_0068372e:
         return iVar6;
       }
       iVar6 = iVar6 + 1;
-    } while (iVar6 < iVar2);
+    } while (iVar6 < (int)dVar2);
   }
-  iVar2 = Library::DKW::TBL::FUN_006b5aa0((uint *)param_1,(char *)param_2);
-  return iVar2;
+  iVar6 = Library::DKW::TBL::FUN_006b5aa0(param_1,(char *)param_2);
+  return iVar6;
 }
 

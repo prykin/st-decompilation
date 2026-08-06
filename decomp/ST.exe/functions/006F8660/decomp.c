@@ -16,6 +16,7 @@ void FUN_006f8660(undefined4 *param_1,int param_2,byte *param_3,int param_4,int 
   undefined4 *puVar9;
   uint local_c;
   uint local_8;
+  byte *pbVar5_mg0;
 
   if (-1 < (int)(param_7 - 1)) {
     local_c = param_7;
@@ -130,18 +131,18 @@ LAB_006f86ce:
           puVar9 = (undefined4 *)((int)puVar9 + param_7);
         }
         else if ((local_8 & 0x40) == 0) {
-          pbVar5 = param_3;
+          pbVar5_mg0 = param_3;
           puVar8 = puVar9;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = (byte *)param_7;
           if (-1 < (int)(param_7 - 1)) {
             do {
               puVar9 = (undefined4 *)((int)puVar8 + 1);
-              pbVar3 = pbVar5 + 1;
-              *(undefined1 *)puVar8 = *(undefined1 *)((uint)*pbVar5 + param_8);
+              pbVar3 = pbVar5_mg0 + 1;
+              *(undefined1 *)puVar8 = *(undefined1 *)((uint)*pbVar5_mg0 + param_8);
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_3 = param_3 + -1;
-              pbVar5 = pbVar3;
+              pbVar5_mg0 = pbVar3;
               puVar8 = puVar9;
             } while (param_3 != nullptr);
           }

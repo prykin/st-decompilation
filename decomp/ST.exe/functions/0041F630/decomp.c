@@ -6,7 +6,8 @@ void __fastcall FUN_0041f630(AnonShape_0041F630_B1BEE81C *param_1)
 {
   byte bVar1;
   byte bVar2;
-  undefined4 uVar3;
+  int iVar3;
+  undefined4 uVar4;
   int iVar4;
   uint uVar5;
   bool bVar6;
@@ -24,34 +25,34 @@ void __fastcall FUN_0041f630(AnonShape_0041F630_B1BEE81C *param_1)
   if (param_1->field_0229 != 0) {
     return;
   }
-  iVar4 = *(int *)&param_1->field_0x20;
-  if (((iVar4 != 0x14) && (iVar4 != 1000)) && (iVar4 != 0x3e9)) {
+  iVar7 = *(int *)&param_1->field_0x20;
+  if (((iVar7 != 0x14) && (iVar7 != 1000)) && (iVar7 != 0x3e9)) {
     return;
   }
   bVar1 = param_1->field_0x24;
   if (DAT_00808a8f == '\0') {
     if (bVar1 == DAT_0080874d) {
 LAB_0041f738:
-      iVar7 = 0;
+      iVar3 = 0;
     }
     else {
       uVar5 = (uint)DAT_0080874d;
       bVar2 = g_playerRelationMatrix[bVar1][uVar5];
       if ((bVar2 == 0) && (g_playerRelationMatrix[uVar5][bVar1] == 0)) {
-        iVar7 = -2;
+        iVar3 = -2;
       }
       else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar5][bVar1] == 0)) {
-        iVar7 = -1;
+        iVar3 = -1;
       }
       else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar5][bVar1] == 1)) {
-        iVar7 = 1;
+        iVar3 = 1;
       }
       else {
         if ((bVar2 != 1) || (g_playerRelationMatrix[uVar5][bVar1] != 1)) goto LAB_0041f738;
-        iVar7 = 2;
+        iVar3 = 2;
       }
     }
-    bVar6 = iVar7 < 0;
+    bVar6 = iVar3 < 0;
   }
   else {
     bVar6 = g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0023 !=
@@ -61,10 +62,10 @@ LAB_0041f738:
     local_c = 1;
     goto LAB_0041f793;
   }
-  if (iVar4 != 0x14) {
+  if (iVar7 != 0x14) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    uVar3 = (**(code **)(*(int *)param_1 + 0x2c))();
-    switch(uVar3) {
+    uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
+    switch(uVar4) {
     case 0x3e:
     case 0x3f:
     case 0x42:
@@ -95,8 +96,8 @@ switchD_0041f763_caseD_7:
     }
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  uVar3 = (**(code **)(*(int *)param_1 + 0x2c))();
-  switch(uVar3) {
+  uVar4 = (**(code **)(*(int *)param_1 + 0x2c))();
+  switch(uVar4) {
   case 7:
   case 8:
   case 0xc:
@@ -116,8 +117,8 @@ switchD_0041f763_caseD_9:
 LAB_0041f793:
   if (param_1->field_0211 != 0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    uVar3 = (**(code **)(*(int *)param_1 + 0x6c))();
-    switch(uVar3) {
+    uVar4 = (**(code **)(*(int *)param_1 + 0x6c))();
+    switch(uVar4) {
     case 0:
       local_8 = 10;
       break;

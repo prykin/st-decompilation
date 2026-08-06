@@ -18,8 +18,10 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   char cVar3;
   STT3DSprC *this_00;
   AnonShape_004ADBA0_0D812343 *pAVar5;
+  int local_EAX_35;
   int iVar6;
-  uint uVar7;
+  uint uVar6;
+  int iVar7;
   char *pcVar8;
   char *pcVar9;
   int iVar10;
@@ -37,12 +39,12 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_24 = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
+  local_EAX_35 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   this_00 = local_24;
-  if (iVar6 != 0) {
+  if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x43d,0,iVar6,"%s",
-                               "STT3DSprC::RestoreSpr");
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x43d,0,local_EAX_35,
+                               "%s","STT3DSprC::RestoreSpr");
     if (iVar6 == 0) {
       return;
     }
@@ -75,40 +77,40 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
     sub_004ACF20(this_00,(ushort *)param_1[4],param_1[5]);
   }
   local_10 = (AnonShape_004ADBA0_0D812343 *)&param_2[1].field_0x4;
-  iVar6 = this_00->field_0014;
-  local_1c = (char *)((int)local_10 + iVar6 * 0x24);
-  iVar10 = iVar6;
+  iVar7 = this_00->field_0014;
+  local_1c = (char *)((int)local_10 + iVar7 * 0x24);
+  iVar10 = iVar7;
   local_14 = local_1c;
-  if (0 < iVar6) {
+  if (0 < iVar7) {
     do {
       local_18 = iVar10;
-      uVar7 = 0xffffffff;
+      uVar6 = 0xffffffff;
       pcVar8 = local_14;
       do {
-        if (uVar7 == 0) break;
-        uVar7 = uVar7 - 1;
+        if (uVar6 == 0) break;
+        uVar6 = uVar6 - 1;
         cVar3 = *pcVar8;
         pcVar8 = pcVar8 + 1;
       } while (cVar3 != '\0');
-      local_14 = local_14 + ~uVar7;
+      local_14 = local_14 + ~uVar6;
       local_18 = local_18 + -1;
       iVar10 = local_18;
     } while (local_18 != 0);
   }
   local_8 = 0;
-  if (0 < iVar6) {
+  if (0 < iVar7) {
     local_18 = 0;
     do {
-      iVar6 = -1;
+      iVar7 = -1;
       local_20 = 0;
       pcVar8 = local_1c;
       do {
-        if (iVar6 == 0) break;
-        iVar6 = iVar6 + -1;
+        if (iVar7 == 0) break;
+        iVar7 = iVar7 + -1;
         cVar3 = *pcVar8;
         pcVar8 = pcVar8 + 1;
       } while (cVar3 != '\0');
-      if (iVar6 != -2) {
+      if (iVar7 != -2) {
         (&this_00->field_0020->field_0xc)[local_18] = local_10->field_0x4;
         LoadSequence(this_00,(byte)local_8,*(int **)(*param_1 + local_8 * 4),local_1c,
                      (&this_00->field_0020->field_0xc)[local_18]);
@@ -116,12 +118,12 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
         local_20 = *(uint *)local_10 << 2;
         pcVar8 = local_14;
         pcVar9 = *(char **)(&this_00->field_0020->field_0x4 + local_18);
-        for (uVar7 = *(uint *)local_10 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
+        for (uVar6 = *(uint *)local_10 & 0x3fffffff; uVar6 != 0; uVar6 = uVar6 - 1) {
           *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
           pcVar8 = pcVar8 + 4;
           pcVar9 = pcVar9 + 4;
         }
-        for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+        for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
           *pcVar9 = *pcVar8;
           pcVar8 = pcVar8 + 1;
           pcVar9 = pcVar9 + 1;
@@ -135,7 +137,7 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
           StopShow(this_00,(byte)local_8);
         }
       }
-      iVar6 = local_18;
+      iVar7 = local_18;
       if (local_10->field_0006 == '\0') {
         puVar2 = (ushort *)(&this_00->field_0020->field_0xe + local_18);
         *puVar2 = *puVar2 & 0xfffe;
@@ -194,37 +196,37 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
         sub_004AD070(this_00,(byte)_local_c);
       }
       if (pAVar5[1].field_0x3 == '\0') {
-        puVar2 = (ushort *)(&this_00->field_0020->field_0xe + iVar6);
+        puVar2 = (ushort *)(&this_00->field_0020->field_0xe + iVar7);
         *puVar2 = *puVar2 & 0xfeff;
       }
       else {
-        pbVar1 = &this_00->field_0020->field_0xf + iVar6;
+        pbVar1 = &this_00->field_0020->field_0xf + iVar7;
         *pbVar1 = *pbVar1 | 1;
       }
       local_10 = (AnonShape_004ADBA0_0D812343 *)&pAVar5[1].field_0x4;
-      uVar7 = 0xffffffff;
+      uVar6 = 0xffffffff;
       pcVar8 = local_1c;
       do {
-        if (uVar7 == 0) break;
-        uVar7 = uVar7 - 1;
+        if (uVar6 == 0) break;
+        uVar6 = uVar6 - 1;
         cVar3 = *pcVar8;
         pcVar8 = pcVar8 + 1;
       } while (cVar3 != '\0');
-      local_18 = iVar6 + 0x24;
-      local_1c = local_1c + ~uVar7;
+      local_18 = iVar7 + 0x24;
+      local_1c = local_1c + ~uVar6;
       local_14 = local_14 + local_20;
       local_8 = local_8 + 1;
     } while (local_8 < this_00->field_0014);
   }
-  if ((-1 < this_00->field_000C) && (iVar6 = 0, 0 < this_00->field_0014)) {
+  if ((-1 < this_00->field_000C) && (iVar7 = 0, 0 < this_00->field_0014)) {
     iVar10 = 0;
     do {
       if (((&this_00->field_0020->field_0xf)[iVar10] & 1) != 0) {
-        FUN_006e93c0(this_00->field_003C,this_00->field_0018,iVar6,this_00->field_000C);
+        FUN_006e93c0(this_00->field_003C,this_00->field_0018,iVar7,this_00->field_000C);
       }
-      iVar6 = iVar6 + 1;
+      iVar7 = iVar7 + 1;
       iVar10 = iVar10 + 0x24;
-    } while (iVar6 < this_00->field_0014);
+    } while (iVar7 < this_00->field_0014);
   }
   g_currentExceptionFrame = local_68.previous;
   return;

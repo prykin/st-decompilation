@@ -32,7 +32,7 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,
   undefined4 *local_8;
 
   pAVar5 = param_2;
-  pbVar14 = LPVOID_008568b0;
+  pbVar14 = g_lpBuffer_008568B0;
   local_10 = 0;
   local_14 = 0;
   local_1c = 0;
@@ -76,7 +76,7 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(param_2->field_001C + 4) + 0xc),pDVar2,
-                           LPVOID_008568b0,(DWORD)local_8);
+                           g_lpBuffer_008568B0,(DWORD)local_8);
     if (local_c != 0) {
       return local_c;
     }
@@ -93,7 +93,7 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,
     puVar12 = param_1;
     if (0 < (int)param_3) {
       do {
-        pvVar4 = LPVOID_008568b0;
+        pvVar4 = g_lpBuffer_008568B0;
         iVar6 = pAVar5->field_00BC;
         if (iVar6 < 1) {
           pbVar15 = pbVar14;
@@ -107,7 +107,7 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,
             }
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             DVar7 = FUN_006bfb90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
-                                 LPVOID_008568b0,(DWORD)param_1);
+                                 g_lpBuffer_008568B0,(DWORD)param_1);
             if (DVar7 != 0) {
               return DVar7;
             }
@@ -155,7 +155,7 @@ LAB_006c0125:
           }
           while (((int)param_2 < (int)param_3 &&
                  (iVar6 = pAVar5->field_00BC, pAVar5->field_00BC = iVar6 + -1,
-                 pvVar4 = LPVOID_008568b0, 0 < iVar6))) {
+                 pvVar4 = g_lpBuffer_008568B0, 0 < iVar6))) {
             if (pAVar5->field_00C0 < 1) {
               return local_c;
             }
@@ -168,7 +168,7 @@ LAB_006c0125:
               }
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
-                                     LPVOID_008568b0,(DWORD)local_8);
+                                     g_lpBuffer_008568B0,(DWORD)local_8);
               pbVar15 = pvVar4;
               if (local_c != 0) {
                 return local_c;
@@ -249,7 +249,7 @@ LAB_006c0125:
     param_2 = nullptr;
     if (0 < (int)param_3) {
       do {
-        pvVar4 = LPVOID_008568b0;
+        pvVar4 = g_lpBuffer_008568B0;
         uVar10 = pAVar5->field_00BC;
         if ((int)uVar10 < 1) {
           if ((int)local_8 < 7) {
@@ -260,7 +260,7 @@ LAB_006c0125:
             }
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
-                                   LPVOID_008568b0,(DWORD)local_8);
+                                   g_lpBuffer_008568B0,(DWORD)local_8);
             pbVar14 = pvVar4;
             if (local_c != 0) {
               return local_c;
@@ -301,7 +301,7 @@ LAB_006c0455:
               }
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
-                                     LPVOID_008568b0,(DWORD)local_8);
+                                     g_lpBuffer_008568B0,(DWORD)local_8);
               pbVar14 = pvVar4;
               if (local_c != 0) {
                 return local_c;
@@ -342,7 +342,7 @@ LAB_006c0455:
           puVar12 = param_1;
           pAVar8 = param_2;
           if ((int)param_2 < (int)param_3) {
-            while (pvVar4 = LPVOID_008568b0, puVar12 = param_1, pAVar8 = param_2,
+            while (pvVar4 = g_lpBuffer_008568B0, puVar12 = param_1, pAVar8 = param_2,
                   0 < pAVar5->field_00BC) {
               if (pAVar5->field_00C0 < 1) {
                 return local_c;
@@ -355,7 +355,7 @@ LAB_006c0455:
                 }
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
-                                       LPVOID_008568b0,(DWORD)local_8);
+                                       g_lpBuffer_008568B0,(DWORD)local_8);
                 pbVar14 = pvVar4;
                 if (local_c != 0) {
                   return local_c;

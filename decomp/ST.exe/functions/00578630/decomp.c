@@ -18,8 +18,10 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
   STSprGameObjC *this_00;
   undefined1 uVar5;
   short sVar6;
+  int local_EAX_70;
   int iVar7;
-  undefined4 uVar8;
+  undefined4 uVar7;
+  int iVar8;
   int iVar9;
   uint uVar10;
   STSprGameObjC_field_0259State SVar11;
@@ -49,16 +51,16 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_1c = (STSprGameObjC *)this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
+  local_EAX_70 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_1c;
-  if (iVar7 != 0) {
+  if (local_EAX_70 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar9 = ReportDebugMessage("E:\\__titans\\Igor\\to_crab.cpp",0x1b7,0,iVar7,"%s",
-                               "STCrabC::GetMessage");
-    if (iVar9 != 0) {
+    iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\to_crab.cpp",0x1b7,0,local_EAX_70,
+                               "%s","STCrabC::GetMessage");
+    if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,"E:\\__titans\\Igor\\to_crab.cpp",0x1b8);
+    RaiseInternalException(local_EAX_70,0,"E:\\__titans\\Igor\\to_crab.cpp",0x1b8);
     return 0xffff;
   }
   STSprGameObjC::GetMessage(local_1c,message);
@@ -171,116 +173,116 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     pSVar12 = (message->arg0).ptr;
     pSVar14 = &this_00->field_0259;
     memmove(pSVar14, pSVar12, 0x28); /* compiler REP MOVS byte copy */
-    iVar7 = 0;
+    iVar9 = 0;
     Bad((STCrabC *)this_00);
     if (((((*(int *)&this_00->field_0x26d < 0) ||
           ((int)g_worldGrid.sizeX <= *(int *)&this_00->field_0x26d)) ||
          (*(int *)&this_00->field_0x271 < 0)) ||
         (((int)g_worldGrid.sizeY <= *(int *)&this_00->field_0x271 ||
-         (iVar7 = *(int *)&this_00->field_0x275, iVar7 < 0)))) ||
-       ((g_worldGrid.sizeZ <= iVar7 ||
+         (iVar9 = *(int *)&this_00->field_0x275, iVar9 < 0)))) ||
+       ((g_worldGrid.sizeZ <= iVar9 ||
         (iVar7 = thunk_FUN_004961b0(*(short *)&this_00->field_0x26d,*(short *)&this_00->field_0x271,
-                                    (short)iVar7), iVar7 == 0)))) {
+                                    (short)iVar9), iVar7 == 0)))) {
       thunk_FUN_005783f0(this_00);
       *(undefined4 *)&this_00->field_0x239 = 2;
     }
     else {
       switch(*(undefined4 *)&this_00->field_0x279) {
       case 0xf2:
-        iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1l",0x1d
-                          );
-        if (iVar7 != 0) {
+        iVar9 = STT3DSprC::LoadSequence
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1l",
+                           CASE_1D);
+        if (iVar9 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xd2);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab1l_m",
-                           0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xd5;
+                           CASE_1D);
+        if (iVar9 != 0) {
+          iVar9 = 0xd5;
 cf_error_exit_00578B5D:
           RaiseInternalException
-                    (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",iVar7);
+                    (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",iVar9);
         }
         break;
       case 0xf3:
-        iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2l",0x1d
-                          );
-        if (iVar7 != 0) {
+        iVar9 = STT3DSprC::LoadSequence
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2l",
+                           CASE_1D);
+        if (iVar9 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xda);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab2l_m",
-                           0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xdd;
+                           CASE_1D);
+        if (iVar9 != 0) {
+          iVar9 = 0xdd;
           goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf4:
-        iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1b",0x1d
-                          );
-        if (iVar7 != 0) {
+        iVar9 = STT3DSprC::LoadSequence
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1b",
+                           CASE_1D);
+        if (iVar9 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xe2);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab1b_m",
-                           0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xe5;
+                           CASE_1D);
+        if (iVar9 != 0) {
+          iVar9 = 0xe5;
           goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf5:
-        iVar7 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2b",0x1d
-                          );
-        if (iVar7 != 0) {
+        iVar9 = STT3DSprC::LoadSequence
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2b",
+                           CASE_1D);
+        if (iVar9 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xea);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab2b_m",
-                           0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xed;
+                           CASE_1D);
+        if (iVar9 != 0) {
+          iVar9 = 0xed;
           goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf6:
-        iVar7 = STT3DSprC::LoadSequence
+        iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"langus2",
-                           0x1d);
-        if (iVar7 != 0) {
+                           CASE_1D);
+        if (iVar9 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xfa);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"langus2m",
-                           0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xfd;
+                           CASE_1D);
+        if (iVar9 != 0) {
+          iVar9 = 0xfd;
           goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf7:
-        iVar7 = STT3DSprC::LoadSequence
+        iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"langus1",
-                           0x1d);
-        if (iVar7 != 0) {
+                           CASE_1D);
+        if (iVar9 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xf2);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"langus1m",
-                           0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xf5;
+                           CASE_1D);
+        if (iVar9 != 0) {
+          iVar9 = 0xf5;
           goto cf_error_exit_00578B5D;
         }
       }
@@ -304,10 +306,9 @@ cf_error_exit_00578B5D:
       *(short *)&this_00->field_0x6c =
            (short)(*(int *)&this_00->field_0x27d / 0x2d) -
            (short)(*(int *)&this_00->field_0x27d / -0x4c000000);
-      uVar8 = thunk_FUN_005797b0(this_00,(undefined2 *)&this_00->field_0x4e,
-                                 (undefined2 *)&this_00->field_0x50,
-                                 (undefined2 *)&this_00->field_0x6c);
-      *(undefined4 *)&this_00->field_0x239 = uVar8;
+      uVar7 = thunk_FUN_005797b0(this_00,(short *)&this_00->field_0x4e,(short *)&this_00->field_0x50
+                                 ,(undefined2 *)&this_00->field_0x6c);
+      *(undefined4 *)&this_00->field_0x239 = uVar7;
     }
   }
   else if (local_20[3] == 2) {
@@ -342,11 +343,11 @@ cf_error_exit_00578B5D:
     *(STSprGameObjC_field_0259State *)&this_00->field_0x23d = local_20[0xc];
     local_3c = Library::DKW::LIB::MemAlloc(0x44);
     if (local_3c != nullptr) {
-      iVar7 = 0;
+      iVar9 = 0;
       do {
-        *(int **)(iVar7 + (int)local_3c) = PTR_0080676c;
-        iVar7 = iVar7 + 4;
-      } while (iVar7 < 0x44);
+        *(int **)(iVar9 + (int)local_3c) = PTR_0080676c;
+        iVar9 = iVar9 + 4;
+      } while (iVar9 < 0x44);
       local_38 = 0;
       local_34 = 0;
       local_30 = PTR_008073cc;
@@ -363,8 +364,8 @@ cf_error_exit_00578B5D:
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  iVar7 = thunk_FUN_0058cfe0((int)this_00);
-  if (iVar7 != 0) {
+  iVar9 = thunk_FUN_0058cfe0((int)this_00);
+  if (iVar9 != 0) {
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }

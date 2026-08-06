@@ -14,12 +14,15 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
 {
   bool bVar2;
   TLOBaseTy *this_00;
-  int iVar3;
+  int local_EAX_36;
   int local_EAX_612;
-  uint uVar5;
+  int iVar3;
+  uint uVar3;
   int uVar4;
-  undefined *puVar6;
+  undefined *puVar4;
   int iVar7;
+  int iVar5;
+  int iVar6;
   int iVar8;
   int iVar9;
   uint uVar10;
@@ -35,15 +38,15 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_20 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
+  local_EAX_36 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   this_00 = local_20;
-  if (iVar3 != 0) {
+  if (local_EAX_36 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_tele.cpp",0x1d5,0,iVar3,"%s"
-                               ,"TLOBaseTy::teleNone error");
+    iVar7 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_tele.cpp",0x1d5,0,local_EAX_36,
+                               "%s","TLOBaseTy::teleNone error");
     if (iVar7 == 0) {
-      RaiseInternalException(iVar3,0,"E:\\__titans\\Artem\\TLO_tele.cpp",0x1d6);
-      return iVar3;
+      RaiseInternalException(local_EAX_36,0,"E:\\__titans\\Artem\\TLO_tele.cpp",0x1d6);
+      return local_EAX_36;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
@@ -69,19 +72,19 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     }
     break;
   case CASE_2:
-    iVar3 = STPlaySystemC::sub_006E62D0
+    iVar5 = STPlaySystemC::sub_006E62D0
                       (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)local_20->field_0470,
                        (int *)&local_8);
-    if (iVar3 != 0) {
+    if (iVar5 != 0) {
       sub_004EA620(this_00);
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
-    iVar3 = thunk_FUN_004e91e0(local_8,(STBoatC *)this_00);
-    if (iVar3 != 0) {
+    iVar5 = thunk_FUN_004e91e0(local_8,(STBoatC *)this_00);
+    if (iVar5 != 0) {
       this_00->field_048C = 1;
       this_00->field_046C = CASE_3;
-      thunk_FUN_00416270(this_00,local_14,(int *)local_10,(int *)local_c);
+      thunk_FUN_00416270(this_00,(uint *)local_14,(int *)local_10,local_c);
       sub_00415B30(this_00,local_14[0],local_10[0],local_c[0],
                    *(short *)&this_00->field_0474 * 0xc9 + 200,
                    *(short *)&this_00->field_0478 * 0xc9 + 200,
@@ -98,8 +101,8 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     }
     break;
   case CASE_3:
-    iVar3 = STJellyGunC::sub_00415ED0((STJellyGunC *)local_20,&local_18,&local_1c);
-    if (iVar3 == -1) {
+    iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)local_20,&local_18,&local_1c);
+    if (iVar5 == -1) {
       iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_tele.cpp",0x19a,0,-5,"%s",
                                  "TLOBaseTy::teleNone\nmovement error");
       if (iVar3 == 0) {
@@ -110,57 +113,57 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    if (iVar3 == 0) {
+    if (iVar5 == 0) {
       iVar8 = (int)this_00->field_0045;
       this_00->field_046C = CASE_4;
       uVar10 = 0;
-      uVar5 = g_playSystem_00802A38->field_00E4;
+      uVar3 = g_playSystem_00802A38->field_00E4;
       this_00->field_0490 = 0;
-      iVar3 = (int)this_00->field_0043;
-      this_00->field_049C = uVar5;
-      iVar7 = (int)this_00->field_0041;
+      iVar5 = (int)this_00->field_0043;
+      this_00->field_049C = uVar3;
+      iVar6 = (int)this_00->field_0041;
       iVar9 = 0;
       this_00->field_0498 = 0;
       local_EAX_612 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
-      thunk_FUN_006377b0(local_EAX_612,iVar9,iVar7,iVar3,iVar8,uVar10);
+      thunk_FUN_006377b0(local_EAX_612,iVar9,iVar6,iVar5,iVar8,uVar10);
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
     break;
   case CASE_4:
-    uVar5 = local_20->field_049C;
+    uVar3 = local_20->field_049C;
     uVar10 = g_playSystem_00802A38->field_00E4;
-    if ((uVar5 + 0x15 <= uVar10) && (local_20->field_0490 == 0)) {
-      iVar3 = 0;
-      uVar5 = thunk_FUN_004ad650((STT3DSprC *)&local_20->field_01D5);
-      Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);
+    if ((uVar3 + 0x15 <= uVar10) && (local_20->field_0490 == 0)) {
+      iVar5 = 0;
+      uVar3 = thunk_FUN_004ad650((STT3DSprC *)&local_20->field_01D5);
+      Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar3,iVar5);
       if ((STT3DSprC *)this_00->field_05FF != nullptr) {
-        iVar3 = 0;
-        uVar5 = thunk_FUN_004ad650((STT3DSprC *)this_00->field_05FF);
-        Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);
+        iVar5 = 0;
+        uVar3 = thunk_FUN_004ad650((STT3DSprC *)this_00->field_05FF);
+        Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar3,iVar5);
       }
       if (this_00->field_0603 != nullptr) {
-        iVar3 = 0;
-        uVar5 = thunk_FUN_004ad650(this_00->field_0603);
-        Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);
+        iVar5 = 0;
+        uVar3 = thunk_FUN_004ad650(this_00->field_0603);
+        Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar3,iVar5);
       }
       this_00->field_0490 = 1;
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
-    if ((uVar5 + 100 <= uVar10) && (local_20->field_0498 == 0)) {
-      uVar5 = 0;
-      iVar7 = (int)(short)(*(short *)&local_20->field_0488 * 200 + 100);
-      iVar3 = (int)(short)(*(short *)&local_20->field_0484 * 0xc9 + 100);
+    if ((uVar3 + 100 <= uVar10) && (local_20->field_0498 == 0)) {
+      uVar3 = 0;
+      iVar6 = (int)(short)(*(short *)&local_20->field_0488 * 200 + 100);
+      iVar5 = (int)(short)(*(short *)&local_20->field_0484 * 0xc9 + 100);
       iVar8 = (int)(short)(*(short *)&local_20->field_0480 * 0xc9 + 100);
       iVar9 = 0;
       uVar4 = thunk_FUN_004ad650((STT3DSprC *)&local_20->field_01D5);
-      thunk_FUN_006377b0(uVar4,iVar9,iVar8,iVar3,iVar7,uVar5);
+      thunk_FUN_006377b0(uVar4,iVar9,iVar8,iVar5,iVar6,uVar3);
       this_00->field_0498 = 1;
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
-    if (uVar5 + 0x79 <= uVar10) {
+    if (uVar3 + 0x79 <= uVar10) {
       if (local_20->field_0494 != 0) {
         thunk_FUN_004d0a80(DAT_00800bcc,local_20->field_0480,local_20->field_0484,
                            local_20->field_0488);
@@ -170,48 +173,48 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       this_00->field_05B0 = this_00->field_0480;
       this_00->field_05B8 = this_00->field_0488;
       this_00->field_05B4 = this_00->field_0484;
-      iVar3 = thunk_FUN_00417a20(this_00,*(short *)&this_00->field_05B0,(short)this_00->field_0484,
+      iVar5 = thunk_FUN_00417a20(this_00,*(short *)&this_00->field_05B0,(short)this_00->field_0484,
                                  (short)this_00->field_0488,1);
-      if (iVar3 != 0) {
+      if (iVar5 != 0) {
         RaiseInternalException
                   (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tele.cpp",0x1b3);
       }
       thunk_FUN_0041d900(this_00,*(short *)&this_00->field_05B0,*(short *)&this_00->field_05B4,
                          *(short *)&this_00->field_05B8);
-      iVar3 = 1;
-      uVar5 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
-      Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);
+      iVar5 = 1;
+      uVar3 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
+      Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar3,iVar5);
       if ((STT3DSprC *)this_00->field_05FF != nullptr) {
-        iVar3 = 1;
-        uVar5 = thunk_FUN_004ad650((STT3DSprC *)this_00->field_05FF);
-        Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);
+        iVar5 = 1;
+        uVar3 = thunk_FUN_004ad650((STT3DSprC *)this_00->field_05FF);
+        Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar3,iVar5);
       }
       if (this_00->field_0603 != nullptr) {
-        iVar3 = 1;
-        uVar5 = thunk_FUN_004ad650(this_00->field_0603);
-        Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar5,iVar3);
+        iVar5 = 1;
+        uVar3 = thunk_FUN_004ad650(this_00->field_0603);
+        Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this_00->field_0211,uVar3,iVar5);
       }
       if ((*(int *)(&DAT_00792778 + this_00->field_0235 * 4) == 0) ||
-         (iVar3 = thunk_FUN_004e81b0((int)this_00->field_0024,this_00->field_0235,0), iVar3 == 0)) {
-        puVar6 = (undefined *)0x5;
+         (iVar5 = thunk_FUN_004e81b0((int)this_00->field_0024,this_00->field_0235,0), iVar5 == 0)) {
+        puVar4 = (undefined *)0x5;
       }
       else {
-        puVar6 = (undefined *)thunk_FUN_004e81b0((int)this_00->field_0024,this_00->field_0235,0);
+        puVar4 = (undefined *)thunk_FUN_004e81b0((int)this_00->field_0024,this_00->field_0235,0);
       }
-      TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this_00,puVar6);
+      TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this_00,puVar4);
       this_00->field_046C = CASE_5;
-      uVar5 = g_playSystem_00802A38->field_00E4;
+      uVar3 = g_playSystem_00802A38->field_00E4;
       this_00->field_0490 = 0;
-      this_00->field_049C = uVar5;
+      this_00->field_049C = uVar3;
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
     break;
   case CASE_5:
     if ((local_20->field_048C != 0) &&
-       (iVar3 = STPlaySystemC::sub_006E62D0
+       (iVar5 = STPlaySystemC::sub_006E62D0
                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)local_20->field_0470
-                           ,(int *)&local_8), iVar3 == 0)) {
+                           ,(int *)&local_8), iVar5 == 0)) {
       thunk_FUN_004e95c0(local_8,(STBoatC *)this_00);
     }
     this_00->field_046C = 0;

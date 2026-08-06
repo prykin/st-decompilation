@@ -19,7 +19,8 @@ void __thiscall SIDTy::NoneSID(SIDTy *this)
   DWORD DVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int iVar5;
+  uint *puVar6;
   InternalExceptionFrame local_50;
   SIDTy *local_c;
   int local_8;
@@ -47,15 +48,15 @@ void __thiscall SIDTy::NoneSID(SIDTy *this)
     FindNextChangeNotification(this_00->field_1CC4);
     PrepFiles(this_00);
     this_00->field_002D = 5;
-    puVar5 = this_00->field_1AF1;
-    iVar3 = 2;
+    puVar6 = this_00->field_1AF1;
+    iVar5 = 2;
     do {
-      if (*puVar5 != 0) {
-        FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x1d);
+      if (*puVar6 != 0) {
+        FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x1d);
       }
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
+      puVar6 = puVar6 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
   }
   if (this_00->field_0065 == '\x03') {
     if (this_00->field_1A68 < this_00->field_1A6C + -1) {

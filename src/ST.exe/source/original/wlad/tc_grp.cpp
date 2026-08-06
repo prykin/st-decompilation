@@ -78,8 +78,9 @@ uint __thiscall st::fn_00423520(STGroupC *this,int param_1)
 {
   STGroupC *pSVar2;
   int iVar3;
-  STGameObjC *pSVar4;
+  STGameObjC *pSVar3;
   int iVar5;
+  int iVar4;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   uint uVar6;
@@ -102,15 +103,15 @@ uint __thiscall st::fn_00423520(STGroupC *this,int param_1)
       do {
         st::fn_006ACC70((DArrayTy *)pSVar2->field_0029,uVar6,local_c);
         if (STPiece<0,2>(local_c) != 0xffff) {
-          pSVar4 = st::fn_004028BA
+          pSVar3 = st::fn_004028BA
                              (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_c),CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar3 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\tc_grp.cpp",0x66);
           }
-          iVar3 = (*pSVar4->vtable->vfunc_2C)();
-          if (iVar3 == param_1) {
+          iVar5 = (*pSVar3->vtable->vfunc_2C)();
+          if (iVar5 == param_1) {
             local_8 = local_8 + 1;
           }
         }
@@ -121,9 +122,9 @@ uint __thiscall st::fn_00423520(STGroupC *this,int param_1)
     return STReplaceLowWord((uint32_t)(local_58.previous), (uint16_t)((undefined2)local_8));
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x6b,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x6b,0,iVar3,"%s",
                              "STGroupC::GetTOBJQty");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x6c);
@@ -142,8 +143,9 @@ uint * __thiscall st::fn_00423660(STGroupC *this,int param_1)
 {
   STGroupC *pSVar2;
   int iVar3;
-  STGameObjC *pSVar4;
+  STGameObjC *pSVar3;
   int iVar5;
+  int iVar4;
   uint *puVar6;
   uint index;
   InternalExceptionFrame local_58;
@@ -165,15 +167,15 @@ uint * __thiscall st::fn_00423660(STGroupC *this,int param_1)
       do {
         st::fn_006ACC70((DArrayTy *)pSVar2->field_0029,index,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
-          pSVar4 = st::fn_004028BA
+          pSVar3 = st::fn_004028BA
                              (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar3 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\tc_grp.cpp",0x81);
           }
-          iVar3 = (*pSVar4->vtable->vfunc_2C)();
-          if (iVar3 == param_1) {
+          iVar5 = (*pSVar3->vtable->vfunc_2C)();
+          if (iVar5 == param_1) {
             st::fn_006AE1C0(local_c,local_8);
           }
         }
@@ -184,9 +186,9 @@ uint * __thiscall st::fn_00423660(STGroupC *this,int param_1)
     return &local_c->flags;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x86,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x86,0,iVar3,"%s",
                              "STGroupC::GetTOBJList");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x87);
@@ -412,7 +414,8 @@ int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
 {
   STGroupC *this_00;
   int iVar2;
-  uint *puVar3;
+  uint *puVar2;
+  int iVar3;
   int iVar4;
   uint index;
   void *element;
@@ -428,9 +431,9 @@ int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x17c,0,iVar2,"%s",
+    iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x17c,0,iVar2,"%s",
                                "STGroupC::GetMessage");
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x17d);
@@ -438,17 +441,17 @@ int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
   }
   st::fn_006E5FD0(local_8,message);
   if (message->id == MESS_ID_CREATE) {
-    iVar2 = (message->arg0).i32;
-    if (*(uint *)(iVar2 + 0xc) < 2) {
-      this_00->field_0020 = *(undefined4 *)(iVar2 + 0x20);
-      this_00->field_0024 = *(char *)(iVar2 + 4);
-      this_00->field_0025 = *(undefined2 *)(iVar2 + 0x14);
-      this_00->field_0027 = *(undefined2 *)(iVar2 + 0x18);
-      puVar3 = st::fn_006AE310(nullptr,5,2,5,0x4045c5);
-      this_00->field_0029 = puVar3;
-      local_c = *(int *)(iVar2 + 0x1c);
+    iVar4 = (message->arg0).i32;
+    if (*(uint *)(iVar4 + 0xc) < 2) {
+      this_00->field_0020 = *(undefined4 *)(iVar4 + 0x20);
+      this_00->field_0024 = *(char *)(iVar4 + 4);
+      this_00->field_0025 = *(undefined2 *)(iVar4 + 0x14);
+      this_00->field_0027 = *(undefined2 *)(iVar4 + 0x18);
+      puVar2 = st::fn_006AE310(nullptr,5,2,5,0x4045c5);
+      this_00->field_0029 = puVar2;
+      local_c = *(int *)(iVar4 + 0x1c);
       if (0 < local_c) {
-        element = (void *)(iVar2 + 0x24);
+        element = (void *)(iVar4 + 0x24);
         do {
           st::fn_006AE140((DArrayTy *)this_00->field_0029,index,element);
           index = index + 1;
@@ -459,8 +462,8 @@ int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
                 (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
       this_00->field_0031 = this_00->field_0018 * DAT_00808754;
     }
-    else if (*(uint *)(iVar2 + 0xc) == 2) {
-      st::fn_00404F48(this_00,iVar2);
+    else if (*(uint *)(iVar4 + 0xc) == 2) {
+      st::fn_00404F48(this_00,iVar4);
       st::fn_004059D9
                 (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
       g_currentExceptionFrame = local_50.previous;
@@ -494,7 +497,8 @@ int __thiscall st::fn_004240F0(STGroupC *this,int *param_1)
 
 {
   int iVar2;
-  void *pvVar3;
+  void *pvVar2;
+  int iVar3;
   int iVar4;
   uint uVar5;
   STGroupC *pSVar6;
@@ -524,57 +528,57 @@ int __thiscall st::fn_004240F0(STGroupC *this,int *param_1)
       st::fn_006AB060(&local_c);
       *param_1 = *param_1 + local_8;
     }
-    pvVar3 = st::fn_006AAC70(*param_1);
+    pvVar2 = st::fn_006AAC70(*param_1);
     local_8 = 0;
-    STField<int>(pvVar3,4) = (int)pSVar6->field_0024;
-    STField<undefined4>(pvVar3,0xc) = 2;
-    STField<undefined4>(pvVar3,0x14) = pSVar6->field_0020;
-    STField<undefined2>(pvVar3,0x18) = pSVar6->field_0025;
-    STField<undefined2>(pvVar3,0x1a) = pSVar6->field_0027;
-    STField<undefined4>(pvVar3,0x2c) = pSVar6->field_0031;
-    STField<undefined4>(pvVar3,0x30) = pSVar6->field_0035;
-    STField<undefined4>(pvVar3,0x34) = pSVar6->field_0039;
-    local_18 = pvVar3;
+    STField<int>(pvVar2,4) = (int)pSVar6->field_0024;
+    STField<undefined4>(pvVar2,0xc) = 2;
+    STField<undefined4>(pvVar2,0x14) = pSVar6->field_0020;
+    STField<undefined2>(pvVar2,0x18) = pSVar6->field_0025;
+    STField<undefined2>(pvVar2,0x1a) = pSVar6->field_0027;
+    STField<undefined4>(pvVar2,0x2c) = pSVar6->field_0031;
+    STField<undefined4>(pvVar2,0x30) = pSVar6->field_0035;
+    STField<undefined4>(pvVar2,0x34) = pSVar6->field_0039;
+    local_18 = pvVar2;
     if (pSVar6->field_0029 == nullptr) {
       local_8 = 0;
-      STField<undefined4>(pvVar3,0x1c) = 0xffffffff;
-      STField<undefined4>(pvVar3,0x20) = 0;
+      STField<undefined4>(pvVar2,0x1c) = 0xffffffff;
+      STField<undefined4>(pvVar2,0x20) = 0;
     }
     else {
       local_c = (undefined4 *)st::fn_006B0020(pSVar6->field_0029,(int *)&local_8);
       puVar7 = (byte *)(local_c);
-      puVar8 = (byte *)((int)pvVar3 + 0x40);
+      puVar8 = (byte *)((int)pvVar2 + 0x40);
       memmove(puVar8, puVar7, local_8); /* compiler REP MOVS byte copy */
       uVar5 = 0;
-      STField<undefined4>(pvVar3,0x1c) = 0x40;
-      STField<uint>(pvVar3,0x20) = local_8;
+      STField<undefined4>(pvVar2,0x1c) = 0x40;
+      STField<uint>(pvVar2,0x20) = local_8;
       st::fn_006AB060(&local_c);
       pSVar6 = local_10;
     }
-    iVar2 = local_8 + 0x40;
+    iVar4 = local_8 + 0x40;
     if (pSVar6->field_002D == nullptr) {
-      STField<undefined4>(pvVar3,0x24) = 0xffffffff;
-      STField<uint>(pvVar3,0x28) = local_8;
+      STField<undefined4>(pvVar2,0x24) = 0xffffffff;
+      STField<uint>(pvVar2,0x28) = local_8;
     }
     else {
-      local_14 = iVar2;
+      local_14 = iVar4;
       local_c = (undefined4 *)st::fn_006B0020(pSVar6->field_002D,(int *)&local_8);
       puVar7 = (byte *)(local_c);
-      puVar8 = (byte *)(iVar2 + (int)pvVar3);
+      puVar8 = (byte *)(iVar4 + (int)pvVar2);
       memmove(puVar8, puVar7, local_8); /* compiler REP MOVS byte copy */
-      STField<int>(pvVar3,0x24) = local_14;
-      STField<uint>(pvVar3,0x28) = local_8;
+      STField<int>(pvVar2,0x24) = local_14;
+      STField<uint>(pvVar2,0x28) = local_8;
       st::fn_006AB060(&local_c);
     }
-    STField<undefined4>(pvVar3,0x38) = 0xffffffff;
-    STField<undefined4>(pvVar3,0x3c) = 0;
+    STField<undefined4>(pvVar2,0x38) = 0xffffffff;
+    STField<undefined4>(pvVar2,0x3c) = 0;
     g_currentExceptionFrame = local_5c.previous;
-    return (int)pvVar3;
+    return (int)pvVar2;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x1b9,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x1b9,0,iVar2,"%s",
                              "STGroupC::SaveGrpData");
-  if (iVar4 != 0) {
+  if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x1ba);
@@ -590,11 +594,12 @@ int __thiscall st::fn_004240F0(STGroupC *this,int *param_1)
 void __thiscall st::fn_00424360(STGroupC *this,int param_1)
 
 {
-  STGroupC *pSVar2;
-  AnonShape_00424360_8159BFF1 *pAVar3;
+  int iVar1;
+  STGroupC *pSVar3;
+  AnonShape_00424360_8159BFF1 *pAVar4;
   int iVar4;
   uint *puVar5;
-  int iVar6;
+  int iVar5;
   InternalExceptionFrame local_50;
   STGroupC *local_c;
   AnonShape_00424360_8159BFF1 *local_8;
@@ -604,13 +609,13 @@ void __thiscall st::fn_00424360(STGroupC *this,int param_1)
   g_currentExceptionFrame = &local_50;
   local_c = this;
   iVar4 = st::fn_0072D7F0(local_50.jumpBuffer,0);
-  pAVar3 = local_8;
-  pSVar2 = local_c;
+  pAVar4 = local_8;
+  pSVar3 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x1d5,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x1d5,0,iVar4,"%s",
                                "STGroupC::RestoreGrpData");
-    if (iVar6 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40(iVar4,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x1d6);
@@ -629,16 +634,16 @@ void __thiscall st::fn_00424360(STGroupC *this,int param_1)
   else {
     puVar5 = st::fn_006B00C0(nullptr,(uint *)(&local_8->field_0x0 + local_8->field_001C),
                           thunk_FUN_00423e30);
-    pSVar2->field_0029 = puVar5;
+    pSVar3->field_0029 = puVar5;
   }
-  iVar4 = *(int *)&pAVar3->field_0x24;
-  if (iVar4 != -1) {
-    puVar5 = st::fn_006B00C0(nullptr,(uint *)(&pAVar3->field_0x0 + iVar4),thunk_FUN_00423e30);
-    pSVar2->field_002D = puVar5;
+  iVar1 = *(int *)&pAVar4->field_0x24;
+  if (iVar1 != -1) {
+    puVar5 = st::fn_006B00C0(nullptr,(uint *)(&pAVar4->field_0x0 + iVar1),thunk_FUN_00423e30);
+    pSVar3->field_002D = puVar5;
     g_currentExceptionFrame = local_50.previous;
     return;
   }
-  pSVar2->field_002D = nullptr;
+  pSVar3->field_002D = nullptr;
   g_currentExceptionFrame = local_50.previous;
   return;
 }

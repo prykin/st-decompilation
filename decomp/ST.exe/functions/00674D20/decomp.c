@@ -10,26 +10,29 @@ void __cdecl FUN_00674d20(char *param_1)
 {
   char cVar1;
   uint uVar2;
+  uint uVar3;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;
   char local_108 [260];
+  char *pcVar5_mg0;
 
   if ((DAT_0081196c != 0) && (DAT_00811970 != nullptr)) {
     uVar2 = 0xffffffff;
     do {
-      pcVar5 = param_1;
+      pcVar5_mg0 = param_1;
       if (uVar2 == 0) break;
       uVar2 = uVar2 - 1;
-      pcVar5 = param_1 + 1;
+      pcVar5_mg0 = param_1 + 1;
       cVar1 = *param_1;
-      param_1 = pcVar5;
+      param_1 = pcVar5_mg0;
     } while (cVar1 != '\0');
     uVar2 = ~uVar2;
-    pcVar5 = pcVar5 + -uVar2;
+    pcVar5 = pcVar5_mg0 + -uVar2;
     pcVar7 = local_108;
     memmove(pcVar7, pcVar5, uVar2); /* compiler REP MOVS byte copy */
+    uVar3 = 0;
     uVar2 = 0xffffffff;
     pcVar5 = &DAT_007c8ff4;
     do {

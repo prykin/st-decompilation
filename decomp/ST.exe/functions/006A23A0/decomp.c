@@ -6,8 +6,9 @@ FUN_006a23a0(int *param_1,uint param_2,int param_3,int param_4,short *param_5,un
             undefined4 param_7)
 
 {
-  int iVar1;
   int iVar2;
+  int iVar1;
+  int iVar3;
   undefined1 local_10 [8];
   int local_8;
 
@@ -23,23 +24,23 @@ FUN_006a23a0(int *param_1,uint param_2,int param_3,int param_4,short *param_5,un
       local_8 = 1;
     }
   }
-  iVar2 = param_4;
+  iVar3 = param_4;
   if ((int)(param_4 - (((ushort)param_5[2] & 0xf00) >> 8)) < param_4) {
     do {
-      iVar1 = thunk_FUN_006a20e0(param_1,param_2,param_3,iVar2,0xff);
-      if ((((iVar1 != 0) && (-1 < (int)param_2)) && ((int)param_2 < *param_1)) &&
-         (((-1 < param_3 && (param_3 < param_1[1])) && ((-1 < iVar2 && (iVar2 < 6)))))) {
-        iVar1 = thunk_FUN_006a1370(param_1,param_2,param_3,iVar2,(int)local_10);
+      iVar2 = thunk_FUN_006a20e0(param_1,param_2,param_3,iVar3,0xff);
+      if ((((iVar2 != 0) && (-1 < (int)param_2)) && ((int)param_2 < *param_1)) &&
+         (((-1 < param_3 && (param_3 < param_1[1])) && ((-1 < iVar3 && (iVar3 < 6)))))) {
+        iVar1 = thunk_FUN_006a1370(param_1,param_2,param_3,iVar3,(int)local_10);
         if ((short)iVar1 != 0) {
           local_8 = 0xff;
         }
-        iVar1 = thunk_FUN_006a2920(param_1,param_2,param_3,iVar2,local_8,param_6,param_7);
-        if (iVar1 == 0) {
+        iVar2 = thunk_FUN_006a2920(param_1,param_2,param_3,iVar3,local_8,param_6,param_7);
+        if (iVar2 == 0) {
           return 0;
         }
       }
-      iVar2 = iVar2 + -1;
-    } while ((int)(param_4 - (((ushort)param_5[2] & 0xf00) >> 8)) < iVar2);
+      iVar3 = iVar3 + -1;
+    } while ((int)(param_4 - (((ushort)param_5[2] & 0xf00) >> 8)) < iVar3);
   }
   return 1;
 }

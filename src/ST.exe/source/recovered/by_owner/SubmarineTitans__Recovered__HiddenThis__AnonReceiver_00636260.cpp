@@ -18,7 +18,8 @@ st::fn_00636260
 {
   int iVar1;
   DArrayTy *array;
-  uint uVar2;
+  uint uVar1;
+  int iVar2;
   int *piVar3;
   uint uVar5;
   longlong lVar6;
@@ -76,9 +77,9 @@ LAB_006362c5:
           param_4 = param_6;
           uVar5 = param_1;
           do {
-            iVar1 = *(int *)&this->field_0x2c;
-            if (uVar5 < *(uint *)(iVar1 + 0xc)) {
-              piVar3 = (int *)(*(int *)(iVar1 + 8) * uVar5 + *(int *)(iVar1 + 0x1c));
+            iVar2 = *(int *)&this->field_0x2c;
+            if (uVar5 < *(uint *)(iVar2 + 0xc)) {
+              piVar3 = (int *)(*(int *)(iVar2 + 8) * uVar5 + *(int *)(iVar2 + 0x1c));
             }
             else {
               piVar3 = nullptr;
@@ -88,8 +89,8 @@ LAB_006362c5:
               piVar3[1] = -1;
             }
             else {
-              uVar2 = st::fn_00402A22(*(int *)&local_8->field_0x4);
-              piVar3[1] = uVar2;
+              uVar1 = st::fn_00402A22(*(int *)&local_8->field_0x4);
+              piVar3[1] = uVar1;
             }
             STField<undefined4>(piVar3,0x12) = local_14;
             STField<undefined4>(piVar3,0xe) = local_10;
@@ -200,7 +201,7 @@ st::fn_00636FC0
     if (local_10 < 0) {
       return local_8;
     }
-    if (pVVar3->field_0030 <= local_10) {
+    if ((int)pVVar3->field_0030 <= local_10) {
       return local_8;
     }
     local_14 = g_centeredOffsets5[local_c] + local_14;

@@ -148,7 +148,7 @@ int __thiscall st::fn_00604350(STExplosion *this)
             ((st::fn_00403F53
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar1,iVar5,
                          &local_18,&local_1c), pVVar4 = g_visibleClass_00802A88, local_8 < 0 ||
-             ((((4 < local_8 || (local_18 < 0)) || (pVVar3->field_0030 <= local_18)) ||
+             ((((4 < local_8 || (local_18 < 0)) || ((int)pVVar3->field_0030 <= local_18)) ||
               ((iVar5 = g_centeredOffsets5[local_8] + local_1c, iVar5 < 0 ||
                (pVVar3->field_0034 <= iVar5)))))))) || (pVVar3->field_004C == nullptr)) ||
           ((pVVar3->field_004C[local_18 + iVar5 * pVVar3->field_0030] != 0 || (DAT_0080874d == -1)))
@@ -156,7 +156,7 @@ int __thiscall st::fn_00604350(STExplosion *this)
                    (((st::fn_00403F53
                                 (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c
                                  ,iVar7,&local_1c,&local_18), pVVar3 = g_visibleClass_00802A88,
-                     local_1c < 0 || (pVVar4->field_0030 <= local_1c)) ||
+                     local_1c < 0 || ((int)pVVar4->field_0030 <= local_1c)) ||
                     (iVar5 = g_centeredOffsets5[local_8] + local_18, iVar5 < 0)))) ||
                   (((pVVar4->field_0034 <= iVar5 || (pVVar4->field_004C == nullptr)) ||
                    (pVVar4->field_004C[local_1c + iVar5 * pVVar4->field_0030] != 0)))) ||
@@ -165,7 +165,7 @@ int __thiscall st::fn_00604350(STExplosion *this)
                                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10
                                 ,iVar7,&local_1c,&local_18), iVar1 = local_8, iVar5 = local_14,
                     pVVar4 = g_visibleClass_00802A88, local_1c < 0 ||
-                    (((pVVar3->field_0030 <= local_1c ||
+                    ((((int)pVVar3->field_0030 <= local_1c ||
                       (iVar7 = g_centeredOffsets5[local_8] + local_18, iVar7 < 0)) ||
                      (pVVar3->field_0034 <= iVar7)))))) ||
                   ((pVVar3->field_004C == nullptr ||
@@ -175,7 +175,7 @@ int __thiscall st::fn_00604350(STExplosion *this)
                    (st::fn_00403F53
                               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,
                                local_14,&local_1c,&local_18), local_1c < 0)) ||
-                  ((pVVar4->field_0030 <= local_1c ||
+                  (((int)pVVar4->field_0030 <= local_1c ||
                    ((((local_18 = g_centeredOffsets5[iVar1] + local_18, local_18 < 0 ||
                       (pVVar4->field_0034 <= local_18)) || (pVVar4->field_004C == nullptr)) ||
                     ((pVVar4->field_004C[local_1c + local_18 * pVVar4->field_0030] != 0 ||
@@ -294,11 +294,13 @@ st::fn_00606050
   int local_EAX_29;
   int iVar2;
   uint uVar3;
+  uint uVar2;
   uint uVar4;
   int iVar5;
   int iVar6;
-  uint *puVar8;
-  STMessage *pSVar9;
+  int iVar7;
+  uint *puVar9;
+  STMessage *pSVar10;
   uint local_100 [20];
   STMessage local_b0;
   int local_90 [6];
@@ -329,7 +331,7 @@ st::fn_00606050
   int local_c;
   char local_5;
 
-  iVar5 = 0;
+  iVar6 = 0;
   local_5 = '\0';
   local_EAX_29 = st::fn_004049B7((char)param_8);
   local_18 = (int)(byte)local_EAX_29;
@@ -350,14 +352,14 @@ st::fn_00606050
   }
   uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
   this->field_001C = uVar3;
-  iVar6 = (uVar3 >> 0x10) % (local_78 + 1U) + 9;
-  local_c = iVar6;
-  iVar2 = st::fn_00403D8C((STExplosionC *)this,iVar6);
+  iVar7 = (uVar3 >> 0x10) % (local_78 + 1U) + 9;
+  local_c = iVar7;
+  iVar2 = st::fn_00403D8C((STExplosionC *)this,iVar7);
   this->field_0269 = iVar2;
-  if (iVar2 != iVar6) {
+  if (iVar2 != iVar7) {
     return -1;
   }
-  iVar6 = 0;
+  iVar5 = 0;
   memset(local_90, 0, 0x18); /* compiler bulk-zero initialization */
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_7 = 0;
@@ -379,14 +381,14 @@ st::fn_00606050
         uVar3 = (uint)local_10[(uVar3 >> 0x10) % (uint)bVar1 + 3];
 LAB_00606189:
         if (local_90[uVar3 & 0x7f] != 0) {
-          iVar2 = 0;
+          iVar7 = 0;
           do {
-            if (4 < iVar2) break;
+            if (4 < iVar7) break;
             uVar3 = uVar3 + 1;
             if (4 < ((byte)uVar3 & 0x7f)) {
               uVar3 = uVar3 & 0x80;
             }
-            iVar2 = iVar2 + 1;
+            iVar7 = iVar7 + 1;
           } while (local_90[uVar3 & 0x7f] != 0);
         }
         *param_5 = uVar3;
@@ -396,11 +398,11 @@ LAB_00606189:
            (uVar4 & 0x10000) != 0)) {
           *param_5 = uVar3 | 0x100;
         }
-        iVar6 = param_7 + 1;
+        iVar5 = param_7 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = param_5 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_7 = iVar6;
+        param_7 = iVar5;
       }
       local_20 = local_20 + -1;
     } while (local_20 != 0);
@@ -408,30 +410,30 @@ LAB_00606189:
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_5 = nullptr;
   if (0 < local_1c) {
-    puVar8 = local_100 + iVar6;
+    puVar9 = local_100 + iVar5;
     do {
-      if (iVar6 == local_c) break;
+      if (iVar5 == local_c) break;
       bVar1 = local_10[1];
       if (bVar1 < 2) {
         if (bVar1 == 1) {
-          *puVar8 = 0;
+          *puVar9 = 0;
           goto LAB_00606282;
         }
       }
       else {
         uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar3;
-        *puVar8 = (uint)local_10[(uVar3 >> 0x10) % (uint)bVar1 + 0xd];
+        *puVar9 = (uint)local_10[(uVar3 >> 0x10) % (uint)bVar1 + 0xd];
 LAB_00606282:
         if (((local_5 == '\0') && (local_18 != 3)) &&
            (uVar3 = this->field_001C * 0x41c64e6d + 0x3039, this->field_001C = uVar3,
            (uVar3 & 0x10000) != 0)) {
-          *puVar8 = *puVar8 | 0x100;
+          *puVar9 = *puVar9 | 0x100;
         }
-        iVar6 = param_7 + 1;
-        puVar8 = puVar8 + 1;
+        iVar5 = param_7 + 1;
+        puVar9 = puVar9 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_7 = iVar6;
+        param_7 = iVar5;
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = (uint *)((int)param_5 + 1);
@@ -439,37 +441,37 @@ LAB_00606282:
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_5 = nullptr;
-  puVar8 = local_100 + iVar6;
+  puVar9 = local_100 + iVar5;
   do {
-    if (iVar6 == local_c) break;
+    if (iVar5 == local_c) break;
     bVar1 = local_10[2];
     if (bVar1 < 2) {
       if (bVar1 == 1) {
-        *puVar8 = 0;
+        *puVar9 = 0;
         goto LAB_00606321;
       }
     }
     else {
       uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar3;
-      *puVar8 = (uint)local_10[(uVar3 >> 0x10) % (uint)bVar1 + 0x19];
+      *puVar9 = (uint)local_10[(uVar3 >> 0x10) % (uint)bVar1 + 0x19];
 LAB_00606321:
-      iVar6 = param_7 + 1;
-      puVar8 = puVar8 + 1;
+      iVar5 = param_7 + 1;
+      puVar9 = puVar9 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_7 = iVar6;
+      param_7 = iVar5;
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (uint *)((int)param_5 + 1);
   } while ((int)param_5 < 0x14);
-  pSVar9 = &local_b0;
-  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pSVar9->unknown_00 = 0;
-    pSVar9 = (STMessage *)&pSVar9->unknown_04;
+  pSVar10 = &local_b0;
+  for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
+    pSVar10->unknown_00 = 0;
+    pSVar10 = (STMessage *)&pSVar10->unknown_04;
   }
   local_b0.id = MESS_ID_CREATE;
-  if (iVar6 < local_c) {
-    local_c = iVar6;
+  if (iVar5 < local_c) {
+    local_c = iVar5;
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_5 = nullptr;
@@ -512,9 +514,9 @@ LAB_006063f9:
           local_2f = 1;
         }
         else {
-          iVar2 = this->field_001C * 0x41c64e6d + 0x3039;
-          this->field_001C = iVar2;
-          local_2f = (byte)((uint)iVar2 >> 0x10) & 1;
+          iVar7 = this->field_001C * 0x41c64e6d + 0x3039;
+          this->field_001C = iVar7;
+          local_2f = (byte)((uint)iVar7 >> 0x10) & 1;
         }
       }
       else {
@@ -541,15 +543,15 @@ LAB_006063f9:
           uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
           this->field_001C = uVar3;
           uVar3 = (uVar3 >> 0x10) % (local_14 + 1U) >> 3;
-          iVar5 = local_14 / 2;
+          iVar6 = local_14 / 2;
         }
         else {
 LAB_006064b4:
-          iVar5 = this->field_001C;
+          iVar6 = this->field_001C;
 LAB_00606606:
-          uVar3 = iVar5 * 0x41c64e6d + 0x3039;
+          uVar3 = iVar6 * 0x41c64e6d + 0x3039;
           this->field_001C = uVar3;
-          iVar5 = 0x32;
+          iVar6 = 0x32;
           uVar3 = (uVar3 >> 0x10) % 0x65;
         }
         break;
@@ -557,13 +559,13 @@ LAB_00606606:
       case 5:
         if ((0x5a < local_40) && ((local_40 < 0xb4 || (0x10e < local_40)))) {
 LAB_006065f8:
-          iVar5 = this->field_001C;
+          iVar6 = this->field_001C;
           goto LAB_00606606;
         }
         uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar3;
         uVar3 = (uVar3 >> 0x10) % (local_14 + 1U) >> 3;
-        iVar5 = local_14 / 2;
+        iVar6 = local_14 / 2;
         break;
       case 2:
       case 6:
@@ -571,7 +573,7 @@ LAB_006065f8:
         goto LAB_006064b4;
         uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar3;
-        iVar5 = local_14 / 2 - ((uVar3 >> 0x10) % (local_14 + 1U) >> 3);
+        iVar6 = local_14 / 2 - ((uVar3 >> 0x10) % (local_14 + 1U) >> 3);
         goto switchD_00606490_default;
       case 3:
       case 7:
@@ -580,17 +582,17 @@ LAB_006065f8:
         uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar3;
         uVar3 = (uVar3 >> 0x10) % (local_14 + 1U) >> 3;
-        iVar5 = local_14 / 2;
+        iVar6 = local_14 / 2;
         break;
       default:
         goto switchD_00606490_default;
       }
-      iVar5 = iVar5 - uVar3;
+      iVar6 = iVar6 - uVar3;
 switchD_00606490_default:
-      iVar2 = st::fn_006AFF50(local_40);
-      iVar6 = st::fn_006AFF5B(local_40);
-      local_4c = (iVar6 * iVar5) / 10000 + param_2;
-      local_50 = (iVar2 * iVar5) / 10000 + param_1;
+      iVar7 = st::fn_006AFF50(local_40);
+      uVar2 = st::fn_006AFF5B(local_40);
+      local_4c = (int)(uVar2 * iVar6) / 10000 + param_2;
+      local_50 = (iVar7 * iVar6) / 10000 + param_1;
       uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar3;
       local_48 = param_3;
@@ -601,15 +603,15 @@ switchD_00606490_default:
         uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar3;
         local_44 = (uVar3 >> 0x10) % 0x15;
-        iVar2 = 100;
+        iVar7 = 100;
       }
       else {
         uVar3 = uVar3 * 0x41c64e6d + 0x3039;
         this->field_001C = uVar3;
         local_44 = (uVar3 >> 0x10) % 0x1f;
-        iVar2 = 0xf;
+        iVar7 = 0xf;
       }
-      local_44 = iVar2 - local_44;
+      local_44 = iVar7 - local_44;
       switch(local_5c & 0xff) {
       case 0:
       case 1:

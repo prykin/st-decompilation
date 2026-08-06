@@ -18,15 +18,17 @@ MReportTy::OutTGlProc
           int param_5,int param_6,int param_7,int param_8)
 
 {
+  int iVar3;
   int iVar2;
   int uVar3;
-  undefined4 *puVar3;
-  char *pcVar4;
+  undefined4 *puVar4;
   char *pcVar5;
+  char *pcVar6;
   UINT resourceId;
   int iVar6;
   uint uVar7;
   uint uVar8;
+  int iVar9;
   InternalExceptionFrame local_50;
   int local_c;
   RecoveredRecord_MReportTy_005BD4B0 *local_8;
@@ -36,57 +38,57 @@ MReportTy::OutTGlProc
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-    iVar6 = local_c;
+    iVar3 = local_c;
     if (iVar2 == 0) {
-      iVar2 = 1;
+      iVar9 = 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      puVar3 = (undefined4 *)(*(int *)(local_c + 0x5d) + 0x28);
+      puVar4 = (undefined4 *)(*(int *)(local_c + 0x5d) + 0x28);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar3 = FUN_006b4fe0(*(int *)(local_c + 0x5d));
       local_8 = (RecoveredRecord_MReportTy_005BD4B0 *)
-                FUN_006b50c0(param_6,param_7,(uint)*(ushort *)(*(int *)(iVar6 + 0x5d) + 0xe),uVar3,
-                             puVar3,iVar2);
+                FUN_006b50c0(param_6,param_7,(uint)*(ushort *)(*(int *)(iVar3 + 0x5d) + 0xe),uVar3,
+                             puVar4,iVar9);
       uVar8 = local_8->field_0014;
       if (uVar8 == 0) {
         uVar8 = ((uint)local_8->field_000E * local_8->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
                 local_8->field_0008;
       }
-      puVar3 = (undefined4 *)FUN_006b4fa0((int *)local_8);
+      puVar4 = (undefined4 *)FUN_006b4fa0((int *)local_8);
       for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *puVar3 = 0x4c4c4c4c;
-        puVar3 = puVar3 + 1;
+        *puVar4 = 0x4c4c4c4c;
+        puVar4 = puVar4 + 1;
       }
       for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *(undefined1 *)puVar3 = 0x4c;
-        puVar3 = (undefined4 *)((int)puVar3 + 1);
+        *(undefined1 *)puVar4 = 0x4c;
+        puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
       FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)local_8,0,2,2,local_8->field_0004 + -4,
                    local_8->field_0008 + -4,0x18,0xd);
-      ccFntTy::SetSurf(*(ccFntTy **)(iVar6 + 0x83),(int)local_8,0,5,5,local_8->field_0004 + -10,0xf);
-      if (*(char *)(iVar6 + 0x67) == '\0') {
-        pcVar4 = LoadResourceString(0x2711,g_hINSTANCE_00807618);
+      ccFntTy::SetSurf(*(ccFntTy **)(iVar3 + 0x83),(int)local_8,0,5,5,local_8->field_0004 + -10,0xf);
+      if (*(char *)(iVar3 + 0x67) == '\0') {
+        pcVar5 = LoadResourceString(0x2711,g_hINSTANCE_00807618);
       }
       else {
-        pcVar4 = (char *)&DAT_0080c736;
+        pcVar5 = (char *)&DAT_0080c736;
       }
-      pcVar5 = LoadResourceString(0x2445,g_hINSTANCE_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,"&0%s: &2%s",pcVar5,pcVar4);
-      ccFntTy::WrStr(*(ccFntTy **)(iVar6 + 0x83),&DAT_0080f33a,10,-1,0);
-      ccFntTy::SetSurf(*(ccFntTy **)(iVar6 + 0x83),(int)local_8,0,5,0x19,local_8->field_0004 + -10,
+      pcVar6 = LoadResourceString(0x2445,g_hINSTANCE_00807618);
+      wsprintfA((LPSTR)&DAT_0080f33a,"&0%s: &2%s",pcVar6,pcVar5);
+      ccFntTy::WrStr(*(ccFntTy **)(iVar3 + 0x83),(char *)&DAT_0080f33a,10,-1,0);
+      ccFntTy::SetSurf(*(ccFntTy **)(iVar3 + 0x83),(int)local_8,0,5,0x19,local_8->field_0004 + -10,
                        0xf);
-      if (*(char *)(iVar6 + 0x67) == '\0') {
+      if (*(char *)(iVar3 + 0x67) == '\0') {
         resourceId = 0x2711;
       }
       else {
         resourceId = 0x2339 - (DAT_0080c522 != 0);
       }
-      pcVar4 = LoadResourceString(resourceId,g_hINSTANCE_00807618);
-      pcVar5 = LoadResourceString(0x2337,g_hINSTANCE_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,"&0%s &2%s",pcVar5,pcVar4);
-      ccFntTy::WrStr(*(ccFntTy **)(iVar6 + 0x83),&DAT_0080f33a,10,-1,0);
+      pcVar5 = LoadResourceString(resourceId,g_hINSTANCE_00807618);
+      pcVar6 = LoadResourceString(0x2337,g_hINSTANCE_00807618);
+      wsprintfA((LPSTR)&DAT_0080f33a,"&0%s &2%s",pcVar6,pcVar5);
+      ccFntTy::WrStr(*(ccFntTy **)(iVar3 + 0x83),(char *)&DAT_0080f33a,10,-1,0);
       Library::DKW::DDX::FUN_006c5000
                 (param_1,param_4,param_5,(int)local_8,0,0,0,local_8->field_0004,local_8->field_0008,
-                 iVar6 + 0xa3,0x4c);
+                 iVar3 + 0xa3,0x4c);
       FreeAndNull(&local_8);
       g_currentExceptionFrame = local_50.previous;
       return;

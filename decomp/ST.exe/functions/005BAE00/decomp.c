@@ -22,17 +22,21 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
 {
   byte bVar1;
   uint uVar2;
+  int iVar3;
   MMsgTy *this_00;
-  StartSystemTy *pSVar3;
-  CursorClassTy *pCVar5;
+  StartSystemTy *pSVar4;
+  CursorClassTy *pCVar6;
   PrividerTy *this_01;
-  short *psVar6;
-  DWORD DVar7;
+  short *psVar7;
+  DWORD DVar8;
+  int local_EAX_66;
+  int iVar10;
+  int local_EAX_1381;
   int iVar8;
   int iVar9;
-  uint *puVar10;
-  char *pcVar11;
-  UINT UVar13;
+  uint *puVar11;
+  char *pcVar12;
+  UINT UVar14;
   char local_c8 [2];
   undefined1 local_c6;
   InternalExceptionFrame local_a0;
@@ -54,18 +58,18 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
 
   local_8 = 1;
   local_20 = this;
-  DVar7 = timeGetTime();
-  this->field_0061 = DVar7;
+  DVar8 = timeGetTime();
+  this->field_0061 = DVar8;
   local_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a0;
-  iVar8 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0);
+  local_EAX_66 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0);
   this_01 = local_20;
-  if (iVar8 != 0) {
+  if (local_EAX_66 != 0) {
     g_currentExceptionFrame = local_a0.previous;
-    iVar9 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x1bc,0,iVar8,"%s"
-                               ,"PrividerTy::NonePrivider");
+    iVar9 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x1bc,0,local_EAX_66,
+                               "%s","PrividerTy::NonePrivider");
     if (iVar9 == 0) {
-      RaiseInternalException(iVar8,0,"E:\\__titans\\Start\\prov_obj.cpp",0x1bc);
+      RaiseInternalException(local_EAX_66,0,"E:\\__titans\\Start\\prov_obj.cpp",0x1bc);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -78,31 +82,31 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
     }
     local_10 = nullptr;
     if (local_20->field_1A6D == 0) {
-      pcVar11 = local_c8;
-      for (iVar8 = 9; iVar8 != 0; iVar8 = iVar8 + -1) {
-        pcVar11[0] = '\0';
-        pcVar11[1] = '\0';
-        pcVar11[2] = '\0';
-        pcVar11[3] = '\0';
-        pcVar11 = pcVar11 + 4;
+      pcVar12 = local_c8;
+      for (iVar10 = 9; iVar10 != 0; iVar10 = iVar10 + -1) {
+        pcVar12[0] = '\0';
+        pcVar12[1] = '\0';
+        pcVar12[2] = '\0';
+        pcVar12[3] = '\0';
+        pcVar12 = pcVar12 + 4;
       }
-      pcVar11[0] = '\0';
-      pcVar11[1] = '\0';
+      pcVar12[0] = '\0';
+      pcVar12[1] = '\0';
       local_c6 = 4;
       FUN_00715360(g_int_00811764,1,'\x1a',local_c8,0x26,1,0xffffffff);
     }
-    iVar8 = this_01->field_1A6D + 1;
-    this_01->field_1A6D = iVar8;
-    if (iVar8 == 0xf) {
+    iVar10 = this_01->field_1A6D + 1;
+    this_01->field_1A6D = iVar10;
+    if (iVar10 == 0xf) {
       this_01->field_1A6D = 0;
     }
-    iVar8 = Library::Ourlib::CONNECT::FUN_00715630
-                      (g_int_00811764,-1,&local_1c,&local_3c,&local_10,nullptr,-1,0);
-    psVar6 = local_10;
-    pCVar5 = g_cursorClass_00802A30;
-    if (iVar8 != -0x4d) {
-      if (iVar8 != 0) {
-        if (iVar8 != 1) {
+    iVar10 = Library::Ourlib::CONNECT::FUN_00715630
+                       (g_int_00811764,-1,&local_1c,&local_3c,&local_10,nullptr,-1,0);
+    psVar7 = local_10;
+    pCVar6 = g_cursorClass_00802A30;
+    if (iVar10 != -0x4d) {
+      if (iVar10 != 0) {
+        if (iVar10 != 1) {
           g_currentExceptionFrame = local_a0.previous;
           return;
         }
@@ -112,8 +116,8 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
           if (*local_10 == (short)((uint)DAT_00807dd5 >> 0x10)) {
             local_18 = local_10 + 1;
             if ((char)*local_18 == '\x01') {
-              pcVar11 = (char *)((int)local_10 + 0xb);
-              switch(*pcVar11) {
+              pcVar12 = (char *)((int)local_10 + 0xb);
+              switch(*pcVar12) {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               case '\x01':
                 local_c = CONCAT31((int3)uVar2,1);
@@ -122,20 +126,20 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
               case '\x02':
               case '\x03':
                 wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c0bc);
-                local_2c = *pcVar11;
-                local_2b = STField<undefined4>(psVar6,3);
+                local_2c = *pcVar12;
+                local_2b = STField<undefined4>(psVar7,3);
                 local_27 = 0;
-                iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_2c,0
-                                    );
-                local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((iVar8 != -0x70) + '\x01'));
-                local_14 = (-(uint)(*pcVar11 != '\x02') & 2) + 0xd;
+                local_EAX_1381 =
+                     FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_2c,0);
+                local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((local_EAX_1381 != -0x70) + '\x01'));
+                local_14 = (-(uint)(*pcVar12 != '\x02') & 2) + 0xd;
                 break;
               case '\x05':
                 wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\",&DAT_00807680,
                           PTR_s_SAVEGAME__0079c0b8,&DAT_00807ddd);
-                local_38 = *pcVar11;
-                local_37 = STField<undefined4>(psVar6,3);
-                local_33 = STField<undefined4>(psVar6,7);
+                local_38 = *pcVar12;
+                local_37 = STField<undefined4>(psVar7,3);
+                local_33 = STField<undefined4>(psVar7,7);
                 iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_38,0
                                     );
                 local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(iVar8 == -0x70));
@@ -143,7 +147,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
               }
             }
             else if ((char)*local_18 != '\x03') goto LAB_005bb532;
-            pCVar5 = g_cursorClass_00802A30;
+            pCVar6 = g_cursorClass_00802A30;
             if ((char)*local_18 == '\x03') {
               local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(2));
             }
@@ -156,28 +160,28 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 this_00 = this_01->field_1A5B->field_02E6;
                 goto joined_r0x005bb4e0;
               }
-              if ((STField<char>(psVar6,0xd) == '\0') ||
-                 (((char)*local_18 == '\x01' && (STField<char>(psVar6,0xb) == '\x05')))) {
+              if ((STField<char>(psVar7,0xd) == '\0') ||
+                 (((char)*local_18 == '\x01' && (STField<char>(psVar7,0xb) == '\x05')))) {
                 if (g_cursorClass_00802A30 != nullptr) {
-                  iVar8 = g_cursorClass_00802A30->field_00C9;
-                  iVar9 = g_cursorClass_00802A30->field_00C5;
+                  iVar10 = g_cursorClass_00802A30->field_00C9;
+                  iVar3 = g_cursorClass_00802A30->field_00C5;
                   g_cursorClass_00802A30->field_0493 = CASE_1;
-                  pCVar5->field_0494 = 0xffff;
-                  CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
-                  CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
-                  pCVar5->field_00D2 = 0;
-                  pCVar5->field_04DF = -1;
+                  pCVar6->field_0494 = 0xffff;
+                  CursorClassTy::SetGCType(pCVar6,CASE_0,iVar3,iVar10);
+                  CursorClassTy::DrawSprite(pCVar6,pCVar6->field_00C5,pCVar6->field_00C9);
+                  pCVar6->field_00D2 = 0;
+                  pCVar6->field_04DF = -1;
                 }
                 this_01->field_1A71 = 0;
                 thunk_FUN_005dac60();
-                UVar13 = 0x2523;
+                UVar14 = 0x2523;
                 goto LAB_005bb2c6;
               }
               local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(2));
             }
             thunk_FUN_005b6350(this_01,0x6121,local_14,0x11);
             DAT_0080877e = 0;
-            if (STField<char>(psVar6,0xb) == '\x01') {
+            if (STField<char>(psVar7,0xb) == '\x01') {
               DAT_008087be = 0;
             }
             CloseButtons(this_01,'\x01');
@@ -189,20 +193,20 @@ joined_r0x005bb4e0:
           }
           else {
             if (g_cursorClass_00802A30 != nullptr) {
-              iVar8 = g_cursorClass_00802A30->field_00C9;
-              iVar9 = g_cursorClass_00802A30->field_00C5;
+              iVar10 = g_cursorClass_00802A30->field_00C9;
+              iVar3 = g_cursorClass_00802A30->field_00C5;
               g_cursorClass_00802A30->field_0493 = CASE_1;
-              pCVar5->field_0494 = 0xffff;
-              CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
-              CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
-              pCVar5->field_00D2 = 0;
-              pCVar5->field_04DF = -1;
+              pCVar6->field_0494 = 0xffff;
+              CursorClassTy::SetGCType(pCVar6,CASE_0,iVar3,iVar10);
+              CursorClassTy::DrawSprite(pCVar6,pCVar6->field_00C5,pCVar6->field_00C9);
+              pCVar6->field_00D2 = 0;
+              pCVar6->field_04DF = -1;
             }
             this_01->field_1A71 = 0;
             thunk_FUN_005dac60();
-            UVar13 = 0x2526;
+            UVar14 = 0x2526;
 LAB_005bb2c6:
-            MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,UVar13,'\0',nullptr,
+            MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,UVar14,'\0',nullptr,
                                nullptr,nullptr,0,0);
           }
         }
@@ -221,22 +225,22 @@ LAB_005bb532:
         return;
       }
     }
-    pSVar3 = this_01->field_1A5B;
+    pSVar4 = this_01->field_1A5B;
     memset(local_5c, 0, 0x20); /* compiler bulk-zero initialization */
     this_01->field_1A71 = 0;
     this_01->field_1A72 = 1;
-    pCVar5 = g_cursorClass_00802A30;
+    pCVar6 = g_cursorClass_00802A30;
     local_5c[4] = 0x6952;
-    if (pSVar3->field_02E6 != nullptr) {
+    if (pSVar4->field_02E6 != nullptr) {
       if (g_cursorClass_00802A30 != nullptr) {
-        iVar8 = g_cursorClass_00802A30->field_00C9;
-        iVar9 = g_cursorClass_00802A30->field_00C5;
+        iVar10 = g_cursorClass_00802A30->field_00C9;
+        iVar3 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
-        pCVar5->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
-        CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
-        pCVar5->field_00D2 = 0;
-        pCVar5->field_04DF = -1;
+        pCVar6->field_0494 = 0xffff;
+        CursorClassTy::SetGCType(pCVar6,CASE_0,iVar3,iVar10);
+        CursorClassTy::DrawSprite(pCVar6,pCVar6->field_00C5,pCVar6->field_00C9);
+        pCVar6->field_00D2 = 0;
+        pCVar6->field_04DF = -1;
       }
       local_5c[2] = this_01->field_0008;
       local_5c[3] = 2;
@@ -249,11 +253,11 @@ LAB_005bb532:
     break;
   case CASE_3:
     if ((local_20->field_1C96 != nullptr) &&
-       (iVar8 = HoloTy::NextFas(local_20->field_1C96), iVar8 != 0)) {
+       (iVar10 = HoloTy::NextFas(local_20->field_1C96), iVar10 != 0)) {
       local_8 = 0;
     }
     if ((this_01->field_1C9A != nullptr) &&
-       (iVar8 = HoloTy::NextFas(this_01->field_1C9A), iVar8 != 0)) {
+       (iVar10 = HoloTy::NextFas(this_01->field_1C9A), iVar10 != 0)) {
       local_8 = 0;
     }
     if ((g_startSystem_0081176C->field_02E6 != nullptr) &&
@@ -286,13 +290,13 @@ LAB_005bb532:
                   ((uint *)this_01->field_1BE1,this_01->field_1B9D,0xfffffffe,this_01->field_1BB5,
                    this_01->field_1BB9);
       }
-      puVar10 = this_01->field_1C2A;
-      iVar8 = 0x16;
+      puVar11 = this_01->field_1C2A;
+      iVar10 = 0x16;
       do {
-        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar10);
-        puVar10 = puVar10 + 1;
-        iVar8 = iVar8 + -1;
-      } while (iVar8 != 0);
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar11);
+        puVar11 = puVar11 + 1;
+        iVar10 = iVar10 + -1;
+      } while (iVar10 != 0);
       if (this_01->field_1A5F == '\0') {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_1C8A);
       }
@@ -305,8 +309,8 @@ LAB_005bb532:
     break;
   case CASE_4:
     if (local_20->field_1C96 != nullptr) {
-      iVar8 = HoloTy::NextFas(local_20->field_1C96);
-      if (iVar8 == 0) {
+      iVar10 = HoloTy::NextFas(local_20->field_1C96);
+      if (iVar10 == 0) {
         uVar2 = *(uint *)&this_01->field_1C96->field_0x3;
         if (-1 < (int)uVar2) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar2);
@@ -317,8 +321,8 @@ LAB_005bb532:
       }
     }
     if (this_01->field_1C9A != nullptr) {
-      iVar8 = HoloTy::NextFas(this_01->field_1C9A);
-      if (iVar8 == 0) {
+      iVar10 = HoloTy::NextFas(this_01->field_1C9A);
+      if (iVar10 == 0) {
         uVar2 = *(uint *)&this_01->field_1C9A->field_0x3;
         if (-1 < (int)uVar2) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar2);
@@ -346,8 +350,8 @@ LAB_005bb532:
     break;
   case CASE_5:
     if (local_20->field_1C9A != nullptr) {
-      iVar8 = HoloTy::NextFas(local_20->field_1C9A);
-      if (iVar8 == 0) {
+      iVar10 = HoloTy::NextFas(local_20->field_1C9A);
+      if (iVar10 == 0) {
         if ((this_01->field_1A60 == '\x01') &&
            (uVar2 = *(uint *)&this_01->field_1C9A->field_0x3, -1 < (int)uVar2)) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar2);

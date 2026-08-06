@@ -11,7 +11,8 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
   DArrayTy **ppDVar1;
   AiFltClassTy *pAVar3;
   int iVar4;
-  DArrayTy *pDVar5;
+  DArrayTy *pDVar4;
+  int iVar5;
   int iVar6;
   byte *puVar7;
   DArrayTy **ppDVar8;
@@ -41,41 +42,40 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
     ppDVar8 = ppDVar1;
     do {
       if (*ppDVar8 != nullptr) {
-        pDVar5 = (DArrayTy *)
-                 FUN_006b0060(nullptr,(uint *)((int)ppDVar8[1] + 0x25f + (int)param_1));
-        *ppDVar8 = pDVar5;
+        pDVar4 = FUN_006b0060(nullptr,(uint *)((int)ppDVar8[1] + 0x25f + (int)param_1));
+        *ppDVar8 = pDVar4;
       }
       ppDVar8 = ppDVar8 + 3;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     if (*ppDVar1 == nullptr) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x2c,10);
-      *ppDVar1 = pDVar5;
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x2c,10);
+      *ppDVar1 = pDVar4;
     }
     if (pAVar3->field_0217 == nullptr) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,0x14,0x34,10);
-      pAVar3->field_0217 = pDVar5;
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,0x14,0x34,10);
+      pAVar3->field_0217 = pDVar4;
     }
     if (pAVar3->field_0223 == nullptr) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
-      pAVar3->field_0223 = (AnonPointee_AiFltClassTy_0223 *)pDVar5;
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
+      pAVar3->field_0223 = (AnonPointee_AiFltClassTy_0223 *)pDVar4;
     }
     if (pAVar3->field_022F == nullptr) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
-      pAVar3->field_022F = (AnonPointee_AiFltClassTy_022F *)pDVar5;
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
+      pAVar3->field_022F = (AnonPointee_AiFltClassTy_022F *)pDVar4;
     }
     if (pAVar3->field_023B == nullptr) {
-      pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
-      pAVar3->field_023B = pDVar5;
+      pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
+      pAVar3->field_023B = pDVar4;
     }
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
   thunk_FUN_0065d480(local_c);
-  iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x31,0,iVar4,"%s",
+  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x31,0,iVar4,"%s",
                              "AiFltClassTy::InitData");
-  if (iVar6 != 0) {
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_flt.cpp",0x32);

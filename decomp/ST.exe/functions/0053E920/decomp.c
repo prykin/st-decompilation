@@ -11,7 +11,8 @@ undefined4 __thiscall SpecPanelTy::SetPanel(SpecPanelTy *this,char param_1)
   SpecPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar2;
+  int iVar4;
   InternalExceptionFrame local_4c;
   SpecPanelTy *local_8;
 
@@ -29,14 +30,14 @@ undefined4 __thiscall SpecPanelTy::SetPanel(SpecPanelTy *this,char param_1)
       if ((g_cPanel_00801688 != nullptr) && (g_cPanel_00801688->field_023F == CASE_1)) {
         CPanelTy::ShiftControls(g_cPanel_00801688,local_8->field_0180,1);
       }
-      iVar2 = 0;
+      iVar4 = 0;
     }
     else {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)local_8->field_0000->field_0020)();
-      iVar2 = 1;
+      iVar4 = 1;
     }
-    SwitchPanel(this_00,iVar2);
+    SwitchPanel(this_00,iVar4);
     g_currentExceptionFrame = local_4c.previous;
     return 1;
   }

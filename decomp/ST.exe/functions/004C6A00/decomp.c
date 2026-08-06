@@ -15,6 +15,7 @@ int __thiscall TLOBldMark::GetMessage(TLOBldMark *this,STMessage *message)
   STMessageId SVar1;
   int iVar3;
   int iVar4;
+  int iVar5;
   InternalExceptionFrame local_4c;
   TLOBldMark *local_8;
 

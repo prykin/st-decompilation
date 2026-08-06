@@ -126,8 +126,8 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
         local_36 = iVar6;
         if (local_2c != 0) {
           local_4c = FUN_006c82a3(local_64,(int)((uVar5 - local_c) * 10000) / local_2c);
-          iVar6 = FUN_006aff5b(local_4c);
-          this_00 = (void *)((iVar6 * iVar7) / 10000);
+          uVar4 = FUN_006aff5b(local_4c);
+          this_00 = (void *)((int)(uVar4 * iVar7) / 10000);
           if (this_00 == nullptr) {
             local_48 = 0;
           }

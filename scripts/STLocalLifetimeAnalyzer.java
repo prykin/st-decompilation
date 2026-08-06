@@ -297,7 +297,12 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
 
     private boolean isolationEligible(TypeEvidence evidence) {
         DataType type = resolveTypeSpecification(evidence.specification);
-        return type != null && recursivePointerIdentity(type) != null;
+        if (type == null || !semanticType(type)) return false;
+        if (recursivePointerIdentity(type) != null) return true;
+        return evidence.sources.contains("call_return") ||
+            evidence.sources.contains("typed_copy") ||
+            evidence.sources.contains("typed_cast") ||
+            evidence.sources.contains("typed_recursive_field");
     }
 
     private DataType resolveTypeSpecification(String specification) {
@@ -315,6 +320,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     private int automaticThreshold(TypeEvidence evidence) {
         if (evidence.sources.contains("call_return")) return RETURN_WEIGHT;
         if (evidence.sources.contains("typed_copy")) return COPY_WEIGHT;
+        if (evidence.sources.contains("typed_cast")) return COPY_WEIGHT;
         if (evidence.sources.contains("typed_recursive_field"))
             return TYPED_FIELD_WEIGHT;
         return ARGUMENT_WEIGHT * 2;
@@ -359,7 +365,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 else if (mnemonic.equals("PTRSUB"))
                     collectTypedFieldAddress(definition, varnode, evidence);
                 else if (mnemonic.equals("CAST"))
-                    collectTypedRecursiveCast(definition, varnode, evidence);
+                    collectTypedCast(definition, varnode, evidence);
                 if (scalarEligible)
                     collectScalarRole(definition, varnode, evidence);
             }
@@ -530,7 +536,10 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         Object sourceSymbol = sourceHigh.getClass()
             .getMethod("getSymbol").invoke(sourceHigh);
         if (sourceSymbol == null) {
-            if (!nominalType(type)) return;
+            // A symbol-less decompiler nominal is downstream SSA inference,
+            // not a Program-database anchor.  Keep only the exact recursive
+            // shape case which the applier can independently revalidate.
+            if (recursivePointerIdentity(type) == null) return;
             Evidence anchor = anchor(op, "typed_copy", 0, null,
                 "decompiler_nominal_type");
             addEvidence(evidence, type, COPY_WEIGHT, "typed_copy", anchor);
@@ -540,7 +549,13 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             .getMethod("isParameter").invoke(sourceSymbol);
         boolean global = (boolean)sourceSymbol.getClass()
             .getMethod("isGlobal").invoke(sourceSymbol);
-        if (!parameter && !global && !nominalType(type)) return;
+        // A local-to-local COPY is not an independent type boundary.  The
+        // decompiler routinely propagates a nominal type through an SSA merge,
+        // so accepting every nominal source here generated proposals which the
+        // applier (correctly) could never re-anchor.  Only the exact hash-owned
+        // recursive-node case is stable enough to survive a fresh decompile;
+        // parameters and globals remain independent database anchors.
+        if (!parameter && !global && recursivePointerIdentity(type) == null) return;
         SourceType source = symbolSource(sourceSymbol);
         if (source == SourceType.DEFAULT && !nominalType(type)) return;
         Evidence anchor = anchor(op, "typed_copy", 0, null,
@@ -612,7 +627,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
      * chain across that one machine no-op.  Nominal cast targets are ineligible
      * at the caller, so this cannot overwrite a deliberate payload view.
      */
-    private void collectTypedRecursiveCast(Object op, Object output,
+    private void collectTypedCast(Object op, Object output,
             Map<String, TypeEvidence> evidence) throws Exception {
         Object input = op.getClass().getMethod("getInput", int.class)
             .invoke(op, 0);
@@ -622,15 +637,36 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         if (sourceHigh == null || sourceHigh == outputHigh) return;
         DataType type = (DataType)sourceHigh.getClass()
             .getMethod("getDataType").invoke(sourceHigh);
-        String identity = recursivePointerIdentity(type);
-        if (identity == null) return;
         int size = ((Number)output.getClass().getMethod("getSize")
             .invoke(output)).intValue();
         if (!usableType(type, size)) return;
-        Evidence anchor = anchor(op, "typed_recursive_cast", 0, null,
-            identity);
-        addEvidence(evidence, type, TYPED_FIELD_WEIGHT,
-            "typed_recursive_field", anchor);
+        String identity = recursivePointerIdentity(type);
+        if (identity != null) {
+            Evidence anchor = anchor(op, "typed_recursive_cast", 0, null,
+                identity);
+            addEvidence(evidence, type, TYPED_FIELD_WEIGHT,
+                "typed_recursive_field", anchor);
+            return;
+        }
+
+        // A same-size CAST is a machine no-op.  Carry its source type only when
+        // that source is a parameter/global with persistent provenance.  This
+        // recovers the independent pointer/scalar lifetime which Ghidra often
+        // hides behind an undefined merge group, without treating an arbitrary
+        // consumer cast as proof of a new payload view.
+        Object sourceSymbol = sourceHigh.getClass()
+            .getMethod("getSymbol").invoke(sourceHigh);
+        if (sourceSymbol == null) return;
+        boolean parameter = (boolean)sourceSymbol.getClass()
+            .getMethod("isParameter").invoke(sourceSymbol);
+        boolean global = (boolean)sourceSymbol.getClass()
+            .getMethod("isGlobal").invoke(sourceSymbol);
+        SourceType source = symbolSource(sourceSymbol);
+        if ((!parameter && !global) ||
+                source == SourceType.DEFAULT && !nominalType(type)) return;
+        Evidence anchor = anchor(op, "typed_cast", 0, null,
+            typeSpecification(type));
+        addEvidence(evidence, type, COPY_WEIGHT, "typed_cast", anchor);
     }
 
     private TypedField typedRecursiveField(Object address) throws Exception {

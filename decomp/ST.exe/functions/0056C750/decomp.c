@@ -66,7 +66,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     }
     g_cMf32_00806758 = nullptr;
     if (g_cMf32_00806760 != nullptr) {
-      cMf32::RecMemFree(g_cMf32_00806760,&DAT_0080679c);
+      cMf32::RecMemFree(g_cMf32_00806760,(uint *)&PTR_0080679c);
       if (PTR_00806764 != nullptr) {
         FUN_0070a300((int *)&PTR_00806764);
       }
@@ -133,10 +133,10 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     }
     AppClassTy::DoneApp((AppClassTy *)pSVar3);
     if (DAT_008030d4 != 0) {
-      FreeAndNull((void **)&DAT_008030d4);
+      FreeAndNull(&DAT_008030d4);
     }
     if (DAT_00802ad0 != 0) {
-      FreeAndNull((void **)&DAT_00802ad0);
+      FreeAndNull(&DAT_00802ad0);
     }
     InterlockedDecrement(&DAT_0085e000);
     g_currentExceptionFrame = local_50.previous;

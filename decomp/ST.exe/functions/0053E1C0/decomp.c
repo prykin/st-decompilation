@@ -12,10 +12,12 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
 {
   byte bVar2;
   int iVar3;
-  undefined4 uVar4;
   int iVar5;
-  uint *puVar6;
-  uint uVar8;
+  undefined4 uVar3;
+  int iVar4;
+  int iVar6;
+  uint *puVar7;
+  uint uVar9;
   uint local_510 [280];
   InternalExceptionFrame local_b0;
   undefined4 local_6c [4];
@@ -41,34 +43,34 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
   iVar3 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   if (iVar3 == 0) {
     memset(local_6c, 0, 0x58); /* compiler bulk-zero initialization */
-    iVar3 = 0;
+    iVar4 = 0;
     memset(local_510, 0, 0x460); /* compiler bulk-zero initialization */
     bVar2 = 0;
     if (param_1 != 0) {
       local_14 = local_c->field_005C;
-      iVar3 = 0;
+      iVar4 = 0;
       local_10 = 1;
-      puVar6 = local_510 + 1;
-      uVar8 = local_c->field_003C + param_3;
+      puVar7 = local_510 + 1;
+      uVar9 = local_c->field_003C + param_3;
       do {
-        puVar6[-1] = local_10;
-        iVar5 = local_14;
-        *puVar6 = (uint)(bVar2 == param_2);
-        puVar6[2] = uVar8;
-        if (iVar5 == 0) {
-          iVar5 = -local_c->field_0048;
+        puVar7[-1] = local_10;
+        iVar6 = local_14;
+        *puVar7 = (uint)(bVar2 == param_2);
+        puVar7[2] = uVar9;
+        if (iVar6 == 0) {
+          iVar6 = -local_c->field_0048;
         }
         else {
-          iVar5 = local_c->field_0044;
+          iVar6 = local_c->field_0044;
         }
-        puVar6[3] = iVar5 + iVar3 + param_4;
-        puVar6[4] = param_5;
-        puVar6[5] = param_6;
+        puVar7[3] = iVar6 + iVar4 + param_4;
+        puVar7[4] = param_5;
+        puVar7[5] = param_6;
         bVar2 = bVar2 + 1;
         local_10 = local_10 + 1;
-        iVar3 = iVar3 + param_8;
-        uVar8 = uVar8 + param_7;
-        puVar6 = puVar6 + 0x1c;
+        iVar4 = iVar4 + param_8;
+        uVar9 = uVar9 + param_7;
+        puVar7 = puVar7 + 0x1c;
       } while (bVar2 < param_1);
     }
     local_24 = local_510;

@@ -70,7 +70,7 @@ LAB_00596d58:
       return;
     }
     MMMObjTy::OutBSlProc
-              ((MMMObjTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,nullptr,
+              ((MMMObjTy *)g_dDXContext_0080759C,g_dDXContext_0080759C,nullptr,
                nullptr,0x22,0x72,0x2e1,0x14c,&this_00->field_1A5B->field_0140);
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -131,8 +131,8 @@ LAB_00596d8b:
       return;
     }
     MMMObjTy::OutBSlProc
-              ((MMMObjTy *)pFVar3,(int)g_dDXContext_0080759C,nullptr,nullptr,0x13,
-               0x5e,0x174,0x175,&this_00->field_1A5B->field_0140);
+              ((MMMObjTy *)pFVar3,g_dDXContext_0080759C,nullptr,nullptr,0x13,0x5e,
+               0x174,0x175,&this_00->field_1A5B->field_0140);
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_9:

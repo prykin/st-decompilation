@@ -13,11 +13,11 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
 
 {
   uint uVar1;
+  int iVar5;
   HDC hdc;
   PALETTEENTRY *pPVar2;
   UINT UVar3;
   undefined1 *puVar4;
-  int iVar5;
   int iVar6;
   int iVar7;
   uint uVar8;
@@ -32,7 +32,7 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
 
   if (param_1[7] == 8) {
     pbVar9 = local_110;
-    for (iVar5 = 0x40; iVar5 != 0; iVar5 = iVar5 + -1) {
+    for (iVar6 = 0x40; iVar6 != 0; iVar6 = iVar6 + -1) {
       pbVar9[0] = 0;
       pbVar9[1] = 0;
       pbVar9[2] = 0;
@@ -95,7 +95,7 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
       } while (iVar6 < iVar5);
     }
     uVar1 = uVar8;
-    iVar5 = local_10;
+    iVar6 = local_10;
     if (0 < local_10) {
       do {
         for (; uVar1 != 0; uVar1 = uVar1 - 1) {
@@ -103,19 +103,19 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + 1;
         }
-        iVar5 = iVar5 + -1;
+        iVar6 = iVar6 + -1;
         uVar1 = uVar8;
-      } while (iVar5 != 0);
+      } while (iVar6 != 0);
     }
     puVar4 = (undefined1 *)((int)local_c + 1);
-    iVar5 = 0x100;
+    iVar6 = 0x100;
     do {
       puVar4[1] = puVar4[(int)local_514 + (3 - (int)local_c)];
       *puVar4 = puVar4[(int)local_514 + (4 - (int)local_c)];
       puVar4[-1] = puVar4[(int)local_514 + (5 - (int)local_c)];
       puVar4 = puVar4 + 4;
-      iVar5 = iVar5 + -1;
-    } while (iVar5 != 0);
+      iVar6 = iVar6 + -1;
+    } while (iVar6 != 0);
     if (local_8 != 0) {
       DeleteObject(param_3);
     }

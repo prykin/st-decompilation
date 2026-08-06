@@ -184,7 +184,8 @@ void __thiscall st::fn_0054B700(CursorClassTy *this,int param_1)
 {
   CursorClassTy *pCVar1;
   int iVar2;
-  BITMAPINFO *pBVar3;
+  BITMAPINFO *pBVar2;
+  int iVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -205,63 +206,59 @@ void __thiscall st::fn_0054B700(CursorClassTy *this,int param_1)
   if (DAT_0080874e == '\x03') {
     iVar6 = 0x68;
     iVar5 = 0xb;
-    iVar2 = g_nWidth_00806730 + -0x15;
+    iVar3 = g_nWidth_00806730 + -0x15;
     iVar4 = 0xea;
   }
   else {
     iVar6 = 0x8f;
     iVar5 = 0x10;
-    iVar2 = g_nWidth_00806730 + -0x18;
+    iVar3 = g_nWidth_00806730 + -0x18;
     iVar4 = 0xa1;
   }
-  st::fn_006B5F80((int *)g_ddxContext_008075A8,iVar2,iVar4,iVar5,iVar6);
+  st::fn_006B5F80((int *)g_ddxContext_008075A8,iVar3,iVar4,iVar5,iVar6);
   pCVar1 = local_8;
   if (local_8->field_04DF < 0) goto LAB_0054b81b;
   if (DAT_0080874e == '\x01') {
-    iVar2 = 1;
+    iVar3 = 1;
 LAB_0054b7e0:
-    pBVar3 = (BITMAPINFO *)
-             st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,iVar2);
-    iVar2 = pCVar1->field_04DF * -0x1d + 0x115;
+    pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,iVar3);
+    iVar3 = pCVar1->field_04DF * -0x1d + 0x115;
     iVar4 = g_nWidth_00806730 + -0x18;
   }
   else {
     if (DAT_0080874e == '\x02') {
-      iVar2 = 3;
+      iVar3 = 3;
       goto LAB_0054b7e0;
     }
     if (DAT_0080874e != '\x03') goto LAB_0054b81b;
-    pBVar3 = (BITMAPINFO *)st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,5);
-    iVar2 = pCVar1->field_04DF * -0x13 + 0x136;
+    pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,5);
+    iVar3 = pCVar1->field_04DF * -0x13 + 0x136;
     iVar4 = g_nWidth_00806730 + -0x15;
   }
-  st::fn_00403738(iVar4,iVar2,'\x06',pBVar3);
+  st::fn_00403738(iVar4,iVar3,'\x06',pBVar2);
 LAB_0054b81b:
   pCVar1->field_04DF = param_1;
   if (-1 < param_1) {
     if (DAT_0080874e == '\x01') {
-      pBVar3 = (BITMAPINFO *)
-               st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,0);
+      pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,0);
       iVar4 = pCVar1->field_04DF * -0x1d + 0x115;
-      iVar2 = g_nWidth_00806730 + -0x18;
+      iVar3 = g_nWidth_00806730 + -0x18;
     }
     else if (DAT_0080874e == '\x02') {
-      pBVar3 = (BITMAPINFO *)
-               st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,2);
+      pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,2);
       iVar4 = pCVar1->field_04DF * -0x1d + 0x115;
-      iVar2 = g_nWidth_00806730 + -0x18;
+      iVar3 = g_nWidth_00806730 + -0x18;
     }
     else {
       if (DAT_0080874e != '\x03') {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      pBVar3 = (BITMAPINFO *)
-               st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,4);
+      pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,4);
       iVar4 = pCVar1->field_04DF * -0x13 + 0x136;
-      iVar2 = g_nWidth_00806730 + -0x15;
+      iVar3 = g_nWidth_00806730 + -0x15;
     }
-    st::fn_00403738(iVar2,iVar4,'\x06',pBVar3);
+    st::fn_00403738(iVar3,iVar4,'\x06',pBVar2);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

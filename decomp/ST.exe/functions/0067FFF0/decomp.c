@@ -6,7 +6,7 @@
 undefined4 __cdecl FUN_0067fff0(char *param_1)
 
 {
-  Library::MSVCRT::FUN_0072ee80(param_1,PTR_s__PS_d_0079d750);
+  Library::MSVCRT::FUN_0072ee80(param_1,(byte *)PTR_s__PS_d_0079d750);
   return 0xffffffff;
 }
 

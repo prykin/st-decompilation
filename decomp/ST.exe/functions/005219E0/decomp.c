@@ -10,14 +10,15 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
 {
   IntercomPanelTy *pIVar2;
   int iVar3;
-  undefined4 *puVar4;
+  undefined4 *puVar3;
   LPSTR text;
-  ushort *puVar5;
-  uint uVar6;
-  ushort *puVar7;
-  DArrayTy *pDVar8;
+  ushort *puVar4;
+  uint uVar5;
+  ushort *puVar6;
+  DArrayTy *pDVar7;
   int iVar9;
-  int *piVar10;
+  int *piVar8;
+  int iVar10;
   InternalExceptionFrame local_4c;
   IntercomPanelTy *local_8;
 
@@ -28,27 +29,27 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
   pIVar2 = local_8;
   if (iVar3 == 0) {
     g_intercomPanel_0080169C = local_8;
-    puVar4 = ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
-    pIVar2->field_0180 = puVar4;
-    puVar4[0x16] = 0;
-    puVar4[0x17] = 0;
-    iVar3 = 1;
-    piVar10 = nullptr;
+    puVar3 = ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
+    pIVar2->field_0180 = puVar3;
+    puVar3[0x16] = 0;
+    puVar3[0x17] = 0;
+    iVar10 = 1;
+    piVar8 = nullptr;
     text = thunk_FUN_00571240("BKG_EDITCHAT",0);
-    puVar5 = cMf32::RecGet(g_cMf32_00806790,1,text,piVar10,iVar3);
-    puVar7 = puVar5 + 0x14;
-    iVar3 = 1;
-    pIVar2->field_0184 = puVar5;
-    uVar6 = FUN_006b4fe0((int)puVar5);
-    puVar7 = (ushort *)
+    puVar4 = cMf32::RecGet(g_cMf32_00806790,1,text,piVar8,iVar10);
+    puVar6 = puVar4 + 0x14;
+    iVar10 = 1;
+    pIVar2->field_0184 = puVar4;
+    uVar5 = FUN_006b4fe0((int)puVar4);
+    puVar6 = (ushort *)
              FUN_006b50c0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
-                          (uint)pIVar2->field_0184[7],uVar6,(undefined4 *)puVar7,iVar3);
-    pIVar2->field_019C = puVar7;
+                          (uint)pIVar2->field_0184[7],uVar5,(undefined4 *)puVar6,iVar10);
+    pIVar2->field_019C = puVar6;
     DibPut((RecoveredSourceFamily_dibcopy *)pIVar2->field_0068,0,0,'\x01',(byte *)pIVar2->field_0184
           );
-    pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
-    pIVar2->field_0198 = pDVar8;
-    Library::DKW::TBL::FUN_006b6020(pDVar8,0,&DAT_008016a0);
+    pDVar7 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
+    pIVar2->field_0198 = pDVar7;
+    Library::DKW::TBL::FUN_006b6020(pDVar7,0,&DAT_008016a0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

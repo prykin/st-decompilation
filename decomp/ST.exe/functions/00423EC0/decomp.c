@@ -18,7 +18,8 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
 {
   STGroupC *this_00;
   int iVar2;
-  uint *puVar3;
+  uint *puVar2;
+  int iVar3;
   int iVar4;
   uint index;
   void *element;
@@ -34,9 +35,9 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x17c,0,iVar2,"%s",
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x17c,0,iVar2,"%s",
                                "STGroupC::GetMessage");
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x17d);
@@ -44,17 +45,17 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
   }
   FUN_006e5fd0(local_8,message);
   if (message->id == MESS_ID_CREATE) {
-    iVar2 = (message->arg0).i32;
-    if (*(uint *)(iVar2 + 0xc) < 2) {
-      this_00->field_0020 = *(undefined4 *)(iVar2 + 0x20);
-      this_00->field_0024 = *(char *)(iVar2 + 4);
-      this_00->field_0025 = *(undefined2 *)(iVar2 + 0x14);
-      this_00->field_0027 = *(undefined2 *)(iVar2 + 0x18);
-      puVar3 = Library::DKW::TBL::FUN_006ae310(nullptr,5,2,5,0x4045c5);
-      this_00->field_0029 = puVar3;
-      local_c = *(int *)(iVar2 + 0x1c);
+    iVar4 = (message->arg0).i32;
+    if (*(uint *)(iVar4 + 0xc) < 2) {
+      this_00->field_0020 = *(undefined4 *)(iVar4 + 0x20);
+      this_00->field_0024 = *(char *)(iVar4 + 4);
+      this_00->field_0025 = *(undefined2 *)(iVar4 + 0x14);
+      this_00->field_0027 = *(undefined2 *)(iVar4 + 0x18);
+      puVar2 = Library::DKW::TBL::FUN_006ae310(nullptr,5,2,5,0x4045c5);
+      this_00->field_0029 = puVar2;
+      local_c = *(int *)(iVar4 + 0x1c);
       if (0 < local_c) {
-        element = (void *)(iVar2 + 0x24);
+        element = (void *)(iVar4 + 0x24);
         do {
           Library::DKW::TBL::DArrayPut((DArrayTy *)this_00->field_0029,index,element);
           index = index + 1;
@@ -65,8 +66,8 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
                 (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
       this_00->field_0031 = this_00->field_0018 * DAT_00808754;
     }
-    else if (*(uint *)(iVar2 + 0xc) == 2) {
-      RestoreGrpData(this_00,iVar2);
+    else if (*(uint *)(iVar4 + 0xc) == 2) {
+      RestoreGrpData(this_00,iVar4);
       STAllPlayersC::RegisterGroup
                 (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
       g_currentExceptionFrame = local_50.previous;

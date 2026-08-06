@@ -12,15 +12,17 @@ PanelTy::PaintLBut(PanelTy *this,AnonShape_00538FC0_B5E96243 *param_1,byte param
 {
   AnonNested_00538FC0_0018_DB9172F2 *pAVar1;
   PanelTy *pPVar3;
-  int iVar4;
-  undefined4 uVar5;
-  LPSTR text;
   int iVar6;
+  int local_EAX_145;
+  undefined4 uVar7;
+  LPSTR text;
+  int iVar5;
   InternalExceptionFrame local_58;
   PanelTy *local_14;
   int local_10;
   int local_c;
   ushort *local_8;
+  int iVar4;
 
   pAVar1 = param_1->field_0018;
   local_8 = nullptr;
@@ -48,20 +50,20 @@ LAB_00538ff6:
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-    if (iVar4 == 0) {
+    local_EAX_145 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+    if (local_EAX_145 == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar5 = (*(code *)param_5)(param_1);
-      text = FUN_006f2c00(param_3,1,uVar5);
+      uVar7 = (*(code *)param_5)(param_1);
+      text = FUN_006f2c00(param_3,1,uVar7);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,text,nullptr,1);
-      iVar4 = local_10;
+      iVar6 = local_10;
       pPVar3 = local_14;
       DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_c,local_10,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_1->field_0014 == 3) {
         local_8 = cMf32::RecGet(g_cMf32_00806790,6,param_4,nullptr,1);
-        DibPut((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_c,iVar4,'\x06',
+        DibPut((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_c,iVar6,'\x06',
                (byte *)local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       }
@@ -72,12 +74,12 @@ LAB_00538ff6:
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0x102,0,iVar4,"%s",
-                               "PanelTy::PaintLBut");
-    if (iVar6 != 0) {
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0x102,0,local_EAX_145,
+                               "%s","PanelTy::PaintLBut");
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\panel.cpp",0x102);
+    RaiseInternalException(local_EAX_145,0,"E:\\__titans\\Andrey\\panel.cpp",0x102);
   }
   return;
 }

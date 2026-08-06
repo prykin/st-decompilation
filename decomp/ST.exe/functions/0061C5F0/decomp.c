@@ -12,7 +12,7 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
   int iVar5;
   int iVar6;
   short local_18;
-  undefined2 local_10;
+  short local_10;
   short local_e;
   short local_c;
   short local_a;
@@ -60,7 +60,7 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
       iVar3 = (-(uint)(STField<int>(this,0x7d) != 0) & 4) + 1;
       if ((((local_a - iVar3 <= iVar5) && (iVar5 < local_a + iVar3)) && (local_e - iVar3 <= iVar6))
          && (iVar6 < local_e + iVar3)) {
-        thunk_FUN_00416270(this_00,&local_8,(int *)&local_6,(int *)&local_c);
+        thunk_FUN_00416270(this_00,(uint *)&local_8,(int *)&local_6,&local_c);
         FUN_006aced8(STField<int>(this,0x9f),STField<int>(this,0xa3),(int)local_8,(int)local_6
                     );
         STField<int>(this,0x127) = (int)local_8;

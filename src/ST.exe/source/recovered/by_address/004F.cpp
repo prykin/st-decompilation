@@ -250,7 +250,10 @@ void st::fn_004F1D20(undefined1 *param_1)
 
 // 004F4640 FUN_004f4640
 #line 4 "decomp/ST.exe/functions/004F4640/decomp.c"
-void __cdecl st::fn_004F4640(int param_1,undefined *param_2,BYTE param_3)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004F5690 -> 004F4640 @ 004F57B1; data at 0080679C */
+
+void __cdecl st::fn_004F4640(ushort *param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
@@ -409,13 +412,16 @@ void __cdecl st::fn_004F4640(int param_1,undefined *param_2,BYTE param_3)
   local_6c[0x39] = 0x7e;
   local_6c[0x3a] = 0x2a;
   st::fn_0070D1F0
-            (0x19d,&local_a8,nullptr,local_6c,param_1,local_30,6,7,1,0,0x20022c,param_2);
+            (0x19d,&local_a8,nullptr,local_6c,(int)param_1,local_30,6,7,1,0,0x20022c,param_2);
   return;
 }
 
 // 004F4950 FUN_004f4950
 #line 4 "decomp/ST.exe/functions/004F4950/decomp.c"
-void __cdecl st::fn_004F4950(int param_1,undefined *param_2,BYTE param_3)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004F5690 -> 004F4950 @ 004F58E7; data at 0080679C */
+
+void __cdecl st::fn_004F4950(ushort *param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
@@ -575,7 +581,7 @@ void __cdecl st::fn_004F4950(int param_1,undefined *param_2,BYTE param_3)
   local_6c[0x55] = 0x7c;
   local_6c[0x56] = 0x7e;
   st::fn_0070D1F0
-            (0x19d,&local_a8,nullptr,local_6c,param_1,local_14,3,5,1,0,0x100081c,param_2);
+            (0x19d,&local_a8,nullptr,local_6c,(int)param_1,local_14,3,5,1,0,0x100081c,param_2);
   return;
 }
 

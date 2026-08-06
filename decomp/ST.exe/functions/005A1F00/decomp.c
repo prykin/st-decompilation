@@ -22,10 +22,11 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
   FSGSTy *this_00;
   short sVar5;
   int iVar6;
-  uint *puVar7;
+  uint *puVar6;
+  DArrayTy *pDVar7;
   DArrayTy *pDVar8;
-  DArrayTy *pDVar9;
-  char *pcVar10;
+  char *pcVar9;
+  int iVar10;
   int iVar11;
   uint uVar12;
   uint uVar13;
@@ -49,30 +50,30 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
   iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar11 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x9ec,0,iVar6,
+    iVar10 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x9ec,0,iVar6,
                                 "%s","FSGSTy::AddMessage");
-    if (iVar11 == 0) {
+    if (iVar10 == 0) {
       RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x9ec);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar6 = -1;
+  iVar11 = -1;
   pbVar14 = param_2;
   do {
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
+    if (iVar11 == 0) break;
+    iVar11 = iVar11 + -1;
     bVar1 = *pbVar14;
     pbVar14 = pbVar14 + 1;
   } while (bVar1 != 0);
-  if (iVar6 == -2) {
+  if (iVar11 == -2) {
     uVar12 = 0xffffffff;
-    pcVar10 = param_3;
+    pcVar9 = param_3;
     do {
       if (uVar12 == 0) break;
       uVar12 = uVar12 - 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
+      cVar2 = *pcVar9;
+      pcVar9 = pcVar9 + 1;
     } while (cVar2 != '\0');
     local_c = Library::DKW::LIB::MemAllocClear(~uVar12 + 4);
     if (local_c == nullptr) {
@@ -91,12 +92,12 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
       pbVar14 = pbVar14 + 1;
     } while (bVar1 != 0);
     uVar13 = 0xffffffff;
-    pcVar10 = param_3;
+    pcVar9 = param_3;
     do {
       if (uVar13 == 0) break;
       uVar13 = uVar13 - 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
+      cVar2 = *pcVar9;
+      pcVar9 = pcVar9 + 1;
     } while (cVar2 != '\0');
     local_c = Library::DKW::LIB::MemAllocClear(~uVar12 + ~uVar13 + 0xc);
     if (local_c == nullptr) {
@@ -110,7 +111,7 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
       bVar16 = bVar1 < *pbVar15;
       if (bVar1 != *pbVar15) {
 LAB_005a1fbe:
-        iVar6 = (1 - (uint)bVar16) - (uint)(bVar16 != 0);
+        iVar11 = (1 - (uint)bVar16) - (uint)(bVar16 != 0);
         goto LAB_005a1fc3;
       }
       if (bVar1 == 0) break;
@@ -120,9 +121,9 @@ LAB_005a1fbe:
       pbVar14 = pbVar14 + 2;
       pbVar15 = pbVar15 + 2;
     } while (bVar1 != 0);
-    iVar6 = 0;
+    iVar11 = 0;
 LAB_005a1fc3:
-    if (iVar6 == 0) {
+    if (iVar11 == 0) {
       wsprintfA((LPSTR)local_c,s__s2_s>__s_1d_s_007cc4a0,&DAT_007c6ff0,param_2,&DAT_007c6ff0,param_1
                 ,param_3);
     }
@@ -132,19 +133,19 @@ LAB_005a1fc3:
     }
   }
   if (local_c != nullptr) {
-    for (puVar7 = Library::MSVCRT::FUN_0072e560(local_c,'\n'); puVar7 != nullptr;
-        puVar7 = Library::MSVCRT::FUN_0072e560(puVar7,'\n')) {
-      *(undefined1 *)puVar7 = 0x20;
+    for (puVar6 = Library::MSVCRT::FUN_0072e560(local_c,'\n'); puVar6 != nullptr;
+        puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
+      *(undefined1 *)puVar6 = 0x20;
     }
-    pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,10);
-    local_18 = pDVar8;
-    if (pDVar8 != nullptr) {
+    pDVar7 = Library::DKW::TBL::SArrayCreate(nullptr,1,10);
+    local_18 = pDVar7;
+    if (pDVar7 != nullptr) {
       local_10 = 0;
       local_5 = '\0';
-      Library::DKW::TBL::FUN_006b5aa0(&pDVar8->flags,(char *)local_c);
+      Library::DKW::TBL::FUN_006b5aa0(pDVar7,(char *)local_c);
       this_00 = local_14;
-      pDVar9 = (DArrayTy *)
-               ccFntTy::FormSarr(local_14->field_1A77,&pDVar8->flags," ,.;:!?/\\()[]{}",
+      pDVar8 = (DArrayTy *)
+               ccFntTy::FormSarr(local_14->field_1A77,&pDVar7->flags," ,.;:!?/\\()[]{}",
                                  0x1a6 - local_14->field_1B4C,0,0xffffffff,1);
       if (this_00->field_1A5F == CASE_6) {
         this_00->field_002D = 0x26;
@@ -154,32 +155,32 @@ LAB_005a1fc3:
           local_5 = '\x01';
         }
       }
-      if (pDVar9 != nullptr) {
-        ccFntTy::SepColorStrInSarr(this_00->field_1A77,(uint *)pDVar9,(uint *)pDVar9);
+      if (pDVar8 != nullptr) {
+        ccFntTy::SepColorStrInSarr(this_00->field_1A77,(uint *)pDVar8,(uint *)pDVar8);
         pAVar3 = (AnonShape_006B7830_769CA2DF *)this_00->field_1E9E;
-        iVar6 = pAVar3->field_0008 + pDVar9->elementSize;
-        while (499 < iVar6) {
+        iVar11 = pAVar3->field_0008 + pDVar8->elementSize;
+        while (499 < iVar11) {
           FUN_006b7830(pAVar3,0);
           pAVar3 = (AnonShape_006B7830_769CA2DF *)this_00->field_1E9E;
-          iVar6 = pAVar3->field_0008 + pDVar9->elementSize;
+          iVar11 = pAVar3->field_0008 + pDVar8->elementSize;
         }
-        iVar6 = 0;
-        if (0 < (int)pDVar9->elementSize) {
-          if ((int)pDVar9->elementSize < 1) {
-            pcVar10 = nullptr;
+        iVar11 = 0;
+        if (0 < (int)pDVar8->elementSize) {
+          if ((int)pDVar8->elementSize < 1) {
+            pcVar9 = nullptr;
             goto LAB_005a2188;
           }
           do {
-            pcVar10 = *(char **)(pDVar9->growCapacity + iVar6 * 4);
+            pcVar9 = *(char **)(pDVar8->growCapacity + iVar11 * 4);
 LAB_005a2188:
-            Library::DKW::TBL::FUN_006b5aa0(this_00->field_1E9E,pcVar10);
-            iVar6 = iVar6 + 1;
-          } while (iVar6 < (int)pDVar9->elementSize);
+            Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_1E9E,pcVar9);
+            iVar11 = iVar11 + 1;
+          } while (iVar11 < (int)pDVar8->elementSize);
         }
-        FUN_006b5570(pDVar9);
-        pDVar8 = local_18;
+        FUN_006b5570(pDVar8);
+        pDVar7 = local_18;
       }
-      FUN_006b5570(pDVar8);
+      FUN_006b5570(pDVar7);
       if (this_00->field_1A5F == CASE_6) {
         this_00->field_002D = 0x28;
         *(undefined2 *)&this_00->field_0x31 = 1;

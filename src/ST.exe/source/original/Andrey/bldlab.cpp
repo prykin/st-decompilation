@@ -115,11 +115,13 @@ void __thiscall st::fn_004EFFE0(BldLabPanelTy *this,AnonShape_004EF320_444F9AB1 
   uint uVar1;
   int *piVar2;
   BldLabPanelTy_field_027ADArray *pBVar3;
-  BldLabPanelTy *pBVar5;
+  int iVar5;
+  int iVar7;
+  BldLabPanelTy *pBVar8;
   int iVar6;
-  byte *pbVar7;
+  BITMAPINFO *pBVar9;
   int iVar8;
-  AnonShape_GLOBAL_0081175C_57F682DD *pAVar9;
+  AnonShape_GLOBAL_0081175C_57F682DD *pAVar10;
   InternalExceptionFrame local_5c;
   int local_18;
   int local_14;
@@ -155,25 +157,26 @@ void __thiscall st::fn_004EFFE0(BldLabPanelTy *this,AnonShape_004EF320_444F9AB1 
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   iVar6 = st::fn_0072D7F0(local_5c.jumpBuffer,0);
-  pBVar5 = local_10;
+  pBVar8 = local_10;
   if (iVar6 == 0) {
     if ((element_027a == nullptr) || ((char)element_027a->field_0008 == 0)) {
-      pAVar9 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_018C;
+      pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_018C;
     }
     else {
-      pAVar9 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_0188;
+      pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_0188;
     }
-    pbVar7 = (byte *)st::fn_0070B3A0(pAVar9,local_c);
-    iVar8 = local_14;
-    iVar6 = local_18;
-    st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar5->field_0068,local_18,local_14,'\x01',pbVar7);
+    pBVar9 = st::fn_0070B3A0(pAVar10,local_c);
+    iVar7 = local_14;
+    iVar5 = local_18;
+    st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar8->field_0068,local_18,local_14,'\x01',
+           (byte *)pBVar9);
     if ((param_1->field_0014 == 3) && (element_027a != nullptr)) {
-      pbVar7 = (byte *)st::fn_0070B3A0(pBVar5->field_0190,9 - (uint)((char)element_027a->field_0008 != 0));
-      st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar5->field_0068,iVar6,iVar8,'\x06',pbVar7);
+      pBVar9 = st::fn_0070B3A0(pBVar8->field_0190,9 - (uint)((char)element_027a->field_0008 != 0));
+      st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar8->field_0068,iVar5,iVar7,'\x06',(byte *)pBVar9);
     }
     st::fn_006B3640
-              ((int *)g_ddxContext_008075A8,pBVar5->field_0060,0xffffffff,pBVar5->field_003C,
-               pBVar5->field_0044);
+              ((int *)g_ddxContext_008075A8,pBVar8->field_0060,0xffffffff,pBVar8->field_003C,
+               pBVar8->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
@@ -204,9 +207,10 @@ int __thiscall st::fn_004F0210(BldLabPanelTy *this,STMessage *message)
   BldLabPanelTy_field_027ADArray *pBVar2;
   BldLabPanelTy *this_00;
   int iVar4;
-  Global_sub_00526BA0_param_1Enum *pGVar5;
-  BldLabPanelTy_field_027AElement *element_027a;
   int iVar6;
+  Global_sub_00526BA0_param_1Enum *pGVar7;
+  BldLabPanelTy_field_027AElement *element_027a;
+  int iVar5;
   InternalExceptionFrame local_4c;
   BldLabPanelTy *local_8;
 
@@ -217,9 +221,9 @@ int __thiscall st::fn_004F0210(BldLabPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\bldlab.cpp",0x9a,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\bldlab.cpp",0x9a,0,iVar4,"%s",
                                "BldLabPanelTy::GetMessage");
-    if (iVar6 == 0) {
+    if (iVar5 == 0) {
       st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\bldlab.cpp",0x9a);
       return 0xffff;
     }
@@ -251,11 +255,11 @@ int __thiscall st::fn_004F0210(BldLabPanelTy *this,STMessage *message)
     }
     pBVar2 = this_00->field_027A;
     if ((pBVar2 == nullptr) ||
-       (iVar4 = SVar1 + this_00->field_0199, pBVar2->count <= iVar4 - 0xc09fU)) {
-      pGVar5 = nullptr;
+       (iVar6 = SVar1 + this_00->field_0199, pBVar2->count <= iVar6 - 0xc09fU)) {
+      pGVar7 = nullptr;
     }
     else {
-      element_027a = DArrayAt<BldLabPanelTy_field_027AElement>(pBVar2, iVar4 + -0xc09f);
+      element_027a = DArrayAt<BldLabPanelTy_field_027AElement>(pBVar2, iVar6 + -0xc09f);
     }
     if (element_027a == nullptr) {
       g_currentExceptionFrame = local_4c.previous;

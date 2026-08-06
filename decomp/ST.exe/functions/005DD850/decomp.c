@@ -9,12 +9,13 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
 
 {
   StartSystemTy *this_00;
+  int iVar5;
   DArrayTy *pDVar2;
   DArrayTy *pDVar3;
   char *text;
   int iVar4;
-  int iVar5;
-  undefined4 *puVar6;
+  int iVar6;
+  undefined4 *puVar7;
   InternalExceptionFrame local_78;
   undefined4 local_34 [4];
   undefined4 local_24;
@@ -25,11 +26,11 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
   StartSystemTy *local_c;
   char local_5;
 
-  puVar6 = local_34;
+  puVar7 = local_34;
   local_c = this;
-  for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
+  for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *puVar7 = 0;
+    puVar7 = puVar7 + 1;
   }
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
@@ -47,9 +48,9 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
         local_5 = '\x01';
       }
       wsprintfA((LPSTR)&DAT_0080f33a,"&0%s:",param_1);
-      Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,(char *)&DAT_0080f33a);
+      Library::DKW::TBL::FUN_006b5aa0(pDVar2,(char *)&DAT_0080f33a);
       wsprintfA((LPSTR)&DAT_0080f33a,"&2%s",param_1 + 0x40);
-      Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,(char *)&DAT_0080f33a);
+      Library::DKW::TBL::FUN_006b5aa0(pDVar2,(char *)&DAT_0080f33a);
       pDVar3 = (DArrayTy *)
                ccFntTy::FormSarr(this_00->field_0034,&pDVar2->flags," ,.;:!?/\\()[]{}",
                                  *(int *)(this_00->field_067E + 2),0,0xffffffff,1);
@@ -57,18 +58,18 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
         if (pDVar3->elementSize != 0) {
           ccFntTy::SepColorStrInSarr(this_00->field_0034,(uint *)pDVar3,(uint *)pDVar3);
         }
-        iVar5 = 0;
+        iVar6 = 0;
         if (0 < (int)pDVar3->elementSize) {
           if ((int)pDVar3->elementSize < 1) {
             text = nullptr;
             goto LAB_005dd982;
           }
           do {
-            text = *(char **)(pDVar3->growCapacity + iVar5 * 4);
+            text = *(char **)(pDVar3->growCapacity + iVar6 * 4);
 LAB_005dd982:
-            Library::DKW::TBL::FUN_006b5aa0(&g_dArray_0080C4FA->flags,text);
-            iVar5 = iVar5 + 1;
-          } while (iVar5 < (int)pDVar3->elementSize);
+            Library::DKW::TBL::FUN_006b5aa0(g_dArray_0080C4FA,text);
+            iVar6 = iVar6 + 1;
+          } while (iVar6 < (int)pDVar3->elementSize);
         }
         FUN_006b5570(pDVar3);
         pDVar2 = local_10;

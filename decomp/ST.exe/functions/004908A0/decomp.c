@@ -17,8 +17,8 @@ int __thiscall FUN_004908a0(void *this,STFishC *param_1,int param_2)
   int iVar5;
   int iVar6;
   int local_10;
-  undefined2 local_c [2];
-  undefined2 local_8 [2];
+  short local_c [2];
+  short local_8 [2];
 
   local_10 = 1000000;
   STFishC::sub_004162B0(param_1,(short *)&param_1,local_8,local_c);

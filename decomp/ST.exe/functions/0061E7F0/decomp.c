@@ -232,9 +232,9 @@ LAB_0061eefe:
                    ((VisibleClassTy::sub_00558C00
                                (this,this->field_010C,iVar15,local_34,&local_38,&local_48),
                     -1 < (int)local_20 &&
-                    (((((int)local_20 < 5 && (-1 < local_38)) && (local_38 < this->field_0030)) &&
-                     ((iVar15 = local_48 + g_centeredOffsets5[(int)local_20], -1 < iVar15 &&
-                      (iVar15 < this->field_0034)))))))) && (this->field_004C != nullptr)) &&
+                    (((((int)local_20 < 5 && (-1 < local_38)) && (local_38 < (int)this->field_0030))
+                     && ((iVar15 = local_48 + g_centeredOffsets5[(int)local_20], -1 < iVar15 &&
+                         (iVar15 < this->field_0034)))))))) && (this->field_004C != nullptr)) &&
                  (this->field_004C[local_38 + iVar15 * this->field_0030] == 0)) goto LAB_0061eefe;
             }
           }

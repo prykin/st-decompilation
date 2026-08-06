@@ -12,13 +12,16 @@ undefined4 __fastcall FUN_00632e30(AnonShape_00632E30_A9A0278F *param_1)
   bool bVar4;
   void *pvVar5;
   undefined4 *puVar6;
+  uint uVar10;
+  uint local_EAX_1564;
+  uint local_EAX_1602;
   int iVar7;
   float *pfVar8;
   undefined4 uVar9;
-  uint uVar10;
   uint uVar11;
-  int iVar12;
-  longlong lVar13;
+  uint uVar12;
+  int iVar13;
+  longlong lVar14;
   int local_14;
   float local_10;
   undefined4 local_c;
@@ -75,25 +78,25 @@ LAB_00632f7e:
     if (*(int *)param_1 != 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar7 = *(int *)(*(int *)param_1 + 0xc);
-      uVar11 = 0;
+      uVar12 = 0;
       if (0 < iVar7) {
         do {
-          iVar12 = *(int *)param_1;
-          if (uVar11 < *(uint *)(iVar12 + 0xc)) {
-            iVar12 = *(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c);
+          iVar13 = *(int *)param_1;
+          if (uVar12 < *(uint *)(iVar13 + 0xc)) {
+            iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c);
           }
           else {
-            iVar12 = 0;
+            iVar13 = 0;
           }
-          if ((0 < (int)uVar11) && ((int)uVar11 % param_1->field_0019 == 0)) {
+          if ((0 < (int)uVar12) && ((int)uVar12 % param_1->field_0019 == 0)) {
             fVar1 = _DAT_0079034c;
           }
-          if (iVar12 != 0) {
-            *(float *)(iVar12 + 0x21) = fVar1;
+          if (iVar13 != 0) {
+            *(float *)(iVar13 + 0x21) = fVar1;
             fVar1 = fVar1 + local_8;
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < iVar7);
+          uVar12 = uVar12 + 1;
+        } while ((int)uVar12 < iVar7);
       }
     }
     local_10 = 0.0;
@@ -103,29 +106,29 @@ LAB_00632f7e:
         fVar1 = (float)param_1->field_0091 - (float)(int)local_10 * param_1->field_007D;
         if (fVar1 < _DAT_0079034c) {
           if (_DAT_0079034c < *pfVar8) {
-            uVar11 = param_1->field_0019 * (int)local_10;
-            iVar7 = param_1->field_0019 + uVar11;
+            uVar12 = param_1->field_0019 * (int)local_10;
+            iVar7 = param_1->field_0019 + uVar12;
             if (*(int *)param_1 != 0) {
-              for (; (int)uVar11 < iVar7; uVar11 = uVar11 + 1) {
-                iVar12 = *(int *)param_1;
-                if ((uVar11 < *(uint *)(iVar12 + 0xc)) &&
-                   (iVar12 = *(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c), iVar12 != 0))
+              for (; (int)uVar12 < iVar7; uVar12 = uVar12 + 1) {
+                iVar13 = *(int *)param_1;
+                if ((uVar12 < *(uint *)(iVar13 + 0xc)) &&
+                   (iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c), iVar13 != 0))
                 {
-                  *(undefined4 *)(iVar12 + 8) = 0;
+                  *(undefined4 *)(iVar13 + 8) = 0;
                 }
               }
             }
           }
         }
         else if (*pfVar8 <= _DAT_0079034c) {
-          uVar11 = param_1->field_0019 * (int)local_10;
-          iVar7 = param_1->field_0019 + uVar11;
+          uVar12 = param_1->field_0019 * (int)local_10;
+          iVar7 = param_1->field_0019 + uVar12;
           if (*(int *)param_1 != 0) {
-            for (; (int)uVar11 < iVar7; uVar11 = uVar11 + 1) {
-              iVar12 = *(int *)param_1;
-              if ((uVar11 < *(uint *)(iVar12 + 0xc)) &&
-                 (iVar12 = *(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c), iVar12 != 0)) {
-                *(undefined4 *)(iVar12 + 8) = 1;
+            for (; (int)uVar12 < iVar7; uVar12 = uVar12 + 1) {
+              iVar13 = *(int *)param_1;
+              if ((uVar12 < *(uint *)(iVar13 + 0xc)) &&
+                 (iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c), iVar13 != 0)) {
+                *(undefined4 *)(iVar13 + 8) = 1;
               }
             }
           }
@@ -167,8 +170,8 @@ LAB_00632f7e:
     bVar4 = param_1->field_0081 != _DAT_0079034c;
     param_1->field_0071 = 0x40490fdb;
     if (bVar4) {
-      lVar13 = Library::MSVCRT::__ftol();
-      local_14 = (int)lVar13;
+      lVar14 = Library::MSVCRT::__ftol();
+      local_14 = (int)lVar14;
       if (local_14 < 1) {
         local_14 = 1;
       }
@@ -183,35 +186,35 @@ LAB_00632f7e:
     if (*(int *)param_1 != 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar7 = *(int *)(*(int *)param_1 + 0xc);
-      uVar11 = 0;
+      uVar12 = 0;
       if (0 < iVar7) {
         do {
-          iVar12 = *(int *)param_1;
-          if (uVar11 < *(uint *)(iVar12 + 0xc)) {
-            puVar6 = (undefined4 *)(*(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c));
+          iVar13 = *(int *)param_1;
+          if (uVar12 < *(uint *)(iVar13 + 0xc)) {
+            puVar6 = (undefined4 *)(*(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c));
           }
           else {
             puVar6 = nullptr;
           }
           *(undefined1 *)(puVar6 + 3) = 0;
           STField<undefined4>(puVar6,0x21) = 0;
-          if ((int)uVar11 < param_1->field_001D * 2) {
+          if ((int)uVar12 < param_1->field_001D * 2) {
             uVar9 = param_1->field_0025;
           }
           else {
             uVar9 = param_1->field_0029;
           }
           *puVar6 = uVar9;
-          if (uVar11 == iVar7 - 1U) {
+          if (uVar12 == iVar7 - 1U) {
             *puVar6 = param_1->field_0025;
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < iVar7);
+          uVar12 = uVar12 + 1;
+        } while ((int)uVar12 < iVar7);
       }
     }
-    uVar11 = g_playSystem_00802A38->field_00E4;
+    uVar12 = g_playSystem_00802A38->field_00E4;
     param_1->field_002D = 0;
-    param_1->field_0005 = uVar11;
+    param_1->field_0005 = uVar12;
     break;
   case 4:
     param_1->field_005D = DAT_007d1b7c;
@@ -227,56 +230,57 @@ LAB_00632f7e:
     param_1->field_0089 = DAT_007d1ba0;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((*(int *)param_1 != 0) && (iVar7 = *(int *)(*(int *)param_1 + 0xc), iVar7 != 0)) {
-      uVar11 = 0;
+      uVar12 = 0;
       local_10 = 0.0;
       local_8 = _DAT_0079c5a4 / (float)param_1->field_001D;
       if (0 < param_1->field_001D) {
         do {
-          iVar12 = *(int *)param_1;
-          if ((uVar11 < *(uint *)(iVar12 + 0xc)) &&
-             (iVar12 = *(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c), iVar12 != 0)) {
-            *(float *)(iVar12 + 0x21) = local_10;
-            *(undefined4 *)(iVar12 + 0x25) = param_1->field_006D;
-            *(undefined4 *)(iVar12 + 8) = 1;
+          iVar13 = *(int *)param_1;
+          if ((uVar12 < *(uint *)(iVar13 + 0xc)) &&
+             (iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c), iVar13 != 0)) {
+            *(float *)(iVar13 + 0x21) = local_10;
+            *(undefined4 *)(iVar13 + 0x25) = param_1->field_006D;
+            *(undefined4 *)(iVar13 + 8) = 1;
           }
-          uVar10 = param_1->field_001D + uVar11;
-          iVar12 = *(int *)param_1;
-          if ((uVar10 < *(uint *)(iVar12 + 0xc)) &&
-             (iVar12 = *(int *)(iVar12 + 8) * uVar10 + *(int *)(iVar12 + 0x1c), iVar12 != 0)) {
-            *(float *)(iVar12 + 0x21) = local_10;
-            *(undefined4 *)(iVar12 + 0x25) = param_1->field_006D;
+          uVar11 = param_1->field_001D + uVar12;
+          iVar13 = *(int *)param_1;
+          if ((uVar11 < *(uint *)(iVar13 + 0xc)) &&
+             (iVar13 = *(int *)(iVar13 + 8) * uVar11 + *(int *)(iVar13 + 0x1c), iVar13 != 0)) {
+            *(float *)(iVar13 + 0x21) = local_10;
+            *(undefined4 *)(iVar13 + 0x25) = param_1->field_006D;
             param_1->field_0071 = param_1->field_006D;
             uVar10 = Library::MSVCRT::FUN_0072e6c0();
-            *(undefined4 *)(iVar12 + 8) = 1;
-            *(undefined4 *)(iVar12 + 0x1d) = 7;
-            *(int *)(iVar12 + 0x19) = (int)uVar10 % 7;
+            *(undefined4 *)(iVar13 + 8) = 1;
+            *(undefined4 *)(iVar13 + 0x1d) = 7;
+            *(int *)(iVar13 + 0x19) = (int)uVar10 % 7;
           }
           local_10 = local_10 + local_8;
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < param_1->field_001D);
+          uVar12 = uVar12 + 1;
+        } while ((int)uVar12 < param_1->field_001D);
       }
-      for (uVar11 = param_1->field_001D * 2; (int)uVar11 < iVar7; uVar11 = uVar11 + 1) {
-        iVar12 = *(int *)param_1;
-        if (uVar11 < *(uint *)(iVar12 + 0xc)) {
-          iVar12 = *(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c);
+      for (uVar12 = param_1->field_001D * 2; (int)uVar12 < iVar7; uVar12 = uVar12 + 1) {
+        iVar13 = *(int *)param_1;
+        if (uVar12 < *(uint *)(iVar13 + 0xc)) {
+          iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c);
         }
         else {
-          iVar12 = 0;
+          iVar13 = 0;
         }
-        uVar10 = Library::MSVCRT::FUN_0072e6c0();
-        local_8 = (float)((int)uVar10 % 0x168) * _DAT_0079d1a8;
-        if (iVar12 != 0) {
-          *(float *)(iVar12 + 0x21) = local_8;
-          uVar10 = Library::MSVCRT::FUN_0072e6c0();
+        local_EAX_1564 = Library::MSVCRT::FUN_0072e6c0();
+        local_8 = (float)((int)local_EAX_1564 % 0x168) * _DAT_0079d1a8;
+        if (iVar13 != 0) {
+          *(float *)(iVar13 + 0x21) = local_8;
+          local_EAX_1602 = Library::MSVCRT::FUN_0072e6c0();
           fVar1 = (float)param_1->field_0079;
           fVar2 = (float)param_1->field_006D;
           fVar3 = (float)param_1->field_006D;
-          *(undefined4 *)(iVar12 + 0x19) = 0;
-          *(float *)(iVar12 + 0x25) =
-               ((fVar1 - fVar2) * (float)((int)uVar10 % (iVar7 + 1))) / (float)iVar7 + fVar3;
-          uVar10 = g_playSystem_00802A38->field_00E4;
-          *(undefined4 *)(iVar12 + 8) = 1;
-          *(uint *)(iVar12 + 0x35) = uVar10;
+          *(undefined4 *)(iVar13 + 0x19) = 0;
+          *(float *)(iVar13 + 0x25) =
+               ((fVar1 - fVar2) * (float)((int)local_EAX_1602 % (iVar7 + 1))) / (float)iVar7 + fVar3
+          ;
+          uVar11 = g_playSystem_00802A38->field_00E4;
+          *(undefined4 *)(iVar13 + 8) = 1;
+          *(uint *)(iVar13 + 0x35) = uVar11;
         }
       }
     }
@@ -284,42 +288,42 @@ LAB_00632f7e:
   iVar7 = param_1->field_0011;
   if (((iVar7 == 0) || (iVar7 == 1)) && (*(int *)param_1 != 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar11 = *(uint *)(*(int *)param_1 + 0xc);
+    uVar12 = *(uint *)(*(int *)param_1 + 0xc);
     if (iVar7 == 1) {
       iVar7 = param_1->field_001D;
-      iVar12 = 0;
-      uVar11 = uVar11 - iVar7;
+      iVar13 = 0;
+      uVar12 = uVar12 - iVar7;
       fVar1 = _DAT_0079c5a4 / (float)iVar7;
       fVar2 = fVar1 * _DAT_00790784;
-      uVar10 = uVar11;
+      uVar11 = uVar12;
       if (0 < iVar7) {
         do {
           iVar7 = *(int *)param_1;
-          if ((uVar10 < *(uint *)(iVar7 + 0xc)) &&
-             (iVar7 = *(int *)(iVar7 + 8) * uVar10 + *(int *)(iVar7 + 0x1c), iVar7 != 0)) {
+          if ((uVar11 < *(uint *)(iVar7 + 0xc)) &&
+             (iVar7 = *(int *)(iVar7 + 8) * uVar11 + *(int *)(iVar7 + 0x1c), iVar7 != 0)) {
             *(float *)(iVar7 + 0x21) = fVar2;
             fVar2 = fVar2 + fVar1;
             *(undefined4 *)(iVar7 + 8) = 1;
             *(undefined4 *)(iVar7 + 0x19) = 3;
           }
-          iVar12 = iVar12 + 1;
-          uVar10 = uVar10 + 1;
-        } while (iVar12 < param_1->field_001D);
+          iVar13 = iVar13 + 1;
+          uVar11 = uVar11 + 1;
+        } while (iVar13 < param_1->field_001D);
       }
     }
-    uVar10 = 0;
+    uVar11 = 0;
     fVar1 = _DAT_0079034c;
-    if (0 < (int)uVar11) {
+    if (0 < (int)uVar12) {
       do {
         iVar7 = *(int *)param_1;
-        if ((uVar10 < *(uint *)(iVar7 + 0xc)) &&
-           (iVar7 = *(int *)(iVar7 + 8) * uVar10 + *(int *)(iVar7 + 0x1c), iVar7 != 0)) {
+        if ((uVar11 < *(uint *)(iVar7 + 0xc)) &&
+           (iVar7 = *(int *)(iVar7 + 8) * uVar11 + *(int *)(iVar7 + 0x1c), iVar7 != 0)) {
           *(float *)(iVar7 + 0x21) = fVar1;
           fVar1 = fVar1 + local_8;
           *(undefined4 *)(iVar7 + 8) = 1;
         }
-        uVar10 = uVar10 + 1;
-      } while ((int)uVar10 < (int)uVar11);
+        uVar11 = uVar11 + 1;
+      } while ((int)uVar11 < (int)uVar12);
     }
   }
   return local_c;

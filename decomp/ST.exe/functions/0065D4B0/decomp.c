@@ -14,6 +14,7 @@ byte * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
   AiFltClassTy *pAVar2;
   int errorCode;
   AllocationRecord_006684E0 *pAVar3;
+  AllocationRecord_006684E0 *pAVar3_mg1;
   int iVar4;
   byte *pbVar5;
   InternalExceptionFrame local_4c;
@@ -31,12 +32,12 @@ byte * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
     else {
       pAVar3 = (AllocationRecord_006684E0 *)&local_8->field_0020;
     }
-    pAVar3 = FltDataPack(pAVar3,param_1);
-    *(undefined4 *)pAVar3 = 900;
-    *(undefined4 *)&pAVar3->field_0xc = 1;
-    *(undefined4 *)&pAVar3->field_0x66 = pAVar2->field_001C;
+    pAVar3_mg1 = FltDataPack(pAVar3,param_1);
+    *(undefined4 *)pAVar3_mg1 = 900;
+    *(undefined4 *)&pAVar3_mg1->field_0xc = 1;
+    *(undefined4 *)&pAVar3_mg1->field_0x66 = pAVar2->field_001C;
     g_currentExceptionFrame = local_4c.previous;
-    return (byte *)pAVar3;
+    return (byte *)pAVar3_mg1;
   }
   g_currentExceptionFrame = local_4c.previous;
   iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x4f,0,errorCode,"%s",

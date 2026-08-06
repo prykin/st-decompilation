@@ -54,7 +54,7 @@ undefined4 __fastcall st::fn_004EC0F0(AnonShape_004EC0F0_C371FA68 *param_1)
 
   iVar1 = st::fn_00404183
                     ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,
-                     *(char **)(&DAT_007cde6c + param_1->field_050C * 4),0x1d);
+                     *(char **)(&DAT_007cde6c + param_1->field_050C * 4),CASE_1D);
   if (iVar1 != 0) {
     st::fn_006A5E40
               (iVar1,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_trade.cpp",0x126);

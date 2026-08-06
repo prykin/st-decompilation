@@ -8,38 +8,39 @@ char * FUN_006c8170(char *resourceString)
 
 {
   char cVar1;
-  char *pcVar2;
+  int *piVar2;
   uint uVar3;
-  char *pcVar5;
+  int *piVar5;
   char *pcVar6;
+  int *piVar7;
 
-  pcVar2 = nullptr;
+  piVar2 = nullptr;
   if (resourceString != nullptr) {
     uVar3 = 0xffffffff;
-    pcVar2 = resourceString;
+    pcVar6 = resourceString;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      cVar1 = *pcVar2;
-      pcVar2 = pcVar2 + 1;
+      cVar1 = *pcVar6;
+      pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
-    pcVar2 = (char *)FUN_006bfb70(~uVar3);
-    if (pcVar2 != nullptr) {
+    piVar2 = FUN_006bfb70(~uVar3);
+    if (piVar2 != nullptr) {
       uVar3 = 0xffffffff;
       do {
-        pcVar5 = resourceString;
+        pcVar6 = resourceString;
         if (uVar3 == 0) break;
         uVar3 = uVar3 - 1;
-        pcVar5 = resourceString + 1;
+        pcVar6 = resourceString + 1;
         cVar1 = *resourceString;
-        resourceString = pcVar5;
+        resourceString = pcVar6;
       } while (cVar1 != '\0');
       uVar3 = ~uVar3;
-      pcVar5 = pcVar5 + -uVar3;
-      pcVar6 = pcVar2;
-      memmove(pcVar6, pcVar5, uVar3); /* compiler REP MOVS byte copy */
+      piVar5 = (int *)(pcVar6 + -uVar3);
+      piVar7 = piVar2;
+      memmove(piVar7, piVar5, uVar3); /* compiler REP MOVS byte copy */
     }
   }
-  return pcVar2;
+  return (char *)piVar2;
 }
 

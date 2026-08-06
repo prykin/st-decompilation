@@ -14,12 +14,13 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
   byte bVar4;
   int iVar5;
   int iVar6;
-  byte *puVar7;
-  byte *pbVar8;
-  char *pcVar9;
-  byte *pbVar10;
-  char *pcVar11;
-  bool bVar12;
+  int iVar7;
+  byte *puVar8;
+  byte *pbVar9;
+  char *pcVar10;
+  byte *pbVar11;
+  char *pcVar12;
+  bool bVar13;
   InternalExceptionFrame local_88;
   char local_44;
   char local_43;
@@ -58,9 +59,9 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     return;
   }
   puVar1 = &local_c->field_0C51;
-  puVar7 = (byte *)puVar1;
-  pcVar9 = &local_44;
-  memmove(pcVar9, puVar7, 0x36); /* compiler REP MOVS byte copy */
+  puVar8 = (byte *)puVar1;
+  pcVar10 = &local_44;
+  memmove(pcVar10, puVar8, 0x36); /* compiler REP MOVS byte copy */
   memset((void *)puVar1, 0, 0x32); /* compiler bulk-zero initialization */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,5,(AnonShape_0043BEB0_1C00EC12 *)puVar1);
   if (local_44 != this_00->field_0C51) {
@@ -133,26 +134,26 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
                    this_00->field_0058,this_00->field_00B0);
       }
     }
-    pbVar10 = &this_00->field_0C5D;
-    pbVar8 = local_38;
+    pbVar11 = &this_00->field_0C5D;
+    pbVar9 = local_38;
     do {
-      bVar4 = *pbVar8;
-      bVar12 = bVar4 < *pbVar10;
-      if (bVar4 != *pbVar10) {
+      bVar4 = *pbVar9;
+      bVar13 = bVar4 < *pbVar11;
+      if (bVar4 != *pbVar11) {
 LAB_00500121:
-        iVar5 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
+        iVar7 = (1 - (uint)bVar13) - (uint)(bVar13 != 0);
         goto LAB_00500126;
       }
       if (bVar4 == 0) break;
-      bVar4 = pbVar8[1];
-      bVar12 = bVar4 < pbVar10[1];
-      if (bVar4 != pbVar10[1]) goto LAB_00500121;
-      pbVar8 = pbVar8 + 2;
-      pbVar10 = pbVar10 + 2;
+      bVar4 = pbVar9[1];
+      bVar13 = bVar4 < pbVar11[1];
+      if (bVar4 != pbVar11[1]) goto LAB_00500121;
+      pbVar9 = pbVar9 + 2;
+      pbVar11 = pbVar11 + 2;
     } while (bVar4 != 0);
-    iVar5 = 0;
+    iVar7 = 0;
 LAB_00500126:
-    if (iVar5 != 0) {
+    if (iVar7 != 0) {
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_019C,0,1,0,
                  (byte *)this_00->field_0B47,0,1,0,0x4e,0x20);
@@ -164,7 +165,7 @@ LAB_00500126:
       }
     }
     if ((((local_29 != this_00->field_0C6C) || (local_42 != this_00->field_0C53)) &&
-        (iVar5 = this_00->field_0C54, iVar5 != 0xdd)) && ((iVar5 != 0xde && (iVar5 != 0xe0)))) {
+        (iVar7 = this_00->field_0C54, iVar7 != 0xdd)) && ((iVar7 != 0xde && (iVar7 != 0xe0)))) {
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_019C,0,1,0x1f,
                  (byte *)this_00->field_0B47,0,1,0x1f,0x4e,0x11);
@@ -177,14 +178,14 @@ LAB_00500126:
     }
     if (((DAT_0080874e == '\x03') && (this_00->field_0C58 == '\x03')) &&
        ((local_28 != this_00->field_0C6D &&
-        (((iVar5 = this_00->field_0C54, iVar5 != 0xdd && (iVar5 != 0xde)) && (iVar5 != 0xe0)))))) {
+        (((iVar7 = this_00->field_0C54, iVar7 != 0xdd && (iVar7 != 0xde)) && (iVar7 != 0xe0)))))) {
       PaintEnergy(this_00,0);
     }
     if (((((local_26 != this_00->field_0C6F) || (local_22 != this_00->field_0C73)) ||
          ((local_1e != this_00->field_0C77 ||
           ((local_24 != this_00->field_0C71 || (local_20 != this_00->field_0C75)))))) ||
         (local_1c != this_00->field_0C79)) &&
-       (((iVar5 = this_00->field_0C54, iVar5 != 0xdd && (iVar5 != 0xde)) && (iVar5 != 0xe0)))) {
+       (((iVar7 = this_00->field_0C54, iVar7 != 0xdd && (iVar7 != 0xde)) && (iVar7 != 0xe0)))) {
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_019C,0,1,0x2f,
                  (byte *)this_00->field_0B47,0,1,0x2f,0x4e,0x24);
@@ -195,18 +196,18 @@ LAB_00500126:
                    this_00->field_0058,this_00->field_00B0);
       }
     }
-    iVar5 = 5;
-    bVar12 = true;
-    pcVar9 = local_1a;
-    pcVar11 = &this_00->field_0xc7b;
+    iVar7 = 5;
+    bVar13 = true;
+    pcVar10 = local_1a;
+    pcVar12 = &this_00->field_0xc7b;
     do {
-      if (iVar5 == 0) break;
-      iVar5 = iVar5 + -1;
-      bVar12 = *pcVar9 == *pcVar11;
-      pcVar9 = pcVar9 + 1;
-      pcVar11 = pcVar11 + 1;
-    } while (bVar12);
-    if ((!bVar12) || (local_42 != this_00->field_0C53)) {
+      if (iVar7 == 0) break;
+      iVar7 = iVar7 + -1;
+      bVar13 = *pcVar10 == *pcVar12;
+      pcVar10 = pcVar10 + 1;
+      pcVar12 = pcVar12 + 1;
+    } while (bVar13);
+    if ((!bVar13) || (local_42 != this_00->field_0C53)) {
       PaintDeep(this_00,0);
       bVar4 = (DAT_0080874e != '\x03') + 5;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

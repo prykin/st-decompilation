@@ -62,7 +62,7 @@ void __cdecl FUN_005411a0(DArrayTy *param_1,char *param_2,char *text)
           puVar3 = Library::MSVCRT::FUN_0072e560(puVar3,'\n')) {
         *(undefined1 *)puVar3 = 0x20;
       }
-      Library::DKW::TBL::FUN_006b5aa0(&param_1->flags,(char *)local_8);
+      Library::DKW::TBL::FUN_006b5aa0(param_1,(char *)local_8);
       FreeAndNull(&local_8);
     }
   }

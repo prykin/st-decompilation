@@ -14,6 +14,7 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
   char *pcVar6;
   char *pcVar7;
   short *psVar8;
+  char *pcVar7_mg3;
 
   if (STField<int>(this,0x138) != 0) {
     if ((STField<uint>(this,0x20) & 0x40) != 0) {
@@ -26,8 +27,8 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
         return 0;
       }
     }
-    if ((STField<uint *>(this,0x138))[2] == 0) {
-      Library::DKW::TBL::FUN_006b5aa0(STField<uint *>(this,0x138),PTR_DAT_007f0b04);
+    if ((STField<DArrayTy *>(this,0x138))->elementSize == 0) {
+      Library::DKW::TBL::FUN_006b5aa0(STField<DArrayTy *>(this,0x138),PTR_DAT_007f0b04);
     }
     iVar2 = STField<int>(this,0x20c) + STField<int>(this,0x144);
     if (iVar2 < *(int *)(STField<int>(this,0x138) + 8)) {
@@ -71,12 +72,12 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
       pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
     uVar5 = 0xffffffff;
-    pcVar7 = param_1;
+    pcVar7_mg3 = param_1;
     do {
       if (uVar5 == 0) break;
       uVar5 = uVar5 - 1;
-      cVar1 = *pcVar7;
-      pcVar7 = pcVar7 + 1;
+      cVar1 = *pcVar7_mg3;
+      pcVar7_mg3 = pcVar7_mg3 + 1;
     } while (cVar1 != '\0');
     psVar3 = Library::DKW::LIB::MemAllocClear(~uVar4 + ~uVar5);
     uVar4 = 0xffffffff;

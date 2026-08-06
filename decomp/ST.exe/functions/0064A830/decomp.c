@@ -10,8 +10,9 @@ int __cdecl FUN_0064a830(int *param_1,undefined4 *param_2)
 
 {
   int iVar1;
-  void *pvVar2;
-  undefined4 *puVar3;
+  int iVar2;
+  void *pvVar3;
+  undefined4 *puVar4;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
@@ -19,18 +20,18 @@ int __cdecl FUN_0064a830(int *param_1,undefined4 *param_2)
   iVar1 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar1 == 0) {
     if (*param_1 <= param_1[1]) {
-      iVar1 = *param_1 + 10;
-      *param_1 = iVar1;
-      pvVar2 = Library::DKW::LIB::MemRealloc((void *)param_1[2],iVar1 * 5);
-      param_1[2] = (int)pvVar2;
+      iVar2 = *param_1 + 10;
+      *param_1 = iVar2;
+      pvVar3 = Library::DKW::LIB::MemRealloc((void *)param_1[2],iVar2 * 5);
+      param_1[2] = (int)pvVar3;
     }
-    puVar3 = (undefined4 *)(param_1[1] * 5 + param_1[2]);
-    *puVar3 = *param_2;
-    *(undefined1 *)(puVar3 + 1) = *(undefined1 *)(param_2 + 1);
-    iVar1 = param_1[1];
-    param_1[1] = iVar1 + 1;
+    puVar4 = (undefined4 *)(param_1[1] * 5 + param_1[2]);
+    *puVar4 = *param_2;
+    *(undefined1 *)(puVar4 + 1) = *(undefined1 *)(param_2 + 1);
+    iVar2 = param_1[1];
+    param_1[1] = iVar2 + 1;
     g_currentExceptionFrame = local_48.previous;
-    return iVar1;
+    return iVar2;
   }
   g_currentExceptionFrame = local_48.previous;
   RaiseInternalException(iVar1,0,"E:\\__titans\\ai\\ai_erc.cpp",0x56);

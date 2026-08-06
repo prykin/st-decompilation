@@ -20,12 +20,13 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
   bool bVar3;
   CPanelTy *pCVar4;
   int iVar5;
-  byte *pbVar6;
-  uint uVar7;
-  int iVar8;
+  int iVar7;
+  BITMAPINFO *pBVar8;
   uint uVar9;
-  byte bVar10;
-  RecoveredSourceFamily_dibcopy *pRVar11;
+  int iVar6;
+  uint uVar10;
+  byte bVar11;
+  RecoveredSourceFamily_dibcopy *pRVar12;
   InternalExceptionFrame local_58;
   byte local_14;
   undefined3 uStack_13;
@@ -73,48 +74,48 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
       iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
       pCVar4 = local_10;
       if (iVar5 == 0) {
-        pRVar11 = (RecoveredSourceFamily_dibcopy *)(uint)param_1;
-        bVar10 = *(byte *)((int)&pRVar11[0x2a].field_0008 + (int)local_10);
-        local_c = pRVar11;
-        if (bVar10 != 0xff) {
+        pRVar12 = (RecoveredSourceFamily_dibcopy *)(uint)param_1;
+        bVar11 = *(byte *)((int)&pRVar12[0x2a].field_0008 + (int)local_10);
+        local_c = pRVar12;
+        if (bVar11 != 0xff) {
           if (DAT_0080874e == '\x03') {
             if (param_1 == 0) {
-              uVar7 = (uint)(byte)local_10->field_02A8;
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              if (*(char *)((int)local_10->field_0B1F + uVar7 + 0x6e) == '\0') {
-                uVar7 = uVar7 + 5;
-              }
               uVar9 = (uint)(byte)local_10->field_02A8;
-              pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
-                                            local_10->field_02A2,uVar7);
-              iVar5 = (5 - uVar9) * 0xb;
-              pRVar11 = pCVar4->field_018C;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              if (*(char *)((int)local_10->field_0B1F + uVar9 + 0x6e) == '\0') {
+                uVar9 = uVar9 + 5;
+              }
+              uVar10 = (uint)(byte)local_10->field_02A8;
+              pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02A2,uVar9
+                                   );
+              iVar7 = (5 - uVar10) * 0xb;
+              pRVar12 = pCVar4->field_018C;
             }
             else {
-              uVar7 = (uint)bVar10;
-              if ((&local_10->field_0xc7b)[uVar7] == '\0') {
-                iVar5 = uVar7 + 0x14;
+              uVar9 = (uint)bVar11;
+              if ((&local_10->field_0xc7b)[uVar9] == '\0') {
+                iVar7 = uVar9 + 0x14;
               }
               else {
-                iVar5 = uVar7 + 0x19;
+                iVar7 = uVar9 + 0x19;
               }
-              uVar9 = (uint)*(byte *)((int)&pRVar11[0x2a].field_0008 + (int)local_10);
-              pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
-                                            local_10->field_02A2,iVar5);
-              pRVar11 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0194;
-              iVar5 = uVar9 * 0xb + 0x87;
+              uVar10 = (uint)*(byte *)((int)&pRVar12[0x2a].field_0008 + (int)local_10);
+              pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02A2,iVar7
+                                   );
+              pRVar12 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0194;
+              iVar7 = uVar10 * 0xb + 0x87;
             }
-            DibPut(pRVar11,iVar5,uVar9 * 0xb + 0xb,'\x06',pbVar6);
-            bVar10 = (-(param_1 != 0) & 2U) + 3;
+            DibPut(pRVar12,iVar7,uVar10 * 0xb + 0xb,'\x06',(byte *)pBVar8);
+            bVar11 = (-(param_1 != 0) & 2U) + 3;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            _local_14 = CONCAT31(uStack_13,bVar10);
-            pRVar11 = local_c;
-            if (bVar10 < 0xb) {
-              if (-1 < (int)pCVar4->field_0148[bVar10]) {
+            _local_14 = CONCAT31(uStack_13,bVar11);
+            pRVar12 = local_c;
+            if (bVar11 < 0xb) {
+              if (-1 < (int)pCVar4->field_0148[bVar11]) {
                 Library::DKW::DDX::FUN_006b3640
-                          ((int *)g_ddxContext_008075A8,(uint)pCVar4->field_0148[bVar10],0xffffffff,
-                           (&pCVar4->field_003C)[bVar10],(&pCVar4->field_0094)[bVar10]);
-                pRVar11 = local_c;
+                          ((int *)g_ddxContext_008075A8,(uint)pCVar4->field_0148[bVar11],0xffffffff,
+                           (&pCVar4->field_003C)[bVar11],(&pCVar4->field_0094)[bVar11]);
+                pRVar12 = local_c;
               }
             }
           }
@@ -125,29 +126,29 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
               local_c = (RecoveredSourceFamily_dibcopy *)local_10->field_0188;
             }
             else {
-              cVar1 = (&local_10->field_0xc7b)[bVar10];
+              cVar1 = (&local_10->field_0xc7b)[bVar11];
               local_c = (RecoveredSourceFamily_dibcopy *)local_10->field_0198;
             }
-            pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02A2
-                                          ,(-(uint)(cVar1 != '\0') & 0xfffffffe) + 2);
+            pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02A2,
+                                  (-(uint)(cVar1 != '\0') & 0xfffffffe) + 2);
             DibPut(local_c,7,
-                   (uint)*(byte *)((int)&pRVar11[0x2a].field_0008 + (int)pCVar4) * 0x1d + 6,'\x01',
-                   pbVar6);
-            bVar10 = (-(param_1 != 0) & 4U) + 2;
+                   (uint)*(byte *)((int)&pRVar12[0x2a].field_0008 + (int)pCVar4) * 0x1d + 6,'\x01',
+                   (byte *)pBVar8);
+            bVar11 = (-(param_1 != 0) & 4U) + 2;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            _local_14 = CONCAT31(uStack_13,bVar10);
-            if (bVar10 < 0xb) {
-              if (-1 < (int)pCVar4->field_0148[bVar10]) {
+            _local_14 = CONCAT31(uStack_13,bVar11);
+            if (bVar11 < 0xb) {
+              if (-1 < (int)pCVar4->field_0148[bVar11]) {
                 Library::DKW::DDX::FUN_006b3640
-                          ((int *)g_ddxContext_008075A8,(uint)pCVar4->field_0148[bVar10],0xffffffff,
-                           (&pCVar4->field_003C)[bVar10],(&pCVar4->field_0094)[bVar10]);
+                          ((int *)g_ddxContext_008075A8,(uint)pCVar4->field_0148[bVar11],0xffffffff,
+                           (&pCVar4->field_003C)[bVar11],(&pCVar4->field_0094)[bVar11]);
               }
             }
           }
         }
-        ((undefined1 *)((int)&pRVar11[0x2a].field_0004 + 2))[(int)pCVar4] = 0;
-        *(byte *)((int)&pRVar11[0x2a].field_0008 + (int)pCVar4) = param_2;
-        *(undefined4 *)((int)pCVar4->field_0308 + (int)pRVar11 * 4 + -0x5e) = 0;
+        ((undefined1 *)((int)&pRVar12[0x2a].field_0004 + 2))[(int)pCVar4] = 0;
+        *(byte *)((int)&pRVar12[0x2a].field_0008 + (int)pCVar4) = param_2;
+        *(undefined4 *)((int)pCVar4->field_0308 + (int)pRVar12 * 4 + -0x5e) = 0;
         thunk_FUN_005252c0(0xb4);
         local_5 = param_2;
         thunk_FUN_0054edf0((undefined4 *)0x15,(uint *)&local_5,0,0xffffffff);
@@ -155,9 +156,9 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
         return;
       }
       g_currentExceptionFrame = local_58.previous;
-      iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x1fb,0,iVar5,
+      iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x1fb,0,iVar5,
                                  "%s","CPanelTy::SetNewDeep");
-      if (iVar8 != 0) {
+      if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0x1fb);

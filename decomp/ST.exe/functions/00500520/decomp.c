@@ -15,12 +15,14 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
   CPanelTy *pCVar2;
   char cVar3;
   int iVar4;
-  byte *pbVar5;
-  uint uVar6;
+  BITMAPINFO *pBVar4;
+  uint uVar5;
+  int iVar9;
+  int iVar6;
   char *pcVar7;
   RecoveredSourceFamily_dibcopy *pRVar8;
-  int iVar9;
   int iVar10;
+  int iVar11;
   InternalExceptionFrame local_70;
   int local_2c;
   int local_28;
@@ -59,51 +61,50 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
       local_28 = -0x2a - (int)local_c;
       local_14 = 6;
       pcVar7 = local_c + 0x2a;
-      iVar4 = 0xb;
+      iVar6 = 0xb;
       local_10 = 0x37;
       local_18 = 5;
       do {
         if (DAT_0080874e == '\x03') {
-          iVar10 = iVar4;
+          iVar11 = iVar6;
           if (param_1 != 0) {
-            iVar9 = local_20;
+            iVar10 = local_20;
             if (*pcVar7 != '\0') {
-              iVar9 = local_28;
+              iVar10 = local_28;
             }
-            pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,
-                                          (int)(pcVar7 + iVar9));
+            pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,
+                                  (int)(pcVar7 + iVar10));
             cVar3 = '\x06';
-            iVar9 = local_10;
+            iVar10 = local_10;
             goto LAB_00500689;
           }
-          iVar9 = local_24;
+          iVar10 = local_24;
           if (*pcVar7 == '\0') {
-            iVar9 = local_2c;
+            iVar10 = local_2c;
           }
-          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,
-                                        (int)(pcVar7 + iVar9));
+          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,
+                                (int)(pcVar7 + iVar10));
           cVar3 = '\x06';
-          iVar9 = iVar4 + 0x7c;
+          iVar10 = iVar6 + 0x7c;
           pRVar8 = (RecoveredSourceFamily_dibcopy *)pCVar2->field_0148[(local_8 & 0xff) + 0xe];
         }
         else {
           if (*pcVar7 == '\0') {
-            uVar6 = 2;
+            uVar5 = 2;
           }
           else {
-            uVar6 = -(uint)(local_c[2] != '\x01') & 3;
+            uVar5 = -(uint)(local_c[2] != '\x01') & 3;
           }
-          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,
-                                        uVar6);
+          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,uVar5);
           cVar3 = '\x01';
-          iVar9 = 7;
-          iVar10 = local_14;
+          iVar10 = 7;
+          iVar11 = local_14;
 LAB_00500689:
           pRVar8 = (RecoveredSourceFamily_dibcopy *)pCVar2->field_0148[(local_8 & 0xff) + 0xe];
         }
-        DibPut(pRVar8,iVar9,iVar10,cVar3,pbVar5);
+        DibPut(pRVar8,iVar10,iVar11,cVar3,(byte *)pBVar4);
         local_10 = local_10 + -0xb;
-        iVar4 = iVar4 + 0xb;
+        iVar6 = iVar6 + 0xb;
         pcVar7 = pcVar7 + 1;
         local_14 = local_14 + 0x1d;
         local_18 = local_18 + -1;

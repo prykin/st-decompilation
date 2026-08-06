@@ -14,22 +14,23 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   LPSTR pCVar4;
   ccFntTy *pcVar5;
   ushort *puVar6;
-  byte bVar7;
   int iVar8;
-  uint *puVar9;
-  uint uVar10;
-  int *piVar11;
-  bool bVar12;
-  int iVar13;
-  undefined4 uVar14;
-  int iVar15;
-  uint uVar16;
-  int iVar17;
-  UINT UVar18;
-  undefined4 *puVar19;
-  int *piVar20;
-  undefined4 uVar21;
-  undefined4 *puVar22;
+  byte bVar7;
+  int iVar9;
+  uint *puVar10;
+  uint uVar11;
+  int *piVar12;
+  bool bVar13;
+  int iVar14;
+  undefined4 uVar15;
+  int iVar16;
+  uint uVar17;
+  int iVar18;
+  UINT UVar19;
+  undefined4 *puVar20;
+  int *piVar21;
+  undefined4 uVar22;
+  undefined4 *puVar23;
   uint local_5e0 [84];
   int local_490 [6];
   undefined4 local_478;
@@ -71,31 +72,31 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
 
   puVar3 = local_74;
   local_14 = this;
-  for (iVar8 = 0x16; iVar8 != 0; iVar8 = iVar8 + -1) {
+  for (iVar9 = 0x16; iVar9 != 0; iVar9 = iVar9 + -1) {
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
   memset(local_5e0, 0, 0x150); /* compiler bulk-zero initialization */
-  iVar8 = 0;
+  iVar9 = 0;
   memset(local_490, 0, 0x3d8); /* compiler bulk-zero initialization */
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   puVar3 = (undefined4 *)Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   this_00 = local_14;
   if (puVar3 == nullptr) {
-    uVar21 = 0x77;
+    uVar22 = 0x77;
     g_tradePanel_00802A44 = local_14;
-    iVar8 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffa) + 0xde;
-    UVar18 = 0x36c0;
-    iVar17 = 0xb;
-    iVar15 = 0xbf;
-    uVar14 = 3;
-    iVar13 = 0x40;
+    iVar9 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffa) + 0xde;
+    UVar19 = 0x36c0;
+    iVar18 = 0xb;
+    iVar16 = 0xbf;
+    uVar15 = 3;
+    iVar14 = 0x40;
     pCVar4 = thunk_FUN_00571240("BKG_TRADECENTERW",0);
     SpecPanelTy::InitPanel
-              ((SpecPanelTy *)this_00,pCVar4,iVar13,uVar14,iVar15,iVar17,UVar18,iVar8,uVar21);
+              ((SpecPanelTy *)this_00,pCVar4,iVar14,uVar15,iVar16,iVar18,UVar19,iVar9,uVar22);
     pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
-    uVar10 = 1;
+    uVar11 = 1;
     this_00->field_01DD = pcVar5;
     pcVar5->field_0058 = 1;
     pcVar5->field_005C = 0;
@@ -105,38 +106,38 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
     this_00->field_01D5 = puVar6;
-    iVar8 = 1;
-    uVar16 = 0xffffffff;
-    puVar19 = puVar3;
-    puVar22 = puVar3;
+    iVar9 = 1;
+    uVar17 = 0xffffffff;
+    puVar20 = puVar3;
+    puVar23 = puVar3;
     pCVar4 = thunk_FUN_00571240("TRADE_RATE",0);
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (PTR_00806794,CASE_B,pCVar4,uVar16,(byte)puVar3,iVar8,(int)puVar19,puVar22);
+                       (PTR_00806794,CASE_B,pCVar4,uVar17,(byte)puVar3,iVar9,(int)puVar20,puVar23);
     local_5 = this_00->field_01D0;
     this_00->field_01D9 = puVar6;
     local_1c = this_00->field_005C;
     bVar7 = 0;
     local_10 = (DAT_0080874e != '\x03') + 0x3b;
-    puVar9 = local_5e0 + 1;
+    puVar10 = local_5e0 + 1;
     local_c = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 0x22 + this_00->field_003C;
     do {
-      iVar13 = local_1c;
-      bVar12 = bVar7 == local_5;
-      puVar9[-1] = uVar10;
-      *puVar9 = (uint)bVar12;
-      puVar9[2] = local_c;
-      puVar9[4] = 0x3a;
-      iVar8 = DAT_00806734;
-      if (iVar13 != 0) {
-        iVar8 = this_00->field_0044;
+      iVar14 = local_1c;
+      bVar13 = bVar7 == local_5;
+      puVar10[-1] = uVar11;
+      *puVar10 = (uint)bVar13;
+      puVar10[2] = local_c;
+      puVar10[4] = 0x3a;
+      iVar9 = DAT_00806734;
+      if (iVar14 != 0) {
+        iVar9 = this_00->field_0044;
       }
       bVar7 = bVar7 + 1;
-      puVar9[3] = iVar8 + 0x17;
-      iVar8 = local_10;
-      puVar9[5] = 0x13;
-      uVar10 = uVar10 + 1;
-      local_c = local_c + iVar8;
-      puVar9 = puVar9 + 0x1c;
+      puVar10[3] = iVar9 + 0x17;
+      iVar9 = local_10;
+      puVar10[5] = 0x13;
+      uVar11 = uVar11 + 1;
+      local_c = local_c + iVar9;
+      puVar10 = puVar10 + 0x1c;
     } while (bVar7 < 2);
     local_64 = this_00->field_0008;
     local_2c = local_5e0;
@@ -153,10 +154,10 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C4,nullptr,local_74,0);
     local_e8 = this_00->field_0008;
-    iVar13 = 1;
-    piVar20 = nullptr;
-    uVar14 = 0;
-    iVar8 = 1;
+    iVar14 = 1;
+    piVar21 = nullptr;
+    uVar15 = 0;
+    iVar9 = 1;
     local_490[0] = 0;
     local_e4 = 2;
     local_e0 = 0xb20c;
@@ -167,28 +168,28 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_490[2] = 0;
     local_490[3] = 2;
     pCVar4 = thunk_FUN_00571240("BUT_TBUP",0);
-    pCVar4 = FUN_006f2c00(pCVar4,iVar8,uVar14);
-    local_18 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar20,iVar13);
+    pCVar4 = FUN_006f2c00(pCVar4,iVar9,uVar15);
+    local_18 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar21,iVar14);
     local_478 = *(undefined4 *)(local_18 + 2);
     local_474 = *(undefined4 *)(local_18 + 4);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_18);
-    iVar8 = this_00->field_005C;
+    iVar9 = this_00->field_005C;
     local_490[4] = this_00->field_003C + 0x69;
-    iVar13 = DAT_00806734;
-    if (iVar8 != 0) {
-      iVar13 = this_00->field_0044;
+    iVar14 = DAT_00806734;
+    if (iVar9 != 0) {
+      iVar14 = this_00->field_0044;
     }
     local_424 = 2;
-    local_490[5] = iVar13 + 0x46;
+    local_490[5] = iVar14 + 0x46;
     local_428 = this_00->field_0008;
     local_420 = 0xc005;
     local_378 = 500;
     local_374 = 0x28;
-    piVar20 = local_490 + 2;
-    piVar11 = local_308;
-    memmove(piVar11, piVar20, 0x17c); /* compiler REP MOVS byte copy */
+    piVar21 = local_490 + 2;
+    piVar12 = local_308;
+    memmove(piVar12, piVar21, 0x17c); /* compiler REP MOVS byte copy */
     local_308[3] = DAT_00806734;
-    if (iVar8 != 0) {
+    if (iVar9 != 0) {
       local_308[3] = this_00->field_0044;
     }
     local_308[3] = local_308[3] + 0x57;

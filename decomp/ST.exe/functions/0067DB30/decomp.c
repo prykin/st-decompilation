@@ -11,6 +11,7 @@ int __cdecl DelPlrEdit(int param_1,char *param_2)
 {
   int iVar2;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;

@@ -13,8 +13,9 @@ FUN_00750080(void *this,undefined4 *param_1,int param_2,double param_3,int param
             short param_6,int param_7,int param_8,int param_9,undefined4 param_10,int param_11)
 
 {
-  void *this_00;
   int *piVar1;
+  void *this_00;
+  int *piVar1_mg0;
   int *local_8;
 
   local_8 = this;
@@ -23,17 +24,17 @@ FUN_00750080(void *this,undefined4 *param_1,int param_2,double param_3,int param
   *param_1 = 0;
   this_00 = (void *)Library::MSVCRT::FUN_0072e530(0x50);
   if (this_00 == nullptr) {
-    piVar1 = nullptr;
+    piVar1_mg0 = nullptr;
   }
   else {
-    piVar1 = FUN_0074fc49(this_00,this,nullptr,(uint *)&local_8,param_2,param_3,param_4,param_5,
-                          param_6,param_7,param_8,param_9,param_10,param_11);
+    piVar1_mg0 = FUN_0074fc49(this_00,this,nullptr,(uint *)&local_8,param_2,param_3,param_4,
+                              param_5,param_6,param_7,param_8,param_9,param_10,param_11);
   }
-  if (piVar1 == nullptr) {
+  if (piVar1_mg0 == nullptr) {
     local_8 = (int *)0x8007000e;
   }
   else {
-    *param_1 = piVar1;
+    *param_1 = piVar1_mg0;
   }
   piVar1 = local_8;
   LeaveCriticalSection((LPCRITICAL_SECTION)((int)this + 8));

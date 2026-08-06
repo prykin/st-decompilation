@@ -35,6 +35,8 @@ FUN_005fcff0(undefined4 param_1,uint param_2,int param_3,undefined4 param_4,unde
   undefined4 local_13;
   undefined4 local_f;
   undefined4 local_b;
+  char *pcVar5_mg1;
+  char *pcVar5_mg0;
 
   _param_10 = (uint)param_10;
   memset(local_15c, 0, 0x155); /* compiler bulk-zero initialization */
@@ -58,25 +60,25 @@ FUN_005fcff0(undefined4 param_1,uint param_2,int param_3,undefined4 param_4,unde
   local_130 = (short)param_7 * 200 + 100;
   if (param_8 != nullptr) {
     uVar3 = 0xffffffff;
-    pcVar5 = param_8;
+    pcVar5_mg0 = param_8;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar5 + 1;
+      cVar1 = *pcVar5_mg0;
+      pcVar5_mg0 = pcVar5_mg0 + 1;
     } while (cVar1 != '\0');
     if (~uVar3 - 1 < 0xf) {
       uVar3 = 0xffffffff;
       do {
-        pcVar5 = param_8;
+        pcVar5_mg1 = param_8;
         if (uVar3 == 0) break;
         uVar3 = uVar3 - 1;
-        pcVar5 = param_8 + 1;
+        pcVar5_mg1 = param_8 + 1;
         cVar1 = *param_8;
-        param_8 = pcVar5;
+        param_8 = pcVar5_mg1;
       } while (cVar1 != '\0');
       uVar3 = ~uVar3;
-      pcVar5 = pcVar5 + -uVar3;
+      pcVar5 = pcVar5_mg1 + -uVar3;
       pcVar7 = local_126;
       memmove(pcVar7, pcVar5, uVar3); /* compiler REP MOVS byte copy */
     }

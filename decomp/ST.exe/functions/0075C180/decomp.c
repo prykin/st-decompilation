@@ -4,9 +4,8 @@
 undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2)
 
 {
-  AnonShape_0075C180_8EED234B *pAVar1;
-  AnonShape_0075C180_8EED234B *pAVar2;
-  int iVar3;
+  AnonShape_0075C180_8EED234B *pAVar3;
+  int iVar4;
   uint uVar4;
   int iVar5;
   int iVar6;
@@ -28,6 +27,8 @@ undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2
   int local_10;
   AnonShape_0075C180_73A43719 *local_c;
   int *local_8;
+  AnonShape_0075C180_8EED234B *pAVar2;
+  AnonShape_0075C180_8EED234B *pAVar1;
 
   pAVar2 = param_1;
   local_18 = param_1->field_018A;
@@ -35,7 +36,7 @@ undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2
   if (((param_1->field_010C != 0) &&
       (((AnonShape_0075C180_73A43719 *)param_1->field_01AA)[2].field_0008 ==
        nullptr)) &&
-     (iVar3 = FUN_0075c3b0((AnonShape_0075BE40_B9FD5FDF *)param_1), iVar3 == 0)) {
+     (iVar4 = FUN_0075c3b0((AnonShape_0075BE40_B9FD5FDF *)param_1), iVar4 == 0)) {
     return 0;
   }
   pAVar8 = local_c;
@@ -45,7 +46,7 @@ undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2
   local_48 = param_1->field_0010[1];
   local_44 = param_1->field_018E;
   pAVar1 = local_c->field_0008;
-  iVar3 = local_c->field_000C;
+  iVar4 = local_c->field_000C;
   local_34 = local_c + 1;
   piVar9 = (int *)&local_c[1].field_0x4;
   piVar10 = local_30;
@@ -60,49 +61,49 @@ undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar5 = (&pAVar8[2].field_000C)
               [*(int *)(*(int *)(&pAVar2->field_0x13a + *local_8 * 4) + 0x14)];
-      if (iVar3 < 8) {
-        iVar3 = FUN_0075b720(&local_4c,param_1,iVar3,0);
-        if (iVar3 == 0) {
+      if (iVar4 < 8) {
+        iVar4 = FUN_0075b720(&local_4c,param_1,iVar4,0);
+        if (iVar4 == 0) {
           return 0;
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = local_40;
-        iVar3 = local_3c;
+        iVar4 = local_3c;
         if (7 < local_3c) goto LAB_0075c271;
         iVar6 = 1;
 LAB_0075c29e:
-        uVar4 = FUN_0075b800(&local_4c,param_1,iVar3,iVar5,iVar6);
+        uVar4 = FUN_0075b800(&local_4c,param_1,iVar4,iVar5,iVar6);
         if ((int)uVar4 < 0) {
           return 0;
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = local_40;
-        iVar3 = local_3c;
+        iVar4 = local_3c;
       }
       else {
 LAB_0075c271:
-        uVar4 = (int)param_1 >> ((char)iVar3 - 8U & 0x1f) & 0xff;
-        iVar6 = *(int *)(iVar5 + 0xd4 + uVar4 * 4);
+        uVar7 = (int)param_1 >> ((char)iVar4 - 8U & 0x1f) & 0xff;
+        iVar6 = *(int *)(iVar5 + 0xd4 + uVar7 * 4);
         if (iVar6 == 0) {
           iVar6 = 9;
           goto LAB_0075c29e;
         }
-        iVar3 = iVar3 - iVar6;
-        uVar4 = (uint)*(byte *)(uVar4 + 0x4d4 + iVar5);
+        iVar4 = iVar4 - iVar6;
+        uVar4 = (uint)*(byte *)(uVar7 + 0x4d4 + iVar5);
       }
       uVar7 = 0;
       if (uVar4 != 0) {
-        if (iVar3 < (int)uVar4) {
-          iVar3 = FUN_0075b720(&local_4c,param_1,iVar3,uVar4);
-          if (iVar3 == 0) {
+        if (iVar4 < (int)uVar4) {
+          iVar4 = FUN_0075b720(&local_4c,param_1,iVar4,uVar4);
+          if (iVar4 == 0) {
             return 0;
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = local_40;
-          iVar3 = local_3c;
+          iVar4 = local_3c;
         }
-        iVar3 = iVar3 - uVar4;
-        uVar7 = (1 << ((byte)uVar4 & 0x1f)) - 1U & (int)param_1 >> ((byte)iVar3 & 0x1f);
+        iVar4 = iVar4 - uVar4;
+        uVar7 = (1 << ((byte)uVar4 & 0x1f)) - 1U & (int)param_1 >> ((byte)iVar4 & 0x1f);
         if ((int)uVar7 < *(int *)(&DAT_007a2054 + uVar4 * 4)) {
           uVar7 = *(int *)(&DAT_007a2094 + uVar4 * 4) + uVar7;
         }
@@ -124,12 +125,12 @@ LAB_0075c271:
   pAVar2->field_0010[1] = local_48;
   pAVar2->field_018E = local_44;
   pAVar8->field_0008 = param_1;
-  pAVar8->field_000C = iVar3;
-  pAVar2 = pAVar8[2].field_0008;
+  pAVar8->field_000C = iVar4;
+  pAVar3 = pAVar8[2].field_0008;
   piVar9 = local_30;
   piVar10 = (int *)&pAVar8[1].field_0x4;
   memmove(piVar10, piVar9, 0x14); /* compiler REP MOVS byte copy */
-  pAVar8[2].field_0008 = (AnonShape_0075C180_8EED234B *)&pAVar2[-1].field_0x1af;
+  pAVar8[2].field_0008 = (AnonShape_0075C180_8EED234B *)&pAVar3[-1].field_0x1af;
   return 1;
 }
 

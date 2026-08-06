@@ -11,13 +11,15 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
   byte bVar1;
   byte bVar2;
   short sVar4;
-  short sVar5;
   int iVar6;
-  DArrayTy *pDVar7;
-  STGameObjC *pSVar8;
+  short sVar5;
+  DArrayTy *pDVar6;
+  STGameObjC *pSVar7;
+  int iVar8;
+  dword dVar9;
   int iVar9;
-  dword dVar10;
-  undefined4 uVar11;
+  undefined4 uVar10;
+  int iVar11;
   STWorldObject *pSVar12;
   STGroupBoatC *pSVar13;
   uint uVar15;
@@ -70,7 +72,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
     memset(&pSVar13->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
-    iVar6 = 0;
+    iVar11 = 0;
     pSVar13->field_0065 = 0;
     if (pSVar13->field_00E7 == 0) {
       local_18 = local_8->field_00EF->count;
@@ -84,9 +86,9 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
         pSVar16->field_020E = nullptr;
         pSVar16->field_0212 = 0;
       }
-      pDVar7 = Library::DKW::TBL::DArrayCreate(nullptr,0,4,1);
+      pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,0,4,1);
       sVar5 = 0;
-      local_8->field_020E = pDVar7;
+      local_8->field_020E = pDVar6;
       pSVar13 = local_8;
       if (0 < (int)local_18) {
         uVar15 = 0;
@@ -95,12 +97,12 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
           if ((local_2c < 8) &&
              ((((g_playSystem_00802A38 == nullptr ||
                 (g_bulkInitializedRecords_008087C7[(char)local_2c].field_0022 < 8)) &&
-               (pSVar8 = STAllPlayersC::GetObjPtr
+               (pSVar7 = STAllPlayersC::GetObjPtr
                                    (g_allPlayers_007FA174,local_2c,uStack_2a,(int)cStack_2b),
-               pSVar13 = local_8, pSVar8 != nullptr)) &&
-              ((iVar6 = pSVar8->vfunc_F8(), pSVar13 = local_8, iVar6 == 1 &&
-               (iVar6 = (*pSVar8->vtable->vfunc_F4)((int)local_8->field_0024), pSVar13 = local_8,
-               iVar6 == 1)))))) {
+               pSVar13 = local_8, pSVar7 != nullptr)) &&
+              ((iVar11 = pSVar7->vfunc_F8(), pSVar13 = local_8, iVar11 == 1 &&
+               (iVar11 = (*pSVar7->vtable->vfunc_F4)((int)local_8->field_0024), pSVar13 = local_8,
+               iVar11 == 1)))))) {
             Library::DKW::TBL::DArrayPut(local_8->field_020E,uVar15,&local_2c);
             pSVar13 = local_8;
           }
@@ -123,21 +125,21 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
         pSVar13->field_020E = nullptr;
         pSVar13->field_0212 = 0;
       }
-      pDVar7 = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
-      pSVar13->field_020E = pDVar7;
-      local_c = STReplaceLowWord((uint32_t)(pDVar7), (uint16_t)(pSVar13->field_00F3));
-      iVar6 = (int)pSVar13->field_00F3;
+      pDVar6 = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
+      pSVar13->field_020E = pDVar6;
+      local_c = STReplaceLowWord((uint32_t)(pDVar6), (uint16_t)(pSVar13->field_00F3));
+      iVar11 = (int)pSVar13->field_00F3;
       local_18 = 0;
-      if (iVar6 < pSVar13->field_00F9 + iVar6) {
+      if (iVar11 < pSVar13->field_00F9 + iVar11) {
         do {
           sVar5 = pSVar13->field_00F5;
-          local_14 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(sVar5));
-          iVar6 = local_c;
+          local_14 = STReplaceLowWord((uint32_t)(iVar11), (uint16_t)(sVar5));
+          iVar11 = local_c;
           if ((int)sVar5 < (int)pSVar13->field_00FB + (int)sVar5) {
             do {
-              local_10 = STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(pSVar13->field_00F7));
-              iVar6 = (int)pSVar13->field_00F7;
-              if (iVar6 < pSVar13->field_00FD + iVar6) {
+              local_10 = STReplaceLowWord((uint32_t)(iVar11), (uint16_t)(pSVar13->field_00F7));
+              iVar11 = (int)pSVar13->field_00F7;
+              if (iVar11 < pSVar13->field_00FD + iVar11) {
                 do {
                   sVar5 = (short)local_c;
                   if (((sVar5 < 0) || (g_worldGrid.sizeX <= sVar5)) ||
@@ -147,11 +149,11 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
                     pSVar12 = nullptr;
                   }
                   else {
-                    pSVar12 = STGridAt3D(g_worldGrid, sVar5, sVar4, iVar6).objects[0];
+                    pSVar12 = STGridAt3D(g_worldGrid, sVar5, sVar4, iVar11).objects[0];
                   }
                   if ((pSVar12 == nullptr) ||
-                     (((iVar9 = pSVar12->value_20, iVar9 != 0x14 && (iVar9 != 1000)) &&
-                      (iVar9 != 0x3e9)))) {
+                     (((iVar8 = pSVar12->value_20, iVar8 != 0x14 && (iVar8 != 1000)) &&
+                      (iVar8 != 0x3e9)))) {
 LAB_0049af27:
                     pSVar13 = local_8;
                     if ((((sVar5 < 0) || (g_worldGrid.sizeX <= sVar5)) ||
@@ -161,7 +163,7 @@ LAB_0049af27:
                       pSVar12 = nullptr;
                     }
                     else {
-                      pSVar12 = STGridAt3D(g_worldGrid, local_c, sVar5, iVar6).objects[1];
+                      pSVar12 = STGridAt3D(g_worldGrid, local_c, sVar5, iVar11).objects[1];
                     }
                     if (((pSVar12 != nullptr) && (pSVar12->value_20 == 0x1ae)) &&
                        ((local_2c = *(byte *)&pSVar12[1].vtable, local_2c < 8 &&
@@ -173,28 +175,28 @@ LAB_0049af27:
                       if (DAT_00808a8f == '\0') {
                         if (local_2c == bVar1) {
 LAB_0049b073:
-                          iVar6 = 0;
+                          iVar11 = 0;
                         }
                         else {
                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                           uVar15 = CONCAT11(cStack_2b,local_2c) & 0xff;
                           bVar2 = g_playerRelationMatrix[uVar15][bVar1];
                           if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][uVar15] == 0)) {
-                            iVar6 = -2;
+                            iVar11 = -2;
                           }
                           else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][uVar15] == 0)) {
-                            iVar6 = -1;
+                            iVar11 = -1;
                           }
                           else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][uVar15] == 1)) {
-                            iVar6 = 1;
+                            iVar11 = 1;
                           }
                           else {
                             if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][uVar15] != 1))
                             goto LAB_0049b073;
-                            iVar6 = 2;
+                            iVar11 = 2;
                           }
                         }
-                        bVar17 = iVar6 < 0;
+                        bVar17 = iVar11 < 0;
                       }
                       else {
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -205,11 +207,11 @@ LAB_0049b073:
                       if (bVar17) {
                         uStack_2a = *(ushort *)&pSVar12[1].field_0xe;
                         cStack_2b = '\x03';
-                        iVar6 = (*pSVar12->vtable[5].slots_00_28[2])();
-                        if ((iVar6 == 1) &&
-                           (dVar10 = (*pSVar12->vtable[5].slots_00_28[1])((int)pSVar13->field_0024),
-                           dVar10 == 1)) {
-                          local_18 = dVar10;
+                        iVar11 = (*pSVar12->vtable[5].slots_00_28[2])();
+                        if ((iVar11 == 1) &&
+                           (dVar9 = (*pSVar12->vtable[5].slots_00_28[1])((int)pSVar13->field_0024),
+                           dVar9 == 1)) {
+                          local_18 = dVar9;
                           Library::DKW::TBL::DArrayAppend(pSVar13->field_020E,&local_2c);
                         }
                       }
@@ -226,28 +228,28 @@ LAB_0049b073:
                       if (DAT_00808a8f == '\0') {
                         if (local_2c == bVar1) {
 LAB_0049aec9:
-                          iVar9 = 0;
+                          iVar8 = 0;
                         }
                         else {
                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                           uVar15 = CONCAT11(cStack_2b,local_2c) & 0xff;
                           bVar2 = g_playerRelationMatrix[uVar15][bVar1];
                           if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][uVar15] == 0)) {
-                            iVar9 = -2;
+                            iVar8 = -2;
                           }
                           else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][uVar15] == 0)) {
-                            iVar9 = -1;
+                            iVar8 = -1;
                           }
                           else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][uVar15] == 1)) {
-                            iVar9 = 1;
+                            iVar8 = 1;
                           }
                           else {
                             if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][uVar15] != 1))
                             goto LAB_0049aec9;
-                            iVar9 = 2;
+                            iVar8 = 2;
                           }
                         }
-                        bVar17 = iVar9 < 0;
+                        bVar17 = iVar8 < 0;
                       }
                       else {
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -258,12 +260,12 @@ LAB_0049aec9:
                       if (bVar17) {
                         uStack_2a = *(ushort *)&pSVar12[1].field_0xe;
                         cStack_2b = '\x01';
-                        iVar9 = (*pSVar12->vtable[5].slots_00_28[2])();
+                        iVar8 = (*pSVar12->vtable[5].slots_00_28[2])();
                         pSVar13 = local_8;
-                        if ((iVar9 == 1) &&
-                           (dVar10 = (*pSVar12->vtable[5].slots_00_28[1])((int)local_8->field_0024),
-                           dVar10 == 1)) {
-                          local_18 = dVar10;
+                        if ((iVar8 == 1) &&
+                           (dVar9 = (*pSVar12->vtable[5].slots_00_28[1])((int)local_8->field_0024),
+                           dVar9 == 1)) {
+                          local_18 = dVar9;
                           Library::DKW::TBL::DArrayAppend(pSVar13->field_020E,&local_2c);
                         }
                         sVar5 = (short)local_c;
@@ -272,17 +274,17 @@ LAB_0049aec9:
                     }
                   }
                   local_10 = local_10 + 1;
-                  iVar6 = (int)(short)local_10;
+                  iVar11 = (int)(short)local_10;
                   pSVar13 = local_8;
-                } while (iVar6 < (int)local_8->field_00F7 + (int)local_8->field_00FD);
+                } while (iVar11 < (int)local_8->field_00F7 + (int)local_8->field_00FD);
               }
               local_14 = local_14 + 1;
-              iVar6 = (int)(short)local_14;
-            } while (iVar6 < (int)pSVar13->field_00FB + (int)pSVar13->field_00F5);
+              iVar11 = (int)(short)local_14;
+            } while (iVar11 < (int)pSVar13->field_00FB + (int)pSVar13->field_00F5);
           }
           local_c = local_c + 1;
-          iVar6 = (int)(short)local_c;
-        } while (iVar6 < (int)pSVar13->field_00F3 + (int)pSVar13->field_00F9);
+          iVar11 = (int)(short)local_c;
+        } while (iVar11 < (int)pSVar13->field_00F3 + (int)pSVar13->field_00F9);
       }
       if (local_18 == 0) {
         DArrayDestroy(pSVar13->field_020E);
@@ -296,19 +298,19 @@ LAB_0049aec9:
     pSVar16 = local_8;
     if (pSVar13->field_00EB == 1) {
       sVar5 = 0;
-      dVar10 = local_8->field_020E->count;
-      if (0 < (int)dVar10) {
+      dVar9 = local_8->field_020E->count;
+      if (0 < (int)dVar9) {
         do {
           DArrayGetElement(local_8->field_020E,(int)sVar5,&local_2c);
           if ((cStack_2b != '\x01') ||
-             (pSVar8 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_2c,uStack_2a,CASE_1),
-             pSVar8->field_0020 != 0x14)) {
+             (pSVar7 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_2c,uStack_2a,CASE_1),
+             pSVar7->field_0020 != 0x14)) {
             DArrayRemoveAt(local_8->field_020E,(int)sVar5);
-            dVar10 = dVar10 - 1;
+            dVar9 = dVar9 - 1;
             sVar5 = sVar5 + -1;
           }
           sVar5 = sVar5 + 1;
-        } while ((int)sVar5 < (int)dVar10);
+        } while ((int)sVar5 < (int)dVar9);
       }
       pSVar16 = local_8;
       if (local_8->field_020E->count == 0) {

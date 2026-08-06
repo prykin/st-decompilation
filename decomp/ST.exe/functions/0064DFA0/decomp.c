@@ -12,7 +12,9 @@ AiEventClassTy::_CreateMine
 
 {
   bool bVar2;
+  int local_EAX_64;
   int iVar3;
+  int iVar5;
   int iVar4;
   InternalExceptionFrame local_6c;
   int local_28;
@@ -31,8 +33,8 @@ AiEventClassTy::_CreateMine
   local_24 = (uint)param_6;
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
-  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
-  if (iVar3 == 0) {
+  local_EAX_64 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
+  if (local_EAX_64 == 0) {
     if (g_allPlayers_007FA174 != nullptr) {
       if ((((param_2 == 0xa6) || (param_2 == 0xa7)) || (param_2 == 0xbd)) || (param_2 == 0xaf)) {
         bVar2 = true;
@@ -56,9 +58,9 @@ AiEventClassTy::_CreateMine
           local_c = local_14 + 1;
           local_8 = local_18 + 1;
         }
-        iVar3 = thunk_FUN_00675950(local_c,local_8,(short)local_10,(short *)&local_c,
+        iVar5 = thunk_FUN_00675950(local_c,local_8,(short)local_10,(short *)&local_c,
                                    (short *)&local_8,(short *)&local_10,1);
-        if (iVar3 != 0) {
+        if (iVar5 != 0) {
           if (param_7 == nullptr) {
             param_7 = &DAT_008016a0;
           }
@@ -73,12 +75,12 @@ AiEventClassTy::_CreateMine
     return local_28;
   }
   g_currentExceptionFrame = local_6c.previous;
-  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x169,0,iVar3,"%s",
-                             "AiEventClassTy::_CreateMine");
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x169,0,local_EAX_64,
+                             "%s","AiEventClassTy::_CreateMine");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0x16a);
-  return iVar3;
+  RaiseInternalException(local_EAX_64,0,"E:\\__titans\\ai\\ai_event.cpp",0x16a);
+  return local_EAX_64;
 }
 

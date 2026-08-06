@@ -30,10 +30,10 @@ st::fn_0041CDA0(VisibleClassTy *this,int param_1,int param_2,int param_3,uint pa
       if (7 < param_4) {
         return 1;
       }
-      if (this->field_003C[param_4 + 6] == 0) {
+      if (this->field_003C[param_4 + 6] == nullptr) {
         return 1;
       }
-      if (*(char *)(this->field_003C[param_4 + 6] + param_1 + iVar2) == '\0') {
+      if (*(char *)((int)this->field_003C[param_4 + 6] + param_1 + iVar2) == '\0') {
         return 1;
       }
     }
@@ -52,8 +52,9 @@ VisibleClassTy * __thiscall st::fn_005577C0(VisibleClassTy *this)
 
 {
   int iVar1;
-  void **ppvVar2;
-  byte **ppbVar3;
+  int iVar2;
+  void **ppvVar3;
+  byte **ppbVar4;
 
   st::fn_006E60E0(this);
   this->vtable = &st_global_0079AEEC;
@@ -68,31 +69,31 @@ VisibleClassTy * __thiscall st::fn_005577C0(VisibleClassTy *this)
   this->field_0038 = nullptr;
   this->field_004C = nullptr;
   this->field_0050 = nullptr;
-  ppvVar2 = &this->field_0054;
-  for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppvVar2 = nullptr;
-    ppvVar2 = ppvVar2 + 1;
+  ppvVar3 = &this->field_0054;
+  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *ppvVar3 = nullptr;
+    ppvVar3 = ppvVar3 + 1;
   }
-  ppbVar3 = this->field_0074;
-  for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppbVar3 = nullptr;
-    ppbVar3 = ppbVar3 + 1;
+  ppbVar4 = this->field_0074;
+  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *ppbVar4 = nullptr;
+    ppbVar4 = ppbVar4 + 1;
   }
-  ppbVar3 = this->field_0094;
-  for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppbVar3 = nullptr;
-    ppbVar3 = ppbVar3 + 1;
+  ppbVar4 = this->field_0094;
+  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *ppbVar4 = nullptr;
+    ppbVar4 = ppbVar4 + 1;
   }
-  this->field_003C[0] = 0;
-  this->field_003C[1] = 0;
-  this->field_003C[2] = 0;
-  this->field_003C[3] = 0;
+  this->field_003C[0] = nullptr;
+  this->field_003C[1] = nullptr;
+  this->field_003C[2] = nullptr;
+  this->field_003C[3] = nullptr;
   this->field_00F4 = nullptr;
   this->field_0110 = nullptr;
   this->field_0114 = 0;
   this->field_00F8 = 1;
   memset(&this->field_0118, 0, 0xc0); /* compiler bulk-zero initialization */
-  iVar1 = 0;
+  iVar2 = 0;
   memset(&this->field_01D8, 0, 0xc0); /* compiler bulk-zero initialization */
   this->field_00FC[0] = 0;
   this->field_00FC[1] = 0;
@@ -122,9 +123,8 @@ void __thiscall st::fn_00558140(VisibleClassTy *this)
 
 {
   int iVar1;
-  void **value;
   byte **ppbVar2;
-  uint *value_00;
+  void **ppvVar3;
 
   if (this->field_0038 != nullptr) {
     st::fn_006AB060(&this->field_0038);
@@ -135,13 +135,13 @@ void __thiscall st::fn_00558140(VisibleClassTy *this)
   if (this->field_0050 != nullptr) {
     st::fn_006AB060(&this->field_0050);
   }
-  value = &this->field_0054;
+  ppvVar3 = &this->field_0054;
   iVar1 = 8;
   do {
-    if (*value != nullptr) {
-      st::fn_006AB060(value);
+    if (*ppvVar3 != nullptr) {
+      st::fn_006AB060(ppvVar3);
     }
-    value = value + 1;
+    ppvVar3 = ppvVar3 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
   ppbVar2 = this->field_0074;
@@ -180,13 +180,13 @@ void __thiscall st::fn_00558140(VisibleClassTy *this)
     ppbVar2 = ppbVar2 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
-  value_00 = this->field_003C;
+  ppvVar3 = this->field_003C;
   iVar1 = 4;
   do {
-    if (*value_00 != 0) {
-      st::fn_006AB060((void **)value_00);
+    if (*ppvVar3 != nullptr) {
+      st::fn_006AB060(ppvVar3);
     }
-    value_00 = value_00 + 1;
+    ppvVar3 = ppvVar3 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
   if (this->field_00F4 != nullptr) {
@@ -293,7 +293,7 @@ st::fn_00558DC0
   int iVar6;
   VisibleClassTy_sub_00558C00_param_1Enum VVar7;
   int iVar8;
-  uint *puVar9;
+  void **ppvVar9;
   uint uVar10;
   int iVar11;
   byte *local_c;
@@ -339,17 +339,17 @@ st::fn_00558DC0
       if ((-1 < (int)param_3) && ((int)param_3 < 5)) {
         if ((param_7 & 0x2008) != 0) {
           VVar7 = CASE_0;
-          puVar9 = this->field_003C;
+          ppvVar9 = this->field_003C;
           do {
-            if (*puVar9 != 0) {
+            if (*ppvVar9 != nullptr) {
               st::fn_00403F53(this,VVar7,param_1,param_2,(int *)&param_6,(int *)&param_4);
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_4 = (int *)((int)param_4 + g_centeredOffsets5[(int)param_3]);
-              st::fn_004059CA((int)param_6,(int)param_4,(byte *)*puVar9,this->field_0028,
+              st::fn_004059CA((int)param_6,(int)param_4,*ppvVar9,this->field_0028,
                                  this->field_002C,(undefined *)param_5);
             }
             VVar7 = VVar7 + CASE_1;
-            puVar9 = puVar9 + 1;
+            ppvVar9 = ppvVar9 + 1;
             uVar10 = param_5;
           } while ((int)VVar7 < 4);
         }
@@ -377,7 +377,7 @@ st::fn_00558DC0
                      ((iVar6 < this->field_0034 && (iVar11 = uVar10 * iVar6 + iVar8, -1 < iVar11))))
                   {
                     if (this->field_0050[iVar11] == 0) {
-                      st::fn_00402B76(iVar8,iVar6,(int)this->field_004C,uVar10,this->field_0034);
+                      st::fn_00402B76(iVar8,iVar6,this->field_004C,uVar10,this->field_0034);
                     }
                     this->field_0050[iVar11] = this->field_0050[iVar11] + 1;
                   }
@@ -493,7 +493,7 @@ st::fn_00559110
                       ((iVar11 < this->field_0034 && (iVar12 = uVar5 * iVar11 + iVar10, -1 < iVar12)
                        ))))) {
                     if (this->field_0050[iVar12] == 1) {
-                      st::fn_00404E35(iVar10,iVar11,(int)this->field_004C,uVar5,this->field_0034);
+                      st::fn_00404E35(iVar10,iVar11,this->field_004C,uVar5,this->field_0034);
                       bVar6 = true;
                     }
                     uVar4 = this->field_0050[iVar12];
@@ -530,7 +530,7 @@ st::fn_00559110
                        (((iVar10 < this->field_0034 &&
                          (iVar11 = uVar5 * iVar10 + iVar9, -1 < iVar11)) &&
                         (this->field_0050[iVar11] != 0)))) {
-                      st::fn_00402B76(iVar9,iVar10,(int)this->field_004C,uVar5,this->field_0034);
+                      st::fn_00402B76(iVar9,iVar10,this->field_004C,uVar5,this->field_0034);
                     }
                     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_7 = param_7 + 1;
@@ -753,7 +753,7 @@ st::fn_005599D0
   if ((((this->field_0114 != 0) && (-1 < param_5)) && (param_4 < 8)) &&
      (((g_playSystem_00802A38 == nullptr ||
        (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)) &&
-      (this->field_003C[param_4 + 6] != 0)))) {
+      (this->field_003C[param_4 + 6] != nullptr)))) {
     st::fn_00401BE5(this,2,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     iVar1 = param_5 * 2 + 1;
     iVar5 = param_1 - param_5;
@@ -772,9 +772,9 @@ st::fn_005599D0
              ((-1 < iVar7 &&
               (((iVar7 < this->field_0020 && (-1 < iVar8)) && (iVar8 < this->field_0024)))))) {
             iVar6 = iVar8 * this->field_0020;
-            cVar2 = *(char *)(this->field_003C[param_4 + 6] + iVar7 + iVar6);
+            cVar2 = *(char *)((int)this->field_003C[param_4 + 6] + iVar7 + iVar6);
             if (cVar2 != '\0') {
-              *(char *)(this->field_003C[param_4 + 6] + iVar7 + iVar6) = cVar2 + -1;
+              *(char *)((int)this->field_003C[param_4 + 6] + iVar7 + iVar6) = cVar2 + -1;
             }
           }
           iVar4 = iVar4 + 1;
@@ -1539,9 +1539,9 @@ st::fn_005F1D80(VisibleClassTy *this,int param_1,int param_2,int param_3)
 
   if ((DAT_0080874d != -1) && (this->field_00F8 != 0)) {
     st::fn_00403F53(this,this->field_010C,param_1,param_2,&param_2,&param_1);
-    if ((((-1 < param_3) && (((param_3 < 5 && (-1 < param_2)) && (param_2 < this->field_0030)))) &&
-        (((iVar1 = g_centeredOffsets5[param_3] + param_1, -1 < iVar1 && (iVar1 < this->field_0034))
-         && (this->field_004C != nullptr)))) &&
+    if ((((-1 < param_3) && (((param_3 < 5 && (-1 < param_2)) && (param_2 < (int)this->field_0030)))
+         ) && (((iVar1 = g_centeredOffsets5[param_3] + param_1, -1 < iVar1 &&
+                (iVar1 < this->field_0034)) && (this->field_004C != nullptr)))) &&
        (this->field_004C[param_2 + iVar1 * this->field_0030] == 0)) {
       return 0;
     }

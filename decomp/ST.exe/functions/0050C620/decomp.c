@@ -23,24 +23,28 @@ void __thiscall CPanelTy::Update4PanelSI(CPanelTy *this)
   CPanelTy *this_00;
   byte bVar5;
   int iVar6;
-  uint uVar7;
-  byte *pbVar8;
-  uint uVar9;
-  uint *puVar10;
-  undefined4 uVar11;
-  uint uVar12;
+  uint uVar6;
+  BITMAPINFO *pBVar7;
+  uint uVar8;
+  byte *pbVar9;
+  char *pcVar18;
+  undefined4 uVar10;
+  uint uVar11;
   int iVar13;
-  char cVar14;
+  char cVar12;
+  int iVar14;
+  int iVar15;
   ccFntTy *this_01;
-  char cVar15;
-  CPanelTy_field_0BF5State *pCVar16;
-  char *pcVar17;
-  short *psVar18;
-  CPanelTy_field_0BF5State *pCVar19;
+  char cVar16;
+  CPanelTy_field_0BF5State *pCVar17;
+  char *pcVar19;
   short *psVar20;
-  bool bVar22;
-  int iVar23;
-  int iVar24;
+  uint *puVar21;
+  CPanelTy_field_0BF5State *pCVar22;
+  short *psVar23;
+  bool bVar25;
+  int iVar26;
+  int iVar27;
   undefined4 local_140 [4];
   undefined4 local_130;
   undefined4 local_120 [4];
@@ -96,14 +100,14 @@ void __thiscall CPanelTy::Update4PanelSI(CPanelTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   pCVar1 = &local_7c->field_0BF5;
-  pCVar16 = pCVar1;
-  pCVar19 = &local_78;
-  memmove(pCVar19, pCVar16, 0x5c); /* compiler REP MOVS byte copy */
-  iVar6 = 0;
-  pCVar16 = pCVar1;
-  for (iVar6 = 0x17; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *pCVar16 = CASE_0;
-    pCVar16 = pCVar16 + 1;
+  pCVar17 = pCVar1;
+  pCVar22 = &local_78;
+  memmove(pCVar22, pCVar17, 0x5c); /* compiler REP MOVS byte copy */
+  iVar14 = 0;
+  pCVar17 = pCVar1;
+  for (iVar14 = 0x17; iVar14 != 0; iVar14 = iVar14 + -1) {
+    *pCVar17 = CASE_0;
+    pCVar17 = pCVar17 + 1;
   }
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,4,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
   CVar2 = this_00->field_0BFA;
@@ -116,35 +120,35 @@ cf_common_exit_0050E007:
     return;
   }
   if ((this_00->field_0BFB == '\x02') && (CVar2 == CASE_1)) {
-    cVar14 = '\0';
-    cVar15 = '\0';
-    uVar7 = 0;
+    cVar12 = '\0';
+    cVar16 = '\0';
+    uVar6 = 0;
     do {
-      if ((&this_00->field_0BFE)[uVar7] != '\0') {
-        cVar15 = cVar15 + '\x01';
+      if ((&this_00->field_0BFE)[uVar6] != '\0') {
+        cVar16 = cVar16 + '\x01';
       }
-      uVar7 = uVar7 + 1;
-    } while (uVar7 < 6);
-    uVar7 = 0;
+      uVar6 = uVar6 + 1;
+    } while (uVar6 < 6);
+    uVar6 = 0;
     do {
-      if (*(char *)((int)local_6f + uVar7) != '\0') {
-        cVar14 = cVar14 + '\x01';
+      if (*(char *)((int)local_6f + uVar6) != '\0') {
+        cVar12 = cVar12 + '\x01';
       }
-      uVar7 = uVar7 + 1;
-    } while (uVar7 < 6);
-    if (cVar15 == cVar14) {
-      iVar6 = 3;
-      bVar22 = true;
-      psVar18 = (short *)&this_00->field_0BFE;
-      psVar20 = local_6f;
+      uVar6 = uVar6 + 1;
+    } while (uVar6 < 6);
+    if (cVar16 == cVar12) {
+      iVar14 = 3;
+      bVar25 = true;
+      psVar20 = (short *)&this_00->field_0BFE;
+      psVar23 = local_6f;
       do {
-        if (iVar6 == 0) break;
-        iVar6 = iVar6 + -1;
-        bVar22 = *psVar18 == *psVar20;
-        psVar18 = psVar18 + 1;
+        if (iVar14 == 0) break;
+        iVar14 = iVar14 + -1;
+        bVar25 = *psVar20 == *psVar23;
         psVar20 = psVar20 + 1;
-      } while (bVar22);
-      if (bVar22) {
+        psVar23 = psVar23 + 1;
+      } while (bVar25);
+      if (bVar25) {
         if (this_00->field_0BFD != local_70) {
           sub_004F1610(this_00,'\0');
         }
@@ -153,30 +157,30 @@ cf_common_exit_0050E007:
         this_00->field_0028 = 5;
         FUN_006e6080(this_00,2,this_00->field_0302,(undefined4 *)&this_00->field_0x18);
         local_c = local_c & 0xffffff00;
-        pcVar17 = &this_00->field_0BFE;
+        pcVar19 = &this_00->field_0BFE;
         do {
-          if (*pcVar17 != '\0') {
+          if (*pcVar19 != '\0') {
             sub_004F17D0(this_00,0,(byte)local_c);
           }
           bVar5 = (char)local_c + 1;
-          pcVar17 = pcVar17 + 1;
+          pcVar19 = pcVar19 + 1;
           local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar5));
         } while (bVar5 < 6);
         sub_004F1610(this_00,'\0');
         CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
       }
-      iVar6 = 3;
-      bVar22 = true;
-      psVar18 = (short *)&this_00->field_0C04;
-      psVar20 = local_6f + 3;
+      iVar14 = 3;
+      bVar25 = true;
+      psVar20 = (short *)&this_00->field_0C04;
+      psVar23 = local_6f + 3;
       do {
-        if (iVar6 == 0) break;
-        iVar6 = iVar6 + -1;
-        bVar22 = *psVar18 == *psVar20;
-        psVar18 = psVar18 + 1;
+        if (iVar14 == 0) break;
+        iVar14 = iVar14 + -1;
+        bVar25 = *psVar20 == *psVar23;
         psVar20 = psVar20 + 1;
-      } while (bVar22);
-      if ((!bVar22) || (this_00->field_0BFC != local_71)) {
+        psVar23 = psVar23 + 1;
+      } while (bVar25);
+      if ((!bVar25) || (this_00->field_0BFC != local_71)) {
         sub_004F4570(this_00,'\0',(int)&this_00->field_0BF5,(int)&local_78);
       }
     }
@@ -187,38 +191,38 @@ cf_common_exit_0050E007:
        (this_00->field_09C0[1] != 0)) {
       this_00->field_0028 = 0x20;
       if (this_00->field_0BFC == '\0') {
-        uVar7 = 0;
+        uVar6 = 0;
       }
       else {
-        uVar7 = (uint)(byte)this_00->field_0C0A;
+        uVar6 = (uint)(byte)this_00->field_0C0A;
       }
-      uVar9 = this_00->field_09C0[1];
-      *(uint *)&this_00->field_0x2c = uVar7;
-      FUN_006e6080(this_00,2,uVar9,(undefined4 *)&this_00->field_0x18);
+      uVar8 = this_00->field_09C0[1];
+      *(uint *)&this_00->field_0x2c = uVar6;
+      FUN_006e6080(this_00,2,uVar8,(undefined4 *)&this_00->field_0x18);
     }
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 == local_5b) {
       if (this_00->field_0C24 != local_49[0]) {
-        uVar7 = ((uint)(byte)this_00->field_0C24 * 0x21) / 100;
+        uVar6 = ((uint)(byte)this_00->field_0C24 * 0x21) / 100;
         local_8 = 0;
-        if (uVar7 != 0) {
-          iVar6 = 0x35;
-          local_8 = uVar7;
+        if (uVar6 != 0) {
+          iVar14 = 0x35;
+          local_8 = uVar6;
           do {
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,
-                                          1);
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-            iVar6 = iVar6 + 4;
-            uVar7 = uVar7 - 1;
-          } while (uVar7 != 0);
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                   (byte *)pBVar7);
+            iVar14 = iVar14 + 4;
+            uVar6 = uVar6 - 1;
+          } while (uVar6 != 0);
         }
         if (local_8 < 0x21) {
-          iVar6 = local_8 * 4 + 0x35;
+          iVar14 = local_8 * 4 + 0x35;
           do {
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,
-                                          0);
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-            iVar6 = iVar6 + 4;
-          } while (iVar6 < 0xb9);
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                   (byte *)pBVar7);
+            iVar14 = iVar14 + 4;
+          } while (iVar14 < 0xb9);
         }
         Library::DKW::WGR::FUN_006b55f0
                   ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,0x5c,0x50,
@@ -266,35 +270,35 @@ cf_common_exit_0050E007:
   }
   if ((local_78 != this_00->field_0BF5) || (local_74 != this_00->field_0BF9))
   goto cf_common_exit_0050E007;
-  cVar14 = '\0';
-  cVar15 = '\0';
-  uVar7 = 0;
+  cVar12 = '\0';
+  cVar16 = '\0';
+  uVar6 = 0;
   do {
-    if ((&this_00->field_0BFE)[uVar7] != '\0') {
-      cVar15 = cVar15 + '\x01';
+    if ((&this_00->field_0BFE)[uVar6] != '\0') {
+      cVar16 = cVar16 + '\x01';
     }
-    uVar7 = uVar7 + 1;
-  } while (uVar7 < 6);
-  uVar7 = 0;
+    uVar6 = uVar6 + 1;
+  } while (uVar6 < 6);
+  uVar6 = 0;
   do {
-    if (*(char *)((int)local_6f + uVar7) != '\0') {
-      cVar14 = cVar14 + '\x01';
+    if (*(char *)((int)local_6f + uVar6) != '\0') {
+      cVar12 = cVar12 + '\x01';
     }
-    uVar7 = uVar7 + 1;
-  } while (uVar7 < 6);
-  if (cVar15 == cVar14) {
-    iVar6 = 3;
-    bVar22 = true;
-    psVar18 = (short *)&this_00->field_0BFE;
-    psVar20 = local_6f;
+    uVar6 = uVar6 + 1;
+  } while (uVar6 < 6);
+  if (cVar16 == cVar12) {
+    iVar14 = 3;
+    bVar25 = true;
+    psVar20 = (short *)&this_00->field_0BFE;
+    psVar23 = local_6f;
     do {
-      if (iVar6 == 0) break;
-      iVar6 = iVar6 + -1;
-      bVar22 = *psVar18 == *psVar20;
-      psVar18 = psVar18 + 1;
+      if (iVar14 == 0) break;
+      iVar14 = iVar14 + -1;
+      bVar25 = *psVar20 == *psVar23;
       psVar20 = psVar20 + 1;
-    } while (bVar22);
-    if (bVar22) {
+      psVar23 = psVar23 + 1;
+    } while (bVar25);
+    if (bVar25) {
       if (this_00->field_0BFD != local_70) {
         sub_004F1610(this_00,'\0');
       }
@@ -303,30 +307,30 @@ cf_common_exit_0050E007:
       this_00->field_0028 = 5;
       FUN_006e6080(this_00,2,this_00->field_0302,(undefined4 *)&this_00->field_0x18);
       local_c = local_c & 0xffffff00;
-      pcVar17 = &this_00->field_0BFE;
+      pcVar19 = &this_00->field_0BFE;
       do {
-        if (*pcVar17 != '\0') {
+        if (*pcVar19 != '\0') {
           sub_004F17D0(this_00,0,(byte)local_c);
         }
         bVar5 = (char)local_c + 1;
-        pcVar17 = pcVar17 + 1;
+        pcVar19 = pcVar19 + 1;
         local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar5));
       } while (bVar5 < 6);
       sub_004F1610(this_00,'\0');
       CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
     }
-    iVar6 = 3;
-    bVar22 = true;
-    psVar18 = (short *)&this_00->field_0C04;
-    psVar20 = local_6f + 3;
+    iVar14 = 3;
+    bVar25 = true;
+    psVar20 = (short *)&this_00->field_0C04;
+    psVar23 = local_6f + 3;
     do {
-      if (iVar6 == 0) break;
-      iVar6 = iVar6 + -1;
-      bVar22 = *psVar18 == *psVar20;
-      psVar18 = psVar18 + 1;
+      if (iVar14 == 0) break;
+      iVar14 = iVar14 + -1;
+      bVar25 = *psVar20 == *psVar23;
       psVar20 = psVar20 + 1;
-    } while (bVar22);
-    if ((!bVar22) || (this_00->field_0BFC != local_71)) {
+      psVar23 = psVar23 + 1;
+    } while (bVar25);
+    if ((!bVar25) || (this_00->field_0BFC != local_71)) {
       sub_004F4570(this_00,'\0',(int)&this_00->field_0BF5,(int)&local_78);
     }
   }
@@ -337,44 +341,44 @@ cf_common_exit_0050E007:
      (this_00->field_09C0[1] != 0)) {
     this_00->field_0028 = 0x20;
     if (this_00->field_0BFC == '\0') {
-      uVar7 = 0;
+      uVar6 = 0;
     }
     else {
-      uVar7 = (uint)(byte)this_00->field_0C0A;
+      uVar6 = (uint)(byte)this_00->field_0C0A;
     }
-    uVar9 = this_00->field_09C0[1];
-    *(uint *)&this_00->field_0x2c = uVar7;
-    FUN_006e6080(this_00,2,uVar9,(undefined4 *)&this_00->field_0x18);
+    uVar8 = this_00->field_09C0[1];
+    *(uint *)&this_00->field_0x2c = uVar6;
+    FUN_006e6080(this_00,2,uVar8,(undefined4 *)&this_00->field_0x18);
   }
-  iVar6 = 3;
-  bVar22 = true;
-  psVar18 = (short *)&this_00->field_0C0B;
-  psVar20 = local_62;
+  iVar14 = 3;
+  bVar25 = true;
+  psVar20 = (short *)&this_00->field_0C0B;
+  psVar23 = local_62;
   do {
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
-    bVar22 = *psVar18 == *psVar20;
-    psVar18 = psVar18 + 1;
+    if (iVar14 == 0) break;
+    iVar14 = iVar14 + -1;
+    bVar25 = *psVar20 == *psVar23;
     psVar20 = psVar20 + 1;
-  } while (bVar22);
-  if ((!bVar22) || (this_00->field_0BFC != local_71)) {
-    uVar7 = 0;
-    puVar10 = this_00->field_0B1F;
+    psVar23 = psVar23 + 1;
+  } while (bVar25);
+  if ((!bVar25) || (this_00->field_0BFC != local_71)) {
+    uVar6 = 0;
+    puVar21 = this_00->field_0B1F;
     do {
-      if (*puVar10 != 0) {
+      if (*puVar21 != 0) {
         this_00->field_0028 = 0x20;
         if (this_00->field_0BFC == '\0') {
-          uVar9 = 0;
+          uVar8 = 0;
         }
         else {
-          uVar9 = (uint)(byte)(&this_00->field_0C0B)[uVar7];
+          uVar8 = (uint)(byte)(&this_00->field_0C0B)[uVar6];
         }
-        *(uint *)&this_00->field_0x2c = uVar9;
-        FUN_006e6080(this_00,2,*puVar10,(undefined4 *)&this_00->field_0x18);
+        *(uint *)&this_00->field_0x2c = uVar8;
+        FUN_006e6080(this_00,2,*puVar21,(undefined4 *)&this_00->field_0x18);
       }
-      uVar7 = uVar7 + 1;
-      puVar10 = puVar10 + 1;
-    } while (uVar7 < 6);
+      uVar6 = uVar6 + 1;
+      puVar21 = puVar21 + 1;
+    } while (uVar6 < 6);
   }
   switch(this_00->field_0BF5) {
   case CASE_53:
@@ -385,27 +389,27 @@ cf_common_exit_0050E007:
                   ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,0x5c,0x50,
                    (byte *)this_00->field_09D9[2],0,0x5c,10,0x32,0x19);
         PaintDamageXY(this_00,this_00->field_0194,0x5c,0x50,*(byte *)&this_00->field_0C3D,0x2714);
-        uVar7 = (uint)(this_00->field_0C3D * 0x21) / 100;
+        uVar6 = (uint)(this_00->field_0C3D * 0x21) / 100;
         local_8 = 0;
-        if (uVar7 != 0) {
-          iVar6 = 0x35;
-          local_8 = uVar7;
+        if (uVar6 != 0) {
+          iVar14 = 0x35;
+          local_8 = uVar6;
           do {
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,
-                                          1);
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-            iVar6 = iVar6 + 4;
-            uVar7 = uVar7 - 1;
-          } while (uVar7 != 0);
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                   (byte *)pBVar7);
+            iVar14 = iVar14 + 4;
+            uVar6 = uVar6 - 1;
+          } while (uVar6 != 0);
         }
         if (local_8 < 0x21) {
-          iVar6 = local_8 * 4 + 0x35;
+          iVar14 = local_8 * 4 + 0x35;
           do {
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,
-                                          0);
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-            iVar6 = iVar6 + 4;
-          } while (iVar6 < 0xb9);
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                   (byte *)pBVar7);
+            iVar14 = iVar14 + 4;
+          } while (iVar14 < 0xb9);
         }
       }
       else if (CVar3 == CASE_2) {
@@ -414,7 +418,7 @@ cf_common_exit_0050E007:
                    (byte *)this_00->field_09D9[2],0,0x28,0x33,0x9b,0xf);
         wsprintfA((LPSTR)&DAT_0080f33a,"%4d",this_00->field_0C3D);
         ccFntTy::SetSurf(this_00->field_01BC,this_00->field_0194,0,0x28,0x79,0x9b,0xf);
-        ccFntTy::WrStr(this_00->field_01BC,&DAT_0080f33a,-1,-1,1);
+        ccFntTy::WrStr(this_00->field_01BC,(char *)&DAT_0080f33a,-1,-1,1);
       }
       else if (CVar3 == CASE_4) {
         if (this_00->field_0C31 == local_3c) {
@@ -450,12 +454,12 @@ cf_common_exit_0050E007:
       if (this_00->field_0C31 == '\0') {
         if (this_00->field_0C2F != local_3e) {
           PaintCtrlObj(this_00,1);
-          iVar6 = this_00->field_0302;
-          if (iVar6 != 0) {
+          iVar14 = this_00->field_0302;
+          if (iVar14 != 0) {
             memset(local_120, 0, 0x20); /* compiler bulk-zero initialization */
-            iVar13 = 0;
+            iVar15 = 0;
             local_110 = 5;
-            FUN_006e6080(this_00,2,iVar6,local_120);
+            FUN_006e6080(this_00,2,iVar14,local_120);
           }
         }
       }
@@ -479,49 +483,49 @@ LAB_0050ce3f:
     break;
   case CASE_5B:
     PaintArsenal(this_00);
-    uVar7 = 0;
+    uVar6 = 0;
     do {
-      if (this_00->field_0A15[uVar7] != 0) {
-        if (uVar7 == 3) {
+      if (this_00->field_0A15[uVar6] != 0) {
+        if (uVar6 == 3) {
           if (this_00->field_09D4 == '\x01') {
             this_00->field_0AA2 = 0;
             this_00->field_0028 = 0x20;
             *(undefined4 *)&this_00->field_0x2c = 0;
-            uVar9 = this_00->field_0A15[3];
+            uVar8 = this_00->field_0A15[3];
           }
           else {
             this_00->field_0AA2 = 2;
-            uVar11 = thunk_FUN_00525ef0(this_00->field_09D4 + CASE_2,CASE_3);
-            this_00->field_0AA3 = uVar11;
+            uVar10 = thunk_FUN_00525ef0(this_00->field_09D4 + CASE_2,CASE_3);
+            this_00->field_0AA3 = uVar10;
             if (this_00->field_0BFC == local_71) {
               this_00->field_0028 = 5;
-              uVar9 = this_00->field_0A15[3];
+              uVar8 = this_00->field_0A15[3];
             }
             else {
               this_00->field_0028 = 0x20;
               *(uint *)&this_00->field_0x2c = (uint)(this_00->field_0BFC != '\0');
-              uVar9 = this_00->field_0A15[3];
+              uVar8 = this_00->field_0A15[3];
             }
           }
         }
         else {
-          uVar11 = thunk_FUN_00525ef0(this_00->field_09D4 + CASE_2,
-                                      (Global_sub_00525EF0_param_2Enum)uVar7);
-          *(undefined4 *)((int)this_00->field_0A15 + uVar7 * 0x27 + 0x19) = uVar11;
+          uVar10 = thunk_FUN_00525ef0(this_00->field_09D4 + CASE_2,
+                                      (Global_sub_00525EF0_param_2Enum)uVar6);
+          *(undefined4 *)((int)this_00->field_0A15 + uVar6 * 0x27 + 0x19) = uVar10;
           if (this_00->field_0BFC == local_71) {
             this_00->field_0028 = 5;
-            uVar9 = this_00->field_0A15[uVar7];
+            uVar8 = this_00->field_0A15[uVar6];
           }
           else {
             this_00->field_0028 = 0x20;
             *(uint *)&this_00->field_0x2c = (uint)(this_00->field_0BFC != '\0');
-            uVar9 = this_00->field_0A15[uVar7];
+            uVar8 = this_00->field_0A15[uVar6];
           }
         }
-        FUN_006e6080(this_00,2,uVar9,(undefined4 *)&this_00->field_0x18);
+        FUN_006e6080(this_00,2,uVar8,(undefined4 *)&this_00->field_0x18);
       }
-      uVar7 = uVar7 + 1;
-    } while (uVar7 < 4);
+      uVar6 = uVar6 + 1;
+    } while (uVar6 < 4);
     if (-1 < (int)this_00->field_0148[5]) {
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
@@ -531,27 +535,27 @@ LAB_0050ce3f:
   case CASE_5C:
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 == local_5b) {
       if (this_00->field_0C24 != local_49[0]) {
-        uVar7 = ((uint)(byte)this_00->field_0C24 * 0x21) / 100;
+        uVar6 = ((uint)(byte)this_00->field_0C24 * 0x21) / 100;
         local_8 = 0;
-        if (uVar7 != 0) {
-          iVar6 = 0x35;
-          local_8 = uVar7;
+        if (uVar6 != 0) {
+          iVar14 = 0x35;
+          local_8 = uVar6;
           do {
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,
-                                          1);
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-            iVar6 = iVar6 + 4;
-            uVar7 = uVar7 - 1;
-          } while (uVar7 != 0);
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                   (byte *)pBVar7);
+            iVar14 = iVar14 + 4;
+            uVar6 = uVar6 - 1;
+          } while (uVar6 != 0);
         }
         if (local_8 < 0x21) {
-          iVar6 = local_8 * 4 + 0x35;
+          iVar14 = local_8 * 4 + 0x35;
           do {
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,
-                                          0);
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-            iVar6 = iVar6 + 4;
-          } while (iVar6 < 0xb9);
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                   (byte *)pBVar7);
+            iVar14 = iVar14 + 4;
+          } while (iVar14 < 0xb9);
         }
         Library::DKW::WGR::FUN_006b55f0
                   ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,0x5c,0x50,
@@ -578,7 +582,7 @@ LAB_0050ce3f:
   case CASE_5E:
     wsprintfA((LPSTR)&DAT_0080f33a,"%6d",(uint)(ushort)this_00->field_0C34);
     ccFntTy::SetSurf(this_00->field_01C4,this_00->field_0194,0,0x91,0x73,0x26,0xf);
-    ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,4);
+    ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,4);
     if (-1 < (int)this_00->field_0148[5]) {
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
@@ -587,32 +591,34 @@ LAB_0050ce3f:
     break;
   case CASE_61:
     if (this_00->field_0C2A != local_43) {
-      uVar7 = ((uint)(byte)this_00->field_0C2A * 0x21) / 100;
+      uVar6 = ((uint)(byte)this_00->field_0C2A * 0x21) / 100;
       local_8 = 0;
-      if (uVar7 != 0) {
-        iVar6 = 0x35;
-        local_8 = uVar7;
+      if (uVar6 != 0) {
+        iVar14 = 0x35;
+        local_8 = uVar6;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x5d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-          uVar7 = uVar7 - 1;
-        } while (uVar7 != 0);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x5d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+          uVar6 = uVar6 - 1;
+        } while (uVar6 != 0);
       }
       if (local_8 < 0x21) {
-        iVar6 = local_8 * 4 + 0x35;
+        iVar14 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x5d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-        } while (iVar6 < 0xb9);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x5d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+        } while (iVar14 < 0xb9);
       }
-      pbVar8 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[2],0,0x15,0x22,
+      pbVar9 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[2],0,0x15,0x22,
                                            0xc3,0xc,0);
-      if (pbVar8 != nullptr) {
+      if (pbVar9 != nullptr) {
         wsprintfA((LPSTR)&DAT_0080f33a,"%d%%",(uint)(byte)this_00->field_0C2A);
-        ccFntTy::WrStr(this_00->field_01B8,&DAT_0080f33a,-1,-1,5);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x15,0x68,'\x01',pbVar8);
+        ccFntTy::WrStr(this_00->field_01B8,(char *)&DAT_0080f33a,-1,-1,5);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x15,0x68,'\x01',pbVar9);
         ccFntTy::EraseSufr(this_00->field_01B8);
       }
       if (-1 < (int)this_00->field_0148[5]) {
@@ -622,25 +628,27 @@ LAB_0050ce3f:
       }
     }
     if (this_00->field_0C29 != local_44) {
-      uVar7 = (uint)this_00->field_0C29;
+      uVar6 = (uint)this_00->field_0C29;
       local_8 = 0;
-      if (uVar7 != 0) {
-        iVar6 = 0x35;
-        local_8 = uVar7;
+      if (uVar6 != 0) {
+        iVar14 = 0x35;
+        local_8 = uVar6;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-          uVar7 = uVar7 - 1;
-        } while (uVar7 != 0);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+          uVar6 = uVar6 - 1;
+        } while (uVar6 != 0);
       }
       if (local_8 < 0x21) {
-        iVar6 = local_8 * 4 + 0x35;
+        iVar14 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-        } while (iVar6 < 0xb9);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+        } while (iVar14 < 0xb9);
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
@@ -652,50 +660,52 @@ LAB_0050ce3f:
   case CASE_62:
     if ((*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 != local_5b) ||
        (this_00->field_0C16 != local_57)) {
-      pbVar8 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[7],0,0x7f,0x20,
+      pbVar9 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[7],0,0x7f,0x20,
                                            0x24,0xb,0);
-      if (pbVar8 != nullptr) {
+      if (pbVar9 != nullptr) {
         wsprintfA((LPSTR)&DAT_0080f33a,"%d",*(undefined4 *)&this_00->field_0xc12);
-        ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,5);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x7f,0x66,'\x01',pbVar8);
+        ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,5);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x7f,0x66,'\x01',pbVar9);
         ccFntTy::EraseSufr(this_00->field_01C4);
       }
-      pbVar8 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[7],0,0xa5,9,0x24,
+      pbVar9 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[7],0,0xa5,9,0x24,
                                            0xb,0);
-      if (pbVar8 != nullptr) {
+      if (pbVar9 != nullptr) {
         wsprintfA((LPSTR)&DAT_0080f33a,"%d",this_00->field_0C16);
-        ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,4);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0xa5,0x4f,'\x01',pbVar8);
+        ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,4);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0xa5,0x4f,'\x01',pbVar9);
         ccFntTy::EraseSufr(this_00->field_01C4);
       }
-      uVar7 = this_00->field_0C16;
-      if (uVar7 < *(uint *)&this_00->field_0xc12) {
-        uVar7 = 0x21;
+      uVar6 = this_00->field_0C16;
+      if (uVar6 < *(uint *)&this_00->field_0xc12) {
+        uVar6 = 0x21;
       }
-      else if (uVar7 == 0) {
-        uVar7 = 0;
+      else if (uVar6 == 0) {
+        uVar6 = 0;
       }
       else {
-        uVar7 = (*(uint *)&this_00->field_0xc12 * 0x21) / uVar7;
+        uVar6 = (*(uint *)&this_00->field_0xc12 * 0x21) / uVar6;
       }
       local_8 = 0;
-      if (uVar7 != 0) {
-        iVar6 = 0x35;
-        local_8 = uVar7;
+      if (uVar6 != 0) {
+        iVar14 = 0x35;
+        local_8 = uVar6;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-          uVar7 = uVar7 - 1;
-        } while (uVar7 != 0);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+          uVar6 = uVar6 - 1;
+        } while (uVar6 != 0);
       }
       if (local_8 < 0x21) {
-        iVar6 = local_8 * 4 + 0x35;
+        iVar14 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-        } while (iVar6 < 0xb9);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+        } while (iVar14 < 0xb9);
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
@@ -707,34 +717,36 @@ LAB_0050ce3f:
   case CASE_63:
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 != local_5b) {
       PaintCtrlObjSI(this_00);
-      iVar6 = this_00->field_0302;
-      if (iVar6 != 0) {
+      iVar14 = this_00->field_0302;
+      if (iVar14 != 0) {
         memset(local_e0, 0, 0x20); /* compiler bulk-zero initialization */
         local_d0 = 5;
-        FUN_006e6080(this_00,2,iVar6,local_e0);
+        FUN_006e6080(this_00,2,iVar14,local_e0);
       }
       break;
     }
     if (this_00->field_0C24 != local_49[0]) {
-      uVar7 = ((uint)(byte)this_00->field_0C24 * 0x21) / 100;
+      uVar6 = ((uint)(byte)this_00->field_0C24 * 0x21) / 100;
       local_8 = 0;
-      if (uVar7 != 0) {
-        iVar6 = 0x35;
-        local_8 = uVar7;
+      if (uVar6 != 0) {
+        iVar14 = 0x35;
+        local_8 = uVar6;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-          uVar7 = uVar7 - 1;
-        } while (uVar7 != 0);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+          uVar6 = uVar6 - 1;
+        } while (uVar6 != 0);
       }
       if (local_8 < 0x21) {
-        iVar6 = local_8 * 4 + 0x35;
+        iVar14 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-        } while (iVar6 < 0xb9);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+        } while (iVar14 < 0xb9);
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
@@ -743,12 +755,12 @@ LAB_0050ce3f:
       }
     }
     if (((this_00->field_0C1C == local_51) && (this_00->field_0C20 == local_4d)) ||
-       (pbVar8 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[1],0,100,0x13,
-                                             0x18,0xc,0), pbVar8 == nullptr)) break;
+       (pbVar9 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[1],0,100,0x13,
+                                             0x18,0xc,0), pbVar9 == nullptr)) break;
     if (this_00->field_0C1C != local_51) {
       wsprintfA((LPSTR)&DAT_0080f33a,"%4d",(uint)(ushort)this_00->field_0C1C);
-      ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,7);
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,100,0x59,'\x01',pbVar8);
+      ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,7);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,100,0x59,'\x01',pbVar9);
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
@@ -757,8 +769,8 @@ LAB_0050ce3f:
     }
     if (this_00->field_0C20 != local_4d) {
       wsprintfA((LPSTR)&DAT_0080f33a,"%4d",(uint)(ushort)this_00->field_0C20);
-      ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,5);
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0xaf,0x59,'\x01',pbVar8);
+      ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,5);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0xaf,0x59,'\x01',pbVar9);
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
@@ -773,31 +785,33 @@ LAB_0050ce3f:
       wsprintfA((LPSTR)&DAT_0080f33a,"%4d",
                 *(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12);
       ccFntTy::SetSurf(this_00->field_01C4,this_00->field_0194,0,0x66,0x65,0x24,0xb);
-      ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,7);
+      ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,7);
       if (this_00->field_0C16 == 0) {
-        uVar7 = 0;
+        uVar6 = 0;
       }
       else {
-        uVar7 = (uint)(*(int *)&this_00->field_0xc12 * 0x21) / this_00->field_0C16;
+        uVar6 = (uint)(*(int *)&this_00->field_0xc12 * 0x21) / this_00->field_0C16;
       }
       local_8 = 0;
-      if (uVar7 != 0) {
-        iVar6 = 0x35;
-        local_8 = uVar7;
+      if (uVar6 != 0) {
+        iVar14 = 0x35;
+        local_8 = uVar6;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-          uVar7 = uVar7 - 1;
-        } while (uVar7 != 0);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+          uVar6 = uVar6 - 1;
+        } while (uVar6 != 0);
       }
       if (local_8 < 0x21) {
-        iVar6 = local_8 * 4 + 0x35;
+        iVar14 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-        } while (iVar6 < 0xb9);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+        } while (iVar14 < 0xb9);
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
@@ -809,23 +823,25 @@ LAB_0050ce3f:
   case CASE_67:
   case CASE_68:
     if (this_00->field_0C11 != local_5c) {
-      uVar7 = 0;
+      uVar6 = 0;
       if (this_00->field_0C11 != CASE_0) {
-        iVar6 = 0x35;
+        iVar14 = 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x52,'\x01',pbVar8);
-          uVar7 = uVar7 + 1;
-          iVar6 = iVar6 + 4;
-        } while (uVar7 < this_00->field_0C11);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x52,'\x01',
+                 (byte *)pBVar7);
+          uVar6 = uVar6 + 1;
+          iVar14 = iVar14 + 4;
+        } while (uVar6 < this_00->field_0C11);
       }
-      if (uVar7 < 0x21) {
-        iVar6 = uVar7 * 4 + 0x35;
+      if (uVar6 < 0x21) {
+        iVar14 = uVar6 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x52,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-        } while (iVar6 < 0xb9);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x52,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+        } while (iVar14 < 0xb9);
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
@@ -834,23 +850,25 @@ LAB_0050ce3f:
       }
     }
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 != local_5b) {
-      uVar7 = 0;
+      uVar6 = 0;
       if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 != 0) {
-        iVar6 = 0x35;
+        iVar14 = 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x73,'\x01',pbVar8);
-          uVar7 = uVar7 + 1;
-          iVar6 = iVar6 + 4;
-        } while (uVar7 < *(uint *)&this_00->field_0xc12);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x73,'\x01',
+                 (byte *)pBVar7);
+          uVar6 = uVar6 + 1;
+          iVar14 = iVar14 + 4;
+        } while (uVar6 < *(uint *)&this_00->field_0xc12);
       }
-      if (uVar7 < 0x21) {
-        iVar6 = uVar7 * 4 + 0x35;
+      if (uVar6 < 0x21) {
+        iVar14 = uVar6 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x73,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-        } while (iVar6 < 0xb9);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x73,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+        } while (iVar14 < 0xb9);
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
@@ -866,45 +884,45 @@ LAB_0050ce3f:
     local_1c = &local_5b;
     local_10 = (Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12;
     do {
-      uVar9 = local_8;
-      uVar7 = local_14;
+      uVar8 = local_8;
+      uVar6 = local_14;
       if (*local_1c != *local_10) {
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,local_14 - 2,0x55,'\x01',
                (byte *)this_00->field_09D9[0xe]);
-        uVar12 = thunk_FUN_00526ba0(*local_10,(&this_00->field_0C1A)[uVar9]);
-        pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02C2,
-                                      uVar12);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,uVar7,0x57,'\x01',pbVar8);
+        uVar11 = thunk_FUN_00526ba0(*local_10,(&this_00->field_0C1A)[uVar8]);
+        pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02C2,uVar11);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,uVar6,0x57,'\x01',(byte *)pBVar7
+              );
         if (-1 < (int)this_00->field_0148[5]) {
           Library::DKW::DDX::FUN_006b3640
                     ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
                      this_00->field_0050,this_00->field_00A8);
         }
       }
-      if (local_49[uVar9] != (&this_00->field_0C24)[uVar9]) {
+      if (local_49[uVar8] != (&this_00->field_0C24)[uVar8]) {
         local_18 = 0;
-        uVar7 = (byte)(&this_00->field_0C24)[uVar9] / 10;
-        if (uVar7 != 0) {
-          iVar6 = 0x7e;
-          local_18 = uVar7;
+        uVar6 = (byte)(&this_00->field_0C24)[uVar8] / 10;
+        if (uVar6 != 0) {
+          iVar14 = 0x7e;
+          local_18 = uVar6;
           do {
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,
-                                          7);
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,local_c,iVar6,'\x01',pbVar8);
-            iVar6 = iVar6 + -4;
-            uVar7 = uVar7 - 1;
-          } while (uVar7 != 0);
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,7);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,local_c,iVar14,'\x01',
+                   (byte *)pBVar7);
+            iVar14 = iVar14 + -4;
+            uVar6 = uVar6 - 1;
+          } while (uVar6 != 0);
         }
         if (local_18 < 10) {
-          iVar6 = local_18 * -4 + 0x7e;
-          iVar13 = 10 - local_18;
+          iVar14 = local_18 * -4 + 0x7e;
+          iVar15 = 10 - local_18;
           do {
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,
-                                          8);
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,local_c,iVar6,'\x01',pbVar8);
-            iVar6 = iVar6 + -4;
-            iVar13 = iVar13 + -1;
-          } while (iVar13 != 0);
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,8);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,local_c,iVar14,'\x01',
+                   (byte *)pBVar7);
+            iVar14 = iVar14 + -4;
+            iVar15 = iVar15 + -1;
+          } while (iVar15 != 0);
         }
         if (-1 < (int)this_00->field_0148[5]) {
           Library::DKW::DDX::FUN_006b3640
@@ -920,11 +938,11 @@ LAB_0050ce3f:
     } while ((int)local_14 < 0xf6);
     wsprintfA((LPSTR)&DAT_0080f33a,"%d %% %d",(uint)(byte)this_00->field_0C24,
               (uint)(byte)this_00->field_0C25);
-    pbVar8 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[1],0,0x5f,7,0x2f,
+    pbVar9 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[1],0,0x5f,7,0x2f,
                                          0xb,0);
-    if (pbVar8 == nullptr) break;
-    ccFntTy::WrStr(this_00->field_01B8,&DAT_0080f33a,-1,-1,5);
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x5f,0x4d,'\x01',pbVar8);
+    if (pbVar9 == nullptr) break;
+    ccFntTy::WrStr(this_00->field_01B8,(char *)&DAT_0080f33a,-1,-1,5);
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x5f,0x4d,'\x01',pbVar9);
     this_01 = this_00->field_01B8;
 LAB_0050dfdc:
     ccFntTy::EraseSufr(this_01);
@@ -934,30 +952,30 @@ LAB_0050dfdc:
       if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 == 0) {
         wsprintfA((LPSTR)&DAT_0080f33a,"%d",(uint)(ushort)this_00->field_0C2F);
         ccFntTy::SetSurf(this_00->field_01C4,this_00->field_0194,0,0x1c,0x58,0xb7,0xf);
-        ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,5);
+        ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,5);
       }
       else if (this_00->field_0C24 != local_49[0]) {
-        uVar7 = ((uint)(byte)this_00->field_0C24 * 0x21) / 100;
+        uVar6 = ((uint)(byte)this_00->field_0C24 * 0x21) / 100;
         local_8 = 0;
-        if (uVar7 != 0) {
-          iVar6 = 0x35;
-          local_8 = uVar7;
+        if (uVar6 != 0) {
+          iVar14 = 0x35;
+          local_8 = uVar6;
           do {
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,
-                                          1);
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-            iVar6 = iVar6 + 4;
-            uVar7 = uVar7 - 1;
-          } while (uVar7 != 0);
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                   (byte *)pBVar7);
+            iVar14 = iVar14 + 4;
+            uVar6 = uVar6 - 1;
+          } while (uVar6 != 0);
         }
         if (local_8 < 0x21) {
-          iVar6 = local_8 * 4 + 0x35;
+          iVar14 = local_8 * 4 + 0x35;
           do {
-            pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,
-                                          0);
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-            iVar6 = iVar6 + 4;
-          } while (iVar6 < 0xb9);
+            pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                   (byte *)pBVar7);
+            iVar14 = iVar14 + 4;
+          } while (iVar14 < 0xb9);
         }
         if (-1 < (int)this_00->field_0148[5]) {
           Library::DKW::DDX::FUN_006b3640
@@ -968,11 +986,11 @@ LAB_0050dfdc:
     }
     else {
       PaintCtrlObjSI(this_00);
-      iVar6 = this_00->field_0302;
-      if (iVar6 != 0) {
+      iVar14 = this_00->field_0302;
+      if (iVar14 != 0) {
         memset(local_100, 0, 0x20); /* compiler bulk-zero initialization */
         local_f0 = 5;
-        FUN_006e6080(this_00,2,iVar6,local_100);
+        FUN_006e6080(this_00,2,iVar14,local_100);
       }
     }
     break;
@@ -980,38 +998,40 @@ LAB_0050dfdc:
   case CASE_72:
   case CASE_73:
     if (this_00->field_0C29 != local_44) {
-      uVar7 = (uint)this_00->field_0C29;
+      uVar6 = (uint)this_00->field_0C29;
       local_8 = 0;
-      local_14 = uVar7;
-      if (uVar7 != 0) {
-        iVar6 = 0x35;
-        local_8 = uVar7;
+      local_14 = uVar6;
+      if (uVar6 != 0) {
+        iVar14 = 0x35;
+        local_8 = uVar6;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-          uVar7 = uVar7 - 1;
-        } while (uVar7 != 0);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+          uVar6 = uVar6 - 1;
+        } while (uVar6 != 0);
       }
       if (local_8 < 0x21) {
-        iVar6 = local_8 * 4 + 0x35;
+        iVar14 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
-          iVar6 = iVar6 + 4;
-        } while (iVar6 < 0xb9);
+          pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar14,0x7d,'\x01',
+                 (byte *)pBVar7);
+          iVar14 = iVar14 + 4;
+        } while (iVar14 < 0xb9);
       }
-      pbVar8 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[2],0,0x24,6,0xa4,
+      pbVar9 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[2],0,0x24,6,0xa4,
                                            0x2b,0);
-      if (pbVar8 != nullptr) {
-        iVar24 = -1;
-        iVar23 = -1;
-        uVar7 = 5;
-        iVar13 = -1;
-        iVar6 = -1;
-        puVar10 = (uint *)LoadResourceString(0x36c4 - (local_14 < 0x21),g_hINSTANCE_00807618);
-        ccFntTy::WrTxt(this_00->field_01B8,puVar10,iVar6,iVar13,uVar7,iVar23,iVar24);
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x24,0x4c,'\x01',pbVar8);
+      if (pbVar9 != nullptr) {
+        iVar27 = -1;
+        iVar26 = -1;
+        uVar6 = 5;
+        iVar15 = -1;
+        iVar14 = -1;
+        pcVar18 = LoadResourceString(0x36c4 - (local_14 < 0x21),g_hINSTANCE_00807618);
+        ccFntTy::WrTxt(this_00->field_01B8,pcVar18,iVar14,iVar15,uVar6,iVar26,iVar27);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x24,0x4c,'\x01',pbVar9);
         ccFntTy::EraseSufr(this_00->field_01B8);
       }
       if (-1 < (int)this_00->field_0148[5]) {
@@ -1030,14 +1050,14 @@ LAB_0050dfdc:
   return;
 switchD_0050c9ae_caseD_dd:
   PaintCtrlObjSI(this_00);
-  iVar6 = this_00->field_0302;
-  if (iVar6 == 0) {
+  iVar14 = this_00->field_0302;
+  if (iVar14 == 0) {
     g_currentExceptionFrame = local_c0.previous;
     return;
   }
   memset(local_140, 0, 0x20); /* compiler bulk-zero initialization */
   local_130 = 5;
-  FUN_006e6080(this_00,2,iVar6,local_140);
+  FUN_006e6080(this_00,2,iVar14,local_140);
   g_currentExceptionFrame = local_c0.previous;
   return;
 }
