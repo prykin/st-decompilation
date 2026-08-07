@@ -4843,7 +4843,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005DA980	FUN_005da980	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005DAA60	FUN_005daa60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005DAA90	FUN_005daa90	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-005DAB70	FUN_005dab70	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
+005DAB70	FUN_005dab70	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT	pointer:/char	0	1	insufficient_independent_evidence	{pointer:/char=1}	005BC5E0 -> 005DAB70 @ 005BCD9E; data at 008016A0
 005DAB70	FUN_005dab70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005DAC80	StartSystemTy::GetIP	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005DB030	FUN_005db030	parameter	1	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-

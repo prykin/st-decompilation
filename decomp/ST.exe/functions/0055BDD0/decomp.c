@@ -22,7 +22,7 @@ void FUN_0055bdd0(char *param_1,char *source)
   else {
     Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,param_1,0x20);
     uVar2 = 0xffffffff;
-    pcVar5 = &DAT_007c94cc;
+    pcVar5 = &CHAR_>_007c94cc;
     do {
       pcVar7 = pcVar5;
       if (uVar2 == 0) break;
@@ -46,7 +46,7 @@ void FUN_0055bdd0(char *param_1,char *source)
     pcVar7 = pcVar6 + -1;
     memmove(pcVar7, pcVar5, uVar2); /* compiler REP MOVS byte copy */
     uVar2 = 0xffffffff;
-    pcVar5 = &DAT_007c94cc;
+    pcVar5 = &CHAR_>_007c94cc;
     do {
       if (uVar2 == 0) break;
       uVar2 = uVar2 - 1;

@@ -52,7 +52,7 @@ int st::fn_00566600(int param_1)
     return local_1c;
   }
   uVar5 = 0xffffffff;
-  pcVar9 = &DAT_0080798c;
+  pcVar9 = &CHAR_00h_0080798c;
   do {
     pcVar11 = pcVar9;
     if (uVar5 == 0) break;
@@ -121,7 +121,7 @@ int st::fn_00566600(int param_1)
   }
   local_18 = local_367;
   local_14 = pcVar2;
-  st::fn_006F12B0(pcVar2,FUN_006f2d10,&local_368);
+  st::fn_006F12B0(pcVar2,st::fn_006F2D10,&local_368);
   pcVar2 = local_14;
   puVar3 = st::fn_006F2790(local_14);
   uVar5 = local_c;

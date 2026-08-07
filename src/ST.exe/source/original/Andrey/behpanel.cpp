@@ -637,7 +637,7 @@ int __thiscall st::fn_004EE4D0(BehPanelTy *this,STMessage *message)
       pBVar1 = this_00->vtable;
       iVar12 = 1;
       iVar11 = 0;
-      pcVar9 = thunk_FUN_0052a320;
+      pcVar9 = st::fn_0040420F;
       iVar8 = 0;
       pcVar4 = st::fn_00405493((&this_00->field_0x1af)[(message->arg0).words.high],
                                   this_00->field_01AB);
@@ -654,7 +654,7 @@ int __thiscall st::fn_004EE4D0(BehPanelTy *this,STMessage *message)
       pBVar1 = this_00->vtable;
       iVar12 = 1;
       iVar11 = 0;
-      pcVar9 = thunk_FUN_0052a320;
+      pcVar9 = st::fn_0040420F;
       iVar8 = 0;
       pcVar4 = st::fn_00405493((&this_00->field_0x1af)[(message->arg0).words.high],
                                   this_00->field_01AB);

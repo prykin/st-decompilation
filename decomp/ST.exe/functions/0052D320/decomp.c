@@ -12,8 +12,8 @@ void __thiscall FUN_0052d320(void *this,char *text,uint param_2)
 
   bVar1 = (byte)param_2;
   if (STField<char>(this,0x9c) == '\0') {
-    PopUpTy::AddStr(this,&DAT_007c3b5c,bVar1);
-    PopUpTy::AddStr(this,&DAT_007c3b5c,bVar1);
+    PopUpTy::AddStr(this,&CHAR___007c3b5c,bVar1);
+    PopUpTy::AddStr(this,&CHAR___007c3b5c,bVar1);
   }
   PopUpTy::AddStr(this,text,bVar1);
   return;

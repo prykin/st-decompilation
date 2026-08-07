@@ -73,7 +73,7 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
             bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
           }
           if (bVar4) {
-            Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
+            Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
           }
           Library::MSVCRT::FUN_00733f70(g_int_00854A9C,"%08X  ");
           _DAT_00854ea8 = DAT_00854ea4;
@@ -88,7 +88,7 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
         bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
       }
       if (!bVar4) {
-        Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
+        Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
       }
     }
     Library::MSVCRT::FUN_00733f70(g_int_00854A9C,"----------------\n");
@@ -106,7 +106,7 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
         bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
       }
       if (bVar4) {
-        Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
+        Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
       }
     } while ((int)DAT_00854aa0 < 400);
     uVar3 = DAT_00854aa0 & 0x80000007;
@@ -115,7 +115,7 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
       bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
     }
     if (!bVar4) {
-      Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
+      Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
     }
     Library::MSVCRT::FUN_00733f70(g_int_00854A9C,"----------------\n");
     DAT_00854aa0 = 0;
@@ -129,7 +129,7 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
           bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
         }
         if (bVar4) {
-          Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
+          Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
         }
       } while ((int)DAT_00854aa0 < DAT_00858ddc);
     }
@@ -139,7 +139,7 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
       bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
     }
     if (!bVar4) {
-      Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
+      Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
     }
     DAT_00858ddc = 0;
     Library::MSVCRT::FUN_00733d60(g_int_00854A9C);

@@ -48,7 +48,7 @@ STBoatC::GetVisualInfo
     if (param_3 == 0xd) {
       if (param_2 == CASE_B) {
         uVar3 = 0xffffffff;
-        pcVar6 = &DAT_007a9e94;
+        pcVar6 = &CHAR_l_007a9e94;
         do {
           pcVar7 = pcVar6;
           if (uVar3 == 0) break;
@@ -64,7 +64,7 @@ STBoatC::GetVisualInfo
       }
       if (param_2 == CASE_16) {
         uVar3 = 0xffffffff;
-        pcVar6 = &DAT_007a9e9c;
+        pcVar6 = &CHAR_p_007a9e9c;
         do {
           pcVar7 = pcVar6;
           if (uVar3 == 0) break;
@@ -80,7 +80,7 @@ STBoatC::GetVisualInfo
       }
       if (param_2 == CASE_23) {
         uVar3 = 0xffffffff;
-        pcVar6 = &DAT_007a9ea4;
+        pcVar6 = &CHAR_g_007a9ea4;
         do {
           pcVar7 = pcVar6;
           if (uVar3 == 0) break;
@@ -130,7 +130,7 @@ STBoatC::GetVisualInfo
     pcVar6 = &DAT_007a9e48;
     break;
   case CASE_B:
-    pcVar6 = &DAT_007a9e40;
+    pcVar6 = &CHAR_l_007a9e40;
     break;
   case CASE_C:
     pcVar6 = &DAT_007a9e38;
@@ -163,7 +163,7 @@ STBoatC::GetVisualInfo
     pcVar6 = &DAT_007a9df4;
     break;
   case CASE_16:
-    pcVar6 = &DAT_007a9dec;
+    pcVar6 = &CHAR_p_007a9dec;
     break;
   case CASE_17:
     pcVar6 = &DAT_007a9de4;
@@ -202,7 +202,7 @@ STBoatC::GetVisualInfo
     pcVar6 = &DAT_007a9db4;
     break;
   case CASE_23:
-    pcVar6 = &DAT_007a9db0;
+    pcVar6 = &CHAR_g_007a9db0;
     break;
   case CASE_24:
     pcVar6 = &DAT_007a9dac;
@@ -217,7 +217,7 @@ STBoatC::GetVisualInfo
     pcVar6 = &DAT_007a9d94;
     break;
   case CASE_28:
-    pcVar6 = &DAT_007a9d8c;
+    pcVar6 = &CHAR_f_007a9d8c;
     break;
   default:
     *param_4 = 0;
@@ -246,7 +246,7 @@ STBoatC::GetVisualInfo
     return;
   }
   uVar3 = 0xffffffff;
-  pcVar6 = &DAT_007a9d88;
+  pcVar6 = &CHAR_0_007a9d88;
   do {
     pcVar7 = pcVar6;
     if (uVar3 == 0) break;

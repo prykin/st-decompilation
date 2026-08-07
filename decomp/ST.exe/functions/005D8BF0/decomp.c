@@ -78,9 +78,9 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   FUN_006e6080(this_01,2,uVar8,(undefined4 *)&this_01->field_0x1d);
   FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1CB8,0,3,0x15,0x142,0x62,0xff);
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1CB4);
-  wsprintfA(&this_01->field_1CD4,"%s%s",&DAT_00807680,PTR_s_SAVEGAME__0079c19c);
+  wsprintfA(&this_01->field_1CD4,"%s%s",&CHAR_00h_00807680,PTR_s_SAVEGAME__0079c19c);
   uVar8 = 0xffffffff;
-  pcVar14 = &DAT_007cc8bc;
+  pcVar14 = &CHAR___007cc8bc;
   do {
     pcVar6 = pcVar14;
     if (uVar8 == 0) break;
@@ -158,7 +158,7 @@ LAB_005d8dbf:
               pCVar15 = pCVar15 + 1;
             } while (cVar1 != '\0');
             if (~uVar8 - 1 < 0x40) {
-              wsprintfA(&this_01->field_1CD4,"%s%s%s\\%s",&DAT_00807680,
+              wsprintfA(&this_01->field_1CD4,"%s%s%s\\%s",&CHAR_00h_00807680,
                         PTR_s_SAVEGAME__0079c19c,local_21c.cFileName,PTR_s_PL_LOG_0079c1a0);
               local_9c.previous = g_currentExceptionFrame;
               g_currentExceptionFrame = &local_9c;
@@ -166,7 +166,7 @@ LAB_005d8dbf:
               this_01 = local_c;
               if (iVar4 == 0) {
                 this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                             (0x345,&local_c->field_1CD4,0,0,0);
+                                             (0x345,(byte *)&local_c->field_1CD4,0,0,0);
                 if (this_00 != nullptr) {
                   local_EAX_626 = cMf32::RecChk(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079c1a4);
                   if (local_EAX_626 == 0) {
@@ -191,7 +191,7 @@ LAB_005d8dbf:
     FindClose(hFindFile);
   }
   uVar8 = 0xffffffff;
-  pcVar14 = (char *)&DAT_00807ddd;
+  pcVar14 = &CHAR_00h_00807ddd;
   do {
     pcVar6 = pcVar14;
     if (uVar8 == 0) break;

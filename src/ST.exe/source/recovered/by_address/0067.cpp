@@ -25,9 +25,9 @@ undefined4 st::fn_00672930(int param_1)
 
   uVar1 = DAT_00811944;
   DAT_00811944 = param_1;
-  PTR_thunk_FUN_00673160_007d2d1c = thunk_FUN_00673110;
+  PTR_thunk_FUN_00673160_007d2d1c = st::fn_00402928;
   if (param_1 == 0) {
-    PTR_thunk_FUN_00673160_007d2d1c = thunk_FUN_00673160;
+    PTR_thunk_FUN_00673160_007d2d1c = st::fn_00402F2C;
   }
   return uVar1;
 }
@@ -1326,7 +1326,7 @@ char * st::fn_00674AF0(int param_1)
   char *pcVar6;
   int *piVar7;
 
-  pcVar5 = &DAT_008016a0;
+  pcVar5 = &CHAR_00h_008016a0;
   if (DAT_00811934 != nullptr) {
     cVar3 = *DAT_00811934;
     pcVar6 = DAT_00811934;
@@ -1482,7 +1482,7 @@ void __cdecl st::fn_00674D20(char *param_1)
     memmove(pcVar7, pcVar5, uVar2); /* compiler REP MOVS byte copy */
     uVar3 = 0;
     uVar2 = 0xffffffff;
-    pcVar5 = &DAT_007c8ff4;
+    pcVar5 = &CHAR_0Ah_007c8ff4;
     do {
       pcVar7 = pcVar5;
       if (uVar2 == 0) break;
@@ -1598,7 +1598,7 @@ void __cdecl st::fn_00674EF0(char *resourceString)
     memmove(pcVar7, pcVar5, uVar2); /* compiler REP MOVS byte copy */
     uVar3 = 0;
     uVar2 = 0xffffffff;
-    pcVar5 = &DAT_007c8ff4;
+    pcVar5 = &CHAR_0Ah_007c8ff4;
     do {
       pcVar7 = pcVar5;
       if (uVar2 == 0) break;
@@ -2303,8 +2303,8 @@ int st::fn_006767D0(void)
   g_currentExceptionFrame = &local_4c;
   iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    st::external_00000080((LPSTR)local_150,"%s%s%s\\%s",&DAT_00807680,PTR_s_SAVEGAME__0079d6c0,
-              &DAT_00807ddd,PTR_s_PL_LOG_0079d6c4);
+    st::external_00000080((LPSTR)local_150,"%s%s%s\\%s",&CHAR_00h_00807680,PTR_s_SAVEGAME__0079d6c0,
+              &CHAR_00h_00807ddd,PTR_s_PL_LOG_0079d6c4);
     this = (cMf32 *)st::fn_006F0EC0(0x345,local_150,2,0,0);
     local_8 = this;
     st::external_00000080((LPSTR)local_150,"%s%d%02d",PTR_DAT_0079d6c8,(uint)DAT_0080874e,DAT_0080c52a);
@@ -5002,7 +5002,7 @@ int __cdecl st::fn_0067EF60(byte *param_1,int *param_2)
     pcVar2 = st::fn_00403E36(param_1);
     if (pcVar2 == nullptr) {
       st::fn_006B5AA0(g_dArray_00848A1C,(char *)param_1);
-      iVar1 = st::fn_006B5AA0(g_dArray_00848A18,&DAT_008016a0);
+      iVar1 = st::fn_006B5AA0(g_dArray_00848A18,&CHAR_00h_008016a0);
       pcVar2 = (char *)st::fn_0040353A(iVar1);
     }
     else {

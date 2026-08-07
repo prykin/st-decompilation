@@ -96,7 +96,7 @@ LAB_005a3b63:
           if (puVar7 == nullptr) {
             pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
             this_01->field_1B04 = &pDVar8->flags;
-            Library::DKW::TBL::FUN_006b5aa0(pDVar8,&DAT_008016a0);
+            Library::DKW::TBL::FUN_006b5aa0(pDVar8,&CHAR_00h_008016a0);
           }
           this_01->field_002D = 0x33;
           *(uint **)&this_01->field_0x31 = this_01->field_1B04;

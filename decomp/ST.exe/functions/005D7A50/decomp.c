@@ -149,7 +149,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     }
     pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1CD0 = pDVar5;
-    Library::DKW::TBL::FUN_006b6020(pDVar5,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(pDVar5,0,&CHAR_00h_008016a0);
     iVar9 = 1;
     puVar3 = this_00->field_1CB8 + 0x14;
     local_EAX_923 = FUN_006b4fe0((int)this_00->field_1CB8);

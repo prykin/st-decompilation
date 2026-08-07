@@ -140,7 +140,7 @@ AiEventClassTy::__CreateObjPl
       local_82 = 0xffff;
       _Source = param_8;
       if (param_8 == nullptr) {
-        _Source = &DAT_008016a0;
+        _Source = &CHAR_00h_008016a0;
       }
       Library::MSVCRT::_strncpy(local_6e,_Source,0xe);
       local_7e = param_9;

@@ -336,8 +336,7 @@ undefined4 __fastcall st::fn_00600750(AnonShape_00600750_A7773F7A *param_1)
         else {
           *(undefined4 *)(iVar8 + 0x39 + param_1->field_0233) = 3;
           if ((param_1->field_0232 == '\0') ||
-             (iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::
-                      st::fn_00403E27((AnonReceiver_005FDB50 *)param_1,1,iVar6), iVar5 != 0)) {
+             (iVar5 = st::fn_00403E27((AnonReceiver_005FDB50 *)param_1,1,iVar6), iVar5 != 0)) {
 LAB_00600928:
             st::fn_004035A8(param_1,iVar6);
           }

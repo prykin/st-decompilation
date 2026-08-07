@@ -408,8 +408,8 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
     st::fn_004030BC((STT3DSprC *)this_00,'\x0e');
     st::fn_00405240((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
     iVar5 = st::fn_00404183
-                      ((STT3DSprC *)this_00,10,PTR_00806774,(&PTR_DAT_007d0364)[pSVar2->field_02AD],
-                       CASE_1D);
+                      ((STT3DSprC *)this_00,10,PTR_00806774,
+                       (&PTR_CHAR_e_007d0364)[pSVar2->field_02AD],CASE_1D);
     if (iVar5 != 0) {
       return local_8;
     }
@@ -421,8 +421,8 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
     st::fn_00405240((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
     pSVar2->field_02E0 = 1;
     iVar5 = st::fn_00404183
-                      ((STT3DSprC *)this_00,9,PTR_00806764,(&PTR_DAT_007d0374)[pSVar2->field_02AD],
-                       CASE_1D);
+                      ((STT3DSprC *)this_00,9,PTR_00806764,
+                       (&PTR_CHAR_e_007d0374)[pSVar2->field_02AD],CASE_1D);
     if (iVar5 != 0) {
       return local_8;
     }

@@ -633,12 +633,12 @@ void __thiscall st::fn_00424360(STGroupC *this,int param_1)
   }
   else {
     puVar5 = st::fn_006B00C0(nullptr,(uint *)(&local_8->field_0x0 + local_8->field_001C),
-                          thunk_FUN_00423e30);
+                          st::fn_004045C5);
     pSVar3->field_0029 = puVar5;
   }
   iVar1 = *(int *)&pAVar4->field_0x24;
   if (iVar1 != -1) {
-    puVar5 = st::fn_006B00C0(nullptr,(uint *)(&pAVar4->field_0x0 + iVar1),thunk_FUN_00423e30);
+    puVar5 = st::fn_006B00C0(nullptr,(uint *)(&pAVar4->field_0x0 + iVar1),st::fn_004045C5);
     pSVar3->field_002D = puVar5;
     g_currentExceptionFrame = local_50.previous;
     return;

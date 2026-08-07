@@ -86,9 +86,9 @@ LAB_005cdd57:
         }
         local_164[1] = 3;
         local_164[2] = 2;
-        pcVar7 = &DAT_00807e1d;
+        pcVar7 = &CHAR_00h_00807e1d;
         if (DAT_008067a0 == '\0') {
-          pcVar7 = (char *)&DAT_00807ddd;
+          pcVar7 = &CHAR_00h_00807ddd;
         }
         uVar5 = 0xffffffff;
         do {
@@ -150,9 +150,9 @@ LAB_005cdbf4:
       }
       local_164[2] = (DAT_0080874f != '\0') + 2;
       local_164[1] = 3;
-      pcVar7 = &DAT_00807e1d;
+      pcVar7 = &CHAR_00h_00807e1d;
       if (DAT_008067a0 == '\0') {
-        pcVar7 = (char *)&DAT_00807ddd;
+        pcVar7 = &CHAR_00h_00807ddd;
       }
       uVar5 = 0xffffffff;
       do {

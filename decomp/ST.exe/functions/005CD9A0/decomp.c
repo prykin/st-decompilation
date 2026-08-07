@@ -45,9 +45,9 @@ SettMapMTy::ChgPlList
   local_158 = param_2;
   local_150 = param_4;
   local_154 = param_3;
-  pcVar6 = &DAT_00807e1d;
+  pcVar6 = &CHAR_00h_00807e1d;
   if (DAT_008067a0 == '\0') {
-    pcVar6 = (char *)&DAT_00807ddd;
+    pcVar6 = &CHAR_00h_00807ddd;
   }
   uVar4 = 0xffffffff;
   do {

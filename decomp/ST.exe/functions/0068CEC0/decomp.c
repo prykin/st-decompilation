@@ -63,7 +63,7 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
   Library::MSVCRT::FUN_0072da40();
   uVar8 = 0xffffffff;
   iVar20 = 0;
-  pcVar14 = &DAT_008016a0;
+  pcVar14 = &CHAR_00h_008016a0;
   do {
     pcVar12 = pcVar14;
     if (uVar8 == 0) break;
@@ -154,7 +154,7 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
       pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,0x32,0x32);
       Library::DKW::TBL::FUN_006b5aa0(pDVar5,s_include<[_inc_path]_AiScript_dfn_007d56b4);
       Library::DKW::TBL::FUN_006b5aa0(pDVar5,s_include<[_inc_path]_AiScript_mcr_007d5688);
-      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
       iVar4 = -1;
 cf_continue_loop_0068D1EB:
       iVar18 = 0x68d1f0;
@@ -189,7 +189,7 @@ cf_continue_loop_0068D1EB:
           memmove(pbVar19, pbVar15, uVar8); /* compiler REP MOVS byte copy */
         }
         iVar18 = 0x3fe;
-        Library::MSVCRT::_strncpy((char *)&DAT_00847d0c,DAT_0085755c,0x3fe);
+        Library::MSVCRT::_strncpy(&CHAR_00h_00847d0c,DAT_0085755c,0x3fe);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar7 = (*(code *)param_4)();
         if (iVar7 != 0) {
@@ -226,7 +226,7 @@ cf_continue_loop_0068D1EB:
           if (0 < DAT_00857544) {
             do {
               uVar8 = 0xffffffff;
-              pcVar14 = &DAT_007c3b5c;
+              pcVar14 = &CHAR___007c3b5c;
               do {
                 pcVar12 = pcVar14;
                 if (uVar8 == 0) break;
@@ -307,7 +307,7 @@ cf_continue_loop_0068D1EB:
           memmove(pcVar12, pcVar14, uVar8); /* compiler REP MOVS byte copy */
           uVar9 = 0;
           Library::DKW::TBL::FUN_006b5aa0(pDVar5,local_10bc);
-          Library::DKW::TBL::FUN_006b5aa0(pDVar5,&DAT_008016a0);
+          Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
           iVar20 = 0;
           iVar4 = -1;
           goto cf_continue_loop_0068D1EB;
@@ -325,7 +325,7 @@ cf_continue_loop_0068D1EB:
           if (0 < DAT_00857544) {
             do {
               uVar8 = 0xffffffff;
-              pcVar14 = &DAT_007c3b5c;
+              pcVar14 = &CHAR___007c3b5c;
               do {
                 pcVar12 = pcVar14;
                 if (uVar8 == 0) break;
@@ -406,7 +406,7 @@ cf_continue_loop_0068D1EB:
         memmove(pcVar12, pcVar14, uVar8); /* compiler REP MOVS byte copy */
         uVar9 = 0;
         uVar8 = 0xffffffff;
-        pcVar14 = &DAT_007d5684;
+        pcVar14 = &CHAR___007d5684;
         do {
           pcVar12 = pcVar14;
           if (uVar8 == 0) break;
@@ -431,7 +431,7 @@ cf_continue_loop_0068D1EB:
         memmove(pcVar12, pcVar14, uVar8); /* compiler REP MOVS byte copy */
         uVar9 = 0;
         Library::DKW::TBL::FUN_006b5aa0(pDVar5,local_10bc);
-        Library::DKW::TBL::FUN_006b5aa0(pDVar5,&DAT_008016a0);
+        Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
         iVar20 = 0;
         iVar4 = -1;
         goto cf_continue_loop_0068D1EB;
@@ -469,8 +469,8 @@ cf_continue_loop_0068D1EB:
         memmove(pbVar19, pbVar15, uVar8); /* compiler REP MOVS byte copy */
       }
       param_3[1] = (int)&DAT_0084790c;
-      Library::MSVCRT::_strncpy((char *)&DAT_00847d0c,DAT_0085755c,0x3fe);
-      param_3[3] = (int)&DAT_00847d0c;
+      Library::MSVCRT::_strncpy(&CHAR_00h_00847d0c,DAT_0085755c,0x3fe);
+      param_3[3] = (int)&CHAR_00h_00847d0c;
       param_3[4] = (int)&DAT_008488b4;
       param_3[5] = DAT_00857544;
     }
@@ -507,7 +507,7 @@ cf_continue_loop_0068D1EB:
       }
       param_3[1] = (int)&DAT_0084790c;
       uVar8 = 0xffffffff;
-      pcVar14 = &DAT_008016a0;
+      pcVar14 = &CHAR_00h_008016a0;
       do {
         pcVar12 = pcVar14;
         if (uVar8 == 0) break;
@@ -518,9 +518,9 @@ cf_continue_loop_0068D1EB:
       } while (cVar1 != '\0');
       uVar8 = ~uVar8;
       pcVar14 = pcVar12 + -uVar8;
-      pcVar12 = (char *)&DAT_00847d0c;
+      pcVar12 = &CHAR_00h_00847d0c;
       memmove(pcVar12, pcVar14, uVar8); /* compiler REP MOVS byte copy */
-      param_3[3] = (int)&DAT_00847d0c;
+      param_3[3] = (int)&CHAR_00h_00847d0c;
       param_3[4] = (int)&DAT_008488b4;
     }
   }

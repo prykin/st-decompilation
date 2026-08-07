@@ -4221,9 +4221,9 @@ void __thiscall st::fn_006E8580(ST3DSMAPContext *this,int *param_1)
 
 {
   this->field_0000 = param_1;
-  param_1[0x8a] = (int)FUN_006eb4b0;
-  this->field_0000[0x8c] = (int)FUN_006eb540;
-  this->field_0000[0x8b] = (int)FUN_006eb570;
+  param_1[0x8a] = (int)st::fn_006EB4B0;
+  this->field_0000[0x8c] = (int)st::fn_006EB540;
+  this->field_0000[0x8b] = (int)st::fn_006EB570;
   this->field_0000[0x8d] = (int)this;
   if (DAT_007ee1ac < 0) {
     st::fn_006CFF10

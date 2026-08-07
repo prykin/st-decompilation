@@ -50,7 +50,7 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
         UVar4 = GetDriveTypeA((LPCSTR)local_1c);
         if (UVar4 != 5) {
           uVar6 = 0xffffffff;
-          pcVar9 = &DAT_007ca694;
+          pcVar9 = &CHAR_N_007ca694;
           do {
             pcVar11 = pcVar9;
             if (uVar6 == 0) break;

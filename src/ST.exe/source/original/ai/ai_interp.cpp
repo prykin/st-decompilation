@@ -355,7 +355,7 @@ st::fn_0066ACC0
     }
     return nullptr;
   }
-  st::fn_0072E340(&local_64->field_0x4,&DAT_008016a0,0x7f);
+  st::fn_0072E340(&local_64->field_0x4,&CHAR_00h_008016a0,0x7f);
   *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
   cVar3 = *param_1;
   local_ECX_128 = param_1;
@@ -434,7 +434,7 @@ st::fn_0066ACC0
         ppAVar29 = local_50;
         do {
           uVar35 = 0;
-          pcVar33 = thunk_FUN_00677ed0;
+          pcVar33 = st::fn_00405628;
           pcVar31 = local_10;
           sVar4 = (*this_00->vtable->slot_00)();
           sVar8 = (short)pcVar31;
@@ -1283,7 +1283,7 @@ LAB_0066bff3:
         do {
           puVar34 = nullptr;
           puVar24 = nullptr;
-          pcVar33 = thunk_FUN_006771e0;
+          pcVar33 = st::fn_00401E8D;
           pcVar31 = local_10;
           sVar4 = (*this_00->vtable->slot_00)();
           sVar10 = (short)pcVar31;
@@ -1353,7 +1353,7 @@ LAB_0066bff3:
         do {
           puVar34 = nullptr;
           puVar24 = nullptr;
-          pcVar33 = thunk_FUN_006771e0;
+          pcVar33 = st::fn_00401E8D;
           pcVar31 = local_10;
           sVar4 = (*this_00->vtable->slot_00)();
           sVar10 = (short)pcVar31;
@@ -1443,7 +1443,7 @@ LAB_0066bff3:
         do {
           puVar34 = nullptr;
           puVar24 = nullptr;
-          pcVar33 = thunk_FUN_006771e0;
+          pcVar33 = st::fn_00401E8D;
           pcVar31 = local_10;
           sVar4 = (*this_00->vtable->slot_00)();
           sVar10 = (short)pcVar31;
@@ -1945,7 +1945,7 @@ cf_continue_loop_0066CFCA:
       ppAVar29 = local_50;
       do {
         uVar35 = 0;
-        pcVar33 = thunk_FUN_00677ef0;
+        pcVar33 = st::fn_004050FB;
         pcVar31 = local_10;
         sVar4 = (*this_00->vtable->slot_00)();
         sVar8 = (short)pcVar31;
@@ -2003,7 +2003,7 @@ cf_continue_loop_0066CFCA:
       } while ((int)local_c < param_2);
     }
     DAT_00811980 = 0;
-    uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x23,thunk_FUN_00678200,0);
+    uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x23,st::fn_00402BCB,0);
     uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x1e,uVar23);
     uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x19,uVar23);
     pcVar31 = param_1 + 0x14;
@@ -2052,7 +2052,7 @@ cf_continue_loop_0066CFCA:
       } while ((int)local_c < param_2);
     }
     DAT_00811980 = 0;
-    uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x23,thunk_FUN_00678870,0);
+    uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x23,st::fn_00403D50,0);
     uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x1e,uVar23);
     uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x19,uVar23);
     pcVar31 = param_1 + 0x14;
@@ -2132,7 +2132,7 @@ cf_continue_loop_0066CFCA:
       ppAVar29 = local_50;
       do {
         uVar35 = 0;
-        pcVar33 = thunk_FUN_00678560;
+        pcVar33 = st::fn_004027A7;
         pAVar16 = local_8;
         sVar4 = (*this_00->vtable->slot_00)();
         sVar8 = (short)pAVar16;
@@ -2175,7 +2175,7 @@ cf_continue_loop_0066CFCA:
       } while ((int)local_c < param_2);
     }
     DAT_00811980 = 0;
-    uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x1e,thunk_FUN_00677bc0,0);
+    uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x1e,st::fn_00401F7D,0);
     uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x19,uVar23);
     uVar23 = (*this_00->vtable->slot_00)(param_1 + 0x14,uVar23);
     pcVar31 = param_1 + 0xf;
@@ -2373,7 +2373,7 @@ cf_common_exit_0066DCED:
     if (local_EAX_14021 == 1) {
       puVar34 = nullptr;
       puVar24 = nullptr;
-      pcVar33 = thunk_FUN_00677200;
+      pcVar33 = st::fn_00402BA3;
       sVar10 = -1;
       sVar9 = -1;
       sVar7 = -1;
@@ -2464,7 +2464,7 @@ cf_common_exit_0066DCED:
     local_EAX_14752 = st::fn_004016B8(this_00,(char *)local_8,0,(uint *)local_50);
     if (local_EAX_14752 == 1) {
       uVar23 = 0;
-      pcVar33 = thunk_FUN_00677f20;
+      pcVar33 = st::fn_00402CA2;
       sVar10 = -1;
       sVar9 = -1;
       sVar7 = -1;
@@ -2534,7 +2534,7 @@ cf_common_exit_0066DCED:
       } while ((int)local_c < param_2);
     }
     uVar23 = 0;
-    pcVar33 = thunk_FUN_00678220;
+    pcVar33 = st::fn_0040188E;
     puVar34 = (undefined *)0xffffffff;
     sVar9 = -1;
     sVar7 = -1;
@@ -2594,7 +2594,7 @@ cf_common_exit_0066DCED:
       } while ((int)local_c < param_2);
     }
     uVar23 = 0;
-    pcVar33 = thunk_FUN_00678890;
+    pcVar33 = st::fn_00404C73;
     puVar34 = (undefined *)0xffffffff;
     sVar10 = -1;
     sVar9 = -1;
@@ -2677,7 +2677,7 @@ cf_common_exit_0066DCED:
     local_EAX_16356 = st::fn_004016B8(this_00,(char *)local_8,0,(uint *)local_50);
     if (local_EAX_16356 == 1) {
       uVar23 = 0;
-      pcVar33 = thunk_FUN_00678580;
+      pcVar33 = st::fn_0040446C;
       sVar10 = -1;
       sVar9 = -1;
       sVar7 = -1;
@@ -3084,7 +3084,7 @@ cf_common_exit_0066DCED:
       cVar3 = (char)param_1 + '\x0f';
       uVar23 = (*this_00->vtable->slot_00)();
       iVar13 = (*this_00->vtable->slot_00)(param_1 + 10,uVar23);
-      pcVar31 = (char *)AnonReceiver_0065DA50::st::fn_00404A20(this_01,iVar13,cVar3);
+      pcVar31 = (char *)st::fn_00404A20(this_01,iVar13,cVar3);
       pAVar16 = local_50[0];
       local_c = pcVar31;
     }
@@ -3336,7 +3336,7 @@ cf_common_exit_0066DCED:
     }
 LAB_0066fbc1:
     if ((int)pcVar31 < 0) {
-      st::fn_0072E340(&this_00->field_0x4,&DAT_008016a0,0x7f);
+      st::fn_0072E340(&this_00->field_0x4,&CHAR_00h_008016a0,0x7f);
       *(AiFltClassTy **)&this_00->field_0x84 = local_50[0];
       goto LAB_0067041b;
     }
@@ -3455,7 +3455,7 @@ LAB_0066fbc1:
     }
 joined_r0x006703e6:
     if ((int)pcVar31 < 0) {
-      st::fn_0072E340(&this_00->field_0x4,&DAT_008016a0,0x7f);
+      st::fn_0072E340(&this_00->field_0x4,&CHAR_00h_008016a0,0x7f);
       *(AiFltClassTy **)&this_00->field_0x84 = pAVar16;
 LAB_0067041b:
       st::fn_006A5E40(-0xaa,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -3508,7 +3508,7 @@ cf_common_exit_00670425:
       local_c = &DAT_00808af5;
       do {
         if (((AiFltClassTy *)(uint)(byte)local_c[-1] == local_50[0]) && (*local_c != '\0')) {
-          local_8 = (AiFltClassTy *)(&DAT_00808ab0 + iVar13 * 0x27);
+          local_8 = (AiFltClassTy *)(&CHAR_00h_00808ab0 + iVar13 * 0x9c);
           break;
         }
         iVar13 = iVar13 + 1;
@@ -3622,7 +3622,7 @@ float * st::fn_00671F10(int param_1,int *param_2,int *param_3)
     }
     return nullptr;
   }
-  st::fn_0072E340(&local_24->field_0x4,&DAT_008016a0,0x7f);
+  st::fn_0072E340(&local_24->field_0x4,&CHAR_00h_008016a0,0x7f);
   *(undefined4 *)&local_24->field_0x84 = 0xffffffff;
   local_c = (AnonShape_00683780_11EA4E23 *)st::fn_0040213F(10);
   local_20 = 0.0;
@@ -3705,8 +3705,7 @@ cf_continue_loop_006721A4:
         iVar4 = (int)psVar8[1];
         piVar10 = &local_1c;
         pcVar5 = st::fn_00403779(local_c,iVar7);
-        local_8 = (float *)SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
-                           st::fn_00402545(local_24,pcVar5,iVar4,piVar10);
+        local_8 = (float *)st::fn_00402545(local_24,pcVar5,iVar4,piVar10);
       }
     }
     else {

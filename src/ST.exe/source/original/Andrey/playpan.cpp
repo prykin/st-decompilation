@@ -721,10 +721,10 @@ void __thiscall st::fn_0053AC00(PlayPanelTy *this)
       st::fn_007119C0(pPVar4->field_01DD,pcVar6_mg0,iVar12,iVar13,uVar6);
       st::fn_00710A90(pPVar4->field_01DD,(int)pPVar4->field_0068,0,0x68,uVar7,0x10e,0xc);
       iVar12 = st::fn_00711110(pPVar4->field_01DD,
-                            (char *)(&DAT_00808ab0 + (iVar10 + pPVar4->field_01C9) * 0x27));
+                            &CHAR_00h_00808ab0 + (iVar10 + pPVar4->field_01C9) * 0x9c);
       if (iVar12 < 0x10e) {
         uVar6 = 0xffffffff;
-        pcVar8 = (char *)(&DAT_00808ab0 + (iVar10 + pPVar4->field_01C9) * 0x27);
+        pcVar8 = &CHAR_00h_00808ab0 + (iVar10 + pPVar4->field_01C9) * 0x9c;
         do {
           pcVar11 = pcVar8;
           if (uVar6 == 0) break;
@@ -749,7 +749,7 @@ void __thiscall st::fn_0053AC00(PlayPanelTy *this)
       }
       else {
         uVar6 = 0xffffffff;
-        pcVar8 = (char *)(&DAT_00808ab0 + (iVar10 + pPVar4->field_01C9) * 0x27);
+        pcVar8 = &CHAR_00h_00808ab0 + (iVar10 + pPVar4->field_01C9) * 0x9c;
         do {
           if (uVar6 == 0) break;
           uVar6 = uVar6 - 1;
@@ -761,8 +761,8 @@ void __thiscall st::fn_0053AC00(PlayPanelTy *this)
         do {
           _Count = _Count + 1;
           st::fn_0072E340
-                    ((char *)&DAT_0080f33a,
-                     (char *)(&DAT_00808ab0 + (iVar10 + pPVar4->field_01C9) * 0x27),_Count);
+                    ((char *)&DAT_0080f33a,&CHAR_00h_00808ab0 + (iVar10 + pPVar4->field_01C9) * 0x9c
+                     ,_Count);
           iVar12 = st::fn_00711110(pPVar4->field_01DD,(char *)&DAT_0080f33a);
           if (0x10d < iVar12) break;
         } while ((int)_Count < local_8);
@@ -1031,7 +1031,7 @@ LAB_0053b2ea:
         }
         text = "BUT_SLDN";
       }
-      pcVar18 = thunk_FUN_00529fe0;
+      pcVar18 = st::fn_00401E88;
       pCVar10 = st::fn_0040577C(text,0);
       st::fn_00403495((UPanelTy *)this_00,(AnonShape_0053D7A0_044B6141 *)message,6,pCVar10,
                          pcVar18);

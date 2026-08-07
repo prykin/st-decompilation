@@ -2556,7 +2556,7 @@ void __thiscall st::fn_00420340(STSprGameObjC *this)
   char local_10 [12];
 
   uVar6 = 0xffffffff;
-  pcVar11 = &DAT_007a5000;
+  pcVar11 = &CHAR_a_007a5000;
   do {
     pcVar13 = pcVar11;
     if (uVar6 == 0) break;
@@ -2591,7 +2591,7 @@ void __thiscall st::fn_00420340(STSprGameObjC *this)
     pcVar13 = pcVar13 + 1;
   }
   uVar6 = 0xffffffff;
-  pcVar11 = &DAT_007a4ffc;
+  pcVar11 = &CHAR_1_007a4ffc;
   do {
     pcVar13 = pcVar11;
     if (uVar6 == 0) break;
@@ -2646,7 +2646,7 @@ void __thiscall st::fn_00420340(STSprGameObjC *this)
     case 0x25:
 switchD_00420436_caseD_1:
       uVar6 = 0xffffffff;
-      pcVar11 = &DAT_007a4fb4;
+      pcVar11 = &CHAR_s_007a4fb4;
       do {
         pcVar13 = pcVar11;
         if (uVar6 == 0) break;
@@ -2793,7 +2793,7 @@ switchD_00420436_caseD_1:
     case 100:
     case 0x6e:
       uVar6 = 0xffffffff;
-      pcVar11 = &DAT_007a4ff8;
+      pcVar11 = &CHAR_b_007a4ff8;
       do {
         pcVar13 = pcVar11;
         if (uVar6 == 0) break;
@@ -2842,7 +2842,7 @@ switchD_00420436_caseD_1:
       pcVar13 = pcVar12 + -1;
       memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
       uVar9 = 0;
-      pcVar11 = &DAT_007a4ff8;
+      pcVar11 = &CHAR_b_007a4ff8;
       break;
     case 0x3b:
     case 0x3c:
@@ -2859,7 +2859,7 @@ switchD_00420436_caseD_1:
     case 0x70:
     case 0x73:
       uVar6 = 0xffffffff;
-      pcVar11 = &DAT_007a4ff8;
+      pcVar11 = &CHAR_b_007a4ff8;
       do {
         pcVar13 = pcVar11;
         if (uVar6 == 0) break;
@@ -2908,7 +2908,7 @@ switchD_00420436_caseD_1:
       pcVar13 = pcVar12 + -1;
       memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
       uVar9 = 0;
-      pcVar11 = &DAT_007a4ff4;
+      pcVar11 = &CHAR_a_007a4ff4;
     }
 LAB_00420678:
     uVar6 = 0xffffffff;
@@ -2986,7 +2986,7 @@ LAB_00420678:
   case 0xe0:
 switchD_00420436_caseD_7:
     uVar6 = 0xffffffff;
-    pcVar11 = &DAT_007a4fb4;
+    pcVar11 = &CHAR_s_007a4fb4;
     do {
       pcVar13 = pcVar11;
       if (uVar6 == 0) break;
@@ -3035,13 +3035,13 @@ switchD_00420436_caseD_7:
     pcVar13 = pcVar12 + -1;
     memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
     uVar9 = 0;
-    pcVar11 = &DAT_007a4fac;
+    pcVar11 = &CHAR_o_007a4fac;
     goto LAB_00420678;
   case 0xfd:
   case 0xfe:
 switchD_00420436_caseD_2:
     uVar6 = 0xffffffff;
-    pcVar11 = &DAT_007a4fb4;
+    pcVar11 = &CHAR_s_007a4fb4;
     do {
       pcVar13 = pcVar11;
       if (uVar6 == 0) break;
@@ -3089,7 +3089,7 @@ switchD_00420436_caseD_2:
     pcVar11 = pcVar13 + -uVar6;
     pcVar13 = pcVar12 + -1;
     memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
-    pcVar11 = &DAT_007a4fb4;
+    pcVar11 = &CHAR_s_007a4fb4;
     goto LAB_00420678;
   }
 }
@@ -3162,7 +3162,7 @@ void __thiscall st::fn_00420AE0(STSprGameObjC *this)
     pcVar11 = pcVar11 + 1;
   }
   uVar5 = 0xffffffff;
-  pcVar9 = &DAT_007a5044;
+  pcVar9 = &CHAR_e_007a5044;
   do {
     pcVar11 = pcVar9;
     if (uVar5 == 0) break;
@@ -3315,7 +3315,7 @@ void __thiscall st::fn_00420AE0(STSprGameObjC *this)
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     uVar8 = 0;
     uVar5 = 0xffffffff;
-    pcVar9 = &DAT_007a4fb4;
+    pcVar9 = &CHAR_s_007a4fb4;
     do {
       pcVar11 = pcVar9;
       if (uVar5 == 0) break;
@@ -3363,7 +3363,7 @@ void __thiscall st::fn_00420AE0(STSprGameObjC *this)
     pcVar9 = pcVar11 + -uVar5;
     pcVar11 = pcVar10 + -1;
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
-    pcVar9 = &DAT_007a4fb4;
+    pcVar9 = &CHAR_s_007a4fb4;
     break;
   default:
     iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\Tc_gobj.cpp",0xce5,0,0,"%s",
@@ -3406,7 +3406,7 @@ void __thiscall st::fn_00420AE0(STSprGameObjC *this)
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     uVar8 = 0;
     uVar5 = 0xffffffff;
-    pcVar9 = &DAT_007a4ff8;
+    pcVar9 = &CHAR_b_007a4ff8;
     do {
       pcVar11 = pcVar9;
       if (uVar5 == 0) break;
@@ -3455,7 +3455,7 @@ void __thiscall st::fn_00420AE0(STSprGameObjC *this)
     pcVar11 = pcVar10 + -1;
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     uVar8 = 0;
-    pcVar9 = &DAT_007a4ff8;
+    pcVar9 = &CHAR_b_007a4ff8;
     break;
   case 0x3b:
   case 0x3c:
@@ -3503,7 +3503,7 @@ void __thiscall st::fn_00420AE0(STSprGameObjC *this)
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     uVar8 = 0;
     uVar5 = 0xffffffff;
-    pcVar9 = &DAT_007a4ff4;
+    pcVar9 = &CHAR_a_007a4ff4;
     do {
       pcVar11 = pcVar9;
       if (uVar5 == 0) break;
@@ -3552,7 +3552,7 @@ void __thiscall st::fn_00420AE0(STSprGameObjC *this)
     pcVar11 = pcVar10 + -1;
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     uVar8 = 0;
-    pcVar9 = &DAT_007a4ff4;
+    pcVar9 = &CHAR_a_007a4ff4;
   }
   uVar5 = 0xffffffff;
   do {

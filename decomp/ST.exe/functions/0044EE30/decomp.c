@@ -7596,7 +7596,7 @@ cf_error_exit_0045AEE3:
     break;
   case 0xb:
     uVar17 = 0xffffffff;
-    pcVar36 = &DAT_007a9e40;
+    pcVar36 = &CHAR_l_007a9e40;
     do {
       pcVar35 = pcVar36;
       if (uVar17 == 0) break;
@@ -7629,7 +7629,7 @@ cf_error_exit_0045AEE3:
       pcVar35 = pcVar35 + 1;
       pcVar34 = pcVar34 + 1;
     }
-    pcVar35 = &DAT_007a9e94;
+    pcVar35 = &CHAR_l_007a9e94;
     break;
   case 0xc:
     pcVar36 = local_74;
@@ -7673,7 +7673,7 @@ cf_error_exit_0045AEE3:
     break;
   case 0x16:
     uVar17 = 0xffffffff;
-    pcVar36 = &DAT_007a9dec;
+    pcVar36 = &CHAR_p_007a9dec;
     do {
       pcVar35 = pcVar36;
       if (uVar17 == 0) break;
@@ -7706,7 +7706,7 @@ cf_error_exit_0045AEE3:
       pcVar35 = pcVar35 + 1;
       pcVar34 = pcVar34 + 1;
     }
-    pcVar35 = &DAT_007a9e9c;
+    pcVar35 = &CHAR_p_007a9e9c;
     break;
   case 0x17:
     pcVar36 = local_74;
@@ -7758,7 +7758,7 @@ cf_error_exit_0045AEE3:
     break;
   case 0x23:
     uVar17 = 0xffffffff;
-    pcVar36 = &DAT_007a9db0;
+    pcVar36 = &CHAR_g_007a9db0;
     do {
       pcVar35 = pcVar36;
       if (uVar17 == 0) break;
@@ -7791,7 +7791,7 @@ cf_error_exit_0045AEE3:
       pcVar35 = pcVar35 + 1;
       pcVar34 = pcVar34 + 1;
     }
-    pcVar35 = &DAT_007a9ea4;
+    pcVar35 = &CHAR_g_007a9ea4;
     break;
   case 0x24:
     pcVar36 = local_74;
@@ -7811,7 +7811,7 @@ cf_error_exit_0045AEE3:
     break;
   case 0x28:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9d8c;
+    pcVar35 = &CHAR_f_007a9d8c;
     break;
   default:
     goto switchD_0044fb10_default;
@@ -7857,10 +7857,10 @@ switchD_0044fb10_default:
   }
   switch((int)this_00->field_06CB[5]) {
   case 0:
-    pcVar36 = &DAT_007a9d88;
+    pcVar36 = &CHAR_0_007a9d88;
     break;
   case 1:
-    pcVar36 = &DAT_007a4ffc;
+    pcVar36 = &CHAR_1_007a4ffc;
     break;
   case 2:
     pcVar36 = &DAT_007aa028;
@@ -7878,7 +7878,7 @@ switchD_0044fb10_default:
     pcVar36 = &DAT_007aa018;
     break;
   case 7:
-    pcVar36 = &DAT_007aa014;
+    pcVar36 = &CHAR_7_007aa014;
     break;
   default:
     goto switchD_0044fe4c_default;

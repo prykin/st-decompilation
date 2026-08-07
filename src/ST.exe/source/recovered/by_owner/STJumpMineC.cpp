@@ -1027,8 +1027,7 @@ LAB_0061b627:
                      g_bulkInitializedRecords_008087C7[bVar1].field_0023;
           }
           if (bVar10) {
-            uVar8 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::
-                    st::fn_00404516((AnonReceiver_00601500 *)&this->field_0x20,param_4,param_5,
+            uVar8 = st::fn_00404516((AnonReceiver_00601500 *)&this->field_0x20,param_4,param_5,
                                        param_6,this->field_00DB,this->field_00DF,this->field_00E3,
                                        this->field_0051,DAT_007e66ac,this->field_0085,
                                        this->field_0089,0xb3,0,0);

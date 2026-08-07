@@ -23,7 +23,7 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this)
   DArrayTy *pDVar5;
   int iVar5;
   int iVar7;
-  byte *pbVar8;
+  char *pcVar8;
   ccFntTy **ppcVar9;
   bool bVar10;
   ccFntTy *local_8dc [8];
@@ -43,7 +43,7 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this)
 
   pbVar4 = this->field_1B0C;
   if (pbVar4 != nullptr) {
-    pbVar8 = &DAT_00807e1d;
+    pcVar8 = &CHAR_00h_00807e1d;
     ppcVar9 = local_8dc;
     local_c = this;
     for (iVar7 = 0x223; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -52,18 +52,18 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this)
     }
     do {
       bVar1 = *pbVar4;
-      bVar10 = bVar1 < *pbVar8;
-      if (bVar1 != *pbVar8) {
+      bVar10 = bVar1 < (byte)*pcVar8;
+      if (bVar1 != *pcVar8) {
 LAB_0059d77b:
         local_8 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
         goto LAB_0059d780;
       }
       if (bVar1 == 0) break;
       bVar1 = pbVar4[1];
-      bVar10 = bVar1 < pbVar8[1];
-      if (bVar1 != pbVar8[1]) goto LAB_0059d77b;
+      bVar10 = bVar1 < (byte)pcVar8[1];
+      if (bVar1 != pcVar8[1]) goto LAB_0059d77b;
       pbVar4 = pbVar4 + 2;
-      pbVar8 = pbVar8 + 2;
+      pcVar8 = pcVar8 + 2;
     } while (bVar1 != 0);
     local_8 = 0;
 LAB_0059d780:
@@ -74,16 +74,16 @@ LAB_0059d780:
       pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00 = local_c;
       local_c->field_1AF8 = pDVar5;
-      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
       pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00->field_1AFC = pDVar5;
-      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
       pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00->field_1B00 = pDVar5;
-      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
       pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00->field_1B04 = &pDVar5->flags;
-      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
       ppcVar9 = local_8dc;
       for (iVar7 = 0x223; iVar3 = local_8, iVar7 != 0; iVar7 = iVar7 + -1) {
         *ppcVar9 = nullptr;

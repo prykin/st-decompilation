@@ -343,7 +343,7 @@ int __thiscall st::fn_00711370(void *this,uint *param_1)
     if (cVar1 == '\0') {
       return local_8;
     }
-    puVar2 = st::fn_00730590(param_1,&DAT_007c8ff4);
+    puVar2 = st::fn_00730590(param_1,&CHAR_0Ah_007c8ff4);
     if (puVar2 != nullptr) {
       uVar4 = (undefined1)*puVar2;
       *(undefined1 *)puVar2 = 0;
@@ -381,7 +381,7 @@ int __thiscall st::fn_007113E0(void *this,uint *param_1)
   if ((char)*param_1 != '\0') {
     do {
       iVar3 = iVar4;
-      puVar1 = st::fn_00730590(param_1,&DAT_007c8ff4);
+      puVar1 = st::fn_00730590(param_1,&CHAR_0Ah_007c8ff4);
       if (puVar1 != nullptr) {
         local_5 = (undefined1)*puVar1;
         *(undefined1 *)puVar1 = 0;
@@ -420,7 +420,7 @@ int st::fn_00711470(uint *param_1)
     if (cVar1 == '\0') {
       return iVar4;
     }
-    puVar3 = st::fn_00730590(param_1,&DAT_007c8ff4);
+    puVar3 = st::fn_00730590(param_1,&CHAR_0Ah_007c8ff4);
     iVar5 = iVar4 + 1;
     iVar4 = iVar4 + 1;
     if (puVar3 == nullptr) break;
@@ -451,7 +451,7 @@ int __thiscall st::fn_007114C0(void *this,uint *param_1)
   }
   cVar1 = (char)*param_1;
   while (cVar1 != '\0') {
-    puVar2 = st::fn_00730590(param_1,&DAT_007c8ff4);
+    puVar2 = st::fn_00730590(param_1,&CHAR_0Ah_007c8ff4);
     if (puVar2 != nullptr) {
       local_5 = (undefined1)*puVar2;
       *(undefined1 *)puVar2 = 0;
@@ -778,7 +778,7 @@ int __thiscall st::fn_007140E0(void *this,int param_1,char param_2)
               (STField<char *>(this,0x88),STField<char *>(this,0x58),
                STField<size_t>(this,0xc));
     uVar6 = 0xffffffff;
-    pcVar7 = &DAT_007c8ff4;
+    pcVar7 = &CHAR_0Ah_007c8ff4;
     do {
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
@@ -787,8 +787,8 @@ int __thiscall st::fn_007140E0(void *this,int param_1,char param_2)
     } while (cVar1 != '\0');
     local_EAX_359 =
          st::fn_0072E6F0
-                   ((char *)(STField<int>(this,0x58) + STField<int>(this,0xc)),&DAT_007c8ff4,
-                    ~uVar6 - 1);
+                   ((char *)(STField<int>(this,0x58) + STField<int>(this,0xc)),
+                    &CHAR_0Ah_007c8ff4,~uVar6 - 1);
     if (local_EAX_359 == 0) {
       STField<undefined4>(this,0x7c) = STField<undefined4>(this,0xc);
     }
@@ -857,7 +857,7 @@ int __thiscall st::fn_007140E0(void *this,int param_1,char param_2)
     iVar11 = -1;
     switch(STField<undefined4>(this,0x74)) {
     case 0xfffffffc:
-      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -871,7 +871,7 @@ int __thiscall st::fn_007140E0(void *this,int param_1,char param_2)
       iVar11 = STField<int>(this,100);
       break;
     case 0xfffffffd:
-      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -883,7 +883,7 @@ int __thiscall st::fn_007140E0(void *this,int param_1,char param_2)
       }
       break;
     case 0xfffffffe:
-      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -1012,7 +1012,7 @@ int __thiscall st::fn_007140E0(void *this,int param_1,char param_2)
     st::fn_0072E340
               (STField<char *>(this,0x88),pcVar7,STField<int>(this,0xc) - iVar10);
     uVar6 = 0xffffffff;
-    pcVar7 = &DAT_007c8ff4;
+    pcVar7 = &CHAR_0Ah_007c8ff4;
     do {
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
@@ -1021,8 +1021,8 @@ int __thiscall st::fn_007140E0(void *this,int param_1,char param_2)
     } while (cVar1 != '\0');
     local_EAX_1664 =
          st::fn_0072E6F0
-                   ((char *)(STField<int>(this,0x58) + STField<int>(this,0xc)),&DAT_007c8ff4,
-                    ~uVar6 - 1);
+                   ((char *)(STField<int>(this,0x58) + STField<int>(this,0xc)),
+                    &CHAR_0Ah_007c8ff4,~uVar6 - 1);
     if (local_EAX_1664 == 0) {
       STField<undefined4>(this,0x7c) = STField<undefined4>(this,0xc);
     }
@@ -1098,7 +1098,7 @@ int __thiscall st::fn_007140E0(void *this,int param_1,char param_2)
       local_18 = 1;
       break;
     case 0xfffffffc:
-      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -1111,7 +1111,7 @@ int __thiscall st::fn_007140E0(void *this,int param_1,char param_2)
       local_14 = STField<int>(this,100);
       break;
     case 0xfffffffd:
-      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -1123,7 +1123,7 @@ int __thiscall st::fn_007140E0(void *this,int param_1,char param_2)
       }
       break;
     case 0xfffffffe:
-      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = st::fn_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -3131,7 +3131,7 @@ void * __cdecl st::fn_0071B190(void)
 
   this = (undefined4 *)st::fn_0072E530(0x90);
   if (this != nullptr) {
-    sub_006E5FB0(this);
+    st::fn_006E5FB0(this);
     *this = &VTable_0079E284;
     this[6] = 0;
     this[8] = 0;
@@ -3523,7 +3523,7 @@ RadioClassTy * __cdecl st::fn_0071E6D0(void)
 
   this = (RadioClassTy *)st::fn_006B04D0(0x68);
   if (this != nullptr) {
-    sub_006E5FB0(this);
+    st::fn_006E5FB0(this);
     *(VTable_0079E294 **)this = &VTable_0079E294;
     this->field_0020 = 0;
     this->field_0024 = 0xffffffff;
@@ -3590,7 +3590,7 @@ ViewerClassTy * __cdecl st::fn_0071F210(void)
 
   pVVar1 = (ViewerClassTy *)st::fn_006B04D0(0x1f8);
   if (pVVar1 != nullptr) {
-    FUN_0072b700((undefined4 *)pVVar1);
+    st::fn_0072B700((undefined4 *)pVVar1);
     pVVar1->field_0000 = &VTable_0079E298;
     *(undefined4 *)&pVVar1->field_0x1f0 = 0;
     *(undefined4 *)&pVVar1->field_0x1ec = 0;

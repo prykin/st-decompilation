@@ -92,7 +92,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     this_00->field_01E5 = puVar4;
     pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_01F1 = pDVar5;
-    Library::DKW::TBL::FUN_006b6020(pDVar5,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(pDVar5,0,&CHAR_00h_008016a0);
     PrepMissObj(this_00);
     SetOptControls(this_00);
     uVar20 = 0;

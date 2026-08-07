@@ -66,10 +66,10 @@ AiEventClassTy::_CreateArt
                                  ,(short *)&local_10,0xfd);
       if (iVar5 != 0) {
         if (param_7 == nullptr) {
-          param_7 = &DAT_008016a0;
+          param_7 = &CHAR_00h_008016a0;
         }
         if (param_6 == nullptr) {
-          param_6 = &DAT_008016a0;
+          param_6 = &CHAR_00h_008016a0;
         }
         thunk_FUN_005f0ec0((int)param_1,(int)param_2,(int)(short)local_c,(int)(short)local_8,
                            (int)(short)local_10,param_6,param_7,0xffffffff,param_8);

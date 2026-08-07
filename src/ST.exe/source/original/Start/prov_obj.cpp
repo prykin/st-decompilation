@@ -222,7 +222,7 @@ void __thiscall st::fn_005B9B10(PrividerTy *this,char param_1,char param_2)
     pDVar2 = st::fn_006B54F0(nullptr,1,10);
     this_02 = local_10;
     local_10->field_1C92 = pDVar2;
-    st::fn_006B5AA0(pDVar2,(char *)&DAT_00807ddd);
+    st::fn_006B5AA0(pDVar2,&CHAR_00h_00807ddd);
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         st::fn_006B8B10((int *)g_cursorClass_00802A30->field_00AD);
@@ -921,22 +921,23 @@ void __thiscall st::fn_005BAE00(PrividerTy *this)
                 break;
               case '\x02':
               case '\x03':
-                st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c0bc);
+                st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,
+                          PTR_s_CUSTOM__0079c0bc);
                 local_2c = *pcVar12;
                 local_2b = STField<undefined4>(psVar7,3);
                 local_27 = 0;
                 local_EAX_1381 =
-                     st::fn_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_2c,0);
+                     st::fn_00725910(&DAT_0080f33a,"*.DKD",0,st::fn_00404E49,&local_2c,0);
                 local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((local_EAX_1381 != -0x70) + '\x01'));
                 local_14 = (-(uint)(*pcVar12 != '\x02') & 2) + 0xd;
                 break;
               case '\x05':
-                st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s\\",&DAT_00807680,
-                          PTR_s_SAVEGAME__0079c0b8,&DAT_00807ddd);
+                st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s\\",&CHAR_00h_00807680,
+                          PTR_s_SAVEGAME__0079c0b8,&CHAR_00h_00807ddd);
                 local_38 = *pcVar12;
                 local_37 = STField<undefined4>(psVar7,3);
                 local_33 = STField<undefined4>(psVar7,7);
-                iVar8 = st::fn_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_38,0
+                iVar8 = st::fn_00725910(&DAT_0080f33a,"*.DKD",0,st::fn_00404E49,&local_38,0
                                     );
                 local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(iVar8 == -0x70));
                 local_14 = 0x10;
@@ -1938,7 +1939,7 @@ switchD_005bc9da_caseD_6949:
     pMVar14 = this_00->field_1A5B->field_02E6;
     goto cf_common_exit_005BCD75;
   case 0x694e:
-    iVar11 = st::fn_00404A2A(this_00->field_1A61,&DAT_008016a0);
+    iVar11 = st::fn_00404A2A(this_00->field_1A61,&CHAR_00h_008016a0);
     if (iVar11 == 0) {
       this_00->field_1A71 = 1;
       this_00->field_1A69 = this_00->field_0061;

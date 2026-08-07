@@ -124,7 +124,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
                                                0xff,DAT_0080995c);
       }
       uVar10 = 0xffffffff;
-      pcVar12 = (char *)&DAT_00807ddd;
+      pcVar12 = &CHAR_00h_00807ddd;
       do {
         pcVar13 = pcVar12;
         if (uVar10 == 0) break;
@@ -223,7 +223,7 @@ LAB_005d5350:
         STField<undefined1>(pvVar4,4) = 2;
         DAT_0080874e = STField<undefined1>(pvVar4,3);
         uVar10 = 0xffffffff;
-        pcVar12 = (char *)&DAT_00807ddd;
+        pcVar12 = &CHAR_00h_00807ddd;
         goto code_r0x005d540b;
       }
       uVar9 = uVar9 + 1;

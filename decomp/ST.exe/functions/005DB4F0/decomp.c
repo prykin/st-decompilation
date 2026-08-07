@@ -206,7 +206,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar6);
     pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     pSVar2->field_0686 = pDVar8;
-    Library::DKW::TBL::FUN_006b6020(pDVar8,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(pDVar8,0,&CHAR_00h_008016a0);
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&pSVar2->field_055C,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);

@@ -58,7 +58,7 @@ void __thiscall FUN_0064d0e0(void *this,int param_1,char *param_2,undefined4 par
       thunk_FUN_0052d320(g_popUp_008016D8,(char *)local_404,8);
     }
     thunk_FUN_0064a5b0(local_404);
-    thunk_FUN_0064a5b0((LPDWORD)&DAT_007d2a00);
+    thunk_FUN_0064a5b0((LPDWORD)&CHAR_0Dh_007d2a00);
   }
   return;
 }

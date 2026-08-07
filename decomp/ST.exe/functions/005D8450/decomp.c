@@ -8,7 +8,6 @@
 void __thiscall SIDTy::CreateCtrls(SIDTy *this)
 
 {
-  undefined1 *lpPathName;
   char cVar1;
   SIDTy *this_00;
   int iVar3;
@@ -108,7 +107,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
     this_00->field_1CC4 = (HANDLE)0x0;
   }
   uVar4 = 0xffffffff;
-  pcVar8 = &DAT_00807680;
+  pcVar8 = &CHAR_00h_00807680;
   do {
     pcVar10 = pcVar8;
     if (uVar4 == 0) break;
@@ -146,9 +145,9 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   pcVar8 = pcVar8 + -uVar4;
   pcVar10 = pcVar9 + -1;
   memmove(pcVar10, pcVar8, uVar4); /* compiler REP MOVS byte copy */
-  lpPathName = &this_00->field_1CD4;
-  FUN_006b78c0(lpPathName,lpPathName);
-  pvVar3 = FindFirstChangeNotificationA(lpPathName,0,2);
+  pcVar8 = &this_00->field_1CD4;
+  FUN_006b78c0(pcVar8,pcVar8);
+  pvVar3 = FindFirstChangeNotificationA(pcVar8,0,2);
   this_00->field_1CC4 = pvVar3;
   if (pvVar3 == (HANDLE)0xffffffff) {
     this_00->field_1CC4 = (HANDLE)0x0;

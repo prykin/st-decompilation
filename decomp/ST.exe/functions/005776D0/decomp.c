@@ -44,7 +44,6 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
   int *piVar11;
   char *pcVar12;
   char *pcVar14;
-  byte *puVar15;
   bool bVar16;
   undefined1 local_1d90 [8];
   int *local_1d88;
@@ -248,8 +247,8 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
             local_124 = timeGetTime();
             if (bVar2 < 8) {
               pcVar12 = local_16c;
-              puVar15 = (byte *)(&DAT_00808ab0 + (uint)DAT_00808aaf * 0x27);
-              memmove(puVar15, pcVar12, 0x9c); /* compiler REP MOVS byte copy */
+              pcVar14 = &CHAR_00h_00808ab0 + (uint)DAT_00808aaf * 0x9c;
+              memmove(pcVar14, pcVar12, 0x9c); /* compiler REP MOVS byte copy */
               DAT_00808aaf = DAT_00808aaf + 1;
               if (g_playPanel_008016E4 != nullptr) {
                 PlayPanelTy::sub_0053A540(g_playPanel_008016E4);
@@ -304,13 +303,13 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         local_3f4.cAlternateFileName[_Count + 0xf] = '\0';
         do {
           if (iVar20 < 0) {
-            wsprintfA((LPSTR)&DAT_0080f022,"%s%s%s\\%s%s%s");
+            wsprintfA(&CHAR_00h_0080f022,"%s%s%s\\%s%s%s");
           }
           else {
-            wsprintfA((LPSTR)&DAT_0080f022,"%s%s%s\\%s%s%d%s");
+            wsprintfA(&CHAR_00h_0080f022,"%s%s%s\\%s%s%d%s");
           }
           iVar20 = iVar20 + 1;
-          pvVar5 = FindFirstFileA((LPCSTR)&DAT_0080f022,&local_3f4);
+          pvVar5 = FindFirstFileA(&CHAR_00h_0080f022,&local_3f4);
           bVar16 = pvVar5 != (HANDLE)0xffffffff;
           if (!bVar16) {
             DAT_00808794 = 1;
@@ -322,7 +321,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           iVar6 = Library::MSVCRT::__setjmp3(local_d0.jumpBuffer,0);
           if (iVar6 == 0) {
             pcVar7 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                        (0x345,(byte *)&DAT_0080f022,0,0,0);
+                                        (0x345,(byte *)&CHAR_00h_0080f022,0,0,0);
             if (pcVar7 == nullptr) {
               bVar16 = false;
             }

@@ -63,7 +63,7 @@ FUN_0057a140(int param_1,Global_sub_0057A140_param_2Enum param_2,int param_3,und
       break;
     case CASE_FA:
     case CASE_FB:
-      pcVar4 = &DAT_007cae18;
+      pcVar4 = &CHAR_m_007cae18;
     }
     uVar2 = 0xffffffff;
     do {

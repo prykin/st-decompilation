@@ -4084,7 +4084,7 @@ int st::fn_006B7140(int *param_1)
   piVar1 = param_1 + 0x10;
   *piVar1 = 0;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(*(int *)*param_1 + 0x30))((int *)*param_1,param_1 + 6,FUN_006b7170,piVar1,0x10);
+  (**(code **)(*(int *)*param_1 + 0x30))((int *)*param_1,param_1 + 6,st::fn_006B7170,piVar1,0x10);
   return *piVar1 + 1;
 }
 
@@ -5353,7 +5353,7 @@ int st::fn_006B9A40(int param_1,int *param_2)
   *(undefined4 *)(*param_2 + 4) = 0;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar2 = (**(code **)(**(int **)(param_1 + 0x30) + 0x20))
-                    (*(int **)(param_1 + 0x30),0,0,param_2,FUN_006b9aa0);
+                    (*(int **)(param_1 + 0x30),0,0,param_2,st::fn_006B9AA0);
   if (iVar2 != 0) {
     st::fn_006AB060(param_2);
   }

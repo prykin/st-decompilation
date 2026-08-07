@@ -239,7 +239,7 @@ void __thiscall st::fn_0056EBE0(STAppC *this)
   local_8 = 8;
   do {
     uVar8 = 0xffffffff;
-    pcVar11 = &DAT_008016a0;
+    pcVar11 = &CHAR_00h_008016a0;
     do {
       pcVar12 = pcVar11;
       if (uVar8 == 0) break;
@@ -259,7 +259,7 @@ void __thiscall st::fn_0056EBE0(STAppC *this)
         pDVar4 = array_00;
       }
       if ((pDVar4 == nullptr) || (pDVar4->count == 0)) {
-        pcVar11 = &DAT_008016a0;
+        pcVar11 = &CHAR_00h_008016a0;
       }
       else {
         pcVar11 = (char *)((int)pDVar4->data + 0x4c);

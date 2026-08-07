@@ -1939,7 +1939,7 @@ uint __thiscall st::fn_004F8C80(CPanelTy *this)
       }
       else {
         uVar4 = 0xffffffff;
-        pcVar10 = &DAT_007c21a4;
+        pcVar10 = &CHAR_0_007c21a4;
         do {
           pcVar11 = pcVar10;
           if (uVar4 == 0) break;
@@ -3114,7 +3114,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       if (5 < uVar3) {
         uVar3 = 0;
       }
-      pcVar31 = thunk_FUN_0052a320;
+      pcVar31 = st::fn_0040420F;
       iVar6 = 0;
       pcVar25 = st::fn_00405493(*(Global_sub_00529590_param_1Enum *)
                                     ((int)local_44->field_0B1F + uVar3 + 0x83),local_44->field_0B99);
@@ -3148,14 +3148,14 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       if (5 < uVar3) {
         uVar3 = 0;
       }
-      pcVar31 = thunk_FUN_0052a320;
+      pcVar31 = st::fn_0040420F;
       iVar6 = 0;
       pcVar25 = st::fn_00405493((&local_44->field_0BFE)[uVar3],local_44->field_0BF5);
       pCVar7 = st::fn_0040577C(pcVar25,iVar6);
       st::fn_004022D9(this_00,5,message,1,pCVar7,pcVar31);
       break;
     case MESS_BLDOBJPANELTY_B206:
-      pcVar31 = thunk_FUN_0052a7b0;
+      pcVar31 = st::fn_00401BA4;
       pCVar7 = st::fn_0040577C("BUT_MFFRAMES",0);
       text = st::fn_0040577C("BUT_MFTABS",0);
       st::fn_004047DC(this_00,5,message,1,text,pCVar7,pcVar31);
@@ -3165,7 +3165,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       st::fn_00401889();
       break;
     case MESS_TRADEPANELTY_B20B:
-      pcVar31 = thunk_FUN_0052a7b0;
+      pcVar31 = st::fn_00401BA4;
       pCVar7 = st::fn_0040577C("BUT_MFFRAMES",0);
       st::fn_004047DC(this_00,5,message,1,"BUT_RCTTYPESI",pCVar7,pcVar31);
       break;
@@ -3181,7 +3181,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       if (5 < uVar3) {
         uVar3 = 0;
       }
-      pcVar31 = thunk_FUN_0052a320;
+      pcVar31 = st::fn_0040420F;
       iVar6 = 0;
       pcVar25 = st::fn_00405493(*(Global_sub_00529590_param_1Enum *)
                                     ((int)local_44->field_0B1F + uVar3 + 0x83),local_44->field_0B99);
@@ -3199,7 +3199,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       if (5 < uVar3) {
         uVar3 = 0;
       }
-      pcVar31 = thunk_FUN_0052a320;
+      pcVar31 = st::fn_0040420F;
       iVar6 = 0;
       pcVar25 = st::fn_00405493((&local_44->field_0BFE)[uVar3],local_44->field_0BF5);
       pCVar7 = st::fn_0040577C(pcVar25,iVar6);
@@ -3234,14 +3234,14 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       case CASE_5F:
         pcVar25 = "BUT_TBDN";
 LAB_004fd533:
-        pcVar31 = thunk_FUN_00529fe0;
+        pcVar31 = st::fn_00401E88;
         pCVar7 = st::fn_0040577C(pcVar25,0);
         st::fn_004022D9(this_00,5,message,1,pCVar7,pcVar31);
         break;
       case CASE_64:
       case CASE_65:
       case CASE_6D:
-        st::fn_004022D9(local_44,5,message,1,"BUT_MINUSSI",thunk_FUN_00529fe0);
+        st::fn_004022D9(local_44,5,message,1,"BUT_MINUSSI",st::fn_00401E88);
       }
       break;
     case 0xb214:
@@ -3253,7 +3253,7 @@ LAB_004fd533:
       case CASE_64:
       case CASE_65:
       case CASE_6D:
-        st::fn_004022D9(local_44,5,message,1,"BUT_PLUSSI",thunk_FUN_00529fe0);
+        st::fn_004022D9(local_44,5,message,1,"BUT_PLUSSI",st::fn_00401E88);
       }
       break;
     case 0xb21a:
@@ -3394,7 +3394,7 @@ cf_common_exit_004FD1D2:
     if (MESS_CPANELTY_B106 < SVar1) {
       switch(SVar1) {
       case 0xb107:
-        pcVar31 = thunk_FUN_0052a3e0;
+        pcVar31 = st::fn_00402BE4;
         pCVar7 = st::fn_0040577C("BUT_MAPSMIL",0);
         st::fn_004022D9(this_00,4,message,6,pCVar7,pcVar31);
         break;
@@ -3419,7 +3419,7 @@ cf_common_exit_004FD1D2:
         }
         break;
       case MESS_FRMPANELTY_B109:
-        pcVar31 = thunk_FUN_0052a390;
+        pcVar31 = st::fn_00404A66;
         pcVar25 = "BUT_MAPZIN";
         goto cf_common_exit_004FBCF3;
       case MESS_FRMPANELTY_B10A:
@@ -3443,7 +3443,7 @@ cf_common_exit_004FD1D2:
         }
         break;
       case MESS_FRMPANELTY_B10B:
-        pcVar31 = thunk_FUN_0052a390;
+        pcVar31 = st::fn_00404A66;
         pCVar7 = st::fn_0040577C("BUT_MAPZOUT",0);
         st::fn_004022D9(this_00,4,message,6,pCVar7,pcVar31);
         break;
@@ -3467,7 +3467,7 @@ cf_common_exit_004FD1D2:
         }
         break;
       case MESS_CPANELTY_B10D:
-        pcVar31 = thunk_FUN_0052a390;
+        pcVar31 = st::fn_00404A66;
         pCVar7 = st::fn_0040577C("BUT_MAPTLFT",0);
         st::fn_004022D9(this_00,4,message,6,pCVar7,pcVar31);
       }
@@ -3496,7 +3496,7 @@ cf_common_exit_004FD1D2:
           goto cf_common_exit_004FD60B;
         }
         if (SVar1 != MESS_CPANELTY_B105) goto cf_common_exit_004FD60B;
-        pcVar31 = thunk_FUN_0052a3e0;
+        pcVar31 = st::fn_00402BE4;
         pcVar25 = "BUT_MAPSCIV";
         goto cf_common_exit_004FBCF3;
       }
@@ -4326,7 +4326,7 @@ LAB_004fb8ee:
   }
   switch(SVar1) {
   case 0xb10f:
-    pcVar31 = thunk_FUN_0052a390;
+    pcVar31 = st::fn_00404A66;
     pcVar25 = "BUT_MAPTRT";
 cf_common_exit_004FBCF3:
     pCVar7 = st::fn_0040577C(pcVar25,0);
@@ -4360,7 +4360,7 @@ LAB_004fc9c0:
     puVar23 = (undefined4 *)0x29;
     goto cf_common_exit_004FCF18;
   case MESS_CPANELTY_B110|MESS_ID_CREATE:
-    pcVar31 = thunk_FUN_0052a030;
+    pcVar31 = st::fn_00404A52;
     pCVar7 = st::fn_0040577C("BUT_AIASS",0);
     st::fn_004022D9(this_00,4,message,1,pCVar7,pcVar31);
     break;
@@ -4378,7 +4378,7 @@ LAB_004fc53f:
     st::fn_00405E2F(0xae);
     break;
   case 0xb114:
-    pcVar31 = thunk_FUN_0052a3e0;
+    pcVar31 = st::fn_00402BE4;
     pCVar7 = st::fn_0040577C("BUT_MAPDIR",0);
     st::fn_004022D9(this_00,4,message,6,pCVar7,pcVar31);
     break;
@@ -4388,9 +4388,9 @@ LAB_004fc53f:
     }
     break;
   case MESS_CPANELTY_B110|MESS_SHARED_0008:
-    pcVar31 = thunk_FUN_00529f90;
+    pcVar31 = st::fn_004025C7;
     if (DAT_0080874e != '\x03') {
-      pcVar31 = thunk_FUN_00529fe0;
+      pcVar31 = st::fn_00401E88;
     }
     pCVar7 = st::fn_0040577C("BUT_SHOWUPD",0);
     st::fn_004022D9(this_00,3,message,((DAT_0080874e != '\x03') - 1U & 5) + 1,pCVar7,pcVar31);
@@ -4401,12 +4401,12 @@ LAB_004fc53f:
     }
     break;
   case MESS_CPANELTY_B110|MESS_SYSTEMCLASSTY_000A:
-    pcVar31 = thunk_FUN_00529f90;
+    pcVar31 = st::fn_004025C7;
     pCVar7 = st::fn_0040577C("BUT_SHOWFRM",0);
     st::fn_004022D9(this_00,3,message,((DAT_0080874e != '\x03') - 1U & 5) + 1,pCVar7,pcVar31);
     break;
   case 0xb12a:
-    pcVar31 = thunk_FUN_00529fe0;
+    pcVar31 = st::fn_00401E88;
     UVar28 = 0x274c;
     pCVar7 = st::fn_0040577C("BUT_SMALL",0);
     PaintTxtBut(this_00,3,message,1,pCVar7,UVar28,pcVar31);
@@ -4448,7 +4448,7 @@ LAB_004fc53f:
     }
     goto cf_common_exit_004FCF18;
   case 0xb12e:
-    pcVar31 = thunk_FUN_0052a2d0;
+    pcVar31 = st::fn_00401249;
     UVar28 = 0x3aa5;
     uVar26 = 0;
     iVar6 = 1;
@@ -4476,7 +4476,7 @@ LAB_004fc53f:
     puVar23 = (undefined4 *)0x9;
     goto cf_common_exit_004FCF18;
   case 0xb13f:
-    pcVar31 = thunk_FUN_00529fe0;
+    pcVar31 = st::fn_00401E88;
     UVar28 = 0x274c;
     pCVar7 = st::fn_0040577C("BUT_SMALL",0);
     PaintTxtBut(this_00,5,message,1,pCVar7,UVar28,pcVar31);

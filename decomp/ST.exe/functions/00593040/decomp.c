@@ -111,7 +111,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     }
     break;
   case MESS_SHARED_6940|MESS_SHARED_0008:
-    wsprintfA((LPSTR)&DAT_0080f22a,"%sMISS%d00.AVI",&DAT_00807784,(uint)DAT_0080874e);
+    wsprintfA(&CHAR_00h_0080f22a,"%sMISS%d00.AVI",&CHAR_00h_00807784,(uint)DAT_0080874e);
     this_00->field_0049 = 1;
     this_00->field_004D = 0x7101;
     this_00->field_0051 = 3;
@@ -130,16 +130,16 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
       if (this_00->field_1FFC == 0) {
         pcVar9_mg0 = PTR_DAT_0079bfec;
       }
-      wsprintfA(&DAT_0080ed16,"%s%s%s%d01",&DAT_00807680,PTR_s_MISSIONS__0079bfe8,
-                pcVar9_mg0,(uint)DAT_0080874e);
+      wsprintfA(&CHAR_00h_0080ed16,"%s%s%s%d01",&CHAR_00h_00807680,PTR_s_MISSIONS__0079bfe8
+                ,pcVar9_mg0,(uint)DAT_0080874e);
       pcVar9_mg1 = PTR_s_TUTOR_0079bff0;
       if (this_00->field_1FFC == 0) {
         pcVar9_mg1 = PTR_DAT_0079bfec;
       }
-      wsprintfA(&DAT_0080ef1e,"%s%s%d01",PTR_s_MISSIONS__0079bfe8,pcVar9_mg1,
+      wsprintfA(&CHAR_00h_0080ef1e,"%s%s%d01",PTR_s_MISSIONS__0079bfe8,pcVar9_mg1,
                 (uint)DAT_0080874e);
       uVar11 = 0xffffffff;
-      pcVar13 = &DAT_0080ed16;
+      pcVar13 = &CHAR_00h_0080ed16;
       do {
         pcVar14 = pcVar13;
         if (uVar11 == 0) break;

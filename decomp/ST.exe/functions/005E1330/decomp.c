@@ -496,14 +496,14 @@ LAB_005e22f4:
               Library::DKW::TBL::FUN_006b5aa0
                         ((DArrayTy *)g_startSystem_0081176C->field_0548,(char *)local_c38);
               Library::DKW::TBL::FUN_006b5aa0
-                        ((DArrayTy *)g_startSystem_0081176C->field_0548,&DAT_007c3b5c);
+                        ((DArrayTy *)g_startSystem_0081176C->field_0548,&CHAR___007c3b5c);
               LoadResourceString(0x2346,g_hINSTANCE_00807618);
               pDVar16 = local_c38;
               wsprintfA((LPSTR)pDVar16,"&%1d %s:");
               Library::DKW::TBL::FUN_006b5aa0
                         ((DArrayTy *)g_startSystem_0081176C->field_0548,(char *)local_c38);
               Library::DKW::TBL::FUN_006b5aa0
-                        ((DArrayTy *)g_startSystem_0081176C->field_0548,&DAT_007c3b5c);
+                        ((DArrayTy *)g_startSystem_0081176C->field_0548,&CHAR___007c3b5c);
               if (pDVar16 != nullptr) {
                 if (pDVar16->elementSize != 0) {
                   ccFntTy::SepColorStrInSarr(this_01->field_008D,&pDVar16->flags,&pDVar16->flags);
@@ -1195,7 +1195,7 @@ LAB_005e14c3:
             pbVar26 = (byte *)PTR_s_DEFAULT_BO_ANIMATED_0079c228;
             if (iVar24 == 0) {
               uVar29 = 0xffffffff;
-              pcVar15 = &DAT_007cdc48;
+              pcVar15 = &CHAR_D_007cdc48;
               do {
                 pcVar27 = pcVar15;
                 if (uVar29 == 0) break;
@@ -1280,7 +1280,7 @@ LAB_005e14c3:
               Library::DKW::TBL::FUN_006b11d0(&pMVar3->flags,iVar24 + 1,(undefined4 *)local_78);
               local_6a = 0xf3;
               uVar29 = 0xffffffff;
-              pcVar15 = &DAT_007cdc18;
+              pcVar15 = &CHAR_D_007cdc18;
               do {
                 pcVar27 = pcVar15;
                 if (uVar29 == 0) break;
@@ -1307,7 +1307,7 @@ LAB_005e14c3:
               local_46 = 0x208;
               Library::DKW::TBL::FUN_006b11d0(&pMVar3->flags,iVar24 + 1,(undefined4 *)local_78);
               uVar29 = 0xffffffff;
-              pcVar15 = &DAT_007cdc08;
+              pcVar15 = &CHAR_D_007cdc08;
               do {
                 pcVar27 = pcVar15;
                 if (uVar29 == 0) break;
@@ -1335,7 +1335,7 @@ LAB_005e14c3:
               local_46 = 0x208;
               Library::DKW::TBL::FUN_006b11d0(&pMVar3->flags,iVar24 + 1,(undefined4 *)local_78);
               uVar29 = 0xffffffff;
-              pcVar15 = &DAT_007cdbf8;
+              pcVar15 = &CHAR_D_007cdbf8;
               do {
                 pcVar27 = pcVar15;
                 if (uVar29 == 0) break;
@@ -1496,7 +1496,7 @@ LAB_005e16c1:
               local_46 = 0xdc;
               Library::DKW::TBL::FUN_006b11d0(&pMVar3->flags,iVar24 + 1,(undefined4 *)local_78);
               uVar29 = 0xffffffff;
-              pcVar15 = &DAT_007cdba8;
+              pcVar15 = &CHAR_D_007cdba8;
               do {
                 pcVar27 = pcVar15;
                 if (uVar29 == 0) break;
@@ -1524,7 +1524,7 @@ LAB_005e16c1:
               local_46 = 0x1ce;
               Library::DKW::TBL::FUN_006b11d0(&pMVar3->flags,iVar24 + 1,(undefined4 *)local_78);
               uVar29 = 0xffffffff;
-              pcVar15 = &DAT_007cdb98;
+              pcVar15 = &CHAR_D_007cdb98;
               do {
                 pcVar27 = pcVar15;
                 if (uVar29 == 0) break;
@@ -1553,7 +1553,7 @@ LAB_005e16c1:
               Library::DKW::TBL::FUN_006b11d0(&pMVar3->flags,iVar24 + 1,(undefined4 *)local_78);
               uVar29 = 0xffffffff;
               local_6a = 0xf6;
-              pcVar15 = &DAT_007cdb88;
+              pcVar15 = &CHAR_D_007cdb88;
               do {
                 pcVar27 = pcVar15;
                 if (uVar29 == 0) break;

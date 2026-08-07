@@ -1798,6 +1798,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             // A constructor/vptr-store backed table is stronger evidence than a generic
             // fixed-offset pointee inferred from CALL [vptr+slot].
             String inferredType = ownerVtable ? type : field.uniqueType();
+            boolean narrowCharQuorum = !ownerVtable && field.hasNarrowCharQuorum();
             boolean typeApply = !inferredType.isBlank() && typeLength(inferredType) == size;
             String suggestedName = field.uniqueName();
             if (suggestedName.isBlank() && !inferredType.isBlank() &&
@@ -1875,8 +1876,11 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 }
                 else if (isOwnedUnchangedCandidate(structure) && !inferredType.isBlank() &&
                         !inferredType.equals(type)) {
-                    generatedTypeRevision = true;
-                    typeApply = typeLength(inferredType) == size;
+                    // Competing same-width signedness on an already concrete
+                    // generated field remains review-only.  The char quorum is
+                    // an automatic refinement only while storage is undefined.
+                    generatedTypeRevision = !narrowCharQuorum;
+                    typeApply = typeLength(inferredType) == size && generatedTypeRevision;
                 }
                 else if (isOwnedUnchangedCandidate(structure) && inferredType.isBlank()) {
                     // Only STClassLayoutApplier owns retirement semantics for
@@ -1922,6 +1926,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                     "; deprecated_source=" + retiredDeprecatedInference;
             else if (generatedSwitchEnumPreserved)
                 reason += "; generated_switch_enum_preserved_over_pointer_like_use";
+            else if (narrowCharQuorum)
+                reason += "; dominant_char_pointer_role_over_neutral_byte_consumers";
             else if (field.inferredTypes.size() > 1)
                 reason += "; inferred_type_conflict=" + String.join("|", field.inferredTypes.keySet());
             else if (existingConcreteType && !inferredType.isBlank() &&
@@ -1939,7 +1945,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 field.nameEvidenceText(), !retiredDeprecatedInference.isBlank() ? "repair" :
                     !recursivePointeeConflict.isBlank() ? "conflict" :
                     typeApply ? "high" :
-                    field.inferredTypes.size() > 1 ? "conflict" :
+                    field.inferredTypes.size() > 1 && !narrowCharQuorum ? "conflict" :
                     existingConcreteType ? "existing" : "none", nameConfidence,
                 field.reads, field.writes, field.functions, apply,
                 apply ? "high" : "conflict", reason));
@@ -2935,6 +2941,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
         String uniqueType() {
             if (inferredTypes.size() == 1) return inferredTypes.keySet().iterator().next();
+            if (hasNarrowCharQuorum()) return "/char";
             List<String> namedPointers = inferredTypes.keySet().stream()
                 .filter(type -> type.startsWith("pointer:") &&
                     !type.contains("/Recovered/ClassPointees/") &&
@@ -2945,6 +2952,16 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 type.startsWith("pointer:"));
             return pointerAlternativesOnly && namedPointers.size() == 1 ?
                 namedPointers.get(0) : "";
+        }
+        boolean hasNarrowCharQuorum() {
+            if (!inferredTypes.keySet().stream().allMatch(type -> Set.of(
+                    "/char", "/byte", "/uchar", "/undefined1").contains(type)))
+                return false;
+            int chars = inferredTypes.getOrDefault("/char", Set.of()).size();
+            int alternatives = inferredTypes.entrySet().stream()
+                .filter(entry -> !"/char".equals(entry.getKey()))
+                .mapToInt(entry -> entry.getValue().size()).sum();
+            return chars >= 2 && chars >= alternatives * 2;
         }
         Set<String> directTypes() {
             Set<String> result = new TreeSet<>();

@@ -143,7 +143,7 @@ LAB_005c7a2c:
   DAT_0085400d = this->field_1F5F;
   DAT_00853ffc = STReplaceLowByte((uint32_t)(DAT_00853ffc), (uint8_t)((char)this->field_1F58));
 LAB_005c7ae0:
-  wsprintfA(&DAT_00853de4,"%s%s%s");
+  wsprintfA(&CHAR_00h_00853de4,"%s%s%s");
   pDVar4 = this->field_1F7C;
   if ((DAT_00853ffc & 0xff) < pDVar4->count) {
     pcVar14 = DArrayAt<char>(pDVar4, (DAT_00853ffc & 0xff));
@@ -186,7 +186,7 @@ LAB_005c7ae0:
     cMf32::delete(PTR_00853ff8);
     thunk_FUN_006a0070((int)&local_5a80);
   }
-  pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
+  pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&CHAR_00h_00853de4,0,0,0);
   this->field_1F3F = pcVar5;
   DAT_008087b6 = 0;
   if (this->field_1F3F != nullptr) {
@@ -219,6 +219,7 @@ LAB_005c7ae0:
     puVar11 = (byte *)(local_d8);
     puVar16 = (byte *)(&DAT_00809960);
     memmove(puVar16, puVar11, 0x20); /* compiler REP MOVS byte copy */
+    iVar7 = 0;
     if (g_dArray_0080C4C7 != nullptr) {
       FUN_006b5570(g_dArray_0080C4C7);
     }
@@ -238,10 +239,18 @@ LAB_005c7ae0:
       g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     }
     pcVar14_mg2 = PTR_s_TITLE_MISSION_0079c104;
-    memset(&DAT_0080c3c3, 0, 0x104); /* compiler bulk-zero initialization */
+    pcVar14 = &CHAR_00h_0080c3c3;
+    for (iVar7 = 0x41; iVar7 != 0; iVar7 = iVar7 + -1) {
+      pcVar14[0] = '\0';
+      pcVar14[1] = '\0';
+      pcVar14[2] = '\0';
+      pcVar14[3] = '\0';
+      pcVar14 = pcVar14 + 4;
+    }
     puVar6 = cMf32::RecGet(this->field_1F3F,0xc,pcVar14_mg2,(int *)&stack0xfffffff8,0);
-    if ((puVar6 == nullptr) || ((char)DAT_0080c3c3 == '\0')) {
-      Library::MSVCRT::FUN_0072e730(&DAT_00853de4,nullptr,nullptr,local_228,nullptr);
+    if ((puVar6 == nullptr) || (CHAR_00h_0080c3c3 == '\0')) {
+      Library::MSVCRT::FUN_0072e730
+                ((byte *)&CHAR_00h_00853de4,nullptr,nullptr,local_228,nullptr);
       uVar8 = 0xffffffff;
       pbVar12 = local_228;
       do {
@@ -254,7 +263,7 @@ LAB_005c7ae0:
       } while (bVar1 != 0);
       uVar8 = ~uVar8;
       pbVar12 = pbVar17 + -uVar8;
-      pbVar17 = (byte *)&DAT_0080c3c3;
+      pbVar17 = (byte *)&CHAR_00h_0080c3c3;
       memmove(pbVar17, pbVar12, uVar8); /* compiler REP MOVS byte copy */
     }
     this->field_1F47 = 1;
@@ -268,7 +277,7 @@ LAB_005c7ae0:
       wsprintfA(&stack0xffffffe8,"%08x");
       this->field_1A82 = puVar18;
       this->field_1A86 = uVar19;
-      Library::MSVCRT::_strncpy(&this->field_1A8A,(char *)&DAT_0080c3c3,0x1d5);
+      Library::MSVCRT::_strncpy(&this->field_1A8A,&CHAR_00h_0080c3c3,0x1d5);
       this->field_1C5E = 0;
       CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this->field_0x1a5f);
     }

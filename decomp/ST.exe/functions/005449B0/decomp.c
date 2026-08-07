@@ -707,7 +707,7 @@ switchD_0054679d_default:
           return 0;
         }
         uVar19 = 0xffffffff;
-        pcVar24 = &DAT_00807680;
+        pcVar24 = &CHAR_00h_00807680;
         break;
       case 0xa122:
         sub_0054B540(this_00);
@@ -777,7 +777,7 @@ switchD_0054679d_default:
         pcVar28 = pcVar28 + 1;
       }
       uVar19 = 0xffffffff;
-      pcVar24 = (char *)&DAT_00807ddd;
+      pcVar24 = &CHAR_00h_00807ddd;
       do {
         pcVar28 = pcVar24;
         if (uVar19 == 0) break;

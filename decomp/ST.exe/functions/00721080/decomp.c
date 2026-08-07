@@ -126,10 +126,10 @@ LAB_0072122f:
           cVar1 = *pcVar8;
           pcVar8 = pcVar8 + 1;
         } while (cVar1 != '\0');
-        pcVar8 = PTR_DAT_007f0afc;
+        pcVar8 = PTR_CHAR___007f0afc;
         if ((iVar5 == -2) ||
-           (pcVar8 = pcVar7, pcVar7 = PTR_DAT_007f0b00, (STField<byte>(this,0x20) & 0x20) == 0))
-        {
+           (pcVar8 = pcVar7, pcVar7 = PTR_CHAR___007f0b00, (STField<byte>(this,0x20) & 0x20) == 0
+           )) {
           pcVar7 = pcVar8;
         }
         iVar4 = FUN_007111c0(STField<void *>(this,0x214),pcVar7);
@@ -164,7 +164,7 @@ LAB_0072122f:
         }
         else {
           this_00 = STField<void *>(this,0x214);
-          pbVar11 = PTR_DAT_007f0b00;
+          pbVar11 = PTR_CHAR___007f0b00;
         }
         uVar3 = FUN_00710fb0(this_00,pbVar11);
         iVar9 = *(int *)(STField<int>(this,0x214) + 0x58) +

@@ -227,9 +227,9 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
           }
           *pcVar13 = '\0';
           pAVar4 = local_14;
-          pcVar13 = &DAT_00807e1d;
+          pcVar13 = &CHAR_00h_00807e1d;
           if (DAT_008067a0 == '\0') {
-            pcVar13 = (char *)&DAT_00807ddd;
+            pcVar13 = &CHAR_00h_00807ddd;
           }
           uVar8 = 0xffffffff;
           do {
@@ -311,7 +311,7 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
             }
             if ((char *)(iVar12 + iVar10) == nullptr) {
               uVar8 = 0xffffffff;
-              pcVar13 = &DAT_008016a0;
+              pcVar13 = &CHAR_00h_008016a0;
               do {
                 pcVar14 = pcVar13;
                 if (uVar8 == 0) break;
@@ -5309,76 +5309,76 @@ undefined4 * __cdecl st::fn_0052A970(uint param_1,int param_2)
 
 {
   char cVar1;
-  undefined *puVar2;
+  char *pcVar2;
   char *pcVar3_mg2;
   uint uVar3;
   uint uVar4;
   ushort uVar5;
   char *pcVar6;
-  char *pcVar7;
 
   uVar3 = 0xffffffff;
-  pcVar6 = &DAT_008016a0;
+  pcVar2 = &CHAR_00h_008016a0;
   do {
-    pcVar7 = pcVar6;
+    pcVar6 = pcVar2;
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    pcVar7 = pcVar6 + 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar7;
+    pcVar6 = pcVar2 + 1;
+    cVar1 = *pcVar2;
+    pcVar2 = pcVar6;
   } while (cVar1 != '\0');
   uVar3 = ~uVar3;
-  pcVar6 = pcVar7 + -uVar3;
-  pcVar7 = (char *)&DAT_008016a4;
-  memmove(pcVar7, pcVar6, uVar3); /* compiler REP MOVS byte copy */
+  pcVar2 = pcVar6 + -uVar3;
+  pcVar6 = (char *)&DAT_008016a4;
+  memmove(pcVar6, pcVar2, uVar3); /* compiler REP MOVS byte copy */
+  pcVar2 = (char *)((byte *)pcVar2 + uVar3);
   uVar4 = 0;
   if (param_2 != 0) {
     if (param_1 != 0) {
       uVar3 = param_1 & 0x40000000;
       uVar5 = (ushort)param_1;
       if ((param_1 & 0x1000000) != 0) {
-        if (((uVar5 != 0) || ((param_1 & 0x8000000) != 0)) || (puVar2 = &DAT_008016a0, uVar3 != 0))
-        {
-          puVar2 = &DAT_007c6eec;
+        if (((uVar5 != 0) || ((param_1 & 0x8000000) != 0)) ||
+           (pcVar2 = &CHAR_00h_008016a0, uVar3 != 0)) {
+          pcVar2 = &DAT_007c6eec;
         }
-        st::external_00000080((LPSTR)&DAT_008016a4,"%s%s","Shift",puVar2);
+        st::external_00000080((LPSTR)&DAT_008016a4,"%s%s","Shift",pcVar2);
       }
       if ((param_1 & 0x8000000) != 0) {
-        if ((uVar5 != 0) || (puVar2 = &DAT_008016a0, uVar3 != 0)) {
-          puVar2 = &DAT_007c6eec;
+        if ((uVar5 != 0) || (pcVar2 = &CHAR_00h_008016a0, uVar3 != 0)) {
+          pcVar2 = &DAT_007c6eec;
         }
-        st::external_00000080((LPSTR)&DAT_008016a4,"%s%s%s",&DAT_008016a4,&DAT_007c5454,puVar2);
+        st::external_00000080((LPSTR)&DAT_008016a4,"%s%s%s",&DAT_008016a4,&DAT_007c5454,pcVar2);
       }
       if (uVar3 != 0) {
-        puVar2 = &DAT_007c6eec;
+        pcVar2 = &DAT_007c6eec;
         if (uVar5 == 0) {
-          puVar2 = &DAT_008016a0;
+          pcVar2 = &CHAR_00h_008016a0;
         }
-        st::external_00000080((LPSTR)&DAT_008016a4,"%s%s%s",&DAT_008016a4,&DAT_007c5670,puVar2);
+        st::external_00000080((LPSTR)&DAT_008016a4,"%s%s%s",&DAT_008016a4,&DAT_007c5670,pcVar2);
       }
       if (uVar5 < 0x100) {
-        puVar2 = &DAT_007c5210 + (param_1 & 0xffff) * 0x14;
+        pcVar2 = &DAT_007c5210 + (param_1 & 0xffff) * 0x14;
       }
       else {
-        puVar2 = &DAT_008016a0;
+        pcVar2 = &CHAR_00h_008016a0;
       }
-      st::external_00000080((LPSTR)&DAT_008016a4,"%s%s",&DAT_008016a4,puVar2);
+      st::external_00000080((LPSTR)&DAT_008016a4,"%s%s",&DAT_008016a4,pcVar2);
       return &DAT_008016a4;
     }
     pcVar3_mg2 = st::fn_006B0140(0x2732,g_hINSTANCE_00807618);
     uVar3 = 0xffffffff;
     do {
-      pcVar6 = pcVar3_mg2;
+      pcVar2 = pcVar3_mg2;
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      pcVar6 = pcVar3_mg2 + 1;
+      pcVar2 = pcVar3_mg2 + 1;
       cVar1 = *pcVar3_mg2;
-      pcVar3_mg2 = pcVar6;
+      pcVar3_mg2 = pcVar2;
     } while (cVar1 != '\0');
     uVar3 = ~uVar3;
-    pcVar6 = pcVar6 + -uVar3;
-    pcVar7 = (char *)&DAT_008016a4;
-    memmove(pcVar7, pcVar6, uVar3); /* compiler REP MOVS byte copy */
+    pcVar2 = pcVar2 + -uVar3;
+    pcVar6 = (char *)&DAT_008016a4;
+    memmove(pcVar6, pcVar2, uVar3); /* compiler REP MOVS byte copy */
   }
   return &DAT_008016a4;
 }
@@ -5679,8 +5679,8 @@ void __thiscall st::fn_0052D320(void *this,char *text,uint param_2)
 
   bVar1 = (byte)param_2;
   if (STField<char>(this,0x9c) == '\0') {
-    st::fn_00402FEA(this,&DAT_007c3b5c,bVar1);
-    st::fn_00402FEA(this,&DAT_007c3b5c,bVar1);
+    st::fn_00402FEA(this,&CHAR___007c3b5c,bVar1);
+    st::fn_00402FEA(this,&CHAR___007c3b5c,bVar1);
   }
   st::fn_00402FEA(this,text,bVar1);
   return;

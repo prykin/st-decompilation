@@ -10,20 +10,20 @@ void __thiscall FUN_00550430(void *this,int param_1,int param_2)
 {
   uint uVar1;
   DWORD DVar2;
-  undefined4 *puVar3;
+  char *pcVar3;
 
   uVar1 = 0;
   if (DAT_00808aaf != 0) {
-    puVar3 = &DAT_00808ab0;
-    while (puVar3[0x10] != param_1) {
+    pcVar3 = &CHAR_00h_00808ab0;
+    while (*(int *)(pcVar3 + 0x40) != param_1) {
       uVar1 = uVar1 + 1;
-      puVar3 = puVar3 + 0x27;
+      pcVar3 = pcVar3 + 0x9c;
       if (DAT_00808aaf <= uVar1) {
         return;
       }
     }
     DVar2 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
-    puVar3[0x12] = DVar2;
+    *(DWORD *)(pcVar3 + 0x48) = DVar2;
     if (((param_2 != 0) && (DAT_00808788 != 0)) && (STField<int>(this,0xf4) == param_1)) {
       STField<undefined4>(this,0xf4) = 0;
       DAT_00808788 = 0;

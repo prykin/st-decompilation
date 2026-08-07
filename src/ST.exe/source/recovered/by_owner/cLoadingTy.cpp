@@ -62,7 +62,7 @@ void __thiscall st::fn_00555680(cLoadingTy *this,char *param_1)
 {
   if (((int *)this->field_004C != nullptr) && (param_1 != nullptr)) {
     st::fn_0072EB70(param_1,(int *)this->field_004C);
-    st::fn_0072EB70(&DAT_007c8ff4,(int *)this->field_004C);
+    st::fn_0072EB70(&CHAR_0Ah_007c8ff4,(int *)this->field_004C);
   }
   return;
 }

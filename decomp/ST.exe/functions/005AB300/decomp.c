@@ -121,7 +121,7 @@ ChooseMapTy::InitChooseMap
   }
   uVar11 = 0xffffffff;
   pcVar13 = &this_02->field_1CA3;
-  pcVar18 = &DAT_00807680;
+  pcVar18 = &CHAR_00h_00807680;
   do {
     pcVar15 = pcVar18;
     if (uVar11 == 0) break;
@@ -223,7 +223,7 @@ switchD_005ab3e3_caseD_9:
     memmove(pcVar18, pcVar13, uVar11); /* compiler REP MOVS byte copy */
     uVar12 = 0;
     uVar11 = 0xffffffff;
-    pcVar13 = (char *)&DAT_00807ddd;
+    pcVar13 = &CHAR_00h_00807ddd;
     do {
       pcVar18 = pcVar13;
       if (uVar11 == 0) break;

@@ -37,6 +37,7 @@ function_address	target	status	detail
 005AB300	parameter:1	disabled	apply flags are 0
 005B5510	parameter:2	disabled	apply flags are 0
 005BD7A0	parameter:1	disabled	apply flags are 0
+005DAB70	parameter:1	disabled	apply flags are 0
 005DFA30	parameter:2	disabled	apply flags are 0
 005F05A0	parameter:2	disabled	apply flags are 0
 005F15F0	parameter:3	disabled	apply flags are 0

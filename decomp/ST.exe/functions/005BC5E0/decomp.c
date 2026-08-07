@@ -287,7 +287,7 @@ switchD_005bc9da_caseD_6949:
     pMVar14 = this_00->field_1A5B->field_02E6;
     goto cf_common_exit_005BCD75;
   case 0x694e:
-    iVar11 = thunk_FUN_005dab70(this_00->field_1A61,&DAT_008016a0);
+    iVar11 = thunk_FUN_005dab70(this_00->field_1A61,&CHAR_00h_008016a0);
     if (iVar11 == 0) {
       this_00->field_1A71 = 1;
       this_00->field_1A69 = this_00->field_0061;

@@ -351,7 +351,7 @@ LAB_00576308:
       } while (local_18 < (int)local_20);
     }
     if (0 < pSVar18->field_003C) {
-      st::fn_006ACCD0(pSVar18->field_0040,(undefined4 *)pSVar18->field_003C,0x2c,thunk_FUN_00575c80);
+      st::fn_006ACCD0(pSVar18->field_0040,(undefined4 *)pSVar18->field_003C,0x2c,st::fn_00403AC6);
       pSVar6 = g_sT3DSMAPContext_00807598;
       iVar13 = pSVar18->field_003C;
       g_sT3DSMAPContext_00807598->field_0290 = pSVar18->field_0040;

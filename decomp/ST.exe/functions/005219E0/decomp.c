@@ -49,7 +49,7 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
           );
     pDVar7 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     pIVar2->field_0198 = pDVar7;
-    Library::DKW::TBL::FUN_006b6020(pDVar7,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(pDVar7,0,&CHAR_00h_008016a0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

@@ -353,7 +353,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
     }
     return nullptr;
   }
-  Library::MSVCRT::_strncpy(&local_64->field_0x4,&DAT_008016a0,0x7f);
+  Library::MSVCRT::_strncpy(&local_64->field_0x4,&CHAR_00h_008016a0,0x7f);
   *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
   cVar3 = *param_1;
   local_ECX_128 = param_1;
@@ -3334,7 +3334,7 @@ cf_common_exit_0066DCED:
     }
 LAB_0066fbc1:
     if ((int)pcVar31 < 0) {
-      Library::MSVCRT::_strncpy(&this_00->field_0x4,&DAT_008016a0,0x7f);
+      Library::MSVCRT::_strncpy(&this_00->field_0x4,&CHAR_00h_008016a0,0x7f);
       *(AiFltClassTy **)&this_00->field_0x84 = local_50[0];
       goto LAB_0067041b;
     }
@@ -3453,7 +3453,7 @@ LAB_0066fbc1:
     }
 joined_r0x006703e6:
     if ((int)pcVar31 < 0) {
-      Library::MSVCRT::_strncpy(&this_00->field_0x4,&DAT_008016a0,0x7f);
+      Library::MSVCRT::_strncpy(&this_00->field_0x4,&CHAR_00h_008016a0,0x7f);
       *(AiFltClassTy **)&this_00->field_0x84 = pAVar16;
 LAB_0067041b:
       RaiseInternalException(-0xaa,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
@@ -3506,7 +3506,7 @@ cf_common_exit_00670425:
       local_c = &DAT_00808af5;
       do {
         if (((AiFltClassTy *)(uint)(byte)local_c[-1] == local_50[0]) && (*local_c != '\0')) {
-          local_8 = (AiFltClassTy *)(&DAT_00808ab0 + iVar13 * 0x27);
+          local_8 = (AiFltClassTy *)(&CHAR_00h_00808ab0 + iVar13 * 0x9c);
           break;
         }
         iVar13 = iVar13 + 1;

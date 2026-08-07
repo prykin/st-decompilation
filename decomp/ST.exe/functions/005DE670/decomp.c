@@ -65,7 +65,8 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
     local_1c->field_069E = 0;
     return;
   }
-  Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,local_478,local_374,local_16c,nullptr);
+  Library::MSVCRT::FUN_0072e730
+            ((byte *)&CHAR_00h_0080ed16,local_478,local_374,local_16c,nullptr);
   local_18 = 0xffffffff;
   pbVar9 = local_16c;
   do {
@@ -76,7 +77,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   } while (bVar1 != 0);
   local_18 = ~local_18;
   Library::MSVCRT::__makepath
-            (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c0);
+            (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_CHAR___0079c1c0);
   pvVar4 = CreateFileA(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   local_14 = pvVar4;
   if (pvVar4 == (HANDLE)0xffffffff) {
@@ -91,7 +92,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x415);
   }
   Library::MSVCRT::__makepath
-            (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c4);
+            (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_CHAR___0079c1c4);
   hFile = CreateFileA(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   local_10 = hFile;
   if (hFile == (HANDLE)0xffffffff) {

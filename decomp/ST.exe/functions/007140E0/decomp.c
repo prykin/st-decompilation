@@ -118,7 +118,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
               (STField<char *>(this,0x88),STField<char *>(this,0x58),
                STField<size_t>(this,0xc));
     uVar6 = 0xffffffff;
-    pcVar7 = &DAT_007c8ff4;
+    pcVar7 = &CHAR_0Ah_007c8ff4;
     do {
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
@@ -127,8 +127,8 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     } while (cVar1 != '\0');
     local_EAX_359 =
          Library::MSVCRT::_strncmp
-                   ((char *)(STField<int>(this,0x58) + STField<int>(this,0xc)),&DAT_007c8ff4,
-                    ~uVar6 - 1);
+                   ((char *)(STField<int>(this,0x58) + STField<int>(this,0xc)),
+                    &CHAR_0Ah_007c8ff4,~uVar6 - 1);
     if (local_EAX_359 == 0) {
       STField<undefined4>(this,0x7c) = STField<undefined4>(this,0xc);
     }
@@ -197,7 +197,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     iVar11 = -1;
     switch(STField<undefined4>(this,0x74)) {
     case 0xfffffffc:
-      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -211,7 +211,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       iVar11 = STField<int>(this,100);
       break;
     case 0xfffffffd:
-      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -223,7 +223,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       }
       break;
     case 0xfffffffe:
-      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -352,7 +352,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     Library::MSVCRT::_strncpy
               (STField<char *>(this,0x88),pcVar7,STField<int>(this,0xc) - iVar10);
     uVar6 = 0xffffffff;
-    pcVar7 = &DAT_007c8ff4;
+    pcVar7 = &CHAR_0Ah_007c8ff4;
     do {
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
@@ -361,8 +361,8 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     } while (cVar1 != '\0');
     local_EAX_1664 =
          Library::MSVCRT::_strncmp
-                   ((char *)(STField<int>(this,0x58) + STField<int>(this,0xc)),&DAT_007c8ff4,
-                    ~uVar6 - 1);
+                   ((char *)(STField<int>(this,0x58) + STField<int>(this,0xc)),
+                    &CHAR_0Ah_007c8ff4,~uVar6 - 1);
     if (local_EAX_1664 == 0) {
       STField<undefined4>(this,0x7c) = STField<undefined4>(this,0xc);
     }
@@ -438,7 +438,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       local_18 = 1;
       break;
     case 0xfffffffc:
-      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -451,7 +451,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       local_14 = STField<int>(this,100);
       break;
     case 0xfffffffd:
-      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -463,7 +463,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       }
       break;
     case 0xfffffffe:
-      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(STField<uint *>(this,0x8c),&CHAR_0Ah_007c8ff4);
       if (puVar4 != nullptr) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;

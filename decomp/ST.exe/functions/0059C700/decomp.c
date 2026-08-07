@@ -43,12 +43,12 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00 = local_8;
     local_8->field_1AE8 = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_00807e1d);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&CHAR_00h_00807e1d);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AEC = pDVar2;
-    text = (char *)&DAT_00807e5d;
+    text = &CHAR_00h_00807e5d;
     if (DAT_0080735f == '\0') {
-      text = &DAT_008016a0;
+      text = &CHAR_00h_008016a0;
     }
     Library::DKW::TBL::FUN_006b5aa0(pDVar2,text);
     ppcVar7 = local_8d8;

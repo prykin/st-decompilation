@@ -69,7 +69,7 @@ void st::fn_005335E0(void)
   }
   else {
     uVar4 = 0xffffffff;
-    pcVar7 = &DAT_00807680;
+    pcVar7 = &CHAR_00h_00807680;
     do {
       pcVar9 = pcVar7;
       if (uVar4 == 0) break;
@@ -80,7 +80,7 @@ void st::fn_005335E0(void)
     } while (cVar1 != '\0');
     uVar4 = ~uVar4;
     pcVar7 = pcVar9 + -uVar4;
-    pcVar9 = (char *)&DAT_0080f022;
+    pcVar9 = &CHAR_00h_0080f022;
     memmove(pcVar9, pcVar7, uVar4); /* compiler REP MOVS byte copy */
     uVar5 = 0;
     uVar4 = 0xffffffff;
@@ -95,7 +95,7 @@ void st::fn_005335E0(void)
     } while (cVar1 != '\0');
     uVar4 = ~uVar4;
     iVar6 = -1;
-    pcVar9 = (char *)&DAT_0080f022;
+    pcVar9 = &CHAR_00h_0080f022;
     do {
       pcVar8 = pcVar9;
       if (iVar6 == 0) break;
@@ -109,7 +109,7 @@ void st::fn_005335E0(void)
     memmove(pcVar9, pcVar7, uVar4); /* compiler REP MOVS byte copy */
     uVar5 = 0;
     uVar4 = 0xffffffff;
-    pcVar7 = (char *)&DAT_00807ddd;
+    pcVar7 = &CHAR_00h_00807ddd;
     do {
       pcVar9 = pcVar7;
       if (uVar4 == 0) break;
@@ -120,7 +120,7 @@ void st::fn_005335E0(void)
     } while (cVar1 != '\0');
     uVar4 = ~uVar4;
     iVar6 = -1;
-    pcVar7 = (char *)&DAT_0080f022;
+    pcVar7 = &CHAR_00h_0080f022;
     do {
       pcVar8 = pcVar7;
       if (iVar6 == 0) break;
@@ -133,7 +133,7 @@ void st::fn_005335E0(void)
     pcVar9 = pcVar8 + -1;
     memmove(pcVar9, pcVar7, uVar4); /* compiler REP MOVS byte copy */
     uVar5 = 0;
-    st::fn_006B8280((char *)&DAT_0080f022,(char *)&DAT_0080f022);
+    st::fn_006B8280(&CHAR_00h_0080f022,&CHAR_00h_0080f022);
     uVar4 = 0xffffffff;
     pcVar7 = PTR_DAT_0079ad00;
     do {
@@ -146,7 +146,7 @@ void st::fn_005335E0(void)
     } while (cVar1 != '\0');
     uVar4 = ~uVar4;
     iVar6 = -1;
-    pcVar7 = (char *)&DAT_0080f022;
+    pcVar7 = &CHAR_00h_0080f022;
     do {
       pcVar8 = pcVar7;
       if (iVar6 == 0) break;
@@ -171,7 +171,7 @@ void st::fn_005335E0(void)
     } while (cVar1 != '\0');
     uVar4 = ~uVar4;
     iVar6 = -1;
-    pcVar7 = (char *)&DAT_0080f022;
+    pcVar7 = &CHAR_00h_0080f022;
     do {
       pcVar8 = pcVar7;
       if (iVar6 == 0) break;

@@ -604,7 +604,7 @@ cf_common_exit_005109A5:
 LAB_00510902:
       iVar7 = 1;
       iVar3 = 0;
-      pcVar6 = thunk_FUN_0052a080;
+      pcVar6 = st::fn_004030FD;
       pCVar2 = st::fn_0040577C(pcVar5,0);
       (*pFVar4->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar2,pcVar6,iVar3,iVar7);
       g_currentExceptionFrame = local_60.previous;

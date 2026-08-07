@@ -58,10 +58,10 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
       ExceptionList = local_14;
       return 0;
     }
-    wsprintfA((LPSTR)&DAT_0080f33a,"%ssteditor.exe",&DAT_00807680);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%ssteditor.exe",&CHAR_00h_00807680);
   }
   else {
-    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_UPDATES__0079b114,
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079b114,
               &DAT_0080f126);
   }
   WinExec((LPCSTR)&DAT_0080f33a,1);

@@ -336,7 +336,7 @@ undefined4 __thiscall st::fn_005DB4F0(StartSystemTy *this)
     st::fn_006B3AF0((int *)g_ddxContext_008075A8,*puVar6);
     pDVar8 = st::fn_006B54F0(nullptr,1,1);
     pSVar2->field_0686 = pDVar8;
-    st::fn_006B6020(pDVar8,0,&DAT_008016a0);
+    st::fn_006B6020(pDVar8,0,&CHAR_00h_008016a0);
     st::fn_007158A0
               ((SpriteClassTy *)&pSVar2->field_055C,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
@@ -515,7 +515,7 @@ void __thiscall st::fn_005DC050(StartSystemTy *this,cMf32 *param_1,char param_2)
   undefined1 local_f;
   undefined1 local_e;
   undefined4 local_d;
-  undefined4 *local_8;
+  char *local_8;
   char *puVar5;
 
   local_9c.previous = g_currentExceptionFrame;
@@ -561,7 +561,7 @@ void __thiscall st::fn_005DC050(StartSystemTy *this,cMf32 *param_1,char param_2)
       g_dArray_0080C4CB = st::fn_006B54F0(nullptr,10,10);
     }
     local_18 = &local_10;
-    local_8 = &DAT_008087b6;
+    local_8 = (char *)&DAT_008087b6;
     puVar4 = st::fn_006F1CE0(param_1,0,PTR_s_DESCRIPTOR_0079c1d8,(int *)&local_8,0);
     if ((puVar4 == nullptr) ||
        ((((param_2 == '\f' || (param_2 == '\x10')) ||
@@ -574,8 +574,15 @@ void __thiscall st::fn_005DC050(StartSystemTy *this,cMf32 *param_1,char param_2)
     else {
       DAT_008087b5 = 0;
       st::fn_004025B3((STAppC *)&DAT_00807620);
-      memset(&DAT_0080c3c3, 0, 0x104); /* compiler bulk-zero initialization */
-      local_8 = &DAT_0080c3c3;
+      pcVar8 = &CHAR_00h_0080c3c3;
+      for (iVar9 = 0x41; iVar9 != 0; iVar9 = iVar9 + -1) {
+        pcVar8[0] = '\0';
+        pcVar8[1] = '\0';
+        pcVar8[2] = '\0';
+        pcVar8[3] = '\0';
+        pcVar8 = pcVar8 + 4;
+      }
+      local_8 = &CHAR_00h_0080c3c3;
       st::fn_006F1CE0(param_1,0xc,PTR_s_TITLE_MISSION_0079c1cc,(int *)&local_8,0);
       iVar9 = 0;
       if (0 < (int)g_dArray_0080C4CB->elementSize) {
@@ -609,9 +616,9 @@ LAB_005dc22d:
       pcVar6_mg1 = st::fn_006B0140(0x2347,g_hINSTANCE_00807618);
       st::external_00000080(puVar5,"&2 %s:",pcVar6_mg1);
       st::fn_006B5AA0((DArrayTy *)this_01->field_0548,puVar5);
-      st::external_00000080(puVar5,"&0 %s",&DAT_0080c3c3);
+      st::external_00000080(puVar5,"&0 %s",&CHAR_00h_0080c3c3);
       st::fn_006B5AA0((DArrayTy *)this_01->field_0548,puVar5);
-      st::fn_006B5AA0((DArrayTy *)this_01->field_0548,&DAT_007c3b5c);
+      st::fn_006B5AA0((DArrayTy *)this_01->field_0548,&CHAR___007c3b5c);
       uVar7 = _DAT_008087c4 & 0xffff;
       uVar10 = (uint)DAT_008087c2;
       pcVar6_mg2 = st::fn_006B0140(0x2344,g_hINSTANCE_00807618);
@@ -621,7 +628,7 @@ LAB_005dc22d:
       pcVar6_mg3 = st::fn_006B0140(0x2345,g_hINSTANCE_00807618);
       st::external_00000080(puVar5,"&2 %s: &0%d",pcVar6_mg3,uVar7);
       st::fn_006B5AA0((DArrayTy *)this_01->field_0548,puVar5);
-      st::fn_006B5AA0((DArrayTy *)this_01->field_0548,&DAT_007c3b5c);
+      st::fn_006B5AA0((DArrayTy *)this_01->field_0548,&CHAR___007c3b5c);
       switch(param_2) {
       case '\x01':
       case '\x02':
@@ -639,7 +646,7 @@ LAB_005dc22d:
         pcVar6_mg4 = st::fn_006B0140(0x2346,g_hINSTANCE_00807618);
         st::external_00000080(puVar5,"&2 %s:",pcVar6_mg4);
         st::fn_006B5AA0((DArrayTy *)this_01->field_0548,puVar5);
-        st::fn_006B5AA0((DArrayTy *)this_01->field_0548,&DAT_007c3b5c);
+        st::fn_006B5AA0((DArrayTy *)this_01->field_0548,&CHAR___007c3b5c);
       }
       pDVar3 = local_14;
       if (local_14 != nullptr) {
@@ -806,9 +813,9 @@ LAB_005dc828:
     pcVar7_mg1 = st::fn_006B0140(0x2347,g_hINSTANCE_00807618);
     st::external_00000080(puVar5,"&2 %s:",pcVar7_mg1);
     st::fn_006B5AA0((DArrayTy *)this_00->field_0548,puVar5);
-    st::external_00000080(puVar5,"&0 %s",&DAT_0080c3c3);
+    st::external_00000080(puVar5,"&0 %s",&CHAR_00h_0080c3c3);
     st::fn_006B5AA0((DArrayTy *)this_00->field_0548,puVar5);
-    st::fn_006B5AA0((DArrayTy *)this_00->field_0548,&DAT_007c3b5c);
+    st::fn_006B5AA0((DArrayTy *)this_00->field_0548,&CHAR___007c3b5c);
     uVar7 = _DAT_008087c4 & 0xffff;
     uVar10 = (uint)DAT_008087c2;
     pcVar7_mg2 = st::fn_006B0140(0x2344,g_hINSTANCE_00807618);
@@ -818,11 +825,11 @@ LAB_005dc828:
     pcVar7_mg3 = st::fn_006B0140(0x2345,g_hINSTANCE_00807618);
     st::external_00000080(puVar5,"&2 %s: &0%d",pcVar7_mg3,uVar7);
     st::fn_006B5AA0((DArrayTy *)this_00->field_0548,puVar5);
-    st::fn_006B5AA0((DArrayTy *)this_00->field_0548,&DAT_007c3b5c);
+    st::fn_006B5AA0((DArrayTy *)this_00->field_0548,&CHAR___007c3b5c);
     pcVar7_mg4 = st::fn_006B0140(0x2346,g_hINSTANCE_00807618);
     st::external_00000080(puVar5,"&2 %s:",pcVar7_mg4);
     st::fn_006B5AA0((DArrayTy *)this_00->field_0548,puVar5);
-    st::fn_006B5AA0((DArrayTy *)this_00->field_0548,&DAT_007c3b5c);
+    st::fn_006B5AA0((DArrayTy *)this_00->field_0548,&CHAR___007c3b5c);
     pDVar3 = local_c;
     if (local_c != nullptr) {
       if (local_c->elementSize != 0) {
@@ -1830,7 +1837,8 @@ void __fastcall st::fn_005DE670(AnonShape_005DE670_0D4D7A8C *param_1)
     local_1c->field_069E = 0;
     return;
   }
-  st::fn_0072E730(&DAT_0080ed16,local_478,local_374,local_16c,nullptr);
+  st::fn_0072E730
+            ((byte *)&CHAR_00h_0080ed16,local_478,local_374,local_16c,nullptr);
   local_18 = 0xffffffff;
   pbVar9 = local_16c;
   do {
@@ -1841,7 +1849,7 @@ void __fastcall st::fn_005DE670(AnonShape_005DE670_0D4D7A8C *param_1)
   } while (bVar1 != 0);
   local_18 = ~local_18;
   st::fn_0072F110
-            (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c0);
+            (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_CHAR___0079c1c0);
   pvVar4 = st::external_00000055(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   local_14 = pvVar4;
   if (pvVar4 == (HANDLE)0xffffffff) {
@@ -1856,7 +1864,7 @@ void __fastcall st::fn_005DE670(AnonShape_005DE670_0D4D7A8C *param_1)
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x415);
   }
   st::fn_0072F110
-            (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c4);
+            (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_CHAR___0079c1c4);
   hFile = st::external_00000055(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   local_10 = hFile;
   if (hFile == (HANDLE)0xffffffff) {
@@ -1988,23 +1996,24 @@ undefined4 __fastcall st::fn_005DEB90(AnonShape_005DEB90_CA287120 *param_1)
     iVar3 = local_10;
     while (uVar1 != 0) {
       if (iVar3 < 0) {
-        st::external_00000080(&DAT_0080ed16,"%s%s%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c1bc,
+        st::external_00000080(&CHAR_00h_0080ed16,"%s%s%s%s",&CHAR_00h_00807680,PTR_s_CUSTOM__0079c1bc,
                   abStack_165 + 1);
       }
       else {
-        st::external_00000080(&DAT_0080ed16,"%s%s%s%d%s",&DAT_00807680,PTR_s_CUSTOM__0079c1bc,
-                  abStack_165 + 1,iVar3,PTR_DAT_0079c1c0);
+        st::external_00000080(&CHAR_00h_0080ed16,"%s%s%s%d%s",&CHAR_00h_00807680,PTR_s_CUSTOM__0079c1bc
+                  ,abStack_165 + 1,iVar3,PTR_CHAR___0079c1c0);
       }
       iVar3 = iVar3 + 1;
       local_10 = iVar3;
-      pvVar4 = st::external_00000070(&DAT_0080ed16,&local_5b0);
+      pvVar4 = st::external_00000070(&CHAR_00h_0080ed16,&local_5b0);
       local_14 = (uint)(pvVar4 != (HANDLE)0xffffffff);
       uVar1 = local_14;
     }
-    st::fn_0072E730(&DAT_0080ed16,local_36c,local_470,abStack_165 + 1,nullptr);
+    st::fn_0072E730
+              ((byte *)&CHAR_00h_0080ed16,local_36c,local_470,abStack_165 + 1,nullptr);
     st::fn_0072F110
               (local_268,(char *)local_36c,(char *)local_470,(char *)(abStack_165 + 1),
-               PTR_DAT_0079c1c0);
+               PTR_CHAR___0079c1c0);
     pvVar4 = st::external_00000055(local_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     local_c = pvVar4;
     if (pvVar4 == (HANDLE)0xffffffff) {
@@ -2026,7 +2035,7 @@ undefined4 __fastcall st::fn_005DEB90(AnonShape_005DEB90_CA287120 *param_1)
     st::external_00000027(pvVar4);
     st::fn_0072F110
               (local_268,(char *)local_36c,(char *)local_470,(char *)(abStack_165 + 1),
-               PTR_DAT_0079c1c4);
+               PTR_CHAR___0079c1c4);
     pvVar4 = st::external_00000055(local_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     local_c = pvVar4;
     if (pvVar4 == (HANDLE)0xffffffff) {

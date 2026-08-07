@@ -3,9 +3,15 @@
 
 from __future__ import annotations
 
+import re
 import unittest
 
-from st_source_tree import TypeEmitter, rewrite_address_taken_globals
+from st_source_tree import (
+    ADDRESS_CODED_FUNCTION_RE,
+    QUALIFIED_ADDRESS_SYMBOL_RE,
+    TypeEmitter,
+    rewrite_address_taken_globals,
+)
 
 
 def primitive(path: str, name: str, length: int) -> dict:
@@ -188,6 +194,46 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertIn("STField<Table *>", rewritten)
         self.assertIn("&st_global_00102030;", rewritten)
         self.assertIn("&st_global_00102030.field", rewritten)
+
+    def test_exact_display_array_declaration_is_not_scalarized(self) -> None:
+        records = self.records()
+        records.append({
+            "path": "/int[5]",
+            "name": "int[5]",
+            "display_name": "int[5]",
+            "class": "ArrayDB",
+            "length": 20,
+            "detail": {
+                "element_type": "/int",
+                "element_count": 5,
+                "element_length": 4,
+            },
+        })
+        emitter = TypeEmitter(records, [])
+        self.assertEqual(
+            emitter.display_declaration("int[5]", "g_offsets"),
+            "int g_offsets[5]",
+        )
+
+    def test_address_coded_function_survives_qualified_line_wrap(self) -> None:
+        spelling = "SubmarineTitans::Recovered::\n  sub_00102030"
+        match = ADDRESS_CODED_FUNCTION_RE.search(spelling)
+        self.assertIsNotNone(match)
+        self.assertEqual(
+            re.sub(r"\s+", "", match.group(0)),
+            "SubmarineTitans::Recovered::sub_00102030",
+        )
+
+    def test_stale_qualifier_is_removed_after_address_rewrite(self) -> None:
+        spelling = (
+            "SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::\n"
+            "    st::fn_00660180(param_1)"
+        )
+        actual, count = QUALIFIED_ADDRESS_SYMBOL_RE.subn(
+            lambda match: match.group(1), spelling
+        )
+        self.assertEqual(count, 1)
+        self.assertEqual(actual, "st::fn_00660180(param_1)")
 
 
 if __name__ == "__main__":

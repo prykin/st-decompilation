@@ -3238,7 +3238,7 @@ st::fn_0069BDC0
       local_8 = 0xffffffff;
       local_58 = (int *)&stack0xffffff6c;
       local_1c = &stack0xffffff6c;
-      st::fn_00730810((undefined1 *)local_78,local_3c,0x40,thunk_FUN_0069b8d0);
+      st::fn_00730810((undefined1 *)local_78,local_3c,0x40,st::fn_00402ADB);
       local_28 = (local_50 * param_5) / 100;
       local_60 = 0;
       if (0 < (int)local_3c) {

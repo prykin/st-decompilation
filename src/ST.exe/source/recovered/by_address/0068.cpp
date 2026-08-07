@@ -160,7 +160,7 @@ void st::fn_00680310(void)
 
 {
   DAT_007d3fa0 = 1;
-  DAT_008489e0 = 0;
+  CHAR_00h_008489e0 = '\0';
   DAT_00848a00 = 0;
   DAT_00848a04 = 0;
   return;
@@ -188,7 +188,7 @@ void __cdecl st::fn_00680340(char *param_1,undefined4 param_2,undefined4 param_3
   } while (cVar1 != '\0');
   uVar2 = ~uVar2;
   pcVar4 = pcVar4_mg0 + -uVar2;
-  pcVar5 = &DAT_008489e0;
+  pcVar5 = &CHAR_00h_008489e0;
   memmove(pcVar5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
   DAT_00848a00 = param_3;
   DAT_00848a04 = param_2;
@@ -220,7 +220,7 @@ undefined4 * __cdecl st::fn_006803B0(byte param_1)
   else if (-1 < DAT_00848a00) {
     st::fn_0072DE60(DAT_00848a04,local_28,10);
     st::external_00000080(local_a8,"%s%s%s","%s%0",local_28,&DAT_007d5630);
-    st::external_00000080((LPSTR)&DAT_008478ac,local_a8,&DAT_008489e0,DAT_00848a00);
+    st::external_00000080((LPSTR)&DAT_008478ac,local_a8,&CHAR_00h_008489e0,DAT_00848a00);
     DAT_00848a00 = DAT_00848a00 + DAT_007d3fa0;
     return &DAT_008478ac;
   }
@@ -228,7 +228,7 @@ undefined4 * __cdecl st::fn_006803B0(byte param_1)
     local_8 = DAT_008489d0;
     iVar7 = 0;
     do {
-      pCVar3 = st::fn_006F2C00(&DAT_008489e0,iVar2,iVar7);
+      pCVar3 = st::fn_006F2C00(&CHAR_00h_008489e0,iVar2,iVar7);
       iVar4 = st::fn_006F21C0(local_8,param_1,pCVar3);
       if (iVar4 != 0) {
         if (pCVar3 != (LPSTR)0x0) {
@@ -242,7 +242,7 @@ undefined4 * __cdecl st::fn_006803B0(byte param_1)
   }
 LAB_00680474:
   uVar5 = 0xffffffff;
-  pcVar8 = &DAT_008489e0;
+  pcVar8 = &CHAR_00h_008489e0;
   do {
     pcVar9 = pcVar8;
     if (uVar5 == 0) break;

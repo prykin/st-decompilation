@@ -224,7 +224,7 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
     memmove(puVar12, puVar9, 0x1999); /* compiler REP MOVS byte copy */
     st::fn_00404197();
     uVar6 = 0xffffffff;
-    pcVar10 = &DAT_0080ef1e;
+    pcVar10 = &CHAR_00h_0080ef1e;
     do {
       pcVar13 = pcVar10;
       if (uVar6 == 0) break;
@@ -235,11 +235,11 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
     } while (cVar11 != '\0');
     uVar6 = ~uVar6;
     pcVar10 = pcVar13 + -uVar6;
-    pcVar13 = (char *)&DAT_0080c52e;
+    pcVar13 = &CHAR_00h_0080c52e;
     memmove(pcVar13, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     uVar7 = 0;
     uVar6 = 0xffffffff;
-    pcVar10 = (char *)&DAT_0080c3c3;
+    pcVar10 = &CHAR_00h_0080c3c3;
     do {
       pcVar13 = pcVar10;
       if (uVar6 == 0) break;

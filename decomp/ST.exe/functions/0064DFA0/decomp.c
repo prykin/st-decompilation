@@ -62,7 +62,7 @@ AiEventClassTy::_CreateMine
                                    (short *)&local_8,(short *)&local_10,1);
         if (iVar5 != 0) {
           if (param_7 == nullptr) {
-            param_7 = &DAT_008016a0;
+            param_7 = &CHAR_00h_008016a0;
           }
           thunk_FUN_00627850((int)param_2,(uint)param_1,0,0,(int)(short)local_c,(int)(short)local_8,
                              (int)(short)local_10,local_24,param_7,param_9);

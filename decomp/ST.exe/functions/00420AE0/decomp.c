@@ -67,7 +67,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
     pcVar11 = pcVar11 + 1;
   }
   uVar5 = 0xffffffff;
-  pcVar9 = &DAT_007a5044;
+  pcVar9 = &CHAR_e_007a5044;
   do {
     pcVar11 = pcVar9;
     if (uVar5 == 0) break;
@@ -220,7 +220,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     uVar8 = 0;
     uVar5 = 0xffffffff;
-    pcVar9 = &DAT_007a4fb4;
+    pcVar9 = &CHAR_s_007a4fb4;
     do {
       pcVar11 = pcVar9;
       if (uVar5 == 0) break;
@@ -268,7 +268,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
     pcVar9 = pcVar11 + -uVar5;
     pcVar11 = pcVar10 + -1;
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
-    pcVar9 = &DAT_007a4fb4;
+    pcVar9 = &CHAR_s_007a4fb4;
     break;
   default:
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xce5,0,0,"%s",
@@ -311,7 +311,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     uVar8 = 0;
     uVar5 = 0xffffffff;
-    pcVar9 = &DAT_007a4ff8;
+    pcVar9 = &CHAR_b_007a4ff8;
     do {
       pcVar11 = pcVar9;
       if (uVar5 == 0) break;
@@ -360,7 +360,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
     pcVar11 = pcVar10 + -1;
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     uVar8 = 0;
-    pcVar9 = &DAT_007a4ff8;
+    pcVar9 = &CHAR_b_007a4ff8;
     break;
   case 0x3b:
   case 0x3c:
@@ -408,7 +408,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     uVar8 = 0;
     uVar5 = 0xffffffff;
-    pcVar9 = &DAT_007a4ff4;
+    pcVar9 = &CHAR_a_007a4ff4;
     do {
       pcVar11 = pcVar9;
       if (uVar5 == 0) break;
@@ -457,7 +457,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
     pcVar11 = pcVar10 + -1;
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     uVar8 = 0;
-    pcVar9 = &DAT_007a4ff4;
+    pcVar9 = &CHAR_a_007a4ff4;
   }
   uVar5 = 0xffffffff;
   do {

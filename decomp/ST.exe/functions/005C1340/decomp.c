@@ -15,7 +15,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
   ushort **ppuVar1;
   MReportTy *pMVar3;
   int iVar4;
-  undefined1 *puVar4;
+  char *pcVar4;
   ushort *puVar5;
   ccFntTy *pcVar6;
   int iVar7;
@@ -40,15 +40,15 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     ppuVar1 = &local_c->field_005D;
     cMf32::RecMemFree(g_cMf32_00806780,(uint *)ppuVar1);
     if (local_5 == '\x01') {
-      puVar4 = &DAT_007ca250;
+      pcVar4 = &CHAR_W_007ca250;
     }
     else {
-      puVar4 = &DAT_007ca248;
+      pcVar4 = &CHAR_B_007ca248;
       if (local_5 != '\x02') {
-        puVar4 = &DAT_007ca24c;
+        pcVar4 = &DAT_007ca24c;
       }
     }
-    wsprintfA((LPSTR)&DAT_0080f33a,"REPORT_%s_%c",puVar4,
+    wsprintfA((LPSTR)&DAT_0080f33a,"REPORT_%s_%c",pcVar4,
               (int)(char)((-(DAT_0080c522 != 0) & 0xfbU) + 0x46));
     puVar5 = FUN_0070a9f0(g_cMf32_00806780,(char *)&DAT_0080f33a,0,1);
     *ppuVar1 = puVar5;

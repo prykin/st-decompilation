@@ -337,7 +337,7 @@ st::fn_0068EB30(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *param_1,short p
     param_1->field_0006 = param_1->field_0006 + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
     param_1->field_003A = pAVar3->field_012C;
     st::fn_006AE1C0((DArrayTy *)pAVar3->field_00BD,param_1);
-    st::fn_004049A8((DArrayTy *)pAVar3->field_00BD,thunk_FUN_0068e7d0);
+    st::fn_004049A8((DArrayTy *)pAVar3->field_00BD,st::fn_0040242D);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
@@ -609,7 +609,7 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
           bVar11 = uVar10 < pAVar9->count;
         } while ((int)uVar10 < (int)pAVar9->count);
       }
-      st::fn_004049A8((DArrayTy *)this_00->field_00BD,thunk_FUN_0068e7d0);
+      st::fn_004049A8((DArrayTy *)this_00->field_00BD,st::fn_0040242D);
       local_c = param_1[3];
       while (local_c = local_c - 1, -1 < (int)local_c) {
         if (local_c < param_1[3]) {

@@ -304,7 +304,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     if (this_00->field_1F3F != nullptr) {
       cMf32::delete(this_00->field_1F3F);
     }
-    pcVar8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
+    pcVar8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&CHAR_00h_0080ed16,0,0,0);
     this_00->field_1F3F = pcVar8;
     if (DAT_0080877e == '\0') {
       if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {

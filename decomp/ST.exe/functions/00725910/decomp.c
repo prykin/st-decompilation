@@ -147,7 +147,7 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
       uVar7 = 0;
       FUN_006b8280(local_108,local_108);
       uVar6 = 0xffffffff;
-      pcVar8 = &DAT_007cc8bc;
+      pcVar8 = &CHAR___007cc8bc;
       do {
         pcVar12 = pcVar8;
         if (uVar6 == 0) break;

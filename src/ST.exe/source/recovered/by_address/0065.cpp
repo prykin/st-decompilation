@@ -3419,7 +3419,7 @@ st::fn_0065E9A0(void *this,short *param_1,short *param_2,uint param_3,uint param
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = STReplaceLowByte((uint32_t)(param_6), (uint8_t)(0xff));
     }
-    st::fn_004012F8(psVar4,param_3,param_4,param_5,(char)param_6,0,0,0,-1,-1,-1,thunk_FUN_0065e860,
+    st::fn_004012F8(psVar4,param_3,param_4,param_5,(char)param_6,0,0,0,-1,-1,-1,st::fn_0040559C,
                local_8,(undefined *)(~-(uint)(param_7 != 0) & 0x404935));
     if (DAT_00811900 != 0) {
       iVar3 = st::fn_00402423((void *)((int)local_10 + 0x1c),(int *)local_8,DAT_00811900);
@@ -3492,7 +3492,7 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(0xff));
         }
-        st::fn_004012F8(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,thunk_FUN_0065e860,
+        st::fn_004012F8(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,st::fn_0040559C,
                    local_c,nullptr);
         if (DAT_00811900 == 0) {
           local_8 = 0;

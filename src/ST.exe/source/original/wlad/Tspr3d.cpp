@@ -320,12 +320,12 @@ undefined4 __thiscall st::fn_004ABF00(STT3DSprC *this,char param_1,uint param_2)
       if (pSVar1->field_0010 == '\0') {
         puVar5 = pSVar1->field_0034;
         uVar4 = pSVar1->field_0018;
-        pcVar6 = thunk_FUN_004ad6c0;
+        pcVar6 = st::fn_00404999;
       }
       else {
         puVar5 = pSVar1->field_0034;
         uVar4 = pSVar1->field_0018;
-        pcVar6 = thunk_FUN_004ad740;
+        pcVar6 = st::fn_00405B64;
       }
       st::fn_006E9520
                 (pSVar1->field_003C,uVar4,(uint)puVar5,(uint)pcVar6,(uint)pSVar1);
@@ -550,7 +550,7 @@ undefined4 __thiscall st::fn_004AC1A0(STT3DSprC *this,byte param_1,uint param_2)
       goto cf_common_exit_004AC330;
       pSVar1->field_0013 = param_1;
       pSVar1->field_0030 = *(undefined4 *)(&pSVar1->field_0020->field_0x18 + iVar4);
-      pcVar6 = thunk_FUN_004ad6c0;
+      pcVar6 = st::fn_00404999;
     }
     else {
       if ((pSVar1->field_0038 == 0) ||
@@ -558,7 +558,7 @@ undefined4 __thiscall st::fn_004AC1A0(STT3DSprC *this,byte param_1,uint param_2)
       goto cf_common_exit_004AC330;
       pSVar1->field_0013 = param_1;
       pSVar1->field_0030 = piVar2[6];
-      pcVar6 = thunk_FUN_004ad740;
+      pcVar6 = st::fn_00405B64;
     }
     st::fn_006E9520
               (pSVar1->field_003C,pSVar1->field_0018,(uint)pSVar1->field_0034,(uint)pcVar6,

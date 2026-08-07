@@ -96,8 +96,7 @@ int __thiscall st::fn_004603B0(void *this,STTorpC *param_1)
           iVar3 = st::fn_0040478C(param_1,STField<int>(this,0x18),&local_8);
           if (iVar3 != 2) {
             if (iVar3 == 0) {
-              iVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::
-                      st::fn_00403A99(this,(RecoveredRecord_STBoatC_004838E0 *)param_1);
+              iVar4 = st::fn_00403A99(this,(RecoveredRecord_STBoatC_004838E0 *)param_1);
               if (iVar4 == 1) {
                 st::fn_0040368E(param_1,STField<uint>(this,0x18),&local_8);
 LAB_004604c9:

@@ -194,7 +194,7 @@ LAB_005e9233:
                       }
                       if (this_01->field_1A76 != '\0') break;
                     }
-                    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,
+                    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,
                               PTR_s_CUSTOM__0079c244);
                     local_5c = *puVar1;
                     local_5b = pAVar6->field_0003;
@@ -208,8 +208,8 @@ LAB_005e9233:
                     this_01->field_1A5F = ((*puVar1 == '\x03') - 1U & 0xfe) + 0xf;
                     break;
                   case 5:
-                    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\",&DAT_00807680,
-                              PTR_s_SAVEGAME__0079c240,&DAT_00807ddd);
+                    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\",&CHAR_00h_00807680,
+                              PTR_s_SAVEGAME__0079c240,&CHAR_00h_00807ddd);
                     local_68 = *puVar1;
                     local_67 = pAVar6->field_0003;
                     local_63 = *(undefined4 *)&pAVar6->field_0x7;

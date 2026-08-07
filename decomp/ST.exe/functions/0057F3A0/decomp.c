@@ -26,12 +26,12 @@ undefined4 * __thiscall STDcResourcC::sub_0057F3A0(STDcResourcC *this,int param_
     param_1 = -iVar4;
     pcVar5_mg0 = PTR_s_rgold_c0_007cb094;
   }
-  wsprintfA((LPSTR)&DAT_00811650,pcVar5_mg0,param_1);
+  wsprintfA(&CHAR_00h_00811650,pcVar5_mg0,param_1);
   if (param_2 == 0) {
-    return &DAT_00811650;
+    return (undefined4 *)&CHAR_00h_00811650;
   }
   uVar2 = 0xffffffff;
-  pcVar5 = &DAT_007cb260;
+  pcVar5 = &CHAR_m_007cb260;
   do {
     pcVar7 = pcVar5;
     if (uVar2 == 0) break;
@@ -42,7 +42,7 @@ undefined4 * __thiscall STDcResourcC::sub_0057F3A0(STDcResourcC *this,int param_
   } while (cVar1 != '\0');
   uVar2 = ~uVar2;
   iVar4 = -1;
-  pcVar5 = (char *)&DAT_00811650;
+  pcVar5 = &CHAR_00h_00811650;
   do {
     pcVar6 = pcVar5;
     if (iVar4 == 0) break;
@@ -54,6 +54,6 @@ undefined4 * __thiscall STDcResourcC::sub_0057F3A0(STDcResourcC *this,int param_
   pcVar5 = pcVar7 + -uVar2;
   pcVar7 = pcVar6 + -1;
   memmove(pcVar7, pcVar5, uVar2); /* compiler REP MOVS byte copy */
-  return &DAT_00811650;
+  return (undefined4 *)&CHAR_00h_00811650;
 }
 

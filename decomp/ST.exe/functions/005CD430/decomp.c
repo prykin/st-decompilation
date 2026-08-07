@@ -226,9 +226,9 @@ LAB_005cd675:
           }
           if (((pcVar6 != nullptr) && (pcVar6[4] == '\x01')) &&
              ((DAT_0080874d == pcVar6[2] && (DAT_0080874e == pcVar6[3])))) {
-            pcVar6 = &DAT_00807e1d;
+            pcVar6 = &CHAR_00h_00807e1d;
             if (DAT_008067a0 == '\0') {
-              pcVar6 = (char *)&DAT_00807ddd;
+              pcVar6 = &CHAR_00h_00807ddd;
             }
             AddPlayerList(pSVar11,DAT_0080877f,uVar10,(DAT_0080874f != '\0') + 2,pcVar6);
             break;
@@ -255,9 +255,9 @@ LAB_005cd675:
             DAT_0080874d = element_1f84->state;
             element_1f84->field_0004 = '\x02';
             DAT_0080874e = element_1f84->field_0003;
-            pcVar15 = &DAT_00807e1d;
+            pcVar15 = &CHAR_00h_00807e1d;
             if (DAT_008067a0 == '\0') {
-              pcVar15 = (char *)&DAT_00807ddd;
+              pcVar15 = &CHAR_00h_00807ddd;
             }
             uVar12 = 0xffffffff;
             goto code_r0x005cd7da;

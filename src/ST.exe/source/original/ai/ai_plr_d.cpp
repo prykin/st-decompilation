@@ -610,7 +610,7 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
   pcVar3 = pcVar3_mg0 + -uVar8;
   pcVar11 = local_2ec + 1;
   memmove(pcVar11, pcVar3, uVar8); /* compiler REP MOVS byte copy */
-  st::fn_006F12B0(param_1,FUN_006f2d10,local_2ec);
+  st::fn_006F12B0(param_1,st::fn_006F2D10,local_2ec);
   pcVar3 = (char *)st::fn_006F2790(param_1);
   while (pcVar3 != nullptr) {
     local_8 = (AnonShape_0067DC20_B265FC02 *)st::fn_006F2D90(param_1,pcVar3,0,1);
@@ -1122,7 +1122,7 @@ uint * __cdecl st::fn_0067E7E0(cMf32 *param_1,int param_2)
   pcVar16 = local_33c + 1;
   memmove(pcVar16, pcVar5, uVar10); /* compiler REP MOVS byte copy */
   uVar11 = 0;
-  st::fn_006F12B0(param_1,FUN_006f2d10,local_33c);
+  st::fn_006F12B0(param_1,st::fn_006F2D10,local_33c);
   pcVar5 = (char *)st::fn_006F2790(param_1);
   do {
     if (pcVar5 == nullptr) {

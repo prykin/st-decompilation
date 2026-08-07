@@ -2981,7 +2981,7 @@ void __thiscall st::fn_0056F250(void *this,char param_1,byte param_2,char *param
   if (param_2 == 0) {
     if (STField<int>(this,0x1178) != 0) {
       st::external_00000080((LPSTR)local_1a8,"%s%s%s\\%s",(int)this + 0x60,PTR_s_SAVEGAME__0079b02c,
-                &DAT_00807ddd,PTR_s_SAVE_QUICKSAVE_0079b044);
+                &CHAR_00h_00807ddd,PTR_s_SAVE_QUICKSAVE_0079b044);
       STField<undefined4>(this,0x1178) = 0;
       goto LAB_0056f325;
     }
@@ -2990,7 +2990,7 @@ void __thiscall st::fn_0056F250(void *this,char param_1,byte param_2,char *param
   }
   else if (param_3 == nullptr) {
     st::external_00000080((LPSTR)local_1a8,"%s%s%s\\%sDEBUG%u",(int)this + 0x60,PTR_s_SAVEGAME__0079b02c
-              ,&DAT_00807ddd,PTR_DAT_0079b050,param_2);
+              ,&CHAR_00h_00807ddd,PTR_DAT_0079b050,param_2);
     goto LAB_0056f325;
   }
   uVar3 = 0xffffffff;
@@ -3122,7 +3122,7 @@ LAB_0056f325:
     memmove(pbVar11, pbVar8, uVar3); /* compiler REP MOVS byte copy */
     uVar5 = 0;
     uVar3 = 0xffffffff;
-    pcVar9 = PTR_DAT_0079b034;
+    pcVar9 = PTR_CHAR___0079b034;
     do {
       pcVar10 = pcVar9;
       if (uVar3 == 0) break;
@@ -3163,7 +3163,7 @@ LAB_0056f325:
     memmove(pbVar11, pbVar8, uVar3); /* compiler REP MOVS byte copy */
     uVar5 = 0;
     uVar3 = 0xffffffff;
-    pcVar9 = PTR_DAT_0079b038;
+    pcVar9 = PTR_CHAR___0079b038;
     do {
       pcVar10 = pcVar9;
       if (uVar3 == 0) break;
@@ -3217,7 +3217,7 @@ undefined4 __fastcall st::fn_0056F930(AnonShape_0056F930_C6277D80 *param_1)
     else {
       resourceId = (cVar1 != '\x02') + 0x2689;
     }
-    puVar6 = PTR_DAT_0079b034;
+    puVar6 = PTR_CHAR___0079b034;
     pcVar2 = st::fn_006B0140(0x268b,g_hINSTANCE_00807618);
     iVar5 = *(int *)&param_1[4].field_0x8fa + 1;
     pcVar3 = st::fn_006B0140(resourceId,g_hINSTANCE_00807618);

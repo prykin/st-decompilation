@@ -53,7 +53,7 @@ undefined4 * CreateBossData(void)
   iVar5 = 0;
   memset(&stack0xfffffb6c, 0, 0x318); /* compiler bulk-zero initialization */
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_00807680;
+  pcVar8 = &CHAR_00h_00807680;
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -93,7 +93,7 @@ undefined4 * CreateBossData(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_00807680;
+  pcVar8 = &CHAR_00h_00807680;
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -109,7 +109,7 @@ undefined4 * CreateBossData(void)
   uVar7 = 0;
   FUN_006b78c0(&stack0xfffffb6c,&stack0xfffffb6c);
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_00807680;
+  pcVar8 = &CHAR_00h_00807680;
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;

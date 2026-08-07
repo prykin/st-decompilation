@@ -80,7 +80,7 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
     pcVar9 = pcVar8 + -uVar4;
     pcVar8 = local_65b;
     memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
-    st::fn_006F12B0(g_cMf32_00806780,FUN_006f2d10,&local_65c);
+    st::fn_006F12B0(g_cMf32_00806780,st::fn_006F2D10,&local_65c);
     puVar5 = st::fn_006F2790(this_00);
     uVar4 = local_c;
     while (puVar5 != nullptr) {
@@ -117,7 +117,7 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
       pcVar8 = local_253;
       memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
       uVar7 = 0;
-      st::fn_006F12B0(g_cMf32_00806780,FUN_006f2d10,&local_254);
+      st::fn_006F12B0(g_cMf32_00806780,st::fn_006F2D10,&local_254);
       puVar5 = st::fn_006F2790(this_00);
       while (puVar5 != nullptr) {
         local_c = local_c + 1;
@@ -151,7 +151,7 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
       pcVar9 = pcVar8 + -uVar4;
       pcVar8 = local_457;
       memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
-      st::fn_006F12B0(g_cMf32_00806780,FUN_006f2d10,&local_458);
+      st::fn_006F12B0(g_cMf32_00806780,st::fn_006F2D10,&local_458);
       puVar5 = st::fn_006F2790(this_00);
       while (puVar5 != nullptr) {
         local_c = local_c + 1;
@@ -736,7 +736,7 @@ st::fn_00555040
         local_c = uVar5;
         do {
           uVar6 = 0xffffffff;
-          pcVar8 = &DAT_007c8fec;
+          pcVar8 = &CHAR___007c8fec;
           do {
             pcVar12 = pcVar8;
             if (uVar6 == 0) break;

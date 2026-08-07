@@ -640,7 +640,7 @@ void __thiscall st::fn_00520D10(InfocPanelTy *this)
   if ((this_00->field_03D4 == 0xff) ||
      (9999 < *(int *)(&this_00->field_0x1b4 + (uint)(byte)this_00->field_03D4 * 0x10))) {
     uVar8 = 0xffffffff;
-    pcVar7 = &DAT_007c3ff4;
+    pcVar7 = &CHAR___007c3ff4;
     do {
       pcVar10 = pcVar7;
       if (uVar8 == 0) break;
@@ -665,7 +665,7 @@ void __thiscall st::fn_00520D10(InfocPanelTy *this)
   if ((this_00->field_03D4 == 0xff) ||
      (999999 < *(int *)(&this_00->field_0x1b8 + (uint)(byte)this_00->field_03D4 * 0x10))) {
     uVar8 = 0xffffffff;
-    pcVar7 = &DAT_007c3fec;
+    pcVar7 = &CHAR___007c3fec;
     do {
       pcVar10 = pcVar7;
       if (uVar8 == 0) break;
@@ -690,7 +690,7 @@ void __thiscall st::fn_00520D10(InfocPanelTy *this)
   if ((this_00->field_03D4 == 0xff) ||
      (999999 < *(int *)(&this_00->field_0x1bc + (uint)(byte)this_00->field_03D4 * 0x10))) {
     uVar8 = 0xffffffff;
-    pcVar7 = &DAT_007c3fec;
+    pcVar7 = &CHAR___007c3fec;
     do {
       pcVar10 = pcVar7;
       if (uVar8 == 0) break;

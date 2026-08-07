@@ -25,7 +25,7 @@ void __thiscall STAppC::OpenGameDBs(STAppC *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     puVar1 = &local_8->field_0x470;
-    puVar4 = &local_8->field_7D1A;
+    puVar4 = (byte *)&local_8->field_7D1A;
     wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"NATURE");
     DAT_00806768 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     PTR_0080676c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806768);

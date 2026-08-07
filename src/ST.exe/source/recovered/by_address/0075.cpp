@@ -2012,11 +2012,11 @@ int st::fn_007535F0(char *_Drive)
 
   pcVar7_mg0 = _Drive;
   st::fn_0072E730((byte *)_Drive,(byte *)&_Drive,local_408,local_308,local_208);
-  local_EAX_58 = st::fn_0072E620((char *)local_208,&DAT_007c7078);
+  local_EAX_58 = st::fn_0072E620((char *)local_208,&CHAR___007c7078);
   if ((local_EAX_58 == 0) ||
-     (iVar2 = st::fn_0072E620((char *)local_208,&DAT_007c7080), iVar2 == 0)) {
+     (iVar2 = st::fn_0072E620((char *)local_208,&CHAR___007c7080), iVar2 == 0)) {
     st::fn_0072F110
-              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&DAT_007c7078);
+              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&CHAR___007c7078);
   }
   else {
     uVar3 = 0xffffffff;
@@ -2035,7 +2035,7 @@ int st::fn_007535F0(char *_Drive)
     memmove(pcVar8, pcVar6, uVar3); /* compiler REP MOVS byte copy */
     uVar4 = 0;
     uVar3 = 0xffffffff;
-    pcVar6 = &DAT_007c7078;
+    pcVar6 = &CHAR___007c7078;
     do {
       pcVar8 = pcVar6;
       if (uVar3 == 0) break;
@@ -2063,12 +2063,12 @@ int st::fn_007535F0(char *_Drive)
   if (iVar5 == 0) {
     return 0;
   }
-  local_EAX_251 = st::fn_0072E620((char *)local_208,&DAT_007c7078);
+  local_EAX_251 = st::fn_0072E620((char *)local_208,&CHAR___007c7078);
   if ((local_EAX_251 == 0) ||
-     (local_EAX_275 = st::fn_0072E620((char *)local_208,&DAT_007c7080),
+     (local_EAX_275 = st::fn_0072E620((char *)local_208,&CHAR___007c7080),
      local_EAX_275 == 0)) {
     st::fn_0072F110
-              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&DAT_007c7080);
+              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&CHAR___007c7080);
   }
   else {
     uVar3 = 0xffffffff;
@@ -2086,7 +2086,7 @@ int st::fn_007535F0(char *_Drive)
     memmove(pcVar8, pcVar6, uVar3); /* compiler REP MOVS byte copy */
     uVar4 = 0;
     uVar3 = 0xffffffff;
-    pcVar6 = &DAT_007c7080;
+    pcVar6 = &CHAR___007c7080;
     do {
       pcVar8 = pcVar6;
       if (uVar3 == 0) break;
@@ -3217,13 +3217,13 @@ void st::fn_007550C0(AnonShape_007550C0_25940DF4 *param_1,undefined4 *param_2)
       param_1->field_0034 = 4;
       return;
     case 7:
-      param_1->field_0004 = thunk_FUN_00673110;
-      param_1->field_0008 = FUN_00757430;
+      param_1->field_0004 = st::fn_00402928;
+      param_1->field_0008 = st::fn_00757430;
       param_1->field_0034 = 0;
       return;
     case 8:
-      param_1->field_0004 = thunk_FUN_00673160;
-      param_1->field_0008 = FUN_00757430;
+      param_1->field_0004 = st::fn_00402F2C;
+      param_1->field_0008 = st::fn_00757430;
       param_1->field_0034 = 0;
     }
     return;
@@ -4256,8 +4256,8 @@ void st::fn_00756E50(int *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x1c);
   STField<undefined4 *>(param_1,0x192) = puVar1;
-  *puVar1 = Library::DKW::JPG::FUN_007570f0;
-  puVar1[1] = FUN_00757250;
+  *puVar1 = st::fn_007570F0;
+  puVar1[1] = st::fn_00757250;
   puVar1[2] = 0;
   st::fn_00756E90(param_1);
   return;
@@ -4323,9 +4323,9 @@ void st::fn_00757280(undefined4 *param_1,undefined4 param_2)
     param_1[4] = uVar1;
   }
   *(undefined **)(param_1[4] + 8) = &DAT_007572f0;
-  *(code **)(param_1[4] + 0xc) = Library::DKW::JPG::FUN_00757300;
-  *(code **)(param_1[4] + 0x10) = FUN_00757330;
-  *(code **)(param_1[4] + 0x14) = FUN_00757cd0;
+  *(code **)(param_1[4] + 0xc) = st::fn_00757300;
+  *(code **)(param_1[4] + 0x10) = st::fn_00757330;
+  *(code **)(param_1[4] + 0x14) = st::fn_00757CD0;
   *(undefined **)(param_1[4] + 0x18) = &DAT_00757350;
   *(undefined4 *)(param_1[4] + 4) = 0x7fffffff;
   *(undefined4 *)param_1[4] = param_2;
@@ -4598,10 +4598,10 @@ void st::fn_007576C0(undefined4 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,0,0x1c);
   STField<undefined4 *>(param_1,0x1a2) = puVar1;
-  *puVar1 = Library::DKW::JPG::FUN_007579c0;
-  puVar1[1] = FUN_00757c90;
-  puVar1[2] = FUN_00757710;
-  puVar1[3] = FUN_007579a0;
+  *puVar1 = st::fn_007579C0;
+  puVar1[1] = st::fn_00757C90;
+  puVar1[2] = st::fn_00757710;
+  puVar1[3] = st::fn_007579A0;
   puVar1[4] = 0;
   puVar1[5] = 0;
   puVar1[6] = 1;
@@ -4628,7 +4628,7 @@ void st::fn_00757710(AnonShape_00757710_B64D966B *param_1)
 void st::fn_007579A0(int param_1)
 
 {
-  **(undefined4 **)(param_1 + 0x1a2) = Library::DKW::JPG::FUN_007579c0;
+  **(undefined4 **)(param_1 + 0x1a2) = st::fn_007579C0;
   return;
 }
 
@@ -4640,7 +4640,7 @@ void st::fn_00757C90(AnonShape_00757C90_A505B8DD *param_1)
   undefined4 *puVar1;
 
   puVar1 = param_1->field_01A2;
-  *puVar1 = Library::DKW::JPG::FUN_007579c0;
+  *puVar1 = st::fn_007579C0;
   puVar1[4] = 0;
   puVar1[5] = 0;
   puVar1[6] = 1;
@@ -4777,18 +4777,18 @@ void st::fn_00757E60(AnonShape_00759190_45B6ED67 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(*(code *)**(undefined4 **)param_1)(param_1,0,0x60);
   param_1->field_01A6 = (int)puVar1;
-  *puVar1 = FUN_00759190;
-  *(code **)(param_1->field_01A6 + 4) = Library::DKW::JPG::FUN_00758170;
-  *(code **)(param_1->field_01A6 + 8) = FUN_00759120;
-  *(code **)(param_1->field_01A6 + 0xc) = FUN_00758100;
+  *puVar1 = st::fn_00759190;
+  *(code **)(param_1->field_01A6 + 4) = st::fn_00758170;
+  *(code **)(param_1->field_01A6 + 8) = st::fn_00759120;
+  *(code **)(param_1->field_01A6 + 0xc) = st::fn_00758100;
   iVar2 = 0x10;
   do {
     iVar3 = iVar2 + 4;
-    *(code **)(iVar2 + param_1->field_01A6) = FUN_00758100;
+    *(code **)(iVar2 + param_1->field_01A6) = st::fn_00758100;
     iVar2 = iVar3;
   } while (iVar3 < 0x50);
-  *(code **)(param_1->field_01A6 + 0x10) = FUN_00757ef0;
-  *(code **)(param_1->field_01A6 + 0x48) = FUN_00758010;
+  *(code **)(param_1->field_01A6 + 0x10) = st::fn_00757EF0;
+  *(code **)(param_1->field_01A6 + 0x48) = st::fn_00758010;
   st::fn_00759190(param_1);
   return;
 }
@@ -5731,8 +5731,8 @@ void st::fn_0075A670(int *param_1,undefined4 *param_2)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar3 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x74);
   STField<undefined4 *>(param_1,0x19a) = puVar3;
-  *puVar3 = FUN_0075a780;
-  puVar3[2] = FUN_0075a800;
+  *puVar3 = st::fn_0075A780;
+  puVar3[2] = st::fn_0075A800;
   puVar3[0x1c] = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == nullptr) {
@@ -5748,7 +5748,7 @@ void st::fn_0075A670(int *param_1,undefined4 *param_2)
     } while (iVar9 != 0);
     puVar3[4] = 0;
     puVar3[1] = &LAB_0075aaa0;
-    puVar3[3] = FUN_0075a860;
+    puVar3[3] = st::fn_0075A860;
     return;
   }
   piVar8 = param_1 + 7;
@@ -5778,8 +5778,8 @@ void st::fn_0075A670(int *param_1,undefined4 *param_2)
       param_1 = (int *)((int)param_1 + 1);
     } while ((int)param_1 < piVar7[7]);
   }
-  puVar3[1] = FUN_0075aab0;
-  puVar3[3] = FUN_0075acb0;
+  puVar3[1] = st::fn_0075AAB0;
+  puVar3[3] = st::fn_0075ACB0;
   puVar3[4] = puVar3 + 0x12;
   return;
 }
@@ -5834,12 +5834,12 @@ void st::fn_0075A800(AnonShape_0075A800_65F17FFC *param_1)
     if (*(int *)&param_1->field_0x48 != 0) {
       iVar2 = st::fn_0075AE60((undefined4 *)param_1);
       if (iVar2 != 0) {
-        pAVar1->field_000C = FUN_0075af80;
+        pAVar1->field_000C = st::fn_0075AF80;
         *(undefined4 *)&param_1->field_0x94 = 0;
         return;
       }
     }
-    pAVar1->field_000C = FUN_0075acb0;
+    pAVar1->field_000C = st::fn_0075ACB0;
   }
   *(undefined4 *)&param_1->field_0x94 = 0;
   return;
@@ -6787,8 +6787,8 @@ void st::fn_0075B8E0(undefined4 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x48);
   STField<undefined4 *>(param_1,0x1aa) = puVar1;
-  *puVar1 = Library::DKW::JPG::FUN_0075b920;
-  puVar1[1] = FUN_0075ba30;
+  *puVar1 = st::fn_0075B920;
+  puVar1[1] = st::fn_0075BA30;
   puVar1 = puVar1 + 10;
   iVar2 = 4;
   do {
@@ -7077,7 +7077,7 @@ void st::fn_0075BED0(undefined4 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x40);
   STField<undefined4 *>(param_1,0x1aa) = puVar1;
-  *puVar1 = Library::DKW::JPG::FUN_0075bf40;
+  *puVar1 = st::fn_0075BF40;
   puVar1[0xb] = 0;
   puVar1[0xc] = 0;
   puVar1[0xd] = 0;
@@ -7694,7 +7694,7 @@ void st::fn_0075CB40(undefined4 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar2 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x54);
   STField<undefined4 *>(param_1,0x1ae) = puVar2;
-  *puVar2 = Library::DKW::JPG::FUN_0075cbc0;
+  *puVar2 = st::fn_0075CBC0;
   iVar4 = 0;
   if (0 < (int)param_1[7]) {
     local_8 = (undefined4 *)(param_1[0x34] + 0x50);
@@ -7732,7 +7732,7 @@ void st::fn_0075CDF0(int *param_1,int param_2)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar2 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x1c);
   STField<undefined4 *>(param_1,0x19e) = puVar2;
-  *puVar2 = Library::DKW::JPG::FUN_0075ce80;
+  *puVar2 = st::fn_0075CE80;
   puVar2[2] = 0;
   puVar2[3] = 0;
   if (param_1[0x13] != 0) {
@@ -8473,21 +8473,21 @@ void st::fn_0075DE90(AnonShape_0075DF10_BA4C6604 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   pAVar1 = (AnonNested_0075DF10_01B2_1F0F9C79 *)(*(code *)**(undefined4 **)param_1)(param_1,1,0x30);
   param_1->field_01B2 = pAVar1;
-  *(code **)pAVar1 = FUN_0075dfe0;
+  *(code **)pAVar1 = st::fn_0075DFE0;
   *(undefined4 *)&pAVar1->field_0x8 = 0;
   *(int *)&pAVar1[1].field_0x8 = *(int *)&param_1->field_0x70 * *(int *)&param_1->field_0x68;
   if (*(int *)&param_1->field_0x126 == 2) {
     uVar2 = *(undefined4 *)&pAVar1[1].field_0x8;
-    *(code **)&pAVar1->field_0x4 = FUN_0075e000;
-    *(code **)&pAVar1->field_0xc = FUN_0075e260;
+    *(code **)&pAVar1->field_0x4 = st::fn_0075E000;
+    *(code **)&pAVar1->field_0xc = st::fn_0075E260;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar2 = (**(code **)(*(int *)param_1 + 4))(param_1,1,uVar2);
     *(undefined4 *)(pAVar1 + 1) = uVar2;
     st::fn_0075DF10(param_1);
     return;
   }
-  *(code **)&pAVar1->field_0x4 = FUN_0075e0c0;
-  *(code **)&pAVar1->field_0xc = FUN_0075e100;
+  *(code **)&pAVar1->field_0x4 = st::fn_0075E0C0;
+  *(code **)&pAVar1->field_0xc = st::fn_0075E100;
   *(undefined4 *)(pAVar1 + 1) = 0;
   st::fn_0075DF10(param_1);
   return;

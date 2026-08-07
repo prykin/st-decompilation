@@ -381,7 +381,7 @@ st::fn_0067B3C0(AiPlrClassTy *this,int param_1,int param_2,int param_3,char para
     local_14 = iVar3;
     local_10 = iVar3;
     st::fn_006AE1C0((DArrayTy *)local_8->field_06A1,&local_1c);
-    st::fn_004049A8((DArrayTy *)pAVar2->field_06A1,thunk_FUN_0067b350);
+    st::fn_004049A8((DArrayTy *)pAVar2->field_06A1,st::fn_004029B9);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -687,7 +687,7 @@ void __thiscall st::fn_0067C180(AiPlrClassTy *this)
           local_20->field_0685 = local_20->field_06FE;
           array = st::fn_006AE290(nullptr,5,0x10,5);
           local_c = array;
-          st::fn_004027E3(this_00,thunk_FUN_0067ba50,array);
+          st::fn_004027E3(this_00,st::fn_00403544,array);
           uVar14 = array->count;
           uVar12 = 0;
           iVar13 = 0;
@@ -780,8 +780,8 @@ void __thiscall st::fn_0067C180(AiPlrClassTy *this)
                   array = local_c;
                 } while ((int)local_8 < (int)*(uint *)(iVar13 + 0xc));
               }
-              st::fn_004049A8(this_00->field_06AD,thunk_FUN_0067baf0);
-              st::fn_004049A8(array,thunk_FUN_0067bb20);
+              st::fn_004049A8(this_00->field_06AD,st::fn_004026FD);
+              st::fn_004049A8(array,st::fn_004029B4);
               st::fn_00401C80(this_00,array,this_00->field_06AD);
               this_00->field_0689 = 1;
             }
@@ -804,7 +804,7 @@ LAB_0067c61b:
           iVar4 = st::fn_00401041(this_00->field_06AD);
           pDVar10 = st::fn_006AE290(nullptr,5,0x10,5);
           local_c = pDVar10;
-          st::fn_004027E3(this_00,thunk_FUN_0067ba50,pDVar10);
+          st::fn_004027E3(this_00,st::fn_00403544,pDVar10);
           iVar13 = iVar4 + pDVar10->count;
           if (iVar13 == 0) {
             st::fn_0040394F(this_00);
@@ -853,7 +853,7 @@ LAB_0067c61b:
                     } while ((int)local_8 < (int)*(uint *)(iVar13 + 0xc));
                   }
                 }
-                st::fn_004049A8(this_00->field_06AD,thunk_FUN_0067baf0);
+                st::fn_004049A8(this_00->field_06AD,st::fn_004026FD);
               }
               if (this_00->field_06AD->count == 0) {
                 st::fn_0040394F(this_00);

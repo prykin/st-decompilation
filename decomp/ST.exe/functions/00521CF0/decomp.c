@@ -185,9 +185,9 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
           }
           *pcVar13 = '\0';
           pAVar4 = local_14;
-          pcVar13 = &DAT_00807e1d;
+          pcVar13 = &CHAR_00h_00807e1d;
           if (DAT_008067a0 == '\0') {
-            pcVar13 = (char *)&DAT_00807ddd;
+            pcVar13 = &CHAR_00h_00807ddd;
           }
           uVar8 = 0xffffffff;
           do {
@@ -269,7 +269,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
             }
             if ((char *)(iVar12 + iVar10) == nullptr) {
               uVar8 = 0xffffffff;
-              pcVar13 = &DAT_008016a0;
+              pcVar13 = &CHAR_00h_008016a0;
               do {
                 pcVar14 = pcVar13;
                 if (uVar8 == 0) break;

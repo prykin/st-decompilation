@@ -13,8 +13,8 @@ int FUN_006767d0(void)
   g_currentExceptionFrame = &local_4c;
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    wsprintfA((LPSTR)local_150,"%s%s%s\\%s",&DAT_00807680,PTR_s_SAVEGAME__0079d6c0,
-              &DAT_00807ddd,PTR_s_PL_LOG_0079d6c4);
+    wsprintfA((LPSTR)local_150,"%s%s%s\\%s",&CHAR_00h_00807680,PTR_s_SAVEGAME__0079d6c0,
+              &CHAR_00h_00807ddd,PTR_s_PL_LOG_0079d6c4);
     this = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_150,2,0,0);
     local_8 = this;
     wsprintfA((LPSTR)local_150,"%s%d%02d",PTR_DAT_0079d6c8,(uint)DAT_0080874e,DAT_0080c52a);

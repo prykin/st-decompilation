@@ -46,7 +46,7 @@ void __cdecl FUN_006ad2a0(byte *param_1)
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
     if (0x40 < (int)(~uVar3 - 1)) {
-      Library::MSVCRT::_strncpy(acStack_14d + ~uVar3,&DAT_007c7274,3);
+      Library::MSVCRT::_strncpy(acStack_14d + ~uVar3,&CHAR___007c7274,3);
     }
   }
   local_30c[0] = '\0';

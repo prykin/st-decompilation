@@ -52,7 +52,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,10);
     this_02 = local_10;
     local_10->field_1C92 = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(pDVar2,(char *)&DAT_00807ddd);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&CHAR_00h_00807ddd);
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);

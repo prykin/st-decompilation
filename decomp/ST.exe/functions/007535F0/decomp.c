@@ -30,11 +30,11 @@ int FUN_007535f0(char *_Drive)
 
   pcVar7_mg0 = _Drive;
   Library::MSVCRT::FUN_0072e730((byte *)_Drive,(byte *)&_Drive,local_408,local_308,local_208);
-  local_EAX_58 = Library::MSVCRT::__strcmpi((char *)local_208,&DAT_007c7078);
+  local_EAX_58 = Library::MSVCRT::__strcmpi((char *)local_208,&CHAR___007c7078);
   if ((local_EAX_58 == 0) ||
-     (iVar2 = Library::MSVCRT::__strcmpi((char *)local_208,&DAT_007c7080), iVar2 == 0)) {
+     (iVar2 = Library::MSVCRT::__strcmpi((char *)local_208,&CHAR___007c7080), iVar2 == 0)) {
     Library::MSVCRT::__makepath
-              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&DAT_007c7078);
+              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&CHAR___007c7078);
   }
   else {
     uVar3 = 0xffffffff;
@@ -53,7 +53,7 @@ int FUN_007535f0(char *_Drive)
     memmove(pcVar8, pcVar6, uVar3); /* compiler REP MOVS byte copy */
     uVar4 = 0;
     uVar3 = 0xffffffff;
-    pcVar6 = &DAT_007c7078;
+    pcVar6 = &CHAR___007c7078;
     do {
       pcVar8 = pcVar6;
       if (uVar3 == 0) break;
@@ -81,12 +81,12 @@ int FUN_007535f0(char *_Drive)
   if (iVar5 == 0) {
     return 0;
   }
-  local_EAX_251 = Library::MSVCRT::__strcmpi((char *)local_208,&DAT_007c7078);
+  local_EAX_251 = Library::MSVCRT::__strcmpi((char *)local_208,&CHAR___007c7078);
   if ((local_EAX_251 == 0) ||
-     (local_EAX_275 = Library::MSVCRT::__strcmpi((char *)local_208,&DAT_007c7080),
+     (local_EAX_275 = Library::MSVCRT::__strcmpi((char *)local_208,&CHAR___007c7080),
      local_EAX_275 == 0)) {
     Library::MSVCRT::__makepath
-              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&DAT_007c7080);
+              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&CHAR___007c7080);
   }
   else {
     uVar3 = 0xffffffff;
@@ -104,7 +104,7 @@ int FUN_007535f0(char *_Drive)
     memmove(pcVar8, pcVar6, uVar3); /* compiler REP MOVS byte copy */
     uVar4 = 0;
     uVar3 = 0xffffffff;
-    pcVar6 = &DAT_007c7080;
+    pcVar6 = &CHAR___007c7080;
     do {
       pcVar8 = pcVar6;
       if (uVar3 == 0) break;

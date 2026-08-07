@@ -5861,7 +5861,7 @@ void __cdecl st::fn_006AD2A0(byte *param_1)
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
     if (0x40 < (int)(~uVar3 - 1)) {
-      st::fn_0072E340(acStack_14d + ~uVar3,&DAT_007c7274,3);
+      st::fn_0072E340(acStack_14d + ~uVar3,&CHAR___007c7274,3);
     }
   }
   local_30c[0] = '\0';
@@ -6065,7 +6065,7 @@ st::fn_006AD4D0(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *
       iVar5 = ~uVar4 - 1;
       if (0x40 < iVar5) {
         pcVar8 = acStack_18d + ~uVar4;
-        st::fn_0072E340(pcVar8,&DAT_007c7274,3);
+        st::fn_0072E340(pcVar8,&CHAR___007c7274,3);
         iVar5 = 0x40;
       }
       uVar4 = 0xffffffff;
@@ -6133,7 +6133,7 @@ st::fn_006AD4D0(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *
       pcVar14 = pcVar10;
       memmove(pcVar14, pcVar9, uVar6); /* compiler REP MOVS byte copy */
       uVar6 = 0;
-      st::fn_0072E340(pcVar10,&DAT_007c7274,3);
+      st::fn_0072E340(pcVar10,&CHAR___007c7274,3);
       iVar5 = 0x40;
     }
     pcVar10 = pcVar10 + iVar5;
@@ -6213,7 +6213,7 @@ st::fn_006AD4D0(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *
       pcVar14 = pcVar10;
       memmove(pcVar14, pcVar9, uVar6); /* compiler REP MOVS byte copy */
       uVar6 = 0;
-      st::fn_0072E340(pcVar10,&DAT_007c7274,3);
+      st::fn_0072E340(pcVar10,&CHAR___007c7274,3);
       iVar5 = 0x36;
     }
     pcVar10 = pcVar10 + iVar5;
@@ -6378,7 +6378,7 @@ st::fn_006AD4D0(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *
           bVar15 = (uVar6 - 1 | 0xfffffff8) == 0xffffffff;
         }
         if (bVar15) {
-          st::fn_00733F70(g_int_00854EB4,&DAT_007c8ff4);
+          st::fn_00733F70(g_int_00854EB4,&CHAR_0Ah_007c8ff4);
         }
       } while ((int)uVar4 < DAT_00858ddc);
     }
@@ -6388,7 +6388,7 @@ st::fn_006AD4D0(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *
       bVar15 = (uVar4 - 1 | 0xfffffff8) == 0xffffffff;
     }
     if (!bVar15) {
-      st::fn_00733F70(g_int_00854EB4,&DAT_007c8ff4);
+      st::fn_00733F70(g_int_00854EB4,&CHAR_0Ah_007c8ff4);
     }
     st::fn_00733D60(g_int_00854EB4);
   }
@@ -6539,7 +6539,7 @@ undefined4 __cdecl st::fn_006ADC30(int *param_1)
             bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
           }
           if (bVar4) {
-            st::fn_00733F70(g_int_00854A9C,&DAT_007c8ff4);
+            st::fn_00733F70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
           }
           st::fn_00733F70(g_int_00854A9C,"%08X  ");
           _DAT_00854ea8 = DAT_00854ea4;
@@ -6554,7 +6554,7 @@ undefined4 __cdecl st::fn_006ADC30(int *param_1)
         bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
       }
       if (!bVar4) {
-        st::fn_00733F70(g_int_00854A9C,&DAT_007c8ff4);
+        st::fn_00733F70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
       }
     }
     st::fn_00733F70(g_int_00854A9C,"----------------\n");
@@ -6572,7 +6572,7 @@ undefined4 __cdecl st::fn_006ADC30(int *param_1)
         bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
       }
       if (bVar4) {
-        st::fn_00733F70(g_int_00854A9C,&DAT_007c8ff4);
+        st::fn_00733F70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
       }
     } while ((int)DAT_00854aa0 < 400);
     uVar3 = DAT_00854aa0 & 0x80000007;
@@ -6581,7 +6581,7 @@ undefined4 __cdecl st::fn_006ADC30(int *param_1)
       bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
     }
     if (!bVar4) {
-      st::fn_00733F70(g_int_00854A9C,&DAT_007c8ff4);
+      st::fn_00733F70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
     }
     st::fn_00733F70(g_int_00854A9C,"----------------\n");
     DAT_00854aa0 = 0;
@@ -6595,7 +6595,7 @@ undefined4 __cdecl st::fn_006ADC30(int *param_1)
           bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
         }
         if (bVar4) {
-          st::fn_00733F70(g_int_00854A9C,&DAT_007c8ff4);
+          st::fn_00733F70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
         }
       } while ((int)DAT_00854aa0 < DAT_00858ddc);
     }
@@ -6605,7 +6605,7 @@ undefined4 __cdecl st::fn_006ADC30(int *param_1)
       bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
     }
     if (!bVar4) {
-      st::fn_00733F70(g_int_00854A9C,&DAT_007c8ff4);
+      st::fn_00733F70(g_int_00854A9C,&CHAR_0Ah_007c8ff4);
     }
     DAT_00858ddc = 0;
     st::fn_00733D60(g_int_00854A9C);
@@ -6840,10 +6840,10 @@ void __cdecl st::fn_006AFF50(int param_1)
     uVar1 = uVar1 + 0x168;
   }
   if (uVar1 < 0xb5) {
-    FUN_006aff93();
+    st::fn_006AFF93();
   }
   else {
-    FUN_006aff93();
+    st::fn_006AFF93();
   }
   return;
 }

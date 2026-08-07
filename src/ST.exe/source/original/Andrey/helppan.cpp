@@ -2507,7 +2507,7 @@ LAB_00514f85:
   if (puVar6 == nullptr) {
     pDVar4 = st::fn_006B54F0(nullptr,10,10);
     this_00->field_01D3 = &pDVar4->flags;
-    st::fn_006B5AA0(pDVar4,&DAT_007c3b5c);
+    st::fn_006B5AA0(pDVar4,&CHAR___007c3b5c);
   }
   puVar6 = this_00->field_01D3;
   if (puVar6[2] != 0) {
@@ -7099,12 +7099,12 @@ switchD_0051ea9b_caseD_0:
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_OPTPANELTY_8164:
-      pcVar24 = thunk_FUN_00529fe0;
+      pcVar24 = st::fn_00401E88;
       pCVar15 = st::fn_0040577C("BUT_SLUP",0);
       bVar20 = 6;
       break;
     case MESS_OPTPANELTY_8165:
-      pcVar24 = thunk_FUN_00529fe0;
+      pcVar24 = st::fn_00401E88;
       pCVar15 = st::fn_0040577C("BUT_SLDN",0);
       bVar20 = 6;
       break;
@@ -7178,7 +7178,7 @@ switchD_0051ea9b_caseD_0:
     case MESS_SHARED_C0B5:
       pcVar23 = "BUT_HLPFWD";
     }
-    pcVar24 = thunk_FUN_00529f90;
+    pcVar24 = st::fn_004025C7;
     pCVar15 = st::fn_0040577C(pcVar23,0);
     bVar20 = 1;
   }

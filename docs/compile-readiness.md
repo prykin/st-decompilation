@@ -9,8 +9,10 @@ This document separates three different goals which are easy to conflate:
 3. **Semantically reconstructed source** replaces generic compatibility views
    with proven classes, fields, callbacks, enums, and source-level control flow.
 
-The accepted corpus is now at the first boundary. It is not yet at the second
-or third. `STDecompExport` regenerates the machine-readable inventory in
+The accepted corpus has crossed the first boundary and has a deterministic,
+compiler-audited assembly for the second. It is not yet a compiling whole or a
+semantically reconstructed source tree. `STDecompExport` regenerates the
+machine-readable inventory in
 `decomp/ST.exe/compile_readiness_summary.json` and the address-stable per-site
 rows in `compile_readiness_issues.jsonl`. Counts below are overlapping textual
 sites, not unique source objects.
@@ -34,10 +36,10 @@ sites, not unique source objects.
 
 | Class | Functions | Body share | Occurrences | State | What remains |
 | --- | ---: | ---: | ---: | --- | --- |
-| Translation-unit/declaration assembly | 5,712 | 100.00% | 5,712 | assembled and audited | `tools/st_source_tree.py` emits 318 deterministic TUs; the current 64-diagnostic compiler audit passes 61 and maps 5,588 of 5,590 capped errors to function addresses. |
+| Translation-unit/declaration assembly | 5,712 | 100.00% | 5,712 | assembled and audited | `tools/st_source_tree.py` emits 318 deterministic TUs; the current 64-diagnostic compiler audit passes 69 and maps 4,757 of 4,762 capped errors to function addresses. |
 | Default `FUN_ADDRESS` names | 4,155 | 72.74% | 4,155 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
 | Undefined function signatures | 3,877 | 67.88% | 3,877 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
-| Undefined scalar spelling | 3,642 | 63.76% | 18,343 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
+| Undefined scalar spelling | 3,641 | 63.74% | 18,330 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
 | Typed byte-offset field view | 1,144 | 20.03% | 10,124 | compatibility implemented | `STField<T>(base, offset)` preserves the exact access until owner/layout proof supplies a named member. |
 | Ownerless `__thiscall` | 999 | 17.49% | 999 | source ABI emitted | `st::fn_ADDRESS` retains the explicit ECX receiver until a class is proven. |
 | Opaque `code *` callback type | 793 | 13.88% | 1,936 | compatibility implemented | Install the exact callback/vtable-slot `FunctionDefinition`. |
@@ -53,7 +55,7 @@ sites, not unique source objects.
 | Literal-storage piece | 1 | 0.02% | 3 | compatibility implemented | `STLiteralPiece<O,W>` keeps the little-endian bytes; later recover the intended initializer. |
 | Residual Ghidra `._offset_width_` syntax | 0 | 0.00% | 0 | closed | No remaining syntactic occurrence in exported bodies. |
 
-The compatibility surface covers 34,827 occurrences. It does not claim that
+The compatibility surface covers 34,814 occurrences. It does not claim that
 `undefined4`, `code *`, or a byte-offset access is the original source type; it
 only makes the exact recovered operation expressible in C++ while preserving
 the semantic debt for later analyzers.
@@ -62,17 +64,17 @@ the semantic debt for later analyzers.
 
 | Residual class | Functions | Body share | Occurrences | Priority |
 | --- | ---: | ---: | ---: | --- |
-| Generic `field_XXXX` name | 2,434 | 42.61% | 60,749 | naming after layout; high volume but weak evidence by itself |
-| Generic `DAT/PTR/UNK` symbol | 1,583 | 27.71% | 15,894 | classify scalar/string/table/singleton/array first |
-| Anonymous recovered type | 1,261 | 22.08% | 4,166 | merge only by identity/flow, never geometry alone |
-| Raw pointer offset | 1,024 | 17.93% | 2,240 | recover complete pointer families or retain byte-buffer arithmetic |
+| Generic `field_XXXX` name | 2,433 | 42.60% | 60,767 | naming after layout; high volume but weak evidence by itself |
+| Generic `DAT/PTR/UNK` symbol | 1,516 | 26.54% | 14,952 | classify scalar/string/table/singleton/array first |
+| Anonymous recovered type | 1,253 | 21.94% | 4,165 | merge only by identity/flow, never geometry alone |
+| Raw pointer offset | 1,023 | 17.91% | 2,248 | recover complete pointer families or retain byte-buffer arithmetic |
 | `goto`/label presentation | 915 | 16.02% | 11,738 | restructure only with CFG/post-dominator proof |
-| Cast over generic field | 768 | 13.45% | 4,720 | receiver/field width or overlapping-union refinement |
-| Stack-slot lifetime reuse | 467 | 8.18% | 4,291 | split address-stable HighFunction merge groups |
+| Cast over generic field | 770 | 13.48% | 4,711 | receiver/field width or overlapping-union refinement |
+| Stack-slot lifetime reuse | 467 | 8.18% | 4,283 | split address-stable HighFunction merge groups |
 | Return-width/high-register artifact | 138 | 2.42% | 558 | whole-CFG EAX/x87 and caller-use evidence |
 | Unresolved incoming register | 132 | 2.31% | 472 | boundary, calling convention, SEH, or true live-in |
-| Dynamic `DArrayTy` indexing | 39 | 0.68% | 76 | per-owner descriptor/element view; runtime stride remains runtime |
-| Generic global aggregate | 37 | 0.65% | 155 | singleton/table structure and semantic fields |
+| Dynamic `DArrayTy` indexing | 38 | 0.67% | 75 | per-owner descriptor/element view; runtime stride remains runtime |
+| Generic global aggregate | 32 | 0.56% | 98 | singleton/table structure and semantic fields |
 | Flattened global record array | 17 | 0.30% | 36 | exact base/stride/count/member proof |
 | String-based aggregate address | 5 | 0.09% | 7 | recover adjacent table and index bias |
 
@@ -142,7 +144,7 @@ physical-vtable disagreement as review-only.
 3. Recover the 1,885 raw indirect calls from stored targets and physical vtable
    slots; unresolved `code *` remains an explicit portability boundary.
 4. Split undefined debt by role (signature, field, local, return, pointer target)
-   before ranking it. The raw 18,595 count is not 18,595 independent problems.
+   before ranking it. The raw 18,330 count is not 18,330 independent problems.
 5. Finish whole-CFG return/high-register recovery for the 138 affected bodies.
 6. Refine casted generic fields and complete pointer families, prioritizing
    high-fanout structures rather than raw occurrence count.
@@ -165,7 +167,7 @@ current errors expose residual overlapping `field_0x...` views, pointer/word
 role conflicts, untyped vtable slots, and weak prototypes. See
 `docs/source-tree-generation.md` and `src/ST.exe/audit/`.
 
-The first source-compilation layer materializes 2,663 exact unnamed-byte views
+The source-compilation layer now materializes 2,703 exact unnamed-byte views
 actually referenced by statically typed bodies, emits 780 non-virtual member
 wrappers over receiver-aware physical-vtable slots, and exposes 1,292 uniquely
 owned non-virtual `__thiscall` functions as forwarding class methods over their
@@ -173,8 +175,11 @@ address-stable `st::fn_ADDRESS` implementations. It does not alter packed layout
 or synthesize inheritance. It also renames 231 exact address-taken global-object
 uses whose image symbol collides with a C++ type name to `st_global_ADDRESS`,
 without changing the Ghidra symbol. With a fixed 64-error-per-TU Apple Clang
-probe, 61 of 318 units pass; the 5,590 retained errors are dominated by
-assignment types (1,472), scalar subscripting (1,138), undeclared identifiers
-(1,070), and call-argument types (1,062). There are 71 missing-record-member
-diagnostics. These capped counts are a comparison baseline,
+probe, 69 of 318 units pass; the 4,762 retained errors are dominated by
+assignment types (1,426), call-argument types (1,182), undeclared identifiers
+(1,125), and pointer indirection (261). Exact exported global array declarations
+reduced scalar-subscript diagnostics from 1,138 to 76, while exact unnamed
+component spelling reduced missing-record-member diagnostics to 43. Address-
+coded call identities additionally repair 116 stale line-wrapped owner
+qualifiers in the generated projection. These capped counts are a comparison baseline,
 not an assertion that later diagnostics in a failed TU do not exist.

@@ -417,7 +417,7 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
       return 0;
     case MESS_RESEARCHPANELTY_C0B4:
       st::fn_00403EA4
-                ((ProdPanelTy *)this_00,(AnonShape_0053FEE0_A49592EB *)message,thunk_FUN_0052a7b0);
+                ((ProdPanelTy *)this_00,(AnonShape_0053FEE0_A49592EB *)message,st::fn_00401BA4);
     }
   }
   g_currentExceptionFrame = local_58.previous;

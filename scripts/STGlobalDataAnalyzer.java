@@ -109,6 +109,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
             String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
             collectScalarEvidence(function, instruction, mnemonic, operands);
+            collectCStringScanEvidence(function, instruction, mnemonic, operands);
             if ("PUSH".equals(mnemonic)) {
                 pushes.add(globalValue(instruction, 0, operands.length == 0 ? "" : operands[0],
                     registers, false));
@@ -425,6 +426,45 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         }
     }
 
+    /**
+     * MSVC's inlined strlen/copy sequence loads an exact source address into
+     * EDI and searches for NUL with REPNE SCASB.  This proves that the addressed
+     * image byte begins C character storage even when Ghidra has split a compact
+     * string table into anonymous one-byte Data objects.  Stop at any EDI
+     * overwrite or control-flow boundary; a mere printable initializer is not
+     * enough evidence.
+     */
+    private void collectCStringScanEvidence(Function function, Instruction instruction,
+            String mnemonic, String[] operands) {
+        if (!"MOV".equals(mnemonic) || operands.length < 2 ||
+                !"EDI".equals(cleanRegister(operands[0])) ||
+                !isFullRegister(operands[0])) return;
+        GlobalValue source = referencedGlobal(instruction, 1, operands[1], true);
+        if (source == null) return;
+        Instruction next = instruction.getNext();
+        for (int count = 0; next != null && count < 8 &&
+                function.getBody().contains(next.getAddress()); count++, next = next.getNext()) {
+            String nextMnemonic = next.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (nextMnemonic.contains("SCASB")) {
+                String site = addr(function.getEntryPoint()) +
+                    " exact EDI NUL scan from global " + addr(source.address) +
+                    " @ " + addr(instruction.getAddress()) + " -> " +
+                    addr(next.getAddress());
+                add(source.address, "/char", "", true, true, site);
+                evidence.get(source.address).cstringScans++;
+                return;
+            }
+            if (next.getFlowType().isJump() || next.getFlowType().isTerminal() ||
+                    "CALL".equals(nextMnemonic)) return;
+            String[] nextOperands = splitOperands(
+                next.toString().toUpperCase(Locale.ROOT));
+            String destination = nextOperands.length == 0 ? null :
+                cleanRegister(nextOperands[0]);
+            if ("EDI".equals(destination) && !Set.of("CMP", "TEST", "PUSH")
+                    .contains(nextMnemonic)) return;
+        }
+    }
+
     private void add(Address address, String type, String name, boolean strong,
             boolean addressEvidence, String site) {
         if (address == null || type == null || type.isBlank()) return;
@@ -516,8 +556,11 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             if (!synthetic && ev.initializedStringPointers == 0) continue;
             String constructorType = unique(ev.constructorStores);
             String typedStoreType = unique(ev.typedStoreTypes);
+            String narrowCharType = ev.cstringScans > 0 && narrowScalarTypesOnly(ev.types) ?
+                "/char" : dominantNarrowCharType(ev.types);
             String proposedType = !constructorType.isBlank() ? constructorType :
-                !typedStoreType.isBlank() ? typedStoreType : unique(ev.types);
+                !typedStoreType.isBlank() ? typedStoreType :
+                !narrowCharType.isBlank() ? narrowCharType : unique(ev.types);
             String currentType = typeSpecification(data.getDataType());
             ContextVote context = dominantLibraryContext(ev);
             boolean contextualAnonymous = context != null &&
@@ -533,7 +576,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             boolean anchoredStoreDominates = constructorDominates || typedStoreDominates;
             boolean typeConflict = !contextualAnonymous &&
                 (constructorConflict || typedStoreConflict ||
-                 !anchoredStoreDominates && ev.types.size() > 1);
+                 narrowCharType.isBlank() && !anchoredStoreDominates && ev.types.size() > 1);
             int count = proposedType.isBlank() ? 0 : ev.types.getOrDefault(proposedType, 0);
             int currentTypeCount = ev.types.getOrDefault(currentType, 0);
             boolean currentTypeDominates = currentTypeCount >= 3;
@@ -583,11 +626,12 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 ev.addressEvidence > 0 &&
                 context.count >= ev.addressEvidence * 16;
             boolean addressEvidenceCompatible =
-                ev.addressEvidence == 0 || contextualAddressSafe ||
+                ev.addressEvidence == 0 || !narrowCharType.isBlank() || contextualAddressSafe ||
                 anchoredStoreDominates && proposedType.startsWith("pointer:");
             boolean typeApply = !typeConflict && typeChange && smallSafeType &&
                 currentReplaceable && extentCompatible && addressEvidenceCompatible &&
                 (contextualAnonymous || initializedStringPointer ||
+                    !narrowCharType.isBlank() ||
                     anchoredStoreDominates || ev.typedStores >= 1 ||
                     ev.strongCount >= 2 || count >= 3);
             String proposedName = unique(ev.names);
@@ -620,6 +664,11 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             else if (repairInitializedStringName) proposedName = initializedStringName;
             boolean sameConcreteType = !proposedType.isBlank() && sameType(currentType, proposedType);
             boolean nameApply = (!typeConflict || currentTypeDominates) && !proposedName.isBlank() &&
+                // `_Source`, `_Dest` and `text` describe a call parameter role,
+                // not the identity of a global character buffer.  The quorum
+                // proves storage type only; keep the address-stable symbol until
+                // independent semantic-name evidence exists.
+                (narrowCharType.isBlank() || strongSemanticName) &&
                 !symbol.getName().equals(proposedName) && (typeApply || sameConcreteType &&
                     (ev.typedStores >= 1 || ev.strongCount >= 2 || count >= 3) ||
                     currentTypeDominates || contextualAnonymous || strongSemanticName ||
@@ -645,6 +694,10 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             if (typedStoreDominates && ev.types.size() > 1)
                 reasons.add("trusted_pointer_return_store_dominates_weaker_use_types");
             if (typeConflict) reasons.add("type_conflict");
+            if (!narrowCharType.isBlank())
+                reasons.add("dominant_char_pointer_role_over_neutral_byte_consumers");
+            if (ev.cstringScans > 0)
+                reasons.add("exact_repne_scasb_cstring_scans=" + ev.cstringScans);
             if (currentTypeDominates) reasons.add("existing_type_dominates_conflicting_evidence=" +
                 currentTypeCount);
             if (contextualAddressSafe)
@@ -675,6 +728,20 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         }
         result.sort(Comparator.comparing(row -> row.address));
         return result;
+    }
+
+    private String dominantNarrowCharType(Map<String, Integer> votes) {
+        int chars = votes.getOrDefault("/char", 0);
+        if (chars < 3 || !narrowScalarTypesOnly(votes)) return "";
+        int alternatives = votes.entrySet().stream()
+            .filter(entry -> !"/char".equals(entry.getKey()))
+            .mapToInt(Map.Entry::getValue).sum();
+        return chars >= Math.max(3, alternatives * 4) ? "/char" : "";
+    }
+
+    private boolean narrowScalarTypesOnly(Map<String, Integer> votes) {
+        return !votes.isEmpty() && votes.keySet().stream().allMatch(type -> Set.of(
+            "/char", "/byte", "/uchar", "/undefined1").contains(type));
     }
 
     /**
@@ -1141,7 +1208,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             typedStoreSites = new TreeSet<>(), callBoundarySites = new TreeSet<>(),
             initializedStringNames = new TreeSet<>();
         int strongCount, addressEvidence, typedStores, libraryContextCalls,
-            initializedStringPointers;
+            initializedStringPointers, cstringScans;
     }
     private record ContextVote(String family, int count, int total) {}
     private record TypedValue(String type, String producer, boolean constructorResult) {}

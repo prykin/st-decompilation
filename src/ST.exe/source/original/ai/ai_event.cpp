@@ -48,7 +48,7 @@ int __thiscall st::fn_0064CD80(AiEventClassTy *this,int *param_1)
     pAVar2->field_05B3 = local_EAX_96;
     uVar10 = 0;
     do {
-      st::fn_006B6020(pAVar2->field_05B3,uVar10,&DAT_008016a0);
+      st::fn_006B6020(pAVar2->field_05B3,uVar10,&CHAR_00h_008016a0);
       uVar10 = uVar10 + 1;
     } while ((int)uVar10 < 4);
     if (pAVar2->field_008C == '\0') {
@@ -310,7 +310,7 @@ st::fn_0064D270
       local_82 = 0xffff;
       _Source = param_8;
       if (param_8 == nullptr) {
-        _Source = &DAT_008016a0;
+        _Source = &CHAR_00h_008016a0;
       }
       st::fn_0072E340(local_6e,_Source,0xe);
       local_7e = param_9;
@@ -463,7 +463,7 @@ st::fn_0064D890
                                  ,(short *)&local_10,0xfe);
       if (iVar5 != 0) {
         if (param_7 == nullptr) {
-          param_7 = &DAT_008016a0;
+          param_7 = &CHAR_00h_008016a0;
         }
         st::fn_00405740((uint)param_1,local_24,(int)param_2,param_6,(int)(short)local_c,
                            (int)(short)local_8,(int)(short)local_10,param_7,0xffffffff,
@@ -544,10 +544,10 @@ st::fn_0064DB00
                                  ,(short *)&local_10,0xfd);
       if (iVar5 != 0) {
         if (param_7 == nullptr) {
-          param_7 = &DAT_008016a0;
+          param_7 = &CHAR_00h_008016a0;
         }
         if (param_6 == nullptr) {
-          param_6 = &DAT_008016a0;
+          param_6 = &CHAR_00h_008016a0;
         }
         st::fn_00402059((int)param_1,(int)param_2,(int)(short)local_c,(int)(short)local_8,
                            (int)(short)local_10,param_6,param_7,0xffffffff,param_8);
@@ -605,10 +605,10 @@ st::fn_0064DDA0
       iVar5 = st::fn_00403260(param_3,param_4,param_5,(int)param_1);
       if (iVar5 != 0) {
         if (param_7 == nullptr) {
-          param_7 = &DAT_008016a0;
+          param_7 = &CHAR_00h_008016a0;
         }
         if (param_6 == nullptr) {
-          param_6 = &DAT_008016a0;
+          param_6 = &CHAR_00h_008016a0;
         }
         st::fn_00403512((short)local_8,param_4,param_5,(int)param_1,(int)param_2,param_6,param_7,
                            param_8);
@@ -684,7 +684,7 @@ st::fn_0064DFA0
                                    (short *)&local_8,(short *)&local_10,1);
         if (iVar5 != 0) {
           if (param_7 == nullptr) {
-            param_7 = &DAT_008016a0;
+            param_7 = &CHAR_00h_008016a0;
           }
           st::fn_0040105A((int)param_2,(uint)param_1,0,0,(int)(short)local_c,(int)(short)local_8,
                              (int)(short)local_10,local_24,param_7,param_9);
@@ -1123,7 +1123,6 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                   local_198 = 1;
                 }
                 local_EAX_327 =
-                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                      st::fn_00402923((AnonReceiver_0064A970 *)this_00,
                                         (AnonShape_00683780_11EA4E23 *)&this_00->field_04FA,
                                         (int)*(short *)&pAVar28->field_0x9,(short *)&local_16c);
@@ -1151,7 +1150,6 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                             psVar8 = nullptr;
                           }
                           local_EAX_488 =
-                               SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                st::fn_00402923((AnonReceiver_0064A970 *)this_00,
                                                   (AnonShape_00683780_11EA4E23 *)
                                                   &this_00->field_04FA,(int)*psVar8,
@@ -1175,8 +1173,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1203,8 +1200,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1215,8 +1211,8 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                             pSVar15 = st::fn_00405CF9(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              st::fn_00405042(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 (int)local_10->vtable);
+                                              st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,(int)local_10->vtable);
                                             }
                                             else {
                                               pAVar20 = (AnonShape_0065DA10_8B0AA883 *)
@@ -1249,8 +1245,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1261,8 +1256,8 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                             pSVar15 = st::fn_00405CF9(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              st::fn_00405042(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 (int)local_10->vtable);
+                                              st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,(int)local_10->vtable);
                                             }
                                             else {
                                               pAVar20 = (AnonShape_0065DA10_8B0AA883 *)
@@ -1295,8 +1290,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1307,8 +1301,8 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                             pSVar15 = st::fn_00405CF9(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              st::fn_00405042(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 (int)local_10->vtable);
+                                              st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,(int)local_10->vtable);
                                             }
                                             else {
                                               local_17c = (void *)st::fn_00405902((int)pSVar15);
@@ -1344,8 +1338,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1356,8 +1349,8 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                             pSVar15 = st::fn_00405CF9((char)pDVar25->flags,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              st::fn_00405042(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 pDVar25->flags);
+                                              st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,pDVar25->flags);
                                             }
                                             else {
                                               st::fn_0040460B(pSVar15,(uint)local_158);
@@ -1377,8 +1370,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1389,8 +1381,8 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                             pSVar15 = st::fn_00405CF9((char)pDVar25->flags,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              st::fn_00405042(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 pDVar25->flags);
+                                              st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,pDVar25->flags);
                                             }
                                             else {
                                               st::fn_00403788(pSVar15,(uint)local_158);
@@ -1410,8 +1402,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1422,8 +1413,8 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                             pSVar15 = st::fn_00405CF9(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              st::fn_00405042(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 (int)local_10->vtable);
+                                              st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,(int)local_10->vtable);
                                             }
                                             else {
                                               local_17c = (void *)st::fn_00405902((int)pSVar15);
@@ -1471,8 +1462,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1483,8 +1473,8 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                             pSVar15 = st::fn_00405CF9(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              st::fn_00405042(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 (int)local_10->vtable);
+                                              st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,(int)local_10->vtable);
                                             }
                                             else {
                                               iVar37 = st::fn_00405902((int)pSVar15);
@@ -1515,8 +1505,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1529,7 +1518,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               pAVar38 = local_10->vtable;
-                                              pcVar8_mg1D = &DAT_008016a0;
+                                              pcVar8_mg1D = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006577ae:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg1D,uVar16,
@@ -1595,8 +1584,7 @@ LAB_006577ae:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1609,7 +1597,7 @@ LAB_006577ae:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               pAVar38 = local_10->vtable;
-                                              pcVar8_mg1C = &DAT_008016a0;
+                                              pcVar8_mg1C = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657a41:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg1C,uVar16,
@@ -1667,8 +1655,7 @@ LAB_00657a41:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1681,7 +1668,7 @@ LAB_00657a41:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               pAVar38 = local_10->vtable;
-                                              pcVar8_mg1B = &DAT_008016a0;
+                                              pcVar8_mg1B = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006578fe:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg1B,uVar16,
@@ -1745,8 +1732,7 @@ LAB_006578fe:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1759,7 +1745,7 @@ LAB_006578fe:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg19 = &DAT_008016a0;
+                                              pcVar8_mg19 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657bce:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg19,uVar16,
@@ -1808,7 +1794,7 @@ LAB_00657bce:
                                               uStack_4c = (undefined1)local_13c;
                                               pcVar21 = local_138;
                                               if (local_138 == nullptr) {
-                                                pcVar21 = &DAT_008016a0;
+                                                pcVar21 = &CHAR_00h_008016a0;
                                               }
                                               st::fn_0072E340(&cStack_4b,pcVar21,0xe);
                                               st::fn_00401555(local_10,local_68);
@@ -1830,8 +1816,7 @@ LAB_00657bce:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1844,7 +1829,7 @@ LAB_00657bce:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg18 = &DAT_008016a0;
+                                              pcVar8_mg18 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657ccf:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg18,uVar16,
@@ -1888,8 +1873,7 @@ LAB_00657ccf:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1902,7 +1886,7 @@ LAB_00657ccf:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg17 = &DAT_008016a0;
+                                              pcVar8_mg17 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657dd9:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg17,uVar16,
@@ -1946,8 +1930,7 @@ LAB_00657dd9:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -1960,7 +1943,7 @@ LAB_00657dd9:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg16 = &DAT_008016a0;
+                                              pcVar8_mg16 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657f1c:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg16,uVar16,
@@ -2018,8 +2001,7 @@ LAB_00657f1c:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2032,7 +2014,7 @@ LAB_00657f1c:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg15 = &DAT_008016a0;
+                                              pcVar8_mg15 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_0065806e:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg15,uVar16,
@@ -2088,8 +2070,7 @@ LAB_0065806e:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2102,7 +2083,7 @@ LAB_0065806e:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg14 = &DAT_008016a0;
+                                              pcVar8_mg14 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658177:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg14,uVar16,
@@ -2146,8 +2127,7 @@ LAB_00658177:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2160,7 +2140,7 @@ LAB_00658177:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg13 = &DAT_008016a0;
+                                              pcVar8_mg13 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658b70:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg13,uVar16,
@@ -2226,8 +2206,7 @@ LAB_00658b70:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2240,7 +2219,7 @@ LAB_00658b70:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg11 = &DAT_008016a0;
+                                              pcVar8_mg11 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658d01:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg11,uVar16,
@@ -2280,7 +2259,7 @@ LAB_00658d01:
                                               uStack_51 = (undefined1)((uint)local_150 >> 0x18);
                                               pcVar21 = local_148;
                                               if (local_148 == nullptr) {
-                                                pcVar21 = &DAT_008016a0;
+                                                pcVar21 = &CHAR_00h_008016a0;
                                               }
                                               st::fn_0072E340
                                                         ((char *)&local_4a,pcVar21,0xe);
@@ -2313,8 +2292,7 @@ LAB_00658d01:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2327,7 +2305,7 @@ LAB_00658d01:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg10 = &DAT_008016a0;
+                                              pcVar8_mg10 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658e8e:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg10,uVar16,
@@ -2393,8 +2371,7 @@ LAB_00658e8e:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2407,7 +2384,7 @@ LAB_00658e8e:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgF = &DAT_008016a0;
+                                              pcVar8_mgF = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658fc8:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mgF,uVar16,
@@ -2464,8 +2441,7 @@ LAB_00658fc8:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2478,7 +2454,7 @@ LAB_00658fc8:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgE = &DAT_008016a0;
+                                              pcVar8_mgE = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006582b3:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mgE,uVar16,
@@ -2538,8 +2514,7 @@ LAB_006582b3:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2552,7 +2527,7 @@ LAB_006582b3:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgD = &DAT_008016a0;
+                                              pcVar8_mgD = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658416:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mgD,uVar16,
@@ -2615,8 +2590,7 @@ LAB_00658416:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2629,7 +2603,7 @@ LAB_00658416:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgC = &DAT_008016a0;
+                                              pcVar8_mgC = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658543:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mgC,uVar16,
@@ -2683,8 +2657,7 @@ LAB_00658543:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2697,7 +2670,7 @@ LAB_00658543:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgB = &DAT_008016a0;
+                                              pcVar8_mgB = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658670:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mgB,uVar16,
@@ -2751,8 +2724,7 @@ LAB_00658670:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2765,7 +2737,7 @@ LAB_00658670:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgA = &DAT_008016a0;
+                                              pcVar8_mgA = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006587e2:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mgA,uVar16,
@@ -2829,8 +2801,7 @@ LAB_006587e2:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2843,7 +2814,7 @@ LAB_006587e2:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg9 = &DAT_008016a0;
+                                              pcVar8_mg9 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006588eb:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg9,uVar16,
@@ -2887,8 +2858,7 @@ LAB_006588eb:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2901,7 +2871,7 @@ LAB_006588eb:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg8 = &DAT_008016a0;
+                                              pcVar8_mg8 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006589fe:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg8,uVar16,
@@ -2949,8 +2919,7 @@ LAB_006589fe:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -2963,7 +2932,7 @@ LAB_006589fe:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg7 = &DAT_008016a0;
+                                              pcVar8_mg7 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00659143:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg7,uVar16,
@@ -3032,8 +3001,7 @@ LAB_00659143:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -3046,7 +3014,7 @@ LAB_00659143:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg6 = &DAT_008016a0;
+                                              pcVar8_mg6 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006594ec:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg6,uVar16,
@@ -3110,8 +3078,7 @@ LAB_006594ec:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -3124,7 +3091,7 @@ LAB_006594ec:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg5 = &DAT_008016a0;
+                                              pcVar8_mg5 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00659640:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg5,uVar16,
@@ -3187,8 +3154,7 @@ LAB_00659640:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -3201,7 +3167,7 @@ LAB_00659640:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg4 = &DAT_008016a0;
+                                              pcVar8_mg4 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00659785:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg4,uVar16,
@@ -3262,8 +3228,7 @@ LAB_00659785:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -3276,7 +3241,7 @@ LAB_00659785:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg3 = &DAT_008016a0;
+                                              pcVar8_mg3 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006598ca:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg3,uVar16,
@@ -3337,8 +3302,7 @@ LAB_006598ca:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -3351,7 +3315,7 @@ LAB_006598ca:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg1 = &DAT_008016a0;
+                                              pcVar8_mg1 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_0065937a:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg1,uVar16,
@@ -3443,8 +3407,7 @@ LAB_0065937a:
                                       iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                       if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar10 = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_0064A970::st::fn_004016B8
+                                                  st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
                                                              &local_34.flags);
@@ -3457,7 +3420,7 @@ LAB_0065937a:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg0 = &DAT_008016a0;
+                                              pcVar8_mg0 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00659a1c:
                                               st::fn_00405042(this_00,iVar37,pcVar8_mg0,uVar16,
@@ -3552,8 +3515,7 @@ LAB_00659a1c:
                                 }
                                 else {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -3598,7 +3560,7 @@ LAB_00659a1c:
                               iVar37 = st::fn_004031ED((int)&local_16c);
                               if (iVar37 == 0) break;
                               if (local_160 != nullptr) {
-                                st::fn_00402932(0,(byte *)pDStack_164,0,0,0,-1,-1,-1,thunk_FUN_0064dd70,
+                                st::fn_00402932(0,(byte *)pDStack_164,0,0,0,-1,-1,-1,st::fn_004012CB,
                                          local_160);
                               }
                               goto cf_common_join_00659A73;
@@ -3632,7 +3594,7 @@ LAB_00659a1c:
                               DAT_008118fc = 0;
                               st::fn_00404142((short)pDStack_164,(short)local_160,(short)local_15c,
                                            (short)local_158,(short)local_154,(short)local_150,
-                                           (short)local_14c,thunk_FUN_0064e260,&local_148);
+                                           (short)local_14c,st::fn_004047E1,&local_148);
                               goto cf_common_join_00659A73;
                             case 0x597:
                               iVar37 = st::fn_004018B6((RecoveredRecord_AiEventClassTy_00650090 *
@@ -3640,7 +3602,7 @@ LAB_00659a1c:
                               if (iVar37 == 0) break;
                               st::fn_00404142((short)local_15c,(short)local_158,(short)local_154,
                                            (short)local_150,(short)local_14c,(short)local_148,
-                                           (short)local_144,thunk_FUN_0064e290,
+                                           (short)local_144,st::fn_00405B6E,
                                            (int)local_160 << 0x10 | (uint)pDStack_164 & 0xffff);
                               goto cf_common_join_00659A73;
                             case 0x598:
@@ -3661,14 +3623,14 @@ LAB_00659a1c:
                               DAT_008118fc = 0;
                               st::fn_004013F2((byte *)local_160,(char)pDStack_164,(short)local_15c,
                                         (short)local_158,(short)local_154,(short)local_150,
-                                        (short)local_14c,(short)local_148,thunk_FUN_0064df30,
+                                        (short)local_14c,(short)local_148,st::fn_0040191A,
                                         &local_144);
                               goto cf_common_join_00659A73;
                             case 0x59a:
                               iVar37 = st::fn_00402027((int)&local_16c);
                               if (iVar37 == 0) break;
                               if (local_160 != nullptr) {
-                                st::fn_004013F2((byte *)pDStack_164,-1,0,0,0,-1,-1,-1,thunk_FUN_0064df70,
+                                st::fn_004013F2((byte *)pDStack_164,-1,0,0,0,-1,-1,-1,st::fn_00403E18,
                                           local_160);
                               }
                               goto cf_common_join_00659A73;
@@ -3679,8 +3641,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -3716,8 +3677,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -3729,7 +3689,7 @@ LAB_00659a1c:
                                       st::fn_00403675(pDVar25->flags,(short)local_15c,(char)local_158,
                                                  local_154,(short)local_150,(short)local_14c,
                                                  (short)local_148,(short)local_144,(short)local_140,
-                                                 (short)local_13c,thunk_FUN_0064e1f0,&local_138);
+                                                 (short)local_13c,st::fn_004037D8,&local_138);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != nullptr);
@@ -3746,8 +3706,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -3759,7 +3718,7 @@ LAB_00659a1c:
                                       st::fn_00403675(pDVar25->flags,(short)local_158,(char)local_154,
                                                  local_150,(short)local_14c,(short)local_148,
                                                  (short)local_144,(short)local_140,(short)local_13c,
-                                                 (short)local_138,thunk_FUN_0064e230,local_15c);
+                                                 (short)local_138,st::fn_004035FD,local_15c);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != nullptr);
@@ -3777,8 +3736,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -3803,8 +3761,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -3829,8 +3786,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -3866,8 +3822,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -3892,8 +3847,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -3917,8 +3871,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -3952,8 +3905,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -3987,8 +3939,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -4012,8 +3963,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -4037,8 +3987,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -4064,8 +4013,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -4083,8 +4031,7 @@ LAB_00659a1c:
                                       }
                                       if (pAVar11 != nullptr) {
                                         local_c = (DArrayTy *)
-                                                  SubmarineTitans::Recovered::HiddenThis::
-                                                  AnonReceiver_00678E00::st::fn_00402A0E
+                                                  st::fn_00402A0E
                                                             ((AnonReceiver_00678E00 *)pAVar11,
                                                              (byte *)local_15c,(int)local_158,
                                                              (int)local_154,(int)local_150);
@@ -4109,8 +4056,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -4152,8 +4098,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -4195,8 +4140,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -4239,8 +4183,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -4283,8 +4226,7 @@ LAB_00659a1c:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -4335,7 +4277,7 @@ LAB_00659a1c:
                               DAT_008118fc = 0;
                               st::fn_00402932((short)pDStack_164,(byte *)local_160,(short)local_15c,
                                        (short)local_158,(short)local_154,(short)local_150,
-                                       (short)local_14c,(short)local_148,thunk_FUN_0064dd30,
+                                       (short)local_14c,(short)local_148,st::fn_004022F2,
                                        &local_144);
                             }
                             goto cf_common_join_00659A73;
@@ -4426,8 +4368,7 @@ LAB_00659a1c:
                                         }
                                       }
                                       pDVar10 = (DArrayTy *)
-                                                SubmarineTitans::Recovered::HiddenThis::
-                                                AnonReceiver_0064A970::st::fn_004016B8
+                                                st::fn_004016B8
                                                           ((AnonReceiver_0064A970 *)this_00,
                                                            (char *)pDStack_164,(uint)local_160,
                                                            &local_34.flags);
@@ -4527,8 +4468,7 @@ LAB_00659a1c:
                                       }
                                     }
                                     pDVar10 = (DArrayTy *)
-                                              SubmarineTitans::Recovered::HiddenThis::
-                                              AnonReceiver_0064A970::st::fn_004016B8
+                                              st::fn_004016B8
                                                         ((AnonReceiver_0064A970 *)this_00,
                                                          (char *)pDStack_164,(uint)local_160,
                                                          &local_34.flags);
@@ -4584,8 +4524,7 @@ LAB_00659a1c:
                                       }
                                     }
                                     pDVar10 = (DArrayTy *)
-                                              SubmarineTitans::Recovered::HiddenThis::
-                                              AnonReceiver_0064A970::st::fn_004016B8
+                                              st::fn_004016B8
                                                         ((AnonReceiver_0064A970 *)this_00,
                                                          (char *)pDStack_164,(uint)local_160,
                                                          &local_34.flags);
@@ -4650,7 +4589,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x17:
                                     if (local_160 == nullptr) {
-                                      st::fn_00405042(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      st::fn_00405042(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) =
@@ -4660,7 +4599,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x2d:
                                     if (local_160 == nullptr) {
-                                      st::fn_00405042(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      st::fn_00405042(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) =
@@ -4692,7 +4631,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x17:
                                     if (local_160 == nullptr) {
-                                      st::fn_00405042(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      st::fn_00405042(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       (&DAT_0080e43b)[(int)pDStack_164] =
@@ -4701,7 +4640,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x2d:
                                     if (local_160 == nullptr) {
-                                      st::fn_00405042(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      st::fn_00405042(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       (&DAT_0080e43b)[(int)pDStack_164] =
@@ -4731,7 +4670,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x17:
                                     if (local_160 == nullptr) {
-                                      st::fn_00405042(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      st::fn_00405042(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       (&this_00->field_052F)[(int)pDStack_164] =
@@ -4741,7 +4680,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x2d:
                                     if (local_160 == nullptr) {
-                                      st::fn_00405042(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      st::fn_00405042(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       (&this_00->field_052F)[(int)pDStack_164] =
@@ -4817,8 +4756,7 @@ switchD_00652b42_switchD:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -4847,8 +4785,7 @@ switchD_00652b42_switchD:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar10 = (DArrayTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -4913,7 +4850,6 @@ switchD_00652b42_switchD:
                                   }
                                 }
                                 local_EAX_3452 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -4946,7 +4882,6 @@ switchD_00652b42_switchD:
                                 }
                               }
                               local_EAX_3643 =
-                                   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                    st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
                                                 ,(uint)local_160,&local_34.flags);
                               iVar37 = 0;
@@ -4983,7 +4918,6 @@ LAB_006536dd:
                                 }
                               }
                               local_EAX_3857 =
-                                   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                    st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
                                                 ,(uint)local_160,&local_34.flags);
                               iVar37 = 0;
@@ -5011,7 +4945,6 @@ LAB_00653778:
                                 }
                               }
                               local_EAX_4002 =
-                                   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                    st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
                                                 ,(uint)local_160,&local_34.flags);
                               iVar37 = 0;
@@ -5038,7 +4971,6 @@ LAB_00653778:
                                 }
                               }
                               local_EAX_4139 =
-                                   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                    st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
                                                 ,(uint)local_160,&local_34.flags);
                               iVar37 = 0;
@@ -5070,7 +5002,6 @@ LAB_00653778:
                                 }
                               }
                               local_EAX_4307 =
-                                   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                    st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
                                                 ,(uint)local_160,&local_34.flags);
                               iVar37 = 0;
@@ -5134,8 +5065,7 @@ LAB_00653778:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
-                                             SubmarineTitans::Recovered::HiddenThis::
-                                             AnonReceiver_0064A970::st::fn_004016B8
+                                             st::fn_004016B8
                                                        ((AnonReceiver_0064A970 *)this_00,
                                                         (char *)pDStack_164,(uint)local_160,
                                                         &local_34.flags);
@@ -5208,8 +5138,7 @@ LAB_00653778:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
-                                             SubmarineTitans::Recovered::HiddenThis::
-                                             AnonReceiver_0064A970::st::fn_004016B8
+                                             st::fn_004016B8
                                                        ((AnonReceiver_0064A970 *)this_00,
                                                         (char *)pDStack_164,(uint)local_160,
                                                         &local_34.flags);
@@ -5258,8 +5187,7 @@ LAB_00653bb7:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
-                                             SubmarineTitans::Recovered::HiddenThis::
-                                             AnonReceiver_0064A970::st::fn_004016B8
+                                             st::fn_004016B8
                                                        ((AnonReceiver_0064A970 *)this_00,
                                                         (char *)pDStack_164,(uint)local_160,
                                                         &local_34.flags);
@@ -5298,7 +5226,6 @@ LAB_00653bb7:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_5668 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5328,8 +5255,7 @@ LAB_00653bb7:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
-                                          SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::st::fn_004016B8
+                                          st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
@@ -5358,7 +5284,6 @@ LAB_00653bb7:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_5961 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5370,8 +5295,8 @@ LAB_00653bb7:
                                       if (((char)local_15c->flags != '\0') &&
                                          ((DAT_008087a0 == '\x03' || (DAT_008087a0 == '\b')))) {
                                         st::fn_0072E730
-                                                  (&DAT_0080ef1e,nullptr,local_384,nullptr,
-                                                   nullptr);
+                                                  ((byte *)&CHAR_00h_0080ef1e,nullptr,local_384,
+                                                   nullptr,nullptr);
                                         st::fn_0072F110
                                                   (&DAT_0080c632,nullptr,(char *)local_384,
                                                    (char *)local_15c,nullptr);
@@ -5393,7 +5318,6 @@ LAB_00653bb7:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_6159 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5418,7 +5342,6 @@ LAB_00653bb7:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_6287 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5446,7 +5369,6 @@ LAB_006540b9:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_6449 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5466,16 +5388,16 @@ LAB_006540b9:
                                       DAT_0080e43a = STPiece<0,1>(local_138);
                                       if (DAT_008087a0 == '\x03') {
                                         st::fn_0072E730
-                                                  (&DAT_0080ef1e,nullptr,local_484,nullptr,
-                                                   nullptr);
+                                                  ((byte *)&CHAR_00h_0080ef1e,nullptr,local_484,
+                                                   nullptr,nullptr);
                                         st::fn_0072F110
                                                   ((char *)&DAT_0080f33a,nullptr,
                                                    (char *)local_484,(char *)local_158,nullptr);
-                                        st::external_00000080(&DAT_0080e323,"%s%s",&DAT_00807784,
+                                        st::external_00000080(&DAT_0080e323,"%s%s",&CHAR_00h_00807784,
                                                   &DAT_0080f33a);
                                       }
                                       else if (DAT_008087a0 == '\b') {
-                                        st::external_00000080(&DAT_0080e323,"%s%s",&DAT_00807784,
+                                        st::external_00000080(&DAT_0080e323,"%s%s",&CHAR_00h_00807784,
                                                   local_158);
                                       }
                                       break;
@@ -5496,7 +5418,6 @@ LAB_006540b9:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_6799 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5532,7 +5453,6 @@ LAB_006540b9:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_6968 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5558,7 +5478,6 @@ LAB_00654386:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_7118 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5590,7 +5509,6 @@ LAB_00654386:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_7261 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5627,7 +5545,6 @@ LAB_00654386:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_7431 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5656,7 +5573,6 @@ LAB_00654386:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_7569 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5690,14 +5606,12 @@ LAB_00654386:
                                   ((local_15c != (DArrayTy *)0x9 && (pDStack_164 != (DArrayTy *)0x9)
                                    ))) && (local_15c != (DArrayTy *)0xff)) {
                                 local_EAX_7731 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)local_15c
                                                   ,0,&local_34.flags);
                                 if (local_EAX_7731 == 1) {
                                   local_8 = (DArrayTy *)local_34.flags;
                                   pAVar13 = (AiFltClassTy *)
-                                            SubmarineTitans::Recovered::HiddenThis::
-                                            AnonReceiver_0064A970::st::fn_004016B8
+                                            st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
@@ -5743,8 +5657,7 @@ LAB_00654386:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_10 = (AiFltClassTy *)
-                                           SubmarineTitans::Recovered::HiddenThis::
-                                           AnonReceiver_0064A970::st::fn_004016B8
+                                           st::fn_004016B8
                                                      ((AnonReceiver_0064A970 *)this_00,
                                                       (char *)pDStack_164,(uint)local_160,
                                                       &local_34.flags);
@@ -5785,7 +5698,6 @@ LAB_00654386:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_EAX_8204 =
-                                     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
                                                   &local_34.flags);
@@ -5817,8 +5729,7 @@ LAB_00654386:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
-                                          SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::st::fn_004016B8
+                                          st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
@@ -5846,8 +5757,7 @@ LAB_00654386:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
-                                          SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::st::fn_004016B8
+                                          st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
@@ -5894,8 +5804,7 @@ LAB_00654386:
                                   local_8 = (DArrayTy *)(uint)DAT_00808a9b;
                                 }
                                 pDVar10 = (DArrayTy *)
-                                          SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::st::fn_004016B8
+                                          st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
@@ -6128,8 +6037,7 @@ LAB_00655324:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
-                                          SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::st::fn_004016B8
+                                          st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
@@ -6295,7 +6203,7 @@ LAB_00655871:
                             else if (local_154 == (byte *)0x2) {
                               local_EAX_12115 =
                                    st::fn_004013F2(nullptr,-1,sVar24,sVar22,sVar6,1,1,1,
-                                             thunk_FUN_00678890,0);
+                                             st::fn_00404C73,0);
                               if ((local_EAX_12115 == -1) && (g_fish_00811984 != nullptr)) {
                                 pSVar30 = g_fish_00811984;
                               }
@@ -6312,8 +6220,7 @@ LAB_00655871:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
-                                          SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::st::fn_004016B8
+                                          st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
@@ -6364,7 +6271,7 @@ LAB_006559d6:
                                         goto LAB_006559d6;
                                       }
                                       pAVar38 = local_10->vtable;
-                                      pcVar8_mg3D = &DAT_008016a0;
+                                      pcVar8_mg3D = &CHAR_00h_008016a0;
                                       iVar37 = -0xaa;
 LAB_006559e3:
                                       st::fn_00405042(this_00,iVar37,pcVar8_mg3D,uVar16,
@@ -6386,8 +6293,7 @@ LAB_006559e3:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
-                                          SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::st::fn_004016B8
+                                          st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
@@ -6439,8 +6345,7 @@ LAB_006559e3:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
-                                          SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::st::fn_004016B8
+                                          st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
@@ -6505,8 +6410,7 @@ LAB_006559e3:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
-                                          SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::st::fn_004016B8
+                                          st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
@@ -6542,8 +6446,7 @@ LAB_006559e3:
                               iVar37 = (*(code *)this_00->field_0000->field_0018)();
                               if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar10 = (DArrayTy *)
-                                          SubmarineTitans::Recovered::HiddenThis::
-                                          AnonReceiver_0064A970::st::fn_004016B8
+                                          st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
@@ -6555,7 +6458,7 @@ LAB_006559e3:
                                     st::fn_00403882((short)pDVar25->flags,(short)local_15c,
                                                 (byte *)local_158,(short)local_154,(short)local_150,
                                                 (short)local_14c,(short)local_148,(short)local_144,
-                                                (short)local_140,thunk_FUN_0064dac0,&local_13c);
+                                                (short)local_140,st::fn_004050A1,&local_13c);
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != nullptr);
@@ -6637,7 +6540,7 @@ LAB_00659aae:
         st::fn_006AE110(local_180);
       }
       local_180 = nullptr;
-      st::fn_00405042(local_188,iVar7,&DAT_008016a0,local_14,-1);
+      st::fn_00405042(local_188,iVar7,&CHAR_00h_008016a0,local_14,-1);
     }
   }
   return;

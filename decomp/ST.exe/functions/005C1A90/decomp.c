@@ -306,9 +306,9 @@ switchD_005c1b14_caseD_5:
       sub_005C05F0(local_10);
       goto cf_common_exit_005C22B1;
     }
-    wsprintfA(&DAT_0080ed16,"%s%s",&DAT_00807680,&DAT_0080c52e);
+    wsprintfA(&CHAR_00h_0080ed16,"%s%s",&CHAR_00h_00807680,&CHAR_00h_0080c52e);
     uVar16 = 0xffffffff;
-    pcVar20 = (char *)&DAT_0080c52e;
+    pcVar20 = &CHAR_00h_0080c52e;
     do {
       pcVar22 = pcVar20;
       if (uVar16 == 0) break;
@@ -319,11 +319,11 @@ switchD_005c1b14_caseD_5:
     } while (cVar1 != '\0');
     uVar16 = ~uVar16;
     pcVar20 = pcVar22 + -uVar16;
-    pcVar22 = &DAT_0080ef1e;
+    pcVar22 = &CHAR_00h_0080ef1e;
     memmove(pcVar22, pcVar20, uVar16); /* compiler REP MOVS byte copy */
     uVar17 = 0;
     uVar16 = 0xffffffff;
-    pcVar20 = &DAT_0080ed16;
+    pcVar20 = &CHAR_00h_0080ed16;
     do {
       pcVar22 = pcVar20;
       if (uVar16 == 0) break;

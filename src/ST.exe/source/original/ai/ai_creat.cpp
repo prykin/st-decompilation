@@ -420,7 +420,7 @@ undefined4 * st::fn_006494C0(void)
   iVar5 = 0;
   memset(&stack0xfffffb6c, 0, 0x318); /* compiler bulk-zero initialization */
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_00807680;
+  pcVar8 = &CHAR_00h_00807680;
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -460,7 +460,7 @@ undefined4 * st::fn_006494C0(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_00807680;
+  pcVar8 = &CHAR_00h_00807680;
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -594,7 +594,7 @@ undefined4 * st::fn_00649790(void)
   iVar5 = 0;
   memset(&stack0xfffffb6c, 0, 0x318); /* compiler bulk-zero initialization */
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_00807680;
+  pcVar8 = &CHAR_00h_00807680;
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -634,7 +634,7 @@ undefined4 * st::fn_00649790(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_00807680;
+  pcVar8 = &CHAR_00h_00807680;
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -814,7 +814,7 @@ undefined4 * st::fn_00649B90(void)
   iVar5 = 0;
   memset(&stack0xfffffb6c, 0, 0x318); /* compiler bulk-zero initialization */
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_00807680;
+  pcVar8 = &CHAR_00h_00807680;
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -854,7 +854,7 @@ undefined4 * st::fn_00649B90(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_00807680;
+  pcVar8 = &CHAR_00h_00807680;
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -870,7 +870,7 @@ undefined4 * st::fn_00649B90(void)
   uVar7 = 0;
   st::fn_006B78C0(&stack0xfffffb6c,&stack0xfffffb6c);
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_00807680;
+  pcVar8 = &CHAR_00h_00807680;
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;

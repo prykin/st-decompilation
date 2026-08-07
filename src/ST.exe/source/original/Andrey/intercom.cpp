@@ -90,7 +90,7 @@ void __thiscall st::fn_005219E0(IntercomPanelTy *this)
           );
     pDVar7 = st::fn_006B54F0(nullptr,1,1);
     pIVar2->field_0198 = pDVar7;
-    st::fn_006B6020(pDVar7,0,&DAT_008016a0);
+    st::fn_006B6020(pDVar7,0,&CHAR_00h_008016a0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -373,7 +373,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
       return 0;
     }
     st::fn_00403120((AnonShape_00521CF0_154649D2 *)this_00);
-    st::fn_006B6020(this_00->field_0198,0,&DAT_008016a0);
+    st::fn_006B6020(this_00->field_0198,0,&CHAR_00h_008016a0);
     this_00->field_0028 = 0x33;
     this_00->field_002C = this_00->field_0198;
     st::fn_006E6080(this_00,2,this_00->field_01A0,(undefined4 *)&this_00->field_0x18);

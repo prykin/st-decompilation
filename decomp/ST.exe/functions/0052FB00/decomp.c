@@ -355,7 +355,7 @@ LAB_0052fd4a:
           pcVar33 = pcVar33 + 1;
           Library::MSVCRT::_strncpy(pcVar6,&this_00->field_0x1f5,(size_t)pcVar33);
           uVar38 = 0xffffffff;
-          pcVar17 = &DAT_007c7278;
+          pcVar17 = &CHAR___007c7278;
           do {
             pcVar20 = pcVar17;
             if (uVar38 == 0) break;
@@ -401,7 +401,7 @@ LAB_0052fd4a:
         }
         Library::MSVCRT::_strncpy(local_984,&this_00->field_0x1f5,(size_t)(pcVar33 + -3));
         uVar38 = 0xffffffff;
-        pcVar33 = &DAT_007c7274;
+        pcVar33 = &CHAR___007c7274;
         do {
           pcVar6 = pcVar33;
           if (uVar38 == 0) break;
@@ -467,7 +467,7 @@ LAB_0052fd4a:
       iVar16 = 0;
       pcVar33 = nullptr;
       if (DAT_00808aaf != 0) {
-        pcVar6 = (char *)&DAT_00808ab0;
+        pcVar6 = &CHAR_00h_00808ab0;
         do {
           pcVar33 = pcVar6;
           if (*(int *)(pcVar6 + 0x40) == g_playSystem_00802A38->field_00F4) break;
@@ -477,7 +477,7 @@ LAB_0052fd4a:
         } while (iVar16 < (int)(uint)DAT_00808aaf);
       }
       if (pcVar33 == nullptr) {
-        pcVar6 = &DAT_007c7274;
+        pcVar6 = &CHAR___007c7274;
 LAB_0052ff02:
         uVar38 = 0xffffffff;
         do {
@@ -514,7 +514,7 @@ LAB_0052ff02:
           _Count = sVar41 + 1;
           Library::MSVCRT::_strncpy(local_880,pcVar6,_Count);
           uVar38 = 0xffffffff;
-          pcVar33 = &DAT_007c7278;
+          pcVar33 = &CHAR___007c7278;
           do {
             pcVar17 = pcVar33;
             if (uVar38 == 0) break;
@@ -561,7 +561,7 @@ LAB_0052ff02:
         }
         Library::MSVCRT::_strncpy(local_880,pcVar6,sVar41 - 2);
         uVar38 = 0xffffffff;
-        pcVar33 = &DAT_007c7274;
+        pcVar33 = &CHAR___007c7274;
         do {
           pcVar6 = pcVar33;
           if (uVar38 == 0) break;
@@ -807,7 +807,7 @@ cf_common_join_005305BC:
         this_00->field_01DD = (HANDLE)0x0;
       }
       uVar38 = 0xffffffff;
-      pcVar33 = &DAT_00807680;
+      pcVar33 = &CHAR_00h_00807680;
       do {
         pcVar6 = pcVar33;
         if (uVar38 == 0) break;
@@ -847,7 +847,7 @@ cf_common_join_005305BC:
       memmove(pcVar6, pcVar33, uVar38); /* compiler REP MOVS byte copy */
       uVar14 = 0;
       uVar38 = 0xffffffff;
-      pcVar33 = (char *)&DAT_00807ddd;
+      pcVar33 = &CHAR_00h_00807ddd;
       do {
         pcVar6 = pcVar33;
         if (uVar38 == 0) break;

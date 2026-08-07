@@ -89,9 +89,9 @@ LAB_005d1245:
               return;
             }
           }
-          pcVar7 = &DAT_00807e1d;
+          pcVar7 = &CHAR_00h_00807e1d;
           if (DAT_008067a0 == '\0') {
-            pcVar7 = (char *)&DAT_00807ddd;
+            pcVar7 = &CHAR_00h_00807ddd;
           }
           AddPlayerList(local_8,DAT_0080877f,uVar9,(DAT_0080874f != '\0') + 2,pcVar7);
         }

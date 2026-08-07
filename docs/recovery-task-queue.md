@@ -414,8 +414,34 @@ Accepted run:
 - 10,392 functions, 5,712 bodies, zero failed bodies, 2,729 typed vtable slots;
 - export gate: zero hard regressions and three nonblocking warnings;
 - full-pipeline duration: `01:07:19`;
-- compiler audit at 64 diagnostics per TU: 61/318 pass, 5,590 errors, 5,588
-  address-mapped; 52 fewer errors than the preceding same-cap audit.
+- compiler audit at 64 diagnostics per TU: 69/318 pass, 4,762 errors, 4,757
+  address-mapped; 828 fewer errors than the preceding 5,590-error baseline.
+
+The latest compiler-driven layer closes two broad declaration causes without
+adding image addresses or game-specific type lists. Exact exported datatype
+paths now preserve global arrays and records in generated declarations, cutting
+scalar-subscript diagnostics from 1,138 to 76 and missing-record-member
+diagnostics to 43. `STGlobalDataAnalyzer` additionally recovered 77 narrow
+character globals from exact bounded `REPNE SCASB` machine scans after an
+earlier call-boundary quorum recovered 14 more; both analyzer/applier pairs now
+converge with zero enabled rows. Source generation resolves address-coded
+function leaves by entry address and removes 116 stale line-wrapped owner
+qualifiers after rewriting them to `st::fn_ADDRESS`.
+
+Accepted corpus state:
+
+- semantic hash `4327f2202e47da1b761486e6f74c84fb5cece9e73eb83b5fecbeb29fb5159f38`;
+- manifest `6e172d04cd0969a077667798bc597a6e0795c8612d69bb92ef814e71619b50e6`;
+- 10,392 functions, 5,712 bodies, zero failed bodies, 2,729 typed vtable slots;
+- export gate: zero hard regressions and two nonblocking stage-transition warnings;
+- full-pipeline duration: `00:38:52`.
+
+The next largest semantic clusters are not another global-array presentation
+bug: 1,426 assignment and 1,182 call-argument diagnostics chiefly expose local
+pointer/scalar lifetime disagreement, weak boundary prototypes, and signedness
+differences. The 4,283 exported stack-slot-reuse occurrences are the broadest
+shared cause. Repair them in Ghidra or by an exact tagged source-lifetime
+materialization; do not hide them behind arbitrary generated casts.
 
 Next infrastructure item: replace the safe whole-Program semantic epoch for
 the slow broad analyzers with dependency fingerprints over the exact function,

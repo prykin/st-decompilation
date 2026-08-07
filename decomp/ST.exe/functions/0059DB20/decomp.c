@@ -160,13 +160,13 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     *(DArrayTy **)&this_00[0x22].field_0x84 = pDVar7;
     pDVar7 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     *(DArrayTy **)&this_00[0x1e].field_0x4e = pDVar7;
-    Library::DKW::TBL::FUN_006b5aa0(pDVar7,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar7,&CHAR_00h_008016a0);
     pDVar7 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     *(DArrayTy **)&this_00[0x1e].field_0x52 = pDVar7;
-    Library::DKW::TBL::FUN_006b5aa0(pDVar7,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar7,&CHAR_00h_008016a0);
     pDVar7 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     *(DArrayTy **)&this_00[0x22].field_0x7c = pDVar7;
-    Library::DKW::TBL::FUN_006b5aa0(pDVar7,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar7,&CHAR_00h_008016a0);
     local_dc8[0] = 0;
     local_dc8[1] = 2;
     local_da8 = 0x19;

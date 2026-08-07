@@ -91,7 +91,7 @@ joined_r0x005db18e:
     } while (bVar1 != 0);
     uVar4 = ~uVar4;
     pbVar6 = pbVar7 + -uVar4;
-    pbVar7 = &DAT_0080ed16;
+    pbVar7 = (byte *)&CHAR_00h_0080ed16;
     memmove(pbVar7, pbVar6, uVar4); /* compiler REP MOVS byte copy */
   }
 cf_common_exit_005DB1E1:

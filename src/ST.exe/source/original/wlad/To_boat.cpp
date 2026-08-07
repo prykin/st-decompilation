@@ -50,7 +50,7 @@ st::fn_0044E980
     if (param_3 == 0xd) {
       if (param_2 == CASE_B) {
         uVar3 = 0xffffffff;
-        pcVar6 = &DAT_007a9e94;
+        pcVar6 = &CHAR_l_007a9e94;
         do {
           pcVar7 = pcVar6;
           if (uVar3 == 0) break;
@@ -66,7 +66,7 @@ st::fn_0044E980
       }
       if (param_2 == CASE_16) {
         uVar3 = 0xffffffff;
-        pcVar6 = &DAT_007a9e9c;
+        pcVar6 = &CHAR_p_007a9e9c;
         do {
           pcVar7 = pcVar6;
           if (uVar3 == 0) break;
@@ -82,7 +82,7 @@ st::fn_0044E980
       }
       if (param_2 == CASE_23) {
         uVar3 = 0xffffffff;
-        pcVar6 = &DAT_007a9ea4;
+        pcVar6 = &CHAR_g_007a9ea4;
         do {
           pcVar7 = pcVar6;
           if (uVar3 == 0) break;
@@ -132,7 +132,7 @@ st::fn_0044E980
     pcVar6 = &DAT_007a9e48;
     break;
   case CASE_B:
-    pcVar6 = &DAT_007a9e40;
+    pcVar6 = &CHAR_l_007a9e40;
     break;
   case CASE_C:
     pcVar6 = &DAT_007a9e38;
@@ -165,7 +165,7 @@ st::fn_0044E980
     pcVar6 = &DAT_007a9df4;
     break;
   case CASE_16:
-    pcVar6 = &DAT_007a9dec;
+    pcVar6 = &CHAR_p_007a9dec;
     break;
   case CASE_17:
     pcVar6 = &DAT_007a9de4;
@@ -204,7 +204,7 @@ st::fn_0044E980
     pcVar6 = &DAT_007a9db4;
     break;
   case CASE_23:
-    pcVar6 = &DAT_007a9db0;
+    pcVar6 = &CHAR_g_007a9db0;
     break;
   case CASE_24:
     pcVar6 = &DAT_007a9dac;
@@ -219,7 +219,7 @@ st::fn_0044E980
     pcVar6 = &DAT_007a9d94;
     break;
   case CASE_28:
-    pcVar6 = &DAT_007a9d8c;
+    pcVar6 = &CHAR_f_007a9d8c;
     break;
   default:
     *param_4 = 0;
@@ -248,7 +248,7 @@ st::fn_0044E980
     return;
   }
   uVar3 = 0xffffffff;
-  pcVar6 = &DAT_007a9d88;
+  pcVar6 = &CHAR_0_007a9d88;
   do {
     pcVar7 = pcVar6;
     if (uVar3 == 0) break;
@@ -7870,7 +7870,7 @@ cf_error_exit_0045AEE3:
     break;
   case 0xb:
     uVar17 = 0xffffffff;
-    pcVar36 = &DAT_007a9e40;
+    pcVar36 = &CHAR_l_007a9e40;
     do {
       pcVar35 = pcVar36;
       if (uVar17 == 0) break;
@@ -7903,7 +7903,7 @@ cf_error_exit_0045AEE3:
       pcVar35 = pcVar35 + 1;
       pcVar34 = pcVar34 + 1;
     }
-    pcVar35 = &DAT_007a9e94;
+    pcVar35 = &CHAR_l_007a9e94;
     break;
   case 0xc:
     pcVar36 = local_74;
@@ -7947,7 +7947,7 @@ cf_error_exit_0045AEE3:
     break;
   case 0x16:
     uVar17 = 0xffffffff;
-    pcVar36 = &DAT_007a9dec;
+    pcVar36 = &CHAR_p_007a9dec;
     do {
       pcVar35 = pcVar36;
       if (uVar17 == 0) break;
@@ -7980,7 +7980,7 @@ cf_error_exit_0045AEE3:
       pcVar35 = pcVar35 + 1;
       pcVar34 = pcVar34 + 1;
     }
-    pcVar35 = &DAT_007a9e9c;
+    pcVar35 = &CHAR_p_007a9e9c;
     break;
   case 0x17:
     pcVar36 = local_74;
@@ -8032,7 +8032,7 @@ cf_error_exit_0045AEE3:
     break;
   case 0x23:
     uVar17 = 0xffffffff;
-    pcVar36 = &DAT_007a9db0;
+    pcVar36 = &CHAR_g_007a9db0;
     do {
       pcVar35 = pcVar36;
       if (uVar17 == 0) break;
@@ -8065,7 +8065,7 @@ cf_error_exit_0045AEE3:
       pcVar35 = pcVar35 + 1;
       pcVar34 = pcVar34 + 1;
     }
-    pcVar35 = &DAT_007a9ea4;
+    pcVar35 = &CHAR_g_007a9ea4;
     break;
   case 0x24:
     pcVar36 = local_74;
@@ -8085,7 +8085,7 @@ cf_error_exit_0045AEE3:
     break;
   case 0x28:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9d8c;
+    pcVar35 = &CHAR_f_007a9d8c;
     break;
   default:
     goto switchD_0044fb10_default;
@@ -8131,10 +8131,10 @@ switchD_0044fb10_default:
   }
   switch((int)this_00->field_06CB[5]) {
   case 0:
-    pcVar36 = &DAT_007a9d88;
+    pcVar36 = &CHAR_0_007a9d88;
     break;
   case 1:
-    pcVar36 = &DAT_007a4ffc;
+    pcVar36 = &CHAR_1_007a4ffc;
     break;
   case 2:
     pcVar36 = &DAT_007aa028;
@@ -8152,7 +8152,7 @@ switchD_0044fb10_default:
     pcVar36 = &DAT_007aa018;
     break;
   case 7:
-    pcVar36 = &DAT_007aa014;
+    pcVar36 = &CHAR_7_007aa014;
     break;
   default:
     goto switchD_0044fe4c_default;
@@ -9072,8 +9072,7 @@ switchD_0046166b_caseD_2:
           if ((local_2c[0] <= (int)this->field_080C / 0xc9 + 1) &&
              (iVar6 = st::fn_0040478C(local_20,this->field_0018,&local_24), iVar6 != 2)) {
             if (iVar6 == 0) {
-              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::
-                      st::fn_00403A99((AnonReceiver_004603B0 *)this,
+              iVar7 = st::fn_00403A99((AnonReceiver_004603B0 *)this,
                                          (RecoveredRecord_STBoatC_004838E0 *)local_20);
               if (iVar7 == 1) {
                 st::fn_0040368E(local_20,this->field_0018,&local_24);
@@ -15489,8 +15488,7 @@ cf_common_exit_00472CB0:
              (local_EAX_438 = st::fn_0040478C(local_20,this->field_0018,&local_24),
              local_EAX_438 != 2)) {
             if (local_EAX_438 == 0) {
-              iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::
-                      st::fn_00403A99((AnonReceiver_004603B0 *)this,
+              iVar5 = st::fn_00403A99((AnonReceiver_004603B0 *)this,
                                          (RecoveredRecord_STBoatC_004838E0 *)local_20);
               if (iVar5 == 1) {
                 st::fn_0040368E(local_20,this->field_0018,&local_24);

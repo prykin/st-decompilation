@@ -1329,7 +1329,7 @@ DWORD st::fn_006C3630(LPDWORD lpThreadId)
         if (DVar3 == 0) {
           DVar3 = st::fn_006D4F70(lpParameter + 0x11,lpParameter + 0x13,lpParameter);
           if (DVar3 == 0) {
-            pvVar4 = st::external_00000011((LPSECURITY_ATTRIBUTES)0x0,0,FUN_006c3720,lpParameter,0,
+            pvVar4 = st::external_00000011((LPSECURITY_ATTRIBUTES)0x0,0,st::fn_006C3720,lpParameter,0,
                                   (LPDWORD)&lpThreadId);
             lpParameter[0x21] = (DWORD)pvVar4;
             if (pvVar4 != (HANDLE)0x0) {
@@ -3196,7 +3196,7 @@ void st::fn_006C72F0(AnonShape_006C72F0_54F06289 *param_1)
   if ((iVar6 == param_1->field_006A) && (iVar3 == param_1->field_006E)) {
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
-    iVar5 = st::fn_0072D7F0(local_70.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,local_8);
+    iVar5 = st::fn_0072D7F0(local_70.jumpBuffer,2,st::fn_0072DA21,local_8);
     local_1c = &stack0xffffff7c;
     if (iVar5 == 0) {
       local_8 = 0;
@@ -3257,7 +3257,7 @@ void st::fn_006C7430(AnonShape_006C7430_D1D36538 *param_1)
   g_currentExceptionFrame = &local_70;
   ExceptionList = &local_14;
   local_8 = st::fn_0072D7F0
-                      (local_70.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
+                      (local_70.jumpBuffer,2,st::fn_0072DA21,0xffffffff);
   local_1c = &stack0xffffff7c;
   if (local_8 == 0) {
     if (param_1->field_0072 == nullptr) {
@@ -3769,7 +3769,7 @@ void st::fn_006C7EA0(AnonPointee_MReportTy_0073 *param_1,undefined4 param_2,unde
   local_10 = param_1;
   local_8 = (uint)param_5;
   local_c = param_2;
-  st::fn_006D8260(param_3,param_4,FUN_006c7ee0,&local_10);
+  st::fn_006D8260(param_3,param_4,st::fn_006C7EE0,&local_10);
   return;
 }
 
@@ -8352,7 +8352,7 @@ LAB_006cf37b:
             if (iVar5 < 0) {
               iVar5 = 0;
             }
-            local_8c = FUN_006da080(param_1,(uint *)pAVar13,(int)param_3,local_90,iVar5,pbVar2,iVar4
+            local_8c = st::fn_006DA080(param_1,(uint *)pAVar13,(int)param_3,local_90,iVar5,pbVar2,iVar4
                                     ,uVar8,local_58,local_54,param_13);
           }
           else if (uVar10 == 1) {
@@ -8365,7 +8365,7 @@ LAB_006cf37b:
               local_8 = 2;
               iVar5 = *(int *)(iVar11 + 0xbc) + 7;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              FUN_006d8a60((uint *)pAVar13,(int)param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,
+              st::fn_006D8A60((uint *)pAVar13,(int)param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,
                            local_58,(int)local_54,
                            (undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
                            *(uint *)(iVar11 + 0x60),*(AnonShape_006D8A60_CD460E10 **)(iVar11 + 100),
@@ -8378,7 +8378,7 @@ LAB_006cf37b:
             }
             else {
               local_8 = 3;
-              FUN_006d86e0(pAVar13,(int)param_3,*(AnonShape_006D86E0_768BB816 **)&pAVar6->field_0x6,
+              st::fn_006D86E0(pAVar13,(int)param_3,*(AnonShape_006D86E0_768BB816 **)&pAVar6->field_0x6,
                            iVar4,uVar8,local_58,(uint)local_54,(byte)*(undefined4 *)(iVar11 + 0x60),
                            (char)*(undefined4 *)(iVar11 + 100));
             }
@@ -8451,7 +8451,7 @@ LAB_006cf8ee:
     local_8 = 0xffffffff;
   }
   else if (uVar10 == 2) {
-    local_28 = FUN_006da080(param_1,(uint *)param_2,(int)param_3,0,0,(byte *)param_5,iVar5,uVar14,
+    local_28 = st::fn_006DA080(param_1,(uint *)param_2,(int)param_3,0,0,(byte *)param_5,iVar5,uVar14,
                             uVar8,pbVar2,param_13);
   }
   else if (uVar10 == 1) {
@@ -8462,7 +8462,7 @@ LAB_006cf8ee:
       }
       local_8 = 5;
       iVar7 = *(int *)(iVar11 + 0xbc) + 7;
-      FUN_006d8a60((uint *)param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,uVar8,(int)pbVar2,
+      st::fn_006D8A60((uint *)param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,uVar8,(int)pbVar2,
                    (undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
                    *(uint *)(iVar11 + 0x60),*(AnonShape_006D8A60_CD460E10 **)(iVar11 + 100),
                    *(undefined **)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
@@ -8472,7 +8472,7 @@ LAB_006cf8ee:
     }
     else {
       local_8 = 6;
-      FUN_006d86e0(param_2,(int)param_3,param_5,iVar5,uVar14,uVar8,(uint)pbVar2,
+      st::fn_006D86E0(param_2,(int)param_3,param_5,iVar5,uVar14,uVar8,(uint)pbVar2,
                    (byte)*(undefined4 *)(iVar11 + 0x60),(char)*(undefined4 *)(iVar11 + 100));
     }
     goto LAB_006cf8ee;

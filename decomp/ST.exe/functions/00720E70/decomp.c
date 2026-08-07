@@ -41,9 +41,9 @@ void __thiscall FUN_00720e70(void *this,int param_1,int param_2)
         cVar1 = *pcVar10;
         pcVar10 = pcVar10 + 1;
       } while (cVar1 != '\0');
-      pcVar10 = PTR_DAT_007f0afc;
+      pcVar10 = PTR_CHAR___007f0afc;
       if ((iVar6 != -2) && (pcVar10 = pcVar8, (STField<byte>(this,0x20) & 0x20) != 0)) {
-        pcVar10 = PTR_DAT_007f0b00;
+        pcVar10 = PTR_CHAR___007f0b00;
       }
       iVar4 = FUN_007111c0(STField<void *>(this,0x214),pcVar10);
       iVar6 = local_c;
@@ -94,7 +94,7 @@ cf_break_loop_00720F4E:
         }
         else {
           pvVar3 = STField<void *>(this,0x214);
-          uVar7 = FUN_00710fb0(pvVar3,PTR_DAT_007f0b00);
+          uVar7 = FUN_00710fb0(pvVar3,PTR_CHAR___007f0b00);
           sVar2 = *(short *)(STField<int>(pvVar3,0x9a) + 0x6a + (uVar7 & 0xffff) * 10);
         }
         iVar5 = *(int *)(STField<int>(this,0x214) + 0x58) + (int)sVar2;

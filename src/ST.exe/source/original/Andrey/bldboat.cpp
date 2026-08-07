@@ -393,7 +393,7 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
   if (SVar1 < 0xb203) {
     if (SVar1 == MESS_SHARED_B202) {
       st::fn_00401CE4
-                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,thunk_FUN_004ef5f0);
+                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,st::fn_00402E7D);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }

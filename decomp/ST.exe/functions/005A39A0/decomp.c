@@ -54,7 +54,7 @@ FSGSTy::sub_005A39A0
     }
   }
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_007cc58c;
+  pcVar8 = &CHAR___007cc58c;
   do {
     pcVar10 = pcVar8;
     if (uVar6 == 0) break;

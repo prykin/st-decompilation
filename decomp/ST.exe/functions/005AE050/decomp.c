@@ -36,7 +36,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   char *pcVar19;
   char *pcVar20;
   char *pcVar21;
-  short *psVar23;
+  short *psVar22;
   InternalExceptionFrame local_100;
   InternalExceptionFrame local_bc;
   InternalExceptionFrame local_78;
@@ -45,7 +45,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   cMf32 *local_14;
   ChooseMapTy *local_10;
   int local_c;
-  undefined1 *local_8;
+  char *local_8;
   char *pcVar19_mgB;
 
   local_78.previous = g_currentExceptionFrame;
@@ -261,8 +261,15 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       }
       g_dArray_0080C4CB =
            (DArrayTy *)Library::Ourlib::MFSARR::mfSarLoad(pcVar10,PTR_s_OBJECTIVES_0079c074,0);
-      memset(&DAT_0080ed16, 0, 0x104); /* compiler bulk-zero initialization */
-      local_8 = &DAT_0080ed16;
+      pcVar9 = &CHAR_00h_0080ed16;
+      for (iVar15 = 0x41; iVar15 != 0; iVar15 = iVar15 + -1) {
+        pcVar9[0] = '\0';
+        pcVar9[1] = '\0';
+        pcVar9[2] = '\0';
+        pcVar9[3] = '\0';
+        pcVar9 = pcVar9 + 4;
+      }
+      local_8 = &CHAR_00h_0080ed16;
       puVar7 = cMf32::RecGet(pcVar10,0xc,PTR_s_MISSION_0079c064,(int *)&local_8,0);
       pcVar10 = local_14;
       if (puVar7 == nullptr) {
@@ -326,13 +333,13 @@ LAB_005ae53a:
   FUN_006e6080(pCVar18,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar11);
   pSVar5 = pCVar18->field_1A5B;
   if (pSVar5->field_02E6 != nullptr) {
-    psVar23 = local_34;
+    psVar22 = local_34;
     for (iVar17 = 6; iVar17 != 0; iVar17 = iVar17 + -1) {
-      psVar23[0] = 0;
-      psVar23[1] = 0;
-      psVar23 = psVar23 + 2;
+      psVar22[0] = 0;
+      psVar22[1] = 0;
+      psVar22 = psVar22 + 2;
     }
-    *psVar23 = 0;
+    *psVar22 = 0;
     local_34[0] = (-(ushort)(iVar15 != 0) & 2) - 1;
     local_34[1] = local_34[0];
     MMsgTy::StatePanel(pSVar5->field_02E6,(int)local_34);

@@ -89,7 +89,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   *(undefined4 *)&this_01->field_0x2c = 0;
   FUN_006e6080(this_01,2,this_01->field_01B5[0],(undefined4 *)&this_01->field_0x18);
   uVar9 = 0xffffffff;
-  pcVar12 = &DAT_00807680;
+  pcVar12 = &CHAR_00h_00807680;
   do {
     pcVar15 = pcVar12;
     if (uVar9 == 0) break;
@@ -129,7 +129,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   memmove(pcVar15, pcVar12, uVar9); /* compiler REP MOVS byte copy */
   uVar10 = 0;
   uVar9 = 0xffffffff;
-  pcVar12 = (char *)&DAT_00807ddd;
+  pcVar12 = &CHAR_00h_00807ddd;
   do {
     pcVar15 = pcVar12;
     if (uVar9 == 0) break;
@@ -195,7 +195,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   memmove(pcVar15, pcVar12, uVar9); /* compiler REP MOVS byte copy */
   uVar10 = 0;
   uVar9 = 0xffffffff;
-  pcVar12 = &DAT_007c72d8;
+  pcVar12 = &CHAR___007c72d8;
   do {
     pcVar15 = pcVar12;
     if (uVar9 == 0) break;
@@ -220,7 +220,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   memmove(pcVar15, pcVar12, uVar9); /* compiler REP MOVS byte copy */
   uVar10 = 0;
   uVar9 = 0xffffffff;
-  pcVar12 = PTR_DAT_0079acf4;
+  pcVar12 = PTR_CHAR___0079acf4;
   do {
     pcVar15 = pcVar12;
     if (uVar9 == 0) break;
@@ -349,7 +349,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   local_8 = uVar9;
   if (uVar9 == 0) {
     if (this_01->field_01A4 != CASE_3) goto LAB_0053325d;
-    Library::DKW::TBL::FUN_006b6020(this_01->field_01F1,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(this_01->field_01F1,0,&CHAR_00h_008016a0);
     uVar10 = this_01->field_01B5[1];
     this_01->field_0028 = 0x33;
     *(DArrayTy **)&this_01->field_0x2c = this_01->field_01F1;

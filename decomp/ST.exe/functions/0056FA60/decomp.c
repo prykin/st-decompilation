@@ -148,7 +148,7 @@ switchD_0056fad2_caseD_6105:
         FUN_006e4b80(pSVar11,(int)g_startSystem_0081176C);
       }
       uVar26 = 0xffffffff;
-      pcVar14 = &DAT_008016a0;
+      pcVar14 = &CHAR_00h_008016a0;
       do {
         pcVar24 = pcVar14;
         if (uVar26 == 0) break;

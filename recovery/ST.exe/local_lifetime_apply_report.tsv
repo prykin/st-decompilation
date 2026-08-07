@@ -328,7 +328,7 @@ function_address	original_name	merge_group	anchor_address	anchor_kind	proposal_i
 006800A0	pbVar6	1	00680129	typed_copy	91c23df1e5b6eff1ab1ceb6a97fdc5570e824b6998507a6fa5673312c7574d76	preserved	unchanged proposal was rejected by fresh-decompile verification on the previous run
 006800A0	pbVar6	3	00680196	typed_copy	ce81333043ffd2ba2c7ccb4d7f8043098ce630a49bda3ac78354d8d0d4a70e20	preserved	unchanged proposal was rejected by fresh-decompile verification on the previous run
 006836C0	pbVar5	1	006836F6	typed_copy	c039d1be20bd16d7abc3a928e708fd2b41dca4289fae1804c0e80edc9fdebab0	preserved	unchanged proposal was rejected by fresh-decompile verification on the previous run
-00683C70	piVar22	4	0068A771	typed_copy	c932c86af34e9e707558bc0816d004903f86f4157ca97ec50fecad882f383879	preserved	unchanged proposal was rejected by fresh-decompile verification on the previous run
+00683C70	piVar22	4	0068A771	typed_copy	c69638091e3cc334a9d72363ef8eb0c54101e863c2773a2437d79e62eb4ca4a6	preserved	unchanged proposal was rejected by fresh-decompile verification on the previous run
 00683C70	uVar6	16	0068A4D6	call_return	8fad63069e0b9460a821ca296ec3b92c54831e9747c838d676b4a0c8bb64ffdc	disabled	apply=0
 00683C70	uVar6	17	00689A57	call_return	d9dceea4b1179f0e976231b1e94726479dadc25dbc03bbc3a326c563cf33d1b4	disabled	apply=0
 00683C70	uVar6	18	00689D7E	call_return	e3dfb6a247d2c422f1424a85c1a068937e9d5547208a3b4cb4575d6acfc61bfa	disabled	apply=0
@@ -571,7 +571,7 @@ function_address	original_name	merge_group	anchor_address	anchor_kind	proposal_i
 004E4F30	uVar2	0	004E5063	call_return	7fd8b75aea19e4594ac0b82f9233075ff3660b4eb0e46287fb20fe8ede2bc053	unchanged	anchor lifetime already has the proposed type
 004E91E0	uVar6	0	004E9292	call_return	1033ff54e7519b2159bcb1576a35d8b9e85ce0d06bbae3d0331b99cddb06ad55	unchanged	anchor lifetime already has the proposed type
 004E96C0	uVar2	0	004E9780	call_return	f98d50c439dfd99c777e3b684a53b681b37d1041c518dce4065d4c40c8134e42	unchanged	anchor lifetime already has the proposed type
-00533D10	pcVar26	3	005342AD	call_return	e9a035ed7b6afc999b74fda185e0e6fb4e9f378916507388eea5c1c51c2879c4	conflict	Stack-based variable must have firstUseOffset of 0
+00533D10	pcVar25	3	005342AD	call_return	f18629ece6554af3b9682b801775985198831a5287b7e19e53ca5780932567bb	conflict	Stack-based variable must have firstUseOffset of 0
 00538690	local_18c	1	0053874E	typed_copy	b0bb87f6b2c5568c8951ea687c6deaf0b3e30eb74047e29d8c9c86ab6ebadee9	unchanged	anchor lifetime already has the proposed type
 0055F410	local_1b8	1	0055F5C7	typed_copy	d3d3b50cad6a688a1059ae85b602555fbf5c7167589d1396ad06d3603969641d	unchanged	anchor lifetime already has the proposed type
 0055F410	local_6c	1	00560849	call_return	30ea7a8fb8b16ebd6eac8a4c2bf96a6a79ae89bd0f22ba79e9882d98cd924da0	unchanged	anchor lifetime already has the proposed type

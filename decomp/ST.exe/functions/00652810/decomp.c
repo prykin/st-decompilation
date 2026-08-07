@@ -424,8 +424,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 (int)local_10->vtable);
+                                              thunk_FUN_0064d0e0(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,(int)local_10->vtable);
                                             }
                                             else {
                                               pAVar20 = (AnonShape_0065DA10_8B0AA883 *)
@@ -470,8 +470,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 (int)local_10->vtable);
+                                              thunk_FUN_0064d0e0(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,(int)local_10->vtable);
                                             }
                                             else {
                                               pAVar20 = (AnonShape_0065DA10_8B0AA883 *)
@@ -516,8 +516,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 (int)local_10->vtable);
+                                              thunk_FUN_0064d0e0(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,(int)local_10->vtable);
                                             }
                                             else {
                                               local_17c = (void *)thunk_FUN_00423300((int)pSVar15);
@@ -565,8 +565,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             pSVar15 = thunk_FUN_0042b760((char)pDVar25->flags,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 pDVar25->flags);
+                                              thunk_FUN_0064d0e0(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,pDVar25->flags);
                                             }
                                             else {
                                               thunk_FUN_00424530(pSVar15,(uint)local_158);
@@ -598,8 +598,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             pSVar15 = thunk_FUN_0042b760((char)pDVar25->flags,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 pDVar25->flags);
+                                              thunk_FUN_0064d0e0(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,pDVar25->flags);
                                             }
                                             else {
                                               thunk_FUN_00424620(pSVar15,(uint)local_158);
@@ -631,8 +631,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 (int)local_10->vtable);
+                                              thunk_FUN_0064d0e0(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,(int)local_10->vtable);
                                             }
                                             else {
                                               local_17c = (void *)thunk_FUN_00423300((int)pSVar15);
@@ -692,8 +692,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             pSVar15 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
                                                                          (ushort)local_15c);
                                             if (pSVar15 == nullptr) {
-                                              thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar32,
-                                                                 (int)local_10->vtable);
+                                              thunk_FUN_0064d0e0(this_00,-0xaa,&CHAR_00h_008016a0,
+                                                                 uVar32,(int)local_10->vtable);
                                             }
                                             else {
                                               iVar37 = thunk_FUN_00423300((int)pSVar15);
@@ -738,7 +738,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               pAVar38 = local_10->vtable;
-                                              pcVar8_mg1D = &DAT_008016a0;
+                                              pcVar8_mg1D = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006577ae:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg1D,uVar16,
@@ -818,7 +818,7 @@ LAB_006577ae:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               pAVar38 = local_10->vtable;
-                                              pcVar8_mg1C = &DAT_008016a0;
+                                              pcVar8_mg1C = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657a41:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg1C,uVar16,
@@ -890,7 +890,7 @@ LAB_00657a41:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               pAVar38 = local_10->vtable;
-                                              pcVar8_mg1B = &DAT_008016a0;
+                                              pcVar8_mg1B = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006578fe:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg1B,uVar16,
@@ -968,7 +968,7 @@ LAB_006578fe:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg19 = &DAT_008016a0;
+                                              pcVar8_mg19 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657bce:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg19,uVar16,
@@ -1017,7 +1017,7 @@ LAB_00657bce:
                                               uStack_4c = (undefined1)local_13c;
                                               pcVar21 = local_138;
                                               if (local_138 == nullptr) {
-                                                pcVar21 = &DAT_008016a0;
+                                                pcVar21 = &CHAR_00h_008016a0;
                                               }
                                               Library::MSVCRT::_strncpy(&cStack_4b,pcVar21,0xe);
                                               AiFltClassTy::GetAiMess(local_10,local_68);
@@ -1053,7 +1053,7 @@ LAB_00657bce:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg18 = &DAT_008016a0;
+                                              pcVar8_mg18 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657ccf:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg18,uVar16,
@@ -1111,7 +1111,7 @@ LAB_00657ccf:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg17 = &DAT_008016a0;
+                                              pcVar8_mg17 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657dd9:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg17,uVar16,
@@ -1169,7 +1169,7 @@ LAB_00657dd9:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg16 = &DAT_008016a0;
+                                              pcVar8_mg16 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657f1c:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg16,uVar16,
@@ -1241,7 +1241,7 @@ LAB_00657f1c:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg15 = &DAT_008016a0;
+                                              pcVar8_mg15 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_0065806e:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg15,uVar16,
@@ -1311,7 +1311,7 @@ LAB_0065806e:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg14 = &DAT_008016a0;
+                                              pcVar8_mg14 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658177:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg14,uVar16,
@@ -1369,7 +1369,7 @@ LAB_00658177:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg13 = &DAT_008016a0;
+                                              pcVar8_mg13 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658b70:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg13,uVar16,
@@ -1449,7 +1449,7 @@ LAB_00658b70:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg11 = &DAT_008016a0;
+                                              pcVar8_mg11 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658d01:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg11,uVar16,
@@ -1489,7 +1489,7 @@ LAB_00658d01:
                                               uStack_51 = (undefined1)((uint)local_150 >> 0x18);
                                               pcVar21 = local_148;
                                               if (local_148 == nullptr) {
-                                                pcVar21 = &DAT_008016a0;
+                                                pcVar21 = &CHAR_00h_008016a0;
                                               }
                                               Library::MSVCRT::_strncpy
                                                         ((char *)&local_4a,pcVar21,0xe);
@@ -1536,7 +1536,7 @@ LAB_00658d01:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg10 = &DAT_008016a0;
+                                              pcVar8_mg10 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658e8e:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg10,uVar16,
@@ -1616,7 +1616,7 @@ LAB_00658e8e:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgF = &DAT_008016a0;
+                                              pcVar8_mgF = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658fc8:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgF,uVar16,
@@ -1687,7 +1687,7 @@ LAB_00658fc8:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgE = &DAT_008016a0;
+                                              pcVar8_mgE = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006582b3:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgE,uVar16,
@@ -1761,7 +1761,7 @@ LAB_006582b3:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgD = &DAT_008016a0;
+                                              pcVar8_mgD = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658416:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgD,uVar16,
@@ -1838,7 +1838,7 @@ LAB_00658416:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgC = &DAT_008016a0;
+                                              pcVar8_mgC = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658543:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgC,uVar16,
@@ -1906,7 +1906,7 @@ LAB_00658543:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgB = &DAT_008016a0;
+                                              pcVar8_mgB = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00658670:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgB,uVar16,
@@ -1974,7 +1974,7 @@ LAB_00658670:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mgA = &DAT_008016a0;
+                                              pcVar8_mgA = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006587e2:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mgA,uVar16,
@@ -2052,7 +2052,7 @@ LAB_006587e2:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg9 = &DAT_008016a0;
+                                              pcVar8_mg9 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006588eb:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg9,uVar16,
@@ -2110,7 +2110,7 @@ LAB_006588eb:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg8 = &DAT_008016a0;
+                                              pcVar8_mg8 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006589fe:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg8,uVar16,
@@ -2172,7 +2172,7 @@ LAB_006589fe:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg7 = &DAT_008016a0;
+                                              pcVar8_mg7 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00659143:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg7,uVar16,
@@ -2255,7 +2255,7 @@ LAB_00659143:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg6 = &DAT_008016a0;
+                                              pcVar8_mg6 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006594ec:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg6,uVar16,
@@ -2333,7 +2333,7 @@ LAB_006594ec:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg5 = &DAT_008016a0;
+                                              pcVar8_mg5 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00659640:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg5,uVar16,
@@ -2410,7 +2410,7 @@ LAB_00659640:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg4 = &DAT_008016a0;
+                                              pcVar8_mg4 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00659785:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg4,uVar16,
@@ -2485,7 +2485,7 @@ LAB_00659785:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg3 = &DAT_008016a0;
+                                              pcVar8_mg3 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_006598ca:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg3,uVar16,
@@ -2560,7 +2560,7 @@ LAB_006598ca:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg1 = &DAT_008016a0;
+                                              pcVar8_mg1 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_0065937a:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg1,uVar16,
@@ -2666,7 +2666,7 @@ LAB_0065937a:
                                             uVar16 = uVar32;
                                             if (pSVar15 == nullptr) {
                                               dVar39 = local_8->flags;
-                                              pcVar8_mg0 = &DAT_008016a0;
+                                              pcVar8_mg0 = &CHAR_00h_008016a0;
                                               iVar37 = -0xaa;
 LAB_00659a1c:
                                               thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg0,uVar16,
@@ -3859,7 +3859,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x17:
                                     if (local_160 == nullptr) {
-                                      thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      thunk_FUN_0064d0e0(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) =
@@ -3869,7 +3869,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x2d:
                                     if (local_160 == nullptr) {
-                                      thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      thunk_FUN_0064d0e0(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) =
@@ -3901,7 +3901,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x17:
                                     if (local_160 == nullptr) {
-                                      thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      thunk_FUN_0064d0e0(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       (&DAT_0080e43b)[(int)pDStack_164] =
@@ -3910,7 +3910,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x2d:
                                     if (local_160 == nullptr) {
-                                      thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      thunk_FUN_0064d0e0(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       (&DAT_0080e43b)[(int)pDStack_164] =
@@ -3940,7 +3940,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x17:
                                     if (local_160 == nullptr) {
-                                      thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      thunk_FUN_0064d0e0(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       (&this_00->field_052F)[(int)pDStack_164] =
@@ -3950,7 +3950,7 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x2d:
                                     if (local_160 == nullptr) {
-                                      thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
+                                      thunk_FUN_0064d0e0(this_00,-0x67,&CHAR_00h_008016a0,uVar32,-1);
                                     }
                                     else {
                                       (&this_00->field_052F)[(int)pDStack_164] =
@@ -4579,8 +4579,8 @@ LAB_00653bb7:
                                       if (((char)local_15c->flags != '\0') &&
                                          ((DAT_008087a0 == '\x03' || (DAT_008087a0 == '\b')))) {
                                         Library::MSVCRT::FUN_0072e730
-                                                  (&DAT_0080ef1e,nullptr,local_384,nullptr,
-                                                   nullptr);
+                                                  ((byte *)&CHAR_00h_0080ef1e,nullptr,local_384,
+                                                   nullptr,nullptr);
                                         Library::MSVCRT::__makepath
                                                   (&DAT_0080c632,nullptr,(char *)local_384,
                                                    (char *)local_15c,nullptr);
@@ -4675,16 +4675,16 @@ LAB_006540b9:
                                       DAT_0080e43a = STPiece<0,1>(local_138);
                                       if (DAT_008087a0 == '\x03') {
                                         Library::MSVCRT::FUN_0072e730
-                                                  (&DAT_0080ef1e,nullptr,local_484,nullptr,
-                                                   nullptr);
+                                                  ((byte *)&CHAR_00h_0080ef1e,nullptr,local_484,
+                                                   nullptr,nullptr);
                                         Library::MSVCRT::__makepath
                                                   ((char *)&DAT_0080f33a,nullptr,
                                                    (char *)local_484,(char *)local_158,nullptr);
-                                        wsprintfA(&DAT_0080e323,"%s%s",&DAT_00807784,
+                                        wsprintfA(&DAT_0080e323,"%s%s",&CHAR_00h_00807784,
                                                   &DAT_0080f33a);
                                       }
                                       else if (DAT_008087a0 == '\b') {
-                                        wsprintfA(&DAT_0080e323,"%s%s",&DAT_00807784,
+                                        wsprintfA(&DAT_0080e323,"%s%s",&CHAR_00h_00807784,
                                                   local_158);
                                       }
                                       break;
@@ -5573,7 +5573,7 @@ LAB_006559d6:
                                         goto LAB_006559d6;
                                       }
                                       pAVar38 = local_10->vtable;
-                                      pcVar8_mg3D = &DAT_008016a0;
+                                      pcVar8_mg3D = &CHAR_00h_008016a0;
                                       iVar37 = -0xaa;
 LAB_006559e3:
                                       thunk_FUN_0064d0e0(this_00,iVar37,pcVar8_mg3D,uVar16,
@@ -5846,7 +5846,7 @@ LAB_00659aae:
         DArrayDestroy(local_180);
       }
       local_180 = nullptr;
-      thunk_FUN_0064d0e0(local_188,iVar7,&DAT_008016a0,local_14,-1);
+      thunk_FUN_0064d0e0(local_188,iVar7,&CHAR_00h_008016a0,local_14,-1);
     }
   }
   return;

@@ -51,8 +51,8 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
     if ((this_00->field_0066 == '\x01') &&
        (this_00->field_0067 = 0, (&this_00->field_0347)[(byte)this_00->field_006A]->count != 0)) {
       local_8 = nullptr;
-      wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\%s",&DAT_00807680,PTR_s_SAVEGAME__0079c0d4,
-                &DAT_00807ddd,PTR_s_PL_LOG_0079c0d8);
+      wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\%s",&CHAR_00h_00807680,
+                PTR_s_SAVEGAME__0079c0d4,&CHAR_00h_00807ddd,PTR_s_PL_LOG_0079c0d8);
       local_98.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_98;
       iVar5 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0);

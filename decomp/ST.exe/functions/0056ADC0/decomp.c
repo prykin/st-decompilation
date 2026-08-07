@@ -187,7 +187,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   pSVar16 = local_c;
   if (local_EAX_613 == 0) {
     puVar1 = &local_c->field_0x60;
-    puVar2 = &local_c->field_7D1A;
+    puVar2 = (byte *)&local_c->field_7D1A;
     wsprintfA((LPSTR)puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,"INTER");
     g_cMf32_00806780 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
     PTR_00806784 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806780);
@@ -508,7 +508,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         memmove(pcVar18, pcVar17, uVar14); /* compiler REP MOVS byte copy */
         uVar15 = 0;
         uVar14 = 0xffffffff;
-        pcVar17 = &DAT_007ca0b8;
+        pcVar17 = &CHAR___007ca0b8;
         do {
           pcVar18 = pcVar17;
           if (uVar14 == 0) break;
@@ -1010,7 +1010,7 @@ switchD_0056b4ce_caseD_57:
         memmove(pcVar18, pcVar17, uVar14); /* compiler REP MOVS byte copy */
         uVar15 = 0;
         uVar14 = 0xffffffff;
-        pcVar17 = &DAT_007ca0b8;
+        pcVar17 = &CHAR___007ca0b8;
         do {
           pcVar18 = pcVar17;
           if (uVar14 == 0) break;

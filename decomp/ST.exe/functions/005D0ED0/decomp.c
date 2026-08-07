@@ -59,7 +59,7 @@ SettMapMTy::ChangePlayerList
         }
         element_1f84->element = param_1;
         if (param_5 == nullptr) {
-          param_5 = &DAT_008016a0;
+          param_5 = &CHAR_00h_008016a0;
         }
         uVar6 = 0xffffffff;
         do {

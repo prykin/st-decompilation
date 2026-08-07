@@ -35,7 +35,6 @@ address	aggregate_id	status	detail
 00807570	indexed_global_candidate	disabled	apply=0
 008087C7	bulk_initialized_record_array	unchanged	desired aggregate already present
 00808A4F	binary_relation_matrix	conflict	Could not create Data at address 00808a4f
-00808AB0	indexed_global_candidate	disabled	apply=0
 00808AF0	indexed_global_candidate	disabled	apply=0
 00808AF4	indexed_global_candidate	disabled	apply=0
 0080C943	indexed_global_candidate	disabled	apply=0
@@ -49,7 +48,6 @@ address	aggregate_id	status	detail
 00811A98	indexed_global_candidate	disabled	apply=0
 00811A9C	indexed_global_candidate	disabled	apply=0
 00811AA0	indexed_global_candidate	disabled	apply=0
-00811AA4	indexed_global_candidate	disabled	apply=0
 00811AE4	indexed_global_candidate	disabled	apply=0
 00811AEC	indexed_global_candidate	disabled	apply=0
 00811C80	indexed_global_candidate	disabled	apply=0

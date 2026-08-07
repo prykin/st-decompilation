@@ -53,7 +53,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   memmove(pcVar12, pcVar9, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar9 = &DAT_00807680;
+  pcVar9 = &CHAR_00h_00807680;
   do {
     pcVar12 = pcVar9;
     if (uVar6 == 0) break;
@@ -93,7 +93,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   memmove(pcVar12, pcVar9, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar9 = &DAT_00807680;
+  pcVar9 = &CHAR_00h_00807680;
   do {
     pcVar12 = pcVar9;
     if (uVar6 == 0) break;

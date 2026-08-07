@@ -118,7 +118,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       iVar5 = ~uVar4 - 1;
       if (0x40 < iVar5) {
         pcVar8 = acStack_18d + ~uVar4;
-        Library::MSVCRT::_strncpy(pcVar8,&DAT_007c7274,3);
+        Library::MSVCRT::_strncpy(pcVar8,&CHAR___007c7274,3);
         iVar5 = 0x40;
       }
       uVar4 = 0xffffffff;
@@ -186,7 +186,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       pcVar14 = pcVar10;
       memmove(pcVar14, pcVar9, uVar6); /* compiler REP MOVS byte copy */
       uVar6 = 0;
-      Library::MSVCRT::_strncpy(pcVar10,&DAT_007c7274,3);
+      Library::MSVCRT::_strncpy(pcVar10,&CHAR___007c7274,3);
       iVar5 = 0x40;
     }
     pcVar10 = pcVar10 + iVar5;
@@ -266,7 +266,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       pcVar14 = pcVar10;
       memmove(pcVar14, pcVar9, uVar6); /* compiler REP MOVS byte copy */
       uVar6 = 0;
-      Library::MSVCRT::_strncpy(pcVar10,&DAT_007c7274,3);
+      Library::MSVCRT::_strncpy(pcVar10,&CHAR___007c7274,3);
       iVar5 = 0x36;
     }
     pcVar10 = pcVar10 + iVar5;
@@ -431,7 +431,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
           bVar15 = (uVar6 - 1 | 0xfffffff8) == 0xffffffff;
         }
         if (bVar15) {
-          Library::MSVCRT::FUN_00733f70(g_int_00854EB4,&DAT_007c8ff4);
+          Library::MSVCRT::FUN_00733f70(g_int_00854EB4,&CHAR_0Ah_007c8ff4);
         }
       } while ((int)uVar4 < DAT_00858ddc);
     }
@@ -441,7 +441,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       bVar15 = (uVar4 - 1 | 0xfffffff8) == 0xffffffff;
     }
     if (!bVar15) {
-      Library::MSVCRT::FUN_00733f70(g_int_00854EB4,&DAT_007c8ff4);
+      Library::MSVCRT::FUN_00733f70(g_int_00854EB4,&CHAR_0Ah_007c8ff4);
     }
     Library::MSVCRT::FUN_00733d60(g_int_00854EB4);
   }

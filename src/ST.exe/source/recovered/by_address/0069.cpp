@@ -2963,7 +2963,7 @@ int st::fn_00698DE0(undefined1 *param_1,uint param_2,int param_3,undefined4 para
 
   puVar3 = param_1;
   local_8 = 0;
-  st::fn_00730810(param_1,param_2,10,thunk_FUN_00698db0);
+  st::fn_00730810(param_1,param_2,10,st::fn_00404A93);
   iVar2 = *(int *)(param_1 + param_2 * 10 + -4);
   uVar5 = 0;
   uVar4 = param_2;

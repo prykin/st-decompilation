@@ -13,9 +13,8 @@ void __thiscall FUN_005508f0(void *this,int param_1)
   int *piVar6;
   char cVar7;
   uint uVar8;
-  undefined4 *puVar9;
+  char *pcVar9;
   undefined4 *puVar10;
-  char *pcVar11;
   uint local_1c;
   uint local_18;
   uint local_14;
@@ -62,10 +61,10 @@ void __thiscall FUN_005508f0(void *this,int param_1)
       do {
         module = g_hINSTANCE_00807618;
         if ((*(int *)(pcVar5 + -6) == param_1) && (*pcVar5 == '\x01')) {
-          pcVar11 = pcVar5 + -0x46;
+          pcVar9 = pcVar5 + -0x46;
           *pcVar5 = '\0';
           pcVar2 = LoadResourceString(0x4273,module);
-          wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar2,pcVar11);
+          wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar2,pcVar9);
           if (g_popUp_008016D8 != nullptr) {
             thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
           }
@@ -92,24 +91,24 @@ void __thiscall FUN_005508f0(void *this,int param_1)
         }
       }
       if (uVar1 != uVar3 - 1) {
-        puVar9 = &DAT_00808b4c + uVar1 * 0x27;
-        puVar10 = &DAT_00808ab0 + uVar1 * 0x27;
+        pcVar5 = (char *)(&DAT_00808b4c + uVar1 * 0x27);
+        pcVar9 = &CHAR_00h_00808ab0 + uVar1 * 0x9c;
         for (uVar3 = ((uVar3 - uVar1) + -1) * 0x27 & 0x3fffffff; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *puVar10 = *puVar9;
-          puVar9 = puVar9 + 1;
-          puVar10 = puVar10 + 1;
+          *(undefined4 *)pcVar9 = *(undefined4 *)pcVar5;
+          pcVar5 = pcVar5 + 4;
+          pcVar9 = pcVar9 + 4;
         }
         for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *(undefined1 *)puVar10 = *(undefined1 *)puVar9;
-          puVar9 = (undefined4 *)((int)puVar9 + 1);
-          puVar10 = (undefined4 *)((int)puVar10 + 1);
+          *pcVar9 = *pcVar5;
+          pcVar5 = pcVar5 + 1;
+          pcVar9 = pcVar9 + 1;
         }
       }
-      puVar9 = (undefined4 *)
-               ((int)g_bulkInitializedRecords_008087C7 + (uint)DAT_00808aaf * 0x9c + 0x24d);
+      puVar10 = (undefined4 *)
+                ((int)g_bulkInitializedRecords_008087C7 + (uint)DAT_00808aaf * 0x9c + 0x24d);
       for (iVar4 = 0x27; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar9 = 0;
-        puVar9 = puVar9 + 1;
+        *puVar10 = 0;
+        puVar10 = puVar10 + 1;
       }
       DAT_00808aaf = DAT_00808aaf - 1;
       if (g_playPanel_008016E4 != nullptr) {

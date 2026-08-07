@@ -78,8 +78,12 @@ owner or address page without pretending that this was their original file.
 Every internal implementation is emitted as `st::fn_ADDRESS`. The address is
 the stable identity; recovered names and owners remain beside it as comments
 and in the input metadata. Direct calls are rewritten only when the caller's
-address-authoritative callee set resolves one target. External call identities
-from `call_relations.jsonl` receive `st::external_ID` declarations with their
+address-authoritative callee set resolves one target. Address-coded
+`FUN_ADDRESS`, `sub_ADDRESS`, and `thunk_FUN_ADDRESS` spellings also resolve by
+their encoded exported entry address. This remains valid when a recovered owner
+is stale or the qualifier is line-wrapped; the generated spelling is always the
+unqualified address identity `st::fn_ADDRESS`. External call identities from
+`call_relations.jsonl` receive `st::external_ID` declarations with their
 resolved signatures. Ambiguous overload/thunk spellings remain in the audit
 instead of being selected by name.
 
@@ -95,6 +99,14 @@ bytes are coalesced without changing their extent. Recovered enum domains use
 exact-width scalar aliases plus their globally unanimous exported constants;
 this is a compilation boundary, not a claim that the original enum declaration
 has been recovered.
+
+Global declarations use the exported datatype's exact display-name/path pair.
+An `int[5]` or record array is therefore emitted as an array, not silently
+collapsed to one `undefined4`. A display name is accepted only when all matching
+datatype paths render the same declaration; ambiguous or missing types stay in
+`audit/issues.jsonl`. Generated code also registers exact typed global records
+as field-access roots, so an already exported global structure receives the
+same mechanically exact unnamed-field views as a typed local receiver.
 
 Image-backed globals are declarations only. The generator never fabricates a
 zero initializer or copies the proprietary image into the repository.
@@ -148,8 +160,9 @@ before layout assertions or a real link are meaningful.
 It intentionally does not link. A full object build is expected to fail today
 and is now useful evidence rather than a missing-infrastructure failure. The
 current Apple Clang C++17 probe, with a limit of 64 diagnostics per translation
-unit, passes 61 of 318 units and records 5,590 errors, 5,588 of them mapped to a
-function address. The cap makes this a monotonic comparison baseline, not the
+unit, passes 69 of 318 units and records 4,762 errors, 4,757 of them mapped to a
+function address. This is 828 fewer diagnostics than the preceding 5,590-error
+baseline. The cap makes this a monotonic comparison baseline, not the
 uncapped total of all errors. Remaining diagnostics principally identify:
 
 - unmaterialized `field_0x...` views over anonymous storage;

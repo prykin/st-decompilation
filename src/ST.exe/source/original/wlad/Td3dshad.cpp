@@ -1441,10 +1441,8 @@ joined_r0x004286bb:
       iVar10 = iVar9;
     }
     if ((iVar6 <= iVar10) &&
-       ((local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::
-                    st::fn_00403288(this,iVar6,iVar10,-1), puVar2 = local_1c, local_30 != 0 ||
-        (local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::
-                    st::fn_00403288(this,iVar6,iVar10,1), puVar2 = local_1c, local_30 != 0))))
+       ((local_30 = st::fn_00403288(this,iVar6,iVar10,-1), puVar2 = local_1c, local_30 != 0 ||
+        (local_30 = st::fn_00403288(this,iVar6,iVar10,1), puVar2 = local_1c, local_30 != 0))))
     goto cf_common_join_004286D0;
     iVar6 = param_5 + 1;
     if (param_5 + 1 < iVar7) {

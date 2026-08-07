@@ -7177,7 +7177,14 @@ struct AppClassTy {
     undefined4 field_002C; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined4 field_0030; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined4 field_0034; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
-    byte _unknown_0038[5175];
+    undefined1 field_0x38; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0039[4353];
+    undefined1 field_0x113a; // exact unnamed-byte view referenced by exported code
+    byte _unknown_113B[143];
+    undefined1 field_0x11ca; // exact unnamed-byte view referenced by exported code
+    byte _unknown_11CB[612];
+    undefined1 field_0x142f; // exact unnamed-byte view referenced by exported code
+    byte _unknown_1430[63];
     undefined1 field_146F; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=4
     byte _unknown_1470[14986];
     undefined4 field_4EFA; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
@@ -7295,7 +7302,7 @@ struct BldBoatPanelTy {
     undefined4 field_0060; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_0064; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_0068; // [STClassLayoutApplier] reads=8, writes=1; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy; typed_cross_class_recovery=5; type_evidence=/int <= 004EF320 [this+0x68] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 004EF320 [this+0x68] passed to FUN_006b4170 parameter param_1
-    char field_006C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/char <= 004EEA40 exact address of [this+0x6C] passed to Library::Ourlib::MFRLOAD::mfRLoad parameter text; 004EEA40 exact address of [this+0x6C] passed to USER32.DLL::wsprintfA parameter param_1; 004EEA40 exact address of [this+0x6C] passed to cMf32::RecGet parameter text; 004EF320 exact address of [this+0x6C] passed to USER32.DLL::wsprintfA parameter param_1; 004EF320 exact address of [this+0x6C] passed to ccFntTy::WrStr parameter resourceString
+    char field_006C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 004EEA40 exact address of [this+0x6C] passed to Library::Ourlib::MFRLOAD::mfRLoad parameter text; 004EEA40 exact address of [this+0x6C] passed to USER32.DLL::wsprintfA parameter param_1; 004EEA40 exact address of [this+0x6C] passed to cMf32::RecGet parameter text; 004EF320 exact address of [this+0x6C] passed to USER32.DLL::wsprintfA parameter param_1; 004EF320 exact address of [this+0x6C] passed to ccFntTy::WrStr parameter resourceString
     byte _unknown_006D[261];
     undefined2 field_0172; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_0174; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
@@ -7412,7 +7419,7 @@ struct BldObjPanelTy {
     undefined4 field_0060; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_0064; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_0068; // [STClassLayoutApplier] reads=4, writes=1; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
-    char field_006C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/char <= 004F05C0 exact address of [this+0x6C] passed to USER32.DLL::wsprintfA parameter param_1; 004F05C0 exact address of [this+0x6C] passed to cMf32::RecGet parameter text
+    char field_006C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 004F05C0 exact address of [this+0x6C] passed to USER32.DLL::wsprintfA parameter param_1; 004F05C0 exact address of [this+0x6C] passed to cMf32::RecGet parameter text
     byte _unknown_006D[261];
     undefined2 field_0172; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_0174; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
@@ -8279,7 +8286,7 @@ struct ChooseMapTy {
     undefined1 field_1CA3; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
     undefined1 field_1CA4; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
     byte _unknown_1CA5[258];
-    char field_1DA7; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/char <= 005AB300 exact address of [this+0x1DA7] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005B0BA0 exact address of [this+0x1DA7] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005B0BA0 exact address of [this+0x1DA7] passed to Library::MSVCRT::__makepath parameter _Path
+    char field_1DA7; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005AB300 exact address of [this+0x1DA7] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005B0BA0 exact address of [this+0x1DA7] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005B0BA0 exact address of [this+0x1DA7] passed to Library::MSVCRT::__makepath parameter _Path
     undefined1 field_1DA8; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
     byte _unknown_1DA9[518];
     undefined1 field_1FAF; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/byte|/char; type_evidence=/byte <= 005AE050 exact address of [this+0x1FAF] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2; 005AFD00 exact address of [this+0x1FAF] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2 | /char <= 005AFD00 exact address of [this+0x1FAF] passed to KERNEL32.DLL::FindFirstFileA parameter lpFileName
@@ -9202,7 +9209,7 @@ struct InfocPanelTy {
     undefined1 field_0184; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     undefined4 field_0185; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     ccFntTy *field_0189; // [STClassLayoutApplier] reads=12, writes=1; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=pointer:/ccFntTy <= 005206F0 [this+0x189] used as receiver of ccFntTy::SetSurf; 005206F0 [this+0x189] used as receiver of ccFntTy::WrStr; 00520B50 [this+0x189] used as receiver of ccFntTy::SetSurf; 00520B50 [this+0x189] used as receiver of ccFntTy::WrStr
-    char field_018D; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/char <= 005206F0 exact address of [this+0x18D] passed to USER32.DLL::wsprintfA parameter param_1; 005206F0 exact address of [this+0x18D] passed to ccFntTy::WrStr parameter resourceString; 00520B50 exact address of [this+0x18D] passed to USER32.DLL::wsprintfA parameter param_1; 00520B50 exact address of [this+0x18D] passed to ccFntTy::WrStr parameter resourceString; 00520D10 exact address of [this+0x18D] passed to USER32.DLL::wsprintfA parameter param_1; 00520D10 exact address of [this+0x18D] passed to ccFntTy::WrStr parameter resourceString
+    char field_018D; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005206F0 exact address of [this+0x18D] passed to USER32.DLL::wsprintfA parameter param_1; 005206F0 exact address of [this+0x18D] passed to ccFntTy::WrStr parameter resourceString; 00520B50 exact address of [this+0x18D] passed to USER32.DLL::wsprintfA parameter param_1; 00520B50 exact address of [this+0x18D] passed to ccFntTy::WrStr parameter resourceString; 00520D10 exact address of [this+0x18D] passed to USER32.DLL::wsprintfA parameter param_1; 00520D10 exact address of [this+0x18D] passed to ccFntTy::WrStr parameter resourceString
     byte _unknown_018E[29];
     undefined1 field_01AB; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     undefined1 field_01AC; // [STClassLayoutApplier] reads=4, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
@@ -10644,7 +10651,7 @@ struct PanelTy {
     undefined4 field_0060; // [STClassLayoutApplier] reads=16, writes=2; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|/uint; typed_cross_class_recovery=9; type_evidence=/int <= 005383EB CMP/JL establishes /int through a field-derived value in PanelTy::DonePanel; 005383EB CMP/JL through typed class pointer in PanelTy::DonePanel | /uint <= 005381B0 exact address of [this+0x60] passed to FUN_006b2330 parameter param_2
     uint field_0064; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=1; type_evidence=/uint <= 005381B0 [this+0x64] passed to FUN_006b2330 parameter param_3
     undefined4 field_0068; // [STClassLayoutApplier] reads=18, writes=2; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/ushort; typed_cross_class_recovery=10; type_evidence=/int <= 00538BA0 [this+0x68] passed to ccFntTy::SetSurf parameter param_1; 00538DB0 [this+0x68] passed to ccFntTy::SetSurf parameter param_1 | pointer:/ushort <= 005381B0 [this+0x68] passed to FUN_006b2330 parameter param_7
-    char field_006C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/char <= 00538690 exact address of [this+0x6C] passed to USER32.DLL::wsprintfA parameter param_1; 00538690 exact address of [this+0x6C] passed to cMf32::RecGet parameter text
+    char field_006C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 00538690 exact address of [this+0x6C] passed to USER32.DLL::wsprintfA parameter param_1; 00538690 exact address of [this+0x6C] passed to cMf32::RecGet parameter text
     undefined4 CreateBut(undefined4 param_1, int param_2, int param_3, int param_4, int param_5, int param_6, byte param_7, LPSTR param_8, undefined4 param_9, undefined4 param_10, short param_11, ushort param_12, undefined4 param_13, char *param_14, undefined4 param_15);
     void DonePanel();
     int GetMessage(STMessage *message);
@@ -11133,7 +11140,7 @@ struct SIDTy {
     ushort *field_1CC8; // [STClassLayoutApplier] reads=10, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC8|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA|pointer:/byte|pointer:/int|pointer:/ushort; typed_cross_class_recovery=7; type_evidence=/int <= 005D9470 [this+0x1CC8] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CC8 <= consistent nested dereferences through [this+0x1CC8] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E6FB0_BC494FEA <= 005D9470 [this+0x1CC8] passed to FUN_006b5b10 parameter param_1 | pointer:/byte <= 005D9470 [this+0x1CC8] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_5 | pointer:/int <= 005D9470 [this+0x1CC8] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 005D985B dynamic 2-byte dereference of field-derived address in SIDTy::GetMessage
     DArrayTy *field_1CCC; // [STClassLayoutApplier] reads=30, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CCC|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=19; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CCC <= consistent nested dereferences through [this+0x1CCC] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005D7F80 [this+0x1CCC] passed to FUN_006b5570 parameter param_1; 005D8BF0 [this+0x1CCC] passed to FUN_006b5570 parameter param_1; 005D8BF0 [this+0x1CCC] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 005D8C4F generic pointer-return assignment in SIDTy::PrepFiles
     DArrayTy *field_1CD0; // [STClassLayoutApplier] reads=18, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CD0|pointer:/SubmarineTitans/Recovered/DArrayTy; typed_cross_class_recovery=12; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CD0 <= consistent nested dereferences through [this+0x1CD0] | pointer:/SubmarineTitans/Recovered/DArrayTy <= 005D7DD3 generic pointer-return assignment in SIDTy::InitSID; 005D7F80 [this+0x1CD0] passed to FUN_006b5570 parameter param_1; 005D9470 [this+0x1CD0] passed to Library::DKW::TBL::FUN_006b6020 parameter param_1
-    undefined1 field_1CD4; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/byte|/char; typed_cross_class_recovery=1; type_evidence=/byte <= 005D8BF0 exact address of [this+0x1CD4] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2 | /char <= 005D8450 exact address of [this+0x1CD4] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005D8BF0 exact address of [this+0x1CD4] passed to KERNEL32.DLL::FindFirstFileA parameter lpFileName; 005D8BF0 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1; 005D9250 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1; 005D9470 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1
+    char field_1CD4; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; typed_cross_class_recovery=1; type_evidence=/byte <= 005D8BF0 exact address of [this+0x1CD4] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2 | /char <= 005D8450 exact address of [this+0x1CD4] passed to KERNEL32.DLL::FindFirstChangeNotificationA parameter lpPathName; 005D8BF0 exact address of [this+0x1CD4] passed to KERNEL32.DLL::FindFirstFileA parameter lpFileName; 005D8BF0 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1; 005D9250 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1; 005D9470 exact address of [this+0x1CD4] passed to USER32.DLL::wsprintfA parameter param_1
     byte _unknown_1CD5[259];
     int GetMessage(STMessage *message);
     void CreateCtrls();
@@ -11518,19 +11525,19 @@ struct STAppC {
     byte _unknown_76F7[259];
     undefined1 field_0x77fa; // exact unnamed-byte view referenced by exported code
     byte _unknown_77FB[259];
-    char field_78FE; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/char <= 0056ADC0 exact address of [this+0x78FE] passed to USER32.DLL::wsprintfA parameter param_1; 0056DB80 exact address of [this+0x78FE] passed to Library::MSVCRT::_strncpy parameter _Dest
+    char field_78FE; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 0056ADC0 exact address of [this+0x78FE] passed to USER32.DLL::wsprintfA parameter param_1; 0056DB80 exact address of [this+0x78FE] passed to Library::MSVCRT::_strncpy parameter _Dest
     byte _unknown_78FF[258];
     undefined1 field_7A01; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined1 field_0x7a02; // exact unnamed-byte view referenced by exported code
     byte _unknown_7A03[259];
-    char field_7B06; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/char <= 0056ADC0 exact address of [this+0x7B06] passed to KERNEL32.DLL::CreateFileA parameter lpFileName; 00571400 exact address of [this+0x7B06] passed to KERNEL32.DLL::CreateFileA parameter lpFileName
+    char field_7B06; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 0056ADC0 exact address of [this+0x7B06] passed to KERNEL32.DLL::CreateFileA parameter lpFileName; 00571400 exact address of [this+0x7B06] passed to KERNEL32.DLL::CreateFileA parameter lpFileName
     byte _unknown_7B07[259];
     undefined1 field_0x7c0a; // exact unnamed-byte view referenced by exported code
     byte _unknown_7C0B[259];
     undefined4 field_7D0E; // [STClassLayoutApplier] reads=2, writes=12; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=7
     ushort *field_7D12; // [STClassLayoutApplier] reads=6, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=5; type_evidence=pointer:/ushort <= 0056DFA1 generic pointer-return assignment in STAppC::StartGame
     int field_7D16; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=2; type_evidence=/int <= 0056DB80 [this+0x7D16] assigned 0056DB80 return from cMf32::RecGetOrigLen
-    undefined1 field_7D1A; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/byte|/char; typed_cross_class_recovery=1; type_evidence=/byte <= 0056ADC0 exact address of [this+0x7D1A] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2; 0056D370 exact address of [this+0x7D1A] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2; 0056DB80 exact address of [this+0x7D1A] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2 | /char <= 0056ADC0 exact address of [this+0x7D1A] passed to FUN_00683c70 parameter lpFileName; 0056ADC0 exact address of [this+0x7D1A] passed to USER32.DLL::wsprintfA parameter param_1; 0056D370 exact address of [this+0x7D1A] passed to USER32.DLL::wsprintfA parameter param_1; 0056DB80 exact address of [this+0x7D1A] passed to Library::MSVCRT::_strncpy parameter _Source; 0056DB80 exact address of [this+0x7D1A] passed to USER32.DLL::wsprintfA parameter param_1; 0056DB80 exact address of [this+0x7D1A] passed to cLoadingTy::DrawLineCR parameter resourceString
+    char field_7D1A; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; typed_cross_class_recovery=1; type_evidence=/byte <= 0056ADC0 exact address of [this+0x7D1A] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2; 0056D370 exact address of [this+0x7D1A] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2; 0056DB80 exact address of [this+0x7D1A] passed to Library::Ourlib::MF32INT::FUN_006f0ec0 parameter param_2 | /char <= 0056ADC0 exact address of [this+0x7D1A] passed to FUN_00683c70 parameter lpFileName; 0056ADC0 exact address of [this+0x7D1A] passed to USER32.DLL::wsprintfA parameter param_1; 0056D370 exact address of [this+0x7D1A] passed to USER32.DLL::wsprintfA parameter param_1; 0056DB80 exact address of [this+0x7D1A] passed to Library::MSVCRT::_strncpy parameter _Source; 0056DB80 exact address of [this+0x7D1A] passed to USER32.DLL::wsprintfA parameter param_1; 0056DB80 exact address of [this+0x7D1A] passed to cLoadingTy::DrawLineCR parameter resourceString
     byte _unknown_7D1B[2099];
     undefined4 field_854E; // [STClassLayoutApplier] reads=0, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
     undefined4 field_8552; // [STClassLayoutApplier] reads=0, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
@@ -11796,7 +11803,7 @@ struct STBoatC {
     int field_0018; // [STClassLayoutApplier] reads=202, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=2x10|4x192; concrete_type_already_present; cfg_field_recovery=68; typed_cross_class_recovery=116; type_evidence=/int <= 0048D130 [this+0x18] passed to FUN_004e1690 parameter param_1; 0048D930 [this+0x18] passed to FUN_004e1690 parameter param_1; 0048DBA0 [this+0x18] passed to FUN_004e2000 parameter param_2
     undefined4 field_001C; // [STClassLayoutApplier] reads=123, writes=240; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=147; typed_cross_class_recovery=194
     undefined4 field_0020; // [STClassLayoutApplier] reads=3, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
-    undefined4 field_0024; // [STClassLayoutApplier] reads=295, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x73|2x13|4x209; cfg_field_recovery=58; typed_cross_class_recovery=191; type_evidence=/char <= 0045058C MOVSX establishes /char; 00450623 MOVSX establishes /char
+    undefined4 field_0024; // [STClassLayoutApplier] reads=295, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x73|2x13|4x209; dominant_char_pointer_role_over_neutral_byte_consumers; cfg_field_recovery=58; typed_cross_class_recovery=191; type_evidence=/char <= 0045058C MOVSX establishes /char; 00450623 MOVSX establishes /char
     undefined4 field_0028; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined4 field_002C; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined2 field_0030; // [STClassLayoutApplier] reads=28, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=3; typed_cross_class_recovery=19
@@ -11897,7 +11904,7 @@ struct STBoatC {
     byte _unknown_02B8[2];
     undefined4 field_02BA; // [STClassLayoutApplier] reads=1, writes=0; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
     byte _unknown_02BE[1];
-    undefined1 field_02BF; // [STClassLayoutApplier] reads=85, writes=0; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/byte|/char; cfg_field_recovery=41; typed_cross_class_recovery=44; type_evidence=/byte <= 004773BB MOVZX establishes /byte; 00477A29 MOVZX establishes /byte | /char <= 004703AF CMP/JL establishes /char through CFG-recovered field flow in STBoatC::ToDok; 00470A12 CMP/JL establishes /char through CFG-recovered field flow in STBoatC::ToDok; 00474ECB CMP/JL establishes /char through CFG-recovered field flow in STBoatC::WaitLoad; 00475754 CMP/JL establishes /char through CFG-recovered field flow in STBoatC::BackWaitLoad; 0047A283 CMP/JL establishes /char through CFG-recovered field flow in STBoatC::Teleport; 0047AFF6 CMP/JL establishes /char through CFG-recovered field flow in STBoatC::Teleport; 0047D48B CMP/JL establishes /char through CFG-recovered field flow in STBoatC::Annih; 0047DD6A CMP/JL establishes /char through CFG-recovered field flow in STBoatC::BackAnnih
+    char field_02BF; // [STClassLayoutApplier] reads=85, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; cfg_field_recovery=41; typed_cross_class_recovery=44; type_evidence=/byte <= 004773BB MOVZX establishes /byte; 00477A29 MOVZX establishes /byte | /char <= 004703AF CMP/JL establishes /char through CFG-recovered field flow in STBoatC::ToDok; 00470A12 CMP/JL establishes /char through CFG-recovered field flow in STBoatC::ToDok; 00474ECB CMP/JL establishes /char through CFG-recovered field flow in STBoatC::WaitLoad; 00475754 CMP/JL establishes /char through CFG-recovered field flow in STBoatC::BackWaitLoad; 0047A283 CMP/JL establishes /char through CFG-recovered field flow in STBoatC::Teleport; 0047AFF6 CMP/JL establishes /char through CFG-recovered field flow in STBoatC::Teleport; 0047D48B CMP/JL establishes /char through CFG-recovered field flow in STBoatC::Annih; 0047DD6A CMP/JL establishes /char through CFG-recovered field flow in STBoatC::BackAnnih
     undefined4 field_02C0; // [STClassLayoutApplier] reads=2, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=4
     undefined4 field_02C4; // [STClassLayoutApplier] reads=2, writes=46; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=16; typed_cross_class_recovery=24
     byte _unknown_02C8[4];
@@ -13205,7 +13212,7 @@ struct STGameObjC {
     undefined4 field_0018; // [STClassLayoutApplier] reads=26, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=23
     undefined4 field_001C; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     uint field_0020; // [STClassLayoutApplier] reads=91, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=90; type_evidence=/uint <= 00419E4F CMP/JA establishes /uint through a field-derived value in STGameObjC::SetSelfCheckFlag; 00419E4F CMP/JA through typed class pointer in STGameObjC::SetSelfCheckFlag; 00419E60 CMP/JA establishes /uint through a field-derived value in STGameObjC::SetSelfCheckFlag; 00419E60 CMP/JA through typed class pointer in STGameObjC::SetSelfCheckFlag; 0041A09C CMP/JA establishes /uint through a field-derived value in STGameObjC::SetSelfCheckFlag; 0041A09C CMP/JA through typed class pointer in STGameObjC::SetSelfCheckFlag; 0041A0AD CMP/JA establishes /uint through a field-derived value in STGameObjC::SetSelfCheckFlag; 0041A0AD CMP/JA through typed class pointer in STGameObjC::SetSelfCheckFlag; 0041A6CD CMP/JA establishes /uint through a field-derived value in STGameObjC::ResetSelfCheckFlag; 0041A6CD CMP/JA through typed class pointer in STGameObjC::ResetSelfCheckFlag; 0041A6DE CMP/JA establishes /uint through a field-derived value in STGameObjC::ResetSelfCheckFlag; 0041A6DE CMP/JA through typed class pointer in STGameObjC::ResetSelfCheckFlag; 0041B049 CMP/JA through typed class pointer in STGameObjC::GetMessage; 0041B05A CMP/JA through typed class pointer in STGameObjC::GetMessage
-    undefined4 field_0024; // [STClassLayoutApplier] reads=148, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x110|2x1|4x41; cfg_field_recovery=32; typed_cross_class_recovery=118; type_evidence=/char <= 0044D7C1 MOVSX establishes /char; 0044D822 MOVSX establishes /char; 0044D874 MOVSX establishes /char; 0044D8C3 MOVSX establishes /char; 0044D975 MOVSX establishes /char; 0044D9DA MOVSX establishes /char; 0044DA2E MOVSX establishes /char; 0044DA99 MOVSX establishes /char; 0044DB6E MOVSX establishes /char; 0044DC02 MOVSX establishes /char; 0044DC80 MOVSX establishes /char; 0044DD48 MOVSX establishes /char; 0044DD9D MOVSX establishes /char
+    undefined4 field_0024; // [STClassLayoutApplier] reads=148, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x110|2x1|4x41; dominant_char_pointer_role_over_neutral_byte_consumers; cfg_field_recovery=32; typed_cross_class_recovery=118; type_evidence=/char <= 0044D7C1 MOVSX establishes /char; 0044D822 MOVSX establishes /char; 0044D874 MOVSX establishes /char; 0044D8C3 MOVSX establishes /char; 0044D975 MOVSX establishes /char; 0044D9DA MOVSX establishes /char; 0044DA2E MOVSX establishes /char; 0044DA99 MOVSX establishes /char; 0044DB6E MOVSX establishes /char; 0044DC02 MOVSX establishes /char; 0044DC80 MOVSX establishes /char; 0044DD48 MOVSX establishes /char; 0044DD9D MOVSX establishes /char
     undefined4 field_0028; // [STClassLayoutApplier] reads=0, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_002C; // [STClassLayoutApplier] reads=3, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=5
     undefined2 field_0030; // [STClassLayoutApplier] reads=11, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=12
@@ -13485,7 +13492,7 @@ struct STGroupBoatC {
     undefined4 field_0018; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     undefined4 field_001C; // [STClassLayoutApplier] reads=6, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
     undefined4 field_0020; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=2
-    char field_0024; // [STClassLayoutApplier] reads=296, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=10; typed_cross_class_recovery=154; type_evidence=/char <= 0049AC5D MOVSX establishes /char; 0049AEFE MOVSX establishes /char; 0049B09D MOVSX establishes /char; 0049D4A3 MOVSX establishes /char; 0049F332 MOVSX establishes /char; 004A017C MOVSX establishes /char; 004A1CF5 MOVSX establishes /char
+    char field_0024; // [STClassLayoutApplier] reads=296, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; cfg_field_recovery=10; typed_cross_class_recovery=154; type_evidence=/char <= 0049AC5D MOVSX establishes /char; 0049AEFE MOVSX establishes /char; 0049B09D MOVSX establishes /char; 0049D4A3 MOVSX establishes /char; 0049F332 MOVSX establishes /char; 004A017C MOVSX establishes /char; 004A1CF5 MOVSX establishes /char
     byte _unknown_0025[2];
     ushort field_0027; // [STClassLayoutApplier] reads=29, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=2; typed_cross_class_recovery=24; type_evidence=/ushort <= 004153C5 CMP/JBE through typed class pointer in STGroupBoatC::Way3DGrpDistribTgt; 004A7BAF CMP/JBE establishes /ushort through CFG-recovered field flow in STGroupBoatC::GetPatrolTask; 004A7BAF CMP/JBE through typed class pointer in STGroupBoatC::GetPatrolTask
     undefined4 field_0029; // [STClassLayoutApplier] reads=170, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=2; typed_cross_class_recovery=123
@@ -13933,7 +13940,7 @@ struct STJellyGunC {
     byte _unknown_009F[52];
     undefined4 field_00D3; // [STClassLayoutApplier] reads=2, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=3
     byte _unknown_00D7[12];
-    char field_00E3; // [STClassLayoutApplier] reads=3, writes=6; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=/char <= 004165F6 MOVSX establishes /char; 004166CF MOVSX establishes /char
+    char field_00E3; // [STClassLayoutApplier] reads=3, writes=6; type_confidence=existing; name_confidence=none; consistent_typed_class_pointer_access; dominant_char_pointer_role_over_neutral_byte_consumers; typed_cross_class_recovery=9; type_evidence=/char <= 004165F6 MOVSX establishes /char; 004166CF MOVSX establishes /char
     undefined4 field_00E4; // [STClassLayoutApplier] reads=1, writes=5; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=6
     byte _unknown_00E8[12];
     undefined4 field_00F4; // [STClassLayoutApplier] reads=1, writes=2; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=3
@@ -15435,7 +15442,7 @@ struct STTorpC {
     undefined4 field_0270; // [STClassLayoutApplier] reads=2, writes=8; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=5; typed_cross_class_recovery=5
     undefined4 field_0274; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
     undefined4 field_0278; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=1; typed_cross_class_recovery=1
-    char field_027C; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=7; typed_cross_class_recovery=7; type_evidence=/char <= 00642C41 CMP/JLE establishes /char through CFG-recovered field flow in STTorpC::GetMessage; 00642C60 CMP/JLE establishes /char through CFG-recovered field flow in STTorpC::GetMessage
+    char field_027C; // [STClassLayoutApplier] reads=8, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; cfg_field_recovery=7; typed_cross_class_recovery=7; type_evidence=/char <= 00642C41 CMP/JLE establishes /char through CFG-recovered field flow in STTorpC::GetMessage; 00642C60 CMP/JLE establishes /char through CFG-recovered field flow in STTorpC::GetMessage
     byte field_027D; // [STClassLayoutApplier] reads=8, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; cfg_field_recovery=5; typed_cross_class_recovery=5; type_evidence=/byte <= 00641577 CMP/JNC establishes /byte through CFG-recovered field flow in STTorpC::GetMessage
     int *field_027E; // [STClassLayoutApplier] reads=1, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=pointer:/int <= 00640868 generic pointer-return assignment in STTorpC::GetMessage; 00640BBC generic pointer-return assignment in STTorpC::GetMessage
     undefined1 field_0282; // [STClassLayoutApplier] reads=4, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; cfg_field_recovery=4; typed_cross_class_recovery=4
@@ -16171,7 +16178,7 @@ struct StartSystemTy {
     ccFntTy *field_0030; // [STClassLayoutApplier] reads=58, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=60
     ccFntTy *field_0034; // [STClassLayoutApplier] reads=180, writes=6; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0034|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4|pointer:/byte|pointer:/ccFntTy|pointer:/ushort; typed_cross_class_recovery=164; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0034 <= consistent nested dereferences through [this+0x34] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 005DD470 [this+0x34] passed to FUN_00710790 parameter param_1; 005DDC70 [this+0x34] passed to FUN_00710790 parameter param_1; 005DE050 [this+0x34] passed to FUN_00710790 parameter param_1; 005DE270 [this+0x34] passed to FUN_00710790 parameter param_1 | pointer:/byte <= 005AE47F dynamic 1-byte dereference of field-derived address in ChooseMapTy::ShowDescription; 005DC272 dynamic 1-byte dereference of field-derived address in StartSystemTy::LoadMapData; 005DC86D dynamic 1-byte dereference of field-derived address in StartSystemTy::SetObjectives | pointer:/ccFntTy <= 005DC050 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC050 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DD470 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DD470 [this+0x34] used as receiver of ccFntTy::WrStr; 005DD850 [this+0x34] used as receiver of ccFntTy::FormSarr; 005DD850 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DE050 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DE050 [this+0x34] used as receiver of ccFntTy::WrStr | pointer:/ushort <= 005AE474 dynamic 2-byte dereference of field-derived address in ChooseMapTy::ShowDescription; 005DC267 dynamic 2-byte dereference of field-derived address in StartSystemTy::LoadMapData; 005DC862 dynamic 2-byte dereference of field-derived address in StartSystemTy::SetObjectives
     HDC__ *field_0038; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/WinDef.h/HDC__ <= 005BD95A generic pointer-return assignment in MReportTy::InitMReport; 005C14EE generic pointer-return assignment in MReportTy::SetCtrl
-    char field_003C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/char <= 005DB4F0 exact address of [this+0x3C] passed to Library::Ourlib::MFIMG::mfImtLoad parameter text; 005DB4F0 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1; 005DC050 exact address of [this+0x3C] passed to Library::DKW::TBL::FUN_006b5aa0 parameter text; 005DC050 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1; 005DC730 exact address of [this+0x3C] passed to Library::DKW::TBL::FUN_006b5aa0 parameter text; 005DC730 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1
+    char field_003C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005DB4F0 exact address of [this+0x3C] passed to Library::Ourlib::MFIMG::mfImtLoad parameter text; 005DB4F0 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1; 005DC050 exact address of [this+0x3C] passed to Library::DKW::TBL::FUN_006b5aa0 parameter text; 005DC050 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1; 005DC730 exact address of [this+0x3C] passed to Library::DKW::TBL::FUN_006b5aa0 parameter text; 005DC730 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1
     byte _unknown_003D[259];
     undefined4 field_0140; // [STClassLayoutApplier] reads=60, writes=7; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=67
     undefined1 field_0x144; // exact unnamed-byte view referenced by exported code
@@ -16437,7 +16444,7 @@ struct AllocationRecord_006684E0 {
     undefined1 field_0x77; // exact unnamed-byte view referenced by exported code
     byte _unknown_0078[103];
     undefined1 field_00DF; // [STAllocationRecordApplier] exact access inside fixed-copy span
-    byte _unknown_00E0[1];
+    undefined1 field_0xe0; // exact unnamed-byte view referenced by exported code
     undefined2 field_00E1; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined2 field_00E3; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined2 field_00E5; // [STAllocationRecordApplier] exact access inside fixed-copy span
@@ -16458,7 +16465,8 @@ struct AllocationRecord_006684E0 {
     undefined1 field_0119; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined4 field_011A; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined2 field_011E; // [STAllocationRecordApplier] exact access inside fixed-copy span
-    byte _unknown_0120[2];
+    undefined1 field_0x120; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0121[1];
     int field_0122; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined4 field_0126; // [STAllocationRecordApplier] exact access inside fixed-copy span
     int field_012A; // [STAllocationRecordApplier] exact access inside fixed-copy span
@@ -16470,9 +16478,13 @@ struct AllocationRecord_006684E0 {
     int field_013B; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined4 field_013F; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined1 field_0143; // [STAllocationRecordApplier] exact access inside fixed-copy span
-    byte _unknown_0144[6];
+    undefined1 field_0x144; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0145[3];
+    undefined1 field_0x148; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0149[1];
     undefined2 field_014A; // [STAllocationRecordApplier] exact access inside fixed-copy span
-    byte _unknown_014C[10];
+    undefined1 field_0x14c; // exact unnamed-byte view referenced by exported code
+    byte _unknown_014D[9];
     undefined1 field_0156; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined2 field_0157; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined2 field_0159; // [STAllocationRecordApplier] exact access inside fixed-copy span
@@ -16480,9 +16492,15 @@ struct AllocationRecord_006684E0 {
     undefined4 field_015F; // [STAllocationRecordApplier] exact access inside fixed-copy span
     byte _unknown_0163[4];
     undefined1 field_0167; // [STAllocationRecordApplier] exact access inside fixed-copy span
-    byte _unknown_0168[6];
+    undefined1 field_0x168; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0169[3];
+    undefined1 field_0x16c; // exact unnamed-byte view referenced by exported code
+    byte _unknown_016D[1];
     undefined2 field_016E; // [STAllocationRecordApplier] exact access inside fixed-copy span
-    byte _unknown_0170[123];
+    undefined1 field_0x170; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0171[3];
+    undefined1 field_0x174; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0175[118];
     uint *field_01EB; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined1 field_0x1ef; // exact unnamed-byte view referenced by exported code
     byte _unknown_01F0[3];
@@ -16522,7 +16540,20 @@ struct AllocationRecord_0067D3B0 {
     byte _unknown_000D[7];
     uint field_0014; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined1 field_0018; // [STAllocationRecordApplier] exact access inside fixed-copy span
-    byte _unknown_0019[169];
+    byte _unknown_0019[84];
+    undefined1 field_0x6d; // exact unnamed-byte view referenced by exported code
+    byte _unknown_006E[3];
+    undefined1 field_0x71; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0072[49];
+    undefined1 field_0xa3; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0xa4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00A5[1];
+    undefined1 field_0xa6; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00A7[1];
+    undefined1 field_0xa8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00A9[1];
+    undefined1 field_0xaa; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00AB[23];
     DArrayTy *field_00C2; // [STAllocationRecordApplier] exact access inside fixed-copy span
     undefined1 field_0xc6; // exact unnamed-byte view referenced by exported code
     byte _unknown_00C7[3];
@@ -18669,258 +18700,287 @@ struct BulkInitializedRecord_008087C7 {
     uint field_0028;
     uint field_002C;
     byte field_0030;
-    byte _unknown_0031[8];
+    undefined1 field_0x31; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0032[3];
+    undefined1 field_0x35; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0036[3];
     byte field_0039;
     byte field_003A;
     byte _unknown_003B[22];
 };
 
 struct PackedRecord_A62x8 {
-    undefined1 field_0000_0; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    int field_0001_1; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    undefined4 field_0005_2; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0009_3; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_000D_4; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_000F_5; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0013_6; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined1 field0_0x0; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    int field1_0x1; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    undefined4 field2_0x5; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field3_0x9; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field4_0xd; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field5_0xf; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field6_0x13; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_0017[8];
-    undefined4 field_001F_15; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0023_16; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0027_17; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    int field_002B_18; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_002F_19; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0033_20; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0037_21; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_003B_22; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_003F_23; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0043_24; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0047_25; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_004B_26; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_004F_27; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0053_28; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0057_29; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_005B_30; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_005F_31; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0063_32; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0067_33; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_006B_34; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_006F_35; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0073_36; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0077_37; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_007B_38; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_007F_39; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0083_40; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0087_41; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_008B_42; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_008F_43; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0093_44; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0097_45; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_009B_46; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_009F_47; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00A3_48; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00A7_49; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00AB_50; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00AF_51; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00B3_52; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00B7_53; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00BB_54; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00BF_55; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00C3_56; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00C7_57; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00CB_58; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00CF_59; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00D3_60; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00D7_61; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00DB_62; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00DF_63; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00E3_64; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00E7_65; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00EB_66; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00EF_67; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00F3_68; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00F7_69; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00FB_70; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_00FF_71; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0103_72; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0107_73; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_010B_74; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_010F_75; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0113_76; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0117_77; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_011B_78; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_011F_79; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0123_80; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0127_81; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_012B_82; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_012F_83; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0133_84; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0137_85; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_013B_86; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_013F_87; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0143_88; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0147_89; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_014B_90; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_014F_91; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0153_92; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0157_93; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_015B_94; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_015F_95; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    undefined4 field_0163_96; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    char field_0167_97; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    undefined4 field15_0x1f; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field16_0x23; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field17_0x27; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    int field18_0x2b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field19_0x2f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field20_0x33; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field21_0x37; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field22_0x3b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field23_0x3f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field24_0x43; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field25_0x47; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field26_0x4b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field27_0x4f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field28_0x53; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field29_0x57; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field30_0x5b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field31_0x5f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field32_0x63; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field33_0x67; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field34_0x6b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field35_0x6f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field36_0x73; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field37_0x77; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field38_0x7b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field39_0x7f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field40_0x83; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field41_0x87; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field42_0x8b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field43_0x8f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field44_0x93; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field45_0x97; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field46_0x9b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field47_0x9f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field48_0xa3; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field49_0xa7; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field50_0xab; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field51_0xaf; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field52_0xb3; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field53_0xb7; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field54_0xbb; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field55_0xbf; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field56_0xc3; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field57_0xc7; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field58_0xcb; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field59_0xcf; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field60_0xd3; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field61_0xd7; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field62_0xdb; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field63_0xdf; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field64_0xe3; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field65_0xe7; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field66_0xeb; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field67_0xef; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field68_0xf3; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field69_0xf7; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field70_0xfb; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field71_0xff; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field72_0x103; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field73_0x107; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field74_0x10b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field75_0x10f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field76_0x113; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field77_0x117; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field78_0x11b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field79_0x11f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field80_0x123; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field81_0x127; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field82_0x12b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field83_0x12f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field84_0x133; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field85_0x137; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field86_0x13b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field87_0x13f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field88_0x143; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field89_0x147; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field90_0x14b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field91_0x14f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field92_0x153; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field93_0x157; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field94_0x15b; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field95_0x15f; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    undefined4 field96_0x163; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    char field97_0x167; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
     byte _unknown_0168[3];
-    undefined2 field_016B_101; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_016D_102; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_0171_103; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0173_104; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0177_105; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_017B_106; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_017D_107; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_0181_108; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0183_109; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined1 field_0187_110; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field101_0x16b; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field102_0x16d; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field103_0x171; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field104_0x173; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field105_0x177; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field106_0x17b; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field107_0x17d; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field108_0x181; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field109_0x183; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined1 field110_0x187; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_0188[3];
-    undefined2 field_018B_114; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_018D_115; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_0191_116; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field114_0x18b; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field115_0x18d; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field116_0x191; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_0193[32];
-    undefined4 field_01B3_149; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined1 field_01B7_150; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; conflicting_scalar_types={/int=1, /uint=2}
+    undefined4 field149_0x1b3; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined1 field150_0x1b7; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; conflicting_scalar_types={/int=1, /uint=2}
     byte _unknown_01B8[3];
-    undefined2 field_01BB_154; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_01BD_155; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_01C1_156; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_01C3_157; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_01C7_158; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_01CB_159; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_01CD_160; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_01D1_161; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_01D3_162; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined1 field_01D7_163; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field154_0x1bb; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field155_0x1bd; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field156_0x1c1; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field157_0x1c3; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field158_0x1c7; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field159_0x1cb; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field160_0x1cd; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field161_0x1d1; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field162_0x1d3; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined1 field163_0x1d7; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_01D8[3];
-    undefined2 field_01DB_167; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_01DD_168; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field167_0x1db; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field168_0x1dd; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_01E1[28];
-    undefined4 field_01FD_197; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field197_0x1fd; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_0201[2];
-    undefined4 field_0203_200; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0207_201; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_020B_202; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_020F_203; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0211_204; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_0215_205; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0217_206; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_021B_207; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_021F_208; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0221_209; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined2 field_0225_210; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field200_0x203; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field201_0x207; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field202_0x20b; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field203_0x20f; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field204_0x211; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field205_0x215; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field206_0x217; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field207_0x21b; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field208_0x21f; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field209_0x221; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined2 field210_0x225; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_0227[128];
-    undefined4 field_02A7_339; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02AB_340; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02AF_341; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02B3_342; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02B7_343; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02BB_344; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02BF_345; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02C3_346; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02C7_347; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02CB_348; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02CF_349; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02D3_350; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02D7_351; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02DB_352; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02DF_353; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02E3_354; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_02E7_355; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    byte _unknown_02EB[20];
-    undefined4 field_02FF_376; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    byte _unknown_0303[16];
-    undefined4 field_0313_393; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    byte _unknown_0317[16];
-    undefined4 field_0327_410; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_032B_411; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field339_0x2a7; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field340_0x2ab; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field341_0x2af; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field342_0x2b3; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field343_0x2b7; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field344_0x2bb; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field345_0x2bf; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field346_0x2c3; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field347_0x2c7; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field348_0x2cb; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field349_0x2cf; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field350_0x2d3; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field351_0x2d7; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field352_0x2db; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field353_0x2df; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field354_0x2e3; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field355_0x2e7; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined1 field_0x2eb; // exact unnamed-byte view referenced by exported code
+    byte _unknown_02EC[3];
+    undefined1 field_0x2ef; // exact unnamed-byte view referenced by exported code
+    byte _unknown_02F0[3];
+    undefined1 field_0x2f3; // exact unnamed-byte view referenced by exported code
+    byte _unknown_02F4[3];
+    undefined1 field_0x2f7; // exact unnamed-byte view referenced by exported code
+    byte _unknown_02F8[3];
+    undefined1 field_0x2fb; // exact unnamed-byte view referenced by exported code
+    byte _unknown_02FC[3];
+    undefined4 field376_0x2ff; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined1 field_0x303; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0304[3];
+    undefined1 field_0x307; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0308[3];
+    undefined1 field_0x30b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_030C[3];
+    undefined1 field_0x30f; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0310[3];
+    undefined4 field393_0x313; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined1 field_0x317; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0318[3];
+    undefined1 field_0x31b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_031C[3];
+    undefined1 field_0x31f; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0320[3];
+    undefined1 field_0x323; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0324[3];
+    undefined4 field410_0x327; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field411_0x32b; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_032F[612];
-    undefined4 field_0593_1024; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    byte _unknown_0597[420];
-    undefined1 field_073B_1445; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined1 field_073C_1446; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1024_0x593; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    byte _unknown_0597[260];
+    undefined1 field_0x69b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_069C[159];
+    undefined1 field1445_0x73b; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined1 field1446_0x73c; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_073D[153];
-    undefined4 field_07D6_1600; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_07DA_1601; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    int field_07DE_1602; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_07E2_1603; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_07E6_1604; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_07EA_1605; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    byte _unknown_07EE[4];
-    undefined4 field_07F2_1610; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    int field_07F6_1611; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    uint field_07FA_1612; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    undefined4 field1600_0x7d6; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1601_0x7da; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    int field1602_0x7de; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field1603_0x7e2; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field1604_0x7e6; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field1605_0x7ea; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    undefined1 field_0x7ee; // exact unnamed-byte view referenced by exported code
+    byte _unknown_07EF[3];
+    undefined4 field1610_0x7f2; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    int field1611_0x7f6; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    uint field1612_0x7fa; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
     byte _unknown_07FE[12];
-    int field_080A_1625; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_080E_1626; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0812_1627; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_0816_1628; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    int field_081A_1629; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    undefined4 field_081E_1630; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0822_1631; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0826_1632; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_082A_1633; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_082E_1634; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    int field1625_0x80a; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field1626_0x80e; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field1627_0x812; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field1628_0x816; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    int field1629_0x81a; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    undefined4 field1630_0x81e; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1631_0x822; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1632_0x826; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1633_0x82a; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1634_0x82e; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_0832[12];
-    undefined4 field_083E_1647; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1647_0x83e; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_0842[16];
-    undefined4 field_0852_1664; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0856_1665; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_085A_1666; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_085E_1667; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1664_0x852; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1665_0x856; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1666_0x85a; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1667_0x85e; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_0862[272];
-    undefined4 field_0972_1940; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0976_1941; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_097A_1942; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_097E_1943; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0982_1944; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0986_1945; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_098A_1946; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_098E_1947; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    DArrayTy *field_0992_1948; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    undefined4 field_0996_1949; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_099A_1950; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_099E_1951; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_09A2_1952; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    int field_09A6_1953; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    undefined4 field_09AA_1954; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_09AE_1955; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    int field_09B2_1956; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    undefined4 field_09B6_1957; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    int field_09BA_1958; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    undefined4 field1940_0x972; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1941_0x976; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1942_0x97a; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1943_0x97e; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1944_0x982; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1945_0x986; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1946_0x98a; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1947_0x98e; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    DArrayTy *field1948_0x992; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    undefined4 field1949_0x996; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1950_0x99a; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1951_0x99e; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1952_0x9a2; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    int field1953_0x9a6; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    undefined4 field1954_0x9aa; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1955_0x9ae; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    int field1956_0x9b2; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    undefined4 field1957_0x9b6; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    int field1958_0x9ba; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
     byte _unknown_09BE[4];
-    undefined4 field_09C2_1963; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_09C6_1964; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    int field_09CA_1965; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    DArrayTy *field_09CE_1966; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    DArrayTy *field_09D2_1967; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    DArrayTy *field_09D6_1968; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    DArrayTy *field_09DA_1969; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    DArrayTy *field_09DE_1970; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    DArrayTy *field_09E2_1971; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    DArrayTy *field_09E6_1972; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    DArrayTy *field_09EA_1973; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    DArrayTy *field_09EE_1974; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    DArrayTy *field_09F2_1975; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
-    undefined4 field_09F6_1976; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_09FA_1977; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_09FE_1978; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0A02_1979; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0A06_1980; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0A0A_1981; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0A0E_1982; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0A12_1983; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0A16_1984; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0A1A_1985; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0A1E_1986; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0A22_1987; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
-    undefined4 field_0A26_1988; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1963_0x9c2; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1964_0x9c6; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    int field1965_0x9ca; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    DArrayTy *field1966_0x9ce; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    DArrayTy *field1967_0x9d2; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    DArrayTy *field1968_0x9d6; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    DArrayTy *field1969_0x9da; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    DArrayTy *field1970_0x9de; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    DArrayTy *field1971_0x9e2; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    DArrayTy *field1972_0x9e6; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    DArrayTy *field1973_0x9ea; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    DArrayTy *field1974_0x9ee; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    DArrayTy *field1975_0x9f2; // [STGlobalRecordApplier] type_confidence=medium; name_confidence=none; existing_generated_field_baseline
+    undefined4 field1976_0x9f6; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1977_0x9fa; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1978_0x9fe; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1979_0xa02; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1980_0xa06; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1981_0xa0a; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1982_0xa0e; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1983_0xa12; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1984_0xa16; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1985_0xa1a; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1986_0xa1e; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1987_0xa22; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field1988_0xa26; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_0A2A[24];
-    undefined4 field_0A42_2013; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
+    undefined4 field2013_0xa42; // [STGlobalRecordApplier] type_confidence=layout; name_confidence=none; stride_relative_memory_access
     byte _unknown_0A46[28];
 };
 
@@ -35150,7 +35210,9 @@ struct AnonShape_GLOBAL_00807598_0C6808FB {
 };
 
 struct AnonShape_GLOBAL_0080759C_9638EF10 {
-    byte _unknown_0000[8];
+    byte _unknown_0000[4];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[3];
     undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
     byte _unknown_0009[2];
     byte field_000B; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
@@ -35173,7 +35235,9 @@ struct AnonShape_GLOBAL_0080759C_9638EF10 {
     undefined4 field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     int *field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/int=1}
-    byte _unknown_0048[1132];
+    byte _unknown_0048[1076];
+    undefined1 field_0x47c; // exact unnamed-byte view referenced by exported code
+    byte _unknown_047D[55];
     HPALETTE field_04B4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/WinDef.h/HPALETTE=1}
 };
 
@@ -35293,7 +35357,8 @@ struct AnonShape_GLOBAL_0081194C_4D1525E6 {
     undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_0010[4];
+    undefined1 field_0x10; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0011[3];
     undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=2}
 };
 
@@ -40986,7 +41051,7 @@ struct TradePanelTy {
     undefined1 field_0184; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     byte *field_0185; // [STClassLayoutApplier] reads=6, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=3; type_evidence=pointer:/byte <= 00551460 [this+0x185] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_5; 00551BA0 [this+0x185] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_5
     ccFntTy *field_0189; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=4; type_evidence=pointer:/ccFntTy <= 00551BA0 [this+0x189] used as receiver of ccFntTy::SetSurf; 00551BA0 [this+0x189] used as receiver of ccFntTy::WrStr; 00551BA0 [this+0x189] used as receiver of ccFntTy::WrTxt
-    char field_018D; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/char <= 00551BA0 exact address of [this+0x18D] passed to USER32.DLL::wsprintfA parameter param_1; 00551BA0 exact address of [this+0x18D] passed to ccFntTy::WrStr parameter resourceString; 00551EC0 exact address of [this+0x18D] passed to USER32.DLL::wsprintfA parameter param_1; 00551EC0 exact address of [this+0x18D] passed to ccFntTy::WrStr parameter resourceString
+    char field_018D; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 00551BA0 exact address of [this+0x18D] passed to USER32.DLL::wsprintfA parameter param_1; 00551BA0 exact address of [this+0x18D] passed to ccFntTy::WrStr parameter resourceString; 00551EC0 exact address of [this+0x18D] passed to USER32.DLL::wsprintfA parameter param_1; 00551EC0 exact address of [this+0x18D] passed to ccFntTy::WrStr parameter resourceString
     byte _unknown_018E[29];
     undefined1 field_0x1ab; // exact unnamed-byte view referenced by exported code
     byte _unknown_01AC[1];
@@ -41056,7 +41121,7 @@ struct UPanelTy {
     undefined4 field_0060; // [STClassLayoutApplier] reads=8, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=4
     byte _unknown_0064[4];
     int field_0068; // [STClassLayoutApplier] reads=14, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=7; type_evidence=/int <= 0053D920 [this+0x68] passed to ccFntTy::SetSurf parameter param_1; 0053DAF0 [this+0x68] passed to ccFntTy::SetSurf parameter param_1
-    char field_006C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; type_evidence=/char <= 0053DEA0 exact address of [this+0x6C] passed to USER32.DLL::wsprintfA parameter param_1; 0053DEA0 exact address of [this+0x6C] passed to cMf32::RecGet parameter text
+    char field_006C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 0053DEA0 exact address of [this+0x6C] passed to USER32.DLL::wsprintfA parameter param_1; 0053DEA0 exact address of [this+0x6C] passed to cMf32::RecGet parameter text
     undefined4 CreateBut(undefined4 param_1, int param_2, int param_3, int param_4, byte param_5, LPSTR param_6, undefined4 param_7, undefined4 param_8, short param_9, ushort param_10, undefined4 param_11, char *param_12, undefined4 param_13, undefined4 param_14);
     undefined4 CreateTab(byte param_1, byte param_2, int param_3, int param_4, uint param_5, uint param_6, int param_7, int param_8, undefined4 param_9, undefined4 param_10);
     void OutProc(int *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, undefined4 param_6, undefined4 param_7, BITMAPINFO *param_8);

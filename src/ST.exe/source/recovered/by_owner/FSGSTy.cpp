@@ -18,7 +18,7 @@ void __thiscall st::fn_0059B820(FSGSTy *this)
   byte bVar1;
   byte *pbVar2;
   LPCSTR pCVar3;
-  byte *pbVar4;
+  char *pcVar4;
   int iVar5;
   bool bVar6;
 
@@ -153,21 +153,21 @@ joined_r0x0059bcb0:
     goto LAB_0059bcb6;
   case CASE_A:
     pbVar2 = this->field_1B0C;
-    pbVar4 = &DAT_00807e1d;
+    pcVar4 = &CHAR_00h_00807e1d;
     do {
       bVar1 = *pbVar2;
-      bVar6 = bVar1 < *pbVar4;
-      if (bVar1 != *pbVar4) {
+      bVar6 = bVar1 < (byte)*pcVar4;
+      if (bVar1 != *pcVar4) {
 LAB_0059bb67:
         iVar5 = (1 - (uint)bVar6) - (uint)(bVar6 != 0);
         goto LAB_0059bb6c;
       }
       if (bVar1 == 0) break;
       bVar1 = pbVar2[1];
-      bVar6 = bVar1 < pbVar4[1];
-      if (bVar1 != pbVar4[1]) goto LAB_0059bb67;
+      bVar6 = bVar1 < (byte)pcVar4[1];
+      if (bVar1 != pcVar4[1]) goto LAB_0059bb67;
       pbVar2 = pbVar2 + 2;
-      pbVar4 = pbVar4 + 2;
+      pcVar4 = pcVar4 + 2;
     } while (bVar1 != 0);
     iVar5 = 0;
 LAB_0059bb6c:
@@ -803,7 +803,7 @@ st::fn_005A39A0
     }
   }
   uVar6 = 0xffffffff;
-  pcVar8 = &DAT_007cc58c;
+  pcVar8 = &CHAR___007cc58c;
   do {
     pcVar10 = pcVar8;
     if (uVar6 == 0) break;

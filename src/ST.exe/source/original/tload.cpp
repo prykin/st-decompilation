@@ -746,7 +746,7 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
   if (iVar3 == 0) {
     pAVar3 = (AnonShape_005751F0_0FFC949A *)
              st::fn_006EF640
-                       ((int)param_1,text,g_cMf32_00806760,g_cMf32_00806760,thunk_FUN_00428a10);
+                       ((int)param_1,text,g_cMf32_00806760,g_cMf32_00806760,st::fn_00403DFF);
     local_1c = pAVar3;
     if (g_cLoading_00802A58 != nullptr) {
       iVar6 = DAT_007f4e00;

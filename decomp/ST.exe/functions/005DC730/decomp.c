@@ -108,9 +108,9 @@ LAB_005dc828:
     pcVar7_mg1 = LoadResourceString(0x2347,g_hINSTANCE_00807618);
     wsprintfA(puVar5,"&2 %s:",pcVar7_mg1);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,puVar5);
-    wsprintfA(puVar5,"&0 %s",&DAT_0080c3c3);
+    wsprintfA(puVar5,"&0 %s",&CHAR_00h_0080c3c3);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,puVar5);
-    Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,&DAT_007c3b5c);
+    Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,&CHAR___007c3b5c);
     uVar7 = _DAT_008087c4 & 0xffff;
     uVar10 = (uint)DAT_008087c2;
     pcVar7_mg2 = LoadResourceString(0x2344,g_hINSTANCE_00807618);
@@ -120,11 +120,11 @@ LAB_005dc828:
     pcVar7_mg3 = LoadResourceString(0x2345,g_hINSTANCE_00807618);
     wsprintfA(puVar5,"&2 %s: &0%d",pcVar7_mg3,uVar7);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,puVar5);
-    Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,&DAT_007c3b5c);
+    Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,&CHAR___007c3b5c);
     pcVar7_mg4 = LoadResourceString(0x2346,g_hINSTANCE_00807618);
     wsprintfA(puVar5,"&2 %s:",pcVar7_mg4);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,puVar5);
-    Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,&DAT_007c3b5c);
+    Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,&CHAR___007c3b5c);
     pDVar3 = local_c;
     if (local_c != nullptr) {
       if (local_c->elementSize != 0) {

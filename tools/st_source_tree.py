@@ -30,6 +30,18 @@ SOURCE_FILE_RE = re.compile(
 )
 IDENTIFIER_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 ADDRESS_NAME_RE = re.compile(r"\b_?(?:DAT|PTR)_[0-9A-Fa-f]{8}\b")
+ADDRESS_CODED_FUNCTION_RE = re.compile(
+    r"(?<![A-Za-z0-9_])"
+    r"(?:(?:[A-Za-z_][A-Za-z0-9_]*)::\s*)*"
+    r"(?:(?:thunk_)?FUN|sub)_[0-9A-Fa-f]{8}"
+    r"(?![A-Za-z0-9_])"
+)
+QUALIFIED_ADDRESS_SYMBOL_RE = re.compile(
+    r"(?<![A-Za-z0-9_])"
+    r"(?:(?:[A-Za-z_][A-Za-z0-9_]*)::\s*)+"
+    r"(st::fn_[0-9A-Fa-f]{8})"
+    r"(?![A-Za-z0-9_])"
+)
 RESERVED = {
     "alignas", "alignof", "and", "and_eq", "asm", "auto", "bitand",
     "bitor", "bool", "break", "case", "catch", "char", "char16_t",
@@ -250,8 +262,17 @@ class TypeEmitter:
         self.skipped_paths: set[str] = set()
         self.reported_missing_paths: set[str] = set()
         self.required_gap_fields: dict[str, set[int]] = defaultdict(set)
+        self.global_record_paths_by_name: dict[str, set[str]] = defaultdict(set)
         self.materialized_gap_fields = 0
         self._prepare_names()
+        self.paths_by_display_name: dict[str, set[str]] = defaultdict(set)
+        for record in self.records:
+            for spelling in {
+                str(record.get("display_name") or ""),
+                str(record.get("name") or ""),
+            }:
+                if spelling:
+                    self.paths_by_display_name[spelling].add(str(record["path"]))
         self.record_paths_by_name: dict[str, set[str]] = defaultdict(set)
         for record in self.records:
             if record["class"] not in self.RECORD_KINDS:
@@ -270,6 +291,51 @@ class TypeEmitter:
         self.source_member_wrappers_by_record_path: dict[
             str, list[SourceMemberWrapper]
         ] = defaultdict(list)
+
+    def register_global_types(
+        self,
+        globals_: Sequence[Mapping[str, Any]],
+        collision_names: Mapping[str, str],
+    ) -> None:
+        for item in globals_:
+            display_name = str(item.get("type") or "")
+            targets: set[str] = set()
+            for path in self.paths_by_display_name.get(display_name, ()):
+                targets.update(self._record_storage_targets(path, set()))
+            if len(targets) != 1:
+                continue
+            name = str(item.get("name") or "")
+            if not name:
+                continue
+            self.global_record_paths_by_name[name].update(targets)
+            collision = collision_names.get(name)
+            if collision:
+                self.global_record_paths_by_name[collision].update(targets)
+
+    def _record_storage_targets(self, path: str, seen: set[str]) -> set[str]:
+        if path in seen:
+            return set()
+        seen = set(seen)
+        seen.add(path)
+        record = self.by_path.get(path)
+        if record is None:
+            return set()
+        kind = str(record["class"])
+        if kind in self.RECORD_KINDS:
+            return {self.canonical_path.get(path, path)}
+        if kind == "ArrayDB":
+            return self._record_storage_targets(
+                str(record["detail"]["element_type"]), seen
+            )
+        if kind == "PointerDB":
+            return self._record_storage_targets(
+                str(record["detail"]["points_to"]), seen
+            )
+        if kind == "TypedefDB":
+            return self._record_storage_targets(
+                str(record["detail"]["base_type"]), seen
+            )
+        return set()
 
     def _prepare_pointer_fields(self) -> None:
         for record in self.records:
@@ -615,6 +681,8 @@ class TypeEmitter:
 
     def _static_record_variables(self, body: str) -> dict[str, set[str]]:
         variables: dict[str, set[str]] = defaultdict(set)
+        for name, paths in self.global_record_paths_by_name.items():
+            variables[name].update(paths)
         pointer_declaration = re.compile(
             r"\b([A-Za-z_][A-Za-z0-9_]*)\s+(?:const\s+)?\*+\s*"
             r"(?:const\s+)?([A-Za-z_][A-Za-z0-9_]*)\b"
@@ -817,6 +885,21 @@ class TypeEmitter:
             middle = " ".join(part for part in (convention, name) if part)
             return f"{result} {middle}({', '.join(arguments)})"
         return f"{self.type_name(path)} {name}"
+
+    def display_declaration(self, display_name: str, name: str) -> str | None:
+        """Resolve an exported Listing display type back to its exact type path.
+
+        globals.jsonl intentionally carries Ghidra's display spelling rather
+        than an internal datatype path.  Pointer and array spellings are still
+        authoritative when every matching exported datatype renders the same C++
+        declarator.  Requiring declarator agreement avoids selecting one of two
+        semantically different same-named records by proposal or export order.
+        """
+        candidates = self.paths_by_display_name.get(display_name, set())
+        declarations = {self.declaration(path, name) for path in candidates}
+        if len(declarations) == 1:
+            return next(iter(declarations))
+        return None
 
     def _record_dependencies(self, path: str) -> set[str]:
         record = self.by_path[path]
@@ -1135,7 +1218,7 @@ class TypeEmitter:
                 gap = component_offset - offset
                 lines.append(f"    byte _pad_{offset:04X}[{gap}];")
             raw_name = component.get("field_name") or (
-                f"field_{component_offset:04X}_{component['ordinal']}"
+                f"field{component['ordinal']}_0x{component_offset:x}"
             )
             array_suffix = ""
             array_match = re.fullmatch(r"(.+?)(\[[0-9]+\])", raw_name)
@@ -1203,6 +1286,7 @@ class SourceTreeGenerator:
         self.call_relations: list[dict[str, Any]] = []
         self.relations_by_caller: dict[str, list[dict[str, Any]]] = defaultdict(list)
         self.external_signatures: dict[str, set[str]] = defaultdict(set)
+        self.callable_addresses_by_spelling: dict[str, set[str]] = defaultdict(set)
         self.global_type_collisions: dict[str, str] = {}
         self.body_declarations: dict[str, str] = {}
         self.receipt: dict[str, Any] = {}
@@ -1241,6 +1325,14 @@ class SourceTreeGenerator:
         self.function_by_address = {
             function["address"].upper(): function for function in self.functions
         }
+        for function in self.functions:
+            address = str(function["address"]).upper()
+            for spelling in {
+                str(function.get("qualified_name") or ""),
+                str(function.get("name") or ""),
+            }:
+                if spelling:
+                    self.callable_addresses_by_spelling[spelling].add(address)
         self.types = read_jsonl(self.corpus / "types.jsonl")
         self.globals = read_jsonl(self.corpus / "globals.jsonl")
         self.imports = read_json(self.corpus / "imports.json")
@@ -1274,6 +1366,9 @@ class SourceTreeGenerator:
                 continue
             address = str(items[0]["address"]).upper()
             self.global_type_collisions[name] = f"st_global_{address}"
+        self.type_emitter.register_global_types(
+            self.globals, self.global_type_collisions
+        )
         self.stats["exported_function_records"] = len(self.functions)
         self.stats["exported_type_records"] = len(self.types)
         self.stats["external_call_identities"] = len(self.external_signatures)
@@ -1545,9 +1640,40 @@ class SourceTreeGenerator:
                     lambda match: resolved[match.group(0)], result
                 )
                 self.stats["direct_call_or_definition_rewrites"] += count
+            address_coded_rewrites = 0
+            def replace_address_coded_function(match: re.Match[str]) -> str:
+                nonlocal address_coded_rewrites
+                spelling = re.sub(r"\s+", "", match.group(0))
+                addresses = self.callable_addresses_by_spelling.get(spelling, set())
+                # A recovered owner can make the rendered qualifier stale while
+                # a thunk wrapper retains the target's FUN_ADDRESS leaf.  The
+                # encoded entry address is authoritative even when that owner or
+                # the optional `thunk_` prefix differs from the current symbol.
+                encoded = re.search(r"([0-9A-Fa-f]{8})$", spelling)
+                if not addresses and encoded is not None:
+                    exact = encoded.group(1).upper()
+                    if exact in self.function_by_address:
+                        addresses = {exact}
+                if len(addresses) != 1:
+                    return match.group(0)
+                address_coded_rewrites += 1
+                return function_symbol(next(iter(addresses)))
+            result = ADDRESS_CODED_FUNCTION_RE.sub(
+                replace_address_coded_function, result
+            )
+            self.stats["address_coded_function_rewrites"] += address_coded_rewrites
             return result
 
         transformed = transform_code(body, replace)
+        # A direct-call spelling can be line-wrapped immediately after its
+        # recovered owner.  The first replacement pass may then see only the
+        # leaf and produce the mechanically impossible `Owner::st::fn_ADDRESS`.
+        # Once the address-stable symbol exists, the preceding qualifier is
+        # stale by definition: generated implementations live in namespace st.
+        transformed, count = QUALIFIED_ADDRESS_SYMBOL_RE.subn(
+            lambda match: match.group(1), transformed
+        )
+        self.stats["qualified_address_symbol_repairs"] += count
         if not definition_rewritten:
             self.issues.append(Issue(
                 "definition_not_rewritten",
@@ -1613,16 +1739,17 @@ class SourceTreeGenerator:
                 f" // image symbol: {name}"
                 if declaration_name != name else ""
             )
-            if type_text in {"pointer", "word", "byte", "dword", "undefined1", "undefined2", "undefined4", "undefined8", "int", "short", "uint", "ushort", "float", "double"}:
-                lines.append(f"extern {type_text} {declaration_name};{provenance}")
-            elif IDENTIFIER_RE.fullmatch(type_text.rstrip(" *")):
-                lines.append(f"extern {type_text} {declaration_name};{provenance}")
-            else:
+            declaration = self.type_emitter.display_declaration(
+                type_text, declaration_name
+            )
+            if declaration is None:
                 lines.append(f"extern undefined4 {declaration_name};{provenance}")
                 self.issues.append(Issue(
                     "global_type_fallback", f"{name}: unsupported display type {type_text!r}"
                 ))
                 self.stats["fallback_global_declarations"] += 1
+            else:
+                lines.append(f"extern {declaration};{provenance}")
         lines.append("")
         return "\n".join(lines)
 

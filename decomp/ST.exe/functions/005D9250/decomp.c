@@ -23,7 +23,8 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
   uint uVar8;
   int iVar9;
   int iVar10;
-  int iVar11;
+  char *pcVar11;
+  int iVar12;
   InternalExceptionFrame local_4c;
   SIDTy *local_8;
 
@@ -52,7 +53,7 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
     }
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)pSVar3->field_1CC0,0,0,0,0,0);
     if (pSVar3->field_1A5F == '\0') {
-      iVar11 = -1;
+      iVar12 = -1;
       iVar10 = -1;
       uVar8 = 0;
       iVar9 = -1;
@@ -61,18 +62,18 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
       this_00 = g_startSystem_0081176C->field_0034;
     }
     else {
-      puVar5 = &DAT_00807ddd;
+      pcVar11 = &CHAR_00h_00807ddd;
       resourceString = &pSVar3->field_1CD4;
       pcVar6 = LoadResourceString(0x2520,g_hINSTANCE_00807618);
-      wsprintfA(resourceString,"&0%s\n&5%s&0?",pcVar6,puVar5);
+      wsprintfA(resourceString,"&0%s\n&5%s&0?",pcVar6,pcVar11);
       this_00 = g_startSystem_0081176C->field_0034;
-      iVar11 = -1;
+      iVar12 = -1;
       iVar10 = -1;
       uVar8 = 0;
       iVar9 = -1;
       iVar4 = -2;
     }
-    ccFntTy::WrTxt(this_00,resourceString,iVar4,iVar9,uVar8,iVar10,iVar11);
+    ccFntTy::WrTxt(this_00,resourceString,iVar4,iVar9,uVar8,iVar10,iVar12);
     FUN_006b5440(pSVar3->field_1CB8,0,0,0x7d,(tagBITMAPINFO *)pSVar3->field_1CC0,0,0xff);
     g_currentExceptionFrame = local_4c.previous;
     return;

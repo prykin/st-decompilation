@@ -51,23 +51,24 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
     iVar3 = local_10;
     while (uVar1 != 0) {
       if (iVar3 < 0) {
-        wsprintfA(&DAT_0080ed16,"%s%s%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c1bc,
+        wsprintfA(&CHAR_00h_0080ed16,"%s%s%s%s",&CHAR_00h_00807680,PTR_s_CUSTOM__0079c1bc,
                   abStack_165 + 1);
       }
       else {
-        wsprintfA(&DAT_0080ed16,"%s%s%s%d%s",&DAT_00807680,PTR_s_CUSTOM__0079c1bc,
-                  abStack_165 + 1,iVar3,PTR_DAT_0079c1c0);
+        wsprintfA(&CHAR_00h_0080ed16,"%s%s%s%d%s",&CHAR_00h_00807680,PTR_s_CUSTOM__0079c1bc
+                  ,abStack_165 + 1,iVar3,PTR_CHAR___0079c1c0);
       }
       iVar3 = iVar3 + 1;
       local_10 = iVar3;
-      pvVar4 = FindFirstFileA(&DAT_0080ed16,&local_5b0);
+      pvVar4 = FindFirstFileA(&CHAR_00h_0080ed16,&local_5b0);
       local_14 = (uint)(pvVar4 != (HANDLE)0xffffffff);
       uVar1 = local_14;
     }
-    Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,local_36c,local_470,abStack_165 + 1,nullptr);
+    Library::MSVCRT::FUN_0072e730
+              ((byte *)&CHAR_00h_0080ed16,local_36c,local_470,abStack_165 + 1,nullptr);
     Library::MSVCRT::__makepath
               (local_268,(char *)local_36c,(char *)local_470,(char *)(abStack_165 + 1),
-               PTR_DAT_0079c1c0);
+               PTR_CHAR___0079c1c0);
     pvVar4 = CreateFileA(local_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     local_c = pvVar4;
     if (pvVar4 == (HANDLE)0xffffffff) {
@@ -89,7 +90,7 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
     CloseHandle(pvVar4);
     Library::MSVCRT::__makepath
               (local_268,(char *)local_36c,(char *)local_470,(char *)(abStack_165 + 1),
-               PTR_DAT_0079c1c4);
+               PTR_CHAR___0079c1c4);
     pvVar4 = CreateFileA(local_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     local_c = pvVar4;
     if (pvVar4 == (HANDLE)0xffffffff) {

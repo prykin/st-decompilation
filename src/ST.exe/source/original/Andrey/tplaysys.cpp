@@ -1045,7 +1045,7 @@ int __thiscall st::fn_0054E4F0(STPlaySystemC *this,STMessage *message)
               pcVar12 = pcVar12 + 1;
               pcVar13 = pcVar13 + 1;
             }
-            st::fn_006F12B0(g_cMf32_00806754,FUN_006f2d10,&local_2b8);
+            st::fn_006F12B0(g_cMf32_00806754,st::fn_006F2D10,&local_2b8);
             puVar5 = st::fn_006F2790(this_00);
             iVar8 = local_8;
             while (puVar5 != nullptr) {
@@ -1060,7 +1060,7 @@ int __thiscall st::fn_0054E4F0(STPlaySystemC *this,STMessage *message)
           pSVar10 = local_c;
           DAT_00802a3c = 0;
           st::fn_006F2E40
-                    (g_cMf32_00806754,PTR_DAT_007c83b0,thunk_FUN_0054ca10,local_c,0);
+                    (g_cMf32_00806754,PTR_DAT_007c83b0,st::fn_00403535,local_c,0);
           local_EAX_530 = st::fn_006B0140(0x4a39,g_hINSTANCE_00807618);
           st::external_00000080((LPSTR)&DAT_0080f33a,"%d %s",DAT_00802a3c,local_EAX_530);
           if (g_cLoading_00802A58 != nullptr) {

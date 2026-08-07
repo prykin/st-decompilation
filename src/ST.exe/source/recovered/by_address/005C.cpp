@@ -528,7 +528,7 @@ LAB_005c7a2c:
   DAT_0085400d = this->field_1F5F;
   DAT_00853ffc = STReplaceLowByte((uint32_t)(DAT_00853ffc), (uint8_t)((char)this->field_1F58));
 LAB_005c7ae0:
-  st::external_00000080(&DAT_00853de4,"%s%s%s");
+  st::external_00000080(&CHAR_00h_00853de4,"%s%s%s");
   pDVar4 = this->field_1F7C;
   if ((DAT_00853ffc & 0xff) < pDVar4->count) {
     pcVar14 = DArrayAt<char>(pDVar4, (DAT_00853ffc & 0xff));
@@ -550,7 +550,7 @@ LAB_005c7ae0:
   pcVar15 = (char *)&DAT_00853ee8;
   memmove(pcVar15, pcVar14, uVar8); /* compiler REP MOVS byte copy */
   uVar9 = 0;
-  _DAT_0085400e = thunk_FUN_005c2760;
+  _DAT_0085400e = st::fn_00404C64;
   st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s");
   PTR_00853ff8 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   STPiece<1,3>(DAT_00853ffc) = SUB43(PTR_00853ff8,0);
@@ -571,7 +571,7 @@ LAB_005c7ae0:
     st::fn_006F1170(PTR_00853ff8);
     st::fn_00405EE3((int)&local_5a80);
   }
-  pcVar5 = (cMf32 *)st::fn_006F0EC0(0x345,&DAT_00853de4,0,0,0);
+  pcVar5 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)&CHAR_00h_00853de4,0,0,0);
   this->field_1F3F = pcVar5;
   DAT_008087b6 = 0;
   if (this->field_1F3F != nullptr) {
@@ -604,6 +604,7 @@ LAB_005c7ae0:
     puVar11 = (byte *)(local_d8);
     puVar16 = (byte *)(&DAT_00809960);
     memmove(puVar16, puVar11, 0x20); /* compiler REP MOVS byte copy */
+    iVar7 = 0;
     if (g_dArray_0080C4C7 != nullptr) {
       st::fn_006B5570(g_dArray_0080C4C7);
     }
@@ -623,10 +624,18 @@ LAB_005c7ae0:
       g_dArray_0080C4CB = st::fn_006B54F0(nullptr,10,10);
     }
     pcVar14_mg2 = PTR_s_TITLE_MISSION_0079c104;
-    memset(&DAT_0080c3c3, 0, 0x104); /* compiler bulk-zero initialization */
+    pcVar14 = &CHAR_00h_0080c3c3;
+    for (iVar7 = 0x41; iVar7 != 0; iVar7 = iVar7 + -1) {
+      pcVar14[0] = '\0';
+      pcVar14[1] = '\0';
+      pcVar14[2] = '\0';
+      pcVar14[3] = '\0';
+      pcVar14 = pcVar14 + 4;
+    }
     puVar6 = st::fn_006F1CE0(this->field_1F3F,0xc,pcVar14_mg2,(int *)&stack0xfffffff8,0);
-    if ((puVar6 == nullptr) || ((char)DAT_0080c3c3 == '\0')) {
-      st::fn_0072E730(&DAT_00853de4,nullptr,nullptr,local_228,nullptr);
+    if ((puVar6 == nullptr) || (CHAR_00h_0080c3c3 == '\0')) {
+      st::fn_0072E730
+                ((byte *)&CHAR_00h_00853de4,nullptr,nullptr,local_228,nullptr);
       uVar8 = 0xffffffff;
       pbVar12 = local_228;
       do {
@@ -639,7 +648,7 @@ LAB_005c7ae0:
       } while (bVar1 != 0);
       uVar8 = ~uVar8;
       pbVar12 = pbVar17 + -uVar8;
-      pbVar17 = (byte *)&DAT_0080c3c3;
+      pbVar17 = (byte *)&CHAR_00h_0080c3c3;
       memmove(pbVar17, pbVar12, uVar8); /* compiler REP MOVS byte copy */
     }
     this->field_1F47 = 1;
@@ -653,7 +662,7 @@ LAB_005c7ae0:
       st::external_00000080(&stack0xffffffe8,"%08x");
       this->field_1A82 = puVar18;
       this->field_1A86 = uVar19;
-      st::fn_0072E340(&this->field_1A8A,(char *)&DAT_0080c3c3,0x1d5);
+      st::fn_0072E340(&this->field_1A8A,&CHAR_00h_0080c3c3,0x1d5);
       this->field_1C5E = 0;
       st::external_0000010A((CFsgsConnection *)&DAT_00802a90,4,&this->field_0x1a5f);
     }

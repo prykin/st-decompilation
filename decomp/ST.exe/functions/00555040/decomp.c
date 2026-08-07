@@ -174,7 +174,7 @@ cLoadingTy::SetState
         local_c = uVar5;
         do {
           uVar6 = 0xffffffff;
-          pcVar8 = &DAT_007c8fec;
+          pcVar8 = &CHAR___007c8fec;
           do {
             pcVar12 = pcVar8;
             if (uVar6 == 0) break;

@@ -7678,6 +7678,7 @@ source_target	destination_target	site
 0056D740|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	0056D740 C call -> RaiseInternalException
 0056DB80|local|Stack[-0x14]:4	0072E340|parameter|Stack[0x8]:4	0056DB80 C call -> Library::MSVCRT::_strncpy
 0056DB80|local|Stack[-0x328]:1	0072E730|parameter|Stack[0x10]:4	0056DB80 C call -> Library::MSVCRT::FUN_0072e730
+0056DB80|local|EAX:4	00554C80|parameter|Stack[0x4]:4	0056DB80 C call -> cLoadingTy::DrawLineCR
 0056DB80|local|Stack[-0x34]:1	006E3DB0|parameter|Stack[0x4]:4	0056DB80 C call -> FUN_006e3db0
 0056E9E0|local|Stack[-0xc]:4	006F0EC0|parameter|Stack[0x8]:4	0056E9E0 C call -> Library::Ourlib::MF32INT::FUN_006f0ec0
 0056E9E0|local|Stack[-0x8]:4	006F1CE0|parameter|ECX:4 (auto)	0056E9E0 C call -> cMf32::RecGet
@@ -9396,6 +9397,7 @@ source_target	destination_target	site
 005DF7C0|parameter|Stack[0x14]:4	006B48A0|parameter|Stack[0xc]:4	005DF7C0 C call -> FUN_006b48a0
 005DFA30|local|Stack[-0x10]:4	005B66E0|parameter|ECX:4	005DFA30 C call -> FUN_005b66e0
 005DFA30|local|Stack[-0x1a8]:1	0072E730|parameter|Stack[0x10]:4	005DFA30 C call -> Library::MSVCRT::FUN_0072e730
+005DFA30|local|HASH:3fc47dc730:4	00715050|parameter|Stack[0x8]:4	005DFA30 C call -> Library::Ourlib::MFDARR::mfDarLoad
 005DFA30|local|Stack[-0xa4]:1	006AE1C0|parameter|Stack[0x8]:4	005DFA30 C call -> Library::DKW::TBL::DArrayAppend
 005DFA30|local|Stack[-0x5a8]:1	006BC360|parameter|Stack[0x8]:4	005DFA30 C call -> FUN_006bc360
 005DFA30|local|Stack[-0x5a8]:1	00718780|parameter|Stack[0x4]:4	005DFA30 C call -> Library::Ourlib::PALETTE::FUN_00718780

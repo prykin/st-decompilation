@@ -111,10 +111,10 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     this_00->field_1E9A = ptVar3;
     pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AE8 = pDVar4;
-    Library::DKW::TBL::FUN_006b5aa0(pDVar4,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar4,&CHAR_00h_008016a0);
     pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AEC = pDVar4;
-    Library::DKW::TBL::FUN_006b5aa0(pDVar4,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar4,&CHAR_00h_008016a0);
     pFVar5 = (FSGSTy_field_1EBEDArray *)
              Library::DKW::TBL::DArrayCreate(nullptr,0x14,0x25c,10);
     this_00->field_1EBE = pFVar5;

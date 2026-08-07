@@ -45,7 +45,7 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x935);
     return;
   }
-  wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_UPDATES__0079c020,
+  wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079c020,
             PTR_s_ST_INF_0079c024);
   pcVar4 = (char *)thunk_FUN_00649ff0(&DAT_0080f33a,&local_8,nullptr,nullptr);
   this_01 = local_c;

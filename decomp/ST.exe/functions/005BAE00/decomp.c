@@ -125,7 +125,8 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 break;
               case '\x02':
               case '\x03':
-                wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c0bc);
+                wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,
+                          PTR_s_CUSTOM__0079c0bc);
                 local_2c = *pcVar12;
                 local_2b = STField<undefined4>(psVar7,3);
                 local_27 = 0;
@@ -135,8 +136,8 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 local_14 = (-(uint)(*pcVar12 != '\x02') & 2) + 0xd;
                 break;
               case '\x05':
-                wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\",&DAT_00807680,
-                          PTR_s_SAVEGAME__0079c0b8,&DAT_00807ddd);
+                wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\",&CHAR_00h_00807680,
+                          PTR_s_SAVEGAME__0079c0b8,&CHAR_00h_00807ddd);
                 local_38 = *pcVar12;
                 local_37 = STField<undefined4>(psVar7,3);
                 local_33 = STField<undefined4>(psVar7,7);

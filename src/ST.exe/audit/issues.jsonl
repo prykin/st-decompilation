@@ -1076,10 +1076,6 @@
 {"detail": "_DAT_00857518: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "_DAT_00857550: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "_DAT_00858e28: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "g_bulkInitializedRecords_008087C7: unsupported display type 'BulkInitializedRecord_008087C7[8]'", "kind": "global_type_fallback"}
-{"detail": "g_centeredOffsets5: unsupported display type 'int[5]'", "kind": "global_type_fallback"}
-{"detail": "g_packedRecords_A62x8: unsupported display type 'PackedRecord_A62x8[8]'", "kind": "global_type_fallback"}
-{"detail": "g_playerRelationMatrix: unsupported display type 'byte[8][8]'", "kind": "global_type_fallback"}
 {"detail": "skipped exported struct tm", "kind": "host_type_reused"}
 {"detail": "CoCreateInstance: no matching function definition", "kind": "import_prototype_fallback"}
 {"detail": "InitializeCriticalSection: no matching function definition", "kind": "import_prototype_fallback"}

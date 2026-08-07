@@ -50,7 +50,7 @@ int FUN_00566600(int param_1)
     return local_1c;
   }
   uVar5 = 0xffffffff;
-  pcVar9 = &DAT_0080798c;
+  pcVar9 = &CHAR_00h_0080798c;
   do {
     pcVar11 = pcVar9;
     if (uVar5 == 0) break;

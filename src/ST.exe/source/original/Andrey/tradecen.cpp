@@ -867,7 +867,7 @@ LAB_00552481:
     }
     uVar17 = 1;
     uVar15 = 0;
-    pcVar13 = thunk_FUN_00529fe0;
+    pcVar13 = st::fn_00401E88;
     pCVar3 = st::fn_0040577C(text,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)pAVar8->field_0008)(message,1,pCVar3,pcVar13,uVar15,uVar17);

@@ -28,7 +28,7 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
       }
     }
     if ((STField<DArrayTy *>(this,0x138))->elementSize == 0) {
-      Library::DKW::TBL::FUN_006b5aa0(STField<DArrayTy *>(this,0x138),PTR_DAT_007f0b04);
+      Library::DKW::TBL::FUN_006b5aa0(STField<DArrayTy *>(this,0x138),PTR_CHAR_00h_007f0b04);
     }
     iVar2 = STField<int>(this,0x20c) + STField<int>(this,0x144);
     if (iVar2 < *(int *)(STField<int>(this,0x138) + 8)) {

@@ -50,7 +50,7 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
     do {
       uVar5 = 0xffffffff;
       local_c = local_460;
-      pcVar8 = &DAT_008016a0;
+      pcVar8 = &CHAR_00h_008016a0;
       do {
         pcVar9 = pcVar8;
         if (uVar5 == 0) break;

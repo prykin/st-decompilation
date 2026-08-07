@@ -120,7 +120,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       }
       else {
         uVar4 = 0xffffffff;
-        pcVar10 = &DAT_007c21a4;
+        pcVar10 = &CHAR_0_007c21a4;
         do {
           pcVar11 = pcVar10;
           if (uVar4 == 0) break;

@@ -82,7 +82,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   case 0xd:
   case 0xe:
   case 0x13:
-    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_SYSTEM__0079acf0,
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079acf0,
               PTR_s_STRATEGS_0079acfc);
     break;
   case 2:
@@ -90,7 +90,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   case 5:
   case 8:
   case 0xf:
-    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,&DAT_0080ef1e);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,&CHAR_00h_0080ef1e);
   }
   pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   pOVar10 = local_8;

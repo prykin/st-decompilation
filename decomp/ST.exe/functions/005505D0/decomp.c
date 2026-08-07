@@ -18,7 +18,6 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
   char *pcVar1;
   byte bVar4;
   uint uVar5;
-  undefined4 *puVar6;
   CHAR local_10c [260];
   uint local_8;
 
@@ -60,11 +59,11 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
         param_2 = nullptr;
         if (DAT_00808aaf != 0) {
           do {
-            puVar6 = &DAT_00808ab0 + (int)param_2 * 0x27;
+            pcVar2 = &CHAR_00h_00808ab0 + (int)param_2 * 0x9c;
             if (((&DAT_00808af0)[(int)param_2 * 0x27] == param_1) &&
                ((&DAT_00808af6)[(int)param_2 * 0x9c] != '\0')) {
               pcVar1 = LoadResourceString(0x426d,g_hINSTANCE_00807618);
-              wsprintfA(local_10c,"%s %s",pcVar1,puVar6);
+              wsprintfA(local_10c,"%s %s",pcVar1,pcVar2);
               if (g_popUp_008016D8 != nullptr) {
                 thunk_FUN_0052d320(g_popUp_008016D8,local_10c,8);
               }

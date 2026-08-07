@@ -57,7 +57,7 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
       if (param_1->field_0210 + param_1->field_0148 == 0) {
         uVar4 = Library::DKW::TBL::FUN_006b6020
                           ((DArrayTy *)param_1->field_0138,param_1->field_0144 + param_1->field_020C
-                           ,PTR_DAT_007f0b04);
+                           ,PTR_CHAR_00h_007f0b04);
         if (-1 < (int)uVar4) {
           return 0;
         }
@@ -87,7 +87,7 @@ uint __fastcall FUN_00721340(AnonShape_00721340_81196542 *param_1)
     }
   }
   else {
-    uVar4 = Library::DKW::TBL::FUN_00752d50(iVar2,(uint)(local_8 + 1),PTR_DAT_007f0b04);
+    uVar4 = Library::DKW::TBL::FUN_00752d50(iVar2,(uint)(local_8 + 1),PTR_CHAR_00h_007f0b04);
     if (-1 < (int)uVar4) {
       uVar4 = 0;
     }

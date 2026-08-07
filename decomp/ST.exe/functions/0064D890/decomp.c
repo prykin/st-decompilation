@@ -71,7 +71,7 @@ AiEventClassTy::_CreateRCCont
                                  ,(short *)&local_10,0xfe);
       if (iVar5 != 0) {
         if (param_7 == nullptr) {
-          param_7 = &DAT_008016a0;
+          param_7 = &CHAR_00h_008016a0;
         }
         thunk_FUN_005fcff0((uint)param_1,local_24,(int)param_2,param_6,(int)(short)local_c,
                            (int)(short)local_8,(int)(short)local_10,param_7,0xffffffff,

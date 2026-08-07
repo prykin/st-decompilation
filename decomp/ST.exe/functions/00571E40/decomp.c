@@ -19,10 +19,9 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
   int iVar8;
   code *pcVar9;
   byte *pbVar10;
-  char *pcVar11;
-  byte *pbVar13;
-  char *pcVar14;
-  bool bVar15;
+  char *pcVar12;
+  char *pcVar13;
+  bool bVar14;
   CHAR local_124 [260];
   undefined4 local_20;
   CHAR local_1c;
@@ -123,27 +122,27 @@ LAB_005720f0:
                            local_10 + 1);
   if (LVar4 != 0) {
     uVar6 = 0xffffffff;
-    pcVar11 = &DAT_007ca684;
+    pcVar12 = &CHAR_N_007ca684;
     do {
-      pcVar14 = pcVar11;
+      pcVar13 = pcVar12;
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
-      pcVar14 = pcVar11 + 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar14;
+      pcVar13 = pcVar12 + 1;
+      cVar2 = *pcVar12;
+      pcVar12 = pcVar13;
     } while (cVar2 != '\0');
     uVar6 = ~uVar6;
-    pcVar11 = pcVar14 + -uVar6;
-    pcVar14 = (char *)((int)this + 0x749);
+    pcVar12 = pcVar13 + -uVar6;
+    pcVar13 = (char *)((int)this + 0x749);
     for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar14 = *(undefined4 *)pcVar11;
-      pcVar11 = pcVar11 + 4;
-      pcVar14 = pcVar14 + 4;
+      *(undefined4 *)pcVar13 = *(undefined4 *)pcVar12;
+      pcVar12 = pcVar12 + 4;
+      pcVar13 = pcVar13 + 4;
     }
     for (uVar6 = uVar6 & 3; pcVar9 = RegQueryValueExA_exref, uVar6 != 0; uVar6 = uVar6 - 1) {
-      *pcVar14 = *pcVar11;
-      pcVar11 = pcVar11 + 1;
-      pcVar14 = pcVar14 + 1;
+      *pcVar13 = *pcVar12;
+      pcVar12 = pcVar12 + 1;
+      pcVar13 = pcVar13 + 1;
     }
   }
   memset((void *)((int)this + 0x785), 0, 0x40); /* compiler bulk-zero initialization */
@@ -177,22 +176,22 @@ LAB_005720f0:
           RegCloseKey(local_8);
           return 0;
         }
-        pbVar13 = &DAT_007ca694;
+        pcVar12 = &CHAR_N_007ca694;
         pbVar10 = (byte *)((int)this + 0x640);
         do {
           bVar3 = *pbVar10;
-          bVar15 = bVar3 < *pbVar13;
-          if (bVar3 != *pbVar13) {
+          bVar14 = bVar3 < (byte)*pcVar12;
+          if (bVar3 != *pcVar12) {
 LAB_005722e8:
-            iVar8 = (1 - (uint)bVar15) - (uint)(bVar15 != 0);
+            iVar8 = (1 - (uint)bVar14) - (uint)(bVar14 != 0);
             goto LAB_005722ed;
           }
           if (bVar3 == 0) break;
           bVar3 = pbVar10[1];
-          bVar15 = bVar3 < pbVar13[1];
-          if (bVar3 != pbVar13[1]) goto LAB_005722e8;
+          bVar14 = bVar3 < (byte)pcVar12[1];
+          if (bVar3 != pcVar12[1]) goto LAB_005722e8;
           pbVar10 = pbVar10 + 2;
-          pbVar13 = pbVar13 + 2;
+          pcVar12 = pcVar12 + 2;
         } while (bVar3 != 0);
         iVar8 = 0;
 LAB_005722ed:
@@ -203,48 +202,48 @@ LAB_005722ed:
           UVar5 = GetDriveTypeA(&local_1c);
           if (UVar5 == 5) {
             uVar6 = 0xffffffff;
-            pcVar11 = &local_1c;
+            pcVar12 = &local_1c;
             do {
-              pcVar14 = pcVar11;
+              pcVar13 = pcVar12;
               if (uVar6 == 0) break;
               uVar6 = uVar6 - 1;
-              pcVar14 = pcVar11 + 1;
-              cVar2 = *pcVar11;
-              pcVar11 = pcVar14;
+              pcVar13 = pcVar12 + 1;
+              cVar2 = *pcVar12;
+              pcVar12 = pcVar13;
             } while (cVar2 != '\0');
             uVar6 = ~uVar6;
-            pcVar11 = pcVar14 + -uVar6;
-            pcVar14 = (char *)((int)this + 0x640);
+            pcVar12 = pcVar13 + -uVar6;
+            pcVar13 = (char *)((int)this + 0x640);
             for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-              *(undefined4 *)pcVar14 = *(undefined4 *)pcVar11;
-              pcVar11 = pcVar11 + 4;
-              pcVar14 = pcVar14 + 4;
+              *(undefined4 *)pcVar13 = *(undefined4 *)pcVar12;
+              pcVar12 = pcVar12 + 4;
+              pcVar13 = pcVar13 + 4;
             }
           }
           else {
             uVar6 = 0xffffffff;
-            pcVar11 = &DAT_007ca694;
+            pcVar12 = &CHAR_N_007ca694;
             do {
-              pcVar14 = pcVar11;
+              pcVar13 = pcVar12;
               if (uVar6 == 0) break;
               uVar6 = uVar6 - 1;
-              pcVar14 = pcVar11 + 1;
-              cVar2 = *pcVar11;
-              pcVar11 = pcVar14;
+              pcVar13 = pcVar12 + 1;
+              cVar2 = *pcVar12;
+              pcVar12 = pcVar13;
             } while (cVar2 != '\0');
             uVar6 = ~uVar6;
-            pcVar11 = pcVar14 + -uVar6;
-            pcVar14 = (char *)((int)this + 0x640);
+            pcVar12 = pcVar13 + -uVar6;
+            pcVar13 = (char *)((int)this + 0x640);
             for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-              *(undefined4 *)pcVar14 = *(undefined4 *)pcVar11;
-              pcVar11 = pcVar11 + 4;
-              pcVar14 = pcVar14 + 4;
+              *(undefined4 *)pcVar13 = *(undefined4 *)pcVar12;
+              pcVar12 = pcVar12 + 4;
+              pcVar13 = pcVar13 + 4;
             }
           }
           for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-            *pcVar14 = *pcVar11;
-            pcVar11 = pcVar11 + 1;
-            pcVar14 = pcVar14 + 1;
+            *pcVar13 = *pcVar12;
+            pcVar12 = pcVar12 + 1;
+            pcVar13 = pcVar13 + 1;
           }
           FUN_006b78c0((char *)((int)this + 0x640),(char *)((int)this + 0x640));
         }

@@ -25,20 +25,21 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
   uint *puVar6;
   DArrayTy *pDVar7;
   DArrayTy *pDVar8;
-  char *pcVar9;
   int iVar10;
-  int iVar11;
-  uint uVar12;
-  uint uVar13;
-  byte *pbVar14;
-  byte *pbVar15;
-  bool bVar16;
+  int iVar9;
+  uint uVar10;
+  uint uVar11;
+  byte *pbVar12;
+  char *pcVar13;
+  bool bVar14;
   InternalExceptionFrame local_5c;
   DArrayTy *local_18;
   FSGSTy *local_14;
   uint local_10;
   uint *local_c;
   char local_5;
+  char *pcVar13_mg1;
+  char *pcVar13_mg0;
 
   local_c = nullptr;
   if ((param_3 == nullptr) || (param_2 == nullptr)) {
@@ -58,24 +59,24 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar11 = -1;
-  pbVar14 = param_2;
+  iVar9 = -1;
+  pbVar12 = param_2;
   do {
-    if (iVar11 == 0) break;
-    iVar11 = iVar11 + -1;
-    bVar1 = *pbVar14;
-    pbVar14 = pbVar14 + 1;
+    if (iVar9 == 0) break;
+    iVar9 = iVar9 + -1;
+    bVar1 = *pbVar12;
+    pbVar12 = pbVar12 + 1;
   } while (bVar1 != 0);
-  if (iVar11 == -2) {
-    uVar12 = 0xffffffff;
-    pcVar9 = param_3;
+  if (iVar9 == -2) {
+    uVar10 = 0xffffffff;
+    pcVar13_mg0 = param_3;
     do {
-      if (uVar12 == 0) break;
-      uVar12 = uVar12 - 1;
-      cVar2 = *pcVar9;
-      pcVar9 = pcVar9 + 1;
+      if (uVar10 == 0) break;
+      uVar10 = uVar10 - 1;
+      cVar2 = *pcVar13_mg0;
+      pcVar13_mg0 = pcVar13_mg0 + 1;
     } while (cVar2 != '\0');
-    local_c = Library::DKW::LIB::MemAllocClear(~uVar12 + 4);
+    local_c = Library::DKW::LIB::MemAllocClear(~uVar10 + 4);
     if (local_c == nullptr) {
       g_currentExceptionFrame = local_5c.previous;
       return;
@@ -83,47 +84,47 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
     wsprintfA((LPSTR)local_c,"%s%1d%s",&DAT_007c6ff0,param_1,param_3);
   }
   else {
-    uVar12 = 0xffffffff;
-    pbVar14 = param_2;
+    uVar10 = 0xffffffff;
+    pbVar12 = param_2;
     do {
-      if (uVar12 == 0) break;
-      uVar12 = uVar12 - 1;
-      bVar1 = *pbVar14;
-      pbVar14 = pbVar14 + 1;
+      if (uVar10 == 0) break;
+      uVar10 = uVar10 - 1;
+      bVar1 = *pbVar12;
+      pbVar12 = pbVar12 + 1;
     } while (bVar1 != 0);
-    uVar13 = 0xffffffff;
-    pcVar9 = param_3;
+    uVar11 = 0xffffffff;
+    pcVar13_mg1 = param_3;
     do {
-      if (uVar13 == 0) break;
-      uVar13 = uVar13 - 1;
-      cVar2 = *pcVar9;
-      pcVar9 = pcVar9 + 1;
+      if (uVar11 == 0) break;
+      uVar11 = uVar11 - 1;
+      cVar2 = *pcVar13_mg1;
+      pcVar13_mg1 = pcVar13_mg1 + 1;
     } while (cVar2 != '\0');
-    local_c = Library::DKW::LIB::MemAllocClear(~uVar12 + ~uVar13 + 0xc);
+    local_c = Library::DKW::LIB::MemAllocClear(~uVar10 + ~uVar11 + 0xc);
     if (local_c == nullptr) {
       g_currentExceptionFrame = local_5c.previous;
       return;
     }
-    pbVar15 = &DAT_00807e1d;
-    pbVar14 = param_2;
+    pcVar13 = &CHAR_00h_00807e1d;
+    pbVar12 = param_2;
     do {
-      bVar1 = *pbVar14;
-      bVar16 = bVar1 < *pbVar15;
-      if (bVar1 != *pbVar15) {
+      bVar1 = *pbVar12;
+      bVar14 = bVar1 < (byte)*pcVar13;
+      if (bVar1 != *pcVar13) {
 LAB_005a1fbe:
-        iVar11 = (1 - (uint)bVar16) - (uint)(bVar16 != 0);
+        iVar9 = (1 - (uint)bVar14) - (uint)(bVar14 != 0);
         goto LAB_005a1fc3;
       }
       if (bVar1 == 0) break;
-      bVar1 = pbVar14[1];
-      bVar16 = bVar1 < pbVar15[1];
-      if (bVar1 != pbVar15[1]) goto LAB_005a1fbe;
-      pbVar14 = pbVar14 + 2;
-      pbVar15 = pbVar15 + 2;
+      bVar1 = pbVar12[1];
+      bVar14 = bVar1 < (byte)pcVar13[1];
+      if (bVar1 != pcVar13[1]) goto LAB_005a1fbe;
+      pbVar12 = pbVar12 + 2;
+      pcVar13 = pcVar13 + 2;
     } while (bVar1 != 0);
-    iVar11 = 0;
+    iVar9 = 0;
 LAB_005a1fc3:
-    if (iVar11 == 0) {
+    if (iVar9 == 0) {
       wsprintfA((LPSTR)local_c,s__s2_s>__s_1d_s_007cc4a0,&DAT_007c6ff0,param_2,&DAT_007c6ff0,param_1
                 ,param_3);
     }
@@ -158,24 +159,24 @@ LAB_005a1fc3:
       if (pDVar8 != nullptr) {
         ccFntTy::SepColorStrInSarr(this_00->field_1A77,(uint *)pDVar8,(uint *)pDVar8);
         pAVar3 = (AnonShape_006B7830_769CA2DF *)this_00->field_1E9E;
-        iVar11 = pAVar3->field_0008 + pDVar8->elementSize;
-        while (499 < iVar11) {
+        iVar9 = pAVar3->field_0008 + pDVar8->elementSize;
+        while (499 < iVar9) {
           FUN_006b7830(pAVar3,0);
           pAVar3 = (AnonShape_006B7830_769CA2DF *)this_00->field_1E9E;
-          iVar11 = pAVar3->field_0008 + pDVar8->elementSize;
+          iVar9 = pAVar3->field_0008 + pDVar8->elementSize;
         }
-        iVar11 = 0;
+        iVar9 = 0;
         if (0 < (int)pDVar8->elementSize) {
           if ((int)pDVar8->elementSize < 1) {
-            pcVar9 = nullptr;
+            pcVar13 = nullptr;
             goto LAB_005a2188;
           }
           do {
-            pcVar9 = *(char **)(pDVar8->growCapacity + iVar11 * 4);
+            pcVar13 = *(char **)(pDVar8->growCapacity + iVar9 * 4);
 LAB_005a2188:
-            Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_1E9E,pcVar9);
-            iVar11 = iVar11 + 1;
-          } while (iVar11 < (int)pDVar8->elementSize);
+            Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_1E9E,pcVar13);
+            iVar9 = iVar9 + 1;
+          } while (iVar9 < (int)pDVar8->elementSize);
         }
         FUN_006b5570(pDVar8);
         pDVar7 = local_18;

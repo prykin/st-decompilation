@@ -28,7 +28,7 @@ AnonShape_00571CD0_C1ECCB3F * __fastcall FUN_00571cd0(AnonShape_00571CD0_C1ECCB3
   param_1->field_0x334 = 0;
   param_1->field_0645 = 0;
   param_1->field_0x53c = 0;
-  pcVar4 = &DAT_007ca684;
+  pcVar4 = &CHAR_N_007ca684;
   do {
     pcVar5 = pcVar4;
     if (uVar2 == 0) break;

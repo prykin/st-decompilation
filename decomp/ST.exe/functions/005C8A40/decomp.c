@@ -433,7 +433,7 @@ cf_common_join_005C8ECC:
             wsprintfA((LPSTR)&local_64,"%08x",DAT_0080995c);
             this_00->field_1A82 = local_64;
             this_00->field_1A86 = local_60;
-            Library::MSVCRT::_strncpy(&this_00->field_1A8A,(char *)&DAT_0080c3c3,0x1d5);
+            Library::MSVCRT::_strncpy(&this_00->field_1A8A,&CHAR_00h_0080c3c3,0x1d5);
             this_00->field_1C5E = 0;
           }
           (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
@@ -1434,7 +1434,7 @@ cf_common_join_005CA971:
       pcVar17 = nullptr;
     }
     if (pcVar17 == nullptr) {
-      pcVar17 = &DAT_008016a0;
+      pcVar17 = &CHAR_00h_008016a0;
     }
     uVar18 = 0xffffffff;
     do {

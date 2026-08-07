@@ -2326,7 +2326,7 @@ int __thiscall st::fn_00667D90(AiFltClassTy *this,STMessage *message)
           uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
           this_00->field_001C = uVar5;
           this_00->field_0203 = (uVar5 >> 0x10) % 0x1a + 0x19;
-          st::fn_004049A8(this_00->field_020B,thunk_FUN_00660d10);
+          st::fn_004049A8(this_00->field_020B,st::fn_004013CF);
           this_00->field_0170 = *(short *)&this_00->field_022F->field_0xc;
           this_00->field_0127 = *(undefined2 *)&this_00->field_0223->field_0xc;
         }

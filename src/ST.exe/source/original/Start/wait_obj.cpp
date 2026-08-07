@@ -898,16 +898,17 @@ void __thiscall st::fn_005E7FE0(WaitTy *this)
   }
   else {
     if (((byte)local_8->field_1A93 < 2) || (3 < (byte)local_8->field_1A93)) goto LAB_005e829d;
-    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c244);
+    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,PTR_s_CUSTOM__0079c244);
     local_1c = this_00->field_1A93;
     local_1b = this_00->field_1A8F;
-    iVar5 = st::fn_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_1c,0);
+    iVar5 = st::fn_00725910(&DAT_0080f33a,"*.DKD",0,st::fn_00404E49,&local_1c,0);
     if (iVar5 == -0x70) {
       local_a4.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_a4;
       local_EAX_409 = st::fn_0072D7F0(local_a4.jumpBuffer,0);
       if (local_EAX_409 == 0) {
-        local_10 = (cMf32 *)st::fn_006F0EC0(0x345,&DAT_0080ed16,0,0,0);
+        local_10 = (cMf32 *)st::fn_006F0EC0
+                                      (0x345,(byte *)&CHAR_00h_0080ed16,0,0,0);
       }
       this_00 = local_8;
       pcVar4 = local_10;
@@ -916,7 +917,8 @@ void __thiscall st::fn_005E7FE0(WaitTy *this)
         st::fn_00402716
                   (g_startSystem_0081176C,local_10,(local_8->field_1A93 != '\x02') + '\x04');
         local_c = 1;
-        st::fn_0072E730(&DAT_0080ed16,nullptr,nullptr,local_1a8,nullptr);
+        st::fn_0072E730
+                  ((byte *)&CHAR_00h_0080ed16,nullptr,nullptr,local_1a8,nullptr);
         pbVar12 = local_1a8;
         pcVar7 = st::fn_006B0140(0x252a,g_hINSTANCE_00807618);
         st::external_00000080((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar7,pbVar12);
@@ -1154,13 +1156,13 @@ LAB_005e9233:
                       }
                       if (this_01->field_1A76 != '\0') break;
                     }
-                    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,
+                    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,
                               PTR_s_CUSTOM__0079c244);
                     local_5c = *puVar1;
                     local_5b = pAVar6->field_0003;
                     local_57 = 0;
                     local_EAX_2136 =
-                         st::fn_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_5c,
+                         st::fn_00725910(&DAT_0080f33a,"*.DKD",0,st::fn_00404E49,&local_5c,
                                       0);
                     if (local_EAX_2136 == -0x70) {
                       local_5 = '\x01';
@@ -1168,12 +1170,12 @@ LAB_005e9233:
                     this_01->field_1A5F = ((*puVar1 == '\x03') - 1U & 0xfe) + 0xf;
                     break;
                   case 5:
-                    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s\\",&DAT_00807680,
-                              PTR_s_SAVEGAME__0079c240,&DAT_00807ddd);
+                    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s\\",&CHAR_00h_00807680,
+                              PTR_s_SAVEGAME__0079c240,&CHAR_00h_00807ddd);
                     local_68 = *puVar1;
                     local_67 = pAVar6->field_0003;
                     local_63 = *(undefined4 *)&pAVar6->field_0x7;
-                    iVar8 = st::fn_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,
+                    iVar8 = st::fn_00725910(&DAT_0080f33a,"*.DKD",0,st::fn_00404E49,
                                          &local_68,0);
                     if (iVar8 == -0x70) {
                       local_5 = '\x01';
@@ -2177,9 +2179,9 @@ int __thiscall st::fn_005EA680(WaitTy *this,STMessage *message)
       pcVar12 = pcVar12 + 4;
     }
     *pcVar12 = '\0';
-    pcVar12 = &DAT_00807e1d;
+    pcVar12 = &CHAR_00h_00807e1d;
     if (DAT_008067a0 == '\0') {
-      pcVar12 = (char *)&DAT_00807ddd;
+      pcVar12 = &CHAR_00h_00807ddd;
     }
     uVar10 = 0xffffffff;
     do {
@@ -2221,7 +2223,7 @@ int __thiscall st::fn_005EA680(WaitTy *this,STMessage *message)
     st::fn_00715360(g_int_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);
   }
 LAB_005eab28:
-  st::fn_006B6020(this_02->field_1A5B->field_0686,0,&DAT_008016a0);
+  st::fn_006B6020(this_02->field_1A5B->field_0686,0,&CHAR_00h_008016a0);
   this_02->field_002D = 0x33;
   *(DArrayTy **)&this_02->field_0x31 = this_02->field_1A5B->field_0686;
   st::fn_006E6080(this_02,2,this_02->field_1A5B->field_054C,(undefined4 *)&this_02->field_0x1d);

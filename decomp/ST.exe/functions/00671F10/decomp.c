@@ -57,7 +57,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
     }
     return nullptr;
   }
-  Library::MSVCRT::_strncpy(&local_24->field_0x4,&DAT_008016a0,0x7f);
+  Library::MSVCRT::_strncpy(&local_24->field_0x4,&CHAR_00h_008016a0,0x7f);
   *(undefined4 *)&local_24->field_0x84 = 0xffffffff;
   local_c = (AnonShape_00683780_11EA4E23 *)thunk_FUN_0064a630(10);
   local_20 = 0.0;

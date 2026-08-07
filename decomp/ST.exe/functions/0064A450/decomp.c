@@ -7,7 +7,7 @@ DWORD FUN_0064a450(void)
   _SYSTEMTIME local_14;
 
   if ((HANDLE_008118f8 == (HANDLE)0x0) && (DAT_0080734a != '\0')) {
-    wsprintfA((LPSTR)local_118,"%sAIScript.dbg",&DAT_00807680);
+    wsprintfA((LPSTR)local_118,"%sAIScript.dbg",&CHAR_00h_00807680);
     HANDLE_008118f8 =
          CreateFileA((LPCSTR)local_118,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     if (HANDLE_008118f8 == (HANDLE)0xffffffff) {

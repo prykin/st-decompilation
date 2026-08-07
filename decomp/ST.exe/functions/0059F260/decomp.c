@@ -49,7 +49,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     }
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AE8 = pDVar2;
-    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar2,&CHAR_00h_008016a0);
     if (this_00->field_1E8E != 0) {
       FreeAndNull(&this_00->field_1E8E);
     }

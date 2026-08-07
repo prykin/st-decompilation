@@ -131,8 +131,8 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
               iVar6 = (local_8 & 0xff) * 0x9c;
               if (((&DAT_00808af4)[iVar6] == bVar3) && ((&DAT_00808af5)[iVar6] != '\0')) {
                 FUN_006b4170(local_18,0,0,0,local_18->field_0004,local_18->field_0008,0x4c);
-                ccFntTy::WrStr(this_00->field_0083,(char *)(&DAT_00808ab0 + (UVar23 & 0xff) * 0x27),
-                               0,-1,0);
+                ccFntTy::WrStr(this_00->field_0083,&CHAR_00h_00808ab0 + (UVar23 & 0xff) * 0x9c,0,-1,
+                               0);
                 DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0x38,
                        (uVar12 & 0xff) * 0x26 + 0x2c,'\x01',(byte *)local_18);
                 break;
@@ -214,14 +214,14 @@ LAB_005bf156:
       local_18 = (RecoveredSourceFamily_dibcopy *)((uint)local_18 & 0xffffff00);
       if (DAT_00808aaf != 0) {
         do {
-          uVar12 = (uint)local_18 & 0xff;
-          if ((&DAT_00808af4)[uVar12 * 0x9c] == (char)local_1c) {
+          iVar6 = ((uint)local_18 & 0xff) * 0x9c;
+          if ((&DAT_00808af4)[iVar6] == (char)local_1c) {
             if (local_11 == '\0') {
               wsprintfA((LPSTR)&DAT_0080f33a,"%s, %s",&DAT_0080f33a,
-                        &DAT_00808ab0 + uVar12 * 0x27);
+                        &CHAR_00h_00808ab0 + iVar6);
             }
             else {
-              wsprintfA((LPSTR)&DAT_0080f33a,"%s",&DAT_00808ab0 + uVar12 * 0x27);
+              wsprintfA((LPSTR)&DAT_0080f33a,"%s",&CHAR_00h_00808ab0 + iVar6);
               local_11 = '\0';
             }
             iVar5 = FUN_00711110(this_00->field_0083,(char *)&DAT_0080f33a);
@@ -275,7 +275,7 @@ LAB_005bf156:
           memset(&DAT_0080f33a, 0, 0x834); /* compiler bulk-zero initialization */
           Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,local_898,sVar18 - 2);
           uVar12 = 0xffffffff;
-          pcVar25 = &DAT_007c7274;
+          pcVar25 = &CHAR___007c7274;
           do {
             pcVar21 = pcVar25;
             if (uVar12 == 0) break;

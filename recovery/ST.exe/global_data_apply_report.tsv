@@ -1,15 +1,8 @@
 address	status	proposed_name	detail
 00792CA0	disabled		apply flags are 0
-007C1890	disabled	g_text_007C1890	apply flags are 0
 007C2B14	disabled		apply flags are 0
 007C2B20	disabled		apply flags are 0
-007C3B5C	disabled	g_text_007C3B5C	apply flags are 0
 007C3B60	disabled		apply flags are 0
-007C7078	disabled		apply flags are 0
-007C7080	disabled		apply flags are 0
-007C7274	disabled	g__Source_007C7274	apply flags are 0
-007C8FF4	disabled		apply flags are 0
-007CC8BC	disabled		apply flags are 0
 007D03B8	disabled		apply flags are 0
 007D03BA	disabled		apply flags are 0
 007D03BC	disabled		apply flags are 0
@@ -50,22 +43,13 @@ address	status	proposed_name	detail
 008072F8	disabled		apply flags are 0
 008073D0	disabled		apply flags are 0
 00807618	disabled	g_hINSTANCE_00807618	apply flags are 0
-00807DDD	disabled		apply flags are 0
-00807E1D	disabled		apply flags are 0
-00807E5D	disabled		apply flags are 0
-00808406	disabled		apply flags are 0
 0080874D	disabled		apply flags are 0
 008087B6	disabled		apply flags are 0
-00808AB0	disabled		apply flags are 0
 00808AF4	disabled		apply flags are 0
 00809960	disabled		apply flags are 0
-0080C3C3	disabled	g__Source_0080C3C3	apply flags are 0
 0080C522	disabled		apply flags are 0
 0080C632	disabled		apply flags are 0
 0080E303	disabled		apply flags are 0
-0080ED16	disabled		apply flags are 0
-0080EF1E	disabled		apply flags are 0
-0080F22A	disabled		apply flags are 0
 0081175C	disabled		apply flags are 0
 008117C0	disabled		apply flags are 0
 00811908	disabled		apply flags are 0
@@ -76,13 +60,10 @@ address	status	proposed_name	detail
 00811990	disabled		apply flags are 0
 00811AA0	disabled		apply flags are 0
 00811C80	disabled		apply flags are 0
-00847D0C	disabled	g__Dest_00847D0C	apply flags are 0
 008489C8	disabled		apply flags are 0
 008489CC	disabled		apply flags are 0
 008489D0	disabled	g_cMf32_008489D0	apply flags are 0
-008489E0	disabled		apply flags are 0
 00848A04	disabled		apply flags are 0
-00853DE4	disabled		apply flags are 0
 00854EE8	disabled	g_anonShape_006CEC40_BB23E716_00854EE8	apply flags are 0
 00854EF0	disabled		apply flags are 0
 00854F00	disabled	g_anonShape_006D86E0_D6D32C07_00854F00	apply flags are 0

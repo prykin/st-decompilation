@@ -359,7 +359,7 @@ int __thiscall st::fn_004F1080(BldObjPanelTy *this,STMessage *message)
   if (SVar1 < MESS_RESEARCHPANELTY_B207) {
     if (SVar1 == MESS_BLDOBJPANELTY_B206) {
       st::fn_00401CE4
-                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,thunk_FUN_0052a7b0);
+                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,st::fn_00401BA4);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

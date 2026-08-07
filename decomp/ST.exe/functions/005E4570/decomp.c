@@ -110,7 +110,7 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
           if (local_18->field_006D == '\x01') {
             thunk_FUN_005b66e0(local_18);
             uVar16 = 0xffffffff;
-            pcVar18 = &DAT_0080ed16;
+            pcVar18 = &CHAR_00h_0080ed16;
             do {
               pcVar19 = pcVar18;
               if (uVar16 == 0) break;
@@ -197,7 +197,7 @@ LAB_005e470e:
           }
           else {
             uVar16 = 0xffffffff;
-            pcVar18 = &DAT_0080ed16;
+            pcVar18 = &CHAR_00h_0080ed16;
             do {
               pcVar19 = pcVar18;
               if (uVar16 == 0) break;

@@ -46,24 +46,24 @@ have been checked.
 ## Latest accepted run
 
 The current authoritative headless export is run
-`c70e28be14e413bb4affd6eeddf76d449477c66fd028c8cf9b7a7df932d0d615`.
+`c65ec9e04814cc5477e95c9ab6c4fed0d76cbfb0110455bee212d1515cc28bf4`.
 Its receipt is `passed` with semantic hash
-`3e516e69565c493f8efc3b24ab81815cf4ab4dbbadeb020a73b9584e9721d2d6`
+`4327f2202e47da1b761486e6f74c84fb5cece9e73eb83b5fecbeb29fb5159f38`
 and manifest hash
-`c5ca336f0fa2d0488d8bd833b95629f8f4e7d4b7297a88c9398ef5d99e0e37bd`.
+`6e172d04cd0969a077667798bc597a6e0795c8612d69bb92ef814e71619b50e6`.
 It contains 10,392 function entries, 5,712 bodies, zero failed bodies, and 2,729
 typed physical-vtable slots. Both the broad export gate and the ABI gate pass;
 the latter verifies all 96 class vptrs and nine fixture functions with zero
-errors or warnings. The broad gate has zero hard regressions and three
+errors or warnings. The broad gate has zero hard regressions and two
 stage-transition warnings. The final quality inventory has 4,165 anonymous-
-shape occurrences, 18,343 undefined types, 2,248 raw pointer offsets, 1,885 raw indirect calls,
+shape occurrences, 18,330 undefined types, 2,248 raw pointer offsets, 1,885 raw indirect calls,
 558 consumed return-width artifacts, and 472 unresolved register inputs. The
 old declaration-plus-use return count was intentionally replaced by a use-only
 metric; declarations are not independent ABI failures.
 
 `STDecompExport` now emits a separate compile-readiness inventory. All 5,712
 bodies have zero residual Ghidra `._offset_width_` syntax. The generated C++17
-runtime makes 34,827 exact operations expressible through scalar/calling-
+runtime makes 34,814 exact operations expressible through scalar/calling-
 convention aliases, opaque `code`, `STPiece`, `STLiteralPiece`, `STField`, and
 width-checked composition/carry helpers. The exporter itself is not a source
 generator, but `tools/st_source_tree.py` now supplies the missing offline
@@ -80,7 +80,7 @@ register/high values. See `docs/compile-readiness.md`,
 The first compile-driven source layer is implemented without mutating Ghidra.
 `tools/st_compile_audit.py` verifies the generated manifest, compiles all 318
 translation units independently, and writes an address-stable local queue under
-ignored `.st-local/`. `tools/st_source_tree.py` materializes 2,664 exact
+ignored `.st-local/`. `tools/st_source_tree.py` materializes 2,703 exact
 unnamed-byte views which statically typed bodies actually reference, including
 indexed and nested pointer-member chains. It also emits 780 ordinary non-virtual
 member wrappers over exact receiver-aware physical-vtable slots, preserving
@@ -91,23 +91,23 @@ remains `st::fn_ADDRESS`. Constructors, destructors, ambiguous overloads, and
 field-name collisions remain explicit source-generation audit rows. The
 complete declaration header passes Clang C++17.
 
-The source projection also separates 193 C++ type/value namespace collisions
+The source projection also separates C++ type/value namespace collisions
 such as the image object `FrmPanelTyVTable` and the record type of the same
 name. At the 231 exact address-taking sites currently emitted, only the source-
 level object identifier becomes `st_global_ADDRESS`; the Ghidra symbol and type
 names remain provenance. This removes false local-declaration failures without
 changing the database or object layout.
 
-With Apple Clang and a fixed limit of 64 diagnostics per translation unit, 61
-of 318 units pass and 5,588 of 5,590 retained errors map to a function address.
-Against the preceding audit with the same cap, the accepted lifetime/layout
-pass removes 52 diagnostics: assignment-type errors fall by 23 and call-
-argument errors by 43, while newly exposed undeclared identifiers rise by nine
-and miscellaneous errors by five. The current dominant clusters are assignment
-types (1,472), scalar subscripting (1,138), undeclared identifiers (1,070), and
-call-argument types (1,062). These are capped comparison counts, not the
-uncapped total. Source identity counts are 37,351 direct-call-or-definition
-rewrites and 5,712 definition rewrites.
+With Apple Clang and a fixed limit of 64 diagnostics per translation unit, 69
+of 318 units pass and 4,757 of 4,762 retained errors map to a function address.
+Against the preceding 5,590-error baseline, exact global declarations,
+character-storage recovery, and address-coded call normalization remove 828
+diagnostics. The current dominant clusters are assignment types (1,426), call-
+argument types (1,182), undeclared identifiers (1,125), and pointer indirection
+(261); scalar subscripting fell from 1,138 to 76. These are capped comparison
+counts, not the uncapped total. Source identity counts are 37,351 direct-call-
+or-definition rewrites, 5,712 definition rewrites, and 116 stale qualified
+address-symbol repairs.
 
 The previously ugly call in global `__thiscall` function `00717910` now renders
 its proven member load as
@@ -900,3 +900,46 @@ infrastructure debt is now dependency-aware analyzer caching: the current
 semantic epoch key is deliberately safe but too coarse, so a small structural
 change still reruns several broad decompiler consumers which could instead key
 on their actual datatype/function dependencies.
+
+## Exact global declarations and character-storage recovery
+
+The next compiler-driven fixed point is accepted. `tools/st_source_tree.py`
+now resolves each global's exported display name back to an exact datatype path
+and emits the real declarator, including arrays, instead of scalarizing every
+complex spelling to `undefined4`. It registers typed global records as field
+roots and spells unnamed defined components exactly as exported by Ghidra.
+This reduced capped `scalar_subscript` diagnostics from 1,138 to 76 and
+`missing_record_member` diagnostics to 43.
+
+Address-coded `FUN_ADDRESS`, `sub_ADDRESS`, and `thunk_FUN_ADDRESS` leaves are
+resolved by their encoded exported entry address. A second exact normalization
+removes stale line-wrapped recovered qualifiers left before `st::fn_ADDRESS`;
+116 such impossible `Owner::st::fn_ADDRESS` forms are now repaired without a
+name-based owner choice.
+
+`STClassLayoutAnalyzer` may type an undefined one-byte generated field as
+`char` only when exact address/call evidence supplies at least two character
+uses and twice as many votes as every competing narrow scalar. It does not
+revise an already concrete same-width field. `STGlobalDataAnalyzer` uses the
+same principle with a stricter three/four-times quorum, plus an independent
+machine proof: `MOV EDI,<exact global>` followed within eight instructions by
+`REPNE SCASB`, before an EDI overwrite, call, or control-flow boundary. The
+call-boundary phase applied 14 global character types; the exact scan applied
+77. Printable bytes alone are never evidence. Both pairs now report zero
+enabled rows at fixed point.
+
+Latest accepted state:
+
+- semantic hash `4327f2202e47da1b761486e6f74c84fb5cece9e73eb83b5fecbeb29fb5159f38`;
+- corpus manifest `6e172d04cd0969a077667798bc597a6e0795c8612d69bb92ef814e71619b50e6`;
+- 10,392 function records, 5,712 bodies, zero failed bodies, 2,729 typed vtable slots;
+- export gate has zero hard regressions and two nonblocking warnings;
+- full pipeline duration `00:38:52`;
+- 64-error-per-TU compiler audit: 69/318 pass, 4,762 errors, 4,757 mapped to an address.
+
+Against the preceding 5,590-error same-cap baseline this removes 828 diagnostics
+(14.8%) and makes eight additional translation units pass. The next shared
+semantic cause is the 4,283-site stack-slot/local lifetime cluster feeding
+1,426 assignment and 1,182 call-argument diagnostics. Prefer an address-stable
+Ghidra split or exact `ST_PSEUDO[stack_slot_reuse]` local materialization over
+casts in generated calls.

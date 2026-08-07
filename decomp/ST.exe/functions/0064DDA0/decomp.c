@@ -44,10 +44,10 @@ AiEventClassTy::_CreateDest
       iVar5 = thunk_FUN_006036a0(param_3,param_4,param_5,(int)param_1);
       if (iVar5 != 0) {
         if (param_7 == nullptr) {
-          param_7 = &DAT_008016a0;
+          param_7 = &CHAR_00h_008016a0;
         }
         if (param_6 == nullptr) {
-          param_6 = &DAT_008016a0;
+          param_6 = &CHAR_00h_008016a0;
         }
         thunk_FUN_006034e0((short)local_8,param_4,param_5,(int)param_1,(int)param_2,param_6,param_7,
                            param_8);

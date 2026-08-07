@@ -35,7 +35,7 @@ FUN_00580910(int param_1,Global_sub_00580910_param_2Enum param_2,int param_3,und
       break;
     case CASE_DE:
     case CASE_E0:
-      pcVar4 = &DAT_007cb2a8;
+      pcVar4 = &CHAR_r_007cb2a8;
       break;
     default:
       goto switchD_0058094e_caseD_df;

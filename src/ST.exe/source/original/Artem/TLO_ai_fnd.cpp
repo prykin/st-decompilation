@@ -176,7 +176,7 @@ int st::fn_004B33D0(uint param_1,int *param_2)
   g_currentExceptionFrame = &local_2c0;
   ExceptionList = &local_14;
   local_EAX_82 = st::fn_0072D7F0
-                           (local_2c0.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
+                           (local_2c0.jumpBuffer,2,st::fn_0072DA21,0xffffffff);
   local_1c = &stack0xfffffc94;
   if (local_EAX_82 != 0) {
     g_currentExceptionFrame = local_2c0.previous;

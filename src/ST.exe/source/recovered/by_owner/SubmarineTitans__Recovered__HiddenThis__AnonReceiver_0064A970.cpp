@@ -1062,7 +1062,7 @@ st::fn_00672440
     }
     return iVar2;
   }
-  st::fn_0072E340(&local_1c->field_0x4,&DAT_008016a0,0x7f);
+  st::fn_0072E340(&local_1c->field_0x4,&CHAR_00h_008016a0,0x7f);
   *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
   if (param_3 != nullptr) {
     psVar5 = param_3;

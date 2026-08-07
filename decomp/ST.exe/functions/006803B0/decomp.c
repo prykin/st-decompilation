@@ -23,7 +23,7 @@ undefined4 * __cdecl FUN_006803b0(byte param_1)
   else if (-1 < DAT_00848a00) {
     Library::MSVCRT::__itoa(DAT_00848a04,local_28,10);
     wsprintfA(local_a8,"%s%s%s","%s%0",local_28,&DAT_007d5630);
-    wsprintfA((LPSTR)&DAT_008478ac,local_a8,&DAT_008489e0,DAT_00848a00);
+    wsprintfA((LPSTR)&DAT_008478ac,local_a8,&CHAR_00h_008489e0,DAT_00848a00);
     DAT_00848a00 = DAT_00848a00 + DAT_007d3fa0;
     return &DAT_008478ac;
   }
@@ -31,7 +31,7 @@ undefined4 * __cdecl FUN_006803b0(byte param_1)
     local_8 = DAT_008489d0;
     iVar7 = 0;
     do {
-      pCVar3 = FUN_006f2c00(&DAT_008489e0,iVar2,iVar7);
+      pCVar3 = FUN_006f2c00(&CHAR_00h_008489e0,iVar2,iVar7);
       iVar4 = cMf32::RecChk(local_8,param_1,pCVar3);
       if (iVar4 != 0) {
         if (pCVar3 != (LPSTR)0x0) {
@@ -45,7 +45,7 @@ undefined4 * __cdecl FUN_006803b0(byte param_1)
   }
 LAB_00680474:
   uVar5 = 0xffffffff;
-  pcVar8 = &DAT_008489e0;
+  pcVar8 = &CHAR_00h_008489e0;
   do {
     pcVar9 = pcVar8;
     if (uVar5 == 0) break;

@@ -67,7 +67,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   }
   else {
     if (((byte)local_8->field_1A93 < 2) || (3 < (byte)local_8->field_1A93)) goto LAB_005e829d;
-    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c244);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,PTR_s_CUSTOM__0079c244);
     local_1c = this_00->field_1A93;
     local_1b = this_00->field_1A8F;
     iVar5 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_1c,0);
@@ -76,7 +76,8 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
       g_currentExceptionFrame = &local_a4;
       local_EAX_409 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
       if (local_EAX_409 == 0) {
-        local_10 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
+        local_10 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                      (0x345,(byte *)&CHAR_00h_0080ed16,0,0,0);
       }
       this_00 = local_8;
       pcVar4 = local_10;
@@ -85,7 +86,8 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
         StartSystemTy::LoadMapData
                   (g_startSystem_0081176C,local_10,(local_8->field_1A93 != '\x02') + '\x04');
         local_c = 1;
-        Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,nullptr,nullptr,local_1a8,nullptr);
+        Library::MSVCRT::FUN_0072e730
+                  ((byte *)&CHAR_00h_0080ed16,nullptr,nullptr,local_1a8,nullptr);
         pbVar12 = local_1a8;
         pcVar7 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar7,pbVar12);

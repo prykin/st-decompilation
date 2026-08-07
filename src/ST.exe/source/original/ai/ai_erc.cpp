@@ -220,7 +220,7 @@ float * st::fn_0064A970(char *param_1,int param_2,int *param_3)
     }
     return nullptr;
   }
-  st::fn_0072E340((char *)(local_38 + 1),&DAT_008016a0,0x7f);
+  st::fn_0072E340((char *)(local_38 + 1),&CHAR_00h_008016a0,0x7f);
   local_38[0x21] = -1;
   cVar3 = *param_1;
   local_ECX_128 = param_1;

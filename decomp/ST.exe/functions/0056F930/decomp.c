@@ -22,7 +22,7 @@ undefined4 __fastcall FUN_0056f930(AnonShape_0056F930_C6277D80 *param_1)
     else {
       resourceId = (cVar1 != '\x02') + 0x2689;
     }
-    puVar6 = PTR_DAT_0079b034;
+    puVar6 = PTR_CHAR___0079b034;
     pcVar2 = LoadResourceString(0x268b,g_hINSTANCE_00807618);
     iVar5 = *(int *)&param_1[4].field_0x8fa + 1;
     pcVar3 = LoadResourceString(resourceId,g_hINSTANCE_00807618);

@@ -21,7 +21,7 @@ void __cdecl FUN_00680340(char *param_1,undefined4 param_2,undefined4 param_3,un
   } while (cVar1 != '\0');
   uVar2 = ~uVar2;
   pcVar4 = pcVar4_mg0 + -uVar2;
-  pcVar5 = &DAT_008489e0;
+  pcVar5 = &CHAR_00h_008489e0;
   memmove(pcVar5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
   DAT_00848a00 = param_3;
   DAT_00848a04 = param_2;

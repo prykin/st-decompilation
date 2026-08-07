@@ -20,7 +20,7 @@ undefined4 * __cdecl st::fn_00540C40(void *param_1,uint *param_2,uint *param_3,i
 
   uVar3 = 0xffffffff;
   iVar5 = 0;
-  pcVar6 = &DAT_008016a0;
+  pcVar6 = &CHAR_00h_008016a0;
   do {
     pcVar9 = pcVar6;
     if (uVar3 == 0) break;
@@ -33,7 +33,7 @@ undefined4 * __cdecl st::fn_00540C40(void *param_1,uint *param_2,uint *param_3,i
   local_8 = 0;
   local_c = 0;
   pcVar6 = pcVar9 + -uVar3;
-  pcVar9 = (char *)&DAT_008016f0;
+  pcVar9 = &CHAR_00h_008016f0;
   memmove(pcVar9, pcVar6, uVar3); /* compiler REP MOVS byte copy */
   if ((param_1 != nullptr) && (param_2 != nullptr)) {
     iVar2 = st::fn_00711110(param_1,(char *)param_2);
@@ -54,7 +54,7 @@ undefined4 * __cdecl st::fn_00540C40(void *param_1,uint *param_2,uint *param_3,i
         puVar8 = (uint *)((int)puVar8 + 1);
         iVar2 = iVar5 + local_8;
       }
-      st::fn_0072E340((char *)&DAT_008016f0,(char *)param_2,local_c - 1);
+      st::fn_0072E340(&CHAR_00h_008016f0,(char *)param_2,local_c - 1);
       uVar3 = 0xffffffff;
       *(undefined1 *)((int)&g_sAMPanel_008016EC + local_c + 3) = 0;
       do {
@@ -68,7 +68,7 @@ undefined4 * __cdecl st::fn_00540C40(void *param_1,uint *param_2,uint *param_3,i
       uVar3 = ~uVar3;
       pcVar6 = (char *)((int)puVar8 - uVar3);
       iVar5 = -1;
-      pcVar9 = (char *)&DAT_008016f0;
+      pcVar9 = &CHAR_00h_008016f0;
       do {
         pcVar7 = pcVar9;
         if (iVar5 == 0) break;
@@ -91,12 +91,12 @@ undefined4 * __cdecl st::fn_00540C40(void *param_1,uint *param_2,uint *param_3,i
       } while ((char)uVar4 != '\0');
       uVar3 = ~uVar3;
       pcVar6 = (char *)((int)puVar8 - uVar3);
-      pcVar7 = (char *)&DAT_008016f0;
+      pcVar7 = &CHAR_00h_008016f0;
     }
     memmove(pcVar7, pcVar6, uVar3); /* compiler REP MOVS byte copy */
   }
 LAB_00540d59:
-  return &DAT_008016f0;
+  return (undefined4 *)&CHAR_00h_008016f0;
 }
 
 // 005411A0 FUN_005411a0

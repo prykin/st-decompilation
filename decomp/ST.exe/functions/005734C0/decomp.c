@@ -85,7 +85,7 @@ void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
   else {
 LAB_0057366c:
     uVar2 = 0xffffffff;
-    pcVar6 = &DAT_008016a0;
+    pcVar6 = &CHAR_00h_008016a0;
     do {
       pcVar8 = pcVar6;
       if (uVar2 == 0) break;
@@ -101,7 +101,7 @@ LAB_0057366c:
     uVar5 = 0;
   }
   uVar2 = 0xffffffff;
-  pcVar6 = &DAT_007ca694;
+  pcVar6 = &CHAR_N_007ca694;
   do {
     pcVar8 = pcVar6;
     if (uVar2 == 0) break;
@@ -118,7 +118,7 @@ LAB_0057366c:
   uVar2 = 0xffffffff;
   STField<undefined4>(this,0x779) = 0xdeb00008;
   STField<undefined4>(this,0x77d) = 0;
-  pcVar6 = &DAT_007ca684;
+  pcVar6 = &CHAR_N_007ca684;
   do {
     pcVar8 = pcVar6;
     if (uVar2 == 0) break;
@@ -133,7 +133,7 @@ LAB_0057366c:
   memmove(pcVar8, pcVar6, uVar2); /* compiler REP MOVS byte copy */
   uVar5 = 0;
   uVar2 = 0xffffffff;
-  pcVar6 = &DAT_008016a0;
+  pcVar6 = &CHAR_00h_008016a0;
   do {
     pcVar8 = pcVar6;
     if (uVar2 == 0) break;
@@ -148,7 +148,7 @@ LAB_0057366c:
   memmove(pcVar8, pcVar6, uVar2); /* compiler REP MOVS byte copy */
   uVar5 = 0;
   uVar2 = 0xffffffff;
-  pcVar6 = &DAT_008016a0;
+  pcVar6 = &CHAR_00h_008016a0;
   do {
     pcVar8 = pcVar6;
     if (uVar2 == 0) break;
@@ -163,7 +163,7 @@ LAB_0057366c:
   memmove(pcVar8, pcVar6, uVar2); /* compiler REP MOVS byte copy */
   uVar5 = 0;
   uVar2 = 0xffffffff;
-  pcVar6 = &DAT_008016a0;
+  pcVar6 = &CHAR_00h_008016a0;
   do {
     pcVar8 = pcVar6;
     if (uVar2 == 0) break;
@@ -178,7 +178,7 @@ LAB_0057366c:
   memmove(pcVar8, pcVar6, uVar2); /* compiler REP MOVS byte copy */
   uVar5 = 0;
   uVar2 = 0xffffffff;
-  pcVar6 = &DAT_008016a0;
+  pcVar6 = &CHAR_00h_008016a0;
   do {
     pcVar8 = pcVar6;
     if (uVar2 == 0) break;
@@ -193,7 +193,7 @@ LAB_0057366c:
   memmove(pcVar8, pcVar6, uVar2); /* compiler REP MOVS byte copy */
   uVar5 = 0;
   uVar2 = 0xffffffff;
-  pcVar6 = &DAT_008016a0;
+  pcVar6 = &CHAR_00h_008016a0;
   do {
     pcVar8 = pcVar6;
     if (uVar2 == 0) break;
@@ -206,8 +206,9 @@ LAB_0057366c:
   pcVar6 = pcVar8 + -uVar2;
   pcVar8 = (char *)((int)this + 0x334);
   memmove(pcVar8, pcVar6, uVar2); /* compiler REP MOVS byte copy */
+  uVar5 = 0;
   uVar2 = 0xffffffff;
-  pcVar6 = &DAT_008016a0;
+  pcVar6 = &CHAR_00h_008016a0;
   do {
     pcVar8 = pcVar6;
     if (uVar2 == 0) break;

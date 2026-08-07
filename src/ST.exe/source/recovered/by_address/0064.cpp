@@ -1450,7 +1450,7 @@ st::fn_00649FF0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param
   memmove(pcVar12, pcVar9, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar9 = &DAT_00807680;
+  pcVar9 = &CHAR_00h_00807680;
   do {
     pcVar12 = pcVar9;
     if (uVar6 == 0) break;
@@ -1490,7 +1490,7 @@ st::fn_00649FF0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param
   memmove(pcVar12, pcVar9, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar9 = &DAT_00807680;
+  pcVar9 = &CHAR_00h_00807680;
   do {
     pcVar12 = pcVar9;
     if (uVar6 == 0) break;
@@ -1670,7 +1670,7 @@ DWORD st::fn_0064A450(void)
   _SYSTEMTIME local_14;
 
   if ((HANDLE_008118f8 == (HANDLE)0x0) && (DAT_0080734a != '\0')) {
-    st::external_00000080((LPSTR)local_118,"%sAIScript.dbg",&DAT_00807680);
+    st::external_00000080((LPSTR)local_118,"%sAIScript.dbg",&CHAR_00h_00807680);
     HANDLE_008118f8 =
          st::external_00000055((LPCSTR)local_118,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     if (HANDLE_008118f8 == (HANDLE)0xffffffff) {
@@ -1729,14 +1729,14 @@ void __cdecl st::fn_0064A5B0(LPDWORD lpNumberOfBytesWritten)
     st::external_00000059(HANDLE_008118f8,lpNumberOfBytesWritten,~uVar3 - 1,(LPDWORD)&lpNumberOfBytesWritten,
               (LPOVERLAPPED)0x0);
     uVar3 = 0xffffffff;
-    pcVar5 = &DAT_007d2a00;
+    pcVar5 = &CHAR_0Dh_007d2a00;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
       cVar1 = *pcVar5;
       pcVar5 = pcVar5 + 1;
     } while (cVar1 != '\0');
-    st::external_00000059(HANDLE_008118f8,&DAT_007d2a00,~uVar3 - 1,(LPDWORD)&lpNumberOfBytesWritten,
+    st::external_00000059(HANDLE_008118f8,&CHAR_0Dh_007d2a00,~uVar3 - 1,(LPDWORD)&lpNumberOfBytesWritten,
               (LPOVERLAPPED)0x0);
   }
   return;
@@ -1936,7 +1936,7 @@ void __thiscall st::fn_0064D0E0(void *this,int param_1,char *param_2,undefined4 
       st::fn_004014D8(g_popUp_008016D8,(char *)local_404,8);
     }
     st::fn_00403B89(local_404);
-    st::fn_00403B89((LPDWORD)&DAT_007d2a00);
+    st::fn_00403B89((LPDWORD)&CHAR_0Dh_007d2a00);
   }
   return;
 }

@@ -39,9 +39,9 @@ int __fastcall FUN_00720d30(AnonShape_00720D30_DF382E7D *param_1)
       cVar1 = *pcVar7;
       pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
-    pcVar7 = PTR_DAT_007f0afc;
+    pcVar7 = PTR_CHAR___007f0afc;
     if ((iVar5 != -2) && (pcVar7 = pcVar2, (param_1->field_0020 & 0x20) != 0)) {
-      pcVar7 = PTR_DAT_007f0b00;
+      pcVar7 = PTR_CHAR___007f0b00;
     }
     iVar4 = FUN_007111c0((void *)param_1->field_0214,pcVar7);
     if (param_1->field_0030 < iVar4 + iVar6) {

@@ -1829,7 +1829,7 @@ int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
     }
     pCVar6 = st::fn_0040577C(text,0);
     st::fn_00403373((PanelTy *)this_00,(AnonShape_005389E0_C98BD548 *)message,1,pCVar6,
-                      thunk_FUN_00529fe0,0,1);
+                      st::fn_00401E88,0,1);
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;

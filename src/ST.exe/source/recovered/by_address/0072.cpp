@@ -99,9 +99,9 @@ int __fastcall st::fn_00720D30(AnonShape_00720D30_DF382E7D *param_1)
       cVar1 = *pcVar7;
       pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
-    pcVar7 = PTR_DAT_007f0afc;
+    pcVar7 = PTR_CHAR___007f0afc;
     if ((iVar5 != -2) && (pcVar7 = pcVar2, (param_1->field_0020 & 0x20) != 0)) {
-      pcVar7 = PTR_DAT_007f0b00;
+      pcVar7 = PTR_CHAR___007f0b00;
     }
     iVar4 = st::fn_007111C0((void *)param_1->field_0214,pcVar7);
     if (param_1->field_0030 < iVar4 + iVar6) {
@@ -190,9 +190,9 @@ void __thiscall st::fn_00720E70(void *this,int param_1,int param_2)
         cVar1 = *pcVar10;
         pcVar10 = pcVar10 + 1;
       } while (cVar1 != '\0');
-      pcVar10 = PTR_DAT_007f0afc;
+      pcVar10 = PTR_CHAR___007f0afc;
       if ((iVar6 != -2) && (pcVar10 = pcVar8, (STField<byte>(this,0x20) & 0x20) != 0)) {
-        pcVar10 = PTR_DAT_007f0b00;
+        pcVar10 = PTR_CHAR___007f0b00;
       }
       iVar4 = st::fn_007111C0(STField<void *>(this,0x214),pcVar10);
       iVar6 = local_c;
@@ -243,7 +243,7 @@ cf_break_loop_00720F4E:
         }
         else {
           pvVar3 = STField<void *>(this,0x214);
-          uVar7 = st::fn_00710FB0(pvVar3,PTR_DAT_007f0b00);
+          uVar7 = st::fn_00710FB0(pvVar3,PTR_CHAR___007f0b00);
           sVar2 = *(short *)(STField<int>(pvVar3,0x9a) + 0x6a + (uVar7 & 0xffff) * 10);
         }
         iVar5 = *(int *)(STField<int>(this,0x214) + 0x58) + (int)sVar2;
@@ -393,10 +393,10 @@ LAB_0072122f:
           cVar1 = *pcVar8;
           pcVar8 = pcVar8 + 1;
         } while (cVar1 != '\0');
-        pcVar8 = PTR_DAT_007f0afc;
+        pcVar8 = PTR_CHAR___007f0afc;
         if ((iVar5 == -2) ||
-           (pcVar8 = pcVar7, pcVar7 = PTR_DAT_007f0b00, (STField<byte>(this,0x20) & 0x20) == 0))
-        {
+           (pcVar8 = pcVar7, pcVar7 = PTR_CHAR___007f0b00, (STField<byte>(this,0x20) & 0x20) == 0
+           )) {
           pcVar7 = pcVar8;
         }
         iVar4 = st::fn_007111C0(STField<void *>(this,0x214),pcVar7);
@@ -431,7 +431,7 @@ LAB_0072122f:
         }
         else {
           this_00 = STField<void *>(this,0x214);
-          pbVar11 = PTR_DAT_007f0b00;
+          pbVar11 = PTR_CHAR___007f0b00;
         }
         uVar3 = st::fn_00710FB0(this_00,pbVar11);
         iVar9 = *(int *)(STField<int>(this,0x214) + 0x58) +
@@ -512,7 +512,7 @@ uint __fastcall st::fn_00721340(AnonShape_00721340_81196542 *param_1)
       if (param_1->field_0210 + param_1->field_0148 == 0) {
         uVar4 = st::fn_006B6020
                           ((DArrayTy *)param_1->field_0138,param_1->field_0144 + param_1->field_020C
-                           ,PTR_DAT_007f0b04);
+                           ,PTR_CHAR_00h_007f0b04);
         if (-1 < (int)uVar4) {
           return 0;
         }
@@ -542,7 +542,7 @@ uint __fastcall st::fn_00721340(AnonShape_00721340_81196542 *param_1)
     }
   }
   else {
-    uVar4 = st::fn_00752D50(iVar2,(uint)(local_8 + 1),PTR_DAT_007f0b04);
+    uVar4 = st::fn_00752D50(iVar2,(uint)(local_8 + 1),PTR_CHAR_00h_007f0b04);
     if (-1 < (int)uVar4) {
       uVar4 = 0;
     }
@@ -830,7 +830,7 @@ undefined4 __thiscall st::fn_00721830(void *this,char *param_1)
       }
     }
     if ((STField<DArrayTy *>(this,0x138))->elementSize == 0) {
-      st::fn_006B5AA0(STField<DArrayTy *>(this,0x138),PTR_DAT_007f0b04);
+      st::fn_006B5AA0(STField<DArrayTy *>(this,0x138),PTR_CHAR_00h_007f0b04);
     }
     iVar2 = STField<int>(this,0x20c) + STField<int>(this,0x144);
     if (iVar2 < *(int *)(STField<int>(this,0x138) + 8)) {
@@ -1071,7 +1071,7 @@ EditorClassTy * __cdecl st::fn_007233B0(void)
 
   pEVar1 = (EditorClassTy *)st::fn_006B04D0(0x218);
   if (pEVar1 != nullptr) {
-    FUN_0072b700((undefined4 *)pEVar1);
+    st::fn_0072B700((undefined4 *)pEVar1);
     pEVar1->field_0000 = &VTable_0079E2B4;
     pEVar1->field_0200 = 0;
     pEVar1->field_01FC = 0;
@@ -1248,7 +1248,7 @@ SliderClassTy * __cdecl st::fn_00724D00(void)
 
   this = (SliderClassTy *)st::fn_006B04D0(100);
   if (this != nullptr) {
-    sub_006E5FB0(this);
+    st::fn_006E5FB0(this);
     this->field_0000 = &VTable_0079E2C8;
     this->field_001C = 0;
     this->field_0020 = 0;
@@ -1595,7 +1595,7 @@ st::fn_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_
       uVar7 = 0;
       st::fn_006B8280(local_108,local_108);
       uVar6 = 0xffffffff;
-      pcVar8 = &DAT_007cc8bc;
+      pcVar8 = &CHAR___007cc8bc;
       do {
         pcVar12 = pcVar8;
         if (uVar6 == 0) break;

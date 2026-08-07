@@ -401,21 +401,21 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
         case CASE_A:
           pbVar40 = this_00->field_1B0C;
           if (pbVar40 != nullptr) {
-            pbVar35 = &DAT_00807e1d;
+            pcVar38 = &CHAR_00h_00807e1d;
             do {
               bVar33 = *pbVar40;
-              bVar43 = bVar33 < *pbVar35;
-              if (bVar33 != *pbVar35) {
+              bVar43 = bVar33 < (byte)*pcVar38;
+              if (bVar33 != *pcVar38) {
 LAB_005a63e7:
                 iVar44 = (1 - (uint)bVar43) - (uint)(bVar43 != 0);
                 goto LAB_005a63ec;
               }
               if (bVar33 == 0) break;
               bVar33 = pbVar40[1];
-              bVar43 = bVar33 < pbVar35[1];
-              if (bVar33 != pbVar35[1]) goto LAB_005a63e7;
+              bVar43 = bVar33 < (byte)pcVar38[1];
+              if (bVar33 != pcVar38[1]) goto LAB_005a63e7;
               pbVar40 = pbVar40 + 2;
-              pbVar35 = pbVar35 + 2;
+              pcVar38 = pcVar38 + 2;
             } while (bVar33 != 0);
             iVar44 = 0;
 LAB_005a63ec:
@@ -481,7 +481,7 @@ LAB_005a63ec:
         else {
           pcVar38 = *(char **)this_00->field_1AE8->growCapacity;
         }
-        Library::MSVCRT::_strncpy(&DAT_00807e1d,pcVar38,0x40);
+        Library::MSVCRT::_strncpy(&CHAR_00h_00807e1d,pcVar38,0x40);
         DAT_00807e5c = 0;
         if ((int)this_00->field_1AEC->elementSize < 1) {
           pcVar38 = nullptr;
@@ -500,11 +500,11 @@ LAB_005a63ec:
         } while (cVar2 != '\0');
         uVar34 = ~uVar34;
         pcVar38 = pcVar23 + -uVar34;
-        pcVar23 = (char *)&DAT_00807e5d;
+        pcVar23 = &CHAR_00h_00807e5d;
         memmove(pcVar23, pcVar38, uVar34); /* compiler REP MOVS byte copy */
         uVar30 = 0;
         iVar44 = -1;
-        pcVar38 = (char *)&DAT_00807e5d;
+        pcVar38 = &CHAR_00h_00807e5d;
         do {
           if (iVar44 == 0) break;
           iVar44 = iVar44 + -1;
@@ -527,9 +527,9 @@ LAB_005a63ec:
             else {
               pbVar40 = *(byte **)this_00->field_1AF0->growCapacity;
             }
-            pbVar35 = (byte *)&DAT_00807e5d;
+            pcVar38 = &CHAR_00h_00807e5d;
             do {
-              bVar33 = *pbVar35;
+              bVar33 = *pcVar38;
               bVar43 = bVar33 < *pbVar40;
               if (bVar33 != *pbVar40) {
 LAB_005a6653:
@@ -537,10 +537,10 @@ LAB_005a6653:
                 goto LAB_005a6658;
               }
               if (bVar33 == 0) break;
-              bVar33 = pbVar35[1];
+              bVar33 = pcVar38[1];
               bVar43 = bVar33 < pbVar40[1];
               if (bVar33 != pbVar40[1]) goto LAB_005a6653;
-              pbVar35 = pbVar35 + 2;
+              pcVar38 = pcVar38 + 2;
               pbVar40 = pbVar40 + 2;
             } while (bVar33 != 0);
             iVar44 = 0;
@@ -582,7 +582,7 @@ LAB_005a6658:
               thunk_FUN_0055c320(&DAT_00802a90,pbVar40,pcVar23,pcVar38,
                                  (AnonShape_0055C320_953077EC *)this_00->field_1B04);
               CFsgsConnection::CreateNewAccount
-                        ((CFsgsConnection *)&DAT_00802a90,&DAT_00807e1d,(char *)&DAT_00807e5d);
+                        ((CFsgsConnection *)&DAT_00802a90,&CHAR_00h_00807e1d,&CHAR_00h_00807e5d);
             }
             else {
               pMVar31 = this_00->field_1A5B->field_02E6;
@@ -611,7 +611,7 @@ LAB_005a6658:
         }
 LAB_005a67e1:
         uVar25 = CFsgsConnection::Login
-                           ((CFsgsConnection *)&DAT_00802a90,&DAT_00807e1d,(char *)&DAT_00807e5d);
+                           ((CFsgsConnection *)&DAT_00802a90,&CHAR_00h_00807e1d,&CHAR_00h_00807e5d);
         if (uVar25 == 0) {
           DVar24 = GetLastError();
           thunk_FUN_0055beb0(&DAT_00802a90,DVar24);
@@ -818,7 +818,7 @@ LAB_005a6d57:
         pcVar38_mg1 = LoadResourceString(0x25be,g_hINSTANCE_00807618);
         ccFntTy::WrTxt(this_00->field_1A73,pcVar38_mg1,iVar44,iVar45,uVar34,iVar47,iVar48);
         FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
-        wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_UPDATES__0079c020,
+        wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079c020,
                   &DAT_0080f126);
         wsprintfA(local_4b8,"subtitans/%s",&DAT_0080f126);
         CFsgsConnection::DownloadFile
@@ -1195,7 +1195,7 @@ LAB_005a6e50:
                          nullptr,0,0,0x15e,0x8c,0x10000ff);
             }
             if (bVar43) {
-              Library::DKW::TBL::FUN_006b6020(this_00->field_1AE8,0,&DAT_008016a0);
+              Library::DKW::TBL::FUN_006b6020(this_00->field_1AE8,0,&CHAR_00h_008016a0);
               this_00->field_002D = 0x33;
               *(DArrayTy **)&this_00->field_0x31 = this_00->field_1AE8;
               FUN_006e6080(this_00,2,this_00->field_1AC4,(undefined4 *)&this_00->field_0x1d);
@@ -1284,13 +1284,13 @@ LAB_005a6e50:
             do {
               pcVar38 = *(char **)(pDVar29->growCapacity + iVar44 * 4);
 LAB_005a8b12:
-              AddMessage(this_00,8,&DAT_008016a0,pcVar38,8);
+              AddMessage(this_00,8,(byte *)&CHAR_00h_008016a0,pcVar38,8);
               iVar44 = iVar44 + 1;
               pDVar29 = this_00->field_1A5B->field_0696;
             } while (iVar44 < (int)pDVar29->elementSize);
           }
         }
-        Library::DKW::TBL::FUN_006b6020(this_00->field_1EA2,0,&DAT_008016a0);
+        Library::DKW::TBL::FUN_006b6020(this_00->field_1EA2,0,&CHAR_00h_008016a0);
         this_00->field_002D = 0x33;
         *(DArrayTy **)&this_00->field_0x31 = this_00->field_1EA2;
         goto LAB_005a8c85;
@@ -1614,7 +1614,7 @@ LAB_005a7656:
             pcVar38 = nullptr;
           }
           if (pcVar38 == nullptr) {
-            pcVar38 = &DAT_008016a0;
+            pcVar38 = &CHAR_00h_008016a0;
           }
           uVar34 = 0xffffffff;
           do {
@@ -1970,7 +1970,7 @@ cf_common_exit_005A7F3B:
                   wsprintfA((LPSTR)&DAT_0080f33a,"%s %s %s",pcVar38_mg26,pvVar37,uVar22);
                   CFsgsConnection::SendChatMessage
                             ((CFsgsConnection *)&DAT_00802a90,(char *)&DAT_0080f33a);
-                  Library::DKW::TBL::FUN_006b6020(this_00->field_1EA2,0,&DAT_008016a0);
+                  Library::DKW::TBL::FUN_006b6020(this_00->field_1EA2,0,&CHAR_00h_008016a0);
                   this_00->field_002D = 0x33;
                   *(DArrayTy **)&this_00->field_0x31 = this_00->field_1EA2;
                   FUN_006e6080(this_00,2,this_00->field_1B10,(undefined4 *)puVar1);
@@ -3017,7 +3017,8 @@ LAB_005a50be:
       local_f8 = "Profile\\Location";
       local_f4 = "Profile\\Description";
       if (this_00->field_1A5F == CASE_2) {
-        CFsgsConnection::RequestInfo((CFsgsConnection *)&DAT_00802a90,&DAT_00807e1d,4,&local_100);
+        CFsgsConnection::RequestInfo
+                  ((CFsgsConnection *)&DAT_00802a90,&CHAR_00h_00807e1d,4,&local_100);
       }
       else {
         local_11c = "Profile\\Sex";

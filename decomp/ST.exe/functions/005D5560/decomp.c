@@ -55,12 +55,10 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
   BulkInitializedRecord_008087C7 *pBVar31;
   char *pcVar32;
   char *pcVar33;
-  byte *puVar34;
-  AnonShape_005CBBE0_2D1CAA09 *pAVar35;
-  uint *puVar36;
-  bool bVar37;
-  uint *puVar38;
-  int iVar39;
+  AnonShape_005CBBE0_2D1CAA09 *pAVar34;
+  uint *puVar35;
+  bool bVar36;
+  int iVar37;
   InternalExceptionFrame local_c8;
   undefined4 local_84 [2];
   undefined4 local_7c;
@@ -129,10 +127,10 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
         }
         pDVar16 = this_00->field_1F84;
         uVar29 = (message->arg1).u32 + 1;
-        bVar37 = uVar29 < pDVar16->count;
+        bVar36 = uVar29 < pDVar16->count;
         if ((int)uVar29 < (int)pDVar16->count) {
           do {
-            if (bVar37) {
+            if (bVar36) {
               pcVar14 = DArrayAt<char>(pDVar16, uVar29);
             }
             else {
@@ -142,7 +140,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
             pcVar14[3] = cVar26;
             pDVar16 = this_00->field_1F84;
             uVar29 = uVar29 + 1;
-            bVar37 = uVar29 < pDVar16->count;
+            bVar36 = uVar29 < pDVar16->count;
           } while ((int)uVar29 < (int)pDVar16->count);
         }
         (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
@@ -170,10 +168,10 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
         }
         pDVar16 = this_00->field_1F84;
         uVar29 = (message->arg1).u32 + 1;
-        bVar37 = uVar29 < pDVar16->count;
+        bVar36 = uVar29 < pDVar16->count;
         if ((int)uVar29 < (int)pDVar16->count) {
           do {
-            if (bVar37) {
+            if (bVar36) {
               pcVar14 = DArrayAt<char>(pDVar16, uVar29);
             }
             else {
@@ -183,7 +181,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
             pcVar14[0x4a] = cVar26;
             pDVar16 = this_00->field_1F84;
             uVar29 = uVar29 + 1;
-            bVar37 = uVar29 < pDVar16->count;
+            bVar36 = uVar29 < pDVar16->count;
           } while ((int)uVar29 < (int)pDVar16->count);
         }
         (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
@@ -216,10 +214,10 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
         }
         pDVar16 = this_00->field_1F84;
         uVar29 = (message->arg1).u32 + 1;
-        bVar37 = uVar29 < pDVar16->count;
+        bVar36 = uVar29 < pDVar16->count;
         if ((int)uVar29 < (int)pDVar16->count) {
           do {
-            if (bVar37) {
+            if (bVar36) {
               pcVar14 = DArrayAt<char>(pDVar16, uVar29);
             }
             else {
@@ -229,7 +227,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
             pcVar14[2] = local_d;
             pDVar16 = this_00->field_1F84;
             uVar29 = uVar29 + 1;
-            bVar37 = uVar29 < pDVar16->count;
+            bVar36 = uVar29 < pDVar16->count;
           } while ((int)uVar29 < (int)pDVar16->count);
         }
         (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
@@ -256,9 +254,9 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
       }
       if (pvVar17 != nullptr) {
         if ((STField<int>(pvVar13,0x104) == 2) && (uVar28 = 0, 0 < (int)uVar29)) {
-          bVar37 = uVar29 != 0;
+          bVar36 = uVar29 != 0;
           do {
-            if (bVar37) {
+            if (bVar36) {
               pvVar17 = DArrayAt<void>(pDVar16, uVar28);
             }
             else {
@@ -276,7 +274,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
               break;
             }
             uVar28 = uVar28 + 1;
-            bVar37 = uVar28 < uVar29;
+            bVar36 = uVar28 < uVar29;
           } while ((int)uVar28 < (int)uVar29);
         }
         pDVar16 = this_00->field_1F84;
@@ -300,9 +298,9 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
         uVar28 = 0;
         uVar29 = pDVar16->count;
         if (0 < (int)uVar29) {
-          bVar37 = uVar29 != 0;
+          bVar36 = uVar29 != 0;
           do {
-            if (bVar37) {
+            if (bVar36) {
               pvVar13 = DArrayAt<void>(pDVar16, uVar28);
             }
             else {
@@ -314,7 +312,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
               break;
             }
             uVar28 = uVar28 + 1;
-            bVar37 = uVar28 < uVar29;
+            bVar36 = uVar28 < uVar29;
           } while ((int)uVar28 < (int)uVar29);
         }
         (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
@@ -345,9 +343,9 @@ LAB_005d5ff8:
       uVar28 = 0;
       uVar29 = pDVar16->count;
       if (0 < (int)uVar29) {
-        bVar37 = uVar29 != 0;
+        bVar36 = uVar29 != 0;
         do {
-          if (bVar37) {
+          if (bVar36) {
             pcVar14 = DArrayAt<char>(pDVar16, uVar28);
           }
           else {
@@ -357,14 +355,14 @@ LAB_005d5ff8:
             *(undefined1 *)((int)&local_30 + (uint)(byte)pcVar14[2]) = 0;
           }
           uVar28 = uVar28 + 1;
-          bVar37 = uVar28 < uVar29;
+          bVar36 = uVar28 < uVar29;
         } while ((int)uVar28 < (int)uVar29);
       }
       local_c = 0;
       if (0 < (int)uVar29) {
-        bVar37 = uVar29 != 0;
+        bVar36 = uVar29 != 0;
         do {
-          if (bVar37) {
+          if (bVar36) {
             pcVar14 = DArrayAt<char>(pDVar16, local_c);
           }
           else {
@@ -396,7 +394,7 @@ LAB_005d5ff8:
             g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0022 = pcVar14[2];
             g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0021 = pcVar14[3];
             uVar29 = 0xffffffff;
-            pcVar33 = &DAT_008016a0;
+            pcVar33 = &CHAR_00h_008016a0;
             do {
               pcVar32 = pcVar33;
               if (uVar29 == 0) break;
@@ -424,7 +422,7 @@ LAB_005d5ff8:
               if (local_8 == nullptr) {
                 uVar29 = 0xffffffff;
                 local_8 = &g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0x1;
-                pcVar33 = &DAT_008016a0;
+                pcVar33 = &CHAR_00h_008016a0;
                 do {
                   pcVar32 = pcVar33;
                   if (uVar29 == 0) break;
@@ -468,18 +466,25 @@ LAB_005d5ff8:
           }
           pDVar16 = this_00->field_1F84;
           local_c = local_c + 1;
-          bVar37 = local_c < pDVar16->count;
+          bVar36 = local_c < pDVar16->count;
         } while ((int)local_c < (int)pDVar16->count);
       }
       STAppC::sub_0056EE90((STAppC *)&DAT_00807620);
-      memset(&DAT_00808ab0, 0, 0xea0); /* compiler bulk-zero initialization */
+      pcVar14 = &CHAR_00h_00808ab0;
+      for (iVar23 = 0x3a8; iVar23 != 0; iVar23 = iVar23 + -1) {
+        pcVar14[0] = '\0';
+        pcVar14[1] = '\0';
+        pcVar14[2] = '\0';
+        pcVar14[3] = '\0';
+        pcVar14 = pcVar14 + 4;
+      }
       DAT_00808aaf = 0;
       pDVar16 = this_00->field_1F84;
       local_c = 0;
       if (0 < (int)pDVar16->count) {
-        bVar37 = pDVar16->count != 0;
+        bVar36 = pDVar16->count != 0;
         do {
-          if (bVar37) {
+          if (bVar36) {
             pvVar13 = DArrayAt<void>(pDVar16, local_c);
           }
           else {
@@ -543,8 +548,8 @@ LAB_005d5b7e:
               }
               bVar21 = STField<byte>(pvVar13,2);
               puVar30 = (byte *)&stack0xfffffe9c;
-              puVar34 = (byte *)(&DAT_00808ab0 + (uint)DAT_00808aaf * 0x27);
-              memmove(puVar34, puVar30, 0x9c); /* compiler REP MOVS byte copy */
+              pcVar14 = &CHAR_00h_00808ab0 + (uint)DAT_00808aaf * 0x9c;
+              memmove(pcVar14, puVar30, 0x9c); /* compiler REP MOVS byte copy */
               if (bVar21 < 8) {
                 iVar24 = 0;
                 iVar23 = (uint)bVar21 * 0x51 + 0x808800;
@@ -561,7 +566,7 @@ LAB_005d5b7e:
           }
           pDVar16 = this_00->field_1F84;
           local_c = local_c + 1;
-          bVar37 = local_c < pDVar16->count;
+          bVar36 = local_c < pDVar16->count;
         } while ((int)local_c < (int)pDVar16->count);
       }
       if (this_00->field_1E26 == CASE_6) {
@@ -588,7 +593,7 @@ LAB_005d5b7e:
         else {
           uVar29 = 0xffffffff;
           DAT_008087a0 = CASE_6;
-          pcVar14 = &DAT_00853de4;
+          pcVar14 = &CHAR_00h_00853de4;
           do {
             pcVar33 = pcVar14;
             if (uVar29 == 0) break;
@@ -600,11 +605,11 @@ LAB_005d5b7e:
           uVar29 = ~uVar29;
           DAT_00808783 = 2;
           pcVar14 = pcVar33 + -uVar29;
-          pcVar33 = &DAT_0080ed16;
+          pcVar33 = &CHAR_00h_0080ed16;
           memmove(pcVar33, pcVar14, uVar29); /* compiler REP MOVS byte copy */
           uVar28 = 0;
           uVar29 = 0xffffffff;
-          pcVar14 = &DAT_0080ed16;
+          pcVar14 = &CHAR_00h_0080ed16;
           do {
             pcVar33 = pcVar14;
             if (uVar29 == 0) break;
@@ -618,7 +623,7 @@ LAB_005d5b7e:
           pcVar33 = (char *)&DAT_0080ee1a;
           memmove(pcVar33, pcVar14, uVar29); /* compiler REP MOVS byte copy */
           uVar29 = 0xffffffff;
-          pcVar14 = &DAT_00807680;
+          pcVar14 = &CHAR_00h_00807680;
           do {
             if (uVar29 == 0) break;
             uVar29 = uVar29 - 1;
@@ -637,7 +642,7 @@ LAB_005d5b7e:
           } while (cVar26 != '\0');
           uVar28 = ~uVar28;
           pcVar14 = pcVar33 + -uVar28;
-          pcVar33 = &DAT_0080ef1e;
+          pcVar33 = &CHAR_00h_0080ef1e;
           memmove(pcVar33, pcVar14, uVar28); /* compiler REP MOVS byte copy */
           uVar28 = 0;
           thunk_FUN_005b6350(this_00,0x6948,0,0);
@@ -657,7 +662,7 @@ LAB_005d5b7e:
       else {
         uVar29 = 0xffffffff;
         DAT_00808783 = 2;
-        pcVar14 = &DAT_0080ed16;
+        pcVar14 = &CHAR_00h_0080ed16;
         do {
           pcVar33 = pcVar14;
           if (uVar29 == 0) break;
@@ -672,7 +677,7 @@ LAB_005d5b7e:
         DAT_008087a0 = this_00->field_1E26;
         memmove(pcVar33, pcVar14, uVar29); /* compiler REP MOVS byte copy */
         uVar29 = 0xffffffff;
-        pcVar14 = &DAT_00807680;
+        pcVar14 = &CHAR_00h_00807680;
         do {
           if (uVar29 == 0) break;
           uVar29 = uVar29 - 1;
@@ -691,7 +696,7 @@ LAB_005d5b7e:
         } while (cVar26 != '\0');
         uVar28 = ~uVar28;
         pcVar14 = pcVar33 + -uVar28;
-        pcVar33 = &DAT_0080ef1e;
+        pcVar33 = &CHAR_00h_0080ef1e;
         memmove(pcVar33, pcVar14, uVar28); /* compiler REP MOVS byte copy */
         uVar29 = 0;
         thunk_FUN_005b6350(this_00,0x6948,0,0);
@@ -729,9 +734,9 @@ LAB_005d5b7e:
         local_3c = 0x1010101;
         uVar29 = pDVar16->count;
         if (0 < (int)uVar29) {
-          bVar37 = uVar29 != 0;
+          bVar36 = uVar29 != 0;
           do {
-            if (bVar37) {
+            if (bVar36) {
               pcVar14 = DArrayAt<char>(pDVar16, uVar28);
             }
             else {
@@ -741,7 +746,7 @@ LAB_005d5b7e:
               *(undefined1 *)((int)&local_40 + (uint)(byte)pcVar14[2]) = 0;
             }
             uVar28 = uVar28 + 1;
-            bVar37 = uVar28 < uVar29;
+            bVar36 = uVar28 < uVar29;
           } while ((int)uVar28 < (int)uVar29);
         }
         bVar21 = local_14->field_0x2;
@@ -881,10 +886,10 @@ LAB_005d6676:
           if ((this_00->field_1E26 == CASE_2) && (local_14->field_0x4 == '\x02')) break;
           pDVar16 = this_00->field_1F84;
           uVar28 = pDVar16->count;
-          bVar37 = uVar28 != 0;
+          bVar36 = uVar28 != 0;
           if (0 < (int)uVar28) {
             do {
-              if (bVar37) {
+              if (bVar36) {
                 pcVar14 = DArrayAt<char>(pDVar16, uVar29);
               }
               else {
@@ -894,7 +899,7 @@ LAB_005d6676:
                 local_8 = local_8 + 1;
               }
               uVar29 = uVar29 + 1;
-              bVar37 = uVar29 < uVar28;
+              bVar36 = uVar29 < uVar28;
             } while ((int)uVar29 < (int)uVar28);
           }
           if ((this_00->field_1E26 != CASE_2) && (2 < (int)local_8)) {
@@ -917,11 +922,11 @@ LAB_005d6676:
             Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
           }
           if (this_00->field_1E26 != CASE_2) {
-            bVar37 = true;
+            bVar36 = true;
             if ((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) {
-              bVar37 = local_14->field_0x3 != '\x03';
+              bVar36 = local_14->field_0x3 != '\x03';
             }
-            if (bVar37) {
+            if (bVar36) {
               local_EAX_3994 = LoadResourceString(0x1f42,g_hINSTANCE_00807618);
               uVar29 = 0xffffffff;
               do {
@@ -978,10 +983,10 @@ LAB_005d6676:
         pDVar16 = this_00->field_1E2F;
         uVar29 = 0;
         if (0 < (int)pDVar16->count) {
-          bVar37 = pDVar16->count != 0;
+          bVar36 = pDVar16->count != 0;
           local_28 = (uint)(byte)local_14->field_0x4;
           do {
-            if (bVar37) {
+            if (bVar36) {
               pvVar13 = DArrayAt<void>(pDVar16, uVar29);
             }
             else {
@@ -993,7 +998,7 @@ LAB_005d6676:
               break;
             }
             uVar29 = uVar29 + 1;
-            bVar37 = uVar29 < pDVar16->count;
+            bVar36 = uVar29 < pDVar16->count;
           } while ((int)uVar29 < (int)pDVar16->count);
         }
         dVar7 = pDVar16->count;
@@ -1015,9 +1020,9 @@ LAB_005d6676:
           local_34 = 0;
           uVar28 = pDVar16->count;
           if (0 < (int)uVar28) {
-            bVar37 = uVar28 != 0;
+            bVar36 = uVar28 != 0;
             do {
-              if (bVar37) {
+              if (bVar36) {
                 pvVar13 = DArrayAt<void>(pDVar16, uVar29);
               }
               else {
@@ -1027,7 +1032,7 @@ LAB_005d6676:
                 *(undefined1 *)((int)&local_38 + (uint)STField<byte>(pvVar13,0x4a)) = 1;
               }
               uVar29 = uVar29 + 1;
-              bVar37 = uVar29 < uVar28;
+              bVar36 = uVar29 < uVar28;
             } while ((int)uVar29 < (int)uVar28);
           }
           bVar21 = 0;
@@ -1056,9 +1061,9 @@ joined_r0x005d6701:
           cVar26 = (char)local_28;
           if (0 < (int)pDVar16->count) {
             local_2c = (undefined1 *)(this_00->field_1F88 + local_c);
-            bVar37 = pDVar16->count != 0;
+            bVar36 = pDVar16->count != 0;
             do {
-              if (bVar37) {
+              if (bVar36) {
                 pcVar14 = DArrayAt<char>(pDVar16, uVar29);
               }
               else {
@@ -1085,7 +1090,7 @@ LAB_005d6784:
                 goto LAB_005d6784;
               }
               uVar29 = uVar29 + 1;
-              bVar37 = uVar29 < pDVar16->count;
+              bVar36 = uVar29 < pDVar16->count;
             } while ((int)uVar29 < (int)pDVar16->count);
             local_28 = STReplaceLowByte((uint32_t)(local_28), (uint8_t)(cVar26));
           }
@@ -1205,17 +1210,17 @@ LAB_005d6784:
   local_20 = 0;
   if ((pDVar16 == nullptr) ||
      (uVar28 = this_00->field_1F88 + uVar29, pDVar16->count <= uVar28)) {
-    pAVar35 = nullptr;
+    pAVar34 = nullptr;
   }
   else {
-    pAVar35 = DArrayAt<AnonShape_005CBBE0_2D1CAA09>(pDVar16, uVar28);
+    pAVar34 = DArrayAt<AnonShape_005CBBE0_2D1CAA09>(pDVar16, uVar28);
   }
   local_28 = uVar29;
   FUN_006b4170(this_00->field_20F4[uVar29],0,*piVar9 + -0x113,0,piVar9[2],piVar9[3],0xff);
-  if (pAVar35 == nullptr) goto switchD_005d6abd_default;
+  if (pAVar34 == nullptr) goto switchD_005d6abd_default;
   switch(local_2c) {
   case (undefined1 *)0x1:
-    if (*(char *)pAVar35 != '\0') {
+    if (*(char *)pAVar34 != '\0') {
       local_24 = local_24 + 1;
       local_20 = local_20 + 1;
       local_1c = local_1c + -2;
@@ -1223,8 +1228,8 @@ LAB_005d6784:
       MMObjTy::PaintButDib
                 ((MMObjTy *)this_00,(int)this_00->field_20F4[uVar29],&local_24,0,
                  (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0xffffffff);
-      if (pAVar35->field_0x2 != -1) {
-        switch(pAVar35->field_0x2) {
+      if (pAVar34->field_0x2 != -1) {
+        switch(pAVar34->field_0x2) {
         case 0:
           bVar21 = 0xfc;
           break;
@@ -1258,14 +1263,14 @@ LAB_005d6784:
     }
     break;
   case (undefined1 *)0x2:
-    if (*(char *)pAVar35 == '\0') break;
+    if (*(char *)pAVar34 == '\0') break;
     MMObjTy::PaintButDib
               ((MMObjTy *)this_00,(int)this_00->field_20F4[uVar29],&local_24,2,
                (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67);
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar29],0,local_24,
                      local_20,local_1c,local_18);
-    if (pAVar35->field_0x3 == '\x01') {
-      pcVar14 = &DAT_007ca250;
+    if (pAVar34->field_0x3 == '\x01') {
+      pcVar14 = &CHAR_W_007ca250;
 LAB_005d6c37:
       uVar29 = 0xffffffff;
       do {
@@ -1286,12 +1291,12 @@ LAB_005d6c37:
       }
     }
     else {
-      if (pAVar35->field_0x3 != '\x02') {
+      if (pAVar34->field_0x3 != '\x02') {
         pcVar14 = &DAT_007ca24c;
         goto LAB_005d6c37;
       }
       uVar29 = 0xffffffff;
-      pcVar14 = &DAT_007ca248;
+      pcVar14 = &CHAR_B_007ca248;
       do {
         pcVar33 = pcVar14;
         if (uVar29 == 0) break;
@@ -1325,54 +1330,55 @@ LAB_005d6c37:
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar29],0,local_24,
                      local_20,local_1c,local_18);
     uVar28 = 2;
-    iVar39 = -1;
+    iVar37 = -1;
     iVar24 = -1;
-    puVar38 = (uint *)&DAT_007c2310;
+    pcVar14 = &DAT_007c2310;
     iVar23 = local_1c;
-    puVar36 = (uint *)thunk_FUN_005cbbe0(this_00,pAVar35);
+    puVar35 = (uint *)thunk_FUN_005cbbe0(this_00,pAVar34);
     goto LAB_005d6d70;
   case (undefined1 *)0x4:
     MMObjTy::PaintButDib((MMObjTy *)this_00,(int)this_00->field_20F4[uVar29],&local_24,2,0x67,0x67);
-    if (pAVar35->field_0x4 == '\x02') {
+    if (pAVar34->field_0x4 == '\x02') {
       ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar29],0,
                        local_24,local_20,local_1c,local_18);
       uVar28 = 2;
       iVar24 = -1;
       iVar23 = -1;
       pcVar14 = (char *)thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,
-                                           (uint *)&pAVar35->field_0xa,(uint *)&DAT_007c7274,
+                                           (uint *)&pAVar34->field_0xa,(uint *)&CHAR___007c7274,
                                            local_1c);
       ccFntTy::WrStr(g_startSystem_0081176C->field_0034,pcVar14,iVar23,iVar24,uVar28);
       break;
     }
-    if (pAVar35->field_0x4 != '\x04') break;
-    pDVar16 = pAVar35->field_0050;
-    if ((uint)(byte)pAVar35->field_0x5 < pDVar16->count) {
-      puVar36 = DArrayAt<uint>(pDVar16, (uint)(byte)pAVar35->field_0x5);
+    if (pAVar34->field_0x4 != '\x04') break;
+    pDVar16 = pAVar34->field_0050;
+    if ((uint)(byte)pAVar34->field_0x5 < pDVar16->count) {
+      puVar35 = DArrayAt<uint>(pDVar16, (uint)(byte)pAVar34->field_0x5);
     }
     else {
-      puVar36 = nullptr;
+      puVar35 = nullptr;
     }
-    if (puVar36 == nullptr) break;
+    if (puVar35 == nullptr) break;
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar29],0,local_24,
                      local_20,local_1c,local_18);
     uVar28 = 2;
-    iVar39 = -1;
+    iVar37 = -1;
     iVar24 = -1;
-    puVar38 = (uint *)&DAT_007c7274;
+    pcVar14 = &CHAR___007c7274;
     iVar23 = local_1c;
 LAB_005d6d70:
-    pcVar14 = (char *)thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar36,puVar38,iVar23);
-    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,pcVar14,iVar24,iVar39,uVar28);
+    pcVar14 = (char *)thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar35,(uint *)pcVar14,
+                                         iVar23);
+    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,pcVar14,iVar24,iVar37,uVar28);
     break;
   case (undefined1 *)0x5:
-    if ((*(char *)pAVar35 != '\0') &&
+    if ((*(char *)pAVar34 != '\0') &&
        (MMObjTy::PaintButDib
                   ((MMObjTy *)this_00,(int)this_00->field_20F4[uVar29],&local_24,2,
                    (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67),
-       pAVar35->field_0x4 != '\0')) {
+       pAVar34->field_0x4 != '\0')) {
       if (DAT_00808a8f == '\0') {
-        if (((DAT_0080874d != 0xff) && (bVar21 = pAVar35->field_0x2, bVar21 != 0xff)) &&
+        if (((DAT_0080874d != 0xff) && (bVar21 = pAVar34->field_0x2, bVar21 != 0xff)) &&
            (DAT_0080874d != bVar21)) {
           local_28 = 0xffffffff;
           local_2c = (undefined1 *)STReplaceLowByte((uint32_t)(local_2c), (uint8_t)(bVar21));

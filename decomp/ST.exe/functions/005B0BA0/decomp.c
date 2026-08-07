@@ -537,7 +537,7 @@ LAB_005b1b6c:
       }
       *pcVar17 = '\0';
       uVar28 = 0xffffffff;
-      pcVar17 = (char *)&DAT_00807ddd;
+      pcVar17 = &CHAR_00h_00807ddd;
       do {
         pcVar20 = pcVar17;
         if (uVar28 == 0) break;
@@ -578,7 +578,7 @@ LAB_005b1b6c:
       FUN_00715360(g_int_00811764,0,'\x1b',local_6e0,0x451,1,0xffffffff);
     }
 LAB_005b2011:
-    Library::DKW::TBL::FUN_006b6020(this_01->field_1A5B->field_0686,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(this_01->field_1A5B->field_0686,0,&CHAR_00h_008016a0);
     this_01->field_002D = 0x33;
     *(DArrayTy **)&this_01->field_0x31 = this_01->field_1A5B->field_0686;
     FUN_006e6080(this_01,2,this_01->field_1A5B->field_054C,(undefined4 *)&this_01->field_0x1d);
@@ -598,7 +598,7 @@ LAB_005b2011:
     }
     DAT_008087a0 = this_01->field_1A5F;
     uVar28 = 0xffffffff;
-    pcVar17 = &DAT_0080ed16;
+    pcVar17 = &CHAR_00h_0080ed16;
     do {
       pcVar20 = pcVar17;
       if (uVar28 == 0) break;
@@ -618,19 +618,20 @@ LAB_005b2011:
     else {
       uVar16 = 0;
     }
-    wsprintfA(&DAT_0080ef1e,"%s%s\\%s",PTR_s_MISSIONS__0079c054,uVar16,&DAT_0080ed16);
+    wsprintfA(&CHAR_00h_0080ef1e,"%s%s\\%s",PTR_s_MISSIONS__0079c054,uVar16,
+              &CHAR_00h_0080ed16);
     if (*(int *)&this_01->field_0x31 < (int)this_01->field_1C9F->elementSize) {
       uVar16 = *(undefined4 *)(this_01->field_1C9F->growCapacity + *(int *)&this_01->field_0x31 * 4);
     }
     else {
       uVar16 = 0;
     }
-    wsprintfA(&DAT_0080ed16,"%s%s\\%s",&this_01->field_1DA7,uVar16,&DAT_0080f33a);
+    wsprintfA(&CHAR_00h_0080ed16,"%s%s\\%s",&this_01->field_1DA7,uVar16,&DAT_0080f33a);
     DAT_008087a0 = CASE_3;
     iVar26 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
     if (iVar26 == 0) goto cf_common_exit_005B2053;
     uVar28 = 0xffffffff;
-    pcVar17 = &DAT_00807784;
+    pcVar17 = &CHAR_00h_00807784;
     do {
       pcVar20 = pcVar17;
       if (uVar28 == 0) break;
@@ -641,10 +642,10 @@ LAB_005b2011:
     } while (cVar1 != '\0');
     uVar28 = ~uVar28;
     pcVar17 = pcVar20 + -uVar28;
-    pcVar20 = (char *)&DAT_0080f22a;
+    pcVar20 = &CHAR_00h_0080f22a;
     memmove(pcVar20, pcVar17, uVar28); /* compiler REP MOVS byte copy */
     uVar15 = 0;
-    FUN_006b8280((char *)&DAT_0080f22a,(char *)&DAT_0080f22a);
+    FUN_006b8280(&CHAR_00h_0080f22a,&CHAR_00h_0080f22a);
     if (*(int *)&this_01->field_0x31 < (int)this_01->field_1C9F->elementSize) {
       pcVar17 = *(char **)(this_01->field_1C9F->growCapacity + *(int *)&this_01->field_0x31 * 4);
     }
@@ -662,7 +663,7 @@ LAB_005b2011:
     } while (cVar1 != '\0');
     uVar28 = ~uVar28;
     iVar26 = -1;
-    pcVar17 = (char *)&DAT_0080f22a;
+    pcVar17 = &CHAR_00h_0080f22a;
     do {
       pcVar21 = pcVar17;
       if (iVar26 == 0) break;
@@ -675,7 +676,7 @@ LAB_005b2011:
     pcVar20 = pcVar21 + -1;
     memmove(pcVar20, pcVar17, uVar28); /* compiler REP MOVS byte copy */
     uVar15 = 0;
-    FUN_006b8280((char *)&DAT_0080f22a,(char *)&DAT_0080f22a);
+    FUN_006b8280(&CHAR_00h_0080f22a,&CHAR_00h_0080f22a);
     uVar28 = 0xffffffff;
     pcVar19 = PTR_s_CAMPAIGN_VPS_0079c05c;
     do {
@@ -688,7 +689,7 @@ LAB_005b2011:
     } while (cVar1 != '\0');
     uVar28 = ~uVar28;
     iVar26 = -1;
-    pcVar20 = (char *)&DAT_0080f22a;
+    pcVar20 = &CHAR_00h_0080f22a;
     do {
       pcVar21 = pcVar20;
       if (iVar26 == 0) break;
@@ -795,7 +796,7 @@ LAB_005b1644:
     } while (cVar1 != '\0');
     uVar28 = ~uVar28;
     pcVar17 = pcVar20 + -uVar28;
-    pcVar20 = &DAT_0080ed16;
+    pcVar20 = &CHAR_00h_0080ed16;
     memmove(pcVar20, pcVar17, uVar28); /* compiler REP MOVS byte copy */
     uVar15 = 0;
     if ((8 < this_01->field_1A5F) && (this_01->field_1A5F < CASE_C)) {
@@ -811,7 +812,7 @@ LAB_005b1644:
       } while (cVar1 != '\0');
       uVar28 = ~uVar28;
       iVar26 = -1;
-      pcVar17 = &DAT_0080ed16;
+      pcVar17 = &CHAR_00h_0080ed16;
       do {
         pcVar21 = pcVar17;
         if (iVar26 == 0) break;
@@ -844,7 +845,7 @@ LAB_005b1644:
     } while (cVar1 != '\0');
     uVar28 = ~uVar28;
     iVar26 = -1;
-    pcVar17 = &DAT_0080ed16;
+    pcVar17 = &CHAR_00h_0080ed16;
     do {
       pcVar21 = pcVar17;
       if (iVar26 == 0) break;
@@ -858,7 +859,7 @@ LAB_005b1644:
     memmove(pcVar20, pcVar17, uVar28); /* compiler REP MOVS byte copy */
     uVar15 = 0;
     uVar28 = 0xffffffff;
-    pcVar17 = &DAT_0080ed16;
+    pcVar17 = &CHAR_00h_0080ed16;
     do {
       pcVar20 = pcVar17;
       if (uVar28 == 0) break;
@@ -872,7 +873,7 @@ LAB_005b1644:
     pcVar20 = (char *)&DAT_0080ee1a;
     memmove(pcVar20, pcVar17, uVar28); /* compiler REP MOVS byte copy */
     uVar28 = 0xffffffff;
-    pcVar17 = &DAT_00807680;
+    pcVar17 = &CHAR_00h_00807680;
     do {
       if (uVar28 == 0) break;
       uVar28 = uVar28 - 1;
@@ -891,7 +892,7 @@ LAB_005b1644:
     } while (cVar1 != '\0');
     uVar15 = ~uVar15;
     pcVar17 = pcVar20 + -uVar15;
-    pcVar20 = &DAT_0080ef1e;
+    pcVar20 = &CHAR_00h_0080ef1e;
     memmove(pcVar20, pcVar17, uVar15); /* compiler REP MOVS byte copy */
     uVar15 = 0;
     if (this_01->field_1A64 != 0) {
@@ -943,7 +944,7 @@ LAB_005b1644:
         } while (cVar1 != '\0');
         uVar28 = ~uVar28;
         pcVar17 = pcVar20 + -uVar28;
-        pcVar20 = &DAT_0080ed16;
+        pcVar20 = &CHAR_00h_0080ed16;
         memmove(pcVar20, pcVar17, uVar28); /* compiler REP MOVS byte copy */
         uVar15 = 0;
         if (iVar26 < (int)this_01->field_1C97->elementSize) {
@@ -963,7 +964,7 @@ LAB_005b1644:
         } while (cVar1 != '\0');
         uVar28 = ~uVar28;
         iVar26 = -1;
-        pcVar17 = &DAT_0080ed16;
+        pcVar17 = &CHAR_00h_0080ed16;
         do {
           pcVar21 = pcVar17;
           if (iVar26 == 0) break;
@@ -977,7 +978,7 @@ LAB_005b1644:
         memmove(pcVar20, pcVar17, uVar28); /* compiler REP MOVS byte copy */
         uVar15 = 0;
         uVar28 = 0xffffffff;
-        pcVar17 = &DAT_0080ed16;
+        pcVar17 = &CHAR_00h_0080ed16;
         do {
           pcVar20 = pcVar17;
           if (uVar28 == 0) break;
@@ -1077,7 +1078,7 @@ LAB_005b1644:
     } while (cVar1 != '\0');
     uVar28 = ~uVar28;
     pcVar17 = pcVar20 + -uVar28;
-    pcVar20 = &DAT_0080ed16;
+    pcVar20 = &CHAR_00h_0080ed16;
     memmove(pcVar20, pcVar17, uVar28); /* compiler REP MOVS byte copy */
     uVar15 = 0;
     if ((this_01->field_1A5F == CASE_C) ||
@@ -1094,7 +1095,7 @@ LAB_005b1644:
       } while (cVar1 != '\0');
       uVar28 = ~uVar28;
       iVar26 = -1;
-      pcVar17 = &DAT_0080ed16;
+      pcVar17 = &CHAR_00h_0080ed16;
       do {
         pcVar21 = pcVar17;
         if (iVar26 == 0) break;
@@ -1126,7 +1127,7 @@ LAB_005b1644:
     } while (cVar1 != '\0');
     uVar28 = ~uVar28;
     iVar26 = -1;
-    pcVar17 = &DAT_0080ed16;
+    pcVar17 = &CHAR_00h_0080ed16;
     do {
       pcVar21 = pcVar17;
       if (iVar26 == 0) break;
@@ -1140,7 +1141,7 @@ LAB_005b1644:
     memmove(pcVar20, pcVar17, uVar28); /* compiler REP MOVS byte copy */
     uVar15 = 0;
     uVar28 = 0xffffffff;
-    pcVar17 = &DAT_0080ed16;
+    pcVar17 = &CHAR_00h_0080ed16;
     do {
       pcVar20 = pcVar17;
       if (uVar28 == 0) break;

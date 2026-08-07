@@ -41,7 +41,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   if (param_2 == 0) {
     if (STField<int>(this,0x1178) != 0) {
       wsprintfA((LPSTR)local_1a8,"%s%s%s\\%s",(int)this + 0x60,PTR_s_SAVEGAME__0079b02c,
-                &DAT_00807ddd,PTR_s_SAVE_QUICKSAVE_0079b044);
+                &CHAR_00h_00807ddd,PTR_s_SAVE_QUICKSAVE_0079b044);
       STField<undefined4>(this,0x1178) = 0;
       goto LAB_0056f325;
     }
@@ -50,7 +50,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   }
   else if (param_3 == nullptr) {
     wsprintfA((LPSTR)local_1a8,"%s%s%s\\%sDEBUG%u",(int)this + 0x60,PTR_s_SAVEGAME__0079b02c
-              ,&DAT_00807ddd,PTR_DAT_0079b050,param_2);
+              ,&CHAR_00h_00807ddd,PTR_DAT_0079b050,param_2);
     goto LAB_0056f325;
   }
   uVar3 = 0xffffffff;
@@ -182,7 +182,7 @@ LAB_0056f325:
     memmove(pbVar11, pbVar8, uVar3); /* compiler REP MOVS byte copy */
     uVar5 = 0;
     uVar3 = 0xffffffff;
-    pcVar9 = PTR_DAT_0079b034;
+    pcVar9 = PTR_CHAR___0079b034;
     do {
       pcVar10 = pcVar9;
       if (uVar3 == 0) break;
@@ -223,7 +223,7 @@ LAB_0056f325:
     memmove(pbVar11, pbVar8, uVar3); /* compiler REP MOVS byte copy */
     uVar5 = 0;
     uVar3 = 0xffffffff;
-    pcVar9 = PTR_DAT_0079b038;
+    pcVar9 = PTR_CHAR___0079b038;
     do {
       pcVar10 = pcVar9;
       if (uVar3 == 0) break;

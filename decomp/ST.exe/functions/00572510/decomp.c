@@ -18,15 +18,14 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
   int iVar4;
   cMf32 *this_00;
   ushort *puVar4;
-  byte *pbVar5;
+  char *pcVar5;
   int iVar6;
   uint uVar7;
   uint uVar8;
-  char *pcVar9;
-  char *pcVar11;
-  int iVar12;
-  byte *pbVar13;
-  bool bVar14;
+  char *pcVar10;
+  int iVar11;
+  byte *pbVar12;
+  bool bVar13;
   _WIN32_FIND_DATAA local_29c;
   byte local_15c [260];
   InternalExceptionFrame local_58;
@@ -87,30 +86,30 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
           if (((puVar4 == nullptr) && (this != (AnonShape_00572510_F06DC155 *)0xfffff83b)) &&
              (&this->field_0785 != nullptr)) {
             uVar7 = 0xffffffff;
-            pcVar9 = &this->field_0785;
+            pcVar5 = &this->field_0785;
             do {
-              pcVar11 = pcVar9;
+              pcVar10 = pcVar5;
               if (uVar7 == 0) break;
               uVar7 = uVar7 - 1;
-              pcVar11 = pcVar9 + 1;
-              cVar1 = *pcVar9;
-              pcVar9 = pcVar11;
+              pcVar10 = pcVar5 + 1;
+              cVar1 = *pcVar5;
+              pcVar5 = pcVar10;
             } while (cVar1 != '\0');
             uVar7 = ~uVar7;
-            pcVar9 = pcVar11 + -uVar7;
-            pcVar11 = &this->field_0x7c5;
+            pcVar5 = pcVar10 + -uVar7;
+            pcVar10 = &this->field_0x7c5;
             for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-              *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
-              pcVar9 = pcVar9 + 4;
-              pcVar11 = pcVar11 + 4;
+              *(undefined4 *)pcVar10 = *(undefined4 *)pcVar5;
+              pcVar5 = pcVar5 + 4;
+              pcVar10 = pcVar10 + 4;
             }
             for (uVar7 = uVar7 & 3; this_00 = local_14, uVar7 != 0; uVar7 = uVar7 - 1) {
-              *pcVar11 = *pcVar9;
-              pcVar9 = pcVar9 + 1;
-              pcVar11 = pcVar11 + 1;
+              *pcVar10 = *pcVar5;
+              pcVar5 = pcVar5 + 1;
+              pcVar10 = pcVar10 + 1;
             }
           }
-          iVar12 = 0;
+          iVar11 = 0;
           local_8 = &this->field_0x805;
           cMf32::RecGet(this_00,0xc,PTR_s_LASTPSW_0079b0ec,(int *)&local_8,0);
           iVar6 = _DAT_008072f8;
@@ -118,28 +117,28 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
           _DAT_008072fc = 0x82;
           uVar7 = 0;
           do {
-            iVar12 = iVar12 + (uint)(byte)(&DAT_008072f8)[uVar7];
+            iVar11 = iVar11 + (uint)(byte)(&DAT_008072f8)[uVar7];
             uVar7 = uVar7 + 1;
           } while (uVar7 < 0x82);
-          if (iVar12 != iVar6) {
+          if (iVar11 != iVar6) {
             thunk_FUN_005734c0(this,(LPDWORD)0x0,(PHKEY)0x1);
           }
-          pbVar5 = &DAT_007ca694;
-          pbVar13 = &this->field_0x640;
+          pcVar5 = &CHAR_N_007ca694;
+          pbVar12 = &this->field_0x640;
           do {
-            bVar2 = *pbVar13;
-            bVar14 = bVar2 < *pbVar5;
-            if (bVar2 != *pbVar5) {
+            bVar2 = *pbVar12;
+            bVar13 = bVar2 < (byte)*pcVar5;
+            if (bVar2 != *pcVar5) {
 LAB_005727ec:
-              iVar6 = (1 - (uint)bVar14) - (uint)(bVar14 != 0);
+              iVar6 = (1 - (uint)bVar13) - (uint)(bVar13 != 0);
               goto LAB_005727f1;
             }
             if (bVar2 == 0) break;
-            bVar2 = pbVar13[1];
-            bVar14 = bVar2 < pbVar5[1];
-            if (bVar2 != pbVar5[1]) goto LAB_005727ec;
-            pbVar13 = pbVar13 + 2;
-            pbVar5 = pbVar5 + 2;
+            bVar2 = pbVar12[1];
+            bVar13 = bVar2 < (byte)pcVar5[1];
+            if (bVar2 != pcVar5[1]) goto LAB_005727ec;
+            pbVar12 = pbVar12 + 2;
+            pcVar5 = pcVar5 + 2;
           } while (bVar2 != 0);
           iVar6 = 0;
 LAB_005727f1:

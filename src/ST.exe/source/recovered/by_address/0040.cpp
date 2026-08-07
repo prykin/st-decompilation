@@ -17,9 +17,9 @@ void __fastcall st::fn_00402E14(AiEventClassTy *param_1)
   else {
     pAVar1 = (AnonShape_0065D030_CB0F82F0 *)&param_1->field_008C;
   }
-  thunk_FUN_0065d030(pAVar1);
+  st::fn_00402F8B(pAVar1);
   if (param_1->field_05B3 != nullptr) {
-    FUN_006b5570(param_1->field_05B3);
+    st::fn_006B5570(param_1->field_05B3);
     param_1->field_05B3 = nullptr;
   }
   return;
@@ -748,7 +748,7 @@ undefined4 st::fn_0040EB90(void)
     } while (local_54 < (int)DAT_007f4d20);
   }
   if (local_4c - local_30 < iVar3 - iVar8) {
-    st::fn_006ACCD0(DAT_007f4d3c,DAT_007f4d20,0x14,FUN_0040f220);
+    st::fn_006ACCD0(DAT_007f4d3c,DAT_007f4d20,0x14,st::fn_0040F220);
     local_28 = 0;
     if (0 < (int)DAT_007f4d20) {
       piVar4 = DAT_007f4d3c + 1;
@@ -784,7 +784,7 @@ undefined4 st::fn_0040EB90(void)
     }
   }
   else {
-    st::fn_006ACCD0(DAT_007f4d00,DAT_007f4d20,0xc,FUN_0040f1d0);
+    st::fn_006ACCD0(DAT_007f4d00,DAT_007f4d20,0xc,st::fn_0040F1D0);
     local_54 = 0;
     if (0 < (int)DAT_007f4d20) {
       piVar4 = DAT_007f4d00 + 2;

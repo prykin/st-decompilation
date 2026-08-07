@@ -64,7 +64,7 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
           pcVar4_mgB = LoadResourceString(0x259a,g_hINSTANCE_00807618);
           wsprintfA(local_688,"%s %s",pbVar8_mg0,pcVar4_mgB);
 LAB_0055cf74:
-          FSGSTy::AddMessage(g_fSGS_0081174C,1,&DAT_008016a0,local_688,5);
+          FSGSTy::AddMessage(g_fSGS_0081174C,1,(byte *)&CHAR_00h_008016a0,local_688,5);
           return;
         }
       }
@@ -228,7 +228,7 @@ LAB_0055c9c5:
       break;
     case CASE_7:
       if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
-        FSGSTy::AddMessage(g_fSGS_0081174C,1,&DAT_008016a0,param_5,5);
+        FSGSTy::AddMessage(g_fSGS_0081174C,1,(byte *)&CHAR_00h_008016a0,param_5,5);
         FSGSTy::JoinChannel(g_fSGS_0081174C);
         return;
       }
@@ -311,7 +311,7 @@ LAB_0055c9c5:
         return;
       }
       if (g_fSGS_0081174C != nullptr) {
-        FSGSTy::AddMessage(g_fSGS_0081174C,3,&DAT_008016a0,param_5,5);
+        FSGSTy::AddMessage(g_fSGS_0081174C,3,(byte *)&CHAR_00h_008016a0,param_5,5);
         return;
       }
       if (g_startSystem_0081176C != nullptr) {
@@ -325,7 +325,7 @@ LAB_0055c9c5:
         }
         *pcVar7 = '\0';
         uVar4 = 0xffffffff;
-        pcVar7 = &DAT_008016a0;
+        pcVar7 = &CHAR_00h_008016a0;
         do {
           pcVar9 = pcVar7;
           if (uVar4 == 0) break;

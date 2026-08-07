@@ -61,7 +61,7 @@ LAB_00514f85:
   if (puVar6 == nullptr) {
     pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this_00->field_01D3 = &pDVar4->flags;
-    Library::DKW::TBL::FUN_006b5aa0(pDVar4,&DAT_007c3b5c);
+    Library::DKW::TBL::FUN_006b5aa0(pDVar4,&CHAR___007c3b5c);
   }
   puVar6 = this_00->field_01D3;
   if (puVar6[2] != 0) {

@@ -37,7 +37,7 @@ void __cdecl FUN_00674ef0(char *resourceString)
     memmove(pcVar7, pcVar5, uVar2); /* compiler REP MOVS byte copy */
     uVar3 = 0;
     uVar2 = 0xffffffff;
-    pcVar5 = &DAT_007c8ff4;
+    pcVar5 = &CHAR_0Ah_007c8ff4;
     do {
       pcVar7 = pcVar5;
       if (uVar2 == 0) break;
