@@ -1448,7 +1448,7 @@ switchD_0054679d_default:
       memmove(pcVar28, pcVar24, uVar19); /* compiler REP MOVS byte copy */
       uVar20 = 0;
       uVar19 = 0xffffffff;
-      pcVar12_mg2 = PTR_s_SAVEGAME__0079ade4;
+      pcVar12_mg2 = st_global_0079ADE4;
       do {
         pcVar24 = pcVar12_mg2;
         if (uVar19 == 0) break;

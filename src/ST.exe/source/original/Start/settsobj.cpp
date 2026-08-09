@@ -1683,7 +1683,7 @@ LAB_005d6c37:
     }
     else {
       if (pAVar34->field_0x3 != '\x02') {
-        pcVar14 = &DAT_007ca24c;
+        pcVar14 = &CHAR_S_007ca24c;
         goto LAB_005d6c37;
       }
       uVar29 = 0xffffffff;
@@ -1736,7 +1736,7 @@ LAB_005d6c37:
       iVar24 = -1;
       iVar23 = -1;
       pcVar14 = (char *)st::fn_0040326F(g_startSystem_0081176C->field_0034,
-                                           (uint *)&pAVar34->field_0xa,(uint *)&CHAR___007c7274,
+                                           (uint *)&pAVar34->field_0xa,(uint *)&st_global_007C7274,
                                            local_1c);
       st::fn_007119C0(g_startSystem_0081176C->field_0034,pcVar14,iVar23,iVar24,uVar28);
       break;
@@ -1755,7 +1755,7 @@ LAB_005d6c37:
     uVar28 = 2;
     iVar37 = -1;
     iVar24 = -1;
-    pcVar14 = &CHAR___007c7274;
+    pcVar14 = &st_global_007C7274;
     iVar23 = local_1c;
 LAB_005d6d70:
     pcVar14 = (char *)st::fn_0040326F(g_startSystem_0081176C->field_0034,puVar35,(uint *)pcVar14,

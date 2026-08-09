@@ -102,7 +102,7 @@ void st::fn_0055F410
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079afd0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffe14;
   local_6c[0] = nullptr;
@@ -1382,7 +1382,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079aff0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffe18;
   local_6c[0] = nullptr;

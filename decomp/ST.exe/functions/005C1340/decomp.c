@@ -45,7 +45,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     else {
       pcVar4 = &CHAR_B_007ca248;
       if (local_5 != '\x02') {
-        pcVar4 = &DAT_007ca24c;
+        pcVar4 = &CHAR_S_007ca24c;
       }
     }
     wsprintfA((LPSTR)&DAT_0080f33a,"REPORT_%s_%c",pcVar4,

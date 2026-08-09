@@ -973,12 +973,12 @@ st::fn_0043E9A0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param
   local_8 = (int)param_3;
   local_c = param_6 + -1 + local_8;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_6 = (int)param_4;
+  auto _param_6 = (int)param_4;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_4 = param_7 + -1 + _param_6;
+  auto _param_4 = param_7 + -1 + _param_6;
   iVar2 = (int)param_5;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_5 = param_8 + -1 + iVar2;
+  auto _param_5 = param_8 + -1 + iVar2;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = 0;
   if (local_8 < 0) {
@@ -1100,9 +1100,9 @@ uint * st::fn_0043EC20(char param_1,Global_sub_0043EC20_param_2Enum param_2,shor
   local_8 = (int)param_3;
   local_c = param_6 + -1 + local_8;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_3 = (int)param_4;
+  auto _param_3 = (int)param_4;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_6 = param_7 + -1 + _param_3;
+  auto _param_6 = param_7 + -1 + _param_3;
   iVar5 = (int)param_5;
   iVar3 = param_8 + -1 + iVar5;
   if (local_8 < 0) {
@@ -1129,7 +1129,7 @@ uint * st::fn_0043EC20(char param_1,Global_sub_0043EC20_param_2Enum param_2,shor
   iVar4 = g_worldGrid.sizeX * _param_3 + local_8 + (iVar5 + -1) * (int)g_worldGrid.planeStride;
   if (iVar5 <= iVar3) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    _param_5 = (iVar3 - iVar5) + 1;
+    auto _param_5 = (iVar3 - iVar5) + 1;
     do {
       iVar4 = iVar4 + g_worldGrid.planeStride;
       iVar3 = iVar4 - g_worldGrid.sizeX;
@@ -1140,7 +1140,7 @@ uint * st::fn_0043EC20(char param_1,Global_sub_0043EC20_param_2Enum param_2,shor
           iVar3 = iVar3 + g_worldGrid.sizeX;
           if (local_8 <= local_c) {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            _param_4 = (local_c - local_8) + 1;
+            auto _param_4 = (local_c - local_8) + 1;
             iVar6 = iVar3 * 8 + -8;
             do {
               piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar6);
@@ -1275,12 +1275,12 @@ st::fn_0043F380(char param_1,byte *param_2,short param_3,short param_4,short par
   local_8 = (int)param_3;
   local_c = param_6 + -1 + local_8;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_3 = (int)param_4;
+  auto _param_3 = (int)param_4;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_4 = param_7 + -1 + _param_3;
+  auto _param_4 = param_7 + -1 + _param_3;
   iVar3 = (int)param_5;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_5 = param_8 + -1 + iVar3;
+  auto _param_5 = param_8 + -1 + iVar3;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_6 = 0;
   if (local_8 < 0) {
@@ -1397,11 +1397,11 @@ uint * st::fn_0043F580(char param_1,byte *param_2,short param_3,short param_4,sh
   local_8 = (int)param_3;
   iVar7 = (int)param_5;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_3 = param_6 + -1 + local_8;
+  auto _param_3 = param_6 + -1 + local_8;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_6 = (int)param_4;
+  auto _param_6 = (int)param_4;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_4 = param_7 + -1 + _param_6;
+  auto _param_4 = param_7 + -1 + _param_6;
   iVar3 = param_8 + -1 + iVar7;
   if (local_8 < 0) {
     local_8 = 0;
@@ -1429,7 +1429,7 @@ uint * st::fn_0043F580(char param_1,byte *param_2,short param_3,short param_4,sh
   iVar6 = g_worldGrid.sizeX * _param_6 + iVar5 + (iVar7 + -1) * (int)g_worldGrid.planeStride;
   if (iVar7 <= iVar3) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    _param_8 = (iVar3 - iVar7) + 1;
+    auto _param_8 = (iVar3 - iVar7) + 1;
     do {
       iVar6 = iVar6 + g_worldGrid.planeStride;
       local_14 = iVar6;
@@ -1440,7 +1440,7 @@ uint * st::fn_0043F580(char param_1,byte *param_2,short param_3,short param_4,sh
           local_10 = local_10 + g_worldGrid.sizeX;
           if (iVar5 <= _param_3) {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            _param_7 = (_param_3 - local_8) + 1;
+            auto _param_7 = (_param_3 - local_8) + 1;
             iVar7 = local_10 * 8 + -8;
             do {
               piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar7);
@@ -1559,7 +1559,7 @@ uint * st::fn_0043F7B0(byte param_1,int *param_2,uint *param_3,int param_4,int p
           iVar6 = iVar6 + g_worldGrid.sizeX;
           if (local_8 <= local_c) {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            _param_1 = (local_c - local_8) + 1;
+            auto _param_1 = (local_c - local_8) + 1;
             iVar10 = iVar6 * 8 + -8;
             do {
               piVar3 = *(int **)((int)g_worldGrid.cells[1].objects + iVar10);

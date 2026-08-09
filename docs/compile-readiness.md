@@ -36,14 +36,14 @@ sites, not unique source objects.
 
 | Class | Functions | Body share | Occurrences | State | What remains |
 | --- | ---: | ---: | ---: | --- | --- |
-| Translation-unit/declaration assembly | 5,712 | 100.00% | 5,712 | assembled and audited | `tools/st_source_tree.py` emits 318 deterministic TUs; the current 64-diagnostic compiler audit passes 69 and maps 4,757 of 4,762 capped errors to function addresses. |
+| Translation-unit/declaration assembly | 5,712 | 100.00% | 5,712 | assembled and audited | `tools/st_source_tree.py` emits 318 deterministic TUs; the current 64-diagnostic compiler audit passes 71 and maps 4,491 of 4,496 capped errors to function addresses. |
 | Default `FUN_ADDRESS` names | 4,155 | 72.74% | 4,155 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
 | Undefined function signatures | 3,877 | 67.88% | 3,877 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
-| Undefined scalar spelling | 3,641 | 63.74% | 18,330 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
+| Undefined scalar spelling | 3,640 | 63.72% | 18,327 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
 | Typed byte-offset field view | 1,144 | 20.03% | 10,124 | compatibility implemented | `STField<T>(base, offset)` preserves the exact access until owner/layout proof supplies a named member. |
 | Ownerless `__thiscall` | 999 | 17.49% | 999 | source ABI emitted | `st::fn_ADDRESS` retains the explicit ECX receiver until a class is proven. |
 | Opaque `code *` callback type | 793 | 13.88% | 1,936 | compatibility implemented | Install the exact callback/vtable-slot `FunctionDefinition`. |
-| Raw indirect call | 773 | 13.53% | 1,885 | semantic debt | Recover receiver, calling convention, argument count, and return type. |
+| Raw indirect call | 773 | 13.53% | 1,886 | semantic debt | Recover receiver, calling convention, argument count, and return type. One previously malformed exporter-owned callback expression is now honestly included. |
 | Unresolved register/high value | 232 | 4.06% | 1,450 | semantic debt | Repair boundary ABI, return width, x87 result, SEH/setjmp live-in, or SSA lifetime. |
 | Partial lvalue piece helper | 222 | 3.89% | 1,071 | compatibility implemented | Replace `STPiece<O,W>` only when a field/union facet is proven. |
 | `CONCAT*` intrinsic | 234 | 4.10% | 815 | compatibility implemented | Recover a packed value or retain exact byte composition. |
@@ -65,15 +65,15 @@ the semantic debt for later analyzers.
 | Residual class | Functions | Body share | Occurrences | Priority |
 | --- | ---: | ---: | ---: | --- |
 | Generic `field_XXXX` name | 2,433 | 42.60% | 60,767 | naming after layout; high volume but weak evidence by itself |
-| Generic `DAT/PTR/UNK` symbol | 1,516 | 26.54% | 14,952 | classify scalar/string/table/singleton/array first |
+| Generic `DAT/PTR/UNK` symbol | 1,513 | 26.49% | 14,861 | classify scalar/string/table/singleton/array first |
 | Anonymous recovered type | 1,253 | 21.94% | 4,165 | merge only by identity/flow, never geometry alone |
 | Raw pointer offset | 1,023 | 17.91% | 2,248 | recover complete pointer families or retain byte-buffer arithmetic |
-| `goto`/label presentation | 915 | 16.02% | 11,738 | restructure only with CFG/post-dominator proof |
+| `goto`/label presentation | 915 | 16.02% | 11,731 | restructure only with CFG/post-dominator proof |
 | Cast over generic field | 770 | 13.48% | 4,711 | receiver/field width or overlapping-union refinement |
 | Stack-slot lifetime reuse | 467 | 8.18% | 4,283 | split address-stable HighFunction merge groups |
 | Return-width/high-register artifact | 138 | 2.42% | 558 | whole-CFG EAX/x87 and caller-use evidence |
 | Unresolved incoming register | 132 | 2.31% | 472 | boundary, calling convention, SEH, or true live-in |
-| Dynamic `DArrayTy` indexing | 38 | 0.67% | 75 | per-owner descriptor/element view; runtime stride remains runtime |
+| Dynamic `DArrayTy` indexing | 38 | 0.67% | 76 | per-owner descriptor/element view; runtime stride remains runtime |
 | Generic global aggregate | 32 | 0.56% | 98 | singleton/table structure and semantic fields |
 | Flattened global record array | 17 | 0.30% | 36 | exact base/stride/count/member proof |
 | String-based aggregate address | 5 | 0.09% | 7 | recover adjacent table and index bias |
@@ -141,10 +141,10 @@ physical-vtable disagreement as review-only.
    `functions.json`, imports, and `call_relations.jsonl`.
 2. **Implemented:** emit address-stable `st::fn_ADDRESS` free functions,
    including explicit receiver ABI for ownerless `__thiscall`.
-3. Recover the 1,885 raw indirect calls from stored targets and physical vtable
+3. Recover the 1,886 raw indirect calls from stored targets and physical vtable
    slots; unresolved `code *` remains an explicit portability boundary.
 4. Split undefined debt by role (signature, field, local, return, pointer target)
-   before ranking it. The raw 18,330 count is not 18,330 independent problems.
+   before ranking it. The raw 18,327 count is not 18,327 independent problems.
 5. Finish whole-CFG return/high-register recovery for the 138 affected bodies.
 6. Refine casted generic fields and complete pointer families, prioritizing
    high-fanout structures rather than raw occurrence count.
@@ -175,11 +175,13 @@ address-stable `st::fn_ADDRESS` implementations. It does not alter packed layout
 or synthesize inheritance. It also renames 231 exact address-taken global-object
 uses whose image symbol collides with a C++ type name to `st_global_ADDRESS`,
 without changing the Ghidra symbol. With a fixed 64-error-per-TU Apple Clang
-probe, 69 of 318 units pass; the 4,762 retained errors are dominated by
-assignment types (1,426), call-argument types (1,182), undeclared identifiers
-(1,125), and pointer indirection (261). Exact exported global array declarations
+probe, 71 of 318 units pass; the 4,496 retained errors are dominated by
+assignment types (1,426), call-argument types (1,226), undeclared identifiers
+(794), and pointer indirection (273). Exact exported global array declarations
 reduced scalar-subscript diagnostics from 1,138 to 76, while exact unnamed
 component spelling reduced missing-record-member diagnostics to 43. Address-
-coded call identities additionally repair 116 stale line-wrapped owner
-qualifiers in the generated projection. These capped counts are a comparison baseline,
+generated aliases now repair 145 invalid address-coded global spellings and 78
+address-taken external labels; exact arity resolves 17 otherwise ambiguous
+direct calls, and 40 exporter-tagged stack-slot lifetimes receive safe lexical
+declarations. Only eight direct-call ambiguities remain. These capped counts are a comparison baseline,
 not an assertion that later diagnostics in a failed TU do not exist.

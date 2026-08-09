@@ -196,7 +196,7 @@ void __thiscall st::fn_005BD7A0(MReportTy *this,undefined1 param_1)
   else {
     pcVar4 = &CHAR_B_007ca248;
     if (DAT_0080874e != '\x02') {
-      pcVar4 = &DAT_007ca24c;
+      pcVar4 = &CHAR_S_007ca24c;
     }
   }
   st::external_00000080((LPSTR)&DAT_0080f33a,"REPORT_%s_%c",pcVar4,
@@ -273,7 +273,7 @@ void __thiscall st::fn_005BD7A0(MReportTy *this,undefined1 param_1)
       ppDVar14 = ppDVar14 + 1;
       iVar22 = iVar22 + -1;
     } while (iVar22 != 0);
-    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s\\%s",&CHAR_00h_00807680,PTR_s_SAVEGAME__0079c0d4,
+    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s\\%s",&CHAR_00h_00807680,st_global_0079C0D4,
               &CHAR_00h_00807ddd,PTR_s_PL_LOG_0079c0d8);
     local_a0.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_a0;
@@ -863,7 +863,7 @@ LAB_005bf156:
           memset(&DAT_0080f33a, 0, 0x834); /* compiler bulk-zero initialization */
           st::fn_0072E340((char *)&DAT_0080f33a,local_898,sVar18 - 2);
           uVar12 = 0xffffffff;
-          pcVar25 = &CHAR___007c7274;
+          pcVar25 = &st_global_007C7274;
           do {
             pcVar21 = pcVar25;
             if (uVar12 == 0) break;
@@ -1724,7 +1724,7 @@ void __thiscall st::fn_005C0E00(MReportTy *this)
        (this_00->field_0067 = 0, (&this_00->field_0347)[(byte)this_00->field_006A]->count != 0)) {
       local_8 = nullptr;
       st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s\\%s",&CHAR_00h_00807680,
-                PTR_s_SAVEGAME__0079c0d4,&CHAR_00h_00807ddd,PTR_s_PL_LOG_0079c0d8);
+                st_global_0079C0D4,&CHAR_00h_00807ddd,PTR_s_PL_LOG_0079c0d8);
       local_98.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_98;
       iVar5 = st::fn_0072D7F0(local_98.jumpBuffer,0);
@@ -1867,7 +1867,7 @@ void __thiscall st::fn_005C1340(MReportTy *this,int param_1)
     else {
       pcVar4 = &CHAR_B_007ca248;
       if (local_5 != '\x02') {
-        pcVar4 = &DAT_007ca24c;
+        pcVar4 = &CHAR_S_007ca24c;
       }
     }
     st::external_00000080((LPSTR)&DAT_0080f33a,"REPORT_%s_%c",pcVar4,

@@ -5601,7 +5601,7 @@ st::fn_00433E90
               st::fn_004027DE(this);
               return;
             }
-            PushTV(playerId,0);
+            st::fn_00405920(playerId,0);
             st::fn_004032E7(this,playerId,0,1,0);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar5 = CONCAT22(extraout_var_11,STField<undefined2>(piVar2,0x32));
@@ -5628,7 +5628,7 @@ st::fn_00433E90
             return;
           }
           if (local_EAX_1611 < 0) {
-            PushTV(playerId,0);
+            st::fn_00405920(playerId,0);
             st::fn_004032E7(this,playerId,0,1,0);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar5 = CONCAT22(extraout_var,STField<undefined2>(piVar2,0x32));
@@ -5699,7 +5699,7 @@ LAB_004345b4:
                          STField<short>(piVar2,0x32));
           if (-1 < local_EAX_1370) goto LAB_004345b4;
         }
-        PushTV(playerId,0);
+        st::fn_00405920(playerId,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = extraout_EDX;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -5770,7 +5770,7 @@ LAB_00434c44:
           goto cf_common_exit_00434CB8;
         }
 LAB_00434c88:
-        PushTV(playerId,1);
+        st::fn_00405920(playerId,1);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         local_EAX_2890 = extraout_EAX_02;
 LAB_00434c92:
@@ -5804,7 +5804,7 @@ LAB_00434c92:
           goto cf_common_exit_00434CB8;
         }
         if (-1 < local_EAX_2965) goto cf_common_exit_00434CB8;
-        PushTV(playerId,1);
+        st::fn_00405920(playerId,1);
         if (g_packedRecords_A62x8[playerId].field158_0x1c7 != piVar2[9]) goto LAB_00434b39;
         st::fn_004020D6(this,playerId,1,1,&objectIds->flags,(int *)&local_8,nullptr,nullptr);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -5834,7 +5834,7 @@ LAB_00434ae2:
           st::fn_0040317F(this,playerId,1,local_EAX_3200);
           goto cf_common_exit_00434CB8;
         }
-        PushTV(playerId,1);
+        st::fn_00405920(playerId,1);
 LAB_00434b39:
         st::fn_004032E7(this,playerId,1,1,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -5864,7 +5864,7 @@ cf_common_exit_00434CB8:
               if (*(int *)&g_packedRecords_A62x8[playerId].field97_0x167 != (int)(char)piVar2[9]) {
                 return;
               }
-              iVar4 = PushTV(playerId,0,0,playerId,STField<short>(piVar2,0x32));
+              iVar4 = st::fn_00401884(playerId,0,0,playerId,STField<short>(piVar2,0x32));
               if (iVar4 == 1) {
                 st::fn_004024E1(playerId,0,0,playerId,(uint)STField<ushort>(piVar2,0x32));
                 st::fn_004027DE(this);
@@ -5881,7 +5881,7 @@ cf_common_exit_00434CB8:
             local_EAX_913 = st::fn_0040196F(playerId,0,0x3c,(char)piVar2[9],objectIds,0);
             if (local_EAX_913 < 1) {
               if (local_EAX_913 < 0) {
-                PushTV(playerId,0);
+                st::fn_00405920(playerId,0);
                 if (g_packedRecords_A62x8[playerId].field105_0x177 != piVar2[9]) goto LAB_0043414f;
                 st::fn_004020D6(this,playerId,0,1,&objectIds->flags,(int *)&local_8,nullptr,
                              nullptr);
@@ -5916,7 +5916,7 @@ cf_common_exit_00434CB8:
             st::fn_006AE1C0(objectIds,(void *)((int)piVar2 + 0x32));
             local_EAX_662 = st::fn_0040196F(playerId,0,0x3c,(char)piVar2[9],objectIds,0);
             if (local_EAX_662 < 1) {
-              PushTV(playerId,0);
+              st::fn_00405920(playerId,0);
 LAB_0043414f:
               st::fn_004032E7(this,playerId,0,1,0);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -5979,7 +5979,7 @@ LAB_0043429d:
           goto cf_common_exit_00434CB8;
         }
 LAB_0043404a:
-        PushTV(playerId,0);
+        st::fn_00405920(playerId,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_var_07;
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -6063,7 +6063,7 @@ cf_common_exit_00434CBD:
         return;
       }
     }
-    PushTV(playerId,1);
+    st::fn_00405920(playerId,1);
     st::fn_004032E7(this,playerId,1,1,0);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     local_EAX_2021 = extraout_EAX_01;
@@ -6130,7 +6130,7 @@ LAB_00434895:
       return;
     }
   }
-  PushTV(playerId,1);
+  st::fn_00405920(playerId,1);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uVar7 = extraout_EDX_02;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

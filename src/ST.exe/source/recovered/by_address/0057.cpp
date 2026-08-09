@@ -43,7 +43,7 @@ LPSTR __cdecl st::fn_00571240(char *text,int param_2)
       pcVar1 = &CHAR_B_007ca248;
     }
     else if (DAT_0080874e == 3) {
-      pcVar1 = &DAT_007ca24c;
+      pcVar1 = &CHAR_S_007ca24c;
     }
     else {
       pcVar1 = &CHAR_W_007ca250;
@@ -492,7 +492,7 @@ undefined4 __thiscall st::fn_00571E40(void *this,LPDWORD lpcbData)
   }
   st::fn_006B8280((char *)pBVar1,(char *)pBVar1);
   st::external_000000C9(local_8);
-  st::external_00000080(local_124,"%s%s",(int)this + 0x28,PTR_s_SAVEGAME__0079b0cc);
+  st::external_00000080(local_124,"%s%s",(int)this + 0x28,st_global_0079B0CC);
   st::external_00000054(local_124,(LPSECURITY_ATTRIBUTES)0x0);
   LVar4 = st::external_000000C5((HKEY)0x80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version",&local_8);
   if (LVar4 != 0) {
@@ -704,7 +704,7 @@ void __fastcall st::fn_00572510(AnonShape_00572510_F06DC155 *param_1)
   param_1->field_0DEE = 0;
   if (param_1->field_0785 != '\0') {
     local_10 = param_1;
-    st::external_00000080((LPSTR)local_15c,"%s%s%s",&param_1->field_0x28,PTR_s_SAVEGAME__0079b0cc,
+    st::external_00000080((LPSTR)local_15c,"%s%s%s",&param_1->field_0x28,st_global_0079B0CC,
               local_8);
     hFindFile = st::external_00000070((LPCSTR)local_15c,&local_29c);
     if (hFindFile != (HANDLE)0xffffffff) {
@@ -720,7 +720,7 @@ void __fastcall st::fn_00572510(AnonShape_00572510_F06DC155 *param_1)
       st::external_00000072(hFindFile);
     }
     if (local_c != 0) {
-      st::external_00000080((LPSTR)local_15c,"%s%s%s\\%s",&param_1->field_0x28,PTR_s_SAVEGAME__0079b0cc,
+      st::external_00000080((LPSTR)local_15c,"%s%s%s\\%s",&param_1->field_0x28,st_global_0079B0CC,
                 local_8,PTR_s_PL_LOG_0079b0d0);
       local_58.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_58;
@@ -864,7 +864,7 @@ undefined4 __thiscall st::fn_00572920(void *this,byte param_1)
       _DAT_008072f8 = _DAT_008072f8 + (uint)(byte)(&DAT_008072f8)[uVar4];
       uVar4 = uVar4 + 1;
     } while (uVar4 < 0x82);
-    st::external_00000080((LPSTR)local_158,"%s%s%s",(int)this + 0x28,PTR_s_SAVEGAME__0079b0cc,
+    st::external_00000080((LPSTR)local_158,"%s%s%s",(int)this + 0x28,st_global_0079B0CC,
               (int)this + 0x785);
     st::external_00000054((LPCSTR)local_158,(LPSECURITY_ATTRIBUTES)0x0);
     st::external_00000080((LPSTR)local_158,"%s\\%s",local_158,PTR_s_PL_LOG_0079b0d0);
@@ -916,7 +916,7 @@ undefined4 __fastcall st::fn_00572BA0(int param_1)
 
   local_8 = 1;
   local_c = param_1;
-  st::external_00000080((LPSTR)local_154,"%s%s%s\\%s",param_1 + 0x28,PTR_s_SAVEGAME__0079b0cc,
+  st::external_00000080((LPSTR)local_154,"%s%s%s\\%s",param_1 + 0x28,st_global_0079B0CC,
             param_1 + 0x785,PTR_s_PL_LOG_0079b0d0);
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -1355,7 +1355,7 @@ undefined4 __fastcall st::fn_005738D0(AnonShape_005738D0_F693E267 *param_1)
   st::fn_00404769(param_1,(LPDWORD)0x0,(PHKEY)0x1);
   st::fn_004026A8
             ((AnonReceiver_00573260 *)param_1);
-  st::external_00000080(local_108,"%s%s%s",&param_1->field_0x28,PTR_s_SAVEGAME__0079b0cc,
+  st::external_00000080(local_108,"%s%s%s",&param_1->field_0x28,st_global_0079B0CC,
             &param_1->field_0x785);
   st::external_00000054(local_108,(LPSECURITY_ATTRIBUTES)0x0);
   iVar1 = st::fn_004042B9(param_1,1);
@@ -1831,7 +1831,7 @@ st::fn_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,und
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079b0f8;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff54;
   local_4c = nullptr;
@@ -2443,7 +2443,7 @@ undefined4 st::fn_00575A10(HINSTANCE param_1,undefined4 param_2,undefined4 param
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079b118;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff8c;
   ExceptionList = &local_14;
@@ -2488,7 +2488,7 @@ undefined4 st::fn_00575A10(HINSTANCE param_1,undefined4 param_2,undefined4 param
     st::external_00000080((LPSTR)&DAT_0080f33a,"%ssteditor.exe",&CHAR_00h_00807680);
   }
   else {
-    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079b114,
+    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,st_global_0079B114,
               &DAT_0080f126);
   }
   st::external_00000026((LPCSTR)&DAT_0080f33a,1);
@@ -3314,10 +3314,10 @@ st::fn_0057A140(int param_1,Global_sub_0057A140_param_2Enum param_2,int param_3,
       pcVar4 = "fish_gr";
       break;
     case CASE_EA:
-      pcVar4 = &DAT_007cae4c;
+      pcVar4 = &CHAR_s_007cae4c;
       break;
     case CASE_EB:
-      pcVar4 = &DAT_007cae44;
+      pcVar4 = &CHAR_z_007cae44;
       break;
     default:
       goto switchD_0057a18b_caseD_ec;

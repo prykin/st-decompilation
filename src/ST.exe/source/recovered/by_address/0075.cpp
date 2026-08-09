@@ -670,7 +670,7 @@ int st::fn_007516F0(int param_1,byte *param_2)
   undefined4 local_8;
 
   puStack_c = &DAT_007a1e68;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
@@ -2012,11 +2012,11 @@ int st::fn_007535F0(char *_Drive)
 
   pcVar7_mg0 = _Drive;
   st::fn_0072E730((byte *)_Drive,(byte *)&_Drive,local_408,local_308,local_208);
-  local_EAX_58 = st::fn_0072E620((char *)local_208,&CHAR___007c7078);
+  local_EAX_58 = st::fn_0072E620((char *)local_208,&st_global_007C7078);
   if ((local_EAX_58 == 0) ||
-     (iVar2 = st::fn_0072E620((char *)local_208,&CHAR___007c7080), iVar2 == 0)) {
+     (iVar2 = st::fn_0072E620((char *)local_208,&st_global_007C7080), iVar2 == 0)) {
     st::fn_0072F110
-              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&CHAR___007c7078);
+              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&st_global_007C7078);
   }
   else {
     uVar3 = 0xffffffff;
@@ -2035,7 +2035,7 @@ int st::fn_007535F0(char *_Drive)
     memmove(pcVar8, pcVar6, uVar3); /* compiler REP MOVS byte copy */
     uVar4 = 0;
     uVar3 = 0xffffffff;
-    pcVar6 = &CHAR___007c7078;
+    pcVar6 = &st_global_007C7078;
     do {
       pcVar8 = pcVar6;
       if (uVar3 == 0) break;
@@ -2063,12 +2063,12 @@ int st::fn_007535F0(char *_Drive)
   if (iVar5 == 0) {
     return 0;
   }
-  local_EAX_251 = st::fn_0072E620((char *)local_208,&CHAR___007c7078);
+  local_EAX_251 = st::fn_0072E620((char *)local_208,&st_global_007C7078);
   if ((local_EAX_251 == 0) ||
-     (local_EAX_275 = st::fn_0072E620((char *)local_208,&CHAR___007c7080),
+     (local_EAX_275 = st::fn_0072E620((char *)local_208,&st_global_007C7080),
      local_EAX_275 == 0)) {
     st::fn_0072F110
-              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&CHAR___007c7080);
+              (local_108,(char *)&_Drive,(char *)local_408,(char *)local_308,&st_global_007C7080);
   }
   else {
     uVar3 = 0xffffffff;
@@ -2086,7 +2086,7 @@ int st::fn_007535F0(char *_Drive)
     memmove(pcVar8, pcVar6, uVar3); /* compiler REP MOVS byte copy */
     uVar4 = 0;
     uVar3 = 0xffffffff;
-    pcVar6 = &CHAR___007c7080;
+    pcVar6 = &st_global_007C7080;
     do {
       pcVar8 = pcVar6;
       if (uVar3 == 0) break;
@@ -5747,7 +5747,7 @@ void st::fn_0075A670(int *param_1,undefined4 *param_2)
       iVar9 = iVar9 + -1;
     } while (iVar9 != 0);
     puVar3[4] = 0;
-    puVar3[1] = &LAB_0075aaa0;
+    puVar3[1] = &st_image_0075AAA0;
     puVar3[3] = st::fn_0075A860;
     return;
   }

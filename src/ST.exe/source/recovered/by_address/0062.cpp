@@ -4256,7 +4256,7 @@ st::fn_0062D2D0(void *this,int param_1,int param_2,int param_3,undefined4 param_
   undefined4 local_8;
 
   puStack_c = &DAT_0079d088;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffffa8;
   local_2c = 0;

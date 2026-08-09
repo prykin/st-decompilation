@@ -736,7 +736,7 @@ st::fn_00555040
         local_c = uVar5;
         do {
           uVar6 = 0xffffffff;
-          pcVar8 = &CHAR___007c8fec;
+          pcVar8 = &st_global_007C8FEC;
           do {
             pcVar12 = pcVar8;
             if (uVar6 == 0) break;

@@ -645,7 +645,7 @@ undefined4 st::fn_0040EB90(void)
 
   puVar13 = DAT_007f4d20;
   puStack_c = &DAT_00790040;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   iVar11 = 0;
   local_8 = 0;
@@ -947,7 +947,7 @@ void st::fn_0040F4D0(undefined4 *param_1,uint param_2,int param_3,int param_4)
   undefined4 local_8;
 
   puStack_c = &DAT_00790050;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   pcVar10 = &stack0xffffffbc;
   pcVar11 = &stack0xffffffbc;

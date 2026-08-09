@@ -12,14 +12,13 @@ info	dispatch_vtable_count	1	1	0	ok	Physical vtable layouts and polymorphic disp
 info	typed_vtable_slot_erasure	0	0	0	ok	-
 info	function_addresses_removed	0	0	0	ok	-
 info	semantic_name_downgrades	0	0	0	ok	-
-info	quality:dynamic_array_indexing	75	75	0	ok	policy=nonincreasing; blocking=false
+info	quality:dynamic_array_indexing	76	76	0	ok	policy=nonincreasing; blocking=false
 info	quality:flattened_global_record_array	36	36	0	ok	policy=nonincreasing; blocking=false
-warning	quality:generic_data_symbol	15252	14952	-300	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
 info	quality:generic_global_aggregate	98	98	0	ok	policy=nonincreasing; blocking=false
-info	quality:raw_indirect_call	1885	1885	0	ok	policy=nonincreasing; blocking=true
+info	quality:raw_indirect_call	1886	1886	0	ok	policy=nonincreasing; blocking=true
 info	quality:raw_pointer_offset	2248	2248	0	ok	policy=nonincreasing; blocking=false
 info	quality:return_width_artifact	558	558	0	ok	policy=nonincreasing; blocking=true
 info	quality:stack_slot_reuse	4283	4283	0	ok	policy=nonincreasing; blocking=false
 info	quality:string_based_aggregate_address	7	7	0	ok	policy=nonincreasing; blocking=false
-warning	quality:undefined_type	18329	18330	1	regressed	policy=nonincreasing; blocking=false; increased_functions=<detail unavailable>
+info	quality:undefined_type	18327	18327	0	ok	policy=nonincreasing; blocking=false
 info	quality:unresolved_register_input	472	472	0	ok	policy=nonincreasing; blocking=true

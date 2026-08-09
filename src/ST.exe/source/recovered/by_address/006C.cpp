@@ -3172,7 +3172,7 @@ void st::fn_006C72F0(AnonShape_006C72F0_54F06289 *param_1)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079da08;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff7c;
   local_20 = param_1->field_0062 + *(int *)param_1;
@@ -3236,7 +3236,7 @@ void st::fn_006C7430(AnonShape_006C7430_D1D36538 *param_1)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079da18;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff7c;
   local_20 = param_1->field_0062 + *(int *)param_1;
@@ -8189,7 +8189,7 @@ int st::fn_006CEF60(int *param_1,AnonShape_006D86E0_D6D32C07 *param_2,
   piVar3 = param_9;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079da38;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff20;
   iVar12 = 0;

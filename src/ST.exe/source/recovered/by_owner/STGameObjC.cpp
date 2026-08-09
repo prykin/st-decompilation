@@ -753,7 +753,7 @@ LAB_00485b29:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if (((iVar5 != 0x16) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x25)) ||
          (STField<int>(this_00,0x732) != 1)) {
-        int scalar_param_2 = uint)*(byte *)(this_00 + 9; /* split integer lifetime from pointer-typed SSA storage */
+        int scalar_param_2 = (uint)*(byte *)(this_00 + 9); /* split integer lifetime from pointer-typed SSA storage */
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (STGameObjC_sub_004845E0_param_1Enum)*(byte *)&this->field_0024;
         if (DAT_00808a8f != '\0') {

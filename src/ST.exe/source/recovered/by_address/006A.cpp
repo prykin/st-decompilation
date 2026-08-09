@@ -1948,7 +1948,7 @@ undefined4 __cdecl st::fn_006A5130(char *param_1,char param_2,int param_3)
   undefined4 local_8;
 
   puStack_c = &DAT_0079d850;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   uVar3 = 1;
   local_8 = 0;
@@ -4227,7 +4227,7 @@ void st::fn_006AACB0(void)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d860;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   ExceptionList = &local_14;
   st::external_0000001B((LPSYSTEM_INFO)&DAT_00858e00);
@@ -5861,7 +5861,7 @@ void __cdecl st::fn_006AD2A0(byte *param_1)
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
     if (0x40 < (int)(~uVar3 - 1)) {
-      st::fn_0072E340(acStack_14d + ~uVar3,&CHAR___007c7274,3);
+      st::fn_0072E340(acStack_14d + ~uVar3,&st_global_007C7274,3);
     }
   }
   local_30c[0] = '\0';
@@ -6065,7 +6065,7 @@ st::fn_006AD4D0(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *
       iVar5 = ~uVar4 - 1;
       if (0x40 < iVar5) {
         pcVar8 = acStack_18d + ~uVar4;
-        st::fn_0072E340(pcVar8,&CHAR___007c7274,3);
+        st::fn_0072E340(pcVar8,&st_global_007C7274,3);
         iVar5 = 0x40;
       }
       uVar4 = 0xffffffff;
@@ -6133,7 +6133,7 @@ st::fn_006AD4D0(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *
       pcVar14 = pcVar10;
       memmove(pcVar14, pcVar9, uVar6); /* compiler REP MOVS byte copy */
       uVar6 = 0;
-      st::fn_0072E340(pcVar10,&CHAR___007c7274,3);
+      st::fn_0072E340(pcVar10,&st_global_007C7274,3);
       iVar5 = 0x40;
     }
     pcVar10 = pcVar10 + iVar5;
@@ -6213,7 +6213,7 @@ st::fn_006AD4D0(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *
       pcVar14 = pcVar10;
       memmove(pcVar14, pcVar9, uVar6); /* compiler REP MOVS byte copy */
       uVar6 = 0;
-      st::fn_0072E340(pcVar10,&CHAR___007c7274,3);
+      st::fn_0072E340(pcVar10,&st_global_007C7274,3);
       iVar5 = 0x36;
     }
     pcVar10 = pcVar10 + iVar5;

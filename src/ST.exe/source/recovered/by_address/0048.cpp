@@ -1003,7 +1003,7 @@ st::fn_00481560(void *this,short param_1,short param_2,short param_3,short param
             return iVar10 << 0x10 | uVar4 & 0xffff;
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          _param_1 = 0xffffffff;
+          auto _param_1 = 0xffffffff;
           uVar3 = pDVar8->count - 1;
           if (-1 < (int)uVar3) {
             do {

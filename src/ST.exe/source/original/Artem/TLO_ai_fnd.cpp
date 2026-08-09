@@ -169,7 +169,7 @@ int st::fn_004B33D0(uint param_1,int *param_2)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790a90;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffc94;
   local_2c0.previous = g_currentExceptionFrame;

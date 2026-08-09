@@ -159,7 +159,7 @@ void st::fn_006B0290(int param_1,int param_2,int param_3,int param_4,int *param_
   undefined4 local_8;
 
   puStack_c = &DAT_0079d880;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
@@ -181,7 +181,7 @@ void st::fn_006B0330(int param_1,int param_2,int param_3,int param_4,int param_5
   undefined4 local_8;
 
   puStack_c = &DAT_0079d890;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
@@ -202,7 +202,7 @@ void st::fn_006B03D0(char *param_1,char *param_2,int param_3,int param_4,char pa
   undefined4 local_8;
 
   puStack_c = &DAT_0079d8a0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
@@ -2612,7 +2612,7 @@ void st::fn_006B4170(RecoveredSourceFamily_dibcopy *param_1,int param_2,int lprc
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d8b0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffffa0;
   if ((0 < param_5) && (0 < param_6)) {
@@ -3983,7 +3983,7 @@ void st::fn_006B68C0(undefined4 *param_1)
 
 {
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(*(int *)*param_1 + 0x30))((int *)*param_1,0,&LAB_006b68b0,&param_1,0);
+  (**(code **)(*(int *)*param_1 + 0x30))((int *)*param_1,0,&st_image_006B68B0,&param_1,0);
   return;
 }
 
@@ -4034,7 +4034,7 @@ void st::fn_006B7070(int *param_1)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d908;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffffcc;
   if ((*(byte *)(param_1 + 1) & 1) != 0) {
@@ -6837,7 +6837,7 @@ void st::fn_006BD260(void)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d940;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   ExceptionList = &local_14;
   *(undefined4 *)g_int_00854FD4[0x70] = 0;
@@ -7032,7 +7032,7 @@ int st::fn_006BEA40(int *param_1,uint param_2)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d968;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff4c;
   pDVar1 = (DDXContext *)*param_1;
@@ -7468,7 +7468,7 @@ st::fn_006BF710(AnonShape_006BF710_259ECA93 *param_1,int param_2,int param_3,int
   undefined4 local_8;
 
   puStack_c = &DAT_0079d980;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   pbVar1 = param_1->field_0210;
   iVar4 = param_1->field_01E4;

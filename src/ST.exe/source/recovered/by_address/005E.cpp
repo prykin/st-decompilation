@@ -1237,16 +1237,16 @@ st::fn_005EE080(void *this,short param_1,short param_2,short param_3,short param
       iVar3 = ((int)param_2 - (int)param_5) / 2 + (int)param_5;
       iVar6 = (int)param_6;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      _param_6 = (local_10 - param_6) / 2 + iVar6;
+      auto _param_6 = (local_10 - param_6) / 2 + iVar6;
       local_c = (int)param_2;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      _param_2 = (uint)param_4;
+      auto _param_2 = (uint)param_4;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      _param_5 = (int)param_5;
+      auto _param_5 = (int)param_5;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      _param_3 = iVar8;
+      auto _param_3 = iVar8;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      _param_4 = iVar6;
+      auto _param_4 = iVar6;
       do {
         iVar8 = (iVar2 - STField<int>(this,0x2be)) - DAT_007cdef4;
         iVar9 = (iVar3 - STField<int>(this,0x2c2)) - DAT_007cdef8;

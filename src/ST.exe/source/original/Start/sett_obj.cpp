@@ -184,7 +184,7 @@ void __thiscall st::fn_005C29B0(SettMapMTy *this,char param_1)
       st::fn_006B3AF0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
   }
-  st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079c0ec,
+  st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,st_global_0079C0EC,
             PTR_s_STRATEGS_0079c100);
   pcVar5 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   this_01->field_1F43 = pcVar5;
@@ -363,8 +363,8 @@ void __thiscall st::fn_005C29B0(SettMapMTy *this,char param_1)
     pSVar11 = (SettMapMTy_field_1F7CDArray *)
               st::fn_006AE290(nullptr,5,0x20c,5);
     this_01->field_1F7C = pSVar11;
-    st::external_00000080((LPSTR)local_3cc,"%s%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079c0ec,
-              &CHAR___007c72d8,PTR_CHAR___0079c0f0);
+    st::external_00000080((LPSTR)local_3cc,"%s%s%s%s",&CHAR_00h_00807680,st_global_0079C0EC,
+              &st_global_007C72D8,st_global_0079C0F0);
     hFindFile = st::external_00000070((LPCSTR)local_3cc,&local_50c);
     local_14 = hFindFile;
     if (hFindFile != (HANDLE)0xffffffff) {
@@ -378,7 +378,7 @@ void __thiscall st::fn_005C29B0(SettMapMTy *this,char param_1)
           hFindFile = local_14;
           pIVar4 = local_cc.previous;
           if (iVar5 == 0) {
-            st::external_00000080((LPSTR)local_3cc,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079c0ec,
+            st::external_00000080((LPSTR)local_3cc,"%s%s%s",&CHAR_00h_00807680,st_global_0079C0EC,
                       local_50c.cFileName);
             pcVar6 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)local_3cc,0,0,0);
             local_1c = pcVar6;
@@ -2484,7 +2484,7 @@ st::fn_005C8200
   if (local_c->field_1F3F != nullptr) {
     st::fn_006F1170(local_c->field_1F3F);
   }
-  st::external_00000080(&CHAR_00h_00853de4,"%s%s%s",&CHAR_00h_00807680,PTR_s_MISSIONS__0079c0e8,
+  st::external_00000080(&CHAR_00h_00853de4,"%s%s%s",&CHAR_00h_00807680,st_global_0079C0E8,
             PTR_s_RANDOM_0079c0f4);
   pcVar2 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)&CHAR_00h_00853de4,0,0,0);
   this_00->field_1F3F = pcVar2;
@@ -2580,7 +2580,7 @@ st::fn_005C8200
     st::fn_006A5E40
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\sett_obj.cpp",0x477);
   }
-  st::external_00000080(&CHAR_00h_00853de4,"%s%s%s",&CHAR_00h_00807680,PTR_s_MISSIONS__0079c0e8,
+  st::external_00000080(&CHAR_00h_00853de4,"%s%s%s",&CHAR_00h_00807680,st_global_0079C0E8,
             PTR_s_RANDOM_0079c0f4);
   this_00->field_1F47 = 1;
   if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (g_int_00811764 != nullptr)) {

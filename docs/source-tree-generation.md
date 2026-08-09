@@ -84,8 +84,11 @@ their encoded exported entry address. This remains valid when a recovered owner
 is stale or the qualifier is line-wrapped; the generated spelling is always the
 unqualified address identity `st::fn_ADDRESS`. External call identities from
 `call_relations.jsonl` receive `st::external_ID` declarations with their
-resolved signatures. Ambiguous overload/thunk spellings remain in the audit
-instead of being selected by name.
+resolved signatures. An ambiguous direct spelling is selected only when exactly
+one address-authoritative candidate has the observed argument count; the call
+parser tracks nested parentheses, brackets, braced initializers, and template
+commas. All remaining overload/thunk ambiguity stays in the audit instead of
+being selected by name.
 
 This free-function boundary also handles ownerless `__thiscall`: ECX remains
 the explicit first parameter. The generated header maps the otherwise illegal
@@ -111,6 +114,13 @@ same mechanically exact unnamed-field views as a typed local receiver.
 Image-backed globals are declarations only. The generator never fabricates a
 zero initializer or copies the proprietary image into the repository.
 
+Invalid Ghidra image labels which render as an address-coded C++ token are
+matched back to `globals.jsonl` by exact address and exposed as
+`st_global_ADDRESS`; the declaration retains the original symbol as provenance.
+Likewise, an address-taken `LAB_ADDRESS` which is not a label in the current
+function becomes an opaque `st_image_ADDRESS` declaration. Neither rule guesses
+the semantic type or redirects a local control-flow label.
+
 Two source-assembly views preserve facts which readable pseudocode uses but a
 plain POD declaration would otherwise lose:
 
@@ -127,6 +137,10 @@ plain POD declaration would otherwise lose:
   method over `st::fn_ADDRESS`. Virtual slots keep their dispatch wrappers;
   constructors, destructors, ambiguous overloads, and field-name collisions
   stay in `audit/issues.jsonl` rather than being guessed.
+- when the exporter marks the first assignment to a synthetic `_param_N` or
+  `_local_N` as stack-slot reuse, the generator may turn that assignment into
+  `auto` only if every use remains in the same lexical block and no switch label
+  can jump over the initializer. Unsafe scopes remain explicit audit rows.
 
 Nested field chains and indexed/by-value receivers are resolved only through
 component types already present in `types.jsonl`. Neither mechanism infers a
@@ -160,9 +174,10 @@ before layout assertions or a real link are meaningful.
 It intentionally does not link. A full object build is expected to fail today
 and is now useful evidence rather than a missing-infrastructure failure. The
 current Apple Clang C++17 probe, with a limit of 64 diagnostics per translation
-unit, passes 69 of 318 units and records 4,762 errors, 4,757 of them mapped to a
-function address. This is 828 fewer diagnostics than the preceding 5,590-error
-baseline. The cap makes this a monotonic comparison baseline, not the
+unit, passes 71 of 318 units and records 4,496 errors, 4,491 of them mapped to a
+function address. This is 266 fewer diagnostics than the preceding accepted
+4,762-error checkpoint and 1,094 fewer than the initial 5,590-error baseline.
+No syntax diagnostic remains. The cap makes this a monotonic comparison baseline, not the
 uncapped total of all errors. Remaining diagnostics principally identify:
 
 - unmaterialized `field_0x...` views over anonymous storage;

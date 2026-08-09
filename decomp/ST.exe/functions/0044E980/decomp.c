@@ -100,121 +100,121 @@ STBoatC::GetVisualInfo
   }
   switch(param_2) {
   case CASE_1:
-    pcVar6 = &DAT_007a9e8c;
+    pcVar6 = &CHAR_s_007a9e8c;
     break;
   case CASE_2:
-    pcVar6 = &DAT_007a9e84;
+    pcVar6 = &CHAR_h_007a9e84;
     break;
   case CASE_3:
-    pcVar6 = &DAT_007a9e7c;
+    pcVar6 = &CHAR_c_007a9e7c;
     break;
   case CASE_4:
-    pcVar6 = &DAT_007a9e74;
+    pcVar6 = &CHAR_d_007a9e74;
     break;
   case CASE_5:
-    pcVar6 = &DAT_007a9e6c;
+    pcVar6 = &CHAR_m_007a9e6c;
     break;
   case CASE_6:
-    pcVar6 = &DAT_007a9e64;
+    pcVar6 = &CHAR_r_007a9e64;
     break;
   case CASE_7:
-    pcVar6 = &DAT_007a9e5c;
+    pcVar6 = &CHAR_r_007a9e5c;
     break;
   case CASE_8:
-    pcVar6 = &DAT_007a9e54;
+    pcVar6 = &CHAR_l_007a9e54;
     break;
   case CASE_9:
-    pcVar6 = &DAT_007a9e50;
+    pcVar6 = &CHAR_w_007a9e50;
     break;
   case CASE_A:
-    pcVar6 = &DAT_007a9e48;
+    pcVar6 = &CHAR_t_007a9e48;
     break;
   case CASE_B:
     pcVar6 = &CHAR_l_007a9e40;
     break;
   case CASE_C:
-    pcVar6 = &DAT_007a9e38;
+    pcVar6 = &CHAR_c_007a9e38;
     break;
   case CASE_D:
-    pcVar6 = &DAT_007a9e30;
+    pcVar6 = &CHAR_c_007a9e30;
     break;
   case CASE_E:
-    pcVar6 = &DAT_007a9e28;
+    pcVar6 = &CHAR_d_007a9e28;
     break;
   case CASE_F:
-    pcVar6 = &DAT_007a9e20;
+    pcVar6 = &CHAR_h_007a9e20;
     break;
   case CASE_10:
-    pcVar6 = &DAT_007a9e18;
+    pcVar6 = &CHAR_i_007a9e18;
     break;
   case CASE_11:
-    pcVar6 = &DAT_007a9e10;
+    pcVar6 = &CHAR_l_007a9e10;
     break;
   case CASE_12:
-    pcVar6 = &DAT_007a9e08;
+    pcVar6 = &CHAR_r_007a9e08;
     break;
   case CASE_13:
-    pcVar6 = &DAT_007a9e00;
+    pcVar6 = &CHAR_r_007a9e00;
     break;
   case CASE_14:
-    pcVar6 = &DAT_007a9df8;
+    pcVar6 = &CHAR_l_007a9df8;
     break;
   case CASE_15:
-    pcVar6 = &DAT_007a9df4;
+    pcVar6 = &CHAR_d_007a9df4;
     break;
   case CASE_16:
     pcVar6 = &CHAR_p_007a9dec;
     break;
   case CASE_17:
-    pcVar6 = &DAT_007a9de4;
+    pcVar6 = &CHAR_a_007a9de4;
     break;
   case CASE_18:
-    pcVar6 = &DAT_007a9ddc;
+    pcVar6 = &CHAR_c_007a9ddc;
     break;
   case CASE_19:
-    pcVar6 = &DAT_007a9dd8;
+    pcVar6 = &CHAR_c_007a9dd8;
     break;
   case CASE_1A:
-    pcVar6 = &DAT_007a9dd4;
+    pcVar6 = &CHAR_t_007a9dd4;
     break;
   case CASE_1B:
-    pcVar6 = &DAT_007a9dd0;
+    pcVar6 = &CHAR_s_007a9dd0;
     break;
   case CASE_1C:
-    pcVar6 = &DAT_007a9dcc;
+    pcVar6 = &CHAR_p_007a9dcc;
     break;
   case CASE_1D:
-    pcVar6 = &DAT_007a9dc8;
+    pcVar6 = &CHAR_r_007a9dc8;
     break;
   case CASE_1E:
-    pcVar6 = &DAT_007a9dc4;
+    pcVar6 = &CHAR_s_007a9dc4;
     break;
   case CASE_1F:
-    pcVar6 = &DAT_007a9dc0;
+    pcVar6 = &CHAR_d_007a9dc0;
     break;
   case CASE_20:
-    pcVar6 = &DAT_007a9dbc;
+    pcVar6 = &CHAR_e_007a9dbc;
     break;
   case CASE_21:
-    pcVar6 = &DAT_007a9db8;
+    pcVar6 = &CHAR_b_007a9db8;
     break;
   case CASE_22:
-    pcVar6 = &DAT_007a9db4;
+    pcVar6 = &CHAR_u_007a9db4;
     break;
   case CASE_23:
     pcVar6 = &CHAR_g_007a9db0;
     break;
   case CASE_24:
-    pcVar6 = &DAT_007a9dac;
+    pcVar6 = &CHAR_e_007a9dac;
     break;
   case CASE_25:
-    pcVar6 = &DAT_007a9da4;
+    pcVar6 = &CHAR_s_007a9da4;
     break;
   case CASE_26:
-    pcVar6 = &DAT_007a9d9c;
+    pcVar6 = &CHAR_f_007a9d9c;
     break;
   case CASE_27:
-    pcVar6 = &DAT_007a9d94;
+    pcVar6 = &CHAR_f_007a9d94;
     break;
   case CASE_28:
     pcVar6 = &CHAR_f_007a9d8c;

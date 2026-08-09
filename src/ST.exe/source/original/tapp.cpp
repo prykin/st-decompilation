@@ -190,12 +190,12 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   if (local_EAX_613 == 0) {
     puVar1 = &local_c->field_0x60;
     puVar2 = (byte *)&local_c->field_7D1A;
-    st::external_00000080((LPSTR)puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,"INTER");
+    st::external_00000080((LPSTR)puVar2,"%s%s%s",puVar1,st_global_0079B030,"INTER");
     g_cMf32_00806780 = (cMf32 *)st::fn_006F0EC0(0x345,puVar2,0,0,0);
     PTR_00806784 = st::fn_007097C0((int)g_cMf32_00806780);
     st::external_00000080((LPSTR)puVar2,"%s%s",&pSVar16->field_0x470,PTR_s_TASKS_0079b048);
     g_cMf32_00806798 = (cMf32 *)st::fn_006F0EC0(0x345,puVar2,0,0,0);
-    st::external_00000080((LPSTR)puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,PTR_s_STRATEGS_0079b04c);
+    st::external_00000080((LPSTR)puVar2,"%s%s%s",puVar1,st_global_0079B030,PTR_s_STRATEGS_0079b04c);
     g_cMf32_0080675C = (cMf32 *)st::fn_006F0EC0(0x345,puVar2,0,0,0);
     puVar7 = st::fn_00403387(g_cMf32_0080675C,0);
     pSVar16->field_4EE2 = puVar7;
@@ -320,7 +320,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         *ppAVar22 = nullptr;
         ppAVar22 = ppAVar22 + 1;
       }
-      st::external_00000080(&pSVar16->field_7D1A,"%s%s",&pSVar16->field_0x164,PTR_s_STARTUP_VPS_0079b040);
+      st::external_00000080(&pSVar16->field_7D1A,"%s%s",&pSVar16->field_0x164,st_global_0079B040);
       pDVar11 = (DArrayTy *)
                 st::fn_00404403(&pSVar16->field_7D1A,(AnonShape_00683C70_22193481 *)&local_560,
                                    &local_38,nullptr,nullptr);
@@ -394,7 +394,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         memmove(pcVar18, pcVar17, uVar14); /* compiler REP MOVS byte copy */
         uVar15 = 0;
         uVar14 = 0xffffffff;
-        temp_103f1147536a = PTR_s_SAVEGAME__0079b02c;
+        temp_103f1147536a = st_global_0079B02C;
         do {
           pcVar17 = temp_103f1147536a;
           if (uVar14 == 0) break;
@@ -510,7 +510,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         memmove(pcVar18, pcVar17, uVar14); /* compiler REP MOVS byte copy */
         uVar15 = 0;
         uVar14 = 0xffffffff;
-        pcVar17 = &CHAR___007ca0b8;
+        pcVar17 = &st_global_007CA0B8;
         do {
           pcVar18 = pcVar17;
           if (uVar14 == 0) break;
@@ -542,7 +542,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
             goto switchD_0056b4ce_caseD_57;
           }
           uVar14 = 0xffffffff;
-          temp_3fcb2a3bcd = PTR_s_SAVEGAME__0079b02c;
+          temp_3fcb2a3bcd = st_global_0079B02C;
           do {
             pcVar17 = temp_3fcb2a3bcd;
             if (uVar14 == 0) break;
@@ -896,7 +896,7 @@ switchD_0056b4ce_caseD_57:
         memmove(pcVar18, pcVar17, uVar14); /* compiler REP MOVS byte copy */
         uVar15 = 0;
         uVar14 = 0xffffffff;
-        temp_103fc2eb3361 = PTR_s_SAVEGAME__0079b02c;
+        temp_103fc2eb3361 = st_global_0079B02C;
         do {
           pcVar17 = temp_103fc2eb3361;
           if (uVar14 == 0) break;
@@ -1012,7 +1012,7 @@ switchD_0056b4ce_caseD_57:
         memmove(pcVar18, pcVar17, uVar14); /* compiler REP MOVS byte copy */
         uVar15 = 0;
         uVar14 = 0xffffffff;
-        pcVar17 = &CHAR___007ca0b8;
+        pcVar17 = &st_global_007CA0B8;
         do {
           pcVar18 = pcVar17;
           if (uVar14 == 0) break;
@@ -1887,7 +1887,7 @@ void __thiscall st::fn_0056DB80(STAppC *this)
     local_EAX_1075 =
          st::fn_006F2600(g_cMf32_00806754,0,PTR_s_TEXTURE_0079b07c,nullptr,1);
     pSVar11->field_7D16 = local_EAX_1075;
-    st::external_00000080((LPSTR)&local_224,"%s%s%s",&pSVar11->field_0x60,PTR_s_SYSTEM__0079b030,
+    st::external_00000080((LPSTR)&local_224,"%s%s%s",&pSVar11->field_0x60,st_global_0079B030,
               *slotStorage);
     if (g_cMf32_00806760 != nullptr) {
       st::fn_00404039();
@@ -2814,7 +2814,7 @@ cf_common_exit_0057073B:
         st::fn_0072E730(&pSVar11->field_0x7c0a,local_14,local_24c,local_44c,local_54c);
         st::fn_0072F110
                   (&pSVar11->field_7D1A,(char *)local_14,(char *)local_24c,
-                   PTR_s_CAMPAIGN_VPS_0079b03c,nullptr);
+                   st_global_0079B03C,nullptr);
         local_c = (DArrayTy *)
                   st::fn_00404403(&pSVar11->field_7D1A,
                                      (AnonShape_00683C70_22193481 *)&stack0xfffff65c,&local_50,

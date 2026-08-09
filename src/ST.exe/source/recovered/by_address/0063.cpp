@@ -3653,7 +3653,7 @@ st::fn_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ush
         do {
           iVar4 = iVar8;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          _param_6 = iVar15;
+          auto _param_6 = iVar15;
           if (iVar8 < iVar11) {
             do {
               sVar12 = (short)iVar15;
@@ -4096,7 +4096,7 @@ st::fn_006383E0(int param_1,int param_2,int param_3,undefined4 param_4,ushort pa
   undefined4 local_8;
 
   puStack_c = &DAT_0079d1c8;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff4c;
   local_80 = 0;

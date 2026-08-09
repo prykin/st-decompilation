@@ -109,7 +109,7 @@ st::fn_00424E10
   iVar24 = param_5;
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790540;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffea0;
   local_4c = 0;
@@ -1147,7 +1147,7 @@ st::fn_00427F20(void *this,float param_1,float param_2,float param_3,int param_4
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790550;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff3c;
   local_30 = 0;

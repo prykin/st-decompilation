@@ -4143,7 +4143,7 @@ int __fastcall st::fn_0060AEF0(void *param_1)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079cd38;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffef8;
   local_88 = 0;
@@ -4849,7 +4849,7 @@ int __fastcall st::fn_0060C320(void *param_1)
   undefined4 local_8;
 
   puStack_c = &DAT_0079cd68;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff60;
   iVar16 = 0;
@@ -5471,7 +5471,7 @@ void __thiscall st::fn_0060D390(void *this,uint *param_1)
   undefined4 local_8;
 
   puStack_c = &DAT_0079cd78;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   piVar8 = (int *)&stack0xffffff98;
   puVar3 = (uint *)&stack0xffffff98;

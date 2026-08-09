@@ -342,7 +342,7 @@ LAB_0058e0f9:
       return 0;
     case MESS_STOCTOPUSC_0127:
       pSVar1 = &this_00->field_0231;
-      int scalar_local_1c = int)(short)((message->arg1).words.low * 0xc9 + 100; /* split integer lifetime from pointer-typed SSA storage */
+      int scalar_local_1c = (int)(short)((message->arg1).words.low * 0xc9 + 100); /* split integer lifetime from pointer-typed SSA storage */
       iVar10 = thunk_FUN_0058d160((short)*(undefined4 *)&this_00->field_0x27f,
                                   (short)*(undefined4 *)&this_00->field_0x283,
                                   (short)*(undefined4 *)&this_00->field_0x287,

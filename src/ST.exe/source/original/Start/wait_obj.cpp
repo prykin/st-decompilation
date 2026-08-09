@@ -898,7 +898,7 @@ void __thiscall st::fn_005E7FE0(WaitTy *this)
   }
   else {
     if (((byte)local_8->field_1A93 < 2) || (3 < (byte)local_8->field_1A93)) goto LAB_005e829d;
-    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,PTR_s_CUSTOM__0079c244);
+    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,st_global_0079C244);
     local_1c = this_00->field_1A93;
     local_1b = this_00->field_1A8F;
     iVar5 = st::fn_00725910(&DAT_0080f33a,"*.DKD",0,st::fn_00404E49,&local_1c,0);
@@ -1157,7 +1157,7 @@ LAB_005e9233:
                       if (this_01->field_1A76 != '\0') break;
                     }
                     st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,
-                              PTR_s_CUSTOM__0079c244);
+                              st_global_0079C244);
                     local_5c = *puVar1;
                     local_5b = pAVar6->field_0003;
                     local_57 = 0;
@@ -1171,7 +1171,7 @@ LAB_005e9233:
                     break;
                   case 5:
                     st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s\\",&CHAR_00h_00807680,
-                              PTR_s_SAVEGAME__0079c240,&CHAR_00h_00807ddd);
+                              st_global_0079C240,&CHAR_00h_00807ddd);
                     local_68 = *puVar1;
                     local_67 = pAVar6->field_0003;
                     local_63 = *(undefined4 *)&pAVar6->field_0x7;

@@ -86,10 +86,12 @@ public class STDecompExport extends GhidraScript {
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
     private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "2";
+    private static final int FUNCTION_ANALYSIS_SCHEMA = 15;
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
-        "st-function-analysis-v14-linear-string-literal-pieces";
+        "st-function-analysis-v" + FUNCTION_ANALYSIS_SCHEMA +
+            "-legacy-scalar-parentheses";
     private static final Pattern NARROW_RETURN_PIECE_ASSIGNMENT = Pattern.compile(
         "(?<variable>[A-Za-z_$][A-Za-z0-9_$]*)\\._0_(?<width>[12])_\\s*=\\s*" +
         "(?<callee>[A-Za-z_$][A-Za-z0-9_$]*(?:::[A-Za-z_$][A-Za-z0-9_$]*)*)" +
@@ -765,6 +767,10 @@ public class STDecompExport extends GhidraScript {
             boolean reusable = Files.exists(metaPath) && fingerprint.equals(storedFingerprint) &&
                 (!bodyExported ||
                     (Files.exists(decompPath) && Files.exists(dir.resolve("listing.asm"))));
+            if (reusable && bodyExported && requiresFreshDecompilerBody(decompPath)) {
+                reusable = false;
+                println("Discarding exporter-contaminated cached body: " + id);
+            }
 
             if (reusable) {
                 if (bodyExported) {
@@ -1076,8 +1082,10 @@ public class STDecompExport extends GhidraScript {
      */
     private NormalizedCode normalizePseudocode(String code) {
         if (code == null || code.isEmpty()) return new NormalizedCode("", 0);
+        NormalizedCode legacyScalarLifetimes =
+            normalizeLegacyMalformedScalarLifetimes(code);
         NormalizedCode legacyBulkCopy =
-            normalizeLegacyBulkCopyLiveouts(code);
+            normalizeLegacyBulkCopyLiveouts(legacyScalarLifetimes.code);
         NormalizedCode bulkZero = normalizeBulkZeroLoops(legacyBulkCopy.code);
         NormalizedCode bulkCopy = normalizeBulkCopyLoops(bulkZero.code);
         NormalizedCode darrayAliases = normalizeDArrayElementAliases(bulkCopy.code);
@@ -1102,7 +1110,8 @@ public class STDecompExport extends GhidraScript {
         code = typedFields.code;
         String[] lines = code.split("\\R", -1);
         List<String> output = new ArrayList<>();
-        int replacements = legacyBulkCopy.replacements +
+        int replacements = legacyScalarLifetimes.replacements +
+            legacyBulkCopy.replacements +
             bulkZero.replacements + bulkCopy.replacements +
             darrayAliases.replacements + darrayAddresses.replacements +
             virtualCalls.replacements + affineCancellation.replacements +
@@ -1154,6 +1163,96 @@ public class STDecompExport extends GhidraScript {
             replacements + nullPointers.replacements + semicolons.replacements +
                 scalarLifetimes.replacements + deadCodePointers.replacements +
                 narrowPromotions.replacements + deadSynthetics.replacements);
+    }
+
+    /**
+     * Repair exporter-owned scalar-lifetime lines written by the pre-v15
+     * normalizer.  That implementation removed the first and last parenthesis
+     * whenever an expression happened to start and end with one, without
+     * proving that they formed one balanced outer pair.  Casts and indirect
+     * calls consequently survived in the cache as, for example,
+     * `int)(short)(value` or `**(code **)*slot)(argument`.
+     *
+     * The lifetime marker is emitted only by this exporter.  Reinsert the pair
+     * only when the expression is balanced overall but its prefix goes below
+     * zero: that is the exact signature of the removed enclosing pair.  Fresh
+     * Ghidra output and user comments cannot enter this migration accidentally.
+     */
+    private NormalizedCode normalizeLegacyMalformedScalarLifetimes(String code) {
+        final String marker =
+            "/* split integer lifetime from pointer-typed SSA storage */";
+        if (code == null || code.isEmpty() || !code.contains(marker))
+            return new NormalizedCode(code, 0);
+        String[] lines = code.split("\\R", -1);
+        Pattern declaration = Pattern.compile(
+            "^(?<prefix>[ \\t]*int[ \\t]+scalar_[A-Za-z_$][A-Za-z0-9_$]*" +
+            "[ \\t]*=[ \\t]*)(?<expr>.+);[ \\t]*" +
+            Pattern.quote(marker) + "[ \\t]*$");
+        int replacements = 0;
+        for (int index = 0; index < lines.length; index++) {
+            Matcher matcher = declaration.matcher(lines[index]);
+            if (!matcher.matches()) continue;
+            String expression = matcher.group("expr").trim();
+            int depth = 0;
+            int minimumDepth = 0;
+            for (int offset = 0; offset < expression.length(); offset++) {
+                char value = expression.charAt(offset);
+                if (value == '(') depth++;
+                else if (value == ')') depth--;
+                minimumDepth = Math.min(minimumDepth, depth);
+            }
+            if (depth != 0 || minimumDepth >= 0) continue;
+            lines[index] = matcher.group("prefix") + "(" + expression + "); " + marker;
+            replacements++;
+        }
+        return replacements == 0 ? new NormalizedCode(code, 0) :
+            new NormalizedCode(String.join(System.lineSeparator(), lines), replacements);
+    }
+
+    /**
+     * An older scalar-lifetime pass accepted '*' tokens inside a raw callback
+     * expression as multiplication.  Parenthesis repair can make that cached
+     * text syntactically valid, but it cannot recover the original Ghidra SSA
+     * lifetime which the pass replaced.  Re-decompile only this exact
+     * exporter-owned contamination pattern; ordinary raw indirect calls and
+     * valid scalar splits continue to use the address-stable cache.
+     */
+    private boolean requiresFreshDecompilerBody(Path path) throws IOException {
+        if (!Files.isRegularFile(path)) return false;
+        final String marker =
+            "/* split integer lifetime from pointer-typed SSA storage */";
+        String code = Files.readString(path, StandardCharsets.UTF_8);
+        if (code.contains(marker) && code.lines().anyMatch(line ->
+                line.contains(marker) && line.contains("scalar_") &&
+                    line.contains("code **"))) return true;
+        return malformedDArrayAtCall(code);
+    }
+
+    private boolean malformedDArrayAtCall(String code) {
+        int search = 0;
+        while ((search = code.indexOf("DArrayAt<", search)) >= 0) {
+            int templateEnd = code.indexOf('>', search + 9);
+            if (templateEnd < 0) return true;
+            int open = templateEnd + 1;
+            while (open < code.length() && Character.isWhitespace(code.charAt(open))) open++;
+            if (open >= code.length() || code.charAt(open) != '(') return true;
+            int depth = 0;
+            int commas = 0;
+            boolean closed = false;
+            for (int index = open; index < code.length(); index++) {
+                char value = code.charAt(index);
+                if (value == '(') depth++;
+                else if (value == ')' && --depth == 0) {
+                    closed = true;
+                    search = index + 1;
+                    break;
+                }
+                else if (value == ',' && depth == 1) commas++;
+                if (depth < 0) return true;
+            }
+            if (!closed || commas != 1) return true;
+        }
+        return false;
     }
 
     /**
@@ -1449,7 +1548,7 @@ public class STDecompExport extends GhidraScript {
         Pattern assignment = Pattern.compile(
             "^(?<indent>[ \\t]*)(?<name>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*=[ \\t]*" +
             "\\([A-Za-z_$][A-Za-z0-9_$: ]*[ \\t]*\\*+\\)[ \\t]*" +
-            "\\((?<expr>.+)\\);[ \\t]*$");
+            "(?<expr>.+);[ \\t]*$");
         Set<String> introduced = new HashSet<>();
         int replacements = 0;
         for (int index = 0; index < lines.length; index++) {
@@ -1457,7 +1556,8 @@ public class STDecompExport extends GhidraScript {
             if (!candidate.matches()) continue;
             String name = candidate.group("name");
             if (!pointers.containsKey(name)) continue;
-            String expression = candidate.group("expr").trim();
+            String expression = stripBalancedOuterParentheses(
+                candidate.group("expr").trim());
             if (!integerProductExpression(expression)) continue;
             int end = nextDirectAssignment(lines, name, index + 1);
             List<ScalarPointerCopy> copies = new ArrayList<>();
@@ -1500,8 +1600,26 @@ public class STDecompExport extends GhidraScript {
         String withoutCasts = expression.replaceAll(
             "\\([A-Za-z_$][A-Za-z0-9_$: ]*[ \\t]*\\*+\\)", "")
             .replaceAll("\\((?:u?int|u?short|byte|char|long|ulong)\\)", "");
-        return Pattern.compile("\\S[ \\t]*\\*[ \\t]*\\S")
+        // Require the decompiler's binary-operator spacing.  A permissive '*'
+        // test also matches **(code **) callback calls and used to turn them
+        // into syntactically broken integer lifetimes.
+        return Pattern.compile("\\S[ \\t]+\\*[ \\t]+\\S")
             .matcher(withoutCasts).find();
+    }
+
+    private String stripBalancedOuterParentheses(String expression) {
+        if (expression.length() < 2 || expression.charAt(0) != '(' ||
+                expression.charAt(expression.length() - 1) != ')') return expression;
+        int depth = 0;
+        for (int index = 0; index < expression.length(); index++) {
+            char value = expression.charAt(index);
+            if (value == '(') depth++;
+            else if (value == ')' && --depth == 0)
+                return index == expression.length() - 1 ?
+                    expression.substring(1, expression.length() - 1).trim() : expression;
+            if (depth < 0) return expression;
+        }
+        return expression;
     }
 
     private int nextDirectAssignment(String[] lines, String name, int start) {
@@ -2375,14 +2493,14 @@ public class STDecompExport extends GhidraScript {
     }
 
     private List<AliasAssignment> aliasAssignments(String code, String alias) {
-        Pattern pattern = Pattern.compile("(?s)(?<![A-Za-z0-9_$.>])" +
-            Pattern.quote(alias) + "\\s*" +
+        Pattern pattern = Pattern.compile("(?ms)^[ \\t]*(?<alias>" +
+            Pattern.quote(alias) + ")\\s*" +
             "(?<operator>(?:<<|>>|[+\\-*/&|^])?=)(?!=)\\s*" +
             "(?<expression>[^;]{0,700});");
         Matcher matcher = pattern.matcher(code);
         List<AliasAssignment> result = new ArrayList<>();
         while (matcher.find())
-            result.add(new AliasAssignment(matcher.start(), matcher.end(),
+            result.add(new AliasAssignment(matcher.start("alias"), matcher.end(),
                 matcher.group("operator"), matcher.group("expression").trim()));
         return result;
     }
@@ -2390,7 +2508,7 @@ public class STDecompExport extends GhidraScript {
     private DArrayIntervalNormalization normalizeDArrayInterval(String interval,
             String alias, PointerDeclaration declaration, DArrayDescriptor descriptor,
             Map<String, DArrayDescriptor> descriptorVariables) {
-        Pattern assignments = Pattern.compile("(?s)(?<![A-Za-z0-9_$.>])" +
+        Pattern assignments = Pattern.compile("(?ms)^(?<indent>[ \\t]*)" +
             Pattern.quote(alias) + "\\s*=(?!=)\\s*(?<expression>[^;]{0,700});");
         Matcher matcher = assignments.matcher(interval);
         StringBuffer assignmentsOut = new StringBuffer();
@@ -2401,12 +2519,14 @@ public class STDecompExport extends GhidraScript {
             String replacement = matcher.group();
             if (access != null &&
                     access.descriptor.elementName.equals(descriptor.elementName)) {
-                replacement = alias + " = DArrayAt<" + descriptor.elementName + ">(" +
+                replacement = matcher.group("indent") + alias + " = DArrayAt<" +
+                    descriptor.elementName + ">(" +
                     access.base + ", " + access.index + ");";
                 replacements++;
             }
             else if (nullPointerExpression(expression)) {
-                replacement = alias + " = (" + descriptor.elementName + " *)0x0;";
+                replacement = matcher.group("indent") + alias + " = (" +
+                    descriptor.elementName + " *)0x0;";
                 replacements++;
             }
             matcher.appendReplacement(assignmentsOut, Matcher.quoteReplacement(replacement));
@@ -5173,23 +5293,25 @@ public class STDecompExport extends GhidraScript {
             "    else address = static_cast<uintptr_t>(base);\n" +
             "    return *reinterpret_cast<Field *>(address + byteOffset);\n" +
             "}\n" +
-            "#define CONCAT11(high, low) STConcat<1, 1>((high), (low))\n" +
-            "#define CONCAT12(high, low) STConcat<1, 2>((high), (low))\n" +
-            "#define CONCAT13(high, low) STConcat<1, 3>((high), (low))\n" +
-            "#define CONCAT21(high, low) STConcat<2, 1>((high), (low))\n" +
-            "#define CONCAT22(high, low) STConcat<2, 2>((high), (low))\n" +
-            "#define CONCAT26(high, low) STConcat<2, 6>((high), (low))\n" +
-            "#define CONCAT31(high, low) STConcat<3, 1>((high), (low))\n" +
-            "#define CONCAT44(high, low) STConcat<4, 4>((high), (low))\n" +
-            "#define SUB21(value, offset) STSubpiece<1>((value), (offset))\n" +
-            "#define SUB41(value, offset) STSubpiece<1>((value), (offset))\n" +
-            "#define SUB42(value, offset) STSubpiece<2>((value), (offset))\n" +
-            "#define SUB43(value, offset) STSubpiece<3>((value), (offset))\n" +
-            "#define SUB84(value, offset) STSubpiece<4>((value), (offset))\n" +
-            "#define SEXT24(value) STSignExtend24((value))\n" +
-            "#define CARRY4(left, right) STCarry<uint32_t>((left), (right))\n" +
-            "#define SCARRY4(left, right) STSignedCarry<int32_t>((left), (right))\n" +
-            "#define SBORROW4(left, right) STSignedBorrow<int32_t>((left), (right))\n" +
+            "template <typename High, typename Low> static inline auto CONCAT11(High high, Low low) { return STConcat<1, 1>(high, low); }\n" +
+            "template <typename High, typename Low> static inline auto CONCAT12(High high, Low low) { return STConcat<1, 2>(high, low); }\n" +
+            "template <typename High, typename Low> static inline auto CONCAT13(High high, Low low) { return STConcat<1, 3>(high, low); }\n" +
+            "template <typename High, typename Low> static inline auto CONCAT21(High high, Low low) { return STConcat<2, 1>(high, low); }\n" +
+            "template <typename High, typename Low> static inline auto CONCAT22(High high, Low low) { return STConcat<2, 2>(high, low); }\n" +
+            "template <typename High, typename Low> static inline auto CONCAT26(High high, Low low) { return STConcat<2, 6>(high, low); }\n" +
+            "template <typename High, typename Low> static inline auto CONCAT31(High high, Low low) { return STConcat<3, 1>(high, low); }\n" +
+            "template <typename High, typename Low> static inline auto CONCAT44(High high, Low low) { return STConcat<4, 4>(high, low); }\n" +
+            "template <typename Value, typename Offset> static inline auto SUB21(Value value, Offset offset) { return STSubpiece<1>(value, offset); }\n" +
+            "template <typename Value, typename Offset> static inline auto SUB41(Value value, Offset offset) { return STSubpiece<1>(value, offset); }\n" +
+            "template <typename Value, typename Offset> static inline auto SUB42(Value value, Offset offset) { return STSubpiece<2>(value, offset); }\n" +
+            "template <typename Value, typename Offset> static inline auto SUB43(Value value, Offset offset) { return STSubpiece<3>(value, offset); }\n" +
+            "template <typename Value, typename Offset> static inline auto SUB84(Value value, Offset offset) { return STSubpiece<4>(value, offset); }\n" +
+            "template <typename Value> static inline int32_t SEXT24(Value value) { return STSignExtend24(value); }\n" +
+            "template <typename Left, typename Right> static inline bool CARRY4(Left left, Right right) { return STCarry<uint32_t>(left, right); }\n" +
+            "template <typename Left, typename Right> static inline bool SCARRY4(Left left, Right right) { return STSignedCarry<int32_t>(left, right); }\n" +
+            "template <typename Left, typename Right> static inline bool SBORROW4(Left left, Right right) { return STSignedBorrow<int32_t>(left, right); }\n" +
+            "template <typename Value> static inline auto SQRT(Value value) { using std::sqrt; return sqrt(value); }\n" +
+            "template <typename Value> static inline auto ABS(Value value) { using std::abs; return abs(value); }\n" +
             "template <typename Element, typename Array>\n" +
             "static inline Element *DArrayAt(Array *array, uint32_t index) {\n" +
             "    return reinterpret_cast<Element *>(\n" +
@@ -7022,6 +7144,8 @@ public class STDecompExport extends GhidraScript {
         writeJson(programRoot.resolve("manifest.json"), jsonObject(
             field("schema", "st-decomp-corpus"),
             rawField("schema_version", "1"),
+            rawField("function_analysis_schema",
+                Integer.toString(FUNCTION_ANALYSIS_SCHEMA)),
             field("ghidra_version", applicationVersion()),
             field("program", currentProgram.getName()),
             rawField("function_count", Integer.toString(exportedFunctionCount)),

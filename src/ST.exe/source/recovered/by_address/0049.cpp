@@ -469,7 +469,7 @@ st::fn_00492550(void *this,short param_1,short param_2,short param_3,undefined2 
       iVar2 = param_2 + 1;
       if (iVar3 <= iVar2) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        _param_1 = g_worldGrid.sizeX * iVar3;
+        auto _param_1 = g_worldGrid.sizeX * iVar3;
         do {
           if ((((-1 < iVar3) && (iVar3 <= g_worldGrid.sizeY + -1)) &&
               (STGridAt3D(g_pathingGrid, iVar4, iVar3, param_3)
@@ -2740,7 +2740,7 @@ undefined4 st::fn_00497370(int param_1,int param_2,uint param_3,uint param_4,voi
 
   pDVar14 = g_array_007FB270;
   puStack_c = &DAT_00790718;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff90;
   local_28 = 0xffffffff;

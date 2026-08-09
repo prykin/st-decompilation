@@ -196,7 +196,7 @@ LAB_0069e887:
       } while ((local_70[uVar5] < 1) && (iVar6 = iVar6 + 1, iVar6 < 4));
     }
     if (0 < local_3c[uVar5]) {
-      local_24 = (int *)(int)asStack_4c[uVar5 * 2];
+      int scalar_local_24 = (int)asStack_4c[uVar5 * 2]; /* split integer lifetime from pointer-typed SSA storage */
       local_20 = (int)asStack_4c[uVar5 * 2 + 1];
       local_10 = 0;
       do {
@@ -204,7 +204,7 @@ LAB_0069e887:
         uVar3 = Library::MSVCRT::FUN_0072e6c0();
         iVar2 = (int)uVar3 % 0x1f + 0x8c;
         iVar6 = FUN_006aff50((int)local_EAX_1189 % 0x169);
-        iVar9 = (iVar2 * iVar6) / 10000 + (int)local_24;
+        iVar9 = (iVar2 * iVar6) / 10000 + scalar_local_24;
         local_EAX_1261 = FUN_006aff5b((int)local_EAX_1189 % 0x169);
         iVar7 = (int)(local_EAX_1261 * iVar2) / 10000 + local_20;
         iVar6 = (iVar9 + param_2) / 100;

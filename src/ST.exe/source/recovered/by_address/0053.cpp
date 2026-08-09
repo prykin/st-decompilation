@@ -84,7 +84,7 @@ void st::fn_005335E0(void)
     memmove(pcVar9, pcVar7, uVar4); /* compiler REP MOVS byte copy */
     uVar5 = 0;
     uVar4 = 0xffffffff;
-    pcVar7_mg2 = PTR_s_SAVEGAME__0079acec;
+    pcVar7_mg2 = st_global_0079ACEC;
     do {
       pcVar7 = pcVar7_mg2;
       if (uVar4 == 0) break;

@@ -1273,7 +1273,7 @@ void st::fn_0042A9F0(char param_1)
   st::fn_004032E7(in_ECX,param_1,1,0,0);
   iVar1 = (int)param_1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_1 = 5;
+  auto _param_1 = 5;
   puVar2 = &g_packedRecords_A62x8[iVar1].field102_0x16d;
   do {
     if ((DArrayTy *)*puVar2 != nullptr) {

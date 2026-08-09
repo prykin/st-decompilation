@@ -29,7 +29,7 @@ FUN_005fcf50(int param_1,undefined4 param_2,int param_3,undefined4 *param_4,char
       if (param_1 != 3) {
         return;
       }
-      pcVar4 = &DAT_007ce4d4;
+      pcVar4 = &CHAR_c_007ce4d4;
     }
     uVar2 = 0xffffffff;
     do {

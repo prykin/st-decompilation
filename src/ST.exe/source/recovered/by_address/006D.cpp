@@ -678,7 +678,7 @@ st::fn_006D0CF0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079daa0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffffa8;
   if (((param_1->field_0474 == 0) || (0x10 < param_1->field_0020)) || (param_4->field_000E != 8)) {
@@ -6310,7 +6310,7 @@ void st::fn_006D7830(undefined1 *param_1,int param_2,undefined4 *param_3,int par
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_5 = (int)(param_4 + (iVar2 - param_5));
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_6 = puVar10;
+  auto _param_6 = puVar10;
   do {
     iVar2 = iVar3;
     *(undefined1 *)((int)param_3 - iVar8) = uVar1;
@@ -6456,7 +6456,7 @@ void st::fn_006D7A30(int param_1,int param_2,uint param_3,uint param_4,int param
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = local_14 + 1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    _param_6 = uVar3 + param_3 * 2;
+    auto _param_6 = uVar3 + param_3 * 2;
     do {
       pbVar8 = (byte *)(param_5 - param_3);
       for (uVar3 = _param_6 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
@@ -9034,7 +9034,7 @@ int st::fn_006DA080(int *param_1,uint *param_2,int param_3,int param_4,int param
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079df38;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffffc8;
   iVar2 = 0;

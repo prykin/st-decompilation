@@ -5,11 +5,17 @@ from __future__ import annotations
 
 import re
 import unittest
+from pathlib import Path
 
 from st_source_tree import (
+    ADDRESS_CODED_GLOBAL_RE,
+    ADDRESS_TAKEN_LABEL_RE,
     ADDRESS_CODED_FUNCTION_RE,
     QUALIFIED_ADDRESS_SYMBOL_RE,
+    SourceTreeGenerator,
     TypeEmitter,
+    call_argument_count,
+    global_alias_for_token,
     rewrite_address_taken_globals,
 )
 
@@ -234,6 +240,78 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         )
         self.assertEqual(count, 1)
         self.assertEqual(actual, "st::fn_00660180(param_1)")
+
+    def test_invalid_ghidra_global_spelling_gets_stable_address_alias(self) -> None:
+        source = "pcVar = &CHAR___007c3b5c;"
+        match = ADDRESS_CODED_GLOBAL_RE.search(source)
+        self.assertIsNotNone(match)
+        item = {"address": "007C3B5C", "name": "CHAR_ _007c3b5c"}
+        self.assertEqual(
+            global_alias_for_token(match.group("name"), match.group("address"), item),
+            "st_global_007C3B5C",
+        )
+        self.assertIsNone(global_alias_for_token(
+            "DAT_007C3B5C", "007C3B5C",
+            {"address": "007C3B5C", "name": "DAT_007C3B5C"},
+        ))
+
+    def test_only_address_taken_external_label_matches(self) -> None:
+        source = "handler = &LAB_0072d964; goto LAB_0072d964;"
+        matches = list(ADDRESS_TAKEN_LABEL_RE.finditer(source))
+        self.assertEqual(len(matches), 1)
+        self.assertEqual(matches[0].group(2).upper(), "0072D964")
+
+    def test_tagged_synthetic_lifetime_is_declared_from_exact_rhs(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        body = (
+            "void fn() {\n"
+            "  /* ST_PSEUDO[stack_slot_reuse]: exact */\n"
+            "  _param_3 = value * 2;\n"
+            "  _param_3 = _param_3 - 1;\n"
+            "}\n"
+        )
+        actual = generator._materialize_tagged_lifetimes("00102030", body)
+        self.assertIn("auto _param_3 = value * 2;", actual)
+        self.assertEqual(generator.stats["tagged_lifetime_materializations"], 1)
+
+    def test_tagged_lifetime_crossing_switch_label_stays_audit_only(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        body = (
+            "void fn(int tag) {\n"
+            "  switch (tag) {\n"
+            "  case 1:\n"
+            "    /* ST_PSEUDO[stack_slot_reuse]: exact */\n"
+            "    _local_8 = tag;\n"
+            "  case 2:\n"
+            "    use(_local_8);\n"
+            "  }\n"
+            "}\n"
+        )
+        actual = generator._materialize_tagged_lifetimes("00102030", body)
+        self.assertNotIn("auto _local_8", actual)
+
+    def test_overload_is_resolved_only_by_unique_exported_arity(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.function_by_address = {
+            "00102030": {"parameters": [{}, {}]},
+            "00102040": {"parameters": [{}, {}, {}, {}, {}]},
+        }
+        body = "PushTV(player, 0); PushTV(player, 0, 0, player, value);"
+        actual, count, unresolved = generator._rewrite_ambiguous_calls(
+            body, {"PushTV": {"00102030", "00102040"}}
+        )
+        self.assertEqual(count, 2)
+        self.assertFalse(unresolved)
+        self.assertEqual(
+            actual,
+            "st::fn_00102030(player, 0); "
+            "st::fn_00102040(player, 0, 0, player, value);",
+        )
+
+    def test_call_arity_ignores_nested_and_template_commas(self) -> None:
+        masked = "call(STPiece<3, 1>(value), nested(a, b), last)"
+        open_paren = masked.index("(")
+        self.assertEqual(call_argument_count(masked, open_paren), (3, len(masked) - 1))
 
 
 if __name__ == "__main__":

@@ -182,23 +182,25 @@ static inline Field &STField(Base base, size_t byteOffset) {
     else address = static_cast<uintptr_t>(base);
     return *reinterpret_cast<Field *>(address + byteOffset);
 }
-#define CONCAT11(high, low) STConcat<1, 1>((high), (low))
-#define CONCAT12(high, low) STConcat<1, 2>((high), (low))
-#define CONCAT13(high, low) STConcat<1, 3>((high), (low))
-#define CONCAT21(high, low) STConcat<2, 1>((high), (low))
-#define CONCAT22(high, low) STConcat<2, 2>((high), (low))
-#define CONCAT26(high, low) STConcat<2, 6>((high), (low))
-#define CONCAT31(high, low) STConcat<3, 1>((high), (low))
-#define CONCAT44(high, low) STConcat<4, 4>((high), (low))
-#define SUB21(value, offset) STSubpiece<1>((value), (offset))
-#define SUB41(value, offset) STSubpiece<1>((value), (offset))
-#define SUB42(value, offset) STSubpiece<2>((value), (offset))
-#define SUB43(value, offset) STSubpiece<3>((value), (offset))
-#define SUB84(value, offset) STSubpiece<4>((value), (offset))
-#define SEXT24(value) STSignExtend24((value))
-#define CARRY4(left, right) STCarry<uint32_t>((left), (right))
-#define SCARRY4(left, right) STSignedCarry<int32_t>((left), (right))
-#define SBORROW4(left, right) STSignedBorrow<int32_t>((left), (right))
+template <typename High, typename Low> static inline auto CONCAT11(High high, Low low) { return STConcat<1, 1>(high, low); }
+template <typename High, typename Low> static inline auto CONCAT12(High high, Low low) { return STConcat<1, 2>(high, low); }
+template <typename High, typename Low> static inline auto CONCAT13(High high, Low low) { return STConcat<1, 3>(high, low); }
+template <typename High, typename Low> static inline auto CONCAT21(High high, Low low) { return STConcat<2, 1>(high, low); }
+template <typename High, typename Low> static inline auto CONCAT22(High high, Low low) { return STConcat<2, 2>(high, low); }
+template <typename High, typename Low> static inline auto CONCAT26(High high, Low low) { return STConcat<2, 6>(high, low); }
+template <typename High, typename Low> static inline auto CONCAT31(High high, Low low) { return STConcat<3, 1>(high, low); }
+template <typename High, typename Low> static inline auto CONCAT44(High high, Low low) { return STConcat<4, 4>(high, low); }
+template <typename Value, typename Offset> static inline auto SUB21(Value value, Offset offset) { return STSubpiece<1>(value, offset); }
+template <typename Value, typename Offset> static inline auto SUB41(Value value, Offset offset) { return STSubpiece<1>(value, offset); }
+template <typename Value, typename Offset> static inline auto SUB42(Value value, Offset offset) { return STSubpiece<2>(value, offset); }
+template <typename Value, typename Offset> static inline auto SUB43(Value value, Offset offset) { return STSubpiece<3>(value, offset); }
+template <typename Value, typename Offset> static inline auto SUB84(Value value, Offset offset) { return STSubpiece<4>(value, offset); }
+template <typename Value> static inline int32_t SEXT24(Value value) { return STSignExtend24(value); }
+template <typename Left, typename Right> static inline bool CARRY4(Left left, Right right) { return STCarry<uint32_t>(left, right); }
+template <typename Left, typename Right> static inline bool SCARRY4(Left left, Right right) { return STSignedCarry<int32_t>(left, right); }
+template <typename Left, typename Right> static inline bool SBORROW4(Left left, Right right) { return STSignedBorrow<int32_t>(left, right); }
+template <typename Value> static inline auto SQRT(Value value) { using std::sqrt; return sqrt(value); }
+template <typename Value> static inline auto ABS(Value value) { using std::abs; return abs(value); }
 template <typename Element, typename Array>
 static inline Element *DArrayAt(Array *array, uint32_t index) {
     return reinterpret_cast<Element *>(

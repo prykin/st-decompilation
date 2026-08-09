@@ -1,17 +1,17 @@
 {
-  "generator_sha256": "c4e156caef01d9c625833b97848fda9d4d3cfd3261e6c43c06a1e314eab28b92",
+  "generator_sha256": "95aa44a19f8d181ae6fb80bd6e9f9c5259ea99faa9992f0c7ecf9f875002f595",
   "input_files": {
     "call_relations.jsonl": "d66fd704f4eabd409404624341b4cc5c9d01d090450c04220c24424669546554",
-    "functions.json": "e663c79e03d6b03dd9f02de5156a917dfb577175b3d9f42f2d6e0abdedbab2be",
-    "globals.jsonl": "75aa022c0c8e94968caf02a852b5ca815edb995ff34092f5590f553c922906c9",
+    "functions.json": "9c244a20de80eb4e151878706d05754a2460a34390168c23979aa0e57b7e8603",
+    "globals.jsonl": "da87ef1a1eea3fa0e65ccc982331f9175f8e5d57197ab685cfafa0cc7e6c481e",
     "imports.json": "1292ae0f2b3d533808f0452471962f3c57fcf6e7d36043f54df1ab6db32f9092",
-    "manifest.json": "6e172d04cd0969a077667798bc597a6e0795c8612d69bb92ef814e71619b50e6",
-    "pseudocode_runtime.h": "86d2d54ce33726bbdcc27e3041ec892cbd728063e6c1de1a984c612cff89ec00",
+    "manifest.json": "62c23b9a9b29058f25fbce3d8f1c7ff34485edbbbc897ddc7531232a0cc80563",
+    "pseudocode_runtime.h": "9be7394267cd3e3e065e611948635bdf58707737d7cd966740a80c944dcfcb15",
     "types.jsonl": "b8fd3ebb768223d979af9c78de76155b1a3a12e1a4297dfb928fc3d91b92d2ca"
   },
-  "input_manifest_sha256": "6e172d04cd0969a077667798bc597a6e0795c8612d69bb92ef814e71619b50e6",
+  "input_manifest_sha256": "62c23b9a9b29058f25fbce3d8f1c7ff34485edbbbc897ddc7531232a0cc80563",
   "issue_counts": {
-    "ambiguous_direct_call": 20,
+    "ambiguous_direct_call": 8,
     "duplicate_field_name": 3,
     "global_type_fallback": 1055,
     "host_type_reused": 1,
@@ -20,21 +20,25 @@
     "source_member_lifetime_deferred": 50,
     "source_member_overload_conflict": 6,
     "source_member_owner_ambiguous": 44,
+    "tagged_lifetime_scope_unresolved": 15,
     "type_name_collision": 3
   },
-  "program_semantic_sha256": "4327f2202e47da1b761486e6f74c84fb5cece9e73eb83b5fecbeb29fb5159f38",
+  "program_semantic_sha256": "9f9ee6d4638ff024c7cbdc9292d0554b293a9960f0e883f9489235e94c57a228",
   "schema": "st-source-generation-summary",
   "schema_version": 1,
   "statistics": {
     "address_coded_function_rewrites": 334,
-    "ambiguous_direct_calls": 20,
+    "address_coded_global_rewrites": 145,
+    "ambiguous_direct_calls": 8,
+    "arity_resolved_direct_calls": 17,
     "body_functions": 5712,
-    "declared_globals": 2683,
+    "declared_globals": 2949,
     "declared_imports": 4,
     "direct_call_or_definition_rewrites": 37351,
     "exported_function_records": 10392,
     "exported_type_records": 7620,
     "external_call_identities": 263,
+    "external_label_address_rewrites": 78,
     "fallback_global_declarations": 1055,
     "fallback_import_declarations": 4,
     "function_definition_rewrites": 5712,
@@ -44,7 +48,9 @@
     "generated_virtual_member_wrappers": 780,
     "global_type_collision_rewrites": 231,
     "materialized_gap_field_views": 2703,
+    "opaque_image_address_declarations": 8,
     "qualified_address_symbol_repairs": 116,
+    "tagged_lifetime_materializations": 40,
     "translation_units": 318
   }
 }

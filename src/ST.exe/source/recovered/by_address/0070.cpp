@@ -9624,7 +9624,7 @@ int __fastcall st::fn_00708650(undefined4 *param_1)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079e200;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff6c;
   iVar7 = 0;
@@ -9890,7 +9890,7 @@ void __thiscall st::fn_00709670(void *this,uint param_1,int param_2,int param_3,
   undefined4 local_8;
 
   puStack_c = &DAT_0079e210;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   if (((param_1 < STField<uint>(this,0x310)) &&
       (puVar1 = (uint *)(STField<int>(this,0x31c) + param_1 * 0x114), (*puVar1 & 0x8000) != 0))
@@ -11033,7 +11033,7 @@ st::fn_0070CB20(uint param_1,int param_2,int *param_3,int param_4,int param_5,by
   iVar6 = (4 - local_8) * local_10;
   iVar10 = (uint)*(byte *)(param_8 + 4 + uVar2 * 4) * iVar6;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_7 = (uint)*(byte *)(param_8 + 5 + uVar2 * 4) * iVar6;
+  auto _param_7 = (uint)*(byte *)(param_8 + 5 + uVar2 * 4) * iVar6;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_10 = (uint)*(byte *)(param_8 + 6 + uVar2 * 4) * iVar6;
   if (0 < local_8) {

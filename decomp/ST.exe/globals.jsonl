@@ -32712,7 +32712,7 @@
 {"address":"007A4C48","name":"DAT_007a4c48","type":"undefined4","length":4,"value":"0000000Fh","referenced_from":["0055F410 AiCalcDispositionAreas"]}
 {"address":"007A4C4C","name":"DAT_007a4c4c","type":"undefined4","length":4,"value":"00000004h","referenced_from":["0055F410 AiCalcDispositionAreas"]}
 {"address":"007A4FAC","name":"CHAR_o_007a4fac","type":"char","length":1,"value":"'o'","referenced_from":["00420340 STSprGameObjC::LoadActFrame"]}
-{"address":"007A4FB0","name":"DAT_007a4fb0","type":"undefined1","length":1,"value":"63h","referenced_from":["00420340 STSprGameObjC::LoadActFrame"]}
+{"address":"007A4FB0","name":"CHAR_c_007a4fb0","type":"char","length":1,"value":"'c'","referenced_from":["00420340 STSprGameObjC::LoadActFrame"]}
 {"address":"007A4FB4","name":"CHAR_s_007a4fb4","type":"char","length":1,"value":"'s'","referenced_from":["00420340 STSprGameObjC::LoadActFrame","00420AE0 STSprGameObjC::LoadLifeFrame"]}
 {"address":"007A4FB5","name":"DAT_007a4fb5","type":"undefined1","length":1,"value":"00h","referenced_from":["00420340 STSprGameObjC::LoadActFrame","00420AE0 STSprGameObjC::LoadLifeFrame"]}
 {"address":"007A4FF4","name":"CHAR_a_007a4ff4","type":"char","length":1,"value":"'a'","referenced_from":["00420340 STSprGameObjC::LoadActFrame","00420AE0 STSprGameObjC::LoadLifeFrame"]}
@@ -32739,48 +32739,48 @@
 {"address":"007A9D89","name":"DAT_007a9d89","type":"undefined1","length":1,"value":"00h","referenced_from":["0044E980 STBoatC::GetVisualInfo"]}
 {"address":"007A9D8C","name":"CHAR_f_007a9d8c","type":"char","length":1,"value":"'f'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
 {"address":"007A9D8D","name":"DAT_007a9d8d","type":"undefined1","length":1,"value":"6Ch","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9D94","name":"DAT_007a9d94","type":"undefined1","length":1,"value":"66h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9D9C","name":"DAT_007a9d9c","type":"undefined1","length":1,"value":"66h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DA4","name":"DAT_007a9da4","type":"undefined1","length":1,"value":"73h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DAC","name":"DAT_007a9dac","type":"undefined1","length":1,"value":"65h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9D94","name":"CHAR_f_007a9d94","type":"char","length":1,"value":"'f'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9D9C","name":"CHAR_f_007a9d9c","type":"char","length":1,"value":"'f'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DA4","name":"CHAR_s_007a9da4","type":"char","length":1,"value":"'s'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DAC","name":"CHAR_e_007a9dac","type":"char","length":1,"value":"'e'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
 {"address":"007A9DB0","name":"CHAR_g_007a9db0","type":"char","length":1,"value":"'g'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
 {"address":"007A9DB1","name":"DAT_007a9db1","type":"undefined1","length":1,"value":"6Dh","referenced_from":["0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DB4","name":"DAT_007a9db4","type":"undefined1","length":1,"value":"75h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DB8","name":"DAT_007a9db8","type":"undefined1","length":1,"value":"62h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DBC","name":"DAT_007a9dbc","type":"undefined1","length":1,"value":"65h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DC0","name":"DAT_007a9dc0","type":"undefined1","length":1,"value":"64h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DC4","name":"DAT_007a9dc4","type":"undefined1","length":1,"value":"73h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DC8","name":"DAT_007a9dc8","type":"undefined1","length":1,"value":"72h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DCC","name":"DAT_007a9dcc","type":"undefined1","length":1,"value":"70h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DD0","name":"DAT_007a9dd0","type":"undefined1","length":1,"value":"73h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DD4","name":"DAT_007a9dd4","type":"undefined1","length":1,"value":"74h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DD8","name":"DAT_007a9dd8","type":"undefined1","length":1,"value":"63h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DDC","name":"DAT_007a9ddc","type":"undefined1","length":1,"value":"63h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DE4","name":"DAT_007a9de4","type":"undefined1","length":1,"value":"61h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DB4","name":"CHAR_u_007a9db4","type":"char","length":1,"value":"'u'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DB8","name":"CHAR_b_007a9db8","type":"char","length":1,"value":"'b'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DBC","name":"CHAR_e_007a9dbc","type":"char","length":1,"value":"'e'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DC0","name":"CHAR_d_007a9dc0","type":"char","length":1,"value":"'d'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DC4","name":"CHAR_s_007a9dc4","type":"char","length":1,"value":"'s'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DC8","name":"CHAR_r_007a9dc8","type":"char","length":1,"value":"'r'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DCC","name":"CHAR_p_007a9dcc","type":"char","length":1,"value":"'p'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DD0","name":"CHAR_s_007a9dd0","type":"char","length":1,"value":"'s'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DD4","name":"CHAR_t_007a9dd4","type":"char","length":1,"value":"'t'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DD8","name":"CHAR_c_007a9dd8","type":"char","length":1,"value":"'c'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DDC","name":"CHAR_c_007a9ddc","type":"char","length":1,"value":"'c'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DE4","name":"CHAR_a_007a9de4","type":"char","length":1,"value":"'a'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
 {"address":"007A9DEC","name":"CHAR_p_007a9dec","type":"char","length":1,"value":"'p'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
 {"address":"007A9DED","name":"DAT_007a9ded","type":"undefined1","length":1,"value":"68h","referenced_from":["0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DF4","name":"DAT_007a9df4","type":"undefined1","length":1,"value":"64h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9DF8","name":"DAT_007a9df8","type":"undefined1","length":1,"value":"6Ch","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E00","name":"DAT_007a9e00","type":"undefined1","length":1,"value":"72h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E08","name":"DAT_007a9e08","type":"undefined1","length":1,"value":"72h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E10","name":"DAT_007a9e10","type":"undefined1","length":1,"value":"6Ch","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E18","name":"DAT_007a9e18","type":"undefined1","length":1,"value":"69h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E20","name":"DAT_007a9e20","type":"undefined1","length":1,"value":"68h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E28","name":"DAT_007a9e28","type":"undefined1","length":1,"value":"64h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E30","name":"DAT_007a9e30","type":"undefined1","length":1,"value":"63h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E38","name":"DAT_007a9e38","type":"undefined1","length":1,"value":"63h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DF4","name":"CHAR_d_007a9df4","type":"char","length":1,"value":"'d'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9DF8","name":"CHAR_l_007a9df8","type":"char","length":1,"value":"'l'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E00","name":"CHAR_r_007a9e00","type":"char","length":1,"value":"'r'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E08","name":"CHAR_r_007a9e08","type":"char","length":1,"value":"'r'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E10","name":"CHAR_l_007a9e10","type":"char","length":1,"value":"'l'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E18","name":"CHAR_i_007a9e18","type":"char","length":1,"value":"'i'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E20","name":"CHAR_h_007a9e20","type":"char","length":1,"value":"'h'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E28","name":"CHAR_d_007a9e28","type":"char","length":1,"value":"'d'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E30","name":"CHAR_c_007a9e30","type":"char","length":1,"value":"'c'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E38","name":"CHAR_c_007a9e38","type":"char","length":1,"value":"'c'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
 {"address":"007A9E40","name":"CHAR_l_007a9e40","type":"char","length":1,"value":"'l'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
 {"address":"007A9E41","name":"DAT_007a9e41","type":"undefined1","length":1,"value":"69h","referenced_from":["0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E48","name":"DAT_007a9e48","type":"undefined1","length":1,"value":"74h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E50","name":"DAT_007a9e50","type":"undefined1","length":1,"value":"77h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E54","name":"DAT_007a9e54","type":"undefined1","length":1,"value":"6Ch","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E5C","name":"DAT_007a9e5c","type":"undefined1","length":1,"value":"72h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E64","name":"DAT_007a9e64","type":"undefined1","length":1,"value":"72h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E6C","name":"DAT_007a9e6c","type":"undefined1","length":1,"value":"6Dh","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E74","name":"DAT_007a9e74","type":"undefined1","length":1,"value":"64h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E7C","name":"DAT_007a9e7c","type":"undefined1","length":1,"value":"63h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E84","name":"DAT_007a9e84","type":"undefined1","length":1,"value":"68h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
-{"address":"007A9E8C","name":"DAT_007a9e8c","type":"undefined1","length":1,"value":"73h","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E48","name":"CHAR_t_007a9e48","type":"char","length":1,"value":"'t'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E50","name":"CHAR_w_007a9e50","type":"char","length":1,"value":"'w'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E54","name":"CHAR_l_007a9e54","type":"char","length":1,"value":"'l'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E5C","name":"CHAR_r_007a9e5c","type":"char","length":1,"value":"'r'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E64","name":"CHAR_r_007a9e64","type":"char","length":1,"value":"'r'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E6C","name":"CHAR_m_007a9e6c","type":"char","length":1,"value":"'m'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E74","name":"CHAR_d_007a9e74","type":"char","length":1,"value":"'d'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E7C","name":"CHAR_c_007a9e7c","type":"char","length":1,"value":"'c'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E84","name":"CHAR_h_007a9e84","type":"char","length":1,"value":"'h'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
+{"address":"007A9E8C","name":"CHAR_s_007a9e8c","type":"char","length":1,"value":"'s'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
 {"address":"007A9E94","name":"CHAR_l_007a9e94","type":"char","length":1,"value":"'l'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
 {"address":"007A9E95","name":"DAT_007a9e95","type":"undefined1","length":1,"value":"69h","referenced_from":["0044E980 STBoatC::GetVisualInfo"]}
 {"address":"007A9E9C","name":"CHAR_p_007a9e9c","type":"char","length":1,"value":"'p'","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage"]}
@@ -32789,11 +32789,11 @@
 {"address":"007A9EA5","name":"DAT_007a9ea5","type":"undefined1","length":1,"value":"6Dh","referenced_from":["0044E980 STBoatC::GetVisualInfo"]}
 {"address":"007AA014","name":"CHAR_7_007aa014","type":"char","length":1,"value":"'7'","referenced_from":["0044EE30 STBoatC::GetMessage"]}
 {"address":"007AA015","name":"DAT_007aa015","type":"undefined1","length":1,"value":"00h","referenced_from":["0044EE30 STBoatC::GetMessage"]}
-{"address":"007AA018","name":"DAT_007aa018","type":"undefined1","length":1,"value":"36h","referenced_from":["0044EE30 STBoatC::GetMessage"]}
-{"address":"007AA01C","name":"DAT_007aa01c","type":"undefined1","length":1,"value":"35h","referenced_from":["0044EE30 STBoatC::GetMessage"]}
-{"address":"007AA020","name":"DAT_007aa020","type":"undefined1","length":1,"value":"34h","referenced_from":["0044EE30 STBoatC::GetMessage","005044B0 CPanelTy::PaintMineInf"]}
-{"address":"007AA024","name":"DAT_007aa024","type":"undefined1","length":1,"value":"33h","referenced_from":["0044EE30 STBoatC::GetMessage","005044B0 CPanelTy::PaintMineInf"]}
-{"address":"007AA028","name":"DAT_007aa028","type":"undefined1","length":1,"value":"32h","referenced_from":["0044EE30 STBoatC::GetMessage","005044B0 CPanelTy::PaintMineInf"]}
+{"address":"007AA018","name":"CHAR_6_007aa018","type":"char","length":1,"value":"'6'","referenced_from":["0044EE30 STBoatC::GetMessage"]}
+{"address":"007AA01C","name":"CHAR_5_007aa01c","type":"char","length":1,"value":"'5'","referenced_from":["0044EE30 STBoatC::GetMessage"]}
+{"address":"007AA020","name":"CHAR_4_007aa020","type":"char","length":1,"value":"'4'","referenced_from":["0044EE30 STBoatC::GetMessage","005044B0 CPanelTy::PaintMineInf"]}
+{"address":"007AA024","name":"CHAR_3_007aa024","type":"char","length":1,"value":"'3'","referenced_from":["0044EE30 STBoatC::GetMessage","005044B0 CPanelTy::PaintMineInf"]}
+{"address":"007AA028","name":"CHAR_2_007aa028","type":"char","length":1,"value":"'2'","referenced_from":["0044EE30 STBoatC::GetMessage","005044B0 CPanelTy::PaintMineInf"]}
 {"address":"007AD25C","name":"PTR_s_tlo_bldmark_si_007ad25c","type":"char *","length":4,"value":"007ad2b8","referenced_from":["004C6440 TLOBldMark::sub_004C6440"]}
 {"address":"007AD260","name":"PTR_s_tlo_bldmark_red_ws_007ad260","type":"undefined *","length":4,"value":"007ad2a0","referenced_from":[]}
 {"address":"007AD264","name":"PTR_s_tlo_bldmark_red_bo_007ad264","type":"undefined *","length":4,"value":"007ad288","referenced_from":[]}
@@ -32999,7 +32999,7 @@
 {"address":"007CA0B9","name":"DAT_007ca0b9","type":"undefined1","length":1,"value":"44h","referenced_from":["0056ADC0 STAppC::InitApp"]}
 {"address":"007CA248","name":"CHAR_B_007ca248","type":"char","length":1,"value":"'B'","referenced_from":["00571240 FUN_00571240","005BD7A0 MReportTy::InitMReport","005C1340 MReportTy::SetCtrl","005D1400 SettMapMTy::GetMessage","005D5560 SettMapSTy::GetMessage"]}
 {"address":"007CA249","name":"DAT_007ca249","type":"undefined1","length":1,"value":"4Fh","referenced_from":["005D1400 SettMapMTy::GetMessage","005D5560 SettMapSTy::GetMessage"]}
-{"address":"007CA24C","name":"DAT_007ca24c","type":"undefined1","length":1,"value":"53h","referenced_from":["00571240 FUN_00571240","005BD7A0 MReportTy::InitMReport","005C1340 MReportTy::SetCtrl","005D1400 SettMapMTy::GetMessage","005D5560 SettMapSTy::GetMessage"]}
+{"address":"007CA24C","name":"CHAR_S_007ca24c","type":"char","length":1,"value":"'S'","referenced_from":["00571240 FUN_00571240","005BD7A0 MReportTy::InitMReport","005C1340 MReportTy::SetCtrl","005D1400 SettMapMTy::GetMessage","005D5560 SettMapSTy::GetMessage"]}
 {"address":"007CA24D","name":"DAT_007ca24d","type":"undefined1","length":1,"value":"49h","referenced_from":["005D1400 SettMapMTy::GetMessage","005D5560 SettMapSTy::GetMessage"]}
 {"address":"007CA250","name":"CHAR_W_007ca250","type":"char","length":1,"value":"'W'","referenced_from":["00571240 FUN_00571240","005BD7A0 MReportTy::InitMReport","005C1340 MReportTy::SetCtrl","005D1400 SettMapMTy::GetMessage","005D5560 SettMapSTy::GetMessage"]}
 {"address":"007CA2E4","name":"DAT_007ca2e4","type":"undefined1","length":1,"value":"2Fh","referenced_from":["00571810 FUN_00571810"]}
@@ -33018,8 +33018,8 @@
 {"address":"007CA6A9","name":"DAT_007ca6a9","type":"undefined1","length":1,"value":"10h","referenced_from":["005745E0 FUN_005745e0"]}
 {"address":"007CA720","name":"g_objectFactoryRegistry","type":"STObjectFactoryEntry[97]","length":776,"value":"","referenced_from":[]}
 {"address":"007CAE18","name":"CHAR_m_007cae18","type":"char","length":1,"value":"'m'","referenced_from":["0057A140 FUN_0057a140"]}
-{"address":"007CAE44","name":"DAT_007cae44","type":"undefined1","length":1,"value":"7Ah","referenced_from":["0057A140 FUN_0057a140"]}
-{"address":"007CAE4C","name":"DAT_007cae4c","type":"undefined1","length":1,"value":"73h","referenced_from":["0057A140 FUN_0057a140"]}
+{"address":"007CAE44","name":"CHAR_z_007cae44","type":"char","length":1,"value":"'z'","referenced_from":["0057A140 FUN_0057a140"]}
+{"address":"007CAE4C","name":"CHAR_s_007cae4c","type":"char","length":1,"value":"'s'","referenced_from":["0057A140 FUN_0057a140"]}
 {"address":"007CAEC4","name":"DAT_007caec4","type":"undefined4","length":4,"value":"0000185Ah","referenced_from":["0057A2C0 FUN_0057a2c0"]}
 {"address":"007CAEC8","name":"DAT_007caec8","type":"undefined4","length":4,"value":"FFFFE176h","referenced_from":["0057A2C0 FUN_0057a2c0"]}
 {"address":"007CAF18","name":"DAT_007caf18","type":"undefined4","length":4,"value":"00000000h","referenced_from":["0057A2C0 FUN_0057a2c0"]}
@@ -33081,7 +33081,7 @@
 {"address":"007CDC48","name":"CHAR_D_007cdc48","type":"char","length":1,"value":"'D'","referenced_from":["005E1330 MTaskTy::PlayScript"]}
 {"address":"007CDE70","name":"PTR_s_cont1_007cde70","type":"char *","length":4,"value":"007ce4e4","referenced_from":["005EC9F0 FUN_005ec9f0"]}
 {"address":"007CDE74","name":"PTR_s_cont2_007cde74","type":"undefined *","length":4,"value":"007ce4dc","referenced_from":[]}
-{"address":"007CDE78","name":"PTR_DAT_007cde78","type":"undefined *","length":4,"value":"007ce4d4","referenced_from":[]}
+{"address":"007CDE78","name":"PTR_CHAR_c_007cde78","type":"undefined *","length":4,"value":"007ce4d4","referenced_from":[]}
 {"address":"007CDE7C","name":"PTR_s_contw_007cde7c","type":"undefined *","length":4,"value":"007ce4cc","referenced_from":[]}
 {"address":"007CDE80","name":"PTR_s_contb_007cde80","type":"undefined *","length":4,"value":"007ce4c4","referenced_from":[]}
 {"address":"007CDE84","name":"PTR_s_conts_007cde84","type":"undefined *","length":4,"value":"007ce4bc","referenced_from":[]}
@@ -33090,7 +33090,7 @@
 {"address":"007CDEF4","name":"DAT_007cdef4","type":"undefined4","length":4,"value":"00000046h","referenced_from":["005EE080 FUN_005ee080"]}
 {"address":"007CDEF8","name":"DAT_007cdef8","type":"undefined4","length":4,"value":"00000032h","referenced_from":["005EE080 FUN_005ee080"]}
 {"address":"007CDEFC","name":"DAT_007cdefc","type":"undefined4","length":4,"value":"00000028h","referenced_from":["005EE080 FUN_005ee080"]}
-{"address":"007CE4D4","name":"DAT_007ce4d4","type":"undefined1","length":1,"value":"63h","referenced_from":["005FCF50 FUN_005fcf50","007CDE78"]}
+{"address":"007CE4D4","name":"CHAR_c_007ce4d4","type":"char","length":1,"value":"'c'","referenced_from":["005FCF50 FUN_005fcf50","007CDE78"]}
 {"address":"007CE4D5","name":"DAT_007ce4d5","type":"undefined1","length":1,"value":"6Fh","referenced_from":["005FCF50 FUN_005fcf50"]}
 {"address":"007CE530","name":"PTR_s_basis_10_007ce530","type":"char *","length":4,"value":"007ce548","referenced_from":["005F1700 FUN_005f1700"]}
 {"address":"007CE534","name":"PTR_s_basis_40_007ce534","type":"char *","length":4,"value":"007ce53c","referenced_from":["005F1700 FUN_005f1700"]}
@@ -33591,8 +33591,8 @@
 {"address":"007D2508","name":"CHAR_e_007d2508","type":"char","length":1,"value":"'e'","referenced_from":["006406D0 STTorpC::GetMessage"]}
 {"address":"007D2514","name":"CHAR_e_007d2514","type":"char","length":1,"value":"'e'","referenced_from":["006406D0 STTorpC::GetMessage"]}
 {"address":"007D251C","name":"CHAR_a_007d251c","type":"char","length":1,"value":"'a'","referenced_from":["006406D0 STTorpC::GetMessage"]}
-{"address":"007D2534","name":"DAT_007d2534","type":"undefined1","length":1,"value":"69h","referenced_from":["006406D0 STTorpC::GetMessage"]}
-{"address":"007D2578","name":"DAT_007d2578","type":"undefined1","length":1,"value":"61h","referenced_from":["006406D0 STTorpC::GetMessage"]}
+{"address":"007D2534","name":"CHAR_i_007d2534","type":"char","length":1,"value":"'i'","referenced_from":["006406D0 STTorpC::GetMessage"]}
+{"address":"007D2578","name":"CHAR_a_007d2578","type":"char","length":1,"value":"'a'","referenced_from":["006406D0 STTorpC::GetMessage"]}
 {"address":"007D2A00","name":"CHAR_0Dh_007d2a00","type":"char","length":1,"value":"'\\r'","referenced_from":["0064A5B0 FUN_0064a5b0","0064D0E0 FUN_0064d0e0"]}
 {"address":"007D2A01","name":"DAT_007d2a01","type":"undefined1","length":1,"value":"0Ah","referenced_from":["0064A5B0 FUN_0064a5b0"]}
 {"address":"007D2D18","name":"DAT_007d2d18","type":"undefined4","length":4,"value":"0000001Dh","referenced_from":["00672B60 FUN_00672b60","00672F00 FUN_00672f00","00673210 FUN_00673210","006736F0 FUN_006736f0","00673D20 FUN_00673d20","006747E0 FUN_006747e0","006748D0 FUN_006748d0","006827A0 FUN_006827a0","00682810 FUN_00682810","00682850 FUN_00682850","00682DF0 FUN_00682df0","00682EC0 FUN_00682ec0","00683070 FUN_00683070","00683180 FUN_00683180","00683310 FUN_00683310","006833B0 FUN_006833b0","00683400 FUN_00683400","00683450 FUN_00683450","006834A0 FUN_006834a0","00683590 FUN_00683590","00683600 FUN_00683600","00683C70 FUN_00683c70","0068CEC0 FUN_0068cec0"]}

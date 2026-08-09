@@ -1224,7 +1224,7 @@ st::fn_004B2520(uint param_1,int param_2,int param_3,int param_4,int param_5,und
   undefined4 local_8;
 
   puStack_c = &DAT_00790940;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_30 = nullptr;
   ExceptionList = &local_14;

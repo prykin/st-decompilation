@@ -537,7 +537,7 @@ switchD_00640ad9_caseD_a2:
     case CASE_9F:
     case CASE_A3:
     case CASE_A4:
-      pcVar25 = &DAT_007d2578;
+      pcVar25 = &CHAR_a_007d2578;
       break;
     case CASE_A0:
     case CASE_BF:
@@ -571,7 +571,7 @@ switchD_00640ad9_caseD_a2:
       pcVar25 = "biaacc";
       break;
     case CASE_B9:
-      pcVar25 = &DAT_007d2534;
+      pcVar25 = &CHAR_i_007d2534;
     }
     uVar20 = 0xffffffff;
     do {

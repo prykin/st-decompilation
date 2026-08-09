@@ -700,7 +700,7 @@ void __thiscall st::fn_006DDBE0(ST3DSMAPContext *this)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079dfd8;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   if (((this->field_0004 == nullptr) ||
       ((this->field_0004->field_000C & 0x1100) != 0x100)) &&
@@ -820,7 +820,7 @@ void __fastcall st::fn_006DDD50(ST3DSMAPContext *param_1)
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar17;
 
   puStack_c = &DAT_0079dff8;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffed4;
   if (((param_1->field_0004 == nullptr) ||
@@ -1206,7 +1206,7 @@ void __fastcall st::fn_006DE9C0(ST3DSMAPContext *param_1)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079e008;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffee8;
   local_a0 = 30000;
@@ -2403,7 +2403,7 @@ st::fn_006E1460(ST3DSMAPContext *this,double param_2,double param_3)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079e138;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff0c;
   local_94 = 0;

@@ -4910,7 +4910,7 @@ switchD_00652b42_switchD:
                                 if (iVar37 == 8) {
 LAB_006536dd:
                                   if (g_cPanel_00801688 != nullptr) {
-                                    CPanelTy::OutText(g_cPanel_00801688,(int)local_158,
+                                    st::fn_00403152(g_cPanel_00801688,(int)local_158,
                                                       (int)(local_154 + (1 - (int)local_158)),
                                                       local_15c);
                                   }
@@ -4939,7 +4939,7 @@ LAB_006536dd:
                                 if (iVar37 == 8) {
 LAB_00653778:
                                   if (g_cPanel_00801688 != nullptr) {
-                                    CPanelTy::OutText(g_cPanel_00801688,(char *)local_158,local_15c);
+                                    st::fn_0040195B(g_cPanel_00801688,(char *)local_158,local_15c);
                                   }
                                   break;
                                 }

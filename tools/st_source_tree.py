@@ -30,6 +30,11 @@ SOURCE_FILE_RE = re.compile(
 )
 IDENTIFIER_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 ADDRESS_NAME_RE = re.compile(r"\b_?(?:DAT|PTR)_[0-9A-Fa-f]{8}\b")
+ADDRESS_CODED_GLOBAL_RE = re.compile(
+    r"\b(?P<name>[A-Za-z_][A-Za-z0-9_]*_(?P<address>[0-9A-Fa-f]{8}))\b"
+)
+LOCAL_LABEL_RE = re.compile(r"(?m)^\s*(LAB_[0-9A-Fa-f]{8})\s*:")
+ADDRESS_TAKEN_LABEL_RE = re.compile(r"&\s*(LAB_([0-9A-Fa-f]{8}))\b")
 ADDRESS_CODED_FUNCTION_RE = re.compile(
     r"(?<![A-Za-z0-9_])"
     r"(?:(?:[A-Za-z_][A-Za-z0-9_]*)::\s*)*"
@@ -147,6 +152,19 @@ def safe_identifier(value: str, prefix: str = "st") -> str:
     return clean
 
 
+def global_alias_for_token(
+    token: str, address: str, item: Mapping[str, Any]
+) -> str | None:
+    """Return an address-stable alias only for Ghidra's escaped invalid name."""
+    actual = str(item["name"])
+    if IDENTIFIER_RE.fullmatch(actual):
+        return None
+    rendered = safe_identifier(actual, "global")
+    if token not in {rendered, "_" + rendered}:
+        return None
+    return f"st_global_{address.upper()}"
+
+
 def split_address_label(value: str) -> tuple[str, str]:
     address, separator, label = value.partition(" ")
     return address.upper(), label if separator else ""
@@ -166,6 +184,43 @@ def address_symbol(address: str) -> str:
     if normalized.startswith("EXTERNAL:"):
         return "st::" + external_local_name(normalized)
     return function_symbol(normalized)
+
+
+def call_argument_count(masked: str, open_paren: int) -> tuple[int, int] | None:
+    """Return (arity, closing-paren offset) for one masked C++ call."""
+    if open_paren >= len(masked) or masked[open_paren] != "(":
+        return None
+    parens = brackets = braces = angles = 0
+    arguments = 0
+    has_token = False
+    index = open_paren + 1
+    while index < len(masked):
+        value = masked[index]
+        if value == "(" : parens += 1
+        elif value == ")":
+            if parens == 0:
+                return ((arguments + 1) if has_token else 0, index)
+            parens -= 1
+        elif value == "[": brackets += 1
+        elif value == "]" and brackets > 0: brackets -= 1
+        elif value == "{": braces += 1
+        elif value == "}" and braces > 0: braces -= 1
+        elif value == "<" and parens == brackets == braces == 0:
+            previous = masked[index - 1] if index > 0 else ""
+            following = masked[index + 1] if index + 1 < len(masked) else ""
+            if (previous.isalnum() or previous in "_>") and following not in "<=":
+                angles += 1
+        elif value == ">" and angles > 0 and parens == brackets == braces == 0:
+            angles -= 1
+        elif value == "," and parens == brackets == braces == angles == 0:
+            arguments += 1
+            has_token = False
+            index += 1
+            continue
+        if not value.isspace() and parens == brackets == braces == 0:
+            has_token = True
+        index += 1
+    return None
 
 
 def relative_include(path: str) -> str:
@@ -227,6 +282,14 @@ def transform_code(text: str, transform: Any) -> str:
 
 def code_only(text: str) -> str:
     return "".join(piece for is_code, piece in code_segments(text) if is_code)
+
+
+def code_mask(text: str) -> str:
+    """Preserve line/column geometry while blanking comments and literals."""
+    return "".join(
+        piece if is_code else re.sub(r"[^\r\n]", " ", piece)
+        for is_code, piece in code_segments(text)
+    )
 
 
 def rewrite_address_taken_globals(
@@ -1280,6 +1343,8 @@ class SourceTreeGenerator:
         self.functions: list[dict[str, Any]] = []
         self.function_by_address: dict[str, dict[str, Any]] = {}
         self.globals: list[dict[str, Any]] = []
+        self.global_by_address: dict[str, dict[str, Any]] = {}
+        self.global_alias_records: dict[str, dict[str, Any]] = {}
         self.types: list[dict[str, Any]] = []
         self.imports: list[dict[str, Any]] = []
         self.import_spellings: set[str] = set()
@@ -1335,6 +1400,9 @@ class SourceTreeGenerator:
                     self.callable_addresses_by_spelling[spelling].add(address)
         self.types = read_jsonl(self.corpus / "types.jsonl")
         self.globals = read_jsonl(self.corpus / "globals.jsonl")
+        self.global_by_address = {
+            str(item["address"]).upper(): item for item in self.globals
+        }
         self.imports = read_json(self.corpus / "imports.json")
         self.import_spellings = {
             safe_identifier(str(item["name"]).replace("@", "_"), "import")
@@ -1366,6 +1434,13 @@ class SourceTreeGenerator:
                 continue
             address = str(items[0]["address"]).upper()
             self.global_type_collisions[name] = f"st_global_{address}"
+            self.global_alias_records[f"st_global_{address}"] = items[0]
+        for item in self.globals:
+            name = str(item["name"])
+            address = str(item["address"]).upper()
+            rendered = safe_identifier(name, "global")
+            if not IDENTIFIER_RE.fullmatch(name) and rendered.upper().endswith(address):
+                self.global_alias_records[f"st_global_{address}"] = item
         self.type_emitter.register_global_types(
             self.globals, self.global_type_collisions
         )
@@ -1556,6 +1631,7 @@ class SourceTreeGenerator:
 
     def _transform_body(self, function: Mapping[str, Any], body: str) -> str:
         body = re.sub(r"^#include[^\n]*\n+", "", body, count=1)
+        local_labels = set(LOCAL_LABEL_RE.findall(code_only(body)))
         address = str(function["address"]).upper()
         own_candidates = [
             str(function["qualified_name"]),
@@ -1590,16 +1666,12 @@ class SourceTreeGenerator:
                 replacements[label].add(callee_address)
 
         resolved: dict[str, str] = {}
+        ambiguous: dict[str, set[str]] = {}
         for spelling, addresses in replacements.items():
             if len(addresses) == 1:
                 resolved[spelling] = address_symbol(next(iter(addresses)))
             else:
-                self.issues.append(Issue(
-                    "ambiguous_direct_call",
-                    f"{spelling}: {', '.join(sorted(addresses))}",
-                    address,
-                ))
-                self.stats["ambiguous_direct_calls"] += 1
+                ambiguous[spelling] = addresses
 
         ordered = sorted(resolved, key=len, reverse=True)
         call_pattern = (
@@ -1628,6 +1700,34 @@ class SourceTreeGenerator:
                     result, global_rewrites
                 )
                 self.stats["global_type_collision_rewrites"] += count
+            address_global_rewrites = 0
+            def replace_address_coded_global(match: re.Match[str]) -> str:
+                nonlocal address_global_rewrites
+                address = match.group("address").upper()
+                item = self.global_by_address.get(address)
+                if item is None:
+                    return match.group(0)
+                token = match.group("name")
+                alias = global_alias_for_token(token, address, item)
+                if alias is None:
+                    return match.group(0)
+                self.global_alias_records[alias] = item
+                address_global_rewrites += 1
+                return alias
+            result = ADDRESS_CODED_GLOBAL_RE.sub(
+                replace_address_coded_global, result
+            )
+            self.stats["address_coded_global_rewrites"] += address_global_rewrites
+            external_label_rewrites = 0
+            def replace_external_label(match: re.Match[str]) -> str:
+                nonlocal external_label_rewrites
+                label = match.group(1)
+                if label in local_labels:
+                    return match.group(0)
+                external_label_rewrites += 1
+                return "&st_image_" + match.group(2).upper()
+            result = ADDRESS_TAKEN_LABEL_RE.sub(replace_external_label, result)
+            self.stats["external_label_address_rewrites"] += external_label_rewrites
             if not definition_rewritten:
                 result, count = own_pattern.subn(
                     function_symbol(address), result, count=1
@@ -1665,6 +1765,17 @@ class SourceTreeGenerator:
             return result
 
         transformed = transform_code(body, replace)
+        transformed, arity_resolved, unresolved = self._rewrite_ambiguous_calls(
+            transformed, ambiguous
+        )
+        self.stats["arity_resolved_direct_calls"] += arity_resolved
+        for spelling, addresses in unresolved.items():
+            self.issues.append(Issue(
+                "ambiguous_direct_call",
+                f"{spelling}: {', '.join(sorted(addresses))}",
+                address,
+            ))
+            self.stats["ambiguous_direct_calls"] += 1
         # A direct-call spelling can be line-wrapped immediately after its
         # recovered owner.  The first replacement pass may then see only the
         # leaf and produce the mechanically impossible `Owner::st::fn_ADDRESS`.
@@ -1674,6 +1785,7 @@ class SourceTreeGenerator:
             lambda match: match.group(1), transformed
         )
         self.stats["qualified_address_symbol_repairs"] += count
+        transformed = self._materialize_tagged_lifetimes(address, transformed)
         if not definition_rewritten:
             self.issues.append(Issue(
                 "definition_not_rewritten",
@@ -1681,6 +1793,114 @@ class SourceTreeGenerator:
                 address,
             ))
         return transformed
+
+    def _rewrite_ambiguous_calls(
+        self, body: str, candidates: Mapping[str, set[str]]
+    ) -> tuple[str, int, dict[str, set[str]]]:
+        if not candidates:
+            return body, 0, {}
+        masked = code_mask(body)
+        edits: list[tuple[int, int, str]] = []
+        occupied: list[tuple[int, int]] = []
+        unresolved: dict[str, set[str]] = {}
+        for spelling in sorted(candidates, key=len, reverse=True):
+            pattern = re.compile(
+                rf"(?<![A-Za-z0-9_]){re.escape(spelling)}(?=\s*\()"
+            )
+            for match in pattern.finditer(masked):
+                if any(match.start() < end and match.end() > start
+                        for start, end in occupied):
+                    continue
+                open_paren = masked.find("(", match.end())
+                parsed = call_argument_count(masked, open_paren)
+                if parsed is None:
+                    unresolved[spelling] = candidates[spelling]
+                    continue
+                arity, _ = parsed
+                matching = {
+                    candidate for candidate in candidates[spelling]
+                    if len(self.function_by_address.get(candidate, {}).get(
+                        "parameters", ())) == arity
+                }
+                if len(matching) != 1:
+                    unresolved[spelling] = candidates[spelling]
+                    continue
+                edits.append((match.start(), match.end(),
+                    address_symbol(next(iter(matching)))))
+                occupied.append((match.start(), match.end()))
+        for start, end, replacement in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+        return body, len(edits), unresolved
+
+    def _materialize_tagged_lifetimes(self, address: str, body: str) -> str:
+        """Declare only exporter-tagged synthetic lifetimes with proven scope.
+
+        `_param_N`/`_local_N` are Ghidra spellings for the post-write half of a
+        reused physical stack slot.  They have no declaration in the emitted
+        body.  Turning the first exact tagged assignment into `auto` is
+        type-neutral and preserves its RHS type, but is safe only when every use
+        remains in the same lexical block and no later switch label can jump
+        over the initializer.
+        """
+        marker = "ST_PSEUDO[stack_slot_reuse]"
+        if marker not in body:
+            return body
+        lines = body.splitlines(keepends=True)
+        masked = code_mask(body).splitlines(keepends=True)
+        depths: list[int] = []
+        depth = 0
+        for line in masked:
+            depths.append(depth)
+            depth += line.count("{") - line.count("}")
+        assignment = re.compile(
+            r"^(?P<indent>\s*)(?P<name>_(?:param|local)_[0-9A-Fa-f]+)\s*=(?!=)"
+        )
+        replacements: list[tuple[int, str]] = []
+        claimed: set[str] = set()
+        for index, line in enumerate(masked):
+            match = assignment.match(line)
+            if match is None or match.group("name") in claimed:
+                continue
+            previous = index - 1
+            while previous >= 0 and not lines[previous].strip():
+                previous -= 1
+            if previous < 0 or marker not in lines[previous]:
+                continue
+            name = match.group("name")
+            token = re.compile(rf"\b{re.escape(name)}\b")
+            if any(token.search(item) for item in masked[:index]):
+                continue
+            start_depth = depths[index]
+            end = len(lines)
+            running = start_depth
+            for cursor in range(index, len(lines)):
+                running += masked[cursor].count("{") - masked[cursor].count("}")
+                if running < start_depth:
+                    end = cursor
+                    break
+            if any(token.search(item) for item in masked[end:]):
+                continue
+            if any(
+                depths[cursor] == start_depth and
+                re.match(r"\s*(?:case\b|default\s*:)", masked[cursor])
+                for cursor in range(index + 1, end)
+            ):
+                continue
+            replacements.append((index, name))
+            claimed.add(name)
+        for index, name in replacements:
+            lines[index] = re.sub(
+                rf"^(\s*){re.escape(name)}\s*=(?!=)",
+                rf"\1auto {name} =", lines[index], count=1,
+            )
+        self.stats["tagged_lifetime_materializations"] += len(replacements)
+        if re.search(r"\b_(?:param|local)_[0-9A-Fa-f]+\b", code_only(body)) and not replacements:
+            self.issues.append(Issue(
+                "tagged_lifetime_scope_unresolved",
+                "no synthetic lifetime satisfied exact lexical-scope proof",
+                address,
+            ))
+        return "".join(lines)
 
     def _body_declaration(self, address: str, code: str) -> str:
         symbol = function_symbol(address)
@@ -1713,6 +1933,8 @@ class SourceTreeGenerator:
             if IDENTIFIER_RE.fullmatch(overlap) and re.search(rf"\b{re.escape(overlap)}\b", code):
                 names.add(overlap)
         names.update(ADDRESS_NAME_RE.findall(code))
+        names.update(re.findall(r"\bst_global_[0-9A-F]{8}\b", code))
+        names.update(re.findall(r"\bst_image_[0-9A-F]{8}\b", code))
         return names
 
     def _used_import_names(self, code: str) -> set[str]:
@@ -1724,8 +1946,13 @@ class SourceTreeGenerator:
         by_name = {item["name"]: item for item in self.globals}
         lines = ["#pragma once", "", '#include "st/recovered_types.hpp"', ""]
         for name in sorted(names):
+            if name.startswith("st_image_"):
+                lines.append(f"extern byte {name}; // exact image address, semantic type unresolved")
+                self.stats["opaque_image_address_declarations"] += 1
+                continue
             lookup = name[1:] if name.startswith("_DAT_") else name
-            item = by_name.get(name) or by_name.get(lookup)
+            item = (self.global_alias_records.get(name) or by_name.get(name) or
+                    by_name.get(lookup))
             if item is None:
                 lines.append(f"extern undefined4 {name};")
                 self.issues.append(Issue(
@@ -1734,10 +1961,13 @@ class SourceTreeGenerator:
                 self.stats["fallback_global_declarations"] += 1
                 continue
             type_text = str(item["type"])
-            declaration_name = self.global_type_collisions.get(name, name)
+            declaration_name = (
+                name if name in self.global_alias_records else
+                self.global_type_collisions.get(name, name)
+            )
             provenance = (
-                f" // image symbol: {name}"
-                if declaration_name != name else ""
+                f" // image symbol: {item['name']}"
+                if declaration_name != str(item["name"]) else ""
             )
             declaration = self.type_emitter.display_declaration(
                 type_text, declaration_name

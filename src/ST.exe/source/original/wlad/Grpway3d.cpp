@@ -673,7 +673,7 @@ undefined4 * __thiscall st::fn_0040C080(void *this,uint param_1,DArrayTy *param_
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790020;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff34;
   dVar8 = param_2->count;
@@ -1025,7 +1025,7 @@ int st::fn_0040E0F0(int param_1,int param_2,int param_3,int param_4,int param_5)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790030;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff34;
   local_38 = 0;
@@ -1359,7 +1359,7 @@ int st::fn_0040FC40(int param_1,int param_2,int param_3,int param_4,int param_5,
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790060;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffec8;
   local_50 = 0;
@@ -1958,7 +1958,7 @@ int st::fn_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790070;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff3c;
   local_44 = 0;
@@ -2294,7 +2294,7 @@ int st::fn_00411E50(int param_1,int param_2,int param_3,int param_4,int param_5,
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790080;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff3c;
   local_48 = 0;

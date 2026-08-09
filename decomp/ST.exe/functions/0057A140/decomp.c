@@ -40,10 +40,10 @@ FUN_0057a140(int param_1,Global_sub_0057A140_param_2Enum param_2,int param_3,und
       pcVar4 = "fish_gr";
       break;
     case CASE_EA:
-      pcVar4 = &DAT_007cae4c;
+      pcVar4 = &CHAR_s_007cae4c;
       break;
     case CASE_EB:
-      pcVar4 = &DAT_007cae44;
+      pcVar4 = &CHAR_z_007cae44;
       break;
     default:
       goto switchD_0057a18b_caseD_ec;

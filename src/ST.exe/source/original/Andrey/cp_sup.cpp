@@ -566,7 +566,7 @@ LAB_004f27ff:
       break;
     default:
       uVar16 = 0xffffffff;
-      pcVar11 = &CHAR___007c1b00;
+      pcVar11 = &st_global_007C1B00;
       do {
         pcVar14 = pcVar11;
         if (uVar16 == 0) break;

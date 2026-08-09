@@ -5750,7 +5750,7 @@ LAB_0074a6c4:
                          ((iVar3 + iVar5 + (uint)CARRY4(uVar2,uVar4)) - (int)local_8) -
                          (uint)(pAVar8 < local_c),10000,0);
       if (0x31 < (int)(UINT)uVar9) {
-        MVar6 = st::external_000000DF((UINT)uVar9,10,&LAB_0074a606,(DWORD_PTR)param_1,0);
+        MVar6 = st::external_000000DF((UINT)uVar9,10,&st_image_0074A606,(DWORD_PTR)param_1,0);
         param_1->field_00C0 = MVar6;
         if (MVar6 != 0) goto LAB_0074a6c4;
       }
@@ -11794,7 +11794,7 @@ int st::fn_0074EB6B(int *param_1,undefined4 param_2)
   iVar1 = (**(code **)(*param_1 + 0x50))(param_2,0);
   if (iVar1 < 0) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    iVar1 = st::fn_0074EB3C(param_1,&LAB_0075055c,unaff_retaddr);
+    iVar1 = st::fn_0074EB3C(param_1,&st_image_0075055C,unaff_retaddr);
   }
   else {
     iVar1 = 0;
@@ -11824,7 +11824,7 @@ void st::fn_0074EB99(void)
   undefined4 in_stack_00000008;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  st::fn_0074EB3C(in_stack_00000004,&LAB_00750553,in_stack_00000008);
+  st::fn_0074EB3C(in_stack_00000004,&st_image_00750553,in_stack_00000008);
   return;
 }
 
@@ -11850,7 +11850,7 @@ void st::fn_0074EBAE(void)
   undefined4 in_stack_00000008;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  st::fn_0074EB3C(in_stack_00000004,&LAB_00750541,in_stack_00000008);
+  st::fn_0074EB3C(in_stack_00000004,&st_image_00750541,in_stack_00000008);
   return;
 }
 
@@ -11876,7 +11876,7 @@ void st::fn_0074EBC3(void)
   undefined4 in_stack_00000008;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  st::fn_0074EB3C(in_stack_00000004,&LAB_0075054a,in_stack_00000008);
+  st::fn_0074EB3C(in_stack_00000004,&st_image_0075054A,in_stack_00000008);
   return;
 }
 

@@ -96,7 +96,7 @@ st::fn_0057A2C0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,s
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079b3a8;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffec8;
   local_f0 = nullptr;

@@ -215,6 +215,9 @@ public class STExportRegressionGate extends GhidraScript {
         kinds.addAll(now.quality.keySet());
         boolean firstDispatchMigration =
             before.dispatchVtables == 0 && now.dispatchVtables > 0;
+        boolean functionAnalysisTransition =
+            now.number("function_analysis_schema") >
+                before.number("function_analysis_schema");
         for (String kind : kinds) {
             long oldValue = before.quality.getOrDefault(kind, 0L);
             long newValue = now.quality.getOrDefault(kind, 0L);
@@ -224,15 +227,26 @@ public class STExportRegressionGate extends GhidraScript {
                 boolean regressed = newValue > oldValue;
                 boolean dispatchTransition = regressed && firstDispatchMigration &&
                     "raw_indirect_call".equals(kind);
-                String severity = !regressed ? "info" : dispatchTransition ? "warning" :
+                boolean accountingTransition = regressed && functionAnalysisTransition &&
+                    "raw_indirect_call".equals(kind);
+                String severity = !regressed ? "info" :
+                    dispatchTransition || accountingTransition ? "warning" :
                     blockingQuality(kind) ? "error" : "warning";
                 add(severity, "quality:" + kind, oldValue, newValue,
                     dispatchTransition ? "stage_transition" :
+                        accountingTransition ? "analysis_transition" :
                         regressed ? "regressed" : newValue < oldValue ? "improved" : "ok",
                     dispatchTransition ?
                         "First dispatch-shape migration may expose honest unresolved tail " +
                             "calls while removing wrapped vtable[1] aliases; the next export " +
                             "uses the normal blocking nonincreasing policy" :
+                    accountingTransition ?
+                        "Function-analysis schema " +
+                            before.number("function_analysis_schema") + " -> " +
+                            now.number("function_analysis_schema") +
+                            " exposed previously malformed exporter-owned syntax; " +
+                            "changed_functions=" + qualityDeltaSample(before, now, kind) +
+                            "; the next export uses the normal blocking policy" :
                         "policy=nonincreasing; blocking=" + blockingQuality(kind) +
                             (regressed ? "; increased_functions=" +
                                 qualityDeltaSample(before, now, kind) : ""));
@@ -271,6 +285,8 @@ public class STExportRegressionGate extends GhidraScript {
         for (String key : List.of("function_count", "body_function_count",
                 "function_covered_executable_byte_count", "unclaimed_meaningful_byte_count"))
             result.numbers.put(key, jsonLong(manifest, key));
+        result.numbers.put("function_analysis_schema",
+            jsonLongOrDefault(manifest, "function_analysis_schema", 0));
         readFunctions(root.resolve("functions.json"), result);
         readVtables(regressionArtifact(root, "types.jsonl", "types.snapshot"), result);
         Path quality = root.resolve("decomp_quality_summary.json");
@@ -463,6 +479,12 @@ public class STExportRegressionGate extends GhidraScript {
             "\\\"\\s*:\\s*([0-9]+)").matcher(text);
         if (!matcher.find()) throw new IllegalStateException("Missing numeric manifest key " + key);
         return Long.parseLong(matcher.group(1));
+    }
+
+    private long jsonLongOrDefault(String text, String key, long fallback) {
+        Matcher matcher = Pattern.compile("\\\"" + Pattern.quote(key) +
+            "\\\"\\s*:\\s*([0-9]+)").matcher(text);
+        return matcher.find() ? Long.parseLong(matcher.group(1)) : fallback;
     }
 
     private String qualityPolicy(String kind) {

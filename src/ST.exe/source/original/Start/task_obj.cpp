@@ -1569,14 +1569,14 @@ LAB_005e22f4:
               st::fn_006B5AA0
                         ((DArrayTy *)g_startSystem_0081176C->field_0548,(char *)local_c38);
               st::fn_006B5AA0
-                        ((DArrayTy *)g_startSystem_0081176C->field_0548,&CHAR___007c3b5c);
+                        ((DArrayTy *)g_startSystem_0081176C->field_0548,&st_global_007C3B5C);
               st::fn_006B0140(0x2346,g_hINSTANCE_00807618);
               pDVar16 = local_c38;
               st::external_00000080((LPSTR)pDVar16,"&%1d %s:");
               st::fn_006B5AA0
                         ((DArrayTy *)g_startSystem_0081176C->field_0548,(char *)local_c38);
               st::fn_006B5AA0
-                        ((DArrayTy *)g_startSystem_0081176C->field_0548,&CHAR___007c3b5c);
+                        ((DArrayTy *)g_startSystem_0081176C->field_0548,&st_global_007C3B5C);
               if (pDVar16 != nullptr) {
                 if (pDVar16->elementSize != 0) {
                   st::fn_007129D0(this_01->field_008D,&pDVar16->flags,&pDVar16->flags);

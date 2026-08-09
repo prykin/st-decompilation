@@ -319,7 +319,7 @@ cf_common_exit_0057C3E4:
   return 0;
 switchD_0057c669_caseD_127:
   puVar1 = &this_00->field_0x235;
-  int scalar_local_20 = int)(short)((message->arg1).words.low * 0xc9 + 100; /* split integer lifetime from pointer-typed SSA storage */
+  int scalar_local_20 = (int)(short)((message->arg1).words.low * 0xc9 + 100); /* split integer lifetime from pointer-typed SSA storage */
   iVar6 = st::fn_004019E7(0,0,g_worldGrid.sizeX + -1,g_worldGrid.sizeY + -1,(int)this_00,
                              (int)(short)((message->arg0).words.low * 0xc9 + 100),scalar_local_20,
                              (int)(short)((message->arg0).words.high * 0xc9 + 100),

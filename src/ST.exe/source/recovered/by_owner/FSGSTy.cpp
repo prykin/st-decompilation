@@ -803,7 +803,7 @@ st::fn_005A39A0
     }
   }
   uVar6 = 0xffffffff;
-  pcVar8 = &CHAR___007cc58c;
+  pcVar8 = &st_global_007CC58C;
   do {
     pcVar10 = pcVar8;
     if (uVar6 == 0) break;

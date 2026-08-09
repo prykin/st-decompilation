@@ -102,121 +102,121 @@ st::fn_0044E980
   }
   switch(param_2) {
   case CASE_1:
-    pcVar6 = &DAT_007a9e8c;
+    pcVar6 = &CHAR_s_007a9e8c;
     break;
   case CASE_2:
-    pcVar6 = &DAT_007a9e84;
+    pcVar6 = &CHAR_h_007a9e84;
     break;
   case CASE_3:
-    pcVar6 = &DAT_007a9e7c;
+    pcVar6 = &CHAR_c_007a9e7c;
     break;
   case CASE_4:
-    pcVar6 = &DAT_007a9e74;
+    pcVar6 = &CHAR_d_007a9e74;
     break;
   case CASE_5:
-    pcVar6 = &DAT_007a9e6c;
+    pcVar6 = &CHAR_m_007a9e6c;
     break;
   case CASE_6:
-    pcVar6 = &DAT_007a9e64;
+    pcVar6 = &CHAR_r_007a9e64;
     break;
   case CASE_7:
-    pcVar6 = &DAT_007a9e5c;
+    pcVar6 = &CHAR_r_007a9e5c;
     break;
   case CASE_8:
-    pcVar6 = &DAT_007a9e54;
+    pcVar6 = &CHAR_l_007a9e54;
     break;
   case CASE_9:
-    pcVar6 = &DAT_007a9e50;
+    pcVar6 = &CHAR_w_007a9e50;
     break;
   case CASE_A:
-    pcVar6 = &DAT_007a9e48;
+    pcVar6 = &CHAR_t_007a9e48;
     break;
   case CASE_B:
     pcVar6 = &CHAR_l_007a9e40;
     break;
   case CASE_C:
-    pcVar6 = &DAT_007a9e38;
+    pcVar6 = &CHAR_c_007a9e38;
     break;
   case CASE_D:
-    pcVar6 = &DAT_007a9e30;
+    pcVar6 = &CHAR_c_007a9e30;
     break;
   case CASE_E:
-    pcVar6 = &DAT_007a9e28;
+    pcVar6 = &CHAR_d_007a9e28;
     break;
   case CASE_F:
-    pcVar6 = &DAT_007a9e20;
+    pcVar6 = &CHAR_h_007a9e20;
     break;
   case CASE_10:
-    pcVar6 = &DAT_007a9e18;
+    pcVar6 = &CHAR_i_007a9e18;
     break;
   case CASE_11:
-    pcVar6 = &DAT_007a9e10;
+    pcVar6 = &CHAR_l_007a9e10;
     break;
   case CASE_12:
-    pcVar6 = &DAT_007a9e08;
+    pcVar6 = &CHAR_r_007a9e08;
     break;
   case CASE_13:
-    pcVar6 = &DAT_007a9e00;
+    pcVar6 = &CHAR_r_007a9e00;
     break;
   case CASE_14:
-    pcVar6 = &DAT_007a9df8;
+    pcVar6 = &CHAR_l_007a9df8;
     break;
   case CASE_15:
-    pcVar6 = &DAT_007a9df4;
+    pcVar6 = &CHAR_d_007a9df4;
     break;
   case CASE_16:
     pcVar6 = &CHAR_p_007a9dec;
     break;
   case CASE_17:
-    pcVar6 = &DAT_007a9de4;
+    pcVar6 = &CHAR_a_007a9de4;
     break;
   case CASE_18:
-    pcVar6 = &DAT_007a9ddc;
+    pcVar6 = &CHAR_c_007a9ddc;
     break;
   case CASE_19:
-    pcVar6 = &DAT_007a9dd8;
+    pcVar6 = &CHAR_c_007a9dd8;
     break;
   case CASE_1A:
-    pcVar6 = &DAT_007a9dd4;
+    pcVar6 = &CHAR_t_007a9dd4;
     break;
   case CASE_1B:
-    pcVar6 = &DAT_007a9dd0;
+    pcVar6 = &CHAR_s_007a9dd0;
     break;
   case CASE_1C:
-    pcVar6 = &DAT_007a9dcc;
+    pcVar6 = &CHAR_p_007a9dcc;
     break;
   case CASE_1D:
-    pcVar6 = &DAT_007a9dc8;
+    pcVar6 = &CHAR_r_007a9dc8;
     break;
   case CASE_1E:
-    pcVar6 = &DAT_007a9dc4;
+    pcVar6 = &CHAR_s_007a9dc4;
     break;
   case CASE_1F:
-    pcVar6 = &DAT_007a9dc0;
+    pcVar6 = &CHAR_d_007a9dc0;
     break;
   case CASE_20:
-    pcVar6 = &DAT_007a9dbc;
+    pcVar6 = &CHAR_e_007a9dbc;
     break;
   case CASE_21:
-    pcVar6 = &DAT_007a9db8;
+    pcVar6 = &CHAR_b_007a9db8;
     break;
   case CASE_22:
-    pcVar6 = &DAT_007a9db4;
+    pcVar6 = &CHAR_u_007a9db4;
     break;
   case CASE_23:
     pcVar6 = &CHAR_g_007a9db0;
     break;
   case CASE_24:
-    pcVar6 = &DAT_007a9dac;
+    pcVar6 = &CHAR_e_007a9dac;
     break;
   case CASE_25:
-    pcVar6 = &DAT_007a9da4;
+    pcVar6 = &CHAR_s_007a9da4;
     break;
   case CASE_26:
-    pcVar6 = &DAT_007a9d9c;
+    pcVar6 = &CHAR_f_007a9d9c;
     break;
   case CASE_27:
-    pcVar6 = &DAT_007a9d94;
+    pcVar6 = &CHAR_f_007a9d94;
     break;
   case CASE_28:
     pcVar6 = &CHAR_f_007a9d8c;
@@ -7830,43 +7830,43 @@ cf_error_exit_0045AEE3:
   switch(*(undefined4 *)((int)this_00->field_06CB + 0x2c)) {
   case 1:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e8c;
+    pcVar35 = &CHAR_s_007a9e8c;
     break;
   case 2:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e84;
+    pcVar35 = &CHAR_h_007a9e84;
     break;
   case 3:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e7c;
+    pcVar35 = &CHAR_c_007a9e7c;
     break;
   case 4:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e74;
+    pcVar35 = &CHAR_d_007a9e74;
     break;
   case 5:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e6c;
+    pcVar35 = &CHAR_m_007a9e6c;
     break;
   case 6:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e64;
+    pcVar35 = &CHAR_r_007a9e64;
     break;
   case 7:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e5c;
+    pcVar35 = &CHAR_r_007a9e5c;
     break;
   case 8:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e54;
+    pcVar35 = &CHAR_l_007a9e54;
     break;
   case 9:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e50;
+    pcVar35 = &CHAR_w_007a9e50;
     break;
   case 10:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e48;
+    pcVar35 = &CHAR_t_007a9e48;
     break;
   case 0xb:
     uVar17 = 0xffffffff;
@@ -7907,43 +7907,43 @@ cf_error_exit_0045AEE3:
     break;
   case 0xc:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e38;
+    pcVar35 = &CHAR_c_007a9e38;
     break;
   case 0xd:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e30;
+    pcVar35 = &CHAR_c_007a9e30;
     break;
   case 0xe:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e28;
+    pcVar35 = &CHAR_d_007a9e28;
     break;
   case 0xf:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e20;
+    pcVar35 = &CHAR_h_007a9e20;
     break;
   case 0x10:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e18;
+    pcVar35 = &CHAR_i_007a9e18;
     break;
   case 0x11:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e10;
+    pcVar35 = &CHAR_l_007a9e10;
     break;
   case 0x12:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e08;
+    pcVar35 = &CHAR_r_007a9e08;
     break;
   case 0x13:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9e00;
+    pcVar35 = &CHAR_r_007a9e00;
     break;
   case 0x14:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9df8;
+    pcVar35 = &CHAR_l_007a9df8;
     break;
   case 0x15:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9df4;
+    pcVar35 = &CHAR_d_007a9df4;
     break;
   case 0x16:
     uVar17 = 0xffffffff;
@@ -7984,51 +7984,51 @@ cf_error_exit_0045AEE3:
     break;
   case 0x17:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9de4;
+    pcVar35 = &CHAR_a_007a9de4;
     break;
   case 0x18:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9ddc;
+    pcVar35 = &CHAR_c_007a9ddc;
     break;
   case 0x19:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9dd8;
+    pcVar35 = &CHAR_c_007a9dd8;
     break;
   case 0x1a:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9dd4;
+    pcVar35 = &CHAR_t_007a9dd4;
     break;
   case 0x1b:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9dd0;
+    pcVar35 = &CHAR_s_007a9dd0;
     break;
   case 0x1c:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9dcc;
+    pcVar35 = &CHAR_p_007a9dcc;
     break;
   case 0x1d:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9dc8;
+    pcVar35 = &CHAR_r_007a9dc8;
     break;
   case 0x1e:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9dc4;
+    pcVar35 = &CHAR_s_007a9dc4;
     break;
   case 0x1f:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9dc0;
+    pcVar35 = &CHAR_d_007a9dc0;
     break;
   case 0x20:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9dbc;
+    pcVar35 = &CHAR_e_007a9dbc;
     break;
   case 0x21:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9db8;
+    pcVar35 = &CHAR_b_007a9db8;
     break;
   case 0x22:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9db4;
+    pcVar35 = &CHAR_u_007a9db4;
     break;
   case 0x23:
     uVar17 = 0xffffffff;
@@ -8069,19 +8069,19 @@ cf_error_exit_0045AEE3:
     break;
   case 0x24:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9dac;
+    pcVar35 = &CHAR_e_007a9dac;
     break;
   case 0x25:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9da4;
+    pcVar35 = &CHAR_s_007a9da4;
     break;
   case 0x26:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9d9c;
+    pcVar35 = &CHAR_f_007a9d9c;
     break;
   case 0x27:
     pcVar36 = local_74;
-    pcVar35 = &DAT_007a9d94;
+    pcVar35 = &CHAR_f_007a9d94;
     break;
   case 0x28:
     pcVar36 = local_74;
@@ -8137,19 +8137,19 @@ switchD_0044fb10_default:
     pcVar36 = &CHAR_1_007a4ffc;
     break;
   case 2:
-    pcVar36 = &DAT_007aa028;
+    pcVar36 = &CHAR_2_007aa028;
     break;
   case 3:
-    pcVar36 = &DAT_007aa024;
+    pcVar36 = &CHAR_3_007aa024;
     break;
   case 4:
-    pcVar36 = &DAT_007aa020;
+    pcVar36 = &CHAR_4_007aa020;
     break;
   case 5:
-    pcVar36 = &DAT_007aa01c;
+    pcVar36 = &CHAR_5_007aa01c;
     break;
   case 6:
-    pcVar36 = &DAT_007aa018;
+    pcVar36 = &CHAR_6_007aa018;
     break;
   case 7:
     pcVar36 = &CHAR_7_007aa014;
@@ -24407,7 +24407,7 @@ cf_continue_loop_00491C1C:
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_3 = 1000000000;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      _param_6 = 0;
+      auto _param_6 = 0;
       do {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar12 = *(int *)((int)local_48 + iVar9 + 0x14);

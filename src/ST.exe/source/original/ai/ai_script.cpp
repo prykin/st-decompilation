@@ -5020,7 +5020,7 @@ cf_continue_loop_0068D1EB:
           if (0 < DAT_00857544) {
             do {
               uVar8 = 0xffffffff;
-              pcVar14 = &CHAR___007c3b5c;
+              pcVar14 = &st_global_007C3B5C;
               do {
                 pcVar12 = pcVar14;
                 if (uVar8 == 0) break;
@@ -5119,7 +5119,7 @@ cf_continue_loop_0068D1EB:
           if (0 < DAT_00857544) {
             do {
               uVar8 = 0xffffffff;
-              pcVar14 = &CHAR___007c3b5c;
+              pcVar14 = &st_global_007C3B5C;
               do {
                 pcVar12 = pcVar14;
                 if (uVar8 == 0) break;
@@ -5200,7 +5200,7 @@ cf_continue_loop_0068D1EB:
         memmove(pcVar12, pcVar14, uVar8); /* compiler REP MOVS byte copy */
         uVar9 = 0;
         uVar8 = 0xffffffff;
-        pcVar14 = &CHAR___007d5684;
+        pcVar14 = &st_global_007D5684;
         do {
           pcVar12 = pcVar14;
           if (uVar8 == 0) break;

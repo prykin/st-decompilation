@@ -1232,7 +1232,7 @@ void __cdecl st::fn_00553E20(int param_1,undefined *param_2,byte param_3)
   pCVar8 = local_98.lfFaceName;
   memmove(pCVar8, pcVar5, uVar3); /* compiler REP MOVS byte copy */
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_3 = 0xe4fae200;
+  auto _param_3 = 0xe4fae200;
   local_5c[0] = 0x20;
   local_5c[1] = 0x21;
   local_5c[2] = 0x22;
@@ -2322,10 +2322,10 @@ void st::fn_0055C590(undefined4 param_1,LPCVOID param_2,LPCVOID param_3)
   }
   if (param_2 != (LPCVOID)0x0) {
     bVar1 = true;
-    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079aef0);
+    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,st_global_0079AEF0);
     st::external_00000054((LPCSTR)&DAT_0080f33a,(LPSECURITY_ATTRIBUTES)0x0);
-    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079aef0,
-              PTR_s_ST_INF_0079aef4);
+    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,st_global_0079AEF0,
+              st_global_0079AEF4);
     hFile = st::external_00000055((LPCSTR)&DAT_0080f33a,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,
                         (HANDLE)0x0);
     pvVar2 = param_3;
@@ -3674,7 +3674,7 @@ int st::fn_0055EE70(byte *param_1,int param_2,int param_3)
   undefined4 local_8;
 
   puStack_c = &DAT_0079afb0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   pbVar8 = &stack0xffffffb0;
   pcVar9 = &stack0xffffffb0;
@@ -3816,7 +3816,7 @@ int * st::fn_0055F0C0(int *param_1,uint param_2,uint param_3,int param_4,uint pa
   int *piVar4_mg0;
 
   puStack_c = &DAT_0079afc0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff88;
   local_48 = param_2;

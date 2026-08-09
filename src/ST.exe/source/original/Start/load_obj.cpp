@@ -198,7 +198,7 @@ st::fn_005AB300
   case CASE_4:
   case CASE_5:
     local_c = 0xffffffff;
-    temp_3f2c6d1691 = PTR_s_CUSTOM__0079c050;
+    temp_3f2c6d1691 = st_global_0079C050;
     do {
       pcVar18 = temp_3f2c6d1691;
       if (local_c == 0) break;
@@ -222,7 +222,7 @@ st::fn_005AB300
     goto LAB_005ab4dc;
   case CASE_3:
     uVar11 = 0xffffffff;
-    temp_3ff82dc6a0 = PTR_s_MISSIONS__0079c054;
+    temp_3ff82dc6a0 = st_global_0079C054;
     do {
       pcVar18 = temp_3ff82dc6a0;
       if (uVar11 == 0) break;
@@ -255,7 +255,7 @@ st::fn_005AB300
   case CASE_C:
 switchD_005ab3e3_caseD_9:
     uVar11 = 0xffffffff;
-    pcVar16 = PTR_s_SAVEGAME__0079c04c;
+    pcVar16 = st_global_0079C04C;
     do {
       pcVar13 = pcVar16;
       if (uVar11 == 0) break;
@@ -311,7 +311,7 @@ switchD_005ab3e3_caseD_9:
   case CASE_13:
     if (DAT_00803400 == 0xc) goto switchD_005ab3e3_caseD_9;
     local_c = 0xffffffff;
-    pcVar17 = PTR_s_CUSTOM__0079c050;
+    pcVar17 = st_global_0079C050;
     do {
       pcVar18 = pcVar17;
       if (local_c == 0) break;
@@ -2791,7 +2791,7 @@ switchD_005afd30_caseD_c:
   memmove(pcVar12, pcVar18, uVar21); /* compiler REP MOVS byte copy */
   uVar16 = 0;
   uVar21 = 0xffffffff;
-  pcVar18 = &CHAR___007cc8bc;
+  pcVar18 = &st_global_007CC8BC;
   do {
     pcVar12 = pcVar18;
     if (uVar21 == 0) break;
@@ -3045,7 +3045,7 @@ LAB_005b01f3:
     uVar16 = 0;
   }
   uVar21 = 0xffffffff;
-  pcVar18 = &CHAR___007c72d8;
+  pcVar18 = &st_global_007C72D8;
   do {
     pcVar12 = pcVar18;
     if (uVar21 == 0) break;
@@ -3070,7 +3070,7 @@ LAB_005b01f3:
   memmove(pcVar12, pcVar18, uVar21); /* compiler REP MOVS byte copy */
   uVar16 = 0;
   uVar21 = 0xffffffff;
-  pcVar18 = PTR_CHAR___0079c058;
+  pcVar18 = st_global_0079C058;
   do {
     pcVar12 = pcVar18;
     if (uVar21 == 0) break;
@@ -3968,7 +3968,7 @@ LAB_005b2011:
     else {
       uVar16 = 0;
     }
-    st::external_00000080(&CHAR_00h_0080ef1e,"%s%s\\%s",PTR_s_MISSIONS__0079c054,uVar16,
+    st::external_00000080(&CHAR_00h_0080ef1e,"%s%s\\%s",st_global_0079C054,uVar16,
               &CHAR_00h_0080ed16);
     if (*(int *)&this_01->field_0x31 < (int)this_01->field_1C9F->elementSize) {
       uVar16 = *(undefined4 *)(this_01->field_1C9F->growCapacity + *(int *)&this_01->field_0x31 * 4);
@@ -4028,7 +4028,7 @@ LAB_005b2011:
     uVar15 = 0;
     st::fn_006B8280(&CHAR_00h_0080f22a,&CHAR_00h_0080f22a);
     uVar28 = 0xffffffff;
-    pcVar19 = PTR_s_CAMPAIGN_VPS_0079c05c;
+    pcVar19 = st_global_0079C05C;
     do {
       pcVar17 = pcVar19;
       if (uVar28 == 0) break;

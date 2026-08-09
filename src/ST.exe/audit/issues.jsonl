@@ -1,23 +1,11 @@
-{"address": "00433E90", "detail": "PushTV: 00401884, 00405920", "kind": "ambiguous_direct_call"}
-{"address": "00433E90", "detail": "STAllPlayersC::PushTV: 00401884, 00405920", "kind": "ambiguous_direct_call"}
 {"address": "00497E00", "detail": "GrpMove: 0040304E, 0040593E", "kind": "ambiguous_direct_call"}
-{"address": "00497E00", "detail": "STGroupBoatC::GrpMove: 0040304E, 0040593E", "kind": "ambiguous_direct_call"}
-{"address": "004FB060", "detail": "CPanelTy::PaintTxtBut: 00405812, 00405EA2", "kind": "ambiguous_direct_call"}
 {"address": "004FB060", "detail": "PaintTxtBut: 00405812, 00405EA2", "kind": "ambiguous_direct_call"}
-{"address": "00510E30", "detail": "ccFntTy::operator_new: 0070CEB0, 0070DF00", "kind": "ambiguous_direct_call"}
-{"address": "00510E30", "detail": "operator_new: 0070CEB0, 0070DF00", "kind": "ambiguous_direct_call"}
 {"address": "00511DF0", "detail": "ShiftControls: 00402ED2, 00404FD9", "kind": "ambiguous_direct_call"}
-{"address": "00511FA0", "detail": "SetPanel: 00401A73, 0040425F", "kind": "ambiguous_direct_call"}
-{"address": "0052F2B0", "detail": "SetPanel: 00401A73, 0040425F", "kind": "ambiguous_direct_call"}
 {"address": "0052F2B0", "detail": "ShiftControls: 00402ED2, 00405A1A", "kind": "ambiguous_direct_call"}
 {"address": "0053A6B0", "detail": "ShiftControls: 00402ED2, 004038BE", "kind": "ambiguous_direct_call"}
-{"address": "0056DB80", "detail": "delete: 00405B28, 006F1170", "kind": "ambiguous_direct_call"}
 {"address": "0056FA60", "detail": "AddSystem: 006E4650, 006E47E0", "kind": "ambiguous_direct_call"}
 {"address": "0056FA60", "detail": "AppClassTy::AddSystem: 006E4650, 006E47E0", "kind": "ambiguous_direct_call"}
-{"address": "00596CC0", "detail": "FSGSTy::OutTRGlProc: 0040303F, 004035E9", "kind": "ambiguous_direct_call"}
 {"address": "00596CC0", "detail": "OutTRGlProc: 0040303F, 004035E9", "kind": "ambiguous_direct_call"}
-{"address": "00652810", "detail": "CPanelTy::OutText: 0040195B, 00403152", "kind": "ambiguous_direct_call"}
-{"address": "00652810", "detail": "OutText: 0040195B, 00403152", "kind": "ambiguous_direct_call"}
 {"detail": "/SubmarineTitans/Recovered/PointerShapes/AnonShape_0052D0A0_90C708AF:entries renamed to entries_dup2", "kind": "duplicate_field_name"}
 {"detail": "/SubmarineTitans/Recovered/PointerShapes/AnonShape_006A58B0_8049417A:entries renamed to entries_dup2", "kind": "duplicate_field_name"}
 {"detail": "/SubmarineTitans/Recovered/PointerShapes/AnonShape_006A58B0_CDE73679:entries renamed to entries_dup2", "kind": "duplicate_field_name"}
@@ -1183,6 +1171,21 @@
 {"address": "00721CD0", "detail": "00721CD0 Library::Ourlib::SEDIT: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
 {"address": "00722070", "detail": "00722070 Library::Ourlib::SEDIT: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
 {"address": "00725760", "detail": "00725760 Library::Ourlib::ST3DPAUS: 0 matching record paths", "kind": "source_member_owner_ambiguous"}
+{"address": "00418D20", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "0042C300", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "00448120", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "00484020", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "0049AAF0", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "004AE0B0", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "004C5350", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "004DA390", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "00565820", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "005FAC40", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "006264D0", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "0063D660", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "0064E5C0", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "006D0F50", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
+{"address": "007297E0", "detail": "no synthetic lifetime satisfied exact lexical-scope proof", "kind": "tagged_lifetime_scope_unresolved"}
 {"detail": "GUID: selected /guiddef.h/GUID; aliases /GUID, /guiddef.h/GUID", "kind": "type_name_collision"}
 {"detail": "SystemClassTy: selected /SubmarineTitans/Recovered/SystemClassTy; aliases /SystemClassTy, /SubmarineTitans/Recovered/SystemClassTy", "kind": "type_name_collision"}
 {"detail": "ULONG: selected /wtypes.h/ULONG; aliases /WinDef.h/ULONG, /wtypes.h/ULONG", "kind": "type_name_collision"}

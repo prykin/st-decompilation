@@ -46,6 +46,11 @@ extern char CHAR_0Dh_007d2a00;
 extern char CHAR_0_007a9d88;
 extern char CHAR_0_007c21a4;
 extern char CHAR_1_007a4ffc;
+extern char CHAR_2_007aa028;
+extern char CHAR_3_007aa024;
+extern char CHAR_4_007aa020;
+extern char CHAR_5_007aa01c;
+extern char CHAR_6_007aa018;
 extern char CHAR_7_007aa014;
 extern char CHAR_B_007ca248;
 extern char CHAR_D_007cdb88;
@@ -59,14 +64,31 @@ extern char CHAR_E_007d24a4;
 extern char CHAR_E_007d2500;
 extern char CHAR_N_007ca684;
 extern char CHAR_N_007ca694;
+extern char CHAR_S_007ca24c;
 extern char CHAR_W_007ca250;
 extern char CHAR_a_007a4ff4;
 extern char CHAR_a_007a5000;
+extern char CHAR_a_007a9de4;
 extern char CHAR_a_007d251c;
+extern char CHAR_a_007d2578;
 extern char CHAR_b_007a4ff8;
+extern char CHAR_b_007a9db8;
 extern char CHAR_b_007d0564;
 extern char CHAR_b_007d24ec;
+extern char CHAR_c_007a4fb0;
+extern char CHAR_c_007a9dd8;
+extern char CHAR_c_007a9ddc;
+extern char CHAR_c_007a9e30;
+extern char CHAR_c_007a9e38;
+extern char CHAR_c_007a9e7c;
+extern char CHAR_c_007ce4d4;
+extern char CHAR_d_007a9dc0;
+extern char CHAR_d_007a9df4;
+extern char CHAR_d_007a9e28;
+extern char CHAR_d_007a9e74;
 extern char CHAR_e_007a5044;
+extern char CHAR_e_007a9dac;
+extern char CHAR_e_007a9dbc;
 extern char CHAR_e_007d0570;
 extern char CHAR_e_007d0588;
 extern char CHAR_e_007d0594;
@@ -80,17 +102,43 @@ extern char CHAR_e_007d24f8;
 extern char CHAR_e_007d2508;
 extern char CHAR_e_007d2514;
 extern char CHAR_f_007a9d8c;
+extern char CHAR_f_007a9d94;
+extern char CHAR_f_007a9d9c;
 extern char CHAR_g_007a9db0;
 extern char CHAR_g_007a9ea4;
+extern char CHAR_h_007a9e20;
+extern char CHAR_h_007a9e84;
+extern char CHAR_i_007a9e18;
+extern char CHAR_i_007d2534;
+extern char CHAR_l_007a9df8;
+extern char CHAR_l_007a9e10;
 extern char CHAR_l_007a9e40;
+extern char CHAR_l_007a9e54;
 extern char CHAR_l_007a9e94;
+extern char CHAR_m_007a9e6c;
 extern char CHAR_m_007cae18;
 extern char CHAR_m_007cb260;
 extern char CHAR_o_007a4fac;
+extern char CHAR_p_007a9dcc;
 extern char CHAR_p_007a9dec;
 extern char CHAR_p_007a9e9c;
+extern char CHAR_r_007a9dc8;
+extern char CHAR_r_007a9e00;
+extern char CHAR_r_007a9e08;
+extern char CHAR_r_007a9e5c;
+extern char CHAR_r_007a9e64;
 extern char CHAR_r_007cb2a8;
 extern char CHAR_s_007a4fb4;
+extern char CHAR_s_007a9da4;
+extern char CHAR_s_007a9dc4;
+extern char CHAR_s_007a9dd0;
+extern char CHAR_s_007a9e8c;
+extern char CHAR_s_007cae4c;
+extern char CHAR_t_007a9dd4;
+extern char CHAR_t_007a9e48;
+extern char CHAR_u_007a9db4;
+extern char CHAR_w_007a9e50;
+extern char CHAR_z_007cae44;
 extern CampaignTyVTable st_global_0079BFF8; // image symbol: CampaignTyVTable
 extern ChooseMapTyVTable st_global_0079C088; // image symbol: ChooseMapTyVTable
 extern undefined4 DAT_0000000b;
@@ -404,7 +452,6 @@ extern undefined4 DAT_007a4bf8;
 extern undefined4 DAT_007a4c20;
 extern undefined4 DAT_007a4c24;
 extern undefined4 DAT_007a4d24;
-extern undefined1 DAT_007a4fb0;
 extern undefined4 DAT_007a5248;
 extern undefined4 DAT_007a8b18;
 extern undefined4 DAT_007a8b1c;
@@ -430,47 +477,6 @@ extern undefined4 DAT_007a9444;
 extern undefined4 DAT_007a9538;
 extern undefined4 DAT_007a9640;
 extern undefined4 DAT_007a9748;
-extern undefined1 DAT_007a9d94;
-extern undefined1 DAT_007a9d9c;
-extern undefined1 DAT_007a9da4;
-extern undefined1 DAT_007a9dac;
-extern undefined1 DAT_007a9db4;
-extern undefined1 DAT_007a9db8;
-extern undefined1 DAT_007a9dbc;
-extern undefined1 DAT_007a9dc0;
-extern undefined1 DAT_007a9dc4;
-extern undefined1 DAT_007a9dc8;
-extern undefined1 DAT_007a9dcc;
-extern undefined1 DAT_007a9dd0;
-extern undefined1 DAT_007a9dd4;
-extern undefined1 DAT_007a9dd8;
-extern undefined1 DAT_007a9ddc;
-extern undefined1 DAT_007a9de4;
-extern undefined1 DAT_007a9df4;
-extern undefined1 DAT_007a9df8;
-extern undefined1 DAT_007a9e00;
-extern undefined1 DAT_007a9e08;
-extern undefined1 DAT_007a9e10;
-extern undefined1 DAT_007a9e18;
-extern undefined1 DAT_007a9e20;
-extern undefined1 DAT_007a9e28;
-extern undefined1 DAT_007a9e30;
-extern undefined1 DAT_007a9e38;
-extern undefined1 DAT_007a9e48;
-extern undefined1 DAT_007a9e50;
-extern undefined1 DAT_007a9e54;
-extern undefined1 DAT_007a9e5c;
-extern undefined1 DAT_007a9e64;
-extern undefined1 DAT_007a9e6c;
-extern undefined1 DAT_007a9e74;
-extern undefined1 DAT_007a9e7c;
-extern undefined1 DAT_007a9e84;
-extern undefined1 DAT_007a9e8c;
-extern undefined1 DAT_007aa018;
-extern undefined1 DAT_007aa01c;
-extern undefined1 DAT_007aa020;
-extern undefined1 DAT_007aa024;
-extern undefined1 DAT_007aa028;
 extern undefined4 DAT_007abc64;
 extern undefined4 DAT_007ac584;
 extern undefined4 DAT_007ac988;
@@ -558,14 +564,11 @@ extern undefined4 DAT_007c978c;
 extern undefined4 DAT_007c9790;
 extern undefined4 DAT_007c9794;
 extern undefined4 DAT_007ca15c;
-extern undefined1 DAT_007ca24c;
 extern undefined1 DAT_007ca2e4;
 extern undefined4 DAT_007ca4f8;
 extern undefined4 DAT_007ca508;
 extern undefined4 DAT_007ca690;
 extern undefined1 DAT_007ca6a4;
-extern undefined1 DAT_007cae44;
-extern undefined1 DAT_007cae4c;
 extern undefined4 DAT_007cb008;
 extern undefined4 DAT_007cb010;
 extern undefined4 DAT_007cb0b8;
@@ -618,7 +621,6 @@ extern undefined4 DAT_007cdf52;
 extern undefined4 DAT_007cdf56;
 extern undefined4 DAT_007cdf5a;
 extern undefined4 DAT_007cdf5e;
-extern undefined1 DAT_007ce4d4;
 extern undefined4 DAT_007ce5b0;
 extern undefined4 DAT_007ce5b4;
 extern undefined4 DAT_007ce5ec;
@@ -781,8 +783,6 @@ extern undefined4 DAT_007d2474;
 extern undefined4 DAT_007d247c;
 extern undefined4 DAT_007d2484;
 extern undefined4 DAT_007d2490;
-extern undefined1 DAT_007d2534;
-extern undefined1 DAT_007d2578;
 extern undefined4 DAT_007d2d18;
 extern undefined4 DAT_007d2d20;
 extern undefined4 DAT_007d2d24;
@@ -2393,7 +2393,7 @@ extern undefined4 _DAT_007d5e08;
 extern undefined4 _DAT_007d5e1c;
 extern undefined4 _DAT_007d5f60;
 extern undefined4 _DAT_007d5f70;
-extern undefined1 _DAT_007ec178;
+extern undefined1 _DAT_007ec178; // image symbol: DAT_007ec178
 extern undefined4 _DAT_007f4d70;
 extern undefined4 _DAT_007fb224;
 extern undefined4 _DAT_00800f10;
@@ -2448,17 +2448,17 @@ extern undefined4 _DAT_00803364;
 extern undefined4 _DAT_0080336c;
 extern undefined4 _DAT_00803370;
 extern undefined4 _DAT_00806744;
-extern undefined1 _DAT_008072f8;
-extern undefined2 _DAT_008072fc;
+extern undefined1 _DAT_008072f8; // image symbol: DAT_008072f8
+extern undefined2 _DAT_008072fc; // image symbol: DAT_008072fc
 extern undefined4 _DAT_00807306;
 extern undefined4 _DAT_00807312;
 extern undefined4 _DAT_00807316;
-extern undefined1 _DAT_00807330;
+extern undefined1 _DAT_00807330; // image symbol: DAT_00807330
 extern undefined4 _DAT_00807336;
-extern undefined1 _DAT_00807340;
+extern undefined1 _DAT_00807340; // image symbol: DAT_00807340
 extern undefined4 _DAT_00807341;
-extern undefined1 _DAT_00807348;
-extern undefined2 _DAT_008073d4;
+extern undefined1 _DAT_00807348; // image symbol: DAT_00807348
+extern undefined2 _DAT_008073d4; // image symbol: DAT_008073d4
 extern undefined4 _DAT_008073e4;
 extern undefined4 _DAT_008073e8;
 extern undefined4 _DAT_008073ec;
@@ -2486,9 +2486,9 @@ extern undefined4 _DAT_0080758c;
 extern undefined4 _DAT_00807590;
 extern undefined4 _DAT_00807594;
 extern undefined4 _DAT_00808798;
-extern undefined1 _DAT_008087a0;
+extern undefined1 _DAT_008087a0; // image symbol: DAT_008087a0
 extern undefined4 _DAT_008087a1;
-extern undefined1 _DAT_008087ba;
+extern undefined1 _DAT_008087ba; // image symbol: DAT_008087ba
 extern undefined4 _DAT_008087c4;
 extern undefined4 _DAT_0080e42a;
 extern undefined4 _DAT_0080e42e;
@@ -2508,7 +2508,7 @@ extern undefined4 _DAT_00811790;
 extern undefined4 _DAT_00811950;
 extern undefined4 _DAT_00847820;
 extern undefined4 _DAT_008478a4;
-extern undefined2 _DAT_00853cdc;
+extern undefined2 _DAT_00853cdc; // image symbol: DAT_00853cdc
 extern undefined4 _DAT_00853ce0;
 extern undefined4 _DAT_00853ce4;
 extern undefined4 _DAT_00853ce8;
@@ -2556,19 +2556,19 @@ extern undefined4 _DAT_00856dbc;
 extern undefined4 _DAT_00856fec;
 extern undefined4 _DAT_00856ff0;
 extern undefined4 _DAT_00856ff4;
-extern undefined1 _DAT_00857000;
+extern undefined1 _DAT_00857000; // image symbol: DAT_00857000
 extern undefined4 _DAT_00857080;
 extern undefined4 _DAT_00857088;
 extern undefined4 _DAT_008570b4;
 extern undefined4 _DAT_008570c4;
 extern undefined4 _DAT_008570d4;
-extern undefined1 _DAT_008570f8;
+extern undefined1 _DAT_008570f8; // image symbol: DAT_008570f8
 extern undefined4 _DAT_00857100;
 extern undefined4 _DAT_0085750c;
 extern undefined4 _DAT_00857510;
 extern undefined4 _DAT_00857514;
 extern undefined4 _DAT_00857518;
-extern undefined4 _DAT_00857548;
+extern undefined4 _DAT_00857548; // image symbol: DAT_00857548
 extern undefined4 _DAT_00857550;
 extern undefined4 _DAT_00858e28;
 extern STAllPlayersC *g_allPlayers_007FA174;
@@ -2685,3 +2685,269 @@ extern TraksClassTy *g_traksClass_00802A7C;
 extern UpgPanelTy *g_upgPanel_00802A48;
 extern VisibleClassTy *g_visibleClass_00802A88;
 extern STWorldGrid g_worldGrid;
+extern STGameObjCVTable st_global_007900A0; // image symbol: STGameObjCVTable
+extern VTable_00790508 st_global_00790508; // image symbol: VTable_00790508
+extern STAllPlayersCVTable st_global_0079059C; // image symbol: STAllPlayersCVTable
+extern STBoatCVTable st_global_007905A0; // image symbol: STBoatCVTable
+extern VTable_00790700 st_global_00790700; // image symbol: VTable_00790700
+extern VTable_00790708 st_global_00790708; // image symbol: VTable_00790708
+extern DumpClassCVTable st_global_00790710; // image symbol: DumpClassCVTable
+extern STGroupBoatCVTable st_global_00790728; // image symbol: STGroupBoatCVTable
+extern OpticClassCVTable st_global_00790758; // image symbol: OpticClassCVTable
+extern VTable_00790790 st_global_00790790; // image symbol: VTable_00790790
+extern TLOBaseTyVTable st_global_00790AA0; // image symbol: TLOBaseTyVTable
+extern VTable_00790C00 st_global_00790C00; // image symbol: VTable_00790C00
+extern TLOBldMarkVTable st_global_00790C04; // image symbol: TLOBldMarkVTable
+extern TLOFakeTyVTable st_global_00797560; // image symbol: TLOFakeTyVTable
+extern VTable_007976C0 st_global_007976C0; // image symbol: VTable_007976C0
+extern VTable_00798C6C st_global_00798C6C; // image symbol: VTable_00798C6C
+extern VTable_00798C70 st_global_00798C70; // image symbol: VTable_00798C70
+extern BehPanelTyVTable st_global_0079AB74; // image symbol: BehPanelTyVTable
+extern BldBoatPanelTyVTable st_global_0079ABA0; // image symbol: BldBoatPanelTyVTable
+extern BldLabPanelTyVTable st_global_0079ABC8; // image symbol: BldLabPanelTyVTable
+extern BldObjPanelTyVTable st_global_0079ABF0; // image symbol: BldObjPanelTyVTable
+extern VTable_0079AC18 st_global_0079AC18; // image symbol: VTable_0079AC18
+extern FrmPanelTyVTable st_global_0079AC1C; // image symbol: FrmPanelTyVTable
+extern VTable_0079AC48 st_global_0079AC48; // image symbol: VTable_0079AC48
+extern HelpStringTyVTable st_global_0079AC6C; // image symbol: HelpStringTyVTable
+extern InfocPanelTyVTable st_global_0079AC70; // image symbol: InfocPanelTyVTable
+extern IntercomPanelTyVTable st_global_0079AC9C; // image symbol: IntercomPanelTyVTable
+extern MoneyTyVTable st_global_0079ACE4; // image symbol: MoneyTyVTable
+extern char *st_global_0079ACEC; // image symbol: PTR_s_SAVEGAME\_0079acec
+extern char *st_global_0079ACF0; // image symbol: PTR_s_SYSTEM\_0079acf0
+extern undefined *st_global_0079ACF4; // image symbol: PTR_CHAR_._0079acf4
+extern undefined *st_global_0079ACF8; // image symbol: PTR_CHAR_._0079acf8
+extern OptPanelTyVTable st_global_0079AD10; // image symbol: OptPanelTyVTable
+extern PausePanelTyVTable st_global_0079AD2C; // image symbol: PausePanelTyVTable
+extern PlayPanelTyVTable st_global_0079AD48; // image symbol: PlayPanelTyVTable
+extern ResearchPanelTyVTable st_global_0079AD64; // image symbol: ResearchPanelTyVTable
+extern SAMPanelTyVTable st_global_0079AD8C; // image symbol: SAMPanelTyVTable
+extern InterSystemCVTable st_global_0079ADB8; // image symbol: InterSystemCVTable
+extern char *st_global_0079ADE4; // image symbol: PTR_s_SAVEGAME\_0079ade4
+extern STPlaySystemCVTable st_global_0079AE38; // image symbol: STPlaySystemCVTable
+extern VTable_0079AE64 st_global_0079AE64; // image symbol: VTable_0079AE64
+extern UpgPanelTyVTable st_global_0079AE90; // image symbol: UpgPanelTyVTable
+extern TraksClassTyVTable st_global_0079AEC0; // image symbol: TraksClassTyVTable
+extern VisibleClassTyVTable st_global_0079AEEC; // image symbol: VisibleClassTyVTable
+extern char *st_global_0079AEF0; // image symbol: PTR_s_UPDATES\_0079aef0
+extern char *st_global_0079AEF4; // image symbol: PTR_s_ST.INF_0079aef4
+extern CFsgsConnectionVTable st_global_0079AEFC; // image symbol: CFsgsConnectionVTable
+extern SoundManagerTyVTable st_global_0079B024; // image symbol: SoundManagerTyVTable
+extern char *st_global_0079B02C; // image symbol: PTR_s_SAVEGAME\_0079b02c
+extern char *st_global_0079B030; // image symbol: PTR_s_SYSTEM\_0079b030
+extern undefined *st_global_0079B034; // image symbol: PTR_CHAR_._0079b034
+extern undefined *st_global_0079B038; // image symbol: PTR_CHAR_._0079b038
+extern char *st_global_0079B03C; // image symbol: PTR_s_CAMPAIGN.VPS_0079b03c
+extern char *st_global_0079B040; // image symbol: PTR_s_STARTUP.VPS_0079b040
+extern STAppCVTable st_global_0079B0A8; // image symbol: STAppCVTable
+extern char *st_global_0079B0CC; // image symbol: PTR_s_SAVEGAME\_0079b0cc
+extern char *st_global_0079B114; // image symbol: PTR_s_UPDATES\_0079b114
+extern STAlgaCVTable st_global_0079B188; // image symbol: STAlgaCVTable
+extern BaseSystemCVTable st_global_0079B1B4; // image symbol: BaseSystemCVTable
+extern GameSystemCVTable st_global_0079B1E0; // image symbol: GameSystemCVTable
+extern DebugSystemCVTable st_global_0079B20C; // image symbol: DebugSystemCVTable
+extern STCrabCVTable st_global_0079B238; // image symbol: STCrabCVTable
+extern VTable_0079B398 st_global_0079B398; // image symbol: VTable_0079B398
+extern STFishCVTable st_global_0079B3C4; // image symbol: STFishCVTable
+extern VTable_0079B524 st_global_0079B524; // image symbol: VTable_0079B524
+extern STDcResourcCVTable st_global_0079B528; // image symbol: STDcResourcCVTable
+extern VTable_0079B688 st_global_0079B688; // image symbol: VTable_0079B688
+extern STJellyManCVTable st_global_0079B68C; // image symbol: STJellyManCVTable
+extern STJellyGunCVTable st_global_0079B78C; // image symbol: STJellyGunCVTable
+extern VTable_0079B8EC st_global_0079B8EC; // image symbol: VTable_0079B8EC
+extern STLBombCVTable st_global_0079B8F0; // image symbol: STLBombCVTable
+extern VTable_0079BA50 st_global_0079BA50; // image symbol: VTable_0079BA50
+extern STMBombCVTable st_global_0079BA54; // image symbol: STMBombCVTable
+extern VTable_0079BBB4 st_global_0079BBB4; // image symbol: VTable_0079BBB4
+extern STOctopusCVTable st_global_0079BBB8; // image symbol: STOctopusCVTable
+extern VTable_0079BD18 st_global_0079BD18; // image symbol: VTable_0079BD18
+extern STSatCVTable st_global_0079BD1C; // image symbol: STSatCVTable
+extern VTable_0079BE7C st_global_0079BE7C; // image symbol: VTable_0079BE7C
+extern STSharkCVTable st_global_0079BE80; // image symbol: STSharkCVTable
+extern VTable_0079BFE0 st_global_0079BFE0; // image symbol: VTable_0079BFE0
+extern MAdvTyVTable st_global_0079BFE4; // image symbol: MAdvTyVTable
+extern char *st_global_0079BFE8; // image symbol: PTR_s_MISSIONS\_0079bfe8
+extern CampaignTyVTable st_global_0079BFF8; // image symbol: CampaignTyVTable
+extern MMObjTyVTable st_global_0079C008; // image symbol: MMObjTyVTable
+extern VTable_0079C018 st_global_0079C018; // image symbol: VTable_0079C018
+extern VisibleVTable st_global_0079C01C; // image symbol: VisibleVTable
+extern char *st_global_0079C020; // image symbol: PTR_s_UPDATES\_0079c020
+extern char *st_global_0079C024; // image symbol: PTR_s_ST.INF_0079c024
+extern FSGSTyVTable st_global_0079C02C; // image symbol: FSGSTyVTable
+extern char *st_global_0079C04C; // image symbol: PTR_s_SAVEGAME\_0079c04c
+extern char *st_global_0079C050; // image symbol: PTR_s_CUSTOM\_0079c050
+extern char *st_global_0079C054; // image symbol: PTR_s_MISSIONS\_0079c054
+extern undefined *st_global_0079C058; // image symbol: PTR_CHAR_._0079c058
+extern char *st_global_0079C05C; // image symbol: PTR_s_CAMPAIGN.VPS_0079c05c
+extern ChooseMapTyVTable st_global_0079C088; // image symbol: ChooseMapTyVTable
+extern MainMenuTyVTable st_global_0079C098; // image symbol: MainMenuTyVTable
+extern MMsgTyVTable st_global_0079C0A8; // image symbol: MMsgTyVTable
+extern char *st_global_0079C0B8; // image symbol: PTR_s_SAVEGAME\_0079c0b8
+extern char *st_global_0079C0BC; // image symbol: PTR_s_CUSTOM\_0079c0bc
+extern PrividerTyVTable st_global_0079C0C4; // image symbol: PrividerTyVTable
+extern char *st_global_0079C0D4; // image symbol: PTR_s_SAVEGAME\_0079c0d4
+extern MReportTyVTable st_global_0079C0E4; // image symbol: MReportTyVTable
+extern char *st_global_0079C0E8; // image symbol: PTR_s_MISSIONS\_0079c0e8
+extern char *st_global_0079C0EC; // image symbol: PTR_s_SYSTEM\_0079c0ec
+extern undefined *st_global_0079C0F0; // image symbol: PTR_CHAR_._0079c0f0
+extern SettMapMTyVTable st_global_0079C124; // image symbol: SettMapMTyVTable
+extern SettMapTyVTable st_global_0079C160; // image symbol: SettMapTyVTable
+extern char *st_global_0079C19C; // image symbol: PTR_s_SAVEGAME\_0079c19c
+extern SIDTyVTable st_global_0079C1AC; // image symbol: SIDTyVTable
+extern char *st_global_0079C1BC; // image symbol: PTR_s_CUSTOM\_0079c1bc
+extern undefined *st_global_0079C1C0; // image symbol: PTR_CHAR_._0079c1c0
+extern undefined *st_global_0079C1C4; // image symbol: PTR_CHAR_._0079c1c4
+extern StartSystemTyVTable st_global_0079C1E8; // image symbol: StartSystemTyVTable
+extern MTestTyVTable st_global_0079C23C; // image symbol: MTestTyVTable
+extern char *st_global_0079C240; // image symbol: PTR_s_SAVEGAME\_0079c240
+extern char *st_global_0079C244; // image symbol: PTR_s_CUSTOM\_0079c244
+extern WaitTyVTable st_global_0079C24C; // image symbol: WaitTyVTable
+extern STArtiafactCVTable_at_1D5 st_global_0079C25C; // image symbol: STArtiafactCVTable_at_1D5
+extern STArtiafactCVTable st_global_0079C260; // image symbol: STArtiafactCVTable
+extern STSprGameObjCVTable st_global_0079C3EC; // image symbol: STSprGameObjCVTable
+extern VTable_0079C578 st_global_0079C578; // image symbol: VTable_0079C578
+extern STManBasisCVTable st_global_0079C580; // image symbol: STManBasisCVTable
+extern STBHEShellCVTable st_global_0079C584; // image symbol: STBHEShellCVTable
+extern STColl3CVTable_at_1D5 st_global_0079C5A8; // image symbol: STColl3CVTable_at_1D5
+extern STColl3CVTable st_global_0079C5AC; // image symbol: STColl3CVTable
+extern STContainerCVTable_at_1D5 st_global_0079C710; // image symbol: STContainerCVTable_at_1D5
+extern STContainerCVTable st_global_0079C714; // image symbol: STContainerCVTable
+extern VTable_0079C8A0 st_global_0079C8A0; // image symbol: VTable_0079C8A0
+extern STDestCVTable st_global_0079C9B0; // image symbol: STDestCVTable
+extern VTable_0079CB10 st_global_0079CB10; // image symbol: VTable_0079CB10
+extern STExplosionVTable st_global_0079CB14; // image symbol: STExplosionVTable
+extern VTable_0079CC28 st_global_0079CC28; // image symbol: VTable_0079CC28
+extern VTable_0079CD94 st_global_0079CD94; // image symbol: VTable_0079CD94
+extern JumpManagCVTable st_global_0079CEBC; // image symbol: JumpManagCVTable
+extern STJumpMineCVTable st_global_0079CED0; // image symbol: STJumpMineCVTable
+extern STLightCVTable st_global_0079CED4; // image symbol: STLightCVTable
+extern STMineSetCVTable st_global_0079CEFC; // image symbol: STMineSetCVTable
+extern VTable_0079D05C st_global_0079D05C; // image symbol: VTable_0079D05C
+extern STManRub3CVTable st_global_0079D084; // image symbol: STManRub3CVTable
+extern STRubbishCVTable st_global_0079D098; // image symbol: STRubbishCVTable
+extern STManRuinCVTable st_global_0079D19C; // image symbol: STManRuinCVTable
+extern VTable_0079D1D8 st_global_0079D1D8; // image symbol: VTable_0079D1D8
+extern VTable_0079D338 st_global_0079D338; // image symbol: VTable_0079D338
+extern VTable_0079D33C st_global_0079D33C; // image symbol: VTable_0079D33C
+extern VTable_0079D49C st_global_0079D49C; // image symbol: VTable_0079D49C
+extern STTorpCVTable st_global_0079D4AC; // image symbol: STTorpCVTable
+extern STVolcanoCVTable st_global_0079D610; // image symbol: STVolcanoCVTable
+extern AiBossClassTyVTable_at_1C st_global_0079D618; // image symbol: AiBossClassTyVTable_at_1C
+extern AiBossClassTyVTable st_global_0079D658; // image symbol: AiBossClassTyVTable
+extern VTable_0079D67C st_global_0079D67C; // image symbol: VTable_0079D67C
+extern AiFltClassTyVTable st_global_0079D6BC; // image symbol: AiFltClassTyVTable
+extern char *st_global_0079D6C0; // image symbol: PTR_s_SAVEGAME\_0079d6c0
+extern AiPlrClassTyVTable_at_1C st_global_0079D6D4; // image symbol: AiPlrClassTyVTable_at_1C
+extern AiPlrClassTyVTable st_global_0079D714; // image symbol: AiPlrClassTyVTable
+extern char *st_global_0079D738; // image symbol: PTR_s___CONST__%03d_0079d738
+extern char *st_global_0079D73C; // image symbol: PTR_s___INCLUDE__%03d_0079d73c
+extern char *st_global_0079D740; // image symbol: PTR_s___EXPAR__%03d_0079d740
+extern char *st_global_0079D744; // image symbol: PTR_s__RT%d_0079d744
+extern char *st_global_0079D748; // image symbol: PTR_s__GL%d_0079d748
+extern char *st_global_0079D74C; // image symbol: PTR_s__PI%d_0079d74c
+extern char *st_global_0079D750; // image symbol: PTR_s__PS%d_0079d750
+extern AiTactClassTyVTable st_global_0079D76C; // image symbol: AiTactClassTyVTable
+extern VTable_0079DAF0 st_global_0079DAF0; // image symbol: VTable_0079DAF0
+extern VTable_0079DB04 st_global_0079DB04; // image symbol: VTable_0079DB04
+extern VTable_0079DB28 st_global_0079DB28; // image symbol: VTable_0079DB28
+extern VTable_0079DB3C st_global_0079DB3C; // image symbol: VTable_0079DB3C
+extern VTable_0079DB78 st_global_0079DB78; // image symbol: VTable_0079DB78
+extern VTable_0079DC3C st_global_0079DC3C; // image symbol: VTable_0079DC3C
+extern VTable_0079DC60 st_global_0079DC60; // image symbol: VTable_0079DC60
+extern VTable_0079DC74 st_global_0079DC74; // image symbol: VTable_0079DC74
+extern VTable_0079DCBC st_global_0079DCBC; // image symbol: VTable_0079DCBC
+extern VTable_0079DCF8 st_global_0079DCF8; // image symbol: VTable_0079DCF8
+extern VTable_0079DD1C st_global_0079DD1C; // image symbol: VTable_0079DD1C
+extern VTable_0079DD34 st_global_0079DD34; // image symbol: VTable_0079DD34
+extern VTable_0079DD9C st_global_0079DD9C; // image symbol: VTable_0079DD9C
+extern VTable_0079DDB0 st_global_0079DDB0; // image symbol: VTable_0079DDB0
+extern VTable_0079DDEC st_global_0079DDEC; // image symbol: VTable_0079DDEC
+extern VTable_0079DE58 st_global_0079DE58; // image symbol: VTable_0079DE58
+extern VTable_0079DE7C st_global_0079DE7C; // image symbol: VTable_0079DE7C
+extern VTable_0079DE90 st_global_0079DE90; // image symbol: VTable_0079DE90
+extern VTable_0079DED8 st_global_0079DED8; // image symbol: VTable_0079DED8
+extern AppClassTyVTable st_global_0079E16C; // image symbol: AppClassTyVTable
+extern SystemClassTyVTable st_global_0079E188; // image symbol: SystemClassTyVTable
+extern VTable_0079E1AC st_global_0079E1AC; // image symbol: VTable_0079E1AC
+extern VTable_0079E1B0 st_global_0079E1B0; // image symbol: VTable_0079E1B0
+extern SystemWithNamedObjClassTyVTable st_global_0079E1B4; // image symbol: SystemWithNamedObjClassTyVTable
+extern SpriteClassTyVTable st_global_0079E21C; // image symbol: SpriteClassTyVTable
+extern VTable_0079E284 st_global_0079E284; // image symbol: VTable_0079E284
+extern ButtonClassTyVTable st_global_0079E288; // image symbol: ButtonClassTyVTable
+extern VTable_0079E294 st_global_0079E294; // image symbol: VTable_0079E294
+extern VTable_0079E298 st_global_0079E298; // image symbol: VTable_0079E298
+extern ListClassTyVTable st_global_0079E2A4; // image symbol: ListClassTyVTable
+extern VTable_0079E2B4 st_global_0079E2B4; // image symbol: VTable_0079E2B4
+extern VTable_0079E2C0 st_global_0079E2C0; // image symbol: VTable_0079E2C0
+extern VTable_0079E2C8 st_global_0079E2C8; // image symbol: VTable_0079E2C8
+extern TrackbarClassTyVTable st_global_0079E2CC; // image symbol: TrackbarClassTyVTable
+extern VTable_0079E360 st_global_0079E360; // image symbol: VTable_0079E360
+extern VTable_007A1108 st_global_007A1108; // image symbol: VTable_007A1108
+extern VTable_007A1128 st_global_007A1128; // image symbol: VTable_007A1128
+extern VTable_007A1148 st_global_007A1148; // image symbol: VTable_007A1148
+extern VTable_007A11A0 st_global_007A11A0; // image symbol: VTable_007A11A0
+extern VTable_007A11C8 st_global_007A11C8; // image symbol: VTable_007A11C8
+extern VTable_007A1378 st_global_007A1378; // image symbol: VTable_007A1378
+extern VTable_007A1390 st_global_007A1390; // image symbol: VTable_007A1390
+extern VTable_007A13D0 st_global_007A13D0; // image symbol: VTable_007A13D0
+extern VTable_007A1488 st_global_007A1488; // image symbol: VTable_007A1488
+extern VTable_007A14B0 st_global_007A14B0; // image symbol: VTable_007A14B0
+extern VTable_007A14C8 st_global_007A14C8; // image symbol: VTable_007A14C8
+extern VTable_007A1510 st_global_007A1510; // image symbol: VTable_007A1510
+extern VTable_007A1550 st_global_007A1550; // image symbol: VTable_007A1550
+extern VTable_007A1568 st_global_007A1568; // image symbol: VTable_007A1568
+extern VTable_007A1590 st_global_007A1590; // image symbol: VTable_007A1590
+extern VTable_007A15A8 st_global_007A15A8; // image symbol: VTable_007A15A8
+extern VTable_007A15E8 st_global_007A15E8; // image symbol: VTable_007A15E8
+extern VTable_007A1740 st_global_007A1740; // image symbol: VTable_007A1740
+extern VTable_007A1768 st_global_007A1768; // image symbol: VTable_007A1768
+extern VTable_007A1780 st_global_007A1780; // image symbol: VTable_007A1780
+extern VTable_007A17C8 st_global_007A17C8; // image symbol: VTable_007A17C8
+extern VTable_007A1808 st_global_007A1808; // image symbol: VTable_007A1808
+extern VTable_007A1820 st_global_007A1820; // image symbol: VTable_007A1820
+extern VTable_007A1868 st_global_007A1868; // image symbol: VTable_007A1868
+extern VTable_007A18C8 st_global_007A18C8; // image symbol: VTable_007A18C8
+extern VTable_007A18F0 st_global_007A18F0; // image symbol: VTable_007A18F0
+extern VTable_007A1908 st_global_007A1908; // image symbol: VTable_007A1908
+extern VTable_007A1950 st_global_007A1950; // image symbol: VTable_007A1950
+extern VTable_007A1990 st_global_007A1990; // image symbol: VTable_007A1990
+extern VTable_007A19A8 st_global_007A19A8; // image symbol: VTable_007A19A8
+extern VTable_007A19F0 st_global_007A19F0; // image symbol: VTable_007A19F0
+extern VTable_007A1C08 st_global_007A1C08; // image symbol: VTable_007A1C08
+extern VTable_007A1C18 st_global_007A1C18; // image symbol: VTable_007A1C18
+extern VTable_007A1C60 st_global_007A1C60; // image symbol: VTable_007A1C60
+extern VTable_007A1CB8 st_global_007A1CB8; // image symbol: VTable_007A1CB8
+extern VTable_007A1CC8 st_global_007A1CC8; // image symbol: VTable_007A1CC8
+extern VTable_007A1D10 st_global_007A1D10; // image symbol: VTable_007A1D10
+extern VTable_007A1D68 st_global_007A1D68; // image symbol: VTable_007A1D68
+extern VTable_007A1D88 st_global_007A1D88; // image symbol: VTable_007A1D88
+extern char st_global_007C1B00; // image symbol: CHAR_#_007c1b00
+extern char st_global_007C3B5C; // image symbol: CHAR_ _007c3b5c
+extern char st_global_007C3FEC; // image symbol: CHAR_ _007c3fec
+extern char st_global_007C3FF4; // image symbol: CHAR_ _007c3ff4
+extern char st_global_007C7078; // image symbol: CHAR_._007c7078
+extern char st_global_007C7080; // image symbol: CHAR_._007c7080
+extern char st_global_007C7274; // image symbol: CHAR_._007c7274
+extern char st_global_007C7278; // image symbol: CHAR_?_007c7278
+extern char st_global_007C72D8; // image symbol: CHAR_*_007c72d8
+extern char st_global_007C8FEC; // image symbol: CHAR_|_007c8fec
+extern char st_global_007CA0B8; // image symbol: CHAR_._007ca0b8
+extern char *st_global_007CB08C; // image symbol: PTR_s_rc276_c%d_007cb08c
+extern char *st_global_007CB090; // image symbol: PTR_s_rc276_%d_007cb090
+extern char *st_global_007CB098; // image symbol: PTR_s_rgold_%d_007cb098
+extern char *st_global_007CB09C; // image symbol: PTR_s_rmeta_c%d_007cb09c
+extern char *st_global_007CB0A0; // image symbol: PTR_s_rmeta_%d_007cb0a0
+extern char st_global_007CC58C; // image symbol: CHAR_ _007cc58c
+extern char st_global_007CC8BC; // image symbol: CHAR_*_007cc8bc
+extern char st_global_007CD500; // image symbol: CHAR_#_007cd500
+extern char st_global_007D5684; // image symbol: CHAR_(_007d5684
+extern undefined *st_global_007F0AFC; // image symbol: PTR_CHAR_ _007f0afc
+extern undefined *st_global_007F0B00; // image symbol: PTR_CHAR_*_007f0b00
+extern byte st_image_006B68B0; // exact image address, semantic type unresolved
+extern byte st_image_0072D964; // exact image address, semantic type unresolved
+extern byte st_image_0074A606; // exact image address, semantic type unresolved
+extern byte st_image_00750541; // exact image address, semantic type unresolved
+extern byte st_image_0075054A; // exact image address, semantic type unresolved
+extern byte st_image_00750553; // exact image address, semantic type unresolved
+extern byte st_image_0075055C; // exact image address, semantic type unresolved
+extern byte st_image_0075AAA0; // exact image address, semantic type unresolved

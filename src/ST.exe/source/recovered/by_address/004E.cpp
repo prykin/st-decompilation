@@ -4059,7 +4059,7 @@ undefined4 st::fn_004E76E0(int param_1,uint *param_2,byte param_3)
   DAT_00801024 = param_3;
   do {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    _param_3 = 0;
+    auto _param_3 = 0;
     memset(&DAT_00800bd0, 0, 0x30c); /* compiler bulk-zero initialization */
     if (DAT_00801020 == nullptr) {
       return 0;
@@ -4216,7 +4216,7 @@ LAB_004e7b13:
       piVar12 = (int *)(&PTR_DAT_007c0dc8)[iVar6];
       if (*piVar12 != 0) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        _param_3 = 0;
+        auto _param_3 = 0;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = 5;
         local_1c = (undefined4 *)((int)&DAT_00800bd0 + local_c * 5);

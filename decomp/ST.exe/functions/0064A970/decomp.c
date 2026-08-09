@@ -271,8 +271,9 @@ cf_common_exit_0064BBB1:
           }
           goto cf_error_exit_0064B714;
         }
-        int scalar_local_18 = **(code **)*local_38)(param_1; /* split integer lifetime from pointer-typed SSA storage */
-        local_c = (int *)(float)scalar_local_18;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        local_18 = (byte *)(**(code **)*local_38)(param_1);
+        local_c = (int *)(float)(int)local_18;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
         local_14 = (float)fVar19;

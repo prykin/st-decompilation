@@ -222,15 +222,15 @@ LAB_00510fa9:
   pCVar7 = st::fn_0040577C("BUT_HLPLINK",0);
   local_EAX_739 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar7,piVar25,iVar30);
   this_00->field_024C = local_EAX_739;
-  pcVar8 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
+  pcVar8 = (ccFntTy *)st::fn_0070DF00(0x19d,g_interSystem_00802A28->field_0028);
   this_00->field_01E0 = pcVar8;
   pcVar8->field_0058 = 0;
   pcVar8->field_005C = 0;
-  pcVar8 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_002C);
+  pcVar8 = (ccFntTy *)st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_002C);
   this_00->field_01E4 = pcVar8;
   pcVar8->field_0058 = 1;
   pcVar8->field_005C = 0;
-  pcVar8 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
+  pcVar8 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
   this_00->field_01E8 = pcVar8;
   pcVar8->field_0058 = 1;
   pcVar8->field_005C = 0;
@@ -2507,7 +2507,7 @@ LAB_00514f85:
   if (puVar6 == nullptr) {
     pDVar4 = st::fn_006B54F0(nullptr,10,10);
     this_00->field_01D3 = &pDVar4->flags;
-    st::fn_006B5AA0(pDVar4,&CHAR___007c3b5c);
+    st::fn_006B5AA0(pDVar4,&st_global_007C3B5C);
   }
   puVar6 = this_00->field_01D3;
   if (puVar6[2] != 0) {

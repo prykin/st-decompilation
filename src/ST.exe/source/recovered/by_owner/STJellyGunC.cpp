@@ -28,7 +28,7 @@ undefined4 __thiscall st::fn_00415ED0(STJellyGunC *this,undefined4 *param_1,int 
   undefined4 local_8;
 
   puStack_c = &DAT_007901b0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   if ((this->field_0068 == this->field_0064) && (0 < this->field_0068)) {

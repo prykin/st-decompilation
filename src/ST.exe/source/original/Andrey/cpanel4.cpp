@@ -26,7 +26,7 @@ void __thiscall st::fn_005044B0(CPanelTy *this,int param_1)
   char *_Dest;
   InternalExceptionFrame local_54;
   CPanelTy *local_10;
-  undefined1 *local_c;
+  char *local_c;
   UINT local_8;
 
   local_54.previous = g_currentExceptionFrame;
@@ -38,25 +38,25 @@ void __thiscall st::fn_005044B0(CPanelTy *this,int param_1)
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_10->field_0194,param_1,0x50,'\x01',
            (byte *)local_10->field_09D9[5]);
     if (pCVar2->field_0BF5 == CASE_38) {
-      local_c = (undefined1 *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(2));
+      local_c = (char *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(2));
     }
     else {
-      local_c = (undefined1 *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(pCVar2->field_0BF5 == CASE_4F));
+      local_c = (char *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(pCVar2->field_0BF5 == CASE_4F));
     }
     pBVar4 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02D2,
                           (uint)local_c & 0xff);
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,param_1 + 3,0x53,'\x01',
            (byte *)pBVar4);
     if (pCVar2->field_0BF5 == CASE_38) {
-      local_c = &DAT_007aa024;
+      local_c = &CHAR_3_007aa024;
       local_8 = 0x271c;
     }
     else if (pCVar2->field_0BF5 == CASE_4F) {
-      local_c = &DAT_007aa020;
+      local_c = &CHAR_4_007aa020;
       local_8 = 0x271e;
     }
     else {
-      local_c = &DAT_007aa028;
+      local_c = &CHAR_2_007aa028;
       local_8 = 0x271d;
     }
     _Count = 0x32;

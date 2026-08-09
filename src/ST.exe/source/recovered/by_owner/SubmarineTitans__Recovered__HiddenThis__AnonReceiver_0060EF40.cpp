@@ -66,7 +66,7 @@ st::fn_0060EF40
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079ce98;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff38;
   sVar11 = *(short *)&this->field_0x215;

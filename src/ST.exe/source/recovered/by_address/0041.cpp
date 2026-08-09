@@ -626,7 +626,7 @@ void st::fn_00413AF0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790090;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   DAT_007f4d04 = nullptr;
   DAT_007f4cf0 = g_pathingGrid.cells;
@@ -1236,7 +1236,7 @@ st::fn_00415B30(void *this,short param_1,short param_2,short param_3,short param
   undefined4 local_8;
 
   puStack_c = &DAT_007901a0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
@@ -1597,7 +1597,7 @@ void __thiscall st::fn_004167A0(void *this)
   undefined4 local_8;
 
   puStack_c = &DAT_007901d0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   if (STField<int>(this,0x97) != 0) {
@@ -1656,7 +1656,7 @@ undefined2 st::fn_004168D0(short param_1,short param_2,undefined4 param_3,short 
   undefined4 local_8;
 
   puStack_c = &DAT_00790350;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffffbc;
   local_8 = 0;
@@ -1787,7 +1787,7 @@ undefined2 st::fn_00416DB0(short param_1,short param_2,undefined4 param_3,short 
   undefined4 local_8;
 
   puStack_c = &DAT_007904e0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffffbc;
   local_8 = 0;

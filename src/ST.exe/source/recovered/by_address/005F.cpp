@@ -2907,7 +2907,7 @@ st::fn_005FB1F0(void *this,short param_1,short param_2,short param_3,short param
                          (int)param_6 - (int)STField<short>(this,0x45),uVar3,uVar8,uVar6,
                          (int *)&DAT_007ce794,0x7ce7a0,(uint *)&param_3,&local_c,&local_10);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      _param_4 = (int)(_param_3 * iVar5 + local_c * uVar4) / 10000;
+      auto _param_4 = (int)(_param_3 * iVar5 + local_c * uVar4) / 10000;
       iVar5 = (int)(local_c * iVar5 - _param_3 * uVar4) / 10000;
       st::fn_006DD530
                 (STField<ST3DSMAPContext *>(this,0x211),&local_1c,&local_18,&local_14);
@@ -3375,7 +3375,7 @@ st::fn_005FCF50(int param_1,undefined4 param_2,int param_3,undefined4 *param_4,c
       if (param_1 != 3) {
         return;
       }
-      pcVar4 = &DAT_007ce4d4;
+      pcVar4 = &CHAR_c_007ce4d4;
     }
     uVar2 = 0xffffffff;
     do {
@@ -4319,7 +4319,7 @@ int __thiscall st::fn_005FEB60(void *this,int param_1,int param_2,int param_3)
   undefined4 local_8;
 
   puStack_c = &DAT_0079c9a0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff64;
   iVar13 = 0;

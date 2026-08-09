@@ -12,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.ArrayDeque;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -441,28 +442,99 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 !isFullRegister(operands[0])) return;
         GlobalValue source = referencedGlobal(instruction, 1, operands[1], true);
         if (source == null) return;
-        Instruction next = instruction.getNext();
-        for (int count = 0; next != null && count < 8 &&
-                function.getBody().contains(next.getAddress()); count++, next = next.getNext()) {
-            String nextMnemonic = next.getMnemonicString().toUpperCase(Locale.ROOT);
-            if (nextMnemonic.contains("SCASB")) {
-                String site = addr(function.getEntryPoint()) +
-                    " exact EDI NUL scan from global " + addr(source.address) +
-                    " @ " + addr(instruction.getAddress()) + " -> " +
-                    addr(next.getAddress());
-                add(source.address, "/char", "", true, true, site);
-                evidence.get(source.address).cstringScans++;
-                return;
+        Address scan = provenCStringScan(function, instruction);
+        if (scan == null) return;
+        String site = addr(function.getEntryPoint()) +
+            " exact CFG EDI NUL scan from global " + addr(source.address) +
+            " @ " + addr(instruction.getAddress()) + " -> " + addr(scan);
+        add(source.address, "/char", "", true, true, site);
+        evidence.get(source.address).cstringScans++;
+    }
+
+    /**
+     * Follow all machine CFG successors from one exact EDI load.  Every path
+     * must reach SCASB with AL proven zero before EDI is overwritten.  This is
+     * deliberately stricter than a linear mnemonic window, but it also handles
+     * the common MSVC switch shape in which every case loads a different string
+     * address and jumps to one shared inlined strlen tail.
+     */
+    private Address provenCStringScan(Function function, Instruction origin) {
+        Address first = origin.getFallThrough();
+        if (first == null || !function.getBody().contains(first)) return null;
+        ArrayDeque<CStringState> pending = new ArrayDeque<>();
+        Set<String> visited = new HashSet<>();
+        pending.add(new CStringState(first, false));
+        Address firstScan = null;
+        int instructionsSeen = 0;
+        while (!pending.isEmpty()) {
+            CStringState state = pending.removeFirst();
+            String key = addr(state.address) + ":" + state.lowAccumulatorZero;
+            if (!visited.add(key)) continue;
+            if (++instructionsSeen > 256) return null;
+            Instruction current = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (current == null || !function.getBody().contains(current.getAddress()))
+                return null;
+            String currentMnemonic = current.getMnemonicString()
+                .toUpperCase(Locale.ROOT);
+            if (currentMnemonic.contains("SCASB")) {
+                if (!state.lowAccumulatorZero) return null;
+                if (firstScan == null) firstScan = current.getAddress();
+                continue;
             }
-            if (next.getFlowType().isJump() || next.getFlowType().isTerminal() ||
-                    "CALL".equals(nextMnemonic)) return;
-            String[] nextOperands = splitOperands(
-                next.toString().toUpperCase(Locale.ROOT));
-            String destination = nextOperands.length == 0 ? null :
-                cleanRegister(nextOperands[0]);
-            if ("EDI".equals(destination) && !Set.of("CMP", "TEST", "PUSH")
-                    .contains(nextMnemonic)) return;
+            if ("CALL".equals(currentMnemonic) || current.getFlowType().isTerminal())
+                return null;
+            String[] currentOperands = splitOperands(
+                current.toString().toUpperCase(Locale.ROOT));
+            if (overwritesEdi(currentMnemonic, currentOperands)) return null;
+            boolean lowZero = updateLowAccumulatorZero(currentMnemonic,
+                currentOperands, state.lowAccumulatorZero);
+            List<Address> successors = new ArrayList<>();
+            for (Address flow : current.getFlows()) successors.add(flow);
+            Address fallThrough = current.getFallThrough();
+            if (fallThrough != null && !successors.contains(fallThrough))
+                successors.add(fallThrough);
+            if (successors.isEmpty()) return null;
+            for (Address successor : successors) {
+                if (!function.getBody().contains(successor)) return null;
+                // A pre-scan loop has a path which need not reach the scan.
+                // Reject it rather than interpreting a visited-set cutoff as
+                // proof of termination.
+                if (successor.compareTo(current.getAddress()) <= 0) return null;
+                pending.addLast(new CStringState(successor, lowZero));
+            }
         }
+        return firstScan;
+    }
+
+    private boolean overwritesEdi(String mnemonic, String[] operands) {
+        if (mnemonic.contains("MOVS") || mnemonic.contains("STOS") ||
+                mnemonic.contains("CMPS")) return true;
+        if (operands.length == 0) return "POP".equals(mnemonic);
+        String destination = cleanRegister(operands[0]);
+        if (destination == null || !"EDI".equals(canonicalRegister(destination)))
+            return false;
+        return !Set.of("CMP", "TEST", "PUSH").contains(mnemonic);
+    }
+
+    private boolean updateLowAccumulatorZero(String mnemonic, String[] operands,
+            boolean previous) {
+        if (operands.length == 0) return previous;
+        String destination = operands[0].trim().toUpperCase(Locale.ROOT);
+        if ("AH".equals(destination)) return previous;
+        if (!("EAX".equals(destination) || "AX".equals(destination) ||
+                "AL".equals(destination))) return previous;
+        if (("XOR".equals(mnemonic) || "SUB".equals(mnemonic)) &&
+                operands.length >= 2 &&
+                destination.equals(operands[1].trim().toUpperCase(Locale.ROOT))) return true;
+        if (("MOV".equals(mnemonic) || "AND".equals(mnemonic)) &&
+                operands.length >= 2 && isZeroImmediate(operands[1])) return true;
+        return Set.of("CMP", "TEST", "PUSH").contains(mnemonic) ? previous : false;
+    }
+
+    private boolean isZeroImmediate(String operand) {
+        String value = operand.trim().replaceAll("(?i)^(?:BYTE|WORD|DWORD)\\s+PTR\\s+", "");
+        return value.matches("(?i)(?:0|0X0+|0+H)");
     }
 
     private void add(Address address, String type, String name, boolean strong,
@@ -1211,6 +1283,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             initializedStringPointers, cstringScans;
     }
     private record ContextVote(String family, int count, int total) {}
+    private record CStringState(Address address, boolean lowAccumulatorZero) {}
     private record TypedValue(String type, String producer, boolean constructorResult) {}
     private static class Proposal {
         final Address address; final String expectedName, expectedNameSource, expectedType,

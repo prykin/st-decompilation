@@ -224,13 +224,13 @@ The accepted corpus contains the following concrete debt:
 
 | Issue | Occurrences | Functions | Next evidence source |
 | --- | ---: | ---: | --- |
-| `undefined_type` | 18,595 | 3,658 | definitions, consumers, ABI-width families; compatibility spelling is now available |
-| `raw_pointer_offset` | 2,240 | 1,024 | cross-function pointer families and complete records |
-| `raw_indirect_call` | 1,885 | 773 | stored callback targets and physical vtable slots |
+| `undefined_type` | 18,327 | 3,640 | definitions, consumers, ABI-width families; compatibility spelling is now available |
+| `raw_pointer_offset` | 2,248 | 1,023 | cross-function pointer families and complete records |
+| `raw_indirect_call` | 1,886 | 773 | stored callback targets and physical vtable slots |
 | `packed_or_unaligned_piece` | 0 raw partial tokens | 0 | exact exported pieces now use audited runtime helpers; semantic packed-member refinement remains |
 | `return_width_artifact` | 558 uses | 138 | whole-CFG EAX/x87 and caller-consumer evidence; declarations are no longer double-counted |
 | `unresolved_register_input` | 472 | 132 | boundary ABI, SEH/setjmp, and true live-ins |
-| `dynamic_array_indexing` | 76 | 39 | per-owner DArray element descriptors |
+| `dynamic_array_indexing` | 76 | 38 | per-owner DArray element descriptors |
 | `flattened_global_record_array` | 36 | 17 | exact member identity inside proven record arrays |
 
 ### Q-044 Build a measurable C++ extraction boundary
@@ -428,20 +428,39 @@ converge with zero enabled rows. Source generation resolves address-coded
 function leaves by entry address and removes 116 stale line-wrapped owner
 qualifiers after rewriting them to `st::fn_ADDRESS`.
 
-Accepted corpus state:
+Latest accepted corpus state:
 
-- semantic hash `4327f2202e47da1b761486e6f74c84fb5cece9e73eb83b5fecbeb29fb5159f38`;
-- manifest `6e172d04cd0969a077667798bc597a6e0795c8612d69bb92ef814e71619b50e6`;
+- semantic hash `9f9ee6d4638ff024c7cbdc9292d0554b293a9960f0e883f9489235e94c57a228`;
+- manifest `62c23b9a9b29058f25fbce3d8f1c7ff34485edbbbc897ddc7531232a0cc80563`;
+- accepted export run `db177316e99af87fb7849a8d84850337d45a6b7cc50bb388dbd105f1cc2b7c77`;
 - 10,392 functions, 5,712 bodies, zero failed bodies, 2,729 typed vtable slots;
-- export gate: zero hard regressions and two nonblocking stage-transition warnings;
-- full-pipeline duration: `00:38:52`.
+- export and ABI gates: zero errors and zero warnings;
+- confirming export duration: `00:05:15`, with all 10,392 bodies reused.
 
-The next largest semantic clusters are not another global-array presentation
-bug: 1,426 assignment and 1,182 call-argument diagnostics chiefly expose local
-pointer/scalar lifetime disagreement, weak boundary prototypes, and signedness
-differences. The 4,283 exported stack-slot-reuse occurrences are the broadest
-shared cause. Repair them in Ghidra or by an exact tagged source-lifetime
-materialization; do not hide them behind arbitrary generated casts.
+The character scan now follows every forward CFG path from an exact EDI global
+load to a common zero-AL `SCASB` tail. The first full pass applied 48 additional
+character-storage facts, including switch cases which the old eight-instruction
+linear window could not reach; the confirming analyzer has zero enabled rows.
+
+The offline source layer closes four broad assembly causes without introducing
+image-specific lists: 145 invalid address-coded global spellings, 78 external
+address-taken labels, 17 calls uniquely resolved by exported arity, and 40
+lexically closed exporter-tagged stack-slot lifetimes. `CONCAT`/subpiece/carry
+runtime operations are inline templates rather than comma-sensitive macros.
+The 64-error-per-TU compiler audit now passes 71/318 units and retains 4,496
+errors, 4,491 address-mapped. This is 266 fewer than the preceding accepted
+4,762-error checkpoint; no syntax diagnostic remains. The last malformed
+`DArrayAt` was not papered over: the exporter detected its impossible arity,
+freshly decompiled the body, and tightened alias recognition to standalone
+assignment statements.
+
+The next largest semantic clusters are therefore genuine Ghidra recovery debt:
+1,426 assignment and 1,226 call-argument diagnostics, followed by 794 undeclared
+identifiers and 273 pointer-indirection errors. The 4,283 exported stack-slot-
+reuse occurrences remain the broadest shared cause, but only closed lexical
+lifetimes may be materialized offline. Mixed pointer/scalar merge groups,
+prototype families, and the 1,886 raw indirect calls must be repaired from
+machine/call-boundary evidence rather than hidden behind generated casts.
 
 Next infrastructure item: replace the safe whole-Program semantic epoch for
 the slow broad analyzers with dependency fingerprints over the exact function,

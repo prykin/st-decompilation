@@ -5679,8 +5679,8 @@ void __thiscall st::fn_0052D320(void *this,char *text,uint param_2)
 
   bVar1 = (byte)param_2;
   if (STField<char>(this,0x9c) == '\0') {
-    st::fn_00402FEA(this,&CHAR___007c3b5c,bVar1);
-    st::fn_00402FEA(this,&CHAR___007c3b5c,bVar1);
+    st::fn_00402FEA(this,&st_global_007C3B5C,bVar1);
+    st::fn_00402FEA(this,&st_global_007C3B5C,bVar1);
   }
   st::fn_00402FEA(this,text,bVar1);
   return;

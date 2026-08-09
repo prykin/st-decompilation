@@ -491,7 +491,7 @@ void __thiscall st::fn_005D8450(SIDTy *this)
   memmove(pcVar10, pcVar8, uVar4); /* compiler REP MOVS byte copy */
   uVar5 = 0;
   uVar4 = 0xffffffff;
-  pcVar8_mg2 = PTR_s_SAVEGAME__0079c19c;
+  pcVar8_mg2 = st_global_0079C19C;
   do {
     pcVar8 = pcVar8_mg2;
     if (uVar4 == 0) break;
@@ -770,9 +770,9 @@ void __thiscall st::fn_005D8BF0(SIDTy *this)
   st::fn_006E6080(this_01,2,uVar8,(undefined4 *)&this_01->field_0x1d);
   st::fn_006B4170((RecoveredSourceFamily_dibcopy *)this_01->field_1CB8,0,3,0x15,0x142,0x62,0xff);
   st::fn_006B35D0((int *)g_ddxContext_008075A8,this_01->field_1CB4);
-  st::external_00000080(&this_01->field_1CD4,"%s%s",&CHAR_00h_00807680,PTR_s_SAVEGAME__0079c19c);
+  st::external_00000080(&this_01->field_1CD4,"%s%s",&CHAR_00h_00807680,st_global_0079C19C);
   uVar8 = 0xffffffff;
-  pcVar14 = &CHAR___007cc8bc;
+  pcVar14 = &st_global_007CC8BC;
   do {
     pcVar6 = pcVar14;
     if (uVar8 == 0) break;
@@ -851,7 +851,7 @@ LAB_005d8dbf:
             } while (cVar1 != '\0');
             if (~uVar8 - 1 < 0x40) {
               st::external_00000080(&this_01->field_1CD4,"%s%s%s\\%s",&CHAR_00h_00807680,
-                        PTR_s_SAVEGAME__0079c19c,local_21c.cFileName,PTR_s_PL_LOG_0079c1a0);
+                        st_global_0079C19C,local_21c.cFileName,PTR_s_PL_LOG_0079c1a0);
               local_9c.previous = g_currentExceptionFrame;
               g_currentExceptionFrame = &local_9c;
               iVar4 = st::fn_0072D7F0(local_9c.jumpBuffer,0);
@@ -1271,8 +1271,8 @@ LAB_005d97ca:
               uVar11 = *(undefined4 *)this_00->field_1CD0->growCapacity;
             }
             st::external_00000080(&this_00->field_1CD4,"%s%s%s",&CHAR_00h_00807680,
-                      PTR_s_SAVEGAME__0079c19c,uVar11);
-            st::fn_00725910(&this_00->field_1CD4,&CHAR___007cc8bc,0,st::fn_00725C20,0,0);
+                      st_global_0079C19C,uVar11);
+            st::fn_00725910(&this_00->field_1CD4,&st_global_007CC8BC,0,st::fn_00725C20,0,0);
             st::fn_0040392C(this_00);
             this_00->field_1A5F = 0;
             st::fn_00402D3D(this_00);

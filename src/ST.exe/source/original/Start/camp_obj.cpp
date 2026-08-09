@@ -1543,13 +1543,13 @@ int __thiscall st::fn_00593040(CampaignTy *this,STMessage *message)
       if (this_00->field_1FFC == 0) {
         pcVar9_mg0 = PTR_DAT_0079bfec;
       }
-      st::external_00000080(&CHAR_00h_0080ed16,"%s%s%s%d01",&CHAR_00h_00807680,PTR_s_MISSIONS__0079bfe8
+      st::external_00000080(&CHAR_00h_0080ed16,"%s%s%s%d01",&CHAR_00h_00807680,st_global_0079BFE8
                 ,pcVar9_mg0,(uint)DAT_0080874e);
       pcVar9_mg1 = PTR_s_TUTOR_0079bff0;
       if (this_00->field_1FFC == 0) {
         pcVar9_mg1 = PTR_DAT_0079bfec;
       }
-      st::external_00000080(&CHAR_00h_0080ef1e,"%s%s%d01",PTR_s_MISSIONS__0079bfe8,pcVar9_mg1,
+      st::external_00000080(&CHAR_00h_0080ef1e,"%s%s%d01",st_global_0079BFE8,pcVar9_mg1,
                 (uint)DAT_0080874e);
       uVar11 = 0xffffffff;
       pcVar13 = &CHAR_00h_0080ed16;

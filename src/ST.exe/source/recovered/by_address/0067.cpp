@@ -2303,7 +2303,7 @@ int st::fn_006767D0(void)
   g_currentExceptionFrame = &local_4c;
   iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    st::external_00000080((LPSTR)local_150,"%s%s%s\\%s",&CHAR_00h_00807680,PTR_s_SAVEGAME__0079d6c0,
+    st::external_00000080((LPSTR)local_150,"%s%s%s\\%s",&CHAR_00h_00807680,st_global_0079D6C0,
               &CHAR_00h_00807ddd,PTR_s_PL_LOG_0079d6c4);
     this = (cMf32 *)st::fn_006F0EC0(0x345,local_150,2,0,0);
     local_8 = this;
@@ -4790,7 +4790,7 @@ byte * st::fn_0067ECA0(void)
 
 {
   DAT_00848a20 = DAT_00848a20 + 1;
-  st::external_00000080(&DAT_0084850c,PTR_s___CONST___03d_0079d738,DAT_00848a20);
+  st::external_00000080(&DAT_0084850c,st_global_0079D738,DAT_00848a20);
   return &DAT_0084850c;
 }
 
@@ -4802,7 +4802,7 @@ byte * st::fn_0067ECA0(void)
 byte * __cdecl st::fn_0067ECE0(undefined4 param_1)
 
 {
-  st::external_00000080(&DAT_0084850c,PTR_s___INCLUDE___03d_0079d73c,param_1);
+  st::external_00000080(&DAT_0084850c,st_global_0079D73C,param_1);
   return &DAT_0084850c;
 }
 
@@ -5672,7 +5672,7 @@ char * st::fn_0067FBD0(void)
 
 {
   DAT_00848a40 = DAT_00848a40 + 1;
-  st::external_00000080(&DAT_0084854c,PTR_s___EXPAR___03d_0079d740,DAT_00848a40);
+  st::external_00000080(&DAT_0084854c,st_global_0079D740,DAT_00848a40);
   return &DAT_0084854c;
 }
 
@@ -5852,7 +5852,7 @@ uint __cdecl st::fn_0067FDF0(AnonShape_00683780_11EA4E23 *param_1,byte *param_2)
 undefined4 __cdecl st::fn_0067FF00(char *param_1)
 
 {
-  st::fn_0072EE80(param_1,(byte *)PTR_s__RT_d_0079d744);
+  st::fn_0072EE80(param_1,(byte *)st_global_0079D744);
   return 0xffffffff;
 }
 
@@ -5863,7 +5863,7 @@ undefined4 __cdecl st::fn_0067FF00(char *param_1)
 undefined4 __cdecl st::fn_0067FF50(char *param_1)
 
 {
-  st::fn_0072EE80(param_1,(byte *)PTR_s__GL_d_0079d748);
+  st::fn_0072EE80(param_1,(byte *)st_global_0079D748);
   return 0xffffffff;
 }
 
@@ -5874,7 +5874,7 @@ undefined4 __cdecl st::fn_0067FF50(char *param_1)
 undefined4 __cdecl st::fn_0067FFA0(char *param_1)
 
 {
-  st::fn_0072EE80(param_1,(byte *)PTR_s__PI_d_0079d74c);
+  st::fn_0072EE80(param_1,(byte *)st_global_0079D74C);
   return 0xffffffff;
 }
 
@@ -5885,7 +5885,7 @@ undefined4 __cdecl st::fn_0067FFA0(char *param_1)
 undefined4 __cdecl st::fn_0067FFF0(char *param_1)
 
 {
-  st::fn_0072EE80(param_1,(byte *)PTR_s__PS_d_0079d750);
+  st::fn_0072EE80(param_1,(byte *)st_global_0079D750);
   return 0xffffffff;
 }
 

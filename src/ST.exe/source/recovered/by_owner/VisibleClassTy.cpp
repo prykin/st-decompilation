@@ -760,7 +760,7 @@ st::fn_005599D0
     iVar8 = param_2 - param_5;
     pbVar3 = st::fn_004028BF(param_5);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    _param_3 = iVar1;
+    auto _param_3 = iVar1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (int)pbVar3;
     if (0 < iVar1) {
@@ -846,7 +846,7 @@ st::fn_00559D60
     iVar8 = param_2 - param_5;
     pbVar3 = st::fn_004028BF(param_5);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    _param_3 = iVar1;
+    auto _param_3 = iVar1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (int)pbVar3;
     if (0 < iVar1) {
@@ -924,7 +924,7 @@ st::fn_0055A110
     iVar8 = param_2 - param_5;
     pbVar3 = st::fn_004028BF(param_5);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    _param_3 = iVar1;
+    auto _param_3 = iVar1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (int)pbVar3;
     if (0 < iVar1) {
@@ -1002,7 +1002,7 @@ st::fn_0055A4C0
     iVar8 = param_2 - param_5;
     pbVar3 = st::fn_004028BF(param_5);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    _param_3 = iVar1;
+    auto _param_3 = iVar1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (int)pbVar3;
     if (0 < iVar1) {
@@ -1080,7 +1080,7 @@ st::fn_0055A870
     iVar8 = param_2 - param_5;
     pbVar3 = st::fn_004028BF(param_5);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    _param_3 = iVar1;
+    auto _param_3 = iVar1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (int)pbVar3;
     if (0 < iVar1) {

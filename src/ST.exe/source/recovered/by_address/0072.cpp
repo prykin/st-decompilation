@@ -99,9 +99,9 @@ int __fastcall st::fn_00720D30(AnonShape_00720D30_DF382E7D *param_1)
       cVar1 = *pcVar7;
       pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
-    pcVar7 = PTR_CHAR___007f0afc;
+    pcVar7 = st_global_007F0AFC;
     if ((iVar5 != -2) && (pcVar7 = pcVar2, (param_1->field_0020 & 0x20) != 0)) {
-      pcVar7 = PTR_CHAR___007f0b00;
+      pcVar7 = st_global_007F0B00;
     }
     iVar4 = st::fn_007111C0((void *)param_1->field_0214,pcVar7);
     if (param_1->field_0030 < iVar4 + iVar6) {
@@ -190,9 +190,9 @@ void __thiscall st::fn_00720E70(void *this,int param_1,int param_2)
         cVar1 = *pcVar10;
         pcVar10 = pcVar10 + 1;
       } while (cVar1 != '\0');
-      pcVar10 = PTR_CHAR___007f0afc;
+      pcVar10 = st_global_007F0AFC;
       if ((iVar6 != -2) && (pcVar10 = pcVar8, (STField<byte>(this,0x20) & 0x20) != 0)) {
-        pcVar10 = PTR_CHAR___007f0b00;
+        pcVar10 = st_global_007F0B00;
       }
       iVar4 = st::fn_007111C0(STField<void *>(this,0x214),pcVar10);
       iVar6 = local_c;
@@ -243,7 +243,7 @@ cf_break_loop_00720F4E:
         }
         else {
           pvVar3 = STField<void *>(this,0x214);
-          uVar7 = st::fn_00710FB0(pvVar3,PTR_CHAR___007f0b00);
+          uVar7 = st::fn_00710FB0(pvVar3,st_global_007F0B00);
           sVar2 = *(short *)(STField<int>(pvVar3,0x9a) + 0x6a + (uVar7 & 0xffff) * 10);
         }
         iVar5 = *(int *)(STField<int>(this,0x214) + 0x58) + (int)sVar2;
@@ -393,9 +393,9 @@ LAB_0072122f:
           cVar1 = *pcVar8;
           pcVar8 = pcVar8 + 1;
         } while (cVar1 != '\0');
-        pcVar8 = PTR_CHAR___007f0afc;
+        pcVar8 = st_global_007F0AFC;
         if ((iVar5 == -2) ||
-           (pcVar8 = pcVar7, pcVar7 = PTR_CHAR___007f0b00, (STField<byte>(this,0x20) & 0x20) == 0
+           (pcVar8 = pcVar7, pcVar7 = st_global_007F0B00, (STField<byte>(this,0x20) & 0x20) == 0
            )) {
           pcVar7 = pcVar8;
         }
@@ -431,7 +431,7 @@ LAB_0072122f:
         }
         else {
           this_00 = STField<void *>(this,0x214);
-          pbVar11 = PTR_CHAR___007f0b00;
+          pbVar11 = st_global_007F0B00;
         }
         uVar3 = st::fn_00710FB0(this_00,pbVar11);
         iVar9 = *(int *)(STField<int>(this,0x214) + 0x58) +
@@ -1595,7 +1595,7 @@ st::fn_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_
       uVar7 = 0;
       st::fn_006B8280(local_108,local_108);
       uVar6 = 0xffffffff;
-      pcVar8 = &CHAR___007cc8bc;
+      pcVar8 = &st_global_007CC8BC;
       do {
         pcVar12 = pcVar8;
         if (uVar6 == 0) break;
@@ -2544,7 +2544,7 @@ void __thiscall st::fn_007279B0(void *this,int param_1,int param_2,int param_3)
   undefined4 local_8;
 
   puStack_c = &DAT_0079e2e8;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1 + 0x28) + param_2 * 0x1c;
@@ -3187,7 +3187,7 @@ st::fn_00728DA0(void *this,int param_1,int param_2,short *param_3,uint param_4,i
   undefined4 local_8;
 
   puStack_c = &DAT_0079e2f8;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_78 = 0;
   local_98 = 0;
@@ -3623,7 +3623,7 @@ int __fastcall st::fn_007295F0(AnonShape_007295F0_722683CC *param_1)
   undefined4 local_8;
 
   puStack_c = &DAT_0079e320;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffffa4;
   iVar8 = 0;
@@ -4933,7 +4933,7 @@ void st::fn_0072B0B0(void)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079e330;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff58;
   local_3c = 0;

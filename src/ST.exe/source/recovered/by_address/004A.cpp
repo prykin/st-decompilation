@@ -1370,7 +1370,7 @@ undefined4 __thiscall st::fn_004AC9E0(void *this,int param_1)
   undefined4 local_8;
 
   puStack_c = &DAT_00790798;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   if (STField<int>(this,0x18) == -1) {

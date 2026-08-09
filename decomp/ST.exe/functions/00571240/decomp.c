@@ -20,7 +20,7 @@ LPSTR __cdecl FUN_00571240(char *text,int param_2)
       pcVar1 = &CHAR_B_007ca248;
     }
     else if (DAT_0080874e == 3) {
-      pcVar1 = &DAT_007ca24c;
+      pcVar1 = &CHAR_S_007ca24c;
     }
     else {
       pcVar1 = &CHAR_W_007ca250;

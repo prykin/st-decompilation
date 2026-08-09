@@ -1158,7 +1158,7 @@ int __thiscall st::fn_006971B0(CGenerate *this)
   undefined4 local_8;
 
   puStack_c = &DAT_0079d788;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_20 = 0;
   local_8 = 0;
@@ -1957,7 +1957,7 @@ st::fn_006991C0
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d7b8;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffe98;
   local_f0 = 0;
@@ -3161,7 +3161,7 @@ st::fn_0069BDC0
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d808;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff6c;
   local_40 = 0;
@@ -3459,7 +3459,7 @@ uint __fastcall st::fn_0069CB50(int *param_1)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d818;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffe68;
   iVar14 = 0;

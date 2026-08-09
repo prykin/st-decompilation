@@ -5220,7 +5220,7 @@ LAB_005d3780:
     }
     else {
       if (pAVar37->field_0x3 != '\x02') {
-        pcVar29 = &DAT_007ca24c;
+        pcVar29 = &CHAR_S_007ca24c;
         goto LAB_005d3780;
       }
       uVar30 = 0xffffffff;
@@ -5275,7 +5275,7 @@ LAB_005d3780:
       iVar41 = -1;
       iVar24 = -1;
       pcVar35 = (char *)st::fn_0040326F(g_startSystem_0081176C->field_0034,
-                                           (uint *)&pAVar37->field_0xa,(uint *)&CHAR___007c7274,
+                                           (uint *)&pAVar37->field_0xa,(uint *)&st_global_007C7274,
                                            local_20);
       st::fn_007119C0(g_startSystem_0081176C->field_0034,pcVar35,iVar24,iVar41,uVar30);
       break;
@@ -5294,7 +5294,7 @@ LAB_005d3780:
     uVar30 = 2;
     iVar43 = -1;
     iVar41 = -1;
-    pcVar35 = &CHAR___007c7274;
+    pcVar35 = &st_global_007C7274;
     iVar24 = local_20;
 LAB_005d38bd:
     pcVar35 = (char *)st::fn_0040326F(g_startSystem_0081176C->field_0034,puVar18,(uint *)pcVar35,
@@ -5375,7 +5375,7 @@ LAB_005d38bd:
       } while (cVar2 != '\0');
       if (4 < ~uVar30 - 1) {
         uVar30 = 0xffffffff;
-        pcVar29 = &CHAR___007cd500;
+        pcVar29 = &st_global_007CD500;
         do {
           pcVar35 = pcVar29;
           if (uVar30 == 0) break;

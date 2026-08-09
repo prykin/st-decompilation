@@ -922,7 +922,7 @@ void __thiscall st::fn_005BAE00(PrividerTy *this)
               case '\x02':
               case '\x03':
                 st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,
-                          PTR_s_CUSTOM__0079c0bc);
+                          st_global_0079C0BC);
                 local_2c = *pcVar12;
                 local_2b = STField<undefined4>(psVar7,3);
                 local_27 = 0;
@@ -933,7 +933,7 @@ void __thiscall st::fn_005BAE00(PrividerTy *this)
                 break;
               case '\x05':
                 st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s\\",&CHAR_00h_00807680,
-                          PTR_s_SAVEGAME__0079c0b8,&CHAR_00h_00807ddd);
+                          st_global_0079C0B8,&CHAR_00h_00807ddd);
                 local_38 = *pcVar12;
                 local_37 = STField<undefined4>(psVar7,3);
                 local_33 = STField<undefined4>(psVar7,7);

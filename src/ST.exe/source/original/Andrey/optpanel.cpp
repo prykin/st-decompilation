@@ -1295,7 +1295,7 @@ LAB_0052fd4a:
           pcVar33 = pcVar33 + 1;
           st::fn_0072E340(pcVar6,&this_00->field_0x1f5,(size_t)pcVar33);
           uVar38 = 0xffffffff;
-          pcVar17 = &CHAR___007c7278;
+          pcVar17 = &st_global_007C7278;
           do {
             pcVar20 = pcVar17;
             if (uVar38 == 0) break;
@@ -1341,7 +1341,7 @@ LAB_0052fd4a:
         }
         st::fn_0072E340(local_984,&this_00->field_0x1f5,(size_t)(pcVar33 + -3));
         uVar38 = 0xffffffff;
-        pcVar33 = &CHAR___007c7274;
+        pcVar33 = &st_global_007C7274;
         do {
           pcVar6 = pcVar33;
           if (uVar38 == 0) break;
@@ -1417,7 +1417,7 @@ LAB_0052fd4a:
         } while (iVar16 < (int)(uint)DAT_00808aaf);
       }
       if (pcVar33 == nullptr) {
-        pcVar6 = &CHAR___007c7274;
+        pcVar6 = &st_global_007C7274;
 LAB_0052ff02:
         uVar38 = 0xffffffff;
         do {
@@ -1454,7 +1454,7 @@ LAB_0052ff02:
           _Count = sVar41 + 1;
           st::fn_0072E340(local_880,pcVar6,_Count);
           uVar38 = 0xffffffff;
-          pcVar33 = &CHAR___007c7278;
+          pcVar33 = &st_global_007C7278;
           do {
             pcVar17 = pcVar33;
             if (uVar38 == 0) break;
@@ -1501,7 +1501,7 @@ LAB_0052ff02:
         }
         st::fn_0072E340(local_880,pcVar6,sVar41 - 2);
         uVar38 = 0xffffffff;
-        pcVar33 = &CHAR___007c7274;
+        pcVar33 = &st_global_007C7274;
         do {
           pcVar6 = pcVar33;
           if (uVar38 == 0) break;
@@ -1762,7 +1762,7 @@ cf_common_join_005305BC:
       memmove(pcVar6, pcVar33, uVar38); /* compiler REP MOVS byte copy */
       uVar14 = 0;
       uVar38 = 0xffffffff;
-      pcVar7_mg32 = PTR_s_SAVEGAME__0079acec;
+      pcVar7_mg32 = st_global_0079ACEC;
       do {
         pcVar33 = pcVar7_mg32;
         if (uVar38 == 0) break;
@@ -2732,7 +2732,7 @@ void __thiscall st::fn_005325B0(OptPanelTy *this)
   case 0xd:
   case 0xe:
   case 0x13:
-    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079acf0,
+    st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,st_global_0079ACF0,
               PTR_s_STRATEGS_0079acfc);
     break;
   case 2:
@@ -3045,7 +3045,7 @@ void __thiscall st::fn_00532D50(OptPanelTy *this,uint param_1)
   memmove(pcVar15, pcVar12, uVar9); /* compiler REP MOVS byte copy */
   uVar10 = 0;
   uVar9 = 0xffffffff;
-  pcVar7_mg2 = PTR_s_SAVEGAME__0079acec;
+  pcVar7_mg2 = st_global_0079ACEC;
   do {
     pcVar12 = pcVar7_mg2;
     if (uVar9 == 0) break;
@@ -3136,7 +3136,7 @@ void __thiscall st::fn_00532D50(OptPanelTy *this,uint param_1)
   memmove(pcVar15, pcVar12, uVar9); /* compiler REP MOVS byte copy */
   uVar10 = 0;
   uVar9 = 0xffffffff;
-  pcVar12 = &CHAR___007c72d8;
+  pcVar12 = &st_global_007C72D8;
   do {
     pcVar15 = pcVar12;
     if (uVar9 == 0) break;
@@ -3161,7 +3161,7 @@ void __thiscall st::fn_00532D50(OptPanelTy *this,uint param_1)
   memmove(pcVar15, pcVar12, uVar9); /* compiler REP MOVS byte copy */
   uVar10 = 0;
   uVar9 = 0xffffffff;
-  pcVar12 = PTR_CHAR___0079acf4;
+  pcVar12 = st_global_0079ACF4;
   do {
     pcVar15 = pcVar12;
     if (uVar9 == 0) break;
@@ -4140,7 +4140,7 @@ LAB_00534654:
         memmove(pcVar22, pcVar25, uVar18); /* compiler REP MOVS byte copy */
         uVar16 = 0;
         uVar18 = 0xffffffff;
-        pcVar26_mg30 = PTR_s_SAVEGAME__0079acec;
+        pcVar26_mg30 = st_global_0079ACEC;
         do {
           pcVar25 = pcVar26_mg30;
           if (uVar18 == 0) break;
@@ -4323,7 +4323,7 @@ LAB_00534654:
         memmove(pcVar22, pcVar25, uVar18); /* compiler REP MOVS byte copy */
         uVar16 = 0;
         uVar18 = 0xffffffff;
-        pcVar26_mgC = PTR_s_SAVEGAME__0079acec;
+        pcVar26_mgC = st_global_0079ACEC;
         do {
           pcVar25 = pcVar26_mgC;
           if (uVar18 == 0) break;
@@ -4424,7 +4424,7 @@ LAB_00534654:
         memmove(pcVar22, pcVar25, uVar18); /* compiler REP MOVS byte copy */
         uVar16 = 0;
         uVar18 = 0xffffffff;
-        pcVar25 = PTR_CHAR___0079acf4;
+        pcVar25 = st_global_0079ACF4;
         do {
           pcVar22 = pcVar25;
           if (uVar18 == 0) break;
@@ -4465,7 +4465,7 @@ LAB_00534654:
         memmove(pcVar22, pcVar25, uVar18); /* compiler REP MOVS byte copy */
         uVar16 = 0;
         uVar18 = 0xffffffff;
-        pcVar26_mg1D = PTR_s_SAVEGAME__0079acec;
+        pcVar26_mg1D = st_global_0079ACEC;
         do {
           pcVar25 = pcVar26_mg1D;
           if (uVar18 == 0) break;
@@ -4566,7 +4566,7 @@ LAB_00534654:
         memmove(pcVar22, pcVar25, uVar18); /* compiler REP MOVS byte copy */
         uVar16 = 0;
         uVar18 = 0xffffffff;
-        pcVar25 = PTR_CHAR___0079acf8;
+        pcVar25 = st_global_0079ACF8;
         do {
           pcVar22 = pcVar25;
           if (uVar18 == 0) break;
@@ -4999,7 +4999,7 @@ switchD_00534835_caseD_1:
         case 0xd:
         case 0xe:
         case 0x13:
-          st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079acf0
+          st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,st_global_0079ACF0
                     ,PTR_s_STRATEGS_0079acfc);
           break;
         case 2:

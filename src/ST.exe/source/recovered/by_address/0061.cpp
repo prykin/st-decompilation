@@ -3435,7 +3435,7 @@ st::fn_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param
   undefined4 local_8;
 
   puStack_c = &DAT_0079cec0;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff58;
   piVar16 = (int *)&stack0xffffff58;

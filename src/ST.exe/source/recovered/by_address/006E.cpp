@@ -2068,7 +2068,7 @@ undefined4 st::fn_006EB570(int *param_1,AnonShape_006EB570_80B255F3 *param_2)
   undefined4 local_8;
 
   puStack_c = &DAT_0079e1d8;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff44;
   iVar1 = *(int *)param_2;
@@ -2533,7 +2533,7 @@ int __fastcall st::fn_006EC010(undefined4 *param_1)
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079e1e8;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff20;
   iVar13 = 0;

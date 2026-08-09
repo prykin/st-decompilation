@@ -5617,8 +5617,8 @@ void __thiscall st::fn_005A1160(FSGSTy *this)
     st::fn_006A5E40(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x935);
     return;
   }
-  st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079c020,
-            PTR_s_ST_INF_0079c024);
+  st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,st_global_0079C020,
+            st_global_0079C024);
   pcVar4 = (char *)st::fn_0040363E(&DAT_0080f33a,&local_8,nullptr,nullptr);
   this_01 = local_c;
   if (pcVar4 == nullptr) {
@@ -8291,7 +8291,7 @@ LAB_005a6d57:
         pcVar38_mg1 = st::fn_006B0140(0x25be,g_hINSTANCE_00807618);
         st::fn_00711B70(this_00->field_1A73,pcVar38_mg1,iVar44,iVar45,uVar34,iVar47,iVar48);
         st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
-        st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079c020,
+        st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,st_global_0079C020,
                   &DAT_0080f126);
         st::external_00000080(local_4b8,"subtitans/%s",&DAT_0080f126);
         st::external_000000F4

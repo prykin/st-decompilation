@@ -2552,7 +2552,7 @@ void __thiscall st::fn_00697CF0(void *this,int param_1,int param_2)
   undefined4 local_8;
 
   puStack_c = &DAT_0079d798;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff14;
   iVar13 = 0;
@@ -3203,7 +3203,7 @@ st::fn_0069B530(void *this,undefined4 param_1,int param_2,int param_3,int param_
   undefined4 local_8;
 
   puStack_c = &DAT_0079d7f8;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_2c = 0;
   local_80 = 0;
@@ -4095,7 +4095,7 @@ LAB_0069e887:
       } while ((local_70[uVar5] < 1) && (iVar6 = iVar6 + 1, iVar6 < 4));
     }
     if (0 < local_3c[uVar5]) {
-      local_24 = (int *)(int)asStack_4c[uVar5 * 2];
+      int scalar_local_24 = (int)asStack_4c[uVar5 * 2]; /* split integer lifetime from pointer-typed SSA storage */
       local_20 = (int)asStack_4c[uVar5 * 2 + 1];
       local_10 = 0;
       do {
@@ -4103,7 +4103,7 @@ LAB_0069e887:
         uVar3 = st::fn_0072E6C0();
         iVar2 = (int)uVar3 % 0x1f + 0x8c;
         iVar6 = st::fn_006AFF50((int)local_EAX_1189 % 0x169);
-        iVar9 = (iVar2 * iVar6) / 10000 + (int)local_24;
+        iVar9 = (iVar2 * iVar6) / 10000 + scalar_local_24;
         local_EAX_1261 = st::fn_006AFF5B((int)local_EAX_1189 % 0x169);
         iVar7 = (int)(local_EAX_1261 * iVar2) / 10000 + local_20;
         iVar6 = (iVar9 + param_2) / 100;
@@ -4342,7 +4342,7 @@ int __thiscall st::fn_0069F160(void *this,int param_1,int param_2,int param_3,in
 
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d828;
-  puStack_10 = &LAB_0072d964;
+  puStack_10 = &st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff40;
   local_58 = 0;

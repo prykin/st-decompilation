@@ -1851,7 +1851,7 @@ LAB_005d3780:
     }
     else {
       if (pAVar37->field_0x3 != '\x02') {
-        pcVar29 = &DAT_007ca24c;
+        pcVar29 = &CHAR_S_007ca24c;
         goto LAB_005d3780;
       }
       uVar30 = 0xffffffff;

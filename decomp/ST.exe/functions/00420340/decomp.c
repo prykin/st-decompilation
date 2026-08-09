@@ -172,7 +172,7 @@ switchD_00420436_caseD_1:
       pcVar11 = pcVar13 + -uVar6;
       pcVar13 = pcVar12 + -1;
       memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
-      pcVar11 = &DAT_007a4fb0;
+      pcVar11 = &CHAR_c_007a4fb0;
       break;
     case 2:
     case 3:

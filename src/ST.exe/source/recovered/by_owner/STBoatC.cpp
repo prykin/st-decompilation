@@ -1521,7 +1521,7 @@ st::fn_0048DFD0
   }
   if (local_18 / iVar5 < 5) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    _param_5 = local_18 * 2 + 1;
+    auto _param_5 = local_18 * 2 + 1;
     do {
       local_92 = (short)local_18;
       local_84 = local_92 + param_1;
