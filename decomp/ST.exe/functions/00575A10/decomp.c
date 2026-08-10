@@ -32,7 +32,8 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
   local_8 = 0;
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  iVar1 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0);
+  iVar1 = Library::MSVCRT::__setjmp3
+                    (local_60.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0);
   if (iVar1 == 0) {
     local_1c = &stack0xffffff8c;
     iVar2 = STAppC::InitApp((STAppC *)&DAT_00807620,param_1,param_2,param_3,param_4);

@@ -11,22 +11,22 @@
 void __thiscall st::fn_005925A0(CampaignTy *this)
 
 {
-  int *piVar1;
+  uint *puVar1;
   int local_8;
 
   local_8 = 0xd;
   this->field_1FF8 = 1;
-  piVar1 = &this->field_0066;
+  puVar1 = this->field_0066;
   do {
-    if (*piVar1 != 0) {
-      this->field_0025 = *piVar1;
+    if (*puVar1 != 0) {
+      this->field_0025 = *puVar1;
       this->field_0029 = 2;
       this->field_002D = 0x20;
       this->field_0031 = 1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this->field_000C + 0x18))(&this->field_0x1d);
     }
-    piVar1 = piVar1 + 1;
+    puVar1 = puVar1 + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
   return;
@@ -42,22 +42,22 @@ void __thiscall st::fn_005925A0(CampaignTy *this)
 void __thiscall st::fn_00592620(CampaignTy *this)
 
 {
-  int *piVar1;
+  uint *puVar1;
   int local_8;
 
   local_8 = 0xd;
   this->field_1FF8 = 0;
-  piVar1 = &this->field_0066;
+  puVar1 = this->field_0066;
   do {
-    if (*piVar1 != 0) {
-      this->field_0025 = *piVar1;
+    if (*puVar1 != 0) {
+      this->field_0025 = *puVar1;
       this->field_0029 = 2;
       this->field_002D = 0x20;
       this->field_0031 = 0;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this->field_000C + 0x18))(&this->field_0x1d);
     }
-    piVar1 = piVar1 + 1;
+    puVar1 = puVar1 + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
   return;

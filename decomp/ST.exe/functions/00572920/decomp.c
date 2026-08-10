@@ -21,7 +21,7 @@ undefined4 __thiscall FUN_00572920(void *this,byte param_1)
   local_c = 1;
   local_10 = this;
   if ((param_1 & 1) != 0) {
-    LVar3 = RegOpenKeyA((HKEY)0x80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version",&local_8);
+    LVar3 = RegOpenKeyA((HKEY)&DAT_80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version",&local_8);
     if (LVar3 == 0) {
       RegSetValueExA(local_8,"LastPlayer",0,1,(BYTE *)((int)this + 0x785),0x40);
     }
@@ -61,7 +61,7 @@ undefined4 __thiscall FUN_00572920(void *this,byte param_1)
   }
   uVar2 = local_c;
   if ((param_1 & 2) != 0) {
-    LVar3 = RegOpenKeyA((HKEY)0x80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans",&local_8);
+    LVar3 = RegOpenKeyA((HKEY)&DAT_80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans",&local_8);
     if (LVar3 == 0) {
       RegSetValueExA(local_8,"Editor",0,3,(BYTE *)&DAT_008071f8,0x100);
     }

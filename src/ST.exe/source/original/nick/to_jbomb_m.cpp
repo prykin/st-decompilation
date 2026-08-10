@@ -33,12 +33,12 @@ int __thiscall st::fn_00617640(JumpManagC *this,STMessage *message)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_jbomb_m.Cpp",0x4b,0,iVar3,"%s"
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_jbomb_m.Cpp"),0x4b,0,iVar3,st::mutable_c_string("%s")
                                ,"JumpManagC::GetMessage");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_jbomb_m.Cpp",0x4d);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\nick\\to_jbomb_m.Cpp"),0x4d);
     return 0xffff;
   }
   SVar1 = message->id;
@@ -50,7 +50,7 @@ int __thiscall st::fn_00617640(JumpManagC *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    st::fn_00405119(local_8,puVar6);
+    st::fn_00405119(local_8,st::pointer_boundary_cast<undefined4 *>(puVar6));
     st::fn_00404D09(this_00);
   }
   else if (SVar1 == MESS_SHARED_0003) {
@@ -145,8 +145,8 @@ void __thiscall st::fn_006178C0(JumpManagC *this)
         bVar8 = uVar7 < pDVar2->count;
       } while ((int)uVar7 < (int)pDVar2->count);
       if (iVar5 == 0) {
-        iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_jbomb_m.Cpp",0x8a,0,0,
-                                   "JumpManagC::CheckSystrm CheckProblem =  %d",0);
+        iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_jbomb_m.Cpp"),0x8a,0,0,
+                                   st::mutable_c_string("JumpManagC::CheckSystrm CheckProblem =  %d"),0);
         if (iVar4 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }

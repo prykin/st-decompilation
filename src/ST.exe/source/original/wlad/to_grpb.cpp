@@ -42,12 +42,12 @@ st::fn_00497CD0(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param_3,int
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x6e,0,errorCode,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x6e,0,errorCode,st::mutable_c_string("%s"),
                              "STGroupBoatC::InitWay");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x6f);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x6f);
   return 0xffffffff;
 }
 
@@ -102,10 +102,10 @@ int __thiscall st::fn_00497E00(STGroupBoatC *this,STMessage *message)
   this_00 = local_20;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_84.previous;
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x3b4,0,iVar4,"%s",
+    iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x3b4,0,iVar4,st::mutable_c_string("%s"),
                                "STGroupBoatC::GetMessage");
     if (iVar9 == 0) {
-      st::fn_006A5E40(iVar4,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x3b5);
+      st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x3b5);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -125,7 +125,7 @@ int __thiscall st::fn_00497E00(STGroupBoatC *this,STMessage *message)
     local_1c[2] = 0;
     local_1c[3] = 0;
     local_18 = (byte *)st::fn_00401EEC(this_00,(int *)&local_10);
-    local_8 = st::fn_006AAC70(local_10 + local_c);
+    local_8 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(local_10 + local_c));
     pbVar6 = local_1c;
     pbVar7 = local_8;
     memmove(pbVar7, pbVar6, local_c); /* compiler REP MOVS byte copy */
@@ -306,7 +306,7 @@ int __thiscall st::fn_00497E00(STGroupBoatC *this,STMessage *message)
     if (this_00->field_0075 == 1) {
       this_00->field_0075 = 0;
       st::fn_00404985(this_00,this_00->field_01CE);
-      st::fn_00405146(this_00,&this_00->field_01CE->flags);
+      st::fn_00405146(this_00,st::pointer_boundary_cast<uint *>(&this_00->field_01CE->flags));
       st::fn_006AE110(this_00->field_01CE);
       this_00->field_01CE = nullptr;
     }
@@ -852,7 +852,7 @@ st::fn_00498D20
   case CASE_2:
     this->field_0065 = 1;
     this->field_008D = 1;
-    pdVar6 = &this->field_00E7;
+    pdVar6 = st::pointer_boundary_cast<dword *>(&this->field_00E7);
     for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
       *pdVar6 = data->flags;
       data = (DArrayTy *)&data->iteratorIndex;
@@ -902,7 +902,7 @@ st::fn_00498D20
   case CASE_5:
     this->field_0065 = 1;
     this->field_0099 = 1;
-    pdVar6 = &this->field_0164;
+    pdVar6 = st::pointer_boundary_cast<dword *>(&this->field_0164);
     for (iVar4 = 5; iVar4 != 0; iVar4 = iVar4 + -1) {
       *pdVar6 = data->flags;
       data = (DArrayTy *)&data->iteratorIndex;
@@ -959,7 +959,7 @@ st::fn_00498D20
   case CASE_8:
     this->field_0065 = 1;
     this->field_00A5 = 1;
-    pdVar6 = &this->field_010B;
+    pdVar6 = st::pointer_boundary_cast<dword *>(&this->field_010B);
     for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
       *pdVar6 = data->flags;
       data = (DArrayTy *)&data->iteratorIndex;
@@ -1027,7 +1027,7 @@ st::fn_00498D20
   case CASE_D:
     this->field_0065 = 1;
     this->field_00B9 = 1;
-    pdVar6 = &this->field_0182;
+    pdVar6 = st::pointer_boundary_cast<dword *>(&this->field_0182);
 LAB_00499129:
     *pdVar6 = data->flags;
     pdVar6[1] = data->iteratorIndex;
@@ -1172,7 +1172,7 @@ undefined4 __thiscall st::fn_00499750(STGroupBoatC *this,DArrayTy *param_1)
   if (iVar3 == 0) {
     if (local_10->field_0212 == 0) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x4d7);
     }
     index = 0;
@@ -1185,7 +1185,7 @@ undefined4 __thiscall st::fn_00499750(STGroupBoatC *this,DArrayTy *param_1)
           local_6 = -1;
           st::fn_006AE140(pSVar2->field_020E,(int)local_a,local_8);
           puVar4 = pSVar2->field_021E;
-          pSVar2->field_0212 = pSVar2->field_0212 + -1;
+          pSVar2->field_0212 = st::machine_word_boundary_cast<undefined4>(pSVar2->field_0212 + -1);
           (puVar4 + local_a * 4)[0] = 0xffff;
           (puVar4 + local_a * 4)[1] = 0xffff;
         }
@@ -1197,7 +1197,7 @@ undefined4 __thiscall st::fn_00499750(STGroupBoatC *this,DArrayTy *param_1)
       pSVar2->field_020E = nullptr;
       st::fn_006AB060(&pSVar2->field_021E);
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x4e5);
     }
     iVar7 = -1;
@@ -1216,7 +1216,7 @@ undefined4 __thiscall st::fn_00499750(STGroupBoatC *this,DArrayTy *param_1)
           else {
             *(undefined4 *)(puVar4 + iVar3 * 4) = pSVar2->field_0216;
             puVar4 = pSVar2->field_021E;
-            pSVar2->field_0216 = pSVar2->field_0216 + *(int *)(puVar4 + iVar3 * 4 + 2);
+            pSVar2->field_0216 = st::machine_word_boundary_cast<undefined4>(pSVar2->field_0216 + *(int *)(puVar4 + iVar3 * 4 + 2));
           }
         }
         iVar3 = iVar3 + 1;
@@ -1227,12 +1227,12 @@ undefined4 __thiscall st::fn_00499750(STGroupBoatC *this,DArrayTy *param_1)
   else {
     g_currentExceptionFrame = local_58.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x4f3,0,iVar3,"%s"
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x4f3,0,iVar3,st::mutable_c_string("%s")
                                  ,"STGroupBoatC::ReMakePVecAndTgtList");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x4f4);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x4f4);
       return 0xffffffff;
     }
   }
@@ -1271,12 +1271,12 @@ st::fn_004999C0(STGroupBoatC *this,char param_1,short param_2)
   if (errorCode == 0) {
     if (local_10->field_0212 == 0) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x509);
     }
     if (this_00->field_020E == nullptr) {
       st::fn_006A5E40
-                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x50b);
     }
     index = 0;
@@ -1301,10 +1301,10 @@ st::fn_004999C0(STGroupBoatC *this,char param_1,short param_2)
   else {
     g_currentExceptionFrame = local_54.previous;
     if (errorCode != -0x5001fff7) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x51c,0,errorCode,
-                                 "%s","STGroupBoatC::ReMakePVecAndTgtListExt");
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x51c,0,errorCode,
+                                 st::mutable_c_string("%s"),"STGroupBoatC::ReMakePVecAndTgtListExt");
       if (iVar3 == 0) {
-        st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x51d);
+        st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x51d);
         return 0xffffffff;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1346,7 +1346,7 @@ undefined4 __thiscall st::fn_00499B80(STGroupBoatC *this)
   if (iVar4 == 0) {
     if (local_8->field_020E == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x52e);
     }
     if (pSVar3->field_021E != nullptr) {
@@ -1355,7 +1355,7 @@ undefined4 __thiscall st::fn_00499B80(STGroupBoatC *this)
     uVar9 = pSVar3->field_020E->count;
     pSVar3->field_021A = uVar9;
     local_c = uVar9;
-    puVar4 = st::fn_006AAC70(uVar9 * 8);
+    puVar4 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(uVar9 * 8));
     uVar2 = local_c;
     pSVar3->field_021E = puVar4;
     for (iVar8 = (uVar9 & 0x1fffffff) << 1; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -1385,7 +1385,7 @@ undefined4 __thiscall st::fn_00499B80(STGroupBoatC *this)
         }
         else {
           iVar8 = pSVar5->field_0219 + pSVar5->field_0215;
-          pSVar3->field_0216 = pSVar3->field_0216 + iVar8;
+          pSVar3->field_0216 = st::machine_word_boundary_cast<undefined4>(pSVar3->field_0216 + iVar8);
           *(int *)(pSVar3->field_021E + uVar9 * 4 + 2) = iVar8;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
             *(undefined4 *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
@@ -1401,12 +1401,12 @@ undefined4 __thiscall st::fn_00499B80(STGroupBoatC *this)
   if (iVar4 == -0x5001fff7) {
     return 0;
   }
-  iVar7 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x543,0,iVar4,"%s",
+  iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x543,0,iVar4,st::mutable_c_string("%s"),
                              "STGroupBoatC::MakePVec");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar4,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x544);
+  st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x544);
   return 0xffffffff;
 }
 
@@ -1482,17 +1482,17 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
       }
       return 0;
     }
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x5eb,0,iVar3,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x5eb,0,iVar3,st::mutable_c_string("%s"),
                                "STGroupBoatC::DistributeTargets");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x5ec);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x5ec);
     return 0xffffffff;
   }
   if (local_60->field_020E == nullptr) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0x55a
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x55a
               );
   }
   st::fn_006AFE40((int *)&local_10,param_1);
@@ -1513,7 +1513,7 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
         if (pSVar3 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x564);
         }
         dVar4 = pSVar3->slot_2C();
@@ -1560,7 +1560,7 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
       do {
         st::fn_006ACC70(pDVar8,uVar11,local_1c);
         if (sStack_1a != -1) {
-          this_00->field_0212 = this_00->field_0212 + 1;
+          this_00->field_0212 = st::machine_word_boundary_cast<undefined4>(this_00->field_0212 + 1);
         }
         pDVar8 = this_00->field_020E;
         uVar12 = uVar12 + 1;
@@ -1569,7 +1569,7 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
     }
     if (this_00->field_0212 == 0) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x58f);
     }
     uVar11 = 0;
@@ -1600,11 +1600,11 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
             }
           }
           else {
-            local_5c = this_00->field_0216 + 1;
+            local_5c = st::machine_word_boundary_cast<uint>(this_00->field_0216 + 1);
             local_50 = 0;
             local_4c = 2;
             do {
-              uVar11 = this_00->field_0031 * 0x41c64e6d + 0x3039;
+              uVar11 = st::machine_word_boundary_cast<uint>(this_00->field_0031 * 0x41c64e6d + 0x3039);
               this_00->field_0031 = uVar11;
               local_54 = (uVar11 >> 0x10) % local_5c;
               iVar6 = 0;
@@ -1663,7 +1663,7 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
             if (objPtr == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0x5c4);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x5c4);
             }
             uVar7 = (*objPtr->vtable->vfunc_2C)();
             switch(uVar7) {
@@ -1708,7 +1708,7 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
       pDVar15 = local_30;
       st::fn_00403D9B
                 (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_14), (uint8_t)(this_00->field_0024)),
-                 &pDVar8->flags,&local_30->flags);
+                 st::pointer_boundary_cast<uint *>(&pDVar8->flags),st::pointer_boundary_cast<uint *>(&local_30->flags));
       if (pDVar8 != nullptr) {
         st::fn_006AE110(pDVar8);
       }
@@ -1763,12 +1763,12 @@ undefined4 __thiscall st::fn_0049A620(STGroupBoatC *this,int param_1)
   this_00 = local_14;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x642,0,iVar2,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x642,0,iVar2,st::mutable_c_string("%s"),
                                "STGroupBoatC::GrpMove");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x643);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x643);
     return 0xffffffff;
   }
   if ((param_1 == 0) || (param_1 == 1)) {
@@ -1796,7 +1796,7 @@ undefined4 __thiscall st::fn_0049A620(STGroupBoatC *this,int param_1)
           if (this_01 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x629);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x629);
           }
           st::fn_00402126(this_01,CASE_1,&local_20);
         }
@@ -1820,7 +1820,7 @@ undefined4 __thiscall st::fn_0049A620(STGroupBoatC *this,int param_1)
             if (objPtr == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0x638);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x638);
             }
             iVar4 = st::fn_0040397C((int)objPtr);
             if (iVar4 != 0) goto cf_common_exit_0049A832;
@@ -1893,7 +1893,7 @@ undefined4 __thiscall st::fn_0049A940(STGroupBoatC *this,int param_1)
             if (this_00 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0x65e);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x65e);
             }
             st::fn_00402126(this_00,CASE_3,&local_8);
           }
@@ -1906,12 +1906,12 @@ undefined4 __thiscall st::fn_0049A940(STGroupBoatC *this,int param_1)
     return 2;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x665,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x665,0,iVar3,st::mutable_c_string("%s"),
                              "STGroupBoatC::GrpMove");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x666);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x666);
   return 0xffffffff;
 }
 
@@ -1967,10 +1967,10 @@ undefined4 __thiscall st::fn_0049AAF0(STGroupBoatC *this,int param_1)
     if (iVar6 == -0x5001fff7) {
       return 0;
     }
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x701,0,iVar6,"%s",
+    iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x701,0,iVar6,st::mutable_c_string("%s"),
                                "STGroupBoatC::GrpAttack");
     if (iVar9 == 0) {
-      st::fn_006A5E40(iVar6,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x702);
+      st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x702);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1994,7 +1994,7 @@ undefined4 __thiscall st::fn_0049AAF0(STGroupBoatC *this,int param_1)
       local_18 = local_8->field_00EF->count;
       if (local_18 == 0) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x68f);
       }
       if (pSVar16->field_020E != nullptr) {
@@ -2030,7 +2030,7 @@ undefined4 __thiscall st::fn_0049AAF0(STGroupBoatC *this,int param_1)
       pSVar13->field_00EF = nullptr;
       if (pSVar13->field_020E->count == 0) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x69d);
       }
     }
@@ -2087,7 +2087,7 @@ LAB_0049af27:
                          (g_bulkInitializedRecords_008087C7[(char)local_2c].field_0022 < 8)))))) {
                       bVar1 = local_8->field_0024;
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      _local_20 = CONCAT31(uStack_1f,bVar1);
+                      auto _local_20 = CONCAT31(uStack_1f,bVar1);
                       if (DAT_00808a8f == '\0') {
                         if (local_2c == bVar1) {
 LAB_0049b073:
@@ -2140,7 +2140,7 @@ LAB_0049b073:
                         (g_bulkInitializedRecords_008087C7[(char)local_2c].field_0022 < 8)))) {
                       bVar1 = local_8->field_0024;
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      _local_1c = CONCAT31(uStack_1b,bVar1);
+                      auto _local_1c = CONCAT31(uStack_1b,bVar1);
                       if (DAT_00808a8f == '\0') {
                         if (local_2c == bVar1) {
 LAB_0049aec9:
@@ -2206,7 +2206,7 @@ LAB_0049aec9:
         st::fn_006AE110(pSVar13->field_020E);
         pSVar13->field_020E = nullptr;
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x6ce);
       }
     }
@@ -2231,7 +2231,7 @@ LAB_0049aec9:
       pSVar16 = local_8;
       if (local_8->field_020E->count == 0) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x6e3);
       }
     }
@@ -2288,10 +2288,10 @@ undefined4 __thiscall st::fn_0049B4C0(STGroupBoatC *this,int param_1)
   pSVar2 = local_1c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x73c,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x73c,0,iVar3,st::mutable_c_string("%s"),
                                "STGroupBoatC::GrpGoToDeep");
     if (iVar4 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x73d);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x73d);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -2312,7 +2312,7 @@ undefined4 __thiscall st::fn_0049B4C0(STGroupBoatC *this,int param_1)
           if (this_00 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x720);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x720);
           }
           st::fn_004018C5((STFishC *)this_00,&local_8,&local_6,&local_a);
           st::fn_00404F6B(this_00,(int)local_8,(int)local_6,*(int *)&pSVar2->field_0x222);
@@ -2344,7 +2344,7 @@ undefined4 __thiscall st::fn_0049B4C0(STGroupBoatC *this,int param_1)
             if (objPtr == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0x732);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x732);
             }
             iVar5 = st::fn_0040397C((int)objPtr);
             if (((iVar5 != 0) || (iVar5 = st::fn_00402EDC(objPtr), iVar5 == 1)) ||
@@ -2428,7 +2428,7 @@ uint __thiscall st::fn_0049B7D0(STGroupBoatC *this,int param_1)
   local_1c = *(int *)(this->field_0029 + 0xc);
   if ((param_1 != 0) && (param_1 != 1)) {
     if (0 < this->field_023E) {
-      this->field_023E = this->field_023E + 1;
+      this->field_023E = st::machine_word_boundary_cast<int>(this->field_023E + 1);
     }
     iVar4 = st::fn_0040331E(this,0);
     return -(uint)(iVar4 != 2) & 2;
@@ -2499,7 +2499,7 @@ uint __thiscall st::fn_0049B7D0(STGroupBoatC *this,int param_1)
                            (g_allPlayers_007FA174,this->field_0024,(ushort)local_18,CASE_1);
         if (pSVar7 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x77d);
         }
         st::fn_00405F0B
@@ -2576,10 +2576,10 @@ uint __thiscall st::fn_0049B7D0(STGroupBoatC *this,int param_1)
     psVar6 = nullptr;
   }
   else {
-    psVar6 = this->field_0103->data;
+    psVar6 = st::pointer_boundary_cast<short *>(this->field_0103->data);
   }
   st::fn_006AB090((int)g_pathingScratchGrid.cells,local_2c,local_20,5,*psVar6 - local_c,
-               psVar6[1] - local_8,(int)psVar6[2],-1,-1,-1);
+               st::machine_word_boundary_cast<int>(psVar6[1] - local_8),(int)psVar6[2],-1,-1,-1);
   uVar13 = 1;
   if (1 < (int)local_28) {
     local_34 = (AnonShape_00413AF0_B6B4EE9A *)this->field_0103;
@@ -2613,7 +2613,7 @@ uint __thiscall st::fn_0049B7D0(STGroupBoatC *this,int param_1)
                            (g_allPlayers_007FA174,this->field_0024,(ushort)local_18,CASE_1);
         if (pSVar7 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x7a7);
         }
         st::fn_00405F0B
@@ -2658,7 +2658,7 @@ joined_r0x0049bc58:
             if (pSVar7 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0x7bd);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x7bd);
             }
             st::fn_00405F0B
                       ((STFishC *)pSVar7,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
@@ -2725,13 +2725,13 @@ joined_r0x0049bc58:
                   st::fn_004028BA
                             (g_allPlayers_007FA174,this->field_0024,(ushort)local_68[0],CASE_1);
         if (this_00 == nullptr) {
-          iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x7ed,0,0,"%s"
+          iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x7ed,0,0,st::mutable_c_string("%s")
                                      ,"STGroupBoatC::GrpPatrol NULL value");
           if (iVar3 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x7ee);
         }
         st::fn_006AE1C0(local_30,local_68);
@@ -2835,10 +2835,10 @@ undefined4 __thiscall st::fn_0049C210(STGroupBoatC *this,int param_1)
       }
       return 0;
     }
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x8ee,0,iVar3,"%s",
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x8ee,0,iVar3,st::mutable_c_string("%s"),
                                "STGroupBoatC::GrpLoadRC");
     if (iVar8 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x8ef);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x8ef);
       return local_34[4];
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -2862,7 +2862,7 @@ undefined4 __thiscall st::fn_0049C210(STGroupBoatC *this,int param_1)
       if ((this_00->field_010F == nullptr) ||
          (local_c = this_00->field_010F->count, local_c == 0)) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x81d);
       }
       pDVar3 = st::fn_006AE290(nullptr,0,2,1);
@@ -2886,7 +2886,7 @@ undefined4 __thiscall st::fn_0049C210(STGroupBoatC *this,int param_1)
               } while (iVar10 < local_14);
             }
             if (((iVar10 != local_14) && (iVar9 == this_00->field_025E)) &&
-               (iVar9 = (*pSVar4->vtable->vfunc_88)(local_18), 0 < iVar9)) {
+               (iVar9 = (*pSVar4->vtable->vfunc_88)(st::machine_word_boundary_cast<undefined4>(local_18)), 0 < iVar9)) {
               st::fn_006AE1C0(this_00->field_024E,&local_8);
             }
           }
@@ -2897,7 +2897,7 @@ undefined4 __thiscall st::fn_0049C210(STGroupBoatC *this,int param_1)
       this_00->field_010F = nullptr;
       if (this_00->field_024E->count == 0) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x834);
       }
     }
@@ -2923,7 +2923,7 @@ undefined4 __thiscall st::fn_0049C210(STGroupBoatC *this,int param_1)
             pSVar4 = st::fn_004028BA
                                (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
             if ((pSVar4 != nullptr) &&
-               (iVar9 = (*pSVar4->vtable->vfunc_88)(local_18), 0 < iVar9)) {
+               (iVar9 = (*pSVar4->vtable->vfunc_88)(st::machine_word_boundary_cast<undefined4>(local_18)), 0 < iVar9)) {
               st::fn_006AE1C0(this_00->field_024E,&local_8);
             }
             uVar15 = uVar15 + 1;
@@ -2941,7 +2941,7 @@ undefined4 __thiscall st::fn_0049C210(STGroupBoatC *this,int param_1)
          (dVar16 = this_00->field_0127->count, local_c = dVar16, dVar16 == 0)) {
         dVar16 = local_c;
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x855);
       }
       pDVar3 = st::fn_006AE290(nullptr,0,2,1);
@@ -2964,7 +2964,7 @@ undefined4 __thiscall st::fn_0049C210(STGroupBoatC *this,int param_1)
       this_00->field_0127 = nullptr;
       if (this_00->field_0266->count == 0) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x866);
       }
     }
@@ -3176,10 +3176,10 @@ undefined4 __thiscall st::fn_0049CD30(STGroupBoatC *this,int param_1)
   pSVar4 = local_24;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x944,0,iVar6,"%s",
+    iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x944,0,iVar6,st::mutable_c_string("%s"),
                                "STGroupBoatC::GrpBuild");
     if (iVar9 == 0) {
-      st::fn_006A5E40(iVar6,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x945);
+      st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x945);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -3214,7 +3214,7 @@ undefined4 __thiscall st::fn_0049CD30(STGroupBoatC *this,int param_1)
           if (pSVar6 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x90f);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x90f);
           }
           dVar7 = pSVar6->slot_2C();
           if (((dVar7 == 0xc) || (dVar7 = pSVar6->slot_2C(), dVar7 == 0x18)) ||
@@ -3249,7 +3249,7 @@ LAB_0049cf10:
     array = local_10;
     st::fn_00403D9B
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar11), (uint8_t)(pSVar4->field_0024)),
-               &array_00->flags,&local_10->flags);
+               st::pointer_boundary_cast<uint *>(&array_00->flags),st::pointer_boundary_cast<uint *>(&local_10->flags));
     if (array_00 != nullptr) {
       st::fn_006AE110(array_00);
     }
@@ -3287,7 +3287,7 @@ LAB_0049cf10:
           if (pSVar6 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x938);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x938);
           }
           dVar7 = pSVar6->slot_2C();
           if (((((dVar7 == 0xc) || (dVar7 = pSVar6->slot_2C(), dVar7 == 0x18)) ||
@@ -3363,10 +3363,10 @@ undefined4 __thiscall st::fn_0049D230(STGroupBoatC *this,int param_1)
   pSVar5 = local_2c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_7c.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x99a,0,iVar6,"%s",
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x99a,0,iVar6,st::mutable_c_string("%s"),
                                "STGroupBoatC::GrpUnLoadRC");
     if (iVar8 == 0) {
-      st::fn_006A5E40(iVar6,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x99b);
+      st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x99b);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -3394,7 +3394,7 @@ undefined4 __thiscall st::fn_0049D230(STGroupBoatC *this,int param_1)
           if (this_00 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x960);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x960);
           }
           dVar6 = this_00->slot_2C();
           if (((dVar6 == 8) || (dVar6 = this_00->slot_2C(), dVar6 == 0x14)) ||
@@ -3429,7 +3429,7 @@ LAB_0049d3ca:
     array = local_c;
     st::fn_00403D9B
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar10), (uint8_t)(pSVar5->field_0024)),
-               &array_00->flags,&local_c->flags);
+               st::pointer_boundary_cast<uint *>(&array_00->flags),st::pointer_boundary_cast<uint *>(&local_c->flags));
     if (array_00 != nullptr) {
       st::fn_006AE110(array_00);
     }
@@ -3471,7 +3471,7 @@ LAB_0049d3ca:
             if (objPtr == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0x989);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x989);
             }
             iVar9 = (*objPtr->vtable->vfunc_2C)();
             if (((iVar9 == 8) || (iVar9 = (*objPtr->vtable->vfunc_2C)(), iVar9 == 0x14)) ||
@@ -3546,10 +3546,10 @@ undefined4 __thiscall st::fn_0049D750(STGroupBoatC *this,int param_1)
       }
       return 0;
     }
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x9ea,0,iVar2,"%s",
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x9ea,0,iVar2,st::mutable_c_string("%s"),
                                "STGroupBoatC::GrpRepare");
     if (iVar7 == 0) {
-      st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x9eb);
+      st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x9eb);
       return local_10;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -3569,7 +3569,7 @@ undefined4 __thiscall st::fn_0049D750(STGroupBoatC *this,int param_1)
          (dVar9 = this_00->field_0160->count, local_c = dVar9, dVar9 == 0)) {
         dVar9 = local_c;
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x9b7);
       }
       pDVar2 = st::fn_006AE290(nullptr,0,2,1);
@@ -3593,7 +3593,7 @@ undefined4 __thiscall st::fn_0049D750(STGroupBoatC *this,int param_1)
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(*(int *)&this_00->field_0x29f + 0xc) == 0) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x9c8);
       }
     }
@@ -3602,7 +3602,7 @@ undefined4 __thiscall st::fn_0049D750(STGroupBoatC *this,int param_1)
       *(uint **)&this_00->field_0x29f = puVar4;
       if (puVar4[3] == 0) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x9cd);
       }
     }
@@ -3690,12 +3690,12 @@ undefined4 __thiscall st::fn_0049DB40(STGroupBoatC *this,int param_1)
   pSVar2 = local_30;
   if (local_EAX_64 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xa3e,0,local_EAX_64,
-                               "%s","STGroupBoatC::GrpGuard");
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xa3e,0,local_EAX_64,
+                               st::mutable_c_string("%s"),"STGroupBoatC::GrpGuard");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_64,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xa3f);
+    st::fn_006A5E40(local_EAX_64,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xa3f);
     return 0xffffffff;
   }
   if ((param_1 == 1) || (param_1 == 0)) {
@@ -3703,7 +3703,7 @@ undefined4 __thiscall st::fn_0049DB40(STGroupBoatC *this,int param_1)
     local_30->field_0065 = 0;
     local_8 = st::fn_006AE290(nullptr,0,2,1);
     if (pSVar2->field_0164 == 0) {
-      st::fn_006AFE40((int *)&local_8,&pSVar2->field_0168->flags);
+      st::fn_006AFE40((int *)&local_8,st::pointer_boundary_cast<uint *>(&pSVar2->field_0168->flags));
     }
     if (pSVar2->field_0164 == 1) {
       st::fn_00403869
@@ -3716,7 +3716,7 @@ undefined4 __thiscall st::fn_0049DB40(STGroupBoatC *this,int param_1)
       }
       if (0 < local_18) {
         if (local_14 == 0) {
-          st::fn_006AFE40((int *)&local_8,&local_10->flags);
+          st::fn_006AFE40((int *)&local_8,st::pointer_boundary_cast<uint *>(&local_10->flags));
         }
         else {
           uVar8 = 0;
@@ -3742,7 +3742,7 @@ undefined4 __thiscall st::fn_0049DB40(STGroupBoatC *this,int param_1)
           if (pSVar3 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xa1a);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xa1a);
           }
           iVar6 = st::fn_00404E58((STGameObjC *)pSVar3);
           if (iVar6 == 0) {
@@ -3762,7 +3762,7 @@ undefined4 __thiscall st::fn_0049DB40(STGroupBoatC *this,int param_1)
     }
     st::fn_00403D9B
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_20), (uint8_t)(pSVar2->field_0024)),
-               &local_8->flags,&array->flags);
+               st::pointer_boundary_cast<uint *>(&local_8->flags),st::pointer_boundary_cast<uint *>(&array->flags));
     st::fn_006AE110(local_8);
     if (array != nullptr) {
       st::fn_006AE110(array);
@@ -3785,13 +3785,13 @@ undefined4 __thiscall st::fn_0049DB40(STGroupBoatC *this,int param_1)
                  st::fn_004028BA
                            (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_c),CASE_1);
         if (pSVar3 == nullptr) {
-          iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xa34,0,0,"%s"
+          iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xa34,0,0,st::mutable_c_string("%s")
                                      ,"STGroupBoatC::GrpGuard NULL");
           if (iVar3 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0xa35);
         }
         iVar6 = st::fn_00402EDC((STGameObjC *)pSVar3);
@@ -3863,12 +3863,12 @@ undefined4 __thiscall st::fn_0049DFA0(STGroupBoatC *this,int param_1)
     if (iVar3 == -0x5001fff7) {
       return local_18;
     }
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xaa0,0,iVar3,"%s",
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xaa0,0,iVar3,st::mutable_c_string("%s"),
                                "STGroupBoatC::GrpLoadObj");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xaa1);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xaa1);
     return 0xffffffff;
   }
   if ((param_1 != 1) && (param_1 != 0)) goto LAB_0049e26d;
@@ -3896,7 +3896,7 @@ undefined4 __thiscall st::fn_0049DFA0(STGroupBoatC *this,int param_1)
                             (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_c),CASE_1);
         if (local_8 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0xa5b);
         }
         iVar8 = local_8->vfunc_F8();
@@ -3966,7 +3966,7 @@ LAB_0049e23d:
     if (array != nullptr) {
       st::fn_00403D9B
                 (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(pSVar9), (uint8_t)(pSVar2->field_0024)),
-                 &local_14->flags,&array->flags);
+                 st::pointer_boundary_cast<uint *>(&local_14->flags),st::pointer_boundary_cast<uint *>(&array->flags));
       goto LAB_0049e23d;
     }
     if (local_14 == nullptr) goto LAB_0049e1de;
@@ -3977,7 +3977,7 @@ LAB_0049e241:
     st::fn_006AE110(array);
   }
   st::fn_006A5E40
-            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0xa86);
+            (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xa86);
 LAB_0049e26d:
   if (g_playSystem_00802A38->field_00E4 % 0x14 == 0) {
     uVar11 = 0;
@@ -3991,7 +3991,7 @@ LAB_0049e26d:
           if (local_8 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xa8e);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xa8e);
           }
           iVar8 = local_8->vfunc_F8();
           if ((iVar8 != 0) &&
@@ -4003,7 +4003,7 @@ LAB_0049e26d:
               local_18 = 0;
               st::fn_006A5E40
                         (-0x5001fff7,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xa95);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xa95);
             }
             iVar8 = st::fn_00402EDC((STGameObjC *)local_8);
             if ((iVar8 == 0xf) || (uVar5 = st::fn_00404DF9(local_8,CASE_F), uVar5 == 1)) {
@@ -4071,14 +4071,14 @@ uint * __thiscall st::fn_0049E510(STGroupBoatC *this,int param_1)
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_78.previous;
     if (iVar3 == -0x5001fff7) {
-      return &local_1c->flags;
+      return st::pointer_boundary_cast<uint *>(&local_1c->flags);
     }
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xb01,0,iVar3,"%s",
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xb01,0,iVar3,st::mutable_c_string("%s"),
                                "STGroupBoatC::GrpUnLoadObj");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xb02);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xb02);
     return (uint *)0xffffffff;
   }
   if ((param_1 != 1) && (param_1 != 0)) goto LAB_0049e7c1;
@@ -4102,7 +4102,7 @@ uint * __thiscall st::fn_0049E510(STGroupBoatC *this,int param_1)
                            (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
         if (pSVar3 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0xabe);
         }
         iVar9 = pSVar3->vfunc_F8();
@@ -4177,7 +4177,7 @@ LAB_0049e794:
   else {
     st::fn_00403D9B
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_14), (uint8_t)(pSVar2->field_0024)),
-               &local_10->flags,&local_c->flags);
+               st::pointer_boundary_cast<uint *>(&local_10->flags),st::pointer_boundary_cast<uint *>(&local_c->flags));
 LAB_0049e790:
     if (pDVar5 != nullptr) goto LAB_0049e794;
   }
@@ -4185,7 +4185,7 @@ LAB_0049e790:
     st::fn_006AE110(array);
   }
   st::fn_006A5E40
-            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0xae9);
+            (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xae9);
 LAB_0049e7c1:
   uVar10 = 0;
   if (g_playSystem_00802A38->field_00E4 % 0x32 == 0) {
@@ -4199,7 +4199,7 @@ LAB_0049e7c1:
           if (pSVar3 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xaf1);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xaf1);
           }
           iVar9 = pSVar3->vfunc_F8();
           if ((iVar9 != 0) &&
@@ -4219,7 +4219,7 @@ LAB_0049e7c1:
     }
   }
   g_currentExceptionFrame = local_78.previous;
-  return &local_1c->flags;
+  return st::pointer_boundary_cast<uint *>(&local_1c->flags);
 }
 
 // 0049EA00 STGroupBoatC::SetMine
@@ -4284,7 +4284,7 @@ undefined4 __thiscall st::fn_0049EA00(STGroupBoatC *this,int param_1)
             if (pSVar3 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xb1f);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xb1f);
             }
             if (*(int *)&pSVar2->field_0x2b9 == -1) {
               if (pSVar3->field_07B6 == 0) goto LAB_0049eb44;
@@ -4306,7 +4306,7 @@ LAB_0049eb44:
         } while ((int)uVar9 < local_c);
       }
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0xb3c);
     }
     if (g_playSystem_00802A38->field_00E4 % 0x1e == 5) {
@@ -4321,7 +4321,7 @@ LAB_0049eb44:
             if (pSVar3 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xb43);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xb43);
             }
             iVar7 = st::fn_00402EDC((STGameObjC *)pSVar3);
             if ((iVar7 == 7) || (uVar4 = st::fn_00404DF9(pSVar3,CASE_7), uVar4 == 1)) {
@@ -4341,10 +4341,10 @@ LAB_0049eb44:
   else {
     g_currentExceptionFrame = local_6c.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xb4c,0,iVar3,"%s"
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xb4c,0,iVar3,st::mutable_c_string("%s")
                                  ,"STGroupBoatC::SetMine");
       if (iVar6 == 0) {
-        st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xb4d);
+        st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xb4d);
         return 0xffffffff;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4421,10 +4421,9 @@ undefined4 __thiscall st::fn_0049ED40(STGroupBoatC *this,int param_1)
             if (pSVar3 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xb6b);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xb6b);
             }
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if ((*(int *)((int)pSVar3->field_06CB + 0x2c) == 4) && (0 < pSVar3->field_07BE)) {
+            if ((pSVar3->field_06F7 == CASE_4) && (0 < pSVar3->field_07BE)) {
               if (array_00 == nullptr) {
                 array_00 = st::fn_006AE290(nullptr,1,2,1);
                 local_14 = array_00;
@@ -4451,7 +4450,7 @@ undefined4 __thiscall st::fn_0049ED40(STGroupBoatC *this,int param_1)
       array = local_c;
       st::fn_00403D9B
                 (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_10), (uint8_t)(pSVar2->field_0024)),
-                 &array_00->flags,&local_c->flags);
+                 st::pointer_boundary_cast<uint *>(&array_00->flags),st::pointer_boundary_cast<uint *>(&local_c->flags));
       if (array_00 != nullptr) {
         st::fn_006AE110(array_00);
       }
@@ -4459,7 +4458,7 @@ undefined4 __thiscall st::fn_0049ED40(STGroupBoatC *this,int param_1)
         st::fn_006AE110(array);
       }
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0xb84);
     }
     index = 0;
@@ -4474,7 +4473,7 @@ undefined4 __thiscall st::fn_0049ED40(STGroupBoatC *this,int param_1)
             if (pSVar3 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xb8b);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xb8b);
             }
             iVar7 = st::fn_00402EDC((STGameObjC *)pSVar3);
             if ((iVar7 == 10) || (uVar4 = st::fn_00404DF9(pSVar3,CASE_A), uVar4 == 1)) {
@@ -4494,10 +4493,10 @@ undefined4 __thiscall st::fn_0049ED40(STGroupBoatC *this,int param_1)
   else {
     g_currentExceptionFrame = local_78.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xb94,0,iVar3,"%s"
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xb94,0,iVar3,st::mutable_c_string("%s")
                                  ,"STGroupBoatC::DCBomb");
       if (iVar6 == 0) {
-        st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xb95);
+        st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xb95);
         return 0xffffffff;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4562,10 +4561,10 @@ undefined4 __thiscall st::fn_0049F100(STGroupBoatC *this,int param_1)
   pSVar2 = local_38;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_7c.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xbf4,0,iVar3,"%s",
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xbf4,0,iVar3,st::mutable_c_string("%s"),
                                "STGroupBoatC::Capture");
     if (iVar7 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xbf5);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xbf5);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4595,7 +4594,7 @@ undefined4 __thiscall st::fn_0049F100(STGroupBoatC *this,int param_1)
           if (pSVar3 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xbb4);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xbb4);
           }
           dVar4 = pSVar3->slot_2C();
           if (((dVar4 == 6) || (dVar4 = pSVar3->slot_2C(), dVar4 == 0x12)) ||
@@ -4630,7 +4629,7 @@ LAB_0049f2b2:
     array = local_18;
     st::fn_00403D9B
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_c), (uint8_t)(pSVar2->field_0024)),
-               &array_00->flags,&local_18->flags);
+               st::pointer_boundary_cast<uint *>(&array_00->flags),st::pointer_boundary_cast<uint *>(&local_18->flags));
     if (array_00 != nullptr) {
       st::fn_006AE110(array_00);
     }
@@ -4660,7 +4659,7 @@ LAB_0049f2b2:
             if (pSVar3 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xbda);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xbda);
             }
             iVar8 = st::fn_00402EDC((STGameObjC *)pSVar3);
             if (iVar8 == 9) {
@@ -4695,7 +4694,7 @@ LAB_0049f3f5:
           if (pSVar3 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xbeb);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xbeb);
           }
           iVar8 = st::fn_00402EDC((STGameObjC *)pSVar3);
           if ((iVar8 == 9) || (uVar10 = st::fn_00404DF9(pSVar3,CASE_9), uVar10 == 1)) {
@@ -4774,7 +4773,7 @@ undefined4 __thiscall st::fn_0049F640(STGroupBoatC *this,int param_1)
             if (pSVar3 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xc11);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xc11);
             }
             st::fn_00402126(pSVar3,CASE_16,&local_24);
           }
@@ -4794,7 +4793,7 @@ undefined4 __thiscall st::fn_0049F640(STGroupBoatC *this,int param_1)
             if (pSVar3 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xc1c);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xc1c);
             }
             iVar7 = st::fn_00402EDC((STGameObjC *)pSVar3);
             if (iVar7 == 0x16) break;
@@ -4813,12 +4812,12 @@ undefined4 __thiscall st::fn_0049F640(STGroupBoatC *this,int param_1)
   else {
     g_currentExceptionFrame = local_68.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xc25,0,iVar3,"%s"
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xc25,0,iVar3,st::mutable_c_string("%s")
                                  ,"STGroupBoatC::Recharge");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xc26);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xc26);
       return 0xffffffff;
     }
   }
@@ -4891,7 +4890,7 @@ undefined4 __thiscall st::fn_0049F900(STGroupBoatC *this,int param_1)
             if (pSVar3 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xc46);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xc46);
             }
             st::fn_00402126(pSVar3,CASE_15,&local_28);
           }
@@ -4911,7 +4910,7 @@ undefined4 __thiscall st::fn_0049F900(STGroupBoatC *this,int param_1)
             if (pSVar3 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xc51);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xc51);
             }
             iVar7 = st::fn_00402EDC((STGameObjC *)pSVar3);
             if (iVar7 == 0x15) break;
@@ -4930,12 +4929,12 @@ undefined4 __thiscall st::fn_0049F900(STGroupBoatC *this,int param_1)
   else {
     g_currentExceptionFrame = local_6c.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xc5a,0,iVar3,"%s"
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xc5a,0,iVar3,st::mutable_c_string("%s")
                                  ,"STGroupBoatC::Teleport");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xc5b);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xc5b);
       return 0xffffffff;
     }
   }
@@ -4988,14 +4987,14 @@ uint * __thiscall st::fn_0049FBF0(STGroupBoatC *this,int param_1)
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
     if (iVar3 == -0x5001fff7) {
-      return &local_1c->flags;
+      return st::pointer_boundary_cast<uint *>(&local_1c->flags);
     }
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xcb0,0,iVar3,"%s",
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xcb0,0,iVar3,st::mutable_c_string("%s"),
                                "STGroupBoatC::Bring");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xcb1);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xcb1);
     return (uint *)0xffffffff;
   }
   if ((param_1 != 0) && (param_1 != 1)) goto LAB_0049fe51;
@@ -5018,7 +5017,7 @@ uint * __thiscall st::fn_0049FBF0(STGroupBoatC *this,int param_1)
                            (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
         if (pSVar3 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0xc79);
         }
         dVar4 = pSVar3->slot_2C();
@@ -5084,7 +5083,7 @@ LAB_0049fe26:
   else {
     st::fn_00403D9B
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_10), (uint8_t)(pSVar2->field_0024)),
-               &local_14->flags,&local_c->flags);
+               st::pointer_boundary_cast<uint *>(&local_14->flags),st::pointer_boundary_cast<uint *>(&local_c->flags));
 LAB_0049fe22:
     if (pDVar5 != nullptr) goto LAB_0049fe26;
   }
@@ -5092,7 +5091,7 @@ LAB_0049fe22:
     st::fn_006AE110(array);
   }
   st::fn_006A5E40
-            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0xca0);
+            (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xca0);
 LAB_0049fe51:
   if (g_playSystem_00802A38->field_00E4 % 0x19 == 7) {
     uVar11 = 0;
@@ -5106,7 +5105,7 @@ LAB_0049fe51:
           if (pSVar3 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xca7);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xca7);
           }
           iVar9 = st::fn_00402EDC((STGameObjC *)pSVar3);
           if ((iVar9 == 0x17) || (uVar6 = st::fn_00404DF9(pSVar3,CASE_17), uVar6 == 1)) break;
@@ -5119,7 +5118,7 @@ LAB_0049fe51:
     }
   }
   g_currentExceptionFrame = local_70.previous;
-  return &local_1c->flags;
+  return st::pointer_boundary_cast<uint *>(&local_1c->flags);
 }
 
 // 004A0040 STGroupBoatC::GrpDismant
@@ -5178,10 +5177,10 @@ undefined4 __thiscall st::fn_004A0040(STGroupBoatC *this,int param_1)
     if (iVar7 == -0x5001fff7) {
       return 0;
     }
-    iVar10 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xd02,0,iVar7,"%s",
+    iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xd02,0,iVar7,st::mutable_c_string("%s"),
                                 "STGroupBoatC::GrpDismant");
     if (iVar10 == 0) {
-      st::fn_006A5E40(iVar7,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xd03);
+      st::fn_006A5E40(iVar7,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xd03);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -5195,7 +5194,7 @@ undefined4 __thiscall st::fn_004A0040(STGroupBoatC *this,int param_1)
     *(undefined2 *)&local_24->field_0x2f2 = local_24->field_01BD;
     if (g_worldGrid.sizeZ + -2 < (int)(short)local_24->field_01BD) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0xcc7);
     }
     sVar1 = *(short *)&pSVar6->field_0x2ee;
@@ -5213,7 +5212,7 @@ undefined4 __thiscall st::fn_004A0040(STGroupBoatC *this,int param_1)
        || ((*(int *)&pAVar15->field_0x24 != (int)pSVar6->field_0024 ||
            (iVar11 = st::fn_0040141A(pAVar15), iVar11 == 0)))) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0xccc);
     }
     uVar5 = *(undefined2 *)&pAVar15->field_0x1a;
@@ -5239,7 +5238,7 @@ undefined4 __thiscall st::fn_004A0040(STGroupBoatC *this,int param_1)
           if (pSVar7 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xcd4);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xcd4);
           }
           dVar8 = pSVar7->slot_2C();
           if (((dVar8 == 0xc) || (dVar8 = pSVar7->slot_2C(), dVar8 == 0x18)) ||
@@ -5274,7 +5273,7 @@ LAB_004a02d6:
     array = local_c;
     st::fn_00403D9B
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar12), (uint8_t)(pSVar6->field_0024)),
-               &array_00->flags,&local_c->flags);
+               st::pointer_boundary_cast<uint *>(&array_00->flags),st::pointer_boundary_cast<uint *>(&local_c->flags));
     if (array_00 != nullptr) {
       st::fn_006AE110(array_00);
     }
@@ -5297,7 +5296,7 @@ LAB_004a02d6:
           if (pSVar7 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xcf6);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xcf6);
           }
           dVar8 = pSVar7->slot_2C();
           if (((((dVar8 == 0xc) || (dVar8 = pSVar7->slot_2C(), dVar8 == 0x18)) ||
@@ -5374,10 +5373,10 @@ uint * __thiscall st::fn_004A0590(STGroupBoatC *this,int param_1)
   pSVar4 = local_18;
   if (iVar5 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar1 = &local_18->field_0x300;
+      puVar1 = st::pointer_boundary_cast<undefined1 *>(&local_18->field_0x300);
       memset(&local_18->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
       local_18->field_0065 = 0;
-      puVar2 = &local_18->field_0x302;
+      puVar2 = st::pointer_boundary_cast<undefined1 *>(&local_18->field_0x302);
       *(undefined2 *)&local_18->field_0x2fa = *(undefined2 *)&local_18->field_0x1c1;
       *(undefined2 *)&local_18->field_0x2fc = local_18->field_01C3;
       *(undefined2 *)&local_18->field_0x2f8 = *(undefined2 *)&local_18->field_0x1bf;
@@ -5417,7 +5416,7 @@ uint * __thiscall st::fn_004A0590(STGroupBoatC *this,int param_1)
             if (pSVar5 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xd2a);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xd2a);
             }
             local_38 = local_24;
             local_36 = local_22;
@@ -5446,7 +5445,7 @@ uint * __thiscall st::fn_004A0590(STGroupBoatC *this,int param_1)
             if (pSVar5 == nullptr) {
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_grpb.cpp",0xd3d);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xd3d);
             }
             iVar9 = st::fn_00402EDC((STGameObjC *)pSVar5);
             if (iVar9 == 8) break;
@@ -5465,12 +5464,12 @@ uint * __thiscall st::fn_004A0590(STGroupBoatC *this,int param_1)
   else {
     g_currentExceptionFrame = local_80.previous;
     if (iVar5 != -0x5001fff7) {
-      iVar8 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xd46,0,iVar5,"%s"
+      iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xd46,0,iVar5,st::mutable_c_string("%s")
                                  ,"STGroupBoatC::Scout");
       if (iVar8 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xd47);
+      st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xd47);
       return (uint *)0xffffffff;
     }
   }
@@ -5532,12 +5531,12 @@ undefined4 __thiscall st::fn_004A0990(STGroupBoatC *this,int param_1)
     if (iVar3 == -0x5001fff7) {
       return local_1c;
     }
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xda5,0,iVar3,"%s",
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xda5,0,iVar3,st::mutable_c_string("%s"),
                                "STGroupBoatC::GrpRepSub");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xda6);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xda6);
     return 0xffffffff;
   }
   if ((param_1 != 1) && (param_1 != 0)) goto LAB_004a0c5b;
@@ -5565,7 +5564,7 @@ undefined4 __thiscall st::fn_004A0990(STGroupBoatC *this,int param_1)
                             (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_c),CASE_1);
         if (local_8 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0xd64);
         }
         iVar8 = local_8->vfunc_F8();
@@ -5639,7 +5638,7 @@ LAB_004a0c2b:
     if (array != nullptr) {
       st::fn_00403D9B
                 (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(pSVar9), (uint8_t)(pSVar2->field_0024)),
-                 &local_10->flags,&array->flags);
+                 st::pointer_boundary_cast<uint *>(&local_10->flags),st::pointer_boundary_cast<uint *>(&array->flags));
       goto LAB_004a0c2b;
     }
     if (local_10 == nullptr) goto LAB_004a0bcc;
@@ -5650,7 +5649,7 @@ LAB_004a0c2f:
     st::fn_006AE110(array);
   }
   st::fn_006A5E40
-            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0xd8f);
+            (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xd8f);
 LAB_004a0c5b:
   pSVar9 = local_14;
   if (g_playSystem_00802A38->field_00E4 % 0x14 == 4) {
@@ -5665,7 +5664,7 @@ LAB_004a0c5b:
           if (local_8 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xd97);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xd97);
           }
           iVar8 = local_8->vfunc_F8();
           if ((iVar8 != 0) &&
@@ -5706,71 +5705,72 @@ LAB_004a0c5b:
 void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
 
 {
-  uint uVar2;
+  STBoatC_field_06F7State SVar1;
+  uint uVar3;
   STGroupBoatC *this_00;
   int local_EAX_76;
-  STGameObjC *pSVar3;
-  STBoatC *pSVar4;
+  STGameObjC *pSVar4;
+  STBoatC *pSVar5;
   int local_EAX_791;
   int iVar3;
-  dword dVar5;
+  dword dVar6;
   int iVar7;
   DArrayTy *pDVar8;
   DArrayTy *pDVar9;
   int iVar6;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_04;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_05;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_06;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_07;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_08;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_09;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_10;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_11;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_12;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_13;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_14;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_15;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_16;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_17;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_18;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_19;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_20;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_21;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_22;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_23;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_24;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STGroupBoatC_field_01E6State extraout_ECX_25;
   STGroupBoatC_field_01E6State SVar10;
   uint uVar11;
@@ -5894,26 +5894,26 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
     if (local_EAX_76 == -0x5001fff7) {
       return;
     }
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x10dc,0,local_EAX_76,
-                               "%s","STGroupBoatC::RechargeNewCmd");
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x10dc,0,local_EAX_76,
+                               st::mutable_c_string("%s"),"STGroupBoatC::RechargeNewCmd");
     if (iVar6 == 0) {
-      st::fn_006A5E40(local_EAX_76,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x10dd);
+      st::fn_006A5E40(local_EAX_76,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x10dd);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   while (uVar12 = uVar12 - 1, -1 < (int)uVar12) {
     st::fn_006ACC70(this_00->field_002D,uVar12,&local_8);
-    pSVar3 = st::fn_004028BA
+    pSVar4 = st::fn_004028BA
                        (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-    if ((pSVar3 == nullptr) || (pSVar3->field_0020 != 0x14)) {
+    if ((pSVar4 == nullptr) || (pSVar4->field_0020 != 0x14)) {
       st::fn_006B0C70(this_00->field_002D,uVar12);
       uVar11 = uVar11 - 1;
     }
   }
   if (uVar11 == 0) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0xdf7
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xdf7
               );
   }
   SVar10 = this_00->field_01E6;
@@ -5931,18 +5931,18 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
     if (uVar12 != 0) {
       do {
         st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
-        pSVar4 = (STBoatC *)
+        pSVar5 = (STBoatC *)
                  st::fn_004028BA
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-        if (pSVar4 == nullptr) {
+        if (pSVar5 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0xe03);
         }
-        st::fn_00402126(pSVar4,CASE_1,&local_44);
+        st::fn_00402126(pSVar5,CASE_1,st::pointer_boundary_cast<uint *>(&local_44));
         local_18 = local_18 + 1;
         uVar11 = local_18 & 0xffff;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         SVar10 = extraout_ECX;
       } while (uVar11 < uVar12);
     }
@@ -5954,25 +5954,25 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
       uVar11 = 0;
       do {
         st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
-        pSVar4 = (STBoatC *)
+        pSVar5 = (STBoatC *)
                  st::fn_004028BA
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-        if (pSVar4 == nullptr) {
+        if (pSVar5 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0xe46);
         }
-        st::fn_00402126(pSVar4,CASE_3,&local_1c);
+        st::fn_00402126(pSVar5,CASE_3,&local_1c);
         local_18 = local_18 + 1;
         uVar11 = local_18 & 0xffff;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         SVar10 = extraout_ECX_00;
       } while (uVar11 < uVar12);
     }
   }
   if (this_00->field_01E6 == CASE_2) {
-    st::fn_00405146(this_00,&this_00->field_002D->flags);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    st::fn_00405146(this_00,st::pointer_boundary_cast<uint *>(&this_00->field_002D->flags));
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     SVar10 = extraout_ECX_01;
   }
   if (this_00->field_01E6 == CASE_6) {
@@ -5991,21 +5991,21 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
           local_102 = 0;
           st::fn_006AE140(this_00->field_022E,uVar11,&local_114);
           local_48 = uVar11;
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
-            iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xe77,0,0,
-                                       "%s","STGroupBoatC::RechargeNewCmd Patrol NULL value");
+          if (pSVar5 == nullptr) {
+            iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xe77,0,0,
+                                       st::mutable_c_string("%s"),"STGroupBoatC::RechargeNewCmd Patrol NULL value");
             if (iVar3 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xe78);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xe78);
           }
           st::fn_006AE1C0(local_28,&local_8);
-          st::fn_00402126(pSVar4,CASE_6,&local_4c);
+          st::fn_00402126(pSVar5,CASE_6,&local_4c);
           uVar11 = uVar11 + 1;
           local_18 = local_18 + 1;
           uVar12 = local_18 & 0xffff;
@@ -6018,37 +6018,37 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
         do {
           uVar12 = this_00->field_022E->count;
           uVar11 = uVar12;
-          uVar2 = local_18;
-          while (uVar12 = uVar12 - 1, local_18 = uVar2, -1 < (int)uVar12) {
+          uVar3 = local_18;
+          while (uVar12 = uVar12 - 1, local_18 = uVar3, -1 < (int)uVar12) {
             st::fn_006ACC70(this_00->field_022E,uVar12,&local_114);
-            uVar2 = local_18;
+            uVar3 = local_18;
             if (local_110 == -1) {
               uVar11 = uVar12;
             }
           }
-          st::fn_006ACC70(this_00->field_002D,uVar2 & 0xffff,&local_8);
+          st::fn_006ACC70(this_00->field_002D,uVar3 & 0xffff,&local_8);
           local_114 = 0;
           local_102 = 0;
           local_110 = (short)local_8;
           st::fn_006AE140(this_00->field_022E,uVar11,&local_114);
           local_48 = uVar11;
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             local_EAX_791 =
-                 st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0xe64,0,0,"%s",
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xe64,0,0,st::mutable_c_string("%s"),
                                     "STGroupBoatC::RechargeNewCmd Patrol NULL value");
             if (local_EAX_791 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xe65);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xe65);
           }
           st::fn_006AE1C0(local_28,&local_8);
-          st::fn_00402126(pSVar4,CASE_6,&local_4c);
-          local_18 = uVar2 + 1;
+          st::fn_00402126(pSVar5,CASE_6,&local_4c);
+          local_18 = uVar3 + 1;
         } while ((local_18 & 0xffff) < local_14);
       }
     }
@@ -6058,7 +6058,7 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
       st::fn_00405D7B(this_00,local_28,(int)local_124,(int)local_122,(int)local_120);
     }
     st::fn_006AE110(pDVar9);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     SVar10 = extraout_ECX_02;
   }
   if (this_00->field_01E6 == CASE_7) {
@@ -6072,20 +6072,20 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
       uVar11 = 0;
       do {
         st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
-        pSVar4 = (STBoatC *)
+        pSVar5 = (STBoatC *)
                  st::fn_004028BA
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-        if (pSVar4 == nullptr) {
+        if (pSVar5 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0xe8c);
         }
-        st::fn_004018C5((STFishC *)pSVar4,&local_20,&local_1e,&local_22);
-        st::fn_00404F6B(pSVar4,(int)local_20,(int)local_1e,*(int *)&this_00->field_0x222);
-        st::fn_00402126(pSVar4,CASE_1,&local_44);
+        st::fn_004018C5((STFishC *)pSVar5,&local_20,&local_1e,&local_22);
+        st::fn_00404F6B(pSVar5,(int)local_20,(int)local_1e,*(int *)&this_00->field_0x222);
+        st::fn_00402126(pSVar5,CASE_1,st::pointer_boundary_cast<uint *>(&local_44));
         uVar12 = uVar12 + 1;
         uVar11 = uVar12 & 0xffff;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         SVar10 = extraout_ECX_03;
       } while (uVar11 < local_14);
     }
@@ -6098,20 +6098,20 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
         uVar12 = local_18 & 0xffff;
         st::fn_006ACC70(this_00->field_002D,uVar12,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xe9a);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xe9a);
           }
-          dVar5 = pSVar4->slot_2C();
-          if (((dVar5 != 8) && (dVar5 = pSVar4->slot_2C(), dVar5 != 0x14)) &&
-             (dVar5 = pSVar4->slot_2C(), dVar5 != 0x1a)) {
-            iVar7 = st::fn_00404E58((STGameObjC *)pSVar4);
+          dVar6 = pSVar5->slot_2C();
+          if (((dVar6 != 8) && (dVar6 = pSVar5->slot_2C(), dVar6 != 0x14)) &&
+             (dVar6 = pSVar5->slot_2C(), dVar6 != 0x1a)) {
+            iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
             if (iVar7 == 0) {
-              st::fn_00402126(pSVar4,CASE_3,&local_1c);
+              st::fn_00402126(pSVar5,CASE_3,&local_1c);
             }
             else {
               if (local_c == nullptr) {
@@ -6135,16 +6135,16 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
       do {
         st::fn_006ACC70((DArrayTy *)this_00->field_0029,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar3 = st::fn_004028BA
+          pSVar4 = st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar3 == nullptr) {
+          if (pSVar4 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xeb0);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xeb0);
           }
-          iVar7 = (*pSVar3->vtable->vfunc_2C)();
-          if (((iVar7 == 8) || (iVar7 = (*pSVar3->vtable->vfunc_2C)(), iVar7 == 0x14)) ||
-             (iVar7 = (*pSVar3->vtable->vfunc_2C)(), iVar7 == 0x1a)) {
+          iVar7 = (*pSVar4->vtable->vfunc_2C)();
+          if (((iVar7 == 8) || (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x14)) ||
+             (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x1a)) {
             if (local_10 == nullptr) {
               local_10 = st::fn_006AE290(nullptr,1,2,1);
             }
@@ -6158,7 +6158,7 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
     pDVar9 = local_c;
     st::fn_00403D9B
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_18), (uint8_t)(this_00->field_0024)),
-               &local_10->flags,&local_c->flags);
+               st::pointer_boundary_cast<uint *>(&local_10->flags),st::pointer_boundary_cast<uint *>(&local_c->flags));
     if (local_10 != nullptr) {
       st::fn_006AE110(local_10);
     }
@@ -6166,7 +6166,7 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
       st::fn_006AE110(pDVar9);
     }
     st::fn_0040143D(this_00,1,this_00->field_024E,this_00->field_0266,this_00->field_002D);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     SVar10 = extraout_ECX_04;
   }
   if (this_00->field_01E6 == CASE_9) {
@@ -6189,22 +6189,22 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
       do {
         st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xecf);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xecf);
           }
-          dVar5 = pSVar4->slot_2C();
-          if (((dVar5 == 0xc) || (dVar5 = pSVar4->slot_2C(), dVar5 == 0x18)) ||
-             (dVar5 = pSVar4->slot_2C(), dVar5 == 0x19)) {
+          dVar6 = pSVar5->slot_2C();
+          if (((dVar6 == 0xc) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x18)) ||
+             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x19)) {
             puVar14 = &local_154;
             SVar13 = CASE_11;
           }
           else {
-            iVar7 = st::fn_00404E58((STGameObjC *)pSVar4);
+            iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
             if (iVar7 != 0) {
               if (local_c == nullptr) {
                 local_c = st::fn_006AE290(nullptr,1,2,1);
@@ -6215,7 +6215,7 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
             puVar14 = &local_1c;
             SVar13 = CASE_3;
           }
-          st::fn_00402126(pSVar4,SVar13,puVar14);
+          st::fn_00402126(pSVar5,SVar13,puVar14);
         }
 LAB_004a1878:
         uVar12 = uVar12 + 1;
@@ -6230,16 +6230,16 @@ LAB_004a1878:
       do {
         st::fn_006ACC70((DArrayTy *)this_00->field_0029,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar3 = st::fn_004028BA
+          pSVar4 = st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar3 == nullptr) {
+          if (pSVar4 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xee9);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xee9);
           }
-          iVar7 = (*pSVar3->vtable->vfunc_2C)();
-          if (((iVar7 == 0xc) || (iVar7 = (*pSVar3->vtable->vfunc_2C)(), iVar7 == 0x18)) ||
-             (iVar7 = (*pSVar3->vtable->vfunc_2C)(), iVar7 == 0x19)) {
+          iVar7 = (*pSVar4->vtable->vfunc_2C)();
+          if (((iVar7 == 0xc) || (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x18)) ||
+             (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x19)) {
             if (local_10 == nullptr) {
               local_10 = st::fn_006AE290(nullptr,1,2,1);
             }
@@ -6253,17 +6253,17 @@ LAB_004a1878:
     pDVar9 = local_c;
     st::fn_00403D9B
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_18), (uint8_t)(this_00->field_0024)),
-               &local_10->flags,&local_c->flags);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+               st::pointer_boundary_cast<uint *>(&local_10->flags),st::pointer_boundary_cast<uint *>(&local_c->flags));
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     SVar10 = extraout_ECX_05;
     if (local_10 != nullptr) {
       st::fn_006AE110(local_10);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       SVar10 = extraout_ECX_06;
     }
     if (pDVar9 != nullptr) {
       st::fn_006AE110(pDVar9);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       SVar10 = extraout_ECX_07;
     }
   }
@@ -6279,22 +6279,22 @@ LAB_004a1878:
       do {
         st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xf02);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xf02);
           }
-          dVar5 = pSVar4->slot_2C();
-          if (((dVar5 == 8) || (dVar5 = pSVar4->slot_2C(), dVar5 == 0x14)) ||
-             (dVar5 = pSVar4->slot_2C(), dVar5 == 0x1a)) {
+          dVar6 = pSVar5->slot_2C();
+          if (((dVar6 == 8) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x14)) ||
+             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x1a)) {
             puVar14 = &local_64;
             SVar13 = CASE_D;
           }
           else {
-            iVar7 = st::fn_00404E58((STGameObjC *)pSVar4);
+            iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
             if (iVar7 != 0) {
               if (local_c == nullptr) {
                 local_c = st::fn_006AE290(nullptr,1,2,1);
@@ -6305,7 +6305,7 @@ LAB_004a1878:
             puVar14 = &local_1c;
             SVar13 = CASE_3;
           }
-          st::fn_00402126(pSVar4,SVar13,puVar14);
+          st::fn_00402126(pSVar5,SVar13,puVar14);
         }
 LAB_004a1a74:
         uVar12 = uVar12 + 1;
@@ -6320,16 +6320,16 @@ LAB_004a1a74:
       do {
         st::fn_006ACC70((DArrayTy *)this_00->field_0029,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar3 = st::fn_004028BA
+          pSVar4 = st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar3 == nullptr) {
+          if (pSVar4 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xf1c);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xf1c);
           }
-          iVar7 = (*pSVar3->vtable->vfunc_2C)();
-          if (((iVar7 == 8) || (iVar7 = (*pSVar3->vtable->vfunc_2C)(), iVar7 == 0x14)) ||
-             (iVar7 = (*pSVar3->vtable->vfunc_2C)(), iVar7 == 0x1a)) {
+          iVar7 = (*pSVar4->vtable->vfunc_2C)();
+          if (((iVar7 == 8) || (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x14)) ||
+             (iVar7 = (*pSVar4->vtable->vfunc_2C)(), iVar7 == 0x1a)) {
             if (local_10 == nullptr) {
               local_10 = st::fn_006AE290(nullptr,1,2,1);
             }
@@ -6343,23 +6343,23 @@ LAB_004a1a74:
     pDVar9 = local_c;
     st::fn_00403D9B
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_18), (uint8_t)(this_00->field_0024)),
-               &local_10->flags,&local_c->flags);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+               st::pointer_boundary_cast<uint *>(&local_10->flags),st::pointer_boundary_cast<uint *>(&local_c->flags));
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     SVar10 = extraout_ECX_08;
     if (local_10 != nullptr) {
       st::fn_006AE110(local_10);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       SVar10 = extraout_ECX_09;
     }
     if (pDVar9 != nullptr) {
       st::fn_006AE110(pDVar9);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       SVar10 = extraout_ECX_10;
     }
   }
   if (this_00->field_01E6 == CASE_4) {
     st::fn_00403251(this_00,1,*(DArrayTy **)&this_00->field_0x29f,this_00->field_002D);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     SVar10 = extraout_ECX_11;
   }
   if (this_00->field_01E6 == CASE_5) {
@@ -6368,22 +6368,22 @@ LAB_004a1a74:
       uVar11 = 0;
       do {
         st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         SVar10 = extraout_ECX_12;
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xf35);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xf35);
           }
-          iVar7 = st::fn_00404E58((STGameObjC *)pSVar4);
+          iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
           if (iVar7 == 0) {
             local_1c = g_playSystem_00802A38->field_00E4;
-            st::fn_00402126(pSVar4,CASE_3,&local_1c);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            st::fn_00402126(pSVar5,CASE_3,&local_1c);
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             SVar10 = extraout_ECX_13;
           }
           else {
@@ -6391,7 +6391,7 @@ LAB_004a1a74:
               local_c = st::fn_006AE290(nullptr,1,2,1);
             }
             st::fn_006AE1C0(local_c,&local_8);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             SVar10 = extraout_ECX_14;
           }
         }
@@ -6406,20 +6406,20 @@ LAB_004a1a74:
       uVar11 = 0;
       do {
         st::fn_006ACC70((DArrayTy *)this_00->field_0029,uVar11,&local_8);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         SVar10 = extraout_ECX_15;
         if ((ushort)local_8 != 0xffff) {
-          pSVar3 = st::fn_004028BA
+          pSVar4 = st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar3 == nullptr) {
+          if (pSVar4 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xf47);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xf47);
           }
-          iVar7 = st::fn_00404E58(pSVar3);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          iVar7 = st::fn_00404E58(pSVar4);
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           SVar10 = extraout_ECX_16;
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           if ((iVar7 == 1) &&
              (local_e8 = st::fn_004044F3(this_00->field_0024,(short)local_8),
              SVar10 = extraout_ECX_17, local_e8 != 0xffffffff)) break;
@@ -6432,22 +6432,22 @@ LAB_004a1a74:
       st::fn_006ACC70((DArrayTy *)g_packedRecords_A62x8[this_00->field_0024].field1976_0x9f6,
                        local_e8,local_130);
       st::fn_006AFE40((int *)&local_10,local_130[0]);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       st::fn_00403D9B
                 (g_allPlayers_007FA174,
-                 STReplaceLowByte((uint32_t)(extraout_ECX_18), (uint8_t)(this_00->field_0024)),&local_10->flags,
-                 &local_c->flags);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                 STReplaceLowByte((uint32_t)(extraout_ECX_18), (uint8_t)(this_00->field_0024)),st::pointer_boundary_cast<uint *>(&local_10->flags),
+                 st::pointer_boundary_cast<uint *>(&local_c->flags));
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       SVar10 = extraout_ECX_19;
     }
     if (local_10 != nullptr) {
       st::fn_006AE110(local_10);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       SVar10 = extraout_ECX_20;
     }
     if (local_c != nullptr) {
       st::fn_006AE110(local_c);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       SVar10 = extraout_ECX_21;
     }
   }
@@ -6460,28 +6460,28 @@ LAB_004a1a74:
     if (0 < (int)local_14) {
       do {
         st::fn_006ACC70(this_00->field_002D,uVar12,&local_8);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         SVar10 = extraout_ECX_22;
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xf5d);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xf5d);
           }
-          iVar7 = pSVar4->vfunc_F8();
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          iVar7 = pSVar5->vfunc_F8();
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           SVar10 = extraout_ECX_23;
           if (iVar7 != 0) {
-            iVar7 = st::fn_00404E58((STGameObjC *)pSVar4);
+            iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
             if (iVar7 == 0) {
-              dVar5 = pSVar4->slot_2C();
-              if ((((dVar5 != 7) && (dVar5 != 0x13)) && (dVar5 != 0x1b)) ||
-                 (iVar7 = st::fn_00402608((STGameObjC *)pSVar4), iVar7 != 0)) {
-                st::fn_00402126(pSVar4,CASE_3,&local_1c);
-                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+              dVar6 = pSVar5->slot_2C();
+              if ((((dVar6 != 7) && (dVar6 != 0x13)) && (dVar6 != 0x1b)) ||
+                 (iVar7 = st::fn_00402608((STGameObjC *)pSVar5), iVar7 != 0)) {
+                st::fn_00402126(pSVar5,CASE_3,&local_1c);
+                /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                 SVar10 = extraout_ECX_24;
                 goto LAB_004a1ea4;
               }
@@ -6489,7 +6489,7 @@ LAB_004a1a74:
               local_d2 = *(undefined2 *)&this_00->field_0x2a5;
               local_d0 = *(undefined2 *)&this_00->field_0x2a7;
               local_ce = *(undefined4 *)&this_00->field_0x2a9;
-              st::fn_00402126(pSVar4,CASE_F,&local_d8);
+              st::fn_00402126(pSVar5,CASE_F,&local_d8);
               pDVar8 = local_10;
               if (local_10 == nullptr) {
                 pDVar8 = st::fn_006AE290(nullptr,1,2,1);
@@ -6505,7 +6505,7 @@ LAB_004a1a74:
               }
             }
             st::fn_006AE1C0(pDVar8,&local_8);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             SVar10 = extraout_ECX_25;
           }
         }
@@ -6518,18 +6518,18 @@ LAB_004a1ea4:
 LAB_004a1ede:
       if (local_c != nullptr) {
         uVar12 = 0;
-        dVar5 = local_c->count;
-        if (0 < (int)dVar5) {
+        dVar6 = local_c->count;
+        if (0 < (int)dVar6) {
           uVar11 = 0;
           do {
             st::fn_006ACC70(local_c,uVar11,&local_8);
-            pSVar4 = (STBoatC *)
+            pSVar5 = (STBoatC *)
                      st::fn_004028BA
                                (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-            st::fn_00402126(pSVar4,CASE_3,&local_1c);
+            st::fn_00402126(pSVar5,CASE_3,&local_1c);
             uVar12 = uVar12 + 1;
             uVar11 = uVar12 & 0xffff;
-          } while ((int)uVar11 < (int)dVar5);
+          } while ((int)uVar11 < (int)dVar6);
         }
       }
     }
@@ -6539,7 +6539,7 @@ LAB_004a1ede:
     else {
       st::fn_00403D9B
                 (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(SVar10), (uint8_t)(this_00->field_0024)),
-                 &local_10->flags,&pDVar9->flags);
+                 st::pointer_boundary_cast<uint *>(&local_10->flags),st::pointer_boundary_cast<uint *>(&pDVar9->flags));
     }
     if (local_10 != nullptr) {
       st::fn_006AE110(local_10);
@@ -6557,20 +6557,20 @@ LAB_004a1ede:
       do {
         st::fn_006ACC70(this_00->field_002D,uVar12,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xf8e);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xf8e);
           }
-          iVar7 = pSVar4->vfunc_F8();
+          iVar7 = pSVar5->vfunc_F8();
           if (iVar7 != 0) {
-            dVar5 = pSVar4->slot_2C();
-            if ((((dVar5 == 7) || (dVar5 == 0x13)) || (dVar5 == 0x1b)) &&
-               (iVar7 = st::fn_00402608((STGameObjC *)pSVar4), iVar7 != 0)) {
-              st::fn_00402126(pSVar4,CASE_10,local_e4);
+            dVar6 = pSVar5->slot_2C();
+            if ((((dVar6 == 7) || (dVar6 == 0x13)) || (dVar6 == 0x1b)) &&
+               (iVar7 = st::fn_00402608((STGameObjC *)pSVar5), iVar7 != 0)) {
+              st::fn_00402126(pSVar5,CASE_10,local_e4);
               if (((*(short *)&this_00->field_0x2ad != -1) ||
                   (*(short *)&this_00->field_0x2af != -1)) || (this_00->field_02B1 != -1)) {
                 pDVar9 = local_10;
@@ -6583,9 +6583,9 @@ LAB_004a2089:
               }
             }
             else {
-              iVar7 = st::fn_00404E58((STGameObjC *)pSVar4);
+              iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
               if (iVar7 == 0) {
-                st::fn_00402126(pSVar4,CASE_3,&local_1c);
+                st::fn_00402126(pSVar5,CASE_3,&local_1c);
               }
               else if (((*(short *)&this_00->field_0x2ad != -1) ||
                        (*(short *)&this_00->field_0x2af != -1)) || (this_00->field_02B1 != -1)) {
@@ -6606,19 +6606,19 @@ LAB_004a2089:
     if (local_10 == nullptr) {
 LAB_004a20d0:
       if (local_c != nullptr) {
-        dVar5 = local_c->count;
+        dVar6 = local_c->count;
         uVar12 = 0;
-        if (0 < (int)dVar5) {
+        if (0 < (int)dVar6) {
           uVar11 = 0;
           do {
             st::fn_006ACC70(local_c,uVar11,&local_8);
-            pSVar4 = (STBoatC *)
+            pSVar5 = (STBoatC *)
                      st::fn_004028BA
                                (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-            st::fn_00402126(pSVar4,CASE_3,&local_1c);
+            st::fn_00402126(pSVar5,CASE_3,&local_1c);
             uVar12 = uVar12 + 1;
             uVar11 = uVar12 & 0xffff;
-          } while ((int)uVar11 < (int)dVar5);
+          } while ((int)uVar11 < (int)dVar6);
         }
       }
     }
@@ -6628,7 +6628,7 @@ LAB_004a20d0:
     else {
       st::fn_00403D9B
                 (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar12), (uint8_t)(this_00->field_0024)),
-                 &local_10->flags,&local_c->flags);
+                 st::pointer_boundary_cast<uint *>(&local_10->flags),st::pointer_boundary_cast<uint *>(&local_c->flags));
     }
     if (local_10 != nullptr) {
       st::fn_006AE110(local_10);
@@ -6649,16 +6649,16 @@ LAB_004a20d0:
       do {
         st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xfc2);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xfc2);
           }
           if (*(int *)&this_00->field_0x2b9 == -1) {
-            if ((pSVar4->field_07B6 == 0) || (pSVar4->field_07BE < 1)) {
+            if ((pSVar5->field_07B6 == 0) || (pSVar5->field_07BE < 1)) {
 LAB_004a221d:
               puVar14 = &local_1c;
               SVar13 = CASE_3;
@@ -6669,12 +6669,12 @@ LAB_004a221d:
             }
           }
           else {
-            if ((pSVar4->field_07B6 != *(int *)&this_00->field_0x2b9) || (pSVar4->field_07BE < 1))
+            if ((pSVar5->field_07B6 != *(int *)&this_00->field_0x2b9) || (pSVar5->field_07BE < 1))
             goto LAB_004a221d;
             puVar14 = &local_58;
             SVar13 = CASE_7;
           }
-          st::fn_00402126(pSVar4,SVar13,puVar14);
+          st::fn_00402126(pSVar5,SVar13,puVar14);
         }
         uVar12 = uVar12 + 1;
         uVar11 = uVar12 & 0xffff;
@@ -6693,16 +6693,15 @@ LAB_004a221d:
       do {
         st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0xfea);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xfea);
           }
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((*(int *)((int)pSVar4->field_06CB + 0x2c) == 4) && (0 < pSVar4->field_07A2)) {
+          if ((pSVar5->field_06F7 == CASE_4) && (0 < pSVar5->field_07A2)) {
             puVar14 = &local_7c;
             SVar13 = CASE_A;
           }
@@ -6710,7 +6709,7 @@ LAB_004a221d:
             puVar14 = &local_1c;
             SVar13 = CASE_3;
           }
-          st::fn_00402126(pSVar4,SVar13,puVar14);
+          st::fn_00402126(pSVar5,SVar13,puVar14);
         }
         uVar12 = uVar12 + 1;
         uVar11 = uVar12 & 0xffff;
@@ -6729,17 +6728,16 @@ LAB_004a221d:
       do {
         st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x1003);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1003);
           }
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar7 = *(int *)((int)pSVar4->field_06CB + 0x2c);
-          if (((iVar7 == 6) || (iVar7 == 0x12)) || (iVar7 == 0x22)) {
+          SVar1 = pSVar5->field_06F7;
+          if (((SVar1 == CASE_6) || (SVar1 == CASE_12)) || (SVar1 == CASE_22)) {
             puVar14 = &local_88;
             SVar13 = CASE_9;
           }
@@ -6747,7 +6745,7 @@ LAB_004a221d:
             puVar14 = &local_1c;
             SVar13 = CASE_3;
           }
-          st::fn_00402126(pSVar4,SVar13,puVar14);
+          st::fn_00402126(pSVar5,SVar13,puVar14);
         }
         uVar12 = uVar12 + 1;
         uVar11 = uVar12 & 0xffff;
@@ -6766,15 +6764,15 @@ LAB_004a221d:
       do {
         st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x101e);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x101e);
           }
-          st::fn_00402126(pSVar4,CASE_16,&local_c8);
+          st::fn_00402126(pSVar5,CASE_16,&local_c8);
         }
         uVar12 = uVar12 + 1;
         uVar11 = uVar12 & 0xffff;
@@ -6796,15 +6794,15 @@ LAB_004a221d:
       do {
         st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x1032);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1032);
           }
-          st::fn_00402126(pSVar4,CASE_15,&local_fc);
+          st::fn_00402126(pSVar5,CASE_15,&local_fc);
         }
         uVar12 = uVar12 + 1;
         uVar11 = uVar12 & 0xffff;
@@ -6823,18 +6821,18 @@ LAB_004a221d:
       do {
         st::fn_006ACC70(this_00->field_002D,uVar12,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x1042);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1042);
           }
-          dVar5 = pSVar4->slot_2C();
-          if (((dVar5 == 7) || (dVar5 = pSVar4->slot_2C(), dVar5 == 0x13)) ||
-             (dVar5 = pSVar4->slot_2C(), dVar5 == 0x1b)) {
-            st::fn_00402126(pSVar4,CASE_17,&local_70);
+          dVar6 = pSVar5->slot_2C();
+          if (((dVar6 == 7) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x13)) ||
+             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x1b)) {
+            st::fn_00402126(pSVar5,CASE_17,&local_70);
             pDVar8 = local_10;
             if (local_10 == nullptr) {
               local_10 = st::fn_006AE290(nullptr,1,2,1);
@@ -6842,9 +6840,9 @@ LAB_004a221d:
             }
           }
           else {
-            iVar7 = st::fn_00404E58((STGameObjC *)pSVar4);
+            iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
             if (iVar7 == 0) {
-              st::fn_00402126(pSVar4,CASE_3,&local_1c);
+              st::fn_00402126(pSVar5,CASE_3,&local_1c);
               goto LAB_004a26bb;
             }
             pDVar8 = pDVar9;
@@ -6864,19 +6862,19 @@ LAB_004a26bb:
     if (local_10 == nullptr) {
 LAB_004a26f5:
       if (local_c != nullptr) {
-        dVar5 = local_c->count;
+        dVar6 = local_c->count;
         uVar12 = 0;
-        if (0 < (int)dVar5) {
+        if (0 < (int)dVar6) {
           uVar11 = 0;
           do {
             st::fn_006ACC70(local_c,uVar11,&local_8);
-            pSVar4 = (STBoatC *)
+            pSVar5 = (STBoatC *)
                      st::fn_004028BA
                                (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-            st::fn_00402126(pSVar4,CASE_3,&local_1c);
+            st::fn_00402126(pSVar5,CASE_3,&local_1c);
             uVar12 = uVar12 + 1;
             uVar11 = uVar12 & 0xffff;
-          } while ((int)uVar11 < (int)dVar5);
+          } while ((int)uVar11 < (int)dVar6);
         }
       }
     }
@@ -6886,7 +6884,7 @@ LAB_004a26f5:
     else {
       st::fn_00403D9B
                 (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar12), (uint8_t)(this_00->field_0024)),
-                 &local_10->flags,&pDVar9->flags);
+                 st::pointer_boundary_cast<uint *>(&local_10->flags),st::pointer_boundary_cast<uint *>(&pDVar9->flags));
     }
     if (local_10 != nullptr) {
       st::fn_006AE110(local_10);
@@ -6909,17 +6907,17 @@ LAB_004a26f5:
       do {
         st::fn_006ACC70(this_00->field_002D,uVar12,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x1071);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1071);
           }
-          dVar5 = pSVar4->slot_2C();
-          if (((dVar5 == 0xc) || (dVar5 = pSVar4->slot_2C(), dVar5 == 0x18)) ||
-             (dVar5 = pSVar4->slot_2C(), dVar5 == 0x1d)) {
+          dVar6 = pSVar5->slot_2C();
+          if (((dVar6 == 0xc) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x18)) ||
+             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x1d)) {
             if (local_10 == nullptr) {
               local_10 = st::fn_006AE290(nullptr,1,2,1);
             }
@@ -6928,7 +6926,7 @@ LAB_004a26f5:
             SVar13 = CASE_12;
           }
           else {
-            iVar7 = st::fn_00404E58((STGameObjC *)pSVar4);
+            iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
             if (iVar7 != 0) {
               if (local_c == nullptr) {
                 local_c = st::fn_006AE290(nullptr,1,2,1);
@@ -6939,7 +6937,7 @@ LAB_004a26f5:
             puVar14 = &local_1c;
             SVar13 = CASE_3;
           }
-          st::fn_00402126(pSVar4,SVar13,puVar14);
+          st::fn_00402126(pSVar5,SVar13,puVar14);
         }
 LAB_004a2897:
         uVar11 = uVar11 + 1;
@@ -6949,7 +6947,7 @@ LAB_004a2897:
     pDVar9 = local_c;
     st::fn_00403D9B
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar12), (uint8_t)(this_00->field_0024)),
-               &local_10->flags,&local_c->flags);
+               st::pointer_boundary_cast<uint *>(&local_10->flags),st::pointer_boundary_cast<uint *>(&local_c->flags));
     if (local_10 != nullptr) {
       st::fn_006AE110(local_10);
     }
@@ -6986,13 +6984,13 @@ LAB_004a2897:
         st::fn_006ACC70(pDVar9,uVar12,&local_30);
         st::fn_006ACC70(this_00->field_002D,uVar12,&local_8);
         if ((ushort)local_8 != 0xffff) {
-          pSVar4 = (STBoatC *)
+          pSVar5 = (STBoatC *)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-          if (pSVar4 == nullptr) {
+          if (pSVar5 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x109b);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x109b);
           }
           local_94 = local_38;
           local_92 = local_36;
@@ -7000,7 +6998,7 @@ LAB_004a2897:
           local_90 = local_34;
           local_8c = local_2e;
           local_8a = local_2c;
-          st::fn_00402126(pSVar4,CASE_8,&local_98);
+          st::fn_00402126(pSVar5,CASE_8,&local_98);
         }
         local_18 = local_18 + 1;
         uVar12 = local_18 & 0xffff;
@@ -7021,27 +7019,27 @@ LAB_004a2897:
     do {
       st::fn_006ACC70(this_00->field_002D,uVar11,&local_8);
       if ((ushort)local_8 != 0xffff) {
-        pSVar4 = (STBoatC *)
+        pSVar5 = (STBoatC *)
                  st::fn_004028BA
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-        if (pSVar4 == nullptr) {
+        if (pSVar5 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x10b0);
         }
-        iVar7 = pSVar4->vfunc_F8();
+        iVar7 = pSVar5->vfunc_F8();
         if (iVar7 != 0) {
-          iVar7 = st::fn_00404E58((STGameObjC *)pSVar4);
+          iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
           if (iVar7 == 0) {
-            dVar5 = pSVar4->slot_2C();
-            if ((dVar5 == 7) || (dVar5 == 0x13)) {
-              iVar7 = st::fn_00402608((STGameObjC *)pSVar4);
+            dVar6 = pSVar5->slot_2C();
+            if ((dVar6 == 7) || (dVar6 == 0x13)) {
+              iVar7 = st::fn_00402608((STGameObjC *)pSVar5);
               if (iVar7 == 0) {
                 local_a2 = *(undefined2 *)&this_00->field_0x306;
                 local_a4 = *(undefined2 *)&this_00->field_0x304;
                 local_a0 = *(undefined2 *)&this_00->field_0x308;
                 local_9e = *(undefined4 *)&this_00->field_0x30a;
-                st::fn_00402126(pSVar4,CASE_F,&local_a8);
+                st::fn_00402126(pSVar5,CASE_F,&local_a8);
                 pDVar9 = local_10;
                 if (local_10 == nullptr) {
                   pDVar9 = st::fn_006AE290(nullptr,1,2,1);
@@ -7051,7 +7049,7 @@ LAB_004a2897:
               }
             }
             else {
-              st::fn_00402126(pSVar4,CASE_3,&local_1c);
+              st::fn_00402126(pSVar5,CASE_3,&local_1c);
             }
           }
           else {
@@ -7073,25 +7071,25 @@ LAB_004a2bcf:
     if (local_c != nullptr) {
       st::fn_00403D9B
                 (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_c), (uint8_t)(this_00->field_0024)),
-                 &local_10->flags,&local_c->flags);
+                 st::pointer_boundary_cast<uint *>(&local_10->flags),st::pointer_boundary_cast<uint *>(&local_c->flags));
       goto cf_common_exit_004A2C5D;
     }
     if (local_10 != nullptr) goto cf_common_exit_004A2C5D;
   }
   if (local_c != nullptr) {
     uVar12 = 0;
-    dVar5 = local_c->count;
-    if (0 < (int)dVar5) {
+    dVar6 = local_c->count;
+    if (0 < (int)dVar6) {
       uVar11 = 0;
       do {
         st::fn_006ACC70(local_c,uVar11,&local_8);
-        pSVar4 = (STBoatC *)
+        pSVar5 = (STBoatC *)
                  st::fn_004028BA
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
-        st::fn_00402126(pSVar4,CASE_3,&local_1c);
+        st::fn_00402126(pSVar5,CASE_3,&local_1c);
         uVar12 = uVar12 + 1;
         uVar11 = uVar12 & 0xffff;
-      } while ((int)uVar11 < (int)dVar5);
+      } while ((int)uVar11 < (int)dVar6);
     }
   }
 cf_common_exit_004A2C5D:
@@ -7192,18 +7190,18 @@ st::fn_004A3430
       }
     }
     else {
-      iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x116f,0,local_EAX_63,
-                                 "%s","STGroupBoatC::DistributeMD");
+      iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x116f,0,local_EAX_63,
+                                 st::mutable_c_string("%s"),"STGroupBoatC::DistributeMD");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(local_EAX_63,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x1170);
+      st::fn_006A5E40(local_EAX_63,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1170);
     }
     return;
   }
   if ((param_4 == nullptr) || (local_68 = param_4->count, local_68 == 0)) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                0x10f5);
   }
   dVar4 = local_68;
@@ -7217,13 +7215,13 @@ st::fn_004A3430
                  st::fn_004028BA
                            (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
         if (pSVar3 == nullptr) {
-          iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x10fc,0,0,
-                                     "%s","STGroupBoatC::DistributeMD ptr==NULL");
+          iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x10fc,0,0,
+                                     st::mutable_c_string("%s"),"STGroupBoatC::DistributeMD ptr==NULL");
           if (iVar3 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x10fd);
         }
         dVar4 = pSVar3->slot_2C();
@@ -7252,7 +7250,7 @@ LAB_004a35b6:
   local_20 = local_1c->count;
   if (local_20 == 0) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                0x110f);
   }
   if ((param_2 != nullptr) && (dVar4 = param_2->count, dVar4 != 0)) {
@@ -7293,7 +7291,7 @@ LAB_004a35b6:
       } while ((int)uVar9 < (int)uVar10);
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                0x1124);
   }
   if ((param_3 != nullptr) && (dVar4 = param_3->count, dVar4 != 0)) {
@@ -7334,7 +7332,7 @@ LAB_004a35b6:
       } while ((int)uVar9 < (int)uVar10);
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                0x113a);
   }
   pDVar8 = (DArrayTy *)
@@ -7344,25 +7342,25 @@ LAB_004a35b6:
   local_40 = pDVar8;
   if (pDVar8 == nullptr) {
     local_EAX_1021 =
-         st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x113f,0,0,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x113f,0,0,st::mutable_c_string("%s"),
                             "STGroupBoatC::DistributeMD unknown error");
     if (local_EAX_1021 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+              (-0x5001fff8,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                0x1140);
   }
   local_64 = pDVar8->count;
   if (local_64 != local_20) {
     local_EAX_1098 =
-         st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x1144,0,0,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1144,0,0,st::mutable_c_string("%s"),
                             "STGroupBoatC::DistributeMD different value");
     if (local_EAX_1098 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+              (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                0x1145);
   }
   local_20 = 0;
@@ -7402,9 +7400,9 @@ LAB_004a35b6:
   }
   st::fn_00403D9B
             (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_64), (uint8_t)(pSVar2->field_0024)),
-             &local_1c->flags,&local_24->flags);
+             st::pointer_boundary_cast<uint *>(&local_1c->flags),st::pointer_boundary_cast<uint *>(&local_24->flags));
   st::fn_006A5E40
-            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0x1165);
+            (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1165);
   g_currentExceptionFrame = local_b0.previous;
   return;
 }
@@ -7460,7 +7458,7 @@ st::fn_004A3CD0(STGroupBoatC *this,int param_1,DArrayTy *param_2,DArrayTy *param
   if (local_EAX_54 == 0) {
     if ((param_3 == nullptr) || (local_24 = param_3->count, local_24 == 0)) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x1189);
     }
     dVar1 = local_24;
@@ -7474,14 +7472,14 @@ st::fn_004A3CD0(STGroupBoatC *this,int param_1,DArrayTy *param_2,DArrayTy *param
           pSVar4 = st::fn_004028BA
                              (g_allPlayers_007FA174,pSVar3->field_0024,STPiece<0,2>(local_8),CASE_1);
           if (pSVar4 == nullptr) {
-            iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x1191,0,0,
-                                       "%s","STGroupBoatC::DistributeDock NULL value");
+            iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1191,0,0,
+                                       st::mutable_c_string("%s"),"STGroupBoatC::DistributeDock NULL value");
             if (iVar4 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\to_grpb.cpp",0x1192);
+                       st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1192);
           }
           iVar6 = (*pSVar4->vtable->vfunc_2C)();
           pDVar8 = local_c;
@@ -7509,12 +7507,12 @@ st::fn_004A3CD0(STGroupBoatC *this,int param_1,DArrayTy *param_2,DArrayTy *param
         } while ((int)uVar9 < (int)dVar1);
       }
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x11a3);
     }
     if ((param_2 == nullptr) || (param_2->count == 0)) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x11a6);
     }
     pDVar8 = (DArrayTy *)
@@ -7522,7 +7520,7 @@ st::fn_004A3CD0(STGroupBoatC *this,int param_1,DArrayTy *param_2,DArrayTy *param
     local_28 = pDVar8;
     if (pDVar8 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x11a9);
     }
     uVar9 = 0;
@@ -7600,12 +7598,12 @@ st::fn_004A3CD0(STGroupBoatC *this,int param_1,DArrayTy *param_2,DArrayTy *param
     }
   }
   else {
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x11d8,0,local_EAX_54,
-                               "%s","STGroupBoatC::DistributeDock");
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x11d8,0,local_EAX_54,
+                               st::mutable_c_string("%s"),"STGroupBoatC::DistributeDock");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_54,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x11d9);
+    st::fn_006A5E40(local_EAX_54,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x11d9);
   }
   return;
 }
@@ -7662,12 +7660,12 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
   if (local_EAX_70 != 0) {
     g_currentExceptionFrame = local_78.previous;
     if (local_EAX_70 != -0x5001fff7) {
-      iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x126a,0,local_EAX_70,
-                                 "%s","STGroupBoatC::ChangeMDNotify");
+      iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x126a,0,local_EAX_70,
+                                 st::mutable_c_string("%s"),"STGroupBoatC::ChangeMDNotify");
       if (iVar4 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(local_EAX_70,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x126b);
+      st::fn_006A5E40(local_EAX_70,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x126b);
     }
     return;
   }
@@ -7680,7 +7678,7 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
       if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
         if (this_00->field_0266 == nullptr) {
           st::fn_006A5E40
-                    (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x11f2);
         }
         uVar10 = 0;
@@ -7728,7 +7726,7 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
       }
       if (this_00->field_0266 == nullptr) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x11fe);
       }
       uVar10 = 0;
@@ -7756,13 +7754,13 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
       }
       if (iVar5 == local_1c) {
         local_EAX_228 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x120a,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x120a,0,0,st::mutable_c_string("%s"),
                                 "STGroupBoatC::ChangeMDNotify invalid type");
         if (local_EAX_228 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         st::fn_006A5E40
-                  (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fffe,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x120b);
       }
       if (this_00->field_024A != 2) {
@@ -7774,7 +7772,7 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      iVar5 = (*this_01->vtable->vfunc_88)(local_14);
+      iVar5 = (*this_01->vtable->vfunc_88)(st::machine_word_boundary_cast<undefined4>(local_14));
       if (iVar5 < 1) {
         g_currentExceptionFrame = local_78.previous;
         return;
@@ -7806,7 +7804,7 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
       }
       if (this_00->field_024E == nullptr) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x1215);
       }
       uVar10 = 0;
@@ -7832,7 +7830,7 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
     if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
       if (this_00->field_0266 == nullptr) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x1226);
       }
       uVar10 = 0;
@@ -7883,7 +7881,7 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
     }
     if (this_00->field_0266 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x1234);
     }
     uVar11 = 0;
@@ -7900,7 +7898,7 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
       } while ((int)uVar11 < (int)uVar10);
     }
     if (uVar11 == uVar10) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x123b,0,0,"%s",
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x123b,0,0,st::mutable_c_string("%s"),
                                  "STGroupBoatC::ChangeMDNotify depot is absent");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -7922,19 +7920,19 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
     }
     if (iVar6 == iVar5) {
       local_EAX_1110 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x1246,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1246,0,0,st::mutable_c_string("%s"),
                               "STGroupBoatC::ChangeMDNotify invalid type");
       if (local_EAX_1110 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       st::fn_006A5E40
-                (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fffe,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x1247);
     }
     if (this_00->field_024A == 0) {
       if (this_00->field_024E == nullptr) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                    0x124b);
       }
       uVar10 = 0;
@@ -7984,7 +7982,7 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
     }
     if (this_00->field_024E == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x1259);
     }
     uVar11 = 0;
@@ -8002,7 +8000,7 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
     }
     if (uVar11 == uVar10) {
       local_EAX_1610 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x1260,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1260,0,0,st::mutable_c_string("%s"),
                               "STGroupBoatC::ChangeMDNotify mine is absent");
       if (local_EAX_1610 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8010,7 +8008,7 @@ void __thiscall st::fn_004A4240(STGroupBoatC *this,int param_1,uint param_2)
       iVar5 = 0x1261;
 LAB_004a4a83:
       st::fn_006A5E40
-                (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fffe,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  iVar5);
     }
   }
@@ -8049,12 +8047,12 @@ void __thiscall st::fn_004A4D60(STGroupBoatC *this,int param_1,short param_2)
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
     if (iVar2 != -0x5001fff7) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x1294,0,iVar2,
-                                 "%s","STGroupBoatC::ChangeMDNotify");
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1294,0,iVar2,
+                                 st::mutable_c_string("%s"),"STGroupBoatC::ChangeMDNotify");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x1295);
+      st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1295);
     }
     return;
   }
@@ -8141,12 +8139,12 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
   pSVar2 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x1495,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1495,0,iVar3,st::mutable_c_string("%s"),
                                "STGroupBoatC::SaveGrpBData");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x1496);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1496);
     return local_18;
   }
   *param_1 = 0x321;
@@ -8156,42 +8154,42 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     *param_1 = iVar5 + 0x32d;
   }
   if (local_14->field_00EF != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_00EF->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_00EF->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_0103 != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_0103->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_0103->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_010F != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_010F->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_010F->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_0127 != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_0127->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_0127->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_0160 != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_0160->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_0160->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_0168 != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_0168->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_0168->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_01CA != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_01CA->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_01CA->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_01CE != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_01CE->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_01CE->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
@@ -8201,48 +8199,48 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_01D6 != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_01D6->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_01D6->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_01DA != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_01DA->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_01DA->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_01DE != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_01DE->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_01DE->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_020E != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_020E->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_020E->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   *param_1 = *param_1 + pSVar2->field_021A * 8;
   if (pSVar2->field_0226 != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_0226->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_0226->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_022A != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_022A->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_022A->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_022E != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_022E->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_022E->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_024E != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_024E->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_024E->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
   if (pSVar2->field_0266 != nullptr) {
-    local_c = (ushort *)st::fn_006B0020(&pSVar2->field_0266->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pSVar2->field_0266->flags),(int *)&local_8);
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
@@ -8251,7 +8249,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     st::fn_006AB060(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  puVar6 = st::fn_006AAC70(*param_1);
+  puVar6 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(*param_1));
   *puVar6 = local_14->field_003D;
   puVar6[1] = local_14->field_0041;
   puVar6[2] = local_14->field_0045;
@@ -8337,7 +8335,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
   *(undefined2 *)(puVar6 + 0x66) = local_14->field_01BD;
   STField<undefined4>(puVar6,0x19a) = *(undefined4 *)&local_14->field_0x1bf;
   STField<undefined2>(puVar6,0x19e) = local_14->field_01C3;
-  puVar6[0x68] = local_14->field_01C5;
+  puVar6[0x68] = st::machine_word_boundary_cast<undefined4>(local_14->field_01C5);
   puVar7 = (byte *)&local_14->field_0x1e2;
   puVar11 = (byte *)((int)puVar6 + 0x1d5);
   memmove(puVar11, puVar7, 0x28); /* compiler REP MOVS byte copy */
@@ -8407,7 +8405,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
   STField<undefined4>(puVar6,0x317) = *(undefined4 *)&local_14->field_0x308;
   STField<undefined2>(puVar6,0x31b) = local_14->field_030C;
   STField<undefined4>(puVar6,0x31d) = local_14->field_030E;
-  piVar9 = local_14->field_0059;
+  piVar9 = st::pointer_boundary_cast<int *>(local_14->field_0059);
   if (piVar9 == nullptr) {
     local_8 = 0;
     puVar6[7] = 0xffffffff;
@@ -8437,7 +8435,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0xb6) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_00EF->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_00EF->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8461,7 +8459,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0xce) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_0103->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_0103->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8485,7 +8483,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0xde) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_010F->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_010F->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8509,7 +8507,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0xfa) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_0127->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_0127->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8533,7 +8531,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x137) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_0160->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_0160->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8557,7 +8555,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x143) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_0168->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_0168->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8581,7 +8579,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x1a9) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_01CA->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_01CA->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8605,7 +8603,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x1b1) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_01CE->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_01CE->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8653,7 +8651,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x1c1) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_01D6->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_01D6->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8677,7 +8675,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x1c9) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_01DA->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_01DA->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8701,7 +8699,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x1d1) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_01DE->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_01DE->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8725,7 +8723,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x201) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_020E->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_020E->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8750,7 +8748,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x215) = 0;
   }
   else {
-    local_8 = local_14->field_021A << 3;
+    local_8 = st::machine_word_boundary_cast<uint>(local_14->field_021A << 3);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (iVar5 = (local_14->field_021A & 0x1fffffffU) << 1; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -8773,7 +8771,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x221) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_0226->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_0226->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8797,7 +8795,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x229) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_022A->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_022A->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8821,7 +8819,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x231) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_022E->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_022E->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8845,7 +8843,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x255) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_024E->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_024E->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8869,7 +8867,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
     STField<undefined4>(puVar6,0x271) = 0;
   }
   else {
-    local_c = (ushort *)st::fn_006B0020(&local_14->field_0266->flags,(int *)&local_8);
+    local_c = (ushort *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_14->field_0266->flags),(int *)&local_8);
     puVar10 = local_c;
     puVar7 = (byte *)(local_10 + (int)puVar6);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -8944,10 +8942,10 @@ void __thiscall st::fn_004A67A0(STGroupBoatC *this,undefined4 *param_1)
   puVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x158b,0,iVar3,"%s",
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x158b,0,iVar3,st::mutable_c_string("%s"),
                                "STGroupBoatC::RestoreGrpBData");
     if (iVar6 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x158c);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x158c);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -9244,7 +9242,7 @@ void __thiscall st::fn_004A67A0(STGroupBoatC *this,undefined4 *param_1)
     local_8->field_021E = nullptr;
   }
   else {
-    puVar5 = st::fn_006AAC70(uVar9);
+    puVar5 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(uVar9));
     local_8->field_021E = puVar5;
     puVar10 = (byte *)((int)puVar2 + STField<int>(puVar2,0x211));
     for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -9455,7 +9453,7 @@ void __thiscall st::fn_004A7490(STGroupBoatC *this)
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < (int)pDVar4->count);
       }
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x15ed,0,0,"%s",
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x15ed,0,0,st::mutable_c_string("%s"),
                                  "STGroupBoatC::ReMakePatrolPoints wrong index");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -9485,7 +9483,7 @@ LAB_004a77bb:
           } while ((int)local_8 < (int)pDVar4->count);
         }
         if (this->field_0232 != -1) goto LAB_004a792e;
-        this->field_0232 = array->count - 1;
+        this->field_0232 = st::machine_word_boundary_cast<int>(array->count - 1);
       }
       else {
         for (; -1 < (int)local_8; local_8 = local_8 - 1) {
@@ -9507,8 +9505,8 @@ LAB_004a77bb:
         this->field_0232 = 0;
       }
       if ((this->field_0232 == -1) &&
-         (iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x160e,0,0,
-                                     "%s","STGroupBoatC::ReMakePatrolPoints unknown error"),
+         (iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x160e,0,0,
+                                     st::mutable_c_string("%s"),"STGroupBoatC::ReMakePatrolPoints unknown error"),
          iVar6 != 0)) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -9587,8 +9585,8 @@ st::fn_004A7AF0(STGroupBoatC *this,int param_1,uint param_2,uint param_3)
             return 0;
           }
           if (local_1a != 2) {
-            iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x164b,0,0,
-                                       "%s","STGroupBoatC::GetPatrolTask incorrect data");
+            iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x164b,0,0,
+                                       st::mutable_c_string("%s"),"STGroupBoatC::GetPatrolTask incorrect data");
             if (iVar2 == 0) {
               return 0;
             }
@@ -9684,13 +9682,13 @@ void __thiscall st::fn_004A80A0(STGroupBoatC *this)
         pSVar2 = st::fn_004028BA
                            (g_allPlayers_007FA174,this->field_0024,(ushort)STPiece<0,4>(local_30),CASE_1);
         if (pSVar2 == nullptr) {
-          iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x16c9,0,0,
-                                     "%s","STGroupBoatC::SetPatrolCmdToBoat");
+          iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x16c9,0,0,
+                                     st::mutable_c_string("%s"),"STGroupBoatC::SetPatrolCmdToBoat");
           if (iVar3 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x16ca);
         }
         st::fn_006AE1C0(local_8,local_30);
@@ -9752,7 +9750,7 @@ st::fn_004A8340
     *param_3 = -1;
     if ((local_14->field_01E6 != CASE_2) || (local_14->field_020E == nullptr)) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),
                  0x1708);
     }
     pSVar3 = st::fn_004028BA
@@ -9793,12 +9791,12 @@ st::fn_004A8340
   }
   g_currentExceptionFrame = local_68.previous;
   if (iVar2 != -0x5001fff7) {
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x171b,0,iVar2,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x171b,0,iVar2,st::mutable_c_string("%s"),
                                "STGroupBoatC::GetDepotForAttack");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x171c);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x171c);
   }
   return;
 }
@@ -9837,13 +9835,13 @@ void __thiscall st::fn_004A85B0(STGroupBoatC *this)
         pSVar3 = st::fn_004028BA
                            (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_8),CASE_1);
         if (pSVar3 == nullptr) {
-          iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x172d,0,0,
-                                     "%s","STGroupBoatC::StartReceiveOrderSound NULL");
+          iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x172d,0,0,
+                                     st::mutable_c_string("%s"),"STGroupBoatC::StartReceiveOrderSound NULL");
           if (iVar4 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x172e);
         }
         st::fn_0040204A((int *)pSVar3);
@@ -9887,13 +9885,13 @@ void __thiscall st::fn_004A8690(STGroupBoatC *this,int param_1)
         this_00 = st::fn_004028BA
                             (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_8),CASE_1);
         if (this_00 == nullptr) {
-          iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x1742,0,0,
-                                     "%s","STGroupBoatC::GenSwitch NULL");
+          iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1742,0,0,
+                                     st::mutable_c_string("%s"),"STGroupBoatC::GenSwitch NULL");
           if (iVar3 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x1743);
         }
         iVar4 = (*this_00->vtable->vfunc_2C)();
@@ -9940,13 +9938,13 @@ undefined4 __thiscall st::fn_004A87A0(STGroupBoatC *this)
         pSVar3 = st::fn_004028BA
                            (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_8),CASE_1);
         if (pSVar3 == nullptr) {
-          iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_grpb.cpp",0x1758,0,0,
-                                     "%s","STGroupBoatC::IsAgAtt");
+          iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1758,0,0,
+                                     st::mutable_c_string("%s"),"STGroupBoatC::IsAgAtt");
           if (iVar4 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x1759);
         }
         if (pSVar3->field_07EA == 0) {

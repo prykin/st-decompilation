@@ -172,11 +172,11 @@ int __thiscall st::fn_006406D0(STTorpC *this,STMessage *message)
   this_00 = local_c8;
   if (local_EAX_50 != 0) {
     g_currentExceptionFrame = local_28c.previous;
-    iVar11 = st::fn_006AD4D0("E:\\__titans\\nick\\to_torp.cpp",0x350,0,local_EAX_50,
-                                "%s",0,(char)local_EAX_50,0xcc,
+    iVar11 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x350,0,local_EAX_50,
+                                st::mutable_c_string("%s"),0,(char)local_EAX_50,0xcc,
                                 "STTorpC::GetMessage");
     if (iVar11 == 0) {
-      st::fn_006A5E40(local_EAX_50,0,"E:\\__titans\\nick\\to_torp.cpp",0x351);
+      st::fn_006A5E40(local_EAX_50,0,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x351);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -261,12 +261,12 @@ int __thiscall st::fn_006406D0(STTorpC *this,STMessage *message)
     local_164 = (float)(int)*(short *)&this_00->field_0x24b * _DAT_007904f8 * _DAT_007904f0;
     local_160 = (float)(int)*(short *)&this_00->field_0x24d * _DAT_007904f8 * _DAT_007904f0;
     local_15c = (float)local_14 * _DAT_007904f8 * _DAT_007904f0;
-    st::fn_006E25D0(this_00->field_0211,&local_1b8,&local_164,0.0,0.0,0.0,1);
+    st::fn_006E25D0(this_00->field_0211,st::pointer_boundary_cast<int *>(&local_1b8),&local_164,0.0,0.0,0.0,1);
     local_14 = (int)*(short *)&this_00->field_0x255;
     local_170 = (float)(int)*(short *)&this_00->field_0x251 * _DAT_007904f8 * _DAT_007904f0;
     local_16c = (float)(int)*(short *)&this_00->field_0x253 * _DAT_007904f8 * _DAT_007904f0;
     local_168 = (float)local_14 * _DAT_007904f8 * _DAT_007904f0;
-    st::fn_006E25D0(this_00->field_0211,&local_1c8,&local_170,0.0,0.0,0.0,1);
+    st::fn_006E25D0(this_00->field_0211,st::pointer_boundary_cast<int *>(&local_1c8),&local_170,0.0,0.0,0.0,1);
     sVar9 = (*this_00->vtable->vfunc_14)
                       (STPiece<2,2>(local_1b8),sStack_1b2,(int)sStack_1ae,STPiece<2,2>(local_1c8),sStack_1c2,
                        local_1c0 >> 0x10);
@@ -422,7 +422,7 @@ LAB_00642c6e:
     uVar22 = extraout_var_00;
     if (iVar14 != 0) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x8a);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x8a);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar22 = extraout_var_01;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -481,9 +481,8 @@ LAB_00642c6e:
     }
     *(undefined2 *)((int)&this_00->field_0231 + 2) = CASE_0 >> 0x10;
 switchD_00640ad9_caseD_a2:
-    puVar15 = (byte *)
-              st::fn_0040342C(local_248,(short)this_00->field_0231,
-                                 *(ushort *)&this_00->field_0x235,*(short *)&this_00->field_0x6c);
+    puVar15 = st::pointer_boundary_cast<byte *>(st::fn_0040342C(local_248,(short)this_00->field_0231,
+                                 *(ushort *)&this_00->field_0x235,*(short *)&this_00->field_0x6c));
     *(undefined4 *)&this_00->field_0x237 = *puVar15;
     *(undefined2 *)&this_00->field_0x23b = *(undefined2 *)(puVar15 + 1);
     if (this_00->field_0259 == CASE_9A) {
@@ -603,7 +602,7 @@ switchD_00640c2d_caseD_a2:
     iVar14 = st::fn_00404183((STT3DSprC *)puVar15,0,PTR_00806774,local_60,CASE_1D);
     if (iVar14 != 0) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0xe1);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0xe1);
     }
     switch(this_00->field_0259) {
     case CASE_9F:
@@ -623,12 +622,12 @@ switchD_00640c2d_caseD_a2:
       local_17c = (float)(int)*(short *)&this_00->field_0x24b * _DAT_007904f8 * _DAT_007904f0;
       local_178 = (float)(int)*(short *)&this_00->field_0x24d * _DAT_007904f8 * _DAT_007904f0;
       local_174 = (float)local_10 * _DAT_007904f8 * _DAT_007904f0;
-      st::fn_006E25D0(this_00->field_0211,&local_198,&local_17c,0.0,0.0,0.0,1);
+      st::fn_006E25D0(this_00->field_0211,st::pointer_boundary_cast<int *>(&local_198),&local_17c,0.0,0.0,0.0,1);
       local_10 = (int)*(short *)&this_00->field_0x255;
       local_188 = (float)(int)*(short *)&this_00->field_0x251 * _DAT_007904f8 * _DAT_007904f0;
       local_184 = (float)(int)*(short *)&this_00->field_0x253 * _DAT_007904f8 * _DAT_007904f0;
       local_180 = (float)local_10 * _DAT_007904f8 * _DAT_007904f0;
-      st::fn_006E25D0(this_00->field_0211,&local_1a8,&local_188,0.0,0.0,0.0,1);
+      st::fn_006E25D0(this_00->field_0211,st::pointer_boundary_cast<int *>(&local_1a8),&local_188,0.0,0.0,0.0,1);
       sVar9 = (*this_00->vtable->vfunc_14)
                         (STPiece<2,2>(local_198),sStack_192,(int)sStack_18e,STPiece<2,2>(local_1a8),sStack_1a2,
                          local_1a0 >> 0x10);
@@ -881,7 +880,7 @@ switchD_00640c2d_caseD_a2:
   iVar14 = st::fn_00402847((STJellyGunC *)this_00,&local_a4,&local_9c);
   if (iVar14 == -1) {
     st::fn_006A5E40
-              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x15c);
+              (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x15c);
   }
   if (((sVar9 == *(short *)&this_00->field_0x47) &&
       ((short)local_10 == *(short *)&this_00->field_0x49)) &&
@@ -900,7 +899,7 @@ switchD_00640c2d_caseD_a2:
                             this_00->field_0x61);
       if (iVar14 != 0) {
         st::fn_006A5E40
-                  (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x170);
+                  (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x170);
       }
       *(undefined4 *)&this_00->field_0x7a = 0;
     }
@@ -922,7 +921,7 @@ switchD_00640c2d_caseD_a2:
   }
   memset(local_13c, 0, 0x70); /* compiler bulk-zero initialization */
   st::fn_00404FA2
-            ((AnonReceiver_00644410 *)this_00,&local_18,&local_120,&local_11c,local_118);
+            ((AnonReceiver_00644410 *)this_00,st::pointer_boundary_cast<undefined4 *>(&local_18),&local_120,&local_11c,local_118);
   if (local_18 == 0) {
     if (this_00->field_0x288 == '\x02') {
       local_18 = 1;
@@ -1106,7 +1105,7 @@ cf_common_exit_00642C8B:
       return 0;
     }
     st::fn_006A5E40
-              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x30f);
+              (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x30f);
     g_currentExceptionFrame = local_28c.previous;
     return 0;
   }
@@ -1869,7 +1868,7 @@ LAB_00641a40:
     uVar20 = (uVar20 >> 0x10) % 3;
     if (uVar20 == 0) {
       uVar20 = 0xffffffff;
-      pcVar25 = &DAT_007d2490;
+      pcVar25 = &CHAR_E_007d2490;
       do {
         pcVar27 = pcVar25;
         if (uVar20 == 0) break;
@@ -1920,7 +1919,7 @@ LAB_00641a40:
       memmove(pcVar27, pcVar25, uVar20); /* compiler REP MOVS byte copy */
       uVar21 = 0;
       uVar20 = 0xffffffff;
-      pcVar25 = &DAT_007d2484;
+      pcVar25 = st::pointer_boundary_cast<char *>(&DAT_007d2484);
       do {
         pcVar27 = pcVar25;
         if (uVar20 == 0) break;
@@ -1948,7 +1947,7 @@ LAB_00641a40:
     }
     else if (uVar20 == 1) {
       uVar20 = 0xffffffff;
-      pcVar25 = &DAT_007d2474;
+      pcVar25 = &CHAR_E_007d2474;
       do {
         pcVar27 = pcVar25;
         if (uVar20 == 0) break;
@@ -1999,7 +1998,7 @@ LAB_00641a40:
       memmove(pcVar27, pcVar25, uVar20); /* compiler REP MOVS byte copy */
       uVar21 = 0;
       uVar20 = 0xffffffff;
-      pcVar25 = &DAT_007d2484;
+      pcVar25 = st::pointer_boundary_cast<char *>(&DAT_007d2484);
       do {
         pcVar27 = pcVar25;
         if (uVar20 == 0) break;
@@ -2028,7 +2027,7 @@ LAB_00641a40:
     else if (uVar20 == 2) {
       uVar20 = 0xffffffff;
       local_5 = 0x16;
-      pcVar25 = &DAT_007d247c;
+      pcVar25 = &CHAR_E_007d247c;
       do {
         pcVar27 = pcVar25;
         if (uVar20 == 0) break;
@@ -2106,7 +2105,7 @@ LAB_00641a40:
     else {
       uVar20 = 0xffffffff;
       local_5 = 0x16;
-      pcVar25 = &DAT_007d2490;
+      pcVar25 = &CHAR_E_007d2490;
       do {
         pcVar27 = pcVar25;
         if (uVar20 == 0) break;
@@ -2156,7 +2155,7 @@ LAB_00641a40:
       memmove(pcVar27, pcVar25, uVar20); /* compiler REP MOVS byte copy */
       uVar21 = 0;
       uVar20 = 0xffffffff;
-      pcVar25 = &DAT_007d2484;
+      pcVar25 = st::pointer_boundary_cast<char *>(&DAT_007d2484);
       do {
         pcVar27 = pcVar25;
         if (uVar20 == 0) break;
@@ -2659,7 +2658,7 @@ LAB_00642561:
   iVar14 = st::fn_00404183((STT3DSprC *)puVar15,0,PTR_00806774,local_48,CASE_1D);
   if (iVar14 != 0) {
     st::fn_006A5E40
-              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x263);
+              (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x263);
   }
   st::fn_00405AA6(puVar15,'\0');
   if ((local_74[0] != '\0') &&
@@ -2675,21 +2674,21 @@ LAB_00642561:
     iVar14 = st::fn_00404183((STT3DSprC *)puVar15,1,PTR_00806774,local_2c,CASE_1D);
     if (iVar14 != 0) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x270);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x270);
     }
     st::fn_00405AA6(puVar15,'\x01');
   }
   iVar14 = st::fn_00405240((STT3DSprC *)puVar15,0,g_playSystem_00802A38->field_00E4);
   if (iVar14 != 0) {
     st::fn_006A5E40
-              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x274);
+              (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x274);
   }
   iVar14 = st::fn_004022AC((STT3DSprC *)puVar15,'\x01');
   if (0 < iVar14) {
     iVar14 = st::fn_00405240((STT3DSprC *)puVar15,1,g_playSystem_00802A38->field_00E4);
     if (iVar14 != 0) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x277);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x277);
     }
     st::fn_004044EE((STT3DSprC *)puVar15,PTR_008032b8,0x10);
     st::fn_00403233((STT3DSprC *)puVar15,'\x01');
@@ -2709,7 +2708,7 @@ LAB_00642561:
   iVar14 = this_00->vfunc_D8();
   if (iVar14 != 0) {
     st::fn_006A5E40
-              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x27d);
+              (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x27d);
   }
   switch(this_00->field_0259) {
   case CASE_96:
@@ -2823,7 +2822,7 @@ int __thiscall st::fn_00645020(STTorpC *this,int param_1,uint *param_2)
   if (iVar3 == 0) {
     if (local_c == 0) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),
                  0x466);
     }
     index = 0;
@@ -2845,10 +2844,10 @@ int __thiscall st::fn_00645020(STTorpC *this,int param_1,uint *param_2)
   }
   g_currentExceptionFrame = local_5c.previous;
   if (iVar3 != -0x5001fff7) {
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_torp.cpp",0x471,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x471,0,iVar3,st::mutable_c_string("%s"),
                                "STTorpC::IsDangerous");
     if (iVar4 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_torp.cpp",0x472);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x472);
       return -1;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -2893,12 +2892,12 @@ undefined4 __thiscall st::fn_006451B0(STTorpC *this,uint param_1,uint *param_2)
     return 0;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\nick\\to_torp.cpp",0x486,0,errorCode,"%s"
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x486,0,errorCode,st::mutable_c_string("%s")
                              ,"STTorpC::SetDangerous");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\nick\\to_torp.cpp",0x487);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x487);
   return 0xffffffff;
 }
 
@@ -2926,12 +2925,12 @@ undefined4 __thiscall st::fn_006452A0(STTorpC *this,int param_1,uint param_2)
   pSVar2 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\nick\\to_torp.cpp",0x4a1,0,errorCode,
-                               "%s","STTorpC::ClearDangerous");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x4a1,0,errorCode,
+                               st::mutable_c_string("%s"),"STTorpC::ClearDangerous");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\nick\\to_torp.cpp",0x4a2);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x4a2);
     return 0xffffffff;
   }
   if (param_2 == 0xffffffff) {
@@ -2949,7 +2948,7 @@ undefined4 __thiscall st::fn_006452A0(STTorpC *this,int param_1,uint param_2)
     return 0;
   }
   st::fn_006A5E40
-            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x49e);
+            (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x49e);
   g_currentExceptionFrame = local_54.previous;
   return 0;
 }
@@ -3004,7 +3003,7 @@ byte * __thiscall st::fn_00645420(STTorpC *this,int *param_1)
     local_1c = (byte *)st::fn_0040119A(this_00,(int *)&local_10);
     iVar8 = *param_1;
     *param_1 = iVar8 + local_10;
-    pbVar5 = st::fn_006AAC70(iVar8 + local_10);
+    pbVar5 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(iVar8 + local_10));
     *(undefined4 *)pbVar5 = this_00->field_0020;
     uVar2 = this_00->field_0x25;
     uVar3 = this_00->field_0x26;
@@ -3080,12 +3079,12 @@ byte * __thiscall st::fn_00645420(STTorpC *this,int *param_1)
     return pbVar5;
   }
   g_currentExceptionFrame = local_6c.previous;
-  iVar7 = st::fn_006AD4D0("E:\\__titans\\nick\\to_torp.cpp",0x4d4,0,iVar5,"%s",
+  iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x4d4,0,iVar5,st::mutable_c_string("%s"),
                              "STTorpC::SaveTorpData");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar5,0,"E:\\__titans\\nick\\to_torp.cpp",0x4d5);
+  st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x4d5);
   return local_28;
 }
 
@@ -3128,12 +3127,12 @@ void __thiscall st::fn_006456C0(STTorpC *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_torp.cpp",0x4e5,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x4e5,0,iVar3,st::mutable_c_string("%s"),
                              "STTorpC::RestoreTorpData");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_torp.cpp",0x4e6);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x4e6);
   return;
 }
 

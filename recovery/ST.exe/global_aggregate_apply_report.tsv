@@ -65,4 +65,6 @@ address	aggregate_id	status	detail
 008145A8	indexed_global_candidate	disabled	apply=0
 008145B8	indexed_global_candidate	disabled	apply=0
 00854FF8	indexed_global_candidate	disabled	apply=0
+008568E0	win32_resource_string_cursor	unchanged	desired aggregate already present
+00857A60	win32_resource_string_buffer	unchanged	desired aggregate already present
 0085A1A0	indexed_global_candidate	disabled	apply=0

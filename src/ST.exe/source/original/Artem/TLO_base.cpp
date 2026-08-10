@@ -71,12 +71,12 @@ int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
   this_01 = local_c;
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar10 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_base.cpp",0xe1,0,iVar9,
-                                "TLOBaseTy::SetState error _state == %i",param_1);
+    iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0xe1,0,iVar9,
+                                st::mutable_c_string("TLOBaseTy::SetState error _state == %i"),param_1);
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar9,0,"E:\\__titans\\Artem\\TLO_base.cpp",0xe2);
+    st::fn_006A5E40(iVar9,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0xe2);
     return iVar9;
   }
   if ((param_2 == 0) || (iVar11 = st::fn_00401311(local_c,param_1), iVar11 != 0)) {
@@ -146,7 +146,7 @@ int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
                 if (iVar12 != 0) {
                   st::fn_006A5E40
                             (-5,g_overwriteContext_007ED77C,
-                             "E:\\__titans\\Artem\\TLO_base.cpp",0x6a);
+                             st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0x6a);
                 }
                 iVar14 = iVar14 + 1;
               } while (iVar14 < iVar11 + this_01->field_05B0);
@@ -186,7 +186,7 @@ int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
                 if (iVar12 != 0) {
                   st::fn_006A5E40
                             (-5,g_overwriteContext_007ED77C,
-                             "E:\\__titans\\Artem\\TLO_base.cpp",0x87);
+                             st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0x87);
                 }
                 iVar14 = iVar14 + 1;
               } while (iVar14 < iVar11 + this_01->field_05B0);
@@ -311,7 +311,7 @@ int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
         iVar11 = st::fn_0040232E(sVar8,*(short *)&this_01->field_05B4,sVar1);
         if (iVar11 != 0) {
           st::fn_006A5E40
-                    (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_base.cpp",0x73);
+                    (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0x73);
         }
         this_01->field_0251 = 0;
       }
@@ -478,7 +478,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
   int local_EAX_11034;
   int iVar39;
   int iVar27;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
   uint uVar28;
   uint uVar30;
@@ -556,12 +556,12 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
   this_00 = local_80;
   if (local_EAX_47 != 0) {
     g_currentExceptionFrame = local_c4.previous;
-    iVar39 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_base.cpp",0x6d9,0,local_EAX_47,
-                                "TLOBaseTy::GetMessage error mess->id == %i",message->id);
+    iVar39 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0x6d9,0,local_EAX_47,
+                                st::mutable_c_string("TLOBaseTy::GetMessage error mess->id == %i"),message->id);
     if (iVar39 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_47,0,"E:\\__titans\\Artem\\TLO_base.cpp",0x6da);
+    st::fn_006A5E40(local_EAX_47,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0x6da);
     return local_EAX_47;
   }
   st::fn_00404F07((STSprGameObjC *)local_80,message);
@@ -850,12 +850,12 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
         }
         if (this_00->field_002C == 0) {
           st::fn_0040435E(pHVar21,(int)this_00->field_0041,(int)this_00->field_0043,
-                             this_00->field_0045 + 0x14,(int)this_00->field_006C,100);
+                             st::machine_word_boundary_cast<int>(this_00->field_0045 + 0x14),(int)this_00->field_006C,100);
           g_currentExceptionFrame = local_c4.previous;
           return 0;
         }
         st::fn_0040435E(pHVar21,(this_00->field_05B0 + 1) * 0xc9,(this_00->field_05B4 + 1) * 0xc9
-                           ,this_00->field_05B8 * 200 + 0x78,(int)this_00->field_006C,100);
+                           ,st::machine_word_boundary_cast<int>(this_00->field_05B8 * 200 + 0x78),(int)this_00->field_006C,100);
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
@@ -870,19 +870,19 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
         pTVar32 = (TLOBaseTy_field_05ACState *)(dVar22 + 0x14);
         memmove(pTVar37, pTVar32, 0x43); /* compiler REP MOVS byte copy */
         this_00->field_0231 = *(TLOBaseTy_field_0231State *)(dVar22 + 0xc);
-        this_00->field_0235 = this_00->field_05AC - CASE_32;
+        this_00->field_0235 = st::machine_word_boundary_cast<undefined4>(this_00->field_05AC - CASE_32);
         local_EAX_394 = st::fn_004049B7(*(char *)&this_00->field_0024);
         local_EAX_394 = (int)(byte)local_EAX_394;
         this_00->field_0239 = local_EAX_394 + -1;
-        this_00->field_023D = this_00->field_0024;
+        this_00->field_023D = st::machine_word_boundary_cast<undefined4>(this_00->field_0024);
         if (*(int *)(&DAT_00791f38 + this_00->field_0235 * 4) == 2) {
-          this_00->field_05FB = &DAT_007aca60;
+          this_00->field_05FB = st::machine_word_boundary_cast<undefined4>(&DAT_007aca60);
         }
         else if (*(int *)(&DAT_00791f38 + this_00->field_0235 * 4) == 1) {
-          this_00->field_05FB = &DAT_007ace00;
+          this_00->field_05FB = st::machine_word_boundary_cast<undefined4>(&DAT_007ace00);
         }
         else {
-          this_00->field_05FB = &DAT_007ac988;
+          this_00->field_05FB = st::machine_word_boundary_cast<undefined4>(&DAT_007ac988);
         }
         this_00->field_04B4 = 0;
         this_00->field_04B0 = 0;
@@ -912,7 +912,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
                                     *(short *)&this_00->field_05B4,*(short *)&this_00->field_05B8,1);
         if (iVar27 != 0) {
           st::fn_006A5E40
-                    (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_base.cpp",0x290);
+                    (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0x290);
         }
         st::fn_0040278E(this_00,*(short *)&this_00->field_05B0,*(short *)&this_00->field_05B4,
                            *(short *)&this_00->field_05B8);
@@ -1072,7 +1072,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
             iVar27 = this_00->field_01F5->field_020C;
             iVar40 = this_00->field_01F5->field_0208;
             if (iVar40 < iVar27) {
-              uVar30 = this_00->field_001C * 0x41c64e6d + 0x3039;
+              uVar30 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
               this_00->field_001C = uVar30;
               uVar30 = (uVar30 >> 0x10) % ((iVar27 - iVar40) + 1U) + iVar40;
               st::fn_00401064((STT3DSprC *)&this_00->field_01D5,'\x0e',uVar30);
@@ -1134,7 +1134,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
              (g_manBasis_00811784 != nullptr)) {
             local_EAX_1961 = st::fn_004049B7(*(char *)&this_00->field_0024);
             local_EAX_1961 = (int)(byte)local_EAX_1961;
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             st::fn_00403265(g_manBasis_00811784,this_00->field_05B0,this_00->field_05B4,
                                this_00->field_05B8,
                                STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&this_00->field_002C)),this_00->field_05AC,
@@ -1142,7 +1142,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
           }
           if (this_00->field_05DF != 0) {
             puVar33 = (byte *)(&this_00->field_01D5);
-            this_00->field_04C8 = PTR_00806724->entryCount + -1;
+            this_00->field_04C8 = st::machine_word_boundary_cast<int>(PTR_00806724->entryCount + -1);
             this_00->field_04CC = g_playSystem_00802A38->field_00E4;
             st::fn_00401BAE((STT3DSprC *)puVar33,'\x0e');
             st::fn_00401BAE((STT3DSprC *)puVar33,'\r');
@@ -1161,18 +1161,18 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
           }
           break;
         case CASE_2:
-          local_c = (message->arg0).ptr;
+          local_c = st::pointer_boundary_cast<AnonShape_004B9FA0_0EE05DAC *>((message->arg0).ptr);
           puVar33 = (byte *)&local_c->field_0x57;
           puVar38 = (byte *)
                     (-(uint)(this_00 != nullptr) & (uint)&this_00->field_0231);
           memmove(puVar38, puVar33, 0x37b); /* compiler REP MOVS byte copy */
           this_00->field_0231 = CASE_2;
           if (this_00->field_03D8 != 0) {
-            pAVar18 = st::fn_006AAC70(this_00->field_03D8 * 0x27);
+            pAVar18 = st::pointer_boundary_cast<AnonPointee_TLOBaseTy_0607 *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this_00->field_03D8 * 0x27)));
             this_00->field_0607 = pAVar18;
           }
           if (this_00->field_03D4 != 0) {
-            uVar28 = this_00->field_03D4 * 0x27;
+            uVar28 = st::machine_word_boundary_cast<uint>(this_00->field_03D4 * 0x27);
             puVar33 = (byte *)(&local_c->field_0x0 + local_c->field_03D2);
             pAVar18 = this_00->field_0607;
             for (uVar30 = uVar28 >> 2; uVar30 != 0; uVar30 = uVar30 - 1) {
@@ -1187,40 +1187,40 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
             }
           }
           st::fn_00404A11(this_00);
-          local_34 = st::fn_006AAC70(0x44);
+          local_34 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(0x44));
           pAVar25 = local_c;
           local_28 = PTR_008073cc;
           local_30 = 0;
           local_1c = 0;
           local_24 = PTR_008032b8;
           local_20 = 0;
-          local_34[1] = PTR_00806774;
-          local_34[2] = PTR_00806774;
-          *local_34 = PTR_00806774;
-          local_34[0xf] = PTR_00806774;
-          local_34[0x10] = PTR_0080678c;
-          local_34[0xe] = PTR_0080678c;
-          local_34[0xd] = PTR_0080678c;
-          local_34[0xc] = PTR_0080678c;
-          local_34[0xb] = PTR_0080678c;
+          local_34[1] = st::machine_word_boundary_cast<undefined4>(PTR_00806774);
+          local_34[2] = st::machine_word_boundary_cast<undefined4>(PTR_00806774);
+          *local_34 = st::machine_word_boundary_cast<undefined4>(PTR_00806774);
+          local_34[0xf] = st::machine_word_boundary_cast<undefined4>(PTR_00806774);
+          local_34[0x10] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
+          local_34[0xe] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
+          local_34[0xd] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
+          local_34[0xc] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
+          local_34[0xb] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
           local_34[10] = 0;
-          local_34[9] = PTR_0080678c;
-          local_34[8] = PTR_0080678c;
-          local_34[7] = PTR_0080678c;
+          local_34[9] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
+          local_34[8] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
+          local_34[7] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
           if (this_00->field_0245 == CASE_1) {
             if (this_00->field_05DF == 5) {
               local_30 = PTR_00806724->entries[this_00->field_04C8];
               local_2c = (int)PTR_00806724->field_002C;
             }
             else {
-              local_34[5] = PTR_00806764;
-              local_34[4] = PTR_00806774;
-              local_34[6] = PTR_00806774;
+              local_34[5] = st::machine_word_boundary_cast<undefined4>(PTR_00806764);
+              local_34[4] = st::machine_word_boundary_cast<undefined4>(PTR_00806774);
+              local_34[6] = st::machine_word_boundary_cast<undefined4>(PTR_00806774);
             }
           }
           if (this_00->field_0245 == CASE_6) {
-            local_34[5] = PTR_0080678c;
-            local_34[4] = PTR_00806764;
+            local_34[5] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
+            local_34[4] = st::machine_word_boundary_cast<undefined4>(PTR_00806764);
           }
           st::fn_00404CA5
                     ((STT3DSprC *)&this_00->field_01D5,(int *)&local_34,
@@ -1246,7 +1246,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
             if (iVar27 != 0) {
               st::fn_006A5E40
                         (iVar27,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\Artem\\TLO_base.cpp",0x365);
+                         st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0x365);
             }
             memset(local_34, 0, 0x44); /* compiler bulk-zero initialization */
             switch(this_00->field_05AC) {
@@ -1254,9 +1254,9 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
             case CASE_40:
             case CASE_49:
             case CASE_5C:
-              local_34[0xe] = PTR_0080677c;
-              local_34[0xc] = PTR_0080677c;
-              local_34[0xd] = PTR_0080677c;
+              local_34[0xe] = st::machine_word_boundary_cast<undefined4>(PTR_0080677c);
+              local_34[0xc] = st::machine_word_boundary_cast<undefined4>(PTR_0080677c);
+              local_34[0xd] = st::machine_word_boundary_cast<undefined4>(PTR_0080677c);
               break;
             case CASE_45:
             case CASE_4E:
@@ -1265,7 +1265,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
             case CASE_69:
             case CASE_70:
             case CASE_72:
-              local_34[0xe] = PTR_00806774;
+              local_34[0xe] = st::machine_word_boundary_cast<undefined4>(PTR_00806774);
             }
             local_30 = 0;
             local_1c = 0;
@@ -1294,14 +1294,14 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
             if (iVar27 != 0) {
               st::fn_006A5E40
                         (iVar27,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\Artem\\TLO_base.cpp",0x386);
+                         st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0x386);
             }
             memset(local_34, 0, 0x44); /* compiler bulk-zero initialization */
             if (this_00->field_043C == 1) {
-              local_34[0xe] = PTR_00806764;
+              local_34[0xe] = st::machine_word_boundary_cast<undefined4>(PTR_00806764);
             }
             else {
-              local_34[0xe] = PTR_0080678c;
+              local_34[0xe] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
             }
             local_30 = 0;
             local_1c = 0;
@@ -1353,7 +1353,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
                     if (iVar23 != 0) {
                       st::fn_006A5E40
                                 (-5,g_overwriteContext_007ED77C,
-                                 "E:\\__titans\\Artem\\TLO_base.cpp",0x3a5);
+                                 st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0x3a5);
                     }
                     iVar40 = iVar40 + 1;
                   } while (iVar40 < this_00->field_05B0 + iVar27);
@@ -1368,8 +1368,8 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
           }
           break;
         default:
-          iVar17 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_base.cpp",0x3ac,0,0,
-                                      "%s","I don't now what I suppose to do !");
+          iVar17 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_base.cpp"),0x3ac,0,0,
+                                      st::mutable_c_string("%s"),"I don't now what I suppose to do !");
           if (iVar17 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
@@ -1426,7 +1426,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
       if (this_00 != nullptr) {
         pTVar37 = &this_00->field_05AC;
       }
-      pTVar32 = &local_4a8;
+      pTVar32 = st::pointer_boundary_cast<TLOBaseTy_field_05ACState *>(&local_4a8);
       memmove(pTVar32, pTVar37, 0x43); /* compiler REP MOVS byte copy */
       iVar27 = 0;
       if (this_00 == nullptr) {
@@ -1435,14 +1435,14 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
       else {
         pTVar34 = &this_00->field_0231;
       }
-      pTVar42 = &local_465;
+      pTVar42 = st::pointer_boundary_cast<TLOBaseTy_field_0231State *>(&local_465);
       memmove(pTVar42, pTVar34, 0x37b); /* compiler REP MOVS byte copy */
       iVar27 = 0;
       local_ea = 0x3f6;
       local_4bc[1] = pbVar36;
       local_4bc[4] = (byte *)uVar24;
       local_40 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_e6);
-      local_e2 = this_00->field_03D4 * 0x27 + local_ea;
+      local_e2 = st::machine_word_boundary_cast<int>(this_00->field_03D4 * 0x27 + local_ea);
       if ((*(int *)(&DAT_00791a10 + this_00->field_0235 * 4) != 0) &&
          ((STT3DSprC *)this_00->field_05FF != nullptr)) {
         local_3c = (byte *)st::fn_004018D4((STT3DSprC *)this_00->field_05FF,&local_de);
@@ -1456,11 +1456,11 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
       }
       local_18 = (AnonShape_0060EA30_DCEB68AD *)
                  ((this_00->field_03D4 + 0x1a) * 0x27 + local_ce + local_d6 + local_de + local_e6);
-      local_10 = st::fn_006AAC10((uint)local_18);
+      local_10 = st::pointer_boundary_cast<byte *>(st::fn_006AAC10((uint)local_18));
       ppbVar35 = local_4bc;
       pbVar36 = local_10;
       memmove(pbVar36, ppbVar35, 0x3f6); /* compiler REP MOVS byte copy */
-      uVar28 = this_00->field_03D4 * 0x27;
+      uVar28 = st::machine_word_boundary_cast<uint>(this_00->field_03D4 * 0x27);
       pAVar18 = this_00->field_0607;
       pbVar36 = local_10 + local_ea;
       for (uVar30 = uVar28 >> 2; uVar30 != 0; uVar30 = uVar30 - 1) {
@@ -1515,14 +1515,14 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
-    piVar46 = (message->arg0).ptr;
+    piVar46 = st::pointer_boundary_cast<int *>((message->arg0).ptr);
     piVar41 = local_5c;
     memmove(piVar41, piVar46, 0x1c); /* compiler REP MOVS byte copy */
     iVar27 = 0;
     if ((0x9a < local_5c[1]) &&
        (((local_5c[1] < 0x9f || (local_5c[1] == 0xa5)) &&
         (iVar40 = st::fn_0040186B((int)this_00->field_0024,0x68), iVar40 != 0)))) {
-      st::fn_00403D6E(this_00,local_5c[0] / 2);
+      st::fn_00403D6E(this_00,st::machine_word_boundary_cast<int>(local_5c[0] / 2));
     }
     if (this_00->field_05AC == CASE_68) {
       st::fn_0040545C();
@@ -1569,7 +1569,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
         if (pAVar25 == (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 1)) {
           iVar27 = (local_5c[0] * 9) / 10 + (local_5c[0] * 9 >> 0x1f);
 LAB_004bb547:
-          iVar27 = local_5c[0] - (iVar27 - (iVar27 >> 0x1f));
+          iVar27 = st::machine_word_boundary_cast<int>(local_5c[0] - (iVar27 - (iVar27 >> 0x1f)));
         }
         else {
           if (pAVar25 == (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 2)) {
@@ -1581,7 +1581,7 @@ LAB_004bb547:
             goto LAB_004bb547;
           }
         }
-        local_5c[0] = local_5c[0] - iVar27;
+        local_5c[0] = st::machine_word_boundary_cast<int>(local_5c[0] - iVar27);
         local_c = pAVar25;
       }
       local_EAX_5569 = st::fn_004049B7(*(char *)&this_00->field_0024);
@@ -1607,16 +1607,16 @@ LAB_004bb58d:
       }
       iVar27 = 0;
       if (pAVar25 == (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 1)) {
-        iVar27 = local_5c[0] * 8;
+        iVar27 = st::machine_word_boundary_cast<int>(local_5c[0] * 8);
       }
       else if (pAVar25 == (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 2)) {
-        iVar27 = local_5c[0] * 6;
+        iVar27 = st::machine_word_boundary_cast<int>(local_5c[0] * 6);
       }
       else {
         if (pAVar25 != (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 3)) goto LAB_004bb5dd;
-        iVar27 = local_5c[0] * 4;
+        iVar27 = st::machine_word_boundary_cast<int>(local_5c[0] * 4);
       }
-      iVar27 = local_5c[0] - iVar27 / 10;
+      iVar27 = st::machine_word_boundary_cast<int>(local_5c[0] - iVar27 / 10);
       goto LAB_004bb5dd;
     }
     local_EAX_5336 = st::fn_004049B7(*(char *)&this_00->field_0024);
@@ -1641,14 +1641,14 @@ LAB_004bb4a1:
       }
     }
     if (pAVar25 == (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 1)) {
-      iVar27 = local_5c[0] - (local_5c[0] * 9) / 10;
+      iVar27 = st::machine_word_boundary_cast<int>(local_5c[0] - (local_5c[0] * 9) / 10);
     }
-    local_5c[0] = local_5c[0] - iVar27;
+    local_5c[0] = st::machine_word_boundary_cast<int>(local_5c[0] - iVar27);
 LAB_004bb5dd:
     if (200 < iVar27) {
       iVar27 = 200;
     }
-    local_5c[0] = local_5c[0] - iVar27;
+    local_5c[0] = st::machine_word_boundary_cast<int>(local_5c[0] - iVar27);
     if (local_5c[0] < 0) {
       local_5c[0] = 0;
     }
@@ -1667,7 +1667,7 @@ LAB_004bb5dd:
       (**(code **)*DAT_008117bc)(local_7c);
     }
     if (DAT_00811798 != nullptr) {
-      st::fn_004028C4(DAT_00811798,this_00->field_05B0,this_00->field_05B4,
+      st::fn_004028C4(st::pointer_boundary_cast<void *>(DAT_00811798),this_00->field_05B0,this_00->field_05B4,
                          (uint)this_00->field_0024);
     }
     this_00->field_0454 = g_playSystem_00802A38->field_00E4;
@@ -1682,7 +1682,7 @@ LAB_004bb5dd:
   if (SVar5 < MESS_SHARED_0129) {
     if (SVar5 == MESS_HITKILL) {
       TVar9 = this_00->field_0245;
-      piVar46 = (message->arg0).ptr;
+      piVar46 = st::pointer_boundary_cast<int *>((message->arg0).ptr);
       piVar41 = local_5c;
       memmove(piVar41, piVar46, 0x1c); /* compiler REP MOVS byte copy */
       if ((TVar9 != CASE_1) && (TVar9 != CASE_6)) {
@@ -1737,7 +1737,7 @@ LAB_004bb5dd:
         (*(code *)*puRam00000000)(local_7c);
       }
       if (DAT_00811798 != nullptr) {
-        st::fn_004028C4(DAT_00811798,this_00->field_05B0,this_00->field_05B4,
+        st::fn_004028C4(st::pointer_boundary_cast<void *>(DAT_00811798),this_00->field_05B0,this_00->field_05B4,
                            (uint)this_00->field_0024);
       }
       this_00->field_0454 = g_playSystem_00802A38->field_00E4;
@@ -1751,7 +1751,7 @@ LAB_004bb5dd:
     }
     if (SVar5 != MESS_SHARED_0121) {
       if (SVar5 == MESS_SHARED_0122) {
-        piVar46 = (message->arg0).ptr;
+        piVar46 = st::pointer_boundary_cast<int *>((message->arg0).ptr);
         if ((byte *)*piVar46 != this_00->field_0024) {
           g_currentExceptionFrame = local_c4.previous;
           return 0;
@@ -1797,7 +1797,7 @@ LAB_004bb5dd:
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
-    local_18 = (message->arg0).ptr;
+    local_18 = st::pointer_boundary_cast<AnonShape_0060EA30_DCEB68AD *>((message->arg0).ptr);
     if ((7 < *(uint *)local_18) ||
        ((g_playSystem_00802A38 != nullptr &&
         (7 < g_bulkInitializedRecords_008087C7[*(uint *)local_18].field_0022)))) goto LAB_004bbcb2;
@@ -1834,7 +1834,7 @@ LAB_004bbc2b:
     }
     if ((bVar44) && (iVar27 = st::fn_006B0FD0(0x800f90), iVar27 != 0)) {
       this_00->field_0420 = 1;
-      this_00->field_0265 = this_00->field_0265 & 0xfffffffd;
+      this_00->field_0265 = st::machine_word_boundary_cast<undefined4>(this_00->field_0265 & 0xfffffffd);
       this_00->field_026D = 0;
       this_00->field_0424 = g_playSystem_00802A38->field_00E4;
       this_00->field_0428 = *(uint *)&local_18->field_0x4;
@@ -1973,14 +1973,14 @@ LAB_004bc4c0:
     pcVar13 = *(char **)(dVar22 + 0x17);
     if (*(int *)(&DAT_00792778 + this_00->field_0235 * 4) != 0) {
       if (*pcVar13 == '\a') {
-        this_00->field_0265 = this_00->field_0265 & 0xfffffffd;
+        this_00->field_0265 = st::machine_word_boundary_cast<undefined4>(this_00->field_0265 & 0xfffffffd);
         this_00->field_026D = 0;
       }
       else if (this_00->field_0261 != 0) {
         if (*(int *)(&DAT_00792a90 + this_00->field_0235 * 8) == 1) {
           if (*pcVar13 == '\0') {
             uVar24 = *(undefined4 *)(pcVar13 + 1);
-            this_00->field_0265 = this_00->field_0265 | 2;
+            this_00->field_0265 = st::machine_word_boundary_cast<undefined4>(this_00->field_0265 | 2);
             this_00->field_026D = uVar24;
           }
         }
@@ -1992,7 +1992,7 @@ LAB_004bc4c0:
             st::fn_00401627(this_00,(uint)bVar1,(uint)bVar2,(uint)bVar3);
           }
           else {
-            this_00->field_0265 = this_00->field_0265 | 2;
+            this_00->field_0265 = st::machine_word_boundary_cast<undefined4>(this_00->field_0265 | 2);
             *(uint *)&this_00->field_0x2a5 = (uint)bVar1;
             this_00->field_02A9 = (uint)bVar2;
             *(uint *)&this_00->field_0x2ad = (uint)bVar3;
@@ -2134,7 +2134,7 @@ LAB_004bc4c0:
               g_currentExceptionFrame = local_c4.previous;
               return 0;
             }
-            uVar30 = this_00->field_001C * 0x41c64e6d + 0x3039;
+            uVar30 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
             this_00->field_001C = uVar30;
             st::fn_00403486((int)this_00->field_0024,uVar30 >> 0x10);
             g_currentExceptionFrame = local_c4.previous;
@@ -2172,7 +2172,7 @@ LAB_004bc4c0:
           }
           this_00->field_04D0 = CASE_1;
           this_00->field_0261 = 1;
-          this_00->field_0265 = this_00->field_0265 | 2;
+          this_00->field_0265 = st::machine_word_boundary_cast<undefined4>(this_00->field_0265 | 2);
           *(undefined4 *)&this_00->field_0x2a5 = 0xffffffff;
           this_00->field_02A9 = 0xffffffff;
           *(undefined4 *)&this_00->field_0x2ad = 0xffffffff;
@@ -2392,7 +2392,7 @@ LAB_004bbfe9:
         return 0;
       }
       local_8 = nullptr;
-      iVar27 = this_00->field_05B8 + -2;
+      iVar27 = st::machine_word_boundary_cast<int>(this_00->field_05B8 + -2);
       if (-1 < iVar27) {
         sVar16 = *(short *)&this_00->field_05B0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -2468,28 +2468,28 @@ LAB_004bbfe9:
     switch(**(undefined1 **)(dVar22 + 0x17)) {
     case 0:
       if (this_00->field_04D0 != CASE_0) {
-        st::fn_00405097(this_00,nullptr,this_00->field_04E0[0] - 5);
+        st::fn_00405097(this_00,nullptr,st::machine_word_boundary_cast<int>(this_00->field_04E0[0] - 5));
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
       break;
     case 1:
       if (this_00->field_04D0 != CASE_0) {
-        st::fn_00405097(this_00,nullptr,this_00->field_04E0[0] + 5);
+        st::fn_00405097(this_00,nullptr,st::machine_word_boundary_cast<int>(this_00->field_04E0[0] + 5));
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
       break;
     case 2:
       if (this_00->field_04D4 != 0) {
-        st::fn_00405097(this_00,(int *)((int)&puRam00000000 + 1),this_00->field_04E0[1] - 5);
+        st::fn_00405097(this_00,(int *)((int)&puRam00000000 + 1),st::machine_word_boundary_cast<int>(this_00->field_04E0[1] - 5));
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
       break;
     case 3:
       if (this_00->field_04D4 != 0) {
-        st::fn_00405097(this_00,(int *)((int)&puRam00000000 + 1),this_00->field_04E0[1] + 5);
+        st::fn_00405097(this_00,(int *)((int)&puRam00000000 + 1),st::machine_word_boundary_cast<int>(this_00->field_04E0[1] + 5));
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }

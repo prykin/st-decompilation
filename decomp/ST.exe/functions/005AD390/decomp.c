@@ -245,7 +245,7 @@ switchD_005adb01_caseD_c:
                   ((uint *)this_00->field_1BDA,this_00->field_1B96,0xfffffffe,this_00->field_1BAE,
                    this_00->field_1BB2);
       }
-      puVar10 = this_00->field_1C23;
+      puVar10 = &this_00->field_1C23;
       iVar9 = 0x16;
       do {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar10);

@@ -126,8 +126,7 @@ LAB_0047d831:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (undefined4 *)&this->field_0x2b3;
           do {
-            puVar8 = (undefined4 *)
-                     thunk_FUN_0041dc40(local_28,(short)*param_1,*(ushort *)(param_1 + 1),
+            puVar8 = thunk_FUN_0041dc40(local_28,(short)*param_1,*(ushort *)(param_1 + 1),
                                         this->field_006C);
             uVar3 = *puVar8;
             bVar22 = 0;
@@ -257,8 +256,7 @@ LAB_0047d241:
           pSVar2 != nullptr && (*(int *)&pSVar2->field_0x18 == this->field_0697)))) {
         iVar10 = (*pSVar2->vtable[5].slots_00_28[2])();
         if (iVar10 == 1) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          thunk_FUN_004b7e30(pSVar2,*(int *)((int)this->field_06CB + 0x2c),0,0);
+          thunk_FUN_004b7e30(pSVar2,this->field_06F7,0,0);
           thunk_FUN_004b7de0((int *)pSVar2);
           thunk_FUN_004b7d50(pSVar2,this);
         }

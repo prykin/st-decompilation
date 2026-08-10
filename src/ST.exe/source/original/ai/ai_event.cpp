@@ -114,12 +114,12 @@ int __thiscall st::fn_0064CD80(AiEventClassTy *this,int *param_1)
   }
   g_currentExceptionFrame = local_4c.previous;
   st::fn_00402E14(local_8);
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_event.cpp",0x50,0,iVar3,"%s",
+  iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x50,0,iVar3,st::mutable_c_string("%s"),
                              "AiEventClassTy::InitData");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0x51);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x51);
   return iVar3;
 }
 
@@ -160,12 +160,12 @@ undefined4 * __thiscall st::fn_0064D000(AiEventClassTy *this,uint *param_1)
     return (undefined4 *)pAVar3_mg1;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_event.cpp",0x66,0,errorCode,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x66,0,errorCode,st::mutable_c_string("%s"),
                              "AiEventClassTy::PrepareToSave");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_event.cpp",0x67);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x67);
   return nullptr;
 }
 
@@ -242,12 +242,12 @@ st::fn_0064D270
   local_EAX_54 = st::fn_0072D7F0(local_e8.jumpBuffer,0);
   if (local_EAX_54 != 0) {
     g_currentExceptionFrame = local_e8.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_event.cpp",0xcb,0,local_EAX_54,
-                               "%s","AiEventClassTy::__CreateObjPl");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0xcb,0,local_EAX_54,
+                               st::mutable_c_string("%s"),"AiEventClassTy::__CreateObjPl");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_54,0,"E:\\__titans\\ai\\ai_event.cpp",0xcc);
+    st::fn_006A5E40(local_EAX_54,0,st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0xcc);
     return local_EAX_54;
   }
   if ((param_2 < 1) || (0x28 < param_2)) {
@@ -269,8 +269,8 @@ st::fn_0064D270
       local_30 = CONCAT22((short)(uVar7 * 9 >> 0x10),
                           (short)g_bulkInitializedRecords_008087C7[uVar7].field_0028 + -3);
       st::fn_00401906((short *)&local_20,(short *)&local_30,local_28,local_1c);
-      local_38->field_0088 = local_38->field_0088 * 0x41c64e6d + 0x3039;
-      local_18 = local_38->field_0088 * 0x41c64e6d + 0x3039;
+      local_38->field_0088 = st::machine_word_boundary_cast<uint>(local_38->field_0088 * 0x41c64e6d + 0x3039);
+      local_18 = st::machine_word_boundary_cast<uint>(local_38->field_0088 * 0x41c64e6d + 0x3039);
       local_38->field_0088 = local_18;
       iVar5 = st::fn_00401D9D((local_18 >> 0x10) % (uint)(int)local_28[0] + (int)(short)local_20,
                                  (local_38->field_0088 >> 0x10) % (uint)(int)local_1c[0] +
@@ -341,7 +341,7 @@ st::fn_0064D270
         local_76 = 0;
       }
       local_5b = 1;
-      st::fn_00404B97(g_allPlayers_007FA174,local_a4);
+      st::fn_00404B97(g_allPlayers_007FA174,st::pointer_boundary_cast<undefined4 *>(local_a4));
       local_14 = 0;
     }
   }
@@ -427,12 +427,12 @@ st::fn_0064D890
   local_EAX_39 = st::fn_0072D7F0(local_6c.jumpBuffer,0);
   if (local_EAX_39 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_event.cpp",0xee,0,local_EAX_39,
-                               "%s","AiEventClassTy::_CreateRCCont");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0xee,0,local_EAX_39,
+                               st::mutable_c_string("%s"),"AiEventClassTy::_CreateRCCont");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_39,0,"E:\\__titans\\ai\\ai_event.cpp",0xef);
+    st::fn_006A5E40(local_EAX_39,0,st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0xef);
     return local_EAX_39;
   }
   if (g_allPlayers_007FA174 != nullptr) {
@@ -509,12 +509,12 @@ st::fn_0064DB00
   local_EAX_38 = st::fn_0072D7F0(local_68.jumpBuffer,0);
   if (local_EAX_38 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_event.cpp",0x117,0,local_EAX_38,
-                               "%s","AiEventClassTy::_CreateArt");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x117,0,local_EAX_38,
+                               st::mutable_c_string("%s"),"AiEventClassTy::_CreateArt");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_38,0,"E:\\__titans\\ai\\ai_event.cpp",0x118);
+    st::fn_006A5E40(local_EAX_38,0,st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x118);
     return local_EAX_38;
   }
   if (g_allPlayers_007FA174 != nullptr) {
@@ -587,12 +587,12 @@ st::fn_0064DDA0
   local_EAX_39 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (local_EAX_39 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_event.cpp",0x13c,0,local_EAX_39,
-                               "%s","AiEventClassTy::_CreateDest");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x13c,0,local_EAX_39,
+                               st::mutable_c_string("%s"),"AiEventClassTy::_CreateDest");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_39,0,"E:\\__titans\\ai\\ai_event.cpp",0x13d);
+    st::fn_006A5E40(local_EAX_39,0,st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x13d);
     return local_EAX_39;
   }
   if ((param_1 == 0) || (bVar2 = false, param_1 == 1)) {
@@ -697,12 +697,12 @@ st::fn_0064DFA0
     return local_28;
   }
   g_currentExceptionFrame = local_6c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_event.cpp",0x169,0,local_EAX_64,
-                             "%s","AiEventClassTy::_CreateMine");
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x169,0,local_EAX_64,
+                             st::mutable_c_string("%s"),"AiEventClassTy::_CreateMine");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(local_EAX_64,0,"E:\\__titans\\ai\\ai_event.cpp",0x16a);
+  st::fn_006A5E40(local_EAX_64,0,st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x16a);
   return local_EAX_64;
 }
 
@@ -749,7 +749,7 @@ uint st::fn_0064E300(int param_1,char *param_2,ushort param_3,char param_4,ushor
     g_currentExceptionFrame = local_64.previous;
     st::fn_00405BCD((int *)&local_8);
     st::fn_00405BCD((int *)&local_c);
-    st::fn_006A5E40(uVar1,0,"E:\\__titans\\ai\\ai_event.cpp",0x1b8);
+    st::fn_006A5E40(uVar1,0,st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x1b8);
     return uVar1;
   }
   if (((int)local_10 < 0) || (bVar3 = local_10 == 8, 8 < (int)local_10)) {
@@ -768,11 +768,11 @@ uint st::fn_0064E300(int param_1,char *param_2,ushort param_3,char param_4,ushor
   *(uint *)&local_8->field_0x77 = uVar2;
   local_c = st::fn_004014C4(local_8,local_20);
   st::fn_00405BCD((int *)&local_8);
-  st::fn_00401BC2(g_playSystem_00802A38,900,local_20 + 1,&local_14,local_c,0);
+  st::fn_00401BC2(g_playSystem_00802A38,900,st::machine_word_boundary_cast<undefined4>(local_20 + 1),st::machine_word_boundary_cast<undefined4>(&local_14),st::machine_word_boundary_cast<undefined4>(local_c),0);
   st::fn_00405BCD((int *)&local_c);
   if (local_14 == nullptr) {
     st::fn_006A5E40
-              (-0xab,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_event.cpp",0x1b4);
+              (-0xab,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x1b4);
     uVar2 = local_20[2];
   }
   else {
@@ -974,27 +974,27 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   char *pcVar8_mg23;
   short sVar22;
   CPanelTy *pCVar23;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
   short sVar24;
   DArrayTy *pDVar25;
   undefined2 uVar27;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   undefined4 uVar26;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   DArrayTy *extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_04;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_05;
   AnonShape_00652810_4F58F813 *pAVar28;
   AnonNested_00652810_000F_9CE8027E *pAVar29;
@@ -1176,7 +1176,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           pDVar25 = &local_34;
                                           local_c = pDVar10;
@@ -1203,7 +1203,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar10;
@@ -1225,7 +1225,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                                    (int)pAVar38);
                                               }
                                               else {
-                                                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                                /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                                 st::fn_0040130C(pAVar20,extraout_EDX_04);
                                               }
                                             }
@@ -1248,7 +1248,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar10;
@@ -1270,7 +1270,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                                    (int)pAVar38);
                                               }
                                               else {
-                                                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                                /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                                 st::fn_00401EF1(pAVar20,extraout_EDX_05);
                                               }
                                             }
@@ -1293,7 +1293,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_8 = pDVar10;
@@ -1315,7 +1315,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                               }
                                               else {
                                                 local_c = (DArrayTy *)
-                                                          st::fn_00404DA9(local_10->vtable);
+                                                          st::fn_00404DA9(st::machine_word_boundary_cast<undefined4>(local_10->vtable));
                                                 if (local_c != nullptr) {
                                                   st::fn_004020EA(local_17c,local_c,0);
                                                   st::fn_006AE110(local_c);
@@ -1341,7 +1341,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           pDVar25 = &local_34;
                                           local_c = pDVar10;
@@ -1373,7 +1373,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           pDVar25 = &local_34;
                                           local_c = pDVar10;
@@ -1405,7 +1405,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar10;
@@ -1465,7 +1465,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar10;
@@ -1508,7 +1508,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar10;
@@ -1587,7 +1587,7 @@ LAB_006577ae:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar10;
@@ -1658,7 +1658,7 @@ LAB_00657a41:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar10;
@@ -1735,7 +1735,7 @@ LAB_006578fe:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -1819,7 +1819,7 @@ LAB_00657bce:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -1876,7 +1876,7 @@ LAB_00657ccf:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -1933,7 +1933,7 @@ LAB_00657dd9:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2004,7 +2004,7 @@ LAB_00657f1c:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2073,7 +2073,7 @@ LAB_0065806e:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2130,7 +2130,7 @@ LAB_00658177:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2209,7 +2209,7 @@ LAB_00658b70:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2295,7 +2295,7 @@ LAB_00658d01:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2374,7 +2374,7 @@ LAB_00658e8e:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2444,7 +2444,7 @@ LAB_00658fc8:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2517,7 +2517,7 @@ LAB_006582b3:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2593,7 +2593,7 @@ LAB_00658416:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2660,7 +2660,7 @@ LAB_00658543:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2727,7 +2727,7 @@ LAB_00658670:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2804,7 +2804,7 @@ LAB_006587e2:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2861,7 +2861,7 @@ LAB_006588eb:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -2922,7 +2922,7 @@ LAB_006589fe:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -3004,7 +3004,7 @@ LAB_00659143:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -3081,7 +3081,7 @@ LAB_006594ec:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -3157,7 +3157,7 @@ LAB_00659640:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -3231,7 +3231,7 @@ LAB_00659785:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -3305,7 +3305,7 @@ LAB_006598ca:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -3410,7 +3410,7 @@ LAB_0065937a:
                                                   st::fn_004016B8
                                                             ((AnonReceiver_0064A970 *)this_00,
                                                              (char *)pDStack_164,(uint)local_160,
-                                                             &local_34.flags);
+                                                             st::pointer_boundary_cast<uint *>(&local_34.flags));
                                         if (0 < (int)pDVar10) {
                                           local_8 = &local_34;
                                           local_c = pDVar10;
@@ -3491,7 +3491,7 @@ LAB_00659a1c:
                                   st::fn_00405042(this_00,-0x7d,pcVar8_mg23,uVar16,iVar37);
                                 }
                                 else {
-                                  DAT_0080c51e = pDStack_164;
+                                  DAT_0080c51e = st::machine_word_boundary_cast<undefined4>(pDStack_164);
                                 }
                               }
                               goto cf_common_join_00659A73;
@@ -3518,7 +3518,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
@@ -3544,7 +3544,7 @@ LAB_00659a1c:
                                         puVar9 = (undefined1 *)((int)&pDVar10[-2].count + 2);
                                       }
                                       if (-1 < (int)puVar9) {
-                                        st::fn_00402EAF(pDVar25->flags,(int)puVar9,local_158);
+                                        st::fn_00402EAF(pDVar25->flags,(int)puVar9,st::machine_word_boundary_cast<undefined4>(local_158));
                                         pDVar10 = local_15c;
                                       }
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
@@ -3560,8 +3560,8 @@ LAB_00659a1c:
                               iVar37 = st::fn_004031ED((int)&local_16c);
                               if (iVar37 == 0) break;
                               if (local_160 != nullptr) {
-                                st::fn_00402932(0,(byte *)pDStack_164,0,0,0,-1,-1,-1,st::fn_004012CB,
-                                         local_160);
+                                st::fn_00402932(0,(byte *)pDStack_164,0,0,0,-1,-1,-1,st::pointer_boundary_cast<undefined *>(st::fn_004012CB),
+                                         st::machine_word_boundary_cast<undefined4>(local_160));
                               }
                               goto cf_common_join_00659A73;
                             case 0x595:
@@ -3583,8 +3583,8 @@ LAB_00659a1c:
                                      st::fn_0040170D((int)pDStack_164,(int *)&local_18c,
                                                         (int *)&local_190,(int *)&local_184);
                                 if (local_EAX_14486 == 0) goto LAB_00655f4c;
-                                st::fn_00405E84(local_18c,local_190,local_184,pDStack_164,
-                                                   local_154);
+                                st::fn_00405E84(st::machine_word_boundary_cast<undefined4>(local_18c),st::machine_word_boundary_cast<undefined4>(local_190),st::machine_word_boundary_cast<undefined4>(local_184),st::machine_word_boundary_cast<undefined4>(pDStack_164),
+                                                   st::machine_word_boundary_cast<undefined4>(local_154));
                               }
                               goto cf_common_join_00659A73;
                             case 0x596:
@@ -3594,7 +3594,7 @@ LAB_00659a1c:
                               DAT_008118fc = 0;
                               st::fn_00404142((short)pDStack_164,(short)local_160,(short)local_15c,
                                            (short)local_158,(short)local_154,(short)local_150,
-                                           (short)local_14c,st::fn_004047E1,&local_148);
+                                           (short)local_14c,st::pointer_boundary_cast<undefined *>(st::fn_004047E1),st::machine_word_boundary_cast<undefined4>(&local_148));
                               goto cf_common_join_00659A73;
                             case 0x597:
                               iVar37 = st::fn_004018B6((RecoveredRecord_AiEventClassTy_00650090 *
@@ -3602,7 +3602,7 @@ LAB_00659a1c:
                               if (iVar37 == 0) break;
                               st::fn_00404142((short)local_15c,(short)local_158,(short)local_154,
                                            (short)local_150,(short)local_14c,(short)local_148,
-                                           (short)local_144,st::fn_00405B6E,
+                                           (short)local_144,st::pointer_boundary_cast<undefined *>(st::fn_00405B6E),
                                            (int)local_160 << 0x10 | (uint)pDStack_164 & 0xffff);
                               goto cf_common_join_00659A73;
                             case 0x598:
@@ -3612,7 +3612,7 @@ LAB_00659a1c:
                                 local_EAX_13781 =
                                      st::fn_0040341D(this_00,(short)pDStack_164,(short)local_160,
                                                  (short)local_15c,(short)local_158,(short)local_154,
-                                                 (char *)local_150,local_14c,local_148);
+                                                 (char *)local_150,local_14c,st::machine_word_boundary_cast<undefined4>(local_148));
                                 goto LAB_00655f44;
                               }
                               break;
@@ -3623,15 +3623,15 @@ LAB_00659a1c:
                               DAT_008118fc = 0;
                               st::fn_004013F2((byte *)local_160,(char)pDStack_164,(short)local_15c,
                                         (short)local_158,(short)local_154,(short)local_150,
-                                        (short)local_14c,(short)local_148,st::fn_0040191A,
-                                        &local_144);
+                                        (short)local_14c,(short)local_148,st::pointer_boundary_cast<undefined *>(st::fn_0040191A),
+                                        st::machine_word_boundary_cast<undefined4>(&local_144));
                               goto cf_common_join_00659A73;
                             case 0x59a:
                               iVar37 = st::fn_00402027((int)&local_16c);
                               if (iVar37 == 0) break;
                               if (local_160 != nullptr) {
-                                st::fn_004013F2((byte *)pDStack_164,-1,0,0,0,-1,-1,-1,st::fn_00403E18,
-                                          local_160);
+                                st::fn_004013F2((byte *)pDStack_164,-1,0,0,0,-1,-1,-1,st::pointer_boundary_cast<undefined *>(st::fn_00403E18),
+                                          st::machine_word_boundary_cast<undefined4>(local_160));
                               }
                               goto cf_common_join_00659A73;
                             case 0x59b:
@@ -3644,7 +3644,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
                                     local_c = pDVar10;
@@ -3652,8 +3652,8 @@ LAB_00659a1c:
                                       local_EAX_14928 =
                                            st::fn_0040434A(this_00,(ushort)local_8->flags,
                                                        (short)local_15c,(int)local_158,
-                                                       (int)local_154,local_150,(ushort)local_14c,
-                                                       local_148,local_144,local_140);
+                                                       (int)local_154,st::machine_word_boundary_cast<undefined4>(local_150),(ushort)local_14c,
+                                                       local_148,st::machine_word_boundary_cast<undefined4>(local_144),local_140);
                                       if (local_EAX_14928 != 0) {
                                         dVar39 = local_8->flags;
                                         uVar16 = uVar32;
@@ -3680,7 +3680,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
@@ -3689,7 +3689,7 @@ LAB_00659a1c:
                                       st::fn_00403675(pDVar25->flags,(short)local_15c,(char)local_158,
                                                  local_154,(short)local_150,(short)local_14c,
                                                  (short)local_148,(short)local_144,(short)local_140,
-                                                 (short)local_13c,st::fn_004037D8,&local_138);
+                                                 (short)local_13c,st::pointer_boundary_cast<undefined *>(st::fn_004037D8),st::machine_word_boundary_cast<undefined4>(&local_138));
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != nullptr);
@@ -3709,7 +3709,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
@@ -3718,7 +3718,7 @@ LAB_00659a1c:
                                       st::fn_00403675(pDVar25->flags,(short)local_158,(char)local_154,
                                                  local_150,(short)local_14c,(short)local_148,
                                                  (short)local_144,(short)local_140,(short)local_13c,
-                                                 (short)local_138,st::fn_004035FD,local_15c);
+                                                 (short)local_138,st::pointer_boundary_cast<undefined *>(st::fn_004035FD),st::machine_word_boundary_cast<undefined4>(local_15c));
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != nullptr);
@@ -3739,12 +3739,12 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
                                     do {
-                                      st::fn_00402AAE(pDVar25->flags,&local_15c->flags,
+                                      st::fn_00402AAE(pDVar25->flags,st::pointer_boundary_cast<uint *>(&local_15c->flags),
                                                          (byte)local_158);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -3764,7 +3764,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
@@ -3789,7 +3789,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
                                     do {
@@ -3825,7 +3825,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
@@ -3850,7 +3850,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
@@ -3874,7 +3874,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
                                     do {
@@ -3908,7 +3908,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
                                     do {
@@ -3942,7 +3942,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
@@ -3966,7 +3966,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
@@ -3990,7 +3990,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
@@ -4016,7 +4016,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_8 = pDVar10;
@@ -4059,7 +4059,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
                                     do {
@@ -4079,7 +4079,7 @@ LAB_00659a1c:
                                       }
                                       else {
                                         pAVar19->field_0644 = (char)local_15c;
-                                        pAVar19->field_0640 = local_158;
+                                        pAVar19->field_0640 = st::machine_word_boundary_cast<undefined4>(local_158);
                                         st::fn_00401DB6(pAVar19);
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
@@ -4101,7 +4101,7 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     local_8 = &local_34;
                                     do {
@@ -4121,7 +4121,7 @@ LAB_00659a1c:
                                       else {
                                         st::fn_00401CA8(pAVar11,(byte)local_15c,(ushort)local_158
                                                            ,(ushort)local_154,(ushort)local_150,
-                                                           local_14c);
+                                                           st::machine_word_boundary_cast<undefined4>(local_14c));
                                       }
                                       local_8 = (DArrayTy *)&local_8->iteratorIndex;
                                       pDVar10 = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -4143,13 +4143,13 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     local_10 = (AiFltClassTy *)&local_34;
                                     local_8 = pDVar10;
                                     do {
                                       local_c = (DArrayTy *)
-                                                st::fn_004037D3(local_10->vtable,(uint)local_15c,
+                                                st::fn_004037D3(st::machine_word_boundary_cast<undefined4>(local_10->vtable),(uint)local_15c,
                                                                    (char)local_158,(short)local_154,
                                                                    (short)local_150,(short)local_14c
                                                                    ,(short)local_148,
@@ -4186,13 +4186,13 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     local_10 = (AiFltClassTy *)&local_34;
                                     local_8 = pDVar10;
                                     do {
                                       local_c = (DArrayTy *)
-                                                st::fn_0040533A(local_10->vtable,(uint)local_15c,
+                                                st::fn_0040533A(st::machine_word_boundary_cast<undefined4>(local_10->vtable),(uint)local_15c,
                                                                    (char)local_158,(short)local_154,
                                                                    (short)local_150,(short)local_14c
                                                                    ,(short)local_148,
@@ -4229,13 +4229,13 @@ LAB_00659a1c:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     local_10 = (AiFltClassTy *)&local_34;
                                     local_8 = pDVar10;
                                     do {
                                       local_c = (DArrayTy *)
-                                                st::fn_00403C2E(local_10->vtable,
+                                                st::fn_00403C2E(st::machine_word_boundary_cast<undefined4>(local_10->vtable),
                                                                    (byte *)local_15c,(char)local_158
                                                                    ,(short)local_154,
                                                                    (short)local_150,(short)local_14c
@@ -4277,8 +4277,8 @@ LAB_00659a1c:
                               DAT_008118fc = 0;
                               st::fn_00402932((short)pDStack_164,(byte *)local_160,(short)local_15c,
                                        (short)local_158,(short)local_154,(short)local_150,
-                                       (short)local_14c,(short)local_148,st::fn_004022F2,
-                                       &local_144);
+                                       (short)local_14c,(short)local_148,st::pointer_boundary_cast<undefined *>(st::fn_004022F2),
+                                       st::machine_word_boundary_cast<undefined4>(&local_144));
                             }
                             goto cf_common_join_00659A73;
                           }
@@ -4305,7 +4305,7 @@ LAB_00659a1c:
                                        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
                                        ::st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                       (char *)pDStack_164,(uint)local_160,
-                                                      &local_34.flags);
+                                                      st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   iVar37 = 0;
                                   if (0 < local_EAX_5500) {
                                     pDVar10 = &local_34;
@@ -4371,7 +4371,7 @@ LAB_00659a1c:
                                                 st::fn_004016B8
                                                           ((AnonReceiver_0064A970 *)this_00,
                                                            (char *)pDStack_164,(uint)local_160,
-                                                           &local_34.flags);
+                                                           st::pointer_boundary_cast<uint *>(&local_34.flags));
                                       if (0 < (int)pDVar10) {
                                         local_8 = &local_34;
                                         do {
@@ -4435,7 +4435,7 @@ LAB_00659a1c:
                                     }
                                     else {
                                       *(undefined1 *)local_178 = 1;
-                                      local_178->field_000B = pDStack_164;
+                                      local_178->field_000B = st::machine_word_boundary_cast<undefined4>(pDStack_164);
                                     }
                                   }
                                 }
@@ -4471,7 +4471,7 @@ LAB_00659a1c:
                                               st::fn_004016B8
                                                         ((AnonReceiver_0064A970 *)this_00,
                                                          (char *)pDStack_164,(uint)local_160,
-                                                         &local_34.flags);
+                                                         st::pointer_boundary_cast<uint *>(&local_34.flags));
                                     if (0 < (int)pDVar10) {
                                       local_8 = &local_34;
                                       local_c = pDVar10;
@@ -4527,7 +4527,7 @@ LAB_00659a1c:
                                               st::fn_004016B8
                                                         ((AnonReceiver_0064A970 *)this_00,
                                                          (char *)pDStack_164,(uint)local_160,
-                                                         &local_34.flags);
+                                                         st::pointer_boundary_cast<uint *>(&local_34.flags));
                                     if (0 < (int)pDVar10) {
                                       pDVar25 = &local_34;
                                       local_c = pDVar10;
@@ -4759,7 +4759,7 @@ switchD_00652b42_switchD:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
@@ -4767,7 +4767,7 @@ switchD_00652b42_switchD:
                                     do {
                                       if (pCVar23 != nullptr) {
                                         st::fn_00401410
-                                                  (pCVar23,(byte)pDVar25->flags,'\x01',local_15c);
+                                                  (pCVar23,(byte)pDVar25->flags,'\x01',st::machine_word_boundary_cast<undefined4>(local_15c));
                                         pCVar23 = g_cPanel_00801688;
                                       }
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
@@ -4788,7 +4788,7 @@ switchD_00652b42_switchD:
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   if (0 < (int)pDVar10) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar10;
@@ -4818,7 +4818,7 @@ switchD_00652b42_switchD:
                                        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
                                        ::st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                       (char *)pDStack_164,(uint)local_160,
-                                                      &local_34.flags);
+                                                      st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   iVar37 = 0;
                                   if (0 < local_EAX_3277) {
                                     pDVar10 = &local_34;
@@ -4852,7 +4852,7 @@ switchD_00652b42_switchD:
                                 local_EAX_3452 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_3452) {
                                   pDVar10 = &local_34;
@@ -4875,7 +4875,7 @@ switchD_00652b42_switchD:
                                 iVar37 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar37 == 8) {
                                   if (DAT_00801694 != nullptr) {
-                                    st::fn_00402045(DAT_00801694,(char *)local_154,2,
+                                    st::fn_00402045(st::pointer_boundary_cast<void *>(DAT_00801694),(char *)local_154,2,
                                                        (char)local_158,(int)local_15c * 1000);
                                   }
                                   break;
@@ -4883,14 +4883,14 @@ switchD_00652b42_switchD:
                               }
                               local_EAX_3643 =
                                    st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
-                                                ,(uint)local_160,&local_34.flags);
+                                                ,(uint)local_160,st::pointer_boundary_cast<uint *>(&local_34.flags));
                               iVar37 = 0;
                               if (0 < local_EAX_3643) {
                                 pDVar10 = &local_34;
                                 do {
                                   if (pDVar10->flags == (uint)DAT_0080874d) {
                                     if (DAT_00801694 != nullptr) {
-                                      st::fn_00402045(DAT_00801694,(char *)local_154,2,
+                                      st::fn_00402045(st::pointer_boundary_cast<void *>(DAT_00801694),(char *)local_154,2,
                                                          (char)local_158,(int)local_15c * 1000);
                                     }
                                     break;
@@ -4912,14 +4912,14 @@ LAB_006536dd:
                                   if (g_cPanel_00801688 != nullptr) {
                                     st::fn_00403152(g_cPanel_00801688,(int)local_158,
                                                       (int)(local_154 + (1 - (int)local_158)),
-                                                      local_15c);
+                                                      st::machine_word_boundary_cast<undefined4>(local_15c));
                                   }
                                   break;
                                 }
                               }
                               local_EAX_3857 =
                                    st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
-                                                ,(uint)local_160,&local_34.flags);
+                                                ,(uint)local_160,st::pointer_boundary_cast<uint *>(&local_34.flags));
                               iVar37 = 0;
                               if (0 < local_EAX_3857) {
                                 pDVar10 = &local_34;
@@ -4939,14 +4939,14 @@ LAB_006536dd:
                                 if (iVar37 == 8) {
 LAB_00653778:
                                   if (g_cPanel_00801688 != nullptr) {
-                                    st::fn_0040195B(g_cPanel_00801688,(char *)local_158,local_15c);
+                                    st::fn_0040195B(g_cPanel_00801688,(char *)local_158,st::machine_word_boundary_cast<undefined4>(local_15c));
                                   }
                                   break;
                                 }
                               }
                               local_EAX_4002 =
                                    st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
-                                                ,(uint)local_160,&local_34.flags);
+                                                ,(uint)local_160,st::pointer_boundary_cast<uint *>(&local_34.flags));
                               iVar37 = 0;
                               if (0 < local_EAX_4002) {
                                 pDVar10 = &local_34;
@@ -4972,7 +4972,7 @@ LAB_00653778:
                               }
                               local_EAX_4139 =
                                    st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
-                                                ,(uint)local_160,&local_34.flags);
+                                                ,(uint)local_160,st::pointer_boundary_cast<uint *>(&local_34.flags));
                               iVar37 = 0;
                               if (0 < local_EAX_4139) {
                                 pDVar10 = &local_34;
@@ -5003,7 +5003,7 @@ LAB_00653778:
                               }
                               local_EAX_4307 =
                                    st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
-                                                ,(uint)local_160,&local_34.flags);
+                                                ,(uint)local_160,st::pointer_boundary_cast<uint *>(&local_34.flags));
                               iVar37 = 0;
                               if (0 < local_EAX_4307) {
                                 pDVar10 = &local_34;
@@ -5029,7 +5029,7 @@ LAB_00653778:
                                        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
                                        ::st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                       (char *)pDStack_164,(uint)local_160,
-                                                      &local_34.flags);
+                                                      st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   iVar37 = 0;
                                   if (0 < local_EAX_4445) {
                                     pDVar10 = &local_34;
@@ -5044,8 +5044,8 @@ LAB_00653778:
                                           }
                                           st::fn_00401FD2
                                                     (g_visibleClass_00802A88,(int)local_15c,
-                                                     (int)local_158,local_154,
-                                                     (&local_34.flags)[iVar37],local_150,iVar12);
+                                                     (int)local_158,st::pointer_boundary_cast<undefined *>(local_154),
+                                                     (&local_34.flags)[iVar37],st::pointer_boundary_cast<undefined *>(local_150),iVar12);
                                         }
                                         break;
                                       }
@@ -5068,7 +5068,7 @@ LAB_00653778:
                                              st::fn_004016B8
                                                        ((AnonReceiver_0064A970 *)this_00,
                                                         (char *)pDStack_164,(uint)local_160,
-                                                        &local_34.flags);
+                                                        st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   iVar37 = 0;
                                   if (0 < (int)local_10) {
                                     pDVar10 = &local_34;
@@ -5111,14 +5111,14 @@ LAB_00653778:
                                        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
                                        ::st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                       (char *)pDStack_164,(uint)local_160,
-                                                      &local_34.flags);
+                                                      st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   iVar37 = 0;
                                   if (0 < local_EAX_4850) {
                                     pDVar10 = &local_34;
                                     do {
                                       if (pDVar10->flags == (uint)DAT_0080874d) {
                                         if (g_opticClass_007FB2A0 != nullptr) {
-                                          st::fn_00401519((int)local_154,&local_15c->flags,
+                                          st::fn_00401519((int)local_154,st::pointer_boundary_cast<uint *>(&local_15c->flags),
                                                              (int)local_158);
                                         }
                                         break;
@@ -5141,7 +5141,7 @@ LAB_00653778:
                                              st::fn_004016B8
                                                        ((AnonReceiver_0064A970 *)this_00,
                                                         (char *)pDStack_164,(uint)local_160,
-                                                        &local_34.flags);
+                                                        st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   iVar37 = 0;
                                   if (0 < (int)local_10) {
                                     pDVar10 = &local_34;
@@ -5190,7 +5190,7 @@ LAB_00653bb7:
                                              st::fn_004016B8
                                                        ((AnonReceiver_0064A970 *)this_00,
                                                         (char *)pDStack_164,(uint)local_160,
-                                                        &local_34.flags);
+                                                        st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   iVar37 = 0;
                                   if (0 < (int)local_10) {
                                     pDVar10 = &local_34;
@@ -5228,7 +5228,7 @@ LAB_00653bb7:
                                 local_EAX_5668 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_5668) {
                                   pDVar10 = &local_34;
@@ -5258,7 +5258,7 @@ LAB_00653bb7:
                                           st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
+                                                     st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar10;
@@ -5286,19 +5286,20 @@ LAB_00653bb7:
                                 local_EAX_5961 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_5961) {
                                   pDVar10 = &local_34;
                                   do {
                                     if (pDVar10->flags == (uint)DAT_0080874d) {
                                       if (((char)local_15c->flags != '\0') &&
-                                         ((DAT_008087a0 == '\x03' || (DAT_008087a0 == '\b')))) {
+                                         (((char)DAT_008087a0 == '\x03' ||
+                                          ((char)DAT_008087a0 == '\b')))) {
                                         st::fn_0072E730
                                                   ((byte *)&CHAR_00h_0080ef1e,nullptr,local_384,
                                                    nullptr,nullptr);
                                         st::fn_0072F110
-                                                  (&DAT_0080c632,nullptr,(char *)local_384,
+                                                  (st::pointer_boundary_cast<char *>(&DAT_0080c632),nullptr,(char *)local_384,
                                                    (char *)local_15c,nullptr);
                                       }
                                       break;
@@ -5320,7 +5321,7 @@ LAB_00653bb7:
                                 local_EAX_6159 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_6159) {
                                   do {
@@ -5344,7 +5345,7 @@ LAB_00653bb7:
                                 local_EAX_6287 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_6287) {
                                   pDVar10 = &local_34;
@@ -5371,7 +5372,7 @@ LAB_006540b9:
                                 local_EAX_6449 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_6449) {
                                   pDVar10 = &local_34;
@@ -5386,18 +5387,18 @@ LAB_006540b9:
                                       _DAT_0080e42e = local_144;
                                       _DAT_0080e436 = local_13c;
                                       DAT_0080e43a = STPiece<0,1>(local_138);
-                                      if (DAT_008087a0 == '\x03') {
+                                      if ((char)DAT_008087a0 == '\x03') {
                                         st::fn_0072E730
                                                   ((byte *)&CHAR_00h_0080ef1e,nullptr,local_484,
                                                    nullptr,nullptr);
                                         st::fn_0072F110
                                                   ((char *)&DAT_0080f33a,nullptr,
                                                    (char *)local_484,(char *)local_158,nullptr);
-                                        st::external_00000080(&DAT_0080e323,"%s%s",&CHAR_00h_00807784,
+                                        st::external_00000080(st::pointer_boundary_cast<LPSTR>(&DAT_0080e323),st::mutable_c_string("%s%s"),&CHAR_00h_00807784,
                                                   &DAT_0080f33a);
                                       }
-                                      else if (DAT_008087a0 == '\b') {
-                                        st::external_00000080(&DAT_0080e323,"%s%s",&CHAR_00h_00807784,
+                                      else if ((char)DAT_008087a0 == '\b') {
+                                        st::external_00000080(st::pointer_boundary_cast<LPSTR>(&DAT_0080e323),st::mutable_c_string("%s%s"),&CHAR_00h_00807784,
                                                   local_158);
                                       }
                                       break;
@@ -5420,7 +5421,7 @@ LAB_006540b9:
                                 local_EAX_6799 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_6799) {
                                   pDVar10 = &local_34;
@@ -5455,7 +5456,7 @@ LAB_006540b9:
                                 local_EAX_6968 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_6968) {
                                   pDVar10 = &local_34;
@@ -5480,7 +5481,7 @@ LAB_00654386:
                                 local_EAX_7118 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_7118) {
                                   pDVar10 = &local_34;
@@ -5511,7 +5512,7 @@ LAB_00654386:
                                 local_EAX_7261 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_7261) {
                                   pDVar10 = &local_34;
@@ -5547,7 +5548,7 @@ LAB_00654386:
                                 local_EAX_7431 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_7431) {
                                   pDVar10 = &local_34;
@@ -5575,7 +5576,7 @@ LAB_00654386:
                                 local_EAX_7569 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_7569) {
                                   pDVar10 = &local_34;
@@ -5607,14 +5608,14 @@ LAB_00654386:
                                    ))) && (local_15c != (DArrayTy *)0xff)) {
                                 local_EAX_7731 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)local_15c
-                                                  ,0,&local_34.flags);
+                                                  ,0,st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (local_EAX_7731 == 1) {
                                   local_8 = (DArrayTy *)local_34.flags;
                                   pAVar13 = (AiFltClassTy *)
                                             st::fn_004016B8
                                                       ((AnonReceiver_0064A970 *)this_00,
                                                        (char *)pDStack_164,(uint)local_160,
-                                                       &local_34.flags);
+                                                       st::pointer_boundary_cast<uint *>(&local_34.flags));
                                   local_10 = pAVar13;
                                   if (0 < (int)pAVar13) {
                                     pDVar10 = &local_34;
@@ -5660,7 +5661,7 @@ LAB_00654386:
                                            st::fn_004016B8
                                                      ((AnonReceiver_0064A970 *)this_00,
                                                       (char *)pDStack_164,(uint)local_160,
-                                                      &local_34.flags);
+                                                      st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (0 < (int)local_10) {
                                   pDVar10 = &local_34;
                                   local_c = (DArrayTy *)local_10;
@@ -5700,7 +5701,7 @@ LAB_00654386:
                                 local_EAX_8204 =
                                      st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
                                                   (char *)pDStack_164,(uint)local_160,
-                                                  &local_34.flags);
+                                                  st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 iVar37 = 0;
                                 if (0 < local_EAX_8204) {
                                   pDVar10 = &local_34;
@@ -5732,7 +5733,7 @@ LAB_00654386:
                                           st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
+                                                     st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar10;
@@ -5760,7 +5761,7 @@ LAB_00654386:
                                           st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
+                                                     st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar10;
@@ -5773,7 +5774,7 @@ LAB_00654386:
                                     if ((int)local_158 < 0) {
                                       puVar14 = (uint *)(DAT_00808a90 >> 0x18);
                                     }
-                                    st::fn_004035EE((int *)pDVar25->flags,&pDVar10->flags,puVar14
+                                    st::fn_004035EE((int *)pDVar25->flags,st::pointer_boundary_cast<uint *>(&pDVar10->flags),puVar14
                                                       );
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -5807,7 +5808,7 @@ LAB_00654386:
                                           st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
+                                                     st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar10;
@@ -6040,19 +6041,19 @@ LAB_00655324:
                                           st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
+                                                     st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar10;
-                                  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                   uVar7 = extraout_ECX;
-                                  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                   uVar26 = extraout_EDX;
                                   do {
                                     switch(local_15c) {
                                     case (DArrayTy *)0xdc:
                                       if (local_158 == nullptr) {
-                                        st::fn_00403625((char)pDVar25->flags,local_154);
+                                        st::fn_00403625((char)pDVar25->flags,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
                                       else if ((int)local_158 < 1) {
                                         st::fn_00403166((char)pDVar25->flags,(int)local_154);
@@ -6063,7 +6064,7 @@ LAB_00655324:
                                       break;
                                     case (DArrayTy *)0xdd:
                                       if (local_158 == nullptr) {
-                                        st::fn_004018E8((char)pDVar25->flags,local_154);
+                                        st::fn_004018E8((char)pDVar25->flags,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
                                       else if ((int)local_158 < 1) {
                                         st::fn_00403418((char)pDVar25->flags,(int)local_154);
@@ -6074,7 +6075,7 @@ LAB_00655324:
                                       break;
                                     case (DArrayTy *)0xde:
                                       if (local_158 == nullptr) {
-                                        st::fn_00402685((char)pDVar25->flags,local_154);
+                                        st::fn_00402685((char)pDVar25->flags,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
                                       else if ((int)local_158 < 1) {
                                         st::fn_00405367((char)pDVar25->flags,(int)local_154);
@@ -6099,7 +6100,7 @@ LAB_00655324:
                                       break;
                                     case (DArrayTy *)0xe2:
                                       if (local_158 == nullptr) {
-                                        st::fn_004030E9(pDVar25->flags,local_154);
+                                        st::fn_004030E9(pDVar25->flags,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
                                       else if ((int)local_158 < 1) {
                                         st::fn_00403814(pDVar25->flags,(int)local_154);
@@ -6110,7 +6111,7 @@ LAB_00655324:
                                       break;
                                     case (DArrayTy *)0xe3:
                                       if (local_158 == nullptr) {
-                                        st::fn_00405024(pDVar25->flags,local_154);
+                                        st::fn_00405024(pDVar25->flags,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
                                       else if ((int)local_158 < 1) {
                                         st::fn_004043F9(pDVar25->flags,(int)local_154);
@@ -6125,9 +6126,9 @@ LAB_00655324:
                                     st::fn_004028F6((char)pDVar25->flags);
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                     uVar7 = extraout_ECX_00;
-                                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                     uVar26 = extraout_EDX_00;
                                   } while (local_c != nullptr);
                                 }
@@ -6139,7 +6140,7 @@ LAB_00655324:
                             iVar37 = st::fn_00401E42((int)&local_16c);
                             if (iVar37 == 0) break;
                             if (pDStack_164 == nullptr) {
-                              st::fn_0040557E(local_160);
+                              st::fn_0040557E(st::machine_word_boundary_cast<undefined4>(local_160));
                               goto cf_common_join_00659A73;
                             }
                             if ((int)pDStack_164 < 1) {
@@ -6164,7 +6165,7 @@ LAB_0065565b:
                             iVar37 = st::fn_004016EF((short *)&local_16c);
                             if (iVar37 == 0) break;
                             st::fn_00405F01((char)pDStack_164,(short)local_160,(short)local_15c,
-                                               local_158,(int)local_154);
+                                               st::machine_word_boundary_cast<undefined4>(local_158),(int)local_154);
                             goto cf_common_join_00659A73;
                           case 0x585:
                             iVar37 = st::fn_0040570E();
@@ -6203,13 +6204,13 @@ LAB_00655871:
                             else if (local_154 == (byte *)0x2) {
                               local_EAX_12115 =
                                    st::fn_004013F2(nullptr,-1,sVar24,sVar22,sVar6,1,1,1,
-                                             st::fn_00404C73,0);
+                                             st::pointer_boundary_cast<undefined *>(st::fn_00404C73),0);
                               if ((local_EAX_12115 == -1) && (g_fish_00811984 != nullptr)) {
                                 pSVar30 = g_fish_00811984;
                               }
                             }
                             if ((pSVar30 != nullptr) && (pDStack_164 != nullptr)) {
-                              (*pSVar30->vtable->vfunc_70)(pDStack_164);
+                              (*pSVar30->vtable->vfunc_70)(st::machine_word_boundary_cast<undefined4>(pDStack_164));
                             }
                             goto cf_common_join_00659A73;
                           case 0x58d:
@@ -6223,7 +6224,7 @@ LAB_00655871:
                                           st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
+                                                     st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (0 < (int)pDVar10) {
                                   local_10 = (AiFltClassTy *)&local_34;
                                   local_8 = pDVar10;
@@ -6296,21 +6297,21 @@ LAB_006559e3:
                                           st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
+                                                     st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (0 < (int)pDVar10) {
                                   local_10 = (AiFltClassTy *)&local_34;
                                   local_c = pDVar10;
                                   do {
-                                    local_8 = (DArrayTy *)st::fn_00404DA9(local_10->vtable);
+                                    local_8 = (DArrayTy *)st::fn_00404DA9(st::machine_word_boundary_cast<undefined4>(local_10->vtable));
                                     if (local_8 != nullptr) {
                                       uVar31 = 0;
                                       uVar16 = local_8->count;
-                                      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                       pDVar10 = extraout_EDX_01;
                                       if (0 < (int)uVar16) {
                                         do {
                                           if (uVar31 < uVar16) {
-                                            pDVar10 = local_8->data;
+                                            pDVar10 = st::pointer_boundary_cast<DArrayTy *>(local_8->data);
                                             pdVar17 = (dword *)((int)&pDVar10->flags +
                                                                local_8->elementSize * uVar31);
                                           }
@@ -6320,7 +6321,7 @@ LAB_006559e3:
                                           st::fn_0040387D
                                                     (g_allPlayers_007FA174,
                                                      *(char *)&local_10->vtable,
-                                                     STReplaceLowWord((uint32_t)(pDVar10), (uint16_t)((short)*pdVar17)),CASE_1,local_15c);
+                                                     STReplaceLowWord((uint32_t)(pDVar10), (uint16_t)((short)*pdVar17)),CASE_1,st::machine_word_boundary_cast<undefined4>(local_15c));
                                           uVar31 = uVar31 + 1;
                                           uVar16 = local_8->count;
                                           pDVar10 = local_8;
@@ -6348,7 +6349,7 @@ LAB_006559e3:
                                           st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
+                                                     st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (0 < (int)pDVar10) {
                                   local_10 = (AiFltClassTy *)&local_34;
                                   local_c = pDVar10;
@@ -6361,7 +6362,7 @@ LAB_006559e3:
                                       cVar5 = -1;
                                     }
                                     pDVar10 = (DArrayTy *)
-                                              st::fn_00404705(local_10->vtable,(uint)local_158,
+                                              st::fn_00404705(st::machine_word_boundary_cast<undefined4>(local_10->vtable),(uint)local_158,
                                                                  (uint)local_15c,local_150,cVar5,
                                                                  (short)local_14c,(short)local_148,
                                                                  (short)local_144,(short)local_140,
@@ -6371,7 +6372,7 @@ LAB_006559e3:
                                       uVar32 = 0;
                                       if (0 < (int)pDVar10->count) {
                                         bVar35 = pDVar10->count != 0;
-                                        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                         uVar7 = extraout_EDX_02;
                                         do {
                                           if (bVar35) {
@@ -6387,7 +6388,7 @@ LAB_006559e3:
                                                      ,CASE_1,local_134);
                                           uVar32 = uVar32 + 1;
                                           bVar35 = uVar32 < pDVar10->count;
-                                          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                           uVar7 = extraout_EDX_03;
                                         } while ((int)uVar32 < (int)pDVar10->count);
                                       }
@@ -6413,7 +6414,7 @@ LAB_006559e3:
                                           st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
+                                                     st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (0 < (int)pDVar10) {
                                   local_8 = &local_34;
                                   local_c = pDVar10;
@@ -6421,7 +6422,7 @@ LAB_006559e3:
                                     local_EAX_13452 =
                                          st::fn_00401B27(this_00,(ushort)local_8->flags,
                                                        (short)local_15c,(int)local_158,
-                                                       (int)local_154,local_150,local_14c,local_148,
+                                                       (int)local_154,st::machine_word_boundary_cast<undefined4>(local_150),st::machine_word_boundary_cast<undefined4>(local_14c),local_148,
                                                        (int)local_144);
                                     if (local_EAX_13452 != 0) {
                                       dVar39 = local_8->flags;
@@ -6449,7 +6450,7 @@ LAB_006559e3:
                                           st::fn_004016B8
                                                     ((AnonReceiver_0064A970 *)this_00,
                                                      (char *)pDStack_164,(uint)local_160,
-                                                     &local_34.flags);
+                                                     st::pointer_boundary_cast<uint *>(&local_34.flags));
                                 if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar10;
@@ -6458,7 +6459,7 @@ LAB_006559e3:
                                     st::fn_00403882((short)pDVar25->flags,(short)local_15c,
                                                 (byte *)local_158,(short)local_154,(short)local_150,
                                                 (short)local_14c,(short)local_148,(short)local_144,
-                                                (short)local_140,st::fn_004050A1,&local_13c);
+                                                (short)local_140,st::pointer_boundary_cast<undefined *>(st::fn_004050A1),st::machine_word_boundary_cast<undefined4>(&local_13c));
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != nullptr);
@@ -6472,8 +6473,8 @@ LAB_006559e3:
                             if (iVar37 == 0) break;
                             local_EAX_13781 =
                                  st::fn_00402BA8(this_00,(short)pDStack_164,(short)local_160,
-                                            (int)local_15c,(int)local_158,local_154,
-                                            (char *)local_150,local_14c,local_148);
+                                            (int)local_15c,(int)local_158,st::machine_word_boundary_cast<undefined4>(local_154),
+                                            (char *)local_150,local_14c,st::machine_word_boundary_cast<undefined4>(local_148));
 LAB_00655f44:
                             if (local_EAX_13781 != 0) {
 LAB_00655f4c:
@@ -6513,7 +6514,7 @@ cf_continue_loop_00659A80:
               if (pAVar28->field_000B == 1) {
                 *(char *)pAVar28 = '\0';
               }
-              pAVar28->field_000B = pAVar28->field_000B + -1;
+              pAVar28->field_000B = st::machine_word_boundary_cast<undefined4>(pAVar28->field_000B + -1);
             }
 LAB_00659aae:
             pDVar10 = this_00->field_04EE;
@@ -6530,7 +6531,7 @@ LAB_00659aae:
           iVar37 = pAVar2->field_0008;
         }
         if (local_194 == 0x456) {
-          this_00->field_00D6 = this_00->field_00D6 + 1;
+          this_00->field_00D6 = st::machine_word_boundary_cast<undefined4>(this_00->field_00D6 + 1);
         }
         g_currentExceptionFrame = local_284.previous;
         return;

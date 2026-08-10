@@ -207,7 +207,7 @@ SettMapTy * __cdecl st::fn_005D77A0(void)
     this->field_1F4F = nullptr;
     this->field_1F4B = 0;
     this->field_1F84 = nullptr;
-    memset(&this->field_1F8C, 0, 0x140); /* compiler bulk-zero initialization */
+    memset(this->field_1F8C, 0, 0x140); /* compiler bulk-zero initialization */
     iVar1 = 0;
     this->field_211D = 0;
     this->field_1F88 = 0;
@@ -269,7 +269,7 @@ SIDTy * __cdecl st::fn_005D9F80(void)
   this = (SIDTy *)st::fn_006B04D0(0x1dd8);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = (SIDTyVTable *)&VTable_0079C018;
+    this->vtable = (SIDTyVTable *)&st_global_0079C018;
     this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -285,7 +285,7 @@ SIDTy * __cdecl st::fn_005D9F80(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
-    this->vtable = (SIDTyVTable *)&MMObjTyVTable;
+    this->vtable = (SIDTyVTable *)&st_global_0079C008;
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -304,8 +304,8 @@ SIDTy * __cdecl st::fn_005D9F80(void)
     st::fn_00715820((SpriteClassTy *)&this->field_1C23);
     this->vtable = &st_global_0079C1AC;
     this->field_1A5F = 0;
-    this->field_1AF1[0] = 0;
-    this->field_1AF1[1] = 0;
+    this->field_1AF1 = 0;
+    this->field_1AF5 = 0;
     this->field_1AF9[0] = 0;
     this->field_1AF9[1] = 0;
     this->field_1CB8 = nullptr;
@@ -630,7 +630,7 @@ undefined4 st::fn_005DA7A0(void)
           bVar5 = false;
         }
         else {
-          *puVar1 = piVar4;
+          *puVar1 = st::machine_word_boundary_cast<undefined4>(piVar4);
           *piVar4 = *piVar4 + 1;
         }
       }
@@ -1001,11 +1001,11 @@ void __cdecl st::fn_005DE5B0(UINT param_1,int param_2)
 
   if (param_2 < 0) {
     pcVar1 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
-    st::external_00000080(local_108,"%s",pcVar1);
+    st::external_00000080(local_108,st::mutable_c_string("%s"),pcVar1);
   }
   else {
     pcVar1 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
-    st::external_00000080(local_108,"%s\n%d",pcVar1,param_2);
+    st::external_00000080(local_108,st::mutable_c_string("%s\n%d"),pcVar1,param_2);
   }
   uType = 0x10;
   pcVar1 = st::fn_006B0140(0x2648,g_hINSTANCE_00807618);

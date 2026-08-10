@@ -34,11 +34,11 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
     else {
       this = (STT3DSprC *)st::fn_00401316(pAVar1);
     }
-    param_1->field_05FF = this;
+    param_1->field_05FF = st::machine_word_boundary_cast<undefined4>(this);
     iVar3 = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       st::fn_006A5E40
-                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",0x56);
+                (iVar3,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_tls.cpp"),0x56);
     }
   }
   switch(param_1->field_0245) {
@@ -57,7 +57,7 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
   case 5:
     *(undefined4 *)&param_1->field_0x4d0 = 3;
     param_1->field_0261 = 0;
-    param_1->field_0265 = param_1->field_0265 & 0xfffffffd;
+    param_1->field_0265 = st::machine_word_boundary_cast<uint>(param_1->field_0265 & 0xfffffffd);
     param_1->field_026D = 0;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)param_1 + 0x90))(3,0x279);
@@ -66,12 +66,12 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
     st::fn_00403D0F((STT3DSprC *)param_1->field_05FF);
     return 0;
   }
-  st::external_00000080(local_108,"%s","trmmine");
+  st::external_00000080(local_108,st::mutable_c_string("%s"),"trmmine");
   iVar3 = st::fn_00404183
                     ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,local_108,CASE_1D);
   if (iVar3 != 0) {
     st::fn_006A5E40
-              (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",99);
+              (iVar3,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_tls.cpp"),99);
   }
   uVar4 = 10;
   iVar2 = st::fn_004052CC((STT3DSprC *)&param_1->field_0x1d5);

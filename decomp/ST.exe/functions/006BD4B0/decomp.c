@@ -31,7 +31,7 @@ void FUN_006bd4b0(void)
           DAT_00854fe4 = DAT_00854fec;
         }
         if (((DAT_00854ed4 == 0) &&
-            (iVar2 = FUN_006cfeb0(&DAT_00854ef0,(int *)DAT_00854fd8,DAT_00854f90), iVar2 != 0)) &&
+            (iVar2 = FUN_006cfeb0(&DAT_00854ef0,(int *)DAT_00854fd8,PTR_00854f90), iVar2 != 0)) &&
            (local_EAX_386 =
                  FUN_006d1ad0((int *)g_int_00854FD4[0x70],100,DAT_00854ef0,DAT_00854ef4,DAT_00854ef8
                               ,DAT_00854efc,g_int_00854FD4[3],g_int_00854FD4[4],1),

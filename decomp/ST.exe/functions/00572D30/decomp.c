@@ -28,7 +28,7 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
   char *local_c;
   HKEY local_8;
 
-  LVar3 = RegCreateKeyA((HKEY)0x80000002,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version",&local_8);
+  LVar3 = RegCreateKeyA((HKEY)&DAT_80000002,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version",&local_8);
   pcVar10 = RegSetValueExA_exref;
   if (LVar3 == 0) {
     LVar3 = RegSetValueExA(local_8,&DAT_007ca4f8,0,4,(BYTE *)((int)this + 0x779),4);
@@ -119,7 +119,8 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
       FUN_006b8280(pcVar1,pcVar1);
       pcVar8 = (char *)((int)this + 0x53c);
       FUN_006b8280(pcVar8,pcVar8);
-      LVar3 = RegCreateKeyA((HKEY)0x80000002,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Directories",&local_8);
+      LVar3 = RegCreateKeyA((HKEY)&DAT_80000002,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Directories",&local_8
+                           );
       if (LVar3 == 0) {
         iVar5 = (*pcVar10)(local_8,"MainPath",0,1,pcVar9,0x104);
         if (iVar5 != 0) {

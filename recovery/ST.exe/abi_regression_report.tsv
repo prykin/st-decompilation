@@ -1,6 +1,6 @@
 severity	phase	scope	subject	check	baseline	candidate	baseline_sha256	candidate_sha256	status	detail
 info	accepted-refresh	global	class-vptrs	class_vptr_regressions	96	0			ok	Compared every accepted class vptr; existing accepted dispatch vptrs are allowed
-info	accepted-refresh	global	accepted-vtables	accepted_slot_abi	2729	0			ok	mismatched=0; erased=0
+info	accepted-refresh	global	accepted-vtables	accepted_slot_abi	2737	0			ok	mismatched=0; erased=0
 info	accepted-refresh	fixture	group_boat_message_dispatch	boundary	calling_convention=__thiscall parameter_count=2 return_type=int parameters=STGroupBoatC *;STMessage * varargs=false noreturn=false	calling_convention=__thiscall parameter_count=2 return_type=int parameters=STGroupBoatC *;STMessage * varargs=false noreturn=false			ok	Protect duplicated-receiver and narrow virtual-return regressions in a high-fanout message handler
 info	accepted-refresh	fixture	group_boat_message_dispatch	token:extraout_	0	0			ok	Protect duplicated-receiver and narrow virtual-return regressions in a high-fanout message handler
 info	accepted-refresh	fixture	group_boat_message_dispatch	token:in_stack_	0	0			ok	Protect duplicated-receiver and narrow virtual-return regressions in a high-fanout message handler

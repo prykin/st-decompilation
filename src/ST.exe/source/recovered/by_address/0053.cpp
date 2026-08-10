@@ -41,7 +41,7 @@ void st::fn_005335E0(void)
       pcVar9 = pcVar9 + 1;
     } while (cVar1 != '\0');
     local_10 = ~uVar4 + 0xd;
-    puVar2 = st::fn_006AAC10(local_10);
+    puVar2 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(local_10));
     local_c = puVar2;
     if (puVar2 != nullptr) {
       *(undefined1 *)puVar2 = 2;
@@ -135,7 +135,7 @@ void st::fn_005335E0(void)
     uVar5 = 0;
     st::fn_006B8280(&CHAR_00h_0080f022,&CHAR_00h_0080f022);
     uVar4 = 0xffffffff;
-    pcVar7 = PTR_DAT_0079ad00;
+    pcVar7 = st::pointer_boundary_cast<char *>(PTR_DAT_0079ad00);
     do {
       pcVar9 = pcVar7;
       if (uVar4 == 0) break;
@@ -420,7 +420,7 @@ SAMPanelTy * __cdecl st::fn_0053CE10(void)
     this->field_0184 = 0;
     this->field_01AB = 0;
     this->field_01AF = 0;
-    memset(this->field_01B5, 0, 0x1c); /* compiler bulk-zero initialization */
+    memset(&this->field_01B5, 0, 0x1c); /* compiler bulk-zero initialization */
     this->field_01B1 = nullptr;
     return this;
   }

@@ -592,7 +592,7 @@ LAB_005d5b7e:
         }
         else {
           uVar29 = 0xffffffff;
-          DAT_008087a0 = CASE_6;
+          STPiece<0,1>(DAT_008087a0) = CASE_6;
           pcVar14 = &CHAR_00h_00853de4;
           do {
             pcVar33 = pcVar14;
@@ -674,7 +674,7 @@ LAB_005d5b7e:
         uVar29 = ~uVar29;
         pcVar14 = pcVar33 + -uVar29;
         pcVar33 = (char *)&DAT_0080ee1a;
-        DAT_008087a0 = this_00->field_1E26;
+        STPiece<0,1>(DAT_008087a0) = this_00->field_1E26;
         memmove(pcVar33, pcVar14, uVar29); /* compiler REP MOVS byte copy */
         uVar29 = 0xffffffff;
         pcVar14 = &CHAR_00h_00807680;

@@ -37,7 +37,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
   DArrayTy *array;
   AnonShape_00648C10_30A1BBFD *strategData;
   int iVar19;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   SystemClassTy *extraout_ECX;
   uint uVar9;
   uint uVar10;
@@ -68,7 +68,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
   Library::MSVCRT::FUN_0072da40();
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   this_01 = extraout_ECX;
   local_EAX_51 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   if (local_EAX_51 != 0) {

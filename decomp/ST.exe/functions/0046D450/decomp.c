@@ -11,7 +11,8 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
   STBoatC_field_054CState SVar1;
   STFishC *pSVar2;
   STWorldObject *pSVar3;
-  undefined2 uVar5;
+  STBoatC_field_06F7State SVar4;
+  undefined2 uVar6;
   int local_EAX_51;
   int iVar6;
   int local_EAX_769;
@@ -19,39 +20,39 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
   int local_EAX_972;
   int local_EAX_1289;
   int local_EAX_1434;
-  dword dVar6;
+  dword dVar7;
   int local_EAX_1686;
   int local_EAX_1808;
   int local_EAX_1854;
-  int iVar7;
-  uint uVar8;
+  int iVar8;
+  uint uVar9;
   int local_EAX_2671;
-  undefined4 *puVar9;
-  uint uVar10;
+  undefined4 *puVar10;
+  uint uVar11;
   int local_EAX_3355;
   int local_EAX_4165;
   int local_EAX_4888;
   int local_EAX_4955;
-  int *piVar11;
-  int iVar12;
+  int *piVar12;
+  int iVar13;
   int local_EAX_5109;
   int local_EAX_5187;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  uint uVar13;
-  STBoatCVTable *pSVar14;
-  STBoatC *pSVar15;
-  longlong lVar16;
-  short sVar17;
+  uint uVar14;
+  STBoatCVTable *pSVar15;
+  STBoatC *pSVar16;
+  longlong lVar17;
   short sVar18;
-  ushort uVar19;
-  short sVar20;
+  short sVar19;
+  ushort uVar20;
   short sVar21;
   short sVar22;
   short sVar23;
-  int iVar24;
-  short sVar25;
-  byte bVar26;
+  short sVar24;
+  int iVar25;
+  short sVar26;
+  byte bVar27;
   undefined4 local_28 [2];
   undefined4 local_20;
   short local_1c;
@@ -68,36 +69,36 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
     if (this->field_07DA + this->field_07D6 + this->field_07D2 == 0) {
       return 0;
     }
-    sVar18 = this->field_0396;
-    sVar17 = this->field_039A;
-    sVar21 = this->field_0398;
+    sVar19 = this->field_0396;
+    sVar18 = this->field_039A;
+    sVar22 = this->field_0398;
+    if (sVar19 < 0) {
+      return 0;
+    }
+    if (g_worldGrid.sizeX <= sVar19) {
+      return 0;
+    }
+    if (sVar22 < 0) {
+      return 0;
+    }
+    if (g_worldGrid.sizeY <= sVar22) {
+      return 0;
+    }
     if (sVar18 < 0) {
       return 0;
     }
-    if (g_worldGrid.sizeX <= sVar18) {
+    if (g_worldGrid.sizeZ <= sVar18) {
       return 0;
     }
-    if (sVar21 < 0) {
-      return 0;
-    }
-    if (g_worldGrid.sizeY <= sVar21) {
-      return 0;
-    }
-    if (sVar17 < 0) {
-      return 0;
-    }
-    if (g_worldGrid.sizeZ <= sVar17) {
-      return 0;
-    }
-    pSVar3 = STGridAt3D(g_worldGrid, sVar18, sVar21, sVar17).objects[0];
+    pSVar3 = STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0];
     if (pSVar3 == nullptr) {
       return 0;
     }
     if (pSVar3[1].vtable != (STWorldObjectVTable *)this->field_0024) {
       return 0;
     }
-    iVar12 = pSVar3->GetObjectTypeId();
-    if ((iVar12 != 0x3b) && (iVar12 = pSVar3->GetObjectTypeId(), iVar12 != 0x60)) {
+    iVar13 = pSVar3->GetObjectTypeId();
+    if ((iVar13 != 0x3b) && (iVar13 = pSVar3->GetObjectTypeId(), iVar13 != 0x60)) {
       return 0;
     }
     this->field_0530 = this->field_039A;
@@ -118,30 +119,30 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
       case 0:
         goto switchD_0046d492_caseD_0;
       case 1:
-        sVar18 = this->field_052C;
-        sVar17 = this->field_0530;
-        sVar21 = this->field_052E;
-        if (((((-1 < sVar18) && (sVar18 < g_worldGrid.sizeX)) && (-1 < sVar21)) &&
-            (((sVar21 < g_worldGrid.sizeY && (-1 < sVar17)) &&
-             ((sVar17 < g_worldGrid.sizeZ &&
-              ((pSVar3 = STGridAt3D(g_worldGrid, sVar18, sVar21, sVar17).objects[0],
+        sVar19 = this->field_052C;
+        sVar18 = this->field_0530;
+        sVar22 = this->field_052E;
+        if (((((-1 < sVar19) && (sVar19 < g_worldGrid.sizeX)) && (-1 < sVar22)) &&
+            (((sVar22 < g_worldGrid.sizeY && (-1 < sVar18)) &&
+             ((sVar18 < g_worldGrid.sizeZ &&
+              ((pSVar3 = STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0],
                pSVar3 != nullptr &&
                (pSVar3[1].vtable == (STWorldObjectVTable *)this->field_0024)))))))) &&
-           ((iVar12 = pSVar3->GetObjectTypeId(), iVar12 == 0x3b ||
-            (iVar12 = pSVar3->GetObjectTypeId(), iVar12 == 0x60))))
+           ((iVar13 = pSVar3->GetObjectTypeId(), iVar13 == 0x3b ||
+            (iVar13 = pSVar3->GetObjectTypeId(), iVar13 == 0x60))))
         goto cf_common_exit_0046E811;
 LAB_0046d71d:
         sub_004602B0(this);
         this->field_00B7 = 0;
 LAB_0046d72e:
-        iVar12 = this->vfunc_D8();
-        return -(uint)(iVar12 != 0);
+        iVar13 = this->vfunc_D8();
+        return -(uint)(iVar13 != 0);
       default:
         goto cf_common_exit_0046E811;
       case 3:
-        iVar24 = (int)this->field_052E;
-        iVar7 = (int)this->field_052C;
-        iVar12 = this->field_0530 + 1;
+        iVar25 = (int)this->field_052E;
+        iVar8 = (int)this->field_052C;
+        iVar13 = this->field_0530 + 1;
         goto cf_common_exit_0046E801;
       case -1:
         iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2638,0,0,"%s",
@@ -159,67 +160,67 @@ LAB_0046d72e:
       local_EAX_769 = sub_00460260(this,2);
       switch(local_EAX_769) {
       case 0:
-        iVar12 = sub_00490570(this);
-        if (iVar12 != 1) {
+        iVar13 = sub_00490570(this);
+        if (iVar13 != 1) {
           this->field_054C = CASE_2;
           this->field_00B7 = 3;
           goto LAB_0046d818;
         }
-        sVar21 = this->field_052E;
-        sVar20 = this->field_052C;
+        sVar22 = this->field_052E;
+        sVar21 = this->field_052C;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        piVar11 = (int *)CONCAT22(extraout_var,this->field_0530 + 1);
-        iVar12 = 1;
-        uVar19 = this->field_004B;
-        sVar18 = this->field_0049;
-        sVar17 = this->field_0047;
+        piVar12 = (int *)CONCAT22(extraout_var,this->field_0530 + 1);
+        iVar13 = 1;
+        uVar20 = this->field_004B;
+        sVar19 = this->field_0049;
+        sVar18 = this->field_0047;
 LAB_0046e7ea:
-        sub_0048DFD0(this,sVar17,sVar18,uVar19,sVar20,sVar21,piVar11,iVar12,&this->field_0536,
+        sub_0048DFD0(this,sVar18,sVar19,uVar20,sVar21,sVar22,piVar12,iVar13,&this->field_0536,
                      &this->field_0538,&this->field_053A);
-        sVar18 = this->field_053A;
-        sVar17 = this->field_0538;
+        sVar19 = this->field_053A;
+        sVar18 = this->field_0538;
         break;
       case 1:
-        sVar18 = this->field_052C;
-        sVar17 = this->field_0530;
-        sVar21 = this->field_052E;
-        if ((((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) || (sVar21 < 0)) ||
-             ((g_worldGrid.sizeY <= sVar21 || (sVar17 < 0)))) || (g_worldGrid.sizeZ <= sVar17)) ||
-           (((pSVar15 = (STBoatC *)
-                        STGridAt3D(g_worldGrid, sVar18, sVar21, sVar17).objects[0],
-             pSVar15 == nullptr || (pSVar15->field_0024 != this->field_0024)) ||
-            ((dVar6 = pSVar15->slot_2C(), dVar6 != 0x3b &&
-             (dVar6 = pSVar15->slot_2C(), dVar6 != 0x60)))))) {
+        sVar19 = this->field_052C;
+        sVar18 = this->field_0530;
+        sVar22 = this->field_052E;
+        if ((((((sVar19 < 0) || (g_worldGrid.sizeX <= sVar19)) || (sVar22 < 0)) ||
+             ((g_worldGrid.sizeY <= sVar22 || (sVar18 < 0)))) || (g_worldGrid.sizeZ <= sVar18)) ||
+           (((pSVar16 = (STBoatC *)
+                        STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0],
+             pSVar16 == nullptr || (pSVar16->field_0024 != this->field_0024)) ||
+            ((dVar7 = pSVar16->slot_2C(), dVar7 != 0x3b &&
+             (dVar7 = pSVar16->slot_2C(), dVar7 != 0x60)))))) {
           sub_004602B0(this);
-          iVar12 = this->vfunc_D8();
-          return -(uint)(iVar12 != 0);
+          iVar13 = this->vfunc_D8();
+          return -(uint)(iVar13 != 0);
         }
-        iVar12 = thunk_FUN_004e1490(pSVar15);
-        if ((iVar12 != 1) ||
-           (local_EAX_1289 = thunk_FUN_0048d7c0(this,(STFishC *)pSVar15), local_EAX_1289 != 1))
+        iVar13 = thunk_FUN_004e1490(pSVar16);
+        if ((iVar13 != 1) ||
+           (local_EAX_1289 = thunk_FUN_0048d7c0(this,(STFishC *)pSVar16), local_EAX_1289 != 1))
         goto cf_common_exit_0046E811;
         sub_004602B0(this);
-        this->field_0532 = pSVar15->field_0018;
-        thunk_FUN_004e15f0(pSVar15,this->field_0018);
-        iVar12 = (int)this->field_0540;
-        iVar24 = (int)this->field_053E;
-        iVar7 = (int)this->field_053C;
+        this->field_0532 = pSVar16->field_0018;
+        thunk_FUN_004e15f0(pSVar16,this->field_0018);
+        iVar13 = (int)this->field_0540;
+        iVar25 = (int)this->field_053E;
+        iVar8 = (int)this->field_053C;
         this->field_0544 = 0;
         this->field_054C = CASE_3;
         goto cf_common_exit_0046E801;
       default:
         goto cf_common_exit_0046E811;
       case 3:
-        iVar12 = sub_00490570(this);
-        if (iVar12 == 1) {
+        iVar13 = sub_00490570(this);
+        if (iVar13 == 1) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_052C,
                        this->field_052E,
                        (int *)CONCAT22((short)((uint)&this->field_053A >> 0x10),this->field_0530 + 1
                                       ),1,&this->field_0536,&this->field_0538,&this->field_053A);
         }
-        sVar18 = this->field_053A;
-        sVar17 = this->field_0538;
+        sVar19 = this->field_053A;
+        sVar18 = this->field_0538;
         break;
       case -1:
         local_EAX_815 =
@@ -233,15 +234,15 @@ LAB_0046e7ea:
                   );
         return 0xffff;
       }
-      iVar12 = (int)sVar18;
-      iVar24 = (int)sVar17;
-      iVar7 = (int)this->field_0536;
+      iVar13 = (int)sVar19;
+      iVar25 = (int)sVar18;
+      iVar8 = (int)this->field_0536;
 cf_common_exit_0046E801:
-      sub_00481520(this,iVar7,iVar24,iVar12);
+      sub_00481520(this,iVar8,iVar25,iVar13);
       sub_00460260(this,0);
 cf_common_exit_0046E811:
-      iVar12 = this->vfunc_D8();
-      return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
+      iVar13 = this->vfunc_D8();
+      return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
     }
     if (SVar1 == CASE_2) {
       this->field_0544 = this->field_0544 + 1;
@@ -252,27 +253,27 @@ cf_common_exit_0046E811:
       if ((this->field_082E != 0) || (this->field_0544 % 0x32 != 1)) {
         return 2;
       }
-      sVar18 = this->field_052C;
-      sVar17 = this->field_0530;
-      sVar21 = this->field_052E;
-      if ((((-1 < sVar18) && (sVar18 < g_worldGrid.sizeX)) && (-1 < sVar21)) &&
-         ((((sVar21 < g_worldGrid.sizeY && (-1 < sVar17)) &&
-           ((sVar17 < g_worldGrid.sizeZ &&
-            ((pSVar15 = (STBoatC *)
-                        STGridAt3D(g_worldGrid, sVar18, sVar21, sVar17).objects[0],
-             pSVar15 != nullptr && (pSVar15->field_0024 == this->field_0024)))))) &&
-          ((dVar6 = pSVar15->slot_2C(), dVar6 == 0x3b ||
-           (dVar6 = pSVar15->slot_2C(), dVar6 == 0x60)))))) {
-        iVar12 = thunk_FUN_004e1490(pSVar15);
-        if (iVar12 != 1) {
+      sVar19 = this->field_052C;
+      sVar18 = this->field_0530;
+      sVar22 = this->field_052E;
+      if ((((-1 < sVar19) && (sVar19 < g_worldGrid.sizeX)) && (-1 < sVar22)) &&
+         ((((sVar22 < g_worldGrid.sizeY && (-1 < sVar18)) &&
+           ((sVar18 < g_worldGrid.sizeZ &&
+            ((pSVar16 = (STBoatC *)
+                        STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0],
+             pSVar16 != nullptr && (pSVar16->field_0024 == this->field_0024)))))) &&
+          ((dVar7 = pSVar16->slot_2C(), dVar7 == 0x3b ||
+           (dVar7 = pSVar16->slot_2C(), dVar7 == 0x60)))))) {
+        iVar13 = thunk_FUN_004e1490(pSVar16);
+        if (iVar13 != 1) {
           return 2;
         }
-        local_EAX_1686 = thunk_FUN_0048d7c0(this,(STFishC *)pSVar15);
+        local_EAX_1686 = thunk_FUN_0048d7c0(this,(STFishC *)pSVar16);
         if (local_EAX_1686 != 1) {
           return 2;
         }
-        this->field_0532 = pSVar15->field_0018;
-        thunk_FUN_004e15f0(pSVar15,this->field_0018);
+        this->field_0532 = pSVar16->field_0018;
+        thunk_FUN_004e15f0(pSVar16,this->field_0018);
         this->field_0544 = 0;
         this->field_054C = CASE_3;
         this->field_00B7 = 0;
@@ -285,34 +286,34 @@ cf_common_exit_0046E811:
     if (SVar1 != CASE_3) {
       if (SVar1 == CASE_4) {
         if (this->field_0550 == 0) {
-          iVar7 = (ushort)(this->field_0530 * 200) + 300;
-          iVar12 = STReplaceLowWord((uint32_t)(iVar7), (uint16_t)(this->field_052E + 1)) * 0xc9;
-          iVar24 = STReplaceLowWord((uint32_t)(iVar12), (uint16_t)(this->field_052C + 1));
+          iVar8 = (ushort)(this->field_0530 * 200) + 300;
+          iVar13 = STReplaceLowWord((uint32_t)(iVar8), (uint16_t)(this->field_052E + 1)) * 0xc9;
+          iVar25 = STReplaceLowWord((uint32_t)(iVar13), (uint16_t)(this->field_052C + 1));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          uVar5 = (*this->vtable->vfunc_10)
+          uVar6 = (*this->vtable->vfunc_10)
                             (this->field_0041,this->field_0043,
-                             CONCAT22((short)((uint)(iVar24 * 0x19) >> 0x10),this->field_0045),
-                             (short)(iVar24 * 0xc9),(short)iVar12,iVar7);
-          this->field_0542 = uVar5;
+                             CONCAT22((short)((uint)(iVar25 * 0x19) >> 0x10),this->field_0045),
+                             (short)(iVar25 * 0xc9),(short)iVar13,iVar8);
+          this->field_0542 = uVar6;
           this->field_0550 = 1;
         }
         if (this->field_0550 == 1) {
-          uVar8 = sub_004176C0(this,this->field_0542);
-          uVar8 = sub_00417910(this,(short)uVar8);
-          if (uVar8 == 0xffffffff) {
+          uVar9 = sub_004176C0(this,this->field_0542);
+          uVar9 = sub_00417910(this,(short)uVar9);
+          if (uVar9 == 0xffffffff) {
             local_EAX_2671 =
                  ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2712,0,0,"%s"
                                     ,"STBoatC::UnLoadRC, UNLOADRC_PDEPOT");
             if (local_EAX_2671 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
-            iVar12 = 0x2713;
+            iVar13 = 0x2713;
             goto cf_error_exit_0046E857;
           }
-          if (uVar8 == 0) {
+          if (uVar9 == 0) {
             this->field_0550 = 2;
-            iVar12 = this->vfunc_D8();
-            return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
+            iVar13 = this->vfunc_D8();
+            return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
           }
         }
         if (this->field_0550 == 2) {
@@ -328,58 +329,57 @@ cf_common_exit_0046E811:
           if (this->field_02BF != '\0') {
             local_8 = (undefined4 *)&this->field_0x2b3;
             do {
-              puVar9 = (undefined4 *)
-                       thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
-                                          this->field_006C);
-              local_20 = *puVar9;
-              local_1c = *(short *)(puVar9 + 1);
+              puVar10 = thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
+                                           this->field_006C);
+              local_20 = *puVar10;
+              local_1c = *(short *)(puVar10 + 1);
               if (DAT_0080732c == 1) {
-                bVar26 = 0;
-                sVar25 = 0;
-                uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
-                iVar24 = -1;
-                this->field_001C = uVar8;
+                bVar27 = 0;
+                sVar26 = 0;
+                uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
+                iVar25 = -1;
+                this->field_001C = uVar9;
+                sVar24 = 0;
                 sVar23 = 0;
-                sVar22 = 0;
-                uVar10 = uVar8 * 0x41c64e6d + 0x3039;
-                sVar20 = 0;
-                this->field_001C = uVar10;
+                uVar11 = uVar9 * 0x41c64e6d + 0x3039;
                 sVar21 = 0;
-                sVar17 = 0;
-                local_18 = uVar10 * 0x41c64e6d + 0x3039;
+                this->field_001C = uVar11;
+                sVar22 = 0;
                 sVar18 = 0;
+                local_18 = uVar11 * 0x41c64e6d + 0x3039;
+                sVar19 = 0;
                 this->field_001C = local_18;
-                lVar16 = Library::MSVCRT::__ftol();
-                iVar12 = (int)(short)lVar16 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                lVar17 = Library::MSVCRT::__ftol();
+                iVar13 = (int)(short)lVar17 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                          (int)local_1c;
-                iVar7 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_20);
-                uVar8 = local_18;
+                iVar8 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_20);
+                uVar9 = local_18;
               }
               else {
-                uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
-                this->field_001C = uVar10;
-                uVar13 = uVar10 * 0x41c64e6d + 0x3039;
-                bVar26 = 0;
-                this->field_001C = uVar13;
-                uVar8 = uVar13 * 0x41c64e6d + 0x3039;
-                this->field_001C = uVar8;
-                sVar25 = 0;
-                iVar24 = -1;
+                uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
+                this->field_001C = uVar11;
+                uVar14 = uVar11 * 0x41c64e6d + 0x3039;
+                bVar27 = 0;
+                this->field_001C = uVar14;
+                uVar9 = uVar14 * 0x41c64e6d + 0x3039;
+                this->field_001C = uVar9;
+                sVar26 = 0;
+                iVar25 = -1;
+                sVar24 = 0;
                 sVar23 = 0;
-                sVar22 = 0;
-                sVar20 = 0;
                 sVar21 = 0;
-                sVar17 = 0;
+                sVar22 = 0;
                 sVar18 = 0;
-                iVar12 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_1c;
+                sVar19 = 0;
+                iVar13 = (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_1c;
                 STPiece<2,2>(local_20) = (short)((uint)local_20 >> 0x10);
-                iVar7 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_20);
+                iVar8 = ((uVar14 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_20);
               }
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
-                         (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_20,
-                         iVar7 + -3,iVar12,sVar18,sVar17,sVar21,sVar20,sVar22,sVar23,iVar24,sVar25,
-                         bVar26);
+                         (uVar9 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_20,
+                         iVar8 + -3,iVar13,sVar19,sVar18,sVar22,sVar21,sVar23,sVar24,iVar25,sVar26,
+                         bVar27);
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_1 = param_1 + 1;
               local_8 = (undefined4 *)((int)local_8 + 6);
@@ -400,41 +400,41 @@ cf_common_exit_0046E811:
           if (local_c == 0) {
             this->field_0550 = 0;
             this->field_054C = CASE_5;
-            iVar12 = this->vfunc_D8();
-            return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
+            iVar13 = this->vfunc_D8();
+            return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
           }
         }
         goto cf_common_exit_0046E9F3;
       }
       if (SVar1 != CASE_5) {
         if (SVar1 == CASE_6) {
-          iVar12 = this->field_0548 + 1;
-          this->field_0548 = iVar12;
-          if (0x45 < iVar12) {
+          iVar13 = this->field_0548 + 1;
+          this->field_0548 = iVar13;
+          if (0x45 < iVar13) {
             if (this->field_0550 == 0) {
-              iVar12 = STReplaceLowWord((uint32_t)(iVar12), (uint16_t)(this->field_053E * 0xc9)) + 100;
-              uVar5 = (*this->vtable->vfunc_10)
+              iVar13 = STReplaceLowWord((uint32_t)(iVar13), (uint16_t)(this->field_053E * 0xc9)) + 100;
+              uVar6 = (*this->vtable->vfunc_10)
                                 (this->field_0041,this->field_0043,
-                                 STReplaceLowWord((uint32_t)(iVar12), (uint16_t)(this->field_0045)),
-                                 this->field_053C * 0xc9 + 100,(short)iVar12,
+                                 STReplaceLowWord((uint32_t)(iVar13), (uint16_t)(this->field_0045)),
+                                 this->field_053C * 0xc9 + 100,(short)iVar13,
                                  (ushort)(this->field_0540 * 200) + 100);
-              this->field_0542 = uVar5;
+              this->field_0542 = uVar6;
               this->field_0550 = 1;
             }
             if (this->field_0550 == 1) {
-              uVar8 = sub_004176C0(this,this->field_0542);
-              uVar8 = sub_00417910(this,(short)uVar8);
-              if (uVar8 == 0xffffffff) {
+              uVar9 = sub_004176C0(this,this->field_0542);
+              uVar9 = sub_00417910(this,(short)uVar9);
+              if (uVar9 == 0xffffffff) {
                 local_EAX_4165 =
                      ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2798,0,0,
                                         "%s","STBoatC::UnLoadRC, UNLOADRC_ODEPOT");
                 if (local_EAX_4165 != 0) {
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
-                iVar12 = 0x2799;
+                iVar13 = 0x2799;
                 goto cf_error_exit_0046E857;
               }
-              if (uVar8 == 0) {
+              if (uVar9 == 0) {
                 this->field_0550 = 2;
               }
             }
@@ -452,58 +452,57 @@ cf_common_exit_0046E811:
                 if (this->field_02BF != '\0') {
                   local_8 = (undefined4 *)&this->field_0x2b3;
                   do {
-                    puVar9 = (undefined4 *)
-                             thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
-                                                this->field_006C);
-                    local_20 = *puVar9;
-                    local_1c = *(short *)(puVar9 + 1);
+                    puVar10 = thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
+                                                 this->field_006C);
+                    local_20 = *puVar10;
+                    local_1c = *(short *)(puVar10 + 1);
                     if (DAT_0080732c == 1) {
-                      bVar26 = 0;
-                      sVar25 = 0;
-                      uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
-                      iVar24 = -1;
-                      this->field_001C = uVar8;
+                      bVar27 = 0;
+                      sVar26 = 0;
+                      uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
+                      iVar25 = -1;
+                      this->field_001C = uVar9;
+                      sVar24 = 0;
                       sVar23 = 0;
-                      sVar22 = 0;
-                      uVar10 = uVar8 * 0x41c64e6d + 0x3039;
-                      sVar20 = 0;
-                      this->field_001C = uVar10;
+                      uVar11 = uVar9 * 0x41c64e6d + 0x3039;
                       sVar21 = 0;
-                      sVar17 = 0;
-                      local_18 = uVar10 * 0x41c64e6d + 0x3039;
+                      this->field_001C = uVar11;
+                      sVar22 = 0;
                       sVar18 = 0;
+                      local_18 = uVar11 * 0x41c64e6d + 0x3039;
+                      sVar19 = 0;
                       this->field_001C = local_18;
-                      lVar16 = Library::MSVCRT::__ftol();
-                      iVar12 = (int)(short)lVar16 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3
+                      lVar17 = Library::MSVCRT::__ftol();
+                      iVar13 = (int)(short)lVar17 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3
                                + (int)local_1c;
-                      iVar7 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_20);
-                      uVar8 = local_18;
+                      iVar8 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_20);
+                      uVar9 = local_18;
                     }
                     else {
-                      uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
-                      this->field_001C = uVar10;
-                      uVar13 = uVar10 * 0x41c64e6d + 0x3039;
-                      bVar26 = 0;
-                      this->field_001C = uVar13;
-                      uVar8 = uVar13 * 0x41c64e6d + 0x3039;
-                      this->field_001C = uVar8;
-                      sVar25 = 0;
-                      iVar24 = -1;
+                      uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
+                      this->field_001C = uVar11;
+                      uVar14 = uVar11 * 0x41c64e6d + 0x3039;
+                      bVar27 = 0;
+                      this->field_001C = uVar14;
+                      uVar9 = uVar14 * 0x41c64e6d + 0x3039;
+                      this->field_001C = uVar9;
+                      sVar26 = 0;
+                      iVar25 = -1;
+                      sVar24 = 0;
                       sVar23 = 0;
-                      sVar22 = 0;
-                      sVar20 = 0;
                       sVar21 = 0;
-                      sVar17 = 0;
+                      sVar22 = 0;
                       sVar18 = 0;
-                      iVar12 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_1c;
+                      sVar19 = 0;
+                      iVar13 = (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_1c;
                       STPiece<2,2>(local_20) = (short)((uint)local_20 >> 0x10);
-                      iVar7 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_20);
+                      iVar8 = ((uVar14 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_20);
                     }
                     TraksClassTy::TraksCreate
                               (g_traksClass_00802A7C,1,2,7,
-                               (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 +
-                               (int)(short)local_20,iVar7 + -3,iVar12,sVar18,sVar17,sVar21,sVar20,
-                               sVar22,sVar23,iVar24,sVar25,bVar26);
+                               (uVar9 >> 0x10) % 7 + (int)this->field_0041 + -3 +
+                               (int)(short)local_20,iVar8 + -3,iVar13,sVar19,sVar18,sVar22,sVar21,
+                               sVar23,sVar24,iVar25,sVar26,bVar27);
                     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_1 = param_1 + 1;
                     local_8 = (undefined4 *)((int)local_8 + 6);
@@ -534,8 +533,8 @@ cf_common_exit_0046E811:
               }
             }
           }
-          iVar12 = this->vfunc_D8();
-          return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
+          iVar13 = this->vfunc_D8();
+          return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
         }
         if (SVar1 != CASE_7) {
           local_EAX_5187 =
@@ -554,82 +553,81 @@ cf_common_exit_0046E811:
           if (local_EAX_5109 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          iVar12 = 0x27d5;
+          iVar13 = 0x27d5;
           goto cf_error_exit_0046E857;
         }
         if (local_EAX_4955 == 0) goto LAB_0046d72e;
         if (local_EAX_4955 != 3) goto cf_common_exit_0046E811;
-        uVar19 = this->field_004B;
-        piVar11 = (int *)(uint)uVar19;
-        sVar21 = this->field_0049;
-        sVar20 = this->field_0047;
-        iVar12 = 2;
+        uVar20 = this->field_004B;
+        piVar12 = (int *)(uint)uVar20;
+        sVar22 = this->field_0049;
+        sVar21 = this->field_0047;
+        iVar13 = 2;
+        sVar19 = sVar22;
         sVar18 = sVar21;
-        sVar17 = sVar20;
         goto LAB_0046e7ea;
       }
-      iVar12 = this->field_0544 + 1;
-      this->field_0544 = iVar12;
-      if (iVar12 % 10 != 1) goto cf_common_exit_0046E811;
-      sVar18 = this->field_052C;
-      sVar17 = this->field_0530;
-      sVar21 = this->field_052E;
-      if (((((-1 < sVar18) && (sVar18 < g_worldGrid.sizeX)) && (-1 < sVar21)) &&
-          (((sVar21 < g_worldGrid.sizeY && (-1 < sVar17)) &&
-           (((sVar17 < g_worldGrid.sizeZ &&
-             ((pSVar3 = STGridAt3D(g_worldGrid, sVar18, sVar21, sVar17).objects[0],
+      iVar13 = this->field_0544 + 1;
+      this->field_0544 = iVar13;
+      if (iVar13 % 10 != 1) goto cf_common_exit_0046E811;
+      sVar19 = this->field_052C;
+      sVar18 = this->field_0530;
+      sVar22 = this->field_052E;
+      if (((((-1 < sVar19) && (sVar19 < g_worldGrid.sizeX)) && (-1 < sVar22)) &&
+          (((sVar22 < g_worldGrid.sizeY && (-1 < sVar18)) &&
+           (((sVar18 < g_worldGrid.sizeZ &&
+             ((pSVar3 = STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0],
               pSVar3 != nullptr && (*(int *)&pSVar3->field_0x18 == this->field_0532))))
             && (*(int *)&pSVar3[0x21].field_0x10 == 0)))))) &&
          (*(int *)&pSVar3[0x10].field_0x5 != 6)) {
         if (*(int *)&this->field_0x4cd % 0x78 == 1) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar12 = *(int *)((int)this->field_06CB + 0x2c);
-          if (iVar12 == 8) {
-            pSVar14 = this->vtable;
-            uVar5 = 0xfb;
+          SVar4 = this->field_06F7;
+          if (SVar4 == CASE_8) {
+            pSVar15 = this->vtable;
+            uVar6 = 0xfb;
 LAB_0046e2c8:
-            (*pSVar14->vfunc_90)(this,3,uVar5);
+            (*pSVar15->vfunc_90)(this,3,uVar6);
           }
-          else if (iVar12 == 0x14) {
+          else if (SVar4 == CASE_14) {
             this->vfunc_90(3,0x15f);
           }
-          else if (iVar12 == 0x1a) {
-            pSVar14 = this->vtable;
-            uVar5 = 0x19e;
+          else if (SVar4 == CASE_1A) {
+            pSVar15 = this->vtable;
+            uVar6 = 0x19e;
             goto LAB_0046e2c8;
           }
         }
-        iVar12 = this->field_07D2;
-        iVar7 = 1;
-        if (iVar12 < 1) {
-          iVar12 = this->field_07D6;
-          if (iVar12 < 1) {
-            iVar12 = this->field_07DA;
-            if (0 < iVar12) {
-              if (iVar12 < 1) {
-                iVar7 = iVar12;
+        iVar13 = this->field_07D2;
+        iVar8 = 1;
+        if (iVar13 < 1) {
+          iVar13 = this->field_07D6;
+          if (iVar13 < 1) {
+            iVar13 = this->field_07DA;
+            if (0 < iVar13) {
+              if (iVar13 < 1) {
+                iVar8 = iVar13;
               }
-              thunk_FUN_004e1d70(pSVar3,0xde,iVar7 * 0x14);
+              thunk_FUN_004e1d70(pSVar3,0xde,iVar8 * 0x14);
               thunk_FUN_004e16d0(pSVar3,this->field_0018);
-              this->field_07DA = this->field_07DA - iVar7;
+              this->field_07DA = this->field_07DA - iVar8;
             }
           }
           else {
-            if (iVar12 < 1) {
-              iVar7 = iVar12;
+            if (iVar13 < 1) {
+              iVar8 = iVar13;
             }
-            thunk_FUN_004e1d70(pSVar3,0xdd,iVar7 * 3);
+            thunk_FUN_004e1d70(pSVar3,0xdd,iVar8 * 3);
             thunk_FUN_004e16d0(pSVar3,this->field_0018);
-            this->field_07D6 = this->field_07D6 - iVar7;
+            this->field_07D6 = this->field_07D6 - iVar8;
           }
         }
         else {
-          if (iVar12 < 1) {
-            iVar7 = iVar12;
+          if (iVar13 < 1) {
+            iVar8 = iVar13;
           }
-          thunk_FUN_004e1d70(pSVar3,0xdc,iVar7 * 5);
+          thunk_FUN_004e1d70(pSVar3,0xdc,iVar8 * 5);
           thunk_FUN_004e16d0(pSVar3,this->field_0018);
-          this->field_07D2 = this->field_07D2 - iVar7;
+          this->field_07D2 = this->field_07D2 - iVar8;
         }
         if (this->field_07DA + this->field_07D6 + this->field_07D2 != 0)
         goto cf_common_exit_0046E811;
@@ -642,23 +640,23 @@ LAB_0046e2c8:
     local_EAX_1808 = sub_00460260(this,2);
     switch(local_EAX_1808) {
     case 0:
-      sVar18 = this->field_052C;
-      sVar17 = this->field_0530;
-      sVar21 = this->field_052E;
-      if (((-1 < sVar18) && (sVar18 < g_worldGrid.sizeX)) &&
-         (((-1 < sVar21 && ((sVar21 < g_worldGrid.sizeY && (-1 < sVar17)))) &&
-          ((sVar17 < g_worldGrid.sizeZ &&
-           (((pSVar3 = STGridAt3D(g_worldGrid, sVar18, sVar21, sVar17).objects[0],
+      sVar19 = this->field_052C;
+      sVar18 = this->field_0530;
+      sVar22 = this->field_052E;
+      if (((-1 < sVar19) && (sVar19 < g_worldGrid.sizeX)) &&
+         (((-1 < sVar22 && ((sVar22 < g_worldGrid.sizeY && (-1 < sVar18)))) &&
+          ((sVar18 < g_worldGrid.sizeZ &&
+           (((pSVar3 = STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0],
              pSVar3 != nullptr &&
              (pSVar3[1].vtable == (STWorldObjectVTable *)this->field_0024)) &&
-            ((iVar12 = pSVar3->GetObjectTypeId(), iVar12 == 0x3b ||
-             (iVar12 = pSVar3->GetObjectTypeId(), iVar12 == 0x60)))))))))) {
+            ((iVar13 = pSVar3->GetObjectTypeId(), iVar13 == 0x3b ||
+             (iVar13 = pSVar3->GetObjectTypeId(), iVar13 == 0x60)))))))))) {
         if (((this->field_0047 == this->field_053C) && (this->field_0049 == this->field_053E)) &&
            (this->field_004B == this->field_0540)) {
           this->field_054C = CASE_4;
           this->field_0550 = 0;
-          iVar12 = this->vfunc_D8();
-          return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
+          iVar13 = this->vfunc_D8();
+          return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
         }
         thunk_FUN_004e1690(pSVar3,this->field_0018);
         return 0;
@@ -666,14 +664,14 @@ LAB_0046e2c8:
       goto LAB_0046d652;
     case 1:
       sub_004602B0(this);
-      sVar18 = this->field_052C;
-      sVar17 = this->field_0530;
-      sVar21 = this->field_052E;
-      if (((-1 < sVar18) && (sVar18 < g_worldGrid.sizeX)) &&
-         ((-1 < sVar21 &&
-          (((sVar21 < g_worldGrid.sizeY && (-1 < sVar17)) && (sVar17 < g_worldGrid.sizeZ)))))) {
+      sVar19 = this->field_052C;
+      sVar18 = this->field_0530;
+      sVar22 = this->field_052E;
+      if (((-1 < sVar19) && (sVar19 < g_worldGrid.sizeX)) &&
+         ((-1 < sVar22 &&
+          (((sVar22 < g_worldGrid.sizeY && (-1 < sVar18)) && (sVar18 < g_worldGrid.sizeZ)))))) {
         pSVar2 = (STFishC *)
-                 STGridAt3D(g_worldGrid, sVar18, sVar21, sVar17).objects[0];
+                 STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0];
 joined_r0x0046dd46:
         if (pSVar2 != nullptr) {
           thunk_FUN_0048d7c0(this,pSVar2);
@@ -683,13 +681,13 @@ joined_r0x0046dd46:
     default:
       goto cf_common_exit_0046E9F3;
     case 3:
-      sVar18 = this->field_052C;
-      sVar17 = this->field_0530;
-      sVar21 = this->field_052E;
-      if (((((-1 < sVar18) && (sVar18 < g_worldGrid.sizeX)) && (-1 < sVar21)) &&
-          ((sVar21 < g_worldGrid.sizeY && (-1 < sVar17)))) && (sVar17 < g_worldGrid.sizeZ)) {
+      sVar19 = this->field_052C;
+      sVar18 = this->field_0530;
+      sVar22 = this->field_052E;
+      if (((((-1 < sVar19) && (sVar19 < g_worldGrid.sizeX)) && (-1 < sVar22)) &&
+          ((sVar22 < g_worldGrid.sizeY && (-1 < sVar18)))) && (sVar18 < g_worldGrid.sizeZ)) {
         pSVar2 = (STFishC *)
-                 STGridAt3D(g_worldGrid, sVar18, sVar21, sVar17).objects[0];
+                 STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0];
         goto joined_r0x0046dd46;
       }
       break;
@@ -700,45 +698,45 @@ joined_r0x0046dd46:
       if (local_EAX_1854 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar12 = 0x26d9;
+      iVar13 = 0x26d9;
 cf_error_exit_0046E857:
       RaiseInternalException
-                (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar12);
+                (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar13);
       return 0xffff;
     }
     sub_00481520(this,(int)this->field_053C,(int)this->field_053E,(int)this->field_0540);
   }
   sub_00460260(this,0);
 cf_common_exit_0046E9F3:
-  iVar12 = this->vfunc_D8();
-  return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
+  iVar13 = this->vfunc_D8();
+  return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
 switchD_0046d492_caseD_0:
-  sVar18 = this->field_052C;
-  sVar17 = this->field_0530;
-  sVar21 = this->field_052E;
-  if (((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) || (sVar21 < 0)) ||
-      ((g_worldGrid.sizeY <= sVar21 || (sVar17 < 0)))) || (g_worldGrid.sizeZ <= sVar17)) {
-    pSVar15 = nullptr;
+  sVar19 = this->field_052C;
+  sVar18 = this->field_0530;
+  sVar22 = this->field_052E;
+  if (((((sVar19 < 0) || (g_worldGrid.sizeX <= sVar19)) || (sVar22 < 0)) ||
+      ((g_worldGrid.sizeY <= sVar22 || (sVar18 < 0)))) || (g_worldGrid.sizeZ <= sVar18)) {
+    pSVar16 = nullptr;
   }
   else {
-    pSVar15 = (STBoatC *)
-              STGridAt3D(g_worldGrid, sVar18, sVar21, sVar17).objects[0];
+    pSVar16 = (STBoatC *)
+              STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0];
   }
-  iVar12 = sub_00490570(this);
-  if (iVar12 == 1) {
-    if (pSVar15 != nullptr) {
-      if (((pSVar15->field_0024 == this->field_0024) &&
-          ((dVar6 = pSVar15->slot_2C(), dVar6 == 0x3b ||
-           (dVar6 = pSVar15->slot_2C(), dVar6 == 0x60)))) &&
-         (iVar12 = thunk_FUN_004e1490(pSVar15), iVar12 != 1)) {
+  iVar13 = sub_00490570(this);
+  if (iVar13 == 1) {
+    if (pSVar16 != nullptr) {
+      if (((pSVar16->field_0024 == this->field_0024) &&
+          ((dVar7 = pSVar16->slot_2C(), dVar7 == 0x3b ||
+           (dVar7 = pSVar16->slot_2C(), dVar7 == 0x60)))) &&
+         (iVar13 = thunk_FUN_004e1490(pSVar16), iVar13 != 1)) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_052C,
                      this->field_052E,
                      (int *)CONCAT22((short)((uint)&this->field_0536 >> 0x10),this->field_0530 + 1),
                      1,&this->field_0536,&this->field_0538,&this->field_053A);
-        iVar12 = (int)this->field_053A;
-        iVar24 = (int)this->field_0538;
-        iVar7 = (int)this->field_0536;
+        iVar13 = (int)this->field_053A;
+        iVar25 = (int)this->field_0538;
+        iVar8 = (int)this->field_0536;
         this->field_054C = CASE_1;
         this->field_00B7 = 0;
         goto cf_common_exit_0046E801;
@@ -748,9 +746,9 @@ switchD_0046d492_caseD_0:
   }
   else {
 LAB_0046d60c:
-    if (((pSVar15 != nullptr) && (pSVar15->field_0024 == this->field_0024)) &&
-       ((dVar6 = pSVar15->slot_2C(), dVar6 == 0x3b ||
-        (dVar6 = pSVar15->slot_2C(), dVar6 == 0x60)))) {
+    if (((pSVar16 != nullptr) && (pSVar16->field_0024 == this->field_0024)) &&
+       ((dVar7 = pSVar16->slot_2C(), dVar7 == 0x3b ||
+        (dVar7 = pSVar16->slot_2C(), dVar7 == 0x60)))) {
       this->field_054C = CASE_2;
 LAB_0046d818:
       local_EAX_972 = Defence(this,0);
@@ -760,7 +758,7 @@ LAB_0046d818:
   sub_004602B0(this);
   this->field_00B7 = 0;
 LAB_0046d652:
-  iVar12 = this->vfunc_D8();
-  return -(uint)(iVar12 != 0);
+  iVar13 = this->vfunc_D8();
+  return -(uint)(iVar13 != 0);
 }
 

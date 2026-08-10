@@ -432,12 +432,10 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
                 if ((this_00->field_01A4 == CASE_5) && (this_00->field_01AB == CASE_2)) {
                   _DAT_0080f32e = 1;
                   if (DAT_00808783 == '\x01') {
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    _DAT_008087a0 = CONCAT31(_DAT_008087a1,9);
+                    DAT_008087a0 = STReplaceLowByte((uint32_t)(DAT_008087a0), (uint8_t)(9));
                   }
                   else if (DAT_00808783 == '\x02') {
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    _DAT_008087a0 = CONCAT31(_DAT_008087a1,10);
+                    DAT_008087a0 = STReplaceLowByte((uint32_t)(DAT_008087a0), (uint8_t)(10));
                   }
                 }
                 memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
@@ -1439,7 +1437,7 @@ switchD_00534835_caseD_1:
         element_02fd_2 = nullptr;
       }
       if (element_02fd_2->field_006C == 0) {
-        switch(_DAT_008087a0 & 0xff) {
+        switch(DAT_008087a0 & 0xff) {
         case 1:
         case 4:
         case 6:

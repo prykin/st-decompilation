@@ -35,18 +35,18 @@ int __cdecl st::fn_0055D730(int param_1,byte param_2)
     PTR_008032d4 = st::fn_00717FC0(param_1,PTR_s_PLT_DKD_0079af94,param_2,1);
     PTR_008073cc = PTR_008032c0;
     g_currentExceptionFrame = local_48.previous;
-    DAT_00807560 = PTR_008032c4;
-    DAT_008073c8 = PTR_008032bc;
+    DAT_00807560 = st::machine_word_boundary_cast<undefined4>(PTR_008032c4);
+    DAT_008073c8 = st::machine_word_boundary_cast<undefined4>(PTR_008032bc);
     return 0;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\pal_tbl.CPP",0x51,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\pal_tbl.CPP"),0x51,0,iVar2,st::mutable_c_string("%s"),
                              "LoadGamePlt");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_00404039();
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\pal_tbl.CPP",0x55);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\pal_tbl.CPP"),0x55);
   return iVar2;
 }
 
@@ -84,13 +84,13 @@ int __cdecl st::fn_0055DA40(cMf32 *param_1,byte param_2)
     return 0;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\pal_tbl.CPP",0x7b,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\pal_tbl.CPP"),0x7b,0,iVar2,st::mutable_c_string("%s"),
                              "LoadStartPlt");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_00404304();
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\pal_tbl.CPP",0x7d);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\pal_tbl.CPP"),0x7d);
   return iVar2;
 }
 

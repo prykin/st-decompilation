@@ -1003,7 +1003,7 @@ joined_r0x0066b1d2:
           break;
         case 0x7e4:
           local_14 = Library::DKW::LIB::MemAllocClear(4);
-          if ((DAT_008087a0 == '\x03') || (DAT_008087a0 == '\b')) {
+          if (((char)DAT_008087a0 == '\x03') || ((char)DAT_008087a0 == '\b')) {
             *local_14 = _DAT_00807340 & 0xff;
           }
           else {
@@ -1505,7 +1505,7 @@ cf_common_exit_0066DF5E:
         local_8 = (AiFltClassTy *)local_50;
         do {
           local_18 = pcVar31;
-          puVar20 = (byte *)thunk_FUN_0043e420(local_4f0,*(char *)&local_8->vtable);
+          puVar20 = (byte *)(thunk_FUN_0043e420(local_4f0,*(char *)&local_8->vtable));
           pcVar31 = local_c;
           puVar30 = (byte *)(local_19c);
           memmove(puVar30, puVar20, 0x138); /* compiler REP MOVS byte copy */
@@ -1614,7 +1614,7 @@ cf_continue_loop_0066CACD:
         local_8 = (AiFltClassTy *)local_50;
         do {
           local_18 = pcVar31;
-          puVar20 = (byte *)thunk_FUN_0043e420(local_3b8,*(char *)&local_8->vtable);
+          puVar20 = (byte *)(thunk_FUN_0043e420(local_3b8,*(char *)&local_8->vtable));
           pcVar31 = local_c;
           puVar30 = (byte *)(local_19c);
           memmove(puVar30, puVar20, 0x138); /* compiler REP MOVS byte copy */
@@ -1723,7 +1723,7 @@ cf_continue_loop_0066CD4A:
         local_8 = (AiFltClassTy *)local_50;
         do {
           local_18 = pcVar31;
-          puVar20 = (byte *)thunk_FUN_0043e420(local_628,*(char *)&local_8->vtable);
+          puVar20 = (byte *)(thunk_FUN_0043e420(local_628,*(char *)&local_8->vtable));
           pcVar31 = local_c;
           puVar30 = (byte *)(local_19c);
           memmove(puVar30, puVar20, 0x138); /* compiler REP MOVS byte copy */

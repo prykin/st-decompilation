@@ -23,6 +23,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
@@ -75,6 +76,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             if (function.isThunk() || function.isExternal() || isLibrary(function)) continue;
             functionsSeen++; callsSeen += analyze(function);
         }
+        addPointerDereferenceEvidence();
         List<Proposal> proposals = makeProposals();
         List<PointerAudit> pointerAudit = pointerAudit(proposals);
         writeTsv(directory.resolve("global_data_proposals.tsv"), proposals);
@@ -111,6 +113,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
             collectScalarEvidence(function, instruction, mnemonic, operands);
             collectCStringScanEvidence(function, instruction, mnemonic, operands);
+            collectPointerDereferenceEvidence(function, instruction, mnemonic,
+                operands, registers);
             if ("PUSH".equals(mnemonic)) {
                 pushes.add(globalValue(instruction, 0, operands.length == 0 ? "" : operands[0],
                     registers, false));
@@ -150,6 +154,113 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                     "ESP".equals(cleanRegister(operands[1]))) pushes.clear();
         }
         return calls;
+    }
+
+    /**
+     * A word loaded from one exact global and then used as the base of repeated
+     * memory accesses is a pointer value, irrespective of whether the
+     * pointed record has a semantic name yet.  Keep this as a neutral
+     * primitive pointer: the proof establishes indirection, not a class
+     * identity.  The loaded global must be the sole unscaled base register;
+     * scaled indexes and two-register sums are not pointer evidence.
+     */
+    private void collectPointerDereferenceEvidence(Function function,
+            Instruction instruction, String mnemonic, String[] operands,
+            Map<String, GlobalValue> registers) {
+        // LEA proves arithmetic only.  A scalar count multiplied or offset in
+        // an address expression must not become a pointer until a later
+        // instruction actually dereferences the derived address.
+        if ("LEA".equals(mnemonic)) return;
+        for (String operand : operands) {
+            String upper = operand.toUpperCase(Locale.ROOT);
+            int open = upper.indexOf('['), close = upper.lastIndexOf(']');
+            if (open < 0 || close <= open) continue;
+            String address = upper.substring(open + 1, close);
+            for (Map.Entry<String, GlobalValue> entry : registers.entrySet()) {
+                GlobalValue value = entry.getValue();
+                if (value == null || value.addressOf ||
+                        !soleUnscaledBase(address, entry.getKey())) continue;
+                Evidence ev = evidence.computeIfAbsent(value.address,
+                    ignored -> new Evidence());
+                ev.pointerDereferences++;
+                boolean compatible = dwordPointerGeometry(address, entry.getKey());
+                if (!compatible) ev.pointerDerefWordCompatible = false;
+                ev.pointerDerefSites.add(addr(function.getEntryPoint()) + " " +
+                    instruction.toString() + " @ " + addr(instruction.getAddress()));
+            }
+        }
+    }
+
+    private boolean soleUnscaledBase(String address, String baseRegister) {
+        Matcher registers = Pattern.compile(
+            "(?i)\\b(?:EAX|EBX|ECX|EDX|ESI|EDI|EBP|ESP)\\b")
+            .matcher(address);
+        String unscaled = null;
+        int unscaledCount = 0;
+        while (registers.find()) {
+            int cursor = registers.end();
+            while (cursor < address.length() &&
+                    Character.isWhitespace(address.charAt(cursor))) cursor++;
+            if (cursor < address.length() && address.charAt(cursor) == '*') {
+                if (baseRegister.equals(canonicalRegister(registers.group())))
+                    return false;
+                continue;
+            }
+            unscaled = canonicalRegister(registers.group());
+            unscaledCount++;
+        }
+        return unscaledCount == 1 && baseRegister.equals(unscaled);
+    }
+
+    private boolean dwordPointerGeometry(String address, String baseRegister) {
+        String remainder = address.replaceAll(
+            "(?i)\\b" + Pattern.quote(baseRegister) + "\\b", "");
+        Matcher numbers = Pattern.compile("(?i)(?:0X[0-9A-F]+|[0-9]+)")
+            .matcher(remainder);
+        while (numbers.find()) {
+            String text = numbers.group();
+            long value;
+            try {
+                value = text.regionMatches(true, 0, "0X", 0, 2) ?
+                    Long.parseUnsignedLong(text.substring(2), 16) :
+                    Long.parseLong(text);
+            }
+            catch (NumberFormatException exception) {
+                return false;
+            }
+            if ((value & 3) != 0) return false;
+        }
+        return true;
+    }
+
+    private void addPointerDereferenceEvidence() {
+        List<Map.Entry<Address, Evidence>> entries =
+            new ArrayList<>(evidence.entrySet());
+        for (Map.Entry<Address, Evidence> entry : entries) {
+            Evidence ev = entry.getValue();
+            if (ev.pointerDerefSites.size() < 3)
+                continue;
+            String type = unique(ev.callBoundaryTypes);
+            // Indirection proves pointer-ness but not a pointee width.  Make
+            // the mutation automatic only when an independent exact call
+            // boundary supplies one primitive pointer type; otherwise retain
+            // the evidence in the review proposal generated by the ordinary
+            // aggregation path.
+            if (!fourBytePrimitivePointer(type)) continue;
+            for (String site : ev.pointerDerefSites)
+                add(entry.getKey(), type, "", false, false,
+                    "repeated aligned DWORD dereference of exact global value; " + site);
+        }
+    }
+
+    private boolean fourBytePrimitivePointer(String specification) {
+        if (specification == null || !specification.startsWith("pointer:"))
+            return false;
+        DataType type = dataTypes.getDataType(
+            specification.substring("pointer:".length()));
+        while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
+        return type != null && type.getLength() == 4 &&
+            (type instanceof AbstractIntegerDataType || Undefined.isUndefined(type));
     }
 
     private void collectModuleHandleGlobal(Function called, Instruction call) {
@@ -758,6 +869,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             reasons.add("call_boundary_types=" + ev.callBoundaryTypes);
             reasons.add("constructor_store_types=" + ev.constructorStores);
             reasons.add("library_context_votes=" + ev.libraryContexts);
+            reasons.add("pointer_dereferences=" + ev.pointerDereferences +
+                "; aligned_dword_geometry=" + ev.pointerDerefWordCompatible);
             if (contextualAnonymous)
                 reasons.add("dominant_library_context=" + context.family +
                     "; context_votes=" + context.count + "/" + context.total);
@@ -1278,9 +1391,10 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             callBoundaryTypes = new TreeMap<>(), libraryContexts = new TreeMap<>();
         final Set<String> sites = new TreeSet<>(), strongNames = new TreeSet<>(),
             typedStoreSites = new TreeSet<>(), callBoundarySites = new TreeSet<>(),
-            initializedStringNames = new TreeSet<>();
+            initializedStringNames = new TreeSet<>(), pointerDerefSites = new TreeSet<>();
         int strongCount, addressEvidence, typedStores, libraryContextCalls,
-            initializedStringPointers, cstringScans;
+            initializedStringPointers, cstringScans, pointerDereferences;
+        boolean pointerDerefWordCompatible = true;
     }
     private record ContextVote(String family, int count, int total) {}
     private record CStringState(Address address, boolean lowAccumulatorZero) {}

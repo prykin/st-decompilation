@@ -18,7 +18,7 @@ void __thiscall st::fn_0057DFD0(STResourceC *this,int param_1,int param_2)
 
   if (this->field_0255 == 0xdd) {
     if (param_1 < 1000000) goto cf_common_exit_0057E045;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Igor\\To_gold.cpp",0x36,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_gold.cpp"),0x36,0,0,st::mutable_c_string("%s"),
                                "STResourceC::SetResource - value too big");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -26,7 +26,7 @@ void __thiscall st::fn_0057DFD0(STResourceC *this,int param_1,int param_2)
   }
   else {
     if ((this->field_0255 != 0xde) || (param_1 < 1000000)) goto cf_common_exit_0057E045;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Igor\\To_gold.cpp",0x3c,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_gold.cpp"),0x3c,0,0,st::mutable_c_string("%s"),
                                "STResourceC::SetResource - value too big");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -119,10 +119,10 @@ int __thiscall st::fn_0057E0A0(STDcResourcC *this,STMessage *message)
   this_00 = local_24;
   if (local_EAX_67 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar10 = st::fn_006AD4D0("E:\\__titans\\Igor\\To_gold.cpp",0x169,0,local_EAX_67,
-                                "%s","STDcResourcC::GetMessage");
+    iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_gold.cpp"),0x169,0,local_EAX_67,
+                                st::mutable_c_string("%s"),"STDcResourcC::GetMessage");
     if (iVar10 == 0) {
-      st::fn_006A5E40(local_EAX_67,0,"E:\\__titans\\Igor\\To_gold.cpp",0x16a);
+      st::fn_006A5E40(local_EAX_67,0,st::mutable_c_string("E:\\__titans\\Igor\\To_gold.cpp"),0x16a);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -132,7 +132,7 @@ int __thiscall st::fn_0057E0A0(STDcResourcC *this,STMessage *message)
   uVar15 = extraout_var_01;
   if (iVar9 == 0xffff) {
     st::fn_006A5E40
-              (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_gold.cpp",0x56);
+              (0xffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\To_gold.cpp"),0x56);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar15 = extraout_var_02;
   }
@@ -144,7 +144,7 @@ int __thiscall st::fn_0057E0A0(STDcResourcC *this,STMessage *message)
         return 0;
       }
       local_10 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_8);
-      local_c = st::fn_006AAC70(local_8 + 0x46);
+      local_c = st::pointer_boundary_cast<STSprGameObjC_field_0231State *>(st::fn_006AAC70(local_8 + 0x46));
       if (local_10 == nullptr) {
         g_currentExceptionFrame = local_68.previous;
         return 0;
@@ -280,12 +280,12 @@ int __thiscall st::fn_0057E0A0(STDcResourcC *this,STMessage *message)
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    local_18 = (message->arg0).ptr;
+    local_18 = st::pointer_boundary_cast<STSprGameObjC_field_0231State *>((message->arg0).ptr);
     if (local_18[3] < CASE_2) {
       *(undefined4 *)&this_00->field_0x261 = 4;
       *(undefined4 *)&this_00->field_0x265 = 0;
       *(undefined4 *)&this_00->field_0x26d = 0;
-      pSVar16 = (message->arg0).ptr;
+      pSVar16 = st::pointer_boundary_cast<STSprGameObjC_field_0231State *>((message->arg0).ptr);
       pSVar20 = &this_00->field_0231;
       memmove(pSVar20, pSVar16, 0x28); /* compiler REP MOVS byte copy */
       if (*(int *)&this_00->field_0x251 < 1) {
@@ -295,7 +295,7 @@ int __thiscall st::fn_0057E0A0(STDcResourcC *this,STMessage *message)
       iVar11 = *(int *)&this_00->field_0x255;
       if ((((iVar11 != 0xdd) && (iVar11 != 0xde)) && (iVar11 != 0xdc)) && (iVar11 != 0xe0)) {
         local_EAX_979 =
-             st::fn_006AD4D0("E:\\__titans\\Igor\\To_gold.cpp",0x6a,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_gold.cpp"),0x6a,0,0,st::mutable_c_string("%s"),
                                 "STResourceC::Invalid resource type - assigning metal as default");
         if (local_EAX_979 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -402,7 +402,7 @@ int __thiscall st::fn_0057E0A0(STDcResourcC *this,STMessage *message)
         iVar11 = 0xb1;
 LAB_0057e60c:
         st::fn_006A5E40
-                  (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_gold.cpp",iVar11
+                  (0xffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\To_gold.cpp"),iVar11
                   );
       }
     }
@@ -659,7 +659,7 @@ undefined4 * __thiscall st::fn_0057F580(STDcResourcC *this)
   if (pAVar5 != nullptr) {
     this_00 = (STT3DSprC *)st::fn_00401316(pAVar5);
     if (this_00 != nullptr) {
-      pHVar6 = (HoloTy *)st::fn_0072E530(this->field_0265 * 4 + 4);
+      pHVar6 = (HoloTy *)st::fn_0072E530(st::machine_word_boundary_cast<uint>(this->field_0265 * 4 + 4));
       if (pHVar6 == nullptr) {
         st::fn_0072E2B0((HoloTy *)this_00);
         return nullptr;
@@ -683,10 +683,10 @@ undefined4 * __thiscall st::fn_0057F580(STDcResourcC *this)
       }
       this->field_026D = pHVar6;
       *(STT3DSprC **)((int)&pHVar6->field_0000 + this->field_0265 * 4) = this_00;
-      this->field_0265 = this->field_0265 + 1;
+      this->field_0265 = st::machine_word_boundary_cast<int>(this->field_0265 + 1);
       iVar9 = st::fn_0040537B(this_00,PTR_008073cc,0x5a,0x45,this,0xb4,0x8c,0x11);
       if (iVar9 != 0) {
-        iVar8 = st::fn_006AD4D0("E:\\__titans\\Igor\\To_gold.cpp",0x203,0,0,"%s",
+        iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_gold.cpp"),0x203,0,0,st::mutable_c_string("%s"),
                                    "STDcResourcC::Init Sprite Error");
         if (iVar8 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -745,12 +745,12 @@ int __thiscall st::fn_0057F6E0(STDcResourcC *this)
   this_00 = local_18;
   if (local_EAX_43 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar10 = st::fn_006AD4D0("E:\\__titans\\Igor\\To_gold.cpp",0x2b3,0,local_EAX_43,
-                                "%s","STDcResourcC::CreateRes");
+    iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_gold.cpp"),0x2b3,0,local_EAX_43,
+                                st::mutable_c_string("%s"),"STDcResourcC::CreateRes");
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_43,0,"E:\\__titans\\Igor\\To_gold.cpp",0x2b4);
+    st::fn_006A5E40(local_EAX_43,0,st::mutable_c_string("E:\\__titans\\Igor\\To_gold.cpp"),0x2b4);
     return 0xffff;
   }
   switch(local_18->field_0255) {
@@ -760,9 +760,9 @@ int __thiscall st::fn_0057F6E0(STDcResourcC *this)
     do {
       iVar12 = *(int *)((int)&DAT_007cb0b8 + local_14);
       local_10 = *(int *)((int)&DAT_007cb0dc + local_14);
-      iVar6 = this_00->field_0245 + iVar12;
+      iVar6 = st::machine_word_boundary_cast<int>(this_00->field_0245 + iVar12);
       if (((((iVar6 < g_worldGrid.sizeX) && (-1 < iVar6)) &&
-           (iVar6 = this_00->field_0249 + local_10, iVar6 < g_worldGrid.sizeY)) &&
+           (iVar6 = st::machine_word_boundary_cast<int>(this_00->field_0249 + local_10), iVar6 < g_worldGrid.sizeY)) &&
           ((-1 < iVar6 && (-1 < (int)this_00->field_024D)))) && ((int)this_00->field_024D < 5)) {
         if (this_00 == nullptr) {
           pSVar7 = nullptr;
@@ -784,8 +784,8 @@ int __thiscall st::fn_0057F6E0(STDcResourcC *this)
         st::fn_00405CA9(pSVar7,PTR_008073cc);
         st::fn_00403AFD(pSVar7,'\r');
         st::fn_00405240(pSVar7,0xd,g_playSystem_00802A38->field_00E4);
-        iVar6 = this_00->field_0249 + local_10;
-        local_10 = this_00->field_0245 + iVar12;
+        iVar6 = st::machine_word_boundary_cast<int>(this_00->field_0249 + local_10);
+        local_10 = st::machine_word_boundary_cast<int>(this_00->field_0245 + iVar12);
         st::fn_004045D9
                   (pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)iVar6 * _DAT_007904f8 + _DAT_007904f4,
@@ -802,9 +802,9 @@ int __thiscall st::fn_0057F6E0(STDcResourcC *this)
     do {
       iVar12 = *(int *)((int)&DAT_007cb0b8 + local_14);
       local_10 = *(int *)((int)&DAT_007cb0dc + local_14);
-      iVar6 = this_00->field_0245 + iVar12;
+      iVar6 = st::machine_word_boundary_cast<int>(this_00->field_0245 + iVar12);
       if ((((iVar6 < g_worldGrid.sizeX) && (-1 < iVar6)) &&
-          (iVar6 = this_00->field_0249 + local_10, iVar6 < g_worldGrid.sizeY)) &&
+          (iVar6 = st::machine_word_boundary_cast<int>(this_00->field_0249 + local_10), iVar6 < g_worldGrid.sizeY)) &&
          (((-1 < iVar6 && (-1 < (int)this_00->field_024D)) && ((int)this_00->field_024D < 5)))) {
         if (this_00 == nullptr) {
           pSVar7 = nullptr;
@@ -826,8 +826,8 @@ int __thiscall st::fn_0057F6E0(STDcResourcC *this)
         st::fn_00405CA9(pSVar7,PTR_008073cc);
         st::fn_00403AFD(pSVar7,'\r');
         st::fn_00405240(pSVar7,0xd,g_playSystem_00802A38->field_00E4);
-        iVar6 = this_00->field_0249 + local_10;
-        local_10 = this_00->field_0245 + iVar12;
+        iVar6 = st::machine_word_boundary_cast<int>(this_00->field_0249 + local_10);
+        local_10 = st::machine_word_boundary_cast<int>(this_00->field_0245 + iVar12);
         st::fn_004045D9
                   (pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)iVar6 * _DAT_007904f8 + _DAT_007904f4,
@@ -848,7 +848,7 @@ int __thiscall st::fn_0057F6E0(STDcResourcC *this)
       local_10 = (&DAT_007cb0e0)[iVar12];
       iVar6 = local_c + this_00->field_0245;
       if ((((iVar6 < g_worldGrid.sizeX) && (-1 < iVar6)) &&
-          ((iVar6 = this_00->field_0249 + local_10, iVar6 < g_worldGrid.sizeY &&
+          ((iVar6 = st::machine_word_boundary_cast<int>(this_00->field_0249 + local_10), iVar6 < g_worldGrid.sizeY &&
            ((-1 < iVar6 && (-1 < (int)this_00->field_024D)))))) && ((int)this_00->field_024D < 5)) {
         if (this_00 == nullptr) {
           pSVar7 = nullptr;
@@ -869,7 +869,7 @@ int __thiscall st::fn_0057F6E0(STDcResourcC *this)
               st::fn_00405CA9(pSVar7,PTR_008073cc);
               st::fn_00403AFD(pSVar7,'\r');
               st::fn_00405240(pSVar7,0xd,g_playSystem_00802A38->field_00E4);
-              local_14 = this_00->field_0245 + local_c;
+              local_14 = st::machine_word_boundary_cast<int>(this_00->field_0245 + local_c);
               st::fn_004045D9
                         (pSVar7,(float)local_14 * _DAT_007904f8 + _DAT_007904f4,
                          (float)(this_00->field_0249 + local_10) * _DAT_007904f8 + _DAT_007904f4,
@@ -993,7 +993,7 @@ undefined4 * __thiscall st::fn_00580B60(STFieldC *this,int param_1,int param_2)
   pSVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Igor\\To_gold.cpp",0x414,0,iVar3,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_gold.cpp"),0x414,0,iVar3,st::mutable_c_string("%s"),
                                "STFieldC::CreateField");
     if (iVar3 == 0) {
       return local_8;

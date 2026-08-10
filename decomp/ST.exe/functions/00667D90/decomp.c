@@ -21,9 +21,9 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
   STGroupBoatC *this_01;
   int iVar6;
   int iVar7;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
   InternalExceptionFrame local_54;
   AiFltClassTy *local_10;
@@ -54,9 +54,9 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
     }
     else if (SVar1 < 4) {
       if (SVar1 == MESS_SHARED_0003) {
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         sub_0065D6E0((AnonShape_0065D6E0_0F9074F6 *)local_10,extraout_EDX);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         sub_0065D720((AnonShape_0065D720_52DE2AAB *)this_00,extraout_EDX_00);
         thunk_FUN_0065d480(this_00);
       }
@@ -128,7 +128,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
       if (SVar1 != MESS_AIFLTCLASSTY_5D99) goto LAB_00668010;
       (message->arg0).words.low = 1;
     }
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     sub_00661CA0((AnonShape_00661CA0_93A030EF *)local_10,extraout_EDX,(int)message);
   }
 LAB_00668010:

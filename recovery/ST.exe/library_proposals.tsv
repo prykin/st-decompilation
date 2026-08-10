@@ -413,7 +413,7 @@ apply	address	old_name	library	namespace	confidence	evidence	references
 1	0072D86C	Library::MSVCRT::__global_unwind2	MSVCRT	Library::MSVCRT	high	inferred dense VC6 CRT cluster from named runtime anchors	0072D86C
 1	0072D8AE	Library::MSVCRT::__local_unwind2	MSVCRT	Library::MSVCRT	high	inferred dense VC6 CRT cluster from named runtime anchors	0072D8AE
 1	0072D942	Library::MSVCRT::FUN_0072d942	MSVCRT	Library::MSVCRT	high	inferred dense VC6 CRT cluster from named runtime anchors	0072D942
-1	0072DA21	Library::MSVCRT::FUN_0072da21	MSVCRT	Library::MSVCRT	high	inferred dense VC6 CRT cluster from named runtime anchors	0072DA21
+1	0072DA21	Library::MSVCRT::__seh_longjmp_unwind@4	MSVCRT	Library::MSVCRT	high	inferred dense VC6 CRT cluster from named runtime anchors	0072DA21
 1	0072DA40	Library::MSVCRT::FUN_0072da40	MSVCRT	Library::MSVCRT	high	inferred dense VC6 CRT cluster from named runtime anchors	0072DA40
 1	0072DA70	Library::MSVCRT::FUN_0072da70	MSVCRT	Library::MSVCRT	high	inferred dense VC6 CRT cluster from named runtime anchors	0072DA70
 1	0072DDB0	Library::MSVCRT::FUN_0072ddb0	MSVCRT	Library::MSVCRT	high	inferred dense VC6 CRT cluster from named runtime anchors	0072DDB0

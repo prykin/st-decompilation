@@ -38,10 +38,10 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
   this_00 = local_18;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bfire.cpp",0xb2,0,local_EAX_35,
-                               "%s","TLOBaseTy::fireProc error");
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bfire.cpp"),0xb2,0,local_EAX_35,
+                               st::mutable_c_string("%s"),"TLOBaseTy::fireProc error");
     if (iVar5 == 0) {
-      st::fn_006A5E40(local_EAX_35,0,"E:\\__titans\\Artem\\TLO_bfire.cpp",0xb3);
+      st::fn_006A5E40(local_EAX_35,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bfire.cpp"),0xb3);
       return local_EAX_35;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -104,7 +104,7 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
                 puVar8[0xc] = g_playSystem_00802A38->field_00E4;
                 puVar8[0xb] = 1;
                 do {
-                  uVar4 = this_00->field_001C * 0x41c64e6d + 0x3039;
+                  uVar4 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
                   this_00->field_001C = uVar4;
                   uVar4 = ((uVar4 >> 0x10) % 0x18) * 0xf;
                   puVar8[0xe] = uVar4;
@@ -119,7 +119,7 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
               puVar8[0xb] = uVar4;
               if (uVar4 == 0) {
                 puVar8[0xc] = g_playSystem_00802A38->field_00E4;
-                uVar4 = this_00->field_001C * 0x41c64e6d + 0x3039;
+                uVar4 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
                 this_00->field_001C = uVar4;
                 puVar8[0xd] = (uVar4 >> 0x10) % 0x4c + 0x19;
               }
@@ -167,7 +167,7 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
             if ((int)puVar8[0x10] < *(int *)(&DAT_00794038 + iVar6 * 4)) {
               iVar4 = st::fn_0040428C(this_00->field_0024,(&DAT_00792ca0)[iVar6 * 3],
                                          *(int *)(&DAT_00794038 + iVar6 * 4) - puVar8[0x10]);
-              puVar8[0x10] = puVar8[0x10] + iVar4;
+              puVar8[0x10] = st::machine_word_boundary_cast<uint>(puVar8[0x10] + iVar4);
               piVar7 = local_8;
               goto LAB_004c3985;
             }
@@ -179,7 +179,7 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
                                       *(int *)(&DAT_00794038 + iVar6 * 4) - puVar8[0x10],
                                       *(int *)(&DAT_00793ff0 +
                                               (&DAT_00792ca0)[this_00->field_0235 * 6] * 4));
-              puVar8[0x10] = puVar8[0x10] + local_EAX_1247;
+              puVar8[0x10] = st::machine_word_boundary_cast<uint>(puVar8[0x10] + local_EAX_1247);
             }
           }
         }
@@ -189,7 +189,7 @@ LAB_004c3985:
             ((int)puVar8[0x10] < *(int *)(&DAT_00794038 + iVar6))) &&
            (iVar6 = st::fn_00404309((int)this_00->field_0024,this_00->field_0235,(int)piVar7),
            puVar8[0x11] + iVar6 * 10 <= g_playSystem_00802A38->field_00E4)) {
-          puVar8[0x10] = puVar8[0x10] + 1;
+          puVar8[0x10] = st::machine_word_boundary_cast<uint>(puVar8[0x10] + 1);
           puVar8[0x11] = g_playSystem_00802A38->field_00E4;
         }
       }
@@ -276,10 +276,10 @@ int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
   this_00 = local_60;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b8.previous;
-    iVar16 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bfire.cpp",0x126,0,iVar7,
-                                "%s","TLOBaseTy::fireFindCheckTarget error");
+    iVar16 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bfire.cpp"),0x126,0,iVar7,
+                                st::mutable_c_string("%s"),"TLOBaseTy::fireFindCheckTarget error");
     if (iVar16 == 0) {
-      st::fn_006A5E40(iVar7,0,"E:\\__titans\\Artem\\TLO_bfire.cpp",0x127);
+      st::fn_006A5E40(iVar7,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bfire.cpp"),0x127);
       return iVar7;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -301,7 +301,7 @@ int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
   local_10 = ppTVar16;
   if (*(int *)(&DAT_00792a90 + (param_1 + local_60->field_0235 * 2) * 4) == 1) {
     local_58 = st::fn_00405C45((int)local_60->field_0024,local_60->field_0235,param_1);
-    iVar15 = this_00->field_05B4 + -8;
+    iVar15 = st::machine_word_boundary_cast<int>(this_00->field_05B4 + -8);
     local_18 = iVar15;
     if (iVar15 <= this_00->field_05B4 + 8) {
       do {
@@ -343,14 +343,14 @@ int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
                           (dVar7 = (*((TLOBaseTy *)local_8)->vtable->slot_F8)((TLOBaseTy *)local_8),
                           iVar15 = local_18, iVar17 = local_28, dVar7 != 0)) &&
                          ((local_8->field_0024 != 0xff &&
-                          (iVar9 = (*local_8->vtable->vfunc_F4)(this_00->field_0024),
+                          (iVar9 = (*local_8->vtable->vfunc_F4)(st::machine_word_boundary_cast<undefined4>(this_00->field_0024)),
                           iVar15 = local_18, iVar17 = local_28, iVar9 != 0)))) {
                         st::fn_004018C5(local_8,&local_12,&local_14,&local_a);
                         st::fn_004031E3(local_8,(uint *)local_40,(int *)local_38,local_1c);
                         iVar15 = (int)(short)local_30;
                         iVar8 = st::fn_006ACF0D((int)local_40[0],(int)local_38[0],(int)local_1c[0],
                                              (int)local_2c,(int)local_34,iVar15);
-                        uVar10 = local_1c[0] - iVar15;
+                        uVar10 = st::machine_word_boundary_cast<uint>(local_1c[0] - iVar15);
                         uVar13 = (int)uVar10 >> 0x1f;
                         iVar15 = local_18;
                         iVar17 = local_28;
@@ -396,9 +396,9 @@ LAB_004c4080:
                                       bVar1 = *(byte *)&local_8->field_0024;
                                       bVar2 = *(byte *)&this_00->field_0024;
                                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      _local_50 = CONCAT31(uStack_4f,bVar1);
+                                      auto _local_50 = CONCAT31(uStack_4f,bVar1);
                                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      _local_54 = CONCAT31(uStack_53,bVar2);
+                                      auto _local_54 = CONCAT31(uStack_53,bVar2);
                                       if (DAT_00808a8f == '\0') {
                                         if (bVar1 == bVar2) {
 LAB_004c4192:
@@ -476,8 +476,7 @@ LAB_004c41a5:
                               if (0 < *(int *)(&DAT_007932d0 + iVar11)) {
                                 iVar15 = 0;
                                 do {
-                                  puVar12 = (undefined4 *)
-                                            st::fn_0040342C(local_74,(short)*(undefined4 *)
+                                  puVar12 = st::fn_0040342C(local_74,(short)*(undefined4 *)
                                                                                 (&DAT_007932d4 +
                                                                                 iVar15 + iVar11),
                                                                *(ushort *)

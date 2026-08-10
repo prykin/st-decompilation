@@ -37,10 +37,10 @@ uint __thiscall st::fn_006099E0(STFieldC *this,uint param_1)
         pSVar2->field_0234 = nullptr;
       } while (uVar7 != 0);
     }
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_field.cpp",0x1e5,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_field.cpp"),0x1e5,0,iVar3,st::mutable_c_string("%s"),
                                "STFieldC::CreateField");
     if (iVar4 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_field.cpp",0x1e7);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\nick\\to_field.cpp"),0x1e7);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -119,12 +119,12 @@ undefined4 __thiscall st::fn_00609B90(STFieldC *this,int param_1)
     return 1;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\nick\\to_field.cpp",0x208,0,errorCode,
-                             "%s","STFieldC::InitSprSistem(void)");
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_field.cpp"),0x208,0,errorCode,
+                             st::mutable_c_string("%s"),"STFieldC::InitSprSistem(void)");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\nick\\to_field.cpp",0x20a);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\nick\\to_field.cpp"),0x20a);
   return 0xffff;
 }
 
@@ -167,15 +167,15 @@ undefined4 __thiscall st::fn_00609D60(STFieldC *this,uint param_1)
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     errorCode = st::fn_0072D7F0(local_54.jumpBuffer,0);
-    puVar4 = element_0234;
+    puVar4 = &(element_0234)->field_0000;
     if (errorCode != 0) {
       g_currentExceptionFrame = local_54.previous;
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\nick\\to_field.cpp",0x248,0,errorCode,
-                                 "%s","STFieldC::LoadImagSpr");
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_field.cpp"),0x248,0,errorCode,
+                                 st::mutable_c_string("%s"),"STFieldC::LoadImagSpr");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(errorCode,0,"E:\\__titans\\nick\\to_field.cpp",0x24a);
+      st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\nick\\to_field.cpp"),0x24a);
       return 0xffff;
     }
     uVar2 = element_0234->field_0000;

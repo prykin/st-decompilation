@@ -24,7 +24,7 @@ void __thiscall AiFltClassTy::sub_00660F70(AiFltClassTy *this,uint *param_1,unde
   int local_EAX_1023;
   short sVar11;
   undefined4 uVar12;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   AnonShape_0068EB30_4F4B480A *pAVar13;
   AnonShape_0068EB30_4F4B480A local_6c;
@@ -113,7 +113,7 @@ switchD_0066104e_caseD_9:
           if ((0x31 < *local_8) && (*local_8 < 0x74)) {
             sVar11 = STField<short>(param_1,0xe);
             uVar12 = STReplaceLowWord((uint32_t)(local_8), (uint16_t)(sVar11));
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             if ((sVar11 < 0) ||
                ((((short)param_1[4] < 0 || (STField<short>(param_1,0x12) < 0)) ||
                 (iVar9 = thunk_FUN_004ae0b0(sVar11,(int)(short)param_1[4],

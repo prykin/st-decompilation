@@ -1,7 +1,11 @@
 apply	base_owner	derived_owner	base_table	derived_table	evidence_functions	confidence	reason
+1	MMObjTy	CampaignTy	0079C008	0079BFF8	00593860	high	same_object_vptr_store_order
 1	MMObjTy	ChooseMapTy	0079C008	0079C088	005B2790	high	same_object_vptr_store_order
 1	MMObjTy	FSGSTy	0079C008	0079C02C	005AA2C0	high	same_object_vptr_store_order
+1	MMObjTy	MMsgTy	0079C008	0079C0A8	005B95B0	high	same_object_vptr_store_order
+1	MMObjTy	MainMenuTy	0079C008	0079C098	005B50E0	high	same_object_vptr_store_order
 1	MMObjTy	PrividerTy	0079C008	0079C0C4	005BD2E0	high	same_object_vptr_store_order
+1	MMObjTy	SIDTy	0079C008	0079C1AC	005D9F80	high	same_object_vptr_store_order
 1	MMObjTy	SettMapMTy	0079C008	0079C124	005D4B40	high	same_object_vptr_store_order
 1	MMObjTy	SettMapTy	0079C008	0079C160	005D77A0	high	same_object_vptr_store_order
 1	MMObjTy	WaitTy	0079C008	0079C24C	005EAD30	high	same_object_vptr_store_order

@@ -40,7 +40,7 @@ int __thiscall st::fn_00601F80(STDestC *this,STMessage *message)
       SVar1 = message->id;
       if (SVar1 < MESS_TORPHIT) {
         if (SVar1 == MESS_SHARED_010F) {
-          local_10 = st::fn_00404D77((STDestC *)local_8,&local_c);
+          local_10 = st::fn_00404D77((STDestC *)local_8,st::pointer_boundary_cast<undefined4 *>(&local_c));
           st::fn_004025F9
                     (g_playSystem_00802A38,*(int **)&this_00->field_0x18,local_10,local_c);
           st::fn_006AB060(&local_10);
@@ -85,11 +85,11 @@ int __thiscall st::fn_00601F80(STDestC *this,STMessage *message)
             g_currentExceptionFrame = local_54.previous;
             return 0;
           }
-          iVar5 = st::fn_00404179((STDestC *)local_8,puVar3);
+          iVar5 = st::fn_00404179((STDestC *)local_8,st::pointer_boundary_cast<undefined4 *>(puVar3));
           if (-1 < iVar5) {
             if (this_00->field_036E == 4) {
               puVar3 = (byte *)(st::fn_00405D30((STDestC *)this_00));
-              this_00->field_03AB = puVar3;
+              this_00->field_03AB = st::pointer_boundary_cast<undefined4 *>(puVar3);
               if (puVar3 == nullptr) {
                 st::fn_00401BF4((STDestC *)this_00);
               }
@@ -143,12 +143,12 @@ int __thiscall st::fn_00601F80(STDestC *this,STMessage *message)
       return 0;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_dest.cpp",0x95,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_dest.cpp"),0x95,0,iVar3,st::mutable_c_string("%s"),
                                "STDestC::GetMessage");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_dest.cpp",0x97);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\nick\\to_dest.cpp"),0x97);
   }
   return 0xffff;
 }

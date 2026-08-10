@@ -41,7 +41,7 @@ st::fn_005FAA10
   if (local_10->field_02E6 != 0) {
     if (param_1 == 1) {
       puVar3 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,"rubb3",0xffffffff,0,1,0,nullptr);
+                         (PTR_00806774,CASE_1D,st::mutable_c_string("rubb3"),0xffffffff,0,1,0,nullptr);
       uVar5 = STField<uint>(puVar3,0xd);
       uVar4 = STField<uint>(puVar3,9);
       uVar7 = 8;
@@ -49,24 +49,24 @@ st::fn_005FAA10
     }
     else {
       puVar3 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,"bulb_tel",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,st::mutable_c_string("bulb_tel"),0xffffffff,0,1,0,
                           nullptr);
       uVar5 = STField<uint>(puVar3,0xd);
       uVar4 = STField<uint>(puVar3,9);
       uVar7 = 0x2f;
       uVar6 = 0x5a;
     }
-    st::fn_006E8660(pAVar2->field_0211,(int *)&local_8,1,0,uVar4,uVar5,uVar6,uVar7,0);
+    st::fn_006E8660(st::pointer_boundary_cast<ST3DSMAPContext *>(pAVar2->field_0211),(int *)&local_8,1,0,uVar4,uVar5,uVar6,uVar7,0);
     st::fn_006E98E0
-              (pAVar2->field_0211,local_8,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
-    st::fn_006EA270(pAVar2->field_0211,local_8,0,0);
+              (st::pointer_boundary_cast<ST3DSMAPContext *>(pAVar2->field_0211),local_8,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+    st::fn_006EA270(st::pointer_boundary_cast<ST3DSMAPContext *>(pAVar2->field_0211),local_8,0,0);
     iVar1 = pAVar2->field_02E6;
     st::fn_006EA960
               (pAVar2->field_0211,local_8,
                (float)*(int *)(iVar1 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
                (float)*(int *)(iVar1 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
                (float)*(int *)(iVar1 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    st::fn_006E9EF0(pAVar2->field_0211,local_8,0,1,0,0,30000);
+    st::fn_006E9EF0(st::pointer_boundary_cast<ST3DSMAPContext *>(pAVar2->field_0211),local_8,0,1,0,0,30000);
     st::fn_006EAAA0(pAVar2->field_0211,local_8,0);
     *(uint *)(pAVar2->field_02E6 + 4) = local_8;
     g_currentExceptionFrame = local_54.previous;

@@ -53,12 +53,12 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
   this_00 = local_10;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_ac.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\Andrey\\research.cpp",0x39,0,iVar6,"%s"
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\research.cpp"),0x39,0,iVar6,st::mutable_c_string("%s")
                                ,"ResearchPanelTy::InitResearchPanel");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar6,0,"E:\\__titans\\Andrey\\research.cpp",0x39);
+    st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\Andrey\\research.cpp"),0x39);
     return;
   }
   iVar7 = 2;
@@ -66,29 +66,29 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
   puVar5 = &local_10->field_027A;
   do {
     pDVar3 = st::fn_006AE290(nullptr,0x28,0x30,10);
-    *puVar5 = pDVar3;
+    *puVar5 = st::machine_word_boundary_cast<undefined4>(pDVar3);
     puVar5 = puVar5 + 1;
     iVar7 = iVar7 + -1;
   } while (iVar7 != 0);
   iVar7 = 1;
   piVar11 = nullptr;
-  this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
-  text = st::fn_0040577C("BKG_RESEARCHW",0);
+  this_00->field_003C = st::machine_word_boundary_cast<undefined4>(this_00->field_003C + (g_nWidth_00806730 + -800) / 2);
+  text = st::fn_0040577C(st::mutable_c_string("BKG_RESEARCHW"),0);
   puVar4 = st::fn_006F1CE0(g_cMf32_00806790,1,text,piVar11,iVar7);
   this_00->field_0184 = puVar4;
   puVar4 = st::fn_00709AF0
-                     (PTR_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c20a0),0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar4;
   puVar4 = st::fn_00709AF0
-                     (PTR_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c38c8),0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar4;
   st::fn_00404241
             ((ProdPanelTy *)this_00,0x2722,0x3f,2,0xc1,0xc,0x85,0x4f,0x68,0xc4,0x4f,0x20,0x13,0x33,
-             "UPG_00");
+             st::mutable_c_string("UPG_00"));
   if (DAT_0080874e != '\x03') {
     local_c = this_00->field_005C;
     puVar5 = local_1fc + 1;
-    iVar9 = this_00->field_003C + 0x70;
+    iVar9 = st::machine_word_boundary_cast<int>(this_00->field_003C + 0x70);
     local_8 = 2;
     iVar7 = 0;
     do {
@@ -142,7 +142,7 @@ LAB_0053c30d:
     local_30 = 0xc0b4;
     local_38 = local_58;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_0282,nullptr,local_68,0);
+              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_0282,nullptr,st::machine_word_boundary_cast<undefined4>(local_68),0);
   }
   g_currentExceptionFrame = local_ac.previous;
   return;
@@ -193,12 +193,12 @@ void __thiscall st::fn_0053C500(ResearchPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\research.cpp",0x52,0,errorCode,
-                             "%s","ResearchPanelTy::Update");
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\research.cpp"),0x52,0,errorCode,
+                             st::mutable_c_string("%s"),"ResearchPanelTy::Update");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\research.cpp",0x52);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\research.cpp"),0x52);
   return;
 }
 
@@ -231,7 +231,7 @@ st::fn_0053C820(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
   piVar2 = param_1->field_0018;
   local_18 = *piVar2 - this->field_003C;
   if (this->field_005C == 0) {
-    local_14 = piVar2[1] - DAT_00806734;
+    local_14 = st::machine_word_boundary_cast<int>(piVar2[1] - DAT_00806734);
   }
   else {
     local_14 = piVar2[1] - this->field_0044;
@@ -280,12 +280,12 @@ st::fn_0053C820(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
     return;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar7 = st::fn_006AD4D0("E:\\__titans\\Andrey\\research.cpp",0x88,0,iVar5,"%s",
+  iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\research.cpp"),0x88,0,iVar5,st::mutable_c_string("%s"),
                              "ResearchPanelTy::PaintUpdBut");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar5,0,"E:\\__titans\\Andrey\\research.cpp",0x88);
+  st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\Andrey\\research.cpp"),0x88);
   return;
 }
 
@@ -326,12 +326,12 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\research.cpp",200,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\research.cpp"),200,0,iVar3,st::mutable_c_string("%s"),
                                "ResearchPanelTy::GetMessage");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\research.cpp",200);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\research.cpp"),200);
     return 0xffff;
   }
   iVar7 = 2;
@@ -402,7 +402,7 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
   else {
     switch(SVar1) {
     case MESS_BLDLABPANELTY_C0A4:
-      this_00->field_0199 = message->arg0;
+      this_00->field_0199 = static_cast<undefined4>((message->arg0).u32);
       st::fn_00405664(this_00);
       st::fn_00405E2F(0xae);
       g_currentExceptionFrame = local_58.previous;
@@ -417,7 +417,7 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
       return 0;
     case MESS_RESEARCHPANELTY_C0B4:
       st::fn_00403EA4
-                ((ProdPanelTy *)this_00,(AnonShape_0053FEE0_A49592EB *)message,st::fn_00401BA4);
+                ((ProdPanelTy *)this_00,(AnonShape_0053FEE0_A49592EB *)message,st::pointer_boundary_cast<undefined *>(st::fn_00401BA4));
     }
   }
   g_currentExceptionFrame = local_58.previous;

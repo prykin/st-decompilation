@@ -21,9 +21,14 @@
    [STReturnSemanticsApplier] repair_unsafe_eax_rollback.
    Evidence: restore the earlier evidence-backed void type after an unsafe automated rollback;
    post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=8,
-   ignored=81, unknown=0 */
+   ignored=81, unknown=0
 
-void __thiscall
+   [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=8, ignored=81, unknown=0 */
+
+VisibleClassTy_sub_00558C00_param_1Enum __thiscall
 VisibleClassTy::sub_00558C00
           (VisibleClassTy *this,VisibleClassTy_sub_00558C00_param_1Enum param_1,int param_2,
           int param_3,int *param_4,int *param_5)
@@ -35,7 +40,7 @@ VisibleClassTy::sub_00558C00
   case CASE_0:
     *param_4 = (param_2 - param_3) * 0xb505 + this->field_0030 * 0x8000 >> 0x10;
     *param_5 = (param_2 + param_3) * 0xb505 + 0x8fc3c >> 0x10;
-    return;
+    return (param_2 + param_3) * 0x141d;
   case CASE_1:
     *param_4 = (param_2 + param_3) * 0xb505 + 0x8fc3c >> 0x10;
     iVar1 = param_3;
@@ -44,7 +49,7 @@ VisibleClassTy::sub_00558C00
   case CASE_2:
     *param_4 = (param_3 - param_2) * 0xb505 + this->field_0030 * 0x8000 >> 0x10;
     *param_5 = ((param_2 + param_3) * -0xb505 + -0x8fc3c >> 0x10) + -1 + this->field_0034;
-    return;
+    return (VisibleClassTy_sub_00558C00_param_1Enum)param_5;
   case CASE_3:
     *param_4 = ((param_2 + param_3) * -0xb505 + -0x8fc3c >> 0x10) + -1 + this->field_0030;
     iVar1 = param_2;
@@ -52,8 +57,9 @@ VisibleClassTy::sub_00558C00
   default:
     goto switchD_00558c11_default;
   }
-  *param_5 = (iVar1 - param_3) * 0xb505 + this->field_0034 * 0x8000 >> 0x10;
+  param_1 = this->field_0034 * 0x8000;
+  *param_5 = (int)((iVar1 - param_3) * 0xb505 + param_1) >> 0x10;
 switchD_00558c11_default:
-  return;
+  return param_1;
 }
 

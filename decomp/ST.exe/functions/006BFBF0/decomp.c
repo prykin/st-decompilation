@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
+/* [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=4, ignored=1, unknown=0 */
+
+int FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
 
 {
   undefined1 *puVar1;
@@ -80,7 +85,7 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
     iVar7 = (**(code **)(**(int **)puVar1 + 0x2c))
                       (*(int **)puVar1,0,local_34[2],&local_8,&param_1,&local_10,&local_c,0);
     if (iVar7 == 0) {
-      FUN_006bfe70(local_8,(AnonShape_006BFE70_9EDC24A5 *)pAVar4,param_1);
+      FUN_006bfe70(local_8,(AnonShape_006BFE70_9EDC24A5 *)pAVar4,(int)param_1);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar7 = (**(code **)(**(int **)puVar1 + 0x4c))
                         (*(int **)puVar1,local_8,param_1,local_10,local_c);
@@ -98,7 +103,7 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)*piVar3)(piVar3,&DAT_0079eaa8,puVar2);
           if (iVar7 != 0) {
-            return;
+            return iVar7;
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(**(int **)puVar2 + 0x4c))
@@ -106,19 +111,19 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
                              *(undefined4 *)&pAVar4->field_0x3c,*(undefined4 *)&pAVar4->field_0x40,1
                             );
           if (iVar7 != 0) {
-            return;
+            return iVar7;
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(**(int **)puVar2 + 0x44))
                             (*(int **)puVar2,*(undefined4 *)&pAVar4->field_0x44,1);
           if (iVar7 != 0) {
-            return;
+            return iVar7;
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(**(int **)puVar2 + 0x40))
                             (*(int **)puVar2,*(undefined4 *)&pAVar4->field_0x48,1);
           if (iVar7 != 0) {
-            return;
+            return iVar7;
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(*DAT_008568bc + 0x44))(DAT_008568bc);
@@ -139,6 +144,6 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
       }
     }
   }
-  return;
+  return iVar7;
 }
 

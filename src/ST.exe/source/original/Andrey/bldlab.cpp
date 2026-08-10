@@ -28,28 +28,28 @@ void __thiscall st::fn_004EFB60(BldLabPanelTy *this)
     pBVar2 = (BldLabPanelTy_field_027ADArray *)
              st::fn_006AE290(nullptr,0x28,0x30,10);
     this_00->field_027A = pBVar2;
-    this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
-    puVar3 = st::fn_006F1CE0(g_cMf32_00806790,1,"BKG_BUILDLABW",nullptr,1);
+    this_00->field_003C = st::machine_word_boundary_cast<undefined4>(this_00->field_003C + (g_nWidth_00806730 + -800) / 2);
+    puVar3 = st::fn_006F1CE0(g_cMf32_00806790,1,st::mutable_c_string("BKG_BUILDLABW"),nullptr,1);
     this_00->field_0184 = puVar3;
     puVar3 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c1910),0xffffffff,0,1,0,nullptr);
     this_00->field_0188 = puVar3;
     puVar3 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,"OBJSD",0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,st::mutable_c_string("OBJSD"),0xffffffff,0,1,0,nullptr);
     this_00->field_018C = puVar3;
     st::fn_00404241
               ((ProdPanelTy *)this_00,0x2726,0x3f,2,0xc1,0xc,0x81,99,100,0xc0,99,0x25,0x14,0x31,
-               "OBJS_0");
+               st::mutable_c_string("OBJS_0"));
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\bldlab.cpp",0x1d,0,errorCode,"%s"
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\bldlab.cpp"),0x1d,0,errorCode,st::mutable_c_string("%s")
                              ,"BldLabPanelTy::InitBldLabPanel");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\bldlab.cpp",0x1d);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\bldlab.cpp"),0x1d);
   return;
 }
 
@@ -93,12 +93,12 @@ void __thiscall st::fn_004EFD10(BldLabPanelTy *this)
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\bldlab.cpp",0x30,0,errorCode,
-                               "%s","BldLabPanelTy::Update");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\bldlab.cpp"),0x30,0,errorCode,
+                               st::mutable_c_string("%s"),"BldLabPanelTy::Update");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\bldlab.cpp",0x30);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\bldlab.cpp"),0x30);
   }
   return;
 }
@@ -133,7 +133,7 @@ void __thiscall st::fn_004EFFE0(BldLabPanelTy *this,AnonShape_004EF320_444F9AB1 
   piVar2 = param_1->field_0018;
   local_18 = *piVar2 - this->field_003C;
   if (this->field_005C == 0) {
-    local_14 = piVar2[1] - DAT_00806734;
+    local_14 = st::machine_word_boundary_cast<int>(piVar2[1] - DAT_00806734);
   }
   else {
     local_14 = piVar2[1] - this->field_0044;
@@ -181,12 +181,12 @@ void __thiscall st::fn_004EFFE0(BldLabPanelTy *this,AnonShape_004EF320_444F9AB1 
     return;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar8 = st::fn_006AD4D0("E:\\__titans\\Andrey\\bldlab.cpp",0x66,0,iVar6,"%s",
+  iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\bldlab.cpp"),0x66,0,iVar6,st::mutable_c_string("%s"),
                              "BldLabPanelTy::PaintUpdBut");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar6,0,"E:\\__titans\\Andrey\\bldlab.cpp",0x66);
+  st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\Andrey\\bldlab.cpp"),0x66);
   return;
 }
 
@@ -221,10 +221,10 @@ int __thiscall st::fn_004F0210(BldLabPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\bldlab.cpp",0x9a,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\bldlab.cpp"),0x9a,0,iVar4,st::mutable_c_string("%s"),
                                "BldLabPanelTy::GetMessage");
     if (iVar5 == 0) {
-      st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\bldlab.cpp",0x9a);
+      st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\bldlab.cpp"),0x9a);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -286,7 +286,7 @@ int __thiscall st::fn_004F0210(BldLabPanelTy *this,STMessage *message)
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    this_00->field_0199 = message->arg0;
+    this_00->field_0199 = static_cast<undefined4>((message->arg0).u32);
     st::fn_004038EB(this_00);
   }
   st::fn_00405E2F(0xae);

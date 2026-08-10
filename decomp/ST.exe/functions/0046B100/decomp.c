@@ -30,25 +30,25 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   int local_EAX_4880;
   int local_EAX_4958;
   int iVar14;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STBoatC *extraout_ECX;
   STBoatC *pSVar15;
   uint uVar16;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_04;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_05;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_06;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
@@ -127,7 +127,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
     this->field_050C = 0;
     sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
     iVar14 = sub_0045FF50(this,0);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     pSVar15 = extraout_ECX;
     if (iVar14 == -1) {
       return -1;
@@ -145,8 +145,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
                                       ,nullptr,0,nullptr), iVar14 == 0)) {
         return 0;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)((int)this->field_06CB + 0x2c) == 0x19) {
+      if (this->field_06F7 == CASE_19) {
         this->field_0508 = CASE_3 - (this->field_0502 != 0);
       }
       else {
@@ -245,7 +244,7 @@ LAB_0046b5ac:
       }
       if (iVar14 == 1) {
         this->field_0508 = CASE_7;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         thunk_FUN_0048df40(this,extraout_EDX);
         sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
         iVar14 = sub_0045FF50(this,0);
@@ -297,8 +296,7 @@ LAB_0046b5ac:
         if (this->field_02BF != '\0') {
           local_10 = (undefined4 *)&this->field_0x2b3;
           do {
-            puVar11 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(ushort *)(local_10 + 1),
+            puVar11 = thunk_FUN_0041dc40(local_4c,(short)*local_10,*(ushort *)(local_10 + 1),
                                          this->field_006C);
             local_c = *puVar11;
             local_8 = *(short *)(puVar11 + 1);
@@ -366,10 +364,8 @@ LAB_0046b5ac:
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         if (local_1c == 0) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar14 = *(int *)((int)this->field_06CB + 0x2c);
           this->field_050C = 0;
-          this->field_0508 = (-(uint)(iVar14 != 0x19) & 2) + CASE_3;
+          this->field_0508 = (-(uint)(this->field_06F7 != CASE_19) & 2) + CASE_3;
         }
       }
       goto cf_common_exit_0046C3C5;
@@ -410,8 +406,7 @@ LAB_0046b5ac:
         if (this->field_02BF != '\0') {
           local_10 = (undefined4 *)&this->field_0x2b3;
           do {
-            puVar11 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(ushort *)(local_10 + 1),
+            puVar11 = thunk_FUN_0041dc40(local_4c,(short)*local_10,*(ushort *)(local_10 + 1),
                                          this->field_006C);
             local_c = *puVar11;
             local_8 = *(short *)(puVar11 + 1);
@@ -519,12 +514,12 @@ LAB_0046b6e2:
         iVar14 = thunk_FUN_004ae0b0(this->field_04DD,(int)this->field_04DF,(int)this->field_04E1,
                                     this->field_04E3,this->field_0024,nullptr,nullptr,
                                     nullptr,0,nullptr);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar8 = extraout_EDX_00;
-        /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         if ((iVar14 != 0) &&
            (STPlaySystemC::CreateGameObject(this->field_000C,0x3e9,0,0,&local_d8,0),
-           uVar8 = extraout_EDX_01, *(int *)((int)this->field_06CB + 0x2c) == 0x19)) {
+           uVar8 = extraout_EDX_01, this->field_06F7 == CASE_19)) {
           local_44.arg0.ptr = &local_68;
           local_68 = 10000;
           local_64 = 0;
@@ -540,12 +535,12 @@ LAB_0046b6e2:
         iVar14 = thunk_FUN_004ae0b0(this->field_04DD,(int)this->field_04DF,(int)this->field_04E1,
                                     this->field_04E3,this->field_0024,nullptr,nullptr,
                                     nullptr,0,nullptr);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar8 = extraout_EDX_02;
-        /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         if ((iVar14 != 0) &&
            (STPlaySystemC::CreateGameObject(this->field_000C,0x3e9,0,0,&local_d8,0),
-           uVar8 = extraout_EDX_03, *(int *)((int)this->field_06CB + 0x2c) == 0x19)) {
+           uVar8 = extraout_EDX_03, this->field_06F7 == CASE_19)) {
           local_44.arg0.ptr = &local_68;
           local_68 = 10000;
           local_64 = 0;
@@ -611,13 +606,12 @@ cf_common_exit_0046C04E:
       if (this->field_050C == 3) {
         local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,(int *)&local_18);
         local_20 = 0;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar8 = extraout_EDX_04;
         if (this->field_02BF != '\0') {
           local_10 = (undefined4 *)&this->field_0x2b3;
           do {
-            puVar11 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(ushort *)(local_10 + 1),
+            puVar11 = thunk_FUN_0041dc40(local_4c,(short)*local_10,*(ushort *)(local_10 + 1),
                                          this->field_006C);
             local_c = *puVar11;
             local_8 = *(short *)(puVar11 + 1);
@@ -670,7 +664,7 @@ cf_common_exit_0046C04E:
                        bVar27);
             local_20 = local_20 + 1;
             local_10 = (undefined4 *)((int)local_10 + 6);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar8 = extraout_EDX_05;
           } while (local_20 < (int)(uint)(byte)this->field_02BF);
         }
@@ -726,7 +720,7 @@ cf_error_exit_0046C422:
       return -(uint)(iVar14 != 0);
     }
     if (iVar14 != 3) goto cf_common_exit_0046C3C5;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     thunk_FUN_0048df40(this,extraout_EDX_06);
     sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
 LAB_0046c3be:

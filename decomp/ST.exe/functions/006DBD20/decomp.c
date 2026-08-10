@@ -13,13 +13,15 @@
 
    [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 004A9540 -> 006DBD20 @ 004A9724; data at 00807598 | 006DC050 -> 006DBD20 @ 006DC10A;
-   ST3DSMAPContext::sub_006DC050 this */
+   ST3DSMAPContext::sub_006DC050 this
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004A9540 -> 006DBD20 @ 004A9724; data at 0080759C */
 
 void __thiscall
 ST3DSMAPContext::sub_006DBD20
-          (ST3DSMAPContext *param_1,AnonPointee_ST3DSMAPContext_0004 *param_2,uint param_3,
-          undefined4 param_4,int param_5,int param_6,double param_7,double param_8,double param_9,
-          double param_10)
+          (ST3DSMAPContext *param_1,DDXContext *param_2,uint param_3,undefined4 param_4,int param_5,
+          int param_6,double param_7,double param_8,double param_9,double param_10)
 
 {
   void *pvVar1;
@@ -97,10 +99,9 @@ ST3DSMAPContext::sub_006DBD20
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     fVar3 = (float10)iVar2 * extraout_ST0;
     param_1->field_0360 = (double)fVar3;
-    sub_006DBD20((ST3DSMAPContext *)param_1->field_0358,nullptr,0,0,
-                 iVar2,iVar2,(double)(fVar3 * (float10)_DAT_0079df58),
-                 (double)(fVar3 * (float10)_DAT_007901c0),(double)(fVar3 * (float10)_DAT_0079df58),
-                 (double)(fVar3 * (float10)_DAT_007901c0));
+    sub_006DBD20((ST3DSMAPContext *)param_1->field_0358,nullptr,0,0,iVar2,iVar2,
+                 (double)(fVar3 * (float10)_DAT_0079df58),(double)(fVar3 * (float10)_DAT_007901c0),
+                 (double)(fVar3 * (float10)_DAT_0079df58),(double)(fVar3 * (float10)_DAT_007901c0));
     iVar2 = param_1->field_0358;
     param_1->field_038C = *(undefined4 *)(iVar2 + 0xc);
     param_1->field_0390 = *(undefined4 *)(iVar2 + 0x14);

@@ -32,12 +32,12 @@ st::fn_00427090
 
   iVar9 = param_2;
   if (DAT_007f4d84 <= DAT_007f4d78) {
-    pvVar2 = st::fn_006ACF50(DAT_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
+    pvVar2 = st::fn_006ACF50(st::pointer_boundary_cast<void *>(DAT_007f4d6c),(DAT_007f4d84 * 3 + 0x1e) * 4);
     if (pvVar2 == nullptr) {
       return 0;
     }
     DAT_007f4d84 = DAT_007f4d84 + 10;
-    DAT_007f4d6c = pvVar2;
+    DAT_007f4d6c = st::machine_word_boundary_cast<undefined4>(pvVar2);
   }
   pvVar2 = st::fn_006AAC70((param_1 * 0xfffffff + 2 + param_2) * 0x10);
   if (pvVar2 == nullptr) {
@@ -313,12 +313,12 @@ st::fn_00427BB0
 LAB_00427cca:
           iVar8 = iVar7;
           if (DAT_007f4d84 <= DAT_007f4d78) {
-            pvVar2 = st::fn_006ACF50(DAT_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
+            pvVar2 = st::fn_006ACF50(st::pointer_boundary_cast<void *>(DAT_007f4d6c),(DAT_007f4d84 * 3 + 0x1e) * 4);
             if (pvVar2 == nullptr) {
               return 0;
             }
             DAT_007f4d84 = DAT_007f4d84 + 10;
-            DAT_007f4d6c = pvVar2;
+            DAT_007f4d6c = st::machine_word_boundary_cast<undefined4>(pvVar2);
           }
           pvVar2 = st::fn_006AAC70(0x20);
           if (pvVar2 == nullptr) {

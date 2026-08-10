@@ -165,12 +165,12 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_03;
   undefined2 uVar25;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_04;
   STWorldObject *pSVar24;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_05;
@@ -180,35 +180,35 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_07;
   STGroupBoatCVTable *pSVar26;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_04;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_05;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_06;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_07;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_08;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_09;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_10;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_11;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_12;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_13;
   uint uVar27;
   int iVar30;
@@ -222,7 +222,8 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   AnonShape_0044EE30_F343D8F0 *pAVar38;
   byte *pbVar39;
   ushort *puVar40;
-  short sVar41;
+  STBoatC_field_06F7State SVar41;
+  short sVar42;
   CHAR local_284;
   undefined4 local_283 [63];
   InternalExceptionFrame local_184;
@@ -304,13 +305,12 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   }
   STSprGameObjC::GetMessage((STSprGameObjC *)local_ec,message);
   SVar8 = message->id;
-  sVar41 = (short)this_00;
+  sVar42 = (short)this_00;
   if (MESS_ID_ALLCREATE < SVar8) {
     if (SVar8 < MESS_SHARED_0129) {
       if (SVar8 != MESS_HITKILL) {
         if (SVar8 == MESS_SHARED_0121) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (*(int *)((int)this_00->field_06CB + 0x2c) != 0x23) {
+          if (this_00->field_06F7 != CASE_23) {
             this_00->field_0736 = *(undefined4 *)((message->arg0).u32 + 4);
             if (this_00->field_045D == CASE_3) {
               g_currentExceptionFrame = local_184.previous;
@@ -469,7 +469,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
                           (short)this_00->field_0018));
       this_00->field_0826 = pSVar31->field_0008;
       dVar15 = this_00->slot_2C();
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(extraout_ECX_00), (uint8_t)(*(undefined1 *)&this_00->field_0024)),dVar15);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (this_00->field_0024 == (uint)*(byte *)(this_00->field_0010 + 0x112d)) {
@@ -488,7 +488,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
         this_01 = thunk_FUN_0042b760(*(char *)&this_00->field_0024,this_00->field_0030);
         pSVar31 = local_1c;
         if (this_01 != nullptr) {
-          this_01->sub_00498D20(0x6a,sVar41 + 0x32);
+          this_01->sub_00498D20(0x6a,sVar42 + 0x32);
           pSVar31 = local_1c;
         }
       }
@@ -501,10 +501,9 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
          (pSVar31->field_0018 == 4)) {
         uVar18 = 0xffffffff;
         local_EAX_48884 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         thunk_FUN_0062b770((int)this_00->field_0041,(int)this_00->field_0043,
-                           (int)this_00->field_0045,*(undefined4 *)((int)this_00->field_06CB + 0x2c)
-                           ,(int)this_00,(int)this_00->field_006C,local_EAX_48884,uVar18);
+                           (int)this_00->field_0045,this_00->field_06F7,(int)this_00,
+                           (int)this_00->field_006C,local_EAX_48884,uVar18);
       }
       if (pSVar31->field_0018 == 3) {
         thunk_FUN_006377b0(this_00->field_01ED,0,(int)this_00->field_0041,(int)this_00->field_0043,
@@ -522,9 +521,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
         g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      TLOEmbryoTy::sub_0041C3F0
-                ((TLOEmbryoTy *)this_00,*(undefined **)((int)this_00->field_06CB + 0x3f));
+      TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this_00,(undefined *)this_00->field_070A);
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
@@ -629,9 +626,8 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((this_00->field_045D == CASE_8) && (*(int *)((int)this_00->field_06CB + 0x1c) != 2)) {
-      *(undefined4 *)((int)this_00->field_06CB + 0x1c) = 1;
+    if ((this_00->field_045D == CASE_8) && (this_00->field_06E7 != 2)) {
+      this_00->field_06E7 = 1;
     }
     iVar30 = this_00->field_0786;
     if ((0 < iVar30) && (iVar30 < 0x65)) {
@@ -735,13 +731,11 @@ LAB_00459eaa:
         }
       }
       if ((STField<int>(pSVar31,4) == 0xad) || (STField<int>(pSVar31,4) == 0xa1)) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar30 = *(int *)((int)this_00->field_06CB + 0x2c);
-        if (iVar30 == 9) {
+        if (this_00->field_06F7 == CASE_9) {
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
-        if (iVar30 == 0x15) {
+        if (this_00->field_06F7 == CASE_15) {
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
@@ -749,13 +743,11 @@ LAB_00459eaa:
       }
       goto LAB_00459f59;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar30 = *(int *)((int)this_00->field_06CB + 0x2c);
-    if (iVar30 == 9) {
+    if (this_00->field_06F7 == CASE_9) {
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    if (iVar30 == 0x15) {
+    if (this_00->field_06F7 == CASE_15) {
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
@@ -826,126 +818,125 @@ LAB_00459f59:
         (**(code **)*DAT_008117bc)(&local_9c);
       }
       this_00->field_02C0 = 1;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      switch(*(undefined4 *)((int)this_00->field_06CB + 0x2c)) {
-      case 1:
+      switch(this_00->field_06F7) {
+      case CASE_1:
         uVar25 = 0xcb;
         break;
-      case 2:
+      case CASE_2:
         uVar25 = 0xd1;
         break;
-      case 3:
+      case CASE_3:
         uVar25 = 0xd7;
         break;
-      case 4:
+      case CASE_4:
         uVar25 = 0xdd;
         break;
-      case 5:
+      case CASE_5:
         uVar25 = 0xe3;
         break;
-      case 6:
+      case CASE_6:
         uVar25 = 0xea;
         break;
-      case 7:
+      case CASE_7:
         uVar25 = 0xf1;
         break;
-      case 8:
+      case CASE_8:
         uVar25 = 0xf8;
         break;
-      case 9:
+      case CASE_9:
         uVar25 = 0x100;
         break;
-      case 10:
+      case CASE_A:
         uVar25 = 0x105;
         break;
-      case 0xb:
+      case CASE_B:
         uVar25 = 0x10b;
         break;
-      case 0xc:
+      case CASE_C:
         uVar25 = 0x111;
         break;
-      case 0xd:
+      case CASE_D:
         uVar25 = 0x12f;
         break;
-      case 0xe:
+      case CASE_E:
         uVar25 = 0x135;
         break;
-      case 0xf:
+      case CASE_F:
         uVar25 = 0x13b;
         break;
-      case 0x10:
+      case CASE_10:
         uVar25 = 0x141;
         break;
-      case 0x11:
+      case CASE_11:
         uVar25 = 0x147;
         break;
-      case 0x12:
+      case CASE_12:
         uVar25 = 0x14e;
         break;
-      case 0x13:
+      case CASE_13:
         uVar25 = 0x155;
         break;
-      case 0x14:
+      case CASE_14:
         uVar25 = 0x15c;
         break;
-      case 0x15:
+      case CASE_15:
         uVar25 = 0x164;
         break;
-      case 0x16:
+      case CASE_16:
         uVar25 = 0x169;
         break;
-      case 0x17:
+      case CASE_17:
         uVar25 = 0x171;
         break;
-      case 0x18:
+      case CASE_18:
         uVar25 = 0x177;
         break;
-      case 0x19:
+      case CASE_19:
         uVar25 = 0x193;
         break;
-      case 0x1a:
+      case CASE_1A:
         uVar25 = 0x19b;
         break;
-      case 0x1b:
+      case CASE_1B:
         uVar25 = 0x1a3;
         break;
-      case 0x1c:
+      case CASE_1C:
         uVar25 = 0x1a9;
         break;
-      case 0x1d:
+      case CASE_1D:
         uVar25 = 0x1af;
         break;
-      case 0x1e:
+      case CASE_1E:
         uVar25 = 0x1b6;
         break;
-      case 0x1f:
+      case CASE_1F:
         uVar25 = 0x1bc;
         break;
-      case 0x20:
+      case CASE_20:
         uVar25 = 0x1c2;
         break;
-      case 0x21:
+      case CASE_21:
         uVar25 = 0x1c8;
         break;
-      case 0x22:
+      case CASE_22:
         uVar25 = 0x1cf;
         break;
-      case 0x23:
+      case CASE_23:
         uVar25 = 0x1d6;
         break;
-      case 0x24:
+      case CASE_24:
         uVar25 = 0x1dc;
         break;
-      case 0x25:
+      case CASE_25:
         uVar25 = 0x17d;
         break;
-      case 0x26:
+      case CASE_26:
         uVar25 = 0x117;
         break;
-      case 0x27:
+      case CASE_27:
         uVar25 = 0x183;
         break;
-      case 0x28:
+      case CASE_28:
         uVar25 = 0x1e2;
         break;
       default:
@@ -954,16 +945,16 @@ LAB_00459f59:
       this_00->vfunc_90(2,uVar25);
       sub_0048D930(this_00);
       sub_0048DBA0(this_00);
-      sVar41 = this_00->field_0671;
+      sVar42 = this_00->field_0671;
       sVar4 = this_00->field_0673;
-      local_7c = (AnonShape_0060EA30_DCEB68AD *)STReplaceLowWord((uint32_t)(local_7c), (uint16_t)(sVar41));
+      local_7c = (AnonShape_0060EA30_DCEB68AD *)STReplaceLowWord((uint32_t)(local_7c), (uint16_t)(sVar42));
       sVar5 = this_00->field_066F;
-      if (((((sVar5 < 0) || (g_worldGrid.sizeX <= sVar5)) || (sVar41 < 0)) ||
-          ((g_worldGrid.sizeY <= sVar41 || (sVar4 < 0)))) || (g_worldGrid.sizeZ <= sVar4)) {
+      if (((((sVar5 < 0) || (g_worldGrid.sizeX <= sVar5)) || (sVar42 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar42 || (sVar4 < 0)))) || (g_worldGrid.sizeZ <= sVar4)) {
         pSVar24 = nullptr;
       }
       else {
-        pSVar24 = STGridAt3D(g_worldGrid, sVar5, sVar41, sVar4).objects[0];
+        pSVar24 = STGridAt3D(g_worldGrid, sVar5, sVar42, sVar4).objects[0];
         pSVar31 = local_1c;
       }
       if (((pSVar24 != nullptr) &&
@@ -1008,18 +999,18 @@ LAB_00459f59:
       thunk_FUN_004924a0(this_00);
       thunk_FUN_00492fc0((AnonShape_00492FC0_E6F586EF *)this_00);
       thunk_FUN_00493bc0(this_00);
-      sVar41 = this_00->field_06A9;
+      sVar42 = this_00->field_06A9;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      local_7c = (AnonShape_0060EA30_DCEB68AD *)CONCAT22(extraout_var_01,sVar41);
+      local_7c = (AnonShape_0060EA30_DCEB68AD *)CONCAT22(extraout_var_01,sVar42);
       sVar4 = this_00->field_06AD;
       sVar5 = this_00->field_06AB;
-      if ((((sVar41 < 0) || (g_worldGrid.sizeX <= sVar41)) || (sVar5 < 0)) ||
+      if ((((sVar42 < 0) || (g_worldGrid.sizeX <= sVar42)) || (sVar5 < 0)) ||
          (((g_worldGrid.sizeY <= sVar5 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)))) {
         local_28 = nullptr;
       }
       else {
         local_28 = (AnonShape_004B9D90_4F3151F9 *)
-                   STGridAt3D(g_worldGrid, sVar41, sVar5, sVar4).objects[0];
+                   STGridAt3D(g_worldGrid, sVar42, sVar5, sVar4).objects[0];
       }
       if (((local_28 == nullptr) ||
           (*(AnonShape_005EFAE0_B406B78B **)&local_28->field_0x18 != this_00->field_06AF)) ||
@@ -1050,19 +1041,19 @@ LAB_00459f59:
       return 0;
     }
     if ((this_00->field_045D == CASE_4) && (this_00->field_0580 == CASE_5)) {
-      sVar41 = this_00->field_0554;
+      sVar42 = this_00->field_0554;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_7c = (AnonShape_0060EA30_DCEB68AD *)CONCAT22(uVar25,sVar41);
+      local_7c = (AnonShape_0060EA30_DCEB68AD *)CONCAT22(uVar25,sVar42);
       sVar4 = this_00->field_0558;
       sVar5 = this_00->field_0556;
-      if ((sVar41 < 0) ||
-         ((((g_worldGrid.sizeX <= sVar41 || (sVar5 < 0)) || (g_worldGrid.sizeY <= sVar5)) ||
+      if ((sVar42 < 0) ||
+         ((((g_worldGrid.sizeX <= sVar42 || (sVar5 < 0)) || (g_worldGrid.sizeY <= sVar5)) ||
           ((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)))))) {
         local_10 = nullptr;
       }
       else {
         local_10 = (STFishC *)
-                   STGridAt3D(g_worldGrid, sVar41, sVar5, sVar4).objects[0];
+                   STGridAt3D(g_worldGrid, sVar42, sVar5, sVar4).objects[0];
       }
       if ((local_10 != nullptr) && (local_10->field_0018 == this_00->field_055A)) {
         thunk_FUN_004e2200(local_10,this_00->field_0568,this_00->field_0018,this_00->field_0716);
@@ -1158,8 +1149,7 @@ LAB_0045048a:
          (iVar30 = this_00->vfunc_7C(), iVar30 < 0x33)) ||
         ((this_00->field_07EE == 3 &&
          (iVar30 = this_00->vfunc_7C(), iVar30 < 0x4c)))))) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_EAX_5934 = thunk_FUN_004e8030(*(int *)((int)this_00->field_06CB + 0x2c));
+      local_EAX_5934 = thunk_FUN_004e8030(this_00->field_06F7);
       if (local_EAX_5934 == 3) {
         if (((this_00->field_045D != CASE_16) &&
             (local_EAX_6122 = CheckPBoxCmd(this_00,CASE_16), local_EAX_6122 == 0)) &&
@@ -1198,15 +1188,14 @@ LAB_00450695:
     local_1c = thunk_FUN_0042b760(*(char *)&this_00->field_0024,this_00->field_0030);
     uVar17 = this_00->field_07AA + 1;
     this_00->field_07AA = uVar17;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    switch(*(undefined4 *)((int)this_00->field_06CB + 0x2c)) {
-    case 1:
-    case 10:
-    case 0x1e:
-    case 0x20:
-    case 0x22:
-    case 0x23:
-    case 0x28:
+    switch(this_00->field_06F7) {
+    case CASE_1:
+    case CASE_A:
+    case CASE_1E:
+    case CASE_20:
+    case CASE_22:
+    case CASE_23:
+    case CASE_28:
       if (this_00->field_07A2 < 1) {
         uVar17 = this_00->field_079E;
         this_00->field_07A2 = uVar17;
@@ -1217,15 +1206,15 @@ LAB_00450695:
         local_EAX_6595 =
              thunk_FUN_004de410((void *)this_00->field_0024,this_00->field_079A,this_00->field_079E);
         this_00->field_07A2 = local_EAX_6595;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar17 = extraout_EDX_00;
       }
       break;
-    case 0xf:
-    case 0x12:
-    case 0x16:
-    case 0x17:
-    case 0x27:
+    case CASE_F:
+    case CASE_12:
+    case CASE_16:
+    case CASE_17:
+    case CASE_27:
       iVar30 = this_00->field_07AE % this_00->field_07B2 + this_00->field_07B2 * this_00->field_07A2
       ;
       this_00->field_07AE = iVar30;
@@ -1233,8 +1222,7 @@ LAB_00450695:
         this_00->field_07AE = iVar30 + 1;
         iVar30 = (iVar30 + 1) / this_00->field_07B2;
         this_00->field_07A2 = iVar30;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if ((*(int *)((int)this_00->field_06CB + 0x2c) != 10) && (iVar30 == 0)) {
+        if ((this_00->field_06F7 != CASE_A) && (iVar30 == 0)) {
           local_EAX_6464 =
                thunk_FUN_004dfb90(this_00->field_0024,this_00->field_079E,
                                   *(int *)(&DAT_00793ff0 + this_00->field_079A * 4));
@@ -1248,42 +1236,38 @@ LAB_00450695:
         }
       }
       iVar30 = thunk_FUN_004e60d0(this_00->field_0024,0x3a);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar17 = extraout_EDX;
       if (0 < iVar30) {
         this_00->field_07AA = this_00->field_07AA + 1;
       }
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (((*(int *)((int)this_00->field_06CB + 0x2c) != 0xb) && (this_00->field_07B6 != 0)) &&
+    if (((this_00->field_06F7 != CASE_B) && (this_00->field_07B6 != 0)) &&
        (this_00->field_07BE == 0)) {
       local_EAX_6651 =
            thunk_FUN_004de410((void *)this_00->field_0024,this_00->field_07B6,this_00->field_07BA);
       this_00->field_07BE = local_EAX_6651;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar17 = extraout_EDX_01;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar30 = *(int *)((int)this_00->field_06CB + 0x2c);
-    if ((((iVar30 == 0x24) || (iVar30 == 0x1b)) || (iVar30 == 0x1d)) &&
+    SVar41 = this_00->field_06F7;
+    if ((((SVar41 == CASE_24) || (SVar41 == CASE_1B)) || (SVar41 == CASE_1D)) &&
        ((this_00->field_071E < 0x14 &&
         (uVar17 = g_playSystem_00802A38->field_00E4 % 0x3c, uVar17 == 0)))) {
       this_00->field_071E = this_00->field_071E + 1;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (((*(int *)((int)this_00->field_06CB + 0x2c) == 0x17) && (this_00->field_072A < 0x28)) &&
+    if (((this_00->field_06F7 == CASE_17) && (this_00->field_072A < 0x28)) &&
        (uVar17 = g_playSystem_00802A38->field_00E4 % 0xf, uVar17 == 0)) {
       this_00->field_072A = this_00->field_072A + 1;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)((int)this_00->field_06CB + 0x2c) == 0x23) {
+    if (this_00->field_06F7 == CASE_23) {
       if (this_00->field_072E == 1) {
         uVar17 = g_playSystem_00802A38->field_00E4 % 0x28;
         if ((uVar17 == 0) &&
            (iVar30 = this_00->field_0722 + -1, this_00->field_0722 = iVar30, iVar30 == 0)) {
           this_00->field_072E = 0;
           this_00->vfunc_90(3,0x16d);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar17 = extraout_EDX_02;
         }
       }
@@ -1292,22 +1276,21 @@ LAB_00450695:
         this_00->field_0722 = this_00->field_0722 + 1;
       }
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar30 = *(int *)((int)this_00->field_06CB + 0x2c);
-    if ((iVar30 == 0x16) || (iVar30 == 0x25)) {
+    SVar41 = this_00->field_06F7;
+    if ((SVar41 == CASE_16) || (SVar41 == CASE_25)) {
       if (this_00->field_0732 == 1) {
-        if ((((iVar30 == 0x16) && (g_playSystem_00802A38->field_00E4 % 0x1e == 0)) ||
-            ((iVar30 == 0x25 && (g_playSystem_00802A38->field_00E4 % 0x5a == 0)))) &&
+        if ((((SVar41 == CASE_16) && (g_playSystem_00802A38->field_00E4 % 0x1e == 0)) ||
+            ((SVar41 == CASE_25 && (g_playSystem_00802A38->field_00E4 % 0x5a == 0)))) &&
            (iVar30 = this_00->field_0726 + -1, this_00->field_0726 = iVar30, iVar30 == 0)) {
           this_00->field_0732 = 0;
           this_00->vfunc_90(3,0x16d);
         }
         thunk_FUN_004945c0((AnonShape_004945C0_2B3B394D *)this_00);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar17 = extraout_EDX_03;
       }
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      else if ((iVar30 == 0x16) &&
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
+      else if ((SVar41 == CASE_16) &&
               (iVar30 = thunk_FUN_004e60d0(this_00->field_0024,0x92), uVar17 = extraout_EDX_04,
               0 < iVar30)) {
         iVar30 = this_00->field_0726;
@@ -1358,7 +1341,7 @@ joined_r0x00450a10:
         local_f4 = 1;
         local_9c.id = MESS_TORPHIT;
         this_00->GetMessage(&local_9c);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar17 = extraout_EDX_05;
       }
       this_00->field_076E = this_00->field_076E + 1;
@@ -1371,19 +1354,18 @@ joined_r0x00450a10:
       if (this_00->field_0465 == nullptr) {
         puVar21 = thunk_FUN_00631fd0();
         this_00->field_0465 = puVar21;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar17 = extraout_EDX_07;
         if (puVar21 != nullptr) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          thunk_FUN_006324c0(puVar21,CASE_0,*(undefined4 *)((int)this_00->field_06CB + 0x2c));
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          thunk_FUN_006324c0(puVar21,CASE_0,this_00->field_06F7);
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar17 = extraout_EDX_08;
         }
       }
       else {
         thunk_FUN_00636060(this_00->field_0465,(int)this_00->field_0041,(int)this_00->field_0043,
                            (int)this_00->field_0045,(int)this_00->field_006C,100);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar17 = extraout_EDX_06;
       }
       if (this_00->field_045D == CASE_3) {
@@ -1410,32 +1392,29 @@ LAB_00450c1e:
           thunk_FUN_00635fd0(this_00->field_0465);
           Library::MSVCRT::FUN_0072e2b0(this_00->field_0465);
           this_00->field_0465 = nullptr;
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar17 = extraout_EDX_09;
         }
         if (this_00->field_045D != CASE_3) {
           local_5c = g_playSystem_00802A38->field_00E4;
           CmdToObj(this_00,CASE_3,&local_5c);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar17 = extraout_EDX_10;
         }
       }
     }
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     if (((this_00->field_070E == 0) && (uVar17 = g_playSystem_00802A38->field_00E4 % 3, uVar17 == 0)
         ) && (iVar30 = thunk_FUN_004e60d0(this_00->field_0024,10), uVar17 = extraout_EDX_11,
              0 < iVar30)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_0041c6e0(this_00,*(undefined **)((int)this_00->field_06CB + 0x3f));
+      thunk_FUN_0041c6e0(this_00,(undefined *)this_00->field_070A);
       this_00->field_070E = 1;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar17 = extraout_EDX_12;
     }
     if (this_00->field_02C0 == 1) {
       this_00->field_02C0 = 0;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar30 = *(int *)((int)this_00->field_06CB + 0x2c);
-      if (iVar30 == 9) {
+      if (this_00->field_06F7 == CASE_9) {
         iVar30 = thunk_FUN_004accd0(&this_00->field_01D5,'\b');
         if ((iVar30 == 0) &&
            (iVar30 = STT3DSprC::LoadSequence
@@ -1448,7 +1427,7 @@ LAB_00450e28:
                      iVar30);
         }
       }
-      else if (iVar30 == 0x15) {
+      else if (this_00->field_06F7 == CASE_15) {
         iVar30 = STT3DSprC::LoadSequence
                            ((STT3DSprC *)&this_00->field_01D5,8,PTR_00806774,"expdstrw",
                             CASE_1D);
@@ -1486,7 +1465,7 @@ LAB_00450e28:
       uVar17 = (uint)*(byte *)(this_00->field_0010 + 0x112d);
       if (this_00->field_0024 == uVar17) {
         thunk_FUN_004d8b70((char)this_00->field_0024);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar17 = extraout_EDX_13;
       }
     }
@@ -1505,12 +1484,10 @@ LAB_00450e28:
         STT3DSprC::StopShow((STT3DSprC *)puVar21,0xd);
         STT3DSprC::StopShow((STT3DSprC *)puVar21,0xc);
         STT3DSprC::StopShow((STT3DSprC *)puVar21,0xb);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (*(int *)((int)this_00->field_06CB + 0x2c) == 0x21) {
+        if (this_00->field_06F7 == CASE_21) {
           uVar17 = local_c;
           local_EAX_8444 = thunk_FUN_004ad650((STT3DSprC *)puVar21);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          uVar18 = *(undefined4 *)((int)this_00->field_06CB + 0x2c);
+          SVar41 = this_00->field_06F7;
           sVar6 = this_00->field_006C;
           sVar7 = this_00->field_0045;
           sVar5 = this_00->field_0043;
@@ -1521,12 +1498,11 @@ LAB_00450e28:
           local_EAX_8444 = thunk_FUN_004ad650((STT3DSprC *)puVar21);
           sVar6 = this_00->field_006C;
           sVar7 = this_00->field_0045;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          uVar18 = *(undefined4 *)((int)this_00->field_06CB + 0x2c);
+          SVar41 = this_00->field_06F7;
           sVar5 = this_00->field_0043;
           sVar4 = this_00->field_0041;
         }
-        thunk_FUN_0062b770((int)sVar4,(int)sVar5,(int)sVar7,uVar18,(int)this_00,(int)sVar6,
+        thunk_FUN_0062b770((int)sVar4,(int)sVar5,(int)sVar7,SVar41,(int)this_00,(int)sVar6,
                            local_EAX_8444,uVar17);
         if (this_00->field_0465 != nullptr) {
           thunk_FUN_00635fd0(this_00->field_0465);
@@ -1534,8 +1510,7 @@ LAB_00450e28:
           this_00->field_0465 = nullptr;
         }
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((*(int *)((int)this_00->field_06CB + 0x2c) == 0x21) && (local_c == 0x18)) {
+      if ((this_00->field_06F7 == CASE_21) && (local_c == 0x18)) {
         thunk_FUN_00637350((int)this_00->field_0041,(int)this_00->field_0043,
                            (int)this_00->field_0045,3,this_00->field_0024,
                            (ushort)this_00->field_0018,this_00->field_0032,0x21,200);
@@ -1543,26 +1518,22 @@ LAB_00450e28:
       if (local_c == *(uint *)(&DAT_007a8f15 + this_00->field_082A * 0x45)) {
         thunk_FUN_004ad5e0((STT3DSprC *)puVar21);
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (((local_c == *(uint *)(&DAT_007a8f19 + this_00->field_082A * 0x45)) &&
-          (iVar30 = *(int *)((int)this_00->field_06CB + 0x2c), iVar30 != 9)) && (iVar30 != 0x15)) {
+          (this_00->field_06F7 != CASE_9)) && (this_00->field_06F7 != CASE_15)) {
         STT3DSprC::StartShow((STT3DSprC *)puVar21,9,g_playSystem_00802A38->field_00E4);
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (((*(int *)(&DAT_007a8f19 + this_00->field_082A * 0x45) < (int)local_c) &&
-          (iVar30 = *(int *)((int)this_00->field_06CB + 0x2c), iVar30 != 9)) &&
-         ((iVar30 != 0x15 &&
+          (this_00->field_06F7 != CASE_9)) &&
+         ((this_00->field_06F7 != CASE_15 &&
           (iVar30 = thunk_FUN_004ac910(puVar21,'\b'),
           iVar30 == *(int *)(&DAT_007a8f0d + this_00->field_082A * 0x45) + -1)))) {
         STT3DSprC::StopShow((STT3DSprC *)puVar21,8);
       }
       if ((local_c == *(uint *)(&DAT_007a8f21 + this_00->field_082A * 0x45)) &&
          (local_1c != nullptr)) {
-        local_1c->sub_00498D20(0x6a,sVar41 + 0x32);
+        local_1c->sub_00498D20(0x6a,sVar42 + 0x32);
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar30 = *(int *)((int)this_00->field_06CB + 0x2c);
-      if ((iVar30 == 9) || (iVar30 == 0x15)) {
+      if ((this_00->field_06F7 == CASE_9) || (this_00->field_06F7 == CASE_15)) {
         if (local_c != 0x27) {
           g_currentExceptionFrame = local_184.previous;
           return 0;
@@ -6530,12 +6501,12 @@ LAB_0045910d:
           return 0;
         }
         if (local_EAX_42158 == 4) {
-          local_1c->sub_00498D20(0x66,sVar41 + 0x32);
+          local_1c->sub_00498D20(0x66,sVar42 + 0x32);
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         if (local_EAX_42158 == 6) {
-          local_1c->sub_00498D20(0x68,sVar41 + 0x32);
+          local_1c->sub_00498D20(0x68,sVar42 + 0x32);
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
@@ -6543,7 +6514,7 @@ LAB_0045910d:
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
-        local_1c->sub_00498D20(0x69,sVar41 + 0x32);
+        local_1c->sub_00498D20(0x69,sVar42 + 0x32);
         g_currentExceptionFrame = local_184.previous;
         return 0;
       }
@@ -7025,8 +6996,8 @@ cf_error_exit_0045AEE3:
   thunk_FUN_00417a00(this_00,0);
   if (*(int *)&local_1c->field_0xc == 0) {
     dVar15 = (message->arg0).u32;
-    *(undefined4 *)(this_00->field_06CB + 5) = *(undefined4 *)(dVar15 + 0x14);
-    *(undefined4 *)((int)this_00->field_06CB + 0x2c) = *(undefined4 *)(dVar15 + 0x18);
+    this_00->field_06F3 = *(uint *)(dVar15 + 0x14);
+    this_00->field_06F7 = *(STBoatC_field_06F7State *)(dVar15 + 0x18);
     iVar14 = *(int *)(dVar15 + 0x2a);
     if (iVar14 < 0) {
       this_00->field_07D6 = 0;
@@ -7053,41 +7024,38 @@ cf_error_exit_0045AEE3:
       this_00->field_07D6 = iVar14;
       this_00->field_07DA = 0x28 - iVar14;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar14 = *(int *)((int)this_00->field_06CB + 0x2c);
-    switch(iVar14) {
-    case 0x16:
-    case 0x25:
+    switch(this_00->field_06F7) {
+    case CASE_16:
+    case CASE_25:
       this_00->field_0726 = 0x28;
       break;
-    case 0x17:
+    case CASE_17:
       this_00->field_072A = 0x28;
       break;
-    case 0x1b:
-    case 0x1d:
-    case 0x24:
+    case CASE_1B:
+    case CASE_1D:
+    case CASE_24:
       this_00->field_071E = 0x14;
       break;
-    case 0x23:
+    case CASE_23:
       this_00->field_0722 = 0x14;
     }
-    sVar41 = *(short *)(dVar15 + 0x1c);
+    sVar42 = *(short *)(dVar15 + 0x1c);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = CONCAT22((short)((uint)(iVar14 + -0x16) >> 0x10),sVar41);
+    local_c = CONCAT22((short)(this_00->field_06F7 - CASE_16 >> 0x10),sVar42);
     sVar4 = *(short *)(dVar15 + 0x20);
     sVar5 = *(short *)(dVar15 + 0x1e);
-    if (((sVar41 < 0) || (g_worldGrid.sizeX <= sVar41)) ||
+    if (((sVar42 < 0) || (g_worldGrid.sizeX <= sVar42)) ||
        ((sVar5 < 0 ||
         (((g_worldGrid.sizeY <= sVar5 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)))))) {
       local_10 = nullptr;
     }
     else {
       local_10 = (STFishC *)
-                 STGridAt3D(g_worldGrid, sVar41, sVar5, sVar4).objects[(byte)this_00->field_008E];
+                 STGridAt3D(g_worldGrid, sVar42, sVar5, sVar4).objects[(byte)this_00->field_008E];
     }
     if (local_10 != nullptr) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar14 = (*local_10->vtable->vfunc_114)(*(undefined4 *)((int)this_00->field_06CB + 0x2c));
+      iVar14 = (*local_10->vtable->vfunc_114)(this_00->field_06F7);
       if (iVar14 == 0) {
         local_EAX_595 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x197,0,0,"%s",
@@ -7099,19 +7067,18 @@ cf_error_exit_0045AEE3:
                   (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x198);
       }
       (*local_10->vtable->vfunc_118)(this_00->field_0018);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar14 = *(int *)((int)this_00->field_06CB + 0x2c);
-      if (((iVar14 == 7) || (iVar14 == 0x13)) || (iVar14 == 0x1b)) {
+      SVar41 = this_00->field_06F7;
+      if (((SVar41 == CASE_7) || (SVar41 == CASE_13)) || (SVar41 == CASE_1B)) {
         this_00->field_07CA = (AnonShape_005EFAE0_B406B78B *)local_10->field_0018;
         Library::Ourlib::ST3DSMAP::SprSetLevAfter
                   (this_00->field_0211,this_00->field_01ED,*(int *)&local_10->field_0x1ed);
       }
     }
-    *(undefined4 *)(this_00->field_06CB + 6) = *(undefined4 *)(dVar15 + 0x36);
-    *(undefined4 *)((int)this_00->field_06CB + 0x34) = *(undefined4 *)(dVar15 + 0x3a);
-    *(undefined4 *)(this_00->field_06CB + 7) = *(undefined4 *)(dVar15 + 0x3e);
-    *(undefined2 *)((int)this_00->field_06CB + 0x3c) = *(undefined2 *)(dVar15 + 0x42);
-    *(undefined1 *)((int)this_00->field_06CB + 0x3e) = *(undefined1 *)(dVar15 + 0x44);
+    this_00->field_06FB = *(undefined4 *)(dVar15 + 0x36);
+    this_00->field_06FF = *(undefined4 *)(dVar15 + 0x3a);
+    this_00->field_0703 = *(undefined4 *)(dVar15 + 0x3e);
+    this_00->field_0707 = *(undefined2 *)(dVar15 + 0x42);
+    this_00->field_0709 = *(undefined1 *)(dVar15 + 0x44);
     this_00->field_073E = *(undefined4 *)(dVar15 + 0x32);
     if (local_10 == nullptr) {
       this_00->field_0076 = 1;
@@ -7121,9 +7088,8 @@ cf_error_exit_0045AEE3:
     }
     else {
       this_00->field_006E = *(undefined2 *)&local_10->field_0x6e;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar14 = *(int *)((int)this_00->field_06CB + 0x2c);
-      if (((iVar14 == 7) || (iVar14 == 0x13)) || (iVar14 == 0x1b)) {
+      SVar41 = this_00->field_06F7;
+      if (((SVar41 == CASE_7) || (SVar41 == CASE_13)) || (SVar41 == CASE_1B)) {
         this_00->field_0076 = 1;
       }
       else {
@@ -7148,10 +7114,8 @@ cf_error_exit_0045AEE3:
     }
     thunk_FUN_0048a910((AnonShape_0048A910_6D6DD7B1 *)this_00);
     thunk_FUN_0048a840((AnonShape_0048A840_34A87A21 *)this_00);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((((local_10 == nullptr) ||
-         (iVar14 = *(int *)((int)this_00->field_06CB + 0x2c), iVar14 == 7)) || (iVar14 == 0x13)) ||
-       (iVar14 == 0x1b)) {
+    if ((((local_10 == nullptr) || (SVar41 = this_00->field_06F7, SVar41 == CASE_7)) ||
+        (SVar41 == CASE_13)) || (SVar41 == CASE_1B)) {
       thunk_FUN_00417a20(this_00,*(short *)(dVar15 + 0x1c),*(short *)(dVar15 + 0x1e),
                          *(short *)(dVar15 + 0x20),1);
     }
@@ -7163,15 +7127,13 @@ cf_error_exit_0045AEE3:
       this_00->field_0045 = *(short *)&local_10->field_0x45;
       this_00->field_004D = local_10->field_0x4d;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar14 = *(int *)((int)this_00->field_06CB + 0x2c);
-    if ((iVar14 == 9) || (iVar14 == 0x15)) {
-      sVar41 = 8;
+    if ((this_00->field_06F7 == CASE_9) || (this_00->field_06F7 == CASE_15)) {
+      sVar42 = 8;
     }
     else {
-      sVar41 = 0x18;
+      sVar42 = 0x18;
     }
-    thunk_FUN_00417e70(this_00,sVar41);
+    thunk_FUN_00417e70(this_00,sVar42);
     if (local_10 == nullptr) {
       iVar14 = this_00->field_001C * 0x41c64e6d + 0x3039;
       this_00->field_001C = iVar14;
@@ -7197,10 +7159,8 @@ cf_error_exit_0045AEE3:
     this_00->field_0487 = 0xffffffff;
     this_00->field_048B = 0xffff;
     this_00->field_0814 = this_00->field_0816 * 0xc9;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (((local_10 == nullptr) ||
-        (iVar14 = *(int *)((int)this_00->field_06CB + 0x2c), iVar14 == 7)) ||
-       ((iVar14 == 0x13 || (iVar14 == 0x1b)))) {
+    if (((local_10 == nullptr) || (SVar41 = this_00->field_06F7, SVar41 == CASE_7)) ||
+       ((SVar41 == CASE_13 || (SVar41 == CASE_1B)))) {
       this_00->field_082E = 0xffffffff;
       this_00->field_0836 = 4;
       this_00->field_0475 = this_00->field_0047;
@@ -7226,25 +7186,20 @@ cf_error_exit_0045AEE3:
     if (this_00->field_0024 == (uint)*(byte *)(this_00->field_0010 + 0x112d)) {
       thunk_FUN_004d8b70((char)this_00->field_0024);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    switch(*(undefined4 *)((int)this_00->field_06CB + 0x2c)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    case 5:
-    case 0xb:
-    case 0x11:
-    case 0x1c:
-    case 0x21:
-    case 0x24:
-    case 0x25:
-      *(undefined4 *)((int)this_00->field_06CB + 0x3f) = 8;
+    switch(this_00->field_06F7) {
+    case CASE_5:
+    case CASE_B:
+    case CASE_11:
+    case CASE_1C:
+    case CASE_21:
+    case CASE_24:
+    case CASE_25:
+      this_00->field_070A = 8;
       break;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     default:
-      *(undefined4 *)((int)this_00->field_06CB + 0x3f) = 5;
+      this_00->field_070A = 5;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    TLOEmbryoTy::sub_0041C3F0
-              ((TLOEmbryoTy *)this_00,*(undefined **)((int)this_00->field_06CB + 0x3f));
+    TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this_00,(undefined *)this_00->field_070A);
     uVar17 = this_00->field_001C * 0x41c64e6d + 0x3039;
     this_00->field_001C = uVar17;
     iVar14 = ((uVar17 >> 0x10) % 5) * 0x19;
@@ -7255,29 +7210,28 @@ cf_error_exit_0045AEE3:
   }
   if (*(int *)&local_1c->field_0xc == 1) {
     dVar15 = (message->arg0).u32;
-    *(undefined4 *)(this_00->field_06CB + 5) = *(undefined4 *)(dVar15 + 0x14);
-    *(undefined4 *)((int)this_00->field_06CB + 0x2c) = *(undefined4 *)(dVar15 + 0x18);
-    *(undefined4 *)(this_00->field_06CB + 6) = *(undefined4 *)(dVar15 + 0x32);
-    *(undefined4 *)((int)this_00->field_06CB + 0x34) = *(undefined4 *)(dVar15 + 0x36);
-    *(undefined4 *)(this_00->field_06CB + 7) = *(undefined4 *)(dVar15 + 0x3a);
-    *(undefined2 *)((int)this_00->field_06CB + 0x3c) = *(undefined2 *)(dVar15 + 0x3e);
-    *(undefined1 *)((int)this_00->field_06CB + 0x3e) = *(undefined1 *)(dVar15 + 0x40);
+    this_00->field_06F3 = *(uint *)(dVar15 + 0x14);
+    this_00->field_06F7 = *(STBoatC_field_06F7State *)(dVar15 + 0x18);
+    this_00->field_06FB = *(undefined4 *)(dVar15 + 0x32);
+    this_00->field_06FF = *(undefined4 *)(dVar15 + 0x36);
+    this_00->field_0703 = *(undefined4 *)(dVar15 + 0x3a);
+    this_00->field_0707 = *(undefined2 *)(dVar15 + 0x3e);
+    this_00->field_0709 = *(undefined1 *)(dVar15 + 0x40);
     this_00->field_081E = *(undefined4 *)(dVar15 + 0x41);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    switch(*(undefined4 *)((int)this_00->field_06CB + 0x2c)) {
-    case 0x16:
-    case 0x25:
+    switch(this_00->field_06F7) {
+    case CASE_16:
+    case CASE_25:
       this_00->field_0726 = 0x28;
       break;
-    case 0x17:
+    case CASE_17:
       this_00->field_072A = 0x28;
       break;
-    case 0x1b:
-    case 0x1d:
-    case 0x24:
+    case CASE_1B:
+    case CASE_1D:
+    case CASE_24:
       this_00->field_071E = 0x14;
       break;
-    case 0x23:
+    case CASE_23:
       this_00->field_0722 = 0x14;
     }
     this_00->field_0076 = 1;
@@ -7298,15 +7252,13 @@ cf_error_exit_0045AEE3:
     DumpClassC::WritePtr
               (this_00->field_0047,this_00->field_0049,this_00->field_004B,this_00->field_008E,
                (RecoveredRecord_DumpClassC_00495EC0 *)this_00);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar14 = *(int *)((int)this_00->field_06CB + 0x2c);
-    if ((iVar14 == 9) || (iVar14 == 0x15)) {
-      sVar41 = 8;
+    if ((this_00->field_06F7 == CASE_9) || (this_00->field_06F7 == CASE_15)) {
+      sVar42 = 8;
     }
     else {
-      sVar41 = 0x18;
+      sVar42 = 0x18;
     }
-    thunk_FUN_00417e70(this_00,sVar41);
+    thunk_FUN_00417e70(this_00,sVar42);
     uVar18 = thunk_FUN_00417ee0(this_00,0x5a);
     STAllPlayersC::RegisterObject
               (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
@@ -7337,32 +7289,27 @@ cf_error_exit_0045AEE3:
               (this_00->field_0211,this_00->field_01ED,((STGameObjC *)local_10)->field_01ED);
     local_d4 = DAT_008073fc * 5;
     dVar19 = this_00->slot_2C();
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&this_00->field_0024))
                        ,dVar19);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (this_00->field_0024 == (uint)*(byte *)(this_00->field_0010 + 0x112d)) {
       thunk_FUN_004d8b70((char)this_00->field_0024);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    switch(*(undefined4 *)((int)this_00->field_06CB + 0x2c)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    case 5:
-    case 0xb:
-    case 0x11:
-    case 0x1c:
-    case 0x21:
-    case 0x24:
-    case 0x25:
-      *(undefined4 *)((int)this_00->field_06CB + 0x3f) = 8;
+    switch(this_00->field_06F7) {
+    case CASE_5:
+    case CASE_B:
+    case CASE_11:
+    case CASE_1C:
+    case CASE_21:
+    case CASE_24:
+    case CASE_25:
+      this_00->field_070A = 8;
       break;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     default:
-      *(undefined4 *)((int)this_00->field_06CB + 0x3f) = 5;
+      this_00->field_070A = 5;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    TLOEmbryoTy::sub_0041C3F0
-              ((TLOEmbryoTy *)this_00,*(undefined **)((int)this_00->field_06CB + 0x3f));
+    TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this_00,(undefined *)this_00->field_070A);
     uVar17 = this_00->field_001C * 0x41c64e6d + 0x3039;
     this_00->field_001C = uVar17;
     iVar14 = ((uVar17 >> 0x10) % 5) * 0x19;
@@ -7379,126 +7326,125 @@ cf_error_exit_0045AEE3:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)*DAT_008117bc)(&local_9c);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    switch(*(undefined4 *)((int)this_00->field_06CB + 0x2c)) {
-    case 1:
+    switch(this_00->field_06F7) {
+    case CASE_1:
       uVar25 = 200;
       break;
-    case 2:
+    case CASE_2:
       uVar25 = 0xce;
       break;
-    case 3:
+    case CASE_3:
       uVar25 = 0xd4;
       break;
-    case 4:
+    case CASE_4:
       uVar25 = 0xda;
       break;
-    case 5:
+    case CASE_5:
       uVar25 = 0xe0;
       break;
-    case 6:
+    case CASE_6:
       uVar25 = 0xe7;
       break;
-    case 7:
+    case CASE_7:
       uVar25 = 0xee;
       break;
-    case 8:
+    case CASE_8:
       uVar25 = 0xf5;
       break;
-    case 9:
+    case CASE_9:
       uVar25 = 0xfd;
       break;
-    case 10:
+    case CASE_A:
       uVar25 = 0x102;
       break;
-    case 0xb:
+    case CASE_B:
       uVar25 = 0x108;
       break;
-    case 0xc:
+    case CASE_C:
       uVar25 = 0x10e;
       break;
-    case 0xd:
+    case CASE_D:
       uVar25 = 300;
       break;
-    case 0xe:
+    case CASE_E:
       uVar25 = 0x132;
       break;
-    case 0xf:
+    case CASE_F:
       uVar25 = 0x138;
       break;
-    case 0x10:
+    case CASE_10:
       uVar25 = 0x13e;
       break;
-    case 0x11:
+    case CASE_11:
       uVar25 = 0x144;
       break;
-    case 0x12:
+    case CASE_12:
       uVar25 = 0x14b;
       break;
-    case 0x13:
+    case CASE_13:
       uVar25 = 0x152;
       break;
-    case 0x14:
+    case CASE_14:
       uVar25 = 0x159;
       break;
-    case 0x15:
+    case CASE_15:
       uVar25 = 0x161;
       break;
-    case 0x16:
+    case CASE_16:
       uVar25 = 0x166;
       break;
-    case 0x17:
+    case CASE_17:
       uVar25 = 0x16e;
       break;
-    case 0x18:
+    case CASE_18:
       uVar25 = 0x174;
       break;
-    case 0x19:
+    case CASE_19:
       uVar25 = 400;
       break;
-    case 0x1a:
+    case CASE_1A:
       uVar25 = 0x198;
       break;
-    case 0x1b:
+    case CASE_1B:
       uVar25 = 0x1a0;
       break;
-    case 0x1c:
+    case CASE_1C:
       uVar25 = 0x1a6;
       break;
-    case 0x1d:
+    case CASE_1D:
       uVar25 = 0x1ac;
       break;
-    case 0x1e:
+    case CASE_1E:
       uVar25 = 0x1b3;
       break;
-    case 0x1f:
+    case CASE_1F:
       uVar25 = 0x1b9;
       break;
-    case 0x20:
+    case CASE_20:
       uVar25 = 0x1bf;
       break;
-    case 0x21:
+    case CASE_21:
       uVar25 = 0x1c5;
       break;
-    case 0x22:
+    case CASE_22:
       uVar25 = 0x1cc;
       break;
-    case 0x23:
+    case CASE_23:
       uVar25 = 0x1d3;
       break;
-    case 0x24:
+    case CASE_24:
       uVar25 = 0x1d9;
       break;
-    case 0x25:
+    case CASE_25:
       uVar25 = 0x17a;
       break;
-    case 0x26:
+    case CASE_26:
       uVar25 = 0x114;
       break;
-    case 0x27:
+    case CASE_27:
       uVar25 = 0x180;
       break;
-    case 0x28:
+    case CASE_28:
       uVar25 = 0x1df;
       break;
     default:
@@ -7552,49 +7498,48 @@ cf_error_exit_0045AEE3:
   }
   local_74[0] = '\0';
   local_e8[0] = '\0';
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)((int)this_00->field_06CB + 0x2c)) {
-  case 1:
+  switch(this_00->field_06F7) {
+  case CASE_1:
     pcVar36 = local_74;
     pcVar35 = &CHAR_s_007a9e8c;
     break;
-  case 2:
+  case CASE_2:
     pcVar36 = local_74;
     pcVar35 = &CHAR_h_007a9e84;
     break;
-  case 3:
+  case CASE_3:
     pcVar36 = local_74;
     pcVar35 = &CHAR_c_007a9e7c;
     break;
-  case 4:
+  case CASE_4:
     pcVar36 = local_74;
     pcVar35 = &CHAR_d_007a9e74;
     break;
-  case 5:
+  case CASE_5:
     pcVar36 = local_74;
     pcVar35 = &CHAR_m_007a9e6c;
     break;
-  case 6:
+  case CASE_6:
     pcVar36 = local_74;
     pcVar35 = &CHAR_r_007a9e64;
     break;
-  case 7:
+  case CASE_7:
     pcVar36 = local_74;
     pcVar35 = &CHAR_r_007a9e5c;
     break;
-  case 8:
+  case CASE_8:
     pcVar36 = local_74;
     pcVar35 = &CHAR_l_007a9e54;
     break;
-  case 9:
+  case CASE_9:
     pcVar36 = local_74;
     pcVar35 = &CHAR_w_007a9e50;
     break;
-  case 10:
+  case CASE_A:
     pcVar36 = local_74;
     pcVar35 = &CHAR_t_007a9e48;
     break;
-  case 0xb:
+  case CASE_B:
     uVar17 = 0xffffffff;
     pcVar36 = &CHAR_l_007a9e40;
     do {
@@ -7631,47 +7576,47 @@ cf_error_exit_0045AEE3:
     }
     pcVar35 = &CHAR_l_007a9e94;
     break;
-  case 0xc:
+  case CASE_C:
     pcVar36 = local_74;
     pcVar35 = &CHAR_c_007a9e38;
     break;
-  case 0xd:
+  case CASE_D:
     pcVar36 = local_74;
     pcVar35 = &CHAR_c_007a9e30;
     break;
-  case 0xe:
+  case CASE_E:
     pcVar36 = local_74;
     pcVar35 = &CHAR_d_007a9e28;
     break;
-  case 0xf:
+  case CASE_F:
     pcVar36 = local_74;
     pcVar35 = &CHAR_h_007a9e20;
     break;
-  case 0x10:
+  case CASE_10:
     pcVar36 = local_74;
     pcVar35 = &CHAR_i_007a9e18;
     break;
-  case 0x11:
+  case CASE_11:
     pcVar36 = local_74;
     pcVar35 = &CHAR_l_007a9e10;
     break;
-  case 0x12:
+  case CASE_12:
     pcVar36 = local_74;
     pcVar35 = &CHAR_r_007a9e08;
     break;
-  case 0x13:
+  case CASE_13:
     pcVar36 = local_74;
     pcVar35 = &CHAR_r_007a9e00;
     break;
-  case 0x14:
+  case CASE_14:
     pcVar36 = local_74;
     pcVar35 = &CHAR_l_007a9df8;
     break;
-  case 0x15:
+  case CASE_15:
     pcVar36 = local_74;
     pcVar35 = &CHAR_d_007a9df4;
     break;
-  case 0x16:
+  case CASE_16:
     uVar17 = 0xffffffff;
     pcVar36 = &CHAR_p_007a9dec;
     do {
@@ -7708,55 +7653,55 @@ cf_error_exit_0045AEE3:
     }
     pcVar35 = &CHAR_p_007a9e9c;
     break;
-  case 0x17:
+  case CASE_17:
     pcVar36 = local_74;
     pcVar35 = &CHAR_a_007a9de4;
     break;
-  case 0x18:
+  case CASE_18:
     pcVar36 = local_74;
     pcVar35 = &CHAR_c_007a9ddc;
     break;
-  case 0x19:
+  case CASE_19:
     pcVar36 = local_74;
     pcVar35 = &CHAR_c_007a9dd8;
     break;
-  case 0x1a:
+  case CASE_1A:
     pcVar36 = local_74;
     pcVar35 = &CHAR_t_007a9dd4;
     break;
-  case 0x1b:
+  case CASE_1B:
     pcVar36 = local_74;
     pcVar35 = &CHAR_s_007a9dd0;
     break;
-  case 0x1c:
+  case CASE_1C:
     pcVar36 = local_74;
     pcVar35 = &CHAR_p_007a9dcc;
     break;
-  case 0x1d:
+  case CASE_1D:
     pcVar36 = local_74;
     pcVar35 = &CHAR_r_007a9dc8;
     break;
-  case 0x1e:
+  case CASE_1E:
     pcVar36 = local_74;
     pcVar35 = &CHAR_s_007a9dc4;
     break;
-  case 0x1f:
+  case CASE_1F:
     pcVar36 = local_74;
     pcVar35 = &CHAR_d_007a9dc0;
     break;
-  case 0x20:
+  case CASE_20:
     pcVar36 = local_74;
     pcVar35 = &CHAR_e_007a9dbc;
     break;
-  case 0x21:
+  case CASE_21:
     pcVar36 = local_74;
     pcVar35 = &CHAR_b_007a9db8;
     break;
-  case 0x22:
+  case CASE_22:
     pcVar36 = local_74;
     pcVar35 = &CHAR_u_007a9db4;
     break;
-  case 0x23:
+  case CASE_23:
     uVar17 = 0xffffffff;
     pcVar36 = &CHAR_g_007a9db0;
     do {
@@ -7793,23 +7738,23 @@ cf_error_exit_0045AEE3:
     }
     pcVar35 = &CHAR_g_007a9ea4;
     break;
-  case 0x24:
+  case CASE_24:
     pcVar36 = local_74;
     pcVar35 = &CHAR_e_007a9dac;
     break;
-  case 0x25:
+  case CASE_25:
     pcVar36 = local_74;
     pcVar35 = &CHAR_s_007a9da4;
     break;
-  case 0x26:
+  case CASE_26:
     pcVar36 = local_74;
     pcVar35 = &CHAR_f_007a9d9c;
     break;
-  case 0x27:
+  case CASE_27:
     pcVar36 = local_74;
     pcVar35 = &CHAR_f_007a9d94;
     break;
-  case 0x28:
+  case CASE_28:
     pcVar36 = local_74;
     pcVar35 = &CHAR_f_007a9d8c;
     break;
@@ -7846,16 +7791,15 @@ switchD_0044fb10_default:
     RaiseInternalException
               (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2da);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar30 = *(int *)((int)this_00->field_06CB + 0x2c);
-  if ((((iVar30 == 0xb) || (iVar30 == 0x16)) || (iVar30 == 0x23)) &&
+  SVar41 = this_00->field_06F7;
+  if ((((SVar41 == CASE_B) || (SVar41 == CASE_16)) || (SVar41 == CASE_23)) &&
      (iVar30 = STT3DSprC::LoadSequence
                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080677c,local_e8,CASE_1D),
      iVar30 != 0)) {
     RaiseInternalException
               (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2de);
   }
-  switch((int)this_00->field_06CB[5]) {
+  switch(this_00->field_06F3) {
   case 0:
     pcVar36 = &CHAR_0_007a9d88;
     break;
@@ -7913,9 +7857,8 @@ switchD_0044fe4c_default:
     RaiseInternalException
               (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2eb);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)((int)this_00->field_06CB + 0x2c)) {
-  case 9:
+  switch(this_00->field_06F7) {
+  case CASE_9:
     local_c = ((8 - (int)this_00->field_006C / 0x2d) * 0xf) % 0x78;
     uVar27 = 0xe;
     uVar17 = this_00->field_001C * 0x41c64e6d + 0x3039;
@@ -7924,14 +7867,14 @@ switchD_0044fe4c_default:
   default:
     local_c = ((0x18 - (int)this_00->field_006C / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18;
     goto LAB_0045003f;
-  case 0x15:
+  case CASE_15:
     local_c = ((8 - (int)this_00->field_006C / 0x2d) * 0x14) % 0xa0;
     uVar27 = 0x13;
     uVar17 = this_00->field_001C * 0x41c64e6d + 0x3039;
     this_00->field_001C = uVar17;
     break;
-  case 0x24:
-  case 0x25:
+  case CASE_24:
+  case CASE_25:
     uVar17 = this_00->field_001C * 0x41c64e6d + 0x3039;
     this_00->field_001C = uVar17;
     local_c = (uVar17 >> 0x10) % 10;
@@ -7946,17 +7889,14 @@ LAB_0045003f:
   uVar17 = this_00->field_0822 + local_c;
 LAB_00450050:
   STT3DSprC::SetCurFase((STT3DSprC *)puVar21,'\f',uVar17);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar30 = *(int *)((int)this_00->field_06CB + 0x2c);
-  if ((iVar30 != 0x25) && (iVar30 != 0x24)) {
+  if ((this_00->field_06F7 != CASE_25) && (this_00->field_06F7 != CASE_24)) {
     thunk_FUN_004ac610(puVar21,'\x0e');
     thunk_FUN_004ac610(puVar21,'\f');
   }
   STT3DSprC::StartShow((STT3DSprC *)puVar21,0xe,g_playSystem_00802A38->field_00E4);
   STT3DSprC::StartShow((STT3DSprC *)puVar21,0xc,g_playSystem_00802A38->field_00E4);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar30 = *(int *)((int)this_00->field_06CB + 0x2c);
-  if (((iVar30 == 0xb) || (iVar30 == 0x16)) || (iVar30 == 0x23)) {
+  SVar41 = this_00->field_06F7;
+  if (((SVar41 == CASE_B) || (SVar41 == CASE_16)) || (SVar41 == CASE_23)) {
     thunk_FUN_004acd60(puVar21,'\r',g_playSystem_00802A38->field_00E4 & 1);
     STT3DSprC::StartShow((STT3DSprC *)puVar21,0xd,g_playSystem_00802A38->field_00E4);
     STT3DSprC::SetCurFase((STT3DSprC *)puVar21,'\r',local_d4);
@@ -7966,10 +7906,8 @@ LAB_00450050:
             ((STT3DSprC *)puVar21,(float)(int)local_78 * _DAT_007904f8 * _DAT_007904f0,
              (float)(int)this_00->field_0043 * _DAT_007904f8 * _DAT_007904f0,
              (float)(int)this_00->field_0045 * _DAT_007904f8 * _DAT_007904f0);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar30 = *(int *)((int)this_00->field_06CB + 0x2c);
   uVar17 = local_c;
-  if ((iVar30 != 0x25) && (iVar30 != 0x24)) {
+  if ((this_00->field_06F7 != CASE_25) && (this_00->field_06F7 != CASE_24)) {
     uVar17 = (0x18 - (int)this_00->field_006C / 0xf) % 0x18;
   }
   STT3DSprC::SetCurShad((STT3DSprC *)puVar21,'\x0e',uVar17);

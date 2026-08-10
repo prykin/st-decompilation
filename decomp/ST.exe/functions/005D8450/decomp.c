@@ -216,7 +216,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_214 = local_4fc;
   local_a4 = local_4fc;
   (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,7,this_00->field_1AF1,nullptr,local_524,0);
+            ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1AF1,nullptr,local_524,0);
   ppcVar12 = local_db0;
   for (iVar7 = 0x223; iVar7 != 0; iVar7 = iVar7 + -1) {
     *ppcVar12 = nullptr;
@@ -240,7 +240,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_d1c = 0x68ff;
   local_d24 = local_d64;
   (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,6,this_00->field_1AF1 + 1,nullptr,local_db0,1);
+            ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AF5,nullptr,local_db0,1);
   uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
   this_00->field_1AF9[0] = uVar4;
   uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);

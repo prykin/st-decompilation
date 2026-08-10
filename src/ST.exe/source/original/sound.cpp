@@ -25,7 +25,7 @@ void __thiscall st::fn_00568C50(SoundClassTy *this)
   pSVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\sound.cpp",0x205,0,iVar3,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\sound.cpp"),0x205,0,iVar3,st::mutable_c_string("%s"),
                                "SoundClassTy::CheckFader");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */

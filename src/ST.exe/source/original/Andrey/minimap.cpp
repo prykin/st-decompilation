@@ -49,7 +49,7 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
   iVar6 = st::fn_0072D7F0(local_68.jumpBuffer,0);
   if (iVar6 == 0) {
     if (g_cLoading_00802A58 != nullptr) {
-      st::fn_00404D8B(g_cLoading_00802A58,0,"Preparing mini-map...",900);
+      st::fn_00404D8B(g_cLoading_00802A58,0,st::mutable_c_string("Preparing mini-map..."),900);
     }
     pAVar7 = (AnonShape_006DBCA0_EF06575F *)st::fn_006B04D0(0x4f2);
     if (pAVar7 == nullptr) {
@@ -61,7 +61,7 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
     local_10 = this;
     if (this == nullptr) {
       st::fn_006A5E40
-                (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x16);
+                (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Andrey\\minimap.cpp"),0x16);
     }
     local_18 = (int)*param_1;
     local_1c = -local_18;
@@ -93,7 +93,7 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
            (pRVar1->field_0008 != 0)) {
           pRVar1->next = this->field_0140;
           this->field_0140 = pRVar1;
-          this->field_013C = this->field_013C + 1;
+          this->field_013C = st::machine_word_boundary_cast<int>(this->field_013C + 1);
         }
         iVar6 = iVar6 + 1;
         piVar10 = piVar10 + 1;
@@ -118,7 +118,7 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
       *local_c = (int)pvVar8;
       if (pvVar8 == nullptr) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x2f);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Andrey\\minimap.cpp"),0x2f);
       }
       iVar6 = 0;
       if (0 < (int)param_3) {
@@ -150,7 +150,7 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
   else {
     g_currentExceptionFrame = local_68.previous;
     local_20 = iVar6;
-    iVar11 = st::fn_006AD4D0("E:\\__titans\\Andrey\\minimap.cpp",0x3a,0,iVar6,"%s"
+    iVar11 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\minimap.cpp"),0x3a,0,iVar6,st::mutable_c_string("%s")
                                 ,"CreateMiniMap");
     this = local_10;
     if (iVar11 != 0) {
@@ -169,7 +169,7 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
       iVar12 = iVar12 + -1;
     } while (iVar12 != 0);
     st::fn_006A5E40
-              (iVar6,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x42);
+              (iVar6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Andrey\\minimap.cpp"),0x42);
   }
   if (g_cLoading_00802A58 != nullptr) {
     st::fn_00403472(g_cLoading_00802A58,CASE_2,0,nullptr);

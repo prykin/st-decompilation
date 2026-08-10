@@ -362,8 +362,8 @@ LAB_005b1da4:
                        (-(uint)((message->arg0).words.high != 0) & 2) + 1);
         uVar28 = (uint)(message->arg1).words.high;
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)g_ddxContext_008075A8,this_01->field_1C23[uVar28 / 0x13],0xfffffffe,0x114,
-                   uVar28 + 0x3f);
+                  ((int *)g_ddxContext_008075A8,(&this_01->field_1C23)[uVar28 / 0x13],0xfffffffe,
+                   0x114,uVar28 + 0x3f);
         break;
       case MESS_OPTPANELTY_8162:
         uVar28 = this_01->field_1C9F->elementSize;
@@ -596,7 +596,7 @@ LAB_005b2011:
       ShowDescription(this_01,this_01->field_1C93);
       this_01->field_1A64 = 0;
     }
-    DAT_008087a0 = this_01->field_1A5F;
+    STPiece<0,1>(DAT_008087a0) = this_01->field_1A5F;
     uVar28 = 0xffffffff;
     pcVar17 = &CHAR_00h_0080ed16;
     do {
@@ -627,7 +627,7 @@ LAB_005b2011:
       uVar16 = 0;
     }
     wsprintfA(&CHAR_00h_0080ed16,"%s%s\\%s",&this_01->field_1DA7,uVar16,&DAT_0080f33a);
-    DAT_008087a0 = CASE_3;
+    STPiece<0,1>(DAT_008087a0) = CASE_3;
     iVar26 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
     if (iVar26 == 0) goto cf_common_exit_005B2053;
     uVar28 = 0xffffffff;
@@ -742,7 +742,7 @@ LAB_005b1644:
     }
     break;
   case MESS_SHARED_6940|MESS_SHARED_0008:
-    DAT_008087a0 = this_01->field_1A5F;
+    STPiece<0,1>(DAT_008087a0) = this_01->field_1A5F;
     switch(this_01->field_1A5F) {
     case CASE_1:
     case CASE_2:
@@ -899,7 +899,7 @@ LAB_005b1644:
       ShowDescription(this_01,this_01->field_1C93);
       this_01->field_1A64 = 0;
     }
-    DAT_008087a0 = this_01->field_1A5F;
+    STPiece<0,1>(DAT_008087a0) = this_01->field_1A5F;
     if ((this_01->field_1A5F != CASE_0) && (this_01->field_1A5F < CASE_3)) {
       STAppC::sub_0056EF50((STAppC *)&DAT_00807620);
       STAppC::sub_0056F040((STAppC *)&DAT_00807620);

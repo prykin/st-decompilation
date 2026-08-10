@@ -25,7 +25,7 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
   STAppC *local_18;
   char *local_14;
   undefined4 local_10;
-  byte *local_c;
+  char *local_c;
   cMf32 *local_8;
 
   local_10 = 1;
@@ -43,7 +43,7 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
     return 0;
   }
   local_c = &local_18->field_76F6;
-  pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_c,0,0,0);
+  pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)local_c,0,0,0);
   local_8 = pcVar3;
   if ((DArrayTy *)pSVar2->field_4EA7 != nullptr) {
     FUN_006b5570((DArrayTy *)pSVar2->field_4EA7);
@@ -68,7 +68,7 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
   local_14 = (char *)pbVar13;
   puVar6 = cMf32::RecGet(local_8,0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&local_14,0);
   if ((puVar6 == nullptr) || (*pbVar13 == '\0')) {
-    Library::MSVCRT::FUN_0072e730(local_c,nullptr,nullptr,local_160,nullptr);
+    Library::MSVCRT::FUN_0072e730((byte *)local_c,nullptr,nullptr,local_160,nullptr);
     uVar8 = 0xffffffff;
     pbVar10 = local_160;
     do {

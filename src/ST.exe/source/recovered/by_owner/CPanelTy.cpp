@@ -103,7 +103,7 @@ void __thiscall st::fn_004F17D0(CPanelTy *this,int param_1,byte param_2)
   if (param_2 < 6) {
     pCVar5 = &this->field_0B99;
     if (param_1 == 0) {
-      pCVar5 = &this->field_0BF5;
+      pCVar5 = st::pointer_boundary_cast<CPanelTy_field_0B99State *>(&this->field_0BF5);
     }
     uVar2 = (uint)param_2;
     iVar1 = uVar2 + (uint)(param_1 == 0) * 6;
@@ -198,9 +198,9 @@ void __thiscall st::fn_004F8020(CPanelTy *this,char param_1,int param_2)
 {
   char *pcVar1;
 
-  pcVar1 = &this->field_0B63;
+  pcVar1 = st::pointer_boundary_cast<char *>(&this->field_0B63);
   if (param_1 == '\0') {
-    pcVar1 = &this->field_0C51;
+    pcVar1 = st::pointer_boundary_cast<char *>(&this->field_0C51);
   }
   if ((((*pcVar1 != '\0') && (DAT_00808784 == 0)) && (DAT_00808788 == 0)) &&
      ((DAT_0080878c == 0 && (DAT_00808790 == 0)))) {
@@ -584,7 +584,7 @@ void __thiscall st::fn_004FAE90(CPanelTy *this,uint *param_1,ushort param_2)
         local_10 = local_8;
         local_14 = param_1;
         iVar4 = st::fn_0040512D
-                          (g_allPlayers_007FA174,nullptr,nullptr,&stack0x0000000a);
+                          (g_allPlayers_007FA174,nullptr,nullptr,st::pointer_boundary_cast<undefined2 *>(&stack0x0000000a));
         if (-1 < iVar4) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           local_c = (int)in_stack_0000000a;
@@ -643,22 +643,22 @@ void __thiscall st::fn_00501A10(CPanelTy *this)
   if (this->field_0B9E == CASE_1) {
     if (DAT_0080874e == '\x03') {
       if (this->field_0B99 == CASE_1A) {
-        *puVar1 = this->field_0048 + 0x3c;
-        this->field_0438 = this->field_00A0 + 0x84;
+        *puVar1 = st::machine_word_boundary_cast<undefined4>(this->field_0048 + 0x3c);
+        this->field_0438 = st::machine_word_boundary_cast<int>(this->field_00A0 + 0x84);
         this->field_043C = 0x55;
         this->field_0440 = 0xe;
         this->field_044C = 0x2ef3;
       }
-      this->field_0450 = this->field_0048 + 4;
-      this->field_0454 = this->field_00A0 + 8;
+      this->field_0450 = st::machine_word_boundary_cast<undefined4>(this->field_0048 + 4);
+      this->field_0454 = st::machine_word_boundary_cast<int>(this->field_00A0 + 8);
       this->field_0458 = 100;
       this->field_045C = 0x3c;
       pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,0);
       this->field_0460 = pBVar2;
       this->field_0464 = this->field_0458;
       this->field_0468 = 0x4e87;
-      this->field_046C = this->field_0048 + 2;
-      this->field_0470 = this->field_00A0 + 6;
+      this->field_046C = st::machine_word_boundary_cast<undefined4>(this->field_0048 + 2);
+      this->field_0470 = st::machine_word_boundary_cast<int>(this->field_00A0 + 6);
       this->field_0474 = 0x20;
       this->field_0478 = 0x35;
       pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,2);
@@ -678,7 +678,7 @@ void __thiscall st::fn_00501A10(CPanelTy *this)
       pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
       this->field_0440 = (pBVar2->bmiHeader).biHeight;
       *puVar1 = (this->field_018C->field_0004 - this->field_043C) / 2 + this->field_0048;
-      this->field_0438 = this->field_00A0 + 0x50;
+      this->field_0438 = st::machine_word_boundary_cast<int>(this->field_00A0 + 0x50);
     }
     switch(this->field_0B99) {
     case CASE_8:
@@ -783,16 +783,16 @@ void __thiscall st::fn_00506040(CPanelTy *this)
   memset(&this->field_0x54c, 0, 0x118); /* compiler bulk-zero initialization */
   if (this->field_0BFA == CASE_1) {
     if (DAT_0080874e == '\x03') {
-      this->field_0568 = this->field_0050 + 0x81;
-      this->field_056C = this->field_00A8 + 8;
+      this->field_0568 = st::machine_word_boundary_cast<uint>(this->field_0050 + 0x81);
+      this->field_056C = st::machine_word_boundary_cast<int>(this->field_00A8 + 8);
       this->field_0570 = 100;
       this->field_0574 = 0x3c;
       pBVar1 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,1);
       this->field_0578 = pBVar1;
       this->field_057C = this->field_0570;
       this->field_0580 = 0x4e87;
-      this->field_0584 = this->field_0050 + 199;
-      this->field_0588 = this->field_00A8 + 6;
+      this->field_0584 = st::machine_word_boundary_cast<uint>(this->field_0050 + 199);
+      this->field_0588 = st::machine_word_boundary_cast<int>(this->field_00A8 + 6);
       this->field_058C = 0x20;
       this->field_0590 = 0x35;
       pBVar1 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,3);
@@ -882,7 +882,7 @@ void __thiscall st::fn_0052AFE0(CPanelTy *this,byte param_1,float param_2,float 
       piVar7 = piVar7 + 2;
     } while (iVar5 < 4);
     if (fVar2 != _DAT_0079034c) {
-      puVar6 = st::fn_006E6460(g_sT3DSMAPContext_00807598,this->field_0DBF + (param_1 - 2),1,0x97,0x96,
+      puVar6 = st::fn_006E6460(g_sT3DSMAPContext_00807598,st::machine_word_boundary_cast<undefined4>(this->field_0DBF + (param_1 - 2)),1,0x97,0x96,
                             0,1);
       iVar5 = local_30[iVar8 * 2];
       this->field_0DB3 = puVar6;
@@ -942,10 +942,10 @@ bool __thiscall st::fn_0052B330(CPanelTy *this)
     if (0x13 < this->field_0DC8) {
       return false;
     }
-    this->field_0DC8 = this->field_0DC8 + 1;
+    this->field_0DC8 = st::machine_word_boundary_cast<uint>(this->field_0DC8 + 1);
     return false;
   }
-  this->field_0DC8 = this->field_0DC8 + 1;
+  this->field_0DC8 = st::machine_word_boundary_cast<uint>(this->field_0DC8 + 1);
   if (((this->field_0DCD == '\0') || (this->field_0DCD == '\x01')) &&
      (this->field_0DD6 != this->field_0DCE)) {
     bVar1 = false;
@@ -993,7 +993,7 @@ cf_common_exit_0052B581:
   else if (!bVar1) goto cf_common_exit_0052B581;
   this->field_0DC7 = 2;
   if (this->field_0DB3 != nullptr) {
-    st::fn_006E6580(g_sT3DSMAPContext_00807598,this->field_0DB3);
+    st::fn_006E6580(g_sT3DSMAPContext_00807598,st::pointer_boundary_cast<int *>(this->field_0DB3));
   }
   this->field_0DB3 = nullptr;
   this->field_0DC8 = 0;

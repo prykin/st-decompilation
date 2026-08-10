@@ -46,41 +46,41 @@ have been checked.
 ## Latest accepted run
 
 The current authoritative headless export is run
-`db177316e99af87fb7849a8d84850337d45a6b7cc50bb388dbd105f1cc2b7c77`.
+`51989204f2f3f306c556cf4ef551f67584b92210595ac8c502cc353529213d5b`.
 Its receipt is `passed` with semantic hash
-`9f9ee6d4638ff024c7cbdc9292d0554b293a9960f0e883f9489235e94c57a228`
+`b5ccc04d4b3302db3a4dfdc519371fb1e3feefb6d21c7a3e8d4a2f371dec5ed4`
 and manifest hash
-`62c23b9a9b29058f25fbce3d8f1c7ff34485edbbbc897ddc7531232a0cc80563`.
-It contains 10,392 function entries, 5,712 bodies, zero failed bodies, and 2,729
+`6847961dcc13a9c6d104a63a7f88383ba13815fa70cd98c5267d4c4966029ce3`.
+It contains 10,400 function entries, 5,720 bodies, zero failed bodies, and 2,737
 typed physical-vtable slots. Both the broad export gate and the ABI gate pass;
 the latter verifies all 96 class vptrs and nine fixture functions with zero
 errors or warnings. The broad gate also has zero errors and warnings. The final
-quality inventory has 4,165 anonymous-shape occurrences, 18,327 undefined
-types, 2,248 raw pointer offsets, 1,886 honestly catalogued raw indirect calls,
-558 consumed return-width artifacts, and 472 unresolved register inputs. The
+quality inventory has 4,231 anonymous-shape occurrences, 18,286 undefined
+types, 2,169 raw pointer offsets, 1,888 honestly catalogued raw indirect calls,
+292 return-width artifacts, and 474 unresolved register inputs. The
 old declaration-plus-use return count was intentionally replaced by a use-only
 metric; declarations are not independent ABI failures.
 
-`STDecompExport` now emits a separate compile-readiness inventory. All 5,712
+`STDecompExport` now emits a separate compile-readiness inventory. All 5,720
 bodies have zero residual Ghidra `._offset_width_` syntax. The generated C++17
-runtime makes 34,814 exact operations expressible through scalar/calling-
+runtime makes 34,786 exact operations expressible through scalar/calling-
 convention aliases, opaque `code`, `STPiece`, `STLiteralPiece`, `STField`, and
 width-checked composition/carry helpers. The exporter itself is not a source
 generator, but `tools/st_source_tree.py` now supplies the missing offline
-assembly layer. It verifies the passed receipt/manifest and emits all 5,712
+assembly layer. It verifies the passed receipt/manifest and emits all 5,720
 bodies as 318 C++17 translation units under `src/ST.exe`, with 1,044 bodies in
 proven original paths and address-stable `st::fn_ADDRESS` identities. The full
 generated declaration header passes Clang syntax checking. Full object
-compilation still exposes the real remaining debt: 3,877 signatures retain
+compilation still exposes the real remaining debt: 3,880 signatures retain
 undefined semantic types, 999 global `__thiscall` functions lack a proven
-owner, 773 bodies contain raw indirect calls, and 232 bodies retain unresolved
+owner, 775 bodies contain raw indirect calls, and 233 bodies retain unresolved
 register/high values. See `docs/compile-readiness.md`,
 `docs/source-tree-generation.md`, and `src/ST.exe/audit/`.
 
 The first compile-driven source layer is implemented without mutating Ghidra.
 `tools/st_compile_audit.py` verifies the generated manifest, compiles all 318
 translation units independently, and writes an address-stable local queue under
-ignored `.st-local/`. `tools/st_source_tree.py` materializes 2,703 exact
+ignored `.st-local/`. `tools/st_source_tree.py` materializes 2,678 exact
 unnamed-byte views which statically typed bodies actually reference, including
 indexed and nested pointer-member chains. It also emits 780 ordinary non-virtual
 member wrappers over exact receiver-aware physical-vtable slots, preserving
@@ -93,19 +93,19 @@ complete declaration header passes Clang C++17.
 
 The source projection also separates C++ type/value namespace collisions
 such as the image object `FrmPanelTyVTable` and the record type of the same
-name. At the 231 exact address-taking sites currently emitted, only the source-
+name. At the 247 exact address-taking sites currently emitted, only the source-
 level object identifier becomes `st_global_ADDRESS`; the Ghidra symbol and type
 names remain provenance. This removes false local-declaration failures without
 changing the database or object layout.
 
-With Apple Clang and a fixed limit of 64 diagnostics per translation unit, 71
-of 318 units pass and 4,491 of 4,496 retained errors map to a function address.
-This is 266 fewer than the preceding accepted 4,762-error checkpoint and 1,094
-fewer than the initial 5,590-error baseline. The current dominant clusters are
-assignment types (1,426), call-argument types (1,226), undeclared identifiers
-(794), and pointer indirection (273); no syntax diagnostic remains. These are capped comparison
-counts, not the uncapped total. Source identity counts are 37,351 direct-call-
-or-definition rewrites, 5,712 definition rewrites, and 116 stale qualified
+With Apple Clang and a fixed limit of 64 diagnostics per translation unit, 178
+of 318 units pass and 2,196 of 2,213 retained errors map to a function address.
+The current dominant clusters are undeclared identifiers (888), pointer
+indirection (354), non-callable values (261), and invalid operands (146); no
+syntax diagnostic remains. Assignment mismatches are down to 72 and
+call-argument mismatches to zero. These are capped comparison counts, not the
+uncapped total. Source identity counts are 37,366 direct-call-or-definition
+rewrites, 5,720 definition rewrites, and 116 stale qualified
 address-symbol repairs.
 
 The previously ugly call in global `__thiscall` function `00717910` now renders
@@ -115,6 +115,12 @@ correct for callee `006D2820`; the missing fact is the receiver identity. A broa
 receiver-record database experiment cascaded into unrelated owners/vtables and
 was rejected after 22 hard ABI regressions. No part of that Ghidra mutation was
 retained.
+
+## Historical pre-compiler checkpoints
+
+The following paragraphs retain the evidence trail from earlier accepted
+checkpoints. Their embedded uses of “latest” describe that checkpoint, not the
+authoritative run summarized at the top of this file.
 
 The refresh recovers the panel factory vptr stores as
 `BldBoatPanelTyVTable`, `BldObjPanelTyVTable`, `IntercomPanelTyVTable`, and
@@ -186,7 +192,7 @@ typedef/pointer types before recording conflicts. This removes the large false
 still cannot establish cross-owner identity, and the remaining 16,278 undefined
 types are an evidence-led recovery surface rather than a bulk-retagging target.
 
-The authoritative latest `full-export` was run
+The then-authoritative `full-export` was run
 `8538b1d383ad26576d5461f823403092b4baa8e1b85900d2273457d261b6e4e6`.
 Its tracked accepted projection is the source of truth; ignored run archives
 are disposable diagnostics and need not be retained. The run completed in
@@ -330,7 +336,7 @@ comment and checks tag membership before writing. This source-only fix compiles
 with the pipeline and analyzer changes against Ghidra 12.1.2/JDK 21; it does not
 require another corpus export.
 
-## Latest accepted semantic layer
+## Historical accepted semantic layer
 
 `STRecursivePointeeAnalyzer/Applier`, the generated-layout refinements in
 `STPointerShapeAnalyzer`, and the recursive-node support in
@@ -774,9 +780,11 @@ Expected next `full-export` results:
 - all four hard regression rows return to zero. The warning-only quality rows
   still require ordinary review after the gate passes.
 
-## Next automation boundary
+## Historical automation boundary
 
-Deterministic source/declaration assembly is implemented. All 5,712 bodies now
+This section records the boundary before the current call-boundary/lifetime
+work; use **Latest accepted run** above for current counts. Deterministic
+source/declaration assembly is implemented. All 5,720 bodies now
 belong to standalone generated translation units, and ownerless `__thiscall`
 uses an explicit address-stable free-function ABI rather than an invented
 class. The next boundary is compiler-diagnostic reduction: materialize exact
@@ -784,9 +792,9 @@ anonymous `field_0x...` views, keep pointer/scalar word roles distinct, lower
 only proven virtual member sugar, and repair weak prototypes at their Ghidra
 source.
 
-Database-level recovery should then prioritize 1,886 raw indirect calls in 773
-bodies, 558 consumed return-width artifacts in 138 bodies, and 472 unresolved
-incoming-register uses in 132 bodies. The 18,327 undefined spellings need to be
+Database-level recovery should then prioritize 1,888 raw indirect calls in 775
+bodies, 292 return-width artifacts in 103 bodies, and 474 unresolved
+incoming-register uses in 133 bodies. The 18,286 undefined spellings need to be
 split by role before ranking; a parameter/return boundary is more valuable than
 an isolated local. Generic field names remain a later semantic layer and must
 not drive geometry-only merging. A true `Node **` cursor which shares one
@@ -936,18 +944,20 @@ arity failures.
 
 Latest accepted state:
 
-- run `db177316e99af87fb7849a8d84850337d45a6b7cc50bb388dbd105f1cc2b7c77`;
-- semantic hash `9f9ee6d4638ff024c7cbdc9292d0554b293a9960f0e883f9489235e94c57a228`;
-- corpus manifest `62c23b9a9b29058f25fbce3d8f1c7ff34485edbbbc897ddc7531232a0cc80563`;
-- 10,392 function records, 5,712 bodies, zero failed bodies, 2,729 typed vtable slots;
+- run `51989204f2f3f306c556cf4ef551f67584b92210595ac8c502cc353529213d5b`;
+- semantic hash `b5ccc04d4b3302db3a4dfdc519371fb1e3feefb6d21c7a3e8d4a2f371dec5ed4`;
+- corpus manifest `6847961dcc13a9c6d104a63a7f88383ba13815fa70cd98c5267d4c4966029ce3`;
+- 10,400 function records, 5,720 bodies, zero failed bodies, 2,737 typed vtable slots;
 - export and ABI gates have zero errors and warnings;
-- confirming export duration `00:05:15`, with 10,392/10,392 bodies reused;
-- 64-error-per-TU compiler audit: 71/318 pass, 4,496 errors, 4,491 mapped to an address, zero syntax errors.
+- fully warmed `full-export` duration `00:21:24`, with 10,400/10,400 bodies and
+  5,720/5,720 function-quality analyses reused;
+- 64-error-per-TU compiler audit: 178/318 pass, 2,213 errors, 2,196 mapped to an
+  address, zero syntax errors.
 
-This is 266 fewer diagnostics than the preceding accepted 4,762-error
-checkpoint and 1,094 fewer than the initial 5,590-error baseline. The next
-shared semantic cause is the 4,283-site stack-slot/local lifetime cluster
-feeding 1,426 assignment and 1,226 call-argument diagnostics. Prefer an
-address-stable Ghidra split or exact closed-scope
-`ST_PSEUDO[stack_slot_reuse]` materialization over casts in generated calls;
-the 1,886 raw indirect calls still require callback/vtable ABI evidence.
+The general call-boundary/lifetime layer reduced assignment diagnostics from
+1,426 to 72 and call-argument diagnostics from 1,226 to zero. The next broad
+compiler queues are 888 undeclared identifiers, 354 pointer-indirection errors,
+261 non-callable values, and 146 invalid operands. Prefer address-stable Ghidra
+recovery where machine evidence exists; exact source-boundary repairs remain
+limited to representationally equivalent pointer/scalar crossings. The 1,888
+raw indirect calls still require callback/vtable ABI evidence.

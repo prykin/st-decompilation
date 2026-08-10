@@ -414,8 +414,7 @@ LAB_00480f12:
       (local_8 = 0, STField<char>(param_1,0x2bf) != '\0')))) {
     local_c = (undefined4 *)((int)param_1 + 0x2b3);
     do {
-      puVar5 = (undefined4 *)
-               thunk_FUN_0041dc40(local_20,(short)*local_c,*(ushort *)(local_c + 1),
+      puVar5 = thunk_FUN_0041dc40(local_20,(short)*local_c,*(ushort *)(local_c + 1),
                                   STField<short>(param_1,0x6c));
       uVar7 = *puVar5;
       bVar21 = 0;

@@ -54,10 +54,10 @@ int __thiscall st::fn_0057BF60(STFishC *this,STMessage *message)
   this_00 = local_1c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Igor\\To_fish.cpp",0x663,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_fish.cpp"),0x663,0,iVar4,st::mutable_c_string("%s"),
                                "STFishC::GetMessage");
     if (iVar5 == 0) {
-      st::fn_006A5E40(iVar4,0,"E:\\__titans\\Igor\\To_fish.cpp",0x664);
+      st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Igor\\To_fish.cpp"),0x664);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -102,7 +102,7 @@ int __thiscall st::fn_0057BF60(STFishC *this,STMessage *message)
     *(undefined4 *)&this_00->field_0x23b = 5;
     st::fn_00404264((STT3DSprC *)puVar9,0xe);
     st::fn_00402A90((STT3DSprC *)puVar9);
-    st::fn_00404183((STT3DSprC *)puVar9,8,PTR_00806774,"explsna",CASE_1D);
+    st::fn_00404183((STT3DSprC *)puVar9,8,PTR_00806774,st::mutable_c_string("explsna"),CASE_1D);
     st::fn_00405240((STT3DSprC *)puVar9,8,g_playSystem_00802A38->field_00E4);
     g_currentExceptionFrame = local_80.previous;
     return 0;
@@ -114,7 +114,7 @@ int __thiscall st::fn_0057BF60(STFishC *this,STMessage *message)
     }
     local_14 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
     local_18 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-    local_c = st::fn_006AAC70(local_10 + 0x46 + local_8);
+    local_c = st::pointer_boundary_cast<AnonShape_0057BF60_C1393638 *>(st::fn_006AAC70(local_10 + 0x46 + local_8));
     if (local_14 == nullptr) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -136,12 +136,12 @@ int __thiscall st::fn_0057BF60(STFishC *this,STMessage *message)
     *(undefined4 *)&local_c->field_0x3a = 0;
     local_c->field_003E = local_8;
     pbVar10 = local_14;
-    pbVar13 = &local_c->field_0x42;
+    pbVar13 = st::pointer_boundary_cast<byte *>(&local_c->field_0x42);
     memmove(pbVar13, pbVar10, local_8); /* compiler REP MOVS byte copy */
     uVar7 = 0;
     *(uint *)(&local_c->field_0x42 + local_8) = local_10;
     pbVar10 = local_18;
-    pbVar13 = &local_c[1].field_0x2 + local_8;
+    pbVar13 = st::pointer_boundary_cast<byte *>(&local_c[1].field_0x2 + local_8);
     memmove(pbVar13, pbVar10, local_10); /* compiler REP MOVS byte copy */
     st::fn_004025F9
               (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
@@ -175,7 +175,7 @@ int __thiscall st::fn_0057BF60(STFishC *this,STMessage *message)
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  local_20 = (message->arg0).ptr;
+  local_20 = st::pointer_boundary_cast<undefined4 *>((message->arg0).ptr);
   if (1 < (uint)local_20[3]) {
     if (local_20[3] == 2) {
       puVar9 = (byte *)(local_20);
@@ -249,27 +249,27 @@ int __thiscall st::fn_0057BF60(STFishC *this,STMessage *message)
   switch(*(undefined4 *)&this_00->field_0x267) {
   case 0xe7:
     puVar9 = (byte *)(&this_00->field_01D5);
-    iVar6 = st::fn_00404183((STT3DSprC *)puVar9,0xe,PTR_0080676c,"fish1",CASE_1D);
+    iVar6 = st::fn_00404183((STT3DSprC *)puVar9,0xe,PTR_0080676c,st::mutable_c_string("fish1"),CASE_1D);
     if (iVar6 != 0) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_fish.cpp",0xf6);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\To_fish.cpp"),0xf6);
     }
     st::fn_00405AA6(puVar9,'\x0e');
     st::fn_00401064((STT3DSprC *)puVar9,'\x0e',0);
     goto switchD_0057c210_default;
   case 0xe8:
     iVar6 = st::fn_00404183
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"fish_b",CASE_1D);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("fish_b"),CASE_1D);
     if (iVar6 != 0) {
       iVar6 = 0xea;
 cf_error_exit_0057C332:
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_fish.cpp",iVar6);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\To_fish.cpp"),iVar6);
     }
     break;
   case 0xe9:
     iVar6 = st::fn_00404183
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"fish_gr",CASE_1D
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("fish_gr"),CASE_1D
                       );
     if (iVar6 != 0) {
       iVar6 = 0xf0;
@@ -278,7 +278,7 @@ cf_error_exit_0057C332:
     break;
   case 0xea:
     iVar6 = st::fn_00404183
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,&DAT_007cb008,CASE_1D);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::pointer_boundary_cast<char *>(&DAT_007cb008),CASE_1D);
     if (iVar6 != 0) {
       iVar6 = 0xfd;
       goto cf_error_exit_0057C332;
@@ -286,7 +286,7 @@ cf_error_exit_0057C332:
     break;
   case 0xeb:
     iVar6 = st::fn_00404183
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,&DAT_007cb010,CASE_1D);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::pointer_boundary_cast<char *>(&DAT_007cb010),CASE_1D);
     if (iVar6 != 0) {
       iVar6 = 0x104;
       goto cf_error_exit_0057C332;
@@ -318,7 +318,7 @@ cf_common_exit_0057C3E4:
   g_currentExceptionFrame = local_80.previous;
   return 0;
 switchD_0057c669_caseD_127:
-  puVar1 = &this_00->field_0x235;
+  puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x235);
   int scalar_local_20 = (int)(short)((message->arg1).words.low * 0xc9 + 100); /* split integer lifetime from pointer-typed SSA storage */
   iVar6 = st::fn_004019E7(0,0,g_worldGrid.sizeX + -1,g_worldGrid.sizeY + -1,(int)this_00,
                              (int)(short)((message->arg0).words.low * 0xc9 + 100),scalar_local_20,
@@ -424,7 +424,7 @@ void __thiscall st::fn_0057CD70(STFishC *this)
     iVar3 = this->vfunc_20();
     if (iVar3 == -1) {
       local_EAX_271 =
-           st::fn_006AD4D0("E:\\__titans\\Igor\\To_fish.cpp",0x709,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_fish.cpp"),0x709,0,0,st::mutable_c_string("%s"),
                               "stop move error");
       if (local_EAX_271 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -455,7 +455,7 @@ void __thiscall st::fn_0057CD70(STFishC *this)
       else {
         if (iVar3 != 2) {
           local_EAX_344 =
-               st::fn_006AD4D0("E:\\__titans\\Igor\\To_fish.cpp",0x72d,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_fish.cpp"),0x72d,0,0,st::mutable_c_string("%s"),
                                   "STFishC::LifeFish Error Move");
           if (local_EAX_344 == 0) {
             return;
@@ -478,7 +478,7 @@ void __thiscall st::fn_0057CD70(STFishC *this)
     }
     else if ((iVar3 != 2) && (iVar3 != 3)) {
       local_EAX_471 =
-           st::fn_006AD4D0("E:\\__titans\\Igor\\To_fish.cpp",0x740,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_fish.cpp"),0x740,0,0,st::mutable_c_string("%s"),
                               "STFishC::LifeFish Error Move");
       if (local_EAX_471 == 0) {
         return;
@@ -504,17 +504,17 @@ void __thiscall st::fn_0057CD70(STFishC *this)
 LAB_0057cfe0:
   switch(this->field_0267) {
   case CASE_E7:
-    st::fn_00401064((STT3DSprC *)this_00,'\x0e',g_playSystem_00802A38->field_00E4 % 0x78 >> 1);
+    st::fn_00401064((STT3DSprC *)this_00,'\x0e',st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 % 0x78 >> 1));
     break;
   case CASE_E8:
     iVar3 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
-    uVar4 = g_playSystem_00802A38->field_00E4 % 0x30 >> 2;
+    uVar4 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 % 0x30 >> 2);
     local_8 = uVar4 + (iVar3 / 3) * 0xc;
     uVar4 = uVar4 + (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0xc;
     goto LAB_0057d24b;
   case CASE_E9:
     iVar3 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
-    uVar4 = g_playSystem_00802A38->field_00E4 % 0xc >> 1;
+    uVar4 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 % 0xc >> 1);
     local_8 = uVar4 + (iVar3 / 3) * 6;
     uVar4 = uVar4 + (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 6;
 LAB_0057d24b:
@@ -531,7 +531,7 @@ LAB_0057d24b:
     break;
   case CASE_EB:
     iVar3 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
-    uVar4 = g_playSystem_00802A38->field_00E4 % 0x14;
+    uVar4 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 % 0x14);
     st::fn_00401064
               ((STT3DSprC *)this_00,'\x0e',
                uVar4 + (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0x14);
@@ -542,7 +542,7 @@ LAB_0057d24b:
   }
   st::fn_004030BC((STT3DSprC *)this_00,'\x0e');
 switchD_0057cff4_default:
-  this->field_023F = this->field_023F + 1;
+  this->field_023F = st::machine_word_boundary_cast<uint>(this->field_023F + 1);
   this->vfunc_D8();
   return;
 }

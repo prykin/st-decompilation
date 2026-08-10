@@ -314,14 +314,14 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
       g_startSystem_0081176C->field_0548 = &pDVar9->flags;
       SVar3 = this_00->field_1E26;
       local_5d8 = DAT_0080995c;
-      puVar15 = (byte *)(&DAT_00809960);
+      puVar15 = (byte *)&DAT_00809960;
       puVar18 = (byte *)(local_61c);
       memmove(puVar18, puVar15, 0x20); /* compiler REP MOVS byte copy */
       iVar13 = 0;
       StartSystemTy::LoadMapData(g_startSystem_0081176C,this_00->field_1F3F,SVar3);
       DAT_0080995c = local_5d8;
       puVar15 = (byte *)(local_61c);
-      puVar18 = (byte *)(&DAT_00809960);
+      puVar18 = (byte *)&DAT_00809960;
       memmove(puVar18, puVar15, 0x20); /* compiler REP MOVS byte copy */
     }
     (*this_00->vtable->PrepPlList)((SettMapSTy *)this_00);

@@ -14,16 +14,16 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
   byte *pbVar9;
   int uVar6;
   byte *pbVar10;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX_00;
   int iVar11;
   uint uVar12;
   byte *pbVar13;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   byte *extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   byte *extraout_EDX_00;
   uint uVar14;
   uint uVar15;
@@ -63,7 +63,7 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
             if (uVar14 == 0) {
               bVar19 = pbVar16 < pbVar13;
               iVar11 = 0;
-              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+              /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               if ((!bVar19) &&
                  (uVar6 = FUN_006d822b(), iVar11 = extraout_ECX, pbVar13 = extraout_EDX, bVar19))
               goto cf_common_exit_006D8217;
@@ -75,7 +75,7 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
               if (0xbf < bVar2) {
                 uVar14 = STReplaceLowByte((uint32_t)(uVar14), (uint8_t)(bVar2)) & 0xffffff3f;
                 bVar19 = pbVar1 < pbVar13;
-                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                 if ((!bVar19) &&
                    (uVar6 = FUN_006d822b(), uVar14 = extraout_ECX_00, pbVar13 = extraout_EDX_00,
                    bVar19)) goto cf_common_exit_006D8217;

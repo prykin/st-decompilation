@@ -94,25 +94,25 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     iVar16 = 0xbf;
     uVar15 = 3;
     iVar14 = 0x40;
-    pCVar4 = st::fn_0040577C("BKG_TRADECENTERW",0);
+    pCVar4 = st::fn_0040577C(st::mutable_c_string("BKG_TRADECENTERW"),0);
     st::fn_00403800
               ((SpecPanelTy *)this_00,pCVar4,iVar14,uVar15,iVar16,iVar18,UVar19,iVar9,uVar22);
-    pcVar5 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
+    pcVar5 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,st::mutable_c_string("MONEY_FONT"),0);
     uVar11 = 1;
     this_00->field_01DD = pcVar5;
     pcVar5->field_0058 = 1;
     pcVar5->field_005C = 0;
     puVar6 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c204c),0xffffffff,0,1,0,nullptr);
     this_00->field_01D1 = puVar6;
     puVar6 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c2048),0xffffffff,0,1,0,nullptr);
     this_00->field_01D5 = puVar6;
     iVar9 = 1;
     uVar17 = 0xffffffff;
     puVar20 = puVar3;
     puVar23 = puVar3;
-    pCVar4 = st::fn_0040577C("TRADE_RATE",0);
+    pCVar4 = st::fn_0040577C(st::mutable_c_string("TRADE_RATE"),0);
     puVar6 = st::fn_00709AF0
                        (PTR_00806794,CASE_B,pCVar4,uVar17,(byte)puVar3,iVar9,(int)puVar20,puVar23);
     local_5 = this_00->field_01D0;
@@ -154,7 +154,7 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     local_20 = 1;
     local_44 = local_64;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C4,nullptr,local_74,0);
+              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C4,nullptr,st::machine_word_boundary_cast<undefined4>(local_74),0);
     local_e8 = this_00->field_0008;
     iVar14 = 1;
     piVar21 = nullptr;
@@ -169,14 +169,14 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     local_380 = 1;
     local_490[2] = 0;
     local_490[3] = 2;
-    pCVar4 = st::fn_0040577C("BUT_TBUP",0);
+    pCVar4 = st::fn_0040577C(st::mutable_c_string("BUT_TBUP"),0);
     pCVar4 = st::fn_006F2C00(pCVar4,iVar9,uVar15);
     local_18 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar4,piVar21,iVar14);
     local_478 = *(undefined4 *)(local_18 + 2);
     local_474 = *(undefined4 *)(local_18 + 4);
     st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_18);
     iVar9 = this_00->field_005C;
-    local_490[4] = this_00->field_003C + 0x69;
+    local_490[4] = st::machine_word_boundary_cast<int>(this_00->field_003C + 0x69);
     iVar14 = DAT_00806734;
     if (iVar9 != 0) {
       iVar14 = this_00->field_0044;
@@ -194,15 +194,15 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     if (iVar9 != 0) {
       local_308[3] = this_00->field_0044;
     }
-    local_308[3] = local_308[3] + 0x57;
+    local_308[3] = st::machine_word_boundary_cast<int>(local_308[3] + 0x57);
     puVar3 = &this_00->field_01C0;
     local_2a0 = 0xc006;
     local_c4 = 1;
     local_c0 = 0x14;
     local_bc = 10;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,4,puVar3,nullptr,local_490,0);
-    puVar1 = &this_00->field_0x18;
+              ((SystemClassTy *)this_00->field_000C,4,puVar3,nullptr,st::machine_word_boundary_cast<undefined4>(local_490),0);
+    puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x18);
     this_00->field_0028 = 0x28;
     *(undefined4 *)&this_00->field_0x2c = 0x186a1;
     st::fn_006E6080(this_00,2,*puVar3,(undefined4 *)puVar1);
@@ -216,12 +216,12 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_b8.previous;
-  iVar8 = st::fn_006AD4D0("E:\\__titans\\Andrey\\tradecen.cpp",0x53,0,(int)puVar3,
-                             "%s","TradePanelTy::InitTradePanel");
+  iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x53,0,(int)puVar3,
+                             st::mutable_c_string("%s"),"TradePanelTy::InitTradePanel");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40((int)puVar3,0,"E:\\__titans\\Andrey\\tradecen.cpp",0x53);
+  st::fn_006A5E40((int)puVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x53);
   return;
 }
 
@@ -274,12 +274,12 @@ void __thiscall st::fn_005512F0(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\tradecen.cpp",0x67,0,errorCode,
-                             "%s","TradePanelTy::DoneTradePanel");
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x67,0,errorCode,
+                             st::mutable_c_string("%s"),"TradePanelTy::DoneTradePanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\tradecen.cpp",0x67);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x67);
   return;
 }
 
@@ -336,7 +336,7 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
       uVar6 = 0xb1ff;
       this_00->field_01CC = 0;
       if (this_00->field_01BB == '\0') {
-        pCVar3 = st::fn_0040577C("BUT_MEDIUM",0);
+        pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar6 = (*(code *)pAVar1->field_0004)
                           (0,1,0xac,0x57,0,1,1,pCVar3,uVar6,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12);
@@ -349,14 +349,14 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
         uVar8 = 0xb202;
         uVar7 = 0xb201;
         this_00->field_01C8 = uVar6;
-        pCVar3 = st::fn_0040577C("BUT_MEDIUM",0);
+        pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar6 = (*(code *)pAVar1->field_0004)
                           (0,1,0xe5,0x57,0,1,1,pCVar3,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12,uVar5);
         this_00->field_01CC = uVar6;
       }
       else {
-        pCVar3 = st::fn_0040577C("BUT_MEDIUM",0);
+        pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar6 = (*(code *)pAVar1->field_0004)(0,1,0xca,0x57,0,1,1,pCVar3);
         this_00->field_01C8 = uVar6;
@@ -366,12 +366,12 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\tradecen.cpp",0x81,0,errorCode,
-                               "%s","TradePanelTy::SetModeControls");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x81,0,errorCode,
+                               st::mutable_c_string("%s"),"TradePanelTy::SetModeControls");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\tradecen.cpp",0x81);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x81);
   }
   return;
 }
@@ -422,12 +422,12 @@ void __thiscall st::fn_00551690(TradePanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\tradecen.cpp",0x91,0,errorCode,
-                               "%s","TradePanelTy::ShiftControls");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x91,0,errorCode,
+                               st::mutable_c_string("%s"),"TradePanelTy::ShiftControls");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\tradecen.cpp",0x91);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x91);
   }
   return;
 }
@@ -495,7 +495,7 @@ void __thiscall st::fn_00551BA0(TradePanelTy *this)
             st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,0x39,'\x01',
                    (byte *)pBVar2);
           }
-          st::external_00000080(&this_00->field_018D,"%d:1",
+          st::external_00000080(st::pointer_boundary_cast<LPSTR>(&this_00->field_018D),st::mutable_c_string("%d:1"),
                     (uint)*(ushort *)
                            (&this_00->field_0x1ad +
                            (iVar4 + (uint)(byte)this_00->field_01D0 * 2) * 4));
@@ -523,12 +523,12 @@ void __thiscall st::fn_00551BA0(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\tradecen.cpp",0xf5,0,iVar2,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0xf5,0,iVar2,st::mutable_c_string("%s"),
                              "TradePanelTy::PaintPanel");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\tradecen.cpp",0xf5);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0xf5);
   return;
 }
 
@@ -565,7 +565,7 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
   pTVar3 = local_10;
   if (iVar4 == 0) {
     resourceString = &local_10->field_018D;
-    st::external_00000080(resourceString,"%6d",
+    st::external_00000080(resourceString,st::mutable_c_string("%6d"),
               (uint)(ushort)(&local_10->field_01BC)[(byte)local_10->field_01D0]);
     st::fn_00710A90(pTVar3->field_01DD,pTVar3->field_0068,0,0x67,0x36,0x23,0xc);
     st::fn_007119C0(pTVar3->field_01DD,resourceString,-1,-1,-(uint)(pTVar3->field_01D0 != '\0') & 2);
@@ -579,7 +579,7 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
         iVar9 = 1;
         bVar7 = 0;
         uVar6 = 0xffffffff;
-        text = st::fn_0040577C("BKG_AMOUNTRC",0);
+        text = st::fn_0040577C(st::mutable_c_string("BKG_AMOUNTRC"),0);
         puVar5 = st::fn_00709AF0
                            (PTR_00806794,CASE_1,text,uVar6,bVar7,iVar9,iVar10,puVar11);
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)pTVar3->field_0068,iVar4 + -3,0x45,'\x01',
@@ -596,7 +596,7 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
           iVar9 = (int)((ulonglong)(ushort)(&pTVar3->field_01BC)[bVar7] /
                        (ulonglong)(longlong)(int)(uint)uVar1);
         }
-        st::external_00000080(resourceString,"%6d",iVar9);
+        st::external_00000080(resourceString,st::mutable_c_string("%6d"),iVar9);
         st::fn_00710A90(pTVar3->field_01DD,pTVar3->field_0068,0,iVar4,0x48,0x23,0xc);
         st::fn_007119C0(pTVar3->field_01DD,resourceString,-1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5);
@@ -609,12 +609,12 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar8 = st::fn_006AD4D0("E:\\__titans\\Andrey\\tradecen.cpp",0x111,0,iVar4,"%s",
+  iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x111,0,iVar4,st::mutable_c_string("%s"),
                              "TradePanelTy::PaintIndicators");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\tradecen.cpp",0x111);
+  st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x111);
   return;
 }
 
@@ -655,12 +655,12 @@ void __thiscall st::fn_005521B0(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\tradecen.cpp",300,0,errorCode,
-                             "%s","TradePanelTy::Update");
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),300,0,errorCode,
+                             st::mutable_c_string("%s"),"TradePanelTy::Update");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\tradecen.cpp",300);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),300);
   return;
 }
 
@@ -718,10 +718,10 @@ int __thiscall st::fn_005522A0(TradePanelTy *this,STMessage *message)
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\tradecen.cpp",0x175,0,iVar3,
-                               "%s","TradePanelTy::GetMessage");
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x175,0,iVar3,
+                               st::mutable_c_string("%s"),"TradePanelTy::GetMessage");
     if (iVar6 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\tradecen.cpp",0x175);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x175);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -735,7 +735,7 @@ int __thiscall st::fn_005522A0(TradePanelTy *this,STMessage *message)
 LAB_00552481:
       uVar17 = 1;
       uVar15 = 0;
-      pCVar3 = st::fn_0040577C("BUT_MEDIUM",0);
+      pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)pAVar8->field_0010)(message,pCVar3,iVar7,uVar15,uVar17);
       g_currentExceptionFrame = local_68.previous;
@@ -827,7 +827,7 @@ LAB_00552481:
       iVar7 = *(int *)((message->arg0).u32 + 0x10) - iVar7;
       iVar4 = st::fn_00401BA4((AnonShape_0052A7B0_DD603BF4 *)message);
       iVar9 = 2;
-      pCVar3 = st::fn_0040577C("BUT_RCTTYPE",0);
+      pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_RCTTYPE"),0);
       pCVar3 = st::fn_006F2C00(pCVar3,iVar9,iVar4);
       puVar5 = st::fn_00709AF0
                          (PTR_00806794,CASE_1,pCVar3,uVar10,bVar11,iVar12,iVar14,puVar16);
@@ -839,7 +839,7 @@ LAB_00552481:
         iVar4 = 1;
         bVar11 = 0;
         uVar10 = 0xffffffff;
-        pCVar3 = st::fn_0040577C("BUT_RCTFTYPE",0);
+        pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_RCTFTYPE"),0);
         puVar5 = st::fn_00709AF0
                            (PTR_00806794,CASE_6,pCVar3,uVar10,bVar11,iVar4,iVar9,puVar16);
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x06',
@@ -867,7 +867,7 @@ LAB_00552481:
     }
     uVar17 = 1;
     uVar15 = 0;
-    pcVar13 = st::fn_00401E88;
+    pcVar13 = st::pointer_boundary_cast<code *>(st::fn_00401E88);
     pCVar3 = st::fn_0040577C(text,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)pAVar8->field_0008)(message,1,pCVar3,pcVar13,uVar15,uVar17);

@@ -24,7 +24,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
   int iVar4;
   int local_EAX_936;
   uint uVar6;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX;
   uint uVar7;
   undefined4 *puVar8;
@@ -134,7 +134,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
                   if ((int)uVar15 < (int)DAT_008570dc) {
                     uVar14 = FUN_006db5f0(DAT_00857068,DAT_008570dc - uVar15);
                     uVar6 = uVar6 + uVar14;
-                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                     uVar12 = extraout_ECX;
                     uVar15 = DAT_008570dc;
                   }

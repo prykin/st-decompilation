@@ -57,12 +57,12 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
   this_00 = local_10;
   if (local_EAX_36 != 0) {
     g_currentExceptionFrame = local_7c.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\nick\\to_Part.Cpp",0x218,0,local_EAX_36,
-                               "%s","STParticleC::GetMessage");
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Part.Cpp"),0x218,0,local_EAX_36,
+                               st::mutable_c_string("%s"),"STParticleC::GetMessage");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_36,0,"E:\\__titans\\nick\\to_Part.Cpp",0x21a);
+    st::fn_006A5E40(local_EAX_36,0,st::mutable_c_string("E:\\__titans\\nick\\to_Part.Cpp"),0x21a);
     return 0xffff;
   }
   SVar2 = message->id;
@@ -118,7 +118,7 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    st::fn_0040396D(local_10,puVar11);
+    st::fn_0040396D(local_10,st::pointer_boundary_cast<undefined4 *>(puVar11));
     memset(&this_00->field_0xd7, 0, 0x2d); /* compiler bulk-zero initialization */
     if (this_00->field_00C2 == CASE_3) {
       st::fn_004030CB(this_00);
@@ -147,7 +147,7 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
   }
   switch(this_00->field_00C2) {
   case CASE_1:
-    iVar10 = this_00->field_003C + -1;
+    iVar10 = st::machine_word_boundary_cast<int>(this_00->field_003C + -1);
     this_00->field_003C = iVar10;
     if (0 < iVar10) {
       g_currentExceptionFrame = local_7c.previous;
@@ -276,7 +276,7 @@ LAB_00628286:
 LAB_0062838a:
     if (uVar14 < 0x19) {
 LAB_006283bd:
-      this_00->field_00B2 = this_00->field_00B2 + 1;
+      this_00->field_00B2 = st::machine_word_boundary_cast<undefined4>(this_00->field_00B2 + 1);
     }
     else if (uVar14 < 0x2d) {
       if ((g_playSystem_00802A38->field_00E4 & 1) == 0) goto LAB_006283bd;
@@ -343,7 +343,7 @@ LAB_006282e0:
     bVar15 = true;
     break;
   case CASE_3:
-    iVar10 = this_00->field_00B2 + 1;
+    iVar10 = st::machine_word_boundary_cast<int>(this_00->field_00B2 + 1);
     this_00->field_00B2 = iVar10;
     if ((((this_00->field_00BF != '\0') && (iVar10 == 0xf)) && (this_00->field_00D6 != '\0')) &&
        (-1 < (int)this_00->field_00C6)) {
@@ -709,12 +709,12 @@ LAB_00629242:
   iVar9 = st::fn_0072D7F0(local_70.jumpBuffer,0);
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar11 = st::fn_006AD4D0("E:\\__titans\\nick\\to_Part.Cpp",0x2ac,0,iVar9,"%s",
+    iVar11 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Part.Cpp"),0x2ac,0,iVar9,st::mutable_c_string("%s"),
                                 "STParticleC::InitVisibelFlight");
     if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar9,0,"E:\\__titans\\nick\\to_Part.Cpp",0x2ae);
+    st::fn_006A5E40(iVar9,0,st::mutable_c_string("E:\\__titans\\nick\\to_Part.Cpp"),0x2ae);
     return 0xffff;
   }
   puVar9 = st::fn_00709AF0
@@ -728,7 +728,7 @@ LAB_00629242:
   local_1c->field_00CA = puVar9;
   puVar1 = &local_1c->field_00C6;
   st::fn_006E8660
-            (g_sT3DSMAPContext_00807598,puVar1,2,0,STField<uint>(puVar9,9),
+            (g_sT3DSMAPContext_00807598,st::pointer_boundary_cast<int *>(puVar1),2,0,STField<uint>(puVar9,9),
              STField<uint>(puVar9,0xd),local_10,local_c,0);
   if (DAT_00807326 != '\0') {
     st::fn_006E9520
@@ -870,10 +870,10 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
   pSVar7 = local_18;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar10 = st::fn_006AD4D0("E:\\__titans\\nick\\to_Part.Cpp",800,0,iVar8,"%s",
+    iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Part.Cpp"),800,0,iVar8,st::mutable_c_string("%s"),
                                 "STParticleC::InitVisibelDeton");
     if (iVar10 == 0) {
-      st::fn_006A5E40(iVar8,0,"E:\\__titans\\nick\\to_Part.Cpp",0x322);
+      st::fn_006A5E40(iVar8,0,st::mutable_c_string("E:\\__titans\\nick\\to_Part.Cpp"),0x322);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -889,7 +889,7 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
     puVar1 = &pSVar7->field_00C6;
     if ((int)pSVar7->field_00C6 < 0) {
       st::fn_006E8660
-                (g_sT3DSMAPContext_00807598,puVar1,2,0,STField<uint>(puVar8,9),
+                (g_sT3DSMAPContext_00807598,st::pointer_boundary_cast<int *>(puVar1),2,0,STField<uint>(puVar8,9),
                  STField<uint>(puVar8,0xd),0x5a,0x45,0);
     }
     else {
@@ -980,10 +980,10 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
     }
     if (*(byte *)&pSVar7->field_0014 < 4) {
       puVar8 = st::fn_00709AF0
-                         (PTR_00806764,CASE_1D,"expl_s1",0xffffffff,0,1,0,nullptr
+                         (PTR_00806764,CASE_1D,st::mutable_c_string("expl_s1"),0xffffffff,0,1,0,nullptr
                          );
       if (0xe < (int)pSVar7->field_00B2) {
-        local_8 = pSVar7->field_00B2 + 3;
+        local_8 = st::machine_word_boundary_cast<uint>(pSVar7->field_00B2 + 3);
       }
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar8,STField<int>(puVar8,0x21),1);
@@ -992,10 +992,10 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
     }
     else {
       puVar8 = st::fn_00709AF0
-                         (PTR_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
+                         (PTR_00806764,CASE_1D,st::mutable_c_string("expl_s0"),0xffffffff,0,1,0,nullptr
                          );
       if (0xe < (int)pSVar7->field_00B2) {
-        local_8 = pSVar7->field_00B2 - 0xf;
+        local_8 = st::machine_word_boundary_cast<uint>(pSVar7->field_00B2 - 0xf);
       }
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar8,STField<int>(puVar8,0x21),1);

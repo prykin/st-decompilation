@@ -152,7 +152,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
       pcVar13 = pcVar14 + -uVar11;
       pcVar14 = (char *)&DAT_0080ee1a;
       memmove(pcVar14, pcVar13, uVar11); /* compiler REP MOVS byte copy */
-      DAT_008087a0 = 8;
+      STPiece<0,1>(DAT_008087a0) = 8;
       iVar17 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
       if (iVar17 != 0) {
         memset(&DAT_0080c522, 0, 0x27f0); /* compiler bulk-zero initialization */
@@ -185,46 +185,51 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     case 0:
     case 2:
     case 3:
-      iVar9 = (int)&this_00->vtable + iVar17 * 0x1fb;
+      iVar9 = (int)this_00->field_0066 + iVar17 * 0x1fb + -0x66;
       iVar8 = *(int *)(iVar9 + 0xef) + -1;
       break;
     case 1:
-      iVar9 = (int)&this_00->vtable + iVar17 * 0x1fb;
+      iVar9 = (int)this_00->field_0066 + iVar17 * 0x1fb + -0x66;
       iVar8 = *(int *)(iVar9 + 0xef) + -2;
       break;
     default:
       goto switchD_005931dd_default;
     }
     *(int *)(iVar9 + 0xeb) = iVar8;
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 switchD_005931dd_default:
-    uVar11 = *(uint *)((int)&this_00->field_00E7 + iVar17 * 0x1fb);
+    uVar11 = *(uint *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x81);
     local_c = piVar3;
     if (uVar11 != 0xffffffff) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       Library::DKW::DDX::FUN_006b3730
                 (*(uint **)((int)&this_00->field_012B + iVar17 * 0x1fb),uVar11,
-                 *(uint *)((int)&this_00->field_00EB + iVar17 * 0x1fb),
-                 *(uint *)((int)&this_00->field_00FF + iVar17 * 0x1fb),
-                 *(uint *)((int)&this_00->field_0103 + iVar17 * 0x1fb));
+                 *(uint *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x85),
+                 *(uint *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x99),
+                 *(uint *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x9d));
     }
-    if ((&this_00->field_00E2)[iVar17 * 0x1fb] != '\0') {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    if (*(char *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x7c) != '\0') {
       switch(piVar3[1]) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case 0:
       case 2:
       case 3:
         *(int *)(&this_00->field_0x221 + iVar17 * 0x1fb) =
-             *(int *)((int)&this_00->field_00FF + iVar17 * 0x1fb) +
-             *(int *)(&this_00->field_0xab + iVar17 * 0x1fb);
+             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x99) +
+             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x45);
         *(int *)(&this_00->field_0x225 + iVar17 * 0x1fb) =
-             *(int *)((int)&this_00->field_0103 + iVar17 * 0x1fb) +
-             *(int *)(&this_00->field_0xaf + iVar17 * 0x1fb);
+             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x9d) +
+             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x49);
         break;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case 1:
         *(int *)(&this_00->field_0x221 + iVar17 * 0x1fb) =
-             *(int *)((int)&this_00->field_00FF + iVar17 * 0x1fb) +
-             *(int *)(&this_00->field_0xb3 + iVar17 * 0x1fb);
+             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x99) +
+             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x4d);
         *(int *)(&this_00->field_0x225 + iVar17 * 0x1fb) =
-             *(int *)((int)&this_00->field_0103 + iVar17 * 0x1fb) +
-             *(int *)(&this_00->field_0xb7 + iVar17 * 0x1fb);
+             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x9d) +
+             *(int *)((int)this_00->field_0066 + iVar17 * 0x1fb + 0x51);
       }
       uVar11 = *(uint *)((int)&this_00->field_0209 + iVar17 * 0x1fb);
       if (uVar11 != 0xffffffff) {

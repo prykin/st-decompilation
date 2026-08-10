@@ -441,7 +441,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079AC9C	IntercomPanelTy	4	0x10	0079ACAC	00402121	PanelTy::PaintIBut	00402121	PanelTy::PaintIBut	false	false	00402121	PanelTy::PaintIBut	true	00538DB0	PanelTy::PaintIBut	PanelTy	PanelTy::PaintIBut	0	0
 0079AC9C	IntercomPanelTy	5	0x14	0079ACB0	004056D2	PanelTy::PaintLBut	004056D2	PanelTy::PaintLBut	false	false	004056D2	PanelTy::PaintLBut	true	00538FC0	PanelTy::PaintLBut	PanelTy	PanelTy::PaintLBut	0	0
 0079ACE4	MoneyTy	0	0x0	0079ACE4	004019D3	MoneyTy::GetMessage	004019D3	MoneyTy::GetMessage	false	false	004019D3	MoneyTy::GetMessage	true	0052BF00	MoneyTy::GetMessage	MoneyTy	MoneyTy::GetMessage	0	0
-0079ACE4	MoneyTy	1	0x4	0079ACE8	00405B55	PopUpTy::GetMessage	00405B55	PopUpTy::GetMessage	false	false	00405B55	PopUpTy::GetMessage	true	0052DD20	PopUpTy::GetMessage	PopUpTy	PopUpTy::GetMessage	0	0
+0079ACE8	PopUpTy	0	0x0	0079ACE8	00405B55	PopUpTy::GetMessage	00405B55	PopUpTy::GetMessage	false	false	00405B55	PopUpTy::GetMessage	true	0052DD20	PopUpTy::GetMessage	PopUpTy	PopUpTy::GetMessage	0	0
 0079AD10	OptPanelTy	0	0x0	0079AD10	00405EA7	OptPanelTy::GetMessage	00405EA7	OptPanelTy::GetMessage	false	false	00405EA7	OptPanelTy::GetMessage	true	00533D10	OptPanelTy::GetMessage	OptPanelTy	OptPanelTy::GetMessage	0	0
 0079AD10	OptPanelTy	1	0x4	0079AD14	0040300D	PanelTy::CreateBut	0040300D	PanelTy::CreateBut	false	false	0040300D	PanelTy::CreateBut	true	00538690	PanelTy::CreateBut	PanelTy	PanelTy::CreateBut	0	0
 0079AD10	OptPanelTy	2	0x8	0079AD18	00403373	PanelTy::PaintBut	00403373	PanelTy::PaintBut	false	false	00403373	PanelTy::PaintBut	true	005389E0	PanelTy::PaintBut	PanelTy	PanelTy::PaintBut	0	0
@@ -489,6 +489,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079ADF4		0	0x0	0079ADF4	00716040	SpriteClassTy::SetImages	00716040	SpriteClassTy::SetImages	false	false	00716040	SpriteClassTy::SetImages	false	00716040	SpriteClassTy::SetImages		SpriteClassTy::SetImages	0	0
 0079ADF4		1	0x4	0079ADF8	00715C60	SpriteClassTy::SetImagesReg	00715C60	SpriteClassTy::SetImagesReg	false	false	00715C60	SpriteClassTy::SetImagesReg	false	00715C60	SpriteClassTy::SetImagesReg		SpriteClassTy::SetImagesReg	0	0
 0079ADF4		2	0x8	0079ADFC	00716480	SpriteClassTy::SetImagesPtr	00716480	SpriteClassTy::SetImagesPtr	false	false	00716480	SpriteClassTy::SetImagesPtr	false	00716480	SpriteClassTy::SetImagesPtr		SpriteClassTy::SetImagesPtr	0	0
+0079AE04	CursorClassTy	0	0x0	0079AE04	0040310C	CursorClassTy::GetMessage	0040310C	CursorClassTy::GetMessage	false	false	0040310C	CursorClassTy::GetMessage	true	005449B0	CursorClassTy::GetMessage	CursorClassTy	CursorClassTy::GetMessage	0	0
 0079AE38	STPlaySystemC	0	0x0	0079AE38	004052B8	STPlaySystemC::InitSystem	004052B8	STPlaySystemC::InitSystem	false	false	004052B8	STPlaySystemC::InitSystem	true	0054CFC0	STPlaySystemC::InitSystem	STPlaySystemC	STPlaySystemC::InitSystem	0	0
 0079AE38	STPlaySystemC	1	0x4	0079AE3C	004024AF	STPlaySystemC::DoneSystem	004024AF	STPlaySystemC::DoneSystem	false	false	004024AF	STPlaySystemC::DoneSystem	true	0054D180	STPlaySystemC::DoneSystem	STPlaySystemC	STPlaySystemC::DoneSystem	0	0
 0079AE38	STPlaySystemC	2	0x8	0079AE40	004021DA	thunk_FUN_0054cf00	004021DA	thunk_FUN_0054cf00	false	false	004021DA	thunk_FUN_0054cf00	true	0054CF00	FUN_0054cf00		STPlaySystemC::vfunc_08	0	0
@@ -1357,6 +1358,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079C1E8	StartSystemTy	6	0x18	0079C200	006E5950	FUN_006e5950	006E5950	FUN_006e5950	false	false	006E5950	FUN_006e5950	false	006E5950	FUN_006e5950		StartSystemTy::vfunc_18	0	0
 0079C1E8	StartSystemTy	7	0x1C	0079C204	006E5D90	SystemClassTy::Life	006E5D90	SystemClassTy::Life	false	false	006E5D90	SystemClassTy::Life	false	006E5D90	SystemClassTy::Life		SystemClassTy::Life	0	0
 0079C1E8	StartSystemTy	8	0x20	0079C208	004046CE	StartSystemTy::GetMessage	004046CE	StartSystemTy::GetMessage	false	false	004046CE	StartSystemTy::GetMessage	true	005DCE90	StartSystemTy::GetMessage	StartSystemTy	StartSystemTy::GetMessage	0	0
+0079C238	MTaskTy	0	0x0	0079C238	004020F4	MTaskTy::GetMessage	004020F4	MTaskTy::GetMessage	false	false	004020F4	MTaskTy::GetMessage	true	005E4570	MTaskTy::GetMessage	MTaskTy	MTaskTy::GetMessage	0	0
 0079C23C	MTestTy	0	0x0	0079C23C	0040598E	MTestTy::GetMessage	0040598E	MTestTy::GetMessage	false	false	0040598E	MTestTy::GetMessage	true	005E5FB0	MTestTy::GetMessage	MTestTy	MTestTy::GetMessage	0	0
 0079C24C	WaitTy	0	0x0	0079C24C	004038D7	WaitTy::GetMessage	004038D7	WaitTy::GetMessage	false	false	004038D7	WaitTy::GetMessage	true	005EA680	WaitTy::GetMessage	WaitTy	WaitTy::GetMessage	0	0
 0079C24C	WaitTy	1	0x4	0079C250	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
@@ -1975,7 +1977,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079CEBC	JumpManagC	0	0x0	0079CEBC	0040260D	JumpManagC::GetMessage	0040260D	JumpManagC::GetMessage	false	false	0040260D	JumpManagC::GetMessage	true	00617640	JumpManagC::GetMessage	JumpManagC	JumpManagC::GetMessage	0	0
 0079CED0	STJumpMineC	0	0x0	0079CED0	00402D6A	STJumpMineC::GetMessage	00402D6A	STJumpMineC::GetMessage	false	false	00402D6A	STJumpMineC::GetMessage	true	00618C00	STJumpMineC::GetMessage	STJumpMineC	STJumpMineC::GetMessage	0	0
 0079CED4	STLightC	0	0x0	0079CED4	004026EE	STLightC::GetMessage	004026EE	STLightC::GetMessage	false	false	004026EE	STLightC::GetMessage	true	0061D190	STLightC::GetMessage	STLightC	STLightC::GetMessage	0	0
-0079CED4	STLightC	1	0x4	0079CED8	00403292	SndUnderAttMenegC::GetMessage	00403292	SndUnderAttMenegC::GetMessage	false	false	00403292	SndUnderAttMenegC::GetMessage	true	0061F660	SndUnderAttMenegC::GetMessage	SndUnderAttMenegC	SndUnderAttMenegC::GetMessage	0	0
+0079CED8	SndUnderAttMenegC	0	0x0	0079CED8	00403292	SndUnderAttMenegC::GetMessage	00403292	SndUnderAttMenegC::GetMessage	false	false	00403292	SndUnderAttMenegC::GetMessage	true	0061F660	SndUnderAttMenegC::GetMessage	SndUnderAttMenegC	SndUnderAttMenegC::GetMessage	0	0
 0079CEFC	STMineSetC	0	0x0	0079CEFC	00401672	STMineSetC::GetMessage	00401672	STMineSetC::GetMessage	false	false	00401672	STMineSetC::GetMessage	true	00621B50	STMineSetC::GetMessage	STMineSetC	STMineSetC::GetMessage	0	0
 0079CEFC	STMineSetC	1	0x4	0079CF00	00402964	thunk_FUN_00415b10	00402964	thunk_FUN_00415b10	false	false	00402964	thunk_FUN_00415b10	true	00415B10	FUN_00415b10		STMineSetC::vfunc_04	0	0
 0079CEFC	STMineSetC	2	0x8	0079CF04	00404F25	thunk_FUN_0041e510	00404F25	thunk_FUN_0041e510	false	false	00404F25	thunk_FUN_0041e510	true	0041E510	FUN_0041e510		STMineSetC::vfunc_08	0	0
@@ -2326,6 +2328,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079D4AC	STTorpC	70	0x118	0079D5C4	004041E2	thunk_FUN_004231c0	004041E2	thunk_FUN_004231c0	false	false	004041E2	thunk_FUN_004231c0	true	004231C0	FUN_004231c0		STTorpC::vfunc_118	0	0
 0079D4AC	STTorpC	71	0x11C	0079D5C8	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		STTorpC::vfunc_11C	0	0
 0079D4AC	STTorpC	72	0x120	0079D5CC	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		STTorpC::vfunc_120	0	0
+0079D60C		0	0x0	0079D60C	00405605	thunk_FUN_004210a0	00405605	thunk_FUN_004210a0	false	false	00405605	thunk_FUN_004210a0	true	004210A0	FUN_004210a0		FUN_004210a0	0	0
 0079D610	STVolcanoC	0	0x0	0079D610	004038D2	STVolcanoC::GetMessage	004038D2	STVolcanoC::GetMessage	false	false	004038D2	STVolcanoC::GetMessage	true	006461E0	STVolcanoC::GetMessage	STVolcanoC	STVolcanoC::GetMessage	0	0
 0079D618	AiBossClassTy	0	0x0	0079D618	00405961	thunk_FUN_00647b60	00405961	thunk_FUN_00647b60	false	false	00405961	thunk_FUN_00647b60	true	00647B60	FUN_00647b60		AiBossClassTy::vfunc_00	0	0
 0079D618	AiBossClassTy	1	0x4	0079D61C	00404D9A	thunk_FUN_00647b80	00404D9A	thunk_FUN_00647b80	false	false	00404D9A	thunk_FUN_00647b80	true	00647B80	FUN_00647b80		AiBossClassTy::vfunc_04	0	0

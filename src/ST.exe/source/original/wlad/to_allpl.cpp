@@ -34,12 +34,12 @@ st::fn_0042AB00
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x6a,0,errorCode,"%s"
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x6a,0,errorCode,st::mutable_c_string("%s")
                              ,"STAllPlayersC::GetGObjFromZone");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x6b);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x6b);
   return;
 }
 
@@ -79,12 +79,12 @@ st::fn_0042ABE0
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x10e,0,iVar3,
-                                 "%s","STAllPlayersC::GetGObjFromZone2");
+      iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x10e,0,iVar3,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::GetGObjFromZone2");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x10f);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x10f);
     }
     return;
   }
@@ -94,7 +94,7 @@ st::fn_0042ABE0
        (param_14 == nullptr)))) &&
      (((param_15 == nullptr && (param_16 == nullptr)) && (param_17 == nullptr)))) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0xb7
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xb7
               );
   }
   if ((param_6 != nullptr) && (*param_6 == 0)) {
@@ -146,7 +146,7 @@ st::fn_0042ABE0
     *param_17 = (int)pDVar3;
   }
   st::fn_006EAD90
-            (g_sT3DSMAPContext_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
+            (g_sT3DSMAPContext_00807598,param_2,param_3,param_4,param_5,st::pointer_boundary_cast<undefined4 *>(&local_c),&local_8);
   iVar6 = 0;
   if (0 < local_8) {
     local_10 = 0;
@@ -305,12 +305,12 @@ st::fn_0042B1F0
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
     if (iVar4 != -0x5001fff7) {
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x155,0,iVar4,
-                                 "%s","STAllPlayersC::GetGObjFromBox");
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x155,0,iVar4,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::GetGObjFromBox");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x156);
+      st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x156);
     }
     return;
   }
@@ -341,13 +341,13 @@ st::fn_0042B1F0
       (g_worldGrid.sizeZ < local_18)) ||
      (((local_14 < local_8 || (local_10 < local_c)) || (local_1c < local_18)))) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x133);
   }
   if (param_8 == nullptr) {
     if (((param_9 == nullptr) && (param_10 == nullptr)) && (param_11 == nullptr)) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x135);
     }
   }
@@ -539,8 +539,8 @@ st::fn_0042B620
     }
     break;
   default:
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x17a,0,0,
-                               "STAllPlayersC::GetObjPtr player=%d num=%d",(int)objPtr,param_2);
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x17a,0,0,
+                               st::mutable_c_string("STAllPlayersC::GetObjPtr player=%d num=%d"),(int)objPtr,param_2);
     if (iVar2 == 0) {
       return nullptr;
     }
@@ -686,12 +686,12 @@ st::fn_0042B7D0
     return 0;
   }
   g_currentExceptionFrame = local_90.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1d8,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1d8,0,iVar3,st::mutable_c_string("%s"),
                              "STAllPlayersC::AddObjsToGroup");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x1d9);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1d9);
   return 0xffffffff;
 }
 
@@ -732,7 +732,7 @@ st::fn_0042BB30
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     if (iVar2 == -0x5001fff7) {
-      iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x21d,0,0,"%s",
+      iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x21d,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::AddObjToTmp invalid panel number");
       if (iVar2 == 0) {
         return local_18;
@@ -740,17 +740,17 @@ st::fn_0042BB30
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (iVar2 == -0x5001ffff) {
-      iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x219,0,0,"%s",
+      iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x219,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::AddObjToTmp coincide value");
       if (iVar2 == 0) {
         return 0xaffe0001;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x215,0,iVar2,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x215,0,iVar2,st::mutable_c_string("%s"),
                                "STAllPlayersC::AddObjToTmp");
     if (iVar5 == 0) {
-      st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x216);
+      st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x216);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -764,7 +764,7 @@ st::fn_0042BB30
   else {
     if (param_2 != 1) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x1f8);
       goto LAB_0042bc00;
     }
@@ -789,7 +789,7 @@ LAB_0042bc00:
     }
   }
   if (piVar6[1] != (int)param_4) {
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x210,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x210,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::AddObjToTmp something wrong...");
     if (iVar2 == 0) {
       g_currentExceptionFrame = local_5c.previous;
@@ -807,7 +807,7 @@ LAB_0042bc00:
     }
     if (local_6 == (short)param_5) {
       st::fn_006A5E40
-                (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001ffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x209);
     }
   }
@@ -855,14 +855,14 @@ st::fn_0042BEA0
     }
     local_10 = 0xaffe0001;
     if (iVar2 == -0x5001ffff) {
-      iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x251,0,0,"%s",
+      iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x251,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::AddObjToTmp2 coincide value");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     else {
-      iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x252,0,0,"%s",
+      iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x252,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::AddObjToTmp2");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -888,13 +888,13 @@ LAB_0042bf8b:
     }
   }
   else {
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x23b,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x23b,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::AddObjToTmp2 invalid panel number");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x23c);
   }
   piVar4 = (int *)(param_3 * 0x10 + local_14);
@@ -902,7 +902,7 @@ LAB_0042bf8b:
   if (((*piVar4 == param_4) && (piVar4[1] == (int)objPtr)) &&
      (*(ushort *)(piVar4 + 2) == (ushort)param_6)) {
     st::fn_006A5E40
-              (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001ffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x23f);
   }
   *piVar4 = param_4;
@@ -932,13 +932,13 @@ LAB_0042bf8b:
       goto cf_common_exit_0042C072;
     }
   }
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x249,0,0,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x249,0,0,st::mutable_c_string("%s"),
                              "STAllPlayersC::AddObjToTmp2 invalid game type");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006A5E40
-            (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0x24a);
+            (-0x5001ffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x24a);
 cf_common_exit_0042C072:
   this_00 = st::fn_004028BA(local_c,objPtr,(ushort)param_6,local_8);
   this_00->vfunc_E8(1);
@@ -973,7 +973,7 @@ st::fn_0042C1C0
   if (errorCode == 0) {
     if (param_4 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x266);
     }
     local_10 = param_4->count;
@@ -992,10 +992,10 @@ st::fn_0042C1C0
   else {
     g_currentExceptionFrame = local_54.previous;
     if (errorCode != -0x5001fff7) {
-      iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x26e,0,errorCode,
-                                 "%s","STAllPlayersC::AddObjsToTmp");
+      iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x26e,0,errorCode,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::AddObjsToTmp");
       if (iVar2 == 0) {
-        st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x26f);
+        st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x26f);
         return 0xffffffff;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1050,7 +1050,7 @@ undefined4 st::fn_0042C300(char param_1,uint param_2,int param_3,char param_4,ui
   else {
     if (param_2 != 1) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x28f);
       goto LAB_0042c3a0;
     }
@@ -1122,7 +1122,7 @@ st::fn_0042C4B0
   if (errorCode == 0) {
     if (param_4 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2b4);
     }
     local_10 = param_4->count;
@@ -1141,10 +1141,10 @@ st::fn_0042C4B0
   else {
     g_currentExceptionFrame = local_54.previous;
     if (errorCode != -0x5001fff7) {
-      iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",700,0,errorCode,
-                                 "%s","STAllPlayersC::DelObjsFromTmp");
+      iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),700,0,errorCode,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::DelObjsFromTmp");
       if (iVar2 == 0) {
-        st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2bd);
+        st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2bd);
         return 0xffffffff;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1415,7 +1415,7 @@ st::fn_0042C5F0
       }
     } while( true );
   }
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x352,0,0,"%s",
+  iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x352,0,0,st::mutable_c_string("%s"),
                              "STAllPlayersC::DelObjFromTmps invalid game type");
   if (iVar6 == 0) {
     return 0xffffffff;
@@ -1449,7 +1449,7 @@ undefined4 st::fn_0042CDE0(char param_1,int param_2,int param_3,char param_4,sho
   }
   else {
     if (param_2 != 1) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x36a,0,0,"%s",
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x36a,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::PushTV");
       if (iVar3 == 0) {
         return 0;
@@ -1505,7 +1505,7 @@ st::fn_0042CEF0(STAllPlayersC *this,int param_1,char param_2,short param_3)
       if ((param_1 == 0x1b8) || (param_1 == 0x1ae)) goto LAB_0042d011;
     }
     else if ((999 < param_1) && (param_1 < 0x3ea)) {
-      piVar4 = &g_packedRecords_A62x8[uVar5].field204_0x211;
+      piVar4 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[uVar5].field204_0x211);
       local_8 = 10;
       do {
         if ((*(int *)((int)piVar4 + -10) == 0x19a) && (*(int *)((int)piVar4 + -6) == (int)param_2))
@@ -1540,7 +1540,7 @@ st::fn_0042CEF0(STAllPlayersC *this,int param_1,char param_2,short param_3)
       } while( true );
     }
 LAB_0042cf42:
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x3bb,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x3bb,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::DelObjFromSaveTmps invalid game type");
     if (iVar2 == 0) {
       return;
@@ -1550,7 +1550,7 @@ LAB_0042cf42:
   if (param_1 != 0x1a4) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == 0x14) {
-      piVar4 = &g_packedRecords_A62x8[uVar5].field204_0x211;
+      piVar4 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[uVar5].field204_0x211);
       local_8 = 10;
       do {
         if ((*(int *)((int)piVar4 + -10) == 0x3c) && (*(int *)((int)piVar4 + -6) == (int)param_2)) {
@@ -1587,7 +1587,7 @@ LAB_0042cf42:
   }
 LAB_0042d011:
   iVar2 = 0;
-  psVar3 = &g_packedRecords_A62x8[uVar5].field203_0x20f;
+  psVar3 = st::pointer_boundary_cast<short *>(&g_packedRecords_A62x8[uVar5].field203_0x20f);
   while (((*(int *)(psVar3 + -4) != param_1 || (*(int *)(psVar3 + -2) != (int)param_2)) ||
          (*psVar3 != param_3))) {
     iVar2 = iVar2 + 1;
@@ -1670,7 +1670,7 @@ LAB_0042d1c3:
       goto LAB_0042d1c3;
     }
 LAB_0042d270:
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x406,0,0,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x406,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::ResetActivityFromObjs invalid type");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1786,7 +1786,7 @@ cf_common_exit_0042D44C:
     goto cf_common_exit_0042D44C;
   }
 LAB_0042d41b:
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x43d,0,0,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x43d,0,0,st::mutable_c_string("%s"),
                              "STAllPlayersC::SetActivityToObjs invalid type");
   if (iVar3 == 0) {
     return;
@@ -1821,8 +1821,8 @@ st::fn_0042D4F0
   }
   else {
     if (param_2 != 1) {
-      local_EAX_45 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x44d,0,0,
-                                        "%s","STAllPlayersC::ResetActivityFromTmp invalid panel number");
+      local_EAX_45 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x44d,0,0,
+                                        st::mutable_c_string("%s"),"STAllPlayersC::ResetActivityFromTmp invalid panel number");
       if (local_EAX_45 == 0) {
         return;
       }
@@ -1851,7 +1851,7 @@ LAB_0042d599:
   else {
     if (((iVar3 != 0x1a4) && (iVar3 != 0x1ae)) && (iVar3 != 0x1b8)) {
 cf_common_exit_0042D5BC:
-      iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x45f,0,0,"%s",
+      iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x45f,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::ResetActivityFromTmp invalid type");
       if (iVar2 == 0) {
         return;
@@ -1902,7 +1902,7 @@ void st::fn_0042D6B0(char param_1)
   }
   else {
     if (iVar1 != 1) {
-      iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x470,0,0,"%s",
+      iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x470,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::RemoveActiveTV wrong panel number");
       if (iVar2 == 0) {
         return;
@@ -2039,7 +2039,7 @@ joined_r0x0042de37:
       }
       return 0;
     }
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x4e5,0,0,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x4e5,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::GetActiveCenter ACT_LEFT invalid game type");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -2064,7 +2064,7 @@ LAB_0042da27:
         if (iVar7 != 0x1b8) {
 LAB_0042dbdf:
           local_EAX_631 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x537,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x537,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::GetActiveCenter ACT_RIGHT invalid game type");
           if (local_EAX_631 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -2149,8 +2149,8 @@ joined_r0x0042dc56:
     }
   }
   else {
-    local_EAX_75 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x53e,0,0,
-                                      "%s","STAllPlayersC::GetActiveCenter");
+    local_EAX_75 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x53e,0,0,
+                                      st::mutable_c_string("%s"),"STAllPlayersC::GetActiveCenter");
     if (local_EAX_75 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -2208,13 +2208,13 @@ uint __thiscall st::fn_0042DFE0(STAllPlayersC *this,undefined4 *param_1,uint *pa
         local_10 = (uint *)st::fn_004053A8(DAT_0080874d,(int *)&local_8);
         local_c = 0;
         if ((short)local_10 == 0x7fff) {
-          uVar5 = local_8->count * local_8->elementSize;
+          uVar5 = st::machine_word_boundary_cast<uint>(local_8->count * local_8->elementSize);
           if (puVar3 != nullptr) {
             *puVar3 = uVar5;
           }
           if (param_1 != nullptr) {
             puVar7 = (byte *)(st::fn_006AAC70(uVar5));
-            *param_1 = puVar7;
+            *param_1 = st::machine_word_boundary_cast<undefined4>(puVar7);
             puVar9 = (byte *)(local_8->data);
             memmove(puVar7, puVar9, uVar5); /* compiler REP MOVS byte copy */
             uVar5 = 0;
@@ -2250,7 +2250,7 @@ uint __thiscall st::fn_0042DFE0(STAllPlayersC *this,undefined4 *param_1,uint *pa
     }
   }
   else {
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x58f,0,0,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x58f,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::PrepareToCmd invalid panel number");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -2318,17 +2318,17 @@ st::fn_0042E210
   iVar9 = st::fn_0072D7F0(local_94.jumpBuffer,0);
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_94.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x67e,0,iVar9,"%s",
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x67e,0,iVar9,st::mutable_c_string("%s"),
                                "STAllPlayersC::RegisterObject");
     if (iVar6 == 0) {
-      st::fn_006A5E40(iVar9,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x67f);
+      st::fn_006A5E40(iVar9,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x67f);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_4 == nullptr) {
     st::fn_006A5E40
-              (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x5bd);
   }
   pDVar4 = local_28;
@@ -2339,7 +2339,7 @@ st::fn_0042E210
     local_EAX_168 = st::fn_00404606(param_1,(ushort)param_3);
     if (local_EAX_168 == 1) {
       st::fn_006A5E40
-                (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffa,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x5c0);
     }
     uVar13 = param_3 & 0xffff;
@@ -2441,8 +2441,8 @@ LAB_0042e4fd:
                     if (((&DAT_00800fe0)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f))
                         == 0) {
                       local_EAX_1462 =
-                           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x613,0,0,
-                                              "%s",
+                           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x613,0,0,
+                                              st::mutable_c_string("%s"),
                                               "STAllPlayersC::RegisterObject unknown boat type");
                       if (local_EAX_1462 != 0) {
                         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -2565,8 +2565,8 @@ LAB_0042e4fd:
                     if (((&DAT_00800f60)[iVar8 - 0x32U >> 5] & 1 << ((byte)(iVar8 - 0x32U) & 0x1f))
                         == 0) {
                       local_EAX_2281 =
-                           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x653,0,0,
-                                              "%s",
+                           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x653,0,0,
+                                              st::mutable_c_string("%s"),
                                               "STAllPlayersC::RegisterObject unknown object type");
                       if (local_EAX_2281 != 0) {
                         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -2705,7 +2705,7 @@ LAB_0042ebf6:
   if (iVar10 == 0x1d) {
     if (local_24 == nullptr) {
       local_24 = st::fn_006AE290(nullptr,1,2,1);
-      g_packedRecords_A62x8[param_1].field355_0x2e7 = local_24;
+      g_packedRecords_A62x8[param_1].field355_0x2e7 = st::machine_word_boundary_cast<undefined4>(local_24);
     }
     pDVar4 = local_24;
     uVar13 = local_24->count;
@@ -2752,14 +2752,14 @@ st::fn_0042EFD0(STAllPlayersC *this,char param_1,ushort param_2,int param_3)
   if (iVar2 == 0) {
     if (param_3 == 0) {
       st::fn_006A5E40
-                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x690);
     }
     array = local_c;
     iVar2 = st::fn_006ACC70(local_c,(uint)param_2,&local_8);
     if ((iVar2 != -4) && (local_8 != 0)) {
       st::fn_006A5E40
-                (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffa,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x692);
     }
     st::fn_006AE140(array,(uint)param_2,&param_3);
@@ -2767,12 +2767,12 @@ st::fn_0042EFD0(STAllPlayersC *this,char param_1,ushort param_2,int param_3)
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x695,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x695,0,iVar2,st::mutable_c_string("%s"),
                              "STAllPlayersC::RegisterGroup");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x696);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x696);
   return 0xffffffff;
 }
 
@@ -2804,14 +2804,14 @@ st::fn_0042F140(STAllPlayersC *this,char param_1,ushort param_2,int param_3)
   if (iVar2 == 0) {
     if (param_3 == 0) {
       st::fn_006A5E40
-                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x6a7);
     }
     array = local_c;
     iVar2 = st::fn_006ACC70(local_c,(uint)param_2,&local_8);
     if ((iVar2 == -4) || (local_8 != param_3)) {
       st::fn_006A5E40
-                (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffe,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x6a9);
     }
     local_8 = 0;
@@ -2820,12 +2820,12 @@ st::fn_0042F140(STAllPlayersC *this,char param_1,ushort param_2,int param_3)
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x6ad,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x6ad,0,iVar2,st::mutable_c_string("%s"),
                              "STAllPlayersC::UnRegisterGroup");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x6ae);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x6ae);
   return 0xffffffff;
 }
 
@@ -2886,17 +2886,17 @@ st::fn_0042F2B0
     if (iVar10 == -0x5001fff7) {
       return 0;
     }
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x7cd,0,iVar10,"%s"
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x7cd,0,iVar10,st::mutable_c_string("%s")
                                ,"STAllPlayersC::UnRegisterObject");
     if (iVar6 == 0) {
-      st::fn_006A5E40(iVar10,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x7ce);
+      st::fn_006A5E40(iVar10,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x7ce);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if ((ushort)param_3 == 0xffff) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x6cd);
   }
   if (param_4[8] == 0x14) {
@@ -3012,8 +3012,8 @@ LAB_0042f547:
                     if (((&DAT_00800fe0)[iVar7 + 0x41U >> 5] & 1 << ((byte)(iVar7 + 0x41U) & 0x1f))
                         == 0) {
                       local_EAX_1804 =
-                           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x73c,0,0,
-                                              "%s",
+                           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x73c,0,0,
+                                              st::mutable_c_string("%s"),
                                               "STAllPlayersC::UnRegisterObject unknown boat type");
                       if (local_EAX_1804 != 0) {
                         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -3157,8 +3157,8 @@ LAB_0042f547:
                     if (((&DAT_00800f60)[iVar7 - 0x32U >> 5] & 1 << ((byte)(iVar7 - 0x32U) & 0x1f))
                         == 0) {
                       local_EAX_3102 =
-                           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x797,0,0,
-                                              "%s",
+                           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x797,0,0,
+                                              st::mutable_c_string("%s"),
                                               "STAllPlayersC::UnRegisterObject unknown object type");
                       if (local_EAX_3102 != 0) {
                         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -3266,20 +3266,20 @@ LAB_0042f547:
   pSVar9 = st::fn_004028BA(local_18,param_1,(ushort)param_3,CASE_1);
   if (pSVar9 != (STGameObjC *)param_4) {
     st::fn_006A5E40
-              (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x7a3);
   }
   if ((ushort)param_2 != 0xffff) {
     local_10 = st::fn_00405CF9(param_1,(ushort)param_2);
     if (local_10 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x7a5);
     }
     iVar11 = st::fn_00402F9F(local_10,(ushort)param_3);
     if (iVar11 == 0) {
       st::fn_006A5E40
-                (-0x5001fffd,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffd,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x7a6);
     }
   }
@@ -3350,7 +3350,7 @@ undefined4 __thiscall st::fn_00430470(STAllPlayersC *this,int param_1,short para
     if (param_2 == -1) {
       if (param_1 == 0) {
         st::fn_006A5E40
-                  (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x7e2);
       }
       index_00 = g_array_007FA130->count;
@@ -3369,7 +3369,7 @@ undefined4 __thiscall st::fn_00430470(STAllPlayersC *this,int param_1,short para
       if ((index_00 < g_array_007FA130->count) &&
          (st::fn_006ACC70(g_array_007FA130,index_00,&local_8), local_8 != 0)) {
         st::fn_006A5E40
-                  (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fffa,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x7f0);
       }
     }
@@ -3379,10 +3379,10 @@ undefined4 __thiscall st::fn_00430470(STAllPlayersC *this,int param_1,short para
     return STReplaceLowWord((uint32_t)(DAT_007fa134), (uint16_t)((short)index_00));
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x7f6,0,errorCode,
-                             "%s","STAllPlayersC::RegisterTorpedo");
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x7f6,0,errorCode,
+                             st::mutable_c_string("%s"),"STAllPlayersC::RegisterTorpedo");
   if (iVar2 == 0) {
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x7f7);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x7f7);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     return CONCAT22(extraout_var,0xffff);
   }
@@ -3412,12 +3412,12 @@ undefined4 __thiscall st::fn_00430620(STAllPlayersC *this,short param_1,int para
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
     if (iVar2 != -0x5001fff7) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x80b,0,iVar2,
-                                 "%s","STAllPlayersC::IsTorpLive");
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x80b,0,iVar2,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::IsTorpLive");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x80c);
+      st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x80c);
     }
     return local_c;
   }
@@ -3425,7 +3425,7 @@ undefined4 __thiscall st::fn_00430620(STAllPlayersC *this,short param_1,int para
   if (iVar2 != -4) {
     if (local_8 == 0) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x806);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -3530,7 +3530,7 @@ undefined1 st::fn_00430750(Global_sub_00430750_param_1Enum param_1)
   case CASE_B9:
     return 0x3c;
   }
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x867,0,0,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x867,0,0,st::mutable_c_string("%s"),
                              "GetSpeed: Warning - unknown object type");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -3562,7 +3562,7 @@ st::fn_00430960(STAllPlayersC *this,short param_1,int param_2)
       st::fn_006ACC70(g_array_007FA130,(int)param_1,&local_8);
       if (local_8 != param_2) {
         st::fn_006A5E40
-                  (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fffe,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x883);
       }
       local_8 = 0;
@@ -3573,12 +3573,12 @@ st::fn_00430960(STAllPlayersC *this,short param_1,int param_2)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x888,0,errorCode,
-                             "%s","STAllPlayersC::UnRegisterTorpedo");
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x888,0,errorCode,
+                             st::mutable_c_string("%s"),"STAllPlayersC::UnRegisterTorpedo");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x889);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x889);
   return 0xffffffff;
 }
 
@@ -3631,10 +3631,10 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
   this_00 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar11 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xa05,0,iVar5,"%s"
+    iVar11 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xa05,0,iVar5,st::mutable_c_string("%s")
                                 ,"STAllPlayersC::GetMessage");
     if (iVar11 == 0) {
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\wlad\\to_allpl.cpp",0xa06);
+      st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xa06);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -3819,7 +3819,7 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
     if (SVar2 == MESS_ID_NONE) {
       iVar12 = 0;
       local_14 = &g_bulkInitializedRecords_008087C7[0].field_0022;
-      piVar13 = &g_packedRecords_A62x8[0].field1981_0xa0a;
+      piVar13 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[0].field1981_0xa0a);
       do {
         cVar14 = (char)iVar12;
         if (0x18 < g_playSystem_00802A38->field_00E4 - *piVar13) {
@@ -3835,7 +3835,7 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
         iVar12 = iVar12 + 1;
         local_14 = local_14 + 0x51;
       } while ((int)piVar13 < 0x7fab3a);
-      st::fn_004050E7(this_00);
+      st::fn_004050E7(st::machine_word_boundary_cast<undefined4>(this_00));
       st::fn_004035CB();
       g_currentExceptionFrame = local_6c.previous;
       return 0;
@@ -3857,7 +3857,7 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
       g_array_007FA130 = (DArrayTy *)st::fn_006AE310(nullptr,0,4,1,0x40307b);
       DAT_007fa134 = 0;
       if (g_cMf32_00806754 != nullptr) {
-        local_c = st::fn_006F2D90(g_cMf32_00806754,"allplsave",0,0);
+        local_c = st::fn_006F2D90(g_cMf32_00806754,st::mutable_c_string("allplsave"),0,0);
       }
       if (local_c == nullptr) {
         piVar13 = nullptr;
@@ -3865,9 +3865,9 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
         puVar10 = &g_packedRecords_A62x8[0].field2_0x5;
         do {
           puVar6 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
-          puVar10[1] = puVar6;
+          puVar10[1] = st::machine_word_boundary_cast<undefined4>(puVar6);
           puVar6 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
-          *puVar10 = puVar6;
+          *puVar10 = st::machine_word_boundary_cast<undefined4>(puVar6);
           if (*pbVar5 != 0xff) {
             st::fn_004045C0((int)piVar13);
             st::fn_00401FC8(local_10,(int)piVar13);
@@ -3886,9 +3886,9 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
         } while ((int)puVar10 < 0x7fa135);
         st::fn_00403364(0);
         st::fn_00401F37(DAT_00808a90 & 0xff);
-        DAT_007fa168 = st::fn_006AAC70((int)g_worldGrid.planeStride);
+        DAT_007fa168 = st::machine_word_boundary_cast<undefined4>(st::fn_006AAC70((int)g_worldGrid.planeStride));
         uVar8 = (uint)g_worldGrid.planeStride;
-        puVar10 = DAT_007fa168;
+        puVar10 = st::pointer_boundary_cast<undefined4 *>(DAT_007fa168);
         for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
           *puVar10 = 0x50505050;
           puVar10 = puVar10 + 1;
@@ -3904,9 +3904,9 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
       puVar10 = &g_packedRecords_A62x8[0].field2_0x5;
       do {
         puVar6 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
-        puVar10[1] = puVar6;
+        puVar10[1] = st::machine_word_boundary_cast<undefined4>(puVar6);
         puVar6 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
-        *puVar10 = puVar6;
+        *puVar10 = st::machine_word_boundary_cast<undefined4>(puVar6);
         st::fn_00403E90(cVar14);
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         puVar10 = (undefined4 *)((int)puVar10 + 0xa62);
@@ -3921,7 +3921,7 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
   else if (SVar2 == MESS_SHARED_010F) {
     local_c = (ushort *)st::fn_004058AD(this_00,(int *)&local_1c);
     st::fn_00401078
-              (g_playSystem_00802A38,"allplsave",(byte *)local_c,local_1c,0xc);
+              (g_playSystem_00802A38,st::mutable_c_string("allplsave"),(byte *)local_c,local_1c,0xc);
     st::fn_006AB060(&local_c);
   }
   else if (SVar2 == MESS_ID_ALLCREATE) {
@@ -3933,7 +3933,7 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
       } while (iVar12 < 8);
     }
     else {
-      local_c = st::fn_006F2D90(g_cMf32_00806754,"allplsave",0,0);
+      local_c = st::fn_006F2D90(g_cMf32_00806754,st::mutable_c_string("allplsave"),0,0);
       if (local_c == nullptr) {
         iVar12 = 0;
         do {
@@ -4074,30 +4074,30 @@ st::fn_004314E0
   int local_EAX_8116;
   int local_EAX_8151;
   int iVar3;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_04;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_05;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_06;
   undefined4 uVar7;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
   char playerId;
   uint uVar8;
@@ -4182,10 +4182,10 @@ st::fn_004314E0
       st::fn_004027DE(this);
       return;
     }
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xdd1,0,local_EAX_96,
-                               "%s","STAllPlayersC::FramePick");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xdd1,0,local_EAX_96,
+                               st::mutable_c_string("%s"),"STAllPlayersC::FramePick");
     if (iVar3 == 0) {
-      st::fn_006A5E40(local_EAX_96,0,"E:\\__titans\\wlad\\to_allpl.cpp",0xdd2);
+      st::fn_006A5E40(local_EAX_96,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xdd2);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4210,7 +4210,7 @@ LAB_004318b5:
       else if (iVar1 == 0x3c) {
         if (param_6 == 1) {
           if (*(int *)&g_packedRecords_A62x8[iVar4].field97_0x167 == iVar4) {
-            st::fn_004020D6(this,playerId,0,0,&local_10->flags,nullptr,(int *)&local_44,
+            st::fn_004020D6(this,playerId,0,0,st::pointer_boundary_cast<uint *>(&local_10->flags),nullptr,(int *)&local_44,
                          (int *)&local_48);
             st::fn_004027C0(this,param_1,0x3c,local_44,0,0);
             st::fn_00403F0D(this,param_1,0,0,local_44);
@@ -4225,7 +4225,7 @@ LAB_004318b5:
             if (local_EAX_803 < 0) {
               st::fn_00405920(playerId,0);
               if (g_packedRecords_A62x8[iVar4].field105_0x177 == (int)playerId) {
-                st::fn_004020D6(this,playerId,0,1,&local_10->flags,(int *)&local_24,nullptr,
+                st::fn_004020D6(this,playerId,0,1,st::pointer_boundary_cast<uint *>(&local_10->flags),(int *)&local_24,nullptr,
                              nullptr);
                 st::fn_004027C0(this,param_1,0x3c,local_24,0,0);
                 st::fn_006AE110(local_24);
@@ -4253,7 +4253,7 @@ LAB_004318b5:
         }
       }
       else {
-        iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xa60,0,0,"%s",
+        iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xa60,0,0,st::mutable_c_string("%s"),
                                    "STAllPlayersC::FramePick GAMETYPE_BOAT ACT_LEFT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4286,7 +4286,7 @@ cf_error_exit_004318A9:
         }
         else {
           local_EAX_374 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xa88,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xa88,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::FramePick GAMETYPE_BOAT ACT_RIGHT");
           if (local_EAX_374 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4296,20 +4296,20 @@ cf_error_exit_004318A9:
     }
     else {
       local_EAX_268 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xa8c,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xa8c,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::FramePick GAMETYPE_BOAT wrong panel number");
       if (local_EAX_268 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0xa8e);
   }
   if (local_34->count != 0) {
     if (param_6 == 1) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xa92);
     }
     st::fn_006ACC70(local_34,0,&local_8);
@@ -4318,7 +4318,7 @@ cf_error_exit_004318A9:
     pSVar5 = st::fn_004028BA(this,'\0',(ushort)local_8,CASE_3);
     if (pSVar5 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xa95);
     }
     iVar4 = (int)playerId;
@@ -4367,7 +4367,7 @@ LAB_00431c38:
       }
       else {
         local_EAX_1808 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xaba,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xaba,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_MINESET ACT_LEFT");
         if (local_EAX_1808 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4408,7 +4408,7 @@ LAB_00431a3f:
       }
       else {
         local_EAX_1319 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xade,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xade,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_MINESET ACT_RIGHT");
         if (local_EAX_1319 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4417,20 +4417,20 @@ LAB_00431a3f:
     }
     else {
       local_EAX_1213 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xae2,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xae2,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::FramePick GAMETYPE_MINESET wrong panel number");
       if (local_EAX_1213 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0xae4);
   }
   if (local_28->count != 0) {
     if (param_6 == 1) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xae8);
     }
     st::fn_006ACC70(local_28,0,&local_8);
@@ -4439,7 +4439,7 @@ LAB_00431a3f:
     pSVar5 = st::fn_004028BA(this,-1,(ushort)local_8,CASE_2);
     if (pSVar5 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xaeb);
     }
     iVar4 = (int)playerId;
@@ -4466,7 +4466,7 @@ LAB_00431a3f:
           local_EAX_2373 =
                st::fn_0040196F(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX;
           if (local_EAX_2373 < 1) goto LAB_00431ed1;
           st::fn_0040317F(this,playerId,1,local_EAX_2373);
@@ -4480,7 +4480,7 @@ LAB_00431e9e:
         if (local_EAX_2513 < 0) {
 LAB_00431ec7:
           st::fn_00405920(playerId,1);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_00;
 LAB_00431ed1:
           uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -4495,7 +4495,7 @@ LAB_00431edd:
       else {
 LAB_00431e77:
         local_EAX_2479 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xb3a,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xb3a,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_ARTEFACT ACT_LEFT");
         if (local_EAX_2479 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4514,7 +4514,7 @@ LAB_00431e77:
 LAB_00431da2:
             st::fn_00405920(playerId,1);
             st::fn_004032E7(this,playerId,1,1,0);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_EDX_00;
 LAB_00431dba:
             uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -4531,7 +4531,7 @@ LAB_00431dba:
           local_EAX_2061 =
                st::fn_0040196F(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_EDX;
           if (local_EAX_2061 < 1) goto LAB_00431dba;
           st::fn_0040317F(this,playerId,1,local_EAX_2061);
@@ -4552,7 +4552,7 @@ LAB_00431d70:
       else {
 LAB_00431d42:
         local_EAX_2170 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xb13,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xb13,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_ARTEFACT ACT_RIGHT");
         if (local_EAX_2170 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4561,20 +4561,20 @@ LAB_00431d42:
     }
     else {
       local_EAX_1636 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xb3e,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xb3e,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::FramePick GAMETYPE_ARTEFACT wrong panel number");
       if (local_EAX_1636 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0xb40);
   }
   if (local_30->count != 0) {
     if (param_6 == 1) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xb44);
     }
     st::fn_006ACC70(local_30,0,&local_8);
@@ -4583,7 +4583,7 @@ LAB_00431d42:
     pSVar5 = st::fn_004028BA(this,-1,(ushort)local_8,CASE_5);
     if (pSVar5 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xb47);
     }
     iVar4 = (int)playerId;
@@ -4637,7 +4637,7 @@ LAB_00432209:
       else {
 LAB_004321a3:
         local_EAX_3291 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xb96,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xb96,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_CONTAINER ACT_LEFT");
         if (local_EAX_3291 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4656,7 +4656,7 @@ LAB_004321a3:
 LAB_004320ce:
             st::fn_00405920(playerId,1);
             st::fn_004032E7(this,playerId,1,1,0);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_ECX_02;
 LAB_004320e6:
             uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -4673,7 +4673,7 @@ LAB_004320e6:
           local_EAX_2873 =
                st::fn_0040196F(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_01;
           if (local_EAX_2873 < 1) goto LAB_004320e6;
           st::fn_0040317F(this,playerId,1,local_EAX_2873);
@@ -4694,7 +4694,7 @@ LAB_0043209c:
       else {
 LAB_0043206e:
         local_EAX_2982 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xb6f,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xb6f,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_CONTAINER ACT_RIGHT");
         if (local_EAX_2982 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4703,20 +4703,20 @@ LAB_0043206e:
     }
     else {
       local_EAX_2791 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xb9a,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xb9a,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::FramePick GAMETYPE_CONTAINER wrong panel number");
       if (local_EAX_2791 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0xb9c);
   }
   if (local_14->count != 0) {
     if (param_6 == 1) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xba0);
     }
     st::fn_006ACC70(local_14,0,&local_8);
@@ -4761,7 +4761,7 @@ LAB_00432536:
       else {
 LAB_0043250f:
         local_EAX_4167 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xbfb,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xbfb,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_OBJECT ACT_LEFT");
         if (local_EAX_4167 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4777,7 +4777,7 @@ LAB_0043250f:
             if (local_EAX_3686 < 0) {
               st::fn_00405920(playerId,1);
               if (g_packedRecords_A62x8[playerId].field158_0x1c7 == (int)playerId) {
-                st::fn_004020D6(this,playerId,1,1,&local_14->flags,(int *)&local_24,nullptr,
+                st::fn_004020D6(this,playerId,1,1,st::pointer_boundary_cast<uint *>(&local_14->flags),(int *)&local_24,nullptr,
                              nullptr);
                 st::fn_004027C0(this,param_1,0x19a,local_24,0,0);
                 st::fn_006AE110(local_24);
@@ -4804,7 +4804,7 @@ LAB_0043250f:
           if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_0043240a;
 LAB_004323dc:
           local_EAX_3860 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xbd1,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xbd1,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::FramePick GAMETYPE_OBJECT ACT_RIGHT");
           if (local_EAX_3860 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4825,7 +4825,7 @@ LAB_0043240a:
     }
     else {
       local_EAX_3553 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xbff,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xbff,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::FramePick GAMETYPE_OBJECT wrong panel number");
       if (local_EAX_3553 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4833,13 +4833,13 @@ LAB_0043240a:
     }
 LAB_00432582:
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0xc01);
   }
   if (local_20->count != 0) {
     if (param_6 == 1) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xc05);
     }
     st::fn_006ACC70(local_20,0,&local_8);
@@ -4848,7 +4848,7 @@ LAB_00432582:
     pSVar5 = st::fn_004028BA(this,-1,(ushort)local_8,CASE_4);
     if (pSVar5 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xc08);
     }
     iVar4 = (int)playerId;
@@ -4875,7 +4875,7 @@ LAB_00432582:
           local_EAX_4873 =
                st::fn_0040196F(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_03;
           if (local_EAX_4873 < 1) goto LAB_00432895;
           st::fn_0040317F(this,playerId,1,local_EAX_4873);
@@ -4889,7 +4889,7 @@ LAB_00432862:
         if (local_EAX_5013 < 0) {
 LAB_0043288b:
           st::fn_00405920(playerId,1);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_04;
 LAB_00432895:
           uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -4904,7 +4904,7 @@ LAB_004328a1:
       else {
 LAB_0043283b:
         local_EAX_4979 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xc57,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xc57,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_RESOURCE ACT_LEFT");
         if (local_EAX_4979 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4923,7 +4923,7 @@ LAB_0043283b:
 LAB_00432766:
             st::fn_00405920(playerId,1);
             st::fn_004032E7(this,playerId,1,1,0);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_EDX_02;
 LAB_0043277e:
             uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -4940,7 +4940,7 @@ LAB_0043277e:
           local_EAX_4561 =
                st::fn_0040196F(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_EDX_01;
           if (local_EAX_4561 < 1) goto LAB_0043277e;
           st::fn_0040317F(this,playerId,1,local_EAX_4561);
@@ -4961,7 +4961,7 @@ LAB_00432734:
       else {
 LAB_00432706:
         local_EAX_4670 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xc30,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xc30,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_RESOURCE ACT_RIGHT");
         if (local_EAX_4670 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4970,20 +4970,20 @@ LAB_00432706:
     }
     else {
       local_EAX_4479 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xc5b,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xc5b,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::FramePick GAMETYPE_RESOURCE wrong panel number");
       if (local_EAX_4479 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0xc5d);
   }
   if (local_38->count != 0) {
     if (param_6 == 1) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xc61);
     }
     st::fn_006ACC70(local_38,0,&local_8);
@@ -4992,7 +4992,7 @@ LAB_00432706:
     pSVar5 = st::fn_004028BA(this,-1,(ushort)local_8,CASE_6);
     if (pSVar5 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xc64);
     }
     iVar4 = (int)playerId;
@@ -5046,7 +5046,7 @@ LAB_00432bcd:
       else {
 LAB_00432b67:
         local_EAX_5791 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xcb3,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xcb3,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_BLOT ACT_LEFT");
         if (local_EAX_5791 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -5065,7 +5065,7 @@ LAB_00432b67:
 LAB_00432a92:
             st::fn_00405920(playerId,1);
             st::fn_004032E7(this,playerId,1,1,0);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_ECX_06;
 LAB_00432aaa:
             uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -5082,7 +5082,7 @@ LAB_00432aaa:
           local_EAX_5373 =
                st::fn_0040196F(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_05;
           if (local_EAX_5373 < 1) goto LAB_00432aaa;
           st::fn_0040317F(this,playerId,1,local_EAX_5373);
@@ -5103,7 +5103,7 @@ LAB_00432a60:
       else {
 LAB_00432a32:
         local_EAX_5482 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xc8c,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xc8c,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_BLOT ACT_RIGHT");
         if (local_EAX_5482 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -5112,20 +5112,20 @@ LAB_00432a32:
     }
     else {
       local_EAX_5291 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xcb7,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xcb7,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::FramePick GAMETYPE_BLOT wrong panel number");
       if (local_EAX_5291 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0xcb9);
   }
   if (local_18->count != 0) {
     if (param_6 == 1) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xcbd);
     }
     st::fn_006ACC70(local_18,0,&local_8);
@@ -5172,7 +5172,7 @@ cf_error_exit_00432EAE:
       }
       else {
         local_EAX_6386 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xce7,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xce7,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) ACT_LEFT");
         if (local_EAX_6386 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -5202,7 +5202,7 @@ cf_error_exit_00432EAE:
       }
       else {
         local_EAX_6180 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xd0e,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xd0e,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) ACT_RIGHT");
         if (local_EAX_6180 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -5211,20 +5211,20 @@ cf_error_exit_00432EAE:
     }
     else {
       local_EAX_6084 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xd12,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xd12,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) wrong panel number");
       if (local_EAX_6084 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0xd14);
   }
   if (local_2c->count != 0) {
     if (param_6 == 1) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xd18);
     }
     st::fn_006ACC70(local_2c,0,&local_8);
@@ -5233,7 +5233,7 @@ cf_error_exit_00432EAE:
     pSVar5 = st::fn_004028BA(this,'\0',(ushort)local_8,CASE_3);
     if (pSVar5 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0xd1b);
     }
     iVar4 = (int)playerId;
@@ -5282,7 +5282,7 @@ LAB_0043322b:
       }
       else {
         local_EAX_7427 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xd40,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xd40,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) ACT_LEFT");
         if (local_EAX_7427 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -5327,7 +5327,7 @@ LAB_00433046:
       }
       else {
         local_EAX_6956 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xd66,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xd66,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) ACT_RIGHT");
         if (local_EAX_6956 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -5336,20 +5336,20 @@ LAB_00433046:
     }
     else {
       local_EAX_6850 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xd6a,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xd6a,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) wrong panel number");
       if (local_EAX_6850 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0xd6c);
   }
   if (local_1c->count == 0) goto cf_error_exit_004334F5;
   if (param_6 == 1) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0xd70);
   }
   st::fn_006ACC70(local_1c,0,&local_8);
@@ -5361,7 +5361,7 @@ LAB_00433046:
   if (g_packedRecords_A62x8[playerId].field200_0x203 != 0) {
     if (g_packedRecords_A62x8[playerId].field200_0x203 != 1) {
       local_EAX_7255 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xdcb,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xdcb,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) wrong panel number");
       if (local_EAX_7255 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -5396,7 +5396,7 @@ LAB_00433363:
       goto cf_error_exit_004334DF;
     }
     local_EAX_7789 =
-         st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xd9d,0,0,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xd9d,0,0,st::mutable_c_string("%s"),
                             "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) ACT_RIGHT");
     if (local_EAX_7789 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -5429,7 +5429,7 @@ LAB_004333f5:
     if ((iVar4 != 0x1a4) && (iVar4 != 0x1b8)) {
 LAB_0043347c:
       local_EAX_8116 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xdc7,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xdc7,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) ACT_LEFT");
       if (local_EAX_8116 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -5449,7 +5449,7 @@ cf_error_exit_004334DF:
   g_packedRecords_A62x8[playerId].field149_0x1b3 = 0x19a;
 cf_error_exit_004334F5:
   st::fn_006A5E40
-            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0xdce);
+            (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xdce);
   g_currentExceptionFrame = local_90.previous;
   return;
 }
@@ -5522,7 +5522,7 @@ st::fn_00433E90
   undefined2 extraout_var_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
@@ -5543,22 +5543,22 @@ st::fn_00433E90
   undefined2 extraout_var_09;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_10;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   undefined4 uVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_11;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_12;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_13;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_03;
   char ownerPlayerId;
   char playerId;
@@ -5612,8 +5612,8 @@ st::fn_00433E90
           }
           if (iVar4 != 0x1ae) {
             local_EAX_1564 =
-                 st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1003,0,0,
-                                    "%s","STAllPlayersC::PointPick GAMETYPE_MINESET ACT_LEFT");
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1003,0,0,
+                                    st::mutable_c_string("%s"),"STAllPlayersC::PointPick GAMETYPE_MINESET ACT_LEFT");
             if (local_EAX_1564 == 0) {
               return;
             }
@@ -5632,7 +5632,7 @@ st::fn_00433E90
             st::fn_004032E7(this,playerId,0,1,0);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar5 = CONCAT22(extraout_var,STField<undefined2>(piVar2,0x32));
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar6 = STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)((char)piVar2[9]));
             iVar4 = piVar2[8];
             goto cf_common_exit_0043440E;
@@ -5644,7 +5644,7 @@ st::fn_00433E90
         iVar4 = 0x1ae;
 LAB_004345a2:
         local_EAX_1370 = st::fn_0040196F(playerId,0,iVar4,ownerPlayerId,nullptr,objectId);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar7 = extraout_EDX_00;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_var_02;
@@ -5658,7 +5658,7 @@ LAB_004345b4:
       else {
         if (g_packedRecords_A62x8[playerId].field200_0x203 != 1) {
           local_EAX_1213 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x102e,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x102e,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::PointPick GAMETYPE_MINESET wrong panel number");
           if (local_EAX_1213 == 0) {
             return;
@@ -5687,8 +5687,8 @@ LAB_004345b4:
         else {
           if (iVar4 != 0x1ae) {
             local_EAX_1323 =
-                 st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x102a,0,0,
-                                    "%s","STAllPlayersC::PointPick GAMETYPE_MINESET ACT_RIGHT");
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x102a,0,0,
+                                    st::mutable_c_string("%s"),"STAllPlayersC::PointPick GAMETYPE_MINESET ACT_RIGHT");
             if (local_EAX_1323 == 0) {
               return;
             }
@@ -5700,7 +5700,7 @@ LAB_004345b4:
           if (-1 < local_EAX_1370) goto LAB_004345b4;
         }
         st::fn_00405920(playerId,0);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar7 = extraout_EDX;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_var_01;
@@ -5754,7 +5754,7 @@ LAB_004349ac:
         if ((iVar4 != 0x1a4) && (iVar4 != 0x1b8)) {
 LAB_00434c12:
           local_EAX_3482 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xfd1,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xfd1,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::PointPick GAMETYPE_OBJECT ACT_LEFT");
           if (local_EAX_3482 == 0) {
             return;
@@ -5782,7 +5782,7 @@ LAB_00434c92:
     else {
       if (g_packedRecords_A62x8[playerId].field200_0x203 != 1) {
         local_EAX_2770 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xfd5,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xfd5,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::PointPick GAMETYPE_OBJECT wrong panel number");
         if (local_EAX_2770 == 0) {
           return;
@@ -5806,8 +5806,8 @@ LAB_00434c92:
         if (-1 < local_EAX_2965) goto cf_common_exit_00434CB8;
         st::fn_00405920(playerId,1);
         if (g_packedRecords_A62x8[playerId].field158_0x1c7 != piVar2[9]) goto LAB_00434b39;
-        st::fn_004020D6(this,playerId,1,1,&objectIds->flags,(int *)&local_8,nullptr,nullptr);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        st::fn_004020D6(this,playerId,1,1,st::pointer_boundary_cast<uint *>(&objectIds->flags),(int *)&local_8,nullptr,nullptr);
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         st::fn_004027C0
                   (this,STReplaceLowByte((uint32_t)(extraout_EDX_03), (uint8_t)((char)piVar2[9])),0x19a,local_8,0
                    ,0);
@@ -5819,7 +5819,7 @@ LAB_00434c92:
         if ((iVar4 != 0x1a4) && (iVar4 != 0x1b8)) {
 LAB_00434ab0:
           local_EAX_3128 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xf9a,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xf9a,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::PointPick GAMETYPE_OBJECT ACT_RIGHT");
           if (local_EAX_3128 == 0) {
             return;
@@ -5883,7 +5883,7 @@ cf_common_exit_00434CB8:
               if (local_EAX_913 < 0) {
                 st::fn_00405920(playerId,0);
                 if (g_packedRecords_A62x8[playerId].field105_0x177 != piVar2[9]) goto LAB_0043414f;
-                st::fn_004020D6(this,playerId,0,1,&objectIds->flags,(int *)&local_8,nullptr,
+                st::fn_004020D6(this,playerId,0,1,st::pointer_boundary_cast<uint *>(&objectIds->flags),(int *)&local_8,nullptr,
                              nullptr);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 st::fn_004027C0
@@ -5901,8 +5901,8 @@ cf_common_exit_00434CB8:
           }
           else {
             if (iVar4 != 0x1ae) {
-              iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xf1e,0,0,
-                                         "%s","STAllPlayersC::PointPick GAMETYPE_BOAT ACT_LEFT");
+              iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xf1e,0,0,
+                                         st::mutable_c_string("%s"),"STAllPlayersC::PointPick GAMETYPE_BOAT ACT_LEFT");
               if (iVar3 == 0) {
                 return;
               }
@@ -5939,7 +5939,7 @@ LAB_0043429d:
       else {
         if (g_packedRecords_A62x8[playerId].field200_0x203 != 1) {
           local_EAX_225 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xf56,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xf56,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::PointPick GAMETYPE_BOAT wrong panel number");
           if (local_EAX_225 == 0) {
             return;
@@ -5964,7 +5964,7 @@ LAB_0043429d:
         }
         if (iVar4 != 0x1ae) {
           local_EAX_344 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0xf52,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0xf52,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::PointPick GAMETYPE_BOAT ACT_RIGHT");
           if (local_EAX_344 == 0) {
             return;
@@ -6002,7 +6002,7 @@ LAB_004345cf:
   if (g_packedRecords_A62x8[playerId].field200_0x203 != 0) {
     if (g_packedRecords_A62x8[playerId].field200_0x203 != 1) {
       local_EAX_1931 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1090,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1090,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::PointPick GAMETYPE_MINESET wrong panel number");
       if (local_EAX_1931 == 0) {
         return;
@@ -6041,7 +6041,7 @@ LAB_004345cf:
       if ((iVar4 != 0x1a4) && (iVar4 != 0x1b8)) {
 LAB_004346e3:
         local_EAX_2155 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1062,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1062,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::PointPick GAMETYPE_RESOURCE ACT_RIGHT");
         if (local_EAX_2155 == 0) {
           return;
@@ -6086,7 +6086,7 @@ LAB_00434768:
         local_EAX_2403 =
              st::fn_0040196F(playerId,1,piVar2[8],(char)piVar2[9],nullptr,
                        STField<short>(piVar2,0x32));
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar7 = extraout_EDX_01;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_var_03;
@@ -6113,7 +6113,7 @@ LAB_00434768:
     if ((iVar4 != 0x1a4) && (iVar4 != 0x1b8)) {
 LAB_00434863:
       local_EAX_2539 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x108c,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x108c,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::PointPick GAMETYPE_RESOURCE ACT_LEFT");
       if (local_EAX_2539 == 0) {
         return;
@@ -6131,7 +6131,7 @@ LAB_00434895:
     }
   }
   st::fn_00405920(playerId,1);
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uVar7 = extraout_EDX_02;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uVar8 = extraout_var_04;
@@ -6204,7 +6204,7 @@ void __thiscall st::fn_00435060(STAllPlayersC *this)
         }
         else {
           local_EAX_121 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x10bb,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x10bb,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::SelfCheckObjControl ACT_LEFT invalid game type");
           if (local_EAX_121 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -6281,7 +6281,7 @@ LAB_004352f5:
       }
       else {
 LAB_00435287:
-        iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x10ec,0,0,"%s"
+        iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x10ec,0,0,st::mutable_c_string("%s")
                                    ,"STAllPlayersC::SelfCheckObjControl ACT_RIGHT invalid game type");
         if (iVar4 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -6331,12 +6331,12 @@ st::fn_004354E0(STAllPlayersC *this,char param_1,undefined4 param_2,undefined4 p
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
     if (iVar4 != -0x5001fff7) {
-      iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x117c,0,iVar4,
-                                 "%s","STAllPlayersC::ReplaceObject");
+      iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x117c,0,iVar4,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::ReplaceObject");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x117d);
+      st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x117d);
     }
     return;
   }
@@ -6402,7 +6402,7 @@ st::fn_004354E0(STAllPlayersC *this,char param_1,undefined4 param_2,undefined4 p
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_10 = (DArrayTy *)((int)local_10 + 0xa62);
   } while ((int)local_10 < 0x7fa135);
-  piVar5 = &g_packedRecords_A62x8[0].field3_0x9;
+  piVar5 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[0].field3_0x9);
   do {
     iVar3 = *piVar5;
     if (((iVar3 != 0) && (iVar8 = *(int *)(iVar3 + 0xc), iVar8 != 0)) &&
@@ -6455,7 +6455,7 @@ st::fn_00435930
   int iVar8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   uint index;
   undefined1 local_8 [4];
@@ -6464,7 +6464,7 @@ st::fn_00435930
      ((((iVar8 = param_2->field_0020, iVar8 == 0x14 || (iVar8 == 1000)) || (iVar8 == 0x3e9)) ||
       ((iVar8 == 0x172 || (iVar8 == 0x1a4)))))) {
     st::fn_004034CC((int)param_2);
-    /* ST_PSEUDO[unresolved_register_input,return_width_artifact]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[unresolved_register_input,call_clobber_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; candidate volatile-register merge after CALL: split the partial-register lifetime */
     in_EDX = extraout_EDX;
   }
   uVar5 = (uint)DAT_0080874d;
@@ -6504,7 +6504,7 @@ st::fn_00435930
         st::fn_006ACC70(array,index,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
           pSVar6 = st::fn_004028BA(this,g_packedRecords_A62x8[uVar5].field150_0x1b7,STPiece<0,2>(local_8),CASE_1);
-          uVar7 = (*pSVar6->vtable->vfunc_28)(param_1,param_2,param_3,param_4);
+          uVar7 = (*pSVar6->vtable->vfunc_28)(param_1,st::machine_word_boundary_cast<undefined4>(param_2),param_3,st::machine_word_boundary_cast<undefined4>(param_4));
           return (short)uVar7;
         }
         index = index + 1;
@@ -6513,7 +6513,7 @@ st::fn_00435930
     }
   }
   else {
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x11ea,0,0,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x11ea,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::GetCursorType invalid active panel");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -6622,29 +6622,29 @@ void __thiscall st::fn_00436F20(STAllPlayersC *this,void *command)
   DArrayTy *local_EAX_4267;
   DArrayTy *local_EAX_4622;
   dword dVar20;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_01;
   undefined4 uVar21;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX_04;
   STGroupBoatCVTable *pSVar22;
   ushort uVar23;
   int iVar24;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
   byte *puVar25;
   DArrayTy *pDVar26;
@@ -6779,7 +6779,7 @@ void __thiscall st::fn_00436F20(STAllPlayersC *this,void *command)
         if (STField<char>(command,0xe) != '*') {
           return;
         }
-        st::fn_0040108C(pSVar15,0x2a,command);
+        st::fn_0040108C(pSVar15,0x2a,st::pointer_boundary_cast<undefined1 *>(command));
         return;
       }
       local_24 = 4 - (uint)*STField<byte *>(command,0x17);
@@ -6843,7 +6843,7 @@ void __thiscall st::fn_00436F20(STAllPlayersC *this,void *command)
         *(int *)(local_68 + 4) = (int)sVar13;
       }
 cf_common_exit_00437191:
-      local_8c.field_0014 = command;
+      local_8c.field_0014 = st::pointer_boundary_cast<undefined4 *>(command);
       local_8->GetMessage(&local_8c);
       return;
     case 0x29:
@@ -6885,14 +6885,14 @@ cf_common_exit_00437191:
           return;
         }
         local_c = (DArrayTy *)st::fn_00402DB5((STGroupC *)pSVar16);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar14 = extraout_ECX_04;
       }
       else {
         iVar24 = STField<int>(command,0xf);
         local_c = st::fn_006AE290(nullptr,0,2,1);
         sVar13 = 0;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar14 = extraout_ECX_03;
         if (0 < (short)(STField<uint>(command,0x13) >> 1)) {
           do {
@@ -6914,27 +6914,27 @@ cf_common_exit_00437191:
           return;
         }
         pDVar16 = (DArrayTy *)st::fn_00402DB5((STGroupC *)pSVar16);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar21 = extraout_ECX_01;
       }
       else {
         iVar24 = STField<int>(command,0xf);
         pDVar16 = st::fn_006AE290(nullptr,0,2,1);
         sVar13 = 0;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar21 = extraout_ECX;
         if (0 < (short)(STField<uint>(command,0x13) >> 1)) {
           do {
             st::fn_006AE1C0(pDVar16,puVar6 + sVar13 * 2 + iVar24);
             sVar13 = sVar13 + 1;
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar21 = extraout_ECX_00;
           } while (sVar13 < (short)(STField<uint>(command,0x13) >> 1));
         }
       }
       st::fn_00403CFB(STReplaceLowByte((uint32_t)(uVar21), (uint8_t)(STField<undefined1>(command,8))),
                          pDVar16,1);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       st::fn_00405A74(STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(STField<undefined1>(command,8)))
                          ,pDVar16,0);
       st::fn_006AE110(pDVar16);
@@ -6946,20 +6946,20 @@ cf_common_exit_00437191:
           return;
         }
         local_c = (DArrayTy *)st::fn_00402DB5((STGroupC *)pSVar16);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar21 = extraout_EDX_02;
       }
       else {
         iVar24 = STField<int>(command,0xf);
         local_c = st::fn_006AE290(nullptr,0,2,1);
         sVar13 = 0;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar21 = extraout_EDX_00;
         if (0 < (short)(STField<uint>(command,0x13) >> 1)) {
           do {
             st::fn_006AE1C0(local_c,puVar6 + sVar13 * 2 + iVar24);
             sVar13 = sVar13 + 1;
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar21 = extraout_EDX_01;
           } while (sVar13 < (short)(STField<uint>(command,0x13) >> 1));
         }
@@ -6996,7 +6996,7 @@ cf_common_exit_00437191:
         return;
       }
       st::fn_00405A74((uint)STField<byte>(command,8),local_EAX_1130,1);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       st::fn_00403CFB(STReplaceLowByte((uint32_t)(extraout_ECX_02), (uint8_t)(STField<undefined1>(command,8))),local_EAX_1130,0);
       st::fn_006AE110(local_EAX_1130);
       return;
@@ -7458,7 +7458,7 @@ cf_common_exit_00437E03:
         if ((((iVar24 == 8) || (iVar24 = (*pSVar15->vtable->vfunc_2C)(), iVar24 == 0x14)) ||
             (iVar24 = (*pSVar15->vtable->vfunc_2C)(), iVar24 == 0x1a)) &&
            (iVar24 = st::fn_00402EDC(pSVar15), iVar24 == 0xc)) {
-          puVar18 = (byte *)st::fn_004024CD(pSVar15,local_1b8);
+          puVar18 = (byte *)(st::fn_004024CD(pSVar15,local_1b8));
           puVar25 = (byte *)(&local_1fc);
           memmove(puVar25, puVar18, 0x42); /* compiler REP MOVS byte copy */
           iVar24 = st::fn_006E62D0(g_playSystem_00802A38,local_1f6,(int *)&local_40);
@@ -7475,8 +7475,8 @@ cf_common_exit_00437E03:
             else {
               if (local_e8 != 0xde) {
                 local_EAX_3281 =
-                     st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x14ca,0,0,
-                                        "%s","STAllPlayersC::CmdToPlsObj, CMDTY_RC - unknown resource type");
+                     st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x14ca,0,0,
+                                        st::mutable_c_string("%s"),"STAllPlayersC::CmdToPlsObj, CMDTY_RC - unknown resource type");
                 if (local_EAX_3281 != 0) {
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
@@ -7648,7 +7648,7 @@ LAB_00437cb5:
     case 4:
       break;
     default:
-      iVar25 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1427,0,0,"%s",
+      iVar25 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1427,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::CmdToPlsObj CMDTY_LPTR");
       if (iVar25 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -7685,37 +7685,37 @@ void __thiscall st::fn_00438E30(STAllPlayersC *this,int param_1)
   if (local_EAX_32 != 0) {
     g_currentExceptionFrame = local_50.previous;
     if (local_EAX_32 != -0x5001fff7) {
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x16fd,0,0,"%s",
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x16fd,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::SaveTmp");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(local_EAX_32,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x16fe);
+      st::fn_006A5E40(local_EAX_32,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x16fe);
     }
     return;
   }
   if ((param_1 < 0) || (9 < param_1)) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x16d8);
   }
   uVar4 = (uint)DAT_0080874d;
   /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   iVar7 = uVar4 * 0xa62;
   if (g_packedRecords_A62x8[uVar4].field200_0x203 == 0) {
-    local_8 = &g_packedRecords_A62x8[uVar4].field96_0x163;
+    local_8 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[uVar4].field96_0x163);
   }
   else if (g_packedRecords_A62x8[uVar4].field200_0x203 == 1) {
-    local_8 = &g_packedRecords_A62x8[uVar4].field149_0x1b3;
+    local_8 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[uVar4].field149_0x1b3);
   }
   else {
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x16dd,0,0,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x16dd,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::SaveTmp invalid panel number");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x16de);
   }
   piVar3 = local_8;
@@ -7760,7 +7760,7 @@ cf_common_exit_00438FE7:
   }
   else if (iVar5 == 0x172) goto cf_common_exit_00438FE7;
 LAB_00438fb0:
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x16f9,0,0,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x16f9,0,0,st::mutable_c_string("%s"),
                              "STAllPlayersC::SaveTmp invalid game type");
   if (iVar4 == 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -7857,18 +7857,18 @@ void __thiscall st::fn_00439100(STAllPlayersC *this,int param_1)
   int extraout_EAX_04;
   int iVar9;
   int iVar8;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
   undefined4 uVar10;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_02;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_03;
@@ -7891,11 +7891,11 @@ void __thiscall st::fn_00439100(STAllPlayersC *this,int param_1)
   undefined2 extraout_var_11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_12;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_13;
@@ -7925,18 +7925,18 @@ void __thiscall st::fn_00439100(STAllPlayersC *this,int param_1)
   if (local_EAX_51 != 0) {
     g_currentExceptionFrame = local_70.previous;
     if (local_EAX_51 != -0x5001fff7) {
-      iVar8 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x19ab,0,0,"%s",
+      iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x19ab,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::RestoreTmp");
       if (iVar8 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(local_EAX_51,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x19ac);
+      st::fn_006A5E40(local_EAX_51,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x19ac);
     }
     return;
   }
   if ((param_1 < 0) || (9 < param_1)) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x170e);
   }
   this_00 = local_2c;
@@ -7989,8 +7989,8 @@ LAB_00439aaa:
           if ((iVar9 != 0x1a4) && (iVar9 != 0x1b8)) {
 LAB_00439c59:
             local_EAX_2929 =
-                 st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x17d3,0,0,
-                                    "%s","STAllPlayersC::RestoreTmp GAMETYPE_OBJECT ACT_LEFT");
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x17d3,0,0,
+                                    st::mutable_c_string("%s"),"STAllPlayersC::RestoreTmp GAMETYPE_OBJECT ACT_LEFT");
             if (local_EAX_2929 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
@@ -8016,7 +8016,7 @@ LAB_00439cc7:
       }
       if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
         local_EAX_2252 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x17d7,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x17d7,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::RestoreTmp GAMETYPE_OBJECT wrong panel number");
         if (local_EAX_2252 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8067,7 +8067,7 @@ LAB_00439b10:
         goto LAB_00439cc7;
       }
       local_EAX_2554 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x17a9,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x17a9,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::RestoreTmp GAMETYPE_OBJECT ACT_RIGHT");
       if (local_EAX_2554 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8082,8 +8082,8 @@ LAB_00439b10:
         if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 0) {
           if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
             local_EAX_1726 =
-                 st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x18df,0,0,
-                                    "%s","STAllPlayersC::RestoreTmp GAMETYPE_ARTEFACT wrong panel number");
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x18df,0,0,
+                                    st::mutable_c_string("%s"),"STAllPlayersC::RestoreTmp GAMETYPE_ARTEFACT wrong panel number");
             if (local_EAX_1726 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
@@ -8108,7 +8108,7 @@ LAB_0043986a:
             goto cf_common_join_0043A107;
           }
           local_EAX_1876 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x18b4,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x18b4,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::RestoreTmp GAMETYPE_ARTEFACT ACT_RIGHT");
           if (local_EAX_1876 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8137,7 +8137,7 @@ LAB_00439956:
           goto LAB_00439986;
         }
         local_EAX_2112 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x18db,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x18db,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::RestoreTmp GAMETYPE_ARTEFACT ACT_LEFT");
         if (local_EAX_2112 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8146,20 +8146,20 @@ LAB_00439956:
       }
 LAB_00439cfb:
       local_EAX_3091 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1998,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1998,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::RestoreTmp invalid game type");
       if (local_EAX_3091 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       st::fn_006A5E40
-                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x1999);
       goto cf_common_exit_0043A47C;
     }
     if (iVar9 != 0x5a) {
       if (iVar9 == 0) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x1713);
       }
       else if (iVar9 != 0x3c) goto LAB_00439cfb;
@@ -8193,7 +8193,7 @@ LAB_0043953a:
           st::fn_00405920((char)local_8,0);
           if (((STGameObjC *)g_packedRecords_A62x8[(int)pSVar3].field105_0x177 == local_20_mg0) &&
              (*(STGameObjC **)&pAVar1->field_0x4 == local_20_mg0)) {
-            st::fn_004020D6(this_00,(char)local_8,0,1,&pAVar1->field_000A->flags,(int *)&local_c,
+            st::fn_004020D6(this_00,(char)local_8,0,1,st::pointer_boundary_cast<uint *>(&pAVar1->field_000A->flags),(int *)&local_c,
                          nullptr,nullptr);
             st::fn_004027C0(this_00,local_8,0x3c,local_c,0,0);
             st::fn_006AE110(local_c);
@@ -8205,7 +8205,7 @@ LAB_0043953a:
         }
         if (iVar9 != 0x1ae) {
           local_EAX_729 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1748,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1748,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::RestoreTmp GAMETYPE_BOAT ACT_LEFT");
           if (local_EAX_729 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8234,7 +8234,7 @@ LAB_00439469:
       else {
         if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
           local_EAX_274 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1778,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1778,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::RestoreTmp GAMETYPE_BOAT wrong panel number");
           if (local_EAX_274 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8248,8 +8248,8 @@ LAB_00439469:
         if (iVar9 != 0x3c) {
           if (iVar9 != 0x1ae) {
             local_EAX_377 =
-                 st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1774,0,0,
-                                    "%s","STAllPlayersC::RestoreTmp GAMETYPE_BOAT ACT_RIGHT");
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1774,0,0,
+                                    st::mutable_c_string("%s"),"STAllPlayersC::RestoreTmp GAMETYPE_BOAT ACT_RIGHT");
             if (local_EAX_377 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
@@ -8296,7 +8296,7 @@ LAB_00439566:
     if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 0) {
       if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
         local_EAX_1216 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1885,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1885,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::RestoreTmp GAMETYPE_RESOURCE wrong panel number");
         if (local_EAX_1216 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8341,7 +8341,7 @@ LAB_0043963c:
         goto LAB_00439672;
       }
       local_EAX_1318 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x185a,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x185a,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::RestoreTmp GAMETYPE_RESOURCE ACT_RIGHT");
       if (local_EAX_1318 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8376,7 +8376,7 @@ LAB_004398e7:
       local_EAX_2046 =
            st::fn_0040196F(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
                      pSVar6->field_0032);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar10 = extraout_ECX;
       if (0 < local_EAX_2046) {
         st::fn_0040317F(this_00,cVar12,1,local_EAX_2046);
@@ -8387,7 +8387,7 @@ LAB_004398e7:
       if ((iVar9 != 0x1a4) && (iVar9 != 0x1b8)) {
 LAB_00439712:
         local_EAX_1578 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1881,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1881,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::RestoreTmp GAMETYPE_RESOURCE ACT_LEFT");
         if (local_EAX_1578 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8407,7 +8407,7 @@ LAB_00439986:
       st::fn_00405920((char)uVar5,1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       local_EAX_2046 = extraout_EAX_00;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar10 = extraout_ECX_00;
     }
     uVar6 = STReplaceLowWord((uint32_t)(local_EAX_2046), (uint16_t)(pSVar6->field_0032));
@@ -8424,7 +8424,7 @@ LAB_0043a470:
       if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 0) {
         if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
           local_EAX_4354 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1939,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1939,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER wrong panel number");
           if (local_EAX_4354 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8456,7 +8456,7 @@ LAB_0043a247:
           local_EAX_4446 =
                st::fn_0040196F(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
                          pSVar6->field_0032);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar10 = extraout_EDX_00;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar11 = extraout_var_04;
@@ -8469,8 +8469,8 @@ LAB_0043a247:
           if ((iVar9 != 0x1a4) && (iVar9 != 0x1b8)) {
 LAB_0043a2bc:
             local_EAX_4564 =
-                 st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x190e,0,0,
-                                    "%s","STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER ACT_RIGHT");
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x190e,0,0,
+                                    st::mutable_c_string("%s"),"STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER ACT_RIGHT");
             if (local_EAX_4564 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
@@ -8489,7 +8489,7 @@ joined_r0x0043a31a:
 LAB_0043a320:
           st::fn_00405920((char)uVar5,1);
           st::fn_004032E7(this_00,(char)uVar5,1,1,0);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar10 = extraout_EDX_01;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar11 = extraout_var_05;
@@ -8539,7 +8539,7 @@ LAB_0043a394:
         if ((iVar9 != 0x1a4) && (iVar9 != 0x1b8)) {
 LAB_0043a405:
           local_EAX_4893 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1935,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1935,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER ACT_LEFT");
           if (local_EAX_4893 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8597,7 +8597,7 @@ LAB_00439eb7:
           goto LAB_0043a459;
         }
         local_EAX_3489 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x198f,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x198f,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER ACT_LEFT");
         if (local_EAX_3489 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8606,7 +8606,7 @@ LAB_00439eb7:
       }
       if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
         local_EAX_3199 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1993,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1993,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER wrong panel number");
         if (local_EAX_3199 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8631,7 +8631,7 @@ LAB_00439dfb:
         goto joined_r0x0043a31a;
       }
       local_EAX_3301 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1968,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1968,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER ACT_RIGHT");
       if (local_EAX_3301 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8656,7 +8656,7 @@ LAB_0043a177:
         }
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar6 = CONCAT22(extraout_var_03,*(undefined2 *)&pAVar1->field_0x8);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar7 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(pAVar1->field_0x4));
         uVar13 = local_20_mg0->field_0020;
         iVar9 = 0;
@@ -8681,7 +8681,7 @@ LAB_0043a177:
       else {
         if (iVar9 != 0x1ae) {
           local_EAX_3979 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1803,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1803,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::RestoreTmp GAMETYPE_MINESET ACT_LEFT");
           if (local_EAX_3979 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8700,7 +8700,7 @@ LAB_0043a177:
         st::fn_004032E7(this_00,cVar12,0,1,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar6 = CONCAT22(extraout_var_00,*(undefined2 *)&pAVar1->field_0x8);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar7 = STReplaceLowByte((uint32_t)(extraout_ECX_02), (uint8_t)(pAVar1->field_0x4));
         uVar13 = local_20_mg0->field_0020;
         iVar9 = 0;
@@ -8709,7 +8709,7 @@ LAB_0043a177:
     else {
       if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
         local_EAX_3626 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x182b,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x182b,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::RestoreTmp GAMETYPE_MINESET wrong panel number");
         if (local_EAX_3626 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8741,7 +8741,7 @@ LAB_0043a177:
       else {
         if (iVar9 != 0x1ae) {
           local_EAX_3730 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1827,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1827,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::RestoreTmp GAMETYPE_MINESET ACT_RIGHT");
           if (local_EAX_3730 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -8758,7 +8758,7 @@ LAB_0043a177:
         st::fn_00405920(cVar12,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar6 = CONCAT22(extraout_var,*(undefined2 *)&pAVar1->field_0x8);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar7 = STReplaceLowByte((uint32_t)(extraout_ECX_01), (uint8_t)(pAVar1->field_0x4));
         uVar13 = local_20_mg0->field_0020;
         iVar9 = 0;
@@ -8893,7 +8893,7 @@ st::fn_0043AAF0
     else {
       if (_param_1 != 0x172) {
 LAB_0043acdb:
-        iVar7 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x19fb,0,0,"%s"
+        iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x19fb,0,0,st::mutable_c_string("%s")
                                    ,"STAllPlayersC::GetCamPoint invalid game type");
         if (iVar7 == 0) {
           return 0xffffffff;
@@ -9001,7 +9001,7 @@ st::fn_0043AE40(STAllPlayersC *this,uint *param_1,int param_2,int param_3)
           st::fn_0040317F(this,DAT_0080874d,0,param_2);
           return;
         }
-        iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1a3b,0,0,"%s"
+        iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1a3b,0,0,st::mutable_c_string("%s")
                                    ,"STAllPlayersC::SetActivePanel ACT_LEFT ACT_LEFT invalid game type");
         if (iVar5 == 0) {
           return;
@@ -9028,7 +9028,7 @@ st::fn_0043AE40(STAllPlayersC *this,uint *param_1,int param_2,int param_3)
     else {
       if (g_packedRecords_A62x8[DAT_0080874d].field200_0x203 != 1) {
         local_EAX_151 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1a6b,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1a6b,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::SetActivePanel");
         if (local_EAX_151 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -9066,7 +9066,7 @@ st::fn_0043AE40(STAllPlayersC *this,uint *param_1,int param_2,int param_3)
       }
       if (iVar2 != 0x1ae) {
         local_EAX_2197 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1a67,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1a67,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::SetActivePanel ACT_LEFT ACT_RIGHT invalid game type");
         if (local_EAX_2197 == 0) {
           return;
@@ -9098,8 +9098,8 @@ st::fn_0043AE40(STAllPlayersC *this,uint *param_1,int param_2,int param_3)
     goto cf_common_exit_0043BB49;
   }
   if (param_1 != (uint *)0x1) {
-    local_EAX_58 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1b2b,0,0,
-                                      "%s","STAllPlayersC::SetActivePanel invalid panel number");
+    local_EAX_58 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1b2b,0,0,
+                                      st::mutable_c_string("%s"),"STAllPlayersC::SetActivePanel invalid panel number");
     if (local_EAX_58 == 0) {
       return;
     }
@@ -9112,7 +9112,7 @@ LAB_0043aee4:
   if (g_packedRecords_A62x8[DAT_0080874d].field200_0x203 != 0) {
     if (g_packedRecords_A62x8[DAT_0080874d].field200_0x203 != 1) {
       local_EAX_227 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1b27,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1b27,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::SetActivePanel");
       if (local_EAX_227 == 0) {
         return;
@@ -9175,7 +9175,7 @@ LAB_0043b0f1:
       if (iVar6 != 0x172) {
 LAB_0043b0af:
         local_EAX_645 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1ac4,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1ac4,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::SetActivePanel ACT_RIGHT ACT_RIGHT invalid game type");
         if (local_EAX_645 == 0) {
           return;
@@ -9269,7 +9269,7 @@ LAB_0043b630:
       if (iVar6 != 0x172) {
 LAB_0043b4a2:
         local_EAX_1656 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1b23,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1b23,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::SetActivePanel ACT_RIGHT ACT_LEFT invalid game type");
         if (local_EAX_1656 == 0) {
           return;
@@ -9394,7 +9394,7 @@ st::fn_0043BEB0
     if (iVar6 != 0x3c) {
       if (iVar6 != 0x1ae) {
         local_EAX_107 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1b8a,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1b8a,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::GetPanelInfo (1) unknown game type");
         if (local_EAX_107 == 0) {
           return;
@@ -9479,7 +9479,7 @@ st::fn_0043BEB0
       if (iVar6 != 0x3c) {
         if (iVar6 != 0x1ae) {
           local_EAX_583 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1d16,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1d16,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::GetPanelInfo (2) unknown game type");
           if (local_EAX_583 == 0) {
             return;
@@ -9565,7 +9565,7 @@ LAB_0043c293:
         }
       }
       pAVar18->field_0007 = 1;
-      GVar8 = st::fn_004058A3(this);
+      GVar8 = st::fn_004058A3(st::machine_word_boundary_cast<undefined4>(this));
       local_18 = st::fn_00401D61(GVar8);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar18->field_000F;
@@ -10062,8 +10062,8 @@ cf_common_exit_0043C86F:
         else {
           if (iVar6 != 0x1b8) {
 LAB_0043ca5a:
-            iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1d47,0,0,
-                                       "%s","STAllPlayersC::GetPanelInfo (4) unknown game type");
+            iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1d47,0,0,
+                                       st::mutable_c_string("%s"),"STAllPlayersC::GetPanelInfo (4) unknown game type");
             if (iVar5 == 0) {
               return;
             }
@@ -10129,7 +10129,7 @@ cf_common_exit_0043CA35:
         }
         if (g_packedRecords_A62x8[uVar17].field149_0x1b3 != 0x19a) {
           local_EAX_3449 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1d95,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1d95,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::GetPanelInfo (6) unknown game type");
           if (local_EAX_3449 == 0) {
             return;
@@ -10168,7 +10168,7 @@ cf_common_exit_0043CA35:
         }
         if (g_packedRecords_A62x8[uVar17].field149_0x1b3 != 0x19a) {
           local_EAX_3685 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1db2,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1db2,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::GetPanelInfo (7) unknown game type");
           if (local_EAX_3685 == 0) {
             return;
@@ -10208,7 +10208,7 @@ cf_common_exit_0043CA35:
         }
         if (g_packedRecords_A62x8[uVar17].field96_0x163 != 0x3c) {
           local_EAX_3922 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1dd0,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1dd0,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::GetPanelInfo (8) unknown game type");
           if (local_EAX_3922 == 0) {
             return;
@@ -10243,7 +10243,7 @@ cf_common_exit_0043CA35:
         }
         if (g_packedRecords_A62x8[uVar17].field149_0x1b3 != 0x19a) {
           local_EAX_4134 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1dec,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1dec,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::GetPanelInfo (9) unknown game type");
           if (local_EAX_4134 == 0) {
             return;
@@ -10308,8 +10308,8 @@ cf_common_exit_0043CA35:
           }
           if (g_packedRecords_A62x8[uVar17].field149_0x1b3 != 0x19a) {
             local_EAX_5245 =
-                 st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1ea3,0,0,
-                                    "%s","STAllPlayersC::GetPanelInfo (12) unknown game type");
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1ea3,0,0,
+                                    st::mutable_c_string("%s"),"STAllPlayersC::GetPanelInfo (12) unknown game type");
             if (local_EAX_5245 == 0) {
               return;
             }
@@ -10378,8 +10378,8 @@ LAB_0043d41d:
             else {
               if (iVar6 != 0x1ae) {
                 local_EAX_5472 =
-                     st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1ecc,0,0,
-                                        "%s","STAllPlayersC::GetPanelInfo (14) unknown game type");
+                     st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1ecc,0,0,
+                                        st::mutable_c_string("%s"),"STAllPlayersC::GetPanelInfo (14) unknown game type");
                 if (local_EAX_5472 != 0) {
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
@@ -10403,7 +10403,7 @@ LAB_0043d447:
         if ((char)param_1 == '\x0f') {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (AnonShape_0043BEB0_1C00EC12 *)0x4;
-          puVar16 = &g_packedRecords_A62x8[DAT_0080874d].field159_0x1cb;
+          puVar16 = st::pointer_boundary_cast<ushort *>(&g_packedRecords_A62x8[DAT_0080874d].field159_0x1cb);
           do {
             iVar6 = *(int *)(puVar16 + -4);
             if (iVar6 < 0x19b) {
@@ -10448,8 +10448,8 @@ LAB_0043d5a6:
                 if (iVar6 != 0x1b8) {
 LAB_0043d581:
                   local_EAX_5865 =
-                       st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1efe,0,0,
-                                          "%s","STAllPlayersC::GetPanelInfo (15) unknown game type");
+                       st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1efe,0,0,
+                                          st::mutable_c_string("%s"),"STAllPlayersC::GetPanelInfo (15) unknown game type");
                   if (local_EAX_5865 != 0) {
                     STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
@@ -10483,8 +10483,8 @@ LAB_0043d5c4:
             }
             if (g_packedRecords_A62x8[uVar17].field96_0x163 != 0x3c) {
               local_EAX_6259 =
-                   st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1f4c,0,0,
-                                      "%s","STAllPlayersC::GetPanelInfo (17) invalid game type");
+                   st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1f4c,0,0,
+                                      st::mutable_c_string("%s"),"STAllPlayersC::GetPanelInfo (17) invalid game type");
               if (local_EAX_6259 == 0) {
                 return;
               }
@@ -10560,7 +10560,7 @@ LAB_0043d5c4:
             return;
           }
           local_EAX_6655 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1f5d,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1f5d,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::GetPanelInfo (18) unknown game type");
           if (local_EAX_6655 == 0) {
             return;
@@ -10577,7 +10577,7 @@ LAB_0043d5c4:
             return;
           }
           local_EAX_6027 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1f22,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1f22,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::GetPanelInfo (16) unknown game type");
           if (local_EAX_6027 == 0) {
             return;
@@ -10619,7 +10619,7 @@ LAB_0043d5c4:
       }
       if (g_packedRecords_A62x8[uVar17].field96_0x163 != 0x3c) {
         local_EAX_4501 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1e85,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1e85,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::GetPanelInfo (11) invalid game type");
         if (local_EAX_4501 == 0) {
           return;
@@ -10777,7 +10777,7 @@ switchD_0043d1bf_caseD_a:
         if (iVar6 != 0x1b8) {
 LAB_0043cb81:
           local_EAX_3303 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1d78,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1d78,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::GetPanelInfo (5) unknown game type");
           if (local_EAX_3303 == 0) {
             return;
@@ -10887,13 +10887,13 @@ uint * st::fn_0043E4E0(char param_1)
       } while (local_8 < iVar4);
     }
     g_currentExceptionFrame = local_58.previous;
-    return &array->flags;
+    return st::pointer_boundary_cast<uint *>(&array->flags);
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar7 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1f8c,0,iVar5,"%s",
+  iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1f8c,0,iVar5,st::mutable_c_string("%s"),
                              "STAllPlayersC::GetObjsList");
   if (iVar7 == 0) {
-    st::fn_006A5E40(iVar5,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x1f8d);
+    st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1f8d);
     return nullptr;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -10936,12 +10936,12 @@ st::fn_0043E780
   iVar4 = st::fn_0072D7F0(local_58.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x1fbf,0,iVar4,"%s"
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1fbf,0,iVar4,st::mutable_c_string("%s")
                                ,"STAllPlayersC::GetTOBJList");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x1fc0);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1fc0);
     return nullptr;
   }
   local_8 = st::fn_006AE290(nullptr,0,2,1);
@@ -10983,7 +10983,7 @@ LAB_0043e85d:
     } while (iVar4 < local_c);
   }
   g_currentExceptionFrame = local_58.previous;
-  return &local_8->flags;
+  return st::pointer_boundary_cast<uint *>(&local_8->flags);
 }
 
 // 0043EED0 STAllPlayersC::GetTOBJListFromDArr
@@ -11025,10 +11025,10 @@ st::fn_0043EED0
   iVar4 = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2049,0,iVar4,"%s"
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2049,0,iVar4,st::mutable_c_string("%s")
                                ,"STAllPlayersC::GetTOBJListFromDArr");
     if (iVar6 == 0) {
-      st::fn_006A5E40(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x204a);
+      st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x204a);
       return nullptr;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -11045,7 +11045,7 @@ st::fn_0043EED0
         if (this_01 == nullptr) {
           st::fn_006A5E40
                     (-0x5001fffc,g_overwriteContext_007ED77C,
-                     "E:\\__titans\\wlad\\to_allpl.cpp",0x2040);
+                     st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2040);
 switchD_0043efb1_caseD_3a:
           bVar3 = false;
         }
@@ -11059,7 +11059,7 @@ switchD_0043efb1_caseD_3a:
             case CASE_39:
             case CASE_4F:
             case CASE_5E:
-              if ((param_4 == 1) && (iVar7 = (*this_01->vtable->vfunc_88)(local_18), 0 < iVar7)) {
+              if ((param_4 == 1) && (iVar7 = (*this_01->vtable->vfunc_88)(st::machine_word_boundary_cast<undefined4>(local_18)), 0 < iVar7)) {
                 bVar3 = true;
                 goto LAB_0043efd8;
               }
@@ -11078,7 +11078,7 @@ LAB_0043efd8:
     } while (iVar4 < local_10);
   }
   g_currentExceptionFrame = local_5c.previous;
-  return &local_c->flags;
+  return st::pointer_boundary_cast<uint *>(&local_c->flags);
 }
 
 // 0043F200 STAllPlayersC::GetTOBJList
@@ -11113,12 +11113,12 @@ uint * __thiscall st::fn_0043F200(STAllPlayersC *this,char param_1,byte *param_2
   iVar4 = st::fn_0072D7F0(local_64.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2075,0,iVar4,"%s"
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2075,0,iVar4,st::mutable_c_string("%s")
                                ,"STAllPlayersC::GetTOBJList");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2076);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2076);
     return nullptr;
   }
   local_c = st::fn_006AE290(nullptr,0,2,1);
@@ -11157,7 +11157,7 @@ LAB_0043f2b2:
     } while (iVar4 < local_8);
   }
   g_currentExceptionFrame = local_64.previous;
-  return &local_c->flags;
+  return st::pointer_boundary_cast<uint *>(&local_c->flags);
 }
 
 // 00440600 STAllPlayersC::GetNInTmp
@@ -11176,7 +11176,7 @@ uint st::fn_00440600(int param_1,int param_2)
     return (uint)*(ushort *)(param_2 * 0x10 + STRecordByteAddress(g_packedRecords_A62x8, (uint)DAT_0080874d, 0x171));
   }
   if (param_1 != 1) {
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2184,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2184,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::GetNInTmp");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -11211,20 +11211,20 @@ int __thiscall st::fn_00440860(STAllPlayersC *this,int param_1,int *param_2,uint
   param_2 = (int *)st::fn_004028BA(this,objPtr,(ushort)param_3,CASE_1);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((STGameObjC *)param_2 == nullptr) {
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x21d0,0,0,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x21d0,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::_ChangeMD");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x21d1);
   }
   if (param_1 == 1) {
     iVar5 = st::fn_00403ADA(this,objPtr,uVar7);
   }
   else {
-    iVar5 = st::fn_00402748(piVar3,uVar7);
+    iVar5 = st::fn_00402748(st::pointer_boundary_cast<undefined4 *>(piVar3),uVar7);
   }
   if ((((iVar5 == 1) &&
        (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field2_0x5, array != nullptr)
@@ -11269,13 +11269,13 @@ void st::fn_00440990(undefined4 param_1,int *param_2,uint param_3)
   param_2 = (int *)st::fn_004028BA(in_ECX,(char)param_2,(ushort)param_3,CASE_1);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((STGameObjC *)param_2 == nullptr) {
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x21ed,0,0,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x21ed,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::_ChangeDock");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x21ee);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -11387,26 +11387,26 @@ st::fn_00440AA0(STAllPlayersC *this,char param_1,DArrayTy *param_2,DArrayTy *par
   if (local_EAX_82 != 0) {
     g_currentExceptionFrame = local_c8.previous;
     if (local_EAX_82 != -0x5001fff7) {
-      iVar10 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x234b,0,local_EAX_82,
-                                  "%s","STAllPlayersC::_AssignDocks");
+      iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x234b,0,local_EAX_82,
+                                  st::mutable_c_string("%s"),"STAllPlayersC::_AssignDocks");
       if (iVar10 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(local_EAX_82,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x234c);
+      st::fn_006A5E40(local_EAX_82,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x234c);
     }
-    return &local_70->flags;
+    return st::pointer_boundary_cast<uint *>(&local_70->flags);
   }
   if ((((param_2 == nullptr) || (param_3 == nullptr)) ||
       (uVar15 = param_2->count, local_20 = uVar15, uVar15 == 0)) ||
      (local_48 = param_3->count, local_48 == 0)) {
     uVar15 = local_20;
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x2215);
   }
   if ((local_80 == nullptr) || (local_84 = local_80->count, local_84 == 0)) {
     st::fn_006A5E40
-              (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff8,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x2216);
   }
   uVar14 = 0;
@@ -11430,7 +11430,7 @@ LAB_00440bab:
   }
   if (uVar15 == 0) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x221e);
   }
   uVar14 = 0;
@@ -11453,7 +11453,7 @@ LAB_00440c19:
   }
   if (local_48 == 0) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x2225);
   }
   pDVar6 = st::fn_006AE290(nullptr,uVar15,0xc,1);
@@ -11486,15 +11486,15 @@ LAB_00440c19:
             if ((ushort)STPiece<0,4>(local_28) != 0xffff) {
               pSVar4 = st::fn_004028BA(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
               if (pSVar4 == nullptr) {
-                iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2239,0,0,
-                                           "%s","STAllPlayersC::_AssignDocks invalid pointer"
+                iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2239,0,0,
+                                           st::mutable_c_string("%s"),"STAllPlayersC::_AssignDocks invalid pointer"
                                           );
                 if (iVar4 != 0) {
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
                 st::fn_006A5E40
                           (-0x5001fffc,g_overwriteContext_007ED77C,
-                           "E:\\__titans\\wlad\\to_allpl.cpp",0x223a);
+                           st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x223a);
               }
               if ((pSVar4->field_0020 == 0x14) && (iVar5 = st::fn_00402EDC(pSVar4), iVar5 == 4))
               {
@@ -11928,7 +11928,7 @@ LAB_00440c19:
   }
   st::fn_006AE110(pDVar6);
   g_currentExceptionFrame = local_c8.previous;
-  return &local_70->flags;
+  return st::pointer_boundary_cast<uint *>(&local_70->flags);
 }
 
 // 00441CE0 STAllPlayersC::_MakeMDPairs
@@ -12003,10 +12003,10 @@ void __thiscall st::fn_00441CE0(STAllPlayersC *this,char param_1)
   pDVar8 = local_24;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_e8.previous;
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x23c5,0,iVar3,"%s"
+    iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x23c5,0,iVar3,st::mutable_c_string("%s")
                                ,"STAllPlayersC::_MakeMDPairs");
     if (iVar9 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x23c6);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x23c6);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -12037,7 +12037,7 @@ void __thiscall st::fn_00441CE0(STAllPlayersC *this,char param_1)
       pDVar16 = pDVar8;
       do {
         pDVar3 = st::fn_006AE290(nullptr,0,0x24,1);
-        *puVar12 = pDVar3;
+        *puVar12 = st::machine_word_boundary_cast<undefined4>(pDVar3);
         puVar12 = puVar12 + 1;
         pDVar16 = (DArrayTy *)((int)&pDVar16[-1].data + 3);
       } while (pDVar16 != nullptr);
@@ -12073,7 +12073,7 @@ LAB_00441e92:
                 pdVar6 = local_80;
                 do {
                   if (dVar4 == *pdVar6) {
-                    iVar5 = (*local_8->vtable->vfunc_88)(local_4c);
+                    iVar5 = (*local_8->vtable->vfunc_88)(st::machine_word_boundary_cast<undefined4>(local_4c));
                     if (0 < iVar5) {
                       pDVar16 = (DArrayTy *)local_60[iVar10];
                       goto LAB_00441e92;
@@ -12266,22 +12266,22 @@ undefined4 __thiscall st::fn_00442300(STAllPlayersC *this,char param_1,uint para
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_d4.previous;
     if (iVar4 != -0x5001fff7) {
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2454,0,iVar4,
-                                 "%s","STAllPlayersC::_AddMDPairs");
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2454,0,iVar4,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::_AddMDPairs");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2455);
+      st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2455);
     }
     return local_10;
   }
   if (0 < local_4c) {
-    piVar9 = &g_packedRecords_A62x8[param_1].field5_0xf;
+    piVar9 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[param_1].field5_0xf);
     iVar11 = local_4c;
     do {
       if (*piVar9 == 0) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x23dd);
       }
       piVar9 = piVar9 + 1;
@@ -12323,7 +12323,7 @@ undefined4 __thiscall st::fn_00442300(STAllPlayersC *this,char param_1,uint para
               st::fn_006ACC70(local_c,local_18,local_1c);
               pSVar4_mg1 = st::fn_004028BA(pSVar2,param_1,STPiece<0,2>(local_1c),CASE_1);
               local_44 = pSVar4_mg1;
-              iVar5 = (*pSVar4_mg1->vtable->vfunc_88)(local_54);
+              iVar5 = (*pSVar4_mg1->vtable->vfunc_88)(st::machine_word_boundary_cast<undefined4>(local_54));
               if (0 < iVar5) {
                 st::fn_004018C5((STFishC *)pSVar4_mg1,&local_40,&local_3e,&local_3c);
                 local_3a = pSVar4_mg1->field_0032;
@@ -12513,13 +12513,13 @@ undefined4 st::fn_00442B40(undefined4 *param_1,uint param_2)
   local_c = 0;
   local_18 = uVar4;
   if (this == nullptr) {
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x246d,0,0,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x246d,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::_SubMDObject invalid input data");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x246e);
   }
   if ((uVar4 != 0x3b) && (uVar4 != 0x60)) {
@@ -12610,14 +12610,17 @@ st::fn_00442E50
   int local_EAX_903;
   STGameObjC *objPtr;
   int local_EAX_1125;
+  short *psVar7;
   int local_EAX_2342;
   int local_EAX_2462;
-  DArrayTy *pDVar7;
-  int iVar8;
-  int iVar9;
+  DArrayTy *pDVar9;
   int iVar10;
-  STWorldCell *pSVar11;
-  undefined2 uVar12;
+  int iVar9;
+  int iVar11;
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
+  STWorldCell *extraout_EDX;
+  STWorldCell *pSVar12;
+  undefined2 uVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -12626,16 +12629,14 @@ st::fn_00442E50
   undefined2 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
-  dword dVar13;
-  uint uVar14;
+  dword dVar14;
   uint uVar15;
+  uint uVar16;
   DArrayTy *pDVar8;
-  short *psVar16;
   dword dVar17;
   uint uVar18;
   short *psVar19;
   DArrayTy *pDVar20;
-  undefined8 uVar21;
   undefined4 local_19c [17];
   short local_158 [3];
   int local_152;
@@ -12708,132 +12709,132 @@ st::fn_00442E50
   if (local_EAX_107 != 0) {
     g_currentExceptionFrame = local_114.previous;
     if (local_EAX_107 != -0x5001fff7) {
-      iVar9 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x25ed,0,local_EAX_107,
-                                 "%s","STAllPlayersC::_AssignMDPairs");
+      iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x25ed,0,local_EAX_107,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::_AssignMDPairs");
       if (iVar9 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(local_EAX_107,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x25ee);
+      st::fn_006A5E40(local_EAX_107,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x25ee);
     }
-    return &local_4c->flags;
+    return st::pointer_boundary_cast<uint *>(&local_4c->flags);
   }
   if (((param_3 != nullptr) && (param_4 != nullptr)) && (param_5 != nullptr)
      ) {
-    uVar15 = param_3->count;
-    local_3c = uVar15;
-    if (((uVar15 != 0) && (local_2c = param_4->count, param_4->count != 0)) &&
+    uVar16 = param_3->count;
+    local_3c = uVar16;
+    if (((uVar16 != 0) && (local_2c = param_4->count, param_4->count != 0)) &&
        (local_38 = param_5->count, param_5->count != 0)) goto LAB_00442f1f;
   }
-  uVar15 = local_3c;
+  uVar16 = local_3c;
   st::fn_006A5E40
-            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0x24ce
+            (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x24ce
             );
 LAB_00442f1f:
-  iVar10 = 0;
+  iVar11 = 0;
   if (0 < local_d0[4]) {
     piVar5 = local_d0;
     do {
       if (param_2 == *piVar5) {
-        local_84 = *(DArrayTy **)(iVar10 * 4 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0xF));
+        local_84 = *(DArrayTy **)(iVar11 * 4 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0xF));
         break;
       }
-      iVar10 = iVar10 + 1;
+      iVar11 = iVar11 + 1;
       piVar5 = piVar5 + 1;
-    } while (iVar10 < local_d0[4]);
+    } while (iVar11 < local_d0[4]);
   }
   if ((local_84 == nullptr) || (local_28 = local_84->count, local_28 == 0)) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x24d1);
   }
-  uVar14 = 0;
-  if (0 < (int)uVar15) {
+  uVar15 = 0;
+  if (0 < (int)uVar16) {
     do {
-      st::fn_006ACC70(param_3,uVar14,&local_8);
+      st::fn_006ACC70(param_3,uVar15,&local_8);
       if ((short)local_8 != -1) break;
-      uVar14 = uVar14 + 1;
-    } while ((int)uVar14 < (int)uVar15);
+      uVar15 = uVar15 + 1;
+    } while ((int)uVar15 < (int)uVar16);
   }
-  if (uVar14 == uVar15) {
+  if (uVar15 == uVar16) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x24e2);
   }
   pSVar3 = local_40;
-  uVar15 = 0;
+  uVar16 = 0;
   if (0 < (int)local_2c) {
     do {
-      st::fn_006ACC70(param_4,uVar15,&local_8);
+      st::fn_006ACC70(param_4,uVar16,&local_8);
       if ((pSVar3 != nullptr) && ((short)local_8 != -1)) break;
-      uVar15 = uVar15 + 1;
-    } while ((int)uVar15 < (int)local_2c);
+      uVar16 = uVar16 + 1;
+    } while ((int)uVar16 < (int)local_2c);
   }
-  if (uVar15 == local_2c) {
+  if (uVar16 == local_2c) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x24f4);
   }
-  uVar15 = 0;
+  uVar16 = 0;
   if (0 < (int)local_38) {
     do {
-      st::fn_006ACC70(param_5,uVar15,&local_8);
+      st::fn_006ACC70(param_5,uVar16,&local_8);
       if ((short)local_8 != -1) break;
-      uVar15 = uVar15 + 1;
-    } while ((int)uVar15 < (int)local_38);
+      uVar16 = uVar16 + 1;
+    } while ((int)uVar16 < (int)local_38);
   }
-  if (uVar15 == local_38) {
+  if (uVar16 == local_38) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x2507);
   }
   local_34 = st::fn_006AE290(nullptr,0,0x24,1);
-  uVar15 = 0;
+  uVar16 = 0;
   if (0 < (int)local_28) {
     do {
-      st::fn_006ACC70(local_84,uVar15,&local_70);
+      st::fn_006ACC70(local_84,uVar16,&local_70);
       if ((local_6a != -1) && (local_62 != -1)) {
         bVar2 = false;
-        uVar14 = 0;
+        uVar15 = 0;
         if (0 < (int)local_3c) {
           do {
-            st::fn_006ACC70(param_3,uVar14,&local_8);
+            st::fn_006ACC70(param_3,uVar15,&local_8);
             if (local_6a == (short)local_8) {
               bVar2 = true;
               break;
             }
-            uVar14 = uVar14 + 1;
-          } while ((int)uVar14 < (int)local_3c);
+            uVar15 = uVar15 + 1;
+          } while ((int)uVar15 < (int)local_3c);
         }
         if (bVar2) {
           bVar2 = false;
-          uVar14 = 0;
+          uVar15 = 0;
           if (0 < (int)local_2c) {
             do {
-              st::fn_006ACC70(param_4,uVar14,&local_8);
+              st::fn_006ACC70(param_4,uVar15,&local_8);
               if (local_62 == (short)local_8) {
                 bVar2 = true;
                 break;
               }
-              uVar14 = uVar14 + 1;
-            } while ((int)uVar14 < (int)local_2c);
+              uVar15 = uVar15 + 1;
+            } while ((int)uVar15 < (int)local_2c);
           }
           if (bVar2) {
             st::fn_006AE1C0(local_34,&local_70);
           }
         }
       }
-      uVar15 = uVar15 + 1;
-    } while ((int)uVar15 < (int)local_28);
+      uVar16 = uVar16 + 1;
+    } while ((int)uVar16 < (int)local_28);
   }
   if (local_34->count == 0) {
     st::fn_006AE110(local_34);
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2522,0,0,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2522,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::_AssignMDPairs pair==NULL");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x2524);
   }
   local_20 = st::fn_006AE290(nullptr,local_3c,6,1);
@@ -12842,75 +12843,75 @@ LAB_00442f1f:
   local_bc = pDVar8;
   if (pDVar8 == nullptr) {
     local_EAX_903 =
-         st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x252c,0,0,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x252c,0,0,st::mutable_c_string("%s"),
                             "STAllPlayersC::_AssignMDPairs grps==NULL");
     if (local_EAX_903 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x252d);
   }
-  dVar13 = pDVar8->count;
+  dVar14 = pDVar8->count;
   local_24 = 0;
-  local_28 = dVar13;
-  if (0 < (int)dVar13) {
+  local_28 = dVar14;
+  if (0 < (int)dVar14) {
     do {
-      uVar15 = local_24;
+      uVar16 = local_24;
       st::fn_006ACC70(pDVar8,local_24,&local_1c);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if ((local_1c != nullptr) &&
-         (iVar10 = (**(code **)(local_1c->vtable + 0xc))(), iVar10 == 8)) {
+         (iVar11 = (**(code **)(local_1c->vtable + 0xc))(), iVar11 == 8)) {
         local_48 = (DArrayTy *)st::fn_00402DB5(local_1c);
         local_b8 = local_48->count;
         if ((local_b8 != 0) && (local_44 = nullptr, 0 < (int)local_b8)) {
 LAB_0044326c:
-          uVar15 = local_38;
+          uVar16 = local_38;
           st::fn_006ACC70(local_48,(uint)local_44,&local_8);
           if ((ushort)local_8 != 0xffff) {
             objPtr = st::fn_004028BA(local_8c,param_1,(ushort)local_8,CASE_1);
             local_40 = (STFishC *)objPtr;
             if (objPtr == nullptr) {
               local_EAX_1125 =
-                   st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2539,0,0,
-                                      "%s","STAllPlayersC::_AssignMDPairs ptr==NULL");
+                   st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2539,0,0,
+                                      st::mutable_c_string("%s"),"STAllPlayersC::_AssignMDPairs ptr==NULL");
               if (local_EAX_1125 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
               st::fn_006A5E40
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\wlad\\to_allpl.cpp",0x253a);
+                         st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x253a);
             }
-            iVar10 = (*objPtr->vtable->vfunc_2C)();
-            if ((((iVar10 != 8) && (iVar10 = (*objPtr->vtable->vfunc_2C)(), iVar10 != 0x14)) &&
-                (iVar10 = (*objPtr->vtable->vfunc_2C)(), iVar10 != 0x1a)) ||
-               (iVar10 = st::fn_00402EDC(objPtr), iVar10 != 0xc)) goto cf_common_join_004435CD;
-            uVar14 = 0;
-            if (0 < (int)uVar15) {
+            iVar11 = (*objPtr->vtable->vfunc_2C)();
+            if ((((iVar11 != 8) && (iVar11 = (*objPtr->vtable->vfunc_2C)(), iVar11 != 0x14)) &&
+                (iVar11 = (*objPtr->vtable->vfunc_2C)(), iVar11 != 0x1a)) ||
+               (iVar11 = st::fn_00402EDC(objPtr), iVar11 != 0xc)) goto cf_common_join_004435CD;
+            uVar15 = 0;
+            if (0 < (int)uVar16) {
               do {
-                st::fn_006ACC70(param_5,uVar14,&local_12);
+                st::fn_006ACC70(param_5,uVar15,&local_12);
                 if ((short)local_8 == local_12) break;
-                uVar14 = uVar14 + 1;
-              } while ((int)uVar14 < (int)uVar15);
+                uVar15 = uVar15 + 1;
+              } while ((int)uVar15 < (int)uVar16);
             }
-            if ((int)uVar14 < (int)uVar15) goto cf_common_join_004435CD;
-            uVar21 = st::fn_004024CD(objPtr,local_19c);
-            pSVar11 = (STWorldCell *)((ulonglong)uVar21 >> 0x20);
-            psVar16 = (short *)uVar21;
+            if ((int)uVar15 < (int)uVar16) goto cf_common_join_004435CD;
+            psVar7 = (short *)st::fn_004024CD(objPtr,local_19c);
             psVar19 = local_158;
-            for (iVar10 = 0x10; iVar10 != 0; iVar10 = iVar10 + -1) {
-              *(undefined4 *)psVar19 = *(undefined4 *)psVar16;
-              psVar16 = psVar16 + 2;
+            for (iVar11 = 0x10; iVar11 != 0; iVar11 = iVar11 + -1) {
+              *(undefined4 *)psVar19 = *(undefined4 *)psVar7;
+              psVar7 = psVar7 + 2;
               psVar19 = psVar19 + 2;
             }
-            *psVar19 = *psVar16;
-            uVar15 = local_3c;
+            *psVar19 = *psVar7;
+            uVar16 = local_3c;
             if ((local_152 == -1) || (local_148 == -1)) goto cf_common_join_004435CD;
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
+            pSVar12 = extraout_EDX;
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             if ((((local_158[0] < 0) ||
                  ((g_worldGrid.sizeX <= local_158[0] ||
-                  (pSVar11 = (STWorldCell *)
-                             CONCAT22((short)((ulonglong)uVar21 >> 0x30),local_158[1]),
+                  (pSVar12 = (STWorldCell *)
+                             STReplaceLowWord((uint32_t)(extraout_EDX), (uint16_t)(local_158[1])),
                   local_158[1] < 0)))) || (g_worldGrid.sizeY <= local_158[1])) ||
                ((local_158[2] < 0 || (g_worldGrid.sizeZ <= local_158[2])))) {
               local_40 = nullptr;
@@ -12919,31 +12920,31 @@ LAB_0044326c:
               local_40 = (STFishC *)
                          STGridAt3D(g_worldGrid, local_158[0], local_158[1], local_158[2]).objects[0]
               ;
-              pSVar11 = g_worldGrid.cells;
+              pSVar12 = g_worldGrid.cells;
             }
-            uVar12 = (undefined2)((uint)pSVar11 >> 0x10);
+            uVar13 = (undefined2)((uint)pSVar12 >> 0x10);
             if (local_40 == nullptr) goto cf_common_join_004435CD;
             local_8 = STReplaceLowWord((uint32_t)(local_40), (uint16_t)(*(undefined2 *)&local_40->field_0x32));
-            uVar14 = 0;
+            uVar15 = 0;
             if (0 < (int)local_3c) {
               do {
-                st::fn_006ACC70(param_3,uVar14,&local_12);
-                iVar10 = local_13e;
+                st::fn_006ACC70(param_3,uVar15,&local_12);
+                iVar11 = local_13e;
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                uVar12 = extraout_var;
+                uVar13 = extraout_var;
                 if ((short)local_8 == local_12) {
-                  uVar15 = local_20->count;
-                  if (uVar15 == 0) {
-                    uVar14 = 0;
+                  uVar16 = local_20->count;
+                  if (uVar16 == 0) {
+                    uVar15 = 0;
                     local_10 = (short)local_8;
                     goto LAB_0044349d;
                   }
-                  uVar14 = 0;
-                  if ((int)uVar15 < 1) goto LAB_00443473;
+                  uVar15 = 0;
+                  if ((int)uVar16 < 1) goto LAB_00443473;
                   goto LAB_0044343c;
                 }
-                uVar14 = uVar14 + 1;
-              } while ((int)uVar14 < (int)uVar15);
+                uVar15 = uVar15 + 1;
+              } while ((int)uVar15 < (int)uVar16);
             }
             goto LAB_004434a2;
           }
@@ -12952,33 +12953,33 @@ LAB_0044326c:
 LAB_004435f1:
         st::fn_006AE110(local_48);
       }
-      local_24 = uVar15 + 1;
-    } while ((int)local_24 < (int)dVar13);
+      local_24 = uVar16 + 1;
+    } while ((int)local_24 < (int)dVar14);
   }
   local_24 = 0;
   if (0 < (int)local_3c) {
     do {
       st::fn_006ACC70(param_3,local_24,&local_8);
-      pDVar7 = local_20;
+      pDVar9 = local_20;
       sVar4 = (short)local_8;
       if (sVar4 != -1) {
         dVar17 = 0;
-        dVar13 = local_20->count;
-        local_28 = dVar13;
-        if (dVar13 != 0) {
-          if (0 < (int)dVar13) {
+        dVar14 = local_20->count;
+        local_28 = dVar14;
+        if (dVar14 != 0) {
+          if (0 < (int)dVar14) {
             do {
-              st::fn_006ACC70(pDVar7,dVar17,&local_10);
+              st::fn_006ACC70(pDVar9,dVar17,&local_10);
               sVar4 = (short)local_8;
               if (local_10 == sVar4) break;
               dVar17 = dVar17 + 1;
-            } while ((int)dVar17 < (int)dVar13);
+            } while ((int)dVar17 < (int)dVar14);
           }
-          if (dVar17 != dVar13) goto LAB_00443676;
+          if (dVar17 != dVar14) goto LAB_00443676;
         }
         local_10 = sVar4;
         local_e = 0;
-        st::fn_006AE1C0(pDVar7,&local_10);
+        st::fn_006AE1C0(pDVar9,&local_10);
       }
 LAB_00443676:
       local_24 = local_24 + 1;
@@ -12988,40 +12989,40 @@ LAB_00443676:
   if (0 < (int)local_2c) {
     do {
       st::fn_006ACC70(param_4,local_24,&local_8);
-      pDVar7 = local_30;
+      pDVar9 = local_30;
       sVar4 = (short)local_8;
       if (sVar4 != -1) {
         dVar17 = 0;
-        dVar13 = local_30->count;
-        local_28 = dVar13;
-        if (dVar13 != 0) {
-          if (0 < (int)dVar13) {
+        dVar14 = local_30->count;
+        local_28 = dVar14;
+        if (dVar14 != 0) {
+          if (0 < (int)dVar14) {
             do {
-              st::fn_006ACC70(pDVar7,dVar17,&local_10);
+              st::fn_006ACC70(pDVar9,dVar17,&local_10);
               sVar4 = (short)local_8;
               if (local_10 == sVar4) break;
               dVar17 = dVar17 + 1;
-            } while ((int)dVar17 < (int)dVar13);
+            } while ((int)dVar17 < (int)dVar14);
           }
-          if (dVar17 != dVar13) goto LAB_004436f7;
+          if (dVar17 != dVar14) goto LAB_004436f7;
         }
         local_10 = sVar4;
         local_e = 0;
-        st::fn_006AE1C0(pDVar7,&local_10);
+        st::fn_006AE1C0(pDVar9,&local_10);
       }
 LAB_004436f7:
       local_24 = local_24 + 1;
     } while ((int)local_24 < (int)local_2c);
   }
-  uVar15 = 0;
+  uVar16 = 0;
   local_28 = local_34->count;
   if (0 < (int)local_28) {
     do {
-      st::fn_006ACC70(local_34,uVar15,&local_70);
+      st::fn_006ACC70(local_34,uVar16,&local_70);
       uVar18 = 0;
-      uVar14 = local_20->count;
-      local_3c = uVar14;
-      if (0 < (int)uVar14) {
+      uVar15 = local_20->count;
+      local_3c = uVar15;
+      if (0 < (int)uVar15) {
         do {
           st::fn_006ACC70(local_20,uVar18,&local_10);
           if (local_10 == local_6a) {
@@ -13029,23 +13030,23 @@ LAB_004436f7:
             break;
           }
           uVar18 = uVar18 + 1;
-        } while ((int)uVar18 < (int)uVar14);
+        } while ((int)uVar18 < (int)uVar15);
       }
-      if (uVar18 == uVar14) {
+      if (uVar18 == uVar15) {
         local_EAX_2342 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x25a4,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x25a4,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::_AssignMDPairs M absent");
         if (local_EAX_2342 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         st::fn_006A5E40
-                  (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fff8,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x25a5);
       }
       uVar18 = 0;
-      uVar14 = local_30->count;
-      local_2c = uVar14;
-      if (0 < (int)uVar14) {
+      uVar15 = local_30->count;
+      local_2c = uVar15;
+      if (0 < (int)uVar15) {
         do {
           st::fn_006ACC70(local_30,uVar18,&local_10);
           if (local_10 == local_62) {
@@ -13053,57 +13054,57 @@ LAB_004436f7:
             break;
           }
           uVar18 = uVar18 + 1;
-        } while ((int)uVar18 < (int)uVar14);
+        } while ((int)uVar18 < (int)uVar15);
       }
-      if (uVar18 == uVar14) {
+      if (uVar18 == uVar15) {
         local_EAX_2462 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x25ad,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x25ad,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::_AssignMDPairs D absent");
         if (local_EAX_2462 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         st::fn_006A5E40
-                  (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fff8,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x25ae);
       }
-      st::fn_006AE140(local_34,uVar15,&local_70);
-      uVar15 = uVar15 + 1;
-    } while ((int)uVar15 < (int)local_28);
+      st::fn_006AE140(local_34,uVar16,&local_70);
+      uVar16 = uVar16 + 1;
+    } while ((int)uVar16 < (int)local_28);
   }
   st::fn_006AE110(local_20);
   st::fn_006AE110(local_30);
-  uVar15 = local_38;
+  uVar16 = local_38;
   pDVar20 = nullptr;
-  uVar14 = 0;
+  uVar15 = 0;
   local_30 = nullptr;
-  pDVar7 = local_30;
+  pDVar9 = local_30;
   if (0 < (int)local_38) {
     do {
-      st::fn_006ACC70(param_5,uVar14,&local_8);
+      st::fn_006ACC70(param_5,uVar15,&local_8);
       if ((short)local_8 != -1) {
         pDVar20 = (DArrayTy *)((int)&pDVar20->flags + 1);
       }
-      uVar14 = uVar14 + 1;
-      pDVar7 = pDVar20;
-    } while ((int)uVar14 < (int)uVar15);
+      uVar15 = uVar15 + 1;
+      pDVar9 = pDVar20;
+    } while ((int)uVar15 < (int)uVar16);
   }
-  local_30 = pDVar7;
-  pDVar7 = local_30;
+  local_30 = pDVar9;
+  pDVar9 = local_30;
   local_20 = st::fn_006AE290(nullptr,(uint)local_30,0x24,1);
   pDVar20 = local_34;
-  if (0 < (int)pDVar7) {
+  if (0 < (int)pDVar9) {
     do {
-      local_44 = pDVar7;
-      uVar15 = 0;
+      local_44 = pDVar9;
+      uVar16 = 0;
       local_48 = (DArrayTy *)0x5f5e100;
       if (0 < (int)local_28) {
         do {
-          st::fn_006ACC70(pDVar20,uVar15,&local_70);
+          st::fn_006ACC70(pDVar20,uVar16,&local_70);
           if (local_5c + local_54 < 0x65) {
-            iVar10 = 0;
+            iVar11 = 0;
           }
           else {
-            iVar10 = ((local_5c + local_54 + -100) * local_60) / 100;
+            iVar11 = ((local_5c + local_54 + -100) * local_60) / 100;
           }
           if (local_58 + local_50 < 0x65) {
             local_88 = 0;
@@ -13111,26 +13112,26 @@ LAB_004436f7:
           else {
             local_88 = ((local_58 + local_50 + -100) * local_60) / 100;
           }
-          pDVar7 = (DArrayTy *)(local_88 + local_60 + iVar10);
-          if ((int)pDVar7 < (int)local_48) {
-            local_b4 = uVar15;
-            local_48 = pDVar7;
+          pDVar9 = (DArrayTy *)(local_88 + local_60 + iVar11);
+          if ((int)pDVar9 < (int)local_48) {
+            local_b4 = uVar16;
+            local_48 = pDVar9;
           }
-          uVar15 = uVar15 + 1;
+          uVar16 = uVar16 + 1;
           pDVar20 = local_34;
-        } while ((int)uVar15 < (int)local_28);
+        } while ((int)uVar16 < (int)local_28);
       }
-      dVar13 = local_28;
-      uVar15 = local_b4;
+      dVar14 = local_28;
+      uVar16 = local_b4;
       st::fn_006ACC70(pDVar20,local_b4,&local_70);
       local_54 = local_54 + local_5c;
       local_50 = local_50 + local_58;
-      st::fn_006AE140(pDVar20,uVar15,&local_70);
+      st::fn_006AE140(pDVar20,uVar16,&local_70);
       st::fn_006AE1C0(local_20,&local_70);
-      uVar15 = 0;
-      if (0 < (int)dVar13) {
+      uVar16 = 0;
+      if (0 < (int)dVar14) {
         do {
-          st::fn_006ACC70(pDVar20,uVar15,local_b0);
+          st::fn_006ACC70(pDVar20,uVar16,local_b0);
           if (local_aa == local_6a) {
             local_94 = local_54;
           }
@@ -13138,25 +13139,25 @@ LAB_004436f7:
             local_90 = local_50;
           }
           if (local_a2 == local_62 || local_aa == local_6a) {
-            st::fn_006AE140(pDVar20,uVar15,local_b0);
+            st::fn_006AE140(pDVar20,uVar16,local_b0);
           }
-          uVar15 = uVar15 + 1;
-        } while ((int)uVar15 < (int)dVar13);
+          uVar16 = uVar16 + 1;
+        } while ((int)uVar16 < (int)dVar14);
       }
-      pDVar7 = (DArrayTy *)((int)&local_44[-1].data + 3);
-    } while (pDVar7 != nullptr);
+      pDVar9 = (DArrayTy *)((int)&local_44[-1].data + 3);
+    } while (pDVar9 != nullptr);
     local_44 = nullptr;
   }
   st::fn_006AE110(pDVar20);
-  uVar15 = local_38;
-  pDVar7 = st::fn_006AE290(nullptr,local_38,2,1);
-  uVar14 = 0;
-  if (0 < (int)uVar15) {
+  uVar16 = local_38;
+  pDVar9 = st::fn_006AE290(nullptr,local_38,2,1);
+  uVar15 = 0;
+  if (0 < (int)uVar16) {
     do {
-      st::fn_006ACC70(param_5,uVar14,&local_8);
-      st::fn_006AE140(pDVar7,uVar14,&local_8);
-      uVar14 = uVar14 + 1;
-    } while ((int)uVar14 < (int)uVar15);
+      st::fn_006ACC70(param_5,uVar15,&local_8);
+      st::fn_006AE140(pDVar9,uVar15,&local_8);
+      uVar15 = uVar15 + 1;
+    } while ((int)uVar15 < (int)uVar16);
   }
   pDVar20 = local_30;
   local_4c = st::fn_006AE290(nullptr,(uint)local_30,0xe,1);
@@ -13164,26 +13165,26 @@ LAB_004436f7:
   if (0 < (int)pDVar20) {
     do {
       st::fn_006ACC70(local_20,local_24,&local_70);
-      uVar15 = 0;
-      iVar10 = 100000000;
+      uVar16 = 0;
+      iVar11 = 100000000;
       if (0 < (int)local_38) {
         do {
-          st::fn_006ACC70(pDVar7,uVar15,&local_8);
+          st::fn_006ACC70(pDVar9,uVar16,&local_8);
           if ((ushort)local_8 != 0xffff) {
             local_40 = (STFishC *)st::fn_004028BA(local_8c,param_1,(ushort)local_8,CASE_1);
             st::fn_004018C5(local_40,&local_18,&local_14,&local_16);
-            iVar8 = st::fn_006AADD0((int)local_18,(int)local_14,(int)local_16,(int)local_70,
-                                 (int)local_6e,(int)local_6c);
-            if (iVar8 < iVar10) {
-              iVar10 = iVar8;
-              local_88 = uVar15;
+            iVar10 = st::fn_006AADD0((int)local_18,(int)local_14,(int)local_16,(int)local_70,
+                                  (int)local_6e,(int)local_6c);
+            if (iVar10 < iVar11) {
+              iVar11 = iVar10;
+              local_88 = uVar16;
             }
           }
-          uVar15 = uVar15 + 1;
-        } while ((int)uVar15 < (int)local_38);
+          uVar16 = uVar16 + 1;
+        } while ((int)uVar16 < (int)local_38);
       }
-      uVar15 = local_88;
-      st::fn_006ACC70(pDVar7,local_88,&local_8);
+      uVar16 = local_88;
+      st::fn_006ACC70(pDVar9,local_88,&local_8);
       local_80 = local_6a;
       local_7c = (short)local_8;
       local_7a = local_5c;
@@ -13191,94 +13192,94 @@ LAB_004436f7:
       local_76 = local_58;
       st::fn_006AE1C0(local_4c,&local_80);
       local_8 = 0xffff;
-      st::fn_006AE140(pDVar7,uVar15,&local_8);
+      st::fn_006AE140(pDVar9,uVar16,&local_8);
       local_24 = local_24 + 1;
     } while ((int)local_24 < (int)local_30);
   }
-  st::fn_006AE110(pDVar7);
+  st::fn_006AE110(pDVar9);
   st::fn_006AE110(local_20);
   g_currentExceptionFrame = local_114.previous;
-  return &local_4c->flags;
+  return st::pointer_boundary_cast<uint *>(&local_4c->flags);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  while (uVar14 = uVar14 + 1, uVar12 = extraout_var_00, (int)uVar14 < (int)uVar15) {
+  while (uVar15 = uVar15 + 1, uVar13 = extraout_var_00, (int)uVar15 < (int)uVar16) {
 LAB_0044343c:
-    st::fn_006ACC70(local_20,uVar14,&local_10);
+    st::fn_006ACC70(local_20,uVar15,&local_10);
     if (local_10 == (short)local_8) {
-      local_e = local_e + iVar10;
-      st::fn_006AE140(local_20,uVar14,&local_10);
+      local_e = local_e + iVar11;
+      st::fn_006AE140(local_20,uVar15,&local_10);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar12 = extraout_var_01;
+      uVar13 = extraout_var_01;
       break;
     }
   }
 LAB_00443473:
-  if (uVar14 == uVar15) {
+  if (uVar15 == uVar16) {
     local_10 = (short)local_8;
 LAB_0044349d:
-    local_e = iVar10;
-    st::fn_006AE140(local_20,uVar14,&local_10);
+    local_e = iVar11;
+    st::fn_006AE140(local_20,uVar15,&local_10);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar12 = extraout_var_02;
+    uVar13 = extraout_var_02;
   }
 LAB_004434a2:
-  uVar15 = local_2c;
+  uVar16 = local_2c;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  iVar10 = CONCAT22(uVar12,local_14e);
+  iVar11 = CONCAT22(uVar13,local_14e);
   if ((((local_14e < 0) || (g_worldGrid.sizeX <= local_14e)) || (local_14c < 0)) ||
      (((g_worldGrid.sizeY <= local_14c || (local_14a < 0)) || (g_worldGrid.sizeZ <= local_14a)))) {
     local_40 = nullptr;
   }
   else {
-    iVar10 = (int)local_14e;
+    iVar11 = (int)local_14e;
     local_40 = (STFishC *)
-               STGridAt3D(g_worldGrid, iVar10, local_14c, local_14a).objects[0];
+               STGridAt3D(g_worldGrid, iVar11, local_14c, local_14a).objects[0];
   }
   if (local_40 != nullptr) {
-    local_8 = STReplaceLowWord((uint32_t)(iVar10), (uint16_t)(*(undefined2 *)&local_40->field_0x32));
-    uVar14 = 0;
+    local_8 = STReplaceLowWord((uint32_t)(iVar11), (uint16_t)(*(undefined2 *)&local_40->field_0x32));
+    uVar15 = 0;
     if (0 < (int)local_2c) {
       do {
-        st::fn_006ACC70(param_4,uVar14,&local_12);
-        pDVar7 = local_30;
+        st::fn_006ACC70(param_4,uVar15,&local_12);
+        pDVar9 = local_30;
         sVar4 = (short)local_8;
         if (sVar4 == local_12) {
-          uVar15 = local_30->count;
-          if (uVar15 == 0) {
-            uVar14 = 0;
+          uVar16 = local_30->count;
+          if (uVar16 == 0) {
+            uVar15 = 0;
             goto LAB_004435c8;
           }
-          uVar14 = 0;
-          if ((int)uVar15 < 1) goto LAB_00443598;
+          uVar15 = 0;
+          if ((int)uVar16 < 1) goto LAB_00443598;
           goto LAB_0044355f;
         }
-        uVar14 = uVar14 + 1;
-      } while ((int)uVar14 < (int)uVar15);
+        uVar15 = uVar15 + 1;
+      } while ((int)uVar15 < (int)uVar16);
     }
   }
 cf_common_join_004435CD:
   local_44 = (DArrayTy *)((int)local_44 + 1);
-  dVar13 = local_28;
+  dVar14 = local_28;
   pDVar8 = local_bc;
-  uVar15 = local_24;
+  uVar16 = local_24;
   if ((int)local_b8 <= (int)local_44) goto LAB_004435f1;
   goto LAB_0044326c;
-  while (uVar14 = uVar14 + 1, (int)uVar14 < (int)uVar15) {
+  while (uVar15 = uVar15 + 1, (int)uVar15 < (int)uVar16) {
 LAB_0044355f:
-    st::fn_006ACC70(pDVar7,uVar14,&local_10);
+    st::fn_006ACC70(pDVar9,uVar15,&local_10);
     sVar4 = (short)local_8;
     if (local_10 == sVar4) {
       local_e = local_e + local_13a;
-      st::fn_006AE140(pDVar7,uVar14,&local_10);
+      st::fn_006AE140(pDVar9,uVar15,&local_10);
       sVar4 = (short)local_8;
       break;
     }
   }
 LAB_00443598:
-  if (uVar14 == uVar15) {
+  if (uVar15 == uVar16) {
 LAB_004435c8:
     local_10 = sVar4;
     local_e = local_13a;
-    st::fn_006AE140(local_30,uVar14,&local_10);
+    st::fn_006AE140(local_30,uVar15,&local_10);
   }
   goto cf_common_join_004435CD;
 }
@@ -13428,10 +13429,10 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
       local_14 = (AnonShape_00443F30_5DF553AC *)&local_14[1].field_0x225;
     } while ((int)local_14 < 0x7fa2ed);
     local_28 = iVar8 + g_worldGrid.planeStride;
-    pbVar2 = st::fn_006AAC70(local_28);
+    pbVar2 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(local_28));
     pbVar3 = pbVar2 + 8;
     *(undefined4 *)pbVar2 = local_44->field_001C;
-    piVar6 = &g_packedRecords_A62x8[0].field3_0x9;
+    piVar6 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[0].field3_0x9);
     do {
       local_10 = (AnonShape_00443F30_9F0248D4 *)0x5;
       *(undefined4 *)(pbVar3 + -4) = *(undefined4 *)(piVar6[-1] + 0xc);
@@ -13833,7 +13834,7 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
       local_30 = (int *)0x6;
       local_20 = local_18;
       do {
-        local_c = (byte *)st::fn_006B0020(&local_20->flags,(int *)&local_8);
+        local_c = (byte *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_20->flags),(int *)&local_8);
         pbVar2 = local_c;
         pbVar9 = pbVar3;
         for (uVar13 = (uint)local_8 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
@@ -13859,7 +13860,7 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
       local_24 = (AnonShape_00443F30_5DF553AC *)
                  ((int)&((AnonShape_00443F30_9F0248D4 *)((int)local_24 + 0xaa4))->field_0004 + 3);
     } while ((int)local_18 < 0x7fa91e);
-    local_30 = &g_packedRecords_A62x8[0].field1976_0x9f6;
+    local_30 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[0].field1976_0x9f6);
     local_10 = (AnonShape_00443F30_9F0248D4 *)(local_2c + 0xa73);
     do {
       local_10->field_0008 = (DArrayTy *)local_30[5];
@@ -13875,7 +13876,7 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
         local_18 = nullptr;
         local_8 = (AnonNested_00443F30_0839_FB957E77 *)((int)local_24 * 0x18);
         *(DArrayTy **)local_10 = local_1c;
-        local_10->field_0004 = local_8;
+        local_10->field_0004 = st::machine_word_boundary_cast<undefined4>(local_8);
         pbVar2 = pbVar3 + (int)local_8;
         local_1c = (DArrayTy *)((int)&(local_8->field_0000).flags + (int)&local_1c->flags);
         if (0 < (int)local_24) {
@@ -13969,7 +13970,7 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
       pbVar3 = pbVar2;
     } while ((int)local_30 < 0x7fab26);
     uVar13 = (uint)g_worldGrid.planeStride;
-    pbVar4 = DAT_007fa168;
+    pbVar4 = st::pointer_boundary_cast<byte *>(DAT_007fa168);
     memmove(pbVar2, pbVar4, uVar13); /* compiler REP MOVS byte copy */
     *(DArrayTy **)(local_2c + 0x5588) = local_1c;
     *(uint *)(local_2c + 0x558c) = uVar13;
@@ -13978,10 +13979,10 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
     return local_2c;
   }
   g_currentExceptionFrame = local_88.previous;
-  iVar7 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x270e,0,iVar2,"%s",
+  iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x270e,0,iVar2,st::mutable_c_string("%s"),
                              "STAllPlayersC::SaveAllPlData");
   if (iVar7 == 0) {
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",9999);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),9999);
     *param_1 = local_28;
     return local_2c;
   }
@@ -14023,34 +14024,34 @@ uint __thiscall st::fn_004455C0(STAllPlayersC *this,undefined4 *param_1)
   local_EAX_40 = st::fn_0072D7F0(local_58.jumpBuffer,0);
   if (local_EAX_40 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x27df,0,local_EAX_40,
-                               "%s","STAllPlayersC::CreateBoat");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x27df,0,local_EAX_40,
+                               st::mutable_c_string("%s"),"STAllPlayersC::CreateBoat");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_40,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x27e0);
+    st::fn_006A5E40(local_EAX_40,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x27e0);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     return CONCAT22(extraout_var,(undefined2)local_14);
   }
   if (7 < (uint)param_1[1]) {
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x27b5,0,0,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x27b5,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::CreateBoat - incorrect player number");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fffe,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x27b6);
   }
   if ((7 < (uint)param_1[5]) && (param_1[5] != 0xffffffff)) {
     local_EAX_166 =
-         st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x27c2,0,0,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x27c2,0,0,st::mutable_c_string("%s"),
                             "STAllPlayersC::CreateBoat - incorrect player color");
     if (local_EAX_166 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fffe,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x27c3);
   }
   if ((((*(short *)(param_1 + 7) < 0) || (g_worldGrid.sizeX <= *(short *)(param_1 + 7))) ||
@@ -14058,13 +14059,13 @@ uint __thiscall st::fn_004455C0(STAllPlayersC *this,undefined4 *param_1)
      (((g_worldGrid.sizeY <= STField<short>(param_1,0x1e) || (*(short *)(param_1 + 8) < 0)) ||
       (g_worldGrid.sizeZ <= *(short *)(param_1 + 8))))) {
     local_EAX_284 =
-         st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x27c8,0,0,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x27c8,0,0,st::mutable_c_string("%s"),
                             "STAllPlayersC::CreateBoat - incorrect position");
     if (local_EAX_284 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x27c9);
   }
   *param_1 = 0x14;
@@ -14080,15 +14081,15 @@ uint __thiscall st::fn_004455C0(STAllPlayersC *this,undefined4 *param_1)
     *(ushort *)(param_1 + 9) = uVar2;
     if (local_8 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x27d8);
     }
   }
-  st::fn_00401BC2(g_playSystem_00802A38,0x14,0,&local_c,param_1,0);
+  st::fn_00401BC2(g_playSystem_00802A38,0x14,0,st::machine_word_boundary_cast<undefined4>(&local_c),st::machine_word_boundary_cast<undefined4>(param_1),0);
   iVar5 = local_c;
   if (local_c == 0) {
     st::fn_006A5E40
-              (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x27db);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     iVar5 = extraout_EAX;
@@ -14169,7 +14170,7 @@ st::fn_004458D0
     uVar3 = 2;
     break;
   default:
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x281a,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x281a,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::GetBoatWeaponInfo unknown boat type");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -14244,12 +14245,12 @@ st::fn_00445A40(STAllPlayersC *this,uint param_1,uint *param_2,uint *param_3)
       st::fn_006AE110(local_14);
     }
     if (iVar2 != -0x5001fff7) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x28a2,0,0,"%s",
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x28a2,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::RegisterPGPair");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x28a3);
+      st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x28a3);
     }
     return;
   }
@@ -14257,7 +14258,7 @@ st::fn_00445A40(STAllPlayersC *this,uint param_1,uint *param_2,uint *param_3)
       (uVar6 = param_2[3], local_10 = uVar6, uVar6 == 0)) || (local_c = param_3[3], local_c == 0)) {
     uVar6 = local_10;
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x2837);
   }
   st::fn_006AFE40((int *)&local_18,param_2);
@@ -14282,7 +14283,7 @@ st::fn_00445A40(STAllPlayersC *this,uint param_1,uint *param_2,uint *param_3)
   }
   if (uVar6 == 0) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x2842);
   }
   uVar6 = 0;
@@ -14302,7 +14303,7 @@ st::fn_00445A40(STAllPlayersC *this,uint param_1,uint *param_2,uint *param_3)
   }
   if (local_c == 0) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x284d);
   }
   uVar6 = 0;
@@ -14342,7 +14343,7 @@ st::fn_00445A40(STAllPlayersC *this,uint param_1,uint *param_2,uint *param_3)
     local_30 = pDVar5->count;
     local_20 = 0;
     if (0 < (int)local_30) {
-      local_24 = &g_packedRecords_A62x8[objPtr].field1976_0x9f6;
+      local_24 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[objPtr].field1976_0x9f6);
       do {
         st::fn_006ACC70(pDVar5,local_20,local_8);
         this_00 = (STBoatC *)st::fn_004028BA(this_01,objPtr,local_8[0],CASE_1);
@@ -14360,13 +14361,13 @@ st::fn_00445A40(STAllPlayersC *this,uint param_1,uint *param_2,uint *param_3)
       st::fn_0040100A(this_01,objPtr);
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x2872);
   }
   if (local_10 == 0) {
     bVar8 = local_c == 0;
     if (!bVar8) {
-      st::fn_006AFE40((int *)&local_18,&pDVar5->flags);
+      st::fn_006AFE40((int *)&local_18,st::pointer_boundary_cast<uint *>(&pDVar5->flags));
       goto LAB_00445db2;
     }
   }
@@ -14376,7 +14377,7 @@ LAB_00445db2:
   }
   if (bVar8) {
     if (local_10 != 0) {
-      st::fn_006AFE40((int *)&local_14,&pDVar5->flags);
+      st::fn_006AFE40((int *)&local_14,st::pointer_boundary_cast<uint *>(&pDVar5->flags));
       goto LAB_00445dca;
     }
   }
@@ -14401,7 +14402,7 @@ LAB_00445dca:
 LAB_00445e36:
   uVar6 = 0;
   if (0 < (int)local_c) {
-    local_24 = &g_packedRecords_A62x8[objPtr].field1976_0x9f6;
+    local_24 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[objPtr].field1976_0x9f6);
     do {
       if (*local_24 == 0) break;
       st::fn_006ACC70(local_14,uVar6,local_8);
@@ -14414,7 +14415,7 @@ LAB_00445e36:
   }
   uVar6 = 0;
   if (0 < (int)local_10) {
-    local_24 = &g_packedRecords_A62x8[objPtr].field1976_0x9f6;
+    local_24 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[objPtr].field1976_0x9f6);
     do {
       if (*local_24 == 0) break;
       st::fn_006ACC70(local_18,uVar6,local_8);
@@ -14423,13 +14424,13 @@ LAB_00445e36:
     } while ((int)uVar6 < (int)local_10);
   }
   local_44 = st::fn_006AE290(nullptr,local_10,2,1);
-  st::fn_006AFE40((int *)&local_44,&local_18->flags);
+  st::fn_006AFE40((int *)&local_44,st::pointer_boundary_cast<uint *>(&local_18->flags));
   local_40 = st::fn_006AE290(nullptr,local_c,2,1);
-  st::fn_006AFE40((int *)&local_40,&local_14->flags);
+  st::fn_006AFE40((int *)&local_40,st::pointer_boundary_cast<uint *>(&local_14->flags));
   local_3c = st::fn_006AE290(nullptr,1,4,1);
   if (g_packedRecords_A62x8[objPtr].field1976_0x9f6 == 0) {
     pDVar5 = st::fn_006AE290(nullptr,1,0xc,1);
-    g_packedRecords_A62x8[objPtr].field1976_0x9f6 = pDVar5;
+    g_packedRecords_A62x8[objPtr].field1976_0x9f6 = st::machine_word_boundary_cast<undefined4>(pDVar5);
   }
   st::fn_006AE1C0
             ((DArrayTy *)g_packedRecords_A62x8[objPtr].field1976_0x9f6,&local_44);
@@ -14487,18 +14488,18 @@ st::fn_004461B0(STAllPlayersC *this,char param_1,short param_2,int param_3)
   if (exceptionCode != 0) {
     g_currentExceptionFrame = local_6c.previous;
     if (exceptionCode != -0x5001fff7) {
-      iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2906,0,0,"%s",
+      iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2906,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::_DeleteGuardBoat");
       if (iVar4 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2907);
+      st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2907);
     }
     return local_18;
   }
   if (local_10 == nullptr) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x28ba);
   }
   local_8 = array->count;
@@ -14634,18 +14635,18 @@ st::fn_00446520(STAllPlayersC *this,char param_1,short param_2,int param_3)
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x296d,0,0,"%s",
+      iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x296d,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::DeleteGuardBoat");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x296e);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x296e);
     }
     return;
   }
   if (local_18 == nullptr) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x291d);
   }
   local_c = array->count;
@@ -14714,8 +14715,8 @@ st::fn_00446520(STAllPlayersC *this,char param_1,short param_2,int param_3)
               st::fn_006ACC70(local_20,uVar8,local_8);
               pSVar4 = (STBoatC *)st::fn_004028BA(local_14,param_1,local_8[0],CASE_1);
               if (pSVar4 == nullptr) {
-                iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2955,0,0,
-                                           "%s","STAllPlayersC::DeleteGuardBoat NULL"
+                iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2955,0,0,
+                                           st::mutable_c_string("%s"),"STAllPlayersC::DeleteGuardBoat NULL"
                                           );
                 if (iVar3 != 0) {
                   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -14797,12 +14798,12 @@ void __thiscall st::fn_00446910(STAllPlayersC *this,char param_1)
   }
   g_currentExceptionFrame = local_58.previous;
   if (exceptionCode != -0x5001fff7) {
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x29b3,0,0,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x29b3,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::DeletePGPairs");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x29b4);
+    st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x29b4);
   }
   return;
 }
@@ -14937,7 +14938,7 @@ void __thiscall st::fn_00446AA0(STAllPlayersC *this,char param_1)
       st::fn_006ACC70(array,0,&local_3c);
       uVar6 = local_3c->count;
       pDVar4 = st::fn_006AE290(nullptr,uVar6,10,1);
-      g_packedRecords_A62x8[param_1].field1977_0x9fa = pDVar4;
+      g_packedRecords_A62x8[param_1].field1977_0x9fa = st::machine_word_boundary_cast<undefined4>(pDVar4);
       local_10 = 0;
       local_c = 0;
       local_40 = pDVar4;
@@ -14991,12 +14992,12 @@ void __thiscall st::fn_00446AA0(STAllPlayersC *this,char param_1)
     }
     g_currentExceptionFrame = local_90.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2a25,0,0,"%s",
+      iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2a25,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::OptimizeGuardBoats");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2a26);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2a26);
     }
   }
   return;
@@ -15104,7 +15105,7 @@ void __thiscall st::fn_00446F80(STAllPlayersC *this,char param_1)
       local_a0 = (int)param_1;
       /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
       iVar2 = local_a0 * 0xa62;
-      g_packedRecords_A62x8[local_a0].field1978_0x9fe = local_48;
+      g_packedRecords_A62x8[local_a0].field1978_0x9fe = st::machine_word_boundary_cast<undefined4>(local_48);
       pDVar3 = (DArrayTy *)local_60->count;
       local_5c = iVar2;
       local_30 = pDVar3;
@@ -15256,7 +15257,7 @@ LAB_0044738a:
                   pDVar3_mg5 = st::fn_006AE290(nullptr,(uint)local_14,4,1);
                   st::fn_006AE140
                             (pDVar3_mg5,(uint)((int)&pDVar3[-1].data + 3),&local_44);
-                  puVar9 = pDVar3_mg5->data;
+                  puVar9 = st::pointer_boundary_cast<undefined4 *>(pDVar3_mg5->data);
                   for (; pDVar10 = local_1c, pDVar7 = local_14, pDVar3 != nullptr;
                       pDVar3 = (DArrayTy *)((int)&pDVar3[-1].data + 3)) {
                     *puVar9 = 0;
@@ -15504,12 +15505,12 @@ LAB_0044738a:
     }
     g_currentExceptionFrame = local_e4.previous;
     if (iVar5 != -0x5001fff7) {
-      iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2b90,0,0,"%s",
+      iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2b90,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::DistributeGuardBoats");
       if (iVar4 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2b91);
+      st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2b91);
     }
   }
   return;
@@ -15874,8 +15875,8 @@ st::fn_00448120
                 pSVar8 = (STBoatC *)st::fn_004028BA(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
                   local_EAX_3288 =
-                       st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2d64,0,0,
-                                          "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_135");
+                       st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2d64,0,0,
+                                          st::mutable_c_string("%s"),"STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_135");
                   if (local_EAX_3288 == 0) {
                     return;
                   }
@@ -15937,8 +15938,8 @@ st::fn_00448120
                   pSVar8 = (STBoatC *)st::fn_004028BA(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar8 == nullptr) {
                     local_EAX_1893 =
-                         st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2d83,0,0,
-                                            "%s",
+                         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2d83,0,0,
+                                            st::mutable_c_string("%s"),
                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_0");
                     if (local_EAX_1893 == 0) {
                       return;
@@ -15992,8 +15993,8 @@ st::fn_00448120
                   pSVar8 = (STBoatC *)st::fn_004028BA(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar8 == nullptr) {
                     local_EAX_1553 =
-                         st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2d45,0,0,
-                                            "%s",
+                         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2d45,0,0,
+                                            st::mutable_c_string("%s"),
                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_45");
                     if (local_EAX_1553 == 0) {
                       return;
@@ -16055,8 +16056,8 @@ st::fn_00448120
                   pSVar8 = (STBoatC *)st::fn_004028BA(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar8 == nullptr) {
                     local_EAX_1180 =
-                         st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2d2c,0,0,
-                                            "%s",
+                         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2d2c,0,0,
+                                            st::mutable_c_string("%s"),
                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_90");
                     if (local_EAX_1180 == 0) {
                       return;
@@ -16115,8 +16116,8 @@ st::fn_00448120
                   local_24 = (STBoatC *)st::fn_004028BA(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (local_24 == nullptr) {
                     local_EAX_2921 =
-                         st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2e0b,0,0,
-                                            "%s",
+                         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2e0b,0,0,
+                                            st::mutable_c_string("%s"),
                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL dir==-1");
                     if (local_EAX_2921 == 0) {
                       return;
@@ -16135,7 +16136,7 @@ st::fn_00448120
                     }
                   } while (local_104[local_20] == 10);
 LAB_00448970:
-                  iVar17 = local_104[local_20] + 1;
+                  iVar17 = st::machine_word_boundary_cast<int>(local_104[local_20] + 1);
                   local_104[local_20] = iVar17;
                   sVar4 = (short)iVar6;
                   if (iVar9 < 0xb5) {
@@ -16159,8 +16160,8 @@ LAB_00448aaf:
                         break;
                       default:
 switchD_004489a9_caseD_1:
-                        iVar8 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2e63,0
-                                                   ,0,"%s",
+                        iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2e63,0
+                                                   ,0,st::mutable_c_string("%s"),
                                                    "STAllPlayersC::PutOnPlaceGuardBoats incorrect direction");
                         if (iVar8 != 0) {
                           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -16287,8 +16288,8 @@ LAB_00448bc0:
                 pSVar8 = (STBoatC *)st::fn_004028BA(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
                   local_EAX_3660 =
-                       st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2d9b,0,0,
-                                          "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_180");
+                       st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2d9b,0,0,
+                                          st::mutable_c_string("%s"),"STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_180");
                   if (local_EAX_3660 == 0) {
                     return;
                   }
@@ -16341,8 +16342,8 @@ LAB_00448bc0:
                 pSVar8 = (STBoatC *)st::fn_004028BA(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
                   local_EAX_4414 =
-                       st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2dd2,0,0,
-                                          "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_225");
+                       st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2dd2,0,0,
+                                          st::mutable_c_string("%s"),"STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_225");
                   if (local_EAX_4414 == 0) {
                     return;
                   }
@@ -16404,8 +16405,8 @@ LAB_00448bc0:
                 pSVar8 = (STBoatC *)st::fn_004028BA(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
                   local_EAX_4754 =
-                       st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2df1,0,0,
-                                          "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_270");
+                       st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2df1,0,0,
+                                          st::mutable_c_string("%s"),"STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_270");
                   if (local_EAX_4754 == 0) {
                     return;
                   }
@@ -16458,8 +16459,8 @@ LAB_00448bc0:
                 pSVar8 = (STBoatC *)st::fn_004028BA(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
                   local_EAX_4031 =
-                       st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2db3,0,0,
-                                          "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_315");
+                       st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2db3,0,0,
+                                          st::mutable_c_string("%s"),"STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_315");
                   if (local_EAX_4031 == 0) {
                     return;
                   }
@@ -16562,7 +16563,7 @@ st::fn_00449B60
     array = g_array_007FA164;
     break;
   default:
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2eb1,0,0,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2eb1,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::DestroyObjectMsg");
     if (iVar3 == 0) {
       return 0;
@@ -16611,7 +16612,7 @@ st::fn_00449CE0(STAllPlayersC *this,ushort param_1,void *param_2)
   if (iVar2 == 0) {
     if (param_2 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2ecc);
     }
     if (param_1 == 0xffff) {
@@ -16621,7 +16622,7 @@ st::fn_00449CE0(STAllPlayersC *this,ushort param_1,void *param_2)
       iVar2 = st::fn_006ACC70(g_array_007FA154,(uint)param_1,&local_8);
       if ((iVar2 != -4) && (local_8 != 0)) {
         st::fn_006A5E40
-                  (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fffa,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x2ece);
       }
     }
@@ -16631,12 +16632,12 @@ st::fn_00449CE0(STAllPlayersC *this,ushort param_1,void *param_2)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2ed4,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2ed4,0,iVar2,st::mutable_c_string("%s"),
                              "STAllPlayersC::RegisterArtefact");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2ed5);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2ed5);
   return 0xffffffff;
 }
 
@@ -16670,7 +16671,7 @@ st::fn_00449E60
     pSVar2 = st::fn_004028BA(local_c,-1,(ushort)param_1,CASE_2);
     if (pSVar2 != (STGameObjC *)param_2) {
       st::fn_006A5E40
-                (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2eea);
     }
     st::fn_004021A3(this_00,DAT_0080874d,param_2->field_0020,param_2->field_0024,param_1);
@@ -16681,12 +16682,12 @@ st::fn_00449E60
   else {
     g_currentExceptionFrame = local_50.previous;
     if (errorCode != -0x5001fff7) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2ef5,0,errorCode,
-                                 "%s","STAllPlayersC::UnRegisterArtefact");
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2ef5,0,errorCode,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::UnRegisterArtefact");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2ef6);
+      st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2ef6);
       return 0xffffffff;
     }
   }
@@ -16714,7 +16715,7 @@ undefined4 __thiscall st::fn_00449FD0(STAllPlayersC *this,ushort param_1,void *p
   if (iVar2 == 0) {
     if (param_2 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2f05);
     }
     if (param_1 == 0xffff) {
@@ -16724,7 +16725,7 @@ undefined4 __thiscall st::fn_00449FD0(STAllPlayersC *this,ushort param_1,void *p
       iVar2 = st::fn_006ACC70(g_array_007FA158,(uint)param_1,&local_8);
       if ((iVar2 != -4) && (local_8 != 0)) {
         st::fn_006A5E40
-                  (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fffa,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x2f07);
       }
     }
@@ -16734,12 +16735,12 @@ undefined4 __thiscall st::fn_00449FD0(STAllPlayersC *this,ushort param_1,void *p
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2f0d,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f0d,0,iVar2,st::mutable_c_string("%s"),
                              "STAllPlayersC::RegisterMine");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2f0e);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f0e);
   return 0xffffffff;
 }
 
@@ -16775,7 +16776,7 @@ st::fn_0044A150(STAllPlayersC *this,uint param_1,uint param_2,STMineSetC *param_
     pSVar2 = st::fn_004028BA(local_c,(char)param_1,(ushort)param_2,CASE_3);
     if (pSVar2 != (STGameObjC *)param_3) {
       st::fn_006A5E40
-                (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2f1d);
     }
     st::fn_004021A3(this_00,DAT_0080874d,param_3->field_0020,*(char *)&param_3->field_0024,param_2);
@@ -16786,12 +16787,12 @@ st::fn_0044A150(STAllPlayersC *this,uint param_1,uint param_2,STMineSetC *param_
   else {
     g_currentExceptionFrame = local_50.previous;
     if (errorCode != -0x5001fff7) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2f26,0,errorCode,
-                                 "%s","STAllPlayersC::UnRegisterMine");
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f26,0,errorCode,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::UnRegisterMine");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2f27);
+      st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f27);
       return 0xffffffff;
     }
   }
@@ -16820,7 +16821,7 @@ st::fn_0044A2C0(STAllPlayersC *this,ushort param_1,void *param_2)
   if (iVar2 == 0) {
     if (param_2 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2f36);
     }
     if (param_1 == 0xffff) {
@@ -16830,7 +16831,7 @@ st::fn_0044A2C0(STAllPlayersC *this,ushort param_1,void *param_2)
       iVar2 = st::fn_006ACC70(g_array_007FA15C,(uint)param_1,&local_8);
       if ((iVar2 != -4) && (local_8 != 0)) {
         st::fn_006A5E40
-                  (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fffa,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x2f38);
       }
     }
@@ -16840,12 +16841,12 @@ st::fn_0044A2C0(STAllPlayersC *this,ushort param_1,void *param_2)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2f3e,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f3e,0,iVar2,st::mutable_c_string("%s"),
                              "STAllPlayersC::RegisterDeposit");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2f3f);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f3f);
   return 0xffffffff;
 }
 
@@ -16881,7 +16882,7 @@ st::fn_0044A440(STAllPlayersC *this,uint param_1,STResourceC *param_2)
     pSVar2 = st::fn_004028BA(local_c,-1,(ushort)param_1,CASE_4);
     if (pSVar2 != (STGameObjC *)param_2) {
       st::fn_006A5E40
-                (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2f4e);
     }
     st::fn_004021A3(this_00,DAT_0080874d,param_2->field_0020,param_2->field_0024,param_1);
@@ -16892,12 +16893,12 @@ st::fn_0044A440(STAllPlayersC *this,uint param_1,STResourceC *param_2)
   else {
     g_currentExceptionFrame = local_50.previous;
     if (errorCode != -0x5001fff7) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2f57,0,errorCode,
-                                 "%s","STAllPlayersC::UnRegisterDeposit");
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f57,0,errorCode,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::UnRegisterDeposit");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2f58);
+      st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f58);
       return 0xffffffff;
     }
   }
@@ -16926,7 +16927,7 @@ st::fn_0044A5B0(STAllPlayersC *this,ushort param_1,void *param_2)
   if (iVar2 == 0) {
     if (param_2 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2f67);
     }
     if (param_1 == 0xffff) {
@@ -16936,7 +16937,7 @@ st::fn_0044A5B0(STAllPlayersC *this,ushort param_1,void *param_2)
       iVar2 = st::fn_006ACC70(g_array_007FA160,(uint)param_1,&local_8);
       if ((iVar2 != -4) && (local_8 != 0)) {
         st::fn_006A5E40
-                  (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fffa,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x2f69);
       }
     }
@@ -16946,12 +16947,12 @@ st::fn_0044A5B0(STAllPlayersC *this,ushort param_1,void *param_2)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2f6f,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f6f,0,iVar2,st::mutable_c_string("%s"),
                              "STAllPlayersC::RegisterContainer");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2f70);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f70);
   return 0xffffffff;
 }
 
@@ -16985,7 +16986,7 @@ st::fn_0044A730
     pSVar2 = st::fn_004028BA(local_c,-1,(ushort)param_1,CASE_5);
     if (pSVar2 != (STGameObjC *)param_2) {
       st::fn_006A5E40
-                (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2f85);
     }
     st::fn_004021A3(this_00,DAT_0080874d,param_2->field_0020,param_2->field_0024,param_1);
@@ -16996,12 +16997,12 @@ st::fn_0044A730
   else {
     g_currentExceptionFrame = local_50.previous;
     if (errorCode != -0x5001fff7) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2f90,0,errorCode,
-                                 "%s","STAllPlayersC::UnRegisterContainer");
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f90,0,errorCode,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::UnRegisterContainer");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2f91);
+      st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f91);
       return 0xffffffff;
     }
   }
@@ -17029,7 +17030,7 @@ undefined4 __thiscall st::fn_0044A8A0(STAllPlayersC *this,ushort param_1,void *p
   if (iVar2 == 0) {
     if (param_2 == nullptr) {
       st::fn_006A5E40
-                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2fa0);
     }
     if (param_1 == 0xffff) {
@@ -17039,7 +17040,7 @@ undefined4 __thiscall st::fn_0044A8A0(STAllPlayersC *this,ushort param_1,void *p
       iVar2 = st::fn_006ACC70(g_array_007FA164,(uint)param_1,&local_8);
       if ((iVar2 != -4) && (local_8 != 0)) {
         st::fn_006A5E40
-                  (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fffa,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x2fa2);
       }
     }
@@ -17049,12 +17050,12 @@ undefined4 __thiscall st::fn_0044A8A0(STAllPlayersC *this,ushort param_1,void *p
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2fa8,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2fa8,0,iVar2,st::mutable_c_string("%s"),
                              "STAllPlayersC::RegisterBlot");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2fa9);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2fa9);
   return 0xffffffff;
 }
 
@@ -17087,7 +17088,7 @@ st::fn_0044AA20(STAllPlayersC *this,uint param_1,AnonShape_0044AA20_1EE9340C *pa
     pSVar2 = st::fn_004028BA(local_c,-1,(ushort)param_1,CASE_6);
     if (pSVar2 != (STGameObjC *)param_2) {
       st::fn_006A5E40
-                (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2fb8);
     }
     st::fn_004021A3(this_00,DAT_0080874d,param_2->field_0020,param_2->field_0024,param_1);
@@ -17098,12 +17099,12 @@ st::fn_0044AA20(STAllPlayersC *this,uint param_1,AnonShape_0044AA20_1EE9340C *pa
   else {
     g_currentExceptionFrame = local_50.previous;
     if (errorCode != -0x5001fff7) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2fc1,0,errorCode,
-                                 "%s","STAllPlayersC::UnRegisterBlot");
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2fc1,0,errorCode,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::UnRegisterBlot");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2fc2);
+      st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2fc2);
       return 0xffffffff;
     }
   }
@@ -17162,8 +17163,8 @@ int st::fn_0044AB90
   }
   else {
     if (tempGroup != 1) {
-      local_EAX_52 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x2fde,0,0,
-                                        "%s","STAllPlayersC::CheckTmps invalid panel number");
+      local_EAX_52 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2fde,0,0,
+                                        st::mutable_c_string("%s"),"STAllPlayersC::CheckTmps invalid panel number");
       if (local_EAX_52 == 0) {
         return -1;
       }
@@ -17186,7 +17187,7 @@ LAB_0044ac57:
       return -1;
     }
     tempGroup = dVar6;
-    st::fn_006AFE40((int *)&local_c,&objectIds->flags);
+    st::fn_006AFE40((int *)&local_c,st::pointer_boundary_cast<uint *>(&objectIds->flags));
     if (0 < (int)dVar6) {
       do {
         st::fn_006ACC70(local_c,uVar7,&stack0x0000001a);
@@ -17207,7 +17208,7 @@ LAB_0044ac57:
           if (((*(int *)((int)piVar5 + -10) == iVar2) &&
               (*(int *)((int)piVar5 + -6) == (int)ownerPlayerId)) &&
              (iVar3 = *(int *)(*piVar5 + 0xc), iVar3 != 0)) {
-            st::fn_006AFE40((int *)&local_10,&array->flags);
+            st::fn_006AFE40((int *)&local_10,st::pointer_boundary_cast<uint *>(&array->flags));
             st::fn_006AFE40((int *)&local_8,(uint *)*piVar5);
             uVar7 = 0;
             if (0 < iVar3) {
@@ -17288,7 +17289,7 @@ LAB_0044ae50:
   else if (objectType == 0x172) goto LAB_0044ae50;
 LAB_0044ae21:
   local_EAX_679 =
-       st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x3019,0,0,"%s",
+       st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x3019,0,0,st::mutable_c_string("%s"),
                           "STAllPlayersC::CheckTmps invalid type");
   if (local_EAX_679 == 0) {
     return -1;
@@ -17320,7 +17321,7 @@ void st::fn_0044AF50(char param_1,int param_2)
   }
   else {
     if (param_2 != 1) {
-      iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x3028,0,0,"%s",
+      iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x3028,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::PushTV");
       if (iVar2 == 0) {
         return;
@@ -17415,7 +17416,7 @@ void __thiscall st::fn_0044B030(STAllPlayersC *this,char param_1,int param_2,int
   }
   else {
     if (param_2 != 1) {
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x3042,0,0,"%s",
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x3042,0,0,st::mutable_c_string("%s"),
                                  "STAllPlayersC::ActivateTV invalid panel number");
       if (iVar6 == 0) {
         return;
@@ -17514,18 +17515,18 @@ st::fn_0044B280
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     if (iVar2 != -0x5001fff7) {
-      iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x3095,0,iVar2,
-                                 "%s","STAllPlayersC::CalibrateTmp");
+      iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x3095,0,iVar2,
+                                 st::mutable_c_string("%s"),"STAllPlayersC::CalibrateTmp");
       if (iVar4 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x3096);
+      st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x3096);
     }
     return;
   }
   if ((param_4 == nullptr) || (local_14 = param_4[3], local_14 == 0)) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x3075);
   }
   if (param_2 == 0) {
@@ -17535,19 +17536,19 @@ st::fn_0044B280
     local_18 = *(DArrayTy **)(param_3 * 0x10 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1BD));
   }
   else {
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x3079,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x3079,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::CalibrateTmp invalid panel number");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x307a);
   }
   dVar5 = local_18->count;
   if (dVar5 == 0) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x307c);
   }
   if ((param_5 != nullptr) && (*param_5 == 0)) {
@@ -17564,10 +17565,10 @@ st::fn_0044B280
   }
   if (((param_5 == nullptr) && (param_6 == nullptr)) && (param_7 == nullptr)) {
     st::fn_006A5E40
-              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+              (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x3080);
   }
-  st::fn_006AFE40((int *)&local_10,&local_18->flags);
+  st::fn_006AFE40((int *)&local_10,st::pointer_boundary_cast<uint *>(&local_18->flags));
   st::fn_006AFE40((int *)&local_c,param_4);
   index_00 = 0;
   if (0 < (int)dVar5) {
@@ -17594,10 +17595,10 @@ st::fn_0044B280
     } while ((int)index_00 < (int)dVar5);
   }
   if (param_5 != nullptr) {
-    st::fn_006AFE40(param_5,&local_10->flags);
+    st::fn_006AFE40(param_5,st::pointer_boundary_cast<uint *>(&local_10->flags));
   }
   if (param_7 != nullptr) {
-    st::fn_006AFE40(param_7,&local_c->flags);
+    st::fn_006AFE40(param_7,st::pointer_boundary_cast<uint *>(&local_c->flags));
   }
   st::fn_006AE110(local_10);
   st::fn_006AE110(local_c);
@@ -17850,7 +17851,7 @@ st::fn_0044B5F0
     break;
   default:
     local_EAX_1560 =
-         st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x3123,0,0,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x3123,0,0,st::mutable_c_string("%s"),
                             "STAllPlayersC::SelectObjects invalid type");
     if (local_EAX_1560 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -17872,7 +17873,7 @@ st::fn_0044B5F0
         if (-1 < local_EAX_2100) goto cf_common_exit_0044BD53;
         st::fn_00405920(objPtr,0);
         if (g_packedRecords_A62x8[uVar3].field105_0x177 == uVar3) {
-          st::fn_004020D6(this,objPtr,0,1,&local_8->flags,(int *)&local_10,nullptr,nullptr);
+          st::fn_004020D6(this,objPtr,0,1,st::pointer_boundary_cast<uint *>(&local_8->flags),(int *)&local_10,nullptr,nullptr);
           st::fn_004027C0(this,uVar3,0x3c,local_10,0,0);
           st::fn_006AE110(local_10);
         }
@@ -17883,7 +17884,7 @@ st::fn_0044B5F0
       else {
         if (iVar9 != 0x1ae) {
           local_EAX_2006 =
-               st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x3152,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x3152,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::SelectObjects GAMETYPE_BOAT ACT_LEFT");
           if (local_EAX_2006 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -17907,7 +17908,7 @@ st::fn_0044B5F0
   else {
     if (g_packedRecords_A62x8[uVar3].field200_0x203 != 1) {
       local_EAX_1656 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x317d,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x317d,0,0,st::mutable_c_string("%s"),
                               "STAllPlayersC::SelectObjects GAMETYPE_BOAT wrong panel number");
       if (local_EAX_1656 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -17935,7 +17936,7 @@ st::fn_0044B5F0
     else {
       if (iVar9 != 0x1ae) {
         local_EAX_1752 =
-             st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x3179,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x3179,0,0,st::mutable_c_string("%s"),
                                 "STAllPlayersC::SelectObjects GAMETYPE_BOAT ACT_RIGHT");
         if (local_EAX_1752 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -18040,7 +18041,7 @@ st::fn_0044C130
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
-    st::fn_004024A5(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
+    st::fn_004024A5(param_1,SVar2,0xe,st::pointer_boundary_cast<undefined4 *>(&local_c),local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
       puVar3 = st::fn_00709AF0
                          (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
@@ -18052,7 +18053,7 @@ st::fn_0044C130
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
-    st::fn_004024A5(param_1,SVar2,0xd,&local_c,local_154,(undefined1 *)&local_8,&param_2);
+    st::fn_004024A5(param_1,SVar2,0xd,st::pointer_boundary_cast<undefined4 *>(&local_c),local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
       puVar3 = st::fn_00709AF0
                          (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
@@ -18064,7 +18065,7 @@ st::fn_0044C130
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
-    st::fn_004024A5(param_1,SVar2,0xc,&local_c,local_154,(undefined1 *)&local_8,&param_2);
+    st::fn_004024A5(param_1,SVar2,0xc,st::pointer_boundary_cast<undefined4 *>(&local_c),local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
       puVar3 = st::fn_00709AF0
                          (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
@@ -18075,7 +18076,7 @@ st::fn_0044C130
          st::fn_00709470(g_sT3DSMAPContext_00807598,local_54,0x11,1,10,0xff);
     return local_EAX_379;
   default:
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x324e,0,0,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x324e,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::GetTOBJImage unknown TOBJ-type");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -18156,7 +18157,7 @@ st::fn_0044C130
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
-      st::fn_00404138(param_1,SVar2,GVar8,&local_c,local_154,(undefined1 *)&local_8,&param_2);
+      st::fn_00404138(param_1,SVar2,GVar8,st::pointer_boundary_cast<undefined4 *>(&local_c),local_154,(undefined1 *)&local_8,&param_2);
       if (local_154[0] != '\0') {
         puVar3 = st::fn_00709AF0
                            (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
@@ -18182,7 +18183,7 @@ st::fn_0044C130
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
-    st::fn_00401965(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
+    st::fn_00401965(param_1,SVar2,0xe,st::pointer_boundary_cast<undefined4 *>(&local_c),local_154,(undefined1 *)&local_8,&param_2);
     break;
   case CASE_E6:
   case CASE_E7:
@@ -18205,7 +18206,7 @@ st::fn_0044C130
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
-    st::fn_004051FA(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
+    st::fn_004051FA(param_1,SVar2,0xe,st::pointer_boundary_cast<undefined4 *>(&local_c),local_154,(undefined1 *)&local_8,&param_2);
     goto joined_r0x0044c40d;
   case CASE_FD:
     local_c = nullptr;
@@ -18213,7 +18214,7 @@ st::fn_0044C130
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
-    st::fn_004022DE(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
+    st::fn_004022DE(param_1,SVar2,0xe,st::pointer_boundary_cast<undefined4 *>(&local_c),local_154,(undefined1 *)&local_8,&param_2);
     break;
   case CASE_FE:
     local_c = nullptr;
@@ -18221,7 +18222,7 @@ st::fn_0044C130
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
-    st::fn_004017EE(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
+    st::fn_004017EE(param_1,SVar2,0xe,st::pointer_boundary_cast<undefined4 *>(&local_c),local_154,(undefined1 *)&local_8,&param_2);
 joined_r0x0044c40d:
     if (local_154[0] == '\0') goto cf_common_exit_0044C477;
     goto LAB_0044c44d;
@@ -18288,18 +18289,18 @@ st::fn_0044C720
   if (local_EAX_39 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (local_EAX_39 != -0x5001fff7) {
-      iVar12 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x32ad,0,0,"%s",
+      iVar12 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x32ad,0,0,st::mutable_c_string("%s"),
                                   "STAllPlayersC::GetScrObjList");
       if (iVar12 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(local_EAX_39,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x32ae);
+      st::fn_006A5E40(local_EAX_39,0,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x32ae);
     }
     goto LAB_0044cb54;
   }
   if (param_1 < 1) {
 LAB_0044cada:
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\wlad\\to_allpl.cpp",0x32a9,0,0,"%s",
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x32a9,0,0,st::mutable_c_string("%s"),
                                "STAllPlayersC::GetScrObjList invalid mode");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -18309,10 +18310,10 @@ LAB_0044cada:
   else {
     if (param_1 < 3) {
       st::fn_006EAD90
-                (g_sT3DSMAPContext_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
+                (g_sT3DSMAPContext_00807598,param_2,param_3,param_4,param_5,st::pointer_boundary_cast<undefined4 *>(&local_c),&local_8);
       if (local_8 == 0) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x3268);
       }
       pDVar7 = st::fn_006AE290(nullptr,0,4,1);
@@ -18335,7 +18336,7 @@ LAB_0044c950:
                     (g_bulkInitializedRecords_008087C7[piVar4[9]].field_0022 < 8)))) {
                   bVar1 = *(byte *)(piVar4 + 9);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  _local_24 = CONCAT31(uStack_23,bVar1);
+                  auto _local_24 = CONCAT31(uStack_23,bVar1);
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == DAT_0080874d) {
 LAB_0044ca10:
@@ -18389,12 +18390,12 @@ LAB_0044c94c:
       st::fn_006A5E90(local_c);
       if (!bVar6) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x327d);
       }
-      uVar9 = pDVar7->count * 4 + 3;
+      uVar9 = st::machine_word_boundary_cast<uint>(pDVar7->count * 4 + 3);
       *param_6 = uVar9;
-      local_14 = st::fn_006AAC70(uVar9);
+      local_14 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(uVar9));
       *local_14 = (ushort)pDVar7->count;
       *(undefined1 *)(local_14 + 1) = (undefined1)param_1;
       puVar11 = (byte *)(pDVar7->data);
@@ -18403,10 +18404,10 @@ LAB_0044c94c:
     else {
       if (param_1 != 3) goto LAB_0044cada;
       st::fn_006EAD90
-                (g_sT3DSMAPContext_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
+                (g_sT3DSMAPContext_00807598,param_2,param_3,param_4,param_5,st::pointer_boundary_cast<undefined4 *>(&local_c),&local_8);
       if (local_8 == 0) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x3291);
       }
       pDVar7 = st::fn_006AE290(nullptr,0,2,1);
@@ -18429,12 +18430,12 @@ LAB_0044c94c:
       st::fn_006AB060(&local_c);
       if (!bVar6) {
         st::fn_006A5E40
-                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
+                  (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x32a1);
       }
-      uVar9 = pDVar7->count * 2 + 3;
+      uVar9 = st::machine_word_boundary_cast<uint>(pDVar7->count * 2 + 3);
       *param_6 = uVar9;
-      local_14 = st::fn_006AAC70(uVar9);
+      local_14 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(uVar9));
       *local_14 = (ushort)pDVar7->count;
       *(undefined1 *)(local_14 + 1) = 3;
       puVar11 = (byte *)(pDVar7->data);

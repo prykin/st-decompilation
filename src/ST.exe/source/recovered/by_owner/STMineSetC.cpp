@@ -108,7 +108,7 @@ STMineSetC * __thiscall st::fn_00622600(STMineSetC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &st_global_0079D05C;
+  this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079D05C);
   this->vtable = &st_global_0079CEFC;
   memset(&this->field_0x25e, 0, 0x109); /* compiler bulk-zero initialization */
   this->field_02BA = -1;
@@ -453,13 +453,13 @@ undefined4 __thiscall st::fn_006239A0(STMineSetC *this)
         this->field_0363 = (HoloTy *)this_01;
         if (this_01 != nullptr) {
           st::fn_00405790
-                    (this_01,this->field_02C2,this->field_02C6,this->field_02CA + -0x28,0x82,0x14,5,
+                    (this_01,this->field_02C2,this->field_02C6,st::machine_word_boundary_cast<int>(this->field_02CA + -0x28),0x82,0x14,5,
                      1);
         }
       }
     }
     this->field_02AE = CASE_3;
-    this->field_030F = g_playSystem_00802A38->field_00E4 + 7;
+    this->field_030F = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 + 7);
     return local_8;
   case CASE_3:
     if (g_playSystem_00802A38->field_00E4 < this->field_030F) goto switchD_006239c1_caseD_4;
@@ -505,7 +505,7 @@ switchD_006239c1_caseD_4:
       st::fn_004030BC((STT3DSprC *)&this->field_01D5,'\t');
     }
     if (this->field_02DB < this->field_02D7) {
-      this->field_02DB = this->field_02DB + 1;
+      this->field_02DB = st::machine_word_boundary_cast<int>(this->field_02DB + 1);
     }
   }
   if (this->field_02E0 != '\0') {
@@ -516,7 +516,7 @@ switchD_006239c1_caseD_4:
     else {
       st::fn_00401064((STT3DSprC *)&this->field_01D5,'\n',this->field_02E1);
       st::fn_004030BC((STT3DSprC *)&this->field_01D5,'\n');
-      this->field_02E1 = this->field_02E1 + 1;
+      this->field_02E1 = st::machine_word_boundary_cast<undefined4>(this->field_02E1 + 1);
     }
   }
   uVar1 = this->field_02CE;
@@ -524,7 +524,7 @@ switchD_006239c1_caseD_4:
     st::fn_00401064((STT3DSprC *)&this->field_01D5,'\x0e',uVar1);
     st::fn_004030BC((STT3DSprC *)&this->field_01D5,'\x0e');
 LAB_00623d08:
-    this->field_02CE = this->field_02CE + 1;
+    this->field_02CE = st::machine_word_boundary_cast<int>(this->field_02CE + 1);
   }
   else if (uVar1 == this->field_02D2) {
     if (-1 < this->field_02BA) {
@@ -683,7 +683,7 @@ st::fn_00624920
     return 1;
   case CASE_2:
     iVar10 = g_playSystem_00802A38->field_00E4 - this->field_030F;
-    iVar12 = this->field_0306 * iVar10;
+    iVar12 = st::machine_word_boundary_cast<int>(this->field_0306 * iVar10);
     iVar11 = (this->field_02FA * iVar12) / 10000 + (int)this->field_0034;
     iVar7 = (this->field_02FE * iVar12) / 10000 + (int)this->field_0036;
     iVar9 = (this->field_0302 * iVar12) / 10000 + (int)this->field_0038;
@@ -995,7 +995,7 @@ LAB_006259bf:
                 if (DAT_00811798 != nullptr) {
                   iVar6 = this->vfunc_2C();
                   iVar7 = this_00->GetObjectTypeId();
-                  st::fn_004058A8(DAT_00811798,iVar14,iVar15,(uint)this_00[1].vtable,iVar7,iVar6);
+                  st::fn_004058A8(st::pointer_boundary_cast<void *>(DAT_00811798),iVar14,iVar15,(uint)this_00[1].vtable,iVar7,iVar6);
                 }
               }
 LAB_00625ad5:
@@ -1038,7 +1038,7 @@ switchD_00625b9f_caseD_a8:
   case 1:
     bVar17 = false;
     local_20 = 0;
-    local_24 = &DAT_007d03ba;
+    local_24 = st::pointer_boundary_cast<short *>(&DAT_007d03ba);
     do {
       local_2c = 3;
       do {
@@ -1142,7 +1142,7 @@ LAB_00625d60:
                 if (DAT_00811798 != nullptr) {
                   iVar6 = this->vfunc_2C();
                   uVar10 = pSVar16->vfunc_2C();
-                  st::fn_004058A8(DAT_00811798,iVar14,iVar15,pSVar16->field_0024,uVar10,iVar6);
+                  st::fn_004058A8(st::pointer_boundary_cast<void *>(DAT_00811798),iVar14,iVar15,pSVar16->field_0024,uVar10,iVar6);
                 }
               }
               goto LAB_00625d60;
@@ -1185,7 +1185,7 @@ LAB_00625efc:
                 if (DAT_00811798 != nullptr) {
                   iVar11 = this->vfunc_2C();
                   uVar10 = pSVar16->vfunc_2C();
-                  st::fn_004058A8(DAT_00811798,iVar14,iVar15,pSVar16->field_0024,uVar10,iVar11);
+                  st::fn_004058A8(st::pointer_boundary_cast<void *>(DAT_00811798),iVar14,iVar15,pSVar16->field_0024,uVar10,iVar11);
                 }
                 bVar17 = true;
               }

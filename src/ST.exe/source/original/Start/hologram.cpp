@@ -51,7 +51,7 @@ void __thiscall st::fn_005AA6A0(HoloTy *this,uint param_1)
               pBVar7 = local_8->field_0007;
               iVar5 = 0;
               iVar3 = ((-(uint)(cVar1 != '\x01') & 0xfffffffe) + 1) * local_c + local_8->field_0027;
-              iVar4 = local_8->field_0023 + iVar8;
+              iVar4 = st::machine_word_boundary_cast<int>(local_8->field_0023 + iVar8);
               break;
             case '\x02':
             case '\x04':
@@ -60,7 +60,7 @@ void __thiscall st::fn_005AA6A0(HoloTy *this,uint param_1)
               DVar9 = local_8->field_002B;
               pBVar7 = local_8->field_0007;
               iVar8 = 0;
-              iVar3 = local_8->field_0027 + iVar5;
+              iVar3 = st::machine_word_boundary_cast<int>(local_8->field_0027 + iVar5);
               iVar4 = ((-(uint)(cVar1 != '\x02') & 0xfffffffe) + 1) * local_c + local_8->field_0023;
               break;
             default:
@@ -78,12 +78,12 @@ switchD_005aa738_default:
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\hologram.cpp",0x1e,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),0x1e,0,iVar3,st::mutable_c_string("%s"),
                                "HoloTy::OutHoloProc");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\hologram.cpp",0x1e);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),0x1e);
   }
   return;
 }
@@ -137,8 +137,8 @@ st::fn_005AA880
   local_EAX_32 = st::fn_0072D7F0(local_78.jumpBuffer,0);
   if (local_EAX_32 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Start\\hologram.cpp",99,0,local_EAX_32,
-                               "%s","HoloTy::CalcHologram");
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),99,0,local_EAX_32,
+                               st::mutable_c_string("%s"),"HoloTy::CalcHologram");
     if (iVar2 == 0) {
       return nullptr;
     }
@@ -153,7 +153,7 @@ st::fn_005AA880
   }
   local_34 = uVar7;
   local_2c = uVar6;
-  local_1c = st::fn_006AAC10(uVar6 * uVar2 * 4);
+  local_1c = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC10(uVar6 * uVar2 * 4));
   local_c = local_1c;
   if ((local_1c != nullptr) && (local_14 = 0, uVar7 != 0)) {
     local_30 = (uint)param_6;
@@ -298,7 +298,7 @@ st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int par
   this_00 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Start\\hologram.cpp",0x9a,0,iVar3,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),0x9a,0,iVar3,st::mutable_c_string("%s"),
                                "HoloTy::Init");
     if (iVar3 == 0) {
       this_00->field_0000 = (char)local_10;
@@ -328,7 +328,7 @@ st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int par
       local_c = local_14->field_002B;
       break;
     case CASE_4:
-      local_8 = local_14->field_002B + param_2;
+      local_8 = st::machine_word_boundary_cast<uint>(local_14->field_002B + param_2);
       local_c = uVar5;
     }
     local_14->field_0013 = (uint)param_6;
@@ -337,7 +337,7 @@ st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int par
                           (byte)param_8);
     this_00->field_000B = puVar4;
     if (puVar4 != nullptr) {
-      puVar1 = &this_00->field_0x3;
+      puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x3);
       st::fn_006B2330(g_ddxContext_008075A8,(uint *)puVar1,10,0x402842,0,0,(ushort *)this_00);
       uVar5 = *(uint *)puVar1;
       if (-1 < (int)uVar5) {
@@ -420,12 +420,12 @@ void __thiscall st::fn_005AAFB0(HoloTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Start\\hologram.cpp",0xaa,0,errorCode,
-                             "%s","HoloTy::Done");
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),0xaa,0,errorCode,
+                             st::mutable_c_string("%s"),"HoloTy::Done");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Start\\hologram.cpp",0xaa);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),0xaa);
   return;
 }
 
@@ -453,12 +453,12 @@ undefined4 __thiscall st::fn_005AB0A0(HoloTy *this)
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\hologram.cpp",0xc1,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),0xc1,0,iVar3,st::mutable_c_string("%s"),
                                "HoloTy::NextFas");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\hologram.cpp",0xc1);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),0xc1);
     return local_8;
   }
   uVar1 = *(uint *)&local_c->field_0x3;

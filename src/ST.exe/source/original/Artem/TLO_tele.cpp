@@ -44,10 +44,10 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
   this_00 = local_20;
   if (local_EAX_36 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_tele.cpp",0x1d5,0,local_EAX_36,
-                               "%s","TLOBaseTy::teleNone error");
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_tele.cpp"),0x1d5,0,local_EAX_36,
+                               st::mutable_c_string("%s"),"TLOBaseTy::teleNone error");
     if (iVar7 == 0) {
-      st::fn_006A5E40(local_EAX_36,0,"E:\\__titans\\Artem\\TLO_tele.cpp",0x1d6);
+      st::fn_006A5E40(local_EAX_36,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_tele.cpp"),0x1d6);
       return local_EAX_36;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -68,7 +68,7 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
-      st::fn_0040542A(local_20,local_20->field_0474,local_20->field_0478,local_20->field_047C + 1);
+      st::fn_0040542A(local_20,local_20->field_0474,local_20->field_0478,st::machine_word_boundary_cast<undefined4>(local_20->field_047C + 1));
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
@@ -96,7 +96,7 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
       if (DAT_00800bcc == nullptr) {
         st::fn_00404395();
       }
-      st::fn_00401582(DAT_00800bcc,this_00->field_0480,this_00->field_0484,this_00->field_0488);
+      st::fn_00401582(st::pointer_boundary_cast<void *>(DAT_00800bcc),this_00->field_0480,this_00->field_0484,this_00->field_0488);
       this_00->field_0494 = 1;
       g_currentExceptionFrame = local_64.previous;
       return 0;
@@ -105,11 +105,11 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
   case CASE_3:
     iVar5 = st::fn_00402847((STJellyGunC *)local_20,&local_18,&local_1c);
     if (iVar5 == -1) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_tele.cpp",0x19a,0,-5,"%s",
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_tele.cpp"),0x19a,0,-5,st::mutable_c_string("%s"),
                                  "TLOBaseTy::teleNone\nmovement error");
       if (iVar3 == 0) {
         st::fn_006A5E40
-                  (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tele.cpp",0x19a);
+                  (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_tele.cpp"),0x19a);
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
@@ -167,7 +167,7 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
     }
     if (uVar3 + 0x79 <= uVar10) {
       if (local_20->field_0494 != 0) {
-        st::fn_00401DD4(DAT_00800bcc,local_20->field_0480,local_20->field_0484,
+        st::fn_00401DD4(st::pointer_boundary_cast<void *>(DAT_00800bcc),local_20->field_0480,local_20->field_0484,
                            local_20->field_0488);
         this_00->field_0494 = 0;
       }
@@ -179,7 +179,7 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
                                  (short)this_00->field_0488,1);
       if (iVar5 != 0) {
         st::fn_006A5E40
-                  (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tele.cpp",0x1b3);
+                  (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_tele.cpp"),0x1b3);
       }
       st::fn_0040278E(this_00,*(short *)&this_00->field_05B0,*(short *)&this_00->field_05B4,
                          *(short *)&this_00->field_05B8);

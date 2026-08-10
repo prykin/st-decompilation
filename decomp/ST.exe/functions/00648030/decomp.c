@@ -140,7 +140,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
     pcVar10 = pcVar13 + -uVar6;
     pcVar13 = (char *)&DAT_0080c736;
     memmove(pcVar13, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-    if (DAT_008087a0 == '\b') {
+    if ((char)DAT_008087a0 == '\b') {
       thunk_FUN_006767d0();
     }
     DAT_0080c52a = DAT_0080c52a + 1;

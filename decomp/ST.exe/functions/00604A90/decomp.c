@@ -45,7 +45,8 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   ExceptionList = &local_14;
-  iVar3 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
+  iVar3 = Library::MSVCRT::__setjmp3
+                    (local_8c.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0xffffffff);
   local_1c = &stack0xffffff40;
   if (iVar3 == 0) {
     *param_1 = 0;

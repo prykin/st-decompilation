@@ -44,7 +44,7 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
         *puVar5 = 0x89898989;
         puVar5 = puVar5 + 1;
       }
-      puVar8 = pPVar3->field_0018;
+      puVar8 = &pPVar3->field_0018;
       for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
         *(undefined1 *)puVar5 = 0x89;
         puVar5 = (undefined4 *)((int)puVar5 + 1);

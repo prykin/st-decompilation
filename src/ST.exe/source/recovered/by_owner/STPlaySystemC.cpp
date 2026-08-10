@@ -14,7 +14,7 @@
 STPlaySystemC * __thiscall st::fn_0054CB40(STPlaySystemC *this,AppClassTy *param_1)
 
 {
-  st::fn_006E6100((SystemWithNamedObjClassTy *)this,param_1,4);
+  st::fn_006E6100((SystemWithNamedObjClassTy *)this,st::machine_word_boundary_cast<undefined4>(param_1),4);
   this->vtable = &st_global_0079AE38;
   this->field_0034 = 0;
   this->field_00E4 = 0;
@@ -45,7 +45,7 @@ int __thiscall st::fn_0054EBB0(STPlaySystemC *this,char *param_1,uint param_2)
   int iVar2;
 
   *(uint *)param_1 = this->field_0041;
-  this->field_0041 = this->field_0041 + 1;
+  this->field_0041 = st::machine_word_boundary_cast<uint>(this->field_0041 + 1);
   st::fn_004045FC(this,(undefined4 *)param_1,param_2);
   DVar1 = st::external_000000DA();
   this->field_007F = DVar1;
@@ -69,7 +69,7 @@ void __thiscall st::fn_00550190(STPlaySystemC *this)
 {
   uint uVar1;
 
-  uVar1 = this->field_00E4 + 1;
+  uVar1 = st::machine_word_boundary_cast<uint>(this->field_00E4 + 1);
   this->field_0028 = 1;
   this->field_00E4 = uVar1;
   if ((uVar1 - this->field_0034 == 6000) && (g_optPanel_008016DC != nullptr)) {
@@ -102,7 +102,7 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
   uint local_8;
 
   if (param_2 != nullptr) {
-    pcVar2 = (char *)st::fn_00404863(this,*param_2,&local_8);
+    pcVar2 = (char *)st::fn_00404863(this,*param_2,st::pointer_boundary_cast<undefined4 *>(&local_8));
     if (pcVar2 == nullptr) {
       st::fn_00715360(g_int_00811764,param_1,'7',nullptr,0,0,0xffffffff);
       st::fn_00401370(this,param_1);
@@ -143,7 +143,7 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
             if (((&DAT_00808af0)[(int)param_2 * 0x27] == param_1) &&
                ((&DAT_00808af6)[(int)param_2 * 0x9c] != '\0')) {
               pcVar1 = st::fn_006B0140(0x426d,g_hINSTANCE_00807618);
-              st::external_00000080(local_10c,"%s %s",pcVar1,pcVar2);
+              st::external_00000080(local_10c,st::mutable_c_string("%s %s"),pcVar1,pcVar2);
               if (g_popUp_008016D8 != nullptr) {
                 st::fn_004014D8(g_popUp_008016D8,local_10c,8);
               }

@@ -63,7 +63,7 @@ void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
   }
   local_10 = -0x18 - (int)this_00;
   local_14 = 0;
-  puVar11 = this_00->field_0018;
+  puVar11 = &this_00->field_0018;
   do {
     iVar6 = local_14;
     if ((DAT_00807342 == 0) || (DAT_00807346 <= (byte)local_8)) {

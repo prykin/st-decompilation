@@ -12,7 +12,8 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
   short sVar2;
   short sVar3;
   STBoatC_field_0687State SVar4;
-  ushort uVar6;
+  STBoatC_field_06F7State SVar5;
+  ushort uVar7;
   int local_EAX_49;
   int local_EAX_93;
   int local_EAX_327;
@@ -41,10 +42,9 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == nullptr) || (param_1 == (STBoatC *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar8 = *(int *)((int)this->field_06CB + 0x2c);
+    SVar5 = this->field_06F7;
     this->field_02C4 = 0;
-    if ((((iVar8 != 7) && (iVar8 != 0x13)) && (iVar8 != 0x1b)) ||
+    if ((((SVar5 != CASE_7) && (SVar5 != CASE_13)) && (SVar5 != CASE_1B)) ||
        (this->field_07CA == nullptr)) {
       return 0;
     }
@@ -336,9 +336,9 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
         return 2;
       }
     }
-    uVar6 = this->field_0673 + 1;
-    sub_0048DFD0(this,this->field_066F,this->field_0671,uVar6,this->field_066F,this->field_0671,
-                 (int *)(uint)uVar6,2,&this->field_067D,&this->field_067F,&this->field_0681);
+    uVar7 = this->field_0673 + 1;
+    sub_0048DFD0(this,this->field_066F,this->field_0671,uVar7,this->field_066F,this->field_0671,
+                 (int *)(uint)uVar7,2,&this->field_067D,&this->field_067F,&this->field_0681);
     iVar12 = (int)this->field_0681;
     iVar8 = (int)this->field_067F;
     iVar11 = (int)this->field_067D;

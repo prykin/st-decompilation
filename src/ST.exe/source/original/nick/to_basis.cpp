@@ -33,10 +33,10 @@ int __thiscall st::fn_005F10D0(STManBasisC *this,STMessage *message)
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_basis.cpp",0x5b,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_basis.cpp"),0x5b,0,iVar3,st::mutable_c_string("%s"),
                                "STManBasisC::GetMessage");
     if (iVar4 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_basis.cpp",0x5d);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\nick\\to_basis.cpp"),0x5d);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -54,7 +54,7 @@ int __thiscall st::fn_005F10D0(STManBasisC *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_ID_CREATE) {
-      local_c->field_001C = local_c->field_0018 * DAT_00808754;
+      local_c->field_001C = st::machine_word_boundary_cast<undefined4>(local_c->field_0018 * DAT_00808754);
       if (g_cMf32_00806754 != nullptr) {
         local_8 = (AnonShape_005F10D0_60EBA416 *)
                   st::fn_006F2D90(g_cMf32_00806754,PTR_s_BASIS_MAN_0079c57c,0,0);

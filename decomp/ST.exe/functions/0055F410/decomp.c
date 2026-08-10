@@ -171,7 +171,7 @@ void AiCalcDispositionAreas
     local_1b8.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_1b8;
     iVar15 = Library::MSVCRT::__setjmp3
-                       (local_1b8.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
+                       (local_1b8.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0xffffffff);
     local_1c = &stack0xfffffe14;
     if (iVar15 == 0) {
       local_1c = &stack0xfffffe14;

@@ -49,8 +49,8 @@ void __thiscall st::fn_0058C560(void *this,int param_1,int param_2)
       return;
     }
     if (iVar3 == 2) {
-      local_EAX_74 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_sat.cpp",0x11b,0,0,
-                                        "%s","For Artem : already has athe target");
+      local_EAX_74 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_sat.cpp"),0x11b,0,0,
+                                        st::mutable_c_string("%s"),"For Artem : already has athe target");
       if (local_EAX_74 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -118,10 +118,10 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
   this_00 = local_1c;
   if (iVar10 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar11 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_sat.cpp",0x1fd,0,iVar10,"%s",
+    iVar11 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_sat.cpp"),0x1fd,0,iVar10,st::mutable_c_string("%s"),
                                 "STSatC::GetMessage");
     if (iVar11 == 0) {
-      st::fn_006A5E40(iVar10,0,"E:\\__titans\\Igor\\to_sat.cpp",0x1fe);
+      st::fn_006A5E40(iVar10,0,st::mutable_c_string("E:\\__titans\\Igor\\to_sat.cpp"),0x1fe);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -132,7 +132,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
     if (SVar1 == MESS_SHARED_010F) {
       local_18 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
       local_14 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = st::fn_006AAC70(local_10 + 0x7c + local_8);
+      local_c = st::pointer_boundary_cast<AnonShape_0058C760_5C56630E *>(st::fn_006AAC70(local_10 + 0x7c + local_8));
       if (((local_18 != nullptr) && (local_14 != nullptr)) &&
          (local_c != nullptr)) {
         puVar16 = (byte *)&this_00->field_0x275;
@@ -187,7 +187,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
         }
         *(uint *)(&local_c[1].field_0x0 + local_8) = local_10;
         pbVar17 = local_14;
-        pbVar20 = &local_c[1].field_0x4 + local_8;
+        pbVar20 = st::pointer_boundary_cast<byte *>(&local_c[1].field_0x4 + local_8);
         memmove(pbVar20, pbVar17, local_10); /* compiler REP MOVS byte copy */
         st::fn_004025F9
                   (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
@@ -216,10 +216,10 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
           memmove(puVar18, puVar16, 0x26); /* compiler REP MOVS byte copy */
           puVar16 = (byte *)(&this_00->field_01D5);
           iVar12 = st::fn_00404183
-                             ((STT3DSprC *)puVar16,0xe,PTR_00806774,&DAT_007cbaa8,CASE_1D);
+                             ((STT3DSprC *)puVar16,0xe,PTR_00806774,st::pointer_boundary_cast<char *>(&DAT_007cbaa8),CASE_1D);
           if (iVar12 != 0) {
             st::fn_006A5E40
-                      (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_sat.cpp",0x158);
+                      (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_sat.cpp"),0x158);
           }
           st::fn_00405AA6(puVar16,'\x0e');
           st::fn_00405240((STT3DSprC *)puVar16,0xe,g_playSystem_00802A38->field_00E4);
@@ -250,7 +250,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
           st::fn_00401064((STT3DSprC *)puVar16,'\x0e',0);
         }
         else if (uVar13 == 2) {
-          local_20 = (message->arg0).ptr;
+          local_20 = st::pointer_boundary_cast<AnonShape_0058C760_4470B7C6 *>((message->arg0).ptr);
           pAVar15 = local_20;
           puVar16 = (byte *)&this_00->field_0x275;
           memmove(puVar16, pAVar15, 0x26); /* compiler REP MOVS byte copy */
@@ -291,7 +291,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
               local_38 = nullptr;
             }
             else {
-              local_38 = PTR_00806724 + *(int *)&this_00->field_0x239;
+              local_38 = st::pointer_boundary_cast<AnonShape_GLOBAL_00806724_3210464F *>(PTR_00806724 + *(int *)&this_00->field_0x239);
             }
             local_34 = (int)PTR_00806724->field_002C;
             local_30 = PTR_008073cc;

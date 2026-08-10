@@ -72,8 +72,7 @@ LAB_00475545:
          (local_10 = 0, this->field_02BF != '\0')) {
         local_8 = (undefined4 *)&this->field_0x2b3;
         do {
-          puVar7 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
+          puVar7 = thunk_FUN_0041dc40(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
                                       this->field_006C);
           uVar2 = *puVar7;
           bVar20 = 0;

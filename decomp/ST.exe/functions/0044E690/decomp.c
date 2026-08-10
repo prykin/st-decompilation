@@ -15,7 +15,7 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   int iVar1;
   undefined4 *puVar2;
   short *psVar3;
-  ulonglong *puVar4;
+  uint *puVar4;
 
   STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
@@ -94,21 +94,17 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
     psVar3 = psVar3 + 2;
   }
   *psVar3 = 0;
-  puVar4 = this->field_06CB;
+  psVar3 = &this->field_06CB;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(undefined4 *)puVar4 = 0;
-    puVar4 = (ulonglong *)((int)puVar4 + 4);
+    *(undefined4 *)psVar3 = 0;
+    psVar3 = psVar3 + 2;
   }
-  *(undefined4 *)(this->field_06CB + 4) = 0;
-  *(undefined4 *)((int)this->field_06CB + 0x24) = 0;
+  this->field_06EB = 0;
+  this->field_06EF = 0;
   this->field_045D = CASE_3;
-  puVar4 = this->field_06CB + 5;
-  for (iVar1 = 0x5a; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(undefined4 *)puVar4 = 0;
-    puVar4 = (ulonglong *)((int)puVar4 + 4);
-  }
-  *(undefined2 *)puVar4 = 0;
-  STField<undefined1>(puVar4,2) = 0;
+  puVar4 = &this->field_06F3;
+  memset(puVar4, 0, 0x16b); /* compiler bulk-zero initialization */
+  puVar4 = (undefined4 *)((byte *)puVar4 + 0x168);
   this->field_0716 = 100;
   this->field_0712 = 100;
   this->field_071A = 100;

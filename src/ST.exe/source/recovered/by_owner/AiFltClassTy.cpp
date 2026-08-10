@@ -328,7 +328,7 @@ st::fn_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *param_3)
       }
     }
   }
-  return &array->flags;
+  return st::pointer_boundary_cast<uint *>(&array->flags);
 }
 
 // 00660F70 AiFltClassTy::sub_00660F70
@@ -356,7 +356,7 @@ void __thiscall st::fn_00660F70(AiFltClassTy *this,uint *param_1,undefined2 para
   int local_EAX_1023;
   short sVar11;
   undefined4 uVar12;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   AnonShape_0068EB30_4F4B480A *pAVar13;
   AnonShape_0068EB30_4F4B480A local_6c;
@@ -445,7 +445,7 @@ switchD_0066104e_caseD_9:
           if ((0x31 < *local_8) && (*local_8 < 0x74)) {
             sVar11 = STField<short>(param_1,0xe);
             uVar12 = STReplaceLowWord((uint32_t)(local_8), (uint16_t)(sVar11));
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             if ((sVar11 < 0) ||
                ((((short)param_1[4] < 0 || (STField<short>(param_1,0x12) < 0)) ||
                 (iVar9 = st::fn_00402829(sVar11,(int)(short)param_1[4],
@@ -512,7 +512,7 @@ switchD_0066104e_caseD_9:
             STPiece<28,1>(local_6c) = *(undefined1 *)&this->field_0024;
           }
           local_6c.field_0006 = (short)uVar5;
-          st::fn_0072E340(&local_6c.field_0x1d,(char *)((int)param_1 + 0x15),0xe);
+          st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_6c.field_0x1d),(char *)((int)param_1 + 0x15),0xe);
           local_EAX_1023 =
                st::fn_004056BE
                          ((AiTactClassTy *)this->field_0284,&local_6c,this->field_007F);
@@ -1101,12 +1101,12 @@ void __fastcall st::fn_00664960(AiFltClassTy *param_1)
   int uVar12;
   int local_EAX_9844;
   ushort *puVar16;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX;
   int iVar17;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_16;
@@ -1159,8 +1159,8 @@ void __fastcall st::fn_00664960(AiFltClassTy *param_1)
   param_1->field_008F = param_1->field_0280;
   local_8 = st::fn_00401DC5(*(char *)&param_1->field_0024);
   iVar9 = st::fn_0040360C
-                    ((AnonReceiver_00664540 *)param_1,local_44,&local_68);
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                    ((AnonReceiver_00664540 *)param_1,st::pointer_boundary_cast<undefined4 *>(local_44),&local_68);
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   iVar12 = extraout_EDX;
   while (-1 < iVar9) {
     switch(local_44[0]) {
@@ -1209,7 +1209,7 @@ void __fastcall st::fn_00664960(AiFltClassTy *param_1)
       break;
     case 4:
       st::fn_006AE1C0(param_1->field_020B,&local_3c);
-      st::fn_004049A8(param_1->field_020B,st::fn_004013CF);
+      st::fn_004049A8(param_1->field_020B,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_004013CF));
       goto cf_common_join_00665024;
     case 5:
       if (param_1->field_020B != nullptr) {
@@ -1502,7 +1502,7 @@ cf_common_join_00665024:
         if ((local_44[0] == 0) || (0x31 < local_44[0])) {
 switchD_006649d9_caseD_0:
           st::fn_00404386(param_1,local_44[0]);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           iVar12 = extraout_EDX_01;
           goto LAB_00665067;
         }
@@ -1513,8 +1513,8 @@ switchD_006649d9_caseD_0:
     }
 LAB_00665047:
     iVar9 = st::fn_0040360C
-                      ((AnonReceiver_00664540 *)param_1,local_44,&local_68);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                      ((AnonReceiver_00664540 *)param_1,st::pointer_boundary_cast<undefined4 *>(local_44),&local_68);
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     iVar12 = extraout_EDX_00;
   }
 LAB_00665067:
@@ -1631,7 +1631,7 @@ LAB_00665eba:
               if (param_1->field_00A3 == 0) {
                 param_1->field_00A3 = 1;
                 if (((param_1->field_00EF == 0x200) || (param_1->field_00EF == 0x400)) &&
-                   (uVar14 = param_1->field_001C * 0x41c64e6d + 0x3039, param_1->field_001C = uVar14
+                   (uVar14 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039), param_1->field_001C = uVar14
                    , (uVar14 & 0x10000) != 0)) {
                   local_EAX_5229 =
                        st::fn_00401C6C((AnonReceiver_0065ED90 *)param_1,
@@ -1680,7 +1680,7 @@ LAB_00665eba:
                 param_1->field_00F3 = *(uint *)&param_1->field_0xbf & 2;
               }
               if (param_1->field_00F3 == 0) {
-                uVar15 = param_1->field_001C * 0x41c64e6d + 0x3039;
+                uVar15 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039);
                 param_1->field_001C = uVar15;
                 param_1->field_00F3 = (uVar15 >> 0x10 & 1) + 1;
               }
@@ -1693,7 +1693,7 @@ LAB_00665eba:
                   param_1->field_00EF = uVar14;
                 }
                 if ((param_1->field_00EF == 0) && ((uVar15 & 0x800) != 0)) {
-                  uVar15 = param_1->field_001C * 0x41c64e6d + 0x3039;
+                  uVar15 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039);
                   param_1->field_001C = uVar15;
                   param_1->field_00EF = (-(uint)((uVar15 & 0x10000) != 0) & 0xfffffe00) + 0x400;
                 }
@@ -1708,7 +1708,7 @@ LAB_00665eba:
                 iVar12 = st::fn_0040586C(param_1,*(short **)&param_1->field_0xc7,
                                             (short *)&param_1->field_0x195,
                                             *(uint *)&param_1->field_0xcb,
-                                            *(uint *)&param_1->field_0xcf,&param_1->field_0xd5,
+                                            *(uint *)&param_1->field_0xcf,st::pointer_boundary_cast<byte *>(&param_1->field_0xd5),
                                             STReplaceLowByte((uint32_t)(uVar14), (uint8_t)(param_1->field_0xd3)),1);
                 if (iVar12 != 0) goto cf_common_join_00667047;
                 iVar12 = param_1->field_00EF;
@@ -1856,7 +1856,7 @@ LAB_006664d8:
         }
         param_1->field_00A3 = 1;
         param_1->field_023B->count = 0;
-        uVar14 = param_1->field_001C * 0x41c64e6d + 0x3039;
+        uVar14 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039);
         param_1->field_001C = uVar14;
         uVar6 = st::fn_0040343B(param_1);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -1866,8 +1866,8 @@ LAB_006664d8:
         }
         local_EAX_7232 =
              st::fn_004056C3(param_1,*(uint *)&param_1->field_0xc7,uVar14,
-                                &param_1->field_023B->flags,*(uint *)&param_1->field_0xcb,
-                                *(uint *)&param_1->field_0xcf,&param_1->field_0xd5,
+                                st::pointer_boundary_cast<uint *>(&param_1->field_023B->flags),*(uint *)&param_1->field_0xcb,
+                                *(uint *)&param_1->field_0xcf,st::pointer_boundary_cast<byte *>(&param_1->field_0xd5),
                                 (uint)(byte)param_1->field_0xd3);
         if (local_EAX_7232 < 1) {
           st::fn_004014BF(param_1);
@@ -1876,7 +1876,7 @@ LAB_006664d8:
           param_1->field_00A3 = 0;
           param_1->field_00A7 = 0;
         }
-        iVar12 = st::fn_004029BE(param_1,param_1->field_023B);
+        iVar12 = st::fn_004029BE(param_1,st::machine_word_boundary_cast<undefined4>(param_1->field_023B));
         goto joined_r0x00666ceb;
       default:
         goto cf_common_exit_00667066;
@@ -1901,7 +1901,7 @@ LAB_006664d8:
           param_1->field_00F3 = *(uint *)&param_1->field_0xbf & 2;
         }
         if (param_1->field_00F3 == 0) {
-          uVar14 = param_1->field_001C * 0x41c64e6d + 0x3039;
+          uVar14 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039);
           param_1->field_001C = uVar14;
           param_1->field_00F3 = (uVar14 >> 0x10 & 1) + 1;
         }
@@ -1912,7 +1912,7 @@ LAB_006664d8:
             param_1->field_00EF = uVar14 & 0x400;
           }
           if ((param_1->field_00EF == 0) && ((uVar14 & 0x800) != 0)) {
-            uVar14 = param_1->field_001C * 0x41c64e6d + 0x3039;
+            uVar14 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039);
             param_1->field_001C = uVar14;
             param_1->field_00EF = (-(uint)((uVar14 & 0x10000) != 0) & 0xfffffe00) + 0x400;
           }
@@ -2031,7 +2031,7 @@ LAB_006664e6:
         param_1->field_00A3 = 1;
         param_1->field_00AB = *(undefined4 *)&param_1->field_0xd3;
         param_1->field_00AF = param_1->field_0280;
-        iVar12 = st::fn_00401FB9(param_1,&param_1->field_0xc7,*(int *)&param_1->field_0xc3,
+        iVar12 = st::fn_00401FB9(param_1,st::machine_word_boundary_cast<undefined4>(&param_1->field_0xc7),*(int *)&param_1->field_0xc3,
                                     (short *)&param_1->field_0xc7);
         goto joined_r0x00666ceb;
       }
@@ -2170,7 +2170,7 @@ joined_r0x00666ceb:
                 if (uVar13 != 0) {
                   sVar7 = *(short *)&param_1->field_0xc7;
                   sVar4 = *(short *)&param_1->field_0xc9;
-                  this_00->field_0265 = this_00->field_0265 | 2;
+                  this_00->field_0265 = st::machine_word_boundary_cast<undefined4>(this_00->field_0265 | 2);
                   this_00->field_02A5 = (int)sVar7;
                   this_00->field_02A9 = (int)sVar4;
                   this_00->field_02AD = 0;
@@ -2342,7 +2342,7 @@ LAB_00665315:
       param_1->field_00AF = param_1->field_0280;
       iVar12 = st::fn_00403BE8(param_1,param_1->field_01AD,param_1->field_01C3,
                                   param_1->field_01C5,param_1->field_01C7,param_1->field_01B9,
-                                  param_1->field_01C9,&param_1->field_0x1ca);
+                                  param_1->field_01C9,st::pointer_boundary_cast<char *>(&param_1->field_0x1ca));
       if (-1 < iVar12) goto cf_common_exit_00667066;
       if (param_1->field_00B3 != 0) goto cf_common_join_00667047;
       goto cf_common_join_0066704E;
@@ -2407,7 +2407,7 @@ LAB_006655ba:
           param_1->field_009B = 0x2a;
           param_1->field_009F = 0;
           param_1->field_00A3 = 0;
-          param_1->field_012D = param_1->field_012D + 1;
+          param_1->field_012D = st::machine_word_boundary_cast<uint>(param_1->field_012D + 1);
           param_1->field_00A7 = 0;
         }
       }
@@ -2551,7 +2551,7 @@ LAB_006655ba:
                                   (short *)&param_1->field_0x195,0,param_1->field_013A,nullptr,
                                   0xffffffff,0);
       if (iVar12 == 0) {
-        uVar14 = param_1->field_001C * 0x41c64e6d + 0x3039;
+        uVar14 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039);
         param_1->field_001C = uVar14;
         if ((uVar14 & 0x10000) == 0) {
           local_EAX_4212 =
@@ -2626,7 +2626,7 @@ LAB_00665b57:
     }
     param_1->field_00A3 = 1;
     if (((param_1->field_00EF != 0x200) && (param_1->field_00EF != 0x400)) ||
-       (uVar14 = param_1->field_001C * 0x41c64e6d + 0x3039, param_1->field_001C = uVar14,
+       (uVar14 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039), param_1->field_001C = uVar14,
        (uVar14 & 0x10000) == 0)) goto LAB_00665b57;
     local_EAX_4547 =
          st::fn_00401C6C

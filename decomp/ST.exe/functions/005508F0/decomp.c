@@ -52,8 +52,9 @@ void __thiscall FUN_005508f0(void *this,int param_1)
   }
   local_10 = this;
   if (((((DAT_0080877e != '\0') && (local_5 < 2)) && (cVar7 != -1)) &&
-      (((DAT_008087a0 == '\x04' || (DAT_008087a0 == '\a')) ||
-       ((DAT_008087a0 == '\x13' || ((DAT_008087a0 == '\r' || (DAT_008087a0 == '\x0e')))))))) &&
+      ((((char)DAT_008087a0 == '\x04' || ((char)DAT_008087a0 == '\a')) ||
+       (((char)DAT_008087a0 == '\x13' ||
+        (((char)DAT_008087a0 == '\r' || ((char)DAT_008087a0 == '\x0e')))))))) &&
      (uVar1 = local_c & 0xff, (&DAT_00809950)[uVar1] == '\0')) {
     uVar8 = 0;
     if (uVar3 != 0) {

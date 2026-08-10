@@ -12,6 +12,6 @@
 dword __thiscall STBoatC::FUN_00490e70(STBoatC *this)
 
 {
-  return (dword)this->field_06CB[5];
+  return this->field_06F3;
 }
 

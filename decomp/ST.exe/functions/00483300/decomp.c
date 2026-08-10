@@ -73,8 +73,7 @@ LAB_00483342:
     if (STField<char>(param_1,0x2b2) != '\0') {
       local_c = param_1 + 0xaa;
       do {
-        puVar5 = (undefined4 *)
-                 thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)((int)local_c + -2),
+        puVar5 = thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)((int)local_c + -2),
                                     STField<ushort>(local_c,2),(short)local_18);
         sStack_26 = (short)((uint)*puVar5 >> 0x10);
         local_1c = STReplaceLowWord((uint32_t)(puVar5), (uint16_t)(STField<short>(param_1,0x45) + *(short *)(puVar5 + 1)));
@@ -82,7 +81,7 @@ LAB_00483342:
         sVar7 = STField<short>(param_1,0x41) + (short)*puVar5;
         sStack_26 = (short)*local_c;
         local_28 = 0;
-        puVar5 = (undefined4 *)thunk_FUN_0041dc40(local_38,0,0,(short)local_18);
+        puVar5 = thunk_FUN_0041dc40(local_38,0,0,(short)local_18);
         local_28 = (short)*puVar5;
         sStack_26 = (short)((uint)*puVar5 >> 0x10);
         local_24 = *(undefined2 *)(puVar5 + 1);

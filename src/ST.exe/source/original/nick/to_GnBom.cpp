@@ -41,10 +41,10 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
   pSVar4 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\nick\\to_GnBom.cpp",0x54b,0,iVar5,"%s",
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_GnBom.cpp"),0x54b,0,iVar5,st::mutable_c_string("%s"),
                                "STGenBombC::LoadImagSpr()");
     if (iVar8 == 0) {
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\nick\\to_GnBom.cpp",0x54d);
+      st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\nick\\to_GnBom.cpp"),0x54d);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -64,46 +64,46 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
     iVar6 = st::fn_0040537B(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar6 != 0) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_GnBom.cpp",0x509);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_GnBom.cpp"),0x509);
       return 0xffff;
     }
   }
   if (param_1 == 0) {
     if (param_2 != 0) goto LAB_0061364b;
-    iVar6 = st::fn_00404183(pSVar4->field_0252,0xd,PTR_00806774,"exptem",CASE_1D);
+    iVar6 = st::fn_00404183(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),0xd,PTR_00806774,st::mutable_c_string("exptem"),CASE_1D);
     if (iVar6 != 0) {
       return 0xffff;
     }
-    iVar6 = st::fn_00404183(pSVar4->field_0252,0xf,PTR_00806764,"bulb_n5",CASE_1D);
+    iVar6 = st::fn_00404183(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),0xf,PTR_00806764,st::mutable_c_string("bulb_n5"),CASE_1D);
     if (iVar6 != 0) {
       return 0xffff;
     }
-    iVar6 = st::fn_00404183(pSVar4->field_0252,0xe,PTR_00806774,"expmask2",CASE_1D);
+    iVar6 = st::fn_00404183(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),0xe,PTR_00806774,st::mutable_c_string("expmask2"),CASE_1D);
     if (iVar6 != 0) {
       return 0xffff;
     }
-    st::fn_00405240(pSVar4->field_0252,0xe,g_playSystem_00802A38->field_00E4);
+    st::fn_00405240(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),0xe,g_playSystem_00802A38->field_00E4);
     uVar13 = 0x53;
     uVar11 = 0x5a;
     iVar6 = 1;
     pSVar4->field_0251 = 1;
-    uVar7 = st::fn_004052CC(pSVar4->field_0252);
+    uVar7 = st::fn_004052CC(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252));
     st::fn_006EA4E0
               (g_sT3DSMAPContext_00807598,uVar7,iVar6,uVar11,uVar13);
-    st::fn_004022D4(pSVar4->field_0252,'\x0f');
-    st::fn_00405240(pSVar4->field_0252,0xd,g_playSystem_00802A38->field_00E4);
+    st::fn_004022D4(st::pointer_boundary_cast<void *>(pSVar4->field_0252),'\x0f');
+    st::fn_00405240(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),0xd,g_playSystem_00802A38->field_00E4);
     iVar6 = (int)PTR_00806724->field_002C;
     uVar12 = 0;
-    uVar7 = st::fn_004052CC(pSVar4->field_0252);
+    uVar7 = st::fn_004052CC(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252));
     st::fn_006E9350(g_sT3DSMAPContext_00807598,uVar7,uVar12,iVar6);
     pSVar4->field_0250 = 1;
-    st::fn_004044EE(pSVar4->field_0252,PTR_008032b8,0x10);
+    st::fn_004044EE(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),PTR_008032b8,0x10);
     pSVar4->field_0237 = 0;
-    st::fn_00401064(pSVar4->field_0252,'\r',0);
-    st::fn_004030BC(pSVar4->field_0252,'\r');
-    st::fn_00403233(pSVar4->field_0252,'\x0e');
+    st::fn_00401064(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),'\r',0);
+    st::fn_004030BC(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),'\r');
+    st::fn_00403233(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),'\x0e');
     st::fn_004045D9
-              (pSVar4->field_0252,(float)pSVar4->field_022B * _DAT_007904f8 * _DAT_007904f0,
+              (st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),(float)pSVar4->field_022B * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_022F * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_0233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
   }
@@ -111,7 +111,7 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
     iVar6 = pSVar4->field_01F7;
     if (iVar6 == 0) {
       iVar6 = st::fn_00404183
-                        (pSVar4->field_0252,0xd,PTR_00806774,"den_bmb",CASE_1D);
+                        (st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),0xd,PTR_00806774,st::mutable_c_string("den_bmb"),CASE_1D);
       if (iVar6 != 0) {
         return 0xffff;
       }
@@ -124,18 +124,18 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
         if (iVar6 != 2) goto LAB_00613424;
         text = "den_bmb";
       }
-      iVar6 = st::fn_00404183(pSVar4->field_0252,0xd,PTR_00806774,text,CASE_1D);
+      iVar6 = st::fn_00404183(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),0xd,PTR_00806774,text,CASE_1D);
       if (iVar6 != 0) {
         return 0xffff;
       }
     }
 LAB_00613424:
-    st::fn_00401064(pSVar4->field_0252,'\r',pSVar4->field_0237);
+    st::fn_00401064(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),'\r',pSVar4->field_0237);
     st::fn_004045D9
-              (pSVar4->field_0252,(float)pSVar4->field_022B * _DAT_007904f8 * _DAT_007904f0,
+              (st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),(float)pSVar4->field_022B * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_022F * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_0233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    st::fn_00405240(pSVar4->field_0252,0xd,g_playSystem_00802A38->field_00E4);
+    st::fn_00405240(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),0xd,g_playSystem_00802A38->field_00E4);
     pSVar4->field_0250 = 1;
   }
   local_8 = 1;
@@ -200,14 +200,14 @@ LAB_0061364b:
   }
   if (bVar10) {
     if (pSVar4->field_0250 == '\0') {
-      st::fn_00402982(pSVar4->field_0252,0);
+      st::fn_00402982(st::pointer_boundary_cast<void *>(pSVar4->field_0252),0);
       pSVar4->field_0250 = 1;
       g_currentExceptionFrame = local_5c.previous;
       return local_8;
     }
   }
   else if (pSVar4->field_0250 != '\0') {
-    st::fn_00403D0F(pSVar4->field_0252);
+    st::fn_00403D0F(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252));
     pSVar4->field_0250 = 0;
   }
   g_currentExceptionFrame = local_5c.previous;

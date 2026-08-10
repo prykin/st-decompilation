@@ -200,21 +200,21 @@ LAB_00708dda:
         }
         else if (local_50 == local_10) {
           if (local_24 == 0) {
-            st::fn_006F5C60(pbVar8,param_2,pbVar8,param_2,(ushort *)local_20,
+            st::fn_006F5C60(st::pointer_boundary_cast<undefined1 *>(pbVar8),param_2,pbVar8,param_2,(ushort *)local_20,
                          *(int *)&this->field_0x28 << 1,param_6,local_8,(int)local_50,local_4c,
                          local_1c);
           }
           else {
-            st::fn_006F85A0(pbVar8,param_2,pbVar8,param_2,local_8,(int)local_50,local_4c,local_1c);
+            st::fn_006F85A0(st::pointer_boundary_cast<undefined1 *>(pbVar8),param_2,pbVar8,param_2,local_8,(int)local_50,local_4c,local_1c);
           }
         }
         else if (local_24 == 0) {
-          st::fn_006F7D10(pbVar8,param_2,pbVar8,param_2,(ushort *)local_20,
+          st::fn_006F7D10(st::pointer_boundary_cast<undefined1 *>(pbVar8),param_2,pbVar8,param_2,(ushort *)local_20,
                        *(int *)&this->field_0x28 << 1,param_6,local_8,(int)local_10,local_18,
                        (int)local_50,local_4c,local_1c);
         }
         else {
-          st::fn_006F88A0(pbVar8,param_2,pbVar8,param_2,local_8,(int)local_10,local_18,(int)local_50,
+          st::fn_006F88A0(st::pointer_boundary_cast<undefined1 *>(pbVar8),param_2,pbVar8,param_2,local_8,(int)local_10,local_18,(int)local_50,
                        local_4c,local_1c);
         }
       }
@@ -289,25 +289,25 @@ LAB_00708dda:
         }
         else if (local_24 == 0) {
           if (DAT_00857008 == 3) {
-            st::fn_00702510(pbVar8,param_2,pbVar8,param_2,(ushort *)local_20,
+            st::fn_00702510(st::pointer_boundary_cast<undefined1 *>(pbVar8),param_2,pbVar8,param_2,(ushort *)local_20,
                          *(int *)&local_14->field_0x28 << 1,param_6,local_8,(int)local_10,local_38,
                          iVar1 - local_38,iVar7 - local_2c,local_c,local_18,local_1c);
             this = local_14;
           }
           else {
-            st::fn_00702A30(pbVar8,param_2,pbVar8,param_2,(ushort *)local_20,
+            st::fn_00702A30(st::pointer_boundary_cast<undefined1 *>(pbVar8),param_2,pbVar8,param_2,(ushort *)local_20,
                          *(int *)&local_14->field_0x28 << 1,param_6,local_8,(int)local_10,local_38,
                          iVar1 - local_38,iVar7 - local_2c,local_c,local_18,local_1c);
             this = local_14;
           }
         }
         else if (DAT_00857008 == 3) {
-          st::fn_00705ED0(pbVar8,param_2,pbVar8,param_2,local_8,(int)local_10,local_38,iVar1 - local_38
+          st::fn_00705ED0(st::pointer_boundary_cast<undefined1 *>(pbVar8),param_2,pbVar8,param_2,local_8,(int)local_10,local_38,iVar1 - local_38
                        ,iVar7 - local_2c,local_c,local_18,local_1c);
           this = local_14;
         }
         else {
-          st::fn_00706340(pbVar8,param_2,pbVar8,param_2,local_8,(int)local_10,local_38,iVar1 - local_38
+          st::fn_00706340(st::pointer_boundary_cast<undefined1 *>(pbVar8),param_2,pbVar8,param_2,local_8,(int)local_10,local_38,iVar1 - local_38
                        ,iVar7 - local_2c,local_c,local_18,local_1c);
           this = local_14;
         }

@@ -3,11 +3,14 @@
 
 /* [STPrototypeApplier] Propagated parameter 4.
    Evidence: 00479600 -> 004B2520 @ 0047B46E; /STBoatC+0x647; MOVSX at 0047B452 establishes signed
-   source width 2 | 004B2520 -> 004B2390 @ 004B25DA */
+   source width 2 | 004B2520 -> 004B2390 @ 004B25DA
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00479600 -> 004B2520 @ 0047B46E; /STBoatC+0x6f7 */
 
 undefined4 __cdecl
-FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,int param_5,undefined4 *param_6,
-            undefined4 *param_7,undefined4 *param_8,int param_9,int *param_10)
+FUN_004b2520(uint param_1,STBoatC_field_06F7State param_2,int param_3,int param_4,int param_5,
+            undefined4 *param_6,undefined4 *param_7,undefined4 *param_8,int param_9,int *param_10)
 
 {
   undefined1 *puVar1;
@@ -58,8 +61,8 @@ FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,int param_5,undefi
     local_34 = 1;
     goto cf_common_exit_004B2601;
   }
-  if ((param_2 < 0x32) || (0x73 < param_2)) {
-    if ((0 < param_2) && (param_2 < 0x29)) {
+  if (((int)param_2 < 0x32) || (0x73 < (int)param_2)) {
+    if ((0 < (int)param_2) && ((int)param_2 < 0x29)) {
       local_2c = *(int *)(&DAT_007dfbac + param_2 * 4);
       goto LAB_004b266b;
     }

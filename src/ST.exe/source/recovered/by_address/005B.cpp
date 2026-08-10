@@ -60,7 +60,7 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
     this->vtable = &st_global_0079C088;
     this->field_1A60 = 1;
     this->field_1A6C = 0;
-    puVar4 = this->field_1C23;
+    puVar4 = &this->field_1C23;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar4 = 0xffffffff;
       puVar4 = puVar4 + 1;
@@ -107,7 +107,7 @@ MainMenuTy * __cdecl st::fn_005B50E0(void)
   this = (MainMenuTy *)st::fn_006B04D0(0x1ee4);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = (MainMenuTyVTable *)&VTable_0079C018;
+    this->vtable = (MainMenuTyVTable *)&st_global_0079C018;
     this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -123,10 +123,10 @@ MainMenuTy * __cdecl st::fn_005B50E0(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
-    this->vtable = (MainMenuTyVTable *)&MMObjTyVTable;
+    this->vtable = (MainMenuTyVTable *)&st_global_0079C008;
     this->field_0065 = 2;
     this->field_009A = 0;
-    memset(&this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
+    memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
     puVar3 = &this->field_00BC;
     do {
@@ -276,12 +276,12 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
   int iVar1;
   undefined4 *puVar3;
   SpriteClassTy *this_00;
-  undefined4 *puVar4;
+  undefined4 *puVar5;
 
   this = (MMsgTy *)st::fn_006B04D0(0x1eaa);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->vtable = (MMsgTyVTable *)&VTable_0079C018;
+    this->vtable = (MMsgTyVTable *)&st_global_0079C018;
     this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -297,16 +297,16 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
-    this->vtable = (MMsgTyVTable *)&MMObjTyVTable;
+    this->vtable = (MMsgTyVTable *)&st_global_0079C008;
     this->field_0065 = 2;
     this->field_009A = 0;
-    memset(&this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
+    memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
     puVar3 = (undefined4 *)&this->field_0xbc;
     do {
-      puVar4 = puVar3;
-      memset(puVar4, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar4 = (undefined4 *)((byte *)puVar4 + 0x24);
+      puVar5 = puVar3;
+      memset(puVar5, 0, 0x27); /* compiler bulk-zero initialization */
+      puVar5 = (undefined4 *)((byte *)puVar5 + 0x24);
       iVar1 = iVar1 + -1;
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
     } while (iVar1 != 0);

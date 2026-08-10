@@ -183,7 +183,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     local_8 = local_8 + -1;
   } while (local_8 != nullptr);
   local_c = (ushort *)&pMVar3->field_068F;
-  puVar16 = pMVar3->field_02BD;
+  puVar16 = &pMVar3->field_02BD;
   local_8 = (char *)0x5;
   do {
     FUN_006b2330(g_ddxContext_008075A8,puVar16,0x31,0x402f63,0,0,local_c);

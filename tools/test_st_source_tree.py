@@ -15,9 +15,79 @@ from st_source_tree import (
     SourceTreeGenerator,
     TypeEmitter,
     call_argument_count,
+    call_argument_spans,
+    code_mask,
     global_alias_for_token,
     rewrite_address_taken_globals,
+    statement_expression_end,
 )
+
+
+class SourceTreeCallParsingTests(unittest.TestCase):
+    def test_argument_spans_preserve_nested_expressions(self) -> None:
+        text = "fn(one, nested(two, three), value[index + 1])"
+        parsed = call_argument_spans(text, text.index("("))
+        self.assertIsNotNone(parsed)
+        spans, close = parsed
+        self.assertEqual([text[start:end] for start, end in spans], [
+            "one", "nested(two, three)", "value[index + 1]",
+        ])
+        self.assertEqual(close, len(text) - 1)
+        self.assertEqual(call_argument_count(text, text.index("(")), (3, close))
+
+    def test_argument_spans_use_unmasked_literals_for_geometry(self) -> None:
+        source = "fn(first, '-', \"text\", last)"
+        masked = code_mask(source)
+        parsed = call_argument_spans(masked, masked.index("("), source)
+        self.assertIsNotNone(parsed)
+        spans, _ = parsed
+        self.assertEqual([source[start:end] for start, end in spans], [
+            "first", "'-'", '"text"', "last",
+        ])
+
+    def test_return_statement_does_not_overwrite_local_pointer_type(self) -> None:
+        body = (
+            "void f() {\n  byte *payload;\n  short *words;\n"
+            "  payload = allocate();\n  return payload;\n}\n"
+        )
+        declared = SourceTreeGenerator._declared_types(
+            {"parameters": []}, body
+        )
+        self.assertEqual(declared["payload"], "byte *")
+        self.assertEqual(declared["words"], "short *")
+
+    def test_external_signature_parameter_types_are_exact(self) -> None:
+        self.assertEqual(
+            SourceTreeGenerator._signature_parameter_types(
+                "void __thiscall ~Owner(Owner * this, char * text)"
+            ),
+            ("Owner *", "char *"),
+        )
+
+    def test_variadic_signature_keeps_fixed_parameter_boundary(self) -> None:
+        self.assertEqual(
+            SourceTreeGenerator._signature_parameter_spec(
+                "int __cdecl format(char * buffer, char * text, ...)"
+            ),
+            (("char *", "char *"), True),
+        )
+
+    def test_inline_assignment_expression_stops_at_comma(self) -> None:
+        text = "if ((value = nested(one, two), value != nullptr)) {"
+        start = text.index("=", text.index("value")) + 1
+        end = statement_expression_end(text, start)
+        self.assertEqual(text[start:end].strip(), "nested(one, two)")
+
+    def test_inline_assignment_pattern_rejects_casted_dereference(self) -> None:
+        pattern = re.compile(
+            r"(?<![A-Za-z0-9_*&.>\])])(?P<lhs>[A-Za-z_][A-Za-z0-9_]*)"
+            r"[ \t]*=[ \t]*(?!=)"
+        )
+        self.assertIsNone(pattern.search("*(undefined4 *)destination = source;"))
+        self.assertEqual(
+            pattern.search("if ((destination = source) != 0)").group("lhs"),
+            "destination",
+        )
 
 
 def primitive(path: str, name: str, length: int) -> dict:
@@ -58,6 +128,7 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         records = [
             primitive("/int", "int", 4),
             primitive("/undefined", "undefined", 1),
+            pointer("/int *", "/int"),
             pointer("/Owner *", "/Owner"),
             pointer("/Child *", "/Child"),
             pointer("/OwnerVTable *", "/OwnerVTable"),
@@ -127,8 +198,66 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertNotIn("undefined1 field_0x0;", header)
         self.assertEqual(emitter.materialized_gap_fields, 2)
 
+    def test_byte_pointer_is_a_neutral_storage_view(self) -> None:
+        records = self.records() + [
+            primitive("/byte", "byte", 1),
+            pointer("/byte *", "/byte"),
+        ]
+        emitter = TypeEmitter(records, [])
+        self.assertEqual(emitter.display_pointer_kind("byte *"), "generic")
+        self.assertEqual(
+            emitter.display_member_type("Child", "field1_0x1", False),
+            "undefined",
+        )
+        self.assertEqual(
+            emitter.display_member_type("Child", "field_0x2", False),
+            "undefined",
+        )
+
+    def test_exact_member_graph_recovers_nested_pointer_display(self) -> None:
+        records = self.records() + [
+            primitive("/void", "void", 1),
+            pointer("/void *", "/void"),
+            {
+                "path": "/Payload",
+                "name": "Payload",
+                "display_name": "Payload",
+                "class": "UnionDB",
+                "length": 4,
+                "detail": {"components": [
+                    component(0, 0, 4, "ptr", "/void *")
+                ]},
+            },
+            {
+                "path": "/Envelope",
+                "name": "Envelope",
+                "display_name": "Envelope",
+                "class": "StructureDB",
+                "length": 4,
+                "detail": {"components": [
+                    component(0, 0, 4, "payload", "/Payload")
+                ]},
+            },
+            pointer("/Envelope *", "/Envelope"),
+        ]
+        emitter = TypeEmitter(records, [])
+        self.assertEqual(
+            emitter.display_member_type("Envelope *", "payload", True),
+            "Payload",
+        )
+        self.assertEqual(
+            emitter.display_member_type("Payload", "ptr", False), "void *"
+        )
+        self.assertEqual(emitter.display_pointer_kind("code *"), "generic")
+
     def test_receiver_exact_non_virtual_member_wrapper(self) -> None:
         emitter = TypeEmitter(self.records(), [])
+        method_pointer = emitter.type_name("/Owner_method *")
+        self.assertEqual(emitter.display_type_expression(method_pointer), method_pointer)
+        self.assertEqual(
+            emitter.display_function_parameters(method_pointer),
+            ("Owner *", "int"),
+        )
         header = emitter.emit()
         self.assertIn("int method(int value);", header)
         self.assertIn("inline int Owner::method(int value)", header)
@@ -220,6 +349,111 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
             emitter.display_declaration("int[5]", "g_offsets"),
             "int g_offsets[5]",
         )
+        self.assertEqual(emitter.display_array_decay_type("int[5]"), "int *")
+
+    def test_offset_zero_member_is_an_exact_pointer_boundary(self) -> None:
+        records = self.records() + [
+            {
+                "path": "/OutputRecord",
+                "name": "OutputRecord",
+                "class": "StructureDB",
+                "length": 8,
+                "detail": {"components": [
+                    component(0, 0, 4, "count", "/int"),
+                    component(1, 4, 4, "value", "/int"),
+                ]},
+            },
+            pointer("/OutputRecord *", "/OutputRecord"),
+        ]
+        emitter = TypeEmitter(records, [])
+        self.assertEqual(
+            emitter.display_zero_member_for_pointer_conversion(
+                "OutputRecord *", "int *"
+            ),
+            "count",
+        )
+
+    def test_exact_four_byte_typedef_is_machine_word_scalar(self) -> None:
+        records = self.records()
+        next(item for item in records if item["path"] == "/int")["class"] = (
+            "IntegerDataType"
+        )
+        records += [
+            {
+                "path": "/uint", "name": "uint",
+                "class": "UnsignedIntegerDataType", "length": 4, "detail": {},
+            },
+            {
+                "path": "/api/HANDLE32",
+                "name": "HANDLE32",
+                "display_name": "HANDLE32",
+                "class": "TypedefDB",
+                "length": 4,
+                "detail": {"base_type": "/uint"},
+            },
+        ]
+        emitter = TypeEmitter(records, [])
+        self.assertTrue(emitter.display_machine_word_scalar("int"))
+        self.assertTrue(emitter.display_machine_word_scalar("HANDLE32"))
+        self.assertFalse(emitter.display_machine_word_scalar("Owner *"))
+
+    def test_raw_offset_resolves_to_existing_exact_member(self) -> None:
+        emitter = TypeEmitter(self.records(), [])
+        self.assertEqual(
+            emitter.display_member_name_at_offset("Owner *", 4, True),
+            "child",
+        )
+        self.assertIsNone(
+            emitter.display_member_name_at_offset("Owner *", 3, True)
+        )
+
+    def test_generated_anonymous_view_accepts_richer_exact_record(self) -> None:
+        records = self.records()
+        next(item for item in records if item["path"] == "/int")["class"] = (
+            "IntegerDataType"
+        )
+        records += [
+            {
+                "path": "/undefined4", "name": "undefined4",
+                "class": "Undefined4DataType", "length": 4, "detail": {},
+            },
+            {
+                "path": "/Recovered/Element",
+                "name": "Element",
+                "display_name": "Element",
+                "class": "StructureDB",
+                "length": 8,
+                "description": "[STDArrayElementApplier] generated",
+                "detail": {"components": [
+                    component(0, 0, 4, "value", "/int"),
+                    component(1, 4, 4, "child", "/Child *"),
+                ]},
+            },
+            {
+                "path": "/Recovered/PointerShapes/AnonShape_00102030_ABCD",
+                "name": "AnonShape_00102030_ABCD",
+                "display_name": "AnonShape_00102030_ABCD",
+                "class": "StructureDB",
+                "length": 8,
+                "description": "[STPointerShapeApplier] generated",
+                "detail": {"components": [
+                    component(0, 0, 4, "field_0000", "/undefined4"),
+                    component(1, 4, 4, "field_0004", "/Owner *"),
+                ]},
+            },
+            pointer("/Element *", "/Recovered/Element"),
+            pointer(
+                "/AnonView *",
+                "/Recovered/PointerShapes/AnonShape_00102030_ABCD",
+            ),
+        ]
+        emitter = TypeEmitter(records, [])
+        self.assertTrue(emitter.display_generated_record_view_compatible(
+            "Element *", "AnonView *"
+        ))
+        self.assertFalse(emitter.display_generated_record_view_compatible(
+            "AnonView *", "Element *"
+        ))
 
     def test_address_coded_function_survives_qualified_line_wrap(self) -> None:
         spelling = "SubmarineTitans::Recovered::\n  sub_00102030"
@@ -274,6 +508,18 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertIn("auto _param_3 = value * 2;", actual)
         self.assertEqual(generator.stats["tagged_lifetime_materializations"], 1)
 
+    def test_untagged_synthetic_lifetime_first_assignment_is_exact(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        body = (
+            "void fn(short param_1) {\n"
+            "  _param_1 = (Node *)(uint)(ushort)param_1;\n"
+            "  if (_param_1 != nullptr) use(_param_1);\n"
+            "}\n"
+        )
+        actual = generator._materialize_tagged_lifetimes("00102030", body)
+        self.assertIn("auto _param_1 = (Node *)(uint)(ushort)param_1;", actual)
+        self.assertEqual(generator.stats["tagged_lifetime_materializations"], 1)
+
     def test_tagged_lifetime_crossing_switch_label_stays_audit_only(self) -> None:
         generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
         body = (
@@ -289,6 +535,90 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         )
         actual = generator._materialize_tagged_lifetimes("00102030", body)
         self.assertNotIn("auto _local_8", actual)
+
+    def test_exact_utility_output_splits_dead_stack_parameter_lifetime(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.type_emitter = TypeEmitter([], [])
+        generator.function_by_address = {
+            "00102030": {
+                "address": "00102030",
+                "tags": ["RECOVERED_UTILITY_SEMANTICS"],
+                "parameters": [
+                    {"name": "array", "type": "DArrayTy *"},
+                    {"name": "index", "type": "uint"},
+                    {"name": "outElement", "type": "void *"},
+                ],
+                "signature": (
+                    "int __fastcall DArrayGetElement(DArrayTy * array, "
+                    "uint index, void * outElement)"
+                ),
+            },
+            "00102040": {
+                "address": "00102040",
+                "tags": [],
+                "parameters": [
+                    {"name": "this", "type": "STGroupBoatC *"},
+                    {"name": "mode", "type": "char"},
+                ],
+                "signature": (
+                    "void __thiscall UseBoat(STGroupBoatC * this, char mode)"
+                ),
+            },
+        }
+        function = {
+            "address": "00102020",
+            "signature": "void __stdcall owner(char param_1)",
+            "parameters": [{"name": "param_1", "type": "char"}],
+        }
+        body = (
+            "void st::fn_00102020(char param_1) {\n"
+            "  if (ready) {\n"
+            "    st::fn_00102030(array,index,&param_1);\n"
+            "    if (_param_1 != nullptr) {\n"
+            "      st::fn_00102040(_param_1,1);\n"
+            "    }\n"
+            "  }\n"
+            "}\n"
+        )
+        actual = generator._materialize_exact_output_lifetimes(
+            "00102020", function, body
+        )
+        self.assertIn("STGroupBoatC * _param_1 = nullptr;", actual)
+        self.assertIn("st::fn_00102030(array,index,&_param_1);", actual)
+        self.assertEqual(
+            generator.stats["exact_output_lifetime_materializations"], 1
+        )
+
+    def test_exact_utility_output_uses_concrete_function_return_type(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.type_emitter = TypeEmitter([], [])
+        generator.function_by_address = {
+            "00102030": {
+                "address": "00102030",
+                "tags": ["RECOVERED_UTILITY_SEMANTICS"],
+                "parameters": [
+                    {"name": "array", "type": "DArrayTy *"},
+                    {"name": "index", "type": "uint"},
+                    {"name": "outElement", "type": "void *"},
+                ],
+            },
+        }
+        function = {
+            "address": "00102020",
+            "signature": "STGroupBoatC * __stdcall owner(char param_1)",
+            "parameters": [{"name": "param_1", "type": "char"}],
+        }
+        body = (
+            "STGroupBoatC * st::fn_00102020(char param_1) {\n"
+            "  st::fn_00102030(array,index,&param_1);\n"
+            "  return _param_1;\n"
+            "}\n"
+        )
+        actual = generator._materialize_exact_output_lifetimes(
+            "00102020", function, body
+        )
+        self.assertIn("STGroupBoatC * _param_1 = nullptr;", actual)
+        self.assertIn("st::fn_00102030(array,index,&_param_1);", actual)
 
     def test_overload_is_resolved_only_by_unique_exported_arity(self) -> None:
         generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))

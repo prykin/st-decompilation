@@ -6,6 +6,7 @@
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.List;
 
 import ghidra.app.script.GhidraScript;
@@ -29,52 +30,74 @@ public class STLibraryApplier extends GhidraScript {
         if (lines.isEmpty() || !lines.get(0).startsWith("apply\taddress\told_name\tlibrary\t"))
             throw new IllegalArgumentException("Not an STLibraryAnalyzer library_proposals.tsv file");
 
-        int transaction = currentProgram.startTransaction("Apply library classifications");
-        boolean commit = false;
-        int applied = 0, namespaced = 0, ownerPreserved = 0, skipped = 0, failed = 0;
-        try {
-            for (int i = 1; i < lines.size(); i++) {
-                monitor.checkCancelled();
-                if (lines.get(i).isBlank()) continue;
-                String[] c = lines.get(i).split("\t", -1);
-                if (c.length < 8 || !"1".equals(c[0])) { skipped++; continue; }
-                try {
-                    Address address = currentProgram.getAddressFactory().getAddress(c[1]);
-                    Function function = currentProgram.getFunctionManager().getFunctionAt(address);
-                    if (function == null || function.isExternal()) { failed++; continue; }
-                    String oldName = unt(c[2]);
-                    String library = unt(c[3]);
-                    String namespace = unt(c[4]);
-                    String evidence = unt(c[6]);
-                    if (!safeToApply(function, oldName)) {
-                        printerr("Name changed since analysis; skipping " + c[1] + ": " + function.getName(true));
-                        failed++; continue;
-                    }
+        List<Selection> selections = new ArrayList<>();
+        int skipped = 0, failed = 0;
+        for (int i = 1; i < lines.size(); i++) {
+            monitor.checkCancelled();
+            if (lines.get(i).isBlank()) continue;
+            String[] c = lines.get(i).split("\t", -1);
+            if (c.length < 8 || !"1".equals(c[0])) { skipped++; continue; }
+            try {
+                Address address = currentProgram.getAddressFactory().getAddress(c[1]);
+                Function function = currentProgram.getFunctionManager().getFunctionAt(address);
+                if (function == null || function.isExternal()) { failed++; continue; }
+                String oldName = unt(c[2]);
+                Selection selection = new Selection(function, unt(c[3]), unt(c[4]), unt(c[6]));
+                if (!safeToApply(function, oldName) && needsChange(selection)) {
+                    printerr("Name changed since analysis; skipping " + c[1] + ": " +
+                        function.getName(true));
+                    failed++;
+                    continue;
+                }
+                // A proposal can become name-stale after a later, independently safe
+                // library demangle.  If namespace/tags/comments already equal the desired
+                // classification, retain it as an idempotent unchanged row instead of
+                // manufacturing a conflict which no mutation is needed to resolve.
+                selections.add(selection);
+            }
+            catch (Exception e) {
+                printerr("Line " + (i + 1) + " failed: " + e.getMessage());
+                failed++;
+            }
+        }
+
+        int applied = 0, unchanged = 0, namespaced = 0, ownerPreserved = 0;
+        boolean anyChange = selections.stream().anyMatch(this::needsChange);
+        if (anyChange) {
+            int transaction = currentProgram.startTransaction("Apply library classifications");
+            boolean commit = false;
+            try {
+                for (Selection selection : selections) {
+                    monitor.checkCancelled();
+                    if (!needsChange(selection)) { unchanged++; continue; }
+                    Function function = selection.function;
                     Namespace currentParent = function.getParentNamespace();
-                    if (currentParent.isGlobal() ||
-                            currentParent.getName(true).startsWith("Library::")) {
-                        function.setParentNamespace(getOrCreateNamespace(namespace));
-                        namespaced++;
+                    if (namespaceEligible(currentParent)) {
+                        Namespace desired = getOrCreateNamespace(selection.namespace);
+                        if (!currentParent.equals(desired)) {
+                            function.setParentNamespace(desired);
+                            namespaced++;
+                        }
                     }
-                    else {
-                        // A source module is orthogonal to a recovered C++ owner.  Keep
-                        // cMf32::RecGet (for example) intact and express the library
-                        // classification through tags/comments instead of flattening it.
-                        ownerPreserved++;
-                    }
-                    function.addTag(TAG);
-                    function.addTag("LIBRARY_" + library);
-                    addComment(function, library, evidence);
+                    else ownerPreserved++;
+                    if (!hasTag(function, TAG)) function.addTag(TAG);
+                    String libraryTag = "LIBRARY_" + selection.library;
+                    if (!hasTag(function, libraryTag)) function.addTag(libraryTag);
+                    addComment(function, selection.library, selection.evidence);
                     applied++;
                 }
-                catch (Exception e) { printerr("Line " + (i + 1) + " failed: " + e.getMessage()); failed++; }
+                commit = true;
             }
-            commit = true;
+            finally { currentProgram.endTransaction(transaction, commit); }
         }
-        finally { currentProgram.endTransaction(transaction, commit); }
+        else {
+            unchanged = selections.size();
+            for (Selection selection : selections)
+                if (!namespaceEligible(selection.function.getParentNamespace())) ownerPreserved++;
+        }
         println("Library classifications applied: " + applied + ", namespaced: " +
             namespaced + ", class/owner namespaces preserved: " + ownerPreserved +
-            ", skipped: " + skipped + ", failed: " + failed);
+            ", unchanged: " + unchanged + ", skipped: " + skipped + ", failed: " + failed);
     }
 
     private File proposalFile() throws Exception {
@@ -98,6 +121,40 @@ public class STLibraryApplier extends GhidraScript {
             parent = existing;
         }
         return parent;
+    }
+
+    private Namespace findNamespace(String qualified) {
+        SymbolTable table = currentProgram.getSymbolTable();
+        Namespace parent = currentProgram.getGlobalNamespace();
+        for (String part : qualified.split("::")) {
+            parent = table.getNamespace(part, parent);
+            if (parent == null) return null;
+        }
+        return parent;
+    }
+
+    private boolean needsChange(Selection selection) {
+        Function function = selection.function;
+        Namespace currentParent = function.getParentNamespace();
+        if (namespaceEligible(currentParent)) {
+            Namespace desired = findNamespace(selection.namespace);
+            if (desired == null || !currentParent.equals(desired)) return true;
+        }
+        if (!hasTag(function, TAG) || !hasTag(function, "LIBRARY_" + selection.library))
+            return true;
+        String marker = "Statically linked library function [" + selection.library + "]";
+        String comment = function.getComment();
+        String repeatable = function.getRepeatableComment();
+        return comment == null || !comment.contains(marker) ||
+            repeatable == null || !repeatable.contains(marker);
+    }
+
+    private boolean namespaceEligible(Namespace namespace) {
+        return namespace.isGlobal() || namespace.getName(true).startsWith("Library::");
+    }
+
+    private boolean hasTag(Function function, String name) {
+        return function.getTags().stream().anyMatch(tag -> name.equals(tag.getName()));
     }
 
     private void addComment(Function function, String library, String evidence) {
@@ -126,4 +183,7 @@ public class STLibraryApplier extends GhidraScript {
         if (escaped) out.append('\\');
         return out.toString();
     }
+
+    private record Selection(Function function, String library, String namespace,
+        String evidence) { }
 }

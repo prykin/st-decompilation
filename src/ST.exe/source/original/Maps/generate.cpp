@@ -39,8 +39,8 @@ undefined4 __thiscall st::fn_006A01D0(CGenerate *this)
   this_00 = local_10;
   if (local_EAX_42 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Maps\\generate.cpp",0x72,0,local_EAX_42,
-                               "%s","CGenerate::CreateMap");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Maps\\generate.cpp"),0x72,0,local_EAX_42,
+                               st::mutable_c_string("%s"),"CGenerate::CreateMap");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -61,10 +61,10 @@ undefined4 __thiscall st::fn_006A01D0(CGenerate *this)
   } while (cVar1 != '\0');
   uVar8 = ~uVar8;
   pcVar10 = pcVar11 + -uVar8;
-  pcVar11 = &local_10->field_0x53f3;
+  pcVar11 = st::pointer_boundary_cast<char *>(&local_10->field_0x53f3);
   memmove(pcVar11, pcVar10, uVar8); /* compiler REP MOVS byte copy */
   local_8 = nullptr;
-  st::fn_006F1CE0(*(cMf32 **)&(local_10->aggregate_001C).field_0x218,0xc,"TEXTURE_DSCR",
+  st::fn_006F1CE0(*(cMf32 **)&(local_10->aggregate_001C).field_0x218,0xc,st::mutable_c_string("TEXTURE_DSCR"),
                 (int *)&local_8,1);
   st::fn_00404633(*local_8);
   st::fn_006F20E0(*(cMf32 **)&(this_00->aggregate_001C).field_0x218,(uint *)&local_8);
@@ -82,10 +82,10 @@ undefined4 __thiscall st::fn_006A01D0(CGenerate *this)
   piVar5 = st::fn_006F0620((short *)this_00->field_000C);
   this_00->field_0008 = piVar5;
   st::fn_00404A43(this_00);
-  st::fn_00401CB2(1,this_00->field_0008);
+  st::fn_00401CB2(1,st::pointer_boundary_cast<int *>(this_00->field_0008));
   st::fn_00404A43(this_00);
   local_EAX_314 =
-       st::fn_006F0C00((short *)this_00->field_000C,this_00->field_0008);
+       st::fn_006F0C00((short *)this_00->field_000C,st::pointer_boundary_cast<int *>(this_00->field_0008));
   if (local_EAX_314 != 0) {
     local_c = 0;
   }
@@ -143,8 +143,8 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   this_00 = local_10;
   if (local_EAX_42 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Maps\\generate.cpp",0xcd,0,local_EAX_42,
-                               "%s","CGenerate::SaveMap");
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Maps\\generate.cpp"),0xcd,0,local_EAX_42,
+                               st::mutable_c_string("%s"),"CGenerate::SaveMap");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -152,7 +152,7 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   }
   local_10->field_570B = 0x32;
   iVar3 = st::fn_00402103
-                    ((AnonReceiver_00693D00 *)&local_10->field_0x24e,local_10->field_0018,
+                    ((AnonReceiver_00693D00 *)&local_10->field_0x24e,st::pointer_boundary_cast<cMf32 *>(local_10->field_0018),
                      DAT_00853de0);
   if (iVar3 == 0) {
     local_8 = 0;
@@ -169,21 +169,21 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   } while (cVar9 != '\0');
   uVar4 = ~uVar4;
   pcVar6 = pcVar6 + -uVar4;
-  pcVar7 = &this_00->field_0x55fb;
+  pcVar7 = st::pointer_boundary_cast<char *>(&this_00->field_0x55fb);
   memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
-  st::fn_006F13F0(this_00->field_0018,0,PTR_s_TITLE_MISSION_0079d838,&this_00->field_0x55fb,0x104,
+  st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this_00->field_0018),0,PTR_s_TITLE_MISSION_0079d838,st::pointer_boundary_cast<byte *>(&this_00->field_0x55fb),0x104,
                 nullptr,'\0',nullptr);
-  st::fn_006F13F0(this_00->field_0018,0,PTR_s_TEXTURE_0079d83c,&this_00->field_0x53f3,0x104,
+  st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this_00->field_0018),0,PTR_s_TEXTURE_0079d83c,st::pointer_boundary_cast<byte *>(&this_00->field_0x53f3),0x104,
                 nullptr,'\0',nullptr);
   local_EAX_218 =
-       st::fn_006F0C00((short *)this_00->field_000C,this_00->field_0008);
+       st::fn_006F0C00((short *)this_00->field_000C,st::pointer_boundary_cast<int *>(this_00->field_0008));
   if (local_EAX_218 != 0) {
     local_8 = 0;
   }
   this_00->field_000C[4] = 0x20;
   local_EAX_254 =
        st::fn_006EFDB0
-                 ((short *)this_00->field_000C,(int)this_00->field_0018,"3D_MAP",'\0');
+                 ((short *)this_00->field_000C,(int)this_00->field_0018,st::mutable_c_string("3D_MAP"),'\0');
   if (local_EAX_254 != 0) {
     local_8 = 0;
   }
@@ -198,7 +198,7 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   cVar9 = '\0';
   puVar8 = nullptr;
   uVar4 = st::fn_006B5050(local_c);
-  st::fn_006F13F0(this_00->field_0018,0xc,PTR_s_SMALL_MAP_0079d840,(byte *)local_c,uVar4,puVar8,cVar9,
+  st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this_00->field_0018),0xc,PTR_s_SMALL_MAP_0079d840,(byte *)local_c,uVar4,puVar8,cVar9,
                 puVar10);
   if (local_c != nullptr) {
     st::fn_006AB060(&local_c);
@@ -230,7 +230,7 @@ undefined4 __thiscall st::fn_006A0960(CGenerate *this)
     return local_8;
   }
   g_currentExceptionFrame = pIVar2;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Maps\\generate.cpp",0xe0,0,iVar3,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Maps\\generate.cpp"),0xe0,0,iVar3,st::mutable_c_string("%s"),
                              "CGenerate::_saveObj");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */

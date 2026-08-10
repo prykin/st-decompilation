@@ -95,17 +95,17 @@ st::fn_0057A2C0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,s
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = &DAT_0079b3a8;
-  puStack_10 = &st_image_0072D964;
+  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079b3a8);
+  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  local_1c = &stack0xfffffec8;
+  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffec8);
   local_f0 = nullptr;
   ExceptionList = &local_14;
   pvVar9 = st::fn_006AAC70(param_2 * 8);
   *param_3 = (int)pvVar9;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((pvVar9 == nullptr) || (param_2 == 0)) || ((param_2 != 5 && (param_2 != 7)))) {
-    iVar20 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_etorp.cpp",0x4c,0,0,"%s",
+    iVar20 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_etorp.cpp"),0x4c,0,0,st::mutable_c_string("%s"),
                                 "ConusExplosion:Bad parameters or memory error");
     if (iVar20 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -226,7 +226,7 @@ LAB_0057ac02:
         }
         local_8 = 0;
         st::fn_0072DA40();
-        local_1c = &stack0xfffffec8;
+        local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffec8);
         puVar26 = (undefined4 *)&stack0xfffffec8;
         for (uVar13 = param_2 & 0x3fffffff; uVar13 != 0; uVar13 = uVar13 - 1) {
           *puVar26 = 0;
@@ -341,8 +341,8 @@ LAB_0057ac02:
           local_8 = 0xffffffff;
           local_d8 = 0;
           local_74 = 0;
-          local_cc = &stack0xfffffec8;
-          local_1c = &stack0xfffffec8;
+          local_cc = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffec8);
+          local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffec8);
           do {
             local_80 = local_58;
             iVar10 = iVar16;
@@ -410,7 +410,7 @@ LAB_0057a96b:
                                                 (int)local_b4[0],(int)local_e8[0],(int)local_20[0]),
                          iVar15 * 0x324 <= iVar14 * local_c4 * 2)) {
                         puVar26 = (undefined4 *)(local_cc + local_d8 * 0x2c);
-                        *puVar26 = this[1].vtable;
+                        *puVar26 = st::machine_word_boundary_cast<undefined4>(this[1].vtable);
                         STField<undefined4>(puVar26,0x26) = *(undefined4 *)&this->field_0x18;
                         STField<undefined2>(puVar26,0x2a) = *(undefined2 *)&this[1].field_0xe;
                         STField<STWorldObject *>(puVar26,0x1a) = this;
@@ -437,14 +437,14 @@ LAB_0057a96b:
             }
             local_74 = local_74 + 1;
           } while (local_74 < 5);
-          local_f0 = &stack0xfffffec8;
+          local_f0 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffec8);
           if (local_d8 != 0) {
             local_c8 = (int)param_7 % local_d8;
             iVar20 = 0;
-            local_f0 = &stack0xfffffec8;
+            local_f0 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffec8);
             if (0 < local_d8) {
               do {
-                local_f0 = &stack0xfffffec8;
+                local_f0 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffec8);
                 if ((int)param_2 <= iVar20) break;
                 iVar25 = local_c8 + iVar20;
                 if (local_d8 <= iVar25) {
@@ -469,7 +469,7 @@ LAB_0057a96b:
                 *(undefined2 *)(*param_3 + 6 + iVar20 * 8) = uVar8;
                 *(undefined4 *)(&stack0xfffffec8 + iVar20 * 4) = 1;
                 iVar20 = iVar20 + 1;
-                local_f0 = &stack0xfffffec8;
+                local_f0 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffec8);
               } while (iVar20 < local_d8);
             }
           }
@@ -512,7 +512,7 @@ undefined4 __cdecl st::fn_0057B350(int *param_1,int param_2,int *param_3)
 
   piVar5 = param_1;
   if ((param_2 < 0x1a) || (0x23 < param_2)) {
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_etorp.cpp",0x156,0,0,"%s",
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_etorp.cpp"),0x156,0,0,st::mutable_c_string("%s"),
                                "ConusExplosion:Wrong number of torppedos (min 26, max 35)");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -613,8 +613,8 @@ undefined4 __cdecl st::fn_0057B350(int *param_1,int param_2,int *param_3)
         }
       } while( true );
     }
-    local_EAX_70 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_etorp.cpp",0x15d,0,0,
-                                      "%s","SphereExplosion:Bad parameters");
+    local_EAX_70 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_etorp.cpp"),0x15d,0,0,
+                                      st::mutable_c_string("%s"),"SphereExplosion:Bad parameters");
     if (local_EAX_70 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

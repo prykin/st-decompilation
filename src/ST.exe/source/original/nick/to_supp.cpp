@@ -93,7 +93,7 @@ void __thiscall st::fn_00632A00(STTeamLissagC *this)
       local_1c = 0;
       if (0 < (int)local_24) {
         do {
-          pDVar1 = pSVar6->field_0000;
+          pDVar1 = st::pointer_boundary_cast<DArrayTy *>(pSVar6->field_0000);
           if (local_1c < pDVar1->count) {
             piVar7 = DArrayAt<int>(pDVar1, local_1c);
           }
@@ -154,10 +154,10 @@ void __thiscall st::fn_00632A00(STTeamLissagC *this)
     return;
   }
   g_currentExceptionFrame = local_68.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\nick\\to_supp.cpp",0x1bd,0,iVar3,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_supp.cpp"),0x1bd,0,iVar3,st::mutable_c_string("%s"),
                              "STTeamLissagC::InitVisibelSystem");
   if (iVar5 == 0) {
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_supp.cpp",0x1bf);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\nick\\to_supp.cpp"),0x1bf);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

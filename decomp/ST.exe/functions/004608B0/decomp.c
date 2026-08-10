@@ -31,13 +31,13 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
   int local_EAX_4703;
   int local_EAX_4798;
   int iVar10;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
   uint uVar11;
   undefined2 *puVar12;
@@ -117,7 +117,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
       pSVar8 = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)&this->field_0487,
                           *(ushort *)&this->field_048B,this->field_0483);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       iVar9 = thunk_FUN_00483300((int *)this,extraout_EDX_00);
       switch(iVar9) {
       case 0:
@@ -135,8 +135,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
           if (this->field_07A2 < 1) {
             return 2;
           }
-          puVar9 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_3c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1],
+          puVar9 = thunk_FUN_0041dc40(local_3c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1],
                                       this->field_006C);
           sStack_32 = (short)((uint)*puVar9 >> 0x10);
           local_64.field_000E = (short)*puVar9 + this->field_0041;
@@ -144,7 +143,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
           local_64.field_0012 = this->field_0045 + *(short *)(puVar9 + 1);
           sStack_32 = *puVar12;
           local_34 = 0;
-          puVar9 = (undefined4 *)thunk_FUN_0041dc40(local_2c,0,0,this->field_006C);
+          puVar9 = thunk_FUN_0041dc40(local_2c,0,0,this->field_006C);
           local_34 = (short)*puVar9;
           sStack_32 = (short)((uint)*puVar9 >> 0x10);
           local_30 = *(undefined2 *)(puVar9 + 1);
@@ -152,9 +151,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
           local_64.field_0016 = (short)local_18 - sStack_32;
           local_64.field_0000 = this->field_0024;
           local_64.field_0018 = (short)local_1c;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_64.field_0022 =
-               (-(uint)(*(int *)((int)this->field_06CB + 0x2c) != 10) & 0xfffffffe) + 1;
+          local_64.field_0022 = (-(uint)(this->field_06F7 != CASE_A) & 0xfffffffe) + 1;
           if (iVar9 == 10) {
             local_64.field_0004 = 0xa1;
           }
@@ -225,7 +222,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
         pSVar8 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,*(char *)&this->field_0487,
                             *(ushort *)&this->field_048B,this->field_0483);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         local_EAX_3491 = thunk_FUN_00483300((int *)this,extraout_EDX_01);
         switch(local_EAX_3491) {
         case 0:
@@ -239,8 +236,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
             puVar12 = (undefined2 *)&this->field_0x2a8;
             do {
               if (this->field_07A2 < 1) break;
-              puVar9 = (undefined4 *)
-                       thunk_FUN_0041dc40(local_3c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1],
+              puVar9 = thunk_FUN_0041dc40(local_3c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1],
                                           this->field_006C);
               sStack_32 = (short)((uint)*puVar9 >> 0x10);
               local_64.field_000E = (short)*puVar9 + this->field_0041;
@@ -248,7 +244,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
               local_64.field_0012 = this->field_0045 + *(short *)(puVar9 + 1);
               sStack_32 = *puVar12;
               local_34 = 0;
-              puVar9 = (undefined4 *)thunk_FUN_0041dc40(local_2c,0,0,this->field_006C);
+              puVar9 = thunk_FUN_0041dc40(local_2c,0,0,this->field_006C);
               local_34 = (short)*puVar9;
               sStack_32 = (short)((uint)*puVar9 >> 0x10);
               local_30 = *(undefined2 *)(puVar9 + 1);
@@ -256,9 +252,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
               local_64.field_0016 = (short)local_18 - sStack_32;
               local_64.field_0000 = this->field_0024;
               local_64.field_0018 = (short)local_1c;
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_64.field_0022 =
-                   (-(uint)(*(int *)((int)this->field_06CB + 0x2c) != 10) & 0xfffffffe) + 1;
+              local_64.field_0022 = (-(uint)(this->field_06F7 != CASE_A) & 0xfffffffe) + 1;
               if (local_EAX_3491 == 10) {
                 local_64.field_0004 = 0xa1;
               }
@@ -316,7 +310,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
           pSVar8 = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,*(char *)&this->field_0487,
                               *(ushort *)&this->field_048B,this->field_0483);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           local_EAX_4152 = thunk_FUN_00483300((int *)this,extraout_EDX_02);
           switch(local_EAX_4152) {
           case 0:
@@ -329,8 +323,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
             if (this->field_02B2 != '\0') {
               puVar12 = (undefined2 *)&this->field_0x2a8;
               while (0 < this->field_07A2) {
-                puVar9 = (undefined4 *)
-                         thunk_FUN_0041dc40(local_3c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1]
+                puVar9 = thunk_FUN_0041dc40(local_3c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1]
                                             ,this->field_006C);
                 sStack_32 = (short)((uint)*puVar9 >> 0x10);
                 local_64.field_000E = (short)*puVar9 + this->field_0041;
@@ -338,7 +331,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
                 local_64.field_0012 = this->field_0045 + *(short *)(puVar9 + 1);
                 sStack_32 = *puVar12;
                 local_34 = 0;
-                puVar9 = (undefined4 *)thunk_FUN_0041dc40(local_2c,0,0,this->field_006C);
+                puVar9 = thunk_FUN_0041dc40(local_2c,0,0,this->field_006C);
                 local_34 = (short)*puVar9;
                 sStack_32 = (short)((uint)*puVar9 >> 0x10);
                 local_30 = *(undefined2 *)(puVar9 + 1);
@@ -346,9 +339,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
                 local_64.field_0016 = (short)local_18 - sStack_32;
                 local_64.field_0000 = this->field_0024;
                 local_64.field_0018 = (short)local_1c;
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                local_64.field_0022 =
-                     (-(uint)(*(int *)((int)this->field_06CB + 0x2c) != 10) & 0xfffffffe) + 1;
+                local_64.field_0022 = (-(uint)(this->field_06F7 != CASE_A) & 0xfffffffe) + 1;
                 if (local_EAX_4152 == 10) {
                   local_64.field_0004 = 0xa1;
                 }
@@ -572,7 +563,7 @@ LAB_00460d94:
     pSVar8 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,*(char *)&this->field_0487,
                         *(ushort *)&this->field_048B,this->field_0483);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     local_EAX_1396 = thunk_FUN_00483300((int *)this,extraout_EDX);
     switch(local_EAX_1396) {
     case 0:
@@ -586,8 +577,7 @@ LAB_00460d94:
         puVar12 = (undefined2 *)&this->field_0x2a8;
         do {
           if (this->field_07A2 < 1) break;
-          puVar9 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_2c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1],
+          puVar9 = thunk_FUN_0041dc40(local_2c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1],
                                       this->field_006C);
           sStack_32 = (short)((uint)*puVar9 >> 0x10);
           local_64.field_000E = (short)*puVar9 + this->field_0041;
@@ -595,7 +585,7 @@ LAB_00460d94:
           local_64.field_0012 = this->field_0045 + *(short *)(puVar9 + 1);
           sStack_32 = *puVar12;
           local_34 = 0;
-          puVar9 = (undefined4 *)thunk_FUN_0041dc40(local_3c,0,0,this->field_006C);
+          puVar9 = thunk_FUN_0041dc40(local_3c,0,0,this->field_006C);
           local_34 = (short)*puVar9;
           sStack_32 = (short)((uint)*puVar9 >> 0x10);
           local_30 = *(undefined2 *)(puVar9 + 1);
@@ -603,9 +593,7 @@ LAB_00460d94:
           local_64.field_0016 = (short)local_18 - sStack_32;
           local_64.field_0000 = this->field_0024;
           local_64.field_0018 = (short)local_1c;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_64.field_0022 =
-               (-(uint)(*(int *)((int)this->field_06CB + 0x2c) != 10) & 0xfffffffe) + 1;
+          local_64.field_0022 = (-(uint)(this->field_06F7 != CASE_A) & 0xfffffffe) + 1;
           if (local_EAX_1396 == 10) {
             local_64.field_0004 = 0xa1;
           }

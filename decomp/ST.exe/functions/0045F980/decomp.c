@@ -48,9 +48,7 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
        (iVar3 = DumpClassC::WritePtr
                           (local_8[0],local_c[0],local_10[0],param_1->field_008E,
                            (RecoveredRecord_DumpClassC_00495EC0 *)param_1), iVar3 == 0)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      TLOEmbryoTy::sub_0041C3F0
-                ((TLOEmbryoTy *)param_1,*(undefined **)((int)param_1->field_06CB + 0x3f));
+      TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)param_1,(undefined *)param_1->field_070A);
       thunk_FUN_004168b0((int)param_1);
       return 0;
     }

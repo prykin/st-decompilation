@@ -2725,7 +2725,7 @@ void __thiscall st::fn_0065D940(void *this,DArrayTy *param_1,int param_2)
         objPtr = st::fn_004028BA
                            (g_allPlayers_007FA174,STField<char>(this,0x24),*puVar1,CASE_1);
         if (objPtr != nullptr) {
-          st::fn_00404200(this,(uint)objPtr,param_2);
+          st::fn_00404200(st::pointer_boundary_cast<AiFltClassTy *>(this),(uint)objPtr,param_2);
         }
         uVar2 = uVar2 + 1;
         bVar3 = uVar2 < param_1->count;
@@ -3408,7 +3408,7 @@ st::fn_0065E9A0(void *this,short *param_1,short *param_2,uint param_3,uint param
   local_10 = this;
   uVar2 = st::fn_00401E7E((char)psVar4);
   if (uVar2 != 0) {
-    local_8 = st::fn_006AAC10((uint)uVar2 * 0x2c);
+    local_8 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)uVar2 * 0x2c));
     DAT_00811900 = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((char)param_6 == '\b') {
@@ -3419,7 +3419,7 @@ st::fn_0065E9A0(void *this,short *param_1,short *param_2,uint param_3,uint param
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = STReplaceLowByte((uint32_t)(param_6), (uint8_t)(0xff));
     }
-    st::fn_004012F8(psVar4,param_3,param_4,param_5,(char)param_6,0,0,0,-1,-1,-1,st::fn_0040559C,
+    st::fn_004012F8(st::machine_word_boundary_cast<undefined4>(psVar4),param_3,param_4,param_5,(char)param_6,0,0,0,-1,-1,-1,st::pointer_boundary_cast<undefined *>(st::fn_0040559C),
                local_8,(undefined *)(~-(uint)(param_7 != 0) & 0x404935));
     if (DAT_00811900 != 0) {
       iVar3 = st::fn_00402423((void *)((int)local_10 + 0x1c),(int *)local_8,DAT_00811900);
@@ -3481,7 +3481,7 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
         local_8 = 0;
       }
       else {
-        local_c = st::fn_006AAC10((uint)uVar1 * 0x2c);
+        local_c = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)uVar1 * 0x2c));
         DAT_00811900 = 0;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((char)param_7 == '\b') {
@@ -3492,7 +3492,7 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(0xff));
         }
-        st::fn_004012F8(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,st::fn_0040559C,
+        st::fn_004012F8(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,st::pointer_boundary_cast<undefined *>(st::fn_0040559C),
                    local_c,nullptr);
         if (DAT_00811900 == 0) {
           local_8 = 0;
@@ -3584,7 +3584,7 @@ undefined4 __fastcall st::fn_0065EF70(AnonShape_0065EF70_E78A8204 *param_1)
              ((g_playSystem_00802A38 == nullptr || (*pbVar7 < 8)))) {
             bVar1 = local_8->field_0024;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            _local_c = CONCAT31(uStack_b,bVar1);
+            auto _local_c = CONCAT31(uStack_b,bVar1);
             if (DAT_00808a8f == '\0') {
               if (bVar5 == bVar1) {
 LAB_0065f095:
@@ -3678,7 +3678,7 @@ uint * st::fn_0065F840(DArrayTy *param_1,uint param_2,int param_3)
       do {
         if (param_3 <= (int)(uVar4 - param_2)) {
           g_currentExceptionFrame = local_54.previous;
-          return &array->flags;
+          return st::pointer_boundary_cast<uint *>(&array->flags);
         }
         if (uVar4 < uVar2) {
           puVar3 = DArrayAt<undefined4>(param_1, uVar4);
@@ -3694,7 +3694,7 @@ uint * st::fn_0065F840(DArrayTy *param_1,uint param_2,int param_3)
       } while ((int)uVar4 < (int)uVar2);
     }
     g_currentExceptionFrame = local_54.previous;
-    return &array->flags;
+    return st::pointer_boundary_cast<uint *>(&array->flags);
   }
   return nullptr;
 }

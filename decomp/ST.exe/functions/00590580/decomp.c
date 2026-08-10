@@ -18,10 +18,10 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
   int iVar5;
   StartServTy *this_00;
   StartServTy *this_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   StartServTy *extraout_ECX;
   StartServTy *this_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   StartServTy *extraout_ECX_00;
   StartServTy *this_03;
   int iVar4;
@@ -59,7 +59,7 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
       iVar7 = 800;
       iVar6 = 0x1cc;
       iVar4 = 0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       this_03 = extraout_ECX_00;
     }
     else {
@@ -81,7 +81,7 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
       iVar7 = 0x302;
       iVar6 = 0x172;
       iVar4 = 0x14;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       this_03 = extraout_ECX;
     }
     StartServTy::WrTextDDX(this_03,0,iVar4,iVar6,iVar7,iVar8,pcVar3,uVar10,uVar12,pcVar11,uVar9);

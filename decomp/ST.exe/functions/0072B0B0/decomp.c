@@ -51,7 +51,7 @@ void FUN_0072b0b0(void)
   ExceptionList = &local_14;
   iVar4 = FUN_006bbe40(*(int **)(*DAT_00857134 + 0x44),&local_24,(int *)&local_20,0);
   if (iVar4 == 0) {
-    if ((*DAT_00857118 & 1) == 0) {
+    if ((*PTR_00857118 & 1) == 0) {
       iVar4 = -1;
       local_5c = 0xffffffff;
       local_68 = -1;
@@ -59,38 +59,38 @@ void FUN_0072b0b0(void)
     }
     else {
       local_8 = 0;
-      CopyRows((byte *)(DAT_00857118[2] * (int)local_20 + DAT_00857118[1] + local_24),(int)local_20,
-               (byte *)DAT_00857118[0x30],DAT_00857118[3],DAT_00857118[3],DAT_00857118[4]);
+      CopyRows((byte *)(PTR_00857118[2] * (int)local_20 + PTR_00857118[1] + local_24),(int)local_20,
+               (byte *)PTR_00857118[0x30],PTR_00857118[3],PTR_00857118[3],PTR_00857118[4]);
       local_8 = 0xffffffff;
-      local_5c = DAT_00857118[1];
-      local_68 = DAT_00857118[3] + local_5c;
-      local_80 = DAT_00857118[2];
-      iVar4 = DAT_00857118[4] + local_80;
+      local_5c = PTR_00857118[1];
+      local_68 = PTR_00857118[3] + local_5c;
+      local_80 = PTR_00857118[2];
+      iVar4 = PTR_00857118[4] + local_80;
     }
-    *DAT_00857118 = *DAT_00857118 & 0xfffffffe;
+    *PTR_00857118 = *PTR_00857118 & 0xfffffffe;
     local_38 = 0;
     local_34 = 0;
     local_30 = 0;
     local_2c = 0;
-    piVar1 = DAT_00857134 + DAT_00857118[0x14] * 4 + 5;
-    DAT_00857118[10] = DAT_00857118[10] + DAT_00857134[DAT_00857118[0x14] * 2 + 0x47];
-    DAT_00857118[0xb] = DAT_00857118[0xb] + DAT_00857134[DAT_00857118[0x14] * 2 + 0x48];
-    DAT_00857118[6] = DAT_00857118[6] + DAT_00857134[DAT_00857118[0x14] * 2 + 0x47];
-    DAT_00857118[7] = DAT_00857118[7] + DAT_00857134[DAT_00857118[0x14] * 2 + 0x48];
+    piVar1 = DAT_00857134 + PTR_00857118[0x14] * 4 + 5;
+    PTR_00857118[10] = PTR_00857118[10] + DAT_00857134[PTR_00857118[0x14] * 2 + 0x47];
+    PTR_00857118[0xb] = PTR_00857118[0xb] + DAT_00857134[PTR_00857118[0x14] * 2 + 0x48];
+    PTR_00857118[6] = PTR_00857118[6] + DAT_00857134[PTR_00857118[0x14] * 2 + 0x47];
+    PTR_00857118[7] = PTR_00857118[7] + DAT_00857134[PTR_00857118[0x14] * 2 + 0x48];
     local_84 = iVar4;
-    if ((*DAT_00857118 & 0x20) != 0) {
-      if (DAT_00857118[8] == 0xffffffff) {
-        FUN_006cf950(DAT_00857118);
+    if ((*PTR_00857118 & 0x20) != 0) {
+      if (PTR_00857118[8] == 0xffffffff) {
+        FUN_006cf950(PTR_00857118);
       }
-      if (((0 < (int)DAT_00857118[0xc]) && (0 < (int)DAT_00857118[0xd])) &&
-         (iVar5 = FUN_006cfeb0((int *)&local_38,(int *)(DAT_00857118 + 10),piVar1), iVar5 != 0)) {
+      if (((0 < (int)PTR_00857118[0xc]) && (0 < (int)PTR_00857118[0xd])) &&
+         (iVar5 = FUN_006cfeb0((int *)&local_38,(int *)(PTR_00857118 + 10),piVar1), iVar5 != 0)) {
         local_8 = 1;
         source = (byte *)(local_34 * (int)local_20 + local_38 + local_24);
         local_60 = source;
-        CopyRows((byte *)DAT_00857118[0x30],local_30,source,(int)local_20,local_30,local_2c);
-        local_88 = local_38 - DAT_00857118[10];
-        FUN_006d2820(source,local_20,*(byte **)(DAT_00857118[0x33] + DAT_00857118[0x31] * 4),
-                     local_88,local_34 - DAT_00857118[0xb],local_30,local_2c,DAT_00857118[0x2c],
+        CopyRows((byte *)PTR_00857118[0x30],local_30,source,(int)local_20,local_30,local_2c);
+        local_88 = local_38 - PTR_00857118[10];
+        FUN_006d2820(source,local_20,*(byte **)(PTR_00857118[0x33] + PTR_00857118[0x31] * 4),
+                     local_88,local_34 - PTR_00857118[0xb],local_30,local_2c,PTR_00857118[0x2c],
                      nullptr,0,0,nullptr);
         local_8 = 0xffffffff;
       }
@@ -108,7 +108,7 @@ void FUN_0072b0b0(void)
     local_64 = local_54.y;
     if ((local_30 != 0) && (local_2c != 0)) {
       if (((int)local_5c < 0) ||
-         (iVar4 = FUN_006b0460(local_7c,(int *)&local_38,(int *)(DAT_00857118 + 1)), iVar4 == 0)) {
+         (iVar4 = FUN_006b0460(local_7c,(int *)&local_38,(int *)(PTR_00857118 + 1)), iVar4 == 0)) {
         local_98 = local_38;
         local_94 = local_34;
         local_90 = local_30 + local_38;
@@ -144,26 +144,26 @@ void FUN_0072b0b0(void)
         }
       }
       else {
-        uVar6 = DAT_00857118[1];
+        uVar6 = PTR_00857118[1];
         local_5c = local_38;
         if ((int)uVar6 <= (int)local_38) {
           local_5c = uVar6;
         }
         local_68 = local_38 + local_30;
-        if ((int)(local_38 + local_30) <= (int)(uVar6 + DAT_00857118[3])) {
-          local_68 = uVar6 + DAT_00857118[3];
+        if ((int)(local_38 + local_30) <= (int)(uVar6 + PTR_00857118[3])) {
+          local_68 = uVar6 + PTR_00857118[3];
         }
-        uVar6 = DAT_00857118[2];
+        uVar6 = PTR_00857118[2];
         local_80 = local_34;
         if ((int)uVar6 <= (int)local_34) {
           local_80 = uVar6;
         }
         iVar4 = local_2c + local_34;
-        if ((int)(local_2c + local_34) <= (int)(uVar6 + DAT_00857118[4])) {
-          iVar4 = uVar6 + DAT_00857118[4];
+        if ((int)(local_2c + local_34) <= (int)(uVar6 + PTR_00857118[4])) {
+          iVar4 = uVar6 + PTR_00857118[4];
         }
       }
-      *DAT_00857118 = *DAT_00857118 | 1;
+      *PTR_00857118 = *PTR_00857118 | 1;
     }
     if (-1 < (int)local_5c) {
       local_98 = local_5c;
@@ -198,12 +198,12 @@ void FUN_0072b0b0(void)
       local_3c = local_3c | uVar6;
     }
     if (local_3c == 0) {
-      *DAT_00857118 = *DAT_00857118 & 0xfffffff9;
+      *PTR_00857118 = *PTR_00857118 & 0xfffffff9;
     }
-    DAT_00857118[1] = local_38;
-    DAT_00857118[2] = local_34;
-    DAT_00857118[3] = local_30;
-    DAT_00857118[4] = local_2c;
+    PTR_00857118[1] = local_38;
+    PTR_00857118[2] = local_34;
+    PTR_00857118[3] = local_30;
+    PTR_00857118[4] = local_2c;
   }
   ExceptionList = local_14;
   return;

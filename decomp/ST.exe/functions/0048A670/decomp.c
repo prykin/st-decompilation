@@ -24,59 +24,58 @@ void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this)
   byte bVar3;
   int iVar3;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)((int)this->field_06CB + 0x2c)) {
-  case 1:
-  case 0x20:
+  switch(this->field_06F7) {
+  case CASE_1:
+  case CASE_20:
     this->field_0219 = 0x5a;
     break;
-  case 2:
-  case 5:
-  case 6:
-  case 0xd:
-  case 0xe:
-  case 0x10:
-  case 0x11:
-  case 0x12:
-  case 0x1c:
-  case 0x1e:
-  case 0x1f:
-  case 0x21:
-  case 0x26:
-  case 0x27:
-  case 0x28:
+  case CASE_2:
+  case CASE_5:
+  case CASE_6:
+  case CASE_D:
+  case CASE_E:
+  case CASE_10:
+  case CASE_11:
+  case CASE_12:
+  case CASE_1C:
+  case CASE_1E:
+  case CASE_1F:
+  case CASE_21:
+  case CASE_26:
+  case CASE_27:
+  case CASE_28:
     this->field_0219 = 0x8c;
     break;
-  case 3:
-  case 4:
-  case 0xb:
-  case 0xf:
+  case CASE_3:
+  case CASE_4:
+  case CASE_B:
+  case CASE_F:
     this->field_0219 = 0xbe;
     break;
-  case 7:
-  case 8:
-  case 9:
-  case 0xc:
-  case 0x13:
-  case 0x14:
-  case 0x15:
-  case 0x18:
-  case 0x19:
-  case 0x1a:
-  case 0x1b:
-  case 0x1d:
-  case 0x24:
-  case 0x25:
+  case CASE_7:
+  case CASE_8:
+  case CASE_9:
+  case CASE_C:
+  case CASE_13:
+  case CASE_14:
+  case CASE_15:
+  case CASE_18:
+  case CASE_19:
+  case CASE_1A:
+  case CASE_1B:
+  case CASE_1D:
+  case CASE_24:
+  case CASE_25:
     break;
-  case 10:
-  case 0x17:
-  case 0x22:
+  case CASE_A:
+  case CASE_17:
+  case CASE_22:
     this->field_0219 = 0xfa;
     break;
-  case 0x16:
+  case CASE_16:
     this->field_0219 = 0xe6;
     break;
-  case 0x23:
+  case CASE_23:
     this->field_0219 = 0xaa;
     break;
   default:
@@ -86,12 +85,10 @@ void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this)
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  bVar3 = thunk_FUN_00430750(*(Global_sub_00430750_param_1Enum *)((int)this->field_06CB + 0x2c));
+  bVar3 = thunk_FUN_00430750(this->field_06F7);
   thunk_FUN_00417ff0(this,bVar3);
   thunk_FUN_00418010(this,bVar3 / 2);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar1 = *(int *)(&DAT_007dfbac + *(int *)((int)this->field_06CB + 0x2c) * 4);
+  iVar1 = *(int *)(&DAT_007dfbac + this->field_06F7 * 4);
   this->field_0716 = iVar1;
   this->field_0712 = iVar1;
   return;

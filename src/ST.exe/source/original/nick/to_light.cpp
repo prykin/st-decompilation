@@ -38,12 +38,12 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
   this_00 = local_8;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\nick\\to_light.Cpp",0x7a,0,iVar5,"%s",
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_light.Cpp"),0x7a,0,iVar5,st::mutable_c_string("%s"),
                                "STLightC::GetMessage");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar5,0,"E:\\__titans\\nick\\to_light.Cpp",0x7c);
+    st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\nick\\to_light.Cpp"),0x7c);
     return 0xffff;
   }
   SVar3 = message->id;
@@ -101,12 +101,12 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
         iVar7 = 0x475;
       }
       st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,iVar7,&local_1c,0);
-      iVar7 = this_00->field_004F + 1;
+      iVar7 = st::machine_word_boundary_cast<int>(this_00->field_004F + 1);
       this_00->field_004F = iVar7;
       if (this_00->field_005F * 4 <= iVar7) {
         st::fn_00401046(this_00);
       }
-      this_00->field_005B = this_00->field_005B + 0x8fc;
+      this_00->field_005B = st::machine_word_boundary_cast<int>(this_00->field_005B + 0x8fc);
       st::fn_004033E1(this_00);
       if (this_00->field_00A7 == '\0') {
         uVar5 = st::fn_00403CF1(this_00);
@@ -118,7 +118,7 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
     else if (SVar3 == MESS_ID_CREATE) {
       puVar8 = (byte *)((message->arg0).ptr);
       if (puVar8[3] == 2) {
-        st::fn_00403305(local_8,puVar8);
+        st::fn_00403305(local_8,st::pointer_boundary_cast<undefined4 *>(puVar8));
         pSVar10 = this_00 + 1;
         for (iVar7 = 0xb; iVar7 != 0; iVar7 = iVar7 + -1) {
           pSVar10->vtable = nullptr;
@@ -192,7 +192,7 @@ undefined4 __thiscall st::fn_0061DB80(STLightC *this)
                        (PTR_00806774,CASE_0,(&PTR_s_light01_007d0164)[local_c->field_003C],
                         0xffffffff,0,1,0,nullptr);
     st::fn_004050D3(this_00,puVar3,(int *)&local_8,0);
-    puVar4 = st::fn_006AAC70(this_00->field_0093 << 4);
+    puVar4 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this_00->field_0093 << 4)));
     this_00->field_0057 = puVar4;
     for (iVar7 = (this_00->field_0093 & 0xfffffffU) << 2; iVar7 != 0; iVar7 = iVar7 + -1) {
       *puVar4 = 0;
@@ -220,12 +220,12 @@ undefined4 __thiscall st::fn_0061DB80(STLightC *this)
     return 1;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\nick\\to_light.Cpp",0x13b,0,iVar2,"%s",
+  iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_light.Cpp"),0x13b,0,iVar2,st::mutable_c_string("%s"),
                              "STLightC::LoadNextLight");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\nick\\to_light.Cpp",0x13d);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\nick\\to_light.Cpp"),0x13d);
   return 0xffff;
 }
 

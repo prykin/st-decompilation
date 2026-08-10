@@ -93,7 +93,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 00521490	InfocPanelTy::GetMessage	InfocPanelTy	0x0	0	0	0	0	0	12
 00522E80	IntercomPanelTy::GetMessage	IntercomPanelTy	0x0	0	0	0	0	0	21
 0052BF00	MoneyTy::GetMessage	MoneyTy	0x0	0	0	0	0	0	57
-0052DD20	PopUpTy::GetMessage	PopUpTy	0x4	0	0	0	0	0	31
+0052DD20	PopUpTy::GetMessage	PopUpTy	0x0	0	0	0	0	0	31
 00533D10	OptPanelTy::GetMessage	OptPanelTy	0x0	0	0	0	0	0	181
 00538690	PanelTy::CreateBut	PanelTy	0x4	0	0	0	0	0	9
 005389E0	PanelTy::PaintBut	PanelTy	0x8	0	0	0	0	0	9
@@ -112,6 +112,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 0053F780	ProdPanelTy::ShiftControls	ProdPanelTy	0x18	0	3	0	0	0	7
 00542EC0	InterSystemC::DoneSystem	InterSystemC	0x4	0	4	4	2	4	5
 00542F40	InterSystemC::GetMessage	InterSystemC	0x20	0	0	0	0	0	30
+005449B0	CursorClassTy::GetMessage	CursorClassTy	0x0	0	0	0	0	0	195
 0054CF00	FUN_0054cf00	STPlaySystemC	0x8	0	0	0	2	0	2
 0054CFC0	STPlaySystemC::InitSystem	STPlaySystemC	0x0	0	1	1	0	0	7
 0054D180	STPlaySystemC::DoneSystem	STPlaySystemC	0x4	0	0	0	0	0	9
@@ -216,6 +217,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 005DCD90	StartSystemTy::CreateSystemObjects	StartSystemTy	0x14	0	0	0	0	0	1
 005DCDB0	StartSystemTy::DoneSystem	StartSystemTy	0x4	0	4	4	6	1	11
 005DCE90	StartSystemTy::GetMessage	StartSystemTy	0x20	0	0	0	0	0	36
+005E4570	MTaskTy::GetMessage	MTaskTy	0x0	0	1	0	0	0	85
 005E5FB0	MTestTy::GetMessage	MTestTy	0x0	0	1	0	0	0	31
 005E9830	WaitTy::CloseButtons	WaitTy	0x8	0	0	0	0	0	8
 005EA680	WaitTy::GetMessage	WaitTy	0x0	0	1	0	0	0	36
@@ -242,7 +244,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 00617640	JumpManagC::GetMessage	JumpManagC	0x0	0	0	0	0	0	12
 00618C00	STJumpMineC::GetMessage	STJumpMineC	0x0	0	0	0	0	0	27
 0061D190	STLightC::GetMessage	STLightC	0x0	0	0	0	0	0	20
-0061F660	SndUnderAttMenegC::GetMessage	SndUnderAttMenegC	0x4	0	0	0	0	0	7
+0061F660	SndUnderAttMenegC::GetMessage	SndUnderAttMenegC	0x0	0	0	0	0	0	7
 00621B50	STMineSetC::GetMessage	STMineSetC	0x0	0	0	0	1	0	49
 00626C00	FUN_00626c00	STMineSetC	0x70	0	0	0	0	0	1
 00626C90	FUN_00626c90	STMineSetC	0x30	0	0	0	0	0	3

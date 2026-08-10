@@ -48,10 +48,8 @@ switchD_00460024_caseD_1:
     iVar2 = this->vfunc_D8();
     if (iVar2 == 0) {
       switch(uVar1) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case 0:
-        iVar2 = *(int *)((int)this->field_06CB + 0x2c);
-        if ((iVar2 != 0xb) && (iVar2 != 0x23)) {
+        if ((this->field_06F7 != CASE_B) && (this->field_06F7 != CASE_23)) {
           return 2;
         }
         if (this->field_021D != 1) {

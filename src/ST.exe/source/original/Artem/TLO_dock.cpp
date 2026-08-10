@@ -31,7 +31,7 @@ undefined4 __fastcall st::fn_004D01F0(void *param_1)
     exceptionCode = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (exceptionCode != 0) {
       st::fn_006A5E40
-                (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp"
+                (exceptionCode,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_dock.cpp")
                  ,0x28b);
     }
     st::fn_00405795(param_1,&local_10,&local_c,&local_8);
@@ -83,21 +83,21 @@ undefined4 __fastcall st::fn_004D0310(TLOBaseTy *param_1)
   local_8 = 0;
   iVar5 = st::fn_00404183
                     ((STT3DSprC *)param_1->field_05FF,0xe,PTR_0080677c,
-                     &DAT_007a9342 + *(int *)&param_1->field_0x369 * 6,CASE_1D);
+                     st::pointer_boundary_cast<char *>(&DAT_007a9342 + *(int *)&param_1->field_0x369 * 6),CASE_1D);
   if (iVar5 != 0) {
     st::fn_006A5E40
-              (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp",0x298);
+              (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_dock.cpp"),0x298);
   }
   pbVar2 = (byte *)param_1->field_0379;
   if (pbVar2 == (byte *)0xff) {
     pbVar2 = param_1->field_0024;
   }
-  st::external_00000080(local_48,"%s%1i",&DAT_007a9342 + *(int *)&param_1->field_0x369 * 6,pbVar2);
+  st::external_00000080(local_48,st::mutable_c_string("%s%1i"),&DAT_007a9342 + *(int *)&param_1->field_0x369 * 6,pbVar2);
   iVar5 = st::fn_00404183
                     ((STT3DSprC *)param_1->field_05FF,0xc,PTR_0080677c,local_48,CASE_1D);
   if (iVar5 != 0) {
     st::fn_006A5E40
-              (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp",0x29a);
+              (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_dock.cpp"),0x29a);
   }
   iVar5 = -1;
   pcVar9 = (char *)((int)&DAT_007a9440 + *(int *)&param_1->field_0x369 * 6 + 2);
@@ -198,10 +198,10 @@ undefined4 __thiscall st::fn_004D0970(void *this,int param_1,int param_2,int par
   *(int *)(STField<int>(this,0x24d) + STField<int>(this,0x245) * 0xc) = param_1;
   *(int *)(STField<int>(this,0x24d) + 4 + STField<int>(this,0x245) * 0xc) = param_2;
   *(int *)(STField<int>(this,0x24d) + 8 + STField<int>(this,0x245) * 0xc) = param_3;
-  iVar1 = st::fn_00401325((short)param_1,(short)param_2,(short)param_3,0,this);
+  iVar1 = st::fn_00401325((short)param_1,(short)param_2,(short)param_3,0,st::pointer_boundary_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
   if (iVar1 != 0) {
     st::fn_006A5E40
-              (iVar1,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp",0x2f9);
+              (iVar1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_dock.cpp"),0x2f9);
   }
   STField<int>(this,0x245) = STField<int>(this,0x245) + 1;
   return 0;
@@ -238,10 +238,10 @@ undefined4 __thiscall st::fn_004D0A80(void *this,int param_1,int param_2,int par
     }
     exceptionCode =
          st::fn_00404EC1((short)piVar1[iVar4 * 3],(short)piVar1[iVar4 * 3 + 1],
-                            (short)piVar1[iVar4 * 3 + 2],0,this);
+                            (short)piVar1[iVar4 * 3 + 2],0,st::pointer_boundary_cast<AnonShape_00495FF0_59081BDD *>(this));
     if (exceptionCode != 0) {
       st::fn_006A5E40
-                (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp"
+                (exceptionCode,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_dock.cpp")
                  ,0x305);
     }
     if (iVar4 < STField<int>(this,0x245) + -1) {
@@ -301,21 +301,21 @@ int __thiscall st::fn_004D0B90(TLOFakeTy *this,STMessage *message)
   pSVar4 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_dock.cpp",0x341,0,iVar5,"%s"
+    iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_dock.cpp"),0x341,0,iVar5,st::mutable_c_string("%s")
                                ,"TLOFakeTy::GetMessage error");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar5,0,"E:\\__titans\\Artem\\TLO_dock.cpp",0x342);
+    st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_dock.cpp"),0x342);
     return iVar5;
   }
   st::fn_00404F07(local_c,message);
   SVar2 = message->id;
   if (SVar2 == MESS_ID_CREATE) {
-    DAT_00800bcc = pSVar4;
+    DAT_00800bcc = st::machine_word_boundary_cast<undefined4>(pSVar4);
     pSVar4->field_0020 = 0x3ea;
     *(undefined4 *)&pSVar4->field_0x28 = 2;
-    local_8 = (message->arg0).ptr;
+    local_8 = st::pointer_boundary_cast<STSprGameObjC_field_0231State *>((message->arg0).ptr);
     if (pSVar4 != nullptr) {
       pSVar11 = &pSVar4->field_0231;
     }
@@ -352,7 +352,7 @@ int __thiscall st::fn_004D0B90(TLOFakeTy *this,STMessage *message)
             if (exceptionCode != 0) {
               st::fn_006A5E40
                         (exceptionCode,g_overwriteContext_007ED77C,
-                         "E:\\__titans\\Artem\\TLO_dock.cpp",0x326);
+                         st::mutable_c_string("E:\\__titans\\Artem\\TLO_dock.cpp"),0x326);
             }
             iVar6 = iVar6 + 1;
             iVar10 = iVar10 + 0xc;
@@ -362,7 +362,7 @@ int __thiscall st::fn_004D0B90(TLOFakeTy *this,STMessage *message)
     }
   }
   else if (SVar2 == MESS_SHARED_0003) {
-    DAT_00800bcc = nullptr;
+    DAT_00800bcc = static_cast<undefined4>(0);
     st::fn_004021D5((STT3DSprC *)&pSVar4->field_01D5);
     if (*(int *)&pSVar4->field_0x24d != 0) {
       st::fn_006AB060(&pSVar4->field_0x24d);
@@ -372,7 +372,7 @@ int __thiscall st::fn_004D0B90(TLOFakeTy *this,STMessage *message)
   }
   else if (SVar2 == MESS_SHARED_010F) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_8 = st::fn_006AAC70(*(int *)((int)&pSVar4->field_0244 + 1) * 0xc + 0x1c);
+    local_8 = st::pointer_boundary_cast<STSprGameObjC_field_0231State *>(st::fn_006AAC70(*(int *)((int)&pSVar4->field_0244 + 1) * 0xc + 0x1c));
     if (pSVar4 == nullptr) {
       pSVar11 = nullptr;
     }

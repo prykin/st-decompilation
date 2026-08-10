@@ -39,25 +39,25 @@ int __thiscall st::fn_00495980(DumpClassC *this,STMessage *message)
     iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_4c.previous;
-      iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\To_dump.cpp",0x3d,0,iVar3,"%s",
+      iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),0x3d,0,iVar3,st::mutable_c_string("%s"),
                                  "DumpClassC::GetMessage - MESS_ID_CREATE");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar4 = 0x3e;
 LAB_00495c27:
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\To_dump.cpp",iVar4);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),iVar4);
       return 0xffff;
     }
     g_pathingGrid.sizeX = *PTR_00806750;
     g_pathingGrid.sizeY = PTR_00806750[1];
     g_pathingGrid.sizeZ = 5;
     g_pathingGrid.planeStride = *PTR_00806750 * PTR_00806750[1];
-    g_pathingGrid.cells =
-         st::fn_006AAC70((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX * 10);
+    g_pathingGrid.cells =st::pointer_boundary_cast<short *>(
+         st::fn_006AAC70((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX * 10));
     if (g_pathingGrid.cells == nullptr) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_dump.cpp",0x2b);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),0x2b);
     }
     uVar5 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
     psVar8 = g_pathingGrid.cells;
@@ -74,25 +74,25 @@ LAB_00495c27:
     g_pathingScratchGrid.sizeZ = g_pathingGrid.sizeZ;
     g_pathingScratchGrid.sizeX = g_pathingGrid.sizeX;
     g_pathingScratchGrid.planeStride = g_pathingGrid.planeStride;
-    g_pathingScratchGrid.cells =
+    g_pathingScratchGrid.cells =st::pointer_boundary_cast<short *>(
          st::fn_006AAC70
                    ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
-                    2);
+                    2));
     if (g_pathingScratchGrid.cells == nullptr) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_dump.cpp",0x30);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),0x30);
     }
     g_worldGrid.sizeY = g_pathingGrid.sizeY;
     g_worldGrid.sizeZ = g_pathingGrid.sizeZ;
     g_worldGrid.sizeX = g_pathingGrid.sizeX;
     g_worldGrid.planeStride = g_pathingGrid.planeStride;
-    g_worldGrid.cells =
+    g_worldGrid.cells =st::pointer_boundary_cast<STWorldCell *>(
          st::fn_006AAC70
                    ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
-                    8);
+                    8));
     if (g_worldGrid.cells == nullptr) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_dump.cpp",0x34);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),0x34);
     }
     iVar4 = ((int)g_worldGrid.sizeZ * (int)g_worldGrid.sizeY * (int)g_worldGrid.sizeX & 0x1fffffffU)
             << 1;
@@ -105,11 +105,11 @@ LAB_00495c27:
       *(undefined1 *)ppSVar9 = 0;
       ppSVar9 = (STWorldObject **)((int)ppSVar9 + 1);
     }
-    DAT_007fb26c = st::fn_006AAC70
-                             ((int)g_pathingScratchGrid.sizeY * (int)g_pathingScratchGrid.sizeX);
+    DAT_007fb26c = st::machine_word_boundary_cast<undefined4>(st::fn_006AAC70
+                             ((int)g_pathingScratchGrid.sizeY * (int)g_pathingScratchGrid.sizeX));
     iVar4 = (int)g_pathingScratchGrid.sizeY;
     iVar7 = (int)g_pathingScratchGrid.sizeX;
-    puVar10 = DAT_007fb26c;
+    puVar10 = st::pointer_boundary_cast<undefined4 *>(DAT_007fb26c);
     for (uVar5 = (uint)(iVar4 * iVar7) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
       *puVar10 = 0;
       puVar10 = puVar10 + 1;
@@ -130,7 +130,7 @@ LAB_00495c27:
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_90.previous;
       local_EAX_923 =
-           st::fn_006AD4D0("E:\\__titans\\wlad\\To_dump.cpp",0x58,0,iVar3,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),0x58,0,iVar3,st::mutable_c_string("%s"),
                               "DumpClassC::GetMessage - MESS_ID_DONE");
       if (local_EAX_923 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -182,7 +182,7 @@ st::fn_00495EC0
 
   if ((((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) || (param_2 < 0)) ||
      (((g_worldGrid.sizeY <= param_2 || (param_3 < 0)) || (g_worldGrid.sizeZ <= param_3)))) {
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\To_dump.cpp",0x7f,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),0x7f,0,0,st::mutable_c_string("%s"),
                                "DumpClassC::WritePtr");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -196,7 +196,7 @@ st::fn_00495EC0
     param_5->field_005B = param_1;
     return 0;
   }
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\wlad\\To_dump.cpp",0x84,0,0,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),0x84,0,0,st::mutable_c_string("%s"),
                              "DumpClassC::WritePtr cell is busy");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */

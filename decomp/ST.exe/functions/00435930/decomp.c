@@ -31,7 +31,7 @@ STAllPlayersC::GetCursorType
   int iVar8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   uint index;
   undefined1 local_8 [4];
@@ -40,7 +40,7 @@ STAllPlayersC::GetCursorType
      ((((iVar8 = param_2->field_0020, iVar8 == 0x14 || (iVar8 == 1000)) || (iVar8 == 0x3e9)) ||
       ((iVar8 == 0x172 || (iVar8 == 0x1a4)))))) {
     thunk_FUN_0041f390((int)param_2);
-    /* ST_PSEUDO[unresolved_register_input,return_width_artifact]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[unresolved_register_input,call_clobber_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; candidate volatile-register merge after CALL: split the partial-register lifetime */
     in_EDX = extraout_EDX;
   }
   uVar5 = (uint)DAT_0080874d;

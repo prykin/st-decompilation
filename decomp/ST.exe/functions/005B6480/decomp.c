@@ -27,7 +27,7 @@ void __thiscall MMObjTy::CloseButtons(MMObjTy *this)
   pMVar2 = local_8;
   if (iVar3 == 0) {
     iVar5 = 0xd;
-    puVar3 = &local_8->field_0066;
+    puVar3 = local_8->field_0066;
     do {
       if (*puVar3 != 0) {
         StartSystemTy::sub_006E56B0(pMVar2->field_000C,*puVar3);

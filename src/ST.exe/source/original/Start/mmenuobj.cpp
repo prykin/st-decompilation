@@ -110,12 +110,12 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0x2d,0,iVar2,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x2d,0,iVar2,st::mutable_c_string("%s"),
                              "MMObjTy::InitSprBut");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x2d);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x2d);
   return;
 }
 
@@ -167,17 +167,17 @@ st::fn_005B5510
     local_164 = param_8;
     local_16c = local_1ac;
     (*local_c->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_c->field_000C,2,&local_8,nullptr,local_1cc,0);
+              ((SystemClassTy *)local_c->field_000C,2,&local_8,nullptr,st::machine_word_boundary_cast<undefined4>(local_1cc),0);
     g_currentExceptionFrame = local_50.previous;
     return local_8;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0x47,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x47,0,iVar2,st::mutable_c_string("%s"),
                              "MMObjTy::CreateSprBut");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x47);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x47);
   return 0;
 }
 
@@ -212,12 +212,12 @@ st::fn_005B5690(MMObjTy *this,int param_1,uint param_2,int param_3,int param_4,i
   pMVar3 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0x8c,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x8c,0,iVar4,st::mutable_c_string("%s"),
                                "MMObjTy::PaintSprBut");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x8c);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x8c);
     return;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -376,19 +376,19 @@ st::fn_005B5A30(MMObjTy *this,int param_1,int *param_2,int param_3,byte param_4,
   errorCode = st::fn_0072D7F0(local_94.jumpBuffer,0);
   if (errorCode == 0) {
     if (-1 < (int)param_5) {
-      st::fn_006C7EA0((AnonPointee_MReportTy_0073 *)param_1,0,&local_50,8,(byte)param_5);
+      st::fn_006C7EA0((AnonPointee_MReportTy_0073 *)param_1,0,st::pointer_boundary_cast<undefined4 *>(&local_50),8,(byte)param_5);
     }
     st::fn_006C7F10((RecoveredSourceFamily_dibcopy *)param_1,0,&local_50,8,param_4);
     g_currentExceptionFrame = local_94.previous;
     return;
   }
   g_currentExceptionFrame = local_94.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0xa0,0,errorCode,
-                             "%s","MMObjTy::PaintButDib");
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0xa0,0,errorCode,
+                             st::mutable_c_string("%s"),"MMObjTy::PaintButDib");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Start\\mmenuobj.cpp",0xa0);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0xa0);
   return;
 }
 
@@ -421,7 +421,7 @@ void __thiscall st::fn_005B6220(MMObjTy *this)
   pMVar2 = local_8;
   if (iVar3 == 0) {
     iVar5 = 0xd;
-    puVar3 = &local_8->field_0066;
+    puVar3 = local_8->field_0066;
     do {
       if (*puVar3 != 0) {
         st::fn_006E56B0(pMVar2->field_000C,*puVar3);
@@ -430,7 +430,7 @@ void __thiscall st::fn_005B6220(MMObjTy *this)
       puVar3 = puVar3 + 1;
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);
-    this_00 = (SpriteClassTy *)&pMVar2[1].field_0x91;
+    this_00 = (SpriteClassTy *)((int)pMVar2[1].field_0066 + 0x2b);
     iVar5 = 0xd;
     do {
       st::fn_00715AB0(this_00 + -1);
@@ -445,12 +445,12 @@ void __thiscall st::fn_005B6220(MMObjTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0xe5,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0xe5,0,iVar3,st::mutable_c_string("%s"),
                              "MMObjTy::DoneMMObj");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\mmenuobj.cpp",0xe5);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0xe5);
   return;
 }
 
@@ -482,7 +482,7 @@ void __thiscall st::fn_005B6480(MMObjTy *this)
   pMVar2 = local_8;
   if (iVar3 == 0) {
     iVar5 = 0xd;
-    puVar3 = &local_8->field_0066;
+    puVar3 = local_8->field_0066;
     do {
       if (*puVar3 != 0) {
         st::fn_006E56B0(pMVar2->field_000C,*puVar3);
@@ -495,12 +495,12 @@ void __thiscall st::fn_005B6480(MMObjTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0x104,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x104,0,iVar3,st::mutable_c_string("%s"),
                              "MMObjTy::CloseButtons");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x104);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x104);
   return;
 }
 
@@ -536,12 +536,12 @@ st::fn_005B6560
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0x121,0,iVar2,"%s"
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x121,0,iVar2,st::mutable_c_string("%s")
                                ,"MMMObjTy::PaintSlBut");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x121);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x121);
     return;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -634,12 +634,12 @@ st::fn_005B67A0
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0x13b,0,errorCode,
-                               "%s","MMMObjTy::OutRGlProc");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x13b,0,errorCode,
+                               st::mutable_c_string("%s"),"MMMObjTy::OutRGlProc");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x13b);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x13b);
   }
   return;
 }
@@ -695,12 +695,12 @@ st::fn_005B68B0
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0x147,0,errorCode,
-                               "%s","MMMObjTy::OutBSlProc");
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x147,0,errorCode,
+                               st::mutable_c_string("%s"),"MMMObjTy::OutBSlProc");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x147);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x147);
   }
   return;
 }
@@ -743,12 +743,12 @@ st::fn_005B69F0
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\mmenuobj.cpp",0x153,0,iVar3,"%s"
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x153,0,iVar3,st::mutable_c_string("%s")
                                ,"ChatGlassTy::OutChGlProc");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x153);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Start\\mmenuobj.cpp"),0x153);
   }
   return;
 }

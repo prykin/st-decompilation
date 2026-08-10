@@ -26,12 +26,12 @@ int __thiscall st::fn_004C60E0(TLOBldMark *this)
     return 0;
   }
   g_currentExceptionFrame = pIVar2;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_BldMark.cpp",0x2a,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x2a,0,iVar3,st::mutable_c_string("%s"),
                              "TLOBldMark::Create error");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x2b);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x2b);
   return iVar3;
 }
 
@@ -58,7 +58,7 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
 
   this->field_0018 = 0;
   this->field_001C = param_1;
-  this->field_0020 = param_2;
+  this->field_0020 = st::pointer_boundary_cast<int *>(param_2);
   pAVar1 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
   if (pAVar1 == nullptr) {
     this_00 = nullptr;
@@ -71,14 +71,14 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
     iVar2 = st::fn_0040537B(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       st::fn_006A5E40
-                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x48);
+                (iVar2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x48);
     }
   }
   else if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 1) {
     iVar2 = st::fn_0040537B(this_00,PTR_008073cc,0x78,0x56,nullptr,0xf0,0xbe,0x11);
     if (iVar2 != 0) {
       st::fn_006A5E40
-                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x49);
+                (iVar2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x49);
     }
     uVar3 = st::fn_004052CC(this->field_002C);
     st::fn_006E9210(g_sT3DSMAPContext_00807598,uVar3);
@@ -90,7 +90,7 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
                      CASE_1D);
   if (iVar2 != 0) {
     st::fn_006A5E40
-              (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x4c);
+              (iVar2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x4c);
   }
   st::fn_00401EBA(this->field_002C,0,*(int *)(&DAT_00790f84 + this->field_001C * 4),
                      *(int *)(&DAT_00790f84 + this->field_001C * 4),'\0');
@@ -217,7 +217,7 @@ cf_common_exit_004C6899:
                          CASE_1D);
       if (iVar9 != 0) {
         st::fn_006A5E40
-                  (iVar9,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",
+                  (iVar9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),
                    0x82);
       }
       uVar10 = 0;
@@ -251,7 +251,7 @@ cf_common_exit_004C6899:
                        CASE_1D);
     if (iVar5 != 0) {
       st::fn_006A5E40
-                (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x77);
+                (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x77);
     }
     st::fn_00401EBA(this->field_002C,0,*(int *)(&DAT_00790f84 + this->field_001C * 4),
                        *(int *)(&DAT_00790f84 + this->field_001C * 4),'\0');
@@ -274,7 +274,7 @@ LAB_004c6848:
       fVar3 = (float)(iVar9 + 1) * _DAT_007904f8;
       goto LAB_004c6848;
     }
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_BldMark.cpp",0x98,0,0,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x98,0,0,st::mutable_c_string("%s"),
                                "error");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -329,12 +329,12 @@ int __thiscall st::fn_004C6A00(TLOBldMark *this,STMessage *message)
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_BldMark.cpp",0xb6,0,iVar3,
-                               "%s","TLOBldMark::GetMessage error");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0xb6,0,iVar3,
+                               st::mutable_c_string("%s"),"TLOBldMark::GetMessage error");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0xb7);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0xb7);
     return iVar3;
   }
   SVar1 = message->id;

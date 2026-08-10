@@ -1,7 +1,11 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_004b7e30(void *this,int param_1,int param_2,int param_3)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0047D080 -> 004B7E30 @ 0047D79F; /STBoatC+0x6f7 */
+
+undefined4 __thiscall
+FUN_004b7e30(void *this,STBoatC_field_06F7State param_1,int param_2,int param_3)
 
 {
   int iVar1;
@@ -25,7 +29,7 @@ undefined4 __thiscall FUN_004b7e30(void *this,int param_1,int param_2,int param_
   else if (param_1 == 0xfd) {
     iVar3 = 1000;
   }
-  else if ((0 < param_1) && (param_1 < 0x29)) {
+  else if ((0 < (int)param_1) && ((int)param_1 < 0x29)) {
     iVar3 = *(int *)(&DAT_007e09dc + param_1 * 4);
     iVar2 = *(int *)(&DAT_007e055c + param_1 * 4);
     iVar5 = *(int *)(&DAT_007e079c + param_1 * 4);

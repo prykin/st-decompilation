@@ -42,21 +42,21 @@ void __thiscall st::fn_005528B0(UpgPanelTy *this)
     uVar5 = 2;
     iVar4 = 0x31;
     g_upgPanel_00802A48 = local_8;
-    pCVar2 = st::fn_0040577C("BKG_UPDATESW",0);
+    pCVar2 = st::fn_0040577C(st::mutable_c_string("BKG_UPDATESW"),0);
     st::fn_00403800
               ((SpecPanelTy *)this_00,pCVar2,iVar4,uVar5,iVar7,iVar10,UVar11,uVar12,uVar13);
     puVar3 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c20a0),0xffffffff,0,1,0,nullptr);
     this_00->field_03EB = puVar3;
     puVar3 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c38c8),0xffffffff,0,1,0,nullptr);
     this_00->field_03EF = puVar3;
     puVar14 = nullptr;
     iVar7 = 0;
     iVar4 = 1;
     bVar9 = 0;
     uVar8 = 0xffffffff;
-    pCVar2 = st::fn_0040577C("FRAMES",0);
+    pCVar2 = st::fn_0040577C(st::mutable_c_string("FRAMES"),0);
     puVar3 = st::fn_00709AF0
                        (PTR_00806794,CASE_B,pCVar2,uVar8,bVar9,iVar4,iVar7,puVar14);
     this_00->field_03F3 = puVar3;
@@ -64,12 +64,12 @@ void __thiscall st::fn_005528B0(UpgPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\upginfo.cpp",0x1d,0,iVar2,"%s",
+  iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\upginfo.cpp"),0x1d,0,iVar2,st::mutable_c_string("%s"),
                              "UpgPanelTy::InitUpgPanel");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x1d);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\upginfo.cpp"),0x1d);
   return;
 }
 
@@ -100,12 +100,12 @@ void __thiscall st::fn_00552A30(UpgPanelTy *this)
     return;
   }
   g_currentExceptionFrame = pIVar2;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\upginfo.cpp",0x2a,0,errorCode,
-                             "%s","UpgPanelTy::DoneUpgPanel");
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\upginfo.cpp"),0x2a,0,errorCode,
+                             st::mutable_c_string("%s"),"UpgPanelTy::DoneUpgPanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x2a);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\upginfo.cpp"),0x2a);
   return;
 }
 
@@ -139,12 +139,12 @@ void __thiscall st::fn_00552AF0(UpgPanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = pIVar2;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\upginfo.cpp",0x36,0,errorCode,
-                               "%s","UpgPanelTy::ShiftControls");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\upginfo.cpp"),0x36,0,errorCode,
+                               st::mutable_c_string("%s"),"UpgPanelTy::ShiftControls");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x36);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\upginfo.cpp"),0x36);
   }
   return;
 }
@@ -249,12 +249,12 @@ void __thiscall st::fn_00552BC0(UpgPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\upginfo.cpp",0x54,0,iVar3,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\upginfo.cpp"),0x54,0,iVar3,st::mutable_c_string("%s"),
                              "UpgPanelTy::Update");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x54);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\upginfo.cpp"),0x54);
   return;
 }
 
@@ -285,12 +285,12 @@ int __thiscall st::fn_00552E40(UpgPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\upginfo.cpp",0x68,0,iVar2,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\upginfo.cpp"),0x68,0,iVar2,st::mutable_c_string("%s"),
                                "UpgPanelTy::GetMessage");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x68);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\upginfo.cpp"),0x68);
     return 0xffff;
   }
   st::fn_00401401((SpecPanelTy *)local_8,message);

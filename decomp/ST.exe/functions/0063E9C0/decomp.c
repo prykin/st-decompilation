@@ -22,7 +22,7 @@ void __thiscall FUN_0063e9c0(void *this,int param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0;
   float10 fVar11;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   unkbyte10 extraout_ST1;
   longlong lVar12;
   longlong lVar13;
@@ -85,7 +85,7 @@ cf_common_join_0063EACD:
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         fcos(extraout_ST0);
         lVar13 = Library::MSVCRT::__ftol();
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         fsin(extraout_ST1);
         iVar4 = (int)lVar13 + *(int *)(iVar10 + 0x14);
         *(int *)(iVar10 + 8) = iVar4;

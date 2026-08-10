@@ -55,16 +55,16 @@ uint * __thiscall st::fn_004233E0(STGroupC *this)
       } while (index < uVar2);
     }
     g_currentExceptionFrame = local_5c.previous;
-    return &local_c->flags;
+    return st::pointer_boundary_cast<uint *>(&local_c->flags);
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x52,0,errorCode,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x52,0,errorCode,st::mutable_c_string("%s"),
                              "STGroupC::GetGroupContent");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x53);
-  return &local_c->flags;
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x53);
+  return st::pointer_boundary_cast<uint *>(&local_c->flags);
 }
 
 // 00423520 STGroupC::GetTOBJQty
@@ -108,7 +108,7 @@ uint __thiscall st::fn_00423520(STGroupC *this,int param_1)
           if (pSVar3 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\tc_grp.cpp",0x66);
+                       st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x66);
           }
           iVar5 = (*pSVar3->vtable->vfunc_2C)();
           if (iVar5 == param_1) {
@@ -122,12 +122,12 @@ uint __thiscall st::fn_00423520(STGroupC *this,int param_1)
     return STReplaceLowWord((uint32_t)(local_58.previous), (uint16_t)((undefined2)local_8));
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x6b,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x6b,0,iVar3,st::mutable_c_string("%s"),
                              "STGroupC::GetTOBJQty");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x6c);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x6c);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   return CONCAT22(extraout_var,(undefined2)local_8);
 }
@@ -172,7 +172,7 @@ uint * __thiscall st::fn_00423660(STGroupC *this,int param_1)
           if (pSVar3 == nullptr) {
             st::fn_006A5E40
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       "E:\\__titans\\wlad\\tc_grp.cpp",0x81);
+                       st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x81);
           }
           iVar5 = (*pSVar3->vtable->vfunc_2C)();
           if (iVar5 == param_1) {
@@ -183,16 +183,16 @@ uint * __thiscall st::fn_00423660(STGroupC *this,int param_1)
       } while ((int)index < (int)local_14);
     }
     g_currentExceptionFrame = local_58.previous;
-    return &local_c->flags;
+    return st::pointer_boundary_cast<uint *>(&local_c->flags);
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x86,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x86,0,iVar3,st::mutable_c_string("%s"),
                              "STGroupC::GetTOBJList");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x87);
-  return &local_c->flags;
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x87);
+  return st::pointer_boundary_cast<uint *>(&local_c->flags);
 }
 
 // 00423850 STGroupC::AddObj
@@ -246,7 +246,7 @@ uint __thiscall st::fn_00423850(STGroupC *this,uint param_1,int param_2)
       }
       if (local_8 == (short)param_1) {
         st::fn_006A5E40
-                  (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\tc_grp.cpp",
+                  (-0x5001ffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),
                    0xb1);
       }
     }
@@ -258,7 +258,7 @@ uint __thiscall st::fn_00423850(STGroupC *this,uint param_1,int param_2)
     if (param_2 == 1) {
       if (pSVar2->field_002D == nullptr) {
         pDVar3 = st::fn_006AE290(nullptr,5,2,5);
-        pSVar2->field_002D = &pDVar3->flags;
+        pSVar2->field_002D = st::pointer_boundary_cast<uint *>(&pDVar3->flags);
       }
       st::fn_006AE1C0((DArrayTy *)pSVar2->field_002D,&param_1);
       local_5 = 0xff;
@@ -329,12 +329,12 @@ uint __thiscall st::fn_00423850(STGroupC *this,uint param_1,int param_2)
   }
   g_currentExceptionFrame = local_80.previous;
   if (errorCode != -0x5001ffff) {
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0xdf,0,errorCode,"%s"
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0xdf,0,errorCode,st::mutable_c_string("%s")
                                ,"STGroupC::AddObj");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\tc_grp.cpp",0xe0);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0xe0);
     return 0xffffffff;
   }
   return 0xaffe0001;
@@ -370,12 +370,12 @@ undefined4 __thiscall st::fn_00423B50(STGroupC *this,DArrayTy *param_1,int param
   this_00 = local_10;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0xf8,0,errorCode,"%s"
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0xf8,0,errorCode,st::mutable_c_string("%s")
                                ,"STGroupC::AddObjs");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\tc_grp.cpp",0xf9);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0xf9);
     return 0xffffffff;
   }
   if (local_c == 0) {
@@ -431,12 +431,12 @@ int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x17c,0,iVar2,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x17c,0,iVar2,st::mutable_c_string("%s"),
                                "STGroupC::GetMessage");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x17d);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x17d);
     return 0xffff;
   }
   st::fn_006E5FD0(local_8,message);
@@ -460,7 +460,7 @@ int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
       }
       st::fn_004059D9
                 (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
-      this_00->field_0031 = this_00->field_0018 * DAT_00808754;
+      this_00->field_0031 = st::machine_word_boundary_cast<undefined4>(this_00->field_0018 * DAT_00808754);
     }
     else if (*(uint *)(iVar4 + 0xc) == 2) {
       st::fn_00404F48(this_00,iVar4);
@@ -576,12 +576,12 @@ int __thiscall st::fn_004240F0(STGroupC *this,int *param_1)
     return (int)pvVar2;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x1b9,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x1b9,0,iVar2,st::mutable_c_string("%s"),
                              "STGroupC::SaveGrpData");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x1ba);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x1ba);
   return (int)local_18;
 }
 
@@ -613,12 +613,12 @@ void __thiscall st::fn_00424360(STGroupC *this,int param_1)
   pSVar3 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x1d5,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x1d5,0,iVar4,st::mutable_c_string("%s"),
                                "STGroupC::RestoreGrpData");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x1d6);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x1d6);
     return;
   }
   local_c->field_0020 = local_8->field_0014;
@@ -633,12 +633,12 @@ void __thiscall st::fn_00424360(STGroupC *this,int param_1)
   }
   else {
     puVar5 = st::fn_006B00C0(nullptr,(uint *)(&local_8->field_0x0 + local_8->field_001C),
-                          st::fn_004045C5);
+                          st::pointer_boundary_cast<undefined *>(st::fn_004045C5));
     pSVar3->field_0029 = puVar5;
   }
   iVar1 = *(int *)&pAVar4->field_0x24;
   if (iVar1 != -1) {
-    puVar5 = st::fn_006B00C0(nullptr,(uint *)(&pAVar4->field_0x0 + iVar1),st::fn_004045C5);
+    puVar5 = st::fn_006B00C0(nullptr,(uint *)(&pAVar4->field_0x0 + iVar1),st::pointer_boundary_cast<undefined *>(st::fn_004045C5));
     pSVar3->field_002D = puVar5;
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -674,13 +674,13 @@ void __thiscall st::fn_004247B0(STGroupC *this,uint param_1)
         this_00 = st::fn_004028BA
                             (g_allPlayers_007FA174,this->field_0024,(ushort)param_1,CASE_1);
         if (this_00 == nullptr) {
-          iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\tc_grp.cpp",0x256,0,0,"%s",
+          iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x256,0,0,st::mutable_c_string("%s"),
                                      "STGroupC::SetAVPar");
           if (iVar3 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           st::fn_006A5E40
-                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\tc_grp.cpp",
+                    (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),
                      599);
         }
         if (this_00->field_0020 == 0x14) {

@@ -149,7 +149,16 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
                             !currentProgram.getMemory().contains(target)) continue;
                     Data data = currentProgram.getListing().getDefinedDataAt(target);
                     Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(target);
-                    if (data == null || symbol == null || data.hasStringValue()) continue;
+                    if (data == null || symbol == null) continue;
+                    // A zero-initialized writable char arena is commonly imported by
+                    // Ghidra as the one-byte empty string at its base.  It is still the
+                    // behavioral LEA destination for LoadStringA and must participate as
+                    // a base candidate; string-valued data is never eligible for the
+                    // read/write cursor role below.
+                    if (data.hasStringValue()) {
+                        if ("LEA".equals(mnemonic)) leaBases.add(target);
+                        continue;
+                    }
                     Usage usage = globals.computeIfAbsent(target, ignored -> new Usage());
                     boolean write = reference.getOperandIndex() == 0 &&
                         !Set.of("CMP", "TEST", "PUSH", "CALL", "JMP", "LEA")

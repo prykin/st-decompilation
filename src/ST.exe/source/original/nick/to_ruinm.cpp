@@ -40,10 +40,10 @@ int __thiscall st::fn_00630430(STManRuinC *this,STMessage *message)
   this_00 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\nick\\to_ruinm.cpp",0x94,0,iVar5,"%s",
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_ruinm.cpp"),0x94,0,iVar5,st::mutable_c_string("%s"),
                                "STManRuinC::GetMessage");
     if (iVar7 == 0) {
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\nick\\to_ruinm.cpp",0x96);
+      st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\nick\\to_ruinm.cpp"),0x96);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -55,7 +55,7 @@ int __thiscall st::fn_00630430(STManRuinC *this,STMessage *message)
       return 0;
     }
     local_14 = (byte *)st::fn_004052EA(local_c,(int *)&local_10);
-    st::fn_00401078(g_playSystem_00802A38,PTR_DAT_0079d198,local_14,local_10,0xc);
+    st::fn_00401078(g_playSystem_00802A38,st::pointer_boundary_cast<char *>(PTR_DAT_0079d198),local_14,local_10,0xc);
     st::fn_006AB060(&local_14);
     g_currentExceptionFrame = local_58.previous;
     return 0;
@@ -118,10 +118,10 @@ int __thiscall st::fn_00630430(STManRuinC *this,STMessage *message)
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  local_c->field_0071 = local_c->field_0018 * DAT_00808754;
+  local_c->field_0071 = st::machine_word_boundary_cast<undefined4>(local_c->field_0018 * DAT_00808754);
   if (g_cMf32_00806754 != nullptr) {
     local_8 = (AnonShape_00630430_7FBC9B9C *)
-              st::fn_006F2D90(g_cMf32_00806754,PTR_DAT_0079d198,0,0);
+              st::fn_006F2D90(g_cMf32_00806754,st::pointer_boundary_cast<char *>(PTR_DAT_0079d198),0,0);
   }
   if (local_8 == nullptr) {
 LAB_006304e7:
@@ -144,7 +144,7 @@ LAB_006304e7:
   }
   if (this_00->field_0034 == nullptr) {
     uVar2 = (int)g_worldGrid.sizeX * (int)g_worldGrid.sizeY * 5;
-    pbVar5 = st::fn_006AAC70(uVar2);
+    pbVar5 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(uVar2));
     this_00->field_0034 = pbVar5;
     if (pbVar5 == nullptr) {
       st::fn_00404B24(this_00);

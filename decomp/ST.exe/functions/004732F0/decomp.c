@@ -47,7 +47,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
   undefined2 extraout_var_07;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_08;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
   undefined2 uVar14;
   uint uVar13;
@@ -57,7 +57,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
   undefined2 extraout_var_10;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_11;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_12;
@@ -296,7 +296,7 @@ LAB_004736e2:
         return 2;
       }
       iVar5 = (*local_c->vtable->vfunc_A8)(this->field_0018);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       iVar11 = extraout_EDX;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar14 = extraout_var_04;
@@ -413,7 +413,7 @@ cf_common_exit_0047405D:
     }
     if (this->field_059A == 3) {
       local_24 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_2c,&local_28);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar7 = STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(this->field_02BF));
       local_1c = 0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -421,8 +421,7 @@ cf_common_exit_0047405D:
       if (this->field_02BF != '\0') {
         local_20 = (undefined4 *)&this->field_0x2b3;
         do {
-          puVar8 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
+          puVar8 = thunk_FUN_0041dc40(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
                                       this->field_006C);
           local_38 = *puVar8;
           local_34 = *(short *)(puVar8 + 1);
@@ -520,8 +519,7 @@ cf_common_exit_0047405D:
         DumpClassC::WritePtr
                   (this->field_0588,this->field_058A,this->field_058C,0,
                    (RecoveredRecord_DumpClassC_00495EC0 *)this);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,*(undefined **)((int)this->field_06CB + 0x3f));
+        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)this->field_070A);
         iVar11 = this->vfunc_D8();
         return -(uint)(iVar11 != 0);
       }
@@ -572,8 +570,7 @@ switchD_004734db_caseD_2:
       if (this->field_02BF != '\0') {
         local_20 = (undefined4 *)&this->field_0x2b3;
         do {
-          puVar8 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
+          puVar8 = thunk_FUN_0041dc40(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
                                       this->field_006C);
           local_38 = *puVar8;
           local_34 = *(short *)(puVar8 + 1);

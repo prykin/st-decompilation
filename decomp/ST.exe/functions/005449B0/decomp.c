@@ -853,10 +853,10 @@ switchD_0054679d_default:
           }
           if (iVar13 == local_48) {
             if (DAT_00808783 == '\x01') {
-              DAT_008087a0 = 9;
+              STPiece<0,1>(DAT_008087a0) = 9;
             }
             else if (DAT_00808783 == '\x02') {
-              DAT_008087a0 = 10;
+              STPiece<0,1>(DAT_008087a0) = 10;
             }
             memset(local_40, 0, 0x20); /* compiler bulk-zero initialization */
             DAT_0080879c = 1;

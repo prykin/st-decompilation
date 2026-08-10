@@ -35,11 +35,9 @@ int __thiscall STBoatC::BackAttack(STBoatC *this,int *param_1)
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   uVar8 = (undefined2)((uint)in_EDX >> 0x10);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar4 = *(int *)((int)this->field_06CB + 0x2c);
   uVar7 = (undefined2)((uint)this >> 0x10);
   local_8 = this;
-  if (iVar4 == 9) {
+  if (this->field_06F7 == CASE_9) {
     if (this->field_082E != 3) {
 LAB_00465581:
       this->field_00B7 = 0;
@@ -101,7 +99,7 @@ LAB_00465581:
     }
   }
   else {
-    if (iVar4 != 0x15) {
+    if (this->field_06F7 != CASE_15) {
       local_EAX_27 = sub_00460360(this);
       if (local_EAX_27 != 0) {
         return local_EAX_27;

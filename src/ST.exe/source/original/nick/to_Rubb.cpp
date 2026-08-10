@@ -45,10 +45,10 @@ int __thiscall st::fn_0062E740(STRubbishC *this,STMessage *message)
   this_00 = local_14;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\nick\\to_Rubb.cpp",0xa6,0,local_EAX_35,
-                               "%s","STRubbishC::GetMessage");
+    iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Rubb.cpp"),0xa6,0,local_EAX_35,
+                               st::mutable_c_string("%s"),"STRubbishC::GetMessage");
     if (iVar9 == 0) {
-      st::fn_006A5E40(local_EAX_35,0,"E:\\__titans\\nick\\to_Rubb.cpp",0xa8);
+      st::fn_006A5E40(local_EAX_35,0,st::mutable_c_string("E:\\__titans\\nick\\to_Rubb.cpp"),0xa8);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -103,7 +103,7 @@ int __thiscall st::fn_0062E740(STRubbishC *this,STMessage *message)
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  pAVar12 = (message->arg0).ptr;
+  pAVar12 = st::pointer_boundary_cast<AnonShape_0062FA80_0B91B2B9 *>((message->arg0).ptr);
   local_8 = (AnonShape_0062E740_213F21A8 *)pAVar12;
   if (*(int *)&pAVar12->field_0xc == 2) {
     st::fn_004032AB(this_00,pAVar12);
@@ -233,10 +233,9 @@ int __thiscall st::fn_0062ED90(STRubbishC *this)
   int *piVar2;
   undefined4 *puVar3;
   AnonShape_004AB810_8E5693D5 *pAVar4;
-  undefined4 uVar5;
   int iVar7;
+  int iVar5;
   int iVar6;
-  int iVar8;
   InternalExceptionFrame local_50;
   STRubbishC *local_c;
   int local_8;
@@ -248,47 +247,47 @@ int __thiscall st::fn_0062ED90(STRubbishC *this)
   iVar2 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\nick\\to_Rubb.cpp",0xd9,0,iVar2,"%s",
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Rubb.cpp"),0xd9,0,iVar2,st::mutable_c_string("%s"),
                                "STRubbishC::RubbishCreatePart");
     if (iVar7 == 0) {
-      st::fn_006A5E40(iVar2,0,"E:\\__titans\\nick\\to_Rubb.cpp",0xdb);
+      st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\nick\\to_Rubb.cpp"),0xdb);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  piVar2 = &local_c->field_01E5;
-  iVar8 = 0;
-  iVar6 = local_8;
+  piVar2 = st::pointer_boundary_cast<int *>(&local_c->field_01E5);
+  iVar6 = 0;
+  iVar5 = local_8;
   do {
     if (*piVar2 == 0) {
-      local_8 = iVar6;
-      puVar3 = st::fn_006AAC70(0x3e);
-      (&local_c->field_01E5)[iVar8] = puVar3;
+      local_8 = iVar5;
+      puVar3 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(0x3e));
+      (&local_c->field_01E5)[iVar6] = puVar3;
       if (puVar3 != nullptr) {
-        for (iVar6 = 0xf; iVar6 != 0; iVar6 = iVar6 + -1) {
+        for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
           *puVar3 = 0;
           puVar3 = puVar3 + 1;
         }
         *(undefined2 *)puVar3 = 0;
-        iVar6 = iVar8;
+        iVar5 = iVar6;
         if (local_c->field_01F9 != '\0') {
           pAVar4 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
           if (pAVar4 == nullptr) {
-            uVar5 = 0;
+            pAVar4 = nullptr;
           }
           else {
-            uVar5 = st::fn_00401316(pAVar4);
+            pAVar4 = st::fn_00401316(pAVar4);
           }
-          *(undefined4 *)((&local_c->field_01E5)[iVar8] + 0x10) = uVar5;
+          *(AnonShape_004AB810_8E5693D5 **)((&local_c->field_01E5)[iVar6] + 0x10) = pAVar4;
         }
       }
       g_currentExceptionFrame = local_50.previous;
-      return iVar6;
+      return iVar5;
     }
-    iVar6 = 5;
-    iVar8 = iVar8 + 1;
+    iVar5 = 5;
+    iVar6 = iVar6 + 1;
     piVar2 = piVar2 + 1;
-  } while (iVar8 < 5);
+  } while (iVar6 < 5);
   g_currentExceptionFrame = local_50.previous;
   return 5;
 }
@@ -354,7 +353,7 @@ LAB_0062f450:
     local_10 = *(int *)(&DAT_007d1580 + *param_2 * 8);
     local_c = *(int *)(&DAT_007d1584 + *param_2 * 8);
   }
-  local_14 = param_1;
+  local_14 = st::pointer_boundary_cast<STT3DSprC *>(param_1);
   if (param_1 == nullptr) {
     return 0xffffffff;
   }
@@ -366,7 +365,7 @@ LAB_0062f450:
     iVar4 = st::fn_0040537B(local_14,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar4 != 0) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_Rubb.cpp",0x17b);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_Rubb.cpp"),0x17b);
       return 0xffff;
     }
     iVar4 = st::fn_00404183(this_00,0xe,PTR_00806774,local_8[*param_2],CASE_1D);
@@ -383,12 +382,12 @@ LAB_0062f450:
   }
   else {
     g_currentExceptionFrame = local_5c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\nick\\to_Rubb.cpp",0x189,0,iVar2,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Rubb.cpp"),0x189,0,iVar2,st::mutable_c_string("%s"),
                                "STRubbishC::LoadImagSpr");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\nick\\to_Rubb.cpp",0x18b);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\nick\\to_Rubb.cpp"),0x18b);
   }
   return 0xffff;
 }

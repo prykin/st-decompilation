@@ -5,10 +5,14 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
-   STAppC::InitApp */
+   STAppC::InitApp
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0056ADC0 -> EXTERNAL:00000089 @ 0056AEB3 | 00575A10 -> 0056ADC0 @ 00575AD0;
+   FUN_00575a10 parameter param_1 */
 
 undefined4 __thiscall
-STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 param_3,int param_4)
+STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 param_3,int param_4)
 
 {
   undefined1 *puVar1;
@@ -130,20 +134,20 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x13e);
   }
-  AppClassTy::InitApp((AppClassTy *)local_c,param_1);
+  AppClassTy::InitApp((AppClassTy *)local_c,hInstance);
   pWVar19 = &local_6c;
   for (iVar13 = 10; iVar13 != 0; iVar13 = iVar13 + -1) {
     pWVar19->style = 0;
     pWVar19 = (WNDCLASSA *)&pWVar19->lpfnWndProc;
   }
-  _DAT_00806744 = param_1;
+  _DAT_00806744 = hInstance;
   g_nWidth_00806730 = 800;
   DAT_00806734 = 600;
   DAT_00806738 = 8;
   local_6c.lpfnWndProc = MainWindowProc;
-  local_6c.hInstance = param_1;
+  local_6c.hInstance = hInstance;
   local_6c.hbrBackground = CreateSolidBrush(0);
-  local_6c.hIcon = LoadIconA(param_1,(LPCSTR)0x65);
+  local_6c.hIcon = LoadIconA(hInstance,&DAT_00000065);
   local_6c.lpszClassName = "STWindowClass";
   AVar6 = RegisterClassA(&local_6c);
   if (AVar6 == 0) {
@@ -151,7 +155,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   }
   g_hWnd_00806748 =
        CreateWindowExA(0,"STWindowClass","Submarine Titans",0x80000000,0,0,
-                       g_nWidth_00806730,DAT_00806734,(HWND)0x0,(HMENU)0x0,param_1,(LPVOID)0x0);
+                       g_nWidth_00806730,DAT_00806734,(HWND)0x0,(HMENU)0x0,hInstance,(LPVOID)0x0);
   if (g_hWnd_00806748 == (HWND)0x0) {
     RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x152);
   }
@@ -749,7 +753,7 @@ switchD_0056b4ce_caseD_47:
           pSVar16 = local_c;
           if (local_EAX_3793 == 0) {
             pcVar9 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                        (0x345,&local_c->field_76F6,0,0,0);
+                                        (0x345,(byte *)&local_c->field_76F6,0,0,0);
             local_3c = &pSVar16->field_0x1196;
             cMf32::RecGet(pcVar9,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_3c,0);
             cMf32::delete(pcVar9);
@@ -1053,7 +1057,8 @@ switchD_0056b4ce_caseD_57:
       local_EAX_2043 = Library::MSVCRT::__setjmp3(local_17c.jumpBuffer,0);
       pSVar16 = local_c;
       if (local_EAX_2043 == 0) {
-        pcVar9 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_c->field_76F6,2,0,0);
+        pcVar9 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                    (0x345,(byte *)&local_c->field_76F6,2,0,0);
         local_8 = &pSVar16->field_0x1196;
         cMf32::RecGet(pcVar9,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_8,0);
         pSVar16->field_119A = 0x8f000805;

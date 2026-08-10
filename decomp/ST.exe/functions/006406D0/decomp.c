@@ -479,8 +479,7 @@ LAB_00642c6e:
     }
     *(undefined2 *)((int)&this_00->field_0231 + 2) = CASE_0 >> 0x10;
 switchD_00640ad9_caseD_a2:
-    puVar15 = (byte *)
-              thunk_FUN_0041dc40(local_248,(short)this_00->field_0231,
+    puVar15 = thunk_FUN_0041dc40(local_248,(short)this_00->field_0231,
                                  *(ushort *)&this_00->field_0x235,*(short *)&this_00->field_0x6c);
     *(undefined4 *)&this_00->field_0x237 = *puVar15;
     *(undefined2 *)&this_00->field_0x23b = *(undefined2 *)(puVar15 + 1);
@@ -1867,7 +1866,7 @@ LAB_00641a40:
     uVar20 = (uVar20 >> 0x10) % 3;
     if (uVar20 == 0) {
       uVar20 = 0xffffffff;
-      pcVar25 = &DAT_007d2490;
+      pcVar25 = &CHAR_E_007d2490;
       do {
         pcVar27 = pcVar25;
         if (uVar20 == 0) break;
@@ -1946,7 +1945,7 @@ LAB_00641a40:
     }
     else if (uVar20 == 1) {
       uVar20 = 0xffffffff;
-      pcVar25 = &DAT_007d2474;
+      pcVar25 = &CHAR_E_007d2474;
       do {
         pcVar27 = pcVar25;
         if (uVar20 == 0) break;
@@ -2026,7 +2025,7 @@ LAB_00641a40:
     else if (uVar20 == 2) {
       uVar20 = 0xffffffff;
       local_5 = 0x16;
-      pcVar25 = &DAT_007d247c;
+      pcVar25 = &CHAR_E_007d247c;
       do {
         pcVar27 = pcVar25;
         if (uVar20 == 0) break;
@@ -2104,7 +2103,7 @@ LAB_00641a40:
     else {
       uVar20 = 0xffffffff;
       local_5 = 0x16;
-      pcVar25 = &DAT_007d2490;
+      pcVar25 = &CHAR_E_007d2490;
       do {
         pcVar27 = pcVar25;
         if (uVar20 == 0) break;

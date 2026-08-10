@@ -200,7 +200,7 @@ LAB_005c7ae0:
                    0);
     }
     local_94 = DAT_0080995c;
-    puVar11 = (byte *)(&DAT_00809960);
+    puVar11 = (byte *)&DAT_00809960;
     puVar16 = (byte *)(local_d8);
     memmove(puVar16, puVar11, 0x20); /* compiler REP MOVS byte copy */
     iVar7 = 0;
@@ -217,7 +217,7 @@ LAB_005c7ae0:
     DAT_00809958 = DAT_008087be;
     DAT_0080995c = local_94;
     puVar11 = (byte *)(local_d8);
-    puVar16 = (byte *)(&DAT_00809960);
+    puVar16 = (byte *)&DAT_00809960;
     memmove(puVar16, puVar11, 0x20); /* compiler REP MOVS byte copy */
     iVar7 = 0;
     if (g_dArray_0080C4C7 != nullptr) {

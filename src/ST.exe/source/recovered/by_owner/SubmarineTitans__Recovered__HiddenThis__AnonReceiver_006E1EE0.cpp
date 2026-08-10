@@ -104,23 +104,23 @@ st::fn_006E1EE0
         iVar5 = (param_2 + (uint)pbVar16[1] * 4)[3];
         if (iVar5 == -1) {
           iVar5 = st::fn_006E25D0
-                            ((ST3DSMAPContext *)this,param_2 + (uint)pbVar16[1] * 4,
+                            ((ST3DSMAPContext *)this,st::pointer_boundary_cast<int *>(param_2 + (uint)pbVar16[1] * 4),
                              (float *)(iVar19 + (uint)pbVar16[1] * 0xc),dVar1,dVar2,dVar3,1);
         }
         iVar6 = (param_2 + (uint)pbVar16[2] * 4)[3];
         if (iVar6 == -1) {
           iVar6 = st::fn_006E25D0
-                            ((ST3DSMAPContext *)this,param_2 + (uint)pbVar16[2] * 4,
+                            ((ST3DSMAPContext *)this,st::pointer_boundary_cast<int *>(param_2 + (uint)pbVar16[2] * 4),
                              (float *)(iVar19 + (uint)pbVar16[2] * 0xc),dVar1,dVar2,dVar3,1);
         }
         iVar7 = (param_2 + (uint)pbVar16[3] * 4)[3];
         if (iVar7 == -1) {
           iVar7 = st::fn_006E25D0
-                            ((ST3DSMAPContext *)this,param_2 + (uint)pbVar16[3] * 4,
+                            ((ST3DSMAPContext *)this,st::pointer_boundary_cast<int *>(param_2 + (uint)pbVar16[3] * 4),
                              (float *)(iVar19 + (uint)pbVar16[3] * 0xc),dVar1,dVar2,dVar3,1);
         }
         local_2c = param_2[(uint)pbVar16[1] * 4 + 1];
-        piVar15 = param_2 + (uint)pbVar16[2] * 4;
+        piVar15 = st::pointer_boundary_cast<int *>(param_2 + (uint)pbVar16[2] * 4);
         local_38 = param_2[(uint)pbVar16[1] * 4];
         iVar10 = *piVar15;
         local_40 = local_38;
@@ -138,7 +138,7 @@ st::fn_006E1EE0
         if (local_2c < iVar10) {
           local_2c = iVar10;
         }
-        piVar5 = param_2 + (uint)pbVar16[3] * 4;
+        piVar5 = st::pointer_boundary_cast<int *>(param_2 + (uint)pbVar16[3] * 4);
         iVar10 = *piVar5;
         if (iVar10 < local_40) {
           local_40 = iVar10;
@@ -168,7 +168,7 @@ st::fn_006E1EE0
           iVar14 = 0;
           if (0 < local_28) {
             do {
-              iVar8 = param_1->field_0028 + (uint)*(byte *)(iVar14 + param_3) * 0x1c;
+              iVar8 = st::machine_word_boundary_cast<int>(param_1->field_0028 + (uint)*(byte *)(iVar14 + param_3) * 0x1c);
               if ((((int)param_2[(uint)*(byte *)(iVar8 + 1) * 4 + 2] < iVar10) ||
                   ((int)param_2[(uint)*(byte *)(iVar8 + 2) * 4 + 2] < iVar10)) ||
                  ((int)param_2[(uint)*(byte *)(iVar8 + 3) * 4 + 2] < iVar10)) {

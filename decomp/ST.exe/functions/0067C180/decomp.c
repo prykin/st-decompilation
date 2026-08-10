@@ -31,7 +31,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
   ushort *puVar11;
   int iVar7;
   uint uVar12;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX;
   int iVar13;
   uint uVar14;
@@ -173,7 +173,7 @@ LAB_0067c61b:
         }
       }
       else {
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar14 = extraout_EDX;
         if ((iVar13 == 0) ||
            (uVar14 = local_20->field_0685 + iVar13, uVar14 <= local_20->field_06FE)) {

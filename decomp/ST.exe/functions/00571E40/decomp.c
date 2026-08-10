@@ -32,7 +32,7 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
   DWORD local_10 [2];
   HKEY local_8;
 
-  LVar4 = RegOpenKeyA((HKEY)0x80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Directories",&local_8);
+  LVar4 = RegOpenKeyA((HKEY)&DAT_80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Directories",&local_8);
   pcVar9 = RegQueryValueExA_exref;
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   pBVar1 = (LPBYTE)((int)this + 0x28);
@@ -88,7 +88,7 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
   RegCloseKey(local_8);
   wsprintfA(local_124,"%s%s",(int)this + 0x28,PTR_s_SAVEGAME__0079b0cc);
   CreateDirectoryA(local_124,(LPSECURITY_ATTRIBUTES)0x0);
-  LVar4 = RegOpenKeyA((HKEY)0x80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version",&local_8);
+  LVar4 = RegOpenKeyA((HKEY)&DAT_80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version",&local_8);
   if (LVar4 != 0) {
 LAB_00572086:
     RegCloseKey(local_8);

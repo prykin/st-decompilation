@@ -7,15 +7,13 @@
 EditorClassTy * __cdecl CreateEditor(void)
 
 {
-  EditorClassTy *pEVar1;
+  undefined4 *puVar1;
+  EditorClassTy *pEVar2;
 
-  pEVar1 = (EditorClassTy *)FUN_006b04d0(0x218);
-  if (pEVar1 != nullptr) {
-    FUN_0072b700((undefined4 *)pEVar1);
-    pEVar1->field_0000 = &VTable_0079E2B4;
-    pEVar1->field_0200 = 0;
-    pEVar1->field_01FC = 0;
-    return pEVar1;
+  puVar1 = FUN_006b04d0(0x218);
+  if (puVar1 != nullptr) {
+    pEVar2 = (EditorClassTy *)FUN_007209b0(puVar1);
+    return pEVar2;
   }
   return nullptr;
 }

@@ -363,7 +363,7 @@ LAB_005cee1a:
                   }
                   if ((pvVar18 != nullptr) && (STField<uint>(pvVar18,0x90) == DAT_0080995c))
                   {
-                    pbVar24 = (byte *)&DAT_00809960;
+                    pbVar24 = &DAT_00809960;
                     pbVar22 = (byte *)((int)pvVar18 + 0x4c);
                     do {
                       bVar1 = *pbVar22;

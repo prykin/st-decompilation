@@ -26,7 +26,7 @@ st::fn_00727DA0
   int iVar4;
   int local_EAX_936;
   uint uVar6;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX;
   uint uVar7;
   undefined4 *puVar8;
@@ -45,7 +45,7 @@ st::fn_00727DA0
   int local_c;
   AnonReceiver_00727C80 *local_8;
 
-  iVar5 = param_1->field_0028 + param_2 * 0x1c;
+  iVar5 = st::machine_word_boundary_cast<int>(param_1->field_0028 + param_2 * 0x1c);
   puVar8 = (undefined4 *)
            ((uint)*(byte *)(param_1->field_0028 + 1 + param_2 * 0x1c) * 0x10 + param_3);
   DAT_008570a8 = *puVar8;
@@ -86,7 +86,7 @@ st::fn_00727DA0
   pAVar9 = (AnonShape_00727DA0_C4265AA0 *)0x7fff0000;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
-  piVar14 = &DAT_008570ac;
+  piVar14 = st::pointer_boundary_cast<int *>(&DAT_008570ac);
   do {
     pAVar1 = (AnonShape_00727DA0_C4265AA0 *)*piVar14;
     if ((int)pAVar1 < (int)pAVar9) {
@@ -136,7 +136,7 @@ st::fn_00727DA0
                   if ((int)uVar15 < (int)DAT_008570dc) {
                     uVar14 = st::fn_006DB5F0(DAT_00857068,DAT_008570dc - uVar15);
                     uVar6 = uVar6 + uVar14;
-                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                     uVar12 = extraout_ECX;
                     uVar15 = DAT_008570dc;
                   }
@@ -145,7 +145,7 @@ st::fn_00727DA0
                   this = local_8;
                   if (uVar12 - uVar15 != 0 && (int)uVar15 <= (int)uVar12) {
                     uVar12 = uVar12 - uVar15 >> 0x10;
-                    pbVar17 = &param_1->field_0x0 + (uVar15 >> 0x10);
+                    pbVar17 = st::pointer_boundary_cast<byte *>(&param_1->field_0x0 + (uVar15 >> 0x10));
                     uVar7 = uVar12;
                     pbVar13 = pbVar17;
                     puVar16 = (undefined2 *)((uVar15 >> 0x10) * 2 + param_2);

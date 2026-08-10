@@ -4,10 +4,29 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00607EE0_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_26=38;CASE_27=39;CASE_28=40;CASE_2B=43;CASE_FD=253;CASE_FE=254
-    */
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: complete offset-zero output stores: addresses=39, nulls=0; 00607F17 MOV dword ptr
+   [EAX],0x7cee70 | 00607F6E MOV dword ptr [ECX],0x7cee98 | 00607FA2 MOV dword ptr [ECX],0x7ceec0 |
+   00607FD6 MOV dword ptr [ECX],0x7ceee8 | 0060800A MOV dword ptr [ECX],0x7cef10 | 0060803E MOV
+   dword ptr [ECX],0x7cef38 | 00608072 MOV dword ptr [ECX],0x7cef60 | 006080A6 MOV dword ptr
+   [ECX],0x7cef88 | 006080CF MOV dword ptr [ECX],0x7cefb0 | 00608103 MOV dword ptr [ECX],0x7cefd8 |
+   00608137 MOV dword ptr [ECX],0x7cf000 | 0060816B MOV dword ptr [ECX],0x7cf028 | 0060819F MOV
+   dword ptr [ECX],0x7cf050 | 006081D3 MOV dword ptr [ECX],0x7cf078 | 00608207 MOV dword ptr
+   [ECX],0x7cf0a0 | 0060823B MOV dword ptr [ECX],0x7cf0c8 | 0060826F MOV dword ptr [ECX],0x7cf0f0 |
+   006082A3 MOV dword ptr [ECX],0x7cf118 | 006082D7 MOV dword ptr [ECX],0x7cf140 | 0060830B MOV
+   dword ptr [ECX],0x7cf168 | 0060833F MOV dword ptr [ECX],0x7cf190 | 00608373 MOV dword ptr
+   [ECX],0x7cf1b8 | 006083A7 MOV dword ptr [ECX],0x7cf1e0 | 006083F2 MOV dword ptr [ECX],0x7cf230 |
+   00608426 MOV dword ptr [ECX],0x7cf258 | 0060845A MOV dword ptr [ECX],0x7cf280 | 0060848E MOV
+   dword ptr [ECX],0x7cf2a8 | 006084C2 MOV dword ptr [ECX],0x7cf2d0 | 006084F6 MOV dword ptr
+   [ECX],0x7cf2f8 | 0060852A MOV dword ptr [ECX],0x7cf320 | 0060855E MOV dword ptr [ECX],0x7cf348 |
+   00608592 MOV dword ptr [ECX],0x7cf370 | 006085C6 MOV dword ptr [ECX],0x7cf398 | 006085FA MOV
+   dword ptr [ECX],0x7cf3c0 | 0060862E MOV dword ptr [ECX],0x7cf3e8 | 00608679 MOV dword ptr
+   [ECX],0x7cee70 | 006086AD MOV dword ptr [ECX],0x7cf050 | 006086E1 MOV dword ptr [ECX],0x7cf3c0 |
+   00608715 MOV dword ptr [ECX],0x7cf208 */
 
 undefined4
-FUN_00607ee0(Global_sub_00607EE0_param_1Enum param_1,undefined4 *param_2,undefined4 *param_3,
+FUN_00607ee0(Global_sub_00607EE0_param_1Enum param_1,void **param_2,undefined4 *param_3,
             undefined4 *param_4,undefined4 *param_5,undefined4 *param_6)
 
 {

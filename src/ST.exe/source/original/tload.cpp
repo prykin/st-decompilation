@@ -104,7 +104,7 @@ void __cdecl st::fn_00428E50(short *param_1)
     if (pSVar7 != nullptr) goto LAB_00428e95;
   }
   pSVar7 = local_30;
-  st::fn_006A5E40(-2,g_overwriteContext_007ED77C,"E:\\__titans\\tload.cpp",0x24d);
+  st::fn_006A5E40(-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\tload.cpp"),0x24d);
 LAB_00428e95:
   dVar1 = ((double)DAT_00807570 * _DAT_00790590) / (double)_DAT_007ac580 + _DAT_007901c0;
   st::fn_0072E150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
@@ -159,7 +159,7 @@ LAB_00428e95:
     local_48 = (int *)((int)piVar15 + 1);
   } while ((int)local_48 < 6);
   local_2c = 2;
-  piVar15 = &DAT_007f4db8;
+  piVar15 = st::pointer_boundary_cast<int *>(&DAT_007f4db8);
   do {
     local_14 = local_2c + -2;
     dVar1 = (double)((float)local_2c * _DAT_007904f8);
@@ -189,7 +189,7 @@ LAB_00428e95:
   local_40 = nullptr;
   do {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    _local_50 = CONCAT31(uStack_4f,(byte)local_2c >> 1);
+    auto _local_50 = CONCAT31(uStack_4f,(byte)local_2c >> 1);
     st::fn_006DD610(pSVar7,(uint)local_40,10.0,10.0);
     local_44 = st::fn_006AE290(nullptr,10,0x1c,10);
     DAT_007f4dd0 = 0;
@@ -243,7 +243,7 @@ LAB_004292e2:
           pRVar3->field_0008 = (ushort)pRVar3->field_0048;
           pRVar3->next = pSVar7->field_0140;
           pSVar7->field_0140 = pRVar3;
-          pSVar7->field_013C = pSVar7->field_013C + 1;
+          pSVar7->field_013C = st::machine_word_boundary_cast<int>(pSVar7->field_013C + 1);
           st::fn_006DDBE0(pSVar7);
           st::fn_006DDD50(pSVar7);
           pSVar7->field_0140 = nullptr;
@@ -403,9 +403,9 @@ LAB_00429d7a:
 LAB_00429715:
           local_c0 = (double)CONCAT44(local_84 * local_38,(undefined4)local_c0);
           local_14 = local_6c * local_38;
-          local_88 = &DAT_007a5248;
+          local_88 = st::pointer_boundary_cast<int *>(&DAT_007a5248);
           iVar9 = (local_7c + iVar14) * local_38 + local_b8;
-          local_70 = &DAT_007f4db8;
+          local_70 = st::pointer_boundary_cast<int *>(&DAT_007f4db8);
           do {
             local_78 = iVar14;
             local_68 = local_64;
@@ -746,7 +746,7 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
   if (iVar3 == 0) {
     pAVar3 = (AnonShape_005751F0_0FFC949A *)
              st::fn_006EF640
-                       ((int)param_1,text,g_cMf32_00806760,g_cMf32_00806760,st::fn_00403DFF);
+                       ((int)param_1,text,g_cMf32_00806760,g_cMf32_00806760,st::pointer_boundary_cast<undefined *>(st::fn_00403DFF));
     local_1c = pAVar3;
     if (g_cLoading_00802A58 != nullptr) {
       iVar6 = DAT_007f4e00;
@@ -760,7 +760,7 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
         st::fn_00403472(g_cLoading_00802A58,CASE_0,0,nullptr);
       }
     }
-    puVar11 = &pAVar3->field_0xe;
+    puVar11 = st::pointer_boundary_cast<undefined1 *>(&pAVar3->field_0xe);
     iVar6 = 0x100;
     puVar7 = (undefined1 *)((int)PTR_0080679c + 0x29);
     do {
@@ -783,7 +783,7 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
     }
     this = local_10;
     if (local_10 == nullptr) {
-      st::fn_006A5E40(-2,g_overwriteContext_007ED77C,"E:\\__titans\\tload.cpp",0x48e);
+      st::fn_006A5E40(-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\tload.cpp"),0x48e);
     }
     st::fn_0072E150(0xc0000000,0x403ccccc);
     lVar16 = st::fn_0072E288();
@@ -824,7 +824,7 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
             pRVar1->field_0008 = (ushort)pRVar1->field_0048;
             pRVar1->next = this->field_0140;
             this->field_0140 = pRVar1;
-            this->field_013C = this->field_013C + 1;
+            this->field_013C = st::machine_word_boundary_cast<int>(this->field_013C + 1);
             st::fn_006DDBE0(this);
             st::fn_006DDD50(this);
             uVar14 = iVar6 * iVar6;
@@ -834,7 +834,7 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
             pRVar1->field_0004 = (short)local_8;
             local_24 = pRVar1->field_0028;
             pRVar1->field_0008 = (short)local_2c;
-            local_20 = st::fn_006AAC70(uVar14);
+            local_20 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(uVar14));
             puVar13 = (byte *)this->field_000C;
             puVar15 = (byte *)(local_20);
             memmove(puVar15, puVar13, uVar14); /* compiler REP MOVS byte copy */
@@ -866,10 +866,10 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
     return &pAVar3->field_0000;
   }
   g_currentExceptionFrame = local_74.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\tload.cpp",0x502,0,iVar3,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tload.cpp"),0x502,0,iVar3,st::mutable_c_string("%s"),
                              "LoadLand");
   if (iVar5 == 0) {
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\tload.cpp",0x503);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\tload.cpp"),0x503);
     return nullptr;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -912,7 +912,7 @@ void st::fn_0042A860(void)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  st::fn_006A5E40(iVar1,0,"E:\\__titans\\tload.cpp",0x536);
+  st::fn_006A5E40(iVar1,0,st::mutable_c_string("E:\\__titans\\tload.cpp"),0x536);
   return;
 }
 

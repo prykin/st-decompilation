@@ -170,7 +170,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
     local_1b8.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_1b8;
     iVar14 = Library::MSVCRT::__setjmp3
-                       (local_1b8.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
+                       (local_1b8.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0xffffffff);
     local_1c = &stack0xfffffe18;
     if (iVar14 == 0) {
       local_1c = &stack0xfffffe18;

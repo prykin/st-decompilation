@@ -31,9 +31,8 @@ void __thiscall ST3DSMAPContext::sub_006DDBE0(ST3DSMAPContext *this)
   puStack_c = &DAT_0079dfd8;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
-  if (((this->field_0004 == nullptr) ||
-      ((this->field_0004->field_000C & 0x1100) != 0x100)) &&
-     ((this->field_02DC == 0 || (this->field_02D8 != 0)))) {
+  if (((this->field_0004 == nullptr) || ((this->field_0004->field_000C & 0x1100) != 0x100)
+      ) && ((this->field_02DC == 0 || (this->field_02D8 != 0)))) {
     uVar4 = this->field_0038 - this->field_0030;
     iVar3 = this->field_003C - this->field_0034;
     ExceptionList = &local_14;

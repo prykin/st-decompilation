@@ -59,7 +59,7 @@ st::fn_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE35 *param_
     *(int *)(&this->field_01E5)[param_1] = param_2->field_0020;
     *(uint *)((&this->field_01E5)[param_1] + 0x35) = g_playSystem_00802A38->field_00E4;
     *(undefined4 *)((&this->field_01E5)[param_1] + 0x39) = 3000;
-    uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
+    uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
     this->field_001C = uVar1;
     *(uint *)((&this->field_01E5)[param_1] + 0x1c) = (uVar1 >> 0x10) % 5;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

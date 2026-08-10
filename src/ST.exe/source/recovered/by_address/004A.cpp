@@ -43,14 +43,14 @@ void __thiscall st::fn_004A8220(void *this,char param_1,short param_2,ushort par
   uint uVar2;
   undefined4 local_8;
 
-  local_8 = this;
+  local_8 = st::machine_word_boundary_cast<undefined4>(this);
   if (((STField<int>(this,0xef) != 0) &&
       (iVar1 = *(int *)(STField<int>(this,0xef) + 0xc), iVar1 != 0)) && (uVar2 = 0, 0 < iVar1)) {
     do {
       st::fn_006ACC70(STField<DArrayTy *>(this,0xef),uVar2,&local_8);
       if ((STPiece<2,2>(local_8) == param_2) && ((char)local_8 == param_1)) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_8 = (void *)CONCAT22(param_3,(undefined2)local_8);
+        local_8 = st::machine_word_boundary_cast<undefined4>((void *)CONCAT22(param_3,(undefined2)local_8));
         st::fn_006AE140(STField<DArrayTy *>(this,0xef),uVar2,&local_8);
         break;
       }
@@ -69,7 +69,7 @@ void __thiscall st::fn_004A8220(void *this,char param_1,short param_2,ushort par
       }
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (void *)CONCAT22(param_3,(undefined2)local_8);
+    local_8 = st::machine_word_boundary_cast<undefined4>((void *)CONCAT22(param_3,(undefined2)local_8));
     st::fn_006AE140(STField<DArrayTy *>(this,0x20e),uVar2,&local_8);
   }
   return;
@@ -171,7 +171,7 @@ LAB_004a8e4a:
   }
   if (PTR_00806750[1] + -1 < param_2) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_2 = PTR_00806750[1] + -1;
+    param_2 = st::machine_word_boundary_cast<int>(PTR_00806750[1] + -1);
   }
   DAT_008073d8 = param_1;
   DAT_008073dc = param_2;
@@ -346,9 +346,9 @@ undefined4 st::fn_004A9D60(float param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
   float10 fVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_00;
   longlong lVar3;
   float local_8;
@@ -375,9 +375,9 @@ undefined4 st::fn_004A9D60(float param_1)
   }
   lVar3 = st::fn_0072E288();
   uVar1 = (int)(uint)lVar3 >> 0x1f;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   fVar2 = extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[return_width_artifact,call_clobber_piece]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate volatile-register merge after CALL: split the partial-register lifetime */
   if (((float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0) &&
      (lVar3 = st::fn_0072E288(), uVar1 = (int)(uint)lVar3 >> 0x1f, fVar2 = extraout_ST1_00,
      (float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0_00)) {
@@ -407,9 +407,9 @@ undefined4 st::fn_004A9FB0(float param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
   float10 fVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_00;
   longlong lVar3;
   float local_8;
@@ -436,9 +436,9 @@ undefined4 st::fn_004A9FB0(float param_1)
   }
   lVar3 = st::fn_0072E288();
   uVar1 = (int)(uint)lVar3 >> 0x1f;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   fVar2 = extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[return_width_artifact,call_clobber_piece]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate volatile-register merge after CALL: split the partial-register lifetime */
   if (((float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0) &&
      (lVar3 = st::fn_0072E288(), uVar1 = (int)(uint)lVar3 >> 0x1f, fVar2 = extraout_ST1_00,
      (float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0_00)) {
@@ -468,9 +468,9 @@ undefined4 st::fn_004AA200(float param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
   float10 fVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_00;
   longlong lVar3;
   float local_8;
@@ -497,9 +497,9 @@ undefined4 st::fn_004AA200(float param_1)
   }
   lVar3 = st::fn_0072E288();
   uVar1 = (int)(uint)lVar3 >> 0x1f;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   fVar2 = extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[return_width_artifact,call_clobber_piece]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate volatile-register merge after CALL: split the partial-register lifetime */
   if (((float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0) &&
      (lVar3 = st::fn_0072E288(), uVar1 = (int)(uint)lVar3 >> 0x1f, fVar2 = extraout_ST1_00,
      (float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0_00)) {
@@ -529,9 +529,9 @@ undefined4 st::fn_004AA450(float param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
   float10 fVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_00;
   longlong lVar3;
   float local_8;
@@ -558,9 +558,9 @@ undefined4 st::fn_004AA450(float param_1)
   }
   lVar3 = st::fn_0072E288();
   uVar1 = (int)(uint)lVar3 >> 0x1f;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   fVar2 = extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[return_width_artifact,call_clobber_piece]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate volatile-register merge after CALL: split the partial-register lifetime */
   if (((float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0) &&
      (lVar3 = st::fn_0072E288(), uVar1 = (int)(uint)lVar3 >> 0x1f, fVar2 = extraout_ST1_00,
      (float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0_00)) {
@@ -590,9 +590,9 @@ undefined4 st::fn_004AA6A0(float param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
   float10 fVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_00;
   longlong lVar3;
   float local_8;
@@ -617,9 +617,9 @@ undefined4 st::fn_004AA6A0(float param_1)
   }
   lVar3 = st::fn_0072E288();
   uVar1 = (int)(uint)lVar3 >> 0x1f;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   fVar2 = extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[return_width_artifact,call_clobber_piece]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate volatile-register merge after CALL: split the partial-register lifetime */
   if (((float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0) &&
      (lVar3 = st::fn_0072E288(), uVar1 = (int)(uint)lVar3 >> 0x1f, fVar2 = extraout_ST1_00,
      (float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0_00)) {
@@ -649,9 +649,9 @@ undefined4 st::fn_004AA8D0(float param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
   float10 fVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_00;
   longlong lVar3;
   float local_8;
@@ -676,9 +676,9 @@ undefined4 st::fn_004AA8D0(float param_1)
   }
   lVar3 = st::fn_0072E288();
   uVar1 = (int)(uint)lVar3 >> 0x1f;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   fVar2 = extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[return_width_artifact,call_clobber_piece]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate volatile-register merge after CALL: split the partial-register lifetime */
   if (((float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0) &&
      (lVar3 = st::fn_0072E288(), uVar1 = (int)(uint)lVar3 >> 0x1f, fVar2 = extraout_ST1_00,
      (float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0_00)) {
@@ -708,9 +708,9 @@ undefined4 st::fn_004AAB00(float param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
   float10 fVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_00;
   longlong lVar3;
   float local_8;
@@ -735,9 +735,9 @@ undefined4 st::fn_004AAB00(float param_1)
   }
   lVar3 = st::fn_0072E288();
   uVar1 = (int)(uint)lVar3 >> 0x1f;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   fVar2 = extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[return_width_artifact,call_clobber_piece]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate volatile-register merge after CALL: split the partial-register lifetime */
   if (((float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0) &&
      (lVar3 = st::fn_0072E288(), uVar1 = (int)(uint)lVar3 >> 0x1f, fVar2 = extraout_ST1_00,
      (float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0_00)) {
@@ -767,9 +767,9 @@ undefined4 st::fn_004AAD30(float param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
   float10 fVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_00;
   longlong lVar3;
   float local_8;
@@ -794,9 +794,9 @@ undefined4 st::fn_004AAD30(float param_1)
   }
   lVar3 = st::fn_0072E288();
   uVar1 = (int)(uint)lVar3 >> 0x1f;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   fVar2 = extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[return_width_artifact,call_clobber_piece]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate volatile-register merge after CALL: split the partial-register lifetime */
   if (((float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0) &&
      (lVar3 = st::fn_0072E288(), uVar1 = (int)(uint)lVar3 >> 0x1f, fVar2 = extraout_ST1_00,
      (float10)(int)(((uint)lVar3 ^ uVar1) - uVar1) < extraout_ST0_00)) {
@@ -961,7 +961,7 @@ switchD_004ab3a0_default:
 void st::fn_004AB470(uint *param_1,int param_2)
 
 {
-  DAT_008073d8 = param_1;
+  DAT_008073d8 = st::machine_word_boundary_cast<undefined4>(param_1);
   DAT_008073dc = param_2;
   DAT_008073d0 = (float)(int)param_1 * _DAT_007904f8 + _DAT_007904f4;
   _DAT_008073d4 = (float)param_2 * _DAT_007904f8 + _DAT_007904f4;
@@ -1054,7 +1054,17 @@ void st::fn_004AB650(void)
 
 // 004AB810 FUN_004ab810
 #line 4 "decomp/ST.exe/functions/004AB810/decomp.c"
-void __fastcall st::fn_004AB810(AnonShape_004AB810_8E5693D5 *param_1)
+/* [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=36, ignored=5, unknown=0
+
+   [STReturnSemanticsApplier] typed_pointer_return.
+   Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
+   structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_004AB810_8E5693D5 (current recovered
+   extent=20) */
+
+AnonShape_004AB810_8E5693D5 * __fastcall st::fn_004AB810(AnonShape_004AB810_8E5693D5 *param_1)
 
 {
   *(VTable_00790790 **)param_1 = &st_global_00790790;
@@ -1075,7 +1085,7 @@ void __fastcall st::fn_004AB810(AnonShape_004AB810_8E5693D5 *param_1)
   *(undefined4 *)&param_1[2].field_0x8 = 0;
   *(undefined4 *)&param_1[2].field_0x10 = 0;
   *(undefined4 *)&param_1[1].field_0x8 = 0;
-  return;
+  return param_1;
 }
 
 // 004ABCE0 FUN_004abce0
@@ -1107,7 +1117,7 @@ undefined4 __thiscall st::fn_004ABCE0(void *this,byte param_1,int param_2,int pa
             pbVar2 = (byte *)(iVar6 + 0xf);
             *pbVar2 = *pbVar2 | 2;
           }
-          st::fn_00404264(this,param_1);
+          st::fn_00404264(st::pointer_boundary_cast<STT3DSprC *>(this),param_1);
           iVar6 = iVar7 + STField<int>(this,0x20);
           if ((*(byte *)(iVar7 + 0xe + STField<int>(this,0x20)) & 2) == 0) {
             *(int *)(iVar6 + 0x10) = param_2;
@@ -1369,8 +1379,8 @@ undefined4 __thiscall st::fn_004AC9E0(void *this,int param_1)
   undefined *puStack_c;
   undefined4 local_8;
 
-  puStack_c = &DAT_00790798;
-  puStack_10 = &st_image_0072D964;
+  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790798);
+  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
   local_8 = 0;
   if (STField<int>(this,0x18) == -1) {
@@ -1421,7 +1431,7 @@ cf_continue_loop_004ACA23:
         iVar4 = STField<int>(this,0x20) + iVar6;
         if (*(int *)(iVar4 + 0x18) == *(int *)(iVar4 + 0x14)) {
           if (*(char *)(iVar4 + 0xd) == '\x02') {
-            st::fn_00404264(this,(byte)local_28);
+            st::fn_00404264(st::pointer_boundary_cast<STT3DSprC *>(this),(byte)local_28);
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
             goto cf_continue_loop_004ACA23;
@@ -2346,7 +2356,7 @@ st::fn_004AF080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,
     local_28 = 2;
     local_2c = 2;
   }
-  psVar8 = st::fn_006AAC70(g_worldGrid.planeStride * 5);
+  psVar8 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(g_worldGrid.planeStride * 5));
   local_14 = 0;
   do {
     iVar10 = g_worldGrid.planeStride * local_14;

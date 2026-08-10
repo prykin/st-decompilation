@@ -121,7 +121,7 @@ int st::fn_00566600(int param_1)
   }
   local_18 = local_367;
   local_14 = pcVar2;
-  st::fn_006F12B0(pcVar2,st::fn_006F2D10,&local_368);
+  st::fn_006F12B0(pcVar2,st::machine_word_boundary_cast<undefined4>(st::fn_006F2D10),st::machine_word_boundary_cast<undefined4>(&local_368));
   pcVar2 = local_14;
   puVar3 = st::fn_006F2790(local_14);
   uVar5 = local_c;
@@ -132,7 +132,7 @@ int st::fn_00566600(int param_1)
   }
   local_c = uVar5;
   if (uVar5 == 0) {
-    st::fn_006A5E40(-4,g_overwriteContext_007ED77C,"E:\\__titans\\snd_mngr.cpp",0x25);
+    st::fn_006A5E40(-4,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\snd_mngr.cpp"),0x25);
   }
   if ((param_1 == 0) || ((param_1 < 0 && ((int)local_10->field_0028 < 1)))) {
     uVar6 = st::fn_0072E6C0();
@@ -155,7 +155,7 @@ int st::fn_00566600(int param_1)
     local_8 = st::fn_006F2D90(local_10->field_0018,pCVar4,bVar12,iVar13);
     if (local_8 == nullptr) {
       st::fn_006A5E40
-                (-4,g_overwriteContext_007ED77C,"E:\\__titans\\snd_mngr.cpp",0x32);
+                (-4,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\snd_mngr.cpp"),0x32);
       goto LAB_0056681c;
     }
   }
@@ -204,22 +204,22 @@ int __thiscall st::fn_00566C20(SoundManagerTy *this,STMessage *message)
   this_00 = local_8;
   if (local_EAX_48 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\snd_mngr.cpp",0xdc,0,local_EAX_48,"%s"
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\snd_mngr.cpp"),0xdc,0,local_EAX_48,st::mutable_c_string("%s")
                                ,"SoundManagerTy::GetMessage");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_48,0,"E:\\__titans\\snd_mngr.cpp",0xdc);
+    st::fn_006A5E40(local_EAX_48,0,st::mutable_c_string("E:\\__titans\\snd_mngr.cpp"),0xdc);
     return 0xffff;
   }
   SVar2 = message->id;
   if (SVar2 != MESS_ID_NONE) {
     if (SVar2 == MESS_ID_CREATE) {
-      DAT_008033f0 = local_8;
-      local_8->field_0028 = message->arg0;
+      DAT_008033f0 = st::machine_word_boundary_cast<undefined4>(local_8);
+      local_8->field_0028 = static_cast<undefined4>((message->arg0).u32);
     }
     else if (SVar2 == MESS_SHARED_0003) {
-      DAT_008033f0 = nullptr;
+      DAT_008033f0 = static_cast<undefined4>(0);
       st::fn_00403C01(local_8);
     }
     goto LAB_00566d75;

@@ -110,38 +110,38 @@ st::fn_005B5BE0(ChooseMapTy *this,RecoveredSourceFamily_dibcopy *param_1,int *pa
   int iVar2;
 
   iVar2 = (*param_2 + -1) * param_2[5];
-  st::fn_006B4170(param_1,0,iVar2,0,param_2[5] + -2,param_1->field_0008,0xff);
+  st::fn_006B4170(param_1,0,iVar2,0,st::machine_word_boundary_cast<int>(param_2[5] + -2),param_1->field_0008,0xff);
   if (param_2[1] == 1) {
-    st::fn_006B4170(param_1,0,iVar2,0,param_2[5] + -2,0x14,0);
-    st::fn_006B4170(param_1,0,iVar2 + 1,0x14,param_2[5] + -5,2,0);
-    st::fn_006B4170(param_1,0,iVar2 + 3,0x16,param_2[5] + -9,2,0);
+    st::fn_006B4170(param_1,0,iVar2,0,st::machine_word_boundary_cast<int>(param_2[5] + -2),0x14,0);
+    st::fn_006B4170(param_1,0,iVar2 + 1,0x14,st::machine_word_boundary_cast<int>(param_2[5] + -5),2,0);
+    st::fn_006B4170(param_1,0,iVar2 + 3,0x16,st::machine_word_boundary_cast<int>(param_2[5] + -9),2,0);
     st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,-(uint)(*param_2 != 1) & 2,iVar2,
                  0x14,(byte)this->field_1A5B->field_0140,0xd);
     st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,0x14,iVar2 + 3,0x17,
                  (byte)this->field_1A5B->field_0140,0xd);
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0x17,param_2[5] + -6 + iVar2,
+    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0x17,st::machine_word_boundary_cast<int>(param_2[5] + -6 + iVar2),
                  0x17,(byte)this->field_1A5B->field_0140,0xd);
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,param_2[5] + iVar2 + -6,0x17,
-                 param_2[5] + iVar2 + -3,0x14,(byte)this->field_1A5B->field_0140,0xd);
-    iVar2 = param_2[5] + -3 + iVar2;
+    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -6),0x17,
+                 st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),0x14,(byte)this->field_1A5B->field_0140,0xd);
+    iVar2 = st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2);
     st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,0x14,iVar2,2,
                  (byte)this->field_1A5B->field_0140,0xd);
     return;
   }
-  st::fn_006B4170(param_1,0,iVar2,0,param_2[5] + -2,0x13,0);
-  st::fn_006B4170(param_1,0,iVar2 + 2,0x13,param_2[5] + -6,3,0);
+  st::fn_006B4170(param_1,0,iVar2,0,st::machine_word_boundary_cast<int>(param_2[5] + -2),0x13,0);
+  st::fn_006B4170(param_1,0,iVar2 + 2,0x13,st::machine_word_boundary_cast<int>(param_2[5] + -6),3,0);
   st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,-(uint)(*param_2 != 1) & 2,iVar2,0x13,
                (byte)this->field_1A5B->field_0140,0xd);
   st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,0x13,iVar2 + 3,0x16,
                (byte)this->field_1A5B->field_0140,0xd);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0x16,param_2[5] + -6 + iVar2,0x16,
+  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0x16,st::machine_word_boundary_cast<int>(param_2[5] + -6 + iVar2),0x16,
                (byte)this->field_1A5B->field_0140,0xd);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,param_2[5] + iVar2 + -6,0x16,
-               param_2[5] + iVar2 + -3,0x13,(byte)this->field_1A5B->field_0140,0xd);
-  iVar1 = param_2[5] + -3 + iVar2;
+  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -6),0x16,
+               st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),0x13,(byte)this->field_1A5B->field_0140,0xd);
+  iVar1 = st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2);
   st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar1,0x13,iVar1,2,
                (byte)this->field_1A5B->field_0140,0xd);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,1,param_2[5] + -3 + iVar2,1,
+  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,1,st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2),1,
                (byte)this->field_1A5B->field_0140,0xd);
   return;
 }

@@ -39,6 +39,7 @@ import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.SourceType;
+import ghidra.program.model.symbol.StackReference;
 
 public class STReturnSemanticsAnalyzer extends GhidraScript {
     private static final Pattern VALUE_RETURN = Pattern.compile("(?m)\\breturn\\s+([^;\\r\\n]+);");
@@ -135,7 +136,7 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             (genericUnknown(currentType) || currentType.equals("/void")) &&
             observed != null && observed.used >= 2 ?
                 exactForwardedCallReturn(function) : "";
-        if (!forwardedReturn.isBlank())
+        if (!forwardedReturn.isBlank() && !forwardedReturn.equals(currentType))
             return row(function, currentType, forwardedReturn,
                 function.hasNoReturn(), false, true,
                 "forwarded_call_return", "high",
@@ -144,6 +145,50 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                     "; every later accumulator definition is an exact full-width " +
                     "integer transform of that value" +
                     observedEvidence(observed));
+
+        ParameterReturn returnedParameter = mutable &&
+            (genericUnknown(currentType) || currentType.equals("/void")) &&
+            observed != null && observed.used >= 2 && observed.unknown == 0 ?
+                exactReturnedPointerParameter(function) : null;
+        if (returnedParameter != null)
+            return row(function, currentType, returnedParameter.type,
+                function.hasNoReturn(), false, true,
+                "returned_pointer_parameter", "high",
+                "every reachable RET receives full EAX from the same incoming pointer " +
+                "parameter " + returnedParameter.name + " (ordinal=" +
+                returnedParameter.ordinal + "); no intervening full or partial accumulator " +
+                "definition changes that value" + observedEvidence(observed));
+
+        /*
+         * Some optimized helpers have a real machine return even though no trusted semantic
+         * producer is available yet.  Accept a neutral machine word only when the callee CFG
+         * independently defines all 32 EAX bits on every reachable RET and at least two direct
+         * callsites consume that register with no unresolved path.  A CALL is a definition only
+         * when its result is read inside this function before another accumulator definition;
+         * merely observing a CALL does not turn an incidental/clobbered EAX into a return ABI.
+         *
+         * This deliberately recovers width, not signedness or a domain type.  Later typed-return
+         * propagation may refine the neutral word from stronger pointer/enum evidence.
+         */
+        boolean machineReturnCandidate = mutable &&
+            (currentType.equals("/undefined") || currentType.equals("/void")) &&
+            observed != null && observed.used >= 2 && observed.unknown == 0;
+        if (machineReturnCandidate && allReturnsDefineFullAccumulator(function))
+            return row(function, currentType, "/undefined4", function.hasNoReturn(), false,
+                true, "machine_eax_return", "high",
+                "every reachable RET has a full-width EAX definition established inside the " +
+                "callee; at least two direct callers consume it and no caller-use path is " +
+                "unresolved" + observedEvidence(observed));
+
+        String sharedTailReturn = machineReturnCandidate ?
+            sharedTailReturnType(function) : "";
+        if (!sharedTailReturn.isBlank())
+            return row(function, currentType, sharedTailReturn,
+                function.hasNoReturn(), false, true,
+                "shared_tail_return", "high",
+                "every reachable exit is the same unconditional jump into a trusted function " +
+                "body with concrete return type " + sharedTailReturn +
+                observedEvidence(observed));
 
         boolean scriptVoidWithContradictoryCallsite = mutable && currentType.equals("/void") &&
             hasMarker(function, "ignored_eax_void") && observed != null &&
@@ -336,7 +381,6 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             Function called = trustedReturnProducer(instruction);
             if (called == null) continue;
             DataType type = called.getReturnType();
-            if (!concreteMachineReturn(type)) continue;
             candidates.putIfAbsent(typeSpec(type), type);
         }
         if (totalReturns == 0 || candidates.isEmpty()) return "";
@@ -345,6 +389,105 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             if (allReturnsForwardType(function, type, totalReturns))
                 proven.add(type);
         return proven.size() == 1 ? proven.get(0) : "";
+    }
+
+    /**
+     * Recover the ordinary MSVC helper idiom {@code return destination;} directly
+     * from machine state.  This is deliberately narrower than decompiler text:
+     * every reachable RET must carry the same incoming pointer parameter in the
+     * complete EAX register.  A CALL, arithmetic operation, partial AL/AX write,
+     * unresolved edge, or different parameter on any path rejects the proof.
+     */
+    private ParameterReturn exactReturnedPointerParameter(Function function) {
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null || function.getBody().getNumAddresses() > 0x4000)
+            return null;
+
+        Map<Integer, Parameter> pointerParameters = new HashMap<>();
+        for (Parameter parameter : function.getParameters()) {
+            DataType type = unwrap(parameter.getFormalDataType());
+            if (type instanceof Pointer)
+                pointerParameters.put(parameter.getOrdinal(), parameter);
+        }
+        if (pointerParameters.isEmpty()) return null;
+
+        Deque<ParameterReturnState> pending = new ArrayDeque<>();
+        pending.add(new ParameterReturnState(entry.getAddress(), -1));
+        Set<ParameterReturnState> visited = new HashSet<>();
+        Set<Address> reachedReturns = new HashSet<>();
+        Set<Integer> returnedOrdinals = new HashSet<>();
+        int totalReturns = 0;
+        InstructionIterator count = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (count.hasNext())
+            if (count.next().getMnemonicString().toUpperCase(Locale.ROOT).startsWith("RET"))
+                totalReturns++;
+        if (totalReturns == 0) return null;
+
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            ParameterReturnState state = pending.removeFirst();
+            if (!visited.add(state) || ++nodes > 65536) continue;
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (instruction == null ||
+                    !function.getBody().contains(instruction.getAddress())) return null;
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            int ordinal = state.ordinal;
+            int written = accumulatorWidth(instruction.getResultObjects());
+            if (written > 0) {
+                // Only one exact full-register MOV may establish the identity.
+                // Partial writes change the pointer value even if upper EAX bytes survive.
+                ordinal = written == 4 && "MOV".equals(mnemonic) ?
+                    pointerParameterMovedToEax(function, instruction,
+                        pointerParameters) : -1;
+            }
+            else if ("CALL".equals(mnemonic)) ordinal = -1;
+
+            if (mnemonic.startsWith("RET")) {
+                if (ordinal < 0 || !pointerParameters.containsKey(ordinal)) return null;
+                reachedReturns.add(instruction.getAddress());
+                returnedOrdinals.add(ordinal);
+                continue;
+            }
+            List<Address> successors = instructionSuccessors(function, instruction);
+            if (successors.isEmpty()) return null;
+            for (Address successor : successors)
+                pending.addLast(new ParameterReturnState(successor, ordinal));
+        }
+        if (reachedReturns.size() != totalReturns || returnedOrdinals.size() != 1)
+            return null;
+        int ordinal = returnedOrdinals.iterator().next();
+        Parameter parameter = pointerParameters.get(ordinal);
+        return new ParameterReturn(ordinal, parameter.getName(),
+            typeSpec(parameter.getFormalDataType()));
+    }
+
+    private int pointerParameterMovedToEax(Function function,
+            Instruction instruction, Map<Integer, Parameter> pointerParameters) {
+        Register destination = instruction.getRegister(0);
+        if (destination == null ||
+                !"EAX".equals(destination.getName().toUpperCase(Locale.ROOT))) return -1;
+
+        for (Reference reference : instruction.getOperandReferences(1)) {
+            if (!(reference instanceof StackReference stack)) continue;
+            for (Parameter parameter : pointerParameters.values())
+                if (parameter.isStackVariable() &&
+                        parameter.getStackOffset() == stack.getStackOffset())
+                    return parameter.getOrdinal();
+        }
+
+        Register source = instruction.getRegister(1);
+        if (source == null) return -1;
+        String sourceName = source.getName().toUpperCase(Locale.ROOT);
+        for (Parameter parameter : pointerParameters.values()) {
+            Register register = parameter.getRegister();
+            if (register != null && sourceName.equals(
+                    register.getName().toUpperCase(Locale.ROOT)))
+                return parameter.getOrdinal();
+        }
+        return -1;
     }
 
     private boolean allReturnsForwardType(Function function, String proposed,
@@ -406,8 +549,25 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
     private Function trustedReturnProducer(Instruction instruction) {
         Function direct = directCalledFunction(instruction);
         Function called = resolveThunk(direct);
-        if (called == null || !concreteMachineReturn(called.getReturnType()))
+        return trustedReturnFunction(called);
+    }
+
+    private Function trustedReturnFunction(Function called) {
+        if (called == null)
             return null;
+        String returnType = typeSpec(called.getReturnType());
+        /*
+         * A neutral dword may be a trusted width anchor without being a semantic type.  Keep
+         * this non-recursive: only a call-free callee whose own CFG defines full EAX on every
+         * RET can anchor a forwarding wrapper.  Generic callers can therefore never validate
+         * one another merely because both currently say undefined4.
+         */
+        if ("/undefined4".equals(returnType)) {
+            Body calledBody = body(called);
+            return !calledBody.hasCall && allReturnsDefineFullAccumulator(called) ?
+                called : null;
+        }
+        if (!concreteMachineReturn(called.getReturnType())) return null;
         SourceType source = called.getReturn().getSource();
         if (source == SourceType.USER_DEFINED || source == SourceType.IMPORTED ||
                 isLibrary(called)) return called;
@@ -420,8 +580,121 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             (comment.contains("[STPrototypeApplier]") ||
              comment.contains("[STPrototypeRepairApplier]") ||
              comment.contains("[STConstructorApplier]") ||
-             comment.contains("[STReturnSemanticsApplier] typed_pointer_return")) ?
+             comment.contains("[STReturnSemanticsApplier] typed_pointer_return") ||
+             comment.contains("[STReturnSemanticsApplier] forwarded_call_return") ||
+             comment.contains("[STReturnSemanticsApplier] machine_eax_return") ||
+             comment.contains("[STReturnSemanticsApplier] shared_tail_return")) ?
                 called : null;
+    }
+
+    /**
+     * Prove only the existence and width of the return value.  This is stricter than following
+     * decompiler return expressions: every machine RET must be reached with all four EAX bytes
+     * defined by this invocation.  Partial AL/AX writes preserve a prior full definition but can
+     * never establish one.  An unresolved CFG edge rejects the whole function.
+     */
+    private boolean allReturnsDefineFullAccumulator(Function function) {
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null || function.getBody().getNumAddresses() > 0x4000)
+            return false;
+        Deque<MachineReturnState> pending = new ArrayDeque<>();
+        pending.add(new MachineReturnState(entry.getAddress(), false));
+        Set<MachineReturnState> visited = new HashSet<>();
+        Set<Address> reachedReturns = new HashSet<>();
+        int totalReturns = 0;
+        InstructionIterator count = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (count.hasNext())
+            if (count.next().getMnemonicString().toUpperCase(Locale.ROOT).startsWith("RET"))
+                totalReturns++;
+        if (totalReturns == 0) return false;
+
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            MachineReturnState state = pending.removeFirst();
+            if (!visited.add(state) || ++nodes > 65536) continue;
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (instruction == null ||
+                    !function.getBody().contains(instruction.getAddress())) return false;
+            String mnemonic = instruction.getMnemonicString()
+                .toUpperCase(Locale.ROOT);
+            boolean defined = state.fullAccumulator;
+            if ("CALL".equals(mnemonic)) {
+                Function producer = trustedReturnProducer(instruction);
+                defined = producer != null ||
+                    returnDisposition(function, instruction) == ReturnDisposition.USED;
+            }
+            else {
+                int written = accumulatorWidth(instruction.getResultObjects());
+                if (written == 4) defined = true;
+                // A partial write retains already-defined upper bytes, but cannot establish
+                // a full machine-word return by itself.
+            }
+            if (mnemonic.startsWith("RET")) {
+                if (!defined) return false;
+                reachedReturns.add(instruction.getAddress());
+                continue;
+            }
+            List<Address> successors = instructionSuccessors(function, instruction);
+            if (successors.isEmpty()) return false;
+            for (Address successor : successors)
+                pending.addLast(new MachineReturnState(successor, defined));
+        }
+        return reachedReturns.size() == totalReturns;
+    }
+
+    /**
+     * MSVC sometimes emits two public entries which share one arithmetic/epilogue tail. Ghidra
+     * keeps the entries as separate functions, so the prefix has no RET in its own body. Recover
+     * the return ABI only when every reachable exit is one identical unconditional external jump
+     * into another function body whose return has independent trusted provenance.
+     */
+    private String sharedTailReturnType(Function function) {
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null || function.getBody().getNumAddresses() > 0x1000)
+            return "";
+        Deque<Address> pending = new ArrayDeque<>();
+        pending.add(entry.getAddress());
+        Set<Address> visited = new HashSet<>();
+        Set<Address> externalTargets = new HashSet<>();
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            Address address = pending.removeFirst();
+            if (!visited.add(address) || ++nodes > 16384) continue;
+            Instruction instruction = currentProgram.getListing().getInstructionAt(address);
+            if (instruction == null || !function.getBody().contains(address)) return "";
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (mnemonic.startsWith("RET") || instruction.getFlowType().isTerminal()) return "";
+
+            int successors = 0;
+            Address fallThrough = instruction.getFallThrough();
+            if (fallThrough != null) {
+                if (!function.getBody().contains(fallThrough)) return "";
+                pending.addLast(fallThrough);
+                successors++;
+            }
+            if (instruction.getFlowType().isJump()) {
+                for (Address flow : instruction.getFlows()) {
+                    successors++;
+                    if (function.getBody().contains(flow)) pending.addLast(flow);
+                    else {
+                        if (!"JMP".equals(mnemonic) || fallThrough != null) return "";
+                        externalTargets.add(flow);
+                    }
+                }
+            }
+            if (successors == 0) return "";
+        }
+        if (externalTargets.size() != 1) return "";
+        Address target = externalTargets.iterator().next();
+        Function owner = currentProgram.getFunctionManager().getFunctionContaining(target);
+        if (owner == null || owner.equals(function) ||
+                currentProgram.getListing().getInstructionAt(target) == null) return "";
+        Function trusted = trustedReturnFunction(resolveThunk(owner));
+        return trusted == null ? "" : typeSpec(trusted.getReturnType());
     }
 
     /**
@@ -720,6 +993,8 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             for (String id : List.of("leaf_void", "ignored_eax_void",
                     "repair_unsafe_eax_rollback", "void_eax_read_review",
                     "typed_pointer_return", "forwarded_call_return",
+                    "returned_pointer_parameter",
+                    "machine_eax_return", "shared_tail_return",
                     "boolean_return_domain", "noreturn_terminal_call"))
                 out.write(id + ": " + rows.stream().filter(row -> row.semantic.equals(id)).count() + "\n");
         }
@@ -753,6 +1028,9 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
     private record ScanState(Address address, int distance) {}
     private record ForwardState(Address address, boolean hasValue) {}
     private record ScalarReturnState(Address address, String type) {}
+    private record MachineReturnState(Address address, boolean fullAccumulator) {}
+    private record ParameterReturnState(Address address, int ordinal) {}
+    private record ParameterReturn(int ordinal, String name, String type) {}
     private enum ReturnDisposition { USED, IGNORED, UNKNOWN }
     private record Row(boolean apply, String address, String function, String signature,
         String expectedType, String source, boolean expectedNoReturn, String proposedType,

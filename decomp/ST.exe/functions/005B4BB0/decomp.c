@@ -22,10 +22,10 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
   int iVar4;
   int iVar6;
   int iVar5;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
   MMsgTy *this_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   char cVar8;
   int iVar9;
@@ -70,7 +70,7 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
   case 2:
     iVar5 = -2;
     iVar9 = 2;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     uVar4 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)((char)message->id + 0x81));
     break;
   case 3:
@@ -83,7 +83,7 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
     iVar5 = -3;
 LAB_005b4c5f:
     iVar9 = 0;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     uVar4 = STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)((char)message->id + 0x81));
     break;
   default:

@@ -336,7 +336,7 @@ switchD_005c1b14_caseD_5:
     pcVar20 = pcVar22 + -uVar16;
     pcVar22 = (char *)&DAT_0080ee1a;
     memmove(pcVar22, pcVar20, uVar16); /* compiler REP MOVS byte copy */
-    DAT_008087a0 = 8;
+    STPiece<0,1>(DAT_008087a0) = 8;
     iVar13 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
     if (iVar13 != 0) {
       this_00->field_004D = 0x6104;

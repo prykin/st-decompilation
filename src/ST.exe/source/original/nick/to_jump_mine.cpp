@@ -36,10 +36,10 @@ int __thiscall st::fn_00618C00(STJumpMineC *this,STMessage *message)
   this_00 = local_8;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\nick\\to_jump_mine.cpp",0xad,0,local_EAX_35,
-                               "%s","STJumpMineC::GetMessage");
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_jump_mine.cpp"),0xad,0,local_EAX_35,
+                               st::mutable_c_string("%s"),"STJumpMineC::GetMessage");
     if (iVar5 == 0) {
-      st::fn_006A5E40(local_EAX_35,0,"E:\\__titans\\nick\\to_jump_mine.cpp",0xaf);
+      st::fn_006A5E40(local_EAX_35,0,st::mutable_c_string("E:\\__titans\\nick\\to_jump_mine.cpp"),0xaf);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -47,7 +47,7 @@ int __thiscall st::fn_00618C00(STJumpMineC *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
-      local_10 = st::fn_0040490D(local_8,&local_c);
+      local_10 = st::fn_0040490D(local_8,st::pointer_boundary_cast<undefined4 *>(&local_c));
       st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
       st::fn_006AB060(&local_10);
       g_currentExceptionFrame = local_58.previous;
@@ -75,7 +75,7 @@ int __thiscall st::fn_00618C00(STJumpMineC *this,STMessage *message)
     else if (SVar1 == MESS_ID_CREATE) {
       puVar7 = (byte *)((message->arg0).ptr);
       if (puVar7[3] == 2) {
-        st::fn_00401F55(local_8,puVar7);
+        st::fn_00401F55(local_8,st::pointer_boundary_cast<undefined4 *>(puVar7));
         puVar7 = (byte *)&this_00->field_0x20;
         memset(puVar7, 0, 0x2d); /* compiler bulk-zero initialization */
         puVar7 = (byte *)((byte *)puVar7 + 0x2c);
@@ -116,8 +116,8 @@ LAB_00618ce0:
         bVar3 = st::fn_00401181(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
         this_00->field_0150 = bVar3;
         if ((void *)this_00->field_007D != nullptr) {
-          st::fn_00401E47((void *)this_00->field_007D,this_00->field_008B,this_00->field_0018,
-                             this_00);
+          st::fn_00401E47((void *)this_00->field_007D,this_00->field_008B,st::machine_word_boundary_cast<undefined4>(this_00->field_0018),
+                             st::machine_word_boundary_cast<undefined4>(this_00));
         }
         if (this_00->field_0150 != '\0') {
           st::fn_004056EB(this_00,1);
@@ -144,7 +144,7 @@ LAB_00618ce0:
         (iVar6 = st::fn_006E62D0
                            (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14), iVar6 != -4
         )) && (this_00->field_007D = local_14, local_14 != nullptr)) {
-      st::fn_00401E47(local_14,this_00->field_008B,this_00->field_0018,this_00);
+      st::fn_00401E47(local_14,this_00->field_008B,st::machine_word_boundary_cast<undefined4>(this_00->field_0018),st::machine_word_boundary_cast<undefined4>(this_00));
     }
   }
   else if (SVar1 == MESS_STOCTOPUSC_0112) {
@@ -194,10 +194,10 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
   if (iVar2 == 0) {
     if (param_1 == 1) {
       puVar3 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,"jmpmine",0xffffffff,0,1,0,nullptr
+                         (PTR_00806774,CASE_1D,st::mutable_c_string("jmpmine"),0xffffffff,0,1,0,nullptr
                          );
       pSVar6 = local_8;
-      puVar5 = &local_8->field_0097;
+      puVar5 = st::pointer_boundary_cast<uint *>(&local_8->field_0097);
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)puVar5,1,0,STField<uint>(puVar3,9),
                  STField<uint>(puVar3,0xd),0x5a,0x45,0);
@@ -213,14 +213,14 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
       }
     }
     else {
-      puVar5 = &local_8->field_0097;
+      puVar5 = st::pointer_boundary_cast<uint *>(&local_8->field_0097);
       if (-1 < (int)local_8->field_0097) {
         st::fn_006E9520
                   (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0,(uint)local_8);
         st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*puVar5);
       }
       puVar3 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,"exptme",0xffffffff,0,1,0,nullptr);
+                         (PTR_00806774,CASE_1D,st::mutable_c_string("exptme"),0xffffffff,0,1,0,nullptr);
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)puVar5,3,0,STField<uint>(puVar3,9),
                  STField<uint>(puVar3,0xd),0x5a,0x45,0);
@@ -229,7 +229,7 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar5,0,pSVar6->field_00AB);
       pSVar6->field_00AF = *(int *)puVar3;
       puVar3 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,"expmask2",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,st::mutable_c_string("expmask2"),0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar5,1,*(int *)puVar3,STField<int>(puVar3,0x21),1);
@@ -240,7 +240,7 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
       pSVar6->field_00C0 = *(undefined4 *)puVar3;
       pSVar6->field_00BB = 1;
       puVar3 = st::fn_00709AF0
-                         (PTR_00806764,CASE_1D,"bulb_n4",0xffffffff,0,1,0,nullptr
+                         (PTR_00806764,CASE_1D,st::mutable_c_string("bulb_n4"),0xffffffff,0,1,0,nullptr
                          );
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar5,2,*(int *)puVar3,STField<int>(puVar3,0x21),1);
@@ -259,12 +259,12 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
     return 1;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\nick\\to_jump_mine.cpp",0x151,0,iVar2,"%s"
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_jump_mine.cpp"),0x151,0,iVar2,st::mutable_c_string("%s")
                              ,"STJumpMineC::LoadImagJMine");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\nick\\to_jump_mine.cpp",0x153);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\nick\\to_jump_mine.cpp"),0x153);
   return 0xffff;
 }
 

@@ -38,7 +38,7 @@ void __thiscall st::fn_00590170(MAdvTy *this)
     this_01 = local_8;
     iVar6 = 1;
     bVar5 = 0;
-    text = st::fn_006F2C00(&DAT_007cbc5c,1,(uint)(local_8->field_005D != '\0'));
+    text = st::fn_006F2C00(st::pointer_boundary_cast<char *>(&DAT_007cbc5c),1,(uint)(local_8->field_005D != '\0'));
     puVar3 = st::fn_0070A9F0(g_cMf32_00806780,text,bVar5,iVar6);
     this_01->field_005E = puVar3;
     memset(&this_01->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
@@ -70,12 +70,12 @@ void __thiscall st::fn_00590170(MAdvTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\adv_obj.cpp",0x1f,0,iVar2,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x1f,0,iVar2,st::mutable_c_string("%s"),
                              "MAdvTy::InitMAdv");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Start\\adv_obj.cpp",0x1f);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x1f);
   return;
 }
 
@@ -115,12 +115,12 @@ void __thiscall st::fn_00590410(MAdvTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Start\\adv_obj.cpp",0x36,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x36,0,iVar2,st::mutable_c_string("%s"),
                              "MAdvTy::DoneMAdv");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Start\\adv_obj.cpp",0x36);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x36);
   return;
 }
 
@@ -143,10 +143,10 @@ void __thiscall st::fn_00590580(MAdvTy *this)
   int iVar5;
   StartServTy *this_00;
   StartServTy *this_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   StartServTy *extraout_ECX;
   StartServTy *this_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   StartServTy *extraout_ECX_00;
   StartServTy *this_03;
   int iVar4;
@@ -184,7 +184,7 @@ void __thiscall st::fn_00590580(MAdvTy *this)
       iVar7 = 800;
       iVar6 = 0x1cc;
       iVar4 = 0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       this_03 = extraout_ECX_00;
     }
     else {
@@ -206,7 +206,7 @@ void __thiscall st::fn_00590580(MAdvTy *this)
       iVar7 = 0x302;
       iVar6 = 0x172;
       iVar4 = 0x14;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       this_03 = extraout_ECX;
     }
     st::fn_00404C2D(this_03,0,iVar4,iVar6,iVar7,iVar8,pcVar3,uVar10,uVar12,pcVar11,uVar9);
@@ -214,12 +214,12 @@ void __thiscall st::fn_00590580(MAdvTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Start\\adv_obj.cpp",0x4d,0,iVar3,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x4d,0,iVar3,st::mutable_c_string("%s"),
                              "MAdvTy::PaintMAdv");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\adv_obj.cpp",0x4d);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x4d);
   return;
 }
 
@@ -244,12 +244,12 @@ void __thiscall st::fn_005907D0(MAdvTy *this)
     return;
   }
   g_currentExceptionFrame = pIVar2;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Start\\adv_obj.cpp",0x57,0,errorCode,"%s"
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x57,0,errorCode,st::mutable_c_string("%s")
                              ,"MAdvTy::NoneMAdv");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Start\\adv_obj.cpp",0x57);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x57);
   return;
 }
 
@@ -316,12 +316,12 @@ int __thiscall st::fn_005908B0(MAdvTy *this,STMessage *message)
     return iVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\adv_obj.cpp",0x87,0,local_EAX_47,
-                             "%s","MAdvTy::GetMessage");
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x87,0,local_EAX_47,
+                             st::mutable_c_string("%s"),"MAdvTy::GetMessage");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(local_EAX_47,0,"E:\\__titans\\Start\\adv_obj.cpp",0x87);
+  st::fn_006A5E40(local_EAX_47,0,st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x87);
   return 0xffff;
 }
 

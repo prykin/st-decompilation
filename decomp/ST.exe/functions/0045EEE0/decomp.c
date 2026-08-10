@@ -12,7 +12,6 @@
 dword __thiscall STBoatC::FUN_0045eee0(STBoatC *this)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(dword *)((int)this->field_06CB + 0x2c);
+  return this->field_06F7;
 }
 

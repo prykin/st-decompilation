@@ -48,12 +48,12 @@ st::fn_005939E0(ComboTy *this,DDXContext *param_1,undefined4 param_2,undefined4 
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\combo.cpp",0x12,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\combo.cpp"),0x12,0,iVar3,st::mutable_c_string("%s"),
                                "ComboTy::OutBmpProc");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\combo.cpp",0x12);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Start\\combo.cpp"),0x12);
   }
   return;
 }
@@ -113,12 +113,12 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar10 = st::fn_006AD4D0("E:\\__titans\\Start\\combo.cpp",99,0,iVar4,"%s",
+    iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\combo.cpp"),99,0,iVar4,st::mutable_c_string("%s"),
                                 "ComboTy::InitCombo");
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Start\\combo.cpp",99);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Start\\combo.cpp"),99);
     return;
   }
   puVar5 = (byte *)&local_10->field_0088;
@@ -136,7 +136,7 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pRVar4 = (RecoveredSourceFamily_dibcopy *)
              st::fn_006B50C0(this_00->field_00F4,this_00->field_00F8,
-                          (uint)*(ushort *)(this_00->field_00D4 + 0xe),local_EAX_159,puVar5,iVar14);
+                          (uint)*(ushort *)(this_00->field_00D4 + 0xe),local_EAX_159,st::pointer_boundary_cast<undefined4 *>(puVar5),iVar14);
     this_00->field_00FC = pRVar4;
     uVar12 = pRVar4[1].field_0004;
     if (uVar12 == 0) {
@@ -158,7 +158,7 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
     uVar4 = st::fn_006B4FE0(this_00->field_00D4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     piVar6 = (int *)st::fn_006B50C0(this_00->field_00F4,this_00->field_00F8,
-                                 (uint)*(ushort *)(this_00->field_00D4 + 0xe),uVar4,puVar5,iVar8);
+                                 (uint)*(ushort *)(this_00->field_00D4 + 0xe),uVar4,st::pointer_boundary_cast<undefined4 *>(puVar5),iVar8);
     this_00->field_0100 = piVar6;
     uVar12 = piVar6[5];
     if (uVar12 == 0) {
@@ -180,8 +180,8 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
     local_EAX_427 = st::fn_006B4FE0(this_00->field_00D4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     puVar7 = (ushort *)
-             st::fn_006B50C0(this_00->field_00F4 + -10,this_00->field_00CC,
-                          (uint)*(ushort *)(this_00->field_00D4 + 0xe),local_EAX_427,puVar5,iVar8);
+             st::fn_006B50C0(st::machine_word_boundary_cast<int>(this_00->field_00F4 + -10),this_00->field_00CC,
+                          (uint)*(ushort *)(this_00->field_00D4 + 0xe),local_EAX_427,st::pointer_boundary_cast<undefined4 *>(puVar5),iVar8);
     this_00->field_0104 = puVar7;
     uVar12 = *(uint *)(puVar7 + 10);
     if (uVar12 == 0) {
@@ -198,17 +198,17 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
       *(undefined1 *)puVar5 = local_5;
       puVar5 = (byte *)((int)puVar5 + 1);
     }
-    this_00->field_00C0 = this_00->field_0104;
-    st::fn_006B5EE0(this_00->field_00FC,0,2,2,this_00->field_00F4 + -4,this_00->field_00F8 + -4,
+    this_00->field_00C0 = st::machine_word_boundary_cast<undefined4>(this_00->field_0104);
+    st::fn_006B5EE0(this_00->field_00FC,0,2,2,st::machine_word_boundary_cast<int>(this_00->field_00F4 + -4),st::machine_word_boundary_cast<int>(this_00->field_00F8 + -4),
                  (byte)this_00->field_00DC,0xd);
     puVar2 = &this_00->field_0108;
     local_c = puVar2;
-    st::fn_006B2330(g_ddxContext_008075A8,puVar2,2,0x401712,this_00->field_00FC->field_0004 + 3,
-                 this_00->field_00FC->field_0008 + 3,(ushort *)&this_00->field_0088);
+    st::fn_006B2330(g_ddxContext_008075A8,puVar2,2,0x401712,st::machine_word_boundary_cast<uint>(this_00->field_00FC->field_0004 + 3),
+                 st::machine_word_boundary_cast<uint>(this_00->field_00FC->field_0008 + 3),(ushort *)&this_00->field_0088);
     st::fn_006B3640
-              ((int *)g_ddxContext_008075A8,*puVar2,0xffffffff,this_00->field_00EC - 3,
+              ((int *)g_ddxContext_008075A8,*puVar2,0xffffffff,st::machine_word_boundary_cast<uint>(this_00->field_00EC - 3),
                this_00->field_00F0);
-    puVar1 = &this_00->field_0x18;
+    puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x18);
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     iVar8 = 0;
     this_00->field_0028 = 0x1a;
@@ -227,7 +227,7 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
     this_00->field_0028 = 0x65;
     st::fn_006E6000(this_00,3,1,(undefined4 *)puVar1);
     puVar5 = (byte *)(&this_00->field_0038);
-    this_00->field_0084 = &this_00->field_002C->field_0x1;
+    this_00->field_0084 = st::machine_word_boundary_cast<undefined4>(&this_00->field_002C->field_0x1);
     memset(puVar5, 0, 0x4c); /* compiler bulk-zero initialization */
     iVar8 = 0;
     this_00->field_004C = this_00->field_0008;
@@ -242,10 +242,10 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
     st::fn_006E6000(this_00,3,1,(undefined4 *)puVar1);
     iVar8 = this_00->field_00F0;
     memset(local_528, 0, 0x4d4); /* compiler bulk-zero initialization */
-    local_528[2] = this_00->field_00EC + 5;
+    local_528[2] = st::machine_word_boundary_cast<int>(this_00->field_00EC + 5);
     local_528[3] = iVar8 + 5;
-    local_518 = this_00->field_00F4 + -10;
-    local_514 = this_00->field_00F8 + -10;
+    local_518 = st::machine_word_boundary_cast<int>(this_00->field_00F4 + -10);
+    local_514 = st::machine_word_boundary_cast<int>(this_00->field_00F8 + -10);
     local_510 = this_00->field_00D0;
     local_500 = this_00->field_0008;
     local_528[0] = 1;
@@ -262,7 +262,7 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
     local_4c0 = local_500;
     local_4a0 = local_500;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_010C,nullptr,local_528,0);
+              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_010C,nullptr,st::machine_word_boundary_cast<undefined4>(local_528),0);
     this_00->field_0028 = 0x22;
     this_00->field_002C = (ComboTy *)this_00->field_00C8;
     st::fn_006E6080(this_00,2,this_00->field_010C,(undefined4 *)puVar1);
@@ -302,7 +302,7 @@ void __thiscall st::fn_005941D0(ComboTy *this)
     if (local_8->field_010C != 0) {
       st::fn_006E56B0(local_8->field_000C,local_8->field_010C);
     }
-    puVar1 = &this_00->field_0x18;
+    puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x18);
     this_00->field_010C = 0;
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     iVar5 = 0;
@@ -341,12 +341,12 @@ void __thiscall st::fn_005941D0(ComboTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\combo.cpp",0x7f,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\combo.cpp"),0x7f,0,iVar3,st::mutable_c_string("%s"),
                              "ComboTy::DoneCombo");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\combo.cpp",0x7f);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Start\\combo.cpp"),0x7f);
   return;
 }
 
@@ -385,12 +385,12 @@ int __thiscall st::fn_00594440(ComboTy *this,STMessage *message)
   this_00 = local_c;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\Start\\combo.cpp",0xb7,0,local_EAX_35,
-                               "%s","ComboTy::GetMessage");
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\combo.cpp"),0xb7,0,local_EAX_35,
+                               st::mutable_c_string("%s"),"ComboTy::GetMessage");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_35,0,"E:\\__titans\\Start\\combo.cpp",0xb7);
+    st::fn_006A5E40(local_EAX_35,0,st::mutable_c_string("E:\\__titans\\Start\\combo.cpp"),0xb7);
     return 0xffff;
   }
   SVar2 = message->id;
@@ -401,7 +401,7 @@ int __thiscall st::fn_00594440(ComboTy *this,STMessage *message)
     }
     switch(SVar2) {
     case MESS_ID_CREATE:
-      st::fn_004036CF(local_c,(message->arg0).ptr);
+      st::fn_004036CF(local_c,st::pointer_boundary_cast<undefined4 *>((message->arg0).ptr));
       break;
     case MESS_SHARED_0003:
       st::fn_00403134(local_c);
@@ -447,7 +447,7 @@ cf_common_exit_00594615:
       *(undefined1 *)puVar5 = uVar1;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    this_00->field_00BC = message->arg0;
+    this_00->field_00BC = static_cast<undefined4>((message->arg0).u32);
     st::fn_006E5FE0(this_00,(undefined4 *)&this_00->field_0xa8);
     puVar3 = this_00->field_0104;
     st::fn_006B55F0
@@ -457,7 +457,7 @@ cf_common_exit_00594615:
   case 0x10002:
     if (local_c->field_0110 == 0) goto cf_common_exit_00594615;
   case 0x10000:
-    local_c->field_009C = message->arg0;
+    local_c->field_009C = static_cast<undefined4>((message->arg0).u32);
     break;
   case 0x10003:
     break;

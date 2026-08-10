@@ -27,10 +27,10 @@ st::fn_005B9730
   errorCode = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0x2c,0,errorCode,
-                               "%s","PrividerTy::OutListProc");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x2c,0,errorCode,
+                               st::mutable_c_string("%s"),"PrividerTy::OutListProc");
     if (iVar3 == 0) {
-      st::fn_006A5E40(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0x2c);
+      st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x2c);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -113,12 +113,12 @@ st::fn_005B9860
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0x3b,0,errorCode,
-                               "%s","MMMObjTy::OutLstProc");
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x3b,0,errorCode,
+                               st::mutable_c_string("%s"),"MMMObjTy::OutLstProc");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0x3b);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x3b);
   }
   return;
 }
@@ -159,12 +159,12 @@ st::fn_005B99F0(MMMObjTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,undef
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0x47,0,errorCode,
-                               "%s","MMMObjTy::OutEdProc");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x47,0,errorCode,
+                               st::mutable_c_string("%s"),"MMMObjTy::OutEdProc");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0x47);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x47);
   }
   return;
 }
@@ -231,7 +231,7 @@ void __thiscall st::fn_005B9B10(PrividerTy *this,char param_1,char param_2)
         st::fn_006B3AF0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
-    puVar4 = st::fn_0070A9F0(g_cMf32_00806780,"LOADSINGLE",0,1);
+    puVar4 = st::fn_0070A9F0(g_cMf32_00806780,st::mutable_c_string("LOADSINGLE"),0,1);
     g_startSystem_0081176C->field_002C = puVar4;
     puVar5 = g_startSystem_0081176C->field_002C;
     this_02->field_005D = puVar5;
@@ -482,10 +482,10 @@ void __thiscall st::fn_005B9B10(PrividerTy *this,char param_1,char param_2)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar14 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0xac,0,iVar2,"%s",
+  iVar14 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0xac,0,iVar2,st::mutable_c_string("%s"),
                               "PrividerTy::InitPrivider");
   if (iVar14 == 0) {
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\Start\\prov_obj.cpp",0xac);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0xac);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -591,12 +591,12 @@ void __thiscall st::fn_005BA560(PrividerTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0xd3,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0xd3,0,iVar3,st::mutable_c_string("%s"),
                              "PrividerTy::DonePrivider");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\prov_obj.cpp",0xd3);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0xd3);
   return;
 }
 
@@ -629,12 +629,12 @@ void __thiscall st::fn_005BA8B0(PrividerTy *this,char param_1)
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0xec,0,errorCode,
-                               "%s","PrividerTy::PaintPrivider");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0xec,0,errorCode,
+                               st::mutable_c_string("%s"),"PrividerTy::PaintPrivider");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0xec);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0xec);
     return;
   }
   st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
@@ -786,12 +786,12 @@ void __thiscall st::fn_005BAAC0(PrividerTy *this,char param_1,char param_2)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0x11e,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x11e,0,iVar3,st::mutable_c_string("%s"),
                              "PrividerTy::SetMode");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\prov_obj.cpp",0x11e);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x11e);
   return;
 }
 
@@ -862,10 +862,10 @@ void __thiscall st::fn_005BAE00(PrividerTy *this)
   this_01 = local_20;
   if (local_EAX_66 != 0) {
     g_currentExceptionFrame = local_a0.previous;
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0x1bc,0,local_EAX_66,
-                               "%s","PrividerTy::NonePrivider");
+    iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x1bc,0,local_EAX_66,
+                               st::mutable_c_string("%s"),"PrividerTy::NonePrivider");
     if (iVar9 == 0) {
-      st::fn_006A5E40(local_EAX_66,0,"E:\\__titans\\Start\\prov_obj.cpp",0x1bc);
+      st::fn_006A5E40(local_EAX_66,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x1bc);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -891,13 +891,13 @@ void __thiscall st::fn_005BAE00(PrividerTy *this)
       local_c6 = 4;
       st::fn_00715360(g_int_00811764,1,'\x1a',local_c8,0x26,1,0xffffffff);
     }
-    iVar10 = this_01->field_1A6D + 1;
+    iVar10 = st::machine_word_boundary_cast<int>(this_01->field_1A6D + 1);
     this_01->field_1A6D = iVar10;
     if (iVar10 == 0xf) {
       this_01->field_1A6D = 0;
     }
     iVar10 = st::fn_00715630
-                       (g_int_00811764,-1,&local_1c,&local_3c,&local_10,nullptr,-1,0);
+                       (g_int_00811764,-1,&local_1c,&local_3c,st::pointer_boundary_cast<undefined4 *>(&local_10),nullptr,-1,0);
     psVar7 = local_10;
     pCVar6 = g_cursorClass_00802A30;
     if (iVar10 != -0x4d) {
@@ -921,23 +921,23 @@ void __thiscall st::fn_005BAE00(PrividerTy *this)
                 break;
               case '\x02':
               case '\x03':
-                st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,
+                st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s%s"),&CHAR_00h_00807680,
                           st_global_0079C0BC);
                 local_2c = *pcVar12;
                 local_2b = STField<undefined4>(psVar7,3);
                 local_27 = 0;
                 local_EAX_1381 =
-                     st::fn_00725910(&DAT_0080f33a,"*.DKD",0,st::fn_00404E49,&local_2c,0);
+                     st::fn_00725910(st::pointer_boundary_cast<HANDLE>(&DAT_0080f33a),st::mutable_c_string("*.DKD"),0,st::pointer_boundary_cast<undefined *>(st::fn_00404E49),st::machine_word_boundary_cast<undefined4>(&local_2c),0);
                 local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((local_EAX_1381 != -0x70) + '\x01'));
                 local_14 = (-(uint)(*pcVar12 != '\x02') & 2) + 0xd;
                 break;
               case '\x05':
-                st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s\\",&CHAR_00h_00807680,
+                st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s%s%s\\"),&CHAR_00h_00807680,
                           st_global_0079C0B8,&CHAR_00h_00807ddd);
                 local_38 = *pcVar12;
                 local_37 = STField<undefined4>(psVar7,3);
                 local_33 = STField<undefined4>(psVar7,7);
-                iVar8 = st::fn_00725910(&DAT_0080f33a,"*.DKD",0,st::fn_00404E49,&local_38,0
+                iVar8 = st::fn_00725910(st::pointer_boundary_cast<HANDLE>(&DAT_0080f33a),st::mutable_c_string("*.DKD"),0,st::pointer_boundary_cast<undefined *>(st::fn_00404E49),st::machine_word_boundary_cast<undefined4>(&local_38),0
                                     );
                 local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(iVar8 == -0x70));
                 local_14 = 0x10;
@@ -1213,12 +1213,12 @@ void __thiscall st::fn_005BB910(PrividerTy *this,char param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0x1c7,0,errorCode,
-                             "%s","PrividerTy::CloseButtons");
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x1c7,0,errorCode,
+                             st::mutable_c_string("%s"),"PrividerTy::CloseButtons");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0x1c7);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x1c7);
   return;
 }
 
@@ -1324,12 +1324,12 @@ void __thiscall st::fn_005BBA90(PrividerTy *this,char param_1)
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0x24d,0,iVar4,"%s"
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x24d,0,iVar4,st::mutable_c_string("%s")
                                ,"PrividerTy::CreateCtrls");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Start\\prov_obj.cpp",0x24d);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x24d);
     return;
   }
   local_5 = local_10->field_1A5F;
@@ -1361,7 +1361,7 @@ LAB_005bbb22:
       local_d80 = 2;
       local_d7c = 0x631f;
       (*local_10->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)local_10->field_000C,6,&local_10->field_1C86,nullptr,local_dd0,
+                ((SystemClassTy *)local_10->field_000C,6,&local_10->field_1C86,nullptr,st::machine_word_boundary_cast<undefined4>(local_dd0),
                  0);
       this_00->field_002D = 0x20;
       this_00->field_0031 = 1;
@@ -1436,10 +1436,10 @@ LAB_005bbb22:
     local_234 = local_51c;
     local_c4 = local_51c;
     (*local_10->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_10->field_000C,7,&local_10->field_1A73,nullptr,local_544,0);
+              ((SystemClassTy *)local_10->field_000C,7,&local_10->field_1A73,nullptr,st::machine_word_boundary_cast<undefined4>(local_544),0);
   }
   this_00->field_0031 = 0;
-  puVar1 = &this_00->field_0x1d;
+  puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x1d);
   this_00->field_002D = 0x20;
   st::fn_006E6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
   this_00->field_0031 = ((int)local_c < 1) - 1 & local_c;
@@ -1487,12 +1487,12 @@ void __thiscall st::fn_005BC050(PrividerTy *this,char param_1)
   iVar4 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0x279,0,iVar4,"%s"
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x279,0,iVar4,st::mutable_c_string("%s")
                                ,"PrividerTy::DeleteCtrls");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Start\\prov_obj.cpp",0x279);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x279);
     return;
   }
   if (g_cursorClass_00802A30 != nullptr) {
@@ -1711,12 +1711,12 @@ int __thiscall st::fn_005BC5E0(PrividerTy *this,STMessage *message)
   this_00 = local_c;
   if (local_EAX_61 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar13 = st::fn_006AD4D0("E:\\__titans\\Start\\prov_obj.cpp",0x34c,0,local_EAX_61,
-                                "%s","PrividerTy::GetMessage");
+    iVar13 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x34c,0,local_EAX_61,
+                                st::mutable_c_string("%s"),"PrividerTy::GetMessage");
     if (iVar13 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_61,0,"E:\\__titans\\Start\\prov_obj.cpp",0x34c);
+    st::fn_006A5E40(local_EAX_61,0,st::mutable_c_string("E:\\__titans\\Start\\prov_obj.cpp"),0x34c);
     return 0xffff;
   }
   st::fn_00402563(local_c,message);
@@ -1811,7 +1811,7 @@ LAB_005bccb9:
           iVar11 = st::fn_0040583A();
           if (iVar11 == 0) {
             this_00->field_0031 = 0;
-            puVar1 = &this_00->field_0x1d;
+            puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x1d);
             this_00->field_002D = 0x20;
             st::fn_006E6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
             this_00->field_002D = 0x28;
@@ -1838,8 +1838,8 @@ LAB_005bccb9:
     this_00->field_0045 = 0x200;
     this_00->field_0049 = 0;
     this_00->field_004D = message->id;
-    this_00->field_0051 = message->arg0;
-    this_00->field_0055 = message->arg1;
+    this_00->field_0051 = static_cast<undefined4>((message->arg0).u32);
+    this_00->field_0055 = static_cast<undefined4>((message->arg1).u32);
     st::fn_00404DB8((MTaskTy *)this_00);
     goto cf_common_exit_005BCF7F;
   }
@@ -1870,7 +1870,7 @@ LAB_005bccb9:
     case MESS_SIDTY_8163:
       SVar5 = message->arg0;
       this_00->field_1A71 = 0;
-      this_00->field_1A61 = SVar5;
+      this_00->field_1A61 = static_cast<undefined4>((SVar5).u32);
       break;
     case MESS_OPTPANELTY_8164:
       st::fn_004031D4
@@ -1902,7 +1902,7 @@ LAB_005bccb9:
     this_00->field_0045 = 0x200;
     this_00->field_0049 = 0;
     this_00->field_004D = 0x6102;
-    this_00->field_0051 = message->arg0;
+    this_00->field_0051 = static_cast<undefined4>((message->arg0).u32);
     st::fn_00404DB8((MTaskTy *)this_00);
     break;
   case MESS_WAITTY_6943:
@@ -1939,7 +1939,7 @@ switchD_005bc9da_caseD_6949:
     pMVar14 = this_00->field_1A5B->field_02E6;
     goto cf_common_exit_005BCD75;
   case 0x694e:
-    iVar11 = st::fn_00404A2A(this_00->field_1A61,&CHAR_00h_008016a0);
+    iVar11 = st::fn_00404A2A(this_00->field_1A61,st::machine_word_boundary_cast<undefined4>(&CHAR_00h_008016a0));
     if (iVar11 == 0) {
       this_00->field_1A71 = 1;
       this_00->field_1A69 = this_00->field_0061;

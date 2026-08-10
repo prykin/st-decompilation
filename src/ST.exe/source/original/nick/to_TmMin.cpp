@@ -29,12 +29,12 @@ uint __thiscall st::fn_0063D280(STTmMineC *this,uint param_1)
   pSVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_TmMin.cpp",0x4a6,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_TmMin.cpp"),0x4a6,0,iVar3,st::mutable_c_string("%s"),
                                "STTmMineC::CreatePart");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_TmMin.cpp",0x4a8);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\nick\\to_TmMin.cpp"),0x4a8);
     return 0xffff;
   }
   if (local_c->field_0336 == nullptr) {
@@ -52,7 +52,7 @@ uint __thiscall st::fn_0063D280(STTmMineC *this,uint param_1)
     if (0 < (int)param_1) {
       do {
         local_8 = st::fn_006AE1C0((DArrayTy *)pSVar2->field_0336,local_8c);
-        pSVar3 = pSVar2->field_0336;
+        pSVar3 = st::pointer_boundary_cast<STTmMineC_field_0336DArray *>(pSVar2->field_0336);
         if (uVar7 < pSVar3->count) {
           element_0336 = DArrayAt<STTmMineC_field_0336Element>(pSVar3, uVar7);
         }
@@ -103,28 +103,28 @@ undefined4 __thiscall st::fn_0063DEF0(STTmMineC *this,int param_1)
   if (errorCode == 0) {
     if (local_c->field_033A == -1) {
       puVar3 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,"expl_nb0",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,st::mutable_c_string("expl_nb0"),0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
-                (pSVar2->field_0211,(int *)&local_8,1,0,STField<uint>(puVar3,9),
+                (st::pointer_boundary_cast<ST3DSMAPContext *>(pSVar2->field_0211),(int *)&local_8,1,0,STField<uint>(puVar3,9),
                  STField<uint>(puVar3,0xd),0x6f,0xf0,0);
       st::fn_006E98E0
-                (pSVar2->field_0211,local_8,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
-      st::fn_006EA270(pSVar2->field_0211,local_8,0,pSVar2->field_033E);
+                (st::pointer_boundary_cast<ST3DSMAPContext *>(pSVar2->field_0211),local_8,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+      st::fn_006EA270(st::pointer_boundary_cast<ST3DSMAPContext *>(pSVar2->field_0211),local_8,0,pSVar2->field_033E);
       st::fn_006EA960
-                (pSVar2->field_0211,local_8,
+                (st::pointer_boundary_cast<void *>(pSVar2->field_0211),local_8,
                  (float)pSVar2->field_0266 * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar2->field_026A * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar2->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-      st::fn_006EAAA0(pSVar2->field_0211,local_8,0);
-      st::fn_006EAB60(pSVar2->field_0211,local_8);
+      st::fn_006EAAA0(st::pointer_boundary_cast<void *>(pSVar2->field_0211),local_8,0);
+      st::fn_006EAB60(st::pointer_boundary_cast<void *>(pSVar2->field_0211),local_8);
       pSVar2->field_0346 = 0;
       pSVar2->field_033A = local_8;
       pSVar2->field_0342 = *(undefined4 *)puVar3;
     }
     if ((pSVar2->field_0353 == -1) && (param_1 != 0)) {
       puVar3 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,"expl_fla",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,st::mutable_c_string("expl_fla"),0xffffffff,0,1,0,
                           nullptr);
       pSVar2->field_034B = puVar3;
       pSVar2->field_034F = 0;
@@ -133,12 +133,12 @@ undefined4 __thiscall st::fn_0063DEF0(STTmMineC *this,int param_1)
     return local_10;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_TmMin.cpp",0x5d3,0,errorCode,
-                             "%s","STTmMineC::LoadImagNuclear");
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_TmMin.cpp"),0x5d3,0,errorCode,
+                             st::mutable_c_string("%s"),"STTmMineC::LoadImagNuclear");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\nick\\to_TmMin.cpp",0x5d5);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\nick\\to_TmMin.cpp"),0x5d5);
   return 0xffff;
 }
 
@@ -167,7 +167,7 @@ undefined4 __thiscall st::fn_0063E160(STTmMineC *this,uint param_1,int param_2)
   STTmMineC_field_0336Element *element_0336;
   uint local_8;
 
-  pSVar1 = this->field_0336;
+  pSVar1 = st::pointer_boundary_cast<STTmMineC_field_0336DArray *>(this->field_0336);
   local_14 = 0;
   if (pSVar1 == nullptr) {
     return 0;
@@ -186,15 +186,15 @@ undefined4 __thiscall st::fn_0063E160(STTmMineC *this,uint param_1,int param_2)
     g_currentExceptionFrame = &local_58;
     local_10 = this;
     errorCode = st::fn_0072D7F0(local_58.jumpBuffer,0);
-    pcVar5 = element_0336;
+    pcVar5 = &(element_0336)->field_0000;
     if (errorCode != 0) {
       g_currentExceptionFrame = local_58.previous;
-      iVar7 = st::fn_006AD4D0("E:\\__titans\\nick\\to_TmMin.cpp",0x603,0,errorCode,
-                                 "%s","STTmMineC::LoadImagSpr");
+      iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_TmMin.cpp"),0x603,0,errorCode,
+                                 st::mutable_c_string("%s"),"STTmMineC::LoadImagSpr");
       if (iVar7 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(errorCode,0,"E:\\__titans\\nick\\to_TmMin.cpp",0x605);
+      st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\nick\\to_TmMin.cpp"),0x605);
       return 0xffff;
     }
     puVar6 = st::fn_00709AF0
@@ -204,17 +204,17 @@ undefined4 __thiscall st::fn_0063E160(STTmMineC *this,uint param_1,int param_2)
     uVar2 = *(uint *)(pcVar5 + 0x38);
     if ((int)uVar2 < 0) {
       st::fn_006E8660
-                (local_10->field_0211,(int *)&local_8,1,0,STField<uint>(puVar6,9),
+                (st::pointer_boundary_cast<ST3DSMAPContext *>(local_10->field_0211),(int *)&local_8,1,0,STField<uint>(puVar6,9),
                  STField<uint>(puVar6,0xd),STField<int>(puVar6,9) / 2,
                  (int)STField<uint>(puVar6,0xd) / 2 - 0xe,0);
     }
     else {
       local_8 = uVar2;
       st::fn_006E9830
-                (local_10->field_0211,uVar2,STField<int>(puVar6,9) / 2,
+                (st::pointer_boundary_cast<void *>(local_10->field_0211),uVar2,STField<int>(puVar6,9) / 2,
                  STField<int>(puVar6,0xd) / 2 - 0xe);
     }
-    ppSVar9 = &pSVar4->field_0211;
+    ppSVar9 = st::pointer_boundary_cast<ST3DSMAPContext **>(&pSVar4->field_0211);
     st::fn_006E98E0(*ppSVar9,local_8,0,*(int *)puVar6,STField<int>(puVar6,0x21),1);
     st::fn_006EA270(*ppSVar9,local_8,0,*(uint *)(pcVar5 + 0x20));
     st::fn_006EA5E0(*ppSVar9,local_8,0,0);
@@ -262,61 +262,61 @@ undefined4 __thiscall st::fn_0063F3D0(STTmMineC *this,int param_1)
   if (errorCode == 0) {
     if (local_c->field_033A == -1) {
       puVar4 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,"expl_vc0",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,st::mutable_c_string("expl_vc0"),0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
-                (pSVar3->field_0211,(int *)&local_8,1,0,STField<uint>(puVar4,9),
+                (st::pointer_boundary_cast<ST3DSMAPContext *>(pSVar3->field_0211),(int *)&local_8,1,0,STField<uint>(puVar4,9),
                  STField<uint>(puVar4,0xd),(int)STField<uint>(puVar4,9) / 2,0xa9,0);
       st::fn_006E98E0
-                (pSVar3->field_0211,local_8,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
-      st::fn_006EA270(pSVar3->field_0211,local_8,0,pSVar3->field_033E);
+                (st::pointer_boundary_cast<ST3DSMAPContext *>(pSVar3->field_0211),local_8,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
+      st::fn_006EA270(st::pointer_boundary_cast<ST3DSMAPContext *>(pSVar3->field_0211),local_8,0,pSVar3->field_033E);
       st::fn_006EA960
-                (pSVar3->field_0211,local_8,
+                (st::pointer_boundary_cast<void *>(pSVar3->field_0211),local_8,
                  (float)pSVar3->field_0266 * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar3->field_026A * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar3->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-      st::fn_006EAAA0(pSVar3->field_0211,local_8,0);
-      st::fn_006EAB60(pSVar3->field_0211,local_8);
+      st::fn_006EAAA0(st::pointer_boundary_cast<void *>(pSVar3->field_0211),local_8,0);
+      st::fn_006EAB60(st::pointer_boundary_cast<void *>(pSVar3->field_0211),local_8);
       pSVar3->field_033A = local_8;
       pSVar3->field_0342 = *(undefined4 *)puVar4;
     }
     if ((pSVar3->field_0353 == -1) && (param_1 != 0)) {
       puVar4 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,"expl_fla",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,st::mutable_c_string("expl_fla"),0xffffffff,0,1,0,
                           nullptr);
       pSVar3->field_034B = puVar4;
       pSVar3->field_034F = 0;
     }
-    puVar1 = &pSVar3->field_0363;
+    puVar1 = st::pointer_boundary_cast<uint *>(&pSVar3->field_0363);
     if ((pSVar3->field_0363 == 0xffffffff) && (param_1 != 0)) {
       puVar4 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,"expl_vc1",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,st::mutable_c_string("expl_vc1"),0xffffffff,0,1,0,
                           nullptr);
       pSVar3->field_035F = puVar4;
       st::fn_006E8660
-                (pSVar3->field_0211,(int *)puVar1,1,0,STField<uint>(puVar4,9),
+                (st::pointer_boundary_cast<ST3DSMAPContext *>(pSVar3->field_0211),(int *)puVar1,1,0,STField<uint>(puVar4,9),
                  STField<uint>(puVar4,0xd),0xa8,0x43,0);
       st::fn_006E98E0
-                (pSVar3->field_0211,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
-      st::fn_006EA270(pSVar3->field_0211,*puVar1,0,pSVar3->field_0367);
+                (st::pointer_boundary_cast<ST3DSMAPContext *>(pSVar3->field_0211),*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
+      st::fn_006EA270(st::pointer_boundary_cast<ST3DSMAPContext *>(pSVar3->field_0211),*puVar1,0,pSVar3->field_0367);
       st::fn_006EA960
-                (pSVar3->field_0211,*puVar1,
+                (st::pointer_boundary_cast<void *>(pSVar3->field_0211),*puVar1,
                  (float)pSVar3->field_0266 * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar3->field_026A * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar3->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-      st::fn_006EAAA0(pSVar3->field_0211,*puVar1,0);
+      st::fn_006EAAA0(st::pointer_boundary_cast<void *>(pSVar3->field_0211),*puVar1,0);
       pSVar3->field_036B = *(undefined4 *)puVar4;
     }
     g_currentExceptionFrame = local_54.previous;
     return local_10;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\nick\\to_TmMin.cpp",0x794,0,errorCode,
-                             "%s","STTmMineC::LoadImagVacuum");
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_TmMin.cpp"),0x794,0,errorCode,
+                             st::mutable_c_string("%s"),"STTmMineC::LoadImagVacuum");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\nick\\to_TmMin.cpp",0x796);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\nick\\to_TmMin.cpp"),0x796);
   return 0xffff;
 }
 

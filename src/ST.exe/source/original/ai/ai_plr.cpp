@@ -103,12 +103,12 @@ int __thiscall st::fn_00678980(AiPlrClassTy *this,undefined4 *param_1)
   }
   g_currentExceptionFrame = local_50.previous;
   st::fn_0040485E(local_c);
-  iVar7 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr.cpp",0x3c,0,iVar3,"%s",
+  iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x3c,0,iVar3,st::mutable_c_string("%s"),
                              "AiPlrClassTy::InitData");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_plr.cpp",0x3d);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x3d);
   return iVar3;
 }
 
@@ -165,12 +165,12 @@ byte * __thiscall st::fn_00678BE0(AiPlrClassTy *this,uint *param_1)
   if (local_c != nullptr) {
     st::fn_006AB060(&local_c);
   }
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr.cpp",0x61,0,errorCode,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x61,0,errorCode,st::mutable_c_string("%s"),
                              "AiPlrClassTy::PrepareToSave");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_plr.cpp",0x62);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x62);
   return nullptr;
 }
 
@@ -203,10 +203,10 @@ int __thiscall st::fn_00679300(AiPlrClassTy *this,byte *param_1)
   pAVar3 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr.cpp",0xf1,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0xf1,0,iVar4,st::mutable_c_string("%s"),
                                "AiPlrClassTy::CloseTactByTitle");
     if (iVar5 == 0) {
-      st::fn_006A5E40(iVar4,0,"E:\\__titans\\ai\\ai_plr.cpp",0xf2);
+      st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0xf2);
       return iVar4;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -277,17 +277,17 @@ int __thiscall st::fn_00679470(AiPlrClassTy *this)
   pAVar3 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr.cpp",0x10e,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x10e,0,iVar4,st::mutable_c_string("%s"),
                                "AiPlrClassTy::CloseAllTact");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\ai\\ai_plr.cpp",0x10f);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x10f);
     return iVar4;
   }
   if (local_8->field_0695 == nullptr) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr.cpp",0xfd);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0xfd);
   }
   pAVar7 = local_3c;
   for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -381,17 +381,17 @@ st::fn_0067B3C0(AiPlrClassTy *this,int param_1,int param_2,int param_3,char para
     local_14 = iVar3;
     local_10 = iVar3;
     st::fn_006AE1C0((DArrayTy *)local_8->field_06A1,&local_1c);
-    st::fn_004049A8((DArrayTy *)pAVar2->field_06A1,st::fn_004029B9);
+    st::fn_004049A8((DArrayTy *)pAVar2->field_06A1,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_004029B9));
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   g_currentExceptionFrame = local_60.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr.cpp",0x3a9,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x3a9,0,iVar3,st::mutable_c_string("%s"),
                              "AiPlrClassTy::SetTech");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_plr.cpp",0x3aa);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x3aa);
   return iVar3;
 }
 
@@ -530,7 +530,7 @@ LAB_0067b724:
                         STPiece<4,4>(local_4c[0]) = this_00->field_06FE;
                         STPiece<0,4>(local_4c[0]) = 0x73;
                         local_4c[0].field_0009 = 1;
-                        local_4c[0].field_000A = pvVar8;
+                        local_4c[0].field_000A = st::machine_word_boundary_cast<undefined4>(pvVar8);
                         if (&stack0x00000000 != (undefined1 *)0x4c) {
                           st::fn_004010E1((AiTactClassTy *)local_8,local_4c);
                           uVar7 = local_c;
@@ -595,7 +595,7 @@ LAB_0067b724:
       if (((g_allPlayers_007FA174 != nullptr) && (this_00->field_0662 == '\x01')) &&
          (local_EAX_824 = st::fn_00402A68(this_00,(int)this_00->field_0660),
          local_EAX_824 < (int)((-(uint)(this_00->field_05EC != 3) & 0xfffffffc) + 5))) {
-        st::fn_0040523B(this_00->field_05D7,(int)this_00->field_0660,local_c8,local_ac);
+        st::fn_0040523B(this_00->field_05D7,(int)this_00->field_0660,st::pointer_boundary_cast<undefined4 *>(local_c8),st::pointer_boundary_cast<undefined4 *>(local_ac));
         iVar10 = 0;
         do {
           if (*(int *)((int)local_c8 + iVar10) == 0) {
@@ -611,12 +611,12 @@ LAB_0067b724:
       return;
     }
     g_currentExceptionFrame = local_90.previous;
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr.cpp",0x40d,0,local_EAX_119,
-                               "%s","AiPlrClassTy::ExecTech");
+    iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x40d,0,local_EAX_119,
+                               st::mutable_c_string("%s"),"AiPlrClassTy::ExecTech");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_119,0,"E:\\__titans\\ai\\ai_plr.cpp",0x40e);
+    st::fn_006A5E40(local_EAX_119,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x40e);
   }
   return;
 }
@@ -653,7 +653,7 @@ void __thiscall st::fn_0067C180(AiPlrClassTy *this)
   ushort *puVar11;
   int iVar7;
   uint uVar12;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX;
   int iVar13;
   uint uVar14;
@@ -687,7 +687,7 @@ void __thiscall st::fn_0067C180(AiPlrClassTy *this)
           local_20->field_0685 = local_20->field_06FE;
           array = st::fn_006AE290(nullptr,5,0x10,5);
           local_c = array;
-          st::fn_004027E3(this_00,st::fn_00403544,array);
+          st::fn_004027E3(this_00,st::pointer_boundary_cast<undefined *>(st::fn_00403544),array);
           uVar14 = array->count;
           uVar12 = 0;
           iVar13 = 0;
@@ -780,8 +780,8 @@ void __thiscall st::fn_0067C180(AiPlrClassTy *this)
                   array = local_c;
                 } while ((int)local_8 < (int)*(uint *)(iVar13 + 0xc));
               }
-              st::fn_004049A8(this_00->field_06AD,st::fn_004026FD);
-              st::fn_004049A8(array,st::fn_004029B4);
+              st::fn_004049A8(this_00->field_06AD,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_004026FD));
+              st::fn_004049A8(array,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_004029B4));
               st::fn_00401C80(this_00,array,this_00->field_06AD);
               this_00->field_0689 = 1;
             }
@@ -795,16 +795,16 @@ LAB_0067c61b:
         }
       }
       else {
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar14 = extraout_EDX;
         if ((iVar13 == 0) ||
-           (uVar14 = local_20->field_0685 + iVar13, uVar14 <= local_20->field_06FE)) {
+           (uVar14 = st::machine_word_boundary_cast<uint>(local_20->field_0685 + iVar13), uVar14 <= local_20->field_06FE)) {
           local_20->field_0685 = local_20->field_06FE;
           st::fn_004029E6((int)local_20,uVar14,local_20->field_06AD);
           iVar4 = st::fn_00401041(this_00->field_06AD);
           pDVar10 = st::fn_006AE290(nullptr,5,0x10,5);
           local_c = pDVar10;
-          st::fn_004027E3(this_00,st::fn_00403544,pDVar10);
+          st::fn_004027E3(this_00,st::pointer_boundary_cast<undefined *>(st::fn_00403544),pDVar10);
           iVar13 = iVar4 + pDVar10->count;
           if (iVar13 == 0) {
             st::fn_0040394F(this_00);
@@ -853,7 +853,7 @@ LAB_0067c61b:
                     } while ((int)local_8 < (int)*(uint *)(iVar13 + 0xc));
                   }
                 }
-                st::fn_004049A8(this_00->field_06AD,st::fn_004026FD);
+                st::fn_004049A8(this_00->field_06AD,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_004026FD));
               }
               if (this_00->field_06AD->count == 0) {
                 st::fn_0040394F(this_00);
@@ -871,8 +871,8 @@ LAB_0067c61b:
     }
     else {
       g_currentExceptionFrame = local_80.previous;
-      iVar7 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr.cpp",0x570,0,local_EAX_93,
-                                 "%s","AiPlrClassTy::Offensive");
+      iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x570,0,local_EAX_93,
+                                 st::mutable_c_string("%s"),"AiPlrClassTy::Offensive");
       if (iVar7 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -880,7 +880,7 @@ LAB_0067c61b:
         st::fn_006AE110(local_c);
         local_c = nullptr;
       }
-      st::fn_006A5E40(local_EAX_93,0,"E:\\__titans\\ai\\ai_plr.cpp",0x573);
+      st::fn_006A5E40(local_EAX_93,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x573);
     }
   }
   return;
@@ -941,13 +941,13 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
   this_00 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_b0.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr.cpp",0x655,0,iVar5,
-                               "AiPlrClassTy::GetMessage error mess->id == %lX Name=%d ",message->id,
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x655,0,iVar5,
+                               st::mutable_c_string("AiPlrClassTy::GetMessage error mess->id == %lX Name=%d "),message->id,
                                local_10->field_0018);
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar5,0,"E:\\__titans\\ai\\ai_plr.cpp",0x656);
+    st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x656);
     return 0xffff;
   }
   local_10->field_06FE = g_playSystem_00802A38->field_00E4;
@@ -977,7 +977,7 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
         } while (cVar1 != '\0');
         uVar10 = ~uVar10;
         pcVar12 = pcVar12 + -uVar10;
-        pcVar13 = &g_bulkInitializedRecords_008087C7[this_00->field_05D7].field_0x1;
+        pcVar13 = st::pointer_boundary_cast<char *>(&g_bulkInitializedRecords_008087C7[this_00->field_05D7].field_0x1);
         memmove(pcVar13, pcVar12, uVar10); /* compiler REP MOVS byte copy */
         if (local_18 != nullptr) {
           st::fn_006AB060(&local_18);
@@ -1018,14 +1018,14 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
           local_38[3] = 0;
           local_24 = this_00->field_0008;
           local_38[4] = 10;
-          st::fn_006E5810(this_00->field_000C,local_38);
+          st::fn_006E5810(this_00->field_000C,st::pointer_boundary_cast<undefined4 *>(local_38));
         }
       }
       else if (SVar2 == MESS_ID_CREATE) {
-        puVar3 = (message->arg0).ptr;
+        puVar3 = st::pointer_boundary_cast<undefined4 *>((message->arg0).ptr);
         if (puVar3 == nullptr) {
           st::fn_006A5E40
-                    (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr.cpp",0x586);
+                    (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x586);
         }
         st::fn_004033FF(this_00,puVar3);
         if (g_allPlayers_007FA174 != nullptr) {
@@ -1117,11 +1117,11 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
     switch(SVar2) {
     case 0x5d98:
       if ((message->arg0).words.low == 0) {
-        st::fn_00402270(local_10->field_05D7,(message->arg1).ptr);
+        st::fn_00402270(local_10->field_05D7,st::pointer_boundary_cast<DArrayTy *>((message->arg1).ptr));
       }
       else {
         local_8 = nullptr;
-        st::fn_006AFE40((int *)&local_8,(message->arg1).ptr);
+        st::fn_006AFE40((int *)&local_8,st::pointer_boundary_cast<uint *>((message->arg1).ptr));
         pDVar7 = local_8;
         if (local_8 != nullptr) {
           ppAVar15 = &local_6c;

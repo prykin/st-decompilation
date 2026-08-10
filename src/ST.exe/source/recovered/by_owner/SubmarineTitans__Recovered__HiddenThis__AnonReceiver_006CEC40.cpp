@@ -46,10 +46,10 @@ st::fn_006D63E0
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = &DAT_0079dd90;
-  puStack_10 = &st_image_0072D964;
+  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079dd90);
+  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  local_1c = &stack0xffffff0c;
+  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff0c);
   iVar8 = *(int *)&this->field_0x284;
   local_b4[0] = (HDC)0x0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

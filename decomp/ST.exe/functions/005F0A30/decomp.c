@@ -15,7 +15,7 @@ bool __fastcall FUN_005f0a30(STSprGameObjC *param_1)
   uint uVar5;
   int iVar6;
   int iVar7;
-  dword dVar8;
+  STBoatC_field_06F7State SVar8;
 
   uVar5 = (uint)(byte)param_1->field_024F;
   if ((param_1->field_024F != 0) &&
@@ -36,8 +36,8 @@ bool __fastcall FUN_005f0a30(STSprGameObjC *param_1)
           if (uVar5 == 99) {
             iVar6 = (*param_1->vtable->vfunc_138)();
             iVar7 = (*param_1->vtable->vfunc_130)();
-            dVar8 = param_1->slot_2C();
-            thunk_FUN_004b7e30(this,dVar8,iVar7,iVar6);
+            SVar8 = param_1->slot_2C();
+            thunk_FUN_004b7e30(this,SVar8,iVar7,iVar6);
             iVar6 = param_1->vfunc_AC((short)*(undefined4 *)&this->field_0x18);
             uVar5 = 0;
             if (iVar6 != 0) {

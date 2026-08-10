@@ -274,8 +274,7 @@ LAB_004c41a5:
                               if (0 < *(int *)(&DAT_007932d0 + iVar11)) {
                                 iVar15 = 0;
                                 do {
-                                  puVar12 = (undefined4 *)
-                                            thunk_FUN_0041dc40(local_74,(short)*(undefined4 *)
+                                  puVar12 = thunk_FUN_0041dc40(local_74,(short)*(undefined4 *)
                                                                                 (&DAT_007932d4 +
                                                                                 iVar15 + iVar11),
                                                                *(ushort *)

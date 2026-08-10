@@ -55,8 +55,8 @@ SIDTy * __cdecl CreateSID(void)
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1C23);
     this->vtable = &SIDTyVTable;
     this->field_1A5F = 0;
-    this->field_1AF1[0] = 0;
-    this->field_1AF1[1] = 0;
+    this->field_1AF1 = 0;
+    this->field_1AF5 = 0;
     this->field_1AF9[0] = 0;
     this->field_1AF9[1] = 0;
     this->field_1CB8 = nullptr;

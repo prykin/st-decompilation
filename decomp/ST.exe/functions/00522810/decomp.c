@@ -40,7 +40,7 @@ void FUN_00522810(char *param_1)
   memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
   FUN_006b77e0(_Str1,(byte *)_Str1);
   FUN_006b7780(_Str1,_Str1);
-  if (_DAT_008087a1 != 0) {
+  if (ram0x008087a1 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

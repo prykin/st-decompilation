@@ -40,12 +40,12 @@ int __thiscall st::fn_00647DC0(AiBossClassTy *this,undefined4 *param_1)
   }
   g_currentExceptionFrame = local_4c.previous;
   st::fn_00401528(local_8);
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_boss.cpp",0x29,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0x29,0,iVar2,st::mutable_c_string("%s"),
                              "AiBossClassTy::InitData");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_boss.cpp",0x2a);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0x2a);
   return iVar2;
 }
 
@@ -102,12 +102,12 @@ byte * __thiscall st::fn_00647EF0(AiBossClassTy *this,uint *param_1)
   if (local_c != nullptr) {
     st::fn_006AB060(&local_c);
   }
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_boss.cpp",0x4c,0,errorCode,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0x4c,0,errorCode,st::mutable_c_string("%s"),
                              "AiBossClassTy::PrepareToSave");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_boss.cpp",0x4d);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0x4d);
   return nullptr;
 }
 
@@ -150,11 +150,11 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
   this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_boss.cpp",0xde,0,iVar3,
-                               "AiBossClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0xde,0,iVar3,
+                               st::mutable_c_string("AiBossClassTy::GetMessage error mess->id == %lX Name=%d"),message->id,
                                local_10->field_0018);
     if (iVar4 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_boss.cpp",0xdf);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0xdf);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -178,16 +178,16 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
       puVar9 = (byte *)((message->arg0).ptr);
       if (puVar9 == nullptr) {
         st::fn_006A5E40
-                  (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss.cpp",0x61);
+                  (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0x61);
       }
-      st::fn_00403774(this_00,puVar9);
-      DAT_008117bc = this_00;
+      st::fn_00403774(this_00,st::pointer_boundary_cast<undefined4 *>(puVar9));
+      DAT_008117bc = st::machine_word_boundary_cast<undefined4>(this_00);
       st::fn_00401F69();
     }
     else if (SVar1 == MESS_SHARED_0003) {
       st::fn_0040281F();
       st::fn_00401528(this_00);
-      DAT_008117bc = nullptr;
+      DAT_008117bc = static_cast<undefined4>(0);
     }
   }
   else if (SVar1 < 0x5ded) {
@@ -217,7 +217,7 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
       DAT_0080c83a = 0;
     }
     else {
-      DAT_0080c83a = g_playSystem_00802A38->field_00E4 / 0x19;
+      DAT_0080c83a = st::machine_word_boundary_cast<undefined4>(g_playSystem_00802A38->field_00E4 / 0x19);
     }
     puVar9 = (byte *)(&DAT_008087b6);
     puVar12 = (byte *)(&DAT_0080c967);
@@ -252,7 +252,7 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
     pcVar10 = pcVar13 + -uVar6;
     pcVar13 = (char *)&DAT_0080c736;
     memmove(pcVar13, pcVar10, uVar6); /* compiler REP MOVS byte copy */
-    if (DAT_008087a0 == '\b') {
+    if ((char)DAT_008087a0 == '\b') {
       st::fn_00405CF4();
     }
     DAT_0080c52a = DAT_0080c52a + 1;

@@ -238,22 +238,22 @@ void st::fn_007603B0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *para
       local_14 = (AnonNested_007603B0_0050_0992C9A2 *)&local_14->field_0x4;
     }
     else {
-      iVar3 = local_14->field_00C0 * local_10[0x30];
-      iVar4 = local_14->field_0040 * local_10[0x10];
+      iVar3 = st::machine_word_boundary_cast<int>(local_14->field_00C0 * local_10[0x30]);
+      iVar4 = st::machine_word_boundary_cast<int>(local_14->field_0040 * local_10[0x10]);
       iVar6 = (iVar3 + iVar4) * 0x1151;
       iVar2 = iVar6 + iVar3 * -0x3b21;
       iVar6 = iVar6 + iVar4 * 0x187e;
       iVar4 = *local_10 * local_14->field_0000;
-      iVar7 = local_14->field_0080 * local_10[0x20];
+      iVar7 = st::machine_word_boundary_cast<int>(local_14->field_0080 * local_10[0x20]);
       iVar10 = (iVar7 + iVar4) * 0x2000;
       iVar3 = iVar10 + iVar6;
       local_28 = iVar10 - iVar6;
       iVar6 = (iVar4 - iVar7) * 0x2000;
-      iVar7 = local_14->field_0060 * local_c;
+      iVar7 = st::machine_word_boundary_cast<int>(local_14->field_0060 * local_c);
       local_24 = iVar6 + iVar2;
-      iVar10 = local_14->field_00E0 * local_10[0x38];
-      local_30 = local_14->field_0020 * local_30;
-      local_8 = local_14->field_00A0 * local_8;
+      iVar10 = st::machine_word_boundary_cast<int>(local_14->field_00E0 * local_10[0x38]);
+      local_30 = st::machine_word_boundary_cast<int>(local_14->field_0020 * local_30);
+      local_8 = st::machine_word_boundary_cast<int>(local_14->field_00A0 * local_8);
       local_20 = iVar6 - iVar2;
       local_34 = iVar3;
       local_c = (local_30 + local_8 + iVar10 + iVar7) * 0x25a1;
@@ -404,10 +404,10 @@ void st::fn_00760970(int param_1,AnonShape_00760970_DF0E462C *param_2,int *param
       piVar2[0x38] = iVar11;
     }
     else {
-      iVar10 = pAVar4->field_0080 * param_3[0x20];
+      iVar10 = st::machine_word_boundary_cast<int>(pAVar4->field_0080 * param_3[0x20]);
       iVar7 = *param_3 * pAVar4->field_0000;
-      iVar11 = pAVar4->field_00C0 * param_3[0x30];
-      iVar8 = pAVar4->field_0040 * param_3[0x10];
+      iVar11 = st::machine_word_boundary_cast<int>(pAVar4->field_00C0 * param_3[0x30]);
+      iVar8 = st::machine_word_boundary_cast<int>(pAVar4->field_0040 * param_3[0x10]);
       iVar9 = iVar10 + iVar7;
       iVar7 = iVar7 - iVar10;
       iVar10 = iVar11 + iVar8;
@@ -416,10 +416,10 @@ void st::fn_00760970(int param_1,AnonShape_00760970_DF0E462C *param_2,int *param
       local_1c = iVar9 - iVar10;
       iVar8 = iVar7 - iVar12;
       local_24 = iVar12 + iVar7;
-      iVar9 = pAVar4->field_0060 * param_3[0x18];
-      iVar10 = pAVar4->field_00E0 * param_3[0x38];
-      iVar7 = pAVar4->field_00A0 * param_3[0x28];
-      local_8 = pAVar4->field_0020 * param_3[8];
+      iVar9 = st::machine_word_boundary_cast<int>(pAVar4->field_0060 * param_3[0x18]);
+      iVar10 = st::machine_word_boundary_cast<int>(pAVar4->field_00E0 * param_3[0x38]);
+      iVar7 = st::machine_word_boundary_cast<int>(pAVar4->field_00A0 * param_3[0x28]);
+      local_8 = st::machine_word_boundary_cast<int>(pAVar4->field_0020 * param_3[8]);
       local_14 = iVar9 + iVar7;
       iVar7 = iVar7 - iVar9;
       iVar9 = iVar10 + local_8;
@@ -682,15 +682,15 @@ void st::fn_007611C0(int param_1,AnonShape_007611C0_0B5C7A2E *param_2,int *param
         pAVar7[0x10] = AVar4;
       }
       else {
-        iVar3 = piVar2[-0x30] * pAVar9->field_0000 * 0x4000;
-        iVar5 = pAVar9->field_0040 * piVar2[-0x20] * 0x3b21 + pAVar9->field_00C0 * *piVar2 * -0x187e
-        ;
+        iVar3 = st::machine_word_boundary_cast<int>(piVar2[-0x30] * pAVar9->field_0000 * 0x4000);
+        iVar5 = st::machine_word_boundary_cast<int>(pAVar9->field_0040 * piVar2[-0x20] * 0x3b21 + pAVar9->field_00C0 * *piVar2 * -0x187e
+        );
         iVar6 = iVar5 + iVar3;
-        iVar8 = pAVar9->field_00E0 * piVar2[8];
+        iVar8 = st::machine_word_boundary_cast<int>(pAVar9->field_00E0 * piVar2[8]);
         local_1c = iVar3 - iVar5;
-        local_18 = pAVar9->field_0060 * local_18;
-        iVar3 = pAVar9->field_00A0 * piVar2[-8];
-        local_20 = pAVar9->field_0020 * local_20;
+        local_18 = st::machine_word_boundary_cast<int>(pAVar9->field_0060 * local_18);
+        iVar3 = st::machine_word_boundary_cast<int>(pAVar9->field_00A0 * piVar2[-8]);
+        local_20 = st::machine_word_boundary_cast<int>(pAVar9->field_0020 * local_20);
         iVar5 = iVar3 * 0x2e75 + local_18 * -0x4587 + local_20 * 0x21f9 + iVar8 * -0x6c2;
         iVar3 = local_20 * 0x5203 + local_18 * 0x1ccd + iVar3 * -0x133e + iVar8 * -0x1050;
         pAVar7[-8] = (AnonShape_007611C0_979BF099)(iVar6 + 0x800 + iVar3 >> 0xc);
@@ -724,7 +724,7 @@ void st::fn_007611C0(int param_1,AnonShape_007611C0_0B5C7A2E *param_2,int *param
       local_10->field_0003 = uVar1;
     }
     else {
-      iVar10 = piVar2[2] * 0x3b21 + piVar2[6] * -0x187e;
+      iVar10 = st::machine_word_boundary_cast<int>(piVar2[2] * 0x3b21 + piVar2[6] * -0x187e);
       iVar8 = iVar10 + *piVar2 * 0x4000;
       iVar10 = *piVar2 * 0x4000 - iVar10;
       iVar11 = iVar5 * 0x2e75 + local_c * -0x4587 + iVar6 * 0x21f9 + iVar3 * -0x6c2;
@@ -779,7 +779,7 @@ void st::fn_00761550(int *param_1,int param_2,int param_3,int *param_4,int param
       else {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar2 = *(int *)((param_3 - (int)local_4c) + (int)piVar7) * piVar6[-0x18] * 0x8000;
-        local_c = piVar6[0x10] * piVar4[0x10] * 0x1b37;
+        local_c = st::machine_word_boundary_cast<int>(piVar6[0x10] * piVar4[0x10] * 0x1b37);
         iVar5 = local_c + piVar6[0x20] * piVar4[0x20] * -0x1712 +
                 piVar6[-0x10] * piVar4[-0x10] * 0x73fc + *piVar6 * *piVar4 * -0x28ba;
         *piVar7 = iVar5 + 0x1000 + iVar2 >> 0xd;
@@ -807,7 +807,7 @@ void st::fn_00761550(int *param_1,int param_2,int param_3,int *param_4,int param
     }
     else {
       iVar5 = *piVar4;
-      iVar2 = piVar4[5] * 0x1b37 + piVar4[3] * -0x28ba + piVar4[7] * -0x1712 + piVar4[1] * 0x73fc;
+      iVar2 = st::machine_word_boundary_cast<int>(piVar4[5] * 0x1b37 + piVar4[3] * -0x28ba + piVar4[7] * -0x1712 + piVar4[1] * 0x73fc);
       *puVar3 = *(undefined1 *)((iVar2 + 0x80000 + iVar5 * 0x8000 >> 0x14 & 0x3ffU) + local_8);
       puVar3[1] = *(undefined1 *)(((iVar5 * 0x8000 - iVar2) + 0x80000 >> 0x14 & 0x3ffU) + local_8);
     }

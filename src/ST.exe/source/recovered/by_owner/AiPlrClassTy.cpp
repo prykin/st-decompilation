@@ -14,7 +14,7 @@ AiPlrClassTy * __thiscall st::fn_006788B0(AiPlrClassTy *this)
   undefined4 *puVar2;
 
   st::fn_006E60E0(this);
-  st::fn_00402C2F(&this->vtable_at_1c);
+  st::fn_00402C2F(st::pointer_boundary_cast<undefined4 *>(&this->vtable_at_1c));
   this->vtable = &st_global_0079D714;
   this->vtable_at_1c = &st_global_0079D6D4;
   if (this == nullptr) {
@@ -233,7 +233,7 @@ void __thiscall st::fn_0067A240(AiPlrClassTy *this,undefined *param_1,DArrayTy *
             puVar2 = nullptr;
           }
           if (((puVar2[1] != 0) && ((void *)*puVar2 != nullptr)) &&
-             (iVar3 = st::fn_00404287((void *)*puVar2,param_1,param_2), iVar3 != 0)) {
+             (iVar3 = st::fn_00404287((void *)*puVar2,param_1,st::machine_word_boundary_cast<undefined4>(param_2)), iVar3 != 0)) {
             return;
           }
         }
@@ -261,7 +261,7 @@ int __thiscall st::fn_0067BEF0(AiPlrClassTy *this)
 {
   int iVar1;
 
-  iVar1 = this->field_068D + 1;
+  iVar1 = st::machine_word_boundary_cast<int>(this->field_068D + 1);
   this->field_068D = iVar1;
   if ((0xff < iVar1) && (iVar1 < 0x401)) {
     return iVar1;
@@ -285,7 +285,7 @@ int __thiscall st::fn_0067BF30(AiPlrClassTy *this)
 {
   uint uVar1;
 
-  uVar1 = this->field_00A4 * 0x41c64e6d + 0x3039;
+  uVar1 = st::machine_word_boundary_cast<uint>(this->field_00A4 * 0x41c64e6d + 0x3039);
   this->field_00A4 = uVar1;
   return (uVar1 >> 0x10 & 1) + 1;
 }

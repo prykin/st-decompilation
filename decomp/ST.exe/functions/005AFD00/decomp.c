@@ -164,7 +164,7 @@ switchD_005afd30_caseD_c:
   pRVar5 = (RecoveredSourceFamily_dibcopy *)this_00->field_1C7B;
   FUN_006b4170(pRVar5,0,0,0,pRVar5->field_0004,pRVar5->field_0008,0);
   uVar21 = 0x3f;
-  puVar17 = this_00->field_1C23;
+  puVar17 = &this_00->field_1C23;
   do {
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar17,0xffffffff,0x114,uVar21);
     uVar21 = uVar21 + 0x13;
@@ -354,7 +354,7 @@ LAB_005b0041:
                 this_00 = local_28;
                 if (iVar7 == 0) {
                   pcVar7 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                              (0x345,&local_28->field_1FAF,0,0,0);
+                                              (0x345,(byte *)&local_28->field_1FAF,0,0,0);
                   if (g_dArray_0080C4CB != nullptr) {
                     FUN_006b5570(g_dArray_0080C4CB);
                   }
@@ -547,7 +547,7 @@ LAB_005b01f3:
           pbVar25 = (byte *)(pcVar12 + -1);
           memmove(pbVar25, pbVar22, uVar21); /* compiler REP MOVS byte copy */
           pcVar7 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                      (0x345,&local_28->field_1FAF,0,0,0);
+                                      (0x345,(byte *)&local_28->field_1FAF,0,0,0);
           bVar26 = false;
           switch(this_00->field_1A5F) {
           case CASE_1:

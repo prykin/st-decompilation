@@ -63,8 +63,8 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         _DAT_00853cf0 = 0;
         uVar3 = st::fn_00401131(param_2);
         if (DAT_00853d84 <= uVar3) {
-          iVar7 = st::fn_006AD4D0("E:\\__titans\\Maps\\DefObj.cpp",0x1ba,0,uVar3,
-                                     "%s","Out of Range Entourage Group Index ");
+          iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Maps\\DefObj.cpp"),0x1ba,0,uVar3,
+                                     st::mutable_c_string("%s"),"Out of Range Entourage Group Index ");
           if (iVar7 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
@@ -72,8 +72,8 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         }
         iVar8 = uVar3 * 0x218;
         if (*(uint *)(iVar8 + 0x20c + DAT_00853d80) <= param_5) {
-          iVar5 = st::fn_006AD4D0("E:\\__titans\\Maps\\DefObj.cpp",0x1c0,0,param_5,
-                                     "%s","Out of Range Entourage Index ");
+          iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Maps\\DefObj.cpp"),0x1c0,0,param_5,
+                                     st::mutable_c_string("%s"),"Out of Range Entourage Index ");
           if (iVar5 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
@@ -84,7 +84,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         _DAT_00853d76 = *(undefined4 *)(pcVar9 + 0x214);
         if (*(int *)(pcVar9 + 0x210) != 0) {
           _DAT_00853d72 = 0xffffffff;
-          st::external_00000080(local_108,"%s%u",pcVar9,param_5);
+          st::external_00000080(local_108,st::mutable_c_string("%s%u"),pcVar9,param_5);
           iVar3 = DAT_00853d80;
           uVar5 = 0xffffffff;
           pcVar9 = local_108;
@@ -111,7 +111,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
             pcVar10 = pcVar10 + 1;
           } while (cVar1 != '\0');
           if (iVar8 != -2) {
-            st::external_00000080(local_108,"%s%u",pcVar9,param_5);
+            st::external_00000080(local_108,st::mutable_c_string("%s%u"),pcVar9,param_5);
             uVar5 = 0xffffffff;
             pcVar9 = local_108;
             do {
@@ -127,7 +127,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
             pcVar10 = (char *)&DAT_00853d32;
             memmove(pcVar10, pcVar9, uVar5); /* compiler REP MOVS byte copy */
           }
-          return &DAT_00853cd8;
+          return st::pointer_boundary_cast<uint *>(&DAT_00853cd8);
         }
         uVar5 = 0xffffffff;
         pcVar10 = pcVar9;
@@ -159,7 +159,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         pcVar10 = (char *)&DAT_00853d32;
         memmove(pcVar10, pcVar9, uVar5); /* compiler REP MOVS byte copy */
         _DAT_00853d72 = param_5;
-        return &DAT_00853cd8;
+        return st::pointer_boundary_cast<uint *>(&DAT_00853cd8);
       case CASE_14:
         _DAT_007d5c50 = param_2;
         _DAT_007d5c58 = (undefined2)param_4;

@@ -40,11 +40,11 @@ void __thiscall st::fn_00555570(cLoadingTy *this)
   tagMSG local_20;
 
   if (this->field_0048 != 0) {
-    iVar1 = st::external_00000085(&local_20,g_hWnd_00806748,0,0,1);
+    iVar1 = st::external_00000085(st::pointer_boundary_cast<LPMSG>(&local_20),g_hWnd_00806748,0,0,1);
     while (iVar1 != 0) {
-      st::external_00000083(&local_20);
-      st::external_00000084(&local_20);
-      iVar1 = st::external_00000085(&local_20,g_hWnd_00806748,0,0,1);
+      st::external_00000083(st::pointer_boundary_cast<MSG *>(&local_20));
+      st::external_00000084(st::pointer_boundary_cast<MSG *>(&local_20));
+      iVar1 = st::external_00000085(st::pointer_boundary_cast<LPMSG>(&local_20),g_hWnd_00806748,0,0,1);
     }
   }
   return;

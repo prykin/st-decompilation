@@ -401,7 +401,7 @@ st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,s
   if (param_6 == 0) {
     local_8 = (short)param_5;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = (AnonShape_00660620_6BCED4D7 *)CONCAT22(param_4,param_3);
+    local_c = st::machine_word_boundary_cast<undefined4>((AnonShape_00660620_6BCED4D7 *)CONCAT22(param_4,param_3));
     if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
       pSVar1 = st::fn_00405CF9(param_1->field_0024,param_1->field_007D);
       if (pSVar1 != nullptr) {
@@ -416,10 +416,10 @@ st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,s
       if (STGridAt3D(g_worldGrid, param_3, param_4, param_5).objects[0] != nullptr)
       {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        _local_14 = CONCAT22(param_4,param_3);
+        auto _local_14 = CONCAT22(param_4,param_3);
         if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
           local_10 = (short)param_5;
-          local_c = param_1;
+          local_c = st::machine_word_boundary_cast<undefined4>(param_1);
           pSVar1 = st::fn_00405CF9(param_1->field_0024,param_1->field_007D);
           if (pSVar1 != nullptr) {
             pSVar1->sub_00498D20(0x12,(short)&local_14);
@@ -514,7 +514,7 @@ void __fastcall st::fn_00660D40(AnonShape_00660D40_E58DF1E6 *param_1)
                   ('\a' < (char)STPiece<28,1>(local_5c))))) {
                 STPiece<28,1>(local_5c) = local_8->field_0024;
               }
-              st::fn_0072E340(&local_5c.field_0x1d,(char *)(iVar7 + 0x15),0xe);
+              st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_5c.field_0x1d),(char *)(iVar7 + 0x15),0xe);
               if (iVar6 == 0) {
                 sVar3 = *(short *)&pAVar2->field_0x7f;
               }

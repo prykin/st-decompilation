@@ -17,7 +17,7 @@ void __thiscall st::fn_0053A540(PlayPanelTy *this)
   int iVar4;
   int *piVar6;
 
-  puVar1 = &this->field_0x18;
+  puVar1 = st::pointer_boundary_cast<undefined1 *>(&this->field_0x18);
   memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
   this->field_0028 = 0x28;
   if (DAT_00808aaf < 9) {
@@ -36,7 +36,7 @@ void __thiscall st::fn_0053A540(PlayPanelTy *this)
   st::fn_006E6080(this,2,this->field_01C5,(undefined4 *)puVar1);
   bVar2 = 0;
   this->field_0028 = 0x20;
-  piVar6 = &this->field_01A1;
+  piVar6 = st::pointer_boundary_cast<int *>(&this->field_01A1);
   do {
     if (*piVar6 != 0) {
       if ((bVar2 < DAT_00808aaf) && (DAT_00808a8f == '\0')) {

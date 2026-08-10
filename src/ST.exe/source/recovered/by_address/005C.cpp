@@ -113,7 +113,7 @@ void __fastcall st::fn_005C0230(MReportTy *param_1)
   local_24 = 0xb209;
   local_2c = local_4c;
   (*param_1->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)param_1->field_000C,5,&param_1->field_009F,nullptr,local_5c,0);
+            ((SystemClassTy *)param_1->field_000C,5,&param_1->field_009F,nullptr,st::machine_word_boundary_cast<undefined4>(local_5c),0);
   st::fn_00403B07(param_1);
   return;
 }
@@ -280,7 +280,7 @@ void __fastcall st::fn_005C5CA0(AnonShape_005C5CA0_A6776207 *param_1)
   if (param_1->field_211D != 0) {
     param_1->field_0031 = 1;
     param_1->field_0025 = param_1->field_211D;
-    puVar1 = &param_1->field_0x1d;
+    puVar1 = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0x1d);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)&param_1->field_0xc + 0x18))(puVar1);
     param_1->field_002D = 0x22;
@@ -463,9 +463,9 @@ void st::fn_005C7800(void)
   }
   if (DAT_0080877e == '\0') goto LAB_005c7ae0;
   if ((DAT_008067a0 != '\0') && (g_int_00811764 != nullptr)) {
-    st::fn_006B6160(&this->field_0x1a5f,(int)(g_int_00811764 + 6));
+    st::fn_006B6160(st::pointer_boundary_cast<char *>(&this->field_0x1a5f),(int)(g_int_00811764 + 6));
     this->field_1A7F = 0;
-    st::external_0000010A((CFsgsConnection *)&DAT_00802a90,4,&this->field_0x1a5f);
+    st::external_0000010A((CFsgsConnection *)&DAT_00802a90,4,st::pointer_boundary_cast<char *>(&this->field_0x1a5f));
   }
   memset(&DAT_00853de0, 0, 0x232); /* compiler bulk-zero initialization */
   DAT_00853de0 = this->field_1F53;
@@ -528,7 +528,7 @@ LAB_005c7a2c:
   DAT_0085400d = this->field_1F5F;
   DAT_00853ffc = STReplaceLowByte((uint32_t)(DAT_00853ffc), (uint8_t)((char)this->field_1F58));
 LAB_005c7ae0:
-  st::external_00000080(&CHAR_00h_00853de4,"%s%s%s");
+  st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_00853de4),st::mutable_c_string("%s%s%s"));
   pDVar4 = this->field_1F7C;
   if ((DAT_00853ffc & 0xff) < pDVar4->count) {
     pcVar14 = DArrayAt<char>(pDVar4, (DAT_00853ffc & 0xff));
@@ -551,12 +551,12 @@ LAB_005c7ae0:
   memmove(pcVar15, pcVar14, uVar8); /* compiler REP MOVS byte copy */
   uVar9 = 0;
   _DAT_0085400e = st::fn_00404C64;
-  st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s");
+  st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s%s%s"));
   PTR_00853ff8 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   STPiece<1,3>(DAT_00853ffc) = SUB43(PTR_00853ff8,0);
   uRam00854000 = (undefined1)((uint)PTR_00853ff8 >> 0x18);
   if (PTR_00853ff8 != nullptr) {
-    st::fn_004057B8(&local_5a80);
+    st::fn_004057B8(st::pointer_boundary_cast<undefined4 *>(&local_5a80));
     DAT_00811754 = st::external_000000DA();
     SVar3 = this->field_1E26;
     if ((((SVar3 != CASE_6) && (SVar3 != CASE_1)) && (SVar3 != CASE_2)) && (DAT_0080877e != '\0')) {
@@ -585,7 +585,7 @@ LAB_005c7ae0:
                    0);
     }
     local_94 = DAT_0080995c;
-    puVar11 = (byte *)(&DAT_00809960);
+    puVar11 = (byte *)&DAT_00809960;
     puVar16 = (byte *)(local_d8);
     memmove(puVar16, puVar11, 0x20); /* compiler REP MOVS byte copy */
     iVar7 = 0;
@@ -602,7 +602,7 @@ LAB_005c7ae0:
     DAT_00809958 = DAT_008087be;
     DAT_0080995c = local_94;
     puVar11 = (byte *)(local_d8);
-    puVar16 = (byte *)(&DAT_00809960);
+    puVar16 = (byte *)&DAT_00809960;
     memmove(puVar16, puVar11, 0x20); /* compiler REP MOVS byte copy */
     iVar7 = 0;
     if (g_dArray_0080C4C7 != nullptr) {
@@ -653,18 +653,18 @@ LAB_005c7ae0:
     }
     this->field_1F47 = 1;
     if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (g_int_00811764 != nullptr)) {
-      st::fn_006B6160(&this->field_0x1a5f,(int)(g_int_00811764 + 6));
+      st::fn_006B6160(st::pointer_boundary_cast<char *>(&this->field_0x1a5f),(int)(g_int_00811764 + 6));
       this->field_1A7F = 1;
       this->field_1A80 = DAT_008087c6;
       this->field_1A81 = (char)(DAT_008087c2 >> 1);
       puVar18 = "%08x";
       uVar19 = DAT_0080995c;
-      st::external_00000080(&stack0xffffffe8,"%08x");
-      this->field_1A82 = puVar18;
+      st::external_00000080(st::pointer_boundary_cast<LPSTR>(&stack0xffffffe8),st::mutable_c_string("%08x"));
+      this->field_1A82 = st::machine_word_boundary_cast<undefined4>(puVar18);
       this->field_1A86 = uVar19;
       st::fn_0072E340(&this->field_1A8A,&CHAR_00h_0080c3c3,0x1d5);
       this->field_1C5E = 0;
-      st::external_0000010A((CFsgsConnection *)&DAT_00802a90,4,&this->field_0x1a5f);
+      st::external_0000010A((CFsgsConnection *)&DAT_00802a90,4,st::pointer_boundary_cast<char *>(&this->field_0x1a5f));
     }
   }
   (*this->vtable->PrepPlList)((SettMapSTy *)this);

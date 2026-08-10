@@ -4,14 +4,20 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=7;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=2;
-   incoming_ecx_receiver_callers=2; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=2; attributed_named_callers=2; owner_evidence_coverage=adequate
 
-void __thiscall
+   [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /undefined4; every later accumulator definition is an exact full-width integer transform of that
+   value; machine CFG audit: used=2, ignored=0, unknown=0 */
+
+undefined4 __thiscall
 ST3DSMAPContext::sub_006E8EA0(ST3DSMAPContext *this,AnonShape_006E8EA0_96B71903 *param_1)
 
 {
   int iVar1;
-  int iVar2;
+  undefined4 uVar2;
+  int iVar3;
   int local_50 [4];
   int local_40;
   int local_3c;
@@ -57,17 +63,17 @@ ST3DSMAPContext::sub_006E8EA0(ST3DSMAPContext *this,AnonShape_006E8EA0_96B71903 
     local_1c = -(int)param_1->field_001E;
   }
   else {
-    iVar2 = (int)((ulonglong)((longlong)(param_1->field_001C * iVar1) * -0x51eb851f) >> 0x20);
-    local_20 = (iVar2 >> 5) - (iVar2 >> 0x1f);
-    iVar2 = (int)((ulonglong)((longlong)((int)param_1->field_001E * this->field_02F4) * -0x51eb851f)
+    iVar3 = (int)((ulonglong)((longlong)(param_1->field_001C * iVar1) * -0x51eb851f) >> 0x20);
+    local_20 = (iVar3 >> 5) - (iVar3 >> 0x1f);
+    iVar3 = (int)((ulonglong)((longlong)((int)param_1->field_001E * this->field_02F4) * -0x51eb851f)
                  >> 0x20);
-    local_1c = (iVar2 >> 5) - (iVar2 >> 0x1f);
+    local_1c = (iVar3 >> 5) - (iVar3 >> 0x1f);
     local_18 = (iVar1 * local_18) / 100;
     local_14 = (this->field_02F4 * local_14) / 100;
   }
   local_1c = (local_3c >> 0x10) + local_1c;
   local_20 = (local_40 >> 0x10) + local_20;
-  FUN_006b0460(local_50,&local_20,&local_30);
-  return;
+  uVar2 = FUN_006b0460(local_50,&local_20,&local_30);
+  return uVar2;
 }
 

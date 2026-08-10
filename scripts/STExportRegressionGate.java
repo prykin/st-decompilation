@@ -229,12 +229,15 @@ public class STExportRegressionGate extends GhidraScript {
                     "raw_indirect_call".equals(kind);
                 boolean accountingTransition = regressed && functionAnalysisTransition &&
                     "raw_indirect_call".equals(kind);
+                boolean coverageTransition = regressed &&
+                    qualityIncreaseIsConfinedToNewFunctions(before, now, kind);
                 String severity = !regressed ? "info" :
-                    dispatchTransition || accountingTransition ? "warning" :
+                    dispatchTransition || accountingTransition || coverageTransition ? "warning" :
                     blockingQuality(kind) ? "error" : "warning";
                 add(severity, "quality:" + kind, oldValue, newValue,
                     dispatchTransition ? "stage_transition" :
                         accountingTransition ? "analysis_transition" :
+                        coverageTransition ? "coverage_transition" :
                         regressed ? "regressed" : newValue < oldValue ? "improved" : "ok",
                     dispatchTransition ?
                         "First dispatch-shape migration may expose honest unresolved tail " +
@@ -247,6 +250,12 @@ public class STExportRegressionGate extends GhidraScript {
                             " exposed previously malformed exporter-owned syntax; " +
                             "changed_functions=" + qualityDeltaSample(before, now, kind) +
                             "; the next export uses the normal blocking policy" :
+                    coverageTransition ?
+                        "Newly claimed executable bytes exposed honest recovery debt only in " +
+                            "functions absent from the baseline; existing functions did not " +
+                            "regress. new_functions=" +
+                            qualityIncreaseFunctionSample(before, now, kind) +
+                            "; subsequent exports compare these functions normally" :
                         "policy=nonincreasing; blocking=" + blockingQuality(kind) +
                             (regressed ? "; increased_functions=" +
                                 qualityDeltaSample(before, now, kind) : ""));
@@ -350,6 +359,40 @@ public class STExportRegressionGate extends GhidraScript {
             if (sample.size() == 12) break;
         }
         return sample.isEmpty() ? "<summary-only delta>" : String.join(" | ", sample);
+    }
+
+    /**
+     * Expanding function coverage necessarily exposes quality debt which did not exist in the
+     * previous corpus.  That is a coverage transition, not a regression in already recovered
+     * code.  Keep this exception deliberately address-exact: every positive per-function delta
+     * must belong to a function which was wholly absent from the baseline.  On the next export
+     * those addresses are part of the baseline and the ordinary blocking policy applies.
+     */
+    private boolean qualityIncreaseIsConfinedToNewFunctions(CorpusMetrics before,
+            CorpusMetrics now, String kind) {
+        Map<String, Long> left = before.qualityByFunction.getOrDefault(kind, Map.of());
+        Map<String, Long> right = now.qualityByFunction.getOrDefault(kind, Map.of());
+        boolean sawIncrease = false;
+        for (Map.Entry<String, Long> entry : right.entrySet()) {
+            long delta = entry.getValue() - left.getOrDefault(entry.getKey(), 0L);
+            if (delta <= 0) continue;
+            sawIncrease = true;
+            if (before.names.containsKey(entry.getKey())) return false;
+        }
+        return sawIncrease;
+    }
+
+    private String qualityIncreaseFunctionSample(CorpusMetrics before, CorpusMetrics now,
+            String kind) {
+        Map<String, Long> left = before.qualityByFunction.getOrDefault(kind, Map.of());
+        Map<String, Long> right = now.qualityByFunction.getOrDefault(kind, Map.of());
+        Set<String> result = new TreeSet<>();
+        for (Map.Entry<String, Long> entry : right.entrySet()) {
+            long delta = entry.getValue() - left.getOrDefault(entry.getKey(), 0L);
+            if (delta > 0 && !before.names.containsKey(entry.getKey()))
+                result.add(entry.getKey() + "+" + delta);
+        }
+        return result.isEmpty() ? "<detail unavailable>" : sample(result);
     }
 
     private void readFunctions(Path path, CorpusMetrics result) throws Exception {

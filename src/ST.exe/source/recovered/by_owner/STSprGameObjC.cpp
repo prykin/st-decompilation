@@ -36,7 +36,7 @@ STSprGameObjC * __thiscall st::fn_005EC7E0(STSprGameObjC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &st_global_0079C578;
+  this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079C578);
   this->vtable = &st_global_0079C3EC;
   pSVar2 = &this->field_0231;
   for (iVar1 = 0x3d; iVar1 != 0; iVar1 = iVar1 + -1) {

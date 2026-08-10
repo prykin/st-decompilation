@@ -157,7 +157,7 @@ public class STPrototypeApplier extends GhidraScript {
     private DataType resolveType(String specification) {
         if (specification == null || specification.isBlank()) return null;
         if (specification.startsWith("pointer:")) {
-            DataType base = dataTypes.getDataType(specification.substring("pointer:".length()));
+            DataType base = resolveType(specification.substring("pointer:".length()));
             return base == null ? null : new PointerDataType(base,
                 currentProgram.getDefaultPointerSize(), dataTypes);
         }
@@ -165,7 +165,7 @@ public class STPrototypeApplier extends GhidraScript {
     }
     private String typeSpecification(DataType type) {
         if (type instanceof Pointer pointer && pointer.getDataType() != null)
-            return "pointer:" + pointer.getDataType().getPathName();
+            return "pointer:" + typeSpecification(pointer.getDataType());
         return type == null ? "" : type.getPathName();
     }
     private void addComment(Function function, Map<String, String> row) {

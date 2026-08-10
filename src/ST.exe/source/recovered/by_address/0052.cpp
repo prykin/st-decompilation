@@ -107,7 +107,7 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
           pcVar13 = (char *)*local_14->field_0198->field_0014;
         }
         uVar8 = 0xffffffff;
-        _Str1 = &local_14->field_0x6c;
+        _Str1 = st::pointer_boundary_cast<undefined1 *>(&local_14->field_0x6c);
         do {
           pcVar14 = pcVar13;
           if (uVar8 == 0) break;
@@ -118,18 +118,18 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
         } while (cVar1 != '\0');
         uVar8 = ~uVar8;
         pcVar13 = pcVar14 + -uVar8;
-        pcVar14 = _Str1;
+        pcVar14 = st::pointer_boundary_cast<char *>(_Str1);
         memmove(pcVar14, pcVar13, uVar8); /* compiler REP MOVS byte copy */
-        st::fn_006B77E0(_Str1,_Str1);
-        st::fn_006B7780(_Str1,_Str1);
-        iVar6 = st::fn_0072E6F0(_Str1,"/WAITING",8);
+        st::fn_006B77E0(st::pointer_boundary_cast<char *>(_Str1),st::pointer_boundary_cast<byte *>(_Str1));
+        st::fn_006B7780(st::pointer_boundary_cast<char *>(_Str1),st::pointer_boundary_cast<char *>(_Str1));
+        iVar6 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::mutable_c_string("/WAITING"),8);
         uVar8 = local_10;
         if ((iVar6 == 0) && (uVar8 = 0, g_playSystem_00802A38 != nullptr)) {
           g_playSystem_00802A38->field_00F0 = (uint)(g_playSystem_00802A38->field_00F0 == 0);
           pcVar6_mg2 = st::fn_006B0140(0x2747 - (g_playSystem_00802A38->field_00F0 != 0),
                                           g_hINSTANCE_00807618);
           pcVar7_mg2 = st::fn_006B0140(0x42c3,g_hINSTANCE_00807618);
-          st::external_00000080((LPSTR)&DAT_0080f33a,"%s %s",pcVar7_mg2,pcVar6_mg2);
+          st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s %s"),pcVar7_mg2,pcVar6_mg2);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
               st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -139,13 +139,13 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
             }
           }
         }
-        local_EAX_380 = st::fn_0072E6F0(_Str1,"/FIXNETERRORS",0xd);
+        local_EAX_380 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::mutable_c_string("/FIXNETERRORS"),0xd);
         if (local_EAX_380 == 0) {
           DAT_0080735e = DAT_0080735e == '\0';
           uVar8 = 0;
           pcVar6_mg3 = st::fn_006B0140(0x2747 - (byte)DAT_0080735e,g_hINSTANCE_00807618);
           pcVar7_mg3 = st::fn_006B0140(0x42c5,g_hINSTANCE_00807618);
-          st::external_00000080((LPSTR)&DAT_0080f33a,"%s %s",pcVar7_mg3,pcVar6_mg3);
+          st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s %s"),pcVar7_mg3,pcVar6_mg3);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
               uVar9 = 8;
@@ -156,7 +156,7 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
             st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,uVar9);
           }
         }
-        local_EAX_521 = st::fn_0072E6F0(_Str1,"/NETGUARANTEE",0xd);
+        local_EAX_521 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::mutable_c_string("/NETGUARANTEE"),0xd);
         if (local_EAX_521 == 0) {
           DAT_0080733c = (uint)(DAT_0080733c == 0);
           uVar8 = 0;
@@ -165,7 +165,7 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
           }
           pcVar6_mg4 = st::fn_006B0140(0x2747 - (DAT_0080733c != 0),g_hINSTANCE_00807618);
           pcVar7_mg4 = st::fn_006B0140(0x42c4,g_hINSTANCE_00807618);
-          st::external_00000080((LPSTR)&DAT_0080f33a,"%s %s",pcVar7_mg4,pcVar6_mg4);
+          st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s %s"),pcVar7_mg4,pcVar6_mg4);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
               uVar9 = 8;
@@ -179,15 +179,15 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
         if (uVar8 != 0) {
           local_c = local_c & 0xffffff00;
           local_5 = '\0';
-          local_EAX_705 = st::fn_0072E6F0(_Str1,&DAT_007c40f4,4);
+          local_EAX_705 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::pointer_boundary_cast<char *>(&DAT_007c40f4),4);
           if (local_EAX_705 == 0) {
             local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(1));
           }
-          local_EAX_729 = st::fn_0072E6F0(_Str1,"/EALL",5);
+          local_EAX_729 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::mutable_c_string("/EALL"),5);
           if (local_EAX_729 == 0) {
             local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(2));
           }
-          local_EAX_753 = st::fn_0072E6F0(_Str1,"/AALL",5);
+          local_EAX_753 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::mutable_c_string("/AALL"),5);
           pAVar4 = local_14;
           if (local_EAX_753 == 0) {
             local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(3));
@@ -517,7 +517,7 @@ void st::fn_00522810(char *param_1)
   memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
   st::fn_006B77E0(_Str1,(byte *)_Str1);
   st::fn_006B7780(_Str1,_Str1);
-  if (_DAT_008087a1 != 0) {
+  if (ram0x008087a1 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -537,7 +537,7 @@ void st::fn_00522810(char *param_1)
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  iVar3 = st::fn_0072E6F0(_Str1,"EXITON",6);
+  iVar3 = st::fn_0072E6F0(_Str1,st::mutable_c_string("EXITON"),6);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
     st::fn_00404412(DAT_0080874d,5000);
     if (DAT_0080874e == '\x03') {
@@ -550,7 +550,7 @@ void st::fn_00522810(char *param_1)
     st::fn_00404B8D(DAT_0080874d);
     st::fn_004028F6(DAT_0080874d);
   }
-  iVar3 = st::fn_0072E6F0(_Str1,"CORIUM",6);
+  iVar3 = st::fn_0072E6F0(_Str1,st::mutable_c_string("CORIUM"),6);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
     st::fn_00404412(DAT_0080874d,5000);
     st::fn_00404B8D(DAT_0080874d);
@@ -558,7 +558,7 @@ void st::fn_00522810(char *param_1)
   }
   if (DAT_0080874e == '\x03') {
 LAB_00522a79:
-    iVar3 = st::fn_0072E6F0(_Str1,"SILICON",7);
+    iVar3 = st::fn_0072E6F0(_Str1,st::mutable_c_string("SILICON"),7);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
       st::fn_00405E6B((uint)DAT_0080874d,10000);
       st::fn_00404B8D(DAT_0080874d);
@@ -567,14 +567,14 @@ LAB_00522a79:
     if (DAT_0080874e != '\x03') goto LAB_00522ad4;
   }
   else {
-    iVar3 = st::fn_0072E6F0(_Str1,&DAT_007c415c,4);
+    iVar3 = st::fn_0072E6F0(_Str1,st::pointer_boundary_cast<char *>(&DAT_007c415c),4);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
       st::fn_00404336(DAT_0080874d,1000);
       st::fn_00404B8D(DAT_0080874d);
       st::fn_004028F6(DAT_0080874d);
     }
     if (DAT_0080874e == '\x03') goto LAB_00522a79;
-    iVar3 = st::fn_0072E6F0(_Str1,"METAL",5);
+    iVar3 = st::fn_0072E6F0(_Str1,st::mutable_c_string("METAL"),5);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
       st::fn_004055E7(DAT_0080874d,1000);
       st::fn_00404B8D(DAT_0080874d);
@@ -582,24 +582,24 @@ LAB_00522a79:
     }
     if (DAT_0080874e == '\x03') goto LAB_00522a79;
 LAB_00522ad4:
-    iVar3 = st::fn_0072E6F0(_Str1,&DAT_007c4144,3);
+    iVar3 = st::fn_0072E6F0(_Str1,st::pointer_boundary_cast<char *>(&DAT_007c4144),3);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
       st::fn_00404106((uint)DAT_0080874d,100);
       st::fn_00404B8D(DAT_0080874d);
     }
     if (DAT_0080874e != '\x03') goto LAB_00522b59;
   }
-  iVar3 = st::fn_0072E6F0(_Str1,"ENERGY",6);
+  iVar3 = st::fn_0072E6F0(_Str1,st::mutable_c_string("ENERGY"),6);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
     st::fn_004053F3((uint)DAT_0080874d,100);
     st::fn_00404B8D(DAT_0080874d);
   }
 LAB_00522b59:
-  iVar3 = st::fn_0072E6F0(_Str1,&DAT_007c4134,4);
+  iVar3 = st::fn_0072E6F0(_Str1,st::pointer_boundary_cast<char *>(&DAT_007c4134),4);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
     st::fn_00404EC6((uint)DAT_0080874d);
   }
-  iVar3 = st::fn_0072E6F0(_Str1,&DAT_007c4130,3);
+  iVar3 = st::fn_0072E6F0(_Str1,st::pointer_boundary_cast<char *>(&DAT_007c4130),3);
   if ((iVar3 == 0) && (g_visibleClass_00802A88 != nullptr)) {
     if (g_visibleClass_00802A88->field_0114 == 0) {
       g_visibleClass_00802A88->field_00F8 = 0;
@@ -2422,7 +2422,7 @@ void __cdecl st::fn_005260B0(int param_1,undefined1 param_2,int param_3)
     local_35 = param_2;
     local_3b = 1;
   }
-  st::fn_00403607(&local_3c,param_3);
+  st::fn_00403607(st::pointer_boundary_cast<undefined1 *>(&local_3c),param_3);
   return;
 }
 
@@ -5065,9 +5065,9 @@ int __cdecl st::fn_0052A430(AnonShape_0052A430_8E4D893F *param_1)
   switch(pAVar1->field_0004) {
   case 0:
   case 2:
-    return pAVar1->field_0000 * 2 + -2;
+    return st::machine_word_boundary_cast<int>(pAVar1->field_0000 * 2 + -2);
   case 1:
-    return pAVar1->field_0000 * 2 + -1;
+    return st::machine_word_boundary_cast<int>(pAVar1->field_0000 * 2 + -1);
   case 3:
     local_8 = (uint)(pAVar1->field_0008 != 0);
   }
@@ -5339,30 +5339,30 @@ undefined4 * __cdecl st::fn_0052A970(uint param_1,int param_2)
       if ((param_1 & 0x1000000) != 0) {
         if (((uVar5 != 0) || ((param_1 & 0x8000000) != 0)) ||
            (pcVar2 = &CHAR_00h_008016a0, uVar3 != 0)) {
-          pcVar2 = &DAT_007c6eec;
+          pcVar2 = st::pointer_boundary_cast<char *>(&DAT_007c6eec);
         }
-        st::external_00000080((LPSTR)&DAT_008016a4,"%s%s","Shift",pcVar2);
+        st::external_00000080((LPSTR)&DAT_008016a4,st::mutable_c_string("%s%s"),"Shift",pcVar2);
       }
       if ((param_1 & 0x8000000) != 0) {
         if ((uVar5 != 0) || (pcVar2 = &CHAR_00h_008016a0, uVar3 != 0)) {
-          pcVar2 = &DAT_007c6eec;
+          pcVar2 = st::pointer_boundary_cast<char *>(&DAT_007c6eec);
         }
-        st::external_00000080((LPSTR)&DAT_008016a4,"%s%s%s",&DAT_008016a4,&DAT_007c5454,pcVar2);
+        st::external_00000080((LPSTR)&DAT_008016a4,st::mutable_c_string("%s%s%s"),&DAT_008016a4,&DAT_007c5454,pcVar2);
       }
       if (uVar3 != 0) {
-        pcVar2 = &DAT_007c6eec;
+        pcVar2 = st::pointer_boundary_cast<char *>(&DAT_007c6eec);
         if (uVar5 == 0) {
           pcVar2 = &CHAR_00h_008016a0;
         }
-        st::external_00000080((LPSTR)&DAT_008016a4,"%s%s%s",&DAT_008016a4,&DAT_007c5670,pcVar2);
+        st::external_00000080((LPSTR)&DAT_008016a4,st::mutable_c_string("%s%s%s"),&DAT_008016a4,&DAT_007c5670,pcVar2);
       }
       if (uVar5 < 0x100) {
-        pcVar2 = &DAT_007c5210 + (param_1 & 0xffff) * 0x14;
+        pcVar2 = st::pointer_boundary_cast<char *>(&DAT_007c5210 + (param_1 & 0xffff) * 0x14);
       }
       else {
         pcVar2 = &CHAR_00h_008016a0;
       }
-      st::external_00000080((LPSTR)&DAT_008016a4,"%s%s",&DAT_008016a4,pcVar2);
+      st::external_00000080((LPSTR)&DAT_008016a4,st::mutable_c_string("%s%s"),&DAT_008016a4,pcVar2);
       return &DAT_008016a4;
     }
     pcVar3_mg2 = st::fn_006B0140(0x2732,g_hINSTANCE_00807618);
@@ -5648,11 +5648,11 @@ PopUpTy * __cdecl st::fn_0052D020(void)
   this = (PopUpTy *)st::fn_006B04D0(0xa1);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->field_0000 = 0x79ace8;
+    this->field_0000 = st::machine_word_boundary_cast<undefined4>(&st_global_0079ACE8);
     this->field_0090 = nullptr;
     this->field_0094 = nullptr;
     this->field_0098 = nullptr;
-    puVar1 = &this->field_0054;
+    puVar1 = this->field_0054;
     iVar2 = 0xf;
     do {
       puVar1[-0xf] = 0xffffffff;
@@ -5679,10 +5679,10 @@ void __thiscall st::fn_0052D320(void *this,char *text,uint param_2)
 
   bVar1 = (byte)param_2;
   if (STField<char>(this,0x9c) == '\0') {
-    st::fn_00402FEA(this,&st_global_007C3B5C,bVar1);
-    st::fn_00402FEA(this,&st_global_007C3B5C,bVar1);
+    st::fn_00402FEA(st::pointer_boundary_cast<PopUpTy *>(this),&st_global_007C3B5C,bVar1);
+    st::fn_00402FEA(st::pointer_boundary_cast<PopUpTy *>(this),&st_global_007C3B5C,bVar1);
   }
-  st::fn_00402FEA(this,text,bVar1);
+  st::fn_00402FEA(st::pointer_boundary_cast<PopUpTy *>(this),text,bVar1);
   return;
 }
 

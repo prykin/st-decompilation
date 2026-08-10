@@ -7,30 +7,41 @@
 
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=0041DCA2 MOV CX,word ptr
-   [EBP + 0x10] */
+   [EBP + 0x10]
 
-void FUN_0041dc40(undefined4 *param_1,short param_2,ushort param_3,short param_4)
+   [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=60, ignored=0, unknown=0
+
+   [STReturnSemanticsApplier] returned_pointer_parameter.
+   Evidence: every reachable RET receives full EAX from the same incoming pointer parameter param_1
+   (ordinal=0); no intervening full or partial accumulator definition changes that value; machine
+   CFG audit: used=60, ignored=0, unknown=0 */
+
+undefined4 * FUN_0041dc40(undefined4 *param_1,short param_2,ushort param_3,short param_4)
 
 {
-  int iVar1;
+  uint uVar1;
   uint uVar2;
   int iVar3;
+  int iVar4;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   short in_stack_0000000a;
   undefined4 local_c;
 
-  iVar3 = (int)param_4;
-  iVar1 = FUN_006aff50(iVar3);
-  uVar2 = FUN_006aff5b(iVar3);
+  iVar4 = (int)param_4;
+  uVar1 = FUN_006aff50(iVar4);
+  uVar2 = FUN_006aff5b(iVar4);
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  iVar1 = (int)(iVar1 * param_2 - uVar2 * (int)in_stack_0000000a) / DAT_007eda8c;
-  uVar2 = FUN_006aff5b(iVar3);
-  iVar3 = FUN_006aff50(iVar3);
+  iVar3 = (int)(uVar1 * (int)param_2 - uVar2 * (int)in_stack_0000000a) / DAT_007eda8c;
+  uVar1 = FUN_006aff5b(iVar4);
+  uVar2 = FUN_006aff50(iVar4);
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-  local_c = CONCAT22((short)((int)(iVar3 * in_stack_0000000a + uVar2 * (int)param_2) / DAT_007eda8c)
-                     ,(short)iVar1);
+  local_c = CONCAT22((short)((int)(uVar2 * (int)in_stack_0000000a + uVar1 * (int)param_2) /
+                            DAT_007eda8c),(short)iVar3);
   *param_1 = local_c;
   *(ushort *)(param_1 + 1) = param_3;
-  return;
+  return param_1;
 }
 

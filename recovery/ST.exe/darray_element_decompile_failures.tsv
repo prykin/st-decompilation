@@ -1,1 +1,3 @@
 function_address	function_name	reason
+0052FB00	OptPanelTy::SetOptControls	Exception while decompiling 0052fb00: process: timeout\n
+00533D10	OptPanelTy::GetMessage	Exception while decompiling 00533d10: process: timeout\n

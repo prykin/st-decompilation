@@ -263,7 +263,7 @@ st::fn_00630C50
                            ,0);
     }
     if (param_2 == 4) {
-      local_14 = pSVar2->field_0054 + 100;
+      local_14 = st::machine_word_boundary_cast<int>(pSVar2->field_0054 + 100);
       local_c = st::fn_006E9000
                           (g_sT3DSMAPContext_00807598,*STField<undefined4 *>(puVar3,0x21),0x78,
                            0x56,(float)local_14 * _DAT_007904f8 * _DAT_007904f0,
@@ -287,7 +287,7 @@ st::fn_00630C50
     uVar9 = 100;
     uVar8 = 0x78;
   }
-  st::fn_006E8660(g_sT3DSMAPContext_00807598,puVar1,1,0,uVar6,uVar7,uVar8,uVar9,0);
+  st::fn_006E8660(g_sT3DSMAPContext_00807598,st::pointer_boundary_cast<int *>(puVar1),1,0,uVar6,uVar7,uVar8,uVar9,0);
   st::fn_006E98E0
             (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
   st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,0);
@@ -298,8 +298,8 @@ st::fn_00630C50
     iVar5 = pSVar2->field_0054;
   }
   else {
-    iVar4 = pSVar2->field_0058 + 100;
-    iVar5 = pSVar2->field_0054 + 100;
+    iVar4 = st::machine_word_boundary_cast<int>(pSVar2->field_0058 + 100);
+    iVar5 = st::machine_word_boundary_cast<int>(pSVar2->field_0054 + 100);
     local_14 = iVar5;
   }
   st::fn_006EA960
@@ -341,7 +341,7 @@ void __thiscall st::fn_00631010(STManRuinC *this)
 
   pSVar1 = this->field_0038;
   if (pSVar1 != nullptr) {
-    local_8 = pSVar1->count - 1;
+    local_8 = st::machine_word_boundary_cast<uint>(pSVar1->count - 1);
     if (-1 < (int)local_8) {
       if (local_8 < pSVar1->count) {
         element_0038 = DArrayAt<STManRuinC_field_0038Element>(pSVar1, local_8);
@@ -350,7 +350,7 @@ void __thiscall st::fn_00631010(STManRuinC *this)
         element_0038 = nullptr;
       }
       if (element_0038->field_000C + 0x2eeU < g_playSystem_00802A38->field_00E4) {
-        piVar2 = element_0038->field_0010;
+        piVar2 = st::pointer_boundary_cast<int *>(element_0038->field_0010);
         psVar7 = &local_20;
         for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
           *(undefined4 *)psVar7 = *(undefined4 *)element_0038;
@@ -406,7 +406,7 @@ st::fn_00631190
   }
   st::fn_00401D57(this,param_2,param_3,param_4,param_6,param_5,param_7);
   puVar2 = st::fn_00405C9F(this,param_6,param_5,0,1,param_7);
-  element_0038->field_0010 = puVar2;
+  element_0038->field_0010 = st::machine_word_boundary_cast<undefined4>(puVar2);
   if (puVar2 != nullptr) {
     return 1;
   }
@@ -440,7 +440,7 @@ void __thiscall st::fn_00631220(STManRuinC *this,int *param_1)
   local_8 = 0;
   local_10 = 0x55;
   if (pSVar1 != nullptr) {
-    iVar2 = pSVar1->count * pSVar1->elementSize;
+    iVar2 = st::machine_word_boundary_cast<int>(pSVar1->count * pSVar1->elementSize);
     local_8 = iVar2 + 0x20;
     local_10 = iVar2 + 0x75;
   }
@@ -448,7 +448,7 @@ void __thiscall st::fn_00631220(STManRuinC *this,int *param_1)
     local_10 = local_10 + this->field_0030;
   }
   uVar4 = local_10;
-  puVar3 = st::fn_006AAC70(local_10);
+  puVar3 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(local_10));
   this->field_0065 = this->field_0071;
   if (puVar3 == nullptr) {
     *param_1 = uVar4;
@@ -470,7 +470,7 @@ void __thiscall st::fn_00631220(STManRuinC *this,int *param_1)
   *(undefined1 *)puVar8 = *(undefined1 *)puVar6;
   this->field_0061 = 0xffffffff;
   if (this->field_0038 != nullptr) {
-    local_14 = (undefined4 *)st::fn_006B0020(&this->field_0038->flags,(int *)&local_8);
+    local_14 = (undefined4 *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&this->field_0038->flags),(int *)&local_8);
     STField<uint>(puVar3,0x55) = local_8;
     local_c = (byte *)((int)puVar3 + 0x59);
     puVar6 = (byte *)(local_14);
@@ -529,7 +529,7 @@ uint __thiscall st::fn_00631390(STManRuinC *this,undefined4 *param_1)
     pbVar7 = (byte *)((int)param_1 + 0x59 + *(int *)pbVar7);
   }
   if (this->field_0034 != nullptr) {
-    pbVar2 = st::fn_006AAC70(this->field_0030);
+    pbVar2 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(this->field_0030));
     this->field_0034 = pbVar2;
   }
   if (this->field_0034 != nullptr) {
@@ -556,7 +556,7 @@ undefined4 __thiscall st::fn_00631450(STManRuinC *this)
   STManRuinC_field_0038Element *element_0038;
 
   if ((this->field_0038 != nullptr) &&
-     (index = this->field_0038->count - 1, -1 < (int)index)) {
+     (index = st::machine_word_boundary_cast<uint>(this->field_0038->count - 1), -1 < (int)index)) {
     do {
       pSVar1 = this->field_0038;
       if (index < pSVar1->count) {
@@ -568,7 +568,7 @@ undefined4 __thiscall st::fn_00631450(STManRuinC *this)
       st::fn_00401D57(this,element_0038->field_0000,element_0038->field_0002,element_0038->field_0004,element_0038->field_0008,(int)element_0038->field_0006,
                    element_0038->field_0014);
       puVar2 = st::fn_00405C9F(this,this->field_0040,this->field_004C,0,1,element_0038->field_0014);
-      element_0038->field_0010 = puVar2;
+      element_0038->field_0010 = st::machine_word_boundary_cast<undefined4>(puVar2);
       if (puVar2 == nullptr) {
         st::fn_006B0C70((DArrayTy *)this->field_0038,index);
       }
@@ -597,7 +597,7 @@ st::fn_00631510
 {
   uint uVar1;
 
-  uVar1 = this->field_0071 * 0x41c64e6d + 0x3039;
+  uVar1 = st::machine_word_boundary_cast<uint>(this->field_0071 * 0x41c64e6d + 0x3039);
   this->field_0071 = uVar1;
   uVar1 = st::fn_00403A26(this,param_3,param_4,param_5,param_2,(uVar1 >> 0x10) % 3,param_6);
   return uVar1;

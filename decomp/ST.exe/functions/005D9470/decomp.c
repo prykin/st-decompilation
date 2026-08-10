@@ -91,9 +91,8 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
       }
       else if (SVar5 == MESS_SHARED_6900) {
         thunk_FUN_005b6730(this_00,10,'\x01',-1);
-        uVar13 = this_00->field_1AF1[1];
         this_00->field_002D = 0x32;
-        FUN_006e6080(this_00,2,uVar13,(undefined4 *)&this_00->field_0x1d);
+        FUN_006e6080(this_00,2,this_00->field_1AF5,(undefined4 *)&this_00->field_0x1d);
         if ((int)this_00->field_1CD0->elementSize < 1) {
           pcVar20 = nullptr;
         }
@@ -114,6 +113,7 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
         pcVar15 = pcVar15 + -uVar13;
         pcVar19 = pcVar20;
         memmove(pcVar19, pcVar15, uVar13); /* compiler REP MOVS byte copy */
+        uVar13 = 0;
         FUN_006b7780(pcVar20,pcVar20);
         if (this_00->field_1CD4 != '\0') {
           if (this_00->field_1A5F == '\0') {
@@ -207,11 +207,10 @@ LAB_005d97ca:
             this_00->field_1A5F = 1;
             this_00->field_002D = 0x20;
             this_00->field_0031 = 0;
-            FUN_006e6080(this_00,2,this_00->field_1AF1[0],(undefined4 *)puVar1);
-            uVar13 = this_00->field_1AF1[1];
+            FUN_006e6080(this_00,2,this_00->field_1AF1,(undefined4 *)puVar1);
             this_00->field_002D = 0x29;
             this_00->field_0031 = 0x19;
-            FUN_006e6080(this_00,2,uVar13,(undefined4 *)puVar1);
+            FUN_006e6080(this_00,2,this_00->field_1AF5,(undefined4 *)puVar1);
             this_00->field_002D = 5;
             puVar16 = this_00->field_1AF9;
             local_8 = (char *)0x2;
@@ -318,10 +317,9 @@ LAB_005d97ca:
         }
       }
       Library::DKW::TBL::FUN_006b6020(pDVar22,0,pcVar20);
-      uVar13 = this_00->field_1AF1[1];
       this_00->field_002D = 0x33;
       this_00->field_0031 = this_00->field_1CD0;
-      FUN_006e6080(this_00,2,uVar13,(undefined4 *)&this_00->field_0x1d);
+      FUN_006e6080(this_00,2,this_00->field_1AF5,(undefined4 *)&this_00->field_0x1d);
       goto cf_common_exit_005D9CCB;
     }
     if (MESS_SHARED_8160 < SVar5) {

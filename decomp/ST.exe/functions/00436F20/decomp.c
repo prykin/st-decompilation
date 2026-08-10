@@ -86,29 +86,29 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
   DArrayTy *local_EAX_4267;
   DArrayTy *local_EAX_4622;
   dword dVar20;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_01;
   undefined4 uVar21;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX_04;
   STGroupBoatCVTable *pSVar22;
   ushort uVar23;
   int iVar24;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
   byte *puVar25;
   DArrayTy *pDVar26;
@@ -349,14 +349,14 @@ cf_common_exit_00437191:
           return;
         }
         local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar14 = extraout_ECX_04;
       }
       else {
         iVar24 = STField<int>(command,0xf);
         local_c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
         sVar13 = 0;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar14 = extraout_ECX_03;
         if (0 < (short)(STField<uint>(command,0x13) >> 1)) {
           do {
@@ -378,27 +378,27 @@ cf_common_exit_00437191:
           return;
         }
         pDVar16 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar21 = extraout_ECX_01;
       }
       else {
         iVar24 = STField<int>(command,0xf);
         pDVar16 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
         sVar13 = 0;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar21 = extraout_ECX;
         if (0 < (short)(STField<uint>(command,0x13) >> 1)) {
           do {
             Library::DKW::TBL::DArrayAppend(pDVar16,puVar6 + sVar13 * 2 + iVar24);
             sVar13 = sVar13 + 1;
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar21 = extraout_ECX_00;
           } while (sVar13 < (short)(STField<uint>(command,0x13) >> 1));
         }
       }
       thunk_FUN_0044cc90(STReplaceLowByte((uint32_t)(uVar21), (uint8_t)(STField<undefined1>(command,8))),
                          pDVar16,1);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       thunk_FUN_0044cd20(STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(STField<undefined1>(command,8)))
                          ,pDVar16,0);
       DArrayDestroy(pDVar16);
@@ -410,20 +410,20 @@ cf_common_exit_00437191:
           return;
         }
         local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar21 = extraout_EDX_02;
       }
       else {
         iVar24 = STField<int>(command,0xf);
         local_c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
         sVar13 = 0;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar21 = extraout_EDX_00;
         if (0 < (short)(STField<uint>(command,0x13) >> 1)) {
           do {
             Library::DKW::TBL::DArrayAppend(local_c,puVar6 + sVar13 * 2 + iVar24);
             sVar13 = sVar13 + 1;
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar21 = extraout_EDX_01;
           } while (sVar13 < (short)(STField<uint>(command,0x13) >> 1));
         }
@@ -460,7 +460,7 @@ cf_common_exit_00437191:
         return;
       }
       thunk_FUN_0044cd20((uint)STField<byte>(command,8),local_EAX_1130,1);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       thunk_FUN_0044cc90(STReplaceLowByte((uint32_t)(extraout_ECX_02), (uint8_t)(STField<undefined1>(command,8))),local_EAX_1130,0);
       DArrayDestroy(local_EAX_1130);
       return;
@@ -922,7 +922,7 @@ cf_common_exit_00437E03:
         if ((((iVar24 == 8) || (iVar24 = (*pSVar15->vtable->vfunc_2C)(), iVar24 == 0x14)) ||
             (iVar24 = (*pSVar15->vtable->vfunc_2C)(), iVar24 == 0x1a)) &&
            (iVar24 = thunk_FUN_0045ff10(pSVar15), iVar24 == 0xc)) {
-          puVar18 = (byte *)thunk_FUN_0048dc90(pSVar15,local_1b8);
+          puVar18 = (byte *)(thunk_FUN_0048dc90(pSVar15,local_1b8));
           puVar25 = (byte *)(&local_1fc);
           memmove(puVar25, puVar18, 0x42); /* compiler REP MOVS byte copy */
           iVar24 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_1f6,(int *)&local_40);

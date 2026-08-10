@@ -86,7 +86,7 @@ LAB_004f0da7:
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((((*(int *)&this->field_0x2c != 0) &&
            (iVar3 = (&this->field_027E)[(byte)this->field_0278], iVar3 != 0)) &&
-          (uVar2 = this->field_0199 + local_8, uVar2 < *(uint *)(iVar3 + 0xc))) &&
+          (uVar2 = st::machine_word_boundary_cast<uint>(this->field_0199 + local_8), uVar2 < *(uint *)(iVar3 + 0xc))) &&
          (pGVar4 = (Global_sub_00523410_param_1Enum *)
                    (*(int *)(iVar3 + 8) * uVar2 + *(int *)(iVar3 + 0x1c)),
          pGVar4 != nullptr)) {

@@ -108,7 +108,7 @@ byte * __thiscall st::fn_0061D710(STLightC *this,int *param_1)
   if (iVar8 != 0) {
     iVar11 = iVar8 * 0x14;
     if (0 < iVar8) {
-      piVar7 = this->field_009B;
+      piVar7 = st::pointer_boundary_cast<int *>(this->field_009B);
       do {
         iVar1 = *piVar7;
         piVar7 = piVar7 + 1;
@@ -119,7 +119,7 @@ byte * __thiscall st::fn_0061D710(STLightC *this,int *param_1)
     iVar11 = iVar11 + 0x94 + iVar4;
   }
   size = iVar11 + 0x20 + this->field_00A3->count * this->field_00A3->elementSize;
-  pbVar2 = st::fn_006AAC70(size);
+  pbVar2 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(size));
   if (this == nullptr) {
     puVar9 = nullptr;
   }
@@ -130,7 +130,7 @@ byte * __thiscall st::fn_0061D710(STLightC *this,int *param_1)
   memmove(pbVar12, puVar9, 0x90); /* compiler REP MOVS byte copy */
   iVar4 = 0;
   uVar6 = this->field_0093;
-  pbVar12 = this->field_009B;
+  pbVar12 = st::pointer_boundary_cast<byte *>(this->field_009B);
   pbVar10 = pbVar2 + 0x90;
   for (uVar5 = uVar6 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
     *(undefined4 *)pbVar10 = *(undefined4 *)pbVar12;
@@ -167,7 +167,7 @@ byte * __thiscall st::fn_0061D710(STLightC *this,int *param_1)
   local_8 = uVar6 * 0x10;
   *(int *)pbVar3 = local_8;
   local_c = pbVar3 + 4 + local_8;
-  pbVar12 = this->field_0057;
+  pbVar12 = st::pointer_boundary_cast<byte *>(this->field_0057);
   pbVar10 = pbVar3 + 4;
   for (iVar4 = (uVar6 & 0xfffffff) << 2; iVar4 != 0; iVar4 = iVar4 + -1) {
     *(undefined4 *)pbVar10 = *(undefined4 *)pbVar12;
@@ -179,7 +179,7 @@ byte * __thiscall st::fn_0061D710(STLightC *this,int *param_1)
     pbVar12 = pbVar12 + 1;
     pbVar10 = pbVar10 + 1;
   }
-  local_14 = (byte *)st::fn_006B0020(&this->field_00A3->flags,(int *)&local_10);
+  local_14 = (byte *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&this->field_00A3->flags),(int *)&local_10);
   *(uint *)local_c = local_10 + 4;
   pbVar10 = local_14;
   pbVar12 = local_c;
@@ -231,7 +231,7 @@ int __thiscall st::fn_0061D8F0(STLightC *this,undefined4 *param_1)
   piVar1 = (int *)(local_c + (int)(param_1 + 0x24));
   piVar6 = piVar1 + 1;
   local_8 = piVar6;
-  piVar2 = st::fn_006AAC70(this->field_0093 << 4);
+  piVar2 = st::pointer_boundary_cast<int *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this->field_0093 << 4)));
   this->field_0057 = piVar2;
   for (iVar4 = (this->field_0093 & 0xfffffffU) << 2; iVar4 != 0; iVar4 = iVar4 + -1) {
     *piVar2 = *piVar6;
@@ -291,7 +291,7 @@ int __thiscall st::fn_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int p
     param_3 = 0;
   }
   uVar6 = this->field_0093;
-  puVar1 = st::fn_006AAC70(uVar6 * 4);
+  puVar1 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(uVar6 * 4));
   this->field_009B = puVar1;
   puVar8 = param_1;
   for (uVar3 = uVar6 & 0x3fffffff; uVar3 != 0; uVar3 = uVar3 - 1) {
@@ -310,7 +310,7 @@ int __thiscall st::fn_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int p
   param_1 = param_1 + uVar6 * 2;
   iVar4 = this->field_0093;
   if (0 < iVar4) {
-    piVar5 = this->field_009B;
+    piVar5 = st::pointer_boundary_cast<int *>(this->field_009B);
     do {
       iVar7 = *piVar5;
       piVar5 = piVar5 + 1;
@@ -379,21 +379,21 @@ void __thiscall st::fn_0061E4F0(STLightC *this)
       if (1 < *(int *)((int)this->field_009B + iVar5 * 4)) {
         iVar6 = 0x14;
         do {
-          uVar3 = this->field_00AC * 0x41c64e6d + 0x3039;
+          uVar3 = st::machine_word_boundary_cast<uint>(this->field_00AC * 0x41c64e6d + 0x3039);
           this->field_00AC = uVar3;
           if (((uVar3 >> 0x10) % 5 == 0) &&
              ((iVar5 != 0 || ((iVar6 != 0 && (local_8 != *(int *)this->field_009B + -1)))))) {
-            uVar3 = this->field_00AC * 0x41c64e6d + 0x3039;
+            uVar3 = st::machine_word_boundary_cast<uint>(this->field_00AC * 0x41c64e6d + 0x3039);
             this->field_00AC = uVar3;
             pfVar4 = (float *)(*(int *)((int)this->field_009F + iVar5 * 4) + iVar6);
             *pfVar4 = ((float)((uVar3 >> 0x10) % 0xb) * _DAT_0079070c - _DAT_00790784) /
                       (this->field_0047 + this->field_0047) + *pfVar4;
-            uVar3 = this->field_00AC * 0x41c64e6d + 0x3039;
+            uVar3 = st::machine_word_boundary_cast<uint>(this->field_00AC * 0x41c64e6d + 0x3039);
             this->field_00AC = uVar3;
             pfVar4 = (float *)(*(int *)((int)this->field_009F + iVar5 * 4) + 4 + iVar6);
             *pfVar4 = ((float)((uVar3 >> 0x10) % 0xb) * _DAT_0079070c - _DAT_00790784) /
                       (this->field_0047 + this->field_0047) + *pfVar4;
-            uVar3 = this->field_00AC * 0x41c64e6d + 0x3039;
+            uVar3 = st::machine_word_boundary_cast<uint>(this->field_00AC * 0x41c64e6d + 0x3039);
             this->field_00AC = uVar3;
             pfVar4 = (float *)(*(int *)((int)this->field_009F + iVar5 * 4) + 8 + iVar6);
             *pfVar4 = ((float)((uVar3 >> 0x10) % 0xb) * _DAT_0079070c - _DAT_00790784) /
@@ -434,7 +434,6 @@ undefined4 __thiscall st::fn_0061F290(STLightC *this,int param_1)
   VisibleClassTy *this_00;
   int iVar3;
   int iVar4;
-  int *piVar5;
   STLightC_field_00A3Element *element_00a3;
   longlong lVar6;
   int local_1c;
@@ -512,7 +511,7 @@ undefined4 __thiscall st::fn_0061F290(STLightC *this,int param_1)
             st::fn_006E8BA0
                       (g_sT3DSMAPContext_00807598,element_00a3->spriteHandle);
             element_00a3->spriteHandle = 0xffffffff;
-            *piVar5 = -1;
+            element_00a3->field_0000 = -1;
           }
         }
         local_c = local_c + 1;

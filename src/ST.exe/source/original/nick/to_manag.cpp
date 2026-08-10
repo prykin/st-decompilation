@@ -32,12 +32,12 @@ int __thiscall st::fn_0061F660(SndUnderAttMenegC *this,STMessage *message)
   iVar4 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\nick\\to_manag.Cpp",0x6e,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_manag.Cpp"),0x6e,0,iVar4,st::mutable_c_string("%s"),
                                "SndUnderAttMenegC::GetMessage");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\nick\\to_manag.Cpp",0x70);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\nick\\to_manag.Cpp"),0x70);
     return 0xffff;
   }
   SVar1 = message->id;
@@ -47,7 +47,7 @@ int __thiscall st::fn_0061F660(SndUnderAttMenegC *this,STMessage *message)
     do {
       if (*(char *)((int)piVar7 + -0x11) != '\0') {
         st::fn_006E6780(g_sT3DSMAPContext_00807598,iVar8);
-        iVar6 = g_playSystem_00802A38->field_00E4 - piVar7[2];
+        iVar6 = st::machine_word_boundary_cast<int>(g_playSystem_00802A38->field_00E4 - piVar7[2]);
         fVar3 = (float)iVar6;
         local_c = fVar3 * (float)piVar7[1] * fVar3 * _DAT_00790784 +
                   ((float)(piVar7[-1] - iVar6 * *piVar7) * _DAT_007904f8 + _DAT_007904f4) *

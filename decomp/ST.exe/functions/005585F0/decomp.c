@@ -57,7 +57,7 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_14->field_0100 = *(undefined4 *)(param_1 + 0x26);
     if (local_14->field_0114 != 0) {
-      local_c = &local_14->field_003C;
+      local_c = local_14->field_003C;
       uVar3 = local_14->field_002C * local_14->field_0028;
       local_10 = 4;
       local_8 = (uint *)(param_1 + 0x40);
@@ -90,7 +90,7 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
   }
   g_currentExceptionFrame = local_58.previous;
   iVar10 = 4;
-  slotStorage = &local_14->field_003C;
+  slotStorage = local_14->field_003C;
   do {
     if (*slotStorage != nullptr) {
       FreeAndNull(slotStorage);

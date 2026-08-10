@@ -312,33 +312,28 @@ public class STClassArrayAnalyzer extends GhidraScript {
 
     private void observeExactLoop(Function function, String owner, Structure structure,
             List<Instruction> instructions, int leaIndex, String cursor, long offset) {
-        String counter = "";
-        int count = -1;
-        for (int index = leaIndex + 1;
-                index < instructions.size() && index <= leaIndex + 5; index++) {
-            List<String> operands = operands(instructions.get(index));
-            if (!"MOV".equalsIgnoreCase(instructions.get(index).getMnemonicString()) ||
-                    operands.size() < 2) continue;
-            Long value = immediate(operands.get(1));
-            String register = fullRegister(operands.get(0));
-            if (!register.isBlank() && value != null && value >= 2 &&
-                    value <= MAX_ARRAY_COUNT) {
-                counter = register;
-                count = value.intValue();
-                break;
-            }
-        }
-        if (counter.isBlank()) return;
+        CounterSeed seed = exactLoopCounterSeed(instructions, leaIndex);
+        if (seed == null) return;
 
         int stride = -1;
         boolean decrement = false;
         boolean backwardLoop = false;
         boolean freesPointer = false;
+        String counter = seed.register;
+        String eaxPointerType = "";
+        Map<Long, Set<String>> storedTypes = new TreeMap<>();
+        Map<Long, Set<String>> exactStoredPointerTypes = new TreeMap<>();
         int end = Math.min(instructions.size(), leaIndex + MAX_LOOP_SCAN);
         for (int index = leaIndex + 1; index < end; index++) {
             Instruction instruction = instructions.get(index);
             String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
             List<String> operands = operands(instruction);
+            if (seed.stackOffset != null && "MOV".equals(mnemonic) &&
+                    operands.size() >= 2 &&
+                    seed.stackOffset.equals(stackOffset(instruction, 1))) {
+                String loaded = fullRegister(operands.get(0));
+                if (!loaded.isBlank()) counter = loaded;
+            }
             if ("ADD".equals(mnemonic) && operands.size() >= 2 &&
                     cursor.equals(fullRegister(operands.get(0)))) {
                 Long value = immediate(operands.get(1));
@@ -356,6 +351,27 @@ public class STClassArrayAnalyzer extends GhidraScript {
                         called != null && called.getTags().stream().anyMatch(tag ->
                             "RECOVERED_UTILITY_FREE_AND_NULL".equals(tag.getName())))
                     freesPointer = true;
+                eaxPointerType = pointerReturnType(called);
+            }
+            if ("MOV".equals(mnemonic) && operands.size() >= 2) {
+                Long cursorDisplacement = cursorDisplacement(instruction, 0, cursor);
+                if (cursorDisplacement != null) {
+                    int width = memoryWidth(operands.get(0));
+                    if (width == 0 && !fullRegister(operands.get(1)).isBlank())
+                        width = 4;
+                    if (width > 0) {
+                        Set<String> types = storedTypes.computeIfAbsent(
+                            cursorDisplacement, ignored -> new TreeSet<>());
+                        String source = fullRegister(operands.get(1));
+                        if ("EAX".equals(source) && !eaxPointerType.isBlank()) {
+                            types.add(eaxPointerType);
+                            exactStoredPointerTypes.computeIfAbsent(cursorDisplacement,
+                                ignored -> new TreeSet<>()).add(eaxPointerType);
+                        }
+                        else if (immediate(operands.get(1)) == null)
+                            types.add(unsignedType(width));
+                    }
+                }
             }
             if (instruction.getFlowType().isJump()) {
                 for (Address target : instruction.getFlows()) {
@@ -364,22 +380,102 @@ public class STClassArrayAnalyzer extends GhidraScript {
                         backwardLoop = true;
                 }
             }
+            if (!"CALL".equals(mnemonic) && !operands.isEmpty() &&
+                    "EAX".equals(fullRegister(operands.get(0))) &&
+                    writesFirstOperand(mnemonic)) {
+                // A store which consumes EAX sees the current value before this
+                // invalidation.  Every other EAX definition ends the exact call
+                // result provenance.
+                if (!("MOV".equals(mnemonic) &&
+                        addressExpr(operands.get(0)) != null)) eaxPointerType = "";
+            }
             if (stride > 0 && decrement && backwardLoop) break;
         }
         if (stride < 1 || !decrement || !backwardLoop ||
-                offset < 0 || offset + (long)count * stride > structure.getLength()) return;
-        ArrayKey key = new ArrayKey(owner, offset, stride);
-        ArrayEvidence evidence = arrays.computeIfAbsent(key, ArrayEvidence::new);
-        evidence.counts.add(count);
-        evidence.exactLoops++;
-        evidence.functions.add(addr(function.getEntryPoint()));
-        evidence.sites.add(addr(instructions.get(leaIndex).getAddress()) +
-            " exact pointer walk count=" + count + ", stride=" + stride);
-        if (freesPointer) {
-            evidence.elementTypes.remove(unsignedType(stride));
-            evidence.elementTypes.add("pointer:/void");
+                offset < 0) return;
+
+        // One optimized loop often advances a common cursor while writing two
+        // or more disjoint fixed arrays at constant cursor displacements.  Each
+        // destination displacement is its own exact member array; treating only
+        // the LEA base loses the parallel arrays and can leave the cursor typed
+        // as byte * even though every store is pointer-sized.
+        if (storedTypes.isEmpty()) storedTypes.put(0L, new TreeSet<>());
+        for (Map.Entry<Long, Set<String>> stored : storedTypes.entrySet()) {
+            long memberOffset = offset + stored.getKey();
+            if (memberOffset < 0 ||
+                    memberOffset + (long)seed.count * stride > structure.getLength())
+                continue;
+            ArrayKey key = new ArrayKey(owner, memberOffset, stride);
+            ArrayEvidence evidence = arrays.computeIfAbsent(key, ArrayEvidence::new);
+            evidence.counts.add(seed.count);
+            evidence.exactLoops++;
+            evidence.functions.add(addr(function.getEntryPoint()));
+            evidence.sites.add(addr(instructions.get(leaIndex).getAddress()) +
+                " exact pointer walk count=" + seed.count + ", stride=" + stride +
+                ", cursor_displacement=" + stored.getKey());
+            if (!stored.getValue().isEmpty()) evidence.elementTypes.addAll(stored.getValue());
+            else if (freesPointer) evidence.elementTypes.add("pointer:/void");
+            else evidence.elementTypes.add(unsignedType(stride));
+            evidence.exactPointerTypes.addAll(
+                exactStoredPointerTypes.getOrDefault(stored.getKey(), Set.of()));
         }
-        else evidence.elementTypes.add(unsignedType(stride));
+    }
+
+    private Long cursorDisplacement(Instruction instruction, int operandIndex,
+            String cursor) {
+        if (instruction == null || operandIndex < 0 ||
+                operandIndex >= instruction.getNumOperands()) return null;
+        String representation = instruction.getDefaultOperandRepresentation(operandIndex);
+        AddressExpr rendered = addressExpr(representation);
+        if (rendered != null && rendered.registers.size() == 1 &&
+                cursor.equals(rendered.registers.get(0).register) &&
+                rendered.registers.get(0).scale == 1) return rendered.displacement;
+
+        boolean found = false;
+        long displacement = 0;
+        for (Object object : instruction.getOpObjects(operandIndex)) {
+            if (object instanceof Register register) {
+                if (found || !cursor.equals(fullRegister(register.getName()))) return null;
+                found = true;
+            }
+            else if (object instanceof Scalar scalar)
+                displacement += scalar.getSignedValue();
+            else if (object instanceof Address) return null;
+        }
+        return found ? displacement : null;
+    }
+
+    /**
+     * MSVC commonly spills a constant loop count to [EBP-local], reloads it at
+     * the loop latch, decrements the register, and stores it back.  Accept that
+     * form as well as the simpler register counter, but only when the exact
+     * immediate seed is adjacent to the pointer-walk setup.
+     */
+    private CounterSeed exactLoopCounterSeed(List<Instruction> instructions,
+            int leaIndex) {
+        int first = Math.max(0, leaIndex - 4);
+        int last = Math.min(instructions.size() - 1, leaIndex + 5);
+        for (int index = first; index <= last; index++) {
+            Instruction instruction = instructions.get(index);
+            if (!"MOV".equalsIgnoreCase(instruction.getMnemonicString())) continue;
+            List<String> operands = operands(instruction);
+            if (operands.size() < 2) continue;
+            Long value = immediate(operands.get(1));
+            if (value == null || value < 2 || value > MAX_ARRAY_COUNT) continue;
+            String register = fullRegister(operands.get(0));
+            Long stack = stackOffset(instruction, 0);
+            if (!register.isBlank() || stack != null)
+                return new CounterSeed(value.intValue(), register, stack);
+        }
+        return null;
+    }
+
+    private String pointerReturnType(Function function) {
+        if (function == null) return "";
+        DataType type = function.getReturnType();
+        if (!(type instanceof Pointer pointer)) return "";
+        DataType pointed = pointer.getDataType();
+        return "pointer:" + pointed.getPathName();
     }
 
     private void updateState(Instruction instruction, String mnemonic, List<String> operands,
@@ -456,7 +552,7 @@ public class STClassArrayAnalyzer extends GhidraScript {
             applyExactZeroExtent(evidence);
             if (evidence.counts.size() != 1) continue;
             int count = evidence.counts.iterator().next();
-            String elementType = selectElementType(evidence.elementTypes);
+            String elementType = selectElementType(evidence);
             if (elementType.isBlank()) continue;
             int size = count * evidence.key.elementSize;
             Structure structure = findOwnerType(evidence.key.owner);
@@ -473,6 +569,7 @@ public class STClassArrayAnalyzer extends GhidraScript {
                 ", exact_loops=" + evidence.exactLoops +
                 ", pointer_dereferences=" + evidence.pointerDereferences +
                 ", element_candidates=" + evidence.elementTypes +
+                ", exact_pointer_candidates=" + evidence.exactPointerTypes +
                 (rangeValid ? "" : "; range_outside_owner") +
                 (strong ? "" : "; insufficient_exact_extent_evidence");
             result.add(new Proposal(apply, evidence.key, count, size, elementType,
@@ -525,8 +622,16 @@ public class STClassArrayAnalyzer extends GhidraScript {
         return true;
     }
 
-    private String selectElementType(Set<String> candidates) {
+    private String selectElementType(ArrayEvidence evidence) {
+        Set<String> candidates = evidence.elementTypes;
         if (candidates.isEmpty()) return "";
+        if (evidence.exactPointerTypes.size() == 1) {
+            String exact = evidence.exactPointerTypes.iterator().next();
+            boolean onlySameWidthGeneric = candidates.stream().allMatch(value ->
+                value.equals(exact) || (!value.startsWith("pointer:") &&
+                    elementLength(value) == evidence.key.elementSize));
+            if (onlySameWidthGeneric) return exact;
+        }
         List<String> pointers = candidates.stream()
             .filter(value -> value.startsWith("pointer:")).toList();
         if (!pointers.isEmpty()) {
@@ -915,6 +1020,7 @@ public class STClassArrayAnalyzer extends GhidraScript {
     private record ThisAddress(long offset, String indexRegister, int scale) { }
     private record IndexedAccess(ArrayKey key, int operandIndex, int bound,
         String directType) { }
+    private record CounterSeed(int count, String register, Long stackOffset) { }
     private record ArrayKey(String owner, long offset, int elementSize)
             implements Comparable<ArrayKey> {
         @Override public int compareTo(ArrayKey other) {
@@ -942,6 +1048,7 @@ public class STClassArrayAnalyzer extends GhidraScript {
         final ArrayKey key;
         final Set<Integer> counts = new TreeSet<>();
         final Set<String> elementTypes = new TreeSet<>();
+        final Set<String> exactPointerTypes = new TreeSet<>();
         final Set<String> functions = new TreeSet<>();
         final Set<String> sites = new TreeSet<>();
         int boundedSites;

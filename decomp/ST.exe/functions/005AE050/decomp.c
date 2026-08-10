@@ -155,7 +155,8 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     iVar7 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
     pCVar18 = local_10;
     if (iVar7 == 0) {
-      local_14 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_10->field_1FAF,0,0,0);
+      local_14 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                    (0x345,(byte *)&local_10->field_1FAF,0,0,0);
     }
     pcVar10 = local_14;
     g_currentExceptionFrame = local_bc.previous;
@@ -254,7 +255,8 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     local_EAX_816 = Library::MSVCRT::__setjmp3(local_100.jumpBuffer,0);
     pCVar18 = local_10;
     if (local_EAX_816 == 0) {
-      pcVar10 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_10->field_1FAF,0,0,0);
+      pcVar10 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                   (0x345,(byte *)&local_10->field_1FAF,0,0,0);
       local_14 = pcVar10;
       if (g_dArray_0080C4CB != nullptr) {
         FUN_006b5570(g_dArray_0080C4CB);

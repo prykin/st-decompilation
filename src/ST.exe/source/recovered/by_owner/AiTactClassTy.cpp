@@ -205,7 +205,7 @@ undefined4 __thiscall st::fn_0068E730(AiTactClassTy *this,int param_1)
     element_00a5 = nullptr;
   }
   element_00a5->field_0004 = 0;
-  element_00a5->field_0000 = nullptr;
+  element_00a5->field_0000 = static_cast<undefined4>(0);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_00405957(this,*(short *)(param_1 + 0x7d));
   st::fn_00404F2A(param_1);
@@ -305,10 +305,10 @@ void __thiscall st::fn_00690A40(AiTactClassTy *this)
 {
   uint uVar1;
 
-  uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
+  uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
   this->field_001C = uVar1;
   this->field_0089 = (uVar1 >> 0x10 & 7) + 8;
-  uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
+  uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
   this->field_001C = uVar1;
   this->field_0091 = (uVar1 >> 0x10 & 7) + 8;
   return;

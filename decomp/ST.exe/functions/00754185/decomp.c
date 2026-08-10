@@ -18,7 +18,7 @@ void FUN_00754185(AnonShape_00754185_34BF31BE *context)
   uint uVar5;
   int iVar6;
   int iVar7;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_ECX;
   int iVar8;
   uint uVar9;
@@ -53,9 +53,9 @@ void FUN_00754185(AnonShape_00754185_34BF31BE *context)
       *(int *)puVar3 = *(int *)puVar3 + -1;
       if (*(int *)puVar3 != 0) break;
       iVar4 = FUN_00753fd0((AnonShape_00753FD0_4E1BB8DD *)context);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       iVar7 = extraout_ECX;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       iVar8 = extraout_ECX;
       if (iVar4 == 0) goto LAB_007541f2;
     }

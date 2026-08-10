@@ -15,7 +15,6 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
   VisibleClassTy *this_00;
   int iVar3;
   int iVar4;
-  int *piVar5;
   STLightC_field_00A3Element *element_00a3;
   longlong lVar6;
   int local_1c;
@@ -93,7 +92,7 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
             Library::Ourlib::ST3DSMAP::SprClose
                       (g_sT3DSMAPContext_00807598,element_00a3->spriteHandle);
             element_00a3->spriteHandle = 0xffffffff;
-            *piVar5 = -1;
+            element_00a3->field_0000 = -1;
           }
         }
         local_c = local_c + 1;

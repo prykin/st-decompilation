@@ -29,7 +29,7 @@ void __thiscall st::fn_005148A0(HelpPanelTy *this,int param_1)
   }
   iVar6 = param_1;
   do {
-    pbVar5 = this->field_01C7 + iVar6 * 0x11;
+    pbVar5 = st::pointer_boundary_cast<byte *>(this->field_01C7 + iVar6 * 0x11);
     if ((*(int *)pbVar5 == *(int *)(this->field_01C7 + param_1 * 0x11 + 4)) ||
        (*(int *)(pbVar5 + 4) == 0)) {
       pAVar1 = this->field_01B3;
@@ -360,23 +360,23 @@ void __thiscall st::fn_0051DA70(HelpPanelTy *this)
       uVar5 = (uint)(byte)this->field_0250;
       local_8 = uVar11 & 0xff;
       if ((int)(uVar11 & 0xff) < (int)(uVar5 - bVar4)) {
-        puVar12 = &DAT_0080734e;
+        puVar12 = st::pointer_boundary_cast<uint *>(&DAT_0080734e);
         local_c = 0;
       }
       else {
         local_8 = (uint)(byte)((char)uVar11 + (bVar4 - this->field_0250));
         if (DAT_0080874e == '\x01') {
-          puVar12 = &DAT_00807352;
+          puVar12 = st::pointer_boundary_cast<uint *>(&DAT_00807352);
           uVar5 = (uint)(byte)this->field_0251;
           local_c = 1;
         }
         else if (DAT_0080874e == '\x02') {
-          puVar12 = &DAT_00807356;
+          puVar12 = st::pointer_boundary_cast<uint *>(&DAT_00807356);
           uVar5 = (uint)(byte)this->field_0252;
           local_c = 2;
         }
         else {
-          puVar12 = &DAT_0080735a;
+          puVar12 = st::pointer_boundary_cast<uint *>(&DAT_0080735a);
           uVar5 = (uint)(byte)this->field_0253;
           local_c = 3;
         }

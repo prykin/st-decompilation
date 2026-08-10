@@ -58,7 +58,7 @@ ChooseMapTy * __cdecl CreateChooseMap(void)
     this->vtable = &ChooseMapTyVTable;
     this->field_1A60 = 1;
     this->field_1A6C = 0;
-    puVar4 = this->field_1C23;
+    puVar4 = &this->field_1C23;
     for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar4 = 0xffffffff;
       puVar4 = puVar4 + 1;

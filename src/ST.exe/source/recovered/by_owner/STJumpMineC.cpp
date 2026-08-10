@@ -112,7 +112,7 @@ byte * __thiscall st::fn_00619350(STJumpMineC *this,undefined4 *param_1)
   byte *puVar3;
   byte *pbVar4;
 
-  pbVar1 = st::fn_006AAC70(0x104);
+  pbVar1 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0x104));
   this->field_014C = this->field_001C;
   puVar3 = (byte *)&this->field_0x4d;
   pbVar4 = pbVar1;
@@ -224,7 +224,7 @@ void __thiscall st::fn_00619A20(STJumpMineC *this)
           (pVVar1->field_0034 <= local_c)))))) ||
        ((pVVar1->field_004C == nullptr ||
         (pVVar1->field_004C[local_8 + local_c * pVVar1->field_0030] != 0)))) {
-      iVar2 = this->field_00AB + 1;
+      iVar2 = st::machine_word_boundary_cast<int>(this->field_00AB + 1);
       this->field_00AB = iVar2;
       if (this->field_00AF <= iVar2) {
         this->field_00AB = 0;
@@ -341,7 +341,7 @@ int __thiscall st::fn_00619C70(STJumpMineC *this)
           goto LAB_00619e5f;
         }
       }
-      uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
+      uVar12 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
       this->field_001C = uVar12;
       this->field_0113 = (uVar12 >> 0x10) % 0xb + 10;
       this->field_011B = g_playSystem_00802A38->field_00E4;
@@ -409,7 +409,7 @@ LAB_00619e5f:
       local_20 = (int)(short)(((short)(local_1c / 200) + sVar8) -
                              (short)((longlong)local_1c * 0x51eb851f >> 0x3f));
     }
-    iVar13 = this->field_010F * iVar13;
+    iVar13 = st::machine_word_boundary_cast<int>(this->field_010F * iVar13);
     this->field_00F3 = this->field_00F3 + this->field_010F;
     iVar14 = (this->field_0103 * iVar13) / 10000 + this->field_00CF;
     iVar13 = (this->field_0107 * iVar13) / 10000 + this->field_00D3;
@@ -453,7 +453,7 @@ LAB_00619e5f:
       this->field_00CF = iVar14;
       this->field_00D3 = iVar13;
       this->field_00A7 = local_c;
-      iVar13 = st::fn_0040169A(this,&local_30);
+      iVar13 = st::fn_0040169A(this,st::pointer_boundary_cast<undefined4 *>(&local_30));
       if ((iVar13 < 1) || (299 < this->field_0141)) {
         if (iVar13 == 0) {
           iVar13 = st::fn_00403E6D(this,CASE_1,this->field_009F,this->field_00A3,this->field_00A7
@@ -491,9 +491,9 @@ LAB_0061a4fd:
                   (*(char *)(iVar4 * this->field_00CB + local_2c + iVar7) != '\0')))))) ||
          (uVar11 = st::fn_00403B66(iVar7,(int)this->field_00CB,this->field_0051,1,DAT_007e66ac),
          (int)uVar11 < 0)) {
-        this->field_001C = this->field_001C * 0x41c64e6d + 0x3039;
+        this->field_001C = st::machine_word_boundary_cast<undefined4>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_0113 = 0xf;
-        uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar12 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar12;
         this->field_010F = (uVar12 >> 0x10 & 1) + 7;
         this->field_011B = g_playSystem_00802A38->field_00E4;
@@ -502,7 +502,7 @@ LAB_0061a4fd:
         this->field_00CF = iVar14;
         this->field_00D3 = iVar13;
         this->field_00A7 = local_c;
-        iVar13 = st::fn_0040169A(this,&local_30);
+        iVar13 = st::fn_0040169A(this,st::pointer_boundary_cast<undefined4 *>(&local_30));
         if ((iVar13 < 1) || (299 < this->field_0141)) {
           if (iVar13 != 0) goto LAB_0061a4fd;
           iVar13 = st::fn_00403E6D(this,CASE_1,this->field_009F,this->field_00A3,this->field_00A7
@@ -769,7 +769,7 @@ cf_common_exit_0061A55D:
       }
       st::fn_006EA270(g_sT3DSMAPContext_00807598,this->field_0097,2,this->field_00B7);
       if ((int)this->field_00B7 < this->field_00B3) {
-        this->field_00B7 = this->field_00B7 + 1;
+        this->field_00B7 = st::machine_word_boundary_cast<undefined4>(this->field_00B7 + 1);
       }
     }
     if (this->field_00BB != '\0') {
@@ -780,14 +780,14 @@ cf_common_exit_0061A55D:
       else {
         st::fn_006EA270
                   (g_sT3DSMAPContext_00807598,this->field_0097,1,this->field_00BC);
-        this->field_00BC = this->field_00BC + 1;
+        this->field_00BC = st::machine_word_boundary_cast<uint>(this->field_00BC + 1);
       }
     }
     uVar12 = this->field_00AB;
     if ((int)uVar12 < this->field_00AF) {
       st::fn_006EA270(g_sT3DSMAPContext_00807598,this->field_0097,0,uVar12);
 LAB_0061acc2:
-      this->field_00AB = this->field_00AB + 1;
+      this->field_00AB = st::machine_word_boundary_cast<undefined4>(this->field_00AB + 1);
     }
     else if (uVar12 == this->field_00AF) {
       if (-1 < (int)this->field_0097) {

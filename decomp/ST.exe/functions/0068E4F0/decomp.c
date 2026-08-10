@@ -9,13 +9,13 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
   int iVar2;
   DArrayTy *array_00;
   undefined2 *puVar3;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_02;
   int iVar4;
   uint uVar5;
@@ -29,7 +29,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
   local_8 = 0;
   if (0 < *(int *)(iVar2 + 0xc)) {
     bVar7 = *(int *)(iVar2 + 0xc) != 0;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     iVar4 = extraout_EDX;
     do {
       uVar6 = local_8;
@@ -40,7 +40,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
       else {
         iVar2 = 0;
       }
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       if ((*(AiFltClassTy **)(iVar2 + 4) != nullptr) &&
          (array_00 = (DArrayTy *)
                      AiFltClassTy::sub_0065E360(*(AiFltClassTy **)(iVar2 + 4),iVar4,param_1),
@@ -48,7 +48,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
         dVar1 = array_00->count;
         if ((dVar1 != 0) && (uVar5 = 0, uVar6 = local_8, 0 < (int)dVar1)) {
           bVar7 = dVar1 != 0;
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           iVar2 = extraout_EDX_00;
           do {
             if (bVar7) {
@@ -61,13 +61,13 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
             Library::DKW::TBL::DArrayAppend(array,&local_c);
             uVar5 = uVar5 + 1;
             bVar7 = uVar5 < array_00->count;
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             iVar2 = extraout_EDX_01;
             uVar6 = local_8;
           } while ((int)uVar5 < (int)array_00->count);
         }
         DArrayDestroy(array_00);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         iVar4 = extraout_EDX_02;
       }
       local_8 = uVar6 + 1;

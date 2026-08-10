@@ -17,7 +17,7 @@ STDcResourcC * __thiscall st::fn_0057F1D0(STDcResourcC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &st_global_0079B688;
+  this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079B688);
   this->vtable = &st_global_0079B528;
   memset(&this->field_0231, 0, 0x28); /* compiler bulk-zero initialization */
   this->field_0261 = 0;
@@ -53,7 +53,7 @@ undefined4 * __thiscall st::fn_0057F2E0(STDcResourcC *this,int param_1,int param
     param_1 = CONCAT31(extraout_var,uVar2);
     pcVar6_mg0 = st_global_007CB08C;
   }
-  st::external_00000080(&CHAR_00h_00811670,pcVar6_mg0,param_1);
+  st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_00811670),pcVar6_mg0,param_1);
   if (param_2 == 0) {
     return (undefined4 *)&CHAR_00h_00811670;
   }
@@ -104,14 +104,14 @@ undefined4 * __thiscall st::fn_0057F3A0(STDcResourcC *this,int param_1,int param
 
   pcVar5_mg0 = st_global_007CB098;
   if (param_1 == -1) {
-    iVar4 = this->field_0259 / 999999;
+    iVar4 = st::machine_word_boundary_cast<int>(this->field_0259 / 999999);
     if (0 < iVar4) {
       iVar4 = 0;
     }
     param_1 = -iVar4;
     pcVar5_mg0 = PTR_s_rgold_c0_007cb094;
   }
-  st::external_00000080(&CHAR_00h_00811650,pcVar5_mg0,param_1);
+  st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_00811650),pcVar5_mg0,param_1);
   if (param_2 == 0) {
     return (undefined4 *)&CHAR_00h_00811650;
   }
@@ -170,7 +170,7 @@ undefined4 * __thiscall st::fn_0057F470(STDcResourcC *this,int param_1,int param
     param_1 = CONCAT31(extraout_var,uVar2);
     pcVar6_mg0 = st_global_007CB09C;
   }
-  st::external_00000080(&CHAR_00h_00811690,pcVar6_mg0,param_1);
+  st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_00811690),pcVar6_mg0,param_1);
   if (param_2 == 0) {
     return (undefined4 *)&CHAR_00h_00811690;
   }

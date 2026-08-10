@@ -13,7 +13,7 @@ void __thiscall SAMPanelTy::ShiftControls(SAMPanelTy *this,int param_1)
   int iVar3;
   int iVar4;
   int iVar5;
-  uint *puVar6;
+  int *piVar6;
   InternalExceptionFrame local_4c;
   SAMPanelTy *local_8;
 
@@ -32,12 +32,12 @@ void __thiscall SAMPanelTy::ShiftControls(SAMPanelTy *this,int param_1)
     this_00 = local_8;
     if (iVar3 == 0) {
       iVar5 = 7;
-      puVar6 = local_8->field_01B5;
+      piVar6 = &local_8->field_01B5;
       do {
-        if (*puVar6 != 0) {
-          FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
+        if (*piVar6 != 0) {
+          FUN_006e6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x18);
         }
-        puVar6 = puVar6 + 1;
+        piVar6 = piVar6 + 1;
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
       g_currentExceptionFrame = local_4c.previous;

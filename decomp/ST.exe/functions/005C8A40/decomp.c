@@ -415,7 +415,7 @@ cf_common_join_005C8ECC:
             } while (cVar9 != '\0');
             uVar18 = ~uVar18;
             pcVar17 = pcVar21 + -uVar18;
-            pcVar21 = (char *)&DAT_00809960;
+            pcVar21 = &DAT_00809960;
             memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
             uVar19 = 0;
             uVar18 = 0;
@@ -1210,7 +1210,7 @@ LAB_005c9c8a:
     }
     break;
   case MESS_SHARED_6940|MESS_SHARED_0008:
-    DAT_008087a0 = this_00->field_1E26;
+    STPiece<0,1>(DAT_008087a0) = this_00->field_1E26;
     switch(this_00->field_1E26) {
     case CASE_1:
     case CASE_2:

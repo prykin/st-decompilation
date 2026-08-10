@@ -270,11 +270,11 @@ int __thiscall st::fn_0062A370(STParticleC *this,int param_1)
 
   local_2c = 0;
   iVar3 = param_1 - this->field_00AE;
-  iVar4 = this->field_008E * this->field_009A * iVar3;
+  iVar4 = st::machine_word_boundary_cast<int>(this->field_008E * this->field_009A * iVar3);
   local_14 = 1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = this->field_00A6 * 20000;
-  iVar5 = this->field_008A * this->field_009A * iVar3;
+  param_1 = st::machine_word_boundary_cast<int>(this->field_00A6 * 20000);
+  iVar5 = st::machine_word_boundary_cast<int>(this->field_008A * this->field_009A * iVar3);
   local_c = iVar4 / 10000 - (iVar4 * iVar3) / param_1;
   iVar4 = iVar5 / 10000 +
           ((iVar5 * iVar3) / param_1 - (iVar3 * iVar3) / (int)(this->field_00A2 << 1)) +
@@ -315,7 +315,7 @@ int __thiscall st::fn_0062A370(STParticleC *this,int param_1)
                      ,0);
   if ((uVar2 == 0) || (local_14 == 0)) {
     iVar5 = this->field_004E;
-    this->field_0086 = this->field_0086 + local_c;
+    this->field_0086 = st::machine_word_boundary_cast<undefined4>(this->field_0086 + local_c);
     this->field_004E = iVar4;
     this->field_0052 = this->field_0046;
     this->field_0056 = this->field_004A;
@@ -352,14 +352,14 @@ int __thiscall st::fn_0062A370(STParticleC *this,int param_1)
     if (this->field_00C0 == '\0') {
       return -1;
     }
-    local_2c = st::fn_004054ED(&local_20,&local_1c,&local_18,local_10,iVar3,
+    local_2c = st::fn_004054ED(st::pointer_boundary_cast<undefined4 *>(&local_20),st::pointer_boundary_cast<undefined4 *>(&local_1c),st::pointer_boundary_cast<undefined4 *>(&local_18),local_10,iVar3,
                                   iVar4 - (uint)(byte)this->field_00BE);
     if ((local_2c < 1) && (local_14 < 1)) {
       if (-1 < local_2c) {
         return 0;
       }
       iVar5 = this->field_004E;
-      this->field_0086 = this->field_0086 + local_c;
+      this->field_0086 = st::machine_word_boundary_cast<undefined4>(this->field_0086 + local_c);
       this->field_0052 = this->field_0046;
       this->field_004E = iVar4;
       this->field_0056 = this->field_004A;
@@ -376,7 +376,7 @@ int __thiscall st::fn_0062A370(STParticleC *this,int param_1)
       }
       local_2c = st::fn_00402347(this,local_20,local_1c,local_18,iVar5,iVar3 - iVar1,local_14);
       if (0 < local_2c) {
-        this->field_0086 = this->field_0086 + local_c;
+        this->field_0086 = st::machine_word_boundary_cast<undefined4>(this->field_0086 + local_c);
         this->field_0052 = this->field_0046;
         iVar5 = this->field_004E;
         this->field_0056 = this->field_004A;

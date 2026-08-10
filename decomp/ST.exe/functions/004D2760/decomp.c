@@ -5,10 +5,10 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
 
 {
   dword dVar1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
   DArrayTy *pDVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   TLOBaseTy *extraout_EDX;
   TLOBaseTy *pTVar3;
   int iVar4;
@@ -29,7 +29,7 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
       local_8 = (TLOBaseTy *)0x2;
     }
     iVar4 = param_1->field_0261;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     pTVar3 = extraout_EDX;
     if (iVar4 < (int)&local_8->vtable + iVar4) {
       do {
@@ -47,7 +47,7 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
     iVar4 = thunk_FUN_004b7520(STReplaceLowByte((uint32_t)(pTVar3), (uint8_t)(*(undefined1 *)&param_1->field_0024)),param_1->field_0259);
     if (iVar4 != 0) {
       dVar1 = param_1->slot_2C();
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar1);
     }
     TLOBaseTy::sub_0041D590(param_1);

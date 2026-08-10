@@ -95,7 +95,8 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
     uVar6 = (uint)(byte)this_00->field_009A;
     if (uVar6 != 0) {
       do {
-        if (*(int *)(&this_00->field_0xbc + iVar12 * 0x1fb) != 0) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        if (*(int *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x56) != 0) {
           if (this_00->field_0061 - *(int *)((int)&this_00->field_0127 + iVar12 * 0x1fb) <
               *(uint *)((int)&this_00->field_0123 + iVar12 * 0x1fb)) {
             iVar12 = 0;
@@ -112,25 +113,31 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
             }
           }
           else {
-            iVar10 = *(int *)((int)&this_00->field_00EB + iVar12 * 0x1fb);
-            if (iVar10 < *(int *)(&this_00->field_0xef + iVar12 * 0x1fb) + -1) {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            iVar10 = *(int *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x85);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            if (iVar10 < *(int *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x89) + -1) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if ((iVar10 == 0) &&
-                 (uVar6 = *(uint *)((int)&this_00->field_00E7 + iVar12 * 0x1fb), uVar6 != 0xffffffff
-                 )) {
+                 (uVar6 = *(uint *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x81),
+                 uVar6 != 0xffffffff)) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 Library::DKW::DDX::FUN_006b34d0
                           (*(uint **)((int)&this_00->field_012B + iVar12 * 0x1fb),uVar6,0xfffffffe,
-                           *(uint *)((int)&this_00->field_00FF + iVar12 * 0x1fb),
-                           *(uint *)((int)&this_00->field_0103 + iVar12 * 0x1fb));
+                           *(uint *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x99),
+                           *(uint *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x9d));
               }
-              *(int *)((int)&this_00->field_00EB + iVar12 * 0x1fb) =
-                   *(int *)((int)&this_00->field_00EB + iVar12 * 0x1fb) + 1;
-              uVar6 = *(uint *)((int)&this_00->field_00E7 + iVar12 * 0x1fb);
+              *(int *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x85) =
+                   *(int *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x85) + 1;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              uVar6 = *(uint *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x81);
               if (uVar6 != 0xffffffff) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 Library::DKW::DDX::FUN_006b3730
                           (*(uint **)((int)&this_00->field_012B + iVar12 * 0x1fb),uVar6,
-                           *(uint *)((int)&this_00->field_00EB + iVar12 * 0x1fb),
-                           *(uint *)((int)&this_00->field_00FF + iVar12 * 0x1fb),
-                           *(uint *)((int)&this_00->field_0103 + iVar12 * 0x1fb));
+                           *(uint *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x85),
+                           *(uint *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x99),
+                           *(uint *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x9d));
               }
               local_8 = 0;
             }
@@ -145,7 +152,8 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
                                0xfffffffe,*(uint *)((int)&this_00->field_0190 + iVar12 * 0x1fb),
                                *(uint *)((int)&this_00->field_0194 + iVar12 * 0x1fb));
                   }
-                  if (((&this_00->field_00E2)[iVar12 * 0x1fb] != '\0') &&
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                  if ((*(char *)((int)this_00->field_0066 + iVar12 * 0x1fb + 0x7c) != '\0') &&
                      (uVar6 = *(uint *)((int)&this_00->field_0209 + iVar12 * 0x1fb),
                      uVar6 != 0xffffffff)) {
                     Library::DKW::DDX::FUN_006b34d0
@@ -210,7 +218,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
       local_48 = 0x697f;
       local_50 = local_70;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0066,0,local_80,0);
+      (**(code **)(*(int *)this_00->field_000C + 8))(5,this_00->field_0066,0,local_80,0);
       iVar12 = this_00->field_1A5B;
       if (*(int *)(iVar12 + 0x2e6) != 0) {
         memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
@@ -277,10 +285,13 @@ LAB_00591d08:
           puVar11 = (uint *)((int)puVar11 + 0x1fb);
         } while (iVar12 < (int)(uint)(byte)this_00->field_009A);
       }
-      if (*(int *)(&this_00->field_0xd1 + (uint)(byte)this_00->field_1A5A * 0x1fb) != 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      if (*(int *)((int)this_00->field_0066 + (uint)(byte)this_00->field_1A5A * 0x1fb + 0x6b) != 0)
+      {
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,
-                   (undefined4 *)(&this_00->field_0xc1 + (uint)(byte)this_00->field_1A5A * 0x1fb));
+                   (undefined4 *)
+                   ((int)this_00->field_0066 + (uint)(byte)this_00->field_1A5A * 0x1fb + 0x5b));
         g_currentExceptionFrame = local_c4.previous;
         return;
       }

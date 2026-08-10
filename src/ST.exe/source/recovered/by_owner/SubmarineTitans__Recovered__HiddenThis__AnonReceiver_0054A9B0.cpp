@@ -139,7 +139,7 @@ st::fn_0054A9B0
     else {
       pSVar6 = st::fn_00715820(pSVar6);
     }
-    pAVar4->field_04EB = pSVar6;
+    pAVar4->field_04EB = st::machine_word_boundary_cast<undefined4>(pSVar6);
     if (pSVar6 == nullptr) {
       g_currentExceptionFrame = local_58.previous;
       return;

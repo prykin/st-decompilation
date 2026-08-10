@@ -94,7 +94,7 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
                                  (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000,
                                   &local_8), iVar5 != 0)) || (local_8 == 0)) {
             element_00a5->field_0004 = 0;
-            element_00a5->field_0000 = nullptr;
+            element_00a5->field_0000 = 0;
           }
           else {
             element_00a5->field_0004 = local_8;

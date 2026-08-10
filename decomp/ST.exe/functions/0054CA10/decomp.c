@@ -1,7 +1,6 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0054CA10 parameter used as this of cMf32::RecMemFree @ 0054CAC7 */
 
@@ -17,7 +16,7 @@ int __cdecl FUN_0054ca10(int *param_1,undefined4 param_2,cMf32 *param_3,int para
 
   piVar2 = param_1;
   if (DAT_0080879c == 0) {
-    switch(_DAT_008087a0 & 0xff) {
+    switch(DAT_008087a0 & 0xff) {
     case 1:
     case 4:
     case 0xd:

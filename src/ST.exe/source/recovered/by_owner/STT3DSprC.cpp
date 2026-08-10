@@ -167,7 +167,7 @@ int __thiscall st::fn_004ACF50(STT3DSprC *this,char param_1)
   iVar3 = (int)param_1;
   st::fn_006EA6D0(this->field_003C,this->field_0018,iVar3,1);
   pAVar2 = this->field_0020;
-  pbVar1 = &pAVar2->field_0xe + iVar3 * 0x24;
+  pbVar1 = st::pointer_boundary_cast<byte *>(&pAVar2->field_0xe + iVar3 * 0x24);
   *pbVar1 = *pbVar1 | 0x40;
   return (int)(&pAVar2->field_0xe + iVar3 * 0x24);
 }
@@ -211,7 +211,7 @@ int __thiscall st::fn_004ACFE0(STT3DSprC *this,char param_1)
   iVar3 = (int)param_1;
   st::fn_006EA800(this->field_003C,this->field_0018,iVar3,1);
   pAVar2 = this->field_0020;
-  pbVar1 = &pAVar2->field_0xe + iVar3 * 0x24;
+  pbVar1 = st::pointer_boundary_cast<byte *>(&pAVar2->field_0xe + iVar3 * 0x24);
   *pbVar1 = *pbVar1 | 0x80;
   return (int)(&pAVar2->field_0xe + iVar3 * 0x24);
 }
@@ -252,7 +252,7 @@ void __thiscall st::fn_004AD070(STT3DSprC *this,byte param_1)
 
   if (((-1 < (char)param_1) && ((char)param_1 < ' ')) &&
      ((1 << (param_1 & 0x1f) & this->field_001C) != 0)) {
-    pbVar1 = &this->field_0020->field_0xe + (char)param_1 * 0x24;
+    pbVar1 = st::pointer_boundary_cast<byte *>(&this->field_0020->field_0xe + (char)param_1 * 0x24);
     *pbVar1 = *pbVar1 | 8;
     st::fn_006E9E60(this->field_003C,(uint *)this->field_0018,(int)(char)param_1);
   }

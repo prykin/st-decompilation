@@ -1164,5 +1164,7 @@
   {"address":"007F2708","type":"Analysis","category":"Address Table","comment":"Address table[8] created"},
   {"address":"0056CD7C","type":"Analysis","category":"WindowsResourceReference","comment":"Added Resource Reference"},
   {"address":"0056CE2E","type":"Analysis","category":"WindowsResourceReference","comment":"Added Resource Reference"},
-  {"address":"0056AEB3","type":"Analysis","category":"WindowsResourceReference","comment":"Added Resource Reference"}
+  {"address":"0056AEB3","type":"Analysis","category":"WindowsResourceReference","comment":"Added Resource Reference"},
+  {"address":"0072DA21","type":"Analysis","category":"Function ID Analyzer","comment":"Library Function - Single Match,  __seh_longjmp_unwind@4"},
+  {"address":"007F150C","type":"Analysis","category":"Address Table","comment":"Address table[7] created"}
 ]

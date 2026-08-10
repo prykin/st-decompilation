@@ -126,11 +126,11 @@ cf_common_join_004DB690:
       } while (iVar11 < 0x15);
       uVar6 = local_c->field_001C * 0x41c64e6d + 0x3039;
       local_c->field_001C = uVar6;
-      uVar6 = (uVar6 >> 0x10) % 0x168;
-      iVar11 = FUN_006aff50(uVar6);
-      iVar10 = FUN_006b1280(iVar11 * iVar4);
+      uVar10 = (uVar6 >> 0x10) % 0x168;
+      uVar6 = FUN_006aff50(uVar10);
+      iVar10 = FUN_006b1280(uVar6 * iVar4);
       iVar11 = iVar10 + param_1;
-      uVar6 = FUN_006aff5b(uVar6);
+      uVar6 = FUN_006aff5b(uVar10);
       iVar3 = FUN_006b1280(uVar6 * iVar4);
       iVar12 = iVar3 + iVar12;
       if (iVar11 < 0) {

@@ -29,7 +29,7 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
     if (local_c->field_009A != 0) {
       do {
         uVar4 = local_8 & 0xff;
-        if (((&this_00->field_0066)[uVar4] == 0) ||
+        if ((this_00->field_0066[uVar4] == 0) ||
            (sVar1 = *(short *)(param_1 + uVar4 * 2), sVar1 == 0)) {
           *(undefined2 *)(&this_00->field_0x1c82 + uVar4 * 2) = *(undefined2 *)(param_1 + uVar4 * 2);
         }
@@ -40,7 +40,7 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
           else {
             this_00->field_0031 = 1;
           }
-          FUN_006e6080(this_00,2,(&this_00->field_0066)[uVar4],(undefined4 *)&this_00->field_0x1d);
+          FUN_006e6080(this_00,2,this_00->field_0066[uVar4],(undefined4 *)&this_00->field_0x1d);
         }
         bVar3 = (char)local_8 + 1;
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));

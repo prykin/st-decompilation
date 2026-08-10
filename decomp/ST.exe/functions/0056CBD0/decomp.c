@@ -55,7 +55,7 @@ STAppC::MainWindowProc
   }
   if (param_2 < 0x21) {
     if (param_2 == 0x20) {
-      pHVar4 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x66);
+      pHVar4 = LoadCursorA(g_hInstance_00856D70,&DAT_00000066);
       SetCursor(pHVar4);
       g_currentExceptionFrame = local_4c.previous;
       return 1;
@@ -101,7 +101,7 @@ STAppC::MainWindowProc
         if (g_cursorClass_00802A30 != nullptr) {
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         }
-        pHVar4 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x7f00);
+        pHVar4 = LoadCursorA(g_hInstance_00856D70,&DAT_00007f00);
         SetCursor(pHVar4);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
@@ -114,7 +114,7 @@ STAppC::MainWindowProc
       }
       thunk_FUN_00573240();
       thunk_FUN_00571320(&DAT_00807620,hWnd);
-      pHVar4 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x66);
+      pHVar4 = LoadCursorA(g_hInstance_00856D70,&DAT_00000066);
       SetCursor(pHVar4);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;

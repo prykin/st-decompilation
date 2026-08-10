@@ -69,7 +69,7 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   undefined4 uVar12;
   LPSTR pCVar13;
   int iVar17;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   OptPanelTy *extraout_ECX;
   uint uVar14;
   ushort *puVar15;
@@ -244,7 +244,7 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   Library::MSVCRT::FUN_0072da40();
   local_110.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_110;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   this_00 = extraout_ECX;
   local_EAX_51 = Library::MSVCRT::__setjmp3(local_110.jumpBuffer,0);
   if (local_EAX_51 != 0) {
@@ -959,7 +959,7 @@ cf_common_join_005305BC:
     uVar38 = this_00->field_01B5[0];
     this_00->field_0028 = uVar12;
     if (uVar38 != 0) {
-      FUN_006e6080(this_00,0x80000002,uVar38,(undefined4 *)&this_00->field_0x18);
+      FUN_006e6080(this_00,&DAT_80000002,uVar38,(undefined4 *)&this_00->field_0x18);
     }
     if (this_00->field_01A4 == CASE_3) {
       pcVar2 = this_00->field_017C;

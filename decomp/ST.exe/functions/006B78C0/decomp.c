@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_006b78c0(char *param_1,char *param_2)
+/* [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=2, ignored=7, unknown=0 */
+
+char * FUN_006b78c0(char *param_1,char *param_2)
 
 {
   char cVar1;
@@ -36,6 +41,6 @@ void FUN_006b78c0(char *param_1,char *param_2)
   if ((uVar2 != 1) && ((param_2[uVar2 - 2] == '\\' || (param_2[uVar2 - 2] == '/')))) {
     param_2[uVar2 - 2] = '\0';
   }
-  return;
+  return param_2;
 }
 

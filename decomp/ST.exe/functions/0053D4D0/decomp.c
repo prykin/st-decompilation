@@ -88,7 +88,7 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
         iVar7 = this_00->field_0044;
       }
       pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01B1,
-                            (uint)(*(char *)((int)this_00->field_01B5 + (bVar5 - 10)) == '\0'));
+                            (uint)(*(char *)((int)&this_00->field_01AB + (uint)bVar5) == '\0'));
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar12 - iVar10,iVar3 - iVar7,
              '\x01',(byte *)pBVar8);
       Library::DKW::DDX::FUN_006b3640

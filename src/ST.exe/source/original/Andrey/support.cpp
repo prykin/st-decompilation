@@ -34,12 +34,12 @@ void __cdecl st::fn_005403C0(int param_1,int param_2,char param_3,BITMAPINFO *pa
       return;
     }
     g_currentExceptionFrame = local_48.previous;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\support.cpp",0x14,0,errorCode,
-                               "%s","PutDDX");
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0x14,0,errorCode,
+                               st::mutable_c_string("%s"),"PutDDX");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\support.cpp",0x14);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0x14);
   }
   return;
 }
@@ -81,12 +81,12 @@ void __cdecl st::fn_005404F0(int param_1,int param_2,char param_3,BITMAPINFO *pa
       return;
     }
     g_currentExceptionFrame = local_48.previous;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\support.cpp",0x26,0,errorCode,
-                               "%s","TransPutDDX");
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0x26,0,errorCode,
+                               st::mutable_c_string("%s"),"TransPutDDX");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\support.cpp",0x26);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0x26);
   }
   return;
 }
@@ -132,12 +132,12 @@ st::fn_00540620(int param_1,int param_2,int param_3,int param_4,uint param_5,byt
       return;
     }
     g_currentExceptionFrame = local_48.previous;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\support.cpp",0x3a,0,errorCode,
-                               "%s","PutDDXClip");
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0x3a,0,errorCode,
+                               st::mutable_c_string("%s"),"PutDDXClip");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\support.cpp",0x3a);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0x3a);
   }
   return;
 }
@@ -176,12 +176,12 @@ st::fn_00540760(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,c
       return;
     }
     g_currentExceptionFrame = local_48.previous;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\support.cpp",0x4f,0,errorCode,
-                               "%s","DibPut");
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0x4f,0,errorCode,
+                               st::mutable_c_string("%s"),"DibPut");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\support.cpp",0x4f);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0x4f);
   }
   return;
 }
@@ -263,7 +263,7 @@ st::fn_00540890
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\support.cpp",0x75,0,iVar2,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0x75,0,iVar2,st::mutable_c_string("%s"),
                              "StartServTy::WrTextDDX");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -323,7 +323,7 @@ st::fn_00540A60
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\support.cpp",0x95,0,iVar2,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0x95,0,iVar2,st::mutable_c_string("%s"),
                              "StartServTy::WrSarrDDX");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -397,10 +397,10 @@ st::fn_00540DC0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 par
   iVar2 = st::fn_0072D7F0(local_b4.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_b4.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\support.cpp",0xe7,0,iVar2,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0xe7,0,iVar2,st::mutable_c_string("%s"),
                                "SetAccelerator");
     if (iVar3 == 0) {
-      st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\support.cpp",0xe7);
+      st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0xe7);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -528,12 +528,12 @@ void st::fn_00541030(void)
     return;
   }
   g_currentExceptionFrame = local_68.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\support.cpp",0xfd,0,iVar3,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0xfd,0,iVar3,st::mutable_c_string("%s"),
                              "DelAllAccelerators");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\support.cpp",0xfd);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\support.cpp"),0xfd);
   return;
 }
 

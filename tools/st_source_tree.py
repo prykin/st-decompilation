@@ -10,6 +10,7 @@ the recovered Ghidra names are retained as provenance.
 from __future__ import annotations
 
 import argparse
+import functools
 import hashlib
 import json
 import os
@@ -68,6 +69,10 @@ STANDARD_TYPE_NAMES = {
     "int16_t", "uint16_t", "int32_t", "uint32_t", "int64_t", "uint64_t",
     "wchar_t", "max_align_t",
 }
+DECLARATION_NON_TYPES = {
+    "break", "case", "continue", "delete", "do", "else", "for", "goto",
+    "if", "new", "return", "sizeof", "switch", "throw", "while",
+}
 
 
 class GenerationError(RuntimeError):
@@ -88,6 +93,14 @@ class Issue:
         if self.source_file:
             result["source_file"] = self.source_file
         return result
+
+
+@dataclass(frozen=True)
+class BoundaryValue:
+    display_type: str
+    kind: str
+    address_storage: bool = False
+    storage_member: str = ""
 
 
 @dataclass(frozen=True)
@@ -186,20 +199,52 @@ def address_symbol(address: str) -> str:
     return function_symbol(normalized)
 
 
-def call_argument_count(masked: str, open_paren: int) -> tuple[int, int] | None:
+def call_argument_count(
+    masked: str, open_paren: int, source: str | None = None
+) -> tuple[int, int] | None:
     """Return (arity, closing-paren offset) for one masked C++ call."""
+    parsed = call_argument_spans(masked, open_paren, source)
+    if parsed is None:
+        return None
+    spans, closing = parsed
+    return len(spans), closing
+
+
+def call_argument_spans(
+    masked: str, open_paren: int, source: str | None = None
+) -> tuple[list[tuple[int, int]], int] | None:
+    """Return top-level argument spans and the closing parenthesis.
+
+    ``masked`` must retain the original source geometry.  Leading and trailing
+    whitespace is excluded from each span so a caller can insert one exact
+    boundary expression without reformatting the surrounding decompilation.
+    """
+    if source is None:
+        source = masked
+    if len(source) != len(masked):
+        return None
     if open_paren >= len(masked) or masked[open_paren] != "(":
         return None
     parens = brackets = braces = angles = 0
-    arguments = 0
-    has_token = False
+    spans: list[tuple[int, int]] = []
+    argument_start = open_paren + 1
     index = open_paren + 1
     while index < len(masked):
         value = masked[index]
         if value == "(" : parens += 1
         elif value == ")":
             if parens == 0:
-                return ((arguments + 1) if has_token else 0, index)
+                start = argument_start
+                end = index
+                while start < end and source[start].isspace():
+                    start += 1
+                while end > start and source[end - 1].isspace():
+                    end -= 1
+                if start < end:
+                    spans.append((start, end))
+                elif spans:
+                    return None
+                return spans, index
             parens -= 1
         elif value == "[": brackets += 1
         elif value == "]" and brackets > 0: brackets -= 1
@@ -213,13 +258,43 @@ def call_argument_count(masked: str, open_paren: int) -> tuple[int, int] | None:
         elif value == ">" and angles > 0 and parens == brackets == braces == 0:
             angles -= 1
         elif value == "," and parens == brackets == braces == angles == 0:
-            arguments += 1
-            has_token = False
+            start = argument_start
+            end = index
+            while start < end and source[start].isspace():
+                start += 1
+            while end > start and source[end - 1].isspace():
+                end -= 1
+            if start >= end:
+                return None
+            spans.append((start, end))
+            argument_start = index + 1
             index += 1
             continue
-        if not value.isspace() and parens == brackets == braces == 0:
-            has_token = True
         index += 1
+    return None
+
+
+def statement_expression_end(masked: str, start: int) -> int | None:
+    """Return the first top-level semicolon after an expression start."""
+    parens = brackets = braces = 0
+    for index in range(start, len(masked)):
+        value = masked[index]
+        if value == "(": parens += 1
+        elif value == ")":
+            if parens == 0: return index
+            parens -= 1
+        elif value == "[": brackets += 1
+        elif value == "]":
+            if brackets == 0: return None
+            brackets -= 1
+        elif value == "{": braces += 1
+        elif value == "}":
+            if braces == 0: return None
+            braces -= 1
+        elif value == ";" and parens == brackets == braces == 0:
+            return index
+        elif value == "," and parens == brackets == braces == 0:
+            return index
     return None
 
 
@@ -336,6 +411,13 @@ class TypeEmitter:
             }:
                 if spelling:
                     self.paths_by_display_name[spelling].add(str(record["path"]))
+        # Generated declarations use canonicalized ``type_name`` spellings,
+        # which are not always the Listing display name (notably function
+        # definitions).  Keep the reverse map address/path authoritative.
+        for record in self.records:
+            self.paths_by_display_name[self.type_name(str(record["path"]))].add(
+                str(record["path"])
+            )
         self.record_paths_by_name: dict[str, set[str]] = defaultdict(set)
         for record in self.records:
             if record["class"] not in self.RECORD_KINDS:
@@ -949,6 +1031,7 @@ class TypeEmitter:
             return f"{result} {middle}({', '.join(arguments)})"
         return f"{self.type_name(path)} {name}"
 
+    @functools.lru_cache(maxsize=None)
     def display_declaration(self, display_name: str, name: str) -> str | None:
         """Resolve an exported Listing display type back to its exact type path.
 
@@ -963,6 +1046,490 @@ class TypeEmitter:
         if len(declarations) == 1:
             return next(iter(declarations))
         return None
+
+    @functools.lru_cache(maxsize=None)
+    def display_type_expression(self, display_name: str) -> str | None:
+        """Render an unambiguous Listing display type as a C++ type-id.
+
+        Function pointers and arrays need an abstract declarator and are not
+        valid template arguments after merely removing an identifier, so this
+        intentionally accepts only ordinary scalar/pointer spellings.
+        """
+        marker = "st_boundary_value"
+        declaration = self.display_declaration(display_name, marker)
+        if declaration is None:
+            compact = re.sub(r"\s+", " ", display_name).strip()
+            if re.fullmatch(
+                r"(?:const\s+)?[A-Za-z_][A-Za-z0-9_:]*(?:\s*\*+)?",
+                compact,
+            ):
+                return compact
+            return None
+        if re.search(
+                rf"\(\s*(?:__[A-Za-z0-9_]+\s+)?\*\s*{marker}\s*\)",
+                declaration):
+            aliases: set[str] = set()
+            for path in self.paths_by_display_name.get(display_name, ()):
+                current = self._unwrap_typedef_path(path, set())
+                record = self.by_path.get(current) if current else None
+                if record is None or record["class"] != "PointerDB":
+                    continue
+                target = self.by_path.get(str(record["detail"]["points_to"]))
+                if target is not None and target["class"] == "FunctionDefinitionDB":
+                    aliases.add(self.type_name(path))
+            return next(iter(aliases)) if len(aliases) == 1 else None
+        if "[" in declaration or "]" in declaration:
+            return None
+        if not re.search(rf"\b{marker}\b", declaration):
+            return None
+        result = re.sub(rf"\b{marker}\b", "", declaration).strip()
+        return re.sub(r"\s+", " ", result)
+
+    @functools.lru_cache(maxsize=None)
+    def display_pointer_kind(self, display_name: str) -> str | None:
+        """Return ``generic`` or ``concrete`` for an exact pointer display.
+
+        A typedef is followed to its storage type.  All same-spelled exported
+        candidates must agree; name collisions otherwise remain unresolved.
+        ``void`` and Ghidra ``undefinedN`` pointees are neutral byte/word views,
+        not recovered semantic object types.
+        """
+        candidates = self.paths_by_display_name.get(display_name, set())
+        kinds = {
+            kind for path in candidates
+            if (kind := self._pointer_kind(path, set())) is not None
+        }
+        if len(kinds) == 1:
+            return next(iter(kinds))
+        compact = re.sub(r"\s+", "", display_name)
+        fallback = re.fullmatch(
+            r"(?:const)?(void|code|byte|uchar|uint1|undefined(?:1|2|3|4|5|6|8)?)\*+", compact
+        )
+        if fallback:
+            return "generic"
+        if re.fullmatch(
+            r"(?:const)?[A-Za-z_][A-Za-z0-9_:]*\*+", compact
+        ):
+            return "concrete"
+        return None
+
+    @functools.lru_cache(maxsize=None)
+    def display_pointee_type(self, display_name: str) -> str | None:
+        """Return the unanimous pointee type for one exported display name."""
+        results: set[str] = set()
+        for path in self.paths_by_display_name.get(display_name, ()):
+            current = self._unwrap_typedef_path(path, set())
+            record = self.by_path.get(current) if current else None
+            if record is None or record["class"] != "PointerDB":
+                continue
+            results.add(self.type_name(str(record["detail"]["points_to"])))
+        if len(results) == 1:
+            return next(iter(results))
+        compact = re.sub(r"\s+", " ", display_name).strip()
+        fallback = re.fullmatch(r"(.+?)\s*\*", compact)
+        return fallback.group(1).strip() if fallback else None
+
+    @functools.lru_cache(maxsize=None)
+    def display_element_type(self, display_name: str) -> str | None:
+        """Return an exact array element (or pointer pointee) display type."""
+        results: set[str] = set()
+        for path in self.paths_by_display_name.get(display_name, ()):
+            current = self._unwrap_typedef_path(path, set())
+            record = self.by_path.get(current) if current else None
+            if record is None:
+                continue
+            if record["class"] == "ArrayDB":
+                results.add(self.type_name(str(record["detail"]["element_type"])))
+            elif record["class"] == "PointerDB":
+                results.add(self.type_name(str(record["detail"]["points_to"])))
+        if len(results) == 1:
+            return next(iter(results))
+        compact = re.sub(r"\s+", " ", display_name).strip()
+        array = re.fullmatch(r"(.+?)\s*\[[^]]+\]", compact)
+        if array:
+            return array.group(1).strip()
+        return self.display_pointee_type(display_name)
+
+    @functools.lru_cache(maxsize=None)
+    def display_array_decay_type(self, display_name: str) -> str | None:
+        """Return the exact pointer type produced by C array-to-pointer decay.
+
+        This deliberately accepts arrays only.  ``display_element_type`` also
+        follows pointers and therefore cannot be used to decide whether a value
+        expression denotes an array object whose C++ boundary type is ``T *``.
+        """
+        elements: set[str] = set()
+        for path in self.paths_by_display_name.get(display_name, ()):
+            current = self._unwrap_typedef_path(path, set())
+            record = self.by_path.get(current) if current else None
+            if record is None or record["class"] != "ArrayDB":
+                continue
+            elements.add(self.type_name(str(record["detail"]["element_type"])))
+        if len(elements) == 1:
+            return next(iter(elements)) + " *"
+        compact = re.sub(r"\s+", " ", display_name).strip()
+        array = re.fullmatch(r"(.+?)\s*\[[^]]+\]", compact)
+        return array.group(1).strip() + " *" if array else None
+
+    @functools.lru_cache(maxsize=None)
+    def display_zero_member_for_pointer_conversion(
+        self, source_display: str, target_display: str
+    ) -> str | None:
+        """Find an exact named offset-zero view matching a pointer target.
+
+        A generated record passed where ``T *`` is expected often denotes its
+        first storage member (for example an output count).  This is not a
+        reinterpretation when the exported graph proves one unique source
+        record, one unique target pointee, and an exactly matching component at
+        offset zero.  Returning the member name lets the source projection use
+        ``&value->member`` and preserve both object identities.
+        """
+        source_records: set[str] = set()
+        for path in self.paths_by_display_name.get(source_display, ()):
+            current = self._unwrap_typedef_path(path, set())
+            pointer = self.by_path.get(current) if current else None
+            if pointer is None or pointer["class"] != "PointerDB":
+                continue
+            pointee = self._unwrap_typedef_path(
+                str(pointer["detail"]["points_to"]), set()
+            )
+            record = self.by_path.get(pointee) if pointee else None
+            if record is not None and record["class"] in self.RECORD_KINDS:
+                source_records.add(self.canonical_path.get(pointee, pointee))
+        target_pointees: set[str] = set()
+        for path in self.paths_by_display_name.get(target_display, ()):
+            current = self._unwrap_typedef_path(path, set())
+            pointer = self.by_path.get(current) if current else None
+            if pointer is None or pointer["class"] != "PointerDB":
+                continue
+            pointee = self._unwrap_typedef_path(
+                str(pointer["detail"]["points_to"]), set()
+            )
+            if pointee:
+                target_pointees.add(self.canonical_path.get(pointee, pointee))
+        if len(source_records) != 1 or len(target_pointees) != 1:
+            return None
+        record_path = next(iter(source_records))
+        target_path = next(iter(target_pointees))
+        record = self.by_path.get(record_path)
+        target = self.by_path.get(target_path)
+        if record is None or target is None:
+            return None
+        target_length = int(target.get("length", -1))
+        matches: set[str] = set()
+        for item in record["detail"].get("components", ()):
+            member_path = self._unwrap_typedef_path(str(item.get("type") or ""), set())
+            member_path = self.canonical_path.get(member_path, member_path)
+            name = str(item.get("field_name") or "")
+            if (int(item.get("offset", -1)) == 0 and
+                    int(item.get("length", -1)) == target_length and
+                    member_path == target_path and IDENTIFIER_RE.fullmatch(name)):
+                matches.add(name)
+        return next(iter(matches)) if len(matches) == 1 else None
+
+    @functools.lru_cache(maxsize=None)
+    def display_member_type(
+        self, display_name: str, field_name: str, pointer_access: bool
+    ) -> str | None:
+        """Resolve a named member through the exact exported record graph.
+
+        This follows typedefs and, for ``->`` only, one pointer edge.  Duplicate
+        datatype paths are harmless only when every viable record yields the
+        same rendered member type.
+        """
+        results: set[str] = set()
+        for path in self.paths_by_display_name.get(display_name, ()):
+            current = self._unwrap_typedef_path(path, set())
+            record = self.by_path.get(current) if current else None
+            if pointer_access:
+                if record is None or record["class"] != "PointerDB":
+                    continue
+                current = self._unwrap_typedef_path(
+                    str(record["detail"]["points_to"]), set()
+                )
+                record = self.by_path.get(current) if current else None
+            if record is None or record["class"] not in self.RECORD_KINDS:
+                continue
+            matches = []
+            raw_gap = re.fullmatch(r"field_0x([0-9A-Fa-f]+)", field_name)
+            for item in record["detail"].get("components", ()):
+                actual = str(item.get("field_name") or "")
+                synthesized = (
+                    f"field{item['ordinal']}_0x{int(item['offset']):x}"
+                    if not actual else actual
+                )
+                if field_name == synthesized or (
+                    raw_gap is not None and
+                    int(item["offset"]) == int(raw_gap.group(1), 16)
+                ):
+                    matches.append(item)
+            if len(matches) == 1:
+                results.add(self.type_name(str(matches[0]["type"])))
+        return next(iter(results)) if len(results) == 1 else None
+
+    @functools.lru_cache(maxsize=None)
+    def display_record_length(self, display_name: str) -> int | None:
+        """Return one unanimous by-value record length, otherwise ``None``."""
+        lengths: set[int] = set()
+        for path in self.paths_by_display_name.get(display_name, ()):
+            current = self._unwrap_typedef_path(path, set())
+            record = self.by_path.get(current) if current else None
+            if record is not None and record["class"] in self.RECORD_KINDS:
+                lengths.add(int(record.get("length", -1)))
+        return next(iter(lengths)) if len(lengths) == 1 else None
+
+    @functools.lru_cache(maxsize=None)
+    def display_machine_word_member(self, display_name: str) -> str | None:
+        """Return one exact offset-zero 32-bit scalar storage view."""
+        views: set[tuple[int, str]] = set()
+        priorities = {
+            "/undefined4": 0, "/dword": 1, "/uint": 2, "/ulong": 3,
+            "/WinDef.h/DWORD": 4,
+        }
+        for path in self.paths_by_display_name.get(display_name, ()):
+            current = self._unwrap_typedef_path(path, set())
+            record = self.by_path.get(current) if current else None
+            if (record is None or record["class"] not in self.RECORD_KINDS or
+                    int(record.get("length", -1)) != 4):
+                continue
+            for item in record["detail"].get("components", ()):
+                field_name = str(item.get("field_name") or "")
+                type_path = str(item.get("type") or "")
+                if (field_name and int(item["offset"]) == 0 and
+                        int(item["length"]) == 4 and type_path in priorities):
+                    views.add((priorities[type_path], field_name))
+        if not views:
+            return None
+        best = min(priority for priority, _ in views)
+        names = {name for priority, name in views if priority == best}
+        return next(iter(names)) if len(names) == 1 else None
+
+    @functools.lru_cache(maxsize=None)
+    def display_machine_word_scalar(self, display_name: str) -> bool:
+        """Whether an exact display type is a 32-bit integral storage word.
+
+        The generated tree is compiled by a 64-bit host compiler, while every
+        recovered ABI value belongs to the 32-bit image.  Pointer-to-word
+        conversions therefore need an explicit compatibility boundary not only
+        for Ghidra's ``undefined4`` spelling, but also for exact four-byte
+        integer typedefs such as ``HRESULT`` and ``DWORD``.  Records, arrays,
+        pointers, floats and host-width guesses are deliberately excluded.
+        """
+        candidates = self.paths_by_display_name.get(display_name, set())
+        if candidates:
+            results = {
+                self._machine_word_scalar_path(path, set())
+                for path in candidates
+            }
+            return results == {True}
+        compact = re.sub(r"\s+", "", display_name)
+        return compact in {
+            "int", "uint", "dword", "long", "ulong", "undefined4",
+            "int32_t", "uint32_t",
+        }
+
+    def _machine_word_scalar_path(self, path: str, seen: set[str]) -> bool:
+        if path in seen:
+            return False
+        seen = set(seen)
+        seen.add(path)
+        record = self.by_path.get(path)
+        if record is None or int(record.get("length", -1)) != 4:
+            return False
+        kind = str(record.get("class") or "")
+        if kind == "TypedefDB":
+            return self._machine_word_scalar_path(
+                str(record.get("detail", {}).get("base_type") or ""), seen
+            )
+        return kind.endswith("IntegerDataType") or kind in {
+            "EnumDB", "Undefined4DataType",
+        }
+
+    @functools.lru_cache(maxsize=None)
+    def display_member_name_at_offset(
+        self, display_name: str, offset: int, pointer_access: bool
+    ) -> str | None:
+        """Resolve a raw ``field_0xN`` spelling to one exact existing member."""
+        names: set[str] = set()
+        viable = 0
+        for path in self.paths_by_display_name.get(display_name, ()):
+            current = self._unwrap_typedef_path(path, set())
+            record = self.by_path.get(current) if current else None
+            if pointer_access:
+                if record is None or record["class"] != "PointerDB":
+                    continue
+                current = self._unwrap_typedef_path(
+                    str(record["detail"]["points_to"]), set()
+                )
+                record = self.by_path.get(current) if current else None
+            if record is None or record["class"] not in self.RECORD_KINDS:
+                continue
+            viable += 1
+            matches = [
+                item for item in record["detail"].get("components", ())
+                if int(item.get("offset", -1)) == offset
+            ]
+            if len(matches) != 1:
+                return None
+            item = matches[0]
+            name = str(item.get("field_name") or "")
+            # Unnamed undefined components are emitted as aggregate padding,
+            # not as individually addressable C++ members.  Keep the raw
+            # spelling so observe_field_accesses() can materialize its exact
+            # view instead of inventing a declaration which the header omits.
+            if not name or not IDENTIFIER_RE.fullmatch(name):
+                return None
+            names.add(name)
+        return next(iter(names)) if viable > 0 and len(names) == 1 else None
+
+    @functools.lru_cache(maxsize=None)
+    def display_generated_record_view_compatible(
+        self, source_display: str, target_display: str
+    ) -> bool:
+        """Prove an exact generated record pointer can use an anonymous view.
+
+        This does not merge datatype identities.  It only permits an audited
+        C++ boundary cast when the callee's script-owned anonymous pointer shape
+        is a byte-for-byte subset of another script-owned record of the same
+        extent.  The physical source record remains authoritative.
+        """
+        source_paths = self._display_record_pointer_paths(source_display)
+        target_paths = self._display_record_pointer_paths(target_display)
+        if len(source_paths) != 1 or len(target_paths) != 1:
+            return False
+        source_path = next(iter(source_paths))
+        target_path = next(iter(target_paths))
+        if source_path == target_path:
+            return False
+        source = self.by_path.get(source_path)
+        target = self.by_path.get(target_path)
+        if source is None or target is None:
+            return False
+        target_description = str(target.get("description") or "")
+        source_description = str(source.get("description") or "")
+        if ("[STPointerShapeApplier]" not in target_description or
+                "AnonShape_" not in str(target.get("name") or "") or
+                not source_description.startswith("[ST")):
+            return False
+        if int(source.get("length", -1)) != int(target.get("length", -2)):
+            return False
+        source_components = {
+            (int(item.get("offset", -1)), int(item.get("length", -1))): item
+            for item in source["detail"].get("components", ())
+        }
+        constraints = 0
+        for item in target["detail"].get("components", ()):
+            target_type = str(item.get("type") or "")
+            if target_type in {"", "/undefined"}:
+                continue
+            constraints += 1
+            key = (int(item.get("offset", -1)), int(item.get("length", -1)))
+            other = source_components.get(key)
+            if other is None or not self._storage_view_compatible(
+                    str(other.get("type") or ""), target_type, key[1]):
+                return False
+        return constraints >= 2
+
+    def _display_record_pointer_paths(self, display_name: str) -> set[str]:
+        result: set[str] = set()
+        for path in self.paths_by_display_name.get(display_name, ()):
+            current = self._unwrap_typedef_path(path, set())
+            pointer = self.by_path.get(current) if current else None
+            if pointer is None or pointer["class"] != "PointerDB":
+                continue
+            pointee = self._unwrap_typedef_path(
+                str(pointer["detail"]["points_to"]), set()
+            )
+            record = self.by_path.get(pointee) if pointee else None
+            if record is not None and record["class"] in self.RECORD_KINDS:
+                result.add(self.canonical_path.get(pointee, pointee))
+        return result
+
+    def _storage_view_compatible(
+        self, source_path: str, target_path: str, length: int
+    ) -> bool:
+        source = self._unwrap_typedef_path(source_path, set())
+        target = self._unwrap_typedef_path(target_path, set())
+        if self.canonical_path.get(source, source) == self.canonical_path.get(target, target):
+            return True
+        source_record = self.by_path.get(source) if source else None
+        target_record = self.by_path.get(target) if target else None
+        if source_record is None or target_record is None:
+            return False
+        if (int(source_record.get("length", -1)) != length or
+                int(target_record.get("length", -1)) != length):
+            return False
+        if source_record["class"] == "PointerDB" and target_record["class"] == "PointerDB":
+            return length == 4
+        if (str(target_record["class"]).startswith("Undefined") and
+                target_record["class"] != "UndefinedDataType" and
+                source_record["class"] not in self.RECORD_KINDS and
+                source_record["class"] not in {
+                    "PointerDB", "ArrayDB", "FunctionDefinitionDB",
+                }):
+            return True
+        scalar = lambda record: (
+            str(record["class"]).endswith("IntegerDataType") or
+            record["class"] in {"EnumDB", "Undefined1DataType", "Undefined2DataType",
+                                "Undefined4DataType", "Undefined8DataType"}
+        )
+        return scalar(source_record) and scalar(target_record)
+
+    @functools.lru_cache(maxsize=None)
+    def display_function_parameters(
+        self, display_name: str
+    ) -> tuple[str, ...] | None:
+        """Return the exact arguments of one rendered function-pointer type."""
+        signatures: set[tuple[str, ...]] = set()
+        for path in self.paths_by_display_name.get(display_name, ()):
+            current = self._unwrap_typedef_path(path, set())
+            record = self.by_path.get(current) if current else None
+            if record is not None and record["class"] == "PointerDB":
+                current = self._unwrap_typedef_path(
+                    str(record["detail"]["points_to"]), set()
+                )
+                record = self.by_path.get(current) if current else None
+            if record is None or record["class"] != "FunctionDefinitionDB":
+                continue
+            signatures.add(tuple(
+                self.type_name(str(argument["type"]))
+                for argument in record["detail"].get("arguments", ())
+            ))
+        return next(iter(signatures)) if len(signatures) == 1 else None
+
+    def _unwrap_typedef_path(self, path: str, seen: set[str]) -> str | None:
+        while path not in seen:
+            seen.add(path)
+            record = self.by_path.get(path)
+            if record is None or record["class"] != "TypedefDB":
+                return path
+            path = str(record["detail"]["base_type"])
+        return None
+
+    def _pointer_kind(self, path: str, seen: set[str]) -> str | None:
+        if path in seen:
+            return None
+        seen = set(seen)
+        seen.add(path)
+        record = self.by_path.get(path)
+        if record is None:
+            return None
+        if record["class"] == "TypedefDB":
+            return self._pointer_kind(str(record["detail"]["base_type"]), seen)
+        if record["class"] != "PointerDB":
+            return None
+        target_path = str(record["detail"]["points_to"])
+        target = self.by_path.get(target_path)
+        while target is not None and target["class"] == "TypedefDB":
+            target_path = str(target["detail"]["base_type"])
+            target = self.by_path.get(target_path)
+        leaf = target_path.rsplit("/", 1)[-1]
+        if not leaf or leaf in {
+                "-BAD-", "void", "code", "byte", "uchar", "uint1"
+        } or re.fullmatch(
+                r"undefined(?:1|2|3|4|5|6|8)?", leaf):
+            return "generic"
+        return "concrete"
 
     def _record_dependencies(self, path: str) -> set[str]:
         record = self.by_path[path]
@@ -1351,8 +1918,11 @@ class SourceTreeGenerator:
         self.call_relations: list[dict[str, Any]] = []
         self.relations_by_caller: dict[str, list[dict[str, Any]]] = defaultdict(list)
         self.external_signatures: dict[str, set[str]] = defaultdict(set)
+        self.external_parameter_types: dict[str, tuple[str, ...]] = {}
+        self.external_variadic: set[str] = set()
         self.callable_addresses_by_spelling: dict[str, set[str]] = defaultdict(set)
         self.global_type_collisions: dict[str, str] = {}
+        self.global_display_types: dict[str, str] = {}
         self.body_declarations: dict[str, str] = {}
         self.receipt: dict[str, Any] = {}
         self.type_emitter: TypeEmitter | None = None
@@ -1424,6 +1994,19 @@ class SourceTreeGenerator:
                 f"functions.json={bodies}"
             )
         self.type_emitter = TypeEmitter(self.types, self.issues)
+        for external_address, signatures in self.external_signatures.items():
+            parsed = {
+                specification for signature in signatures
+                if signature and (
+                    specification := self._signature_parameter_spec(signature)
+                ) is not None
+            }
+            if len(parsed) == 1:
+                local_name = external_local_name(external_address)
+                parameters, variadic = next(iter(parsed))
+                self.external_parameter_types[local_name] = parameters
+                if variadic:
+                    self.external_variadic.add(local_name)
         globals_by_name: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for item in self.globals:
             globals_by_name[str(item["name"])].append(item)
@@ -1435,12 +2018,22 @@ class SourceTreeGenerator:
             address = str(items[0]["address"]).upper()
             self.global_type_collisions[name] = f"st_global_{address}"
             self.global_alias_records[f"st_global_{address}"] = items[0]
+            self.global_display_types[f"st_global_{address}"] = str(
+                items[0].get("type") or ""
+            )
         for item in self.globals:
             name = str(item["name"])
             address = str(item["address"]).upper()
+            display_type = str(item.get("type") or "")
+            if name and display_type:
+                self.global_display_types[name] = display_type
+                rendered_name = safe_identifier(name, "global")
+                self.global_display_types[rendered_name] = display_type
+                self.global_display_types["_" + rendered_name] = display_type
             rendered = safe_identifier(name, "global")
             if not IDENTIFIER_RE.fullmatch(name) and rendered.upper().endswith(address):
                 self.global_alias_records[f"st_global_{address}"] = item
+                self.global_display_types[f"st_global_{address}"] = display_type
         self.type_emitter.register_global_types(
             self.globals, self.global_type_collisions
         )
@@ -1490,6 +2083,12 @@ class SourceTreeGenerator:
         used_globals: set[str] = set()
         used_imports: set[str] = set()
         assert self.type_emitter is not None
+        # The compact function index intentionally lags cached bodies when only
+        # a referenced prototype changed.  Preload declarations from every
+        # accepted body before transforming any caller, so source-boundary
+        # decisions are order-independent and use the exact declaration which
+        # will later be emitted into recovered_functions.hpp.
+        self._preload_body_declarations()
         for function in self.functions:
             if not function.get("body_exported"):
                 continue
@@ -1505,9 +2104,7 @@ class SourceTreeGenerator:
             transformed = self._transform_body(function, body)
             transformed_code = code_only(transformed)
             self.type_emitter.observe_field_accesses(transformed_code)
-            self.body_declarations[address] = self._body_declaration(
-                address, transformed_code
-            )
+            self.body_declarations[address] = self._body_declaration(address, transformed_code)
             group = self._source_group(function)
             groups[group].append((function, transformed, body_line_origin))
             used_globals.update(
@@ -1551,7 +2148,33 @@ class SourceTreeGenerator:
             "#include \"st/recovered_functions.hpp\"\n\n"
             "// Ghidra exposes the x86 ECX receiver as an explicit parameter.\n"
             "// The token macro keeps that ABI parameter source-compatible with C++.\n"
-            "#define this st_this\n",
+            "#define this st_this\n\n"
+            "namespace st {\n"
+            "// Exact C-to-C++ compatibility boundary.  Ghidra emits neutral C\n"
+            "// pointer views where the address-stable callee prototype already\n"
+            "// proves the concrete pointee type.  This changes no image bits.\n"
+            "template <typename Target, typename Source>\n"
+            "inline Target pointer_boundary_cast(Source value) noexcept {\n"
+            "    static_assert(std::is_pointer_v<Target>);\n"
+            "    static_assert(std::is_pointer_v<Source> || std::is_integral_v<Source>);\n"
+            "    if constexpr (std::is_pointer_v<Source>)\n"
+            "        return reinterpret_cast<Target>(value);\n"
+            "    else\n"
+            "        return reinterpret_cast<Target>(static_cast<uintptr_t>(value));\n"
+            "}\n"
+            "template <typename Target, typename Source>\n"
+            "inline Target machine_word_boundary_cast(Source value) noexcept {\n"
+            "    static_assert(std::is_integral_v<Target>);\n"
+            "    static_assert(std::is_pointer_v<Source> || std::is_integral_v<Source>);\n"
+            "    if constexpr (std::is_pointer_v<Source>)\n"
+            "        return static_cast<Target>(reinterpret_cast<uintptr_t>(value));\n"
+            "    else\n"
+            "        return static_cast<Target>(value);\n"
+            "}\n"
+            "inline char *mutable_c_string(const char *value) noexcept {\n"
+            "    return const_cast<char *>(value);\n"
+            "}\n"
+            "}\n",
             encoding="utf-8",
         )
 
@@ -1629,22 +2252,62 @@ class SourceTreeGenerator:
         owner = safe_identifier(namespace.replace("::", "__"), "owner")
         return Path("source", "recovered", "by_owner", owner + ".cpp")
 
-    def _transform_body(self, function: Mapping[str, Any], body: str) -> str:
-        body = re.sub(r"^#include[^\n]*\n+", "", body, count=1)
-        local_labels = set(LOCAL_LABEL_RE.findall(code_only(body)))
-        address = str(function["address"]).upper()
-        own_candidates = [
+    @staticmethod
+    def _own_definition_pattern(function: Mapping[str, Any]) -> re.Pattern[str]:
+        candidates = [
             str(function["qualified_name"]),
             safe_identifier(str(function["qualified_name"]), "function"),
             str(function["name"]),
             safe_identifier(str(function["name"]), "function"),
         ]
-        own_spellings = list(dict.fromkeys(own_candidates))
-        own_pattern = re.compile(
+        spellings = list(dict.fromkeys(candidates))
+        return re.compile(
             r"(?<![A-Za-z0-9_])(?:"
-            + "|".join(re.escape(item) for item in own_spellings)
+            + "|".join(re.escape(item) for item in spellings)
             + r")(?=\s*\()"
         )
+
+    def _preload_body_declarations(self) -> None:
+        """Read every body declaration before transforming cross-function calls.
+
+        Per-function cached C is the declaration ultimately compiled by the
+        generated tree.  Resolving it up front prevents function-address order
+        from making an older functions.json prototype override that body.
+        """
+        for function in self.functions:
+            if not function.get("body_exported"):
+                continue
+            address = str(function["address"]).upper()
+            path = self.corpus / "functions" / address / "decomp.c"
+            if not path.is_file():
+                raise GenerationError(f"missing exported body {path}")
+            body = re.sub(
+                r"^#include[^\n]*\n+", "", path.read_text(encoding="utf-8"), count=1
+            )
+            pattern = self._own_definition_pattern(function)
+            replaced = False
+
+            def replace(piece: str) -> str:
+                nonlocal replaced
+                if replaced:
+                    return piece
+                result, count = pattern.subn(function_symbol(address), piece, count=1)
+                replaced = count == 1
+                return result
+
+            rewritten = code_only(transform_code(body, replace))
+            if not replaced:
+                raise GenerationError(
+                    f"could not preload definition for {address} "
+                    f"{function['qualified_name']!r}"
+                )
+            self.body_declarations[address] = self._body_declaration(address, rewritten)
+
+    def _transform_body(self, function: Mapping[str, Any], body: str) -> str:
+        body = re.sub(r"^#include[^\n]*\n+", "", body, count=1)
+        local_labels = set(LOCAL_LABEL_RE.findall(code_only(body)))
+        address = str(function["address"]).upper()
+        own_pattern = self._own_definition_pattern(function)
         definition_rewritten = False
         replacements: dict[str, set[str]] = defaultdict(set)
         for callee in function.get("callees", ()):
@@ -1786,6 +2449,13 @@ class SourceTreeGenerator:
         )
         self.stats["qualified_address_symbol_repairs"] += count
         transformed = self._materialize_tagged_lifetimes(address, transformed)
+        transformed = self._materialize_exact_output_lifetimes(
+            address, function, transformed
+        )
+        transformed = self._repair_exact_field_names(address, function, transformed)
+        transformed = self._repair_exact_pointer_boundaries(
+            address, function, transformed
+        )
         if not definition_rewritten:
             self.issues.append(Issue(
                 "definition_not_rewritten",
@@ -1793,6 +2463,724 @@ class SourceTreeGenerator:
                 address,
             ))
         return transformed
+
+    @staticmethod
+    def _signature_result_type(function: Mapping[str, Any]) -> str | None:
+        signature = re.sub(
+            r"\s+", " ", str(function.get("signature") or "")
+        ).strip()
+        signature = re.sub(r"^noreturn\s+", "", signature)
+        match = re.match(
+            r"^(?P<result>.+?)\s+(?:__(?:thiscall|stdcall|cdecl|fastcall)\s+)?"
+            r"(?:(?:[A-Za-z_][A-Za-z0-9_]*)::)*~?[A-Za-z_][A-Za-z0-9_@]*\s*\(",
+            signature,
+        )
+        return match.group("result").strip() if match else None
+
+    @staticmethod
+    def _signature_parameter_types(signature: str) -> tuple[str, ...] | None:
+        """Extract display types from one unambiguous exported signature."""
+        parsed = SourceTreeGenerator._signature_parameter_spec(signature)
+        return None if parsed is None else parsed[0]
+
+    @staticmethod
+    def _signature_parameter_spec(
+        signature: str,
+    ) -> tuple[tuple[str, ...], bool] | None:
+        """Extract fixed parameter types and the variadic bit from a signature."""
+        compact = re.sub(r"\s+", " ", signature).strip()
+        name = re.search(r"~?[A-Za-z_][A-Za-z0-9_@]*\s*(?=\()", compact)
+        if name is None:
+            return None
+        marker = "fn_00000000"
+        rewritten = compact[:name.start()] + marker + compact[name.end():]
+        declarations = TypeEmitter._body_parameters(rewritten, "00000000")
+        if declarations is None:
+            return None
+        variadic = bool(declarations and declarations[-1].strip() == "...")
+        if any(item.strip() == "..." for item in declarations[:-1]):
+            return None
+        result: list[str] = []
+        for declaration in declarations[:-1] if variadic else declarations:
+            named = TypeEmitter._declaration_name(declaration)
+            if named is None:
+                return None
+            _, span = named
+            type_text = (declaration[:span[0]] + declaration[span[1]:]).strip()
+            if not type_text:
+                return None
+            result.append(re.sub(r"\s+", " ", type_text))
+        return tuple(result), variadic
+
+    def _function_parameter_spec(
+        self, function: Mapping[str, Any]
+    ) -> tuple[tuple[str, ...], bool]:
+        address = str(function["address"]).upper()
+        declaration = self.body_declarations.get(address)
+        if declaration:
+            parsed = self._signature_parameter_spec(declaration)
+            if parsed is not None:
+                return parsed
+        return (
+            tuple(str(item.get("type") or "") for item in function.get("parameters", ())),
+            bool(function.get("varargs")),
+        )
+
+    @staticmethod
+    def _declared_types(
+        function: Mapping[str, Any], body: str
+    ) -> dict[str, str]:
+        result: dict[str, str] = {}
+        for parameter in function.get("parameters", ()):
+            name = str(parameter.get("name") or "")
+            display = str(parameter.get("type") or "")
+            if name and display:
+                result[name] = display
+        masked = code_mask(body)
+        declaration = re.compile(
+            r"(?m)^[ \t]*(?P<base>(?:const\s+)?[A-Za-z_][A-Za-z0-9_:]*)"
+            r"[ \t]+(?P<stars>\*+)?[ \t]*(?P<name>[A-Za-z_][A-Za-z0-9_]*)"
+            r"(?P<array>[ \t]*\[[^\]\n]+\])?[ \t]*(?:;|=)"
+        )
+        for match in declaration.finditer(masked):
+            if match.group("base") in DECLARATION_NON_TYPES:
+                continue
+            stars = match.group("stars") or ""
+            # An array identifier decays to its element pointer at a call or
+            # assignment boundary.  Pointer-to-array cases retain an explicit
+            # '&' and are handled as address-storage evidence below.
+            if match.group("array"):
+                stars += "*"
+            result[match.group("name")] = (
+                match.group("base") + (" " + stars if stars else "")
+            )
+        return result
+
+    @staticmethod
+    def _matching_delimiter(text: str, start: int, opening: str, closing: str) -> int | None:
+        if start >= len(text) or text[start] != opening:
+            return None
+        depth = 0
+        for index in range(start, len(text)):
+            if text[index] == opening:
+                depth += 1
+            elif text[index] == closing:
+                depth -= 1
+                if depth == 0:
+                    return index
+        return None
+
+    def _apply_display_postfix(self, display: str, suffix: str) -> str | None:
+        """Apply a simple C postfix chain to an already known display type."""
+        assert self.type_emitter is not None
+        index = 0
+        while index < len(suffix):
+            while index < len(suffix) and suffix[index].isspace():
+                index += 1
+            if index >= len(suffix):
+                return display
+            pointer_access = False
+            if suffix.startswith("->", index):
+                pointer_access = True
+                index += 2
+            elif suffix[index] == ".":
+                index += 1
+            elif suffix[index] == "[":
+                closing = self._matching_delimiter(suffix, index, "[", "]")
+                if closing is None:
+                    return None
+                display = self.type_emitter.display_element_type(display) or ""
+                if not display:
+                    return None
+                index = closing + 1
+                continue
+            else:
+                return None
+            while index < len(suffix) and suffix[index].isspace():
+                index += 1
+            member = re.match(r"[A-Za-z_][A-Za-z0-9_]*", suffix[index:])
+            if member is None:
+                return None
+            display = self.type_emitter.display_member_type(
+                display, member.group(0), pointer_access
+            ) or ""
+            if not display:
+                return None
+            index += member.end()
+        return display
+
+    def _simple_expression_display(
+        self, expression: str, declared_types: Mapping[str, str]
+    ) -> str | None:
+        """Type an exact identifier/deref/member/index expression.
+
+        The parser deliberately has no arithmetic, implicit casts, or ownership
+        guesses.  It only walks the already exported datatype graph, which makes
+        it suitable for C-to-C++ boundary repair but not a substitute for Ghidra
+        type recovery.
+        """
+        assert self.type_emitter is not None
+        text = expression.strip()
+        if not text:
+            return None
+        if text.startswith("*"):
+            operand = text[1:].strip()
+            cast = re.match(
+                r"^\(\s*((?:const\s+)?[A-Za-z_][A-Za-z0-9_:]*\s*\*+)\s*\)",
+                operand,
+            )
+            if cast is not None and operand[cast.end():].strip():
+                return self.type_emitter.display_pointee_type(
+                    re.sub(r"\s+", " ", cast.group(1)).strip()
+                )
+            display = self._simple_expression_display(operand, declared_types)
+            return None if display is None else \
+                self.type_emitter.display_pointee_type(display)
+        if text.startswith("("):
+            closing = self._matching_delimiter(text, 0, "(", ")")
+            if closing is None:
+                return None
+            if closing == len(text) - 1:
+                return self._simple_expression_display(
+                    text[1:closing], declared_types
+                )
+            suffix = text[closing + 1:]
+            if not re.match(r"\s*(?:\.|->|\[)", suffix):
+                return None
+            display = self._simple_expression_display(
+                text[1:closing], declared_types
+            )
+            return None if display is None else \
+                self._apply_display_postfix(display, suffix)
+        base = re.match(r"[A-Za-z_][A-Za-z0-9_]*", text)
+        if base is None:
+            return None
+        name = base.group(0)
+        display = declared_types.get(name) or self.global_display_types.get(name)
+        if not display:
+            return None
+        return self._apply_display_postfix(display, text[base.end():])
+
+    def _boundary_value_for_display(self, display: str) -> BoundaryValue:
+        assert self.type_emitter is not None
+        decayed = self.type_emitter.display_array_decay_type(display)
+        if decayed:
+            pointer_kind = self.type_emitter.display_pointer_kind(decayed)
+            if pointer_kind:
+                return BoundaryValue(decayed, pointer_kind + "_pointer")
+        pointer_kind = self.type_emitter.display_pointer_kind(display)
+        if pointer_kind:
+            return BoundaryValue(display, pointer_kind + "_pointer")
+        if self.type_emitter.display_machine_word_scalar(display):
+            return BoundaryValue(display, "generic_word")
+        storage_member = self.type_emitter.display_machine_word_member(display)
+        if storage_member:
+            return BoundaryValue(
+                display, "four_byte_record", storage_member=storage_member
+            )
+        return BoundaryValue(display, "scalar")
+
+    def _boundary_expression(
+        self, expression: str, declared_types: Mapping[str, str]
+    ) -> BoundaryValue | None:
+        assert self.type_emitter is not None
+        compact = expression.strip()
+        if compact == "nullptr":
+            return BoundaryValue("nullptr", "null_pointer")
+        if re.fullmatch(r"st::fn_[0-9A-F]{8}", compact):
+            return BoundaryValue("function address", "concrete_pointer", True)
+        if re.fullmatch(r'"(?:\\.|[^"\\])*"', compact, re.DOTALL):
+            return BoundaryValue("const char *", "const_char_pointer", True)
+        if re.fullmatch(
+                r'"(?:\\.|[^"\\])*"\s*[+-]\s*.+', compact, re.DOTALL):
+            return BoundaryValue("const char *", "const_char_pointer", True)
+        helper = re.match(
+            r"^st::(?:pointer_boundary_cast|machine_word_boundary_cast)"
+            r"\s*<\s*([^>]+)\s*>\s*\(", compact
+        )
+        if helper:
+            parsed = call_argument_count(compact, compact.find("(", helper.start()))
+            if parsed is not None and not compact[parsed[1] + 1:].strip():
+                return self._boundary_value_for_display(helper.group(1).strip())
+        if re.match(r"^st::mutable_c_string\s*\(", compact):
+            parsed = call_argument_count(compact, compact.find("("))
+            if parsed is not None and not compact[parsed[1] + 1:].strip():
+                return BoundaryValue("char *", "concrete_pointer")
+        indexed_address = re.fullmatch(
+            r"\(\s*&\s*(?P<base>[A-Za-z_][A-Za-z0-9_]*"
+            r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*)*)\s*\)"
+            r"\s*\[[^\]\n]+\]",
+            compact,
+            re.DOTALL,
+        )
+        if indexed_address:
+            base = indexed_address.group("base")
+            display = self._simple_expression_display(base, declared_types)
+            if display:
+                return self._boundary_value_for_display(display)
+            if re.fullmatch(r"_?(?:DAT|PTR)_[0-9A-Fa-f]{8}", base):
+                return BoundaryValue("indexed image word", "generic_word", True)
+        exact_display = self._simple_expression_display(compact, declared_types)
+        if exact_display:
+            return self._boundary_value_for_display(exact_display)
+        address = re.fullmatch(r"&\s*(.+)", compact, re.DOTALL)
+        if address:
+            value = address.group(1).strip()
+            exact_display = self._simple_expression_display(value, declared_types)
+            if exact_display:
+                source = exact_display + " *"
+                kind = self.type_emitter.display_pointer_kind(source) or "concrete"
+                return BoundaryValue(source, kind + "_pointer", True)
+            based = re.fullmatch(
+                r"(?P<base>[A-Za-z_][A-Za-z0-9_]*"
+                r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\n]+\])*)"
+                r"(?P<tail>\s*[+-].+)",
+                value,
+                re.DOTALL,
+            )
+            if based and self._safe_boundary_arithmetic_tail(based.group("tail")):
+                base_display = self._simple_expression_display(
+                    based.group("base"), declared_types
+                )
+                if base_display:
+                    source = base_display + " *"
+                    kind = self.type_emitter.display_pointer_kind(source) or "concrete"
+                    return BoundaryValue(source, kind + "_pointer", True)
+                if re.fullmatch(
+                        r"_?(?:DAT|PTR)_[0-9A-Fa-f]{8}", based.group("base")):
+                    return BoundaryValue(
+                        "address inside unresolved image datum", "generic_pointer", True
+                    )
+            named = re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", value)
+            named_type = None if named is None else (
+                declared_types.get(named.group(0)) or
+                self.global_display_types.get(named.group(0))
+            )
+            if named_type:
+                source = named_type + " *"
+                kind = self.type_emitter.display_pointer_kind(source) or "concrete"
+                return BoundaryValue(source, kind + "_pointer", True)
+            if named and re.fullmatch(
+                    r"(?:_?(?:DAT|PTR)_[0-9A-Fa-f]{8}|st_image_[0-9A-F]{8}|"
+                    r"stack0x[0-9A-Fa-f]+)", named.group(0)):
+                return BoundaryValue(
+                    "address of unresolved image datum", "generic_pointer", True
+                )
+            field = re.fullmatch(
+                r"(?:[A-Za-z_][A-Za-z0-9_]*|\([^()]+\))\s*->\s*"
+                r"field_(?:0x)?[0-9A-Fa-f]+",
+                value,
+            )
+            if field:
+                return BoundaryValue(
+                    "address of unresolved field", "generic_pointer", True
+                )
+            st_field = re.fullmatch(r"STField\s*<\s*([^>]+)\s*>\s*\(.+\)", value,
+                re.DOTALL)
+            if st_field:
+                source = st_field.group(1).strip() + " *"
+                kind = self.type_emitter.display_pointer_kind(source) or "concrete"
+                return BoundaryValue(source, kind + "_pointer", True)
+        cast = re.match(
+            r"^\(\s*((?:const\s+)?[A-Za-z_][A-Za-z0-9_:]*"
+            r"(?:[ \t]*\*+)?)\s*\)",
+            compact,
+        )
+        if cast:
+            display = cast.group(1)
+            kind = self.type_emitter.display_pointer_kind(display)
+            if kind:
+                return BoundaryValue(display, kind + "_pointer")
+        field = re.match(
+            r"^STField\s*<\s*([^>]+)\s*>",
+            compact,
+        )
+        if field:
+            display = field.group(1).strip()
+            pointer_kind = self.type_emitter.display_pointer_kind(display)
+            if pointer_kind:
+                return BoundaryValue(display, pointer_kind + "_pointer")
+            if re.sub(r"\s+", "", display) == "undefined4":
+                return BoundaryValue(display, "generic_word")
+        call = re.match(r"^st::fn_([0-9A-F]{8})\s*\(", compact)
+        if call:
+            parsed = call_argument_count(compact, compact.find("(", call.start()))
+            if parsed is None or compact[parsed[1] + 1:].strip():
+                return None
+            target = self.function_by_address.get(call.group(1))
+            if target is None:
+                return None
+            result_type = self._function_result_type(target)
+            if result_type:
+                pointer_kind = self.type_emitter.display_pointer_kind(result_type)
+                if pointer_kind:
+                    return BoundaryValue(result_type, pointer_kind + "_pointer")
+                if self.type_emitter.display_machine_word_scalar(result_type):
+                    return BoundaryValue(result_type, "generic_word")
+        unresolved_member = re.fullmatch(
+            r".+->field_(?:0x)?[0-9A-Fa-f]+", compact, re.DOTALL
+        )
+        if unresolved_member:
+            return BoundaryValue("unresolved field word", "generic_word")
+        arithmetic = re.match(
+            r"^(?P<base>[A-Za-z_][A-Za-z0-9_]*)\b(?P<tail>.+)$",
+            compact,
+            re.DOTALL,
+        )
+        if arithmetic and self._safe_boundary_arithmetic_tail(
+                arithmetic.group("tail")):
+            base = arithmetic.group("base")
+            display = declared_types.get(base) or self.global_display_types.get(base)
+            if display:
+                pointer_kind = self.type_emitter.display_pointer_kind(display)
+                if pointer_kind:
+                    return BoundaryValue(display, pointer_kind + "_pointer")
+                if re.sub(r"\s+", "", display) == "undefined4":
+                    return BoundaryValue(display, "generic_word")
+        return None
+
+    @staticmethod
+    def _safe_boundary_arithmetic_tail(tail: str) -> bool:
+        """Accept expression-only address arithmetic, including indexes.
+
+        Calls, member-call syntax, commas, conditionals and assignments remain
+        excluded.  Brackets and dots are needed for exact array-index terms
+        such as ``base + index[1] * 4`` which Ghidra commonly emits.
+        """
+        if not re.fullmatch(r"[\s+\-*/%<>&|^().\[\]0-9A-Za-z_]+", tail):
+            return False
+        return re.search(r"\b[A-Za-z_][A-Za-z0-9_]*\s*\(", tail) is None
+
+    def _boundary_replacement(
+        self, target_display: str, source: BoundaryValue,
+        expression: str
+    ) -> tuple[str, str] | None:
+        assert self.type_emitter is not None
+        target_pointer = self.type_emitter.display_pointer_kind(target_display)
+        target_word = self.type_emitter.display_machine_word_scalar(target_display)
+        target_type = self.type_emitter.display_type_expression(target_display)
+        if target_type is None:
+            return None
+        normalized_target = re.sub(r"\s+", "", target_display)
+        normalized_source = re.sub(r"\s+", "", source.display_type)
+        if target_pointer:
+            if source.kind == "null_pointer":
+                return None
+            if not source.kind.endswith("_pointer") and source.kind != "generic_word":
+                return None
+            # Every object pointer converts to void * implicitly in C++ just as
+            # it does in the decompiler's C dialect.  Emitting a helper there
+            # adds noise without solving a language-boundary incompatibility.
+            if normalized_target in {"void*", "constvoid*"} and \
+                    source.kind.endswith("_pointer"):
+                return None
+            if normalized_target == "char*" and \
+                    source.kind == "const_char_pointer":
+                return (
+                    f"st::mutable_c_string({expression})",
+                    "const char * -> char *",
+                )
+            if normalized_target == normalized_source:
+                return None
+            zero_member = self.type_emitter.display_zero_member_for_pointer_conversion(
+                source.display_type, target_display
+            )
+            if zero_member:
+                return (
+                    f"&({expression})->{zero_member}",
+                    f"{source.display_type} offset-zero member {zero_member} -> "
+                    f"{target_display}",
+                )
+            if self.type_emitter.display_generated_record_view_compatible(
+                    source.display_type, target_display):
+                return (
+                    f"st::pointer_boundary_cast<{target_type}>({expression})",
+                    f"exact generated record view {source.display_type} -> "
+                    f"{target_display}",
+                )
+            source_generic = source.kind in {"generic_pointer", "generic_word"}
+            if not (source_generic or target_pointer == "generic" or
+                    source.address_storage):
+                return None
+            return (
+                f"st::pointer_boundary_cast<{target_type}>({expression})",
+                f"{source.display_type} -> {target_display}",
+            )
+        if target_word and source.kind == "null_pointer":
+            return (f"static_cast<{target_type}>(0)", "nullptr -> zero word")
+        if target_word and source.kind.endswith("_pointer"):
+            return (
+                f"st::machine_word_boundary_cast<{target_type}>({expression})",
+                f"{source.display_type} -> {target_display}",
+            )
+        if target_word and source.kind == "four_byte_record":
+            return (
+                f"static_cast<{target_type}>(({expression}).{source.storage_member})",
+                f"four-byte {source.display_type} -> {target_display}",
+            )
+        return None
+
+    def _function_result_type(self, function: Mapping[str, Any]) -> str | None:
+        address = str(function.get("address") or "").upper()
+        declaration = self.body_declarations.get(address)
+        if declaration:
+            result = self._signature_result_type({"signature": declaration})
+            if result:
+                return result
+        return self._signature_result_type(function)
+
+    def _repair_exact_field_names(
+        self, address: str, function: Mapping[str, Any], body: str
+    ) -> str:
+        """Replace raw offset labels with already exported exact member names."""
+        assert self.type_emitter is not None
+        for _ in range(4):
+            declared_types = self._declared_types(function, body)
+            masked = code_mask(body)
+            pattern = re.compile(
+                r"(?P<base>[A-Za-z_][A-Za-z0-9_]*"
+                r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\n]+\])*)"
+                r"(?P<op>->|\.)(?P<field>field_0x(?P<offset>[0-9A-Fa-f]+))"
+            )
+            edits: list[tuple[int, int, str, str]] = []
+            for match in pattern.finditer(masked):
+                display = self._simple_expression_display(
+                    body[match.start("base"):match.end("base")], declared_types
+                )
+                if not display:
+                    continue
+                member = self.type_emitter.display_member_name_at_offset(
+                    display, int(match.group("offset"), 16),
+                    match.group("op") == "->",
+                )
+                if not member or member == match.group("field"):
+                    continue
+                edits.append((match.start("field"), match.end("field"), member,
+                    f"{display}{match.group('op')}{match.group('field')} -> {member}"))
+            if not edits:
+                break
+            for start, end, replacement, detail in sorted(edits, reverse=True):
+                body = body[:start] + replacement + body[end:]
+                self.issues.append(Issue("exact_field_name_rewrite", detail, address))
+            self.stats["exact_field_name_rewrites"] += len(edits)
+        return body
+
+    def _repair_exact_pointer_boundaries(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Make exact C pointer conversions explicit at proven C++ boundaries.
+
+        This is deliberately not a type-inference fallback.  The source must be
+        a neutral pointer view and the destination must already be a concrete
+        exported pointer type.  Direct calls use the address-authoritative
+        callee prototype; assignments are limited to a declared local and an
+        entire neutral-pointer expression.  Each edit is retained in the source
+        audit so it cannot masquerade as a recovered database fact.
+        """
+        assert self.type_emitter is not None
+        declared_types = self._declared_types(function, body)
+        direct_call = re.compile(r"\bst::fn_([0-9A-F]{8})\s*\(")
+        external_call = re.compile(r"\bst::(external_[A-Za-z0-9_]+)\s*\(")
+        indirect_call = re.compile(
+            r"\(\s*\*\s*(?P<callee>[A-Za-z_][A-Za-z0-9_]*"
+            r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\n]+\])*)"
+            r"\s*\)\s*\("
+        )
+        for _ in range(4):
+            masked = code_mask(body)
+            edits: list[tuple[int, int, str, str]] = []
+
+            for match in direct_call.finditer(masked):
+                target = self.function_by_address.get(match.group(1))
+                if target is None:
+                    continue
+                open_paren = masked.find("(", match.start(), match.end())
+                parsed = call_argument_spans(masked, open_paren, body)
+                if parsed is None:
+                    continue
+                spans, _ = parsed
+                parameters, variadic = self._function_parameter_spec(target)
+                if len(spans) < len(parameters) or (
+                        not variadic and len(spans) != len(parameters)):
+                    continue
+                for ordinal, ((start, end), target_display) in enumerate(
+                    zip(spans, parameters), 1
+                ):
+                    source = self._boundary_expression(
+                        body[start:end], declared_types
+                    )
+                    if source is None:
+                        continue
+                    converted = self._boundary_replacement(
+                        target_display, source, body[start:end]
+                    )
+                    if converted is not None:
+                        replacement, transition = converted
+                        edits.append((start, end, replacement,
+                            f"call {match.group(1)} argument {ordinal}: {transition}"))
+
+            for match in external_call.finditer(masked):
+                parameters = self.external_parameter_types.get(match.group(1))
+                if parameters is None:
+                    continue
+                open_paren = masked.find("(", match.start(), match.end())
+                parsed = call_argument_spans(masked, open_paren, body)
+                if parsed is None:
+                    continue
+                spans, _ = parsed
+                variadic = match.group(1) in self.external_variadic
+                if len(spans) < len(parameters) or (
+                        not variadic and len(spans) != len(parameters)):
+                    continue
+                for ordinal, ((start, end), target_display) in enumerate(
+                    zip(spans, parameters), 1
+                ):
+                    source = self._boundary_expression(
+                        body[start:end], declared_types
+                    )
+                    if source is None:
+                        continue
+                    converted = self._boundary_replacement(
+                        target_display, source, body[start:end]
+                    )
+                    if converted is not None:
+                        replacement, transition = converted
+                        edits.append((start, end, replacement,
+                            f"external {match.group(1)} argument {ordinal}: {transition}"))
+
+            for match in indirect_call.finditer(masked):
+                callee = match.group("callee")
+                callee_display = self._simple_expression_display(
+                    callee, declared_types
+                )
+                if callee_display is None:
+                    continue
+                parameters = self.type_emitter.display_function_parameters(
+                    callee_display
+                )
+                if parameters is None:
+                    continue
+                open_paren = masked.rfind("(", match.start(), match.end())
+                parsed = call_argument_spans(masked, open_paren, body)
+                if parsed is None:
+                    continue
+                spans, _ = parsed
+                if len(spans) != len(parameters):
+                    continue
+                for ordinal, ((start, end), target_display) in enumerate(
+                    zip(spans, parameters), 1
+                ):
+                    source = self._boundary_expression(
+                        body[start:end], declared_types
+                    )
+                    if source is None:
+                        continue
+                    converted = self._boundary_replacement(
+                        target_display, source, body[start:end]
+                    )
+                    if converted is not None:
+                        replacement, transition = converted
+                        edits.append((start, end, replacement,
+                            f"indirect {callee} argument {ordinal}: {transition}"))
+
+            # Prefer the innermost boundary when nested calls overlap, then
+            # rescan the updated body.  The helper's result type is recognized
+            # above, so a later pass can safely repair the enclosing argument.
+            selected: list[tuple[int, int, str, str]] = []
+            for edit in sorted(edits, key=lambda item: (item[1] - item[0], item[0])):
+                if any(edit[0] < old[1] and edit[1] > old[0] for old in selected):
+                    continue
+                selected.append(edit)
+            if not selected:
+                break
+            for start, end, replacement, detail in sorted(selected, reverse=True):
+                body = body[:start] + replacement + body[end:]
+                self.issues.append(Issue(
+                    "exact_pointer_boundary_cast", detail, address
+                ))
+            self.stats["exact_pointer_boundary_casts"] += len(selected)
+
+        masked = code_mask(body)
+        edits = []
+
+        assignment_patterns = (
+            re.compile(r"(?m)^[ \t]*(?P<lhs>[^=\n]+?)[ \t]*=[ \t]*(?!=)"),
+            re.compile(
+                # Do not begin inside a casted dereference such as
+                # `*(undefined4 *)local = ...`.  The closing parenthesis is as
+                # significant here as `*`, `->`, and `]`: accepting `local`
+                # as the complete lvalue would convert the storage word as if
+                # the local itself were the destination.
+                r"(?<![A-Za-z0-9_*&.>\])])(?P<lhs>[A-Za-z_][A-Za-z0-9_]*)"
+                r"[ \t]*=[ \t]*(?!=)"
+            ),
+        )
+        claimed_assignments: set[tuple[int, int]] = set()
+        for assignment in assignment_patterns:
+            for match in assignment.finditer(masked):
+                lhs = match.group("lhs").strip()
+                target_display = self._simple_expression_display(lhs, declared_types)
+                if not target_display:
+                    continue
+                start = match.end()
+                end = statement_expression_end(masked, start)
+                if end is None or (start, end) in claimed_assignments:
+                    continue
+                source = self._boundary_expression(
+                    body[start:end], declared_types
+                )
+                if source is None:
+                    continue
+                converted = self._boundary_replacement(
+                    target_display, source, body[start:end]
+                )
+                if converted is None:
+                    continue
+                replacement, transition = converted
+                detail = f"assignment {lhs}: {transition}"
+                edits.append((start, end, replacement, detail))
+                claimed_assignments.add((start, end))
+
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(
+                "exact_pointer_boundary_cast", detail, address
+            ))
+        self.stats["exact_pointer_boundary_casts"] += len(edits)
+
+        declaration = self.body_declarations.get(address)
+        return_display = None if not declaration else self._signature_result_type(
+            {"signature": declaration}
+        )
+        if return_display:
+            masked = code_mask(body)
+            return_edits: list[tuple[int, int, str, str]] = []
+            for match in re.finditer(r"\breturn\s+(?!;)", masked):
+                start = match.end()
+                end = statement_expression_end(masked, start)
+                if end is None:
+                    continue
+                source = self._boundary_expression(body[start:end], declared_types)
+                if source is None:
+                    continue
+                converted = self._boundary_replacement(
+                    return_display, source, body[start:end]
+                )
+                if converted is None:
+                    continue
+                replacement, transition = converted
+                return_edits.append((start, end, replacement,
+                    f"return: {transition}"))
+            for start, end, replacement, detail in sorted(return_edits, reverse=True):
+                body = body[:start] + replacement + body[end:]
+                self.issues.append(Issue(
+                    "exact_pointer_boundary_cast", detail, address
+                ))
+            self.stats["exact_pointer_boundary_casts"] += len(return_edits)
+        return body
 
     def _rewrite_ambiguous_calls(
         self, body: str, candidates: Mapping[str, set[str]]
@@ -1812,7 +3200,7 @@ class SourceTreeGenerator:
                         for start, end in occupied):
                     continue
                 open_paren = masked.find("(", match.end())
-                parsed = call_argument_count(masked, open_paren)
+                parsed = call_argument_count(masked, open_paren, body)
                 if parsed is None:
                     unresolved[spelling] = candidates[spelling]
                     continue
@@ -1833,17 +3221,18 @@ class SourceTreeGenerator:
         return body, len(edits), unresolved
 
     def _materialize_tagged_lifetimes(self, address: str, body: str) -> str:
-        """Declare only exporter-tagged synthetic lifetimes with proven scope.
+        """Declare Ghidra synthetic stack lifetimes with proven lexical scope.
 
         `_param_N`/`_local_N` are Ghidra spellings for the post-write half of a
         reused physical stack slot.  They have no declaration in the emitted
-        body.  Turning the first exact tagged assignment into `auto` is
+        body.  Turning their first exact assignment into `auto` is
         type-neutral and preserves its RHS type, but is safe only when every use
         remains in the same lexical block and no later switch label can jump
-        over the initializer.
+        over the initializer.  The synthetic spelling plus an assignment as the
+        first occurrence is sufficient machine-derived evidence; an adjacent
+        exporter presentation comment is useful provenance but not required.
         """
-        marker = "ST_PSEUDO[stack_slot_reuse]"
-        if marker not in body:
+        if not re.search(r"\b_(?:param|local)_[0-9A-Fa-f]+\b", code_only(body)):
             return body
         lines = body.splitlines(keepends=True)
         masked = code_mask(body).splitlines(keepends=True)
@@ -1860,11 +3249,6 @@ class SourceTreeGenerator:
         for index, line in enumerate(masked):
             match = assignment.match(line)
             if match is None or match.group("name") in claimed:
-                continue
-            previous = index - 1
-            while previous >= 0 and not lines[previous].strip():
-                previous -= 1
-            if previous < 0 or marker not in lines[previous]:
                 continue
             name = match.group("name")
             token = re.compile(rf"\b{re.escape(name)}\b")
@@ -1901,6 +3285,211 @@ class SourceTreeGenerator:
                 address,
             ))
         return "".join(lines)
+
+    def _materialize_exact_output_lifetimes(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Split an undeclared post-write stack lifetime at an exact output call.
+
+        Ghidra sometimes reuses a narrow incoming stack parameter as storage for
+        a later pointer-sized output and renders the second SSA lifetime as
+        ``_param_N`` without a declaration.  Source assembly may split it only
+        when a recovered utility explicitly identifies a neutral output
+        parameter, the original lifetime is dead afterwards, and every typed
+        consumer (or the function return) unanimously proves one concrete
+        pointer type.  This preserves the machine stack alias without guessing
+        an element type from the producer itself.
+        """
+        assert self.type_emitter is not None
+        declared_types = self._declared_types(function, body)
+        direct_call = re.compile(r"\bst::fn_([0-9A-F]{8})\s*\(")
+
+        for _ in range(8):
+            masked = code_mask(body)
+            applied = False
+            for producer_match in direct_call.finditer(masked):
+                producer = self.function_by_address.get(producer_match.group(1))
+                if producer is None or "RECOVERED_UTILITY_SEMANTICS" not in set(
+                        producer.get("tags", ())):
+                    continue
+                producer_parameters = tuple(producer.get("parameters", ()))
+                open_paren = masked.find(
+                    "(", producer_match.start(), producer_match.end()
+                )
+                parsed = call_argument_spans(masked, open_paren, body)
+                if parsed is None:
+                    continue
+                spans, call_close = parsed
+                if len(spans) != len(producer_parameters):
+                    continue
+
+                for ordinal, ((argument_start, argument_end), parameter) in enumerate(
+                        zip(spans, producer_parameters), 1):
+                    parameter_type = re.sub(
+                        r"\s+", "", str(parameter.get("type") or "")
+                    )
+                    parameter_name = str(parameter.get("name") or "")
+                    if parameter_type not in {"void*", "undefined*", "byte*"} or \
+                            not re.match(
+                                r"(?i)^(?:out|result|destination|dest)",
+                                parameter_name,
+                            ):
+                        continue
+                    argument = body[argument_start:argument_end].strip()
+                    output = re.fullmatch(
+                        r"&\s*([A-Za-z_][A-Za-z0-9_]*)", argument
+                    )
+                    if output is None:
+                        continue
+                    original = output.group(1)
+                    synthetic = "_" + original
+                    if original not in declared_types or synthetic in declared_types:
+                        continue
+
+                    block = self._enclosing_block(masked, producer_match.start())
+                    if block is None:
+                        continue
+                    block_start, block_end = block
+                    token = re.compile(rf"\b{re.escape(synthetic)}\b")
+                    occurrences = list(token.finditer(masked, block_start, block_end))
+                    if not occurrences or any(
+                            item.start() < call_close for item in occurrences):
+                        continue
+                    original_token = re.compile(rf"\b{re.escape(original)}\b")
+                    if any(item.start() >= argument_end for item in
+                            original_token.finditer(masked, block_start, block_end)):
+                        continue
+
+                    concrete_types: set[str] = set()
+                    allowed: list[tuple[int, int]] = []
+                    valid = True
+                    for consumer_match in direct_call.finditer(
+                            masked, call_close + 1, block_end):
+                        consumer = self.function_by_address.get(
+                            consumer_match.group(1)
+                        )
+                        if consumer is None:
+                            continue
+                        consumer_open = masked.find(
+                            "(", consumer_match.start(), consumer_match.end()
+                        )
+                        consumer_args = call_argument_spans(
+                            masked, consumer_open, body
+                        )
+                        if consumer_args is None:
+                            continue
+                        consumer_spans, _ = consumer_args
+                        parameter_types, variadic = self._function_parameter_spec(
+                            consumer
+                        )
+                        if len(consumer_spans) < len(parameter_types) or (
+                                not variadic and
+                                len(consumer_spans) != len(parameter_types)):
+                            continue
+                        for (start, end), target_display in zip(
+                                consumer_spans, parameter_types):
+                            if body[start:end].strip() != synthetic:
+                                continue
+                            pointer_kind = self.type_emitter.display_pointer_kind(
+                                target_display
+                            )
+                            if pointer_kind is None:
+                                valid = False
+                                break
+                            if pointer_kind == "concrete":
+                                concrete_types.add(target_display)
+                            allowed.append((start, end))
+                        if not valid:
+                            break
+                    if not valid:
+                        continue
+
+                    return_display = self._function_result_type(function)
+                    for return_match in re.finditer(
+                            rf"\breturn\s+({re.escape(synthetic)})\s*;",
+                            masked[call_close + 1:block_end]):
+                        start = call_close + 1 + return_match.start(1)
+                        end = call_close + 1 + return_match.end(1)
+                        if return_display is None or \
+                                self.type_emitter.display_pointer_kind(
+                                    return_display) is None:
+                            valid = False
+                            break
+                        if self.type_emitter.display_pointer_kind(
+                                return_display) == "concrete":
+                            concrete_types.add(return_display)
+                        allowed.append((start, end))
+                    if not valid or len(concrete_types) != 1:
+                        continue
+
+                    null_compare = re.compile(
+                        rf"(?:\b{re.escape(synthetic)}\b\s*(?:==|!=)\s*nullptr|"
+                        rf"nullptr\s*(?:==|!=)\s*\b{re.escape(synthetic)}\b)"
+                    )
+                    allowed.extend(
+                        (item.start(), item.end())
+                        for item in null_compare.finditer(
+                            masked, call_close + 1, block_end
+                        )
+                    )
+                    if any(not any(start <= item.start() and item.end() <= end
+                                   for start, end in allowed)
+                           for item in occurrences):
+                        continue
+
+                    display = next(iter(concrete_types))
+                    declaration_type = self.type_emitter.display_type_expression(
+                        display
+                    )
+                    if declaration_type is None:
+                        continue
+                    line_start = body.rfind("\n", 0, producer_match.start()) + 1
+                    if body[line_start:producer_match.start()].strip():
+                        continue
+                    indent = body[line_start:producer_match.start()]
+                    replacement_argument = "&" + synthetic
+                    declaration = (
+                        f"{indent}{declaration_type} {synthetic} = nullptr;\n"
+                    )
+                    body = (
+                        body[:line_start] + declaration +
+                        body[line_start:argument_start] + replacement_argument +
+                        body[argument_end:]
+                    )
+                    self.issues.append(Issue(
+                        "exact_output_lifetime_materialization",
+                        f"call {producer_match.group(1)} argument {ordinal}: "
+                        f"{original} -> {synthetic} as {display}",
+                        address,
+                    ))
+                    self.stats["exact_output_lifetime_materializations"] += 1
+                    declared_types[synthetic] = display
+                    applied = True
+                    break
+                if applied:
+                    break
+            if not applied:
+                break
+        return body
+
+    @staticmethod
+    def _enclosing_block(masked: str, position: int) -> tuple[int, int] | None:
+        stack: list[int] = []
+        for index, value in enumerate(masked[:position]):
+            if value == "{":
+                stack.append(index)
+            elif value == "}" and stack:
+                stack.pop()
+        if not stack:
+            return None
+        opening = stack[-1]
+        closing = SourceTreeGenerator._matching_delimiter(
+            masked, opening, "{", "}"
+        )
+        return None if closing is None else (opening + 1, closing)
 
     def _body_declaration(self, address: str, code: str) -> str:
         symbol = function_symbol(address)

@@ -20,7 +20,7 @@ st::fn_00750080(void *this,undefined4 *param_1,int param_2,double param_3,int pa
   int *piVar1_mg0;
   int *local_8;
 
-  local_8 = this;
+  local_8 = st::pointer_boundary_cast<int *>(this);
   st::external_00000018((LPCRITICAL_SECTION)((int)this + 8));
   local_8 = nullptr;
   *param_1 = 0;
@@ -29,14 +29,14 @@ st::fn_00750080(void *this,undefined4 *param_1,int param_2,double param_3,int pa
     piVar1_mg0 = nullptr;
   }
   else {
-    piVar1_mg0 = st::fn_0074FC49(this_00,this,nullptr,(uint *)&local_8,param_2,param_3,param_4,
+    piVar1_mg0 = st::fn_0074FC49(this_00,st::pointer_boundary_cast<int *>(this),nullptr,(uint *)&local_8,param_2,param_3,param_4,
                               param_5,param_6,param_7,param_8,param_9,param_10,param_11);
   }
   if (piVar1_mg0 == nullptr) {
     local_8 = (int *)0x8007000e;
   }
   else {
-    *param_1 = piVar1_mg0;
+    *param_1 = st::machine_word_boundary_cast<undefined4>(piVar1_mg0);
   }
   piVar1 = local_8;
   st::external_00000019((LPCRITICAL_SECTION)((int)this + 8));
@@ -52,7 +52,7 @@ undefined4 __thiscall st::fn_00750104(void *this,AnonShape_00750104_599B328B *pa
   int *this_00;
   int *local_8;
 
-  local_8 = this;
+  local_8 = st::pointer_boundary_cast<int *>(this);
   st::external_00000018((LPCRITICAL_SECTION)((int)this + 8));
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(param_1->field_000C + 4))(&param_1->field_000C);
@@ -70,12 +70,12 @@ undefined4 __thiscall st::fn_00750104(void *this,AnonShape_00750104_599B328B *pa
     st::fn_0074DEC2((int *)&local_8);
   }
   if (local_8 == nullptr) {
-    st::fn_0074DF72(this_00,param_1);
+    st::fn_0074DF72(this_00,st::machine_word_boundary_cast<undefined4>(param_1));
   }
   else {
     st::fn_0074E122(this_00,local_8,(int)param_1);
   }
-  st::fn_00750287(this);
+  st::fn_00750287(st::pointer_boundary_cast<AnonShape_00750287_BC8A1854 *>(this));
   st::external_00000019((LPCRITICAL_SECTION)((int)this + 8));
   return 0;
 }
@@ -108,7 +108,7 @@ undefined4 __thiscall st::fn_0075019F(void *this,AnonShape_0075019F_4BD22E12 *pa
     st::fn_0074DF2B(this_00,local_8);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(param_1->field_000C + 8))(&param_1->field_000C);
-    st::fn_00750287(this);
+    st::fn_00750287(st::pointer_boundary_cast<AnonShape_00750287_BC8A1854 *>(this));
   }
   st::external_00000019((LPCRITICAL_SECTION)((int)this + 8));
   return local_c;
@@ -137,7 +137,7 @@ undefined4 __thiscall st::fn_0075022F(void *this,int *param_1)
     (**(code **)(*STField<int *>(this,0x60) + 8))(STField<int *>(this,0x60));
   }
   STField<int *>(this,0x60) = param_1;
-  st::fn_00750287(this);
+  st::fn_00750287(st::pointer_boundary_cast<AnonShape_00750287_BC8A1854 *>(this));
   st::external_00000019((LPCRITICAL_SECTION)((int)this + 8));
   return 0;
 }
@@ -205,7 +205,7 @@ undefined4 __thiscall st::fn_0075034D(void *this,undefined4 param_1,undefined4 p
   STField<undefined4>(this,0x68) = param_1;
   STField<undefined4>(this,0x6c) = param_2;
   STField<undefined4>(this,100) = 1;
-  st::fn_00750287(this);
+  st::fn_00750287(st::pointer_boundary_cast<AnonShape_00750287_BC8A1854 *>(this));
   st::external_00000019((LPCRITICAL_SECTION)((int)this + 8));
   return 0;
 }
@@ -564,7 +564,7 @@ void st::fn_00750F20(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,und
   while (iVar2 != -1) {
     *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = st::fn_00753B80(param_1,*piVar1,*(int *)(param_1->field_000C + 0x1c));
+    iVar2 = st::machine_word_boundary_cast<int>(st::fn_00753B80(param_1,*piVar1,*(int *)(param_1->field_000C + 0x1c)));
     piVar1 = (int *)(iVar2 + 4);
     *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) =
          0xffffffff;
@@ -600,8 +600,8 @@ void st::fn_00750FB0(AnonShape_00750FB0_15A3AC3E *param_1,undefined4 param_2,und
     while (iVar2 != -1) {
       *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar3 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,iVar2,
-                           *(int *)(param_1->field_000C + 0x1c));
+      iVar3 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,iVar2,
+                           *(int *)(param_1->field_000C + 0x1c)));
       local_EAX_125 =
            st::fn_00753C80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar3 + 8));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -621,7 +621,7 @@ int st::fn_00751100(uint *param_1,ushort *param_2)
 {
   int iVar1;
 
-  iVar1 = st::fn_00753EA0(*param_1,param_2,&param_2);
+  iVar1 = st::fn_00753EA0(*param_1,param_2,st::pointer_boundary_cast<undefined4 *>(&param_2));
   if ((iVar1 == 0) && (param_2 != nullptr)) {
     st::fn_00753CE0((AnonShape_00753CE0_1943F9C2 *)param_1[1],(uint)param_2);
   }
@@ -641,7 +641,7 @@ int st::fn_00751140(char *param_1,int param_2,undefined4 param_3,undefined4 para
 {
   int iVar1;
 
-  iVar1 = st::fn_00753F10(0,param_1,param_2,0,param_3,param_4);
+  iVar1 = st::fn_00753F10(0,st::machine_word_boundary_cast<int>(param_1),param_2,0,param_3,param_4);
   return iVar1;
 }
 
@@ -669,8 +669,8 @@ int st::fn_007516F0(int param_1,byte *param_2)
   undefined *puStack_c;
   undefined4 local_8;
 
-  puStack_c = &DAT_007a1e68;
-  puStack_10 = &st_image_0072D964;
+  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_007a1e68);
+  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
@@ -804,7 +804,7 @@ DWORD st::fn_00751980(int *param_1,ushort *param_2,undefined4 *param_3,uint para
   int iVar1;
   DWORD DVar2;
 
-  iVar1 = st::fn_00751B60(*param_1,param_2,&param_2);
+  iVar1 = st::fn_00751B60(*param_1,param_2,st::pointer_boundary_cast<undefined4 *>(&param_2));
   if (iVar1 == 0) {
     DVar2 = st::fn_00754360(param_1[1],(DWORD)param_2,param_3,param_4);
     return DVar2;
@@ -936,7 +936,7 @@ DWORD st::fn_00751BA0(int *param_1,ushort *param_2,undefined4 *param_3,uint para
   int iVar1;
   DWORD DVar2;
 
-  iVar1 = st::fn_00753BC0(*param_1,(undefined4 *)param_2,&param_2);
+  iVar1 = st::fn_00753BC0(*param_1,(undefined4 *)param_2,st::pointer_boundary_cast<undefined4 *>(&param_2));
   if (iVar1 == 0) {
     DVar2 = st::fn_00754360(param_1[1],(DWORD)param_2,param_3,param_4);
     return DVar2;
@@ -955,7 +955,7 @@ DWORD st::fn_00751BF0(int *param_1,ushort *param_2,undefined4 *param_3,uint para
   int iVar1;
   DWORD DVar2;
 
-  iVar1 = st::fn_007543F0((AnonShape_007543F0_E9DD5DAA *)*param_1,(undefined4 *)param_2,&param_2);
+  iVar1 = st::fn_007543F0((AnonShape_007543F0_E9DD5DAA *)*param_1,(undefined4 *)param_2,st::pointer_boundary_cast<undefined4 *>(&param_2));
   if (iVar1 == 0) {
     DVar2 = st::fn_00754360(param_1[1],(DWORD)param_2,param_3,param_4);
     return DVar2;
@@ -1124,7 +1124,7 @@ st::fn_007521B0(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,uint param_3,i
   pAVar2 = (AnonShape_006B4B20_3D4F4412 *)param_2->field_0004;
   uVar3 = param_2->field_0008;
   uVar13 = (uint)param_2->field_000E * (int)pAVar2 + 0x1f >> 3 & 0x1ffffffc;
-  puVar5 = st::fn_006AAC70((int)((int)&pAVar2->field_0x1 * uVar3 * 3) / 2 + 0x16);
+  puVar5 = st::pointer_boundary_cast<uint *>(st::fn_006AAC70((int)((int)&pAVar2->field_0x1 * uVar3 * 3) / 2 + 0x16));
   if (puVar5 == nullptr) {
     return 0xfffffffe;
   }
@@ -1195,7 +1195,7 @@ LAB_007522a2:
     pbVar12 = (byte *)(local_40 + local_24);
     pbVar12[-0xffffffff00000002] = 0;
     pbVar12[-0xffffffff00000001] = 0;
-    pbVar6 = &local_28->field_0x0 + param_3 + ((uVar3 - local_1c) + -1) * uVar13;
+    pbVar6 = st::pointer_boundary_cast<byte *>(&local_28->field_0x0 + param_3 + ((uVar3 - local_1c) + -1) * uVar13);
     if (0 < iVar10) {
       do {
         iVar16 = 0;
@@ -1479,7 +1479,7 @@ st::fn_007527A0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,c
   iVar15 = (int)(iVar1 + 7 + (iVar1 + 7 >> 0x1f & 7U)) >> 3;
   uVar13 = (uint)param_1->field_000E * iVar1 + 0x1f >> 3 & 0x1ffffffc;
   *param_5 = iVar15 * iVar2;
-  puVar3 = st::fn_006AAC10(iVar15 * iVar2);
+  puVar3 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC10(iVar15 * iVar2));
   if (puVar3 == nullptr) {
     return nullptr;
   }
@@ -1634,7 +1634,7 @@ byte * st::fn_00752A60(int param_1,int param_2,int param_3,int param_4,int param
 
   iVar10 = (int)(param_3 + 7 + (param_3 + 7 >> 0x1f & 7U)) >> 3;
   *param_7 = iVar10 * param_4;
-  pbVar2 = st::fn_006AAC10(iVar10 * param_4);
+  pbVar2 = st::pointer_boundary_cast<byte *>(st::fn_006AAC10(iVar10 * param_4));
   if (pbVar2 == nullptr) {
     return nullptr;
   }
@@ -2164,7 +2164,7 @@ int st::fn_00753B40(AnonShape_00753C80_4C8E695D *param_1)
     iVar3 = *(int *)(iVar3 + 0x18);
   }
   else {
-    iVar3 = st::fn_006D4A40(iVar3,iVar1,&param_1);
+    iVar3 = st::fn_006D4A40(iVar3,iVar1,st::pointer_boundary_cast<undefined4 *>(&param_1));
     if (iVar3 == 0) {
       *(AnonShape_00753C80_4C8E695D **)(pAVar2->field_0008 + 0x1c) = param_1;
       return iVar1;
@@ -2176,19 +2176,27 @@ int st::fn_00753B40(AnonShape_00753C80_4C8E695D *param_1)
 // 00753B80 FUN_00753b80
 #line 4 "decomp/ST.exe/functions/00753B80/decomp.c"
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
-   Evidence: exact anonymous structure fingerprint shared across functions */
+   Evidence: exact anonymous structure fingerprint shared across functions
 
-void st::fn_00753B80(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,int param_3)
+   [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=20, ignored=1, unknown=0 */
+
+undefined4 * st::fn_00753B80(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,int param_3)
 
 {
+  undefined4 *puVar1;
+
   if (param_3 == 0) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     param_2 = *(undefined4 *)(param_1->field_000C + 0x24);
   }
   param_1->field_0010 = param_2;
-  *(undefined4 *)(param_1->field_000C + 0x40 + param_3 * 8) =
-       *(undefined4 *)(*(int *)(param_1->field_0008 + 0x34) + param_1->field_0010);
-  return;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  puVar1 = (undefined4 *)(*(int *)(param_1->field_0008 + 0x34) + param_1->field_0010);
+  *(undefined4 *)(param_1->field_000C + 0x40 + param_3 * 8) = *puVar1;
+  return puVar1;
 }
 
 // 00753C80 FUN_00753c80
@@ -2286,7 +2294,7 @@ st::fn_00753F10(undefined4 param_1,int param_2,int param_3,undefined4 param_4,un
   int _Value;
   undefined1 *puVar1;
 
-  puVar1 = &stack0xfffffffc;
+  puVar1 = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffffc);
   context = (AnonShape_00754185_34BF31BE *)st::fn_00402B21(0xc1d2);
   if (context == nullptr) {
     _Value = -2;
@@ -2616,7 +2624,7 @@ void st::fn_00754185(AnonShape_00754185_34BF31BE *context)
   uint uVar5;
   int iVar6;
   int iVar7;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_ECX;
   int iVar8;
   uint uVar9;
@@ -2647,18 +2655,18 @@ void st::fn_00754185(AnonShape_00754185_34BF31BE *context)
   iVar7 = 0xfd;
   do {
     while( true ) {
-      puVar3 = &context->field_0x20;
+      puVar3 = st::pointer_boundary_cast<undefined1 *>(&context->field_0x20);
       *(int *)puVar3 = *(int *)puVar3 + -1;
       if (*(int *)puVar3 != 0) break;
       iVar4 = st::fn_00753FD0((AnonShape_00753FD0_4E1BB8DD *)context);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       iVar7 = extraout_ECX;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       iVar8 = extraout_ECX;
       if (iVar4 == 0) goto LAB_007541f2;
     }
     puVar3 = (undefined1 *)context->field_0018;
-    context->field_0018 = context->field_0018 + 1;
+    context->field_0018 = st::machine_word_boundary_cast<int>(context->field_0018 + 1);
     *puVar12 = *puVar3;
     puVar12 = puVar12 + 1;
     iVar7 = iVar7 + -1;
@@ -2704,17 +2712,17 @@ LAB_00754208:
   *piVar11 = *piVar11 - context->field_002C;
   if (SBORROW4(iVar7,context->field_002C) != *piVar11 < 0) {
     do {
-      context->field_0040 = context->field_0040 + 0x10;
+      context->field_0040 = st::machine_word_boundary_cast<int>(context->field_0040 + 0x10);
     } while (context->field_0040 < 0);
   }
   do {
     st::fn_0075415C();
     do {
-      puVar12 = &context->field_0x20;
+      puVar12 = st::pointer_boundary_cast<undefined1 *>(&context->field_0x20);
       *(int *)puVar12 = *(int *)puVar12 + -1;
       if (*(int *)puVar12 != 0) {
         puVar12 = (undefined1 *)context->field_0018;
-        context->field_0018 = context->field_0018 + 1;
+        context->field_0018 = st::machine_word_boundary_cast<int>(context->field_0018 + 1);
         uVar2 = *puVar12;
         *(undefined1 *)((int)&context[2].field_0030 + uVar9) = uVar2;
         if (uVar9 < 0xfc) {
@@ -2724,7 +2732,7 @@ LAB_00754208:
       }
       iVar6 = st::fn_00753FD0((AnonShape_00753FD0_4E1BB8DD *)context);
     } while (iVar6 != 0);
-    context->field_0030 = context->field_0030 + -1;
+    context->field_0030 = st::machine_word_boundary_cast<int>(context->field_0030 + -1);
 LAB_00754308:
     uVar9 = uVar9 + 1 & 0x1fff;
     puVar1 = &context->field_002C;
@@ -2809,8 +2817,8 @@ st::fn_007543F0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefin
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar3 = *(int *)(param_1->field_000C + 0x1c);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar3 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
-                         *(undefined4 *)(param_1->field_000C + 0x40 + iVar3 * 8),iVar3);
+    iVar3 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
+                         *(undefined4 *)(param_1->field_000C + 0x40 + iVar3 * 8),iVar3));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_007561D0((AnonShape_00753C80_4C8E695D *)param_1,
                  *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8));
@@ -2825,8 +2833,8 @@ st::fn_007543F0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefin
     while (iVar5 != -1) {
       *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar3 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,iVar5,
-                           *(int *)(param_1->field_000C + 0x1c));
+      iVar3 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,iVar5,
+                           *(int *)(param_1->field_000C + 0x1c)));
       iVar4 = st::fn_00753C80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar3 + 8));
       iVar5 = *(int *)(iVar4 + 0x10 + iVar3);
     }
@@ -2842,9 +2850,9 @@ st::fn_007543F0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefin
         iVar2 = param_1->field_000C;
         iVar5 = *(int *)(iVar2 + 0x1c);
       } while (*(int *)(iVar2 + 0x44 + iVar5 * 8) == -1);
-      iVar3 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
+      iVar3 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
                            *(undefined4 *)(iVar2 + 0x40 + *(int *)(iVar2 + 0x1c) * 8),
-                           *(int *)(iVar2 + 0x1c));
+                           *(int *)(iVar2 + 0x1c)));
     }
     iVar5 = param_1->field_000C;
     iVar3 = *(int *)(iVar5 + 0x44 + *(int *)(iVar5 + 0x1c) * 8) + 0x10 + iVar3;
@@ -3047,7 +3055,7 @@ void st::fn_00754B80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int pa
     }
     if (param_1->field_0084 < param_1->field_006C) {
       while (param_6 != 0) {
-        st::fn_007568D0((int)param_1,param_4,1);
+        st::fn_007568D0((int)param_1,st::machine_word_boundary_cast<undefined4>(param_4),1);
         iVar13 = 0;
         puVar10_mg2 = param_2;
         if (0 < param_1->field_0068) {
@@ -3078,7 +3086,7 @@ void st::fn_00754B80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int pa
         if (param_6 == 0) {
           return;
         }
-        st::fn_007568D0((int)pAVar6,param_4,1);
+        st::fn_007568D0((int)pAVar6,st::machine_word_boundary_cast<undefined4>(param_4),1);
         piVar11 = (int *)*param_4;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = nullptr;
@@ -3124,7 +3132,7 @@ undefined4 st::fn_00754F40(LPCSTR param_1)
     return 0;
   }
   uVar2 = 0;
-  BVar1 = st::external_0000004F(hFile,&local_24,0x20,(LPDWORD)&param_1,(LPOVERLAPPED)0x0);
+  BVar1 = st::external_0000004F(hFile,st::pointer_boundary_cast<LPVOID>(&local_24),0x20,(LPDWORD)&param_1,(LPOVERLAPPED)0x0);
   if ((((BVar1 != 0) && (param_1 == (LPCSTR)0x20)) && (local_24 == DAT_007f2c38)) &&
      ((local_20 & 0xff00) == 0x100)) {
     uVar2 = 1;
@@ -3217,13 +3225,13 @@ void st::fn_007550C0(AnonShape_007550C0_25940DF4 *param_1,undefined4 *param_2)
       param_1->field_0034 = 4;
       return;
     case 7:
-      param_1->field_0004 = st::fn_00402928;
-      param_1->field_0008 = st::fn_00757430;
+      param_1->field_0004 = st::machine_word_boundary_cast<undefined4>(st::fn_00402928);
+      param_1->field_0008 = st::machine_word_boundary_cast<undefined4>(st::fn_00757430);
       param_1->field_0034 = 0;
       return;
     case 8:
-      param_1->field_0004 = st::fn_00402F2C;
-      param_1->field_0008 = st::fn_00757430;
+      param_1->field_0004 = st::machine_word_boundary_cast<undefined4>(st::fn_00402F2C);
+      param_1->field_0008 = st::machine_word_boundary_cast<undefined4>(st::fn_00757430);
       param_1->field_0034 = 0;
     }
     return;
@@ -3274,7 +3282,7 @@ int st::fn_00755180(AnonShape_00755180_CB9F7747 *param_1,LPCSTR param_2,undefine
       return -5;
     }
     puVar1 = st::fn_006B04D0(0x80);
-    (*slotStorage)[0x13] = puVar1;
+    (*slotStorage)[0x13] = st::machine_word_boundary_cast<undefined4>(puVar1);
     (*slotStorage)[0x14] = (*slotStorage)[0x13];
     puVar1 = *slotStorage;
     if (puVar1[0x14] == 0) {
@@ -3310,9 +3318,9 @@ st::fn_007553F0(AnonShape_007553F0_ACB112C2 *param_1,int *param_2,undefined4 *pa
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1->field_0008 + 0x50);
   param_1->field_000C = iVar2;
-  iVar4 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
+  iVar4 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
                        *(undefined4 *)(iVar2 + 0x40 + *(int *)(iVar2 + 0x1c) * 8),
-                       *(int *)(iVar2 + 0x1c));
+                       *(int *)(iVar2 + 0x1c)));
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8);
   if (iVar2 == -1) {
@@ -3325,8 +3333,8 @@ st::fn_007553F0(AnonShape_007553F0_ACB112C2 *param_1,int *param_2,undefined4 *pa
   while (iVar2 != -1) {
     *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar4 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,iVar2,
-                         *(int *)(param_1->field_000C + 0x1c));
+    iVar4 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,iVar2,
+                         *(int *)(param_1->field_000C + 0x1c)));
     *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) =
          0xffffffff;
     iVar2 = *(int *)(iVar4 + 4);
@@ -3347,8 +3355,8 @@ LAB_00755464:
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = *(int *)(param_1->field_000C + 0x1c);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar4 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
-                           *(undefined4 *)(param_1->field_000C + 0x40 + iVar2 * 8),iVar2);
+      iVar4 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
+                           *(undefined4 *)(param_1->field_000C + 0x40 + iVar2 * 8),iVar2));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       st::fn_00757450((AnonShape_00755E10_BD685653 *)param_1,
                    *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8));
@@ -3427,11 +3435,11 @@ uint st::fn_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,int pa
   pAVar1 = (AnonShape_00755560_6DE97093 *)(uVar13 + 8);
   if ((int)param_1->field_0024 < (int)pAVar1) {
     piVar5 = st::fn_006BFB50((int *)param_1->field_001C,(uint)pAVar1);
-    param_1->field_001C = piVar5;
+    param_1->field_001C = st::machine_word_boundary_cast<undefined4>(piVar5);
     if (piVar5 == nullptr) {
       return 0xfffffffe;
     }
-    param_1->field_0024 = pAVar1;
+    param_1->field_0024 = st::machine_word_boundary_cast<undefined4>(pAVar1);
   }
   *(undefined4 *)param_1->field_001C = param_4;
   *(int *)(param_1->field_001C + 4) = param_3;
@@ -3527,7 +3535,7 @@ uint st::fn_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,int pa
     iVar16 = *(int *)&pAVar4->field_0x10 + iVar15;
     piVar8 = (int *)(iVar15 + uVar11);
     st::fn_0072DA70
-              (piVar8 + 4,(AnonPointee_TLOBaseTy_0607 *)(iVar6 + 0x10 + iVar16),
+              (st::pointer_boundary_cast<undefined4 *>(piVar8 + 4),(AnonPointee_TLOBaseTy_0607 *)(iVar6 + 0x10 + iVar16),
                *(short *)(iVar16 + 8) - iVar6);
     *piVar8 = uVar11;
     *(short *)(piVar8 + 2) = *(short *)(iVar16 + 8) - (short)iVar6;
@@ -3681,7 +3689,7 @@ int st::fn_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int par
   param_1->field_000C = *(undefined4 *)(param_1->field_0008 + 0x50);
   do {
     *(int *)(pAVar2->field_000C + 0x1c) = local_8;
-    iVar7 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)pAVar2,iVar7,local_8);
+    iVar7 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)pAVar2,iVar7,local_8));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
     pAVar6 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
@@ -3766,8 +3774,8 @@ int st::fn_00755BC0(AnonShape_00755BC0_D59C64DD *param_1,int param_2)
     do {
       *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar5 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,param_2,
-                           *(int *)(param_1->field_000C + 0x1c));
+      iVar5 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,param_2,
+                           *(int *)(param_1->field_000C + 0x1c)));
       *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) =
            0xffffffff;
       param_2 = *(int *)(iVar5 + 4);
@@ -3790,8 +3798,8 @@ int st::fn_00755BC0(AnonShape_00755BC0_D59C64DD *param_1,int param_2)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar5 = *(int *)(param_1->field_000C + 0x1c);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar7 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
-                         *(undefined4 *)(param_1->field_000C + 0x40 + iVar5 * 8),iVar5);
+    iVar7 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
+                         *(undefined4 *)(param_1->field_000C + 0x40 + iVar5 * 8),iVar5));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_00755D40((AnonShape_00755D40_9BC6D2DA *)param_1,iVar7,
                  *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8));
@@ -3883,8 +3891,8 @@ uint st::fn_00755DA0(uint param_1,undefined4 *param_2)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(*(int *)(param_1 + 0xc) + 0x1c);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar1 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
-                       *(undefined4 *)(*(int *)(param_1 + 0xc) + 0x40 + iVar1 * 8),iVar1);
+  iVar1 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
+                       *(undefined4 *)(*(int *)(param_1 + 0xc) + 0x40 + iVar1 * 8),iVar1));
   *param_2 = *(undefined4 *)
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               (*(int *)(*(int *)(param_1 + 0xc) + 0x44 +
@@ -3925,8 +3933,8 @@ int st::fn_00755E10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 
   iVar5 = param_1->field_000C;
   iVar4 = *(int *)(iVar5 + 0x1c);
   iVar7 = *(int *)(iVar5 + 0x44 + iVar4 * 8);
-  iVar4 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
-                       *(undefined4 *)(iVar5 + 0x40 + iVar4 * 8),iVar4);
+  iVar4 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,
+                       *(undefined4 *)(iVar5 + 0x40 + iVar4 * 8),iVar4));
   *(uint *)(param_1->field_0008 + 8) = *(uint *)(param_1->field_0008 + 8) | 0x10;
   iVar2 = st::fn_00757450(param_1,iVar7);
   iVar5 = param_1->field_000C;
@@ -3948,12 +3956,12 @@ int st::fn_00755E10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 
       uVar10 = *(undefined4 *)(*(int *)(iVar5 + 0x44 + *(int *)(iVar5 + 0x1c) * 8) + 0x10 + iVar4);
       *(int *)(iVar5 + 0x1c) = *(int *)(iVar5 + 0x1c) + 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar4 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,uVar10,
-                           *(int *)(param_1->field_000C + 0x1c));
+      iVar4 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,uVar10,
+                           *(int *)(param_1->field_000C + 0x1c)));
       iVar5 = param_1->field_0010;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar7 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
-                           *(int *)(param_1->field_000C + 0x1c));
+      iVar7 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
+                           *(int *)(param_1->field_000C + 0x1c)));
       if ((iVar9 <= (int)((int)*(short *)(iVar4 + 8) + (int)*(short *)(iVar7 + 8) + uVar6)) &&
          ((int)*(short *)(iVar4 + 8) <= (int)((int)*(short *)(iVar7 + 8) + uVar6))) {
         return 0;
@@ -4017,12 +4025,12 @@ int st::fn_00755E10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 
       }
       *(int *)(iVar5 + 0x1c) = *(int *)(iVar5 + 0x1c) + 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar5 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,uVar10,
-                           *(int *)(param_1->field_000C + 0x1c));
+      iVar5 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,uVar10,
+                           *(int *)(param_1->field_000C + 0x1c)));
       iVar1 = st::fn_00753C80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar5 + 8));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar4 = st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
-                           *(int *)(param_1->field_000C + 0x1c));
+      iVar4 = st::machine_word_boundary_cast<int>(st::fn_00753B80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
+                           *(int *)(param_1->field_000C + 0x1c)));
       if ((iVar9 <= (int)((int)*(short *)(iVar4 + 8) + (int)*(short *)(iVar5 + 8) + uVar6)) &&
          ((int)*(short *)(iVar5 + 8) <= (int)((int)*(short *)(iVar4 + 8) + uVar6))) {
         return 0;
@@ -4256,8 +4264,8 @@ void st::fn_00756E50(int *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x1c);
   STField<undefined4 *>(param_1,0x192) = puVar1;
-  *puVar1 = st::fn_007570F0;
-  puVar1[1] = st::fn_00757250;
+  *puVar1 = st::machine_word_boundary_cast<undefined4>(st::fn_007570F0);
+  puVar1[1] = st::machine_word_boundary_cast<undefined4>(st::fn_00757250);
   puVar1[2] = 0;
   st::fn_00756E90(param_1);
   return;
@@ -4322,11 +4330,11 @@ void st::fn_00757280(undefined4 *param_1,undefined4 param_2)
     uVar1 = (**(code **)*param_1)(param_1,1,0x1c);
     param_1[4] = uVar1;
   }
-  *(undefined **)(param_1[4] + 8) = &DAT_007572f0;
-  *(code **)(param_1[4] + 0xc) = st::fn_00757300;
-  *(code **)(param_1[4] + 0x10) = st::fn_00757330;
-  *(code **)(param_1[4] + 0x14) = st::fn_00757CD0;
-  *(undefined **)(param_1[4] + 0x18) = &DAT_00757350;
+  *(undefined **)(param_1[4] + 8) = st::pointer_boundary_cast<undefined *>(&DAT_007572f0);
+  *(code **)(param_1[4] + 0xc) = st::pointer_boundary_cast<code *>(st::fn_00757300);
+  *(code **)(param_1[4] + 0x10) = st::pointer_boundary_cast<code *>(st::fn_00757330);
+  *(code **)(param_1[4] + 0x14) = st::pointer_boundary_cast<code *>(st::fn_00757CD0);
+  *(undefined **)(param_1[4] + 0x18) = st::pointer_boundary_cast<undefined *>(&DAT_00757350);
   *(undefined4 *)(param_1[4] + 4) = 0x7fffffff;
   *(undefined4 *)param_1[4] = param_2;
   return;
@@ -4355,7 +4363,7 @@ int st::fn_00757360(AnonShape_00757360_9C23D284 *param_1,AnonShape_00757360_9B46
 
   local_8 = 0;
   if (param_2->field_0036 == '\0') {
-    st::fn_00730C40(&param_2->field_0036,0x7f2ce8);
+    st::fn_00730C40(st::pointer_boundary_cast<undefined1 *>(&param_2->field_0036),0x7f2ce8);
     param_2->field_0014 = 1;
   }
   local_4c.previous = g_currentExceptionFrame;
@@ -4363,7 +4371,7 @@ int st::fn_00757360(AnonShape_00757360_9C23D284 *param_1,AnonShape_00757360_9B46
   iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
     if (param_2->field_0014 != 0) {
-      param_1->field_0008->field_0008 = param_1->field_0008->field_0008 | 0x10;
+      param_1->field_0008->field_0008 = st::machine_word_boundary_cast<uint>(param_1->field_0008->field_0008 | 0x10);
       st::fn_006D4860
                 ((int)param_1->field_0008,param_2->field_0018,(undefined4 *)&param_2->field_0x20,
                  0x20);
@@ -4582,7 +4590,7 @@ DWORD st::fn_00757670(AnonShape_00757670_86D3B9A7 *param_1,int param_2)
     *piVar3 = param_1->field_0008->field_001C;
     param_1->field_0008->field_001C = iVar4;
     piVar3[1] = -2;
-    puVar1 = &param_1->field_0008->field_0x8;
+    puVar1 = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0008->field_0x8);
     *(uint *)puVar1 = *(uint *)puVar1 | 0x10;
   }
   return DVar2;
@@ -4598,10 +4606,10 @@ void st::fn_007576C0(undefined4 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,0,0x1c);
   STField<undefined4 *>(param_1,0x1a2) = puVar1;
-  *puVar1 = st::fn_007579C0;
-  puVar1[1] = st::fn_00757C90;
-  puVar1[2] = st::fn_00757710;
-  puVar1[3] = st::fn_007579A0;
+  *puVar1 = st::machine_word_boundary_cast<undefined4>(st::fn_007579C0);
+  puVar1[1] = st::machine_word_boundary_cast<undefined4>(st::fn_00757C90);
+  puVar1[2] = st::machine_word_boundary_cast<undefined4>(st::fn_00757710);
+  puVar1[3] = st::machine_word_boundary_cast<undefined4>(st::fn_007579A0);
   puVar1[4] = 0;
   puVar1[5] = 0;
   puVar1[6] = 1;
@@ -4628,7 +4636,7 @@ void st::fn_00757710(AnonShape_00757710_B64D966B *param_1)
 void st::fn_007579A0(int param_1)
 
 {
-  **(undefined4 **)(param_1 + 0x1a2) = st::fn_007579C0;
+  **(undefined4 **)(param_1 + 0x1a2) = st::machine_word_boundary_cast<undefined4>(st::fn_007579C0);
   return;
 }
 
@@ -4640,7 +4648,7 @@ void st::fn_00757C90(AnonShape_00757C90_A505B8DD *param_1)
   undefined4 *puVar1;
 
   puVar1 = param_1->field_01A2;
-  *puVar1 = st::fn_007579C0;
+  *puVar1 = st::machine_word_boundary_cast<undefined4>(st::fn_007579C0);
   puVar1[4] = 0;
   puVar1[5] = 0;
   puVar1[6] = 1;
@@ -4722,7 +4730,7 @@ undefined4 st::fn_00757D90(AnonShape_00757D90_5427B306 *param_1)
       if (bVar2 == 0xff) break;
       piVar1 = (int *)(param_1->field_01A6 + 0x5c);
       *piVar1 = *piVar1 + 1;
-      *puVar3 = pbVar5;
+      *puVar3 = st::machine_word_boundary_cast<undefined4>(pbVar5);
       puVar3[1] = iVar4;
       if (iVar4 == 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -4752,7 +4760,7 @@ undefined4 st::fn_00757D90(AnonShape_00757D90_5427B306 *param_1)
     if (uVar6 != 0) break;
     piVar1 = (int *)(param_1->field_01A6 + 0x5c);
     *piVar1 = *piVar1 + 2;
-    *puVar3 = pbVar5;
+    *puVar3 = st::machine_word_boundary_cast<undefined4>(pbVar5);
     puVar3[1] = iVar4;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -4760,7 +4768,7 @@ undefined4 st::fn_00757D90(AnonShape_00757D90_5427B306 *param_1)
     *(undefined4 *)(param_1->field_01A6 + 0x5c) = 0;
   }
   param_1->field_018E = uVar6;
-  *puVar3 = pbVar5;
+  *puVar3 = st::machine_word_boundary_cast<undefined4>(pbVar5);
   puVar3[1] = iVar4;
   return 1;
 }
@@ -4777,18 +4785,18 @@ void st::fn_00757E60(AnonShape_00759190_45B6ED67 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(*(code *)**(undefined4 **)param_1)(param_1,0,0x60);
   param_1->field_01A6 = (int)puVar1;
-  *puVar1 = st::fn_00759190;
-  *(code **)(param_1->field_01A6 + 4) = st::fn_00758170;
-  *(code **)(param_1->field_01A6 + 8) = st::fn_00759120;
-  *(code **)(param_1->field_01A6 + 0xc) = st::fn_00758100;
+  *puVar1 = st::machine_word_boundary_cast<undefined4>(st::fn_00759190);
+  *(code **)(param_1->field_01A6 + 4) = st::pointer_boundary_cast<code *>(st::fn_00758170);
+  *(code **)(param_1->field_01A6 + 8) = st::pointer_boundary_cast<code *>(st::fn_00759120);
+  *(code **)(param_1->field_01A6 + 0xc) = st::pointer_boundary_cast<code *>(st::fn_00758100);
   iVar2 = 0x10;
   do {
     iVar3 = iVar2 + 4;
-    *(code **)(iVar2 + param_1->field_01A6) = st::fn_00758100;
+    *(code **)(iVar2 + param_1->field_01A6) = st::pointer_boundary_cast<code *>(st::fn_00758100);
     iVar2 = iVar3;
   } while (iVar3 < 0x50);
-  *(code **)(param_1->field_01A6 + 0x10) = st::fn_00757EF0;
-  *(code **)(param_1->field_01A6 + 0x48) = st::fn_00758010;
+  *(code **)(param_1->field_01A6 + 0x10) = st::pointer_boundary_cast<code *>(st::fn_00757EF0);
+  *(code **)(param_1->field_01A6 + 0x48) = st::pointer_boundary_cast<code *>(st::fn_00758010);
   st::fn_00759190(param_1);
   return;
 }
@@ -4860,7 +4868,7 @@ undefined4 st::fn_00757EF0(AnonShape_00757EF0_9651DBEA *param_1)
       param_1->field_0117 = (ushort)local_14[10] * 0x100 + (ushort)local_14[0xb];
     }
   }
-  *puVar2 = pbVar4;
+  *puVar2 = st::machine_word_boundary_cast<undefined4>(pbVar4);
   puVar2[1] = iVar3;
   if (0 < iVar6) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -4934,7 +4942,7 @@ undefined4 st::fn_00758010(AnonShape_00758010_64471088 *param_1)
       param_1->field_011D = local_10[0xb];
     }
   }
-  *puVar2 = pbVar4;
+  *puVar2 = st::machine_word_boundary_cast<undefined4>(pbVar4);
   puVar2[1] = iVar3;
   if (0 < iVar6) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -4979,7 +4987,7 @@ undefined4 st::fn_00758100(AnonShape_00758100_FF0E5C9C *param_1)
     iVar4 = pAVar3->field_0004;
   }
   bVar2 = *pbVar5;
-  pAVar3->field_0000 = pbVar5 + 1;
+  pAVar3->field_0000 = st::machine_word_boundary_cast<undefined4>(pbVar5 + 1);
   pAVar3->field_0004 = iVar4 + -1;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (*(code *)param_1->field_0010->field_0010)(param_1,(uint)bVar1 * 0x100 + (uint)bVar2 + -2);
@@ -5057,7 +5065,7 @@ void st::fn_007596D0(int *param_1)
     }
   }
   if (0 < iVar4) {
-    iVar3 = st::fn_00760360(param_1,iVar4,iVar5);
+    iVar3 = st::fn_00760360(st::machine_word_boundary_cast<undefined4>(param_1),iVar4,iVar5);
     if (iVar3 < iVar5) {
       iVar3 = iVar3 / iVar4;
       if (iVar3 < 1) {
@@ -5070,7 +5078,7 @@ void st::fn_007596D0(int *param_1)
     for (piVar2 = *(int **)(iVar1 + 0x40); piVar2 != nullptr; piVar2 = (int *)piVar2[0xb]) {
       if (*piVar2 == 0) {
         if (iVar3 < (int)((piVar2[1] - 1U) / (uint)piVar2[3] + 1)) {
-          piVar2[4] = piVar2[3] * iVar3;
+          piVar2[4] = st::machine_word_boundary_cast<int>(piVar2[3] * iVar3);
           st::fn_00760370();
           piVar2[10] = 1;
         }
@@ -5088,7 +5096,7 @@ void st::fn_007596D0(int *param_1)
     for (piVar2 = *(int **)(iVar1 + 0x44); piVar2 != nullptr; piVar2 = (int *)piVar2[0xb]) {
       if (*piVar2 == 0) {
         if (iVar3 < (int)((piVar2[1] - 1U) / (uint)piVar2[3] + 1)) {
-          piVar2[4] = piVar2[3] * iVar3;
+          piVar2[4] = st::machine_word_boundary_cast<int>(piVar2[3] * iVar3);
           st::fn_00760370();
           piVar2[10] = 1;
         }
@@ -5124,7 +5132,7 @@ void st::fn_007599D0(undefined4 param_1,int *param_2,int param_3)
 
   iVar5 = 0;
   iVar1 = param_2[2];
-  iVar3 = param_2[6] * iVar1;
+  iVar3 = st::machine_word_boundary_cast<int>(param_2[6] * iVar1);
   iVar4 = param_2[4];
   if (0 < iVar4) {
     do {
@@ -5132,11 +5140,11 @@ void st::fn_007599D0(undefined4 param_1,int *param_2,int param_3)
       if (param_2[5] < iVar4 - iVar5) {
         iVar2 = param_2[5];
       }
-      iVar4 = param_2[7] - (param_2[6] + iVar5);
+      iVar4 = st::machine_word_boundary_cast<int>(param_2[7] - (param_2[6] + iVar5));
       if (iVar4 <= iVar2) {
         iVar2 = iVar4;
       }
-      iVar4 = param_2[1] - (param_2[6] + iVar5);
+      iVar4 = st::machine_word_boundary_cast<int>(param_2[1] - (param_2[6] + iVar5));
       if (iVar4 <= iVar2) {
         iVar2 = iVar4;
       }
@@ -5187,11 +5195,11 @@ void st::fn_00759BF0(undefined4 param_1,int *param_2,int param_3)
       if (param_2[5] < iVar4 - iVar5) {
         iVar2 = param_2[5];
       }
-      iVar4 = param_2[7] - (iVar5 + param_2[6]);
+      iVar4 = st::machine_word_boundary_cast<int>(param_2[7] - (iVar5 + param_2[6]));
       if (iVar4 <= iVar2) {
         iVar2 = iVar4;
       }
-      iVar4 = param_2[1] - (iVar5 + param_2[6]);
+      iVar4 = st::machine_word_boundary_cast<int>(param_2[1] - (iVar5 + param_2[6]));
       if (iVar4 <= iVar2) {
         iVar2 = iVar4;
       }
@@ -5230,7 +5238,7 @@ void st::fn_00759D90(int *param_1)
     st::fn_00759CA0(param_1,iVar1);
     iVar1 = iVar1 + -1;
   } while (-1 < iVar1);
-  st::fn_00760300(param_1,(int *)*param_1);
+  st::fn_00760300(st::machine_word_boundary_cast<undefined4>(param_1),(int *)*param_1);
   *param_1 = 0;
   st::fn_007603A0();
   return;
@@ -5570,7 +5578,7 @@ void st::fn_0075A350(AnonShape_0075A350_15A0BA61 *param_1,undefined4 param_2,uin
     }
   }
   *(undefined4 *)(iVar2 + 0x34) = 0;
-  *(int *)(iVar2 + 0x48) = param_1->field_012A + -1;
+  *(int *)(iVar2 + 0x48) = st::machine_word_boundary_cast<int>(param_1->field_012A + -1);
   if (*(int *)(iVar2 + 0x4c) == param_1->field_012E) {
     st::fn_0075A590((AnonShape_0075A180_7E367FD8 *)param_1);
   }
@@ -5587,7 +5595,7 @@ LAB_0075a413:
     }
     *(undefined4 *)(iVar2 + 0x30) = 0;
     *(uint *)(iVar2 + 0x40) = *(uint *)(iVar2 + 0x40) ^ 1;
-    *puVar1 = param_1->field_012A + 1;
+    *puVar1 = st::machine_word_boundary_cast<uint>(param_1->field_012A + 1);
     iVar3 = param_1->field_012A;
     *(undefined4 *)(iVar2 + 0x44) = 2;
     *(int *)(iVar2 + 0x48) = iVar3 + 2;
@@ -5673,7 +5681,7 @@ void st::fn_0075A590(AnonShape_0075A180_7E367FD8 *param_1)
   if (0 < param_1->field_001C) {
     piVar6 = (int *)(param_1->field_00D0 + 0xc);
     do {
-      uVar5 = piVar6[6] * *piVar6;
+      uVar5 = st::machine_word_boundary_cast<uint>(piVar6[6] * *piVar6);
       iVar3 = (int)uVar5 / param_1->field_012A;
       uVar7 = (uint)piVar6[8] % uVar5;
       if ((uint)piVar6[8] % uVar5 == 0) {
@@ -5731,14 +5739,14 @@ void st::fn_0075A670(int *param_1,undefined4 *param_2)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar3 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x74);
   STField<undefined4 *>(param_1,0x19a) = puVar3;
-  *puVar3 = st::fn_0075A780;
-  puVar3[2] = st::fn_0075A800;
+  *puVar3 = st::machine_word_boundary_cast<undefined4>(st::fn_0075A780);
+  puVar3[2] = st::machine_word_boundary_cast<undefined4>(st::fn_0075A800);
   puVar3[0x1c] = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == nullptr) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar6 = (**(code **)(*param_1 + 4))(param_1,1,0xa00);
-    piVar8 = puVar3 + 8;
+    piVar8 = st::pointer_boundary_cast<int *>(puVar3 + 8);
     iVar9 = 10;
     do {
       *piVar8 = iVar6;
@@ -5747,8 +5755,8 @@ void st::fn_0075A670(int *param_1,undefined4 *param_2)
       iVar9 = iVar9 + -1;
     } while (iVar9 != 0);
     puVar3[4] = 0;
-    puVar3[1] = &st_image_0075AAA0;
-    puVar3[3] = st::fn_0075A860;
+    puVar3[1] = st::machine_word_boundary_cast<undefined4>(&st_image_0075AAA0);
+    puVar3[3] = st::machine_word_boundary_cast<undefined4>(st::fn_0075A860);
     return;
   }
   piVar8 = param_1 + 7;
@@ -5778,9 +5786,9 @@ void st::fn_0075A670(int *param_1,undefined4 *param_2)
       param_1 = (int *)((int)param_1 + 1);
     } while ((int)param_1 < piVar7[7]);
   }
-  puVar3[1] = st::fn_0075AAB0;
-  puVar3[3] = st::fn_0075ACB0;
-  puVar3[4] = puVar3 + 0x12;
+  puVar3[1] = st::machine_word_boundary_cast<undefined4>(st::fn_0075AAB0);
+  puVar3[3] = st::machine_word_boundary_cast<undefined4>(st::fn_0075ACB0);
+  puVar3[4] = st::machine_word_boundary_cast<undefined4>(puVar3 + 0x12);
   return;
 }
 
@@ -5834,12 +5842,12 @@ void st::fn_0075A800(AnonShape_0075A800_65F17FFC *param_1)
     if (*(int *)&param_1->field_0x48 != 0) {
       iVar2 = st::fn_0075AE60((undefined4 *)param_1);
       if (iVar2 != 0) {
-        pAVar1->field_000C = st::fn_0075AF80;
+        pAVar1->field_000C = st::machine_word_boundary_cast<undefined4>(st::fn_0075AF80);
         *(undefined4 *)&param_1->field_0x94 = 0;
         return;
       }
     }
-    pAVar1->field_000C = st::fn_0075ACB0;
+    pAVar1->field_000C = st::machine_word_boundary_cast<undefined4>(st::fn_0075ACB0);
   }
   *(undefined4 *)&param_1->field_0x94 = 0;
   return;
@@ -5872,7 +5880,7 @@ undefined4 st::fn_0075A860(AnonShape_0075A860_7232E9BC *param_1,int *param_2)
 
   iVar1 = param_1->field_012E;
   iVar2 = param_1->field_019A;
-  uVar9 = param_1->field_014A - 1;
+  uVar9 = st::machine_word_boundary_cast<uint>(param_1->field_014A - 1);
   iVar8 = *(int *)(iVar2 + 0x18);
   if (iVar8 < *(int *)(iVar2 + 0x1c)) {
     do {
@@ -5941,8 +5949,8 @@ undefined4 st::fn_0075A860(AnonShape_0075A860_7232E9BC *param_1,int *param_2)
       *(undefined4 *)(iVar2 + 0x14) = 0;
     } while (iVar8 < *(int *)(iVar2 + 0x1c));
   }
-  uVar9 = param_1->field_008C + 1;
-  param_1->field_0094 = param_1->field_0094 + 1;
+  uVar9 = st::machine_word_boundary_cast<uint>(param_1->field_008C + 1);
+  param_1->field_0094 = st::machine_word_boundary_cast<int>(param_1->field_0094 + 1);
   param_1->field_008C = uVar9;
   if (uVar9 < (uint)param_1->field_012E) {
     st::fn_0075A7A0((AnonShape_0075A7A0_BCCC082B *)param_1);
@@ -6289,7 +6297,7 @@ int st::fn_0075AF80(AnonShape_0075AF80_4192DD78 *param_1,int *param_2)
 
   iVar4 = *(int *)&param_1->field_0x90;
   iVar8 = param_1->field_019A;
-  local_80 = param_1->field_012E - 1;
+  local_80 = st::machine_word_boundary_cast<uint>(param_1->field_012E - 1);
   iVar3 = *(int *)&param_1->field_0x88;
   local_8c = iVar8;
   if (iVar3 <= iVar4) {
@@ -6382,7 +6390,7 @@ int st::fn_0075AF80(AnonShape_0075AF80_4192DD78 *param_1,int *param_2)
               local_50 = local_1c;
               local_24 = local_18;
               local_14 = iVar3;
-              st::fn_00759F00(local_20,&local_18c,1);
+              st::fn_00759F00(st::pointer_boundary_cast<undefined4 *>(local_20),&local_18c,1);
               if (local_34 < local_60) {
                 local_50 = *local_48;
                 iVar3 = local_20[0x40];
@@ -6719,9 +6727,9 @@ LAB_0075b7ac:
     param_2 = (AnonShape_0075C180_8EED234B *)((int)param_2 << 8 | uVar3);
   }
   param_1[4] = param_3;
-  *param_1 = pbVar2;
+  *param_1 = st::machine_word_boundary_cast<undefined4>(pbVar2);
   param_1[1] = iVar1;
-  param_1[3] = param_2;
+  param_1[3] = st::machine_word_boundary_cast<undefined4>(param_2);
   return 1;
 }
 
@@ -6767,7 +6775,7 @@ uint st::fn_0075B800(undefined4 *param_1,AnonShape_0075C180_8EED234B *param_2,in
     } while (*piVar3 < (int)uVar2);
   }
   param_1[4] = iVar1;
-  param_1[3] = param_2;
+  param_1[3] = st::machine_word_boundary_cast<undefined4>(param_2);
   if (0x10 < param_5) {
     return 0;
   }
@@ -6787,8 +6795,8 @@ void st::fn_0075B8E0(undefined4 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x48);
   STField<undefined4 *>(param_1,0x1aa) = puVar1;
-  *puVar1 = st::fn_0075B920;
-  puVar1[1] = st::fn_0075BA30;
+  *puVar1 = st::machine_word_boundary_cast<undefined4>(st::fn_0075B920);
+  puVar1[1] = st::machine_word_boundary_cast<undefined4>(st::fn_0075BA30);
   puVar1 = puVar1 + 10;
   iVar2 = 4;
   do {
@@ -7077,14 +7085,14 @@ void st::fn_0075BED0(undefined4 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x40);
   STField<undefined4 *>(param_1,0x1aa) = puVar1;
-  *puVar1 = st::fn_0075BF40;
+  *puVar1 = st::machine_word_boundary_cast<undefined4>(st::fn_0075BF40);
   puVar1[0xb] = 0;
   puVar1[0xc] = 0;
   puVar1[0xd] = 0;
   puVar1[0xe] = 0;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,param_1[7] << 8);
-  param_1[0x26] = puVar1;
+  param_1[0x26] = st::machine_word_boundary_cast<undefined4>(puVar1);
   iVar3 = 0;
   if (0 < (int)param_1[7]) {
     do {
@@ -7573,7 +7581,7 @@ LAB_0075c882:
             piVar5 = local_8;
             goto LAB_0075ca4a;
           }
-          local_28 = &DAT_007a1e94 + (int)param_2;
+          local_28 = st::pointer_boundary_cast<int *>(&DAT_007a1e94 + (int)param_2);
           uVar8 = 0;
         }
         else {
@@ -7582,11 +7590,11 @@ LAB_0075c882:
              iVar7 == 0)) goto cf_break_loop_0075CB0B;
           iVar3 = iVar3 + -1;
           if (((int)pAVar10 >> ((byte)iVar3 & 0x1f) & 1U) == 0) {
-            local_28 = &DAT_007a1e94 + (int)param_2;
+            local_28 = st::pointer_boundary_cast<int *>(&DAT_007a1e94 + (int)param_2);
             uVar8 = local_20;
           }
           else {
-            local_28 = &DAT_007a1e94 + (int)param_2;
+            local_28 = st::pointer_boundary_cast<int *>(&DAT_007a1e94 + (int)param_2);
             uVar8 = local_18;
           }
         }
@@ -7632,7 +7640,7 @@ LAB_0075c882:
 LAB_0075ca4a:
     if (local_c != 0) {
       if ((int)param_2 <= local_14) {
-        local_8 = &DAT_007a1e94 + (int)param_2;
+        local_8 = st::pointer_boundary_cast<int *>(&DAT_007a1e94 + (int)param_2);
         do {
           puVar2 = (uint *)(local_1c + *local_8 * 4);
           if (*(int *)(local_1c + *local_8 * 4) != 0) {
@@ -7675,7 +7683,7 @@ cf_break_loop_0075CB0B:
   piVar5[3] = iVar3;
   piVar5[2] = (int)pAVar10;
   piVar5[5] = local_c;
-  piVar5[10] = piVar5[10] + -1;
+  piVar5[10] = st::machine_word_boundary_cast<int>(piVar5[10] + -1);
   return 1;
 }
 
@@ -7694,7 +7702,7 @@ void st::fn_0075CB40(undefined4 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar2 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x54);
   STField<undefined4 *>(param_1,0x1ae) = puVar2;
-  *puVar2 = st::fn_0075CBC0;
+  *puVar2 = st::machine_word_boundary_cast<undefined4>(st::fn_0075CBC0);
   iVar4 = 0;
   if (0 < (int)param_1[7]) {
     local_8 = (undefined4 *)(param_1[0x34] + 0x50);
@@ -7703,7 +7711,7 @@ void st::fn_0075CB40(undefined4 *param_1)
     do {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       puVar2 = (undefined4 *)(**(code **)*puVar1)(puVar1,1,0x100);
-      *local_8 = puVar2;
+      *local_8 = st::machine_word_boundary_cast<undefined4>(puVar2);
       iVar4 = iVar4 + 1;
       for (iVar3 = 0x40; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar2 = 0;
@@ -7732,7 +7740,7 @@ void st::fn_0075CDF0(int *param_1,int param_2)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar2 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x1c);
   STField<undefined4 *>(param_1,0x19e) = puVar2;
-  *puVar2 = st::fn_0075CE80;
+  *puVar2 = st::machine_word_boundary_cast<undefined4>(st::fn_0075CE80);
   puVar2[2] = 0;
   puVar2[3] = 0;
   if (param_1[0x13] != 0) {
@@ -7862,7 +7870,7 @@ void st::fn_0075D0B0(AnonShape_0075D0B0_63617DB8 *param_1)
             (param_1,pAVar1->field_000C + pAVar1->field_0018 * 4,
              in_stack_00000014 + *in_stack_00000018 * 4,uVar4);
   *in_stack_00000018 = *in_stack_00000018 + uVar4;
-  uVar4 = pAVar1->field_0018 + uVar4;
+  uVar4 = st::machine_word_boundary_cast<uint>(pAVar1->field_0018 + uVar4);
   pAVar1->field_0018 = uVar4;
   if ((uint)pAVar1->field_0010 <= uVar4) {
     pAVar1->field_0018 = 0;
@@ -7905,7 +7913,7 @@ void st::fn_0075D370(AnonShape_0075D370_6C1A68B3 *param_1,int *param_2,int *para
     local_8 = *(int *)&param_1->field_0xd0;
     local_c = 0;
     if (0 < *(int *)&param_1->field_0x1c) {
-      puVar5 = &pAVar1->field_0xc;
+      puVar5 = st::pointer_boundary_cast<undefined1 *>(&pAVar1->field_0xc);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0075D370_6C1A68B3 *)param_2;
       do {
@@ -7933,8 +7941,8 @@ void st::fn_0075D370(AnonShape_0075D370_6C1A68B3 *param_1,int *param_2,int *para
   (**(code **)(*(int *)&pAVar2->field_0x1b6 + 4))
             (pAVar2,&pAVar1->field_0xc,pAVar1->field_005C,param_5 + *param_6 * 4,uVar6);
   *param_6 = *param_6 + uVar6;
-  iVar4 = pAVar1->field_005C + uVar6;
-  pAVar1->field_0060 = pAVar1->field_0060 - uVar6;
+  iVar4 = st::machine_word_boundary_cast<int>(pAVar1->field_005C + uVar6);
+  pAVar1->field_0060 = st::machine_word_boundary_cast<undefined4>(pAVar1->field_0060 - uVar6);
   pAVar1->field_005C = iVar4;
   if (pAVar2->field_0126 <= iVar4) {
     *param_3 = *param_3 + 1;
@@ -7983,7 +7991,7 @@ void st::fn_0075D490(AnonShape_0075D490_1FEB0A4F *param_1,int param_2,undefined4
   undefined4 *local_8;
 
   puVar3 = (undefined4 *)*param_4;
-  iVar4 = param_1->field_01B2 + *(int *)(param_2 + 4);
+  iVar4 = st::machine_word_boundary_cast<int>(param_1->field_01B2 + *(int *)(param_2 + 4));
   uVar5 = (uint)*(byte *)(iVar4 + 0x96);
   bVar1 = *(byte *)(iVar4 + 0x8c);
   uVar8 = (uint)bVar1;
@@ -8047,7 +8055,7 @@ void st::fn_0075D590(AnonShape_0075D590_939A8180 *param_1,undefined4 param_2,int
     do {
       puVar2 = (undefined1 *)*puVar6;
       puVar5 = *(undefined1 **)(iVar4 + (int)puVar6);
-      puVar3 = puVar2 + param_1->field_0068;
+      puVar3 = st::pointer_boundary_cast<undefined1 *>(puVar2 + param_1->field_0068);
       for (; puVar2 < puVar3; puVar2 = puVar2 + 2) {
         uVar1 = *puVar5;
         puVar5 = puVar5 + 1;
@@ -8473,21 +8481,21 @@ void st::fn_0075DE90(AnonShape_0075DF10_BA4C6604 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   pAVar1 = (AnonNested_0075DF10_01B2_1F0F9C79 *)(*(code *)**(undefined4 **)param_1)(param_1,1,0x30);
   param_1->field_01B2 = pAVar1;
-  *(code **)pAVar1 = st::fn_0075DFE0;
+  *(code **)pAVar1 = st::pointer_boundary_cast<code *>(st::fn_0075DFE0);
   *(undefined4 *)&pAVar1->field_0x8 = 0;
   *(int *)&pAVar1[1].field_0x8 = *(int *)&param_1->field_0x70 * *(int *)&param_1->field_0x68;
   if (*(int *)&param_1->field_0x126 == 2) {
     uVar2 = *(undefined4 *)&pAVar1[1].field_0x8;
-    *(code **)&pAVar1->field_0x4 = st::fn_0075E000;
-    *(code **)&pAVar1->field_0xc = st::fn_0075E260;
+    *(code **)&pAVar1->field_0x4 = st::pointer_boundary_cast<code *>(st::fn_0075E000);
+    *(code **)&pAVar1->field_0xc = st::pointer_boundary_cast<code *>(st::fn_0075E260);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar2 = (**(code **)(*(int *)param_1 + 4))(param_1,1,uVar2);
     *(undefined4 *)(pAVar1 + 1) = uVar2;
     st::fn_0075DF10(param_1);
     return;
   }
-  *(code **)&pAVar1->field_0x4 = st::fn_0075E0C0;
-  *(code **)&pAVar1->field_0xc = st::fn_0075E100;
+  *(code **)&pAVar1->field_0x4 = st::pointer_boundary_cast<code *>(st::fn_0075E0C0);
+  *(code **)&pAVar1->field_0xc = st::pointer_boundary_cast<code *>(st::fn_0075E100);
   *(undefined4 *)(pAVar1 + 1) = 0;
   st::fn_0075DF10(param_1);
   return;
@@ -8592,7 +8600,7 @@ void st::fn_0075E000(AnonShape_0075E000_A9FEDC0C *param_1,undefined4 param_2,int
     pAVar1->field_0024 = 0;
   }
   *param_6 = *param_6 + uVar3;
-  pAVar1->field_002C = pAVar1->field_002C - uVar3;
+  pAVar1->field_002C = st::machine_word_boundary_cast<undefined4>(pAVar1->field_002C - uVar3);
   if (pAVar1->field_0024 == 0) {
     *param_3 = *param_3 + 1;
   }
@@ -9853,7 +9861,7 @@ void st::fn_0075F7D0(AnonShape_0075F7D0_BDBF0616 *param_1)
       if (0 < iVar2) {
         local_8 = 0;
         do {
-          iVar7 = st::fn_0075F9D0(param_1,local_c,local_18,iVar2 + -1);
+          iVar7 = st::fn_0075F9D0(st::machine_word_boundary_cast<undefined4>(param_1),local_c,local_18,iVar2 + -1);
           for (iVar9 = local_8; iVar9 < iVar3; iVar9 = iVar9 + iVar5) {
             iVar8 = 0;
             if (0 < iVar6) {
@@ -10061,7 +10069,7 @@ int * st::fn_0075FD10(undefined4 *param_1,int param_2)
     piVar5 = piVar4;
     do {
       piVar4 = piVar5 + 1;
-      pbVar1 = puVar6 + iVar3;
+      pbVar1 = st::pointer_boundary_cast<byte *>(puVar6 + iVar3);
       iVar3 = iVar3 + 1;
       *piVar5 = (int)((uint)*pbVar1 * -0x1fe + 0xfe01) / (param_2 * 0x200 + -0x200);
       piVar5 = piVar4;

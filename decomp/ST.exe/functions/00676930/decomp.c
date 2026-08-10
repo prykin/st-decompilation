@@ -6,6 +6,7 @@ void __cdecl FUN_00676930(uint param_1)
 {
   byte *puVar1;
   uint uVar2;
+  int iVar3;
   ushort *puVar4;
   uint *puVar5;
   uint *puVar6;
@@ -44,6 +45,7 @@ void __cdecl FUN_00676930(uint param_1)
     puVar5 = &DAT_0080c947;
     puVar6 = local_160;
     memmove(puVar6, puVar5, 0x20); /* compiler REP MOVS byte copy */
+    iVar3 = 0;
     thunk_FUN_004da390(g_allPlayers_007FA174,param_1,&DAT_0080c83e,0);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
@@ -51,7 +53,7 @@ void __cdecl FUN_00676930(uint param_1)
     puVar4 = &DAT_0080c8cd;
     do {
       if ((byte)(&DAT_0080c83f)[param_1] < 8) {
-        puVar1 = (byte *)thunk_FUN_0043e420(local_298,(&DAT_0080c83f)[param_1]);
+        puVar1 = (byte *)(thunk_FUN_0043e420(local_298,(&DAT_0080c83f)[param_1]));
         puVar7 = (byte *)(local_140);
         memmove(puVar7, puVar1, 0x138); /* compiler REP MOVS byte copy */
         puVar4[-2] = (short)local_140[0x25] + (short)local_140[0x21] + (short)local_140[0x1d] +

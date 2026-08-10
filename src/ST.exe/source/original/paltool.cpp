@@ -37,18 +37,18 @@ void __cdecl st::fn_0055DBF0(DDXContext *param_1,int param_2,int param_3)
   g_currentExceptionFrame = &local_48;
   errorCode = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (errorCode == 0) {
-    st::fn_006B0BA0((AnonPointee_ST3DSMAPContext_0004 *)param_1,local_448,0,0x100);
+    st::fn_006B0BA0(param_1,st::machine_word_boundary_cast<undefined4>(local_448),0,0x100);
     st::fn_007192D0((undefined4 *)param_1,local_448,0,0x100,param_2,param_3);
     g_currentExceptionFrame = local_48.previous;
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\paltool.cpp",0x1d,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\paltool.cpp"),0x1d,0,errorCode,st::mutable_c_string("%s"),
                              "DarkScreen");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\paltool.cpp",0x1f);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\paltool.cpp"),0x1f);
   return;
 }
 
@@ -87,12 +87,12 @@ st::fn_0055DCD0(undefined4 *param_1,int *param_2,cMf32 *param_3,char *param_4,in
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\paltool.cpp",0x4b,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\paltool.cpp"),0x4b,0,errorCode,st::mutable_c_string("%s"),
                              "SetPalette");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\paltool.cpp",0x4d);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\paltool.cpp"),0x4d);
   return;
 }
 

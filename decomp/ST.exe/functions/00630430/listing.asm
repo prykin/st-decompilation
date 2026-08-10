@@ -1,3 +1,5 @@
+STManRuinC::GetMessage:
+00630430  55                        PUSH EBP
 00630431  8B EC                     MOV EBP,ESP
 00630433  83 EC 54                  SUB ESP,0x54
 00630436  A1 F8 8D 85 00            MOV EAX,[0x00858df8]

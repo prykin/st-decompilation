@@ -34,7 +34,7 @@ void FUN_007498ec(int *param_1,AnonShape_0074987C_9BF4FFD0 *param_2)
       piVar2 = &DAT_007a16c0;
     }
     else {
-      piVar2 = &DAT_0079e368;
+      piVar2 = (int *)&DAT_0079e368;
     }
   }
   else {

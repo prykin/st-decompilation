@@ -75,12 +75,12 @@ int __thiscall st::fn_0065D2A0(AiFltClassTy *this,undefined4 *param_1)
   }
   g_currentExceptionFrame = local_50.previous;
   st::fn_0040220C(local_c);
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_flt.cpp",0x31,0,iVar4,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x31,0,iVar4,st::mutable_c_string("%s"),
                              "AiFltClassTy::InitData");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar4,0,"E:\\__titans\\ai\\ai_flt.cpp",0x32);
+  st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x32);
   return iVar4;
 }
 
@@ -125,12 +125,12 @@ byte * __thiscall st::fn_0065D4B0(AiFltClassTy *this,uint *param_1)
     return (byte *)pAVar3_mg1;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_flt.cpp",0x4f,0,errorCode,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x4f,0,errorCode,st::mutable_c_string("%s"),
                              "AiFltClassTy::PrepareToSave");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_flt.cpp",0x50);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x50);
   return nullptr;
 }
 
@@ -168,12 +168,12 @@ void __thiscall st::fn_0065D760(AiFltClassTy *this,uint objPtr,int param_2)
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     if (iVar5 != -100) {
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_flt.cpp",0xa5,0,iVar5,"%s",
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0xa5,0,iVar5,st::mutable_c_string("%s"),
                                  "AiFltClassTy::_AddObjFlt");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\ai\\ai_flt.cpp",0xa6);
+      st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0xa6);
     }
     return;
   }
@@ -198,7 +198,7 @@ void __thiscall st::fn_0065D760(AiFltClassTy *this,uint objPtr,int param_2)
     if (((bVar2) && (pAVar3->field_007B != 1)) ||
        (iVar7 = (**(code **)(*(int *)objPtr + 0x2c))(), iVar7 == 0x78)) {
       st::fn_006A5E40
-                (-100,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x9b);
+                (-100,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x9b);
     }
     array = st::fn_006AE290(nullptr,1,2,1);
     st::fn_006AE1C0(array,(void *)(objPtr + 0x32));
@@ -269,10 +269,10 @@ int __thiscall st::fn_0065F1D0(AiFltClassTy *this,short *param_1)
   iVar5 = st::fn_0072D7F0(local_74.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_74.previous;
-    iVar10 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_flt.cpp",0x2df,0,iVar5,"%s",
+    iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x2df,0,iVar5,st::mutable_c_string("%s"),
                                 "AiFltClassTy::AppendZone");
     if (iVar10 == 0) {
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\ai\\ai_flt.cpp",0x2e0);
+      st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x2e0);
       return iVar5;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -296,8 +296,8 @@ int __thiscall st::fn_0065F1D0(AiFltClassTy *this,short *param_1)
       iVar7 = (int)*psVar9;
       local_30 = local_14 + -1 + local_8;
       iVar8 = (int)psVar9[1];
-      local_20 = psVar9[3] + -1 + iVar7;
-      local_2c = psVar9[4] + -1 + iVar8;
+      local_20 = st::machine_word_boundary_cast<int>(psVar9[3] + -1 + iVar7);
+      local_2c = st::machine_word_boundary_cast<int>(psVar9[4] + -1 + iVar8);
       if ((((iVar11 < iVar7) || (local_20 < iVar11)) || (local_8 < iVar8)) ||
          (((local_2c < local_8 || (iVar6 = local_10 + -1 + iVar11, iVar6 < iVar7)) ||
           ((psVar9[3] + -1 + iVar7 < iVar6 ||
@@ -315,9 +315,9 @@ cf_common_exit_0065F468:
       local_20 = local_14 + -1 + local_8;
       if (((((iVar7 < iVar11) || (iVar6 = local_10 + -1 + iVar11, iVar6 < iVar7)) ||
            (iVar8 < local_8)) ||
-          ((local_20 < iVar8 || (iVar1 = psVar9[3] + -1 + iVar7, iVar1 < iVar11)))) ||
+          ((local_20 < iVar8 || (iVar1 = st::machine_word_boundary_cast<int>(psVar9[3] + -1 + iVar7), iVar1 < iVar11)))) ||
          ((iVar6 < iVar1 ||
-          ((iVar6 = psVar9[4] + -1 + iVar8, iVar6 < local_8 || (local_20 < iVar6)))))) {
+          ((iVar6 = st::machine_word_boundary_cast<int>(psVar9[4] + -1 + iVar8), iVar6 < local_8 || (local_20 < iVar6)))))) {
         bVar4 = false;
       }
       else {
@@ -348,8 +348,8 @@ cf_common_exit_0065F468:
           }
           if (!bVar4) goto LAB_0065f3c9;
         }
-        iVar7 = psVar9[3] + -1 + (int)*psVar9;
-        local_2c = psVar9[1] + -1 + (int)psVar9[4];
+        iVar7 = st::machine_word_boundary_cast<int>(psVar9[3] + -1 + (int)*psVar9);
+        local_2c = st::machine_word_boundary_cast<int>(psVar9[1] + -1 + (int)psVar9[4]);
         local_30 = local_10 + -1 + iVar11;
         iVar8 = local_14 + -1 + local_8;
         if (iVar11 < *psVar9) {
@@ -414,10 +414,10 @@ int __thiscall st::fn_0065F660(AiFltClassTy *this,short *param_1,int param_2)
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_flt.cpp",0x303,0,iVar6,"%s",
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x303,0,iVar6,st::mutable_c_string("%s"),
                                "AiFltClassTy::AppendPoint");
     if (iVar8 == 0) {
-      st::fn_006A5E40(iVar6,0,"E:\\__titans\\ai\\ai_flt.cpp",0x304);
+      st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x304);
       return iVar6;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -572,7 +572,7 @@ st::fn_00660180
   }
   if (pSVar4 == nullptr) {
     st::fn_006A5E40
-              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x467);
+              (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x467);
   }
   else {
     pSVar4->sub_00498D20(6,(short)&local_1c);
@@ -613,9 +613,9 @@ void __thiscall st::fn_006618E0(AiFltClassTy *this)
   int iVar5;
   DArrayTy *array;
   int iVar6;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
   InternalExceptionFrame local_68;
   undefined4 local_24;
@@ -633,7 +633,7 @@ void __thiscall st::fn_006618E0(AiFltClassTy *this)
     uVar4 = st::fn_0040343B(this);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     iVar7 = CONCAT22(extraout_var,uVar4);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     if ((0 < iVar7) &&
        (local_20 = iVar7, local_c = st::fn_004057E5((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
        (int)this->field_0179 < iVar7 - local_c)) {
@@ -645,7 +645,7 @@ void __thiscall st::fn_006618E0(AiFltClassTy *this)
       local_EAX_154 = st::fn_0072D7F0(local_68.jumpBuffer,0);
       pAVar3 = local_1c;
       if (local_EAX_154 == 0) {
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         local_8 = (DArrayTy *)st::fn_004018CF(local_1c,extraout_EDX_00);
         if (local_8 != nullptr) {
           local_14 = 0;
@@ -732,7 +732,7 @@ LAB_00661a96:
           local_8 = nullptr;
           if (array != nullptr) {
             if (array->count != 0) {
-              st::fn_0040439A(pAVar3->field_0284,&array->flags);
+              st::fn_0040439A(pAVar3->field_0284,st::pointer_boundary_cast<uint *>(&array->flags));
             }
             if (array != nullptr) {
               st::fn_006AE110(array);
@@ -751,12 +751,12 @@ LAB_00661a96:
         st::fn_006AE110(local_10);
         local_10 = nullptr;
       }
-      iVar6 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_flt.cpp",0x6e9,0,local_EAX_154,
-                                 "%s","AiFltClassTy::GoToRepair");
+      iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x6e9,0,local_EAX_154,
+                                 st::mutable_c_string("%s"),"AiFltClassTy::GoToRepair");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      st::fn_006A5E40(local_EAX_154,0,"E:\\__titans\\ai\\ai_flt.cpp",0x6ea);
+      st::fn_006A5E40(local_EAX_154,0,st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x6ea);
     }
   }
   return;
@@ -817,33 +817,33 @@ int __thiscall st::fn_00662240(AiFltClassTy *this,uint *param_1)
   int local_EAX_6953;
   int iVar20;
   uint uVar21;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_04;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_05;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_06;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_07;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_08;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_09;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_10;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_11;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_12;
   byte *puVar22;
   STWorldObject *this_02;
@@ -873,10 +873,10 @@ int __thiscall st::fn_00662240(AiFltClassTy *this,uint *param_1)
   if (local_EAX_36 != 0) {
     g_currentExceptionFrame = local_74.previous;
     local_EAX_6953 =
-         st::fn_006AD4D0("E:\\__titans\\ai\\ai_flt.cpp",0x98a,0,local_EAX_36,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x98a,0,local_EAX_36,st::mutable_c_string("%s"),
                             "AiFltClassTy::GetAiMess");
     if (local_EAX_6953 == 0) {
-      st::fn_006A5E40(local_EAX_36,0,"E:\\__titans\\ai\\ai_flt.cpp",0x98b);
+      st::fn_006A5E40(local_EAX_36,0,st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0x98b);
       return local_EAX_36;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1073,7 +1073,7 @@ LAB_00663af0:
       }
       if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
         local_EAX_225 = st::fn_0040413D((byte *)this_00->field_0024,GVar6);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         iVar20 = extraout_EDX_00;
       }
       else {
@@ -1085,7 +1085,7 @@ LAB_00663af0:
         }
         if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
           local_EAX_225 = st::fn_0040469C(this_00->field_0024,GVar6);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           iVar20 = extraout_EDX_01;
         }
         else {
@@ -1112,7 +1112,7 @@ LAB_00663af0:
           }
           else {
             local_EAX_225 = st::fn_00401799(this_00->field_0024,GVar6);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             iVar20 = extraout_EDX_02;
           }
         }
@@ -1387,7 +1387,7 @@ LAB_0066263e:
       }
       if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
         local_EAX_1968 = st::fn_0040413D((byte *)this_00->field_0024,GVar6);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         iVar20 = extraout_EDX_03;
       }
       else {
@@ -1399,7 +1399,7 @@ LAB_0066263e:
         }
         if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
           local_EAX_1968 = st::fn_0040469C(this_00->field_0024,GVar6);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           iVar20 = extraout_EDX_04;
         }
         else {
@@ -1426,7 +1426,7 @@ LAB_0066263e:
           }
           else {
             local_EAX_1968 = st::fn_00401799(this_00->field_0024,GVar6);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             iVar20 = extraout_EDX_05;
           }
         }
@@ -1533,7 +1533,7 @@ LAB_0066263e:
       }
       if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
         local_EAX_3436 = st::fn_0040413D((byte *)local_c->field_0024,GVar5);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         iVar20 = extraout_EDX_09;
       }
       else {
@@ -1545,7 +1545,7 @@ LAB_0066263e:
         }
         if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
           local_EAX_3436 = st::fn_0040469C(local_c->field_0024,GVar5);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           iVar20 = extraout_EDX_10;
         }
         else {
@@ -1571,7 +1571,7 @@ LAB_0066263e:
           }
           else {
             local_EAX_3436 = st::fn_00401799(local_c->field_0024,GVar5);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             iVar20 = extraout_EDX_11;
           }
         }
@@ -1671,7 +1671,7 @@ LAB_00663076:
     }
     if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
       local_EAX_2623 = st::fn_0040413D((byte *)local_c->field_0024,GVar5);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar24 = extraout_EDX_06;
     }
     else {
@@ -1683,7 +1683,7 @@ LAB_00663076:
       }
       if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
         local_EAX_2623 = st::fn_0040469C(local_c->field_0024,GVar5);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar24 = extraout_EDX_07;
       }
       else {
@@ -1709,7 +1709,7 @@ LAB_00663076:
         }
         else {
           local_EAX_2623 = st::fn_00401799(local_c->field_0024,GVar5);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar24 = extraout_EDX_08;
         }
       }
@@ -2046,7 +2046,7 @@ LAB_00663504:
           return 0;
         }
         if (uVar3 != 0x10) {
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           st::fn_00401EF1((AnonShape_0065DA10_8B0AA883 *)local_c,extraout_EDX);
           g_currentExceptionFrame = local_74.previous;
           return 0;
@@ -2054,12 +2054,12 @@ LAB_00663504:
       }
     }
     else if (uVar3 != 0x8000) {
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       st::fn_00401EF1((AnonShape_0065DA10_8B0AA883 *)local_c,extraout_EDX);
       g_currentExceptionFrame = local_74.previous;
       return 0;
     }
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     st::fn_0040148D((AnonShape_0065FD00_EB74ED0C *)local_c,extraout_EDX);
     g_currentExceptionFrame = local_74.previous;
     return 0;
@@ -2076,7 +2076,7 @@ LAB_006636da:
     else {
       if (sVar4 != 3) goto LAB_006636da;
       iVar19 = st::fn_0040383C(iVar20);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       iVar20 = extraout_EDX_12;
     }
     local_10 = (DArrayTy *)st::fn_004059B6(this_00,iVar20,iVar19);
@@ -2173,7 +2173,7 @@ LAB_0066380d:
   case 0x76:
     if (local_c->field_007B == -0x8000) {
       STField<undefined2>(param_1,0xf) = 0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       pDVar17 = (DArrayTy *)st::fn_004018CF(local_c,extraout_EDX);
       if (pDVar17 != nullptr) {
         uVar24 = 0;
@@ -2251,9 +2251,9 @@ int __thiscall st::fn_00667D90(AiFltClassTy *this,STMessage *message)
   STGroupBoatC *this_01;
   int iVar6;
   int iVar7;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
   InternalExceptionFrame local_54;
   AiFltClassTy *local_10;
@@ -2267,13 +2267,13 @@ int __thiscall st::fn_00667D90(AiFltClassTy *this,STMessage *message)
   this_00 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_flt.cpp",0xeca,0,iVar5,
-                               "AiFltClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0xeca,0,iVar5,
+                               st::mutable_c_string("AiFltClassTy::GetMessage error mess->id == %lX Name=%d"),message->id,
                                local_10->field_0018);
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar5,0,"E:\\__titans\\ai\\ai_flt.cpp",0xecb);
+    st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0xecb);
     return 0xffff;
   }
   local_10->field_0280 = g_playSystem_00802A38->field_00E4;
@@ -2284,9 +2284,9 @@ int __thiscall st::fn_00667D90(AiFltClassTy *this,STMessage *message)
     }
     else if (SVar1 < 4) {
       if (SVar1 == MESS_SHARED_0003) {
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         st::fn_00401CDF((AnonShape_0065D6E0_0F9074F6 *)local_10,extraout_EDX);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         st::fn_00404C41((AnonShape_0065D720_52DE2AAB *)this_00,extraout_EDX_00);
         st::fn_0040220C(this_00);
       }
@@ -2301,10 +2301,10 @@ int __thiscall st::fn_00667D90(AiFltClassTy *this,STMessage *message)
         }
       }
       else if (SVar1 == MESS_ID_CREATE) {
-        puVar2 = (message->arg0).ptr;
+        puVar2 = st::pointer_boundary_cast<undefined4 *>((message->arg0).ptr);
         if (puVar2 == nullptr) {
           st::fn_006A5E40
-                    (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0xe70);
+                    (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_flt.cpp"),0xe70);
         }
         st::fn_0040215D(this_00,puVar2);
         if (puVar2[3] == 0) {
@@ -2317,16 +2317,16 @@ int __thiscall st::fn_00667D90(AiFltClassTy *this,STMessage *message)
           uVar4 = st::fn_00401E97(*(char *)&this_00->field_0024,1,nullptr);
           this_00->field_007D = uVar4;
           st::fn_00404B3D(this_00);
-          uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          uVar5 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
           this_00->field_001C = uVar5;
           this_00->field_008B = (uVar5 >> 0x10 & 7) + 8;
-          uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          uVar5 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
           this_00->field_001C = uVar5;
           this_00->field_01FB = (uVar5 >> 0x10) % 0x1a + 0x19;
-          uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          uVar5 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
           this_00->field_001C = uVar5;
           this_00->field_0203 = (uVar5 >> 0x10) % 0x1a + 0x19;
-          st::fn_004049A8(this_00->field_020B,st::fn_004013CF);
+          st::fn_004049A8(this_00->field_020B,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_004013CF));
           this_00->field_0170 = *(short *)&this_00->field_022F->field_0xc;
           this_00->field_0127 = *(undefined2 *)&this_00->field_0223->field_0xc;
         }
@@ -2358,7 +2358,7 @@ int __thiscall st::fn_00667D90(AiFltClassTy *this,STMessage *message)
       if (SVar1 != MESS_AIFLTCLASSTY_5D99) goto LAB_00668010;
       (message->arg0).words.low = 1;
     }
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     st::fn_00403A1C((AnonShape_00661CA0_93A030EF *)local_10,extraout_EDX,(int)message);
   }
 LAB_00668010:

@@ -94,7 +94,7 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     iVar5 = 1;
     local_184[1] = 1;
     local_184[0] = 1;
-    pCVar6 = st::fn_0040577C("BUT_FILEOPT",0);
+    pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_FILEOPT"),0);
     pCVar6 = st::fn_006F2C00(pCVar6,iVar5,uVar9);
     puVar7 = st::fn_00709AF0
                        (PTR_00806794,CASE_1,pCVar6,uVar10,bVar11,iVar12,iVar13,puVar14);
@@ -123,7 +123,7 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     local_c8 = 1;
     local_124 = local_164;
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
+              ((SystemClassTy *)this_00,2,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_184),1);
     if ((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
        (DAT_0080874f == '\0')) {
       bVar2 = true;
@@ -140,7 +140,7 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     local_d0 = 0x271a;
     local_f4 = 0x271a;
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
+              ((SystemClassTy *)this_00,2,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_184),1);
     local_d0 = 0x2718;
     local_f4 = 0x2718;
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 3) + 0xd2;
@@ -148,7 +148,7 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     local_15c = 0xb901;
     local_11c = 0xb902;
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
+              ((SystemClassTy *)this_00,2,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_184),1);
     if ((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
        (DAT_0080874f == '\0')) {
       bVar11 = 1;
@@ -163,23 +163,23 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     local_15c = 0xb903;
     local_11c = 0xb904;
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
+              ((SystemClassTy *)this_00,2,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_184),1);
     local_184[3] = DAT_00806734 + -0x1a;
     local_184[2] = g_nWidth_00806730 + -0x32;
     local_184[0] = 1;
     local_174 = 0x28;
     local_170 = 0x12;
     if (DAT_0080874e == '\x03') {
-      local_60 = st::fn_0070AA70(g_cMf32_00806790,"BUT_OHELPMSK",0,1);
+      local_60 = st::fn_0070AA70(g_cMf32_00806790,st::mutable_c_string("BUT_OHELPMSK"),0,1);
       local_5c = st::fn_0070A6F0
-                           (g_cMf32_00806790,0x12,"BUT_OHELPMSK",1);
+                           (g_cMf32_00806790,0x12,st::mutable_c_string("BUT_OHELPMSK"),1);
     }
     local_d0 = 0x2739;
     local_f4 = 0x2739;
     local_15c = 0xb907;
     local_11c = 0xb908;
     (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
+              ((SystemClassTy *)this_00,2,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_184),1);
     st::fn_004021C6();
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x11f,nullptr,nullptr,0,1);
@@ -255,12 +255,12 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_1c8.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\tintersys.cpp",0xb3,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tintersys.cpp"),0xb3,0,iVar3,st::mutable_c_string("%s"),
                              "InterSystemC::CreateInterfObjects");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\tintersys.cpp",0xb3);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\tintersys.cpp"),0xb3);
   return 0xfffffffc;
 }
 
@@ -305,12 +305,12 @@ void st::fn_00542D80(void)
     return;
   }
   g_currentExceptionFrame = local_68.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\tintersys.cpp",0xca,0,errorCode,
-                             "%s","CreateInterSystem");
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tintersys.cpp"),0xca,0,errorCode,
+                             st::mutable_c_string("%s"),"CreateInterSystem");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\tintersys.cpp",0xca);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\tintersys.cpp"),0xca);
   return;
 }
 
@@ -353,12 +353,12 @@ int __thiscall st::fn_00542F40(InterSystemC *this,STMessage *message)
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar12 = st::fn_006AD4D0("E:\\__titans\\Andrey\\tintersys.cpp",0x11f,0,iVar3,
-                                "%s","InterSystemC::GetMessage");
+    iVar12 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tintersys.cpp"),0x11f,0,iVar3,
+                                st::mutable_c_string("%s"),"InterSystemC::GetMessage");
     if (iVar12 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\tintersys.cpp",0x11f);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\tintersys.cpp"),0x11f);
     return 0xffff;
   }
   st::fn_006E5F00((SystemClassTy *)local_8,message);
@@ -388,7 +388,7 @@ int __thiscall st::fn_00542F40(InterSystemC *this,STMessage *message)
           uVar3 = _DAT_00807348 & 0xff;
           piVar10 = nullptr;
           iVar9 = 1;
-          pCVar4 = st::fn_0040577C("PANEL_BKGND",0);
+          pCVar4 = st::fn_0040577C(st::mutable_c_string("PANEL_BKGND"),0);
           pCVar4 = st::fn_006F2C00(pCVar4,iVar9,uVar3);
           local_c = (tagBITMAPINFO *)st::fn_006F1CE0(g_cMf32_00806790,1,pCVar4,piVar10,iVar13);
           st::fn_00403738(0,0,'\x01',local_c);
@@ -435,7 +435,7 @@ switchD_00543107_caseD_b904:
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    piVar10 = (message->arg1).ptr;
+    piVar10 = st::pointer_boundary_cast<int *>((message->arg1).ptr);
     st::fn_006B5F80((int *)g_ddxContext_008075A8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
     SVar1 = message->id;
     if (SVar1 == MESS_INTERSYSTEMC_B900) {
@@ -497,7 +497,7 @@ LAB_00543291:
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
-      piVar10 = (message->arg1).ptr;
+      piVar10 = st::pointer_boundary_cast<int *>((message->arg1).ptr);
       st::fn_006B5F80((int *)g_ddxContext_008075A8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
       puVar14 = nullptr;
       iVar11 = 0;
@@ -506,7 +506,7 @@ LAB_00543291:
       uVar3 = 0xffffffff;
       uVar5 = st::fn_004025C7((int)message);
       iVar9 = 1;
-      pCVar4 = st::fn_0040577C("BUT_OHELP",0);
+      pCVar4 = st::fn_0040577C(st::mutable_c_string("BUT_OHELP"),0);
       pCVar4 = st::fn_006F2C00(pCVar4,iVar9,uVar5);
       pBVar6 = (BITMAPINFO *)
                st::fn_00709AF0

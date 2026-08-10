@@ -59,12 +59,12 @@ int __thiscall st::fn_005F27C0(STBHEShellC *this,STMessage *message)
   this_00 = local_14;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\nick\\to_BheShell.cpp",0x163,0,local_EAX_35,
-                               "%s","STBHEShellC::GetMessage");
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_BheShell.cpp"),0x163,0,local_EAX_35,
+                               st::mutable_c_string("%s"),"STBHEShellC::GetMessage");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_35,0,"E:\\__titans\\nick\\to_BheShell.cpp",0x165);
+    st::fn_006A5E40(local_EAX_35,0,st::mutable_c_string("E:\\__titans\\nick\\to_BheShell.cpp"),0x165);
     return 0xffff;
   }
   SVar1 = message->id;
@@ -95,7 +95,7 @@ int __thiscall st::fn_005F27C0(STBHEShellC *this,STMessage *message)
         g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
-      pcVar15 = st::fn_00403170;
+      pcVar15 = st::pointer_boundary_cast<code *>(st::fn_00403170);
     }
     st::fn_006E9520
               (g_sT3DSMAPContext_00807598,uVar12,0,(uint)pcVar15,(uint)local_14);
@@ -162,7 +162,7 @@ int __thiscall st::fn_005F27C0(STBHEShellC *this,STMessage *message)
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
-    st::fn_00404E6C(local_14,puVar11);
+    st::fn_00404E6C(local_14,st::pointer_boundary_cast<undefined4 *>(puVar11));
     memset(&this_00->field_0x20, 0, 0x2d); /* compiler bulk-zero initialization */
     this_00->field_001C = this_00->field_016D;
     if (this_00->field_0103 == '\0') {
@@ -263,7 +263,7 @@ LAB_005f3027:
       st::fn_006EA270
                 (g_sT3DSMAPContext_00807598,this_00->field_008F,2,this_00->field_00C0);
       if ((int)this_00->field_00C0 < this_00->field_00BC) {
-        this_00->field_00C0 = this_00->field_00C0 + 1;
+        this_00->field_00C0 = st::machine_word_boundary_cast<undefined4>(this_00->field_00C0 + 1);
       }
     }
     if (this_00->field_00BB != '\0') {
@@ -274,14 +274,14 @@ LAB_005f3027:
       else {
         st::fn_006EA270
                   (g_sT3DSMAPContext_00807598,this_00->field_008F,1,this_00->field_00B7);
-        this_00->field_00B7 = this_00->field_00B7 + 1;
+        this_00->field_00B7 = st::machine_word_boundary_cast<undefined4>(this_00->field_00B7 + 1);
       }
     }
     uVar12 = this_00->field_00AB;
     if ((int)uVar12 < this_00->field_00AF) {
       st::fn_006EA270(g_sT3DSMAPContext_00807598,this_00->field_008F,0,uVar12);
 LAB_005f2d8b:
-      this_00->field_00AB = this_00->field_00AB + 1;
+      this_00->field_00AB = st::machine_word_boundary_cast<undefined4>(this_00->field_00AB + 1);
     }
     else if (uVar12 == this_00->field_00AF) {
       if (-1 < (int)this_00->field_008F) {

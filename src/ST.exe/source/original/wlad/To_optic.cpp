@@ -35,9 +35,9 @@ int __thiscall st::fn_004A8920(OpticClassC *this,STMessage *message)
   local_EAX_36 = st::fn_0072D7F0(local_6c.jumpBuffer,0);
   if (local_EAX_36 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\To_optic.cpp",0xa9,0,-1,"%s");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_optic.cpp"),0xa9,0,-1,st::mutable_c_string("%s"));
     if (iVar3 == 0) {
-      st::fn_006A5E40(-1,0,"E:\\__titans\\wlad\\To_optic.cpp",0xaa);
+      st::fn_006A5E40(-1,0,st::mutable_c_string("E:\\__titans\\wlad\\To_optic.cpp"),0xaa);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -150,7 +150,7 @@ LAB_004a8b47:
       goto switchD_004a8b81_caseD_108;
     case MESS_SHARED_010F:
       st::fn_00401078
-                (g_playSystem_00802A38,"opticsave",(byte *)&DAT_008073d0,399,0xc);
+                (g_playSystem_00802A38,st::mutable_c_string("opticsave"),(byte *)&DAT_008073d0,399,0xc);
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
@@ -206,16 +206,16 @@ void __thiscall st::fn_004A8FC0(OpticClassC *this)
   iVar3 = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\wlad\\To_optic.cpp",0x107,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_optic.cpp"),0x107,0,iVar3,st::mutable_c_string("%s"),
                                "OpticClassC::InitOptic");
     if (iVar4 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\wlad\\To_optic.cpp",0x108);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\wlad\\To_optic.cpp"),0x108);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (g_cMf32_00806754 != nullptr) {
-    local_c = st::fn_006F2D90(g_cMf32_00806754,"opticsave",0,0);
+    local_c = st::fn_006F2D90(g_cMf32_00806754,st::mutable_c_string("opticsave"),0,0);
   }
   if (local_c == nullptr) {
     DAT_00807400 = DAT_00807568;
@@ -334,10 +334,10 @@ void __thiscall st::fn_004A9540(OpticClassC *this,int param_1)
   errorCode = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\wlad\\To_optic.cpp",0x13c,0,errorCode,
-                               "%s");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_optic.cpp"),0x13c,0,errorCode,
+                               st::mutable_c_string("%s"));
     if (iVar3 == 0) {
-      st::fn_006A5E40(errorCode,0,"E:\\__titans\\wlad\\To_optic.cpp",0x13d);
+      st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\wlad\\To_optic.cpp"),0x13d);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

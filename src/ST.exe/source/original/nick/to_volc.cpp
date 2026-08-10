@@ -45,10 +45,10 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
   this_00 = local_8;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\nick\\to_volc.cpp",0x121,0,local_EAX_35,
-                               "%s","STVolcanoC::GetMessage");
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_volc.cpp"),0x121,0,local_EAX_35,
+                               st::mutable_c_string("%s"),"STVolcanoC::GetMessage");
     if (iVar6 == 0) {
-      st::fn_006A5E40(local_EAX_35,0,"E:\\__titans\\nick\\to_volc.cpp",0x123);
+      st::fn_006A5E40(local_EAX_35,0,st::mutable_c_string("E:\\__titans\\nick\\to_volc.cpp"),0x123);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -86,12 +86,12 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
         break;
       case CASE_2:
         if ((((local_8->field_0058 & 1) != 0) && (g_playSystem_00802A38->field_00E4 % 3 == 0)) &&
-           (iVar7 = local_8->field_0071 + 1, local_8->field_0071 = iVar7,
+           (iVar7 = st::machine_word_boundary_cast<int>(local_8->field_0071 + 1), local_8->field_0071 = iVar7,
            local_8->field_0075 <= iVar7)) {
           local_8->field_0071 = 0;
           local_8->field_0075 = 10;
           local_8->field_00A9 = CASE_1;
-          uVar1 = local_8->field_00B1 * 0x41c64e6d + 0x3039;
+          uVar1 = st::machine_word_boundary_cast<uint>(local_8->field_00B1 * 0x41c64e6d + 0x3039);
           local_8->field_00B1 = uVar1;
           local_8->field_00A4 = (uVar1 >> 0x10) % 0x2711 + 20000 + g_playSystem_00802A38->field_00E4
           ;
@@ -111,7 +111,7 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
               return 0;
             }
             puVar5 = st::fn_00709AF0
-                               (PTR_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
+                               (PTR_00806764,CASE_1D,st::mutable_c_string("expl_vol"),0xffffffff,0,1,0,
                                 nullptr);
             this_00->field_0061 = puVar5;
             if (puVar5 != nullptr) {
@@ -131,13 +131,13 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
           return 0;
         }
         if (((local_8->field_0058 & 2) != 0) && (g_playSystem_00802A38->field_00E4 % 3 == 0)) {
-          iVar7 = local_8->field_007E + 1;
+          iVar7 = st::machine_word_boundary_cast<int>(local_8->field_007E + 1);
           local_8->field_007E = iVar7;
           if (local_8->field_0082 <= iVar7) {
             local_8->field_007E = 0;
             st::fn_006EAB60(g_sT3DSMAPContext_00807598,local_8->field_007A);
           }
-          iVar7 = this_00->field_008A + 1;
+          iVar7 = st::machine_word_boundary_cast<int>(this_00->field_008A + 1);
           this_00->field_008A = iVar7;
           if (this_00->field_008E <= iVar7) {
             this_00->field_008A = 0;
@@ -146,7 +146,7 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
         }
         if ((((g_playSystem_00802A38->field_00E4 & 1) == 0) && (2 < (int)this_00->field_0071)) &&
            (((int)this_00->field_0071 < (this_00->field_0075 << 1) / 3 &&
-            (uVar1 = this_00->field_00B1 * 0x41c64e6d + 0x3039, this_00->field_00B1 = uVar1,
+            (uVar1 = st::machine_word_boundary_cast<uint>(this_00->field_00B1 * 0x41c64e6d + 0x3039), this_00->field_00B1 = uVar1,
             (uVar1 & 0x70000) == 0x10000)))) {
           st::fn_0040298C(this_00,0);
         }
@@ -169,7 +169,7 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
       case CASE_3:
         if (((*(byte *)&local_8->field_0058 & 1) != 0) &&
            (g_playSystem_00802A38->field_00E4 % 3 == 0)) {
-          iVar7 = local_8->field_0071 + 1;
+          iVar7 = st::machine_word_boundary_cast<int>(local_8->field_0071 + 1);
           local_8->field_0071 = iVar7;
           if ((local_8->field_0075 <= iVar7) &&
              (local_8->field_0071 = 0, local_8->field_00A4 < g_playSystem_00802A38->field_00E4)) {
@@ -180,17 +180,17 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
             }
             this_00->field_0071 = 10;
             this_00->field_0075 = 0x29;
-            this_00->field_0058 = this_00->field_0058 | 3;
+            this_00->field_0058 = st::machine_word_boundary_cast<undefined4>(this_00->field_0058 | 3);
             this_00->field_007E = 0;
             this_00->field_0082 = 0x1f;
           }
-          iVar7 = this_00->field_008A + 1;
+          iVar7 = st::machine_word_boundary_cast<int>(this_00->field_008A + 1);
           this_00->field_008A = iVar7;
           if (this_00->field_008E <= iVar7) {
             this_00->field_008A = 0;
           }
         }
-        uVar1 = this_00->field_00B1 * 0x41c64e6d + 0x3039;
+        uVar1 = st::machine_word_boundary_cast<uint>(this_00->field_00B1 * 0x41c64e6d + 0x3039);
         this_00->field_00B1 = uVar1;
         if ((uVar1 & 0xf0000) == 0x10000) {
           st::fn_0040298C(this_00,1);
@@ -211,21 +211,21 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
         break;
       case CASE_4:
         if (g_playSystem_00802A38->field_00E4 % 5 == 0) {
-          iVar7 = local_8->field_0071 + 1;
+          iVar7 = st::machine_word_boundary_cast<int>(local_8->field_0071 + 1);
           local_8->field_0071 = iVar7;
           if (local_8->field_0075 <= iVar7) {
-            uVar1 = local_8->field_00B1 * 0x41c64e6d + 0x3039;
+            uVar1 = st::machine_word_boundary_cast<uint>(local_8->field_00B1 * 0x41c64e6d + 0x3039);
             local_8->field_00B1 = uVar1;
             uVar3 = g_playSystem_00802A38->field_00E4;
             local_8->field_00A9 = CASE_3;
-            local_8->field_0058 = local_8->field_0058 | 1;
+            local_8->field_0058 = st::machine_word_boundary_cast<undefined4>(local_8->field_0058 | 1);
             local_8->field_0071 = 0;
             local_8->field_0075 = 10;
             local_8->field_008A = 0;
             local_8->field_008E = 10;
             local_8->field_00A4 = (uVar1 >> 0x10) % 0x1f5 + 500 + uVar3;
           }
-          iVar7 = local_8->field_008A + 1;
+          iVar7 = st::machine_word_boundary_cast<int>(local_8->field_008A + 1);
           local_8->field_008A = iVar7;
           if (local_8->field_008E <= iVar7) {
             local_8->field_008A = 0;
@@ -257,7 +257,7 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
     else if (SVar2 == MESS_ID_CREATE) {
       puVar8 = (byte *)((message->arg0).ptr);
       if (puVar8[3] == 2) {
-        st::fn_0040236F(local_8,puVar8);
+        st::fn_0040236F(local_8,st::pointer_boundary_cast<undefined4 *>(puVar8));
         this_00->field_00B1 = this_00->field_00AD;
         this_00->field_00A8 = 0;
         g_currentExceptionFrame = local_54.previous;
@@ -268,7 +268,7 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
       local_8->field_00B1 = DAT_00808754;
       iVar7 = st::fn_00402C57(local_8);
       if (iVar7 != 0) {
-        uVar1 = this_00->field_00B1 * 0x41c64e6d + 0x3039;
+        uVar1 = st::machine_word_boundary_cast<uint>(this_00->field_00B1 * 0x41c64e6d + 0x3039);
         this_00->field_00B1 = uVar1;
         this_00->field_00A9 = CASE_6;
         this_00->field_00A4 = (uVar1 >> 0x10) % 0x2711 + 20000;
@@ -281,7 +281,7 @@ int __thiscall st::fn_006461E0(STVolcanoC *this,STMessage *message)
     }
   }
   else if (SVar2 == MESS_SHARED_010F) {
-    local_10 = (byte *)st::fn_00403F35(local_8,&local_c);
+    local_10 = (byte *)st::fn_00403F35(local_8,st::pointer_boundary_cast<undefined4 *>(&local_c));
     st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
     st::fn_006AB060(&local_10);
   }
@@ -320,7 +320,7 @@ undefined4 __thiscall st::fn_006474E0(STVolcanoC *this,int param_1)
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_1 == 2)) {
       puVar3 = st::fn_00709AF0
-                         (PTR_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
+                         (PTR_00806764,CASE_1D,st::mutable_c_string("expl_vol"),0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,STField<uint>(puVar3,9),
@@ -338,7 +338,7 @@ undefined4 __thiscall st::fn_006474E0(STVolcanoC *this,int param_1)
       pSVar2->field_0061 = puVar3;
       pSVar2->field_005D = local_8;
       puVar3 = st::fn_00709AF0
-                         (PTR_00806764,CASE_1D,"expl_vob",0xffffffff,0,1,0,
+                         (PTR_00806764,CASE_1D,st::mutable_c_string("expl_vob"),0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,STField<uint>(puVar3,9),
@@ -357,7 +357,7 @@ undefined4 __thiscall st::fn_006474E0(STVolcanoC *this,int param_1)
     }
     if ((param_1 != 0) && (pSVar2->field_007A < 0)) {
       puVar3 = st::fn_00709AF0
-                         (PTR_00806764,CASE_1D,"expl_vop",0xffffffff,0,1,0,
+                         (PTR_00806764,CASE_1D,st::mutable_c_string("expl_vop"),0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)&local_10,1,0,STField<uint>(puVar3,9),
@@ -380,12 +380,12 @@ undefined4 __thiscall st::fn_006474E0(STVolcanoC *this,int param_1)
     return local_18;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_volc.cpp",0x214,0,errorCode,"%s"
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_volc.cpp"),0x214,0,errorCode,st::mutable_c_string("%s")
                              ,"STVolcanoC::LoadImagVolcano");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\nick\\to_volc.cpp",0x216);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\nick\\to_volc.cpp"),0x216);
   return 0xffff;
 }
 

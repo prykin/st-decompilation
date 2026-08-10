@@ -275,7 +275,7 @@ undefined4 __thiscall st::fn_004A7E30(STGroupBoatC *this,int param_1)
     }
     iVar5 = 0;
     dVar1 = this->field_022E->count;
-    piVar3 = this->field_022E->data;
+    piVar3 = st::pointer_boundary_cast<int *>(this->field_022E->data);
     if (0 < (int)dVar1) {
       do {
         if (((short)piVar3[1] != -1) && (*piVar3 == 0)) {
@@ -322,7 +322,7 @@ undefined4 __thiscall st::fn_004A7E30(STGroupBoatC *this,int param_1)
       bVar2 = st::fn_004025AE(CASE_8);
     }
     else {
-      uVar4 = this->field_0232 - 1;
+      uVar4 = st::machine_word_boundary_cast<uint>(this->field_0232 - 1);
       this->field_0232 = uVar4;
       this->field_023E = 0;
       st::fn_006ACC70(this->field_022A,uVar4,local_14);

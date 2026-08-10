@@ -114,30 +114,30 @@ STAllPlayersC::FramePick
   int local_EAX_8116;
   int local_EAX_8151;
   int iVar3;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_04;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_05;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_06;
   undefined4 uVar7;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
   char playerId;
   uint uVar8;
@@ -506,7 +506,7 @@ LAB_00431a3f:
           local_EAX_2373 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX;
           if (local_EAX_2373 < 1) goto LAB_00431ed1;
           ActivateTV(this,playerId,1,local_EAX_2373);
@@ -520,7 +520,7 @@ LAB_00431e9e:
         if (local_EAX_2513 < 0) {
 LAB_00431ec7:
           PushTV(playerId,1);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_00;
 LAB_00431ed1:
           uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -554,7 +554,7 @@ LAB_00431e77:
 LAB_00431da2:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_EDX_00;
 LAB_00431dba:
             uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -571,7 +571,7 @@ LAB_00431dba:
           local_EAX_2061 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_EDX;
           if (local_EAX_2061 < 1) goto LAB_00431dba;
           ActivateTV(this,playerId,1,local_EAX_2061);
@@ -696,7 +696,7 @@ LAB_004321a3:
 LAB_004320ce:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_ECX_02;
 LAB_004320e6:
             uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -713,7 +713,7 @@ LAB_004320e6:
           local_EAX_2873 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_01;
           if (local_EAX_2873 < 1) goto LAB_004320e6;
           ActivateTV(this,playerId,1,local_EAX_2873);
@@ -915,7 +915,7 @@ LAB_00432582:
           local_EAX_4873 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_03;
           if (local_EAX_4873 < 1) goto LAB_00432895;
           ActivateTV(this,playerId,1,local_EAX_4873);
@@ -929,7 +929,7 @@ LAB_00432862:
         if (local_EAX_5013 < 0) {
 LAB_0043288b:
           PushTV(playerId,1);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_04;
 LAB_00432895:
           uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -963,7 +963,7 @@ LAB_0043283b:
 LAB_00432766:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_EDX_02;
 LAB_0043277e:
             uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -980,7 +980,7 @@ LAB_0043277e:
           local_EAX_4561 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_EDX_01;
           if (local_EAX_4561 < 1) goto LAB_0043277e;
           ActivateTV(this,playerId,1,local_EAX_4561);
@@ -1105,7 +1105,7 @@ LAB_00432b67:
 LAB_00432a92:
             PushTV(playerId,1);
             ResetActivityFromTmp(this,playerId,1,1,0);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_ECX_06;
 LAB_00432aaa:
             uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
@@ -1122,7 +1122,7 @@ LAB_00432aaa:
           local_EAX_5373 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_05;
           if (local_EAX_5373 < 1) goto LAB_00432aaa;
           ActivateTV(this,playerId,1,local_EAX_5373);

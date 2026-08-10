@@ -72,12 +72,12 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
   int uVar12;
   int local_EAX_9844;
   ushort *puVar16;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX;
   int iVar17;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_16;
@@ -131,7 +131,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
   local_8 = thunk_FUN_004357f0(*(char *)&param_1->field_0024);
   iVar9 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540::thunk_FUN_00664540
                     ((AnonReceiver_00664540 *)param_1,local_44,&local_68);
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   iVar12 = extraout_EDX;
   while (-1 < iVar9) {
     switch(local_44[0]) {
@@ -473,7 +473,7 @@ cf_common_join_00665024:
         if ((local_44[0] == 0) || (0x31 < local_44[0])) {
 switchD_006649d9_caseD_0:
           thunk_FUN_00664650(param_1,local_44[0]);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           iVar12 = extraout_EDX_01;
           goto LAB_00665067;
         }
@@ -485,7 +485,7 @@ switchD_006649d9_caseD_0:
 LAB_00665047:
     iVar9 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540::thunk_FUN_00664540
                       ((AnonReceiver_00664540 *)param_1,local_44,&local_68);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     iVar12 = extraout_EDX_00;
   }
 LAB_00665067:

@@ -570,7 +570,7 @@ LAB_005d2018:
               uVar32 = 0;
             }
             if (local_5 != '\0') {
-              DAT_008087a0 = this_00->field_1E26;
+              STPiece<0,1>(DAT_008087a0) = this_00->field_1E26;
               DAT_0080879c = 0;
               if (DAT_0080877e == '\0') {
                 pcVar29 = &CHAR_00h_00808ab0;

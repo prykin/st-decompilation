@@ -140,7 +140,7 @@ ProdPanelTy::CreateSlider
     }
     this_00->field_0028 = uVar6;
     if (local_8 != 0) {
-      FUN_006e6080(this_00,0x80000002,local_8,(undefined4 *)&this_00->field_0x18);
+      FUN_006e6080(this_00,&DAT_80000002,local_8,(undefined4 *)&this_00->field_0x18);
     }
     g_currentExceptionFrame = local_54.previous;
     return local_8;

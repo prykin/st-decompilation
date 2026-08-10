@@ -68,7 +68,8 @@ void st::fn_004407A0(char param_1,undefined4 param_2,undefined4 param_3)
   if (((array != nullptr) && (dVar1 = array->count, dVar1 != 0)) &&
      (index = 0, 0 < (int)dVar1)) {
     do {
-      st::fn_006ACC70(array,index,&param_1);
+      STGroupBoatC * _param_1 = nullptr;
+      st::fn_006ACC70(array,index,&_param_1);
       if (_param_1 != nullptr) {
         st::fn_0040348B(_param_1,(char)param_2,(short)param_3);
       }
@@ -362,7 +363,7 @@ void __thiscall st::fn_00444E70(void *this,ushort *param_1)
       *(undefined4 *)((int)&g_packedRecords_A62x8[0].field1976_0x9f6 + iVar4) = 0;
     }
     else {
-      uVar7 = local_8->field_0A6F / 0x18;
+      uVar7 = st::machine_word_boundary_cast<uint>(local_8->field_0A6F / 0x18);
       pDVar2 = st::fn_006AE290(nullptr,uVar7,0xc,1);
       *(DArrayTy **)((int)&g_packedRecords_A62x8[0].field1976_0x9f6 + iVar4) = pDVar2;
       local_10 = nullptr;
@@ -427,7 +428,7 @@ void __thiscall st::fn_00444E70(void *this,ushort *param_1)
     st::fn_006AE140(g_array_007FA164,*(int *)(param_1 + 0x2ac2) - 1,&local_c);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  DAT_007fa168 = st::fn_006AAC70(*(uint *)(param_1 + 0x2ac6));
+  DAT_007fa168 = st::machine_word_boundary_cast<undefined4>(st::fn_006AAC70(*(uint *)(param_1 + 0x2ac6)));
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar7 = *(uint *)(param_1 + 0x2ac6);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -624,7 +625,7 @@ uint __fastcall st::fn_0044CE40(STAllPlayersC *param_1)
   index = 0;
   array = (DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field102_0x16d;
   dVar1 = array->count;
-  local_8 = param_1;
+  local_8 = st::pointer_boundary_cast<STAllPlayersC *>(param_1);
   if (0 < (int)dVar1) {
     do {
       st::fn_006ACC70(array,index,local_c);
@@ -831,7 +832,7 @@ byte * st::fn_0044D320(Global_sub_0044D320_param_1Enum param_1)
   local_8 = 0;
   local_14 = (DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field102_0x16d;
   local_10 = local_14->count;
-  pbVar3 = st::fn_006AAC70(0xc);
+  pbVar3 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0xc));
   if (param_1 < 0x1001) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == 0x1000) {
@@ -1528,7 +1529,7 @@ void st::fn_0044E260(uint param_1,uint param_2,uint param_3,int *param_4)
       if (param_2 != 0) {
         local_8 = 10000;
         local_c = 0;
-        local_14 = local_18->data;
+        local_14 = st::pointer_boundary_cast<STGameObjC *>(local_18->data);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = 10000;
         local_10 = 0;

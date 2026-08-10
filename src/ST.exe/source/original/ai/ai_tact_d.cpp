@@ -24,23 +24,23 @@ undefined4 * __cdecl st::fn_00690E90(char *source,undefined2 param_2,undefined2 
   g_currentExceptionFrame = &local_4c;
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
-    local_8 = st::fn_006AAC10(0x10c);
+    local_8 = st::pointer_boundary_cast<AnonShape_00690E90_9F986EB9 *>(st::fn_006AAC10(0x10c));
     *(undefined4 *)local_8 = 0x38e;
     *(undefined4 *)&local_8->field_0x14 = 0x10c;
     *(undefined1 *)((int)&local_8->field_0017 + 1) = 2;
-    st::fn_0072E340(&local_8->field_0x1b,source,0x3f);
+    st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_8->field_0x1b),source,0x3f);
     local_8->field_0019 = param_2;
     *(undefined2 *)&local_8->field_0x5c = param_3;
     if (local_8->field_0085 == 0) {
       pDVar1 = st::fn_006AE290(nullptr,10,8,10);
-      local_8->field_0085 = pDVar1;
+      local_8->field_0085 = st::machine_word_boundary_cast<undefined4>(pDVar1);
     }
     g_currentExceptionFrame = local_4c.previous;
     return (undefined4 *)local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
   st::fn_00402E00((int *)&local_8);
-  st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\ai\\ai_tact_d.cpp",0x21);
+  st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_tact_d.cpp"),0x21);
   return nullptr;
 }
 
@@ -76,7 +76,7 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
   g_currentExceptionFrame = &local_54;
   iVar1 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   if (iVar1 == 0) {
-    pAVar1 = st::fn_006AAC10(0x10c);
+    pAVar1 = st::pointer_boundary_cast<AllocationRecord_00690FC0 *>(st::fn_006AAC10(0x10c));
     pAVar5 = param_1;
     pAVar7 = pAVar1;
     memmove(pAVar7, pAVar5, 0x10c); /* compiler REP MOVS byte copy */
@@ -96,7 +96,7 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
     } while (iVar4 < 0x60);
     if (pAVar1->field_0085 == 0) {
       pDVar2 = st::fn_006AE290(nullptr,10,8,10);
-      local_8->field_0085 = &pDVar2->flags;
+      local_8->field_0085 = st::pointer_boundary_cast<uint *>(&pDVar2->flags);
       pAVar1 = (AllocationRecord_00690FC0 *)local_8;
     }
     if (0 < (short)pAVar1->field_0105) {
@@ -113,7 +113,7 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
             local_c = nullptr;
           }
           else {
-            local_c = &pAVar3[-1].field_0x240;
+            local_c = st::pointer_boundary_cast<undefined1 *>(&pAVar3[-1].field_0x240);
           }
           st::fn_006AE1C0((DArrayTy *)local_8->field_0085,&local_10);
           pAVar6 = (AllocationRecord_00668330 *)(&pAVar6->field_0x0 + pAVar6->field_0014);
@@ -127,7 +127,7 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
   }
   g_currentExceptionFrame = local_54.previous;
   st::fn_00402E00((int *)&local_8);
-  st::fn_006A5E40(iVar1,0,"E:\\__titans\\ai\\ai_tact_d.cpp",0x51);
+  st::fn_006A5E40(iVar1,0,st::mutable_c_string("E:\\__titans\\ai\\ai_tact_d.cpp"),0x51);
   return nullptr;
 }
 
@@ -188,7 +188,7 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
       iVar7 = iVar7 + -1;
     } while (iVar7 != 0);
     *param_2 = local_c + 0x10cU;
-    pAVar2 = st::fn_006AAC10(local_c + 0x10cU);
+    pAVar2 = st::pointer_boundary_cast<AnonShape_00691190_783A1B6D *>(st::fn_006AAC10(local_c + 0x10cU));
     puVar8 = (byte *)(param_1);
     pAVar11 = pAVar2;
     for (iVar7 = 0x43; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -237,12 +237,12 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
           }
           if (pAVar3 != nullptr) {
             local_1c = st::fn_004014C4(pAVar3,&local_10);
-            local_8 = st::fn_006ACF50(local_8,local_8->field_0014 + local_10);
+            local_8 = st::pointer_boundary_cast<AnonShape_00691190_783A1B6D *>(st::fn_006ACF50(local_8,st::machine_word_boundary_cast<uint>(local_8->field_0014 + local_10)));
             pAVar3 = local_1c;
             puVar8 = (byte *)(&local_8[1].field_0x3 + iVar7);
             memmove(puVar8, pAVar3, local_10); /* compiler REP MOVS byte copy */
             iVar7 = iVar7 + local_10;
-            local_8->field_0014 = local_8->field_0014 + local_10;
+            local_8->field_0014 = st::machine_word_boundary_cast<uint>(local_8->field_0014 + local_10);
             local_8->field_0105 = local_8->field_0105 + 1;
             local_18 = iVar7;
             if (local_1c != nullptr) {
@@ -267,10 +267,10 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
   if (local_14 != 0) {
     st::fn_006AB060(&local_14);
   }
-  iVar9 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_tact_d.cpp",0x8c,0,iVar2,"%s",
+  iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_tact_d.cpp"),0x8c,0,iVar2,st::mutable_c_string("%s"),
                              "TactDataPack");
   if (iVar9 == 0) {
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_tact_d.cpp",0x8d);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_tact_d.cpp"),0x8d);
     return nullptr;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

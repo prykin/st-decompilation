@@ -42,10 +42,11 @@ byte * __cdecl st::fn_006A2ED0(short *param_1)
   }
   else {
     local_14 = (HoloTy *)st::fn_006DBCA0(pAVar2);
-    if (local_14 != nullptr) goto LAB_006a2f2f;
+    if ((AnonShape_006DBCA0_EF06575F *)local_14 != nullptr)
+    goto LAB_006a2f2f;
   }
   st::fn_006A5E40
-            (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Maps\\prepare.cpp",0xcf);
+            (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Maps\\prepare.cpp"),0xcf);
 LAB_006a2f2f:
   st::fn_006DC050
             ((ST3DSMAPContext *)local_14,0,0,0,0x8c,0x8c,
@@ -64,7 +65,7 @@ LAB_006a2f2f:
       puVar5 = (byte *)*piVar10;
       if ((puVar5 != nullptr) && (*(short *)(puVar5 + 2) != 0)) {
         *puVar5 = *(undefined4 *)((int)&local_14[6].field_000B + 3);
-        *(undefined4 **)((int)&local_14[6].field_000B + 3) = puVar5;
+        *(undefined4 **)((int)&local_14[6].field_000B + 3) = st::pointer_boundary_cast<undefined4 *>(puVar5);
         piVar1 = (int *)((int)&local_14[6].field_0007 + 3);
         *piVar1 = *piVar1 + 1;
       }
@@ -77,7 +78,7 @@ LAB_006a2f2f:
              (double)((float)(int)param_1[1] * _DAT_007904f4));
   st::fn_006DDBE0((ST3DSMAPContext *)local_14);
   st::fn_006DDD50((ST3DSMAPContext *)local_14);
-  local_8 = st::fn_006AAC10(0x4b79);
+  local_8 = st::pointer_boundary_cast<short *>(st::fn_006AAC10(0x4b79));
   iVar11 = 0;
   iVar6 = 0;
   do {

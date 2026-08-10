@@ -89,24 +89,24 @@ byte * __thiscall st::fn_00617FB0(JumpManagC *this,int *param_1)
     iVar6 = 0;
   }
   else {
-    iVar6 = pDVar1->count * pDVar1->elementSize + 0x1c;
+    iVar6 = st::machine_word_boundary_cast<int>(pDVar1->count * pDVar1->elementSize + 0x1c);
   }
   pDVar1 = this->field_0062;
   if (pDVar1 == nullptr) {
     iVar4 = 0;
   }
   else {
-    iVar4 = pDVar1->count * pDVar1->elementSize + 0x1c;
+    iVar4 = st::machine_word_boundary_cast<int>(pDVar1->count * pDVar1->elementSize + 0x1c);
   }
   pDVar1 = this->field_0066;
   if (pDVar1 == nullptr) {
     iVar2 = 0;
   }
   else {
-    iVar2 = pDVar1->count * pDVar1->elementSize + 0x1c;
+    iVar2 = st::machine_word_boundary_cast<int>(pDVar1->count * pDVar1->elementSize + 0x1c);
   }
   size = iVar2 + iVar4 + 0x5e + iVar6;
-  pbVar3 = st::fn_006AAC70(size);
+  pbVar3 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(size));
   puVar8 = (undefined4 *)&this->field_0x1c;
   pbVar10 = pbVar3;
   memmove(pbVar10, puVar8, 0x50); /* compiler REP MOVS byte copy */
@@ -119,7 +119,7 @@ byte * __thiscall st::fn_00617FB0(JumpManagC *this,int *param_1)
   pbVar3[0xe] = 0;
   pbVar3[0xf] = 0;
   if (this->field_005E != nullptr) {
-    local_c = (uint *)st::fn_006B0020(&this->field_005E->flags,(int *)&local_8);
+    local_c = (uint *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&this->field_005E->flags),(int *)&local_8);
     *puVar7 = local_8;
     puVar7 = local_c;
     puVar9 = (uint *)(pbVar3 + 0x56);
@@ -129,7 +129,7 @@ byte * __thiscall st::fn_00617FB0(JumpManagC *this,int *param_1)
     st::fn_006AB060(&local_c);
   }
   if (this->field_0062 != nullptr) {
-    local_c = (uint *)st::fn_006B0020(&this->field_0062->flags,(int *)&local_8);
+    local_c = (uint *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&this->field_0062->flags),(int *)&local_8);
     *puVar7 = local_8;
     puVar9 = local_c;
     puVar11 = puVar7 + 1;
@@ -139,7 +139,7 @@ byte * __thiscall st::fn_00617FB0(JumpManagC *this,int *param_1)
     st::fn_006AB060(&local_c);
   }
   if (this->field_0066 != nullptr) {
-    local_c = (uint *)st::fn_006B0020(&this->field_0066->flags,(int *)&local_8);
+    local_c = (uint *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&this->field_0066->flags),(int *)&local_8);
     *puVar7 = local_8;
     puVar9 = local_c;
     for (uVar5 = local_8 >> 2; puVar7 = puVar7 + 1, uVar5 != 0; uVar5 = uVar5 - 1) {

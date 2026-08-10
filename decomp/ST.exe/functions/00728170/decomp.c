@@ -7,7 +7,7 @@ void __cdecl FUN_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_0072817
   undefined1 uVar1;
   uint uVar2;
   uint uVar3;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX;
   int iVar4;
   uint uVar5;
@@ -34,7 +34,7 @@ void __cdecl FUN_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_0072817
     if ((int)uVar7 < (int)DAT_008570dc) {
       uVar2 = FUN_006db5f0(iVar4,DAT_008570dc - uVar7);
       local_c = local_c + uVar2;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar3 = extraout_ECX;
       uVar7 = DAT_008570dc;
     }

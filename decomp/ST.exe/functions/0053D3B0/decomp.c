@@ -12,7 +12,7 @@ void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
   int iVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  int *piVar5;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   undefined2 local_c;
@@ -29,13 +29,13 @@ void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
     STAllPlayersC::GetPanelInfo
               (g_allPlayers_007FA174,0x12,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_01AB);
     this_00->field_0028 = 5;
-    puVar5 = this_00->field_01B5;
+    piVar5 = &this_00->field_01B5;
     iVar4 = 6;
     do {
-      if (*puVar5 != 0) {
-        FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
+      if (*piVar5 != 0) {
+        FUN_006e6080(this_00,2,*piVar5,(undefined4 *)&this_00->field_0x18);
       }
-      puVar5 = puVar5 + 1;
+      piVar5 = piVar5 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
     g_currentExceptionFrame = local_54.previous;

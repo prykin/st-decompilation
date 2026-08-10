@@ -16,7 +16,7 @@ undefined4 __thiscall TLOBaseTy::sub_004B9A40(TLOBaseTy *this)
 {
   TLOBaseTy_field_05ACState TVar1;
   dword dVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
 
   sub_0041C5A0(this);
@@ -25,7 +25,7 @@ undefined4 __thiscall TLOBaseTy::sub_004B9A40(TLOBaseTy *this)
       ((TVar1 != CASE_4C || (this->field_04D0 == CASE_2)))) &&
      ((TVar1 != CASE_43 || (this->field_04D0 == CASE_2)))) {
     dVar2 = this->slot_2C();
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&this->field_0024)),
                        dVar2);
   }

@@ -2,10 +2,22 @@
 
 
 /* [STPrototypeRepairApplier] Propagated parameter 2.
-   Evidence: 006BFBF0 -> 006BFE70 @ 006BFD7F */
+   Evidence: 006BFBF0 -> 006BFE70 @ 006BFD7F
+   [STAbiConsistencyApplier] stack_parameter_scalar_role target=parameter:2: parameter=/int
+   Evidence: generic pointer has a scalar-only incoming lifetime before its first slot overwrite:
+   frame_offset=0x10, direct_reads=11, scalar_operations=6, signed_comparisons=4, unsigned_bounds=0,
+   pointer_dereferences=0, slot_reused=false; sites=006BFEA3 incoming load: MOV EDI,dword ptr [EBP +
+   0x10] | 006BFEE2 incoming load: MOV EDI,dword ptr [EBP + 0x10] | 006BFEFA scalar operation: ADD
+   EDX,EDI | 006BFF12 scalar operation: SUB ECX,EAX | 006BFF25 incoming load: MOV EDX,dword ptr [EBP
+   + 0x10] | 006BFF71 incoming load: MOV EDX,dword ptr [EBP + 0x10] | 006BFF9C scalar operation: LEA
+   EAX,[EDX + EDX*0x1] | 006C0016 scalar operation: LEA EDX,[EAX + ECX*0x1] | 006C0176 incoming
+   load: MOV EDX,dword ptr [EBP + 0x10] | 006C01BC scalar operation: LEA EDX,[EAX + EBX*0x1] |
+   006C0314 incoming load: MOV ECX,dword ptr [EBP + 0x10] | 006C034C incoming load: MOV EDX,dword
+   ptr [EBP + 0x10] | 006C03AD scalar operation: LEA EDX,[EAX + EBX*0x1] | 006C05AC incoming load:
+   MOV ECX,dword ptr [EBP + 0x10] | 006C06AA incoming load: MOV EBX,dword ptr [EBP + 0x10] |
+   006C07A2 incoming load: MOV ECX,dword ptr [EBP + 0x10] */
 
-DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,
-                  AnonShape_006BFBF0_13F73F95 *param_3)
+DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,int param_3)
 
 {
   short *psVar1;
@@ -47,15 +59,15 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,
         iVar6 = (-(uint)(*psVar1 != 1) & 0x24) + 0x1a + (int)psVar1;
       }
       Library::MSVCRT::FUN_0072da70
-                (param_1,(AnonPointee_TLOBaseTy_0607 *)(param_2->field_0028 + iVar6),(uint)param_3);
+                (param_1,(AnonPointee_TLOBaseTy_0607 *)(param_2->field_0028 + iVar6),param_3);
     }
     else {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(param_2->field_001C + 4) + 0xc),
-                             (LPDWORD)param_2->field_0028,param_1,(DWORD)param_3);
+                             (LPDWORD)param_2->field_0028,param_1,param_3);
     }
-    param_2->field_0028 = &param_3->field_0x0 + param_2->field_0028;
-    param_2->field_00C0 = param_2->field_00C0 - (int)param_3 / (int)(uint)param_2->field_0096;
+    param_2->field_0028 = param_2->field_0028 + param_3;
+    param_2->field_00C0 = param_2->field_00C0 - param_3 / (int)(uint)param_2->field_0096;
     return local_c;
   }
   if ((param_2->field_0004 & 0x2000) == 0) {
@@ -65,7 +77,7 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,
       iVar6 = (-(uint)(*psVar1 != 1) & 0x24) + 0x1a + (int)psVar1;
     }
     pbVar14 = (byte *)(param_2->field_0028 + iVar6);
-    local_8 = (undefined4 *)((int)param_3 * 2);
+    local_8 = (undefined4 *)(param_3 * 2);
   }
   else {
     local_18 = param_2->field_005E + 0x3e + param_2->field_0020;
@@ -91,7 +103,7 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = nullptr;
     puVar12 = param_1;
-    if (0 < (int)param_3) {
+    if (0 < param_3) {
       do {
         pvVar4 = g_lpBuffer_008568B0;
         iVar6 = pAVar5->field_00BC;
@@ -153,7 +165,7 @@ LAB_006c0125:
             uVar9 = *(undefined2 *)&pAVar5->field_0xb4;
             goto LAB_006c0125;
           }
-          while (((int)param_2 < (int)param_3 &&
+          while (((int)param_2 < param_3 &&
                  (iVar6 = pAVar5->field_00BC, pAVar5->field_00BC = iVar6 + -1,
                  pvVar4 = g_lpBuffer_008568B0, 0 < iVar6))) {
             if (pAVar5->field_00C0 < 1) {
@@ -234,7 +246,7 @@ LAB_006c0125:
         if (pAVar5->field_00C0 < 1) {
           return local_c;
         }
-        if ((int)param_3 <= (int)param_2) {
+        if (param_3 <= (int)param_2) {
           return local_c;
         }
       } while( true );
@@ -247,7 +259,7 @@ LAB_006c0125:
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = nullptr;
-    if (0 < (int)param_3) {
+    if (0 < param_3) {
       do {
         pvVar4 = g_lpBuffer_008568B0;
         uVar10 = pAVar5->field_00BC;
@@ -341,7 +353,7 @@ LAB_006c0455:
           }
           puVar12 = param_1;
           pAVar8 = param_2;
-          if ((int)param_2 < (int)param_3) {
+          if ((int)param_2 < param_3) {
             while (pvVar4 = g_lpBuffer_008568B0, puVar12 = param_1, pAVar8 = param_2,
                   0 < pAVar5->field_00BC) {
               if (pAVar5->field_00C0 < 1) {
@@ -391,7 +403,7 @@ LAB_006c0455:
               pAVar5->field_00BC = pAVar5->field_00BC + -1;
               pAVar5->field_00C0 = iVar6;
               pAVar8 = (AnonShape_006BFE70_9EDC24A5 *)&param_2->field_0x2;
-              if (((int)param_3 <= (int)pAVar8) || (iVar6 < 1)) break;
+              if ((param_3 <= (int)pAVar8) || (iVar6 < 1)) break;
               if (7 < local_1c) {
                 local_1c = local_1c - 0x10;
               }
@@ -425,7 +437,7 @@ LAB_006c0455:
               pAVar5->field_00C0 = pAVar5->field_00C0 + -1;
               puVar12 = param_1;
               pAVar8 = param_2;
-              if ((int)param_3 <= (int)param_2) break;
+              if (param_3 <= (int)param_2) break;
             }
           }
         }
@@ -436,7 +448,7 @@ LAB_006c0455:
         if (pAVar5->field_00C0 < 1) {
           return local_c;
         }
-        if ((int)param_3 <= (int)param_2) {
+        if (param_3 <= (int)param_2) {
           return local_c;
         }
       } while( true );

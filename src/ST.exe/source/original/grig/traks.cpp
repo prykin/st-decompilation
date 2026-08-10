@@ -23,12 +23,12 @@ int __thiscall st::fn_00555720(TraksClassTy *this)
     return 0;
   }
   g_currentExceptionFrame = pIVar2;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x37,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x37,0,iVar3,st::mutable_c_string("%s"),
                              "TraksClassTy::CreateDate error");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x38);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x38);
   return iVar3;
 }
 
@@ -85,32 +85,32 @@ st::fn_00555910(TraksClassTy *this,RecoveredRecord_TraksClassTy_00555910 *param_
       if (iVar6 == 0) {
         iVar6 = 1;
       }
-      iVar4 = param_1->field_0008 * iVar6;
+      iVar4 = st::machine_word_boundary_cast<int>(param_1->field_0008 * iVar6);
       sVar3 = (((short)(iVar4 / 10) + (short)(iVar4 >> 0x1f)) -
               (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + param_1->field_002C;
       param_1->field_0002 = sVar3;
       if (param_1->field_000E != 0) {
-        iVar4 = param_1->field_000E * iVar6 * iVar6;
+        iVar4 = st::machine_word_boundary_cast<int>(param_1->field_000E * iVar6 * iVar6);
         param_1->field_0002 =
              (((short)(iVar4 / 0x14) + (short)(iVar4 >> 0x1f)) -
              (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + sVar3;
       }
-      iVar4 = param_1->field_000A * iVar6;
+      iVar4 = st::machine_word_boundary_cast<int>(param_1->field_000A * iVar6);
       sVar3 = (((short)(iVar4 / 10) + (short)(iVar4 >> 0x1f)) -
               (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + param_1->field_002E;
       param_1->field_0004 = sVar3;
       if (param_1->field_0010 != 0) {
-        iVar4 = param_1->field_0010 * iVar6 * iVar6;
+        iVar4 = st::machine_word_boundary_cast<int>(param_1->field_0010 * iVar6 * iVar6);
         param_1->field_0004 =
              (((short)(iVar4 / 0x14) + (short)(iVar4 >> 0x1f)) -
              (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + sVar3;
       }
-      iVar4 = param_1->field_000C * iVar6;
+      iVar4 = st::machine_word_boundary_cast<int>(param_1->field_000C * iVar6);
       sVar3 = (((short)(iVar4 / 10) + (short)(iVar4 >> 0x1f)) -
               (short)((longlong)iVar4 * 0x66666667 >> 0x3f)) + param_1->field_0030;
       param_1->field_0006 = sVar3;
       if (param_1->field_0012 != 0) {
-        iVar6 = param_1->field_0012 * iVar6 * iVar6;
+        iVar6 = st::machine_word_boundary_cast<int>(param_1->field_0012 * iVar6 * iVar6);
         param_1->field_0006 =
              (((short)(iVar6 / 0x14) + (short)(iVar6 >> 0x1f)) -
              (short)((longlong)iVar6 * 0x66666667 >> 0x3f)) + sVar3;
@@ -173,12 +173,12 @@ st::fn_00555910(TraksClassTy *this,RecoveredRecord_TraksClassTy_00555910 *param_
     return;
   }
   g_currentExceptionFrame = local_64.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x96,0,iVar3,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x96,0,iVar3,st::mutable_c_string("%s"),
                              "TraksClassTy::DrawTrakSprite error");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x97);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x97);
   return;
 }
 
@@ -248,12 +248,12 @@ void __thiscall st::fn_00555E80(TraksClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",200,0,iVar4,"%s",
+  iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),200,0,iVar4,st::mutable_c_string("%s"),
                              "TraksClassTy::TraksExec error");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar4,0,"E:\\__titans\\grig\\traks.cpp",0xc9);
+  st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0xc9);
   return;
 }
 
@@ -290,7 +290,7 @@ byte * __thiscall st::fn_00555FE0(TraksClassTy *this,uint *param_1)
   uVar5 = local_10;
   if (errorCode == 0) {
     *param_1 = local_10 + 0x5d;
-    local_8 = st::fn_006AAC10(local_10 + 0x5d);
+    local_8 = st::pointer_boundary_cast<byte *>(st::fn_006AAC10(local_10 + 0x5d));
     local_8[0] = 0x46;
     local_8[1] = 0;
     local_8[2] = 0;
@@ -325,12 +325,12 @@ byte * __thiscall st::fn_00555FE0(TraksClassTy *this,uint *param_1)
   if (local_c != nullptr) {
     st::fn_006AB060(&local_c);
   }
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0xed,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0xed,0,errorCode,st::mutable_c_string("%s"),
                              "TraksClassTy::PrepareToSave error");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\grig\\traks.cpp",0xee);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0xee);
   return nullptr;
 }
 
@@ -407,7 +407,7 @@ void __thiscall st::fn_00556170(TraksClassTy *this,ushort *param_1)
         puVar4 = st::fn_00709AF0
                            (piVar6,CASE_1D,text,uVar7,bVar8,iVar10,iVar11,puVar12);
         element_0024->field_0036 = *puVar4;
-        iVar10 = element_0024->field_0000 * 0x18;
+        iVar10 = st::machine_word_boundary_cast<int>(element_0024->field_0000 * 0x18);
         st::fn_006E8660
                   (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)(&DAT_007c9000 + iVar10),
                    *(uint *)(&DAT_007c9004 + iVar10),*(uint *)(&DAT_007c8ff8 + iVar10),
@@ -447,12 +447,12 @@ void __thiscall st::fn_00556170(TraksClassTy *this,ushort *param_1)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar9 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x11b,0,iVar3,"%s",
+  iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x11b,0,iVar3,st::mutable_c_string("%s"),
                              "TraksClassTy::PrepareAfterSave error");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x11c);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x11c);
   return;
 }
 
@@ -488,12 +488,12 @@ int __thiscall st::fn_005564C0(TraksClassTy *this,STMessage *message)
   this_00 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x151,0,iVar3,
-                               "TraksClassTy::GetMessage error mess->id == %lX",message->id);
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x151,0,iVar3,
+                               st::mutable_c_string("TraksClassTy::GetMessage error mess->id == %lX"),message->id);
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x152);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x152);
     return 0xffff;
   }
   local_14->field_0020 = g_playSystem_00802A38->field_00E4;
@@ -691,12 +691,12 @@ LAB_0055693a:
   iVar7 = st::fn_0072D7F0(local_a8.jumpBuffer,0);
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_a8.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x1bc,0,iVar7,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x1bc,0,iVar7,st::mutable_c_string("%s"),
                                "TraksClassTy::TraksCreate error ");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar7,0,"E:\\__titans\\grig\\traks.cpp",0x1bd);
+    st::fn_006A5E40(iVar7,0,st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x1bd);
     return 0xffffffff;
   }
   psVar9 = &local_58;
@@ -856,15 +856,15 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
         local_8 = param_1[0xe];
       }
       else {
-        iVar14 = param_1[0xe] + local_8;
-        local_8 = param_1[0xe] - local_8;
+        iVar14 = st::machine_word_boundary_cast<int>(param_1[0xe] + local_8);
+        local_8 = st::machine_word_boundary_cast<int>(param_1[0xe] - local_8);
         if (local_8 < 0) {
-          uVar6 = local_34->field_001C * 0x41c64e6d + 0x3039;
+          uVar6 = st::machine_word_boundary_cast<uint>(local_34->field_001C * 0x41c64e6d + 0x3039);
           local_34->field_001C = uVar6;
           local_8 = (uVar6 >> 0x10) % ((iVar14 - local_8) + 1U) + local_8;
         }
         else {
-          uVar6 = local_34->field_001C * 0x41c64e6d + 0x3039;
+          uVar6 = st::machine_word_boundary_cast<uint>(local_34->field_001C * 0x41c64e6d + 0x3039);
           local_34->field_001C = uVar6;
           local_8 = (uVar6 >> 0x10) % ((iVar14 - local_8) + 1U) + local_8;
         }
@@ -888,15 +888,15 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
         local_18 = param_1[0xc];
       }
       else {
-        iVar14 = param_1[0xc] + local_18;
-        local_18 = param_1[0xc] - local_18;
+        iVar14 = st::machine_word_boundary_cast<int>(param_1[0xc] + local_18);
+        local_18 = st::machine_word_boundary_cast<int>(param_1[0xc] - local_18);
         if (local_18 < 0) {
-          uVar6 = local_34->field_001C * 0x41c64e6d + 0x3039;
+          uVar6 = st::machine_word_boundary_cast<uint>(local_34->field_001C * 0x41c64e6d + 0x3039);
           local_34->field_001C = uVar6;
           local_18 = (uVar6 >> 0x10) % ((iVar14 - local_18) + 1U) + local_18;
         }
         else {
-          uVar6 = local_34->field_001C * 0x41c64e6d + 0x3039;
+          uVar6 = st::machine_word_boundary_cast<uint>(local_34->field_001C * 0x41c64e6d + 0x3039);
           local_34->field_001C = uVar6;
           local_18 = (uVar6 >> 0x10) % ((iVar14 - local_18) + 1U) + local_18;
         }
@@ -947,7 +947,7 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
       iVar14 = 1;
       cVar13 = '\x1d';
       pcVar7 = st::fn_00404CBE(*param_1);
-      local_38 = st::fn_00716E60(pcVar12,pcVar7,cVar13,iVar14);
+      local_38 = st::fn_00716E60(st::machine_word_boundary_cast<undefined4>(pcVar12),pcVar7,cVar13,iVar14);
       if (param_1[3] < 0) {
         iVar3 = st::fn_006ACF0D(0,0,0,(param_1[0x13] * local_38) / 10 +
                                    (param_1[0x16] * local_38 * local_38) / 0x14 + param_1[0x10],
@@ -1085,7 +1085,7 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
           iVar8 = (param_1[6] * iVar14 + param_1[9] * local_c) / local_8;
           iVar5 = param_1[0x12];
           local_2c = iVar8 - iVar5;
-          uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          uVar6 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
           this_00->field_001C = uVar6;
           local_2c = (uVar6 >> 0x10) % (((iVar8 + iVar5) - local_2c) + 1U) + local_2c;
         }
@@ -1096,7 +1096,7 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
           iVar8 = (iVar14 * param_1[5] + param_1[8] * local_c) / local_8;
           iVar5 = param_1[0x11];
           local_10 = iVar8 - iVar5;
-          uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
+          uVar6 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
           this_00->field_001C = uVar6;
           iVar5 = (uVar6 >> 0x10) % (((iVar8 + iVar5) - local_10) + 1U) + local_10;
         }
@@ -1128,10 +1128,10 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
     return 0;
   }
   g_currentExceptionFrame = local_7c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\traks.cpp",0x1f7,0,local_EAX_96,
-                             "%s","TraksClassTy::TraksCreateCollection error ");
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x1f7,0,local_EAX_96,
+                             st::mutable_c_string("%s"),"TraksClassTy::TraksCreateCollection error ");
   if (iVar4 == 0) {
-    st::fn_006A5E40(local_EAX_96,0,"E:\\__titans\\grig\\traks.cpp",0x1f8);
+    st::fn_006A5E40(local_EAX_96,0,st::mutable_c_string("E:\\__titans\\grig\\traks.cpp"),0x1f8);
     return 0xffffffff;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

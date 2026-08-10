@@ -144,7 +144,7 @@ LAB_004da4d3:
           }
         }
         *(int *)(pbVar3 + (uint)*pbVar3 * 0x10 + 0x15) = iVar7;
-        puVar11 = (byte *)thunk_FUN_0043e420(local_280,bVar1);
+        puVar11 = (byte *)(thunk_FUN_0043e420(local_280,bVar1));
         puVar14 = (byte *)(local_148);
         memmove(puVar14, puVar11, 0x138); /* compiler REP MOVS byte copy */
         sVar5 = (short)local_148[1] + (short)local_148[0];
@@ -188,7 +188,7 @@ LAB_004da71f:
         }
       }
       *(int *)(pbVar3 + 0x85) = iVar12;
-      puVar11 = (byte *)thunk_FUN_0043e420(local_280,recordIndex);
+      puVar11 = (byte *)(thunk_FUN_0043e420(local_280,recordIndex));
       puVar14 = (byte *)(local_148);
       memmove(puVar14, puVar11, 0x138); /* compiler REP MOVS byte copy */
       sVar5 = (short)local_148[1] + (short)local_148[0];

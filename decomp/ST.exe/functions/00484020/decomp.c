@@ -126,14 +126,14 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
                   }
                   iVar11 = (int)this + 0x2a8;
                   do {
-                    piVar7 = (int *)thunk_FUN_0041dc40(local_48,(short)*(undefined4 *)(iVar11 + -2),
-                                                       *(ushort *)(iVar11 + 2),(short)local_20);
+                    piVar7 = thunk_FUN_0041dc40(local_48,(short)*(undefined4 *)(iVar11 + -2),
+                                                *(ushort *)(iVar11 + 2),(short)local_20);
                     sStack_56 = (short)((uint)*piVar7 >> 0x10);
                     local_28 = *piVar7 + iVar9;
                     sVar3 = (short)local_c - sStack_56;
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_24 = CONCAT22(uStack_52,(short)piVar7[1]) + local_3c;
-                    puVar8 = (undefined4 *)thunk_FUN_0041dc40(local_50,0,0,(short)local_20);
+                    puVar8 = thunk_FUN_0041dc40(local_50,0,0,(short)local_20);
                     sStack_56 = (short)((uint)*puVar8 >> 0x10);
                     sVar4 = (short)local_14 + (short)*puVar8;
                     sStack_56 = (short)local_18 - sStack_56;

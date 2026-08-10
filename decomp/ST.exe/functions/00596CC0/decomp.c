@@ -22,7 +22,7 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
   FSGSTy *this_01;
   FSGSTy *pFVar3;
   undefined4 *this_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   FSGSTy *extraout_ECX;
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
@@ -119,7 +119,7 @@ LAB_00596d8b:
       OutSGlProc((FSGSTy *)g_dDXContext_0080759C,
                  (AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,nullptr,
                  nullptr,0x199,0x5e,0x174,0x175,(int)&this_00->field_1A5B->field_0140);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       pFVar3 = extraout_ECX;
     }
     if (this_00->field_1F2B != nullptr) {

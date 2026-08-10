@@ -81,7 +81,7 @@ void __thiscall st::fn_00566970(SoundManagerTy *this,int param_1,int param_2)
     if (iVar2 == 0) {
       if (this->field_0039 == param_1) {
         this->field_0039 = param_1;
-        this->field_003D = this->field_003D + 1;
+        this->field_003D = st::machine_word_boundary_cast<int>(this->field_003D + 1);
         return;
       }
       this->field_003D = 1;
@@ -135,7 +135,7 @@ void __thiscall st::fn_00566AA0(SoundManagerTy *this)
             uVar1 = st::fn_0072E6C0();
             uVar1 = uVar1 % uVar2;
             if ((uVar1 == this->field_0039) && (1 < this->field_003D)) {
-              uVar1 = this->field_0039 + 1;
+              uVar1 = st::machine_word_boundary_cast<uint>(this->field_0039 + 1);
             }
             if ((int)uVar2 <= (int)uVar1) {
               uVar1 = 0;
@@ -145,7 +145,7 @@ void __thiscall st::fn_00566AA0(SoundManagerTy *this)
             uVar1 = st::fn_0072E6C0();
             uVar1 = uVar1 % (uVar2 - 1) + 1;
             if ((uVar1 == this->field_0039) && (1 < this->field_003D)) {
-              uVar1 = this->field_0039 + 1;
+              uVar1 = st::machine_word_boundary_cast<uint>(this->field_0039 + 1);
             }
             if ((int)uVar2 <= (int)uVar1) {
               st::fn_00401AC3(this,1,0);

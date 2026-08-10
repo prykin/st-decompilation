@@ -294,6 +294,7 @@ st::fn_00606050
   int local_EAX_29;
   int iVar2;
   uint uVar3;
+  uint uVar3_mg10;
   uint uVar2;
   uint uVar4;
   int iVar5;
@@ -339,7 +340,7 @@ st::fn_00606050
     this->field_02B7 = param_7;
   }
   local_74 = st::fn_004017AD((Global_sub_00606A50_param_1Enum)param_5);
-  local_14 = st::fn_004052EF(param_4,&local_10,&local_78,&local_28,&local_1c,&local_24);
+  local_14 = st::fn_004052EF(param_4,st::pointer_boundary_cast<void **>(&local_10),st::pointer_boundary_cast<undefined4 *>(&local_78),st::pointer_boundary_cast<undefined4 *>(&local_28),st::pointer_boundary_cast<undefined4 *>(&local_1c),st::pointer_boundary_cast<undefined4 *>(&local_24));
   if (0 < local_24) {
     local_18 = local_24;
   }
@@ -350,7 +351,7 @@ st::fn_00606050
       local_1c = 0;
     }
   }
-  uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+  uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
   this->field_001C = uVar3;
   iVar7 = (uVar3 >> 0x10) % (local_78 + 1U) + 9;
   local_c = iVar7;
@@ -376,7 +377,7 @@ st::fn_00606050
         }
       }
       else {
-        uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar3;
         uVar3 = (uint)local_10[(uVar3 >> 0x10) % (uint)bVar1 + 3];
 LAB_00606189:
@@ -392,9 +393,9 @@ LAB_00606189:
           } while (local_90[uVar3 & 0x7f] != 0);
         }
         *param_5 = uVar3;
-        local_90[uVar3 & 0x7f] = local_90[uVar3 & 0x7f] + 1;
+        local_90[uVar3 & 0x7f] = st::machine_word_boundary_cast<int>(local_90[uVar3 & 0x7f] + 1);
         if ((local_18 != 3) &&
-           (uVar4 = this->field_001C * 0x41c64e6d + 0x3039, this->field_001C = uVar4,
+           (uVar4 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039), this->field_001C = uVar4,
            (uVar4 & 0x10000) != 0)) {
           *param_5 = uVar3 | 0x100;
         }
@@ -421,12 +422,12 @@ LAB_00606189:
         }
       }
       else {
-        uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar3;
         *puVar9 = (uint)local_10[(uVar3 >> 0x10) % (uint)bVar1 + 0xd];
 LAB_00606282:
         if (((local_5 == '\0') && (local_18 != 3)) &&
-           (uVar3 = this->field_001C * 0x41c64e6d + 0x3039, this->field_001C = uVar3,
+           (uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039), this->field_001C = uVar3,
            (uVar3 & 0x10000) != 0)) {
           *puVar9 = *puVar9 | 0x100;
         }
@@ -452,7 +453,7 @@ LAB_00606282:
       }
     }
     else {
-      uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+      uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
       this->field_001C = uVar3;
       *puVar9 = (uint)local_10[(uVar3 >> 0x10) % (uint)bVar1 + 0x19];
 LAB_00606321:
@@ -505,7 +506,7 @@ LAB_006063f9:
         }
       }
       else if ((local_100[(int)param_5] & 0x80) != 0) {
-        uVar3 = local_100[(int)param_5] & 0xffffff7f | 0x100;
+        uVar3 = st::machine_word_boundary_cast<uint>(local_100[(int)param_5] & 0xffffff7f | 0x100);
         goto LAB_006063f9;
       }
       local_5c = local_100[(int)param_5];
@@ -514,7 +515,7 @@ LAB_006063f9:
           local_2f = 1;
         }
         else {
-          iVar7 = this->field_001C * 0x41c64e6d + 0x3039;
+          iVar7 = st::machine_word_boundary_cast<int>(this->field_001C * 0x41c64e6d + 0x3039);
           this->field_001C = iVar7;
           local_2f = (byte)((uint)iVar7 >> 0x10) & 1;
         }
@@ -533,14 +534,14 @@ LAB_006063f9:
       else if (param_4 == 0x15) {
         local_54 = 2;
       }
-      uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+      uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
       this->field_001C = uVar3;
       local_40 = (uVar3 >> 0x10) % 0x169;
       switch(local_74) {
       case 0:
       case 4:
         if (((local_40 < 0x2e) || (0x13a < local_40)) || ((0x86 < local_40 && (local_40 < 0xe2)))) {
-          uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+          uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
           this->field_001C = uVar3;
           uVar3 = (uVar3 >> 0x10) % (local_14 + 1U) >> 3;
           iVar6 = local_14 / 2;
@@ -562,7 +563,7 @@ LAB_006065f8:
           iVar6 = this->field_001C;
           goto LAB_00606606;
         }
-        uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar3;
         uVar3 = (uVar3 >> 0x10) % (local_14 + 1U) >> 3;
         iVar6 = local_14 / 2;
@@ -571,7 +572,7 @@ LAB_006065f8:
       case 6:
         if (((local_40 < 0x2d) || (0x87 < local_40)) && ((local_40 < 0xe1 || (0x13b < local_40))))
         goto LAB_006064b4;
-        uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar3;
         iVar6 = local_14 / 2 - ((uVar3 >> 0x10) % (local_14 + 1U) >> 3);
         goto switchD_00606490_default;
@@ -579,7 +580,7 @@ LAB_006065f8:
       case 7:
         if (((local_40 < 0x5a) || (0xb4 < local_40)) && ((local_40 < 0x10e || (0x168 < local_40))))
         goto LAB_006065f8;
-        uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar3;
         uVar3 = (uVar3 >> 0x10) % (local_14 + 1U) >> 3;
         iVar6 = local_14 / 2;
@@ -589,18 +590,18 @@ LAB_006065f8:
       }
       iVar6 = iVar6 - uVar3;
 switchD_00606490_default:
-      iVar7 = st::fn_006AFF50(local_40);
+      uVar3_mg10 = st::fn_006AFF50(local_40);
       uVar2 = st::fn_006AFF5B(local_40);
       local_4c = (int)(uVar2 * iVar6) / 10000 + param_2;
-      local_50 = (iVar7 * iVar6) / 10000 + param_1;
-      uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+      local_50 = (int)(uVar3_mg10 * iVar6) / 10000 + param_1;
+      uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
       this->field_001C = uVar3;
       local_48 = param_3;
       local_34 = uVar3 >> 0x10 & 7;
-      uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+      uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
       this->field_001C = uVar3;
       if ((uVar3 & 0x30000) == 0) {
-        uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar3;
         local_44 = (uVar3 >> 0x10) % 0x15;
         iVar7 = 100;
@@ -616,7 +617,7 @@ switchD_00606490_default:
       case 0:
       case 1:
       case 2:
-        uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar3;
         local_38 = 0x82;
         local_3c = (uVar3 >> 0x10) % 3;
@@ -625,7 +626,7 @@ switchD_00606490_default:
       case 4:
       case 5:
         local_38 = 0x8c;
-        uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar3;
         local_3c = (uVar3 >> 0x10 & 3) + 1;
         break;
@@ -633,7 +634,7 @@ switchD_00606490_default:
       case 7:
       case 8:
       case 9:
-        uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar3;
         local_38 = 0x96;
         local_3c = (uVar3 >> 0x10) % 5;
@@ -645,7 +646,7 @@ switchD_00606490_default:
       case 0xe:
       case 0xf:
         local_38 = 0x9b;
-        uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+        uVar3 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
         this->field_001C = uVar3;
         local_3c = (uVar3 >> 0x10 & 3) + 4;
       }

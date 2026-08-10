@@ -35,16 +35,16 @@ void __thiscall st::fn_00543600(CursorClassTy *this,undefined4 param_1)
     st::fn_006B88D0
               (&this_00->field_00AD,g_dDXContext_0080759C,0,nullptr,0x8000000,0,
                nullptr,0);
-    st::fn_0040376F(this_00,param_1,"CUR_MENU",0x32,nullptr,0,-1,-1);
+    st::fn_0040376F(this_00,param_1,st::mutable_c_string("CUR_MENU"),0x32,nullptr,0,-1,-1);
     local_EAX_157 =
          st::fn_00709AF0
-                   (PTR_00806784,CASE_B,"INF_DEEPS",0xffffffff,0,1,0,nullptr);
+                   (PTR_00806784,CASE_B,st::mutable_c_string("INF_DEEPS"),0xffffffff,0,1,0,nullptr);
     this_00->field_04E3 = local_EAX_157;
     puVar4 = st::fn_00709AF0
-                       (PTR_00806784,CASE_13,"CUR_CONFIRM",0xffffffff,0,1,0,
+                       (PTR_00806784,CASE_13,st::mutable_c_string("CUR_CONFIRM"),0xffffffff,0,1,0,
                         nullptr);
     this_00->field_04E7 = puVar4;
-    local_8 = st::fn_006F1CE0(g_cMf32_00806780,1,"CURSOR_PAL",nullptr,1);
+    local_8 = st::fn_006F1CE0(g_cMf32_00806780,1,st::mutable_c_string("CURSOR_PAL"),nullptr,1);
     puVar5 = local_8 + 0x14;
     iVar6 = 1;
     uVar3 = st::fn_006B4FE0((int)local_8);
@@ -52,19 +52,19 @@ void __thiscall st::fn_00543600(CursorClassTy *this,undefined4 param_1)
     this_00->field_04D2 = puVar5;
     st::fn_006F20E0(g_cMf32_00806780,(uint *)&local_8);
     puVar1 = &this_00->field_04D6;
-    st::fn_006B2330(g_ddxContext_008075A8,puVar1,1,0x4047ff,0,0,this_00->field_04D2);
+    st::fn_006B2330(g_ddxContext_008075A8,st::pointer_boundary_cast<uint *>(puVar1),1,0x4047ff,0,0,this_00->field_04D2);
     st::fn_006B28C0(g_ddxContext_008075A8,*puVar1,1);
     st::fn_006B3AF0((int *)g_ddxContext_008075A8,*puVar1);
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0x65,0,local_EAX_34,
-                             "%s","CursorClassTy::InitCursor");
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x65,0,local_EAX_34,
+                             st::mutable_c_string("%s"),"CursorClassTy::InitCursor");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(-0x34,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x66);
+  st::fn_006A5E40(-0x34,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x66);
   return;
 }
 
@@ -113,12 +113,12 @@ void __thiscall st::fn_00543830(CursorClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0x7d,0,errorCode,
-                             "%s","CursorClassTy::DoneCursor");
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x7d,0,errorCode,
+                             st::mutable_c_string("%s"),"CursorClassTy::DoneCursor");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x7e);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x7e);
   return;
 }
 
@@ -151,7 +151,7 @@ void __thiscall st::fn_00543990(CursorClassTy *this,int param_1)
     if (param_1 != 7) {
       iVar2 = 0x21;
       cVar4 = -0x7f;
-      puVar5 = DAT_00811640;
+      puVar5 = st::pointer_boundary_cast<undefined4 *>(DAT_00811640);
     }
     else {
       iVar2 = 0;
@@ -170,12 +170,12 @@ void __thiscall st::fn_00543990(CursorClassTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0x8c,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x8c,0,iVar2,st::mutable_c_string("%s"),
                              "CursorClassTy::ReInitCursorSpr");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x8d);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x8d);
   return;
 }
 
@@ -211,12 +211,12 @@ st::fn_00543AD0
   pCVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0xa8,0,iVar3,
-                               "%s","CursorClassTy::SetImages");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0xa8,0,iVar3,
+                               st::mutable_c_string("%s"),"CursorClassTy::SetImages");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(-0x34,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0xa9);
+    st::fn_006A5E40(-0x34,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0xa9);
     return;
   }
   local_8->field_00B9 = -(int)param_4;
@@ -235,13 +235,13 @@ st::fn_00543AD0
                pCVar2->field_0038);
   }
   if (param_6 < 0) {
-    pCVar2->field_00B1 = pCVar2->field_003C - (int)param_4;
+    pCVar2->field_00B1 = st::machine_word_boundary_cast<undefined4>(pCVar2->field_003C - (int)param_4);
   }
   else {
     pCVar2->field_00B1 = param_6 - (int)param_4;
   }
   if (param_7 < 0) {
-    pCVar2->field_00B5 = pCVar2->field_0040 - param_5;
+    pCVar2->field_00B5 = st::machine_word_boundary_cast<undefined4>(pCVar2->field_0040 - param_5);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -323,16 +323,16 @@ void __thiscall st::fn_00543C90(CursorClassTy *this,int param_1,int param_2)
         }
         if ((uint)(pSVar1->field_0040 + pSVar1->field_0044) <= DVar3) {
           pSVar1->field_0044 = DVar3;
-          pSVar1->field_0008 = pSVar1->field_0008 + 1;
+          pSVar1->field_0008 = st::machine_word_boundary_cast<int>(pSVar1->field_0008 + 1);
           st::fn_006E2970
                     (g_sT3DSMAPContext_00807598,(float)pCVar4->field_04EF,(float)pCVar4->field_04F3,
-                     pCVar4->field_04F7,&pCVar4->field_04EB->field_001C,
-                     &pCVar4->field_04EB->field_0020);
-          pCVar4->field_04EB->field_001C =
-               pCVar4->field_04EB->field_001C - *(int *)((int)pCVar4->field_04E7 + 9) / 2;
+                     pCVar4->field_04F7,st::pointer_boundary_cast<int *>(&pCVar4->field_04EB->field_001C),
+                     st::pointer_boundary_cast<int *>(&pCVar4->field_04EB->field_0020));
+          pCVar4->field_04EB->field_001C =st::machine_word_boundary_cast<undefined4>(
+               pCVar4->field_04EB->field_001C - *(int *)((int)pCVar4->field_04E7 + 9) / 2);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          pCVar4->field_04EB->field_0020 =
-               pCVar4->field_04EB->field_0020 - *(int *)((int)pCVar4->field_04E7 + 0xd) / 2;
+          pCVar4->field_04EB->field_0020 =st::machine_word_boundary_cast<undefined4>(
+               pCVar4->field_04EB->field_0020 - *(int *)((int)pCVar4->field_04E7 + 0xd) / 2);
           pSVar1 = pCVar4->field_04EB;
           st::fn_006B3730
                     ((uint *)g_ddxContext_008075A8,pSVar1->field_0004,pSVar1->field_0008,
@@ -343,12 +343,12 @@ void __thiscall st::fn_00543C90(CursorClassTy *this,int param_1,int param_2)
       return;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0xcc,0,iVar5,
-                               "%s","CursorClassTy::DrawSprite");
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0xcc,0,iVar5,
+                               st::mutable_c_string("%s"),"CursorClassTy::DrawSprite");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar5,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0xcd);
+    st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0xcd);
   }
   return;
 }
@@ -374,12 +374,12 @@ st::fn_00543FA0(CursorClassTy *this,int param_1,int param_2,int param_3,int para
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0xd8,0,errorCode,
-                               "%s","CursorClassTy::CursDrawInit");
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0xd8,0,errorCode,
+                               st::mutable_c_string("%s"),"CursorClassTy::CursDrawInit");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0xd9);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0xd9);
     return;
   }
   if (local_8->field_00A9 != 0) {
@@ -482,12 +482,12 @@ void __thiscall st::fn_005441A0(CursorClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_b8.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0x127,0,iVar2,"%s"
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x127,0,iVar2,st::mutable_c_string("%s")
                              ,"CursorClassTy::AddSysAcc");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x128);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x128);
   return;
 }
 
@@ -573,12 +573,12 @@ void __thiscall st::fn_00544460(CursorClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_b8.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0x15a,0,iVar2,"%s"
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x15a,0,iVar2,st::mutable_c_string("%s")
                              ,"CursorClassTy::DelSysAcc");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x15b);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x15b);
   return;
 }
 
@@ -634,12 +634,12 @@ void __thiscall st::fn_005446C0(CursorClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_b8.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0x175,0,iVar2,"%s"
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x175,0,iVar2,st::mutable_c_string("%s")
                              ,"CursorClassTy::AddOpticAcc");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x176);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x176);
   return;
 }
 
@@ -695,12 +695,12 @@ void __thiscall st::fn_00544800(CursorClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_b8.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",399,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),399,0,iVar2,st::mutable_c_string("%s"),
                              "CursorClassTy::DelOpticAcc");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\to_cursor.cpp",400);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),400);
   return;
 }
 
@@ -836,10 +836,10 @@ int __thiscall st::fn_005449B0(CursorClassTy *this,STMessage *message)
   this_00 = local_44;
   if (local_EAX_58 != 0) {
     g_currentExceptionFrame = local_e0.previous;
-    iVar17 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0x4d6,0,local_EAX_58,
-                                "%s","CursorClassTy::GetMessage");
+    iVar17 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x4d6,0,local_EAX_58,
+                                st::mutable_c_string("%s"),"CursorClassTy::GetMessage");
     if (iVar17 == 0) {
-      st::fn_006A5E40(local_EAX_58,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x4d7);
+      st::fn_006A5E40(local_EAX_58,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x4d7);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1558,10 +1558,10 @@ switchD_0054679d_default:
           }
           if (iVar13 == local_48) {
             if (DAT_00808783 == '\x01') {
-              DAT_008087a0 = 9;
+              STPiece<0,1>(DAT_008087a0) = 9;
             }
             else if (DAT_00808783 == '\x02') {
-              DAT_008087a0 = 10;
+              STPiece<0,1>(DAT_008087a0) = 10;
             }
             memset(local_40, 0, 0x20); /* compiler bulk-zero initialization */
             DAT_0080879c = 1;
@@ -1849,7 +1849,7 @@ switchD_0054679d_default:
     this_00->field_04DA = UVar12;
     uVar32 = (message->arg0).words.high;
     if (uVar32 == 1) {
-      pAVar5 = (message->arg1).ptr;
+      pAVar5 = st::pointer_boundary_cast<AnonShape_005449B0_F65ED625 *>((message->arg1).ptr);
       local_8 = pAVar5;
       switch(*(undefined1 *)pAVar5) {
       case 1:
@@ -1879,7 +1879,7 @@ LAB_005458df:
         else {
           st::fn_0040535D(*(uint *)(&DAT_00807e66 + pAVar5->field_0009 * 4),1);
           st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618);
-          st::external_00000080((LPSTR)local_524,"&%d%s\n&%d%s");
+          st::external_00000080((LPSTR)local_524,st::mutable_c_string("&%d%s\n&%d%s"));
         }
         break;
       case 2:
@@ -1896,7 +1896,7 @@ LAB_005458df:
           pcVar12_mg11 = st::fn_006B0140(0x36b3,g_hINSTANCE_00807618);
           pcVar13_mgC = st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618);
           pcVar26 = wsprintfA_exref;
-          st::external_00000080((LPSTR)local_524,"&%d%s\n%s",(message->arg0).words.low,pcVar13_mgC,
+          st::external_00000080((LPSTR)local_524,st::mutable_c_string("&%d%s\n%s"),(message->arg0).words.low,pcVar13_mgC,
                     pcVar12_mg11);
         }
         else {
@@ -1904,7 +1904,7 @@ LAB_005458df:
           st::fn_006B0140(pAVar5->field_0005,g_hINSTANCE_00807618);
           st::fn_006B0140(pAVar5->field_0001,g_hINSTANCE_00807618);
           pcVar26 = wsprintfA_exref;
-          st::external_00000080((LPSTR)local_524,"&%d%s\n%s\n%s");
+          st::external_00000080((LPSTR)local_524,st::mutable_c_string("&%d%s\n%s\n%s"));
         }
         if (*(short *)&pAVar5->field_0xd != 0) {
           (*pcVar26)(local_524,"%s &%d%d",(short)local_524,
@@ -1941,12 +1941,12 @@ LAB_005458df:
         pcVar28 = (char *)&DAT_0080f33a;
         memmove(pcVar28, pcVar24, uVar19); /* compiler REP MOVS byte copy */
         uVar20 = 0;
-        for (local_EAX_4371 = st::fn_0072E560(&DAT_0080f33a,'\n');
+        for (local_EAX_4371 = st::fn_0072E560(st::pointer_boundary_cast<uint *>(&DAT_0080f33a),'\n');
             local_EAX_4371 != nullptr;
             local_EAX_4371 = st::fn_0072E560(local_EAX_4371,'\n')) {
           *(undefined1 *)local_EAX_4371 = 0x20;
         }
-        st::external_00000080((LPSTR)local_524,"&%d%s",(uint)(message->arg0).words.low,&DAT_0080f33a);
+        st::external_00000080((LPSTR)local_524,st::mutable_c_string("&%d%s"),(uint)(message->arg0).words.low,&DAT_0080f33a);
         if (local_8->field_0005 != 0) {
           pcVar12_mgD = st::fn_006B0140(local_8->field_0005,g_hINSTANCE_00807618);
           uVar19 = 0xffffffff;
@@ -1962,16 +1962,16 @@ LAB_005458df:
           pcVar24 = pcVar24 + -uVar19;
           pcVar28 = (char *)&DAT_0080f33a;
           memmove(pcVar28, pcVar24, uVar19); /* compiler REP MOVS byte copy */
-          for (puVar13 = st::fn_0072E560(&DAT_0080f33a,'\n'); puVar13 != nullptr;
+          for (puVar13 = st::fn_0072E560(st::pointer_boundary_cast<uint *>(&DAT_0080f33a),'\n'); puVar13 != nullptr;
               puVar13 = st::fn_0072E560(puVar13,'\n')) {
             *(undefined1 *)puVar13 = 0x20;
           }
-          st::external_00000080((LPSTR)local_524,"%s\n%s",local_524,&DAT_0080f33a);
+          st::external_00000080((LPSTR)local_524,st::mutable_c_string("%s\n%s"),local_524,&DAT_0080f33a);
         }
         piVar23 = &local_8->field_0009;
         if (local_8->field_0009 != 0) {
           pcVar12_mgF = st::fn_006B0140(0x36c2,g_hINSTANCE_00807618);
-          st::external_00000080((LPSTR)local_524,"%s\n%s",local_524,pcVar12_mgF);
+          st::external_00000080((LPSTR)local_524,st::mutable_c_string("%s\n%s"),local_524,pcVar12_mgF);
           iVar13 = 5;
           do {
             if (*piVar23 != CASE_0) {
@@ -1979,7 +1979,7 @@ LAB_005458df:
               UVar12 = st::fn_00404B29((Global_sub_00528060_param_1Enum)*piVar23,
                                           (char)((uint)*piVar23 >> 0x10));
               pcVar12_mg10 = st::fn_006B0140(UVar12,module);
-              st::external_00000080((LPSTR)local_524,"%s\n&%d%s",local_524,
+              st::external_00000080((LPSTR)local_524,st::mutable_c_string("%s\n&%d%s"),local_524,
                         (STField<Global_sub_00528060_param_1Enum>(piVar23,5) != CASE_0) + 1,
                         pcVar12_mg10);
             }
@@ -2048,13 +2048,13 @@ switchD_00545816_default:
         puVar14 = (undefined4 *)((int)puVar14 + 1);
       }
       st::fn_00710A90((ccFntTy *)g_startSystem_0081176C->field_0038,(int)this_00->field_04D2,0,5,5,
-                       this_00->field_04CA + -10,this_00->field_04CE + -10);
+                       st::machine_word_boundary_cast<int>(this_00->field_04CA + -10),st::machine_word_boundary_cast<int>(this_00->field_04CE + -10));
       st::fn_00711B70((ccFntTy *)g_startSystem_0081176C->field_0038,(char *)local_524,-2,-1,
                      (uint)(message->arg0).words.low,-1,-1);
       st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,0,0,this_00->field_04CA,
                    this_00->field_04CE,0x18,0xd);
       st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,1,1,
-                   this_00->field_04CA + -2,this_00->field_04CE + -2,0x1d,0xd);
+                   st::machine_word_boundary_cast<int>(this_00->field_04CA + -2),st::machine_word_boundary_cast<int>(this_00->field_04CE + -2),0x1d,0xd);
       bVar34 = 0x18;
     }
     else {
@@ -2099,17 +2099,17 @@ switchD_00545816_default:
         puVar14 = (undefined4 *)((int)puVar14 + 1);
       }
       st::fn_00710A90(g_interSystem_00802A28->field_0028,(int)this_00->field_04D2,0,5,5,
-                       this_00->field_04CA + -10,this_00->field_04CE + -10);
+                       st::machine_word_boundary_cast<int>(this_00->field_04CA + -10),st::machine_word_boundary_cast<int>(this_00->field_04CE + -10));
       st::fn_00711B70(g_interSystem_00802A28->field_0028,(char *)local_524,-2,-1,
                      (uint)(message->arg0).words.low,-1,-1);
       st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,0,0,this_00->field_04CA,
                    this_00->field_04CE,0x6f,0xd);
       st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,1,1,
-                   this_00->field_04CA + -2,this_00->field_04CE + -2,0xb3,0xd);
+                   st::machine_word_boundary_cast<int>(this_00->field_04CA + -2),st::machine_word_boundary_cast<int>(this_00->field_04CE + -2),0xb3,0xd);
       bVar34 = 0x6f;
     }
-    st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,3,3,this_00->field_04CA + -6
-                 ,this_00->field_04CE + -6,bVar34,0xd);
+    st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,3,3,st::machine_word_boundary_cast<int>(this_00->field_04CA + -6)
+                 ,st::machine_word_boundary_cast<int>(this_00->field_04CE + -6),bVar34,0xd);
 cf_common_exit_00545FF6:
     if (800 < this_00->field_04CA) {
       g_currentExceptionFrame = local_e0.previous;
@@ -2878,7 +2878,7 @@ switchD_00546ac9_caseD_a506:
     if ((-1 < this_00->field_010B) && (g_sT3DSMAPContext_00807598 != nullptr)) {
       st::fn_006E8BA0(g_sT3DSMAPContext_00807598,this_00->field_010B);
     }
-    st::fn_006E89B0(g_sT3DSMAPContext_00807598,piVar23,&DAT_007c7cd8,8,2,0x45,this_00->field_00FF,
+    st::fn_006E89B0(g_sT3DSMAPContext_00807598,piVar23,st::machine_word_boundary_cast<undefined4>(&DAT_007c7cd8),8,2,0x45,this_00->field_00FF,
                  this_00->field_0103,this_00->field_0107,0,1,1);
     st::fn_006EAAA0(g_sT3DSMAPContext_00807598,*piVar23,0);
     st::fn_006EA460(g_sT3DSMAPContext_00807598,*piVar23,-1);
@@ -3305,10 +3305,10 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
   this_00 = local_124;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_2c8.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0x671,0,iVar5,
-                               "%s","CursorClassTy::TakeCmdToRun");
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x671,0,iVar5,
+                               st::mutable_c_string("%s"),"CursorClassTy::TakeCmdToRun");
     if (iVar6 == 0) {
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x672);
+      st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x672);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -3357,7 +3357,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         }
         if (local_4c != nullptr) {
           local_18 = (uint *)(local_9c + 1);
-          local_94 = st::fn_006AAC10((uint)local_18);
+          local_94 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)local_18));
           if (local_94 != nullptr) {
             *(char *)local_94 = (this_00->field_04A2 == CASE_A) + '\x01';
             puVar9 = local_4c;
@@ -3390,7 +3390,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         }
         if (local_1c != nullptr) {
           local_24 = (uint *)(local_a8 + 1);
-          local_18 = st::fn_006AAC10((uint)local_24);
+          local_18 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)local_24));
           if (local_18 != nullptr) {
             *(undefined1 *)local_18 = 3;
             puVar10 = local_1c;
@@ -3462,7 +3462,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         }
         if (local_54 != nullptr) {
           local_18 = (uint *)(local_a4 + 1);
-          local_24 = st::fn_006AAC10((uint)local_18);
+          local_24 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)local_18));
           if (local_24 != nullptr) {
             *(undefined1 *)local_24 = 4;
             puVar14 = (byte *)(local_54);
@@ -3512,7 +3512,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
       }
       if (local_3c != nullptr) {
         local_18 = (uint *)(local_98 + 1);
-        local_20 = st::fn_006AAC10((uint)local_18);
+        local_20 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)local_18));
         if (local_20 != nullptr) {
           *(char *)local_20 = (this_00->field_0494 == 0xc) + '\x01';
           puVar9 = local_3c;
@@ -3660,7 +3660,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         }
         if (local_44 != nullptr) {
           local_18 = (uint *)(local_a0 + 1);
-          local_14 = st::fn_006AAC10((uint)local_18);
+          local_14 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)local_18));
           if (local_14 != nullptr) {
             *(undefined1 *)local_14 = 3;
             puVar9 = local_44;
@@ -3982,7 +3982,7 @@ LAB_00549b36:
     local_2c = 3;
     puVar14 = (byte *)0x1f;
 cf_common_join_0054A19A:
-    st::fn_00403C33(puVar14,puVar10,0,0xffffffff);
+    st::fn_00403C33(st::pointer_boundary_cast<undefined4 *>(puVar14),puVar10,0,0xffffffff);
     break;
   case 0x1f:
     pSVar2 = this_00->field_049A;
@@ -4069,10 +4069,10 @@ void __thiscall st::fn_0054AEE0(CursorClassTy *this,int param_1)
   this_00 = local_18;
   if (local_EAX_45 != 0) {
     g_currentExceptionFrame = local_74.previous;
-    iVar10 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0x6fc,0,local_EAX_45,
-                                "%s","CursorClassTy::GCGameState");
+    iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x6fc,0,local_EAX_45,
+                                st::mutable_c_string("%s"),"CursorClassTy::GCGameState");
     if (iVar10 == 0) {
-      st::fn_006A5E40(local_EAX_45,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x6fe);
+      st::fn_006A5E40(local_EAX_45,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x6fe);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -4143,7 +4143,7 @@ LAB_0054b366:
     pSVar7 = this_00->field_049A;
     if (pSVar7 == nullptr) {
       if ((this_00->field_049E != 0) && (this_00->field_049E = 0, DAT_00801694 != nullptr)) {
-        st::fn_00402045(DAT_00801694,nullptr,0,'\x01',0xfffffc18);
+        st::fn_00402045(st::pointer_boundary_cast<void *>(DAT_00801694),nullptr,0,'\x01',0xfffffc18);
       }
       if (this_00->field_04DE == '\0') goto LAB_0054b2a9;
       iVar6 = this_00->field_0038;
@@ -4176,13 +4176,13 @@ LAB_0054b366:
           puVar9_mg1 = st::fn_0072E560(puVar9_mg1,'\n');
         }
         if (STPiece<1,1>(local_28) == '\0') {
-          st::external_00000080((LPSTR)local_d8,"%s",local_d8);
+          st::external_00000080((LPSTR)local_d8,st::mutable_c_string("%s"),local_d8);
         }
         else {
-          st::external_00000080((LPSTR)local_d8,"%s - \"%s\"",local_d8,(int)&local_28 + 1);
+          st::external_00000080((LPSTR)local_d8,st::mutable_c_string("%s - \"%s\""),local_d8,(int)&local_28 + 1);
         }
         if (DAT_00801694 != nullptr) {
-          st::fn_00402045(DAT_00801694,(char *)local_d8,0,'\x01',0xfffffc18);
+          st::fn_00402045(st::pointer_boundary_cast<void *>(DAT_00801694),(char *)local_d8,0,'\x01',0xfffffc18);
         }
       }
       if (this_00->field_04DE == '\0') {
@@ -4262,12 +4262,12 @@ st::fn_0054BE70(CPanelTy *this,DDXContext *param_1,undefined4 param_2,undefined4
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0x797,0,errorCode,
-                             "%s","CPanelTy::OutProc");
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x797,0,errorCode,
+                             st::mutable_c_string("%s"),"CPanelTy::OutProc");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x797);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x797);
   return;
 }
 
@@ -4321,12 +4321,12 @@ st::fn_0054BF40
   this_00 = local_14;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\to_cursor.cpp",0x8ee,0,iVar2,
-                               "%s","CursorClassTy::SetGCType");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x8ee,0,iVar2,
+                               st::mutable_c_string("%s"),"CursorClassTy::SetGCType");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x8f0);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\to_cursor.cpp"),0x8f0);
     return local_10;
   }
   if (local_14->field_0494 == param_1) {
@@ -4663,12 +4663,12 @@ switchD_0054c0ac_default:
     uVar5 = local_8;
     break;
   case 0x46:
-    st::fn_0040376F(local_14,1,"CUR_HYPER",0x32,(BITMAPINFO *)0xd,0,0x1b,0xf);
+    st::fn_0040376F(local_14,1,st::mutable_c_string("CUR_HYPER"),0x32,(BITMAPINFO *)0xd,0,0x1b,0xf);
     st::fn_0040241E(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   case 0x47:
-    st::fn_0040376F(local_14,1,"CUR_HELPNO",0x32,(BITMAPINFO *)0x1,1,0x1d,0x30);
+    st::fn_0040376F(local_14,1,st::mutable_c_string("CUR_HELPNO"),0x32,(BITMAPINFO *)0x1,1,0x1d,0x30);
     st::fn_0040241E(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = local_58.previous;
     return 0;

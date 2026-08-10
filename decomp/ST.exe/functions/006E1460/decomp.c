@@ -73,8 +73,8 @@ ST3DSMAPContext::sub_006E1460(ST3DSMAPContext *this,double param_2,double param_
   local_68 = 0;
   local_7c = 0;
   local_90 = 0;
-  if (((this->field_0004 == nullptr) ||
-      ((this->field_0004->field_000C & 0x1100) != 0x100)) && (this->field_02DC == 0)) {
+  if (((this->field_0004 == nullptr) || ((this->field_0004->field_000C & 0x1100) != 0x100)
+      ) && (this->field_02DC == 0)) {
     ExceptionList = &local_14;
     this->field_02D8 = 1;
     sub_006E1320(this,&param_2,&param_3,(int *)&local_d0,(int *)&local_dc,&local_30);

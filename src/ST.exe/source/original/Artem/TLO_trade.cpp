@@ -29,7 +29,7 @@ undefined4 __fastcall st::fn_004EC050(int param_1)
     if (exceptionCode != 0) {
       st::fn_006A5E40
                 (exceptionCode,g_overwriteContext_007ED77C,
-                 "E:\\__titans\\Artem\\TLO_trade.cpp",0x11b);
+                 st::mutable_c_string("E:\\__titans\\Artem\\TLO_trade.cpp"),0x11b);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_00402A90(*(STT3DSprC **)(param_1 + 0x5ff));
@@ -57,7 +57,7 @@ undefined4 __fastcall st::fn_004EC0F0(AnonShape_004EC0F0_C371FA68 *param_1)
                      *(char **)(&DAT_007cde6c + param_1->field_050C * 4),CASE_1D);
   if (iVar1 != 0) {
     st::fn_006A5E40
-              (iVar1,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_trade.cpp",0x126);
+              (iVar1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_trade.cpp"),0x126);
   }
   uVar3 = 10;
   iVar1 = st::fn_004052CC((STT3DSprC *)&param_1->field_0x1d5);

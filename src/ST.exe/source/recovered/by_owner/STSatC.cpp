@@ -17,7 +17,7 @@ STSatC * __thiscall st::fn_0058BA30(STSatC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &st_global_0079BE7C;
+  this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079BE7C);
   this->vtable = &st_global_0079BD1C;
   this->field_0231 = 1;
   this->field_0239 = 0;

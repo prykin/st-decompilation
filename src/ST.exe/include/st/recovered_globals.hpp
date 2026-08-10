@@ -60,6 +60,9 @@ extern char CHAR_D_007cdbf8;
 extern char CHAR_D_007cdc08;
 extern char CHAR_D_007cdc18;
 extern char CHAR_D_007cdc48;
+extern char CHAR_E_007d2474;
+extern char CHAR_E_007d247c;
+extern char CHAR_E_007d2490;
 extern char CHAR_E_007d24a4;
 extern char CHAR_E_007d2500;
 extern char CHAR_N_007ca684;
@@ -143,6 +146,9 @@ extern CampaignTyVTable st_global_0079BFF8; // image symbol: CampaignTyVTable
 extern ChooseMapTyVTable st_global_0079C088; // image symbol: ChooseMapTyVTable
 extern undefined4 DAT_0000000b;
 extern undefined4 DAT_0000000c;
+extern undefined4 DAT_00000065;
+extern undefined4 DAT_00000066;
+extern undefined4 DAT_00007f00;
 extern undefined4 DAT_006ce9a0;
 extern undefined4 DAT_006d7d90;
 extern undefined4 DAT_006d801c;
@@ -351,7 +357,7 @@ extern undefined4 DAT_0079e2e8;
 extern undefined4 DAT_0079e2f8;
 extern undefined4 DAT_0079e320;
 extern undefined4 DAT_0079e330;
-extern undefined4 DAT_0079e368;
+extern undefined1 DAT_0079e368;
 extern undefined4 DAT_0079ea38;
 extern undefined4 DAT_0079ea3c;
 extern undefined4 DAT_0079ea40;
@@ -431,6 +437,9 @@ extern undefined4 DAT_007a1db4;
 extern undefined4 DAT_007a1db8;
 extern undefined1 DAT_007a1dc8;
 extern undefined1 DAT_007a1dd8;
+extern undefined4 DAT_007a1ddc;
+extern undefined4 DAT_007a1de0;
+extern undefined4 DAT_007a1de4;
 extern undefined1 DAT_007a1de8;
 extern undefined1 DAT_007a1df8;
 extern undefined1 DAT_007a1e08;
@@ -779,10 +788,7 @@ extern undefined4 DAT_007d21f8;
 extern undefined4 DAT_007d220c;
 extern undefined4 DAT_007d2220;
 extern undefined4 DAT_007d2234;
-extern undefined4 DAT_007d2474;
-extern undefined4 DAT_007d247c;
-extern undefined4 DAT_007d2484;
-extern undefined4 DAT_007d2490;
+extern undefined1 DAT_007d2484;
 extern undefined4 DAT_007d2d18;
 extern undefined4 DAT_007d2d20;
 extern undefined4 DAT_007d2d24;
@@ -1227,7 +1233,7 @@ extern undefined1 DAT_00807347;
 extern undefined1 DAT_00807348;
 extern undefined4 DAT_00807349;
 extern undefined4 DAT_0080734a;
-extern undefined1 DAT_0080734b;
+extern undefined4 DAT_0080734b;
 extern undefined1 DAT_0080734c;
 extern undefined1 DAT_0080734d;
 extern undefined4 DAT_0080734e;
@@ -1304,13 +1310,13 @@ extern undefined4 DAT_0080878c;
 extern undefined4 DAT_00808790;
 extern undefined4 DAT_00808794;
 extern undefined4 DAT_0080879c;
-extern undefined1 DAT_008087a0;
+extern undefined4 DAT_008087a0;
 extern undefined4 DAT_008087a5;
 extern undefined4 DAT_008087b5;
 extern undefined4 DAT_008087b6;
 extern undefined4 DAT_008087be;
 extern undefined2 DAT_008087c2;
-extern undefined4 DAT_008087c6;
+extern undefined1 DAT_008087c6;
 extern undefined1 DAT_00808a8f;
 extern undefined4 DAT_00808a90;
 extern undefined1 DAT_00808a94;
@@ -1332,7 +1338,7 @@ extern undefined4 DAT_00808b4c;
 extern undefined4 DAT_00809950;
 extern undefined4 DAT_00809958;
 extern undefined4 DAT_0080995c;
-extern undefined4 DAT_00809960;
+extern undefined1 DAT_00809960;
 extern undefined4 DAT_0080a14f;
 extern undefined4 DAT_0080bae8;
 extern undefined2 DAT_0080baec;
@@ -1585,7 +1591,6 @@ extern undefined4 DAT_00854f5c;
 extern undefined4 DAT_00854f60;
 extern undefined4 DAT_00854f68;
 extern undefined4 DAT_00854f6c;
-extern undefined4 DAT_00854f90;
 extern undefined4 DAT_00854f94;
 extern undefined4 DAT_00854f98;
 extern undefined4 DAT_00854f9c;
@@ -1595,9 +1600,7 @@ extern undefined4 DAT_00854fb8;
 extern undefined4 DAT_00854fbc;
 extern undefined4 DAT_00854fc0;
 extern undefined4 DAT_00854fc8;
-extern undefined4 DAT_00854fd0;
 extern undefined4 DAT_00854fd8;
-extern undefined4 DAT_00854fdc;
 extern undefined4 DAT_00854fe0;
 extern undefined4 DAT_00854fe4;
 extern undefined4 DAT_00854fe8;
@@ -1730,7 +1733,6 @@ extern undefined4 DAT_00857108;
 extern undefined4 DAT_0085710c;
 extern undefined4 DAT_00857110;
 extern undefined4 DAT_00857114;
-extern undefined4 DAT_00857118;
 extern undefined4 DAT_0085711c;
 extern undefined4 DAT_00857120;
 extern undefined4 DAT_00857124;
@@ -1762,6 +1764,8 @@ extern undefined4 DAT_00858e00;
 extern undefined4 DAT_00858e24;
 extern undefined4 DAT_0085a5c4;
 extern undefined4 DAT_0085e000;
+extern undefined4 DAT_80000001;
+extern undefined4 DAT_80000002;
 extern DebugSystemCVTable st_global_0079B20C; // image symbol: DebugSystemCVTable
 extern DumpClassCVTable st_global_00790710; // image symbol: DumpClassCVTable
 extern void *ExceptionList;
@@ -1824,6 +1828,10 @@ extern char *PTR_00811af0;
 extern AnonShape_GLOBAL_008489CC_CDF8C3F4 *PTR_008489cc;
 extern cMf32 *PTR_00853ff8;
 extern AnonShape_GLOBAL_00854EE8_A19F58CE *PTR_00854ee8;
+extern int *PTR_00854f90;
+extern uint *PTR_00854fd0;
+extern int *PTR_00854fdc;
+extern uint *PTR_00857118;
 extern AnonShape_GLOBAL_00857168_D75747E9 *PTR_00857168;
 extern undefined *PTR_CHAR_00h_007f0b04;
 extern undefined *PTR_CHAR_e_007d0364;
@@ -2097,6 +2105,9 @@ extern VTable_00798C6C st_global_00798C6C; // image symbol: VTable_00798C6C
 extern VTable_00798C70 st_global_00798C70; // image symbol: VTable_00798C70
 extern VTable_0079AC18 st_global_0079AC18; // image symbol: VTable_0079AC18
 extern VTable_0079AC48 st_global_0079AC48; // image symbol: VTable_0079AC48
+extern VTable_0079ACE8 st_global_0079ACE8; // image symbol: VTable_0079ACE8
+extern VTable_0079ADF4 st_global_0079ADF4; // image symbol: VTable_0079ADF4
+extern VTable_0079AE04 st_global_0079AE04; // image symbol: VTable_0079AE04
 extern VTable_0079AE64 st_global_0079AE64; // image symbol: VTable_0079AE64
 extern VTable_0079B398 st_global_0079B398; // image symbol: VTable_0079B398
 extern VTable_0079B524 st_global_0079B524; // image symbol: VTable_0079B524
@@ -2108,17 +2119,21 @@ extern VTable_0079BD18 st_global_0079BD18; // image symbol: VTable_0079BD18
 extern VTable_0079BE7C st_global_0079BE7C; // image symbol: VTable_0079BE7C
 extern VTable_0079BFE0 st_global_0079BFE0; // image symbol: VTable_0079BFE0
 extern VTable_0079C018 st_global_0079C018; // image symbol: VTable_0079C018
+extern VTable_0079C238 st_global_0079C238; // image symbol: VTable_0079C238
 extern VTable_0079C578 st_global_0079C578; // image symbol: VTable_0079C578
 extern VTable_0079C8A0 st_global_0079C8A0; // image symbol: VTable_0079C8A0
 extern VTable_0079CB10 st_global_0079CB10; // image symbol: VTable_0079CB10
 extern VTable_0079CC28 st_global_0079CC28; // image symbol: VTable_0079CC28
 extern VTable_0079CD94 st_global_0079CD94; // image symbol: VTable_0079CD94
+extern VTable_0079CED8 st_global_0079CED8; // image symbol: VTable_0079CED8
 extern VTable_0079D05C st_global_0079D05C; // image symbol: VTable_0079D05C
 extern VTable_0079D1D8 st_global_0079D1D8; // image symbol: VTable_0079D1D8
 extern VTable_0079D338 st_global_0079D338; // image symbol: VTable_0079D338
 extern VTable_0079D33C st_global_0079D33C; // image symbol: VTable_0079D33C
 extern VTable_0079D49C st_global_0079D49C; // image symbol: VTable_0079D49C
+extern VTable_0079D60C st_global_0079D60C; // image symbol: VTable_0079D60C
 extern VTable_0079D67C st_global_0079D67C; // image symbol: VTable_0079D67C
+extern VTable_0079D75C st_global_0079D75C; // image symbol: VTable_0079D75C
 extern VTable_0079DAF0 st_global_0079DAF0; // image symbol: VTable_0079DAF0
 extern VTable_0079DB04 st_global_0079DB04; // image symbol: VTable_0079DB04
 extern VTable_0079DB28 st_global_0079DB28; // image symbol: VTable_0079DB28
@@ -2325,6 +2340,7 @@ extern undefined4 _DAT_0079e268;
 extern undefined4 _DAT_0079e270;
 extern undefined4 _DAT_0079e278;
 extern undefined4 _DAT_007a1bf8;
+extern undefined1 _DAT_007a1dd8; // image symbol: DAT_007a1dd8
 extern undefined4 _DAT_007a22a4;
 extern undefined4 _DAT_007a22a8;
 extern undefined4 _DAT_007a22ac;
@@ -2486,8 +2502,6 @@ extern undefined4 _DAT_0080758c;
 extern undefined4 _DAT_00807590;
 extern undefined4 _DAT_00807594;
 extern undefined4 _DAT_00808798;
-extern undefined1 _DAT_008087a0; // image symbol: DAT_008087a0
-extern undefined4 _DAT_008087a1;
 extern undefined1 _DAT_008087ba; // image symbol: DAT_008087ba
 extern undefined4 _DAT_008087c4;
 extern undefined4 _DAT_0080e42a;
@@ -2657,6 +2671,7 @@ extern STManRub3C *g_manRub3_008117A4;
 extern STManRuinC *g_manRuin_008117B0;
 extern MoneyTy *g_money_008016D4;
 extern int g_nWidth_00806730;
+extern STObjectFactoryEntry g_objectFactoryRegistry[97];
 extern OptPanelTy *g_optPanel_008016DC;
 extern OpticClassC *g_opticClass_007FB2A0;
 extern int g_overwriteContext_007ED77C;
@@ -2670,6 +2685,7 @@ extern STPlaySystemC *g_playSystem_00802A38;
 extern byte g_playerRelationMatrix[8][8];
 extern PopUpTy *g_popUp_008016D8;
 extern ProdPanelTy *g_researchPanel_008016E8;
+extern char g_resourceStringBuffer[4100];
 extern uint g_resourceStringBufferOffset;
 extern SAMPanelTy *g_sAMPanel_008016EC;
 extern ST3DSMAPContext *g_sT3DSMAPContext_00807598;
@@ -2713,6 +2729,7 @@ extern HelpStringTyVTable st_global_0079AC6C; // image symbol: HelpStringTyVTabl
 extern InfocPanelTyVTable st_global_0079AC70; // image symbol: InfocPanelTyVTable
 extern IntercomPanelTyVTable st_global_0079AC9C; // image symbol: IntercomPanelTyVTable
 extern MoneyTyVTable st_global_0079ACE4; // image symbol: MoneyTyVTable
+extern VTable_0079ACE8 st_global_0079ACE8; // image symbol: VTable_0079ACE8
 extern char *st_global_0079ACEC; // image symbol: PTR_s_SAVEGAME\_0079acec
 extern char *st_global_0079ACF0; // image symbol: PTR_s_SYSTEM\_0079acf0
 extern undefined *st_global_0079ACF4; // image symbol: PTR_CHAR_._0079acf4
@@ -2724,6 +2741,8 @@ extern ResearchPanelTyVTable st_global_0079AD64; // image symbol: ResearchPanelT
 extern SAMPanelTyVTable st_global_0079AD8C; // image symbol: SAMPanelTyVTable
 extern InterSystemCVTable st_global_0079ADB8; // image symbol: InterSystemCVTable
 extern char *st_global_0079ADE4; // image symbol: PTR_s_SAVEGAME\_0079ade4
+extern VTable_0079ADF4 st_global_0079ADF4; // image symbol: VTable_0079ADF4
+extern VTable_0079AE04 st_global_0079AE04; // image symbol: VTable_0079AE04
 extern STPlaySystemCVTable st_global_0079AE38; // image symbol: STPlaySystemCVTable
 extern VTable_0079AE64 st_global_0079AE64; // image symbol: VTable_0079AE64
 extern UpgPanelTyVTable st_global_0079AE90; // image symbol: UpgPanelTyVTable
@@ -2798,6 +2817,7 @@ extern char *st_global_0079C1BC; // image symbol: PTR_s_CUSTOM\_0079c1bc
 extern undefined *st_global_0079C1C0; // image symbol: PTR_CHAR_._0079c1c0
 extern undefined *st_global_0079C1C4; // image symbol: PTR_CHAR_._0079c1c4
 extern StartSystemTyVTable st_global_0079C1E8; // image symbol: StartSystemTyVTable
+extern VTable_0079C238 st_global_0079C238; // image symbol: VTable_0079C238
 extern MTestTyVTable st_global_0079C23C; // image symbol: MTestTyVTable
 extern char *st_global_0079C240; // image symbol: PTR_s_SAVEGAME\_0079c240
 extern char *st_global_0079C244; // image symbol: PTR_s_CUSTOM\_0079c244
@@ -2821,6 +2841,7 @@ extern VTable_0079CD94 st_global_0079CD94; // image symbol: VTable_0079CD94
 extern JumpManagCVTable st_global_0079CEBC; // image symbol: JumpManagCVTable
 extern STJumpMineCVTable st_global_0079CED0; // image symbol: STJumpMineCVTable
 extern STLightCVTable st_global_0079CED4; // image symbol: STLightCVTable
+extern VTable_0079CED8 st_global_0079CED8; // image symbol: VTable_0079CED8
 extern STMineSetCVTable st_global_0079CEFC; // image symbol: STMineSetCVTable
 extern VTable_0079D05C st_global_0079D05C; // image symbol: VTable_0079D05C
 extern STManRub3CVTable st_global_0079D084; // image symbol: STManRub3CVTable
@@ -2831,6 +2852,7 @@ extern VTable_0079D338 st_global_0079D338; // image symbol: VTable_0079D338
 extern VTable_0079D33C st_global_0079D33C; // image symbol: VTable_0079D33C
 extern VTable_0079D49C st_global_0079D49C; // image symbol: VTable_0079D49C
 extern STTorpCVTable st_global_0079D4AC; // image symbol: STTorpCVTable
+extern VTable_0079D60C st_global_0079D60C; // image symbol: VTable_0079D60C
 extern STVolcanoCVTable st_global_0079D610; // image symbol: STVolcanoCVTable
 extern AiBossClassTyVTable_at_1C st_global_0079D618; // image symbol: AiBossClassTyVTable_at_1C
 extern AiBossClassTyVTable st_global_0079D658; // image symbol: AiBossClassTyVTable
@@ -2846,6 +2868,7 @@ extern char *st_global_0079D744; // image symbol: PTR_s__RT%d_0079d744
 extern char *st_global_0079D748; // image symbol: PTR_s__GL%d_0079d748
 extern char *st_global_0079D74C; // image symbol: PTR_s__PI%d_0079d74c
 extern char *st_global_0079D750; // image symbol: PTR_s__PS%d_0079d750
+extern VTable_0079D75C st_global_0079D75C; // image symbol: VTable_0079D75C
 extern AiTactClassTyVTable st_global_0079D76C; // image symbol: AiTactClassTyVTable
 extern VTable_0079DAF0 st_global_0079DAF0; // image symbol: VTable_0079DAF0
 extern VTable_0079DB04 st_global_0079DB04; // image symbol: VTable_0079DB04

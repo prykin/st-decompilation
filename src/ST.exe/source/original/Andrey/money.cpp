@@ -157,7 +157,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
             iVar10 = uVar14 - 100;
           }
           this_00->field_008E = iVar10;
-          st::external_00000080(local_40,"%6d",iVar10);
+          st::external_00000080(local_40,st::mutable_c_string("%6d"),iVar10);
           puVar8 = this_00->field_0076;
           local_c = *(uint *)(puVar8 + 10);
           if (local_c == 0) {
@@ -209,7 +209,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
             iVar10 = uVar14 - 100;
           }
           this_00->field_0096 = iVar10;
-          st::external_00000080(local_48,"%6d",iVar10);
+          st::external_00000080(local_48,st::mutable_c_string("%6d"),iVar10);
           puVar8 = this_00->field_007A;
           local_c = *(uint *)(puVar8 + 10);
           if (local_c == 0) {
@@ -279,11 +279,11 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       local_10->field_0038 = g_nWidth_00806730 + -99;
       local_10->field_003C = DAT_00806734 + -0x16;
       local_10->field_0069 = ((DAT_0080874e == '\x03') - 1U & 0xc3) + 0x3d;
-      pcVar7 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
+      pcVar7 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,st::mutable_c_string("MONEY_FONT"),0);
       this_00->field_006A = pcVar7;
       pcVar7->field_0058 = 1;
       pcVar7->field_005C = 0;
-      pcVar7 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,"TIME_FONT",0);
+      pcVar7 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,st::mutable_c_string("TIME_FONT"),0);
       this_00->field_006E = pcVar7;
       pcVar7->field_0058 = 1;
       pcVar7->field_005C = 0;
@@ -292,7 +292,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       iVar10 = 1;
       bVar15 = 0;
       uVar14 = 0xffffffff;
-      text = st::fn_0040577C("IND_PNT",0);
+      text = st::fn_0040577C(st::mutable_c_string("IND_PNT"),0);
       puVar9 = st::fn_00709AF0
                          (PTR_00806794,CASE_B,text,uVar14,bVar15,iVar10,iVar16,puVar17);
       this_00->field_0082 = puVar9;
@@ -496,10 +496,10 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       if (bVar5) {
         local_5 = CASE_4;
       }
-      local_58 = local_10->field_0038 + -0x1e;
-      local_50 = local_10->field_0060 + 0x23;
-      local_54 = local_10->field_003C + -3;
-      local_4c = local_10->field_0064 + 6;
+      local_58 = st::machine_word_boundary_cast<int>(local_10->field_0038 + -0x1e);
+      local_50 = st::machine_word_boundary_cast<int>(local_10->field_0060 + 0x23);
+      local_54 = st::machine_word_boundary_cast<int>(local_10->field_003C + -3);
+      local_4c = st::machine_word_boundary_cast<int>(local_10->field_0064 + 6);
       if ((((int)uVar14 < local_58) || (local_50 + local_58 <= (int)uVar14)) ||
          (((int)local_c < local_54 || (local_4c + local_54 <= (int)local_c)))) {
         bVar5 = false;
@@ -532,12 +532,12 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
     return iVar7;
   }
   g_currentExceptionFrame = local_bc.previous;
-  iVar9 = st::fn_006AD4D0("E:\\__titans\\Andrey\\money.cpp",0x12a,0,local_EAX_48,
-                             "%s","MoneyTy::GetMessage");
+  iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\money.cpp"),0x12a,0,local_EAX_48,
+                             st::mutable_c_string("%s"),"MoneyTy::GetMessage");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(local_EAX_48,0,"E:\\__titans\\Andrey\\money.cpp",0x12a);
+  st::fn_006A5E40(local_EAX_48,0,st::mutable_c_string("E:\\__titans\\Andrey\\money.cpp"),0x12a);
   return 0xffff;
 }
 

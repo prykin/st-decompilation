@@ -89,16 +89,16 @@ LAB_0052d48d:
               if ((int)*(uint *)(this_00->field_0090 + 2) <= uVar8) {
                 uVar8 = *(uint *)(this_00->field_0090 + 2);
               }
-              this_00->field_0018[(byte)this_00->field_009C + 0xe] = uVar8;
-              FUN_006b2800(g_ddxContext_008075A8,this_00->field_0018[(byte)this_00->field_009C - 1],
-                           uVar8,0x13);
+              this_00->field_0054[(byte)this_00->field_009C - 1] = uVar8;
+              FUN_006b2800(g_ddxContext_008075A8,
+                           this_00->field_0054[(byte)this_00->field_009C - 0x10],uVar8,0x13);
               Library::DKW::DDX::FUN_006b3640
                         ((int *)g_ddxContext_008075A8,
-                         this_00->field_0018[(byte)this_00->field_009C - 1],0xffffffff,0xd,
+                         this_00->field_0054[(byte)this_00->field_009C - 0x10],0xffffffff,0xd,
                          (uint)(byte)this_00->field_009C * 0x13 + 0xb);
               Library::DKW::DDX::FUN_006b3430
                         ((int *)g_ddxContext_008075A8,
-                         this_00->field_0018[(byte)this_00->field_009C - 1]);
+                         this_00->field_0054[(byte)this_00->field_009C - 0x10]);
             }
             iVar3 = iVar3 + 1;
           } while (iVar3 < (int)pDVar5->elementSize);

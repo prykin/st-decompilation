@@ -33,7 +33,7 @@ undefined4 __fastcall st::fn_004DCE00(int *param_1)
     iVar3 = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       st::fn_006A5E40
-                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_jump.cpp",0x58);
+                (iVar3,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_jump.cpp"),0x58);
     }
   }
   if (STField<int>(param_1,0x245) == 5) {
@@ -43,12 +43,12 @@ undefined4 __fastcall st::fn_004DCE00(int *param_1)
     param_1[0x134] = 0;
   }
   if (param_1[0x134] == 1) {
-    st::external_00000080(local_108,"%s","jmpmine");
+    st::external_00000080(local_108,st::mutable_c_string("%s"),"jmpmine");
     iVar3 = st::fn_00404183
                       (STField<STT3DSprC *>(param_1,0x5ff),0xe,PTR_00806774,local_108,CASE_1D);
     if (iVar3 != 0) {
       st::fn_006A5E40
-                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_jump.cpp",0x61);
+                (iVar3,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_jump.cpp"),0x61);
     }
     st::fn_00402A90(STField<STT3DSprC *>(param_1,0x5ff));
     uVar5 = 10;

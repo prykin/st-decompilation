@@ -20,7 +20,7 @@ undefined4 FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4
   double *pdVar5;
   int iVar6;
   float10 fVar7;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1;
   longlong lVar8;
 
@@ -87,7 +87,7 @@ undefined4 FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4
         param_4 = param_4 + 4;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         fVar7 = extraout_ST1;
       } while (param_3 < param_5);
     }

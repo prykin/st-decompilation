@@ -54,33 +54,33 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
   int local_EAX_6953;
   int iVar20;
   uint uVar21;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_04;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_05;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_06;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_07;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_EDX_08;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_09;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_10;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_11;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX_12;
   byte *puVar22;
   STWorldObject *this_02;
@@ -310,7 +310,7 @@ LAB_00663af0:
       }
       if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
         local_EAX_225 = thunk_FUN_004e6a80((byte *)this_00->field_0024,GVar6);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         iVar20 = extraout_EDX_00;
       }
       else {
@@ -322,7 +322,7 @@ LAB_00663af0:
         }
         if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
           local_EAX_225 = thunk_FUN_004e6c20(this_00->field_0024,GVar6);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           iVar20 = extraout_EDX_01;
         }
         else {
@@ -349,7 +349,7 @@ LAB_00663af0:
           }
           else {
             local_EAX_225 = thunk_FUN_004e80f0(this_00->field_0024,GVar6);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             iVar20 = extraout_EDX_02;
           }
         }
@@ -624,7 +624,7 @@ LAB_0066263e:
       }
       if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
         local_EAX_1968 = thunk_FUN_004e6a80((byte *)this_00->field_0024,GVar6);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         iVar20 = extraout_EDX_03;
       }
       else {
@@ -636,7 +636,7 @@ LAB_0066263e:
         }
         if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
           local_EAX_1968 = thunk_FUN_004e6c20(this_00->field_0024,GVar6);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           iVar20 = extraout_EDX_04;
         }
         else {
@@ -663,7 +663,7 @@ LAB_0066263e:
           }
           else {
             local_EAX_1968 = thunk_FUN_004e80f0(this_00->field_0024,GVar6);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             iVar20 = extraout_EDX_05;
           }
         }
@@ -770,7 +770,7 @@ LAB_0066263e:
       }
       if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
         local_EAX_3436 = thunk_FUN_004e6a80((byte *)local_c->field_0024,GVar5);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         iVar20 = extraout_EDX_09;
       }
       else {
@@ -782,7 +782,7 @@ LAB_0066263e:
         }
         if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
           local_EAX_3436 = thunk_FUN_004e6c20(local_c->field_0024,GVar5);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           iVar20 = extraout_EDX_10;
         }
         else {
@@ -808,7 +808,7 @@ LAB_0066263e:
           }
           else {
             local_EAX_3436 = thunk_FUN_004e80f0(local_c->field_0024,GVar5);
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             iVar20 = extraout_EDX_11;
           }
         }
@@ -908,7 +908,7 @@ LAB_00663076:
     }
     if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
       local_EAX_2623 = thunk_FUN_004e6a80((byte *)local_c->field_0024,GVar5);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar24 = extraout_EDX_06;
     }
     else {
@@ -920,7 +920,7 @@ LAB_00663076:
       }
       if ((bVar25) && (g_allPlayers_007FA174 != nullptr)) {
         local_EAX_2623 = thunk_FUN_004e6c20(local_c->field_0024,GVar5);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar24 = extraout_EDX_07;
       }
       else {
@@ -946,7 +946,7 @@ LAB_00663076:
         }
         else {
           local_EAX_2623 = thunk_FUN_004e80f0(local_c->field_0024,GVar5);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar24 = extraout_EDX_08;
         }
       }
@@ -1283,7 +1283,7 @@ LAB_00663504:
           return 0;
         }
         if (uVar3 != 0x10) {
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           thunk_FUN_0065e6c0((AnonShape_0065DA10_8B0AA883 *)local_c,extraout_EDX);
           g_currentExceptionFrame = local_74.previous;
           return 0;
@@ -1291,12 +1291,12 @@ LAB_00663504:
       }
     }
     else if (uVar3 != 0x8000) {
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       thunk_FUN_0065e6c0((AnonShape_0065DA10_8B0AA883 *)local_c,extraout_EDX);
       g_currentExceptionFrame = local_74.previous;
       return 0;
     }
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     thunk_FUN_0065fd00((AnonShape_0065FD00_EB74ED0C *)local_c,extraout_EDX);
     g_currentExceptionFrame = local_74.previous;
     return 0;
@@ -1313,7 +1313,7 @@ LAB_006636da:
     else {
       if (sVar4 != 3) goto LAB_006636da;
       iVar19 = thunk_FUN_004e7fc0(iVar20);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       iVar20 = extraout_EDX_12;
     }
     local_10 = (DArrayTy *)sub_0065E360(this_00,iVar20,iVar19);
@@ -1410,7 +1410,7 @@ LAB_0066380d:
   case 0x76:
     if (local_c->field_007B == -0x8000) {
       STField<undefined2>(param_1,0xf) = 0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       pDVar17 = (DArrayTy *)sub_0065DA10(local_c,extraout_EDX);
       if (pDVar17 != nullptr) {
         uVar24 = 0;

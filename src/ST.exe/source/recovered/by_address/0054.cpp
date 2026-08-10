@@ -155,7 +155,7 @@ void __cdecl st::fn_005411A0(DArrayTy *param_1,char *param_2,char *text)
       cVar1 = *pcVar6;
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
-    local_8 = st::fn_006AAC70(~uVar4 + ~uVar5 + 2);
+    local_8 = st::pointer_boundary_cast<uint *>(st::fn_006AAC70(~uVar4 + ~uVar5 + 2));
     if (local_8 != nullptr) {
       st::external_00000080((LPSTR)local_8,text,param_2);
       for (puVar3 = st::fn_0072E560(local_8,'\n'); puVar3 != nullptr;
@@ -1161,7 +1161,7 @@ void st::fn_00543410(undefined4 param_1,undefined4 param_2,int param_3,undefined
    Evidence: registry[11] at 007CA778 stores type 0x0101 and executable pointer 00405353; allocation
    size 1275 has no unique current class-layout match */
 
-CursorClassTy * __cdecl st::fn_00543450(void)
+void * __cdecl st::fn_00543450(void)
 
 {
   CursorClassTy *this;
@@ -1175,8 +1175,8 @@ CursorClassTy * __cdecl st::fn_00543450(void)
   if (this != nullptr) {
     st::fn_006E5FB0(this);
     st::fn_00715820((SpriteClassTy *)&this->field_0018);
-    this->field_0000 = &UNK_0079ae04;
-    this->field_0018 = &UNK_0079adf4;
+    this->field_0000 = st::machine_word_boundary_cast<undefined4>(&st_global_0079AE04);
+    this->field_0018 = st::machine_word_boundary_cast<undefined4>(&st_global_0079ADF4);
     this->field_00AD = 0;
     this->field_00CD = CASE_0;
     this->field_00D2 = 0;
@@ -1364,7 +1364,7 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
                              (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             st::fn_0040507E
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_40,STField<int>(this,0x34),
+                      (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_40,STField<int>(this,0x34),
                        STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
@@ -1376,7 +1376,7 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
                              (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             st::fn_0040507E
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_42,STField<int>(this,0x34),
+                      (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_42,STField<int>(this,0x34),
                        STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
@@ -1390,7 +1390,7 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
                              (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             st::fn_0040507E
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_41,STField<int>(this,0x34),
+                      (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_41,STField<int>(this,0x34),
                        STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
@@ -1402,7 +1402,7 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
                              (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             st::fn_0040507E
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_43,STField<int>(this,0x34),
+                      (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_43,STField<int>(this,0x34),
                        STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
@@ -1415,7 +1415,7 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
                            ,0);
         if (param_7 != 0) {
           st::fn_0040507E
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3F,STField<int>(this,0x34),
+                    (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3F,STField<int>(this,0x34),
                      STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
@@ -1427,7 +1427,7 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
                            ,0);
         if (param_7 != 0) {
           st::fn_0040507E
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3E,STField<int>(this,0x34),
+                    (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3E,STField<int>(this,0x34),
                      STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
@@ -1439,7 +1439,7 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
                            ,0);
         if (param_7 != 0) {
           st::fn_0040507E
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3C,STField<int>(this,0x34),
+                    (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3C,STField<int>(this,0x34),
                      STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
@@ -1451,7 +1451,7 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
                            ,0);
         if (param_7 != 0) {
           st::fn_0040507E
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3D,STField<int>(this,0x34),
+                    (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3D,STField<int>(this,0x34),
                      STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
@@ -1467,7 +1467,7 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
     iVar4 = st::fn_00405687((int)this);
     if (iVar4 != 0) goto cf_common_exit_0054BA0C;
   }
-  st::fn_0040507E(this,CASE_0,STField<int>(this,0x34),STField<int>(this,0x38));
+  st::fn_0040507E(st::pointer_boundary_cast<CursorClassTy *>(this),CASE_0,STField<int>(this,0x34),STField<int>(this,0x38));
 cf_common_exit_0054BA0C:
   STField<undefined1>(this,0xd1) = 1;
   return 0;
@@ -1510,7 +1510,6 @@ int st::fn_0054BDF0(int param_1,int param_2,int param_3,int param_4,int *param_5
 
 // 0054CA10 FUN_0054ca10
 #line 4 "decomp/ST.exe/functions/0054CA10/decomp.c"
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0054CA10 parameter used as this of cMf32::RecMemFree @ 0054CAC7 */
 
@@ -1526,7 +1525,7 @@ int __cdecl st::fn_0054CA10(int *param_1,undefined4 param_2,cMf32 *param_3,int p
 
   piVar2 = param_1;
   if (DAT_0080879c == 0) {
-    switch(_DAT_008087a0 & 0xff) {
+    switch(DAT_008087a0 & 0xff) {
     case 1:
     case 4:
     case 0xd:
@@ -1541,7 +1540,7 @@ int __cdecl st::fn_0054CA10(int *param_1,undefined4 param_2,cMf32 *param_3,int p
     }
   }
   uVar5 = 0xffffffff;
-  pcVar6 = PTR_DAT_007c83b0;
+  pcVar6 = st::pointer_boundary_cast<char *>(PTR_DAT_007c83b0);
   do {
     if (uVar5 == 0) break;
     uVar5 = uVar5 - 1;
@@ -1616,7 +1615,7 @@ st::fn_0054CF00(void *this,int param_1,undefined4 *param_2,int *param_3,undefine
 {
   int iVar1;
 
-  iVar1 = st::fn_006E6170(this,param_1,param_2,&param_5,param_4,param_5);
+  iVar1 = st::fn_006E6170(st::pointer_boundary_cast<SystemWithNamedObjClassTy *>(this),param_1,param_2,&param_5,param_4,param_5);
   if (param_3 != nullptr) {
     *param_3 = param_5;
   }
@@ -1632,7 +1631,7 @@ void __thiscall st::fn_0054CF70(void *this,uint param_1)
 
 {
   st::fn_00401AD7();
-  st::fn_006E56B0(this,param_1);
+  st::fn_006E56B0(st::pointer_boundary_cast<StartSystemTy *>(this),param_1);
   return;
 }
 
@@ -1724,7 +1723,7 @@ void st::fn_0054EDF0(undefined4 *param_1,uint *param_2,uint param_3,uint param_4
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = nullptr;
-    uVar1 = st::fn_00401FFF(g_allPlayers_007FA174,&param_1,&param_3);
+    uVar1 = st::fn_00401FFF(g_allPlayers_007FA174,st::pointer_boundary_cast<undefined4 *>(&param_1),&param_3);
     if (uVar1 != 0xffffffff) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       st::fn_0040422D(in_ECX,DAT_0080874d,uVar1,cVar2,param_2,param_4,param_1,param_3);

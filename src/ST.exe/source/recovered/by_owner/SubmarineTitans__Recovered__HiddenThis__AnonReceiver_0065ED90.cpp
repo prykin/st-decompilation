@@ -30,7 +30,7 @@ st::fn_0065ED90
 
   psVar1 = param_2;
   local_10 = this;
-  iVar4 = st::fn_00402A8B(this,&local_c,&local_8,&local_c,&local_1c);
+  iVar4 = st::fn_00402A8B(this,st::machine_word_boundary_cast<undefined4>(&local_c),&local_8,&local_c,&local_1c);
   if (iVar4 != 0) {
     return -4;
   }

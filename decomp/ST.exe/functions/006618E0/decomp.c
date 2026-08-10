@@ -28,9 +28,9 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
   int iVar5;
   DArrayTy *array;
   int iVar6;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
   InternalExceptionFrame local_68;
   undefined4 local_24;
@@ -48,7 +48,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
     uVar4 = sub_0065D9C0(this);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     iVar7 = CONCAT22(extraout_var,uVar4);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     if ((0 < iVar7) &&
        (local_20 = iVar7, local_c = sub_00661800((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
        (int)this->field_0179 < iVar7 - local_c)) {
@@ -60,7 +60,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
       local_EAX_154 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
       pAVar3 = local_1c;
       if (local_EAX_154 == 0) {
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         local_8 = (DArrayTy *)sub_0065DA10(local_1c,extraout_EDX_00);
         if (local_8 != nullptr) {
           local_14 = 0;

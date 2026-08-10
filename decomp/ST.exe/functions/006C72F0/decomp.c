@@ -48,7 +48,8 @@ void FUN_006c72f0(AnonShape_006C72F0_54F06289 *param_1)
   if ((iVar6 == param_1->field_006A) && (iVar3 == param_1->field_006E)) {
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
-    iVar5 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,local_8);
+    iVar5 = Library::MSVCRT::__setjmp3
+                      (local_70.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,local_8);
     local_1c = &stack0xffffff7c;
     if (iVar5 == 0) {
       local_8 = 0;

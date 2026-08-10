@@ -24,8 +24,8 @@ st::fn_0041CDA0(VisibleClassTy *this,int param_1,int param_2,int param_3,uint pa
   if (((-1 < param_1) &&
       (((param_1 < this->field_0020 && (-1 < param_2)) && (param_2 < this->field_0024)))) &&
      (this->field_0038 != nullptr)) {
-    iVar2 = this->field_0020 * param_2;
-    pbVar1 = this->field_0038 + (iVar2 + param_1) * 2;
+    iVar2 = st::machine_word_boundary_cast<int>(this->field_0020 * param_2);
+    pbVar1 = st::pointer_boundary_cast<byte *>(this->field_0038 + (iVar2 + param_1) * 2);
     if ((pbVar1 != nullptr) && (pbVar1[1] != 0)) {
       if (7 < param_4) {
         return 1;
@@ -222,9 +222,14 @@ void __thiscall st::fn_00558140(VisibleClassTy *this)
    [STReturnSemanticsApplier] repair_unsafe_eax_rollback.
    Evidence: restore the earlier evidence-backed void type after an unsafe automated rollback;
    post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=8,
-   ignored=81, unknown=0 */
+   ignored=81, unknown=0
 
-void __thiscall
+   [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=8, ignored=81, unknown=0 */
+
+VisibleClassTy_sub_00558C00_param_1Enum __thiscall
 st::fn_00558C00
           (VisibleClassTy *this,VisibleClassTy_sub_00558C00_param_1Enum param_1,int param_2,
           int param_3,int *param_4,int *param_5)
@@ -236,7 +241,7 @@ st::fn_00558C00
   case CASE_0:
     *param_4 = (param_2 - param_3) * 0xb505 + this->field_0030 * 0x8000 >> 0x10;
     *param_5 = (param_2 + param_3) * 0xb505 + 0x8fc3c >> 0x10;
-    return;
+    return (param_2 + param_3) * 0x141d;
   case CASE_1:
     *param_4 = (param_2 + param_3) * 0xb505 + 0x8fc3c >> 0x10;
     iVar1 = param_3;
@@ -245,7 +250,7 @@ st::fn_00558C00
   case CASE_2:
     *param_4 = (param_3 - param_2) * 0xb505 + this->field_0030 * 0x8000 >> 0x10;
     *param_5 = ((param_2 + param_3) * -0xb505 + -0x8fc3c >> 0x10) + -1 + this->field_0034;
-    return;
+    return (VisibleClassTy_sub_00558C00_param_1Enum)param_5;
   case CASE_3:
     *param_4 = ((param_2 + param_3) * -0xb505 + -0x8fc3c >> 0x10) + -1 + this->field_0030;
     iVar1 = param_2;
@@ -253,9 +258,10 @@ st::fn_00558C00
   default:
     goto switchD_00558c11_default;
   }
-  *param_5 = (iVar1 - param_3) * 0xb505 + this->field_0034 * 0x8000 >> 0x10;
+  param_1 = st::machine_word_boundary_cast<VisibleClassTy_sub_00558C00_param_1Enum>(this->field_0034 * 0x8000);
+  *param_5 = (int)((iVar1 - param_3) * 0xb505 + param_1) >> 0x10;
 switchD_00558c11_default:
-  return;
+  return param_1;
 }
 
 // 00558DC0 VisibleClassTy::sub_00558DC0
@@ -305,7 +311,7 @@ st::fn_00558DC0
       (g_bulkInitializedRecords_008087C7[(int)param_4].field_0022 < 8)))) {
     if ((param_7 & 0x1000) != 0) {
       st::fn_00403B02(this,0,(short)param_1,(short)param_2,(char)param_3,(uint)param_4,(byte)param_5,
-                   param_6);
+                   st::machine_word_boundary_cast<undefined4>(param_6));
     }
     if (*(char *)((int)(piVar4 + 0x3f) + (int)this) != '\0') {
       iVar2 = uVar10 * 2 + 1;
@@ -345,7 +351,7 @@ st::fn_00558DC0
               st::fn_00403F53(this,VVar7,param_1,param_2,(int *)&param_6,(int *)&param_4);
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_4 = (int *)((int)param_4 + g_centeredOffsets5[(int)param_3]);
-              st::fn_004059CA((int)param_6,(int)param_4,*ppvVar9,this->field_0028,
+              st::fn_004059CA((int)param_6,(int)param_4,st::pointer_boundary_cast<byte *>(*ppvVar9),this->field_0028,
                                  this->field_002C,(undefined *)param_5);
             }
             VVar7 = VVar7 + CASE_1;
@@ -363,7 +369,7 @@ st::fn_00558DC0
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = (int *)((int)param_4 + (g_centeredOffsets5[(int)param_3] - uVar10));
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_3 = pbVar5;
+          param_3 = st::pointer_boundary_cast<undefined *>(pbVar5);
           if (0 < iVar2) {
             do {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -479,7 +485,7 @@ st::fn_00559110
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_6 = param_6 + (g_centeredOffsets5[param_3] - iVar10);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_2 = pbVar7;
+          param_2 = st::pointer_boundary_cast<undefined *>(pbVar7);
           if (0 < iVar9) {
             do {
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -599,7 +605,7 @@ st::fn_005594A0
       iVar8 = param_2 - param_5;
       pbVar3 = st::fn_004028BF(param_5);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_4 = pbVar3;
+      param_4 = st::pointer_boundary_cast<undefined *>(pbVar3);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = iVar1;
       if (0 < iVar1) {
@@ -682,7 +688,7 @@ st::fn_00559620
       iVar8 = param_2 - param_5;
       pbVar3 = st::fn_004028BF(param_5);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_4 = pbVar3;
+      param_4 = st::pointer_boundary_cast<undefined *>(pbVar3);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = iVar1;
       if (0 < iVar1) {
@@ -1343,7 +1349,7 @@ void __thiscall st::fn_0055B7F0(VisibleClassTy *this,int param_1,undefined *para
             else {
               st::fn_0040388C(this,(int)element_0110->field_0002,(int)element_0110->field_0004,
                            (undefined *)(int)element_0110->field_0006,piVar3,(uint)(byte)element_0110->field_0007,
-                           element_0110->field_0008,0x6009);
+                           st::pointer_boundary_cast<int *>(element_0110->field_0008),0x6009);
             }
           }
           else if (element_0110->field_0000 == '\x01') {
@@ -1434,7 +1440,7 @@ st::fn_0055BB00
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_10 = CONCAT22(param_2,(short)CONCAT31((int3)param_5,param_1));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    _local_c = CONCAT13(param_6,CONCAT12(param_4,param_3));
+    auto _local_c = CONCAT13(param_6,CONCAT12(param_4,param_3));
     local_8 = param_7;
     st::fn_006AE1C0((DArrayTy *)this->field_0110,&local_10);
   }

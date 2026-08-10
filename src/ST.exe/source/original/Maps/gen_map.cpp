@@ -39,9 +39,9 @@ st::fn_00695A60
     local_8->field_5837 = (int)size / param_1;
     local_8->field_583B = param_5;
     local_8->field_5847 = param_3;
-    pbVar3 = st::fn_006AAC70(size);
+    pbVar3 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(size));
     pCVar2->field_584B = pbVar3;
-    puVar4 = st::fn_006AAC70(pCVar2->field_582F * ((-(uint)(param_6 != 0) & 7) + 1) * 2);
+    puVar4 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(pCVar2->field_582F * ((-(uint)(param_6 != 0) & 7) + 1) * 2));
     pCVar2->field_584F = puVar4;
     pCVar5 = (CGenerate_field_5853DArray *)
              st::fn_006AE290(nullptr,10,0x1d,10);
@@ -54,12 +54,12 @@ st::fn_00695A60
   }
   else {
     g_currentExceptionFrame = local_50.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\Maps\\gen_map.cpp",0x330,0,errorCode,
-                               "%s","CGenerate::CteateField");
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Maps\\gen_map.cpp"),0x330,0,errorCode,
+                               st::mutable_c_string("%s"),"CGenerate::CteateField");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Maps\\gen_map.cpp",0x332);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Maps\\gen_map.cpp"),0x332);
     uVar6 = 0xffff;
   }
   return uVar6;

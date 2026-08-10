@@ -37,31 +37,31 @@ void __thiscall st::fn_00422E20(void *this,byte param_1)
 {
   STGameObjC *objPtr;
   int iVar1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_02;
   undefined4 uVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_03;
   Global_sub_0043FC50_param_1Enum GVar3;
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   objPtr = (STGameObjC *)(**(code **)(*(int *)this + 4))();
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uVar2 = extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   if (((STField<int>(this,0x20) != 0x14) ||
       (iVar1 = st::fn_00402EDC(objPtr), uVar2 = extraout_ECX_00, iVar1 != 0x14)) ||
      (objPtr->field_05C0 != 3)) {
     if (((param_1 & 1) != 0) && ((STField<byte>(this,0x1d1) & 1) == 0)) {
       st::fn_0040464C(this);
       STField<uint>(this,0x1d1) = STField<uint>(this,0x1d1) | 1;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar2 = extraout_ECX_01;
     }
     if (((param_1 & 2) != 0) && ((STField<uint>(this,0x1d1) & 2) == 0)) {
@@ -72,7 +72,7 @@ void __thiscall st::fn_00422E20(void *this,byte param_1)
           st::fn_004024E1(DAT_0080874d,0,iVar1,STField<char>(this,0x24),
                              STReplaceLowWord((uint32_t)(uVar2), (uint16_t)(STField<undefined2>(this,0x32))));
           iVar1 = iVar1 + 1;
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar2 = extraout_ECX_02;
         } while (iVar1 < 5);
       }
@@ -82,7 +82,7 @@ void __thiscall st::fn_00422E20(void *this,byte param_1)
           st::fn_004024E1(DAT_0080874d,1,iVar1,STField<char>(this,0x24),
                              STReplaceLowWord((uint32_t)(uVar2), (uint16_t)(STField<undefined2>(this,0x32))));
           iVar1 = iVar1 + 1;
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar2 = extraout_ECX_03;
         } while (iVar1 < 5);
       }
@@ -129,7 +129,7 @@ void __thiscall st::fn_00422FF0(void *this,byte param_1)
   }
   if (((param_1 & 1) != 0) && ((STField<uint>(this,0x1d1) & 1) != 0)) {
     STField<uint>(this,0x1d1) = STField<uint>(this,0x1d1) & 0xfffffffe;
-    st::fn_004023A1(this,STField<undefined *>(this,0x101));
+    st::fn_004023A1(st::pointer_boundary_cast<TLOEmbryoTy *>(this),STField<undefined *>(this,0x101));
   }
   if (((param_1 & 2) != 0) && ((STField<uint>(this,0x1d1) & 2) != 0)) {
     STField<uint>(this,0x1d1) = STField<uint>(this,0x1d1) & 0xfffffffd;
@@ -370,7 +370,7 @@ undefined4 __thiscall st::fn_004237D0(void *this,short param_1)
   uVar1 = *(uint *)(STField<int>(this,0x29) + 0xc);
   if (uVar1 != 0) {
     index = 0;
-    uStack_8 = this;
+    uStack_8 = st::machine_word_boundary_cast<undefined4>(this);
     do {
       st::fn_006ACC70(STField<DArrayTy *>(this,0x29),index,(void *)((int)&uStack_8 + 2));
       if (STPiece<2,2>(uStack_8) == param_1) {
@@ -476,7 +476,7 @@ void __fastcall st::fn_00423E00(void *param_1)
 {
   DArrayTy *groupContent;
 
-  groupContent = (DArrayTy *)st::fn_00402DB5(param_1);
+  groupContent = (DArrayTy *)st::fn_00402DB5(st::pointer_boundary_cast<STGroupC *>(param_1));
   st::fn_004031E8(param_1,groupContent);
   st::fn_006AE110(groupContent);
   return;
@@ -1420,7 +1420,8 @@ STGroupBoatC * st::fn_0042B760(char param_1,ushort param_2)
 
   uVar1 = ((DArrayTy *)g_packedRecords_A62x8[param_1].field2_0x5)->count;
   if ((uVar1 != 0) && (param_2 < uVar1)) {
-    st::fn_006ACC70((DArrayTy *)g_packedRecords_A62x8[param_1].field2_0x5,(uint)param_2,&param_1);
+    STGroupBoatC * _param_1 = nullptr;
+    st::fn_006ACC70((DArrayTy *)g_packedRecords_A62x8[param_1].field2_0x5,(uint)param_2,&_param_1);
     return _param_1;
   }
   return nullptr;

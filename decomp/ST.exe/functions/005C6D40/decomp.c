@@ -57,7 +57,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     StartSystemTy::sub_006E56B0(local_10->field_000C,local_10->field_215D);
   }
   this_00->field_215D = 0;
-  puVar7 = &this_00->field_1F8C;
+  puVar7 = this_00->field_1F8C;
   local_c = 10;
   do {
     local_8 = 8;

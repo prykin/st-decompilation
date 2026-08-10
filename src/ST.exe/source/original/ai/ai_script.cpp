@@ -41,7 +41,7 @@ void __cdecl st::fn_006802A0(int exceptionCode,char *resourceString)
     memmove(pcVar5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
   }
   st::fn_006A5E40
-            (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x74);
+            (exceptionCode,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x74);
   return;
 }
 
@@ -75,11 +75,11 @@ undefined4 __cdecl st::fn_00680890(byte param_1,byte *param_2,uint param_3,undef
   pcVar3 = (char *)st::fn_00402879(param_1);
   if (*pcVar3 == '\0') {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xff);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xff);
   }
   puVar6 = &local_8;
   cVar1 = st::fn_0040240A();
-  st::fn_006F13F0(DAT_008489d0,param_1,pcVar3,param_2,param_3,elementSize,cVar1,puVar6);
+  st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(DAT_008489d0),param_1,pcVar3,param_2,param_3,elementSize,cVar1,puVar6);
   DAT_00848a0c = DAT_00848a0c + local_8;
   DAT_00848a10 = DAT_00848a10 + 1;
   uVar7 = local_8;
@@ -118,7 +118,7 @@ undefined4 __cdecl st::fn_006809F0(uint *param_1)
     local_18 = param_1[2];
     local_10 = local_14;
     local_8 = (byte *)st::fn_006C8910(param_1,(int *)&local_c);
-    st::fn_00403346(0x17,local_8,local_c,&local_18);
+    st::fn_00403346(0x17,local_8,local_c,st::pointer_boundary_cast<undefined4 *>(&local_18));
     if (local_8 != nullptr) {
       st::fn_006AB060(&local_8);
     }
@@ -129,7 +129,7 @@ undefined4 __cdecl st::fn_006809F0(uint *param_1)
   if (local_8 != nullptr) {
     st::fn_006AB060(&local_8);
   }
-  st::fn_006A5E40(local_14,0,"E:\\__titans\\ai\\ai_script.cpp",0x124);
+  st::fn_006A5E40(local_14,0,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x124);
   return 0;
 }
 
@@ -163,7 +163,7 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
     pcVar2 = st::fn_00403779(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
     if (pcVar2 == nullptr) {
       st::fn_006A5E40
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x19c);
+                (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x19c);
     }
     else {
       cVar1 = *pcVar2;
@@ -183,7 +183,7 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
           param_2 = st::fn_00401604(pcVar2,(int)pfVar8,&param_1);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (param_2 == nullptr) {
-            st::fn_00405411(param_1,&DAT_00847824);
+            st::fn_00405411(param_1,st::pointer_boundary_cast<char *>(&DAT_00847824));
             return;
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -191,7 +191,7 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
             iVar7 = st::fn_00405D17(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               st::fn_006A5E40
-                        (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x17a);
             }
             local_10 = 1;
@@ -202,7 +202,7 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
             iVar7 = st::fn_00405D17(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               st::fn_006A5E40
-                        (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x182);
             }
             local_10 = 2;
@@ -212,7 +212,7 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
             if (param_1 != 3) {
               st::fn_006AB060(&param_2);
               st::fn_006A5E40
-                        (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x195);
               st::fn_006AB060(&param_2);
               return;
@@ -220,7 +220,7 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
             iVar7 = st::fn_00405D17(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               st::fn_006A5E40
-                        (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x18a);
             }
             pfVar8 = param_2;
@@ -228,7 +228,7 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
             iVar7 = st::fn_00405E98(pbVar5,(char *)pfVar8);
             if (iVar7 < 0) {
               st::fn_006A5E40
-                        (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x18c);
             }
             local_10 = 3;
@@ -261,12 +261,12 @@ void st::fn_006827A0(void)
     exceptionCode = st::fn_00401D7F();
     if (exceptionCode < 0) {
       st::fn_006A5E40
-                (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                (exceptionCode,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                  0x1b5);
     }
     if (DAT_007d2d18 == 0x1c) {
       st::fn_006A5E40
-                (-0x6f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x1b6);
+                (-0x6f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x1b6);
     }
   } while (DAT_007d2d18 == 0x1d);
   return;
@@ -300,7 +300,7 @@ void st::fn_00682850(void)
     pcVar6[3] = '\0';
     pcVar6 = pcVar6 + 4;
   }
-  st::fn_0072E340(local_8c,DAT_00857528,0x7f);
+  st::fn_0072E340(local_8c,st::pointer_boundary_cast<char *>(DAT_00857528),0x7f);
   pfVar3 = (float *)st::fn_004038AF(GVar2);
   pfVar5 = nullptr;
   st::fn_00402469();
@@ -313,7 +313,7 @@ void st::fn_00682850(void)
     }
     else if (DAT_007d2d18 != 0x39) {
       st::fn_006A5E40
-                (-0x71,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x1d0);
+                (-0x71,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x1d0);
     }
   }
   pfVar1 = pfVar5;
@@ -351,12 +351,12 @@ void st::fn_00682D70(void)
   undefined1 local_c;
   undefined2 local_b;
 
-  pcVar3 = DAT_00857548;
+  pcVar3 = st::pointer_boundary_cast<char *>(DAT_00857548);
   pbVar1 = st::fn_00401677();
   iVar2 = st::fn_00405E98(pbVar1,pcVar3);
   if (iVar2 < 0) {
     st::fn_006A5E40
-              (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x252);
+              (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x252);
   }
   local_c = 3;
   local_b = (undefined2)iVar2;
@@ -385,7 +385,7 @@ int __cdecl st::fn_006836C0(DArrayTy *param_1,byte *param_2)
 
   if ((param_1 == nullptr) || (param_2 == nullptr)) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x38a);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x38a);
   }
   dVar2 = param_1->elementSize;
   iVar6 = 0;
@@ -451,7 +451,7 @@ int __cdecl st::fn_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,in
   if (((param_3 == 0) || (param_1 == nullptr)) || (param_2 == nullptr)
      ) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x39e);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x39e);
   }
   iVar7 = 0;
   iVar1 = param_1[1];
@@ -468,7 +468,7 @@ int __cdecl st::fn_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,in
         pbVar4 = (byte *)st::fn_0040353A((int)sStack_b);
         if (pbVar4 == nullptr) {
           st::fn_006A5E40
-                    (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x3a5
+                    (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x3a5
                     );
         }
         else {
@@ -513,7 +513,7 @@ int __cdecl st::fn_006838B0(int *param_1,char param_2,byte *param_3,int param_4)
   local_8 = 0;
   if (((param_4 == 0) || (param_1 == nullptr)) || (param_3 == nullptr)) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x3be);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x3be);
   }
   iVar1 = param_1[1];
   if (param_2 == '\x01') {
@@ -534,7 +534,7 @@ int __cdecl st::fn_006838B0(int *param_1,char param_2,byte *param_3,int param_4)
   }
   if (param_2 != '\x03') {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x3d4);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x3d4);
     return iVar1;
   }
   uVar2 = *(undefined4 *)param_3;
@@ -580,7 +580,7 @@ int __cdecl st::fn_006839D0(int param_1,int *param_2,ushort param_3,int param_4)
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((param_4 == 0) || (param_2 == nullptr)) || (param_1 == 0)) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x3e5);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x3e5);
   }
   iVar2 = param_2[1];
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -600,7 +600,7 @@ int __cdecl st::fn_006839D0(int param_1,int *param_2,ushort param_3,int param_4)
         iVar5 = iVar5 + 1;
         break;
       case '\x03':
-        st::fn_00403EE5(param_2,cVar1,&DAT_00812c24 + (DAT_008488b0 * 0xac5 + local_8) * 4,iVar3);
+        st::fn_00403EE5(param_2,cVar1,st::pointer_boundary_cast<byte *>(&DAT_00812c24 + (DAT_008488b0 * 0xac5 + local_8) * 4),iVar3);
         local_8 = local_8 + 1;
         break;
       case '\x04':
@@ -611,7 +611,7 @@ int __cdecl st::fn_006839D0(int param_1,int *param_2,ushort param_3,int param_4)
         break;
       default:
         st::fn_006A5E40
-                  (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x3f6);
+                  (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x3f6);
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = param_4 + 1;
@@ -713,11 +713,11 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
   void *this_00;
   void *this_01;
   int iVar8;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   void *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   void *extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   void *extraout_ECX_01;
   int iVar9;
   void *this_02;
@@ -882,7 +882,7 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
   if (local_EAX_119 == 0) {
     if (lpFileName == (LPCSTR)0x0) {
       st::fn_006A5E40
-                (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x43a);
+                (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x43a);
     }
     st::fn_00404426(lpFileName,
                        (AnonShape_GLOBAL_0081194C_4D1525E6 *)&PTR_thunk_FUN_00680270_007d3fa8);
@@ -895,13 +895,13 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
       st::fn_00402D8D(1);
       st::fn_00405CD1(this_01,1);
       st::fn_00403148((undefined4 *)&DAT_007d3f78);
-      DAT_008489d0 = nullptr;
+      DAT_008489d0 = static_cast<undefined4>(0);
       g_allocationRecord_00648620_008489B4 = nullptr;
       g_allocationRecord_0067D3B0_008489B8 = nullptr;
       g_allocationRecord_0065CD10_008489BC = nullptr;
       DAT_008489c0 = 0;
       g_allocationRecord_006684E0_008489C4 = nullptr;
-      DAT_008489c8 = nullptr;
+      DAT_008489c8 = static_cast<undefined4>(0);
       PTR_008489cc = nullptr;
       g_array_008489D4 = nullptr;
       g_dArray_008489D8 = nullptr;
@@ -916,46 +916,46 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
       st::fn_0040493F();
       if (param_2 == nullptr) {
         st::fn_006A5E40
-                  (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x467);
+                  (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x467);
       }
-      iVar8 = st::fn_00402F40("_main_path",(char *)param_2,nullptr);
+      iVar8 = st::fn_00402F40(st::mutable_c_string("_main_path"),(char *)param_2,nullptr);
       if (iVar8 == 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x468);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x468);
       }
-      iVar8 = st::fn_00402F40("_inc_path",&param_2->field_0x104,nullptr);
+      iVar8 = st::fn_00402F40(st::mutable_c_string("_inc_path"),st::pointer_boundary_cast<char *>(&param_2->field_0x104),nullptr);
       if (iVar8 == 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x469);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x469);
       }
-      iVar8 = st::fn_00402F40("_maps_path",&param_2->field_0x208,nullptr);
+      iVar8 = st::fn_00402F40(st::mutable_c_string("_maps_path"),st::pointer_boundary_cast<char *>(&param_2->field_0x208),nullptr);
       if (iVar8 == 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x46a);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x46a);
       }
-      uVar8 = st::fn_00404B1F("_env_var0",param_2->field_030C);
+      uVar8 = st::fn_00404B1F(st::mutable_c_string("_env_var0"),param_2->field_030C);
       if ((int)uVar8 < 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x46b);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x46b);
       }
-      local_EAX_619 = st::fn_00404B1F("_env_var1",param_2->field_0310);
+      local_EAX_619 = st::fn_00404B1F(st::mutable_c_string("_env_var1"),param_2->field_0310);
       if ((int)local_EAX_619 < 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x46c);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x46c);
       }
-      local_EAX_667 = st::fn_00404B1F("_env_var2",param_2->field_0314);
+      local_EAX_667 = st::fn_00404B1F(st::mutable_c_string("_env_var2"),param_2->field_0314);
       if ((int)local_EAX_667 < 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x46d);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x46d);
       }
       st::external_0000001F(lpFileName,0x104,(LPSTR)local_4cc,nullptr);
       st::fn_0072E730(local_4cc,local_a4,local_7ec,local_8ec,local_3c8);
       st::fn_0072F110
                 ((char *)local_4cc,(char *)local_a4,(char *)local_7ec,nullptr,nullptr);
-      iVar8 = st::fn_00402F40("_curr_path",(char *)local_4cc,nullptr);
+      iVar8 = st::fn_00402F40(st::mutable_c_string("_curr_path"),(char *)local_4cc,nullptr);
       if (iVar8 == 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x471);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x471);
       }
       pbVar15 = local_4cc;
       puVar26 = nullptr;
@@ -963,7 +963,7 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
       iVar8 = st::fn_00402F40((char *)pbVar3_mg0,(char *)pbVar15,puVar26);
       if (iVar8 == 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x472);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x472);
       }
 switchD_006841b6_default:
       if (local_30 != 0) {
@@ -971,7 +971,7 @@ switchD_006841b6_default:
         if (local_EAX_907 < 0) {
           st::fn_006A5E40
                     (local_EAX_907,g_overwriteContext_007ED77C,
-                     "E:\\__titans\\ai\\ai_script.cpp",0x477);
+                     st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x477);
         }
       }
       if (param_5 != nullptr) {
@@ -981,7 +981,7 @@ switchD_006841b6_default:
           ppuVar18 = ppuVar18 + 1;
         }
         local_f8 = DAT_00857554;
-        st::fn_0072E730(DAT_0085753c,nullptr,nullptr,nullptr,local_3c8);
+        st::fn_0072E730(st::pointer_boundary_cast<byte *>(DAT_0085753c),nullptr,nullptr,nullptr,local_3c8);
         if (local_3c8[0] == 0) {
           if (lpFileName != (LPCSTR)0x0) {
             uVar6 = 0xffffffff;
@@ -1007,7 +1007,7 @@ switchD_006841b6_default:
         }
         else if (DAT_0085753c != nullptr) {
           uVar6 = 0xffffffff;
-          pbVar14 = DAT_0085753c;
+          pbVar14 = st::pointer_boundary_cast<byte *>(DAT_0085753c);
           do {
             pbVar15 = pbVar14;
             if (uVar6 == 0) break;
@@ -1032,7 +1032,7 @@ LAB_006840bc:
           }
         }
         local_fc = &DAT_0084790c;
-        st::fn_0072E340(&CHAR_00h_00847d0c,DAT_0085755c,0x3fe);
+        st::fn_0072E340(&CHAR_00h_00847d0c,st::pointer_boundary_cast<char *>(DAT_0085755c),0x3fe);
         local_f4 = &CHAR_00h_00847d0c;
         if (DAT_008489d0 != nullptr) {
           local_e8 = DAT_00848a0c;
@@ -1059,7 +1059,7 @@ LAB_006840bc:
         iVar8 = (*(code *)param_5)(&local_fc);
         if (iVar8 != 0) {
           st::fn_006A5E40
-                    (-0x65,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x48a
+                    (-0x65,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x48a
                     );
         }
       }
@@ -1072,7 +1072,7 @@ LAB_006840bc:
 cf_common_join_0068A687:
         if (pAVar17 == nullptr) {
           st::fn_006A5E40
-                    (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x9dd
+                    (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x9dd
                     );
         }
         st::fn_004020A4((int *)&g_allocationRecord_00648620_008489B4);
@@ -1090,7 +1090,7 @@ cf_common_join_0068A687:
           g_dArray_008489DC = nullptr;
         }
         st::fn_00403DE6();
-        st::fn_0040193D(&g_anonShape_00683780_11EA4E23_00848A14);
+        st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
         local_EAX_27312 = st::fn_00404D90();
         while (local_EAX_27312 != 0) {
           local_EAX_27312 = st::fn_00404D90();
@@ -1104,7 +1104,7 @@ cf_common_join_0068A687:
         if (DAT_007d2d18 == 0x3b7) {
           if ((int)(&DAT_0081458c)[DAT_008488b0 * 0xac5] < 1) {
             st::fn_006A5E40
-                      (-0x6e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x6e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x494);
           }
           iVar9 = DAT_008488b0;
@@ -1116,14 +1116,14 @@ cf_common_join_0068A687:
              ((pvVar16 == (void *)0x1 && (*(int *)(&DAT_008143f8 + iVar8) != 0)))) {
             st::fn_004053B2(pvVar16,1);
             bVar25 = 1;
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             pvVar16 = extraout_ECX_00;
           }
           else {
 LAB_006842cf:
             st::fn_004053B2(pvVar16,0);
             bVar25 = 0;
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             pvVar16 = extraout_ECX_01;
           }
 LAB_006842d6:
@@ -1132,7 +1132,7 @@ LAB_006842d6:
         else if (DAT_007d2d18 == 0x3b8) {
           if ((int)(&DAT_0081458c)[DAT_008488b0 * 0xac5] < 1) {
             st::fn_006A5E40
-                      (-0x6e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x6e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x49f);
           }
           iVar8 = DAT_008488b0 * 0x2b14;
@@ -1145,7 +1145,7 @@ LAB_006842d6:
                (*(int *)(&DAT_008143f8 + (int)pvVar16 * 8 + iVar8) == 0)))))) goto LAB_006842cf;
           st::fn_004053B2(pvVar16,1);
           bVar25 = 1;
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           pvVar16 = extraout_ECX;
           goto LAB_006842d6;
         }
@@ -1200,17 +1200,17 @@ LAB_006842d6:
                       if (local_EAX_3364 == 0) {
                         st::fn_006A5E40
                                   (-0x8e,g_overwriteContext_007ED77C,
-                                   "E:\\__titans\\ai\\ai_script.cpp",0x5a1);
+                                   st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5a1);
                       }
                       if (PTR_008489cc == nullptr) {
                         st::fn_006A5E40
                                   (-0x8f,g_overwriteContext_007ED77C,
-                                   "E:\\__titans\\ai\\ai_script.cpp",0x5a2);
+                                   st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5a2);
                       }
                       iVar8 = DAT_008488b0 + 1;
                       puVar5 = &DAT_00811a90 + iVar8 * 0xac5;
                       DAT_008488b0 = iVar8;
-                      for (iVar9 = 0xac5; temp_3f53535d7a = DAT_00857528, iVar12 = DAT_007d2d18,
+                      for (iVar9 = 0xac5; temp_3f53535d7a = st::pointer_boundary_cast<byte *>(DAT_00857528), iVar12 = DAT_007d2d18,
                           iVar9 != 0; iVar9 = iVar9 + -1) {
                         *puVar5 = 0;
                         puVar5 = puVar5 + 1;
@@ -1223,7 +1223,7 @@ LAB_006842d6:
                                       0x3f);
                       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                       local_bc = STReplaceLowWord((uint32_t)(local_EAX_3521), (uint16_t)(*(undefined2 *)(local_EAX_3364 + 0x472)));
-                      local_d0 = PTR_008489cc->field_000F->count + 1;
+                      local_d0 = st::machine_word_boundary_cast<int>(PTR_008489cc->field_000F->count + 1);
                       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                       local_EAX_3581 =
                            st::fn_00403EE5((int *)(local_EAX_3364 + 0x46e),'\x02',
@@ -1239,7 +1239,7 @@ LAB_006842d6:
                       if (DAT_008488b0 < 2) {
                         st::fn_006A5E40
                                   (-0x8f,g_overwriteContext_007ED77C,
-                                   "E:\\__titans\\ai\\ai_script.cpp",0x5ba);
+                                   st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5ba);
                       }
                       DAT_008488b0 = DAT_008488b0 + -1;
                       iVar8 = (&DAT_00811a94)[DAT_008488b0 * 0xac5];
@@ -1249,12 +1249,12 @@ LAB_006842d6:
                           if (local_EAX_2872 == 0) {
                             st::fn_006A5E40
                                       (-0x8e,g_overwriteContext_007ED77C,
-                                       "E:\\__titans\\ai\\ai_script.cpp",0x60c);
+                                       st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x60c);
                           }
                           if (PTR_008489cc == nullptr) {
                             st::fn_006A5E40
                                       (-0x8f,g_overwriteContext_007ED77C,
-                                       "E:\\__titans\\ai\\ai_script.cpp",0x60d);
+                                       st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x60d);
                           }
                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                           local_c8 = *(undefined4 *)(local_EAX_2872 + 0x472);
@@ -1273,7 +1273,7 @@ LAB_006842d6:
                           if (local_EAX_3095 == nullptr) {
                             st::fn_006A5E40
                                       (-0x6c,g_overwriteContext_007ED77C,
-                                       "E:\\__titans\\ai\\ai_script.cpp",0x61a);
+                                       st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x61a);
                           }
                           *(dword *)(local_EAX_3095 + 1) = PTR_008489cc->field_000F->count;
                           DAT_008488b0 = DAT_008488b0 + -1;
@@ -1284,12 +1284,12 @@ LAB_006842d6:
                             if (local_EAX_2631 == 0) {
                               st::fn_006A5E40
                                         (-0x8e,g_overwriteContext_007ED77C,
-                                         "E:\\__titans\\ai\\ai_script.cpp",0x5fc);
+                                         st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5fc);
                             }
                             if (PTR_008489cc == nullptr) {
                               st::fn_006A5E40
                                         (-0x8f,g_overwriteContext_007ED77C,
-                                         "E:\\__titans\\ai\\ai_script.cpp",0x5fd);
+                                         st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5fd);
                             }
                             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                             local_c0 = *(undefined4 *)(local_EAX_2631 + 0x472);
@@ -1308,7 +1308,7 @@ LAB_006842d6:
 LAB_00684777:
                               st::fn_006A5E40
                                         (-0x6c,g_overwriteContext_007ED77C,
-                                         "E:\\__titans\\ai\\ai_script.cpp",iVar8);
+                                         st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8);
                             }
                           }
                           else {
@@ -1317,12 +1317,12 @@ LAB_00684777:
                             if (local_EAX_2430 == 0) {
                               st::fn_006A5E40
                                         (-0x8e,g_overwriteContext_007ED77C,
-                                         "E:\\__titans\\ai\\ai_script.cpp",0x5ec);
+                                         st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5ec);
                             }
                             if (PTR_008489cc == nullptr) {
                               st::fn_006A5E40
                                         (-0x8f,g_overwriteContext_007ED77C,
-                                         "E:\\__titans\\ai\\ai_script.cpp",0x5ed);
+                                         st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5ed);
                             }
                             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                             local_b8 = *(undefined4 *)(local_EAX_2430 + 0x472);
@@ -1350,13 +1350,13 @@ LAB_00684777:
                           if (PTR_008489cc == nullptr) {
                             st::fn_006A5E40
                                       (-0x8f,g_overwriteContext_007ED77C,
-                                       "E:\\__titans\\ai\\ai_script.cpp",0x5dc);
+                                       st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5dc);
                           }
                           local_EAX_3220 = st::fn_00401CD0();
                           if (local_EAX_3220 == 0) {
                             st::fn_006A5E40
                                       (-0x8e,g_overwriteContext_007ED77C,
-                                       "E:\\__titans\\ai\\ai_script.cpp",0x5dd);
+                                       st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5dd);
                           }
                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                           local_b4 = *(undefined4 *)(local_EAX_3220 + 0x472);
@@ -1380,7 +1380,7 @@ LAB_00684989:
                       iVar12 = DAT_008488b0 * 0x2b14;
                       iVar8 = DAT_008488b0 * 0xac5;
                       puVar5 = &DAT_00811a90 + iVar8;
-                      for (iVar9 = 0xac5; temp_3f861e3394 = DAT_00857528, iVar9 != 0;
+                      for (iVar9 = 0xac5; temp_3f861e3394 = st::pointer_boundary_cast<byte *>(DAT_00857528), iVar9 != 0;
                           iVar9 = iVar9 + -1) {
                         *puVar5 = 0;
                         puVar5 = puVar5 + 1;
@@ -1388,14 +1388,14 @@ LAB_00684989:
                       (&DAT_00811a90)[iVar8] = 1;
                       st::fn_0072E340
                                 (&CHAR_00h_00811aa4 + iVar12,(char *)temp_3f861e3394,0x3f);
-                      local_EAX_1897 = st::fn_004018FC(DAT_00857528);
+                      local_EAX_1897 = st::fn_004018FC(st::pointer_boundary_cast<byte *>(DAT_00857528));
                       iVar8 = DAT_008488b0;
                       (&DAT_00811a9c)[DAT_008488b0 * 0xac5] = local_EAX_1897;
                       if (local_EAX_1897 == 5) {
                         if (PTR_008489cc == nullptr) {
                           st::fn_006A5E40
                                     (-0x8f,g_overwriteContext_007ED77C,
-                                     "E:\\__titans\\ai\\ai_script.cpp",0x4bb);
+                                     st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x4bb);
                         }
                         iVar8 = DAT_008488b0;
                         uVar3 = st::fn_00404548((char *)DAT_00857528);
@@ -1406,7 +1406,7 @@ LAB_00684989:
                         if (PTR_008489cc == nullptr) {
                           st::fn_006A5E40
                                     (-0x8f,g_overwriteContext_007ED77C,
-                                     "E:\\__titans\\ai\\ai_script.cpp",0x4bf);
+                                     st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x4bf);
                         }
                         iVar8 = DAT_008488b0;
                         uVar3 = st::fn_004046FB((char *)DAT_00857528);
@@ -1418,7 +1418,7 @@ LAB_00684989:
                         if (PTR_008489cc == nullptr) {
                           st::fn_006A5E40
                                     (-0x8f,g_overwriteContext_007ED77C,
-                                     "E:\\__titans\\ai\\ai_script.cpp",0x4c3);
+                                     st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x4c3);
                           iVar8 = DAT_008488b0;
                         }
                         uVar3 = st::fn_00403EA9((char *)DAT_00857528);
@@ -1428,7 +1428,7 @@ LAB_00684989:
                         if (PTR_008489cc == nullptr) {
                           st::fn_006A5E40
                                     (-0x8f,g_overwriteContext_007ED77C,
-                                     "E:\\__titans\\ai\\ai_script.cpp",0x4c7);
+                                     st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x4c7);
                         }
                         uVar3 = st::fn_00403EC2((char *)DAT_00857528);
                         (&DAT_00811aa0)[DAT_008488b0 * 0xac5] = uVar3;
@@ -1442,7 +1442,7 @@ LAB_00684989:
                     if (0x31 < iVar8) {
                       st::fn_006A5E40
                                 (-0x66,g_overwriteContext_007ED77C,
-                                 "E:\\__titans\\ai\\ai_script.cpp",0x4cc);
+                                 st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x4cc);
                     }
                     iVar9 = DAT_008488b0;
                     iVar12 = DAT_008488b0 * 0x2b14;
@@ -1454,7 +1454,7 @@ LAB_00684989:
                     *(undefined4 *)(&DAT_008143f8 + (&DAT_0081458c)[iVar9 * 0xac5] * 8 + iVar12) = 0
                     ;
                     puVar5 = &DAT_00811a90 + iVar11 * 0xac5;
-                    for (iVar8 = 0xac5; temp_3fb77f837b = DAT_00857528, iVar9 = DAT_007d2d18,
+                    for (iVar8 = 0xac5; temp_3fb77f837b = st::pointer_boundary_cast<byte *>(DAT_00857528), iVar9 = DAT_007d2d18,
                         iVar8 != 0; iVar8 = iVar8 + -1) {
                       *puVar5 = 0;
                       puVar5 = puVar5 + 1;
@@ -1581,7 +1581,7 @@ switchD_00684bb9_caseD_3f2:
           iVar9 = DAT_008488b0 + 1;
           puVar5 = &DAT_00811a90 + iVar9 * 0xac5;
           DAT_008488b0 = iVar9;
-          for (iVar8 = 0xac5; temp_3f4976a46d = DAT_00857528, iVar12 = DAT_007d2d18, iVar8 != 0;
+          for (iVar8 = 0xac5; temp_3f4976a46d = st::pointer_boundary_cast<byte *>(DAT_00857528), iVar12 = DAT_007d2d18, iVar8 != 0;
               iVar8 = iVar8 + -1) {
             *puVar5 = 0;
             puVar5 = puVar5 + 1;
@@ -1602,7 +1602,7 @@ switchD_00684bb9_caseD_3f2:
           case 0x3e:
             if (PTR_008489cc == nullptr) {
               st::fn_006A5E40
-                        (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x631);
             }
             iVar8 = (&DAT_00811a9c)[DAT_008488b0 * 0xac5];
@@ -1627,7 +1627,7 @@ switchD_00684bb9_caseD_3f2:
           case 5:
             if (PTR_008489cc == nullptr) {
               st::fn_006A5E40
-                        (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x627);
             }
             iVar8 = (&DAT_00811a9c)[DAT_008488b0 * 0xac5];
@@ -1679,31 +1679,31 @@ switchD_00684bb9_caseD_3f2:
           if (DAT_007d2d18 != 0x3a) {
             if ((&DAT_00811a94)[DAT_008488b0 * 0xac5] == 2) {
               st::fn_006A5E40
-                        (-0x71,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x71,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x9d0);
-              st::fn_0040193D(&g_anonShape_00683780_11EA4E23_00848A14);
+              st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
             }
             else {
               st::fn_006A5E40
-                        (-0x72,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x72,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x9d1);
-              st::fn_0040193D(&g_anonShape_00683780_11EA4E23_00848A14);
+              st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
             }
             goto switchD_006841b6_default;
           }
           if ((&DAT_00811a94)[DAT_008488b0 * 0xac5] == 2) {
             st::fn_006A5E40
-                      (-0x71,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x71,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x938);
           }
           if ((&DAT_00811a94)[DAT_008488b0 * 0xac5] != 1) {
             st::fn_006A5E40
-                      (-0x69,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x69,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x939);
           }
           if (g_anonShape_00683780_11EA4E23_00848A14->field_0004 < 1) {
             st::fn_006A5E40
-                      (-0x69,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x69,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x93a);
           }
           iVar8 = DAT_008488b0 * 0x2b14;
@@ -1721,7 +1721,7 @@ switchD_00684bb9_caseD_3f2:
             iVar8 = iVar10;
             if (iVar10 == 0) {
               st::fn_006A5E40
-                        (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x9a7);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               iVar8 = extraout_EAX;
@@ -1729,7 +1729,7 @@ switchD_00684bb9_caseD_3f2:
             uVar13 = (undefined2)((uint)iVar8 >> 0x10);
             if (PTR_008489cc == nullptr) {
               st::fn_006A5E40
-                        (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x9a8);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar13 = extraout_var;
@@ -1793,12 +1793,12 @@ switchD_00684bb9_caseD_3f2:
                                          (byte *)(&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14));
               if ((int)uVar6 < 0) {
                 st::fn_006A5E40
-                          (uVar6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp"
+                          (uVar6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp")
                            ,0x96e);
               }
               DAT_008488b0 = DAT_008488b0 + -2;
               g_anonShape_00683780_11EA4E23_00848A14 = nullptr;
-              st::fn_0040193D(&g_anonShape_00683780_11EA4E23_00848A14);
+              st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
               goto switchD_006841b6_default;
             }
             switch(cVar2) {
@@ -1835,7 +1835,7 @@ switchD_00684bb9_caseD_3f2:
                 if (iVar8 != 3) {
                   st::fn_00405411(-0x74,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
                   DAT_008488b0 = DAT_008488b0 + -2;
-                  st::fn_0040193D(&g_anonShape_00683780_11EA4E23_00848A14);
+                  st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
                   goto switchD_006841b6_default;
                 }
                 if (cVar2 == '\x02') {
@@ -1893,7 +1893,7 @@ switchD_00684bb9_caseD_3f2:
                 if (pcVar4 == nullptr) {
                   st::fn_006A5E40
                             (-0x6b,g_overwriteContext_007ED77C,
-                             "E:\\__titans\\ai\\ai_script.cpp",0x964);
+                             st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x964);
                 }
                 iVar8 = st::fn_00402F40(&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14,pcVar4,
                                            nullptr);
@@ -1909,11 +1909,11 @@ switchD_00684bb9_caseD_3f2:
               uVar6 = 0xffffff95;
 cf_error_exit_0068A22B:
               st::fn_006A5E40
-                        (uVar6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (uVar6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          iVar8);
             }
             DAT_008488b0 = DAT_008488b0 + -2;
-            st::fn_0040193D(&g_anonShape_00683780_11EA4E23_00848A14);
+            st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
             goto switchD_006841b6_default;
           case 5:
             iVar9 = (&DAT_00811a9c)[DAT_008488b0 * 0xac5];
@@ -1925,14 +1925,14 @@ cf_error_exit_0068A22B:
             uVar13 = extraout_var_02;
             if (local_EAX_24967 == 0) {
               st::fn_006A5E40
-                        (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x977);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar13 = extraout_var_03;
             }
             if (PTR_008489cc == nullptr) {
               st::fn_006A5E40
-                        (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x978);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar13 = extraout_var_04;
@@ -1995,12 +1995,12 @@ cf_error_exit_0068A22B:
           }
           st::fn_006AE1C0(PTR_008489cc->field_000F,puVar5);
           DAT_008488b0 = DAT_008488b0 + -2;
-          st::fn_0040193D(&g_anonShape_00683780_11EA4E23_00848A14);
+          st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
           goto switchD_006841b6_default;
         }
         if ((&DAT_00811a94)[DAT_008488b0 * 0xac5] != 2) {
           st::fn_006A5E40
-                    (-0x69,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x906
+                    (-0x69,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x906
                     );
         }
         if (0 < g_anonShape_00683780_11EA4E23_00848A14->field_0004) {
@@ -2053,7 +2053,7 @@ cf_error_exit_0068A22B:
               break;
             default:
               st::fn_006A5E40
-                        (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x923);
             }
           }
@@ -2062,7 +2062,7 @@ cf_error_exit_0068A22B:
             uVar6 = st::fn_00404976(g_anonShape_00683780_11EA4E23_00848A14,local_EAX_26713);
             if ((int)uVar6 < 0) {
               st::fn_006A5E40
-                        (uVar6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (uVar6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x927);
             }
             g_anonShape_00683780_11EA4E23_00848A14 = nullptr;
@@ -2075,7 +2075,7 @@ cf_error_exit_0068A22B:
         }
         DAT_008488b0 = DAT_008488b0 + -1;
         local_30 = 0;
-        st::fn_0040193D(&g_anonShape_00683780_11EA4E23_00848A14);
+        st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
         goto switchD_006841b6_default;
       case 4:
         if (DAT_007d2d18 == 6) {
@@ -2086,7 +2086,7 @@ cf_error_exit_0068A22B:
         }
         else if (DAT_007d2d18 != 0x1d) {
           st::fn_006A5E40
-                    (-0x6c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x658
+                    (-0x6c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x658
                     );
         }
       default:
@@ -2098,7 +2098,7 @@ cf_error_exit_0068A22B:
       memset(param_4, 0, 0x18); /* compiler bulk-zero initialization */
       *param_4 = iVar2;
       param_4[2] = DAT_00857554;
-      st::fn_0072E730(DAT_0085753c,nullptr,nullptr,nullptr,local_3c8);
+      st::fn_0072E730(st::pointer_boundary_cast<byte *>(DAT_0085753c),nullptr,nullptr,nullptr,local_3c8);
       if (local_3c8[0] != 0) {
         lpFileName = (LPCSTR)DAT_0085753c;
       }
@@ -2118,7 +2118,7 @@ cf_error_exit_0068A22B:
         memmove(pbVar20, pbVar15, uVar6); /* compiler REP MOVS byte copy */
       }
       param_4[1] = (int)&DAT_0084790c;
-      st::fn_0072E340(&CHAR_00h_00847d0c,DAT_0085755c,0x3fe);
+      st::fn_0072E340(&CHAR_00h_00847d0c,st::pointer_boundary_cast<char *>(DAT_0085755c),0x3fe);
       param_4[3] = (int)&CHAR_00h_00847d0c;
       param_4[4] = (int)&DAT_008488b4;
       param_4[5] = DAT_00857544;
@@ -2143,7 +2143,7 @@ cf_error_exit_0068A22B:
       g_dArray_008489DC = nullptr;
     }
     st::fn_00403DE6();
-    st::fn_0040193D(&g_anonShape_00683780_11EA4E23_00848A14);
+    st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
     local_EAX_27736 = st::fn_00404D90();
     while (local_EAX_27736 != 0) {
       local_EAX_27736 = st::fn_00404D90();
@@ -2213,7 +2213,7 @@ switchD_006841b6_caseD_2:
     }
     (&DAT_00811a90)[iVar9 * 0xac5] = 3;
     (&DAT_00811a94)[iVar9 * 0xac5] = 2;
-    pcVar4 = st::fn_00402540((&DAT_008110b0)[iVar9 * 0xac5]);
+    pcVar4 = st::pointer_boundary_cast<char *>(st::fn_00402540((&DAT_008110b0)[iVar9 * 0xac5]));
     uVar6 = 0xffffffff;
     do {
       pcVar21 = pcVar4;
@@ -2233,7 +2233,7 @@ switchD_006841b6_caseD_2:
   }
   if (DAT_007d2d18 != 0x39) {
     st::fn_006A5E40
-              (-0x71,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8fd);
+              (-0x71,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8fd);
     goto switchD_006841b6_default;
   }
   iVar9 = (&DAT_00811a94)[iVar8 * 0xac5];
@@ -2242,7 +2242,7 @@ switchD_006841b6_caseD_2:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8a0);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8a0);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8a0;
@@ -2255,7 +2255,7 @@ switchD_006841b6_caseD_2:
       case 0x4b4:
         if (g_dArray_008489D8 == nullptr) {
           st::fn_006A5E40
-                    (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x83f
+                    (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x83f
                     );
         }
         pAVar17 = (AllocationRecord_0065CD10 *)g_dArray_008489D8;
@@ -2267,7 +2267,7 @@ switchD_006841b6_caseD_2:
           goto cf_common_join_0068A687;
         }
         st::fn_006A5E40
-                  (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x841);
+                  (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x841);
         DAT_008488b0 = DAT_008488b0 + -1;
         goto switchD_006841b6_default;
       case 0x4b5:
@@ -2277,7 +2277,7 @@ switchD_006841b6_caseD_2:
         }
         if (g_dArray_008489D8 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x84d
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x84d
                     );
         }
         pcVar4 = local_6ec;
@@ -2304,7 +2304,7 @@ switchD_006841b6_caseD_2:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x875
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x875
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2316,7 +2316,7 @@ switchD_006841b6_caseD_2:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x876
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x876
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2328,14 +2328,14 @@ switchD_006841b6_caseD_2:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x877
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x877
                     );
         }
         if (PTR_008489cc == nullptr) {
           iVar8 = 0x877;
 cf_error_exit_00687750:
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8
                     );
         }
         break;
@@ -2343,14 +2343,14 @@ cf_error_exit_00687750:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x878
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x878
                     );
         }
         if (PTR_008489cc == nullptr) {
           iVar8 = 0x878;
 cf_error_exit_006877A0:
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8
                     );
         }
         goto cf_common_join_006877B6;
@@ -2358,14 +2358,14 @@ cf_error_exit_006877A0:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x879
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x879
                     );
         }
         if (PTR_008489cc == nullptr) {
           iVar8 = 0x879;
 cf_error_exit_006877EF:
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8
                     );
         }
         goto cf_common_join_00687805;
@@ -2373,14 +2373,14 @@ cf_error_exit_006877EF:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x87a
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x87a
                     );
         }
         if (PTR_008489cc == nullptr) {
           iVar8 = 0x87a;
 cf_error_exit_0068783F:
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8
                     );
         }
         goto cf_common_join_00687855;
@@ -2388,14 +2388,14 @@ cf_error_exit_0068783F:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x87b
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x87b
                     );
         }
         if (PTR_008489cc == nullptr) {
           iVar8 = 0x87b;
 cf_error_exit_0068788E:
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8
                     );
         }
         goto cf_common_join_006878A4;
@@ -2403,12 +2403,12 @@ cf_error_exit_0068788E:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x87c
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x87c
                     );
         }
         if (PTR_008489cc == nullptr) {
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x87c
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x87c
                     );
         }
         iVar8 = st::fn_004010AF(1,1);
@@ -2417,7 +2417,7 @@ cf_error_exit_0068788E:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x87e
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x87e
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2429,7 +2429,7 @@ cf_error_exit_0068788E:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x87f
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x87f
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2441,7 +2441,7 @@ cf_error_exit_0068788E:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x880
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x880
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2453,14 +2453,14 @@ cf_error_exit_0068788E:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x882
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x882
                     );
         }
         if (PTR_008489cc == nullptr) {
           iVar8 = 0x882;
 cf_error_exit_006879EA:
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8
                     );
         }
         goto cf_common_join_00687A00;
@@ -2468,12 +2468,12 @@ cf_error_exit_006879EA:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x883
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x883
                     );
         }
         if (PTR_008489cc == nullptr) {
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x883
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x883
                     );
         }
         iVar8 = st::fn_004010AF(4,1);
@@ -2482,14 +2482,14 @@ cf_error_exit_006879EA:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x884
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x884
                     );
         }
         if (PTR_008489cc == nullptr) {
           iVar8 = 0x884;
 cf_error_exit_00687A9D:
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8
                     );
         }
         goto LAB_00687ab3;
@@ -2497,14 +2497,14 @@ cf_error_exit_00687A9D:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x885
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x885
                     );
         }
         if (PTR_008489cc == nullptr) {
           iVar8 = 0x885;
 cf_error_exit_00687AEC:
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8
                     );
         }
         goto LAB_00687b02;
@@ -2512,7 +2512,7 @@ cf_error_exit_00687AEC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x886
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x886
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2524,12 +2524,12 @@ cf_error_exit_00687AEC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x887
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x887
                     );
         }
         if (PTR_008489cc == nullptr) {
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x887
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x887
                     );
         }
         iVar8 = st::fn_004010AF(2,1);
@@ -2538,12 +2538,12 @@ cf_error_exit_00687AEC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x889
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x889
                     );
         }
         if (PTR_008489cc == nullptr) {
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x889
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x889
                     );
         }
         iVar8 = 7;
@@ -2552,7 +2552,7 @@ cf_error_exit_00687AEC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x88a
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x88a
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2564,7 +2564,7 @@ cf_error_exit_00687AEC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x88b
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x88b
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2576,7 +2576,7 @@ cf_error_exit_00687AEC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x88c
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x88c
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2588,7 +2588,7 @@ cf_error_exit_00687AEC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x88d
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x88d
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2600,7 +2600,7 @@ cf_error_exit_00687AEC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x88e
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x88e
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2612,7 +2612,7 @@ cf_error_exit_00687AEC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x88f
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x88f
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2624,7 +2624,7 @@ cf_error_exit_00687AEC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x890
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x890
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2636,7 +2636,7 @@ cf_error_exit_00687AEC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x891
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x891
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2650,7 +2650,7 @@ LAB_00687ab3:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x893
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x893
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2662,7 +2662,7 @@ LAB_00687ab3:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x894
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x894
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2676,7 +2676,7 @@ cf_common_join_00687A00:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x895
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x895
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2688,14 +2688,14 @@ cf_common_join_00687A00:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x896
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x896
                     );
         }
         if (PTR_008489cc == nullptr) {
           iVar8 = 0x896;
 LAB_00687f2d:
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8
                     );
         }
         goto LAB_00687f43;
@@ -2703,7 +2703,7 @@ LAB_00687f2d:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x897
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x897
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2715,7 +2715,7 @@ LAB_00687f2d:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x898
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x898
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2729,7 +2729,7 @@ LAB_00687f43:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x899
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x899
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2741,7 +2741,7 @@ LAB_00687f43:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x89a
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x89a
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2753,7 +2753,7 @@ LAB_00687f43:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x89b
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x89b
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2767,7 +2767,7 @@ LAB_00687b02:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x89c
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x89c
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2779,7 +2779,7 @@ LAB_00687b02:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x89d
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x89d
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2793,7 +2793,7 @@ cf_common_join_006878A4:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x89e
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x89e
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2807,7 +2807,7 @@ cf_common_join_006877B6:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x89f
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x89f
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -2831,7 +2831,7 @@ cf_common_join_006895D5:
     if (iVar9 == 0x4b3) {
       if (g_dArray_008489D8 != nullptr) {
         st::fn_006A5E40
-                  (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x83a);
+                  (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x83a);
       }
       g_dArray_008489D8 = st::fn_006AE290(nullptr,5,0x220,5);
       DAT_008488b0 = DAT_008488b0 + -1;
@@ -2847,7 +2847,7 @@ cf_common_join_006895D5:
             (g_allocationRecord_0065CD10_008489BC != nullptr)) ||
            (g_allocationRecord_00648620_008489B4 != nullptr)) {
           st::fn_006A5E40
-                    (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x72e
+                    (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x72e
                     );
         }
         g_allocationRecord_006684E0_008489C4 =
@@ -2867,7 +2867,7 @@ cf_common_join_006895D5:
           }
           if (g_dArray_008489DC != nullptr) {
             st::fn_006A5E40
-                      (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x85b);
           }
           g_dArray_008489DC = st::fn_006B54F0(nullptr,5,5);
@@ -2883,8 +2883,8 @@ cf_common_join_006895D5:
             if (DAT_008489d0 != nullptr) {
               st::fn_0040597A(&DAT_008489d0);
             }
-            DAT_008489d0 = st::fn_00402054((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5],
-                                              (&DAT_00811c80)[DAT_008488b0 * 0xac5]);
+            DAT_008489d0 = st::machine_word_boundary_cast<undefined4>(st::fn_00402054((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5],
+                                              (&DAT_00811c80)[DAT_008488b0 * 0xac5]));
             DAT_008488b0 = DAT_008488b0 + -1;
             goto switchD_006841b6_default;
           }
@@ -2892,7 +2892,7 @@ cf_common_join_006895D5:
             if (iVar9 == 0x3b6) {
               if ((iVar8 < 1) || ((int)(&DAT_00811a78)[iVar8 * 0xac5] < 1)) {
                 st::fn_006A5E40
-                          (-0x6e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp"
+                          (-0x6e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp")
                            ,0x66c);
               }
               iVar8 = st::fn_00405178();
@@ -2927,7 +2927,7 @@ cf_common_join_006895D5:
               if (DAT_008489d0 != nullptr) {
                 st::fn_0040597A(&DAT_008489d0);
               }
-              DAT_008489d0 = st::fn_00405754((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5]);
+              DAT_008489d0 = st::machine_word_boundary_cast<undefined4>(st::fn_00405754((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5]));
               DAT_008488b0 = DAT_008488b0 + -1;
             }
             goto switchD_006841b6_default;
@@ -2936,12 +2936,12 @@ cf_common_join_006895D5:
             local_EAX_5150 = st::fn_00401CD0();
             if (local_EAX_5150 == 0) {
               st::fn_006A5E40
-                        (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x6ae);
             }
             if (PTR_008489cc == nullptr) {
               st::fn_006A5E40
-                        (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x6af);
             }
             iVar8 = st::fn_00403053();
@@ -2965,7 +2965,7 @@ cf_common_join_006895D5:
               local_EAX_5366 = st::fn_00404273((&DAT_00811c80)[DAT_008488b0 * 0xac5]);
               st::fn_004033AF(piVar22,local_EAX_5366,iVar8);
             }
-            local_cc = PTR_008489cc->field_000F->count + 1;
+            local_cc = st::machine_word_boundary_cast<int>(PTR_008489cc->field_000F->count + 1);
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_EAX_5419 =
                  st::fn_00403EE5(piVar22,'\x02',(byte *)&local_cc,
@@ -2989,7 +2989,7 @@ cf_common_join_006895D5:
             }
             if (g_dArray_008489DC == nullptr) {
               st::fn_006A5E40
-                        (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x86f);
             }
             st::fn_006B5AA0(g_dArray_008489DC,(&PTR_00811aec)[DAT_008488b0 * 0xac5]);
@@ -3007,8 +3007,8 @@ cf_common_join_006895D5:
             if (DAT_008489d0 != nullptr) {
               st::fn_0040597A(&DAT_008489d0);
             }
-            DAT_008489d0 = st::fn_0040102D((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5],
-                                              (&DAT_00811c80)[DAT_008488b0 * 0xac5]);
+            DAT_008489d0 = st::machine_word_boundary_cast<undefined4>(st::fn_0040102D((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5],
+                                              (&DAT_00811c80)[DAT_008488b0 * 0xac5]));
             DAT_008488b0 = DAT_008488b0 + -1;
             goto switchD_006841b6_default;
           case 0x3eb:
@@ -3045,7 +3045,7 @@ cf_common_join_006895D5:
         case 0x3f3:
           if (g_dArray_008489DC == nullptr) {
             st::fn_006A5E40
-                      (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x860);
           }
           pAVar17 = (AllocationRecord_0065CD10 *)g_dArray_008489DC;
@@ -3056,7 +3056,7 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
-          st::fn_004024B9(&g_dArray_008489DC->flags);
+          st::fn_004024B9(st::pointer_boundary_cast<uint *>(&g_dArray_008489DC->flags));
           if (g_dArray_008489DC != nullptr) {
             st::fn_006B5570(g_dArray_008489DC);
             g_dArray_008489DC = nullptr;
@@ -3075,7 +3075,7 @@ cf_common_join_006895D5:
              ((DAT_008489c8 != nullptr ||
               (g_allocationRecord_0065CD10_008489BC != nullptr)))) {
             st::fn_006A5E40
-                      (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x74c);
           }
           g_allocationRecord_00648620_008489B4 =
@@ -3087,7 +3087,7 @@ cf_common_join_006895D5:
           if ((g_allocationRecord_00648620_008489B4 == nullptr) ||
              (DAT_008489c0 == 1)) {
             st::fn_006A5E40
-                      (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x751);
           }
           pAVar17 = (AllocationRecord_0065CD10 *)g_allocationRecord_00648620_008489B4;
@@ -3119,7 +3119,7 @@ cf_common_join_006895D5:
              ((DAT_008489c8 != nullptr ||
               (g_allocationRecord_0065CD10_008489BC != nullptr)))) {
             st::fn_006A5E40
-                      (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x6e5);
           }
           g_allocationRecord_0067D3B0_008489B8 =
@@ -3133,7 +3133,7 @@ cf_common_join_006895D5:
           if ((g_allocationRecord_0067D3B0_008489B8 == nullptr) ||
              (DAT_008489c0 == 1)) {
             st::fn_006A5E40
-                      (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x6ea);
           }
           pAVar17 = (AllocationRecord_0065CD10 *)g_allocationRecord_0067D3B0_008489B8;
@@ -3157,7 +3157,7 @@ cf_common_join_006895D5:
         case 0x408:
           if (g_allocationRecord_0067D3B0_008489B8 == nullptr) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x6fc);
           }
           iVar8 = st::fn_00405A79();
@@ -3173,7 +3173,7 @@ cf_common_join_006895D5:
         case 0x409:
           if (g_allocationRecord_0067D3B0_008489B8 == nullptr) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x703);
           }
           local_EAX_7282 = st::fn_004014B0();
@@ -3202,25 +3202,25 @@ cf_common_join_006895D5:
              ((g_allocationRecord_00648620_008489B4 != nullptr ||
               (g_allocationRecord_006684E0_008489C4 != nullptr)))) {
             st::fn_006A5E40
-                      (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x70e);
           }
-          DAT_008489c8 = (AllocationRecord_0065CD10 *)
+          DAT_008489c8 = st::machine_word_boundary_cast<undefined4>((AllocationRecord_0065CD10 *)
                          st::fn_0040506A((&PTR_00811aec)[DAT_008488b0 * 0xac5],
                                             *(undefined2 *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),
-                                            *(undefined2 *)(&DAT_00811c84 + DAT_008488b0 * 0xac5));
+                                            *(undefined2 *)(&DAT_00811c84 + DAT_008488b0 * 0xac5)));
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
         case 0x41b:
           if (DAT_008489c8 == nullptr) {
             st::fn_006A5E40
-                      (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x713);
           }
-          pAVar17 = DAT_008489c8;
+          pAVar17 = st::pointer_boundary_cast<AllocationRecord_0065CD10 *>(DAT_008489c8);
           if (g_allocationRecord_0067D3B0_008489B8 == nullptr) {
             if (DAT_008489d0 == nullptr) {
-              DAT_008489c8 = nullptr;
+              DAT_008489c8 = static_cast<undefined4>(0);
               if (param_3 != nullptr) {
                 *param_3 = 2;
               }
@@ -3233,13 +3233,13 @@ cf_common_join_006895D5:
             DAT_008488b0 = DAT_008488b0 + -1;
           }
           else {
-            local_e4 = DAT_008489c8;
+            local_e4 = st::pointer_boundary_cast<AllocationRecord_0065CD10 *>(DAT_008489c8);
             local_e0 = 0;
             local_dc = 0;
             local_d8 = *(uint *)&DAT_008489c8->field_0x14;
             st::fn_006AE1C0
                       (g_allocationRecord_0067D3B0_008489B8->field_00C2,&local_e4);
-            DAT_008489c8 = nullptr;
+            DAT_008489c8 = static_cast<undefined4>(0);
             DAT_008488b0 = DAT_008488b0 + -1;
           }
           goto switchD_006841b6_default;
@@ -3251,7 +3251,7 @@ cf_common_join_006895D5:
       case 0x425:
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x733
+                    (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x733
                     );
         }
         pAVar17 = (AllocationRecord_0065CD10 *)g_allocationRecord_006684E0_008489C4;
@@ -3289,7 +3289,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x78d
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x78d
                     );
         }
         memset(local_128, 0, 0x2c); /* compiler bulk-zero initialization */
@@ -3313,7 +3313,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x79d
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x79d
                     );
         }
         g_allocationRecord_006684E0_008489C4->field_00DF =
@@ -3327,7 +3327,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x7b1
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x7b1
                     );
         }
         g_allocationRecord_006684E0_008489C4->field_00F5 =
@@ -3344,7 +3344,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x7a3
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x7a3
                     );
         }
         g_allocationRecord_006684E0_008489C4->field_0xe0 =
@@ -3371,7 +3371,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x7b9
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x7b9
                     );
         }
         g_allocationRecord_006684E0_008489C4->field_0102 =
@@ -3388,7 +3388,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x7c1
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x7c1
                     );
         }
         local_9c = *(undefined2 *)(&DAT_00811c88 + DAT_008488b0 * 0xac5);
@@ -3412,7 +3412,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",2000);
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),2000);
         }
         g_allocationRecord_006684E0_008489C4->field_0119 =
              *(undefined1 *)(&DAT_00811c80 + DAT_008488b0 * 0xac5);
@@ -3435,7 +3435,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x7e7
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x7e7
                     );
         }
         g_allocationRecord_006684E0_008489C4->field_0143 =
@@ -3457,7 +3457,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x7f1
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x7f1
                     );
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -3480,7 +3480,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x7dc
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x7dc
                     );
         }
         g_allocationRecord_006684E0_008489C4->field_0132 =
@@ -3502,7 +3502,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x7fe
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x7fe
                     );
         }
         g_allocationRecord_006684E0_008489C4->field_0156 =
@@ -3522,7 +3522,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x808
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x808
                     );
         }
         g_allocationRecord_006684E0_008489C4->field_0167 =
@@ -3544,7 +3544,7 @@ cf_common_join_006895D5:
         }
         if (g_allocationRecord_006684E0_008489C4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x812
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x812
                     );
         }
         g_allocationRecord_006684E0_008489C4->field_0x174 =
@@ -3561,14 +3561,14 @@ cf_common_join_006895D5:
         if ((g_allocationRecord_006684E0_008489C4 != nullptr) ||
            (DAT_008489c8 != nullptr)) {
           st::fn_006A5E40
-                    (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x765
+                    (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x765
                     );
         }
         if (g_allocationRecord_0067D3B0_008489B8 == nullptr) {
           if (g_allocationRecord_00648620_008489B4 == nullptr) {
             if (g_allocationRecord_0065CD10_008489BC != nullptr) {
               st::fn_006A5E40
-                        (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                        (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x774);
             }
             g_allocationRecord_0065CD10_008489BC =
@@ -3599,14 +3599,14 @@ cf_common_join_006895D5:
         DAT_008489c0 = 0;
         if (PTR_008489cc != nullptr) {
           st::fn_006A5E40
-                    (-0x91,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x77a
+                    (-0x91,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x77a
                     );
         }
         if ((g_allocationRecord_0067D3B0_008489B8 == nullptr) &&
            (g_allocationRecord_00648620_008489B4 == nullptr)) {
           if (g_allocationRecord_0065CD10_008489BC == nullptr) {
             st::fn_006A5E40
-                      (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x77c);
           }
           pAVar17 = g_allocationRecord_0065CD10_008489BC;
@@ -3659,7 +3659,7 @@ cf_common_join_006895D5:
         local_EAX_8657 = st::fn_00401CD0();
         if (local_EAX_8657 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x698
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x698
                     );
         }
         iVar8 = st::fn_00404773();
@@ -3668,7 +3668,7 @@ cf_common_join_006895D5:
         }
         if (PTR_008489cc != nullptr) {
           st::fn_006A5E40
-                    (-0x90,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x69a
+                    (-0x90,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x69a
                     );
         }
         PTR_008489cc = st::fn_00404205();
@@ -3700,7 +3700,7 @@ cf_common_join_006895D5:
       case 0x4b0:
         if (g_array_008489D4 != nullptr) {
           st::fn_006A5E40
-                    (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x818
+                    (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x818
                     );
         }
         g_array_008489D4 = st::fn_006AE290(nullptr,3,0x118,1);
@@ -3709,7 +3709,7 @@ cf_common_join_006895D5:
       case 0x4b1:
         if (g_array_008489D4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x81d
+                    (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x81d
                     );
         }
         pAVar17 = (AllocationRecord_0065CD10 *)g_array_008489D4;
@@ -3721,7 +3721,7 @@ cf_common_join_006895D5:
           goto cf_common_join_0068A687;
         }
         st::fn_006A5E40
-                  (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x81f);
+                  (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x81f);
         DAT_008488b0 = DAT_008488b0 + -1;
         goto switchD_006841b6_default;
       case 0x4b2:
@@ -3731,7 +3731,7 @@ cf_common_join_006895D5:
         }
         if (g_array_008489D4 == nullptr) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x82b
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x82b
                     );
         }
         pcVar4 = local_2c8;
@@ -3765,12 +3765,12 @@ cf_common_join_006895D5:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8f8);
           }
           if (PTR_008489cc == nullptr) {
             st::fn_006A5E40
-                      (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8f8);
           }
           iVar8 = st::fn_0040328D(1);
@@ -3781,14 +3781,14 @@ cf_common_join_006895D5:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8ec);
           }
           if (PTR_008489cc == nullptr) {
             iVar8 = 0x8ec;
 cf_error_exit_0068883F:
             st::fn_006A5E40
-                      (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        iVar8);
           }
           goto LAB_00688855;
@@ -3796,7 +3796,7 @@ cf_error_exit_0068883F:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8ed);
           }
           if (PTR_008489cc == nullptr) {
@@ -3808,12 +3808,12 @@ cf_error_exit_0068883F:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8ee);
           }
           if (PTR_008489cc == nullptr) {
             st::fn_006A5E40
-                      (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8ee);
           }
           iVar8 = 9;
@@ -3822,7 +3822,7 @@ cf_error_exit_0068883F:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8ef);
           }
           if (PTR_008489cc == nullptr) {
@@ -3834,7 +3834,7 @@ cf_error_exit_0068883F:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8e5);
           }
           if (PTR_008489cc == nullptr) {
@@ -3846,7 +3846,7 @@ cf_error_exit_0068883F:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8e6);
           }
           if (PTR_008489cc == nullptr) {
@@ -3858,7 +3858,7 @@ cf_error_exit_0068883F:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8e7);
           }
           if (PTR_008489cc == nullptr) {
@@ -3870,7 +3870,7 @@ cf_error_exit_0068883F:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8e8);
           }
           if (PTR_008489cc == nullptr) {
@@ -3882,14 +3882,14 @@ cf_error_exit_0068883F:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8e9);
           }
           if (PTR_008489cc == nullptr) {
             iVar8 = 0x8e9;
 cf_error_exit_00689556:
             st::fn_006A5E40
-                      (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        iVar8);
           }
           goto LAB_0068956c;
@@ -3897,7 +3897,7 @@ cf_error_exit_00689556:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8ea);
           }
           if (PTR_008489cc == nullptr) {
@@ -3909,7 +3909,7 @@ cf_error_exit_00689556:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8eb);
           }
           if (PTR_008489cc == nullptr) {
@@ -3921,7 +3921,7 @@ cf_error_exit_00689556:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8f0);
           }
           if (PTR_008489cc == nullptr) {
@@ -3933,7 +3933,7 @@ cf_error_exit_00689556:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8f2);
           }
           if (PTR_008489cc == nullptr) {
@@ -3945,7 +3945,7 @@ cf_error_exit_00689556:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8f3);
           }
           if (PTR_008489cc == nullptr) {
@@ -3957,7 +3957,7 @@ cf_error_exit_00689556:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8f4);
           }
           if (PTR_008489cc == nullptr) {
@@ -3971,7 +3971,7 @@ LAB_00688855:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8f5);
           }
           if (PTR_008489cc == nullptr) {
@@ -3985,7 +3985,7 @@ LAB_0068956c:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8f1);
           }
           if (PTR_008489cc == nullptr) {
@@ -3997,7 +3997,7 @@ LAB_0068956c:
           local_EAX_14857 = st::fn_00401CD0();
           if (local_EAX_14857 == 0) {
             st::fn_006A5E40
-                      (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x8f6);
           }
           if (PTR_008489cc == nullptr) {
@@ -4014,7 +4014,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8e4
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8e4
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4028,7 +4028,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8ce
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8ce
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4040,7 +4040,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8cf
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8cf
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4052,7 +4052,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8d0
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8d0
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4066,12 +4066,12 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8cb
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8cb
                     );
         }
         if (PTR_008489cc == nullptr) {
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8cb
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8cb
                     );
           iVar8 = 4;
           goto cf_common_join_006895CD;
@@ -4081,12 +4081,12 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8d4
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8d4
                     );
         }
         if (PTR_008489cc == nullptr) {
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8d4
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8d4
                     );
         }
         iVar8 = st::fn_00404471(2,1,2);
@@ -4095,7 +4095,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8d5
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8d5
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4107,7 +4107,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8d6
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8d6
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4119,7 +4119,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8d7
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8d7
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4131,7 +4131,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8d8
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8d8
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4143,7 +4143,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8d9
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8d9
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4155,7 +4155,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8da
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8da
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4167,7 +4167,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8db
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8db
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4179,7 +4179,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8dc
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8dc
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4191,7 +4191,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8de
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8de
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4203,7 +4203,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8dd
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8dd
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4215,7 +4215,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8df
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8df
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4227,7 +4227,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8e0
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8e0
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4239,7 +4239,7 @@ LAB_0068956c:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8e1
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8e1
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4253,7 +4253,7 @@ cf_common_join_006882FC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8e2
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8e2
                     );
         }
         if (PTR_008489cc == nullptr) {
@@ -4265,12 +4265,12 @@ cf_common_join_006882FC:
         local_EAX_14857 = st::fn_00401CD0();
         if (local_EAX_14857 == 0) {
           st::fn_006A5E40
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8e3
+                    (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8e3
                     );
         }
         if (PTR_008489cc == nullptr) {
           st::fn_006A5E40
-                    (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8e3
+                    (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8e3
                     );
         }
         iVar8 = 9;
@@ -4284,7 +4284,7 @@ cf_common_join_00687805:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8d2);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8d2);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8d2;
@@ -4297,11 +4297,11 @@ cf_common_join_00687805:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8a1);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8a1);
       }
       if (PTR_008489cc == nullptr) {
         st::fn_006A5E40
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8a1);
+                  (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8a1);
         iVar8 = 2;
         goto cf_common_join_006895CD;
       }
@@ -4310,7 +4310,7 @@ cf_common_join_00687805:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8a2);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8a2);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8a2;
@@ -4321,13 +4321,13 @@ cf_common_join_00687805:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8a3);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8a3);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8a3;
 cf_error_exit_0068821F:
         st::fn_006A5E40
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8);
+                  (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8);
       }
       goto LAB_00688235;
     default:
@@ -4336,7 +4336,7 @@ cf_error_exit_0068821F:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8a6);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8a6);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8a6;
@@ -4347,20 +4347,20 @@ cf_error_exit_0068821F:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8a7);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8a7);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8a7;
 cf_error_exit_006882E6:
         st::fn_006A5E40
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8);
+                  (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8);
       }
       goto cf_common_join_006882FC;
     case 0x57a:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8a8);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8a8);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8a8;
@@ -4371,7 +4371,7 @@ cf_error_exit_006882E6:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8a9);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8a9);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8a9;
@@ -4382,20 +4382,20 @@ cf_error_exit_006882E6:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8ab);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8ab);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8ab;
 LAB_006883ac:
         st::fn_006A5E40
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8);
+                  (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8);
       }
       goto LAB_006883c2;
     case 0x583:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8ac);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8ac);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8ac;
@@ -4406,7 +4406,7 @@ LAB_006883ac:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8ad);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8ad);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8ad;
@@ -4419,24 +4419,24 @@ LAB_00688235:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8a4);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8a4);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8a4;
 cf_error_exit_006876FE:
         st::fn_006A5E40
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8);
+                  (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8);
       }
       goto LAB_00687714;
     case 0x58c:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b4);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b4);
       }
       if (PTR_008489cc == nullptr) {
         st::fn_006A5E40
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b4);
+                  (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b4);
       }
       iVar8 = st::fn_00403F08(1,3);
       goto joined_r0x00689693;
@@ -4444,7 +4444,7 @@ cf_error_exit_006876FE:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b1);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b1);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8b1;
@@ -4455,7 +4455,7 @@ cf_error_exit_006876FE:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b2);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b2);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8b2;
@@ -4466,7 +4466,7 @@ cf_error_exit_006876FE:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b3);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b3);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8b3;
@@ -4477,13 +4477,13 @@ cf_error_exit_006876FE:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b5);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b5);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8b5;
 LAB_006895b5:
         st::fn_006A5E40
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8);
+                  (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8);
       }
 LAB_006895cb:
       iVar8 = 7;
@@ -4492,7 +4492,7 @@ LAB_006895cb:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b6);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b6);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8b6;
@@ -4503,7 +4503,7 @@ LAB_006895cb:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b7);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b7);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8b7;
@@ -4516,7 +4516,7 @@ LAB_006883c2:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b8);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b8);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8b8;
@@ -4529,11 +4529,11 @@ LAB_00687714:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b9);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b9);
       }
       if (PTR_008489cc == nullptr) {
         st::fn_006A5E40
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b9);
+                  (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b9);
       }
       iVar8 = st::fn_00402E3C(2);
       goto cf_common_join_006895D5;
@@ -4541,7 +4541,7 @@ LAB_00687714:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8ae);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8ae);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8ae;
@@ -4552,20 +4552,20 @@ LAB_00687714:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8af);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8af);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8af;
 cf_error_exit_006876AB:
         st::fn_006A5E40
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar8);
+                  (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),iVar8);
       }
       goto LAB_006876c1;
     case 0x597:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8b0);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8b0);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8b0;
@@ -4576,7 +4576,7 @@ cf_error_exit_006876AB:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8ba);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8ba);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8ba;
@@ -4587,7 +4587,7 @@ cf_error_exit_006876AB:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8bb);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8bb);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8bb;
@@ -4600,11 +4600,11 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8bc);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8bc);
       }
       if (PTR_008489cc == nullptr) {
         st::fn_006A5E40
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8bc);
+                  (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8bc);
       }
       iVar8 = st::fn_00402E3C(2);
       goto joined_r0x00689693;
@@ -4612,7 +4612,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8bd);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8bd);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8bd;
@@ -4623,7 +4623,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8be);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8be);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8be;
@@ -4634,7 +4634,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8bf);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8bf);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8bf;
@@ -4645,7 +4645,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8c1);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8c1);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8c1;
@@ -4656,7 +4656,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8c2);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8c2);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8c2;
@@ -4667,7 +4667,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8c3);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8c3);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8c3;
@@ -4678,7 +4678,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8c4);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8c4);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8c4;
@@ -4689,7 +4689,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8c5);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8c5);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8c5;
@@ -4700,7 +4700,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8c6);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8c6);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8c6;
@@ -4711,7 +4711,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8c7);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8c7);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8c7;
@@ -4722,7 +4722,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8c8);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8c8);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8c8;
@@ -4733,7 +4733,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8c9);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8c9);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8c9;
@@ -4744,7 +4744,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8ca);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8ca);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8ca;
@@ -4755,7 +4755,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8cd);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8cd);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8cd;
@@ -4766,7 +4766,7 @@ LAB_006876c1:
       local_EAX_14857 = st::fn_00401CD0();
       if (local_EAX_14857 == 0) {
         st::fn_006A5E40
-                  (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x8d1);
+                  (-0x8e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x8d1);
       }
       if (PTR_008489cc == nullptr) {
         iVar8 = 0x8d1;
@@ -4877,7 +4877,7 @@ st::fn_0068CEC0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *para
   if (local_EAX_114 == 0) {
     if (lpFileName == (LPCSTR)0x0) {
       st::fn_006A5E40
-                (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa39);
+                (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa39);
     }
     st::fn_00404426(lpFileName,
                        (AnonShape_GLOBAL_0081194C_4D1525E6 *)&PTR_thunk_FUN_00680270_007d3fa8);
@@ -4895,55 +4895,55 @@ st::fn_0068CEC0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *para
       st::fn_0040493F();
       if (param_2 == nullptr) {
         st::fn_006A5E40
-                  (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa55);
+                  (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa55);
       }
-      iVar4 = st::fn_00402F40("_main_path",(char *)param_2,nullptr);
+      iVar4 = st::fn_00402F40(st::mutable_c_string("_main_path"),(char *)param_2,nullptr);
       if (iVar4 == 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa56);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa56);
       }
-      iVar4 = st::fn_00402F40("_inc_path",&param_2->field_0x104,nullptr);
+      iVar4 = st::fn_00402F40(st::mutable_c_string("_inc_path"),st::pointer_boundary_cast<char *>(&param_2->field_0x104),nullptr);
       if (iVar4 == 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa57);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa57);
       }
-      iVar4 = st::fn_00402F40("_maps_path",&param_2->field_0x208,nullptr);
+      iVar4 = st::fn_00402F40(st::mutable_c_string("_maps_path"),st::pointer_boundary_cast<char *>(&param_2->field_0x208),nullptr);
       if (iVar4 == 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa58);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa58);
       }
-      uVar7 = st::fn_00404B1F("_env_var0",param_2->field_030C);
+      uVar7 = st::fn_00404B1F(st::mutable_c_string("_env_var0"),param_2->field_030C);
       if ((int)uVar7 < 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa59);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa59);
       }
-      local_EAX_499 = st::fn_00404B1F("_env_var1",param_2->field_0310);
+      local_EAX_499 = st::fn_00404B1F(st::mutable_c_string("_env_var1"),param_2->field_0310);
       if ((int)local_EAX_499 < 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa5a);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa5a);
       }
-      local_EAX_547 = st::fn_00404B1F("_env_var2",param_2->field_0314);
+      local_EAX_547 = st::fn_00404B1F(st::mutable_c_string("_env_var2"),param_2->field_0314);
       if ((int)local_EAX_547 < 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa5b);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa5b);
       }
-      st::external_0000001F(lpFileName,0x104,&DAT_0084868c,nullptr);
+      st::external_0000001F(lpFileName,0x104,st::pointer_boundary_cast<LPSTR>(&DAT_0084868c),nullptr);
       st::fn_0072E730
-                (&DAT_0084868c,&DAT_008478a8,&DAT_00848790,&DAT_0084858c,(byte *)&DAT_00811990);
-      st::fn_0072F110(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,nullptr,nullptr);
+                (st::pointer_boundary_cast<byte *>(&DAT_0084868c),st::pointer_boundary_cast<byte *>(&DAT_008478a8),st::pointer_boundary_cast<byte *>(&DAT_00848790),st::pointer_boundary_cast<byte *>(&DAT_0084858c),(byte *)&DAT_00811990);
+      st::fn_0072F110(st::pointer_boundary_cast<char *>(&DAT_0084868c),st::pointer_boundary_cast<char *>(&DAT_008478a8),st::pointer_boundary_cast<char *>(&DAT_00848790),nullptr,nullptr);
       iStackY_48 = 0x68d160;
-      iVar4 = st::fn_00402F40("_curr_path",&DAT_0084868c,nullptr);
+      iVar4 = st::fn_00402F40(st::mutable_c_string("_curr_path"),st::pointer_boundary_cast<char *>(&DAT_0084868c),nullptr);
       if (iVar4 == 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa5f);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa5f);
       }
       puVar16 = nullptr;
-      pcVar14 = &DAT_0084868c;
+      pcVar14 = st::pointer_boundary_cast<char *>(&DAT_0084868c);
       pbVar5_mg0 = st::fn_00401AA5(DAT_00848a24);
       iVar4 = st::fn_00402F40((char *)pbVar5_mg0,pcVar14,puVar16);
       if (iVar4 == 0) {
         st::fn_006A5E40
-                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa60);
+                  (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa60);
       }
       pDVar5 = st::fn_006B54F0(nullptr,0x32,0x32);
       st::fn_006B5AA0(pDVar5,s_include<[_inc_path]_AiScript_dfn_007d56b4);
@@ -4956,16 +4956,16 @@ cf_continue_loop_0068D1EB:
       if (iVar6 < 0) {
         iVar18 = 0xa68;
         st::fn_006A5E40
-                  (iVar6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa68);
+                  (iVar6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa68);
       }
       if (param_4 != nullptr) {
         pbVar19 = (byte *)&DAT_00811990;
         pbVar15 = nullptr;
         memset(&stack0xffffffd0, 0, 0x18); /* compiler bulk-zero initialization */
-        st::fn_0072E730(DAT_0085753c,nullptr,nullptr,pbVar15,pbVar19);
+        st::fn_0072E730(st::pointer_boundary_cast<byte *>(DAT_0085753c),nullptr,nullptr,pbVar15,pbVar19);
         pbVar5_mg2 = (byte *)lpFileName;
         if (DAT_00811990 != '\0') {
-          pbVar5_mg2 = DAT_0085753c;
+          pbVar5_mg2 = st::pointer_boundary_cast<byte *>(DAT_0085753c);
         }
         if (pbVar5_mg2 != nullptr) {
           uVar8 = 0xffffffff;
@@ -4983,20 +4983,20 @@ cf_continue_loop_0068D1EB:
           memmove(pbVar19, pbVar15, uVar8); /* compiler REP MOVS byte copy */
         }
         iVar18 = 0x3fe;
-        st::fn_0072E340(&CHAR_00h_00847d0c,DAT_0085755c,0x3fe);
+        st::fn_0072E340(&CHAR_00h_00847d0c,st::pointer_boundary_cast<char *>(DAT_0085755c),0x3fe);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar7 = (*(code *)param_4)();
         if (iVar7 != 0) {
           iVar18 = 0xa74;
           st::fn_006A5E40
-                    (-0x65,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa74
+                    (-0x65,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa74
                     );
         }
       }
       if (DAT_007d2d18 == 0x1c) {
         if (0 < iVar4) {
           st::fn_006A5E40
-                    (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xac2
+                    (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xac2
                     );
         }
         st::fn_00403DE6();
@@ -5005,14 +5005,14 @@ cf_continue_loop_0068D1EB:
           iVar17 = st::fn_00404D90();
         }
         g_currentExceptionFrame = local_74;
-        return &pDVar5->flags;
+        return st::pointer_boundary_cast<uint *>(&pDVar5->flags);
       }
       switch(DAT_007d2d18) {
       case 0x3b9:
         if (iVar20 != 0x44c) {
           if (-1 < iVar4) {
             st::fn_006A5E40
-                      (-0x90,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x90,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0xa9a);
           }
           local_10bc[0] = '\0';
@@ -5055,7 +5055,7 @@ cf_continue_loop_0068D1EB:
               }
             } while (iVar20 != 0);
           }
-          st::fn_0072ED50(local_10bc,DAT_0085755c + DAT_00857544,0x1000);
+          st::fn_0072ED50(local_10bc,st::pointer_boundary_cast<char *>(DAT_0085755c + DAT_00857544),0x1000);
           iVar20 = 0x3b9;
           iVar4 = DAT_00857554;
           goto cf_continue_loop_0068D1EB;
@@ -5066,12 +5066,12 @@ cf_continue_loop_0068D1EB:
           if (iVar4 < 0) {
             iVar18 = 0xaa5;
             st::fn_006A5E40
-                      (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8f,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0xaa5);
           }
           if (iVar4 < DAT_00857554) {
             st::fn_006B5AA0(pDVar5,local_10bc);
-            st::fn_0072E340(local_10bc,DAT_0085755c,0x1000);
+            st::fn_0072E340(local_10bc,st::pointer_boundary_cast<char *>(DAT_0085755c),0x1000);
             iVar18 = 0;
           }
           local_10bc[DAT_00857544 - iVar18] = '\0';
@@ -5111,7 +5111,7 @@ cf_continue_loop_0068D1EB:
         if (iVar20 != 0x3b9) {
           if (-1 < iVar4) {
             st::fn_006A5E40
-                      (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
+                      (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0xa7a);
           }
           local_10bc[0] = '\0';
@@ -5154,7 +5154,7 @@ cf_continue_loop_0068D1EB:
               }
             } while (iVar20 != 0);
           }
-          st::fn_0072ED50(local_10bc,DAT_0085755c + DAT_00857544,0x1002 - DAT_00857544);
+          st::fn_0072ED50(local_10bc,st::pointer_boundary_cast<char *>(DAT_0085755c + DAT_00857544),0x1002 - DAT_00857544);
           iVar20 = 0x44c;
           iVar4 = DAT_00857554;
           goto cf_continue_loop_0068D1EB;
@@ -5165,12 +5165,12 @@ cf_continue_loop_0068D1EB:
         if (iVar4 < 0) {
           iVar18 = 0xa85;
           st::fn_006A5E40
-                    (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa85
+                    (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa85
                     );
         }
         if (iVar4 < DAT_00857554) {
           st::fn_006B5AA0(pDVar5,local_10bc);
-          st::fn_0072E340(local_10bc,DAT_0085755c,0x1000);
+          st::fn_0072E340(local_10bc,st::pointer_boundary_cast<char *>(DAT_0085755c),0x1000);
           iVar18 = 0;
         }
         local_10bc[DAT_00857544 - iVar18] = '\0';
@@ -5232,7 +5232,7 @@ cf_continue_loop_0068D1EB:
       }
       if ((-1 < iVar4) && (iVar4 < DAT_00857554)) {
         st::fn_006B5AA0(pDVar5,local_10bc);
-        st::fn_0072E340(local_10bc,DAT_0085755c,0x1000);
+        st::fn_0072E340(local_10bc,st::pointer_boundary_cast<char *>(DAT_0085755c),0x1000);
         iVar4 = DAT_00857554;
       }
       goto cf_continue_loop_0068D1EB;
@@ -5243,7 +5243,7 @@ cf_continue_loop_0068D1EB:
       *param_3 = iVar3;
       param_3[2] = DAT_00857554;
       st::fn_0072E730
-                (DAT_0085753c,nullptr,nullptr,nullptr,(byte *)&DAT_00811990);
+                (st::pointer_boundary_cast<byte *>(DAT_0085753c),nullptr,nullptr,nullptr,(byte *)&DAT_00811990);
       if (DAT_00811990 != '\0') {
         lpFileName = (LPCSTR)DAT_0085753c;
       }
@@ -5263,7 +5263,7 @@ cf_continue_loop_0068D1EB:
         memmove(pbVar19, pbVar15, uVar8); /* compiler REP MOVS byte copy */
       }
       param_3[1] = (int)&DAT_0084790c;
-      st::fn_0072E340(&CHAR_00h_00847d0c,DAT_0085755c,0x3fe);
+      st::fn_0072E340(&CHAR_00h_00847d0c,st::pointer_boundary_cast<char *>(DAT_0085755c),0x3fe);
       param_3[3] = (int)&CHAR_00h_00847d0c;
       param_3[4] = (int)&DAT_008488b4;
       param_3[5] = DAT_00857544;

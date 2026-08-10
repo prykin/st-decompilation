@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_006042d0(void *this,STMessageId param_1)
+/* [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=3, ignored=0, unknown=0 */
+
+int __thiscall FUN_006042d0(void *this,STMessageId param_1)
 
 {
   int iVar1;
@@ -17,16 +22,18 @@ void __thiscall FUN_006042d0(void *this,STMessageId param_1)
     pSVar3 = (STMessage *)&pSVar3->unknown_04;
   }
   local_24.id = param_1;
+  iVar1 = 0;
   if (0 < STField<int>(this,0x269)) {
     puVar4 = (undefined4 *)((int)this + 0x219);
     do {
       if ((STParticleC *)*puVar4 != nullptr) {
+        iVar1 = iVar1 + 1;
         STParticleC::GetMessage((STParticleC *)*puVar4,&local_24);
       }
       iVar2 = iVar2 + 1;
       puVar4 = puVar4 + 1;
     } while (iVar2 < STField<int>(this,0x269));
   }
-  return;
+  return iVar1;
 }
 

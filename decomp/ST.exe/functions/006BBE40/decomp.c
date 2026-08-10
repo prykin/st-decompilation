@@ -5,9 +5,14 @@
    Evidence: 006CEF60 -> 006BBE40 @ 006CF1D7 | 006CEF60 -> 006BBE40 @ 006CF663
 
    [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 006CEF60 -> 006BBE40 @ 006CF1D7 | 006CEF60 -> 006BBE40 @ 006CF663 */
+   Evidence: 006CEF60 -> 006BBE40 @ 006CF1D7 | 006CEF60 -> 006BBE40 @ 006CF663
 
-void FUN_006bbe40(int *param_1,uint *param_2,int *param_3,uint param_4)
+   [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=19, ignored=0, unknown=0 */
+
+undefined4 FUN_006bbe40(int *param_1,uint *param_2,int *param_3,uint param_4)
 
 {
   bool bVar1;
@@ -30,10 +35,10 @@ void FUN_006bbe40(int *param_1,uint *param_2,int *param_3,uint param_4)
   if (iVar2 == 0) {
     *param_2 = local_5c;
     *param_3 = local_70;
-    return;
+    return 0;
   }
   *param_2 = 0;
   *param_3 = 0;
-  return;
+  return iVar2;
 }
 

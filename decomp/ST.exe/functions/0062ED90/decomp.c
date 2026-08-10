@@ -12,10 +12,9 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   int *piVar2;
   undefined4 *puVar3;
   AnonShape_004AB810_8E5693D5 *pAVar4;
-  undefined4 uVar5;
   int iVar7;
+  int iVar5;
   int iVar6;
-  int iVar8;
   InternalExceptionFrame local_50;
   STRubbishC *local_c;
   int local_8;
@@ -36,38 +35,38 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   piVar2 = &local_c->field_01E5;
-  iVar8 = 0;
-  iVar6 = local_8;
+  iVar6 = 0;
+  iVar5 = local_8;
   do {
     if (*piVar2 == 0) {
-      local_8 = iVar6;
+      local_8 = iVar5;
       puVar3 = Library::DKW::LIB::MemAlloc(0x3e);
-      (&local_c->field_01E5)[iVar8] = puVar3;
+      (&local_c->field_01E5)[iVar6] = puVar3;
       if (puVar3 != nullptr) {
-        for (iVar6 = 0xf; iVar6 != 0; iVar6 = iVar6 + -1) {
+        for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
           *puVar3 = 0;
           puVar3 = puVar3 + 1;
         }
         *(undefined2 *)puVar3 = 0;
-        iVar6 = iVar8;
+        iVar5 = iVar6;
         if (local_c->field_01F9 != '\0') {
           pAVar4 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
           if (pAVar4 == nullptr) {
-            uVar5 = 0;
+            pAVar4 = nullptr;
           }
           else {
-            uVar5 = thunk_FUN_004ab810(pAVar4);
+            pAVar4 = thunk_FUN_004ab810(pAVar4);
           }
-          *(undefined4 *)((&local_c->field_01E5)[iVar8] + 0x10) = uVar5;
+          *(AnonShape_004AB810_8E5693D5 **)((&local_c->field_01E5)[iVar6] + 0x10) = pAVar4;
         }
       }
       g_currentExceptionFrame = local_50.previous;
-      return iVar6;
+      return iVar5;
     }
-    iVar6 = 5;
-    iVar8 = iVar8 + 1;
+    iVar5 = 5;
+    iVar6 = iVar6 + 1;
     piVar2 = piVar2 + 1;
-  } while (iVar8 < 5);
+  } while (iVar6 < 5);
   g_currentExceptionFrame = local_50.previous;
   return 5;
 }

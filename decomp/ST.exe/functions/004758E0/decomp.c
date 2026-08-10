@@ -147,8 +147,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         DumpClassC::WritePtr
                   (*(short *)&this->field_0x5d0,*(short *)&this->field_0x5d2,
                    *(short *)&this->field_0x5d4,0,(RecoveredRecord_DumpClassC_00495EC0 *)this);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,*(undefined **)((int)this->field_06CB + 0x3f));
+        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)this->field_070A);
         this->field_07CA = nullptr;
         this->field_07C6 = 0;
       }
@@ -176,8 +175,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int)&this->field_0x2b3;
       do {
-        puVar8 = (byte *)
-                 thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)param_1,*(ushort *)(param_1 + 4),
+        puVar8 = thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)param_1,*(ushort *)(param_1 + 4),
                                     this->field_006C);
         local_28 = *puVar8;
         local_24 = *(short *)(puVar8 + 1);

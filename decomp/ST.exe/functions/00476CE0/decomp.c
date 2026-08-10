@@ -10,11 +10,12 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
 {
   STBoatC_field_0611State SVar1;
   STWorldObject *pSVar2;
-  short sVar4;
+  STBoatC_field_06F7State SVar3;
+  short sVar5;
   int local_EAX_51;
   int local_EAX_97;
   int local_EAX_229;
-  undefined2 uVar5;
+  undefined2 uVar6;
   int iVar7;
   STGameObjC *pSVar8;
   uint uVar9;
@@ -30,14 +31,14 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   int iVar6;
   int iVar13;
   uint uVar14;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   undefined4 uVar15;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
   int iVar16;
   short sVar17;
@@ -150,15 +151,14 @@ cf_common_exit_00476DBA:
     if (iVar7 != 0) {
       if (pSVar8->field_002C == 0) {
         thunk_FUN_004cd3e0(pSVar8,this->field_0018,this->field_0024);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar7 = *(int *)((int)this->field_06CB + 0x2c);
+        SVar3 = this->field_06F7;
         this->field_0611 = CASE_3;
-        if (iVar7 == 6) {
+        if (SVar3 == CASE_6) {
           this->vfunc_90(3,0xed);
           return 2;
         }
-        if (iVar7 != 0x12) {
-          if (iVar7 != 0x22) {
+        if (SVar3 != CASE_12) {
+          if (SVar3 != CASE_22) {
             return 2;
           }
           this->vfunc_90(3,0x1d2);
@@ -179,10 +179,10 @@ cf_common_exit_00476DBA:
         do {
           for (; (int)sVar20 <= sVar19 + 1; sVar20 = sVar20 + 1) {
             if ((((((sVar17 != this->field_0047) || (sVar20 != this->field_0049)) &&
-                  (sVar4 = this->field_060D + 1, -1 < sVar17)) &&
+                  (sVar5 = this->field_060D + 1, -1 < sVar17)) &&
                  ((sVar17 < g_worldGrid.sizeX && (-1 < sVar20)))) && (sVar20 < g_worldGrid.sizeY))
-               && (((-1 < sVar4 && (sVar4 < g_worldGrid.sizeZ)) &&
-                   ((pSVar2 = STGridAt3D(g_worldGrid, iVar16, sVar20, sVar4).objects[0],
+               && (((-1 < sVar5 && (sVar5 < g_worldGrid.sizeZ)) &&
+                   ((pSVar2 = STGridAt3D(g_worldGrid, iVar16, sVar20, sVar5).objects[0],
                     pSVar2 != nullptr &&
                     ((pSVar2->value_20 == 0x14 && (*(int *)((int)&pSVar2[0x1f].vtable + 1) == 9)))))
                    ))) {
@@ -215,11 +215,11 @@ cf_common_exit_00476DBA:
       iVar7 = STReplaceLowWord((uint32_t)(iVar16), (uint16_t)(this->field_060B + 1)) * 0xc9;
       iVar13 = STReplaceLowWord((uint32_t)(iVar7), (uint16_t)(this->field_0609 + 1));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar5 = (*this->vtable->vfunc_10)
+      uVar6 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          CONCAT22((short)((uint)(iVar13 * 0x19) >> 0x10),this->field_0045),
                          (short)(iVar13 * 0xc9),(short)iVar7,iVar16);
-      this->field_060F = uVar5;
+      this->field_060F = uVar6;
       this->field_0615 = 1;
     }
     if (this->field_0615 == 1) {
@@ -251,8 +251,7 @@ cf_common_exit_00476DBA:
       param_1 = 0;
       if (this->field_02BF != '\0') {
         do {
-          puVar10 = (undefined4 *)
-                    thunk_FUN_0041dc40(local_24,(short)*(undefined4 *)
+          puVar10 = thunk_FUN_0041dc40(local_24,(short)*(undefined4 *)
                                                         (&this->field_0x2b3 + (short)param_1 * 6),
                                        *(ushort *)(&this->field_0x2b7 + (short)param_1 * 6),
                                        this->field_006C);
@@ -268,7 +267,7 @@ cf_common_exit_00476DBA:
             sVar22 = 0;
             sVar21 = 0;
             uVar11 = uVar9 * 0x41c64e6d + 0x3039;
-            sVar4 = 0;
+            sVar5 = 0;
             this->field_001C = uVar11;
             sVar20 = 0;
             sVar19 = 0;
@@ -281,7 +280,7 @@ cf_common_exit_00476DBA:
                        (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_1c,
                        (((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_1c)) + -3,
                        (int)(short)lVar18 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 +
-                       (int)local_18,sVar17,sVar19,sVar20,sVar4,sVar21,sVar22,iVar7,sVar23,bVar24);
+                       (int)local_18,sVar17,sVar19,sVar20,sVar5,sVar21,sVar22,iVar7,sVar23,bVar24);
           }
           else {
             uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
@@ -324,23 +323,22 @@ cf_common_exit_00476DBA:
         }
         else {
           thunk_FUN_004cd3e0(pSVar8,this->field_0018,this->field_0024);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar7 = *(int *)((int)this->field_06CB + 0x2c);
+          SVar3 = this->field_06F7;
           this->field_0611 = CASE_3;
-          if (iVar7 == 6) {
+          if (SVar3 == CASE_6) {
             pSVar12 = this->vtable;
-            uVar5 = 0xed;
+            uVar6 = 0xed;
           }
           else {
-            if (iVar7 == 0x12) {
+            if (SVar3 == CASE_12) {
               this->vfunc_90(3,0x151);
               goto cf_common_exit_0047746B;
             }
-            if (iVar7 != 0x22) goto cf_common_exit_0047746B;
+            if (SVar3 != CASE_22) goto cf_common_exit_0047746B;
             pSVar12 = this->vtable;
-            uVar5 = 0x1d2;
+            uVar6 = 0x1d2;
           }
-          (*pSVar12->vfunc_90)(this,3,uVar5);
+          (*pSVar12->vfunc_90)(this,3,uVar6);
         }
       }
     }
@@ -371,7 +369,7 @@ cf_common_exit_00476DBA:
           return -(uint)(iVar7 != 0);
         }
         if (iVar7 == 3) {
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           thunk_FUN_00492f30(this,extraout_EDX_02);
           sub_00481520(this,(int)this->field_0609,(int)this->field_060B,(int)this->field_060D);
           sub_0045FF50(this,0);
@@ -382,12 +380,12 @@ cf_common_exit_00477B2E:
       }
       if (this->field_0615 == 0) {
         iVar7 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_0605 * 0xc9)) + 100;
-        uVar5 = (*this->vtable->vfunc_10)
+        uVar6 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
                            STReplaceLowWord((uint32_t)(iVar7), (uint16_t)(this->field_0045)),
                            this->field_0603 * 0xc9 + 100,(short)iVar7,
                            (ushort)(this->field_0607 * 200) + 100);
-        this->field_060F = uVar5;
+        this->field_060F = uVar6;
         this->field_0615 = 1;
       }
       if (this->field_0615 == 1) {
@@ -415,14 +413,13 @@ cf_common_exit_00477B2E:
       }
       if (this->field_0615 == 3) {
         local_8 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_c,&local_10);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar15 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(this->field_02BF));
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = 0;
         if (this->field_02BF != '\0') {
           do {
-            puVar10 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_24,(short)*(undefined4 *)
+            puVar10 = thunk_FUN_0041dc40(local_24,(short)*(undefined4 *)
                                                           (&this->field_0x2b3 + (short)param_1 * 6),
                                          *(ushort *)(&this->field_0x2b7 + (short)param_1 * 6),
                                          this->field_006C);
@@ -438,7 +435,7 @@ cf_common_exit_00477B2E:
               sVar22 = 0;
               sVar21 = 0;
               uVar11 = uVar9 * 0x41c64e6d + 0x3039;
-              sVar4 = 0;
+              sVar5 = 0;
               this->field_001C = uVar11;
               sVar20 = 0;
               sVar19 = 0;
@@ -451,9 +448,9 @@ cf_common_exit_00477B2E:
                          (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_1c,
                          (((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_1c)) + -3
                          ,(int)(short)lVar18 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 +
-                          (int)local_18,sVar17,sVar19,sVar20,sVar4,sVar21,sVar22,iVar7,sVar23,bVar24
+                          (int)local_18,sVar17,sVar19,sVar20,sVar5,sVar21,sVar22,iVar7,sVar23,bVar24
                         );
-              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+              /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar15 = extraout_EDX_00;
             }
             else {
@@ -473,7 +470,7 @@ cf_common_exit_00477B2E:
                          (((uVar14 >> 0x10) % 7 + (int)this->field_0043) - iVar7) + -3,
                          (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_18,0,0,0,0,0
                          ,0,-1,0,0);
-              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+              /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar15 = extraout_EDX_01;
             }
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -528,7 +525,7 @@ cf_common_exit_00477B2E:
         (**(code **)*DAT_008117bc)(local_44);
       }
       pSVar8->vfunc_10C();
-      (*pSVar8->vtable->vfunc_110)(this->field_0024,(int)this->field_06CB[5]);
+      (*pSVar8->vtable->vfunc_110)(this->field_0024,this->field_06F3);
     }
     else if (iVar7 != 2) goto cf_common_exit_0047746B;
     uVar8 = LookupRecordByte(*(char *)&pSVar8->field_0024);

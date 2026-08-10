@@ -82,11 +82,15 @@ import ghidra.program.util.DefinedStringIterator;
 
 public class STDecompExport extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT_SECONDS = 120;
+    private static final int LARGE_DECOMPILE_TIMEOUT_SECONDS = 300;
+    private static final int HUGE_DECOMPILE_TIMEOUT_SECONDS = 600;
+    private static final long LARGE_FUNCTION_ADDRESS_COUNT = 0x4000;
+    private static final long HUGE_FUNCTION_ADDRESS_COUNT = 0x8000;
     private static final int MAX_FILENAME_COMPONENT = 96;
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
     private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "2";
-    private static final int FUNCTION_ANALYSIS_SCHEMA = 15;
+    private static final int FUNCTION_ANALYSIS_SCHEMA = 16;
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
@@ -630,7 +634,7 @@ public class STDecompExport extends GhidraScript {
         atomicWrite(path, writer -> {
             for (Data data : listing.getDefinedData(true)) {
                 checkCancelled();
-                if (data.hasStringValue()) {
+                if (data.hasStringValue() && !mutableEmptyStringStorage(data)) {
                     continue;
                 }
                 Symbol symbol = symbols.getPrimarySymbol(data.getMinAddress());
@@ -645,6 +649,20 @@ public class STDecompExport extends GhidraScript {
                 writer.newLine();
             }
         });
+    }
+
+    /**
+     * Ghidra represents a zero-filled writable char array as the empty string
+     * even when its full array datatype is a mutable scratch arena.  Such an
+     * object is both string-decodable and a real global; omitting it from
+     * globals.jsonl leaves generated C++ with no declaration for indexed writes.
+     */
+    private boolean mutableEmptyStringStorage(Data data) {
+        if (!data.hasStringValue() || data.getLength() <= 1 ||
+                !(data.getValue() instanceof String value) || !value.isEmpty())
+            return false;
+        MemoryBlock block = currentProgram.getMemory().getBlock(data.getMinAddress());
+        return block != null && block.isWrite();
     }
 
     private void exportDataTypes() throws IOException {
@@ -766,7 +784,8 @@ public class STDecompExport extends GhidraScript {
                 Files.readString(fingerprintPath, StandardCharsets.UTF_8).trim() : "";
             boolean reusable = Files.exists(metaPath) && fingerprint.equals(storedFingerprint) &&
                 (!bodyExported ||
-                    (Files.exists(decompPath) && Files.exists(dir.resolve("listing.asm"))));
+                    (Files.exists(decompPath) && Files.exists(dir.resolve("listing.asm")) &&
+                        cachedDecompileSucceeded(metaPath)));
             if (reusable && bodyExported && requiresFreshDecompilerBody(decompPath)) {
                 reusable = false;
                 println("Discarding exporter-contaminated cached body: " + id);
@@ -803,7 +822,7 @@ public class STDecompExport extends GhidraScript {
             }
             else {
                 DecompileResults result = decompiler.decompileFunction(
-                    function, DECOMPILE_TIMEOUT_SECONDS, monitor);
+                    function, decompileTimeoutSeconds(function), monitor);
                 String cCode = "";
                 if (result != null && result.decompileCompleted() && result.getDecompiledFunction() != null) {
                     status = "ok";
@@ -896,6 +915,27 @@ public class STDecompExport extends GhidraScript {
         if (fingerprintCfgFallbackCount > 0)
             println("Fingerprint CFG fallbacks: " + fingerprintCfgFallbackCount +
                 " (first: " + String.join(", ", fingerprintCfgFallbackFunctions) + ")");
+    }
+
+    private int decompileTimeoutSeconds(Function function) {
+        long addresses = function == null ? 0 : function.getBody().getNumAddresses();
+        if (addresses >= HUGE_FUNCTION_ADDRESS_COUNT)
+            return HUGE_DECOMPILE_TIMEOUT_SECONDS;
+        if (addresses >= LARGE_FUNCTION_ADDRESS_COUNT)
+            return LARGE_DECOMPILE_TIMEOUT_SECONDS;
+        return DECOMPILE_TIMEOUT_SECONDS;
+    }
+
+    /** A timed-out cached body must never become permanently reusable. */
+    private boolean cachedDecompileSucceeded(Path metaPath) {
+        try {
+            String meta = Files.readString(metaPath, StandardCharsets.UTF_8);
+            return Pattern.compile("\\\"decompile_status\\\"\\s*:\\s*\\\"ok\\\"")
+                .matcher(meta).find();
+        }
+        catch (IOException ignored) {
+            return false;
+        }
     }
 
     private void normalizeAndCatalog(Function function, Path path, String fingerprint,
@@ -4559,13 +4599,19 @@ public class STDecompExport extends GhidraScript {
                 RAW_OFFSET_DEREFERENCE, line, index + 1);
             if (line.matches(".*\\b(?:unaff_|in_)[A-Za-z0-9_]+.*"))
                 addQuality(evidence, "unresolved_register_input", 1, index + 1, line);
-            // A declaration and its use are not two independent ABI failures.
-            // Count the value consumption; unused declarations are presentation
-            // noise handled by removeDeadSyntheticDeclarations.
-            if (line.matches(".*\\bextraout_[A-Za-z0-9_]+.*") &&
-                    !stripped.matches("[A-Za-z_$][A-Za-z0-9_$:<>]*" +
-                        "(?:\\s*\\*+)?\\s+extraout_[A-Za-z0-9_$]+\\s*;"))
-                addQuality(evidence, "return_width_artifact", 1, index + 1, line);
+            // A declaration and its use are not two independent failures. More
+            // importantly, extraout_EDX/ECX/... is not an EAX return-width fact:
+            // it is Ghidra preserving a caller-visible volatile-register piece
+            // across a call. Keep that SSA/clobber debt visible, but do not let
+            // a corrected callee return type manufacture a false ABI regression.
+            if (hasLiveExtraoutUse(line, stripped)) {
+                if (hasReturnRegisterExtraout(line))
+                    addQuality(evidence, "return_width_artifact", 1,
+                        index + 1, line);
+                if (hasVolatileRegisterExtraout(line))
+                    addQuality(evidence, "call_clobber_piece", 1,
+                        index + 1, line);
+            }
             if ((line.contains("->elementSize") || line.contains(".elementSize")) &&
                     (line.contains("->data") || line.contains(".data")))
                 addQuality(evidence, "dynamic_array_indexing", 1, index + 1, line);
@@ -4632,7 +4678,7 @@ public class STDecompExport extends GhidraScript {
                  "generic_global_aggregate", "undefined_type",
                  "flattened_global_record_array", "dynamic_array_indexing",
                  "string_based_aggregate_address", "stack_slot_reuse",
-                 "suspicious_subnormal_literal" -> "medium";
+                 "suspicious_subnormal_literal", "call_clobber_piece" -> "medium";
             default -> "low";
         };
     }
@@ -4641,7 +4687,8 @@ public class STDecompExport extends GhidraScript {
         return switch (kind) {
             case "return_width_artifact", "unresolved_register_input" -> "abi_recovery";
             case "suspicious_subnormal_literal" -> "abi_recovery";
-            case "stack_slot_reuse" -> "ssa_lifetime_presentation";
+            case "stack_slot_reuse", "call_clobber_piece" ->
+                "ssa_lifetime_presentation";
             case "raw_indirect_call" -> "call_signature_recovery";
             case "raw_pointer_offset", "anonymous_shape_type" -> "layout_recovery";
             case "casted_generic_field", "packed_or_unaligned_piece",
@@ -4660,7 +4707,7 @@ public class STDecompExport extends GhidraScript {
             case "generated_enum_bitwise_composition" -> "strict_zero";
             case "generic_field_name", "casted_generic_field", "anonymous_shape_type",
                  "generic_data_symbol" -> "stage_transition";
-            case "control_flow_label" -> "informational";
+            case "control_flow_label", "call_clobber_piece" -> "informational";
             default -> "nonincreasing";
         };
     }
@@ -4705,6 +4752,8 @@ public class STDecompExport extends GhidraScript {
                 "repair function boundary, ABI, or SEH/setjmp live-in register semantics";
             case "return_width_artifact" ->
                 "repair the callee return width/register model and propagate it to callers";
+            case "call_clobber_piece" ->
+                "split the post-CALL partial-register lifetime or prove a per-function preserved-register model";
             case "dynamic_array_indexing" ->
                 "recover element type or render DArrayAt<T>; runtime elementSize is not a native C array stride";
             case "flattened_global_record_array" ->
@@ -4722,10 +4771,13 @@ public class STDecompExport extends GhidraScript {
         if (line.contains("STDebugBreak()")) kinds.add("terminal_debug_trap");
         if (line.matches(".*\\b(?:unaff_|in_)[A-Za-z0-9_]+.*"))
             kinds.add("unresolved_register_input");
-        boolean extraout = line.matches(".*\\bextraout_[A-Za-z0-9_]+.*");
+        boolean returnExtraout = hasReturnRegisterExtraout(line);
+        boolean volatileExtraout = hasVolatileRegisterExtraout(line);
         boolean concat = line.matches(".*\\bCONCAT[0-9]+\\s*\\(.*");
-        if (extraout)
+        if (returnExtraout)
             kinds.add("return_width_artifact");
+        if (volatileExtraout)
+            kinds.add("call_clobber_piece");
         if ((line.contains("->elementSize") || line.contains(".elementSize")) &&
                 (line.contains("->data") || line.contains(".data")))
             kinds.add("dynamic_array_indexing");
@@ -4740,7 +4792,8 @@ public class STDecompExport extends GhidraScript {
                 break;
             }
         }
-        if (PACKED_PIECE.matcher(line).find() || (concat && !extraout))
+        if (PACKED_PIECE.matcher(line).find() ||
+                (concat && !returnExtraout && !volatileExtraout))
             kinds.add("packed_or_unaligned_piece");
         if (containsSuspiciousSubnormal(line))
             kinds.add("suspicious_subnormal_literal");
@@ -4752,6 +4805,41 @@ public class STDecompExport extends GhidraScript {
                 !kinds.contains("packed_or_unaligned_piece"))
             kinds.add("raw_pointer_offset");
         return kinds;
+    }
+
+    private boolean hasLiveExtraoutUse(String line, String stripped) {
+        return line.matches(".*\\bextraout_[A-Za-z0-9_$]+.*") &&
+            !stripped.matches("[A-Za-z_$][A-Za-z0-9_$:<>]*" +
+                "(?:\\s*\\*+)?\\s+extraout_[A-Za-z0-9_$]+\\s*;");
+    }
+
+    /**
+     * EAX (and Ghidra's unnamed/x87 synthetic pieces) can describe a real
+     * return-width problem. Other x86 registers are volatile call-clobber SSA
+     * values and must not be counted as evidence about the callee's return ABI.
+     */
+    private boolean hasReturnRegisterExtraout(String line) {
+        Matcher matcher = Pattern.compile("\\bextraout_([A-Za-z0-9_$]+)")
+            .matcher(line == null ? "" : line);
+        while (matcher.find()) {
+            String suffix = matcher.group(1).toUpperCase(Locale.ROOT);
+            if (suffix.startsWith("VAR") || suffix.startsWith("EAX") ||
+                    suffix.startsWith("AX") || suffix.startsWith("AL") ||
+                    suffix.startsWith("AH") || suffix.startsWith("ST0")) return true;
+        }
+        return false;
+    }
+
+    private boolean hasVolatileRegisterExtraout(String line) {
+        Matcher matcher = Pattern.compile("\\bextraout_([A-Za-z0-9_$]+)")
+            .matcher(line == null ? "" : line);
+        while (matcher.find()) {
+            String suffix = matcher.group(1).toUpperCase(Locale.ROOT);
+            if (!(suffix.startsWith("VAR") || suffix.startsWith("EAX") ||
+                    suffix.startsWith("AX") || suffix.startsWith("AL") ||
+                    suffix.startsWith("AH") || suffix.startsWith("ST0"))) return true;
+        }
+        return false;
     }
 
     private StatementWindow statementWindow(List<String> lines, int startIndex) {
@@ -4898,6 +4986,8 @@ public class STDecompExport extends GhidraScript {
                 "candidate live-in register: verify boundary, SEH/setjmp ABI, or convention";
             case "return_width_artifact" ->
                 "candidate call-output artifact: verify return width, clobbers, or x87 state";
+            case "call_clobber_piece" ->
+                "candidate volatile-register merge after CALL: split the partial-register lifetime";
             case "dynamic_array_indexing" -> darrayInlineTransform(line);
             case "flattened_global_record_array" ->
                 "expected typedRecordArray[index].field after inferred base/stride proof";
@@ -5025,6 +5115,8 @@ public class STDecompExport extends GhidraScript {
                 "verify function boundary, calling convention, and SEH/setjmp live-in state before replacing unaff_/in_";
             case "return_width_artifact" ->
                 "repair the proven call output: return width, register clobber, x87 stack state, or split high variable";
+            case "call_clobber_piece" ->
+                "split the volatile-register SSA lifetime after CALL; do not infer a return value from ECX/EDX alone";
             case "dynamic_array_indexing" ->
                 "render DArrayGet(array, index) or typed array->data[index]; runtime elementSize prevents a static C array type";
             case "flattened_global_record_array" ->
@@ -5053,6 +5145,8 @@ public class STDecompExport extends GhidraScript {
             case "unresolved_register_input" -> "unaff_*/in_* high-variable name";
             case "return_width_artifact" ->
                 "extraout_* high variable, possibly consumed by CONCAT*";
+            case "call_clobber_piece" ->
+                "extraout_ECX/EDX/... value not belonging to the x86 EAX return register";
             case "dynamic_array_indexing" -> "same expression uses DArrayTy.elementSize and .data";
             case "flattened_global_record_array" -> "literal matching an inferred packed-record stride";
             case "raw_indirect_call" -> "cast to code* or code** at call site";
@@ -7004,7 +7098,7 @@ public class STDecompExport extends GhidraScript {
                 }
                 String item = addr(data.getMinAddress()) + " " + data.getPathName() + " = " +
                     oneLine(data.getDefaultValueRepresentation());
-                if (data.hasStringValue()) {
+                if (data.hasStringValue() && !mutableEmptyStringStorage(data)) {
                     stringSet.add(item);
                 }
                 else {

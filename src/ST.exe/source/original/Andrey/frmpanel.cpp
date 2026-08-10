@@ -44,7 +44,7 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar6 = 2;
     iVar5 = 0x31;
     g_frmPanel_0080168C = local_8;
-    pCVar3 = st::fn_0040577C("BKG_FORMATIONW",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BKG_FORMATIONW"),0);
     st::fn_00403800
               ((SpecPanelTy *)this_00,pCVar3,iVar5,uVar6,iVar9,iVar11,UVar12,uVar13,uVar15);
     uVar16 = 1;
@@ -55,9 +55,9 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     sVar7 = 2;
     uVar13 = 0xc0af;
     uVar6 = 0xc09f;
-    pCVar3 = st::fn_0040577C("BUT_FLINE",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FLINE"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0x2b,0x19,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0x2b,0x19,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     uVar16 = 1;
     pFVar1 = this_00->vtable;
@@ -68,9 +68,9 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar13 = 0xc0b0;
     uVar6 = 0xc0a0;
     this_00->field_01B3[0] = uVar4;
-    pCVar3 = st::fn_0040577C("BUT_FBENDUP",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FBENDUP"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0x60,0x19,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0x60,0x19,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     uVar16 = 1;
     pFVar1 = this_00->vtable;
@@ -81,9 +81,9 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar13 = 0xc0b1;
     uVar6 = 0xc0a1;
     this_00->field_01B3[1] = uVar4;
-    pCVar3 = st::fn_0040577C("BUT_FHOLD",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FHOLD"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0x95,0x19,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0x95,0x19,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     uVar16 = 1;
     pFVar1 = this_00->vtable;
@@ -94,9 +94,9 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar13 = 0xc0b2;
     uVar6 = 0xc0a2;
     this_00->field_01B3[2] = uVar4;
-    pCVar3 = st::fn_0040577C("BUT_FLOCK",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FLOCK"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0xca,0x19,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0xca,0x19,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     uVar16 = 1;
     pFVar1 = this_00->vtable;
@@ -107,9 +107,9 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar13 = 0xc0b3;
     uVar6 = 0xc0a3;
     this_00->field_01B3[3] = uVar4;
-    pCVar3 = st::fn_0040577C("BUT_FWALL",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FWALL"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0x2b,0x31,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0x2b,0x31,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     uVar16 = 1;
     pFVar1 = this_00->vtable;
@@ -120,9 +120,9 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar13 = 0xc0b4;
     uVar6 = 0xc0a4;
     this_00->field_01B3[4] = uVar4;
-    pCVar3 = st::fn_0040577C("BUT_FBENDDN",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FBENDDN"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0x60,0x31,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0x60,0x31,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     pFVar1 = this_00->vtable;
     uVar16 = 1;
@@ -133,9 +133,9 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar13 = 0xc0b5;
     this_00->field_01B3[5] = uVar4;
     uVar6 = 0xc0a5;
-    pCVar3 = st::fn_0040577C("BUT_FSQUARE",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FSQUARE"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0x95,0x31,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0x95,0x31,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     uVar16 = 1;
     pFVar1 = this_00->vtable;
@@ -146,9 +146,9 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar13 = 0xc0b6;
     uVar6 = 0xc0a6;
     this_00->field_01B3[6] = uVar4;
-    pCVar3 = st::fn_0040577C("BUT_FBREAK",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FBREAK"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0xca,0x31,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0xca,0x31,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     uVar16 = 1;
     pFVar1 = this_00->vtable;
@@ -159,9 +159,9 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar13 = 0xb109;
     uVar6 = 0xb108;
     this_00->field_01B3[7] = uVar4;
-    pCVar3 = st::fn_0040577C("BUT_FINC",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FINC"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0x2b,0x52,0,1,6,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0x2b,0x52,0,1,6,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     uVar16 = 1;
     pFVar1 = this_00->vtable;
@@ -172,9 +172,9 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar13 = 0xb10b;
     uVar6 = 0xb10a;
     this_00->field_01D3[0] = uVar4;
-    pCVar3 = st::fn_0040577C("BUT_FDEC",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FDEC"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0x4d,0x52,0,1,6,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0x4d,0x52,0,1,6,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     uVar16 = 1;
     pFVar1 = this_00->vtable;
@@ -185,9 +185,9 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar13 = 0xb10d;
     uVar6 = 0xb10c;
     this_00->field_01D3[1] = uVar4;
-    pCVar3 = st::fn_0040577C("BUT_FRLFT",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FRLFT"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0xaa,0x52,0,1,6,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0xaa,0x52,0,1,6,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     uVar16 = 1;
     pFVar1 = this_00->vtable;
@@ -198,21 +198,21 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
     uVar13 = 0xb10f;
     uVar6 = 0xb10e;
     this_00->field_01D3[2] = uVar4;
-    pCVar3 = st::fn_0040577C("BUT_FRRT",0);
+    pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_FRRT"),0);
     uVar4 = (*pFVar1->CreateBut)
-                      ((PanelTy *)this_00,0,1,0xcc,0x52,0,1,6,pCVar3,uVar6,uVar13,sVar7,uVar10,
+                      ((PanelTy *)this_00,0,1,0xcc,0x52,0,1,6,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
     this_00->field_01D3[3] = uVar4;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = st::fn_006AD4D0("E:\\__titans\\Andrey\\frmpanel.cpp",0x43,0,iVar3,"%s",
+  iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0x43,0,iVar3,st::mutable_c_string("%s"),
                              "FrmPanelTy::InitFrmPanel");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0x43);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0x43);
   return;
 }
 
@@ -264,12 +264,12 @@ void __thiscall st::fn_00510250(FrmPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\frmpanel.cpp",0x4f,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0x4f,0,iVar3,st::mutable_c_string("%s"),
                              "FrmPanelTy::DoneFrmPanel");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0x4f);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0x4f);
   return;
 }
 
@@ -327,12 +327,12 @@ void __thiscall st::fn_00510370(FrmPanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\frmpanel.cpp",0x5e,0,iVar3,"%s"
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0x5e,0,iVar3,st::mutable_c_string("%s")
                                ,"FrmPanelTy::ShiftControls");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0x5e);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0x5e);
   }
   return;
 }
@@ -365,15 +365,15 @@ void __thiscall st::fn_005104B0(FrmPanelTy *this)
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\frmpanel.cpp",0x70,0,iVar2,"%s"
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0x70,0,iVar2,st::mutable_c_string("%s")
                                ,"FrmPanelTy::Update");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0x70);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0x70);
     return;
   }
-  piVar5 = &local_8->field_01AB;
+  piVar5 = st::pointer_boundary_cast<int *>(&local_8->field_01AB);
   local_10[0] = *piVar5;
   local_10[1] = local_8->field_01AF;
   *piVar5 = 0;
@@ -431,7 +431,7 @@ st::fn_005105E0(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char *para
   piVar5 = param_1->field_0018;
   local_18 = *piVar5 - this->field_003C;
   if (this->field_005C == 0) {
-    local_10 = piVar5[1] - DAT_00806734;
+    local_10 = st::machine_word_boundary_cast<int>(piVar5[1] - DAT_00806734);
   }
   else {
     local_10 = piVar5[1] - this->field_0044;
@@ -444,10 +444,10 @@ st::fn_005105E0(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char *para
   pFVar2 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\frmpanel.cpp",0x8f,0,iVar3,"%s"
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0x8f,0,iVar3,st::mutable_c_string("%s")
                                ,"FrmPanelTy::PaintBut");
     if (iVar4 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0x8f);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0x8f);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -514,10 +514,10 @@ int __thiscall st::fn_005107C0(FrmPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\frmpanel.cpp",0xe0,0,iVar2,"%s"
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0xe0,0,iVar2,st::mutable_c_string("%s")
                                ,"FrmPanelTy::GetMessage");
     if (iVar4 == 0) {
-      st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0xe0);
+      st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0xe0);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -604,9 +604,9 @@ cf_common_exit_005109A5:
 LAB_00510902:
       iVar7 = 1;
       iVar3 = 0;
-      pcVar6 = st::fn_004030FD;
+      pcVar6 = st::pointer_boundary_cast<code *>(st::fn_004030FD);
       pCVar2 = st::fn_0040577C(pcVar5,0);
-      (*pFVar4->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar2,pcVar6,iVar3,iVar7);
+      (*pFVar4->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar2,st::pointer_boundary_cast<undefined *>(pcVar6),iVar3,iVar7);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }

@@ -179,7 +179,6 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079AB74:8	0079AB74	8	0x20	0079AB74 | 0079AC1C | 0079AC70 | 0079AD8C | 0079AE90	BehPanelTy | FrmPanelTy | InfocPanelTy | SAMPanelTy | UpgPanelTy	5	Update	BehPanelTy | FrmPanelTy | InfocPanelTy | SAMPanelTy | UpgPanelTy	-
 0079AC6C:0	0079AC6C	0	0x0	0079AC6C	HelpStringTy	1	GetMessage	HelpStringTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079ACE4:0	0079ACE4	0	0x0	0079ACE4	MoneyTy	1	GetMessage	MoneyTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
-0079ACE4:1	0079ACE4	1	0x4	0079ACE4	MoneyTy	1	GetMessage	PopUpTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079ADB8:0	0079ADB8	0	0x0	0079C1E8	StartSystemTy	1	InitSystem	StartSystemTy	-
 0079ADB8:1	0079ADB8	1	0x4	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	3	DoneSystem	InterSystemC | StartSystemTy	-
 0079ADB8:3	0079ADB8	3	0xC	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	2			-
@@ -291,7 +290,6 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079CEBC:0	0079CEBC	0	0x0	0079CEBC	JumpManagC	1	GetMessage	JumpManagC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079CED0:0	0079CED0	0	0x0	0079CED0	STJumpMineC	1	GetMessage	STJumpMineC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079CED4:0	0079CED4	0	0x0	0079CED4	STLightC	1	GetMessage	STLightC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
-0079CED4:1	0079CED4	1	0x4	0079CED4	STLightC	1	GetMessage	SndUnderAttMenegC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079D084:0	0079D084	0	0x0	0079D084	STManRub3C	1	GetMessage	STManRub3C	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079D19C:0	0079D19C	0	0x0	0079D19C	STManRuinC	1	GetMessage	STManRuinC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079D610:0	0079D610	0	0x0	0079D610	STVolcanoC	1	GetMessage	STVolcanoC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false

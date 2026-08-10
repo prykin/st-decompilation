@@ -20,11 +20,10 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *
     *(undefined2 *)&this->field_0x3be = *(undefined2 *)&this->field_0x44f;
     *(undefined2 *)&this->field_0x3bc = *(undefined2 *)&this->field_0x44d;
     *(undefined4 *)&this->field_0x3c0 = *(undefined4 *)&this->field_0x451;
-    *(undefined4 *)(this->field_06CB + 4) = *(undefined4 *)&this->field_0x451;
-    *(undefined4 *)((int)this->field_06CB + 0x24) = 0;
+    this->field_06EB = *(undefined4 *)&this->field_0x451;
+    this->field_06EF = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)((int)this->field_06CB + 0x24);
+  iVar2 = this->field_06EF;
   if (iVar2 == 0) {
     local_EAX_141 = LoadObj(this,(AnonShape_005EFAE0_B406B78B *)param_1);
     if (local_EAX_141 == -1) {
@@ -36,7 +35,7 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *
     if (this->field_07CA == nullptr) {
       return 0;
     }
-    *(undefined4 *)((int)this->field_06CB + 0x24) = 1;
+    this->field_06EF = 1;
     this->field_07CE = 1;
   }
   else if (iVar2 == 1) {
@@ -53,7 +52,7 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *
         this->field_03D2 = 0xffff;
         this->field_03D0 = 0xffff;
         this->field_03CE = 0xffff;
-        *(undefined4 *)((int)this->field_06CB + 0x24) = 2;
+        this->field_06EF = 2;
         local_EAX_344 = UnLoadObj(this,1);
         return local_EAX_344;
       }

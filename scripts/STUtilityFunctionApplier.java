@@ -158,7 +158,15 @@ public class STUtilityFunctionApplier extends GhidraScript {
         String desired = semanticTag(row);
         List<String> obsolete = new ArrayList<>();
         for (var tag : function.getTags())
-            if (tag.getName().startsWith(TAG_PREFIX) && !tag.getName().equals(desired))
+            // TAG is the stable family marker and deliberately shares the
+            // RECOVERED_UTILITY_ prefix with the one semantic-specific tag.
+            // Treating it as an obsolete semantic tag removed and re-added it
+            // on every otherwise no-op pass, advancing Ghidra's modification
+            // counter twice per recovered utility without changing the final
+            // Program fingerprint.
+            if (!tag.getName().equals(TAG) &&
+                    tag.getName().startsWith(TAG_PREFIX) &&
+                    !tag.getName().equals(desired))
                 obsolete.add(tag.getName());
         for (String name : obsolete) function.removeTag(name);
         if (!hasTag(function, TAG)) function.addTag(TAG);

@@ -35,7 +35,7 @@ void __cdecl DarkScreen(DDXContext *param_1,int param_2,int param_3)
   g_currentExceptionFrame = &local_48;
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
-    FUN_006b0ba0((AnonPointee_ST3DSMAPContext_0004 *)param_1,local_448,0,0x100);
+    FUN_006b0ba0(param_1,local_448,0,0x100);
     Library::Ourlib::PALETTE::FUN_007192d0((undefined4 *)param_1,local_448,0,0x100,param_2,param_3);
     g_currentExceptionFrame = local_48.previous;
     return;

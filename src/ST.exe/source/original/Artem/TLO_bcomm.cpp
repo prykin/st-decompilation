@@ -50,10 +50,10 @@ void __thiscall st::fn_004BE500(TLOBaseTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bcomm.cpp",0x2f,0,iVar4,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bcomm.cpp"),0x2f,0,iVar4,st::mutable_c_string("%s"),
                              "TLOBaseTy::SetActivity");
   if (iVar5 == 0) {
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Artem\\TLO_bcomm.cpp",0x30);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bcomm.cpp"),0x30);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

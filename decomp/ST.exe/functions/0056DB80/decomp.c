@@ -26,9 +26,9 @@ void __thiscall STAppC::StartGame(STAppC *this)
   char *pcVar8_mg3;
   int local_EAX_2834;
   int iVar10;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   cLoadingTy *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   cLoadingTy *extraout_ECX_00;
   cLoadingTy *this_00;
   STAppC *pSVar11;
@@ -92,14 +92,14 @@ void __thiscall STAppC::StartGame(STAppC *this)
     DarkScreen(g_dDXContext_0080759C,10,2);
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       this_00 = extraout_ECX_00;
     }
     else {
       this_00 = (cLoadingTy *)g_cursorClass_00802A30->field_001C;
       if (this_00 != (cLoadingTy *)0xffffffff) {
         FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,(uint)this_00);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         this_00 = extraout_ECX;
       }
     }
@@ -116,7 +116,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     }
     DAT_00806720 = timeGetTime();
     g_cMf32_00806754 =
-         (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&pSVar11->field_76F6,0,0,0);
+         (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&pSVar11->field_76F6,0,0,0);
     local_8 = (STAppC_field_1180State *)&pSVar11->field_4EAF;
     cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_AUTOSAVETIME_GAME_0079b068,(int *)&local_8,0);
     local_8 = (STAppC_field_1180State *)&pSVar11->field_4EB3;
@@ -150,7 +150,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
       pIVar5 = local_dc.previous;
       if (local_EAX_938 == 0) {
         g_cMf32_00806758 =
-             (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_c->field_76F6,0,0,0);
+             (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                (0x345,(byte *)&local_c->field_76F6,0,0,0);
         g_currentExceptionFrame = local_dc.previous;
         pIVar5 = g_currentExceptionFrame;
       }
@@ -235,7 +236,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       if ((puVar7 == nullptr) || (pbVar14 = &pSVar11->field_4DA3, pSVar11->field_4DA3 == '\0')
          ) {
         Library::MSVCRT::FUN_0072e730
-                  (&pSVar11->field_76F6,nullptr,nullptr,local_328,nullptr);
+                  ((byte *)&pSVar11->field_76F6,nullptr,nullptr,local_328,nullptr);
         pbVar14 = local_328;
       }
       pcVar8_mg2 = LoadResourceString(0x267f,g_hINSTANCE_00807618);

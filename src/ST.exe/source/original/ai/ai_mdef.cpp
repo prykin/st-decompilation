@@ -23,10 +23,10 @@ void __cdecl st::fn_00675EA0(uint param_1,int *param_2)
   iVar4 = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x101,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x101,0,iVar4,st::mutable_c_string("%s"),
                                "_AddObjGrpExch");
     if (iVar5 == 0) {
-      st::fn_006A5E40(iVar4,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x102);
+      st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x102);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -92,12 +92,12 @@ void __cdecl st::fn_00675FE0(uint param_1)
   iVar3 = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x118,0,iVar3,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x118,0,iVar3,st::mutable_c_string("%s"),
                                "_AddAllGrpExch");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x119);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x119);
     return;
   }
   if (g_allPlayers_007FA174 != nullptr) {
@@ -165,12 +165,12 @@ uint * __cdecl st::fn_00676170(undefined4 param_1)
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x125,0,errorCode,"%s"
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x125,0,errorCode,st::mutable_c_string("%s")
                                ,"_GetStaffGrpExch");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x126);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x126);
     return nullptr;
   }
   if (g_allPlayers_007FA174 == nullptr) {
@@ -264,10 +264,10 @@ LAB_006762e0:
   if (local_c != nullptr) {
     st::fn_006AE110(local_c);
   }
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x13a,0,iVar2,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x13a,0,iVar2,st::mutable_c_string("%s"),
                              "_GetEmbrTobjGrpExch");
   if (iVar4 == 0) {
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x13b);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x13b);
     return iVar2;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -358,10 +358,10 @@ LAB_00676470:
   if (local_c != nullptr) {
     st::fn_006AE110(local_c);
   }
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x150,0,iVar2,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x150,0,iVar2,st::mutable_c_string("%s"),
                              "_GetEmbrGrpTobjGrpExch");
   if (iVar4 == 0) {
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x151);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x151);
     return iVar2;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -423,18 +423,18 @@ st::fn_00676D80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
   iVar3 = st::fn_0072D7F0(local_70.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x295,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x295,0,iVar3,st::mutable_c_string("%s"),
                                "_EnumPlObj");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x296);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x296);
     return iVar3;
   }
   local_1c = (DArrayTy *)st::fn_00405989((char)param_1);
   if (local_1c == nullptr) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x293);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x293);
   }
   else {
     local_14 = 0;
@@ -588,22 +588,22 @@ st::fn_00677290(undefined4 param_1,uint param_2,char param_3,short param_4,short
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = st::fn_00401852;
+    pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00401852);
     if (param_10 == 0) {
-      pcVar2 = st::fn_00403490;
+      pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00403490);
     }
     local_8 = pDVar1;
     st::fn_004012F8(param_1,param_2,0x3fffffff,nullptr,param_3,param_4,param_5,param_6,param_7,
-               param_8,param_9,pcVar2,&pDVar1->flags,nullptr);
+               param_8,param_9,st::pointer_boundary_cast<undefined *>(pcVar2),st::pointer_boundary_cast<uint *>(&pDVar1->flags),nullptr);
     g_currentExceptionFrame = local_4c.previous;
-    return &pDVar1->flags;
+    return st::pointer_boundary_cast<uint *>(&pDVar1->flags);
   }
   g_currentExceptionFrame = local_4c.previous;
   if (local_8 != nullptr) {
     st::fn_006AE110(local_8);
   }
   local_8 = nullptr;
-  st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x2c0);
+  st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x2c0);
   return nullptr;
 }
 
@@ -631,22 +631,22 @@ st::fn_006773B0(undefined4 param_1,uint param_2,char param_3,short param_4,short
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = st::fn_00401852;
+    pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00401852);
     if (param_10 == 0) {
-      pcVar2 = st::fn_00403490;
+      pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00403490);
     }
     local_8 = pDVar1;
     st::fn_004012F8(param_1,0,param_2,nullptr,param_3,param_4,param_5,param_6,param_7,param_8,param_9
-               ,pcVar2,&pDVar1->flags,nullptr);
+               ,st::pointer_boundary_cast<undefined *>(pcVar2),st::pointer_boundary_cast<uint *>(&pDVar1->flags),nullptr);
     g_currentExceptionFrame = local_4c.previous;
-    return &pDVar1->flags;
+    return st::pointer_boundary_cast<uint *>(&pDVar1->flags);
   }
   g_currentExceptionFrame = local_4c.previous;
   if (local_8 != nullptr) {
     st::fn_006AE110(local_8);
   }
   local_8 = nullptr;
-  st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x2d7);
+  st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x2d7);
   return nullptr;
 }
 
@@ -674,22 +674,22 @@ st::fn_006774C0(undefined4 param_1,byte *param_2,char param_3,short param_4,shor
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = st::fn_00401852;
+    pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00401852);
     if (param_10 == 0) {
-      pcVar2 = st::fn_00403490;
+      pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00403490);
     }
     local_8 = pDVar1;
     st::fn_004012F8(param_1,0,0x3fffffff,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9,
-               pcVar2,&pDVar1->flags,nullptr);
+               st::pointer_boundary_cast<undefined *>(pcVar2),st::pointer_boundary_cast<uint *>(&pDVar1->flags),nullptr);
     g_currentExceptionFrame = local_4c.previous;
-    return &pDVar1->flags;
+    return st::pointer_boundary_cast<uint *>(&pDVar1->flags);
   }
   g_currentExceptionFrame = local_4c.previous;
   if (local_8 != nullptr) {
     st::fn_006AE110(local_8);
   }
   local_8 = nullptr;
-  st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x2ee);
+  st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x2ee);
   return nullptr;
 }
 
@@ -717,22 +717,22 @@ st::fn_006775E0(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = st::fn_00401852;
+    pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00401852);
     if (param_12 == 0) {
-      pcVar2 = st::fn_00403490;
+      pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00403490);
     }
     local_8 = pDVar1;
     st::fn_004012F8(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9,param_10,
-               param_11,pcVar2,&pDVar1->flags,nullptr);
+               param_11,st::pointer_boundary_cast<undefined *>(pcVar2),st::pointer_boundary_cast<uint *>(&pDVar1->flags),nullptr);
     g_currentExceptionFrame = local_4c.previous;
-    return &pDVar1->flags;
+    return st::pointer_boundary_cast<uint *>(&pDVar1->flags);
   }
   g_currentExceptionFrame = local_4c.previous;
   if (local_8 != nullptr) {
     st::fn_006AE110(local_8);
   }
   local_8 = nullptr;
-  st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x308);
+  st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x308);
   return nullptr;
 }
 
@@ -769,19 +769,19 @@ st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short pa
   iVar2 = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x37f,0,iVar2,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x37f,0,iVar2,st::mutable_c_string("%s"),
                                "_EnumRCField");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x380);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x380);
     return iVar2;
   }
   if (g_array_007FA15C == nullptr) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x36b);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x36b);
   }
-  uVar6 = g_array_007FA15C->count - 1;
+  uVar6 = st::machine_word_boundary_cast<uint>(g_array_007FA15C->count - 1);
   if (-1 < (int)uVar6) {
     do {
       if (uVar6 < g_array_007FA15C->count) {
@@ -864,19 +864,19 @@ st::fn_00677BE0(short param_1,short param_2,byte *param_3,short param_4,short pa
   iVar3 = st::fn_0072D7F0(local_70.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x3ba,0,iVar3,"%s",
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x3ba,0,iVar3,st::mutable_c_string("%s"),
                                "_EnumRCCont");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x3bb);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x3bb);
     return iVar3;
   }
   if (g_array_007FA160 == nullptr) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x39c);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x39c);
   }
-  uVar9 = g_array_007FA160->count - 1;
+  uVar9 = st::machine_word_boundary_cast<uint>(g_array_007FA160->count - 1);
   pDVar8 = g_array_007FA160;
   if ((int)uVar9 < 0) {
     g_currentExceptionFrame = local_70.previous;
@@ -927,7 +927,7 @@ LAB_00677cee:
       uVar9 = local_10;
       if (iVar4 != 0) {
         if ((((0 < param_7) && (0 < param_8)) && (0 < param_9)) &&
-           ((((st::fn_00405F0B(this,&local_6,&local_8,&local_a), local_6 < param_4 ||
+           ((((st::fn_00405F0B(this,st::pointer_boundary_cast<undefined2 *>(&local_6),st::pointer_boundary_cast<undefined2 *>(&local_8),st::pointer_boundary_cast<undefined2 *>(&local_a)), local_6 < param_4 ||
               (local_8 < param_5)) ||
              ((local_a < param_6 ||
               (((int)param_4 + (int)param_7 <= (int)local_6 ||
@@ -991,19 +991,19 @@ st::fn_00677F40(short param_1,byte *param_2,short param_3,short param_4,short pa
   iVar3 = st::fn_0072D7F0(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x3fc,0,iVar3,"%s",
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x3fc,0,iVar3,st::mutable_c_string("%s"),
                                "_EnumArt");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x3fd);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x3fd);
     return iVar3;
   }
   if (g_array_007FA154 == nullptr) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x3e1);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x3e1);
   }
-  local_10 = g_array_007FA154->count - 1;
+  local_10 = st::machine_word_boundary_cast<uint>(g_array_007FA154->count - 1);
   if ((int)local_10 < 0) {
     g_currentExceptionFrame = local_6c.previous;
     return local_18;
@@ -1048,7 +1048,7 @@ LAB_00678036:
       }
       if (iVar7 != 0) {
         if ((((0 < param_6) && (0 < param_7)) && (0 < param_8)) &&
-           ((((st::fn_00405F0B(this,&local_6,&local_8,&local_a), local_6 < param_3 ||
+           ((((st::fn_00405F0B(this,st::pointer_boundary_cast<undefined2 *>(&local_6),st::pointer_boundary_cast<undefined2 *>(&local_8),st::pointer_boundary_cast<undefined2 *>(&local_a)), local_6 < param_3 ||
               (local_8 < param_4)) ||
              ((local_a < param_5 ||
               (((int)param_3 + (int)param_6 <= (int)local_6 ||
@@ -1120,19 +1120,19 @@ st::fn_00678240(int param_1,short param_2,char param_3,byte *param_4,short param
   iVar3 = st::fn_0072D7F0(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x439,0,iVar3,"%s",
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x439,0,iVar3,st::mutable_c_string("%s"),
                                "_EnumMines");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x43a);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x43a);
     return iVar3;
   }
   if (g_array_007FA158 == nullptr) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x41f);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x41f);
   }
-  uVar9 = g_array_007FA158->count - 1;
+  uVar9 = st::machine_word_boundary_cast<uint>(g_array_007FA158->count - 1);
   pDVar7 = g_array_007FA158;
   if ((int)uVar9 < 0) {
     g_currentExceptionFrame = local_6c.previous;
@@ -1252,19 +1252,19 @@ st::fn_006785A0(byte *param_1,char param_2,short param_3,short param_4,short par
   iVar3 = st::fn_0072D7F0(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_mdef.cpp",0x470,0,iVar3,"%s",
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x470,0,iVar3,st::mutable_c_string("%s"),
                                "_EnumDest");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x471);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x471);
     return iVar3;
   }
   if (g_array_007FA164 == nullptr) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x459);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_mdef.cpp"),0x459);
   }
-  local_10 = g_array_007FA164->count - 1;
+  local_10 = st::machine_word_boundary_cast<uint>(g_array_007FA164->count - 1);
   if ((int)local_10 < 0) {
     g_currentExceptionFrame = local_6c.previous;
     return local_18;

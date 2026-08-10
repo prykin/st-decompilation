@@ -129,7 +129,7 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
         st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*puVar1);
       }
       puVar4 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,"expl_i13",0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,st::mutable_c_string("expl_i13"),0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)puVar1,3,0,STField<uint>(puVar4,9),
@@ -138,7 +138,7 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
                 (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,pAVar2->field_00AB);
       puVar4 = st::fn_00709AF0
-                         (PTR_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
+                         (PTR_00806764,CASE_1D,st::mutable_c_string("expl_s0"),0xffffffff,0,1,0,nullptr
                          );
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar1,2,*(int *)puVar4,STField<int>(puVar4,0x21),1);
@@ -298,17 +298,17 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
     uVar7 = this->field_00FF;
     this->field_00C9 = 2;
     if (uVar7 < g_playSystem_00802A38->field_00E4) {
-      this->field_00FB = g_playSystem_00802A38->field_00E4 - uVar7;
+      this->field_00FB = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 - uVar7);
       if (0x1f6 < iVar6) {
         this->field_00D5 = 0x44c;
-        iVar5 = this->field_00E3 * 0x1b9f;
+        iVar5 = st::machine_word_boundary_cast<int>(this->field_00E3 * 0x1b9f);
         this->field_00DF = iVar5;
         this->field_00E3 = iVar5;
         this->field_00D7 = ((param_1 - this->field_00D1) * iVar5) / iVar6;
         this->field_00DB = ((param_2 - this->field_00D3) * iVar5) / iVar6;
         return 1;
       }
-      this->field_00DF = this->field_00F7 * uVar7;
+      this->field_00DF = st::machine_word_boundary_cast<undefined4>(this->field_00F7 * uVar7);
       iVar5 = this->field_00CD;
       this->field_00D5 = 0x4b0 - (short)((this->field_00F7 * uVar7 * uVar7) / 20000);
       this->field_00E3 = iVar5;
@@ -342,7 +342,7 @@ st::fn_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param_3,int par
     *param_1 = (int)this->field_00D1;
     *param_2 = (int)this->field_00D3;
     iVar2 = (g_playSystem_00802A38->field_00E4 - this->field_00FB) * this->field_00DF;
-    *param_3 = this->field_00D5 + iVar2;
+    *param_3 = st::machine_word_boundary_cast<int>(this->field_00D5 + iVar2);
     uVar1 = (uint)(this->field_00EF <= iVar2);
   }
   else {
@@ -444,7 +444,7 @@ void __thiscall st::fn_005F4680(STBHEShellC *this)
       this->field_00C4 = 0;
       return;
     }
-    iVar5 = this->field_00AB + 1;
+    iVar5 = st::machine_word_boundary_cast<int>(this->field_00AB + 1);
     this->field_00AB = iVar5;
     if (this->field_00AF <= iVar5) {
       this->field_00AB = 0;
@@ -546,7 +546,7 @@ st::fn_005F4C50
       param_1 = 0.0;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = 0;
-      iVar6 = this->field_0109 * param_4;
+      iVar6 = st::machine_word_boundary_cast<int>(this->field_0109 * param_4);
       if (0 < this->field_0109) {
         do {
           puVar4 = (undefined4 *)local_2c;
@@ -907,7 +907,7 @@ byte * __thiscall st::fn_005F5A90(STBHEShellC *this,int *param_1)
   byte *local_c;
   uint local_8;
 
-  pbVar1 = st::fn_006AAC70(0x128);
+  pbVar1 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0x128));
   this->field_016D = this->field_001C;
   puVar5 = (byte *)&this->field_0x4d;
   pbVar6 = pbVar1;
@@ -917,8 +917,8 @@ byte * __thiscall st::fn_005F5A90(STBHEShellC *this,int *param_1)
   pbVar1[0xe] = 0;
   pbVar1[0xf] = 0;
   if (this->field_0169 != nullptr) {
-    local_c = (byte *)st::fn_006B0020(&this->field_0169->flags,(int *)&local_8);
-    pbVar2 = st::fn_006ACF50(pbVar1,local_8 + 300);
+    local_c = (byte *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&this->field_0169->flags),(int *)&local_8);
+    pbVar2 = st::pointer_boundary_cast<byte *>(st::fn_006ACF50(pbVar1,local_8 + 300));
     *(uint *)(pbVar2 + 0x128) = local_8;
     pbVar6 = local_c;
     pbVar1 = pbVar2 + 300;
@@ -956,9 +956,9 @@ int __thiscall st::fn_005F5B80(STBHEShellC *this,undefined4 *param_1)
   memmove(puVar7, puVar5, 0x128); /* compiler REP MOVS byte copy */
   iVar3 = 0x128;
   if (this->field_0169 != nullptr) {
-    pSVar2 = (STBHEShellC_field_0169DArray *)st::fn_006B0060(nullptr,param_1 + 0x4b);
+    pSVar2 = (STBHEShellC_field_0169DArray *)st::fn_006B0060(nullptr,st::pointer_boundary_cast<uint *>(param_1 + 0x4b));
     this->field_0169 = pSVar2;
-    iVar3 = param_1[0x4a] + 300;
+    iVar3 = st::machine_word_boundary_cast<int>(param_1[0x4a] + 300);
   }
   this->field_008F = 0xffffffff;
   if (this->field_0169 != nullptr) {

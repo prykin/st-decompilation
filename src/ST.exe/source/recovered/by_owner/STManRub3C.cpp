@@ -77,7 +77,7 @@ byte * __thiscall st::fn_0062D670(STManRub3C *this,uint *param_1)
   local_c = 0;
   this->field_00B0 = this->field_00B4;
   local_8 = this;
-  local_10 = st::fn_006AAC70(0x98);
+  local_10 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0x98));
   this->field_0028 = 2;
   if (this == nullptr) {
     puVar5 = nullptr;
@@ -111,7 +111,7 @@ byte * __thiscall st::fn_0062D670(STManRub3C *this,uint *param_1)
        (local_14 = st::fn_00404C78((int *)ppDVar2,(int *)&local_c), local_c != 0)) {
       uVar4 = *puVar1;
       *puVar1 = uVar4 + local_c;
-      local_10 = st::fn_006ACF50(local_10,uVar4 + local_c);
+      local_10 = st::pointer_boundary_cast<byte *>(st::fn_006ACF50(local_10,uVar4 + local_c));
       puVar6 = local_14;
       puVar8 = (uint *)(local_10 + (*puVar1 - local_c));
       memmove(puVar8, puVar6, local_c); /* compiler REP MOVS byte copy */
@@ -155,7 +155,7 @@ int __thiscall st::fn_0062D840(STManRub3C *this,undefined4 *param_1)
   param_1 = (undefined4 *)0x98;
   puVar4 = (byte *)(puVar1);
   memmove(puVar6, puVar4, 0x98); /* compiler REP MOVS byte copy */
-  piVar5 = puVar1 + 0x26;
+  piVar5 = st::pointer_boundary_cast<int *>(puVar1 + 0x26);
   this->field_00B4 = this->field_00B0;
   iVar3 = 0;
   do {

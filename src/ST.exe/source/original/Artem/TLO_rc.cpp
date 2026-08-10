@@ -97,11 +97,11 @@ LAB_004e05d3:
   if (param_1->field_04E8 == 0) {
     return 0;
   }
-  this = &param_1->field_0x1d5;
+  this = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0x1d5);
   iVar1 = st::fn_00404183((STT3DSprC *)this,0xb,PTR_0080678c,local_8,CASE_1D);
   if (iVar1 != 0) {
     st::fn_006A5E40
-              (iVar1,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_rc.cpp",0xc3);
+              (iVar1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_rc.cpp"),0xc3);
   }
   iVar1 = param_1->field_04E8;
   if (iVar1 == 1) {

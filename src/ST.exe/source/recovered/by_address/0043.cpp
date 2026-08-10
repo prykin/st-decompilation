@@ -204,7 +204,7 @@ short st::fn_00435B90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3
     if (local_c == 1) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)local_10,CASE_1);
-      uVar6 = (*pSVar5->vtable->vfunc_28)(param_3,arg_2,param_5,param_6);
+      uVar6 = (*pSVar5->vtable->vfunc_28)(param_3,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
       return (short)uVar6;
     }
   }
@@ -222,7 +222,7 @@ short st::fn_00435B90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 5) {
             return 5;
           }
@@ -243,7 +243,7 @@ short st::fn_00435B90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x1e) {
             return 0x1e;
           }
@@ -295,7 +295,7 @@ LAB_004366b0:
               if ((ushort)param_1 != 0xffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-                uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
+                uVar6 = (*pSVar5->vtable->vfunc_28)(0,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
                 if ((short)uVar6 == 0x18) {
                   return 0x18;
                 }
@@ -314,7 +314,7 @@ LAB_004366b0:
               if ((ushort)param_1 != 0xffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-                uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
+                uVar6 = (*pSVar5->vtable->vfunc_28)(0,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
                 if ((short)uVar6 == 0x1d) {
                   return 0x1d;
                 }
@@ -335,7 +335,7 @@ LAB_004366b0:
               if ((ushort)param_1 != 0xffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-                uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
+                uVar6 = (*pSVar5->vtable->vfunc_28)(0,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
                 if ((short)uVar6 == 0x12) {
                   return 0x12;
                 }
@@ -360,7 +360,7 @@ LAB_004366b0:
           if ((ushort)param_1 != 0xffff) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-            uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
+            uVar6 = (*pSVar5->vtable->vfunc_28)(0,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
             if ((short)uVar6 == 0x17) {
               return 0x17;
             }
@@ -387,7 +387,7 @@ LAB_004366b0:
           if ((ushort)param_1 != 0xffff) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-            uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
+            uVar6 = (*pSVar5->vtable->vfunc_28)(0,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
             if ((short)uVar6 == 7) {
               return 7;
             }
@@ -409,7 +409,7 @@ LAB_004366b0:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 7) {
             return 7;
           }
@@ -431,7 +431,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(2,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(2,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 6) {
             return 6;
           }
@@ -455,7 +455,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(param_3,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(param_3,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 7) {
             return 7;
           }
@@ -480,7 +480,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(4,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(4,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x18) {
             return 0x18;
           }
@@ -503,7 +503,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(5,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(5,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0xd) {
             return 0xd;
           }
@@ -523,7 +523,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(6,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(6,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0xf) {
             return 0xf;
           }
@@ -546,7 +546,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(7,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(7,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           sVar4 = (short)uVar6;
           if (sVar4 == 9) {
             return 9;
@@ -572,7 +572,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(8,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(8,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x11) {
             return 0x11;
           }
@@ -592,7 +592,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(9,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(9,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 8) {
             return 8;
           }
@@ -615,7 +615,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(10,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(10,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0xc) {
             return 0xc;
           }
@@ -637,7 +637,7 @@ switchD_00435c5c_caseD_1:
           if ((STGameObjC *)arg_2 == pSVar5) {
             return 0;
           }
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0xd,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0xd,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x17) {
             return 0x17;
           }
@@ -662,7 +662,7 @@ switchD_00435c5c_caseD_1:
           if ((STGameObjC *)arg_2 == pSVar5) {
             return 0;
           }
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0xe,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0xe,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x14) {
             return 0x14;
           }
@@ -684,7 +684,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0x10,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0x10,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x16) {
             return 0x16;
           }
@@ -707,7 +707,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0x11,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0x11,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x12) {
             return 0x12;
           }
@@ -730,7 +730,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0x12,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0x12,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x13) {
             return 0x13;
           }
@@ -756,7 +756,7 @@ switchD_00435c5c_caseD_1:
           if ((STGameObjC *)arg_2 == pSVar5) {
             return 0;
           }
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0x13,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0x13,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x1a) {
             return 0x1a;
           }
@@ -781,7 +781,7 @@ switchD_00435c5c_caseD_1:
           if ((STGameObjC *)arg_2 == pSVar5) {
             return 0;
           }
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0x18,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0x18,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x1d) {
             return 0x1d;
           }
@@ -803,7 +803,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0x2d,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0x2d,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x10) {
             return 0x10;
           }
@@ -826,7 +826,7 @@ switchD_00435c5c_caseD_1:
         if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar5 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          uVar6 = (*pSVar5->vtable->vfunc_28)(0x4d,arg_2,param_5,param_6);
+          uVar6 = (*pSVar5->vtable->vfunc_28)(0x4d,st::machine_word_boundary_cast<undefined4>(arg_2),param_5,st::machine_word_boundary_cast<undefined4>(param_6));
           if ((short)uVar6 == 0x1d) {
             return 0x1d;
           }
@@ -845,14 +845,26 @@ switchD_00435c5c_caseD_1:
 
 // 0043E420 FUN_0043e420
 #line 4 "decomp/ST.exe/functions/0043E420/decomp.c"
-void st::fn_0043E420(undefined4 *param_1,char param_2)
+/* [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=6, ignored=0, unknown=0
+
+   [STReturnSemanticsApplier] returned_pointer_parameter.
+   Evidence: every reachable RET receives full EAX from the same incoming pointer parameter param_1
+   (ordinal=0); no intervening full or partial accumulator definition changes that value; machine
+   CFG audit: used=6, ignored=0, unknown=0 */
+
+undefined4 * st::fn_0043E420(undefined4 *param_1,char param_2)
 
 {
   int *piVar2;
+  int *piVar3;
 
   piVar2 = &g_packedRecords_A62x8[param_2].field18_0x2b;
-  memmove(param_1, piVar2, 0x138); /* compiler REP MOVS byte copy */
-  return;
+  piVar3 = st::pointer_boundary_cast<int *>(param_1);
+  memmove(piVar3, piVar2, 0x138); /* compiler REP MOVS byte copy */
+  return param_1;
 }
 
 // 0043E460 FUN_0043e460
@@ -1186,7 +1198,7 @@ LAB_0043eda0:
     st::fn_006AE110(array);
     return nullptr;
   }
-  return &array->flags;
+  return st::pointer_boundary_cast<uint *>(&array->flags);
 }
 
 // 0043F130 FUN_0043f130
@@ -1488,7 +1500,7 @@ LAB_0043f6e8:
     st::fn_006AE110(local_c);
     local_c = nullptr;
   }
-  return &local_c->flags;
+  return st::pointer_boundary_cast<uint *>(&local_c->flags);
 }
 
 // 0043F7B0 FUN_0043f7b0
@@ -1676,7 +1688,7 @@ LAB_0043fb16:
     st::fn_006AE110(array);
     array = nullptr;
   }
-  return &array->flags;
+  return st::pointer_boundary_cast<uint *>(&array->flags);
 }
 
 // 0043FC50 FUN_0043fc50

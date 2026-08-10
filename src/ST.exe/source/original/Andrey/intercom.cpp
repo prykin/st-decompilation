@@ -31,12 +31,12 @@ void __thiscall st::fn_00521900(IntercomPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\intercom.cpp",0x22,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x22,0,iVar3,st::mutable_c_string("%s"),
                              "IntercomPanelTy::PreInitIntercomPanel");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\intercom.cpp",0x22);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x22);
   return;
 }
 
@@ -76,7 +76,7 @@ void __thiscall st::fn_005219E0(IntercomPanelTy *this)
     puVar3[0x17] = 0;
     iVar10 = 1;
     piVar8 = nullptr;
-    text = st::fn_0040577C("BKG_EDITCHAT",0);
+    text = st::fn_0040577C(st::mutable_c_string("BKG_EDITCHAT"),0);
     puVar4 = st::fn_006F1CE0(g_cMf32_00806790,1,text,piVar8,iVar10);
     puVar6 = puVar4 + 0x14;
     iVar10 = 1;
@@ -95,12 +95,12 @@ void __thiscall st::fn_005219E0(IntercomPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar9 = st::fn_006AD4D0("E:\\__titans\\Andrey\\intercom.cpp",0x34,0,iVar3,"%s",
+  iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x34,0,iVar3,st::mutable_c_string("%s"),
                              "IntercomPanelTy::InitIntercomPanel");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\intercom.cpp",0x34);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x34);
   return;
 }
 
@@ -135,7 +135,7 @@ void __thiscall st::fn_00521B90(IntercomPanelTy *this)
     pIVar2->field_01A0 = 0;
     g_intercomPanel_0080169C = nullptr;
     if (pIVar2->field_0180 != nullptr) {
-      st::fn_00710560(pIVar2->field_0180);
+      st::fn_00710560(st::pointer_boundary_cast<uint *>(pIVar2->field_0180));
       pIVar2->field_0180 = nullptr;
     }
     if (pIVar2->field_0184 != nullptr) {
@@ -148,12 +148,12 @@ void __thiscall st::fn_00521B90(IntercomPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\intercom.cpp",0x4a,0,errorCode,
-                             "%s","IntercomPanelTy::DoneIntercomPanel");
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x4a,0,errorCode,
+                             st::mutable_c_string("%s"),"IntercomPanelTy::DoneIntercomPanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\intercom.cpp",0x4a);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x4a);
   return;
 }
 
@@ -190,12 +190,12 @@ void __thiscall st::fn_00522D40(IntercomPanelTy *this,byte param_1)
   pIVar3 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\intercom.cpp",0x13b,0,errorCode,
-                               "%s","IntercomPanelTy::SwitchIntercomPanel");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x13b,0,errorCode,
+                               st::mutable_c_string("%s"),"IntercomPanelTy::SwitchIntercomPanel");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\intercom.cpp",0x13b);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x13b);
     return;
   }
   sVar1 = local_8->field_0172;
@@ -277,10 +277,10 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\Andrey\\intercom.cpp",0x197,0,iVar6,
-                               "%s","IntercomPanelTy::GetMessage");
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x197,0,iVar6,
+                               st::mutable_c_string("%s"),"IntercomPanelTy::GetMessage");
     if (iVar8 == 0) {
-      st::fn_006A5E40(iVar6,0,"E:\\__titans\\Andrey\\intercom.cpp",0x197);
+      st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x197);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -296,7 +296,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
         if (this_00->field_0172 == 3) {
           iVar7 = this_00->field_018C;
           if (this_00->field_0044 < iVar7) {
-            this_00->field_0044 = this_00->field_0044 + 5;
+            this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + 5);
           }
           if (iVar7 <= this_00->field_0044) {
             ppAVar11 = local_8dc;
@@ -304,7 +304,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
               *ppAVar11 = nullptr;
               ppAVar11 = ppAVar11 + 1;
             }
-            pAVar3 = this_00->field_0180;
+            pAVar3 = st::pointer_boundary_cast<AnonShape_00710790_4CBB90D4 *>(this_00->field_0180);
             this_00->field_0044 = iVar7;
             this_00->field_0172 = 1;
             local_8dc[0] = (AnonShape_00710790_4CBB90D4 *)0x1;
@@ -313,7 +313,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
             if (*(int *)(pAVar3 + 1) != 0) {
               st::fn_00710790(pAVar3);
             }
-            local_8c4 = pAVar3->field_008A + 1;
+            local_8c4 = st::machine_word_boundary_cast<int>(pAVar3->field_008A + 1);
             local_8d0 = (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e + this_00->field_003C;
             local_7c = 1;
             local_80 = 1;
@@ -332,7 +332,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
             local_850 = local_8b0;
             (*this_00->field_000C->vtable->CreateObject)
                       ((SystemClassTy *)this_00->field_000C,6,&this_00->field_01A0,nullptr,
-                       local_8dc,1);
+                       st::machine_word_boundary_cast<undefined4>(local_8dc),1);
           }
           st::fn_006B3640
                     ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C
@@ -346,7 +346,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
         }
         iVar7 = this_00->field_018C - this_00->field_0048;
         if (iVar7 < this_00->field_0044) {
-          this_00->field_0044 = this_00->field_0044 + -5;
+          this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + -5);
         }
         if (this_00->field_0044 <= iVar7) {
           this_00->field_0044 = iVar7;
@@ -375,7 +375,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
     st::fn_00403120((AnonShape_00521CF0_154649D2 *)this_00);
     st::fn_006B6020(this_00->field_0198,0,&CHAR_00h_008016a0);
     this_00->field_0028 = 0x33;
-    this_00->field_002C = this_00->field_0198;
+    this_00->field_002C = st::machine_word_boundary_cast<undefined4>(this_00->field_0198);
     st::fn_006E6080(this_00,2,this_00->field_01A0,(undefined4 *)&this_00->field_0x18);
   }
   else if (SVar2 != MESS_BEHPANELTY_C0A0) {
@@ -391,8 +391,8 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
     }
     puVar8 = (byte *)st::fn_006B4FA0((int *)puVar4);
     memset(puVar8, 0, local_8); /* compiler bulk-zero initialization */
-    st::fn_00710A90(this_00->field_0180,(int)this_00->field_019C,0,0,0,0,0);
-    st::fn_007119C0(this_00->field_0180,*(char **)(message->arg0).ptr,0,-1,0);
+    st::fn_00710A90(st::pointer_boundary_cast<ccFntTy *>(this_00->field_0180),(int)this_00->field_019C,0,0,0,0,0);
+    st::fn_007119C0(st::pointer_boundary_cast<ccFntTy *>(this_00->field_0180),*(char **)(message->arg0).ptr,0,-1,0);
     uVar1 = (message->arg1).words.low;
     if ((uVar1 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
       uVar10 = (uint)(message->arg1).words.high;

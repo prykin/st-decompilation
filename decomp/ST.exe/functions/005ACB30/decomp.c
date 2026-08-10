@@ -57,7 +57,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1A70);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1B01);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1B92);
-    puVar7 = pCVar3->field_1C23;
+    puVar7 = &pCVar3->field_1C23;
     iVar6 = 0x16;
     do {
       if (*puVar7 != 0xffffffff) {

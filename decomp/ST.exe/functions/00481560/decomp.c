@@ -161,8 +161,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_2c = CONCAT22(*local_a4,local_a4[-1]);
           local_8c = (int)local_90 >> 0x1f;
-          puVar5 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_104,local_a4[-1],0,STField<short>(local_60,0x6c));
+          puVar5 = thunk_FUN_0041dc40(local_104,local_a4[-1],0,STField<short>(local_60,0x6c));
           local_2c = (short)*puVar5;
           local_2c = local_2c + STField<short>(local_60,0x41);
           sStack_2a = (short)((uint)*puVar5 >> 0x10);
@@ -485,8 +484,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
           local_8 = local_8 - STField<short>(local_60,0x45);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c = CONCAT22(STField<short>(local_60,0x43) - STPiece<2,2>(local_c),(short)local_c);
-          puVar5 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_104,(short)local_c,local_8,
+          puVar5 = thunk_FUN_0041dc40(local_104,(short)local_c,local_8,
                                       0x168 - STField<short>(local_60,0x6c));
           uVar4 = local_44;
           local_c = *puVar5;

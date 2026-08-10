@@ -90,7 +90,7 @@ st::fn_00418030
     }
     if (pSVar5 == nullptr) {
       *(undefined4 *)&local_58->field_0x9b = 2;
-      puVar6 = st::fn_006AAC10(0x10);
+      puVar6 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC10(0x10));
       this_00->field_0097 = puVar6;
       puVar6[4] = param_1;
       this_00->field_0097[5] = param_2;
@@ -102,7 +102,7 @@ st::fn_00418030
     }
   }
   local_44 = (short *)0x3;
-  local_14 = st::fn_006AAC10(0x2ae);
+  local_14 = st::pointer_boundary_cast<short *>(st::fn_006AAC10(0x2ae));
   sVar3 = this_00->field_0047;
   local_54 = local_14 + 0xab;
   iVar15 = 2;
@@ -240,10 +240,10 @@ LAB_004183b8:
     if ((local_c != nullptr) && (local_1c = local_4c, (int)local_4c <= (int)local_24)) {
       local_c = local_54 + ((int)local_4c * 7 + local_34) * 7;
       do {
-        local_10 = g_pathingScratchGrid.cells +
+        local_10 = st::pointer_boundary_cast<short *>(g_pathingScratchGrid.cells +
                    ((int)this_00->field_004B + (int)local_1c) * (int)g_pathingGrid.planeStride +
                    (this_00->field_0049 + local_34) * (int)g_pathingGrid.sizeX +
-                   (int)this_00->field_0047;
+                   (int)this_00->field_0047);
         if (local_34 <= local_3c) {
           iVar15 = (local_3c - local_34) + 1;
           psVar14 = local_c;
@@ -329,7 +329,7 @@ LAB_0041862b:
      ((this_00->field_0041 != sVar3 || (this_00->field_0043 != sVar10)))) {
     sVar3 = (*this_00->vtable->vfunc_10)
                       (this_00->field_0041,this_00->field_0043,(int)this_00->field_0045,sVar3,sVar10
-                       ,local_c);
+                       ,st::machine_word_boundary_cast<undefined4>(local_c));
     uVar5 = st::fn_004030B2(this_00,sVar3);
     if ((short)uVar5 != this_00->field_006C) {
       st::fn_004021E9(this_00,this_00->field_006C,(short)uVar5);

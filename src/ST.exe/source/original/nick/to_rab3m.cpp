@@ -33,10 +33,10 @@ int __thiscall st::fn_0062CCA0(STManRub3C *this,STMessage *message)
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_rab3m.cpp",0x4e,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_rab3m.cpp"),0x4e,0,iVar3,st::mutable_c_string("%s"),
                                "STManRub3C::GetMessage");
     if (iVar4 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x50);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\nick\\to_rab3m.cpp"),0x50);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -140,12 +140,12 @@ uint __thiscall st::fn_0062CF90(STManRub3C *this,int *param_1)
     return local_10;
   }
   g_currentExceptionFrame = local_74.previous;
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\nick\\to_rab3m.cpp",0x86,0,iVar4,"%s",
+  iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_rab3m.cpp"),0x86,0,iVar4,st::mutable_c_string("%s"),
                              "STManRub3C::AddNewRub3");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar4,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x88);
+  st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\nick\\to_rab3m.cpp"),0x88);
   return 0xffff;
 }
 
@@ -206,12 +206,12 @@ st::fn_0062D910
   pSVar3 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_7c.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\nick\\to_rab3m.cpp",0x1c8,0,iVar4,"%s",
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_rab3m.cpp"),0x1c8,0,iVar4,st::mutable_c_string("%s"),
                                "STManRub3C::AddNewDock");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x1ca);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\nick\\to_rab3m.cpp"),0x1ca);
     return 0xffff;
   }
   if (local_8->field_0030[param_1 + 8] == 0) {
@@ -297,12 +297,12 @@ st::fn_0062DD80(STManRub3C *this,int param_1,int param_2,int param_3,int param_4
   pSVar3 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\nick\\to_rab3m.cpp",0x24d,0,iVar4,"%s",
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_rab3m.cpp"),0x24d,0,iVar4,st::mutable_c_string("%s"),
                                "STManRub3C::AddNewColl3");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x24f);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\nick\\to_rab3m.cpp"),0x24f);
     return 0xffff;
   }
   if (local_c->field_0030[param_1 + 0x10] == 0) {

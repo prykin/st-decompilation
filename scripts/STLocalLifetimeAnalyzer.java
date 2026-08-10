@@ -261,8 +261,13 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             if (!different && !isolate) continue;
             boolean manual = symbolSource == SourceType.USER_DEFINED ||
                 symbolSource == SourceType.IMPORTED;
+            boolean neutralPointerRefinement = neutralVoidPointer(currentType);
+            boolean closedNeutralPointerUse = !neutralPointerRefinement ||
+                completeNeutralPointerConsumerEvidence(
+                    groups.get(entry.getKey()), selected);
             boolean apply = (different || isolate) && !manual &&
-                selected.score >= automaticThreshold(selected);
+                selected.score >= automaticThreshold(selected) &&
+                closedNeutralPointerUse;
             if (!merged) singleGroupProposals++;
             String confidence = apply ? "high" :
                 manual ? "manual" : different ? "review" : "existing";
@@ -274,7 +279,11 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                     "; exact type matches merged local but heterogeneous siblings require isolation") +
                 (manual ? "; manual/imported HighSymbol preserved" : "") +
                 (selected.score < automaticThreshold(selected) ?
-                    "; one-way call conversion alone is review-only" : "");
+                    "; one-way call conversion alone is review-only" : "") +
+                (!closedNeutralPointerUse ?
+                    "; neutral void pointer has an unclassified consumer" : "") +
+                (neutralPointerRefinement && closedNeutralPointerUse ?
+                    "; complete neutral-pointer consumer set agrees" : "");
             rows.add(new Row(apply, function, originalName, entry.getKey(),
                 groups.size(), currentSpecification, symbolSource.toString(),
                 selected.specification, anchor, selected.anchors.size(),
@@ -1024,9 +1033,78 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         if (type == null || Undefined.isUndefined(type)) return true;
         if (!(type instanceof Pointer pointer)) return false;
         DataType pointed = untypedef(pointer.getDataType());
+        if (pointed != null && pointed.getPathName().equals("/void")) return true;
         while (pointed instanceof Pointer nested)
             pointed = untypedef(nested.getDataType());
         return pointed == null || Undefined.isUndefined(pointed);
+    }
+
+    private boolean neutralVoidPointer(DataType type) {
+        type = untypedef(type);
+        if (!(type instanceof Pointer pointer)) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        return pointed != null && pointed.getPathName().equals("/void");
+    }
+
+    /**
+     * A local void pointer is intentionally neutral until its complete SSA
+     * lifetime says otherwise.  Two agreeing call arguments are sufficient
+     * only when every descendant is either that exact typed call boundary or
+     * a representation-neutral pointer operation.  Dereferences, arithmetic,
+     * returns, stores, casts, and untyped calls remain review-only: one consumer
+     * must never specialize a heterogeneous allocator/result lifetime.
+     */
+    private boolean completeNeutralPointerConsumerEvidence(List<Object> varnodes,
+            TypeEvidence selected) {
+        if (!selected.sources.equals(Set.of("call_argument")) ||
+                selected.anchors.size() < 2) return false;
+        try {
+            for (Object varnode : varnodes) {
+                @SuppressWarnings("unchecked")
+                Iterator<Object> descendants = (Iterator<Object>)varnode.getClass()
+                    .getMethod("getDescendants").invoke(varnode);
+                while (descendants.hasNext()) {
+                    Object op = descendants.next();
+                    String operation = mnemonic(op);
+                    if (operation.equals("CALL")) {
+                        if (!neutralPointerCallAgrees(op, varnode,
+                                selected.specification)) return false;
+                        continue;
+                    }
+                    if (Set.of("COPY", "MULTIEQUAL", "INDIRECT", "CAST",
+                            "INT_EQUAL", "INT_NOTEQUAL").contains(operation))
+                        continue;
+                    return false;
+                }
+            }
+            return true;
+        }
+        catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    private boolean neutralPointerCallAgrees(Object op, Object varnode,
+            String specification) throws Exception {
+        CallTarget target = callTarget(op);
+        if (target == null) return false;
+        int inputCount = ((Number)op.getClass()
+            .getMethod("getNumInputs").invoke(op)).intValue();
+        SignatureParameters signature = signatureParameters(target, inputCount - 1);
+        if (signature == null) return false;
+        boolean observed = false;
+        for (int slot = 1; slot < inputCount; slot++) {
+            Object input = op.getClass().getMethod("getInput", int.class)
+                .invoke(op, slot);
+            if (!sameLifetime(input, varnode)) continue;
+            observed = true;
+            Parameter parameter = signature.parameters[slot - 1];
+            String required = typeSpecification(parameter.getDataType());
+            if (!trustedParameter(signature.function, parameter) ||
+                    !equivalentLifetimeSpecifications(required, specification))
+                return false;
+        }
+        return observed;
     }
 
     private DataType untypedef(DataType type) {

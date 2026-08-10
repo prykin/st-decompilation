@@ -14,7 +14,7 @@ void __thiscall st::fn_00589B50(STOctopusC *this,uint param_1)
   int iVar3;
 
   if (7 < param_1) {
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_oct.cpp",0x71,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_oct.cpp"),0x71,0,0,st::mutable_c_string("%s"),
                                "STOctopusC::SetSprRange - Bad direction");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -88,12 +88,12 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
   this_00 = local_28;
   if (local_EAX_45 != 0) {
     g_currentExceptionFrame = local_88.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_oct.cpp",0x1cf,0,local_EAX_45,
-                               "%s","STOctopusC::GetMessage");
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_oct.cpp"),0x1cf,0,local_EAX_45,
+                               st::mutable_c_string("%s"),"STOctopusC::GetMessage");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_45,0,"E:\\__titans\\Igor\\to_oct.cpp",0x1d0);
+    st::fn_006A5E40(local_EAX_45,0,st::mutable_c_string("E:\\__titans\\Igor\\to_oct.cpp"),0x1d0);
     return 0xffff;
   }
   st::fn_00404F07(local_28,message);
@@ -138,7 +138,7 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
                                  (int)(short)((message->arg1).words.low * 0xc9 + 100),
                                  (int)(short)((message->arg0).words.high * 0xc9 + 100),
                                  (int)(short)((message->arg1).words.high * 0xc9 + 100),
-                                 (undefined2 *)&local_1c,local_24,(short *)&local_20);
+                                 (undefined2 *)&local_1c,st::pointer_boundary_cast<undefined2 *>(local_24),(short *)&local_20);
       if (iVar9 == 0) {
         g_currentExceptionFrame = local_88.previous;
         return 0;
@@ -153,7 +153,7 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
       *(int *)&this_00->field_0x251 = (int)(iVar9 + (iVar9 >> 0x1f & 0xfffU)) >> 0xc;
       iVar9 = *(int *)&this_00->field_0x255 * 0x1850;
       *(int *)&this_00->field_0x255 = (int)(iVar9 + (iVar9 >> 0x1f & 0xfffU)) >> 0xc;
-      iVar9 = this_00->field_0259 * 0x1850;
+      iVar9 = st::machine_word_boundary_cast<int>(this_00->field_0259 * 0x1850);
       this_00->field_0259 = (int)(iVar9 + (iVar9 >> 0x1f & 0xfffU)) >> 0xc;
       g_currentExceptionFrame = local_88.previous;
       return 0;
@@ -175,7 +175,7 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
     }
     local_14 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
     local_18 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-    local_c = st::fn_006AAC70(local_10 + 0x96 + local_8);
+    local_c = st::pointer_boundary_cast<AnonShape_00589C10_CECA1FB4 *>(st::fn_006AAC70(local_10 + 0x96 + local_8));
     if (local_14 == nullptr) {
       g_currentExceptionFrame = local_88.previous;
       return 0;
@@ -229,12 +229,12 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
     *(undefined4 *)&local_c->field_0x8a = 0;
     local_c->field_008E = local_8;
     pbVar12 = local_14;
-    pbVar15 = &local_c->field_0x92;
+    pbVar15 = st::pointer_boundary_cast<byte *>(&local_c->field_0x92);
     memmove(pbVar15, pbVar12, local_8); /* compiler REP MOVS byte copy */
     uVar10 = 0;
     *(uint *)(&local_c->field_0x92 + local_8) = local_10;
     pbVar12 = local_18;
-    pbVar15 = &local_c[1].field_0x2 + local_8;
+    pbVar15 = st::pointer_boundary_cast<byte *>(&local_c[1].field_0x2 + local_8);
     memmove(pbVar15, pbVar12, local_10); /* compiler REP MOVS byte copy */
     st::fn_004025F9
               (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
@@ -293,18 +293,18 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
     switch(*(undefined4 *)&this_00->field_0x2a5) {
     case 0xf8:
       iVar9 = st::fn_00404183
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"octopus2",
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("octopus2"),
                          CASE_1D);
       if (iVar9 != 0) {
         iVar9 = 0xe9;
 cf_error_exit_0058A005:
         st::fn_006A5E40
-                  (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_oct.cpp",iVar9);
+                  (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_oct.cpp"),iVar9);
       }
       break;
     case 0xf9:
       iVar9 = st::fn_00404183
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"octopus1",
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("octopus1"),
                          CASE_1D);
       if (iVar9 != 0) {
         iVar9 = 0xe4;
@@ -313,7 +313,7 @@ cf_error_exit_0058A005:
       break;
     case 0xfa:
       iVar9 = st::fn_00404183
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"medusa2",
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("medusa2"),
                          CASE_1D);
       if (iVar9 != 0) {
         iVar9 = 0xf3;
@@ -322,7 +322,7 @@ cf_error_exit_0058A005:
       break;
     case 0xfb:
       iVar9 = st::fn_00404183
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"medusa1",
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("medusa1"),
                          CASE_1D);
       if (iVar9 != 0) {
         iVar9 = 0xee;
@@ -439,7 +439,7 @@ void __thiscall st::fn_0058A8D0(STOctopusC *this)
   iVar3 = (int)g_worldGrid.sizeY;
   iVar4 = (int)g_worldGrid.sizeX;
   if (7 < this->field_02A9) {
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_oct.cpp",0x21a,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_oct.cpp"),0x21a,0,0,st::mutable_c_string("%s"),
                                "STOctopusC::Bad direction");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */

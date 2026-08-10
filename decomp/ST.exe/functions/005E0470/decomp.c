@@ -66,7 +66,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_02D1);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_0362);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_03F3);
-  puVar4 = this_00->field_02BD;
+  puVar4 = &this_00->field_02BD;
   iVar7 = 4;
   do {
     if (-1 < (int)*puVar4) {

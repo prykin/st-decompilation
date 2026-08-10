@@ -14,22 +14,23 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
   int uVar6;
   int iVar5;
   uint uVar7;
-  dword dVar8;
-  short sVar9;
-  int iVar10;
-  short sVar11;
-  int iVar12;
+  STBoatC_field_06F7State SVar8;
+  dword dVar9;
+  short sVar10;
+  int iVar11;
+  short sVar12;
   int iVar13;
-  undefined4 *puVar14;
+  int iVar14;
   undefined4 *puVar15;
   undefined4 *puVar16;
-  int *piVar17;
+  undefined4 *puVar17;
+  int *piVar18;
 
   if (STField<int>(this,0x5ac) == 0x6c) {
     iVar4 = thunk_FUN_004e9930((int)this);
-    if ((((iVar4 == 0) || (iVar12 = STField<int>(this,0x61b), iVar12 == 0)) ||
-        (*(int *)(iVar12 + 0x20) != 1000)) ||
-       ((*(int *)(iVar12 + 0x4d8) != 0xffff || (g_worldGrid.sizeZ + -1 <= *(int *)(iVar12 + 0x5b8)))
+    if ((((iVar4 == 0) || (iVar13 = STField<int>(this,0x61b), iVar13 == 0)) ||
+        (*(int *)(iVar13 + 0x20) != 1000)) ||
+       ((*(int *)(iVar13 + 0x4d8) != 0xffff || (g_worldGrid.sizeZ + -1 <= *(int *)(iVar13 + 0x5b8)))
        )) {
       bVar2 = false;
     }
@@ -38,24 +39,24 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
     }
   }
   else {
-    dVar8 = param_1->slot_2C();
-    if (((int)dVar8 < 1) || (dVar8 = param_1->slot_2C(), 0x28 < (int)dVar8)) {
-      dVar8 = param_1->slot_2C();
-      if (((int)dVar8 < 0x32) || (dVar8 = param_1->slot_2C(), 0x73 < (int)dVar8))
+    dVar9 = param_1->slot_2C();
+    if (((int)dVar9 < 1) || (dVar9 = param_1->slot_2C(), 0x28 < (int)dVar9)) {
+      dVar9 = param_1->slot_2C();
+      if (((int)dVar9 < 0x32) || (dVar9 = param_1->slot_2C(), 0x73 < (int)dVar9))
       {
-        iVar12 = 100;
+        iVar13 = 100;
       }
       else {
         uVar6 = LookupRecordByte(*(char *)&param_1->field_0024);
-        dVar8 = param_1->slot_2C();
-        iVar12 = *(int *)(&DAT_007e37b0 + ((uint)(byte)uVar6 + dVar8 * 3) * 4);
+        dVar9 = param_1->slot_2C();
+        iVar13 = *(int *)(&DAT_007e37b0 + ((uint)(byte)uVar6 + dVar9 * 3) * 4);
       }
     }
     else {
-      dVar8 = param_1->slot_2C();
-      iVar12 = *(int *)(&DAT_007e0d9c + dVar8 * 4);
+      dVar9 = param_1->slot_2C();
+      iVar13 = *(int *)(&DAT_007e0d9c + dVar9 * 4);
     }
-    if (((STField<int>(this,0x4d0) * 100) / 100 < iVar12) || (STField<int>(this,0x42c) == 0))
+    if (((STField<int>(this,0x4d0) * 100) / 100 < iVar13) || (STField<int>(this,0x42c) == 0))
     {
       bVar2 = false;
     }
@@ -65,58 +66,59 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
   }
   if (((STField<int>(this,0x4d8) == 0xffff) && (bVar2)) && (STField<int>(this,0x245) == 0)) {
     if (STField<int>(this,0x5ac) == 0x6c) {
-      iVar13 = STField<int>(this,0x61b);
+      iVar14 = STField<int>(this,0x61b);
       STField<undefined4>(this,0x4e4) = 0xffffffff;
       STField<undefined4>(this,0x4e8) = 0xffffffff;
       STField<undefined4>(this,0x4ec) = 0xffffffff;
-      iVar10 = *(int *)(iVar13 + 0x5b4);
-      iVar12 = iVar10 + 1;
-      if (iVar10 <= iVar12) {
-        iVar1 = *(int *)(iVar13 + 0x5b0);
+      iVar11 = *(int *)(iVar14 + 0x5b4);
+      iVar13 = iVar11 + 1;
+      if (iVar11 <= iVar13) {
+        iVar1 = *(int *)(iVar14 + 0x5b0);
         do {
           if (iVar1 <= iVar1 + 1) {
-            sVar11 = *(short *)(iVar13 + 0x5b8) + 1;
+            sVar12 = *(short *)(iVar14 + 0x5b8) + 1;
             iVar5 = iVar1;
             do {
               sVar3 = (short)iVar5;
               if (((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
-                   (sVar9 = (short)iVar10, sVar9 < 0)) ||
-                  ((g_worldGrid.sizeY <= sVar9 || (sVar11 < 0)))) ||
-                 ((g_worldGrid.sizeZ <= sVar11 ||
-                  (STGridAt3D(g_worldGrid, sVar3, sVar9, sVar11).objects[0] == nullptr)))) {
+                   (sVar10 = (short)iVar11, sVar10 < 0)) ||
+                  ((g_worldGrid.sizeY <= sVar10 || (sVar12 < 0)))) ||
+                 ((g_worldGrid.sizeZ <= sVar12 ||
+                  (STGridAt3D(g_worldGrid, sVar3, sVar10, sVar12).objects[0] ==
+                   nullptr)))) {
                 STField<int>(this,0x4e4) = iVar5;
-                STField<int>(this,0x4e8) = iVar10;
-                STField<int>(this,0x4ec) = *(int *)(iVar13 + 0x5b8) + 1;
+                STField<int>(this,0x4e8) = iVar11;
+                STField<int>(this,0x4ec) = *(int *)(iVar14 + 0x5b8) + 1;
                 goto LAB_004e946f;
               }
               iVar5 = iVar5 + 1;
             } while (iVar5 <= iVar1 + 1);
           }
-          iVar10 = iVar10 + 1;
-        } while (iVar10 <= iVar12);
+          iVar11 = iVar11 + 1;
+        } while (iVar11 <= iVar13);
       }
     }
     else {
-      piVar17 = (int *)((int)this + 0x4f0);
-      puVar16 = (undefined4 *)((int)this + 0x4ec);
+      piVar18 = (int *)((int)this + 0x4f0);
+      puVar17 = (undefined4 *)((int)this + 0x4ec);
       uVar7 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
-      puVar15 = (undefined4 *)((int)this + 0x4e8);
+      puVar16 = (undefined4 *)((int)this + 0x4e8);
       STField<uint>(this,0x1c) = uVar7;
-      puVar14 = (undefined4 *)((int)this + 0x4e4);
+      puVar15 = (undefined4 *)((int)this + 0x4e4);
       uVar7 = uVar7 >> 0x10;
-      iVar12 = STField<int>(this,0x438);
-      iVar13 = STField<int>(this,0x434);
-      iVar10 = STField<int>(this,0x430);
-      dVar8 = param_1->slot_2C();
-      thunk_FUN_004b2520(STField<uint>(this,0x24),dVar8,iVar10,iVar13,iVar12,puVar14,puVar15,
-                         puVar16,uVar7,piVar17);
+      iVar13 = STField<int>(this,0x438);
+      iVar14 = STField<int>(this,0x434);
+      iVar11 = STField<int>(this,0x430);
+      SVar8 = param_1->slot_2C();
+      thunk_FUN_004b2520(STField<uint>(this,0x24),SVar8,iVar11,iVar14,iVar13,puVar15,puVar16,
+                         puVar17,uVar7,piVar18);
     }
 LAB_004e946f:
     if (((-1 < STField<int>(this,0x4e4)) && (-1 < STField<int>(this,0x4e8))) &&
        (-1 < STField<int>(this,0x4ec))) {
       STField<int>(this,0x4d8) = param_1->field_0018;
-      dVar8 = param_1->slot_2C();
-      STField<dword>(this,0x4dc) = dVar8;
+      dVar9 = param_1->slot_2C();
+      STField<dword>(this,0x4dc) = dVar9;
       if (DAT_00800bcc == nullptr) {
         thunk_FUN_004d0f00();
       }

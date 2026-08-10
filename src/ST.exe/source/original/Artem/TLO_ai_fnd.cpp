@@ -168,33 +168,34 @@ int st::fn_004B33D0(uint param_1,int *param_2)
   short temp_3f7606bb67;
 
   local_8 = 0xffffffff;
-  puStack_c = &DAT_00790a90;
-  puStack_10 = &st_image_0072D964;
+  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790a90);
+  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  local_1c = &stack0xfffffc94;
+  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffc94);
   local_2c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_2c0;
   ExceptionList = &local_14;
   local_EAX_82 = st::fn_0072D7F0
-                           (local_2c0.jumpBuffer,2,st::fn_0072DA21,0xffffffff);
-  local_1c = &stack0xfffffc94;
+                           (local_2c0.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,
+                            0xffffffff);
+  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffc94);
   if (local_EAX_82 != 0) {
     g_currentExceptionFrame = local_2c0.previous;
     local_EAX_11609 =
-         st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x3c1,0,local_EAX_82,
-                            "%s","TLOAiBldPlacesFind error !");
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_ai_fnd.cpp"),0x3c1,0,local_EAX_82,
+                            st::mutable_c_string("%s"),"TLOAiBldPlacesFind error !");
     if (local_EAX_11609 == 0) {
-      st::fn_006A5E40(local_EAX_82,0,"E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x3c2);
+      st::fn_006A5E40(local_EAX_82,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_ai_fnd.cpp"),0x3c2);
       ExceptionList = local_14;
       return local_EAX_82;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  local_1c = &stack0xfffffc94;
+  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffc94);
   if (param_2 == nullptr) {
-    local_1c = &stack0xfffffc94;
+    local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffc94);
     st::fn_006A5E40
-              (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x5d);
+              (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_ai_fnd.cpp"),0x5d);
   }
   if (param_2[3] == 0) {
     pDVar10_mg0 = st::fn_006AE290(nullptr,10,0x14,10);
@@ -213,8 +214,8 @@ int st::fn_004B33D0(uint param_1,int *param_2)
   iVar10 = st::fn_006B1190((DArrayTy *)param_2[3],(byte *)local_108);
   if (-1 < iVar10) {
     do {
-      local_4c[*(int *)(&DAT_00790888 + local_108[0] * 4)] =
-           local_4c[*(int *)(&DAT_00790888 + local_108[0] * 4)] + 1;
+      local_4c[*(int *)(&DAT_00790888 + local_108[0] * 4)] =st::machine_word_boundary_cast<int>(
+           local_4c[*(int *)(&DAT_00790888 + local_108[0] * 4)] + 1);
       if (*(int *)(&DAT_00791d68 + local_108[0] * 4) == 1) {
         iVar20 = iVar20 + 1;
       }
@@ -389,7 +390,7 @@ LAB_004b3895:
           local_a0 = local_108[0];
           local_90 = local_f8;
           st::fn_006AE1C0((DArrayTy *)param_2[5],&local_a0);
-          local_4c[0] = local_4c[0] + -1;
+          local_4c[0] = st::machine_word_boundary_cast<int>(local_4c[0] + -1);
           st::fn_006B0C70((DArrayTy *)param_2[3],((DArrayTy *)param_2[3])->iteratorIndex - 1);
         }
         if (local_4c[0] == 0) break;
@@ -518,7 +519,7 @@ switchD_004b38f0_caseD_3a:
             local_98 = local_138;
             local_94 = local_254[0];
             st::fn_006AE1C0((DArrayTy *)param_2[5],&local_a0);
-            local_4c[1] = local_4c[1] + -1;
+            local_4c[1] = st::machine_word_boundary_cast<int>(local_4c[1] + -1);
             st::fn_006B0C70((DArrayTy *)param_2[3],((DArrayTy *)param_2[3])->iteratorIndex - 1);
           }
           if (local_4c[1] == 0) break;
@@ -566,14 +567,14 @@ cf_break_loop_004B60CD:
     *(undefined1 *)puVar28 = 0xff;
     puVar28 = (undefined4 *)((int)puVar28 + 1);
   }
-  local_27c = &stack0xfffffc94;
+  local_27c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffc94);
   iVar20 = local_144;
   iVar15 = local_140;
   iVar23 = local_13c;
-  local_1c = &stack0xfffffc94;
+  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffc94);
   if (local_4c[2] != 0) {
-    local_27c = &stack0xfffffc94;
-    local_1c = &stack0xfffffc94;
+    local_27c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffc94);
+    local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xfffffc94);
     pDVar10_mg7 = st::fn_006AE290(nullptr,10,0xc,10);
     local_22c = pDVar10_mg7;
     if ((g_array_007FA16C != nullptr) && (uVar24 = 0, 0 < (int)g_array_007FA16C->count)) {
@@ -678,7 +679,7 @@ cf_break_loop_004B60CD:
   local_13c = iVar23;
   local_140 = iVar15;
   local_144 = iVar20;
-  local_54 = local_4c[10] + local_4c[8] + local_4c[9] + local_4c[7] + local_4c[4] + 5 + local_4c[6];
+  local_54 = st::machine_word_boundary_cast<int>(local_4c[10] + local_4c[8] + local_4c[9] + local_4c[7] + local_4c[4] + 5 + local_4c[6]);
   local_20_mg0 = st::fn_006AE290(nullptr,10,0x30,10);
   local_64 = 0;
   local_114 = 0;
@@ -785,14 +786,14 @@ cf_continue_loop_004B48CC:
         for (local_74 = 0; local_74 < local_64 * 8; local_74 = local_74 + 1) {
           if (local_74 < local_64 * 2) {
             local_11c = (*param_2 - local_64) + local_74;
-            local_138 = param_2[1] - local_64;
+            local_138 = st::machine_word_boundary_cast<int>(param_2[1] - local_64);
 LAB_004b4958:
           }
           else {
             if (local_64 * 4 <= local_74) {
               if (local_74 < local_64 * 6) {
                 local_11c = (local_64 * 5 - local_74) + *param_2;
-                local_138 = param_2[1] + local_64;
+                local_138 = st::machine_word_boundary_cast<int>(param_2[1] + local_64);
               }
               else {
                 local_11c = *param_2 - local_64;
@@ -801,7 +802,7 @@ LAB_004b4958:
               goto LAB_004b4958;
             }
             local_11c = local_64 + *param_2;
-            local_138 = param_2[1] + local_64 * -3 + local_74;
+            local_138 = st::machine_word_boundary_cast<int>(param_2[1] + local_64 * -3 + local_74);
           }
           if ((((-1 < local_11c) && (local_11c < g_worldGrid.sizeX)) && (-1 < local_138)) &&
              (local_138 < g_worldGrid.sizeY)) {
@@ -1046,14 +1047,14 @@ LAB_004b5614:
                                 st::fn_006B0C70((DArrayTy *)param_2[3],
                                                ((DArrayTy *)param_2[3])->iteratorIndex - 1);
                                 if (local_108[0] == 0x3a) {
-                                  local_4c[2] = local_4c[2] + -1;
+                                  local_4c[2] = st::machine_word_boundary_cast<int>(local_4c[2] + -1);
                                   local_144 = local_11c;
                                   local_140 = local_138;
                                   local_13c = local_254[0];
                                   st::fn_006AE1C0(local_22c,&local_144);
                                 }
                                 else if (local_108[0] == 100) {
-                                  local_4c[3] = local_4c[3] + -1;
+                                  local_4c[3] = st::machine_word_boundary_cast<int>(local_4c[3] + -1);
                                   local_144 = local_11c;
                                   local_140 = local_138;
                                   local_13c = local_254[0];
@@ -1061,10 +1062,10 @@ LAB_004b5614:
                                 }
                                 else if ((*(int *)(&DAT_00790888 + local_108[0] * 4) == 1) &&
                                         (local_4c[1] != 0)) {
-                                  local_4c[1] = local_4c[1] + -1;
+                                  local_4c[1] = st::machine_word_boundary_cast<int>(local_4c[1] + -1);
                                 }
                                 else {
-                                  local_4c[6] = local_4c[6] + -1;
+                                  local_4c[6] = st::machine_word_boundary_cast<int>(local_4c[6] + -1);
                                 }
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) == 1) {
                                   local_10c = local_10c + -1;
@@ -1154,7 +1155,7 @@ LAB_004b50f4:
                               local_140 = local_138;
                               local_13c = local_254[0];
                               st::fn_006AE1C0((DArrayTy *)*piVar18,&local_144);
-                              local_4c[7] = local_4c[7] + -1;
+                              local_4c[7] = st::machine_word_boundary_cast<int>(local_4c[7] + -1);
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != 1)
                               goto LAB_004b5f7b;
                               local_10c = local_10c + -1;
@@ -1231,7 +1232,7 @@ LAB_004b51da:
                                 local_140 = local_138;
                                 local_13c = local_254[0];
                                 st::fn_006AE1C0((DArrayTy *)*piVar18,&local_144);
-                                local_4c[8] = local_4c[8] + -1;
+                                local_4c[8] = st::machine_word_boundary_cast<int>(local_4c[8] + -1);
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != 1)
                                 goto LAB_004b5f7b;
                                 local_10c = local_10c + -1;
@@ -1313,7 +1314,7 @@ LAB_004b52b6:
                                 local_140 = local_138;
                                 local_13c = local_254[0];
                                 st::fn_006AE1C0((DArrayTy *)*piVar18,&local_144);
-                                local_4c[9] = local_4c[9] + -1;
+                                local_4c[9] = st::machine_word_boundary_cast<int>(local_4c[9] + -1);
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != 1)
                                 goto LAB_004b5f7b;
                                 local_10c = local_10c + -1;
@@ -1456,7 +1457,7 @@ LAB_004b52b6:
                                 local_140 = local_138;
                                 local_13c = local_254[0];
                                 st::fn_006AE1C0((DArrayTy *)*piVar18,&local_144);
-                                local_4c[10] = local_4c[10] + -1;
+                                local_4c[10] = st::machine_word_boundary_cast<int>(local_4c[10] + -1);
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) == 1) {
                                   local_10c = local_10c + -1;
                                   uVar24 = 0;
@@ -1517,15 +1518,15 @@ LAB_004b5fd6:
       do {
         if (local_74 < local_64 * 2) {
           local_11c = (*param_2 - local_64) + local_74;
-          local_138 = param_2[1] - local_64;
+          local_138 = st::machine_word_boundary_cast<int>(param_2[1] - local_64);
         }
         else if (local_74 < local_64 * 4) {
           local_11c = local_64 + *param_2;
-          local_138 = param_2[1] + local_64 * -3 + local_74;
+          local_138 = st::machine_word_boundary_cast<int>(param_2[1] + local_64 * -3 + local_74);
         }
         else if (local_74 < local_64 * 6) {
           local_11c = (local_64 * 5 - local_74) + *param_2;
-          local_138 = param_2[1] + local_64;
+          local_138 = st::machine_word_boundary_cast<int>(param_2[1] + local_64);
         }
         else {
           local_11c = *param_2 - local_64;
@@ -1604,7 +1605,7 @@ LAB_004b432d:
                      (iVar23 = (int)local_a8[0], iVar23 == local_254[0])) {
                     piVar18 = local_f4;
                     memset(piVar18, 0, 0x30); /* compiler bulk-zero initialization */
-                    piVar18 = (undefined4 *)((byte *)piVar18 + 0x30);
+                    piVar18 = st::pointer_boundary_cast<int *>((undefined4 *)((byte *)piVar18 + 0x30));
                     local_f4[0] = 1;
                     local_f4[1] = iVar20;
                     local_f4[2] = iVar15;
@@ -1665,7 +1666,7 @@ LAB_004b4634:
               }
             }
 LAB_004b463a:
-            local_254[0] = local_254[0] + 1;
+            local_254[0] = st::machine_word_boundary_cast<int>(local_254[0] + 1);
           } while (local_254[0] < g_worldGrid.sizeZ);
         }
         local_74 = local_74 + 1;
@@ -1691,7 +1692,7 @@ LAB_004b56e4:
   piVar18[2] = local_138;
   piVar18[3] = local_254[0];
 LAB_004b5727:
-  iVar20 = local_4c[4] + -1;
+  iVar20 = st::machine_word_boundary_cast<int>(local_4c[4] + -1);
   local_4c[4] = iVar20;
   local_10c = local_10c + -1;
   iVar15 = 0;
@@ -1712,7 +1713,7 @@ LAB_004b5727:
     goto cf_continue_loop_004B48CC;
   }
 cf_continue_loop_004B5FB6:
-  local_254[0] = local_254[0] + 1;
+  local_254[0] = st::machine_word_boundary_cast<int>(local_254[0] + 1);
   if (g_worldGrid.sizeZ + -1 <= local_254[0]) goto LAB_004b5fd6;
   goto LAB_004b49b4;
 }

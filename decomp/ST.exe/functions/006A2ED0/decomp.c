@@ -40,7 +40,8 @@ byte * __cdecl FUN_006a2ed0(short *param_1)
   }
   else {
     local_14 = (HoloTy *)FUN_006dbca0(pAVar2);
-    if (local_14 != nullptr) goto LAB_006a2f2f;
+    if ((AnonShape_006DBCA0_EF06575F *)local_14 != nullptr)
+    goto LAB_006a2f2f;
   }
   RaiseInternalException
             (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Maps\\prepare.cpp",0xcf);

@@ -20,7 +20,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this)
   int iVar3;
   int iVar4;
   int iVar5;
-  uint *puVar6;
+  int *piVar6;
   InternalExceptionFrame local_50;
   SIDTy *local_c;
   int local_8;
@@ -48,13 +48,13 @@ void __thiscall SIDTy::NoneSID(SIDTy *this)
     FindNextChangeNotification(this_00->field_1CC4);
     PrepFiles(this_00);
     this_00->field_002D = 5;
-    puVar6 = this_00->field_1AF1;
+    piVar6 = &this_00->field_1AF1;
     iVar5 = 2;
     do {
-      if (*puVar6 != 0) {
-        FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x1d);
+      if (*piVar6 != 0) {
+        FUN_006e6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x1d);
       }
-      puVar6 = puVar6 + 1;
+      piVar6 = piVar6 + 1;
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);
   }

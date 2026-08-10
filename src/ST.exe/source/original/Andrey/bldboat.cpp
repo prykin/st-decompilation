@@ -63,10 +63,10 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
   this_00 = local_1c;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_b8.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\Andrey\\bldboat.cpp",0x3f,0,iVar8,"%s",
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\bldboat.cpp"),0x3f,0,iVar8,st::mutable_c_string("%s"),
                                "BldBoatPanelTy::InitBldBoatPanel");
     if (iVar7 == 0) {
-      st::fn_006A5E40(iVar8,0,"E:\\__titans\\Andrey\\bldboat.cpp",0x3f);
+      st::fn_006A5E40(iVar8,0,st::mutable_c_string("E:\\__titans\\Andrey\\bldboat.cpp"),0x3f);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -76,23 +76,23 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
   puVar12 = &local_1c->field_027A;
   do {
     pDVar3 = st::fn_006AE290(nullptr,10,0x30,5);
-    *puVar12 = pDVar3;
+    *puVar12 = st::machine_word_boundary_cast<undefined4>(pDVar3);
     puVar12 = puVar12 + 1;
     iVar9 = iVar9 + -1;
   } while (iVar9 != 0);
-  this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
-  pcVar4 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,"HOLD_FONT",0);
+  this_00->field_003C = st::machine_word_boundary_cast<undefined4>(this_00->field_003C + (g_nWidth_00806730 + -800) / 2);
+  pcVar4 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,st::mutable_c_string("HOLD_FONT"),0);
   this_00->field_028A = pcVar4;
   pcVar4->field_0058 = 1;
   pcVar4->field_005C = 0;
   iVar9 = 1;
   piVar14 = nullptr;
-  pCVar5 = st::fn_0040577C("BKG_BLDBOATW",0);
+  pCVar5 = st::fn_0040577C(st::mutable_c_string("BKG_BLDBOATW"),0);
   puVar6 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar5,piVar14,iVar9);
   this_00->field_0184 = puVar6;
   text = &this_00->field_006C;
-  pCVar5 = st::fn_0040577C("BKG_BLDBOATBUT",0);
-  st::external_00000080(text,"%s0",pCVar5);
+  pCVar5 = st::fn_0040577C(st::mutable_c_string("BKG_BLDBOATBUT"),0);
+  st::external_00000080(text,st::mutable_c_string("%s0"),pCVar5);
   puVar6 = st::fn_006F1CE0(g_cMf32_00806790,1,text,nullptr,1);
   this_00->field_028E = puVar6;
   if (DAT_0080874d == 0xff) {
@@ -101,14 +101,14 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
   else {
     iVar9 = DAT_0080874d + 1;
   }
-  st::external_00000080(text,"BOATS_%d",iVar9);
+  st::external_00000080(text,st::mutable_c_string("BOATS_%d"),iVar9);
   puVar6 = st::fn_00709AF0
                      (PTR_00806794,CASE_B,text,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar6;
   puVar6 = st::fn_00709AF0
-                     (PTR_00806794,CASE_B,"BOATS_D",0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,st::mutable_c_string("BOATS_D"),0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar6;
-  pCVar5 = st::fn_0040577C("BKG_BLDBOATBUT",0);
+  pCVar5 = st::fn_0040577C(st::mutable_c_string("BKG_BLDBOATBUT"),0);
   st::fn_00404241
             ((ProdPanelTy *)this_00,0x2723,0x3f,2,0xc1,0xc,0x85,99,0x68,0xc4,99,0x20,0x13,0x33,
              pCVar5);
@@ -230,12 +230,12 @@ void __thiscall st::fn_004EF020(BldBoatPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\bldboat.cpp",0x60,0,errorCode,
-                             "%s","BldBoatPanelTy::Update");
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\bldboat.cpp"),0x60,0,errorCode,
+                             st::mutable_c_string("%s"),"BldBoatPanelTy::Update");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\bldboat.cpp",0x60);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\bldboat.cpp"),0x60);
   return;
 }
 
@@ -268,7 +268,7 @@ st::fn_004EF320(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
   local_14 = param_1->field_0018;
   local_1c = *local_14 - this->field_003C;
   if (this->field_005C == 0) {
-    local_c = local_14[1] - DAT_00806734;
+    local_c = st::machine_word_boundary_cast<uint>(local_14[1] - DAT_00806734);
   }
   else {
     local_c = local_14[1] - this->field_0044;
@@ -304,12 +304,12 @@ st::fn_004EF320(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
   iVar1 = local_1c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\bldboat.cpp",0x9e,0,iVar4,"%s",
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\bldboat.cpp"),0x9e,0,iVar4,st::mutable_c_string("%s"),
                                "BldBoatPanelTy::PaintBldBut");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\bldboat.cpp",0x9e);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\bldboat.cpp"),0x9e);
     return;
   }
   st::fn_006B4170((RecoveredSourceFamily_dibcopy *)local_18->field_0068,0,local_1c,local_c,local_14[2],
@@ -327,7 +327,7 @@ st::fn_004EF320(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
   st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar3->field_0068,iVar1,uVar4,'\x06',(byte *)pBVar5);
   if ((((local_8 != nullptr) && (local_8[1] != 0)) &&
       ((char)local_8[2] != 0)) && (param_1->field_0014 != 0)) {
-    st::external_00000080(&pBVar3->field_006C,"%d",local_8[1]);
+    st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pBVar3->field_006C),st::mutable_c_string("%d"),local_8[1]);
     st::fn_00710A90(pBVar3->field_028A,pBVar3->field_0068,0,iVar1,uVar4,local_14[2],local_14[3]);
     st::fn_007119C0(pBVar3->field_028A,&pBVar3->field_006C,-2,-1,0);
   }
@@ -377,12 +377,12 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\bldboat.cpp",0xec,0,iVar4,"%s",
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\bldboat.cpp"),0xec,0,iVar4,st::mutable_c_string("%s"),
                                "BldBoatPanelTy::GetMessage");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\bldboat.cpp",0xec);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\bldboat.cpp"),0xec);
     return 0xffff;
   }
   if (message->id == MESS_ID_CREATE) {
@@ -393,7 +393,7 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
   if (SVar1 < 0xb203) {
     if (SVar1 == MESS_SHARED_B202) {
       st::fn_00401CE4
-                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,st::fn_00402E7D);
+                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,st::pointer_boundary_cast<undefined *>(st::fn_00402E7D));
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -435,7 +435,7 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
         sStack_f = 0;
         uStack_d = 0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        _local_14 = CONCAT31((int3)*puVar6,1);
+        auto _local_14 = CONCAT31((int3)*puVar6,1);
         local_10 = (undefined1)((uint)*puVar6 >> 0x18);
         local_c = 0;
         local_a = 0;
@@ -457,7 +457,7 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
       }
       break;
     case MESS_BLDLABPANELTY_C0A4:
-      this_00->field_0199 = message->arg0;
+      this_00->field_0199 = static_cast<undefined4>((message->arg0).u32);
       st::fn_00403C6A(this_00);
       st::fn_00405E2F(0xae);
       g_currentExceptionFrame = local_58.previous;

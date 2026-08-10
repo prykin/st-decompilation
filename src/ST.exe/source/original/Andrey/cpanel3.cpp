@@ -45,12 +45,12 @@ void __thiscall st::fn_005040A0(CPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cpanel3.cpp",0x13,0,iVar3,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel3.cpp"),0x13,0,iVar3,st::mutable_c_string("%s"),
                              "CPanelTy::PaintMap");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\cpanel3.cpp",0x13);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\cpanel3.cpp"),0x13);
   return;
 }
 
@@ -178,12 +178,12 @@ void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
       return;
     }
     g_currentExceptionFrame = local_68.previous;
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cpanel3.cpp",0x2a,0,iVar6,"%s",
+    iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel3.cpp"),0x2a,0,iVar6,st::mutable_c_string("%s"),
                                "CPanelTy::UpdateStackPanel");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar6,0,"E:\\__titans\\Andrey\\cpanel3.cpp",0x2a);
+    st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\Andrey\\cpanel3.cpp"),0x2a);
   }
   return;
 }

@@ -75,7 +75,7 @@ STBoatC::GetExplosionInfo
               (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d50);
   }
-  puVar4 = (undefined4 *)thunk_FUN_0041dc40(&local_3c,(short)local_34,local_30,pSVar3->field_006C);
+  puVar4 = thunk_FUN_0041dc40(&local_3c,(short)local_34,local_30,pSVar3->field_006C);
   uVar9 = *puVar4;
   local_30 = *(ushort *)(puVar4 + 1);
   *param_2 = pSVar3->field_0041 + (short)uVar9;

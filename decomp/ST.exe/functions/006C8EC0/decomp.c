@@ -3,11 +3,19 @@
 
 /* [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_006C8EC0_param_3Enum. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
+   [STAbiConsistencyApplier] stack_parameter_scalar_role target=parameter:3: parameter=/int
+   Evidence: generic pointer has a scalar-only incoming lifetime before its first slot overwrite:
+   frame_offset=0x14, direct_reads=4, scalar_operations=3, signed_comparisons=2, unsigned_bounds=0,
+   pointer_dereferences=0, slot_reused=true; sites=006C8F72 incoming load: MOV EDX,dword ptr [EBP +
+   0x14] | 006C8FC7 incoming load: MOV ECX,dword ptr [EBP + 0x14] | 006C8FCA scalar operation: SUB
+   ECX,EDX | 006C8FD2 scalar operation: DEC ECX | 006C90B1 incoming load: MOV ESI,dword ptr [EBP +
+   0x14] | 006C90B7 scalar operation: DEC ESI | 006C910C first slot write: MOV dword ptr [EBP +
+   0x14],EAX | 006C933E derived scalar comparison: CMP ECX,dword ptr [EBP + -0x70]; JGE */
 
 undefined4
-FUN_006c8ec0(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,undefined4 *param_4,
-            int param_5,int param_6,int param_7,short *param_8,int param_9,int param_10)
+FUN_006c8ec0(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int param_4,int param_5
+            ,int param_6,int param_7,short *param_8,int param_9,int param_10)
 
 {
   short *psVar1;
@@ -67,7 +75,7 @@ FUN_006c8ec0(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,und
 
   psVar15 = param_8;
   if ((((int)param_8 < 0) || (param_9 < 0)) || (param_10 < 0)) {
-    uVar16 = FUN_006ab090(param_1,param_2,param_3,(int)param_4,param_5,param_6,param_7,(int)param_8,
+    uVar16 = FUN_006ab090(param_1,param_2,param_3,param_4,param_5,param_6,param_7,(int)param_8,
                           param_9,param_10);
     return uVar16;
   }
@@ -78,15 +86,15 @@ FUN_006c8ec0(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,und
   while ((((iVar19 = (int)param_8[-1] + (int)psVar15, iVar19 < 0 || (param_2 <= iVar19)) ||
           ((iVar41 = *param_8 + param_9, iVar41 < 0 ||
            (((int)param_3 <= iVar41 || (iVar20 = param_8[1] + param_10, iVar20 < 0)))))) ||
-         (((int)param_4 <= iVar20 ||
+         ((param_4 <= iVar20 ||
           (*(short *)(param_1 + (iVar41 * param_2 + iVar19 + iVar20 * iVar18) * 2) != 0))))) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_8 = param_8 + 4;
     local_4c_mg0 = (int *)((int)local_4c_mg0 + 1);
     if (0x7ed641 < (int)param_8) {
 LAB_006c8f65:
-      uVar16 = FUN_006ab090(param_1,param_2,param_3,(int)param_4,param_5,param_6,param_7,
-                            (int)psVar15,param_9,param_10);
+      uVar16 = FUN_006ab090(param_1,param_2,param_3,param_4,param_5,param_6,param_7,(int)psVar15,
+                            param_9,param_10);
       return uVar16;
     }
   }
@@ -94,7 +102,7 @@ LAB_006c8f65:
     iVar19 = -param_9;
     uVar42 = param_7 - param_10;
     iVar41 = param_3 - param_9;
-    iVar20 = (int)param_4 + (-1 - param_10);
+    iVar20 = param_4 - param_10;
     iVar21 = param_6 - param_9;
     psVar1 = (short *)(param_1 + ((int)psVar15 + param_2 * param_9 + iVar18 * param_10) * 2);
     local_38 = 0;
@@ -113,7 +121,7 @@ LAB_006c8f65:
            ((param_9 < 1 || (psVar1[-param_2] != 0)))))) &&
          ((((int)(param_3 - CASE_1) <= param_9 || (psVar1[param_2] != 0)) &&
           (((param_10 < 1 || (psVar1[-iVar18] != 0)) &&
-           (((int)param_4 + -1 <= param_10 || (psVar1[iVar18] != 0)))))))) {
+           ((param_4 + -1 <= param_10 || (psVar1[iVar18] != 0)))))))) {
         bVar13 = true;
       }
       else {
@@ -124,10 +132,10 @@ LAB_006c8f65:
     local_48 = local_48 + ((uVar42 ^ (int)uVar42 >> 0x1f) - ((int)uVar42 >> 0x1f));
     local_34 = local_48 * 2 + 10;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = FUN_006b04d0(local_34 * 4);
+    param_4 = (int)FUN_006b04d0(local_34 * 4);
     piVar37 = local_4c_mg0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if ((param_4 == nullptr) ||
+    if (((undefined4 *)param_4 == nullptr) ||
        (local_4c_mg2 = FUN_006bfb70(0x3e84), local_4c_mg2 == nullptr))
     goto cf_break_loop_006CE63A;
     *local_4c_mg2 = 0;
@@ -137,9 +145,9 @@ LAB_006c8f65:
     local_40 = 999;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_9 = -1;
-    *piVar37 = param_4[local_48 + 1];
+    *piVar37 = *(int *)(param_4 + (local_48 + 1) * 4);
     local_18 = (undefined2)iVar21;
-    param_4[local_48 + 1] = piVar37;
+    *(int **)(param_4 + (local_48 + 1) * 4) = piVar37;
     *(short *)(local_4c_mg2 + 2) = (short)(param_5 - (int)psVar15);
     STField<undefined2>(local_4c_mg2,10) = local_18;
     STPiece<0,2>(param_8) = (undefined2)uVar42;
@@ -154,7 +162,7 @@ LAB_006c8f65:
   goto LAB_006c8f65;
 cf_continue_loop_006C9187:
   if (local_34 <= local_48) goto cf_break_loop_006CE641;
-  puVar17 = param_4 + local_48;
+  puVar17 = (undefined4 *)(param_4 + local_48 * 4);
   while (piVar11 = (int *)*puVar17, piVar11 == nullptr) {
     local_48 = local_48 + 1;
     puVar17 = puVar17 + 1;
@@ -163,15 +171,15 @@ cf_continue_loop_006C9187:
   if (local_34 <= local_48) goto cf_break_loop_006CE641;
   if (local_34 <= local_48 + 10) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_4 = FUN_006bfb50(param_4,local_34 * 4 + 400);
+    param_4 = (int)FUN_006bfb50((int *)param_4,local_34 * 4 + 400);
     piVar37 = local_4c_mg0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if (param_4 == nullptr) goto cf_break_loop_006CE63A;
-    memset(param_4 + local_34, 0, 0x190); /* compiler bulk-zero initialization */
+    if ((int *)param_4 == nullptr) goto cf_break_loop_006CE63A;
+    memset((int *)(param_4 + local_34 * 4), 0, 0x190); /* compiler bulk-zero initialization */
     local_34 = local_34 + 100;
   }
   local_54 = 0;
-  param_4[local_48] = 0;
+  *(undefined4 *)(param_4 + local_48 * 4) = 0;
   piVar37 = piVar11;
   do {
     piVar22 = piVar37;
@@ -244,7 +252,7 @@ cf_continue_loop_006C9187:
         }
       }
       local_10 = uVar42;
-      bVar44 = iVar23 < iVar20;
+      bVar44 = iVar23 < iVar20 + -1;
       if (bVar44) {
         local_10 = local_10 & 0xfffffffb;
       }
@@ -293,8 +301,9 @@ cf_continue_loop_006C9187:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar37 = (int *)*piVar38;
-          *piVar38 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar38;
+          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
+          *piVar38 = *piVar39;
+          *piVar39 = (int)piVar38;
           *(short *)(piVar38 + 1) = sVar4 + -1;
           *(short *)(piVar38 + 2) = sVar6;
           STPiece<0,2>(param_3) = (undefined2)iVar35;
@@ -315,8 +324,9 @@ cf_continue_loop_006C9187:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4 + 1;
           *(short *)(piVar37 + 2) = sVar6;
           STPiece<0,2>(param_3) = (undefined2)iVar35;
@@ -339,8 +349,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 3];
-            param_4[iVar35 + iVar24 + 3] = piVar38;
+            piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
             STPiece<0,2>(param_3) = (undefined2)iVar35;
@@ -360,8 +371,9 @@ cf_continue_loop_006C9187:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
           STPiece<0,2>(param_3) = (undefined2)iVar35;
@@ -377,8 +389,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[param_1 + iVar24 + 3];
-            param_4[param_1 + iVar24 + 3] = piVar38;
+            piVar39 = (int *)(param_4 + 0xc + (param_1 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4;
             *(short *)(piVar38 + 2) = sVar6 + -1;
             STField<short>(piVar38,10) = (short)param_1;
@@ -392,8 +405,9 @@ cf_continue_loop_006C9187:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[param_5 + iVar24 + 3];
-          param_4[param_5 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + 0xc + (param_5 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 2) = sVar6 + 1;
           *(short *)(piVar37 + 1) = sVar4;
           STField<short>(piVar37,10) = (short)param_5;
@@ -423,8 +437,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -446,8 +461,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -470,8 +486,9 @@ cf_continue_loop_006C9187:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar35 + iVar24 + 4];
-              param_4[iVar35 + iVar24 + 4] = piVar38;
+              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 1) = sVar4;
               *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -493,8 +510,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 1) = sVar4;
             *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -525,8 +543,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -548,8 +567,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + -1;
@@ -572,8 +592,9 @@ cf_continue_loop_006C9187:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar35 + iVar24 + 4];
-              param_4[iVar35 + iVar24 + 4] = piVar38;
+              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 1) = sVar4;
               *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -595,8 +616,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 1) = sVar4;
             *(short *)(piVar37 + 2) = sVar6 + -1;
@@ -628,8 +650,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[GVar31 + iVar24 + 4];
-            param_4[GVar31 + iVar24 + 4] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
@@ -648,8 +671,9 @@ cf_continue_loop_006C9187:
             piVar38 = (int *)*piVar37;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
-            *piVar37 = param_4[GVar33 + 4 + iVar24 + 4];
-            param_4[GVar33 + 4 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (GVar33 + 4 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
@@ -685,8 +709,9 @@ cf_continue_loop_006C9187:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar37 = (int *)*piVar38;
-          *piVar38 = param_4[param_3 + iVar24 + 4];
-          param_4[param_3 + iVar24 + 4] = piVar38;
+          piVar39 = (int *)(param_4 + 0x10 + (param_3 + iVar24) * 4);
+          *piVar38 = *piVar39;
+          *piVar39 = (int)piVar38;
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5 + 1;
           *(short *)(piVar38 + 2) = sVar6;
@@ -711,8 +736,9 @@ cf_continue_loop_006C9187:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[GVar33 + iVar24 + 4];
-          param_4[GVar33 + iVar24 + 4] = piVar37;
+          piVar39 = (int *)(param_4 + 0x10 + (GVar33 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
@@ -748,8 +774,9 @@ cf_continue_loop_006C9187:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar27 + iVar35];
-              param_4[iVar27 + iVar35] = piVar38;
+              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(ushort *)(piVar38 + 3) = uVar40;
@@ -770,8 +797,9 @@ cf_continue_loop_006C9187:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar38 = (int *)*piVar37;
-              *piVar37 = param_4[param_5 + 4 + iVar35];
-              param_4[param_5 + 4 + iVar35] = piVar37;
+              piVar39 = (int *)(param_4 + (param_5 + 4 + iVar35) * 4);
+              *piVar37 = *piVar39;
+              *piVar39 = (int)piVar37;
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(ushort *)(piVar37 + 3) = uVar40;
@@ -804,8 +832,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar27 + iVar35];
-            param_4[iVar27 + iVar35] = piVar38;
+            piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + 1;
             *(ushort *)(piVar38 + 3) = uVar40;
@@ -835,8 +864,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[param_5 + iVar35];
-            param_4[param_5 + iVar35] = piVar37;
+            piVar39 = (int *)(param_4 + (param_5 + iVar35) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(ushort *)(piVar37 + 3) = uVar40;
@@ -871,8 +901,9 @@ cf_continue_loop_006C9187:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar27 + iVar35];
-              param_4[iVar27 + iVar35] = piVar38;
+              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(ushort *)(piVar38 + 3) = uVar40;
@@ -893,8 +924,9 @@ cf_continue_loop_006C9187:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar39 = (int *)*piVar37;
-              *piVar37 = param_4[param_1 + 4 + iVar35];
-              param_4[param_1 + 4 + iVar35] = piVar37;
+              piVar38 = (int *)(param_4 + (param_1 + 4 + iVar35) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(ushort *)(piVar37 + 3) = uVar40;
@@ -927,8 +959,9 @@ cf_continue_loop_006C9187:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar39;
-            *piVar39 = param_4[iVar27 + iVar35];
-            param_4[iVar27 + iVar35] = piVar39;
+            piVar37 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+            *piVar39 = *piVar37;
+            *piVar37 = (int)piVar39;
             *(short *)(piVar39 + 1) = sVar4 + -1;
             STField<short>(piVar39,6) = sVar5 + 1;
             *(ushort *)(piVar39 + 3) = uVar40;
@@ -962,8 +995,9 @@ LAB_006ce561:
 LAB_006ce57c:
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[param_1 + iVar24 + 5];
-            param_4[param_1 + iVar24 + 5] = piVar37;
+            piVar39 = (int *)(param_4 + (param_1 + iVar24 + 5) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STPiece<0,2>(param_3) = (undefined2)param_1;
             STField<short>(piVar37,6) = sVar5 + 1;
@@ -987,8 +1021,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar37 = (int *)*piVar38;
-          *piVar38 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar38;
+          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
+          *piVar38 = *piVar39;
+          *piVar39 = (int)piVar38;
           *(short *)(piVar38 + 1) = sVar4 + -1;
           *(short *)(piVar38 + 2) = sVar6;
           STPiece<0,2>(param_3) = (undefined2)iVar35;
@@ -1007,8 +1042,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4 + 1;
           *(short *)(piVar37 + 2) = sVar6;
           STPiece<0,2>(param_3) = (undefined2)iVar35;
@@ -1031,8 +1067,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 3];
-            param_4[iVar35 + iVar24 + 3] = piVar38;
+            piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
             STPiece<0,2>(param_3) = (undefined2)iVar35;
@@ -1052,8 +1089,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
           STPiece<0,2>(param_3) = (undefined2)iVar35;
@@ -1069,8 +1107,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[param_1 + iVar24 + 3];
-            param_4[param_1 + iVar24 + 3] = piVar38;
+            piVar39 = (int *)(param_4 + 0xc + (param_1 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -1084,8 +1123,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[param_5 + iVar24 + 3];
-          param_4[param_5 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + 0xc + (param_5 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -1107,8 +1147,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -1129,8 +1170,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -1153,8 +1195,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar35 + iVar24 + 4];
-              param_4[iVar35 + iVar24 + 4] = piVar38;
+              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -1176,8 +1219,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -1200,8 +1244,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -1222,8 +1267,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + -1;
@@ -1246,8 +1292,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar35 + iVar24 + 4];
-              param_4[iVar35 + iVar24 + 4] = piVar38;
+              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -1269,8 +1316,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + -1;
@@ -1290,8 +1338,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[GVar33 + iVar24 + 8];
-            param_4[GVar33 + iVar24 + 8] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (GVar33 + 4 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
@@ -1318,8 +1367,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[GVar31 + iVar24 + 4];
-            param_4[GVar31 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
@@ -1346,8 +1396,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar37 = (int *)*piVar38;
-          *piVar38 = param_4[GVar31 + iVar24 + 4];
-          param_4[GVar31 + iVar24 + 4] = piVar38;
+          piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
+          *piVar38 = *piVar39;
+          *piVar39 = (int)piVar38;
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5 + 1;
           *(short *)(piVar38 + 2) = sVar6;
@@ -1363,8 +1414,9 @@ LAB_006ce57c:
           piVar38 = (int *)*piVar37;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
-          *piVar37 = param_4[GVar33 + ~CASE_3 + iVar24 + 4];
-          param_4[GVar33 + ~CASE_3 + iVar24 + 4] = piVar37;
+          piVar39 = (int *)(param_4 + 0x10 + (GVar33 + ~CASE_3 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
@@ -1387,8 +1439,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[param_5 + 4 + iVar27];
-              param_4[param_5 + 4 + iVar27] = piVar38;
+              piVar39 = (int *)(param_4 + (param_5 + 4 + iVar27) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -1417,8 +1470,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar38 = (int *)*piVar37;
-              *piVar37 = param_4[iVar25 + iVar27];
-              param_4[iVar25 + iVar27] = piVar37;
+              piVar39 = (int *)(param_4 + (iVar25 + iVar27) * 4);
+              *piVar37 = *piVar39;
+              *piVar39 = (int)piVar37;
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -1447,8 +1501,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar25 + iVar27];
-            param_4[iVar25 + iVar27] = piVar38;
+            piVar39 = (int *)(param_4 + (iVar25 + iVar27) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + 1;
             *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -1466,8 +1521,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[param_5 + -4 + iVar27];
-            param_4[param_5 + -4 + iVar27] = piVar37;
+            piVar39 = (int *)(param_4 + (param_5 + -4 + iVar27) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -1489,8 +1545,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[param_1 + 4 + iVar27];
-              param_4[param_1 + 4 + iVar27] = piVar38;
+              piVar39 = (int *)(param_4 + (param_1 + 4 + iVar27) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -1519,8 +1576,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar39 = (int *)*piVar37;
-              *piVar37 = param_4[iVar35 + iVar27];
-              param_4[iVar35 + iVar27] = piVar37;
+              piVar38 = (int *)(param_4 + (iVar35 + iVar27) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + -1;
@@ -1549,8 +1607,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar39;
-            *piVar39 = param_4[iVar35 + iVar27];
-            param_4[iVar35 + iVar27] = piVar39;
+            piVar37 = (int *)(param_4 + (iVar35 + iVar27) * 4);
+            *piVar39 = *piVar37;
+            *piVar37 = (int)piVar39;
             *(short *)(piVar39 + 1) = sVar4 + -1;
             STField<short>(piVar39,6) = sVar5 + 1;
             *(short *)(piVar39 + 2) = sVar6 + -1;
@@ -1593,8 +1652,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar37 = (int *)*piVar38;
-          *piVar38 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar38;
+          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
+          *piVar38 = *piVar39;
+          *piVar39 = (int)piVar38;
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5;
           *(short *)(piVar38 + 2) = sVar6;
@@ -1615,8 +1675,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 2) = sVar6;
@@ -1647,8 +1708,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 3];
-            param_4[iVar35 + iVar24 + 3] = piVar38;
+            piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
@@ -1670,8 +1732,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
@@ -1687,8 +1750,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[param_1 + iVar24 + 3];
-            param_4[param_1 + iVar24 + 3] = piVar38;
+            piVar39 = (int *)(param_4 + 0xc + (param_1 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -1702,8 +1766,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[param_5 + iVar24 + 3];
-          param_4[param_5 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + 0xc + (param_5 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -1733,8 +1798,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -1756,8 +1822,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -1788,8 +1855,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar35 + iVar24 + 4];
-              param_4[iVar35 + iVar24 + 4] = piVar38;
+              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -1812,8 +1880,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -1844,8 +1913,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -1867,8 +1937,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + -1;
@@ -1899,8 +1970,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar35 + iVar24 + 4];
-              param_4[iVar35 + iVar24 + 4] = piVar38;
+              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -1922,8 +1994,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + -1;
@@ -1960,8 +2033,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[GVar31 + iVar24 + 4];
-            param_4[GVar31 + iVar24 + 4] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
@@ -1992,8 +2066,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[GVar31 + iVar24 + 4];
-            param_4[GVar31 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
@@ -2023,8 +2098,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar37 = (int *)*piVar38;
-          *piVar38 = param_4[GVar31 + iVar24 + 4];
-          param_4[GVar31 + iVar24 + 4] = piVar38;
+          piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
+          *piVar38 = *piVar39;
+          *piVar39 = (int)piVar38;
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5 + 1;
           *(short *)(piVar38 + 2) = sVar6;
@@ -2041,8 +2117,9 @@ LAB_006ce57c:
           piVar38 = (int *)*piVar37;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
-          *piVar37 = param_4[GVar33 + 4 + iVar24 + 4];
-          param_4[GVar33 + 4 + iVar24 + 4] = piVar37;
+          piVar39 = (int *)(param_4 + 0x10 + (GVar33 + 4 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
@@ -2083,8 +2160,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar27 + iVar35];
-              param_4[iVar27 + iVar35] = piVar38;
+              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -2117,8 +2195,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar38 = (int *)*piVar37;
-              *piVar37 = param_4[iVar27 + iVar35];
-              param_4[iVar27 + iVar35] = piVar37;
+              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+              *piVar37 = *piVar39;
+              *piVar39 = (int)piVar37;
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -2150,8 +2229,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar27 + iVar35];
-            param_4[iVar27 + iVar35] = piVar38;
+            piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + 1;
             *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -2170,8 +2250,9 @@ LAB_006ce57c:
             piVar38 = (int *)*piVar37;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
-            *piVar37 = param_4[param_5 + 4 + iVar35];
-            param_4[param_5 + 4 + iVar35] = piVar37;
+            piVar39 = (int *)(param_4 + (param_5 + 4 + iVar35) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -2211,8 +2292,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar27 + iVar35];
-              param_4[iVar27 + iVar35] = piVar38;
+              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -2245,8 +2327,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar39 = (int *)*piVar37;
-              *piVar37 = param_4[iVar27 + iVar35];
-              param_4[iVar27 + iVar35] = piVar37;
+              piVar38 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + -1;
@@ -2277,8 +2360,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar39;
-            *piVar39 = param_4[iVar27 + iVar35];
-            param_4[iVar27 + iVar35] = piVar39;
+            piVar37 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+            *piVar39 = *piVar37;
+            *piVar37 = (int)piVar39;
             *(short *)(piVar39 + 1) = sVar4 + -1;
             STField<short>(piVar39,6) = sVar5 + 1;
             *(short *)(piVar39 + 2) = sVar6 + -1;
@@ -2314,8 +2398,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar37 = (int *)*piVar38;
-          *piVar38 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar38;
+          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
+          *piVar38 = *piVar39;
+          *piVar39 = (int)piVar38;
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5;
           *(short *)(piVar38 + 2) = sVar6;
@@ -2334,8 +2419,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 2) = sVar6;
@@ -2366,8 +2452,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 3];
-            param_4[iVar35 + iVar24 + 3] = piVar38;
+            piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
@@ -2389,8 +2476,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[iVar35 + iVar24 + 3];
-          param_4[iVar35 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
@@ -2406,8 +2494,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[param_1 + iVar24 + 3];
-            param_4[param_1 + iVar24 + 3] = piVar38;
+            piVar39 = (int *)(param_4 + 0xc + (param_1 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -2421,8 +2510,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[param_5 + iVar24 + 3];
-          param_4[param_5 + iVar24 + 3] = piVar37;
+          piVar39 = (int *)(param_4 + 0xc + (param_5 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -2444,8 +2534,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -2466,8 +2557,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -2498,8 +2590,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar35 + iVar24 + 4];
-              param_4[iVar35 + iVar24 + 4] = piVar38;
+              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -2522,8 +2615,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -2546,8 +2640,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5;
             *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -2568,8 +2663,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5;
             *(short *)(piVar37 + 2) = sVar6 + -1;
@@ -2600,8 +2696,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar35 + iVar24 + 4];
-              param_4[iVar35 + iVar24 + 4] = piVar38;
+              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -2623,8 +2720,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[iVar35 + iVar24 + 4];
-            param_4[iVar35 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + -1;
@@ -2656,8 +2754,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            *piVar38 = param_4[GVar31 + iVar24 + 4];
-            param_4[GVar31 + iVar24 + 4] = piVar38;
+            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + -1;
             *(short *)(piVar38 + 2) = sVar6;
@@ -2690,8 +2789,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[GVar31 + iVar24 + 4];
-            param_4[GVar31 + iVar24 + 4] = piVar37;
+            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
@@ -2709,8 +2809,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar37 = (int *)*piVar38;
-          *piVar38 = param_4[GVar33 + 4 + iVar24 + 4];
-          param_4[GVar33 + 4 + iVar24 + 4] = piVar38;
+          piVar39 = (int *)(param_4 + 0x10 + (GVar33 + 4 + iVar24) * 4);
+          *piVar38 = *piVar39;
+          *piVar39 = (int)piVar38;
           *(short *)(piVar38 + 1) = sVar4 + -1;
           STField<short>(piVar38,6) = sVar5 + 1;
           *(short *)(piVar38 + 2) = sVar6;
@@ -2736,8 +2837,9 @@ LAB_006ce57c:
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_9 = param_9 + -1;
           piVar38 = (int *)*piVar37;
-          *piVar37 = param_4[GVar33 + iVar24 + 4];
-          param_4[GVar33 + iVar24 + 4] = piVar37;
+          piVar39 = (int *)(param_4 + 0x10 + (GVar33 + iVar24) * 4);
+          *piVar37 = *piVar39;
+          *piVar39 = (int)piVar37;
           *(short *)(piVar37 + 1) = sVar4 + 1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
@@ -2773,8 +2875,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar27 + iVar35];
-              param_4[iVar27 + iVar35] = piVar38;
+              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -2809,8 +2912,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar38 = (int *)*piVar37;
-              *piVar37 = param_4[iVar27 + iVar35];
-              param_4[iVar27 + iVar35] = piVar37;
+              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+              *piVar37 = *piVar39;
+              *piVar39 = (int)piVar37;
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -2830,8 +2934,9 @@ LAB_006ce57c:
             piVar37 = (int *)*piVar38;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
-            *piVar38 = param_4[param_5 + 4 + iVar35];
-            param_4[param_5 + 4 + iVar35] = piVar38;
+            piVar39 = (int *)(param_4 + (param_5 + 4 + iVar35) * 4);
+            *piVar38 = *piVar39;
+            *piVar39 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + 1;
             *(short *)(piVar38 + 2) = sVar6 + 1;
@@ -2860,8 +2965,9 @@ LAB_006ce57c:
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
             piVar38 = (int *)*piVar37;
-            *piVar37 = param_4[param_5 + iVar35];
-            param_4[param_5 + iVar35] = piVar37;
+            piVar39 = (int *)(param_4 + (param_5 + iVar35) * 4);
+            *piVar37 = *piVar39;
+            *piVar39 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + 1;
             *(short *)(piVar37 + 2) = sVar6 + 1;
@@ -2896,8 +3002,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar37 = (int *)*piVar38;
-              *piVar38 = param_4[iVar27 + iVar35];
-              param_4[iVar27 + iVar35] = piVar38;
+              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+              *piVar38 = *piVar39;
+              *piVar39 = (int)piVar38;
               *(short *)(piVar38 + 1) = sVar4 + -1;
               STField<short>(piVar38,6) = sVar5 + -1;
               *(short *)(piVar38 + 2) = sVar6 + -1;
@@ -2932,8 +3039,9 @@ LAB_006ce57c:
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_9 = param_9 + -1;
               piVar39 = (int *)*piVar37;
-              *piVar37 = param_4[iVar27 + iVar35];
-              param_4[iVar27 + iVar35] = piVar37;
+              piVar38 = (int *)(param_4 + (iVar27 + iVar35) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
               *(short *)(piVar37 + 1) = sVar4 + 1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + -1;
@@ -2953,8 +3061,9 @@ LAB_006ce57c:
             piVar38 = (int *)*piVar39;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_9 = param_9 + -1;
-            *piVar39 = param_4[param_1 + 4 + iVar35];
-            param_4[param_1 + 4 + iVar35] = piVar39;
+            piVar37 = (int *)(param_4 + (param_1 + 4 + iVar35) * 4);
+            *piVar39 = *piVar37;
+            *piVar37 = (int)piVar39;
             *(short *)(piVar39 + 1) = sVar4 + -1;
             STField<short>(piVar39,6) = sVar5 + 1;
             *(short *)(piVar39 + 2) = sVar6 + -1;

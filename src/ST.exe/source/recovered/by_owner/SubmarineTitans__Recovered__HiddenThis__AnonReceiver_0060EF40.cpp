@@ -65,18 +65,18 @@ st::fn_0060EF40
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = &DAT_0079ce98;
-  puStack_10 = &st_image_0072D964;
+  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079ce98);
+  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  local_1c = &stack0xffffff38;
+  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff38);
   sVar11 = *(short *)&this->field_0x215;
   sVar9 = *(short *)&this->field_0x217;
   local_40 = (short *)(int)*(short *)&this->field_0x219;
   ExceptionList = &local_14;
   local_2c = (int)sVar9;
   local_20 = (int)sVar11;
-  st::fn_0040156E((int)*(short *)&this->field_0x1f5,local_b8,&local_74,0,nullptr);
-  local_54 = &stack0xffffff38;
+  st::fn_0040156E((int)*(short *)&this->field_0x1f5,st::pointer_boundary_cast<undefined4 *>(local_b8),st::pointer_boundary_cast<undefined4 *>(&local_74),0,nullptr);
+  local_54 = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff38);
   local_3c = sVar11 + local_b8[0];
   local_48 = sVar9 + local_74;
   sVar11 = *(short *)&this->field_0x1ef;
@@ -129,7 +129,7 @@ st::fn_0060EF40
   uVar12 = local_8c * 10;
   st::fn_0072DA40();
   puVar13 = (byte *)&stack0xffffff38;
-  local_1c = &stack0xffffff38;
+  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff38);
   memset(puVar13, 0, uVar12); /* compiler bulk-zero initialization */
   local_8 = 0xffffffff;
   local_4c = 0;
@@ -177,7 +177,7 @@ LAB_0060f230:
     local_4c = local_4c + 1;
   } while (local_4c < 5);
   st::fn_0040156E((int)*(short *)&this->field_0x1f5,nullptr,nullptr,1,
-                     local_60);
+                     st::pointer_boundary_cast<undefined2 *>(local_60));
   iVar8 = 0;
   do {
     if ((((-1 < local_20 + local_60[iVar8 * 2]) && (-1 < local_60[iVar8 * 2 + 1] + local_2c)) &&
@@ -186,8 +186,8 @@ LAB_0060f230:
         (local_4c = (int)local_40 + -1, local_4c <= (int)local_40 + 1)))) {
       do {
         if ((-1 < local_4c) && (local_4c < 5)) {
-          local_b8[0] = local_60[iVar8 * 2] + local_20;
-          local_74 = local_60[iVar8 * 2 + 1] + local_2c;
+          local_b8[0] = st::machine_word_boundary_cast<int>(local_60[iVar8 * 2] + local_20);
+          local_74 = st::machine_word_boundary_cast<int>(local_60[iVar8 * 2 + 1] + local_2c);
           *(undefined2 *)
            (local_54 +
            ((((local_74 - local_38) * local_9c + local_4c * local_8c) - iVar2) + local_b8[0]) * 2) =
@@ -207,7 +207,7 @@ LAB_0060f230:
     local_68[0] = 0;
   }
   else {
-    slotStorage = &this->field_0x2dd;
+    slotStorage = st::pointer_boundary_cast<undefined1 *>(&this->field_0x2dd);
     if (*(int *)slotStorage == 0) {
       pvVar3 = st::fn_006AAC70((local_68[0] + 1) * 0x1c);
       *(void **)slotStorage = pvVar3;
@@ -237,13 +237,13 @@ LAB_0060f230:
         iVar2 = iVar2 + 1;
       } while (iVar2 < local_68[0]);
     }
-    iVar2 = local_68[0] * 0x1c;
+    iVar2 = st::machine_word_boundary_cast<int>(local_68[0] * 0x1c);
     *(short *)(*(int *)slotStorage + iVar2) = local_6c[local_68[0] * 4 + -4] + (short)local_24;
     *(short *)(*(int *)slotStorage + 2 + iVar2) = local_6c[local_68[0] * 4 + -3] + (short)local_38;
     *(short *)(*(int *)slotStorage + 4 + iVar2) = local_6c[local_68[0] * 4 + -2];
     *(undefined2 *)(iVar2 + *(int *)slotStorage + 6) =
          *(undefined2 *)(iVar2 + *(int *)slotStorage + -0x16);
-    *(int *)&this->field_0x2d5 = local_68[0] + 1;
+    *(int *)&this->field_0x2d5 = st::machine_word_boundary_cast<int>(local_68[0] + 1);
     local_7c = 1;
     if (1 < local_68[0] + -1) {
       do {

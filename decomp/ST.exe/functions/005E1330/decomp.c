@@ -45,7 +45,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   byte bVar9;
   int iVar10;
   int local_EAX_8751;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   MTaskTy *extraout_ECX;
   cMf32 *this_00;
   uint uVar18;
@@ -181,7 +181,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   Library::MSVCRT::FUN_0072da40();
   local_278.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_278;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   local_8c = extraout_ECX;
   local_EAX_54 = Library::MSVCRT::__setjmp3(local_278.jumpBuffer,0);
   if (local_EAX_54 != 0) {
@@ -281,7 +281,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
       case '\x02':
         if (this_01->field_006E != '\x01') {
           if (this_01->field_02B9 != 0) {
-            puVar12 = this_01->field_02BD;
+            puVar12 = &this_01->field_02BD;
             iVar24 = 4;
             do {
               FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar12);
@@ -419,7 +419,7 @@ LAB_005e200a:
                       ((SystemClassTy *)this_01->field_000C,5,&this_01->field_02B9,nullptr,
                        local_234,0);
             puVar12 = (uint *)(local_e68 + 3);
-            puVar28 = this_01->field_02BD;
+            puVar28 = &this_01->field_02BD;
             iVar24 = 4;
             do {
               Library::DKW::DDX::FUN_006b3640

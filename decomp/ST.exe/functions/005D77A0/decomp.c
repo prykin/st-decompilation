@@ -71,7 +71,7 @@ SettMapTy * __cdecl CreateSettMap(void)
     this->field_1F4F = nullptr;
     this->field_1F4B = 0;
     this->field_1F84 = nullptr;
-    memset(&this->field_1F8C, 0, 0x140); /* compiler bulk-zero initialization */
+    memset(this->field_1F8C, 0, 0x140); /* compiler bulk-zero initialization */
     iVar1 = 0;
     this->field_211D = 0;
     this->field_1F88 = 0;

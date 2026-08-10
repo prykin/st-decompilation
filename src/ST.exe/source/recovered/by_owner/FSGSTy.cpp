@@ -56,7 +56,7 @@ void __thiscall st::fn_0059B820(FSGSTy *this)
     }
     *(undefined4 *)&this->field_0x31 = 200;
     if (this->field_1AE4 != (LPCSTR)0x0) {
-      st::fn_006E6080(this,2,this->field_1AE4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),(undefined4 *)&this->field_0x1d);
     }
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 1;
@@ -196,7 +196,7 @@ LAB_0059bb6c:
   }
   if (pCVar3 != (LPCSTR)0x0) {
 LAB_0059bcb6:
-    st::fn_006E6080(this,2,pCVar3,(undefined4 *)&this->field_0x1d);
+    st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(pCVar3),(undefined4 *)&this->field_0x1d);
   }
 switchD_0059b84b_default:
   this->field_002D = 0x61;
@@ -253,7 +253,7 @@ void __thiscall st::fn_0059BE50(FSGSTy *this)
       st::fn_006E6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
     }
     if (this->field_1AE4 != (LPCSTR)0x0) {
-      st::fn_006E6080(this,2,this->field_1AE4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),(undefined4 *)&this->field_0x1d);
     }
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x99;
@@ -281,7 +281,7 @@ void __thiscall st::fn_0059BE50(FSGSTy *this)
     }
     *(undefined4 *)&this->field_0x31 = 0xd8;
     if (this->field_1AE4 != (LPCSTR)0x0) {
-      st::fn_006E6080(this,2,this->field_1AE4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),(undefined4 *)&this->field_0x1d);
     }
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
@@ -393,7 +393,7 @@ LAB_0059c1ca:
       st::fn_006E6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
     }
     if (this->field_1AE4 != (LPCSTR)0x0) {
-      st::fn_006E6080(this,2,this->field_1AE4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),(undefined4 *)&this->field_0x1d);
     }
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x99;
@@ -408,7 +408,7 @@ LAB_0059c1ca:
     }
     *(undefined4 *)&this->field_0x31 = 0xd8;
     if (this->field_1AE4 != (LPCSTR)0x0) {
-      st::fn_006E6080(this,2,this->field_1AE4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),(undefined4 *)&this->field_0x1d);
       return;
     }
   }
@@ -798,7 +798,7 @@ st::fn_005A39A0
     } while (bVar1 != 0);
     if (iVar5 != -2) {
       uVar4 = st::fn_0072FF00(pbVar3);
-      st::external_00000080(local_10,"%6d",uVar4);
+      st::external_00000080(local_10,st::mutable_c_string("%6d"),uVar4);
       goto LAB_005a3a15;
     }
   }

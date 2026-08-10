@@ -36,7 +36,7 @@
 
 void __thiscall
 ST3DSMAPContext::sub_006DC050
-          (ST3DSMAPContext *param_1,undefined4 param_2,uint param_3,undefined4 param_4,int param_5,
+          (ST3DSMAPContext *param_1,DDXContext *param_2,uint param_3,undefined4 param_4,int param_5,
           int param_6,double param_7,double param_8,double param_9,double param_10,double param_11,
           double param_12,int param_13)
 
@@ -45,11 +45,11 @@ ST3DSMAPContext::sub_006DC050
   double dVar2;
   undefined4 *puVar3;
   AnonShape_006DBCA0_EF06575F *pAVar4;
-  int iVar5;
+  AnonShape_006DBCA0_EF06575F *pAVar5;
   longlong lVar6;
 
   puVar3 = Library::DKW::LIB::MemRealloc(param_1->field_0350,0x658);
-  iVar5 = 0;
+  pAVar5 = nullptr;
   param_1->field_0350 = puVar3;
   *puVar3 = 0;
   *(undefined4 *)((int)param_1->field_0350 + 4) = 0;
@@ -66,22 +66,22 @@ ST3DSMAPContext::sub_006DC050
   if (0 < param_13) {
     pAVar4 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar4 != nullptr) {
-      iVar5 = FUN_006dbca0(pAVar4);
+      pAVar5 = FUN_006dbca0(pAVar4);
     }
-    param_1->field_0358 = iVar5;
+    param_1->field_0358 = pAVar5;
     param_1->field_0380 = param_13;
     param_1->field_0368 = param_1->field_00C8 / (double)param_13;
     lVar6 = Library::MSVCRT::__ftol();
     param_1->field_0370 = (int)lVar6;
     param_1->field_0360 = (double)((float10)(int)lVar6 * param_1->field_0368);
-    *(double *)(iVar5 + 200) = param_11;
+    *(double *)&pAVar5->field_0xc8 = param_11;
     *(double *)(param_1->field_0358 + 0xd0) = param_12;
     *(undefined4 *)(param_1->field_0358 + 0x128) = 0;
     *(undefined4 *)(param_1->field_0358 + 0x41c) = 0;
     *(undefined4 *)(param_1->field_0358 + 0x124) = 1;
     dVar1 = param_1->field_0360 * _DAT_007901c0;
     dVar2 = param_1->field_0360 * _DAT_0079df58;
-    sub_006DBD20((ST3DSMAPContext *)param_1->field_0358,0,0,0,param_1->field_0370,
+    sub_006DBD20((ST3DSMAPContext *)param_1->field_0358,nullptr,0,0,param_1->field_0370,
                  param_1->field_0370,dVar2,dVar1,dVar2,dVar1);
     sub_006DD790((ST3DSMAPContext *)param_1->field_0358,
                  (float)((float10)_DAT_0079df88 -

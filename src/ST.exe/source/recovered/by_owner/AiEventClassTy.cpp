@@ -154,10 +154,10 @@ int __thiscall st::fn_0065BD70(AiEventClassTy *this,STMessage *message,int param
   }
   switch(SVar1) {
   case MESS_AIBOSSCLASSTY_5DC5:
-    this->field_052F = message->arg0;
+    this->field_052F = static_cast<undefined4>((message->arg0).u32);
     goto cf_common_exit_0065C65B;
   case MESS_AIBOSSCLASSTY_5DC6:
-    pcVar9 = (message->arg0).ptr;
+    pcVar9 = st::pointer_boundary_cast<char *>((message->arg0).ptr);
     pDVar10 = this->field_05B3;
     uVar11 = 0;
     break;
@@ -218,7 +218,7 @@ LAB_0065c021:
       this->field_053F = 0;
       st::fn_00405F0B
                 ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
-                 (undefined2 *)((int)&param_2 + 2),&local_6);
+                 (undefined2 *)((int)&param_2 + 2),st::pointer_boundary_cast<undefined2 *>(&local_6));
       this->field_0543 = (int)STPiece<2,2>(message);
       this->field_0547 = (int)STPiece<2,2>(param_2);
       this->field_054B = (int)local_6;
@@ -252,7 +252,7 @@ LAB_0065c021:
       this->field_053B = uVar5;
       st::fn_00405F0B
                 ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
-                 (undefined2 *)((int)&param_2 + 2),&local_6);
+                 (undefined2 *)((int)&param_2 + 2),st::pointer_boundary_cast<undefined2 *>(&local_6));
       this->field_0547 = (int)STPiece<2,2>(param_2);
       this->field_0543 = (int)STPiece<2,2>(message);
       this->field_054B = (int)local_6;
@@ -272,7 +272,7 @@ LAB_0065c021:
   case 0x5de0:
   case 0x5de1:
   case 0x5de2:
-    this_00 = (message->arg0).ptr;
+    this_00 = st::pointer_boundary_cast<STFishC *>((message->arg0).ptr);
     if (this_00 != nullptr) {
       this->field_052F = 0;
       this->field_0533 = 0;
@@ -411,7 +411,7 @@ LAB_0065c4bb:
   }
   st::fn_006B6020(pDVar10,uVar11,pcVar9);
 cf_common_exit_0065C65B:
-  this->field_05A7 = g_playSystem_00802A38->field_00E4 / 0x19;
+  this->field_05A7 = st::machine_word_boundary_cast<undefined4>(g_playSystem_00802A38->field_00E4 / 0x19);
   this->field_05AB = g_playSystem_00802A38->field_00E4;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar5 = (*(code *)this->field_0000->field_0014)();

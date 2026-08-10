@@ -91,6 +91,7 @@ function_address	target	status	detail
 006E89B0	parameter:5	disabled	apply flags are 0
 006EFC50	parameter:4	disabled	apply flags are 0
 006F1910	parameter:1	disabled	apply flags are 0
+007192D0	parameter:0	disabled	apply flags are 0
 0074E337	parameter:1	disabled	apply flags are 0
 00751BA0	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 00751BF0	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first

@@ -1,7 +1,6 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
    Diagnostic line evidence: 157 | 266 | 268 (metadata/report site, not the function definition)
@@ -57,7 +56,7 @@ void CreateAi(void)
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x9d);
   }
   if (DAT_0080879c == 0) {
-    switch(_DAT_008087a0 & 0xff) {
+    switch(DAT_008087a0 & 0xff) {
     case 1:
     case 4:
     case 6:
@@ -112,7 +111,7 @@ void CreateAi(void)
   }
   pcVar6 = local_c;
   if (local_c != nullptr) {
-    CreateArbiter((int)local_c,(char *)&DAT_00809960);
+    CreateArbiter((int)local_c,&DAT_00809960);
     local_1c = 0;
     local_18 = g_bulkInitializedRecords_008087C7;
     do {
@@ -121,7 +120,7 @@ void CreateAi(void)
       if (((local_18->field_0022 != 0xff) && (local_18->field_0021 != 0)) &&
          ((*(char *)local_18 == '\x01' || (DAT_0080879c != 0)))) {
         if (DAT_0080879c == 0) {
-          switch(_DAT_008087a0 & 0xff) {
+          switch(DAT_008087a0 & 0xff) {
           case 1:
           case 2:
           case 4:

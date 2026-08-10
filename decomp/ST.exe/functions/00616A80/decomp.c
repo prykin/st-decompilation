@@ -18,7 +18,7 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
   float10 fVar8;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1;
   float10 fVar9;
   longlong lVar10;
@@ -98,7 +98,7 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
     STField<short>(this,0x274) =
          (sVar3 - (((short)(iVar8 / 10000) + (short)(iVar8 >> 0x1f)) -
                   (short)((longlong)iVar8 * 0x68db8bad >> 0x3f))) + (short)iVar7;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     fVar9 = extraout_ST1;
     lVar10 = Library::MSVCRT::__ftol();
     iVar8 = (int)lVar10 * 0x172;

@@ -41,7 +41,7 @@ void FUN_006c7430(AnonShape_006C7430_D1D36538 *param_1)
   g_currentExceptionFrame = &local_70;
   ExceptionList = &local_14;
   local_8 = Library::MSVCRT::__setjmp3
-                      (local_70.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
+                      (local_70.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0xffffffff);
   local_1c = &stack0xffffff7c;
   if (local_8 == 0) {
     if (param_1->field_0072 == nullptr) {

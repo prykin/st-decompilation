@@ -69,8 +69,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xb6b);
             }
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if ((*(int *)((int)pSVar3->field_06CB + 0x2c) == 4) && (0 < pSVar3->field_07BE)) {
+            if ((pSVar3->field_06F7 == CASE_4) && (0 < pSVar3->field_07BE)) {
               if (array_00 == nullptr) {
                 array_00 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
                 local_14 = array_00;

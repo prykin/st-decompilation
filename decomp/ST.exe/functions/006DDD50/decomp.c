@@ -9,9 +9,14 @@
    [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=52;
    incoming_edx_uses=0; incoming_stack_parameter_uses=88; direct_non_thunk_callers=7;
-   incoming_ecx_receiver_callers=1; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=1; attributed_named_callers=1; owner_evidence_coverage=adequate
 
-void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
+   [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=2, ignored=8, unknown=0 */
+
+uint __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
 
 {
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar1;
@@ -20,8 +25,8 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
   int iVar4;
   int iVar5;
   undefined1 uVar6;
-  char *pcVar7;
-  uint uVar8;
+  uint uVar7;
+  char *pcVar8;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar9;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar10;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar11;
@@ -48,7 +53,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
   int local_a8;
   int local_a0 [4];
   int local_90;
-  int local_8c;
+  uint local_8c;
   float local_88;
   undefined4 local_84;
   undefined4 local_80;
@@ -82,8 +87,8 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
   local_14 = ExceptionList;
   local_1c = &stack0xfffffed4;
   if (((param_1->field_0004 == nullptr) ||
-      ((param_1->field_0004->field_000C & 0x1100) != 0x100)) &&
-     ((param_1->field_02DC == 0 || (param_1->field_02D8 != 0)))) {
+      (uVar7 = param_1->field_0004->field_000C & 0x1100, uVar7 != 0x100)) &&
+     ((param_1->field_02DC == 0 || (uVar7 = 0, param_1->field_02D8 != 0)))) {
     ExceptionList = &local_14;
     param_1->field_02D8 = 1;
     local_8 = 0;
@@ -226,7 +231,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
                          local_b4 - local_c4,local_b0 - local_c0,local_ac,local_a8,'\0');
           }
           else {
-            pcVar7 = (char *)((int)param_1->field_0014 +
+            pcVar8 = (char *)((int)param_1->field_0014 +
                              local_b4 + ((local_b0 - local_34) * param_1->field_0028 - local_38));
             pcVar12 = (char *)((((local_b0 - local_c0) * local_bc + temp_5ff32f7558->field_0040) -
                                local_c4) + local_b4);
@@ -235,14 +240,14 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
                 local_120 = local_ac;
                 do {
                   if (*pcVar12 != '\0') {
-                    *pcVar7 = *pcVar12 + (char)local_e4;
+                    *pcVar8 = *pcVar12 + (char)local_e4;
                   }
                   pcVar12 = pcVar12 + 1;
-                  pcVar7 = pcVar7 + 1;
+                  pcVar8 = pcVar8 + 1;
                   local_120 = local_120 + -1;
                 } while (local_120 != 0);
               }
-              pcVar7 = pcVar7 + (param_1->field_0028 - local_ac);
+              pcVar8 = pcVar8 + (param_1->field_0028 - local_ac);
               pcVar12 = pcVar12 + (local_bc - local_ac);
             }
           }
@@ -275,11 +280,13 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
         }
       }
     }
-    if (param_1->field_0124 == 5) {
+    uVar7 = param_1->field_0124;
+    if (uVar7 == 5) {
       local_50 = (char *)param_1->field_000C;
       puVar21 = param_1->field_0014;
       local_8c = 0;
-      if (0 < param_1->field_002C) {
+      uVar7 = param_1->field_002C;
+      if (0 < (int)uVar7) {
         do {
           iVar20 = 0;
           if (0 < param_1->field_0028) {
@@ -299,11 +306,12 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
               iVar20 = iVar20 + 1;
             } while (iVar20 < param_1->field_0028);
           }
-          local_8c = local_8c + 1;
-        } while (local_8c < param_1->field_002C);
+          uVar7 = local_8c + 1;
+          local_8c = uVar7;
+        } while ((int)uVar7 < param_1->field_002C);
       }
     }
-    else if (param_1->field_0124 == 2) {
+    else if (uVar7 == 2) {
       local_88 = 0.0;
       local_84 = 0;
       local_80 = 0;
@@ -322,30 +330,31 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
       puVar15 = (undefined1 *)param_1->field_000C;
       puVar21 = param_1->field_0014;
       local_8c = 0;
-      if (0 < param_1->field_002C) {
+      uVar7 = param_1->field_002C;
+      if (0 < (int)uVar7) {
         do {
           iVar13 = 0;
           if (0 < param_1->field_0028) {
             do {
-              uVar8 = (uint)*puVar21;
-              if ((int)uVar8 < local_74 - iVar20) {
-                if (iVar5 - iVar20 <= (int)uVar8) {
+              uVar7 = (uint)*puVar21;
+              if ((int)uVar7 < local_74 - iVar20) {
+                if (iVar5 - iVar20 <= (int)uVar7) {
                   uVar6 = param_1->field_0439;
                   goto cf_common_join_006DE503;
                 }
-                if (iVar4 - iVar20 <= (int)uVar8) {
+                if (iVar4 - iVar20 <= (int)uVar7) {
                   uVar6 = param_1->field_043A;
                   goto cf_common_join_006DE503;
                 }
-                if (iVar3 - iVar20 <= (int)uVar8) {
+                if (iVar3 - iVar20 <= (int)uVar7) {
                   uVar6 = param_1->field_043B;
                   goto cf_common_join_006DE503;
                 }
-                if (iVar2 - iVar20 <= (int)uVar8) {
+                if (iVar2 - iVar20 <= (int)uVar7) {
                   uVar6 = param_1->field_043C;
                   goto cf_common_join_006DE503;
                 }
-                if (iVar14 - iVar20 <= (int)uVar8) {
+                if (iVar14 - iVar20 <= (int)uVar7) {
                   uVar6 = param_1->field_043D;
                   goto cf_common_join_006DE503;
                 }
@@ -360,12 +369,13 @@ cf_common_join_006DE503:
               iVar13 = iVar13 + 1;
             } while (iVar13 < param_1->field_0028);
           }
-          local_8c = local_8c + 1;
-        } while (local_8c < param_1->field_002C);
+          uVar7 = local_8c + 1;
+          local_8c = uVar7;
+        } while ((int)uVar7 < param_1->field_002C);
       }
     }
   }
   ExceptionList = local_14;
-  return;
+  return uVar7;
 }
 

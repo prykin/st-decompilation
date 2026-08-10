@@ -43,7 +43,7 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
     pcVar5->field_005C = 0;
     iVar4 = 1;
     piVar11 = nullptr;
-    pCVar6 = st::fn_0040577C("BKG_PAUSE",0);
+    pCVar6 = st::fn_0040577C(st::mutable_c_string("BKG_PAUSE"),0);
     puVar7 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar6,piVar11,iVar4);
     this_00->field_0180 = puVar7;
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)puVar7);
@@ -55,7 +55,7 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
     iVar4 = -2;
     resourceString = st::fn_006B0140(0x2716,g_hINSTANCE_00807618);
     st::fn_00711B70(this_00->field_017C,resourceString,iVar4,iVar9,uVar10,iVar12,iVar13);
-    pCVar6 = st::fn_0040577C("BUT_MEDIUM",0);
+    pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
     uVar8 = st::fn_0040300D((PanelTy *)this_00,0,1,0x115,0x8b,1,0,1,pCVar6,0xbfff,0xc000,0,0,0,
                                nullptr,1);
     this_00->field_0184 = uVar8;
@@ -63,12 +63,12 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\pause.cpp",0x28,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x28,0,iVar2,st::mutable_c_string("%s"),
                              "PausePanelTy::InitPausePanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\pause.cpp",0x28);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x28);
   return;
 }
 
@@ -109,12 +109,12 @@ void __thiscall st::fn_00539490(PausePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\pause.cpp",0x3b,0,errorCode,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x3b,0,errorCode,st::mutable_c_string("%s"),
                              "PausePanelTy::DonePausePanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\pause.cpp",0x3b);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x3b);
   return;
 }
 
@@ -145,12 +145,12 @@ void __thiscall st::fn_005395B0(PausePanelTy *this,int param_1)
   pPVar2 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\pause.cpp",0x54,0,errorCode,
-                               "%s","PausePanelTy::SwitchPausePanel");
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x54,0,errorCode,
+                               st::mutable_c_string("%s"),"PausePanelTy::SwitchPausePanel");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\pause.cpp",0x54);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x54);
     return;
   }
   switch(local_8->field_0172) {
@@ -226,12 +226,12 @@ void __thiscall st::fn_005396E0(PausePanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\pause.cpp",0x68,0,iVar4,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x68,0,iVar4,st::mutable_c_string("%s"),
                                "PausePanelTy::ShiftControls");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\pause.cpp",0x68);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x68);
   }
   return;
 }
@@ -265,12 +265,12 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\pause.cpp",0x9f,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x9f,0,iVar3,st::mutable_c_string("%s"),
                                "PausePanelTy::GetMessage");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\pause.cpp",0x9f);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x9f);
     return 0xffff;
   }
   st::fn_004017F8((PanelTy *)local_8,message);
@@ -285,7 +285,7 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
       if (this_00->field_0172 == CASE_3) {
         iVar5 = this_00->field_0054 + -0x174 + this_00->field_004C;
         if (iVar5 < this_00->field_003C) {
-          this_00->field_003C = this_00->field_003C + -0x1e;
+          this_00->field_003C = st::machine_word_boundary_cast<int>(this_00->field_003C + -0x1e);
         }
         if (this_00->field_003C <= iVar5) {
           this_00->field_003C = iVar5;
@@ -301,7 +301,7 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
       if (this_00->field_0172 == CASE_4) {
         iVar5 = this_00->field_0054 + this_00->field_004C;
         if (this_00->field_003C < iVar5) {
-          this_00->field_003C = this_00->field_003C + 0x1e;
+          this_00->field_003C = st::machine_word_boundary_cast<int>(this_00->field_003C + 0x1e);
         }
         if (iVar5 <= this_00->field_003C) {
           this_00->field_003C = iVar5;
@@ -326,7 +326,7 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
     (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
   }
   else if (SVar1 == MESS_SHARED_C000) {
-    pCVar6 = st::fn_0040577C("BUT_MEDIUM",0);
+    pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
     st::fn_00402121((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar6,0x274d,1,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;

@@ -24,7 +24,7 @@ undefined4 __fastcall st::fn_0045F980(STBoatC *param_1)
     return 0;
   }
   if (local_EAX_34 == 2) {
-    st::fn_00405736(param_1,local_8,local_c,local_10);
+    st::fn_00405736(param_1,st::pointer_boundary_cast<undefined2 *>(local_8),st::pointer_boundary_cast<undefined2 *>(local_c),st::pointer_boundary_cast<undefined2 *>(local_10));
     iVar3 = param_1->vfunc_18(local_8[0],local_c[0],local_10[0]);
     if (iVar3 != 1) {
       if (param_1->field_008F == -1) {
@@ -50,9 +50,7 @@ undefined4 __fastcall st::fn_0045F980(STBoatC *param_1)
        (iVar3 = st::fn_00401325
                           (local_8[0],local_c[0],local_10[0],param_1->field_008E,
                            (RecoveredRecord_DumpClassC_00495EC0 *)param_1), iVar3 == 0)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      st::fn_004023A1
-                ((TLOEmbryoTy *)param_1,*(undefined **)((int)param_1->field_06CB + 0x3f));
+      st::fn_004023A1((TLOEmbryoTy *)param_1,(undefined *)param_1->field_070A);
       st::fn_00401352((int)param_1);
       return 0;
     }

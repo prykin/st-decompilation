@@ -13,11 +13,11 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
   int errorCode;
   char *resourceString;
   int iVar4;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   ChatGlassTy *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   ChatGlassTy *extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   ChatGlassTy *extraout_ECX_01;
   ChatGlassTy *pCVar5;
   StartServTy *this_00;
@@ -37,14 +37,14 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
     pSVar3 = local_8;
     PutDDX(0,0,'\x01',(BITMAPINFO *)local_8->field_005D);
     SVar1 = pSVar3->field_1E26;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     pCVar5 = extraout_ECX;
     if (((SVar1 == CASE_6) || (SVar1 == CASE_7)) || (SVar1 == CASE_E)) {
       if ((pSVar3->field_21F0 == nullptr) && (param_1 == '\0')) {
         MMMObjTy::OutRGlProc
                   ((MMMObjTy *)g_dDXContext_0080759C,(int)g_dDXContext_0080759C,nullptr,
                    nullptr,10,0xb4,0xf9,0x123,(undefined4 *)(pSVar3->field_1A5B + 0x140));
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         pCVar5 = extraout_ECX_01;
       }
     }
@@ -53,7 +53,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
       MMMObjTy::OutBSlProc
                 (pSVar3->field_1A5B + 0x140,g_dDXContext_0080759C,nullptr,nullptr,10
                  ,0xb4,0xf9,0x121,(undefined4 *)(pSVar3->field_1A5B + 0x140));
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       pCVar5 = extraout_ECX_00;
     }
     SVar1 = pSVar3->field_1E26;

@@ -62,10 +62,10 @@ int __thiscall st::fn_0058D7C0(STSharkC *this,STMessage *message)
   this_00 = local_20;
   if (local_EAX_68 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\Igor\\To_shark.cpp",0x15e,0,local_EAX_68,
-                               "%s","STSharkC::GetMessage");
+    iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),0x15e,0,local_EAX_68,
+                               st::mutable_c_string("%s"),"STSharkC::GetMessage");
     if (iVar9 == 0) {
-      st::fn_006A5E40(local_EAX_68,0,"E:\\__titans\\Igor\\To_shark.cpp",0x15f);
+      st::fn_006A5E40(local_EAX_68,0,st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),0x15f);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -82,7 +82,7 @@ int __thiscall st::fn_0058D7C0(STSharkC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x23d = 0;
       st::fn_00404264((STT3DSprC *)puVar14,0xe);
       st::fn_00402A90((STT3DSprC *)puVar14);
-      st::fn_00404183((STT3DSprC *)puVar14,8,PTR_00806764,"expshark",CASE_1D);
+      st::fn_00404183((STT3DSprC *)puVar14,8,PTR_00806764,st::mutable_c_string("expshark"),CASE_1D);
       st::fn_00405240((STT3DSprC *)puVar14,8,g_playSystem_00802A38->field_00E4);
       *(undefined4 *)&this_00->field_0x257 = 4;
       g_currentExceptionFrame = local_80.previous;
@@ -95,7 +95,7 @@ int __thiscall st::fn_0058D7C0(STSharkC *this,STMessage *message)
       }
       local_18 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
       local_14 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = st::fn_006AAC70(local_10 + 0x66 + local_8);
+      local_c = st::pointer_boundary_cast<AnonShape_0058D7C0_99A937C6 *>(st::fn_006AAC70(local_10 + 0x66 + local_8));
       if (local_18 == nullptr) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
@@ -131,12 +131,12 @@ int __thiscall st::fn_0058D7C0(STSharkC *this,STMessage *message)
       *(undefined4 *)&local_c->field_0x5a = 0;
       local_c->field_005E = local_8;
       pbVar15 = local_18;
-      pbVar17 = &local_c->field_0x62;
+      pbVar17 = st::pointer_boundary_cast<byte *>(&local_c->field_0x62);
       memmove(pbVar17, pbVar15, local_8); /* compiler REP MOVS byte copy */
       uVar11 = 0;
       *(uint *)(&local_c->field_0x62 + local_8) = local_10;
       pbVar15 = local_14;
-      pbVar17 = &local_c[1].field_0x2 + local_8;
+      pbVar17 = st::pointer_boundary_cast<byte *>(&local_c[1].field_0x2 + local_8);
       memmove(pbVar17, pbVar15, local_10); /* compiler REP MOVS byte copy */
       st::fn_004025F9
                 (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
@@ -191,10 +191,10 @@ int __thiscall st::fn_0058D7C0(STSharkC *this,STMessage *message)
         if (iVar10 == 0) {
           puVar14 = (byte *)(&this_00->field_01D5);
           iVar10 = st::fn_00404183
-                             ((STT3DSprC *)puVar14,0xe,PTR_0080676c,"shark1",CASE_1D);
+                             ((STT3DSprC *)puVar14,0xe,PTR_0080676c,st::mutable_c_string("shark1"),CASE_1D);
           if (iVar10 != 0) {
             st::fn_006A5E40
-                      (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_shark.cpp",0x9f);
+                      (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),0x9f);
           }
           st::fn_00405AA6(puVar14,'\x0e');
           st::fn_00405240((STT3DSprC *)puVar14,0xe,g_playSystem_00802A38->field_00E4);
@@ -218,8 +218,8 @@ LAB_0058dc72:
             }
             else {
               local_EAX_939 =
-                   st::fn_006AD4D0("E:\\__titans\\Igor\\To_shark.cpp",0xaa,0,0,
-                                      "%s","STSharkC::GetMessage Dir Object err");
+                   st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),0xaa,0,0,
+                                      st::mutable_c_string("%s"),"STSharkC::GetMessage Dir Object err");
               if (local_EAX_939 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
@@ -248,7 +248,7 @@ LAB_0058dc72:
             iVar10 = st::fn_00405DC1(this_00,*(short *)&this_00->field_0x27b);
             if (iVar10 == 0) goto LAB_0058dc72;
             local_EAX_1180 =
-                 st::fn_006AD4D0("E:\\__titans\\Igor\\To_shark.cpp",200,0,0,"%s",
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),200,0,0,st::mutable_c_string("%s"),
                                     "STSharkC::GetMessage Dir Object err");
             if (local_EAX_1180 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -258,7 +258,7 @@ LAB_0058dc72:
         }
         else {
           local_EAX_696 =
-               st::fn_006AD4D0("E:\\__titans\\Igor\\To_shark.cpp",0x99,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),0x99,0,0,st::mutable_c_string("%s"),
                                   "STSharkC::GetMessage Phase Count err");
           if (local_EAX_696 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -483,7 +483,7 @@ void __thiscall st::fn_0058E570(STSharkC *this)
               ((STT3DSprC *)this_00,PTR_00806724->entries[this->field_0241 + -1],
                (int)PTR_00806724->field_002C);
     if ((g_playSystem_00802A38->field_00E4 % 3 == 0) &&
-       (iVar6 = this->field_0241 + -1, this->field_0241 = iVar6, iVar6 < 1)) {
+       (iVar6 = st::machine_word_boundary_cast<int>(this->field_0241 + -1), this->field_0241 = iVar6, iVar6 < 1)) {
       st::fn_00403FDA(this_00,'\x0e');
     }
     goto cf_common_exit_0058E925;
@@ -494,18 +494,18 @@ void __thiscall st::fn_0058E570(STSharkC *this)
     iVar6 = this->vfunc_20();
     if (iVar6 == -1) {
       local_EAX_1706 =
-           st::fn_006AD4D0("E:\\__titans\\Igor\\To_shark.cpp",0x2dc,0,-5,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),0x2dc,0,-5,st::mutable_c_string("%s"),
                               "stop move error");
       if (local_EAX_1706 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       st::fn_006A5E40
-                (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_shark.cpp",0x2dd);
+                (0xffff,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),0x2dd);
     }
     else if (iVar6 == 1) {
       SVar10 = st::fn_00404A4D(this,(uint)(0x1d < this->field_0253));
       this->field_0257 = SVar10;
-      this->field_0253 = this->field_0253 + 1;
+      this->field_0253 = st::machine_word_boundary_cast<int>(this->field_0253 + 1);
     }
     break;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -518,7 +518,7 @@ LAB_0058ea68:
       if (this->field_023D == 0) {
         if (this->field_0253 < 0x1f) {
           if (iVar6 == 2) {
-            this->field_0253 = this->field_0253 + 1;
+            this->field_0253 = st::machine_word_boundary_cast<int>(this->field_0253 + 1);
           }
         }
         else {
@@ -541,7 +541,7 @@ LAB_0058ea68:
                          STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0],
               local_8 = this_01, this_01 != nullptr &&
               (st::fn_004018C5
-                         ((STFishC *)this_01,&this->field_0231,&this->field_0233,&this->field_0235),
+                         ((STFishC *)this_01,st::pointer_boundary_cast<short *>(&this->field_0231),st::pointer_boundary_cast<short *>(&this->field_0233),st::pointer_boundary_cast<short *>(&this->field_0235)),
               this->field_0047 == this->field_0231)) && (this->field_0049 == this->field_0233)) &&
             ((this->field_004B == this->field_0235 &&
              (pSVar9 = st::fn_004028BA
@@ -553,7 +553,7 @@ LAB_0058ea68:
       if (iVar6 != 1) {
         if (iVar6 != 2) {
           local_EAX_514 =
-               st::fn_006AD4D0("E:\\__titans\\Igor\\To_shark.cpp",0x2d3,0,0,"%s",
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),0x2d3,0,0,st::mutable_c_string("%s"),
                                   "STSharkC::LifeShark Error Move");
           if (local_EAX_514 == 0) {
             return;
@@ -622,7 +622,7 @@ LAB_0058e87e:
       local_8->GetMessage(&local_30);
       this->field_023D = 0;
       iVar6 = st::fn_00404183
-                        ((STT3DSprC *)this_00,8,PTR_00806764,"expshark",CASE_1D);
+                        ((STT3DSprC *)this_00,8,PTR_00806764,st::mutable_c_string("expshark"),CASE_1D);
       if (iVar6 != 0) {
         return;
       }
@@ -645,7 +645,7 @@ LAB_0058e87e:
     iVar6 = this->vfunc_20();
     if (iVar6 == -1) {
       local_EAX_443 =
-           st::fn_006AD4D0("E:\\__titans\\Igor\\To_shark.cpp",0x265,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),0x265,0,0,st::mutable_c_string("%s"),
                               "stop move error");
       if (local_EAX_443 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -670,7 +670,7 @@ LAB_0058e87e:
     }
     if (((iVar6 < 2) || (3 < iVar6)) &&
        (local_EAX_1797 =
-             st::fn_006AD4D0("E:\\__titans\\Igor\\To_shark.cpp",0x2f8,0,0,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),0x2f8,0,0,st::mutable_c_string("%s"),
                                 "STSharkC::LifeShark Error Move"), local_EAX_1797 != 0)) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -680,7 +680,7 @@ LAB_0058e87e:
 cf_common_exit_0058E925:
   if ((this->field_0257 != CASE_4) && (this->field_0257 != CASE_7)) {
     iVar6 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
-    uVar7 = g_playSystem_00802A38->field_00E4 % 0x1e;
+    uVar7 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 % 0x1e);
     local_10 = uVar7 + (iVar6 / 3) * 0x1e;
     st::fn_00401064
               ((STT3DSprC *)this_00,'\x0e',
@@ -729,7 +729,7 @@ st::fn_00590010
   local_c = param_5;
   if ((((param_1 < 0) || (param_2 < 0)) || (param_3 < 0)) ||
      (((g_worldGrid.sizeX <= param_1 || (g_worldGrid.sizeY <= param_2)) || (4 < param_3)))) {
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Igor\\To_shark.cpp",0x4bb,0,0,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\To_shark.cpp"),0x4bb,0,0,st::mutable_c_string("%s"),
                                "STSharkC::CreateShark - Bad paramaters");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */

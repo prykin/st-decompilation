@@ -51,12 +51,12 @@ void __thiscall st::fn_0051F8F0(HelpStringTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\helpstr.cpp",0x1b,0,iVar4,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\helpstr.cpp"),0x1b,0,iVar4,st::mutable_c_string("%s"),
                              "HelpStringTy::OutStr");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\helpstr.cpp",0x1b);
+  st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\helpstr.cpp"),0x1b);
   return;
 }
 
@@ -129,10 +129,10 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
       }
       puVar4 = (byte *)st::fn_006B4FA0((int *)puVar3);
       memset(puVar4, 0, uVar9); /* compiler bulk-zero initialization */
-      DAT_00801694 = this_00;
+      DAT_00801694 = st::machine_word_boundary_cast<undefined4>(this_00);
       break;
     case MESS_SHARED_0003:
-      DAT_00801694 = nullptr;
+      DAT_00801694 = static_cast<undefined4>(0);
       if (local_8->field_011E != nullptr) {
         st::fn_00710560((uint *)local_8->field_011E);
         this_00->field_011E = nullptr;
@@ -149,12 +149,12 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
     return iVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\helpstr.cpp",0x4d,0,local_EAX_36,
-                             "%s","HelpStringTy::GetMessage");
+  iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\helpstr.cpp"),0x4d,0,local_EAX_36,
+                             st::mutable_c_string("%s"),"HelpStringTy::GetMessage");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(local_EAX_36,0,"E:\\__titans\\Andrey\\helpstr.cpp",0x4d);
+  st::fn_006A5E40(local_EAX_36,0,st::mutable_c_string("E:\\__titans\\Andrey\\helpstr.cpp"),0x4d);
   return 0xffff;
 }
 

@@ -15,7 +15,7 @@ void __thiscall st::fn_0063DDB0(STTmMineC *this,int param_1)
     uVar3 = 0;
     if (0 < (int)dVar1) {
       do {
-        pSVar2 = this->field_0336;
+        pSVar2 = st::pointer_boundary_cast<STTmMineC_field_0336DArray *>(this->field_0336);
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if ((uVar3 < pSVar2->count) &&
            (&pSVar2->data->field_0000 + pSVar2->elementSize * uVar3 != nullptr)) {

@@ -84,6 +84,17 @@ Only one mode is selected; no file or directory dialogs follow:
 | `export` | Stabilize script-owned parameter storage, repair stale return rollbacks, stabilize the final indirect/vtable ABI layer, record and verify the current Program plus recovery artifacts, snapshot the last accepted corpus, transactionally export into `<repo>/decomp`, and run the regression gate. |
 | `full-export` | Run the complete recovery pipeline, perform the same final ABI synchronization/evidence checkpoint, transactionally export, and run the regression gate. |
 
+`full` and `full-export` maintain a semantic analyzer cache for expensive
+read-only nodes. A cache hit requires the exact analyzer source, semantic
+Program fingerprint, declared dependency files, and complete output-artifact
+hashes to match; the corresponding applier and every fixed-point/regression
+gate still run. The current cache covers 24 analyzers. A cold semantic-changing
+pass may populate only late stable nodes, while the first unchanged pass warms
+the complete set. On the current corpus a fully warmed `full-export` takes
+`00:21:24`, reuses all 10,400 bodies and all 5,720 function-quality analyses,
+and leaves `Program changed=false`. Never add an analyzer to the cache without
+declaring every semantic dependency and every generated artifact.
+
 The pipeline invokes ordinary Ghidra scripts through `runScript`; it does not
 bypass any analyzer/applier validation. In particular, it never changes an
 `apply=0` flag, and every child applier still checks manual sources, generated

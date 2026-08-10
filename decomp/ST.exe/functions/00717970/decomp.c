@@ -13,13 +13,13 @@ undefined4 __fastcall FUN_00717970(ST3DSMAPContext *param_1)
   char cVar2;
   int iVar3;
   double dVar4;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_02;
   int iVar5;
   int iVar6;
@@ -83,13 +83,13 @@ LAB_00717b22:
   if (local_44 < _DAT_0079d670) {
     lVar15 = Library::MSVCRT::__ftol();
     param_1->field_047E = (int)lVar15;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     Library::MSVCRT::FUN_0073459a(extraout_ECX_00);
   }
   else {
     lVar15 = Library::MSVCRT::__ftol();
     param_1->field_047E = (int)lVar15;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     Library::MSVCRT::FUN_0073459a(extraout_ECX);
   }
   lVar15 = Library::MSVCRT::__ftol();
@@ -99,13 +99,13 @@ LAB_00717b22:
   if (dVar4 < _DAT_0079d670) {
     lVar15 = Library::MSVCRT::__ftol();
     param_1->field_0482 = (int)lVar15;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     Library::MSVCRT::FUN_0073459a(extraout_ECX_02);
   }
   else {
     lVar15 = Library::MSVCRT::__ftol();
     param_1->field_0482 = (int)lVar15;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     Library::MSVCRT::FUN_0073459a(extraout_ECX_01);
   }
   lVar15 = Library::MSVCRT::__ftol();

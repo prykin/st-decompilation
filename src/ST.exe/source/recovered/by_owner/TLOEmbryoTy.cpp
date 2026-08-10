@@ -92,7 +92,7 @@ void __thiscall st::fn_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
       break;
     case 0xb:
     case 0x23:
-      this->field_010D = this->field_0101;
+      this->field_010D = st::machine_word_boundary_cast<undefined4>(this->field_0101);
       st::fn_0040141F
                 (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,
                  (char)this->field_005F,this->field_0024,(int)this->field_0101,this->field_0018,

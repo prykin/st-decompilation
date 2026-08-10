@@ -65,13 +65,12 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
       if (this_00->field_009A != 0) {
         do {
           uVar11 = local_8 & 0xff;
-          if ((&this_00->field_0066)[uVar11] != 0) {
-            FUN_006e6080(this_00,2,(&this_00->field_0066)[uVar11],(undefined4 *)&this_00->field_0x1d
-                        );
+          if (this_00->field_0066[uVar11] != 0) {
+            FUN_006e6080(this_00,2,this_00->field_0066[uVar11],(undefined4 *)&this_00->field_0x1d);
             *(ushort *)(&this_00->field_0x1c82 + uVar11 * 2) =
                  (-(ushort)(this_00->field_0031 != 0) & 2) - 1;
           }
-          puVar5 = (byte *)(&this_00->field_0xbc + uVar11 * 0x1fb);
+          puVar5 = (byte *)((int)this_00->field_0066 + uVar11 * 0x1fb + 0x56);
           puVar12 = (byte *)(&this_00->field_0x1a87 + uVar11 * 0x27);
           memmove(puVar12, puVar5, 0x27); /* compiler REP MOVS byte copy */
           bVar2 = (char)local_8 + 1;
@@ -118,8 +117,8 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           uVar11 = local_8 & 0xff;
           bVar2 = bVar2 + 1;
           local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
-          *(undefined4 *)(&this_00->field_0xbc + uVar11 * 0x1fb) = 0;
-          (&this_00->field_0xe1)[uVar11 * 0x1fb] = 1;
+          *(undefined4 *)((int)this_00->field_0066 + uVar11 * 0x1fb + 0x56) = 0;
+          *(undefined1 *)((int)this_00->field_0066 + uVar11 * 0x1fb + 0x7b) = 1;
         } while (bVar2 < this_00->field_009A);
       }
       if (param_2 == '\0') {
@@ -353,7 +352,8 @@ LAB_005b8415:
             if (uVar11 != 0xffffffff) {
               FUN_006b3af0(*(int **)((int)&this_00->field_01BC + iVar9),uVar11);
             }
-            if (((&this_00->field_00E2)[iVar9] != '\0') &&
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            if ((*(char *)((int)this_00->field_0066 + iVar9 + 0x7c) != '\0') &&
                (uVar11 = *(uint *)((int)&this_00->field_0209 + iVar9), uVar11 != 0xffffffff)) {
               FUN_006b3af0(*(int **)((int)&this_00->field_024D + iVar9),uVar11);
             }

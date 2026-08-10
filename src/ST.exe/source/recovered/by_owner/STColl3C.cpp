@@ -96,9 +96,9 @@ byte * __thiscall st::fn_005F66F0(STColl3C *this,uint *param_1)
   memmove(puVar12, puVar9, 0xc2); /* compiler REP MOVS byte copy */
   puVar2[3] = 2;
   local_18 = (byte *)st::fn_004018D4((STT3DSprC *)&local_14->field_0x1d5,&local_c);
-  local_1c = st::fn_0040119A(pSVar1,(int *)&local_10);
+  local_1c = st::pointer_boundary_cast<uint *>(st::fn_0040119A(pSVar1,(int *)&local_10));
   local_8 = local_10 + 0xca + local_c;
-  pbVar3 = st::fn_006ACF50(puVar2,local_8);
+  pbVar3 = st::pointer_boundary_cast<byte *>(st::fn_006ACF50(puVar2,local_8));
   *(uint *)(pbVar3 + 0xc2) = local_c;
   pbVar11 = local_18;
   pbVar4 = pbVar3 + 0xc6;
@@ -129,7 +129,7 @@ byte * __thiscall st::fn_005F66F0(STColl3C *this,uint *param_1)
     }
     newSize = local_8 + 0x6c + uVar6;
     local_8 = newSize;
-    pbVar4 = st::fn_006ACF50(pbVar3,newSize);
+    pbVar4 = st::pointer_boundary_cast<byte *>(st::fn_006ACF50(pbVar3,newSize));
     puVar2 = (byte *)(*(undefined4 **)&pSVar1->field_0x2e6);
     pbVar11 = pbVar4 + (newSize - uVar6) + -0x6c;
     memmove(pbVar11, puVar2, 0x6c); /* compiler REP MOVS byte copy */
@@ -214,14 +214,14 @@ int __thiscall st::fn_005F68B0(STColl3C *this,undefined4 *param_1)
   st::fn_006AB060(&local_28);
   iVar3 = STField<int>(param_1,0xc2);
   piVar7 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0xc6))->field_0x0 + iVar3);
-  st::fn_0040551F((STAllPlayersC *)this,piVar7 + 1);
+  st::fn_0040551F((STAllPlayersC *)this,st::pointer_boundary_cast<undefined4 *>(piVar7 + 1));
   puVar8 = (byte *)((int)(piVar7 + 1) + *piVar7);
   iVar3 = iVar3 + 0xca + *piVar7;
   if (this->field_02E6 == nullptr) {
     return iVar3;
   }
-  local_8 = puVar8;
-  puVar1 = st::fn_006AAC70(0x6c);
+  local_8 = st::pointer_boundary_cast<undefined4 *>(puVar8);
+  puVar1 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(0x6c));
   this->field_02E6 = puVar1;
   for (iVar4 = 0x1b; iVar4 != 0; iVar4 = iVar4 + -1) {
     *(undefined4 *)puVar1 = *puVar8;
@@ -292,7 +292,7 @@ int __thiscall st::fn_005F6F20(STColl3C *this,int param_1)
 {
   int iVar1;
 
-  iVar1 = this->field_0269 - param_1;
+  iVar1 = st::machine_word_boundary_cast<int>(this->field_0269 - param_1);
   this->field_0269 = iVar1;
   if (iVar1 < 1) {
     this->field_0269 = 0;
@@ -373,7 +373,7 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
         }
       }
       else {
-        iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+        iVar7 = st::fn_0040163B(this,st::pointer_boundary_cast<int *>(&this->field_027D),st::pointer_boundary_cast<int *>(&this->field_0281),st::pointer_boundary_cast<int *>(&this->field_0285));
         if (((iVar7 != 0) && (iVar7 = st::fn_004013C0(this,2), iVar7 != 0)) &&
            (iVar7 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
                                        *(short *)&this->field_0299,1), iVar7 == 0)) {
@@ -417,7 +417,7 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
           this->field_028D = 0;
           return;
         }
-        iVar7 = this->field_028D + 1;
+        iVar7 = st::machine_word_boundary_cast<int>(this->field_028D + 1);
         this->field_028D = iVar7;
         if (iVar7 < 6) {
           if (iVar7 < 0xb) {
@@ -468,7 +468,7 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
       this->field_029D = 0;
     }
     else {
-      iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+      iVar7 = st::fn_0040163B(this,st::pointer_boundary_cast<int *>(&this->field_027D),st::pointer_boundary_cast<int *>(&this->field_0281),st::pointer_boundary_cast<int *>(&this->field_0285));
       if (iVar7 == 0) {
 LAB_005f744e:
         st::fn_00404133(this,200);
@@ -550,7 +550,7 @@ cf_common_exit_005F7A68:
         this->field_02EF = 0;
         this->field_0076 = 1;
         this->field_02D5 = g_playSystem_00802A38->field_00E4;
-        this->field_02D9 = g_playSystem_00802A38->field_00E4 + 0x32;
+        this->field_02D9 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 + 0x32);
         return;
       }
       iVar7 = st::fn_00402FAE(this);
@@ -568,7 +568,7 @@ cf_common_exit_005F7A68:
       this->field_0076 = 1;
 LAB_005f79aa:
       this->field_02D5 = g_playSystem_00802A38->field_00E4;
-      this->field_02D9 = g_playSystem_00802A38->field_00E4 + 0x32;
+      this->field_02D9 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 + 0x32);
       return;
     }
     break;
@@ -683,7 +683,7 @@ LAB_005f7efc:
     }
     if (iVar7 == 3) {
       st::fn_00403517(this);
-      iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+      iVar7 = st::fn_0040163B(this,st::pointer_boundary_cast<int *>(&this->field_027D),st::pointer_boundary_cast<int *>(&this->field_0281),st::pointer_boundary_cast<int *>(&this->field_0285));
       if (iVar7 == 0) {
         this->field_0281 = this->field_0261;
         this->field_027D = this->field_025D;
@@ -697,7 +697,7 @@ LAB_005f7efc:
       iVar7 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,(int)local_a,
                                  &local_14,&local_18,&local_10);
       if (iVar7 != 0) {
-        this->field_02A0 = this->field_02A0 + 1;
+        this->field_02A0 = st::machine_word_boundary_cast<int>(this->field_02A0 + 1);
         iVar7 = st::fn_00401460(this);
         if (iVar7 == 0) {
           iVar7 = st::fn_00403C24(this,local_14,local_18,local_10);
@@ -722,7 +722,7 @@ LAB_005f7efc:
     }
     break;
   case CASE_A:
-    iVar7 = st::fn_00404070(this,&local_10,&local_20);
+    iVar7 = st::fn_00404070(this,&local_10,st::pointer_boundary_cast<undefined4 *>(&local_20));
     if (iVar7 != 0) {
       this->field_02DD = CASE_B;
       st::fn_004039B3(this,local_10,local_20,1);
@@ -740,7 +740,7 @@ LAB_005f7efc:
       if ((&this->field_029E)[iVar7 * 6] != '\0') {
         st::fn_00405AFB(this,*(int *)((int)&this->field_02A0 + iVar7 * 6),iVar7 + -1);
         (&this->field_029E)[this->field_02A0 * 6] = 0;
-        iVar7 = this->field_02A0 + -1;
+        iVar7 = st::machine_word_boundary_cast<int>(this->field_02A0 + -1);
         this->field_02A0 = iVar7;
         if (0 < iVar7) {
           st::fn_00405763(this,1,1,0,0,0,0);
@@ -766,7 +766,7 @@ LAB_005f7efc:
           this->field_02EF = 0;
           this->field_0076 = 1;
           this->field_02D5 = g_playSystem_00802A38->field_00E4;
-          this->field_02D9 = g_playSystem_00802A38->field_00E4 + 0x32;
+          this->field_02D9 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 + 0x32);
           st::fn_00404151((AnonShape_005F9E40_7E333F34 *)this);
           return;
         }
@@ -774,7 +774,7 @@ LAB_005f7efc:
         this->field_02EF = 0;
         this->field_0076 = 1;
         this->field_02D5 = g_playSystem_00802A38->field_00E4;
-        this->field_02D9 = g_playSystem_00802A38->field_00E4 + 0x32;
+        this->field_02D9 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 + 0x32);
       }
       else {
         iVar7 = st::fn_004013C0(this,2);
@@ -819,7 +819,7 @@ LAB_005f7efc:
                                  (int)this->field_005D), 3 < iVar5)) {
           iVar7 = this->field_02EF;
           if (iVar7 != 0) goto LAB_005f7927;
-          iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+          iVar7 = st::fn_0040163B(this,st::pointer_boundary_cast<int *>(&this->field_027D),st::pointer_boundary_cast<int *>(&this->field_0281),st::pointer_boundary_cast<int *>(&this->field_0285));
           if (iVar7 == 0) goto cf_common_exit_005F76D2;
           st::fn_004018C5((STFishC *)this,&local_8,&local_6,&local_a);
           iVar7 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
@@ -865,7 +865,7 @@ LAB_005f7927:
            st::fn_006ACFD0(this->field_025D,this->field_0261,(int)this->field_005B,
                         (int)this->field_005D);
       if (local_EAX_1734 < 4) {
-        iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+        iVar7 = st::fn_0040163B(this,st::pointer_boundary_cast<int *>(&this->field_027D),st::pointer_boundary_cast<int *>(&this->field_0281),st::pointer_boundary_cast<int *>(&this->field_0285));
         if (iVar7 == 0) goto cf_common_exit_005F76D2;
         iVar7 = st::fn_00402FAE(this);
         if (-1 < iVar7) {
@@ -882,7 +882,7 @@ LAB_005f7927:
         }
       }
       else {
-        iVar7 = st::fn_0040163B(this,&this->field_027D,&this->field_0281,&this->field_0285);
+        iVar7 = st::fn_0040163B(this,st::pointer_boundary_cast<int *>(&this->field_027D),st::pointer_boundary_cast<int *>(&this->field_0281),st::pointer_boundary_cast<int *>(&this->field_0285));
         if (iVar7 != 0) {
           st::fn_004018C5((STFishC *)this,&local_8,&local_6,&local_a);
           iVar7 = st::fn_004020C7(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,

@@ -237,7 +237,7 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 0079D080	PTR_s_RUBBISH_3_0079d080	pointer:/char	007D13E0	string_pointer	s_RUBBISH_3_007d13e0	/string	/char	0	1	3		0
 0079D198	PTR_DAT_0079d198	/pointer	007D19F0	initialized_data_pointer	DAT_007d19f0			0	0	0		0
 0079D614	PTR_s_AIBOSS_0079d614	pointer:/char	007D2748	string_pointer	s_AIBOSS_007d2748	/string	/char	0	1	2		0
-0079D65C	PTR_DAT_0079d65c	/pointer	007D2860	initialized_data_pointer	DAT_007d2860			0	0	0		0
+0079D65C	PTR_DAT_0079d65c	/pointer	007D2860	initialized_data_pointer	DAT_007d2860	/undefined1		0	0	0		0
 0079D660	PTR_s_AIPLAYER_0079d660	pointer:/char	007D2854	string_pointer	s_AIPLAYER_007d2854	/string	/char	0	1	2		0
 0079D664	PTR_s_AIBOSS_0079d664	pointer:/char	007D2748	string_pointer	s_AIBOSS_007d2748	/string	/char	0	1	2		0
 0079D668	PTR_s_STRATEG_0079d668	pointer:/char	007D2848	string_pointer	s_STRATEG_007d2848	/string	/char	0	1	1		0
@@ -431,6 +431,10 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 008489CC	PTR_008489cc	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489CC_CDF8C3F4	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489CC_CDF8C3F4	1	1	2	/int	0
 00853FF8	PTR_00853ff8	pointer:/cMf32	00000000	zero_initialized_global			/cMf32	0	1	1		0
 00854EE8	PTR_00854ee8	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00854EE8_A19F58CE	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00854EE8_A19F58CE	1	1	1	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006CEC40_BB23E716	0
+00854F90	PTR_00854f90	pointer:/int	00000000	zero_initialized_global			/int	0	1	12		0
+00854FD0	PTR_00854fd0	pointer:/uint	00000000	zero_initialized_global			/uint	0	1	70		0
+00854FDC	PTR_00854fdc	pointer:/int	00000000	zero_initialized_global			/int	0	1	5		0
+00857118	PTR_00857118	pointer:/uint	00000000	zero_initialized_global			/uint	0	1	42		0
 00857168	PTR_00857168	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00857168_D75747E9	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00857168_D75747E9	1	1	0		0
 0085B950	PTR_RegDeleteKeyA_0085b950	/pointer	0045CA76	initialized_data_pointer				0	0	0		0
 0085B954	PTR_RegQueryValueExA_0085b954	/pointer	0045CA32	initialized_data_pointer				0	0	0		0
@@ -442,10 +446,10 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 0085B99C	PTR_DirectDrawCreate_0085b99c	/pointer	0045CBFE	initialized_data_pointer				0	0	0		0
 0085B9CC	PTR_DirectInputCreateA_0085b9cc	/pointer	0045CC1C	initialized_data_pointer				0	0	0		0
 0085B9FC	PTR_Ordinal_4_0085b9fc	/pointer	80000004	initialized_data_pointer				0	0	0		0
-0085BA00	PTR_Ordinal_1_0085ba00	/pointer	80000001	initialized_data_pointer				0	0	0		0
-0085BA04	PTR_Ordinal_2_0085ba04	/pointer	80000002	initialized_data_pointer				0	0	0		0
-0085BA34	PTR_Ordinal_1_0085ba34	/pointer	80000001	initialized_data_pointer				0	0	0		0
-0085BA38	PTR_Ordinal_2_0085ba38	/pointer	80000002	initialized_data_pointer				0	0	0		0
+0085BA00	PTR_Ordinal_1_0085ba00	/pointer	80000001	initialized_data_pointer	DAT_80000001			0	0	0		0
+0085BA04	PTR_Ordinal_2_0085ba04	/pointer	80000002	initialized_data_pointer	DAT_80000002			0	0	0		0
+0085BA34	PTR_Ordinal_1_0085ba34	/pointer	80000001	initialized_data_pointer	DAT_80000001			0	0	0		0
+0085BA38	PTR_Ordinal_2_0085ba38	/pointer	80000002	initialized_data_pointer	DAT_80000002			0	0	0		0
 0085BA68	PTR_SetBkMode_0085ba68	/pointer	0045C904	initialized_data_pointer				0	0	0		0
 0085BA6C	PTR_GetTextMetricsA_0085ba6c	/pointer	0045C9A8	initialized_data_pointer				0	0	0		0
 0085BA70	PTR_CreateFontIndirectA_0085ba70	/pointer	0045C9BA	initialized_data_pointer				0	0	0		0

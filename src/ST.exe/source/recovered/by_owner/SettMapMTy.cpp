@@ -16,38 +16,38 @@ st::fn_005B5F00(SettMapMTy *this,RecoveredSourceFamily_dibcopy *param_1,int *par
   int iVar2;
 
   iVar2 = (*param_2 + -1) * param_2[5];
-  st::fn_006B4170(param_1,0,iVar2,0,param_2[5] + -2,param_1->field_0008,0xff);
+  st::fn_006B4170(param_1,0,iVar2,0,st::machine_word_boundary_cast<int>(param_2[5] + -2),param_1->field_0008,0xff);
   if (param_2[1] == 1) {
-    st::fn_006B4170(param_1,0,iVar2,3,param_2[5] + -2,param_2[6] + -3,0);
-    st::fn_006B4170(param_1,0,iVar2 + 2,1,param_2[5] + -6,2,0);
+    st::fn_006B4170(param_1,0,iVar2,3,st::machine_word_boundary_cast<int>(param_2[5] + -2),st::machine_word_boundary_cast<int>(param_2[6] + -3),0);
+    st::fn_006B4170(param_1,0,iVar2 + 2,1,st::machine_word_boundary_cast<int>(param_2[5] + -6),2,0);
     st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,param_2[6] - ((*param_2 != 1) + 1),
                  iVar2,3,(byte)this->field_1A5B->field_0140,0xd);
     st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,3,iVar2 + 3,0,
                  (byte)this->field_1A5B->field_0140,0xd);
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0,param_2[5] + -6 + iVar2,0,
+    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0,st::machine_word_boundary_cast<int>(param_2[5] + -6 + iVar2),0,
                  (byte)this->field_1A5B->field_0140,0xd);
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,param_2[5] + iVar2 + -6,0,
-                 param_2[5] + iVar2 + -3,3,(byte)this->field_1A5B->field_0140,0xd);
-    iVar2 = param_2[5] + -3 + iVar2;
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,3,iVar2,param_2[6] + -2,
+    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -6),0,
+                 st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),3,(byte)this->field_1A5B->field_0140,0xd);
+    iVar2 = st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2);
+    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,3,iVar2,st::machine_word_boundary_cast<int>(param_2[6] + -2),
                  (byte)this->field_1A5B->field_0140,0xd);
     return;
   }
-  st::fn_006B4170(param_1,0,iVar2 + 1,4,param_2[5] + -4,param_2[6] + -5,0);
-  st::fn_006B4170(param_1,0,iVar2 + 2,2,param_2[5] + -6,2,0);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,param_2[6] + -1,iVar2,4,
+  st::fn_006B4170(param_1,0,iVar2 + 1,4,st::machine_word_boundary_cast<int>(param_2[5] + -4),st::machine_word_boundary_cast<int>(param_2[6] + -5),0);
+  st::fn_006B4170(param_1,0,iVar2 + 2,2,st::machine_word_boundary_cast<int>(param_2[5] + -6),2,0);
+  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,st::machine_word_boundary_cast<int>(param_2[6] + -1),iVar2,4,
                (byte)this->field_1A5B->field_0140,0xd);
   st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,4,iVar2 + 3,1,
                (byte)this->field_1A5B->field_0140,0xd);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,1,param_2[5] + -6 + iVar2,1,
+  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,1,st::machine_word_boundary_cast<int>(param_2[5] + -6 + iVar2),1,
                (byte)this->field_1A5B->field_0140,0xd);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,param_2[5] + iVar2 + -6,1,
-               param_2[5] + iVar2 + -3,4,(byte)this->field_1A5B->field_0140,0xd);
-  iVar1 = param_2[5] + -3 + iVar2;
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar1,4,iVar1,param_2[6] + -1,
+  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -6),1,
+               st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),4,(byte)this->field_1A5B->field_0140,0xd);
+  iVar1 = st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2);
+  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar1,4,iVar1,st::machine_word_boundary_cast<int>(param_2[6] + -1),
                (byte)this->field_1A5B->field_0140,0xd);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,param_2[6] + -1,
-               param_2[5] + -3 + iVar2,param_2[6] + -1,(byte)this->field_1A5B->field_0140,0xd);
+  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,st::machine_word_boundary_cast<int>(param_2[6] + -1),
+               st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2),st::machine_word_boundary_cast<int>(param_2[6] + -1),(byte)this->field_1A5B->field_0140,0xd);
   return;
 }
 
@@ -89,7 +89,7 @@ st::fn_005D00B0(SettMapMTy *this,AnonShape_005D00B0_9E7CC102 *param_1,uint param
   local_8 = param_1->field_005C;
   local_19 = 0;
   local_15 = 0;
-  st::fn_006B11D0(&this->field_1F84->flags,param_2,&local_64);
+  st::fn_006B11D0(st::pointer_boundary_cast<uint *>(&this->field_1F84->flags),param_2,&local_64);
   return;
 }
 

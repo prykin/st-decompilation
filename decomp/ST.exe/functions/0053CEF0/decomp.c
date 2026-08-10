@@ -33,7 +33,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
   InternalExceptionFrame local_5c;
   SAMPanelTy *local_14;
   int local_10;
-  uint *local_c;
+  undefined4 *local_c;
   int local_8;
 
   local_5c.previous = g_currentExceptionFrame;
@@ -53,7 +53,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
     pCVar3 = thunk_FUN_00571240("BUT_PRODWEAP",0);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806794,CASE_B,pCVar3,uVar10,bVar11,iVar13,iVar16,puVar18);
-    local_c = this_00->field_01B5;
+    local_c = &this_00->field_01B5;
     this_00->field_01B1 = puVar4;
     iVar13 = 0xb4ff;
     local_8 = 0x17;
@@ -72,10 +72,10 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
       pCVar3 = thunk_FUN_00571240("BUT_PRODWEAP",0);
       pCVar3 = FUN_006f2c00(pCVar3,iVar6,uVar7);
       iVar6 = local_8;
-      uVar10 = (*pSVar1->CreateBut)
-                         ((PanelTy *)this_00,0,1,0x24,local_8 + 1,0,1,1,pCVar3,iVar8,iVar16,sVar9,
-                          uVar12,uVar14,pcVar17,uVar19);
-      *local_c = uVar10;
+      uVar7 = (*pSVar1->CreateBut)
+                        ((PanelTy *)this_00,0,1,0x24,local_8 + 1,0,1,1,pCVar3,iVar8,iVar16,sVar9,
+                         uVar12,uVar14,pcVar17,uVar19);
+      *local_c = uVar7;
       pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_0189,this_00->field_0185,0,0x37,iVar6,0xd2
                                            ,0xc,0);
       if (pbVar5 != nullptr) {

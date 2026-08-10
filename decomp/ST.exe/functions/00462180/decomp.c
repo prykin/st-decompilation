@@ -634,15 +634,13 @@ LAB_004625fd:
             if (STField<char>(this,0x2b2) != '\0') {
               puVar22 = (ushort *)((int)this + 0x2a8);
               do {
-                puVar12 = (undefined4 *)
-                          thunk_FUN_0041dc40(local_74,(short)*(undefined4 *)(puVar22 + -1),
+                puVar12 = thunk_FUN_0041dc40(local_74,(short)*(undefined4 *)(puVar22 + -1),
                                              puVar22[1],STField<short>(this,0x6c));
                 local_9c.field_000E = STField<short>(this,0x41) + (short)*puVar12;
                 local_9c.field_0010 = STField<short>(this,0x43) - (short)((uint)*puVar12 >> 0x10);
                 local_9c.field_0012 = *(short *)(puVar12 + 1) + STField<short>(this,0x45);
                 local_30 = (uint)*puVar22 << 0x10;
-                puVar12 = (undefined4 *)
-                          thunk_FUN_0041dc40(&local_c,0,0,STField<short>(this,0x6c));
+                puVar12 = thunk_FUN_0041dc40(&local_c,0,0,STField<short>(this,0x6c));
                 uVar8 = *puVar12;
                 local_2c = *(undefined2 *)(puVar12 + 1);
                 local_9c.field_0014 = (short)uVar8 + *(short *)&pSVar23[1].field_0x1d;

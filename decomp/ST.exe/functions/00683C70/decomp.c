@@ -85,11 +85,11 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
   void *this_00;
   void *this_01;
   int iVar8;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   void *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   void *extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   void *extraout_ECX_01;
   int iVar9;
   void *this_02;
@@ -488,14 +488,14 @@ cf_common_join_0068A687:
              ((pvVar16 == (void *)0x1 && (*(int *)(&DAT_008143f8 + iVar8) != 0)))) {
             thunk_FUN_00672ab0(pvVar16,1);
             bVar25 = 1;
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             pvVar16 = extraout_ECX_00;
           }
           else {
 LAB_006842cf:
             thunk_FUN_00672ab0(pvVar16,0);
             bVar25 = 0;
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             pvVar16 = extraout_ECX_01;
           }
 LAB_006842d6:
@@ -517,7 +517,7 @@ LAB_006842d6:
                (*(int *)(&DAT_008143f8 + (int)pvVar16 * 8 + iVar8) == 0)))))) goto LAB_006842cf;
           thunk_FUN_00672ab0(pvVar16,1);
           bVar25 = 1;
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           pvVar16 = extraout_ECX;
           goto LAB_006842d6;
         }

@@ -27,11 +27,11 @@ undefined4 __fastcall st::fn_004ECEA0(AnonShape_004D9C80_80F657D3 *param_1)
     else {
       this = (STT3DSprC *)st::fn_00401316(pAVar1);
     }
-    param_1->field_05FF = this;
+    param_1->field_05FF = st::machine_word_boundary_cast<undefined4>(this);
     iVar3 = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       st::fn_006A5E40
-                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_vqb.cpp",0x3f);
+                (iVar3,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_vqb.cpp"),0x3f);
     }
   }
   switch(param_1->field_0245) {
@@ -67,15 +67,15 @@ undefined4 __fastcall st::fn_004ECEA0(AnonShape_004D9C80_80F657D3 *param_1)
       *(undefined4 *)&param_1->field_0x4d0 = 0;
     }
     param_1->field_0261 = 0;
-    param_1->field_0265 = param_1->field_0265 & 0xfffffffd;
+    param_1->field_0265 = st::machine_word_boundary_cast<uint>(param_1->field_0265 & 0xfffffffd);
     param_1->field_026D = 0;
   }
   if (*(int *)&param_1->field_0x4d0 == 4) {
     iVar3 = st::fn_00404183
-                      ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,"vacmine",CASE_1D);
+                      ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,st::mutable_c_string("vacmine"),CASE_1D);
     if (iVar3 != 0) {
       st::fn_006A5E40
-                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_vqb.cpp",0x58);
+                (iVar3,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_vqb.cpp"),0x58);
     }
     st::fn_00402A90((STT3DSprC *)param_1->field_05FF);
     uVar4 = 10;
@@ -129,7 +129,7 @@ undefined4 __fastcall st::fn_004ED430(int param_1)
     uVar3 = 1;
     break;
   case 2:
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_vqb.cpp",0x8f,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_vqb.cpp"),0x8f,0,0,st::mutable_c_string("%s"),
                                "Please Fill this case !");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -155,7 +155,7 @@ undefined4 __fastcall st::fn_004ED4B0(int param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x4d0)) {
   case 2:
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_vqb.cpp",0x9b,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_vqb.cpp"),0x9b,0,0,st::mutable_c_string("%s"),
                                "Please Fill thid case !");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */

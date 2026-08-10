@@ -14,7 +14,8 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
   undefined1 *puVar3;
   short *psVar4;
   undefined4 uVar5;
-  undefined2 uVar7;
+  STBoatC_field_06F7State SVar6;
+  undefined2 uVar8;
   int local_EAX_56;
   int local_EAX_102;
   int local_EAX_474;
@@ -39,10 +40,10 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
   int local_EAX_5437;
   uint uVar12;
   int local_EAX_6119;
-  short sVar8;
+  short sVar9;
   int local_EAX_7268;
   int local_EAX_7306;
-  ushort uVar9;
+  ushort uVar10;
   int local_EAX_7456;
   int iVar10;
   short sVar16;
@@ -85,15 +86,15 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
     }
     iVar11 = this->field_0635;
     if (iVar11 == 0) {
-      sVar8 = this->field_0639;
+      sVar9 = this->field_0639;
       sVar19 = this->field_063D;
       sVar16 = this->field_063B;
-      if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar16 < 0)) ||
+      if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar16 < 0)) ||
           ((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)))) || (g_worldGrid.sizeZ <= sVar19)) {
         local_8 = nullptr;
       }
       else {
-        local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+        local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
       }
       if (local_8 == nullptr) {
         return 0;
@@ -118,11 +119,10 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
         psVar4 = &this->field_065B;
         this->field_001C = uVar25;
         puVar2 = &this->field_0x657;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        thunk_FUN_004b2520(this->field_0024,*(int *)((int)this->field_06CB + 0x2c),
-                           (int)this->field_0643,(int)this->field_0645,(int)this->field_0647,
-                           (undefined4 *)puVar2,(undefined4 *)&this->field_0x659,
-                           (undefined4 *)psVar4,uVar25 >> 0x10,&this->field_064D);
+        thunk_FUN_004b2520(this->field_0024,this->field_06F7,(int)this->field_0643,
+                           (int)this->field_0645,(int)this->field_0647,(undefined4 *)puVar2,
+                           (undefined4 *)&this->field_0x659,(undefined4 *)psVar4,uVar25 >> 0x10,
+                           &this->field_064D);
         if (*(short *)puVar2 < 0) {
           return 0;
         }
@@ -144,16 +144,16 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
         *(undefined4 *)&this->field_0x667 = 0;
         return 2;
       }
-      sVar8 = this->field_0639;
+      sVar9 = this->field_0639;
       sVar19 = this->field_063D;
       sVar16 = this->field_063B;
-      if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
+      if (((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) ||
          ((sVar16 < 0 ||
           (((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)) || (g_worldGrid.sizeZ <= sVar19)))))) {
         local_8 = nullptr;
       }
       else {
-        local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+        local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
       }
       if (local_8 == nullptr) {
         return 0;
@@ -163,16 +163,16 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
         return 0;
       }
       this->field_063F = *(undefined4 *)&local_8->field_0x18;
-      sVar8 = this->field_0643;
+      sVar9 = this->field_0643;
       sVar19 = this->field_0647;
       sVar16 = this->field_0645;
-      if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
+      if (((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) ||
          (((sVar16 < 0 || ((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)))) ||
           (g_worldGrid.sizeZ <= sVar19)))) {
         local_8 = nullptr;
       }
       else {
-        local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+        local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
       }
       if (local_8 == nullptr) {
         return 0;
@@ -196,16 +196,16 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
       case 0:
         this->field_00B7 = 0;
         if (this->field_0635 == 1) {
-          sVar8 = this->field_0643;
+          sVar9 = this->field_0643;
           sVar19 = this->field_0647;
           sVar16 = this->field_0645;
-          if ((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
+          if ((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) ||
               ((sVar16 < 0 || ((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)))))) ||
              (g_worldGrid.sizeZ <= sVar19)) {
             local_8 = nullptr;
           }
           else {
-            local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+            local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
           }
           if (local_8 == nullptr) {
             return 0;
@@ -218,15 +218,15 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
             return 0;
           }
         }
-        sVar8 = this->field_0639;
+        sVar9 = this->field_0639;
         sVar19 = this->field_063D;
         sVar16 = this->field_063B;
-        if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar16 < 0)) ||
+        if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar16 < 0)) ||
             ((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)))) || (g_worldGrid.sizeZ <= sVar19)) {
           local_8 = nullptr;
         }
         else {
-          local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+          local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
         }
         if (local_8 == nullptr) {
           return 0;
@@ -255,35 +255,35 @@ LAB_00479e39:
 LAB_0047b2dc:
         iVar11 = (int)*(short *)&this->field_0x655;
         sVar19 = *(short *)&this->field_0x653;
-        sVar8 = *(short *)&this->field_0x651;
+        sVar9 = *(short *)&this->field_0x651;
         break;
       case 1:
-        sVar8 = this->field_0639;
+        sVar9 = this->field_0639;
         sVar19 = this->field_063D;
         sVar16 = this->field_063B;
-        if ((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
+        if ((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) ||
             ((sVar16 < 0 || ((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)))))) ||
            (g_worldGrid.sizeZ <= sVar19)) {
           local_8 = nullptr;
         }
         else {
-          local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+          local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
         }
         if (((local_8 != nullptr) && (*(int *)&local_8->field_0x18 == this->field_063F)
             ) && (iVar11 = (*local_8->vtable[5].slots_00_28[2])(), iVar11 != 0)) {
           if (this->field_0635 != 1) {
             return 2;
           }
-          sVar8 = this->field_0643;
+          sVar9 = this->field_0643;
           sVar19 = this->field_0647;
           sVar16 = this->field_0645;
-          if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
+          if (((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) ||
              (((sVar16 < 0 || ((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)))) ||
               (g_worldGrid.sizeZ <= sVar19)))) {
             local_8 = nullptr;
           }
           else {
-            local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+            local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
           }
           if (((local_8 != nullptr) &&
               (*(int *)&local_8->field_0x18 == this->field_0649)) &&
@@ -298,7 +298,7 @@ LAB_0047b2dc:
         goto switchD_00479647_caseD_2;
       case 3:
         sVar19 = this->field_063B;
-        sVar8 = this->field_0639;
+        sVar9 = this->field_0639;
         iVar11 = this->field_063D + 1;
         break;
       case -1:
@@ -333,15 +333,15 @@ LAB_00479ba6:
           return 2;
         }
         if (this->field_0635 == 1) {
-          sVar8 = this->field_0643;
+          sVar9 = this->field_0643;
           sVar19 = this->field_0647;
           sVar16 = this->field_0645;
-          if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar16 < 0)) ||
+          if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar16 < 0)) ||
               ((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)))) || (g_worldGrid.sizeZ <= sVar19)) {
             local_8 = nullptr;
           }
           else {
-            local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+            local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
           }
           if (local_8 == nullptr) {
             return 0;
@@ -354,16 +354,16 @@ LAB_00479ba6:
             return 0;
           }
         }
-        sVar8 = this->field_0639;
+        sVar9 = this->field_0639;
         sVar19 = this->field_063D;
         sVar16 = this->field_063B;
-        if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
+        if (((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) ||
            ((sVar16 < 0 ||
             (((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)) || (g_worldGrid.sizeZ <= sVar19)))))) {
           local_8 = nullptr;
         }
         else {
-          local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+          local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
         }
         if (local_8 == nullptr) {
           return 0;
@@ -392,9 +392,8 @@ LAB_00479ba6:
           if (iVar11 != 3) {
             if (iVar11 == 4) {
               if (*(int *)&this->field_0x667 == 0) {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                iVar11 = *(int *)((int)this->field_06CB + 0x2c);
-                if ((((iVar11 == 7) || (iVar11 == 0x13)) || (iVar11 == 0x1b)) &&
+                SVar6 = this->field_06F7;
+                if ((((SVar6 == CASE_7) || (SVar6 == CASE_13)) || (SVar6 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
                     (iVar11 = STPlaySystemC::sub_006E62D0
                                         (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
@@ -424,9 +423,7 @@ LAB_00479ba6:
                 *(undefined4 *)&this->field_0x667 = 2;
                 *(undefined4 *)&this->field_0x65d = 0;
                 sub_0041C5A0(this);
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                iVar11 = *(int *)((int)this->field_06CB + 0x2c);
-                if (((iVar11 == 0xb) || (iVar11 == 0x23)) &&
+                if (((this->field_06F7 == CASE_B) || (this->field_06F7 == CASE_23)) &&
                    ((this->field_021D == 1 && (this->field_0024 == (uint)DAT_0080874d)))) {
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   ST3DSMAPContext::sub_006E6780
@@ -438,24 +435,21 @@ LAB_00479ba6:
                                    (int)*(short *)&this->field_0x659,(int)this->field_065B);
                 thunk_FUN_00417a20(this,*(short *)&this->field_0x657,*(short *)&this->field_0x659,
                                    this->field_065B,1);
-                sVar8 = (this->field_0643 + 1) * 0xc9;
-                this->field_0041 = sVar8;
+                sVar9 = (this->field_0643 + 1) * 0xc9;
+                this->field_0041 = sVar9;
                 sVar19 = (this->field_0645 + 1) * 0xc9;
                 sVar16 = this->field_0647 * 200 + 300;
                 this->field_0043 = sVar19;
                 this->field_0045 = sVar16;
-                local_20 = (int)sVar8;
+                local_20 = (int)sVar9;
                 STT3DSprC::sub_004AD3C0
                           ((STT3DSprC *)&this->field_01D5,
                            (float)local_20 * _DAT_007904f8 * _DAT_007904f0,
                            (float)(int)sVar19 * _DAT_007904f8 * _DAT_007904f0,
                            (float)(int)sVar16 * _DAT_007904f8 * _DAT_007904f0);
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                TLOEmbryoTy::sub_0041C3F0
-                          ((TLOEmbryoTy *)this,*(undefined **)((int)this->field_06CB + 0x3f));
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                iVar11 = *(int *)((int)this->field_06CB + 0x2c);
-                if ((((iVar11 == 7) || (iVar11 == 0x13)) || (iVar11 == 0x1b)) &&
+                TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)this->field_070A);
+                SVar6 = this->field_06F7;
+                if ((((SVar6 == CASE_7) || (SVar6 == CASE_13)) || (SVar6 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
                     (iVar11 = STPlaySystemC::sub_006E62D0
                                         (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
@@ -479,10 +473,9 @@ LAB_00479ba6:
                  (iVar11 = *(int *)&this->field_0x65d + 1, *(int *)&this->field_0x65d = iVar11,
                  iVar11 == 0x16)) {
                 *(undefined4 *)&this->field_0x667 = 3;
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                iVar11 = *(int *)((int)this->field_06CB + 0x2c);
+                SVar6 = this->field_06F7;
                 *(undefined4 *)&this->field_0x65d = 0;
-                if (((iVar11 == 7) || ((iVar11 == 0x13 || (iVar11 == 0x1b)))) &&
+                if (((SVar6 == CASE_7) || ((SVar6 == CASE_13 || (SVar6 == CASE_1B)))) &&
                    ((this->field_07CA != nullptr &&
                     (iVar11 = STPlaySystemC::sub_006E62D0
                                         (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
@@ -490,10 +483,8 @@ LAB_00479ba6:
                   thunk_FUN_004ad460((void *)((int)&local_8[0xd].vtable + 1),0);
                 }
                 thunk_FUN_004ad460(&this->field_01D5,0);
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                iVar11 = *(int *)((int)this->field_06CB + 0x2c);
-                if ((((iVar11 == 0xb) || (iVar11 == 0x23)) && (this->field_021D == 1)) &&
-                   (this->field_0024 == (uint)DAT_0080874d)) {
+                if ((((this->field_06F7 == CASE_B) || (this->field_06F7 == CASE_23)) &&
+                    (this->field_021D == 1)) && (this->field_0024 == (uint)DAT_0080874d)) {
                   local_20 = (int)this->field_0041;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   ST3DSMAPContext::sub_006E6710
@@ -515,9 +506,8 @@ LAB_00479ba6:
             }
             if (iVar11 == 5) {
               if (*(int *)&this->field_0x667 == 0) {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                iVar11 = *(int *)((int)this->field_06CB + 0x2c);
-                if ((((iVar11 == 7) || (iVar11 == 0x13)) || (iVar11 == 0x1b)) &&
+                SVar6 = this->field_06F7;
+                if ((((SVar6 == CASE_7) || (SVar6 == CASE_13)) || (SVar6 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
                     (iVar11 = STPlaySystemC::sub_006E62D0
                                         (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
@@ -570,12 +560,9 @@ LAB_00479ba6:
                            (float)local_20 * _DAT_007904f8 * _DAT_007904f0,
                            (float)(int)this->field_0043 * _DAT_007904f8 * _DAT_007904f0,
                            (float)(int)this->field_0045 * _DAT_007904f8 * _DAT_007904f0);
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                TLOEmbryoTy::sub_0041C3F0
-                          ((TLOEmbryoTy *)this,*(undefined **)((int)this->field_06CB + 0x3f));
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                iVar11 = *(int *)((int)this->field_06CB + 0x2c);
-                if ((((iVar11 == 7) || (iVar11 == 0x13)) || (iVar11 == 0x1b)) &&
+                TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)this->field_070A);
+                SVar6 = this->field_06F7;
+                if ((((SVar6 == CASE_7) || (SVar6 == CASE_13)) || (SVar6 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
                     (iVar11 = STPlaySystemC::sub_006E62D0
                                         (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
@@ -599,10 +586,9 @@ LAB_00479ba6:
                  (iVar11 = *(int *)&this->field_0x65d + 1, *(int *)&this->field_0x65d = iVar11,
                  iVar11 == 0x16)) {
                 *(undefined4 *)&this->field_0x667 = 3;
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                iVar11 = *(int *)((int)this->field_06CB + 0x2c);
+                SVar6 = this->field_06F7;
                 *(undefined4 *)&this->field_0x65d = 0;
-                if (((iVar11 == 7) || ((iVar11 == 0x13 || (iVar11 == 0x1b)))) &&
+                if (((SVar6 == CASE_7) || ((SVar6 == CASE_13 || (SVar6 == CASE_1B)))) &&
                    ((this->field_07CA != nullptr &&
                     (iVar11 = STPlaySystemC::sub_006E62D0
                                         (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
@@ -614,17 +600,17 @@ LAB_00479ba6:
               if ((*(int *)&this->field_0x667 == 3) &&
                  (iVar11 = *(int *)&this->field_0x65d + 1, *(int *)&this->field_0x65d = iVar11,
                  iVar11 == 10)) {
-                sVar8 = this->field_0639;
+                sVar9 = this->field_0639;
                 sVar19 = this->field_063D;
                 sVar16 = this->field_063B;
                 this->field_0742 = 0;
-                if ((sVar8 < 0) ||
-                   ((((g_worldGrid.sizeX <= sVar8 || (sVar16 < 0)) || (g_worldGrid.sizeY <= sVar16))
+                if ((sVar9 < 0) ||
+                   ((((g_worldGrid.sizeX <= sVar9 || (sVar16 < 0)) || (g_worldGrid.sizeY <= sVar16))
                     || ((sVar19 < 0 || (g_worldGrid.sizeZ <= sVar19)))))) {
                   local_8 = nullptr;
                 }
                 else {
-                  local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+                  local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
                 }
                 if (((local_8 != nullptr) &&
                     (*(int *)&local_8->field_0x18 == this->field_063F)) &&
@@ -635,10 +621,8 @@ LAB_00479ba6:
                 if (iVar11 != 0) {
                   return -1;
                 }
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_0047acdc:
-                iVar11 = thunk_FUN_004b2d10((byte)this->field_0024,
-                                            *(int *)((int)this->field_06CB + 0x2c),
+                iVar11 = thunk_FUN_004b2d10((byte)this->field_0024,this->field_06F7,
                                             (int)this->field_005B,(int)this->field_005D);
                 if (iVar11 == 0) {
                   return 0;
@@ -666,10 +650,10 @@ LAB_0047acdc:
               if (local_EAX_7306 != 3) {
                 return 2;
               }
-              uVar9 = *(short *)&this->field_0x655 + 1;
-              sVar8 = *(short *)&this->field_0x653;
-              sub_0048DFD0(this,*(short *)&this->field_0x651,sVar8,uVar9,
-                           *(short *)&this->field_0x651,sVar8,(int *)(uint)uVar9,1,
+              uVar10 = *(short *)&this->field_0x655 + 1;
+              sVar9 = *(short *)&this->field_0x653;
+              sub_0048DFD0(this,*(short *)&this->field_0x651,sVar9,uVar10,
+                           *(short *)&this->field_0x651,sVar9,(int *)(uint)uVar10,1,
                            (short *)&this->field_0x651,(short *)&this->field_0x653,
                            (short *)&this->field_0x655);
               goto LAB_0047b2dc;
@@ -677,12 +661,12 @@ LAB_0047acdc:
             if (*(int *)&this->field_0x667 == 0) {
               iVar11 = STReplaceLowWord((uint32_t)(this), (uint16_t)(*(short *)&this->field_0x659 * 0xc9)) +
                        100;
-              uVar7 = (*this->vtable->vfunc_10)
+              uVar8 = (*this->vtable->vfunc_10)
                                 (this->field_0041,this->field_0043,
                                  STReplaceLowWord((uint32_t)(iVar11), (uint16_t)(this->field_0045)),
                                  *(short *)&this->field_0x657 * 0xc9 + 100,(short)iVar11,
                                  (ushort)(this->field_065B * 200) + 100);
-              *(undefined2 *)&this->field_0x661 = uVar7;
+              *(undefined2 *)&this->field_0x661 = uVar8;
               *(undefined4 *)&this->field_0x667 = 1;
             }
             if (*(int *)&this->field_0x667 == 1) {
@@ -720,8 +704,7 @@ LAB_0047acdc:
                (local_c = 0, this->field_02BF != '\0')) {
               local_10 = (undefined4 *)&this->field_0x2b3;
               do {
-                puVar13 = (undefined4 *)
-                          thunk_FUN_0041dc40(local_30,(short)*local_10,*(ushort *)(local_10 + 1),
+                puVar13 = thunk_FUN_0041dc40(local_30,(short)*local_10,*(ushort *)(local_10 + 1),
                                              this->field_006C);
                 uVar5 = *puVar13;
                 bVar24 = 0;
@@ -733,10 +716,10 @@ LAB_0047acdc:
                 sVar20 = 0;
                 sVar16 = 0;
                 sVar19 = 0;
-                sVar8 = 0;
+                sVar9 = 0;
                 local_28 = uVar5;
                 if (DAT_0080732c == 1) {
-                  sVar8 = 0;
+                  sVar9 = 0;
                   sVar19 = 0;
                   sVar16 = 0;
                   sVar20 = 0;
@@ -758,7 +741,7 @@ LAB_0047acdc:
                 }
                 TraksClassTy::TraksCreate
                           (g_traksClass_00802A7C,1,2,7,iVar15,iVar14 + ((uVar25 >> 0x10) % 7 - 3),
-                           iVar17,sVar8,sVar19,sVar16,sVar20,sVar21,sVar22,iVar12,sVar23,bVar24);
+                           iVar17,sVar9,sVar19,sVar16,sVar20,sVar21,sVar22,iVar12,sVar23,bVar24);
                 local_10 = (undefined4 *)((int)local_10 + 6);
                 local_c = local_c + 1;
               } while (local_c < (int)(uint)(byte)this->field_02BF);
@@ -773,16 +756,16 @@ LAB_0047acdc:
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
             if (local_14 != 0) goto cf_common_exit_0047ADB5;
-            sVar8 = this->field_0639;
+            sVar9 = this->field_0639;
             iVar11 = 0;
             sVar19 = this->field_063D;
             sVar16 = this->field_063B;
-            if ((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar16 < 0)) ||
+            if ((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar16 < 0)) ||
                (((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)) || (g_worldGrid.sizeZ <= sVar19)))) {
               local_8 = nullptr;
             }
             else {
-              iVar11 = (int)sVar8;
+              iVar11 = (int)sVar9;
               local_8 = STGridAt3D(g_worldGrid, iVar11, sVar16, sVar19).objects[0];
             }
             if ((local_8 != nullptr) &&
@@ -793,25 +776,25 @@ LAB_0047acdc:
                 iVar11 = thunk_FUN_004e95c0(local_8,this);
               }
             }
-            sVar8 = this->field_0643;
-            iVar11 = STReplaceLowWord((uint32_t)(iVar11), (uint16_t)(sVar8));
+            sVar9 = this->field_0643;
+            iVar11 = STReplaceLowWord((uint32_t)(iVar11), (uint16_t)(sVar9));
             sVar19 = this->field_0647;
             sVar16 = this->field_0645;
-            if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar16 < 0)) ||
+            if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar16 < 0)) ||
                 ((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)))) || (g_worldGrid.sizeZ <= sVar19)) {
               local_8 = nullptr;
             }
             else {
-              iVar11 = (int)sVar8;
+              iVar11 = (int)sVar9;
               local_8 = STGridAt3D(g_worldGrid, iVar11, sVar16, sVar19).objects[0];
             }
             if ((local_8 == nullptr) ||
                (iVar11 = *(int *)&local_8->field_0x18, iVar11 != this->field_0649)) {
 LAB_0047b1c5:
-              sVar8 = this->field_0647 + 1;
-              iVar11 = sub_0048DFD0(this,this->field_0643,this->field_0645,sVar8,this->field_0643,
+              sVar9 = this->field_0647 + 1;
+              iVar11 = sub_0048DFD0(this,this->field_0643,this->field_0645,sVar9,this->field_0643,
                                     this->field_0645,
-                                    (int *)STReplaceLowWord((uint32_t)(iVar11), (uint16_t)(sVar8)),2,
+                                    (int *)STReplaceLowWord((uint32_t)(iVar11), (uint16_t)(sVar9)),2,
                                     (short *)&this->field_0x651,(short *)&this->field_0x653,
                                     (short *)&this->field_0x655);
 joined_r0x0047b202:
@@ -839,10 +822,10 @@ joined_r0x0047b202:
                 }
               }
               if (*(int *)&local_8[0x1d].field_0x18 == 0) {
-                sVar8 = this->field_0647 + 1;
-                iVar11 = sub_0048DFD0(this,this->field_0643,this->field_0645,sVar8,this->field_0643,
+                sVar9 = this->field_0647 + 1;
+                iVar11 = sub_0048DFD0(this,this->field_0643,this->field_0645,sVar9,this->field_0643,
                                       this->field_0645,
-                                      (int *)STReplaceLowWord((uint32_t)(local_8), (uint16_t)(sVar8)),2,
+                                      (int *)STReplaceLowWord((uint32_t)(local_8), (uint16_t)(sVar9)),2,
                                       (short *)&this->field_0x651,(short *)puVar3,(short *)puVar2);
                 goto joined_r0x0047b202;
               }
@@ -860,11 +843,11 @@ cf_common_exit_0047ADB5:
             iVar11 = STReplaceLowWord((uint32_t)(iVar12), (uint16_t)(this->field_063B + 1)) * 0xc9;
             iVar14 = STReplaceLowWord((uint32_t)(iVar11), (uint16_t)(this->field_0639 + 1));
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            uVar7 = (*this->vtable->vfunc_10)
+            uVar8 = (*this->vtable->vfunc_10)
                               (this->field_0041,this->field_0043,
                                CONCAT22((short)((uint)(iVar14 * 0x19) >> 0x10),this->field_0045),
                                (short)(iVar14 * 0xc9),(short)iVar11,iVar12);
-            *(undefined2 *)&this->field_0x661 = uVar7;
+            *(undefined2 *)&this->field_0x661 = uVar8;
             *(undefined4 *)&this->field_0x667 = 1;
           }
           if (*(int *)&this->field_0x667 == 1) {
@@ -905,8 +888,7 @@ joined_r0x0047ada9:
              (local_c = 0, this->field_02BF != '\0')) {
             local_10 = (undefined4 *)&this->field_0x2b3;
             do {
-              puVar13 = (undefined4 *)
-                        thunk_FUN_0041dc40(local_30,(short)*local_10,*(ushort *)(local_10 + 1),
+              puVar13 = thunk_FUN_0041dc40(local_30,(short)*local_10,*(ushort *)(local_10 + 1),
                                            this->field_006C);
               uVar5 = *puVar13;
               bVar24 = 0;
@@ -918,10 +900,10 @@ joined_r0x0047ada9:
               sVar20 = 0;
               sVar16 = 0;
               sVar19 = 0;
-              sVar8 = 0;
+              sVar9 = 0;
               local_28 = uVar5;
               if (DAT_0080732c == 1) {
-                sVar8 = 0;
+                sVar9 = 0;
                 sVar19 = 0;
                 sVar16 = 0;
                 sVar20 = 0;
@@ -943,7 +925,7 @@ joined_r0x0047ada9:
               }
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,iVar15,iVar14 + ((uVar25 >> 0x10) % 7 - 3),
-                         iVar17,sVar8,sVar19,sVar16,sVar20,sVar21,sVar22,iVar12,sVar23,bVar24);
+                         iVar17,sVar9,sVar19,sVar16,sVar20,sVar21,sVar22,iVar12,sVar23,bVar24);
               local_10 = (undefined4 *)((int)local_10 + 6);
               local_c = local_c + 1;
             } while (local_c < (int)(uint)(byte)this->field_02BF);
@@ -959,15 +941,15 @@ joined_r0x0047ada9:
           }
           if (local_14 != 0) goto cf_common_exit_0047A369;
           if (this->field_0635 == 1) {
-            sVar8 = this->field_0643;
+            sVar9 = this->field_0643;
             sVar19 = this->field_0647;
             sVar16 = this->field_0645;
-            if ((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar16 < 0)) ||
+            if ((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar16 < 0)) ||
                (((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)) || (g_worldGrid.sizeZ <= sVar19)))) {
               local_8 = nullptr;
             }
             else {
-              local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+              local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
             }
             if (((local_8 != nullptr) &&
                 (*(int *)&local_8->field_0x18 == this->field_0649)) &&
@@ -979,16 +961,16 @@ joined_r0x0047ada9:
           }
           else {
 LAB_0047a385:
-            sVar8 = this->field_0639;
+            sVar9 = this->field_0639;
             sVar19 = this->field_063D;
             sVar16 = this->field_063B;
-            if (((sVar8 < 0) ||
-                (((g_worldGrid.sizeX <= sVar8 || (sVar16 < 0)) || (g_worldGrid.sizeY <= sVar16))))
+            if (((sVar9 < 0) ||
+                (((g_worldGrid.sizeX <= sVar9 || (sVar16 < 0)) || (g_worldGrid.sizeY <= sVar16))))
                || ((sVar19 < 0 || (g_worldGrid.sizeZ <= sVar19)))) {
               local_8 = nullptr;
             }
             else {
-              local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+              local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
             }
             if (((local_8 != nullptr) &&
                 (*(int *)&local_8->field_0x18 == this->field_063F)) &&
@@ -1017,17 +999,17 @@ cf_common_exit_0047A369:
         switch(local_EAX_1382) {
         case 0:
           if (this->field_0635 == 1) {
-            sVar8 = this->field_0643;
+            sVar9 = this->field_0643;
             sVar19 = this->field_0647;
             sVar16 = this->field_0645;
-            if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
+            if (((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) ||
                ((sVar16 < 0 ||
                 (((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)) || (g_worldGrid.sizeZ <= sVar19)))))
                ) {
               local_8 = nullptr;
             }
             else {
-              local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+              local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
             }
             if (local_8 == nullptr) {
               return 0;
@@ -1040,16 +1022,16 @@ cf_common_exit_0047A369:
               return 0;
             }
           }
-          sVar8 = this->field_0639;
+          sVar9 = this->field_0639;
           sVar19 = this->field_063D;
           sVar16 = this->field_063B;
-          if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
+          if (((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) ||
              (((sVar16 < 0 || ((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)))) ||
               (g_worldGrid.sizeZ <= sVar19)))) {
             local_8 = nullptr;
           }
           else {
-            local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+            local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
           }
           if (local_8 == nullptr) {
             return 0;
@@ -1071,17 +1053,17 @@ cf_common_exit_0047A369:
           thunk_FUN_004e95c0(local_8,this);
           return 0;
         case 1:
-          sVar8 = this->field_0639;
+          sVar9 = this->field_0639;
           sVar19 = this->field_063D;
           sVar16 = this->field_063B;
-          if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
+          if (((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) ||
              ((sVar16 < 0 ||
               (((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)) || (g_worldGrid.sizeZ <= sVar19))))))
           {
             local_8 = nullptr;
           }
           else {
-            local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+            local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
           }
           if (((local_8 != nullptr) &&
               (*(int *)&local_8->field_0x18 == this->field_063F)) &&
@@ -1089,17 +1071,17 @@ cf_common_exit_0047A369:
             if (this->field_0635 != 1) {
               return 2;
             }
-            sVar8 = this->field_0643;
+            sVar9 = this->field_0643;
             sVar19 = this->field_0647;
             sVar16 = this->field_0645;
-            if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
+            if (((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) ||
                ((sVar16 < 0 ||
                 (((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)) || (g_worldGrid.sizeZ <= sVar19)))))
                ) {
               local_8 = nullptr;
             }
             else {
-              local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+              local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
             }
             if (((local_8 != nullptr) &&
                 (*(int *)&local_8->field_0x18 == this->field_0649)) &&
@@ -1116,15 +1098,15 @@ cf_common_exit_0047A369:
                sub_004939B0(this,(short *)&this->field_0x651,(short *)&this->field_0x653,
                             (short *)&this->field_0x655);
           if (local_EAX_1913 != 1) {
-            sVar8 = this->field_0639;
+            sVar9 = this->field_0639;
             sVar19 = this->field_063D;
             sVar16 = this->field_063B;
-            if ((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar16 < 0)) ||
+            if ((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar16 < 0)) ||
                (((g_worldGrid.sizeY <= sVar16 || (sVar19 < 0)) || (g_worldGrid.sizeZ <= sVar19)))) {
               local_8 = nullptr;
             }
             else {
-              local_8 = STGridAt3D(g_worldGrid, sVar8, sVar16, sVar19).objects[0];
+              local_8 = STGridAt3D(g_worldGrid, sVar9, sVar16, sVar19).objects[0];
             }
             if (local_8 == nullptr) {
               return 0;
@@ -1153,9 +1135,9 @@ cf_common_exit_0047A369:
       }
       iVar11 = (int)*(short *)&this->field_0x655;
       sVar19 = *(short *)&this->field_0x653;
-      sVar8 = *(short *)&this->field_0x651;
+      sVar9 = *(short *)&this->field_0x651;
     }
-    sub_00481520(this,(int)sVar8,(int)sVar19,iVar11);
+    sub_00481520(this,(int)sVar9,(int)sVar19,iVar11);
   }
   sub_00460260(this,0);
 switchD_00479647_caseD_2:

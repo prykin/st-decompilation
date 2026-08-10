@@ -149,8 +149,7 @@ LAB_0048a37f:
                   if (this->field_02B2 != '\0') {
                     local_30 = (undefined2 *)&this->field_0x2a8;
                     do {
-                      puVar6 = (undefined4 *)
-                               thunk_FUN_0041dc40(local_48,(short)*(undefined4 *)(local_30 + -1),
+                      puVar6 = thunk_FUN_0041dc40(local_48,(short)*(undefined4 *)(local_30 + -1),
                                                   local_30[1],(short)local_24);
                       local_40 = (short)*puVar6;
                       sStack_3e = (short)((uint)*puVar6 >> 0x10);
@@ -159,7 +158,7 @@ LAB_0048a37f:
                       local_28 = STReplaceLowWord((uint32_t)(puVar6), (uint16_t)(this->field_0045 + *(short *)(puVar6 + 1)));
                       sStack_3e = *local_30;
                       local_40 = 0;
-                      puVar6 = (undefined4 *)thunk_FUN_0041dc40(local_50,0,0,(short)local_24);
+                      puVar6 = thunk_FUN_0041dc40(local_50,0,0,(short)local_24);
                       local_40 = (short)*puVar6;
                       sStack_3e = (short)((uint)*puVar6 >> 0x10);
                       local_3c = *(undefined2 *)(puVar6 + 1);
@@ -204,8 +203,7 @@ LAB_00489dfc:
                     uVar5 = uVar5 + 1;
                   } while ((int)uVar5 < (int)pDVar10->count);
                 }
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                if ((*(int *)((int)this->field_06CB + 0x2c) == 0x1c) &&
+                if ((this->field_06F7 == CASE_1C) &&
                    (iVar16 = local_8->vfunc_120(), iVar16 == 1)) {
                   iVar12 = iVar12 / 0x14;
                 }
@@ -273,8 +271,7 @@ LAB_00489eb0:
                 if (this->field_02B2 != '\0') {
                   local_30 = (undefined2 *)&this->field_0x2a8;
                   do {
-                    puVar6 = (undefined4 *)
-                             thunk_FUN_0041dc40(local_58,(short)*(undefined4 *)(local_30 + -1),
+                    puVar6 = thunk_FUN_0041dc40(local_58,(short)*(undefined4 *)(local_30 + -1),
                                                 local_30[1],(short)local_24);
                     local_40 = (short)*puVar6;
                     sStack_3e = (short)((uint)*puVar6 >> 0x10);
@@ -283,7 +280,7 @@ LAB_00489eb0:
                     local_28 = STReplaceLowWord((uint32_t)(puVar6), (uint16_t)(this->field_0045 + *(short *)(puVar6 + 1)));
                     sStack_3e = *local_30;
                     local_40 = 0;
-                    puVar6 = (undefined4 *)thunk_FUN_0041dc40(local_60,0,0,(short)local_24);
+                    puVar6 = thunk_FUN_0041dc40(local_60,0,0,(short)local_24);
                     local_40 = (short)*puVar6;
                     sStack_3e = (short)((uint)*puVar6 >> 0x10);
                     local_3c = *(undefined2 *)(puVar6 + 1);
@@ -345,8 +342,7 @@ LAB_0048a235:
 LAB_0048a22c:
                   if (local_8->field_0020 != 0x1ae) goto LAB_0048a235;
                 }
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                if ((*(int *)((int)this->field_06CB + 0x2c) == 0x1c) &&
+                if ((this->field_06F7 == CASE_1C) &&
                    (iVar16 = local_8->vfunc_120(), iVar16 == 1)) {
                   iVar12 = iVar12 / 0x14;
                 }

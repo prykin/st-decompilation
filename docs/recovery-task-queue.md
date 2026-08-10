@@ -224,13 +224,13 @@ The accepted corpus contains the following concrete debt:
 
 | Issue | Occurrences | Functions | Next evidence source |
 | --- | ---: | ---: | --- |
-| `undefined_type` | 18,327 | 3,640 | definitions, consumers, ABI-width families; compatibility spelling is now available |
-| `raw_pointer_offset` | 2,248 | 1,023 | cross-function pointer families and complete records |
-| `raw_indirect_call` | 1,886 | 773 | stored callback targets and physical vtable slots |
+| `undefined_type` | 18,286 | 3,651 | definitions, consumers, ABI-width families; compatibility spelling is now available |
+| `raw_pointer_offset` | 2,169 | 1,007 | cross-function pointer families and complete records |
+| `raw_indirect_call` | 1,888 | 775 | stored callback targets and physical vtable slots |
 | `packed_or_unaligned_piece` | 0 raw partial tokens | 0 | exact exported pieces now use audited runtime helpers; semantic packed-member refinement remains |
-| `return_width_artifact` | 558 uses | 138 | whole-CFG EAX/x87 and caller-consumer evidence; declarations are no longer double-counted |
-| `unresolved_register_input` | 472 | 132 | boundary ABI, SEH/setjmp, and true live-ins |
-| `dynamic_array_indexing` | 76 | 38 | per-owner DArray element descriptors |
+| `return_width_artifact` | 292 uses | 103 | whole-CFG EAX/x87 and caller-consumer evidence; declarations are no longer double-counted |
+| `unresolved_register_input` | 474 | 133 | boundary ABI, SEH/setjmp, and true live-ins |
+| `dynamic_array_indexing` | 76 | 39 | per-owner DArray element descriptors |
 | `flattened_global_record_array` | 36 | 17 | exact member identity inside proven record arrays |
 
 ### Q-044 Build a measurable C++ extraction boundary
@@ -244,7 +244,7 @@ calling-convention compatibility, opaque unresolved callable values, byte-safe
 and typed byte-offset fields. The final three `"literal"._offset_width_` forms
 are gone; the corpus has zero residual Ghidra partial-piece syntax.
 
-The compatibility layer covers 34,795 occurrences and compiles as a C++17
+The compatibility layer covers 34,786 occurrences and compiles as a C++17
 header. It deliberately leaves every use in the readiness inventory and does
 not promote a byte offset to a class field. The example ownerless receiver at
 `00717910` now uses `STField<RecoveredSourceFamily_dibcopy *>(this, 0x28)`:
@@ -253,10 +253,10 @@ database receiver-record experiment was rejected after the ABI gate reported
 22 hard downstream regressions; no part of that mutation was retained.
 
 The accepted headless export keeps semantic Program hash
-`e1f9bb21bfcd91e18401c62060be8cb61a23b40b1aa776942fa539b09a6aadd0`,
-contains 10,392 function records and 5,712 bodies, and passes both export and
-ABI gates. The next major boundary is a deterministic declaration/translation-
-unit generator; see `docs/compile-readiness.md`.
+`b5ccc04d4b3302db3a4dfdc519371fb1e3feefb6d21c7a3e8d4a2f371dec5ed4`,
+contains 10,400 function records and 5,720 bodies, and passes both export and
+ABI gates. The deterministic declaration/translation-unit generator is now
+implemented; see `docs/compile-readiness.md`.
 
 ### Q-045 Assemble the accepted corpus into a deterministic source tree
 
@@ -266,8 +266,8 @@ order, declares referenced globals/imports, assigns every internal function the
 stable free symbol `st::fn_ADDRESS`, carries external identities from
 `call_relations.jsonl`, and atomically emits `src/ST.exe`.
 
-The current tree contains all 5,712 bodies in 318 translation units. Embedded
-and recovered debug evidence places 1,044 bodies under original paths; 4,668
+The current tree contains all 5,720 bodies in 318 translation units. Embedded
+and recovered debug evidence places 1,044 bodies under original paths; 4,676
 remain in deterministic owner/address fallback units. The complete generated
 header passes Clang C++17 syntax checking. Full object compilation is not yet a
 success criterion: its diagnostics now form the next address-stable queue for
@@ -292,15 +292,16 @@ vtable. Uniquely owned non-virtual `__thiscall` functions receive ordinary
 forwarding class methods over `st::fn_ADDRESS`; they do not synthesize
 inheritance or change packed layout.
 
-The accepted corpus materializes 2,664 byte views, 780 physical-vtable wrappers,
-and 1,292 ordinary source methods. It also resolves 231 exact address-taking
+The accepted corpus materializes 2,678 byte views, 780 physical-vtable wrappers,
+and 1,292 ordinary source methods. It also resolves 247 exact address-taking
 uses where an image object and a C++ record type share a name. A fixed Apple
-Clang C++17 probe capped at 32 errors per translation unit passes 54 of 318 units
-and maps 4,066 of 4,068
-retained errors to function addresses. Only
-38 missing-member diagnostics remain. The next compile-driven cluster is weak
-call-boundary scalar/pointer typing, led by 1,198 argument mismatches and 1,014
-assignments. Treat the cap as a comparison baseline, not a complete error total.
+Clang C++17 probe capped at 64 errors per translation unit passes 178 of 318
+units and maps 2,196 of 2,213 retained errors to function addresses. The former
+weak-call-boundary cluster is closed generically: call-argument mismatches fell
+from 1,226 to zero and assignment mismatches from 1,426 to 72. The next queues
+are undeclared identifiers, pointer indirection, non-callable values, and
+invalid operands. Treat the cap as a comparison baseline, not a complete error
+total.
 
 ### Q-041 Closed narrow returns and exact address/piece presentation
 
@@ -430,12 +431,13 @@ qualifiers after rewriting them to `st::fn_ADDRESS`.
 
 Latest accepted corpus state:
 
-- semantic hash `9f9ee6d4638ff024c7cbdc9292d0554b293a9960f0e883f9489235e94c57a228`;
-- manifest `62c23b9a9b29058f25fbce3d8f1c7ff34485edbbbc897ddc7531232a0cc80563`;
-- accepted export run `db177316e99af87fb7849a8d84850337d45a6b7cc50bb388dbd105f1cc2b7c77`;
-- 10,392 functions, 5,712 bodies, zero failed bodies, 2,729 typed vtable slots;
+- semantic hash `b5ccc04d4b3302db3a4dfdc519371fb1e3feefb6d21c7a3e8d4a2f371dec5ed4`;
+- manifest `6847961dcc13a9c6d104a63a7f88383ba13815fa70cd98c5267d4c4966029ce3`;
+- accepted export run `51989204f2f3f306c556cf4ef551f67584b92210595ac8c502cc353529213d5b`;
+- 10,400 functions, 5,720 bodies, zero failed bodies, 2,737 typed vtable slots;
 - export and ABI gates: zero errors and zero warnings;
-- confirming export duration: `00:05:15`, with all 10,392 bodies reused.
+- fully warmed full-export duration: `00:21:24`, with all 10,400 bodies and all
+  5,720 function-quality analyses reused.
 
 The character scan now follows every forward CFG path from an exact EDI global
 load to a common zero-AL `SCASB` tail. The first full pass applied 48 additional
@@ -447,26 +449,26 @@ image-specific lists: 145 invalid address-coded global spellings, 78 external
 address-taken labels, 17 calls uniquely resolved by exported arity, and 40
 lexically closed exporter-tagged stack-slot lifetimes. `CONCAT`/subpiece/carry
 runtime operations are inline templates rather than comma-sensitive macros.
-The 64-error-per-TU compiler audit now passes 71/318 units and retains 4,496
-errors, 4,491 address-mapped. This is 266 fewer than the preceding accepted
-4,762-error checkpoint; no syntax diagnostic remains. The last malformed
+The 64-error-per-TU compiler audit now passes 178/318 units and retains 2,213
+errors, 2,196 address-mapped; no syntax diagnostic remains. The last malformed
 `DArrayAt` was not papered over: the exporter detected its impossible arity,
 freshly decompiled the body, and tightened alias recognition to standalone
 assignment statements.
 
-The next largest semantic clusters are therefore genuine Ghidra recovery debt:
-1,426 assignment and 1,226 call-argument diagnostics, followed by 794 undeclared
-identifiers and 273 pointer-indirection errors. The 4,283 exported stack-slot-
-reuse occurrences remain the broadest shared cause, but only closed lexical
-lifetimes may be materialized offline. Mixed pointer/scalar merge groups,
-prototype families, and the 1,886 raw indirect calls must be repaired from
-machine/call-boundary evidence rather than hidden behind generated casts.
+The call-boundary/lifetime pass reduced assignment diagnostics from 1,426 to 72
+and call-argument diagnostics from 1,226 to zero without class-, method-, or
+address-specific rules. The next largest compiler clusters are 888 undeclared
+identifiers, 354 pointer-indirection errors, 261 non-callable values, and 146
+invalid operands. Mixed pointer/scalar merge groups, declaration identity, and
+the 1,888 raw indirect calls must be repaired from machine/call-boundary
+evidence rather than hidden behind generated casts.
 
-Next infrastructure item: replace the safe whole-Program semantic epoch for
-the slow broad analyzers with dependency fingerprints over the exact function,
-prototype, datatype member, and proposal inputs they consume. Do not cache an
-analyzer merely because its source is unchanged, and do not weaken the final
-fixed-point or regression gates.
+The analyzer cache now covers 24 expensive read-only nodes using their script,
+semantic Program, dependency, and artifact fingerprints. A fully warmed no-op
+run leaves `Program changed=false`; appliers remain authoritative and all final
+fixed-point, evidence, ABI, and export gates still execute. Do not extend the
+cache to a new analyzer unless its exact semantic dependencies and complete
+output set are declared.
 
 ## Definition of done for one queue item
 

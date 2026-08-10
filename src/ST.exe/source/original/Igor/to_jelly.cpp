@@ -113,7 +113,7 @@ LAB_005829e6:
         if (local_2c != 1) {
           if (local_2c != 2) {
             local_EAX_970 =
-                 st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x11b,0,0,"%s"
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jelly.cpp"),0x11b,0,0,st::mutable_c_string("%s")
                                     ,"STJellyGunC::LifeGun Error Move");
             if (local_EAX_970 == 0) {
               return;
@@ -194,7 +194,7 @@ LAB_00582bb0:
           if (-1 < iVar11) {
             st::fn_00404877(this);
             puVar1 = &this->field_01D5;
-            this->field_0241 = pSVar7[1].vtable;
+            this->field_0241 = st::machine_word_boundary_cast<undefined4>(pSVar7[1].vtable);
             *(undefined2 *)&this->field_0x245 = *(undefined2 *)&pSVar7[1].field_0xe;
             this->field_0235 = CASE_2;
             st::fn_00404264((STT3DSprC *)puVar1,0xe);
@@ -386,7 +386,7 @@ LAB_00582f2d:
     iVar11 = (int)(0x19 / (longlong)iVar11);
   }
   else {
-    iVar11 = this->field_0239 + -1;
+    iVar11 = st::machine_word_boundary_cast<int>(this->field_0239 + -1);
   }
   this->field_0239 = iVar11;
 cf_common_exit_00582F72:
@@ -464,10 +464,10 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
   this_00 = local_3c;
   if (local_EAX_80 != 0) {
     g_currentExceptionFrame = local_a0.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x2af,0,local_EAX_80,
-                               "%s","STJellyGunC::GetMessage");
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jelly.cpp"),0x2af,0,local_EAX_80,
+                               st::mutable_c_string("%s"),"STJellyGunC::GetMessage");
     if (iVar6 == 0) {
-      st::fn_006A5E40(local_EAX_80,0,"E:\\__titans\\Igor\\to_jelly.cpp",0x2b0);
+      st::fn_006A5E40(local_EAX_80,0,st::mutable_c_string("E:\\__titans\\Igor\\to_jelly.cpp"),0x2b0);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -509,7 +509,7 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
         return 0;
       }
       if (SVar2 == MESS_ID_CREATE) {
-        local_38 = (message->arg0).ptr;
+        local_38 = st::pointer_boundary_cast<AnonShape_00583270_F758043B *>((message->arg0).ptr);
         if (*(uint *)&local_38->field_0xc < 2) {
           this_00->field_0235 = CASE_4;
           this_00->field_023D = 0;
@@ -561,17 +561,17 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
               if (iVar7 == 0) {
                 puVar11 = (byte *)(&this_00->field_01D5);
                 iVar7 = st::fn_00404183
-                                  ((STT3DSprC *)puVar11,0xe,PTR_0080676c,"jellygun",CASE_1D
+                                  ((STT3DSprC *)puVar11,0xe,PTR_0080676c,st::mutable_c_string("jellygun"),CASE_1D
                                   );
                 if (iVar7 != 0) {
                   st::fn_006A5E40
-                            (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_jelly.cpp"
+                            (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_jelly.cpp")
                              ,0x1f9);
                 }
                 iVar7 = *(int *)&this_00->field_0x25a;
                 if (7 < iVar7) {
-                  iVar5 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x1fe,0,0,
-                                             "%s",
+                  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jelly.cpp"),0x1fe,0,0,
+                                             st::mutable_c_string("%s"),
                                              "STJellyGunC::Invalid player number");
                   if (iVar5 != 0) {
                     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -590,10 +590,10 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
                 } while (cVar1 != '\0');
                 (&DAT_007cb3ea)[~uVar8] = (char)iVar7 + '0';
                 iVar7 = st::fn_00404183
-                                  ((STT3DSprC *)puVar11,0xc,piVar13,"jellygun0",CASE_1D);
+                                  ((STT3DSprC *)puVar11,0xc,piVar13,st::mutable_c_string("jellygun0"),CASE_1D);
                 if (iVar7 != 0) {
                   st::fn_006A5E40
-                            (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_jelly.cpp"
+                            (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_jelly.cpp")
                              ,0x204);
                 }
                 st::fn_00405AA6(puVar11,'\f');
@@ -612,8 +612,8 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
               }
               else {
                 local_EAX_912 =
-                     st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",499,0,0,
-                                        "%s","STJellyGunC::Phase Count err");
+                     st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jelly.cpp"),499,0,0,
+                                        st::mutable_c_string("%s"),"STJellyGunC::Phase Count err");
                 if (local_EAX_912 != 0) {
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
@@ -622,8 +622,8 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
             }
             else {
               local_EAX_853 =
-                   st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x1ec,0,0,
-                                      "%s","STJellyGunC::GetMessage Phase Count err");
+                   st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jelly.cpp"),0x1ec,0,0,
+                                      st::mutable_c_string("%s"),"STJellyGunC::GetMessage Phase Count err");
               if (local_EAX_853 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
@@ -632,7 +632,7 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
           }
           else {
             local_EAX_793 =
-                 st::fn_006AD4D0("E:\\__titans\\Igor\\to_jelly.cpp",0x1e5,0,0,"%s"
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jelly.cpp"),0x1e5,0,0,st::mutable_c_string("%s")
                                     ,"STJellyGunC::Cell is busy");
             if (local_EAX_793 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -702,7 +702,7 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
     else if (SVar2 == MESS_SHARED_010F) {
       local_14 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
       local_18 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = st::fn_006AAC70(local_10 + 0x6f + local_8);
+      local_c = st::pointer_boundary_cast<AnonShape_00583270_0B8831C2 *>(st::fn_006AAC70(local_10 + 0x6f + local_8));
       if (((local_14 != nullptr) && (local_18 != nullptr)) &&
          (local_c != nullptr)) {
         puVar11 = (byte *)&this_00->field_0x256;
@@ -724,12 +724,12 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
         *(undefined4 *)&local_c->field_0x63 = *(undefined4 *)&this_00->field_0x252;
         local_c->field_0067 = local_8;
         pbVar12 = local_14;
-        pbVar17 = &local_c->field_0x6b;
+        pbVar17 = st::pointer_boundary_cast<byte *>(&local_c->field_0x6b);
         memmove(pbVar17, pbVar12, local_8); /* compiler REP MOVS byte copy */
         uVar8 = 0;
         *(uint *)(&local_c->field_0x6b + local_8) = local_10;
         pbVar12 = local_18;
-        pbVar17 = &local_c[1].field_0x3 + local_8;
+        pbVar17 = st::pointer_boundary_cast<byte *>(&local_c[1].field_0x3 + local_8);
         memmove(pbVar17, pbVar12, local_10); /* compiler REP MOVS byte copy */
         st::fn_004025F9
                   (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,

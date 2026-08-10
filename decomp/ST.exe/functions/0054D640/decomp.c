@@ -1,7 +1,6 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::Life */
@@ -426,7 +425,7 @@ LAB_0054e052:
     local_44[3] = 1;
     DAT_0080c526 = 0x6108;
     local_44[4] = 0x6108;
-    switch(_DAT_008087a0 & 0xff) {
+    switch(DAT_008087a0 & 0xff) {
     case 1:
     case 2:
     case 3:

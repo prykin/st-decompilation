@@ -293,7 +293,7 @@ LAB_005e496b:
         if (this_00->field_03F7 != 0xffffffff) {
           FUN_006b3af0((int *)this_00->field_043B,this_00->field_03F7);
         }
-        puVar17 = this_00->field_02BD;
+        puVar17 = &this_00->field_02BD;
         iVar20 = 4;
         do {
           FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar17);
@@ -410,7 +410,7 @@ LAB_005e496b:
         iVar20 = 0;
         pcVar12 = LoadResourceString((UINT)puVar10,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_008D,pcVar12,iVar20,iVar23,uVar16);
-        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02BD[*local_c + -1]);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02A5[*local_c + 5]);
       }
       else if (SVar2 == MESS_MREPORTTY_6214) {
         if (local_18->field_006E == '\0') {

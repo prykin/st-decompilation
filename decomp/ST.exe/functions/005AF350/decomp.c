@@ -119,7 +119,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   if (this_00->field_1B96 != 0xffffffff) {
     FUN_006b3af0((int *)this_00->field_1BDA,this_00->field_1B96);
   }
-  puVar6 = this_00->field_1C23;
+  puVar6 = &this_00->field_1C23;
   local_8 = 0x16;
   do {
     FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar6);

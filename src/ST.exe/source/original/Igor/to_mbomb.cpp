@@ -64,10 +64,10 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
   this_00 = local_44;
   if (local_EAX_85 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar9 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_mbomb.cpp",0x389,0,local_EAX_85,
-                               "%s","STMBombC::GetMessage");
+    iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_mbomb.cpp"),0x389,0,local_EAX_85,
+                               st::mutable_c_string("%s"),"STMBombC::GetMessage");
     if (iVar9 == 0) {
-      st::fn_006A5E40(local_EAX_85,0,"E:\\__titans\\Igor\\to_mbomb.cpp",0x38a);
+      st::fn_006A5E40(local_EAX_85,0,st::mutable_c_string("E:\\__titans\\Igor\\to_mbomb.cpp"),0x38a);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -90,7 +90,7 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
   if (SVar2 == MESS_SHARED_010F) {
     local_20 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_10);
     local_1c = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_18);
-    local_14 = st::fn_006AAC70(local_18 + 0x87 + local_10);
+    local_14 = st::pointer_boundary_cast<AnonShape_00588BC0_84BDD66C *>(st::fn_006AAC70(local_18 + 0x87 + local_10));
     if (local_20 == nullptr) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -143,12 +143,12 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
     *(undefined4 *)&local_14->field_0x7b = *(undefined4 *)&this_00->field_0x278;
     local_14->field_007F = local_10;
     pbVar14 = local_20;
-    pbVar17 = &local_14->field_0x83;
+    pbVar17 = st::pointer_boundary_cast<byte *>(&local_14->field_0x83);
     memmove(pbVar17, pbVar14, local_10); /* compiler REP MOVS byte copy */
     uVar11 = 0;
     *(uint *)(&local_14->field_0x83 + local_10) = local_18;
     pbVar14 = local_1c;
-    pbVar17 = &local_14[1].field_0x3 + local_10;
+    pbVar17 = st::pointer_boundary_cast<byte *>(&local_14[1].field_0x3 + local_10);
     memmove(pbVar17, pbVar14, local_18); /* compiler REP MOVS byte copy */
     st::fn_004025F9
               (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_14,
@@ -226,11 +226,11 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
           }
           *(short *)&this_00->field_0x4b = sVar12;
           iVar10 = st::fn_00404183
-                             ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_00806774,"mmine",
+                             ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_00806774,st::mutable_c_string("mmine"),
                               CASE_1D);
           if (iVar10 != 0) {
             st::fn_006A5E40
-                      (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_mbomb.cpp",0x2c3
+                      (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_mbomb.cpp"),0x2c3
                       );
           }
           st::fn_00405240
@@ -279,7 +279,7 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
           return 0;
         }
       }
-      iVar8 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_mbomb.cpp",0x2ae,0,0,"%s",
+      iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_mbomb.cpp"),0x2ae,0,0,st::mutable_c_string("%s"),
                                  "STMBombC:Bad init coordinates");
       if (iVar8 == 0) {
         st::fn_00405EF2(this_00);

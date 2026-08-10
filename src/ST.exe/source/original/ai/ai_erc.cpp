@@ -20,14 +20,14 @@ int * __cdecl st::fn_0064A630(int param_1)
   g_currentExceptionFrame = &local_4c;
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
-    local_8 = st::fn_006AAC10(0x10);
+    local_8 = st::pointer_boundary_cast<int *>(st::fn_006AAC10(0x10));
     st::fn_00405295(local_8,param_1);
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
-  st::fn_0040193D(&local_8);
-  st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\ai\\ai_erc.cpp",0x17);
+  st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&local_8));
+  st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x17);
   return nullptr;
 }
 
@@ -51,9 +51,9 @@ int __cdecl st::fn_0064A6F0(int *param_1,int param_2)
   if (exceptionCode == 0) {
     if (param_1 == nullptr) {
       st::fn_006A5E40
-                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x25);
+                (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x25);
     }
-    st::fn_00402FA4(param_1);
+    st::fn_00402FA4(st::pointer_boundary_cast<undefined4 *>(param_1));
     if (param_2 < 1) {
       param_2 = 10;
     }
@@ -64,7 +64,7 @@ int __cdecl st::fn_0064A6F0(int *param_1,int param_2)
     return 0;
   }
   g_currentExceptionFrame = local_48.previous;
-  st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\ai\\ai_erc.cpp",0x2a);
+  st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x2a);
   return exceptionCode;
 }
 
@@ -103,7 +103,7 @@ int __cdecl st::fn_0064A830(int *param_1,undefined4 *param_2)
     return iVar2;
   }
   g_currentExceptionFrame = local_48.previous;
-  st::fn_006A5E40(iVar1,0,"E:\\__titans\\ai\\ai_erc.cpp",0x56);
+  st::fn_006A5E40(iVar1,0,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x56);
   if (iVar1 < 0) {
     return iVar1;
   }
@@ -230,12 +230,12 @@ float * st::fn_0064A970(char *param_1,int param_2,int *param_3)
   }
   if (iVar6 != param_2) {
     st::fn_006A5E40
-              (-0x69,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x81);
+              (-0x69,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x81);
   }
   local_10 = param_1 + param_2 * 5;
   if (*(short *)(param_1 + param_2 * 5 + 3) != param_2) {
     st::fn_006A5E40
-              (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x82);
+              (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x82);
   }
   iVar6 = (int)*(short *)(local_10 + 1);
   if (iVar6 < 0x3e) {
@@ -243,7 +243,7 @@ float * st::fn_0064A970(char *param_1,int param_2,int *param_3)
 switchD_0064aa67_caseD_1:
       if (param_2 != 2) {
         st::fn_006A5E40
-                  (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x8a);
+                  (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x8a);
       }
       sVar4 = *(short *)(local_10 + 1);
       if ((sVar4 == 1) && ((*param_1 == '\x06' || (*param_1 == '\x03')))) {
@@ -255,7 +255,7 @@ switchD_0064aa67_caseD_1:
           local_18 = pbVar9;
           if ((pcVar8 == nullptr) || (pbVar9 == nullptr)) {
             st::fn_006A5E40
-                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x8e);
+                      (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x8e);
           }
           uVar14 = 0xffffffff;
           pbVar7 = pbVar9;
@@ -273,7 +273,7 @@ switchD_0064aa67_caseD_1:
             cVar3 = *pcVar13;
             pcVar13 = pcVar13 + 1;
           } while (cVar3 != '\0');
-          local_8 = st::fn_006AAC10(~uVar14 + ~uVar15 + 2);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(~uVar14 + ~uVar15 + 2));
           if ((local_8 != nullptr) && (pcVar8 != nullptr)) {
             uVar14 = 0xffffffff;
             do {
@@ -340,7 +340,7 @@ cf_common_exit_0064BBB1:
           iVar6 = (**(code **)*local_38)(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar10 = (**(code **)*local_38)(param_1 + 5);
-          local_8 = st::fn_006AAC10(4);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           switch(*(undefined2 *)(local_10 + 1)) {
           case 1:
             *local_8 = (float)(iVar10 + iVar6);
@@ -351,7 +351,7 @@ cf_common_exit_0064BBB1:
           case 0x16:
             if (iVar10 == 0) {
               st::fn_006A5E40
-                        (-0x67,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x9f
+                        (-0x67,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x9f
                         );
             }
             *local_8 = (float)(iVar6 / iVar10);
@@ -359,7 +359,7 @@ cf_common_exit_0064BBB1:
           case 0x2c:
             if (iVar10 == 0) {
               st::fn_006A5E40
-                        (-0x67,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0xa0
+                        (-0x67,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0xa0
                         );
             }
             *local_8 = (float)(iVar6 % iVar10);
@@ -388,7 +388,7 @@ cf_common_exit_0064BBB1:
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
         local_14 = (float)fVar19;
-        local_8 = st::fn_006AAC10(4);
+        local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
         switch((int)*(short *)(local_10 + 1)) {
         case 1:
           *local_8 = local_14 + (float)local_c;
@@ -399,7 +399,7 @@ cf_common_exit_0064BBB1:
         case 0x16:
           if (local_14 == (float)_DAT_0079d670) {
             st::fn_006A5E40
-                      (-0x67,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0xad);
+                      (-0x67,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0xad);
           }
           *local_8 = (float)local_c / local_14;
           break;
@@ -430,7 +430,7 @@ cf_common_exit_0064BBB1:
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
           local_14 = (float)fVar19;
-          local_8 = st::fn_006AAC10(4);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           iVar6 = (int)*(short *)(local_10 + 1);
           switch(iVar6) {
           case 1:
@@ -441,7 +441,7 @@ cf_common_exit_0064BBB1:
           case 0x16:
             if (local_14 == (float)_DAT_0079d670) {
               st::fn_006A5E40
-                        (-0x67,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0xcd
+                        (-0x67,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0xcd
                         );
             }
             *local_8 = (float)local_c / local_14;
@@ -460,7 +460,7 @@ cf_common_exit_0064BBB1:
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         local_18 = (byte *)(**(code **)*local_38)(param_1 + 5);
         local_14 = (float)(int)local_18;
-        local_8 = st::fn_006AAC10(4);
+        local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
         iVar6 = (int)*(short *)(local_10 + 1);
         switch(iVar6) {
         case 1:
@@ -474,12 +474,12 @@ joined_r0x0064b49a:
             st::fn_0072E340((char *)(local_38 + 1),local_EAX_2282,0x7f);
           }
           local_38[0x21] = -1;
-          st::fn_006A5E40(-0x76,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+          st::fn_006A5E40(-0x76,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
           break;
         case 0x16:
           if (local_14 == (float)_DAT_0079d670) {
             st::fn_006A5E40
-                      (-0x67,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0xc0);
+                      (-0x67,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0xc0);
           }
           *local_8 = (float)local_c / local_14;
           break;
@@ -522,7 +522,7 @@ cf_common_exit_0064B291:
 switchD_0064aa67_caseD_3:
       if (param_2 != 2) {
         st::fn_006A5E40
-                  (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x131);
+                  (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x131);
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
@@ -530,7 +530,7 @@ switchD_0064aa67_caseD_3:
           iVar6 = (**(code **)*local_38)(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar10 = (**(code **)*local_38)(param_1 + 5);
-          local_8 = st::fn_006AAC10(4);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           sVar4 = *(short *)(local_10 + 1);
           if (sVar4 == 3) {
             if ((iVar6 != 0) && (iVar10 != 0)) {
@@ -571,7 +571,7 @@ cf_error_exit_0064B714:
     case 0xb:
       if (param_2 != 2) {
         st::fn_006A5E40
-                  (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x152);
+                  (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x152);
       }
       if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
 LAB_0064ae25:
@@ -588,7 +588,7 @@ LAB_0064ae25:
       uVar14 = (**(code **)*local_38)(param_1);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar15 = (**(code **)*local_38)(param_1 + 5);
-      local_8 = st::fn_006AAC10(4);
+      local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
       sVar4 = *(short *)(local_10 + 1);
       if (sVar4 == 8) {
         *local_8 = (float)(uVar15 & uVar14);
@@ -605,15 +605,15 @@ LAB_0064ae25:
       iVar6 = 0x15a;
 cf_error_exit_0064B368:
       st::fn_006A5E40
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",iVar6);
+                (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),iVar6);
       goto cf_common_exit_0064B36F;
     case 9:
       if (param_2 != 1) {
         st::fn_006A5E40
-                  (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x164);
+                  (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x164);
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
-        local_8 = st::fn_006AAC10(4);
+        local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar14 = (**(code **)*local_38)(param_1);
         *local_8 = (float)~uVar14;
@@ -623,7 +623,7 @@ cf_error_exit_0064B368:
     case 0x13:
       if (param_2 != 3) {
         st::fn_006A5E40
-                  (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x171);
+                  (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x171);
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -632,14 +632,14 @@ cf_error_exit_0064B368:
         pcVar8 = param_1 + iVar6 * 5;
         cVar3 = param_1[iVar6 * 5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
-          local_8 = st::fn_006AAC10(4);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar11 = (float)(**(code **)*local_38)(pcVar8);
           *local_8 = fVar11;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
-          local_8 = st::fn_006AAC10(4);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(pcVar8);
           *local_8 = (float)fVar19;
@@ -650,7 +650,7 @@ cf_error_exit_0064B368:
           pcVar8 = (char *)(**(code **)(*local_38 + 8))(pcVar8);
           if (pcVar8 == nullptr) {
             st::fn_006A5E40
-                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x182);
+                      (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x182);
           }
           uVar14 = 0xffffffff;
           pcVar13 = pcVar8;
@@ -660,7 +660,7 @@ cf_error_exit_0064B368:
             cVar3 = *pcVar13;
             pcVar13 = pcVar13 + 1;
           } while (cVar3 != '\0');
-          local_8 = st::fn_006AAC10(~uVar14 + 1);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(~uVar14 + 1));
           uVar14 = 0xffffffff;
           do {
             pcVar13 = pcVar8;
@@ -692,7 +692,7 @@ cf_error_exit_0064B368:
     case 0x33:
       if (param_2 != 2) {
         st::fn_006A5E40
-                  (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0xf8);
+                  (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0xf8);
       }
       cVar3 = *param_1;
       if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
@@ -701,7 +701,7 @@ cf_error_exit_0064B368:
           iVar6 = (**(code **)*local_38)(param_1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar10 = (**(code **)*local_38)(param_1 + 5);
-          local_8 = st::fn_006AAC10(4);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           switch(*(undefined2 *)(local_10 + 1)) {
           case 0x1e:
             *local_8 = (float)(uint)(iVar6 == iVar10);
@@ -735,7 +735,7 @@ cf_error_exit_0064B368:
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
           local_24 = (float)fVar19;
-          local_8 = st::fn_006AAC10(4);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           switch(*(undefined2 *)(local_10 + 1)) {
           case 0x1e:
             if (local_20 == local_24) {
@@ -788,9 +788,9 @@ cf_error_exit_0064B368:
           pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
           if ((pbVar9 == nullptr) || (pbVar7 == nullptr)) {
             st::fn_006A5E40
-                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x11c);
+                      (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x11c);
           }
-          local_8 = st::fn_006AAC10(4);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           do {
             bVar2 = *pbVar9;
             bVar18 = bVar2 < *pbVar7;
@@ -837,7 +837,7 @@ LAB_0064ab59:
     case 0x32:
       if (param_2 != 1) {
         st::fn_006A5E40
-                  (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x143);
+                  (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x143);
       }
       if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
         pcVar12 = st::fn_004057DB((int)*(short *)(local_10 + 1));
@@ -848,7 +848,7 @@ LAB_0064ab59:
         iVar6 = -0x76;
         goto cf_error_exit_0064C2A4;
       }
-      local_8 = st::fn_006AAC10(4);
+      local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar6 = (**(code **)*local_38)(param_1);
       *local_8 = (float)(uint)(iVar6 == 0);
@@ -870,17 +870,17 @@ LAB_0064b80a:
         if (iVar6 == 0x386) {
           if (param_2 != 1) {
             st::fn_006A5E40
-                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",399);
+                      (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),399);
           }
           if ((*param_1 == '\x06') || (*param_1 == '\x03')) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
             if (pbVar9 == nullptr) {
               st::fn_006A5E40
-                        (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
+                        (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),
                          0x192);
             }
-            local_8 = st::fn_006AAC10(4);
+            local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
             fVar11 = (float)st::fn_0072FF00(pbVar9);
             *local_8 = fVar11;
             goto cf_common_exit_0064B36F;
@@ -890,7 +890,7 @@ LAB_0064b80a:
           if (iVar6 == 0x387) {
             if (param_2 != 1) {
               st::fn_006A5E40
-                        (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
+                        (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),
                          0x19d);
             }
             if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
@@ -906,11 +906,11 @@ LAB_0064b80a:
             pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
             if (pbVar9 == nullptr) {
               st::fn_006A5E40
-                        (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
+                        (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),
                          0x1a0);
             }
             local_18 = nullptr;
-            local_8 = st::fn_006AAC10(4);
+            local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
             fVar19 = st::fn_00730310(pbVar9,(int *)&local_18);
             *local_8 = (float)fVar19;
             goto cf_common_exit_0064B291;
@@ -918,7 +918,7 @@ LAB_0064b80a:
           if (iVar6 != 0x388) goto cf_common_exit_0064C271;
           if (param_2 != 2) {
             st::fn_006A5E40
-                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1ac);
+                      (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x1ac);
           }
           if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
             if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
@@ -932,7 +932,7 @@ LAB_0064b80a:
               if (0x24 < iVar10) {
                 iVar10 = 0x24;
               }
-              local_8 = st::fn_006AAC10(0x40);
+              local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(0x40));
               st::fn_0072DE60(iVar6,(char *)local_8,iVar10);
               goto cf_common_exit_0064BBB1;
             }
@@ -949,7 +949,7 @@ LAB_0064b80a:
       if (iVar6 == 0x385) {
         if (param_2 < 1) {
           st::fn_006A5E40
-                    (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x206);
+                    (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x206);
         }
         local_28 = nullptr;
         iVar6 = param_2;
@@ -980,32 +980,32 @@ LAB_0064b901:
               }
               local_38[0x21] = -1;
               st::fn_006A5E40
-                        (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+                        (-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
             }
             local_28 = (char *)((float)local_c + (float)local_28);
             param_1 = param_1 + 5;
             iVar6 = iVar6 + -1;
           } while (iVar6 != 0);
         }
-        local_8 = st::fn_006AAC10(4);
+        local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
         *local_8 = (float)local_28 / (float)param_2;
         goto cf_common_exit_0064B291;
       }
       if (iVar6 == 0x41) {
         if (param_2 != 1) {
           st::fn_006A5E40
-                    (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0xdf);
+                    (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0xdf);
         }
         cVar3 = *param_1;
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
-          local_8 = st::fn_006AAC10(4);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar6 = (**(code **)*local_38)(param_1);
           *local_8 = (float)-iVar6;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
-          local_8 = st::fn_006AAC10(4);
+          local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
           *local_8 = (float)-fVar19;
@@ -1017,7 +1017,7 @@ LAB_0064b901:
       if (iVar6 == 900) {
         if (param_2 < 1) {
           st::fn_006A5E40
-                    (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",500);
+                    (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),500);
         }
         local_28 = nullptr;
         if (0 < param_2) {
@@ -1050,14 +1050,14 @@ LAB_0064b663:
               }
               local_38[0x21] = -1;
               st::fn_006A5E40
-                        (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+                        (-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
             }
             local_28 = local_28 + (int)local_c;
             param_1 = param_1 + 5;
             local_14 = (float)((int)local_14 + -1);
           } while (local_14 != 0.0);
         }
-        local_8 = st::fn_006AAC10(4);
+        local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
         *local_8 = (float)((int)local_28 / param_2);
         goto cf_common_exit_0064B36F;
       }
@@ -1065,7 +1065,7 @@ LAB_0064b663:
     }
     if (param_2 != 2) {
       st::fn_006A5E40
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1bb);
+                (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x1bb);
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
@@ -1080,7 +1080,7 @@ LAB_0064b663:
         if (0x40 < iVar6) {
           iVar6 = 0x40;
         }
-        local_8 = st::fn_006AAC10(iVar6 + 10);
+        local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(iVar6 + 10));
         st::fn_007301E0
                   (SUB84((double)(float)local_18,0),
                    (int)((ulonglong)(double)(float)local_18 >> 0x20),iVar6,(char *)local_8);
@@ -1100,12 +1100,12 @@ LAB_0064bd33:
   case 0x38a:
     if (param_2 != 1) {
       st::fn_006A5E40
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1ca);
+                (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x1ca);
     }
     if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_18 = (byte *)(**(code **)*local_38)(param_1);
-      local_8 = st::fn_006AAC10(4);
+      local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
       *local_8 = (float)(int)local_18;
       goto cf_common_exit_0064B291;
     }
@@ -1119,13 +1119,13 @@ LAB_0064bd33:
   case 0x38b:
     if (param_2 != 1) {
       st::fn_006A5E40
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1d8);
+                (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x1d8);
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
       local_18 = (byte *)(float)fVar19;
-      local_8 = st::fn_006AAC10(4);
+      local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
       st::fn_0072E150
                 (SUB84((double)(float)local_18,0),(uint)((ulonglong)(double)(float)local_18 >> 0x20)
                 );
@@ -1143,13 +1143,13 @@ LAB_0064bd33:
   case 0x38c:
     if (param_2 != 1) {
       st::fn_006A5E40
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1e6);
+                (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x1e6);
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
       local_18 = (byte *)(float)fVar19;
-      local_8 = st::fn_006AAC10(4);
+      local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
       st::fn_00730450
                 (SUB84((double)(float)local_18,0),(uint)((ulonglong)(double)(float)local_18 >> 0x20)
                 );
@@ -1161,7 +1161,7 @@ LAB_0064bd33:
   case 0x38d:
     if (param_2 < 2) {
       st::fn_006A5E40
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x218);
+                (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x218);
     }
     if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
       local_EAX_5222 = st::fn_004057DB((int)*(short *)(local_10 + 1));
@@ -1169,13 +1169,13 @@ LAB_0064bd33:
         st::fn_0072E340((char *)(local_38 + 1),local_EAX_5222,0x7f);
       }
       local_38[0x21] = -1;
-      st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+      st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     local_18 = (byte *)(**(code **)(*local_38 + 8))(param_1);
     if (local_18 == nullptr) {
       st::fn_006A5E40
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x21a);
+                (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x21a);
     }
     uVar14 = 0xffffffff;
     pbVar9 = local_18;
@@ -1188,7 +1188,7 @@ LAB_0064bd33:
     local_20 = (float)(~uVar14 + 1);
     local_14 = 0.0;
     local_28 = (char *)0x200;
-    local_1c = st::fn_006AAC70(0x200);
+    local_1c = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(0x200));
     if (1 < param_2) {
       local_c = (int *)(param_1 + 5);
       local_30 = param_2 + -1;
@@ -1203,18 +1203,18 @@ LAB_0064bd33:
           local_78 = pcVar13;
           if (pcVar13 == nullptr) {
             st::fn_006A5E40
-                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x220);
+                      (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x220);
           }
           if ((int)pcVar8 <= local_2c) {
             local_28 = (char *)((int)pcVar8 + 0x200);
-            local_1c = st::fn_006ACF50(local_1c,(uint)local_28);
+            local_1c = st::pointer_boundary_cast<undefined4 *>(st::fn_006ACF50(local_1c,(uint)local_28));
           }
           puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
           local_14 = (float)((int)local_14 + 4);
           local_2c = local_2c + 4;
           local_24 = (float)((int)local_24 + 4);
           uVar14 = 0xffffffff;
-          *puVar1 = pcVar13;
+          *puVar1 = st::machine_word_boundary_cast<undefined4>(pcVar13);
           do {
             if (uVar14 == 0) break;
             uVar14 = uVar14 - 1;
@@ -1231,7 +1231,7 @@ LAB_0064bd33:
           if ((int)pcVar8 <= local_2c) {
             pcVar8 = (char *)((int)pcVar8 + 0x200);
             local_28 = pcVar8;
-            local_1c = st::fn_006ACF50(local_1c,(uint)pcVar8);
+            local_1c = st::pointer_boundary_cast<undefined4 *>(st::fn_006ACF50(local_1c,(uint)pcVar8));
           }
           puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
           local_14 = (float)((int)local_14 + 4);
@@ -1247,7 +1247,7 @@ LAB_0064bd33:
           if ((int)pcVar8 <= (int)local_24) {
             pcVar8 = (char *)((int)pcVar8 + 0x200);
             local_28 = pcVar8;
-            local_1c = st::fn_006ACF50(local_1c,(uint)pcVar8);
+            local_1c = st::pointer_boundary_cast<undefined4 *>(st::fn_006ACF50(local_1c,(uint)pcVar8));
           }
           *(double *)((int)local_14 + (int)local_1c) = (double)local_34;
           local_14 = (float)((int)local_14 + 8);
@@ -1261,14 +1261,14 @@ LAB_0064bd33:
             st::fn_0072E340((char *)(local_38 + 1),pcVar13_mg5,0x7f);
           }
           local_38[0x21] = -1;
-          st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+          st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         local_c = (int *)((int)local_c + 5);
         local_30 = local_30 + -1;
       } while (local_30 != 0);
     }
     fVar11 = local_20;
-    local_8 = st::fn_006AAC10((uint)local_20);
+    local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10((uint)local_20));
     st::fn_007300E0((undefined1 *)local_8,(int)fVar11,local_18,local_1c);
     if (param_3 != nullptr) {
       *param_3 = 3;
@@ -1283,7 +1283,7 @@ LAB_0064bd33:
   case 0x38e:
     if (param_2 != 9) {
       st::fn_006A5E40
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x24f);
+                (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x24f);
     }
     if (0 < param_2) {
       local_c = &local_74;
@@ -1299,14 +1299,14 @@ LAB_0064bd33:
             st::fn_0072E340((char *)(local_38 + 1),local_EAX_6215,0x7f);
           }
           local_38[0x21] = -1;
-          st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+          st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         param_1 = param_1 + 5;
         local_c = local_c + 1;
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }
-    local_8 = st::fn_006AAC10(4);
+    local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
     if (((local_68 <= local_74) && (local_74 < local_5c + local_68)) &&
        ((local_64 <= local_70 &&
         (((local_70 < local_58 + local_64 && (local_60 <= local_6c)) &&
@@ -1318,7 +1318,7 @@ LAB_0064bd33:
   case 0x38f:
     if (param_2 != 6) {
       st::fn_006A5E40
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x240);
+                (-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_erc.cpp"),0x240);
     }
     if (0 < param_2) {
       local_c = &local_50;
@@ -1334,14 +1334,14 @@ LAB_0064bd33:
             st::fn_0072E340((char *)(local_38 + 1),local_EAX_5998,0x7f);
           }
           local_38[0x21] = -1;
-          st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+          st::fn_006A5E40(-0x78,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         param_1 = param_1 + 5;
         local_c = local_c + 1;
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }
-    local_8 = st::fn_006AAC10(4);
+    local_8 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
     if ((((local_48 <= local_50) && (local_50 < local_40 + local_48)) && (local_44 <= local_4c)) &&
        (local_4c < local_3c + local_44)) {
       *local_8 = 1.4013e-45;
@@ -1367,7 +1367,7 @@ cf_common_exit_0064C271:
     iVar6 = -0x75;
   }
 cf_error_exit_0064C2A4:
-  st::fn_006A5E40(iVar6,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+  st::fn_006A5E40(iVar6,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
   g_currentExceptionFrame = local_c0.previous;
   return local_8;
 }

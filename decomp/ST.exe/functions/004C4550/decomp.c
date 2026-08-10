@@ -116,7 +116,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         if (&stack0x00000000 != (undefined1 *)0x68) {
           local_68 = this->field_0043;
         }
-        if (&stack0x00000000 != (undefined1 *)0x66) {
+        if (&stack0x00000000 != &DAT_00000066) {
           local_66 = this->field_0045;
         }
       }
@@ -151,8 +151,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
           if (((int)piVar8 < 1) || (local_14 == *(int *)(&this->field_0x2c1 + iVar9))) {
             iVar3 = ((int)piVar8 + this->field_0235 * 2) * 0x16;
             if (*(int *)(&DAT_007932d0 + iVar3) != 0) {
-              puVar4 = (undefined4 *)
-                       thunk_FUN_0041dc40(local_b8,(short)*(undefined4 *)
+              puVar4 = thunk_FUN_0041dc40(local_b8,(short)*(undefined4 *)
                                                            (&DAT_007932d4 + iVar3 + iVar11),
                                           *(ushort *)((int)(&DAT_007932d4 + iVar3 + iVar11) + 4),
                                           -(short)this->field_0259);
@@ -166,7 +165,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
               local_20 = *(undefined2 *)(&DAT_007932d8 + iVar11 + iVar3 * 0x16);
               local_24 = (STJellyManC *)
                          (*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar11) & 0xffff0000);
-              puVar4 = (undefined4 *)thunk_FUN_0041dc40(local_c0,0,0,-(short)this->field_0259);
+              puVar4 = thunk_FUN_0041dc40(local_c0,0,0,-(short)this->field_0259);
               local_2c = (short)*puVar4;
               sStack_2a = (short)((uint)*puVar4 >> 0x10);
               local_64 = local_2c + *(short *)(&this->field_0x2a5 + iVar9);

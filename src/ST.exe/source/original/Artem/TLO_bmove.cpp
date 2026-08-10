@@ -22,10 +22,10 @@ st::fn_004C6BB0(void *this,undefined4 param_1,undefined4 param_2,undefined4 para
   STField<undefined4>(this,0x400) = 0;
   STField<undefined4>(this,0x404) = 0;
   iVar1 = st::fn_00404318
-                    (this,STField<short>(this,0x3e0),(short)param_2,(short)param_3);
+                    (st::pointer_boundary_cast<AnonReceiver_004167A0 *>(this),STField<short>(this,0x3e0),(short)param_2,(short)param_3);
   if (iVar1 == -1) {
     st::fn_006A5E40
-              (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bmove.cpp",0x1c);
+              (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bmove.cpp"),0x1c);
   }
   else if (iVar1 == 2) {
     STField<undefined4>(this,0x3dc) = 0;
@@ -65,7 +65,7 @@ undefined4 __fastcall st::fn_004C6D00(STJellyGunC *param_1)
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar4 = (*param_1->vtable->MoveStep)((STGameObjC *)param_1,unaff_EDI);
     if (iVar4 == -1) {
-      iVar3 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bmove.cpp",0x4f,0,-5,"%s",
+      iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bmove.cpp"),0x4f,0,-5,st::mutable_c_string("%s"),
                                  "move error");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -76,7 +76,7 @@ undefined4 __fastcall st::fn_004C6D00(STJellyGunC *param_1)
     else {
       if (iVar4 == 1) goto LAB_004c6e4d;
       if (iVar4 != 2) goto cf_common_exit_004C6F47;
-      iVar4 = param_1->field_0404 + 1;
+      iVar4 = st::machine_word_boundary_cast<int>(param_1->field_0404 + 1);
       param_1->field_0404 = iVar4;
       if ((9 < iVar4) && (iVar4 = st::fn_00404E9E((TLOBaseTy *)param_1), iVar4 != 0)) {
         param_1->field_03FC = 1;
@@ -100,13 +100,13 @@ undefined4 __fastcall st::fn_004C6D00(STJellyGunC *param_1)
       iVar4 = param_1->vfunc_20();
       if (iVar4 == -1) {
         local_EAX_244 =
-             st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bmove.cpp",0x35,0,-5,"%s",
+             st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bmove.cpp"),0x35,0,-5,st::mutable_c_string("%s"),
                                 "stop move error");
         if (local_EAX_244 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         st::fn_006A5E40
-                  (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bmove.cpp",0x35);
+                  (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bmove.cpp"),0x35);
       }
       else if (iVar4 == 1) {
         param_1->field_0400 = 1;
@@ -135,7 +135,7 @@ LAB_004c6e4d:
       goto cf_common_exit_004C6F47;
     }
     local_EAX_371 =
-         st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bmove.cpp",0x47,0,-5,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bmove.cpp"),0x47,0,-5,st::mutable_c_string("%s"),
                             "move error");
     if (local_EAX_371 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -143,10 +143,10 @@ LAB_004c6e4d:
   }
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   st::fn_006A5E40
-            (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bmove.cpp",
+            (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bmove.cpp"),
              (int)unaff_EDI);
 cf_common_exit_004C6F47:
-  st::fn_00405F0B((STFishC *)param_1,&local_6,&local_8,&local_a);
+  st::fn_00405F0B((STFishC *)param_1,st::pointer_boundary_cast<undefined2 *>(&local_6),st::pointer_boundary_cast<undefined2 *>(&local_8),st::pointer_boundary_cast<undefined2 *>(&local_a));
   param_1->field_05B0 = (int)local_6;
   param_1->field_05B4 = (int)local_8;
   param_1->field_05B8 = (int)local_a;

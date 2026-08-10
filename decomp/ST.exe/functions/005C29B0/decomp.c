@@ -183,7 +183,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     } while (cVar30 != '\0');
     uVar19 = ~uVar19;
     pcVar25 = pcVar25 + -uVar19;
-    pcVar27 = (char *)&DAT_00809960;
+    pcVar27 = &DAT_00809960;
     for (uVar21 = uVar19 >> 2; uVar21 != 0; uVar21 = uVar21 - 1) {
       *(undefined4 *)pcVar27 = *(undefined4 *)pcVar25;
       pcVar25 = pcVar25 + 4;

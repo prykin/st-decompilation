@@ -16,7 +16,7 @@ StartSystemTy * __thiscall st::fn_005DA610(StartSystemTy *this,undefined4 param_
 {
   int iVar1;
 
-  st::fn_006E51C0((SystemClassTy *)this,param_1,0x200);
+  st::fn_006E51C0((SystemClassTy *)this,st::pointer_boundary_cast<AppClassTy *>(param_1),0x200);
   st::fn_00715820((SpriteClassTy *)&this->field_02F8);
   st::fn_00715820((SpriteClassTy *)&this->field_038D);
   st::fn_00715820((SpriteClassTy *)&this->field_041E);
@@ -100,7 +100,7 @@ undefined1 __thiscall st::fn_005DA940(StartSystemTy *this,int param_1)
 
   iVar3 = 4;
   piVar4 = (int *)(this->field_068A + 0xc + param_1 * 0x14);
-  piVar5 = &DAT_007cd700;
+  piVar5 = st::pointer_boundary_cast<int *>(&DAT_007cd700);
   do {
     if (iVar3 == 0) {
       return 1;
@@ -322,14 +322,21 @@ void __thiscall st::fn_005DCDB0(StartSystemTy *this)
 #line 4 "decomp/ST.exe/functions/006E5360/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=2; incoming_this_accesses=1;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=3 */
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3
 
-void __thiscall
+   [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /undefined4; every later accumulator definition is an exact full-width integer transform of that
+   value; machine CFG audit: used=3, ignored=0, unknown=0 */
+
+undefined4 __thiscall
 st::fn_006E5360(StartSystemTy *this,int param_1,int *param_2,undefined4 *param_3)
 
 {
-  st::fn_006E3450(this->field_0010,param_1,param_2,param_3);
-  return;
+  undefined4 uVar1;
+
+  uVar1 = st::fn_006E3450(this->field_0010,param_1,param_2,param_3);
+  return uVar1;
 }
 
 // 006E56B0 StartSystemTy::sub_006E56B0
@@ -350,13 +357,13 @@ void __thiscall st::fn_006E56B0(StartSystemTy *this,uint param_1)
 
   uVar2 = param_1;
   local_8 = nullptr;
-  iVar3 = st::fn_006E5360(this,param_1,(int *)&param_1,&local_8);
+  iVar3 = st::fn_006E5360(this,param_1,(int *)&param_1,st::pointer_boundary_cast<undefined4 *>(&local_8));
   if (iVar3 == 0) {
     local_18 = 3;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)*local_8)(local_28);
   }
-  iVar3 = st::fn_006E5360(this,uVar2,(int *)&param_1,&local_8);
+  iVar3 = st::fn_006E5360(this,uVar2,(int *)&param_1,st::pointer_boundary_cast<undefined4 *>(&local_8));
   if (iVar3 == 0) {
     st::fn_006B0C70(this->field_0010,param_1);
     st::fn_006E3970(this->field_0018,uVar2);

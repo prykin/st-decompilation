@@ -55,12 +55,12 @@ st::fn_0053D7A0(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte param_2
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x24,0,(int)errorCode,
-                               "%s","UPanelTy::PaintBut");
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x24,0,(int)errorCode,
+                               st::mutable_c_string("%s"),"UPanelTy::PaintBut");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40((int)errorCode,0,"E:\\__titans\\Andrey\\specpan.cpp",0x24);
+    st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x24);
   }
   return;
 }
@@ -130,12 +130,12 @@ st::fn_0053D920
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x3e,0,iVar3,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x3e,0,iVar3,st::mutable_c_string("%s"),
                                "UPanelTy::PaintTxtBut");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0x3e);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x3e);
   }
   return;
 }
@@ -208,12 +208,12 @@ st::fn_0053DAF0(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *param_
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar7 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x51,0,(int)errorCode,
-                             "%s","UPanelTy::PaintIBut");
+  iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x51,0,(int)errorCode,
+                             st::mutable_c_string("%s"),"UPanelTy::PaintIBut");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40((int)errorCode,0,"E:\\__titans\\Andrey\\specpan.cpp",0x51);
+  st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x51);
   return;
 }
 
@@ -278,12 +278,12 @@ st::fn_0053DCC0(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte param_2
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x74,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x74,0,iVar4,st::mutable_c_string("%s"),
                                "UPanelTy::PaintLBut");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\specpan.cpp",0x74);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x74);
   }
   return;
 }
@@ -375,8 +375,8 @@ st::fn_0053DEA0(UPanelTy *this,undefined4 param_1,int param_2,int param_3,int pa
     local_1d0[1] = param_1;
     local_1d0[0] = param_2;
     if (param_6 != (LPSTR)0x0) {
-      text = &local_10->field_006C;
-      st::external_00000080(text,"%s0",param_6);
+      text = st::pointer_boundary_cast<char *>(&local_10->field_006C);
+      st::external_00000080(text,st::mutable_c_string("%s0"),param_6);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_5,text,nullptr,1);
     }
     if ((param_5 == 1) || (param_5 == 6)) {
@@ -386,14 +386,14 @@ st::fn_0053DEA0(UPanelTy *this,undefined4 param_1,int param_2,int param_3,int pa
     else {
       local_1c0 = param_13;
     }
-    local_1d0[2] = pUVar2->field_003C + param_3;
+    local_1d0[2] = st::machine_word_boundary_cast<int>(pUVar2->field_003C + param_3);
     if (pUVar2->field_005C == 0) {
       local_1d0[3] = -pUVar2->field_0048;
     }
     else {
       local_1d0[3] = pUVar2->field_0044;
     }
-    local_1d0[3] = local_1d0[3] + param_4;
+    local_1d0[3] = st::machine_word_boundary_cast<int>(local_1d0[3] + param_4);
     local_1bc = param_14;
     if (local_8 != nullptr) {
       st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_8);
@@ -432,10 +432,10 @@ st::fn_0053DEA0(UPanelTy *this,undefined4 param_1,int param_2,int param_3,int pa
     return local_c;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0xb1,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0xb1,0,iVar3,st::mutable_c_string("%s"),
                              "UPanelTy::CreateBut");
   if (iVar4 == 0) {
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0xb1);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0xb1);
     return 0;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -493,7 +493,7 @@ st::fn_0053E1C0(UPanelTy *this,byte param_1,byte param_2,int param_3,int param_4
       iVar4 = 0;
       local_10 = 1;
       puVar7 = local_510 + 1;
-      uVar9 = local_c->field_003C + param_3;
+      uVar9 = st::machine_word_boundary_cast<uint>(local_c->field_003C + param_3);
       do {
         puVar7[-1] = local_10;
         iVar6 = local_14;
@@ -533,10 +533,10 @@ st::fn_0053E1C0(UPanelTy *this,byte param_1,byte param_2,int param_3,int param_4
     return local_8;
   }
   g_currentExceptionFrame = local_b0.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0xd1,0,iVar3,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0xd1,0,iVar3,st::mutable_c_string("%s"),
                              "UPanelTy::CreateTab");
   if (iVar5 == 0) {
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0xd1);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0xd1);
     return 0xffffffff;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -592,7 +592,7 @@ st::fn_0053E3F0
   iVar5 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pSVar4 = local_8;
   if (iVar5 == 0) {
-    local_8->field_003C = local_8->field_003C + (g_nWidth_00806730 + -800) / 2;
+    local_8->field_003C = st::machine_word_boundary_cast<undefined4>(local_8->field_003C + (g_nWidth_00806730 + -800) / 2);
     puVar5 = st::fn_006F1CE0(g_cMf32_00806790,1,text,nullptr,1);
     pSVar4->field_0185 = puVar5;
     pcVar6 = (ccFntTy *)st::fn_0070DF00(0x19d,g_interSystem_00802A28->field_0028);
@@ -630,7 +630,7 @@ st::fn_0053E3F0
     uVar13 = 0;
     uVar12 = 0xc000;
     uVar11 = 0xbfff;
-    pCVar8 = st::fn_0040577C("BUT_MEDIUM",0);
+    pCVar8 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar11 = (*(code *)pAVar2->field_0004)
                        (0,1,param_7,param_8,0,1,1,pCVar8,uVar11,uVar12,uVar13,uVar14,uVar15,uVar17,
@@ -640,12 +640,12 @@ st::fn_0053E3F0
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar16 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0xeb,0,iVar5,"%s",
+  iVar16 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0xeb,0,iVar5,st::mutable_c_string("%s"),
                               "SpecPanelTy::InitPanel");
   if (iVar16 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar5,0,"E:\\__titans\\Andrey\\specpan.cpp",0xeb);
+  st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0xeb);
   return;
 }
 
@@ -685,12 +685,12 @@ void __thiscall st::fn_0053E640(SpecPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0xfa,0,errorCode,
-                             "%s","SpecPanelTy::DonePanel");
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0xfa,0,errorCode,
+                             st::mutable_c_string("%s"),"SpecPanelTy::DonePanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\specpan.cpp",0xfa);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0xfa);
   return;
 }
 
@@ -717,10 +717,10 @@ void __thiscall st::fn_0053E760(SpecPanelTy *this,int param_1)
   pSVar3 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x113,0,errorCode,
-                               "%s","SpecPanelTy::SwitchPanel");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x113,0,errorCode,
+                               st::mutable_c_string("%s"),"SpecPanelTy::SwitchPanel");
     if (iVar4 == 0) {
-      st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\specpan.cpp",0x113);
+      st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x113);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -816,12 +816,12 @@ undefined4 __thiscall st::fn_0053E920(SpecPanelTy *this,char param_1)
     return 1;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x124,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x124,0,iVar2,st::mutable_c_string("%s"),
                              "SpecPanelTy::SetPanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\specpan.cpp",0x124);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x124);
   return 1;
 }
 
@@ -865,12 +865,12 @@ void __thiscall st::fn_0053EA50(SpecPanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x134,0,iVar4,"%s"
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x134,0,iVar4,st::mutable_c_string("%s")
                                ,"SpecPanelTy::ShiftControls");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\specpan.cpp",0x134);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x134);
   }
   return;
 }
@@ -908,12 +908,12 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x168,0,iVar4,"%s"
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x168,0,iVar4,st::mutable_c_string("%s")
                                ,"SpecPanelTy::GetMessage");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\specpan.cpp",0x168);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x168);
     return 0xffff;
   }
   if (message->id == MESS_ID_CREATE) {
@@ -934,9 +934,9 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
     }
     if (SVar1 == MESS_ID_NONE) {
       if (this_00->field_0172 == 3) {
-        iVar6 = this_00->field_0050 + (this_00->field_0058 - this_00->field_0048);
+        iVar6 = st::machine_word_boundary_cast<int>(this_00->field_0050 + (this_00->field_0058 - this_00->field_0048));
         if (iVar6 < this_00->field_0044) {
-          this_00->field_0044 = this_00->field_0044 + -0xf;
+          this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + -0xf);
         }
         if (this_00->field_0044 <= iVar6) {
           this_00->field_0044 = iVar6;
@@ -953,7 +953,7 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
       if (this_00->field_0172 == 4) {
         iVar6 = this_00->field_0050 + this_00->field_0058;
         if (this_00->field_0044 < iVar6) {
-          this_00->field_0044 = this_00->field_0044 + 0xf;
+          this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + 0xf);
         }
         if (iVar6 <= this_00->field_0044) {
           this_00->field_0044 = iVar6;
@@ -977,7 +977,7 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
     uVar10 = 1;
     uVar9 = 0;
     uVar8 = 0x274e;
-    pCVar7 = st::fn_0040577C("BUT_MEDIUM",0);
+    pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)pAVar2->field_0010)(message,pCVar7,uVar8,uVar9,uVar10);
   }
@@ -1019,12 +1019,12 @@ void __thiscall st::fn_0053EE30(ProdPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x178,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x178,0,iVar3,st::mutable_c_string("%s"),
                              "ProdPanelTy::PreInitProdPanel");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0x178);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x178);
   return;
 }
 
@@ -1091,7 +1091,7 @@ st::fn_0053EF20
     local_14->field_017C = pcVar3;
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;
-    pCVar4 = st::fn_0040577C("FRAMES",0);
+    pCVar4 = st::fn_0040577C(st::mutable_c_string("FRAMES"),0);
     puVar5 = st::fn_00709AF0
                        (PTR_00806794,CASE_B,pCVar4,uVar8,bVar9,iVar11,iVar12,puVar13);
     this_00->field_0190 = puVar5;
@@ -1118,7 +1118,7 @@ st::fn_0053EF20
     iVar11 = -2;
     resourceString = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
     st::fn_007119C0(this_00->field_017C,resourceString,iVar11,iVar12,uVar8);
-    pCVar4 = st::fn_0040577C("BUT_MEDIUM",0);
+    pCVar4 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
     uVar5 = st::fn_0040300D((PanelTy *)this_00,0,1,param_6,param_7,0,1,1,pCVar4,0xbfff,0xc000,0,0
                                ,0,nullptr,0);
     this_00->field_0180 = uVar5;
@@ -1127,11 +1127,11 @@ st::fn_0053EF20
     this_00->field_019D = iVar2;
     iVar11 = 0xc09f;
     local_8 = param_11;
-    puVar7 = &this_00[1].field_0x10;
+    puVar7 = st::pointer_boundary_cast<undefined1 *>(&this_00[1].field_0x10);
     local_10 = 5;
     do {
       uVar5 = st::fn_0040300D((PanelTy *)this_00,1,0,local_8,param_12,0,1,1,text,iVar11,
-                                 iVar11 + 0x10,1,0,puVar7,nullptr,0);
+                                 iVar11 + 0x10,1,0,st::machine_word_boundary_cast<undefined4>(puVar7),nullptr,0);
       puVar7 = puVar7 + 0x27;
       iVar11 = iVar11 + 1;
       *local_c = uVar5;
@@ -1143,12 +1143,12 @@ st::fn_0053EF20
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar10 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x193,0,local_EAX_36,
-                              "%s","ProdPanelTy::InitProdPanel");
+  iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x193,0,local_EAX_36,
+                              st::mutable_c_string("%s"),"ProdPanelTy::InitProdPanel");
   if (iVar10 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(local_EAX_36,0,"E:\\__titans\\Andrey\\specpan.cpp",0x193);
+  st::fn_006A5E40(local_EAX_36,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x193);
   return;
 }
 
@@ -1183,7 +1183,7 @@ void __thiscall st::fn_0053F220(ProdPanelTy *this)
       st::fn_006E56B0(pPVar2->field_000C,pPVar2->field_019D);
     }
     pPVar2->field_019D = 0;
-    puVar6 = &pPVar2->field_01A1;
+    puVar6 = st::pointer_boundary_cast<uint *>(&pPVar2->field_01A1);
     iVar5 = 5;
     do {
       if (*puVar6 != 0) {
@@ -1198,7 +1198,7 @@ void __thiscall st::fn_0053F220(ProdPanelTy *this)
       pPVar2->field_017C = nullptr;
     }
     if (pPVar2->field_0184 != 0) {
-      st::fn_006F20E0(g_cMf32_00806790,&pPVar2->field_0184);
+      st::fn_006F20E0(g_cMf32_00806790,st::pointer_boundary_cast<uint *>(&pPVar2->field_0184));
     }
     pPVar2->field_0190 = nullptr;
     pPVar2->field_0188 = 0;
@@ -1206,12 +1206,12 @@ void __thiscall st::fn_0053F220(ProdPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x1a6,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x1a6,0,iVar3,st::mutable_c_string("%s"),
                              "ProdPanelTy::DoneProdPanel");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0x1a6);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x1a6);
   return;
 }
 
@@ -1238,10 +1238,10 @@ void __thiscall st::fn_0053F3A0(ProdPanelTy *this,int param_1)
   pPVar3 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x1bf,0,errorCode,
-                               "%s","ProdPanelTy::SwitchPanel");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x1bf,0,errorCode,
+                               st::mutable_c_string("%s"),"ProdPanelTy::SwitchPanel");
     if (iVar4 == 0) {
-      st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\specpan.cpp",0x1bf);
+      st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x1bf);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1327,12 +1327,12 @@ undefined4 __thiscall st::fn_0053F650(ProdPanelTy *this,char param_1)
     return 1;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x1eb,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x1eb,0,iVar2,st::mutable_c_string("%s"),
                              "ProdPanelTy::SetPanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\specpan.cpp",0x1eb);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x1eb);
   return 1;
 }
 
@@ -1380,7 +1380,7 @@ void __thiscall st::fn_0053F780(ProdPanelTy *this,int param_1)
       if (this_00->field_019D != 0) {
         st::fn_006E6080(this_00,2,this_00->field_019D,(undefined4 *)&this_00->field_0x18);
       }
-      piVar8 = &this_00->field_01A1;
+      piVar8 = st::pointer_boundary_cast<int *>(&this_00->field_01A1);
       iVar6 = 5;
       do {
         if (*piVar8 != 0) {
@@ -1400,12 +1400,12 @@ void __thiscall st::fn_0053F780(ProdPanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x1ff,0,iVar5,"%s"
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x1ff,0,iVar5,st::mutable_c_string("%s")
                                ,"ProdPanelTy::ShiftControls");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar5,0,"E:\\__titans\\Andrey\\specpan.cpp",0x1ff);
+    st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x1ff);
   }
   return;
 }
@@ -1499,7 +1499,7 @@ st::fn_0053F940
     local_42c[3] = 2;
     local_318 = 1;
     local_31c = 1;
-    pCVar2 = st::fn_0040577C("BUT_SLLT",0);
+    pCVar2 = st::fn_0040577C(st::mutable_c_string("BUT_SLLT"),0);
     pCVar2 = st::fn_006F2C00(pCVar2,iVar3,uVar6);
     local_c = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar2,piVar7,iVar9);
     local_414 = *(undefined4 *)(local_c + 2);
@@ -1540,29 +1540,29 @@ st::fn_0053F940
     if (iVar9 != 0) {
       local_2a4[3] = this_00->field_0044;
     }
-    local_2a4[3] = local_2a4[3] + param_2;
+    local_2a4[3] = st::machine_word_boundary_cast<int>(local_2a4[3] + param_2);
     local_23c = 0xc006;
     local_1f0 = 0x272f;
     local_214 = 0x272f;
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,4,&local_8,nullptr,local_42c,0);
+              ((SystemClassTy *)this_00->field_000C,4,st::pointer_boundary_cast<undefined4 *>(&local_8),nullptr,st::machine_word_boundary_cast<undefined4>(local_42c),0);
     if ((this_00->field_005C == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {
       uVar6 = 0x56;
     }
     this_00->field_0028 = uVar6;
     if (local_8 != 0) {
-      st::fn_006E6080(this_00,0x80000002,local_8,(undefined4 *)&this_00->field_0x18);
+      st::fn_006E6080(this_00,st::machine_word_boundary_cast<undefined4>(&DAT_80000002),local_8,(undefined4 *)&this_00->field_0x18);
     }
     g_currentExceptionFrame = local_54.previous;
     return local_8;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar8 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x239,0,iVar2,"%s",
+  iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x239,0,iVar2,st::mutable_c_string("%s"),
                              "ProdPanelTy::CreateSlider");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Andrey\\specpan.cpp",0x239);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x239);
   return -1;
 }
 
@@ -1594,7 +1594,7 @@ st::fn_0053FCD0(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,undefined
   local_8 = nullptr;
   local_10 = pAVar1->field_000C - this->field_003C;
   if (this->field_005C == 0) {
-    local_c = pAVar1->field_0010 - DAT_00806734;
+    local_c = st::machine_word_boundary_cast<int>(pAVar1->field_0010 - DAT_00806734);
   }
   else {
     local_c = pAVar1->field_0010 - this->field_0044;
@@ -1609,7 +1609,7 @@ st::fn_0053FCD0(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,undefined
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar5 = (*(code *)param_2)(param_1);
       iVar8 = 2;
-      pCVar6 = st::fn_0040577C("BUT_BLDTAB",0);
+      pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_BLDTAB"),0);
       pCVar6 = st::fn_006F2C00(pCVar6,iVar8,uVar5);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar6,piVar4,iVar9);
       iVar8 = local_c;
@@ -1620,7 +1620,7 @@ st::fn_0053FCD0(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,undefined
       if (param_1->field_0014->field_0004 == 3) {
         iVar9 = 1;
         piVar4 = nullptr;
-        pCVar6 = st::fn_0040577C("BUT_BLDFRAME",0);
+        pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_BLDFRAME"),0);
         local_8 = st::fn_006F1CE0(g_cMf32_00806790,6,pCVar6,piVar4,iVar9);
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_10,iVar8,'\x06',
                (byte *)local_8);
@@ -1633,12 +1633,12 @@ st::fn_0053FCD0(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,undefined
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x255,0,(int)piVar4,
-                               "%s","ProdPanelTy::PaintTab");
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x255,0,(int)piVar4,
+                               st::mutable_c_string("%s"),"ProdPanelTy::PaintTab");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40((int)piVar4,0,"E:\\__titans\\Andrey\\specpan.cpp",0x255);
+    st::fn_006A5E40((int)piVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x255);
   }
   return;
 }
@@ -1671,7 +1671,7 @@ st::fn_0053FEE0(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,undefined
   local_8 = nullptr;
   local_10 = pAVar1->field_000C - this->field_003C;
   if (this->field_005C == 0) {
-    local_c = pAVar1->field_0010 - DAT_00806734;
+    local_c = st::machine_word_boundary_cast<int>(pAVar1->field_0010 - DAT_00806734);
   }
   else {
     local_c = pAVar1->field_0010 - this->field_0044;
@@ -1686,7 +1686,7 @@ st::fn_0053FEE0(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,undefined
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar5 = (*(code *)param_2)(param_1);
       iVar8 = 2;
-      pCVar6 = st::fn_0040577C("BUT_MFTABS",0);
+      pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_MFTABS"),0);
       pCVar6 = st::fn_006F2C00(pCVar6,iVar8,uVar5);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar6,piVar4,iVar9);
       iVar8 = local_c;
@@ -1697,7 +1697,7 @@ st::fn_0053FEE0(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,undefined
       if (param_1->field_0014->field_0004 == 3) {
         iVar9 = 1;
         piVar4 = nullptr;
-        pCVar6 = st::fn_0040577C("BUT_MFFRAMES",0);
+        pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_MFFRAMES"),0);
         local_8 = st::fn_006F1CE0(g_cMf32_00806790,6,pCVar6,piVar4,iVar9);
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_10,iVar8,'\x06',
                (byte *)local_8);
@@ -1710,12 +1710,12 @@ st::fn_0053FEE0(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,undefined
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x270,0,(int)piVar4,
-                               "%s","ProdPanelTy::PaintTab");
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x270,0,(int)piVar4,
+                               st::mutable_c_string("%s"),"ProdPanelTy::PaintTab");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40((int)piVar4,0,"E:\\__titans\\Andrey\\specpan.cpp",0x270);
+    st::fn_006A5E40((int)piVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x270);
   }
   return;
 }
@@ -1750,10 +1750,10 @@ int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\specpan.cpp",0x2a3,0,iVar3,"%s"
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x2a3,0,iVar3,st::mutable_c_string("%s")
                                ,"ProdPanelTy::GetMessage");
     if (iVar4 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0x2a3);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x2a3);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1762,7 +1762,7 @@ int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_OPTPANELTY_C001) {
     if (SVar1 == MESS_SHARED_C000) {
-      pCVar6 = st::fn_0040577C("BUT_MEDIUM",0);
+      pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
       st::fn_00402121((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar6,0x274e,0,1
                         );
       g_currentExceptionFrame = local_4c.previous;
@@ -1772,7 +1772,7 @@ int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
       if (this_00->field_0172 == 3) {
         iVar5 = (this_00->field_0058 - this_00->field_0048) + this_00->field_0050;
         if (iVar5 < this_00->field_0044) {
-          this_00->field_0044 = this_00->field_0044 + -0xf;
+          this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + -0xf);
         }
         if (this_00->field_0044 <= iVar5) {
           this_00->field_0044 = iVar5;
@@ -1789,7 +1789,7 @@ int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
       if (this_00->field_0172 == 4) {
         iVar5 = this_00->field_0058 + this_00->field_0050;
         if (this_00->field_0044 < iVar5) {
-          this_00->field_0044 = this_00->field_0044 + 0xf;
+          this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + 0xf);
         }
         if (iVar5 <= this_00->field_0044) {
           this_00->field_0044 = iVar5;
@@ -1829,7 +1829,7 @@ int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
     }
     pCVar6 = st::fn_0040577C(text,0);
     st::fn_00403373((PanelTy *)this_00,(AnonShape_005389E0_C98BD548 *)message,1,pCVar6,
-                      st::fn_00401E88,0,1);
+                      st::pointer_boundary_cast<undefined *>(st::fn_00401E88),0,1);
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;

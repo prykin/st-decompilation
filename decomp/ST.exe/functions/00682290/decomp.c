@@ -6,7 +6,7 @@
 void FUN_00682290(void)
 
 {
-  _DAT_00847820 = &UNK_0079d75c;
+  _DAT_00847820 = &VTable_0079D75C;
   DAT_00847824 = 0;
   _DAT_008478a4 = 0;
   return;

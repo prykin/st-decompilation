@@ -183,27 +183,27 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   char *pcVar8_mg23;
   short sVar22;
   CPanelTy *pCVar23;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
   short sVar24;
   DArrayTy *pDVar25;
   undefined2 uVar27;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   undefined4 uVar26;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   DArrayTy *extraout_EDX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_04;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_05;
   AnonShape_00652810_4F58F813 *pAVar28;
   AnonNested_00652810_000F_9CE8027E *pAVar29;
@@ -438,7 +438,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                                                    (int)pAVar38);
                                               }
                                               else {
-                                                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                                /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                                 thunk_FUN_0065d630(pAVar20,extraout_EDX_04);
                                               }
                                             }
@@ -484,7 +484,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                                                    (int)pAVar38);
                                               }
                                               else {
-                                                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                                /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                                 thunk_FUN_0065e6c0(pAVar20,extraout_EDX_05);
                                               }
                                             }
@@ -4577,7 +4577,8 @@ LAB_00653bb7:
                                   do {
                                     if (pDVar10->flags == (uint)DAT_0080874d) {
                                       if (((char)local_15c->flags != '\0') &&
-                                         ((DAT_008087a0 == '\x03' || (DAT_008087a0 == '\b')))) {
+                                         (((char)DAT_008087a0 == '\x03' ||
+                                          ((char)DAT_008087a0 == '\b')))) {
                                         Library::MSVCRT::FUN_0072e730
                                                   ((byte *)&CHAR_00h_0080ef1e,nullptr,local_384,
                                                    nullptr,nullptr);
@@ -4673,7 +4674,7 @@ LAB_006540b9:
                                       _DAT_0080e42e = local_144;
                                       _DAT_0080e436 = local_13c;
                                       DAT_0080e43a = STPiece<0,1>(local_138);
-                                      if (DAT_008087a0 == '\x03') {
+                                      if ((char)DAT_008087a0 == '\x03') {
                                         Library::MSVCRT::FUN_0072e730
                                                   ((byte *)&CHAR_00h_0080ef1e,nullptr,local_484,
                                                    nullptr,nullptr);
@@ -4683,7 +4684,7 @@ LAB_006540b9:
                                         wsprintfA(&DAT_0080e323,"%s%s",&CHAR_00h_00807784,
                                                   &DAT_0080f33a);
                                       }
-                                      else if (DAT_008087a0 == '\b') {
+                                      else if ((char)DAT_008087a0 == '\b') {
                                         wsprintfA(&DAT_0080e323,"%s%s",&CHAR_00h_00807784,
                                                   local_158);
                                       }
@@ -5345,9 +5346,9 @@ LAB_00655324:
                                 if (0 < (int)pDVar10) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar10;
-                                  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                   uVar7 = extraout_ECX;
-                                  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                   uVar26 = extraout_EDX;
                                   do {
                                     switch(local_15c) {
@@ -5426,9 +5427,9 @@ LAB_00655324:
                                     thunk_FUN_004d78e0((char)pDVar25->flags);
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
-                                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                     uVar7 = extraout_ECX_00;
-                                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                     uVar26 = extraout_EDX_00;
                                   } while (local_c != nullptr);
                                 }
@@ -5608,7 +5609,7 @@ LAB_006559e3:
                                     if (local_8 != nullptr) {
                                       uVar31 = 0;
                                       uVar16 = local_8->count;
-                                      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                       pDVar10 = extraout_EDX_01;
                                       if (0 < (int)uVar16) {
                                         do {
@@ -5675,7 +5676,7 @@ LAB_006559e3:
                                       uVar32 = 0;
                                       if (0 < (int)pDVar10->count) {
                                         bVar35 = pDVar10->count != 0;
-                                        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                         uVar7 = extraout_EDX_02;
                                         do {
                                           if (bVar35) {
@@ -5691,7 +5692,7 @@ LAB_006559e3:
                                                      ,CASE_1,local_134);
                                           uVar32 = uVar32 + 1;
                                           bVar35 = uVar32 < pDVar10->count;
-                                          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                                          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                           uVar7 = extraout_EDX_03;
                                         } while ((int)uVar32 < (int)pDVar10->count);
                                       }

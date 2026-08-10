@@ -61,11 +61,11 @@ st::fn_005FDB50
           iVar5 = st::fn_0040537B(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
           if (iVar5 != 0) {
             st::fn_006A5E40
-                      (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_DcBom.cpp",0x13d
+                      (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_DcBom.cpp"),0x13d
                       );
             return 0xffff;
           }
-          iVar5 = st::fn_00404183(this_00,0xd,PTR_00806774,"adcbo",CASE_1D);
+          iVar5 = st::fn_00404183(this_00,0xd,PTR_00806774,st::mutable_c_string("adcbo"),CASE_1D);
           if (iVar5 != 0) {
             return 0xffff;
           }
@@ -149,11 +149,11 @@ joined_r0x005fe09b:
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = st::fn_00404183(this_00,0xf,PTR_00806764,"bulb_n3",CASE_1D);
+            iVar5 = st::fn_00404183(this_00,0xf,PTR_00806764,st::mutable_c_string("bulb_n3"),CASE_1D);
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = st::fn_00404183(this_00,0xe,PTR_00806774,"expmask2",CASE_1D);
+            iVar5 = st::fn_00404183(this_00,0xe,PTR_00806774,st::mutable_c_string("expmask2"),CASE_1D);
             if (iVar5 != 0) {
               return 0xffff;
             }

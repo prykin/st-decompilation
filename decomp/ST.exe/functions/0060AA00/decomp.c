@@ -15,7 +15,7 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
   float10 extraout_ST0;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   unkbyte10 extraout_ST1;
   longlong lVar8;
   uint local_1c;
@@ -77,7 +77,7 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
               }
               fcos(fVar7);
               lVar8 = Library::MSVCRT::__ftol();
-              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+              /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               fsin(extraout_ST1);
               iVar1 = (int)lVar8 + *(int *)(iVar6 + 0x18);
               *(int *)(iVar6 + 0xc) = iVar1;

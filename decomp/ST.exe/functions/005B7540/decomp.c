@@ -38,7 +38,7 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   int local_14;
   UINT *local_10;
   int local_c;
-  UINT *local_8;
+  uint *local_8;
 
   local_c = 1;
   local_bc.previous = g_currentExceptionFrame;
@@ -144,7 +144,7 @@ LAB_005b7ad9:
     if (local_c != 0) {
       this_00->field_0065 = 1;
       if (this_00->field_009A != 0) {
-        local_8 = &this_00->field_0066;
+        local_8 = this_00->field_0066;
         local_10 = (UINT *)&this_00->field_0x1c82;
         puVar7 = (byte *)&this_00->field_0xa7;
         iVar10 = 0x68ff;
@@ -156,10 +156,10 @@ LAB_005b7ad9:
             else {
               uVar6 = 1;
             }
-            iVar8 = MMObjTy::CreateSprBut
+            uVar6 = MMObjTy::CreateSprBut
                               ((MMObjTy *)this_00,1,uVar6,puVar7[0x16] + puVar7[-3],
                                puVar7[0x17] + puVar7[-2],puVar7[-1],*puVar7,iVar10,iVar10 + 0x80);
-            *local_8 = iVar8;
+            *local_8 = uVar6;
           }
           local_10 = (UINT *)((int)local_10 + 2);
           local_8 = local_8 + 1;
@@ -232,10 +232,12 @@ LAB_005b7655:
           return;
         }
         bVar2 = this_00->field_1A5A;
-        if ((bVar2 != 0xff) && (*(int *)(&this_00->field_0xd1 + (uint)bVar2 * 0x1fb) != 0)) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        if ((bVar2 != 0xff) &&
+           (*(int *)((int)this_00->field_0066 + (uint)bVar2 * 0x1fb + 0x6b) != 0)) {
           AppClassTy::PostNextMessage
                     ((AppClassTy *)&DAT_00807620,
-                     (undefined4 *)(&this_00->field_0xc1 + (uint)bVar2 * 0x1fb));
+                     (undefined4 *)((int)this_00->field_0066 + (uint)bVar2 * 0x1fb + 0x5b));
         }
         iVar10 = this_00->field_1CAB;
         if (iVar10 != 0) {
@@ -252,7 +254,7 @@ LAB_005b7655:
           memmove(puVar15, puVar7, 0x27); /* compiler REP MOVS byte copy */
           iVar10 = 0;
           if (this_00->field_009A != 0) {
-            local_8 = (UINT *)&this_00->field_0xbc;
+            local_8 = (uint *)&this_00->field_0xbc;
             local_10 = (UINT *)&this_00->field_0x1a87;
             do {
               pUVar12 = local_10;
@@ -279,7 +281,7 @@ LAB_005b7655:
               }
               local_14 = local_14 + 1;
               local_10 = (UINT *)((int)local_10 + 0x27);
-              local_8 = (UINT *)((int)local_8 + 0x1fb);
+              local_8 = (uint *)((int)local_8 + 0x1fb);
             } while (local_14 < (int)(uint)this_00->field_009A);
           }
           if ((this_00->field_1A5F == '\x03') || (this_00->field_1A5F == '\x01')) {
@@ -304,10 +306,12 @@ LAB_005b7655:
         (*this_00->field_000C->vtable->vfunc_18)((short)local_38);
       }
       bVar2 = this_00->field_1A5A;
-      if ((bVar2 != 0xff) && (*(int *)(&this_00->field_0xd1 + (uint)bVar2 * 0x1fb) != 0)) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      if ((bVar2 != 0xff) && (*(int *)((int)this_00->field_0066 + (uint)bVar2 * 0x1fb + 0x6b) != 0))
+      {
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,
-                   (undefined4 *)(&this_00->field_0xc1 + (uint)bVar2 * 0x1fb));
+                   (undefined4 *)((int)this_00->field_0066 + (uint)bVar2 * 0x1fb + 0x5b));
         g_currentExceptionFrame = local_bc.previous;
         return;
       }

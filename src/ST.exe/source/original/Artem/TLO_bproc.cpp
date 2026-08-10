@@ -79,7 +79,7 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
               (param_1,pAVar14->field_0000,pAVar14->field_0004,pAVar14->field_0008,0,
                pAVar14->field_000C,pAVar14->field_0010,pAVar14->field_0014,(char *)(pAVar14 + 1));
     if (1 < param_1->field_03D4) {
-      uVar11 = param_1->field_03D4 * 0x27 - 0x27;
+      uVar11 = st::machine_word_boundary_cast<uint>(param_1->field_03D4 * 0x27 - 0x27);
       puVar13 = (undefined4 *)((int)&param_1->field_0607[1].field_000C + 3);
       pAVar14 = param_1->field_0607;
       for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
@@ -93,7 +93,7 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
         pAVar14 = (AnonPointee_TLOBaseTy_0607 *)((int)&pAVar14->field_0000 + 1);
       }
     }
-    param_1->field_03D4 = param_1->field_03D4 + -1;
+    param_1->field_03D4 = st::machine_word_boundary_cast<int>(param_1->field_03D4 + -1);
     return 0;
   }
   if (((*(int *)&param_1->field_0x361 == 5) &&
@@ -110,7 +110,7 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
       local_EAX_263 = st::fn_00404B6A(param_1);
       if ((local_EAX_263 == 0) &&
          (local_EAX_294 =
-               st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bproc.cpp",0x19f,0,0,"%s"
+               st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bproc.cpp"),0x19f,0,0,st::mutable_c_string("%s")
                                   ,"What's that ?"), local_EAX_294 != 0)) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -121,8 +121,8 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
     param_1->field_038C = g_playSystem_00802A38->field_00E4;
     param_1->field_0394 = 0;
     st::fn_004035DF(param_1,*(Global_sub_004C7260_param_1Enum *)&param_1->field_0x361,
-                       *(int *)&param_1->field_0x369,&param_1->field_0398,&param_1->field_039C,
-                       &param_1->field_03A0,&param_1->field_03A4);
+                       *(int *)&param_1->field_0x369,st::pointer_boundary_cast<undefined4 *>(&param_1->field_0398),st::pointer_boundary_cast<undefined4 *>(&param_1->field_039C),
+                       &param_1->field_03A0,st::pointer_boundary_cast<undefined4 *>(&param_1->field_03A4));
     param_1->field_03A8 = 0;
     param_1->field_03AC = 0;
     param_1->field_03B0 = 0;
@@ -170,9 +170,9 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
       st::fn_00404B8D((char)param_1->field_0024);
     }
     uVar10 = st::fn_004049B7(*(char *)&param_1->field_023D);
-    param_1->field_0241 =
+    param_1->field_0241 =st::machine_word_boundary_cast<int>(
          param_1->field_0241 +
-         *(int *)(&DAT_007e4178 + ((uint)(byte)uVar10 + param_1->field_0235 * 3) * 4) / 100;
+         *(int *)(&DAT_007e4178 + ((uint)(byte)uVar10 + param_1->field_0235 * 3) * 4) / 100);
     local_EAX_683 = st::fn_004049B7(*(char *)&param_1->field_023D);
     param_1->field_05D7 =
          (param_1->field_0241 * 100) /
@@ -186,8 +186,8 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
     }
 LAB_004c8806:
     st::fn_004035DF(param_1,*(Global_sub_004C7260_param_1Enum *)&param_1->field_0x361,
-                       *(int *)&param_1->field_0x369,&param_1->field_0398,&param_1->field_039C,
-                       &param_1->field_03A0,&param_1->field_03A4);
+                       *(int *)&param_1->field_0x369,st::pointer_boundary_cast<undefined4 *>(&param_1->field_0398),st::pointer_boundary_cast<undefined4 *>(&param_1->field_039C),
+                       &param_1->field_03A0,st::pointer_boundary_cast<undefined4 *>(&param_1->field_03A4));
     st::fn_00405A2E(param_1);
     return 0;
   }
@@ -207,7 +207,7 @@ LAB_004c8806:
   }
   param_1->field_03B8 = iVar7;
   if ((iVar7 != 0) && (uVar12 = uVar12 << 2, DAT_00811798 != nullptr)) {
-    st::fn_00402AF4(DAT_00811798,param_1->field_0024,5);
+    st::fn_00402AF4(st::pointer_boundary_cast<void *>(DAT_00811798),param_1->field_0024,5);
   }
   if (g_playSystem_00802A38->field_00E4 < param_1->field_038C + uVar12) {
     return 0;
@@ -225,12 +225,12 @@ LAB_004c8806:
   iVar7 = 0;
   if (*(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4) == -1) {
 LAB_004c8bf2:
-    param_1->field_0394 = param_1->field_0394 + 1;
+    param_1->field_0394 = st::machine_word_boundary_cast<int>(param_1->field_0394 + 1);
     if (*(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4) != -1) {
-      param_1->field_03A8 = param_1->field_03A8 + iVar7;
-      param_1->field_03B0 = param_1->field_03B0 + local_8;
-      param_1->field_03AC = param_1->field_03AC + local_10;
-      param_1->field_03B4 = param_1->field_03B4 + local_c;
+      param_1->field_03A8 = st::machine_word_boundary_cast<undefined4>(param_1->field_03A8 + iVar7);
+      param_1->field_03B0 = st::machine_word_boundary_cast<undefined4>(param_1->field_03B0 + local_8);
+      param_1->field_03AC = st::machine_word_boundary_cast<undefined4>(param_1->field_03AC + local_10);
+      param_1->field_03B4 = st::machine_word_boundary_cast<undefined4>(param_1->field_03B4 + local_c);
       bVar5 = st::fn_004049B7(*(char *)&param_1->field_0024);
       if (bVar5 == 3) {
         if (iVar7 != 0) {
@@ -348,17 +348,17 @@ LAB_004c8bf2:
     }
     if (DAT_00811798 != nullptr) {
       if (param_1->field_03BC != 0) {
-        st::fn_00402AF4(DAT_00811798,param_1->field_0024,4);
+        st::fn_00402AF4(st::pointer_boundary_cast<void *>(DAT_00811798),param_1->field_0024,4);
       }
       if (param_1->field_03C4 != 0) {
-        st::fn_00402AF4(DAT_00811798,param_1->field_0024,2);
+        st::fn_00402AF4(st::pointer_boundary_cast<void *>(DAT_00811798),param_1->field_0024,2);
       }
       if (param_1->field_03C8 != 0) {
         bVar5 = st::fn_004049B7(*(char *)&param_1->field_0024);
-        st::fn_00402AF4(DAT_00811798,param_1->field_0024,(-(uint)(bVar5 != 3) & 0xfffffffd) + 6);
+        st::fn_00402AF4(st::pointer_boundary_cast<void *>(DAT_00811798),param_1->field_0024,(-(uint)(bVar5 != 3) & 0xfffffffd) + 6);
       }
       if (param_1->field_03C0 != 0) {
-        st::fn_00402AF4(DAT_00811798,param_1->field_0024,7);
+        st::fn_00402AF4(st::pointer_boundary_cast<void *>(DAT_00811798),param_1->field_0024,7);
         return 0;
       }
     }
@@ -435,12 +435,12 @@ undefined4 __thiscall st::fn_004C94B0(TLOBaseTy *this)
     }
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bproc.cpp",0x291,0,errorCode,
-                             "%s","TLOBaseTy::procResult error");
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bproc.cpp"),0x291,0,errorCode,
+                             st::mutable_c_string("%s"),"TLOBaseTy::procResult error");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Artem\\TLO_bproc.cpp",0x292);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bproc.cpp"),0x292);
   return 0;
 }
 

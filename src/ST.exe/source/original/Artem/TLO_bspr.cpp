@@ -45,12 +45,12 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
   this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bspr.cpp",0xbb,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0xbb,0,iVar3,st::mutable_c_string("%s"),
                                "TLOBaseTy::LoadImages error");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xbc);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0xbc);
     return iVar3;
   }
   TVar9 = local_10->field_0245;
@@ -68,7 +68,7 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
                        CASE_1D);
     if (iVar5 != 0) {
       st::fn_006A5E40
-                (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x1f);
+                (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x1f);
     }
   }
   if (this_00->field_05F3 == 0) {
@@ -77,12 +77,12 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
     this_00->field_01F5->field_01E4 = 0;
   }
   else {
-    st::external_00000080(local_154,"%s%1i",this_00->field_05F3,this_00->field_05C0);
+    st::external_00000080(local_154,st::mutable_c_string("%s%1i"),this_00->field_05F3,this_00->field_05C0);
     iVar5 = st::fn_00404183
                       ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080678c,local_154,CASE_1D);
     if (iVar5 != 0) {
       st::fn_006A5E40
-                (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x23);
+                (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x23);
     }
   }
   this_01 = &this_00->field_01D5;
@@ -96,7 +96,7 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
                       ((STT3DSprC *)this_01,0xc,PTR_0080678c,this_00->field_05F7,CASE_1D);
     if (iVar5 != 0) {
       st::fn_006A5E40
-                (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x28);
+                (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x28);
     }
     if (*(int *)(&DAT_00790c2c + this_00->field_0235 * 4) != 0) {
       iVar5 = 1;
@@ -106,42 +106,42 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
     }
   }
   if (*(int *)(&DAT_00791a10 + this_00->field_0235 * 4) != 0) {
-    st::external_00000080(local_154,"%s_cover",this_00->field_05EF);
+    st::external_00000080(local_154,st::mutable_c_string("%s_cover"),this_00->field_05EF);
     iVar5 = st::fn_00404183((STT3DSprC *)this_01,9,PTR_0080678c,local_154,CASE_1D);
     if (iVar5 != 0) {
       st::fn_006A5E40
-                (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x31);
+                (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x31);
     }
     if ((this_00->field_05AC != CASE_40) && (this_00->field_05AC != CASE_49)) {
-      st::external_00000080(local_154,"%s_cover%1i",this_00->field_05F3,this_00->field_05C0);
+      st::external_00000080(local_154,st::mutable_c_string("%s_cover%1i"),this_00->field_05F3,this_00->field_05C0);
       iVar5 = st::fn_00404183((STT3DSprC *)this_01,8,PTR_0080678c,local_154,CASE_1D);
       if (iVar5 != 0) {
         st::fn_006A5E40
-                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x35);
+                  (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x35);
       }
     }
     if (this_00->field_05AC == CASE_4E) {
-      st::external_00000080(local_154,"htec_ani_cover");
+      st::external_00000080(local_154,st::mutable_c_string("htec_ani_cover"));
       iVar5 = st::fn_00404183((STT3DSprC *)this_01,7,PTR_0080678c,local_154,CASE_1D);
       if (iVar5 != 0) {
         st::fn_006A5E40
-                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x3a);
+                  (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x3a);
       }
     }
     if (this_00->field_05AC == CASE_72) {
-      st::external_00000080(local_154,"vqb_ani_cover");
+      st::external_00000080(local_154,st::mutable_c_string("vqb_ani_cover"));
       iVar5 = st::fn_00404183((STT3DSprC *)this_01,7,PTR_0080678c,local_154,CASE_1D);
       if (iVar5 != 0) {
         st::fn_006A5E40
-                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x3e);
+                  (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x3e);
       }
     }
     if (this_00->field_05AC == CASE_70) {
-      st::external_00000080(local_154,"glsat_ani_cover");
+      st::external_00000080(local_154,st::mutable_c_string("glsat_ani_cover"));
       iVar5 = st::fn_00404183((STT3DSprC *)this_01,7,PTR_0080678c,local_154,CASE_1D);
       if (iVar5 != 0) {
         st::fn_006A5E40
-                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x42);
+                  (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x42);
       }
     }
     if (this_00->field_05AC == CASE_52) {
@@ -156,7 +156,7 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
       iVar5 = st::fn_00404183((STT3DSprC *)this_01,7,PTR_0080678c,local_154,CASE_1D);
       if (iVar5 != 0) {
         st::fn_006A5E40
-                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x46);
+                  (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x46);
       }
     }
   }
@@ -196,7 +196,7 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
                        CASE_1D);
     if (iVar5 != 0) {
       st::fn_006A5E40
-                (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x6a);
+                (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x6a);
     }
     st::fn_00401EBA(this_01,0x10,*(int *)(&DAT_0079104c + this_00->field_0235 * 4),
                        *(int *)(&DAT_0079104c + this_00->field_0235 * 4),'\0');
@@ -228,8 +228,8 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
     else {
       iVar5 = st::fn_00404183
                         ((STT3DSprC *)this_01,4,PTR_00806774,
-                         "expl_bt0" +
-                         *(int *)(&DAT_0079125c + this_00->field_0235 * 4) * 0x32,CASE_1D);
+                         st::mutable_c_string("expl_bt0" +
+                         *(int *)(&DAT_0079125c + this_00->field_0235 * 4) * 0x32),CASE_1D);
       if (iVar5 != 0) {
         return 0xffff;
       }
@@ -241,7 +241,7 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
       st::fn_00405240((STT3DSprC *)this_01,4,g_playSystem_00802A38->field_00E4);
       st::fn_00404183
                 ((STT3DSprC *)this_01,6,PTR_00806774,
-                 "expmask3" + *(int *)(&DAT_0079125c + this_00->field_0235 * 4) * 0x32,
+                 st::mutable_c_string("expmask3" + *(int *)(&DAT_0079125c + this_00->field_0235 * 4) * 0x32),
                  CASE_1D);
       st::fn_004022D4(this_01,'\x06');
       st::fn_00405240((STT3DSprC *)this_01,6,g_playSystem_00802A38->field_00E4);
@@ -253,18 +253,18 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
   if (this_00->field_04BC == 4) {
     if (this_00->field_002C == 0) {
       iVar5 = st::fn_00404183
-                        ((STT3DSprC *)this_01,4,PTR_00806764,"tlo_emb5",CASE_1D);
+                        ((STT3DSprC *)this_01,4,PTR_00806764,st::mutable_c_string("tlo_emb5"),CASE_1D);
       if (iVar5 != 0) {
         iVar6 = 0x91;
 LAB_004c9eda:
         st::fn_006A5E40
-                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",iVar6
+                  (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),iVar6
                   );
       }
     }
     else if (this_00->field_002C == 1) {
       iVar5 = st::fn_00404183
-                        ((STT3DSprC *)this_01,4,PTR_00806764,"tlo_emb5_big",CASE_1D);
+                        ((STT3DSprC *)this_01,4,PTR_00806764,st::mutable_c_string("tlo_emb5_big"),CASE_1D);
       if (iVar5 != 0) {
         iVar6 = 0x92;
         goto LAB_004c9eda;
@@ -283,18 +283,18 @@ LAB_004c9eda:
     if (bVar2 == 3) {
       if (iVar5 == 0) {
         iVar5 = st::fn_00404183
-                          ((STT3DSprC *)this_01,5,PTR_0080678c,"si_emb5",CASE_1D);
+                          ((STT3DSprC *)this_01,5,PTR_0080678c,st::mutable_c_string("si_emb5"),CASE_1D);
         if (iVar5 != 0) {
           iVar6 = 0x9e;
 LAB_004c9fb1:
           st::fn_006A5E40
-                    (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",
+                    (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),
                      iVar6);
         }
       }
       else if (iVar5 == 1) {
         iVar5 = st::fn_00404183
-                          ((STT3DSprC *)this_01,5,PTR_0080678c,"si_emb6",CASE_1D);
+                          ((STT3DSprC *)this_01,5,PTR_0080678c,st::mutable_c_string("si_emb6"),CASE_1D);
         if (iVar5 != 0) {
           iVar6 = 0x9f;
           goto LAB_004c9fb1;
@@ -305,18 +305,18 @@ LAB_004c9fb1:
     else {
       if (iVar5 == 0) {
         iVar5 = st::fn_00404183
-                          ((STT3DSprC *)this_01,5,PTR_0080678c,"tlo_emb2",CASE_1D);
+                          ((STT3DSprC *)this_01,5,PTR_0080678c,st::mutable_c_string("tlo_emb2"),CASE_1D);
         if (iVar5 != 0) {
           iVar6 = 0xa5;
 LAB_004ca02a:
           st::fn_006A5E40
-                    (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",
+                    (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),
                      iVar6);
         }
       }
       else if (iVar5 == 1) {
         iVar5 = st::fn_00404183
-                          ((STT3DSprC *)this_01,5,PTR_0080678c,"tlo_emb3",CASE_1D);
+                          ((STT3DSprC *)this_01,5,PTR_0080678c,st::mutable_c_string("tlo_emb3"),CASE_1D);
         if (iVar5 != 0) {
           iVar6 = 0xa6;
           goto LAB_004ca02a;
@@ -403,11 +403,11 @@ int __thiscall st::fn_004CA3C0(TLOBaseTy *this)
           } while (iVar9 < iVar7);
         }
       }
-      st::external_00000080(local_15c,"%s%1i",pTVar4->field_05F3,pTVar4->field_05C0);
+      st::external_00000080(local_15c,st::mutable_c_string("%s%1i"),pTVar4->field_05F3,pTVar4->field_05C0);
       iVar7 = st::fn_00404183((STT3DSprC *)puVar1,0xd,PTR_0080678c,local_15c,CASE_1D);
       if (iVar7 != 0) {
         st::fn_006A5E40
-                  (iVar7,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xd3);
+                  (iVar7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0xd3);
       }
       st::fn_00401EBA(puVar1,0xd,local_10,local_14,'\0');
       st::fn_00401064((STT3DSprC *)puVar1,'\r',local_c);
@@ -444,11 +444,11 @@ int __thiscall st::fn_004CA3C0(TLOBaseTy *this)
           } while (iVar9 < iVar7);
         }
       }
-      st::external_00000080(local_15c,"%s_cover%1i",pTVar4->field_05F3,pTVar4->field_05C0);
+      st::external_00000080(local_15c,st::mutable_c_string("%s_cover%1i"),pTVar4->field_05F3,pTVar4->field_05C0);
       iVar7 = st::fn_00404183((STT3DSprC *)puVar1,8,PTR_0080678c,local_15c,CASE_1D);
       if (iVar7 != 0) {
         st::fn_006A5E40
-                  (iVar7,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xea);
+                  (iVar7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0xea);
       }
       st::fn_00401EBA(puVar1,8,local_10,local_14,'\0');
       st::fn_00401064((STT3DSprC *)puVar1,'\b',local_c);
@@ -467,12 +467,12 @@ int __thiscall st::fn_004CA3C0(TLOBaseTy *this)
     return 0;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bspr.cpp",0xf6,0,iVar5,"%s",
+  iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0xf6,0,iVar5,st::mutable_c_string("%s"),
                              "TLOBaseTy::ReloadLogoPlane error");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar5,0,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xf7);
+  st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0xf7);
   return iVar5;
 }
 
@@ -528,10 +528,10 @@ int __thiscall st::fn_004CABB0(TLOBaseTy *this,int param_1)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bspr.cpp",0x1a7,0,iVar4,"%s"
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x1a7,0,iVar4,st::mutable_c_string("%s")
                                ,"TLOBaseTy::RotateSpr error");
     if (iVar5 == 0) {
-      st::fn_006A5E40(iVar4,0,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x1a8);
+      st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x1a8);
       return iVar4;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -585,7 +585,7 @@ int __thiscall st::fn_004CABB0(TLOBaseTy *this,int param_1)
       pAVar2 = this_00->field_01F5;
       iVar6 = pAVar2->field_0208;
       if (iVar6 < (int)pAVar2->field_020C) {
-        iVar6 = pAVar2->field_0210 - iVar6;
+        iVar6 = st::machine_word_boundary_cast<int>(pAVar2->field_0210 - iVar6);
       }
       else {
         iVar6 = iVar6 - pAVar2->field_0210;
@@ -711,12 +711,12 @@ int __thiscall st::fn_004CBC10(TLOBaseTy *this)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_bspr.cpp",0x2c5,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x2c5,0,iVar2,st::mutable_c_string("%s"),
                              "TLOBaseTy::AddSprInit error");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x2c6);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),0x2c6);
   return iVar2;
 }
 
@@ -738,7 +738,7 @@ undefined4 __fastcall st::fn_004CC220(AnonShape_004CC220_7DEF08C7 *param_1)
   param_1->field_0444 = 0;
   param_1->field_0448 = 0;
   param_1->field_044C = 0xffffffff;
-  uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
+  uVar1 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039);
   param_1->field_001C = uVar1;
   param_1->field_0450 = (uVar1 >> 0x10) % 0x33 + g_playSystem_00802A38->field_00E4;
   pAVar2 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
@@ -754,7 +754,7 @@ undefined4 __fastcall st::fn_004CC220(AnonShape_004CC220_7DEF08C7 *param_1)
                        ,param_1->field_060B,param_1->field_060F,0x11);
   if (exceptionCode != 0) {
     st::fn_006A5E40
-              (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",
+              (exceptionCode,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),
                0x355);
   }
   param_1->field_0440 = 0;
@@ -787,7 +787,7 @@ undefined4 __fastcall st::fn_004CC370(AnonShape_004CC370_02CE3D17 *param_1)
     return 0;
   }
   if (-1 < *(int *)&param_1->field_0x44c) {
-    pAVar1 = ((STT3DSprC *)param_1->field_0603)->field_0020;
+    pAVar1 = st::pointer_boundary_cast<AnonPointee_STT3DSprC_0020 *>(((STT3DSprC *)param_1->field_0603)->field_0020);
     if ((int)pAVar1->field_020C <= (int)pAVar1->field_0210) {
       st::fn_00404264((STT3DSprC *)param_1->field_0603,0xe);
       st::fn_00403D0F((STT3DSprC *)param_1->field_0603);
@@ -837,7 +837,7 @@ undefined4 __fastcall st::fn_004CC370(AnonShape_004CC370_02CE3D17 *param_1)
       iVar8 = 0x381;
 cf_error_exit_004CC50A:
       st::fn_006A5E40
-                (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",iVar8);
+                (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bspr.cpp"),iVar8);
     }
   }
   uVar3 = 6;
@@ -849,7 +849,7 @@ cf_error_exit_004CC50A:
              param_1->field_0201);
   uVar3 = *(int *)&param_1->field_0x1c * 0x41c64e6d + 0x3039;
   *(uint *)&param_1->field_0x1c = uVar3;
-  iVar8 = param_1->field_0235 * 0x44;
+  iVar8 = st::machine_word_boundary_cast<int>(param_1->field_0235 * 0x44);
   uVar3 = (uVar3 >> 0x10) % *(uint *)(&DAT_00797748 + iVar8);
   *(uint *)&param_1->field_0x44c = uVar3;
   iVar5 = *(int *)&param_1->field_0x43c;

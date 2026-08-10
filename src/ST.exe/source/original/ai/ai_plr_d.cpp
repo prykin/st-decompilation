@@ -32,23 +32,23 @@ st::fn_0067CF30(char *source,undefined2 param_2,char *param_3,undefined4 param_4
   if (exceptionCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
     st::fn_00402E05((int *)&local_8);
-    st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x28);
+    st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x28);
     return nullptr;
   }
-  local_8 = st::fn_006AAC10(299);
+  local_8 = st::pointer_boundary_cast<AnonShape_0067CF30_CDCAC01F *>(st::fn_006AAC10(299));
   *(undefined4 *)local_8 = 0x38e;
   *(undefined4 *)&local_8->field_0x14 = 299;
   local_8->field_0x18 = 2;
-  st::fn_0072E340(&local_8->field_0x1b,source,0x3f);
+  st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_8->field_0x1b),source,0x3f);
   _Source = source;
   if (param_3 != nullptr) {
     _Source = param_3;
   }
-  st::fn_0072E340(&local_8->field_0x5b,_Source,0xb);
+  st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_8->field_0x5b),_Source,0xb);
   local_8->field_0019 = param_2;
   local_8->field_006D = 0xff;
   pDVar1 = st::fn_006AE290(nullptr,5,0x10,5);
-  local_8->field_00C2 = &pDVar1->flags;
+  local_8->field_00C2 = st::pointer_boundary_cast<uint *>(&pDVar1->flags);
   pAVar2 = st::fn_004015E1(source);
   local_8->field_0106 = (undefined4 *)pAVar2;
   local_8->field_010A = param_4;
@@ -92,7 +92,7 @@ AllocationRecord_0067D1D0 * __cdecl st::fn_0067D1D0(AllocationRecord_0067D1D0 *p
   g_currentExceptionFrame = &local_4c;
   iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    local_8 = st::fn_006AAC10(299);
+    local_8 = st::pointer_boundary_cast<AnonShape_0067D1D0_21940C5B *>(st::fn_006AAC10(299));
     pAVar4_mg0 = param_1;
     pAVar7 = local_8;
     memmove(pAVar7, pAVar4_mg0, 0x12a); /* compiler REP MOVS byte copy */
@@ -135,7 +135,7 @@ AllocationRecord_0067D1D0 * __cdecl st::fn_0067D1D0(AllocationRecord_0067D1D0 *p
         if (puVar6[1] == 0) {
           pAVar3 = st::fn_004052AE((AllocationRecord_00690FC0 *)
                                       (&param_1->field_0x12a + puVar6[2]));
-          *puVar6 = pAVar3;
+          *puVar6 = st::machine_word_boundary_cast<undefined4>(pAVar3);
           pAVar4 = (AllocationRecord_0067D1D0 *)local_8;
         }
         iVar5 = pAVar4->field_00C2;
@@ -148,7 +148,7 @@ AllocationRecord_0067D1D0 * __cdecl st::fn_0067D1D0(AllocationRecord_0067D1D0 *p
   }
   g_currentExceptionFrame = local_4c.previous;
   st::fn_00402E05((int *)&local_8);
-  st::fn_006A5E40(iVar1,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x77);
+  st::fn_006A5E40(iVar1,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x77);
   return nullptr;
 }
 
@@ -265,7 +265,7 @@ st::fn_0067D3B0(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param
     do {
       pDVar7 = *ppDVar4;
       if (pDVar7 != nullptr) {
-        iVar1 = pDVar7->count * pDVar7->elementSize + 0x1c;
+        iVar1 = st::machine_word_boundary_cast<int>(pDVar7->count * pDVar7->elementSize + 0x1c);
         iVar13 = iVar13 + iVar1;
         ppDVar4[2] = (DArrayTy *)iVar1;
         local_10 = iVar13;
@@ -274,7 +274,7 @@ st::fn_0067D3B0(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param
       iVar10 = iVar10 + -1;
     } while (iVar10 != 0);
     *param_4 = iVar13 + 299U;
-    pAVar6 = st::fn_006AAC10(iVar13 + 299U);
+    pAVar6 = st::pointer_boundary_cast<AllocationRecord_0067D3B0 *>(st::fn_006AAC10(iVar13 + 299U));
     pAVar15 = param_1;
     pAVar19 = pAVar6;
     memmove(pAVar19, pAVar15, 0x12a); /* compiler REP MOVS byte copy */
@@ -285,11 +285,11 @@ st::fn_0067D3B0(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param
     pAVar6->field_0014 = *param_4;
     pAVar6->field_0102 = param_3;
     uVar17 = pAVar6->field_0102;
-    puVar9 = &pAVar6->field_0x12a;
+    puVar9 = st::pointer_boundary_cast<undefined1 *>(&pAVar6->field_0x12a);
     puVar11 = (byte *)puVar9;
     memmove(puVar11, param_2, uVar17); /* compiler REP MOVS byte copy */
     uVar8 = 0;
-    pAVar6->field_00FE = puVar9 + (-0x12a - (int)pAVar6);
+    pAVar6->field_00FE = st::machine_word_boundary_cast<undefined4>(puVar9 + (-0x12a - (int)pAVar6));
     pDVar7 = pAVar6->field_00C2;
     puVar14 = (uint *)(puVar9 + pAVar6->field_0102);
     local_14 = 0;
@@ -392,10 +392,10 @@ st::fn_0067D3B0(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param
   if (local_8 != nullptr) {
     st::fn_006AB060(&local_8);
   }
-  iVar12 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0xda,0,(int)ppDVar4,
-                              "%s","PlrDataPack");
+  iVar12 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0xda,0,(int)ppDVar4,
+                              st::mutable_c_string("%s"),"PlrDataPack");
   if (iVar12 == 0) {
-    st::fn_006A5E40((int)ppDVar4,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0xdb);
+    st::fn_006A5E40((int)ppDVar4,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0xdb);
     return nullptr;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -426,7 +426,7 @@ undefined4 * __cdecl st::fn_0067D880(int param_1,char *param_2)
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_2 == nullptr)) {
       st::fn_006A5E40
-                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0xee);
+                (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0xee);
     }
     local_8 = (AllocationRecord_0067D1D0 *)
               st::fn_006F2D90((cMf32 *)param_1,param_2,1,0);
@@ -438,14 +438,14 @@ undefined4 * __cdecl st::fn_0067D880(int param_1,char *param_2)
     return (undefined4 *)local_c;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0xf5,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0xf5,0,errorCode,st::mutable_c_string("%s"),
                              "LoadPlrEdit");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_00402E05((int *)&local_8);
   st::fn_00402E05((int *)&local_c);
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0xf7);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0xf7);
   return nullptr;
 }
 
@@ -476,7 +476,7 @@ int __cdecl st::fn_0067D9C0(int param_1,char *param_2,AnonShape_0067D9C0_2E8A225
   if (iVar2 == 0) {
     if (((param_1 == 0) || (param_2 == nullptr)) || (param_3->field_0x18 != '\x02')) {
       st::fn_006A5E40
-                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x10b);
+                (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x10b);
     }
     local_c = st::fn_00401EBF((AllocationRecord_0065CD10 *)param_3->field_0106,&local_14);
     local_8 = st::fn_00405204((AllocationRecord_0067D3B0 *)param_3,(undefined4 *)local_c,local_14,
@@ -488,14 +488,14 @@ int __cdecl st::fn_0067D9C0(int param_1,char *param_2,AnonShape_0067D9C0_2E8A225
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x112,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x112,0,iVar2,st::mutable_c_string("%s"),
                              "SavePlrEdit");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_00401537((int *)&local_c);
   st::fn_00402E05((int *)&local_8);
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x115);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x115);
   return iVar2;
 }
 
@@ -520,19 +520,19 @@ int __cdecl st::fn_0067DB30(int param_1,char *param_2)
   if (iVar2 == 0) {
     if ((param_1 == 0) || (param_2 == nullptr)) {
       st::fn_006A5E40
-                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x123);
+                (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x123);
     }
     st::fn_006F17C0((cMf32 *)param_1,0xc,param_2);
     g_currentExceptionFrame = local_48.previous;
     return 0;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x126,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x126,0,iVar2,st::mutable_c_string("%s"),
                              "DelPlrEdit");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x127);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x127);
   return iVar2;
 }
 
@@ -580,7 +580,7 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
   iVar6 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x156,0,iVar6,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x156,0,iVar6,st::mutable_c_string("%s"),
                                "_CreateStgListByRoot");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -588,12 +588,12 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
     if (local_c != nullptr) {
       st::fn_006AE110(local_c);
     }
-    st::fn_006A5E40(iVar6,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x158);
+    st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x158);
     return nullptr;
   }
   if (param_1 == nullptr) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x13f);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x13f);
   }
   local_c = st::fn_006AE290(nullptr,5,0x98,5);
   uVar8 = 0xffffffff;
@@ -608,9 +608,9 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
   uVar8 = ~uVar8;
   local_2ec[0] = 0xc;
   pcVar3 = pcVar3_mg0 + -uVar8;
-  pcVar11 = local_2ec + 1;
+  pcVar11 = st::pointer_boundary_cast<char *>(local_2ec + 1);
   memmove(pcVar11, pcVar3, uVar8); /* compiler REP MOVS byte copy */
-  st::fn_006F12B0(param_1,st::fn_006F2D10,local_2ec);
+  st::fn_006F12B0(param_1,st::machine_word_boundary_cast<undefined4>(st::fn_006F2D10),st::machine_word_boundary_cast<undefined4>(local_2ec));
   pcVar3 = (char *)st::fn_006F2790(param_1);
   while (pcVar3 != nullptr) {
     local_8 = (AnonShape_0067DC20_B265FC02 *)st::fn_006F2D90(param_1,pcVar3,0,1);
@@ -620,7 +620,7 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
     }
     if (local_8 != nullptr) {
       if (((param_2 == 0) || (param_2 == local_8->field_0019)) && ((param_4 & uVar8) != 0)) {
-        _Source = &local_8->field_0x1b;
+        _Source = st::pointer_boundary_cast<undefined1 *>(&local_8->field_0x1b);
         pcVar11 = local_e8;
         for (iVar7 = 0x26; iVar7 != 0; iVar7 = iVar7 + -1) {
           pcVar11[0] = '\0';
@@ -629,8 +629,8 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
           pcVar11[3] = '\0';
           pcVar11 = pcVar11 + 4;
         }
-        st::fn_0072E340(local_e8,_Source,0x3f);
-        st::fn_0072E340(local_a8,&local_8->field_0x5b,0xb);
+        st::fn_0072E340(local_e8,st::pointer_boundary_cast<char *>(_Source),0x3f);
+        st::fn_0072E340(local_a8,st::pointer_boundary_cast<char *>(&local_8->field_0x5b),0xb);
         st::fn_0072E340(local_9c,pcVar3,0x1f);
         st::fn_0072E340(local_78,PTR_s_OBJECTIVES_0079d718,0x1f);
         local_54 = (int)local_8->field_0019;
@@ -642,7 +642,7 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
     pcVar3 = (char *)st::fn_006F2790(param_1);
   }
   g_currentExceptionFrame = local_50.previous;
-  return &local_c->flags;
+  return st::pointer_boundary_cast<uint *>(&local_c->flags);
 }
 
 // 0067DEC0 CreateAssistantList
@@ -669,20 +669,20 @@ uint * __cdecl st::fn_0067DEC0(int param_1,int param_2,uint param_3)
   if (errorCode == 0) {
     if (param_1 == 0) {
       st::fn_006A5E40
-                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x16b);
+                (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x16b);
     }
     puVar2 = st::fn_004015EB((cMf32 *)param_1,param_2,PTR_s_ASSISTANT_0079d724,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x16e,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x16e,0,errorCode,st::mutable_c_string("%s"),
                              "CreateAssistantList");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006AE110(local_8);
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x170);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x170);
   return nullptr;
 }
 
@@ -714,20 +714,20 @@ uint * __cdecl st::fn_0067DFD0(cMf32 *param_1,int param_2,uint param_3)
   if (errorCode == 0) {
     if (param_1 == nullptr) {
       st::fn_006A5E40
-                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x181);
+                (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x181);
     }
     puVar2 = st::fn_004015EB(param_1,param_2,PTR_s_OPPONENT_0079d728,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x184,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x184,0,errorCode,st::mutable_c_string("%s"),
                              "CreateOpponentList");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006AE110(local_8);
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x186);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x186);
   return nullptr;
 }
 
@@ -756,7 +756,7 @@ uint * __cdecl st::fn_0067E0E0(int param_1,int param_2,uint param_3)
   if (errorCode == 0) {
     if (((param_1 == 0) || (param_2 < 0)) || (7 < param_2)) {
       st::fn_006A5E40
-                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x197);
+                (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x197);
     }
     pCVar2 = st::fn_006F2C00(PTR_s_STRATEG_0079d72c,1,param_2);
     puVar3 = st::fn_004015EB((cMf32 *)param_1,0,pCVar2,param_3);
@@ -764,13 +764,13 @@ uint * __cdecl st::fn_0067E0E0(int param_1,int param_2,uint param_3)
     return puVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x19a,0,errorCode,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x19a,0,errorCode,st::mutable_c_string("%s"),
                              "CreateStrategList");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006AE110(local_8);
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x19c);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x19c);
   return nullptr;
 }
 
@@ -799,7 +799,7 @@ uint * __cdecl st::fn_0067E200(int param_1,int param_2,uint param_3)
   if (errorCode == 0) {
     if (((param_1 == 0) || (param_2 < 0)) || (7 < param_2)) {
       st::fn_006A5E40
-                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1ad);
+                (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1ad);
     }
     pCVar2 = st::fn_006F2C00(PTR_s_AIPLAYER_0079d71c,2,param_2);
     puVar3 = st::fn_004015EB((cMf32 *)param_1,0,pCVar2,param_3);
@@ -807,13 +807,13 @@ uint * __cdecl st::fn_0067E200(int param_1,int param_2,uint param_3)
     return puVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x1b0,0,errorCode,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1b0,0,errorCode,st::mutable_c_string("%s"),
                              "CreateSaveStrategList");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_006AE110(local_8);
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1b2);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1b2);
   return nullptr;
 }
 
@@ -844,17 +844,17 @@ LPSTR __cdecl st::fn_0067E320(int param_1,int param_2)
   iVar3 = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x1c7,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1c7,0,iVar3,st::mutable_c_string("%s"),
                                "GetStrategNameDB");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1c8);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1c8);
     return (LPSTR)0x0;
   }
   if (((param_1 == 0) || (param_2 < 0)) || (7 < param_2)) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1c3);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1c3);
   }
   local_EAX_105 = st::fn_006F2C00(PTR_s_STRATEG_0079d72c,1,param_2);
   uVar6 = 0xffffffff;
@@ -913,12 +913,12 @@ LPSTR __cdecl st::fn_0067E4A0(undefined4 param_1,undefined4 param_2)
     return pCVar3;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x1d9,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1d9,0,iVar2,st::mutable_c_string("%s"),
                              "GetStrategName");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1da);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1da);
   return (LPSTR)0x0;
 }
 
@@ -947,17 +947,17 @@ LPSTR __cdecl st::fn_0067E580(cMf32 *param_1)
   iVar2 = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x1eb,0,iVar2,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1eb,0,iVar2,st::mutable_c_string("%s"),
                                "GetAssistantNameDB");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1ec);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1ec);
     return (LPSTR)0x0;
   }
   if (param_1 == nullptr) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1e8);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1e8);
   }
   text = PTR_s_ASSISTANT_0079d724;
   iVar2 = 0;
@@ -999,17 +999,17 @@ LPSTR __cdecl st::fn_0067E6B0(cMf32 *param_1)
   iVar2 = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x1fd,0,iVar2,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1fd,0,iVar2,st::mutable_c_string("%s"),
                                "GetOpponentNameDB");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1fe);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1fe);
     return (LPSTR)0x0;
   }
   if (param_1 == nullptr) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1fa);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1fa);
   }
   text = PTR_s_OPPONENT_0079d728;
   iVar2 = 0;
@@ -1084,7 +1084,7 @@ uint * __cdecl st::fn_0067E7E0(cMf32 *param_1,int param_2)
   iVar8 = st::fn_0072D7F0(local_a0.jumpBuffer,0);
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_a0.previous;
-    iVar11 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_plr_d.cpp",0x245,0,iVar8,"%s",
+    iVar11 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x245,0,iVar8,st::mutable_c_string("%s"),
                                 "CreateArbList");
     if (iVar11 == 0) {
       if (local_8 != nullptr) {
@@ -1093,14 +1093,14 @@ uint * __cdecl st::fn_0067E7E0(cMf32 *param_1,int param_2)
       if (local_10 != nullptr) {
         st::fn_006AE110(local_10);
       }
-      st::fn_006A5E40(iVar8,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x248);
+      st::fn_006A5E40(iVar8,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x248);
       return nullptr;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_1 == nullptr) {
     st::fn_006A5E40
-              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x216);
+              (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x216);
   }
   local_8 = st::fn_006AE290(nullptr,5,0x98,5);
   if (param_2 != 0) {
@@ -1119,10 +1119,10 @@ uint * __cdecl st::fn_0067E7E0(cMf32 *param_1,int param_2)
   } while (cVar1 != '\0');
   uVar10 = ~uVar10;
   pcVar5 = pcVar5 + -uVar10;
-  pcVar16 = local_33c + 1;
+  pcVar16 = st::pointer_boundary_cast<char *>(local_33c + 1);
   memmove(pcVar16, pcVar5, uVar10); /* compiler REP MOVS byte copy */
   uVar11 = 0;
-  st::fn_006F12B0(param_1,st::fn_006F2D10,local_33c);
+  st::fn_006F12B0(param_1,st::machine_word_boundary_cast<undefined4>(st::fn_006F2D10),st::machine_word_boundary_cast<undefined4>(local_33c));
   pcVar5 = (char *)st::fn_006F2790(param_1);
   do {
     if (pcVar5 == nullptr) {
@@ -1130,7 +1130,7 @@ uint * __cdecl st::fn_0067E7E0(cMf32 *param_1,int param_2)
         st::fn_006AE110(local_10);
       }
       g_currentExceptionFrame = local_a0.previous;
-      return &local_8->flags;
+      return st::pointer_boundary_cast<uint *>(&local_8->flags);
     }
     local_c = st::fn_006F2D90(param_1,pcVar5,0,1);
     if (local_c != nullptr) {

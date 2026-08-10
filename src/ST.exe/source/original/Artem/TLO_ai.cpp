@@ -33,10 +33,10 @@ st::fn_004B0D10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Artem\\TLO_ai.cpp",0x313,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_ai.cpp"),0x313,0,iVar3,st::mutable_c_string("%s"),
                                "TLOAiChkOrFindBuildingPlace error !");
     if (iVar4 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\Artem\\TLO_ai.cpp",0x314);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_ai.cpp"),0x314);
       return 0;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

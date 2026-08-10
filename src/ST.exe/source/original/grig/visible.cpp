@@ -37,13 +37,13 @@ void __thiscall st::fn_005578D0(VisibleClassTy *this)
   pVVar3 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x77,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x77,0,iVar4,st::mutable_c_string("%s"),
                                "VisibleClassTy::InitData");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     st::fn_0040218F(local_c);
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\grig\\visible.cpp",0x79);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x79);
     return;
   }
   local_c->field_0020 = (int)g_worldGrid.sizeX;
@@ -60,11 +60,11 @@ void __thiscall st::fn_005578D0(VisibleClassTy *this)
   }
   else {
     local_c->field_0114 = 1;
-    pbVar7 = st::fn_006AAC10(local_c->field_0024 * iVar14 * 2);
+    pbVar7 = st::pointer_boundary_cast<byte *>(st::fn_006AAC10(st::machine_word_boundary_cast<uint>(local_c->field_0024 * iVar14 * 2)));
     pVVar3->field_0038 = pbVar7;
-    pbVar7 = st::fn_006AAC10(pVVar3->field_0030 * pVVar3->field_0034);
+    pbVar7 = st::pointer_boundary_cast<byte *>(st::fn_006AAC10(pVVar3->field_0030 * pVVar3->field_0034));
     pVVar3->field_004C = pbVar7;
-    puVar8 = st::fn_006AAC10(pVVar3->field_0030 * pVVar3->field_0034 * 2);
+    puVar8 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC10(st::machine_word_boundary_cast<uint>(pVVar3->field_0030 * pVVar3->field_0034 * 2)));
     pVVar3->field_0050 = puVar8;
     ppvVar16 = pVVar3->field_003C;
     iVar14 = 4;
@@ -173,11 +173,11 @@ void __thiscall st::fn_00557C90(VisibleClassTy *this)
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar11 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0xaa,0,iVar4,"%s",
+    iVar11 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0xaa,0,iVar4,st::mutable_c_string("%s"),
                                 "VisibleClassTy::Init");
     if (iVar11 == 0) {
       st::fn_0070B600((int *)&local_8);
-      st::fn_006A5E40(iVar4,0,"E:\\__titans\\grig\\visible.cpp",0xac);
+      st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0xac);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -189,7 +189,7 @@ void __thiscall st::fn_00557C90(VisibleClassTy *this)
       psVar16 = (short *)0x1;
       bVar15 = 0;
       bVar14 = 0x1c;
-      pCVar4 = st::fn_006F2C00(PTR_DAT_0079aec8,1,iVar11);
+      pCVar4 = st::fn_006F2C00(st::pointer_boundary_cast<char *>(PTR_DAT_0079aec8),1,iVar11);
       local_8 = st::fn_0070B430(PTR_00806770,pCVar4,bVar14,bVar15,psVar16);
       (&DAT_007c9290)[iVar11] = (int)STField<short>(local_8,9);
       puVar6 = puVar10 + -0x30;
@@ -207,7 +207,7 @@ void __thiscall st::fn_00557C90(VisibleClassTy *this)
       psVar16 = (short *)0x1;
       bVar15 = 0;
       bVar14 = 0x1c;
-      pCVar4 = st::fn_006F2C00(PTR_DAT_0079aecc,1,iVar11);
+      pCVar4 = st::fn_006F2C00(st::pointer_boundary_cast<char *>(PTR_DAT_0079aecc),1,iVar11);
       local_8 = st::fn_0070B430(PTR_00806770,pCVar4,bVar14,bVar15,psVar16);
       puVar6 = (undefined4 *)((int)local_8 + 0x11);
       iVar8 = 0x10;
@@ -222,10 +222,10 @@ void __thiscall st::fn_00557C90(VisibleClassTy *this)
       iVar11 = iVar11 + 1;
     } while (iVar11 < 3);
     st::fn_007176F0
-              (g_sT3DSMAPContext_00807598,this_00->field_003C,this_00->field_0028,
+              (g_sT3DSMAPContext_00807598,st::pointer_boundary_cast<undefined4 *>(this_00->field_003C),this_00->field_0028,
                this_00->field_002C,(int)&this_00->field_0118,(int)this_00->field_004C,
                this_00->field_0030,this_00->field_0034,(int)&this_00->field_01D8,3,0x10,
-               &DAT_007c9290,&DAT_007c929c);
+               st::machine_word_boundary_cast<undefined4>(&DAT_007c9290),st::machine_word_boundary_cast<undefined4>(&DAT_007c929c));
     pVVar9 = this_00->field_0110;
     uVar12 = 0;
     if (0 < (int)pVVar9->count) {
@@ -241,7 +241,7 @@ void __thiscall st::fn_00557C90(VisibleClassTy *this)
         case '\0':
           st::fn_0040388C(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,
                        (undefined *)(int)element_0110->field_0006,(int *)(uint)(byte)element_0110->field_0001,
-                       (uint)(byte)element_0110->field_0007,element_0110->field_0008,0x4001);
+                       (uint)(byte)element_0110->field_0007,st::pointer_boundary_cast<int *>(element_0110->field_0008),0x4001);
           break;
         case '\x01':
           st::fn_00402C2A(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
@@ -346,19 +346,19 @@ byte * __thiscall st::fn_005582A0(VisibleClassTy *this,uint *param_1)
     if (local_8 != nullptr) {
       st::fn_006AB060(&local_8);
     }
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x105,0,iVar3,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x105,0,iVar3,st::mutable_c_string("%s"),
                                "VisibleClassTy::PrepareToSave error");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\visible.cpp",0x106);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x106);
     return nullptr;
   }
   if (local_24->field_0114 != 0) {
-    local_c = (undefined4 *)st::fn_006B0020(&local_24->field_00F4->flags,(int *)&local_10);
-    local_14 = (undefined4 *)st::fn_006B0020(&pVVar2->field_0110->flags,(int *)&local_18);
+    local_c = (undefined4 *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_24->field_00F4->flags),(int *)&local_10);
+    local_14 = (undefined4 *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pVVar2->field_0110->flags),(int *)&local_18);
     if (pVVar2->field_0114 != 0) {
-      iVar5 = pVVar2->field_002C * pVVar2->field_0028 * 4;
+      iVar5 = st::machine_word_boundary_cast<int>(pVVar2->field_002C * pVVar2->field_0028 * 4);
       goto LAB_0055832e;
     }
   }
@@ -366,7 +366,7 @@ byte * __thiscall st::fn_005582A0(VisibleClassTy *this,uint *param_1)
 LAB_0055832e:
   uVar9 = iVar5 + local_18 + 0x81 + local_10;
   *param_1 = uVar9;
-  local_8 = st::fn_006AAC10(uVar9);
+  local_8 = st::pointer_boundary_cast<AnonShape_005582A0_F54946B9 *>(st::fn_006AAC10(uVar9));
   *(undefined4 *)local_8 = 0x50;
   *(undefined4 *)&local_8->field_0x4 = 0xff;
   *(undefined4 *)&local_8->field_0x8 = 2;
@@ -479,12 +479,12 @@ void __thiscall st::fn_005585F0(Visible *this,ushort *param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_14->field_0100 = *(undefined4 *)(param_1 + 0x26);
     if (local_14->field_0114 != 0) {
-      local_c = &local_14->field_003C;
+      local_c = local_14->field_003C;
       uVar3 = local_14->field_002C * local_14->field_0028;
       local_10 = 4;
       local_8 = (uint *)(param_1 + 0x40);
       do {
-        puVar4 = st::fn_006AAC10(uVar3);
+        puVar4 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(uVar3));
         *local_c = puVar4;
         uVar7 = pVVar2->field_002C * pVVar2->field_0028;
         local_c = local_c + 1;
@@ -495,11 +495,11 @@ void __thiscall st::fn_005585F0(Visible *this,ushort *param_1)
         local_10 = local_10 + -1;
         local_8 = puVar8;
       } while (local_10 != 0);
-      pvVar5 = st::fn_006AAC10(pVVar2->field_0020 * pVVar2->field_0024 * 2);
+      pvVar5 = st::fn_006AAC10(st::machine_word_boundary_cast<uint>(pVVar2->field_0020 * pVVar2->field_0024 * 2));
       pVVar2->field_0038 = pvVar5;
       pvVar5 = st::fn_006AAC10(pVVar2->field_0030 * pVVar2->field_0034);
       pVVar2->field_004C = pvVar5;
-      pvVar5 = st::fn_006AAC10(pVVar2->field_0030 * pVVar2->field_0034 * 2);
+      pvVar5 = st::fn_006AAC10(st::machine_word_boundary_cast<uint>(pVVar2->field_0030 * pVVar2->field_0034 * 2));
       pVVar2->field_0050 = pvVar5;
       pDVar6 = st::fn_006B0060(nullptr,puVar8);
       pVVar2->field_00F4 = pDVar6;
@@ -512,7 +512,7 @@ void __thiscall st::fn_005585F0(Visible *this,ushort *param_1)
   }
   g_currentExceptionFrame = local_58.previous;
   iVar10 = 4;
-  slotStorage = &local_14->field_003C;
+  slotStorage = local_14->field_003C;
   do {
     if (*slotStorage != nullptr) {
       st::fn_006AB060(slotStorage);
@@ -520,12 +520,12 @@ void __thiscall st::fn_005585F0(Visible *this,ushort *param_1)
     slotStorage = slotStorage + 1;
     iVar10 = iVar10 + -1;
   } while (iVar10 != 0);
-  iVar9 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x132,0,errorCode,"%s"
+  iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x132,0,errorCode,st::mutable_c_string("%s")
                              ,"Visible::PrepareAfterSave error");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\grig\\visible.cpp",0x133);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x133);
   return;
 }
 
@@ -602,7 +602,7 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
               if (element_0110->field_0000 == '\0') {
                 st::fn_0040388C(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,
                              (undefined *)(int)element_0110->field_0006,(int *)(uint)(byte)element_0110->field_0001,
-                             (uint)(byte)element_0110->field_0007,element_0110->field_0008,0x4000);
+                             (uint)(byte)element_0110->field_0007,st::pointer_boundary_cast<int *>(element_0110->field_0008),0x4000);
               }
               pVVar8 = this_00->field_0110;
               uVar6 = uVar6 + 1;
@@ -659,10 +659,10 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x186,0,local_EAX_34,
-                             "VisibleClassTy::GetMessage error mess->id == %lX",message->id);
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x186,0,local_EAX_34,
+                             st::mutable_c_string("VisibleClassTy::GetMessage error mess->id == %lX"),message->id);
   if (iVar4 == 0) {
-    st::fn_006A5E40(local_EAX_34,0,"E:\\__titans\\grig\\visible.cpp",0x187);
+    st::fn_006A5E40(local_EAX_34,0,st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x187);
     return 0xffff;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -714,8 +714,8 @@ st::fn_005597A0
       this = local_14;
       if (iVar4 != 0) {
         g_currentExceptionFrame = local_60.previous;
-        iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x293,0,iVar4,
-                                   "%s","VisibleClassTy::SetZoneDes");
+        iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x293,0,iVar4,
+                                   st::mutable_c_string("%s"),"VisibleClassTy::SetZoneDes");
         if (iVar4 == 0) {
           return;
         }
@@ -752,7 +752,7 @@ st::fn_005597A0
                 bVar3 = true;
               }
               if (bVar3) {
-                iVar8 = this->field_0020 * iVar4;
+                iVar8 = st::machine_word_boundary_cast<int>(this->field_0020 * iVar4);
                 cVar1 = *(char *)((int)this->field_003C[param_4 + 6] + iVar9 + iVar8);
                 if (cVar1 != -1) {
                   *(char *)((int)this->field_003C[param_4 + 6] + iVar9 + iVar8) = cVar1 + '\x01';
@@ -820,14 +820,14 @@ st::fn_00559B30
       this = local_14;
       if (iVar4 != 0) {
         g_currentExceptionFrame = local_60.previous;
-        iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x2d7,0,iVar4,
-                                   "%s","VisibleClassTy::SetZoneAst");
+        iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x2d7,0,iVar4,
+                                   st::mutable_c_string("%s"),"VisibleClassTy::SetZoneAst");
         if (iVar4 == 0) {
           return;
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      pbVar6 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
+      pbVar6 = st::pointer_boundary_cast<byte *>(st::fn_006AAC10(local_14->field_0024 * local_14->field_0020));
       this->field_0074[param_4] = pbVar6;
       g_currentExceptionFrame = local_60.previous;
     }
@@ -858,7 +858,7 @@ st::fn_00559B30
                 bVar3 = true;
               }
               if (bVar3) {
-                iVar8 = this->field_0020 * iVar4;
+                iVar8 = st::machine_word_boundary_cast<int>(this->field_0020 * iVar4);
                 bVar1 = this->field_0074[param_4][iVar9 + iVar8];
                 if (bVar1 != 0xff) {
                   this->field_0074[param_4][iVar9 + iVar8] = bVar1 + 1;
@@ -924,14 +924,14 @@ st::fn_00559EC0
       this = local_14;
       if (iVar4 != 0) {
         g_currentExceptionFrame = local_60.previous;
-        iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x31b,0,iVar4,
-                                   "%s","VisibleClassTy::SetZoneTsh");
+        iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x31b,0,iVar4,
+                                   st::mutable_c_string("%s"),"VisibleClassTy::SetZoneTsh");
         if (iVar4 == 0) {
           return;
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      pbVar6 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
+      pbVar6 = st::pointer_boundary_cast<byte *>(st::fn_006AAC10(local_14->field_0024 * local_14->field_0020));
       this->field_0094[param_4] = pbVar6;
       g_currentExceptionFrame = local_60.previous;
     }
@@ -962,7 +962,7 @@ st::fn_00559EC0
                 bVar3 = true;
               }
               if (bVar3) {
-                iVar8 = this->field_0020 * iVar4;
+                iVar8 = st::machine_word_boundary_cast<int>(this->field_0020 * iVar4);
                 bVar1 = this->field_0094[param_4][iVar9 + iVar8];
                 if (bVar1 != 0xff) {
                   this->field_0094[param_4][iVar9 + iVar8] = bVar1 + 1;
@@ -1025,14 +1025,14 @@ st::fn_0055A270
       this = local_14;
       if (iVar4 != 0) {
         g_currentExceptionFrame = local_60.previous;
-        iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x35f,0,iVar4,
-                                   "%s","VisibleClassTy::SetZoneMin1");
+        iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x35f,0,iVar4,
+                                   st::mutable_c_string("%s"),"VisibleClassTy::SetZoneMin1");
         if (iVar4 == 0) {
           return;
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      pbVar6 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
+      pbVar6 = st::pointer_boundary_cast<byte *>(st::fn_006AAC10(local_14->field_0024 * local_14->field_0020));
       this->field_00B4[param_4] = pbVar6;
       g_currentExceptionFrame = local_60.previous;
     }
@@ -1063,7 +1063,7 @@ st::fn_0055A270
                 bVar3 = true;
               }
               if (bVar3) {
-                iVar8 = this->field_0020 * iVar4;
+                iVar8 = st::machine_word_boundary_cast<int>(this->field_0020 * iVar4);
                 bVar1 = this->field_00B4[param_4][iVar9 + iVar8];
                 if (bVar1 != 0xff) {
                   this->field_00B4[param_4][iVar9 + iVar8] = bVar1 + 1;
@@ -1126,14 +1126,14 @@ st::fn_0055A620
       this = local_14;
       if (iVar4 != 0) {
         g_currentExceptionFrame = local_60.previous;
-        iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x3a3,0,iVar4,
-                                   "%s","VisibleClassTy::SetZoneMin2");
+        iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x3a3,0,iVar4,
+                                   st::mutable_c_string("%s"),"VisibleClassTy::SetZoneMin2");
         if (iVar4 == 0) {
           return;
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      pbVar6 = st::fn_006AAC10(local_14->field_0024 * local_14->field_0020);
+      pbVar6 = st::pointer_boundary_cast<byte *>(st::fn_006AAC10(local_14->field_0024 * local_14->field_0020));
       this->field_00D4[param_4] = pbVar6;
       g_currentExceptionFrame = local_60.previous;
     }
@@ -1164,7 +1164,7 @@ st::fn_0055A620
                 bVar3 = true;
               }
               if (bVar3) {
-                iVar8 = this->field_0020 * iVar4;
+                iVar8 = st::machine_word_boundary_cast<int>(this->field_0020 * iVar4);
                 bVar1 = this->field_00D4[param_4][iVar9 + iVar8];
                 if (bVar1 != 0xff) {
                   this->field_00D4[param_4][iVar9 + iVar8] = bVar1 + 1;
@@ -1237,12 +1237,12 @@ st::fn_0055A9D0
       return local_8;
     }
     g_currentExceptionFrame = local_6c.previous;
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x3f0,0,iVar2,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x3f0,0,iVar2,st::mutable_c_string("%s"),
                                "VisibleClassTy::VisHoleCreate error");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar2,0,"E:\\__titans\\grig\\visible.cpp",0x3f1);
+    st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x3f1);
   }
   return 0xffffffff;
 }
@@ -1295,7 +1295,7 @@ void __thiscall st::fn_0055AB50(VisibleClassTy *this)
           st::fn_004018F2(this_00,element_00f4->field_0000,(undefined *)element_00f4->field_0004,element_00f4->index,element_00f4->index_0010,element_00f4->field_000C,-6,
                        0xffffffff);
           uVar3 = local_8;
-          uVar4 = element_00f4->field_000C - 1;
+          uVar4 = st::machine_word_boundary_cast<uint>(element_00f4->field_000C - 1);
           element_00f4->field_000C = uVar4;
           if ((int)uVar4 < 0) {
             st::fn_006B0C70((DArrayTy *)this_00->field_00F4,local_8);
@@ -1311,12 +1311,12 @@ void __thiscall st::fn_0055AB50(VisibleClassTy *this)
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\grig\\visible.cpp",0x40a,0,errorCode,
-                               "%s","VisibleClassTy::VisHoleExec error");
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x40a,0,errorCode,
+                               st::mutable_c_string("%s"),"VisibleClassTy::VisHoleExec error");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(errorCode,0,"E:\\__titans\\grig\\visible.cpp",0x40b);
+    st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x40b);
   }
   return;
 }

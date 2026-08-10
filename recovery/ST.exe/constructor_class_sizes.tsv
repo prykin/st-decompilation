@@ -6,6 +6,7 @@ apply	owner	size	size_hex	confidence	reason	evidence_functions	table_addresses	a
 1	ButtonClassTy	492	0x1EC	high	unique_returned_allocation_size	0071E000	0079E288	0071E006
 1	CampaignTy	8192	0x2000	high	unique_returned_allocation_size	00593860	0079BFF8	00593867
 1	ChooseMapTy	8388	0x20C4	high	unique_returned_allocation_size	005B2790	0079C088	005B279B
+1	CursorClassTy	1275	0x4FB	high	unique_returned_allocation_size	00543450	0079AE04	00543457
 1	FSGSTy	8387	0x20C3	high	unique_returned_allocation_size	005AA2C0	0079C02C	005AA2CB
 1	FrmPanelTy	483	0x1E3	high	unique_returned_allocation_size	0050FC70	0079AC1C	0050FC77
 1	HelpStringTy	306	0x132	high	unique_returned_allocation_size	0051F860	0079AC6C	0051F867
@@ -15,12 +16,14 @@ apply	owner	size	size_hex	confidence	reason	evidence_functions	table_addresses	a
 1	MAdvTy	98	0x62	high	unique_returned_allocation_size	00590AD0	0079BFE4	00590AD3
 1	MMsgTy	7850	0x1EAA	high	unique_returned_allocation_size	005B95B0	0079C0A8	005B95B7
 1	MReportTy	1115	0x45B	high	unique_returned_allocation_size	005C2620	0079C0E4	005C2627
+1	MTaskTy	1751	0x6D7	high	unique_returned_allocation_size	005E5720	0079C238	005E5727
 1	MTestTy	180	0xB4	high	unique_returned_allocation_size	005E6570	0079C23C	005E6577
 1	MainMenuTy	7908	0x1EE4	high	unique_returned_allocation_size	005B50E0	0079C098	005B50E7
 1	MoneyTy	166	0xA6	high	unique_returned_allocation_size	0052B670	0079ACE4	0052B677
 1	OptPanelTy	774	0x306	high	unique_returned_allocation_size	0052E3A0	0079AD10	0052E3A7
 1	PausePanelTy	392	0x188	high	unique_returned_allocation_size	005391E0	0079AD2C	005391E7
 1	PlayPanelTy	481	0x1E1	high	unique_returned_allocation_size	00539AA0	0079AD48	00539AA7
+1	PopUpTy	161	0xA1	high	unique_returned_allocation_size	0052D020	0079ACE8	0052D027
 1	PrividerTy	7326	0x1C9E	high	unique_returned_allocation_size	005BD2E0	0079C0C4	005BD2EB
 1	ResearchPanelTy	646	0x286	high	unique_returned_allocation_size	0053BFF0	0079AD64	0053BFF7
 1	SAMPanelTy	465	0x1D1	high	unique_returned_allocation_size	0053CE10	0079AD8C	0053CE17

@@ -18,12 +18,12 @@ st::fn_00581AC0(STJellyManC *this,undefined4 param_1,int *param_2,undefined4 par
   undefined4 uVar3;
 
   if (this->field_020F < this->field_01FD) {
-    uVar3 = st::fn_004022E3(param_1,param_2,param_3,this->field_01ED,this->field_01F1,
+    uVar3 = st::fn_004022E3(param_1,st::machine_word_boundary_cast<undefined4>(param_2),param_3,this->field_01ED,this->field_01F1,
                                this->field_01F5,this->field_01F9,this->field_0018,this->field_0024,
                                this->field_0201,(uint)(ushort)this->field_0205,0xffff);
     return uVar3;
   }
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jell_m.cpp",0xda,0,0,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jell_m.cpp"),0xda,0,0,st::mutable_c_string("%s"),
                              "STJellyManC::Error:Max jellies reached");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -78,12 +78,12 @@ int __thiscall st::fn_00581BF0(STJellyManC *this,STMessage *message)
   pSVar7 = local_10;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar11 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jell_m.cpp",0x191,0,local_EAX_35,
-                                "%s","STJellyManC::GetMessage");
+    iVar11 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jell_m.cpp"),0x191,0,local_EAX_35,
+                                st::mutable_c_string("%s"),"STJellyManC::GetMessage");
     if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_35,0,"E:\\__titans\\Igor\\to_jell_m.cpp",0x192);
+    st::fn_006A5E40(local_EAX_35,0,st::mutable_c_string("E:\\__titans\\Igor\\to_jell_m.cpp"),0x192);
     return 0xffff;
   }
   st::fn_00403EBD(local_10,message);
@@ -99,8 +99,8 @@ int __thiscall st::fn_00581BF0(STJellyManC *this,STMessage *message)
              (*(dword *)(iVar10 + 8) != (message->arg0).u32))) {
         if ((iVar12 < 0) &&
            (local_EAX_1154 =
-                 st::fn_006AD4D0("E:\\__titans\\Igor\\to_jell_m.cpp",0x128,0,0,
-                                    "%s","Jell_m:Small finding jelly"),
+                 st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jell_m.cpp"),0x128,0,0,
+                                    st::mutable_c_string("%s"),"Jell_m:Small finding jelly"),
            local_EAX_1154 != 0)) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -137,7 +137,7 @@ int __thiscall st::fn_00581BF0(STJellyManC *this,STMessage *message)
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        iVar10 = st::fn_006E5380(g_playSystem_00802A38,(message->arg0).i32,&local_c);
+        iVar10 = st::fn_006E5380(g_playSystem_00802A38,(message->arg0).i32,st::pointer_boundary_cast<undefined4 *>(&local_c));
         if (iVar10 != 0) {
           g_currentExceptionFrame = local_54.previous;
           return 0;
@@ -157,7 +157,7 @@ int __thiscall st::fn_00581BF0(STJellyManC *this,STMessage *message)
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        iVar8 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_jell_m.cpp",0x110,0,0,"%s"
+        iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jell_m.cpp"),0x110,0,0,st::mutable_c_string("%s")
                                    ,"STJellyManC::max jellies error");
         if (iVar8 == 0) {
           g_currentExceptionFrame = local_54.previous;
@@ -175,7 +175,7 @@ int __thiscall st::fn_00581BF0(STJellyManC *this,STMessage *message)
     return 0;
   }
   if (SVar1 == MESS_SHARED_010F) {
-    local_8 = st::fn_006AAC70(0x3a);
+    local_8 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0x3a));
     if (local_8 == nullptr) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
@@ -247,13 +247,13 @@ int __thiscall st::fn_00581BF0(STJellyManC *this,STMessage *message)
         ((int)g_worldGrid.sizeX < *(int *)&pSVar7->field_0x1f5)) ||
        ((int)g_worldGrid.sizeY < *(int *)&pSVar7->field_0x1f9)) {
       local_EAX_556 =
-           st::fn_006AD4D0("E:\\__titans\\Igor\\to_jell_m.cpp",0x13d,0,0,"%s",
+           st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jell_m.cpp"),0x13d,0,0,st::mutable_c_string("%s"),
                               "Bad init coordinates");
       if (local_EAX_556 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_jell_m.cpp",0x13e);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_jell_m.cpp"),0x13e);
     }
     pvVar8 = st::fn_006AAC70(*(int *)&pSVar7->field_0x1fd << 2);
     *(void **)&pSVar7->field_0x207 = pvVar8;
@@ -262,7 +262,7 @@ int __thiscall st::fn_00581BF0(STJellyManC *this,STMessage *message)
     if ((*(int *)&pSVar7->field_0x207 != 0) && (pvVar8 != nullptr))
     goto cf_common_exit_00581D62;
     local_EAX_677 =
-         st::fn_006AD4D0("E:\\__titans\\Igor\\to_jell_m.cpp",0x143,0,0,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jell_m.cpp"),0x143,0,0,st::mutable_c_string("%s"),
                             "Not enough memory");
     if (local_EAX_677 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -287,7 +287,7 @@ int __thiscall st::fn_00581BF0(STJellyManC *this,STMessage *message)
     if ((*(int *)&pSVar7->field_0x207 != 0) && (pvVar8 != nullptr))
     goto cf_common_exit_00581D62;
     local_EAX_334 =
-         st::fn_006AD4D0("E:\\__titans\\Igor\\to_jell_m.cpp",0x15a,0,0,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_jell_m.cpp"),0x15a,0,0,st::mutable_c_string("%s"),
                             "Not enough memory");
     if (local_EAX_334 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -295,7 +295,7 @@ int __thiscall st::fn_00581BF0(STJellyManC *this,STMessage *message)
     iVar12 = 0x15b;
   }
   st::fn_006A5E40
-            (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_jell_m.cpp",iVar12);
+            (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_jell_m.cpp"),iVar12);
 cf_common_exit_00581D62:
   puVar15 = (byte *)(*(undefined4 **)&pSVar7->field_0x207);
   for (uVar13 = *(uint *)&pSVar7->field_0x1fd & 0x3fffffff; uVar13 != 0; uVar13 = uVar13 - 1) {

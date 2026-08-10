@@ -36,7 +36,7 @@ void __cdecl st::fn_005751F0(AnonShape_005751F0_0FFC949A *param_1)
     }
     if (g_sT3DSMAPContext_0080760C == nullptr) {
       st::fn_006A5E40
-                (-2,g_overwriteContext_007ED77C,"E:\\__titans\\tinittxt.cpp",0x160);
+                (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\tinittxt.cpp"),0x160);
     }
     iVar4 = (uint)param_1->field_0004 << 1;
     st::fn_006DC050
@@ -61,7 +61,7 @@ void __cdecl st::fn_005751F0(AnonShape_005751F0_0FFC949A *param_1)
     iVar4 = (int)param_1->field_0002 / 2;
     iVar6 = (int)param_1->field_0000 / 2;
     local_10 = iVar4;
-    local_8 = st::fn_006AAC70((uint)param_1->field_0004 * (uint)param_1->field_0004);
+    local_8 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70((uint)param_1->field_0004 * (uint)param_1->field_0004));
     local_c = 0;
     if (0 < iVar4) {
       do {
@@ -80,12 +80,12 @@ void __cdecl st::fn_005751F0(AnonShape_005751F0_0FFC949A *param_1)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\tinittxt.cpp",0x17b,0,iVar2,"%s",
+  iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tinittxt.cpp"),0x17b,0,iVar2,st::mutable_c_string("%s"),
                              "LandInit");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\tinittxt.cpp",0x17c);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\tinittxt.cpp"),0x17c);
   return;
 }
 

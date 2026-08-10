@@ -23,7 +23,7 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   int local_7c;
   int local_78;
   uint local_74;
-  int local_70;
+  uint local_70;
   int local_6c;
   undefined4 local_68 [5];
   uint local_54;

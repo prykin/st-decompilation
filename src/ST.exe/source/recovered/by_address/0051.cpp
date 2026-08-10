@@ -254,12 +254,12 @@ void __thiscall st::fn_0051FAC0(void *this,char *param_1,byte param_2,char param
       DVar2 = st::fn_006E51B0(STField<STAppC *>(this,0x10));
       STField<DWORD>(this,0x122) = DVar2;
       STField<undefined4>(this,0x12e) = 1;
-      st::fn_004015FA(this);
+      st::fn_004015FA(st::pointer_boundary_cast<HelpStringTy *>(this));
       return;
     }
     memset((void *)((int)this + 0x18), 0, 0x104); /* compiler bulk-zero initialization */
     STField<undefined4>(this,0x12e) = 0;
-    st::fn_004015FA(this);
+    st::fn_004015FA(st::pointer_boundary_cast<HelpStringTy *>(this));
   }
   return;
 }

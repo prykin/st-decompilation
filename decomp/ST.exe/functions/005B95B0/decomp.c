@@ -15,7 +15,7 @@ MMsgTy * __cdecl CreateMMsg(void)
   int iVar1;
   undefined4 *puVar3;
   SpriteClassTy *this_00;
-  undefined4 *puVar4;
+  undefined4 *puVar5;
 
   this = (MMsgTy *)FUN_006b04d0(0x1eaa);
   if (this != nullptr) {
@@ -39,13 +39,13 @@ MMsgTy * __cdecl CreateMMsg(void)
     this->vtable = (MMsgTyVTable *)&MMObjTyVTable;
     this->field_0065 = 2;
     this->field_009A = 0;
-    memset(&this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
+    memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
     puVar3 = (undefined4 *)&this->field_0xbc;
     do {
-      puVar4 = puVar3;
-      memset(puVar4, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar4 = (undefined4 *)((byte *)puVar4 + 0x24);
+      puVar5 = puVar3;
+      memset(puVar5, 0, 0x27); /* compiler bulk-zero initialization */
+      puVar5 = (undefined4 *)((byte *)puVar5 + 0x24);
       iVar1 = iVar1 + -1;
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
     } while (iVar1 != 0);

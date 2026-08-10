@@ -16,6 +16,7 @@ STExplosion::sub_00606050
   int local_EAX_29;
   int iVar2;
   uint uVar3;
+  uint uVar3_mg10;
   uint uVar2;
   uint uVar4;
   int iVar5;
@@ -311,10 +312,10 @@ LAB_006065f8:
       }
       iVar6 = iVar6 - uVar3;
 switchD_00606490_default:
-      iVar7 = FUN_006aff50(local_40);
+      uVar3_mg10 = FUN_006aff50(local_40);
       uVar2 = FUN_006aff5b(local_40);
       local_4c = (int)(uVar2 * iVar6) / 10000 + param_2;
-      local_50 = (iVar7 * iVar6) / 10000 + param_1;
+      local_50 = (int)(uVar3_mg10 * iVar6) / 10000 + param_1;
       uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar3;
       local_48 = param_3;

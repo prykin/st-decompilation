@@ -432,8 +432,7 @@ LAB_004707ad:
            (param_1 = 0, this->field_02BF != '\0')) {
           local_8 = (undefined4 *)&this->field_0x2b3;
           do {
-            puVar9 = (undefined4 *)
-                     thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
+            puVar9 = thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
                                         this->field_006C);
             uVar3 = *puVar9;
             bVar26 = 0;
@@ -524,7 +523,7 @@ LAB_004707ad:
           local_20 = CONCAT22((short)((uVar8 >> 0x10) %
                                      (((*(short *)&this->field_0x237 * 2) / 10 - iVar12) + 1U)) +
                               (short)iVar12,sVar14);
-          puVar9 = (undefined4 *)thunk_FUN_0041dc40(local_28,sVar14,0,this->field_006C);
+          puVar9 = thunk_FUN_0041dc40(local_28,sVar14,0,this->field_006C);
           uVar3 = *puVar9;
           local_1c = *(short *)(puVar9 + 1);
           STPiece<2,2>(local_20) = (short)((uint)uVar3 >> 0x10);
@@ -539,9 +538,8 @@ LAB_004707ad:
           this->field_001C = uVar8;
           this->field_0578 = (uVar8 >> 0x10) % 0x33 + 0x28;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        thunk_FUN_004e20d0(pSVar16,this->field_0568,this->field_0018,
-                           *(int *)((int)this->field_06CB + 0x2c),this->field_0716);
+        thunk_FUN_004e20d0(pSVar16,this->field_0568,this->field_0018,this->field_06F7,
+                           this->field_0716);
         local_EAX_4347 =
              thunk_FUN_004e2340(pSVar16,this->field_0568,this->field_0018,nullptr);
         this->field_0716 = local_EAX_4347;
@@ -668,8 +666,7 @@ LAB_004707ad:
        (param_1 = 0, this->field_02BF != '\0')) {
       local_8 = (undefined4 *)&this->field_0x2b3;
       do {
-        puVar9 = (undefined4 *)
-                 thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
+        puVar9 = thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
                                     this->field_006C);
         uVar3 = *puVar9;
         bVar26 = 0;

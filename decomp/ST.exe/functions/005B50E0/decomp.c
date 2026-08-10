@@ -40,7 +40,7 @@ MainMenuTy * __cdecl CreateMainMenu(void)
     this->vtable = (MainMenuTyVTable *)&MMObjTyVTable;
     this->field_0065 = 2;
     this->field_009A = 0;
-    memset(&this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
+    memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
     iVar1 = 0xd;
     puVar3 = &this->field_00BC;
     do {

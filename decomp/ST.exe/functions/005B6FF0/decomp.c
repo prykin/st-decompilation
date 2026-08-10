@@ -23,7 +23,7 @@ void __thiscall MMsgTy::HideSprites(MMsgTy *this)
   pMVar2 = local_8;
   if (iVar3 == 0) {
     iVar5 = 0xd;
-    puVar6 = &local_8->field_0066;
+    puVar6 = local_8->field_0066;
     do {
       if (*puVar6 != 0) {
         StartSystemTy::sub_006E56B0(pMVar2->field_000C,*puVar6);

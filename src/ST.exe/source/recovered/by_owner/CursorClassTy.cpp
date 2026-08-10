@@ -222,7 +222,7 @@ void __thiscall st::fn_0054B700(CursorClassTy *this,int param_1)
     iVar3 = 1;
 LAB_0054b7e0:
     pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,iVar3);
-    iVar3 = pCVar1->field_04DF * -0x1d + 0x115;
+    iVar3 = st::machine_word_boundary_cast<int>(pCVar1->field_04DF * -0x1d + 0x115);
     iVar4 = g_nWidth_00806730 + -0x18;
   }
   else {
@@ -232,7 +232,7 @@ LAB_0054b7e0:
     }
     if (DAT_0080874e != '\x03') goto LAB_0054b81b;
     pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,5);
-    iVar3 = pCVar1->field_04DF * -0x13 + 0x136;
+    iVar3 = st::machine_word_boundary_cast<int>(pCVar1->field_04DF * -0x13 + 0x136);
     iVar4 = g_nWidth_00806730 + -0x15;
   }
   st::fn_00403738(iVar4,iVar3,'\x06',pBVar2);
@@ -241,12 +241,12 @@ LAB_0054b81b:
   if (-1 < param_1) {
     if (DAT_0080874e == '\x01') {
       pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,0);
-      iVar4 = pCVar1->field_04DF * -0x1d + 0x115;
+      iVar4 = st::machine_word_boundary_cast<int>(pCVar1->field_04DF * -0x1d + 0x115);
       iVar3 = g_nWidth_00806730 + -0x18;
     }
     else if (DAT_0080874e == '\x02') {
       pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,2);
-      iVar4 = pCVar1->field_04DF * -0x1d + 0x115;
+      iVar4 = st::machine_word_boundary_cast<int>(pCVar1->field_04DF * -0x1d + 0x115);
       iVar3 = g_nWidth_00806730 + -0x18;
     }
     else {
@@ -255,7 +255,7 @@ LAB_0054b81b:
         return;
       }
       pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,4);
-      iVar4 = pCVar1->field_04DF * -0x13 + 0x136;
+      iVar4 = st::machine_word_boundary_cast<int>(pCVar1->field_04DF * -0x13 + 0x136);
       iVar3 = g_nWidth_00806730 + -0x15;
     }
     st::fn_00403738(iVar3,iVar4,'\x06',pBVar2);

@@ -1,11 +1,12 @@
 ST x86 ABI consistency
 
-Functions scanned: 5712
+Functions scanned: 5720
 Proposals: 0
 Automatic: 0
 known_setjmp3: 0
 known_load_resource_string: 0
 ebp_context_register: 0
+machine_esp_stack_prototype: 0
 x87_double_parameter_slots: 0
 x87_stack_storage_migration: 0
 full_eax_return: 0
@@ -18,6 +19,7 @@ note_returns=Full-EAX repairs require full-width caller use and a full EAX defin
 note_parameters=Narrow stack parameters require consistent MOVSX/MOVZX or an immediate AND mask and no unmasked dword reads.
 note_x87_doubles=An exact x87 double-width EBP read before any overlapping stack write may merge adjacent generic dwords; one generic qword may also be retyped when its exact halves are stored into an independently typed double class field. Stack byte count is preserved.
 note_stack_arity_expansion=A truncated non-manual __thiscall/__stdcall signature may expand to an exact unanimous RET purge only when every incoming byte is read before overlap and the missing suffix contains an exact x87 double slot; callers are not evidence.
+note_esp_stack_prototype=A placeholder unknown frameless function may become __stdcall only when a balanced entry-SP trace covers the unanimous RET purge byte-for-byte and an exact x87 qword fixes the slot partition; callers and semantic names are not evidence.
 note_ebp_context=Non-frame helpers may receive one neutral context pointer in EBP only when EBP is read before definition and generic ECX/EDX inputs have no semantic use.
 note_scalar_roles=Generic pointer parameters become int/uint only when their incoming lifetime has multiple scalar operations, a signed/range comparison, and no pointer dereference before the first argument-slot overwrite.
 note_pointer_returns=Generic pointer returns gain only a byte/word/dword element width when at least two caller dereferences agree; no semantic table type is guessed.

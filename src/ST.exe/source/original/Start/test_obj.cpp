@@ -34,7 +34,7 @@ void __thiscall st::fn_005E58D0(MTestTy *this)
         st::fn_006B3AF0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
-    puVar3 = st::fn_0070A9F0(g_cMf32_00806780,"LOADSINGLE",0,1);
+    puVar3 = st::fn_0070A9F0(g_cMf32_00806780,st::mutable_c_string("LOADSINGLE"),0,1);
     this_01 = local_8;
     local_8->field_005D = puVar3;
     st::fn_006BC360(puVar3,local_44c,nullptr);
@@ -70,12 +70,12 @@ void __thiscall st::fn_005E58D0(MTestTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\test_obj.cpp",0x31,0,iVar2,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\test_obj.cpp"),0x31,0,iVar2,st::mutable_c_string("%s"),
                              "MTestTy::InitMTest");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Start\\test_obj.cpp",0x31);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Start\\test_obj.cpp"),0x31);
   return;
 }
 
@@ -120,12 +120,12 @@ void __thiscall st::fn_005E5BA0(MTestTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\Start\\test_obj.cpp",0x4a,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\test_obj.cpp"),0x4a,0,iVar2,st::mutable_c_string("%s"),
                              "MTestTy::DoneMTest");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\Start\\test_obj.cpp",0x4a);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Start\\test_obj.cpp"),0x4a);
   return;
 }
 
@@ -158,12 +158,12 @@ void __thiscall st::fn_005E5D50(MTestTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Start\\test_obj.cpp",0x57,0,errorCode,
-                             "%s","MTestTy::PaintMTest");
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\test_obj.cpp"),0x57,0,errorCode,
+                             st::mutable_c_string("%s"),"MTestTy::PaintMTest");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Start\\test_obj.cpp",0x57);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Start\\test_obj.cpp"),0x57);
   return;
 }
 
@@ -212,12 +212,12 @@ void __thiscall st::fn_005E5E30(MTestTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Start\\test_obj.cpp",0x6c,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\test_obj.cpp"),0x6c,0,iVar3,st::mutable_c_string("%s"),
                              "MTestTy::NoneMTest");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Start\\test_obj.cpp",0x6c);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Start\\test_obj.cpp"),0x6c);
   return;
 }
 
@@ -388,12 +388,12 @@ int __thiscall st::fn_005E5FB0(MTestTy *this,STMessage *message)
     return iVar5;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar6 = st::fn_006AD4D0("E:\\__titans\\Start\\test_obj.cpp",0xb5,0,local_EAX_59,
-                             "%s","MTestTy::GetMessage");
+  iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\test_obj.cpp"),0xb5,0,local_EAX_59,
+                             st::mutable_c_string("%s"),"MTestTy::GetMessage");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(local_EAX_59,0,"E:\\__titans\\Start\\test_obj.cpp",0xb5);
+  st::fn_006A5E40(local_EAX_59,0,st::mutable_c_string("E:\\__titans\\Start\\test_obj.cpp"),0xb5);
   return 0xffff;
 }
 

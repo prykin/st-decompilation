@@ -132,7 +132,7 @@ int __thiscall st::fn_0060D660(STFieldC *this,int *param_1)
   }
   iVar2 = st::fn_00403413();
   piVar6 = param_1;
-  piVar7 = this->field_0244;
+  piVar7 = st::pointer_boundary_cast<int *>(this->field_0244);
   for (uVar4 = size >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
     *piVar7 = *piVar6;
     piVar6 = piVar6 + 1;
@@ -157,7 +157,7 @@ int __thiscall st::fn_0060D660(STFieldC *this,int *param_1)
       if (((iVar6 != 0) || (*(int *)((int)pvVar1 + local_14 + 8) != 0)) && (*piVar7 != 0)) {
         piVar7 = piVar7 + 1;
         if (iVar6 != 0) {
-          uVar3 = st::fn_00403B9D((undefined4 *)((int)pvVar1 + local_14 + 0x40),piVar7);
+          uVar3 = st::fn_00403B9D((undefined4 *)((int)pvVar1 + local_14 + 0x40),st::pointer_boundary_cast<undefined4 *>(piVar7));
           if (uVar3 != 0) {
             local_8 = local_8 + iVar2;
           }

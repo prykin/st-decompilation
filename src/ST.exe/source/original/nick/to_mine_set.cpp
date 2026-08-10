@@ -56,10 +56,10 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
   this_00 = local_8;
   if (iVar10 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar12 = st::fn_006AD4D0("E:\\__titans\\nick\\to_mine_set.cpp",0x174,0,iVar10,
-                                "%s","STMineSetC::GetMessage");
+    iVar12 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_mine_set.cpp"),0x174,0,iVar10,
+                                st::mutable_c_string("%s"),"STMineSetC::GetMessage");
     if (iVar12 == 0) {
-      st::fn_006A5E40(iVar10,0,"E:\\__titans\\nick\\to_mine_set.cpp",0x176);
+      st::fn_006A5E40(iVar10,0,st::mutable_c_string("E:\\__titans\\nick\\to_mine_set.cpp"),0x176);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -228,7 +228,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
   local_8->field_0219 = 0x23a;
   local_8->field_0215 = 0x32;
   if (*(int *)(dVar6 + 0xc) == 2) {
-    st::fn_00401A91((STAllPlayersC *)local_8,(message->arg0).ptr);
+    st::fn_00401A91((STAllPlayersC *)local_8,st::pointer_boundary_cast<undefined4 *>((message->arg0).ptr));
     if (this_00->field_0313 != '\0') {
       sVar2 = this_00->field_0047;
       local_1c = 1;
@@ -354,12 +354,12 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
   pSVar2 = local_c;
   if (local_EAX_41 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\nick\\to_mine_set.cpp",0x2df,0,local_EAX_41,
-                               "%s","STMineSetC::LoadImagMineSet");
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_mine_set.cpp"),0x2df,0,local_EAX_41,
+                               st::mutable_c_string("%s"),"STMineSetC::LoadImagMineSet");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_41,0,"E:\\__titans\\nick\\to_mine_set.cpp",0x2e1);
+    st::fn_006A5E40(local_EAX_41,0,st::mutable_c_string("E:\\__titans\\nick\\to_mine_set.cpp"),0x2e1);
     return 0xffff;
   }
   this_00 = &local_c->field_01D5;
@@ -367,7 +367,7 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
   pSVar2->field_02BA = iVar3;
   if (param_1 == 0) {
     iVar5 = st::fn_00404183
-                      ((STT3DSprC *)this_00,0xe,PTR_00806774,(&PTR_DAT_007d02c4)[pSVar2->field_02AD]
+                      ((STT3DSprC *)this_00,0xe,PTR_00806774,st::pointer_boundary_cast<char *>((&PTR_DAT_007d02c4)[pSVar2->field_02AD])
                        ,CASE_1D);
     if (iVar5 != 0) {
       return local_8;
@@ -409,7 +409,7 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
     st::fn_00405240((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
     iVar5 = st::fn_00404183
                       ((STT3DSprC *)this_00,10,PTR_00806774,
-                       (&PTR_CHAR_e_007d0364)[pSVar2->field_02AD],CASE_1D);
+                       st::pointer_boundary_cast<char *>((&PTR_CHAR_e_007d0364)[pSVar2->field_02AD]),CASE_1D);
     if (iVar5 != 0) {
       return local_8;
     }
@@ -422,7 +422,7 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
     pSVar2->field_02E0 = 1;
     iVar5 = st::fn_00404183
                       ((STT3DSprC *)this_00,9,PTR_00806764,
-                       (&PTR_CHAR_e_007d0374)[pSVar2->field_02AD],CASE_1D);
+                       st::pointer_boundary_cast<char *>((&PTR_CHAR_e_007d0374)[pSVar2->field_02AD]),CASE_1D);
     if (iVar5 != 0) {
       return local_8;
     }

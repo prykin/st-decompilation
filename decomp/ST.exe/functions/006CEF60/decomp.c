@@ -236,10 +236,10 @@ LAB_006cf37b:
               local_8 = 2;
               iVar5 = *(int *)(iVar11 + 0xbc) + 7;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              FUN_006d8a60((uint *)pAVar13,(int)param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,
-                           local_58,(int)local_54,
+              FUN_006d8a60((AnonShape_006D8A60_D503343B *)pAVar13,(int)param_3,
+                           *(byte **)&pAVar6->field_0x6,iVar4,uVar8,local_58,(int)local_54,
                            (undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
-                           *(uint *)(iVar11 + 0x60),*(AnonShape_006D8A60_CD460E10 **)(iVar11 + 100),
+                           *(uint *)(iVar11 + 0x60),*(int *)(iVar11 + 100),
                            *(undefined **)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
                            (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
                            ((*param_9 - *(int *)(iVar11 + 0x18)) - param_7) +
@@ -333,11 +333,10 @@ LAB_006cf8ee:
       }
       local_8 = 5;
       iVar7 = *(int *)(iVar11 + 0xbc) + 7;
-      FUN_006d8a60((uint *)param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,uVar8,(int)pbVar2,
-                   (undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
-                   *(uint *)(iVar11 + 0x60),*(AnonShape_006D8A60_CD460E10 **)(iVar11 + 100),
-                   *(undefined **)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
-                   (int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
+      FUN_006d8a60((AnonShape_006D8A60_D503343B *)param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,
+                   uVar8,(int)pbVar2,(undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
+                   *(uint *)(iVar11 + 0x60),*(int *)(iVar11 + 100),*(undefined **)(iVar11 + 0xb0),
+                   *(byte **)(iVar11 + 0xb8),(int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
                    (*(int *)(iVar11 + 0x28) - *(int *)(iVar11 + 0x18)) + iVar5,
                    (*(int *)(iVar11 + 0x2c) - *(int *)(iVar11 + 0x1c)) + uVar14);
     }

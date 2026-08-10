@@ -25,11 +25,11 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
   unkbyte10 extraout_ST0_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   unkbyte10 extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   unkbyte10 extraout_ST1_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   unkbyte10 extraout_ST1_01;
   longlong lVar14;
   int local_14;
@@ -56,7 +56,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       fcos(extraout_ST0);
       lVar14 = Library::MSVCRT::__ftol();
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       fsin(extraout_ST1);
       iVar8 = (int)lVar14 + *(int *)(iVar11 + 0x14);
       *(int *)(iVar11 + 8) = iVar8;
@@ -100,7 +100,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       fcos(extraout_ST0_00);
       lVar14 = Library::MSVCRT::__ftol();
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       fsin(extraout_ST1_00);
       iVar8 = (int)lVar14 + *(int *)(iVar11 + 0x14);
       *(int *)(iVar11 + 8) = iVar8;
@@ -182,7 +182,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             fcos(extraout_ST0_01);
             lVar14 = Library::MSVCRT::__ftol();
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             fsin(extraout_ST1_01);
             iVar8 = (int)lVar14 + *(int *)(iVar11 + 0x14);
             *(int *)(iVar11 + 8) = iVar8;

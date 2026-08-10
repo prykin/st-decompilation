@@ -17,7 +17,7 @@ STOctopusC * __thiscall st::fn_00589990(STOctopusC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &st_global_0079BD18;
+  this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079BD18);
   this->vtable = &st_global_0079BBB8;
   this->field_0249 = 0;
   memset(&this->field_0x285, 0, 0x28); /* compiler bulk-zero initialization */
@@ -60,13 +60,13 @@ st::fn_0058AF70(STOctopusC *this,short param_1,short param_2,short param_3)
     iVar3 = this->field_0239;
     this->field_0251 = (this->field_0269 << 8) / iVar3;
     this->field_0255 = (this->field_026D << 8) / iVar3;
-    iVar4 = this->field_0271 << 8;
+    iVar4 = st::machine_word_boundary_cast<int>(this->field_0271 << 8);
   }
   else {
     iVar3 = this->field_0239;
     this->field_0251 = (this->field_0269 << 9) / iVar3;
     this->field_0255 = (this->field_026D << 9) / iVar3;
-    iVar4 = this->field_0271 << 9;
+    iVar4 = st::machine_word_boundary_cast<int>(this->field_0271 << 9);
   }
   this->field_0275 = (int)this->field_0041;
   this->field_0265 = 0;
@@ -182,7 +182,7 @@ st::fn_0058B190
   }
   if ((((this->field_02A5 == 0xf8) || (this->field_02A5 == 0xf9)) && (sVar9 < 4)) &&
      (((byte)g_playSystem_00802A38->field_00E4 & 7) == 1)) {
-    uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
+    uVar12 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
     this->field_001C = uVar12;
     this->field_0281 = 1;
     local_c = (uVar12 >> 0x10) % 0x66 + 100 + (int)this->field_0045;
@@ -214,12 +214,12 @@ st::fn_0058B190
   }
 LAB_0058b3ab:
   if (bVar14 < 2) {
-    uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
+    uVar12 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
     this->field_001C = uVar12;
     iVar6 = ((uVar12 >> 0x10) % 3 - 1) + (int)this->field_006C;
   }
   else {
-    uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
+    uVar12 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
     this->field_001C = uVar12;
     iVar6 = ((uVar12 >> 0x10) % 5 - 2) + (int)this->field_006C;
   }
@@ -234,34 +234,34 @@ LAB_0058b3ab:
   switch(iVar6) {
   case 0:
     iVar7 = (int)this->field_0049;
-    iVar13 = this->field_0047 + 1;
+    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + 1);
     break;
   case 1:
-    iVar13 = this->field_0047 + 1;
-    iVar7 = this->field_0049 + -1;
+    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + 1);
+    iVar7 = st::machine_word_boundary_cast<int>(this->field_0049 + -1);
     break;
   case 2:
     iVar13 = (int)this->field_0047;
-    iVar7 = this->field_0049 + -1;
+    iVar7 = st::machine_word_boundary_cast<int>(this->field_0049 + -1);
     break;
   case 3:
-    iVar13 = this->field_0047 + -1;
-    iVar7 = this->field_0049 + -1;
+    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + -1);
+    iVar7 = st::machine_word_boundary_cast<int>(this->field_0049 + -1);
     break;
   case 4:
     iVar7 = (int)this->field_0049;
-    iVar13 = this->field_0047 + -1;
+    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + -1);
     break;
   case 5:
-    iVar13 = this->field_0047 + -1;
+    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + -1);
     goto LAB_0058b466;
   case 6:
     iVar13 = (int)this->field_0047;
     goto LAB_0058b466;
   case 7:
-    iVar13 = this->field_0047 + 1;
+    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + 1);
 LAB_0058b466:
-    iVar7 = this->field_0049 + 1;
+    iVar7 = st::machine_word_boundary_cast<int>(this->field_0049 + 1);
   }
   iVar6 = iVar13;
   if (iVar3 < iVar13) {
@@ -283,7 +283,7 @@ LAB_0058b466:
   }
 LAB_0058b499:
   local_c = (int)this->field_0045;
-  uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
+  uVar12 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
   this->field_001C = uVar12;
   local_8 = (uVar12 >> 0x10) % 0x65;
   if ((int)((int)this->field_0045 + local_8) < 900) {

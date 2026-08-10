@@ -34,7 +34,7 @@ SAMPanelTy * __cdecl CreateSAMPanel(void)
     this->field_0184 = 0;
     this->field_01AB = 0;
     this->field_01AF = 0;
-    memset(this->field_01B5, 0, 0x1c); /* compiler bulk-zero initialization */
+    memset(&this->field_01B5, 0, 0x1c); /* compiler bulk-zero initialization */
     this->field_01B1 = nullptr;
     return this;
   }

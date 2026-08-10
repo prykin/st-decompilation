@@ -31,12 +31,12 @@ undefined4 __thiscall st::fn_00576AD0(BaseSystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\tsystem.cpp",0x2c,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x2c,0,errorCode,st::mutable_c_string("%s"),
                              "BaseSystemC::CreateSystemObjects");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\tsystem.cpp",0x2d);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x2d);
   return 0xffffffff;
 }
 
@@ -67,7 +67,7 @@ void st::fn_00576BB0(void)
       g_baseSystem_00811638 = st::fn_00401348(this,g_app_00806728);
     }
     if (g_baseSystem_00811638 == nullptr) {
-      st::fn_006A5E40(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0x38);
+      st::fn_006A5E40(-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x38);
     }
     g_baseSystem_00811638->field_0020 = 0;
     (*g_baseSystem_00811638->vtable->InitSystem)((SystemClassTy *)g_baseSystem_00811638);
@@ -77,12 +77,12 @@ void st::fn_00576BB0(void)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\tsystem.cpp",0x40,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x40,0,errorCode,st::mutable_c_string("%s"),
                              "CreateBaseSystem");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\tsystem.cpp",0x41);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x41);
   return;
 }
 
@@ -116,12 +116,12 @@ void st::fn_00576CE0(void)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\tsystem.cpp",0x4f,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x4f,0,errorCode,st::mutable_c_string("%s"),
                              "DestroyBaseSystem");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\tsystem.cpp",0x50);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x50);
   return;
 }
 
@@ -153,12 +153,12 @@ undefined4 __thiscall st::fn_00576E10(GameSystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\tsystem.cpp",0x65,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x65,0,errorCode,st::mutable_c_string("%s"),
                              "GameSystemC::CreateSystemObjects");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\tsystem.cpp",0x65);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x65);
   return 0xfffffffc;
 }
 
@@ -188,7 +188,7 @@ undefined4 __thiscall st::fn_00576EF0(GameSystemC *this)
   local_8 = this;
   iVar4 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
-    PTR_00806750 = st::fn_00402112(g_cMf32_00806754,"3D_MAP");
+    PTR_00806750 = st::fn_00402112(g_cMf32_00806754,st::mutable_c_string("3D_MAP"));
     pAVar5 = (AnonShape_006DBCA0_EF06575F *)st::fn_006B04D0(0x4f2);
     if (pAVar5 == nullptr) {
       pSVar6 = nullptr;
@@ -206,7 +206,7 @@ undefined4 __thiscall st::fn_00576EF0(GameSystemC *this)
     st::fn_006E8580(g_sT3DSMAPContext_00807598,(int *)g_ddxContext_008075A8);
     PTR_00806724 = (AnonShape_GLOBAL_00806724_3210464F *)
                    st::fn_0070AE60
-                             (PTR_00806770,"scmask",0,0,nullptr,1);
+                             (PTR_00806770,st::mutable_c_string("scmask"),0,0,nullptr,1);
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
     iVar4 = st::fn_0072D7F0(local_90.jumpBuffer,0);
@@ -220,12 +220,12 @@ undefined4 __thiscall st::fn_00576EF0(GameSystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = st::fn_006AD4D0("E:\\__titans\\tsystem.cpp",0x86,0,iVar4,"%s",
+  iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x86,0,iVar4,st::mutable_c_string("%s"),
                              "GameSystemC::InitSystem");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar4,0,"E:\\__titans\\tsystem.cpp",0x86);
+  st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x86);
   return 0xfffffffc;
 }
 
@@ -287,12 +287,12 @@ void __thiscall st::fn_005770D0(GameSystemC *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\tsystem.cpp",0xa7,0,errorCode,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0xa7,0,errorCode,st::mutable_c_string("%s"),
                              "GameSystemC::DoneSystem");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\tsystem.cpp",0xa7);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0xa7);
   return;
 }
 
@@ -326,7 +326,7 @@ void st::fn_00577280(void)
       g_parentSystem_0081163C = st::fn_004014EC(this_00,g_app_00806728);
     }
     if (g_parentSystem_0081163C == nullptr) {
-      st::fn_006A5E40(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0xb1);
+      st::fn_006A5E40(-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0xb1);
     }
     g_parentSystem_0081163C->field_0428 = 0;
     g_parentSystem_0081163C->InitSystem();
@@ -345,12 +345,12 @@ void st::fn_00577280(void)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\tsystem.cpp",0xbb,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0xbb,0,iVar2,st::mutable_c_string("%s"),
                              "CreateGameSystem");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\tsystem.cpp",0xbb);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0xbb);
   return;
 }
 
@@ -392,7 +392,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
   DArrayTy *array;
   AnonShape_00648C10_30A1BBFD *strategData;
   int iVar19;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   SystemClassTy *extraout_ECX;
   uint uVar9;
   uint uVar10;
@@ -423,15 +423,15 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
   st::fn_0072DA40();
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   this_01 = extraout_ECX;
   local_EAX_51 = st::fn_0072D7F0(local_8c.jumpBuffer,0);
   if (local_EAX_51 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar19 = st::fn_006AD4D0("E:\\__titans\\tsystem.cpp",0x1c6,0,local_EAX_51,
-                                "%s");
+    iVar19 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x1c6,0,local_EAX_51,
+                                st::mutable_c_string("%s"));
     if (iVar19 == 0) {
-      st::fn_006A5E40(local_EAX_51,0,"E:\\__titans\\tsystem.cpp",0x1c7);
+      st::fn_006A5E40(local_EAX_51,0,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x1c7);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -444,8 +444,8 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
     case 1:
       if (DAT_00808783 == '\x03') {
         if (piVar17[2] != 0) {
-          DAT_00808784 = (void *)piVar17[1];
-          this_01[0x21].objectLock = DAT_00808784;
+          DAT_00808784 = st::machine_word_boundary_cast<undefined4>((void *)piVar17[1]);
+          this_01[0x21].objectLock = st::pointer_boundary_cast<void *>(DAT_00808784);
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
@@ -458,7 +458,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       }
       else if (piVar17[2] == 0) {
         if (this_01[0x21].objectLock == nullptr) {
-          DAT_00808784 = (void *)piVar17[1];
+          DAT_00808784 = st::machine_word_boundary_cast<undefined4>((void *)piVar17[1]);
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
@@ -468,7 +468,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       }
       else {
         if ((DAT_0080878c == 0) && (DAT_00808790 == 0)) {
-          DAT_00808784 = (void *)piVar17[1];
+          DAT_00808784 = st::machine_word_boundary_cast<undefined4>((void *)piVar17[1]);
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != nullptr) & (uint)PTR_008032b4);
@@ -516,11 +516,11 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       this_00 = g_playPanel_008016E4;
       if (g_playPanel_008016E4 != nullptr) {
         g_playPanel_008016E4->field_0028 = 5;
-        piVar11 = &this_00->field_0181;
+        piVar11 = st::pointer_boundary_cast<int *>(&this_00->field_0181);
         puVar18 = (undefined1 *)0x8;
         do {
           if (*piVar11 != 0) {
-            puVar18 = &this_00->field_0x18;
+            puVar18 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x18);
             st::fn_006E6080(this_00,2,*piVar11,(undefined4 *)puVar18);
           }
           piVar11 = piVar11 + 1;
@@ -554,7 +554,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       g_currentExceptionFrame = &local_1b0;
       iVar5 = st::fn_0072D7F0(local_1b0.jumpBuffer,0);
       if (iVar5 == 0) {
-        st::external_00000080((LPSTR)&DAT_0080f33a,"%s%s%s");
+        st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s%s%s"));
         pcVar7 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)&DAT_0080f33a,0,0,0);
         local_48 = 0x577d84;
         array = (DArrayTy *)st::fn_00403F44(pcVar7,piVar17[1],DAT_0080995c);
@@ -658,13 +658,13 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         local_3f4.cAlternateFileName[_Count + 0xf] = '\0';
         do {
           if (iVar20 < 0) {
-            st::external_00000080(&CHAR_00h_0080f022,"%s%s%s\\%s%s%s");
+            st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_0080f022),st::mutable_c_string("%s%s%s\\%s%s%s"));
           }
           else {
-            st::external_00000080(&CHAR_00h_0080f022,"%s%s%s\\%s%s%d%s");
+            st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_0080f022),st::mutable_c_string("%s%s%s\\%s%s%d%s"));
           }
           iVar20 = iVar20 + 1;
-          pvVar5 = st::external_00000070(&CHAR_00h_0080f022,&local_3f4);
+          pvVar5 = st::external_00000070(st::pointer_boundary_cast<LPCSTR>(&CHAR_00h_0080f022),st::pointer_boundary_cast<LPWIN32_FIND_DATAA>(&local_3f4));
           bVar16 = pvVar5 != (HANDLE)0xffffffff;
           if (!bVar16) {
             DAT_00808794 = 1;
@@ -750,12 +750,12 @@ undefined4 __thiscall st::fn_00578200(DebugSystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\tsystem.cpp",0x1df,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x1df,0,errorCode,st::mutable_c_string("%s"),
                              "DebugSystemC::CreateSystemObjects");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\tsystem.cpp",0x1e0);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x1e0);
   return 0xffffffff;
 }
 

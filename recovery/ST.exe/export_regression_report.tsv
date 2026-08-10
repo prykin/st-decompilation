@@ -2,23 +2,24 @@ severity	check	before	after	delta	status	detail
 info	decompile_failures	0	0	0	ok	Every body_exported function must have decompile_status=ok
 info	generated_enum_bitwise_composition	0	0	0	ok	Strict internal invariant, not a baseline delta: generated enum CASE_*|CASE_* compositions must be repaired before export
 info	tagged_message_vtable_slot_untyped	0	0	0	ok	-
-info	function_count	10392	10392	0	ok	policy=nondecreasing
-info	body_function_count	5712	5712	0	ok	policy=per-address nondecreasing
+info	function_count	10400	10400	0	ok	policy=nondecreasing
+info	body_function_count	5720	5720	0	ok	policy=per-address nondecreasing
 info	new_library_body_exclusions	0	0	0	ok	-
-info	covered_executable_bytes	2825113	2825113	0	ok	policy=nondecreasing
-info	unclaimed_meaningful_bytes	98872	98872	0	ok	policy=nonincreasing
-info	typed_vtable_slots	2729	2729	0	ok	Exact per-slot type erasure is the hard regression criterion
+info	covered_executable_bytes	2825525	2825525	0	ok	policy=nondecreasing
+info	unclaimed_meaningful_bytes	98460	98460	0	ok	policy=nonincreasing
+info	typed_vtable_slots	2737	2737	0	ok	Exact per-slot type erasure is the hard regression criterion
 info	dispatch_vtable_count	1	1	0	ok	Physical vtable layouts and polymorphic dispatch interfaces are counted separately
 info	typed_vtable_slot_erasure	0	0	0	ok	-
 info	function_addresses_removed	0	0	0	ok	-
 info	semantic_name_downgrades	0	0	0	ok	-
+info	quality:call_clobber_piece	270	270	0	ok	policy=nonincreasing; blocking=false
 info	quality:dynamic_array_indexing	76	76	0	ok	policy=nonincreasing; blocking=false
 info	quality:flattened_global_record_array	36	36	0	ok	policy=nonincreasing; blocking=false
 info	quality:generic_global_aggregate	98	98	0	ok	policy=nonincreasing; blocking=false
-info	quality:raw_indirect_call	1886	1886	0	ok	policy=nonincreasing; blocking=true
-info	quality:raw_pointer_offset	2248	2248	0	ok	policy=nonincreasing; blocking=false
-info	quality:return_width_artifact	558	558	0	ok	policy=nonincreasing; blocking=true
+info	quality:raw_indirect_call	1888	1888	0	ok	policy=nonincreasing; blocking=true
+info	quality:raw_pointer_offset	2169	2169	0	ok	policy=nonincreasing; blocking=false
+info	quality:return_width_artifact	292	292	0	ok	policy=nonincreasing; blocking=true
 info	quality:stack_slot_reuse	4283	4283	0	ok	policy=nonincreasing; blocking=false
 info	quality:string_based_aggregate_address	7	7	0	ok	policy=nonincreasing; blocking=false
-info	quality:undefined_type	18327	18327	0	ok	policy=nonincreasing; blocking=false
-info	quality:unresolved_register_input	472	472	0	ok	policy=nonincreasing; blocking=true
+info	quality:undefined_type	18286	18286	0	ok	policy=nonincreasing; blocking=false
+info	quality:unresolved_register_input	474	474	0	ok	policy=nonincreasing; blocking=true

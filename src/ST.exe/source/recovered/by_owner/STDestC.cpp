@@ -17,7 +17,7 @@ STDestC * __thiscall st::fn_006023F0(STDestC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &st_global_0079CB10;
+  this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079CB10);
   this->vtable = &st_global_0079C9B0;
   memset(&this->field_0x231, 0, 0x17e); /* compiler bulk-zero initialization */
   return this;
@@ -103,7 +103,7 @@ byte * __thiscall st::fn_006025D0(STDestC *this,undefined4 *param_1)
   byte *pbVar4;
 
   if (this->field_036E != 3) {
-    pbVar1 = st::fn_006AAC70(0x17e);
+    pbVar1 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0x17e));
     if (this->field_036E == 2) {
       this->field_036E = (uint)(this->field_039F < '\x01');
     }

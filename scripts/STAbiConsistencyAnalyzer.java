@@ -56,6 +56,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     private static final int PARAMETER_MASK_SCAN_LIMIT = 8;
     private static final Pattern STACK_MEMORY = Pattern.compile(
         "^\\[EBP(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
+    private static final Pattern ESP_MEMORY = Pattern.compile(
+        "^\\[ESP(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
     private static final Pattern BASE_MEMORY = Pattern.compile(
         ".*\\[(EAX|EBX|ECX|EDX|ESI|EDI|EBP|ESP)" +
         "(?:\\s*([+-])\\s*(0X[0-9A-F]+|[0-9]+))?\\].*");
@@ -95,6 +97,11 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             functionsSeen++;
             addLegacyMachineArityReturnMigration(function, rows);
             if (addEbpContextRegisterRepair(function, rows)) continue;
+            // A freshly discovered callee-cleaned function can still have Ghidra's
+            // placeholder `unknown f(void)` Listing signature even though its machine
+            // body reads the complete incoming stack range.  Recover that boundary before
+            // the ordinary parameter-width passes need Listing parameters to exist.
+            if (addDefaultEspStackPrototype(function, rows)) continue;
             // A full prototype rewrite changes ordinals.  Do not emit stale
             // per-parameter rows for the same baseline in this pass.
             if (addMachineStackArityExpansion(function, rows)) continue;
@@ -416,6 +423,204 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             sites.add(addr(instruction.getAddress()) + " " + instruction);
         }
         return bytes == null ? null : new RetPurge(bytes, sites);
+    }
+
+    /**
+     * Recover a missing stack prototype for a newly claimed x86 function from the callee
+     * alone.  The rule is intentionally narrower than decompiler parameter recovery:
+     * every byte purged by one unanimous {@code RET n} must be read from its exact entry-SP
+     * coordinate before an overlapping write, stack movement must remain mechanically
+     * balanced, and at least one qword x87 read must prove a non-word boundary.  A dword
+     * whose loaded register is subsequently dereferenced is emitted as {@code void *}; no
+     * nominal structure or semantic scalar type is guessed here.
+     *
+     * This handles optimized frameless stdcall methods such as a stack-passed object plus
+     * a double, for which Ghidra can render temporary decompiler parameters while leaving
+     * the persistent Function signature as {@code void(void)}.  Callers are deliberately
+     * not evidence, so a bad call-site prototype cannot validate itself.
+     */
+    private boolean addDefaultEspStackPrototype(Function function, List<Row> rows)
+            throws Exception {
+        if (pointerSize != 4 || function.hasVarArgs() ||
+                manual(function.getSignatureSource()) ||
+                manual(function.getReturn().getSource()) ||
+                !"unknown".equalsIgnoreCase(function.getCallingConventionName()))
+            return false;
+        List<Parameter> current = explicitParameters(function);
+        if (!current.isEmpty()) return false;
+        RetPurge purge = uniformRetPurge(function);
+        if (purge == null || purge.bytes <= 0 || purge.bytes > 0x100 ||
+                purge.bytes % pointerSize != 0) return false;
+
+        EspStackEvidence evidence = espStackEvidence(function, purge.bytes);
+        if (evidence == null || !evidence.balanced) return false;
+        for (long offset = pointerSize; offset < pointerSize + purge.bytes; offset++)
+            if (!evidence.readBytes.contains(offset)) return false;
+        if (evidence.doubleStarts.isEmpty()) return false;
+
+        List<String> types = new ArrayList<>(), names = new ArrayList<>(),
+            selected = new ArrayList<>();
+        long offset = pointerSize;
+        int ordinal = 1;
+        while (offset < pointerSize + purge.bytes) {
+            String type;
+            int length;
+            if (evidence.doubleStarts.contains(offset)) {
+                type = "/double";
+                length = 8;
+            }
+            else {
+                type = evidence.pointerStarts.contains(offset) ?
+                    "pointer:/void" : "/undefined4";
+                length = pointerSize;
+            }
+            if (offset + length > pointerSize + purge.bytes) return false;
+            types.add(type);
+            names.add("param_" + ordinal++);
+            selected.add("entry_sp+0x" + Long.toHexString(offset)
+                .toUpperCase(Locale.ROOT) + "=" + type);
+            offset += length;
+        }
+        rows.add(Row.full(function, "machine_esp_stack_prototype", true,
+            typeSpec(function.getReturnType()), "__stdcall", false,
+            String.join(";", types), String.join(";", names), "high",
+            "placeholder unknown signature; every machine RET purges exactly " +
+            purge.bytes + " byte(s); a balanced frameless ESP trace reads every " +
+            "incoming byte before overlap; at least one exact x87 qword fixes the " +
+            "slot partition; inferred=" + selected + "; sites=" +
+            String.join(" | ", evidence.sites) + "; ret_sites=" +
+            String.join(" | ", purge.sites)));
+        return true;
+    }
+
+    private EspStackEvidence espStackEvidence(Function function, int purgeBytes) {
+        long start = pointerSize, end = pointerSize + purgeBytes;
+        long espBias = 0;
+        Set<Long> read = new HashSet<>(), written = new HashSet<>(),
+            doubles = new HashSet<>(), pointers = new HashSet<>();
+        Map<String, Long> registerOrigins = new HashMap<>();
+        List<String> sites = new ArrayList<>();
+        boolean balanced = true;
+        int pushesSinceCall = 0;
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            List<String> operands = operandRepresentations(instruction);
+
+            // A register carrying one exact incoming dword becomes pointer evidence only
+            // after it is actually used as a memory base.  Register spelling and the
+            // source stack coordinate are both machine facts.
+            for (String operand : operands) {
+                if (!operand.contains("[") || !operand.contains("]")) continue;
+                BaseMemory memory = baseMemory(operand);
+                if (memory != null && registerOrigins.containsKey(memory.base))
+                    pointers.add(registerOrigins.get(memory.base));
+            }
+
+            for (int operand = 0; operand < operands.size(); operand++) {
+                Long relative = espOffset(operands.get(operand));
+                if (relative == null) continue;
+                long entryOffset = relative + espBias;
+                if (entryOffset < start || entryOffset >= end) continue;
+                int width = memoryWidth(operands.get(operand));
+                if (width <= 0) width = pointerSize;
+                width = (int)Math.min(width, end - entryOffset);
+                boolean write = operand == 0 && writesStackMemory(mnemonic);
+                boolean isRead = !write || readsFirstOperand(mnemonic);
+                if (isRead && !stackRangeWritten(written, entryOffset, width)) {
+                    for (int index = 0; index < width; index++)
+                        read.add(entryOffset + index);
+                    if (width == 8 && x87MemoryRead(mnemonic) &&
+                            (operands.get(operand).contains("DOUBLE PTR") ||
+                                operands.get(operand).contains("QWORD PTR")))
+                        doubles.add(entryOffset);
+                    if (sites.size() < 32)
+                        sites.add(addr(instruction.getAddress()) + " " + instruction +
+                            " [entry_sp+0x" + Long.toHexString(entryOffset)
+                                .toUpperCase(Locale.ROOT) + "]");
+                }
+                if (write)
+                    for (int index = 0; index < width; index++)
+                        written.add(entryOffset + index);
+            }
+
+            String destination = operands.isEmpty() ? "" : fullRegister(operands.get(0));
+            String source = operands.size() < 2 ? "" : fullRegister(operands.get(1));
+            Long sourceStack = operands.size() < 2 ? null : espOffset(operands.get(1));
+            if (!destination.isBlank() && writesFirstOperand(mnemonic)) {
+                Long origin = null;
+                if ("MOV".equals(mnemonic) && sourceStack != null) {
+                    long entryOffset = sourceStack + espBias;
+                    if (entryOffset >= start && entryOffset + pointerSize <= end)
+                        origin = entryOffset;
+                }
+                else if ("MOV".equals(mnemonic) && !source.isBlank())
+                    origin = registerOrigins.get(source);
+                if (origin == null) registerOrigins.remove(destination);
+                else registerOrigins.put(destination, origin);
+            }
+
+            if ("PUSH".equals(mnemonic)) {
+                espBias -= pointerSize;
+                pushesSinceCall++;
+            }
+            else if ("POP".equals(mnemonic)) espBias += pointerSize;
+            else if (("SUB".equals(mnemonic) || "ADD".equals(mnemonic)) &&
+                    operands.size() >= 2 && "ESP".equals(fullRegister(operands.get(0)))) {
+                Long amount = immediate(operands.get(1));
+                if (amount == null) return null;
+                espBias += "ADD".equals(mnemonic) ? amount : -amount;
+            }
+            else if ("CALL".equals(mnemonic)) {
+                Function called = directCalledFunction(instruction);
+                int calleePurge = calleeStackPurge(called);
+                // An indirect call with no outgoing push since the preceding call has
+                // zero caller-visible stack effect.  The callee cannot purge this
+                // function's saved registers or incoming arguments and still return here.
+                if (calleePurge < 0 && called == null && pushesSinceCall == 0)
+                    calleePurge = 0;
+                if (calleePurge < 0) return null;
+                espBias += calleePurge;
+                pushesSinceCall = 0;
+                registerOrigins.remove("EAX");
+                registerOrigins.remove("ECX");
+                registerOrigins.remove("EDX");
+            }
+            else if ("LEAVE".equals(mnemonic) ||
+                    ("MOV".equals(mnemonic) && operands.size() >= 2 &&
+                        "ESP".equals(fullRegister(operands.get(0))) &&
+                        !"ESP".equals(fullRegister(operands.get(1))))) return null;
+
+            if (mnemonic.startsWith("RET") && espBias != 0) balanced = false;
+        }
+        return new EspStackEvidence(read, doubles, pointers, sites, balanced);
+    }
+
+    private int calleeStackPurge(Function called) {
+        if (called == null) return -1;
+        if (called.isStackPurgeSizeValid()) return called.getStackPurgeSize();
+        String convention = called.getCallingConventionName();
+        if ("__cdecl".equals(convention)) return 0;
+        if (!Set.of("__stdcall", "__thiscall", "__fastcall").contains(convention))
+            return -1;
+        int bytes = 0;
+        for (Parameter parameter : explicitParameters(called))
+            if (parameter.hasStackStorage()) bytes += parameterSpan(parameter);
+        return bytes;
+    }
+
+    private Long espOffset(String operand) {
+        String value = operand.toUpperCase(Locale.ROOT).replace("DOUBLE PTR", "")
+            .replace("QWORD PTR", "").replace("DWORD PTR", "")
+            .replace("FLOAT PTR", "").replace("WORD PTR", "")
+            .replace("BYTE PTR", "").replace(" ", "");
+        Matcher matcher = ESP_MEMORY.matcher(value);
+        if (!matcher.matches()) return null;
+        if (matcher.group(2) == null) return 0L;
+        Long parsed = immediate(matcher.group(2));
+        if (parsed == null) return null;
+        return "-".equals(matcher.group(1)) ? -parsed : parsed;
     }
 
     /**
@@ -1534,7 +1739,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         for (Parameter parameter : function.getParameters()) {
             if (parameter.isAutoParameter() || !parameter.hasStackStorage() ||
                     manual(parameter.getSource()) ||
-                    !genericPointer(parameter.getFormalDataType())) continue;
+                    !(genericPointer(parameter.getFormalDataType()) ||
+                        generatedPointerShape(parameter.getFormalDataType()))) continue;
             ScalarRoleEvidence evidence = scalarParameterRole(function, parameter);
             if (evidence == null || evidence.pointerDereferences != 0 ||
                     evidence.scalarOperations < 2 || evidence.directReads == 0) continue;
@@ -1555,18 +1761,16 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     }
 
     private ScalarRoleEvidence scalarParameterRole(Function function, Parameter parameter) {
-        // Depending on whether custom or dynamic storage supplied the prototype,
-        // Ghidra's stack offset can be expressed in entry-SP coordinates or in the
-        // post-prologue EBP frame used by the listing.  Try both representations
-        // and keep only a uniquely strongest incoming lifetime.  Requiring a
-        // later write to the same slot strongly distinguishes an optimized
-        // argument-slot reuse from the adjacent argument.
+        // Ghidra's ordinary x86 stack storage is expressed in entry-SP coordinates,
+        // while the Listing below uses the post-prologue EBP frame.  Derive the
+        // physical EBP slot from ABI argument order.  Trying both coordinates and
+        // selecting the stronger-looking row can silently borrow evidence from the
+        // adjacent argument, especially when both are generic machine words.
         List<ScalarRoleEvidence> candidates = new ArrayList<>();
         Set<Long> offsets = new LinkedHashSet<>();
-        offsets.add((long)parameter.getStackOffset());
-        offsets.add((long)parameter.getStackOffset() + pointerSize);
         Long ordinalOffset = abiFrameOffset(function, parameter);
         if (ordinalOffset != null) offsets.add(ordinalOffset);
+        else offsets.add((long)parameter.getStackOffset() + pointerSize);
         List<ScalarRoleEvidence> attempted = new ArrayList<>();
         for (long expectedOffset : offsets) {
             ScalarRoleEvidence candidate =
@@ -1578,14 +1782,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 candidates.add(candidate);
             }
         }
-        ScalarRoleEvidence selected = null;
-        if (!candidates.isEmpty()) {
-            candidates.sort(Comparator.comparingInt(this::scalarRoleScore).reversed());
-            selected = candidates.get(0);
-            if (candidates.size() > 1 &&
-                    scalarRoleScore(candidates.get(1)) == scalarRoleScore(selected))
-                selected = null;
-        }
+        ScalarRoleEvidence selected = candidates.size() == 1 ? candidates.get(0) : null;
         for (ScalarRoleEvidence evidence : attempted)
             scalarAudit.add(new ScalarAuditRow(addr(function.getEntryPoint()),
                 function.getName(true), parameter.getOrdinal(), parameter.getName(),
@@ -1623,6 +1820,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     private ScalarRoleEvidence scalarParameterRole(Function function, long expectedOffset) {
         ScalarRoleEvidence evidence = new ScalarRoleEvidence();
         Set<String> aliases = new HashSet<>();
+        Map<Long, Address> derivedSpills = new HashMap<>();
         InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
         while (instructions.hasNext()) {
             Instruction instruction = instructions.next();
@@ -1663,6 +1861,11 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                         aliases.add(destination);
                     else aliases.remove(destination);
                 }
+                Long destinationOffset = stackOffset(instruction, 0);
+                if (destinationOffset != null && destinationOffset != expectedOffset &&
+                        !sourceRegister.isBlank() && aliases.contains(sourceRegister))
+                    derivedSpills.putIfAbsent(destinationOffset,
+                        instruction.getAddress());
             }
 
             boolean mentionsAlias = aliases.stream().anyMatch(alias ->
@@ -1710,7 +1913,58 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
 
             if (slotRead && evidence.directReads == 0) evidence.directReads++;
         }
+        collectDerivedScalarUses(function, evidence, derivedSpills);
         return evidence.directReads == 0 ? null : evidence;
+    }
+
+    /**
+     * A pre-overwrite scalar lifetime may be copied to a true local before the
+     * incoming argument slot is reused as a pointer.  Reads of that exact local
+     * remain evidence about the incoming value, while post-overwrite accesses
+     * through the argument slot do not.  Stop each derived local at its first
+     * subsequent write and record only exact-width comparisons/truncations.
+     */
+    private void collectDerivedScalarUses(Function function,
+            ScalarRoleEvidence evidence, Map<Long, Address> spills) {
+        if (spills.isEmpty()) return;
+        Map<Long, Address> active = new HashMap<>(spills);
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext() && !active.isEmpty()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            List<String> operands = operandRepresentations(instruction);
+            for (int index = 0; index < operands.size(); index++) {
+                Long offset = stackOffset(instruction, index);
+                if (offset == null || !active.containsKey(offset) ||
+                        instruction.getAddress().compareTo(active.get(offset)) <= 0)
+                    continue;
+                boolean write = index == 0 && writesFirstOperand(mnemonic);
+                if (write) {
+                    active.remove(offset);
+                    continue;
+                }
+                int width = memoryWidth(operands.get(index));
+                if (width > 0 && width < pointerSize) {
+                    evidence.unsignedBounds++;
+                    if (evidence.sites.size() < 16)
+                        evidence.sites.add(addr(instruction.getAddress()) +
+                            " derived narrow scalar use: " + instruction);
+                }
+                if (!"CMP".equals(mnemonic) && !"TEST".equals(mnemonic)) continue;
+                Instruction next = listing.getInstructionAfter(instruction.getAddress());
+                String jump = next == null ? "" :
+                    next.getMnemonicString().toUpperCase(Locale.ROOT);
+                if (Set.of("JL", "JLE", "JG", "JGE").contains(jump))
+                    evidence.signedComparisons++;
+                else if (Set.of("JA", "JAE", "JB", "JBE", "JC", "JNC",
+                        "JNA", "JNAE", "JNB", "JNBE").contains(jump))
+                    evidence.unsignedBounds++;
+                if (evidence.sites.size() < 16)
+                    evidence.sites.add(addr(instruction.getAddress()) +
+                        " derived scalar comparison: " + instruction +
+                        (jump.isBlank() ? "" : "; " + jump));
+            }
+        }
     }
 
     private boolean qualifyingScalarRole(ScalarRoleEvidence evidence) {
@@ -2196,6 +2450,17 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 pointed.getName().toLowerCase(Locale.ROOT));
     }
 
+    private boolean generatedPointerShape(DataType type) {
+        DataType current = unwrap(type);
+        if (!(current instanceof Pointer pointer)) return false;
+        DataType pointed = unwrap(pointer.getDataType());
+        if (!(pointed instanceof Structure structure) ||
+                !structure.getPathName().contains("/Recovered/PointerShapes/"))
+            return false;
+        String description = structure.getDescription();
+        return description != null && description.contains("[STPointerShapeApplier]");
+    }
+
     private DataType unwrap(DataType type) {
         Set<String> seen = new HashSet<>();
         while (type instanceof TypeDef typedef && seen.add(type.getPathName()))
@@ -2285,6 +2550,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 rows.stream().filter(row -> row.apply).count() + "\n");
             for (String kind : List.of("known_setjmp3", "known_load_resource_string",
                     "ebp_context_register",
+                    "machine_esp_stack_prototype",
                     "x87_double_parameter_slots", "x87_stack_storage_migration",
                     "full_eax_return", "narrow_accumulator_return",
                     "stack_parameter_width",
@@ -2296,6 +2562,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             out.write("note_parameters=Narrow stack parameters require consistent MOVSX/MOVZX or an immediate AND mask and no unmasked dword reads.\n");
             out.write("note_x87_doubles=An exact x87 double-width EBP read before any overlapping stack write may merge adjacent generic dwords; one generic qword may also be retyped when its exact halves are stored into an independently typed double class field. Stack byte count is preserved.\n");
             out.write("note_stack_arity_expansion=A truncated non-manual __thiscall/__stdcall signature may expand to an exact unanimous RET purge only when every incoming byte is read before overlap and the missing suffix contains an exact x87 double slot; callers are not evidence.\n");
+            out.write("note_esp_stack_prototype=A placeholder unknown frameless function may become __stdcall only when a balanced entry-SP trace covers the unanimous RET purge byte-for-byte and an exact x87 qword fixes the slot partition; callers and semantic names are not evidence.\n");
             out.write("note_ebp_context=Non-frame helpers may receive one neutral context pointer in EBP only when EBP is read before definition and generic ECX/EDX inputs have no semantic use.\n");
             out.write("note_scalar_roles=Generic pointer parameters become int/uint only when their incoming lifetime has multiple scalar operations, a signed/range comparison, and no pointer dereference before the first argument-slot overwrite.\n");
             out.write("note_pointer_returns=Generic pointer returns gain only a byte/word/dword element width when at least two caller dereferences agree; no semantic table type is guessed.\n");
@@ -2350,6 +2617,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     private record IncomingStackEvidence(Set<Long> readBytes,
         Set<Long> doubleStarts, Set<Long> floatPointerStarts,
         List<String> sites) { }
+    private record EspStackEvidence(Set<Long> readBytes, Set<Long> doubleStarts,
+        Set<Long> pointerStarts, List<String> sites, boolean balanced) { }
     private record ParameterSlot(Parameter parameter, long offset, int span) { }
     private record StoragePlan(List<String> types, List<String> names,
         List<String> storages) { }

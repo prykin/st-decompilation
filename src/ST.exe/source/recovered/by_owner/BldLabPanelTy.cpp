@@ -51,7 +51,7 @@ LAB_004eff2c:
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
       if ((((this->field_002C != 0) &&
            (pBVar1 = this->field_027A, pBVar1 != nullptr)) &&
-          (uVar3 = this->field_0199 + local_8, uVar3 < pBVar1->count)) &&
+          (uVar3 = st::machine_word_boundary_cast<uint>(this->field_0199 + local_8), uVar3 < pBVar1->count)) &&
          (pGVar5 = (Global_sub_00526BA0_param_1Enum *)
                    ((int)&pBVar1->data->field_0000 + pBVar1->elementSize * uVar3),
          pGVar5 != nullptr)) {

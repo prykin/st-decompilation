@@ -216,8 +216,8 @@ void __thiscall st::fn_004F1C80(void *this,uint param_1,uint param_2)
 
   uVar2 = param_2;
   uVar1 = param_1;
-  iVar3 = st::fn_004058F3((char)param_1,(Global_sub_004F19D0_param_2Enum)param_2,&param_1,
-                             &param_2);
+  iVar3 = st::fn_004058F3((char)param_1,(Global_sub_004F19D0_param_2Enum)param_2,st::pointer_boundary_cast<undefined4 *>(&param_1),
+                             st::pointer_boundary_cast<undefined4 *>(&param_2));
   if (iVar3 != 0) {
     iVar3 = (uVar2 & 0xff) + (uVar1 & 0xff) * 6;
     pbVar4 = st::fn_0070B650(*(short **)((int)this + iVar3 * 4 + 0xd0b),
@@ -785,7 +785,7 @@ AnonShape_004F4F90_2D6E0DDA * __fastcall st::fn_004F4F90(AnonShape_004F4F90_2D6E
   *(undefined4 *)&param_1->field_0x140 = 0;
   *(undefined4 *)&param_1->field_0x13c = 0;
   *(undefined4 *)&param_1->field_0x12c = 1;
-  puVar1 = &param_1->field_0x94;
+  puVar1 = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0x94);
   memset(&param_1->field_0x3c, 0, 0x2c); /* compiler bulk-zero initialization */
   iVar3 = 0;
   memset((void *)puVar1, 0, 0x2c); /* compiler bulk-zero initialization */
@@ -944,7 +944,7 @@ AnonShape_004F4F90_2D6E0DDA * __fastcall st::fn_004F4F90(AnonShape_004F4F90_2D6E
   *(undefined4 *)&param_1->field_0x994 = 0;
   *(undefined4 *)&param_1->field_0x99c = 0;
   *(undefined4 *)&param_1->field_0x998 = 0;
-  *(uint *)&param_1->field_0x9a0 = g_playSystem_00802A38->field_00E4 / 0x19;
+  *(uint *)&param_1->field_0x9a0 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 / 0x19);
   memset(&param_1->field_0x9a4, 0, 0x1c); /* compiler bulk-zero initialization */
   iVar3 = 0;
   *(undefined4 *)&param_1->field_0x9c0 = 0;

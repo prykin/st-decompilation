@@ -64,6 +64,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
 
     private final Map<TargetKey, Evidence> evidence = new TreeMap<>();
     private final Map<TargetKey, Set<TargetKey>> boundaryEdges = new TreeMap<>();
+    private final Set<TargetKey> localPointerOutputTargets = new TreeSet<>();
     private final List<CallSiteAudit> callSiteAudits = new ArrayList<>();
     private Map<TargetKey, String> inferredSeeds = Map.of();
     private DataTypeManager dataTypes;
@@ -85,8 +86,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
         seedHistory.add(new TreeMap<>(inferredSeeds));
         seedStateIndex.put(seedStateFingerprint(inferredSeeds), 0);
         for (int pass = 1; pass <= MAX_TYPE_PROPAGATION_PASSES; pass++) {
+            println("Prototype propagation pass " + pass + "/" +
+                MAX_TYPE_PROPAGATION_PASSES);
             evidence.clear();
             boundaryEdges.clear();
+            localPointerOutputTargets.clear();
             callSiteAudits.clear();
             reverseReturnEvidence = 0;
             sccComponents = 0;
@@ -116,6 +120,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 // intersection, not to an arbitrary MAX_PASS parity.
                 evidence.clear();
                 boundaryEdges.clear();
+                localPointerOutputTargets.clear();
                 callSiteAudits.clear();
                 reverseReturnEvidence = 0;
                 sccComponents = 0;
@@ -450,6 +455,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
             Evidence found = entry.getValue();
             String candidate = selectedType(found);
             if (candidate.isBlank()) continue;
+            // A callee-local output indirection is a complete proposal for that
+            // exact formal, but it says nothing about the semantic payload of a
+            // caller's temporary. Do not feed it into the transitive seed graph.
+            if (localPointerOutputTargets.contains(key) &&
+                    candidate.startsWith("pointer:pointer:")) continue;
             Function function = currentProgram.getFunctionManager()
                 .getFunctionAt(key.address);
             if (function == null) continue;
@@ -481,6 +491,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
         Map<String, Value> registers = new HashMap<>();
         Map<Long, Value> stackParameters = seedParameters(caller);
         Map<String, Value> stackSpills = new HashMap<>();
+        Map<Integer, PointerOutputEvidence> pointerOutputs = new TreeMap<>();
         seedThis(caller, registers);
         Map<String, Value> stableRegisters = stableThisAliases(caller);
         registers.putAll(stableRegisters);
@@ -582,8 +593,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 continue;
             }
             if (instruction.getFlowType().isJump()) pushes.clear();
-            if ("MOV".equals(mnemonic) && operands.length >= 2)
+            if ("MOV".equals(mnemonic) && operands.length >= 2) {
                 observePointerOutputStore(caller, instruction, operands, registers);
+                observePointerAddressOutputStore(caller, instruction, operands, registers,
+                    pointerOutputs);
+            }
             if ("MOV".equals(mnemonic) && operands.length >= 2)
                 observeProducedStore(instruction, operands, registers);
             updateRegisters(instruction, mnemonic, operands, registers, stackParameters,
@@ -595,15 +609,20 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 stackStateComplete = true;
             }
         }
+        addPointerAddressOutputEvidence(caller, pointerOutputs);
         return calls;
     }
 
     private void propagateCall(Function caller, Function called, Value receiver,
             List<Value> pushes, Map<String, Value> registers, Address site, boolean wrapper) {
         List<Parameter> stackTargets = stackParameters(called);
-        // Propagation remains stricter than the audit: a suffix behind saved-register or
-        // temporary prefix pushes is useful diagnostic evidence, but is not safe enough to
-        // mutate prototypes automatically.
+        // An exact argument count is the ordinary case. Optimized x86 callers frequently
+        // reserve/write wide x87 arguments with SUB ESP/FSTP and then PUSH the leading dword
+        // arguments, so the logical PUSH count is incomplete. Only the machine word nearest
+        // the CALL is nevertheless unambiguous: for cdecl/thiscall/stdcall it is the first
+        // stack formal. Do not propagate a longer apparent prefix here; stale caller-cleanup
+        // or saved-register pushes can otherwise look like arguments and poison the global
+        // prototype fixed point.
         if (stackTargets.size() == pushes.size() ||
                 (called.hasVarArgs() && pushes.size() >= stackTargets.size())) {
             for (int index = 0; index < stackTargets.size(); index++) {
@@ -611,6 +630,15 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 Value value = pushes.get(pushes.size() - 1 - index);
                 propagateArgument(caller, called, target, value, site, wrapper);
             }
+        }
+        else if (!stackTargets.isEmpty() && !pushes.isEmpty() &&
+                isLeadingDwordPrefixWithWideTail(stackTargets, pushes.size()) &&
+                hasUnmodifiedNearestArgumentPush(caller, site)) {
+            Parameter target = stackTargets.get(0);
+            if (effectiveLength(target.getFormalDataType()) <=
+                    currentProgram.getDefaultPointerSize())
+                propagateArgument(caller, called, target, pushes.get(pushes.size() - 1),
+                    site, wrapper);
         }
         for (Parameter target : registerParameters(called)) {
             if (target.getRegister() == null) continue;
@@ -630,6 +658,43 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 addProducedReturnEvidence(receiver.producer, "pointer:" + ownerType, true,
                     site, "used as this of " + called.getName(true));
         }
+    }
+
+    private boolean isLeadingDwordPrefixWithWideTail(List<Parameter> targets,
+            int pushCount) {
+        if (pushCount <= 0 || pushCount >= targets.size()) return false;
+        int word = currentProgram.getDefaultPointerSize();
+        for (int index = 0; index < pushCount; index++)
+            if (effectiveLength(targets.get(index).getFormalDataType()) > word)
+                return false;
+        for (int index = pushCount; index < targets.size(); index++)
+            if (effectiveLength(targets.get(index).getFormalDataType()) <= word)
+                return false;
+        return true;
+    }
+
+    /**
+     * Prove that the top tracked value is the word immediately supplying stack
+     * argument zero. Register setup may sit between PUSH and CALL, but another
+     * control transfer, stack adjustment, POP, or write through ESP invalidates
+     * the proof. The short instruction bound prevents reaching prologue saves.
+     */
+    private boolean hasUnmodifiedNearestArgumentPush(Function caller, Address callSite) {
+        Instruction instruction = currentProgram.getListing().getInstructionBefore(callSite);
+        for (int distance = 0; instruction != null && distance < 12; distance++) {
+            if (!caller.getBody().contains(instruction.getAddress())) return false;
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            if ("PUSH".equals(mnemonic)) return true;
+            if ("POP".equals(mnemonic) || "CALL".equals(mnemonic) ||
+                    "RET".equals(mnemonic) || instruction.getFlowType().isJump()) return false;
+            if (operands.length > 0 && "ESP".equals(cleanRegister(operands[0])))
+                return false;
+            if (operands.length > 0 && operands[0].contains("[ESP")) return false;
+            instruction = currentProgram.getListing().getInstructionBefore(
+                instruction.getAddress());
+        }
+        return false;
     }
 
     private void propagateArgument(Function caller, Function called, Parameter target,
@@ -856,6 +921,91 @@ public class STPrototypeAnalyzer extends GhidraScript {
             pointer.name, true,
             addr(instruction.getAddress()) + " exact " + width +
                 "-byte output store from " + source.evidence);
+    }
+
+    /**
+     * Recognize a missing pointer level on a machine-word output parameter.
+     *
+     * The current formal must be exactly an undefined machine-word pointee (for
+     * example, undefined4 * on x86), and the write must target offset zero of
+     * that explicit parameter. Every observed non-null store through the same
+     * parameter must be an exact address reference or an already typed pointer;
+     * an unresolved/scalar store vetoes the proposal. Two non-null sites are
+     * required so that one relocation cannot turn an ordinary word output into
+     * a pointer-to-pointer by accident. The recovered inner pointee remains
+     * void: the machine proves an address family, not one semantic payload type.
+     */
+    private void observePointerAddressOutputStore(Function function,
+            Instruction instruction, String[] operands, Map<String, Value> registers,
+            Map<Integer, PointerOutputEvidence> outputs) {
+        MemoryExpr destination = memoryExpr(operands[0]);
+        if (destination == null || destination.displacement != 0 ||
+                memoryOperandWidth(operands[0]) != currentProgram.getDefaultPointerSize())
+            return;
+        Value base = registers.get(destination.register);
+        if (base == null || base.parameterOrdinal < 0) return;
+        Parameter target = explicitParameter(function, base.parameterOrdinal);
+        DataType formal = target == null ? null : unwrap(target.getFormalDataType());
+        if (!(formal instanceof Pointer pointer)) return;
+        DataType pointed = unwrap(pointer.getDataType());
+        if (pointed == null || !Undefined.isUndefined(pointed) ||
+                pointed.getLength() != currentProgram.getDefaultPointerSize()) return;
+
+        PointerOutputEvidence found = outputs.computeIfAbsent(base.parameterOrdinal,
+            ignored -> new PointerOutputEvidence());
+        String site = addr(instruction.getAddress()) + " " + instruction;
+        Long literal = immediate(operands[1]);
+        if (literal != null && literal == 0) {
+            found.nullSites.add(site);
+            return;
+        }
+        if (exactAddressReference(instruction, 1)) {
+            found.addressSites.add(site);
+            return;
+        }
+        String sourceRegister = cleanRegister(operands[1]);
+        Value source = sourceRegister == null || !isFullRegister(operands[1]) ? null :
+            registers.get(sourceRegister);
+        if (source != null && source.type.startsWith("pointer:") && !source.literal) {
+            found.addressSites.add(site + " from " + source.evidence);
+            return;
+        }
+        found.nonAddressSites.add(site);
+    }
+
+    private boolean exactAddressReference(Instruction instruction, int operandIndex) {
+        for (Reference reference : instruction.getReferencesFrom()) {
+            if (reference.getOperandIndex() != operandIndex) continue;
+            Address target = reference.getToAddress();
+            if (target == null) continue;
+            // A DATA reference on an immediate is the disassembler's relocation-like
+            // proof that the word denotes an address. Avoid a Memory.contains lookup
+            // here: this method runs inside a whole-program fixed point and that
+            // database query dominates every pass on large switch tables.
+            if (reference.getReferenceType().isData() ||
+                    currentProgram.getListing().getDefinedDataContaining(target) != null ||
+                    currentProgram.getListing().getInstructionContaining(target) != null)
+                return true;
+        }
+        return false;
+    }
+
+    private void addPointerAddressOutputEvidence(Function function,
+            Map<Integer, PointerOutputEvidence> outputs) {
+        for (Map.Entry<Integer, PointerOutputEvidence> entry : outputs.entrySet()) {
+            PointerOutputEvidence found = entry.getValue();
+            if (found.addressSites.size() < 2 || !found.nonAddressSites.isEmpty()) continue;
+            Parameter target = explicitParameter(function, entry.getKey());
+            if (target == null) continue;
+            TargetKey key = new TargetKey(function.getEntryPoint(), "parameter",
+                entry.getKey());
+            localPointerOutputTargets.add(key);
+            String evidenceSite = "complete offset-zero output stores: addresses=" +
+                found.addressSites.size() + ", nulls=" + found.nullSites.size() +
+                "; " + String.join(" | ", found.addressSites);
+            addParameterEvidence(function, target, "pointer:pointer:/void", target.getName(),
+                true, evidenceSite);
+        }
     }
 
     private StoreType storedType(Instruction instruction, String operand,
@@ -1578,7 +1728,13 @@ public class STPrototypeAnalyzer extends GhidraScript {
             DataType pointed = pointer.getDataType();
             if (pointed == null || Undefined.isUndefined(pointed) || "/void".equals(pointed.getPathName()))
                 return "";
-            return "pointer:" + pointed.getPathName();
+            // General propagation intentionally remains one level deep. Existing
+            // T**/T*** Listing artifacts are not independent evidence and allowing
+            // them to seed the fixed point makes pointer depth grow through cycles.
+            // Explicit nested proposals (such as a proven output void**) use the
+            // recursive proposal grammar directly and are still applied exactly.
+            return pointed instanceof Pointer ? "" :
+                "pointer:" + pointed.getPathName();
         }
         if ("/void".equals(type.getPathName())) return "";
         if (type instanceof Enum || type instanceof TypeDef || type instanceof Structure ||
@@ -1717,15 +1873,19 @@ public class STPrototypeAnalyzer extends GhidraScript {
     private boolean primitiveOrVoidPointee(String specification) {
         if (specification == null || !specification.startsWith("pointer:"))
             return false;
-        String path = specification.substring("pointer:".length()).toLowerCase(Locale.ROOT);
+        String path = specification;
+        while (path.startsWith("pointer:"))
+            path = path.substring("pointer:".length());
+        path = path.toLowerCase(Locale.ROOT);
         return path.matches("/(?:void|undefined(?:1|2|4|8)?|u?int(?:1|2|4|8)?|" +
             "byte|char|short|long|float|double|bool|dword|word)");
     }
 
     private int semanticRank(String specification) {
         if (specification == null || specification.isBlank()) return 0;
-        String path = specification.startsWith("pointer:") ?
-            specification.substring("pointer:".length()) : specification;
+        String path = specification;
+        while (path.startsWith("pointer:"))
+            path = path.substring("pointer:".length());
         if (path.equals("/void") || path.matches(
                 "/(?:u?int(?:1|2|4|8)?|byte|char|short|long|float|double|bool|undefined.*)"))
             return 1;
@@ -1832,7 +1992,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
     }
     private String typeSpecification(DataType type) {
         if (type instanceof Pointer pointer && pointer.getDataType() != null)
-            return "pointer:" + pointer.getDataType().getPathName();
+            return "pointer:" + typeSpecification(pointer.getDataType());
         return type == null ? "" : type.getPathName();
     }
     private boolean sameType(String left, String right) { return left.equals(right); }
@@ -2232,6 +2392,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
         StoreType(String type, boolean strong, String evidence) {
             this.type = type; this.strong = strong; this.evidence = evidence;
         }
+    }
+    private static class PointerOutputEvidence {
+        final Set<String> addressSites = new TreeSet<>();
+        final Set<String> nullSites = new TreeSet<>();
+        final Set<String> nonAddressSites = new TreeSet<>();
     }
     private static class CallSiteAudit {
         final Address callerAddress, site, directAddress, resolvedAddress;

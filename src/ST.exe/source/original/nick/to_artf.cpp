@@ -101,7 +101,7 @@ int __thiscall st::fn_005EAF10(STArtiafactC *this,STMessage *message)
             this_00->field_030D = 1;
             this_00->field_023A = 5;
             iVar20 = this_00->field_02C2;
-            this_00->field_02E0 = g_playSystem_00802A38->field_00E4 + 0x15;
+            this_00->field_02E0 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 + 0x15);
             iVar19 = this_00->field_02BE;
             iVar18 = 1;
             uVar9 = st::fn_004052CC((STT3DSprC *)&this_00->vtable_at_1d5);
@@ -199,7 +199,7 @@ int __thiscall st::fn_005EAF10(STArtiafactC *this,STMessage *message)
         }
         puVar15 = (byte *)((message->arg0).ptr);
         if (puVar15[3] == 2) {
-          local_EAX_520 = st::fn_004029C3(local_8,puVar15);
+          local_EAX_520 = st::fn_004029C3(local_8,st::pointer_boundary_cast<undefined4 *>(puVar15));
           if (local_EAX_520 < 0) {
             g_currentExceptionFrame = local_60.previous;
             return 0;
@@ -317,7 +317,7 @@ int __thiscall st::fn_005EAF10(STArtiafactC *this,STMessage *message)
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
-          this_00->field_02D2 = PTR_00806724->entryCount + -1;
+          this_00->field_02D2 = st::machine_word_boundary_cast<int>(PTR_00806724->entryCount + -1);
           this_00->field_02B5 = 1;
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -361,12 +361,12 @@ int __thiscall st::fn_005EAF10(STArtiafactC *this,STMessage *message)
       return 0;
     }
     g_currentExceptionFrame = local_60.previous;
-    iVar12 = st::fn_006AD4D0("E:\\__titans\\nick\\to_artf.cpp",0x1b2,0,iVar8,"%s",
+    iVar12 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_artf.cpp"),0x1b2,0,iVar8,st::mutable_c_string("%s"),
                                 "STArtiafactC::GetMessage");
     if (iVar12 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar8,0,"E:\\__titans\\nick\\to_artf.cpp",0x1b4);
+    st::fn_006A5E40(iVar8,0,st::mutable_c_string("E:\\__titans\\nick\\to_artf.cpp"),0x1b4);
   }
   return 0xffff;
 switchD_005eb627_caseD_2:

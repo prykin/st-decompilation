@@ -17,7 +17,7 @@ STSharkC * __thiscall st::fn_0058D750(STSharkC *this)
 
   st::fn_00401933((STGameObjC *)this);
   st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &st_global_0079BFE0;
+  this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079BFE0);
   this->vtable = &st_global_0079BE80;
   this->field_0257 = CASE_0;
   memset(&this->field_0x25b, 0, 0x34); /* compiler bulk-zero initialization */
@@ -79,11 +79,11 @@ int __thiscall st::fn_0058F430(STSharkC *this)
   local_14 = 0x7fff;
   this->field_023D = 0;
   this->field_0249 = 0xff;
-  iVar6 = this->field_0047 + -4;
+  iVar6 = st::machine_word_boundary_cast<int>(this->field_0047 + -4);
   if (iVar6 < this->field_0047 + 4) {
     do {
       if (((iVar6 <= g_worldGrid.sizeX) && (-1 < iVar6)) &&
-         (iVar9 = this->field_0049 + -4, sVar7 = g_worldGrid.sizeX, iVar9 < this->field_0049 + 4)) {
+         (iVar9 = st::machine_word_boundary_cast<int>(this->field_0049 + -4), sVar7 = g_worldGrid.sizeX, iVar9 < this->field_0049 + 4)) {
         do {
           if ((iVar9 <= g_worldGrid.sizeY) && (-1 < iVar9)) {
             local_c = 0;
@@ -98,22 +98,22 @@ int __thiscall st::fn_0058F430(STSharkC *this)
                                  + (int)sVar5].objects[0], this_00 != nullptr &&
                      (this_00->value_20 == 0x14)))))))) &&
                  (iVar2 = this_00->GetObjectTypeId(), iVar2 == 0x15)) {
-                iVar2 = this->field_0047 - iVar6;
+                iVar2 = st::machine_word_boundary_cast<int>(this->field_0047 - iVar6);
                 if (iVar2 < 0) {
                   iVar2 = -iVar2;
                 }
-                iVar3 = this->field_0049 - iVar9;
+                iVar3 = st::machine_word_boundary_cast<int>(this->field_0049 - iVar9);
                 if (iVar3 < 0) {
                   iVar3 = -iVar3;
                 }
-                iVar4 = this->field_004B - local_c;
+                iVar4 = st::machine_word_boundary_cast<int>(this->field_004B - local_c);
                 if (iVar4 < 0) {
                   iVar4 = -iVar4;
                 }
                 iVar2 = iVar4 + iVar3 + iVar2;
                 if (iVar2 < local_14) {
                   this->field_024D = *(undefined2 *)&this_00[1].field_0xe;
-                  this->field_0249 = this_00[1].vtable;
+                  this->field_0249 = st::machine_word_boundary_cast<undefined4>(this_00[1].vtable);
                   this->field_0231 = sVar5;
                   this->field_0233 = sVar8;
                   this->field_0235 = sVar1;
@@ -154,11 +154,11 @@ int __thiscall st::fn_0058FF70(STSharkC *this)
   uVar2 = g_playSystem_00802A38->field_00E4;
   switch(this->field_0257) {
   case CASE_0:
-    uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
+    uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
     this->field_001C = uVar1;
     return uVar2 + 1 + (uVar1 >> 0x10) % 5;
   case CASE_6:
-    uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
+    uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
     this->field_001C = uVar1;
     uVar2 = uVar2 + 0xf + (uVar1 >> 0x10 & 0xf);
   }

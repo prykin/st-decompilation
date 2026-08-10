@@ -44,7 +44,7 @@ void __thiscall st::fn_005F00B0(void *this,undefined1 *param_1)
   *(undefined4 *)(param_1 + 8) = STField<undefined4>(this,0x18);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)this + 0x74))(local_14);
-  st::fn_0072E340(param_1 + 0xc,local_14,0xe);
+  st::fn_0072E340(st::pointer_boundary_cast<char *>(param_1 + 0xc),local_14,0xe);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (**(code **)(*(int *)this + 0x7c))();
   param_1[0x1b] = uVar2;
@@ -263,7 +263,7 @@ void __thiscall st::fn_005F04B0(void *this,int *param_1)
       STField<undefined2>(this,0x2ab) = STField<undefined2>(piVar2,0x32);
       STField<int *>(this,0x2a7) = piVar1;
       iVar3 = st::fn_00404EC1(STField<short>(this,0x242),STField<short>(this,0x244),
-                                 STField<short>(this,0x246),0,this);
+                                 STField<short>(this,0x246),0,st::pointer_boundary_cast<AnonShape_00495FF0_59081BDD *>(this));
       if (iVar3 == 0) {
         STField<char>(this,0x252) = STField<char>(this,0x252) + -1;
       }
@@ -471,7 +471,7 @@ bool __fastcall st::fn_005F0A30(STSprGameObjC *param_1)
   uint uVar5;
   int iVar6;
   int iVar7;
-  dword dVar8;
+  STBoatC_field_06F7State SVar8;
 
   uVar5 = (uint)(byte)param_1->field_024F;
   if ((param_1->field_024F != 0) &&
@@ -492,8 +492,8 @@ bool __fastcall st::fn_005F0A30(STSprGameObjC *param_1)
           if (uVar5 == 99) {
             iVar6 = (*param_1->vtable->vfunc_138)();
             iVar7 = (*param_1->vtable->vfunc_130)();
-            dVar8 = param_1->slot_2C();
-            st::fn_00403CCE(this,dVar8,iVar7,iVar6);
+            SVar8 = param_1->slot_2C();
+            st::fn_00403CCE(this,SVar8,iVar7,iVar6);
             iVar6 = param_1->vfunc_AC((short)*(undefined4 *)&this->field_0x18);
             uVar5 = 0;
             if (iVar6 != 0) {
@@ -520,12 +520,12 @@ undefined4 __fastcall st::fn_005F0BA0(AnonShape_005F0BA0_C8D654C5 *param_1)
   int iVar3;
 
   if (g_playSystem_00802A38->field_00E4 % 5 == 0) {
-    this = &param_1->field_0x1d5;
+    this = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0x1d5);
     if (param_1->field_02B5 == 1) {
       st::fn_0040116D
                 ((STT3DSprC *)this,PTR_00806724->entries[param_1->field_02D2],
                  (int)PTR_00806724->field_002C);
-      iVar2 = param_1->field_02D2 + -1;
+      iVar2 = st::machine_word_boundary_cast<int>(param_1->field_02D2 + -1);
       param_1->field_02D2 = iVar2;
       if (iVar2 == (int)PTR_00806724->entryCount / 2) {
         cVar1 = st::fn_004056CD((int)this);
@@ -1019,7 +1019,7 @@ st::fn_005F23D0(void *this,int param_1,int param_2,int param_3,uint param_4,int 
      ((param_5 == 0x4f || (*(int *)(&DAT_007918bc + param_6 * 4 + param_5 * 0xc) != 0)))) {
     return 0;
   }
-  local_c = this;
+  local_c = st::pointer_boundary_cast<STManBasisC *>(this);
   iVar3 = st::fn_00403F12(this,param_1,param_2,0,(char)param_4);
   pVVar1 = g_visibleClass_00802A88;
   if (iVar3 == 0) {
@@ -1481,7 +1481,7 @@ void __fastcall st::fn_005F6DF0(STAllPlayersC *param_1)
 {
   undefined1 *this;
 
-  this = &param_1->field_0x1d5;
+  this = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0x1d5);
   st::fn_004045D9
             ((STT3DSprC *)this,(float)*(int *)&param_1->field_0x2c1 * _DAT_007904f8 * _DAT_007904f0,
              (float)*(int *)&param_1->field_0x2c5 * _DAT_007904f8 * _DAT_007904f0,
@@ -1782,7 +1782,7 @@ undefined4 __thiscall st::fn_005F9050(void *this,int *param_1,undefined4 *param_
   short local_c [2];
   undefined4 local_8;
 
-  st::fn_004018C5(this,(short *)&local_8,(short *)((int)&local_8 + 2),local_c);
+  st::fn_004018C5(st::pointer_boundary_cast<STFishC *>(this),(short *)&local_8,(short *)((int)&local_8 + 2),local_c);
   sVar1 = local_c[0] + -1;
   if (((((-1 < (short)local_8) && ((short)local_8 < g_worldGrid.sizeX)) && (-1 < STPiece<2,2>(local_8))) &&
       ((((STPiece<2,2>(local_8) < g_worldGrid.sizeY && (-1 < sVar1)) &&
@@ -1794,10 +1794,10 @@ undefined4 __thiscall st::fn_005F9050(void *this,int *param_1,undefined4 *param_
        (iVar3 = st::fn_00401C7B((int)this_00), iVar3 == 0)) &&
       (iVar3 = st::fn_004029E1(this_00,STField<undefined4>(this,0x18)), iVar3 != 0)))) {
     st::fn_004043EF(this_00,STField<int>(this,0x18));
-    st::fn_004031E3(this_00,&local_8,(int *)((int)&local_8 + 2),local_c);
+    st::fn_004031E3(this_00,st::pointer_boundary_cast<uint *>(&local_8),(int *)((int)&local_8 + 2),local_c);
     iVar2 = st::fn_004052CC((STT3DSprC *)((int)&this_00[0xd].vtable + 1));
     *param_2 = iVar2;
-    *param_1 = local_c[0] + -0x5a;
+    *param_1 = st::machine_word_boundary_cast<int>(local_c[0] + -0x5a);
     return 1;
   }
   return 0;
@@ -1814,7 +1814,7 @@ void __thiscall st::fn_005F91E0(void *this,int param_1,int param_2)
   short local_8;
   short local_6;
 
-  st::fn_004018C5(this,&local_6,&local_8,local_c);
+  st::fn_004018C5(st::pointer_boundary_cast<STFishC *>(this),&local_6,&local_8,local_c);
   local_c[0] = local_c[0] + -1;
   if (((((-1 < local_6) && (local_6 < g_worldGrid.sizeX)) && (-1 < local_8)) &&
       ((local_8 < g_worldGrid.sizeY && (-1 < local_c[0])))) && (local_c[0] < g_worldGrid.sizeZ)) {
@@ -1882,7 +1882,7 @@ undefined1 __thiscall st::fn_005F9310(void *this,int param_1)
     }
   }
   if (STField<char>(this,0x29e) != '\0') {
-    st::fn_00404AE3(this);
+    st::fn_00404AE3(st::pointer_boundary_cast<STColl3C *>(this));
   }
   return STField<undefined1>(this,0x29e);
 }
@@ -1933,7 +1933,7 @@ undefined4 __fastcall st::fn_005F95B0(AnonShape_005F95B0_F363C582 *param_1)
   if (param_1->field_02E6 == 0) {
     return 0;
   }
-  uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
+  uVar1 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039);
   param_1->field_001C = uVar1;
   local_18 = (uVar1 >> 0x10) % 0x169;
   *(uint *)(param_1->field_02E6 + 0x4c) = local_18;
@@ -2106,7 +2106,7 @@ undefined4 __fastcall st::fn_005F95B0(AnonShape_005F95B0_F363C582 *param_1)
     local_14 = st::fn_006AAC70(200);
   }
   iVar7 = local_10;
-  iVar9 = st::fn_00405B3C(&local_64,&local_44,local_18,(int)local_14,local_10);
+  iVar9 = st::fn_00405B3C(&local_64,st::machine_word_boundary_cast<undefined4>(&local_44),local_18,(int)local_14,local_10);
   if (iVar9 != 0) {
     st::fn_006AB060(&local_14);
     return local_1c;
@@ -2231,7 +2231,7 @@ void __fastcall st::fn_005F9E40(AnonShape_005F9E40_7E333F34 *param_1)
       return;
     }
     if (-1 < (int)puVar1[1]) {
-      st::fn_006EA270(param_1->field_0211,puVar1[1],0,puVar1[8]);
+      st::fn_006EA270(st::pointer_boundary_cast<ST3DSMAPContext *>(param_1->field_0211),puVar1[1],0,puVar1[8]);
       iVar2 = param_1->field_02E6;
       st::fn_006EA960
                 (param_1->field_0211,*(uint *)(iVar2 + 4),
@@ -2339,10 +2339,10 @@ int __fastcall st::fn_005FA180(AnonShape_005FA180_2D8671A3 *param_1)
     return iVar3;
   }
   if (param_1->field_02BB == '\x02') {
-    puVar1 = &param_1->field_0x1d5;
+    puVar1 = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0x1d5);
     st::fn_0040116D
               ((STT3DSprC *)puVar1,PTR_00806724->entries[iVar3],(int)PTR_00806724->field_002C);
-    iVar3 = param_1->field_02D1 + -1;
+    iVar3 = st::machine_word_boundary_cast<int>(param_1->field_02D1 + -1);
     param_1->field_02D1 = iVar3;
     if (iVar3 == (int)PTR_00806724->entryCount / 2) {
       cVar2 = st::fn_004056CD((int)puVar1);
@@ -2359,7 +2359,7 @@ int __fastcall st::fn_005FA180(AnonShape_005FA180_2D8671A3 *param_1)
     }
     return iVar3;
   }
-  puVar1 = &param_1->field_0x1d5;
+  puVar1 = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0x1d5);
   st::fn_0040116D
             ((STT3DSprC *)puVar1,PTR_00806724->entries[iVar3],(int)PTR_00806724->field_002C);
   iVar3 = param_1->field_02D1;
@@ -2551,7 +2551,7 @@ st::fn_005FA7F0(void *this,undefined4 param_1,undefined4 param_2,undefined4 para
   st::fn_00405C90(this,6);
   st::fn_00405105(this,5);
   iVar1 = st::fn_00404318
-                    (this,(short)param_1,(short)param_2,(short)param_3);
+                    (st::pointer_boundary_cast<AnonReceiver_004167A0 *>(this),(short)param_1,(short)param_2,(short)param_3);
   if (iVar1 == 0) {
     STField<undefined4>(this,0x299) = param_3;
     STField<undefined4>(this,0x291) = param_1;
@@ -2644,10 +2644,10 @@ undefined4 __thiscall st::fn_005FADA0(void *this,int param_1,uint param_2,int pa
 
   uVar3 = 0;
   if (STField<int>(this,0x2e6) == 0) {
-    st::fn_00401168(this);
+    st::fn_00401168(st::pointer_boundary_cast<STColl3C *>(this));
   }
   else {
-    st::fn_00403F8A(this);
+    st::fn_00403F8A(st::pointer_boundary_cast<AnonShape_005F9F70_43CA4DAC *>(this));
   }
   if (STField<int>(this,0x2e6) != 0) {
     memset((void *)(STField<int>(this,0x2e6) + 8), 0, 0x2a); /* compiler bulk-zero initialization */
@@ -2663,7 +2663,7 @@ undefined4 __thiscall st::fn_005FADA0(void *this,int param_1,uint param_2,int pa
     uVar3 = 1;
     if (STField<char>(this,0x2b6) != '\0') {
       st::fn_00401AAF
-                (this,param_3);
+                (st::pointer_boundary_cast<AnonReceiver_00416270 *>(this),param_3);
       uVar1 = *(uint *)(STField<int>(this,0x2e6) + 4);
       if (-1 < (int)uVar1) {
         if (param_3 != 1) {
@@ -2865,7 +2865,7 @@ st::fn_005FB1F0(void *this,short param_1,short param_2,short param_3,short param
   short sVar2;
   uint uVar3;
   uint uVar4;
-  int iVar5;
+  uint uVar5;
   uint uVar6;
   int iVar7;
   uint uVar8;
@@ -2892,23 +2892,23 @@ st::fn_005FB1F0(void *this,short param_1,short param_2,short param_3,short param
      (local_8 = (int)param_3, uVar3 = local_8 - STField<short>(this,0x45),
      uVar8 = (int)uVar3 >> 0x1f, (int)((uVar3 ^ uVar8) - uVar8) < DAT_007ce7a8)) {
     uVar4 = st::fn_006AFF5B((int)STField<short>(this,0x6c));
-    iVar5 = st::fn_006AFF50((int)STField<short>(this,0x6c));
+    uVar5 = st::fn_006AFF50((int)STField<short>(this,0x6c));
     iVar9 = (int)param_1 - (int)STField<short>(this,0x41);
     iVar7 = (int)param_2 - (int)STField<short>(this,0x43);
-    uVar3 = (int)(iVar9 * iVar5 - iVar7 * uVar4) / 10000;
-    uVar8 = (int)(iVar7 * iVar5 + iVar9 * uVar4) / 10000;
+    uVar3 = (int)(iVar9 * uVar5 - iVar7 * uVar4) / 10000;
+    uVar8 = (int)(iVar7 * uVar5 + iVar9 * uVar4) / 10000;
     uVar6 = local_8 - STField<short>(this,0x45);
     if ((int)(DAT_007ce7a8 * uVar6 * uVar6 + DAT_007ce7a4 * uVar8 * uVar8 +
              DAT_007ce7a0 * uVar3 * uVar3) < DAT_007ce7ac) {
       iVar9 = (int)param_4 - (int)STField<short>(this,0x41);
       iVar7 = (int)param_5 - (int)STField<short>(this,0x43);
-      st::fn_004051AA((int)(iVar9 * iVar5 - iVar7 * uVar4) / 10000,
-                         (int)(iVar7 * iVar5 + iVar9 * uVar4) / 10000,
+      st::fn_004051AA((int)(iVar9 * uVar5 - iVar7 * uVar4) / 10000,
+                         (int)(iVar7 * uVar5 + iVar9 * uVar4) / 10000,
                          (int)param_6 - (int)STField<short>(this,0x45),uVar3,uVar8,uVar6,
                          (int *)&DAT_007ce794,0x7ce7a0,(uint *)&param_3,&local_c,&local_10);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      auto _param_4 = (int)(_param_3 * iVar5 + local_c * uVar4) / 10000;
-      iVar5 = (int)(local_c * iVar5 - _param_3 * uVar4) / 10000;
+      auto _param_4 = (int)(_param_3 * uVar5 + local_c * uVar4) / 10000;
+      iVar7 = (int)(local_c * uVar5 - _param_3 * uVar4) / 10000;
       st::fn_006DD530
                 (STField<ST3DSMAPContext *>(this,0x211),&local_1c,&local_18,&local_14);
       lVar10 = st::fn_0072E288();
@@ -2916,10 +2916,10 @@ st::fn_005FB1F0(void *this,short param_1,short param_2,short param_3,short param
       lVar11 = st::fn_0072E288();
       sVar2 = STField<short>(this,0x43);
       lVar12 = st::fn_0072E288();
-      STPiece<0,1>(param_2) = (undefined1)iVar5;
+      STPiece<0,1>(param_2) = (undefined1)iVar7;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       return ((uint)(0 < (int)(((int)(short)lVar10 - (int)sVar1) * local_10 +
-                               ((int)(short)lVar11 - (int)sVar2) * iVar5 +
+                               ((int)(short)lVar11 - (int)sVar2) * iVar7 +
                               ((int)(short)lVar12 - (int)STField<short>(this,0x41)) * _param_4))
               << 8 | local_10 & 0xff) << 0x10 | (uint)CONCAT11((undefined1)param_2,(char)_param_4);
     }
@@ -3159,9 +3159,9 @@ undefined4 __fastcall st::fn_005FC4A0(AnonShape_005FC4A0_70B17F95 *param_1)
       }
     }
     else {
-      uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
+      uVar1 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039);
       param_1->field_001C = uVar1;
-      st::fn_00403FC6(param_1,param_1->field_0277,param_1->field_027B,param_1->field_027F + -0x1e
+      st::fn_00403FC6(param_1,param_1->field_0277,param_1->field_027B,st::machine_word_boundary_cast<int>(param_1->field_027F + -0x1e)
                          ,param_1->field_0354,'\0',0x1e - (uVar1 >> 0x10) % 0xb);
       param_1->field_023A = 1;
     }
@@ -3189,7 +3189,7 @@ int __thiscall st::fn_005FCC00(void *this,undefined4 *param_1)
   puVar3 = (byte *)((int)param_1 + 0x155);
   puVar4 = (byte *)((int)this + 0x231);
   memmove(puVar4, puVar3, 0xf5); /* compiler REP MOVS byte copy */
-  iVar1 = st::fn_00402559(this,(int *)((int)param_1 + 0x246));
+  iVar1 = st::fn_00402559(st::pointer_boundary_cast<STAllPlayersC *>(this),(int *)((int)param_1 + 0x246));
   return iVar1 + 0x24a;
 }
 
@@ -3389,7 +3389,7 @@ st::fn_005FCF50(int param_1,undefined4 param_2,int param_3,undefined4 *param_4,c
     uVar2 = ~uVar2;
     pcVar4 = pcVar5 + -uVar2;
     memmove(param_5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
-    *param_4 = PTR_00806774;
+    *param_4 = st::machine_word_boundary_cast<undefined4>(PTR_00806774);
   }
   return;
 }
@@ -3433,7 +3433,7 @@ st::fn_005FCFF0(undefined4 param_1,uint param_2,int param_3,undefined4 param_4,u
   char *pcVar5_mg1;
   char *pcVar5_mg0;
 
-  _param_10 = (uint)param_10;
+  auto _param_10 = (uint)param_10;
   memset(local_15c, 0, 0x155); /* compiler bulk-zero initialization */
   local_15c[1] = param_1;
   local_15c[2] = 1;
@@ -3615,18 +3615,18 @@ undefined4 __thiscall st::fn_005FD3A0(void *this,int param_1)
   short local_6;
 
   iVar4 = param_1;
-  iVar2 = st::fn_00403EBD(this,(STMessage *)param_1);
+  iVar2 = st::fn_00403EBD(st::pointer_boundary_cast<STGameObjC *>(this),(STMessage *)param_1);
   if (iVar2 == 0xffff) {
     return 0xffff;
   }
   uVar1 = *(uint *)(iVar4 + 0x10);
   if (uVar1 < 4) {
     if (uVar1 == 3) {
-      st::fn_00405C4F(this);
+      st::fn_00405C4F(st::pointer_boundary_cast<AnonShape_005FDA60_3863B978 *>(this));
       return 0;
     }
     if (uVar1 == 0) {
-      iVar4 = st::fn_0040367A(this);
+      iVar4 = st::fn_0040367A(st::pointer_boundary_cast<AnonShape_00600750_A7773F7A *>(this));
       if (iVar4 != 0) {
 LAB_005fd4eb:
         st::fn_00403C10(this);
@@ -3644,11 +3644,11 @@ LAB_005fd4eb:
         if (iVar4 != 0) {
           STField<undefined1>(this,0x232) = 1;
         }
-        local_EAX_152 = st::fn_0040227F(this);
+        local_EAX_152 = st::fn_0040227F(st::pointer_boundary_cast<AnonShape_005FD850_1F07DA54 *>(this));
         if ((-1 < local_EAX_152) &&
-           (iVar4 = st::fn_004026C6(this,&local_6,(undefined2 *)((int)&param_1 + 2),&local_8),
+           (iVar4 = st::fn_004026C6(this,st::pointer_boundary_cast<undefined2 *>(&local_6),(undefined2 *)((int)&param_1 + 2),&local_8),
            iVar4 != 0)) {
-          st::fn_00405EB1(this);
+          st::fn_00405EB1(st::pointer_boundary_cast<AnonShape_005FEA50_174FA294 *>(this));
           st::fn_00403A17(this,(int)local_6,(int)STPiece<2,2>(param_1),(int)local_8);
           st::fn_00404610(this,(int)local_6,(int)STPiece<2,2>(param_1),0x45f);
           return 0;
@@ -3660,7 +3660,7 @@ LAB_005fd4eb:
         memset((void *)((int)this + 0x1d5), 0, 0x2d); /* compiler bulk-zero initialization */
         if (STField<char>(this,0x232) != '\0') {
           st::fn_00403E27
-                    (this,0,-1);
+                    (st::pointer_boundary_cast<AnonReceiver_005FDB50 *>(this),0,-1);
           return 0;
         }
       }
@@ -3750,7 +3750,7 @@ undefined4 * __fastcall st::fn_005FD710(undefined4 *param_1)
 {
 
   st::fn_00401933((STGameObjC *)param_1);
-  *param_1 = &st_global_0079C8A0;
+  *param_1 = st::machine_word_boundary_cast<undefined4>(&st_global_0079C8A0);
   memset((void *)((int)param_1 + 0x206), 0, 0x3d); /* compiler bulk-zero initialization */
   return param_1;
 }
@@ -3828,42 +3828,41 @@ int __fastcall st::fn_005FD850(AnonShape_005FD850_1F07DA54 *param_1)
 {
   byte *puVar1;
   AnonShape_004AB810_8E5693D5 *pAVar2;
-  undefined4 uVar3;
-  int iVar4;
-  uint uVar5;
+  int iVar3;
+  uint uVar4;
+  int iVar6;
   int iVar7;
-  int iVar8;
   int local_8;
 
-  iVar7 = 0;
-  iVar4 = -1;
+  iVar6 = 0;
+  iVar3 = -1;
   local_8 = -1;
   if (param_1->field_0226 != 0) {
-    puVar1 = (byte *)(st::fn_006AAC70(param_1->field_0226 * 0x52));
-    param_1->field_0233 = puVar1;
+    puVar1 = (byte *)(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(param_1->field_0226 * 0x52)));
+    param_1->field_0233 = st::machine_word_boundary_cast<undefined4>(puVar1);
     local_8 = 0;
-    uVar5 = param_1->field_0226 * 0x52;
-    memset(puVar1, 0, uVar5); /* compiler bulk-zero initialization */
-    iVar4 = 0;
+    uVar4 = st::machine_word_boundary_cast<uint>(param_1->field_0226 * 0x52);
+    memset(puVar1, 0, uVar4); /* compiler bulk-zero initialization */
+    iVar3 = 0;
   }
   if (((param_1->field_0233 != 0) && (param_1->field_0232 != '\0')) &&
-     (iVar8 = 0, 0 < param_1->field_0226)) {
+     (iVar7 = 0, 0 < param_1->field_0226)) {
     do {
       pAVar2 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
       if (pAVar2 == nullptr) {
-        uVar3 = 0;
+        pAVar2 = nullptr;
       }
       else {
-        uVar3 = st::fn_00401316(pAVar2);
+        pAVar2 = st::fn_00401316(pAVar2);
       }
-      iVar7 = iVar7 + 0x52;
-      *(undefined4 *)(param_1->field_0233 + -0x10 + iVar7) = uVar3;
+      iVar6 = iVar6 + 0x52;
+      *(AnonShape_004AB810_8E5693D5 **)(param_1->field_0233 + -0x10 + iVar6) = pAVar2;
       local_8 = local_8 + 1;
-      iVar8 = iVar8 + 1;
-    } while (iVar8 < param_1->field_0226);
+      iVar7 = iVar7 + 1;
+    } while (iVar7 < param_1->field_0226);
     return local_8;
   }
-  return iVar4;
+  return iVar3;
 }
 
 // 005FD940 FUN_005fd940
@@ -4250,7 +4249,7 @@ void __fastcall st::fn_005FEA50(AnonShape_005FEA50_174FA294 *param_1)
       iVar1 = param_1->field_022E;
       if ((iVar1 == 5) || (iVar1 == 6)) {
         if (uVar4 < 0x51) {
-          uVar2 = param_1->field_001C * 0x41c64e6d + 0x3039;
+          uVar2 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039);
           param_1->field_001C = uVar2;
           uVar2 = uVar2 >> 0x10 & 7;
         }
@@ -4258,7 +4257,7 @@ void __fastcall st::fn_005FEA50(AnonShape_005FEA50_174FA294 *param_1)
           uVar2 = (g_playSystem_00802A38->field_00E4 - 0x4a) + uVar4;
         }
         else if (uVar4 < 0x99) {
-          uVar2 = param_1->field_001C * 0x41c64e6d + 0x3039;
+          uVar2 = st::machine_word_boundary_cast<uint>(param_1->field_001C * 0x41c64e6d + 0x3039);
           param_1->field_001C = uVar2;
           uVar2 = uVar2 >> 0x10 & 7;
         }
@@ -4267,7 +4266,7 @@ void __fastcall st::fn_005FEA50(AnonShape_005FEA50_174FA294 *param_1)
         }
       }
       else {
-        uVar2 = g_playSystem_00802A38->field_00E4 + uVar4;
+        uVar2 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 + uVar4);
       }
       iVar5 = iVar5 + 1;
       uVar4 = uVar4 + 9;
@@ -4318,10 +4317,10 @@ int __thiscall st::fn_005FEB60(void *this,int param_1,int param_2,int param_3)
   undefined *puStack_c;
   undefined4 local_8;
 
-  puStack_c = &DAT_0079c9a0;
-  puStack_10 = &st_image_0072D964;
+  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079c9a0);
+  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  local_1c = &stack0xffffff64;
+  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff64);
   iVar13 = 0;
   sVar14 = (short)(param_3 >> 0x1f);
   if (param_3 < 0) {
@@ -4359,8 +4358,8 @@ int __thiscall st::fn_005FEB60(void *this,int param_1,int param_2,int param_3)
     st::fn_0072DA40();
     local_8 = 0xffffffff;
     local_44 = 0;
-    local_1c = &stack0xffffff64;
-    puVar4 = &stack0xffffff64;
+    local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff64);
+    puVar4 = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff64);
     if (0 < local_50) {
       do {
         iVar6 = local_50 - local_44;
@@ -4670,7 +4669,7 @@ st::fn_005FF430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,u
     if (this_00 == nullptr) {
       return 0;
     }
-    st::fn_004031E3(this_00,&param_3,(int *)&param_4,(short *)((int)&param_5 + 2));
+    st::fn_004031E3(this_00,st::pointer_boundary_cast<uint *>(&param_3),(int *)&param_4,(short *)((int)&param_5 + 2));
     iVar4 = (*this_00->vtable->vfunc_78)();
     if (iVar4 < 1) {
       return 0;
@@ -4949,7 +4948,7 @@ undefined4 __thiscall st::fn_005FFF60(void *this,int param_1,int param_2)
 
   iVar4 = STField<int>(this,0x226);
   local_8 = iVar4;
-  iVar2 = st::fn_004026C6(this,&local_1c,&sStack_1a,&sStack_18);
+  iVar2 = st::fn_004026C6(this,st::pointer_boundary_cast<undefined2 *>(&local_1c),st::pointer_boundary_cast<undefined2 *>(&sStack_1a),&sStack_18);
   iVar5 = param_2;
   if (iVar2 == 0) {
     st::fn_004035A8(this,param_1);
@@ -4962,12 +4961,12 @@ undefined4 __thiscall st::fn_005FFF60(void *this,int param_1,int param_2)
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     iVar4 = st::fn_00403DCD(this,param_1,param_2,CONCAT22(sStack_1a,local_1c),
                                (short *)CONCAT22(sStack_18,sStack_1a),CONCAT22(uStack_16,sStack_18),
-                               &local_14,&local_12,local_10);
+                               &local_14,&local_12,st::pointer_boundary_cast<undefined2 *>(local_10));
     if (((iVar4 != 0) &&
         (iVar4 = st::fn_00402978((short *)(STField<int>(this,0x233) + param_1 * 0x52),
                                     (int)local_1c,(int)sStack_1a,sStack_18,(int)local_14,local_12,
                                     local_10[0]), -1 < iVar4)) &&
-       (iVar3 = st::fn_004051FF(this,param_1,&local_1c,(int)&local_14), iVar3 != 0)) break;
+       (iVar3 = st::fn_004051FF(this,param_1,st::pointer_boundary_cast<undefined2 *>(&local_1c),(int)&local_14), iVar3 != 0)) break;
     if ((param_2 != 30000) && (iVar5 = iVar5 + 1, STField<int>(this,0x226) < iVar5)) {
       iVar5 = 0;
     }

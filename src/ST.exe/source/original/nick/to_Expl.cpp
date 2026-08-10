@@ -49,10 +49,10 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
   this_00 = local_10;
   if (local_EAX_36 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\nick\\to_Expl.cpp",0x1bb,0,local_EAX_36,
-                               "%s","STExplosion::GetMessage");
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x1bb,0,local_EAX_36,
+                               st::mutable_c_string("%s"),"STExplosion::GetMessage");
     if (iVar8 == 0) {
-      st::fn_006A5E40(local_EAX_36,0,"E:\\__titans\\nick\\to_Expl.cpp",0x1bd);
+      st::fn_006A5E40(local_EAX_36,0,st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x1bd);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -110,7 +110,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
         return 0;
       }
       if (SVar3 == MESS_ID_CREATE) {
-        uVar1 = this_00->field_001C * 0x41c64e6d + 0x3039;
+        uVar1 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
         this_00->field_001C = uVar1;
         _DAT_00811790 = (uVar1 >> 0x10) % 0x33;
         pAVar4 = (AnonShape_00604A90_035626E6 *)(message->arg0).u32;
@@ -119,7 +119,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
           puVar11 = (byte *)&this_00->field_0x1d5;
           memmove(puVar11, pAVar10, 0x40); /* compiler REP MOVS byte copy */
           st::fn_004047A0((STExplosion *)local_10);
-          puVar2 = &this_01->field_0x272;
+          puVar2 = st::pointer_boundary_cast<undefined1 *>(&this_01->field_0x272);
           local_EAX_288 = st::fn_00401E9C((STExplosion *)this_01);
           if (local_EAX_288 != 0) {
             this_01->field_0x26d = 1;
@@ -388,12 +388,12 @@ int __thiscall st::fn_006041A0(STExplosionC *this,int param_1)
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
   }
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\nick\\to_Expl.cpp",0x1f6,0,iVar3,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x1f6,0,iVar3,st::mutable_c_string("%s"),
                              "STExplosionC::CreateGroupPart");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_Expl.cpp",0x1f8);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x1f8);
   return 0xffff;
 }
 
@@ -435,20 +435,21 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = &DAT_0079cc18;
-  puStack_10 = &st_image_0072D964;
+  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079cc18);
+  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
   local_14 = ExceptionList;
-  local_1c = &stack0xffffff40;
+  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
   local_48 = nullptr;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   ExceptionList = &local_14;
-  iVar3 = st::fn_0072D7F0(local_8c.jumpBuffer,2,st::fn_0072DA21,0xffffffff);
-  local_1c = &stack0xffffff40;
+  iVar3 = st::fn_0072D7F0
+                    (local_8c.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0xffffffff);
+  local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
   if (iVar3 == 0) {
     *param_1 = 0;
-    local_1c = &stack0xffffff40;
-    local_48 = st::fn_006AAC70(0xe2);
+    local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
+    local_48 = st::pointer_boundary_cast<AnonShape_00604A90_035626E6 *>(st::fn_006AAC70(0xe2));
     *param_1 = 0xe2;
     this->field_01E1 = 1;
     puVar6 = (byte *)&this->field_0x1d5;
@@ -472,7 +473,7 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
       local_3c[0] = (uint *)st::fn_006B0020((uint *)this->field_0215,(int *)&local_20);
       uVar10 = *param_1 + local_20 + 4;
       *param_1 = uVar10;
-      local_48 = st::fn_006ACF50(local_48,uVar10);
+      local_48 = st::pointer_boundary_cast<AnonShape_00604A90_035626E6 *>(st::fn_006ACF50(local_48,uVar10));
       *(uint *)((*param_1 - local_20) + -4 + (int)local_48) = local_20;
       puVar5 = local_3c[0];
       puVar12 = (uint *)((*param_1 - local_20) + (int)local_48);
@@ -487,15 +488,15 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
       st::fn_0072DA40();
       local_8 = 0xffffffff;
       local_30 = 0;
-      local_24 = &stack0xffffff40;
-      local_1c = &stack0xffffff40;
+      local_24 = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
+      local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
       if (0 < iVar1) {
         ppHVar4 = &this->field_0219;
-        local_24 = &stack0xffffff40;
-        local_1c = &stack0xffffff40;
+        local_24 = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
+        local_1c = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
         do {
           if (*ppHVar4 != nullptr) {
-            local_3c[0] = (uint *)st::fn_00403C7E(*ppHVar4,local_2c);
+            local_3c[0] = (uint *)st::fn_00403C7E(*ppHVar4,st::pointer_boundary_cast<undefined4 *>(local_2c));
             iVar8 = iVar8 + 4 + local_2c[0];
             puVar6[1] = local_2c[0];
             *puVar6 = local_3c[0];
@@ -507,7 +508,7 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
       }
       uVar10 = *param_1;
       *param_1 = uVar10 + iVar8;
-      local_48 = st::fn_006ACF50(local_48,uVar10 + iVar8);
+      local_48 = st::pointer_boundary_cast<AnonShape_00604A90_035626E6 *>(st::fn_006ACF50(local_48,uVar10 + iVar8));
       local_44 = (uint *)((*param_1 - iVar8) + (int)local_48);
       local_30 = 0;
       if (0 < this->field_0269) {
@@ -535,18 +536,18 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
   }
   else {
     g_currentExceptionFrame = local_8c.previous;
-    puVar3 = &stack0xffffff40;
+    puVar3 = st::pointer_boundary_cast<undefined1 *>(&stack0xffffff40);
     if (local_48 != nullptr) {
       st::fn_006AB060(&local_48);
       puVar3 = local_1c;
     }
     local_1c = puVar3;
-    iVar7 = st::fn_006AD4D0("E:\\__titans\\nick\\to_Expl.cpp",0x2df,0,iVar3,"%s",
+    iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x2df,0,iVar3,st::mutable_c_string("%s"),
                                "STExplosionC::SaveObj(");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar3,0,"E:\\__titans\\nick\\to_Expl.cpp",0x2e1);
+    st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x2e1);
   }
   ExceptionList = local_14;
   return (undefined4 *)local_48;
@@ -595,10 +596,10 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
   pSVar4 = local_18;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\nick\\to_Expl.cpp",0x38c,0,iVar5,"%s",
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x38c,0,iVar5,st::mutable_c_string("%s"),
                                "STExplosionC::LoadImagSpr");
     if (iVar8 == 0) {
-      st::fn_006A5E40(iVar5,0,"E:\\__titans\\nick\\to_Expl.cpp",0x38e);
+      st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x38e);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -632,7 +633,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
                             0x11);
     if (iVar6 != 0) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_Expl.cpp",0x36a);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x36a);
       return 0xffff;
     }
   }
@@ -641,7 +642,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
                             0x11);
     if (iVar6 != 0) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_Expl.cpp",0x370);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x370);
       return 0xffff;
     }
     st::fn_006E9210

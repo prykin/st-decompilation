@@ -2961,7 +2961,20 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             int alternatives = inferredTypes.entrySet().stream()
                 .filter(entry -> !"/char".equals(entry.getKey()))
                 .mapToInt(entry -> entry.getValue().size()).sum();
-            return chars >= 2 && chars >= alternatives * 2;
+            if (chars >= 2 && chars >= alternatives * 2) return true;
+            if (chars == 0) return false;
+            // Addressing a byte as char through an imported/named string
+            // boundary establishes its character role.  Passing the same
+            // address to byte/uchar/undefined1 buffer consumers proves only
+            // byte addressability and is not contrary signedness evidence.
+            // Direct scalar loads/extensions never contain the exact-address
+            // marker and therefore continue to veto this refinement.
+            return inferredTypes.get("/char").stream().allMatch(site ->
+                    site.contains(" exact address of ")) &&
+                inferredTypes.entrySet().stream()
+                    .filter(entry -> !"/char".equals(entry.getKey()))
+                    .flatMap(entry -> entry.getValue().stream())
+                    .allMatch(site -> site.contains(" exact address of "));
         }
         Set<String> directTypes() {
             Set<String> result = new TreeSet<>();

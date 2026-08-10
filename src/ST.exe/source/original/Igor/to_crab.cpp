@@ -14,7 +14,7 @@ void __thiscall st::fn_00578560(STCrabC *this,uint param_1)
   int iVar3;
 
   if (7 < param_1) {
-    iVar2 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_crab.cpp",0x7a,0,0,"%s",
+    iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0x7a,0,0,st::mutable_c_string("%s"),
                                "STCrabC::SetSprRange - Bad direction");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -83,12 +83,12 @@ int __thiscall st::fn_00578630(STCrabC *this,STMessage *message)
   this_00 = local_1c;
   if (local_EAX_70 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_crab.cpp",0x1b7,0,local_EAX_70,
-                               "%s","STCrabC::GetMessage");
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0x1b7,0,local_EAX_70,
+                               st::mutable_c_string("%s"),"STCrabC::GetMessage");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(local_EAX_70,0,"E:\\__titans\\Igor\\to_crab.cpp",0x1b8);
+    st::fn_006A5E40(local_EAX_70,0,st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0x1b8);
     return 0xffff;
   }
   st::fn_00404F07(local_1c,message);
@@ -116,9 +116,9 @@ int __thiscall st::fn_00578630(STCrabC *this,STMessage *message)
     goto LAB_00578ea2;
   }
   if (SVar2 == MESS_SHARED_010F) {
-    local_14 = st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
+    local_14 = st::pointer_boundary_cast<STSprGameObjC_field_0259State *>(st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,st::pointer_boundary_cast<uint *>(&local_8)));
     local_18 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-    local_c = st::fn_006AAC70(local_10 + 0x68 + local_8);
+    local_c = st::pointer_boundary_cast<STSprGameObjC_field_0259State *>(st::fn_006AAC70(local_10 + 0x68 + local_8));
     if (local_14 == nullptr) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -198,7 +198,7 @@ int __thiscall st::fn_00578630(STCrabC *this,STMessage *message)
     *(undefined4 *)&this_00->field_0x23d = 0;
     this_00->field_0231 = CASE_0;
     *(uint *)&this_00->field_0x235 = uVar10 - 3;
-    pSVar12 = (message->arg0).ptr;
+    pSVar12 = st::pointer_boundary_cast<STSprGameObjC_field_0259State *>((message->arg0).ptr);
     pSVar14 = &this_00->field_0259;
     memmove(pSVar14, pSVar12, 0x28); /* compiler REP MOVS byte copy */
     iVar9 = 0;
@@ -218,32 +218,32 @@ int __thiscall st::fn_00578630(STCrabC *this,STMessage *message)
       switch(*(undefined4 *)&this_00->field_0x279) {
       case 0xf2:
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1l",
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("crab1l"),
                            CASE_1D);
         if (iVar9 != 0) {
           st::fn_006A5E40
-                    (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xd2);
+                    (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0xd2);
         }
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab1l_m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,st::mutable_c_string("crab1l_m"),
                            CASE_1D);
         if (iVar9 != 0) {
           iVar9 = 0xd5;
 cf_error_exit_00578B5D:
           st::fn_006A5E40
-                    (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",iVar9);
+                    (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),iVar9);
         }
         break;
       case 0xf3:
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2l",
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("crab2l"),
                            CASE_1D);
         if (iVar9 != 0) {
           st::fn_006A5E40
-                    (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xda);
+                    (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0xda);
         }
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab2l_m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,st::mutable_c_string("crab2l_m"),
                            CASE_1D);
         if (iVar9 != 0) {
           iVar9 = 0xdd;
@@ -252,14 +252,14 @@ cf_error_exit_00578B5D:
         break;
       case 0xf4:
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1b",
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("crab1b"),
                            CASE_1D);
         if (iVar9 != 0) {
           st::fn_006A5E40
-                    (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xe2);
+                    (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0xe2);
         }
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab1b_m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,st::mutable_c_string("crab1b_m"),
                            CASE_1D);
         if (iVar9 != 0) {
           iVar9 = 0xe5;
@@ -268,14 +268,14 @@ cf_error_exit_00578B5D:
         break;
       case 0xf5:
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2b",
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("crab2b"),
                            CASE_1D);
         if (iVar9 != 0) {
           st::fn_006A5E40
-                    (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xea);
+                    (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0xea);
         }
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab2b_m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,st::mutable_c_string("crab2b_m"),
                            CASE_1D);
         if (iVar9 != 0) {
           iVar9 = 0xed;
@@ -284,14 +284,14 @@ cf_error_exit_00578B5D:
         break;
       case 0xf6:
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"langus2",
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("langus2"),
                            CASE_1D);
         if (iVar9 != 0) {
           st::fn_006A5E40
-                    (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xfa);
+                    (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0xfa);
         }
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"langus2m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,st::mutable_c_string("langus2m"),
                            CASE_1D);
         if (iVar9 != 0) {
           iVar9 = 0xfd;
@@ -300,14 +300,14 @@ cf_error_exit_00578B5D:
         break;
       case 0xf7:
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"langus1",
+                          ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::mutable_c_string("langus1"),
                            CASE_1D);
         if (iVar9 != 0) {
           st::fn_006A5E40
-                    (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xf2);
+                    (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0xf2);
         }
         iVar9 = st::fn_00404183
-                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"langus1m",
+                          ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,st::mutable_c_string("langus1m"),
                            CASE_1D);
         if (iVar9 != 0) {
           iVar9 = 0xf5;
@@ -433,7 +433,7 @@ bool __thiscall st::fn_00579170(STCrabC *this)
   iVar6 = (int)g_worldGrid.sizeY;
   if ((((iVar7 + -1 < this->field_026D) || (this->field_026D < 0)) ||
       (iVar6 + -1 < this->field_0271)) || (this->field_0271 < 0)) {
-    iVar3 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_crab.cpp",0x202,0,0,"%s",
+    iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0x202,0,0,st::mutable_c_string("%s"),
                                "STCrabC::Bad birth coordinate - adjusting");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -443,7 +443,7 @@ bool __thiscall st::fn_00579170(STCrabC *this)
     this->field_0271 = iVar6 + -1 >> 1;
   }
   if ((this->field_0275 < 0) || (4 < this->field_0275)) {
-    iVar4 = st::fn_006AD4D0("E:\\__titans\\Igor\\to_crab.cpp",0x207,0,0,"%s",
+    iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0x207,0,0,st::mutable_c_string("%s"),
                                "STCrabC::Bad birth coordinate - adjusting");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -453,7 +453,7 @@ bool __thiscall st::fn_00579170(STCrabC *this)
   }
   if (0x167 < this->field_027D) {
     local_EAX_200 =
-         st::fn_006AD4D0("E:\\__titans\\Igor\\to_crab.cpp",0x20c,0,0,"%s",
+         st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Igor\\to_crab.cpp"),0x20c,0,0,st::mutable_c_string("%s"),
                             "STCrabC::Bad coordinates - adjusting ");
     if (local_EAX_200 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -1,7 +1,6 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::PrepAsses
@@ -74,7 +73,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
     pOVar10 = local_8;
     goto LAB_00532758;
   }
-  switch(_DAT_008087a0 & 0xff) {
+  switch(DAT_008087a0 & 0xff) {
   case 1:
   case 4:
   case 6:
@@ -94,7 +93,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   }
   pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   pOVar10 = local_8;
-  switch(_DAT_008087a0 & 0xff) {
+  switch(DAT_008087a0 & 0xff) {
   case 1:
   case 4:
   case 6:

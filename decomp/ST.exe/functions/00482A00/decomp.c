@@ -29,126 +29,125 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
     this_00 = local_8;
     if (iVar2 == 0) {
       if ((param_1 == 1) && (local_8->field_0024 == (uint)DAT_0080874d)) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        switch(*(undefined4 *)((int)local_8->field_06CB + 0x2c)) {
-        case 1:
+        switch(local_8->field_06F7) {
+        case CASE_1:
           arg_2 = 0xc9;
           break;
-        case 2:
+        case CASE_2:
           arg_2 = 0xcf;
           break;
-        case 3:
+        case CASE_3:
           arg_2 = 0xd5;
           break;
-        case 4:
+        case CASE_4:
           arg_2 = 0xdb;
           break;
-        case 5:
+        case CASE_5:
           arg_2 = 0xe1;
           break;
-        case 6:
+        case CASE_6:
           arg_2 = 0xe8;
           break;
-        case 7:
+        case CASE_7:
           arg_2 = 0xef;
           break;
-        case 8:
+        case CASE_8:
           arg_2 = 0xf6;
           break;
-        case 9:
+        case CASE_9:
           arg_2 = 0xfe;
           break;
-        case 10:
+        case CASE_A:
           arg_2 = 0x103;
           break;
-        case 0xb:
+        case CASE_B:
           arg_2 = 0x109;
           break;
-        case 0xc:
+        case CASE_C:
           arg_2 = 0x10f;
           break;
-        case 0xd:
+        case CASE_D:
           arg_2 = 0x12d;
           break;
-        case 0xe:
+        case CASE_E:
           arg_2 = 0x133;
           break;
-        case 0xf:
+        case CASE_F:
           arg_2 = 0x139;
           break;
-        case 0x10:
+        case CASE_10:
           arg_2 = 0x13f;
           break;
-        case 0x11:
+        case CASE_11:
           arg_2 = 0x145;
           break;
-        case 0x12:
+        case CASE_12:
           arg_2 = 0x14c;
           break;
-        case 0x13:
+        case CASE_13:
           arg_2 = 0x153;
           break;
-        case 0x14:
+        case CASE_14:
           arg_2 = 0x15a;
           break;
-        case 0x15:
+        case CASE_15:
           arg_2 = 0x162;
           break;
-        case 0x16:
+        case CASE_16:
           arg_2 = 0x167;
           break;
-        case 0x17:
+        case CASE_17:
           arg_2 = 0x16f;
           break;
-        case 0x18:
+        case CASE_18:
           arg_2 = 0x175;
           break;
-        case 0x19:
+        case CASE_19:
           arg_2 = 0x191;
           break;
-        case 0x1a:
+        case CASE_1A:
           arg_2 = 0x199;
           break;
-        case 0x1b:
+        case CASE_1B:
           arg_2 = 0x1a1;
           break;
-        case 0x1c:
+        case CASE_1C:
           arg_2 = 0x1a7;
           break;
-        case 0x1d:
+        case CASE_1D:
           arg_2 = 0x1ad;
           break;
-        case 0x1e:
+        case CASE_1E:
           arg_2 = 0x1b4;
           break;
-        case 0x1f:
+        case CASE_1F:
           arg_2 = 0x1ba;
           break;
-        case 0x20:
+        case CASE_20:
           arg_2 = 0x1c0;
           break;
-        case 0x21:
+        case CASE_21:
           arg_2 = 0x1c6;
           break;
-        case 0x22:
+        case CASE_22:
           arg_2 = 0x1cd;
           break;
-        case 0x23:
+        case CASE_23:
           arg_2 = 0x1d4;
           break;
-        case 0x24:
+        case CASE_24:
           arg_2 = 0x1da;
           break;
-        case 0x25:
+        case CASE_25:
           arg_2 = 0x17b;
           break;
-        case 0x26:
+        case CASE_26:
           arg_2 = 0x115;
           break;
-        case 0x27:
+        case CASE_27:
           arg_2 = 0x181;
           break;
-        case 0x28:
+        case CASE_28:
           arg_2 = 0x1e0;
           break;
         default:

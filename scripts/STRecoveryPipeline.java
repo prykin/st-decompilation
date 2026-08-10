@@ -94,7 +94,34 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STClassLayoutAnalyzer.java", List.of(
             "class_layout_proposals.tsv", "class_field_proposals.tsv",
             "class_nested_type_proposals.tsv", "class_nested_field_proposals.tsv",
-            "class_layout_summary.txt")));
+            "class_layout_summary.txt")),
+        Map.entry("STAbiConsistencyAnalyzer.java", List.of(
+            "abi_consistency_proposals.tsv", "abi_consistency_scalar_audit.tsv",
+            "abi_consistency_summary.txt")),
+        Map.entry("STClassArrayAnalyzer.java", List.of(
+            "class_array_proposals.tsv", "class_array_summary.txt")),
+        Map.entry("STInlineAggregateAnalyzer.java", List.of(
+            "inline_aggregate_proposals.tsv", "inline_aggregate_summary.txt")),
+        Map.entry("STObjectFactoryAnalyzer.java", List.of(
+            "object_factory_registry.tsv", "object_factory_proposals.tsv",
+            "object_type_consumer_proposals.tsv", "object_factory_summary.txt")),
+        Map.entry("STVTableAnalyzer.java", List.of(
+            "vtable_proposals.tsv", "vtable_slots.tsv", "vtable_relations.tsv",
+            "vtable_summary.txt")),
+        Map.entry("STMethodOwnerAnalyzer.java", List.of(
+            "method_owner_proposals.tsv", "method_owner_summary.txt")),
+        Map.entry("STGlobalRecordAnalyzer.java", List.of(
+            "global_record_proposals.tsv", "global_record_field_proposals.tsv",
+            "global_record_evidence.tsv", "global_record_summary.txt")),
+        Map.entry("STGlobalAggregateAnalyzer.java", List.of(
+            "global_aggregate_proposals.tsv", "global_aggregate_summary.txt")),
+        Map.entry("STGlobalDataAnalyzer.java", List.of(
+            "global_data_proposals.tsv", "global_call_boundary_audit.tsv",
+            "global_pointer_audit.tsv", "global_pointer_summary.txt",
+            "global_data_summary.txt")),
+        Map.entry("STIndirectCallAnalyzer.java", List.of(
+            "indirect_call_proposals.tsv", "indirect_call_sites.tsv",
+            "indirect_call_summary.txt")));
     private static final Map<String, List<String>> CACHEABLE_ANALYZER_INPUTS = Map.ofEntries(
         Map.entry("STDArrayElementAnalyzer.java", List.of()),
         Map.entry("STPointerShapeAnalyzer.java", List.of()),
@@ -111,7 +138,17 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STRecursivePointeeAnalyzer.java", List.of()),
         Map.entry("STClassLayoutAnalyzer.java", List.of(
             "constructor_class_sizes.tsv", "vtable_proposals.tsv",
-            "class_array_proposals.tsv", "inline_aggregate_proposals.tsv")));
+            "class_array_proposals.tsv", "inline_aggregate_proposals.tsv")),
+        Map.entry("STAbiConsistencyAnalyzer.java", List.of()),
+        Map.entry("STClassArrayAnalyzer.java", List.of()),
+        Map.entry("STInlineAggregateAnalyzer.java", List.of()),
+        Map.entry("STObjectFactoryAnalyzer.java", List.of()),
+        Map.entry("STVTableAnalyzer.java", List.of()),
+        Map.entry("STMethodOwnerAnalyzer.java", List.of()),
+        Map.entry("STGlobalRecordAnalyzer.java", List.of()),
+        Map.entry("STGlobalAggregateAnalyzer.java", List.of()),
+        Map.entry("STGlobalDataAnalyzer.java", List.of()),
+        Map.entry("STIndirectCallAnalyzer.java", List.of("vtable_proposals.tsv")));
     private static final Set<String> MUTATING_STATUSES = Set.of(
         "applied", "created", "converted", "updated", "partial", "renamed", "repaired");
     private static final Set<String> UNCHANGED_STATUSES = Set.of(

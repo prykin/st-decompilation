@@ -27,10 +27,10 @@ AllocationRecord_00648620 * __cdecl st::fn_00648400(char *text,undefined4 param_
   g_currentExceptionFrame = &local_4c;
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
-    local_8 = st::fn_006AAC10(0x85);
+    local_8 = st::pointer_boundary_cast<AnonShape_00648400_5C076F88 *>(st::fn_006AAC10(0x85));
     local_8->field_0001 = 0x85;
     local_8->field_0005 = 2;
-    st::fn_0072E340(&local_8->field_0x6,text,0x3f);
+    st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_8->field_0x6),text,0x3f);
     pAVar1 = st::fn_004015E1(text);
     local_8->field_004E = (undefined4 *)pAVar1;
     local_8->field_0052 = param_2;
@@ -39,7 +39,7 @@ AllocationRecord_00648620 * __cdecl st::fn_00648400(char *text,undefined4 param_
   }
   g_currentExceptionFrame = local_4c.previous;
   st::fn_004020A4((int *)&local_8);
-  st::fn_006A5E40(exceptionCode,0,"E:\\__titans\\ai\\ai_boss_d.cpp",0x20);
+  st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0x20);
   return nullptr;
 }
 
@@ -72,7 +72,7 @@ AllocationRecord_00648530 * __cdecl st::fn_00648530(AllocationRecord_00648530 *p
   g_currentExceptionFrame = &local_4c;
   iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    local_8 = st::fn_006AAC10(0x85);
+    local_8 = st::pointer_boundary_cast<AnonShape_00648530_D39EB612 *>(st::fn_006AAC10(0x85));
     pAVar3 = param_1;
     pAVar4 = local_8;
     memmove(pAVar4, pAVar3, 0x85); /* compiler REP MOVS byte copy */
@@ -86,7 +86,7 @@ AllocationRecord_00648530 * __cdecl st::fn_00648530(AllocationRecord_00648530 *p
   }
   g_currentExceptionFrame = local_4c.previous;
   st::fn_004020A4((int *)&local_8);
-  st::fn_006A5E40(iVar1,0,"E:\\__titans\\ai\\ai_boss_d.cpp",0x45);
+  st::fn_006A5E40(iVar1,0,st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0x45);
   return nullptr;
 }
 
@@ -127,7 +127,7 @@ st::fn_00648620(AllocationRecord_00648620 *param_1,undefined4 *param_2,int param
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     *param_4 = param_3 + 0x85U;
-    pAVar2 = st::fn_006AAC10(param_3 + 0x85U);
+    pAVar2 = st::pointer_boundary_cast<AllocationRecord_00648620 *>(st::fn_006AAC10(param_3 + 0x85U));
     pAVar3 = pAVar2;
     memmove(pAVar3, param_1, 0x85); /* compiler REP MOVS byte copy */
     pAVar2->field_0001 = *param_4;
@@ -136,7 +136,7 @@ st::fn_00648620(AllocationRecord_00648620 *param_1,undefined4 *param_2,int param
     uVar7 = pAVar2->field_004A;
     puVar8 = (byte *)&pAVar2->field_0x84;
     memmove(puVar8, param_2, uVar7); /* compiler REP MOVS byte copy */
-    pAVar2->field_0046 = &pAVar2->field_0x84 + (-0x84 - (int)pAVar2);
+    pAVar2->field_0046 = st::machine_word_boundary_cast<undefined4>(&pAVar2->field_0x84 + (-0x84 - (int)pAVar2));
     g_currentExceptionFrame = local_4c.previous;
     return pAVar2;
   }
@@ -144,12 +144,12 @@ st::fn_00648620(AllocationRecord_00648620 *param_1,undefined4 *param_2,int param
   if (local_8 != 0) {
     st::fn_006AB060(&local_8);
   }
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_boss_d.cpp",0x6b,0,iVar2,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0x6b,0,iVar2,st::mutable_c_string("%s"),
                              "BossDataPack");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_boss_d.cpp",0x6c);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0x6c);
   return nullptr;
 }
 
@@ -178,7 +178,7 @@ undefined4 * __cdecl st::fn_00648780(int param_1,char *param_2)
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_2 == nullptr)) {
       st::fn_006A5E40
-                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss_d.cpp",0x7f);
+                (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0x7f);
     }
     local_8 = (AllocationRecord_00648530 *)
               st::fn_006F2D90((cMf32 *)param_1,param_2,1,0);
@@ -190,14 +190,14 @@ undefined4 * __cdecl st::fn_00648780(int param_1,char *param_2)
     return (undefined4 *)local_c;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_boss_d.cpp",0x86,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0x86,0,errorCode,st::mutable_c_string("%s"),
                              "LoadBossEdit");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_004020A4((int *)&local_8);
   st::fn_004020A4((int *)&local_c);
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\ai\\ai_boss_d.cpp",0x88);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0x88);
   return nullptr;
 }
 
@@ -228,7 +228,7 @@ int __cdecl st::fn_006488C0(int param_1,char *param_2,AllocationRecord_00648620 
   if (iVar2 == 0) {
     if (((param_1 == 0) || (param_2 == nullptr)) || (param_3->field_0005 != '\x02')) {
       st::fn_006A5E40
-                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss_d.cpp",0x9c);
+                (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0x9c);
     }
     local_c = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)&param_3->field_0x4e,&local_14);
     local_8 = st::fn_00405A24(param_3,(undefined4 *)local_c,local_14,&local_10);
@@ -239,14 +239,14 @@ int __cdecl st::fn_006488C0(int param_1,char *param_2,AllocationRecord_00648620 
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\ai\\ai_boss_d.cpp",0xa3,0,iVar2,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0xa3,0,iVar2,st::mutable_c_string("%s"),
                              "SaveBossEdit");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   st::fn_00401537((int *)&local_c);
   st::fn_004020A4((int *)&local_8);
-  st::fn_006A5E40(iVar2,0,"E:\\__titans\\ai\\ai_boss_d.cpp",0xa6);
+  st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0xa6);
   return iVar2;
 }
 

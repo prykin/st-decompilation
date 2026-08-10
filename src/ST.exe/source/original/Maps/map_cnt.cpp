@@ -23,21 +23,21 @@ st::fn_006A2770(int *param_1,int param_2,int param_3,int param_4,ushort *param_5
   puVar2 = param_5;
   if (((((-1 < param_2) && (param_2 < *param_1)) && (-1 < param_3)) &&
       ((param_3 < param_1[1] && (-1 < param_4)))) && (param_4 < 6)) {
-    local_8 = &DAT_007df86c;
+    local_8 = st::pointer_boundary_cast<int *>(&DAT_007df86c);
     do {
-      uVar4 = local_8[-1] + param_2;
+      uVar4 = st::machine_word_boundary_cast<uint>(local_8[-1] + param_2);
       iVar3 = *local_8 + param_3;
       if ((((int)uVar4 < 0) || (*param_1 <= (int)uVar4)) || ((iVar3 < 0 || (param_1[1] <= iVar3))))
       {
         st::fn_006A5E40
-                  (0x521,g_overwriteContext_007ED77C,"E:\\__titans\\Maps\\map_cnt.cpp",0x2ff);
+                  (0x521,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Maps\\map_cnt.cpp"),0x2ff);
       }
       st::fn_00402AB3(param_1,uVar4,iVar3,param_4,(short *)param_5,param_6,param_7);
       local_8 = local_8 + 2;
     } while ((int)local_8 < 0x7df88c);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (ushort *)&DAT_007df888;
-    piVar5 = &DAT_007df86c;
+    piVar5 = st::pointer_boundary_cast<int *>(&DAT_007df86c);
     do {
       iVar3 = piVar5[-1];
       iVar1 = *piVar5;

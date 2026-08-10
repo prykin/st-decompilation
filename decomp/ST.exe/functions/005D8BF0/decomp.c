@@ -38,6 +38,7 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   byte *pbVar17;
   byte *pbVar18;
   bool bVar19;
+  undefined4 uVar20;
   _WIN32_FIND_DATAA local_21c;
   byte local_dc [64];
   InternalExceptionFrame local_9c;
@@ -71,11 +72,10 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   this_01->field_1CCC = pDVar5;
   this_01->field_002D = 0x20;
   this_01->field_0031 = 0;
-  FUN_006e6080(this_01,2,this_01->field_1AF1[0],(undefined4 *)&this_01->field_0x1d);
-  uVar8 = this_01->field_1AF1[1];
+  FUN_006e6080(this_01,2,this_01->field_1AF1,(undefined4 *)&this_01->field_0x1d);
   this_01->field_002D = 0x29;
   this_01->field_0031 = 0x19;
-  FUN_006e6080(this_01,2,uVar8,(undefined4 *)&this_01->field_0x1d);
+  FUN_006e6080(this_01,2,this_01->field_1AF5,(undefined4 *)&this_01->field_0x1d);
   FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1CB8,0,3,0x15,0x142,0x62,0xff);
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1CB4);
   wsprintfA(&this_01->field_1CD4,"%s%s",&CHAR_00h_00807680,PTR_s_SAVEGAME__0079c19c);
@@ -208,7 +208,7 @@ LAB_005d8dbf:
     pbVar17 = pbVar17 + 4;
     pbVar18 = pbVar18 + 4;
   }
-  uVar11 = this_01->field_1AF1[0];
+  uVar20 = this_01->field_1AF1;
   for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
     *pbVar18 = *pbVar17;
     pbVar17 = pbVar17 + 1;
@@ -216,14 +216,14 @@ LAB_005d8dbf:
   }
   this_01->field_002D = 0x28;
   this_01->field_0031 = this_01->field_1CCC->elementSize;
-  FUN_006e6080(this_01,2,uVar11,(undefined4 *)&this_01->field_0x1d);
+  FUN_006e6080(this_01,2,uVar20,(undefined4 *)&this_01->field_0x1d);
   pDVar12 = this_01->field_1CCC;
   dVar5 = pDVar12->elementSize;
   if ((int)dVar5 < 1) {
     this_01->field_002D = 0x22;
     this_01->field_0031 = 0;
-    FUN_006e6080(this_01,2,this_01->field_1AF1[0],(undefined4 *)&this_01->field_0x1d);
-    uVar8 = this_01->field_1AF1[0];
+    FUN_006e6080(this_01,2,this_01->field_1AF1,(undefined4 *)&this_01->field_0x1d);
+    uVar20 = this_01->field_1AF1;
     this_01->field_002D = 5;
   }
   else {
@@ -260,7 +260,7 @@ LAB_005d8dbf:
     }
     this_01->field_002D = 0x20;
     this_01->field_0031 = 1;
-    FUN_006e6080(this_01,2,this_01->field_1AF1[0],(undefined4 *)&this_01->field_0x1d);
+    FUN_006e6080(this_01,2,this_01->field_1AF1,(undefined4 *)&this_01->field_0x1d);
     iVar13 = 0;
     local_8 = this_01->field_1CCC->elementSize;
     iVar10 = local_10;
@@ -294,15 +294,14 @@ LAB_005d9011:
       } while ((iVar7 != 0) && (iVar13 = iVar13 + 1, iVar10 = local_10, iVar13 < (int)local_8));
     }
     local_10 = iVar10;
-    uVar8 = this_01->field_1AF1[0];
+    uVar20 = this_01->field_1AF1;
     this_01->field_002D = 0x22;
     this_01->field_0031 = local_10;
   }
-  FUN_006e6080(this_01,2,uVar8,(undefined4 *)&this_01->field_0x1d);
-  uVar8 = this_01->field_1AF1[1];
+  FUN_006e6080(this_01,2,uVar20,(undefined4 *)&this_01->field_0x1d);
   this_01->field_002D = 0x29;
   this_01->field_0031 = 9;
-  FUN_006e6080(this_01,2,uVar8,(undefined4 *)&this_01->field_0x1d);
+  FUN_006e6080(this_01,2,this_01->field_1AF5,(undefined4 *)&this_01->field_0x1d);
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1CB4);
   g_currentExceptionFrame = local_58.previous;
   return;

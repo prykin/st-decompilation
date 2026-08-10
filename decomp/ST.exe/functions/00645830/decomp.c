@@ -18,7 +18,7 @@ STTorpC * __cdecl CreateSTTorp(void)
   if (this != nullptr) {
     STGameObjC::STGameObjC(this);
     thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_0x1d5);
-    *(undefined **)&this->field_0x1d5 = &UNK_0079d60c;
+    *(VTable_0079D60C **)&this->field_0x1d5 = &VTable_0079D60C;
     this->vtable = (STGameObjCDispatchVTable *)&STTorpCVTable;
     return (STTorpC *)this;
   }

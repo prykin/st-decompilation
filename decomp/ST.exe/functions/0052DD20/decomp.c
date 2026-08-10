@@ -82,7 +82,7 @@ int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
         local_c = -0x18 - (int)this_00;
         local_14 = 0;
         local_10 = 0x1e;
-        puVar15 = this_00->field_0018;
+        puVar15 = &this_00->field_0018;
         do {
           iVar11 = local_14;
           if ((DAT_00807342 == 0) || ((byte)this_00->field_009C <= local_5)) {
@@ -153,7 +153,7 @@ LAB_0052e184:
       *(undefined1 *)puVar6 = 0x89;
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
-    puVar15 = this_00->field_0018;
+    puVar15 = &this_00->field_0018;
     do {
       FUN_006b2330(g_ddxContext_008075A8,puVar15,8,0x405c22,puVar15[0xf],0x13,(ushort *)this_00);
       FUN_006b1bd0((AnonShape_006B1BD0_7C890E99 *)g_ddxContext_008075A8,*puVar15);
@@ -171,7 +171,7 @@ LAB_0052e184:
     break;
   case MESS_SHARED_0003:
     g_popUp_008016D8 = nullptr;
-    puVar15 = local_18->field_0018;
+    puVar15 = &local_18->field_0018;
     iVar11 = 0xf;
     do {
       if (*puVar15 != 0xffffffff) {
@@ -197,7 +197,7 @@ LAB_0052e184:
     local_10 = 0;
     iVar11 = -0x18 - (int)local_18;
     uVar14 = 0x1e;
-    puVar15 = local_18->field_0018;
+    puVar15 = &local_18->field_0018;
     local_14 = 0xf;
     local_c = iVar11;
     do {

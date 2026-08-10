@@ -440,7 +440,7 @@ switchD_005ab66b_caseD_6:
           *puVar8 = 0;
           puVar8 = puVar8 + 1;
         }
-        puVar14 = this_02->field_1C23;
+        puVar14 = &this_02->field_1C23;
         for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
           *(undefined1 *)puVar8 = 0;
           puVar8 = (undefined4 *)((int)puVar8 + 1);
@@ -506,7 +506,7 @@ switchD_005ab66b_caseD_6:
             if (this_02->field_1B96 != 0xffffffff) {
               FUN_006b3af0((int *)this_02->field_1BDA,this_02->field_1B96);
             }
-            puVar14 = this_02->field_1C23;
+            puVar14 = &this_02->field_1C23;
             iVar23 = 0x16;
             do {
               FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar14);

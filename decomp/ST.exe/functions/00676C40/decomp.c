@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __cdecl FUN_00676c40(DArrayTy *param_1,callback_00676C40_p1 *param_2)
+/* [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=2, ignored=6, unknown=0 */
+
+uint __cdecl FUN_00676c40(DArrayTy *param_1,callback_00676C40_p1 *param_2)
 
 {
   uint uVar1;
@@ -18,7 +23,7 @@ void __cdecl FUN_00676c40(DArrayTy *param_1,callback_00676C40_p1 *param_2)
       bVar2 = false;
       uVar5 = 0;
       if ((int)(uVar3 - 1) < 1) {
-        return;
+        return uVar3;
       }
       do {
         if (uVar5 < uVar3) {
@@ -44,6 +49,6 @@ void __cdecl FUN_00676c40(DArrayTy *param_1,callback_00676C40_p1 *param_2)
       } while ((int)uVar1 < (int)(uVar3 - 1));
     } while (bVar2);
   }
-  return;
+  return uVar3;
 }
 

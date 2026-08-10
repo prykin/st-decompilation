@@ -1062,7 +1062,7 @@ st::fn_00672440
     }
     return iVar2;
   }
-  st::fn_0072E340(&local_1c->field_0x4,&CHAR_00h_008016a0,0x7f);
+  st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_1c->field_0x4),&CHAR_00h_008016a0,0x7f);
   *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
   if (param_3 != nullptr) {
     psVar5 = param_3;
@@ -1082,14 +1082,14 @@ st::fn_00672440
       pcVar2 = st::fn_00403779(param_1,local_8);
       if (pcVar2 != nullptr) break;
       *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-      st::fn_006A5E40(-4,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+      st::fn_006A5E40(-4,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
     }
     switch(*pcVar2) {
     case '\b':
       if (param_3 != nullptr) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-          st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+          st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 8;
         uVar3 = (*pAVar1->vtable->slot_00)(pcVar2);
@@ -1103,7 +1103,7 @@ st::fn_00672440
       if (param_3 != nullptr) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-          st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+          st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 9;
         fVar6 = (float10)(*pAVar1->vtable->slot_04)(pcVar2);
@@ -1117,14 +1117,14 @@ st::fn_00672440
       if (param_3 != nullptr) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-          st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+          st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 10;
         uVar3 = (*pAVar1->vtable->slot_08)(pcVar2);
         *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar3;
         if (*(int *)(param_3 + *param_3 * 2 + 4) == 0) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-          st::fn_006A5E40(-0x6b,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+          st::fn_006A5E40(-0x6b,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         *param_3 = *param_3 + 1;
         param_3[1] = param_3[1] + 1;
@@ -1140,13 +1140,13 @@ st::fn_00672440
       if (local_c == nullptr) {
         *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
 LAB_0067276f:
-        st::fn_006A5E40(local_14,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+        st::fn_006A5E40(local_14,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
       }
       else if (local_14 == 1) {
         if (param_3 != nullptr) {
           if (0x31 < *param_3) {
             *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-            st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+            st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
           }
           *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 8;
           *(float *)(param_3 + *param_3 * 2 + 4) = *local_c;
@@ -1158,7 +1158,7 @@ LAB_0067276f:
         if (param_3 != nullptr) {
           if (0x31 < *param_3) {
             *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-            st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+            st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
           }
           *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 9;
           *(float *)(param_3 + *param_3 * 2 + 4) = *local_c;
@@ -1174,7 +1174,7 @@ LAB_0067276f:
         if (param_3 != nullptr) {
           if (0x31 < *param_3) {
             *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-            st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
+            st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
           }
           *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 10;
           *(float *)(param_3 + *param_3 * 2 + 4) = *local_c;

@@ -74,7 +74,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200
     FUN_006c7f90(g_startSystem_0081176C->field_02F4,nullptr,g_dDXContext_0080759C->field_04B4,0);
   }
   local_84 = DAT_0080995c;
-  puVar8 = (byte *)(&DAT_00809960);
+  puVar8 = (byte *)&DAT_00809960;
   puVar11 = (byte *)(local_c8);
   memmove(puVar11, puVar8, 0x20); /* compiler REP MOVS byte copy */
   iVar5 = 0;
@@ -96,7 +96,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200
   DAT_00809958 = DAT_008087be;
   DAT_0080995c = local_84;
   puVar8 = (byte *)(local_c8);
-  puVar11 = (byte *)(&DAT_00809960);
+  puVar11 = (byte *)&DAT_00809960;
   memmove(puVar11, puVar8, 0x20); /* compiler REP MOVS byte copy */
   iVar5 = 0;
   if (g_dArray_0080C4C7 != nullptr) {

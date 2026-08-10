@@ -28,7 +28,7 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
     this_00 = local_c;
     if (iVar3 == 0) {
       iVar7 = 0xd;
-      puVar8 = &local_c->field_0066;
+      puVar8 = local_c->field_0066;
       do {
         if (*puVar8 != 0) {
           StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar8);

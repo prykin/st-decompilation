@@ -168,7 +168,7 @@ LPSTR __cdecl st::fn_006F2C00(char *text,int param_2,undefined4 param_3)
       text = pcVar7;
     } while (cVar1 != '\0');
     uVar3 = ~uVar3;
-    pCVar5 = &DAT_00856e40 + DAT_00856fc4 * 0x20;
+    pCVar5 = st::pointer_boundary_cast<LPSTR>(&DAT_00856e40 + DAT_00856fc4 * 0x20);
     pCVar6 = pcVar7 + -uVar3;
     pCVar8 = pCVar5;
     for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
@@ -184,8 +184,8 @@ LPSTR __cdecl st::fn_006F2C00(char *text,int param_2,undefined4 param_3)
   }
   else {
     st::fn_0072DE60(param_2,local_24,10);
-    st::external_00000080(local_44,"%s%s%s","%s%0",local_24,&DAT_007d5630);
-    pCVar5 = &DAT_00856e40 + iVar2 * 0x20;
+    st::external_00000080(local_44,st::mutable_c_string("%s%s%s"),"%s%0",local_24,&DAT_007d5630);
+    pCVar5 = st::pointer_boundary_cast<LPSTR>(&DAT_00856e40 + iVar2 * 0x20);
     st::external_00000080(pCVar5,local_44,text,param_3);
   }
   DAT_00856fc4 = DAT_00856fc4 + 1;
@@ -477,7 +477,7 @@ byte * st::fn_006F4FE0(byte *param_1,int param_2,uint *param_3,int param_4,int p
   int iVar9;
   byte *pbVar10;
 
-  DAT_00856fe0 = param_9;
+  DAT_00856fe0 = st::machine_word_boundary_cast<undefined4>(param_9);
   DAT_00857010 = param_11;
   uVar6 = param_5 << 0x10;
   puVar7 = param_3;
@@ -643,14 +643,14 @@ LAB_006f511e:
           iVar8 = DAT_00857010;
           while (pbVar10 = param_6, uVar1 < uVar6) {
 LAB_006f51af:
-            DAT_00856ffc = pbVar10;
+            DAT_00856ffc = st::machine_word_boundary_cast<undefined4>(pbVar10);
             puVar7 = (uint *)((int)param_3 + 2);
             DAT_00856ffc = DAT_00856ffc + 1;
             param_9 = (byte *)(uint)*(byte *)(iVar8 + (uint)*DAT_00856fe0);
             *param_1 = *(byte *)(iVar8 + (uint)*DAT_00856fe0);
             DAT_00856fe0 = DAT_00856fe0 + 1;
             param_1 = param_1 + 1;
-            param_6 = DAT_00856ffc;
+            param_6 = st::pointer_boundary_cast<byte *>(DAT_00856ffc);
             if (uVar4 - 1 == 0 || (int)uVar4 < 1) goto LAB_006f51e8;
             uVar1 = *param_3;
             uVar4 = uVar4 - 1;
@@ -941,7 +941,7 @@ byte * st::fn_006F5430(byte *param_1,int param_2,uint *param_3,int param_4,int p
   uint uVar10;
   byte *pbVar11;
 
-  DAT_00857034 = param_11;
+  DAT_00857034 = st::machine_word_boundary_cast<undefined4>(param_11);
   DAT_00856ff8 = param_13;
   _DAT_00857000 = 1;
 LAB_006f545a:
@@ -1006,17 +1006,17 @@ LAB_006f545a:
       pbVar6 = pbVar11;
       while (uVar7 < (uint)(param_5 << 0x10)) {
         param_3 = (uint *)((int)puVar5 + 2);
-        DAT_00857014 = pbVar6 + 1;
+        DAT_00857014 = st::machine_word_boundary_cast<undefined4>(pbVar6 + 1);
         param_11 = (byte *)(uint)*(byte *)(iVar9 + (uint)*DAT_00857034);
         *param_1 = *(byte *)(iVar9 + (uint)*DAT_00857034);
         DAT_00857034 = DAT_00857034 + 1;
         param_1 = param_1 + 1;
-        pbVar11 = DAT_00857014;
+        pbVar11 = st::pointer_boundary_cast<byte *>(DAT_00857014);
         if (uVar4 - 1 == 0 || (int)uVar4 < 1) goto cf_common_join_006F55D3;
         uVar7 = *puVar5;
         uVar4 = uVar4 - 1;
         puVar5 = param_3;
-        pbVar6 = DAT_00857014;
+        pbVar6 = st::pointer_boundary_cast<byte *>(DAT_00857014);
       }
       param_11 = (byte *)STReplaceLowByte((uint32_t)(param_11), (uint8_t)(*pbVar6));
       pbVar11 = pbVar6 + 1;
@@ -1099,12 +1099,12 @@ LAB_006f54e6:
       puVar5 = param_3;
       while (uVar7 < (uint)(param_5 << 0x10)) {
         param_3 = (uint *)((int)puVar5 + 2);
-        DAT_00857014 = param_6 + 1;
+        DAT_00857014 = st::machine_word_boundary_cast<undefined4>(param_6 + 1);
         param_11 = (byte *)(uint)*(byte *)(iVar9 + (uint)*DAT_00857034);
         *param_1 = *(byte *)(iVar9 + (uint)*DAT_00857034);
         DAT_00857034 = DAT_00857034 + 1;
         param_1 = param_1 + 1;
-        param_6 = DAT_00857014;
+        param_6 = st::pointer_boundary_cast<byte *>(DAT_00857014);
         if (uVar4 - 1 == 0 || (int)uVar4 < 1) goto cf_common_join_006F56D2;
         uVar7 = *puVar5;
         uVar4 = uVar4 - 1;
@@ -1413,7 +1413,7 @@ uint st::fn_006F5920(byte *param_1,int param_2,uint *param_3,int param_4,int par
   int iStack_18;
 
   DAT_0085701c = param_9;
-  DAT_00857024 = param_10;
+  DAT_00857024 = st::machine_word_boundary_cast<undefined4>(param_10);
   DAT_00857020 = param_12;
   uVar7 = param_5 << 0x10;
   puVar8 = param_3;
@@ -1585,14 +1585,14 @@ LAB_006f5a87:
           iVar9 = DAT_00857020;
           while (pbVar10 = param_6, uVar1 < uVar7) {
 LAB_006f5b32:
-            DAT_00857018 = pbVar10;
+            DAT_00857018 = st::machine_word_boundary_cast<undefined4>(pbVar10);
             puVar8 = (uint *)((int)param_3 + 2);
             DAT_00857018 = DAT_00857018 + 1;
             param_9 = (uint)*(byte *)(iVar9 + (uint)*DAT_00857024);
             *pbVar11 = *(byte *)(iVar9 + (uint)*DAT_00857024);
             DAT_00857024 = DAT_00857024 + 1;
             param_1 = pbVar11 + 1;
-            param_6 = DAT_00857018;
+            param_6 = st::pointer_boundary_cast<byte *>(DAT_00857018);
             if (uVar4 - 1 == 0 || (int)uVar4 < 1) goto LAB_006f5b70;
             uVar1 = *param_3;
             uVar4 = uVar4 - 1;

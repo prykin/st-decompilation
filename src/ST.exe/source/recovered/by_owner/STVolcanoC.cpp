@@ -88,18 +88,18 @@ undefined4 __thiscall st::fn_006472B0(STVolcanoC *this)
   int iVar2;
 
   uVar1 = 0;
-  iVar2 = this->field_0050 + 1;
+  iVar2 = st::machine_word_boundary_cast<int>(this->field_0050 + 1);
   this->field_0050 = iVar2;
   if ((iVar2 == 0) || (iVar2 == 1)) {
     this->field_003C = (this->field_0030 + 2) * 0xc9;
     this->field_0040 = (this->field_0034 + 2) * 0xc9;
-    this->field_0044 = this->field_0038 * 200 + 0x78;
+    this->field_0044 = st::machine_word_boundary_cast<undefined4>(this->field_0038 * 200 + 0x78);
     uVar1 = 1;
   }
   else if (iVar2 == 2) {
     this->field_003C = (this->field_0030 + 2) * 0xc9;
     this->field_0040 = (this->field_0034 + 2) * 0xc9;
-    this->field_0044 = this->field_0038 * 200 + 0xde;
+    this->field_0044 = st::machine_word_boundary_cast<undefined4>(this->field_0038 * 200 + 0xde);
     return 1;
   }
   return uVar1;

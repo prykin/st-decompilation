@@ -54,13 +54,13 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0_10;
   float10 fVar24;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   unkbyte10 extraout_ST1;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   float10 extraout_ST1_02;
   longlong lVar25;
   int local_18;
@@ -101,7 +101,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             fsin(fVar22);
             fcos(fVar21 * (float10)STField<float>(this,0x8d));
             lVar25 = Library::MSVCRT::__ftol();
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             fsin(extraout_ST1);
             *(int *)(iVar18 + 0xd) = (int)lVar25 + STField<int>(this,0x95);
             lVar25 = Library::MSVCRT::__ftol();
@@ -736,7 +736,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
                    (float)(extraout_ST0_03 -
                           (float10)(int)(((uint)lVar25 ^ uVar13) - uVar13) *
                           (float10)STField<float>(this,0x89));
-              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+              /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               fVar24 = extraout_ST1_00;
             }
             if (_DAT_0079034c < STField<float>(this,0x49)) {
@@ -761,7 +761,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
                    (float)(extraout_ST0_04 -
                           (float10)(int)(((uint)lVar25 ^ uVar13) - uVar13) *
                           (float10)STField<float>(this,0x89));
-              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+              /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               fVar24 = extraout_ST1_01;
             }
             STField<float>(this,0x59) = (float)((float10)STField<float>(this,0x49) / fVar24);
@@ -1007,9 +1007,9 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           uVar13 = g_playSystem_00802A38->field_00E4;
           STField<int>(this,9) = iVar14;
           STField<uint>(this,5) = uVar13;
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           if (extraout_ST1_02 <= fVar24) {
-            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             STField<float>(this,0x79) = (float)extraout_ST1_02;
             return;
           }

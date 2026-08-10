@@ -7,18 +7,13 @@
 ViewerClassTy * __cdecl CreateViewer(void)
 
 {
-  ViewerClassTy *pVVar1;
+  undefined4 *puVar1;
+  ViewerClassTy *pVVar2;
 
-  pVVar1 = (ViewerClassTy *)FUN_006b04d0(0x1f8);
-  if (pVVar1 != nullptr) {
-    FUN_0072b700((undefined4 *)pVVar1);
-    pVVar1->field_0000 = &VTable_0079E298;
-    *(undefined4 *)&pVVar1->field_0x1f0 = 0;
-    *(undefined4 *)&pVVar1->field_0x1ec = 0;
-    pVVar1->field_01B8 = 0;
-    pVVar1->field_01B4 = 0;
-    pVVar1->field_01C4 = 0;
-    return pVVar1;
+  puVar1 = FUN_006b04d0(0x1f8);
+  if (puVar1 != nullptr) {
+    pVVar2 = (ViewerClassTy *)FUN_0071e6f0(puVar1);
+    return pVVar2;
   }
   return nullptr;
 }

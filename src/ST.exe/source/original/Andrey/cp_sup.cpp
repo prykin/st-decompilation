@@ -28,12 +28,12 @@ st::fn_004F1390(CPanelTy *this,DDXContext *param_1,undefined4 param_2,undefined4
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0xf,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0xf,0,errorCode,st::mutable_c_string("%s"),
                              "CPanelTy::OutProc");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0xf);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0xf);
   return;
 }
 
@@ -61,12 +61,12 @@ st::fn_004F1460(CPanelTy *this,int *param_1,undefined4 param_2,undefined4 param_
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x17,0,errorCode,"%s"
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x17,0,errorCode,st::mutable_c_string("%s")
                              ,"CPanelTy::OutProc");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x17);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x17);
   return;
 }
 
@@ -100,12 +100,12 @@ st::fn_004F1530(CPanelTy *this,int param_1,undefined4 param_2,undefined4 param_3
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x1f,0,errorCode,"%s"
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1f,0,errorCode,st::mutable_c_string("%s")
                              ,"CPanelTy::OutProc");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x1f);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1f);
   return;
 }
 
@@ -151,7 +151,7 @@ st::fn_004F1D90
     iVar3 = 0;
     pcVar4 = st::fn_006B0140(param_5,g_hINSTANCE_00807618);
     st::fn_00711B70(pCVar2->field_01B8,pcVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
-    st::external_00000080(&pCVar2->field_01E1,"%d",param_4);
+    st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pCVar2->field_01E1),st::mutable_c_string("%d"),param_4);
     st::fn_00710A90(pCVar2->field_01B8,param_1,0,param_2 + 0x30,param_3,0x11,10);
     st::fn_00711B70(pCVar2->field_01B8,&pCVar2->field_01E1,-3,-1,0,-1,-1);
     st::fn_00710A90(pCVar2->field_01B8,param_1,0,param_2 + 0x42,param_3,10,10);
@@ -166,12 +166,12 @@ st::fn_004F1D90
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x8f,0,iVar3,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x8f,0,iVar3,st::mutable_c_string("%s"),
                              "CPanelTy::PaintDamageXY");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x8f);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x8f);
   return;
 }
 
@@ -217,7 +217,7 @@ st::fn_004F1F60
     iVar3 = 0;
     pcVar4 = st::fn_006B0140(param_5,g_hINSTANCE_00807618);
     st::fn_00711B70(pCVar2->field_01B8,pcVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
-    st::external_00000080(&pCVar2->field_01E1,"%3d",param_4);
+    st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pCVar2->field_01E1),st::mutable_c_string("%3d"),param_4);
     st::fn_00710A90(pCVar2->field_01BC,param_1,0,param_2 + 0xc,param_3 + 10,0x14,0xf);
     st::fn_00711B70(pCVar2->field_01BC,&pCVar2->field_01E1,-3,-1,1,-1,-1);
     st::fn_00710A90(pCVar2->field_01B8,param_1,0,param_2 + 0x22,param_3 + 0xd,10,10);
@@ -232,12 +232,12 @@ st::fn_004F1F60
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0xa3,0,iVar3,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0xa3,0,iVar3,st::mutable_c_string("%s"),
                              "CPanelTy::PaintDamageXY");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0xa3);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0xa3);
   return;
 }
 
@@ -286,12 +286,12 @@ st::fn_004F2130
       st::fn_00711B70(pCVar2->field_01B8,resourceString,iVar3,iVar4,uVar5,iVar6,iVar7);
     }
     if (param_4 != 0xffff) {
-      st::external_00000080(&pCVar2->field_01E1,"%d",param_4);
+      st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pCVar2->field_01E1),st::mutable_c_string("%d"),param_4);
       st::fn_00710A90(pCVar2->field_01B8,param_1,0,param_2 + 0x30,param_3,0x11,10);
       st::fn_00711B70(pCVar2->field_01B8,&pCVar2->field_01E1,-3,-1,(uint)param_6,-1,-1);
     }
     if (param_5 != 0xffff) {
-      st::external_00000080(&pCVar2->field_01E1,"%d",param_5);
+      st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pCVar2->field_01E1),st::mutable_c_string("%d"),param_5);
       st::fn_00710A90(pCVar2->field_01B8,param_1,0,param_2 + 0x30,param_3 + 0xb,0x11,10);
       st::fn_00711B70(pCVar2->field_01B8,&pCVar2->field_01E1,-3,-1,(uint)param_7,-1,-1);
     }
@@ -299,12 +299,12 @@ st::fn_004F2130
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0xbe,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0xbe,0,iVar3,st::mutable_c_string("%s"),
                              "CPanelTy::PaintCostsXY");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0xbe);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0xbe);
   return;
 }
 
@@ -356,12 +356,12 @@ st::fn_004F2350
       st::fn_00711B70(pCVar2->field_01B8,resourceString,iVar3,iVar4,uVar5,iVar6,iVar7);
     }
     if (param_2 != 0xffff) {
-      st::external_00000080(&pCVar2->field_01E1,"%4d",param_2);
+      st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pCVar2->field_01E1),st::mutable_c_string("%4d"),param_2);
       st::fn_00710A90(pCVar2->field_01C4,param_1,0,0x7d,0x5a,0x18,0xf);
       st::fn_00711B70(pCVar2->field_01C4,&pCVar2->field_01E1,-3,-1,(uint)param_4,-1,-1);
     }
     if (param_3 != 0xffff) {
-      st::external_00000080(&pCVar2->field_01E1,"%4d",param_3);
+      st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pCVar2->field_01E1),st::mutable_c_string("%4d"),param_3);
       st::fn_00710A90(pCVar2->field_01C4,param_1,0,0x5f,0x5a,0x18,0xf);
       st::fn_00711B70(pCVar2->field_01C4,&pCVar2->field_01E1,-3,-1,(uint)param_5,-1,-1);
     }
@@ -369,12 +369,12 @@ st::fn_004F2350
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0xd9,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0xd9,0,iVar3,st::mutable_c_string("%s"),
                              "CPanelTy::PaintCostsXYSI");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0xd9);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0xd9);
   return;
 }
 
@@ -444,10 +444,10 @@ void __thiscall st::fn_004F2560(CPanelTy *this,int param_1)
   local_14 = 0x2f;
   local_1c = 0;
   if (param_1 == 0) {
-    local_24 = &this->field_0x664;
+    local_24 = st::pointer_boundary_cast<undefined1 *>(&this->field_0x664);
   }
   else {
-    local_24 = &this->field_0x31c;
+    local_24 = st::pointer_boundary_cast<undefined1 *>(&this->field_0x31c);
   }
   local_c = local_c & 0xffffff00;
   local_7c.previous = g_currentExceptionFrame;
@@ -458,12 +458,12 @@ void __thiscall st::fn_004F2560(CPanelTy *this,int param_1)
   pCVar5 = local_38;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_7c.previous;
-    iVar16 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x146,0,iVar6,"%s"
+    iVar16 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x146,0,iVar6,st::mutable_c_string("%s")
                                 ,"CPanelTy::PaintWeap");
     if (iVar16 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar6,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x146);
+    st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x146);
     return;
   }
   memset(&local_38->field_0x31c, 0, 0x118); /* compiler bulk-zero initialization */
@@ -478,7 +478,7 @@ void __thiscall st::fn_004F2560(CPanelTy *this,int param_1)
     st::fn_00403229(local_20,local_30,local_34,'\x06',(byte *)local_10);
     uVar2 = *(ushort *)(pAVar12 + 1);
     if (uVar2 != 0xffff) {
-      st::external_00000080(&pCVar5->field_01E1,"%d",(uint)uVar2);
+      st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pCVar5->field_01E1),st::mutable_c_string("%d"),(uint)uVar2);
       st::fn_00710A90(pCVar5->field_01B8,(int)local_20,0,iVar7 + 0x2f,
                        (local_10->field_0008 + -0xc) / 2 + local_1c + local_14,0x11,0xc);
       st::fn_00711B70(pCVar5->field_01B8,&pCVar5->field_01E1,-3,-1,0,-1,-1);
@@ -592,7 +592,7 @@ LAB_004f27ff:
     }
   }
   else {
-    st::external_00000080(&pCVar5->field_01E1,"%d",*(short *)&pAVar12->field_0x26);
+    st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pCVar5->field_01E1),st::mutable_c_string("%d"),*(short *)&pAVar12->field_0x26);
   }
   if (local_5 != '\0') {
     local_34 = 0;
@@ -723,7 +723,7 @@ st::fn_004F2E40
     *(int *)&param_1->field_0xc = iVar6 + param_5;
     param_1->field_0108 = 1;
     param_1->field_010C = 1;
-    st::external_00000080(text,"%s0",param_7);
+    st::external_00000080(text,st::mutable_c_string("%s0"),param_7);
     local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_6,text,nullptr,1);
     uVar3 = local_8[3];
     *(ushort *)&param_1->field_0x10 = local_8[2];
@@ -748,7 +748,7 @@ st::fn_004F2E40
     *(undefined4 *)&param_1->field_0xb4 = param_10;
     if (param_11 != nullptr) {
       puVar4 = st::fn_0070AA70(g_cMf32_00806790,param_11,0,1);
-      param_1->field_0124 = puVar4;
+      param_1->field_0124 = st::machine_word_boundary_cast<undefined4>(puVar4);
       iVar4 = st::fn_0070A6F0(g_cMf32_00806790,0x12,param_11,1);
       param_1->field_0128 = iVar4;
     }
@@ -756,12 +756,12 @@ st::fn_004F2E40
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x171,0,local_EAX_42,
-                             "%s","CPanelTy::SetButStruct");
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x171,0,local_EAX_42,
+                             st::mutable_c_string("%s"),"CPanelTy::SetButStruct");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(local_EAX_42,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x171);
+  st::fn_006A5E40(local_EAX_42,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x171);
   return;
 }
 
@@ -858,7 +858,7 @@ st::fn_004F3130(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,int p
     local_18c[1] = param_2;
     local_18c[0] = param_3;
     if (text != nullptr) {
-      st::external_00000080(&pCVar3->field_01E1,"%s0",text);
+      st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pCVar3->field_01E1),st::mutable_c_string("%s0"),text);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_6,&pCVar3->field_01E1,nullptr,1);
     }
     if (param_6 == 1) {
@@ -899,12 +899,12 @@ st::fn_004F3130(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,int p
       else {
         local_18c[3] = 0;
       }
-      local_18c[3] = local_18c[3] + DAT_00806734;
+      local_18c[3] = st::machine_word_boundary_cast<int>(local_18c[3] + DAT_00806734);
     }
     else {
       local_18c[3] = (&pCVar3->field_0094)[uVar2];
     }
-    local_18c[3] = local_18c[3] + param_5;
+    local_18c[3] = st::machine_word_boundary_cast<int>(local_18c[3] + param_5);
     if (local_8 != nullptr) {
       st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_8);
     }
@@ -944,17 +944,17 @@ st::fn_004F3130(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,int p
       local_64 = st::fn_0070A6F0(g_cMf32_00806790,0x12,param_13,1);
     }
     (*pCVar3->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)pCVar3->field_000C,2,&local_c,nullptr,local_18c,0);
+              ((SystemClassTy *)pCVar3->field_000C,2,&local_c,nullptr,st::machine_word_boundary_cast<undefined4>(local_18c),0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_c;
   }
   g_currentExceptionFrame = local_1d0.previous;
-  iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x1b3,0,iVar4,"%s",
+  iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1b3,0,iVar4,st::mutable_c_string("%s"),
                              "CPanelTy::CreateBut");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x1b3);
+  st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1b3);
   return 0;
 }
 
@@ -992,7 +992,7 @@ st::fn_004F3540(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char
   ushort *local_c;
   CPanelTy *local_8;
 
-  local_10 = (param_2->arg1).ptr;
+  local_10 = st::pointer_boundary_cast<int *>((param_2->arg1).ptr);
   local_c = nullptr;
   if (param_5 == nullptr) {
     return;
@@ -1003,10 +1003,10 @@ st::fn_004F3540(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char
   errorCode = (int *)st::fn_0072D7F0(local_54.jumpBuffer,0);
   if (errorCode != nullptr) {
     g_currentExceptionFrame = local_54.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x1cd,0,(int)errorCode,
-                               "%s","CPanelTy::PaintBut");
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1cd,0,(int)errorCode,
+                               st::mutable_c_string("%s"),"CPanelTy::PaintBut");
     if (iVar6 == 0) {
-      st::fn_006A5E40((int)errorCode,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x1cd);
+      st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1cd);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1095,7 +1095,7 @@ st::fn_004F37C0(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char
   ushort *local_c;
   CPanelTy *local_8;
 
-  local_10 = (param_2->arg1).ptr;
+  local_10 = st::pointer_boundary_cast<int *>((param_2->arg1).ptr);
   local_c = nullptr;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -1103,12 +1103,12 @@ st::fn_004F37C0(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char
   errorCode = (int *)st::fn_0072D7F0(local_54.jumpBuffer,0);
   if (errorCode != nullptr) {
     g_currentExceptionFrame = local_54.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x1de,0,(int)errorCode,
-                               "%s","CPanelTy::PaintBBut");
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1de,0,(int)errorCode,
+                               st::mutable_c_string("%s"),"CPanelTy::PaintBBut");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40((int)errorCode,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x1de);
+    st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1de);
     return;
   }
   iVar6 = 1;
@@ -1193,7 +1193,7 @@ st::fn_004F3A30
   ushort *local_8;
 
   uVar2 = (uint)param_1;
-  local_18 = (param_2->arg1).ptr;
+  local_18 = st::pointer_boundary_cast<int *>((param_2->arg1).ptr);
   local_8 = nullptr;
   iVar5 = local_18[1];
   local_c = *local_18 - (&this->field_003C)[uVar2];
@@ -1262,12 +1262,12 @@ cf_common_join_004F3AC3:
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
-    iVar6 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x1f8,0,iVar4,"%s",
+    iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1f8,0,iVar4,st::mutable_c_string("%s"),
                                "CPanelTy::PaintTxtBut");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x1f8);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1f8);
   }
   return;
 }
@@ -1311,7 +1311,7 @@ st::fn_004F3CF0
   ushort *local_8;
 
   uVar2 = (uint)param_1;
-  local_18 = (param_2->arg1).ptr;
+  local_18 = st::pointer_boundary_cast<int *>((param_2->arg1).ptr);
   local_8 = nullptr;
   iVar9 = local_18[1];
   local_10 = *local_18 - (&this->field_003C)[uVar2];
@@ -1384,12 +1384,12 @@ cf_common_join_004F3D83:
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
-    iVar8 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x212,0,(int)errorCode,
-                               "%s","CPanelTy::PaintTxtBut");
+    iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x212,0,(int)errorCode,
+                               st::mutable_c_string("%s"),"CPanelTy::PaintTxtBut");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40((int)errorCode,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x212);
+    st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x212);
   }
   return;
 }
@@ -1485,12 +1485,12 @@ cf_common_join_004F4070:
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x235,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x235,0,iVar4,st::mutable_c_string("%s"),
                                "CPanelTy::PaintLBut");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x235);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x235);
   }
   return;
 }
@@ -1597,12 +1597,12 @@ cf_common_join_004F4331:
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\Andrey\\cp_sup.cpp",0x256,0,iVar4,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x256,0,iVar4,st::mutable_c_string("%s"),
                                "CPanelTy::PaintTab");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40(iVar4,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x256);
+    st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x256);
   }
   return;
 }

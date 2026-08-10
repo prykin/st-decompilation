@@ -49,7 +49,7 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
       if (DAT_0080c83e != 0xffffffff) {
         do {
           if (iVar8 == 0) {
-            if (DAT_0080c963 <= *(int *)((int)this_00->field_02BD + 6)) {
+            if (DAT_0080c963 <= *(int *)&this_00->field_0x2c3) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               uVar9 = *(uint *)((int)this_00->field_0291 + 0x12);
               iVar10 = 0;
@@ -64,12 +64,12 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
             else {
               iVar6 = (int)uVar9 / 0x28;
             }
-            iVar6 = *(int *)((int)this_00->field_02BD + 6) + iVar6;
-            *(int *)((int)this_00->field_02BD + 6) = iVar6;
+            iVar6 = *(int *)&this_00->field_0x2c3 + iVar6;
+            *(int *)&this_00->field_0x2c3 = iVar6;
             if (DAT_0080c963 < iVar6) {
-              *(int *)((int)this_00->field_02BD + 6) = DAT_0080c963;
+              *(int *)&this_00->field_0x2c3 = DAT_0080c963;
             }
-            PaintMainScore((MReportTy *)this_00,*(int *)((int)this_00->field_02BD + 6),uVar9,0);
+            PaintMainScore((MReportTy *)this_00,*(int *)&this_00->field_0x2c3,uVar9,0);
             bVar4 = true;
           }
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

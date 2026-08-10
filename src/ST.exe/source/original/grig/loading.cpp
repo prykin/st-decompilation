@@ -45,7 +45,7 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar11 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0x3a,0,iVar3,"%s",
+    iVar11 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x3a,0,iVar3,st::mutable_c_string("%s"),
                                 "cLoadingTy::new");
     if (iVar11 == 0) {
       if (local_8 != nullptr) {
@@ -56,12 +56,12 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
         }
         st::fn_006AB060(&local_8);
       }
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\loading.cpp",0x41);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x41);
       return nullptr;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  local_8 = st::fn_006AAC10(param_1);
+  local_8 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(param_1));
   this_00 = g_cMf32_00806780;
   if (DAT_0080874e == '\x01') {
     local_c = 0;
@@ -80,7 +80,7 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
     pcVar9 = pcVar8 + -uVar4;
     pcVar8 = local_65b;
     memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
-    st::fn_006F12B0(g_cMf32_00806780,st::fn_006F2D10,&local_65c);
+    st::fn_006F12B0(g_cMf32_00806780,st::machine_word_boundary_cast<undefined4>(st::fn_006F2D10),st::machine_word_boundary_cast<undefined4>(&local_65c));
     puVar5 = st::fn_006F2790(this_00);
     uVar4 = local_c;
     while (puVar5 != nullptr) {
@@ -91,12 +91,12 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
     local_c = uVar4;
     if (uVar4 == 0) {
       st::fn_006A5E40
-                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\grig\\loading.cpp",0x24);
+                (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x24);
     }
     iVar12 = 1;
     bVar10 = 0;
     uVar7 = st::fn_0072E6C0();
-    text_00 = st::fn_006F2C00("LOADINGW",1,uVar7 % uVar4 + 1);
+    text_00 = st::fn_006F2C00(st::mutable_c_string("LOADINGW"),1,uVar7 % uVar4 + 1);
   }
   else {
     if (DAT_0080874e == '\x02') {
@@ -117,7 +117,7 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
       pcVar8 = local_253;
       memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
       uVar7 = 0;
-      st::fn_006F12B0(g_cMf32_00806780,st::fn_006F2D10,&local_254);
+      st::fn_006F12B0(g_cMf32_00806780,st::machine_word_boundary_cast<undefined4>(st::fn_006F2D10),st::machine_word_boundary_cast<undefined4>(&local_254));
       puVar5 = st::fn_006F2790(this_00);
       while (puVar5 != nullptr) {
         local_c = local_c + 1;
@@ -132,7 +132,7 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
     else {
       if (DAT_0080874e != '\x03') {
         st::fn_006A5E40
-                  (-1,g_overwriteContext_007ED77C,"E:\\__titans\\grig\\loading.cpp",0x2f);
+                  (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x2f);
         goto LAB_00554324;
       }
       local_c = 0;
@@ -151,7 +151,7 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
       pcVar9 = pcVar8 + -uVar4;
       pcVar8 = local_457;
       memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
-      st::fn_006F12B0(g_cMf32_00806780,st::fn_006F2D10,&local_458);
+      st::fn_006F12B0(g_cMf32_00806780,st::machine_word_boundary_cast<undefined4>(st::fn_006F2D10),st::machine_word_boundary_cast<undefined4>(&local_458));
       puVar5 = st::fn_006F2790(this_00);
       while (puVar5 != nullptr) {
         local_c = local_c + 1;
@@ -173,7 +173,7 @@ LAB_00554324:
   puVar5 = st::fn_00710BA0((ccFntTy *)local_8[2],*local_8,0,0,0,0,0,1);
   local_8[1] = (uint)puVar5;
   if (text != nullptr) {
-    uVar4 = st::fn_00404746(text);
+    uVar4 = st::fn_00404746(st::machine_word_boundary_cast<undefined4>(text));
     local_8[0x13] = uVar4;
   }
   local_8[0x12] = param_3;
@@ -214,12 +214,12 @@ void __cdecl st::fn_005544E0(uint *param_1)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0x52,0,errorCode,"%s",
+  iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x52,0,errorCode,st::mutable_c_string("%s"),
                              "cLoadingTy::delete");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\grig\\loading.cpp",0x53);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x53);
   return;
 }
 
@@ -263,12 +263,12 @@ void __thiscall st::fn_00554660(cLoadingTy *this,int param_1,int param_2)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0x7b,0,iVar4,"%s",
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x7b,0,iVar4,st::mutable_c_string("%s"),
                              "cLoadingTy::ShowScr");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar4,0,"E:\\__titans\\grig\\loading.cpp",0x7c);
+  st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x7c);
   return;
 }
 
@@ -343,13 +343,13 @@ st::fn_00554800
     pcVar2->field_005C = param_7;
     resourceString = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
     iVar6 = st::fn_007111C0(pcVar5->field_0008,resourceString);
-    iVar9 = pcVar5->field_002C + iVar6;
-    iVar7 = pcVar5->field_0020 / iVar9;
+    iVar9 = st::machine_word_boundary_cast<int>(pcVar5->field_002C + iVar6);
+    iVar7 = st::machine_word_boundary_cast<int>(pcVar5->field_0020 / iVar9);
     pcVar5->field_0034 = iVar9;
     pcVar5->field_0030 = iVar7;
     if (iVar7 < 1) {
       st::fn_006A5E40
-                (-6,g_overwriteContext_007ED77C,"E:\\__titans\\grig\\loading.cpp",0xa3);
+                (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0xa3);
     }
     pcVar5->field_0058 = param_8;
     pcVar5->field_0054 = param_9;
@@ -360,12 +360,12 @@ st::fn_00554800
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0xac,0,local_EAX_36,
-                             "%s","cLoadingTy::InitParam");
+  iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0xac,0,local_EAX_36,
+                             st::mutable_c_string("%s"),"cLoadingTy::InitParam");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(local_EAX_36,0,"E:\\__titans\\grig\\loading.cpp",0xad);
+  st::fn_006A5E40(local_EAX_36,0,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0xad);
   return;
 }
 
@@ -415,12 +415,12 @@ void __thiscall st::fn_00554AD0(cLoadingTy *this,uint *param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0xcc,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0xcc,0,iVar3,st::mutable_c_string("%s"),
                              "cLoadingTy::DrawLine");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\loading.cpp",0xcd);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0xcd);
   return;
 }
 
@@ -465,7 +465,7 @@ void __thiscall st::fn_00554C80(cLoadingTy *this,char *resourceString)
     st::fn_006B4680
               ((int *)g_dDXContext_0080759C,iVar4,iVar3,(BITMAPINFO *)pcVar2->field_0004,nullptr
                ,iVar4,iVar3,pcVar2->field_001C,pcVar2->field_0034,0);
-    iVar3 = pcVar2->field_0038 + 1;
+    iVar3 = st::machine_word_boundary_cast<int>(pcVar2->field_0038 + 1);
     pcVar2->field_0038 = iVar3;
     if (iVar3 < pcVar2->field_0030) {
       pcVar2->field_0010 = pcVar2->field_0010 + pcVar2->field_0034;
@@ -497,12 +497,12 @@ void __thiscall st::fn_00554C80(cLoadingTy *this,char *resourceString)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0xf2,0,iVar3,"%s",
+  iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0xf2,0,iVar3,st::mutable_c_string("%s"),
                              "cLoadingTy::DrawLineCR");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\loading.cpp",0xf3);
+  st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0xf3);
   return;
 }
 
@@ -552,12 +552,12 @@ void __thiscall st::fn_00554F20(cLoadingTy *this,int param_1,char *text,int para
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0x109,0,errorCode,"%s"
+  iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x109,0,errorCode,st::mutable_c_string("%s")
                              ,"cLoadingTy::SetProcess");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40(errorCode,0,"E:\\__titans\\grig\\loading.cpp",0x10a);
+  st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x10a);
   return;
 }
 
@@ -614,10 +614,10 @@ st::fn_00555040
   pcVar9 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = st::fn_006AD4D0("E:\\__titans\\grig\\loading.cpp",0x14a,0,iVar3,"%s",
+    iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x14a,0,iVar3,st::mutable_c_string("%s"),
                                "cLoadingTy::SetState");
     if (iVar5 == 0) {
-      st::fn_006A5E40(iVar3,0,"E:\\__titans\\grig\\loading.cpp",0x14b);
+      st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x14b);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

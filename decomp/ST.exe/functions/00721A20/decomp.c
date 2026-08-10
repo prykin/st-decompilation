@@ -11,13 +11,13 @@ void __thiscall FUN_00721a20(void *this,int param_1)
   int iVar1;
   undefined4 local_24 [2];
   int local_1c;
-  undefined4 local_18;
+  undefined1 *local_18;
   undefined4 local_14;
   int local_10;
 
   local_1c = STField<int>(this,0x1fc);
   if (local_1c != 0) {
-    local_18 = 0x80000002;
+    local_18 = &DAT_80000002;
     local_14 = 0x20;
     if (STField<int>(this,0x138) == 0) {
       local_10 = 0;
@@ -48,7 +48,7 @@ void __thiscall FUN_00721a20(void *this,int param_1)
   }
   local_1c = STField<int>(this,0x200);
   if (local_1c != 0) {
-    local_18 = 0x80000002;
+    local_18 = &DAT_80000002;
     local_14 = 0x20;
     if (STField<int>(this,0x138) != 0) {
       local_10 = 1;

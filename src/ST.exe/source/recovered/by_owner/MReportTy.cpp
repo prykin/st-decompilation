@@ -56,7 +56,7 @@ void __thiscall st::fn_005C0190(MReportTy *this)
   local_8 = 4;
   this->field_0029 = 2;
   this->field_002D = 0x20;
-  piVar1 = &this->field_008F;
+  piVar1 = st::pointer_boundary_cast<int *>(&this->field_008F);
   do {
     if (*piVar1 != 0) {
       this->field_0025 = *piVar1;
@@ -100,7 +100,7 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
   int local_8;
 
   local_8 = 4;
-  puVar3 = &this->field_008F;
+  puVar3 = st::pointer_boundary_cast<uint *>(&this->field_008F);
   do {
     if (*puVar3 != 0) {
       st::fn_006E56B0(this->field_000C,*puVar3);

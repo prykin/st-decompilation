@@ -6,7 +6,8 @@ void FUN_00495e50(void)
 {
   short *psVar1;
 
-  if (((DAT_008087a0 == '\x06') || (DAT_008087a0 == '\a')) || (DAT_008087a0 == '\x0e')) {
+  if ((((char)DAT_008087a0 == '\x06') || ((char)DAT_008087a0 == '\a')) ||
+     ((char)DAT_008087a0 == '\x0e')) {
     psVar1 = (short *)0x1;
   }
   else {

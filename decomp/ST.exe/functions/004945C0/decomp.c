@@ -14,7 +14,7 @@ void __fastcall FUN_004945c0(AnonShape_004945C0_2B3B394D *param_1)
   uint uVar4;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   byte bVar5;
   int *piVar6;
@@ -96,7 +96,7 @@ LAB_00494766:
         *piVar6 = 0;
       }
       else if (*piVar6 == 0) {
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[return_width_artifact,call_clobber_piece]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate volatile-register merge after CALL: split the partial-register lifetime */
         thunk_FUN_004407a0(bVar5,STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(param_1->field_0024)),
                            CONCAT22(extraout_var,param_1->field_0032));
         *piVar6 = 1;

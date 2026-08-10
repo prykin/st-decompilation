@@ -95,8 +95,7 @@ LAB_00475068:
       if ((*(int *)(this->field_05A6 + 999) != 0) && (this->field_0716 < this->field_0712)) {
         uVar3 = (ulonglong)g_playSystem_00802A38->field_00E4 % 0x19;
         if ((int)uVar3 == 0) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar11 = *(int *)((int)this->field_06CB + 0x2c) + -1;
+          iVar11 = this->field_06F7 - CASE_1;
           if ((int)((uVar3 << 0x20 | (ulonglong)g_playSystem_00802A38->field_00E4) % 100) == 0) {
             this->vfunc_90(3,0x363);
             thunk_FUN_00637930(this->field_01ED,1,-100,-100,-100,0,0);
@@ -234,8 +233,7 @@ switchD_00474a47_caseD_2:
          (local_10 = 0, this->field_02BF != '\0')) {
         local_8 = (undefined4 *)&this->field_0x2b3;
         do {
-          puVar7 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
+          puVar7 = thunk_FUN_0041dc40(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
                                       this->field_006C);
           uVar2 = *puVar7;
           bVar23 = 0;
